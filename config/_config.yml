@@ -1,0 +1,8 @@
+development:
+  api_root: https://api.yvdev.com
+  api_version: "2.2"
+  memcache_server: localhost
+
+test:
+
+production:
