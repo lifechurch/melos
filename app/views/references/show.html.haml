@@ -1,0 +1,6 @@
+#main_content
+	#toolbar
+		= "Version: " + @version
+	%h1= @reference.human
+	- @reference.html.each do |r|
+		= r.html_safe

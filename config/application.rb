@@ -1,6 +1,15 @@
 require File.expand_path('../boot', __FILE__)
-require 'rails/all'
+# require 'rails/all' -  Uncomment this and remove the following to add
+# ActiveRecord back into the mix
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
+require "rails/test_unit/railtie"
+# End of removed ActiveRecord section - remove above to re-enable
+# ActiveRecord
+
 require File.expand_path('../_config', __FILE__)
+require File.expand_path('../../lib/osis', __FILE__)
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line

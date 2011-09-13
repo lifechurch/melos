@@ -30,3 +30,12 @@ If you have a package manager like `homebrew` installed on your system, just run
 
 Once it's installed, you can run it with default settings by just running `memcached`. If you want to run it as a daemon and not keep a terminal window busy, add a `-d`. If you want to run it with 128M of memory, or whatever, run it with `-m 128`.
 
+### Using Guard ###
+
+You can use `guard` to automatically run Cucumber and Rspec tests whenever relevant files change if you want. Just open a terminal window and run `guard`. If you're on a Mac, you can also install a gem called `growl_notify` to get Growl notifications.
+
+For more cool stuff with Guard, check out [Guard on Github](https://github.com/guard/guard).
+
+### VCR ###
+
+To minimize test time, all external API requests are performed once to obtain a response, then cached for future tests. The responses are saved in `fixtures/vcr`. To reset your API cache, simply delete all the files in this folder.

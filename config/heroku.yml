@@ -1,0 +1,18 @@
+#
+# Format:
+#
+# <heroku_san shorthand name>:
+#   app: <Heroku app name>
+#   config:
+#     - <Heroku config:var name>: <Heroku config:var value>
+#
+
+
+staging:
+  app: youversion-staging
+  config: &default
+    BUNDLE_WITHOUT: "development:test"
+
+demo:
+  app: youversion-demo
+  config: *default
