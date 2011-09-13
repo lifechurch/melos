@@ -1,11 +1,11 @@
 development:
   api_root: https://api.yvdev.com
-  api_version: "2.2"
+  api_version: "2.3"
   memcache_server: localhost
 
 test: &test
   api_root: https://api.yvdev.com
-  api_version: "2.2"
+  api_version: "2.3"
   memcache_server: localhost
 
 production:

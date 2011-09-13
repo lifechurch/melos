@@ -1,0 +1,5 @@
+%select.version{name: "version"}
+	- @versions.each do |k, v|
+		%optgroup{label: @languages[k]}
+		- v.each do |k, v|
+			%option{value: k, selected: k == @selected.osis}= "#{v.title} (#{v.osis.upcase})"

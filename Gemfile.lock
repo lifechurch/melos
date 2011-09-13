@@ -152,6 +152,10 @@ GEM
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
       rspec-mocks (~> 2.6.0)
+    rspec-cells (0.0.5)
+      cells (~> 3.4)
+      rails (~> 3.0)
+      rspec-rails (~> 2.2)
     rspec-core (2.6.4)
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
@@ -219,6 +223,7 @@ DEPENDENCIES
   memcache-client
   pry
   rails (~> 3.1.0)
+  rspec-cells
   rspec-rails (>= 2.6.0)
   sass-rails (~> 3.1.0)
   turn

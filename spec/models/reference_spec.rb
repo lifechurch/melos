@@ -68,4 +68,16 @@ describe Reference do
       Reference.new("gen.1.2-3.kjv").human.should == "Genesis 1:2-3 (KJV)"
     end
   end
+
+  describe "#copyright" do
+    it "returns the copyright text for the reference's version" do
+      Reference.new("gen.1.niv").copyright.should == "Holy Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica, Inc. Used by permission. All rights reserved worldwide."
+      Reference.new("gen.1.1.niv").copyright.should == "Holy Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica, Inc. Used by permission. All rights reserved worldwide."
+      Reference.new("gen.1.1-3.niv").copyright.should == "Holy Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica, Inc. Used by permission. All rights reserved worldwide."
+    end
+
+    it "returns nil for versions with no copyright" do
+      Reference.new("gen.1.1.kjv").copyright.should be_nil
+    end
+  end
 end

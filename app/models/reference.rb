@@ -27,6 +27,12 @@ class Reference
     @html ||= parse_contents(:html)
   end
 
+  def copyright
+    @copyright ||= @ref[:verse] ? api_data.copyright : api_data[0].data.copyright
+    return nil if @copyright.blank?
+    @copyright
+  end
+
   def human
     case @ref[:verse]
     when Fixnum

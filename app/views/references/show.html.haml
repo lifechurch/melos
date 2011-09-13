@@ -1,6 +1,9 @@
 #main_content
 	#toolbar
-		= "Version: " + @version
+		= "Version: #{@version.title} (#{@version.osis})"
+		= render_cell :version_select, :display, :selected => @version
 	%h1= @reference.human
+	- if @reference.copyright
+		%h3= @reference.copyright
 	- @reference.html.each do |r|
 		= r.html_safe

@@ -37,6 +37,7 @@ group :test, :development do
   gem 'turn', :require => false
   gem "rspec-rails", ">= 2.6.0"
   gem 'cucumber-rails', "~> 0.5.0.beta1"
+  gem 'rspec-cells'
   gem 'capybara', "~> 1.0.0.beta1"
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'

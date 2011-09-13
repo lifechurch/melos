@@ -100,11 +100,11 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
 
-When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
+When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field| # "
   attach_file(field, File.expand_path(path))
 end
 
-Then /^(?:|I )should see "([^"]*)"$/ do |text|
+Then /^(?:|I )should see "([^"]*)"$/ do |text| # "
   if page.respond_to? :should
     page.should have_content(text)
   else
@@ -131,7 +131,9 @@ Then /^I should see "([^"]*)" in the ([^"]*)$/ do |title, area|
   find(areas[area]).should have_content(title)
 end
 
-Then /^(?:|I )should not see "([^"]*)"$/ do |text|
+
+
+Then /^(?:|I )should not see "([^"]*)"$/ do |text| # "
   if page.respond_to? :should
     page.should have_no_content(text)
   else
@@ -161,7 +163,7 @@ Then /^the "([^"]*)" field(?: within (.*))? should contain "([^"]*)"$/ do |field
   end
 end
 
-Then /^the "([^"]*)" field(?: within (.*))? should not contain "([^"]*)"$/ do |field, parent, value|
+Then /^the "([^"]*)" field(?: within (.*))? should not contain "([^"]*)"$/ do |field, parent, value| # "
   with_scope(parent) do
     field = find_field(field)
     field_value = (field.tag_name == 'textarea') ? field.text : field.value
@@ -184,7 +186,7 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should be checked$/ do |label, pa
   end
 end
 
-Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label, parent|
+Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label, parent| # "
   with_scope(parent) do
     field_checked = find_field(label)['checked']
     if field_checked.respond_to? :should

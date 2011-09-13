@@ -1,0 +1,2 @@
+class VersionsController < ApplicationController
+end
