@@ -1,8 +1,5 @@
-Then /^I should see a (.*) dropdown with options (.*)$/ do |select, options| # "
-  case select
-  when "version"
-    el = page.find(:xpath, "//select[@name='version']")
-  end
+Then /^I should see a (.*) with contents (.*)$/ do |select, options| # "
+
 
   options.split(", ").each do |opt|
     el.should have_content(opt.gsub(/(^\")|(\"$)/, ""))
@@ -10,6 +7,8 @@ Then /^I should see a (.*) dropdown with options (.*)$/ do |select, options| # "
 
 end
 
-Then /^([A-Z]*) should be selected in the ([a-z]*) dropdown$/ do |value, dropdown|
-  page.should have_selector(:xpath, "//select[@name='#{dropdown}']/option[@value='#{value.downcase}'][@selected]")
+
+
+Then /^"(.*)" should be selected$/ do |value|
+  with_scope("selected") { page.should have_content value }
 end

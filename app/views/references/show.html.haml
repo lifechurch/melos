@@ -1,7 +1,8 @@
 #main_content
 	#toolbar
 		= "Version: #{@version.title} (#{@version.osis})"
-		= render_cell :version_select, :display, :selected => @version
+		= render_cell :version_selector, :display, :reference => @reference
+		= render_cell :book_selector, :display, :reference => @reference
 	%h1= @reference.human
 	- if @reference.copyright
 		%h3= @reference.copyright

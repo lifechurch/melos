@@ -10,6 +10,14 @@ module HtmlSelectorsHelpers
 
     when "the page"
       "html > body"
+    when "the version selector"
+      "#version_selector"
+    when "the book selector"
+      "#book_selector"
+    when "the chapter selector"
+      "#chapter_selector"
+    when "selected"
+      ".selected"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

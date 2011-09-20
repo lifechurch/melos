@@ -15,8 +15,25 @@ class Reference
     @ref
   end
 
-  def string
-    @ref.to_osis_string
+  def to_s
+    human
+  end
+
+  def merge(hash)
+    Reference.new(@ref.merge(hash))
+  end
+
+  def merge!(hash)
+    @ref.merge!(hash)
+    return self
+  end
+
+  def [](arg)
+    @ref[arg]
+  end
+
+  def to_param
+    osis
   end
 
   def text
@@ -31,6 +48,10 @@ class Reference
     @copyright ||= @ref[:verse] ? api_data.copyright : api_data[0].data.copyright
     return nil if @copyright.blank?
     @copyright
+  end
+
+  def osis
+    @ref.to_osis_string
   end
 
   def human

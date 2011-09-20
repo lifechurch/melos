@@ -1,6 +1,9 @@
 class Version
-  @@api_data = nil
+  @@versions_api_data = nil
+  @@books_api_data = {}
   @@versions = {}
+  @@books = {}
+  @@version_books = {}
   @@all_by_language = {}
   @@languages = {}
   def self.all(lang = "")
@@ -34,7 +37,7 @@ class Version
 
   def initialize(version)
     @version = version
-    @data = api_data.versions[version]
+    @data = versions_api_data.versions[version]
   end
 
   def language
@@ -48,11 +51,40 @@ class Version
   def osis
     @version
   end
-  
+
+  def books
+    @books ||= books_list(@version)
+  end
+
   private
 
+  def self.books_list(version)
+    return @@books[version] unless @@books[version].nil?
+    hash = {}
+    books_api_data(version).each do |v|
+      hash[v.osis.downcase] = { human: v.human, chapters: v.chapters.to_i, chapter: {}}
+      (1..v.chapters.to_i).each do |x|
+         hash[v.osis.downcase][:chapter][x.to_i] = {verses: v.verses[x-1]}
+      end
+    end
+    @@books[version] = Hashie::Mash.new(hash)
+  end
+
+  def books_list(version)
+    self.class.books_list(version)
+  end
+
+  def self.books_api_data(version)
+    @@books_api_data[version] = YvApi.get("bible/books", version: version) unless @@books_api_data.has_key?(version)
+    @@books_api_data[version]
+  end
+
+  def books_api_data(version)
+    self.class.books_api_data(version)
+  end
+
   def self.versions
-    api_data.versions.each { |k, v| @@versions[k] = Version.new(k) } if @@versions.empty?
+    versions_api_data.versions.each { |k, v| @@versions[k] = Version.new(k) } if @@versions.empty?
     @@versions
   end
 
@@ -60,11 +92,11 @@ class Version
     self.class.versions
   end
 
-  def self.api_data
-    @@api_data ||= YvApi.get("bible/versions", type: "all")
+  def self.versions_api_data
+    @@versions_api_data ||= YvApi.get("bible/versions", type: "all")
   end
 
-  def api_data
-    self.class.api_data
+  def versions_api_data
+    self.class.versions_api_data
   end
 end

@@ -1,7 +1,7 @@
-class VersionSelectCell < Cell::Rails
+class VersionSelectorCell < Cell::Rails
 
   def display(opts ={})
-    @selected  = opts[:selected]
+    @reference  = opts[:reference]
     @versions  = Version.all_by_language
     @languages = Version.languages
     render

@@ -47,4 +47,13 @@ describe Version do
     end
   end
 
+  describe "#books" do
+    it "returns a hash of books with chapter and verse counts" do
+      kjv = Version.find("kjv")
+      kjv.books.count.should == 66
+      kjv.books["gen"].chapters.should == 50
+      kjv.books["gen"].chapter[1].verses.should == 31
+    end
+  end
+
 end

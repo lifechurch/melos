@@ -27,15 +27,41 @@ describe Reference do
     end
   end
 
-  describe "#string" do
-    it "returns an OSIS string" do
-      @full_ref.string.should == "gen.1.1.kjv"
+  describe "#merge" do
+    it "returns a new reference with the argument merged into the old one" do
+      @full_ref.merge(book: "exod").osis.should == "exod.1.1.kjv"
+    end
+  end
+
+  describe "#merge!" do
+    it "merges the arg into the existing reference object" do
+      ref = Reference.new("gen.1.1.kjv")
+      ref.merge!(book: "exod")
+      ref.osis.should == "exod.1.1.kjv"
+    end
+  end
+
+  describe "#to_s" do
+    it "returns a human string" do
+      @full_ref.to_s.should == "Genesis 1:1 (KJV)"
     end
   end
 
   describe "#hash" do
     it "returns an OSIS hash" do
       @full_ref.hash.should == {book: "gen", chapter: 1, verse: 1, version: "kjv"}
+    end
+  end
+
+  describe "to_param" do
+    it "parameterizes itself as a string" do
+      @full_ref.to_param.should == "gen.1.1.kjv"
+    end
+  end
+
+  describe "[]" do
+    it "indexes like a hash" do
+      @full_ref[:book].should == "gen"
     end
   end
 
