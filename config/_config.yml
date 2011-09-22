@@ -11,3 +11,4 @@ test: &test
 production:
 
 demo: *test
+staging: *test
