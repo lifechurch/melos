@@ -1,5 +1,7 @@
 YouversionWeb::Application.routes.draw do
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
+  resources 'versions', :only => [:index, :show]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

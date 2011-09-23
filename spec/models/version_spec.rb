@@ -56,4 +56,27 @@ describe Version do
     end
   end
 
+  describe "#to_s" do
+    it "returns the version name and abbreviation" do
+      Version.find("kjv").to_s.should == "King James Version (KJV)"
+    end
+  end
+
+  describe "#to_param" do
+    it "params itself with a lowercase abbreviation" do
+      Version.find("msg").to_param.should == "msg"
+    end
+  end
+
+  describe "#copyright" do
+    it "should return the short copyright" do
+      Version.find("msg").copyright.should include "Eugene H. Peterson by NavPress Publishing"
+    end
+  end
+
+  describe "#info" do
+    it "should return the version info and copyright" do
+      Version.find("msg").info.should include "Language changes. New words are formed."
+    end
+  end
 end

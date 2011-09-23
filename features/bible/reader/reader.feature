@@ -1,6 +1,6 @@
 Feature: Reader view (homepage)
   In order to: Read the Bible
-  As a:        User (registered or not)
+  As a:        Visitor
   I want to:   Select and view a selection of Bible text.
 
   @live @reader @bible_text @bible_copyright

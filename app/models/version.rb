@@ -1,6 +1,7 @@
 class Version
   @@versions_api_data = nil
   @@books_api_data = {}
+  @@info_api_data = {}
   @@versions = {}
   @@books = {}
   @@version_books = {}
@@ -56,6 +57,22 @@ class Version
     @books ||= books_list(@version)
   end
 
+  def to_s
+    "#{@data.title} (#{@version.upcase})"
+  end
+
+  def to_param
+    @version
+  end
+
+  def copyright
+    @copyright ||= @data.copyright
+  end
+
+  def info
+    info_api_data(@version).copyright
+  end
+
   private
 
   def self.books_list(version)
@@ -98,5 +115,14 @@ class Version
 
   def versions_api_data
     self.class.versions_api_data
+  end
+
+  def self.info_api_data(version)
+    @@info_api_data[version] = YvApi.get("bible/copyright", version: version) unless @@info_api_data.has_key?(version)
+    @@info_api_data[version]
+  end
+
+  def info_api_data(version)
+    self.class.info_api_data(version)
   end
 end
