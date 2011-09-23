@@ -12,6 +12,12 @@ module NavigationHelpers
       '/'
     when /^the bible page \"(.*)\"$/
       bible_path(reference: $1)
+    when /^the versions page$/
+      versions_path
+    when /^the signup page$/
+      sign_up_path
+    when /^the version page for \"(.*)\"$/
+      version_path $1
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

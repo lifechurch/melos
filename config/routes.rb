@@ -1,5 +1,19 @@
 YouversionWeb::Application.routes.draw do
+  # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
+  resources 'versions', :only => [:index, :show]
+  # Users
+  resources 'users', :except => [:new, :create]
+  match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
+  match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
+  match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
+  # Sessions
+  match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
+  match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
+  match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
+  
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

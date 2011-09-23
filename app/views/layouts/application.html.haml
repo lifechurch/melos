@@ -1,0 +1,16 @@
+!!! 5
+%html
+  %head
+    %title YouversionWeb
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    - flash.each do |key, msg|
+      %div{id: key}= msg
+    - if current_username
+      %p= "Signed in as #{current_username}"
+      %p= link_to "Sign out", sign_out_path
+    - else
+      %p= link_to "Sign in", sign_in_path
+    = yield

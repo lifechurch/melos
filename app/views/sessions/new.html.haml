@@ -1,0 +1,6 @@
+= form_tag sign_in_path do
+	= label_tag :username
+	= text_field_tag :username, params[:username]
+	= label_tag :password
+	= password_field_tag :password, params[:password]
+	= submit_tag "Sign in"

@@ -1,0 +1,42 @@
+require 'digest/md5'
+
+
+class User
+  extend ActiveModel::Naming
+  include ActiveModel::Conversion
+  def persisted?
+    false
+  end
+
+  attr_reader :errors
+
+  def initialize(params = {})
+    params[:agree] = true if params[:agree]
+    reg_data = {email: "", username: "", password: "", verified: false, agree: false}
+    reg_data.merge! params
+    reg_data.each do |k,v|
+      # Create instance variable
+      self.instance_variable_set("@#{k}", v)
+      # Create the getter
+      self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")})
+      # Create the setter
+      self.class.send(:define_method, "#{k}=", proc{|v| self.instance_variable_set("@#{k}", v)})
+    end
+  end
+
+
+  def save
+    @token = Digest::MD5.hexdigest(@username + '.Yv6-' + @password)
+    # ugh
+    hash = {email: @email, username: @username, password: @password, verified: @verified, agree: @agree, token: @token}
+    response = YvApi.post('users/create', hash) do |errors|
+      @errors = errors.map { |e| e["error"] }
+      return false
+    end
+    response
+  end
+
+  def self.authenticate(username, password)
+    response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }
+  end
+end

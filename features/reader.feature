@@ -1,9 +1,9 @@
 Feature: Reader view (homepage)
   In order to: Read the Bible
-  As a:        User (registered or not)
+  As a:        Visitor
   I want to:   Select and view a selection of Bible text.
 
-  @live @reader @bible_text @bible_copyright
+  @bible
   Scenario: Showing some Bible text
     # Given a bookmark on Genesis 1:3
     # And a note on Genesis 1:5
@@ -15,7 +15,7 @@ Feature: Reader view (homepage)
     # And i should see related bookmarks
     # and i should see related notes
 
-  @live @reader @version_selector
+  @bible
   Scenario: Changing the value of the version selector
     When I go to the bible page "gen.1.niv"
     Then I should see "King James Version (KJV)" within the version selector
@@ -27,7 +27,7 @@ Feature: Reader view (homepage)
     And "DRA" should be selected within the version selector
     # And I should see "Tobit" within the book selector
 
-  @live @reader @book_chapter
+  @bible
   Scenario: Selecting a book and chapter
     When I go to the bible page "gen.1.niv"
     Then "Gen" should be selected within the book selector

@@ -31,9 +31,9 @@ end
 # VCR config (for recording/replaying network)
 
 VCR.config do |c|
-  c.cassette_library_dir = 'fixtures/vcr'
+  c.cassette_library_dir = 'fixtures/vcr/rspec'
   c.stub_with :webmock # or :fakeweb
-  c.default_cassette_options = { record: :new_episodes }
+  c.default_cassette_options = { record: :new_episodes, match_requests_on: [:method, :uri, :body] }
 end
 
 RSpec.configure do |c|

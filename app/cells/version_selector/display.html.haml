@@ -4,5 +4,9 @@
 			= @languages[k]
 			%ul
 				- v.each do |k, v|
-					%li.version{class: k == @reference[:version] ? "selected" : ""}
-						=link_to_unless_current "#{v.title} (#{v.osis.upcase})", bible_path(@reference.merge(version: v.osis))
+					- if @reference
+						%li.version{class: k == @reference[:version] ? "selected" : ""}
+							= link_to_unless_current(v, bible_path(@reference.merge(version: v.osis)))
+					- else
+						%li.version
+							= link_to_unless_current v, version_path(v)
