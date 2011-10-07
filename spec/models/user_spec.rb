@@ -14,7 +14,7 @@ describe User do
   describe ".save" do
     it "returns true for saving valid params" do
       user = User.new(@params)
-      user.save.should be_true
+      user.save.should_not be_false
     end
 
     it "returns false for invalid params" do

@@ -21,7 +21,7 @@ describe YvApi, "GETting the YV API" do
         e[0]["error"].should == "Version is invalid"
         YvApi.get("bible/books", version: "kjv")
       end
-      list[0].human.should == "Genesis"
+      list.first.human.should == "Genesis"
     end
   end
 

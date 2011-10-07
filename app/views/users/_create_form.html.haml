@@ -1,15 +1,21 @@
 = form_for @user, url: sign_up_path do |f|
-	%p
-		= f.label :email, "Email Address:"
-		= f.text_field :email
-	%p
-		= f.label :username, "User name:"
-		= f.text_field :username
-	%p
-		= f.label :password, "Password:"
-		= f.password_field :password
-	%p
-		= f.check_box :agree
-		= f.label :agree, "I agree to the YouVersion terms and conditions."
-	%p
-		= f.submit "Register"
+  - if @user.errors
+    .form_errors
+      The following error(s) prevented creation of your account:
+      %ul
+        - @user.errors.each do |e|
+          %li= e
+  %p
+    = f.label :email, "Email Address:"
+    = f.text_field :email
+  %p
+    = f.label :username, "User name:"
+    = f.text_field :username
+  %p
+    = f.label :password, "Password:"
+    = f.password_field :password
+  %p
+    = f.check_box :agree
+    = f.label :agree, "I agree to the YouVersion terms and conditions."
+  %p
+    = f.submit "Register"
