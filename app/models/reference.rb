@@ -36,12 +36,8 @@ class Reference
     osis
   end
 
-  def text
-    @text ||= parse_contents(:text)
-  end
-
-  def html
-    @html ||= parse_contents(:html)
+  def contents
+    @contents ||= parse_contents
   end
 
   def copyright
@@ -69,26 +65,22 @@ class Reference
   end
   private
 
-  # Because there are two formats, text and html, this api wrapper
-  # takes a symbol argument for the format (either :html or :text)
-  def api_data(format = :html)
-    # hard-coding to :html in the case when no format is passed (like for
-    # human, etc where it doesn't matter).
-    format = :html_basic if format == :html
+  def api_data
     api_type = @ref[:verse] ? 'verse' : 'chapter'
+    format = api_type == 'verse' ? 'text' : 'html'
     @api_data[:format] ||= YvApi.get("bible/#{api_type}",
                                       format: format,
                                       version: @ref[:version],
                                       reference: @ref.except(:version).to_osis_string)
   end
 
-  def parse_contents(format)
+  def parse_contents
     if @ref[:verse]
       # then it's a verse range; use the verse style
-      api_data(format).items.map { |a| a.data.content }
+      api_data.items.map { |a| a.data.content }
     else
       # It's a chapter
-      api_data(format)[0].data.request.content.map(&:content)
+      [api_data[0].data.request.content]
     end
   end
 end

@@ -65,21 +65,19 @@ describe Reference do
     end
   end
 
-  describe "#text" do
+  describe "#contents" do
     it "returns the text of a single verse" do
-      @full_ref.text[0].should == "In the beginning God created the heaven and the earth."
+      @full_ref.contents.first.should == "In the beginning God created the heaven and the earth."
     end
 
-    it "returns a chapter full of text verses" do
-      @array = Reference.new("gen.1.kjv").text
-      @array.count.should == 31
-      @array[0].should == "In the beginning God created the heaven and the earth."
+    it "returns an array of plain text verses for a verse range" do
+      @array = Reference.new("gen.1.1-3.kjv").contents
+      @array.count.should == 3
+      @array.first.should == "In the beginning God created the heaven and the earth."
     end
-  end
 
-  describe "#html" do
-    it "returns the html for a single verse" do
-      @full_ref.html[0].should == '<span class="verse" id="Gen_1_1"><strong class="verseno">1</strong>&nbsp;In the beginning God created the heaven and the earth.</span>'
+    it "returns the html for a chapter" do
+      Reference.new("gen.1.kjv").contents.first.should include '<h1 class="Gen_1">Genesis 1</h1>'
     end
   end
 
