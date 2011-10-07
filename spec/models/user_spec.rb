@@ -11,6 +11,24 @@ describe User do
                locale: "en_US" }
   end
 
+  describe "#attributes" do
+    before :each do
+      @fake_user = User.new({alpha: "foo", beta: "bar", gamma: "baz"})
+    end
+
+    it "hashifies all the instance variables without an argument" do
+      @fake_user = User.new({alpha: "foo", beta: "bar", gamma: "baz"})
+      all_attrs = @fake_user.attributes
+      all_attrs[:alpha].should == "foo"
+      all_attrs[:beta].should == "bar"
+      all_attrs[:gamma].should == "baz"
+    end
+
+    it "hashifies a few instance variables from passed symbols" do
+      @fake_user.attributes(:alpha, :beta).should == {alpha: "foo", beta: "bar"}
+    end
+  end
+
   describe ".save" do
     it "returns true for saving valid params" do
       user = User.new(@params)

@@ -8,11 +8,12 @@ class User
     false
   end
 
-  def attributes(array = [])
-    array = self.instance_variables if array = []
+  def attributes(*args)
+    array = args
+    array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
     attrs = {}
     array.each do |var|
-      attrs[var.to_s.gsub("@", "").to_sym] = instance_variable_get(var)
+      attrs[var] = instance_variable_get("@#{var}")
     end
     attrs
   end
@@ -36,7 +37,7 @@ class User
 
   def save
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
-    response = YvApi.post('users/create', attributes([@email, @username, @password, @verified, @agree, @token])) do |errors|
+    response = YvApi.post('users/create', attributes(:email, :username, :password, :verified, :agree, :token)) do |errors|
       @errors = errors.map { |e| e["error"] }
       return false
     end
