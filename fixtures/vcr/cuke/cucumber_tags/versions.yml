@@ -1,0 +1,689 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.yvdev.com:443/2.3/bible/versions.json?type=all
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 07 Oct 2011 17:53:01 GMT
+      content-type:
+      - text/html
+      content-length:
+      - '185'
+      connection:
+      - keep-alive
+      location:
+      - http://api.yvdev.com/2.3/bible/versions.json?type=all
+    body: ! "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+      bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/0.7.67</center>\r\n</body>\r\n</html>\r\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/versions.json?type=all
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 07 Oct 2011 17:53:01 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"order":["afr83","db","nlv","asvd","nav","sab","wbar","bg1871","bg1940","vbg","wbbg","b21","csbkr","snc","bdan","da1871","delut","elb","elb71","gantp","hfa","ngu2011-deu","sch2000-deu","sch51","asv","books-eng","amp","ceb","cev","cpdv","dra","esv","gnt","gntd","gwt","hcsb","kjv","leb","msg","nasb","ncv","net","nirv-eng","niv","niv84","nivuk","nkjv","nlt","ojb","tniv","web","dhh","lbla","nblh","nvi","ntv","rvc","rves","rvr60","rvr95","tla","tlad","wbes","bhnt","nmv-fas","pov-fas","fi1776","finpr","bds","fmar","frdby","lsg","neg79","ost","seg21","sblg","tr1624","tr1894","bhebnt","ckk","kar","bhunnt","wbhu","wa53","bimk","idbar","tb","wbid","igd","itriv","lm","nr06-ita","nr94","ja1955","jlb","klb","krv","korvb","rnksv","mg1865","maor","htb","sv1750","nlbnt","nb","norsk","pbg","psz","pubg-pol","potl","aa","arc","ntlh","nvi-por","tb-por","wbpt","mtds","ntr","vdc","vdcc","cars-rus","rsz","rursv","ruvz","wbru","ssv","bsn-sna","kqa","albb","wbsr","bsv","sfb","sk73","sven","hnv","suv","tncv-tha","bthai-tha","thsv","tkjv","wbth","tlab","ubio","ukrk","wbuk","ugv","bd2011-vie","vi1934","wbvi","ccb","cunpss","cunpsd-cmn","cnvs","csb","cuvs","rcuvss","cnv","cunp","cuv","rcuv","ziv","acc","accnt"],"versions":{"afr83":{"title":"Afrikaans
+      1983 Translation","url":"http:\/\/www.biblesociety.co.za","language":{"iso":"af","human":"Afrikaans"},"booklist":"afr83","copyright":"(c)
+      Bible Society of South Africa","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"db":{"title":"Die
+      Boodskap","url":"","language":{"iso":"af","human":"Afrikaans"},"booklist":"db","copyright":"2002.
+      Gebruik met toestemming van Christelike Uitgewersmaatskappy,Posbus 1599, Vereeniging,
+      1930. Alle regte voorbehou.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"nlv":{"title":"Nuwe
+      Lewende Vertaling","url":"","language":{"iso":"af","human":"Afrikaans"},"booklist":"nlv","copyright":"2006
+      Christlike Uitgewersmaatskappy, Posbus 1599, Vereeniging, 1930, Eerste uitgawe
+      2006, Tweede uitgawe 2011","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"asvd":{"title":"\u0627\u0644\u0643\u062a\u0627\u0628
+      \u0627\u0644\u0645\u0642\u062f\u0633 \u062a\u0631\u062c\u0645\u0629 \u0641\u0627\u0646\u062f\u064a\u0643
+      \u0648\u0633\u0645\u064a\u062b","url":"","language":{"iso":"ar","human":"\u0627\u0644\u0639\u0631\u0628\u064a\u0629"},"booklist":"ar","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"rtl"},"nav":{"title":"\u0643\u062a\u0627\u0628
+      \u0627\u0644\u062d\u064a\u0627\u0629","url":"","language":{"iso":"ar","human":"\u0627\u0644\u0639\u0631\u0628\u064a\u0629"},"booklist":"nav","copyright":"1988,
+      1997 by International Bible Society\u00ae. Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"rtl"},"sab":{"title":"\u0627\u0644\u0643\u062a\u0627\u0628
+      \u0627\u0644\u0634\u0631\u064a\u0641","url":"","language":{"iso":"ar","human":"\u0627\u0644\u0639\u0631\u0628\u064a"},"booklist":"ar","copyright":"Alketab
+      Asharif, used by permission of International Sharif Bible Society","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"false","audio":"false","text_direction":"rtl"},"wbar":{"title":"Arabic
+      Bible","url":"http:\/\/www.wbtc.com","language":{"iso":"ar","human":"\u0627\u0644\u0639\u0631\u0628\u064a\u0629"},"booklist":"wbar","copyright":"World
+      Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"rtl"},"bg1871":{"title":"Bulgarian
+      1871","url":"","language":{"iso":"bg","human":"\u0431\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438
+      \u0435\u0437\u0438\u043a"},"booklist":"bg1871","copyright":"Copyright \u00a9
+      2008-2011, Text Revision \u00a9Bibliata.com & Duh-i-istina.net, Computer typesetting
+      \u00a9 Bibles.org.uk","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bg1940":{"title":"\u0420\u0435\u0432\u0438\u0437\u0438\u0440\u0430\u043d","url":"","language":{"iso":"bg","human":"\u0431\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438
+      \u0435\u0437\u0438\u043a"},"booklist":"bg","copyright":"Bibliata.com","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"vbg":{"title":"Veren
+      Bulgarian","url":"","language":{"iso":"bg","human":"\u0431\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438
+      \u0435\u0437\u0438\u043a"},"booklist":"vbg","copyright":"All rights reserved
+      (c) 2010.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"wbbg":{"title":"Bulgarian
+      New Testament","url":"http:\/\/www.wbtc.com","language":{"iso":"bg","human":"\u0431\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438
+      \u0435\u0437\u0438\u043a"},"booklist":"wbbg","copyright":"World Bible Translation
+      Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"b21":{"title":"Bible
+      21","url":"","language":{"iso":"cs","human":"\u010desky"},"booklist":"b21","copyright":"Bible,
+      p\u0159eklad 21. stolet\u00ed \u00a9 2009 BIBLION, o.s., Kroc\u00ednovsk\u00e1
+      6, 160 00 Praha 6.  Pou\u017eito se svolen\u00edm vydavatele. V\u0161echna","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"csbkr":{"title":"Bible
+      Kralick\u00e1 1613","url":"","language":{"iso":"cs","human":"\u010desky"},"booklist":"csbkr","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"snc":{"title":"Slovo
+      na cestu","url":"","language":{"iso":"cs","human":"\u010desky"},"booklist":"snc","copyright":"1988,
+      2000 by International Bible Society\u00ae Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"bdan":{"title":"Bibelen
+      p\u00e5 hverdagsdansk","url":"","language":{"iso":"da","human":"Dansk"},"booklist":"bdan","copyright":"2002,
+      2006 by International Bible Society\u00ae. Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"da1871":{"title":"Danske
+      Bibel 1871","url":"","language":{"iso":"da","human":"Dansk"},"booklist":"da1871","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"delut":{"title":"Luther
+      Bible 1912","url":"","language":{"iso":"de","human":"Deutsch"},"booklist":"delut","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"elb":{"title":"Elberfelder
+      1905","url":"","language":{"iso":"de","human":"Deutsch"},"booklist":"elb","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"elb71":{"title":"Elberfelder
+      1871","url":"","language":{"iso":"de","human":"Deutsch"},"booklist":"elb71","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"gantp":{"title":"Albrecht
+      NT und Psalmen","url":"","language":{"iso":"de","human":"Deutsch"},"booklist":"gantp","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"hfa":{"title":"Hoffnung
+      f\u00fcr Alle","url":"","language":{"iso":"de","human":"Deutsch"},"booklist":"hfa","copyright":"1983
+      by Biblica\u2122 Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"ngu2011-deu":{"title":"Neue
+      Genfer \u00dcbersetzung","url":"http:\/\/www.bibelgesellschaft.com\/de","language":{"iso":"de","human":"Deutsch"},"booklist":"ngu2011-deu","copyright":"2011
+      Genfer Bibelgesellschaft","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"sch2000-deu":{"title":"Schlachter
+      2000","url":"http:\/\/www.bibelgesellschaft.com\/de","language":{"iso":"de","human":"Deutsch"},"booklist":"sch2000-deu","copyright":"2000
+      Genfer Bibelgesellschaft","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"sch51":{"title":"Schlachter
+      1951","url":"","language":{"iso":"de","human":"Deutsch"},"booklist":"sch51","copyright":"1951
+      Genfer Bibelgesellschaft","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"asv":{"title":"American
+      Standard Version","url":"","language":{"iso":"en","human":"English"},"booklist":"asv","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"books-eng":{"title":"The
+      Books of the Bible NT","url":"http:\/\/www.biblica.com","language":{"iso":"en","human":"English"},"booklist":"books-eng","copyright":"2011
+      by Biblica, Inc.\u2122","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"amp":{"title":"Amplified
+      Bible","url":"http:\/\/www.amplifiedbible.com","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"1954,
+      1958, 1962, 1964, 1965, 1987 by The Lockman Foundation","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"ceb":{"title":"Common
+      English Bible","url":"","language":{"iso":"en","human":"English"},"booklist":"ceb","copyright":"2011
+      Common English Bible. All rights reserved.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"cev":{"title":"Contemporary
+      English Version","url":"http:\/\/www.americanbible.org","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"1995
+      by American Bible Society","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"cpdv":{"title":"Catholic
+      Public Domain Version","url":"","language":{"iso":"en","human":"English"},"booklist":"cpdv","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"dra":{"title":"Douay
+      Rheims","url":"","language":{"iso":"en","human":"English"},"booklist":"dra","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"esv":{"title":"English
+      Standard Version","url":"http:\/\/www.esv.org","language":{"iso":"en","human":"English"},"booklist":"esv","copyright":"2001
+      by Crossway Bibles, a division of Good News Publishers","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"gnt":{"title":"Good
+      News Translation","url":"http:\/\/www.americanbible.org","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"Scripture
+      taken from the Good News Translation (r) (Today''s English Version, Second Edition)
+      Copyright (c) 1992 American Bible Society. Used by Permission.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"3","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"gntd":{"title":"English
+      Good News Translation","url":"http:\/\/www.americanbible.org","language":{"iso":"en","human":"English"},"booklist":"gntd","copyright":"(c)
+      American Bible Society","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"6","max_offline_build":"6","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"gwt":{"title":"GOD''S
+      WORD Translation","url":"http:\/\/www.godswordtranslation.org","language":{"iso":"en","human":"English"},"booklist":"gwt","copyright":"1995
+      by God''s Word to the Nations","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"hcsb":{"title":"Holman
+      Christian Standard Bible","url":"http:\/\/hcsb.org","language":{"iso":"en","human":"English"},"booklist":"hcsb","copyright":"1999,
+      2000, 2002, 2003, 2009 by Holman Bible Publishers, Nashville Tennessee. All
+      rights reserved","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"kjv":{"title":"King
+      James Version","url":"","language":{"iso":"en","human":"English"},"booklist":"kjv","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"leb":{"title":"Lexham
+      English Bible","url":"","language":{"iso":"en","human":"English"},"booklist":"leb","copyright":"2010
+      Logos Bible Software. Lexham is a registered trademark of Logos Bible Software","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"msg":{"title":"The
+      Message","url":"http:\/\/www.navpress.com","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"1993,
+      1994, 1995, 1996, 2000, 2001, 2002 Eugene H. Peterson by NavPress Publishing","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nasb":{"title":"New
+      American Standard Bible","url":"http:\/\/www.nasbible.com","language":{"iso":"en","human":"English"},"booklist":"nasb","copyright":"1960,
+      1962, 1963, 1968, 1971, 1972, 1973, 1975, 1977, 1995 by The Lockman Foundation","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"4","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"ncv":{"title":"New
+      Century Version","url":"http:\/\/www.thomasnelson.com","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"2005
+      by Thomas Nelson, Inc.  All rights reserved.  Used by permission.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"net":{"title":"New
+      English Translation","url":"","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"1996
+      - 2007 by Biblical Studies Press, LLC","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nirv-eng":{"title":"New
+      International Reader''s Version","url":"http:\/\/www.biblica.com","language":{"iso":"en","human":"English"},"booklist":"nirv-eng","copyright":"1995,
+      1996, 1998 by International Bible Society\u00ae. Used by permission. All rights
+      reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"niv":{"title":"NIV","url":"","language":{"iso":"en","human":"English"},"booklist":"niv","copyright":"Holy
+      Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica,
+      Inc. Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"niv84":{"title":"NIV
+      1984","url":"","language":{"iso":"en","human":"English"},"booklist":"niv","copyright":"1973,
+      1978, 1984 by Biblica, Inc. Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"nivuk":{"title":"New
+      International Version Anglicized","url":"","language":{"iso":"en","human":"English"},"booklist":"nivuk","copyright":"1979,
+      1984 by International Bible Society \u00a9, Used by Permission. All rights reserved
+      worldwide","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nkjv":{"title":"New
+      King James Version","url":"http:\/\/www.thomasnelson.com","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"1982
+      by Thomas Nelson, Inc.  All rights reserved.  Used by permission.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nlt":{"title":"New
+      Living Translation","url":"http:\/\/www.newlivingtranslation.com","language":{"iso":"en","human":"English"},"booklist":"nlt","copyright":"Holy
+      Bible, New Living Translation copyright 1996, 2004, 2007 by Tyndale house Foundation.
+      Used by permission of Tyndale House Publishers, Inc., Carol Stream, Illinois,
+      60188. All rights reserved.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"ojb":{"title":"Orthodox
+      Jewish Bible","url":"","language":{"iso":"en","human":"English"},"booklist":"ojb","copyright":"2002,2003,2008,2010,2011
+      by Artists for Israel International, Inc. Used by permission. All rights reserved.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"tniv":{"title":"TNIV","url":"","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"Holy
+      Bible, Today''s New International Version, TNIV. Copyright 2001, 2005 by Biblica,
+      Inc. Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"web":{"title":"World
+      English Bible","url":"","language":{"iso":"en","human":"English"},"booklist":"web","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"dhh":{"title":"Dios
+      Habla Hoy Con Deuterocan\u03ccnicos","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"dhh","copyright":"Sociedades
+      Biblicas Unidas, 1966, 1970, 1979, 1983,1996.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"lbla":{"title":"La
+      Biblia de las Americas","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"lbla","copyright":"1986,
+      1995, 1997 by The Lockman Foundation","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"nblh":{"title":"Nueva
+      Biblia Latinoamericana de Hoy","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"es","copyright":"1986,
+      1995, 1997, 2005 by The Lockman Foundation","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nvi":{"title":"Nueva
+      Version Internacional","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"es","copyright":"La
+      Santa Biblia, Nueva Versi\u00f3n Internacional NVI. Copyright 1999 by Biblica,
+      Inc. Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"ntv":{"title":"Nueva
+      Traducci\u03ccn Viviente","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"ntv","copyright":"Santa
+      Biblia, Nueva Traducci\u03ccn Viviente, \u00a9 2008,2009 Tyndale House Foundation.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"rvc":{"title":"Reina
+      Valera Contempor\u00e1nea","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"rvc","copyright":"Sociedades
+      Biblicas Unidas, 2009, 2010","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"rves":{"title":"Reina-Valera
+      Antigua","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"es","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"rvr60":{"title":"Reina-Valera
+      1960","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"es","copyright":"El
+      texto Biblico ha sido tomado de la version Reina-Valera \u00a9 1960 Sociedades
+      Biblicas en America Latina; \u00a9 renovado 1988 Sociedades Biblicas Unidas.
+      Utilizado con permiso.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"rvr95":{"title":"Reina
+      Valera 1995","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"rvr95","copyright":"Sociedades
+      Biblicas Unidas, 1995","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"tla":{"title":"Traducci\u03ccn
+      En Lenguaje Actual","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"tla","copyright":"\u00a9
+      Sociedades Biblicas Unidas, 2002, 2004","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"tlad":{"title":"Traducci\u03ccn
+      En Lenguaje Actual con Deuterocan\u00f3nicos","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"tlad","copyright":"\u00a9
+      Sociedades Biblicas Unidas, 2002, 2004","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"wbes":{"title":"Spanish
+      NT","url":"","language":{"iso":"es","human":"Espa\u00f1ol"},"booklist":"wbes","copyright":"2006
+      by World Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"bhnt":{"title":"Navarro-Labourdin
+      Basque NT","url":"","language":{"iso":"eu","human":"Euskara"},"booklist":"bhnt","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nmv-fas":{"title":"New
+      Millenium Version","url":"http:\/\/www.elam.com","language":{"iso":"fa","human":"\u0641\u0627\u0631\u0633\u06cc"},"booklist":"nmv-fas","copyright":"2011
+      Elam Ministries","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"rtl"},"pov-fas":{"title":"Persian
+      Old Version","url":"http:\/\/www.elam.com","language":{"iso":"fa","human":"\u0641\u0627\u0631\u0633\u06cc"},"booklist":"pov-fas","copyright":"2011
+      Elam Ministries","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"rtl"},"fi1776":{"title":"Finnish
+      1776","url":"","language":{"iso":"fi","human":"Suomi"},"booklist":"fi1776","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"finpr":{"title":"Finnish
+      1938","url":"","language":{"iso":"fi","human":"Suomi"},"booklist":"finpr","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bds":{"title":"La
+      Bible Du Semeur","url":"","language":{"iso":"fr","human":"Fran\u00e7ais"},"booklist":"bds","copyright":"1992,
+      1999 by International Bible Society\u00ae, Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"fmar":{"title":"Martin
+      1744","url":"","language":{"iso":"fr","human":"Fran\u00e7ais"},"booklist":"fmar","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"frdby":{"title":"Bible
+      Darby en fran\u00e7ais","url":"","language":{"iso":"fr","human":"Fran\u00e7ais"},"booklist":"fr","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"lsg":{"title":"Louis
+      Segond 1910","url":"","language":{"iso":"fr","human":"Fran\u00e7ais"},"booklist":"fr","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"neg79":{"title":"Nouvelle
+      Edition de Gen\u00e8ve 1979","url":"","language":{"iso":"fr","human":"Fran\u00e7ais"},"booklist":"neg79","copyright":"1979
+      Soci\u00e9t\u00e9 Biblique de Gen\u00e8ve, Reproduit avec aimable autorisation.
+      Tous droits r\u00e9serv\u00e9s.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"ost":{"title":"Ostervald","url":"","language":{"iso":"fr","human":"Fran\u00e7ais"},"booklist":"ost","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"seg21":{"title":"Bible
+      Segond 21","url":"","language":{"iso":"fr","human":"Fran\u00e7ais"},"booklist":"seg21","copyright":"2007
+      Soci\u00e9t\u00e9 Biblique de Gen\u00e8ve. Reproduit avec aimable autorisation.
+      Tous droits r\u00e9serv\u00e9s.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"sblg":{"title":"SBL
+      Greek New Testament","url":"","language":{"iso":"grc","human":"Ancient Greek"},"booklist":"sblg","copyright":"2010
+      Logos Bible Software and the Society of Biblical Literature.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"tr1624":{"title":"Elzevir
+      Textus Receptus 1624","url":"","language":{"iso":"grc","human":"Ancient Greek"},"booklist":"tr1624","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"tr1894":{"title":"Scrivener\u2019s
+      Textus Receptus 1894","url":"","language":{"iso":"grc","human":"Ancient Greek"},"booklist":"tr1894","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bhebnt":{"title":"Habrit
+      Hakhadasha\/Haderekh","url":"","language":{"iso":"he","human":"\u05e2\u05b4\u05d1\u05b0\u05e8\u05b4\u05d9\u05ea"},"booklist":"bhebnt","copyright":"1979,
+      2009 by Biblica, Inc.\u2122. Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"rtl"},"ckk":{"title":"Knjiga
+      O Kristu","url":"","language":{"iso":"hr","human":"Hrvatski"},"booklist":"ckk","copyright":"1982,
+      1992, 2000 by International Bible Society\u00ae","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"kar":{"title":"K\u00e1roli
+      1590","url":"","language":{"iso":"hu","human":"Magyar"},"booklist":"hu","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bhunnt":{"title":"Ujsz\u00f6vetseg:
+      elet, igazsag es vilagossag","url":"","language":{"iso":"hu","human":"magyar
+      nyelv"},"booklist":"bhunnt","copyright":"2003 by International Bible Society\u00ae.
+      Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"wbhu":{"title":"Hungarian
+      New Testament","url":"http:\/\/www.wbtc.com","language":{"iso":"hu","human":"magyar
+      nyelv"},"booklist":"wbhu","copyright":"World Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"wa53":{"title":"Western
+      Armenian NT","url":"","language":{"iso":"hy","human":"\u0540\u0561\u0575\u0565\u0580\u0565\u0576"},"booklist":"wa53","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bimk":{"title":"Bahasa
+      Indonesia Masa Kini","url":"http:\/\/www.alkitab.or.id","language":{"iso":"id","human":"Bahasa
+      Indonesia"},"booklist":"bimk","copyright":"(c) Indonesian Bible Society","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"idbar":{"title":"Terjemahan
+      Baru","url":"","language":{"iso":"id","human":"Bahasa Indonesia"},"booklist":"idbar","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"tb":{"title":"Indonesian
+      Terjemahan Baru","url":"http:\/\/www.alkitab.org.id","language":{"iso":"id","human":"Bahasa
+      Indonesia"},"booklist":"tb","copyright":"(c) Indonesian Bible Society 1974","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"4","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"wbid":{"title":"Indonesian
+      NT","url":"","language":{"iso":"id","human":"Bahasa Indonesia"},"booklist":"wbid","copyright":"2006
+      by World Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"igd":{"title":"Giovanni
+      Diodati Bibbia","url":"","language":{"iso":"it","human":"Italiano"},"booklist":"igd","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"itriv":{"title":"Italian
+      Riveduta 1927","url":"","language":{"iso":"it","human":"Italiano"},"booklist":"itriv","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"lm":{"title":"La
+      Parola \u00e8 Vita","url":"","language":{"iso":"it","human":"Italiano"},"booklist":"lm","copyright":"1997
+      by International Bible Society\u00ae. Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"true","text_direction":"ltr"},"nr06-ita":{"title":"Nuova
+      Riveduta 2006","url":"http:\/\/www.bibelgesellschaft.com","language":{"iso":"it","human":"Italiano"},"booklist":"nr06-ita","copyright":"2006
+      Societ\u00e0 Biblica di Ginevra","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nr94":{"title":"Nuova
+      Riveduta 1994","url":"","language":{"iso":"it","human":"Italiano"},"booklist":"nr94","copyright":"1994
+      Societ\u00e0 Biblica di Ginevra","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"ja1955":{"title":"Colloquial
+      Japanese (1955)","url":"","language":{"iso":"ja","human":"\u65e5\u672c\u8a9e"},"booklist":"ja","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"jlb":{"title":"\u30ea\u30d3\u30f3\u30b0\u30d0\u30a4\u30d6\u30eb","url":"","language":{"iso":"ja","human":"\u65e5\u672c\u8a9e"},"booklist":"jlb","copyright":"1978
+      by International Bible Society\u00ae Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"klb":{"title":"\ud604\ub300\uc778\uc758
+      \uc131\uacbd","url":"","language":{"iso":"ko","human":"\ud55c\uad6d\uc5b4"},"booklist":"ko","copyright":"Korean
+      Living Bible Copyright \u00a9 1985 by International Bible Society\u00ae Used
+      by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"krv":{"title":"\uac1c\uc5ed\ud55c\uae00","url":"","language":{"iso":"ko","human":"\ud55c\uad6d\uc5b4"},"booklist":"krv","copyright":"Korean
+      Bible Society 1961","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"korvb":{"title":"\uac1c\uc5ed\ud55c\uae00","url":"","language":{"iso":"ko","human":"\ud55c\uad6d\uc5b4"},"booklist":"korvb","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"rnksv":{"title":"\uc0c8\ubc88\uc5ed","url":"http:\/\/www.koreanbible.or.kr","language":{"iso":"ko","human":"\ud55c\uad6d\uc5b4"},"booklist":"rnksv","copyright":"(c)
+      Korean Bible Society","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"mg1865":{"title":"Malagasy
+      Bible","url":"","language":{"iso":"mg","human":"Malagasy"},"booklist":"mg1865","copyright":"","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"maor":{"title":"Maori
+      Bible","url":"","language":{"iso":"mi","human":"te reo M\u0101ori"},"booklist":"maor","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"htb":{"title":"Het
+      Boek","url":"http:\/\/biblica.com","language":{"iso":"nl","human":"Nederlands"},"booklist":"htb","copyright":"Copyright
+      \u00a9 1979, 1988, 2007 by International Bible Society\u00ae Used by permission.
+      All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"sv1750":{"title":"Statenvertaling","url":"","language":{"iso":"nl","human":"Nederlands"},"booklist":"nl","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nlbnt":{"title":"En
+      Levende Bok: Det Nye Testamentet","url":"","language":{"iso":"no","human":"Norsk"},"booklist":"nlbnt","copyright":"1978,
+      1988 by International Bible Society\u00ae Used by permission.  All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"nb":{"title":"Norsk
+      Bibel 88\/07","url":"","language":{"iso":"no","human":"Norsk"},"booklist":"no","copyright":"Norsk
+      Bibel AS","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"norsk":{"title":"Det
+      Norsk Bibelselskap 1930","url":"","language":{"iso":"no","human":"Norsk"},"booklist":"no","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"pbg":{"title":"Biblia
+      Gda\u0144ska","url":"","language":{"iso":"pl","human":"Polski"},"booklist":"pbg","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"psz":{"title":"S\u0142owo
+      \u017bycia","url":"","language":{"iso":"pl","human":"Polski"},"booklist":"psz","copyright":"1991,
+      2005 by International Bible Society\u00ae Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"pubg-pol":{"title":"Uwsp\u00f3\u0142cze\u015bniona
+      Biblia Gda\u0144ska","url":"","language":{"iso":"pl","human":"j\u0119zyk polski"},"booklist":"pubg-pol","copyright":"Gate
+      of Hope Foundation","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"potl":{"title":"Matthew
+      and Acts","url":"","language":{"iso":"pot","human":"Potawatomi"},"booklist":"potl","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"aa":{"title":"Almeida
+      Atualizada","url":"","language":{"iso":"pt","human":"Portugu\u00eas"},"booklist":"pt","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"arc":{"title":"Tradu\u00e7\u00e3o
+      Revista e Corrigida de Jo\u00e3o Ferreira de Almeida","url":"http:\/\/www.sbb.org.br","language":{"iso":"pt","human":"Portugu\u00eas"},"booklist":"arc","copyright":"(c)
+      Brazilian Bible Society 2009","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"ntlh":{"title":"Tradu\u00e7\u00e3o
+      na Linguagem de Hoje","url":"http:\/\/www.sbb.org.br","language":{"iso":"pt","human":"Portugu\u00eas"},"booklist":"ntlh","copyright":"(c)
+      Brazil Bible Society","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"3","verse_ranges":"true","facebook":"true","audio":"true","text_direction":"ltr"},"nvi-por":{"title":"Nova
+      Vers\u00e3o Internacional","url":"http:\/\/biblica.com","language":{"iso":"pt","human":"Portugu\u00eas"},"booklist":"nvi-por","copyright":"2003
+      by International Bible Society\u00ae. Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"tb-por":{"title":"Tradu\u00e7\u00e3o
+      Brasileira (A Brazilian Translation), 2nd edition","url":"http:\/\/www.sbb.org.br","language":{"iso":"pt","human":"Portugu\u00eas"},"booklist":"tb-por","copyright":"(c)
+      Bible Society of Brazil","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"wbpt":{"title":"Brazilian
+      Portuguese NT","url":"","language":{"iso":"pt","human":"Portugu\u00eas"},"booklist":"wbpt","copyright":"2006
+      by World Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"mtds":{"title":"Mushuj
+      Testamento Diospaj Shimi (Quichua-Chimborazo New Testament)","url":"","language":{"iso":"que","human":"Quichua-Chimborazo"},"booklist":"mtds","copyright":"2010
+      by Biblica, Inc.\u2122 Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"ntr":{"title":"Noua
+      Traducere \u00een limba Rom\u00e2n\u0103","url":"","language":{"iso":"ro","human":"Rom\u00e2n\u0103"},"booklist":"ntr","copyright":"2006
+      by International Bible Society\u00ae Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"vdc":{"title":"Versiunea
+      Dumitru Cornilescu","url":"","language":{"iso":"ro","human":"Rom\u00e2n\u0103"},"booklist":"vdc","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"vdcc":{"title":"Versiunea
+      Dumitru Cornilescu Corectat\u0103","url":"","language":{"iso":"ro","human":"Rom\u00e2n\u0103"},"booklist":"vdcc","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"cars-rus":{"title":"Central
+      Asian Russian Scriptures","url":"http:\/\/www.biblica.com","language":{"iso":"ru","human":"Pycc\u043a\u0438\u0439"},"booklist":"cars-rus","copyright":"????
+      by International Bible Society\u00ae. Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"rsz":{"title":"Slovo
+      Zhizny","url":"","language":{"iso":"ru","human":"Pycc\u043a\u0438\u0439"},"booklist":"rsz","copyright":"2006
+      by International Bible Society\u00ae Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"rursv":{"title":"\u0421\u0438\u043d\u043e\u0434\u0430\u043b\u044c\u043d\u044b\u0439
+      \u043f\u0435\u0440\u0435\u0432\u043e\u0434","url":"","language":{"iso":"ru","human":"Pycc\u043a\u0438\u0439"},"booklist":"ru","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"ruvz":{"title":"Russian
+      New Testament by Victor R. Zhuromsky","url":"","language":{"iso":"ru","human":"Pycc\u043a\u0438\u0439"},"booklist":"ruvz","copyright":"","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"wbru":{"title":"Russian
+      New Testament","url":"http:\/\/www.wbtc.com","language":{"iso":"ru","human":"Pycc\u043a\u0438\u0439"},"booklist":"wbru","copyright":"World
+      Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"ssv":{"title":"Sv\u00e4t\u00e9
+      P\u00edsmo - katol\u00edcky preklad","url":"","language":{"iso":"sk","human":"Sloven\u010dina"},"booklist":"ssv","copyright":"SLOVAK
+      CATHOLIC TRANSLATION \u00a9 Spolok sv\u00e4t\u00e9ho Vojtecha, Trnava","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bsn-sna":{"title":"Bhaibheri
+      Dzvene","url":"http:\/\/www.biblica.com","language":{"iso":"sn","human":"Shona"},"booklist":"bsn-sna","copyright":"2003,
+      2006 by International Bible Society\u00ae. Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"kqa":{"title":"Kitaabka
+      Quduuska Ah","url":"","language":{"iso":"so","human":"Somali"},"booklist":"kqa","copyright":"Kitaabka
+      Quduuska Ah \u00a9 Society for International Ministries, 2008","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"albb":{"title":"Albanian
+      Bible","url":"","language":{"iso":"sq","human":"Shqip"},"booklist":"albb","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"wbsr":{"title":"Serbian
+      New Testament","url":"http:\/\/www.wbtc.com","language":{"iso":"sr","human":"\u0441\u0440\u043f\u0441\u043a\u0438"},"booklist":"wbsr","copyright":"World
+      Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bsv":{"title":"Nya
+      Levande Bibeln","url":"","language":{"iso":"sv","human":"Svenska"},"booklist":"bsv","copyright":"1974,
+      1977, 1987, 1995, 2003, 2004 by International Bible Society \u00ae. Used by
+      permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"sfb":{"title":"Svenska
+      Folkbibeln","url":"","language":{"iso":"sv","human":"Svenska"},"booklist":"sfb","copyright":"Old
+      Testament, Copyright (C) 1998, Stiftelsen Svenska Folkbibeln, Stockholm. New
+      Testament, Copyright (C) 1996, 1998,Stiftelsen Svenska Folkbibeln, Stockholm,
+      and Stiftelsen Biblicum, Ljungby","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"sk73":{"title":"Karl
+      XII 1873","url":"","language":{"iso":"sv","human":"Svenska"},"booklist":"sk73","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"sven":{"title":"Svenska
+      1917","url":"","language":{"iso":"sv","human":"Svenska"},"booklist":"sv","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"hnv":{"title":"Kiswahili
+      Bible CLT","url":"http:\/\/www.biblesociety-kenya.org","language":{"iso":"sw","human":"Kiswahili"},"booklist":"hnv","copyright":"(c)
+      Bible Societies of Kenya\/Tanzania","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"suv":{"title":"Biblia
+      ya Kiswahili Toleo la Muungano","url":"","language":{"iso":"sw","human":"Kiswahili"},"booklist":"suv","copyright":"(c)
+      Bible Societies of Kenya\/Tanzania","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"tncv-tha":{"title":"\u0e1e\u0e23\u0e30\u0e04\u0e23\u0e34\u0e2a\u0e15\u0e18\u0e23\u0e23\u0e21\u0e04\u0e31\u0e21\u0e20\u0e35\u0e23\u0e4c\u0e2d\u0e21\u0e15\u0e18\u0e23\u0e23\u0e21\u0e23\u0e48\u0e27\u0e21\u0e2a\u0e21\u0e31\u0e22","url":"http:\/\/www.biblica.com","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"tncv-tha","copyright":"1999,
+      2001, 2007 by International Bible Society\u00ae. Used by permission. All rights
+      reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bthai-tha":{"title":"Biblica
+      Thai","url":"http:\/\/www.biblica.com","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"bthai-tha","copyright":"1999,
+      2001, 2007 by International Bible Society\u00ae. Used by permission. All rights
+      reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"thsv":{"title":"Thai
+      Standard Version Revision","url":"http:\/\/www.thaibible.or.th","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"thsv","copyright":"(c)
+      Thailand Bible Society","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"tkjv":{"title":"\u0e1e\u0e23\u0e30\u0e04\u0e31\u0e21\u0e20\u0e35\u0e23\u0e4c\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22\u0e09\u0e1a\u0e31\u0e1a
+      KJV","url":"","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"tkjv","copyright":"2003,
+      Dr. Philip Pope","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"wbth":{"title":"Thai
+      New Testament","url":"","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"wbth","copyright":"World
+      Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"tlab":{"title":"Ang
+      Biblia","url":"","language":{"iso":"tl","human":"Wikang Tagalog"},"booklist":"tlab","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"ubio":{"title":"\u0411\u0456\u0431\u043b\u0456\u044f
+      \u0432 \u043f\u0435\u0440. \u0406\u0432\u0430\u043d\u0430 \u041e\u0433\u0456\u0454\u043d\u043a\u0430,
+      1962","url":"","language":{"iso":"uk","human":"\u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430"},"booklist":"ubio","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"ukrk":{"title":"\u0411\u0456\u0431\u043b\u0456\u044f
+      \u0432 \u043f\u0435\u0440. \u041f.\u041a\u0443\u043b\u0456\u0448\u0430 \u0442\u0430
+      \u0406.\u041f\u0443\u043b\u044e\u044f, 1905","url":"","language":{"iso":"uk","human":"\u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430"},"booklist":"ukrk","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"wbuk":{"title":"Ukrainian
+      New Testament","url":"http:\/\/www.wbtc.com","language":{"iso":"uk","human":"\u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430"},"booklist":"wbuk","copyright":"World
+      Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"ugv":{"title":"\u0627\u0631\u062f\u0648
+      \u062c\u06cc\u0648 \u0648\u0631\u0698\u0646","url":"","language":{"iso":"ur","human":"\u0627\u0631\u062f\u0648"},"booklist":"ugv","copyright":"2010
+      Geolink Resource Consultants, LLC","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"rtl"},"bd2011-vie":{"title":"Ban
+      Dich 2011","url":"","language":{"iso":"vi","human":"Ti\u1ebfng Vi\u1ec7t"},"booklist":"bd2011-vie","copyright":"Bau
+      Dang 2011","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"vi1934":{"title":"1934
+      Vietnamese Bible","url":"","language":{"iso":"vi","human":"Ti\u1ebfng Vi\u1ec7t"},"booklist":"vi1934","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"wbvi":{"title":"Vietnamese
+      NT","url":"","language":{"iso":"vi","human":"Ti\u1ebfng Vi\u1ec7t"},"booklist":"wbvi","copyright":"2006
+      by World Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"ccb":{"title":"\u5f53\u4ee3\u8bd1\u672c","url":"","language":{"iso":"zh_CN","human":"\u7b80\u4f53\u4e2d\u6587"},"booklist":"cuvs","copyright":"1979,
+      2005, 2007, 2010 by Biblica, Inc.\u2122 Used by permission. All rights reserved
+      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"cunpss":{"title":"\u65b0\u6807\u70b9\u548c\u5408\u672c","url":"http:\/\/www.unitedbiblesocieties.org","language":{"iso":"zh_CN","human":"\u7b80\u4f53\u4e2d\u6587"},"booklist":"cunpss","copyright":"(c)
+      United Bible Societies","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"4","max_offline_build":"4","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"cunpsd-cmn":{"title":"\u65b0\u6807\u70b9\u548c\u5408\u672c\uff08\u4e0a\u5e1d\u7248\uff09","url":"http:\/\/www.unitedbiblesocieties.org","language":{"iso":"zh_CN","human":"\u7b80\u4f53\u4e2d\u6587"},"booklist":"cunpsd-cmn","copyright":"(c)
+      United Bible Societies","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"cnvs":{"title":"\u65b0\u8bd1\u672c\uff08\u7b80\u4f53\u5b57\u7248\uff09","url":"","language":{"iso":"zh_CN","human":"\u7b80\u4f53\u4e2d\u6587"},"booklist":"cnvs","copyright":"1976,
+      1992, 1999, 2001, 2005, 2010 by The Worldwide Bible Society Limited. Used by
+      permission. All rights reserved.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"csb":{"title":"\u4e2d\u6587\u6807\u51c6\u8bd1\u672c","url":"http:\/\/www.chinesestandardbible.com\/","language":{"iso":"zh_CN","human":"\u7b80\u4f53\u4e2d\u6587"},"booklist":"csb","copyright":"2011
+      Asia Bible Society","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"true","text_direction":"ltr"},"cuvs":{"title":"\u7b80\u4f53\u548c\u5408\u672c","url":"","language":{"iso":"zh_CN","human":"\u7b80\u4f53\u4e2d\u6587"},"booklist":"cuvs","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"4","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"rcuvss":{"title":"\u548c\u5408\u672c\u4fee\u8ba2\u7248","url":"http:\/\/www.hkbs.org.hk","language":{"iso":"zh_CN","human":"\u7b80\u4f53\u4e2d\u6587"},"booklist":"rcuvss","copyright":"(c)
+      Hong Kong Bible Society","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"cnv":{"title":"\u65b0\u8b6f\u672c\uff08\u7e41\u9ad4\u5b57\u7248\uff09","url":"","language":{"iso":"zh_TW","human":"\u7e41\u9ad4\u4e2d\u6587"},"booklist":"cnv","copyright":"Scripture
+      texts are from The Holy Bible, Chinese New Version, copyright \u00a9 1976,1992,1999,2001,2005,2010
+      by The Worldwide Bible Society Limited. Used by permission. All rights reserved.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"cunp":{"title":"\u65b0\u6a19\u9ede\u548c\u5408\u672c","url":"http:\/\/www.unitedbiblesocieties.org","language":{"iso":"zh_TW","human":"\u7e41\u9ad4\u4e2d\u6587"},"booklist":"cunp","copyright":"(c)
+      United Bible Societies","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"4","max_offline_build":"4","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"cuv":{"title":"\u548c\u5408\u672c","url":"","language":{"iso":"zh_TW","human":"\u7e41\u9ad4\u4e2d\u6587"},"booklist":"cuv","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"5","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"rcuv":{"title":"\u548c\u5408\u672c\u4fee\u8a02\u7248","url":"http:\/\/www.hkbs.org.uk","language":{"iso":"zh_TW","human":"\u7e41\u9ad4\u4e2d\u6587"},"booklist":"rcuv","copyright":"(c)
+      Hong Kong Bible Society","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"ziv":{"title":"Zokam
+      International Version","url":"","language":{"iso":"zom","human":"Zokam"},"booklist":"zom","copyright":"Zokam
+      International Bible  Copyright 1994 The Bible League","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"acc":{"title":"Achi
+      de Cubulco","url":"","language":{"iso":"acc","human":"Achi de Cubulco"},"booklist":"acc","copyright":"SIL","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"accnt":{"title":"Achi''
+      de Cubulco","url":"http:\/\/www.wycliffe.org","language":{"iso":"acc","human":"Achi
+      de Cubulco"},"booklist":"accnt","copyright":"(c) Wycliffe Bible Translators,
+      Inc.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"}},"defaults":{"bg":"bg1940","cs":"b21","es":"rvr60","fi":"finpr","hu":"kar","id":"idbar","ja":"ja1955","ko":"korvb","no":"nb","pt":"aa","ru":"rursv","vi":"vi1934","zh_CN":"cuvs","zh_TW":"cuv","en":"kjv","ro":"vdc","ar":"nav","it":"nr94","nl":"htb","de":"hfa","sv":"sfb"},"totals":{"versions":163,"languages":47}},"buildtime":"2011-10-07T17:53:01+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.yvdev.com:443/2.3/bible/copyright.json?version=msg
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 07 Oct 2011 17:53:02 GMT
+      content-type:
+      - text/html
+      content-length:
+      - '185'
+      connection:
+      - keep-alive
+      location:
+      - http://api.yvdev.com/2.3/bible/copyright.json?version=msg
+    body: ! "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+      bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/0.7.67</center>\r\n</body>\r\n</html>\r\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/copyright.json?version=msg
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 07 Oct 2011 17:53:02 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"copyright":"<h3>Version Information<\/h3>\n\n<p>Why
+      was <em>The Message<\/em> written? The best answer to that question comes from
+      Eugene Peterson himself: \"While I was teaching a class on Galatians, I began
+      to realize that the adults in my class weren''t feeling the vitality and directness
+      that I sensed as I read and studied the New Testament in its original Greek.
+      Writing straight from the original text, I began to attempt to bring into English
+      the rhythms and idioms of the original language. I knew that the early readers
+      of the New Testament were captured and engaged by these writings and I wanted
+      my congregation to be impacted in the same way. I hoped to bring the New Testament
+      to life for two different types of people: those who hadn''t read the Bible
+      because it seemed too distant and irrelevant and those who had read the Bible
+      so much that it had become ''old hat.''\" <\/p>\n\n<p>Peterson''s parishioners
+      simply weren''t connecting with the real meaning of the words and the relevance
+      of the New Testament for their own lives. So he began to bring into English
+      the rhythms and idioms of the original ancient Greek&#151;writing straight out
+      of the Greek text without looking at other English translations. As he shared
+      his version of Galatians with them, they quit stirring their coffee and started
+      catching Paul''s passion and excitement as he wrote to a group of Christians
+      whom he was guiding in the ways of Jesus Christ. For more than two years, Peterson
+      devoted all his efforts to <em>The Message New Testament<\/em>. His primary
+      goal was to capture the tone of the text and the original conversational feel
+      of the Greek, in contemporary English.<\/p>\n\n<p>Language changes. New words
+      are formed. Old words take on new meaning. There is a need in every generation
+      to keep the language of the gospel message current, fresh, and understandable&#151;the
+      way it was for its very first readers. That is what <em>The Message<\/em> seeks
+      to accomplish for contemporary readers. It is a version for our time&#151;designed
+      to be read by contemporary people in the same way as the original <em> koine<\/em>
+      Greek and Hebrew manuscripts were savored by people thousands of years ago.
+      <\/p>\n\n<p>That''s why NavPress felt the time was right for a new version.
+      When we hear something over and over again in the same way, we can become so
+      familiar with it that the text loses its impact. The Message strives to help
+      readers hear the living Word of God&#151;the Bible&#151;in a way that engages
+      and intrigues us right where we are. <br><br>\n\n<p>Some people like to read
+      the Bible in Elizabethan English. Others want to read a version that gives a
+      close word-for-word correspondence between the original languages and English.
+      Eugene Peterson recognized that the original sentence structure is very different
+      from that of contemporary English. He decided to strive for the spirit of the
+      original manuscripts&#151;to express the rhythm of the voices, the flavor of
+      the idiomatic expressions, the subtle connotations of meaning that are often
+      lost in English translations.<\/p>\n\n<p>The goal of <em>The Message<\/em> is
+      to engage people in the reading process and help them understand what they read.
+      This is not a study Bible, but rather \"a reading Bible.\" The verse numbers,
+      which are not in the original documents, have been left out of the print version
+      to facilitate easy and enjoyable reading. The original books of the Bible were
+      not written in formal language. <em>The Message<\/em> tries to recapture the
+      Word in the words we use today. <\/p>\n\n<h3>Copyright Information<\/h3>\n\n<p><em>The
+      Message<\/em> text may be quoted in any form (written, visual, electronic, or
+      audio), up to and inclusive of five hundred (500) verses, without express written
+      permission of the publisher, NavPress Publishing Group, providing the verses
+      quoted do not amount to a complete book of the Bible and do not account for
+      25% or more of the total text of the work in which they are quoted.<\/p>\n\n<p>Notice
+      of copyright must appear as follows on either the title page or the copyright
+      page of the work in which <em>The Message<\/em> is quoted: \"Scripture taken
+      from <em>The Message<\/em>. Copyright &copy; 1993, 1994, 1995, 1996, 2000, 2001,
+      2002. Used by permission of NavPress Publishing Group.\" <\/p>\n\n<p>When quotations
+      from <em>The Message<\/em> text are used in nonsaleable media, such as church
+      bulletins, orders of service, posters, transparencies, or similar media, a complete
+      copyright notice is not required, but \"<em>The Message<\/em>\" must appear
+      at the end of each quotation. <\/p>\n\n<p>Permission requests for commercial
+      and noncommercial use that exceed the above guidelines must be directed to and
+      approved in writing by NavPress Publishing Group, Permissions, P.O. Box 35001,
+      Colorado Springs, Co 80935. (<a href=\"http:\/\/www.messagebible.com\/\" target=\"_blank\">http:\/\/www.messagebible.com<\/a>)<\/p>\n\n<p><a
+      href=\"http:\/\/www.messagebible.com\"><em>The Message<\/em> Web Site: http:\/\/www.messagebible.com<\/a><\/p>"},"buildtime":"2011-10-07T17:53:02+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.yvdev.com:443/2.3/bible/books.json?version=msg
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 07 Oct 2011 17:53:03 GMT
+      content-type:
+      - text/html
+      content-length:
+      - '185'
+      connection:
+      - keep-alive
+      location:
+      - http://api.yvdev.com/2.3/bible/books.json?version=msg
+    body: ! "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+      bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/0.7.67</center>\r\n</body>\r\n</html>\r\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/books.json?version=msg
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 07 Oct 2011 17:53:03 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"number":1,"osis":"Gen","human":"Genesis","chapters":50,"verses":[31,25,24,26,32,22,24,22,29,32,32,20,18,24,21,16,27,33,38,18,34,24,20,67,34,35,46,22,35,43,55,32,20,31,29,43,36,30,23,23,57,38,34,34,28,34,31,22,33,26],"audio":false},{"number":2,"osis":"Exod","human":"Exodus","chapters":40,"verses":[22,25,22,31,23,30,25,32,35,29,10,51,22,31,27,36,16,27,25,26,36,31,33,18,40,37,21,43,46,38,18,35,23,35,35,38,29,31,43,38],"audio":false},{"number":3,"osis":"Lev","human":"Leviticus","chapters":27,"verses":[17,16,17,35,19,30,38,36,24,20,47,8,59,57,33,34,16,30,37,27,24,33,44,23,55,46,34],"audio":false},{"number":4,"osis":"Num","human":"Numbers","chapters":36,"verses":[54,34,51,49,31,27,89,26,23,36,35,16,33,45,41,50,13,32,22,29,35,41,30,25,18,65,23,31,40,16,54,42,56,29,34,13],"audio":false},{"number":5,"osis":"Deut","human":"Deuteronomy","chapters":34,"verses":[46,37,29,49,33,25,26,20,29,22,32,32,18,29,23,22,20,22,21,20,23,30,25,22,19,19,26,68,29,20,30,52,29,12],"audio":false},{"number":6,"osis":"Josh","human":"Joshua","chapters":24,"verses":[18,24,17,24,15,27,26,35,27,43,23,24,33,15,63,10,18,28,51,9,45,34,16,33],"audio":false},{"number":7,"osis":"Judg","human":"Judges","chapters":21,"verses":[36,23,31,24,31,40,25,35,57,18,40,15,25,20,20,31,13,31,30,48,25],"audio":false},{"number":8,"osis":"Ruth","human":"Ruth","chapters":4,"verses":[22,23,18,22],"audio":false},{"number":9,"osis":"1Sam","human":"1
+      Samuel","chapters":31,"verses":[28,36,21,22,12,21,17,22,27,27,15,25,23,52,35,23,58,30,24,42,15,23,29,22,44,25,12,25,11,31,13],"audio":false},{"number":10,"osis":"2Sam","human":"2
+      Samuel","chapters":24,"verses":[27,32,39,12,25,23,29,18,13,19,27,31,39,33,37,23,29,33,43,26,22,51,39,25],"audio":false},{"number":11,"osis":"1Kgs","human":"1
+      Kings","chapters":22,"verses":[53,46,28,34,18,38,51,66,28,29,43,33,34,31,34,34,24,46,21,43,29,53],"audio":false},{"number":12,"osis":"2Kgs","human":"2
+      Kings","chapters":25,"verses":[18,25,27,44,27,33,20,29,37,36,21,21,25,29,38,20,41,37,37,21,26,20,37,20,30],"audio":false},{"number":13,"osis":"1Chr","human":"1
+      Chronicles","chapters":29,"verses":[54,55,24,43,26,81,40,40,44,14,47,40,14,17,29,43,27,17,19,8,30,19,32,31,31,32,34,21,30],"audio":false},{"number":14,"osis":"2Chr","human":"2
+      Chronicles","chapters":36,"verses":[17,18,17,22,14,42,22,18,31,19,23,16,22,15,19,14,19,34,11,37,20,12,21,27,28,23,9,27,36,27,21,33,25,33,27,23],"audio":false},{"number":15,"osis":"Ezra","human":"Ezra","chapters":10,"verses":[11,70,13,24,17,22,28,36,15,44],"audio":false},{"number":16,"osis":"Neh","human":"Nehemiah","chapters":13,"verses":[11,20,32,23,19,19,73,18,38,39,36,47,31],"audio":false},{"number":17,"osis":"Esth","human":"Esther","chapters":10,"verses":[22,23,15,17,14,14,10,17,32,3],"audio":false},{"number":18,"osis":"Job","human":"Job","chapters":42,"verses":[22,13,26,21,27,30,21,22,35,22,20,25,28,22,35,22,16,21,29,29,34,30,17,25,6,14,23,28,25,31,40,22,33,37,16,33,24,41,30,24,34,17],"audio":false},{"number":19,"osis":"Ps","human":"Psalm","chapters":150,"verses":[6,12,8,8,12,10,17,9,20,18,7,8,6,7,5,11,15,50,14,9,13,31,6,10,22,12,14,9,11,12,24,11,22,22,28,12,40,22,13,17,13,11,5,26,17,11,9,14,20,23,19,9,6,7,23,13,11,11,17,12,8,12,11,10,13,20,7,35,36,5,24,20,28,23,10,12,20,72,13,19,16,8,18,12,13,17,7,18,52,17,16,15,5,23,11,13,12,9,9,5,8,28,22,35,45,48,43,13,31,7,10,10,9,8,18,19,2,29,176,7,8,9,4,8,5,6,5,6,8,8,3,18,3,3,21,26,9,8,24,13,10,7,12,15,21,10,20,14,9,6],"audio":false},{"number":20,"osis":"Prov","human":"Proverbs","chapters":31,"verses":[33,22,35,27,23,35,27,36,18,32,31,28,25,35,33,33,28,24,29,30,31,29,35,34,28,28,27,28,27,33,31],"audio":false},{"number":21,"osis":"Eccl","human":"Ecclesiastes","chapters":12,"verses":[18,26,22,16,20,12,29,17,18,20,10,14],"audio":false},{"number":22,"osis":"Song","human":"Song
+      of Solomon","chapters":8,"verses":[17,17,11,16,16,13,13,14],"audio":false},{"number":23,"osis":"Isa","human":"Isaiah","chapters":66,"verses":[31,22,26,6,30,13,25,22,21,34,16,6,22,32,9,14,14,7,25,6,17,25,18,23,12,21,13,29,24,33,9,20,24,17,10,22,38,22,8,31,29,25,28,28,25,13,15,22,26,11,23,15,12,17,13,12,21,14,21,22,11,12,19,12,25,24],"audio":false},{"number":24,"osis":"Jer","human":"Jeremiah","chapters":52,"verses":[19,37,25,31,31,30,34,22,26,25,23,17,27,22,21,21,27,23,15,18,14,30,40,10,38,24,22,17,32,24,40,44,26,22,19,32,21,28,18,16,18,22,13,30,5,28,7,47,39,46,64,34],"audio":false},{"number":25,"osis":"Lam","human":"Lamentations","chapters":5,"verses":[22,22,66,22,22],"audio":false},{"number":26,"osis":"Ezek","human":"Ezekiel","chapters":48,"verses":[28,10,27,17,17,14,27,18,11,22,25,28,23,23,8,63,24,32,14,49,32,31,49,27,17,21,36,26,21,26,18,32,33,31,15,38,28,23,29,49,26,20,27,31,25,24,23,35],"audio":false},{"number":27,"osis":"Dan","human":"Daniel","chapters":12,"verses":[21,49,30,37,31,28,28,27,27,21,45,13],"audio":false},{"number":28,"osis":"Hos","human":"Hosea","chapters":14,"verses":[11,23,5,19,15,11,16,14,17,15,12,14,16,9],"audio":false},{"number":29,"osis":"Joel","human":"Joel","chapters":3,"verses":[20,32,21],"audio":false},{"number":30,"osis":"Amos","human":"Amos","chapters":9,"verses":[15,16,15,13,27,14,17,14,15],"audio":false},{"number":31,"osis":"Obad","human":"Obadiah","chapters":1,"verses":[21],"audio":false},{"number":32,"osis":"Jonah","human":"Jonah","chapters":4,"verses":[17,10,10,11],"audio":false},{"number":33,"osis":"Mic","human":"Micah","chapters":7,"verses":[16,13,12,13,15,16,20],"audio":false},{"number":34,"osis":"Nah","human":"Nahum","chapters":3,"verses":[15,13,19],"audio":false},{"number":35,"osis":"Hab","human":"Habakkuk","chapters":3,"verses":[17,20,19],"audio":false},{"number":36,"osis":"Zeph","human":"Zephaniah","chapters":3,"verses":[18,15,20],"audio":false},{"number":37,"osis":"Hag","human":"Haggai","chapters":2,"verses":[15,23],"audio":false},{"number":38,"osis":"Zech","human":"Zechariah","chapters":14,"verses":[21,13,10,14,11,15,14,23,17,12,17,14,9,21],"audio":false},{"number":39,"osis":"Mal","human":"Malachi","chapters":4,"verses":[14,17,18,6],"audio":false},{"number":40,"osis":"Matt","human":"Matthew","chapters":28,"verses":[25,23,17,25,48,34,29,34,38,42,30,50,58,36,39,28,27,35,30,34,46,46,39,51,46,75,66,20],"audio":false},{"number":41,"osis":"Mark","human":"Mark","chapters":16,"verses":[45,28,35,41,43,56,37,38,50,52,33,44,37,72,47,20],"audio":false},{"number":42,"osis":"Luke","human":"Luke","chapters":24,"verses":[80,52,38,44,39,49,50,56,62,42,54,59,35,35,32,31,37,43,48,47,38,71,56,53],"audio":false},{"number":43,"osis":"John","human":"John","chapters":21,"verses":[51,25,36,54,47,71,53,59,41,42,57,50,38,31,27,33,26,40,42,31,25],"audio":false},{"number":44,"osis":"Acts","human":"Acts","chapters":28,"verses":[26,47,26,37,42,15,60,40,43,48,30,25,52,28,41,40,34,28,41,38,40,30,35,27,27,32,44,31],"audio":false},{"number":45,"osis":"Rom","human":"Romans","chapters":16,"verses":[32,29,31,25,21,23,25,39,33,21,36,21,14,23,33,27],"audio":false},{"number":46,"osis":"1Cor","human":"1
+      Corinthians","chapters":16,"verses":[31,16,23,21,13,20,40,13,27,33,34,31,13,40,58,24],"audio":false},{"number":47,"osis":"2Cor","human":"2
+      Corinthians","chapters":13,"verses":[24,17,18,18,21,18,16,24,15,18,33,21,14],"audio":false},{"number":48,"osis":"Gal","human":"Galatians","chapters":6,"verses":[24,21,29,31,26,18],"audio":false},{"number":49,"osis":"Eph","human":"Ephesians","chapters":6,"verses":[23,22,21,32,33,24],"audio":false},{"number":50,"osis":"Phil","human":"Philippians","chapters":4,"verses":[30,30,21,23],"audio":false},{"number":51,"osis":"Col","human":"Colossians","chapters":4,"verses":[29,23,25,18],"audio":false},{"number":52,"osis":"1Thess","human":"1
+      Thessalonians","chapters":5,"verses":[10,20,13,18,28],"audio":false},{"number":53,"osis":"2Thess","human":"2
+      Thessalonians","chapters":3,"verses":[12,17,18],"audio":false},{"number":54,"osis":"1Tim","human":"1
+      Timothy","chapters":6,"verses":[20,15,16,16,25,21],"audio":false},{"number":55,"osis":"2Tim","human":"2
+      Timothy","chapters":4,"verses":[18,26,17,22],"audio":false},{"number":56,"osis":"Titus","human":"Titus","chapters":3,"verses":[16,15,15],"audio":false},{"number":57,"osis":"Phlm","human":"Philemon","chapters":1,"verses":[25],"audio":false},{"number":58,"osis":"Heb","human":"Hebrews","chapters":13,"verses":[14,18,19,16,14,20,28,13,28,39,40,29,25],"audio":false},{"number":59,"osis":"Jas","human":"James","chapters":5,"verses":[27,26,18,17,20],"audio":false},{"number":60,"osis":"1Pet","human":"1
+      Peter","chapters":5,"verses":[25,25,22,19,14],"audio":false},{"number":61,"osis":"2Pet","human":"2
+      Peter","chapters":3,"verses":[21,22,18],"audio":false},{"number":62,"osis":"1John","human":"1
+      John","chapters":5,"verses":[10,29,24,21,21],"audio":false},{"number":63,"osis":"2John","human":"2
+      John","chapters":1,"verses":[13],"audio":false},{"number":64,"osis":"3John","human":"3
+      John","chapters":1,"verses":[14],"audio":false},{"number":65,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":false},{"number":66,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"audio":false}],"buildtime":"2011-10-07T17:53:03+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.yvdev.com:443/2.3/bible/chapter.json?format=html_basic&reference=gen.1&version=msg
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 07 Oct 2011 17:53:03 GMT
+      content-type:
+      - text/html
+      content-length:
+      - '185'
+      connection:
+      - keep-alive
+      location:
+      - http://api.yvdev.com/2.3/bible/chapter.json?format=html_basic&version=msg&reference=gen.1
+    body: ! "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+      bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/0.7.67</center>\r\n</body>\r\n</html>\r\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/chapter.json?format=html_basic&reference=gen.1&version=msg
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 07 Oct 2011 17:53:03 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"code":"200","data":{"copyright":"1993,
+      1994, 1995, 1996, 2000, 2001, 2002 Eugene H. Peterson by NavPress Publishing","request":{"reference":{"osis":"Gen.1","human":"Genesis
+      1"},"content":[{"reference":{"osis":"Gen.1.1","human":"Genesis 1:1"},"content":"<h2>Heaven
+      and Earth<\/h2><span class=\"verse\" id=\"Gen_1_1\"><strong class=\"verseno\">1<\/strong>&nbsp;First
+      this: God created the Heavens and Earth-all you see, all you don''t see.<\/span>"},{"reference":{"osis":"Gen.1.2","human":"Genesis
+      1:2"},"content":"<span class=\"verse\" id=\"Gen_1_2\"><strong class=\"verseno\">2<\/strong>&nbsp;Earth
+      was a soup of nothingness, a bottomless emptiness, an inky blackness. God''s
+      Spirit brooded like a bird above the watery abyss.<\/span>"},{"reference":{"osis":"Gen.1.3","human":"Genesis
+      1:3"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_3\"><strong class=\"verseno\">3<\/strong>&nbsp;God
+      spoke: \"Light!\" And light appeared.<\/span>"},{"reference":{"osis":"Gen.1.4","human":"Genesis
+      1:4"},"content":"<span class=\"verse\" id=\"Gen_1_4\"><strong class=\"verseno\">4<\/strong>&nbsp;God
+      saw that light was good and separated light from dark.<\/span>"},{"reference":{"osis":"Gen.1.5","human":"Genesis
+      1:5"},"content":"<span class=\"verse\" id=\"Gen_1_5\"><strong class=\"verseno\">5<\/strong>&nbsp;God
+      named the light Day, he named the dark Night. It was evening, it was morning-Day
+      One.<\/span>"},{"reference":{"osis":"Gen.1.6","human":"Genesis 1:6"},"content":"<p>
+      <\/p><span class=\"verse\" id=\"Gen_1_6\"><strong class=\"verseno\">6<\/strong>&nbsp;God
+      spoke: \"Sky! In the middle of the waters; separate water from water!\"<\/span>"},{"reference":{"osis":"Gen.1.7","human":"Genesis
+      1:7"},"content":"<span class=\"verse\" id=\"Gen_1_7\"><strong class=\"verseno\">7<\/strong>&nbsp;God
+      made sky. He separated the water under sky from the water above sky. And there
+      it was:<\/span>"},{"reference":{"osis":"Gen.1.8","human":"Genesis 1:8"},"content":"<span
+      class=\"verse\" id=\"Gen_1_8\"><strong class=\"verseno\">8<\/strong>&nbsp;he
+      named sky the Heavens; It was evening, it was morning-Day Two.<\/span>"},{"reference":{"osis":"Gen.1.9","human":"Genesis
+      1:9"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_9\"><strong class=\"verseno\">9<\/strong>&nbsp;God
+      spoke: \"Separate! Water-beneath-Heaven, gather into one place; Land, appear!\"
+      And there it was.<\/span>"},{"reference":{"osis":"Gen.1.10","human":"Genesis
+      1:10"},"content":"<span class=\"verse\" id=\"Gen_1_10\"><strong class=\"verseno\">10<\/strong>&nbsp;God
+      named the land Earth. He named the pooled water Ocean. God saw that it was good.<\/span>"},{"reference":{"osis":"Gen.1.11","human":"Genesis
+      1:11"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_11\"><strong class=\"verseno\">11<\/strong>&nbsp;God
+      spoke: \"Earth, green up! Grow all varieties of seed-bearing plants, Every sort
+      of fruit-bearing tree.\" And there it was.<\/span>"},{"reference":{"osis":"Gen.1.12","human":"Genesis
+      1:12"},"content":"<span class=\"verse\" id=\"Gen_1_12\"><strong class=\"verseno\">12<\/strong>&nbsp;Earth
+      produced green seed-bearing plants, all varieties, And fruit-bearing trees of
+      all sorts. God saw that it was good.<\/span>"},{"reference":{"osis":"Gen.1.13","human":"Genesis
+      1:13"},"content":"<span class=\"verse\" id=\"Gen_1_13\"><strong class=\"verseno\">13<\/strong>&nbsp;It
+      was evening, it was morning-Day Three.<\/span>"},{"reference":{"osis":"Gen.1.14","human":"Genesis
+      1:14"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_14\"><strong class=\"verseno\">14<\/strong>&nbsp;God
+      spoke: \"Lights! Come out! Shine in Heaven''s sky! Separate Day from Night.
+      Mark seasons and days and years,<\/span>"},{"reference":{"osis":"Gen.1.15","human":"Genesis
+      1:15"},"content":"<span class=\"verse\" id=\"Gen_1_15\"><strong class=\"verseno\">15<\/strong>&nbsp;Lights
+      in Heaven''s sky to give light to Earth.\" And there it was.<\/span>"},{"reference":{"osis":"Gen.1.16","human":"Genesis
+      1:16"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_16\"><strong class=\"verseno\">16<\/strong>&nbsp;God
+      made two big lights, the larger to take charge of Day, The smaller to be in
+      charge of Night; and he made the stars.<\/span>"},{"reference":{"osis":"Gen.1.17","human":"Genesis
+      1:17"},"content":"<span class=\"verse\" id=\"Gen_1_17\"><strong class=\"verseno\">17<\/strong>&nbsp;God
+      placed them in the heavenly sky to light up Earth<\/span>"},{"reference":{"osis":"Gen.1.18","human":"Genesis
+      1:18"},"content":"<span class=\"verse\" id=\"Gen_1_18\"><strong class=\"verseno\">18<\/strong>&nbsp;And
+      oversee Day and Night, to separate light and dark. God saw that it was good.<\/span>"},{"reference":{"osis":"Gen.1.19","human":"Genesis
+      1:19"},"content":"<span class=\"verse\" id=\"Gen_1_19\"><strong class=\"verseno\">19<\/strong>&nbsp;It
+      was evening, it was morning-Day Four.<\/span>"},{"reference":{"osis":"Gen.1.20","human":"Genesis
+      1:20"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_20\"><strong class=\"verseno\">20<\/strong>&nbsp;God
+      spoke: \"Swarm, Ocean, with fish and all sea life! Birds, fly through the sky
+      over Earth!\"<\/span>"},{"reference":{"osis":"Gen.1.21","human":"Genesis 1:21"},"content":"<span
+      class=\"verse\" id=\"Gen_1_21\"><strong class=\"verseno\">21<\/strong>&nbsp;God
+      created the huge whales, all the swarm of life in the waters, And every kind
+      and species of flying birds. God saw that it was good.<\/span>"},{"reference":{"osis":"Gen.1.22","human":"Genesis
+      1:22"},"content":"<span class=\"verse\" id=\"Gen_1_22\"><strong class=\"verseno\">22<\/strong>&nbsp;God
+      blessed them: \"Prosper! Reproduce! Fill Ocean! Birds, reproduce on Earth!\"<\/span>"},{"reference":{"osis":"Gen.1.23","human":"Genesis
+      1:23"},"content":"<span class=\"verse\" id=\"Gen_1_23\"><strong class=\"verseno\">23<\/strong>&nbsp;It
+      was evening, it was morning-Day Five.<\/span>"},{"reference":{"osis":"Gen.1.24","human":"Genesis
+      1:24"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_24\"><strong class=\"verseno\">24<\/strong>&nbsp;God
+      spoke: \"Earth, generate life! Every sort and kind: cattle and reptiles and
+      wild animals-all kinds.\" And there it was:<\/span>"},{"reference":{"osis":"Gen.1.25","human":"Genesis
+      1:25"},"content":"<span class=\"verse\" id=\"Gen_1_25\"><strong class=\"verseno\">25<\/strong>&nbsp;wild
+      animals of every kind, Cattle of all kinds, every sort of reptile and bug. God
+      saw that it was good.<\/span>"},{"reference":{"osis":"Gen.1.26","human":"Genesis
+      1:26"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_26\"><strong class=\"verseno\">26<\/strong>&nbsp;God
+      spoke: \"Let us make human beings in our image, make them reflecting our nature
+      So they can be responsible for the fish in the sea, the birds in the air, the
+      cattle, And, yes, Earth itself, and every animal that moves on the face of Earth.\"<\/span>"},{"reference":{"osis":"Gen.1.27","human":"Genesis
+      1:27"},"content":"<span class=\"verse\" id=\"Gen_1_27\"><strong class=\"verseno\">27<\/strong>&nbsp;God
+      created human beings; he created them godlike, Reflecting God''s nature. He
+      created them male and female.<\/span>"},{"reference":{"osis":"Gen.1.28","human":"Genesis
+      1:28"},"content":"<span class=\"verse\" id=\"Gen_1_28\"><strong class=\"verseno\">28<\/strong>&nbsp;God
+      blessed them: \"Prosper! Reproduce! Fill Earth! Take charge! Be responsible
+      for fish in the sea and birds in the air, for every living thing that moves
+      on the face of Earth.\"<\/span>"},{"reference":{"osis":"Gen.1.29","human":"Genesis
+      1:29"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_29\"><strong class=\"verseno\">29<\/strong>&nbsp;Then
+      God said, \"I''ve given you every sort of seed-bearing plant on Earth And every
+      kind of fruit-bearing tree, given them to you for food.<\/span>"},{"reference":{"osis":"Gen.1.30","human":"Genesis
+      1:30"},"content":"<span class=\"verse\" id=\"Gen_1_30\"><strong class=\"verseno\">30<\/strong>&nbsp;To
+      all animals and all birds, everything that moves and breathes, I give whatever
+      grows out of the ground for food.\" And there it was.<\/span>"},{"reference":{"osis":"Gen.1.31","human":"Genesis
+      1:31"},"content":"<p> <\/p><span class=\"verse\" id=\"Gen_1_31\"><strong class=\"verseno\">31<\/strong>&nbsp;God
+      looked over everything he had made; it was so good, so very good! It was evening,
+      it was morning-Day Six.<\/span>"}],"audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+      2"}}},"buildtime":"2011-10-07T17:53:03+00:00"}],"buildtime":"2011-10-07T17:53:03+00:00"}}'
+    http_version: '1.1'

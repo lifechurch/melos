@@ -4,7 +4,7 @@ Feature: Versions view
   I want to:   See available Bible translations by language
                and learn more information about them.
 
-  @live @versions
+  @versions
   Scenario: Listing versions
     When I go to the versions page
     Then I should see "English"
