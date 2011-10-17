@@ -1,4 +1,5 @@
 YouversionWeb::Application.routes.draw do
+
   # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
   resources 'versions', :only => [:index, :show]

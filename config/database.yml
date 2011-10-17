@@ -1,8 +1,10 @@
 # Boilerplate for now. Will fill in when necessary.
 common: &common
   adapter: postgresql
+  host: localhost
+  port: 5432
   username: yv_web
-  password: vt5igg1ycSYBEiP4Zg5p # from psql setup, see Postgresql
+  # password: vt5igg1ycSYBEiP4Zg5p # from psql setup, see Postgresql
 
 development:
   <<: *common
