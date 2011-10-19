@@ -39,7 +39,7 @@ class User
   end
   
   def id
-    
+    @id ||= api_data
   end
   
   def username

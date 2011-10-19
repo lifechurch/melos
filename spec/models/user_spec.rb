@@ -51,4 +51,10 @@ describe User do
       User.authenticate("testuser", "asdf").should be_nil
     end
   end
+  
+  describe "id" do
+    it "returns the user's ID for a valid user" do
+      User.authenticate("testuser", "tenders").id.should == 4163157
+    end
+  end
 end
