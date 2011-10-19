@@ -7,8 +7,9 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:username], params[:password])
 
     if user
-      session[:user_id] = user.id
-      session[:username] = user.username
+      cookies.permanent.signed[:a] = user.id
+      cookies.permanent.signed[:b] = user.username
+      cookies.permanent.signed[:c] = params[:password]
       redirect_to versions_url, :notice => "Signed in!"
     else
       flash.now[:alert] = "Invalid username or password"
@@ -17,8 +18,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    session[:username] = nil
+    cookies.permanent.signed[:a] = nil
+    cookies.permanent.signed[:b] = nil
+    cookies.permanent.signed[:c] = nil
     redirect_to versions_url, :notice => "Signed out!"
   end
 end
