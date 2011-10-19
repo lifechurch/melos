@@ -11,7 +11,10 @@ class YvApi
 
   def self.get(path, opts={}, &block)
     default_options[:basic_auth] = nil
+    # For login
     basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
+    # For auth'ed API calls with :user => current_user
+    basic_auth opts[:user].username, opts.delete(:user).password if opts[:user]
     # Clean up the path
     path = clean_up(path)
     # Figure out if we should cache
@@ -34,8 +37,11 @@ class YvApi
 
   def self.post(path, opts={}, &block)
     default_options[:basic_auth] = nil
-    path = clean_up(path)
+    # For login
     basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
+    # For auth'ed API calls with :user => current_user
+    basic_auth opts[:user].username, opts.delete(:user).password if opts[:user]
+    path = clean_up(path)
     response = httparty_post(path, body: opts)
     return api_response_or_rescue(response, block)
 

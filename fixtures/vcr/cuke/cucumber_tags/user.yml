@@ -15,7 +15,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Thu, 06 Oct 2011 21:22:07 GMT
+      - Wed, 19 Oct 2011 18:10:14 GMT
       content-type:
       - text/plain
       - text/plain; charset=utf-8
@@ -25,9 +25,7 @@
       - keep-alive
       vary:
       - Accept-Encoding
-    body: ! '{"response":{"code":400,"data":{"errors":[{"key":"users.email.not_available","error":"An
-      account is already registered with that email"},{"key":"users.username.not_available","error":"An
-      account is already registered with that username"}]},"buildtime":"2011-10-06T21:22:07+00:00"}}'
+    body: ! '{"response":{"code":201,"data":"Created","buildtime":"2011-10-19T18:10:14+00:00"}}'
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -45,7 +43,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Thu, 06 Oct 2011 21:22:07 GMT
+      - Wed, 19 Oct 2011 18:10:14 GMT
       content-type:
       - text/html
       content-length:
@@ -73,7 +71,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Thu, 06 Oct 2011 21:22:07 GMT
+      - Wed, 19 Oct 2011 18:10:15 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -82,7 +80,7 @@
       - keep-alive
       vary:
       - Accept-Encoding
-    body: ! '{"response":{"code":200,"data":{"order":["afr83","db","nlv","asvd","nav","sab","wbar","bg1871","bg1940","vbg","wbbg","b21","csbkr","snc","bdan","da1871","delut","elb","elb71","gantp","hfa","ngu2011-deu","sch2000-deu","sch51","asv","books-eng","amp","ceb","cev","cpdv","dra","esv","gnt","gntd","gwt","hcsb","kjv","leb","msg","nasb","ncv","net","nirv-eng","niv","niv84","nivuk","nkjv","nlt","ojb","tniv","web","dhh","lbla","nblh","nvi","ntv","rvc","rves","rvr60","rvr95","tla","tlad","wbes","bhnt","nmv-fas","pov-fas","fi1776","finpr","bds","fmar","frdby","lsg","neg79","ost","seg21","sblg","tr1624","tr1894","bhebnt","ckk","kar","bhunnt","wbhu","wa53","bimk","idbar","tb","wbid","igd","itriv","lm","nr06-ita","nr94","ja1955","jlb","klb","krv","korvb","rnksv","mg1865","maor","htb","sv1750","nlbnt","nb","norsk","pbg","psz","pubg-pol","potl","aa","arc","ntlh","nvi-por","tb-por","wbpt","mtds","ntr","vdc","vdcc","cars-rus","rsz","rursv","ruvz","wbru","ssv","bsn-sna","kqa","albb","wbsr","bsv","sfb","sk73","sven","hnv","suv","tncv-tha","bthai-tha","thsv","tkjv","wbth","tlab","ubio","ukrk","wbuk","ugv","bd2011-vie","vi1934","wbvi","ccb","cunpss","cunpsd-cmn","cnvs","csb","cuvs","rcuvss","cnv","cunp","cuv","rcuv","ziv","acc","accnt"],"versions":{"afr83":{"title":"Afrikaans
+    body: ! '{"response":{"code":200,"data":{"order":["afr83","db","nlv","asvd","nav","sab","wbar","bg1871","bg1940","vbg","wbbg","b21","csbkr","snc","bdan","da1871","delut","elb","elb71","gantp","hfa","ngu2011-deu","sch2000-deu","sch51","asv","books-eng","amp","ceb","cev","cpdv","dra","esv","gnt","gntd","gwt","hcsb","kjv","leb","msg","nasb","ncv","net","nirv-eng","niv","niv84","nivuk","nkjv","nlt","ojb","tniv","web","dhh","lbla","nblh","nvi","ntv","rvc","rves","rvr60","rvr95","tla","tlad","wbes","bhnt","nmv-fas","pov-fas","fi1776","finpr","bds","fmar","frdby","lsg","neg79","ost","seg21","sblg","tr1624","tr1894","bhebnt","ckk","kar","bhunnt","wbhu","hwc-hwc","wa53","bimk","idbar","tb","wbid","igd","itriv","lm","nr06-ita","nr94","ja1955","jlb","klb","krv","korvb","rnksv","mg1865","maor","htb","sv1750","nn11-nn","nlbnt","bm11-no","nb","norsk","pbg","psz","pubg-pol","potl","aa","arc","ntlh","nvi-por","tb-por","wbpt","mtds","ntr","vdc","vdcc","cars-rus","rsz","rursv","ruvz","wbru","ssv","bsn-sna","kqa","albb","wbsr","bsv","sfb","sk73","sven","hnv","suv","bthai-tha","tncv-tha","thsv","tkjv","wbth","tlab","ubio","ukrk","wbuk","ugv","bd2011-vie","vi1934","wbvi","ccb","cunpss","cunpsd-cmn","cnvs","csb","cuvs","rcuvss","cnv","cunp","cuv","rcuv","ziv","acc","accnt"],"versions":{"afr83":{"title":"Afrikaans
       1983 Translation","url":"http:\/\/www.biblesociety.co.za","language":{"iso":"af","human":"Afrikaans"},"booklist":"afr83","copyright":"(c)
       Bible Society of South Africa","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"db":{"title":"Die
       Boodskap","url":"","language":{"iso":"af","human":"Afrikaans"},"booklist":"db","copyright":"2002.
@@ -140,7 +138,7 @@
       Bible","url":"http:\/\/www.amplifiedbible.com","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"1954,
       1958, 1962, 1964, 1965, 1987 by The Lockman Foundation","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"ceb":{"title":"Common
       English Bible","url":"","language":{"iso":"en","human":"English"},"booklist":"ceb","copyright":"2011
-      Common English Bible. All rights reserved.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"cev":{"title":"Contemporary
+      Common English Bible. All rights reserved.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"cev":{"title":"Contemporary
       English Version","url":"http:\/\/www.americanbible.org","language":{"iso":"en","human":"English"},"booklist":"en","copyright":"1995
       by American Bible Society","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"cpdv":{"title":"Catholic
       Public Domain Version","url":"","language":{"iso":"en","human":"English"},"booklist":"cpdv","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"dra":{"title":"Douay
@@ -217,9 +215,9 @@
       by World Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"bhnt":{"title":"Navarro-Labourdin
       Basque NT","url":"","language":{"iso":"eu","human":"Euskara"},"booklist":"bhnt","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nmv-fas":{"title":"New
       Millenium Version","url":"http:\/\/www.elam.com","language":{"iso":"fa","human":"\u0641\u0627\u0631\u0633\u06cc"},"booklist":"nmv-fas","copyright":"2011
-      Elam Ministries","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"rtl"},"pov-fas":{"title":"Persian
+      Elam Ministries","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"rtl"},"pov-fas":{"title":"Persian
       Old Version","url":"http:\/\/www.elam.com","language":{"iso":"fa","human":"\u0641\u0627\u0631\u0633\u06cc"},"booklist":"pov-fas","copyright":"2011
-      Elam Ministries","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"rtl"},"fi1776":{"title":"Finnish
+      Elam Ministries","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"rtl"},"fi1776":{"title":"Finnish
       1776","url":"","language":{"iso":"fi","human":"Suomi"},"booklist":"fi1776","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"finpr":{"title":"Finnish
       1938","url":"","language":{"iso":"fi","human":"Suomi"},"booklist":"finpr","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bds":{"title":"La
       Bible Du Semeur","url":"","language":{"iso":"fr","human":"Fran\u00e7ais"},"booklist":"bds","copyright":"1992,
@@ -247,7 +245,9 @@
       nyelv"},"booklist":"bhunnt","copyright":"2003 by International Bible Society\u00ae.
       Used by permission. All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"wbhu":{"title":"Hungarian
       New Testament","url":"http:\/\/www.wbtc.com","language":{"iso":"hu","human":"magyar
-      nyelv"},"booklist":"wbhu","copyright":"World Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"wa53":{"title":"Western
+      nyelv"},"booklist":"wbhu","copyright":"World Bible Translation Center","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"hwc-hwc":{"title":"Da
+      Jesus Book","url":"http:\/\/www.wycliffe.org","language":{"iso":"hwc","human":"Hawai''i
+      Creole English"},"booklist":"hwc-hwc","copyright":"Wycliffe Bible Translators","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"false","audio":"false","text_direction":"ltr"},"wa53":{"title":"Western
       Armenian NT","url":"","language":{"iso":"hy","human":"\u0540\u0561\u0575\u0565\u0580\u0565\u0576"},"booklist":"wa53","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bimk":{"title":"Bahasa
       Indonesia Masa Kini","url":"http:\/\/www.alkitab.or.id","language":{"iso":"id","human":"Bahasa
       Indonesia"},"booklist":"bimk","copyright":"(c) Indonesian Bible Society","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"idbar":{"title":"Terjemahan
@@ -277,13 +277,17 @@
       Bible","url":"","language":{"iso":"mi","human":"te reo M\u0101ori"},"booklist":"maor","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"htb":{"title":"Het
       Boek","url":"http:\/\/biblica.com","language":{"iso":"nl","human":"Nederlands"},"booklist":"htb","copyright":"Copyright
       \u00a9 1979, 1988, 2007 by International Bible Society\u00ae Used by permission.
-      All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"sv1750":{"title":"Statenvertaling","url":"","language":{"iso":"nl","human":"Nederlands"},"booklist":"nl","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nlbnt":{"title":"En
-      Levende Bok: Det Nye Testamentet","url":"","language":{"iso":"no","human":"Norsk"},"booklist":"nlbnt","copyright":"1978,
-      1988 by International Bible Society\u00ae Used by permission.  All rights reserved
-      worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"nb":{"title":"Norsk
-      Bibel 88\/07","url":"","language":{"iso":"no","human":"Norsk"},"booklist":"no","copyright":"Norsk
-      Bibel AS","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"norsk":{"title":"Det
-      Norsk Bibelselskap 1930","url":"","language":{"iso":"no","human":"Norsk"},"booklist":"no","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"pbg":{"title":"Biblia
+      All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"sv1750":{"title":"Statenvertaling","url":"","language":{"iso":"nl","human":"Nederlands"},"booklist":"nl","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"nn11-nn":{"title":"Bibelen
+      2011 nynorsk","url":"http:\/\/www.bibelselskapet.no\/","language":{"iso":"nn","human":"Norsk:
+      nynorsk"},"booklist":"nn11-nn","copyright":"Norwegian Bible Society","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"false","audio":"false","text_direction":"ltr"},"nlbnt":{"title":"En
+      Levende Bok: Det Nye Testamentet","url":"","language":{"iso":"no","human":"Norsk:
+      bokm\u00e5l"},"booklist":"nlbnt","copyright":"1978, 1988 by International Bible
+      Society\u00ae Used by permission.  All rights reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"},"bm11-no":{"title":"Bibelen
+      2011 bokm\u00e5l","url":"http:\/\/www.bibelselskapet.no\/","language":{"iso":"no","human":"Norsk:
+      bokm\u00e5l"},"booklist":"bm11-no","copyright":"Norwegian Bible Society","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"false","audio":"false","text_direction":"ltr"},"nb":{"title":"Norsk
+      Bibel 88\/07","url":"","language":{"iso":"no","human":"Norsk: bokm\u00e5l"},"booklist":"no","copyright":"Norsk
+      Bibel AS","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"norsk":{"title":"Det
+      Norsk Bibelselskap 1930","url":"","language":{"iso":"no","human":"Norsk: bokm\u00e5l"},"booklist":"no","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"pbg":{"title":"Biblia
       Gda\u0144ska","url":"","language":{"iso":"pl","human":"Polski"},"booklist":"pbg","copyright":"","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"2","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"psz":{"title":"S\u0142owo
       \u017bycia","url":"","language":{"iso":"pl","human":"Polski"},"booklist":"psz","copyright":"1991,
       2005 by International Bible Society\u00ae Used by permission. All rights reserved
@@ -342,10 +346,10 @@
       Bible CLT","url":"http:\/\/www.biblesociety-kenya.org","language":{"iso":"sw","human":"Kiswahili"},"booklist":"hnv","copyright":"(c)
       Bible Societies of Kenya\/Tanzania","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"3","max_offline_build":"3","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"suv":{"title":"Biblia
       ya Kiswahili Toleo la Muungano","url":"","language":{"iso":"sw","human":"Kiswahili"},"booklist":"suv","copyright":"(c)
-      Bible Societies of Kenya\/Tanzania","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"tncv-tha":{"title":"\u0e1e\u0e23\u0e30\u0e04\u0e23\u0e34\u0e2a\u0e15\u0e18\u0e23\u0e23\u0e21\u0e04\u0e31\u0e21\u0e20\u0e35\u0e23\u0e4c\u0e2d\u0e21\u0e15\u0e18\u0e23\u0e23\u0e21\u0e23\u0e48\u0e27\u0e21\u0e2a\u0e21\u0e31\u0e22","url":"http:\/\/www.biblica.com","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"tncv-tha","copyright":"1999,
-      2001, 2007 by International Bible Society\u00ae. Used by permission. All rights
-      reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bthai-tha":{"title":"Biblica
+      Bible Societies of Kenya\/Tanzania","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"2","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"bthai-tha":{"title":"Biblica
       Thai","url":"http:\/\/www.biblica.com","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"bthai-tha","copyright":"1999,
+      2001, 2007 by International Bible Society\u00ae. Used by permission. All rights
+      reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"tncv-tha":{"title":"\u0e1e\u0e23\u0e30\u0e04\u0e23\u0e34\u0e2a\u0e15\u0e18\u0e23\u0e23\u0e21\u0e04\u0e31\u0e21\u0e20\u0e35\u0e23\u0e4c\u0e2d\u0e21\u0e15\u0e18\u0e23\u0e23\u0e21\u0e23\u0e48\u0e27\u0e21\u0e2a\u0e21\u0e31\u0e22","url":"http:\/\/www.biblica.com","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"tncv-tha","copyright":"1999,
       2001, 2007 by International Bible Society\u00ae. Used by permission. All rights
       reserved worldwide.","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"thsv":{"title":"Thai
       Standard Version Revision","url":"http:\/\/www.thaibible.or.th","language":{"iso":"th","human":"\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"},"booklist":"thsv","copyright":"(c)
@@ -385,7 +389,7 @@
       de Cubulco","url":"","language":{"iso":"acc","human":"Achi de Cubulco"},"booklist":"acc","copyright":"SIL","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"accnt":{"title":"Achi''
       de Cubulco","url":"http:\/\/www.wycliffe.org","language":{"iso":"acc","human":"Achi
       de Cubulco"},"booklist":"accnt","copyright":"(c) Wycliffe Bible Translators,
-      Inc.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"}},"defaults":{"bg":"bg1940","cs":"b21","es":"rvr60","fi":"finpr","hu":"kar","id":"idbar","ja":"ja1955","ko":"korvb","no":"nb","pt":"aa","ru":"rursv","vi":"vi1934","zh_CN":"cuvs","zh_TW":"cuv","en":"kjv","ro":"vdc","ar":"nav","it":"nr94","nl":"htb","de":"hfa","sv":"sfb"},"totals":{"versions":163,"languages":47}},"buildtime":"2011-10-06T21:22:07+00:00"}}'
+      Inc.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"}},"defaults":{"bg":"bg1940","cs":"b21","es":"rvr60","fi":"finpr","hu":"kar","id":"idbar","ja":"ja1955","ko":"korvb","no":"nb","pt":"aa","ru":"rursv","vi":"vi1934","zh_CN":"cuvs","zh_TW":"cuv","en":"kjv","ro":"vdc","ar":"nav","it":"nr94","nl":"htb","de":"hfa","sv":"sfb"},"totals":{"versions":166,"languages":49}},"buildtime":"2011-10-19T18:10:14+00:00"}}'
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -403,7 +407,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Thu, 06 Oct 2011 21:22:08 GMT
+      - Wed, 19 Oct 2011 18:10:15 GMT
       content-type:
       - text/html
       content-length:
@@ -431,7 +435,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Thu, 06 Oct 2011 21:22:08 GMT
+      - Wed, 19 Oct 2011 18:10:15 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -440,6 +444,6 @@
       - keep-alive
       vary:
       - Accept-Encoding
-    body: ! '{"response":{"code":200,"data":{"id":"4163153","username":"cukeuser3","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-06
-      21:19:16.271146+00","last_login":"2011-10-06 21:22:08+00","twitter":null,"facebook":null,"email":"cukeuser3@youversion.com","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"true","notice_badges":"true","notice_reading_plans":"true"},"buildtime":"2011-10-06T21:22:08+00:00"}}'
+    body: ! '{"response":{"code":200,"data":{"id":"4163169","username":"cukeuser3","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-19
+      18:10:14.430167+00","last_login":"2011-10-19 18:10:15+00","twitter":null,"facebook":null,"email":"cukeuser3@youversion.com","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"true","notice_badges":"true","notice_reading_plans":"true"},"buildtime":"2011-10-19T18:10:15+00:00"}}'
     http_version: '1.1'
