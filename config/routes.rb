@@ -1,4 +1,7 @@
 YouversionWeb::Application.routes.draw do
+  # Tr8n
+  mount WillFilter::Engine => "/will_filter"
+  mount Tr8n::Engine => "/tr8n"
 
   # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}

@@ -9,6 +9,12 @@ gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
 gem 'pg'
 
+# Tr8n
+gem 'kaminari'
+gem 'will_filter', "~> 3.1.2"
+gem 'tr8n', "~> 3.1.1"
+gem 'coffee-script'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

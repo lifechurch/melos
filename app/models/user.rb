@@ -8,17 +8,12 @@ class User
     false
   end
 
-  def attributes(*args)
-    array = args
-    array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
-    attrs = {}
-    array.each do |var|
-      attrs[var] = instance_variable_get("@#{var}")
-    end
-    attrs
-  end
-
   attr_reader :errors
+  
+  
+  def self.authenticate(username, password)
+    response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }
+  end
 
   def initialize(params = {})
     params[:agree] = true if params[:agree]
@@ -34,7 +29,6 @@ class User
     end
   end
 
-
   def save
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
     response = YvApi.post('users/create', attributes(:email, :username, :password, :verified, :agree, :token)) do |errors|
@@ -43,8 +37,26 @@ class User
     end
     response
   end
-
-  def self.authenticate(username, password)
-    response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }
+  
+  def id
+    
   end
+  
+  def username
+    
+  end
+
+  
+  private
+  
+  def attributes(*args)
+    array = args
+    array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
+    attrs = {}
+    array.each do |var|
+      attrs[var] = instance_variable_get("@#{var}")
+    end
+    attrs
+  end
+  
 end

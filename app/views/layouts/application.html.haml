@@ -4,8 +4,11 @@
     %title YouversionWeb
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
+    = tr8n_scripts_tag
     = csrf_meta_tags
   %body
+    %div{style: "float: right"}= tr8n_language_selector_tag
+    = tr8n_translator_login_tag
     - flash.each do |key, msg|
       %div{id: key}= msg
     - if current_username
