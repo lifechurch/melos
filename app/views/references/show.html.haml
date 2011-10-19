@@ -6,5 +6,5 @@
 	%h1= @reference.human
 	- if @reference.copyright
 		%h3= @reference.copyright
-	- @reference.html.each do |r|
+	- @reference.contents.each do |r|
 		= r.html_safe
