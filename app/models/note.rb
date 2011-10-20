@@ -30,19 +30,21 @@ class Note
     end
   end
   
-  def self.find(id, user)
+  def self.find(id, user) #TODO: Refine to remove user parm
     response = YvApi.get('notes/view', {:id => id, :user => user} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
       return false
     end
-    Note.new(response)
+    @note = Note.new(response)
+    @note.user = user
+    @note
   end
   
   def find(id, user)
     self.class.find(id, user)
   end
   
-  def self.all(user)
+  def self.all(user) #TODO: Refine to remove user parm
     response = YvApi.get('notes/items', {:user_id => user.id, :user => user} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
       return false
@@ -66,6 +68,15 @@ class Note
       return false
     end
     response
-  end  
+  end
+  
+  def destroy
+    @token = Digest::MD5.hexdigest "#{user.username}.Yv6-#{user.password}"    
+    response = YvApi.post('notes/delete', attributes(:id, :user)) do |errors|
+      @errors = errors.map { |e| e["error"] }
+      return false
+    end
+    response
+  end
   
 end

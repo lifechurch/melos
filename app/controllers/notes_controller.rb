@@ -32,9 +32,25 @@ class NotesController < ApplicationController
   end
   
   def update
+    @note = Note.find(params[:id], current_user)
+    @note.user = current_user 
+
+    if @note.update_attributes(params[:note])
+      render action: "show"
+    else
+      flash[:alert] = []
+      @note.errors.each do |error|       
+        flash.now[:alert] << error
+      end
+      render action: "edit"
+    end       
   end
   
   def delete
+    @note = Note.find(params[:id], current_user)
+    @note.destroy
+    
+    redirect_to '/'
   end
   
 end
