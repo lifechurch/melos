@@ -42,9 +42,8 @@ class YvApi
     # For auth'ed API calls with :user => current_user
     basic_auth opts[:user].username, opts.delete(:user).password if opts[:user]
     path = clean_up(path)
-    response = httparty_post(path, body: opts)
+    response = httparty_post(path, body: opts)    
     return api_response_or_rescue(response, block)
-
   end
 
   private

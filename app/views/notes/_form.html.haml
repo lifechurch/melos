@@ -1,0 +1,12 @@
+= form_tag notes_path do
+  = label_tag :title, "Title:"
+  = text_field_tag :title, params[:title]
+  = label_tag :content, "Content:"
+  = text_field_tag :content, params[:content]
+  = label_tag :version, "Version:"
+  = select_tag :version, options_for_select(versions_dropdown, :version)
+  = label_tag :reference, "Reference:"
+  = text_field_tag :reference, params[:reference]
+  = label_tag :status, "Status:"
+  = select_tag :status, options_for_select(object_status, :status)
+  = submit_tag "Save"

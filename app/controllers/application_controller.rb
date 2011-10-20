@@ -11,13 +11,13 @@ class ApplicationController < ActionController::Base
 
   def current_user
     unless @current_user
-      @current_user = User.find(cookies.signed[:a]) if cookies.signed[:a]
+      @current_user = User.find(cookies.signed[:a]) if cookies.signed[:a]      
       @current_user.username = cookies.signed[:b]
       @current_user.password = cookies.signed[:c]
     end
     @current_user
   end
   def current_username
-    cookies.signed[:b] if cookies.signed[:b]
+    User.find(cookies.signed[:a]).username if cookies.signed[:a]      
   end
 end

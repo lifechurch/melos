@@ -1,6 +1,5 @@
 require 'digest/md5'
 
-
 class User
   extend ActiveModel::Naming
   include ActiveModel::Conversion
@@ -23,7 +22,7 @@ class User
 
   def initialize(params = {})
     params[:agree] = true if params[:agree]
-    reg_data = {email: "", username: "", password: "", verified: false, agree: false}
+    reg_data = {id: 0, email: "", username: "", password: "", verified: false, agree: false}
     reg_data.merge! params
     reg_data.each do |k,v|
       # Create instance variable
@@ -35,13 +34,20 @@ class User
     end
   end
 
-
-  def save
-    @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
-    response = YvApi.post('users/create', attributes(:email, :username, :password, :verified, :agree, :token)) do |errors|
+  def self.find(id)
+    response = YvApi.get('users/view', {:user_id => id, :auth_user_id => :id} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
       return false
     end
+    User.new(response)
+  end
+
+  def save
+    @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
+    response = YvApi.post('users/create', attributes(:email, :username, :password, :verified, :agree, :token)) do |errors|     
+      @errors = errors.map { |e| e["error"] }     
+      return false
+    end    
     response
   end
 

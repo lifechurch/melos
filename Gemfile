@@ -7,6 +7,7 @@ gem 'hashie'
 gem 'cells'
 gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
+gem 'coffee-script'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -54,4 +55,5 @@ end
 
 group :development do
   gem 'pry'
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end

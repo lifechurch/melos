@@ -18,7 +18,11 @@ module NavigationHelpers
       sign_up_path
     when /^the version page for \"(.*)\"$/
       version_path $1
-
+    when /^new note page$/
+      notes_path
+    when /^a show note page$/
+      notes_path(note: $1)
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
