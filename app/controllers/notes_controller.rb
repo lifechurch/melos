@@ -48,9 +48,16 @@ class NotesController < ApplicationController
   
   def delete
     @note = Note.find(params[:id], current_user)
-    @note.destroy
     
-    redirect_to '/'
+    if @note.destroy
+      redirect_to '/'
+    else
+      flash[:alert] = []
+      @note.errors.each do |error|       
+        flash.now[:alert] << error
+      end
+      render action: "index"
+    end
   end
   
 end
