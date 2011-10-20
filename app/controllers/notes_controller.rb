@@ -8,6 +8,10 @@ class NotesController < ApplicationController
     @note = Note.new()
   end
   
+  def edit
+    @note = Note.find(params[:id])   
+  end
+  
   def show
     @note = Note.find(params[:id], current_user)
   end
