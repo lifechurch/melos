@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   
-  def index
+  def index    
     @notes = Note.all(current_user)    
   end
   
@@ -18,17 +18,20 @@ class NotesController < ApplicationController
   
   def create
     @note = Note.new(params)
-    @note.user = current_user 
-
-    if @note.save
-      render action: "show"
-    else
-      flash[:alert] = []
-      @note.errors.each do |error|       
-        flash.now[:alert] << error
-      end
-      render action: "new"
-    end    
+    @note.user = current_user
+    
+    @tester = @note.save
+    #render action: "show"
+    
+    #if @note.save
+    #  render action: "show"
+    #else
+    #  flash[:alert] = []
+    #  @note.errors.each do |error|       
+    #    flash.now[:alert] << error
+    #  end
+    #  render action: "new"
+    #end    
   end
   
   def update

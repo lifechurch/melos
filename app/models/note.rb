@@ -49,9 +49,7 @@ class Note
       @errors = errors.map { |e| e["error"] }
       return false
     end
-
-    #TODO: Complete return
-
+    response
   end
   
   def all(user)
@@ -60,13 +58,13 @@ class Note
   
   def save
     @token = Digest::MD5.hexdigest "#{user.username}.Yv6-#{user.password}"
-    
+    #@reference = reference.to_osis_hash
+debugger    
     response = YvApi.post('notes/create', attributes(:title, :content, :language_iso, :reference, :version,
         :published, :user_status, :shared_connections, :token, :user)) do |errors|
-      @errors = errors.map { |e| e["error"] }
-#debugger      
+      @errors = errors.map { |e| e["error"] }      
       return false
-    end
+    end    
     response
   end
   
