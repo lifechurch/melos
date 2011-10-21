@@ -20,6 +20,9 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_auth
+    Hashie::Mash.new( {'id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
+  end
   def current_user
     unless @current_user
       @current_user = User.find(cookies.signed[:a]) if cookies.signed[:a]
