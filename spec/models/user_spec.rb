@@ -31,7 +31,7 @@ describe User do
 
   describe ".save" do
     it "returns true for saving valid params" do
-      user = User.new(@params)
+      user = User.new({email: "testuser@youversion.com", username: "testuser", password: "tenders", agree: TRUE, verified: TRUE, locale: "en_US"})
       user.save.should_not be_false
     end
 
@@ -48,7 +48,7 @@ describe User do
     end
 
     it "returns nil for an incorrect username and password" do
-      User.authenticate("testuser", "asdf").should be_nil
+      User.authenticate("testuser", "asdf").should be_false
     end
   end
 end

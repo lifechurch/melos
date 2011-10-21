@@ -38,14 +38,15 @@ class User
 
   def save
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
-    response = YvApi.post('users/create', attributes(:email, :username, :password, :verified, :agree, :token)) do |errors|
-      @errors = errors.map { |e| e["error"] }
+    @secure = true
+    response = YvApi.post('users/create', attributes(:email, :username, :password, :verified, :agree, :token, :secure)) do |errors|
+      @errors = errors.map { |e| e["error"] } if errors
       return false
     end
     response
   end
 
   def self.authenticate(username, password)
-    response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }
+    response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return false }
   end
 end
