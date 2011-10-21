@@ -8,11 +8,12 @@
     = csrf_meta_tags
   %body
     %div{style: "float: right"}= tr8n_language_selector_tag
-    = tr8n_translator_login_tag
     - flash.each do |key, msg|
       %div{id: key}= msg
     - if current_username
-      %p= "Signed in as #{current_username}"
+      %p= "Signed in as #{current_user.name}"
+      %p= current_user.is_admin?
+      %p= current_user.is_guest?
       %p= link_to "Sign out", sign_out_path
     - else
       %p= link_to "Sign in", sign_in_path

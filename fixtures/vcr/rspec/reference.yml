@@ -1129,3 +1129,364 @@
     body: ! '{"response":{"code":400,"data":{"errors":[{"key":"users.authorization.not_allowed","error":"Authenticating
       on method not allowed"}]},"buildtime":"2011-10-05T19:44:00+00:00"}}'
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.1-3&version=kjv
+    body: !!null 
+    headers:
+      referer:
+      - http://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:48 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:1, Genesis 1:2,
+      Genesis 1:3","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.1","human":"Genesis
+      1:1"},"content":"In the beginning God created the heaven and the earth."}},{"code":200,"data":{"reference":{"osis":"Gen.1.2","human":"Genesis
+      1:2"},"content":"And the earth was without form, and void; and darkness was
+      upon the face of the deep. And the Spirit of God moved upon the face of the
+      waters."}},{"code":200,"data":{"reference":{"osis":"Gen.1.3","human":"Genesis
+      1:3"},"content":" \nAnd God said, Let there be light: and there was light."}}]},"buildtime":"2011-10-20T22:06:48+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/chapter.json?format=html&reference=gen.1&version=kjv
+    body: !!null 
+    headers:
+      referer:
+      - http://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:48 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"code":"200","data":{"copyright":"","request":{"reference":{"osis":"Gen.1","human":"Genesis
+      1"},"content":"<div><h1 class=\"Gen_1\">Genesis 1<\/h1><p><span class=\"verse
+      Gen_1_1\"><strong>1<\/strong>\u00a0In the beginning God created the heaven and
+      the earth.<\/span><span class=\"verse Gen_1_2\"><strong>2<\/strong>\u00a0And
+      the earth was without form, and void; and darkness was upon the face of the
+      deep. And the Spirit of God moved upon the face of the waters.<\/span><\/p><p><span
+      class=\"verse Gen_1_3\"><strong>3<\/strong>\u00a0And God said, Let there be
+      light: and there was light.<\/span><span class=\"verse Gen_1_4\"><strong>4<\/strong>\u00a0And
+      God saw the light, that it was good: and God divided the light from the darkness.<span
+      class=\"study\" title=\"the light from\u2026: Heb. between the light and between
+      the darkness\">s<\/span><\/span><span class=\"verse Gen_1_5\"><strong>5<\/strong>\u00a0And
+      God called the light Day, and the darkness he called Night. And the evening
+      and the morning were the first day.<span class=\"study\" title=\"And the evening\u2026:
+      Heb. And the evening was, and the morning was etc.\">s<\/span><\/span><\/p><p><span
+      class=\"verse Gen_1_6\"><strong>6<\/strong>\u00a0And God said, Let there be
+      a firmament in the midst of the waters, and let it divide the waters from the
+      waters.<span class=\"study\" title=\"firmament: Heb. expansion\">s<\/span><\/span><span
+      class=\"verse Gen_1_7\"><strong>7<\/strong>\u00a0And God made the firmament,
+      and divided the waters which were under the firmament from the waters which
+      were above the firmament: and it was so.<\/span><span class=\"verse Gen_1_8\"><strong>8<\/strong>\u00a0And
+      God called the firmament Heaven. And the evening and the morning were the second
+      day.<span class=\"study\" title=\"And the evening\u2026: Heb. And the evening
+      was, and the morning was etc.\">s<\/span><\/span><\/p><p><span class=\"verse
+      Gen_1_9\"><strong>9<\/strong>\u00a0And God said, Let the waters under the heaven
+      be gathered together unto one place, and let the dry land appear: and it was
+      so.<\/span><span class=\"verse Gen_1_10\"><strong>10<\/strong>\u00a0And God
+      called the dry land Earth; and the gathering together of the waters called he
+      Seas: and God saw that it was good.<\/span><span class=\"verse Gen_1_11\"><strong>11<\/strong>\u00a0And
+      God said, Let the earth bring forth grass, the herb yielding seed, and the fruit
+      tree yielding fruit after his kind, whose seed is in itself, upon the earth:
+      and it was so.<span class=\"study\" title=\"grass: Heb. tender grass\">s<\/span><\/span><span
+      class=\"verse Gen_1_12\"><strong>12<\/strong>\u00a0And the earth brought forth
+      grass, and herb yielding seed after his kind, and the tree yielding fruit, whose
+      seed was in itself, after his kind: and God saw that it was good.<\/span><span
+      class=\"verse Gen_1_13\"><strong>13<\/strong>\u00a0And the evening and the morning
+      were the third day.<span class=\"study\" title=\"And the evening\u2026: Heb.
+      And the evening was, and the morning was etc.\">s<\/span><\/span><\/p><p><span
+      class=\"verse Gen_1_14\"><strong>14<\/strong>\u00a0And God said, Let there be
+      lights in the firmament of the heaven to divide the day from the night; and
+      let them be for signs, and for seasons, and for days, and years:<span class=\"study\"
+      title=\"the day\u2026: Heb. between the day and between the night\">s<\/span><\/span><span
+      class=\"verse Gen_1_15\"><strong>15<\/strong>\u00a0And let them be for lights
+      in the firmament of the heaven to give light upon the earth: and it was so.<\/span><span
+      class=\"verse Gen_1_16\"><strong>16<\/strong>\u00a0And God made two great lights;
+      the greater light to rule the day, and the lesser light to rule the night: he
+      made the stars also.<span class=\"study\" title=\"to rule the day\u2026: Heb.
+      for the rule of the day, etc.\">s<\/span><\/span><span class=\"verse Gen_1_17\"><strong>17<\/strong>\u00a0And
+      God set them in the firmament of the heaven to give light upon the earth,<\/span><span
+      class=\"verse Gen_1_18\"><strong>18<\/strong>\u00a0And to rule over the day
+      and over the night, and to divide the light from the darkness: and God saw that
+      it was good.<\/span><span class=\"verse Gen_1_19\"><strong>19<\/strong>\u00a0And
+      the evening and the morning were the fourth day.<span class=\"study\" title=\"And
+      the evening\u2026: Heb. And the evening was, and the morning was etc.\">s<\/span><\/span><\/p><p><span
+      class=\"verse Gen_1_20\"><strong>20<\/strong>\u00a0And God said, Let the waters
+      bring forth abundantly the moving creature that hath life, and fowl that may
+      fly above the earth in the open firmament of heaven.<span class=\"study\" title=\"moving:
+      or, creeping\">s<\/span><span class=\"study\" title=\"life: Heb. soul\">s<\/span><span
+      class=\"study\" title=\"fowl\u2026: Heb. let fowl fly\">s<\/span><span class=\"study\"
+      title=\"open\u2026: Heb. face of the firmament of heaven\">s<\/span><\/span><span
+      class=\"verse Gen_1_21\"><strong>21<\/strong>\u00a0And God created great whales,
+      and every living creature that moveth, which the waters brought forth abundantly,
+      after their kind, and every winged fowl after his kind: and God saw that it
+      was good.<\/span><span class=\"verse Gen_1_22\"><strong>22<\/strong>\u00a0And
+      God blessed them, saying, Be fruitful, and multiply, and fill the waters in
+      the seas, and let fowl multiply in the earth.<\/span><span class=\"verse Gen_1_23\"><strong>23<\/strong>\u00a0And
+      the evening and the morning were the fifth day.<span class=\"study\" title=\"And
+      the evening\u2026: Heb. And the evening was, and the morning was etc.\">s<\/span><\/span><\/p><p><span
+      class=\"verse Gen_1_24\"><strong>24<\/strong>\u00a0And God said, Let the earth
+      bring forth the living creature after his kind, cattle, and creeping thing,
+      and beast of the earth after his kind: and it was so.<\/span><span class=\"verse
+      Gen_1_25\"><strong>25<\/strong>\u00a0And God made the beast of the earth after
+      his kind, and cattle after their kind, and every thing that creepeth upon the
+      earth after his kind: and God saw that it was good.<\/span><\/p><p><span class=\"verse
+      Gen_1_26\"><strong>26<\/strong>\u00a0And God said, Let us make man in our image,
+      after our likeness: and let them have dominion over the fish of the sea, and
+      over the fowl of the air, and over the cattle, and over all the earth, and over
+      every creeping thing that creepeth upon the earth.<\/span><span class=\"verse
+      Gen_1_27\"><strong>27<\/strong>\u00a0So God created man in his own image, in
+      the image of God created he him; male and female created he them.<\/span><span
+      class=\"verse Gen_1_28\"><strong>28<\/strong>\u00a0And God blessed them, and
+      God said unto them, Be fruitful, and multiply, and replenish the earth, and
+      subdue it: and have dominion over the fish of the sea, and over the fowl of
+      the air, and over every living thing that moveth upon the earth.<span class=\"study\"
+      title=\"moveth: Heb. creepeth\">s<\/span><\/span><\/p><p><span class=\"verse
+      Gen_1_29\"><strong>29<\/strong>\u00a0And God said, Behold, I have given you
+      every herb bearing seed, which is upon the face of all the earth, and every
+      tree, in the which is the fruit of a tree yielding seed; to you it shall be
+      for meat.<span class=\"study\" title=\"bearing\u2026: Heb. seeding seed\">s<\/span><span
+      class=\"study\" title=\"yielding\u2026: Heb. seeding seed\">s<\/span><\/span><span
+      class=\"verse Gen_1_30\"><strong>30<\/strong>\u00a0And to every beast of the
+      earth, and to every fowl of the air, and to every thing that creepeth upon the
+      earth, wherein there is life, I have given every green herb for meat: and it
+      was so.<span class=\"study\" title=\"life: Heb. a living soul\">s<\/span><\/span><span
+      class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0And God saw every thing that
+      he had made, and, behold, it was very good. And the evening and the morning
+      were the sixth day.<span class=\"study\" title=\"And the evening\u2026: Heb.
+      And the evening was, and the morning was etc.\">s<\/span><\/span><\/p><\/div>\n","audio":[{"id":"8","title":"KJV
+      Listener''s Bible","download_urls":{"format_mp3_32k":"http:\/\/cdn-http.audio-bible.api.youversion.com\/kjv\/8\/32k\/gen\/001-9c430c64886685d03b3d512c1497de56.mp3"}}]},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+      2"}}},"buildtime":"2011-10-20T22:06:48+00:00"}],"buildtime":"2011-10-20T22:06:48+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.2-3&version=kjv
+    body: !!null 
+    headers:
+      referer:
+      - http://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:49 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:2, Genesis 1:3","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.2","human":"Genesis
+      1:2"},"content":"And the earth was without form, and void; and darkness was
+      upon the face of the deep. And the Spirit of God moved upon the face of the
+      waters."}},{"code":200,"data":{"reference":{"osis":"Gen.1.3","human":"Genesis
+      1:3"},"content":" \nAnd God said, Let there be light: and there was light."}}]},"buildtime":"2011-10-20T22:06:49+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/chapter.json?format=html&reference=gen.1&version=niv
+    body: !!null 
+    headers:
+      referer:
+      - http://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:50 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"code":"200","data":{"copyright":"Holy
+      Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica,
+      Inc. Used by permission. All rights reserved worldwide.","request":{"reference":{"osis":"Gen.1","human":"Genesis
+      1"},"content":"<div><h1 class=\"Gen_1\">Genesis 1<\/h1><h2>The Beginning<\/h2><p><span
+      class=\"verse Gen_1_1\"><strong>1<\/strong>\u00a0In the beginning God created
+      the heavens and the earth.<\/span><span class=\"verse Gen_1_2\"><strong>2<\/strong>\u00a0Now
+      the earth was formless and empty, darkness was over the surface of the deep,
+      and the Spirit of God was hovering over the waters.<\/span><\/p><p><span class=\"verse
+      Gen_1_3\"><strong>3<\/strong>\u00a0And God said, \"Let there be light,\" and
+      there was light.<\/span><span class=\"verse Gen_1_4\"><strong>4<\/strong>\u00a0God
+      saw that the light was good, and he separated the light from the darkness.<\/span><span
+      class=\"verse Gen_1_5\"><strong>5<\/strong>\u00a0God called the light \"day,\"
+      and the darkness he called \"night.\" And there was evening, and there was morning\u2014the
+      first day.<\/span><\/p><p><span class=\"verse Gen_1_6\"><strong>6<\/strong>\u00a0And
+      God said, \"Let there be a vault between the waters to separate water from water.\"<\/span><span
+      class=\"verse Gen_1_7\"><strong>7<\/strong>\u00a0So God made the vault and separated
+      the water under the vault from the water above it. And it was so.<\/span><span
+      class=\"verse Gen_1_8\"><strong>8<\/strong>\u00a0God called the vault \"sky.\"
+      And there was evening, and there was morning\u2014the second day.<\/span><\/p><p><span
+      class=\"verse Gen_1_9\"><strong>9<\/strong>\u00a0And God said, \"Let the water
+      under the sky be gathered to one place, and let dry ground appear.\" And it
+      was so.<\/span><span class=\"verse Gen_1_10\"><strong>10<\/strong>\u00a0God
+      called the dry ground \"land,\" and the gathered waters he called \"seas.\"
+      And God saw that it was good.<\/span><\/p><p><span class=\"verse Gen_1_11\"><strong>11<\/strong>\u00a0Then
+      God said, \"Let the land produce vegetation: seed-bearing plants and trees on
+      the land that bear fruit with seed in it, according to their various kinds.\"
+      And it was so.<\/span><span class=\"verse Gen_1_12\"><strong>12<\/strong>\u00a0The
+      land produced vegetation: plants bearing seed according to their kinds and trees
+      bearing fruit with seed in it according to their kinds. And God saw that it
+      was good.<\/span><span class=\"verse Gen_1_13\"><strong>13<\/strong>\u00a0And
+      there was evening, and there was morning\u2014the third day.<\/span><\/p><p><span
+      class=\"verse Gen_1_14\"><strong>14<\/strong>\u00a0And God said, \"Let there
+      be lights in the vault of the sky to separate the day from the night, and let
+      them serve as signs to mark sacred times, and days and years,<\/span><span class=\"verse
+      Gen_1_15\"><strong>15<\/strong>\u00a0and let them be lights in the vault of
+      the sky to give light on the earth.\" And it was so.<\/span><span class=\"verse
+      Gen_1_16\"><strong>16<\/strong>\u00a0God made two great lights\u2014the greater
+      light to govern the day and the lesser light to govern the night. He also made
+      the stars.<\/span><span class=\"verse Gen_1_17\"><strong>17<\/strong>\u00a0God
+      set them in the vault of the sky to give light on the earth,<\/span><span class=\"verse
+      Gen_1_18\"><strong>18<\/strong>\u00a0to govern the day and the night, and to
+      separate light from darkness. And God saw that it was good.<\/span><span class=\"verse
+      Gen_1_19\"><strong>19<\/strong>\u00a0And there was evening, and there was morning\u2014the
+      fourth day.<\/span><\/p><p><span class=\"verse Gen_1_20\"><strong>20<\/strong>\u00a0And
+      God said, \"Let the water teem with living creatures, and let birds fly above
+      the earth across the vault of the sky.\"<\/span><span class=\"verse Gen_1_21\"><strong>21<\/strong>\u00a0So
+      God created the great creatures of the sea and every living thing with which
+      the water teems and that moves about in it, according to their kinds, and every
+      winged bird according to its kind. And God saw that it was good.<\/span><span
+      class=\"verse Gen_1_22\"><strong>22<\/strong>\u00a0God blessed them and said,
+      \"Be fruitful and increase in number and fill the water in the seas, and let
+      the birds increase on the earth.\"<\/span><span class=\"verse Gen_1_23\"><strong>23<\/strong>\u00a0And
+      there was evening, and there was morning\u2014the fifth day.<\/span><\/p><p><span
+      class=\"verse Gen_1_24\"><strong>24<\/strong>\u00a0And God said, \"Let the land
+      produce living creatures according to their kinds: the livestock, the creatures
+      that move along the ground, and the wild animals, each according to its kind.\"
+      And it was so.<\/span><span class=\"verse Gen_1_25\"><strong>25<\/strong>\u00a0God
+      made the wild animals according to their kinds, the livestock according to their
+      kinds, and all the creatures that move along the ground according to their kinds.
+      And God saw that it was good.<\/span><\/p><p><span class=\"verse Gen_1_26\"><strong>26<\/strong>\u00a0Then
+      God said, \"Let us make mankind in our image, in our likeness, so that they
+      may rule over the fish in the sea and the birds in the sky, over the livestock
+      and all the wild animals,<span class=\"trans\" title=\"26 Probable reading of
+      the original Hebrew text (see Syriac); Masoretic Text the earth\">t<\/span>
+      and over all the creatures that move along the ground.\"<\/span><\/p><p><span
+      class=\"verse Gen_1_27\"><strong>27<\/strong>\u00a0So God created mankind in
+      his own image,<br\/>in the image of God he created them;<br\/>male and female
+      he created them.<\/span><\/p><p><span class=\"verse Gen_1_28\"><strong>28<\/strong>\u00a0God
+      blessed them and said to them, \"Be fruitful and increase in number; fill the
+      earth and subdue it. Rule over the fish in the sea and the birds in the sky
+      and over every living creature that moves on the ground.\"<\/span><\/p><p><span
+      class=\"verse Gen_1_29\"><strong>29<\/strong>\u00a0Then God said, \"I give you
+      every seed-bearing plant on the face of the whole earth and every tree that
+      has fruit with seed in it. They will be yours for food.<\/span><span class=\"verse
+      Gen_1_30\"><strong>30<\/strong>\u00a0And to all the beasts of the earth and
+      all the birds in the sky and all the creatures that move along the ground\u2014everything
+      that has the breath of life in it\u2014I give every green plant for food.\"
+      And it was so.<\/span><\/p><p><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0God
+      saw all that he had made, and it was very good. And there was evening, and there
+      was morning\u2014the sixth day.<\/span><\/p><\/div>\n","audio":[{"id":"3","title":"NIV
+      Listener''s Bible","download_urls":{"format_mp3_32k":"http:\/\/cdn-http.audio-bible.api.youversion.com\/niv84\/2\/32k\/gen\/001-8af7d4f598f6d657a4309b2e05f71ea5.mp3"}}]},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+      2"}}},"buildtime":"2011-10-20T22:06:50+00:00"}],"buildtime":"2011-10-20T22:06:50+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.1&version=niv
+    body: !!null 
+    headers:
+      referer:
+      - http://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:50 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:1","copyright":"Holy
+      Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica,
+      Inc. Used by permission. All rights reserved worldwide.","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.1","human":"Genesis
+      1:1"},"content":"In the beginning God created the heavens and the earth."}}]},"buildtime":"2011-10-20T22:06:50+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.1-3&version=niv
+    body: !!null 
+    headers:
+      referer:
+      - http://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:50 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:1, Genesis 1:2,
+      Genesis 1:3","copyright":"Holy Bible, New International Version, NIV. Copyright
+      1973, 1978, 1984, 2011 by Biblica, Inc. Used by permission. All rights reserved
+      worldwide.","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.1","human":"Genesis
+      1:1"},"content":"In the beginning God created the heavens and the earth."}},{"code":200,"data":{"reference":{"osis":"Gen.1.2","human":"Genesis
+      1:2"},"content":"Now the earth was formless and empty, darkness was over the
+      surface of the deep, and the Spirit of God was hovering over the waters."}},{"code":200,"data":{"reference":{"osis":"Gen.1.3","human":"Genesis
+      1:3"},"content":" \nAnd God said, \"Let there be light,\" and there was light."}}]},"buildtime":"2011-10-20T22:06:50+00:00"}}'
+    http_version: '1.1'

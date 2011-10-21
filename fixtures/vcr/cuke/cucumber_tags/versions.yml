@@ -687,3 +687,122 @@
       it was morning-Day Six.<\/span>"}],"audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
       2"}}},"buildtime":"2011-10-07T17:53:03+00:00"}],"buildtime":"2011-10-07T17:53:03+00:00"}}'
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.yvdev.com:443/2.3/bible/chapter.json?format=html&reference=gen.1&version=msg
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 301
+      message: Moved Permanently
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:31 GMT
+      content-type:
+      - text/html
+      content-length:
+      - '185'
+      connection:
+      - keep-alive
+      location:
+      - http://api.yvdev.com/2.3/bible/chapter.json?format=html&version=msg&reference=gen.1
+    body: ! "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+      bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/0.7.67</center>\r\n</body>\r\n</html>\r\n"
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/chapter.json?format=html&reference=gen.1&version=msg
+    body: !!null 
+    headers:
+      referer:
+      - https://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:31 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"code":"200","data":{"copyright":"1993,
+      1994, 1995, 1996, 2000, 2001, 2002 Eugene H. Peterson by NavPress Publishing","request":{"reference":{"osis":"Gen.1","human":"Genesis
+      1"},"content":"<div><h1 class=\"Gen_1\">Genesis 1<\/h1><h2>Heaven and Earth<\/h2><p><span
+      class=\"verse Gen_1_1\"><strong>1<\/strong>\u00a0First this: God created the
+      Heavens and Earth-all you see, all you don''t see.<\/span><span class=\"verse
+      Gen_1_2\"><strong>2<\/strong>\u00a0Earth was a soup of nothingness, a bottomless
+      emptiness, an inky blackness. God''s Spirit brooded like a bird above the watery
+      abyss.<\/span><\/p><p><span class=\"verse Gen_1_3\"><strong>3<\/strong>\u00a0God
+      spoke: \"Light!\" And light appeared.<\/span><span class=\"verse Gen_1_4\"><strong>4<\/strong>\u00a0God
+      saw that light was good and separated light from dark.<\/span><span class=\"verse
+      Gen_1_5\"><strong>5<\/strong>\u00a0God named the light Day, he named the dark
+      Night. It was evening, it was morning-Day One.<\/span><\/p><p><span class=\"verse
+      Gen_1_6\"><strong>6<\/strong>\u00a0God spoke: \"Sky! In the middle of the waters;
+      separate water from water!\"<\/span><span class=\"verse Gen_1_7\"><strong>7<\/strong>\u00a0God
+      made sky. He separated the water under sky from the water above sky. And there
+      it was:<\/span><span class=\"verse Gen_1_8\"><strong>8<\/strong>\u00a0he named
+      sky the Heavens; It was evening, it was morning-Day Two.<\/span><\/p><p><span
+      class=\"verse Gen_1_9\"><strong>9<\/strong>\u00a0God spoke: \"Separate! Water-beneath-Heaven,
+      gather into one place; Land, appear!\" And there it was.<\/span><span class=\"verse
+      Gen_1_10\"><strong>10<\/strong>\u00a0God named the land Earth. He named the
+      pooled water Ocean. God saw that it was good.<\/span><\/p><p><span class=\"verse
+      Gen_1_11\"><strong>11<\/strong>\u00a0God spoke: \"Earth, green up! Grow all
+      varieties of seed-bearing plants, Every sort of fruit-bearing tree.\" And there
+      it was.<\/span><span class=\"verse Gen_1_12\"><strong>12<\/strong>\u00a0Earth
+      produced green seed-bearing plants, all varieties, And fruit-bearing trees of
+      all sorts. God saw that it was good.<\/span><span class=\"verse Gen_1_13\"><strong>13<\/strong>\u00a0It
+      was evening, it was morning-Day Three.<\/span><\/p><p><span class=\"verse Gen_1_14\"><strong>14<\/strong>\u00a0God
+      spoke: \"Lights! Come out! Shine in Heaven''s sky! Separate Day from Night.
+      Mark seasons and days and years,<\/span><span class=\"verse Gen_1_15\"><strong>15<\/strong>\u00a0Lights
+      in Heaven''s sky to give light to Earth.\" And there it was.<\/span><\/p><p><span
+      class=\"verse Gen_1_16\"><strong>16<\/strong>\u00a0God made two big lights,
+      the larger to take charge of Day, The smaller to be in charge of Night; and
+      he made the stars.<\/span><span class=\"verse Gen_1_17\"><strong>17<\/strong>\u00a0God
+      placed them in the heavenly sky to light up Earth<\/span><span class=\"verse
+      Gen_1_18\"><strong>18<\/strong>\u00a0And oversee Day and Night, to separate
+      light and dark. God saw that it was good.<\/span><span class=\"verse Gen_1_19\"><strong>19<\/strong>\u00a0It
+      was evening, it was morning-Day Four.<\/span><\/p><p><span class=\"verse Gen_1_20\"><strong>20<\/strong>\u00a0God
+      spoke: \"Swarm, Ocean, with fish and all sea life! Birds, fly through the sky
+      over Earth!\"<\/span><span class=\"verse Gen_1_21\"><strong>21<\/strong>\u00a0God
+      created the huge whales, all the swarm of life in the waters, And every kind
+      and species of flying birds. God saw that it was good.<\/span><span class=\"verse
+      Gen_1_22\"><strong>22<\/strong>\u00a0God blessed them: \"Prosper! Reproduce!
+      Fill Ocean! Birds, reproduce on Earth!\"<\/span><span class=\"verse Gen_1_23\"><strong>23<\/strong>\u00a0It
+      was evening, it was morning-Day Five.<\/span><\/p><p><span class=\"verse Gen_1_24\"><strong>24<\/strong>\u00a0God
+      spoke: \"Earth, generate life! Every sort and kind: cattle and reptiles and
+      wild animals-all kinds.\" And there it was:<\/span><span class=\"verse Gen_1_25\"><strong>25<\/strong>\u00a0wild
+      animals of every kind, Cattle of all kinds, every sort of reptile and bug. God
+      saw that it was good.<\/span><\/p><p><span class=\"verse Gen_1_26\"><strong>26<\/strong>\u00a0God
+      spoke: \"Let us make human beings in our image, make them reflecting our nature
+      So they can be responsible for the fish in the sea, the birds in the air, the
+      cattle, And, yes, Earth itself, and every animal that moves on the face of Earth.\"<\/span><span
+      class=\"verse Gen_1_27\"><strong>27<\/strong>\u00a0God created human beings;
+      he created them godlike, Reflecting God''s nature. He created them male and
+      female.<\/span><span class=\"verse Gen_1_28\"><strong>28<\/strong>\u00a0God
+      blessed them: \"Prosper! Reproduce! Fill Earth! Take charge! Be responsible
+      for fish in the sea and birds in the air, for every living thing that moves
+      on the face of Earth.\"<\/span><\/p><p><span class=\"verse Gen_1_29\"><strong>29<\/strong>\u00a0Then
+      God said, \"I''ve given you every sort of seed-bearing plant on Earth And every
+      kind of fruit-bearing tree, given them to you for food.<\/span><span class=\"verse
+      Gen_1_30\"><strong>30<\/strong>\u00a0To all animals and all birds, everything
+      that moves and breathes, I give whatever grows out of the ground for food.\"
+      And there it was.<\/span><\/p><p><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0God
+      looked over everything he had made; it was so good, so very good! It was evening,
+      it was morning-Day Six.<\/span><\/p><\/div>\n","audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+      2"}}},"buildtime":"2011-10-20T22:06:31+00:00"}],"buildtime":"2011-10-20T22:06:31+00:00"}}'
+    http_version: '1.1'
