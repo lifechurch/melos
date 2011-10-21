@@ -1,10 +1,12 @@
 development:
-  api_root: https://api.yvdev.com
+  api_root: api.yvdev.com
+  api_referer: web.youversion.com
   api_version: "2.3"
   memcache_server: localhost
 
 test: &test
-  api_root: https://api.yvdev.com
+  api_root: api.yvdev.com
+  api_referer: web.youversion.com
   api_version: "2.3"
   memcache_server: localhost
 

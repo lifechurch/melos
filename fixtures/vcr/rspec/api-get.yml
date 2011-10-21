@@ -490,3 +490,32 @@
     body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
       or password is invalid"}]},"buildtime":"2011-10-05T18:17:57+00:00"}}'
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://asdf:ghjkl@api.yvdev.com:80/2.3/users/authenticate.json
+    body: !!null 
+    headers:
+      referer:
+      - http://api.yvdev.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Thu, 20 Oct 2011 22:06:46 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+      or password is invalid"}]},"buildtime":"2011-10-20T22:06:46+00:00"}}'
+    http_version: '1.1'

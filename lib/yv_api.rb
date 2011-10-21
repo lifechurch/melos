@@ -1,8 +1,7 @@
 class YvApi
   include HTTParty
   format :json
-  base_uri(Cfg.api_root + "/" + Cfg.api_version)
-  headers 'Referer' => Cfg.api_root
+  headers 'Referer' => "http://" + Cfg.api_referer
 
   class << YvApi
     alias_method :httparty_get, :get
@@ -17,6 +16,15 @@ class YvApi
     basic_auth opts[:user].username, opts.delete(:user).password if opts[:user]
     # Clean up the path
     path = clean_up(path)
+    # Set the request protocol
+    protocol = "http"
+    if opts[:secure] == true
+      opts.delete(:secure)
+      protocol += "s"
+    end
+    # Set the base URL
+    base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
+
     # Figure out if we should cache
     cache_length = opts.delete(:cache_for)
 
@@ -25,11 +33,11 @@ class YvApi
       cache_key = {p: path, q: opts}
       Rails.cache.fetch cache_key, expires_in: cache_length do
         # No cache hit; ask the API
-        response = httparty_get(path, query: opts)
+        response = httparty_get(base + path, query: opts)
       end
     else
       # Just ask the API
-      response = httparty_get(path, query: opts)
+      response = httparty_get(base + path, query: opts)
     end
     # Check the API response for error code
     return api_response_or_rescue(response, block)
@@ -41,8 +49,17 @@ class YvApi
     basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
     # For auth'ed API calls with :user => current_user
     basic_auth opts[:user].username, opts.delete(:user).password if opts[:user]
+    # Clean up the path
     path = clean_up(path)
-    response = httparty_post(path, body: opts)    
+    # Set the request protocol
+    protocol = "http"
+    if opts[:secure] == true
+      opts.delete(:secure)
+      protocol += "s"
+    end
+    # Set the base URL
+    base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
+    response = httparty_post(base + path, body: opts)
     return api_response_or_rescue(response, block)
   end
 
