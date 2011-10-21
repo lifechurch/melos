@@ -10,6 +10,12 @@ Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/ do |arg1, arg2|
   assert page.has_content?('Signed in!')
 end
 
+Given /^notes exist with the following attributes:$/ do |table|
+  @row = table.hashes.first
+  puts "TODO: Complete"
+  Note.find_by_title(@row['title'])
+end
+
 When /^I select "([^"]*)" from the dropdown "([^"]*)"$/ do |arg1, arg2|
   select(arg1, :from => arg2)
 end

@@ -26,7 +26,7 @@ Feature: Notes view
     | Author    | Title           | Content                 | References  | Status  |
     | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
     And I am logged in as "testuser" with password "tenders" 
-    When I go to the notes index page for user "testuser" 
+    When I go to the notes index page
     Then I should see a link to "Public Note" 
     When I follow "Public Note" 
     Then I should see a link to "edit" 

@@ -40,10 +40,23 @@ class Note
     @note.auth = auth
     @note
   end
-  
+    
   def find(id, auth)
     self.class.find(id, auth)
   end
+  
+  def self.find_by_title(title, auth) 
+    response = YvApi.get('notes/search', {:user_id => auth.id, :query => title, :page => 1, :auth => auth} ) do |errors|     
+      @errors = errors.map { |e| e["error"] }
+      return false
+    end
+debugger    
+    response    
+  end
+    
+  def find_by_title(id, auth)
+    self.class.find_by_title(id, auth)
+  end  
   
   def self.all(auth) 
     response = YvApi.get('notes/items', {:user_id => auth.id, :auth => auth} ) do |errors|     

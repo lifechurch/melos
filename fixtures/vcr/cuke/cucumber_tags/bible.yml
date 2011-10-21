@@ -706,3 +706,79 @@
       1:1"}],"version":"kjv","created":"2011-10-21 20:34:22+00","published":null,"updated":"2011-10-21
       20:34:22.986266+00","user_status":"draft","system_status":"new"},"buildtime":"2011-10-21T20:34:23+00:00"}}'
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163176
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 21:35:08 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+      13:23:17.36098+00","last_login":"2011-10-21 21:11:46+00"},"buildtime":"2011-10-21T21:35:08+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/items.json?user_id=4163177
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 21:37:01 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"total":9,"notes":[{"id":"935769","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"awef","highlight_color":null,"url":"\/notes\/935769\/awef","short_url":"http:\/\/dev.read.ly\/n\/3vR3","content_text":"waefwae","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
+      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 20:36:57+00","published":null,"updated":"2011-10-21
+      20:36:57.271571+00","user_status":"draft","system_status":"new"},{"id":"935768","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"awef","highlight_color":null,"url":"\/notes\/935768\/awef","short_url":"http:\/\/dev.read.ly\/n\/3vR2","content_text":"waefwae","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
+      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 20:36:02+00","published":null,"updated":"2011-10-21
+      20:36:02.401272+00","user_status":"draft","system_status":"new"},{"id":"935767","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Note
+      Title","highlight_color":null,"url":"\/notes\/935767\/note-title","short_url":"http:\/\/dev.read.ly\/n\/3vR1","content_text":"Note
+      Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+      1:1"}],"version":"kjv","created":"2011-10-21 20:34:22+00","published":null,"updated":"2011-10-21
+      20:34:22.986266+00","user_status":"draft","system_status":"new"},{"id":"935766","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"awef","highlight_color":null,"url":"\/notes\/935766\/awef","short_url":"http:\/\/dev.read.ly\/n\/3vR0","content_text":"waefwae","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
+      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 20:32:54+00","published":null,"updated":"2011-10-21
+      20:32:54.170056+00","user_status":"draft","system_status":"new"},{"id":"935765","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"waefwaef","highlight_color":null,"url":"\/notes\/935765\/waefwaef","short_url":"http:\/\/dev.read.ly\/n\/3vQz","content_text":"awefawe","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1-2","human":"Genesis
+      1:1-2"}],"version":"b21","created":"2011-10-21 20:18:57+00","published":null,"updated":"2011-10-21
+      20:18:57.518924+00","user_status":"draft","system_status":"new"},{"id":"935764","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Title","highlight_color":null,"url":"\/notes\/935764\/title","short_url":"http:\/\/dev.read.ly\/n\/3vQy","content_text":"The
+      Best","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1-2","human":"S\u00e1ng-th\u1ebf
+      K\u00fd 1:1-2"}],"version":"vi1934","created":"2011-10-21 20:13:55+00","published":null,"updated":"2011-10-21
+      20:13:55.593453+00","user_status":"draft","system_status":"new"},{"id":"935763","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"title","highlight_color":null,"url":"\/notes\/935763\/title","short_url":"http:\/\/dev.read.ly\/n\/3vQx","content_text":"Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
+      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 19:24:15+00","published":null,"updated":"2011-10-21
+      19:24:15.922113+00","user_status":"draft","system_status":"new"},{"id":"935762","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"title","highlight_color":null,"url":"\/notes\/935762\/title","short_url":"http:\/\/dev.read.ly\/n\/3vQw","content_text":"Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
+      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 19:23:32+00","published":null,"updated":"2011-10-21
+      19:23:32.711877+00","user_status":"draft","system_status":"new"},{"id":"935761","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"title","highlight_color":null,"url":"\/notes\/935761\/title","short_url":"http:\/\/dev.read.ly\/n\/3vQv","content_text":"Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
+      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 19:22:26+00","published":null,"updated":"2011-10-21
+      19:22:26.70543+00","user_status":"draft","system_status":"new"}]},"buildtime":"2011-10-21T21:37:00+00:00"}}'
+    http_version: '1.1'

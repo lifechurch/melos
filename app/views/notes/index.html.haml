@@ -1,8 +1,9 @@
 #note
   %h1= "My Notes"
   - @notes.each do |note|
-    %div{id: "title"}= note.title
-    %div{id: "content"}= note.content_text
-    %div{id: "version"}= note.version
-    %div{id: "reference"}= references_breakout(note.reference)
-    %div{id: "status"}= note.user_status
+    %div{id: note.id}
+      %div{class: "title"}= note.title
+      %div{class: "content"}= note.content_text
+      %div{class: "version"}= note.version
+      %div{class: "reference"}= references_breakout(note.reference)
+      %div{class: "status"}= note.user_status
