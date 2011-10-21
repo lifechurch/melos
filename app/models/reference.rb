@@ -49,6 +49,10 @@ class Reference
     @ref.to_osis_string
   end
 
+  def to_api
+    
+  end
+  
   def human
     case @ref[:verse]
     when Fixnum

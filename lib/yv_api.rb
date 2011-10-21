@@ -60,7 +60,6 @@ class YvApi
     # Set the base URL
     base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
     response = httparty_post(base + path, body: opts)
-File.open('/home/caedmon/Desktop/export.txt', 'w') {|f| f.write(response) }
     return api_response_or_rescue(response, block)
   end
 
