@@ -49,6 +49,7 @@ class Note
       @errors = errors.map { |e| e["error"] }
       return false
     end
+debugger    
     response
   end
   
@@ -58,7 +59,8 @@ class Note
   
   def save
     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-
+    @content = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE yv-note SYSTEM "http://' << Cfg.api_root << '/pub/yvml_1_0.dtd"><yv-note>' << @content << '</yv-note>'
+        
     response = YvApi.post('notes/create', attributes(:title, :content, :language_iso, :reference, :version,
         :published, :user_status, :shared_connections, :token, :auth)) do |errors|
       @errors = errors.map { |e| e["error"] }      
