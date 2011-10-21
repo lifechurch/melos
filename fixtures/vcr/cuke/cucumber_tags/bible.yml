@@ -1,0 +1,708 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/users/authenticate.json?
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:35 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+      13:26:48.226265+00","last_login":"2011-10-21 20:31:35+00","twitter":null,"facebook":null,"email":"testuser@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-21T20:31:35+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/users/authenticate.json?
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:35 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+      13:26:48.226265+00","last_login":"2011-10-21 20:31:35+00","twitter":null,"facebook":null,"email":"testuser@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-21T20:31:35+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163177
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:35 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+      13:26:48.226265+00","last_login":"2011-10-21 20:31:35+00"},"buildtime":"2011-10-21T20:31:35+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163177
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:36 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      content-length:
+      - '735'
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+      13:26:48.226265+00","last_login":"2011-10-21 20:31:35+00"},"buildtime":"2011-10-21T20:31:35+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/create.json
+    body: title=Note%20Title&content=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3C!DOCTYPE%20yv-note%20SYSTEM%20%22http%3A%2F%2Fapi.yvdev.com%2Fpub%2Fyvml_1_0.dtd%22%3E%3Cyv-note%3ENote%20Content%3C%2Fyv-note%3E&language_iso=&reference=Genesis%201%3A1&version=kjv&published=&user_status=&shared_connections=&token=615ad51b71049e299842f5af14c70cad
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:36 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":400,"data":{"errors":[{"key":"notes.reference.invalid_multi_reference","error":"Invalid
+      multi-reference"}]},"buildtime":"2011-10-21T20:31:36+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163177
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:36 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+      13:26:48.226265+00","last_login":"2011-10-21 20:31:36+00"},"buildtime":"2011-10-21T20:31:36+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser2:tenders@api.yvdev.com:80/2.3/users/authenticate.json?
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:37 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+      13:23:17.36098+00","last_login":"2011-10-21 20:31:37+00","twitter":null,"facebook":null,"email":"testuser2@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-21T20:31:37+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/books.json?version=niv
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:37 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"number":1,"osis":"Gen","human":"Genesis","chapters":50,"verses":[31,25,24,26,32,22,24,22,29,32,32,20,18,24,21,16,27,33,38,18,34,24,20,67,34,35,46,22,35,43,55,32,20,31,29,43,36,30,23,23,57,38,34,34,28,34,31,22,33,26],"audio":true},{"number":2,"osis":"Exod","human":"Exodus","chapters":40,"verses":[22,25,22,31,23,30,25,32,35,29,10,51,22,31,27,36,16,27,25,26,36,31,33,18,40,37,21,43,46,38,18,35,23,35,35,38,29,31,43,38],"audio":true},{"number":3,"osis":"Lev","human":"Leviticus","chapters":27,"verses":[17,16,17,35,19,30,38,36,24,20,47,8,59,57,33,34,16,30,37,27,24,33,44,23,55,46,34],"audio":true},{"number":4,"osis":"Num","human":"Numbers","chapters":36,"verses":[54,34,51,49,31,27,89,26,23,36,35,16,33,45,41,50,13,32,22,29,35,41,30,25,18,65,23,31,40,16,54,42,56,29,34,13],"audio":true},{"number":5,"osis":"Deut","human":"Deuteronomy","chapters":34,"verses":[46,37,29,49,33,25,26,20,29,22,32,32,18,29,23,22,20,22,21,20,23,30,25,22,19,19,26,68,29,20,30,52,29,12],"audio":true},{"number":6,"osis":"Josh","human":"Joshua","chapters":24,"verses":[18,24,17,24,15,27,26,35,27,43,23,24,33,15,63,10,18,28,51,9,45,34,16,33],"audio":true},{"number":7,"osis":"Judg","human":"Judges","chapters":21,"verses":[36,23,31,24,31,40,25,35,57,18,40,15,25,20,20,31,13,31,30,48,25],"audio":true},{"number":8,"osis":"Ruth","human":"Ruth","chapters":4,"verses":[22,23,18,22],"audio":true},{"number":9,"osis":"1Sam","human":"1
+      Samuel","chapters":31,"verses":[28,36,21,22,12,21,17,22,27,27,15,25,23,52,35,23,58,30,24,42,15,23,29,22,44,25,12,25,11,31,13],"audio":true},{"number":10,"osis":"2Sam","human":"2
+      Samuel","chapters":24,"verses":[27,32,39,12,25,23,29,18,13,19,27,31,39,33,37,23,29,33,43,26,22,51,39,25],"audio":true},{"number":11,"osis":"1Kgs","human":"1
+      Kings","chapters":22,"verses":[53,46,28,34,18,38,51,66,28,29,43,33,34,31,34,34,24,46,21,43,29,53],"audio":true},{"number":12,"osis":"2Kgs","human":"2
+      Kings","chapters":25,"verses":[18,25,27,44,27,33,20,29,37,36,21,21,25,29,38,20,41,37,37,21,26,20,37,20,30],"audio":true},{"number":13,"osis":"1Chr","human":"1
+      Chronicles","chapters":29,"verses":[54,55,24,43,26,81,40,40,44,14,47,40,14,17,29,43,27,17,19,8,30,19,32,31,31,32,34,21,30],"audio":true},{"number":14,"osis":"2Chr","human":"2
+      Chronicles","chapters":36,"verses":[17,18,17,22,14,42,22,18,31,19,23,16,22,15,19,14,19,34,11,37,20,12,21,27,28,23,9,27,36,27,21,33,25,33,27,23],"audio":true},{"number":15,"osis":"Ezra","human":"Ezra","chapters":10,"verses":[11,70,13,24,17,22,28,36,15,44],"audio":true},{"number":16,"osis":"Neh","human":"Nehemiah","chapters":13,"verses":[11,20,32,23,19,19,73,18,38,39,36,47,31],"audio":true},{"number":17,"osis":"Esth","human":"Esther","chapters":10,"verses":[22,23,15,17,14,14,10,17,32,3],"audio":true},{"number":18,"osis":"Job","human":"Job","chapters":42,"verses":[22,13,26,21,27,30,21,22,35,22,20,25,28,22,35,22,16,21,29,29,34,30,17,25,6,14,23,28,25,31,40,22,33,37,16,33,24,41,30,24,34,17],"audio":true},{"number":19,"osis":"Ps","human":"Psalm","chapters":150,"verses":[6,12,8,8,12,10,17,9,20,18,7,8,6,7,5,11,15,50,14,9,13,31,6,10,22,12,14,9,11,12,24,11,22,22,28,12,40,22,13,17,13,11,5,26,17,11,9,14,20,23,19,9,6,7,23,13,11,11,17,12,8,12,11,10,13,20,7,35,36,5,24,20,28,23,10,12,20,72,13,19,16,8,18,12,13,17,7,18,52,17,16,15,5,23,11,13,12,9,9,5,8,28,22,35,45,48,43,13,31,7,10,10,9,8,18,19,2,29,176,7,8,9,4,8,5,6,5,6,8,8,3,18,3,3,21,26,9,8,24,13,10,7,12,15,21,10,20,14,9,6],"audio":true},{"number":20,"osis":"Prov","human":"Proverbs","chapters":31,"verses":[33,22,35,27,23,35,27,36,18,32,31,28,25,35,33,33,28,24,29,30,31,29,35,34,28,28,27,28,27,33,31],"audio":true},{"number":21,"osis":"Eccl","human":"Ecclesiastes","chapters":12,"verses":[18,26,22,16,20,12,29,17,18,20,10,14],"audio":true},{"number":22,"osis":"Song","human":"Song
+      of Solomon","chapters":8,"verses":[17,17,11,16,16,13,13,14],"audio":true},{"number":23,"osis":"Isa","human":"Isaiah","chapters":66,"verses":[31,22,26,6,30,13,25,22,21,34,16,6,22,32,9,14,14,7,25,6,17,25,18,23,12,21,13,29,24,33,9,20,24,17,10,22,38,22,8,31,29,25,28,28,25,13,15,22,26,11,23,15,12,17,13,12,21,14,21,22,11,12,19,12,25,24],"audio":true},{"number":24,"osis":"Jer","human":"Jeremiah","chapters":52,"verses":[19,37,25,31,31,30,34,22,26,25,23,17,27,22,21,21,27,23,15,18,14,30,40,10,38,24,22,17,32,24,40,44,26,22,19,32,21,28,18,16,18,22,13,30,5,28,7,47,39,46,64,34],"audio":true},{"number":25,"osis":"Lam","human":"Lamentations","chapters":5,"verses":[22,22,66,22,22],"audio":true},{"number":26,"osis":"Ezek","human":"Ezekiel","chapters":48,"verses":[28,10,27,17,17,14,27,18,11,22,25,28,23,23,8,63,24,32,14,49,32,31,49,27,17,21,36,26,21,26,18,32,33,31,15,38,28,23,29,49,26,20,27,31,25,24,23,35],"audio":true},{"number":27,"osis":"Dan","human":"Daniel","chapters":12,"verses":[21,49,30,37,31,28,28,27,27,21,45,13],"audio":true},{"number":28,"osis":"Hos","human":"Hosea","chapters":14,"verses":[11,23,5,19,15,11,16,14,17,15,12,14,16,9],"audio":true},{"number":29,"osis":"Joel","human":"Joel","chapters":3,"verses":[20,32,21],"audio":true},{"number":30,"osis":"Amos","human":"Amos","chapters":9,"verses":[15,16,15,13,27,14,17,14,15],"audio":true},{"number":31,"osis":"Obad","human":"Obadiah","chapters":1,"verses":[21],"audio":true},{"number":32,"osis":"Jonah","human":"Jonah","chapters":4,"verses":[17,10,10,11],"audio":true},{"number":33,"osis":"Mic","human":"Micah","chapters":7,"verses":[16,13,12,13,15,16,20],"audio":true},{"number":34,"osis":"Nah","human":"Nahum","chapters":3,"verses":[15,13,19],"audio":true},{"number":35,"osis":"Hab","human":"Habakkuk","chapters":3,"verses":[17,20,19],"audio":true},{"number":36,"osis":"Zeph","human":"Zephaniah","chapters":3,"verses":[18,15,20],"audio":true},{"number":37,"osis":"Hag","human":"Haggai","chapters":2,"verses":[15,23],"audio":true},{"number":38,"osis":"Zech","human":"Zechariah","chapters":14,"verses":[21,13,10,14,11,15,14,23,17,12,17,14,9,21],"audio":true},{"number":39,"osis":"Mal","human":"Malachi","chapters":4,"verses":[14,17,18,6],"audio":true},{"number":40,"osis":"Matt","human":"Matthew","chapters":28,"verses":[25,23,17,25,48,34,29,34,38,42,30,50,58,36,39,28,27,35,30,34,46,46,39,51,46,75,66,20],"audio":true},{"number":41,"osis":"Mark","human":"Mark","chapters":16,"verses":[45,28,35,41,43,56,37,38,50,52,33,44,37,72,47,20],"audio":true},{"number":42,"osis":"Luke","human":"Luke","chapters":24,"verses":[80,52,38,44,39,49,50,56,62,42,54,59,35,35,32,31,37,43,48,47,38,71,56,53],"audio":true},{"number":43,"osis":"John","human":"John","chapters":21,"verses":[51,25,36,54,47,71,53,59,41,42,57,50,38,31,27,33,26,40,42,31,25],"audio":true},{"number":44,"osis":"Acts","human":"Acts","chapters":28,"verses":[26,47,26,37,42,15,60,40,43,48,30,25,52,28,41,40,34,28,41,38,40,30,35,27,27,32,44,31],"audio":true},{"number":45,"osis":"Rom","human":"Romans","chapters":16,"verses":[32,29,31,25,21,23,25,39,33,21,36,21,14,23,33,27],"audio":true},{"number":46,"osis":"1Cor","human":"1
+      Corinthians","chapters":16,"verses":[31,16,23,21,13,20,40,13,27,33,34,31,13,40,58,24],"audio":true},{"number":47,"osis":"2Cor","human":"2
+      Corinthians","chapters":13,"verses":[24,17,18,18,21,18,16,24,15,18,33,21,14],"audio":true},{"number":48,"osis":"Gal","human":"Galatians","chapters":6,"verses":[24,21,29,31,26,18],"audio":true},{"number":49,"osis":"Eph","human":"Ephesians","chapters":6,"verses":[23,22,21,32,33,24],"audio":true},{"number":50,"osis":"Phil","human":"Philippians","chapters":4,"verses":[30,30,21,23],"audio":true},{"number":51,"osis":"Col","human":"Colossians","chapters":4,"verses":[29,23,25,18],"audio":true},{"number":52,"osis":"1Thess","human":"1
+      Thessalonians","chapters":5,"verses":[10,20,13,18,28],"audio":true},{"number":53,"osis":"2Thess","human":"2
+      Thessalonians","chapters":3,"verses":[12,17,18],"audio":true},{"number":54,"osis":"1Tim","human":"1
+      Timothy","chapters":6,"verses":[20,15,16,16,25,21],"audio":true},{"number":55,"osis":"2Tim","human":"2
+      Timothy","chapters":4,"verses":[18,26,17,22],"audio":true},{"number":56,"osis":"Titus","human":"Titus","chapters":3,"verses":[16,15,15],"audio":true},{"number":57,"osis":"Phlm","human":"Philemon","chapters":1,"verses":[25],"audio":true},{"number":58,"osis":"Heb","human":"Hebrews","chapters":13,"verses":[14,18,19,16,14,20,28,13,28,39,40,29,25],"audio":true},{"number":59,"osis":"Jas","human":"James","chapters":5,"verses":[27,26,18,17,20],"audio":true},{"number":60,"osis":"1Pet","human":"1
+      Peter","chapters":5,"verses":[25,25,22,19,14],"audio":true},{"number":61,"osis":"2Pet","human":"2
+      Peter","chapters":3,"verses":[21,22,18],"audio":true},{"number":62,"osis":"1John","human":"1
+      John","chapters":5,"verses":[10,29,24,21,21],"audio":true},{"number":63,"osis":"2John","human":"2
+      John","chapters":1,"verses":[13],"audio":true},{"number":64,"osis":"3John","human":"3
+      John","chapters":1,"verses":[14],"audio":true},{"number":65,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":true},{"number":66,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"audio":true}],"buildtime":"2011-10-21T20:31:37+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/chapter.json?format=html&reference=gen.1&version=niv
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:39 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"code":"200","data":{"copyright":"Holy
+      Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica,
+      Inc. Used by permission. All rights reserved worldwide.","request":{"reference":{"osis":"Gen.1","human":"Genesis
+      1"},"content":"<div><h1 class=\"Gen_1\">Genesis 1<\/h1><h2>The Beginning<\/h2><p><span
+      class=\"verse Gen_1_1\"><strong>1<\/strong>\u00a0In the beginning God created
+      the heavens and the earth.<\/span><span class=\"verse Gen_1_2\"><strong>2<\/strong>\u00a0Now
+      the earth was formless and empty, darkness was over the surface of the deep,
+      and the Spirit of God was hovering over the waters.<\/span><\/p><p><span class=\"verse
+      Gen_1_3\"><strong>3<\/strong>\u00a0And God said, \"Let there be light,\" and
+      there was light.<\/span><span class=\"verse Gen_1_4\"><strong>4<\/strong>\u00a0God
+      saw that the light was good, and he separated the light from the darkness.<\/span><span
+      class=\"verse Gen_1_5\"><strong>5<\/strong>\u00a0God called the light \"day,\"
+      and the darkness he called \"night.\" And there was evening, and there was morning\u2014the
+      first day.<\/span><\/p><p><span class=\"verse Gen_1_6\"><strong>6<\/strong>\u00a0And
+      God said, \"Let there be a vault between the waters to separate water from water.\"<\/span><span
+      class=\"verse Gen_1_7\"><strong>7<\/strong>\u00a0So God made the vault and separated
+      the water under the vault from the water above it. And it was so.<\/span><span
+      class=\"verse Gen_1_8\"><strong>8<\/strong>\u00a0God called the vault \"sky.\"
+      And there was evening, and there was morning\u2014the second day.<\/span><\/p><p><span
+      class=\"verse Gen_1_9\"><strong>9<\/strong>\u00a0And God said, \"Let the water
+      under the sky be gathered to one place, and let dry ground appear.\" And it
+      was so.<\/span><span class=\"verse Gen_1_10\"><strong>10<\/strong>\u00a0God
+      called the dry ground \"land,\" and the gathered waters he called \"seas.\"
+      And God saw that it was good.<\/span><\/p><p><span class=\"verse Gen_1_11\"><strong>11<\/strong>\u00a0Then
+      God said, \"Let the land produce vegetation: seed-bearing plants and trees on
+      the land that bear fruit with seed in it, according to their various kinds.\"
+      And it was so.<\/span><span class=\"verse Gen_1_12\"><strong>12<\/strong>\u00a0The
+      land produced vegetation: plants bearing seed according to their kinds and trees
+      bearing fruit with seed in it according to their kinds. And God saw that it
+      was good.<\/span><span class=\"verse Gen_1_13\"><strong>13<\/strong>\u00a0And
+      there was evening, and there was morning\u2014the third day.<\/span><\/p><p><span
+      class=\"verse Gen_1_14\"><strong>14<\/strong>\u00a0And God said, \"Let there
+      be lights in the vault of the sky to separate the day from the night, and let
+      them serve as signs to mark sacred times, and days and years,<\/span><span class=\"verse
+      Gen_1_15\"><strong>15<\/strong>\u00a0and let them be lights in the vault of
+      the sky to give light on the earth.\" And it was so.<\/span><span class=\"verse
+      Gen_1_16\"><strong>16<\/strong>\u00a0God made two great lights\u2014the greater
+      light to govern the day and the lesser light to govern the night. He also made
+      the stars.<\/span><span class=\"verse Gen_1_17\"><strong>17<\/strong>\u00a0God
+      set them in the vault of the sky to give light on the earth,<\/span><span class=\"verse
+      Gen_1_18\"><strong>18<\/strong>\u00a0to govern the day and the night, and to
+      separate light from darkness. And God saw that it was good.<\/span><span class=\"verse
+      Gen_1_19\"><strong>19<\/strong>\u00a0And there was evening, and there was morning\u2014the
+      fourth day.<\/span><\/p><p><span class=\"verse Gen_1_20\"><strong>20<\/strong>\u00a0And
+      God said, \"Let the water teem with living creatures, and let birds fly above
+      the earth across the vault of the sky.\"<\/span><span class=\"verse Gen_1_21\"><strong>21<\/strong>\u00a0So
+      God created the great creatures of the sea and every living thing with which
+      the water teems and that moves about in it, according to their kinds, and every
+      winged bird according to its kind. And God saw that it was good.<\/span><span
+      class=\"verse Gen_1_22\"><strong>22<\/strong>\u00a0God blessed them and said,
+      \"Be fruitful and increase in number and fill the water in the seas, and let
+      the birds increase on the earth.\"<\/span><span class=\"verse Gen_1_23\"><strong>23<\/strong>\u00a0And
+      there was evening, and there was morning\u2014the fifth day.<\/span><\/p><p><span
+      class=\"verse Gen_1_24\"><strong>24<\/strong>\u00a0And God said, \"Let the land
+      produce living creatures according to their kinds: the livestock, the creatures
+      that move along the ground, and the wild animals, each according to its kind.\"
+      And it was so.<\/span><span class=\"verse Gen_1_25\"><strong>25<\/strong>\u00a0God
+      made the wild animals according to their kinds, the livestock according to their
+      kinds, and all the creatures that move along the ground according to their kinds.
+      And God saw that it was good.<\/span><\/p><p><span class=\"verse Gen_1_26\"><strong>26<\/strong>\u00a0Then
+      God said, \"Let us make mankind in our image, in our likeness, so that they
+      may rule over the fish in the sea and the birds in the sky, over the livestock
+      and all the wild animals,<span class=\"trans\" title=\"26 Probable reading of
+      the original Hebrew text (see Syriac); Masoretic Text the earth\">t<\/span>
+      and over all the creatures that move along the ground.\"<\/span><\/p><p><span
+      class=\"verse Gen_1_27\"><strong>27<\/strong>\u00a0So God created mankind in
+      his own image,<br\/>in the image of God he created them;<br\/>male and female
+      he created them.<\/span><\/p><p><span class=\"verse Gen_1_28\"><strong>28<\/strong>\u00a0God
+      blessed them and said to them, \"Be fruitful and increase in number; fill the
+      earth and subdue it. Rule over the fish in the sea and the birds in the sky
+      and over every living creature that moves on the ground.\"<\/span><\/p><p><span
+      class=\"verse Gen_1_29\"><strong>29<\/strong>\u00a0Then God said, \"I give you
+      every seed-bearing plant on the face of the whole earth and every tree that
+      has fruit with seed in it. They will be yours for food.<\/span><span class=\"verse
+      Gen_1_30\"><strong>30<\/strong>\u00a0And to all the beasts of the earth and
+      all the birds in the sky and all the creatures that move along the ground\u2014everything
+      that has the breath of life in it\u2014I give every green plant for food.\"
+      And it was so.<\/span><\/p><p><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0God
+      saw all that he had made, and it was very good. And there was evening, and there
+      was morning\u2014the sixth day.<\/span><\/p><\/div>\n","audio":[{"id":"3","title":"NIV
+      Listener''s Bible","download_urls":{"format_mp3_32k":"http:\/\/cdn-http.audio-bible.api.youversion.com\/niv84\/2\/32k\/gen\/001-8af7d4f598f6d657a4309b2e05f71ea5.mp3"}}]},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+      2"}}},"buildtime":"2011-10-21T20:31:39+00:00"}],"buildtime":"2011-10-21T20:31:39+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/books.json?version=dra
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:40 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"number":1,"osis":"Gen","human":"Genesis","chapters":50,"verses":[31,25,24,26,31,22,24,22,29,32,32,20,18,24,21,16,27,33,38,18,34,24,20,67,34,35,46,22,35,43,55,32,20,31,29,43,36,30,23,23,57,38,34,34,28,34,31,22,32,25],"audio":false},{"number":2,"osis":"Exod","human":"Exodus","chapters":40,"verses":[22,25,22,31,23,30,25,32,35,29,10,51,22,31,27,36,16,27,25,26,36,31,33,18,40,37,21,43,46,38,18,35,23,35,35,38,29,31,43,36],"audio":false},{"number":3,"osis":"Lev","human":"Leviticus","chapters":27,"verses":[17,16,17,35,19,30,38,36,24,20,47,8,59,57,33,34,16,30,37,27,24,33,44,23,55,45,34],"audio":false},{"number":4,"osis":"Num","human":"Numbers","chapters":36,"verses":[54,34,51,49,31,27,89,26,23,36,34,15,34,45,41,50,13,32,22,30,35,41,30,25,18,65,23,31,39,17,54,42,56,29,34,13],"audio":false},{"number":5,"osis":"Deut","human":"Deuteronomy","chapters":34,"verses":[46,37,29,49,33,25,26,20,29,22,32,32,18,29,23,22,20,22,21,20,23,30,25,22,19,19,26,68,29,20,30,52,29,12],"audio":false},{"number":6,"osis":"Josh","human":"Joshua","chapters":24,"verses":[18,24,17,25,16,27,26,35,27,43,23,24,33,15,63,10,18,28,51,9,43,34,16,33],"audio":false},{"number":7,"osis":"Judg","human":"Judges","chapters":21,"verses":[36,23,31,24,32,40,25,35,57,18,40,15,25,20,20,31,13,31,30,48,24],"audio":false},{"number":8,"osis":"Ruth","human":"Ruth","chapters":4,"verses":[22,23,18,22],"audio":false},{"number":9,"osis":"1Sam","human":"1
+      Samuel","chapters":31,"verses":[28,36,21,22,12,21,17,22,27,27,15,25,23,52,35,23,58,30,24,43,15,23,28,23,44,25,12,25,11,31,13],"audio":false},{"number":10,"osis":"2Sam","human":"2
+      Samuel","chapters":24,"verses":[27,32,39,12,25,23,29,18,13,19,27,31,38,33,37,23,29,33,43,26,22,51,39,25],"audio":false},{"number":11,"osis":"1Kgs","human":"1
+      Kings","chapters":22,"verses":[53,46,28,34,18,38,51,66,28,29,43,33,34,31,34,34,24,46,21,43,29,54],"audio":false},{"number":12,"osis":"2Kgs","human":"2
+      Kings","chapters":25,"verses":[18,25,27,44,27,33,20,29,37,36,21,21,25,29,38,20,41,37,37,21,26,20,37,20,30],"audio":false},{"number":13,"osis":"1Chr","human":"1
+      Chronicles","chapters":29,"verses":[54,55,24,43,26,81,40,40,44,14,46,40,14,17,29,43,27,17,19,7,30,19,32,31,31,32,34,21,30],"audio":false},{"number":14,"osis":"2Chr","human":"2
+      Chronicles","chapters":36,"verses":[17,18,17,22,14,42,22,18,31,19,23,16,22,15,19,14,19,34,11,37,20,12,21,27,28,23,9,27,36,27,21,33,25,33,27,23],"audio":false},{"number":15,"osis":"Ezra","human":"Ezra","chapters":10,"verses":[11,70,13,24,17,22,28,36,15,44],"audio":false},{"number":16,"osis":"Neh","human":"Nehemiah","chapters":13,"verses":[11,20,31,23,19,19,73,18,38,39,36,46,31],"audio":false},{"number":17,"osis":"Tob","human":"Tobit","chapters":14,"verses":[25,23,25,23,28,22,20,24,12,13,21,22,23,17],"audio":false},{"number":18,"osis":"Jdt","human":"Judith","chapters":16,"verses":[12,18,15,16,29,21,25,34,19,20,21,20,31,18,15,31],"audio":false},{"number":19,"osis":"Esth","human":"Esther","chapters":10,"verses":[22,23,15,17,14,14,10,17,32,3],"audio":false},{"number":20,"osis":"AddEsth","human":"Esther
+      (Greek Version)","chapters":16,"verses":[22,23,15,17,14,14,10,17,32,13,12,6,18,19,19,24],"audio":false},{"number":21,"osis":"1Macc","human":"1
+      Maccabees","chapters":16,"verses":[67,70,60,61,68,63,50,32,73,89,74,54,54,49,41,24],"audio":false},{"number":22,"osis":"2Macc","human":"2
+      Maccabees","chapters":15,"verses":[36,33,40,50,27,31,42,36,29,38,38,46,26,46,40],"audio":false},{"number":23,"osis":"Job","human":"Job","chapters":42,"verses":[22,13,26,21,27,30,21,22,35,22,20,25,28,22,35,23,16,21,29,29,34,30,17,25,6,14,23,28,25,31,40,22,33,37,16,33,24,41,34,28,25,16],"audio":false},{"number":24,"osis":"Ps","human":"Psalm","chapters":150,"verses":[6,13,9,10,13,11,18,10,21,26,9,6,7,5,11,15,51,15,9,14,32,6,10,22,12,14,9,10,13,25,11,22,23,28,13,40,23,14,18,14,12,6,26,18,12,10,15,21,23,21,11,7,9,24,13,12,12,18,14,9,13,12,11,14,20,8,36,37,6,24,20,28,23,11,13,21,72,13,20,17,8,19,13,14,17,7,19,53,17,16,16,5,23,11,13,12,9,9,5,8,29,22,35,45,48,43,14,31,7,10,10,9,26,9,10,2,29,176,7,8,9,4,8,5,7,5,6,8,8,3,18,3,3,21,27,9,8,24,14,10,8,12,15,21,10,11,9,14,9,5],"audio":false},{"number":25,"osis":"Prov","human":"Proverbs","chapters":31,"verses":[33,22,35,27,23,35,27,36,18,32,31,28,25,35,33,33,28,24,29,30,31,29,35,34,28,28,27,28,27,33,31],"audio":false},{"number":26,"osis":"Eccl","human":"Ecclesiastes","chapters":12,"verses":[18,26,22,17,19,11,30,17,18,20,10,14],"audio":false},{"number":27,"osis":"Song","human":"Song
+      of Solomon","chapters":8,"verses":[16,17,11,16,17,12,13,14],"audio":false},{"number":28,"osis":"Wis","human":"Wisdom
+      of Solomon","chapters":19,"verses":[16,25,19,20,24,27,30,21,19,21,27,27,19,31,19,29,20,25,20],"audio":false},{"number":29,"osis":"Sir","human":"Sirach","chapters":51,"verses":[40,23,34,36,18,37,40,22,25,34,36,19,32,27,22,31,31,33,28,33,31,33,38,47,36,28,33,30,34,27,42,28,33,31,26,28,34,39,41,32,28,26,37,27,31,23,31,28,19,31,38],"audio":false},{"number":30,"osis":"Isa","human":"Isaiah","chapters":66,"verses":[31,22,26,6,30,13,25,22,21,34,16,6,22,32,9,14,14,7,25,6,17,25,18,23,12,21,13,29,24,33,9,20,24,17,10,22,38,22,8,31,29,25,28,28,26,12,15,22,26,11,23,15,12,17,13,12,21,14,21,22,11,12,19,12,25,24],"audio":false},{"number":31,"osis":"Jer","human":"Jeremiah","chapters":52,"verses":[19,37,25,31,31,30,34,22,26,25,23,17,27,22,21,21,27,23,15,18,14,30,40,10,38,24,22,17,32,24,40,44,26,22,19,32,20,28,18,16,18,22,13,30,5,28,7,47,39,46,64,34],"audio":false},{"number":32,"osis":"Lam","human":"Lamentations","chapters":5,"verses":[22,22,66,22,22],"audio":false},{"number":33,"osis":"Bar","human":"Baruch","chapters":6,"verses":[22,35,38,37,9,72],"audio":false},{"number":34,"osis":"Ezek","human":"Ezekiel","chapters":48,"verses":[28,9,27,17,17,14,27,18,11,22,25,28,23,23,8,63,24,32,14,49,32,31,49,27,17,21,36,26,21,26,18,32,33,31,15,38,28,23,29,49,26,20,27,31,25,24,23,35],"audio":false},{"number":35,"osis":"Dan","human":"Daniel","chapters":14,"verses":[21,49,30,37,31,28,28,27,27,21,45,13,65,42],"audio":false},{"number":36,"osis":"PrAzar","human":"Prayer
+      of Azariah","chapters":1,"verses":[67],"audio":false},{"number":37,"osis":"Hos","human":"Hosea","chapters":14,"verses":[11,24,5,19,15,11,16,14,17,15,12,14,15,10],"audio":false},{"number":38,"osis":"Joel","human":"Joel","chapters":3,"verses":[20,32,21],"audio":false},{"number":39,"osis":"Amos","human":"Amos","chapters":9,"verses":[15,16,15,13,27,15,17,14,14],"audio":false},{"number":40,"osis":"Obad","human":"Obadiah","chapters":1,"verses":[21],"audio":false},{"number":41,"osis":"Jonah","human":"Jonah","chapters":4,"verses":[16,11,10,11],"audio":false},{"number":42,"osis":"Mic","human":"Micah","chapters":7,"verses":[16,13,12,13,14,16,20],"audio":false},{"number":43,"osis":"Nah","human":"Nahum","chapters":3,"verses":[15,13,19],"audio":false},{"number":44,"osis":"Hab","human":"Habakkuk","chapters":3,"verses":[17,20,19],"audio":false},{"number":45,"osis":"Zeph","human":"Zephaniah","chapters":3,"verses":[18,15,20],"audio":false},{"number":46,"osis":"Hag","human":"Haggai","chapters":2,"verses":[14,24],"audio":false},{"number":47,"osis":"Zech","human":"Zechariah","chapters":14,"verses":[21,13,10,14,11,15,14,23,17,12,17,14,9,21],"audio":false},{"number":48,"osis":"Mal","human":"Malachi","chapters":4,"verses":[14,17,18,6],"audio":false},{"number":49,"osis":"Matt","human":"Matthew","chapters":28,"verses":[25,23,17,25,48,34,29,34,38,42,30,50,58,36,39,28,26,35,30,34,46,46,39,51,46,75,66,20],"audio":true},{"number":50,"osis":"Mark","human":"Mark","chapters":16,"verses":[45,28,35,40,43,56,37,39,49,52,33,44,37,72,47,20],"audio":true},{"number":51,"osis":"Luke","human":"Luke","chapters":24,"verses":[80,52,38,44,39,49,50,56,62,42,54,59,35,35,32,31,37,43,48,47,38,71,56,53],"audio":true},{"number":52,"osis":"John","human":"John","chapters":21,"verses":[51,25,36,54,47,72,53,59,41,42,56,50,38,31,27,33,26,40,42,31,25],"audio":true},{"number":53,"osis":"Acts","human":"Acts","chapters":28,"verses":[26,47,26,37,42,15,59,40,43,48,30,25,52,27,41,40,34,28,40,38,40,30,35,27,27,32,44,31],"audio":true},{"number":54,"osis":"Rom","human":"Romans","chapters":16,"verses":[32,29,31,25,21,23,25,39,33,21,36,21,14,23,33,27],"audio":true},{"number":55,"osis":"1Cor","human":"1
+      Corinthians","chapters":16,"verses":[31,16,23,21,13,20,40,13,27,33,34,31,13,40,58,24],"audio":true},{"number":56,"osis":"2Cor","human":"2
+      Corinthians","chapters":13,"verses":[23,17,18,18,21,18,16,24,15,18,33,21,13],"audio":true},{"number":57,"osis":"Gal","human":"Galatians","chapters":6,"verses":[24,21,29,31,26,18],"audio":true},{"number":58,"osis":"Eph","human":"Ephesians","chapters":6,"verses":[23,22,21,32,33,24],"audio":true},{"number":59,"osis":"Phil","human":"Philippians","chapters":4,"verses":[30,30,21,23],"audio":true},{"number":60,"osis":"Col","human":"Colossians","chapters":4,"verses":[29,23,25,18],"audio":true},{"number":61,"osis":"1Thess","human":"1
+      Thessalonians","chapters":5,"verses":[10,20,13,17,28],"audio":true},{"number":62,"osis":"2Thess","human":"2
+      Thessalonians","chapters":3,"verses":[12,16,18],"audio":true},{"number":63,"osis":"1Tim","human":"1
+      Timothy","chapters":6,"verses":[20,15,16,16,25,21],"audio":true},{"number":64,"osis":"2Tim","human":"2
+      Timothy","chapters":4,"verses":[18,26,17,22],"audio":true},{"number":65,"osis":"Titus","human":"Titus","chapters":3,"verses":[16,15,15],"audio":true},{"number":66,"osis":"Phlm","human":"Philemon","chapters":1,"verses":[25],"audio":true},{"number":67,"osis":"Heb","human":"Hebrews","chapters":13,"verses":[14,18,19,16,14,20,28,13,28,39,40,29,25],"audio":true},{"number":68,"osis":"Jas","human":"James","chapters":5,"verses":[27,26,18,17,20],"audio":true},{"number":69,"osis":"1Pet","human":"1
+      Peter","chapters":5,"verses":[25,25,22,19,14],"audio":true},{"number":70,"osis":"2Pet","human":"2
+      Peter","chapters":3,"verses":[21,22,18],"audio":true},{"number":71,"osis":"1John","human":"1
+      John","chapters":5,"verses":[10,29,24,21,21],"audio":true},{"number":72,"osis":"2John","human":"2
+      John","chapters":1,"verses":[13],"audio":true},{"number":73,"osis":"3John","human":"3
+      John","chapters":1,"verses":[14],"audio":true},{"number":74,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":true},{"number":75,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,18,18,20,8,21,18,24,21,15,27,21],"audio":true}],"buildtime":"2011-10-21T20:31:40+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/chapter.json?format=html&reference=gen.1&version=dra
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:41 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"code":"200","data":{"copyright":"","request":{"reference":{"osis":"Gen.1","human":"Genesis
+      1"},"content":"<div><h1 class=\"Gen_1\">Genesis 1<\/h1><p><span class=\"verse
+      Gen_1_1\"><strong>1<\/strong>\u00a0In the beginning God created heaven, and
+      earth.<\/span><span class=\"verse Gen_1_2\"><strong>2<\/strong>\u00a0And the
+      earth was void and empty, and darkness was upon the face\n                of
+      the deep; and the spirit of God moved over the waters.<\/span><span class=\"verse
+      Gen_1_3\"><strong>3<\/strong>\u00a0And God said: Be light made. And light was
+      made.<\/span><span class=\"verse Gen_1_4\"><strong>4<\/strong>\u00a0And God
+      saw the light that it was good; and he divided the light\n                from
+      the darkness.<\/span><span class=\"verse Gen_1_5\"><strong>5<\/strong>\u00a0And
+      he called the light Day, and the darkness Night; and there\n                was
+      evening and morning one day.<\/span><span class=\"verse Gen_1_6\"><strong>6<\/strong>\u00a0And
+      God said: Let there be a firmament made amidst the waters:\n                and
+      let it divide the waters from the waters.<\/span><span class=\"verse Gen_1_7\"><strong>7<\/strong>\u00a0And
+      God made a firmament, and divided the waters that were under\n                the
+      firmament, from those that were above the firmament, and it was so.<\/span><span
+      class=\"verse Gen_1_8\"><strong>8<\/strong>\u00a0And God called the firmament,
+      Heaven; and the evening and\n                morning were the second day.<\/span><span
+      class=\"verse Gen_1_9\"><strong>9<\/strong>\u00a0God also said: Let the waters
+      that are under the heaven, be\n                gathered together into one place:
+      and let the dry land appear. And it was so\n                done.<\/span><span
+      class=\"verse Gen_1_10\"><strong>10<\/strong>\u00a0And God called the dry land,
+      Earth; and the gathering together\n                of the waters, he called
+      Seas. And God saw that it was good.<\/span><span class=\"verse Gen_1_11\"><strong>11<\/strong>\u00a0And
+      he said: Let the earth bring forth the green herb, and such\n                as
+      may seed, and the fruit tree yielding fruit after its kind, which may have seed\n                in
+      itself upon the earth. And it was so done.<\/span><span class=\"verse Gen_1_12\"><strong>12<\/strong>\u00a0And
+      the earth brought forth the green herb, and such as\n                yieldeth
+      seed according to its kind, and the tree that beareth fruit having seed\n                each
+      one according to its kind. And God saw that it was good.<\/span><span class=\"verse
+      Gen_1_13\"><strong>13<\/strong>\u00a0And the evening and the morning were the
+      third day.<\/span><span class=\"verse Gen_1_14\"><strong>14<\/strong>\u00a0And
+      God said: Let there be lights made in the firmament of\n                heaven,
+      to divide the day and the night, and let them be for signs, and for seasons,\n                and
+      for days and years:<\/span><span class=\"verse Gen_1_15\"><strong>15<\/strong>\u00a0To
+      shine in the firmament of heaven, and to give light upon the\n                earth.
+      And it was so done.<\/span><span class=\"verse Gen_1_16\"><strong>16<\/strong>\u00a0And
+      God made two great lights: a greater light to rule the day;\n                and
+      a lesser light to rule the night: and the stars.<\/span><span class=\"verse
+      Gen_1_17\"><strong>17<\/strong>\u00a0And he set them in the firmament of heaven
+      to shine upon the\n                earth.<\/span><span class=\"verse Gen_1_18\"><strong>18<\/strong>\u00a0And
+      to rule the day and the night, and to divide the light and\n                the
+      darkness. And God saw that it was good.<\/span><span class=\"verse Gen_1_19\"><strong>19<\/strong>\u00a0And
+      the evening and morning were the fourth day.<\/span><span class=\"verse Gen_1_20\"><strong>20<\/strong>\u00a0God
+      also said: Let the waters bring forth the creeping creature\n                having
+      life, and the fowl that may fly over the earth under the firmament of\n                heaven.<\/span><span
+      class=\"verse Gen_1_21\"><strong>21<\/strong>\u00a0And God created the great
+      whales, and every living and moving\n                creature, which the waters
+      brought forth, according to their kinds, and every winged\n                fowl
+      according to its kind. And God saw that it was good.<\/span><span class=\"verse
+      Gen_1_22\"><strong>22<\/strong>\u00a0And he blessed them, saying: Increase and
+      multiply, and fill\n                the waters of the sea: and let the birds
+      be multiplied upon the earth.<\/span><span class=\"verse Gen_1_23\"><strong>23<\/strong>\u00a0And
+      the evening and morning were the fifth day.<\/span><span class=\"verse Gen_1_24\"><strong>24<\/strong>\u00a0And
+      God said: Let the earth bring forth the living creature in\n                its
+      kind, cattle and creeping things, and beasts of the earth, according to their\n                kinds.
+      And it was so done.<\/span><span class=\"verse Gen_1_25\"><strong>25<\/strong>\u00a0And
+      God made the beasts of the earth according to their kinds,\n                and
+      cattle, and every thing that creepeth on the earth after its kind. And God saw\n                that
+      it was good.<\/span><span class=\"verse Gen_1_26\"><strong>26<\/strong>\u00a0And
+      he said: Let us make man to our image and likeness: and let\n                him
+      have dominion over the fishes of the sea, and the fowls of the air, and the\n                beasts,
+      and the whole earth, and every creeping creature that moveth upon the\n                earth.<\/span><span
+      class=\"verse Gen_1_27\"><strong>27<\/strong>\u00a0And God created man to his
+      own image: to the image of God he\n                created him: male and female
+      he created them.<\/span><span class=\"verse Gen_1_28\"><strong>28<\/strong>\u00a0And
+      God blessed them, saying: Increase and multiply, and fill\n                the
+      earth, and subdue it, and rule over the fishes of the sea, and the fowls of
+      the\n                air, and all living creatures that move upon the earth.<\/span><span
+      class=\"verse Gen_1_29\"><strong>29<\/strong>\u00a0And God said: Behold I have
+      given you every herb bearing seed\n                upon the earth, and all trees
+      that have in themselves seed of their own kind, to be\n                your
+      meat:<\/span><span class=\"verse Gen_1_30\"><strong>30<\/strong>\u00a0And to
+      all the beasts of the earth, and to every fowl of the\n                air,
+      and to all that move upon the earth, and wherein there is life, that they may\n                have
+      to feed upon. And it was so done.<\/span><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0And
+      God saw all the things that he had made, and they were very\n                good.
+      And the evening and morning were the sixth day.<\/span><\/p><\/div>\n","audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+      2"}}},"buildtime":"2011-10-21T20:31:41+00:00"}],"buildtime":"2011-10-21T20:31:41+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/chapter.json?format=html&reference=exod.1&version=niv
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:42 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"code":"200","data":{"copyright":"Holy
+      Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica,
+      Inc. Used by permission. All rights reserved worldwide.","request":{"reference":{"osis":"Exod.1","human":"Exodus
+      1"},"content":"<div><h1 class=\"Exod_1\">Exodus 1<\/h1><h2>The Israelites Oppressed<\/h2><p><span
+      class=\"verse Exod_1_1\"><strong>1<\/strong>\u00a0These are the names of the
+      sons of Israel who went to Egypt with Jacob, each with his family:<\/span><span
+      class=\"verse Exod_1_2\"><strong>2<\/strong>\u00a0Reuben, Simeon, Levi and Judah;<\/span><span
+      class=\"verse Exod_1_3\"><strong>3<\/strong>\u00a0Issachar, Zebulun and Benjamin;<\/span><span
+      class=\"verse Exod_1_4\"><strong>4<\/strong>\u00a0Dan and Naphtali; Gad and
+      Asher.<\/span><span class=\"verse Exod_1_5\"><strong>5<\/strong>\u00a0The descendants
+      of Jacob numbered seventy<span class=\"trans\" title=\"5 Masoretic Text (see
+      also Gen. 46:27); Dead Sea Scrolls and Septuagint (see also Acts 7:14 and note
+      at Gen. 46:27) seventy-five\">t<\/span> in all; Joseph was already in Egypt.<\/span><\/p><p><span
+      class=\"verse Exod_1_6\"><strong>6<\/strong>\u00a0Now Joseph and all his brothers
+      and all that generation died,<\/span><span class=\"verse Exod_1_7\"><strong>7<\/strong>\u00a0but
+      the Israelites were exceedingly fruitful; they multiplied greatly, increased
+      in numbers and became so numerous that the land was filled with them.<\/span><\/p><p><span
+      class=\"verse Exod_1_8\"><strong>8<\/strong>\u00a0Then a new king, to whom Joseph
+      meant nothing, came to power in Egypt.<\/span><span class=\"verse Exod_1_9\"><strong>9<\/strong>\u00a0\"Look,\"
+      he said to his people, \"the Israelites have become far too numerous for us.<\/span><span
+      class=\"verse Exod_1_10\"><strong>10<\/strong>\u00a0Come, we must deal shrewdly
+      with them or they will become even more numerous and, if war breaks out, will
+      join our enemies, fight against us and leave the country.\"<\/span><\/p><p><span
+      class=\"verse Exod_1_11\"><strong>11<\/strong>\u00a0So they put slave masters
+      over them to oppress them with forced labor, and they built Pithom and Rameses
+      as store cities for Pharaoh.<\/span><span class=\"verse Exod_1_12\"><strong>12<\/strong>\u00a0But
+      the more they were oppressed, the more they multiplied and spread; so the Egyptians
+      came to dread the Israelites<\/span><span class=\"verse Exod_1_13\"><strong>13<\/strong>\u00a0and
+      worked them ruthlessly.<\/span><span class=\"verse Exod_1_14\"><strong>14<\/strong>\u00a0They
+      made their lives bitter with harsh labor in brick and mortar and with all kinds
+      of work in the fields; in all their harsh labor the Egyptians worked them ruthlessly.<\/span><\/p><p><span
+      class=\"verse Exod_1_15\"><strong>15<\/strong>\u00a0The king of Egypt said to
+      the Hebrew midwives, whose names were Shiphrah and Puah,<\/span><span class=\"verse
+      Exod_1_16\"><strong>16<\/strong>\u00a0\"When you are helping the Hebrew women
+      during childbirth on the delivery stool, if you see that the baby is a boy,
+      kill him; but if it is a girl, let her live.\"<\/span><span class=\"verse Exod_1_17\"><strong>17<\/strong>\u00a0The
+      midwives, however, feared God and did not do what the king of Egypt had told
+      them to do; they let the boys live.<\/span><span class=\"verse Exod_1_18\"><strong>18<\/strong>\u00a0Then
+      the king of Egypt summoned the midwives and asked them, \"Why have you done
+      this? Why have you let the boys live?\"<\/span><\/p><p><span class=\"verse Exod_1_19\"><strong>19<\/strong>\u00a0The
+      midwives answered Pharaoh, \"Hebrew women are not like Egyptian women; they
+      are vigorous and give birth before the midwives arrive.\"<\/span><\/p><p><span
+      class=\"verse Exod_1_20\"><strong>20<\/strong>\u00a0So God was kind to the midwives
+      and the people increased and became even more numerous.<\/span><span class=\"verse
+      Exod_1_21\"><strong>21<\/strong>\u00a0And because the midwives feared God, he
+      gave them families of their own.<\/span><\/p><p><span class=\"verse Exod_1_22\"><strong>22<\/strong>\u00a0Then
+      Pharaoh gave this order to all his people: \"Every Hebrew boy that is born you
+      must throw into the Nile, but let every girl live.\"<\/span><\/p><\/div>\n","audio":[{"id":"3","title":"NIV
+      Listener''s Bible","download_urls":{"format_mp3_32k":"http:\/\/cdn-http.audio-bible.api.youversion.com\/niv84\/2\/32k\/exod\/001-7af98ff32cbbce1761a74a3692d8ee0a.mp3"}}]},"previous":{"reference":{"osis":"Gen.50","human":"Genesis
+      50"}},"next":{"reference":{"osis":"Exod.2","human":"Exodus 2"}}},"buildtime":"2011-10-21T20:31:42+00:00"}],"buildtime":"2011-10-21T20:31:42+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/chapter.json?format=html&reference=gen.1&version=msg
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:31:45 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":200,"data":[{"code":"200","data":{"copyright":"1993,
+      1994, 1995, 1996, 2000, 2001, 2002 Eugene H. Peterson by NavPress Publishing","request":{"reference":{"osis":"Gen.1","human":"Genesis
+      1"},"content":"<div><h1 class=\"Gen_1\">Genesis 1<\/h1><h2>Heaven and Earth<\/h2><p><span
+      class=\"verse Gen_1_1\"><strong>1<\/strong>\u00a0First this: God created the
+      Heavens and Earth-all you see, all you don''t see.<\/span><span class=\"verse
+      Gen_1_2\"><strong>2<\/strong>\u00a0Earth was a soup of nothingness, a bottomless
+      emptiness, an inky blackness. God''s Spirit brooded like a bird above the watery
+      abyss.<\/span><\/p><p><span class=\"verse Gen_1_3\"><strong>3<\/strong>\u00a0God
+      spoke: \"Light!\" And light appeared.<\/span><span class=\"verse Gen_1_4\"><strong>4<\/strong>\u00a0God
+      saw that light was good and separated light from dark.<\/span><span class=\"verse
+      Gen_1_5\"><strong>5<\/strong>\u00a0God named the light Day, he named the dark
+      Night. It was evening, it was morning-Day One.<\/span><\/p><p><span class=\"verse
+      Gen_1_6\"><strong>6<\/strong>\u00a0God spoke: \"Sky! In the middle of the waters;
+      separate water from water!\"<\/span><span class=\"verse Gen_1_7\"><strong>7<\/strong>\u00a0God
+      made sky. He separated the water under sky from the water above sky. And there
+      it was:<\/span><span class=\"verse Gen_1_8\"><strong>8<\/strong>\u00a0he named
+      sky the Heavens; It was evening, it was morning-Day Two.<\/span><\/p><p><span
+      class=\"verse Gen_1_9\"><strong>9<\/strong>\u00a0God spoke: \"Separate! Water-beneath-Heaven,
+      gather into one place; Land, appear!\" And there it was.<\/span><span class=\"verse
+      Gen_1_10\"><strong>10<\/strong>\u00a0God named the land Earth. He named the
+      pooled water Ocean. God saw that it was good.<\/span><\/p><p><span class=\"verse
+      Gen_1_11\"><strong>11<\/strong>\u00a0God spoke: \"Earth, green up! Grow all
+      varieties of seed-bearing plants, Every sort of fruit-bearing tree.\" And there
+      it was.<\/span><span class=\"verse Gen_1_12\"><strong>12<\/strong>\u00a0Earth
+      produced green seed-bearing plants, all varieties, And fruit-bearing trees of
+      all sorts. God saw that it was good.<\/span><span class=\"verse Gen_1_13\"><strong>13<\/strong>\u00a0It
+      was evening, it was morning-Day Three.<\/span><\/p><p><span class=\"verse Gen_1_14\"><strong>14<\/strong>\u00a0God
+      spoke: \"Lights! Come out! Shine in Heaven''s sky! Separate Day from Night.
+      Mark seasons and days and years,<\/span><span class=\"verse Gen_1_15\"><strong>15<\/strong>\u00a0Lights
+      in Heaven''s sky to give light to Earth.\" And there it was.<\/span><\/p><p><span
+      class=\"verse Gen_1_16\"><strong>16<\/strong>\u00a0God made two big lights,
+      the larger to take charge of Day, The smaller to be in charge of Night; and
+      he made the stars.<\/span><span class=\"verse Gen_1_17\"><strong>17<\/strong>\u00a0God
+      placed them in the heavenly sky to light up Earth<\/span><span class=\"verse
+      Gen_1_18\"><strong>18<\/strong>\u00a0And oversee Day and Night, to separate
+      light and dark. God saw that it was good.<\/span><span class=\"verse Gen_1_19\"><strong>19<\/strong>\u00a0It
+      was evening, it was morning-Day Four.<\/span><\/p><p><span class=\"verse Gen_1_20\"><strong>20<\/strong>\u00a0God
+      spoke: \"Swarm, Ocean, with fish and all sea life! Birds, fly through the sky
+      over Earth!\"<\/span><span class=\"verse Gen_1_21\"><strong>21<\/strong>\u00a0God
+      created the huge whales, all the swarm of life in the waters, And every kind
+      and species of flying birds. God saw that it was good.<\/span><span class=\"verse
+      Gen_1_22\"><strong>22<\/strong>\u00a0God blessed them: \"Prosper! Reproduce!
+      Fill Ocean! Birds, reproduce on Earth!\"<\/span><span class=\"verse Gen_1_23\"><strong>23<\/strong>\u00a0It
+      was evening, it was morning-Day Five.<\/span><\/p><p><span class=\"verse Gen_1_24\"><strong>24<\/strong>\u00a0God
+      spoke: \"Earth, generate life! Every sort and kind: cattle and reptiles and
+      wild animals-all kinds.\" And there it was:<\/span><span class=\"verse Gen_1_25\"><strong>25<\/strong>\u00a0wild
+      animals of every kind, Cattle of all kinds, every sort of reptile and bug. God
+      saw that it was good.<\/span><\/p><p><span class=\"verse Gen_1_26\"><strong>26<\/strong>\u00a0God
+      spoke: \"Let us make human beings in our image, make them reflecting our nature
+      So they can be responsible for the fish in the sea, the birds in the air, the
+      cattle, And, yes, Earth itself, and every animal that moves on the face of Earth.\"<\/span><span
+      class=\"verse Gen_1_27\"><strong>27<\/strong>\u00a0God created human beings;
+      he created them godlike, Reflecting God''s nature. He created them male and
+      female.<\/span><span class=\"verse Gen_1_28\"><strong>28<\/strong>\u00a0God
+      blessed them: \"Prosper! Reproduce! Fill Earth! Take charge! Be responsible
+      for fish in the sea and birds in the air, for every living thing that moves
+      on the face of Earth.\"<\/span><\/p><p><span class=\"verse Gen_1_29\"><strong>29<\/strong>\u00a0Then
+      God said, \"I''ve given you every sort of seed-bearing plant on Earth And every
+      kind of fruit-bearing tree, given them to you for food.<\/span><span class=\"verse
+      Gen_1_30\"><strong>30<\/strong>\u00a0To all animals and all birds, everything
+      that moves and breathes, I give whatever grows out of the ground for food.\"
+      And there it was.<\/span><\/p><p><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0God
+      looked over everything he had made; it was so good, so very good! It was evening,
+      it was morning-Day Six.<\/span><\/p><\/div>\n","audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+      2"}}},"buildtime":"2011-10-21T20:31:45+00:00"}],"buildtime":"2011-10-21T20:31:45+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/create.json
+    body: title=Note%20Title&content=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3C!DOCTYPE%20yv-note%20SYSTEM%20%22http%3A%2F%2Fapi.yvdev.com%2Fpub%2Fyvml_1_0.dtd%22%3E%3Cyv-note%3ENote%20Content%3C%2Fyv-note%3E&language_iso=&reference=gen.1.1&version=kjv&published=&user_status=&shared_connections=&token=615ad51b71049e299842f5af14c70cad
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 21 Oct 2011 20:34:23 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":201,"data":{"id":"935767","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Note
+      Title","highlight_color":null,"content_yvml":"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE
+      yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Note
+      Content<\/yv-note>","content_html":"Note Content","content_html_android":"Note
+      Content","content_html_ios":"Note Content","content_text":"Note Content","url":"\/notes\/935767\/note-title","short_url":"http:\/\/dev.read.ly\/n\/3vR1","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+      1:1"}],"version":"kjv","created":"2011-10-21 20:34:22+00","published":null,"updated":"2011-10-21
+      20:34:22.986266+00","user_status":"draft","system_status":"new"},"buildtime":"2011-10-21T20:34:23+00:00"}}'
+    http_version: '1.1'

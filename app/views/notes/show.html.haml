@@ -1,12 +1,13 @@
 #note
   %h1= "Show Note"
-  = label_tag :title, "Title:"
+  = label_tag :title, "Note Title:"
   = @note.title
-  = label_tag :content, "Content:"
+  = label_tag :content, "Note Content:"
   = @note.content
-  = label_tag :version, "Version:"
+  = label_tag :version, "Note Version:"
   = @note.version
-  = label_tag :reference, "Reference:"
+  = label_tag :reference, "Note Reference:"
   = @note.reference
-  = label_tag :status, "Status:"
+  = label_tag :status, "Note Status:"
   = @note.status
+  = link_to 'Genesis 1:1 (KJV)', '/'
