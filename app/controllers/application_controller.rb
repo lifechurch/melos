@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user, :current_username
+  helper_method :current_auth, :current_user, :current_username
 
   # Manually throw a 404
   def not_found
@@ -9,13 +9,16 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_auth
+    @tester = Hashie::Mash.new( {'id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
+  end
   def current_user
     unless @current_user
       @current_user = User.find(cookies.signed[:a]) if cookies.signed[:a]      
       @current_user.username = cookies.signed[:b]
       @current_user.password = cookies.signed[:c]
     end
-    @current_user
+   @current_user
   end
   def current_username
     User.find(cookies.signed[:a]).username if cookies.signed[:a]      

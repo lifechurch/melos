@@ -18,7 +18,7 @@ class Note
   attr_reader :errors
   
   def initialize(params = {})
-    reg_data = {title: "", content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", user: nil}    
+    reg_data = {title: "", content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}    
     reg_data.merge! params
     reg_data.each do |k,v|    
       # Create instance variable
@@ -30,37 +30,37 @@ class Note
     end
   end
   
-  def self.find(id, user) #TODO: Refine to remove user parm
-    response = YvApi.get('notes/view', {:id => id, :user => user} ) do |errors|     
+  def self.find(id, auth) 
+    response = YvApi.get('notes/view', {:id => id, :auth => auth} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
       return false
     end
     @note = Note.new(response)
-    @note.user = user
+    @note.auth = auth
     @note
   end
   
-  def find(id, user)
-    self.class.find(id, user)
+  def find(id, auth)
+    self.class.find(id, auth)
   end
   
-  def self.all(user) #TODO: Refine to remove user parm
-    response = YvApi.get('notes/items', {:user_id => user.id, :user => user} ) do |errors|     
+  def self.all(auth) 
+    response = YvApi.get('notes/items', {:user_id => auth.id, :auth => auth} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
       return false
     end
     response
   end
   
-  def all(user)
-    self.class.all(user)
+  def all(auth)
+    self.class.all(auth)
   end
   
   def save
-    @token = Digest::MD5.hexdigest "#{user.username}.Yv6-#{user.password}"
+    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
     response = YvApi.post('notes/create', attributes(:title, :content, :language_iso, :reference, :version,
-        :published, :user_status, :shared_connections, :token, :user)) do |errors|
+        :published, :user_status, :shared_connections, :token, :auth)) do |errors|
       @errors = errors.map { |e| e["error"] }      
       return false
     end    
@@ -68,8 +68,8 @@ class Note
   end
   
   def destroy
-    @token = Digest::MD5.hexdigest "#{user.username}.Yv6-#{user.password}"    
-    response = YvApi.post('notes/delete', attributes(:id, :user)) do |errors|
+    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"    
+    response = YvApi.post('notes/delete', attributes(:id, :auth)) do |errors|
       @errors = errors.map { |e| e["error"] }
       return false
     end

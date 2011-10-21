@@ -8,7 +8,7 @@
   %body
     - flash.each do |key, msg|
       %div{id: key}= msg
-    - if current_username
+    - if current_auth
       %p= "Signed in as #{current_username}"
       %p= link_to "Sign out", sign_out_path
     - else
