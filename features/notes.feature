@@ -50,7 +50,7 @@ Feature: Notes view
     Then I should see a link to "delete this note" 
     When I follow "delete this note" 
     # And confirm it somehow
-    Then I should be on the notes index page for user "testuser" 
+    Then I should be on the notes index page
     And I should not see "Public Note"
     
   @bible
@@ -64,7 +64,7 @@ Feature: Notes view
     | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv | Public  |
     | testuser2 | Another Private | Another Private Content | gen.1.4.kjv | Private |
     And I am logged in as "testuser2" with password "tenders" 
-    When I go to the notes index page for user "testuser" 
+    When I go to the notes index page
     Then I should see a link to "Public Note" 
     And I should see "Public Content" 
     And I should not see "Private Note" 

@@ -27,7 +27,7 @@ class NotesController < ApplicationController
     @note = Note.new(params[:note])
     @note.auth = current_auth
 
-    if @note.save
+    if @note = @note.save
       render action: "show"
     else
       render action: "new"

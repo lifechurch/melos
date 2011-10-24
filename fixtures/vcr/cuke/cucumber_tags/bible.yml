@@ -905,3 +905,31 @@
     body: ! '{"response":{"code":404,"data":{"errors":[{"key":"notes.note.not_found","error":"Note
       not found"}]},"buildtime":"2011-10-24T21:31:05+00:00"}}'
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser2:tenders@api.yvdev.com:80/2.3/notes/items.json?user_id=4163176
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Mon, 24 Oct 2011 21:48:24 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":404,"data":{"errors":[{"key":"notes.notes.not_found","error":"No
+      notes found"}]},"buildtime":"2011-10-24T21:48:24+00:00"}}'
+    http_version: '1.1'

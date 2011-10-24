@@ -80,7 +80,7 @@ puts @errors
         :published, :user_status, :shared_connections, :token, :auth)) do |errors|
       @errors = errors.map { |e| e["error"] }      
       return false
-    end    
+    end
     response
   end
   
