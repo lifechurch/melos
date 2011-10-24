@@ -1,20 +1,16 @@
 !!! 5
 %html
   %head
-    %title YouversionWeb
+    %title= t 'youversion'
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
-    = tr8n_scripts_tag
     = csrf_meta_tags
   %body
-    %div{style: "float: right"}= tr8n_language_selector_tag
     - flash.each do |key, msg|
       %div{id: key}= msg
-    - if current_username
-      %p= "Signed in as #{current_user.name}"
-      %p= current_user.is_admin?
-      %p= current_user.is_guest?
-      %p= link_to "Sign out", sign_out_path
+    - if current_auth
+      %p= t("signed in as", user: current_user.username)
+      %p= link_to t("sign out"), sign_out_path
     - else
-      %p= link_to "Sign in", sign_in_path
+      %p= link_to t("sign in"), sign_in_path
     = yield

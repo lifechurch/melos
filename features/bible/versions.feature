@@ -13,7 +13,7 @@ Feature: Versions view
     When I follow "The Message (MSG)"
     Then I should be on the version page for "msg"
     And I should see "The best answer to that question comes from Eugene Peterson himself"
-    And I should see a link to "Read This Version"
-    When I follow "Read This Version"
+    And I should see a link to "Read this version"
+    When I follow "Read this version"
     Then I should be on the bible page "gen.1.msg"
     # TODO: swap the Bible page above for last read position when user stuff is in place

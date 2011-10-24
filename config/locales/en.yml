@@ -1,5 +1,19 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
+---
 en:
-  hello: "Hello world"
+  signed in as: "Signed in as %{user}"
+  sign out: "Sign out"
+  youversion: YouVersion
+  username or email prompt: "Username (or email):"
+  password prompt: "Password:"
+  sign in: "Sign in"
+  version header: "Version: %{version}"
+  bible versions: "Bible Versions"
+  read this version: "Read this version"
+  users:
+    creation form errors: "The following error(s) prevented creation of your account:"
+    email address: "Email address:"
+    user name: "User name:"
+    password: "Password:"
+    agreement: I agree to the YouVersion terms and conditions.
+    register: Register
+    confirm email: "Thanks for registering! Please check your email and click the link to confirm."

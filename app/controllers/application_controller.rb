@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user, :current_username
+  helper_method :current_auth, :current_user
   # before_filter :set_locale
 
   # Set locale
@@ -21,17 +21,10 @@ class ApplicationController < ActionController::Base
   private
 
   def current_auth
-    Hashie::Mash.new( {'id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
+    @current_auth ||= Hashie::Mash.new( {id: cookies.signed[:a], username: cookies.signed[:b], password: cookies.signed[:c]} ) if cookies.signed[:a]
   end
+
   def current_user
-    unless @current_user
-      @current_user = User.find(cookies.signed[:a]) if cookies.signed[:a]
-      @current_user.username = cookies.signed[:b]
-      @current_user.password = cookies.signed[:c]
-    end
-    @current_user
-  end
-  def current_username
-    cookies.signed[:b] if cookies.signed[:b]
+    @current_user ||= User.find(current_auth) if current_auth
   end
 end

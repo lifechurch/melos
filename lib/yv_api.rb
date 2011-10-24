@@ -13,7 +13,7 @@ class YvApi
     # For login
     basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
     # For auth'ed API calls with :user => current_user
-    basic_auth opts[:user].username, opts.delete(:user).password if opts[:user]
+    basic_auth opts[:auth].username, opts.delete(:auth).password if opts[:auth]
     # Clean up the path
     path = clean_up(path)
     # Set the request protocol
@@ -48,7 +48,7 @@ class YvApi
     # For login
     basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
     # For auth'ed API calls with :user => current_user
-    basic_auth opts[:user].username, opts.delete(:user).password if opts[:user]
+    basic_auth opts[:auth].username, opts.delete(:auth).password if opts[:auth]
     # Clean up the path
     path = clean_up(path)
     # Set the request protocol

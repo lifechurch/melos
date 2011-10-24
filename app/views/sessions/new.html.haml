@@ -1,6 +1,6 @@
 = form_tag sign_in_path do
-	= label_tag :username, tr("Username (or email):", "Prompt for the user to enter their username or email to log in")
+	= label_tag :username, t("username or email prompt")
 	= text_field_tag :username, params[:username]
-	= label_tag :password, tr("Password:", "Prompt for the user to enter their password to log in")
+	= label_tag :password, t("password prompt")
 	= password_field_tag :password, params[:password]
-	= submit_tag "Sign in"
+	= submit_tag t("sign in")
