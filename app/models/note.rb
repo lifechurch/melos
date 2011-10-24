@@ -35,7 +35,7 @@ class Note
       @errors = errors.map { |e| e["error"] }
       return false
     end
-    
+
     @note = Note.new(response)
     @note.auth = auth
     @note
@@ -45,17 +45,17 @@ class Note
     self.class.find(id, auth)
   end
   
-  def self.find_by_title(title, auth) 
-    response = YvApi.get('notes/search', {:user_id => auth.id, :query => title, :page => 1, :auth => auth} ) do |errors|     
+  def self.find_by_search(query, auth) 
+    response = YvApi.get('notes/search', {:user_id => auth.id, :query => URI.escape(query), :page => 1, :auth => auth} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
       return false
     end
-debugger    
+    
     response    
   end
     
-  def find_by_title(id, auth)
-    self.class.find_by_title(id, auth)
+  def find_by_search(query)
+    self.class.find_by_search(query, auth)
   end  
   
   def self.all(auth) 

@@ -11,9 +11,22 @@ Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/ do |arg1, arg2|
 end
 
 Given /^notes exist with the following attributes:$/ do |table|
+  @auth = Hashie::Mash.new( {'id' => '4163177', 'username' => 'testuser', 'password' => 'tenders' } )
   @row = table.hashes.first
-  puts "TODO: Complete"
-  Note.find_by_title(@row['title'])
+  @notes = Note.find_by_search(@row['Title'], @auth)
+  
+  if @notes.errors.count == 0
+    @notes.each do |note|
+      if note.title == @row['title'] && note.author == @row['author'] && note.Content == @row['content'] && note.References == @row['references'] && note.Status = @row['status']
+        true
+      end
+    end
+  else
+    puts 'Cannot find Note!'
+    false
+  end
+  
+  false
 end
 
 When /^I select "([^"]*)" from the dropdown "([^"]*)"$/ do |arg1, arg2|
