@@ -33,6 +33,7 @@ class Note
   def self.find(id, auth) 
     response = YvApi.get('notes/view', {:id => id, :auth => auth} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
+puts @errors      
       return false
     end
 

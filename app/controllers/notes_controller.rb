@@ -24,16 +24,12 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new(params)
+    @note = Note.new(params[:note])
     @note.auth = current_auth
-    
+
     if @note.save
       render action: "show"
     else
-      flash[:alert] = []
-      @note.errors.each do |error|       
-        flash.now[:alert] << error
-      end
       render action: "new"
     end    
   end
@@ -45,24 +41,16 @@ class NotesController < ApplicationController
     if @note.update_attributes(params[:note])
       render action: "show"
     else
-      flash[:alert] = []
-      @note.errors.each do |error|       
-        flash.now[:alert] << error
-      end
       render action: "edit"
-    end       
+    end
   end
   
-  def delete
+  def destroy
     @note = Note.find(params[:id], current_auth)
-    
+debugger    
     if @note.destroy
       redirect_to '/'
     else
-      flash[:alert] = []
-      @note.errors.each do |error|       
-        flash.now[:alert] << error
-      end
       render action: "index"
     end
   end

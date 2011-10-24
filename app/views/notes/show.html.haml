@@ -11,3 +11,4 @@
   = label_tag :user_status, "Note Status:"
   = @note.user_status
   = link_to 'edit', edit_note_path(@note.id)
+  = link_to 'delete this note', note_path(@note.id), :confirm => 'Are you sure?', :method => :delete
