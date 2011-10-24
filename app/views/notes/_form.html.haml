@@ -1,12 +1,24 @@
-= form_tag notes_path do
-  = label_tag :title, "Title:"
-  = text_field_tag :title, params[:title]
-  = label_tag :content, "Content:"
-  = text_field_tag :content, params[:content]
-  = label_tag :version, "Version:"
-  = select_tag :version, options_for_select(versions_dropdown, :version)
-  = label_tag :reference, "Reference:"
-  = text_field_tag :reference, params[:reference]
-  = label_tag :status, "Status:"
-  = select_tag :status, options_for_select(object_status, :status)
-  = submit_tag "Save"
+= form_for @note do |f|
+  - if @note.errors
+    .form_errors
+      The following error(s) prevented creation of your note:
+      %ul
+        - @note.errors.each do |e|
+          %li= e
+  %p
+    = f.label :title, "Title:"
+    = f.text_field :title
+  %p
+    = f.label :content, "Content:"
+    = f.text_field :content
+  %p
+    = f.label :version, "Version:"
+    = f.select :version, options_for_select(versions_dropdown, @note.version)
+  %p
+    = f.label :reference, "Reference:"
+    = f.text_field :reference
+  %p
+    = f.label :user_status, "Status:"
+    = f.select :user_status, options_for_select(object_status, :user_status)
+  %p
+    = f.submit "Save"

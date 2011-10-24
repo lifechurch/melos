@@ -8,6 +8,6 @@
   = @note.version
   = label_tag :reference, "Note Reference:"
   = @note.reference
-  = label_tag :status, "Note Status:"
-  = @note.status
-  = link_to 'Genesis 1:1 (KJV)', '/'
+  = label_tag :user_status, "Note Status:"
+  = @note.user_status
+  = link_to 'edit', edit_note_path(@note.id)

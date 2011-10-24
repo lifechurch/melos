@@ -3,19 +3,26 @@ class NotesController < ApplicationController
   def index    
     @notes = Note.all(current_auth)    
   end
-  
+
+  def show
+    @note = Note.find(params[:id], current_auth)    
+  end
+
   def new
     @note = Note.new()
   end
-  
+        
   def edit
-    @note = Note.find(params[:id])   
-  end
-  
-  def show
     @note = Note.find(params[:id], current_auth)
+    @note.content = @note.content_html
+
+    ref = ''
+    @note.reference.each do |reference|
+      ref << reference.osis 
+    end
+    @note.reference = ref
   end
-  
+
   def create
     @note = Note.new(params)
     @note.auth = current_auth

@@ -28,7 +28,7 @@ class YvApi
     # Figure out if we should cache
     cache_length = opts.delete(:cache_for)
         
-    begin # TEMP DEBUGGING
+    begin
       
     # If we should cache, try pulling from cache first
     if cache_length
@@ -41,13 +41,6 @@ class YvApi
       # Just ask the API
       response = httparty_get(base + path, query: opts)
     end
-
-# TESTING
-if path == '/notes/search.json'
-  puts path
-  puts opts
-  puts response 
-end
 
     rescue => e
       puts 'DEBUG--------------------------------------------------------------------'

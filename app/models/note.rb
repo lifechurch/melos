@@ -45,7 +45,7 @@ class Note
     self.class.find(id, auth)
   end
   
-  def self.find_by_search(query, auth) 
+  def self.find_by_search(query, auth)
     response = YvApi.get('notes/search', {:user_id => auth.id, :query => URI.escape(query), :page => 1, :auth => auth} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
       return false

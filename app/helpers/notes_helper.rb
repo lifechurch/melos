@@ -11,10 +11,14 @@ module NotesHelper
   
   def references_breakout(refs)
     return_refs = ""
-    
-    refs.each do |ref|
-      return_refs << ref.human
+
+    if refs
+      refs.each do |ref|
+        return_refs << ref.human
+      end
+      return_refs
+    else
+      ''
     end
-    return_refs
   end
 end

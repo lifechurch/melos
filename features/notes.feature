@@ -12,7 +12,7 @@ Feature: Notes view
     And I fill in "Content" with "Note Content" 
     And I select "King James Version" from the dropdown "version"
     And I fill in "Reference" with "gen.1.1" 
-    And I select "Public" from the dropdown "status"
+    And I select "Public" from the dropdown "user_status"
     And I click "Save" 
     Then I should be on a show note page
     And I should see "Note Title" 
