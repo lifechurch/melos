@@ -842,3 +842,66 @@
     body: ! '{"response":{"code":400,"data":{"errors":[{"key":"notes.content.empty_document","error":"Document
       content cannot be empty"}]},"buildtime":"2011-10-24T20:54:47+00:00"}}'
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/create.json
+    body: title=A%20Different%20Public%20Note&content=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3C!DOCTYPE%20yv-note%20SYSTEM%20%22http%3A%2F%2Fapi.yvdev.com%2Fpub%2Fyvml_1_0.dtd%22%3E%3Cyv-note%3EPublic%20Content%3C%2Fyv-note%3E&language_iso=&reference=Gen.1.1&version=kjv&published=&user_status=public&shared_connections=&token=615ad51b71049e299842f5af14c70cad
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Mon, 24 Oct 2011 21:25:49 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":201,"data":{"id":"935799","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"A
+      Different Public Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\"
+      encoding=\"utf-8\"?>\n<!DOCTYPE yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
+      Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
+      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935799\/a-different-public-note","short_url":"http:\/\/dev.read.ly\/n\/3vRX","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+      1:1"}],"version":"kjv","created":"2011-10-24 21:25:49+00","published":null,"updated":"2011-10-24
+      21:25:49.107386+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-24T21:25:49+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/delete.json
+    body: id=935772
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Mon, 24 Oct 2011 21:31:05 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":404,"data":{"errors":[{"key":"notes.note.not_found","error":"Note
+      not found"}]},"buildtime":"2011-10-24T21:31:05+00:00"}}'
+    http_version: '1.1'

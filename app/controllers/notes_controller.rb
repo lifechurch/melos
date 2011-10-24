@@ -47,7 +47,7 @@ class NotesController < ApplicationController
   
   def destroy
     @note = Note.find(params[:id], current_auth)
-debugger    
+    
     if @note.destroy
       redirect_to '/'
     else
