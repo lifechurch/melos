@@ -6,6 +6,7 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id], current_auth)
+    @note.content = @note.content_html
     raise ActionController::RoutingError.new('Not Found') unless @note
   end
 
@@ -32,7 +33,7 @@ class NotesController < ApplicationController
     @note = Note.new(params[:note])
     @note.auth = current_auth
 
-    if @note = @note.save
+    if @note = @note.create
       render action: "show"
     else
       @url_path = notes_path
@@ -44,7 +45,7 @@ class NotesController < ApplicationController
   def update
     @note = Note.find(params[:id], current_auth)
 
-    if @return_note = @note.save_attributes(params[:note])
+    if @return_note = @note.update(params[:id], params[:note])
       @note = @return_note
       render action: "show"
     else

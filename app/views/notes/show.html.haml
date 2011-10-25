@@ -3,7 +3,7 @@
   = label_tag :title, "Note Title:"
   = @note.title
   = label_tag :content, "Note Content:"
-  = @note.content
+  = raw(@note.content)
   = label_tag :version, "Note Version:"
   = @note.version
   = label_tag :reference, "Note Reference:"

@@ -10,7 +10,7 @@
     = f.text_field :title
   %p
     = f.label :content, "Content:"
-    = f.text_field :precontent
+    = f.text_area :precontent
   %p
     = f.label :version, "Version:"
     = f.select :version, options_for_select(versions_dropdown, @note.version), {:prompt => '--Select--'}

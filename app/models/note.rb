@@ -67,7 +67,7 @@ class Note
     self.class.all(auth)
   end
     
-  def save
+  def create
     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
     @content = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE yv-note SYSTEM "http://' << Cfg.api_root << '/pub/yvml_1_0.dtd"><yv-note>' << @precontent << '</yv-note>'
     @reference = @reference.gsub('+', '%2b')
@@ -80,9 +80,18 @@ class Note
     response
   end
   
-  def save_attributes(fields)
+  def update(id, fields)
     save_values(fields)
-    return save
+    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
+    @content = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE yv-note SYSTEM "http://' << Cfg.api_root << '/pub/yvml_1_0.dtd"><yv-note>' << @precontent << '</yv-note>'
+    @reference = @reference.gsub('+', '%2b')
+
+    response = YvApi.post('notes/update', attributes(:id, :title, :content, :language_iso, :reference, :version,
+        :published, :user_status, :shared_connections, :token, :auth)) do |errors|
+      @errors = errors.map { |e| e["error"] }      
+      return false
+    end
+    response
   end
   
   def destroy
