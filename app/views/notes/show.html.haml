@@ -7,7 +7,7 @@
   = label_tag :version, "Note Version:"
   = @note.version
   = label_tag :reference, "Note Reference:"
-  = @note.reference
+  = references_link_breakout(@note.reference)
   = label_tag :user_status, "Note Status:"
   = @note.user_status
   = link_to 'edit', edit_note_path(@note.id)

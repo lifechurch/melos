@@ -30,10 +30,20 @@ class Note
     end
   end
   
+  def save_values(values)
+    values.each do |k,v|    
+      # Create instance variable
+      self.instance_variable_set("@#{k}", v)
+      # Create the getter
+      self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")})
+      # Create the setter
+      self.class.send(:define_method, "#{k}=", proc{|v| self.instance_variable_set("@#{k}", v)})
+    end    
+  end 
+  
   def self.find(id, auth) 
     response = YvApi.get('notes/view', {:id => id, :auth => auth} ) do |errors|     
       @errors = errors.map { |e| e["error"] }
-puts @errors      
       return false
     end
 
@@ -82,6 +92,11 @@ puts @errors
       return false
     end
     response
+  end
+  
+  def save_attributes(fields)
+    save_values(fields)
+    return save
   end
   
   def destroy

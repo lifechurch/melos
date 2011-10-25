@@ -21,4 +21,17 @@ module NotesHelper
       ''
     end
   end
+  
+  def references_link_breakout(refs)
+    return_refs = ""
+
+    if refs
+      refs.each do |ref|
+        return_refs << link_to(ref.human, '/format_for_verses/' << ref.osis) #TODO: Complete
+      end
+      raw(return_refs)
+    else
+      ''
+    end
+  end  
 end

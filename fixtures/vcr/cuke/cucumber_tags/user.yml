@@ -15,7 +15,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Mon, 24 Oct 2011 19:11:51 GMT
+      - Tue, 25 Oct 2011 15:16:40 GMT
       content-type:
       - text/plain
       - text/plain; charset=utf-8
@@ -27,7 +27,7 @@
       - Accept-Encoding
     body: ! '{"response":{"code":400,"data":{"errors":[{"key":"users.email.not_available","error":"An
       account is already registered with that email"},{"key":"users.username.not_available","error":"An
-      account is already registered with that username"}]},"buildtime":"2011-10-24T19:11:51+00:00"}}'
+      account is already registered with that username"}]},"buildtime":"2011-10-25T15:16:40+00:00"}}'
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -45,7 +45,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Mon, 24 Oct 2011 19:11:52 GMT
+      - Tue, 25 Oct 2011 15:16:41 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -55,7 +55,7 @@
       vary:
       - Accept-Encoding
     body: ! '{"response":{"code":200,"data":{"id":"4163169","username":"cukeuser3","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-19
-      18:10:14.430167+00","last_login":"2011-10-24 19:11:52+00","twitter":null,"facebook":null,"email":"cukeuser3@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"true","notice_reading_plans":"true"},"buildtime":"2011-10-24T19:11:52+00:00"}}'
+      18:10:14.430167+00","last_login":"2011-10-25 15:16:41+00","twitter":null,"facebook":null,"email":"cukeuser3@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"true","notice_reading_plans":"true"},"buildtime":"2011-10-25T15:16:41+00:00"}}'
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -73,7 +73,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Mon, 24 Oct 2011 19:11:52 GMT
+      - Tue, 25 Oct 2011 15:16:41 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -83,5 +83,5 @@
       vary:
       - Accept-Encoding
     body: ! '{"response":{"code":200,"data":{"id":"4163169","username":"cukeuser3","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-19
-      18:10:14.430167+00","last_login":"2011-10-24 19:11:52+00"},"buildtime":"2011-10-24T19:11:52+00:00"}}'
+      18:10:14.430167+00","last_login":"2011-10-25 15:16:41+00"},"buildtime":"2011-10-25T15:16:41+00:00"}}'
     http_version: '1.1'

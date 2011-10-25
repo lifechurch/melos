@@ -17,7 +17,7 @@ Feature: Notes view
     Then I should be on a show note page
     And I should see "Note Title" 
     And I should see "Note Content" 
-    And I should see a link to "Genesis 1:1 (KJV)"
+    And I should see a link to "Genesis 1:1"
     
   @bible
   Scenario: Update note

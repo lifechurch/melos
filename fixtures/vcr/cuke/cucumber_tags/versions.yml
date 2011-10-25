@@ -15,7 +15,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Mon, 24 Oct 2011 19:11:42 GMT
+      - Tue, 25 Oct 2011 15:16:28 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -340,7 +340,7 @@
       de Cubulco","url":"","language":{"iso":"acc","human":"Achi de Cubulco"},"booklist":"acc","copyright":"SIL","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"accnt":{"title":"Achi''
       de Cubulco","url":"http:\/\/www.wycliffe.org","language":{"iso":"acc","human":"Achi
       de Cubulco"},"booklist":"accnt","copyright":"(c) Wycliffe Bible Translators,
-      Inc.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"}},"defaults":{"bg":"bg1940","cs":"b21","es":"rvr60","fi":"finpr","hu":"kar","id":"idbar","ja":"ja1955","ko":"korvb","no":"nb","pt":"aa","ru":"rursv","vi":"vi1934","zh_CN":"cuvs","zh_TW":"cuv","en":"kjv","ro":"vdc","ar":"nav","it":"nr94","nl":"htb","de":"hfa","sv":"sfb"},"totals":{"versions":169,"languages":52}},"buildtime":"2011-10-24T19:11:42+00:00"}}'
+      Inc.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"}},"defaults":{"bg":"bg1940","cs":"b21","es":"rvr60","fi":"finpr","hu":"kar","id":"idbar","ja":"ja1955","ko":"korvb","no":"nb","pt":"aa","ru":"rursv","vi":"vi1934","zh_CN":"cuvs","zh_TW":"cuv","en":"kjv","ro":"vdc","ar":"nav","it":"nr94","nl":"htb","de":"hfa","sv":"sfb"},"totals":{"versions":169,"languages":52}},"buildtime":"2011-10-25T15:16:28+00:00"}}'
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -358,7 +358,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Mon, 24 Oct 2011 19:11:42 GMT
+      - Tue, 25 Oct 2011 15:16:29 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -429,7 +429,7 @@
       and noncommercial use that exceed the above guidelines must be directed to and
       approved in writing by NavPress Publishing Group, Permissions, P.O. Box 35001,
       Colorado Springs, Co 80935. (<a href=\"http:\/\/www.messagebible.com\/\" target=\"_blank\">http:\/\/www.messagebible.com<\/a>)<\/p>\n\n<p><a
-      href=\"http:\/\/www.messagebible.com\"><em>The Message<\/em> Web Site: http:\/\/www.messagebible.com<\/a><\/p>"},"buildtime":"2011-10-24T19:11:42+00:00"}}'
+      href=\"http:\/\/www.messagebible.com\"><em>The Message<\/em> Web Site: http:\/\/www.messagebible.com<\/a><\/p>"},"buildtime":"2011-10-25T15:16:29+00:00"}}'
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -447,7 +447,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Mon, 24 Oct 2011 19:11:43 GMT
+      - Tue, 25 Oct 2011 15:16:29 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -474,7 +474,7 @@
       Peter","chapters":3,"verses":[21,22,18],"audio":false},{"number":62,"osis":"1John","human":"1
       John","chapters":5,"verses":[10,29,24,21,21],"audio":false},{"number":63,"osis":"2John","human":"2
       John","chapters":1,"verses":[13],"audio":false},{"number":64,"osis":"3John","human":"3
-      John","chapters":1,"verses":[14],"audio":false},{"number":65,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":false},{"number":66,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"audio":false}],"buildtime":"2011-10-24T19:11:43+00:00"}}'
+      John","chapters":1,"verses":[14],"audio":false},{"number":65,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":false},{"number":66,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"audio":false}],"buildtime":"2011-10-25T15:16:29+00:00"}}'
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -492,7 +492,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Mon, 24 Oct 2011 19:11:44 GMT
+      - Tue, 25 Oct 2011 15:16:30 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -565,5 +565,5 @@
       And there it was.<\/span><\/p><p><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0God
       looked over everything he had made; it was so good, so very good! It was evening,
       it was morning-Day Six.<\/span><\/p><\/div>\n","audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
-      2"}}},"buildtime":"2011-10-24T19:11:44+00:00"}],"buildtime":"2011-10-24T19:11:44+00:00"}}'
+      2"}}},"buildtime":"2011-10-25T15:16:30+00:00"}],"buildtime":"2011-10-25T15:16:30+00:00"}}'
     http_version: '1.1'

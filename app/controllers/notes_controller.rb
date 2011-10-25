@@ -10,11 +10,15 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new()
+    @url_path = notes_path
+    @url_method = :post
   end
         
   def edit
     @note = Note.find(params[:id], current_auth)
     @note.content = @note.content_html
+    @url_path = notes_path << '/' << params[:id]
+    @url_method = :put
 
     ref = ''
     @note.reference.each do |reference|
@@ -36,9 +40,9 @@ class NotesController < ApplicationController
   
   def update
     @note = Note.find(params[:id], current_auth)
-    @note.user = current_user 
+    #@note.user = current_user 
 
-    if @note.update_attributes(params[:note])
+    if @note = @note.save_attributes(params[:note])
       render action: "show"
     else
       render action: "edit"
@@ -49,7 +53,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id], current_auth)
     
     if @note.destroy
-      redirect_to '/'
+      redirect_to notes_path
     else
       render action: "index"
     end

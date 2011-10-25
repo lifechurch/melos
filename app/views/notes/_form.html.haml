@@ -1,4 +1,4 @@
-= form_for @note do |f|
+= form_for @note, :url => @url_path, :method => @url_method do |f|
   - if @note.errors
     .form_errors
       The following error(s) prevented creation of your note:
