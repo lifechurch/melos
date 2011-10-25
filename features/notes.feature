@@ -69,13 +69,13 @@ Feature: Notes view
     And I should see "Public Content" 
     And I should not see "Private Note" 
     And I should not see "Private Content" 
-    When I go to the notes index page for user "testuser2" 
+    When I go to the notes index page
     Then I should see a link to "Another Public" 
     And I should see "Another Public Content" 
     And I should see a link to "Genesis 1:3 (KJV)" 
     And I should see a link to "Another Private" 
     And I should see a link to "Genesis 1:4 (KJV)" 
-    And I should see "Another Private Content"
+    And I should see "Another Private Record"
     
   @bible
   Scenario: Reader integration

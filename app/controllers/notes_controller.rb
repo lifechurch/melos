@@ -33,7 +33,8 @@ class NotesController < ApplicationController
     @note = Note.new(params[:note])
     @note.auth = current_auth
 
-    if @note = @note.create
+    if @return_note = @note.create
+      @note = @return_note
       render action: "show"
     else
       @url_path = notes_path

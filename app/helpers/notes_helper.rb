@@ -9,14 +9,14 @@ module NotesHelper
     return_versions.sort
   end
   
-  def references_breakout(refs)
+  def references_breakout(refs, version)
     return_refs = ""
 
     if refs
       refs.each do |ref|
-        return_refs << ref.human
+        return_refs << link_to(ref.human << ' (' << version.upcase << ')', '/bible/' << ref.osis)
       end
-      return_refs
+      raw(return_refs)
     else
       ''
     end
