@@ -9,7 +9,7 @@ Feature: Notes view
     And I am logged in as "testuser" with password "tenders" 
     When I go to the new note page
     And I fill in "Title" with "Note Title" 
-    And I fill in "Content" with "Note Content" 
+    And I fill in "note_precontent" with "Note Content" 
     And I select "King James Version" from the dropdown "note_version"
     And I fill in "Reference" with "gen.1.1" 
     And I select "Public" from the dropdown "note_user_status"

@@ -27,7 +27,7 @@ module NotesHelper
 
     if refs
       refs.each do |ref|
-        return_refs << link_to(ref.human, '/format_for_verses/' << ref.osis) #TODO: Complete
+        return_refs << link_to(ref.human, '/bible/' << ref.osis) #TODO: Complete
       end
       raw(return_refs)
     else
