@@ -3,7 +3,7 @@ Feature: Bookmarks view (homepage)
   As a:        User
   I want to:   See a list of bookmarks and links to the Passages they specify
 
-  @user
+  @bookmark
   Scenario: Showing bookmarks
     Given a user named "cukeuser3" with password "tenders" and email "cukeuser3@youversion.com" exists
     And the following bookmarks exist:
