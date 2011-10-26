@@ -26,12 +26,9 @@ class User
     reg_data = {email: "", username: "", password: "", verified: false, agree: false}
     reg_data.merge! params
     reg_data.each do |k,v|
-      # Create instance variable
-      self.instance_variable_set("@#{k}", v)
-      # Create the getter
-      self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")})
-      # Create the setter
-      self.class.send(:define_method, "#{k}=", proc{|v| self.instance_variable_set("@#{k}", v)})
+      # Create an accessors and set the initial values for all the params
+      self.class.send(:attr_accessor, k)
+      self.send("#{k}=", v)
     end
   end
 
