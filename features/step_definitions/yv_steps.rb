@@ -3,7 +3,7 @@ Given /^a user named "([^"]*)" with password "([^"]*)" does not exist$/ do |arg1
 end
 
 Given /^a user named "([^"]*)" with password "([^"]*)" and email "([^"]*)" exists$/ do |username, password, email| # "
-  User.new({username: username, password: password, email: email, verified: true, agree: true }).save
+  User.new({username: username, password: password, email: email, verified: true, agree: true }).create
 end
 
 Given /^I am signed out$/ do
@@ -14,6 +14,10 @@ Then /^I should see a (.*) with contents (.*)$/ do |select, options| # "
   options.split(", ").each do |opt|
     el.should have_content(opt.gsub(/(^\")|(\"$)/, ""))
   end
+end
+
+Then /^"([^"]*)" should be selected for "([^"]*)"$/ do |value, field|
+  page.should have_xpath("//option[@selected and @value = '#{value}']")
 end
 
 Then /^"(.*)" should be selected$/ do |value|
@@ -28,4 +32,8 @@ end
 
 When /^I dump.* the response$/ do
   puts body
+end
+
+When /^I dump the host$/ do
+  puts host
 end

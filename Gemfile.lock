@@ -114,6 +114,7 @@ GEM
     mime-types (1.16)
     multi_json (1.0.3)
     nokogiri (1.5.0)
+    pg (0.11.0)
     polyglot (0.3.2)
     pry (0.9.3)
       coderay (>= 0.9.8)
@@ -148,6 +149,8 @@ GEM
     rdoc (3.9.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    routing-filter (0.2.4)
+      actionpack
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -221,8 +224,10 @@ DEPENDENCIES
   httparty
   jquery-rails
   memcache-client
+  pg
   pry
   rails (~> 3.1.0)
+  routing-filter
   rspec-cells
   rspec-rails (>= 2.6.0)
   sass-rails (~> 3.1.0)

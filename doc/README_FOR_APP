@@ -1,2 +1,10 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+## Cookies
+
+Here is a rundown of the values stored in the user's cookie:
+
+* `a (signed)`: User ID number, suitable for use with the YV API
+* `b (signed)`: YouVersion username.
+* `c (signed)`: YouVersion Password.
+* `locale`: The shortcode for the user's locale, in the same format as the subdomain. This should be set when visiting any non-www domain, and should be read when visiting any www link. If a value isn't present when visiting www, set it to the default (en).
+* `implicit_bible`: The user's most recent implicit Bible version. This means a version that the user was linked to in a note or something, or a version explicitly specified by a reading plan.
+* `explicit_bible`: The user's most recent explicitly selected Bible version. Should be used when a version isn't mandated by the link or reading plan.
