@@ -57,22 +57,6 @@ class User
     response
   end
 
-  def guest?
-    false
-  end
-
-  def admin?
-    true
-  end
-
-  def locale
-    "fr"
-  end
-
-  def primary_key
-    @id
-  end
-
   def attributes(*args)
     array = args
     array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
