@@ -37,6 +37,7 @@ class Bookmark
 
   def save
     opts = attributes(:highlight_color, :labels, :reference, :title, :version)
+    # TODO: find the real username and pass
     opts.merge! ({auth_username: 'testuser', auth_password: 'tenders'})
     response = YvApi.post('bookmarks/create', opts) do |errors|
       @errors = errors.map { |e| e["error"] } if errors
