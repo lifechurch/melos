@@ -5,7 +5,7 @@ Feature: Bookmarks view (homepage)
 
   @bookmark
   Scenario: Showing bookmarks
-    Given a user named "cukeuser3" with password "tenders" and email "cukeuser3@youversion.com" exists
+    Given a user named "cukeuser_bookmark1" with password "tenders" and email "cukeuser_bookmark1@youversion.com" exists
     And the following bookmarks exist:
     | Username | Reference      | Title         | Labels        |
     | testuser | gen.1.1.niv    | The Beginning | old,labeltext |
