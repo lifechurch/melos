@@ -1,0 +1,85 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://api.yvdev.com:443/2.3/users/create.json
+    body: email=testuser23%40youversion.com&username=testuser23&password=tenders&verified=true&agree=true&token=305a2d2c702fc416693e43139ce819a4
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Wed, 26 Oct 2011 18:52:30 GMT
+      content-type: 
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":201,\"data\":\"Created\",\"buildtime\":\"2011-10-26T18:52:30+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/bookmarks/create.json
+    body: highlight_color=&labels=&reference=Matt.1&title=Begettings&version=esv
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Wed, 26 Oct 2011 18:52:31 GMT
+      content-type: 
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"21699565\",\"user_id\":\"4163177\",\"version\":\"esv\",\"created\":\"2011-10-26 18:52:31.171586+00\",\"username\":\"testuser\",\"labels\":null,\"highlight_color\":null,\"title\":\"Begettings\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"reference\":{\"human\":\"Matthew 1:1\",\"osis\":\"Matt.1.1\"},\"reference_chapter\":{\"human\":\"Matthew 1\",\"osis\":\"Matt.1\"},\"references\":[{\"osis\":\"Matt.1.1\",\"human\":\"Matthew 1:1\"}]},\"buildtime\":\"2011-10-26T18:52:31+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/bookmarks/create.json
+    body: highlight_color=&labels=&reference=Matt.99&title=&version=
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Wed, 26 Oct 2011 18:52:31 GMT
+      content-type: 
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":400,\"data\":{\"errors\":[{\"key\":\"bookmarks.reference.invalid_multi_reference\",\"error\":\"Reference should be a valid multi-reference\"}]},\"buildtime\":\"2011-10-26T18:52:31+00:00\"}}"
+    http_version: "1.1"
