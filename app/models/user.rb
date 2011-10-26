@@ -37,9 +37,8 @@ class User
   # Contains defaults for when a new user is being created
   def initialize(params = {})
     params[:agree] = true if params[:agree]
-    reg_data = {id: nil, email: "", username: "", password: "", verified: false, agree: false}
-    reg_data.merge! params
-    reg_data[:id] = reg_data[:id].to_i # in case it came back from the API
+    reg_data = {id: nil, email: "", username: "", password: "", verified: false, agree: false}.merge!(params)
+    reg_data[:id] = reg_data[:id].to_i # If it came back from the API
     reg_data.each do |k,v|
       self.instance_variable_set("@#{k}", v) # Create instance variable
       self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")}) # Create the getter
