@@ -52,11 +52,7 @@ class YvApi
     # Clean up the path
     path = clean_up(path)
     # Set the request protocol
-    protocol = "http"
-    if opts[:secure] == true
-      opts.delete(:secure)
-      protocol += "s"
-    end
+    protocol = (opts.delete(:secure) == true) ? 'https' : 'http'
     # Set the base URL
     base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
     response = httparty_post(base + path, body: opts)
