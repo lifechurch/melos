@@ -1,4 +1,5 @@
-YouversionWeb::Application.routes.draw do@
+YouversionWeb::Application.routes.draw do
+  filter :locale, include_default_locale: false
   # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
   resources 'versions', :only => [:index, :show]

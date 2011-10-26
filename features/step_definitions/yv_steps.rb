@@ -20,6 +20,10 @@ Then /^"([^"]*)" should be selected for "([^"]*)"$/ do |value, field|
   page.should have_xpath("//option[@selected and @value = '#{value}']")
 end
 
+Then /^"(.*)" should be selected$/ do |value|
+  with_scope("selected") { page.should have_content value }
+end
+
 Then /^an unverified user named "([^"]*)" with password "([^"]*)" should exist$/ do |arg1, arg2|
   lambda do
     YvApi.get("users/authenticate", auth_username: arg1, auth_password: arg2)
