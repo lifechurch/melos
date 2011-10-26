@@ -16,8 +16,8 @@ Then /^I should see a (.*) with contents (.*)$/ do |select, options| # "
   end
 end
 
-Then /^"(.*)" should be selected$/ do |value|
-  with_scope("selected") { page.should have_content value }
+Then /^"([^"]*)" should be selected for "([^"]*)"$/ do |value, field|
+  page.should have_xpath("//option[@selected and @value = '#{value}']")
 end
 
 Then /^an unverified user named "([^"]*)" with password "([^"]*)" should exist$/ do |arg1, arg2|
@@ -28,4 +28,8 @@ end
 
 When /^I dump.* the response$/ do
   puts body
+end
+
+When /^I dump the host$/ do
+  puts host
 end

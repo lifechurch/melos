@@ -1,9 +1,9 @@
 ---
-en:
-  language name: English
+ko:
+  language name: 한국어
   signed in as: "Signed in as %{user}"
   sign out: "Sign out"
-  youversion: YouVersion
+  youversion: YouVersion French
   username or email prompt: "Username (or email):"
   password prompt: "Password:"
   sign in: "Sign in"

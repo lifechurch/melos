@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title= t 'youversion'
+    %title= t('youversion')
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -14,3 +14,6 @@
     - else
       %p= link_to t("sign in"), sign_in_path
     = yield
+    %select#choose_language{name: "choose_language"}
+      - I18n.available_locales.each do |loc|
+        %option{value: loc, href: url_for(params.merge!(host: with_subdomain(loc.to_s))), selected: loc == I18n.locale}= t("language name", locale: loc)
