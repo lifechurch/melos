@@ -1,6 +1,6 @@
 #main_content
 	#toolbar
-		= "Version: #{@version.title} (#{@version.osis})"
+		= t("version header", version: @version)
 		= render_cell :version_selector, :display, :reference => @reference
 		= render_cell :book_selector, :display, :reference => @reference
 	%h1= @reference.human

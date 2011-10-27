@@ -18,6 +18,8 @@ module NavigationHelpers
       sign_up_path
     when /^the version page for \"(.*)\"$/
       version_path $1
+    when /^"([^"]*)"$/
+      $1
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
