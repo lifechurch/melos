@@ -42,6 +42,14 @@ class User
     User.new(response)
   end
 
+  def self.notes(id, auth)
+    Note.all(id, auth)
+  end
+  
+  def notes(auth)
+    self.class.Note.all(id, auth)
+  end
+  
   def save
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
     @secure = true

@@ -37,5 +37,5 @@ When /^I select "([^"]*)" from the dropdown "([^"]*)"$/ do |arg1, arg2|
 end
 
 When /^I click "([^"]*)"$/ do |arg1|
-  click_button "Save"
+  click_button arg1
 end

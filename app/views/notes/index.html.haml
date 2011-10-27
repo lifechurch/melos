@@ -5,7 +5,7 @@
       %div{id: note.id}
         %div{class: "title"}= link_to note.title, note_path(note.id)
         %div{class: "content"}= note.content_text
-        %div{class: "reference"}= references_breakout(note.reference, note.version)
+        %div{class: "reference"}= note.reference
         %div{class: "status"}= note.user_status
   - else
     %div{class: "none"}= "Sorry, no notes here!"

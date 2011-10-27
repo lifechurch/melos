@@ -28,8 +28,6 @@ class YvApi
     # Figure out if we should cache
     cache_length = opts.delete(:cache_for)
         
-    begin
-      
     # If we should cache, try pulling from cache first
     if cache_length
       cache_key = {p: path, q: opts}
@@ -40,15 +38,6 @@ class YvApi
     else
       # Just ask the API
       response = httparty_get(base + path, query: opts)
-    end
-
-    rescue => e
-      puts 'DEBUG--------------------------------------------------------------------'
-      puts path
-      puts opts
-      puts e.message
-      #puts e.backtrace
-      puts 'END DEBUG----------------------------------------------------------------'
     end
 
     # Check the API response for error code
@@ -72,19 +61,8 @@ class YvApi
     # Set the base URL
     base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
     
-    begin    
-    
     response = httparty_post(base + path, body: opts)
     
-    rescue => e
-      puts 'DEBUG--------------------------------------------------------------------'
-      puts path
-      puts opts
-      puts e.message
-      #puts e.backtrace
-      puts 'END DEBUG----------------------------------------------------------------'
-    end
-  
     return api_response_or_rescue(response, block)
   end
 
