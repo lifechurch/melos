@@ -1,8 +1,14 @@
 class VersionSelectorCell < Cell::Rails
 
   def display(opts ={})
-    @reference = opts[:reference]
-    @versions  = Version.all_by_language
+    if opts[:reference]
+      @reference = opts[:reference]
+      @version = Version.find(@reference[:version])
+    elsif opts[:version]
+      @version = opts[:version]
+    end
+    @all_languages  = Version.all_by_language
+    @this_language = @all_languages.delete(@version.language.iso)
     @languages = Version.languages
     render
   end

@@ -42,8 +42,27 @@ describe Reference do
   end
 
   describe "#to_s" do
-    it "returns a human string" do
+    it "returns a human readable string of gen.1.1.kjv" do
       @full_ref.to_s.should == "Genesis 1:1 (KJV)"
+    end
+    it "returns a human readable string of gen.1.kjv" do
+      Reference.new("gen.1.kjv").to_s.should == "Genesis 1 (KJV)"
+    end
+    it "returns a human readable string of gen.1.2-3.kjv" do
+      Reference.new("gen.1.2-3.kjv").to_s.should == "Genesis 1:2-3 (KJV)"
+    end
+  end
+
+  describe "#ref_string" do
+    it "returns the chapter, book and verse of a reference" do
+      @full_ref.ref_string.should == "Genesis 1:1"
+      Reference.new("gen.1.kjv").ref_string.should == "Genesis 1"
+    end
+  end
+
+  describe "#version_string" do
+    it "returns the abbrev for the reference version" do
+      Reference.new("gen.1.kjv").version_string.should == "KJV"
     end
   end
 
@@ -82,15 +101,7 @@ describe Reference do
   end
 
   describe "#human" do
-    it "returns a human readable string of gen.1.1.kjv" do
-      @full_ref.human.should == "Genesis 1:1 (KJV)"
-    end
-    it "returns a human readable string of gen.1.kjv" do
-      Reference.new("gen.1.kjv").human.should == "Genesis 1 (KJV)"
-    end
-    it "returns a human readable string of gen.1.2-3.kjv" do
-      Reference.new("gen.1.2-3.kjv").human.should == "Genesis 1:2-3 (KJV)"
-    end
+
   end
 
   describe "#copyright" do

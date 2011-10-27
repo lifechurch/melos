@@ -1,2 +1,6 @@
-%h1= t("bible versions")
-= render_cell :version_selector, :display
+- @title = 'Publisher'
+- @sidebar = false
+
+%article
+  %h1= t("bible versions")
+  = render_cell :version_selector, :display

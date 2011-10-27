@@ -10,11 +10,14 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'routing-filter'
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'uglifier'
+  gem 'compass', '~> 0.11.1'
+  gem 'css_parser', '~> 1.1.9'
 end
 
 
