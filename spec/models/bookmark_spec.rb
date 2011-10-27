@@ -21,7 +21,7 @@ describe Bookmark do
       # brittle. I don't have an answer, just making a note next time I'm through here and
       # wondering why a spec that used to pass has started failing or something.
       user = User.new(@params)
-      user.save.should_not be_false
+      user.create.should_not be_false
       bookmark = Bookmark.new({auth_username: user.username, auth_password: user.password, version: "esv",
                                reference: "Matt.1", title: "Begettings", username: user.username})
       bookmark.save.should_not be_false
