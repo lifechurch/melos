@@ -143,12 +143,7 @@ class Note
   def self.build_objects(response, auth)
     @return_notes = []
     response.each do |note|
-      @note = Note.new(note)
-      @note.auth = auth
-      #@note.content = @note.content_html
-      @note.content = @note.content_text
-      @note.reference = hash_to_osis(@note.reference)
-      @return_notes << @note      
+      @return_notes << build_object(note, auth)
     end
     @return_notes
   end
