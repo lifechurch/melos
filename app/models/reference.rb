@@ -48,6 +48,10 @@ class Reference
   def osis
     @ref.to_osis_string
   end
+  
+  def osis_noversion
+    @ref.to_osis_string_noversion
+  end
 
   def to_api
     

@@ -9,7 +9,7 @@ class Note
   attr_reader :errors
   
   def initialize(params = {})
-    reg_data = {id: 0, title: "", content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}    
+    reg_data = {id: 0, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}    
     initialize_class(self, params, reg_data)    
   end
   
@@ -49,7 +49,7 @@ class Note
         @errors = errors.map { |e| e["error"] }
         return false
       end
-    else        
+    elsif !auth
       response = YvApi.get('notes/items') do |errors|     
         @errors = errors.map { |e| e["error"] }
         return false
@@ -65,29 +65,38 @@ class Note
     
   def create
     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
+    @prexml_content = @content
     @content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
     @reference = @reference.gsub('+', '%2b')
 
     response = YvApi.post('notes/create', class_attributes(:title, :content, :language_iso, :reference, :version,
         :published, :user_status, :shared_connections, :token, :auth)) do |errors|
-      @errors = errors.map { |e| e["error"] }      
+      @errors = errors.map { |e| e["error"] }
+      @content = @prexml_content
       return false
     end
-    id = response.id    
+
+    @id = response.id
+    @version = Version.new(response.version)
+    @reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
     response
   end
   
   def update(id, fields)
     set_class_values(self, fields)
     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
+    @prexml_content = @content
     @content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
     @reference = @reference.gsub('+', '%2b')
 
     response = YvApi.post('notes/update', class_attributes(:id, :title, :content, :language_iso, :reference, :version,
         :published, :user_status, :shared_connections, :token, :auth)) do |errors|
-      @errors = errors.map { |e| e["error"] }      
+      @errors = errors.map { |e| e["error"] }
+      @content = @prexml_content
       return false
     end
+    @version = Version.new(response.version)
+    @reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
     response
   end
   
@@ -106,9 +115,9 @@ class Note
   def self.build_object(response, auth)
     @note = Note.new(response)
     @note.auth = auth
-    #@note.content = @note.content_html
     @note.content = @note.content_text
-    @note.reference = Model::hash_to_osis(@note.reference)
+    @note.version = Version.new(@note.version)
+    @note.reference = Reference.new("#{Model::hash_to_osis(@note.reference)}.#{@note.version.osis}")
     @note
   end
   

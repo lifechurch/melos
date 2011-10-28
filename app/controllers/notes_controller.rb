@@ -1,7 +1,11 @@
 class NotesController < ApplicationController
   
-  def index    
-    @notes = Note.all(current_auth.id, current_auth)    
+  def index
+    if current_auth
+      @notes = Note.all(current_auth.id, current_auth)
+    else
+      @notes = Note.all(nil, nil)
+    end
   end
 
   def show
@@ -10,15 +14,24 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = Note.new()
-    #@url_path = notes_path
-    #@url_method = :post
+    if current_auth
+      @note = Note.new()
+      @url_path = notes_path
+      @url_method = :post
+    else
+      redirect_to notes_path
+    end
   end
         
   def edit
-    @note = Note.find(params[:id], current_auth)    
-    #@url_path = notes_path << '/' << params[:id]
-    #@url_method = :put
+    if current_auth
+      @note = Note.find(params[:id], current_auth)
+      @note.reference = @note.reference.osis_noversion
+      @url_path = notes_path << '/' << params[:id]
+      @url_method = :put
+    else
+      redirect_to notes_path
+    end    
   end
 
   def create
@@ -28,8 +41,8 @@ class NotesController < ApplicationController
     if @note.create
       render action: "show"
     else
-      #@url_path = notes_path
-      #@url_method = :post      
+      @url_path = notes_path
+      @url_method = :post
       render action: "new"
     end    
   end
@@ -40,8 +53,8 @@ class NotesController < ApplicationController
     if @note.update(params[:id], params[:note])
       render action: "show"
     else
-      #@url_path = notes_path << '/' << params[:id]
-      #@url_method = :put      
+      @url_path = notes_path << '/' << params[:id]
+      @url_method = :put
       render action: "edit"
     end    
   end

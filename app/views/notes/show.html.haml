@@ -7,8 +7,8 @@
   = label_tag :version, "Note Version:"
   = @note.version
   = label_tag :reference, "Note Reference:"
-  = @note.reference
+  = link_to @note.reference, bible_path(@note.reference)
   = label_tag :user_status, "Note Status:"
   = @note.user_status
-  = link_to 'edit', edit_note_path(@note.id)
-  = link_to 'delete this note', note_path(@note.id), :confirm => 'Are you sure?', :method => :delete
+  = current_auth ? link_to('edit', edit_note_path(@note.id)) : ""
+  = current_auth ? link_to('delete this note', note_path(@note.id), :confirm => 'Are you sure?', :method => :delete) : ""

@@ -15,9 +15,9 @@ Feature: Notes view
     And I select "Public" from the dropdown "note_user_status"
     And I click "Save" 
     Then I should be on a show note page
-    And I should see "Note Title" 
-    And I should see "Note Content" 
-    And I should see a link to "Genesis 1:1"
+    And I should see "Public Note" 
+    And I should see "Public Content" 
+    And I should see a link to "Genesis 1:1 (KJV)"
     
   @bible
   Scenario: Update note
@@ -33,7 +33,7 @@ Feature: Notes view
     When I follow "edit" 
     And I fill in "Title" with "A Different Public Note" 
     And I click "Save" 
-    Then I should be on a show note page
+    Then I should be on the show note page 935909
     And I should see "A Different Public Note" 
     And I should see "Your note has been updated."
     

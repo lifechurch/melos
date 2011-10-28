@@ -15,7 +15,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Tue, 25 Oct 2011 21:20:27 GMT
+      - Fri, 28 Oct 2011 16:21:41 GMT
       content-type:
       - text/plain
       - text/plain; charset=utf-8
@@ -27,7 +27,7 @@
       - Accept-Encoding
     body: ! '{"response":{"code":400,"data":{"errors":[{"key":"users.email.not_available","error":"An
       account is already registered with that email"},{"key":"users.username.not_available","error":"An
-      account is already registered with that username"}]},"buildtime":"2011-10-25T21:20:27+00:00"}}'
+      account is already registered with that username"}]},"buildtime":"2011-10-28T16:21:41+00:00"}}'
     http_version: '1.1'
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
@@ -45,7 +45,7 @@
       server:
       - nginx/0.7.67
       date:
-      - Tue, 25 Oct 2011 21:20:27 GMT
+      - Fri, 28 Oct 2011 16:21:41 GMT
       content-type:
       - text/plain; charset=utf-8
       transfer-encoding:
@@ -55,5 +55,5 @@
       vary:
       - Accept-Encoding
     body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.hash.not_verified","error":"This
-      account has not been verified."}]},"buildtime":"2011-10-25T21:20:27+00:00"}}'
+      account has not been verified."}]},"buildtime":"2011-10-28T16:21:41+00:00"}}'
     http_version: '1.1'
