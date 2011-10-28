@@ -15,16 +15,6 @@ describe Reference do
     it "creates an instance from a hash" do
       Reference.new({book: "gen", chapter: 1, version: "kjv"}).class.should == Reference
     end
-
-    it "fails without a book" do
-      lambda do
-        Reference.new({chapter: 1})
-      end.should raise_error
-
-      lambda do
-        Reference.new("")
-      end.should raise_error
-    end
   end
 
   describe "#merge" do

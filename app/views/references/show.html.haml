@@ -11,10 +11,10 @@
     %li.gutter_right_quarter
       = @reference.ref_string
     %li
-      %a.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => 'Choose Book + Chapter'}
+      %a#menu_book_chapter_trigger.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => 'Choose Book + Chapter'}
         %span Choose Book + Chapter
     %li.separator
-      %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => 'Choose Version'}
+      %a#menu_version_trigger.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => 'Choose Version'}
         %b= @reference.version_string
         %span Choose Version
   %ul.float_right

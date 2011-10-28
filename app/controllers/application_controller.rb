@@ -42,12 +42,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_version
-    puts "in current version"
     cookies[:version] || Version.default_for(params[:locale] ? params[:locale].to_s : "en")
   end
 
   def set_current_version(ver)
-    puts "in set current version"
     cookies.permanent[:version] = ver.osis
   end
 end

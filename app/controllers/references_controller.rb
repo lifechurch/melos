@@ -11,9 +11,7 @@ class ReferencesController < ApplicationController
       return redirect_to bible_path(@reference) if @reference.hash != params[:reference].to_osis_hash
     end
     @version = Version.find(@reference[:version])
-    puts "lets set some stuff"
     set_last_read @reference
     set_current_version @version
-    puts "did i die?"
   end
 end

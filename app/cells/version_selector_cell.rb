@@ -7,8 +7,9 @@ class VersionSelectorCell < Cell::Rails
     elsif opts[:version]
       @version = opts[:version]
     end
-    @all_languages  = Version.all_by_language
-    @this_language = @all_languages.delete(@version.language.iso)
+    @all_languages = Version.all_by_language
+    @this_language = @all_languages[@version.language.iso]
+    @all_languages = @all_languages.except(@version.language.iso)
     @languages = Version.languages
     render
   end
