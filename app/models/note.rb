@@ -65,7 +65,7 @@ class Note
     
   def create
     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-    @content = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE yv-note SYSTEM "http://' << Cfg.api_root << '/pub/yvml_1_0.dtd"><yv-note>' << @content << '</yv-note>'
+    @content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
     @reference = @reference.gsub('+', '%2b')
 
     response = YvApi.post('notes/create', class_attributes(:title, :content, :language_iso, :reference, :version,
@@ -80,7 +80,7 @@ class Note
   def update(id, fields)
     set_class_values(self, fields)
     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-    @content = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE yv-note SYSTEM "http://' << Cfg.api_root << '/pub/yvml_1_0.dtd"><yv-note>' << @content << '</yv-note>'
+    @content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
     @reference = @reference.gsub('+', '%2b')
 
     response = YvApi.post('notes/update', class_attributes(:id, :title, :content, :language_iso, :reference, :version,
