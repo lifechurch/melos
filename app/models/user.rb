@@ -3,7 +3,7 @@ require 'digest/md5'
 class User
   extend ActiveModel::Naming
   include ActiveModel::Conversion
-  include General
+  include Model
   attr_accessor :username, :password
   def persisted?
     false

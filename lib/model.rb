@@ -1,4 +1,4 @@
-module General
+module Model
   
   def initialize_class(instance, params = {}, reg_data)
     reg_data.merge! params
@@ -28,7 +28,7 @@ module General
   
   # PARM (values): Array of Reference hashies
   # RETURN: String in OSIS format
-  def hash_to_osis(values) 
+  def self.hash_to_osis(values) 
     return_val = ""
     values.each do |ref|
       return_val << "#{ref.osis}+"

@@ -1,7 +1,7 @@
 class Note
   extend ActiveModel::Naming
   include ActiveModel::Conversion
-  include General
+  include Model
   def persisted?
     false
   end
@@ -108,7 +108,7 @@ class Note
     @note.auth = auth
     #@note.content = @note.content_html
     @note.content = @note.content_text
-    @note.reference = General::hash_to_osis(@note.reference)
+    @note.reference = Model::hash_to_osis(@note.reference)
     @note
   end
   
