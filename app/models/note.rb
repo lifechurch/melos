@@ -29,20 +29,7 @@ class Note
   def find(id, auth)
     self.class.find(id, auth)
   end
-  
-  def self.find_by_search(query, auth)
-    response = YvApi.get('notes/search', {:user_id => auth.id, :query => URI.escape(query), :page => 1, :auth => auth} ) do |errors|     
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
 
-    response
-  end
-    
-  def find_by_search(query)
-    self.class.find_by_search(query, auth)
-  end  
-  
   def self.all(user_id, auth)    
     if auth
       response = YvApi.get('notes/items', {:user_id => user_id, :auth => auth} ) do |errors|

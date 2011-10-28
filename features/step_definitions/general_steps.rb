@@ -12,24 +12,29 @@ end
 
 Given /^notes exist with the following attributes:$/ do |table|
   
-  true # TODO: Complete
-
-  #@auth = Hashie::Mash.new( {'id' => '4163177', 'username' => 'testuser', 'password' => 'tenders' } )
-  #@row = table.hashes.first
-  #@notes = Note.find_by_search(@row['Title'], @auth)
+  @rowsfound = []
+  @rows = table.hashes
   
-  #if @notes.errors.count == 0
-  #  @notes.each do |note|
-  #    if note.title == @row['title'] && note.author == @row['author'] && note.Content == @row['content'] && note.References == @row['references'] && note.Status = @row['status']
-  #      true
-  #    end
-  #  end
-  #else
-  #  puts 'Cannot find Note!'
-  #  false
-  #end
+  @rows.each do |row|
+    @user = User.authenticate(row['Author'], 'tenders');
+    @auth = Hashie::Mash.new( {'id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
+    @notes = Note.all(@user.id, @auth)
+    
+    if @notes  
+      @notes.each do |note|
+        if note.title == row['Title'] && note.username == row['Author'] && note.content == row['Content'] && note.reference.osis == row['References'] && note.user_status.upcase == row['Status'].upcase
+          @rowsfound << true
+        end
+      end
+    end
+  end
   
-  #false
+  if @rows.count == @rowsfound.count
+    assert true
+  else
+    assert false, 'Not all rows found'
+  end  
+  
 end
 
 When /^I select "([^"]*)" from the dropdown "([^"]*)"$/ do |arg1, arg2|
