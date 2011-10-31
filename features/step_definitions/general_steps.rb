@@ -18,18 +18,20 @@ Given /^notes exist with the following attributes:$/ do |table|
   @rows.each do |row|
     @user = User.authenticate(row['Author'], 'tenders');
     @auth = Hashie::Mash.new( {'id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
-    @notes = Note.all(@user.id, @auth)
+    @notes = Note.for_user(@user.id, @auth)
     
     if @notes  
       @notes.each do |note|
         if note.title == row['Title'] && note.username == row['Author'] && note.content == row['Content'] && note.reference.osis == row['References'] && note.user_status.upcase == row['Status'].upcase
           @rowsfound << true
+          #TEST: puts "Found #{note.username} #{note.title} -> #{note.user_status}"
         end
       end
     end
   end
-  
-  if @rows.count == @rowsfound.count
+
+  #TEST: puts "Rows = #{@rows.count} -> Found = #{@rowsfound.count}"
+  if @rowsfound.count >= @rows.count
     assert true
   else
     assert false, 'Not all rows found'

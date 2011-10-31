@@ -24,8 +24,8 @@ module NavigationHelpers
       notes_path      
     when /^a show note page$/
       notes_path
-    when /^the show note page (\d+)$/
-      "#{notes_path}/#{$1}"
+    when /^the show note page$/
+      notes_path
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

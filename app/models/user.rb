@@ -26,11 +26,11 @@ class User
   end
 
   def self.notes(id, auth)
-    Note.all(id, auth)
+    Note.for_user(id, auth)
   end
   
   def notes(auth)
-    self.class.Note.all(id, auth)
+    self.class.User.notes(id, auth)
   end
   
   def save

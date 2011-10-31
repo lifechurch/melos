@@ -33,7 +33,7 @@ Feature: Notes view
     When I follow "edit" 
     And I fill in "Title" with "A Different Public Note" 
     And I click "Save" 
-    Then I should be on the show note page 935909
+    Then I should be on the show note page
     And I should see "A Different Public Note" 
     And I should see "Your note has been updated."
     
@@ -60,7 +60,7 @@ Feature: Notes view
     And notes exist with the following attributes:
     | Author    | Title           | Content                 | References  | Status  |
     | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
-    | testuser  | Private Note    | Private Content         | gen.1.2.kjv | Private |
+    | testuser  | Private Note    | testuser Private Content| gen.1.2.kjv | Private |
     | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv | Public  |
     | testuser2 | Another Private | Another Private Content | gen.1.4.kjv | Private |
     And I am logged in as "testuser2" with password "tenders" 
@@ -68,14 +68,14 @@ Feature: Notes view
     Then I should see a link to "Public Note" 
     And I should see "Public Content" 
     And I should not see "Private Note" 
-    And I should not see "Private Content" 
+    And I should not see "testuser Private Content"
     When I go to the notes index page
     Then I should see a link to "Another Public" 
     And I should see "Another Public Content" 
     And I should see a link to "Genesis 1:3 (KJV)" 
     And I should see a link to "Another Private" 
     And I should see a link to "Genesis 1:4 (KJV)" 
-    And I should see "Another Private Record"
+    And I should see "Another Private Content"
     
   @bible
   Scenario: Reader integration
@@ -84,7 +84,7 @@ Feature: Notes view
     And notes exist with the following attributes:
     | Author    | Title           | Content                 | References  | Status  |
     | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
-    | testuser  | Private Note    | Private Content         | gen.1.2.kjv | Private |
+    | testuser  | Private Note    | testuser Private Content| gen.1.2.kjv | Private |
     | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv | Public  |
     | testuser2 | Another Private | Another Private Content | gen.1.4.kjv | Private |
     And I am logged in as "testuser2" with password "tenders" 

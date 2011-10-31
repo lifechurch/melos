@@ -43,11 +43,11 @@ describe Note do
   
   describe ".all" do
     it 'returns true after finding all Notes for the user' do
-      @notes = Note.all(@auth.id, @auth).count.should > 0
+      @notes = Note.for_user(@auth.id, @auth).count.should > 0
     end
 
     it 'returns true after finding all Notes' do
-      @notes = Note.all(@auth.id, nil).count.should > 0
+      @notes = Note.for_user(@auth.id, nil).count.should > 0
     end
   end
 
@@ -67,7 +67,7 @@ describe Note do
 
   describe ".update" do
     it 'updates a note and returns the correct response' do
-      @note = Note.all(@auth.id, @auth).first()
+      @note = Note.for_user(@auth.id, @auth).first()
       @response = @note.update(@note.id, title: "Updated New Note", content: "Updated Some Content", reference: "gen.1.1", version: 'kjv' )
 
       @note.id.to_i.should > 0
@@ -78,14 +78,14 @@ describe Note do
 
   describe ".destroy" do
     it 'deletes a note and returns the correct response' do
-      @note = Note.all(@auth.id, @auth).first()
+      @note = Note.for_user(@auth.id, @auth).first()
       @note.destroy.should be_true
     end
   end
 
   describe ".build_object" do
     it 'build a Note object from a passed response' do
-      @note_id = Note.all(@auth.id, @auth).first.id
+      @note_id = Note.for_user(@auth.id, @auth).first.id
       response = YvApi.get('notes/view', {:id => @note_id, :auth => @auth} ) do |errors|
         @errors = errors.map { |e| e["error"] }
       end

@@ -2,9 +2,9 @@ class NotesController < ApplicationController
   
   def index
     if current_auth
-      @notes = Note.all(current_auth.id, current_auth)
+      @notes = Note.for_user(current_auth.id, current_auth)
     else
-      @notes = Note.all(nil, nil)
+      @notes = Note.all(nil)
     end
   end
 
@@ -27,6 +27,7 @@ class NotesController < ApplicationController
     if current_auth
       @note = Note.find(params[:id], current_auth)
       @note.reference = @note.reference.osis_noversion
+      @note.version = @note.version.osis
       @url_path = notes_path << '/' << params[:id]
       @url_method = :put
     else

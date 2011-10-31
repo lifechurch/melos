@@ -30,14 +30,27 @@ class Note
     self.class.find(id, auth)
   end
 
-  def self.all(user_id, auth)    
+  def self.all(auth)
+    response = YvApi.get('notes/items', {:auth => auth} ) do |errors|
+      @errors = errors.map { |e| e["error"] }
+      return false
+    end
+
+    build_objects(response.notes, auth)
+  end
+  
+  def all(user_id)
+    self.class.all(auth)
+  end
+
+  def self.for_user(user_id, auth)
     if auth
       response = YvApi.get('notes/items', {:user_id => user_id, :auth => auth} ) do |errors|
         @errors = errors.map { |e| e["error"] }
         return false
       end
     elsif !auth
-      response = YvApi.get('notes/items') do |errors|     
+      response = YvApi.get('notes/items') do |errors|
         @errors = errors.map { |e| e["error"] }
         return false
       end
@@ -45,11 +58,11 @@ class Note
 
     build_objects(response.notes, auth)
   end
-  
-  def all(user_id, auth)
-    self.class.all(user_id, auth)
+
+  def for_user(user_id)
+    self.class.for_user(user_id, auth)
   end
-    
+
   def create
     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
     @prexml_content = @content
