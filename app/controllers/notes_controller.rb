@@ -16,8 +16,6 @@ class NotesController < ApplicationController
   def new
     if current_auth
       @note = Note.new()
-      @url_path = notes_path
-      @url_method = :post
     else
       redirect_to notes_path
     end
@@ -27,8 +25,6 @@ class NotesController < ApplicationController
     if current_auth
       @note = Note.find(params[:id], current_auth)
       @note.reference = @note.reference.osis_noversion
-      @url_path = notes_path << '/' << params[:id]
-      @url_method = :put
     else
       redirect_to notes_path
     end    
@@ -41,8 +37,6 @@ class NotesController < ApplicationController
     if @note.create
       render action: "show"
     else
-      @url_path = notes_path
-      @url_method = :post
       render action: "new"
     end    
   end
@@ -53,8 +47,6 @@ class NotesController < ApplicationController
     if @note.update(params[:id], params[:note])
       render action: "show"
     else
-      @url_path = notes_path << '/' << params[:id]
-      @url_method = :put
       render action: "edit"
     end    
   end

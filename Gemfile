@@ -7,11 +7,8 @@ gem 'hashie'
 gem 'cells'
 gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
-gem 'coffee-script'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem 'pg'
+gem 'routing-filter'
 
 
 # Gems used only for assets and not required
@@ -19,6 +16,8 @@ gem 'coffee-script'
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'uglifier'
+  gem 'compass', '~> 0.11.1'
+  gem 'css_parser', '~> 1.1.9'
 end
 
 
@@ -55,5 +54,4 @@ end
 
 group :development do
   gem 'pry'
-  gem 'ruby-debug19', :require => 'ruby-debug'
 end

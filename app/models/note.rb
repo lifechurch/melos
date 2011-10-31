@@ -3,13 +3,13 @@ class Note
   include ActiveModel::Conversion
   include Model
   def persisted?
-    false
+    return !id.blank?
   end
 
   attr_reader :errors
   
   def initialize(params = {})
-    reg_data = {id: 0, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}    
+    reg_data = {id: nil, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}    
     initialize_class(self, params, reg_data)    
   end
   
