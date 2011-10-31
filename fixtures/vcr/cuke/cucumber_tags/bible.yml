@@ -1292,3 +1292,199 @@
       it was morning-Day Six.<\/span><\/p><\/div>\n","audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
       2"}}},"buildtime":"2011-10-28T16:21:43+00:00"}],"buildtime":"2011-10-28T16:21:43+00:00"}}'
     http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/update.json
+    body: id=935909&title=A%20Different%20Public%20Note&content=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3C!DOCTYPE%20yv-note%20SYSTEM%20%22http%3A%2F%2Fapi.yvdev.com%2Fpub%2Fyvml_1_0.dtd%22%3E%3Cyv-note%3EPublic%20Content%3C%2Fyv-note%3E&language_iso=&reference=gen.1.1&version=vi1934&published=&user_status=public&shared_connections=&token=615ad51b71049e299842f5af14c70cad
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 28 Oct 2011 16:41:14 GMT
+      content-type:
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":404,"data":{"errors":[{"key":"notes.note.not_found","error":"Note
+      not found"}]},"buildtime":"2011-10-28T16:41:14+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/search.json?page=1&query=Public%2520Note&user_id=4163177
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 28 Oct 2011 17:32:25 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":404,"data":{"errors":[{"key":"bible.notes.not_found","error":"bible.notes.not_found"}],"suggestion":null},"buildtime":"2011-10-28T17:32:25+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163177
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 28 Oct 2011 18:47:30 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+      or password is invalid"}]},"buildtime":"2011-10-28T18:47:30+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser2:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163177
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 28 Oct 2011 18:47:30 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+      or password is invalid"}]},"buildtime":"2011-10-28T18:47:30+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser2:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163177
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 28 Oct 2011 18:47:30 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+      or password is invalid"}]},"buildtime":"2011-10-28T18:47:30+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser2:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163176
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 28 Oct 2011 18:50:55 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+      or password is invalid"}]},"buildtime":"2011-10-28T18:50:55+00:00"}}'
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://testuser2:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163176
+    body: !!null 
+    headers:
+      referer:
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/0.7.67
+      date:
+      - Fri, 28 Oct 2011 18:50:55 GMT
+      content-type:
+      - text/plain; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      vary:
+      - Accept-Encoding
+    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+      or password is invalid"}]},"buildtime":"2011-10-28T18:50:55+00:00"}}'
+    http_version: '1.1'
