@@ -25,12 +25,6 @@ class NotesController < ApplicationController
     if current_auth
       @note = Note.find(params[:id], current_auth)
       @note.reference = @note.reference.osis_noversion
-<<<<<<< HEAD
-      @note.version = @note.version.osis
-      @url_path = notes_path << '/' << params[:id]
-      @url_method = :put
-=======
->>>>>>> 5d49944310610a8f0c61784cf97925f670c3cff0
     else
       redirect_to notes_path
     end    
