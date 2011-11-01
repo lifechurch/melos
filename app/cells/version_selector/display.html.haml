@@ -1,12 +1,22 @@
-%ul#version_selector
-	- @versions.each do |k, v|
-		%li.language
-			= @languages[k]
-			%ul
-				- v.each do |k, v|
-					- if @reference
-						%li.version{class: k == @reference[:version] ? "selected" : ""}
-							= link_to_unless_current(v, bible_path(@reference.merge(version: v.osis)))
-					- else
-						%li.version
-							= link_to_unless_current v, version_path(v)
+#menu_version.dynamic_menu
+  %span.menu_arrow
+    &nbsp;
+  .scroll
+    %table
+      %tr
+        %th{:colspan => '2'}= @version.language.human
+      - @this_language.each do |k, v|
+        %tr
+          %th
+            %a{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : '#'}= k.upcase
+          %td
+            %a{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : '#'}= v.title
+      - @all_languages.each do |k, v|
+        %tr
+          %th{:colspan => '2'}= @languages[k]
+        - v.each do |kk, vv|
+          %tr
+            %th
+              %a{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : '#'}= kk.upcase
+            %td
+              %a{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : '#'}= vv.title

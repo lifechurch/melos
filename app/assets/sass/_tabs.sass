@@ -1,0 +1,224 @@
+// `Header Tabs
+//----------------------------------------------------------------------------------------------------
+
+.header_tabs,
+.header_tabs li
+  list-style: none
+  margin: 0
+
+.header_tabs
+  padding: 0 0 0 20px
+
+.header_tabs li
+  background: url(../images/header_tabs_separator.png) no-repeat left center
+  float: left
+
+.header_tabs li:first-child
+  background: none
+
+.header_tabs a
+  color: $body_text
+  display: block
+  position: relative
+  text-decoration: none
+
+.header_tabs a:hover
+  background-color: rgba(#fff, 0.5)
+
+.header_tabs a:hover,
+.header_tabs .highlighted a
+  color: $green
+
+.header_tabs span
+  display: block
+  padding: 10px 15px
+
+.header_tabs .highlighted span
+  background: #fff
+  font-weight: bold
+  margin:
+    left: -1px
+    right: -1px
+    bottom: -10px
+  padding:
+    bottom: 20px
+    left: 16px
+    right: 16px
+  position: relative
+  text-shadow: none
+  z-index: 1
+
+.header_tabs .highlighted span:before,
+.header_tabs .highlighted span:after
+  background: url(../images/header_tabs_highlighted_a_before_after.png) no-repeat
+  content: '.'
+  font-size: 0
+  color: transparent
+  width: 7px
+  position: absolute
+  top: 0
+  left: auto
+  right: auto
+  bottom: 10px
+
+.header_tabs .highlighted span:before
+  background-position: left bottom
+  border-right: 1px solid #cbc9cf
+  left: -8px
+
+.header_tabs .highlighted span:after
+  background-position: right bottom
+  border-left: 1px solid #cbc9cf
+  right: -8px
+
+// `Content Tabs
+//----------------------------------------------------------------------------------------------------
+
+// Override bullet styling.
+#main article .tabs,
+#main article .tabs li,
+#main article .combo_button,
+#main article .combo_button li
+  background: none
+  margin-top: 0
+  padding: 0
+
+#main article .tabs
+  @extend .clearfix
+  background: url(../images/1px_gray.png) repeat-x left bottom
+  clear: both
+  font-size: 12px
+  margin-left: -30px
+  margin-right: -30px
+  padding-left: 25px
+  padding-right: 30px
+
+#main article .tabs li
+  margin-left: 5px
+  float: left
+
+#main article .tabs a,
+#main article .tabs span
+  +round_top
+  display: block
+
+#main article .tabs a
+  +background-image(linear-gradient(#fff, #f0f0f0 1px, #eee 90%, #cbc9cf))
+  border: 1px solid #cbc9cf
+    bottom: 0
+  color: $body_text
+  display: block
+  padding: 5px 15px 7px
+  text-decoration: none
+  text-shadow: #fff 0 1px 0
+
+#main article .tabs a:hover
+  +background-image(linear-gradient(#fff, #f0f0f0 90%, #cbc9cf))
+  color: $blue
+
+#main article .tabs .highlighted
+  font-weight: bold
+
+#main article .tabs .highlighted a,
+#main article .tabs .highlighted a:hover
+  background: #fff
+  color: $blue
+  position: relative
+  top: -2px
+  padding-top: 6px
+  padding-bottom: 8px
+  margin-bottom: -2px
+
+// `Content Tabs
+//----------------------------------------------------------------------------------------------------
+
+#main article .combo_button
+  @extend .clearfix
+  font-size: 12px
+  float: left
+  line-height: 30px
+
+// Hack for Firefox.
+@-moz-document url-prefix()
+  #main article .combo_button
+    line-height: 28px
+
+#main article .combo_button + *
+  clear: both
+
+#main article h1 + .combo_button.float_right
+  margin-top: -57px
+
+#main article .combo_button dt
+  font-weight: bold
+  padding: 2px 10px 0 0
+
+#main article .combo_button dt,
+#main article .combo_button li,
+#main article .combo_button dd
+  float: left
+
+#main article .combo_button li,
+#main article .combo_button dd
+  +background-image(linear-gradient(#fff, #ddd))
+  border: 1px solid #aaa
+  margin-left: -1px
+  text-shadow: #fff 0 1px 0
+
+#main article .combo_button li:first-child,
+#main article .combo_button dt:first-child + dd
+  margin: 0
+
+#main article .combo_button li:first-child,
+#main article .combo_button dt:first-child + dd
+  +border-left-radius(16px)
+
+#main article .combo_button li:last-child,
+#main article .combo_button dd:last-child
+  +border-right-radius(16px)
+
+#main article .combo_button li:first-child a,
+#main article .combo_button dt:first-child + dd a
+  +border-left-radius(15px)
+
+#main article .combo_button li:last-child a,
+#main article .combo_button dd:last-child a
+  +border-right-radius(15px)
+
+#main article .combo_button a
+  color: $body_text
+  display: block
+  text-decoration: none
+
+#main article .combo_button a
+  border:
+    width: 1px 0 0 1px
+    style: solid
+    color: #fff
+  display: block
+  padding: 0 20px
+  height: 30px
+
+#main article .combo_button li:hover,
+#main article .combo_button dd:hover
+  border-color: #717171
+  position: relative
+  z-index: 1
+
+#main article .combo_button li:hover,
+#main article .combo_button dd:hover,
+#main article .combo_button .highlighted
+  +background-image(linear-gradient(#ecebed 1px, #c9c8cA))
+
+#main article .combo_button li:hover a,
+#main article .combo_button dd:hover a,
+#main article .combo_button .highlighted a
+  color: $blue
+
+#main article .combo_button .highlighted a
+  +box-shadow(inset rgba(#000, 0.5) 0 1px 4px 0)
+  border: 0
+  padding:
+    top: 1px
+    left: 21px
+  font-weight: bold

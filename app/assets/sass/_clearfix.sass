@@ -1,0 +1,37 @@
+// `Clearfix
+//----------------------------------------------------------------------------------------------------
+
+// Can be added to other style rules via:
+//
+// #foobar
+//   @extend .clearfix
+
+.clearfix:before,
+.clearfix:after
+  content: '.'
+  display: block
+  overflow: hidden
+  visibility: hidden
+  font-size: 0
+  line-height: 0
+  width: 0
+  height: 0
+
+.clearfix:after
+  clear: both
+
+.clearfix
+  zoom: 1
+
+// Used via:
+//    <div class="clear"></div>
+// Or:
+//    <span class="clear"></span>
+
+.clear
+  clear: both
+  display: block
+  overflow: hidden
+  visibility: hidden
+  width: 0
+  height: 0

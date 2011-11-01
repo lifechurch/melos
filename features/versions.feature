@@ -8,9 +8,9 @@ Feature: Versions view
   Scenario: Listing versions
     When I go to the versions page
     Then I should see "English"
-    And I should see a link to "King James Version (KJV)"
-    And I should see a link to "The Message (MSG)"
-    When I follow "The Message (MSG)"
+    And I should see a link to "King James Version"
+    And I should see a link to "The Message"
+    When I follow "The Message"
     Then I should be on the version page for "msg"
     And I should see "The best answer to that question comes from Eugene Peterson himself"
     When I follow "Read this version"

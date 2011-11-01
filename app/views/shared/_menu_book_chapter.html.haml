@@ -1,0 +1,25 @@
+#menu_book_chapter.dynamic_menu
+  %span.menu_arrow
+    &nbsp;
+  #menu_book
+    %header
+      Book
+    .scroll
+      %ul
+        - @version.books.each do |k, v|
+          %li{class: k == @reference[:book] ? 'selected' : ''}
+            %a{:href => '#', 'data-book' => "#{k}", 'data-version' => "#{@version.osis}", 'data-chapters' => "#{v["chapters"]}"}= v["human"]
+  #menu_chapter
+    %header
+      Chapter
+    .scroll
+      %ol
+        - i = 1
+        %li.highlighted
+          %a{:href => '#'}
+            = i
+        - 48.times do
+          - i+= 1
+          %li
+            %a{:href => '#'}
+              = i

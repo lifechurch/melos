@@ -127,7 +127,7 @@ Then /^I should see a link to "([^"]*)"$/ do |link_text|
 end
 
 Then /^I should see "([^"]*)" in the ([^"]*)$/ do |title, area|
-  areas = {"main content area" => "#main_content", "sidebar" => "#sidebar", "reader toolbar" => "#toolbar"}
+  areas = {"main content area" => "article", "sidebar" => "#sidebar", "reader toolbar" => "#toolbar"}
   find(areas[area]).should have_content(title)
 end
 

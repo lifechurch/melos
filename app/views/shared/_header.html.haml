@@ -1,0 +1,33 @@
+%header#header{:role => 'banner'}
+  %a#yv_logo{:href => '/'}
+    YouVersion
+  %nav
+    %ul
+      %li
+        - if current_auth
+          %a#header_profile_trigger{:href => '#'}
+            %span
+              %img{:src => './images/andy_avatar.png'}
+              =current_auth.username
+          %ol#header_profile_menu
+            %li
+              %a{:href => '#'}
+                Settings
+            %li
+              %a{:href => '#'}
+                Profile
+            %li
+              %a{:href => sign_out_path}
+                Sign Out
+        - else
+          %p= link_to t("sign in"), sign_in_path
+
+
+
+      %li
+        %a{:href => '#'}
+          %span
+            Find Friends
+  %form#header_search_form
+    %input#header_search_input{:type => 'search', :placeholder => 'Search...'}
+    %input#header_search_button{:type => 'submit', :value => 'Search'}

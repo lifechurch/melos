@@ -79,4 +79,10 @@ describe Version do
       Version.find("msg").info.should include "Language changes. New words are formed."
     end
   end
+
+  describe ".default_for" do
+    it "returns the default osis version for a language" do
+      Version.default_for("en").should == "kjv"
+    end
+  end
 end

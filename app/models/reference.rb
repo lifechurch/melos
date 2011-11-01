@@ -7,7 +7,7 @@ class Reference
     when Hash
       @ref = ref
     end
-      raise "Tried to create an invalid reference. Make sure you're passing an OSIS string or hash with at least a book name, chapter, and version." unless (@ref[:book] && @ref[:chapter] && @ref[:version])
+      # raise "Tried to create an invalid reference. Make sure you're passing an OSIS string or hash with at least a book name, chapter, and version." unless (@ref[:book] && @ref[:chapter] && @ref[:version])
   end
 
   def hash
@@ -15,7 +15,25 @@ class Reference
   end
 
   def to_s
-    human
+    @string = self.ref_string
+    @string += " (#{self.version_string})" if @ref[:version]
+    @string
+  end
+
+  def ref_string
+    case @ref[:verse]
+    when Fixnum
+      @human ||= api_data.items[0].data.reference.human.to_s
+    when Range
+      @human ||= api_data.items[0].data.reference.human.to_s + "-#{@ref[:verse].last.to_s}"
+    when NilClass
+      # it's a chapter only; use the chapter API data
+      @human ||= api_data[0].data.request.reference.human.to_s
+    end
+  end
+
+  def version_string
+    @version_string ||= @ref[:version].upcase
   end
 
   def merge(hash)
@@ -50,17 +68,7 @@ class Reference
   end
 
   def human
-    case @ref[:verse]
-    when Fixnum
-      @human ||= api_data.items[0].data.reference.human.to_s
-    when Range
-      @human ||= api_data.items[0].data.reference.human.to_s + "-#{@ref[:verse].last.to_s}"
-    when NilClass
-      # it's a chapter only; use the chapter API data
-      @human ||= api_data[0].data.request.reference.human.to_s
-    end
-    @human += " (#{@ref[:version].upcase})" if @ref[:version]
-    @human
+
   end
   private
 

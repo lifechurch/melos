@@ -1,0 +1,35 @@
+%footer#footer{:role => "contentinfo"}
+  %p.float_left
+    &copy;
+    = Date.today.year
+    %a{:href => '#'} LifeChurch.tv
+    %span.separator
+      |
+    %a{:href => '#'} About
+    %span.separator
+      |
+    %a{:href => '#'} Jobs
+    %span.separator
+      |
+    %a{:href => '#'} Privacy Policy
+    %span.separator
+      |
+    %a{:href => '#'} Terms
+    %span.separator
+      |
+    %a{:href => '#'} Press
+    %span.separator
+      |
+    %a{:href => '#'} Support
+    %span.separator
+      |
+    %a{:href => '#'} Donate
+  %p.float_right
+    %label{:for => 'choose_language'}
+      Choose Your Language:
+      &nbsp;
+    %label.select_wrap{:for => 'choose_language'}
+      %span
+        %select{:id => 'choose_language', :name => 'choose_language'}
+          - I18n.available_locales.each do |loc|
+            %option{value: loc, href: url_for(params.merge!(locale: loc)), selected: loc == I18n.locale}= t("language name", locale: loc)
