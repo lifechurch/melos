@@ -3,6 +3,8 @@ YouversionWeb::Application.routes.draw do
   # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
   resources 'versions', :only => [:index, :show]
+  resources 'notes'
+  
   # Users
   resources 'users', :except => [:new, :create]
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get

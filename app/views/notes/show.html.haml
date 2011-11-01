@@ -1,0 +1,14 @@
+#note
+  %h1= "Show Note"
+  = label_tag :title, "Note Title:"
+  = @note.title
+  = label_tag :content, "Note Content:"
+  = raw(@note.content)
+  = label_tag :version, "Note Version:"
+  = @note.version
+  = label_tag :reference, "Note Reference:"
+  = link_to @note.reference, bible_path(@note.reference)
+  = label_tag :user_status, "Note Status:"
+  = @note.user_status
+  = current_auth ? link_to('edit', edit_note_path(@note.id)) : ""
+  = current_auth ? link_to('delete this note', note_path(@note.id), :confirm => 'Are you sure?', :method => :delete) : ""

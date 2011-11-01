@@ -1,0 +1,11 @@
+#note
+  %h1= "Notes"
+  - if @notes
+    - @notes.each do |note|
+      %div{id: note.id}
+        %div{class: "title"}= link_to note.title, note_path(note.id)
+        %div{class: "content"}= note.content_text
+        %div{class: "reference"}= link_to note.reference.human, bible_path(note.reference.osis)
+        %div{class: "status"}= note.user_status
+  - else
+    %div{class: "none"}= "Sorry, no notes here!"

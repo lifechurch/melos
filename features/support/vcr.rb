@@ -5,7 +5,7 @@
 
 end
 
-VCR.cucumber_tags { |t| t.tags  '@bible', '@user', '@no_user', '@versions' }
+VCR.cucumber_tags { |t| t.tags  '@bible', '@user', '@no_user', '@versions', '@notes' }
 
 
 Before('@live') do

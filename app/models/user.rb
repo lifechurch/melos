@@ -1,14 +1,13 @@
 require 'digest/md5'
 
-
 class User
   extend ActiveModel::Naming
   include ActiveModel::Conversion
+  include Model
+  attr_accessor :username, :password, :errors
   def persisted?
-    false
+    !id.blank?
   end
-  attr_reader :errors
-
 
   def self.authenticate(username, password)
     hash = {}
@@ -46,13 +45,29 @@ class User
     end
   end
 
+  # def self.find(id)
+  #   response = YvApi.get('users/view', {:user_id => id, :auth_user_id => :id} ) do |errors|     
+  #     @errors = errors.map { |e| e["error"] }
+  #     return false
+  #   end
+  #   User.new(response)
+  # end
+
+  def self.notes(id, auth)
+    Note.for_user(id, auth)
+  end
+  
+  def notes(auth)
+    self.class.User.notes(id, auth)
+  end
+  
   def create
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
     @secure = true
-    response = YvApi.post('users/create', attributes(:email, :username, :password, :verified, :agree, :token, :secure)) do |errors|
+    response = YvApi.post('users/create', class_attributes(:email, :username, :password, :verified, :agree, :token, :secure)) do |errors|
       @errors = errors.map { |e| e["error"] } if errors
       return false
-    end
+    end    
     response
   end
 
