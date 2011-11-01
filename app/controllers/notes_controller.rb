@@ -1,11 +1,7 @@
 class NotesController < ApplicationController
   
   def index
-    if current_auth
-      @notes = Note.for_user(current_auth.id, current_auth)
-    else
-      @notes = Note.all(nil)
-    end
+    Note.all(current_auth)
   end
 
   def show

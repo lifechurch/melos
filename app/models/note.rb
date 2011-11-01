@@ -44,19 +44,13 @@ class Note
   end
 
   def self.for_user(user_id, auth)
-    if auth
-      response = YvApi.get('notes/items', {:user_id => user_id, :auth => auth} ) do |errors|
-        @errors = errors.map { |e| e["error"] }
-        return false
-      end
-    elsif !auth
-      response = YvApi.get('notes/items') do |errors|
-        @errors = errors.map { |e| e["error"] }
-        return false
-      end
+    response = YvApi.get('notes/items', {:user_id => user_id, :auth => auth} ) do |errors|
+    @errors = errors.map { |e| e["error"] }
+      return false
     end
+  end
 
-    build_objects(response.notes, auth)
+  build_objects(response.notes, auth)
   end
 
   def for_user(user_id)
