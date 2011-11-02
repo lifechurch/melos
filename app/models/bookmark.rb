@@ -1,4 +1,6 @@
 class Bookmark
+  @@api_data = {}
+
   def initialize(params = {})
     reg_data = {user_id: nil}
     reg_data.merge! params
@@ -22,9 +24,8 @@ class Bookmark
   attr_reader :errors
 
   def self.find(id)
-    args = ["bookmarks/view"]
-    args << {id: id}
-    data = YvApi.get(*args) do |errors|
+    opts = {id: id}
+    data = YvApi.get('bookmarks/view', opts) do |errors|
       Rails.logger.info "API Error: Bookmark.find(#{id}) got these errors: #{errors.inspect}"
       if errors.include? "not_found"
         # return empty hash to avoid raising exception
@@ -47,25 +48,24 @@ class Bookmark
   end
 
   def self.for_user(user_id = nil, params = {})
-    key = user_id || 'default'
     page = params[:page] || 1
+    opts = {user_id: user_id, page: page}
 
-    hash = {}
-    api_data(user_id, params).bookmarks.each do |b|
-      hash[b.id] = {
-        created: b.created,
-        highlight_color: b.highlight_color,
-        labels: b.labels,
-        reference: b.reference.osis,
-        reference_chapter: b.reference_chapter,
-        references: b.references,
-        title: b.title,
-        user_id: b.user_id,
-        username: b.username,
-        version: b.version
-      }
+    data = YvApi.get('bookmarks/items', opts) do |errors|
+      Rails.logger.info "API Error: Bookmark.for_user(#{user_id}) got these errors: #{errors.inspect}"
+      if errors.find{|g| g['error'] =~ /Bookmarks not found/}
+        # return empty hash to avoid raising exception
+        { }
+      end
     end
-    @@bookmarks["#{key}_#{page}"] = Hashie::Mash.new(hash)
+
+    bookmarks = []
+    if data['bookmarks']
+      data.bookmarks.each do |b|
+        bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
+      end
+    end
+    bookmarks
   end
 
   # TODO: Memoizing this is likely expensive and unnecessary. Need to cogitate some
@@ -73,12 +73,10 @@ class Bookmark
   def self.api_data(user_id = nil, params = {})
     page = params[:page] || 1
     key = "#{user_id || 'default'}_#{page}"
-
     unless @@api_data.has_key?(key)
-      args = ["bookmarks/items"]
-      args << {user_id: user_id} if user_id
-      args << {page: page}
-      @@api_data[key] = YvApi.get(*args)
+      opts = {page: page}
+      opts[:user_id] = user_id if user_id
+      @@api_data[key] = YvApi.get('bookmarks/items', opts)
     end
     @@api_data[key]
   end
