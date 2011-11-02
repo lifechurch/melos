@@ -1,0 +1,333 @@
+// `Main
+//----------------------------------------------------------------------------------------------------
+
+#main
+  @extend .clearfix
+  float: left
+  margin: 0 0 10px
+  width: 100%
+
+#main article
+  @extend .clearfix
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  background:
+    color: #fff
+    repeat: repeat-x
+  border: 1px solid #cbc9cf
+  padding: 30px 30px 15px
+  position: relative
+
+#main.main_reader article
+  padding: 40px 70px 45px
+
+#main header + article,
+#main .header_tabs + article,
+#main .top_section + article
+  +round_top_none
+  background:
+    image: url(../images/shadow.png)
+
+#main .top_section + header
+  +round_top_none
+
+// `Main > Headers
+//----------------------------------------------------------------------------------------------------
+
+.widget header,
+#main header,
+#main footer,
+.header_tabs,
+.top_section
+  @extend .clearfix
+  background: #ddd
+  +background-image(linear-gradient(#fff, #eee 1px, #ddd))
+  border: 1px solid #cbc9cf
+  text-shadow: #fff 0 1px 0
+
+.widget header,
+#main header
+  font:
+    size: 14px
+    weight: bold
+  line-height: 23px
+  padding: 5px 20px
+
+.widget header,
+#main header,
+.header_tabs
+  +round_top
+  border-bottom: 0
+
+.widget header ul,
+#main header ul
+  margin: 0
+  list-style: none
+
+.widget header li,
+#main header li
+  float: left
+  margin-left: 5px
+  height: 23px
+
+.widget header li:first-child,
+#main header li:first-child
+  margin-left: 0
+
+.widget header li.separator,
+#main header li.separator
+  background: url(../images/separator.png) repeat-y
+  margin-left: 10px
+  padding-left: 11px
+
+#main .top_section + header
+  padding-left: 30px
+  position: relative
+
+.header_arrow
+  background: url(../images/header_arrow.png) no-repeat
+  color: transparent
+  font-size: 0
+  overflow: hidden
+  text-indent: -99999px
+  width: 9px
+  height: 6px
+  position: absolute
+  left: 28px
+  bottom: -6px
+
+// `Article Top Section
+//----------------------------------------------------------------------------------------------------
+
+.top_section
+  @extend .clearfix
+  +round_top
+  +background-image(linear-gradient(#fff, #ececec 1px, #e9e9e9))
+  border: 1px solid #cbc9cf
+    bottom: 0
+  font-size: 12px
+  padding: 30px 30px 0 195px
+  position: relative
+
+.top_section + .header_tabs
+  +round_top_none
+  +background-image(linear-gradient(#e9e9e9, #d7d6da))
+  border-top: 0
+
+.top_section + .header_tabs .highlighted span
+  border-top: 1px solid #cbc9cf
+  margin-top: -1px
+
+.top_section h1
+  color: #73a03d
+  margin-bottom: 10px
+
+.top_section ul
+  margin-bottom: 15px
+
+.top_section ul,
+.top_section li
+  margin-top: 0
+  margin-left: 0
+  padding: 0
+  list-style: none
+
+.top_section .avatar_huge
+  position: absolute
+  top: 30px
+  left: 30px
+
+.top_section li
+  background:
+    repeat: no-repeat
+    position: left center
+  line-height: 2
+  padding-left: 26px
+
+.icon_small_user
+  background:
+    image: url(../images/icon_small_user.png)
+
+.icon_small_location
+  background:
+    image: url(../images/icon_small_location.png)
+
+.icon_small_link
+  background:
+    image: url(../images/icon_small_link.png)
+
+// `Main > Footers
+//----------------------------------------------------------------------------------------------------
+
+#main footer
+  +round_bottom
+  +box-shadow(#fff 0 1px 0 0)
+  font-size: 11px
+  padding: 10px 20px 15px
+
+#main article + footer
+  margin-top: -5px
+  position: relative
+
+#main footer p
+  margin: 0
+  padding-top: 5px
+
+#main header b,
+#main footer b
+  font-size: 13px
+
+// `Main > Verses
+//----------------------------------------------------------------------------------------------------
+
+.verse:focus
+  background: #ff9
+  outline: 0
+
+.verse strong
+  font:
+    size: 9px
+    weight: bold
+  top: -1px
+  +round
+  background: #eee
+  border-top: 1px solid #ccc
+  color: #666
+  line-height: 1
+  padding: 2px 4px 3px
+  text-decoration: none
+
+.verse strong:hover
+  color: $blue
+  text-decoration: underline
+  cursor: pointer
+
+// `Nav Arrows
+//----------------------------------------------------------------------------------------------------
+
+.nav_prev,
+.nav_next
+  background:
+    image: url(../images/arrow_sprite.png)
+    repeat: no-repeat
+  color: transparent
+  font-size: 0
+  margin-top: -20px
+  overflow: hidden
+  text-indent: -99999px
+  width: 40px
+  height: 40px
+  position: absolute
+  top: 50%
+
+.nav_prev
+  background-position: 0 -40px
+  left: 15px
+
+.nav_prev:hover
+  background-position: -40px -40px
+
+.nav_prev:active
+  background-position: -80px -40px
+
+.nav_next
+  right: 15px
+
+.nav_next:hover
+  background-position: -40px 0
+
+.nav_next:active
+  background-position: -80px 0
+
+// `Misc Classes
+//----------------------------------------------------------------------------------------------------
+
+.check_count
+  background: url(../images/icon_check_green.png) no-repeat 0 7px
+  color: #72a32c
+  float: right
+  font-weight: bold
+  padding-left: 20px
+
+.icon_share_light
+  background: url(../images/icon_share_light.png) no-repeat left center
+  padding: 5px 0 5px 22px
+
+#main article .separator
+  color: transparent
+  background: url(../images/separator.png) repeat-y center bottom
+  display: inline-block
+  height: 14px
+  margin: 0 10px
+  overflow: hidden
+  text-indent: -99999px
+  vertical-align: middle
+  width: 1px
+  zoom: 1
+
+.callout_blue,
+.callout_green
+  color: $body_text
+  padding: 5px 10px
+  text-decoration: none
+
+.callout_blue:hover,
+.callout_green:hover
+  color: $body_text
+  text-decoration: underline
+
+.callout_blue
+  background: #d9edf8
+
+.callout_green
+  background: #ddfad5
+
+// `Big List
+//----------------------------------------------------------------------------------------------------
+
+//
+// For chunks of content that could be grouped as simple <p> and <hr/>,
+// but semantically make sense as a bigger list: Activity Stream, etc.
+//
+
+#main .big_list,
+#main .big_list li
+  background: none
+  margin: 0
+  padding: 0
+
+#main .big_list li
+  @extend .clearfix
+  border-top: 1px solid #ccc
+  padding-top: 20px
+
+#main .big_list li[class^="li_"]
+  background:
+    repeat: no-repeat
+  padding-left: 26px
+
+#main > .big_list:first-child
+  margin-top: -20px
+
+#main > .big_list:first-child li:first-child
+  border: 0
+
+#main .big_list .li_bookmark
+  background:
+    image: url(../images/big_list_bookmark.png)
+    position: 0 20px
+
+#main .big_list .li_note
+  background:
+    image: url(../images/big_list_note.png)
+    position: 0 21px
+
+#main .big_list .li_social
+  background:
+    image: url(../images/big_list_social.png)
+    position: 0 22px
+
+#main .big_list .li_badge
+  background:
+    image: url(../images/big_list_badge.png)
+    position: 0 19px
