@@ -10,9 +10,26 @@ Feature: Bookmarks view (homepage)
     | Username | Reference      | Title         | Labels        |
     | testuser | gen.1.1.niv    | The Beginning | old,labeltext |
     | testuser | matt.1.1-5.asv | New Testament | new,gospel    |
-    When I go to the bookmarks index page for user "testuser"
-    And I should see a link to "The Beginning - Genesis 1:1 (NIV)"
+    When I go to the bookmarks index page for user "cukeuser_bookmark1"
+    Then I should see a link to "The Beginning - Genesis 1:1 (NIV)"
     And I should see "old"
     And I should see "labeltext"
     And I should see a link to "New Testament - Matthew 1:1-5 (ASV)"
     And I should see "gospel"
+
+  @bookmark
+  Scenario: Showing my bookmarks
+    Given a user named "cukeuser_bookmark1" with password "tenders" and email "cukeuser_bookmark1@youversion.com" exists
+    And the following bookmarks exist:
+    | Username | Reference      | Title         | Labels        |
+    | testuser | gen.1.1.niv    | The Beginning | old,labeltext |
+    | testuser | matt.1.1-5.asv | New Testament | new,gospel    |
+    And I am logged in as "cukeuser_bookmark1" with password "tenders"
+    When I go to my bookmarks
+    Then I should see a link to "The Beginning - Genesis 1:1 (NIV)"
+    And I should see a link to "old"
+    And I should see a link to "labeltext"
+    And I should see a link to "New Testament - Matthew 1:1-5 (ASV)"
+    And I should see a link to "gospel"
+    When I click "old"
+    Then I should not see "New Testament"
