@@ -73,6 +73,10 @@ class Version
     info_api_data(@version).copyright
   end
 
+  def self.default_for(lang)
+    versions_api_data.defaults.to_hash[lang]
+  end
+
   private
 
   def self.books_list(version)

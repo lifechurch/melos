@@ -1,0 +1,183 @@
+// `Logo
+//----------------------------------------------------------------------------------------------------
+
+#yv_logo
+  background: url(../images/yv_logo.png) no-repeat 0 14px
+  display: block
+  color: transparent
+  float: left
+  font-size: 0
+  overflow: hidden
+  text-indent: -99999px
+  width: 150px
+  height: 50px
+
+// `Header
+//----------------------------------------------------------------------------------------------------
+
+#header
+  +round
+  background: #333 url(../images/header.png) repeat-x
+  border: 1px solid #1e1e1f
+  font-size: 11px
+  margin-bottom: 10px
+  padding: 0 10px 0 20px
+  position: relative
+  line-height: 50px
+  height: 50px
+
+#header a
+  color: #d4d4d4
+  text-decoration: none
+
+#header a:hover
+  color: #fff
+
+// `Header > Search
+//----------------------------------------------------------------------------------------------------
+
+#header_search_form
+  width: 287px
+  height: 50px
+  position: absolute
+  top: 0
+  right: 328px
+
+#header_search_input,
+#header_search_button
+  +border-radius(0)
+  +box-sizing(content-box)
+  background: url(../images/header_search_form.png) no-repeat
+  height: 30px
+  margin-top: -15px
+  padding: 0
+  border: 0
+  position: absolute
+  top: 50%
+  text-shadow: none
+
+#header_search_input
+  +box-shadow(none)
+  background-position: 0 0
+  color: #cbc9cf
+  padding-left: 12px
+  padding-right: 1px
+  text-shadow: rgba(#000, 0.5) 0 -1px 0
+  width: 240px
+  left: 0
+
+#header_search_button
+  +box-shadow(none)
+  background-position: -253px 0
+  color: transparent
+  font-size: 0
+  width: 34px
+  right: 0
+
+#header_search_input:focus
+  background-position: 0 -30px
+  color: #1e1e1f
+  text-shadow: #fff 0 -1px 0
+
+#header_search_input:focus + #header_search_button
+  background-position: -253px -30px
+
+#header_search_input:focus,
+#header_search_input:active,
+#header_search_button:focus,
+#header_search_button:active
+  +box-shadow(none)
+
+// `Header > Profile Nav
+//----------------------------------------------------------------------------------------------------
+
+#header nav
+  background: url(../images/header_nav.png) no-repeat
+  float: right
+  height: 50px
+  width: 290px
+
+#header nav ul,
+#header nav ol,
+#header nav li
+  list-style: none
+  margin: 0
+
+#header nav ul
+  line-height: 30px
+
+#header nav ul > li
+  +round
+  float: right
+  margin-top: 9px
+  padding-top: 1px
+  height: 31px
+
+#header nav ul > li:first-child
+  margin-left: 20px
+  position: relative
+
+#header nav ul > li:first-child:after
+  background: url(../images/header_nav_separator.png) no-repeat
+  content: '.'
+  color: transparent
+  position: absolute
+  width: 2px
+  height: 19px
+  margin-top: -9px
+  top: 50%
+  left: -12px
+
+#header nav ul > li:hover,
+#header nav ul > .li_active
+  background: #000
+  +background-image(linear-gradient(#666, #000 1px, #000))
+  +box-shadow(#000 0 -1px 0 0)
+
+#header nav ul > .li_active
+  +border-bottom-radius(0)
+
+#header nav ul > li > a > span
+  padding: 10px
+
+#header nav ul > li > a
+  display: block
+  overflow: hidden
+  max-width: 120px
+  text-overflow: ellipsis
+  white-space: nowrap
+
+#header_profile_trigger img
+  +border-radius(2px)
+  border: 1px solid
+    color: #000 #222 #444
+  margin: -4px 5px 0 -5px
+  width: 25px
+  height: 25px
+
+#header_profile_trigger
+  background: url(../images/header_profile_arrow.png) no-repeat right center
+  padding-right: 28px
+
+// `Drop-down Menu
+//----------------------------------------------------------------------------------------------------
+
+#header_profile_menu
+  +border-bottom-radius(4px)
+  background: #000
+  display: none
+  line-height: 1
+  padding-bottom: 5px
+  position: relative
+  z-index: 1
+
+.li_active #header_profile_menu
+  display: block
+
+#header_profile_menu a
+  background:
+    image: url(../images/header_nav_ol_a.png)
+    repeat: no-repeat
+    position: 38px center
+  display: block
+  padding: 5px 0 5px 47px

@@ -1,19 +1,28 @@
 !!! 5
 %html
   %head
-    %title= t('youversion')
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
+    = render '/shared/head'
     = csrf_meta_tags
   %body
-    - flash.each do |key, msg|
-      %div{id: key}= msg
-    - if current_auth
-      %p= t("signed in as", user: current_user.username)
-      %p= link_to t("sign out"), sign_out_path
-    - else
-      %p= link_to t("sign in"), sign_in_path
-    = yield
-    %select#choose_language{name: "choose_language"}
-      - I18n.available_locales.each do |loc|
-        %option{value: loc, href: url_for(params.merge!(locale: loc)), selected: loc == I18n.locale}= t("language name", locale: loc)
+    #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
+      = render '/shared/header'
+      #container{:class => @sidebar == false ? 'no_sidebar' : ''}
+        #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
+          - flash.each do |key, msg|
+            %div{id: key}= msg
+          = yield
+          -if content_for? :main_trailer
+            = yield :main_trailer
+        = render '/shared/nav_primary'
+        - if content_for? :sidebar
+          #sidebar
+            = yield :sidebar
+        - else
+          - unless @sidebar == false
+            = render '/shared/sidebar'
+      = render '/shared/footer'
+    - if @reader_menus == true
+      = render '/shared/menu_book_chapter'
+      - # = render '/shared/menu_version'
+      = render_cell :version_selector, :display, {reference: @reference}
+    = render '/shared/javascripts'

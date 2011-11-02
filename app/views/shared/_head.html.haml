@@ -1,0 +1,12 @@
+%meta{:charset => 'utf-8'}
+%meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
+%title
+  YouVersion
+  |
+  = @title
+<!--[if lt IE 9]>
+%script{:src => '/javascripts/html5.js'}
+<![endif]-->
+%link{:rel => 'stylesheet', :href => '/stylesheets/application.css'}
+- if content_for? :stylesheets
+  = yield :stylesheets

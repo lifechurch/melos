@@ -1,0 +1,4 @@
+%script{:src => '/javascripts/jquery.js'}
+%script{:src => '/javascripts/application.js'}
+- if content_for? :javascripts
+  = yield :javascripts
