@@ -24,6 +24,6 @@ Feature: Versions view
     And I fill in "password" with "tenders"
     And I press "Sign in"
     Then I should be on the versions page
-    And I should see "Signed in as cukeuser3"
-    And I should see "Sign out"
+    And I should see "cukeuser3"
+    And I should see "Sign Out"
     And I should see "Signed in!"

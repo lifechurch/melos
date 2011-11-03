@@ -7,6 +7,7 @@ class Note
   end
 
   attr_reader :errors
+  attr_accessor :references
   
   def initialize(params = {})
     reg_data = {id: nil, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}    
@@ -14,13 +15,16 @@ class Note
   end
   
   def to_param    
+    puts "listening"
     id    
   end
   
-  def self.find(id, auth)
-    response = YvApi.get('notes/view', {:id => id, :auth => auth} ) do |errors|     
-      @errors = errors.map { |e| e["error"] }
-      return false
+  def self.find(id, auth = nil)
+    response = YvApi.get('notes/view', id: id ) do |e|   # anonymous    
+      YvApi.get('notes/view', id: id, auth: auth) do |e| # auth'ed
+        @errors = errors.map { |e| e["error"] }
+        return false
+      end
     end
 
     build_object(response, auth)
@@ -50,6 +54,14 @@ class Note
     end
 
   build_objects(response.notes, auth)
+  end
+
+  def self.for_reference(ref)
+    response = YvApi.get('notes/items', reference: ref.notes_api_string) do |errors|
+      puts errors
+      @errors = errors.map { |e| e["error"] }
+      return false
+    end
   end
 
   def for_user(user_id)
@@ -108,8 +120,10 @@ class Note
     @note = Note.new(response)
     @note.auth = auth
     @note.content = @note.content_text
+    @note.references = @note.reference.map { |n| Reference.new("#{n.osis}.#{@note.version}") }
     @note.version = Version.new(@note.version)
-    @note.reference = Reference.new("#{Model::hash_to_osis(@note.reference)}.#{@note.version.osis}")
+      
+    #@note.reference = Reference.new("#{Model::hash_to_osis(@note.reference)}.#{@note.version.osis}")
     @note
   end
   

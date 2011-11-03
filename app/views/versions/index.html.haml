@@ -1,2 +1,12 @@
-%h1= t("bible versions")
-= render_cell :version_selector, :display
+- @title = 'Publisher'
+- @sidebar = false
+
+%article
+  %h1= t("bible versions")
+  %ul
+    - @versions.each do |k, v|
+      %li
+        = @languages[k]
+        %ul
+          - v.each do |kk, vv|
+            %li= link_to vv, version_path(vv)

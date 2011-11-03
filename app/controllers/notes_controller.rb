@@ -1,7 +1,12 @@
 class NotesController < ApplicationController
-  
+  before_filter :set_nav
+
   def index
-    @notes = Note.all
+    if params[:user_id]
+      @notes = User.find(params[:user_id].to_i, current_auth).notes
+    else
+      @notes = Note.all
+    end
   end
 
   def show
@@ -56,5 +61,10 @@ class NotesController < ApplicationController
       render action: "index"
     end
   end
-  
+
+  private
+
+  def set_nav
+    @nav = :notes
+  end
 end

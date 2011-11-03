@@ -1,0 +1,30 @@
+$gray_dark_1: #1e1e1f
+$gray_dark_2: #424143
+$gray_dark_3: #646367
+$gray_medium: #807f83
+$gray_light: #eae9ec
+$green: #73a03d
+$blue: #0084c8
+$blue_light: lighten($blue, 15%)
+$blue_dark: darken($blue, 15%)
+$body_text: #444
+$radius: 4px
+$mute: #888
+
+=round
+  +border-radius($radius)
+
+=round_top
+  +border-top-radius($radius)
+
+=round_top_none
+  +border-top-radius(0)
+
+=round_top_left
+  +border-top-left-radius($radius)
+
+=round_bottom
+  +border-bottom-radius($radius)
+
+=glow
+  +box-shadow(rgba($blue_light, 0.5) 0 0 5px 0)

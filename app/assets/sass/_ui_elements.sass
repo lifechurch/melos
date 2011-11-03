@@ -1,0 +1,208 @@
+// `Buttons + Drop-down
+//----------------------------------------------------------------------------------------------------
+
+.drop_down_arrow,
+.drop_down_select,
+.button
+  +box-shadow(#fff 0 1px 0 0)
+  background: #eee
+  +background-image(linear-gradient(#fff, #ddd))
+  display: block
+  line-height: 21px
+  position: relative
+  text-decoration: none
+
+.select_wrap,
+.drop_down_arrow,
+.drop_down_select,
+.button
+  +round
+  border: 1px solid #aaa
+
+.select_wrap
+  +background-image(linear-gradient(#fff, #ddd))
+  +box-shadow(#fff 0 1px 0 0)
+  display: inline-block
+  vertical-align: top
+  height: 21px
+  position: relative
+  top: -3px
+
+.select_wrap span
+  +border-right-radius(3px)
+  background: url(../images/select_wrap_span.png) no-repeat right center
+  display: inline-block
+  overflow: hidden
+  padding-right: 21px
+
+.select_wrap select
+  +border-radius(0)
+  background: none
+  border: 0
+  font-size: 12px
+  padding: 2px 0 0 5px
+  height: 21px
+  vertical-align: top
+  text-shadow: #fff 0 1px 0
+  width: 150%
+
+.select_wrap optgroup,
+.select_wrap option
+  text-shadow: none
+
+.select_wrap select:active,
+.select_wrap select:focus
+  +box-shadow(none)
+
+@media (-webkit-min-device-pixel-ratio: 0)
+  .select_wrap select
+    padding-right: 20px
+
+.button,
+.drop_down_arrow,
+.drop_down_select,
+.button:hover,
+.drop_down_arrow:hover,
+.drop_down_select:hover
+  color: $body_text
+
+.drop_down_select
+  padding-right: 23px
+  position: relative
+
+.button b,
+.drop_down_select b
+  display: block
+  font-size: 12px !important
+  padding: 0 10px
+  line-height: 21px
+  height: 21px
+
+.button b
+  background:
+    position: 10px center
+    repeat: no-repeat
+  padding-left: 30px
+
+.button sup
+  +border-radius(8px)
+  +background-image(linear-gradient($blue_light, $blue))
+  +box-shadow(rgba($blue_dark, 0.8) 0 0 0 1px)
+  +box-sizing(border-box)
+  color: #fff
+  font:
+    size: 11px
+    weight: bold
+  padding: 0 5px
+  text-align: center
+  text-shadow: rgba(#000, 0.5) 0 -1px 0
+  line-height: 16px
+  height: 16px
+  z-index: 1
+  position: absolute
+  top: -9px
+  right: -4px
+
+.drop_down_select b
+  border-right: 1px solid #aaa
+
+.drop_down_select span
+  +border-right-radius(2px)
+  background-color: rgba(#000, 0.08)
+  border-left: 1px solid rgba(#fff, 0.5)
+  position: absolute
+  top: 0
+  right: 0
+
+.button span,
+.drop_down_arrow span,
+.drop_down_select span
+  background:
+    repeat: no-repeat
+  color: transparent
+  display: block
+  font-size: 0
+  overflow: hidden
+  text-indent: -99999px
+  text-shadow: none
+  height: 21px
+
+.button span
+  background:
+    position: center center
+  width: 24px
+
+.drop_down_arrow span,
+.drop_down_select span
+  background:
+    image: url(../images/drop_down_arrow.png)
+
+.drop_down_arrow span
+  background-position: 0 0
+  width: 21px
+
+.drop_down_select span
+  background-position: -42px 0
+  width: 22px
+
+.button:hover,
+.drop_down_arrow:hover,
+.drop_down_select:hover
+  +background-image(linear-gradient(#fff, #eee 1px, #ccc))
+
+.button:active,
+.button:focus
+  +glow
+  +background-image(linear-gradient(#fff, #ccc 1px, #eee))
+
+.li_active .drop_down_arrow,
+.li_active .drop_down_select,
+.drop_down_arrow:active,
+.drop_down_select:active,
+.drop_down_arrow:focus,
+.drop_down_select:focus
+  +glow
+  +background-image(linear-gradient(#999, #444 1px, #222))
+  border-color: #111
+
+.li_active .drop_down_arrow span,
+.drop_down_arrow:active span,
+.drop_down_arrow:focus span
+  background-position: -21px 0
+
+.li_active .drop_down_select span,
+.drop_down_select:active span,
+.drop_down_select:focus span
+  background-color: transparent
+  background-position: -63px 0
+  border-color: #555
+
+.li_active .drop_down_select b,
+.drop_down_select:active b,
+.drop_down_select:focus b
+  border-color: #111
+  color: #fff
+  text-shadow: #000 0 -1px 0
+
+// `Icons
+//----------------------------------------------------------------------------------------------------
+
+.icon_share
+  background:
+    image: url(../images/icon_share.png)
+
+.icon_preferences
+  background:
+    image: url(../images/icon_preferences.png)
+
+.icon_listen
+  background:
+    image: url(../images/icon_listen.png)
+
+.icon_parallel
+  background:
+    image: url(../images/icon_parallel.png)
+
+.icon_full_screen
+  background:
+    image: url(../images/icon_full_screen.png)

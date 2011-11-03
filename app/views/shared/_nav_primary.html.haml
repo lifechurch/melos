@@ -1,0 +1,21 @@
+#nav_primary{:role => "navigation"}
+  %nav
+    %ul
+      %li#nav_primary_bible{class: @nav == :bible ? "highlighted" : ""}
+        %a{:href => '/bible'}
+          %span Bible
+      %li#nav_primary_plans
+        %a{:href => '/reading-plans'}
+          %span Plans
+      %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
+        %a{:href => current_auth ? user_notes_path(current_user) : notes_path}
+          %span Notes
+      %li#nav_primary_friends
+        %a{:href => '/friends'}
+          %span Friends
+      %li#nav_primary_groups
+        %a{:href => '/groups'}
+          %span Groups
+      %li#nav_primary_mobile
+        %a{:href => '/mobile'}
+          %span Mobile

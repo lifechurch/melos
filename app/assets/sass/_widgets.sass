@@ -1,0 +1,252 @@
+// `Widgets
+//----------------------------------------------------------------------------------------------------
+
+.widget ul,
+.widget section,
+.widget aside,
+.action_button_note
+  +box-shadow(#fff 0 1px 0 0)
+  background:
+    color: $gray_light
+  border: 1px solid #cbc9cf
+  margin: 0 0 10px
+
+.widget ul,
+.widget section
+  +round_bottom
+
+.widget aside
+  +round
+  padding: 15px 20px 10px
+
+.widget aside b
+  font-size: 14px
+  text-shadow: #fff 0 1px 0
+
+.widget aside p
+  margin-bottom: 10px
+
+.widget .ad_bible_app
+  background:
+    image: url(../images/ad_bible_app.png)
+    repeat: no-repeat
+    position: right bottom
+
+.widget .separator
+  background: url(../images/separator.png) repeat-y center top
+  color: transparent
+  overflow: hidden
+  padding: 0 5px 2px
+  text-indent: -99999px
+
+.widget ul
+  background:
+    image: url(../images/shadow.png)
+    repeat: repeat-x
+
+.widget li
+  @extend .clearfix
+  border-bottom: 1px solid #cbc9cf
+  border-top: 1px solid #fff
+  list-style: none
+  margin: 0
+  padding: 10px 20px
+
+.widget ul li:first-child
+  border-top: 0
+
+.widget ul li:last-child
+  border-bottom: 0
+
+.widget section table
+  background: url(../images/shadow.png) repeat-x
+  margin: 0
+
+.widget table
+  border-collapse: separate
+  width: 100%
+
+.widget th,
+.widget td
+  vertical-align: middle
+  padding: 10px 15px
+
+.widget th
+  width: 1%
+
+.widget th
+  background:
+    color: #d5d4d6
+    image: url(../images/widget_th.png)
+    repeat: no-repeat
+
+.widget tbody th
+  background:
+    position: right center
+
+.widget tfoot th
+  background:
+    position: right bottom
+
+.widget td
+  border-top: 1px solid #fff
+  border-bottom: 1px solid #ccc
+
+.widget td p
+  margin: 0
+  padding-top: 10px
+
+.widget tbody tr:first-child td
+  border-top: 0
+
+.widget tfoot td
+  border-bottom: 0
+
+.widget th img
+  display: block
+  margin: 0 auto
+
+.widget_crop
+  display: inline-block
+  max-width: 120px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  vertical-align: bottom
+
+// `Menu
+//----------------------------------------------------------------------------------------------------
+
+.widget_menu li
+  padding: 0
+
+.widget_menu li:last-child a
+  +round_bottom
+
+.widget_menu a
+  background:
+    image: url(../images/main_article_ul_li_arrow.png)
+    repeat: no-repeat
+    position: 15px center
+  display: block
+  font-size: 13px
+  line-height: 1
+  padding: 10px 20px 10px 30px
+  text-decoration: none
+
+.widget_menu a,
+.widget_menu a:hover
+  color: $body_text
+
+.widget_menu a:hover
+  background:
+    color: rgba(#fff, 0.4)
+
+// `Count
+//----------------------------------------------------------------------------------------------------
+
+a.count
+  +background-image(linear-gradient(#fff, #ddd))
+
+a.count,
+a.count:hover
+  +box-shadow(rgba(#fff, 0.7) 0 1px 0 0)
+  +border-radius(9px)
+  border: 1px solid #aaa
+  color: $body_text
+  display: inline-block
+  font-size: 11px
+  line-height: 1
+  padding: 2px 10px 3px
+  text-decoration: none
+
+a.count:hover
+  +background-image(linear-gradient(#fff, #eee 1px, #ccc))
+
+a.count:active
+  +glow
+  +background-image(linear-gradient(#fff, #ccc 1px, #eee))
+
+header .count
+  float: right
+  margin-top: 2px
+
+// `Tags
+//----------------------------------------------------------------------------------------------------
+
+.tag
+  font-style: italic
+
+.tag:after
+  content: ','
+  margin-left: -2px
+
+.tag:last-child:after
+  content: ''
+
+.tag,
+.tag a,
+a.more_arrow,
+.tag a:hover,
+a.more_arrow:hover
+  color: #555
+
+.tag a,
+a.more_arrow
+  text-decoration: none
+
+.tag a:hover,
+a.more_arrow:hover
+  text-decoration: underline
+
+// `Header Icons
+//----------------------------------------------------------------------------------------------------
+
+.header_icon_clock,
+.header_icon_gear,
+.header_icon_bookmark,
+.header_icon_check,
+.header_icon_badge,
+.header_icon_note
+  background:
+    repeat: no-repeat
+    position: left center
+  padding:
+    top: 5px
+    bottom: 5px
+  position: relative
+  left: -5px
+
+.header_icon_clock
+  background:
+    image: url(../images/header_icon_clock.png)
+  padding-left: 25px
+
+.header_icon_gear
+  background:
+    image: url(../images/header_icon_gear.png)
+  padding-left: 25px
+
+.header_icon_bookmark
+  background:
+    image: url(../images/header_icon_bookmark.png)
+  padding-left: 20px
+
+.header_icon_check
+  background:
+    image: url(../images/header_icon_check.png)
+  padding-left: 20px
+
+.header_icon_badge
+  background:
+    image: url(../images/header_icon_badge.png)
+  padding-left: 25px
+
+.header_icon_note
+  background:
+    image: url(../images/header_icon_note.png)
+  padding-left: 25px
+
+.more_arrow
+  background: url(../images/more_arrow.png) no-repeat right center
+  padding: 5px 25px 5px 0

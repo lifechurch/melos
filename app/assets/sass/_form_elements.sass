@@ -1,0 +1,385 @@
+br + input,
+br + select,
+br + textarea
+  margin-top: 5px
+
+// `Flash Messages
+//----------------------------------------------------------------------------------------------------
+
+.flash_error,
+.flash_notice
+  @extend .clearfix
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  background:
+    repeat: no-repeat
+    position: right bottom
+  border: 1px solid
+  font-size: 35px
+  margin: 0 0 10px
+  padding: 5px 20px
+  text-shadow: #fff 0 1px 0
+
+.flash_error
+  background:
+    color: #f4cccc
+    image: url(../images/flash_error.png)
+  border-color: #e89494
+  color: #aa0303
+
+.flash_notice
+  background:
+    color: #d9e4c9
+    image: url(../images/flash_notice.png)
+  border-color: #91b164
+  color: #4b7518
+
+// `Radio buttons & Checkboxes
+//----------------------------------------------------------------------------------------------------
+
+.faux_radio,
+.faux_checkbox
+  background:
+    image: url(../images/checkbox_radio_sprite.png)
+    repeat: no-repeat
+  cursor: pointer
+  display: inline-block
+  overflow: hidden
+  width: 30px
+  height: 30px
+  vertical-align: middle
+  position: relative
+  top: -3px
+  zoom: 1
+
+.faux_radio input,
+.faux_checkbox input
+  width: 1px
+  height: 1px
+  position: absolute
+  top: auto
+  left: -99999px
+  right: auto
+  bottom: auto
+
+.faux_radio + label,
+.faux_checkbox + label
+  margin-left: -5px
+
+.faux_checkbox
+  background-position: 0 0
+
+.faux_checkbox:hover,
+.faux_checkbox.is_focused
+  background-position: -30px 0
+
+.faux_checkbox.is_checked
+  background-position: -60px 0
+
+.faux_checkbox.is_checked:hover,
+.faux_checkbox.is_checked.is_focused
+  background-position: -90px 0
+
+.faux_radio
+  background-position: 0 -30px
+
+.faux_radio:hover,
+.faux_radio.is_focused
+  background-position: -30px -30px
+
+.faux_radio.is_checked
+  background-position: -60px -30px
+
+.faux_radio.is_checked:hover,
+.faux_radio.is_checked.is_focused
+  background-position: -90px -30px
+
+/* Disabled states... */
+
+.faux_radio.is_disabled,
+.faux_checkbox.is_disabled
+  +opacity(0.4)
+  cursor: default
+
+.faux_radio.is_disabled:hover
+  background-position: 0 -30px
+
+.faux_radio.is_checked.is_disabled:hover
+  background-position: -60px -30px
+
+.faux_checkbox.is_disabled:hover
+  background-position: 0 0
+
+.faux_checkbox.is_checked.is_disabled:hover
+  background-position: -60px 0
+
+.faux_radio.is_disabled + label,
+.faux_checkbox.is_disabled + label
+  color: #aaa
+
+// `Spacing, to account for box-shadow gray "border".
+//----------------------------------------------------------------------------------------------------
+
+input + input,
+input + button,
+input + select,
+select + input,
+select + button,
+select + select,
+button + input,
+button + button,
+button + select
+  margin-left: 15px
+
+// `Form Overrides
+//----------------------------------------------------------------------------------------------------
+
+label
+  font-weight: bold
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+  border: 1px solid #aaa
+  color: #0084c8
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active
+  +background-image(linear-gradient(#fff, #e0e0e0 1px, #bebebe))
+  border-color: #838383
+
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active
+  +box-shadow(inset rgba(#000, 0.5) 0 1px 3px 0)
+  color: #005d8d
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"]
+  border-color: #bbb
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+.action_button_blue,
+.action_button_green,
+.action_button:focus,
+.action_button:active,
+.action_button_blue:focus,
+.action_button_blue:active,
+.action_button_green:focus,
+.action_button_green:active
+  +box-shadow(#fff 0 1px 0 0, #eae9ec 0 0 0 5px)
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"]
+  +round
+  +background-image(linear-gradient(#ddd, #fff 3px, #eee))
+  padding: 7px 10px
+  height: 35px
+
+textarea
+  height: auto
+
+@media (-webkit-min-device-pixel-ratio: 0)
+  select
+    background-image: url(../images/select_arrows.png), url(../images/select_gradient.png)
+    background-position: right 7px, 0 0
+    background-repeat: no-repeat, repeat-x
+    padding-right: 41px
+
+textarea:focus,
+select:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+textarea:active,
+select:active,
+input[type="date"]:active,
+input[type="datetime"]:active,
+input[type="datetime-local"]:active,
+input[type="email"]:active,
+input[type="month"]:active,
+input[type="number"]:active,
+input[type="password"]:active,
+input[type="search"]:active,
+input[type="tel"]:active,
+input[type="text"]:active,
+input[type="time"]:active,
+input[type="url"]:active,
+input[type="week"]:active
+  border-color: $blue
+  +box-shadow(#fff 0 1px 0 0, $blue_light 0 0 5px 0, #eae9ec 0 0 0 5px)
+
+// `Action Buttons
+//----------------------------------------------------------------------------------------------------
+
+.action_button_blue,
+.action_button_green
+  +border-radius(16px)
+  +background-image(linear-gradient(#ccc, #aaa 1px, #888))
+  border: 1px solid #666
+  display: inline-block
+  font:
+    size: 15px
+    weight: bold
+  text-align: center
+  text-shadow: rgba(#000, 0.5) 0 1px 0
+  padding: 7px 20px
+
+.action_button_blue,
+.action_button_green,
+.action_button_blue:hover,
+.action_button_green:hover
+  color: #fff
+  text-decoration: none
+
+.action_button_green
+  +background-image(linear-gradient(#a2c07e, #81a950 1px, #679037))
+
+.action_button_green:hover
+  +background-image(linear-gradient(#87a366, #5d832f 1px, #436916))
+
+.action_button_green:focus,
+.action_button_green:active
+  +background-image(linear-gradient(#87a366, #5d832f 1px, #436916))
+  color: #9cae87
+
+.action_button_green,
+.action_button_green:hover,
+.action_button_green:focus,
+.action_button_green:active
+  border-color: #607346
+
+.action_button_blue
+  +background-image(linear-gradient(#55addb, #1a90cd 1px, #0077b4))
+
+.action_button_blue:hover
+  +background-image(linear-gradient(#559cc1, #1a7aab 1px, #006091))
+
+.action_button_blue:focus,
+.action_button_blue:active
+  +background-image(linear-gradient(#559cc1, #1a7aab 1px, #006091))
+  color: #87abbe
+
+.action_button_blue,
+.action_button_blue:hover,
+.action_button_blue:active,
+.action_button_blue:focus
+  border-color: #0077b4
+
+.action_button_green:focus,
+.action_button_green:active,
+.action_button_blue:focus,
+.action_button_blue:active
+  +box-shadow(#fff 0 1px 0 0, #eae9ec 0 0 0 5px, inset rgba(#000, 0.5) 0 5px 10px 0)
+
+//
+// Icons inside buttons:
+//
+
+.action_button_green .icon_plus,
+.action_button_green .icon_magnify,
+.action_button_green .icon_arrow
+  background:
+    repeat: no-repeat
+    position: left center
+  padding: 10px 0 10px 40px
+
+.action_button_green .icon_plus
+  background-image: url(../images/icon_plus.png)
+
+.action_button_green .icon_magnify
+  background-image: url(../images/icon_magnify.png)
+
+.action_button_green .icon_arrow
+  background-image: url(../images/icon_arrow.png)
+
+// `Mini Action Buttons
+//----------------------------------------------------------------------------------------------------
+
+a.action_button_mini,
+button.action_button_mini
+  @extend button
+  +border-radius(17px)
+  +box-shadow(#fff 0 1px 0 0, #eae9ec 0 0 0 5px)
+  color: $body_text
+  display: inline-block
+  font:
+    size: 14px
+    weight: bold
+  line-height: 1
+  padding: 8px 15px 10px
+  text-decoration: none
+  text-shadow: #fff 0 1px 0
+  height: auto
+  &:hover
+    color: $body_text
+  &:active,
+  &:focus
+    border-color: $blue
+    +box-shadow(inset rgba(#000, 0.25) 0 1px 2px 0, #fff 0 1px 0 0, $blue_light 0 0 5px 0, #eae9ec 0 0 0 5px)

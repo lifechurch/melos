@@ -1,0 +1,98 @@
+#main .pagination,
+#main .pagination li
+  background: none
+  margin: 0
+  padding: 0
+
+#main .pagination
+  border-top: 1px solid #ccc
+  clear: both
+  font:
+    size: 13px
+    weight: bold
+  margin-bottom: 20px
+  padding-top: 15px
+
+#main .pagination li
+  +round
+  float: left
+  padding: 1px
+
+#main .pagination li:hover
+  +background-image(linear-gradient(#fff, #ddd))
+
+#main .pagination li:hover,
+#main .pagination li.highlighted
+  border: 1px solid
+    color: #ddd #ccc #bbb
+  padding: 0
+
+#main .pagination a
+  color: #888
+  display: block
+  margin: -1px
+  padding: 0 10px
+  text-decoration: none
+  line-height: 25px
+  height: 25px
+  text-shadow: #fff 0 1px 0
+
+// Hack for Firefox.
+@-moz-document url-prefix()
+  #main .pagination a
+    line-height: 23px
+
+#main .pagination li.highlighted a
+  color: $blue
+
+#main .pagination a:hover,
+#main .pagination li.highlighted a:hover
+  color: $blue_dark
+
+#main .pagination_first a,
+#main .pagination_previous a,
+#main .pagination_next a,
+#main .pagination_last a
+  background:
+    image: url(../images/pagination_arrows.png)
+    repeat: no-repeat
+  color: transparent
+  font-size: 0
+  overflow: hidden
+  padding: 0
+  text-decoration: none
+  text-indent: -99999px
+  text-shadow: none
+  width: 25px
+
+#main .pagination_first a
+  background:
+    position: 0 0
+
+#main .pagination_first a:hover
+  background:
+    position: 0 -25px
+
+#main .pagination_previous a
+  background:
+    position: -25px 0
+
+#main .pagination_previous a:hover
+  background:
+    position: -25px -25px
+
+#main .pagination_next a
+  background:
+    position: -50px 0
+
+#main .pagination_next a:hover
+  background:
+    position: -50px -25px
+
+#main .pagination_last a
+  background:
+    position: -75px 0
+
+#main .pagination_last a:hover
+  background:
+    position: -75px -25px

@@ -15,16 +15,6 @@ describe Reference do
     it "creates an instance from a hash" do
       Reference.new({book: "gen", chapter: 1, version: "kjv"}).class.should == Reference
     end
-
-    it "fails without a book" do
-      lambda do
-        Reference.new({chapter: 1})
-      end.should raise_error
-
-      lambda do
-        Reference.new("")
-      end.should raise_error
-    end
   end
 
   describe "#merge" do
@@ -42,8 +32,27 @@ describe Reference do
   end
 
   describe "#to_s" do
-    it "returns a human string" do
+    it "returns a human readable string of gen.1.1.kjv" do
       @full_ref.to_s.should == "Genesis 1:1 (KJV)"
+    end
+    it "returns a human readable string of gen.1.kjv" do
+      Reference.new("gen.1.kjv").to_s.should == "Genesis 1 (KJV)"
+    end
+    it "returns a human readable string of gen.1.2-3.kjv" do
+      Reference.new("gen.1.2-3.kjv").to_s.should == "Genesis 1:2-3 (KJV)"
+    end
+  end
+
+  describe "#ref_string" do
+    it "returns the chapter, book and verse of a reference" do
+      @full_ref.ref_string.should == "Genesis 1:1"
+      Reference.new("gen.1.kjv").ref_string.should == "Genesis 1"
+    end
+  end
+
+  describe "#version_string" do
+    it "returns the abbrev for the reference version" do
+      Reference.new("gen.1.kjv").version_string.should == "KJV"
     end
   end
 
@@ -56,6 +65,14 @@ describe Reference do
   describe "to_param" do
     it "parameterizes itself as a string" do
       @full_ref.to_param.should == "gen.1.1.kjv"
+    end
+  end
+
+  describe "#to_api_string" do
+    it "returns a notes API-frendly string" do
+      Reference.new("gen.1.1.asv").notes_api_string.should == "gen.1.1"
+      Reference.new("gen.1.1-3.asv").notes_api_string.should == "gen.1.1%2bgen.1.2%2bgen.1.3"
+      Reference.new("gen.1.asv").notes_api_string.should == "gen.1.1%2bgen.1.2%2bgen.1.3%2bgen.1.4%2bgen.1.5%2bgen.1.6%2bgen.1.7%2bgen.1.8%2bgen.1.9%2bgen.1.10%2bgen.1.11%2bgen.1.12%2bgen.1.13%2bgen.1.14%2bgen.1.15%2bgen.1.16%2bgen.1.17%2bgen.1.18%2bgen.1.19%2bgen.1.20%2bgen.1.21%2bgen.1.22%2bgen.1.23%2bgen.1.24%2bgen.1.25%2bgen.1.26%2bgen.1.27%2bgen.1.28%2bgen.1.29%2bgen.1.30%2bgen.1.31"
     end
   end
 
@@ -82,15 +99,7 @@ describe Reference do
   end
 
   describe "#human" do
-    it "returns a human readable string of gen.1.1.kjv" do
-      @full_ref.human.should == "Genesis 1:1 (KJV)"
-    end
-    it "returns a human readable string of gen.1.kjv" do
-      Reference.new("gen.1.kjv").human.should == "Genesis 1 (KJV)"
-    end
-    it "returns a human readable string of gen.1.2-3.kjv" do
-      Reference.new("gen.1.2-3.kjv").human.should == "Genesis 1:2-3 (KJV)"
-    end
+
   end
 
   describe "#copyright" do

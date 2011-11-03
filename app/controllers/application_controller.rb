@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_auth, :current_user
+  helper_method :current_auth, :current_user, :last_read, :set_last_read, :current_version, :set_current_version
   before_filter :set_locale
 
   # Set locale
@@ -25,18 +25,29 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def last_read
+    Reference.new(cookies[:last_read]) if cookies[:last_read]
+  end
+
+  def set_last_read(ref)
+    cookies.permanent[:last_read] = ref.osis
+  end
+
   def current_auth
-    @current_auth ||= Hashie::Mash.new( {'id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
+    @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
   end
   def current_user
-    unless @current_user
-      @current_user = User.find(cookies.signed[:a]) if cookies.signed[:a]      
-      @current_user.username = cookies.signed[:b]
-      @current_user.password = cookies.signed[:c]
-    end
-   @current_user
+    @current_user ||= User.find(current_auth) if current_auth
   end
   def current_username
     User.find(cookies.signed[:a]).username if cookies.signed[:a]      
+  end
+
+  def current_version
+    cookies[:version] || Version.default_for(params[:locale] ? params[:locale].to_s : "en")
+  end
+
+  def set_current_version(ver)
+    cookies.permanent[:version] = ver.osis
   end
 end

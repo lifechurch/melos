@@ -17,6 +17,7 @@ class User
       hash[:id] = response.delete("id")
       hash[:password] = password
       hash[:info] = Hashie::Mash.new(response)
+      hash[:auth] = Hashie::Mash.new(user_id: hash[:id], username: hash[:username], password: [password])
       User.new(hash)
     end
   end
@@ -25,9 +26,13 @@ class User
     # Pass in a user_id, username, or just an auth mash with a username and id.
     case user
     when Fixnum
-      User.new(YvApi.get("users/view", user_id: user, auth: auth).to_hash)
+      hash = YvApi.get("users/view", user_id: user, auth: auth).to_hash
+      hash[:auth] = auth
+      User.new(hash)
     when Hashie::Mash
-      User.new(YvApi.get("users/view", user_id: user.id, auth: auth).to_hash)
+      hash = YvApi.get("users/view", user_id: user.user_id, auth: user).to_hash
+      hash[:auth] = user
+      User.new(hash)
     when String
       # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
     end
@@ -57,8 +62,8 @@ class User
     Note.for_user(id, auth)
   end
   
-  def notes(auth)
-    self.class.User.notes(id, auth)
+  def notes
+    Note.for_user(self.id, self.auth)
   end
   
   def create
