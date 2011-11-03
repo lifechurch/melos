@@ -8,8 +8,8 @@ Feature: Bookmarks view (homepage)
     Given a user named "cukeuser_bookmark1" with password "tenders" and email "cukeuser_bookmark1@youversion.com" exists
     And the following bookmarks exist:
     | Username | Reference      | Title         | Labels        |
-    | testuser | gen.1.1.niv    | The Beginning | old,labeltext |
-    | testuser | matt.1.1-5.asv | New Testament | new,gospel    |
+    | cukeuser_bookmark1 | gen.1.1.niv    | The Beginning | old,labeltext |
+    | cukeuser_bookmark1 | matt.1.1-5.asv | New Testament | new,gospel    |
     When I go to the bookmarks index page for user "cukeuser_bookmark1"
     Then I should see a link to "The Beginning - Genesis 1:1 (NIV)"
     And I should see "old"
@@ -22,8 +22,8 @@ Feature: Bookmarks view (homepage)
     Given a user named "cukeuser_bookmark1" with password "tenders" and email "cukeuser_bookmark1@youversion.com" exists
     And the following bookmarks exist:
     | Username | Reference      | Title         | Labels        |
-    | testuser | gen.1.1.niv    | The Beginning | old,labeltext |
-    | testuser | matt.1.1-5.asv | New Testament | new,gospel    |
+    | cukeuser_bookmark1 | gen.1.1.niv    | The Beginning | old,labeltext |
+    | cukeuser_bookmark1 | matt.1.1-5.asv | New Testament | new,gospel    |
     And I am logged in as "cukeuser_bookmark1" with password "tenders"
     When I go to my bookmarks
     Then I should see a link to "The Beginning - Genesis 1:1 (NIV)"
