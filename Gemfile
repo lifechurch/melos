@@ -9,6 +9,8 @@ gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
 gem 'pg'
 gem 'routing-filter'
+gem 'execjs'
+gem 'therubyracer'
 
 
 # Gems used only for assets and not required

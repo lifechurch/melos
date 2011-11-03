@@ -1,5 +1,16 @@
 module Model
   
+  def self.included(base)
+    base.extend(ClassMethods)
+
+  end
+
+  module ClassMethods
+    def attr_i18n_reader(*args)
+      args.each { |a| define_method(a) { i18nize(instance_variable_get("@#{a}")) } }
+    end
+  end
+
   def initialize_class(instance, params = {}, reg_data)
     reg_data.merge! params
     set_class_values(instance, reg_data)
@@ -10,11 +21,12 @@ module Model
       # Create instance variable
       self.instance_variable_set("@#{k}", v)
       # Create the getter
-      self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")})
+      # self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")})
       # Create the setter
       self.class.send(:define_method, "#{k}=", proc{|v| self.instance_variable_set("@#{k}", v)})
     end    
   end
+
   
   def class_attributes(*args)
     array = args
@@ -36,4 +48,8 @@ module Model
     return_val[0..-2]
   end
   
+  def i18nize(hash)
+    lang_key = I18n.locale.to_s.gsub("-", "_")
+    hash.has_key?(lang_key) ? hash[lang_key] : hash["default"]
+  end
 end
