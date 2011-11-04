@@ -59,12 +59,13 @@ class Bookmark
       end
     end
 
-    bookmarks = []
+    bookmarks = ResourceList.new
     if data['bookmarks']
       data.bookmarks.each do |b|
         bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
       end
     end
+    bookmarks.total = data['total'].to_i if data['total']
     bookmarks
   end
 

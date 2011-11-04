@@ -33,4 +33,18 @@ describe Bookmark do
       bad_bookmark.errors.count.should == 1
     end
   end
+  
+  describe '.for_user' do
+    it "returns a ResourceList" do
+      user = User.new(@params)
+      user.create.should_not be_false
+      bookmarks = Bookmark.for_user(user.id)
+      bookmarks.should be_a ResourceList
+    end
+    
+    it "returns empty ResourceList for invalid params" do
+      bookmarks = Bookmark.for_user(0)
+      bookmarks.size.should == 0
+    end
+  end
 end

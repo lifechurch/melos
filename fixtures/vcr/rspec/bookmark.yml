@@ -83,3 +83,30 @@
       - Accept-Encoding
     body: "{\"response\":{\"code\":400,\"data\":{\"errors\":[{\"key\":\"bookmarks.reference.invalid_multi_reference\",\"error\":\"Reference should be a valid multi-reference\"}]},\"buildtime\":\"2011-10-26T18:52:31+00:00\"}}"
     http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bookmarks/items.json?page=1&user_id=0
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Fri, 04 Nov 2011 13:47:38 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":404,\"data\":{\"errors\":[{\"key\":\"bookmarks.bookmarks.not_found\",\"error\":\"Bookmarks not found\"}]},\"buildtime\":\"2011-11-04T13:47:38+00:00\"}}"
+    http_version: "1.1"
