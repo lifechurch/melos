@@ -2,9 +2,9 @@
 - @reader_menus = true
 - @is_reader = true
 
-
-
-
+- content_for :sidebar do
+  = render_cell :notes_list_widget, :display, notes: @notes, title: "Community Notes"
+  = render '/shared/widget_ad_bible_app'
 
 %header
   %ul.float_left

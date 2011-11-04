@@ -20,7 +20,15 @@ module NavigationHelpers
       version_path $1
     when /^"([^"]*)"$/
       $1
-
+    when /^new note page$/
+      notes_path
+    when /^the notes index page$/
+      notes_path      
+    when /^a show note page$/
+      notes_path      
+    when /^the show note page$/
+      notes_path      
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

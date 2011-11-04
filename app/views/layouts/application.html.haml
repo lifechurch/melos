@@ -11,7 +11,7 @@
           - flash.each do |key, msg|
             %div{id: key}= msg
           = yield
-          -if content_for? :main_trailer
+          - if content_for? :main_trailer
             = yield :main_trailer
         = render '/shared/nav_primary'
         - if content_for? :sidebar
@@ -26,3 +26,4 @@
       - # = render '/shared/menu_version'
       = render_cell :version_selector, :display, {reference: @reference}
     = render '/shared/javascripts'
+

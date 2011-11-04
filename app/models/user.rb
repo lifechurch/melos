@@ -1,14 +1,13 @@
 require 'digest/md5'
 
-
 class User
   extend ActiveModel::Naming
   include ActiveModel::Conversion
+  include Model
+  attr_accessor :username, :password, :errors
   def persisted?
-    false
+    !id.blank?
   end
-  attr_reader :errors
-
 
   def self.authenticate(username, password)
     hash = {}
@@ -18,6 +17,7 @@ class User
       hash[:id] = response.delete("id")
       hash[:password] = password
       hash[:info] = Hashie::Mash.new(response)
+      hash[:auth] = Hashie::Mash.new(user_id: hash[:id], username: hash[:username], password: [password])
       User.new(hash)
     end
   end
@@ -26,9 +26,13 @@ class User
     # Pass in a user_id, username, or just an auth mash with a username and id.
     case user
     when Fixnum
-      User.new(YvApi.get("users/view", user_id: user, auth: auth).to_hash)
+      hash = YvApi.get("users/view", user_id: user, auth: auth).to_hash
+      hash[:auth] = auth
+      User.new(hash)
     when Hashie::Mash
-      User.new(YvApi.get("users/view", user_id: user.id, auth: auth).to_hash)
+      hash = YvApi.get("users/view", user_id: user.user_id, auth: user).to_hash
+      hash[:auth] = user
+      User.new(hash)
     when String
       # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
     end
@@ -46,13 +50,29 @@ class User
     end
   end
 
+  # def self.find(id)
+  #   response = YvApi.get('users/view', {:user_id => id, :auth_user_id => :id} ) do |errors|     
+  #     @errors = errors.map { |e| e["error"] }
+  #     return false
+  #   end
+  #   User.new(response)
+  # end
+
+  def self.notes(id, auth)
+    Note.for_user(id, auth)
+  end
+  
+  def notes
+    Note.for_user(self.id, self.auth)
+  end
+  
   def create
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
     @secure = true
-    response = YvApi.post('users/create', attributes(:email, :username, :password, :verified, :agree, :token, :secure)) do |errors|
+    response = YvApi.post('users/create', class_attributes(:email, :username, :password, :verified, :agree, :token, :secure)) do |errors|
       @errors = errors.map { |e| e["error"] } if errors
       return false
-    end
+    end    
     response
   end
 
