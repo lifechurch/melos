@@ -48,7 +48,23 @@ describe Bookmark do
       bad_bookmark.errors.count.should == 1
     end
   end
-  
+
+  describe ".destroy" do
+    it 'destroys a bookmark and returns the correct response' do
+      @auth = Hashie::Mash.new( { id: 4163177,
+                 username: "testuser",
+                 password: "tenders"
+              } )
+      bookmark = Bookmark.new({auth_username: @auth.username, auth_password: @auth.password, version: "esv",
+                               reference: "Matt.19.1", title: "DeleteMe", username: @auth.username})
+      bookmark.save.should_not be_false
+      bookmark.persisted?.should be_true
+
+      response = bookmark.destroy(@auth)
+      response.should be_true
+    end
+  end
+
   describe '.for_user' do
     it "returns a ResourceList" do
       user = User.new(@params)
@@ -56,10 +72,16 @@ describe Bookmark do
       bookmarks = Bookmark.for_user(user.id)
       bookmarks.should be_a ResourceList
     end
-    
+
     it "returns empty ResourceList for invalid params" do
       bookmarks = Bookmark.for_user(0)
       bookmarks.size.should == 0
+    end
+
+    it "creates Bookmark objects for valid param" do
+      bookmarks = Bookmark.for_user(99)
+      bookmarks.total.should > 0
+      bookmarks.first.should be_a Bookmark
     end
   end
 end

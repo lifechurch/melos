@@ -1,5 +1,8 @@
 class Bookmark
   @@api_data = {}
+  def persisted?
+    return !id.blank?
+  end
 
   def initialize(params = {})
     reg_data = {user_id: nil}
@@ -37,6 +40,18 @@ class Bookmark
     Bookmark.new(data) if data.is_a? Hashie::Mash
   end
 
+  # TODO: add a destroy class method that accepts multiple IDs in an array
+  def destroy(auth)
+    opts = {ids: id, auth: auth}
+
+    puts "Calling: Bookmark.destroy(#{id}, #{opts})"
+    response = YvApi.post('bookmarks/delete', opts) do |errors|
+      @errors = errors.map { |e| e["error"] }
+      return false
+    end
+    response
+  end
+
   def save
     opts = attributes(:highlight_color, :labels, :reference, :title, :version)
     # TODO: find the real username and pass
@@ -45,6 +60,7 @@ class Bookmark
       @errors = errors.map { |e| e["error"] } if errors
       return false
     end
+    @id = response.id
     response
   end
 
