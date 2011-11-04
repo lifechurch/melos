@@ -8,17 +8,17 @@ class Note
 
   attr_reader :errors
   attr_accessor :references
-  
+
   def initialize(params = {})
-    reg_data = {id: nil, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}    
-    initialize_class(self, params, reg_data)    
+    reg_data = {id: nil, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}
+    initialize_class(params, reg_data)
   end
   
-  def to_param    
+  def to_param
     puts "listening"
-    id    
+    id
   end
-  
+
   def self.find(id, auth = nil)
     response = YvApi.get('notes/view', id: id ) do |e|   # anonymous    
       YvApi.get('notes/view', id: id, auth: auth) do |e| # auth'ed

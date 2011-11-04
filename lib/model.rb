@@ -1,18 +1,14 @@
 module Model
   
-  def initialize_class(instance, params = {}, reg_data)
-    reg_data.merge! params
-    set_class_values(instance, reg_data)
+  def initialize_class(params = {}, reg_data)
+    set_class_values(reg_data.merge(params))
   end
   
-  def set_class_values(instance, values)
-    values.each do |k,v|    
-      # Create instance variable
-      self.instance_variable_set("@#{k}", v)
-      # Create the getter
-      self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")})
-      # Create the setter
-      self.class.send(:define_method, "#{k}=", proc{|v| self.instance_variable_set("@#{k}", v)})
+  def set_class_values(values)
+    values.each do |k, v|
+      # Create an accessors and set the initial values for all the params
+      self.class.send(:attr_accessor, k)
+      self.send("#{k}=", v)
     end    
   end
   
