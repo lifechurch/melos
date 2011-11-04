@@ -1,13 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1.0'
+gem 'rails', '=3.1.0'
 gem 'httparty'
 gem 'memcache-client'
 gem 'hashie'
 gem 'cells'
 gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
-gem 'pg'
+#gem 'pg'
+gem 'mysql2'
 gem 'routing-filter'
 
 

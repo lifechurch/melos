@@ -4,7 +4,7 @@ YouversionWeb::Application.routes.draw do
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
   resources 'versions', :only => [:index, :show]
   resources 'notes'
-  
+
   # Users
   resources 'users', :except => [:new, :create] do
 	resources 'notes'
