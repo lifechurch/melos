@@ -1,199 +1,337 @@
----
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
     method: :post
     uri: https://api.yvdev.com:443/2.3/users/create.json
     body: email=testuser%40youversion.com&username=testuser&password=tenders&verified=true&agree=true&token=615ad51b71049e299842f5af14c70cad
-    headers:
-      referer:
+    headers: 
+      referer: 
       - http://web.youversion.com
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
-    headers:
-      server:
+    headers: 
+      server: 
       - nginx/0.7.67
-      date:
+      date: 
       - Fri, 21 Oct 2011 13:26:48 GMT
-      content-type:
+      content-type: 
       - text/plain
       - text/plain; charset=utf-8
-      transfer-encoding:
+      transfer-encoding: 
       - chunked
-      connection:
+      connection: 
       - keep-alive
-      vary:
+      vary: 
       - Accept-Encoding
-    body: ! '{"response":{"code":201,"data":"Created","buildtime":"2011-10-21T13:26:48+00:00"}}'
-    http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
+    body: "{\"response\":{\"code\":201,\"data\":\"Created\",\"buildtime\":\"2011-10-21T13:26:48+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
     method: :post
     uri: https://api.yvdev.com:443/2.3/users/create.json
     body: email=blah%40stuff.com&username=&password=&verified=false&agree=false&token=61e67a748a66c5acd12f162b31fcec4d
-    headers:
-      referer:
+    headers: 
+      referer: 
       - http://web.youversion.com
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
-    headers:
-      server:
+    headers: 
+      server: 
       - nginx/0.7.67
-      date:
+      date: 
       - Fri, 21 Oct 2011 13:26:48 GMT
-      content-type:
+      content-type: 
       - text/plain
       - text/plain; charset=utf-8
-      transfer-encoding:
+      transfer-encoding: 
       - chunked
-      connection:
+      connection: 
       - keep-alive
-      vary:
+      vary: 
       - Accept-Encoding
-    body: ! '{"response":{"code":400,"data":{"errors":[{"key":"users.username.required","error":"Username
-      is required"},{"key":"users.password.required","error":"Password is required"},{"key":"users.agree.not_true","error":"Agreement
-      with the terms of use and privacy statement is required"}]},"buildtime":"2011-10-21T13:26:48+00:00"}}'
-    http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
+    body: "{\"response\":{\"code\":400,\"data\":{\"errors\":[{\"key\":\"users.username.required\",\"error\":\"Username is required\"},{\"key\":\"users.password.required\",\"error\":\"Password is required\"},{\"key\":\"users.agree.not_true\",\"error\":\"Agreement with the terms of use and privacy statement is required\"}]},\"buildtime\":\"2011-10-21T13:26:48+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
     method: :get
     uri: http://testuser:tenders@api.yvdev.com:80/2.3/users/authenticate.json?
     body: !!null 
-    headers:
-      referer:
+      str: ""
+      :@taguri: x-private:null
+    headers: 
+      referer: 
       - http://web.youversion.com
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
-    headers:
-      server:
+    headers: 
+      server: 
       - nginx/0.7.67
-      date:
+      date: 
       - Fri, 21 Oct 2011 13:26:48 GMT
-      content-type:
+      content-type: 
       - text/plain; charset=utf-8
-      transfer-encoding:
+      transfer-encoding: 
       - chunked
-      connection:
+      connection: 
       - keep-alive
-      vary:
+      vary: 
       - Accept-Encoding
-    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
-      13:26:48.226265+00","last_login":"2011-10-21 13:26:48+00","twitter":null,"facebook":null,"email":"testuser@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-21T13:26:48+00:00"}}'
-    http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"4163177\",\"username\":\"testuser\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"name\":null,\"first_name\":null,\"last_name\":null,\"location\":null,\"im_type\":null,\"im_value\":null,\"website\":null,\"mobile\":null,\"postal_code\":null,\"language\":\"false\",\"country\":\"  \",\"timezone\":\"UTC\",\"created\":\"2011-10-21 13:26:48.226265+00\",\"last_login\":\"2011-10-21 13:26:48+00\",\"twitter\":null,\"facebook\":null,\"email\":\"testuser@youversion.com\",\"notice_badges\":\"true\",\"notice_contrib_fav\":\"true\",\"notice_follower\":\"true\",\"notice_newsletter\":\"false\",\"notice_reading_plans\":\"true\"},\"buildtime\":\"2011-10-21T13:26:48+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
     method: :get
     uri: http://testuser:asdf@api.yvdev.com:80/2.3/users/authenticate.json?
     body: !!null 
-    headers:
-      referer:
+      str: ""
+      :@taguri: x-private:null
+    headers: 
+      referer: 
       - http://web.youversion.com
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
-    headers:
-      server:
+    headers: 
+      server: 
       - nginx/0.7.67
-      date:
+      date: 
       - Fri, 21 Oct 2011 13:26:48 GMT
-      content-type:
+      content-type: 
       - text/plain; charset=utf-8
-      transfer-encoding:
+      transfer-encoding: 
       - chunked
-      connection:
+      connection: 
       - keep-alive
-      vary:
+      vary: 
       - Accept-Encoding
-    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
-      or password is invalid"}]},"buildtime":"2011-10-21T13:26:48+00:00"}}'
-    http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
+    body: "{\"response\":{\"code\":403,\"data\":{\"errors\":[{\"key\":\"users.username_or_password.invalid\",\"error\":\"Username or password is invalid\"}]},\"buildtime\":\"2011-10-21T13:26:48+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
     method: :get
     uri: http://api.yvdev.com:80/2.3/users/view.json?auth=&user_id=4163177
     body: !!null 
-    headers:
-      referer:
+      str: ""
+      :@taguri: x-private:null
+    headers: 
+      referer: 
       - http://web.youversion.com
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
-    headers:
-      server:
+    headers: 
+      server: 
       - nginx/0.7.67
-      date:
+      date: 
       - Fri, 21 Oct 2011 21:49:48 GMT
-      content-type:
+      content-type: 
       - text/plain; charset=utf-8
-      transfer-encoding:
+      transfer-encoding: 
       - chunked
-      connection:
+      connection: 
       - keep-alive
-      vary:
+      vary: 
       - Accept-Encoding
-    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
-      13:26:48.226265+00","last_login":"2011-10-21 21:46:10+00"},"buildtime":"2011-10-21T21:49:48+00:00"}}'
-    http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"4163177\",\"username\":\"testuser\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"name\":null,\"first_name\":null,\"last_name\":null,\"location\":null,\"im_type\":null,\"im_value\":null,\"website\":null,\"language\":\"false\",\"country\":\"  \",\"timezone\":\"UTC\",\"created\":\"2011-10-21 13:26:48.226265+00\",\"last_login\":\"2011-10-21 21:46:10+00\"},\"buildtime\":\"2011-10-21T21:49:48+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
     method: :get
     uri: http://api.yvdev.com:80/2.3/users/view.json?user_id=4163177&auth%5Bid%5D=4163177&auth%5Bpassword%5D=tenders&auth%5Busername%5D=testuser
     body: !!null 
-    headers:
-      referer:
+      str: ""
+      :@taguri: x-private:null
+    headers: 
+      referer: 
       - http://web.youversion.com
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
-    headers:
-      server:
+    headers: 
+      server: 
       - nginx/0.7.67
-      date:
+      date: 
       - Fri, 21 Oct 2011 21:54:58 GMT
-      content-type:
+      content-type: 
       - text/plain; charset=utf-8
-      transfer-encoding:
+      transfer-encoding: 
       - chunked
-      connection:
+      connection: 
       - keep-alive
-      vary:
+      vary: 
       - Accept-Encoding
-    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
-      13:26:48.226265+00","last_login":"2011-10-21 21:46:10+00"},"buildtime":"2011-10-21T21:54:58+00:00"}}'
-    http_version: '1.1'
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"4163177\",\"username\":\"testuser\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"name\":null,\"first_name\":null,\"last_name\":null,\"location\":null,\"im_type\":null,\"im_value\":null,\"website\":null,\"language\":\"false\",\"country\":\"  \",\"timezone\":\"UTC\",\"created\":\"2011-10-21 13:26:48.226265+00\",\"last_login\":\"2011-10-21 21:46:10+00\"},\"buildtime\":\"2011-10-21T21:54:58+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
     method: :get
     uri: http://testuser:tenders@api.yvdev.com:80/2.3/users/view.json?user_id=4163177
     body: !!null 
-    headers:
-      referer:
+      str: ""
+      :@taguri: x-private:null
+    headers: 
+      referer: 
       - http://web.youversion.com
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
       code: 200
       message: OK
-    headers:
-      server:
+    headers: 
+      server: 
       - nginx/0.7.67
-      date:
+      date: 
       - Fri, 21 Oct 2011 21:55:41 GMT
-      content-type:
+      content-type: 
       - text/plain; charset=utf-8
-      transfer-encoding:
+      transfer-encoding: 
       - chunked
-      connection:
+      connection: 
       - keep-alive
-      vary:
+      vary: 
       - Accept-Encoding
-    body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
-      13:26:48.226265+00","last_login":"2011-10-21 21:55:41+00","twitter":null,"facebook":null,"email":"testuser@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-21T21:55:41+00:00"}}'
-    http_version: '1.1'
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"4163177\",\"username\":\"testuser\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"name\":null,\"first_name\":null,\"last_name\":null,\"location\":null,\"im_type\":null,\"im_value\":null,\"website\":null,\"mobile\":null,\"postal_code\":null,\"language\":\"false\",\"country\":\"  \",\"timezone\":\"UTC\",\"created\":\"2011-10-21 13:26:48.226265+00\",\"last_login\":\"2011-10-21 21:55:41+00\",\"twitter\":null,\"facebook\":null,\"email\":\"testuser@youversion.com\",\"notice_badges\":\"true\",\"notice_contrib_fav\":\"true\",\"notice_follower\":\"true\",\"notice_newsletter\":\"false\",\"notice_reading_plans\":\"true\"},\"buildtime\":\"2011-10-21T21:55:41+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/users/authenticate.json?
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 01 Nov 2011 18:39:07 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"4163177\",\"username\":\"testuser\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"name\":null,\"first_name\":null,\"last_name\":null,\"location\":null,\"im_type\":null,\"im_value\":null,\"website\":null,\"mobile\":null,\"postal_code\":null,\"language\":\"false\",\"country\":\"  \",\"timezone\":\"UTC\",\"created\":\"2011-10-21 13:26:48.226265+00\",\"last_login\":\"2011-11-01 18:39:07+00\",\"twitter\":null,\"facebook\":null,\"email\":\"testuser@youversion.com\",\"notice_badges\":\"true\",\"notice_contrib_fav\":\"true\",\"notice_follower\":\"true\",\"notice_newsletter\":\"false\",\"notice_reading_plans\":\"true\"},\"buildtime\":\"2011-11-01T18:39:07+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://testuser:asdf@api.yvdev.com:80/2.3/users/authenticate.json?
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 01 Nov 2011 18:39:07 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":403,\"data\":{\"errors\":[{\"key\":\"users.username_or_password.invalid\",\"error\":\"Username or password is invalid\"}]},\"buildtime\":\"2011-11-01T18:39:07+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163177
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 01 Nov 2011 18:39:08 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"4163177\",\"username\":\"testuser\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"name\":null,\"first_name\":null,\"last_name\":null,\"location\":null,\"im_type\":null,\"im_value\":null,\"website\":null,\"language\":\"false\",\"country\":\"  \",\"timezone\":\"UTC\",\"created\":\"2011-10-21 13:26:48.226265+00\",\"last_login\":\"2011-11-01 18:39:07+00\"},\"buildtime\":\"2011-11-01T18:39:08+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/users/view.json?auth=&user_id=4163177
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 01 Nov 2011 19:25:50 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"4163177\",\"username\":\"testuser\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"name\":null,\"first_name\":null,\"last_name\":null,\"location\":null,\"im_type\":null,\"im_value\":null,\"website\":null,\"language\":\"false\",\"country\":\"  \",\"timezone\":\"UTC\",\"created\":\"2011-10-21 13:26:48.226265+00\",\"last_login\":\"2011-11-01 19:08:04+00\"},\"buildtime\":\"2011-11-01T19:25:50+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/users/view.json?user_id=4163177
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 01 Nov 2011 19:25:50 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"4163177\",\"username\":\"testuser\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"name\":null,\"first_name\":null,\"last_name\":null,\"location\":null,\"im_type\":null,\"im_value\":null,\"website\":null,\"mobile\":null,\"postal_code\":null,\"language\":\"false\",\"country\":\"  \",\"timezone\":\"UTC\",\"created\":\"2011-10-21 13:26:48.226265+00\",\"last_login\":\"2011-11-01 19:25:50+00\",\"twitter\":null,\"facebook\":null,\"email\":\"testuser@youversion.com\",\"notice_badges\":\"true\",\"notice_contrib_fav\":\"true\",\"notice_follower\":\"true\",\"notice_newsletter\":\"false\",\"notice_reading_plans\":\"true\"},\"buildtime\":\"2011-11-01T19:25:50+00:00\"}}"
+    http_version: "1.1"

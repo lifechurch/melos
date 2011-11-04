@@ -226,3 +226,9 @@ end
 Then /^I should get a (\d+) response$/ do |http_status|
   page.driver.status_code.should == http_status.to_i
 end
+
+Then /^I should see the following in the notes widget:$/ do |table|
+  table.hashes.each do |value|
+    page.should have_content(value[:Title])
+  end
+end

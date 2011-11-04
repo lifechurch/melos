@@ -1,4 +1,5 @@
 class ReferencesController < ApplicationController
+  before_filter :set_nav
   def show
     if !params[:reference]
       # look for a last reading position, or just go to default
@@ -13,5 +14,14 @@ class ReferencesController < ApplicationController
     @version = Version.find(@reference[:version])
     set_last_read @reference
     set_current_version @version
+    notes_ref_hash = ref_hash.dup
+    notes_ref_hash[:verse]=1..5
+    @notes = Note.for_reference(Reference.new(notes_ref_hash))
+  end
+
+  private
+
+  def set_nav
+    @nav = :bible
   end
 end

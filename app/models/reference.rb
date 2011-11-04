@@ -1,4 +1,7 @@
 class Reference
+  extend ActiveModel::Naming
+  include ActiveModel::Conversion
+
   def initialize(ref)
     @api_data = {}
     case ref
@@ -36,6 +39,22 @@ class Reference
     @version_string ||= @ref[:version].upcase
   end
 
+  def notes_api_string
+    case @ref[:verse]
+    when Fixnum
+      return @ref.except(:version).to_osis_string
+    when Range
+      return @ref[:verse].map { |r| "#{@ref[:book]}.#{@ref[:chapter]}.#{r}" }.join("+")
+    when NilClass
+      chapters = Version.find(@ref[:version]).books[@ref[:book]].chapter[@ref[:chapter]].verses
+      return (1..chapters).map {|r| "#{@ref[:book]}.#{@ref[:chapter]}.#{r}" }.join("+")
+    end
+  end
+
+  def notes
+    Note.for_reference(self)
+  end
+  
   def merge(hash)
     Reference.new(@ref.merge(hash))
   end
@@ -66,7 +85,15 @@ class Reference
   def osis
     @ref.to_osis_string
   end
+  
+  def osis_noversion
+    @ref.to_osis_string_noversion
+  end
 
+  def to_api
+    
+  end
+  
   def human
 
   end

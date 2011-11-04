@@ -1,0 +1,11 @@
+%article
+  #note
+    %h1= @note.title
+    %p.mute= link_to_references(@note.references)
+    %p= raw(@note.content)
+    %p
+      = label_tag :user_status, "Note Status:"
+      = @note.user_status
+    - if current_auth.user_id == @note.user_id.to_i
+      = link_to('edit', edit_note_path(@note.id)) 
+      = link_to('delete this note', note_path(@note.id), :confirm => 'Are you sure?', :method => :delete) 

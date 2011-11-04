@@ -27,7 +27,7 @@ class YvApi
 
     # Figure out if we should cache
     cache_length = opts.delete(:cache_for)
-
+        
     # If we should cache, try pulling from cache first
     if cache_length
       cache_key = {p: path, q: opts}
@@ -39,6 +39,7 @@ class YvApi
       # Just ask the API
       response = httparty_get(base + path, query: opts)
     end
+
     # Check the API response for error code
     return api_response_or_rescue(response, block)
   end
@@ -55,9 +56,10 @@ class YvApi
     protocol = (opts.delete(:secure) == true) ? 'https' : 'http'
     # Set the base URL
     base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
+    
     response = httparty_post(base + path, body: opts)
+    
     return api_response_or_rescue(response, block)
-
   end
 
   private
@@ -78,8 +80,14 @@ class YvApi
       # If it DID work, use the response from the block as the new response
       return new_response
     end
+    
     # creating a resource? Just return success
-    return true if response["response"]["code"] == 201
+    # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
+    # return true if response["response"]["code"] == 201
+	return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
+
+    return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
+    
     # Otherwise, turn the data back into a Mash and return it
     return response["response"]["data"].class == Array ? response["response"]["data"].map {|e| Hashie::Mash.new(e)} : Hashie::Mash.new(response["response"]["data"])
   end
