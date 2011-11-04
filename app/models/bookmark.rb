@@ -23,10 +23,11 @@ class Bookmark
 
   attr_reader :errors
 
-  def self.find(id)
-    opts = {id: id}
+  def self.find(id, auth = nil)
+    opts = {id: id.to_i, auth: auth}
+    puts "Calling: Bookmark.find(#{id}, #{opts})"
     data = YvApi.get('bookmarks/view', opts) do |errors|
-      Rails.logger.info "API Error: Bookmark.find(#{id}) got these errors: #{errors.inspect}"
+      Rails.logger.info "API Error: Bookmark.find(#{id}, #{opts}) got these errors: #{errors.inspect}"
       if errors.include? "not_found"
         # return empty hash to avoid raising exception
         { }
