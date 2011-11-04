@@ -80,14 +80,14 @@ class YvApi
       # If it DID work, use the response from the block as the new response
       return new_response
     end
-    
+
     # creating a resource? Just return success
     # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
     # return true if response["response"]["code"] == 201
-	return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
+	  return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
 
     return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
-    
+
     # Otherwise, turn the data back into a Mash and return it
     return response["response"]["data"].class == Array ? response["response"]["data"].map {|e| Hashie::Mash.new(e)} : Hashie::Mash.new(response["response"]["data"])
   end
