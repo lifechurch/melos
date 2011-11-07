@@ -63,13 +63,10 @@ class NotesController < ApplicationController
   end
 
   def like
-    @like = Like.find(params[:id], current_auth)
+    Like.update(params[:id], current_auth)
 
-    if @like.update(params[:id], params[:like_value], current_auth)
-      render action: "show"
-    else
-      #TODO: Complete
-    end
+    @note = Note.find(params[:id], current_auth)
+    render action: "show"
   end
 
   private

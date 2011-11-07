@@ -18,7 +18,11 @@ class Note
     puts "listening"
     id    
   end
-  
+
+  def like
+    Like.for_note(id)
+  end
+
   def self.find(id, auth = nil)
     response = YvApi.get('notes/view', id: id ) do |e|   # anonymous    
       YvApi.get('notes/view', id: id, auth: auth) do |e| # auth'ed

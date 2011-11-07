@@ -18,25 +18,34 @@ class Like
     id
   end
 
-  def self.find(user_id, auth = nil)
-    response = YvApi.get('likes/items', user_id: user_id ) do |e|   # anonymous
-      YvApi.get('likes/items', user_id: user_id, auth: auth) do |e| # auth'ed
-        @errors = errors.map { |e| e["error"] }
-        return false
+  def note
+    Note.find(note_id)
+  end
+
+  def self.for_note(note_id, user_id = nil, auth = nil)
+    @return_like = nil
+
+    response = YvApi.get('likes/items', user_id: user_id) do |e|
+      @errors = errors.map { |e| e["error"] }
+      return false
+    end
+
+    @likes = build_objects(response.likes, auth)
+    @likes.each do |like|
+      if like.note_id == note_id
+        @return_like = like
       end
     end
 
-    #TODO: Add code to find the object in the collection returned in 'response'
-
-    #build_objects(response.likes, auth)
+    @return_like
   end
 
-  def find(user_id, auth)
-    self.class.find(user_id, auth)
+  def for_note(note_id, user_id = nil)
+    self.class.for_note(note_id, user_id, auth)
   end
 
-  def self.all
-    response = YvApi.get('likes/items') do |errors|
+  def self.all(user_id = nil)
+    response = YvApi.get('likes/items', user_id: user_id) do |errors|
       @errors = errors.map { |e| e["error"] }
       return false
     end
@@ -44,8 +53,19 @@ class Like
     build_objects(response.likes, nil)
   end
 
-  def all
-    self.class.all
+  def all(user_id = nil)
+    self.class.all(user_id)
+  end
+
+  def self.update(note_id, auth)
+    unless @like = for_note(note_id)
+      @like = Like.new(auth: auth, note_id: note_id)
+      @like.create
+    else
+      @like.auth = auth
+      @like.note_id = note_id
+      @like.destroy
+    end
   end
 
   def create
@@ -57,12 +77,6 @@ class Like
     end
     @id = response.id
     response
-  end
-
-  def update(id, value, auth)
-
-
-
   end
 
   def destroy
