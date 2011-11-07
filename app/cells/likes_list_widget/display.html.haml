@@ -11,11 +11,11 @@
             %a.more_arrow= link_to "All notes I like", @link
 
       %tbody
-        - likes.first(5).each do |like|
+        - @likes.first(5).each do |like|
           %tr
             %th
               %a
                 %img.avatar_small{src: like.note_user_avatar_url.px_24x24}
             %td
-              %a= link_to like.note_title, note_path(note.id)
-              %p= link_to "By #{@note_username}", user_path(note.note_user_id)
+              %a= link_to like.note_title, note_path(like.note_id)
+              %p= link_to "By #{like.note_username}", user_path(like.note_user_id)

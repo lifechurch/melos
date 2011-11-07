@@ -1,3 +1,7 @@
+- content_for :sidebar do
+  = render_cell :likes_list_widget, :display, likes: @likes, title: "Likes", user_id: @user_id
+  = render '/shared/widget_ad_bible_app'
+
 %article
   - if request.path == user_notes_path(current_user)
     %h1= "My Notes"

@@ -2,10 +2,10 @@ class LikesListWidgetCell < Cell::Rails
   helper ApplicationHelper
 
   def display(opts = {})
-    @notes = opts[:likes].notes
-    @total = opts[:likes].total
+    @likes = opts[:likes]
+    @total = opts[:likes].count
     @title = opts[:title] ||= "Likes"
-    @link = opts[:link] ||= notes_path
+    @link = opts[:link] ||= user_likes_path(opts[:user_id])
     render
   end
 

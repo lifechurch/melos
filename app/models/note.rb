@@ -24,8 +24,8 @@ class Note
   end
 
   def self.find(id, auth = nil)
-    response = YvApi.get('notes/view', id: id ) do |e|   # anonymous    
-      YvApi.get('notes/view', id: id, auth: auth) do |e| # auth'ed
+    response = YvApi.get('notes/view', id: id ) do |errors|   # anonymous
+      YvApi.get('notes/view', id: id, auth: auth) do |errors| # auth'ed
         @errors = errors.map { |e| e["error"] }
         return false
       end
@@ -84,10 +84,7 @@ class Note
       @content = @prexml_content
       return false
     end
-    @id = response.id
-    @version = Version.new(response.version)
-    @reference = response.reference
-    response
+    self.class.build_object(response, auth)
   end
 
   def update(id, fields)
@@ -103,9 +100,7 @@ class Note
       @content = @prexml_content
       return false
     end
-    @version = Version.new(response.version)
-    @reference = response.reference
-    response
+    self.class.build_object(response, auth)
   end
 
   def destroy
@@ -124,8 +119,6 @@ class Note
     @note.content = @note.content_text
     @note.references = @note.reference.map { |n| Reference.new("#{n.osis}.#{@note.version}") }
     @note.version = Version.new(@note.version)
-      
-    #@note.reference = Reference.new("#{Model::hash_to_osis(@note.reference)}.#{@note.version.osis}")
     @note
   end
   

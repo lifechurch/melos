@@ -22,15 +22,15 @@ class Like
     Note.find(note_id)
   end
 
-  def self.for_note(note_id, user_id = nil, auth = nil)
+  def self.for_note(note_id, user_id = nil)
     @return_like = nil
 
-    response = YvApi.get('likes/items', user_id: user_id) do |e|
+    response = YvApi.get('likes/items', user_id: user_id) do |errors|
       @errors = errors.map { |e| e["error"] }
-      return false
+      return nil
     end
 
-    @likes = build_objects(response.likes, auth)
+    @likes = build_objects(response.likes, nil)
     @likes.each do |like|
       if like.note_id == note_id
         @return_like = like
@@ -41,7 +41,7 @@ class Like
   end
 
   def for_note(note_id, user_id = nil)
-    self.class.for_note(note_id, user_id, auth)
+    self.class.for_note(note_id, user_id)
   end
 
   def self.all(user_id = nil)
@@ -58,7 +58,7 @@ class Like
   end
 
   def self.update(note_id, auth)
-    unless @like = for_note(note_id)
+    unless @like = for_note(note_id, auth.user_id)
       @like = Like.new(auth: auth, note_id: note_id)
       @like.create
     else

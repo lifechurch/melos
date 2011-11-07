@@ -35,5 +35,15 @@ module Model
     end
     return_val[0..-2]
   end
-  
+
+  # PARM (values): Array of Reference hashies
+  # RETURN: String in OSIS format
+  def self.hash_to_osis_noversion(values)
+    return_val = ""
+    values.each do |ref|
+      return_val << "#{ref.osis_noversion}+"
+    end
+    return_val[0..-2]
+  end
+
 end
