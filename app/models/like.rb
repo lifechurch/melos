@@ -18,18 +18,6 @@ class Like
     id
   end
 
-  def self.like(note_id, auth = nil)
-
-    #1) Look up the like for the note
-    #2) Determine if this is a Like or an Un-Like
-    #3) Write the update
-
-  end
-
-  def like(note_id, auth)
-    self.class.like(note_id, auth)
-  end
-
   def self.find(user_id, auth = nil)
     response = YvApi.get('likes/items', user_id: user_id ) do |e|   # anonymous
       YvApi.get('likes/items', user_id: user_id, auth: auth) do |e| # auth'ed
@@ -38,7 +26,9 @@ class Like
       end
     end
 
-    build_objects(response.likes, auth)
+    #TODO: Add code to find the object in the collection returned in 'response'
+
+    #build_objects(response.likes, auth)
   end
 
   def find(user_id, auth)
@@ -67,6 +57,12 @@ class Like
     end
     @id = response.id
     response
+  end
+
+  def update(id, value, auth)
+
+
+
   end
 
   def destroy
