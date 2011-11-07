@@ -1,0 +1,13 @@
+%article
+  - if request.path == user_likes_path(current_user)
+    %h1= "My Likes"
+  - if @likes
+    %ul.big_list
+      - @likes.each do |like|
+        %li{id: like.id}
+          %h5= link_to like.note_title, note_path(like.note_id)
+          %p.mute.small.negative_gutter_top_half= link_to_references(like.note.references)
+          %p= like.note.content_text
+          %div{class: "status"}= like.note.user_status
+  - else
+    %div{class: "none"}= "Sorry, no likes here!"

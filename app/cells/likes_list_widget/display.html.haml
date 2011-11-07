@@ -1,0 +1,21 @@
+%div.widget
+  %header
+    %a.count= @total
+    %span.header_icon_note= @title 
+  %section
+    %table
+      %tfoot
+        %tr
+          %th
+          %td.align_right
+            %a.more_arrow= link_to "All notes I like", @link
+
+      %tbody
+        - likes.first(5).each do |like|
+          %tr
+            %th
+              %a
+                %img.avatar_small{src: like.note_user_avatar_url.px_24x24}
+            %td
+              %a= link_to like.note_title, note_path(note.id)
+              %p= link_to "By #{@note_username}", user_path(note.note_user_id)
