@@ -43,8 +43,8 @@ class Note
     build_objects(response.notes, nil)
   end
   
-  def all(user_id)
-    self.class.all(auth)
+  def all
+    self.class.all
   end
 
   def self.for_user(user_id, auth)
@@ -82,10 +82,10 @@ class Note
     end
     @id = response.id
     @version = Version.new(response.version)
-    @reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    @reference = response.reference
     response
   end
-  
+
   def update(id, fields)
     set_class_values(self, fields)
     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
@@ -100,13 +100,11 @@ class Note
       return false
     end
     @version = Version.new(response.version)
-    @reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    @reference = response.reference
     response
   end
-  
+
   def destroy
-    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-    
     response = YvApi.post('notes/delete', class_attributes(:id, :auth)) do |errors|
       @errors = errors.map { |e| e["error"] }
       return false

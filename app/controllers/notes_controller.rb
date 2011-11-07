@@ -62,6 +62,12 @@ class NotesController < ApplicationController
     end
   end
 
+  def like
+    if Like.like(params[:id])
+      render action: "show"
+    end
+  end
+
   private
 
   def set_nav
