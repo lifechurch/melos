@@ -23,6 +23,10 @@ class Note
     Like.for_note(id)
   end
 
+  def like_for_user
+    Like.for_note(id, auth.user_id)
+  end
+
   def self.find(id, auth = nil)
     response = YvApi.get('notes/view', id: id ) do |errors|   # anonymous
       YvApi.get('notes/view', id: id, auth: auth) do |errors| # auth'ed
@@ -60,16 +64,16 @@ class Note
   build_objects(response.notes, auth)
   end
 
+  def for_user(user_id)
+    self.class.for_user(user_id, auth)
+  end
+
   def self.for_reference(ref)
     response = YvApi.get('notes/items', reference: ref.notes_api_string) do |errors|
       puts errors
       @errors = errors.map { |e| e["error"] }
       return false
     end
-  end
-
-  def for_user(user_id)
-    self.class.for_user(user_id, auth)
   end
 
   def create

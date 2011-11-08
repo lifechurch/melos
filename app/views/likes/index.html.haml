@@ -1,6 +1,20 @@
 %article
   - if request.path == user_likes_path(current_user)
     %h1= "My Likes"
+    %dl.combo_button.float_right
+      %dt View:
+      %dd
+        = link_to "All Likes", likes_path
+      %dd.highlighted
+        = link_to "My Likes", user_likes_path(current_user)
+  - else
+    %h1= "All Likes"
+    %dl.combo_button.float_right
+      %dt View:
+      %dd.highlighted
+        = link_to "All Likes", likes_path
+      %dd
+        = link_to "My Likes", user_likes_path(current_user)
   - if @likes
     %ul.big_list
       - @likes.each do |like|
