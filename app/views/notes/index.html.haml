@@ -1,20 +1,23 @@
 %article
-  - if request.path == user_notes_path(current_user)
-    %h1= "My Notes"
-    %dl.combo_button.float_right
-      %dt View:
-      %dd
-        = link_to "All Notes", notes_path
-      %dd.highlighted
-        = link_to "My Notes", user_notes_path(current_user)
+  - if current_auth
+    - if request.path == user_notes_path(current_user)
+      %h1= "My Notes"
+      %dl.combo_button.float_right
+        %dt View:
+        %dd
+          = link_to "All Notes", notes_path
+        %dd.highlighted
+          = link_to "My Notes", user_notes_path(current_user)
+    - else
+      %h1= "All Notes"
+      %dl.combo_button.float_right
+        %dt View:
+        %dd.highlighted
+          = link_to "All Notes", notes_path
+        %dd
+          = link_to "My Notes", user_notes_path(current_user)
   - else
     %h1= "All Notes"
-    %dl.combo_button.float_right
-      %dt View:
-      %dd.highlighted
-        = link_to "All Notes", notes_path
-      %dd
-        = link_to "My Notes", user_notes_path(current_user)
   - if @notes
     %ul.big_list
       - @notes.each do |note|
