@@ -1,0 +1,202 @@
+From d60117904fb2cc729c4db03cd2a57fd1f38b1c47 Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Mon, 7 Nov 2011 11:39:29 -0600
+Subject: [PATCH 50/55] Likes controller and view
+
+---
+ app/assets/javascripts/likes.js               |    2 ++
+ app/assets/stylesheets/likes.css.scss         |    3 +++
+ app/cells/likes_list_widget/display.html.haml |   21 +++++++++++++++++++++
+ app/cells/likes_list_widget_cell.rb           |   12 ++++++++++++
+ app/controllers/likes_controller.rb           |   13 +++++++++++++
+ app/helpers/likes_helper.rb                   |    2 ++
+ app/views/likes/index.html.haml               |   13 +++++++++++++
+ app/views/notes/show.html.haml                |    2 +-
+ config/routes.rb                              |    3 ++-
+ spec/controllers/likes_controller_spec.rb     |    5 +++++
+ spec/helpers/likes_helper_spec.rb             |   15 +++++++++++++++
+ 11 files changed, 89 insertions(+), 2 deletions(-)
+ create mode 100644 app/assets/javascripts/likes.js
+ create mode 100644 app/assets/stylesheets/likes.css.scss
+ create mode 100644 app/cells/likes_list_widget/display.html.haml
+ create mode 100644 app/cells/likes_list_widget_cell.rb
+ create mode 100644 app/controllers/likes_controller.rb
+ create mode 100644 app/helpers/likes_helper.rb
+ create mode 100644 app/views/likes/index.html.haml
+ create mode 100644 spec/controllers/likes_controller_spec.rb
+ create mode 100644 spec/helpers/likes_helper_spec.rb
+
+diff --git a/app/assets/javascripts/likes.js b/app/assets/javascripts/likes.js
+new file mode 100644
+index 0000000..dee720f
+--- /dev/null
++++ b/app/assets/javascripts/likes.js
+@@ -0,0 +1,2 @@
++// Place all the behaviors and hooks related to the matching controller here.
++// All this logic will automatically be available in application.js.
+diff --git a/app/assets/stylesheets/likes.css.scss b/app/assets/stylesheets/likes.css.scss
+new file mode 100644
+index 0000000..1f08d32
+--- /dev/null
++++ b/app/assets/stylesheets/likes.css.scss
+@@ -0,0 +1,3 @@
++// Place all the styles related to the likes controller here.
++// They will automatically be included in application.css.
++// You can use Sass (SCSS) here: http://sass-lang.com/
+diff --git a/app/cells/likes_list_widget/display.html.haml b/app/cells/likes_list_widget/display.html.haml
+new file mode 100644
+index 0000000..e930d42
+--- /dev/null
++++ b/app/cells/likes_list_widget/display.html.haml
+@@ -0,0 +1,21 @@
++%div.widget
++  %header
++    %a.count= @total
++    %span.header_icon_note= @title 
++  %section
++    %table
++      %tfoot
++        %tr
++          %th
++          %td.align_right
++            %a.more_arrow= link_to "All notes I like", @link
++
++      %tbody
++        - likes.first(5).each do |like|
++          %tr
++            %th
++              %a
++                %img.avatar_small{src: like.note_user_avatar_url.px_24x24}
++            %td
++              %a= link_to like.note_title, note_path(note.id)
++              %p= link_to "By #{@note_username}", user_path(note.note_user_id)
+diff --git a/app/cells/likes_list_widget_cell.rb b/app/cells/likes_list_widget_cell.rb
+new file mode 100644
+index 0000000..ae980eb
+--- /dev/null
++++ b/app/cells/likes_list_widget_cell.rb
+@@ -0,0 +1,12 @@
++class LikesListWidgetCell < Cell::Rails
++  helper ApplicationHelper
++
++  def display(opts = {})
++    @notes = opts[:likes].notes
++    @total = opts[:likes].total
++    @title = opts[:title] ||= "Likes"
++    @link = opts[:link] ||= notes_path
++    render
++  end
++
++end
+diff --git a/app/controllers/likes_controller.rb b/app/controllers/likes_controller.rb
+new file mode 100644
+index 0000000..a132851
+--- /dev/null
++++ b/app/controllers/likes_controller.rb
+@@ -0,0 +1,13 @@
++class LikesController < ApplicationController
++  before_filter :set_nav
++
++  def index
++    @likes = Like.all(current_user.id)
++  end
++
++  private
++
++  def set_nav
++    @nav = :notes
++  end
++end
+diff --git a/app/helpers/likes_helper.rb b/app/helpers/likes_helper.rb
+new file mode 100644
+index 0000000..a78a759
+--- /dev/null
++++ b/app/helpers/likes_helper.rb
+@@ -0,0 +1,2 @@
++module LikesHelper
++end
+diff --git a/app/views/likes/index.html.haml b/app/views/likes/index.html.haml
+new file mode 100644
+index 0000000..e5c8063
+--- /dev/null
++++ b/app/views/likes/index.html.haml
+@@ -0,0 +1,13 @@
++%article
++  - if request.path == user_likes_path(current_user)
++    %h1= "My Likes"
++  - if @likes
++    %ul.big_list
++      - @likes.each do |like|
++        %li{id: like.id}
++          %h5= link_to like.note_title, note_path(like.note_id)
++          %p.mute.small.negative_gutter_top_half= link_to_references(like.note.references)
++          %p= like.note.content_text
++          %div{class: "status"}= like.note.user_status
++  - else
++    %div{class: "none"}= "Sorry, no likes here!"
+diff --git a/app/views/notes/show.html.haml b/app/views/notes/show.html.haml
+index 6ad5940..4c3120c 100644
+--- a/app/views/notes/show.html.haml
++++ b/app/views/notes/show.html.haml
+@@ -6,7 +6,7 @@
+     %p
+       = label_tag :user_status, "Note Status:"
+       = @note.user_status
+-      = button_to('like', like_path(@note.id), :method => :put)
++      = button_to(@note.like.nil? ? 'like' : 'unlike', like_path(@note.id), :method => :put) unless @note.user_status == 'private'
+     - if current_auth.user_id == @note.user_id.to_i
+       = link_to('edit', edit_note_path(@note.id)) 
+       = link_to('delete this note', note_path(@note.id), :confirm => 'Are you sure?', :method => :delete) 
+diff --git a/config/routes.rb b/config/routes.rb
+index 08d0379..40b26ce 100644
+--- a/config/routes.rb
++++ b/config/routes.rb
+@@ -4,11 +4,12 @@ YouversionWeb::Application.routes.draw do
+   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
+   resources 'versions', :only => [:index, :show]
+   resources 'notes'
+-  match 'notes/like/:id' => 'notes#like',    :as => 'like', :via => :put
++  match 'notes/:id/like' => 'notes#like',    :as => 'like', :via => :put
+ 
+   # Users
+   resources 'users', :except => [:new, :create] do
+ 	resources 'notes'
++  resources 'likes', :only => [:index]
+ 	resources 'bookmarks'
+   end
+   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
+diff --git a/spec/controllers/likes_controller_spec.rb b/spec/controllers/likes_controller_spec.rb
+new file mode 100644
+index 0000000..dd39280
+--- /dev/null
++++ b/spec/controllers/likes_controller_spec.rb
+@@ -0,0 +1,5 @@
++require 'spec_helper'
++
++describe LikesController do
++
++end
+diff --git a/spec/helpers/likes_helper_spec.rb b/spec/helpers/likes_helper_spec.rb
+new file mode 100644
+index 0000000..8435874
+--- /dev/null
++++ b/spec/helpers/likes_helper_spec.rb
+@@ -0,0 +1,15 @@
++require 'spec_helper'
++
++# Specs in this file have access to a helper object that includes
++# the LikesHelper. For example:
++#
++# describe LikesHelper do
++#   describe "string concat" do
++#     it "concats two strings with spaces" do
++#       helper.concat_strings("this","that").should == "this that"
++#     end
++#   end
++# end
++describe LikesHelper do
++  pending "add some examples to (or delete) #{__FILE__}"
++end
+-- 
+1.7.0.4
+

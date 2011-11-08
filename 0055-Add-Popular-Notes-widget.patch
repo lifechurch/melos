@@ -1,0 +1,76 @@
+From 64c056220bec4f65a276922977520751ed575b7e Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Tue, 8 Nov 2011 08:44:24 -0600
+Subject: [PATCH 55/55] Add Popular Notes widget
+
+---
+ app/cells/likes_list_widget_cell.rb                |    2 +-
+ app/cells/popular_notes_list_widget.rb             |   13 +++++++++++
+ .../popular_notes_list_widget/display.html.haml    |   22 ++++++++++++++++++++
+ 3 files changed, 36 insertions(+), 1 deletions(-)
+ create mode 100644 app/cells/popular_notes_list_widget.rb
+ create mode 100644 app/cells/popular_notes_list_widget/display.html.haml
+
+diff --git a/app/cells/likes_list_widget_cell.rb b/app/cells/likes_list_widget_cell.rb
+index c3dc8fc..5ce507e 100644
+--- a/app/cells/likes_list_widget_cell.rb
++++ b/app/cells/likes_list_widget_cell.rb
+@@ -5,7 +5,7 @@ class LikesListWidgetCell < Cell::Rails
+     @likes = opts[:likes]
+     @total = opts[:likes].count if opts[:likes]
+     @title = opts[:title] ||= "Likes"
+-    @link = opts[:link] ||= likes_path(opts[:user_id])
++    @link = opts[:link] ||= user_likes_path(opts[:user_id])
+     render
+   end
+ 
+diff --git a/app/cells/popular_notes_list_widget.rb b/app/cells/popular_notes_list_widget.rb
+new file mode 100644
+index 0000000..f85896b
+--- /dev/null
++++ b/app/cells/popular_notes_list_widget.rb
+@@ -0,0 +1,13 @@
++class PopularNotesListWidgetCell < Cell::Rails
++  helper ApplicationHelper
++
++  def display(opts = {})
++    @notes = opts[:notes]
++    @total = opts[:notes].count if opts[:notes]
++    @title = opts[:title] ||= "Most Popular Notes"
++    @link = opts[:link] ||= user_likes_path(opts[:user_id])
++    render
++  end
++
++end
++
+diff --git a/app/cells/popular_notes_list_widget/display.html.haml b/app/cells/popular_notes_list_widget/display.html.haml
+new file mode 100644
+index 0000000..18da669
+--- /dev/null
++++ b/app/cells/popular_notes_list_widget/display.html.haml
+@@ -0,0 +1,22 @@
++%div.widget
++  %header
++    %a.count= @total
++    %span.header_icon_note= @title 
++  %section
++    %table
++      %tfoot
++        %tr
++          %th
++          %td.align_right
++            %a.more_arrow= link_to "All Likes", @link
++
++      %tbody
++        - if @notes
++          - @notes.first(5).each do |note|
++            %tr
++              %th
++                %a
++                  %img.avatar_small{src: note.user_avatar_url.px_24x24}
++              %td
++                %a= link_to note.title, note_path(note.id)
++                %p= link_to "By #{note.username}", user_path(note.user_id)
+-- 
+1.7.0.4
+

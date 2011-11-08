@@ -1,0 +1,25 @@
+From e9264afcedb76b9bf0e972901c8aeb9d3a6531d2 Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Fri, 21 Oct 2011 14:05:05 -0500
+Subject: [PATCH 12/55] Work
+
+---
+ app/controllers/application_controller.rb |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/app/controllers/application_controller.rb b/app/controllers/application_controller.rb
+index 1932f56..04904ef 100644
+--- a/app/controllers/application_controller.rb
++++ b/app/controllers/application_controller.rb
+@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
+   private
+ 
+   def current_auth
+-    @tester = Hashie::Mash.new( {'id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
++    Hashie::Mash.new( {'id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
+   end
+   def current_user
+     unless @current_user
+-- 
+1.7.0.4
+

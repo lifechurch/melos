@@ -1,0 +1,195 @@
+From 825c773c0de24452948a5d625690a62c7ea94f28 Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Fri, 21 Oct 2011 16:53:58 -0500
+Subject: [PATCH 16/55] Notes work
+
+---
+ app/models/note.rb                         |   15 +++++-
+ app/views/notes/index.html.haml            |   11 ++--
+ features/notes.feature                     |    2 +-
+ features/step_definitions/general_steps.rb |    6 ++
+ features/support/paths.rb                  |    2 +
+ fixtures/vcr/cuke/cucumber_tags/bible.yml  |   76 ++++++++++++++++++++++++++++
+ 6 files changed, 105 insertions(+), 7 deletions(-)
+
+diff --git a/app/models/note.rb b/app/models/note.rb
+index 52a906b..808ddf3 100644
+--- a/app/models/note.rb
++++ b/app/models/note.rb
+@@ -40,11 +40,24 @@ class Note
+     @note.auth = auth
+     @note
+   end
+-  
++    
+   def find(id, auth)
+     self.class.find(id, auth)
+   end
+   
++  def self.find_by_title(title, auth) 
++    response = YvApi.get('notes/search', {:user_id => auth.id, :query => title, :page => 1, :auth => auth} ) do |errors|     
++      @errors = errors.map { |e| e["error"] }
++      return false
++    end
++debugger    
++    response    
++  end
++    
++  def find_by_title(id, auth)
++    self.class.find_by_title(id, auth)
++  end  
++  
+   def self.all(auth) 
+     response = YvApi.get('notes/items', {:user_id => auth.id, :auth => auth} ) do |errors|     
+       @errors = errors.map { |e| e["error"] }
+diff --git a/app/views/notes/index.html.haml b/app/views/notes/index.html.haml
+index 71393aa..5dd5686 100644
+--- a/app/views/notes/index.html.haml
++++ b/app/views/notes/index.html.haml
+@@ -1,8 +1,9 @@
+ #note
+   %h1= "My Notes"
+   - @notes.each do |note|
+-    %div{id: "title"}= note.title
+-    %div{id: "content"}= note.content_text
+-    %div{id: "version"}= note.version
+-    %div{id: "reference"}= references_breakout(note.reference)
+-    %div{id: "status"}= note.user_status
+\ No newline at end of file
++    %div{id: note.id}
++      %div{class: "title"}= note.title
++      %div{class: "content"}= note.content_text
++      %div{class: "version"}= note.version
++      %div{class: "reference"}= references_breakout(note.reference)
++      %div{class: "status"}= note.user_status
+\ No newline at end of file
+diff --git a/features/notes.feature b/features/notes.feature
+index 727b07e..dc97e79 100644
+--- a/features/notes.feature
++++ b/features/notes.feature
+@@ -26,7 +26,7 @@ Feature: Notes view
+     | Author    | Title           | Content                 | References  | Status  |
+     | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
+     And I am logged in as "testuser" with password "tenders" 
+-    When I go to the notes index page for user "testuser" 
++    When I go to the notes index page
+     Then I should see a link to "Public Note" 
+     When I follow "Public Note" 
+     Then I should see a link to "edit" 
+diff --git a/features/step_definitions/general_steps.rb b/features/step_definitions/general_steps.rb
+index 70d9253..3b4c55d 100644
+--- a/features/step_definitions/general_steps.rb
++++ b/features/step_definitions/general_steps.rb
+@@ -10,6 +10,12 @@ Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/ do |arg1, arg2|
+   assert page.has_content?('Signed in!')
+ end
+ 
++Given /^notes exist with the following attributes:$/ do |table|
++  @row = table.hashes.first
++  puts "TODO: Complete"
++  Note.find_by_title(@row['title'])
++end
++
+ When /^I select "([^"]*)" from the dropdown "([^"]*)"$/ do |arg1, arg2|
+   select(arg1, :from => arg2)
+ end
+diff --git a/features/support/paths.rb b/features/support/paths.rb
+index 1e4e67f..020cd13 100644
+--- a/features/support/paths.rb
++++ b/features/support/paths.rb
+@@ -20,6 +20,8 @@ module NavigationHelpers
+       version_path $1
+     when /^new note page$/
+       notes_path
++    when /^the notes index page$/
++      notes_path      
+     when /^a show note page$/
+       notes_path(note: $1)
+       
+diff --git a/fixtures/vcr/cuke/cucumber_tags/bible.yml b/fixtures/vcr/cuke/cucumber_tags/bible.yml
+index 99b6ed1..d99f33e 100644
+--- a/fixtures/vcr/cuke/cucumber_tags/bible.yml
++++ b/fixtures/vcr/cuke/cucumber_tags/bible.yml
+@@ -706,3 +706,79 @@
+       1:1"}],"version":"kjv","created":"2011-10-21 20:34:22+00","published":null,"updated":"2011-10-21
+       20:34:22.986266+00","user_status":"draft","system_status":"new"},"buildtime":"2011-10-21T20:34:23+00:00"}}'
+     http_version: '1.1'
++- !ruby/struct:VCR::HTTPInteraction
++  request: !ruby/struct:VCR::Request
++    method: :get
++    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163176
++    body: !!null 
++    headers:
++      referer:
++      - http://web.youversion.com
++  response: !ruby/struct:VCR::Response
++    status: !ruby/struct:VCR::ResponseStatus
++      code: 200
++      message: OK
++    headers:
++      server:
++      - nginx/0.7.67
++      date:
++      - Fri, 21 Oct 2011 21:35:08 GMT
++      content-type:
++      - text/plain; charset=utf-8
++      transfer-encoding:
++      - chunked
++      connection:
++      - keep-alive
++      vary:
++      - Accept-Encoding
++    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
++      13:23:17.36098+00","last_login":"2011-10-21 21:11:46+00"},"buildtime":"2011-10-21T21:35:08+00:00"}}'
++    http_version: '1.1'
++- !ruby/struct:VCR::HTTPInteraction
++  request: !ruby/struct:VCR::Request
++    method: :get
++    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/items.json?user_id=4163177
++    body: !!null 
++    headers:
++      referer:
++      - http://web.youversion.com
++  response: !ruby/struct:VCR::Response
++    status: !ruby/struct:VCR::ResponseStatus
++      code: 200
++      message: OK
++    headers:
++      server:
++      - nginx/0.7.67
++      date:
++      - Fri, 21 Oct 2011 21:37:01 GMT
++      content-type:
++      - text/plain; charset=utf-8
++      transfer-encoding:
++      - chunked
++      connection:
++      - keep-alive
++      vary:
++      - Accept-Encoding
++    body: ! '{"response":{"code":200,"data":{"total":9,"notes":[{"id":"935769","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"awef","highlight_color":null,"url":"\/notes\/935769\/awef","short_url":"http:\/\/dev.read.ly\/n\/3vR3","content_text":"waefwae","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
++      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 20:36:57+00","published":null,"updated":"2011-10-21
++      20:36:57.271571+00","user_status":"draft","system_status":"new"},{"id":"935768","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"awef","highlight_color":null,"url":"\/notes\/935768\/awef","short_url":"http:\/\/dev.read.ly\/n\/3vR2","content_text":"waefwae","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
++      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 20:36:02+00","published":null,"updated":"2011-10-21
++      20:36:02.401272+00","user_status":"draft","system_status":"new"},{"id":"935767","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Note
++      Title","highlight_color":null,"url":"\/notes\/935767\/note-title","short_url":"http:\/\/dev.read.ly\/n\/3vR1","content_text":"Note
++      Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
++      1:1"}],"version":"kjv","created":"2011-10-21 20:34:22+00","published":null,"updated":"2011-10-21
++      20:34:22.986266+00","user_status":"draft","system_status":"new"},{"id":"935766","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"awef","highlight_color":null,"url":"\/notes\/935766\/awef","short_url":"http:\/\/dev.read.ly\/n\/3vR0","content_text":"waefwae","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
++      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 20:32:54+00","published":null,"updated":"2011-10-21
++      20:32:54.170056+00","user_status":"draft","system_status":"new"},{"id":"935765","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"waefwaef","highlight_color":null,"url":"\/notes\/935765\/waefwaef","short_url":"http:\/\/dev.read.ly\/n\/3vQz","content_text":"awefawe","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1-2","human":"Genesis
++      1:1-2"}],"version":"b21","created":"2011-10-21 20:18:57+00","published":null,"updated":"2011-10-21
++      20:18:57.518924+00","user_status":"draft","system_status":"new"},{"id":"935764","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Title","highlight_color":null,"url":"\/notes\/935764\/title","short_url":"http:\/\/dev.read.ly\/n\/3vQy","content_text":"The
++      Best","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1-2","human":"S\u00e1ng-th\u1ebf
++      K\u00fd 1:1-2"}],"version":"vi1934","created":"2011-10-21 20:13:55+00","published":null,"updated":"2011-10-21
++      20:13:55.593453+00","user_status":"draft","system_status":"new"},{"id":"935763","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"title","highlight_color":null,"url":"\/notes\/935763\/title","short_url":"http:\/\/dev.read.ly\/n\/3vQx","content_text":"Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
++      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 19:24:15+00","published":null,"updated":"2011-10-21
++      19:24:15.922113+00","user_status":"draft","system_status":"new"},{"id":"935762","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"title","highlight_color":null,"url":"\/notes\/935762\/title","short_url":"http:\/\/dev.read.ly\/n\/3vQw","content_text":"Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
++      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 19:23:32+00","published":null,"updated":"2011-10-21
++      19:23:32.711877+00","user_status":"draft","system_status":"new"},{"id":"935761","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"title","highlight_color":null,"url":"\/notes\/935761\/title","short_url":"http:\/\/dev.read.ly\/n\/3vQv","content_text":"Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"S\u00e1ng-th\u1ebf
++      K\u00fd 1:1"}],"version":"vi1934","created":"2011-10-21 19:22:26+00","published":null,"updated":"2011-10-21
++      19:22:26.70543+00","user_status":"draft","system_status":"new"}]},"buildtime":"2011-10-21T21:37:00+00:00"}}'
++    http_version: '1.1'
+-- 
+1.7.0.4
+

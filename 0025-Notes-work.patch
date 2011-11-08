@@ -1,0 +1,105 @@
+From 0a4bea16742746fce4bd1090f40f0051abb4a27f Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Tue, 25 Oct 2011 12:45:58 -0500
+Subject: [PATCH 25/55] Notes work
+
+---
+ app/controllers/notes_controller.rb |    5 +++--
+ app/models/note.rb                  |   15 ++++++++++++---
+ app/views/notes/_form.html.haml     |    2 +-
+ app/views/notes/show.html.haml      |    2 +-
+ 4 files changed, 17 insertions(+), 7 deletions(-)
+
+diff --git a/app/controllers/notes_controller.rb b/app/controllers/notes_controller.rb
+index 14a5224..65a45ea 100644
+--- a/app/controllers/notes_controller.rb
++++ b/app/controllers/notes_controller.rb
+@@ -6,6 +6,7 @@ class NotesController < ApplicationController
+ 
+   def show
+     @note = Note.find(params[:id], current_auth)
++    @note.content = @note.content_html
+     raise ActionController::RoutingError.new('Not Found') unless @note
+   end
+ 
+@@ -32,7 +33,7 @@ class NotesController < ApplicationController
+     @note = Note.new(params[:note])
+     @note.auth = current_auth
+ 
+-    if @note = @note.save
++    if @note = @note.create
+       render action: "show"
+     else
+       @url_path = notes_path
+@@ -44,7 +45,7 @@ class NotesController < ApplicationController
+   def update
+     @note = Note.find(params[:id], current_auth)
+ 
+-    if @return_note = @note.save_attributes(params[:note])
++    if @return_note = @note.update(params[:id], params[:note])
+       @note = @return_note
+       render action: "show"
+     else
+diff --git a/app/models/note.rb b/app/models/note.rb
+index f430c18..2afd199 100644
+--- a/app/models/note.rb
++++ b/app/models/note.rb
+@@ -67,7 +67,7 @@ class Note
+     self.class.all(auth)
+   end
+     
+-  def save
++  def create
+     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
+     @content = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE yv-note SYSTEM "http://' << Cfg.api_root << '/pub/yvml_1_0.dtd"><yv-note>' << @precontent << '</yv-note>'
+     @reference = @reference.gsub('+', '%2b')
+@@ -80,9 +80,18 @@ class Note
+     response
+   end
+   
+-  def save_attributes(fields)
++  def update(id, fields)
+     save_values(fields)
+-    return save
++    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
++    @content = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE yv-note SYSTEM "http://' << Cfg.api_root << '/pub/yvml_1_0.dtd"><yv-note>' << @precontent << '</yv-note>'
++    @reference = @reference.gsub('+', '%2b')
++
++    response = YvApi.post('notes/update', attributes(:id, :title, :content, :language_iso, :reference, :version,
++        :published, :user_status, :shared_connections, :token, :auth)) do |errors|
++      @errors = errors.map { |e| e["error"] }      
++      return false
++    end
++    response
+   end
+   
+   def destroy
+diff --git a/app/views/notes/_form.html.haml b/app/views/notes/_form.html.haml
+index 5a29be0..7587dad 100644
+--- a/app/views/notes/_form.html.haml
++++ b/app/views/notes/_form.html.haml
+@@ -10,7 +10,7 @@
+     = f.text_field :title
+   %p
+     = f.label :content, "Content:"
+-    = f.text_field :precontent
++    = f.text_area :precontent
+   %p
+     = f.label :version, "Version:"
+     = f.select :version, options_for_select(versions_dropdown, @note.version), {:prompt => '--Select--'}
+diff --git a/app/views/notes/show.html.haml b/app/views/notes/show.html.haml
+index c910ab3..26f80fe 100644
+--- a/app/views/notes/show.html.haml
++++ b/app/views/notes/show.html.haml
+@@ -3,7 +3,7 @@
+   = label_tag :title, "Note Title:"
+   = @note.title
+   = label_tag :content, "Note Content:"
+-  = @note.content
++  = raw(@note.content)
+   = label_tag :version, "Note Version:"
+   = @note.version
+   = label_tag :reference, "Note Reference:"
+-- 
+1.7.0.4
+

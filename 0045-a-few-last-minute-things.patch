@@ -1,0 +1,60 @@
+From b2043fba0e2447146145518e07af44d02abd85f7 Mon Sep 17 00:00:00 2001
+From: Chad Bailey <chadbailey@gmail.com>
+Date: Mon, 31 Oct 2011 22:45:59 -0500
+Subject: [PATCH 45/55] a few last minute things
+
+Change-Id: Ie1849dfb7c5b0357c386c92a0b9f8fc8a95dc47c
+---
+ app/controllers/notes_controller.rb |    6 +-----
+ app/models/note.rb                  |   16 +++++-----------
+ 2 files changed, 6 insertions(+), 16 deletions(-)
+
+diff --git a/app/controllers/notes_controller.rb b/app/controllers/notes_controller.rb
+index 6ab93ba..e789919 100644
+--- a/app/controllers/notes_controller.rb
++++ b/app/controllers/notes_controller.rb
+@@ -1,11 +1,7 @@
+ class NotesController < ApplicationController
+   
+   def index
+-    if current_auth
+-      @notes = Note.for_user(current_auth.id, current_auth)
+-    else
+-      @notes = Note.all(nil)
+-    end
++    Note.all(current_auth)
+   end
+ 
+   def show
+diff --git a/app/models/note.rb b/app/models/note.rb
+index 604f025..b7e9ffe 100644
+--- a/app/models/note.rb
++++ b/app/models/note.rb
+@@ -44,19 +44,13 @@ class Note
+   end
+ 
+   def self.for_user(user_id, auth)
+-    if auth
+-      response = YvApi.get('notes/items', {:user_id => user_id, :auth => auth} ) do |errors|
+-        @errors = errors.map { |e| e["error"] }
+-        return false
+-      end
+-    elsif !auth
+-      response = YvApi.get('notes/items') do |errors|
+-        @errors = errors.map { |e| e["error"] }
+-        return false
+-      end
++    response = YvApi.get('notes/items', {:user_id => user_id, :auth => auth} ) do |errors|
++    @errors = errors.map { |e| e["error"] }
++      return false
+     end
++  end
+ 
+-    build_objects(response.notes, auth)
++  build_objects(response.notes, auth)
+   end
+ 
+   def for_user(user_id)
+-- 
+1.7.0.4
+

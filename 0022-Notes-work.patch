@@ -1,0 +1,144 @@
+From 218577eaa81f078e20fa53f3ac944b53cfb64ce3 Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Mon, 24 Oct 2011 16:58:56 -0500
+Subject: [PATCH 22/55] Notes work
+
+---
+ app/controllers/notes_controller.rb       |    2 +-
+ app/models/note.rb                        |    2 +-
+ app/views/notes/index.html.haml           |   17 ++++++++++-------
+ features/notes.feature                    |    4 ++--
+ fixtures/vcr/cuke/cucumber_tags/bible.yml |   28 ++++++++++++++++++++++++++++
+ lib/yv_api.rb                             |    5 ++++-
+ 6 files changed, 46 insertions(+), 12 deletions(-)
+
+diff --git a/app/controllers/notes_controller.rb b/app/controllers/notes_controller.rb
+index 87a9c9f..98587d6 100644
+--- a/app/controllers/notes_controller.rb
++++ b/app/controllers/notes_controller.rb
+@@ -27,7 +27,7 @@ class NotesController < ApplicationController
+     @note = Note.new(params[:note])
+     @note.auth = current_auth
+ 
+-    if @note.save
++    if @note = @note.save
+       render action: "show"
+     else
+       render action: "new"
+diff --git a/app/models/note.rb b/app/models/note.rb
+index 6712c84..6c13b79 100644
+--- a/app/models/note.rb
++++ b/app/models/note.rb
+@@ -80,7 +80,7 @@ puts @errors
+         :published, :user_status, :shared_connections, :token, :auth)) do |errors|
+       @errors = errors.map { |e| e["error"] }      
+       return false
+-    end    
++    end
+     response
+   end
+   
+diff --git a/app/views/notes/index.html.haml b/app/views/notes/index.html.haml
+index 683f4d6..7d57c7c 100644
+--- a/app/views/notes/index.html.haml
++++ b/app/views/notes/index.html.haml
+@@ -1,9 +1,12 @@
+ #note
+   %h1= "My Notes"
+-  - @notes.each do |note|
+-    %div{id: note.id}
+-      %div{class: "title"}= link_to note.title, note_path(note.id)
+-      %div{class: "content"}= note.content_text
+-      %div{class: "version"}= note.version
+-      %div{class: "reference"}= references_breakout(note.reference)
+-      %div{class: "status"}= note.user_status
+\ No newline at end of file
++  - if @notes
++    - @notes.each do |note|
++      %div{id: note.id}
++        %div{class: "title"}= link_to note.title, note_path(note.id)
++        %div{class: "content"}= note.content_text
++        %div{class: "version"}= note.version
++        %div{class: "reference"}= references_breakout(note.reference)
++        %div{class: "status"}= note.user_status
++  - else
++    %div{class: "none"}= "Sorry, no notes here!"
+\ No newline at end of file
+diff --git a/features/notes.feature b/features/notes.feature
+index 860bd8a..d54ee0d 100644
+--- a/features/notes.feature
++++ b/features/notes.feature
+@@ -50,7 +50,7 @@ Feature: Notes view
+     Then I should see a link to "delete this note" 
+     When I follow "delete this note" 
+     # And confirm it somehow
+-    Then I should be on the notes index page for user "testuser" 
++    Then I should be on the notes index page
+     And I should not see "Public Note"
+     
+   @bible
+@@ -64,7 +64,7 @@ Feature: Notes view
+     | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv | Public  |
+     | testuser2 | Another Private | Another Private Content | gen.1.4.kjv | Private |
+     And I am logged in as "testuser2" with password "tenders" 
+-    When I go to the notes index page for user "testuser" 
++    When I go to the notes index page
+     Then I should see a link to "Public Note" 
+     And I should see "Public Content" 
+     And I should not see "Private Note" 
+diff --git a/fixtures/vcr/cuke/cucumber_tags/bible.yml b/fixtures/vcr/cuke/cucumber_tags/bible.yml
+index 9c8763f..77748b7 100644
+--- a/fixtures/vcr/cuke/cucumber_tags/bible.yml
++++ b/fixtures/vcr/cuke/cucumber_tags/bible.yml
+@@ -905,3 +905,31 @@
+     body: ! '{"response":{"code":404,"data":{"errors":[{"key":"notes.note.not_found","error":"Note
+       not found"}]},"buildtime":"2011-10-24T21:31:05+00:00"}}'
+     http_version: '1.1'
++- !ruby/struct:VCR::HTTPInteraction
++  request: !ruby/struct:VCR::Request
++    method: :get
++    uri: http://testuser2:tenders@api.yvdev.com:80/2.3/notes/items.json?user_id=4163176
++    body: !!null 
++    headers:
++      referer:
++      - http://web.youversion.com
++  response: !ruby/struct:VCR::Response
++    status: !ruby/struct:VCR::ResponseStatus
++      code: 200
++      message: OK
++    headers:
++      server:
++      - nginx/0.7.67
++      date:
++      - Mon, 24 Oct 2011 21:48:24 GMT
++      content-type:
++      - text/plain; charset=utf-8
++      transfer-encoding:
++      - chunked
++      connection:
++      - keep-alive
++      vary:
++      - Accept-Encoding
++    body: ! '{"response":{"code":404,"data":{"errors":[{"key":"notes.notes.not_found","error":"No
++      notes found"}]},"buildtime":"2011-10-24T21:48:24+00:00"}}'
++    http_version: '1.1'
+diff --git a/lib/yv_api.rb b/lib/yv_api.rb
+index 1b517df..0e29a4b 100644
+--- a/lib/yv_api.rb
++++ b/lib/yv_api.rb
+@@ -106,8 +106,11 @@ class YvApi
+       # If it DID work, use the response from the block as the new response
+       return new_response
+     end
++    
+     # creating a resource? Just return success
+-    return true if response["response"]["code"] == 201
++    # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
++    #return true if response["response"]["code"] == 201
++    
+     # Otherwise, turn the data back into a Mash and return it
+     return response["response"]["data"].class == Array ? response["response"]["data"].map {|e| Hashie::Mash.new(e)} : Hashie::Mash.new(response["response"]["data"])
+   end
+-- 
+1.7.0.4
+

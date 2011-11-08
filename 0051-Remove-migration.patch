@@ -1,0 +1,27 @@
+From 2b732f0e414971eb8784c60b65eb242ecd80e190 Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Mon, 7 Nov 2011 11:42:25 -0600
+Subject: [PATCH 51/55] Remove migration
+
+---
+ db/migrate/20111107013043_create_likes.rb |    8 --------
+ 1 files changed, 0 insertions(+), 8 deletions(-)
+ delete mode 100644 db/migrate/20111107013043_create_likes.rb
+
+diff --git a/db/migrate/20111107013043_create_likes.rb b/db/migrate/20111107013043_create_likes.rb
+deleted file mode 100644
+index 2db28b3..0000000
+--- a/db/migrate/20111107013043_create_likes.rb
++++ /dev/null
+@@ -1,8 +0,0 @@
+-class CreateLikes < ActiveRecord::Migration
+-  def change
+-    create_table :likes do |t|
+-
+-      t.timestamps
+-    end
+-  end
+-end
+-- 
+1.7.0.4
+

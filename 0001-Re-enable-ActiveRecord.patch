@@ -1,0 +1,196 @@
+From 75321883921e1a0b36bc3f3c447bde9a85cd6282 Mon Sep 17 00:00:00 2001
+From: Chad Bailey <chadbailey@gmail.com>
+Date: Mon, 17 Oct 2011 16:52:05 -0500
+Subject: [PATCH 01/55] Re-enable ActiveRecord
+
+Change-Id: Iea8132d0570942674a780529ce06429cda45a13f
+---
+ Gemfile               |    5 +----
+ Gemfile.lock          |   22 ++++++++++++++++++++++
+ config/application.rb |    9 +--------
+ config/database.yml   |    4 +++-
+ config/routes.rb      |    1 +
+ db/schema.rb          |   16 ++++++++++++++++
+ spec/spec_helper.rb   |    4 ++--
+ 7 files changed, 46 insertions(+), 15 deletions(-)
+ create mode 100644 db/schema.rb
+
+diff --git a/Gemfile b/Gemfile
+index e892d72..b6110f9 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -7,10 +7,7 @@ gem 'hashie'
+ gem 'cells'
+ gem 'haml-rails', "  ~> 0.3.4"
+ gem 'jquery-rails'
+-
+-# Bundle edge Rails instead:
+-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+-
++gem 'pg'
+ 
+ 
+ # Gems used only for assets and not required
+diff --git a/Gemfile.lock b/Gemfile.lock
+index 1c0f491..6851b5a 100644
+--- a/Gemfile.lock
++++ b/Gemfile.lock
+@@ -48,6 +48,10 @@ GEM
+     childprocess (0.2.2)
+       ffi (~> 1.0.6)
+     coderay (0.9.8)
++    coffee-script (2.2.0)
++      coffee-script-source
++      execjs
++    coffee-script-source (1.1.2)
+     crack (0.1.8)
+     cucumber (1.0.2)
+       builder (>= 2.1.2)
+@@ -102,6 +106,8 @@ GEM
+     json (1.5.4)
+     json_pure (1.5.4)
+       spruz (~> 0.2.8)
++    kaminari (0.12.4)
++      rails (>= 3.0.0)
+     launchy (2.0.5)
+       addressable (~> 2.2.6)
+     mail (2.3.0)
+@@ -114,6 +120,7 @@ GEM
+     mime-types (1.16)
+     multi_json (1.0.3)
+     nokogiri (1.5.0)
++    pg (0.11.0)
+     polyglot (0.3.2)
+     pry (0.9.3)
+       coderay (>= 0.9.8)
+@@ -188,6 +195,12 @@ GEM
+     term-ansicolor (1.0.6)
+     thor (0.14.6)
+     tilt (1.3.3)
++    tr8n (3.1.1)
++      coffee-script
++      kaminari
++      rails (>= 3.1.0)
++      sass
++      will_filter (>= 3.1.2)
+     treetop (1.4.10)
+       polyglot
+       polyglot (>= 0.3.1)
+@@ -201,6 +214,11 @@ GEM
+     webmock (1.7.6)
+       addressable (~> 2.2, > 2.2.5)
+       crack (>= 0.1.7)
++    will_filter (3.1.3)
++      coffee-script
++      kaminari
++      rails (>= 3.1.0)
++      sass
+     xpath (0.1.4)
+       nokogiri (~> 1.3)
+ 
+@@ -220,13 +238,17 @@ DEPENDENCIES
+   heroku_san
+   httparty
+   jquery-rails
++  kaminari
+   memcache-client
++  pg
+   pry
+   rails (~> 3.1.0)
+   rspec-cells
+   rspec-rails (>= 2.6.0)
+   sass-rails (~> 3.1.0)
++  tr8n (~> 3.1.1)
+   turn
+   uglifier
+   vcr
+   webmock
++  will_filter (~> 3.1.2)
+diff --git a/config/application.rb b/config/application.rb
+index 3989008..c028775 100644
+--- a/config/application.rb
++++ b/config/application.rb
+@@ -1,12 +1,5 @@
+ require File.expand_path('../boot', __FILE__)
+-# require 'rails/all' -  Uncomment this and remove the following to add
+-# ActiveRecord back into the mix
+-require "action_controller/railtie"
+-require "action_mailer/railtie"
+-require "active_resource/railtie"
+-require "rails/test_unit/railtie"
+-# End of removed ActiveRecord section - remove above to re-enable
+-# ActiveRecord
++require 'rails/all'
+ 
+ require File.expand_path('../_config', __FILE__)
+ require File.expand_path('../../lib/osis', __FILE__)
+diff --git a/config/database.yml b/config/database.yml
+index 779c7c5..51849d6 100644
+--- a/config/database.yml
++++ b/config/database.yml
+@@ -1,8 +1,10 @@
+ # Boilerplate for now. Will fill in when necessary.
+ common: &common
+   adapter: postgresql
++  host: localhost
++  port: 5432
+   username: yv_web
+-  password: vt5igg1ycSYBEiP4Zg5p # from psql setup, see Postgresql
++  # password: vt5igg1ycSYBEiP4Zg5p # from psql setup, see Postgresql
+ 
+ development:
+   <<: *common
+diff --git a/config/routes.rb b/config/routes.rb
+index db5b0d2..8909d27 100644
+--- a/config/routes.rb
++++ b/config/routes.rb
+@@ -1,4 +1,5 @@
+ YouversionWeb::Application.routes.draw do
++
+   # Bible
+   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
+   resources 'versions', :only => [:index, :show]
+diff --git a/db/schema.rb b/db/schema.rb
+new file mode 100644
+index 0000000..b5e6a79
+--- /dev/null
++++ b/db/schema.rb
+@@ -0,0 +1,16 @@
++# encoding: UTF-8
++# This file is auto-generated from the current state of the database. Instead
++# of editing this file, please use the migrations feature of Active Record to
++# incrementally modify your database, and then regenerate this schema definition.
++#
++# Note that this schema.rb definition is the authoritative source for your
++# database schema. If you need to create the application database on another
++# system, you should be using db:schema:load, not running all the migrations
++# from scratch. The latter is a flawed and unsustainable approach (the more migrations
++# you'll amass, the slower it'll run and the greater likelihood for issues).
++#
++# It's strongly recommended to check this file into your version control system.
++
++ActiveRecord::Schema.define(:version => 0) do
++
++end
+diff --git a/spec/spec_helper.rb b/spec/spec_helper.rb
+index 7205dd6..33435b1 100644
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -20,12 +20,12 @@ RSpec.configure do |config|
+   config.mock_with :rspec
+ 
+   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+-  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
++  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+ 
+   # If you're not using ActiveRecord, or you'd prefer not to run each of your
+   # examples within a transaction, remove the following line or assign false
+   # instead of true.
+-  # config.use_transactional_fixtures = true
++  config.use_transactional_fixtures = true
+ end
+ 
+ # VCR config (for recording/replaying network)
+-- 
+1.7.0.4
+

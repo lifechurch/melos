@@ -1,0 +1,537 @@
+From 6171bc1ac61cc7ed0e3b959de4e51e971ad9b041 Mon Sep 17 00:00:00 2001
+From: Chad Bailey <chadbailey@gmail.com>
+Date: Wed, 26 Oct 2011 09:19:22 -0500
+Subject: [PATCH 28/55] added locale support
+
+Change-Id: I231fb75fd29fece2c9cc4772baa814fb5df0c761
+---
+ Gemfile                                         |    1 -
+ Gemfile.lock                                    |    3 ++
+ app/controllers/application_controller.rb       |   27 +++++++++++++++-------
+ app/helpers/url_helper.rb                       |   14 ++++++++++++
+ app/views/layouts/application.html.haml         |    5 +++-
+ config/initializers/session_store.rb            |    2 +-
+ config/locales/de.yml                           |   20 +++++++++++++++++
+ config/locales/en.yml                           |    1 +
+ config/locales/es.yml                           |   20 +++++++++++++++++
+ config/locales/fr.yml                           |   20 +++++++++++++++++
+ config/locales/ko.yml                           |   20 +++++++++++++++++
+ config/locales/nl.yml                           |   20 +++++++++++++++++
+ config/locales/no.yml                           |   20 +++++++++++++++++
+ config/locales/pt.yml                           |   20 +++++++++++++++++
+ config/locales/ru.yml                           |   20 +++++++++++++++++
+ config/locales/zh-cn.yml                        |   20 +++++++++++++++++
+ config/locales/zh-tw.yml                        |   20 +++++++++++++++++
+ config/routes.rb                                |    2 +-
+ doc/README_FOR_APP                              |   12 ++++++++-
+ features/step_definitions/yv_steps.rb           |    8 +++++-
+ spec/controllers/application_controller_spec.rb |   25 +++++++++++++++++++++
+ 21 files changed, 283 insertions(+), 17 deletions(-)
+ create mode 100644 app/helpers/url_helper.rb
+ create mode 100644 config/locales/de.yml
+ create mode 100644 config/locales/es.yml
+ create mode 100644 config/locales/fr.yml
+ create mode 100644 config/locales/ko.yml
+ create mode 100644 config/locales/nl.yml
+ create mode 100644 config/locales/no.yml
+ create mode 100644 config/locales/pt.yml
+ create mode 100644 config/locales/ru.yml
+ create mode 100644 config/locales/zh-cn.yml
+ create mode 100644 config/locales/zh-tw.yml
+ create mode 100644 spec/controllers/application_controller_spec.rb
+
+diff --git a/Gemfile b/Gemfile
+index b6110f9..d70b812 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -9,7 +9,6 @@ gem 'haml-rails', "  ~> 0.3.4"
+ gem 'jquery-rails'
+ gem 'pg'
+ 
+-
+ # Gems used only for assets and not required
+ # in production environments by default.
+ group :assets do
+diff --git a/Gemfile.lock b/Gemfile.lock
+index 12fb6fd..45abe32 100644
+--- a/Gemfile.lock
++++ b/Gemfile.lock
+@@ -149,6 +149,8 @@ GEM
+     rdoc (3.9.4)
+     rest-client (1.6.7)
+       mime-types (>= 1.16)
++    routing-filter (0.2.4)
++      actionpack
+     rspec (2.6.0)
+       rspec-core (~> 2.6.0)
+       rspec-expectations (~> 2.6.0)
+@@ -225,6 +227,7 @@ DEPENDENCIES
+   pg
+   pry
+   rails (~> 3.1.0)
++  routing-filter
+   rspec-cells
+   rspec-rails (>= 2.6.0)
+   sass-rails (~> 3.1.0)
+diff --git a/app/controllers/application_controller.rb b/app/controllers/application_controller.rb
+index fa27cdd..2dd4a85 100644
+--- a/app/controllers/application_controller.rb
++++ b/app/controllers/application_controller.rb
+@@ -1,17 +1,26 @@
+ class ApplicationController < ActionController::Base
++  include UrlHelper
+   protect_from_forgery
+   helper_method :current_auth, :current_user
+-  # before_filter :set_locale
++  before_filter :set_locale
+ 
+   # Set locale
+-  # def set_locale
+-  #   I18n.locale = extract_locale_from_subdomain || I18n.default_locale
+-  # end
+-  #
+-  # def extract_locale_from_subdomain
+-  #   parsed_locale = request.subdomains.first
+-  #   I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
+-  # end
++  def set_locale
++    puts request.subdomains.first
++    return redirect_to params.merge(host: with_subdomain("www")) if request.subdomains.empty?
++    parsed_locale = request.subdomains.first
++    if parsed_locale == "www"
++      cookies[:locale].blank? ? visitor_locale = I18n.default_locale : visitor_locale = cookies[:locale].to_sym
++      cookies.permanent[:locale] = {value: visitor_locale, domain: request.domain}
++      return redirect_to params.merge(host: with_subdomain(visitor_locale.to_s)) unless visitor_locale == :en
++    else
++      visitor_locale = I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale.to_sym : :en
++      cookies.permanent[:locale] = {value: visitor_locale, domain: request.domain}
++      return redirect_to params.merge(host: with_subdomain("www")) if visitor_locale == :en
++    end
++    I18n.locale = visitor_locale
++    puts I18n.locale
++  end
+ 
+   # Manually throw a 404
+   def not_found
+diff --git a/app/helpers/url_helper.rb b/app/helpers/url_helper.rb
+new file mode 100644
+index 0000000..0b82217
+--- /dev/null
++++ b/app/helpers/url_helper.rb
+@@ -0,0 +1,14 @@
++module UrlHelper
++  def with_subdomain(subdomain)
++    subdomain = (subdomain || "www")
++    subdomain += "."
++    [subdomain, request.domain].join
++  end
++
++  def url_for(options = nil)
++    if options.kind_of?(Hash) && options.has_key?(:subdomain)
++      options[:host] = with_subdomain(options.delete(:subdomain))
++    end
++    super
++  end
++end
+\ No newline at end of file
+diff --git a/app/views/layouts/application.html.haml b/app/views/layouts/application.html.haml
+index 1665ee9..c14e0a2 100644
+--- a/app/views/layouts/application.html.haml
++++ b/app/views/layouts/application.html.haml
+@@ -1,7 +1,7 @@
+ !!! 5
+ %html
+   %head
+-    %title= t 'youversion'
++    %title= t('youversion')
+     = stylesheet_link_tag    "application"
+     = javascript_include_tag "application"
+     = csrf_meta_tags
+@@ -14,3 +14,6 @@
+     - else
+       %p= link_to t("sign in"), sign_in_path
+     = yield
++    %select#choose_language{name: "choose_language"}
++      - I18n.available_locales.each do |loc|
++        %option{value: loc, href: url_for(params.merge!(host: with_subdomain(loc.to_s))), selected: loc == I18n.locale}= t("language name", locale: loc)
+\ No newline at end of file
+diff --git a/config/initializers/session_store.rb b/config/initializers/session_store.rb
+index a6a8d6a..f9e627f 100644
+--- a/config/initializers/session_store.rb
++++ b/config/initializers/session_store.rb
+@@ -1,6 +1,6 @@
+ # Be sure to restart your server when you modify this file.
+ 
+-YouversionWeb::Application.config.session_store :cookie_store, key: '_youversion-web_session'
++YouversionWeb::Application.config.session_store :cookie_store, key: '_youversion-web_session', domain: :all
+ 
+ # Use the database for sessions instead of the cookie-based default,
+ # which shouldn't be used to store highly confidential information
+diff --git a/config/locales/de.yml b/config/locales/de.yml
+new file mode 100644
+index 0000000..833271c
+--- /dev/null
++++ b/config/locales/de.yml
+@@ -0,0 +1,20 @@
++---
++de:
++  language name: Deutsch
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/en.yml b/config/locales/en.yml
+index 4f88e4a..6a07ab5 100644
+--- a/config/locales/en.yml
++++ b/config/locales/en.yml
+@@ -1,5 +1,6 @@
+ ---
+ en:
++  language name: English
+   signed in as: "Signed in as %{user}"
+   sign out: "Sign out"
+   youversion: YouVersion
+diff --git a/config/locales/es.yml b/config/locales/es.yml
+new file mode 100644
+index 0000000..3338929
+--- /dev/null
++++ b/config/locales/es.yml
+@@ -0,0 +1,20 @@
++---
++es:
++  language name: Español
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/fr.yml b/config/locales/fr.yml
+new file mode 100644
+index 0000000..2938c3d
+--- /dev/null
++++ b/config/locales/fr.yml
+@@ -0,0 +1,20 @@
++---
++fr:
++  language name: Français
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/ko.yml b/config/locales/ko.yml
+new file mode 100644
+index 0000000..ed2b529
+--- /dev/null
++++ b/config/locales/ko.yml
+@@ -0,0 +1,20 @@
++---
++ko:
++  language name: 한국어
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/nl.yml b/config/locales/nl.yml
+new file mode 100644
+index 0000000..bc17e9a
+--- /dev/null
++++ b/config/locales/nl.yml
+@@ -0,0 +1,20 @@
++---
++nl:
++  language name: Nederlands
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/no.yml b/config/locales/no.yml
+new file mode 100644
+index 0000000..a4a1fbc
+--- /dev/null
++++ b/config/locales/no.yml
+@@ -0,0 +1,20 @@
++---
++"no":
++  language name: Norsk
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/pt.yml b/config/locales/pt.yml
+new file mode 100644
+index 0000000..837ce40
+--- /dev/null
++++ b/config/locales/pt.yml
+@@ -0,0 +1,20 @@
++---
++pt:
++  language name: Português
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/ru.yml b/config/locales/ru.yml
+new file mode 100644
+index 0000000..25335de
+--- /dev/null
++++ b/config/locales/ru.yml
+@@ -0,0 +1,20 @@
++---
++ru:
++  language name: Русский
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/zh-cn.yml b/config/locales/zh-cn.yml
+new file mode 100644
+index 0000000..8d8ece8
+--- /dev/null
++++ b/config/locales/zh-cn.yml
+@@ -0,0 +1,20 @@
++---
++zh-cn:
++  language name: 简体中文
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/locales/zh-tw.yml b/config/locales/zh-tw.yml
+new file mode 100644
+index 0000000..5455af8
+--- /dev/null
++++ b/config/locales/zh-tw.yml
+@@ -0,0 +1,20 @@
++---
++zh-tw:
++  language name: 繁體中文
++  signed in as: "Signed in as %{user}"
++  sign out: "Sign out"
++  youversion: YouVersion French
++  username or email prompt: "Username (or email):"
++  password prompt: "Password:"
++  sign in: "Sign in"
++  version header: "Version: %{version}"
++  bible versions: "Bible Versions"
++  read this version: "Read this version"
++  users:
++    creation form errors: "The following error(s) prevented creation of your account:"
++    email address: "Email address:"
++    user name: "User name:"
++    password: "Password:"
++    agreement: I agree to the YouVersion terms and conditions.
++    register: Register
++    confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+\ No newline at end of file
+diff --git a/config/routes.rb b/config/routes.rb
+index db5b0d2..63d77b4 100644
+--- a/config/routes.rb
++++ b/config/routes.rb
+@@ -1,4 +1,4 @@
+-YouversionWeb::Application.routes.draw do
++YouversionWeb::Application.routes.draw do@
+   # Bible
+   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
+   resources 'versions', :only => [:index, :show]
+diff --git a/doc/README_FOR_APP b/doc/README_FOR_APP
+index fe41f5c..3cd1eec 100644
+--- a/doc/README_FOR_APP
++++ b/doc/README_FOR_APP
+@@ -1,2 +1,10 @@
+-Use this README file to introduce your application and point to useful places in the API for learning more.
+-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
++## Cookies
++
++Here is a rundown of the values stored in the user's cookie:
++
++* `a (signed)`: User ID number, suitable for use with the YV API
++* `b (signed)`: YouVersion username.
++* `c (signed)`: YouVersion Password.
++* `locale`: The shortcode for the user's locale, in the same format as the subdomain. This should be set when visiting any non-www domain, and should be read when visiting any www link. If a value isn't present when visiting www, set it to the default (en).
++* `implicit_bible`: The user's most recent implicit Bible version. This means a version that the user was linked to in a note or something, or a version explicitly specified by a reading plan.
++* `explicit_bible`: The user's most recent explicitly selected Bible version. Should be used when a version isn't mandated by the link or reading plan.
+diff --git a/features/step_definitions/yv_steps.rb b/features/step_definitions/yv_steps.rb
+index 4e873bf..d51b248 100644
+--- a/features/step_definitions/yv_steps.rb
++++ b/features/step_definitions/yv_steps.rb
+@@ -16,8 +16,8 @@ Then /^I should see a (.*) with contents (.*)$/ do |select, options| # "
+   end
+ end
+ 
+-Then /^"(.*)" should be selected$/ do |value|
+-  with_scope("selected") { page.should have_content value }
++Then /^"([^"]*)" should be selected for "([^"]*)"$/ do |value, field|
++  page.should have_xpath("//option[@selected and @value = '#{value}']")
+ end
+ 
+ Then /^an unverified user named "([^"]*)" with password "([^"]*)" should exist$/ do |arg1, arg2|
+@@ -28,4 +28,8 @@ end
+ 
+ When /^I dump.* the response$/ do
+   puts body
++end
++
++When /^I dump the host$/ do
++  puts host
+ end
+\ No newline at end of file
+diff --git a/spec/controllers/application_controller_spec.rb b/spec/controllers/application_controller_spec.rb
+new file mode 100644
+index 0000000..2f7df1c
+--- /dev/null
++++ b/spec/controllers/application_controller_spec.rb
+@@ -0,0 +1,25 @@
++require 'spec_helper'
++
++describe ApplicationController do
++  controller do
++    def index
++      render text: "foo"
++    end
++  end
++
++  describe "#set_locale" do
++    it "sets locale to en for www" do
++      request.host = "www.youversion.com"
++      get :index
++      I18n.locale.should == :en
++      response.cookies["locale"].should == "en"
++    end
++
++    it "sets locale to fr for fr" do
++      request.host = "fr.youversion.com"
++      get :index
++      I18n.locale.should == :fr
++      response.cookies["locale"].should == "fr"
++    end
++  end
++end
+\ No newline at end of file
+-- 
+1.7.0.4
+

@@ -1,0 +1,25 @@
+From e9999770eef1c3799e318665bdc2f9be4b630e46 Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Mon, 7 Nov 2011 11:45:46 -0600
+Subject: [PATCH 52/55] Updated to like Public only
+
+---
+ app/views/notes/show.html.haml |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/app/views/notes/show.html.haml b/app/views/notes/show.html.haml
+index 4c3120c..06c94f3 100644
+--- a/app/views/notes/show.html.haml
++++ b/app/views/notes/show.html.haml
+@@ -6,7 +6,7 @@
+     %p
+       = label_tag :user_status, "Note Status:"
+       = @note.user_status
+-      = button_to(@note.like.nil? ? 'like' : 'unlike', like_path(@note.id), :method => :put) unless @note.user_status == 'private'
++      = button_to(@note.like.nil? ? 'like' : 'unlike', like_path(@note.id), :method => :put) if @note.user_status == 'public'
+     - if current_auth.user_id == @note.user_id.to_i
+       = link_to('edit', edit_note_path(@note.id)) 
+       = link_to('delete this note', note_path(@note.id), :confirm => 'Are you sure?', :method => :delete) 
+-- 
+1.7.0.4
+

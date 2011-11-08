@@ -1,0 +1,29 @@
+From 181fad77ce501a33486f6a06d8b9ea6a7e1594c3 Mon Sep 17 00:00:00 2001
+From: Chad Bailey <chadbailey@gmail.com>
+Date: Wed, 26 Oct 2011 15:10:25 -0500
+Subject: [PATCH 32/55] ok, jon, here you go
+
+Change-Id: Ib35adc954490bdade1f3030893c94473f6e33501
+---
+ app/models/user.rb |    5 ++---
+ 1 files changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/app/models/user.rb b/app/models/user.rb
+index dd29e09..2c75092 100644
+--- a/app/models/user.rb
++++ b/app/models/user.rb
+@@ -37,9 +37,8 @@ class User
+   # Contains defaults for when a new user is being created
+   def initialize(params = {})
+     params[:agree] = true if params[:agree]
+-    reg_data = {id: nil, email: "", username: "", password: "", verified: false, agree: false}
+-    reg_data.merge! params
+-    reg_data[:id] = reg_data[:id].to_i # in case it came back from the API
++    reg_data = {id: nil, email: "", username: "", password: "", verified: false, agree: false}.merge!(params)
++    reg_data[:id] = reg_data[:id].to_i # If it came back from the API
+     reg_data.each do |k,v|
+       self.instance_variable_set("@#{k}", v) # Create instance variable
+       self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")}) # Create the getter
+-- 
+1.7.0.4
+

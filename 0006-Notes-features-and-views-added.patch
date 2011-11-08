@@ -1,0 +1,199 @@
+From 56a296e5321617d519c7b00cd65cdfe7623a60a5 Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Thu, 20 Oct 2011 12:01:31 -0500
+Subject: [PATCH 06/55] Notes -- features and views added
+
+---
+ .rvmrc                              |    1 -
+ .rvmrc.09.02.2011-15:43:43          |   55 ------------------------
+ app/controllers/notes_controller.rb |    4 ++
+ app/views/notes/edit.html.haml      |    2 +
+ features/notes.feature              |   78 ++++++++++++++++++++++++++++++++++-
+ 5 files changed, 83 insertions(+), 57 deletions(-)
+ delete mode 100755 .rvmrc
+ delete mode 100644 .rvmrc.09.02.2011-15:43:43
+ create mode 100644 app/views/notes/edit.html.haml
+
+diff --git a/.rvmrc b/.rvmrc
+deleted file mode 100755
+index 28ad8ca..0000000
+--- a/.rvmrc
++++ /dev/null
+@@ -1 +0,0 @@
+-rvm use ruby-1.9.2-p180@youversion-web --create
+diff --git a/.rvmrc.09.02.2011-15:43:43 b/.rvmrc.09.02.2011-15:43:43
+deleted file mode 100644
+index 8aea35c..0000000
+--- a/.rvmrc.09.02.2011-15:43:43
++++ /dev/null
+@@ -1,55 +0,0 @@
+-#!/usr/bin/env bash
+-
+-# This is an RVM Project .rvmrc file, used to automatically load the ruby
+-# development environment upon cd'ing into the directory
+-
+-# First we specify our desired <ruby>[@<gemset>], the @gemset name is optional.
+-environment_id="ruby-1.9.2-p180@youversion-web"
+-
+-#
+-# Uncomment following line if you want options to be set only for given project.
+-#
+-# PROJECT_JRUBY_OPTS=( --1.9 )
+-
+-#
+-# First we attempt to load the desired environment directly from the environment
+-# file. This is very fast and efficient compared to running through the entire
+-# CLI and selector. If you want feedback on which environment was used then
+-# insert the word 'use' after --create as this triggers verbose mode.
+-#
+-if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
+-  && -s "${rvm_path:-$HOME/.rvm}/environments/$environment_id" ]]
+-then
+-  \. "${rvm_path:-$HOME/.rvm}/environments/$environment_id"
+-
+-  if [[ -s "${rvm_path:-$HOME/.rvm}/hooks/after_use" ]]
+-  then
+-    . "${rvm_path:-$HOME/.rvm}/hooks/after_use"
+-  fi
+-else
+-  # If the environment file has not yet been created, use the RVM CLI to select.
+-  if ! rvm --create  "$environment_id"
+-  then
+-    echo "Failed to create RVM environment '${environment_id}'."
+-    exit 1
+-  fi
+-fi
+-
+-#
+-# If you use an RVM gemset file to install a list of gems (*.gems), you can have
+-# it be automatically loaded. Uncomment the following and adjust the filename if
+-# necessary.
+-#
+-# filename=".gems"
+-# if [[ -s "$filename" ]]
+-# then
+-#   rvm gemset import "$filename" | grep -v already | grep -v listed | grep -v complete | sed '/^$/d'
+-# fi
+-
+-# If you use bundler, this might be useful to you:
+-# if command -v bundle && [[ -s Gemfile ]]
+-# then
+-#   bundle
+-# fi
+-
+-
+diff --git a/app/controllers/notes_controller.rb b/app/controllers/notes_controller.rb
+index 3753c64..58f006b 100644
+--- a/app/controllers/notes_controller.rb
++++ b/app/controllers/notes_controller.rb
+@@ -8,6 +8,10 @@ class NotesController < ApplicationController
+     @note = Note.new()
+   end
+   
++  def edit
++    @note = Note.find(params[:id])   
++  end
++  
+   def show
+     @note = Note.find(params[:id], current_user)
+   end
+diff --git a/app/views/notes/edit.html.haml b/app/views/notes/edit.html.haml
+new file mode 100644
+index 0000000..0784bf6
+--- /dev/null
++++ b/app/views/notes/edit.html.haml
+@@ -0,0 +1,2 @@
++%h1= "Edit Note"
++= render 'form'
+\ No newline at end of file
+diff --git a/features/notes.feature b/features/notes.feature
+index 432b52c..ae05130 100644
+--- a/features/notes.feature
++++ b/features/notes.feature
+@@ -17,4 +17,80 @@ Feature: Notes view
+     Then I should be on a show note page
+     And I should see "Note Title" 
+     And I should see "Note Content" 
+-    And I should see a link to "Genesis 1:1 (KJV)" 
+\ No newline at end of file
++    And I should see a link to "Genesis 1:1 (KJV)"
++    
++  @bible
++  Scenario: Update note
++    Given a user named "testuser" with password "tenders" exists
++    And notes exist with the following attributes:
++    | Author    | Title           | Content                 | References  | Status  |
++    | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
++    And I am logged in as "testuser" with password "tenders" 
++    When I go to the notes index page for user "testuser" 
++    Then I should see a link to "Public Note" 
++    When I follow "Public Note" 
++    Then I should see a link to "edit" 
++    When I follow "edit" 
++    And I fill in "Title" with "A Different Public Note" 
++    And I click "Save" 
++    Then I should be on a show note page
++    And I should see "A Different Public Note" 
++    And I should see "Your note has been updated."
++    
++  @bible
++  Scenario: Delete note
++    Given a user named "testuser" with password "tenders" exists
++    And notes exist with the following attributes:
++    | Author    | Title           | Content                 | References  | Status  |
++    | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
++    And I am logged in as "testuser" with password "tenders" 
++    When I go to the notes index page for user "testuser" 
++    Then I should see a link to "Public Note" 
++    When I follow "Public Note" 
++    Then I should see a link to "Delete this note" 
++    When I follow "Delete this note" 
++    # And confirm it somehow
++    Then I should be on the notes index page for user "testuser" 
++    And I should not see "Public Note"
++    
++  @bible
++  Scenario: Note privacy
++    Given a user named "testuser" with password "tenders" exists
++    And a user named "testuser2" with password "tenders" exists
++    And notes exist with the following attributes:
++    | Author    | Title           | Content                 | References  | Status  |
++    | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
++    | testuser  | Private Note    | Private Content         | gen.1.2.kjv | Private |
++    | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv | Public  |
++    | testuser2 | Another Private | Another Private Content | gen.1.4.kjv | Private |
++    And I am logged in as "testuser2" with password "tenders" 
++    When I go to the notes index page for user "testuser" 
++    Then I should see a link to "Public Note" 
++    And I should see "Public Content" 
++    And I should not see "Private Note" 
++    And I should not see "Private Content" 
++    When I go to the notes index page for user "testuser2" 
++    Then I should see a link to "Another Public" 
++    And I should see "Another Public Content" 
++    And I should see a link to "Genesis 1:3 (KJV)" 
++    And I should see a link to "Another Private" 
++    And I should see a link to "Genesis 1:4 (KJV)" 
++    And I should see "Another Private Content"
++    
++  @bible
++  Scenario: Reader integration
++    Given a user named "testuser" with password "tenders" exists
++    And a user named "testuser2" with password "tenders" exists
++    And notes exist with the following attributes:
++    | Author    | Title           | Content                 | References  | Status  |
++    | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
++    | testuser  | Private Note    | Private Content         | gen.1.2.kjv | Private |
++    | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv | Public  |
++    | testuser2 | Another Private | Another Private Content | gen.1.4.kjv | Private |
++    And I am logged in as "testuser2" with password "tenders" 
++    When I go to the bible page "gen.1.niv" 
++    Then I should see the following in the notes widget:
++    | Title           |
++    | Public Note     |
++    | Another Public  |
++    | Another Private |
+\ No newline at end of file
+-- 
+1.7.0.4
+

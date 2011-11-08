@@ -1,0 +1,1531 @@
+From e4ded55a38a6157e1db4bac0d3c9d07640acd7af Mon Sep 17 00:00:00 2001
+From: Caedmon Judd <caedmon@statebuilt.com>
+Date: Mon, 31 Oct 2011 13:45:00 -0500
+Subject: [PATCH 43/55] Notes updates for various methods
+
+---
+ app/controllers/notes_controller.rb          |    5 +-
+ app/models/note.rb                           |   25 +-
+ app/models/user.rb                           |    4 +-
+ app/views/notes/index.html.haml              |    2 +-
+ features/notes.feature                       |   10 +-
+ features/step_definitions/general_steps.rb   |    8 +-
+ features/support/paths.rb                    |    4 +-
+ fixtures/vcr/cuke/cucumber_tags/bible.yml    |  663 ++++++++++----------------
+ fixtures/vcr/cuke/cucumber_tags/no_user.yml  |    8 +-
+ fixtures/vcr/cuke/cucumber_tags/user.yml     |   12 +-
+ fixtures/vcr/cuke/cucumber_tags/versions.yml |   16 +-
+ spec/helpers/notes_helper_spec.rb            |    1 -
+ spec/models/note_spec.rb                     |   10 +-
+ 13 files changed, 300 insertions(+), 468 deletions(-)
+
+diff --git a/app/controllers/notes_controller.rb b/app/controllers/notes_controller.rb
+index b6cf1ea..7e75098 100644
+--- a/app/controllers/notes_controller.rb
++++ b/app/controllers/notes_controller.rb
+@@ -2,9 +2,9 @@ class NotesController < ApplicationController
+   
+   def index
+     if current_auth
+-      @notes = Note.all(current_auth.id, current_auth)
++      @notes = Note.for_user(current_auth.id, current_auth)
+     else
+-      @notes = Note.all(nil, nil)
++      @notes = Note.all(nil)
+     end
+   end
+ 
+@@ -27,6 +27,7 @@ class NotesController < ApplicationController
+     if current_auth
+       @note = Note.find(params[:id], current_auth)
+       @note.reference = @note.reference.osis_noversion
++      @note.version = @note.version.osis
+       @url_path = notes_path << '/' << params[:id]
+       @url_method = :put
+     else
+diff --git a/app/models/note.rb b/app/models/note.rb
+index 5876a18..09d976b 100644
+--- a/app/models/note.rb
++++ b/app/models/note.rb
+@@ -30,14 +30,27 @@ class Note
+     self.class.find(id, auth)
+   end
+ 
+-  def self.all(user_id, auth)    
++  def self.all(auth)
++    response = YvApi.get('notes/items', {:auth => auth} ) do |errors|
++      @errors = errors.map { |e| e["error"] }
++      return false
++    end
++
++    build_objects(response.notes, auth)
++  end
++  
++  def all(user_id)
++    self.class.all(auth)
++  end
++
++  def self.for_user(user_id, auth)
+     if auth
+       response = YvApi.get('notes/items', {:user_id => user_id, :auth => auth} ) do |errors|
+         @errors = errors.map { |e| e["error"] }
+         return false
+       end
+     elsif !auth
+-      response = YvApi.get('notes/items') do |errors|     
++      response = YvApi.get('notes/items') do |errors|
+         @errors = errors.map { |e| e["error"] }
+         return false
+       end
+@@ -45,11 +58,11 @@ class Note
+ 
+     build_objects(response.notes, auth)
+   end
+-  
+-  def all(user_id, auth)
+-    self.class.all(user_id, auth)
++
++  def for_user(user_id)
++    self.class.for_user(user_id, auth)
+   end
+-    
++
+   def create
+     @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
+     @prexml_content = @content
+diff --git a/app/models/user.rb b/app/models/user.rb
+index 342a20b..ac8df33 100644
+--- a/app/models/user.rb
++++ b/app/models/user.rb
+@@ -26,11 +26,11 @@ class User
+   end
+ 
+   def self.notes(id, auth)
+-    Note.all(id, auth)
++    Note.for_user(id, auth)
+   end
+   
+   def notes(auth)
+-    self.class.Note.all(id, auth)
++    self.class.User.notes(id, auth)
+   end
+   
+   def save
+diff --git a/app/views/notes/index.html.haml b/app/views/notes/index.html.haml
+index 6246bed..368d47b 100644
+--- a/app/views/notes/index.html.haml
++++ b/app/views/notes/index.html.haml
+@@ -5,7 +5,7 @@
+       %div{id: note.id}
+         %div{class: "title"}= link_to note.title, note_path(note.id)
+         %div{class: "content"}= note.content_text
+-        %div{class: "reference"}= link_to note.reference, bible_path(note.reference.osis)
++        %div{class: "reference"}= link_to note.reference.human, bible_path(note.reference.osis)
+         %div{class: "status"}= note.user_status
+   - else
+     %div{class: "none"}= "Sorry, no notes here!"
+\ No newline at end of file
+diff --git a/features/notes.feature b/features/notes.feature
+index 42efc5b..4f85566 100644
+--- a/features/notes.feature
++++ b/features/notes.feature
+@@ -33,7 +33,7 @@ Feature: Notes view
+     When I follow "edit" 
+     And I fill in "Title" with "A Different Public Note" 
+     And I click "Save" 
+-    Then I should be on the show note page 935909
++    Then I should be on the show note page
+     And I should see "A Different Public Note" 
+     And I should see "Your note has been updated."
+     
+@@ -60,7 +60,7 @@ Feature: Notes view
+     And notes exist with the following attributes:
+     | Author    | Title           | Content                 | References  | Status  |
+     | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
+-    | testuser  | Private Note    | Private Content         | gen.1.2.kjv | Private |
++    | testuser  | Private Note    | testuser Private Content| gen.1.2.kjv | Private |
+     | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv | Public  |
+     | testuser2 | Another Private | Another Private Content | gen.1.4.kjv | Private |
+     And I am logged in as "testuser2" with password "tenders" 
+@@ -68,14 +68,14 @@ Feature: Notes view
+     Then I should see a link to "Public Note" 
+     And I should see "Public Content" 
+     And I should not see "Private Note" 
+-    And I should not see "Private Content" 
++    And I should not see "testuser Private Content"
+     When I go to the notes index page
+     Then I should see a link to "Another Public" 
+     And I should see "Another Public Content" 
+     And I should see a link to "Genesis 1:3 (KJV)" 
+     And I should see a link to "Another Private" 
+     And I should see a link to "Genesis 1:4 (KJV)" 
+-    And I should see "Another Private Record"
++    And I should see "Another Private Content"
+     
+   @bible
+   Scenario: Reader integration
+@@ -84,7 +84,7 @@ Feature: Notes view
+     And notes exist with the following attributes:
+     | Author    | Title           | Content                 | References  | Status  |
+     | testuser  | Public Note     | Public Content          | gen.1.1.kjv | Public  |
+-    | testuser  | Private Note    | Private Content         | gen.1.2.kjv | Private |
++    | testuser  | Private Note    | testuser Private Content| gen.1.2.kjv | Private |
+     | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv | Public  |
+     | testuser2 | Another Private | Another Private Content | gen.1.4.kjv | Private |
+     And I am logged in as "testuser2" with password "tenders" 
+diff --git a/features/step_definitions/general_steps.rb b/features/step_definitions/general_steps.rb
+index 56f1cfc..f35be29 100644
+--- a/features/step_definitions/general_steps.rb
++++ b/features/step_definitions/general_steps.rb
+@@ -18,18 +18,20 @@ Given /^notes exist with the following attributes:$/ do |table|
+   @rows.each do |row|
+     @user = User.authenticate(row['Author'], 'tenders');
+     @auth = Hashie::Mash.new( {'id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
+-    @notes = Note.all(@user.id, @auth)
++    @notes = Note.for_user(@user.id, @auth)
+     
+     if @notes  
+       @notes.each do |note|
+         if note.title == row['Title'] && note.username == row['Author'] && note.content == row['Content'] && note.reference.osis == row['References'] && note.user_status.upcase == row['Status'].upcase
+           @rowsfound << true
++          #TEST: puts "Found #{note.username} #{note.title} -> #{note.user_status}"
+         end
+       end
+     end
+   end
+-  
+-  if @rows.count == @rowsfound.count
++
++  #TEST: puts "Rows = #{@rows.count} -> Found = #{@rowsfound.count}"
++  if @rowsfound.count >= @rows.count
+     assert true
+   else
+     assert false, 'Not all rows found'
+diff --git a/features/support/paths.rb b/features/support/paths.rb
+index af39a57..cc83b3b 100644
+--- a/features/support/paths.rb
++++ b/features/support/paths.rb
+@@ -24,8 +24,8 @@ module NavigationHelpers
+       notes_path      
+     when /^a show note page$/
+       notes_path
+-    when /^the show note page (\d+)$/
+-      "#{notes_path}/#{$1}"
++    when /^the show note page$/
++      notes_path
+       
+     # Add more mappings here.
+     # Here is an example that pulls values out of the Regexp:
+diff --git a/fixtures/vcr/cuke/cucumber_tags/bible.yml b/fixtures/vcr/cuke/cucumber_tags/bible.yml
+index 8aed577..d216bf7 100644
+--- a/fixtures/vcr/cuke/cucumber_tags/bible.yml
++++ b/fixtures/vcr/cuke/cucumber_tags/bible.yml
+@@ -15,7 +15,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:29 GMT
++      - Fri, 28 Oct 2011 21:17:37 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -25,7 +25,7 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:26:48.226265+00","last_login":"2011-10-28 16:21:29+00","twitter":null,"facebook":null,"email":"testuser@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T16:21:29+00:00"}}'
++      13:26:48.226265+00","last_login":"2011-10-28 21:17:37+00","twitter":null,"facebook":null,"email":"testuser@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T21:17:37+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -43,7 +43,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:29 GMT
++      - Fri, 28 Oct 2011 21:17:37 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -53,7 +53,7 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:26:48.226265+00","last_login":"2011-10-28 16:21:29+00","twitter":null,"facebook":null,"email":"testuser@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T16:21:29+00:00"}}'
++      13:26:48.226265+00","last_login":"2011-10-28 21:17:37+00","twitter":null,"facebook":null,"email":"testuser@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T21:17:37+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -71,7 +71,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:30 GMT
++      - Fri, 28 Oct 2011 21:17:38 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -81,7 +81,7 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:26:48.226265+00","last_login":"2011-10-28 16:21:29+00"},"buildtime":"2011-10-28T16:21:30+00:00"}}'
++      13:26:48.226265+00","last_login":"2011-10-28 21:17:37+00"},"buildtime":"2011-10-28T21:17:38+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -99,17 +99,18 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:30 GMT
++      - Fri, 28 Oct 2011 21:17:38 GMT
+       content-type:
++      - text/plain
+       - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
++      content-length:
++      - '735'
+       connection:
+       - keep-alive
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:26:48.226265+00","last_login":"2011-10-28 16:21:29+00"},"buildtime":"2011-10-28T16:21:30+00:00"}}'
++      13:26:48.226265+00","last_login":"2011-10-28 21:17:37+00"},"buildtime":"2011-10-28T21:17:38+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -127,7 +128,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:30 GMT
++      - Fri, 28 Oct 2011 21:17:39 GMT
+       content-type:
+       - text/plain
+       - text/plain; charset=utf-8
+@@ -137,13 +138,13 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":201,"data":{"id":"935909","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
++    body: ! '{"response":{"code":201,"data":{"id":"935914","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
+       Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE
+       yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
+       Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
+-      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935909\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTJ","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+-      1:1"}],"version":"kjv","created":"2011-10-28 16:21:30+00","published":null,"updated":"2011-10-28
+-      16:21:30.754009+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-28T16:21:30+00:00"}}'
++      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935914\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTO","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
++      1:1"}],"version":"kjv","created":"2011-10-28 21:17:38+00","published":null,"updated":"2011-10-28
++      21:17:38.991971+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-28T21:17:39+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -161,7 +162,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:31 GMT
++      - Fri, 28 Oct 2011 21:17:39 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -171,7 +172,7 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:1","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.1","human":"Genesis
+-      1:1"},"content":"In the beginning God created the heaven and the earth."}}]},"buildtime":"2011-10-28T16:21:31+00:00"}}'
++      1:1"},"content":"In the beginning God created the heaven and the earth."}}]},"buildtime":"2011-10-28T21:17:39+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -189,18 +190,17 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:31 GMT
++      - Fri, 28 Oct 2011 21:17:39 GMT
+       content-type:
+-      - text/plain
+       - text/plain; charset=utf-8
+-      content-length:
+-      - '735'
++      transfer-encoding:
++      - chunked
+       connection:
+       - keep-alive
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:26:48.226265+00","last_login":"2011-10-28 16:21:29+00"},"buildtime":"2011-10-28T16:21:30+00:00"}}'
++      13:26:48.226265+00","last_login":"2011-10-28 21:17:38+00"},"buildtime":"2011-10-28T21:17:39+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -218,7 +218,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:31 GMT
++      - Fri, 28 Oct 2011 21:17:40 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -227,18 +227,22 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"total":61,"notes":[{"id":"935767","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Note
+-      Title","highlight_color":null,"url":"\/notes\/935767\/note-title","short_url":"http:\/\/dev.read.ly\/n\/3vR1","content_text":"Note
++    body: ! '{"response":{"code":200,"data":{"total":62,"notes":[{"id":"935914","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
++      Note","highlight_color":null,"url":"\/notes\/935914\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTO","content_text":"Public
+       Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+-      1:1"}],"version":"kjv","created":"2011-10-21 20:34:22+00","published":null,"updated":"2011-10-21
+-      20:34:22.986266+00","user_status":"draft","system_status":"new"},{"id":"935909","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
+-      Note","highlight_color":null,"url":"\/notes\/935909\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTJ","content_text":"Public
++      1:1"}],"version":"kjv","created":"2011-10-28 21:17:38+00","published":null,"updated":"2011-10-28
++      21:17:38.991971+00","user_status":"public","system_status":"new"},{"id":"935913","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Private
++      Note","highlight_color":null,"url":"\/notes\/935913\/private-note","short_url":"http:\/\/dev.read.ly\/n\/3vTN","content_text":"Private
++      Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.2","human":"Genesis
++      1:2"}],"version":"kjv","created":"2011-10-28 20:46:06+00","published":null,"updated":"2011-10-28
++      20:46:06.272146+00","user_status":"private","system_status":"new"},{"id":"935910","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
++      Note","highlight_color":null,"url":"\/notes\/935910\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTK","content_text":"Public
+       Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+-      1:1"}],"version":"kjv","created":"2011-10-28 16:21:30+00","published":null,"updated":"2011-10-28
+-      16:21:30.754009+00","user_status":"public","system_status":"new"},{"id":"935888","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"A
++      1:1"}],"version":"kjv","created":"2011-10-28 17:36:31+00","published":null,"updated":"2011-10-28
++      20:45:08+00","user_status":"public","system_status":"new"},{"id":"935888","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"A
+       Different Public Note","highlight_color":null,"url":"\/notes\/935888\/a-different-public-note","short_url":"http:\/\/dev.read.ly\/n\/3vSy","content_text":"Public
+-      Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+-      1:1"}],"version":"kjv","created":"2011-10-27 02:09:24+00","published":null,"updated":"2011-10-28
++      Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.2-5","human":"Genesis
++      1:2-5"}],"version":"msg","created":"2011-10-27 02:09:24+00","published":null,"updated":"2011-10-28
+       15:54:09+00","user_status":"public","system_status":"new"},{"id":"935873","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Note
+       Title","highlight_color":null,"url":"\/notes\/935873\/note-title","short_url":"http:\/\/dev.read.ly\/n\/3vSj","content_text":"Note
+       Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+@@ -323,167 +327,7 @@
+       Title","highlight_color":null,"url":"\/notes\/935835\/note-title","short_url":"http:\/\/dev.read.ly\/n\/3vS7","content_text":"Note
+       Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+       1:1"}],"version":"kjv","created":"2011-10-25 16:47:13+00","published":null,"updated":"2011-10-25
+-      16:47:13.429672+00","user_status":"public","system_status":"new"},{"id":"935834","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Note
+-      Title","highlight_color":null,"url":"\/notes\/935834\/note-title","short_url":"http:\/\/dev.read.ly\/n\/3vS6","content_text":"Note
+-      Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+-      1:1"}],"version":"kjv","created":"2011-10-25 16:45:08+00","published":null,"updated":"2011-10-25
+-      16:45:08.183235+00","user_status":"public","system_status":"new"}]},"buildtime":"2011-10-28T16:21:31+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/view.json?id=935909
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:32 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"id":"935909","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
+-      Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE
+-      yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
+-      Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
+-      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935909\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTJ","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+-      1:1"}],"version":"kjv","created":"2011-10-28 16:21:30+00","published":null,"updated":"2011-10-28
+-      16:21:30.754009+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-28T16:21:32+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/view.json?id=935909
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:32 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"id":"935909","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
+-      Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE
+-      yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
+-      Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
+-      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935909\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTJ","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+-      1:1"}],"version":"kjv","created":"2011-10-28 16:21:30+00","published":null,"updated":"2011-10-28
+-      16:21:30.754009+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-28T16:21:32+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/view.json?id=935909
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:32 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"id":"935909","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
+-      Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE
+-      yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
+-      Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
+-      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935909\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTJ","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+-      1:1"}],"version":"kjv","created":"2011-10-28 16:21:30+00","published":null,"updated":"2011-10-28
+-      16:21:30.754009+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-28T16:21:32+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :post
+-    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/update.json
+-    body: id=935909&title=A%20Different%20Public%20Note&content=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3C!DOCTYPE%20yv-note%20SYSTEM%20%22http%3A%2F%2Fapi.yvdev.com%2Fpub%2Fyvml_1_0.dtd%22%3E%3Cyv-note%3EPublic%20Content%3C%2Fyv-note%3E&language_iso=&reference=gen.1.1.kjv&version=vi1934&published=&user_status=public&shared_connections=&token=615ad51b71049e299842f5af14c70cad
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:32 GMT
+-      content-type:
+-      - text/plain
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":400,"data":{"errors":[{"key":"notes.reference.invalid_multi_reference","error":"Invalid
+-      multi-reference"}]},"buildtime":"2011-10-28T16:21:32+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :post
+-    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/delete.json
+-    body: id=935909
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:33 GMT
+-      content-type:
+-      - text/plain
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":"OK","buildtime":"2011-10-28T16:21:33+00:00"}}'
++      16:47:13.429672+00","user_status":"public","system_status":"new"}]},"buildtime":"2011-10-28T21:17:39+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -501,7 +345,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:34 GMT
++      - Fri, 28 Oct 2011 21:17:40 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -511,7 +355,7 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:23:17.36098+00","last_login":"2011-10-28 16:21:34+00","twitter":null,"facebook":null,"email":"testuser2@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T16:21:34+00:00"}}'
++      13:23:17.36098+00","last_login":"2011-10-28 21:17:40+00","twitter":null,"facebook":null,"email":"testuser2@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T21:17:40+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -529,7 +373,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:34 GMT
++      - Fri, 28 Oct 2011 21:17:40 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -539,35 +383,7 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:23:17.36098+00","last_login":"2011-10-28 16:21:34+00","twitter":null,"facebook":null,"email":"testuser2@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T16:21:34+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163176
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:34 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:23:17.36098+00","last_login":"2011-10-28 16:21:34+00"},"buildtime":"2011-10-28T16:21:34+00:00"}}'
++      13:23:17.36098+00","last_login":"2011-10-28 21:17:40+00","twitter":null,"facebook":null,"email":"testuser2@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T21:17:40+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -585,7 +401,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:35 GMT
++      - Fri, 28 Oct 2011 21:17:41 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -596,9 +412,9 @@
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"total":3,"notes":[{"id":"935854","user_id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"title":"Another
+       Private","highlight_color":null,"url":"\/notes\/935854\/another-private","short_url":"http:\/\/dev.read.ly\/n\/3vSQ","content_text":"Another
+-      Private Recordfgewf","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.4","human":"Genesis
+-      1:4"}],"version":"kjv","created":"2011-10-25 18:54:07+00","published":null,"updated":"2011-10-26
+-      20:40:58+00","user_status":"private","system_status":"new"},{"id":"935853","user_id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"title":"Another
++      Private Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.4","human":"Genesis
++      1:4"}],"version":"kjv","created":"2011-10-25 18:54:07+00","published":null,"updated":"2011-10-28
++      20:54:27+00","user_status":"private","system_status":"new"},{"id":"935853","user_id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"title":"Another
+       Public","highlight_color":null,"url":"\/notes\/935853\/another-public","short_url":"http:\/\/dev.read.ly\/n\/3vSP","content_text":"Another
+       Public Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.3","human":"Genesis
+       1:3"}],"version":"kjv","created":"2011-10-25 18:53:25+00","published":null,"updated":"2011-10-25
+@@ -606,69 +422,12 @@
+       Note","highlight_color":null,"url":"\/notes\/935850\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vSM","content_text":"Public
+       Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+       1:1"}],"version":"kjv","created":"2011-10-25 18:49:10+00","published":null,"updated":"2011-10-25
+-      18:49:10.462235+00","user_status":"public","system_status":"new"}]},"buildtime":"2011-10-28T16:21:35+00:00"}}'
++      18:49:10.462235+00","user_status":"public","system_status":"new"}]},"buildtime":"2011-10-28T21:17:41+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+     method: :get
+-    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.4&version=kjv
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:35 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:4","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.4","human":"Genesis
+-      1:4"},"content":"And God saw the light, that it was good: and God divided the
+-      light from the darkness."}}]},"buildtime":"2011-10-28T16:21:35+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.3&version=kjv
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:35 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:3","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.3","human":"Genesis
+-      1:3"},"content":" \nAnd God said, Let there be light: and there was light."}}]},"buildtime":"2011-10-28T16:21:35+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163176
++    uri: http://testuser2:tenders@api.yvdev.com:80/2.3/users/authenticate.json?
+     body: !!null 
+     headers:
+       referer:
+@@ -681,7 +440,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:35 GMT
++      - Fri, 28 Oct 2011 21:17:41 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -690,8 +449,8 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:23:17.36098+00","last_login":"2011-10-28 16:21:34+00"},"buildtime":"2011-10-28T16:21:35+00:00"}}'
++    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
++      13:23:17.36098+00","last_login":"2011-10-28 21:17:40+00","twitter":null,"facebook":null,"email":"testuser2@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"false","notice_reading_plans":"true"},"buildtime":"2011-10-28T21:17:40+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -709,7 +468,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:36 GMT
++      - Fri, 28 Oct 2011 21:17:41 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -720,9 +479,9 @@
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"total":3,"notes":[{"id":"935854","user_id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"title":"Another
+       Private","highlight_color":null,"url":"\/notes\/935854\/another-private","short_url":"http:\/\/dev.read.ly\/n\/3vSQ","content_text":"Another
+-      Private Recordfgewf","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.4","human":"Genesis
+-      1:4"}],"version":"kjv","created":"2011-10-25 18:54:07+00","published":null,"updated":"2011-10-26
+-      20:40:58+00","user_status":"private","system_status":"new"},{"id":"935853","user_id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"title":"Another
++      Private Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.4","human":"Genesis
++      1:4"}],"version":"kjv","created":"2011-10-25 18:54:07+00","published":null,"updated":"2011-10-28
++      20:54:27+00","user_status":"private","system_status":"new"},{"id":"935853","user_id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"title":"Another
+       Public","highlight_color":null,"url":"\/notes\/935853\/another-public","short_url":"http:\/\/dev.read.ly\/n\/3vSP","content_text":"Another
+       Public Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.3","human":"Genesis
+       1:3"}],"version":"kjv","created":"2011-10-25 18:53:25+00","published":null,"updated":"2011-10-25
+@@ -730,92 +489,7 @@
+       Note","highlight_color":null,"url":"\/notes\/935850\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vSM","content_text":"Public
+       Content","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
+       1:1"}],"version":"kjv","created":"2011-10-25 18:49:10+00","published":null,"updated":"2011-10-25
+-      18:49:10.462235+00","user_status":"public","system_status":"new"}]},"buildtime":"2011-10-28T16:21:35+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.4&version=kjv
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:36 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:4","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.4","human":"Genesis
+-      1:4"},"content":"And God saw the light, that it was good: and God divided the
+-      light from the darkness."}}]},"buildtime":"2011-10-28T16:21:36+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.3&version=kjv
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:36 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:3","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.3","human":"Genesis
+-      1:3"},"content":" \nAnd God said, Let there be light: and there was light."}}]},"buildtime":"2011-10-28T16:21:36+00:00"}}'
+-    http_version: '1.1'
+-- !ruby/struct:VCR::HTTPInteraction
+-  request: !ruby/struct:VCR::Request
+-    method: :get
+-    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163176
+-    body: !!null 
+-    headers:
+-      referer:
+-      - http://web.youversion.com
+-  response: !ruby/struct:VCR::Response
+-    status: !ruby/struct:VCR::ResponseStatus
+-      code: 200
+-      message: OK
+-    headers:
+-      server:
+-      - nginx/0.7.67
+-      date:
+-      - Fri, 28 Oct 2011 16:21:36 GMT
+-      content-type:
+-      - text/plain; charset=utf-8
+-      transfer-encoding:
+-      - chunked
+-      connection:
+-      - keep-alive
+-      vary:
+-      - Accept-Encoding
+-    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
+-      13:23:17.36098+00","last_login":"2011-10-28 16:21:36+00"},"buildtime":"2011-10-28T16:21:36+00:00"}}'
++      18:49:10.462235+00","user_status":"public","system_status":"new"}]},"buildtime":"2011-10-28T21:17:41+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -833,7 +507,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:37 GMT
++      - Fri, 28 Oct 2011 21:17:42 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -860,7 +534,7 @@
+       Peter","chapters":3,"verses":[21,22,18],"audio":true},{"number":62,"osis":"1John","human":"1
+       John","chapters":5,"verses":[10,29,24,21,21],"audio":true},{"number":63,"osis":"2John","human":"2
+       John","chapters":1,"verses":[13],"audio":true},{"number":64,"osis":"3John","human":"3
+-      John","chapters":1,"verses":[14],"audio":true},{"number":65,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":true},{"number":66,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"audio":true}],"buildtime":"2011-10-28T16:21:37+00:00"}}'
++      John","chapters":1,"verses":[14],"audio":true},{"number":65,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":true},{"number":66,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"audio":true}],"buildtime":"2011-10-28T21:17:41+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -878,7 +552,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:37 GMT
++      - Fri, 28 Oct 2011 21:17:42 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -968,7 +642,7 @@
+       saw all that he had made, and it was very good. And there was evening, and there
+       was morning\u2014the sixth day.<\/span><\/p><\/div>\n","audio":[{"id":"3","title":"NIV
+       Listener''s Bible","download_urls":{"format_mp3_32k":"http:\/\/cdn-http.audio-bible.api.youversion.com\/niv84\/2\/32k\/gen\/001-8af7d4f598f6d657a4309b2e05f71ea5.mp3"}}]},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+-      2"}}},"buildtime":"2011-10-28T16:21:37+00:00"}],"buildtime":"2011-10-28T16:21:37+00:00"}}'
++      2"}}},"buildtime":"2011-10-28T21:17:42+00:00"}],"buildtime":"2011-10-28T21:17:42+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -986,7 +660,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:39 GMT
++      - Fri, 28 Oct 2011 21:17:43 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1018,7 +692,7 @@
+       Peter","chapters":3,"verses":[21,22,18],"audio":true},{"number":71,"osis":"1John","human":"1
+       John","chapters":5,"verses":[10,29,24,21,21],"audio":true},{"number":72,"osis":"2John","human":"2
+       John","chapters":1,"verses":[13],"audio":true},{"number":73,"osis":"3John","human":"3
+-      John","chapters":1,"verses":[14],"audio":true},{"number":74,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":true},{"number":75,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,18,18,20,8,21,18,24,21,15,27,21],"audio":true}],"buildtime":"2011-10-28T16:21:39+00:00"}}'
++      John","chapters":1,"verses":[14],"audio":true},{"number":74,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":true},{"number":75,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,18,18,20,8,21,18,24,21,15,27,21],"audio":true}],"buildtime":"2011-10-28T21:17:43+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -1036,7 +710,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:39 GMT
++      - Fri, 28 Oct 2011 21:17:44 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1123,7 +797,7 @@
+       to feed upon. And it was so done.<\/span><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0And
+       God saw all the things that he had made, and they were very\n                good.
+       And the evening and morning were the sixth day.<\/span><\/p><\/div>\n","audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+-      2"}}},"buildtime":"2011-10-28T16:21:39+00:00"}],"buildtime":"2011-10-28T16:21:39+00:00"}}'
++      2"}}},"buildtime":"2011-10-28T21:17:44+00:00"}],"buildtime":"2011-10-28T21:17:44+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -1141,7 +815,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:40 GMT
++      - Fri, 28 Oct 2011 21:17:45 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1199,7 +873,7 @@
+       Pharaoh gave this order to all his people: \"Every Hebrew boy that is born you
+       must throw into the Nile, but let every girl live.\"<\/span><\/p><\/div>\n","audio":[{"id":"3","title":"NIV
+       Listener''s Bible","download_urls":{"format_mp3_32k":"http:\/\/cdn-http.audio-bible.api.youversion.com\/niv84\/2\/32k\/exod\/001-7af98ff32cbbce1761a74a3692d8ee0a.mp3"}}]},"previous":{"reference":{"osis":"Gen.50","human":"Genesis
+-      50"}},"next":{"reference":{"osis":"Exod.2","human":"Exodus 2"}}},"buildtime":"2011-10-28T16:21:40+00:00"}],"buildtime":"2011-10-28T16:21:40+00:00"}}'
++      50"}},"next":{"reference":{"osis":"Exod.2","human":"Exodus 2"}}},"buildtime":"2011-10-28T21:17:45+00:00"}],"buildtime":"2011-10-28T21:17:45+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -1217,7 +891,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:43 GMT
++      - Fri, 28 Oct 2011 21:17:48 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1290,13 +964,13 @@
+       And there it was.<\/span><\/p><p><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0God
+       looked over everything he had made; it was so good, so very good! It was evening,
+       it was morning-Day Six.<\/span><\/p><\/div>\n","audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+-      2"}}},"buildtime":"2011-10-28T16:21:43+00:00"}],"buildtime":"2011-10-28T16:21:43+00:00"}}'
++      2"}}},"buildtime":"2011-10-28T21:17:48+00:00"}],"buildtime":"2011-10-28T21:17:48+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+-    method: :post
+-    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/update.json
+-    body: id=935909&title=A%20Different%20Public%20Note&content=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3C!DOCTYPE%20yv-note%20SYSTEM%20%22http%3A%2F%2Fapi.yvdev.com%2Fpub%2Fyvml_1_0.dtd%22%3E%3Cyv-note%3EPublic%20Content%3C%2Fyv-note%3E&language_iso=&reference=gen.1.1&version=vi1934&published=&user_status=public&shared_connections=&token=615ad51b71049e299842f5af14c70cad
++    method: :get
++    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.2&version=kjv
++    body: !!null 
+     headers:
+       referer:
+       - http://web.youversion.com
+@@ -1308,9 +982,8 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:41:14 GMT
++      - Mon, 31 Oct 2011 18:32:01 GMT
+       content-type:
+-      - text/plain
+       - text/plain; charset=utf-8
+       transfer-encoding:
+       - chunked
+@@ -1318,13 +991,15 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":404,"data":{"errors":[{"key":"notes.note.not_found","error":"Note
+-      not found"}]},"buildtime":"2011-10-28T16:41:14+00:00"}}'
++    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:2","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.2","human":"Genesis
++      1:2"},"content":"And the earth was without form, and void; and darkness was
++      upon the face of the deep. And the Spirit of God moved upon the face of the
++      waters."}}]},"buildtime":"2011-10-31T18:32:01+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+     method: :get
+-    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/search.json?page=1&query=Public%2520Note&user_id=4163177
++    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.2-5&version=msg
+     body: !!null 
+     headers:
+       referer:
+@@ -1337,7 +1012,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 17:32:25 GMT
++      - Mon, 31 Oct 2011 18:32:02 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1346,12 +1021,20 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":404,"data":{"errors":[{"key":"bible.notes.not_found","error":"bible.notes.not_found"}],"suggestion":null},"buildtime":"2011-10-28T17:32:25+00:00"}}'
++    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:2, Genesis 1:3,
++      Genesis 1:4, Genesis 1:5","copyright":"1993, 1994, 1995, 1996, 2000, 2001, 2002
++      Eugene H. Peterson by NavPress Publishing","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.2","human":"Genesis
++      1:2"},"content":"Earth was a soup of nothingness, a bottomless emptiness, an
++      inky blackness. God''s Spirit brooded like a bird above the watery abyss."}},{"code":200,"data":{"reference":{"osis":"Gen.1.3","human":"Genesis
++      1:3"},"content":" \nGod spoke: \"Light!\" And light appeared."}},{"code":200,"data":{"reference":{"osis":"Gen.1.4","human":"Genesis
++      1:4"},"content":"God saw that light was good and separated light from dark."}},{"code":200,"data":{"reference":{"osis":"Gen.1.5","human":"Genesis
++      1:5"},"content":"God named the light Day, he named the dark Night. It was evening,
++      it was morning-Day One."}}]},"buildtime":"2011-10-31T18:32:02+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+     method: :get
+-    uri: http://testuser:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163177
++    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/view.json?id=935914
+     body: !!null 
+     headers:
+       referer:
+@@ -1364,7 +1047,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 18:47:30 GMT
++      - Mon, 31 Oct 2011 18:32:02 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1373,13 +1056,18 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+-      or password is invalid"}]},"buildtime":"2011-10-28T18:47:30+00:00"}}'
++    body: ! '{"response":{"code":200,"data":{"id":"935914","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
++      Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE
++      yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
++      Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
++      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935914\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTO","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
++      1:1"}],"version":"kjv","created":"2011-10-28 21:17:38+00","published":null,"updated":"2011-10-28
++      21:17:38.991971+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-31T18:32:02+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+     method: :get
+-    uri: http://testuser2:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163177
++    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/view.json?id=935914
+     body: !!null 
+     headers:
+       referer:
+@@ -1392,7 +1080,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 18:47:30 GMT
++      - Mon, 31 Oct 2011 18:32:02 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1401,13 +1089,18 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+-      or password is invalid"}]},"buildtime":"2011-10-28T18:47:30+00:00"}}'
++    body: ! '{"response":{"code":200,"data":{"id":"935914","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
++      Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE
++      yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
++      Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
++      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935914\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTO","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
++      1:1"}],"version":"kjv","created":"2011-10-28 21:17:38+00","published":null,"updated":"2011-10-28
++      21:17:38.991971+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-31T18:32:02+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+     method: :get
+-    uri: http://testuser2:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163177
++    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/view.json?id=935914
+     body: !!null 
+     headers:
+       referer:
+@@ -1420,7 +1113,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 18:47:30 GMT
++      - Mon, 31 Oct 2011 18:32:03 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1429,13 +1122,108 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+-      or password is invalid"}]},"buildtime":"2011-10-28T18:47:30+00:00"}}'
++    body: ! '{"response":{"code":200,"data":{"id":"935914","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"Public
++      Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE
++      yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
++      Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
++      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935914\/public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTO","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
++      1:1"}],"version":"kjv","created":"2011-10-28 21:17:38+00","published":null,"updated":"2011-10-28
++      21:17:38.991971+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-31T18:32:03+00:00"}}'
++    http_version: '1.1'
++- !ruby/struct:VCR::HTTPInteraction
++  request: !ruby/struct:VCR::Request
++    method: :post
++    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/update.json
++    body: id=935914&title=A%20Different%20Public%20Note&content=%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3C!DOCTYPE%20yv-note%20SYSTEM%20%22http%3A%2F%2Fapi.yvdev.com%2Fpub%2Fyvml_1_0.dtd%22%3E%3Cyv-note%3EPublic%20Content%3C%2Fyv-note%3E&language_iso=&reference=gen.1.1&version=kjv&published=&user_status=public&shared_connections=&token=615ad51b71049e299842f5af14c70cad
++    headers:
++      referer:
++      - http://web.youversion.com
++  response: !ruby/struct:VCR::Response
++    status: !ruby/struct:VCR::ResponseStatus
++      code: 200
++      message: OK
++    headers:
++      server:
++      - nginx/0.7.67
++      date:
++      - Mon, 31 Oct 2011 18:32:03 GMT
++      content-type:
++      - text/plain
++      - text/plain; charset=utf-8
++      transfer-encoding:
++      - chunked
++      connection:
++      - keep-alive
++      vary:
++      - Accept-Encoding
++    body: ! '{"response":{"code":200,"data":{"id":"935914","user_id":"4163177","username":"testuser","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png"},"title":"A
++      Different Public Note","highlight_color":null,"content_yvml":"<?xml version=\"1.0\"
++      encoding=\"utf-8\"?>\n<!DOCTYPE yv-note SYSTEM \"http:\/\/api.yvdev.com\/pub\/yvml_1_0.dtd\">\n<yv-note>Public
++      Content<\/yv-note>","content_html":"Public Content","content_html_android":"Public
++      Content","content_html_ios":"Public Content","content_text":"Public Content","url":"\/notes\/935914\/a-different-public-note","short_url":"http:\/\/dev.read.ly\/n\/3vTO","rich_content":false,"language_iso":null,"rank":"0","reference":[{"osis":"Gen.1.1","human":"Genesis
++      1:1"}],"version":"kjv","created":"2011-10-28 21:17:38+00","published":null,"updated":"2011-10-31
++      18:32:03+00","user_status":"public","system_status":"new"},"buildtime":"2011-10-31T18:32:03+00:00"}}'
++    http_version: '1.1'
++- !ruby/struct:VCR::HTTPInteraction
++  request: !ruby/struct:VCR::Request
++    method: :post
++    uri: http://testuser:tenders@api.yvdev.com:80/2.3/notes/delete.json
++    body: id=935914
++    headers:
++      referer:
++      - http://web.youversion.com
++  response: !ruby/struct:VCR::Response
++    status: !ruby/struct:VCR::ResponseStatus
++      code: 200
++      message: OK
++    headers:
++      server:
++      - nginx/0.7.67
++      date:
++      - Mon, 31 Oct 2011 18:32:04 GMT
++      content-type:
++      - text/plain
++      - text/plain; charset=utf-8
++      transfer-encoding:
++      - chunked
++      connection:
++      - keep-alive
++      vary:
++      - Accept-Encoding
++    body: ! '{"response":{"code":200,"data":"OK","buildtime":"2011-10-31T18:32:04+00:00"}}'
++    http_version: '1.1'
++- !ruby/struct:VCR::HTTPInteraction
++  request: !ruby/struct:VCR::Request
++    method: :get
++    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163176
++    body: !!null 
++    headers:
++      referer:
++      - http://web.youversion.com
++  response: !ruby/struct:VCR::Response
++    status: !ruby/struct:VCR::ResponseStatus
++      code: 200
++      message: OK
++    headers:
++      server:
++      - nginx/0.7.67
++      date:
++      - Mon, 31 Oct 2011 18:32:05 GMT
++      content-type:
++      - text/plain; charset=utf-8
++      transfer-encoding:
++      - chunked
++      connection:
++      - keep-alive
++      vary:
++      - Accept-Encoding
++    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
++      13:23:17.36098+00","last_login":"2011-10-31 18:26:07+00"},"buildtime":"2011-10-31T18:32:05+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+     method: :get
+-    uri: http://testuser2:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163176
++    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.4&version=kjv
+     body: !!null 
+     headers:
+       referer:
+@@ -1448,7 +1236,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 18:50:55 GMT
++      - Mon, 31 Oct 2011 18:32:06 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1457,13 +1245,14 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+-      or password is invalid"}]},"buildtime":"2011-10-28T18:50:55+00:00"}}'
++    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:4","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.4","human":"Genesis
++      1:4"},"content":"And God saw the light, that it was good: and God divided the
++      light from the darkness."}}]},"buildtime":"2011-10-31T18:32:06+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+     method: :get
+-    uri: http://testuser2:@api.yvdev.com:80/2.3/notes/items.json?user_id=4163176
++    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=gen.1.3&version=kjv
+     body: !!null 
+     headers:
+       referer:
+@@ -1476,7 +1265,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 18:50:55 GMT
++      - Mon, 31 Oct 2011 18:32:06 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -1485,6 +1274,34 @@
+       - keep-alive
+       vary:
+       - Accept-Encoding
+-    body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.username_or_password.invalid","error":"Username
+-      or password is invalid"}]},"buildtime":"2011-10-28T18:50:55+00:00"}}'
++    body: ! '{"response":{"code":200,"data":{"request":"Genesis 1:3","copyright":"","items":[{"code":200,"data":{"reference":{"osis":"Gen.1.3","human":"Genesis
++      1:3"},"content":" \nAnd God said, Let there be light: and there was light."}}]},"buildtime":"2011-10-31T18:32:06+00:00"}}'
++    http_version: '1.1'
++- !ruby/struct:VCR::HTTPInteraction
++  request: !ruby/struct:VCR::Request
++    method: :get
++    uri: http://api.yvdev.com:80/2.3/users/view.json?auth_user_id=id&user_id=4163176
++    body: !!null 
++    headers:
++      referer:
++      - http://web.youversion.com
++  response: !ruby/struct:VCR::Response
++    status: !ruby/struct:VCR::ResponseStatus
++      code: 200
++      message: OK
++    headers:
++      server:
++      - nginx/0.7.67
++      date:
++      - Mon, 31 Oct 2011 18:32:06 GMT
++      content-type:
++      - text/plain; charset=utf-8
++      transfer-encoding:
++      - chunked
++      connection:
++      - keep-alive
++      vary:
++      - Accept-Encoding
++    body: ! '{"response":{"code":200,"data":{"id":"4163176","username":"testuser2","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/58dd024d49e1d1b83a5d307f09f32734_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-21
++      13:23:17.36098+00","last_login":"2011-10-31 18:26:07+00"},"buildtime":"2011-10-31T18:32:06+00:00"}}'
+     http_version: '1.1'
+diff --git a/fixtures/vcr/cuke/cucumber_tags/no_user.yml b/fixtures/vcr/cuke/cucumber_tags/no_user.yml
+index 5dcf561..2989cef 100644
+--- a/fixtures/vcr/cuke/cucumber_tags/no_user.yml
++++ b/fixtures/vcr/cuke/cucumber_tags/no_user.yml
+@@ -15,7 +15,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:41 GMT
++      - Fri, 28 Oct 2011 21:17:46 GMT
+       content-type:
+       - text/plain
+       - text/plain; charset=utf-8
+@@ -27,7 +27,7 @@
+       - Accept-Encoding
+     body: ! '{"response":{"code":400,"data":{"errors":[{"key":"users.email.not_available","error":"An
+       account is already registered with that email"},{"key":"users.username.not_available","error":"An
+-      account is already registered with that username"}]},"buildtime":"2011-10-28T16:21:41+00:00"}}'
++      account is already registered with that username"}]},"buildtime":"2011-10-28T21:17:46+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -45,7 +45,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:41 GMT
++      - Fri, 28 Oct 2011 21:17:46 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -55,5 +55,5 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":403,"data":{"errors":[{"key":"users.hash.not_verified","error":"This
+-      account has not been verified."}]},"buildtime":"2011-10-28T16:21:41+00:00"}}'
++      account has not been verified."}]},"buildtime":"2011-10-28T21:17:46+00:00"}}'
+     http_version: '1.1'
+diff --git a/fixtures/vcr/cuke/cucumber_tags/user.yml b/fixtures/vcr/cuke/cucumber_tags/user.yml
+index 6c03057..92e793e 100644
+--- a/fixtures/vcr/cuke/cucumber_tags/user.yml
++++ b/fixtures/vcr/cuke/cucumber_tags/user.yml
+@@ -15,7 +15,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:41 GMT
++      - Fri, 28 Oct 2011 21:17:46 GMT
+       content-type:
+       - text/plain
+       - text/plain; charset=utf-8
+@@ -27,7 +27,7 @@
+       - Accept-Encoding
+     body: ! '{"response":{"code":400,"data":{"errors":[{"key":"users.email.not_available","error":"An
+       account is already registered with that email"},{"key":"users.username.not_available","error":"An
+-      account is already registered with that username"}]},"buildtime":"2011-10-28T16:21:41+00:00"}}'
++      account is already registered with that username"}]},"buildtime":"2011-10-28T21:17:46+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -45,7 +45,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:42 GMT
++      - Fri, 28 Oct 2011 21:17:47 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -55,7 +55,7 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163169","username":"cukeuser3","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"mobile":null,"postal_code":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-19
+-      18:10:14.430167+00","last_login":"2011-10-28 16:21:42+00","twitter":null,"facebook":null,"email":"cukeuser3@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"true","notice_reading_plans":"true"},"buildtime":"2011-10-28T16:21:42+00:00"}}'
++      18:10:14.430167+00","last_login":"2011-10-28 21:17:47+00","twitter":null,"facebook":null,"email":"cukeuser3@youversion.com","notice_badges":"true","notice_contrib_fav":"true","notice_follower":"true","notice_newsletter":"true","notice_reading_plans":"true"},"buildtime":"2011-10-28T21:17:47+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -73,7 +73,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:42 GMT
++      - Fri, 28 Oct 2011 21:17:47 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -83,5 +83,5 @@
+       vary:
+       - Accept-Encoding
+     body: ! '{"response":{"code":200,"data":{"id":"4163169","username":"cukeuser3","user_avatar_url":{"px_24x24":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_24x24.png","px_48x48":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_48x48.png","px_128x128":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_128x128.png","px_512x512":"http:\/\/avatars.youversion.com\/0febb3a634fae08529c07d3c0d143871_512x512.png"},"name":null,"first_name":null,"last_name":null,"location":null,"im_type":null,"im_value":null,"website":null,"language":"false","country":"  ","timezone":"UTC","created":"2011-10-19
+-      18:10:14.430167+00","last_login":"2011-10-28 16:21:42+00"},"buildtime":"2011-10-28T16:21:42+00:00"}}'
++      18:10:14.430167+00","last_login":"2011-10-28 21:17:47+00"},"buildtime":"2011-10-28T21:17:47+00:00"}}'
+     http_version: '1.1'
+diff --git a/fixtures/vcr/cuke/cucumber_tags/versions.yml b/fixtures/vcr/cuke/cucumber_tags/versions.yml
+index e99c5f0..1d70767 100644
+--- a/fixtures/vcr/cuke/cucumber_tags/versions.yml
++++ b/fixtures/vcr/cuke/cucumber_tags/versions.yml
+@@ -15,7 +15,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:27 GMT
++      - Fri, 28 Oct 2011 21:17:35 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -340,7 +340,7 @@
+       de Cubulco","url":"","language":{"iso":"acc","human":"Achi de Cubulco"},"booklist":"acc","copyright":"SIL","offline_android":"false","offline_blackberry":"false","offline_ios":"false","offline":"false","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"false","facebook":"true","audio":"false","text_direction":"ltr"},"accnt":{"title":"Achi''
+       de Cubulco","url":"http:\/\/www.wycliffe.org","language":{"iso":"acc","human":"Achi
+       de Cubulco"},"booklist":"accnt","copyright":"(c) Wycliffe Bible Translators,
+-      Inc.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"}},"defaults":{"bg":"bg1940","cs":"b21","es":"rvr60","fi":"finpr","hu":"kar","id":"idbar","ja":"ja1955","ko":"korvb","no":"nb","pt":"aa","ru":"rursv","vi":"vi1934","zh_CN":"cuvs","zh_TW":"cuv","en":"kjv","ro":"vdc","ar":"nav","it":"nr94","nl":"htb","de":"hfa","sv":"sfb"},"totals":{"versions":169,"languages":52}},"buildtime":"2011-10-28T16:21:27+00:00"}}'
++      Inc.","offline_android":"true","offline_blackberry":"true","offline_ios":"true","offline":"true","filesize":"","min_offline_build":"1","max_offline_build":"1","verse_ranges":"true","facebook":"true","audio":"false","text_direction":"ltr"}},"defaults":{"bg":"bg1940","cs":"b21","es":"rvr60","fi":"finpr","hu":"kar","id":"idbar","ja":"ja1955","ko":"korvb","no":"nb","pt":"aa","ru":"rursv","vi":"vi1934","zh_CN":"cuvs","zh_TW":"cuv","en":"kjv","ro":"vdc","ar":"nav","it":"nr94","nl":"htb","de":"hfa","sv":"sfb"},"totals":{"versions":169,"languages":52}},"buildtime":"2011-10-28T21:17:35+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -358,7 +358,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:28 GMT
++      - Fri, 28 Oct 2011 21:17:36 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -429,7 +429,7 @@
+       and noncommercial use that exceed the above guidelines must be directed to and
+       approved in writing by NavPress Publishing Group, Permissions, P.O. Box 35001,
+       Colorado Springs, Co 80935. (<a href=\"http:\/\/www.messagebible.com\/\" target=\"_blank\">http:\/\/www.messagebible.com<\/a>)<\/p>\n\n<p><a
+-      href=\"http:\/\/www.messagebible.com\"><em>The Message<\/em> Web Site: http:\/\/www.messagebible.com<\/a><\/p>"},"buildtime":"2011-10-28T16:21:28+00:00"}}'
++      href=\"http:\/\/www.messagebible.com\"><em>The Message<\/em> Web Site: http:\/\/www.messagebible.com<\/a><\/p>"},"buildtime":"2011-10-28T21:17:36+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -447,7 +447,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:28 GMT
++      - Fri, 28 Oct 2011 21:17:36 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -474,7 +474,7 @@
+       Peter","chapters":3,"verses":[21,22,18],"audio":false},{"number":62,"osis":"1John","human":"1
+       John","chapters":5,"verses":[10,29,24,21,21],"audio":false},{"number":63,"osis":"2John","human":"2
+       John","chapters":1,"verses":[13],"audio":false},{"number":64,"osis":"3John","human":"3
+-      John","chapters":1,"verses":[14],"audio":false},{"number":65,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":false},{"number":66,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"audio":false}],"buildtime":"2011-10-28T16:21:28+00:00"}}'
++      John","chapters":1,"verses":[14],"audio":false},{"number":65,"osis":"Jude","human":"Jude","chapters":1,"verses":[25],"audio":false},{"number":66,"osis":"Rev","human":"Revelation","chapters":22,"verses":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"audio":false}],"buildtime":"2011-10-28T21:17:36+00:00"}}'
+     http_version: '1.1'
+ - !ruby/struct:VCR::HTTPInteraction
+   request: !ruby/struct:VCR::Request
+@@ -492,7 +492,7 @@
+       server:
+       - nginx/0.7.67
+       date:
+-      - Fri, 28 Oct 2011 16:21:29 GMT
++      - Fri, 28 Oct 2011 21:17:37 GMT
+       content-type:
+       - text/plain; charset=utf-8
+       transfer-encoding:
+@@ -565,5 +565,5 @@
+       And there it was.<\/span><\/p><p><span class=\"verse Gen_1_31\"><strong>31<\/strong>\u00a0God
+       looked over everything he had made; it was so good, so very good! It was evening,
+       it was morning-Day Six.<\/span><\/p><\/div>\n","audio":null},"previous":"","next":{"reference":{"osis":"Gen.2","human":"Genesis
+-      2"}}},"buildtime":"2011-10-28T16:21:29+00:00"}],"buildtime":"2011-10-28T16:21:29+00:00"}}'
++      2"}}},"buildtime":"2011-10-28T21:17:37+00:00"}],"buildtime":"2011-10-28T21:17:37+00:00"}}'
+     http_version: '1.1'
+diff --git a/spec/helpers/notes_helper_spec.rb b/spec/helpers/notes_helper_spec.rb
+index ed2d0b7..fe3580f 100644
+--- a/spec/helpers/notes_helper_spec.rb
++++ b/spec/helpers/notes_helper_spec.rb
+@@ -11,5 +11,4 @@ require 'spec_helper'
+ #   end
+ # end
+ describe NotesHelper do
+-  pending "add some examples to (or delete) #{__FILE__}"
+ end
+diff --git a/spec/models/note_spec.rb b/spec/models/note_spec.rb
+index 8153cb3..28de35c 100644
+--- a/spec/models/note_spec.rb
++++ b/spec/models/note_spec.rb
+@@ -43,11 +43,11 @@ describe Note do
+   
+   describe ".all" do
+     it 'returns true after finding all Notes for the user' do
+-      @notes = Note.all(@auth.id, @auth).count.should > 0
++      @notes = Note.for_user(@auth.id, @auth).count.should > 0
+     end
+ 
+     it 'returns true after finding all Notes' do
+-      @notes = Note.all(@auth.id, nil).count.should > 0
++      @notes = Note.for_user(@auth.id, nil).count.should > 0
+     end
+   end
+ 
+@@ -67,7 +67,7 @@ describe Note do
+ 
+   describe ".update" do
+     it 'updates a note and returns the correct response' do
+-      @note = Note.all(@auth.id, @auth).first()
++      @note = Note.for_user(@auth.id, @auth).first()
+       @response = @note.update(@note.id, title: "Updated New Note", content: "Updated Some Content", reference: "gen.1.1", version: 'kjv' )
+ 
+       @note.id.to_i.should > 0
+@@ -78,14 +78,14 @@ describe Note do
+ 
+   describe ".destroy" do
+     it 'deletes a note and returns the correct response' do
+-      @note = Note.all(@auth.id, @auth).first()
++      @note = Note.for_user(@auth.id, @auth).first()
+       @note.destroy.should be_true
+     end
+   end
+ 
+   describe ".build_object" do
+     it 'build a Note object from a passed response' do
+-      @note_id = Note.all(@auth.id, @auth).first.id
++      @note_id = Note.for_user(@auth.id, @auth).first.id
+       response = YvApi.get('notes/view', {:id => @note_id, :auth => @auth} ) do |errors|
+         @errors = errors.map { |e| e["error"] }
+       end
+-- 
+1.7.0.4
+
