@@ -187,13 +187,13 @@ module YouVersion
 
     def before_update; before_save; end;
     def after_update(response); after_save(response); end;  
-    def update(auth = nil)
+    def update
       response = false
       
       before_update
       token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
-      response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => auth)) do |errors|
+      response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         raise ResourceError.new(errors.map { |e| e["error"] })
       end
             
@@ -204,9 +204,9 @@ module YouVersion
     
     def before_destroy; end;
     def after_destroy; end;
-    def destroy(auth = nil)
+    def destroy
       before_destroy
-      self.class.destroy(self.id, auth)
+      self.class.destroy(self.id, self.auth)
       after_destroy
     end
   end
