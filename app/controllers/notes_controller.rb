@@ -33,14 +33,10 @@ class NotesController < ApplicationController
   end
 
   def create
-    @create_note = nil
     @note = Note.new(params[:note])
     @note.auth = current_auth
 
-    if @create_note = @note.create
-      # Reload required in order to show update since form will post
-      # strings instead of the reference / version objects (better way?)
-      @note = @create_note
+    if @note.create
       render action: "show"
     else
       render action: "new"
@@ -48,13 +44,9 @@ class NotesController < ApplicationController
   end
   
   def update
-    @update_return = nil
     @note = Note.find(params[:id], current_auth)
 
-    if @update_return = @note.update(params[:id], params[:note])
-      # Reload required in order to show update since form will post
-      # strings instead of the reference / version objects (better way?)
-      @note = @update_return
+    if @note.update(params)
       render action: "show"
     else
       render action: "edit"
