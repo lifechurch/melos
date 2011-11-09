@@ -49,6 +49,29 @@ describe Bookmark do
     end
   end
 
+  describe ".update" do
+    it 'updates a Bookmark and returns the correct response' do
+      @auth = Hashie::Mash.new( { id: 4163177,
+                 username: "testuser",
+                 password: "tenders"
+              } )
+      bookmark = Bookmark.new({auth_username: @auth.username, auth_password: @auth.password, version: "esv",
+                               reference: "Matt.19.1", title: "UpdateMe", username: @auth.username})
+      bookmark.save.should_not be_false
+      bookmark.persisted?.should be_true
+
+      response = bookmark.update(title: "New Title", reference: "luke.1.1", version: 'kjv' )
+
+      response.should be_true
+
+      bookmark = Bookmark.find bookmark.id
+
+      bookmark.title.should == "New Title"
+      bookmark.version.should == "kjv"
+      bookmark.reference.should == "luke.1.1"
+    end
+  end
+
   describe ".destroy" do
     it 'destroys a bookmark and returns the correct response' do
       @auth = Hashie::Mash.new( { id: 4163177,
