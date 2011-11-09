@@ -145,8 +145,8 @@ module YouVersion
       response
     end
 
-    def before_update; end;
-    def after_update(response); end;  
+    def before_update; before_save; end;
+    def after_update(response); after_save(response); end;  
     def update(auth = nil)
       response = false
       
