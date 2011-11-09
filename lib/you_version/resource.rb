@@ -13,7 +13,7 @@ module YouVersion
     
     class <<self
       # This allows child class to easily override the prefix
-      # of its API path, if it happens to not be name.tableize.
+      # of its API path, if it happens not to be name.tableize.
       def api_path_prefix
         name.tableize
       end
@@ -84,7 +84,7 @@ module YouVersion
         end
         
         # TODO: Switch to ResourceList here
-        response.send(name.tableize).map {|data| new(data.merge(:auth => params[:auth]))}
+        response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
       end
       
       def for_user(user_id, auth)
@@ -187,13 +187,13 @@ module YouVersion
 
     def before_update; before_save; end;
     def after_update(response); after_save(response); end;  
-    def update(auth = nil)
+    def update
       response = false
       
       before_update
       token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
-      response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => auth)) do |errors|
+      response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         raise ResourceError.new(errors.map { |e| e["error"] })
       end
             
@@ -204,9 +204,9 @@ module YouVersion
     
     def before_destroy; end;
     def after_destroy; end;
-    def destroy(auth = nil)
+    def destroy
       before_destroy
-      self.class.destroy(self.id, auth)
+      self.class.destroy(self.id, self.auth)
       after_destroy
     end
   end
