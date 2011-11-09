@@ -36,7 +36,11 @@ class Note < YouVersion::Resource
   
   def after_build
     self.content = self.content_text
-    self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version}") }
+
+    if self.reference
+      self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version}") }
+    end
+    
     self.version = Version.new(self.version)
   end
   
