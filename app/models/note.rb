@@ -1,13 +1,21 @@
 class Note < YvModel
 
-  attr_reader :errors, :title, :id, :content, :version, :user_status
-  attr_accessor :references
+  attr_reader :errors, :title, :id, :content, :reference, :version, :user_status, :auth, :user_id
+  attr_accessor :references, :auth
   set_defaults(id: nil, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil)
   
   def to_param    
     id    
   end
   
+  def like
+    Like.for_note(id)
+  end
+
+  def like_for_user
+    Like.for_note(id, auth.user_id)
+  end
+
   def self.find(id, auth = nil)
     response = YvApi.get('notes/view', id: id ) do |errors|   # anonymous    
       YvApi.get('notes/view', id: id, auth: auth) do |ee| # auth'ed
@@ -32,8 +40,8 @@ class Note < YvModel
     build_objects(response.notes, nil)
   end
   
-  def all(user_id)
-    self.class.all(auth)
+  def all
+    self.class.all
   end
 
   def self.for_user(user_id, auth)
@@ -44,15 +52,15 @@ class Note < YvModel
   build_objects(response.notes, auth)
   end
 
+  def for_user(user_id)
+    self.class.for_user(user_id, auth)
+  end
+
   def self.for_reference(ref)
     response = YvApi.get('notes/items', reference: ref.notes_api_string) do |errors|
       @errors = errors.map { |e| e["error"] }
       return false
     end
-  end
-
-  def for_user(user_id)
-    self.class.for_user(user_id, auth)
   end
 
   def create

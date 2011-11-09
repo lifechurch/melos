@@ -52,7 +52,17 @@ module Model
     end
     return_val[0..-2]
   end
-  
+
+  # PARM (values): Array of Reference hashies
+  # RETURN: String in OSIS format
+  def self.hash_to_osis_noversion(values)
+    return_val = ""
+    values.each do |ref|
+      return_val << "#{ref.osis_noversion}+"
+    end
+    return_val[0..-2]
+  end
+
   def i18nize(hash)
     lang_key = I18n.locale.to_s.gsub("-", "_")
     hash.has_key?(lang_key) ? hash[lang_key] : hash["default"]

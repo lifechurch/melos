@@ -2,6 +2,7 @@ class NotesController < ApplicationController
   before_filter :set_nav
 
   def index
+    set_sidebar
     if params[:user_id]
       @notes = User.find(params[:user_id].to_i, current_auth).notes
     else
@@ -25,7 +26,7 @@ class NotesController < ApplicationController
   def edit
     if current_auth
       @note = Note.find(params[:id], current_auth)
-      @note.reference = @note.reference.osis_noversion
+      set_for_form(@note)
     else
       redirect_to notes_path
     end    
@@ -45,7 +46,7 @@ class NotesController < ApplicationController
   def update
     @note = Note.find(params[:id], current_auth)
 
-    if @note.update(params[:id], params[:note])
+    if @note.update(params)
       render action: "show"
     else
       render action: "edit"
@@ -62,9 +63,30 @@ class NotesController < ApplicationController
     end
   end
 
+  def like
+    Like.update(params[:id], current_auth)
+
+    @note = Note.find(params[:id], current_auth)
+    render action: "show"
+  end
+
   private
 
   def set_nav
     @nav = :notes
   end
+
+  # Set sidebar values for the Likes cell
+  def set_sidebar
+    @likes = Like.all(current_user.id)
+    @user_id = current_user.id
+  end
+
+  # Setup required in order to show update since form will post
+  # strings instead of the reference / version objects (better way?)
+  def set_for_form(note)
+    note.reference = Model::hash_to_osis_noversion(note.references)
+    note.version = note.version.osis
+  end
+
 end
