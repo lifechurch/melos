@@ -15,8 +15,9 @@ class Note < YouVersion::Resource
   end
 
   def before_save
-    self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
+    self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
     self.reference = self.reference.gsub('+', '%2b')
+    self.version = self.version.osis if self.version.is_a?(Version)
   end
   
   def after_save(response)
@@ -25,8 +26,9 @@ class Note < YouVersion::Resource
   end
   
   def before_update
-    self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
-    self.reference = @reference.gsub('+', '%2b')
+    self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
+    self.reference = self.reference.gsub('+', '%2b')
+    self.version = self.version.osis if self.version.is_a?(Version)
   end
   
   def after_update(response)
@@ -35,9 +37,9 @@ class Note < YouVersion::Resource
   end
   
   def after_build
-    self.content = self.content_text
+    self.content = self.content_text unless self.content_text.blank?
 
-    if self.reference
+    if self.reference.is_a?(Array)
       self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version}") }
     end
     

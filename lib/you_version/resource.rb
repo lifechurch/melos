@@ -71,7 +71,7 @@ module YouVersion
       def find(id, auth = nil, params = {})
         response = get(resource_path, id: id ) do |e|   # anonymous
           get(resource_path, id: id, auth: auth) do |e| # auth'ed
-            raise ResourceError.new(errors.map { |e| e["error"] })
+            raise ResourceError.new(e.map { |e| e["error"] })
           end
         end
 
@@ -127,13 +127,14 @@ module YouVersion
       def secure_caller?(caller)
         # TODO: Is this slow?  Nasty?  Probably. :(
         calling_method = caller.first.match(/`(.*)'$/)[1]
-        @secure_methods.include?(calling_method.to_sym)
+        @secure_methods.present? && @secure_methods.include?(calling_method.to_sym)
       end
 
       # If the calling method is one of those for which
       # we need to use https, add :secure => true to params
       def securify(params, caller)
-        params.merge(:secure => true) if secure_caller?(caller)
+        params.merge!(:secure => true) if secure_caller?(caller)
+        params
       end
 
       def post(path, params, &block)
@@ -167,13 +168,13 @@ module YouVersion
     
     def before_save; end;
     def after_save(response); end;  
-    def save(auth = nil)
+    def save
       response = false
       
       before_save
-      token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
+      token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
-      response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => auth)) do |errors|
+      response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         raise ResourceError.new(errors.map { |e| e["error"] })
       end
       
