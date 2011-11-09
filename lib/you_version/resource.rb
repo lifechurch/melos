@@ -114,18 +114,19 @@ module YouVersion
     
     def initialize(data = {})
       @attributes = data
+      after_build
+    end
+    
+    def persisted?
+      return !id.blank?
     end
     
     def to_param
       id
     end
     
-    def before_save
-    end
-    
-    def after_save(response)
-    end
-    
+    def before_save; end;
+    def after_save(response); end;  
     def save(auth = nil)
       response = false
       
@@ -143,11 +144,13 @@ module YouVersion
       
       response
     end
-    
+
+    def before_update; end;
+    def after_update(response); end;  
     def update(auth = nil)
       response = false
       
-      before_save
+      before_update
       token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
       response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => auth)) do |errors|
@@ -156,13 +159,17 @@ module YouVersion
       
       self.version = Version.new(response.version)
       
-      after_save(response)
+      after_update(response)
       
       response
     end
     
+    def before_destroy; end;
+    def after_destroy; end;
     def destroy(auth = nil)
+      before_destroy
       self.class.destroy(self.id, auth)
+      after_destroy
     end
   end
 end

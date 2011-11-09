@@ -1,138 +1,41 @@
-class Note
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
-  include Model
-  def persisted?
-    return !id.blank?
-  end
-
-  attr_reader :errors
+class Note < YouVersion::Resource
   attr_accessor :references
 
-  def initialize(params = {})
-    reg_data = {id: nil, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil}
-    initialize_class(params, reg_data)
-  end
-  
-  def to_param
-    puts "listening"
-    id
-  end
-
-  def self.find(id, auth = nil)
-    response = YvApi.get('notes/view', id: id ) do |e|   # anonymous    
-      YvApi.get('notes/view', id: id, auth: auth) do |e| # auth'ed
-        @errors = errors.map { |e| e["error"] }
-        return false
-      end
-    end
-
-    build_object(response, auth)
-  end
-    
-  def find(id, auth)
-    self.class.find(id, auth)
-  end
-
-  def self.all
-    response = YvApi.get('notes/items') do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
-
-    build_objects(response.notes, nil)
-  end
-  
-  def all(user_id)
-    self.class.all(auth)
-  end
-
-  def self.for_user(user_id, auth)
-    response = YvApi.get('notes/items', {:user_id => user_id, :auth => auth} ) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
-
-  build_objects(response.notes, auth)
-  end
+  attribute :reference
+  attribute :title
+  attribute :content_text
+  attribute :content
+  attribute :published
+  attribute :user_status
+  attribute :share_connections
 
   def self.for_reference(ref)
-    response = YvApi.get('notes/items', reference: ref.notes_api_string) do |errors|
-      puts errors
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
+    all(reference: ref.notes_api_string)
   end
 
-  def for_user(user_id)
-    self.class.for_user(user_id, auth)
-  end
-
-  def create
-    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-    @prexml_content = @content
-    @content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
-    @reference = @reference.gsub('+', '%2b')
-
-    response = YvApi.post('notes/create', class_attributes(:title, :content, :language_iso, :reference, :version,
-        :published, :user_status, :shared_connections, :token, :auth)) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      @content = @prexml_content
-      return false
-    end
-    @id = response.id
-    @version = Version.new(response.version)
-    @reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
-    response
+  def before_save
+    self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
+    self.reference = self.reference.gsub('+', '%2b')
   end
   
-  def update(id, fields)
-    set_class_values(self, fields)
-    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-    @prexml_content = @content
-    @content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
-    @reference = @reference.gsub('+', '%2b')
-
-    response = YvApi.post('notes/update', class_attributes(:id, :title, :content, :language_iso, :reference, :version,
-        :published, :user_status, :shared_connections, :token, :auth)) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      @content = @prexml_content
-      return false
-    end
-    @version = Version.new(response.version)
-    @reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
-    response
+  def after_save
+    self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
   end
   
-  def destroy
-    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-    
-    response = YvApi.post('notes/delete', class_attributes(:id, :auth)) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
-    response
+  def before_update
+    self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{@content}</yv-note>"
+    self.reference = @reference.gsub('+', '%2b')
   end
   
-  private
-   
-  def self.build_object(response, auth)
-    @note = Note.new(response)
-    @note.auth = auth
-    @note.content = @note.content_text
-    @note.references = @note.reference.map { |n| Reference.new("#{n.osis}.#{@note.version}") }
-    @note.version = Version.new(@note.version)
-      
-    #@note.reference = Reference.new("#{Model::hash_to_osis(@note.reference)}.#{@note.version.osis}")
-    @note
+  def after_update(response)
+    self.version = Version.new(response.version)
+    self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
   end
   
-  def self.build_objects(response, auth)
-    @return_notes = []
-    response.each do |note|
-      @return_notes << build_object(note, auth)
-    end
-    @return_notes
+  def after_build
+    self.content = self.content_text
+    self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version}") }
+    self.version = Version.new(self.version)
   end
   
 end
