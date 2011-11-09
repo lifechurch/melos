@@ -4,7 +4,7 @@ describe Note do
   use_vcr_cassette "note"
 
   before :all do
-    @auth = Hashie::Mash.new( { id: 4163177,
+    @auth = Hashie::Mash.new( { user_id: 4163177,
                username: "testuser",
                password: "tenders"
             } )
@@ -31,7 +31,7 @@ describe Note do
       @note.title.should == 'Note Title'
       @note.content.should == 'Note Content'
       @note.version.osis.should == 'kjv'
-      @note.reference.osis.should == 'gen.1.1.kjv'
+      @note.references.first.osis.should == 'gen.1.1.kjv'
       @note.user_status.should == 'public'
     end
 
@@ -43,23 +43,23 @@ describe Note do
   
   describe ".all" do
     it 'returns true after finding all Notes for the user' do
-      @notes = Note.for_user(@auth.id, @auth).count.should > 0
+      @notes = Note.for_user(@auth.user_id, @auth).count.should > 0
     end
 
     it 'returns true after finding all Notes' do
-      @notes = Note.for_user(@auth.id, nil).count.should > 0
+      @notes = Note.for_user(@auth.user_id, nil).count.should > 0
     end
   end
 
   describe ".create" do
     it 'creates a note and returns the correct response' do
-      @note = Note.new( title: "My New Note", content: "Some Content", reference: "gen.1.1", version: 'kjv' )
-      @note.auth = @auth
+      @note = Note.new( title: "My New Note", content: "Some Content", references: [Reference.new("gen.1.1.kjv")], version: Version.find("kjv"), auth: @auth )
+      # @note.auth = @auth
       @response = @note.create
 
       @note.id.to_i.should > 0
       @note.version.class.should == Version
-      @note.reference.class.should == Reference
+      @note.references.first.class.should == Reference
 
       Note.find(@note.id, @auth).should be_true
     end
@@ -67,25 +67,26 @@ describe Note do
 
   describe ".update" do
     it 'updates a note and returns the correct response' do
-      @note = Note.for_user(@auth.id, @auth).first()
-      @response = @note.update(@note.id, title: "Updated New Note", content: "Updated Some Content", reference: "gen.1.1", version: 'kjv' )
+      @note = Note.for_user(@auth.user_id, @auth).first()
+      @response = @note.update(title: "Updated New Note", content: "Updated Some Content", references: [Reference.new("gen.1.1")], version: Version.find("kjv"))
 
+      @response.should be_true
       @note.id.to_i.should > 0
       @note.version.class.should == Version
-      @note.reference.class.should == Reference
+      @note.references.first.class.should == Reference
     end
   end
 
   describe ".destroy" do
     it 'deletes a note and returns the correct response' do
-      @note = Note.for_user(@auth.id, @auth).first()
+      @note = Note.for_user(@auth.user_id, @auth).first()
       @note.destroy.should be_true
     end
   end
 
   describe ".build_object" do
     it 'build a Note object from a passed response' do
-      @note_id = Note.for_user(@auth.id, @auth).last.id
+      @note_id = Note.for_user(@auth.user_id, @auth).last.id
       response = YvApi.get('notes/view', {:id => @note_id, :auth => @auth} ) do |errors|
         @errors = errors.map { |e| e["error"] }
       end
@@ -96,7 +97,7 @@ describe Note do
 
   describe ".build_objects" do
     it 'build an array of Note objects from a passed response' do
-      response = YvApi.get('notes/items', {:user_id => @auth.id, :auth => @auth} ) do |errors|
+      response = YvApi.get('notes/items', {:user_id => @auth.user_id, :auth => @auth} ) do |errors|
         @errors = errors.map { |e| e["error"] }
       end
       @errors.should be_nil

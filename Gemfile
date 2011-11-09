@@ -10,6 +10,8 @@ gem 'jquery-rails'
 #gem 'pg'
 gem 'mysql2'
 gem 'routing-filter'
+gem 'execjs'
+gem 'therubyracer'
 
 
 # Gems used only for assets and not required
