@@ -106,7 +106,7 @@ module YouVersion
       attr_accessor :resource_attributes
 
       def attribute(attr_name)
-        puts "Adding #{attr_name} to resource_attributes (which is a #{@resource_attributes.class})"
+        @resource_attributes ||= []
         @resource_attributes << attr_name
         
         define_method(attr_name) do
