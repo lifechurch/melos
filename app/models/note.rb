@@ -100,15 +100,9 @@ class Note < YvModel
   private
    
   def self.build_object(response, auth)
-     response.references = response.reference.map { |n| Reference.new("#{n.osis}.#{response.version}") }
-   response.version = Version.find(response.version)
+    response.references = response.reference.map { |n| Reference.new("#{n.osis}.#{response.version}") }
+    response.version = Version.find(response.version)
     @note = Note.new(response.merge(auth: auth, content: response.content_text))
- #   @note = Note.new(response)
- #   @note.auth = auth
- #   @note.content = @note.content_text
-      
-    #@note.reference = Reference.new("#{Model::hash_to_osis(@note.reference)}.#{@note.version.osis}")
-    @note
   end
   
   def self.build_objects(response, auth)

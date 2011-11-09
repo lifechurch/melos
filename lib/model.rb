@@ -1,5 +1,10 @@
 module Model
-  
+# Caedmon et al: I'm pretty sure I moved everything that was being used in this file to
+  # the new YvModule and YvModel. I'll leave it in for now, but if you're still using it,
+  # try to move over to YvModel/YvModule.
+  #
+  # -cb
+  #
   def self.included(base)
     base.extend(ClassMethods)
 

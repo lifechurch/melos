@@ -9,12 +9,11 @@ class String
     when 3
       chapters = items[1].split("-")
       hash[:chapter] = chapters.length == 1 ? chapters.first.to_i : (chapters[0].to_i..chapters[1].to_i)
-      # hash[:version] = items[2]
       verses = items[2].split("-")
       if verses.length > 1
         hash[:verse] = (verses[0].to_i..verses[1].to_i)
       else
-        items[2].match(/^[0-9]+$/) ? hash[:verse] = items[1].to_i : hash[:version] = items[1]
+        items[2].match(/^[0-9]+$/) ? hash[:verse] = items[2].to_i : hash[:version] = items[2]
       end
     when 4
       hash[:chapter] = items[1].to_i
