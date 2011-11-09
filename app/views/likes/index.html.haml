@@ -18,10 +18,10 @@
   - if @likes
     %ul.big_list
       - @likes.each do |like|
-        %li{id: like.id}
+        %li{id: like.note_id}
           %h5= link_to like.note_title, note_path(like.note_id)
           %p.mute.small.negative_gutter_top_half= link_to_references(like.note.references)
-          %p= like.note.content_text
+          %p= like.note.content
           %div{class: "status"}= like.note.user_status
   - else
     %div{class: "none"}= "Sorry, no likes here!"

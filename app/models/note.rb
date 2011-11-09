@@ -1,7 +1,7 @@
 class Note < YvModel
 
-  attr_reader :errors, :title, :id, :content, :version, :user_status
-  attr_accessor :references
+  attr_reader :errors, :title, :id, :content, :reference, :version, :user_status, :auth, :user_id
+  attr_accessor :references, :auth
   set_defaults(id: nil, title: "", content: "", prexml_content: "", language_iso: "", reference: "", version: "", published: "", user_status: "", share_connections: "", auth: nil)
   
   def to_param    

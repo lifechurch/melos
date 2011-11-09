@@ -1,20 +1,10 @@
-class Like
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
-  include Model
-  def persisted?
-    return !id.blank?
-  end
+class Like < YvModel
 
-  attr_reader :errors
-
-  def initialize(params = {})
-    reg_data = {id: nil, note_id: nil, auth: nil}
-    initialize_class(self, params, reg_data)
-  end
+  attr_reader :errors, :note_id, :note_title, :note_url, :note_user_avatar_url, :note_user_id, :note_username, :user_avatar_url, :user_id, :username, :id
+  attr_accessor :auth, :note_id
+  set_defaults(id: nil, auth: nil, exists: nil)
 
   def to_param
-    puts "listening"
     id
   end
 
@@ -36,7 +26,6 @@ class Like
         @return_like = like
       end
     end
-
     @return_like
   end
 
@@ -58,29 +47,23 @@ class Like
   end
 
   def self.update(note_id, auth)
-    unless @like = for_note(note_id, auth.user_id)
-      @like = Like.new(auth: auth, note_id: note_id)
-      @like.create
+    like = for_note(note_id, auth.user_id)
+    if like.nil?
+      like = Like.new
+      like.auth = auth
+      like.note_id = note_id
+      like.save(false)
     else
-      @like.auth = auth
-      @like.note_id = note_id
-      @like.destroy
+      like.auth = auth
+      like.save(true)
     end
   end
 
-  def create
-    @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-
-    response = YvApi.post('likes/create', class_attributes(:note_id, :token, :auth)) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
-    @id = response.id
-    response
-  end
-
-  def destroy
-    response = YvApi.post('likes/delete', class_attributes(:note_id, :auth)) do |errors|
+  def save(exists)
+    @token = Digest::MD5.hexdigest "#{@auth.username}.Yv6-#{@auth.password}"
+    endpoint = !exists ? "likes/create" : "likes/delete"
+    attrs = attributes(:note_id, :token, :auth)
+    response = YvApi.post(endpoint, attrs) do |errors|
       @errors = errors.map { |e| e["error"] }
       return false
     end
@@ -90,9 +73,7 @@ class Like
   private
 
   def self.build_object(response, auth)
-    @like = Like.new(response)
-    @like.auth = auth
-    @like
+    @like = Like.new(response.merge(auth: auth))
   end
 
   def self.build_objects(response, auth)
