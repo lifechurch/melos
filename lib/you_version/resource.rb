@@ -109,7 +109,6 @@ module YouVersion
     attr_accessor :attributes
     
     attribute :id
-    attribute :version
     attribute :auth
     
     def initialize(data = {})
@@ -138,7 +137,6 @@ module YouVersion
       end
       
       self.id = response.id
-      self.version = Version.new(response.version)
       
       after_save(response)
       
@@ -156,9 +154,7 @@ module YouVersion
       response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => auth)) do |errors|
         raise ResourceError.new(errors.map { |e| e["error"] })
       end
-      
-      self.version = Version.new(response.version)
-      
+            
       after_update(response)
       
       response

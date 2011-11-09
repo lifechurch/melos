@@ -8,7 +8,8 @@ class Note < YouVersion::Resource
   attribute :published
   attribute :user_status
   attribute :share_connections
-
+  attribute :version
+  
   def self.for_reference(ref)
     all(reference: ref.notes_api_string)
   end
@@ -18,7 +19,8 @@ class Note < YouVersion::Resource
     self.reference = self.reference.gsub('+', '%2b')
   end
   
-  def after_save
+  def after_save(response)
+    self.version = Version.new(response.version)
     self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
   end
   
