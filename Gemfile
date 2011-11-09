@@ -1,14 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '=3.1.0'
+gem 'rails', '~> 3.1.0'
 gem 'httparty'
 gem 'memcache-client'
 gem 'hashie'
 gem 'cells'
 gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
-#gem 'pg'
-gem 'mysql2'
+gem 'pg'
 gem 'routing-filter'
 gem 'execjs'
 gem 'therubyracer'
@@ -33,7 +32,7 @@ end
 # gem 'capistrano'
 
 # To use debugger
-gem 'ruby-debug19', :require => 'ruby-debug'
+# gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test, :development do
   # Pretty printed test output
