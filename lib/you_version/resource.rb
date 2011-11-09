@@ -82,8 +82,9 @@ module YouVersion
         response = YvApi.get(list_path, params) do |errors|
           raise ResourceError.new(errors.map { |e| e["error"] })
         end
-
-        response.map {|data| new(data.merge(:auth => auth))}
+        
+        # TODO: Switch to ResourceList here
+        response.send(name.tableize).map {|data| new(data.merge(:auth => params[:auth]))}
       end
       
       def for_user(user_id, auth)
