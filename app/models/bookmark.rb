@@ -1,14 +1,10 @@
-class Bookmark2 < YouVersion::Resource
+class Bookmark < YouVersion::Resource
 
   attribute :highlight_color
   attribute :labels
   attribute :reference
   attribute :version
   attribute :title
-
-  def self.api_path_prefix
-    "bookmarks"
-  end
 
   def before_save
     self.reference = self.reference.map(&:osis).join("%2b") if self.reference.is_a?(Array)
