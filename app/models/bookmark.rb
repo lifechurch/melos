@@ -11,7 +11,12 @@ class Bookmark < YouVersion::Resource
   end
   
   def after_save(response)
-    self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    osis = if response.reference && response.reference.respond_to?(:osis)
+      response.reference.osis
+    else
+      Model::hash_to_osis(response.reference)
+    end
+    self.reference = Reference.new("#{osis}.#{response.version}")
   end
   
   def before_update
