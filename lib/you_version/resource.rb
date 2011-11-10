@@ -39,7 +39,7 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
       
-      def naughty_find(id, auth = nil, params = {}, &block)
+      def naughty_find(id, params = {}, &block)
 
         bad_naughty = nil
 
@@ -47,7 +47,7 @@ module YouVersion
         response = get(resource_path, params.merge(id: id) ) do |e|
           if (e.find {|t| t['key'] =~ /username_and_password.required/})
             # If API said it wants authorization, try again with auth
-            get(resource_path, params.merge(id: id, auth: auth)) do |e|
+            get(resource_path, params.merge(id: id, auth: params[:auth])) do |e|
               # Capture errors
               bad_naughty = e
             end
@@ -66,17 +66,20 @@ module YouVersion
           end
         end
 
-        new(response.merge(:auth => auth))
+        new(response.merge(:auth => params[:auth]))
       end
       
       def find(id, params = {})
         response = get(resource_path, id: id ) do |e|   # anonymous
+          puts "*"*80
+          pp e
+          puts "*"*80
           get(resource_path, id: id, auth: params[:auth]) do |e| # auth'ed
             raise ResourceError.new(e.map { |e| e["error"] })
           end
         end
 
-        new(response.merge(:auth => auth))
+        new(response.merge(:auth => params[:auth]))
       end
       
       def all(params = {})
@@ -97,6 +100,8 @@ module YouVersion
       end
       
       def destroy(id, auth = nil)
+        # TODO: I don't think @token is needed here, and it won't work if auth
+        # is nil, so auth = nil probably needs to be just auth in method params.
         @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
         response = post(delete_path, {:id => id, :auth => auth}) do |errors|
@@ -200,7 +205,7 @@ module YouVersion
       before_update
       return false unless valid?
       
-      token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
+      token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
       response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         raise ResourceError.new(errors.map { |e| e["error"] })
