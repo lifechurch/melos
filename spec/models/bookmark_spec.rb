@@ -24,7 +24,7 @@ describe Bookmark do
       @bookmark.reference.osis.should == 'Matt.1.1'
     end
 
-    it 'returns nil if Bookmark was not found' do
+    it 'raises an exception if Bookmark was not found' do
       Bookmark.find('0').should raise_error(ResourceError, "API Error: Version is invalid")
     end
   end
@@ -82,10 +82,6 @@ describe Bookmark do
 
   describe ".destroy" do
     it 'destroys a bookmark and returns the correct response' do
-      @auth = Hashie::Mash.new( { id: 4163177,
-                 username: "testuser",
-                 password: "tenders"
-              } )
       bookmark = Bookmark.new({auth: @auth, version: "esv",
                                reference: "Matt.19.1", title: "DeleteMe", username: @auth.username})
       bookmark.save.should_not be_false
