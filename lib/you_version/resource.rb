@@ -5,6 +5,10 @@ module YouVersion
     def initialize(api_errors)
       @errors = api_errors.map { |e| (e.is_a? Hash) ? e["error"] : e }
     end
+
+    def message
+      @errors.join("\n")
+    end
   end
   
   class Resource
