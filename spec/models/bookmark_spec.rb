@@ -30,6 +30,13 @@ describe Bookmark do
   end
 
   describe ".save" do
+    before(:all) do
+      @user = User.new(@params)
+      puts "User is #{@user.inspect}"
+      @user.create.should_not be_false
+      @new_auth = Hashie::Mash.new({id: @user.id, username: @user.username, password: @user.password})
+    end
+
     it "returns true for saving valid params" do
       # This is really brittle, because in the initial call (where we create our VCR cassette),
       # this user has to be a valid user on the remote system. So that means we have to create
@@ -38,24 +45,25 @@ describe Bookmark do
       # in it, one that we knew existed on the remote system. But this would likewise be quite
       # brittle. I don't have an answer, just making a note next time I'm through here and
       # wondering why a spec that used to pass has started failing or something.
-      user = User.new(@params)
-      puts "User is #{user.inspect}"
-      user.create.should_not be_false
-      bookmark = Bookmark.new({auth_username: user.username, auth_password: user.password, version: "esv",
-                               reference: "Matt.1", title: "Begettings", username: user.username})
+      bookmark = Bookmark.new({auth: @new_auth, version: "esv",
+                               reference: "Matt.1", title: "Begettings", username: @user.username})
       bookmark.save.should_not be_false
     end
 
     it "returns false for invalid params" do
-      bad_bookmark = Bookmark.new({reference: "Matt.99"})
+      bad_bookmark = Bookmark.new({reference: "Matt.99", auth: @new_auth})
       bad_bookmark.save.should be_false
       bad_bookmark.errors.count.should == 1
+    end
+
+    after(:all) do
+      #      @user.destroy
     end
   end
 
   describe ".update" do
     it 'updates a Bookmark and returns the correct response' do
-      bookmark = Bookmark.new({auth_username: @auth.username, auth_password: @auth.password, version: "esv",
+      bookmark = Bookmark.new({auth: @auth, version: "esv",
                                reference: "Matt.19.1", title: "UpdateMe", username: @auth.username})
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
@@ -78,7 +86,7 @@ describe Bookmark do
                  username: "testuser",
                  password: "tenders"
               } )
-      bookmark = Bookmark.new({auth_username: @auth.username, auth_password: @auth.password, version: "esv",
+      bookmark = Bookmark.new({auth: @auth, version: "esv",
                                reference: "Matt.19.1", title: "DeleteMe", username: @auth.username})
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
