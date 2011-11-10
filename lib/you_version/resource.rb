@@ -3,7 +3,7 @@ module YouVersion
     attr_accessor :errors
     
     def initialize(api_errors)
-      @errors = api_errors
+      @errors = api_errors.map { |e| (e.is_a? Hash) ? e["error"] : e }
     end
   end
   
@@ -70,27 +70,32 @@ module YouVersion
       end
       
       def find(id, params = {})
-        response = get(resource_path, id: id ) do |e|   # anonymous
+        response = get(resource_path, id: id ) do |errors|   # anonymous
           puts "*"*80
-          pp e
+          pp errors
           puts "*"*80
-          get(resource_path, id: id, auth: params[:auth]) do |e| # auth'ed
-            raise ResourceError.new(e.map { |e| e["error"] })
+          get(resource_path, id: id, auth: params[:auth]) do |errors| # auth'ed
+            puts "*"*80
+            pp errors
+            puts "*"*80
+            raise ResourceError.new(errors)
           end
         end
 
         new(response.merge(:auth => params[:auth]))
       end
-      
+
       def all(params = {})
         response = YvApi.get(list_path, params) do |errors|
-          raise ResourceError.new(errors.map { |e| e["error"] })
+          raise ResourceError.new(errors)
         end
-        
+        puts "*"*80
+        pp response
+        puts "*"*80
         # TODO: Switch to ResourceList here
         response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
       end
-      
+
       def for_user(user_id, auth)
         all(auth, {:user_id => user_id, :auth => auth})
       end
@@ -105,7 +110,7 @@ module YouVersion
         @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
         response = post(delete_path, {:id => id, :auth => auth}) do |errors|
-          raise ResourceError.new(errors.map { |e| e["error"] })
+          raise ResourceError.new(errors)
         end
         response
       end
@@ -187,7 +192,7 @@ module YouVersion
       token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
       response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
-        raise ResourceError.new(errors.map { |e| e["error"] })
+        raise ResourceError.new(errors)
       end
       
       self.id = response.id
@@ -208,7 +213,7 @@ module YouVersion
       token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
       response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
-        raise ResourceError.new(errors.map { |e| e["error"] })
+        raise ResourceError.new(errors)
       end
             
       after_update(response)
