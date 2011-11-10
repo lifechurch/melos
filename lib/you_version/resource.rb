@@ -10,6 +10,7 @@ module YouVersion
   class Resource
     extend ActiveModel::Naming
     include ActiveModel::Conversion
+    include ActiveModel::Validations
     
     class <<self
       # This allows child class to easily override the prefix
@@ -68,9 +69,9 @@ module YouVersion
         new(response.merge(:auth => auth))
       end
       
-      def find(id, auth = nil, params = {})
+      def find(id, params = {})
         response = get(resource_path, id: id ) do |e|   # anonymous
-          get(resource_path, id: id, auth: auth) do |e| # auth'ed
+          get(resource_path, id: id, auth: params[:auth]) do |e| # auth'ed
             raise ResourceError.new(e.map { |e| e["error"] })
           end
         end
@@ -106,16 +107,20 @@ module YouVersion
       
       attr_accessor :resource_attributes
 
-      def attribute(attr_name)
+      def attribute(attr_name, serialization_class = nil)
         @resource_attributes ||= []
         @resource_attributes << attr_name
         
         define_method(attr_name) do
-          attributes[attr_name]
+          if serialization_class
+            serialization_class.new attributes[attr_name]
+          else
+            attributes[attr_name]
+          end
         end
         
         define_method("#{attr_name}=") do |val|
-          attributes[attr_name] = val
+          attributes[attr_name] = (val.respond_to?(:to_attribute) ? val.to_attribute : val.to_s)
         end        
       end
       
@@ -147,7 +152,7 @@ module YouVersion
     end
 
     attr_accessor :attributes
-
+    
     attribute :id
     attribute :auth
 
@@ -172,6 +177,8 @@ module YouVersion
       response = false
       
       before_save
+      return false unless valid?
+      
       token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
       response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
@@ -191,6 +198,8 @@ module YouVersion
       response = false
       
       before_update
+      return false unless valid?
+      
       token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
       response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
