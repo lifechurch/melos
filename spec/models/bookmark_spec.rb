@@ -9,6 +9,11 @@ describe Bookmark do
                agree: TRUE,
                verified: TRUE,
                locale: "en_US" }
+    @auth = Hashie::Mash.new(
+              { id: 4163177,
+                username: "testuser",
+                password: "tenders"
+              } )
   end
 
   describe ".find" do
@@ -20,8 +25,7 @@ describe Bookmark do
     end
 
     it 'returns nil if Bookmark was not found' do
-      @bookmark = Bookmark.find('0')
-      @bookmark.should be_nil
+      Bookmark.find('0').should raise_error(ResourceError, "API Error: Version is invalid")
     end
   end
 
@@ -51,10 +55,6 @@ describe Bookmark do
 
   describe ".update" do
     it 'updates a Bookmark and returns the correct response' do
-      @auth = Hashie::Mash.new( { id: 4163177,
-                 username: "testuser",
-                 password: "tenders"
-              } )
       bookmark = Bookmark.new({auth_username: @auth.username, auth_password: @auth.password, version: "esv",
                                reference: "Matt.19.1", title: "UpdateMe", username: @auth.username})
       bookmark.save.should_not be_false
