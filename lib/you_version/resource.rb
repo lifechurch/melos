@@ -10,6 +10,7 @@ module YouVersion
   class Resource
     extend ActiveModel::Naming
     include ActiveModel::Conversion
+    include ActiveModel::Validations
     
     class <<self
       # This allows child class to easily override the prefix
@@ -151,7 +152,7 @@ module YouVersion
     end
 
     attr_accessor :attributes
-
+    
     attribute :id
     attribute :auth
 
@@ -176,6 +177,8 @@ module YouVersion
       response = false
       
       before_save
+      return false unless valid?
+      
       token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
       response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
@@ -195,6 +198,8 @@ module YouVersion
       response = false
       
       before_update
+      return false unless valid?
+      
       token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
       response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
