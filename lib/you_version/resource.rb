@@ -10,10 +10,11 @@ module YouVersion
   class Resource
     extend ActiveModel::Naming
     include ActiveModel::Conversion
+    include ActiveModel::Validations
     
     class <<self
       # This allows child class to easily override the prefix
-      # of its API path, if it happens to not be name.tableize.
+      # of its API path, if it happens not to be name.tableize.
       def api_path_prefix
         name.tableize
       end
@@ -68,10 +69,10 @@ module YouVersion
         new(response.merge(:auth => auth))
       end
       
-      def find(id, auth = nil, params = {})
+      def find(id, params = {})
         response = get(resource_path, id: id ) do |e|   # anonymous
-          get(resource_path, id: id, auth: auth) do |e| # auth'ed
-            raise ResourceError.new(errors.map { |e| e["error"] })
+          get(resource_path, id: id, auth: params[:auth]) do |e| # auth'ed
+            raise ResourceError.new(e.map { |e| e["error"] })
           end
         end
 
@@ -84,7 +85,7 @@ module YouVersion
         end
         
         # TODO: Switch to ResourceList here
-        response.send(name.tableize).map {|data| new(data.merge(:auth => params[:auth]))}
+        response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
       end
       
       def for_user(user_id, auth)
@@ -106,16 +107,20 @@ module YouVersion
       
       attr_accessor :resource_attributes
 
-      def attribute(attr_name)
+      def attribute(attr_name, serialization_class = nil)
         @resource_attributes ||= []
         @resource_attributes << attr_name
         
         define_method(attr_name) do
-          attributes[attr_name]
+          if serialization_class
+            serialization_class.new attributes[attr_name]
+          else
+            attributes[attr_name]
+          end
         end
         
         define_method("#{attr_name}=") do |val|
-          attributes[attr_name] = val
+          attributes[attr_name] = (val.respond_to?(:to_attribute) ? val.to_attribute : val.to_s)
         end        
       end
       
@@ -127,13 +132,14 @@ module YouVersion
       def secure_caller?(caller)
         # TODO: Is this slow?  Nasty?  Probably. :(
         calling_method = caller.first.match(/`(.*)'$/)[1]
-        @secure_methods.include?(calling_method.to_sym)
+        @secure_methods.present? && @secure_methods.include?(calling_method.to_sym)
       end
 
       # If the calling method is one of those for which
       # we need to use https, add :secure => true to params
       def securify(params, caller)
-        params.merge(:secure => true) if secure_caller?(caller)
+        params.merge!(:secure => true) if secure_caller?(caller)
+        params
       end
 
       def post(path, params, &block)
@@ -146,7 +152,7 @@ module YouVersion
     end
 
     attr_accessor :attributes
-
+    
     attribute :id
     attribute :auth
 
@@ -167,13 +173,15 @@ module YouVersion
     
     def before_save; end;
     def after_save(response); end;  
-    def save(auth = nil)
+    def save
       response = false
       
       before_save
-      token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
+      return false unless valid?
+      
+      token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
-      response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => auth)) do |errors|
+      response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         raise ResourceError.new(errors.map { |e| e["error"] })
       end
       
@@ -186,13 +194,15 @@ module YouVersion
 
     def before_update; before_save; end;
     def after_update(response); after_save(response); end;  
-    def update(auth = nil)
+    def update
       response = false
       
       before_update
+      return false unless valid?
+      
       token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
-      response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => auth)) do |errors|
+      response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         raise ResourceError.new(errors.map { |e| e["error"] })
       end
             
@@ -203,9 +213,9 @@ module YouVersion
     
     def before_destroy; end;
     def after_destroy; end;
-    def destroy(auth = nil)
+    def destroy
       before_destroy
-      self.class.destroy(self.id, auth)
+      self.class.destroy(self.id, self.auth)
       after_destroy
     end
   end
