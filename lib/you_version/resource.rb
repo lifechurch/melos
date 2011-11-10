@@ -68,9 +68,9 @@ module YouVersion
         new(response.merge(:auth => auth))
       end
       
-      def find(id, auth = nil, params = {})
+      def find(id, params = {})
         response = get(resource_path, id: id ) do |e|   # anonymous
-          get(resource_path, id: id, auth: auth) do |e| # auth'ed
+          get(resource_path, id: id, auth: params[:auth]) do |e| # auth'ed
             raise ResourceError.new(e.map { |e| e["error"] })
           end
         end
