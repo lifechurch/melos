@@ -106,16 +106,20 @@ module YouVersion
       
       attr_accessor :resource_attributes
 
-      def attribute(attr_name)
+      def attribute(attr_name, serialization_class = nil)
         @resource_attributes ||= []
         @resource_attributes << attr_name
         
         define_method(attr_name) do
-          attributes[attr_name]
+          if serialization_class
+            serialization_class.new attributes[attr_name]
+          else
+            attributes[attr_name]
+          end
         end
         
         define_method("#{attr_name}=") do |val|
-          attributes[attr_name] = val
+          attributes[attr_name] = (val.respond_to?(:to_attribute) ? val.to_attribute : val.to_s)
         end        
       end
       
