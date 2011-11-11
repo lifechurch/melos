@@ -194,6 +194,11 @@ module YouVersion
     def save
       response = false
 
+      unless self.auth
+        self.errors[:base] << "auth is required, but it's not set."
+        return false
+      end
+
       before_save
 
       begin
@@ -218,6 +223,11 @@ module YouVersion
     def update
       response = false
 
+      unless self.auth
+        self.errors[:base] << "auth is required, but it's not set."
+        return false
+      end
+
       before_update
 
       begin
@@ -239,6 +249,10 @@ module YouVersion
     def after_destroy; end;
     def destroy
       response = false
+      unless self.auth
+        self.errors[:base] << "auth is required, but it's not set."
+        return false
+      end
       before_destroy
       begin
         response = self.class.destroy(self.id, self.auth)
