@@ -45,18 +45,6 @@ class Bookmark < YouVersion::Resource
     response
   end
 
-  # TODO: add a destroy class method that accepts multiple IDs in an array
-  def destroy
-    opts = {ids: id, auth: self.auth}
-
-    puts "Calling: Bookmark.destroy(#{id}, #{opts})"
-    response = YvApi.post('bookmarks/delete', opts) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
-    response
-  end
-
   def update(fields)
     # In API version 2.3, only title, labels, and highlight_color can be updated
     allowed_keys = [:title, :labels, :highlight_color]
