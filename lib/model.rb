@@ -25,11 +25,7 @@ module Model
   # PARM (values): Array of Reference hashies
   # RETURN: String in OSIS format
   def self.hash_to_osis(values)
-    refs = []
-    values.each do |ref|
-      refs << ref.osis
-    end
-    refs.join('+')
+    values.map(&:osis).join('+')
   end
 
 end
