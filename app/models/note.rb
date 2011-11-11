@@ -22,7 +22,9 @@ class Note < YouVersion::Resource
 
   def after_save(response)
     self.content = @original_content
-    self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    if response
+      self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    end
   end
 
   def before_update
@@ -33,7 +35,9 @@ class Note < YouVersion::Resource
 
   def after_update(response)
     self.content = @original_content
-    self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    if response
+      self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    end
   end
 
   def after_build

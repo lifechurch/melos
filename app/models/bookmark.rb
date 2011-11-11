@@ -11,11 +11,9 @@ class Bookmark < YouVersion::Resource
   end
 
   def after_save(response)
-    osis = if response.reference && response.reference.respond_to?(:osis)
-      response.reference.osis
-    else
-      Model::hash_to_osis(response.reference)
-    end
+    return unless response
+    # Sometimes references come back as an array, sometimes just one, Hashie::Mash
+    osis = [response.reference].flatten.map(&:osis).join('+')
     self.reference = Reference.new("#{osis}.#{response.version}")
   end
 
@@ -24,7 +22,9 @@ class Bookmark < YouVersion::Resource
   end
 
   def after_update(response)
-    self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    return unless response
+    osis = [response.reference].flatten.map(&:osis).join('+')
+    self.reference = Reference.new("#{osis}.#{response.version}")
   end
 
   def after_build
@@ -42,18 +42,6 @@ class Bookmark < YouVersion::Resource
       return false
     end
     @id = response.id
-    response
-  end
-
-  # TODO: add a destroy class method that accepts multiple IDs in an array
-  def destroy
-    opts = {ids: id, auth: self.auth}
-
-    puts "Calling: Bookmark.destroy(#{id}, #{opts})"
-    response = YvApi.post('bookmarks/delete', opts) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
     response
   end
 

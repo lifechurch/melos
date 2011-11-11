@@ -9,27 +9,12 @@ class YvApi
   end
 
   def self.get(path, opts={}, &block)
-    default_options[:basic_auth] = nil
-    # For login
-    basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
-    # For auth'ed API calls with :user => current_user
-    basic_auth opts[:auth].username, opts.delete(:auth).password if opts[:auth]
-    # Clean up the path
+    auth_from_opts!(opts)
+    base = get_base_url(opts.delete(:secure))
     path = clean_up(path)
-    # Set the request protocol
-    protocol = "http"
-    if opts[:secure] == true
-      opts.delete(:secure)
-      protocol += "s"
-    end
-    # Set the base URL
-    base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
 
-    # Figure out if we should cache
-    cache_length = opts.delete(:cache_for)
-        
     # If we should cache, try pulling from cache first
-    if cache_length
+    if cache_length = opts.delete(:cache_for)
       cache_key = {p: path, q: opts}
       Rails.cache.fetch cache_key, expires_in: cache_length do
         # No cache hit; ask the API
@@ -45,24 +30,23 @@ class YvApi
   end
 
   def self.post(path, opts={}, &block)
-    default_options[:basic_auth] = nil
-    # For login
-    basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
-    # For auth'ed API calls with :user => current_user
-    basic_auth opts[:auth].username, opts.delete(:auth).password if opts[:auth]
-    # Clean up the path
+    auth_from_opts!(opts)
+    base = get_base_url(opts.delete(:secure))
     path = clean_up(path)
-    # Set the request protocol
-    protocol = (opts.delete(:secure) == true) ? 'https' : 'http'
-    # Set the base URL
-    base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
-    
+
     response = httparty_post(base + path, body: opts)
-    
+
     return api_response_or_rescue(response, block)
   end
 
   private
+
+  def self.auth_from_opts!(opts)
+    # For login
+    basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
+    # For auth'ed API calls with :user => current_user
+    basic_auth opts[:auth].username, opts.delete(:auth).password if opts[:auth]
+  end
 
   def self.clean_up(path)
     path = "/" + path unless path.match(/^\//)
@@ -70,6 +54,12 @@ class YvApi
     return path
   end
 
+  def self.get_base_url(use_secure = nil)
+    # Set the request protocol
+    protocol = use_secure ? 'https' : 'http'
+    # Set the base URL
+    base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
+  end
 
   def self.api_response_or_rescue(response, block)
     if response["response"]["code"].to_i >= 400

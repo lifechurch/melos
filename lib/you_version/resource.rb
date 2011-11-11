@@ -74,7 +74,9 @@ module YouVersion
       end
 
       def find(id, params = {})
-        response = get(resource_path, id: id ) do |errors|   # anonymous
+        opts = {id: id}
+        opts.merge! params  # Let params override if it already has an :id
+        response = get(resource_path, opts) do |errors|   # anonymous
           puts "*"*80
           pp errors
           puts "*"*80
@@ -191,6 +193,11 @@ module YouVersion
     def save
       response = true
 
+      unless self.auth
+        self.errors[:base] << "auth is required, but it's not set."
+        return false
+      end
+
       before_save
 
       begin
@@ -220,6 +227,11 @@ module YouVersion
       self.attributes = self.attributes.merge(updated_attributes)
       response = true
 
+      unless self.auth
+        self.errors[:base] << "auth is required, but it's not set."
+        return false
+      end
+
       before_update
 
       begin
@@ -245,9 +257,19 @@ module YouVersion
     def after_destroy; end;
     def destroy
       response = true
+      
+      unless self.auth
+        self.errors[:base] << "auth is required, but it's not set."
+        return false
+      end
+      
       before_destroy
+      
       begin
         response = self.class.destroy(self.id, self.auth) do |errors|
+          new_errors = errors.map { |e| e["error"] }
+          self.errors[:base] << new_errors
+          
           if block_given?
             yield errors
           end
