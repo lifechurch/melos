@@ -101,22 +101,19 @@ module YouVersion
       end
 
       def for_user(user_id, auth)
-        all(auth, {:user_id => user_id, :auth => auth})
+        all(:user_id => user_id, :auth => auth)
       end
 
-      def create(data)
-        new(data).save
+      def create(data, &block)
+        new(data).save(&block)
       end
 
-      def destroy(id, auth = nil)
+      def destroy(id, auth = nil, &block)
         # TODO: I don't think @token is needed here, and it won't work if auth
         # is nil, so auth = nil probably needs to be just auth in method params.
         @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
-        response = post(delete_path, {:id => id, :auth => auth}) do |errors|
-          raise ResourceError.new(errors)
-        end
-        response
+        post(delete_path, {:id => id, :auth => auth}, &block)
       end
 
       attr_accessor :resource_attributes
@@ -192,7 +189,7 @@ module YouVersion
     def before_save; end;
     def after_save(response); end;
     def save
-      response = false
+      response = true
 
       before_save
 
@@ -202,10 +199,14 @@ module YouVersion
         token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
         response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
-          raise ResourceError.new(errors)
+          if block_given?
+            yield errors
+          end
+          
+          response = false
         end
 
-        self.id = response.id
+        self.id = response.try(:id)
       ensure
         after_save(response)
       end
@@ -217,7 +218,7 @@ module YouVersion
     def after_update(response); after_save(response); end;
     def update(updated_attributes)
       self.attributes = self.attributes.merge(updated_attributes)
-      response = false
+      response = true
 
       before_update
 
@@ -226,8 +227,12 @@ module YouVersion
 
         token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
-        response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
-          raise ResourceError.new(errors)
+        response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|          
+          if block_given?
+            yield errors
+          end
+          
+          response = false
         end
       ensure
         after_update(response)
@@ -239,10 +244,16 @@ module YouVersion
     def before_destroy; end;
     def after_destroy; end;
     def destroy
-      response = false
+      response = true
       before_destroy
       begin
-        response = self.class.destroy(self.id, self.auth)
+        response = self.class.destroy(self.id, self.auth) do |errors|
+          if block_given?
+            yield errors
+          end
+          
+          response = false
+        end
       ensure
         after_destroy
       end
