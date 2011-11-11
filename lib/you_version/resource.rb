@@ -118,13 +118,13 @@ module YouVersion
         end
         response
       end
-      
+
       attr_accessor :resource_attributes
 
       def attribute(attr_name, serialization_class = nil)
         @resource_attributes ||= []
         @resource_attributes << attr_name
-        
+
         define_method(attr_name) do
           if serialization_class
             serialization_class.new attributes[attr_name]
@@ -132,12 +132,16 @@ module YouVersion
             attributes[attr_name]
           end
         end
-        
+
         define_method("#{attr_name}=") do |val|
-          attributes[attr_name] = (val.respond_to?(:to_attribute) ? val.to_attribute : val.to_s)
-        end        
+          if serialization_class
+            attributes[attr_name] = (val.respond_to?(:to_attribute) ? val.to_attribute : val.to_s)
+          else
+            attributes[attr_name] = val
+          end
+        end
       end
-      
+
       def secure(*secure_method_names)
         @secure_methods ||= []
         @secure_methods += secure_method_names.map(:to_sym)
