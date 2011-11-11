@@ -215,7 +215,8 @@ module YouVersion
 
     def before_update; before_save; end;
     def after_update(response); after_save(response); end;
-    def update
+    def update(updated_attributes)
+      self.attributes = self.attributes.merge(updated_attributes)
       response = false
 
       before_update
