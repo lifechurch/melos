@@ -74,7 +74,9 @@ module YouVersion
       end
 
       def find(id, params = {})
-        response = get(resource_path, id: id ) do |errors|   # anonymous
+        opts = {id: id}
+        opts.merge! params  # Let params override if it already has an :id
+        response = get(resource_path, opts) do |errors|   # anonymous
           puts "*"*80
           pp errors
           puts "*"*80
@@ -255,7 +257,11 @@ module YouVersion
       end
       before_destroy
       begin
-        response = self.class.destroy(self.id, self.auth)
+        response = self.class.destroy(self.id, self.auth) do |errors|
+          @errors = errors.map { |e| e["error"] }
+          self.errors[:base] << @errors
+          return false
+        end
       ensure
         after_destroy
       end
