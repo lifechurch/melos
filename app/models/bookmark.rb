@@ -12,11 +12,8 @@ class Bookmark < YouVersion::Resource
 
   def after_save(response)
     return unless response
-    osis = if response.reference && response.reference.respond_to?(:osis)
-      response.reference.osis
-    else
-      Model::hash_to_osis(response.reference)
-    end
+    # Sometimes references come back as an array, sometimes just one, Hashie::Mash
+    osis = [response.reference].flatten.map(&:osis).join('+')
     self.reference = Reference.new("#{osis}.#{response.version}")
   end
 
@@ -26,7 +23,8 @@ class Bookmark < YouVersion::Resource
 
   def after_update(response)
     return unless response
-    self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+    osis = [response.reference].flatten.map(&:osis).join('+')
+    self.reference = Reference.new("#{osis}.#{response.version}")
   end
 
   def after_build
