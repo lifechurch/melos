@@ -1,7 +1,7 @@
 module YouVersion
   class ResourceError < StandardError
     attr_accessor :errors
-    
+
     def initialize(api_errors)
       @errors = api_errors.map { |e| (e.is_a? Hash) ? e["error"] : e }
     end
@@ -10,12 +10,12 @@ module YouVersion
       @errors.join("\n")
     end
   end
-  
+
   class Resource
     extend ActiveModel::Naming
     include ActiveModel::Conversion
     include ActiveModel::Validations
-    
+
     class <<self
       # This allows child class to easily override the prefix
       # of its API path, if it happens not to be name.tableize.
@@ -28,21 +28,21 @@ module YouVersion
       end
 
       def resource_path
-        "#{api_path_prefix}/view"        
+        "#{api_path_prefix}/view"
       end
-      
+
       def update_path
         "#{api_path_prefix}/update"
       end
-      
+
       def create_path
         "#{api_path_prefix}/create"
       end
-      
+
       def delete_path
         "#{api_path_prefix}/delete"
       end
-      
+
       def naughty_find(id, params = {}, &block)
 
         bad_naughty = nil
@@ -72,7 +72,7 @@ module YouVersion
 
         new(response.merge(:auth => params[:auth]))
       end
-      
+
       def find(id, params = {})
         response = get(resource_path, id: id ) do |errors|   # anonymous
           puts "*"*80
@@ -107,7 +107,7 @@ module YouVersion
       def create(data)
         new(data).save
       end
-      
+
       def destroy(id, auth = nil)
         # TODO: I don't think @token is needed here, and it won't work if auth
         # is nil, so auth = nil probably needs to be just auth in method params.
@@ -163,14 +163,14 @@ module YouVersion
       def post(path, params, &block)
         YvApi.post(path, securify(params, caller), &block)
       end
-      
+
       def get(path, params, &block)
         YvApi.get(path, securify(params, caller), &block)
       end
     end
 
     attr_accessor :attributes
-    
+
     attribute :id
     attribute :auth
 
@@ -180,61 +180,72 @@ module YouVersion
       @attributes = data
       after_build
     end
-    
+
     def persisted?
       return !id.blank?
     end
-    
+
     def to_param
       id
     end
-    
+
     def before_save; end;
-    def after_save(response); end;  
+    def after_save(response); end;
     def save
       response = false
-      
-      before_save
-      return false unless valid?
-      
-      token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
-      response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
-        raise ResourceError.new(errors)
+      before_save
+
+      begin
+        return false unless valid?
+
+        token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
+
+        response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+          raise ResourceError.new(errors)
+        end
+
+        self.id = response.id
+      ensure
+        after_save(response)
       end
-      
-      self.id = response.id
-      
-      after_save(response)
-      
+
       response
     end
 
     def before_update; before_save; end;
-    def after_update(response); after_save(response); end;  
+    def after_update(response); after_save(response); end;
     def update
       response = false
-      
-      before_update
-      return false unless valid?
-      
-      token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
-      response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
-        raise ResourceError.new(errors)
+      before_update
+
+      begin
+        return false unless valid?
+
+        token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
+
+        response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+          raise ResourceError.new(errors)
+        end
+      ensure
+        after_update(response)
       end
-            
-      after_update(response)
-      
+
       response
     end
-    
+
     def before_destroy; end;
     def after_destroy; end;
     def destroy
+      response = false
       before_destroy
-      self.class.destroy(self.id, self.auth)
-      after_destroy
+      begin
+        response = self.class.destroy(self.id, self.auth)
+      ensure
+        after_destroy
+      end
+      response
     end
   end
 end
