@@ -193,10 +193,7 @@ module YouVersion
     def save
       response = true
 
-      unless self.auth
-        self.errors[:base] << "auth is required, but it's not set."
-        return false
-      end
+      return false unless authorized?
 
       before_save
 
@@ -206,6 +203,9 @@ module YouVersion
         token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
         response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+          new_errors = errors.map { |e| e["error"] }
+          self.errors[:base] << new_errors
+
           if block_given?
             yield errors
           end
@@ -227,10 +227,7 @@ module YouVersion
       self.attributes = self.attributes.merge(updated_attributes)
       response = true
 
-      unless self.auth
-        self.errors[:base] << "auth is required, but it's not set."
-        return false
-      end
+      return false unless authorized?
 
       before_update
 
@@ -240,6 +237,9 @@ module YouVersion
         token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
         response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|          
+          new_errors = errors.map { |e| e["error"] }
+          self.errors[:base] << new_errors
+
           if block_given?
             yield errors
           end
@@ -258,10 +258,7 @@ module YouVersion
     def destroy
       response = true
       
-      unless self.auth
-        self.errors[:base] << "auth is required, but it's not set."
-        return false
-      end
+      return false unless authorized?
       
       before_destroy
       
@@ -280,6 +277,12 @@ module YouVersion
         after_destroy
       end
       response
+    end
+  end
+  
+  def authorized?
+    unless self.auth
+      self.errors[:base] << "auth is required, but it's not set."
     end
   end
 end
