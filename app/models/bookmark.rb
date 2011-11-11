@@ -9,7 +9,7 @@ class Bookmark < YouVersion::Resource
   def before_save
     self.reference = self.reference.map(&:osis).join("%2b") if self.reference.is_a?(Array)
   end
-  
+
   def after_save(response)
     osis = if response.reference && response.reference.respond_to?(:osis)
       response.reference.osis
@@ -18,15 +18,15 @@ class Bookmark < YouVersion::Resource
     end
     self.reference = Reference.new("#{osis}.#{response.version}")
   end
-  
+
   def before_update
     self.reference = self.reference.map(&:osis).join("%2b") if self.reference.is_a?(Array)
   end
-  
+
   def after_update(response)
     self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
   end
-  
+
   def after_build
     if self.reference.is_a?(Array)
       self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version}") }
