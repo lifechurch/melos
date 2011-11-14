@@ -33,18 +33,6 @@ class Bookmark < YouVersion::Resource
     end
   end
 
-  def old_save(auth = nil)
-    opts = attributes(:highlight_color, :labels, :reference, :title, :version)
-    # TODO: find the real username and pass
-    opts.merge! ({auth_username: 'testuser', auth_password: 'tenders'})
-    response = YvApi.post('bookmarks/create', opts) do |errors|
-      @errors = errors.map { |e| e["error"] } if errors
-      return false
-    end
-    @id = response.id
-    response
-  end
-
   def update(fields)
     # In API version 2.3, only title, labels, and highlight_color can be updated
     allowed_keys = [:title, :labels, :highlight_color]
@@ -52,16 +40,7 @@ class Bookmark < YouVersion::Resource
     # Clear out the ones we can't update.
     fields.delete_if {|k, v| ! allowed_keys.include? k}
 
-    # token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-
-    opts = {id: id, auth: self.auth}
-    opts.merge! fields
-    puts "Calling: YvApi.post('bookmarks/update', #{opts})"
-    response = YvApi.post('bookmarks/update', opts) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
-    response
+    super
   end
 
   def self.for_user(user_id = nil, params = {})
