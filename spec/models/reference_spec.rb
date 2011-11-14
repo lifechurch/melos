@@ -71,8 +71,8 @@ describe Reference do
   describe "#to_api_string" do
     it "returns a notes API-frendly string" do
       Reference.new("gen.1.1.asv").notes_api_string.should == "gen.1.1"
-      Reference.new("gen.1.1-3.asv").notes_api_string.should == "gen.1.1%2bgen.1.2%2bgen.1.3"
-      Reference.new("gen.1.asv").notes_api_string.should == "gen.1.1%2bgen.1.2%2bgen.1.3%2bgen.1.4%2bgen.1.5%2bgen.1.6%2bgen.1.7%2bgen.1.8%2bgen.1.9%2bgen.1.10%2bgen.1.11%2bgen.1.12%2bgen.1.13%2bgen.1.14%2bgen.1.15%2bgen.1.16%2bgen.1.17%2bgen.1.18%2bgen.1.19%2bgen.1.20%2bgen.1.21%2bgen.1.22%2bgen.1.23%2bgen.1.24%2bgen.1.25%2bgen.1.26%2bgen.1.27%2bgen.1.28%2bgen.1.29%2bgen.1.30%2bgen.1.31"
+      Reference.new("gen.1.1-3.asv").notes_api_string.should == "gen.1.1+gen.1.2+gen.1.3"
+      Reference.new("gen.1.asv").notes_api_string.should == "gen.1.1+gen.1.2+gen.1.3+gen.1.4+gen.1.5+gen.1.6+gen.1.7+gen.1.8+gen.1.9+gen.1.10+gen.1.11+gen.1.12+gen.1.13+gen.1.14+gen.1.15+gen.1.16+gen.1.17+gen.1.18+gen.1.19+gen.1.20+gen.1.21+gen.1.22+gen.1.23+gen.1.24+gen.1.25+gen.1.26+gen.1.27+gen.1.28+gen.1.29+gen.1.30+gen.1.31"
     end
   end
 

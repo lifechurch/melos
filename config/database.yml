@@ -1,9 +1,9 @@
 # Boilerplate for now. Will fill in when necessary.
 common: &common
-  adapter: postgresql
+  adapter: mysql2
   host: localhost
-  port: 5432
-  username: yv_web
+  username: root
+  password: "123456789"
 
 development:
   <<: *common

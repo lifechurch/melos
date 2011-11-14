@@ -1,3 +1,7 @@
+- content_for :sidebar do
+  = render_cell :likes_list_widget, :display, likes: @likes, title: "Likes", user_id: @user_id
+  = render '/shared/widget_ad_bible_app'
+
 %article
   - if current_auth
     - if request.path == user_notes_path(current_user)
@@ -24,7 +28,7 @@
         %li{id: note.id}
           %h5= link_to note.title, note_path(note.id)
           %p.mute.small.negative_gutter_top_half= link_to_references(note.references) 
-          %p= note.content_text
+          %p= note.content
           %div{class: "status"}= note.user_status
   - else
     %div{class: "none"}= "Sorry, no notes here!"
