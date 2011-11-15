@@ -257,20 +257,20 @@ module YouVersion
     def after_destroy; end;
     def destroy
       response = true
-      
+
       return false unless authorized?
-      
+
       before_destroy
-      
+
       begin
         response = self.class.destroy(self.id, self.auth) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
-          
+
           if block_given?
             yield errors
           end
-          
+
           response = false
         end
       ensure
@@ -279,7 +279,7 @@ module YouVersion
       response
     end
   end
-  
+
   def authorized?
     unless self.auth
       self.errors[:base] << "auth is required, but it's not set."
