@@ -21,14 +21,14 @@ class NotesController < ApplicationController
       redirect_to notes_path
     end
   end
-        
+
   def edit
     if current_auth
       @note = Note.find(params[:id], :auth => current_auth)
       @note.reference = @note.reference.osis_noversion
     else
       redirect_to notes_path
-    end    
+    end
   end
 
   def create
@@ -39,9 +39,9 @@ class NotesController < ApplicationController
       render action: "show"
     else
       render action: "new"
-    end    
+    end
   end
-  
+
   def update
     @note = Note.find(params[:id], :auth => current_auth)
 
@@ -49,12 +49,12 @@ class NotesController < ApplicationController
       render action: "show"
     else
       render action: "edit"
-    end    
+    end
   end
-  
+
   def destroy
     @note = Note.find(params[:id], :auth => current_auth)
-    
+
     if @note.destroy
       redirect_to notes_path
     else
