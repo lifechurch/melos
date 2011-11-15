@@ -12,17 +12,24 @@ class YvApi
     auth_from_opts!(opts)
     base = get_base_url(opts.delete(:secure))
     path = clean_up(path)
-
+    resource_url = base + path
+    puts "** YvApi.get: Calling #{resource_url} with query => #{opts}"
+    if (resource_url == "http://api.yvdev.com/2.3/bible/verse.json")
+      calling_method = caller.first.match(/`(.*)'$/)[1]
+      puts "** YvApi.get: Called from #{calling_method}"
+      puts "Top 5 Callers:"
+      pp caller[0..4]
+    end
     # If we should cache, try pulling from cache first
     if cache_length = opts.delete(:cache_for)
       cache_key = {p: path, q: opts}
       Rails.cache.fetch cache_key, expires_in: cache_length do
         # No cache hit; ask the API
-        response = httparty_get(base + path, query: opts)
+        response = httparty_get(resource_url, query: opts)
       end
     else
       # Just ask the API
-      response = httparty_get(base + path, query: opts)
+      response = httparty_get(resource_url, query: opts)
     end
 
     # Check the API response for error code
@@ -33,8 +40,10 @@ class YvApi
     auth_from_opts!(opts)
     base = get_base_url(opts.delete(:secure))
     path = clean_up(path)
+    resource_url = base + path
+    puts "** YvApi.post: Calling #{resource_url} with body => #{opts}"
 
-    response = httparty_post(base + path, body: opts)
+    response = httparty_post(resource_url, body: opts)
 
     return api_response_or_rescue(response, block)
   end
@@ -42,6 +51,9 @@ class YvApi
   private
 
   def self.auth_from_opts!(opts)
+    # Clear the auth state or it'll keep it around between requests
+    default_options.delete(:basic_auth)
+
     # For login
     basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
     # For auth'ed API calls with :user => current_user
@@ -74,7 +86,7 @@ class YvApi
     # creating a resource? Just return success
     # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
     # return true if response["response"]["code"] == 201
-	  return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
+    return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
 
     return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
 
