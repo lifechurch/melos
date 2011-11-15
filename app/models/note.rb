@@ -44,7 +44,7 @@ class Note < YouVersion::Resource
     self.content = self.content_text unless self.content_text.blank?
 
     if self.reference.is_a?(Array)
-      self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version}") }
+      self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version.osis}") }
     end
   end
 
