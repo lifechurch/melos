@@ -43,48 +43,32 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
-      def naughty_find(id, params = {}, &block)
+      def find(id, params = {}, &block)
+        api_errors = nil
 
-        bad_naughty = nil
-
+        opts = {id: id}
+        opts.merge! params  # Let params override if it already has an :id
         # First try request as an anonymous request
-        response = get(resource_path, params.merge(id: id) ) do |e|
-          if (e.find {|t| t['key'] =~ /username_and_password.required/})
+        response = get(resource_path, opts) do |errors|
+          if (errors.find {|t| t['key'] =~ /username_and_password.required/})
             # If API said it wants authorization, try again with auth
-            get(resource_path, params.merge(id: id, auth: params[:auth])) do |e|
+            get(resource_path, params.merge(id: id, auth: params[:auth])) do |errors|
               # Capture errors
-              bad_naughty = e
+              api_errors = errors
             end
           else
-              # Capture errors
-            bad_naughty = e
+            Rails.logger.info "** Resource.find: got non-auth error: #{errors}"
+            # Some other error, just capture and the error we got
+            api_errors = errors
           end
 
           # Down here we do something with the real error
-          if bad_naughty
+          if api_errors
             if block_given?
-              response = block.call(response, bad_naughty)
+              response = block.call(response, api_errors)
               # all the weird crap they do now
             end
-            raise
-          end
-        end
-
-        new(response.merge(:auth => params[:auth]))
-      end
-
-      def find(id, params = {})
-        opts = {id: id}
-        opts.merge! params  # Let params override if it already has an :id
-        response = get(resource_path, opts) do |errors|   # anonymous
-          puts "*"*80
-          pp errors
-          puts "*"*80
-          get(resource_path, id: id, auth: params[:auth]) do |errors| # auth'ed
-            puts "*"*80
-            pp errors
-            puts "*"*80
-            raise ResourceError.new(errors)
+            raise ResourceError.new(api_errors)
           end
         end
 
