@@ -115,7 +115,7 @@ module YouVersion
         # is nil, so auth = nil probably needs to be just auth in method params.
         @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
 
-        post(delete_path, {:id => id, :auth => auth}, &block)
+        post(delete_path, {:ids => id, :auth => auth}, &block)
       end
 
       attr_accessor :resource_attributes
@@ -278,11 +278,13 @@ module YouVersion
       end
       response
     end
-  end
 
-  def authorized?
-    unless self.auth
-      self.errors[:base] << "auth is required, but it's not set."
+    def authorized?
+      unless self.auth
+        self.errors.add(:base, "auth is required, but it's not set.")
+      else
+        true
+      end
     end
   end
 end

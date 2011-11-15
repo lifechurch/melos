@@ -25,7 +25,7 @@ describe Bookmark do
     end
 
     it 'raises an exception if Bookmark was not found' do
-      Bookmark.find('0').should raise_error(ResourceError, "API Error: Version is invalid")
+      lambda { Bookmark.find('0') }.should raise_error(YouVersion::ResourceError, 'not_found')
     end
   end
 
