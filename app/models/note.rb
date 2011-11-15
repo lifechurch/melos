@@ -9,6 +9,7 @@ class Note < YouVersion::Resource
   attribute :user_status
   attribute :share_connections
   attribute :version, Version
+  attribute :user_avatar_url
 
   def self.for_reference(ref)
     all(reference: ref.notes_api_string)
