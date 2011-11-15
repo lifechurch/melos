@@ -17,7 +17,6 @@ describe User do
     end
 
     it "hashifies all the instance variables without an argument" do
-      @fake_user = User.new({alpha: "foo", beta: "bar", gamma: "baz"})
       all_attrs = @fake_user.attributes
       all_attrs[:alpha].should == "foo"
       all_attrs[:beta].should == "bar"
@@ -31,7 +30,7 @@ describe User do
 
   describe "#create" do
     it "returns true for creating a user with valid params" do
-      user = User.new({email: "testuser@youversion.com", username: "testuser", password: "tenders", agree: TRUE, verified: TRUE, locale: "en_US"})
+      user = User.new(@params)
       user.create.should_not be_false
     end
 

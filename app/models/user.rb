@@ -44,9 +44,9 @@ class User
     reg_data = {id: nil, email: "", username: "", password: "", verified: false, agree: false}.merge!(params)
     reg_data[:id] = reg_data[:id].to_i # If it came back from the API
     reg_data.each do |k,v|
-      self.instance_variable_set("@#{k}", v) # Create instance variable
-      self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")}) # Create the getter
-      self.class.send(:define_method, "#{k}=", proc{|v| self.instance_variable_set("@#{k}", v)}) # Create the setter
+      # Create an accessors and set the initial values for all the params
+      self.class.send(:attr_accessor, k)
+      self.send("#{k}=", v)
     end
   end
 
@@ -88,5 +88,9 @@ class User
       attrs[var] = instance_variable_get("@#{var}")
     end
     attrs
+  end
+
+  def bookmarks
+    Bookmark.for_user(id)
   end
 end

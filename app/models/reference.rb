@@ -13,7 +13,7 @@ class Reference
       # raise "Tried to create an invalid reference. Make sure you're passing an OSIS string or hash with at least a book name, chapter, and version." unless (@ref[:book] && @ref[:chapter] && @ref[:version])
   end
 
-  def hash
+  def raw_hash
     @ref
   end
 

@@ -3,7 +3,7 @@ Given /^a user named "([^"]*)" with password "([^"]*)" does not exist$/ do |arg1
 end
 
 Given /^a user named "([^"]*)" with password "([^"]*)" and email "([^"]*)" exists$/ do |username, password, email| # "
-  User.new({username: username, password: password, email: email, verified: true, agree: true }).create
+  @user = User.new({username: username, password: password, email: email, verified: true, agree: true }).create
 end
 
 Given /^I am signed out$/ do

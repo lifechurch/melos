@@ -17,12 +17,11 @@ gem 'therubyracer'
 # in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
   gem 'compass', '~> 0.11.1'
   gem 'css_parser', '~> 1.1.9'
 end
-
-
 
 
 # Use unicorn as the web server
@@ -36,8 +35,7 @@ end
 
 group :test, :development do
   # Pretty printed test output
-  gem 'turn', :require => false
-  gem "rspec-rails", ">= 2.6.0"
+  gem 'turn', '< 0.8.3', :require => false
   gem 'cucumber-rails', "~> 0.5.0.beta1"
   gem 'rspec-cells'
   gem 'capybara', "~> 1.0.0.beta1"

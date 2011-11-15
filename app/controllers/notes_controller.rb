@@ -4,58 +4,58 @@ class NotesController < ApplicationController
   def index
     set_sidebar
     if params[:user_id]
-      @notes = User.find(params[:user_id].to_i, current_auth).notes
+      @notes = User.find(params[:user_id].to_i, :auth => current_auth).notes
     else
       @notes = Note.all
     end
   end
 
   def show
-    @note = Note.find(params[:id], current_auth)
+    @note = Note.find(params[:id], :auth => current_auth)
     raise ActionController::RoutingError.new('Not Found') unless @note
   end
 
   def new
     if current_auth
-      @note = Note.new()
+      @note = Note.new
     else
       redirect_to notes_path
     end
   end
-        
+
   def edit
     if current_auth
-      @note = Note.find(params[:id], current_auth)
-      set_for_form(@note)
+      @note = Note.find(params[:id], :auth => current_auth)
+      @note.reference = @note.reference.osis_noversion
     else
       redirect_to notes_path
-    end    
+    end
   end
 
   def create
     @note = Note.new(params[:note])
     @note.auth = current_auth
 
-    if @note.create
+    if @note.save
       render action: "show"
     else
       render action: "new"
-    end    
+    end
   end
-  
-  def update
-    @note = Note.find(params[:id], current_auth)
 
-    if @note.update(params)
+  def update
+    @note = Note.find(params[:id], :auth => current_auth)
+
+    if @note.update(params[:note])
       render action: "show"
     else
       render action: "edit"
-    end    
+    end
   end
-  
+
   def destroy
-    @note = Note.find(params[:id], current_auth)
-    
+    @note = Note.find(params[:id], :auth => current_auth)
+
     if @note.destroy
       redirect_to notes_path
     else

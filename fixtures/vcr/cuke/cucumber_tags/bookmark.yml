@@ -1,0 +1,29 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://api.yvdev.com:443/2.3/users/create.json
+    body: email=cukeuser_bookmark1%40youversion.com&username=cukeuser_bookmark1&password=tenders&verified=true&agree=true&token=f4c85860d4d03e014a8efc27e0827642
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Wed, 26 Oct 2011 20:02:52 GMT
+      content-type: 
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":201,\"data\":\"Created\",\"buildtime\":\"2011-10-26T20:02:52+00:00\"}}"
+    http_version: "1.1"
