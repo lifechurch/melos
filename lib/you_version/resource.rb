@@ -43,16 +43,22 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
+      def retry_with_auth?(errors)
+        errors.find {|t| t['key'] =~ /username_and_password.required/}
+      end
+
       def find(id, params = {}, &block)
         api_errors = nil
+
+        auth = params.delete(:auth)
 
         opts = {id: id}
         opts.merge! params  # Let params override if it already has an :id
         # First try request as an anonymous request
         response = get(resource_path, opts) do |errors|
-          if (errors.find {|t| t['key'] =~ /username_and_password.required/})
+          if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
-            get(resource_path, params.merge(id: id, auth: params[:auth])) do |errors|
+            get(resource_path, opts.merge(auth: auth)) do |errors|
               # Capture errors
               api_errors = errors
             end

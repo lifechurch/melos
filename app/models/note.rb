@@ -19,6 +19,12 @@ class Note < YouVersion::Resource
     all(params.merge({:user_id => user_id}))
   end
 
+  # Override Resource's base method here, because Note API
+  # returns a different error key for non-auth requests.
+  def self.retry_with_auth?(errors)
+    errors.find {|t| t['key'] =~ /notes.note.private/}
+  end
+
   def before_save
     @original_content = self.content
     self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
