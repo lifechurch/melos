@@ -87,7 +87,7 @@ describe Bookmark do
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
 
-      response = bookmark.destroy(@auth)
+      response = bookmark.destroy
       response.should be_true
     end
   end
