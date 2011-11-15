@@ -58,7 +58,7 @@ describe Reference do
 
   describe "#hash" do
     it "returns an OSIS hash" do
-      @full_ref.hash.should == {book: "gen", chapter: 1, verse: 1, version: "kjv"}
+      @full_ref.raw_hash.should == {book: "gen", chapter: 1, verse: 1, version: "kjv"}
     end
   end
 

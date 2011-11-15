@@ -9,7 +9,7 @@ class ReferencesController < ApplicationController
       ref_hash[:version] ||= current_version
       ref_hash[:chapter] ||= 1
       @reference = Reference.new(ref_hash)
-      return redirect_to bible_path(@reference) if @reference.hash != params[:reference].to_osis_hash
+      return redirect_to bible_path(@reference) if @reference.raw_hash != params[:reference].to_osis_hash
     end
     @version = Version.find(@reference[:version])
     set_last_read @reference
