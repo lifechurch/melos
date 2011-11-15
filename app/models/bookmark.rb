@@ -45,9 +45,9 @@ class Bookmark < YouVersion::Resource
 
   def self.for_user(user_id = nil, params = {})
     page = params[:page] || 1
-    opts = {user_id: user_id, page: page}
+    opts = params.merge({user_id: user_id, page: page})
 
-    data = YvApi.get('bookmarks/items', opts) do |errors|
+    data = all_raw(opts) do |errors|
       Rails.logger.info "API Error: Bookmark.for_user(#{user_id}) got these errors: #{errors.inspect}"
       if errors.find{|g| g['error'] =~ /Bookmarks not found/}
         # return empty hash to avoid raising exception

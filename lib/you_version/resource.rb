@@ -65,7 +65,7 @@ module YouVersion
           # Down here we do something with the real error
           if api_errors
             if block_given?
-              response = block.call(response, api_errors)
+              response = block.call(api_errors)
               # all the weird crap they do now
             end
             raise ResourceError.new(api_errors)
@@ -86,8 +86,18 @@ module YouVersion
         response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
       end
 
-      def for_user(user_id, auth)
-        all(:user_id => user_id, :auth => auth)
+      # Resource list, but just return whatever the API gives us.
+      # TODO: As soon as we've finished migrating all the resources,
+      # check to see that both all() and all_raw() are really needed.
+      # Likely they can be combined or one of them can be eliminated.
+      def all_raw(params = {}, &block)
+        response = YvApi.get(list_path, params) do |errors|
+          if block_given?
+            block.call(errors)
+          else
+            raise ResourceError.new(errors)
+          end
+        end
       end
 
       def create(data, &block)
@@ -95,10 +105,6 @@ module YouVersion
       end
 
       def destroy(id, auth = nil, &block)
-        # TODO: I don't think @token is needed here, and it won't work if auth
-        # is nil, so auth = nil probably needs to be just auth in method params.
-        @token = Digest::MD5.hexdigest "#{auth.username}.Yv6-#{auth.password}"
-
         post(delete_path, {:ids => id, :auth => auth}, &block)
       end
 
