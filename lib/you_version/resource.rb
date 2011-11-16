@@ -78,7 +78,7 @@ module YouVersion
           inner_response
         end
 
-        new(response.merge(:auth => params[:auth]))
+        new(response.merge(:auth => auth))
       end
 
       def all(params = {})
