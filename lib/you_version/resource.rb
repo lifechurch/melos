@@ -69,7 +69,7 @@ module YouVersion
 
           if api_errors
             # Sadly, all our attempts failed.
-            @errors = ee.map { |e| e["error"] }
+            @errors = api_errors.map { |e| e["error"] }
             return false
           end
 
