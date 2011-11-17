@@ -89,4 +89,8 @@ class User
     end
     attrs
   end
+
+  def bookmarks
+    Bookmark.for_user(id)
+  end
 end

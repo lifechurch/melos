@@ -42,15 +42,11 @@ module Model
     end
     attrs
   end
-  
+
   # PARM (values): Array of Reference hashies
   # RETURN: String in OSIS format
-  def self.hash_to_osis(values) 
-    return_val = ""
-    values.each do |ref|
-      return_val << "#{ref.osis}+"
-    end
-    return_val[0..-2]
+  def self.hash_to_osis(values)
+    values.map(&:osis).join('+')
   end
 
   # PARM (values): Array of Reference hashies

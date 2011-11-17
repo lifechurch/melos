@@ -129,4 +129,8 @@ class Version
   def info_api_data(version)
     self.class.info_api_data(version)
   end
+  
+  def to_attribute
+    osis
+  end
 end
