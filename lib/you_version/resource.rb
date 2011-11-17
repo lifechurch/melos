@@ -276,10 +276,11 @@ module YouVersion
     end
 
     def authorized?
-      unless self.auth
-        self.errors.add(:base, "auth is required, but it's not set.")
-      else
+      if self.auth
         true
+      else
+        self.errors.add(:base, "auth is required, but it's not set.")
+        false
       end
     end
   end
