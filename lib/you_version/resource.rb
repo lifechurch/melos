@@ -58,27 +58,27 @@ module YouVersion
         response = get(resource_path, opts) do |errors|
           if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
-            get(resource_path, opts.merge(auth: auth)) do |errors|
-              # Capture errors
+            inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|
+              # Capture errors for handling below
               api_errors = errors
             end
           else
             Rails.logger.info "** Resource.find: got non-auth error: #{errors}"
-            # Some other error, just capture and the error we got
             api_errors = errors
           end
 
-          # Down here we do something with the real error
           if api_errors
-            if block_given?
-              response = block.call(api_errors)
-              # all the weird crap they do now
-            end
-            raise ResourceError.new(api_errors)
+            # Sadly, all our attempts failed.
+            @errors = api_errors.map { |e| e["error"] }
+            return false
           end
+
+          # Propagate the response from the get-with-auth call as the return
+          # value for the outer block.
+          inner_response
         end
 
-        new(response.merge(:auth => params[:auth]))
+        new(response.merge(:auth => auth))
       end
 
       def all(params = {})
