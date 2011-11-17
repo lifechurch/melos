@@ -171,8 +171,8 @@ module YouVersion
         define_method(association_name.to_s.singularize) do |params = {}|
           associations.delete(association_name) if params[:refresh]
 
-          association_class = association_name.classify.constantize
-          associations[association_name] ||= association_class.find(self.attributes[association_class.foreign_key], params)
+          association_class = association_name.to_s.classify.constantize
+          associations[association_name] ||= association_class.find(self.attributes[association_class.foreign_key].to_i, params)
         end
       end
 
@@ -180,7 +180,7 @@ module YouVersion
         define_method(association_name.to_s.pluralize) do |params = {}|
           associations.delete(association_name) if params[:refresh]
           
-          association_class = association_name.classify.constantize
+          association_class = association_name.to_s.classify.constantize
           associations[association_name] ||= association_class.all(params.merge(association_class.foreign_key => self.id))
         end
       end
