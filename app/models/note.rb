@@ -11,6 +11,9 @@ class Note < YouVersion::Resource
   attribute :version, Version
   attribute :user_avatar_url
 
+  belongs_to_remote :user
+  has_many_remote :likes
+
   def self.for_reference(ref)
     all(reference: ref.notes_api_string)
   end
@@ -23,14 +26,6 @@ class Note < YouVersion::Resource
   # returns a different error key for non-auth requests.
   def self.retry_with_auth?(errors)
     errors.find {|t| t['key'] =~ /notes.note.private/}
-  end
-
-  def like
-    Like.for_note(id)
-  end
-
-  def like_for_user
-    Like.for_note(id, auth.user_id)
   end
 
   def before_save
