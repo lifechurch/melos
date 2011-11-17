@@ -169,20 +169,24 @@ module YouVersion
       
       def belongs_to_remote(association_name)
         define_method(association_name.to_s.singularize) do |params = {}|
+          associations.delete(association_name) if params[:refresh]
+
           association_class = association_name.classify.constantize
-          association_class.find(self.attributes[association_class.foreign_key], params)
+          associations[association_name] ||= association_class.find(self.attributes[association_class.foreign_key], params)
         end
       end
 
       def has_many_remote(association_name)
         define_method(association_name.to_s.pluralize) do |params = {}|
+          associations.delete(association_name) if params[:refresh]
+          
           association_class = association_name.classify.constantize
-          association_class.all(params.merge(association_class.foreign_key => self.id))
+          associations[association_name] ||= association_class.all(params.merge(association_class.foreign_key => self.id))
         end
       end
     end
 
-    attr_accessor :attributes
+    attr_accessor :attributes, :associations
 
     attribute :id
     attribute :auth
@@ -191,6 +195,8 @@ module YouVersion
 
     def initialize(data = {})
       @attributes = data
+      @associations = {}
+      
       after_build
     end
 
