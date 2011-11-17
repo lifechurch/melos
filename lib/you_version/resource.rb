@@ -22,6 +22,10 @@ module YouVersion
       def api_path_prefix
         name.tableize
       end
+      
+      def foreign_key
+        "#{model_name.singular}_id"
+      end
 
       def list_path
         "#{api_path_prefix}/items"
@@ -58,27 +62,27 @@ module YouVersion
         response = get(resource_path, opts) do |errors|
           if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
-            get(resource_path, opts.merge(auth: auth)) do |errors|
-              # Capture errors
+            inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|
+              # Capture errors for handling below
               api_errors = errors
             end
           else
             Rails.logger.info "** Resource.find: got non-auth error: #{errors}"
-            # Some other error, just capture and the error we got
             api_errors = errors
           end
 
-          # Down here we do something with the real error
           if api_errors
-            if block_given?
-              response = block.call(api_errors)
-              # all the weird crap they do now
-            end
-            raise ResourceError.new(api_errors)
+            # Sadly, all our attempts failed.
+            @errors = api_errors.map { |e| e["error"] }
+            return false
           end
+
+          # Propagate the response from the get-with-auth call as the return
+          # value for the outer block.
+          inner_response
         end
 
-        new(response.merge(:auth => params[:auth]))
+        new(response.merge(:auth => auth))
       end
 
       def all(params = {})
@@ -162,9 +166,27 @@ module YouVersion
       def get(path, params, &block)
         YvApi.get(path, securify(params, caller), &block)
       end
+      
+      def belongs_to_remote(association_name)
+        define_method(association_name.to_s.singularize) do |params = {}|
+          associations.delete(association_name) if params[:refresh]
+
+          association_class = association_name.to_s.classify.constantize
+          associations[association_name] ||= association_class.find(self.attributes[association_class.foreign_key].to_i, params)
+        end
+      end
+
+      def has_many_remote(association_name)
+        define_method(association_name.to_s.pluralize) do |params = {}|
+          associations.delete(association_name) if params[:refresh]
+          
+          association_class = association_name.to_s.classify.constantize
+          associations[association_name] ||= association_class.all(params.merge(association_class.foreign_key => self.id))
+        end
+      end
     end
 
-    attr_accessor :attributes
+    attr_accessor :attributes, :associations
 
     attribute :id
     attribute :auth
@@ -173,6 +195,8 @@ module YouVersion
 
     def initialize(data = {})
       @attributes = data
+      @associations = {}
+      
       after_build
     end
 
@@ -198,7 +222,7 @@ module YouVersion
 
         token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
-        response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+        response = self.class.post((self.persisted? ? self.class.update_path : self.class.create_path), attributes.merge(:token => token, :auth => self.auth)) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
 
@@ -221,32 +245,7 @@ module YouVersion
     def after_update(response); after_save(response); end;
     def update(updated_attributes)
       self.attributes = self.attributes.merge(updated_attributes)
-      response = true
-
-      return false unless authorized?
-
-      before_update
-
-      begin
-        return false unless valid?
-
-        token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
-
-        response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|          
-          new_errors = errors.map { |e| e["error"] }
-          self.errors[:base] << new_errors
-
-          if block_given?
-            yield errors
-          end
-          
-          response = false
-        end
-      ensure
-        after_update(response)
-      end
-
-      response
+      save
     end
 
     def before_destroy; end;
@@ -276,10 +275,11 @@ module YouVersion
     end
 
     def authorized?
-      unless self.auth
-        self.errors.add(:base, "auth is required, but it's not set.")
-      else
+      if self.auth
         true
+      else
+        self.errors.add(:base, "auth is required, but it's not set.")
+        false
       end
     end
   end
