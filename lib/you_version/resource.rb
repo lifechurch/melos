@@ -245,32 +245,7 @@ module YouVersion
     def after_update(response); after_save(response); end;
     def update(updated_attributes)
       self.attributes = self.attributes.merge(updated_attributes)
-      response = true
-
-      return false unless authorized?
-
-      before_update
-
-      begin
-        return false unless valid?
-
-        token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
-
-        response = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|          
-          new_errors = errors.map { |e| e["error"] }
-          self.errors[:base] << new_errors
-
-          if block_given?
-            yield errors
-          end
-          
-          response = false
-        end
-      ensure
-        after_update(response)
-      end
-
-      response
+      save
     end
 
     def before_destroy; end;
