@@ -5,6 +5,8 @@ describe "OSIS Parser" do
            {string: "gen.1.niv", hash: {book: "gen", chapter: 1, version: "niv"}},
            {string: "gen.niv", hash: {book: "gen", version: "niv"}},
            {string: "gen.1", hash: {book: "gen", chapter: 1}},
+           {string: "gen.1.1", hash: {book: "gen", chapter: 1, verse: 1}},
+           {string: "gen.1.1-3", hash: {book: "gen", chapter: 1, verse: 1..3}},
            {string: "gen", hash: {book: "gen"}},
            {string: "gen.1.2-3.niv", hash: {book: "gen", chapter: 1, verse: 2..3, version: "niv"}},
            {string: "gen.1-2.niv", hash: {book: "gen", chapter: 1..2, version: "niv"}}]

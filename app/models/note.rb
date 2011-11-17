@@ -25,6 +25,14 @@ class Note < YouVersion::Resource
     errors.find {|t| t['key'] =~ /notes.note.private/}
   end
 
+  def like
+    Like.for_note(id)
+  end
+
+  def like_for_user
+    Like.for_note(id, auth.user_id)
+  end
+
   def before_save
     @original_content = self.content
     self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
