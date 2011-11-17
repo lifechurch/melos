@@ -247,3 +247,195 @@
       - Accept-Encoding
     body: "{\"response\":{\"code\":200,\"data\":\"OK\",\"buildtime\":\"2011-11-04T16:29:45+00:00\"}}"
     http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bookmarks/view.json?id=21699565
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 15 Nov 2011 22:27:11 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"21699565\",\"user_id\":\"4163177\",\"version\":\"esv\",\"created\":\"2011-10-26 18:52:31.171586+00\",\"username\":\"testuser\",\"labels\":null,\"highlight_color\":null,\"title\":\"Begettings\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"reference\":{\"human\":\"Matthew 1:1\",\"osis\":\"Matt.1.1\"},\"reference_chapter\":{\"human\":\"Matthew 1\",\"osis\":\"Matt.1\"},\"references\":[{\"osis\":\"Matt.1.1\",\"human\":\"Matthew 1:1\"}]},\"buildtime\":\"2011-11-15T22:27:11+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bookmarks/view.json?id=0
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 15 Nov 2011 22:27:11 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":404,\"data\":{\"errors\":[\"not_found\"]},\"buildtime\":\"2011-11-15T22:27:11+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/bookmarks/create.json
+    body: version=esv&reference=Matt.19.1&title=UpdateMe&username=testuser&token=615ad51b71049e299842f5af14c70cad
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 15 Nov 2011 22:27:12 GMT
+      content-type: 
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"21699600\",\"user_id\":\"4163177\",\"version\":\"esv\",\"created\":\"2011-11-15 22:27:12.031551+00\",\"username\":\"testuser\",\"labels\":null,\"highlight_color\":null,\"title\":\"UpdateMe\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"reference\":{\"human\":\"Matthew 19:1\",\"osis\":\"Matt.19.1\"},\"reference_chapter\":{\"human\":\"Matthew 19\",\"osis\":\"Matt.19\"},\"references\":[{\"osis\":\"Matt.19.1\",\"human\":\"Matthew 19:1\"}]},\"buildtime\":\"2011-11-15T22:27:12+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.yvdev.com:80/2.3/bible/verse.json?format=text&reference=matt.19.1&version=esv
+    body: 
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 15 Nov 2011 22:27:12 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"request\":\"Matthew 19:1\",\"copyright\":\"2001 by Crossway Bibles, a division of Good News Publishers\",\"items\":[{\"code\":200,\"data\":{\"reference\":{\"osis\":\"Matt.19.1\",\"human\":\"Matthew 19:1\"},\"content\":\"Now when Jesus had finished these sayings, he went away from Galilee and entered the region of Judea beyond the Jordan.\"}}]},\"buildtime\":\"2011-11-15T22:27:12+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://api.yvdev.com:80/2.3/bookmarks/update.json
+    body: version=esv&reference=Matthew%2019%3A1%20(ESV)&title=New%20Title&username=testuser&id=21699600&token=615ad51b71049e299842f5af14c70cad
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 401
+      message: Unauthorized
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 15 Nov 2011 22:27:13 GMT
+      content-type: 
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      www-authenticate: 
+      - Basic realm="api.yvdev.com"
+    body: "{\"response\":{\"code\":400,\"data\":{\"errors\":[{\"key\":\"users.username_and_password.required\",\"error\":\"Username and password are required\"}]},\"buildtime\":\"2011-11-15T22:27:13+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/bookmarks/create.json
+    body: version=esv&reference=Matt.19.1&title=DeleteMe&username=testuser&token=615ad51b71049e299842f5af14c70cad
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 15 Nov 2011 22:27:13 GMT
+      content-type: 
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":{\"id\":\"21699601\",\"user_id\":\"4163177\",\"version\":\"esv\",\"created\":\"2011-11-15 22:27:13.372665+00\",\"username\":\"testuser\",\"labels\":null,\"highlight_color\":null,\"title\":\"DeleteMe\",\"user_avatar_url\":{\"px_24x24\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_24x24.png\",\"px_48x48\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_48x48.png\",\"px_128x128\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_128x128.png\",\"px_512x512\":\"http:\\/\\/avatars.youversion.com\\/5d9c68c6c50ed3d02a2fcf54f63993b6_512x512.png\"},\"reference\":{\"human\":\"Matthew 19:1\",\"osis\":\"Matt.19.1\"},\"reference_chapter\":{\"human\":\"Matthew 19\",\"osis\":\"Matt.19\"},\"references\":[{\"osis\":\"Matt.19.1\",\"human\":\"Matthew 19:1\"}]},\"buildtime\":\"2011-11-15T22:27:13+00:00\"}}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: http://testuser:tenders@api.yvdev.com:80/2.3/bookmarks/delete.json
+    body: ids=21699601
+    headers: 
+      referer: 
+      - http://web.youversion.com
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Tue, 15 Nov 2011 22:27:13 GMT
+      content-type: 
+      - text/plain
+      - text/plain; charset=utf-8
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - keep-alive
+      vary: 
+      - Accept-Encoding
+    body: "{\"response\":{\"code\":200,\"data\":\"OK\",\"buildtime\":\"2011-11-15T22:27:13+00:00\"}}"
+    http_version: "1.1"

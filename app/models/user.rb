@@ -65,7 +65,11 @@ class User
   def notes
     Note.for_user(self.id, self.auth)
   end
-  
+
+  def likes
+    Like.find(id, auth)
+  end
+
   def create
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
     @secure = true
