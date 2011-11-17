@@ -22,6 +22,10 @@ module YouVersion
       def api_path_prefix
         name.tableize
       end
+      
+      def foreign_key
+        "#{model_name.singular}_id"
+      end
 
       def list_path
         "#{api_path_prefix}/items"
@@ -161,6 +165,20 @@ module YouVersion
 
       def get(path, params, &block)
         YvApi.get(path, securify(params, caller), &block)
+      end
+      
+      def belongs_to_remote(association_name)
+        define_method(association_name.to_s.singularize) do |params = {}|
+          association_class = association_name.classify.constantize
+          association_class.find(self.attributes[association_class.foreign_key], params)
+        end
+      end
+
+      def has_many_remote(association_name)
+        define_method(association_name.to_s.pluralize) do |params = {}|
+          association_class = association_name.classify.constantize
+          association_class.all(params.merge(association_class.foreign_key => self.id))
+        end
       end
     end
 
