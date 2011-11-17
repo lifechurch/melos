@@ -222,7 +222,7 @@ module YouVersion
 
         token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
 
-        response = self.class.post(self.class.create_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+        response = self.class.post((self.persisted? ? self.class.update_path : self.class.create_path), attributes.merge(:token => token, :auth => self.auth)) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
 
