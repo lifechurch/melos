@@ -210,39 +210,49 @@ module YouVersion
       id
     end
 
-    def before_save; end;
-    def after_save(response); end;
-    def save
+    def persist(resource_path)
       response = true
       response_data = nil
       
+      token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+
+      response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+        new_errors = errors.map { |e| e["error"] }
+        self.errors[:base] << new_errors
+
+        if block_given?
+          yield errors
+        end
+          
+        response = false
+      end
+
+      [response, response_data]
+    end
+
+    def before_save; end;
+    def after_save(response); end;
+    def save(updated_attributes = {})
       return false unless authorized?
+
+      response = true
+      response_data = nil
+      puts "Calling back to #{self.persisted? ? 'before_update' : 'before_save'}"
 
       self.persisted? ? before_update : before_save
 
       begin
-        return false unless valid?
+        self.attributes = self.attributes.merge(updated_attributes) if self.persisted?
 
-        token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+        resource_path = self.persisted? ? self.class.update_path : self.class.create_path
+        response, response_data = persist(resource_path)
 
-        response_data = self.class.post((self.persisted? ? self.class.update_path : self.class.create_path), attributes.merge(:token => token, :auth => self.auth)) do |errors|
-          new_errors = errors.map { |e| e["error"] }
-          self.errors[:base] << new_errors
-
-          if block_given?
-            yield errors
-          end
-          
-          response = false
-        end
-
-        unless self.persisted?
-          self.id = response_data.try(:id) if response
+        if response && ! self.persisted?
+          self.id = response_data.try(:id)
         end
       ensure
         self.persisted? ? after_update(response_data) : before_save(response_data)
       end
-
       response
     end
 
