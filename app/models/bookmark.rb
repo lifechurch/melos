@@ -41,6 +41,28 @@ class Bookmark < YouVersion::Resource
     post(delete_path, {:ids => id, :auth => auth}, &block)
   end
 
+  def self.all(params = {})
+    params[:page] ||= 1
+
+    data = all_raw(params) do |errors|
+      Rails.logger.info "API Error: Bookmark.all(#{params}) got these errors: #{errors.inspect}"
+      if errors.find{|g| g['error'] =~ /Bookmarks not found/}
+        # return empty hash to avoid raising exception
+        { }
+      end
+    end
+
+    bookmarks = ResourceList.new
+    bookmarks.page = params[:page]
+    if data['bookmarks']
+      data.bookmarks.each do |b|
+        bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
+      end
+    end
+    bookmarks.total = data['total'].to_i if data['total']
+    bookmarks
+  end
+
   def self.for_user(user_id = nil, params = {})
     page = params[:page] || 1
     opts = params.merge({user_id: user_id, page: page})
@@ -63,4 +85,8 @@ class Bookmark < YouVersion::Resource
     bookmarks
   end
 
+  # Yeah, bite me
+  def created_as_date
+    Date.parse(attributes['created'])
+  end
 end

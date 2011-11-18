@@ -1,0 +1,36 @@
+- content_for :sidebar do
+  / = render_cell :likes_list_widget, :display, likes: @likes, title: "Likes", user_id: @user_id
+  = render '/shared/widget_ad_bible_app'
+
+%article
+  - if current_auth
+    - if request.path == user_bookmarks_path(current_user)
+      %h1= "My Bookmarks"
+      %h2= "(of #{@bookmarks.total})"
+      %dl.combo_button.float_right
+        %dt View:
+        %dd
+          = link_to "All Bookmarks", bookmarks_path
+        %dd.highlighted
+          = link_to "My Bookmarks", user_bookmarks_path(current_user)
+    - else
+      %h1= "All Bookmarks"
+      %dl.combo_button.float_right
+        %dt View:
+        %dd.highlighted
+          = link_to "All Bookmarks", bookmarks_path
+        %dd
+          = link_to "My Bookmarks", user_bookmarks_path(current_user)
+  - else
+    %h1= "All Bookmarks"
+    %h2= "(showing #{(25*(@bookmarks.page-1)+1)} - #{25*@bookmarks.page} of #{@bookmarks.total})"
+  - if @bookmarks
+    %ul.big_list
+      - @bookmarks.each do |bookmark|
+        %li{id: bookmark.id}
+          %h5= link_to bookmark.title, bookmark_path(bookmark.id)
+          %p.mute.small.negative_gutter_top_half= link_to_references([Reference.new(bookmark.reference)])
+          %p= bookmark.labels
+          %div{class: "date"}= bookmark.created_as_date.strftime("%m/%d/%Y")
+  - else
+    %div{class: "none"}= "Sorry, no bookmarks here! Why don't you try W. H. Smith's?"
