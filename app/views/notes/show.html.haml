@@ -6,7 +6,7 @@
     %p
       = label_tag :user_status, "Note Status:"
       = @note.user_status
-      = button_to(@note.like_for_user.nil? ? 'like' : 'unlike', like_path(@note.id), :method => :put) if @note.user_status == 'public'
-    - if current_auth.user_id == @note.user_id.to_i
+      = button_to(@note.likes(:user_id => current_user.id).nil? ? 'like' : 'unlike', like_path(@note.id), :method => :put) if @note.user_status == 'public' && current_user
+    - if current_user && (current_auth.user_id == @note.user_id.to_i)
       = link_to('edit', edit_note_path(@note.id)) 
       = link_to('delete this note', note_path(@note.id), :confirm => 'Are you sure?', :method => :delete) 

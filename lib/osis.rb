@@ -25,6 +25,12 @@ class String
   end
 end
 
+class Array
+  def to_osis_references
+    map(&:osis).join("+")
+  end
+end
+
 class Hash
   def to_osis_string
     string = self[:book]
