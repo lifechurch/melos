@@ -15,6 +15,8 @@ test:
 
 production:
   <<: *common
+  host: postgres.youversion.com
+  port: 6000
   database: yv_web_production
 
 cucumber:

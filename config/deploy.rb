@@ -1,6 +1,7 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano"                  # Load RVM's capistrano plugin.
 set :rvm_ruby_string, 'ruby-1.9.2-p180@youversion-web'        # Or whatever env you want it to run in.
+require 'bundler/capistrano'
 
 
 
@@ -13,7 +14,7 @@ set :repository,  "git@github.com:lifechurch/youversion-web.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-
+set :ssh_options, { :forward_agent => true }
 set :branch,          "origin/deploy-tools"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
@@ -94,9 +95,9 @@ namespace :deploy do
       mkdir -p #{latest_release}/tmp &&
       ln -s #{shared_path}/log #{latest_release}/log &&
       ln -s #{shared_path}/system #{latest_release}/public/system &&
-      ln -s #{shared_path}/pids #{latest_release}/tmp/pids &&
-      ln -sf #{shared_path}/database.yml #{latest_release}/config/database.yml
+      ln -s #{shared_path}/pids #{latest_release}/tmp/pids
     CMD
+      # ln -sf #{shared_path}/database.yml #{latest_release}/config/database.yml
 
     if fetch(:normalize_asset_timestamps, true)
       stamp = Time.now.utc.strftime("%Y%m%d%H%M.%S")
