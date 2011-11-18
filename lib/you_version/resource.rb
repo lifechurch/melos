@@ -218,7 +218,7 @@ module YouVersion
       
       return false unless authorized?
 
-      before_save
+      self.persisted? ? before_update : before_save
 
       begin
         return false unless valid?
@@ -236,9 +236,11 @@ module YouVersion
           response = false
         end
 
-        self.id = response_data.try(:id)
+        unless self.persisted?
+          self.id = response_data.try(:id) if response
+        end
       ensure
-        after_save(response_data)
+        self.persisted? ? after_update(response_data) : before_save(response_data)
       end
 
       response
@@ -247,8 +249,36 @@ module YouVersion
     def before_update; before_save; end;
     def after_update(response); after_save(response); end;
     def update(updated_attributes)
-      self.attributes = self.attributes.merge(updated_attributes)
-      save
+      response = true
+      response_data = nil
+      
+      return false unless authorized?
+
+      before_update
+
+      begin
+        return false unless valid?
+
+        self.attributes = self.attributes.merge(updated_attributes)
+
+        token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+
+        response_data = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+          new_errors = errors.map { |e| e["error"] }
+          self.errors[:base] << new_errors
+
+          if block_given?
+            yield errors
+          end
+          
+          response = false
+        end
+
+      ensure
+        after_update(response_data)
+      end
+
+      response
     end
 
     def before_destroy; end;
