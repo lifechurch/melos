@@ -125,7 +125,7 @@ module YouVersion
         @resource_attributes << attr_name
 
         define_method(attr_name) do
-          if serialization_class
+          if serialization_class && attributes[attr_name].present?
             serialization_class.new attributes[attr_name]
           else
             attributes[attr_name]
@@ -212,7 +212,8 @@ module YouVersion
     def after_save(response); end;
     def save
       response = true
-
+      response_data = nil
+      
       return false unless authorized?
 
       before_save
@@ -220,9 +221,9 @@ module YouVersion
       begin
         return false unless valid?
 
-        token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
+        token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
 
-        response = self.class.post((self.persisted? ? self.class.update_path : self.class.create_path), attributes.merge(:token => token, :auth => self.auth)) do |errors|
+        response_data = self.class.post((self.persisted? ? self.class.update_path : self.class.create_path), attributes.merge(:token => token, :auth => self.auth)) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
 
@@ -233,9 +234,9 @@ module YouVersion
           response = false
         end
 
-        self.id = response.try(:id)
+        self.id = response_data.try(:id)
       ensure
-        after_save(response)
+        after_save(response_data)
       end
 
       response
