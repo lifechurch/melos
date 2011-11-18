@@ -78,8 +78,8 @@ class NotesController < ApplicationController
 
   # Set sidebar values for the Likes cell
   def set_sidebar
-    @likes = Like.all(current_user.id)
-    @user_id = current_user.id
+    @likes = Like.all(current_user.id) if current_user
+    @user_id = current_user.id if current_user
   end
 
   # Setup required in order to show update since form will post
