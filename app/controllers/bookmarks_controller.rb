@@ -4,7 +4,8 @@ class BookmarksController < ApplicationController
 
   def index
     if params[:user_id]
-      @bookmarks = User.find(params[:user_id].to_i, :auth => current_auth).bookmarks
+      @user = User.find(params[:user_id].to_i, current_auth) # TODO : can't wait to port this to a Resource
+      @bookmarks = @user.bookmarks
     else
       @bookmarks = Bookmark.all
     end
