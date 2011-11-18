@@ -91,8 +91,8 @@ class YvApi
     # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
     # return true if response["response"]["code"] == 201
     # return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
-    # 
-    # return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
+
+    return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
 
     # Otherwise, turn the data back into a Mash and return it
     response["response"]["data"].is_a?(Array) ? response["response"]["data"].map {|e| Hashie::Mash.new(e)} : Hashie::Mash.new(response["response"]["data"])
