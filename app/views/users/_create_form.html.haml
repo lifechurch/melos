@@ -1,4 +1,4 @@
-= form_for @user, url: sign_up_path do |f|
+= form_for :user, url: sign_up_path do |f|
   - if @user.errors
     .form_errors
       =t("users.creation form errors")
