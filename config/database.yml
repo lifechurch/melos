@@ -15,7 +15,7 @@ test:
 
 production:
   <<: *common
-  host: db3-dfw.youversion.com
+  host: postgres.youversion.com
   port: 6000
   database: yv_web_production
 
