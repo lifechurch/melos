@@ -232,17 +232,16 @@ module YouVersion
 
     def before_save; end;
     def after_save(response); end;
-    def save(updated_attributes = {})
+    def save
       return false unless authorized?
 
       response = true
       response_data = nil
-      puts "Calling back to #{self.persisted? ? 'before_update' : 'before_save'}"
 
       self.persisted? ? before_update : before_save
 
       begin
-        self.attributes = self.attributes.merge(updated_attributes) if self.persisted?
+        return false unless valid?
 
         resource_path = self.persisted? ? self.class.update_path : self.class.create_path
         response, response_data = persist(resource_path)
@@ -258,37 +257,10 @@ module YouVersion
 
     def before_update; before_save; end;
     def after_update(response); after_save(response); end;
+
     def update(updated_attributes)
-      response = true
-      response_data = nil
-      
-      return false unless authorized?
-
-      before_update
-
-      begin
-        return false unless valid?
-
-        self.attributes = self.attributes.merge(updated_attributes)
-
-        token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
-
-        response_data = self.class.post(self.class.update_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
-          new_errors = errors.map { |e| e["error"] }
-          self.errors[:base] << new_errors
-
-          if block_given?
-            yield errors
-          end
-          
-          response = false
-        end
-
-      ensure
-        after_update(response_data)
-      end
-
-      response
+      self.attributes = self.attributes.merge(updated_attributes)
+      save
     end
 
     def before_destroy; end;
