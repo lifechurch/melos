@@ -56,8 +56,12 @@ class YvApi
 
     # For login
     basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
-    # For auth'ed API calls with :user => current_user
-    basic_auth opts[:auth].username, opts.delete(:auth).password if opts[:auth]
+
+    # TODO: Clean up the call around this so it's unnecessary
+    a = Hashie::Mash.new(opts.delete(:auth)) if opts[:auth]
+
+    # For auth'ed API calls with :user => current_user    
+    basic_auth a.username, a.password if a
   end
 
   def self.clean_up(path)
@@ -86,11 +90,11 @@ class YvApi
     # creating a resource? Just return success
     # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
     # return true if response["response"]["code"] == 201
-    return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
-
-    return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
+    # return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
+    # 
+    # return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
 
     # Otherwise, turn the data back into a Mash and return it
-    return response["response"]["data"].class == Array ? response["response"]["data"].map {|e| Hashie::Mash.new(e)} : Hashie::Mash.new(response["response"]["data"])
+    response["response"]["data"].is_a?(Array) ? response["response"]["data"].map {|e| Hashie::Mash.new(e)} : Hashie::Mash.new(response["response"]["data"])
   end
 end
