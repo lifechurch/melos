@@ -16,35 +16,37 @@ class BookmarksController < ApplicationController
     raise ActionController::RoutingError.new('Not Found') unless @bookmark
   end
 
-#YO
-
   def new
     if current_auth
-      @note = Note.new
+      @bookmark = Bookmark.new
     else
-      redirect_to notes_path
+      redirect_to bookmarks_path
     end
   end
 
   def edit
     if current_auth
-      @note = Note.find(params[:id], :auth => current_auth)
-      @note.reference = @note.reference.to_osis_references
+      @bookmark = Bookmark.find(params[:id], :auth => current_auth)
+#      @bookmark.reference = @bookmark.reference.to_osis_references
     else
-      redirect_to notes_path
+      redirect_to bookmarks_path
     end
   end
 
   def create
-    @note = Note.new(params[:note])
-    @note.auth = current_auth
+    puts "About to create Bookmark from #{params[:bookmark]}"
+    @bookmark = Bookmark.new(params[:bookmark])
+    pp @bookmark
+    @bookmark.auth = current_auth
 
-    if @note.save
+    if @bookmark.save
       render action: "show"
     else
       render action: "new"
     end
   end
+
+#YO
 
   def update
     @note = Note.find(params[:id], :auth => current_auth)
