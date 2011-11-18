@@ -10,12 +10,12 @@ class BookmarksController < ApplicationController
     end
   end
 
-#YO
-
   def show
-    @note = Note.find(params[:id], :auth => current_auth)
-    raise ActionController::RoutingError.new('Not Found') unless @note
+    @bookmark = Bookmark.find(params[:id], :auth => current_auth)
+    raise ActionController::RoutingError.new('Not Found') unless @bookmark
   end
+
+#YO
 
   def new
     if current_auth

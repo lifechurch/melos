@@ -6,7 +6,6 @@
   - if current_auth
     - if request.path == user_bookmarks_path(current_user)
       %h1= "My Bookmarks"
-      %h2= "(of #{@bookmarks.total})"
       %dl.combo_button.float_right
         %dt View:
         %dd
@@ -23,14 +22,16 @@
           = link_to "My Bookmarks", user_bookmarks_path(current_user)
   - else
     %h1= "All Bookmarks"
-    %h2= "(showing #{(25*(@bookmarks.page-1)+1)} - #{25*@bookmarks.page} of #{@bookmarks.total})"
+  %h2= "(showing #{number_with_delimiter(25*(@bookmarks.page-1)+1)} - #{number_with_delimiter(25*@bookmarks.page)} of #{number_with_delimiter(@bookmarks.total)})"
   - if @bookmarks
     %ul.big_list
       - @bookmarks.each do |bookmark|
         %li{id: bookmark.id}
           %h5= link_to bookmark.title, bookmark_path(bookmark.id)
           %p.mute.small.negative_gutter_top_half= link_to_references([Reference.new(bookmark.reference)])
-          %p= bookmark.labels
+          - if bookmark.labels
+            - bookmark.labels.split(',').each do |label|
+              %span{style: 'background-color: yellow;'}= link_to(label, 'yo')
           %div{class: "date"}= bookmark.created_as_date.strftime("%m/%d/%Y")
   - else
     %div{class: "none"}= "Sorry, no bookmarks here! Why don't you try W. H. Smith's?"
