@@ -7,22 +7,14 @@ class Bookmark < YouVersion::Resource
   attribute :title
 
   def before_save
-    self.reference = self.reference.map(&:osis).join("%2b") if self.reference.is_a?(Array)
+    unless self.reference.is_a?(String)
+      self.reference = [self.reference].flatten.compact.map(&:osis).join("%2b")
+    end
   end
 
   def after_save(response)
     return unless response
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
-    osis = [response.reference].flatten.map(&:osis).join('+')
-    self.reference = Reference.new("#{osis}.#{response.version}")
-  end
-
-  def before_update
-    self.reference = self.reference.map(&:osis).join("%2b") if self.reference.is_a?(Array)
-  end
-
-  def after_update(response)
-    return unless response
     osis = [response.reference].flatten.map(&:osis).join('+')
     self.reference = Reference.new("#{osis}.#{response.version}")
   end
