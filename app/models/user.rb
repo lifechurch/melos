@@ -38,6 +38,7 @@ class User
       hash[:auth] = user
       User.new(hash)
     when String
+      raise ArgumentError, "Strings not supported yet as value type for 'user' pararam in User.find"
       # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
     end
   end

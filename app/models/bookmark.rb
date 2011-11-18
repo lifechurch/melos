@@ -81,6 +81,7 @@ class Bookmark < YouVersion::Resource
         bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
       end
     end
+    bookmarks.page = opts[:page].to_i
     bookmarks.total = data['total'].to_i if data['total']
     bookmarks
   end
