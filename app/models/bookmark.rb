@@ -43,6 +43,12 @@ class Bookmark < YouVersion::Resource
     super
   end
 
+  # We have to override the default Resource version of this, because
+  # the Bookmark API delete_path wants :ids instead of :id
+  def self.destroy(id, auth = nil, &block)
+    post(delete_path, {:ids => id, :auth => auth}, &block)
+  end
+
   def self.for_user(user_id = nil, params = {})
     page = params[:page] || 1
     opts = params.merge({user_id: user_id, page: page})
