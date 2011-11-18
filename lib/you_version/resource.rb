@@ -250,7 +250,7 @@ module YouVersion
           self.id = response_data.try(:id)
         end
       ensure
-        self.persisted? ? after_update(response_data) : before_save(response_data)
+        self.persisted? ? after_update(response_data) : after_save(response_data)
       end
       response
     end
