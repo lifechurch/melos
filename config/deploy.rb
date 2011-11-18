@@ -60,7 +60,7 @@ namespace :deploy do
 
   task :cold do
     update
-    migrate
+    # migrate
   end
 
   task :update do
@@ -80,7 +80,7 @@ namespace :deploy do
     transaction do
       update_code
     end
-    migrate
+    # migrate
     restart
   end
 
