@@ -9,6 +9,10 @@ class User
     !id.blank?
   end
 
+  def self.foreign_key
+    "user_id"
+  end
+
   def self.authenticate(username, password)
     hash = {}
     response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
