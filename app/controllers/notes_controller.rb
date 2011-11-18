@@ -1,8 +1,8 @@
 class NotesController < ApplicationController
   before_filter :set_nav
+  before_filter :set_sidebar, :only => [:index]
 
   def index
-    set_sidebar
     if params[:user_id]
       @notes = User.find(params[:user_id].to_i, :auth => current_auth).notes
     else
