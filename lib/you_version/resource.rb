@@ -115,7 +115,7 @@ module YouVersion
       end
 
       def destroy(id, auth = nil, &block)
-        post(delete_path, {:ids => id, :auth => auth}, &block)
+        post(delete_path, {:id => id, :auth => auth}, &block)
       end
 
       attr_accessor :resource_attributes
@@ -168,10 +168,12 @@ module YouVersion
       end
       
       def belongs_to_remote(association_name)
+        association_class = association_name.to_s.classify.constantize
+        attribute association_class.foreign_key.to_sym
+
         define_method(association_name.to_s.singularize) do |params = {}|
           associations.delete(association_name) if params[:refresh]
 
-          association_class = association_name.to_s.classify.constantize
           associations[association_name] ||= association_class.find(self.attributes[association_class.foreign_key].to_i, params)
         end
       end
