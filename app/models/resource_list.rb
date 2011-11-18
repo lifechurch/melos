@@ -2,7 +2,7 @@
 # instead of hijacking Array. But simplest thing that works, yeah?
 
 class ResourceList < Array
-  attr_accessor :total
+  attr_accessor :page, :total
   def initialize(*args)
     super(*args)
     # Default to same as #size
