@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Note do
-  use_vcr_cassette "note"
+  # use_vcr_cassette "note"
 
   before :all do
     @auth = Hashie::Mash.new( { user_id: 4163177,

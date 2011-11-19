@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Reference do
-  use_vcr_cassette "reference"
+#   use_vcr_cassette "reference"
 
   before :each do
     @full_ref = Reference.new("gen.1.1.kjv")

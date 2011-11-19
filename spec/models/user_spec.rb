@@ -1,14 +1,9 @@
 require 'spec_helper'
 
 describe User do
-  use_vcr_cassette "user"
+#  use_vcr_cassette "user"
   before :all do
-    @params = { email: "testuser@youversion.com",
-               username: "testuser",
-               password: "tenders",
-               agree: TRUE,
-               verified: TRUE,
-               locale: "en_US" }
+    @params = { email: "testuser@youversion.com", username: "testuser", password: "tenders", agree: TRUE, verified: TRUE, locale: "en_US" }
   end
 
   describe "#attributes" do

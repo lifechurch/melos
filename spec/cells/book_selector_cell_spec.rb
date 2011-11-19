@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe BookSelectorCell do
-  use_vcr_cassette("book_selector_cell")
+#  use_vcr_cassette("book_selector_cell")
   context "rendering display" do
     subject { render_cell(:book_selector, :display) }
 

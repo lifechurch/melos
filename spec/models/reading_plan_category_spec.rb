@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ReadingPlanCategory do
-  use_vcr_cassette "reading_plan_category"
+  # use_vcr_cassette "reading_plan_category"
 
   describe ".find" do
     it "finds the root category with no argument" do
