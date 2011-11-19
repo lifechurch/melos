@@ -1,6 +1,6 @@
 class String
   # The OSIS string format used at YouVersion is "[book].[chapter or chapter range].[opt. verse or verse range].[opt. version]"
-  def to_osis_hash
+  def parse_osis_format
     items = self.downcase.split(".")
     hash = {book: items.first}
     case items.length
@@ -22,6 +22,61 @@ class String
       hash[:verse] = verses.length == 1 ? verses.first.to_i : (verses[0].to_i..verses[1].to_i)
     end
     return hash
+  end
+
+  # Lemme 'splain the pattern here. Most people I know are accustomed to writing Bible references
+  # as "Gen 1:1" or "Leviticus 20:1-2". So this patterns matches and captures 4 parts:
+  #   - book name
+  #   - chapter
+  #   - verse or verses
+  #   - version
+  # Book name and chapter are expected; verses and version are optional. Pattern works this way:
+  #   book - leading 1, 2, or 3 are OK, then any series of letters: 1 john, 2 Kings, Exodus, Mat, etc.
+  #   chapter - contiguous numbers between the book part and a : or .
+  #   verse(s) - numbers, possibly separated by a -, so '9', '9-12', '9 - 10', etc.
+  #   version - any contiguous series of characters after the verse part
+  # Whever possible, we allow arbitrary spaces betwen elements, so '1  john' and '1john' are OK.
+  def human_ref_pattern
+    #       --------- book ---------      chap           ---- verse or verses ----           - version -
+    /^ \s* ([1-3]? \s* [A-Za-z]+ .? ) \s* (\d)+ (?:[:.] (\d+ (?: \s* \-? \s* \d*)))? [\.\s]* ([a-zA-Z]+)? \s*? $/x
+  end
+
+  # TODO: Make chapters optional (as with parse_osis_format, above)
+  # TODO: Make chapters accept ranges (ibid)
+  # TODO: Make hash for verse and chapter ranges actual Ruby integer ranges
+
+  def human_to_osis
+    ref_pattern = human_ref_pattern
+    if match = ref_pattern.match(self.downcase)
+      book = match[1].gsub(/[ \.]/, '')
+      chapter = match[2].strip
+      verses = match[3].gsub('-', '..').gsub(' ', '')  # osis wants verse ranges as 3..5, not 3-5
+      version = match[4].strip
+      hash = {:book => book, :chapter => chapter, :verse => verses, :version => version}
+    else
+      hash = {}
+      # puts "No matchy :("
+    end
+  end
+
+# can't do this with when like this - may need to get rid of /x or something - not matching right
+  def to_osis_hash
+    case self.downcase
+    when /^[123A-Za-z \.\-]*$/  # likeliest match is osis format
+      puts "To the osis hash!"
+      self.parse_osis_format
+    when human_ref_pattern # Probably more like 'Gen 1:1'
+      puts "Oh, the humanity!"
+      self.human_to_osis
+    else
+      if human_ref_pattern.match(self.downcase)
+        puts "Had to do a real match, but ok, it's human!"
+        self.human_to_osis
+      else
+        puts "NO WAY TO FIGURE IT OUT: [[[#{self.downcase}]]]! Punting to old way (parse_osis_format)"
+        self.parse_osis_format
+      end
+    end
   end
 end
 
