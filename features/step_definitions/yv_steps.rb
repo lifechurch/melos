@@ -2,6 +2,14 @@ Given /^a user named "([^"]*)" with password "([^"]*)" does not exist$/ do |arg1
   User.authenticate(arg1, arg2).should_not be_true
 end
 
+Given /^these users:$/ do |table|
+  @rows = table.hashes
+  @rows.each do |r|
+    user = User.authenticate(r['username'], r['password'])
+    puts user
+  end
+end
+
 Given /^a user named "([^"]*)" with password "([^"]*)" and email "([^"]*)" exists$/ do |username, password, email| # "
   @user = User.new({username: username, password: password, email: email, verified: true, agree: true }).create
 end
