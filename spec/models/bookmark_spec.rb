@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Bookmark do
-  use_vcr_cassette "bookmark"
+  # use_vcr_cassette "bookmark"
   before :all do
     @params = { email: "testuser23@youversion.com",
                username: "testuser23",

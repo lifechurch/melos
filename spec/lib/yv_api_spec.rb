@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 require 'yv_api'
 
 describe YvApi, "GETting the YV API" do
-  use_vcr_cassette "api-get"
+  # use_vcr_cassette "api-get"
   describe ".get" do
     it "gets a KJV booklist" do
       list = YvApi.get("bible/books", version: "kjv")
