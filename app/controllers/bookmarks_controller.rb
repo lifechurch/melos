@@ -11,6 +11,15 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def show_label
+    if params[:user_id] && params[:label]  # API requires both, go figger
+      @bookmarks = Bookmark.for_label(params[:label], {:user_id => params[:user_id]})
+      render :template => 'bookmarks/index'
+    else
+      redirect_to bookmarks_path
+    end
+  end
+
   def show
     @bookmark = Bookmark.find(params[:id], :auth => current_auth)
     raise ActionController::RoutingError.new('Not Found') unless @bookmark
@@ -27,7 +36,8 @@ class BookmarksController < ApplicationController
   def edit
     if current_auth
       @bookmark = Bookmark.find(params[:id], :auth => current_auth)
-#      @bookmark.reference = @bookmark.reference.to_osis_references
+      # @bookmark.reference = @bookmark.reference.to_osis_references
+      @bookmark.reference = @bookmark.reference.to_osis_string
     else
       redirect_to bookmarks_path
     end

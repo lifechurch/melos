@@ -1,5 +1,5 @@
 = form_for @bookmark do |f|
-  - if @bookmark.errors
+  - if @bookmark.errors.any?
     .form_errors
       The following error(s) prevented creation of your bookmark:
       %ul

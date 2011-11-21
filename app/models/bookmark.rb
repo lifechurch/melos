@@ -67,6 +67,29 @@ class Bookmark < YouVersion::Resource
     bookmarks
   end
 
+  def self.for_label(label, params = {})
+    page = params[:page] || 1
+    opts = params.merge({label: label, page: page})
+
+    data = all_raw(opts) do |errors|
+      Rails.logger.info "API Error: Bookmark.for_label(#{label}) got these errors: #{errors.inspect}"
+      if errors.find{|g| g['error'] =~ /Bookmarks not found/}
+        # return empty hash to avoid raising exception
+        { }
+      end
+    end
+
+    bookmarks = ResourceList.new
+    if data['bookmarks']
+      data.bookmarks.each do |b|
+        bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
+      end
+    end
+    bookmarks.page = opts[:page].to_i
+    bookmarks.total = data['total'].to_i if data['total']
+    bookmarks
+  end
+
   def self.for_user(user_id = nil, params = {})
     page = params[:page] || 1
     opts = params.merge({user_id: user_id, page: page})
