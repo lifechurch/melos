@@ -267,6 +267,7 @@ DEPENDENCIES
   rails (~> 3.1.0)
   routing-filter
   rspec-cells
+  rspec-rails
   sass-rails (~> 3.1.0)
   therubyracer
   turn (< 0.8.3)

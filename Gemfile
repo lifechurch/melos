@@ -43,6 +43,7 @@ group :test, :development do
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'
   gem 'guard-rspec'
+  gem 'rspec-rails'
   gem 'guard-cucumber'
   gem 'guard-bundler'
   gem 'heroku_san'
