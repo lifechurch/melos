@@ -1,0 +1,15 @@
+%article
+  %h1 Get early access to the new YouVersion.com
+
+  = form_for @beta_registration, url: beta_signup_path do |f|
+    -if @beta_registration.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@beta_registration.errors.count, "error")} prohibited this beta_registration from being saved:"
+        %ul
+          - @beta_registration.errors.full_messages.each do |msg|
+            %li= msg
+    = label_tag :username, t("username or email prompt")
+    = text_field_tag :username, params[:username]
+    = label_tag :password, t("password prompt")
+    = password_field_tag :password, params[:password]
+    = submit_tag t("try the beta")

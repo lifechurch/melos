@@ -9,6 +9,8 @@ require 'rspec/rails'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+include UsersSpecHelper
+
 RSpec.configure do |config|
   # == Mock Framework
   #
@@ -38,4 +40,4 @@ end
 # 
 # RSpec.configure do |c|
 #   c.extend VCR::RSpec::Macros
-# end
+

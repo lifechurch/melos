@@ -6,8 +6,39 @@ Given /^these users:$/ do |table|
   @rows = table.hashes
   @rows.each do |r|
     user = User.authenticate(r['username'], r['password'])
-    puts user
+    unless user.class == User
+      User.new({username: r['username'], password: r['password'], email: r['email address'], verified: true, agree: true }).create
+      user = User.authenticate(r['username'], r['password'])
+    end
+    user.should be_a User
   end
+end
+
+Given /^I am signed in as "([^"]*)" with password "([^"]*)"$/ do |u, p|
+  step %{I go to the sign in page}
+  step %{I fill in "username" with "#{u}"}
+  step %{I fill in "password" with "#{p}"}
+  step %{I press "Sign in"}
+end
+
+Given /^(.*) is not signed up for the beta$/ do |u|
+  BetaRegistration.where(username: u).should be_empty
+end
+
+Given /^(.*) is signed up for the beta$/ do |u|
+  if BetaRegistration.where(username: u).empty?
+    BetaRegistration.create(username: u)
+  end
+end
+
+Given /^the beta is closed$/ do
+  `echo "closed" > #{Rails.root.join("beta.txt")}`
+
+end
+
+Given /^the beta is open$/ do
+  `echo "open" > #{Rails.root.join("beta.txt")}`
+
 end
 
 Given /^a user named "([^"]*)" with password "([^"]*)" and email "([^"]*)" exists$/ do |username, password, email| # "

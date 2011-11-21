@@ -1,4 +1,6 @@
 YouversionWeb::Application.routes.draw do
+  resources :beta_registrations
+
   filter :locale, include_default_locale: false
   # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
@@ -20,6 +22,10 @@ YouversionWeb::Application.routes.draw do
   match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
   match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
+  match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
+  match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
+
+  root to: 'references#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

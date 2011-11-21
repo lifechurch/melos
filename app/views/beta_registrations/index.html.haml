@@ -1,0 +1,19 @@
+%h1 Listing beta_registrations
+
+%table
+  %tr
+    %th Username
+    %th
+    %th
+    %th
+
+  - @beta_registrations.each do |beta_registration|
+    %tr
+      %td= beta_registration.username
+      %td= link_to 'Show', beta_registration
+      %td= link_to 'Edit', edit_beta_registration_path(beta_registration)
+      %td= link_to 'Destroy', beta_registration, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Beta registration', new_beta_registration_path
