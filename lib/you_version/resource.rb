@@ -47,6 +47,7 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
+
       def retry_with_auth?(errors)
         errors.find {|t| t['key'] =~ /username_and_password.required/}
       end
@@ -74,7 +75,8 @@ module YouVersion
           if api_errors
             # Sadly, all our attempts failed.
             @errors = api_errors.map { |e| e["error"] }
-            return false
+          #  return false
+            raise ResourceError.new(errors)
           end
 
           # Propagate the response from the get-with-auth call as the return
@@ -89,9 +91,9 @@ module YouVersion
         response = YvApi.get(list_path, params) do |errors|
           raise ResourceError.new(errors)
         end
-        puts "*"*80
-        pp response
-        puts "*"*80
+        # puts "*"*80
+        # pp response
+        # puts "*"*80
         # TODO: Switch to ResourceList here
         response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
       end
@@ -114,8 +116,8 @@ module YouVersion
         new(data).save(&block)
       end
 
-      def destroy(id, auth = nil, &block)
-        post(delete_path, {:ids => id, :auth => auth}, &block)
+      def destroy(delete_options, &block)
+        post(delete_path, delete_options, &block)
       end
 
       attr_accessor :resource_attributes
@@ -208,6 +210,9 @@ module YouVersion
       id
     end
 
+    def delete_options
+      {id: id, auth: auth}
+    end
     def before_save; end;
     def after_save(response); end;
     def save
@@ -233,7 +238,7 @@ module YouVersion
           response = false
         end
 
-        self.id = response.try(:id)
+        self.id = response.try(:id) unless response == false
       ensure
         after_save(response)
       end
@@ -258,7 +263,7 @@ module YouVersion
       before_destroy
 
       begin
-        response = self.class.destroy(self.id, self.auth) do |errors|
+        response = self.class.destroy(self.delete_options) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
 

@@ -25,7 +25,8 @@ describe User do
 
   describe "#create" do
     it "returns true for creating a user with valid params" do
-      user = User.new(@params)
+      user = User.new(email: "testuser9@youversion.com", username: "testuser9", password: "tenders", agree: true, verified: true)
+      user.create
       user.create.should_not be_false
     end
 

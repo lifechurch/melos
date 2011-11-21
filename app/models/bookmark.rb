@@ -6,6 +6,10 @@ class Bookmark < YouVersion::Resource
   attribute :version
   attribute :title
 
+  def delete_options
+    {ids: id, auth: auth}
+  end
+
   def before_save
     self.reference = self.reference.map(&:osis).join("%2b") if self.reference.is_a?(Array)
   end

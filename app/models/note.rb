@@ -31,13 +31,19 @@ class Note < YouVersion::Resource
   def before_save
     @original_content = self.content
     self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
-    self.reference = self.reference.map(&:osis).join("%2b") if self.reference.is_a?(Array)
+    self.reference = self.reference.map(&:notes_api_string).join("+") if self.reference.is_a?(Array)
+    # self.version = self.version.osis
   end
 
   def after_save(response)
     self.content = @original_content
     if response
-      self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+      case self.reference
+      when Array
+        self.reference = self.reference.map { |r| Reference.new("#{r.osis.downcase}.#{response.version}") }
+      when String
+        self.reference = [Reference.new("#{self.reference.downcase}.#{response.version}")]
+      end
     end
   end
 
