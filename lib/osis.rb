@@ -56,7 +56,11 @@ class String
     end
   end
 
-  def human_to_osis
+  def to_osis_string
+    self.to_osis_hash.to_osis_string
+  end
+
+  def human_to_osis_hash
     ref_pattern = human_ref_pattern
     hash = {}
     if match = ref_pattern.match(self.downcase)
@@ -83,11 +87,11 @@ class String
       self.parse_osis_format
     when human_ref_pattern # Probably more like 'Gen 1:1'
       puts "Oh, the humanity! (#{self.downcase})"
-      self.human_to_osis
+      self.human_to_osis_hash
     else
       if human_ref_pattern.match(self.downcase)
         puts "Had to do a real match, but ok, it's human! (#{self.downcase})"
-        self.human_to_osis
+        self.human_to_osis_hash
       else
         puts "NO WAY TO FIGURE IT OUT: [[[#{self.downcase}]]]! Punting to old way (parse_osis_format)"
         self.parse_osis_format
@@ -110,12 +114,12 @@ class Hash
     string += "." + self[:version] if self[:version]
     string
   end
-  
+
   def to_osis_string_noversion
     string = self[:book]
     self[:chapter].is_a?(Range) ? string += "." + self[:chapter].first.to_s + "-" + self[:chapter].last.to_s : string += "." + self[:chapter].to_s if self[:chapter]
     self[:verse].is_a?(Range) ? string += "." + self[:verse].first.to_s + "-" + self[:verse].last.to_s : string += "." + self[:verse].to_s if self[:verse]
     string
   end
-  
+
 end
