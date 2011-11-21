@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Version do
-  use_vcr_cassette "version"
+#   use_vcr_cassette "version"
 
   describe ".all" do
     it "returns a hash of all versions" do
