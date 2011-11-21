@@ -5,7 +5,7 @@
 #
 # Generated November 21, 2011
 #
-# This configuration file is custom generated for LifeChurch
+# This configuration file is custom generated for LifeChurch_1
 
 # Here are the settings that are common to all environments:
 common: &default_settings
@@ -14,7 +14,7 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
-  license_key: '806d1b7aa451c5ab7cc891b6069634dbcd629a8c'
+  license_key: '335e3b349585a4baf47573354334b62504176bfb'
   
   # Agent Enabled (Ruby/Rails Only)
   # Use this setting to force the agent to run or not run.
