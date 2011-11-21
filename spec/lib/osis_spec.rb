@@ -39,12 +39,12 @@ describe "OSIS Parser" do
   @human_tests.each do |test|
     it "parses #{test[:string]} to a hash" do
 #      test[:string].to_osis_hash.should == test[:hash]
-      test[:string].human_to_osis.should == test[:hash]
+      test[:string].human_to_osis_hash.should == test[:hash]
     end
 
     it "creates #{test[:osis_string]} via hash from #{test[:string]}" do
 #      test[:string].to_osis_hash.to_osis_string.should == test[:osis_string]
-      test[:string].human_to_osis.to_osis_string.should == test[:osis_string]
+      test[:string].human_to_osis_hash.to_osis_string.should == test[:osis_string]
     end
   end
 end
