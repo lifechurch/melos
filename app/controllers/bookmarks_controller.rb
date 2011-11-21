@@ -35,6 +35,14 @@ class BookmarksController < ApplicationController
 
   def create
     puts "About to create Bookmark from #{params[:bookmark]}"
+    if params[:bookmark][:reference].is_a? String
+      ref = params[:bookmark][:reference]
+      new_ref = ref.to_osis_string
+      if ref != new_ref
+        Rails.logger.info("Converted ref: #{ref} to this: #{new_ref} so API will like better.")
+        params[:bookmark][:reference] = new_ref
+      end
+    end
     @bookmark = Bookmark.new(params[:bookmark])
     pp @bookmark
     @bookmark.auth = current_auth
