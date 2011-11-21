@@ -6,6 +6,10 @@ class Bookmark < YouVersion::Resource
   attribute :version
   attribute :title
 
+  def user_id
+    self.attributes['user_id']
+  end
+
   def before_save
     unless self.reference.is_a?(String)
       self.reference = [self.reference].flatten.compact.map(&:osis).join("%2b")
