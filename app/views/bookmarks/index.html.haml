@@ -35,3 +35,6 @@
           %div{class: "date"}= bookmark.created_as_date.strftime("%m/%d/%Y")
   - else
     %div{class: "none"}= "Sorry, no bookmarks here! Why don't you try W. H. Smith's?"
+  - if current_auth
+    %div
+      = link_to "Create a bookmark", new_bookmark_path
