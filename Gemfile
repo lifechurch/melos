@@ -11,6 +11,7 @@ gem 'pg'
 gem 'routing-filter'
 gem 'execjs'
 gem 'therubyracer'
+gem 'unicorn'
 
 
 # Gems used only for assets and not required
@@ -45,6 +46,8 @@ group :test, :development do
   gem 'guard-cucumber'
   gem 'guard-bundler'
   gem 'heroku_san'
+  gem 'capistrano'
+  gem 'capistrano-ext'
 end
 
 group :test do
