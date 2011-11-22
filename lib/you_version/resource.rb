@@ -256,7 +256,7 @@ module YouVersion
           self.id = response_data.try(:id)
         end
 
-        self.id = response.try(:id) unless response == false
+        # self.id = response.try(:id) unless response == false
       ensure
         self.persisted? ? after_update(response_data) : after_save(response_data)
       end

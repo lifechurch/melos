@@ -64,7 +64,6 @@ class String
     ref_pattern = human_ref_pattern
     hash = {}
     if match = ref_pattern.match(self.downcase)
-      puts "Match was #{match.inspect}"
       book = match[1].gsub(/[ \.]/, '')
       chapters = dashed_to_range(match[2])
       verses = dashed_to_range(match[3])
@@ -74,7 +73,6 @@ class String
       hash[:verse] = verses if verses
       hash[:version] = version if version
     else
-      # puts "No matchy :("
     end
     hash
   end
@@ -83,17 +81,13 @@ class String
   def to_osis_hash
     case self.downcase
     when /^[123A-Za-z \.\-]*$/  # likeliest match is osis format
-      puts "To the osis hash! (#{self.downcase})"
       self.parse_osis_format
     when human_ref_pattern # Probably more like 'Gen 1:1'
-      puts "Oh, the humanity! (#{self.downcase})"
       self.human_to_osis_hash
     else
       if human_ref_pattern.match(self.downcase)
-        puts "Had to do a real match, but ok, it's human! (#{self.downcase})"
         self.human_to_osis_hash
       else
-        puts "NO WAY TO FIGURE IT OUT: [[[#{self.downcase}]]]! Punting to old way (parse_osis_format)"
         self.parse_osis_format
       end
     end

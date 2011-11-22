@@ -18,9 +18,9 @@ describe Bookmark do
 
   describe ".find" do
     it 'returns Bookmark object with valid param' do
-      bookmark_id = Bookmark.new({auth: @auth, version: "esv",
-                               reference: "Matt.1.1", title: "Begettings", username: @testuser23.username}).save.id
-      @bookmark = Bookmark.find(bookmark_id)
+      bk = Bookmark.new({auth: @auth, version: "esv", reference: "Matt.1.1", title: "Begettings", username: @testuser23.username})
+      bk.save
+      @bookmark = Bookmark.find(bk.id)
       @bookmark.title.should == 'Begettings'
       @bookmark.labels.should be_nil
       @bookmark.reference.osis.should == 'Matt.1.1'
@@ -40,8 +40,7 @@ describe Bookmark do
       # in it, one that we knew existed on the remote system. But this would likewise be quite
       # brittle. I don't have an answer, just making a note next time I'm through here and
       # wondering why a spec that used to pass has started failing or something.
-      bookmark = Bookmark.new({auth: @auth, version: "esv",
-                               reference: "Matt.1", title: "Begettings", username: @testuser23.username})
+      bookmark = Bookmark.new({auth: @auth, version: "esv", reference: "Matt.1", title: "Begettings", username: @testuser23.username})
       bookmark.save.should_not be_false
     end
 
@@ -64,6 +63,7 @@ describe Bookmark do
       response.should be_true
 
       bookmark = Bookmark.find bookmark.id
+      puts bookmark.inspect
 
       bookmark.title.should == "New Title"
       bookmark.labels.should == "cats, dogs"

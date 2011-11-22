@@ -4,6 +4,7 @@ describe User do
 #  use_vcr_cassette "user"
   before :all do
     @params = { email: "testuser@youversion.com", username: "testuser", password: "tenders", agree: TRUE, verified: TRUE, locale: "en_US" }
+    @testuser = ensure_user username: "testuser", password: "tenders", email: "testuser@youversion.com"
   end
 
   describe "#attributes" do
@@ -23,20 +24,6 @@ describe User do
     end
   end
 
-  describe "#create" do
-    it "returns true for creating a user with valid params" do
-      user = User.new(email: "testuser9@youversion.com", username: "testuser9", password: "tenders", agree: true, verified: true)
-      user.create
-      user.create.should_not be_false
-    end
-
-    it "returns false for invalid params" do
-      bad_user = User.new({email: "blah@stuff.com"})
-      bad_user.create.should be_false
-      bad_user.errors.count.should == 3
-    end
-  end
-
   describe ".authenticate" do
     it "returns a User mash for correct username and password" do
       User.authenticate("testuser", "tenders").username.should == "testuser"
@@ -47,21 +34,28 @@ describe User do
     end
   end
 
-  describe "#id" do
-    it "returns the user's ID for a valid user" do
-      User.authenticate("testuser", "tenders").id.should == 4163177
+  describe "#create" do
+    it "returns true for creating a user with valid params" do
+      User.authenticate("testuser999", "tenders").should be_false
+      user = User.new(email: "testuser999@youversion.com", username: "testuser999", password: "tenders", agree: true, verified: true)
+      user.create.should_not be_false
+    end
+
+    it "returns false for invalid params" do
+      bad_user = User.new({email: "blah@stuff.com"})
+      bad_user.create.should be_false
     end
   end
 
   describe ".find" do
     it "finds a user by their id" do
       auth = nil
-      friend = User.find(4163177)
+      friend = User.find(@testuser.id)
       friend.username.should == "testuser"
       friend.email.should be_empty
 
-      auth = Hashie::Mash.new({id: 4163177, username: "testuser", password: "tenders"})
-      User.find(4163177, auth).email.should == "testuser@youversion.com"
+      auth = Hashie::Mash.new({id: @testuser.id, username: "testuser", password: "tenders"})
+      User.find(@testuser.id, auth).email.should == "testuser@youversion.com"
 
     end
 

@@ -30,11 +30,11 @@ class User
     # Pass in a user_id, username, or just an auth mash with a username and id.
     case user
     when Fixnum
-      hash = YvApi.get("users/view", user_id: user, auth: auth).to_hash
+      hash = YvApi.get("users/view", id: user, auth: auth).to_hash
       hash[:auth] = auth
       User.new(hash)
     when Hashie::Mash
-      hash = YvApi.get("users/view", user_id: user.user_id, auth: user).to_hash
+      hash = YvApi.get("users/view", id: user.user_id, auth: user).to_hash
       hash[:auth] = user
       User.new(hash)
     when String
