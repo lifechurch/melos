@@ -1,8 +1,9 @@
-- @title = 'Reader'
+- @title = t("Reader")
 - @reader_menus = true
 - @is_reader = true
 
 - content_for :sidebar do
+<<<<<<< HEAD
   = render '/shared/widget_bookmarks'
   = render_cell :notes_list_widget, :display, notes: @notes, title: "Community Notes"
   = render '/shared/widget_ad_bible_app'
@@ -46,6 +47,45 @@
             Full Screen
 
 %article{"data-book" => @reference[:book].to_s, "data-chapter" => @reference[:chapter].to_s, "data-version" => @reference[:version].to_s}
+=======
+  = render_cell :notes_list_widget, :display, notes: @notes, title: t("notes.community notes")
+  = render '/shared/widget_ad_bible_app'
+
+%header
+  %ul.float_left
+    %li.gutter_right_quarter
+      = @reference.ref_string
+    %li
+      %a#menu_book_chapter_trigger.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+        %span=t("ref.choose book and chapter")
+    %li.separator
+      %a#menu_version_trigger.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
+        %b= @reference.version_string
+        %span=t("ref.choose version")
+  %ul.float_right
+    %li
+      %a.button{:href => '#', :title => t("ref.share")}
+        %b.icon_share
+          =t("ref.selected")
+          -# %sup
+            -# 3
+    %li
+      %a.button{:href => '#', :title => t("ref.preferences")}
+        %span.icon_preferences
+          =t("ref.preferences")
+    %li
+      %a.button{:href => '#', :title => t("ref.listen")}
+        %span.icon_listen
+          =t("ref.listen")
+    %li
+      %a.button{:href => '#', :title => t("ref.parallel")}
+        %span.icon_parallel
+          =t("ref.parallel")
+    %li
+      %a.button{:href => '#', :title => t("ref.full screen")}
+        %span.icon_full_screen
+          =t("ref.full screen")
+>>>>>>> I18n underpinnings for all view files except widgets
 
   - @reference.contents.each do |r|
     = r.html_safe
@@ -54,6 +94,6 @@
   %p
     %b
       %a{:href => '#'}
-        About the
+        =t("ref.about the")
         = @version
   %p= @reference.copyright
