@@ -5,7 +5,7 @@
     var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
     uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/I1nqYyJMxqPzC8D33LzP8Q.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-  })();
+  })();	
 
 
 //ubt66qLmQHxVonIWMeVw 		#don't like
