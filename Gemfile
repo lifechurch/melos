@@ -13,6 +13,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'unicorn'
 gem 'newrelic_rpm'
+gem 'exceptional'
 
 
 # Gems used only for assets and not required
