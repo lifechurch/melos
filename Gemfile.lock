@@ -142,7 +142,6 @@ GEM
     net-ssh (2.2.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
-    newrelic_rpm (3.3.0)
     nokogiri (1.5.0)
     pg (0.11.0)
     polyglot (0.3.3)
@@ -263,7 +262,6 @@ DEPENDENCIES
   httparty
   jquery-rails
   memcache-client
-  newrelic_rpm
   pg
   pry
   rails (~> 3.1.0)

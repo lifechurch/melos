@@ -12,7 +12,7 @@ gem 'routing-filter'
 gem 'execjs'
 gem 'therubyracer'
 gem 'unicorn'
-gem 'newrelic_rpm'
+# gem 'newrelic_rpm'
 
 
 # Gems used only for assets and not required
