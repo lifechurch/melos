@@ -24,7 +24,6 @@ if env == "production"
   working_directory "/var/www/youversion-web/current"
 
   # feel free to point this anywhere accessible on the filesystem
-  user 'cbailey', 'staff'
   shared_path = "/var/www/youversion-web/shared"
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
