@@ -15,7 +15,7 @@ set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 set :ssh_options, { :forward_agent => true }
-set :branch,          "origin/deploy-tools"
+set :branch,          "origin/master"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
 set :rails_env,       "production"
@@ -113,7 +113,7 @@ namespace :deploy do
 
   desc "Start unicorn"
   task :start, :except => { :no_release => true } do
-    run "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
+    run "cd #{current_path} ; bundle exec unicorn_rails -E #{rails_env} -c config/unicorn.rb -D"
   end
 
   desc "Stop unicorn"
