@@ -3,6 +3,10 @@ class Like < YvModel
   attr_reader :errors, :note_id, :note_title, :note_url, :note_user_avatar_url, :note_user_id, :note_username, :user_avatar_url, :user_id, :username, :id
   attr_accessor :auth, :note_id
   set_defaults(id: nil, auth: nil, exists: nil)
+  
+  def self.foreign_key
+    "like_id"
+  end
 
   def to_param
     id

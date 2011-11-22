@@ -59,13 +59,15 @@ describe Bookmark do
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
 
-      response = bookmark.update(title: "New Title")
+      response = bookmark.update(title: "New Title", labels: "cats,dogs", hightlight_color: 'ffcc00' )
 
       response.should be_true
 
       bookmark = Bookmark.find bookmark.id
 
       bookmark.title.should == "New Title"
+      bookmark.labels.should == "cats, dogs"
+      bookmark.highlight_color.should == "ffcc00"
     end
   end
 

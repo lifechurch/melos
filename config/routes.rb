@@ -5,6 +5,10 @@ YouversionWeb::Application.routes.draw do
   # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
   resources 'versions', :only => [:index, :show]
+
+  resources 'bookmarks'
+  match 'bookmarks/label/:label' => 'bookmarks#show_label', :as => 'bookmarks_label'
+
   resources 'notes'
   resources 'likes', :only => [:index]
   match 'notes/:id/like' => 'notes#like',    :as => 'like', :via => :put

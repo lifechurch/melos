@@ -28,11 +28,16 @@ class Note < YouVersion::Resource
     errors.find {|t| t['key'] =~ /notes.note.private/}
   end
 
+  def content_as_xml
+    "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
+  end
+
   def before_save
     @original_content = self.content
-    self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
-    self.reference = self.reference.map(&:notes_api_string).join("+") if self.reference.is_a?(Array)
-    # self.version = self.version.osis
+    self.content = self.content_as_xml
+    unless self.reference.is_a?(String)
+      self.reference = [self.reference].flatten.compact.map(&:osis_noversion).join("%2b")
+    end
   end
 
   def after_save(response)
@@ -47,10 +52,23 @@ class Note < YouVersion::Resource
     end
   end
 
+  def prep_reference_for_persist
+    if self.reference.is_a?(Hash) or (self.reference.is_a?(Enumerable) && self.reference.first.is_a?(Hash))
+      [self.reference].flatten.map(&:osis).join('%2b')
+    else
+      unless self.reference.is_a?(String)
+        [self.reference].flatten.compact.map(&:osis_noversion).join("%2b")
+      end
+    end
+  end
+
   def before_update
     @original_content = self.content
-    self.content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
-    self.reference = self.reference.map(&:osis).join("%2b") if self.reference.is_a?(Array)
+    self.content = self.content_as_xml
+    # If the format of self.reference needs changing, change it
+    if (mod_reference = prep_reference_for_persist)
+      self.reference = mod_reference
+    end
   end
 
   def after_update(response)
