@@ -1,5 +1,6 @@
 %article
-  %h1 Get early access to the new YouVersion.com
+  %h2 Thanks for your help!
+  %p Log in with your YouVersion username and password to help test the new site.
 
   = form_for @beta_registration, url: beta_signup_path do |f|
     -if @beta_registration.errors.any?
@@ -8,8 +9,12 @@
         %ul
           - @beta_registration.errors.full_messages.each do |msg|
             %li= msg
-    = label_tag :username, t("username or email prompt")
-    = text_field_tag :username, params[:username]
-    = label_tag :password, t("password prompt")
-    = password_field_tag :password, params[:password]
-    = submit_tag t("try the beta")
+    %p
+      = label_tag :username, t("username or email prompt")
+      %br
+      = text_field_tag :username, params[:username]
+    %p
+      = label_tag :password, t("password prompt")
+      %br
+      = password_field_tag :password, params[:password]
+    %p= submit_tag t("try the beta")

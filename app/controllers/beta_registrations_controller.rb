@@ -1,4 +1,5 @@
 class BetaRegistrationsController < ApplicationController
+  layout "beta"
   # GET /beta_registrations/new
   def new
     if File.new(Rails.root.join("beta.txt")).gets.chomp == "open"
