@@ -6,10 +6,6 @@ class Bookmark < YouVersion::Resource
   attribute :version
   attribute :title
 
-  def delete_options
-    {ids: id, auth: auth}
-  end
-
   def user_id
     self.attributes['user_id']
   end
@@ -45,9 +41,9 @@ class Bookmark < YouVersion::Resource
 
   # We have to override the default Resource version of this, because
   # the Bookmark API delete_path wants :ids instead of :id
-  # def self.destroy(id, auth = nil, &block)
-  #   post(delete_path, {:ids => id, :auth => auth}, &block)
-  # end
+  def self.destroy(id, auth = nil, &block)
+    post(delete_path, {:ids => id, :auth => auth}, &block)
+  end
 
   def self.all(params = {})
     params[:page] ||= 1

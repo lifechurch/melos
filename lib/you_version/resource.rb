@@ -116,8 +116,8 @@ module YouVersion
         new(data).save(&block)
       end
 
-      def destroy(delete_options, &block)
-        post(delete_path, delete_options, &block)
+      def destroy(id, auth = nil, &block)
+        post(delete_path, {:id => id, :auth => auth}, &block)
       end
 
       attr_accessor :resource_attributes
@@ -212,10 +212,6 @@ module YouVersion
       id
     end
 
-    def delete_options
-      {id: id, auth: auth}
-    end
-
     def persist(resource_path)
       response = true
       response_data = nil
@@ -255,8 +251,6 @@ module YouVersion
         if response && ! self.persisted?
           self.id = response_data.try(:id)
         end
-
-        # self.id = response.try(:id) unless response == false
       ensure
         self.persisted? ? after_update(response_data) : after_save(response_data)
       end
@@ -281,7 +275,7 @@ module YouVersion
       before_destroy
 
       begin
-        response = self.class.destroy(self.delete_options) do |errors|
+        response = self.class.destroy(self.id, self.auth) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
 
