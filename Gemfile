@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.1.2'
 gem 'httparty'
 gem 'memcache-client'
 gem 'hashie'
@@ -12,12 +12,8 @@ gem 'routing-filter'
 gem 'execjs'
 gem 'therubyracer'
 gem 'unicorn'
-<<<<<<< HEAD
-# gem 'newrelic_rpm'
-=======
 gem 'newrelic_rpm'
 gem 'exceptional'
->>>>>>> origin/analytics
 
 
 # Gems used only for assets and not required

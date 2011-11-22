@@ -1,2 +1,2 @@
 require 'active_support/core_ext'
-# require 'newrelic_rpm'
+require 'newrelic_rpm'

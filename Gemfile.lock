@@ -269,9 +269,10 @@ DEPENDENCIES
   newrelic_rpm
   pg
   pry
-  rails (~> 3.1.0)
+  rails (= 3.1.2)
   routing-filter
   rspec-cells
+  rspec-rails
   sass-rails (~> 3.1.0)
   therubyracer
   turn (< 0.8.3)
