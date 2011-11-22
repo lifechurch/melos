@@ -21,11 +21,7 @@ class ApplicationController < ActionController::Base
   def check_beta
     unless request.path == beta_signup_path
       # Check if the person has beta access
-      if current_auth
-        return if cookies.signed[:d] == "yes"
-        cookies.permanent.signed[:d] = "yes" unless BetaRegistration.where(username: current_auth.username).empty?
-        return
-      end
+      return if current_auth && cookies.signed[:d] == "yes"
       redirect_to beta_signup_path
     end
   end
