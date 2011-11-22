@@ -69,7 +69,7 @@ en:
       delete:                       "delete this note"
       confirm delete:               "Are you sure?"
       write new:                    "Write New Note"
-  ref: 
+  ref:
       choose book and chapter:      "Choose Book + Chapter"
       choose version:               "Choose Version"
       share:                        "Share"
