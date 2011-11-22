@@ -1,12 +1,12 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    actionmailer (3.1.3)
-      actionpack (= 3.1.3)
+    actionmailer (3.1.2)
+      actionpack (= 3.1.2)
       mail (~> 2.3.0)
-    actionpack (3.1.3)
-      activemodel (= 3.1.3)
-      activesupport (= 3.1.3)
+    actionpack (3.1.2)
+      activemodel (= 3.1.2)
+      activesupport (= 3.1.2)
       builder (~> 3.0.0)
       erubis (~> 2.7.0)
       i18n (~> 0.6)
@@ -14,20 +14,20 @@ GEM
       rack-cache (~> 1.1)
       rack-mount (~> 0.8.2)
       rack-test (~> 0.6.1)
-      sprockets (~> 2.0.3)
-    activemodel (3.1.3)
-      activesupport (= 3.1.3)
+      sprockets (~> 2.1.0)
+    activemodel (3.1.2)
+      activesupport (= 3.1.2)
       builder (~> 3.0.0)
       i18n (~> 0.6)
-    activerecord (3.1.3)
-      activemodel (= 3.1.3)
-      activesupport (= 3.1.3)
+    activerecord (3.1.2)
+      activemodel (= 3.1.2)
+      activesupport (= 3.1.2)
       arel (~> 2.2.1)
       tzinfo (~> 0.3.29)
-    activeresource (3.1.3)
-      activemodel (= 3.1.3)
-      activesupport (= 3.1.3)
-    activesupport (3.1.3)
+    activeresource (3.1.2)
+      activemodel (= 3.1.2)
+      activesupport (= 3.1.2)
+    activesupport (3.1.2)
       multi_json (~> 1.0)
     addressable (2.2.6)
     ansi (1.4.1)
@@ -80,6 +80,8 @@ GEM
       rack-test (>= 0.5.7)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    exceptional (2.0.32)
+      rack
     execjs (1.2.9)
       multi_json (~> 1.0)
     ffi (1.0.11)
@@ -142,6 +144,7 @@ GEM
     net-ssh (2.2.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    newrelic_rpm (3.3.0)
     nokogiri (1.5.0)
     pg (0.11.0)
     polyglot (0.3.3)
@@ -159,17 +162,17 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
-    rails (3.1.3)
-      actionmailer (= 3.1.3)
-      actionpack (= 3.1.3)
-      activerecord (= 3.1.3)
-      activeresource (= 3.1.3)
-      activesupport (= 3.1.3)
+    rails (3.1.2)
+      actionmailer (= 3.1.2)
+      actionpack (= 3.1.2)
+      activerecord (= 3.1.2)
+      activeresource (= 3.1.2)
+      activesupport (= 3.1.2)
       bundler (~> 1.0)
-      railties (= 3.1.3)
-    railties (3.1.3)
-      actionpack (= 3.1.3)
-      activesupport (= 3.1.3)
+      railties (= 3.1.2)
+    railties (3.1.2)
+      actionpack (= 3.1.2)
+      activesupport (= 3.1.2)
       rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
@@ -214,7 +217,7 @@ GEM
       rubyzip
     sexp_processor (3.0.8)
     slop (2.1.0)
-    sprockets (2.0.3)
+    sprockets (2.1.1)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
@@ -251,6 +254,7 @@ DEPENDENCIES
   compass (~> 0.11.1)
   css_parser (~> 1.1.9)
   cucumber-rails (~> 0.5.0.beta1)
+  exceptional
   execjs
   guard
   guard-bundler
@@ -262,12 +266,12 @@ DEPENDENCIES
   httparty
   jquery-rails
   memcache-client
+  newrelic_rpm
   pg
   pry
-  rails (= 3.1.3)
+  rails (~> 3.1.0)
   routing-filter
   rspec-cells
-  rspec-rails
   sass-rails (~> 3.1.0)
   therubyracer
   turn (< 0.8.3)

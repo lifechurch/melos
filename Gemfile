@@ -12,7 +12,12 @@ gem 'routing-filter'
 gem 'execjs'
 gem 'therubyracer'
 gem 'unicorn'
+<<<<<<< HEAD
 # gem 'newrelic_rpm'
+=======
+gem 'newrelic_rpm'
+gem 'exceptional'
+>>>>>>> origin/analytics
 
 
 # Gems used only for assets and not required
