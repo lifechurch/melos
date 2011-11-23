@@ -21,6 +21,14 @@ Given /^I am signed in as "([^"]*)" with password "([^"]*)"$/ do |u, p|
   step %{I press "Sign in"}
 end
 
+Given /^I have beta access as "([^"]*)", "([^"]*)"$/ do |u, p|
+  step %{the beta is open}
+  step %{I go to the beta signup page}
+  step %{I fill in "username" with "#{u}"}
+  step %{I fill in "password" with "#{p}"}
+  step %{I press "Try the Beta"}
+end
+
 Given /^(.*) is not signed up for the beta$/ do |u|
   BetaRegistration.where(username: u).should be_empty
 end
