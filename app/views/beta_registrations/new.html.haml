@@ -2,13 +2,7 @@
   %h2 Thanks for your help!
   %p Log in with your YouVersion username and password to help test the new site.
 
-  = form_for @beta_registration, url: beta_signup_path do |f|
-    -if @beta_registration.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@beta_registration.errors.count, "error")} prohibited this beta_registration from being saved:"
-        %ul
-          - @beta_registration.errors.full_messages.each do |msg|
-            %li= msg
+  = form_tag beta_signup_path do
     %p
       = label_tag :username, t("username or email prompt")
       %br

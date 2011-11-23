@@ -80,6 +80,8 @@ GEM
       rack-test (>= 0.5.7)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    exceptional (2.0.32)
+      rack
     execjs (1.2.9)
       multi_json (~> 1.0)
     ffi (1.0.11)
@@ -142,6 +144,7 @@ GEM
     net-ssh (2.2.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    newrelic_rpm (3.3.0)
     nokogiri (1.5.0)
     pg (0.11.0)
     polyglot (0.3.3)
@@ -251,6 +254,7 @@ DEPENDENCIES
   compass (~> 0.11.1)
   css_parser (~> 1.1.9)
   cucumber-rails (~> 0.5.0.beta1)
+  exceptional
   execjs
   guard
   guard-bundler
@@ -262,9 +266,10 @@ DEPENDENCIES
   httparty
   jquery-rails
   memcache-client
+  newrelic_rpm
   pg
   pry
-  rails (~> 3.1.0)
+  rails (= 3.1.2)
   routing-filter
   rspec-cells
   rspec-rails
