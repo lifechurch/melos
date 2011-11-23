@@ -8,7 +8,7 @@
         %a{:href => '/reading-plans'}
           %span Plans
       %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
-        %a{:href => current_auth ? user_notes_path(current_user) : notes_path}
+        %a{:href => current_auth ? user_notes_path(current_auth.user_id) : notes_path}
           %span Notes
       %li#nav_primary_friends
         %a{:href => '/friends'}

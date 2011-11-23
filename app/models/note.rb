@@ -10,6 +10,7 @@ class Note < YouVersion::Resource
   attribute :share_connections
   attribute :version, Version
   attribute :user_avatar_url
+  attribute :username
 
   belongs_to_remote :user
   has_many_remote :likes

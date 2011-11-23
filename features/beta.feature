@@ -1,4 +1,4 @@
-Feature: Reader view (homepage)
+Feature: Beta access
   In order to: Access the new beta site
   As a:        Registered user
   I want to:   Sign in with my YV u/p and access the beta site.

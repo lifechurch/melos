@@ -26,12 +26,16 @@ class User
     end
   end
 
-  def self.find(user, auth = nil)
+  def self.find(user, opts = {})
     # Pass in a user_id, username, or just an auth mash with a username and id.
     case user
     when Fixnum
-      hash = YvApi.get("users/view", id: user, auth: auth).to_hash
-      hash[:auth] = auth
+      if opts[:auth] && user == opts[:auth].user_id
+        hash = YvApi.get("users/view", id: user, auth: opts[:auth]).to_hash
+      else
+        hash = YvApi.get("users/view", id: user).to_hash
+      end
+      hash[:auth] = opts[:auth] ||= nil
       User.new(hash)
     when Hashie::Mash
       hash = YvApi.get("users/view", id: user.user_id, auth: user).to_hash
@@ -64,7 +68,7 @@ class User
   # end
 
   def self.notes(id, auth)
-    Note.for_user(id, auth)
+    Note.for_user(id, auth: auth)
   end
   
   def notes

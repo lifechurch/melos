@@ -2,7 +2,7 @@ Given /^a user named "([^"]*)" with password "([^"]*)" does not exist$/ do |arg1
   User.authenticate(arg1, arg2).should_not be_true
 end
 
-Given /^these users:$/ do |table|
+Given /^these users exist:$/ do |table|
   @rows = table.hashes
   @rows.each do |r|
     user = User.authenticate(r['username'], r['password'])

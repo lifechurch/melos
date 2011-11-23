@@ -1,5 +1,17 @@
+Given /^a user named "([^"]*)" exists$/ do |arg1|
+  User.authenticate(arg1, "tenders").should_not == nil
+end
+
 Given /^a user named "([^"]*)" with password "([^"]*)" exists$/ do |arg1, arg2|  
   User.authenticate(arg1, arg2).should_not == nil
+end
+
+Given /^I am logged in as "([^"]*)"$/ do |arg1|
+  visit '/sign-in'
+  fill_in "username", :with => arg1
+  fill_in "password", :with => "tenders"
+  click_button "Sign in"
+  assert page.has_content?('Signed in!')
 end
 
 Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/ do |arg1, arg2|
@@ -10,32 +22,30 @@ Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/ do |arg1, arg2|
   assert page.has_content?('Signed in!')
 end
 
-Given /^notes exist with the following attributes:$/ do |table|
-  
-  @rowsfound = []
+Given /^these notes exist:$/ do |table|
   @rows = table.hashes
-  
   @rows.each do |row|
     @user = User.authenticate(row['Author'], 'tenders');
-    @auth = Hashie::Mash.new( {'id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
-    @notes = Note.for_user(@user.id, @auth)
-    
-    if @notes  
-      @notes.each do |note|
-        if note.title == row['Title'] && note.username == row['Author'] && note.content == row['Content'] && note.reference.osis == row['References'] && note.user_status.upcase == row['Status'].upcase
-          @rowsfound << true
-          #TEST: puts "Found #{note.username} #{note.title} -> #{note.user_status}"
-        end
-      end
-    end
+    auth = Hashie::Mash.new( {'user_id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
+    references = row['References'].split(",").map { |r| Reference.new(r).notes_api_string }.join("+")
+    note = Note.new(title: row['Title'], content: row['Content'], reference: references, version: row['Version'], user_status: row['Status'].downcase, auth: auth)
+    result = note.save
+    result.should_not be_false
   end
-
-  #TEST: puts "Rows = #{@rows.count} -> Found = #{@rowsfound.count}"
-  if @rowsfound.count >= @rows.count
-    assert true
-  else
-    assert false, 'Not all rows found'
-  end  
+#     if @notes  
+#       @notes.each do |note|
+#         if note.title == row['Title'] && note.username == row['Author'] && note.content == row['Content'] && note.reference.osis == row['References'] && note.user_status.upcase == row['Status'].upcase
+#           @rowsfound << true
+#         end
+#       end
+#     end
+#   end
+# 
+#   if @rowsfound.count >= @rows.count
+#     assert true
+#   else
+#     assert false, 'Not all rows found'
+#   end  
   
 end
 
