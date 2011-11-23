@@ -7,7 +7,6 @@ gem 'hashie'
 gem 'cells'
 gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
-gem 'pg'
 gem 'routing-filter'
 gem 'execjs'
 gem 'therubyracer'
