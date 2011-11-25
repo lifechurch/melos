@@ -5,6 +5,7 @@
   @extend .clearfix
   +round
   +box-shadow(rgba(#000, 0.75) 0 2px 5px 0)
+  -webkit-font-smoothing: subpixel-antialiased
   background:
     color: #434343
   border: 1px solid #555
@@ -13,7 +14,9 @@
   padding: 5px
   text-shadow: #000 0 1px 0
   width: 320px
-  position: absolute
+  position: fixed
+  z-index: 2
+  top: 120px
 
 .menu_arrow
   background: url(../images/menu_arrow.png) no-repeat
@@ -33,6 +36,17 @@
   height: 200px
   overflow-x: hidden
   overflow-y: scroll
+
+.dynamic_menu .scroll::-webkit-scrollbar
+  background: #222
+  width: 15px
+
+.dynamic_menu .scroll::-webkit-scrollbar-thumb
+  background: #999
+  border: 5px solid #222
+
+.dynamic_menu .scroll::-webkit-scrollbar-thumb:hover
+  background: #ccc
 
 .dynamic_menu table,
 .dynamic_menu ul,
@@ -162,9 +176,73 @@
 .dynamic_menu tr:hover a,
 #menu_book li:hover,
 #menu_chapter li:hover
+  background-color: $blue-dark
   +background-image(linear-gradient($blue_light, $blue_dark))
   text-shadow: rgba(#000, 0.5) 0 -1px 0
 
 #menu_chapter a:hover
   background:
     position: 0 0
+
+// `Accordion.
+//----------------------------------------------------------------------------------------------------
+
+.dynamic_menu label
+  font-weight: normal
+
+.dynamic_menu input[type="text"]
+  +box-shadow(inset rgba(#000, 0.5) 0 1px 2px 0, inset rgba(#fff, 0.05) 0 -1px 0 0, rgba(#fff, 0.1) 0 1px 0 0)
+  background: #494949 !important
+  border: 1px solid #000
+  color: #cbc9cf
+  text-shadow: rgba(#000, 0.5) 0 -1px 0
+  width: 100%
+  height: auto
+
+.dynamic_menu .accordion
+  background: url(../images/menu_scroll.png)
+  border: 1px solid #555
+  margin: 0
+  overflow: hidden
+  text-shadow: #000 0 1px 0
+
+.dynamic_menu .accordion dt
+  +box-shadow(inset #0c0c0c 0 -1px 0 0)
+  background: #1f1f1f
+  border-top: 1px solid #2a2a2a
+  cursor: pointer
+  font-size: 12px
+  line-height: 1
+  padding: 10px 15px
+  position: relative
+
+.dynamic_menu .accordion dt:hover
+  background: #2f2f2f
+
+.dynamic_menu .accordion dt .close
+  background: url(../images/close.png) no-repeat
+  color: transparent
+  cursor: default
+  font-size: 0
+  margin-top: -11px
+  overflow: hidden
+  text-decoration: none
+  text-indent: -99999px
+  width: 21px
+  height: 21px
+  position: absolute
+  top: 50%
+  right: 10px
+
+.dynamic_menu .accordion dd
+  +box-shadow(inset #000 0 0 5px 0)
+  border-top: 1px solid #2a2a2a
+  display: none
+  overflow: hidden
+  padding: 15px 15px 0
+
+.dynamic_menu .accordion dt:first-child + dd
+  display: block
+
+.dynamic_menu .accordion p
+  margin-bottom: 15px

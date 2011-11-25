@@ -99,8 +99,14 @@
 .widget tbody tr:first-child td
   border-top: 0
 
+.widget tbody:last-child tr:last-child td
+  border-bottom-width: 0
+
 .widget tfoot td
   border-bottom: 0
+
+.widget tfoot + tbody:last-child tr:last-child td
+  border-bottom-width: 1px
 
 .widget th img
   display: block
@@ -146,7 +152,8 @@
 //----------------------------------------------------------------------------------------------------
 
 a.count
-  +background-image(linear-gradient(#fff, #ddd))
+  +background-image(linear-gradient(#fff, #dddcda))
+  background-color: #eeedeb
 
 a.count,
 a.count:hover
@@ -161,11 +168,13 @@ a.count:hover
   text-decoration: none
 
 a.count:hover
-  +background-image(linear-gradient(#fff, #eee 1px, #ccc))
+  +background-image(linear-gradient(#f1efec, #e0dedb))
+  background-color: #ccc
 
 a.count:active
   +glow
-  +background-image(linear-gradient(#fff, #ccc 1px, #eee))
+  +background-image(linear-gradient(#d0cdca, #f1efec))
+  background-color: #eee
 
 header .count
   float: right
@@ -250,3 +259,33 @@ a.more_arrow:hover
 .more_arrow
   background: url(../images/more_arrow.png) no-repeat right center
   padding: 5px 25px 5px 0
+
+// `Fixed Widget Header
+//----------------------------------------------------------------------------------------------------
+
+.widget
+  position: relative
+  z-index: 1
+
+.widget header.widget_header_fixed
+  +box-shadow(#f2f1ef 0 -4px 0 0, inset #fff 0 1px 0 0)
+  border-bottom: 1px solid #cbc9cf !important
+  width: 258px
+  position: fixed !important
+  top: 82px
+  z-index: 0
+
+.widget_spacer
+  display: block
+  overflow: hidden
+  width: 0
+  height: 0
+
+#sidebar .widget:first-child .widget_spacer
+  height: 34px
+
+.widget.widget_last_fixed
+  width: 300px
+  position: fixed
+  top: 82px
+  z-index: 1
