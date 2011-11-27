@@ -1,58 +1,20 @@
 .widget
   %header
-    %a.count{:href => '#'} 157
-    %span.header_icon_bookmark
-      Bookmarks
+    %a.count{href: user_bookmarks_path(current_user.id)}= @bookmarks.total
+    %span.header_icon_bookmark= t('recent bookmarks')
   %ul
-    %li
-      %a{:href => '#'} Mark 12:2
-      %span.separator
-        |
-      %span.tag
-        %a{:href => '#'} Love
-      %span.tag
-        %a{:href => '#'} Jesus
-      %span.tag
-        %a{:href => '#'} Scripture
-    %li
-      %a{:href => '#'} Mark 12:2
-      %span.separator
-        |
-      %span.tag
-        %a{:href => '#'} Scripture
-      %span.tag
-        %a{:href => '#'} Love
-      %span.tag
-        %a{:href => '#'} Jesus
-    %li
-      %a{:href => '#'} Luke 1:2
-      %span.separator
-        |
-      %span.tag
-        %a{:href => '#'} Love
-      %span.tag
-        %a{:href => '#'} Scripture
-      %span.tag
-        %a{:href => '#'} Jesus
-    %li
-      %a{:href => '#'} Mark 12:2
-      %span.separator
-        |
-      %span.tag
-        %a{:href => '#'} Love
-      %span.tag
-        %a{:href => '#'} Jesus
-      %span.tag
-        %a{:href => '#'} Scripture
-    %li
-      %a{:href => '#'} Mark 12:2
-      %span.separator
-        |
-      %span.tag
-        %a{:href => '#'} Scripture
-      %span.tag
-        %a{:href => '#'} Love
-      %span.tag
-        %a{:href => '#'} Jesus
+    - @bookmarks.first(5).each do |b|
+      %li
+        %a{href: bible_path(b.reference.osis)}
+          - if b.title
+            %b= b.title
+            = " | #{b.reference.human}"
+          - else
+            %b= b.reference.human
+        - if b.labels
+          %span.separator |
+          - b.labels.split(",").each do |l|
+            %span.tag
+              %a{href: ":"}= l
     %li.align_right
-      %a.more_arrow{:href => '#'} Show all 157 bookmarks
+      %a.more_arrow{href: user_bookmarks_path(current_auth.user_id)}= t('show all bookmarks', total: @bookmarks.total)

@@ -23,8 +23,10 @@ class Bookmark < YouVersion::Resource
   def after_save(response)
     return unless response
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
-    osis = [response.reference].flatten.map(&:osis).join('+')
-    self.reference = Reference.new("#{osis}.#{response.version}")
+    if response.reference
+      osis = [response.reference].flatten.map(&:osis).join('+')
+      self.reference = Reference.new("#{osis}.#{response.version}")
+    end
   end
 
   def after_build
@@ -115,6 +117,14 @@ class Bookmark < YouVersion::Resource
     bookmarks.page = opts[:page].to_i
     bookmarks.total = data['total'].to_i if data['total']
     bookmarks
+  end
+
+  def self.labels_for_user(user_id, params = {})
+    params[:page] ||= 1
+    response = get("bookmarks/labels", user_id: user_id, page: params[:page]) do |e|
+      errors = e.map { |ee| ee["error"] }
+      raise ResourceError.new(errors)
+    end
   end
 
   # Yeah, bite me

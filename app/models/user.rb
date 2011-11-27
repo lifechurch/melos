@@ -75,6 +75,14 @@ class User
     Note.for_user(self.id, self.auth)
   end
 
+  def self.bookmarks(id, auth)
+    Bookmark.for_user(id, auth: auth)
+  end
+  
+  def bookmarks
+    Bookmark.for_user(self.id, self.auth)
+  end
+
   def likes
     Like.find(id, auth)
   end

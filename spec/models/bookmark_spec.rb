@@ -10,7 +10,7 @@ describe Bookmark do
                verified: TRUE,
                locale: "en_US" })
     @auth = Hashie::Mash.new(
-              { id: @testuser23.id,
+              { user_id: @testuser23.id,
                 username: "testuser23",
                 password: "tenders"
               } )
@@ -54,7 +54,7 @@ describe Bookmark do
   describe ".update" do
     it 'updates a Bookmark and returns the correct response' do
       bookmark = Bookmark.new({auth: @auth, version: "esv",
-                               reference: "Matt.19.1", title: "UpdateMe", username: @testuser23.username})
+                               reference: "Matt.10.1", title: "UpdateMe", username: @testuser23.username})
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
 
@@ -74,7 +74,7 @@ describe Bookmark do
   describe ".destroy" do
     it 'destroys a bookmark and returns the correct response' do
       bookmark = Bookmark.new({auth: @auth, version: "esv",
-                               reference: "Matt.19.1", title: "DeleteMe", username: @auth.username})
+                               reference: "Matt.10.1", title: "DeleteMe", username: @auth.username})
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
 
@@ -98,6 +98,17 @@ describe Bookmark do
       bookmarks = Bookmark.for_user(99)
       bookmarks.total.should > 0
       bookmarks.first.should be_a Bookmark
+    end
+  end
+  describe ".labels_for_user" do
+    it "returns a list of labels for a user" do
+      bookmark = Bookmark.new(auth: @auth, version: "esv", reference: "Matt.10.1", title: "I have lots of labels", labels: "alpha,beta,gamma", username: @auth.username)
+      bookmark.save.should be_true
+      labels = Bookmark.labels_for_user @auth.user_id
+      labels.labels.first.should be_a Hashie::Mash
+      puts labels.labels
+      labels.labels.detect { |l| l.label == "alpha" }.should_not be_nil
+      labels.labels.detect { |l| l.label == "beta" }.should_not be_nil
     end
   end
 end

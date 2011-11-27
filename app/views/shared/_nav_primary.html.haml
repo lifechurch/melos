@@ -4,6 +4,10 @@
       %li#nav_primary_bible{class: @nav == :bible ? "highlighted" : ""}
         %a{:href => '/bible'}
           %span Bible
+      - if current_auth
+        %li#nav_primary_bookmarks{class: @nav == :bookmarks ? "highlighted" : ""}
+          %a{:href => user_bookmarks_path(current_auth.user_id)}
+            %span Lesezeichen
       %li#nav_primary_plans
         %a{:href => '/reading-plans'}
           %span Plans

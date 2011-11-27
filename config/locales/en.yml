@@ -21,3 +21,5 @@ en:
   try the beta: "Try the Beta"
   welcome to the beta: "Welcome to the new YouVersion.com!"
   invalid username or password: "Invalid username or password."
+  show all bookmarks: "Show all %{total} bookmarks"
+  recent bookmarks: "Recent Bookmarks"

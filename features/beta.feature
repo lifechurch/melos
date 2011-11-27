@@ -4,7 +4,7 @@ Feature: Beta access
   I want to:   Sign in with my YV u/p and access the beta site.
 
   Scenario: Open registration and Persistence
-    Given these users:
+    Given these users exist:
       | username | password | email address           |
       | testuser | tenders  | testuser@youversion.com |
     And the beta is open
@@ -19,7 +19,7 @@ Feature: Beta access
     Then I should be on the versions page
 
   Scenario: closed registration
-    Given these users:
+    Given these users exist:
       | username  | password | email address            |
       | testuser2 | tenders  | testuser2@youversion.com |
     And the beta is closed

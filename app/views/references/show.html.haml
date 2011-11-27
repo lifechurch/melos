@@ -3,6 +3,7 @@
 - @is_reader = true
 
 - content_for :sidebar do
+  = render '/shared/widget_bookmarks'
   = render_cell :notes_list_widget, :display, notes: @notes, title: "Community Notes"
   = render '/shared/widget_ad_bible_app'
 

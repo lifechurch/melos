@@ -3,12 +3,9 @@ class BookmarksController < ApplicationController
 #  before_filter :set_sidebar, :only => [:index]
 
   def index
-    if params[:user_id]
-      @user = User.find(params[:user_id].to_i, current_auth) # TODO : can't wait to port this to a Resource
-      @bookmarks = @user.bookmarks
-    else
-      @bookmarks = Bookmark.all
-    end
+    @user = User.find(params[:user_id].to_i, current_auth) # TODO : can't wait to port this to a Resource
+    @bookmarks = @user.bookmarks
+    @labels = Bookmark.labels_for_user(current_auth.user_id).labels 
   end
 
   def show_label
