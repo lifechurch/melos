@@ -19,11 +19,11 @@
         %span Choose Version
   %ul.float_right
     %li
-      %a.button{:href => '#', :title => 'Share'}
+      %a#verses_selected_button.dynamic_menu_trigger.button.hide{:href => '#menu_bookmark', :title => 'Share'}
         %b.icon_share
           Selected
-          -# %sup
-            -# 3
+          %sup#verses_selected_count
+            0
     %li
       %a.button{:href => '#', :title => 'Preferences'}
         %span.icon_preferences

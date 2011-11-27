@@ -5,8 +5,8 @@
 .drop_down_select,
 .button
   +box-shadow(#fff 0 1px 0 0)
-  background: #eee
-  +background-image(linear-gradient(#fff, #ddd))
+  +background-image(linear-gradient(#fff, #dddcda))
+  background-color: #eeedeb
   display: block
   line-height: 21px
   position: relative
@@ -20,7 +20,7 @@
   border: 1px solid #aaa
 
 .select_wrap
-  +background-image(linear-gradient(#fff, #ddd))
+  +background-image(linear-gradient(#fff, #dddcda))
   +box-shadow(#fff 0 1px 0 0)
   display: inline-block
   vertical-align: top
@@ -86,9 +86,10 @@
 
 .button sup
   +border-radius(8px)
-  +background-image(linear-gradient($blue_light, $blue))
   +box-shadow(rgba($blue_dark, 0.8) 0 0 0 1px)
   +box-sizing(border-box)
+  +background-image(linear-gradient($blue_light, $blue))
+  background-color: $blue
   color: #fff
   font:
     size: 11px
@@ -148,21 +149,21 @@
 .button:hover,
 .drop_down_arrow:hover,
 .drop_down_select:hover
-  +background-image(linear-gradient(#fff, #eee 1px, #ccc))
+  +box-shadow(inset #fff 0 1px 0 0, #fff 0 1px 0 0)
+  +background-image(linear-gradient(#f1efec, #e0dedb))
+  background-color: #e0dedb
 
 .button:active,
 .button:focus
   +glow
-  +background-image(linear-gradient(#fff, #ccc 1px, #eee))
+  +box-shadow(inset rgba(#000, 0.25) 0 1px 1px 0, #fff 0 1px 0 0)
 
-.li_active .drop_down_arrow,
-.li_active .drop_down_select,
-.drop_down_arrow:active,
-.drop_down_select:active,
-.drop_down_arrow:focus,
-.drop_down_select:focus
+.li_active .dynamic_menu_trigger,
+.dynamic_menu_trigger:active,
+.dynamic_menu_trigger:focus
   +glow
-  +background-image(linear-gradient(#999, #444 1px, #222))
+  +background-image(linear-gradient(#444, #222))
+  background-color: #222
   border-color: #111
 
 .li_active .drop_down_arrow span,
@@ -177,19 +178,15 @@
   background-position: -63px 0
   border-color: #555
 
-.li_active .drop_down_select b,
-.drop_down_select:active b,
-.drop_down_select:focus b
+.li_active .dynamic_menu_trigger b,
+.dynamic_menu_trigger:active b,
+.dynamic_menu_trigger:focus b
   border-color: #111
   color: #fff
   text-shadow: #000 0 -1px 0
 
 // `Icons
 //----------------------------------------------------------------------------------------------------
-
-.icon_share
-  background:
-    image: url(../images/icon_share.png)
 
 .icon_preferences
   background:
@@ -206,3 +203,18 @@
 .icon_full_screen
   background:
     image: url(../images/icon_full_screen.png)
+    position: 3px 4px !important
+  .full_screen &
+    background:
+      position: 4px -47px !important
+    width: 25px
+
+.icon_share
+  background:
+    image: url(../images/icon_share.png)
+    position: 10px 4px !important
+  &:active,
+  &:focus,
+  .li_active &
+    background:
+      position: 10px -47px !important
