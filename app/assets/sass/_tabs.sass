@@ -103,9 +103,10 @@
   display: block
 
 #main article .tabs a
-  +background-image(linear-gradient(#fff, #f0f0f0 1px, #eee 90%, #cbc9cf))
+  +box-shadow(inset #fff 0 1px 0 0, inset rgba(#000, 0.05) 0 -2px 0 0)
+  +background-image(linear-gradient(#f0f0f0, #eee))
+  background-color: #eee
   border: 1px solid #cbc9cf
-    bottom: 0
   color: $body_text
   display: block
   padding: 5px 15px 7px
@@ -113,7 +114,8 @@
   text-shadow: #fff 0 1px 0
 
 #main article .tabs a:hover
-  +background-image(linear-gradient(#fff, #f0f0f0 90%, #cbc9cf))
+  +background-image(linear-gradient(#fff, #f0f0f0))
+  background-color: #f6f6f6
   color: $blue
 
 #main article .tabs .highlighted
@@ -121,7 +123,9 @@
 
 #main article .tabs .highlighted a,
 #main article .tabs .highlighted a:hover
+  +box-shadow(none)
   background: #fff
+  border-bottom-color: #fff
   color: $blue
   position: relative
   top: -2px
@@ -161,6 +165,7 @@
 #main article .combo_button li,
 #main article .combo_button dd
   +background-image(linear-gradient(#fff, #ddd))
+  background-color: #f6f6f6
   border: 1px solid #aaa
   margin-left: -1px
   text-shadow: #fff 0 1px 0
@@ -208,7 +213,8 @@
 #main article .combo_button li:hover,
 #main article .combo_button dd:hover,
 #main article .combo_button .highlighted
-  +background-image(linear-gradient(#ecebed 1px, #c9c8cA))
+  +background-image(linear-gradient(#ecebed, #c9c8cA))
+  background-color: #ecebed
 
 #main article .combo_button li:hover a,
 #main article .combo_button dd:hover a,

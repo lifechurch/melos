@@ -1,8 +1,13 @@
+// For IE9.
+$experimental-support-for-svg: true
+
+$body_font: 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif
+
 $gray_dark_1: #1e1e1f
 $gray_dark_2: #424143
 $gray_dark_3: #646367
 $gray_medium: #807f83
-$gray_light: #eae9ec
+$gray_light: #eeedeb
 $green: #73a03d
 $blue: #0084c8
 $blue_light: lighten($blue, 15%)
@@ -26,5 +31,11 @@ $mute: #888
 =round_bottom
   +border-bottom-radius($radius)
 
+=round_bottom_right
+  +border-bottom-right-radius($radius)
+
+=round_none
+  +border-radius(0)
+
 =glow
-  +box-shadow(rgba($blue_light, 0.5) 0 0 5px 0)
+  +box-shadow(inset rgba(#fff, 0.4) 0 1px 0 0, rgba($blue_light, 0.5) 0 0 5px 0)

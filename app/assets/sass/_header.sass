@@ -15,12 +15,20 @@
 // `Header
 //----------------------------------------------------------------------------------------------------
 
+#header_outer
+  background: #f2f1ef url(../images/body.png)
+  padding: 20px 0 10px
+  position: fixed
+  top: 0
+  width: 980px
+  z-index: 2
+
 #header
   +round
+  -webkit-font-smoothing: subpixel-antialiased
   background: #333 url(../images/header.png) repeat-x
   border: 1px solid #1e1e1f
   font-size: 11px
-  margin-bottom: 10px
   padding: 0 10px 0 20px
   position: relative
   line-height: 50px
@@ -47,6 +55,7 @@
 #header_search_button
   +border-radius(0)
   +box-sizing(content-box)
+  +background-size(auto)
   background: url(../images/header_search_form.png) no-repeat
   height: 30px
   margin-top: -15px
@@ -130,9 +139,9 @@
 
 #header nav ul > li:hover,
 #header nav ul > .li_active
-  background: #000
   +background-image(linear-gradient(#666, #000 1px, #000))
   +box-shadow(#000 0 -1px 0 0)
+  background-color: #000
 
 #header nav ul > .li_active
   +border-bottom-radius(0)

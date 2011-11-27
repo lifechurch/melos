@@ -4,11 +4,20 @@
   YouVersion
   |
   = @title
+
 <!--[if lt IE 9]>
 %script{:src => '/javascripts/html5.js'}
 <![endif]-->
-%script{:src => '/javascripts/jquery.js'}
-%script{:src => '/javascripts/rails.js'}
+
 %link{:rel => 'stylesheet', :href => '/stylesheets/application.css'}
+
+<!--[if IE 8]>
+%link{:rel => 'stylesheet', :href => '/stylesheets/ie8.css'}
+<![endif]-->
+
+<!--[if IE 7]>
+%link{:rel => 'stylesheet', :href => '/stylesheets/ie7.css'}
+<![endif]-->
+
 - if content_for? :stylesheets
   = yield :stylesheets
