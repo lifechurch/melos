@@ -1,10 +1,7 @@
 - content_for :sidebar do
-<<<<<<< HEAD
-  / = render_cell :likes_list_widget, :display, likes: @likes, title: "Likes", user_id: @user_id
-=======
-  = render_cell :likes_list_widget, :display, likes: @likes, title: t("likes.likes"), user_id: @user_id
->>>>>>> I18n underpinnings for all view files except widgets
-  = render '/shared/widget_ad_bible_app'
+
+  / = render_cell :likes_list_widget, :display, likes: @likes, title: t("likes.likes"), user_id: @user_id
+    = render '/shared/widget_ad_bible_app'
 
 %article
   - if current_auth
