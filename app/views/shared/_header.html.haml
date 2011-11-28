@@ -1,6 +1,6 @@
 %header#header{:role => 'banner'}
   %a#yv_logo{:href => '/'}
-    YouVersion
+    =t("youversion")
   %nav
     %ul
       %li
@@ -12,13 +12,13 @@
           %ol#header_profile_menu
             %li
               %a{:href => '#'}
-                Settings
+                =t("settings")
             %li
               %a{:href => '#'}
-                Profile
+                =t("profile")
             %li
               %a{:href => sign_out_path}
-                Sign Out
+                =t("sign out")
         - else
           %p= link_to t("sign in"), sign_in_path
 
@@ -27,7 +27,7 @@
       %li
         %a{:href => '#'}
           %span
-            Find Friends
+            =t("find friends")
   %form#header_search_form
-    %input#header_search_input{:type => 'search', :placeholder => 'Search...'}
-    %input#header_search_button{:type => 'submit', :value => 'Search'}
+    %input#header_search_input{:type => 'search', :placeholder => t("search placeholder")}
+    %input#header_search_button{:type => 'submit', :value => t("search")}
