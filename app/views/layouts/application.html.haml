@@ -5,7 +5,8 @@
     = render '/shared/head'
   %body
     #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
-      = render '/shared/header'
+      #header_outer
+        = render '/shared/header'
       #container{:class => @sidebar == false ? 'no_sidebar' : ''}
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
           = render '/shared/nav_primary'
