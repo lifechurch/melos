@@ -484,7 +484,7 @@ var YV = (function($, window, document, undefined) {
             var this_id = book + '.' + chapter + '.' + el.find('strong:first').html() + '.' + version;
 
             if (el.hasClass(flag)) {
-              if (input.val().length) {
+              if ($.trim(input.val()).length) {
                 // Add to hidden input.
                 input.val(input.val() + ',' + this_id);
               }
