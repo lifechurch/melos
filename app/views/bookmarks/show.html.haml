@@ -1,0 +1,10 @@
+%article
+  #bookmark
+    %h1= @bookmark.title
+    %p.mute= link_to_references([Reference.new(@bookmark.reference)])
+    %p{class: "date"}= @bookmark.created_as_date.strftime("%m/%d/%Y")
+    %p
+    -#= button_to(@bookmark.likes(:user_id => current_user.id).nil? ? 'like' : 'unlike', like_path(@note.id), :method => :put) if @note.user_status == 'public' && current_user
+    - if current_user && (current_auth.user_id.to_i == @bookmark.user_id.to_i)
+      = link_to('edit', edit_bookmark_path(@bookmark.id)) 
+      = link_to('delete this bookmark', bookmark_path(@bookmark.id), :confirm => 'Are you sure?', :method => :delete) 

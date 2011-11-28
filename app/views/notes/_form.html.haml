@@ -13,7 +13,7 @@
     = f.text_area :content
   %p
     = f.label :version, "Version:"
-    = f.select :version, options_for_select(versions_dropdown, @note.version), {:prompt => '--Select--'}
+    = f.select :version, options_for_select(versions_dropdown, (@note.version || nil)), {:prompt => '--Select--'}
   %p
     = f.label :reference, "Reference:"
     = f.text_field :reference

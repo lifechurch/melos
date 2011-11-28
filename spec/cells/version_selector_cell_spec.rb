@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe VersionSelectorCell do
-  use_vcr_cassette("version_selector_cell")
+  # use_vcr_cassette("version_selector_cell")
   context "#display" do
 
       subject { render_cell(:version_selector, :display) }

@@ -1,17 +1,23 @@
 YouversionWeb::Application.routes.draw do
+  resources :beta_registrations
+
   filter :locale, include_default_locale: false
   # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
   resources 'versions', :only => [:index, :show]
+
+  resources 'bookmarks'
+  match 'bookmarks/label/:label' => 'bookmarks#show_label', :as => 'bookmarks_label'
+
   resources 'notes'
   resources 'likes', :only => [:index]
   match 'notes/:id/like' => 'notes#like',    :as => 'like', :via => :put
 
   # Users
   resources 'users', :except => [:new, :create] do
-	resources 'notes'
-  resources 'likes', :only => [:index]
-	resources 'bookmarks'
+    resources 'notes'
+    resources 'likes', :only => [:index]
+    resources 'bookmarks'
   end
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
@@ -20,6 +26,10 @@ YouversionWeb::Application.routes.draw do
   match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
   match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
+  match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
+  match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
+
+  root to: 'references#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

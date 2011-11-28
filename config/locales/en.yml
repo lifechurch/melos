@@ -1,9 +1,9 @@
 ---
 en:
-  language name: English
+  language name: "English"
   signed in as: "Signed in as %{user}"
   sign out: "Sign out"
-  youversion: YouVersion
+  youversion: "YouVersion"
   username or email prompt: "Username (or email):"
   password prompt: "Password:"
   sign in: "Sign in"
@@ -18,3 +18,8 @@ en:
     agreement: I agree to the YouVersion terms and conditions.
     register: Register
     confirm email: "Thanks for registering! Please check your email and click the link to confirm."
+  try the beta: "Try the Beta"
+  welcome to the beta: "Welcome to the new YouVersion.com!"
+  invalid username or password: "Invalid username or password."
+  show all bookmarks: "Show all %{total} bookmarks"
+  recent bookmarks: "Recent Bookmarks"

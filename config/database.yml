@@ -4,18 +4,22 @@ common: &common
   host: localhost
   port: 5432
   username: yv_web
+  database: yv_web_production
 
 development:
   <<: *common
-  database: yv_web_development
 
 test:
   <<: *common
   database: yv_web_test
 
+staging:
+  <<: *common
+
 production:
   <<: *common
-  database: yv_web_production
+  host: postgres-web.youversion.com
+  port: 6000
 
 cucumber:
   <<: *test

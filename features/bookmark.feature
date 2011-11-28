@@ -3,14 +3,18 @@ Feature: Bookmarks view (homepage)
   As a:        User
   I want to:   See a list of bookmarks and links to the Passages they specify
 
+  Background:
+  Given a user named "cukeuser_bookmark1" exists
+  And I have beta access as "cukeuser_bookmark1"
+
   @bookmark
   Scenario: Showing bookmarks
-    Given a user named "cukeuser_bookmark1" with password "tenders" and email "cukeuser_bookmark1@youversion.com" exists
-    And the following bookmarks exist:
+    Given the following bookmarks exist:
     | Username | Reference      | Title         | Labels        |
     | cukeuser_bookmark1 | gen.1.1.niv    | The Beginning | old,labeltext |
     | cukeuser_bookmark1 | matt.1.1-5.asv | New Testament | new,gospel    |
-    When I go to the bookmarks index page for user "cukeuser_bookmark1"
+    When I go to the versions page
+    And I follow "Bookmarks"
     Then I should see a link to "The Beginning - Genesis 1:1 (NIV)"
     And I should see "old"
     And I should see "labeltext"

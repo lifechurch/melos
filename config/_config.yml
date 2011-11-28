@@ -1,16 +1,26 @@
 development:
   api_root: api.yvdev.com
-  api_referer: web.youversion.com
-  api_version: "2.3"
+  api_referer: web-dev.youversion.com
+  api_version: "2.4"
   memcache_server: localhost
 
 test: &test
+  api_root: api.web-test.yvdev.com
+  api_referer: web-testing.youversion.com
+  api_version: "2.4"
+  memcache_server: localhost
+
+staging:
   api_root: api.yvdev.com
-  api_referer: web.youversion.com
-  api_version: "2.3"
+  api_referer: web-staging.youversion.com
+  api_version: "2.4"
   memcache_server: localhost
 
 production:
+  api_root: api.youversion.com
+  api_referer: web.youversion.com
+  api_version: "2.4"
+  memcache_server: memcache.youversion.com
 
 demo: *test
 staging: *test

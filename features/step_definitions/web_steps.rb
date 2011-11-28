@@ -30,7 +30,6 @@ module WithinHelpers
   end
 end
 World(WithinHelpers)
-
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { step step }

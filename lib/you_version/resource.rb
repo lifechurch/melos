@@ -47,6 +47,7 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
+
       def retry_with_auth?(errors)
         errors.find {|t| t['key'] =~ /username_and_password.required/}
       end
@@ -74,7 +75,8 @@ module YouVersion
           if api_errors
             # Sadly, all our attempts failed.
             @errors = api_errors.map { |e| e["error"] }
-            return false
+          #  return false
+            raise ResourceError.new(errors)
           end
 
           # Propagate the response from the get-with-auth call as the return
@@ -89,9 +91,9 @@ module YouVersion
         response = YvApi.get(list_path, params) do |errors|
           raise ResourceError.new(errors)
         end
-        puts "*"*80
-        pp response
-        puts "*"*80
+        # puts "*"*80
+        # pp response
+        # puts "*"*80
         # TODO: Switch to ResourceList here
         response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
       end
@@ -114,8 +116,8 @@ module YouVersion
         new(data).save(&block)
       end
 
-      def destroy(id, auth = nil, &block)
-        post(delete_path, {:ids => id, :auth => auth}, &block)
+      def destroy(delete_options, &block)
+        post(delete_path, delete_options, &block)
       end
 
       attr_accessor :resource_attributes
@@ -125,7 +127,7 @@ module YouVersion
         @resource_attributes << attr_name
 
         define_method(attr_name) do
-          if serialization_class
+          if serialization_class && attributes[attr_name].present?
             serialization_class.new attributes[attr_name]
           else
             attributes[attr_name]
@@ -168,10 +170,12 @@ module YouVersion
       end
       
       def belongs_to_remote(association_name)
+        association_class = association_name.to_s.classify.constantize
+        attribute association_class.foreign_key.to_sym
+
         define_method(association_name.to_s.singularize) do |params = {}|
           associations.delete(association_name) if params[:refresh]
 
-          association_class = association_name.to_s.classify.constantize
           associations[association_name] ||= association_class.find(self.attributes[association_class.foreign_key].to_i, params)
         end
       end
@@ -208,41 +212,60 @@ module YouVersion
       id
     end
 
+    def delete_options
+      {id: id, auth: auth}
+    end
+
+    def persist(resource_path)
+      response = true
+      response_data = nil
+      
+      token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+
+      response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+        new_errors = errors.map { |e| e["error"] }
+        self.errors[:base] << new_errors
+
+        if block_given?
+          yield errors
+        end
+          
+        response = false
+      end
+
+      [response, response_data]
+    end
+
     def before_save; end;
     def after_save(response); end;
     def save
-      response = true
-
       return false unless authorized?
 
-      before_save
+      response = true
+      response_data = nil
+
+      self.persisted? ? before_update : before_save
 
       begin
         return false unless valid?
 
-        token = Digest::MD5.hexdigest "#{self.auth.username}.Yv6-#{self.auth.password}"
+        resource_path = self.persisted? ? self.class.update_path : self.class.create_path
+        response, response_data = persist(resource_path)
 
-        response = self.class.post((self.persisted? ? self.class.update_path : self.class.create_path), attributes.merge(:token => token, :auth => self.auth)) do |errors|
-          new_errors = errors.map { |e| e["error"] }
-          self.errors[:base] << new_errors
-
-          if block_given?
-            yield errors
-          end
-          
-          response = false
+        if response && ! self.persisted?
+          self.id = response_data.try(:id)
         end
 
-        self.id = response.try(:id)
+        # self.id = response.try(:id) unless response == false
       ensure
-        after_save(response)
+        self.persisted? ? after_update(response_data) : after_save(response_data)
       end
-
       response
     end
 
     def before_update; before_save; end;
     def after_update(response); after_save(response); end;
+
     def update(updated_attributes)
       self.attributes = self.attributes.merge(updated_attributes)
       save
@@ -258,7 +281,7 @@ module YouVersion
       before_destroy
 
       begin
-        response = self.class.destroy(self.id, self.auth) do |errors|
+        response = self.class.destroy(self.delete_options) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
 

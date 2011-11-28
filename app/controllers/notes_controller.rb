@@ -1,10 +1,11 @@
 class NotesController < ApplicationController
   before_filter :set_nav
+  before_filter :set_sidebar, :only => [:index]
 
   def index
-    set_sidebar
     if params[:user_id]
       @notes = User.find(params[:user_id].to_i, :auth => current_auth).notes
+      debugger
     else
       @notes = Note.all
     end
@@ -26,7 +27,7 @@ class NotesController < ApplicationController
   def edit
     if current_auth
       @note = Note.find(params[:id], :auth => current_auth)
-      @note.reference = @note.reference.osis_noversion
+      @note.reference = @note.reference.to_osis_references
     else
       redirect_to notes_path
     end
@@ -78,8 +79,8 @@ class NotesController < ApplicationController
 
   # Set sidebar values for the Likes cell
   def set_sidebar
-    @likes = Like.all(current_user.id)
-    @user_id = current_user.id
+    @likes = Like.all(current_user.id) if current_user
+    @user_id = current_user.id if current_user
   end
 
   # Setup required in order to show update since form will post

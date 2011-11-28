@@ -1,16 +1,18 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1.0'
+gem 'rails', '3.1.2'
 gem 'httparty'
 gem 'memcache-client'
 gem 'hashie'
 gem 'cells'
 gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
-gem 'pg'
 gem 'routing-filter'
 gem 'execjs'
 gem 'therubyracer'
+gem 'unicorn'
+gem 'newrelic_rpm'
+gem 'exceptional'
 
 
 # Gems used only for assets and not required
@@ -42,14 +44,16 @@ group :test, :development do
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'
   gem 'guard-rspec'
+  gem 'rspec-rails'
   gem 'guard-cucumber'
   gem 'guard-bundler'
   gem 'heroku_san'
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'ruby-debug19'
 end
 
 group :test do
-  gem 'vcr'
-  gem 'webmock'
 end
 
 group :development do

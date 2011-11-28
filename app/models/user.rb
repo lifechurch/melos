@@ -9,6 +9,10 @@ class User
     !id.blank?
   end
 
+  def self.foreign_key
+    "user_id"
+  end
+
   def self.authenticate(username, password)
     hash = {}
     response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
@@ -22,18 +26,23 @@ class User
     end
   end
 
-  def self.find(user, auth = nil)
+  def self.find(user, opts = {})
     # Pass in a user_id, username, or just an auth mash with a username and id.
     case user
     when Fixnum
-      hash = YvApi.get("users/view", user_id: user, auth: auth).to_hash
-      hash[:auth] = auth
+      if opts[:auth] && user == opts[:auth].user_id
+        hash = YvApi.get("users/view", id: user, auth: opts[:auth]).to_hash
+      else
+        hash = YvApi.get("users/view", id: user).to_hash
+      end
+      hash[:auth] = opts[:auth] ||= nil
       User.new(hash)
     when Hashie::Mash
-      hash = YvApi.get("users/view", user_id: user.user_id, auth: user).to_hash
+      hash = YvApi.get("users/view", id: user.user_id, auth: user).to_hash
       hash[:auth] = user
       User.new(hash)
     when String
+      raise ArgumentError, "Strings not supported yet as value type for 'user' pararam in User.find"
       # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
     end
   end
@@ -59,11 +68,19 @@ class User
   # end
 
   def self.notes(id, auth)
-    Note.for_user(id, auth)
+    Note.for_user(id, auth: auth)
   end
   
   def notes
     Note.for_user(self.id, self.auth)
+  end
+
+  def self.bookmarks(id, auth)
+    Bookmark.for_user(id, auth: auth)
+  end
+  
+  def bookmarks
+    Bookmark.for_user(self.id, self.auth)
   end
 
   def likes
