@@ -35,7 +35,11 @@
                     %a{href: "#"}= l
                     - # TODO: Label link
             .float_right
-              %p= b.created_as_date
+              %p
+                = link_to('edit', edit_bookmark_path(bookmark.id)) 
+                = link_to('delete this bookmark', bookmark_path(bookmark.id), :confirm => 'Are you sure?', :method => :delete) 
+                = b.created_as_date
+
 
 
 

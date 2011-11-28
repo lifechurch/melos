@@ -6,19 +6,19 @@
       Bookmark
       %a.close{:href => '#'} Close
     %dd
-      %form{:action => ''}
+      %form{:action => user_bookmarks_path(current_auth.user_id)}
         %p
           %label{:for => 'bookmark_title'}
             Title
           %br
-          %input{:type => 'text', :id => 'bookmark_title', :name => 'bookmark_title'}
+          %input{:type => 'text', :id => 'bookmark_title', :name => 'title'}
         %p
           %label{:for => 'bookmark_tags'}
-            Tags
+            Labels
           %br
-          %input{:type => 'text', :id => 'bookmark_tags', :name => 'bookmark_tags'}
+          %input{:type => 'text', :id => 'bookmark_labels', :name => 'labels'}
         %p
-          %input{:type => 'image', :src => './images/save_bookmark.png'}
+          %input{:type => 'image', :src => '/images/save_bookmark.png'}
     %dt
       Link
     %dd

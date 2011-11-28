@@ -8,10 +8,10 @@
       #header_outer
         = render '/shared/header'
       #container{:class => @sidebar == false ? 'no_sidebar' : ''}
+        - flash.each do |key, msg|
+          %div{class: "flash_#{key}"}= msg
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
           = render '/shared/nav_primary'
-          - flash.each do |key, msg|
-            %div{id: key}= msg
           = yield
           - if content_for? :main_trailer
             = yield :main_trailer
