@@ -22,12 +22,16 @@ YouversionWeb::Application.routes.draw do
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
   match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
+  
   # Sessions
   match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
   match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
   match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
   match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
+  
+  #Reading Plans
+  resources :plans, :only => [:index, :show], :path => 'reading-plans'
 
   root to: 'references#show'
 
