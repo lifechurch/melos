@@ -217,7 +217,7 @@ module YouVersion
       response_data = nil
       
       token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
-
+      puts ("Calling #{resource_path} with #{attributes.merge(:token => token, :auth => self.auth)}")
       response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }
         self.errors[:base] << new_errors
@@ -225,7 +225,7 @@ module YouVersion
         if block_given?
           yield errors
         end
-          
+
         response = false
       end
 

@@ -17,25 +17,39 @@ class Bookmark < YouVersion::Resource
   end
 
   def after_save(response)
+    Rails.logger.info "*"*80
+    Rails.logger.info response
+    Rails.logger.info "*"*80
     return unless response
+    return
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
     osis = [response.reference].flatten.map(&:osis).join('+')
     self.reference = Reference.new("#{osis}.#{response.version}")
   end
 
   def after_build
-    if self.reference.is_a?(Array)
-      self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version}") }
+    puts("I'm in after_build; thought you should know.")
+    puts("self.reference is a #{self.reference.class}. Looks like [#{self.reference}].")
+    case self.reference
+    when Array
+      self.references = self.reference.map { |n| Reference.new("#{n.osis.downcase}.#{self.version}") }
+      self.reference = self.reference.map { |r| Reference.new("#{n.osis.downcase}.#{self.version}") }
+    when String
+      self.reference = [Reference.new("#{self.reference.downcase}.#{self.version}")]
+    when Hashie::Mash
+      self.reference = Reference.new("#{self.reference.osis.downcase}.#{self.version}")
     end
   end
 
   def update(fields)
+    Rails.logger.info("==  Attempting merge #{fields} into #{self.attributes}")
     # In API version 2.3, only title, labels, and highlight_color can be updated
-    allowed_keys = [:title, :labels, :highlight_color]
+    allowed_keys = ['title', 'labels', 'highlight_color']
 
     # Clear out the ones we can't update.
     fields.delete_if {|k, v| ! allowed_keys.include? k}
 
+    Rails.logger.info("==  Actual merge #{fields} into #{self.attributes}")
     super
   end
 

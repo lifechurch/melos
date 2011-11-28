@@ -22,6 +22,7 @@ class BookmarksController < ApplicationController
 
   def show
     @bookmark = Bookmark.find(params[:id], :auth => current_auth)
+    Rails.logger.info("Found #{@bookmark.inspect}")
     raise ActionController::RoutingError.new('Not Found') unless @bookmark
   end
 
@@ -36,8 +37,11 @@ class BookmarksController < ApplicationController
   def edit
     if current_auth
       @bookmark = Bookmark.find(params[:id], :auth => current_auth)
+      Rails.logger.info("Found #{@bookmark.inspect}")
       # @bookmark.reference = @bookmark.reference.to_osis_references
-      @bookmark.reference = @bookmark.reference.to_osis_string
+      Rails.logger.info("First, @bookmark.reference is #{@bookmark.reference}, a #{@bookmark.reference.class}, doncha know")
+      @bookmark.reference = @bookmark.reference.to_osis_string if @bookmark.reference.respond_to? :to_osis_string
+      Rails.logger.info("BUT NOW @bookmark.reference is #{@bookmark.reference}, a #{@bookmark.reference.class}, doncha know")
     else
       redirect_to bookmarks_path
     end
@@ -64,17 +68,21 @@ class BookmarksController < ApplicationController
     end
   end
 
-#YO
-
   def update
-    @note = Note.find(params[:id], :auth => current_auth)
-
-    if @note.update(params[:note])
+    Rails.logger.info("params[:id] is #{params[:id]}; auth is #{current_auth.inspect}")
+    @bookmark = Bookmark.find(params[:id], :auth => current_auth)
+    Rails.logger.info("Found #{@bookmark.inspect}")
+    if @bookmark.update(params[:bookmark])
+      puts "*"*80
+      pp @bookmark
+      puts "*"*80
       render action: "show"
     else
       render action: "edit"
     end
   end
+
+  #YO
 
   def destroy
     @note = Note.find(params[:id], :auth => current_auth)

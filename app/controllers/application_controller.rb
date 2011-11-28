@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_auth, :current_user, :last_read, :set_last_read, :current_version, :set_current_version
-  before_filter :set_locale, :check_beta
+  before_filter :set_locale #, :check_beta
 
   # Set locale
   def set_locale
