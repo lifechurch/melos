@@ -431,7 +431,7 @@ var YV = (function($, window, document, undefined) {
           var spacer = el.prev('.widget_spacer');
           var spacer_top = spacer.offset().top;
           var window_top = $(window).scrollTop() + TOP_OFFSET;
-          
+
           if (window_top >= spacer_top) {
             el.addClass('widget_last_fixed');
           }
@@ -465,28 +465,31 @@ var YV = (function($, window, document, undefined) {
 
         var button = $('#verses_selected_button');
         var count = $('#verses_selected_count');
-        var form = $('#verses_selected_form');
+        var input = $('.verses_selected_input');
+        var article = $('#main article:first');
+        var book = article.attr('data-book');
+        var chapter = article.attr('data-chapter');
+        var version = article.attr('data-version');
         var flag = 'selected';
         var hide = 'hide';
 
         function parse_verses() {
           var total = $('.verse.' + flag).length;
-          var input = $('#verses_selected_input')[0];
 
           // Zero out value.
-          input.value = '';
+          input.val('');
 
           verse.each(function() {
             var el = $(this);
-            var this_id = this.id;
+            var this_id = book + '.' + chapter + '.' + el.find('strong:first').html() + '.' + version;
 
             if (el.hasClass(flag)) {
-              if (input.value) {
+              if (input.val().length) {
                 // Add to hidden input.
-                input.value += '&' + this_id;
+                input.val(input.val() + ',' + this_id);
               }
               else {
-                input.value = this_id;
+                input.val(this_id);
               }
             }
           });
