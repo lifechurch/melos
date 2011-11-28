@@ -24,8 +24,7 @@ class Bookmark < YouVersion::Resource
     return unless response
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
     if response.reference
-      puts response.reference
-      self.reference = response.reference.split("+").map { |r| Reference.new("#{r}.#{response.version}") }
+      self.reference = response.reference.osis.split("+").map { |r| Reference.new("#{r}.#{response.version}") }
     end
   end
 
