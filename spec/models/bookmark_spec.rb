@@ -40,8 +40,12 @@ describe Bookmark do
       # in it, one that we knew existed on the remote system. But this would likewise be quite
       # brittle. I don't have an answer, just making a note next time I'm through here and
       # wondering why a spec that used to pass has started failing or something.
-      bookmark = Bookmark.new({auth: @auth, version: "esv", reference: "Matt.1", title: "Begettings", username: @testuser23.username})
+      bookmark = Bookmark.new({auth: @auth, version: "esv", reference: "Matt.1.1", title: "Begettings", username: @testuser23.username})
       bookmark.save.should_not be_false
+      bookmark_b = Bookmark.new({auth: @auth, version: "esv", reference: "Matt.1.3+Matt.1.4+Matt.1.10", title: "Begettings", username: @testuser23.username})
+      bookmark_b.save.should_not be_false
+      bookmark_b.reference.should be_an Array
+      bookmark_b.reference.first.should be_a Reference
     end
 
     it "returns false for invalid params" do
