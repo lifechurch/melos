@@ -10,7 +10,7 @@
             %span Book-<br>marks
       %li#nav_primary_plans
         %a{:href => '/reading-plans'}
-          %span=t("plans")
+          %span=t("plans title")
       %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
         %a{:href => current_auth ? user_notes_path(current_auth.user_id) : notes_path}
           %span=t("notes title")

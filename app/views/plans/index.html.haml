@@ -2,12 +2,28 @@
 - @sidebar = false
 
 %article
-  %h1= t("plans.explore title")
-  %p Sorting buttons here
   %h1= t("plans.title")
-  %p List of plans here
-  / %ul
-  /   - @plans.each do |plan|
-  /     %li
-  /       %h2= link_to plan
-  /       %p= plan.about
+  %hr
+  
+  %h2= t("plans.explore title")
+  %p
+    -Plan.categories.each do |category|
+      = button_to(category, plans_path(:category => category), :method => :get)
+  
+  %h2= t("plans.title")
+  %ul.big_list
+    - @plans.each do |plan|
+      %li
+        %div
+          %h4
+            = link_to(plan.name.en, plan)
+            %span.plan-type= "» #{plan.formatted_length.en}"
+          %p= plan.about.en
+          %p.copywright
+          %i  
+            /italics tag until copyright class is styled
+            = plan.copyright.en
+            = link_to(t("plans.about publisher"), plan.publisher_url)
+          =button_to(t("plans.overview"), plan)
+          =button_to(t("plans.start"), plan)
+          %br

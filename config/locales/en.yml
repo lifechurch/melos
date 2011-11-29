@@ -33,7 +33,7 @@ en:
   chapter:                          "Chapter"
   highlighted:                      "highlighted"
   bible:                            "Bible"
-  plans:                            "Plans"
+  plans title:                            "Plans"
   notes title:                      "Notes"
   friends:                          "Friends"
   groups:                           "Groups"
@@ -95,6 +95,9 @@ en:
   plans:
     title:                        "Reading Plans"
     explore title:                "Explore Reading Plans"
+    about publisher:              "About The Publisher"
+    overview:                     "Plan Overview"
+    start:                        "Start this Plan"
   
 
 

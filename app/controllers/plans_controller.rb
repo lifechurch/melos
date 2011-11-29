@@ -1,10 +1,10 @@
 class PlansController < ApplicationController
 
   def index
-    #@plans = Plan.all
+    @plans = Plan.all
   end
 
   def show
-    #@plan = Plan.find(params[:id])
+    @plan = Plan.find(params[:id])
   end
 end
