@@ -15,9 +15,9 @@ YouversionWeb::Application.routes.draw do
 
   # Users
   resources 'users', :except => [:new, :create] do
-	resources 'notes'
-  resources 'likes', :only => [:index]
-	resources 'bookmarks'
+    resources 'notes'
+    resources 'likes', :only => [:index]
+    resources 'bookmarks'
   end
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post

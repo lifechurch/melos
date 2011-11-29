@@ -10,7 +10,7 @@ describe Bookmark do
                verified: TRUE,
                locale: "en_US" })
     @auth = Hashie::Mash.new(
-              { id: @testuser23.id,
+              { user_id: @testuser23.id,
                 username: "testuser23",
                 password: "tenders"
               } )
@@ -40,8 +40,12 @@ describe Bookmark do
       # in it, one that we knew existed on the remote system. But this would likewise be quite
       # brittle. I don't have an answer, just making a note next time I'm through here and
       # wondering why a spec that used to pass has started failing or something.
-      bookmark = Bookmark.new({auth: @auth, version: "esv", reference: "Matt.1", title: "Begettings", username: @testuser23.username})
-      bookmark.save.should_not be_false
+      bookmark = Bookmark.new({auth: @auth, version: "esv", reference: "Matt.1.1", title: "Begettings", username: @testuser23.username})
+      # bookmark.save.should_not be_false
+      bookmark_b = Bookmark.new({auth: @auth, version: "esv", reference: "Matt.1.3+Matt.1.4+Matt.1.10", title: "Begettings", username: @testuser23.username})
+      bookmark_b.save.should_not be_false
+      bookmark_b.reference.should be_an Array
+      bookmark_b.reference.first.should be_a Reference
     end
 
     it "returns false for invalid params" do
@@ -54,7 +58,7 @@ describe Bookmark do
   describe ".update" do
     it 'updates a Bookmark and returns the correct response' do
       bookmark = Bookmark.new({auth: @auth, version: "esv",
-                               reference: "Matt.19.1", title: "UpdateMe", username: @testuser23.username})
+                               reference: "Matt.10.1", title: "UpdateMe", username: @testuser23.username})
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
 
@@ -63,7 +67,6 @@ describe Bookmark do
       response.should be_true
 
       bookmark = Bookmark.find bookmark.id
-      puts bookmark.inspect
 
       bookmark.title.should == "New Title"
       bookmark.labels.should == "cats, dogs"
@@ -74,7 +77,7 @@ describe Bookmark do
   describe ".destroy" do
     it 'destroys a bookmark and returns the correct response' do
       bookmark = Bookmark.new({auth: @auth, version: "esv",
-                               reference: "Matt.19.1", title: "DeleteMe", username: @auth.username})
+                               reference: "Matt.10.1", title: "DeleteMe", username: @auth.username})
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
 
@@ -98,6 +101,16 @@ describe Bookmark do
       bookmarks = Bookmark.for_user(99)
       bookmarks.total.should > 0
       bookmarks.first.should be_a Bookmark
+    end
+  end
+  describe ".labels_for_user" do
+    it "returns a list of labels for a user" do
+      bookmark = Bookmark.new(auth: @auth, version: "esv", reference: "Matt.10.1", title: "I have lots of labels", labels: "alpha,beta,gamma", username: @auth.username)
+      bookmark.save.should be_true
+      labels = Bookmark.labels_for_user @auth.user_id
+      labels.labels.first.should be_a Hashie::Mash
+      labels.labels.detect { |l| l.label == "alpha" }.should_not be_nil
+      labels.labels.detect { |l| l.label == "beta" }.should_not be_nil
     end
   end
 end

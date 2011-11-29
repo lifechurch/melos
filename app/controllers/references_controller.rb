@@ -17,6 +17,7 @@ class ReferencesController < ApplicationController
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
     @notes = Note.for_reference(Reference.new(notes_ref_hash))
+    @bookmarks = current_user.bookmarks
   end
 
   private

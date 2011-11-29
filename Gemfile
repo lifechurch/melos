@@ -50,6 +50,7 @@ group :test, :development do
   gem 'heroku_san'
   gem 'capistrano'
   gem 'capistrano-ext'
+  gem 'ruby-debug19'
 end
 
 group :test do

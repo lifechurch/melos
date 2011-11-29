@@ -1,19 +1,20 @@
 !!! 5
 %html
-  %head
-    = render '/shared/head'
+  %head{:lang => 'en-us'}
     = csrf_meta_tags
+    = render '/shared/head'
   %body
     #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
-      = render '/shared/header'
+      #header_outer
+        = render '/shared/header'
       #container{:class => @sidebar == false ? 'no_sidebar' : ''}
+        - flash.each do |key, msg|
+          %div{class: "flash_#{key}"}= msg
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
-          - flash.each do |key, msg|
-            %div{id: key}= msg
+          = render '/shared/nav_primary'
           = yield
           - if content_for? :main_trailer
             = yield :main_trailer
-        = render '/shared/nav_primary'
         - if content_for? :sidebar
           #sidebar
             = yield :sidebar
@@ -23,7 +24,8 @@
       = render '/shared/footer'
     - if @reader_menus == true
       = render '/shared/menu_book_chapter'
-      - # = render '/shared/menu_version'
+      -# = render '/shared/menu_version'
       = render_cell :version_selector, :display, {reference: @reference}
+      = render '/shared/menu_bookmark'
+      = render '/shared/modal_single_verse'
     = render '/shared/javascripts'
-

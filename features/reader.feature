@@ -7,7 +7,7 @@ Feature: Reader view (homepage)
     Given these users:
       | username | password | email address           |
       | testuser | tenders  | testuser@youversion.com |
-    And I have beta access as "testuser", "tenders"
+    And I have beta access as "testuser"
   @bible
   Scenario: Showing some Bible text
     # Given a bookmark on Genesis 1:3

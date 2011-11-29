@@ -1,21 +1,22 @@
 #nav_primary{:role => "navigation"}
   %nav
     %ul
-      %li#nav_primary_bible{class: @nav == :bible ? "highlighted" : ""}
+      %li#nav_primary_bible{class: @nav == :bible ? t("highlighted") : ""}
         %a{:href => '/bible'}
-          %span Bible
+          %span=t("bible")
+      - if current_auth
+        %li#nav_primary_bookmarks{class: @nav == :bookmarks ? "highlighted" : ""}
+          %a{:href => user_bookmarks_path(current_auth.user_id)}
+            %span Book-<br>marks
       %li#nav_primary_plans
         %a{:href => '/reading-plans'}
-          %span Plans
+          %span=t("plans")
       %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
-        %a{:href => current_auth ? user_notes_path(current_user) : notes_path}
-          %span Notes
+        %a{:href => current_auth ? user_notes_path(current_auth.user_id) : notes_path}
+          %span=t("notes title")
       %li#nav_primary_friends
         %a{:href => '/friends'}
-          %span Friends
-      %li#nav_primary_groups
-        %a{:href => '/groups'}
-          %span Groups
+          %span=t("friends")
       %li#nav_primary_mobile
         %a{:href => '/mobile'}
-          %span Mobile
+          %span=t("mobile")

@@ -1,24 +1,24 @@
 = form_for @note do |f|
   - if @note.errors
     .form_errors
-      The following error(s) prevented creation of your note:
+      =t("notes.creation form errors")
       %ul
         - @note.errors.each do |e|
           %li= e
   %p
-    = f.label :title, "Title:"
+    = f.label :title, t("notes.title field")
     = f.text_field :title
   %p
-    = f.label :content, "Content:"
+    = f.label :content, t("notes.content field")
     = f.text_area :content
   %p
-    = f.label :version, "Version:"
-    = f.select :version, options_for_select(versions_dropdown, (@note.version || nil)), {:prompt => '--Select--'}
+    = f.label :version, t("notes.version field")
+    = f.select :version, options_for_select(versions_dropdown, @note.version), {:prompt => t("notes.select from list")}
   %p
-    = f.label :reference, "Reference:"
+    = f.label :reference, t("notes.reference field")
     = f.text_field :reference
   %p
-    = f.label :user_status, "Status:"
+    = f.label :user_status, t("notes.status field")
     = f.select :user_status, options_for_select(object_status, @note.user_status)
   %p
-    = f.submit "Save"
+    = f.submit t("notes.save")
