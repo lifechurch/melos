@@ -9,8 +9,8 @@ class ReferenceList
   def method_missing(method, *args, &block)
     puts "Caller is #{caller.first}"
     result = @references.send(method, *args, &block)
-    if result.is_a?Array
-      ReferenceList.new(*result)    
+    if result.is_a? Array
+      ReferenceList.new(*result)
     else
       result
     end
