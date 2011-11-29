@@ -130,9 +130,15 @@ class Bookmark < YouVersion::Resource
 
   def self.labels_for_user(user_id, params = {})
     params[:page] ||= 1
-    response = get("bookmarks/labels", user_id: user_id, page: params[:page]) do |e|
-      errors = e.map { |ee| ee["error"] }
-      raise YouVersion::ResourceError.new(errors)
+    response = get("bookmarks/labels", user_id: user_id, page: params[:page]) do |errors|
+      Rails.logger.info "API Error: Bookmark.labels_for_user(#{user_id}) got these errors: #{errors.inspect}"
+      if errors.find{|g| g['error'] =~ /Labels not found/}
+        # return empty hash to avoid raising exception
+        []
+      else
+        errors = errors.map { |ee| ee["error"] }
+        raise YouVersion::ResourceError.new(errors)
+      end
     end
   end
 
