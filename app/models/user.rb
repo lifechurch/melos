@@ -26,14 +26,25 @@ class User
     end
   end
 
+  def self.id_key_for_version
+    case Cfg.api_version
+    when "2.3"
+      :user_id
+    when "2.4"
+      :id
+    else
+      :user_id
+    end
+  end
+
   def self.find(user, opts = {})
     # Pass in a user_id, username, or just an auth mash with a username and id.
     case user
     when Fixnum
       if opts[:auth] && user == opts[:auth].user_id
-        hash = YvApi.get("users/view", id: user, auth: opts[:auth]).to_hash
+        hash = YvApi.get("users/view", id_key_for_version => user, auth => opts[:auth]).to_hash
       else
-        hash = YvApi.get("users/view", id: user).to_hash
+        hash = YvApi.get("users/view", id_key_for_version => user).to_hash
       end
       hash[:auth] = opts[:auth] ||= nil
       User.new(hash)
@@ -42,7 +53,7 @@ class User
       hash[:auth] = user
       User.new(hash)
     when String
-      raise ArgumentError, "Strings not supported yet as value type for 'user' pararam in User.find"
+      raise ArgumentError, "Strings not supported yet as value type for 'user' param in User.find"
       # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
     end
   end
