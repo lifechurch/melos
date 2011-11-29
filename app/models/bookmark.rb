@@ -122,7 +122,7 @@ class Bookmark < YouVersion::Resource
     params[:page] ||= 1
     response = get("bookmarks/labels", user_id: user_id, page: params[:page]) do |e|
       errors = e.map { |ee| ee["error"] }
-      raise ResourceError.new(errors)
+      raise YouVersion::ResourceError.new(errors)
     end
   end
 
