@@ -6,14 +6,14 @@ class Bookmark < YouVersion::Resource
   attribute :version
   attribute :title
 
+  attr_accessor :reference_list
+
   def user_id
     self.attributes['user_id']
   end
 
   def before_save
-    unless self.reference.is_a?(String)
-      self.reference = [self.reference].flatten.compact.map(&:osis).join("%2b")
-    end
+    self.reference = self.reference_list.to_api_string
   end
 
   def after_save(response)
@@ -29,28 +29,28 @@ class Bookmark < YouVersion::Resource
   end
 
   def after_build
-    puts("I'm in after_build; thought you should know.")
-    puts("self.reference is a #{self.reference.class}. Looks like [#{self.reference}].")
-    case self.reference
-    when Array
-      self.references = self.reference.map { |n| Reference.new("#{n.osis.downcase}.#{self.version}") }
-      self.reference = self.reference.map { |r| Reference.new("#{n.osis.downcase}.#{self.version}") }
-    when String
-      self.reference = [Reference.new("#{self.reference.downcase}.#{self.version}")]
-    when Hashie::Mash
-      self.reference = Reference.new("#{self.reference.osis.downcase}.#{self.version}")
-    end
+    puts("I'm in after_build: self.reference is a #{self.reference.class}. Looks like -->#{self.reference}<--.")
+
+    # self.reference does multiple duty here for the moment. When creating a new object,
+    # self.reference may contain whatever the user passed in (usually a String) with the
+    # :reference key.  When creating an object from an API call, it will bear whatever
+    # string the API returned for the 'reference' key in the response->data section.
+    # And it could probably be some other things before we're done.
+    self.reference_list = ReferenceList.new(self.reference, self.version)
+
+    # Just here for compatibility - should return the same as what was done before
+    self.reference = self.reference_list.first
   end
 
   def update(fields)
-    Rails.logger.info("==  Attempting merge #{fields} into #{self.attributes}")
+    Rails.logger.info("==  Attempting to merge #{fields} into #{self.attributes}")
     # In API version 2.3, only title, labels, and highlight_color can be updated
     allowed_keys = ['title', 'labels', 'highlight_color']
 
     # Clear out the ones we can't update.
     fields.delete_if {|k, v| ! allowed_keys.include? k}
 
-    Rails.logger.info("==  Actual merge #{fields} into #{self.attributes}")
+    Rails.logger.info("==  Will actually merge #{fields} into #{self.attributes}")
     super
   end
 

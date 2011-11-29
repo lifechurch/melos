@@ -3,6 +3,7 @@ class Reference
   include ActiveModel::Conversion
 
   def initialize(ref)
+    puts "In Reference.initialize(#{ref})"
     @api_data = {}
     case ref
     when String
@@ -85,18 +86,19 @@ class Reference
   def osis
     @ref.to_osis_string
   end
-  
+
   def osis_noversion
     @ref.to_osis_string_noversion
   end
 
   def to_api
-    
+
   end
-  
+
   def human
 
   end
+
   private
 
   def api_data
@@ -118,6 +120,3 @@ class Reference
     end
   end
 end
-
-
-
