@@ -89,7 +89,7 @@ module YouVersion
 
       def all(params = {})
         response = YvApi.get(list_path, params) do |errors|
-          if errors.length == 1 && errors.first["error"].match(/^No(.*)found$/)
+          if errors.length == 1 && [/^No(.*)found$/, /^"Labels not found"$/].detect { |r| r.match(errors.first["error"]) }
             return []
           else
             raise ResourceError.new(errors)

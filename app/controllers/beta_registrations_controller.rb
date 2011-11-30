@@ -16,6 +16,7 @@ class BetaRegistrationsController < ApplicationController
       cookies.permanent.signed[:b] = params[:username]
       cookies.permanent.signed[:c] = params[:password]
       cookies.permanent.signed[:d] = "yes"
+      cookies.permanent[:avatar] = @user.user_avatar_url.px_24x24
       redirect_to :root, notice: t('welcome to the beta')
     else
       render action: "new", notice: t('invalid username or password')

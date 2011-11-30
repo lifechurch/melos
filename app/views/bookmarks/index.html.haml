@@ -21,12 +21,13 @@
           %li
             .float_left
               %p.gutter_bottom_half
-                %a{href: bible_path("#{b.reference.osis}.#{b.version}")}
-                  - if b.title
-                    %b= b.title
-                    = " &mdash; #{b.reference.human}".html_safe
-                  - else
-                    %b= b.reference.human
+                %b= b.title
+                - b.reference.each do |r|
+                  %p
+                    %b
+                      %a{href: bible_path(r)}= r
+                    %br
+                    = r.contents[0]
               - if b.labels
                 %p.small
                   - b.labels.split(",").each do |l|
