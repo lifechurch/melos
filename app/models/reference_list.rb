@@ -1,5 +1,8 @@
+require 'forwardable'
 class ReferenceList
   include Enumerable
+  extend Forwardable
+  def_delegators :@references, :each
 
   attr_accessor :total, :version
 
@@ -17,7 +20,7 @@ class ReferenceList
   # with just osis-able strings. Do we need << for this class?
   # Probably not.
   def <<(*args)
-    @references.concat args.map{|r| Reference.new(r.to_osis_string)}
+    @references.concat args.map{|r| Reference.new(r.to_osis_string, self.version)}
   end
 
   def initialize(args, version = nil)
@@ -33,14 +36,14 @@ class ReferenceList
 
       # TODO: Refactor this and push most of it down into Reference. Eek, this is
       # getting ugly.
-      @references = args.map do |r|
-        case r
-        when String
-          Reference.new("#{r.to_osis_string.downcase}.#{self.version}")
+      @references = args.map do |ref|
+        case ref
         when Reference
-          r
+          ref
+        when String
+          Reference.new(ref.to_osis_string.downcase, self.version)
         when Hashie::Mash
-          Reference.new("#{r.osis.downcase}.#{self.version}")
+          Reference.new(ref.osis.downcase, self.version)
         end
       end
     when String
@@ -62,7 +65,7 @@ class ReferenceList
       # maintain one create-the-References line at the end
       [ref_string]
     end
-    ref_array.map{|str| Reference.new([str.strip, self.version].compact.join('.'))}
+    ref_array.map{|str| Reference.new(str.strip, self.version)}
   end
 
   # Present our References in a string format suitable for sending to the API,
