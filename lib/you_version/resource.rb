@@ -202,7 +202,7 @@ module YouVersion
     def initialize(data = {})
       @attributes = data
       @associations = {}
-      
+
       after_build
     end
 
