@@ -41,8 +41,6 @@ class String
     /^ \s* ([1-3]? \s* [A-Za-z]+ .? ) \s* (\d+ (?: \s* \-? \s* \d*))? (?:[:.] (\d+ (?: \s* \-? \s* \d*)))? [\.\s]* ([a-zA-Z]+)? \s*? $/x
   end
 
-  # TODO: Make recognizer pattern recognize things like 'jas esv' and 'joshua'
-
   # Take a string of chapter(s) or verse(s) that can be like "1" or "1 - 3"
   # or "2-4" and return either the integer or integer range expressed.
   def dashed_to_range(dash_str)
