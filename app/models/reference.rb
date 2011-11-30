@@ -95,6 +95,15 @@ class Reference
     @ref.to_osis_string_noversion
   end
 
+  def previous
+    return nil if api_data[0].data.previous.blank?
+    @previous ||= Reference.new("#{api_data[0].data.previous.reference.osis}.#{@ref[:version]}")
+  end
+  def next
+    return nil if api_data[0].data.next.blank?
+    @next ||= Reference.new("#{api_data[0].data.next.reference.osis}.#{@ref[:version]}")
+  end
+
   def to_api
 
   end
