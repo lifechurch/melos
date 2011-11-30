@@ -17,6 +17,7 @@ class Bookmark < YouVersion::Resource
   end
 
   def after_save(response)
+    Rails.logger.info "In Bookmark.after_save, response is:"
     Rails.logger.info "*"*80
     Rails.logger.info response
     Rails.logger.info "*"*80
@@ -50,7 +51,7 @@ class Bookmark < YouVersion::Resource
     # Clear out the ones we can't update.
     fields.delete_if {|k, v| ! allowed_keys.include? k}
 
-    Rails.logger.info("==  Will actually merge #{fields} into #{self.attributes}")
+    Rails.logger.info("==  Will actually merge #{fields}")
     super
   end
 
