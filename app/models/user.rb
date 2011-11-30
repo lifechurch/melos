@@ -105,6 +105,10 @@ class User
     Like.find(id, auth)
   end
 
+  def user_avatar_url
+    @info.user_avatar_url
+  end
+
   def create
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
     @secure = true

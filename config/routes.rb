@@ -3,7 +3,7 @@ YouversionWeb::Application.routes.draw do
 
   filter :locale, include_default_locale: false
   # Bible
-  match 'bible(/:reference)' => 'references#show', :as => 'bible', :constraints => {:reference => /.*/}
+  match 'bible(/:reference)' => 'references#show', :as => 'reference', :constraints => {:reference => /.*/}
   resources 'versions', :only => [:index, :show]
 
   resources 'bookmarks'
@@ -28,6 +28,11 @@ YouversionWeb::Application.routes.draw do
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
   match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
   match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
+
+  match 'reading-plans' => 'coming_soon#index'
+  match 'friends' => 'coming_soon#index'
+  match 'mobile' => 'coming_soon#index'
+
 
   root to: 'references#show'
 

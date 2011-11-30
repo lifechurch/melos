@@ -1,7 +1,11 @@
 %article
   #note
     %h1= @note.title
-    %p.mute= link_to_references(@note.reference)
+    / %p.mute= link_to_references(@note.reference)
+    %hr
+    - @note.reference.each do |r|
+      = link_to r, bible_path(r)
+    %hr
     %p= raw(@note.content)
     %p
       = label_tag :user_status, t("notes.status field")

@@ -103,6 +103,10 @@ class Reference
 
   end
 
+  def verse_string
+    
+    @ref[:verse].is_a?(Range) ? @ref[:verse].first.to_s + "-" + @ref[:verse].last.to_s : @ref[:verse].to_s if @ref[:verse]
+  end
   private
 
   def api_data

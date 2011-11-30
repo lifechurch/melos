@@ -1,4 +1,5 @@
 module ReferenceHelper
+
   def link_to_references(refs)
     Rails.logger.info("In link_to_references, refs is a #{refs.class} of size #{refs.size}")
     Rails.logger.info("...and first looks like [#{refs.first.class}]")
