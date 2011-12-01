@@ -1,4 +1,16 @@
 %article
-  %h1= @version
-  .copyright!= @version.info
-  %p= link_to t("read this version"), bible_path("gen.1.#{@version.osis}")
+  %h1= @plan.name.en
+  %h2= t("plans.overview")
+  %div
+    %p= @plan.about.en
+    %p.copywright
+    %i  
+      /italics tag until copyright class is styled
+      = @plan.copyright.en
+      = link_to(t("plans.about publisher"), @plan.publisher_url)
+    %br
+    %br
+    %h5="#{t("plans.length")} : #{@plan.formatted_length.en}"
+    =button_to(t("plans.view sample"), @plan)
+    =button_to(t("plans.start"), @plan)
+    %br
