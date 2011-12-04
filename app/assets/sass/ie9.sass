@@ -1,0 +1,10 @@
+// Kill off the white-fade, that is
+// position:fixed on main content.
+
+// Why? Because it doesn't stretch to the correct width,
+// and weirdly resizes as user scrolls the page. Gross.
+
+// Screenshot: http://cl.ly/2L2z3s1a1q403j30183v
+
+#main article:after
+  content: none !important
