@@ -6,3 +6,4 @@ log/*
 bin/*
 *.swp
 *~
+/.sass-cache/
