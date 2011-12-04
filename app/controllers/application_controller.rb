@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
   protect_from_forgery
-  helper_method :current_auth, :current_user, :last_read, :set_last_read, :current_version, :set_current_version
+  helper_method :current_auth, :current_user, :last_read, :set_last_read, :current_version, :set_current_version, :bible_path, :current_avatar
   before_filter :set_locale, :check_beta
 
   # Set locale
@@ -49,6 +50,9 @@ class ApplicationController < ActionController::Base
   end
   def current_username
     User.find(cookies.signed[:a]).username if cookies.signed[:a]      
+  end
+  def current_avatar
+    cookies[:avatar]
   end
 
   def current_version

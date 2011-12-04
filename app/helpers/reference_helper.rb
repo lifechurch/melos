@@ -1,4 +1,5 @@
 module ReferenceHelper
+
   def link_to_references(refs)
     case refs
     when Array

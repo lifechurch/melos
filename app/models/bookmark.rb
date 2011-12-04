@@ -15,6 +15,10 @@ class Bookmark < YouVersion::Resource
   end
 
   def before_save
+    refs = self.reference.split(",")
+    refs.map { |r| Reference.new(r.raw_hash.except(:version)).osis}.join("+")
+    self.reference = refs
+    self.version = refs.first[:version]
     unless self.reference.is_a?(String)
       self.reference = [self.reference].flatten.compact.map(&:osis).join("%2b")
     end
@@ -24,15 +28,12 @@ class Bookmark < YouVersion::Resource
     return unless response
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
     if response.reference
-      osis = [response.reference].flatten.map(&:osis).join('+')
-      self.reference = Reference.new("#{osis}.#{response.version}")
+      self.reference = response.reference.osis.split("+").map { |r| Reference.new("#{r}.#{response.version}") }
     end
   end
 
   def after_build
-    if self.reference.is_a?(Array)
-      self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version}") }
-    end
+    self.reference = reference.osis.split("+").map { |r| Reference.new("#{r}.#{self.version}") }
   end
 
   def update(fields)
@@ -123,7 +124,8 @@ class Bookmark < YouVersion::Resource
     params[:page] ||= 1
     response = get("bookmarks/labels", user_id: user_id, page: params[:page]) do |e|
       errors = e.map { |ee| ee["error"] }
-      raise ResourceError.new(errors)
+      raise YouVersion::ResourceError.new(errors) unless errors.length == 1 && errors.first == "Labels not found"
+      return Hashie::Mash.new(labels: [])
     end
   end
 

@@ -89,11 +89,13 @@ module YouVersion
 
       def all(params = {})
         response = YvApi.get(list_path, params) do |errors|
-          raise ResourceError.new(errors)
+          if errors.length == 1 && [/^No(.*)found$/, /^"Labels not found"$/].detect { |r| r.match(errors.first["error"]) }
+            return []
+          else
+            raise ResourceError.new(errors)
+          end
         end
-        # puts "*"*80
         # pp response
-        # puts "*"*80
         # TODO: Switch to ResourceList here
         response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
       end

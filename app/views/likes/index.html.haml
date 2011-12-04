@@ -1,20 +1,20 @@
 %article
   - if request.path == user_likes_path(current_user)
-    %h1= "My Likes"
+    %h1= t("likes.my likes")
     %dl.combo_button.float_right
       %dt View:
       %dd
-        = link_to "All Likes", likes_path
+        = link_to t("likes.all likes"), likes_path
       %dd.highlighted
-        = link_to "My Likes", user_likes_path(current_user)
+        = link_to t("likes.my likes"), user_likes_path(current_user)
   - else
-    %h1= "All Likes"
+    %h1= t("likes.all likes")
     %dl.combo_button.float_right
       %dt View:
       %dd.highlighted
-        = link_to "All Likes", likes_path
+        = link_to t("likes.all likes"), likes_path
       %dd
-        = link_to "My Likes", user_likes_path(current_user)
+        = link_to t("likes.my likes"), user_likes_path(current_user)
   - if @likes
     %ul.big_list
       - @likes.each do |like|
@@ -24,4 +24,4 @@
           %p= like.note.content
           %div{class: "status"}= like.note.user_status
   - else
-    %div{class: "none"}= "Sorry, no likes here!"
+    %div{class: "none"}= t("likes:none exist blurb")

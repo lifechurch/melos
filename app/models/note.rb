@@ -82,9 +82,7 @@ class Note < YouVersion::Resource
   def after_build
     self.content = self.content_text unless self.content_text.blank?
 
-    if self.reference.is_a?(Array)
-      self.references = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version.osis}") }
-    end
+    self.reference = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version.osis}") } if self.reference
   end
 
 end

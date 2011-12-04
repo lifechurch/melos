@@ -2,31 +2,31 @@
   %p.float_left
     &copy;
     = Date.today.year
-    %a{:href => '#'} LifeChurch.tv
+    %a{:href => '#'}=t("lifechurch short url")
     %span.separator
       |
-    %a{:href => '#'} About
+    %a{:href => '#'}=t("about")
     %span.separator
       |
-    %a{:href => '#'} Jobs
+    %a{:href => '#'}=t("jobs")
     %span.separator
       |
-    %a{:href => '#'} Privacy Policy
+    %a{:href => '#'}=t("privacy policy")
     %span.separator
       |
-    %a{:href => '#'} Terms
+    %a{:href => '#'}=t("terms")
     %span.separator
       |
-    %a{:href => '#'} Press
+    %a{:href => '#'}=t("press")
     %span.separator
       |
-    %a{:href => '#'} Support
+    %a{:href => '#'}=t("support")
     %span.separator
       |
-    %a{:href => '#'} Donate
+    %a{:href => '#'}=t("donate")
   %p.float_right
     %label{:for => 'choose_language'}
-      Choose Your Language:
+      =t("choose language field")
       &nbsp;
     %label.select_wrap{:for => 'choose_language'}
       %span

@@ -3,15 +3,15 @@
     &nbsp;
   #menu_book
     %header
-      Book
+      =t("book")
     .scroll
       %ul
         - @version.books.each do |k, v|
-          %li{class: k == @reference[:book] ? 'selected' : ''}
+          %li{class: k == @reference[:book] ? t("selected") : ''}
             %a{:href => '#', 'data-book' => "#{k}", 'data-version' => "#{@version.osis}", 'data-chapters' => "#{v["chapters"]}"}= v["human"]
   #menu_chapter
     %header
-      Chapter
+      =t("chapter")
     .scroll
       %ol
         - i = 1

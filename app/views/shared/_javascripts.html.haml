@@ -1,9 +1,9 @@
 %script{:src => '/javascripts/jquery.js'}
 %script{:src => '/javascripts/application.js'}
 %script{:src => '/javascripts/rails.js'}
-%script{:src => '/javascripts/analytics.js'}
--# %script{:src => '/javascripts/uservoice.js'}
 %script{:src => 'http://include.reinvigorate.net/re_.js'}
+%script{:src => '/javascripts/analytics.js'}
+%script{:src => '/javascripts/uservoice.js'}
 
 - if content_for? :javascripts
   = yield :javascripts

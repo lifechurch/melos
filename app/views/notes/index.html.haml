@@ -1,27 +1,28 @@
 - content_for :sidebar do
-  / = render_cell :likes_list_widget, :display, likes: @likes, title: "Likes", user_id: @user_id
+
+  / = render_cell :likes_list_widget, :display, likes: @likes, title: t("likes.likes"), user_id: @user_id
   = render '/shared/widget_ad_bible_app'
 
 %article
   - if current_auth
     - if request.path == user_notes_path(current_user)
-      %h1= "My Notes"
+      %h1= t("notes.my notes")
       %dl.combo_button.float_right
         %dt View:
         %dd
-          = link_to "All Notes", notes_path
+          = link_to t("notes.all notes"), notes_path
         %dd.highlighted
-          = link_to "My Notes", user_notes_path(current_user)
+          = link_to t("notes.my notes"), user_notes_path(current_user)
     - else
-      %h1= "All Notes"
+      %h1= t("notes.all notes")
       %dl.combo_button.float_right
         %dt View:
         %dd.highlighted
-          = link_to "All Notes", notes_path
+          = link_to t("notes.all notes"), notes_path
         %dd
-          = link_to "My Notes", user_notes_path(current_user)
+          = link_to t("notes.my notes"), user_notes_path(current_user)
   - else
-    %h1= "All Notes"
+    %h1= t("notes.all notes")
   - if @notes
     %ul.big_list
       - @notes.each do |note|
@@ -31,4 +32,4 @@
           %p= note.content
           %div{class: "status"}= note.user_status
   - else
-    %div{class: "none"}= "Sorry, no notes here!"
+    %div{class: "none"}= t("notes.none exist blurb")
