@@ -118,8 +118,8 @@ module YouVersion
         new(data).save(&block)
       end
 
-      def destroy(delete_options, &block)
-        post(delete_path, delete_options, &block)
+      def destroy(id, auth = nil, &block)
+        post(delete_path, {:id => id, :auth => auth}, &block)
       end
 
       attr_accessor :resource_attributes
@@ -202,7 +202,7 @@ module YouVersion
     def initialize(data = {})
       @attributes = data
       @associations = {}
-      
+
       after_build
     end
 
@@ -214,16 +214,12 @@ module YouVersion
       id
     end
 
-    def delete_options
-      {id: id, auth: auth}
-    end
-
     def persist(resource_path)
       response = true
       response_data = nil
       
       token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
-
+      puts ("Calling #{resource_path} with #{attributes.merge(:token => token, :auth => self.auth)}")
       response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }
         self.errors[:base] << new_errors
@@ -231,7 +227,7 @@ module YouVersion
         if block_given?
           yield errors
         end
-          
+
         response = false
       end
 
@@ -257,8 +253,6 @@ module YouVersion
         if response && ! self.persisted?
           self.id = response_data.try(:id)
         end
-
-        # self.id = response.try(:id) unless response == false
       ensure
         self.persisted? ? after_update(response_data) : after_save(response_data)
       end
@@ -283,7 +277,7 @@ module YouVersion
       before_destroy
 
       begin
-        response = self.class.destroy(self.delete_options) do |errors|
+        response = self.class.destroy(self.id, self.auth) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
 
