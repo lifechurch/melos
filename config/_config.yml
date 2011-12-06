@@ -10,7 +10,7 @@ test: &test
   api_version: "2.4"
   memcache_server: localhost
 
-staging:
+staging: *test
   api_root: api.youversion.com
   api_referer: web-staging.youversion.com
   api_version: "2.4"
@@ -23,4 +23,4 @@ production:
   memcache_server: memcache.youversion.com
 
 demo: *test
-staging: *test
+
