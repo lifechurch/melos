@@ -22,7 +22,7 @@
             .float_left
               %p.gutter_bottom_half
                 %b= b.title
-                - b.reference.each do |r|
+                - b.reference_list.each do |r|
                   %p
                     %b
                       %a{href: bible_path(r)}= r

@@ -3,7 +3,7 @@ class Reference
   include ActiveModel::Conversion
 
   def initialize(ref, version = nil)
-    puts "In Reference.initialize(#{ref})"
+    # puts "In Reference.initialize(#{ref})"
     @api_data = {}
     case ref
     when String

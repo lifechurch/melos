@@ -4,45 +4,33 @@ describe Note do
   # use_vcr_cassette "note"
 
   before :all do
-    @testuser = ensure_user({ email: "testuser@youversion.com",
-               username: "testuser",
-               password: "tenders",
-               agree: TRUE,
-               verified: TRUE,
-               locale: "en_US" })
-    @auth = Hashie::Mash.new(
-              { id: @testuser.id,
-                username: "testuser",
-                password: "tenders"
-              } )
-    @valid_attributes = {title: "My New Note", content: "Some Content", reference: [Reference.new("gen.2.1.kjv")], user_status: "public", version: "kjv", auth: @auth }
+    @testuser = ensure_user({ email: "testuser@youversion.com", username: "testuser", password: "tenders", agree: true, verified: true, locale: "en_US" })
+    @auth = Hashie::Mash.new({user_id: @testuser.id, username: "testuser", password: "tenders"})
+    @valid_attributes = {title: "My New Note", content: "Some Content", reference: "gen.2.1.kjv", user_status: "public", auth: @auth }
   end
 
-  describe "#initialize" do
-    it "creates an instance of Note with a Title" do
-      @note = Note.new({ title: "Tester" })
-      @note.class.should == Note
-      @note.title.should == "Tester"
-    end    
-  end
   
-  describe "to_param" do
-    it "returns the Note ID" do
-      @note = Note.new(@valid_attributes)
-      @note.save
-      @note.to_param.should == @note.id
+  describe ".save" do
+    it 'creates a new note and returns the correct response' do
+      @note = Note.new( title: "My New Note", content: "Some Content", reference: "gen.1.1.kjv", auth: @auth )
+      @response = @note.save
+      @response.should be_true
+      @note.version.should be_a Version
+      @note.reference.should be_a ReferenceList
+      @note.reference.first.should be_a Reference
     end
   end
-  
+
   describe ".find" do
     it 'returns true after finding a Note' do
       @valid_note = Note.new(@valid_attributes)
-      @valid_note.save
+      result = @valid_note.save
+      result.should be_true
       @note = Note.find(@valid_note.id, @auth) 
       @note.title.should == 'My New Note'
       @note.content.should == 'Some Content'
       @note.version.osis.should == 'kjv'
-      @note.references.first.osis.should == 'gen.2.1.kjv'
+      @note.reference.first.osis.should == 'gen.2.1.kjv'
       @note.user_status.should == 'public'
     end
 
@@ -61,36 +49,23 @@ describe Note do
     end
   end
 
-  describe ".save" do
-    it 'creates a new note and returns the correct response' do
-      @note = Note.new( title: "My New Note", content: "Some Content", reference: [Reference.new("gen.1.1.kjv")], version: "kjv", auth: @auth )
-      # @note.auth = @auth
-      @response = @note.save
-
-      @note.id.to_i.should > 0
-      @note.version.class.should == Version
-      @note.references.first.class.should == Reference
-
-      Note.find(@note.id, auth: @auth).should be_true
-    end
-  end
 
   describe ".update" do
     it 'updates a note and returns the correct response' do
       @note = Note.for_user(@auth.user_id, @auth).first()
-      @response = @note.update(title: "Updated New Note", content: "Updated Some Content", reference: [Reference.new("gen.1.1")], version: "kjv", auth: @auth)
+      @response = @note.update(title: "Updated New Note", content: "Updated Some Content", reference: "gen.1.1.asv", auth: @auth)
       @response.should be_true
       @note.id.to_i.should > 0
       @note.version.class.should == Version
-      @note.references.first.class.should == Reference
+      @note.reference.first.class.should == Reference
     end
   end
 
   describe ".destroy" do
     it 'deletes a note and returns the correct response' do
-      @note = Note.new( title: "My New Note", content: "Some Content", reference: [Reference.new("gen.2.1.kjv")], version: "kjv", auth: @auth )
-      @note.save
-      result = @note.destroy
+      @note = Note.new( title: "My New Note", content: "Some Content", reference: "gen.2.1.kjv", auth: @auth )
+      @note.save.should be_true
+      result = Note.destroy(@note.id, @auth)
       result.should be_true
     end
   end

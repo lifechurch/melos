@@ -1,6 +1,14 @@
 
 Given /^a user named "([^"]*)" exists$/ do |arg1|
-  User.authenticate(arg1, "tenders").should_not == nil
+  unless user = User.authenticate(arg1, "tenders")
+    opts = {email: "#{arg1}@youversion.com", password: "tenders", agree: true, verified: true, username: arg1}
+    new_user = User.new(opts)
+    response = new_user.register
+    puts new_user.errors
+    response.should be_true
+    user = User.authenticate(arg1, "tenders")
+  end
+  user.should be_a User
 end
 
 Given /^a user named "([^"]*)" with password "([^"]*)" exists$/ do |arg1, arg2|  
@@ -28,9 +36,9 @@ Given /^these notes exist:$/ do |table|
   @rows.each do |row|
     @user = User.authenticate(row['Author'], 'tenders');
     auth = Hashie::Mash.new( {'user_id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
-    references = row['References'].split(",").map { |r| Reference.new(r).notes_api_string }.join("+")
-    note = Note.new(title: row['Title'], content: row['Content'], reference: references, version: row['Version'], user_status: row['Status'].downcase, auth: auth)
+    note = Note.new(title: row['Title'], content: row['Content'], reference: row['References'], version: row['Version'], user_status: row['Status'].downcase, auth: auth)
     result = note.save
+    puts note.errors.full_messages
     result.should_not be_false
   end
 #     if @notes  
@@ -59,7 +67,7 @@ Given /^these users exist:$/ do |table|
   @rows.each do |r|
     user = User.authenticate(r['username'], r['password'])
     unless user.class == User
-      User.new({username: r['username'], password: r['password'], email: r['email address'], verified: true, agree: true }).create
+      User.new({username: r['username'], password: r['password'], email: r['email address'], verified: true, agree: true }).register
       user = User.authenticate(r['username'], r['password'])
     end
     user.should be_a User

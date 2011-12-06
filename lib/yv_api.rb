@@ -14,7 +14,7 @@ class YvApi
     path = clean_up(path)
     resource_url = base + path
     Rails.logger.info "** YvApi.get: Calling #{resource_url} with query => #{opts}"
-    puts "** YvApi.get: Calling #{resource_url} with query => #{opts}"
+    # puts "** YvApi.get: Calling #{resource_url} with query => #{opts}"
     if (resource_url == "http://api.yvdev.com/2.3/bible/verse.json")
       calling_method = caller.first.match(/`(.*)'$/)[1]
       # puts "** YvApi.get: Called from #{calling_method}"
@@ -32,7 +32,6 @@ class YvApi
       # Just ask the API
       response = httparty_get(resource_url, query: opts)
     end
-
     # Check the API response for error code
     return api_response_or_rescue(response, block)
   end
@@ -43,10 +42,9 @@ class YvApi
     path = clean_up(path)
     resource_url = base + path
     Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
-    puts "** YvApi.post: Calling #{resource_url} with body => #{opts}"
+    # puts "** YvApi.post: Calling #{resource_url} with body => #{opts}"
 
     response = httparty_post(resource_url, body: opts)
-
     return api_response_or_rescue(response, block)
   end
 

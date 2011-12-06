@@ -3,7 +3,7 @@
     %h1= @note.title
     / %p.mute= link_to_references(@note.reference)
     %hr
-    - @note.reference.each do |r|
+    - @note.reference_list.each do |r|
       = link_to r, bible_path(r)
     %hr
     %p= raw(@note.content)

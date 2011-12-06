@@ -1,17 +1,15 @@
 require 'digest/md5'
 
-class User
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
+class User < YouVersion::Resource
   include Model
   attr_accessor :username, :password, :errors
-  def persisted?
-    !id.blank?
-  end
-
-  def self.foreign_key
-    "user_id"
-  end
+#   def persisted?
+#     !id.blank?
+#   end
+# 
+#   def self.foreign_key
+#     "user_id"
+#   end
 
   def self.authenticate(username, password)
     hash = {}
@@ -42,7 +40,7 @@ class User
     case user
     when Fixnum
       if opts[:auth] && user == opts[:auth].user_id
-        hash = YvApi.get("users/view", id_key_for_version => user, auth => opts[:auth]).to_hash
+        hash = YvApi.get("users/view", id_key_for_version => user, :auth => opts[:auth]).to_hash
       else
         hash = YvApi.get("users/view", id_key_for_version => user).to_hash
       end
@@ -85,20 +83,20 @@ class User
   #   User.new(response)
   # end
 
-  def self.notes(id, auth)
-    Note.for_user(id, auth: auth)
-  end
-  
+#   def self.notes(id, auth)
+#     Note.for_user(id, auth: auth)
+#   end
+#   
   def notes
-    Note.for_user(self.id, self.auth)
+    Note.for_user(self.id, auth: self.auth)
   end
-
-  def self.bookmarks(id, auth)
-    Bookmark.for_user(id, auth: auth)
-  end
+# 
+#   def self.bookmarks(id, auth)
+#     Bookmark.for_user(id, auth: auth)
+#   end
   
   def bookmarks
-    Bookmark.for_user(self.id, self.auth)
+    Bookmark.for_user(self.id)
   end
 
   def likes
@@ -109,27 +107,30 @@ class User
     @info.user_avatar_url
   end
 
-  def create
+  def register
+    # TODO: move to class method
     @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
     @secure = true
-    response = YvApi.post('users/create', class_attributes(:email, :username, :password, :verified, :agree, :token, :secure)) do |errors|
+    attrs = class_attributes(:email, :username, :password, :verified, :agree, :token, :secure)
+    attrs["notification_settings[newsletter][email]"] = true
+    response = YvApi.post('users/create', attrs) do |errors|
       @errors = errors.map { |e| e["error"] } if errors
       return false
     end    
     response
   end
 
-  def attributes(*args)
-    array = args
-    array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
-    attrs = {}
-    array.each do |var|
-      attrs[var] = instance_variable_get("@#{var}")
-    end
-    attrs
-  end
-
-  def bookmarks
-    Bookmark.for_user(id)
-  end
+#   def attributes(*args)
+#     array = args
+#     array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
+#     attrs = {}
+#     array.each do |var|
+#       attrs[var] = instance_variable_get("@#{var}")
+#     end
+#     attrs
+#   end
+# 
+#   def bookmarks
+#     Bookmark.for_user(id)
+#   end
 end

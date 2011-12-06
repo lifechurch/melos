@@ -3,6 +3,7 @@ class BookmarksListWidgetCell < Cell::Rails
   helper_method :bible_path
   def display(opts = {})
     @bookmarks = Bookmark.for_reference(opts[:reference], auth: current_auth)
+    puts @bookmarks
   end
 
 end

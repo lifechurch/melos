@@ -3,8 +3,8 @@ class Bookmark < YouVersion::Resource
   attribute :highlight_color
   attribute :labels
   attribute :reference
-  attribute :version
   attribute :title
+  attribute :version
 
   attr_accessor :reference_list
 
@@ -25,12 +25,11 @@ class Bookmark < YouVersion::Resource
     return
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
     if response.reference
-      self.reference = response.reference.osis.split("+").map { |r| Reference.new("#{r}.#{response.version}") }
+      self.reference_list = ReferenceList.new(self.reference)
     end
   end
 
   def after_build
-    puts("I'm in after_build: self.reference is a #{self.reference.class}. Looks like -->#{self.reference}<--.")
 
     # self.reference does multiple duty here for the moment. When creating a new object,
     # self.reference may contain whatever the user passed in (usually a String) with the
@@ -38,15 +37,15 @@ class Bookmark < YouVersion::Resource
     # string the API returned for the 'reference' key in the response->data section.
     # And it could probably be some other things before we're done.
     self.reference_list = ReferenceList.new(self.reference, self.version)
-
+    self.version =self.reference_list.first[:version]
     # Just here for compatibility - should return the same as what was done before
-    self.reference = self.reference_list.first
+    # self.reference = self.reference_list.first
   end
 
   def update(fields)
     Rails.logger.info("==  Attempting to merge #{fields} into #{self.attributes}")
     # In API version 2.3, only title, labels, and highlight_color can be updated
-    allowed_keys = ['title', 'labels', 'highlight_color']
+    allowed_keys = [:title, :labels, :highlight_color]
 
     # Clear out the ones we can't update.
     fields.delete_if {|k, v| ! allowed_keys.include? k}

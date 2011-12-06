@@ -183,7 +183,7 @@ module YouVersion
       end
 
       def has_many_remote(association_name)
-        define_method(association_name.to_s.pluralize) do |params = {}|
+        define_method(association_name.to_s.pluralize) do |params|
           associations.delete(association_name) if params[:refresh]
           
           association_class = association_name.to_s.classify.constantize
@@ -219,7 +219,6 @@ module YouVersion
       response_data = nil
       
       token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
-      puts ("Calling #{resource_path} with #{attributes.merge(:token => token, :auth => self.auth)}")
       response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }
         self.errors[:base] << new_errors
@@ -251,7 +250,7 @@ module YouVersion
         response, response_data = persist(resource_path)
 
         if response && ! self.persisted?
-          self.id = response_data.try(:id)
+          self.id = response_data.id if response_data.id
         end
       ensure
         self.persisted? ? after_update(response_data) : after_save(response_data)

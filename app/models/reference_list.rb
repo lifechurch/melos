@@ -7,7 +7,7 @@ class ReferenceList
   attr_accessor :total, :version
 
   def method_missing(method, *args, &block)
-    puts "In #{self.class}.method_missing, Caller is #{caller.first}, method is #{method}"
+    # puts "In #{self.class}.method_missing, Caller is #{caller.first}, method is #{method}"
     result = @references.send(method, *args, &block)
     if result.is_a? Array
       ReferenceList.new(result)
@@ -24,7 +24,6 @@ class ReferenceList
   end
 
   def initialize(args, version = nil)
-    puts "In #{self.class}.initialize(#{args}  xxx  #{version})"
     self.version = version
     @references = []
 
@@ -51,7 +50,6 @@ class ReferenceList
     when Hashie::Mash
       @references = split_multi_ref_string(args.osis.downcase)
     end
-
     # Default to same as #size
     @total = self.count
   end

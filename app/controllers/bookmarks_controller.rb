@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
 #  before_filter :set_sidebar, :only => [:index]
 
   def index
-    @user = User.find(params[:user_id].to_i, current_auth) # TODO : can't wait to port this to a Resource
+    @user = User.find(params[:user_id].to_i, auth: current_auth) # TODO : can't wait to port this to a Resource
     if params[:label]
       @bookmarks = Bookmark.for_label(params[:label], {:user_id => params[:user_id]})
     else
@@ -49,7 +49,7 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    puts "About to create Bookmark from #{params[:bookmark]}"
+    # puts "About to create Bookmark from #{params[:bookmark]}"
     if params[:bookmark][:reference].is_a? String
       ref = params[:bookmark][:reference]
       new_ref = ref.to_osis_string
@@ -74,9 +74,9 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id], :auth => current_auth)
     Rails.logger.info("Found #{@bookmark.inspect}")
     if @bookmark.update(params[:bookmark])
-      puts "*"*80
+      # puts "*"*80
       pp @bookmark
-      puts "*"*80
+      # puts "*"*80
       render action: "show"
     else
       render action: "edit"

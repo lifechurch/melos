@@ -26,8 +26,8 @@ class NotesController < ApplicationController
 
   def edit
     if current_auth
-      @note = Note.find(params[:id], :auth => current_auth)
-      @note.reference = @note.reference.to_osis_references
+      @note = Note.find(params[:id], auth: current_auth)
+      @note.reference = @note.reference_list.to_osis_references
     else
       redirect_to notes_path
     end
