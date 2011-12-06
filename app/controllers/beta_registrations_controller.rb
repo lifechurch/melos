@@ -18,7 +18,7 @@ class BetaRegistrationsController < ApplicationController
       cookies.permanent.signed[:d] = "yes"
       redirect_to :root, notice: t('welcome to the beta')
     else
-      flash.now[:notice]= t('invalid username or password')
+      flash.now[:error]= t('invalid username or password')
       render action: "new"
     end
   end
