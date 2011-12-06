@@ -16,8 +16,8 @@ describe Note do
       @response = @note.save
       @response.should be_true
       @note.version.should be_a Version
-      @note.reference.should be_a ReferenceList
-      @note.reference.first.should be_a Reference
+      @note.reference_list.should be_a ReferenceList
+      @note.reference_list.first.should be_a Reference
     end
   end
 
@@ -30,7 +30,7 @@ describe Note do
       @note.title.should == 'My New Note'
       @note.content.should == 'Some Content'
       @note.version.osis.should == 'kjv'
-      @note.reference.first.osis.should == 'gen.2.1.kjv'
+      @note.reference_list.first.osis.should == 'gen.2.1.kjv'
       @note.user_status.should == 'public'
     end
 
@@ -57,7 +57,7 @@ describe Note do
       @response.should be_true
       @note.id.to_i.should > 0
       @note.version.class.should == Version
-      @note.reference.first.class.should == Reference
+      @note.reference_list.first.class.should == Reference
     end
   end
 

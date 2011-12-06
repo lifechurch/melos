@@ -4,10 +4,8 @@ Feature: Reader view (homepage)
   I want to:   Select and view a selection of Bible text.
 
   Background:
-    Given these users:
-      | username | password | email address           |
-      | testuser | tenders  | testuser@youversion.com |
-    And I have beta access as "testuser"
+    Given a user named "reader_user1" exists
+    And I have beta access as "reader_user1"
   @bible
   Scenario: Showing some Bible text
     # Given a bookmark on Genesis 1:3

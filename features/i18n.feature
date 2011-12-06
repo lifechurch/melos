@@ -3,7 +3,7 @@ Feature: i18n/Localization
   As a:        Visitor
   I want to:   Set the site language.
 
-  @i18n
+  @i18n @wip
   Scenario: English/French
     When I go to "/sign-in"
     Then "en" should be selected for "choose_language"
