@@ -9,8 +9,16 @@ module ApplicationHelper
   end
 
   def truncate_words(text, length = 30, truncate_string = "...")
-    return if text.nil?
+    return if text.empty?
     l = length - truncate_string.length
     text.length > length ? text[/\A.{#{l}}\w*\;?/m][/.*[\w\;]/m] + truncate_string : text
   end 
+
+  def bible_path(ref)
+    if ref.raw_hash[:verse]
+      reference_path(ref.raw_hash.except(:verse).to_osis_string, anchor: ref.verse_string)
+    else
+      reference_path(ref.osis)
+    end
+  end
 end

@@ -293,11 +293,13 @@ var YV = (function($, window, document, undefined) {
           var el = $(this);
           var ol = el.closest('.dynamic_menu').find('ol:first');
           var chapters = parseInt(el.data('chapters'), 10) + 1;
+          var book = el.data('book');
+          var version = el.data('version');
           var li = el.closest('li');
           var list = '';
 
           for (var i = 1; i < chapters; i++) {
-            list += '<li><a href="#">' + i + '</a></li>';
+            list += '<li><a href="/bible/' + book + '.' + i + '.' + version + '">' + i + '</a></li>';
           }
 
           li.addClass(li_class).siblings().removeClass(li_class);

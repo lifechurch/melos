@@ -3,7 +3,7 @@ Feature: Versions view
   As a:        Visitor or User
   I want to:   Sign up, sign in, and sign out of my YouVersion account.
 
-  @no_user
+  @no_user @wip
   Scenario: New user registration
     # Given a user named "cukeuser2" with password "tenders" does not exist
     When I go to the signup page
@@ -15,7 +15,7 @@ Feature: Versions view
     Then an unverified user named "cukeuser2" with password "tenders" should exist
     And I should be on the confirm email page
 
-  @user
+  @user @wip
   Scenario: Sign in/out
     Given a user named "cukeuser3" with password "tenders" and email "cukeuser3@youversion.com" exists
     And I am signed out

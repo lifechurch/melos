@@ -7,7 +7,7 @@
       - if current_auth
         %li#nav_primary_bookmarks{class: @nav == :bookmarks ? "highlighted" : ""}
           %a{:href => user_bookmarks_path(current_auth.user_id)}
-            %span Book-<br>marks
+            %span Bookmarks
       %li#nav_primary_plans
         %a{:href => '/reading-plans'}
           %span=t("plans title")

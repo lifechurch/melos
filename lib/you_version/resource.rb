@@ -89,11 +89,13 @@ module YouVersion
 
       def all(params = {})
         response = YvApi.get(list_path, params) do |errors|
-          raise ResourceError.new(errors)
+          if errors.length == 1 && [/^No(.*)found$/, /^"Labels not found"$/].detect { |r| r.match(errors.first["error"]) }
+            return []
+          else
+            raise ResourceError.new(errors)
+          end
         end
-        # puts "*"*80
         # pp response
-        # puts "*"*80
         # TODO: Switch to ResourceList here
         response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
       end
@@ -116,8 +118,8 @@ module YouVersion
         new(data).save(&block)
       end
 
-      def destroy(delete_options, &block)
-        post(delete_path, delete_options, &block)
+      def destroy(id, auth = nil, &block)
+        post(delete_path, {:id => id, :auth => auth}, &block)
       end
 
       attr_accessor :resource_attributes
@@ -181,7 +183,7 @@ module YouVersion
       end
 
       def has_many_remote(association_name)
-        define_method(association_name.to_s.pluralize) do |params = {}|
+        define_method(association_name.to_s.pluralize) do |params|
           associations.delete(association_name) if params[:refresh]
           
           association_class = association_name.to_s.classify.constantize
@@ -200,7 +202,7 @@ module YouVersion
     def initialize(data = {})
       @attributes = data
       @associations = {}
-      
+
       after_build
     end
 
@@ -212,16 +214,11 @@ module YouVersion
       id
     end
 
-    def delete_options
-      {id: id, auth: auth}
-    end
-
     def persist(resource_path)
       response = true
       response_data = nil
       
       token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
-
       response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }
         self.errors[:base] << new_errors
@@ -229,7 +226,7 @@ module YouVersion
         if block_given?
           yield errors
         end
-          
+
         response = false
       end
 
@@ -253,10 +250,8 @@ module YouVersion
         response, response_data = persist(resource_path)
 
         if response && ! self.persisted?
-          self.id = response_data.try(:id)
+          self.id = response_data.id if response_data.id
         end
-
-        # self.id = response.try(:id) unless response == false
       ensure
         self.persisted? ? after_update(response_data) : after_save(response_data)
       end
@@ -281,7 +276,7 @@ module YouVersion
       before_destroy
 
       begin
-        response = self.class.destroy(self.delete_options) do |errors|
+        response = self.class.destroy(self.id, self.auth) do |errors|
           new_errors = errors.map { |e| e["error"] }
           self.errors[:base] << new_errors
 

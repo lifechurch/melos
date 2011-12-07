@@ -5,12 +5,10 @@
   %ul
     - @bookmarks.first(5).each do |b|
       %li
-        %a{href: bible_path(b.reference.osis)}
-          - if b.title
-            %b= b.title
-            = " | #{b.reference.human}"
-          - else
-            %b= b.reference.human
+        %b= b.title
+        %br
+        - b.reference_list.each do |r|
+          = link_to r, bible_path(r)
         - if b.labels
           %span.separator |
           - b.labels.split(",").each do |l|

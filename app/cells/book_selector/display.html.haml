@@ -1,6 +1,18 @@
-%ul#book_selector
-	- @version.books.each do |k, v|
-		%li{class: k == @reference[:book] ? "selected" : ""}= link_to_unless_current v.human, bible_path(@reference.merge(book: k))
-%ul#chapter_selector{class: @reference[:book]}
-	- @version.books[@reference[:book]].chapter.each do |k, v|
-		%li{class: k == @reference[:chapter].to_s ? "selected" : ""}= link_to_unless_current k, bible_path(@reference.merge(chapter: k))
+#menu_book_chapter.dynamic_menu
+  %span.menu_arrow
+    &nbsp;
+  #menu_book
+    %header
+      =t("book")
+    .scroll
+      %ul
+        - @version.books.each do |k, v|
+          %li{class: k == @reference[:book] ? "selected" : ""}
+            %a{:href => bible_path(@reference.merge(book: k)), "data-book" => k, "data-version" => @version.osis, "data-chapters" => @version.books[k].chapters}=  v.human
+  #menu_chapter
+    %header
+      =t("chapter")
+    .scroll
+      %ol#chapter_selector{class: @reference[:book]}
+        - @version.books[@reference[:book]].chapter.each do |k, v|
+          %li{class: k == @reference[:chapter].to_s ? "selected" : ""}= link_to_unless_current k, bible_path(@reference.merge(chapter: k))

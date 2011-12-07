@@ -1,15 +1,20 @@
 %meta{:charset => 'utf-8'}
 %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
 %title
-  =t("youversion")
-  |
   = @title
+  = "|" if @title
+  =t("youversion")
+  
 
 <!--[if lt IE 9]>
 %script{:src => '/javascripts/html5.js'}
 <![endif]-->
 
 %link{:rel => 'stylesheet', :href => '/stylesheets/application.css'}
+
+<!--[if IE 9]>
+%link{:rel => 'stylesheet', :href => '/stylesheets/ie9.css'}
+<![endif]-->
 
 <!--[if IE 8]>
 %link{:rel => 'stylesheet', :href => '/stylesheets/ie8.css'}

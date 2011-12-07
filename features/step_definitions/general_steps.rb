@@ -34,3 +34,7 @@ end
 When /^I dump the host$/ do
   puts host
 end
+
+When /^I dump the path$/ do
+  puts URI.parse(current_url).path
+end

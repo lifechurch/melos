@@ -10,30 +10,30 @@ Feature: Bookmarks view (homepage)
   @bookmark
   Scenario: Showing bookmarks
     Given the following bookmarks exist:
-    | Username | Reference      | Title         | Labels        |
+    | Username           | Reference      | Title         | Labels        |
     | cukeuser_bookmark1 | gen.1.1.niv    | The Beginning | old,labeltext |
     | cukeuser_bookmark1 | matt.1.1-5.asv | New Testament | new,gospel    |
     When I go to the versions page
     And I follow "Bookmarks"
-    Then I should see a link to "The Beginning - Genesis 1:1 (NIV)"
+    Then I should see "The Beginning"
+    And I should see a link to "Matthew 1:1-5 (ASV)"
     And I should see "old"
     And I should see "labeltext"
-    And I should see a link to "New Testament - Matthew 1:1-5 (ASV)"
+    And I should see "New Testament"
     And I should see "gospel"
+    When I follow "Matthew 1:1-5 (ASV)"
+    Then I should be on the bible page "matt.1.asv"
 
-  @bookmark
-  Scenario: Showing my bookmarks
-    Given a user named "cukeuser_bookmark1" with password "tenders" and email "cukeuser_bookmark1@youversion.com" exists
-    And the following bookmarks exist:
-    | Username | Reference      | Title         | Labels        |
-    | cukeuser_bookmark1 | gen.1.1.niv    | The Beginning | old,labeltext |
-    | cukeuser_bookmark1 | matt.1.1-5.asv | New Testament | new,gospel    |
-    And I am logged in as "cukeuser_bookmark1" with password "tenders"
-    When I go to my bookmarks
-    Then I should see a link to "The Beginning - Genesis 1:1 (NIV)"
-    And I should see a link to "old"
-    And I should see a link to "labeltext"
-    And I should see a link to "New Testament - Matthew 1:1-5 (ASV)"
-    And I should see a link to "gospel"
-    When I click "old"
-    Then I should not see "New Testament"
+  Scenario: No bookmarks
+    Given a user named "emptyuser" exists
+    And I have beta access as "emptyuser"
+    When I go to the versions page
+    And I follow "Bookmarks"
+    And I should see "add a bookmark"
+    When I go to the bible page "gen.1.niv"
+    Then I should not see "Recent Bookmarks"
+
+  Scenario: Browse by label
+
+  Scenario: Pages
+

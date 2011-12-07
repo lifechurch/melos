@@ -65,13 +65,13 @@ en:
     my notes:                     "My Notes"
     all notes:                    "All Notes"
     community notes:              "Community Notes"
-    none exist blurb:             "Sorry, no notes here!"
     new note:                     "New Note"
     status field:                 "Note Status:"
     edit:                         "edit"
     delete:                       "delete this note"
     confirm delete:               "Are you sure?"
     write new:                    "Write New Note"
+    not found:                    "YouVersion allows you to associate video, audio, images, text, and links to other websites with any verse or series of verses in the Bible. It's a way to take part in the YouVersion community by sharing what you're learning and thinking as you engage with Scripture. Get started now by selecting a verse(s) in the Bible reader and adding your note. It's that easy."
   ref:
     choose book and chapter:      "Choose Book + Chapter"
     choose version:               "Choose Version"
@@ -92,6 +92,9 @@ en:
     confirm email:                "Thanks for registering! Please check your email and click the link to confirm."
     follow user:                  "Follow %{user}"
     user does not follow you:     "%{user} does not follow you"
+  bookmarks:
+    title:                        "Bookmarks"
+    not found:                    "Bookmarking enables you to remember where you were reading last, giving you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. In order to add a bookmark select the verse in the Bible reader and then click the bookmark button."
   plans:
     title:                        "Reading Plans"
     explore title:                "Explore Reading Plans"
@@ -100,7 +103,4 @@ en:
     start:                        "Start this Plan"
     length:                       "Plan Length"
     view sample:                  "View Sample of This Plan"
-    
-  
-
 

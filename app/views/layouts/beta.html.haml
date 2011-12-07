@@ -5,6 +5,8 @@
     = csrf_meta_tags
   %body
     #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
+      - flash.each do |key, msg|
+        %div{class: "flash_#{key}"}= msg
       #beta_header{:style => "text-align: center; margin-top: 40px;"}
         %img{:src => "/images/yv-bible-app.png"}
       #beta_wrapper{:style => "width: 400px; margin: 20px auto; text-align: center;"}
