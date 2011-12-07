@@ -9,7 +9,8 @@ class BookmarksController < ApplicationController
     else
       @bookmarks = @user.bookmarks
     end
-    @labels = Bookmark.labels_for_user(params[:user_id]).labels 
+    @labels = Bookmark.labels_for_user(params[:user_id])if Bookmark.labels_for_user(params[:user_id])
+    # TODO: LABELS should be a resourcelist!
   end
 
   def show_label

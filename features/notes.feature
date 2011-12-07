@@ -93,3 +93,10 @@ Feature: Notes view
     | Title           |
     | Public Note     |
     | Another Public  |
+
+  Scenario: No notes for a user
+    Given a user named "emptyuser" exists
+    And I have beta access as "emptyuser"
+    When I go to the versions page
+    And I follow "Notes"
+    Then I should see "take part in the YouVersion community"
