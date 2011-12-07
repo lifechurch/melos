@@ -24,6 +24,13 @@ Feature: Bookmarks view (homepage)
     When I follow "Matthew 1:1-5 (ASV)"
     Then I should be on the bible page "matt.1.asv"
 
+  Scenario: No bookmarks
+    Given a user named "no_bookmarks" exists
+    And I have beta access as "no_bookmarks"
+    When I go to the versions page
+    And I follow "Bookmarks"
+    And I should see "add a bookmark"
+
   Scenario: Browse by label
 
   Scenario: Pages

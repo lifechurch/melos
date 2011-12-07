@@ -90,9 +90,9 @@ describe Bookmark do
       bookmark = Bookmark.new(auth: @auth, version: "esv", reference: "matt.10.1", title: "I have lots of labels", labels: "alpha,beta,gamma", username: @auth.username)
       bookmark.save.should be_true
       labels = Bookmark.labels_for_user @auth.user_id
-      labels.labels.first.should be_a Hashie::Mash
-      labels.labels.detect { |l| l.label == "alpha" }.should_not be_nil
-      labels.labels.detect { |l| l.label == "beta" }.should_not be_nil
+      labels.first.should be_a Hashie::Mash
+      labels.detect { |l| l.label == "alpha" }.should_not be_nil
+      labels.detect { |l| l.label == "beta" }.should_not be_nil
     end
   end
 end

@@ -4,7 +4,6 @@ Given /^a user named "([^"]*)" exists$/ do |arg1|
     opts = {email: "#{arg1}@youversion.com", password: "tenders", agree: true, verified: true, username: arg1}
     new_user = User.new(opts)
     response = new_user.register
-    puts new_user.errors
     response.should be_true
     user = User.authenticate(arg1, "tenders")
   end
@@ -38,7 +37,6 @@ Given /^these notes exist:$/ do |table|
     auth = Hashie::Mash.new( {'user_id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
     note = Note.new(title: row['Title'], content: row['Content'], reference: row['References'], version: row['Version'], user_status: row['Status'].downcase, auth: auth)
     result = note.save
-    puts note.errors.full_messages
     result.should_not be_false
   end
 #     if @notes  

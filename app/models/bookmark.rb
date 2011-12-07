@@ -42,6 +42,7 @@ class Bookmark < YouVersion::Resource
     # self.reference = self.reference_list.first
   end
 
+
   def update(fields)
     Rails.logger.info("==  Attempting to merge #{fields} into #{self.attributes}")
     # In API version 2.3, only title, labels, and highlight_color can be updated
@@ -134,12 +135,20 @@ class Bookmark < YouVersion::Resource
       Rails.logger.info "API Error: Bookmark.labels_for_user(#{user_id}) got these errors: #{errors.inspect}"
       if errors.find{|g| g['error'] =~ /Labels not found/}
         # return empty hash to avoid raising exception
-        []
+        Hashie::Mash.new(labels: [], total:0) 
       else
         errors = errors.map { |ee| ee["error"] }
         raise YouVersion::ResourceError.new(errors)
       end
     end
+    if response.labels
+      @labels = ResourceList.new(response.labels)
+      @labels.total = response.total
+    else
+      @labels = ResourceList.new([])
+      @labels.total = 0
+    end
+    @labels
   end
 
   # Yeah, bite me

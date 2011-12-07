@@ -10,7 +10,8 @@ test: &test
   api_version: "2.4"
   memcache_server: localhost
 
-staging: *test
+staging:
+  <<: *test
   api_root: api.youversion.com
   api_referer: web-staging.youversion.com
   api_version: "2.4"
