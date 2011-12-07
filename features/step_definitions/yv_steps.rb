@@ -6,6 +6,11 @@ Given /^a user named "([^"]*)" exists$/ do |arg1|
     response = new_user.register
     response.should be_true
     user = User.authenticate(arg1, "tenders")
+    unless user
+      # ugh
+      sleep 3
+      user = User.authenticate(arg1, "tenders")
+    end
   end
   user.should be_a User
 end

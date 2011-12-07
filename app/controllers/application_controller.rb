@@ -2,7 +2,12 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
   helper_method :current_auth, :current_user, :last_read, :set_last_read, :current_version, :set_current_version, :bible_path, :current_avatar
-  before_filter :set_locale, :check_beta
+  before_filter :set_locale, :check_beta, :set_page
+
+  def set_page
+    puts "params is #{params.inspect}"
+    @page = (params[:page] || 1).to_i
+  end
 
   # Set locale
   def set_locale

@@ -33,7 +33,24 @@ Feature: Bookmarks view (homepage)
     When I go to the bible page "gen.1.niv"
     Then I should not see "Recent Bookmarks"
 
+
   Scenario: Browse by label
 
   Scenario: Pages
+    Given a user named "lotsa_bookmarks" exists
+    And I have beta access as "lotsa_bookmarks"
+    And "lotsa_bookmarks" has 50 bookmarks with the title "test bookmark"
+    When I go to the versions page
+    And I follow "Bookmarks"
+    Then I should see "#29 test bookmark"
+    And I should see "#30 test bookmark"
+    And I should not see "#1 test bookmark"
+    And I should not see "#2 test bookmark"
+    When I follow "Next Page"
+    Then I should see "#1 test bookmark"
+    And I should see "#2 test bookmark"
+    And I should not see "#29 test bookmark"
+    And I should not see "#30 test bookmark"
+
+
 

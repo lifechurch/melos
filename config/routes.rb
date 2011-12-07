@@ -6,10 +6,8 @@ YouversionWeb::Application.routes.draw do
   match 'bible(/:reference)' => 'references#show', :as => 'reference', :constraints => {:reference => /.*/}
   resources 'versions', :only => [:index, :show]
 
-  resources 'bookmarks'
-  match 'bookmarks/label/:label' => 'bookmarks#show_label', :as => 'bookmarks_label'
+  resources 'bookmarks', :except => [:index] 
 
-  resources 'notes'
   resources 'likes', :only => [:index]
   match 'notes/:id/like' => 'notes#like',    :as => 'like', :via => :put
 
@@ -17,8 +15,10 @@ YouversionWeb::Application.routes.draw do
   resources 'users', :except => [:new, :create] do
     resources 'notes'
     resources 'likes', :only => [:index]
-    resources 'bookmarks'
+    resources 'bookmarks', :only => [:index]
   end
+  resources 'notes', :except => [:index]
+  match 'notes' => 'notes#index', :as => 'all_notes'
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
   match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"

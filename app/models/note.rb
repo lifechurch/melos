@@ -17,8 +17,8 @@ class Note < YouVersion::Resource
   belongs_to_remote :user
   has_many_remote :likes
 
-  def self.for_reference(ref)
-    all(reference: ref.notes_api_string)
+  def self.for_reference(ref, params = {})
+    all(params.merge({reference: ref.notes_api_string}))
   end
 
   def self.for_user(user_id, params = {})

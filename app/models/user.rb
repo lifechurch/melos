@@ -87,16 +87,16 @@ class User < YouVersion::Resource
 #     Note.for_user(id, auth: auth)
 #   end
 #   
-  def notes
-    Note.for_user(self.id, auth: self.auth)
+  def notes(opts = {})
+    Note.for_user(self.id, opts.merge({auth: self.auth}))
   end
 # 
 #   def self.bookmarks(id, auth)
 #     Bookmark.for_user(id, auth: auth)
 #   end
   
-  def bookmarks
-    Bookmark.for_user(self.id)
+  def bookmarks(opts = {})
+    Bookmark.for_user(self.id, opts)
   end
 
   def likes

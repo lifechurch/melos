@@ -41,7 +41,9 @@ describe Note do
   
   describe ".all" do
     it 'returns true after finding all Notes for the user' do
-      @notes = Note.for_user(@auth.user_id, @auth).count.should > 0
+      @notes = Note.for_user(@auth.user_id, @auth)
+      @notes.count.should > 0
+      @notes.should be_a ResourceList
     end
 
     it 'returns true after finding all Notes' do

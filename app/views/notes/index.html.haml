@@ -31,5 +31,6 @@
           %p.mute.small.negative_gutter_top_half= link_to_references(note.reference_list) 
           %p= note.content
           %div{class: "status"}= note.user_status
+    = render "shared/pagination", resource_list: @notes
   - else
     %div{class: "none"}= t("notes.not found")
