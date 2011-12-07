@@ -30,6 +30,8 @@ Feature: Bookmarks view (homepage)
     When I go to the versions page
     And I follow "Bookmarks"
     And I should see "add a bookmark"
+    When I go to the bible page "gen.1.niv"
+    Then I should not see "Recent Bookmarks"
 
   Scenario: Browse by label
 
