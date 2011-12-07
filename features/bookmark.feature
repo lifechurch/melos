@@ -25,8 +25,8 @@ Feature: Bookmarks view (homepage)
     Then I should be on the bible page "matt.1.asv"
 
   Scenario: No bookmarks
-    Given a user named "no_bookmarks" exists
-    And I have beta access as "no_bookmarks"
+    Given a user named "emptyuser" exists
+    And I have beta access as "emptyuser"
     When I go to the versions page
     And I follow "Bookmarks"
     And I should see "add a bookmark"

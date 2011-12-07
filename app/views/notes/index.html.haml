@@ -23,7 +23,7 @@
           = link_to t("notes.my notes"), user_notes_path(current_user)
   - else
     %h1= t("notes.all notes")
-  - if @notes
+  - unless @notes.empty?
     %ul.big_list
       - @notes.each do |note|
         %li{id: note.id}
@@ -32,4 +32,4 @@
           %p= note.content
           %div{class: "status"}= note.user_status
   - else
-    %div{class: "none"}= t("notes.none exist blurb")
+    %div{class: "none"}= t("notes.not found")
