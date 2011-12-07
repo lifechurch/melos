@@ -22,7 +22,7 @@
             %li
               .float_left
                 %p.gutter_bottom_half
-                  %b= b.title
+                  %b{class: ("highlight" if b.highlight_color), style: ("background-color: ##{b.highlight_color}" if b.highlight_color)}= b.title
                   - b.reference_list.each do |r|
                     %p
                       %b

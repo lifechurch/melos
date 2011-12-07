@@ -13,6 +13,7 @@ class Note < YouVersion::Resource
   attribute :version
   attribute :user_avatar_url
   attribute :username
+  attribute :highlight_color
 
   belongs_to_remote :user
   has_many_remote :likes
