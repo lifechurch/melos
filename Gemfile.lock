@@ -99,6 +99,9 @@ GEM
       guard (>= 0.8.3)
     guard-rspec (0.5.4)
       guard (>= 0.8.4)
+    guard-spork (0.4.0)
+      guard (>= 0.8.4)
+      spork (>= 0.8.4)
     haml (3.1.3)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -230,6 +233,7 @@ GEM
       rubyzip
     sexp_processor (3.0.8)
     slop (2.1.0)
+    spork (0.8.5)
     sprockets (2.1.1)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -273,6 +277,7 @@ DEPENDENCIES
   guard-bundler
   guard-cucumber
   guard-rspec
+  guard-spork
   haml-rails (~> 0.3.4)
   hashie
   heroku_san
@@ -287,6 +292,7 @@ DEPENDENCIES
   rspec-rails
   ruby-debug19
   sass-rails (~> 3.1.0)
+  spork
   therubyracer
   turn (< 0.8.3)
   uglifier

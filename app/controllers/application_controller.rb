@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale, :check_beta, :set_page
 
   def set_page
-    puts "params is #{params.inspect}"
     @page = (params[:page] || 1).to_i
   end
 
