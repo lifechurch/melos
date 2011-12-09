@@ -14,5 +14,15 @@ Given /^the following bookmarks exist:$/ do |table|
     result.should_not be_false
   end
   # puts "Also, @user is #{pp @user.inspect}"
+end
 
+Given /^"([^"]*)" has ([0-9]*) bookmarks with the title "([^"]*)"$/ do |username, number, title|
+  number = number.to_i
+  (1..number).each do |n|
+    puts "creating ##{n}..."
+    bk = Bookmark.new(reference: "gen.1.1.asv", title: "##{n} #{title}", auth: Hashie::Mash.new(username: username,  password: "tenders"))
+    result = bk.save
+    # puts bk.errors.full_messages
+    result.should_not be_false
+  end
 end

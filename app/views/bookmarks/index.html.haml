@@ -22,7 +22,7 @@
             %li
               .float_left
                 %p.gutter_bottom_half
-                  %b= b.title
+                  %b{class: ("highlight" if b.highlight_color), style: ("background-color: ##{b.highlight_color}" if b.highlight_color)}= b.title
                   - b.reference_list.each do |r|
                     %p
                       %b
@@ -37,8 +37,9 @@
                       - # TODO: Label link
               .float_right
                 %p
-                  = link_to('edit', edit_user_bookmark_path(current_auth.user_id, b.id)) 
+                  = link_to('edit', edit_bookmark_path(b.id)) 
                   = link_to('delete', bookmark_path(b.id), :confirm => 'Are you sure?', :method => :delete) 
                   = b.created_as_date
+        = render "shared/pagination", resource_list: @bookmarks
   - else
     %p= t('bookmarks.not found')

@@ -5,12 +5,11 @@ class BookmarksController < ApplicationController
   def index
     @user = User.find(params[:user_id].to_i, auth: current_auth) # TODO : can't wait to port this to a Resource
     if params[:label]
-      @bookmarks = Bookmark.for_label(params[:label], {:user_id => params[:user_id]})
+      @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => params[:user_id]})
     else
-      @bookmarks = @user.bookmarks
+      @bookmarks = @user.bookmarks(page: @page)
     end
     @labels = Bookmark.labels_for_user(params[:user_id])if Bookmark.labels_for_user(params[:user_id])
-    # TODO: LABELS should be a resourcelist!
   end
 
   def show_label

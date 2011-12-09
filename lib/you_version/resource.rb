@@ -97,7 +97,11 @@ module YouVersion
         end
         # pp response
         # TODO: Switch to ResourceList here
-        response.send(api_path_prefix).map {|data| new(data.merge(:auth => params[:auth]))}
+        list = ResourceList.new
+        list.total = response.total
+        response.send(api_path_prefix).each {|data| list << new(data.merge(:auth => params[:auth]))}
+        list
+
       end
 
       # Resource list, but just return whatever the API gives us.

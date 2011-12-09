@@ -100,3 +100,19 @@ Feature: Notes view
     When I go to the versions page
     And I follow "Notes"
     Then I should see "take part in the YouVersion community"
+
+  Scenario: Pages
+    Given a user named "lotsa_notes" exists
+    And I have beta access as "lotsa_notes"
+    And "lotsa_notes" has 50 notes with the title "test note"
+    When I go to the versions page
+    And I follow "Notes"
+    Then I should see "#29 test note"
+    And I should see "#30 test note"
+    And I should not see "#1 test note"
+    And I should not see "#2 test note"
+    When I follow "Next Page"
+    Then I should see "#1 test note"
+    And I should see "#2 test note"
+    And I should not see "#29 test note"
+    And I should not see "#30 test note"

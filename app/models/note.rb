@@ -13,12 +13,13 @@ class Note < YouVersion::Resource
   attribute :version
   attribute :user_avatar_url
   attribute :username
+  attribute :highlight_color
 
   belongs_to_remote :user
   has_many_remote :likes
 
-  def self.for_reference(ref)
-    all(reference: ref.notes_api_string)
+  def self.for_reference(ref, params = {})
+    all(params.merge({reference: ref.notes_api_string}))
   end
 
   def self.for_user(user_id, params = {})

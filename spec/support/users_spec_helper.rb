@@ -6,6 +6,11 @@ module UsersSpecHelper
       response = new_user.register
       response.should be_true
       user = User.authenticate(opts[:username], opts[:password])
+      unless user
+        # ugh
+        sleep 3
+        user = User.authenticate(opts[:username], opts[:password])
+      end
     end
     user.should be_a User
     user
