@@ -2,8 +2,8 @@ module UsersSpecHelper
   def ensure_user(opts = {})
     unless user = User.authenticate(opts[:username], opts[:password])
       opts = {email: "#{opts[:username]}@youversion.com", password: "tenders", agree: true, verified: true}.merge opts
-      new_user = User.new(opts)
-      response = new_user.register
+      puts "ensure opts are #{opts}"
+      response = User.register(opts)
       response.should be_true
       user = User.authenticate(opts[:username], opts[:password])
       unless user
