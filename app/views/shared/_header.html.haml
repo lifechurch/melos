@@ -7,14 +7,14 @@
         - if current_auth
           %a#header_profile_trigger{:href => '#'}
             %span
-              /%img{:src => current_avatar}
+              %img{:src => current_avatar}
               =current_auth.username
           %ol#header_profile_menu
             %li
               %a{:href => '#'}
                 =t("settings")
             %li
-              %a{:href => '#'}
+              %a{:href => user_path(current_auth.user_id)}
                 =t("profile")
             %li
               %a{:href => sign_out_path}
