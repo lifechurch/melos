@@ -23,10 +23,11 @@
             = render '/shared/sidebar'
       = render '/shared/footer'
     - if @reader_menus == true
-      /= render '/shared/menu_book_chapter'
+      -# = render '/shared/menu_book_chapter'
       = render_cell :book_selector, :display, reference: @reference
       -# = render '/shared/menu_version'
       = render_cell :version_selector, :display, {reference: @reference}
       = render '/shared/menu_bookmark'
+      = render '/shared/menu_settings'
       = render '/shared/modal_single_verse'
     = render '/shared/javascripts'

@@ -265,8 +265,11 @@ var YV = (function($, window, document, undefined) {
             left = offset.left - menu.outerWidth() + 36;
           }
           else {
-            if (el.hasClass('button')) {
+            if (el.attr('id') === 'verses_selected_button') {
               left = offset.left - 1;
+            }
+            else if (el.hasClass('button')) {
+              left = offset.left - 6;
             }
             else {
               left = offset.left + parseInt(icon.css('border-left-width'), 10) - 8;
@@ -325,7 +328,7 @@ var YV = (function($, window, document, undefined) {
           hide_all_menus();
         });
       },
-      // YV.init.fixed_widget_last
+      // YV.init.fixed_widget_header
       fixed_widget_header: function() {
         var header = $('.widget header');
 
@@ -465,6 +468,8 @@ var YV = (function($, window, document, undefined) {
           return;
         }
 
+        var clear_verses = $('#clear_selected_verses');
+        var li = $('#li_selected_verses');
         var button = $('#verses_selected_button');
         var count = $('#verses_selected_count');
         var input = $('.verses_selected_input');
@@ -497,10 +502,10 @@ var YV = (function($, window, document, undefined) {
           });
 
           if (total > 0) {
-            button.removeClass(hide);
+            li.removeClass(hide);
           }
           else {
-            button.addClass(hide);
+            li.addClass(hide);
           }
 
           count.html(total);
@@ -525,6 +530,13 @@ var YV = (function($, window, document, undefined) {
         button.click(function() {
           // form.submit();
           // return false;
+        });
+
+        clear_verses.click(function() {
+          $('.verse.selected').removeClass('selected');
+          parse_verses();
+          this.blur();
+          return false;
         });
       },
       // YV.init.profile_menu
@@ -570,6 +582,24 @@ var YV = (function($, window, document, undefined) {
 
         $(window).resize(function() {
           hide_profile_menu();
+        });
+      },
+      // YV.init.user_settings
+      user_settings: function() {
+        var radio = $('.radio_user_setting');
+        var article = $('#main article');
+
+        if (!radio.length) {
+          return;
+        }
+
+        radio.click(function() {
+          var el = $(this);
+          var font = el.attr('data-setting-font');
+          var size = el.attr('data-setting-size');
+
+          font && article.attr('data-setting-font', font);
+          size && article.attr('data-setting-size', size);
         });
       }
     }

@@ -13,15 +13,18 @@
       %li.gutter_right_quarter
         = @reference.ref_string
       %li
-        %a#menu_book_chapter_trigger.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+        %a.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
           %span=t("ref.choose book and chapter")
       %li.separator
-        %a#menu_version_trigger.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
           %b= @reference.version_string
           %span=t("ref.choose version")
     %ul.float_right
-      %li
-        %a#verses_selected_button.dynamic_menu_trigger.button.hide{:href => '#menu_bookmark', :title => t("ref.share")}
+      %li#li_selected_verses.hide
+        %a#clear_selected_verses.button{:href => '#', :title => 'Clear Selected Verses'}
+          %span.icon_x
+            Clear Selected Verses
+        %a#verses_selected_button.dynamic_menu_trigger.button{:href => '#menu_bookmark', :title => t("ref.share")}
           %b.icon_share
             =t("ref.selected")
             %sup#verses_selected_count
@@ -29,9 +32,9 @@
         %form{action: '', id: 'verses_selected_form', method: 'get'}
           %input.verses_selected_input{name:'verses', type: 'hidden', value: ''}
       %li
-        %a.button{:href => '#', :title => t("ref.preferences")}
-          %span.icon_preferences
-            =t("ref.preferences")
+        %a#user_settings_button.button.dynamic_menu_trigger{:href => '#menu_settings', :title => t("ref.settings")}
+          %span.icon_settings
+            =t("ref.settings")
       %li
         %a.button{:href => '#', :title => t("ref.listen")}
           %span.icon_listen

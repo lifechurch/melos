@@ -17,23 +17,23 @@
   overflow: hidden
   position: relative
 
-#main article:after
-  +round_top
-  +box-shadow(#f2f1ef 0 -4px 0 0)
-  +background-image(linear-gradient(#fff, rgba(#fff, 0)))
-  border: 1px solid #cbc9cf
-    bottom: 0
-  content: ''
-  margin-left: -31px
-  width: 598px
-  height: 30px
-  position: fixed
-  top: 82px
-  z-index: 1
-  pointer-events: none
+  &:after
+    +round_top
+    +box-shadow(#f2f1ef 0 -4px 0 0)
+    +background-image(linear-gradient(#fff, rgba(#fff, 0)))
+    border: 1px solid #cbc9cf
+      bottom: 0
+    content: ''
+    margin-left: -31px
+    width: 598px
+    height: 30px
+    position: fixed
+    top: 82px
+    z-index: 1
+    pointer-events: none
 
-.no_sidebar #main article:after
-  width: 908px
+  .no_sidebar &:after
+    width: 908px
 
 #main.main_reader article
   padding: 40px 70px 45px
@@ -118,6 +118,19 @@
   left: 28px
   bottom: -6px
 
+//
+// Clear selected verses button.
+//
+
+#clear_selected_verses
+  +border-right-radius(0)
+  float: left
+
+#clear_selected_verses + .button
+  +border-left-radius(0)
+  border-left: 0
+  float: left
+
 // `Reader Header
 //----------------------------------------------------------------------------------------------------
 
@@ -159,6 +172,7 @@
   font-size: 12px
   padding: 30px 30px 0 195px
   position: relative
+  min-height: 170px
 
 .top_section + .header_tabs
   +round_top_none
@@ -245,7 +259,7 @@
 .verse + .verse
   margin-left: 3px
 
-.verseno
+.verse > strong:first-child
   +round
   +background-image(linear-gradient(#eee, #ddd))
   background-color: #eee
@@ -328,10 +342,10 @@
   zoom: 1
 
 .callout_blue,
-.callout_green,
-.highlight
+.callout_green
   color: $body_text
   padding: 5px 10px
+  text-decoration: none
 
 .callout_blue:hover,
 .callout_green:hover
