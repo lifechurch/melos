@@ -14,13 +14,15 @@
         = @reference.ref_string
       %li
         %a.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
-          %span=t("ref.choose book and chapter")
+          %span
+            =t("ref.choose book and chapter")
       %li.separator
         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
-          %b= @reference.version_string
-          %span=t("ref.choose version")
-    %ul.float_right
-      %li#li_selected_verses.hide
+          %b
+            = @reference.version_string
+          %span
+            =t("ref.choose version")
+      %li#li_selected_verses.separator.hide
         %a#clear_selected_verses.button{:href => '#', :title => 'Clear Selected Verses'}
           %span.icon_x
             Clear Selected Verses
@@ -29,30 +31,44 @@
             =t("ref.selected")
             %sup#verses_selected_count
               0
+        -# Submit via GET to share verses...
         %form{action: '', id: 'verses_selected_form', method: 'get'}
           %input.verses_selected_input{name:'verses', type: 'hidden', value: ''}
-      %li
-        %a#user_settings_button.button.dynamic_menu_trigger{:href => '#menu_settings', :title => t("ref.settings")}
+    %ul.float_right
+      %li.show_in_parallel_mode
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
+          %b
+            = @reference.version_string
+          %span
+            =t("ref.choose version")
+      %li.hide_in_parallel_mode
+        %a.button.dynamic_menu_trigger{:href => '#menu_settings', :title => t("ref.settings")}
           %span.icon_settings
             =t("ref.settings")
-      %li
+      %li.hide_in_parallel_mode
         %a.button{:href => '#', :title => t("ref.listen")}
           %span.icon_listen
             =t("ref.listen")
-      %li
-        %a.button{:href => '#', :title => t("ref.parallel")}
-          %span.icon_parallel
-            =t("ref.parallel")
-      %li
-        %a.button{:href => '#', :id => "button_full_screen", :title => t("ref.full screen")}
+      %li.hide_in_parallel_mode
+        %a.button#button_full_screen{:href => '#', :title => t("ref.full screen")}
           %span.icon_full_screen
             =t("ref.full screen")
+      %li.float_right_in_parallel_mode
+        %a#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
+          %span.icon_parallel
+            =t("ref.parallel")
 
 %article{"data-book" => @reference[:book].to_s, "data-chapter" => @reference[:chapter].to_s, "data-version" => @reference[:version].to_s}
   = link_to(@reference.previous, bible_path(@reference.previous), class: "nav_prev") if @reference.previous
   = link_to(@reference.next, bible_path(@reference.next), class: "nav_next") if @reference.next
-  - @reference.contents.each do |r|
-    = r.html_safe
+  #version_primary
+    - @reference.contents.each do |r|
+      = r.html_safe
+  -# TODO: Make boom sauce, to compliment the awesome sauce.
+  -# Aka: Make this thing output a secondary Bible version, KJV or sumthin'.
+  #version_secondary
+    - @reference.contents.each do |r|
+      = r.html_safe
 
 %footer
   %p

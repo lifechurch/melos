@@ -87,6 +87,29 @@ var YV = (function($, window, document, undefined) {
           }
         });
       },
+      // YV.init.read_parallel
+      read_parallel: function() {
+        var button = $('#button_read_parallel');
+
+        if (!button.length) {
+          return;
+        }
+
+        button.click(function() {
+          if (HTML.hasClass('parallel_mode')) {
+            HTML.removeClass('parallel_mode').removeClass('full_screen');
+            YV.misc.kill_widget_spacers();
+            YV.init.fixed_widget_header();
+            YV.init.fixed_widget_last();
+          }
+          else {
+            HTML.addClass('parallel_mode').addClass('full_screen');
+          }
+
+          this.blur();
+          return false;
+        });
+      },
       // YV.init.full_screen
       full_screen: function() {
         var button = $('#button_full_screen');
@@ -96,7 +119,7 @@ var YV = (function($, window, document, undefined) {
         }
 
         if (IE7 || IE8 || IE9) {
-          $('#main article > *:last-child').addClass('ie_last_child');
+          $('#main article > div *:last-child').addClass('ie_last_child');
         }
 
         button.click(function() {
@@ -481,7 +504,7 @@ var YV = (function($, window, document, undefined) {
         var hide = 'hide';
 
         function parse_verses() {
-          var total = $('.verse.' + flag).length;
+          var total = $('#version_primary .verse.' + flag).length;
 
           // Zero out value.
           input.val('');
@@ -516,12 +539,15 @@ var YV = (function($, window, document, undefined) {
         // Watch for verse selection.
         verse.click(function() {
           var el = $(this);
+          var verse_id = el.attr('class').replace('verse', '').replace('selected', '').replace(/\s+/, '');
+
+          verse_id = $('.' + verse_id);
 
           if (el.hasClass(flag)) {
-            el.removeClass(flag);
+            verse_id.removeClass(flag);
           }
           else {
-            el.addClass(flag);
+            verse_id.addClass(flag);
           }
 
           parse_verses();
