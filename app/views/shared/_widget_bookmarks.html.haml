@@ -1,6 +1,6 @@
 .widget
   %header
-    %a.count{href: user_bookmarks_path(current_user.id)}= @bookmarks.total
+    %a.count{href: user_bookmarks_path(current_auth.user_id)}= @bookmarks.total
     %span.header_icon_bookmark= t('recent bookmarks')
   %ul
     - @bookmarks.first(5).each do |b|

@@ -33,7 +33,6 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test, :development do
   # Pretty printed test output
@@ -60,4 +59,5 @@ group :development do
   gem 'guard-cucumber'
   gem 'guard-bundler'
   gem 'guard-spork'
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end

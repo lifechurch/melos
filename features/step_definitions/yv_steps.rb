@@ -68,10 +68,17 @@ end
 Given /^these users exist:$/ do |table|
   @rows = table.hashes
   @rows.each do |r|
-    user = User.authenticate(r['username'], r['password'])
+    user = User.authenticate(r['username'], "tenders")
     unless user.class == User
-      User.new({username: r['username'], password: r['password'], email: r['email address'], verified: true, agree: true }).register
-      user = User.authenticate(r['username'], r['password'])
+      resp = User.register({username: r['Username'], password: "tenders", email: "#{r['Username']}@youversion.com", verified: true, agree: true })
+      resp.should_not be_false
+      
+      user = User.authenticate(r['Username'], "tenders")
+      unless user
+        # ugh
+        sleep 3
+        user = User.authenticate(r['Username'], "tenders")
+      end
     end
     user.should be_a User
   end

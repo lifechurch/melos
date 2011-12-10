@@ -6,10 +6,10 @@ module ReferenceHelper
 #     Rails.logger.info("...and it looks like [#{refs}]")
 #     Rails.logger.info("Also, caller looks like this: #{caller[0]}")
     case refs
-    when Array
-      refs.map { |r| link_to(r, bible_path(r))}.join(", ").html_safe
     when Reference
       link_to(refs, bible_path(refs))
+    else
+      refs.map { |r| link_to(r, bible_path(r))}.join(", ").html_safe
     end
   end
 end

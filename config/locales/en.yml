@@ -92,7 +92,12 @@ en:
     confirm email:                "Thanks for registering! Please check your email and click the link to confirm."
     follow user:                  "Follow %{user}"
     user does not follow you:     "%{user} does not follow you"
+    recent activity:              "Recent Activity"
+    started following:            "Started following"
   bookmarks:
     title:                        "Bookmarks"
     not found:                    "Bookmarking enables you to remember where you were reading last, giving you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. In order to add a bookmark select the verse in the Bible reader and then click the bookmark button."
-
+  badges:
+    earned a badge:               "Earned a badge"
+    my badges:                    "My Badges"
+    user badges:                  "%{user}'s Badges"

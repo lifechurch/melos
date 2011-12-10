@@ -4,7 +4,8 @@ describe User do
 #  use_vcr_cassette "user"
   before :all do
     @params = { email: "testuser@youversion.com", username: "testuser", password: "tenders", agree: TRUE, verified: TRUE, locale: "en_US" }
-    @testuser = ensure_user username: "testuser", password: "tenders", email: "testuser@youversion.com"
+    @testuser = ensure_user({username: "testuser", password: "tenders"})
+    @auth = Hashie::Mash.new({user_id: @testuser.id, username: "testuser", password: "tenders"})
   end
 
 #   describe "#attributes" do
@@ -34,17 +35,16 @@ describe User do
     end
   end
 
-  describe "#register" do
+  describe ".register" do
     it "returns true for creating a user with valid params" do
       User.authenticate("testuser999", "tenders").should be_false
-      user = User.new(email: "testuser999@youversion.com", username: "testuser999", password: "tenders", agree: true, verified: true)
-      response = user.register
-      response.should be_true
+      result = User.register(email: "testuser999@youversion.com", username: "testuser999", password: "tenders", agree: true, verified: true)
+      result.should be_true
     end
 
     it "returns false for invalid params" do
-      bad_user = User.new({email: "blah@stuff.com"})
-      bad_user.register.should be_false
+      bad_user = User.register({email: "blah@stuff.com"})
+      bad_user.should_not === true 
     end
   end
 
@@ -65,6 +65,16 @@ describe User do
 
     it "finds the current user" do
 
+    end
+  end
+
+  describe "#recent_activity" do
+    it "returns objects created by the user" do
+      Bookmark.new(reference: "gen.1.1.asv", title: "community bookmark", auth: @auth).save.should be_true
+      Note.new(reference: "gen.1.1.asv", title "community note", content: "note", auth: @auth).save.should be_true
+      re_act = @testuser.recent_activity
+      re_act.detect { |e| e.title == "community bookmark" if e.respond_to?("title") }.should_not be_nil
+      re_act.detect { |e| e.title == "community note" if e.respond_to?("title") }.should_not be_nil
     end
   end
 end
