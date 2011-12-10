@@ -1,9 +1,9 @@
-- @title = t("reader")
+- @title = "#{@reference.ref_string} #{@reference.version_string}"
 - @reader_menus = true
 - @is_reader = true
 
 - content_for :sidebar do
-  = render '/shared/widget_bookmarks'
+  = render '/shared/widget_bookmarks' unless @bookmarks.empty?
   = render_cell :notes_list_widget, :display, notes: @notes, title: t("notes.community notes")
   = render '/shared/widget_ad_bible_app'
 

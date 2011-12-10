@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.authenticate(params[:username], params[:password])
-    puts user
     if user
       cookies.permanent.signed[:a] = user.id
       cookies.permanent.signed[:b] = user.username

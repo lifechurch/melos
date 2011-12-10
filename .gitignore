@@ -5,5 +5,6 @@ log/*
 .idea/*
 bin/*
 *.swp
+*.swo
 *~
 /.sass-cache/

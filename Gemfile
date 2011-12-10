@@ -41,12 +41,7 @@ group :test, :development do
   gem 'cucumber-rails', "~> 0.5.0.beta1"
   gem 'rspec-cells'
   gem 'capybara', "~> 1.0.0.beta1"
-  # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  gem 'guard'
-  gem 'guard-rspec'
   gem 'rspec-rails'
-  gem 'guard-cucumber'
-  gem 'guard-bundler'
   gem 'heroku_san'
   gem 'capistrano'
   gem 'capistrano-ext'
@@ -58,4 +53,11 @@ end
 
 group :development do
   gem 'pry'
+  # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'spork'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-bundler'
+  gem 'guard-spork'
 end

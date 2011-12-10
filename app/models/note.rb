@@ -1,6 +1,8 @@
 class Note < YouVersion::Resource
-  attr_accessor :references
 
+  attr_accessor :reference_list
+
+  attribute :id
   attribute :reference
   attribute :title
   attribute :content_text
@@ -8,15 +10,16 @@ class Note < YouVersion::Resource
   attribute :published
   attribute :user_status
   attribute :share_connections
-  attribute :version, Version
+  attribute :version
   attribute :user_avatar_url
   attribute :username
+  attribute :highlight_color
 
   belongs_to_remote :user
   has_many_remote :likes
 
-  def self.for_reference(ref)
-    all(reference: ref.notes_api_string)
+  def self.for_reference(ref, params = {})
+    all(params.merge({reference: ref.notes_api_string}))
   end
 
   def self.for_user(user_id, params = {})
@@ -36,53 +39,36 @@ class Note < YouVersion::Resource
   def before_save
     @original_content = self.content
     self.content = self.content_as_xml
-    unless self.reference.is_a?(String)
-      self.reference = [self.reference].flatten.compact.map(&:osis_noversion).join("%2b")
+    if self.reference.empty?
+      self.reference_list = ReferenceList.new("")
+    else
+      self.reference_list = self.reference.class == ReferenceList ? self.reference : ReferenceList.new(self.reference)
+      self.version = self.reference_list.first[:version] if self.reference_list.first[:version]
     end
+    self.version = self.version.osis if self.version.class == Version
+    self.reference = self.reference_list.to_api_string
   end
 
   def after_save(response)
     self.content = @original_content
     if response
-      case self.reference
-      when Array
-        self.reference = self.reference.map { |r| Reference.new("#{r.osis.downcase}.#{response.version}") }
-      when String
-        self.reference = [Reference.new("#{self.reference.downcase}.#{response.version}")]
-      end
-    end
-  end
-
-  def prep_reference_for_persist
-    if self.reference.is_a?(Hash) or (self.reference.is_a?(Enumerable) && self.reference.first.is_a?(Hash))
-      [self.reference].flatten.map(&:osis).join('%2b')
-    else
-      unless self.reference.is_a?(String)
-        [self.reference].flatten.compact.map(&:osis_noversion).join("%2b")
-      end
-    end
-  end
-
-  def before_update
-    @original_content = self.content
-    self.content = self.content_as_xml
-    # If the format of self.reference needs changing, change it
-    if (mod_reference = prep_reference_for_persist)
-      self.reference = mod_reference
-    end
-  end
-
-  def after_update(response)
-    self.content = @original_content
-    if response
-      self.reference = Reference.new("#{Model::hash_to_osis(response.reference)}.#{response.version}")
+      self.reference = ReferenceList.new(response.reference, response.version)
+      self.version = Version.find(response.version)
     end
   end
 
   def after_build
     self.content = self.content_text unless self.content_text.blank?
-
-    self.reference = self.reference.map { |n| Reference.new("#{n.osis}.#{self.version.osis}") } if self.reference
+    if self.reference
+      self.reference_list = ReferenceList.new(self.reference, self.version)
+    else
+      self.reference_list = ReferenceList.new("")
+    end
+    self.version = Version.find(self.version) if self.version
   end
 
+#   def update(fields)
+#     self.version = Version.find(fields[:version]) if fields[:version]
+#     self.reference = ReferenceList.new(fields[:reference], self.version) if fields[:reference]
+#   end
 end

@@ -1,4 +1,5 @@
 module NavigationHelpers
+  include ApplicationHelper
   # Maps a name to a path. Used by the
   #
   #   When /^I go to (.+)$/ do |page_name|
@@ -11,7 +12,7 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     when /^the bible page \"(.*)\"$/
-      bible_path(reference: $1)
+      bible_path(Reference.new($1))
     when /^the versions page$/
       versions_path
     when /^the signup page$/

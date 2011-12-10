@@ -3,40 +3,43 @@
 
 
 %article
-  %h1= t('bookmarks')
-  .split_pane
-    .split_pane_sidebar
-      %dl.labels_menu
-        %dt
-          = t('labels')
-        %dd{class: params[:label] == nil ? "highlighted" : ""}
-          %b
-            %a{href: user_bookmarks_path(@user)}= t('all')
-        - @labels.each do |l|
-          %dd{class: params[:label] == l.label ? "highlighted" : ""}
-            = link_to "#{l.label} (#{l.total})", user_bookmarks_path(@user.id, label: l.label)
-    .split_pane_content
-      %ul.big_list
-        - @bookmarks.each do |b|
-          %li
-            .float_left
-              %p.gutter_bottom_half
-                %b= b.title
-                - b.reference.each do |r|
-                  %p
-                    %b
-                      %a{href: bible_path(r)}= r
-                    %br
-                    = r.contents[0]
-              - if b.labels
-                %p.small
-                  - b.labels.split(",").each do |l|
-                    - #TODO: split labels in model
-                    %a{href: "#"}= l
-                    - # TODO: Label link
-            .float_right
-              %p
-                = link_to('edit', edit_user_bookmark_path(current_auth.user_id, b.id)) 
-                = link_to('delete', bookmark_path(b.id), :confirm => 'Are you sure?', :method => :delete) 
-                = b.created_as_date
-
+  %h1= t('bookmarks.title')
+  - unless @bookmarks.empty?
+    .split_pane
+      .split_pane_sidebar
+        %dl.labels_menu
+          %dt
+            = t('labels')
+          %dd{class: params[:label] == nil ? "highlighted" : ""}
+            %b
+              %a{href: user_bookmarks_path(@user)}= t('all')
+          - @labels.each do |l|
+            %dd{class: params[:label] == l.label ? "highlighted" : ""}
+              = link_to "#{l.label} (#{l.total})", user_bookmarks_path(@user.id, label: l.label)
+      .split_pane_content
+        %ul.big_list
+          - @bookmarks.each do |b|
+            %li
+              .float_left
+                %p.gutter_bottom_half
+                  %b{class: ("highlight" if b.highlight_color), style: ("background-color: ##{b.highlight_color}" if b.highlight_color)}= b.title
+                  - b.reference_list.each do |r|
+                    %p
+                      %b
+                        %a{href: bible_path(r)}= r
+                      %br
+                      = r.contents[0]
+                - if b.labels
+                  %p.small
+                    - b.labels.split(",").each do |l|
+                      - #TODO: split labels in model
+                      %a{href: "#"}= l
+                      - # TODO: Label link
+              .float_right
+                %p
+                  = link_to('edit', edit_bookmark_path(b.id)) 
+                  = link_to('delete', bookmark_path(b.id), :confirm => 'Are you sure?', :method => :delete) 
+                  = b.created_as_date
+        = render "shared/pagination", resource_list: @bookmarks
+  - else
+    %p= t('bookmarks.not found')

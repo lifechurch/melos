@@ -2,7 +2,8 @@ class Reference
   extend ActiveModel::Naming
   include ActiveModel::Conversion
 
-  def initialize(ref)
+  def initialize(ref, version = nil)
+    # puts "In Reference.initialize(#{ref})"
     @api_data = {}
     case ref
     when String
@@ -10,7 +11,11 @@ class Reference
     when Hash
       @ref = ref
     end
-      # raise "Tried to create an invalid reference. Make sure you're passing an OSIS string or hash with at least a book name, chapter, and version." unless (@ref[:book] && @ref[:chapter] && @ref[:version])
+
+    # Only user version param if 'ref' didn't include version info
+    @ref[:version] ||= version
+
+    # raise "Tried to create an invalid reference. Make sure you're passing an OSIS string or hash with at least a book name, chapter, and version." unless (@ref[:book] && @ref[:chapter] && @ref[:version])
   end
 
   def raw_hash
@@ -85,7 +90,7 @@ class Reference
   def osis
     @ref.to_osis_string
   end
-  
+
   def osis_noversion
     @ref.to_osis_string_noversion
   end
@@ -100,9 +105,9 @@ class Reference
   end
 
   def to_api
-    
+
   end
-  
+
   def human
 
   end
@@ -132,6 +137,3 @@ class Reference
     end
   end
 end
-
-
-

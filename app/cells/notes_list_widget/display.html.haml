@@ -1,22 +1,23 @@
-%div.widget
-  %header
-    %a.count= @total
-    %span.header_icon_note= @title 
-  %section
-    %table
-      %tfoot
-        %tr
-          %th
-          %td.align_right
-            %a.more_arrow= link_to "See all #{@total} notes", @link
-
-      %tbody
-        - @notes.first(4).each do |note|
+- unless @notes.empty?
+  %div.widget
+    %header
+      %a.count= @notes.total
+      %span.header_icon_note= @title 
+    %section
+      %table
+        %tfoot
           %tr
             %th
-              %a
-                %img.avatar_small{src: note.user_avatar_url.px_24x24} 
-            %td
-              %a= link_to note.title, note_path(note.id)
-              %p= truncate(note.content_text, length: 100, separator: " ")
-                
+            %td.align_right
+              %a.more_arrow= link_to "See all #{@notes.total} notes", @link
+
+        %tbody
+          - @notes.first(4).each do |note|
+            %tr
+              %th
+                %a
+                  %img.avatar_small{src: note.user_avatar_url.px_24x24} 
+              %td
+                %a= link_to note.title, note_path(note.id)
+                %p= truncate(note.content_text, length: 100, separator: " ")
+                  
