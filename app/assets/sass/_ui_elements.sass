@@ -185,20 +185,59 @@
   color: #fff
   text-shadow: #000 0 -1px 0
 
+//
+// Clear selected verses button.
+//
+
+#clear_selected_verses
+  +border-right-radius(0)
+  float: left
+
+#clear_selected_verses + .button
+  +border-left-radius(0)
+  border-left: 0
+  float: left
+
+#clear_selected_verses + .button:after
+  content: ''
+  background: #fff
+  color: transparent
+  font-size: 0
+  overflow: hidden
+  width: 1px
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+
+#clear_selected_verses + .button:active:after,
+.li_active #clear_selected_verses + .button:after
+  background: rgba(#fff, 0.4)
+
 // `Icons
 //----------------------------------------------------------------------------------------------------
 
-.icon_preferences
+.icon_x
   background:
-    image: url(../images/icon_preferences.png)
+    image: url(../images/icon_x.png)
 
 .icon_listen
   background:
     image: url(../images/icon_listen.png)
+    position: center 3px !important
+  &:active,
+  &:focus,
+  .li_active &
+    background:
+      position: center -47px !important
 
 .icon_parallel
   background:
     image: url(../images/icon_parallel.png)
+    position: center 3px !important
+  .parallel_mode &
+    background:
+      position: center -47px !important
 
 .icon_full_screen
   background:
@@ -218,3 +257,13 @@
   .li_active &
     background:
       position: 10px -47px !important
+
+.icon_settings
+  background:
+    image: url(../images/icon_settings.png)
+    position: center 3px !important
+  &:active,
+  &:focus,
+  .li_active &
+    background:
+      position: center -47px !important

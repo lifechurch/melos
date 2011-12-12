@@ -87,6 +87,29 @@ var YV = (function($, window, document, undefined) {
           }
         });
       },
+      // YV.init.read_parallel
+      read_parallel: function() {
+        var button = $('#button_read_parallel');
+
+        if (!button.length) {
+          return;
+        }
+
+        button.click(function() {
+          if (HTML.hasClass('parallel_mode')) {
+            HTML.removeClass('parallel_mode').removeClass('full_screen');
+            YV.misc.kill_widget_spacers();
+            YV.init.fixed_widget_header();
+            YV.init.fixed_widget_last();
+          }
+          else {
+            HTML.addClass('parallel_mode').addClass('full_screen');
+          }
+
+          this.blur();
+          return false;
+        });
+      },
       // YV.init.full_screen
       full_screen: function() {
         var button = $('#button_full_screen');
@@ -96,7 +119,7 @@ var YV = (function($, window, document, undefined) {
         }
 
         if (IE7 || IE8 || IE9) {
-          $('#main article > *:last-child').addClass('ie_last_child');
+          $('#main article > div *:last-child').addClass('ie_last_child');
         }
 
         button.click(function() {
@@ -259,14 +282,26 @@ var YV = (function($, window, document, undefined) {
           var icon = el.find('span:first').length ? el.find('span:first') : el;
           var offset = icon.offset();
           var is_full_screen = HTML.hasClass('full_screen');
+          var window_width = $(window).innerWidth();
+          var offset_right = offset.left + menu.outerWidth();
+          var reverse = 'dynamic_menu_reverse';
+          var reverse_nudge;
           var left;
 
-          if (is_full_screen && menu[0].id === 'menu_bookmark') {
-            left = offset.left - menu.outerWidth() + 36;
+          // if (is_full_screen && menu[0].id === 'menu_bookmark') {
+          if (offset_right >= window_width) {
+            reverse_nudge = el.hasClass('button') ? 31 : 30;
+            left = offset.left - menu.outerWidth() + reverse_nudge;
+            menu.addClass(reverse);
           }
           else {
-            if (el.hasClass('button')) {
+            menu.removeClass(reverse);
+
+            if (el.attr('id') === 'verses_selected_button') {
               left = offset.left - 1;
+            }
+            else if (el.hasClass('button')) {
+              left = offset.left - 6;
             }
             else {
               left = offset.left + parseInt(icon.css('border-left-width'), 10) - 8;
@@ -325,7 +360,7 @@ var YV = (function($, window, document, undefined) {
           hide_all_menus();
         });
       },
-      // YV.init.fixed_widget_last
+      // YV.init.fixed_widget_header
       fixed_widget_header: function() {
         var header = $('.widget header');
 
@@ -465,6 +500,8 @@ var YV = (function($, window, document, undefined) {
           return;
         }
 
+        var clear_verses = $('#clear_selected_verses');
+        var li = $('#li_selected_verses');
         var button = $('#verses_selected_button');
         var count = $('#verses_selected_count');
         var input = $('.verses_selected_input');
@@ -476,7 +513,7 @@ var YV = (function($, window, document, undefined) {
         var hide = 'hide';
 
         function parse_verses() {
-          var total = $('.verse.' + flag).length;
+          var total = $('#version_primary .verse.' + flag).length;
 
           // Zero out value.
           input.val('');
@@ -497,10 +534,10 @@ var YV = (function($, window, document, undefined) {
           });
 
           if (total > 0) {
-            button.removeClass(hide);
+            li.removeClass(hide);
           }
           else {
-            button.addClass(hide);
+            li.addClass(hide);
           }
 
           count.html(total);
@@ -511,12 +548,15 @@ var YV = (function($, window, document, undefined) {
         // Watch for verse selection.
         verse.click(function() {
           var el = $(this);
+          var verse_id = el.attr('class').replace('verse', '').replace('selected', '').replace(/\s+/, '');
+
+          verse_id = $('.' + verse_id);
 
           if (el.hasClass(flag)) {
-            el.removeClass(flag);
+            verse_id.removeClass(flag);
           }
           else {
-            el.addClass(flag);
+            verse_id.addClass(flag);
           }
 
           parse_verses();
@@ -525,6 +565,13 @@ var YV = (function($, window, document, undefined) {
         button.click(function() {
           // form.submit();
           // return false;
+        });
+
+        clear_verses.click(function() {
+          $('.verse.selected').removeClass('selected');
+          parse_verses();
+          this.blur();
+          return false;
         });
       },
       // YV.init.profile_menu
@@ -571,6 +618,39 @@ var YV = (function($, window, document, undefined) {
         $(window).resize(function() {
           hide_profile_menu();
         });
+      },
+      // YV.init.user_settings
+      user_settings: function() {
+        var radio = $('.radio_user_setting');
+        var article = $('#main article');
+
+        if (!radio.length) {
+          return;
+        }
+
+        radio.click(function() {
+          var el = $(this);
+          var font = el.attr('data-setting-font');
+          var size = el.attr('data-setting-size');
+
+          font && article.attr('data-setting-font', font);
+          size && article.attr('data-setting-size', size);
+        });
+      },
+      audio_player: function() {
+        var audio = $('#audio_player');
+
+        if (!audio.length) {
+          return;
+        }
+
+        var audio_menu = $('#menu_audio_player').show();
+
+        audio.mediaelementplayer({
+          audioWidth: '100%'
+        });
+
+        audio_menu.hide();
       }
     }
   };

@@ -1,0 +1,37 @@
+// `Parallel Mode
+//----------------------------------------------------------------------------------------------------
+
+#version_secondary,
+.show_in_parallel_mode,
+.parallel_mode .hide_in_parallel_mode
+  display: none
+
+.full_screen.parallel_mode #main.main_reader article
+  width: 800px
+
+.parallel_mode #version_primary,
+.parallel_mode #version_secondary
+  float: left
+  width: 370px
+
+.parallel_mode #version_primary
+  padding-right: 20px
+
+.parallel_mode #version_secondary
+  display: block
+  padding-left: 20px
+
+.parallel_mode.full_screen #reader_header header
+  display: block
+  width: 815px
+
+.parallel_mode .show_in_parallel_mode
+  display: inline-block
+  *display: inline
+  *zoom: 1
+
+.parallel_mode #reader_header header > ul
+  width: 50%
+
+.parallel_mode .float_right_in_parallel_mode
+  float: right !important
