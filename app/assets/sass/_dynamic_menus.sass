@@ -29,6 +29,9 @@
   top: -8px
   left: 10px
 
+  // Reposition if the menu would've
+  // otherwise been off-screen, because
+  // we're reversing it via JavaScript.
   .dynamic_menu_reverse &
     left: auto
     right: 10px
@@ -213,15 +216,15 @@
   width: 100%
   height: auto
 
-.dynamic_menu .accordion
+.dynamic_menu dl
+  @extend .clearfix
   background: url(../images/menu_scroll.png)
   border: 1px solid #555
   margin: 0
-  overflow: hidden
   text-shadow: #000 0 1px 0
 
 .dynamic_menu fieldset,
-.dynamic_menu .accordion dt
+.dynamic_menu dt
   +box-shadow(inset #0c0c0c 0 -1px 0 0)
   background: #1f1f1f
   border-top: 1px solid #2a2a2a
@@ -236,11 +239,11 @@
   background: #2f2f2f
 
 .dynamic_menu header,
-.dynamic_menu .accordion dt
+.dynamic_menu dt
   position: relative
 
 .dynamic_menu header .close,
-.dynamic_menu .accordion dt .close
+.dynamic_menu dt .close
   background: url(../images/close.png) no-repeat
   color: transparent
   cursor: default
@@ -258,15 +261,14 @@
 .dynamic_menu header .close
   right: 5px
 
-.dynamic_menu .accordion dd
+.dynamic_menu dd
   +box-shadow(inset #000 0 0 5px 0)
   border-top: 1px solid #2a2a2a
   display: none
-  overflow: hidden
-  padding: 15px 15px 0
+  padding: 15px 15px 1px
 
-.dynamic_menu .accordion dt:first-child + dd
+.dynamic_menu dt:first-child + dd
   display: block
 
-.dynamic_menu .accordion p
+.dynamic_menu dl p
   margin-bottom: 15px
