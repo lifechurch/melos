@@ -636,6 +636,21 @@ var YV = (function($, window, document, undefined) {
           font && article.attr('data-setting-font', font);
           size && article.attr('data-setting-size', size);
         });
+      },
+      audio_player: function() {
+        var audio = $('#audio_player');
+
+        if (!audio.length) {
+          return;
+        }
+
+        var audio_menu = $('#menu_audio_player').show();
+
+        audio.mediaelementplayer({
+          audioWidth: '100%'
+        });
+
+        audio_menu.hide();
       }
     }
   };
