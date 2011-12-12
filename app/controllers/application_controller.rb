@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
       # Check if the person has beta access
       return if current_auth && cookies.signed[:d] == "yes"
       redirect_to beta_signup_path
+
     end
   end
 

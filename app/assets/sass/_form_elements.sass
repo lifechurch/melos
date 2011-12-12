@@ -62,10 +62,6 @@ br + textarea
   right: auto
   bottom: auto
 
-.faux_radio + label,
-.faux_checkbox + label
-  margin-left: -5px
-
 .faux_checkbox
   background-position: 0 0
 
@@ -113,9 +109,22 @@ br + textarea
 .faux_checkbox.is_checked.is_disabled:hover
   background-position: -60px 0
 
+.faux_radio + label,
+.faux_checkbox + label,
+input[type="radio"] + label,
+input[type="checkbox"] + label
+  cursor: pointer
+
+.faux_radio + label,
+.faux_checkbox + label
+  margin-left: -5px
+
 .faux_radio.is_disabled + label,
-.faux_checkbox.is_disabled + label
+.faux_checkbox.is_disabled + label,
+input[type="radio"][disabled] + label,
+input[type="checkbox"][disabled] + label
   color: #aaa
+  cursor: default
 
 // `Spacing, to account for box-shadow gray "border".
 //----------------------------------------------------------------------------------------------------
@@ -376,3 +385,6 @@ button.action_button_mini
 input[type="image"]:active
   position: relative
   top: 1px
+
+input[type="image"] + a
+  line-height: 29px

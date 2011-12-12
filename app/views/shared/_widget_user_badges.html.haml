@@ -1,0 +1,14 @@
+.widget
+  %header
+    %span.header_icon_badge= @me ? t('badges.my badges') : t('badges.user badges', user: (@user.first_name || @user.username))
+  %section
+    %table
+      %tbody
+        - @user.badges.each do |b|
+          %tr
+            %th
+              %img{:height => '48', :width => '48', :src => b.image_url["px_48x48"]}
+            %td
+              %b= b.name
+              %br
+              = b.description

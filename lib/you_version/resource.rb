@@ -47,6 +47,14 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
+      def i18nize(hash)
+        lang_key = I18n.locale.to_s.gsub("-", "_")
+        hash.has_key?(lang_key) ? hash[lang_key] : hash["default"]
+      end
+
+      def attr_i18n_reader(*args)
+        args.each { |a| define_method(a) { YouVersion::Resource.i18nize(attributes[a.to_s]) } }
+      end
 
       def retry_with_auth?(errors)
         errors.find {|t| t['key'] =~ /username_and_password.required/}
@@ -83,13 +91,12 @@ module YouVersion
           # value for the outer block.
           inner_response
         end
-
         new(response.merge(:auth => auth))
       end
 
       def all(params = {})
         response = YvApi.get(list_path, params) do |errors|
-          if errors.length == 1 && [/^No(.*)found$/, /^"Labels not found"$/].detect { |r| r.match(errors.first["error"]) }
+          if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
             return []
           else
             raise ResourceError.new(errors)
@@ -136,7 +143,7 @@ module YouVersion
           if serialization_class && attributes[attr_name].present?
             serialization_class.new attributes[attr_name]
           else
-            attributes[attr_name]
+            attributes[attr_name.to_s]
           end
         end
 
@@ -187,11 +194,11 @@ module YouVersion
       end
 
       def has_many_remote(association_name)
-        define_method(association_name.to_s.pluralize) do |params|
-          associations.delete(association_name) if params[:refresh]
+        define_method(association_name.to_s.pluralize) do |params = {}|
+          # associations.delete(association_name) if params[:refresh]
           
           association_class = association_name.to_s.classify.constantize
-          associations[association_name] ||= association_class.all(params.merge(association_class.foreign_key => self.id))
+          associations[association_name] ||= association_class.all(params.merge(self.class.foreign_key => self.id))
         end
       end
     end
@@ -304,5 +311,18 @@ module YouVersion
         false
       end
     end
+
+    def created_as_date
+      Date.parse(attributes['created'])
+    end
+
+    def updated_as_date
+      Date.parse(attributes['updated'])
+    end
+
+    def most_recent_date
+      Date.parse(attributes['updated'] || attributes['created'])
+    end
+
   end
 end

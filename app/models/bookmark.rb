@@ -151,8 +151,4 @@ class Bookmark < YouVersion::Resource
     @labels
   end
 
-  # Yeah, bite me
-  def created_as_date
-    Date.parse(attributes['created'])
-  end
 end

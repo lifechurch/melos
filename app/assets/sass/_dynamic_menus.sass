@@ -13,7 +13,7 @@
   font-size: 11px
   padding: 5px
   text-shadow: #000 0 1px 0
-  width: 320px
+  width: 375px
   position: fixed
   z-index: 2
   top: 120px
@@ -29,11 +29,21 @@
   top: -8px
   left: 10px
 
+  // Reposition if the menu would've
+  // otherwise been off-screen, because
+  // we're reversing it via JavaScript.
+  .dynamic_menu_reverse &
+    left: auto
+    right: 10px
+
+.dynamic_menu_inner,
 .dynamic_menu .scroll
   background: url(../images/menu_scroll.png)
   border: 1px solid #555
-    right: 0
-  height: 200px
+
+.dynamic_menu .scroll
+  border-right: 0
+  height: 340px
   overflow-x: hidden
   overflow-y: scroll
 
@@ -53,6 +63,9 @@
 .dynamic_menu ol
   background:
     color: #1f1f1f
+  a,
+  a:hover
+    text-decoration: none
 
 .dynamic_menu ul,
 .dynamic_menu ol,
@@ -65,17 +78,18 @@
   padding: 5px 10px
 
 .dynamic_menu,
-.dynamic_menu a,
-.dynamic_menu a:hover
+.dynamic_menu a
   color: #fff
-  cursor: default
-  text-decoration: none
 
 .dynamic_menu header
+  font-size: 13px
+  padding: 2px 5px 5px
+
+#menu_book_chapter header
   padding: 0 0 7px 5px
 
 .dynamic_menu th[colspan="2"],
-.dynamic_menu header
+#menu_book_chapter header
   font:
     size: 20px
     weight: normal
@@ -129,6 +143,9 @@
 .dynamic_menu tr:last-child td a
   border-bottom: 0
 
+.dynamic_menu fieldset
+  margin-bottom: 0
+
 // `Book & Chapter Menu
 //----------------------------------------------------------------------------------------------------
 
@@ -140,7 +157,7 @@
 
 #menu_book_chapter ul,
 #menu_book_chapter ol
-  width: 135px
+  width: 162px
 
 #menu_book
   float: left
@@ -199,27 +216,34 @@
   width: 100%
   height: auto
 
-.dynamic_menu .accordion
+.dynamic_menu dl
+  @extend .clearfix
   background: url(../images/menu_scroll.png)
   border: 1px solid #555
   margin: 0
-  overflow: hidden
   text-shadow: #000 0 1px 0
 
-.dynamic_menu .accordion dt
+.dynamic_menu fieldset,
+.dynamic_menu dt
   +box-shadow(inset #0c0c0c 0 -1px 0 0)
   background: #1f1f1f
   border-top: 1px solid #2a2a2a
-  cursor: pointer
   font-size: 12px
   line-height: 1
   padding: 10px 15px
-  position: relative
+
+.dynamic_menu .accordion dt
+  cursor: pointer
 
 .dynamic_menu .accordion dt:hover
   background: #2f2f2f
 
-.dynamic_menu .accordion dt .close
+.dynamic_menu header,
+.dynamic_menu dt
+  position: relative
+
+.dynamic_menu header .close,
+.dynamic_menu dt .close
   background: url(../images/close.png) no-repeat
   color: transparent
   cursor: default
@@ -234,15 +258,17 @@
   top: 50%
   right: 10px
 
-.dynamic_menu .accordion dd
+.dynamic_menu header .close
+  right: 5px
+
+.dynamic_menu dd
   +box-shadow(inset #000 0 0 5px 0)
   border-top: 1px solid #2a2a2a
   display: none
-  overflow: hidden
-  padding: 15px 15px 0
+  padding: 15px 15px 1px
 
-.dynamic_menu .accordion dt:first-child + dd
+.dynamic_menu dt:first-child + dd
   display: block
 
-.dynamic_menu .accordion p
+.dynamic_menu dl p
   margin-bottom: 15px

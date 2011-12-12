@@ -29,9 +29,17 @@ YouversionWeb::Application.routes.draw do
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
   match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
   match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
-  
+
   #Reading Plans
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
+
+  # profile stuff
+  match 'profile'       => 'users#profile', :as => 'profile'
+  match 'password'      => 'users#password', :as => 'password'
+  match 'picture'       => 'users#picture', :as => 'picture'
+  match 'notifications' => 'users#notifications', :as => 'notifications'
+  match 'connections'   => 'users#connections', :as => 'connections'
+  match 'devices'       => 'users#devices', :as => 'devices'
 
   match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'

@@ -15,4 +15,9 @@ class UsersController < ApplicationController
 
   def confirm_email
   end
+
+  def show
+    @user = User.find(params[:id], auth: current_auth)
+    @me = (current_auth && @user.id == current_auth.user_id)
+  end
 end

@@ -1,8 +1,28 @@
 require 'digest/md5'
 
 class User < YouVersion::Resource
-  include Model
-  attr_accessor :username, :password, :errors
+  # include Model
+  attr_accessor :errors
+
+  attribute :first_name
+  attribute :last_name
+  attribute :id
+  attribute :username
+  attribute :user_avatar_url
+  attribute :location
+  attribute :email
+  attribute :gender
+  attribute :website
+  has_many_remote :badges
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  # def badges
+  #   Badge.all(user_id: self.id)
+  # end
+
 #   def persisted?
 #     !id.blank?
 #   end
@@ -11,20 +31,30 @@ class User < YouVersion::Resource
 #     "user_id"
 #   end
 
-  def self.authenticate(username, password)
+class << self
+  def register(opts = {})
+    opts = {email: "", username: "", password: "", verified: false, agree: false}.merge!(opts)
+    opts[:token] = Digest::MD5.hexdigest "#{opts[:username]}.Yv6-#{opts[:password]}"
+    opts[:agree] = true if opts[:agree]
+    opts[:secure] = true
+    opts["notification_settings[newsletter][email]"] = true
+    errors = nil
+    response = YvApi.post('users/create', opts) do |ee|
+      errors = ee
+    end    
+    return errors || true
+  end
+
+  def authenticate(username, password)
     hash = {}
     response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
     if response
-      hash[:username] = response.delete("username")
-      hash[:id] = response.delete("id")
-      hash[:password] = password
-      hash[:info] = Hashie::Mash.new(response)
-      hash[:auth] = Hashie::Mash.new(user_id: hash[:id], username: hash[:username], password: [password])
-      User.new(hash)
+      response["auth"] = Hashie::Mash.new(user_id: response[:id], username: response[:username], password: password)
+      new(response)
     end
   end
 
-  def self.id_key_for_version
+  def id_key_for_version
     case Cfg.api_version
     when "2.3"
       :user_id
@@ -35,7 +65,7 @@ class User < YouVersion::Resource
     end
   end
 
-  def self.find(user, opts = {})
+  def find(user, opts = {})
     # Pass in a user_id, username, or just an auth mash with a username and id.
     case user
     when Fixnum
@@ -60,20 +90,11 @@ class User < YouVersion::Resource
       end
       # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
     end
-    User.new(hash)
+    usr = User.new(hash)
+    usr
   end
+end
 
-  # Contains defaults for when a new user is being created
-  def initialize(params = {})
-    params[:agree] = true if params[:agree]
-    reg_data = {id: nil, email: "", username: "", password: "", verified: false, agree: false}.merge!(params)
-    reg_data[:id] = reg_data[:id].to_i # If it came back from the API
-    reg_data.each do |k,v|
-      # Create an accessors and set the initial values for all the params
-      self.class.send(:attr_accessor, k)
-      self.send("#{k}=", v)
-    end
-  end
 
   # def self.find(id)
   #   response = YvApi.get('users/view', {:user_id => id, :auth_user_id => :id} ) do |errors|     
@@ -103,22 +124,21 @@ class User < YouVersion::Resource
     Like.find(id, auth)
   end
 
-  def user_avatar_url
-    @info.user_avatar_url
+  def recent_activity
+    response = YvApi.get("community/items", user_id: self.id)
+    if response.community
+      activities = response.community.map do |a|
+        a.type = "user" if a.type == "follow"
+        a.type = "object" if a.type == "reading_plan_completed"
+        a.type = "object" if a.type == "reading_plan_subscription"
+        class_name = a.type.camelize.constantize
+        a.data.map { |b| class_name.new(b) }
+      end
+      activities.flatten!
+    end
   end
 
-  def register
-    # TODO: move to class method
-    @token = Digest::MD5.hexdigest "#{@username}.Yv6-#{@password}"
-    @secure = true
-    attrs = class_attributes(:email, :username, :password, :verified, :agree, :token, :secure)
-    attrs["notification_settings[newsletter][email]"] = true
-    response = YvApi.post('users/create', attrs) do |errors|
-      @errors = errors.map { |e| e["error"] } if errors
-      return false
-    end    
-    response
-  end
+
 
 #   def attributes(*args)
 #     array = args
