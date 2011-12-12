@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       cookies.permanent.signed[:b] = user.username
       cookies.permanent.signed[:c] = params[:password]
       cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+
       redirect_to versions_url, :notice => "Signed in!"
     else
       flash.now[:alert] = "Invalid username or password"
