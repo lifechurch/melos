@@ -282,12 +282,21 @@ var YV = (function($, window, document, undefined) {
           var icon = el.find('span:first').length ? el.find('span:first') : el;
           var offset = icon.offset();
           var is_full_screen = HTML.hasClass('full_screen');
+          var window_width = $(window).innerWidth();
+          var offset_right = offset.left + menu.outerWidth();
+          var reverse = 'dynamic_menu_reverse';
+          var reverse_nudge;
           var left;
 
-          if (is_full_screen && menu[0].id === 'menu_bookmark') {
-            left = offset.left - menu.outerWidth() + 36;
+          // if (is_full_screen && menu[0].id === 'menu_bookmark') {
+          if (offset_right >= window_width) {
+            reverse_nudge = el.hasClass('button') ? 31 : 30;
+            left = offset.left - menu.outerWidth() + reverse_nudge;
+            menu.addClass(reverse);
           }
           else {
+            menu.removeClass(reverse);
+
             if (el.attr('id') === 'verses_selected_button') {
               left = offset.left - 1;
             }
