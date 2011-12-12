@@ -255,7 +255,7 @@ module YouVersion
       self.persisted? ? before_update : before_save
 
       begin
-        return false unless valid?
+        # return false unless valid?
 
         resource_path = self.persisted? ? self.class.update_path : self.class.create_path
         response, response_data = persist(resource_path)

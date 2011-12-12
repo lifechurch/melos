@@ -81,6 +81,10 @@ Given /^these users exist:$/ do |table|
       end
     end
     user.should be_a User
+    if r.has_key?('First Name') && r.has_key?('Last Name') && r.has_key?('Location') && r.has_key?('Web Site')
+      result = user.update({first_name: r['First Name'], last_name: r['Last Name'], website: r['Web Site'], location: r['Location']})
+      result.should be_true
+    end
   end
 end
 

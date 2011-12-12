@@ -4,18 +4,33 @@ class User < YouVersion::Resource
   # include Model
   attr_accessor :errors
 
-  attribute :first_name
-  attribute :last_name
   attribute :id
   attribute :username
-  attribute :user_avatar_url
-  attribute :location
   attribute :email
+  attribute :user_avatar_url
+  attribute :first_name
+  attribute :last_name
+  attribute :location
+  attribute :im_type
+  attribute :im_username
+  attribute :phone_mobile
+  attribute :language_tag
+  attribute :country
+  attribute :timezone
+  attribute :postal_code
+  attribute :bio
+  attribute :birthday
   attribute :gender
   attribute :website
+
   has_many_remote :badges
 
+  def self.update_path
+    "users/update_profile"
+  end
+
   def name
+    return nil unless first_name && last_name
     "#{first_name} #{last_name}"
   end
 
@@ -49,7 +64,7 @@ class << self
     hash = {}
     response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
     if response
-      response["auth"] = Hashie::Mash.new(user_id: response[:id], username: response[:username], password: password)
+      response["auth"] = Hashie::Mash.new(user_id: response["id"], username: response["username"], password: password)
       new(response)
     end
   end
@@ -74,15 +89,15 @@ class << self
       else
         hash = YvApi.get("users/view", id_key_for_version => user).to_hash
       end
-      hash[:auth] = opts[:auth] ||= nil
+      hash["auth"] = opts[:auth] ||= nil
     when Hashie::Mash
       hash = YvApi.get("users/view", id: user.user_id, auth: user).to_hash
-      hash[:auth] = user
+      hash["auth"] = user
     when String
       case user
       when /\s*\d+\s*/      # It's just a number in string form
         hash = YvApi.get("users/view", id_key_for_version => user.to_i).to_hash
-        hash[:auth] = user
+        hash["auth"] = user
       # when /username-type-pattern/
       #   hash = YvApi.get find-by-username-yay
       else

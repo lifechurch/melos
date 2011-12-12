@@ -36,5 +36,8 @@ Feature: Users Functionality
     And I should see "Edit Profile"
     And I should see "Change Password"
     # Badges
-    And I should see "Created a Bookmark"
+    # And I should see "Created a Bookmark"
+    
+  Scenario: Editing my profile
+
 
