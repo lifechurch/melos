@@ -143,7 +143,7 @@ module YouVersion
           if serialization_class && attributes[attr_name].present?
             serialization_class.new attributes[attr_name]
           else
-            attributes[attr_name.to_s]
+            attributes[attr_name]
           end
         end
 
@@ -228,7 +228,6 @@ module YouVersion
     def persist(resource_path)
       response = true
       response_data = nil
-      
       token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
       response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }

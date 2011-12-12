@@ -39,7 +39,7 @@ class Note < YouVersion::Resource
   def before_save
     @original_content = self.content
     self.content = self.content_as_xml
-    if self.reference.empty?
+    if self.reference.nil? || self.reference.empty?
       self.reference_list = ReferenceList.new("")
     else
       self.reference_list = self.reference.class == ReferenceList ? self.reference : ReferenceList.new(self.reference)

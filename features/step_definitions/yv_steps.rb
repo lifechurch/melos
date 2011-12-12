@@ -2,8 +2,7 @@
 Given /^a user named "([^"]*)" exists$/ do |arg1|
   unless user = User.authenticate(arg1, "tenders")
     opts = {email: "#{arg1}@youversion.com", password: "tenders", agree: true, verified: true, username: arg1}
-    new_user = User.new(opts)
-    response = new_user.register
+    response = User.register(opts)
     response.should be_true
     user = User.authenticate(arg1, "tenders")
     unless user
@@ -40,7 +39,7 @@ Given /^these notes exist:$/ do |table|
   @rows.each do |row|
     @user = User.authenticate(row['Author'], 'tenders');
     auth = Hashie::Mash.new( {'user_id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
-    note = Note.new(title: row['Title'], content: row['Content'], reference: row['References'], version: row['Version'], user_status: row['Status'].downcase, auth: auth)
+    note = Note.new(title: row['Title'], content: row['Content'], reference_list: row['References'], version: row['Version'], user_status: row['Status'].downcase, auth: auth)
     result = note.save
     result.should_not be_false
   end
