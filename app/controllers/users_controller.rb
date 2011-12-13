@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id], auth: current_auth)
-    @me = (current_auth && @user.id == current_auth.user_id)
+    @me = (current_auth && @user.id.to_i == current_auth.user_id.to_i)
   end
 
   def profile
