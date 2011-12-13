@@ -1,3 +1,6 @@
+- @title = @user.name || @user.username
+
+- content_for :sidebar do
 - links = [{path: profile_path, string: t('users.edit profile')},
            {path: password_path, string: t('users.change password')},
            {path: picture_path, string: t('users.picture')},

@@ -24,8 +24,8 @@ Feature: Notes view
   @notes @wip
   Scenario: Update note
     Given these notes exist:
-    | Author    | Title           | Content                 | References  | Version | Status  |
-    | testuser  | Public Note 2   | Public Content          | gen.1.1     | kjv     | Public  |
+    | Author    | Title           | Content                 | References   | Status  |
+    | testuser  | Public Note 2   | Public Content          | gen.1.1.kjv  | Public  |
     When I go to the notes index page
     Then I should see a link to "Public Note" 
     When I follow "Public Note 2" 
@@ -44,11 +44,11 @@ Feature: Notes view
     And I should see "New note content" 
     And I should see "Your note has been updated."
     
-  @notes
+  @notes @wip
   Scenario: Delete note
     Given these notes exist:
-    | Author    | Title           | Content                 | References  | Version | Status  |
-    | testuser  | Delete Me       | Public Content          | gen.1.1     | kjv     | Public  |
+    | Author    | Title           | Content                 | References  | Status  |
+    | testuser  | Delete Me       | Public Content          | gen.1.1.kjv | Public  |
     When I go to the notes index page
     And I follow "Delete Me" 
     Then I should see a link to "delete this note" 
@@ -61,11 +61,11 @@ Feature: Notes view
   Scenario: Note privacy
     Given a user named "testuser2" exists
     And these notes exist:
-    | Author    | Title           | Content                 | References  | Version | Status  |
-    | testuser  | Public Note     | Public Content          | gen.1.1     | kjv     | Public  |
-    | testuser  | Private Note    | testuser Private Content| gen.1.2     | kjv     | Private |
-    | testuser2 | Another Public  | Another Public Content  | gen.1.3     | kjv     | Public  |
-    | testuser2 | Another Private | Another Private Content | gen.1.4     | kjv     | Private |
+    | Author    | Title           | Content                 | References   | Status  |
+    | testuser  | Public Note     | Public Content          | gen.1.1.kjv  | Public  |
+    | testuser  | Private Note    | testuser Private Content| gen.1.2.kjv  | Private |
+    | testuser2 | Another Public  | Another Public Content  | gen.1.3.kjv  | Public  |
+    | testuser2 | Another Private | Another Private Content | gen.1.4.kjv  | Private |
     When I go to the notes index page
     Then I should see a link to "Public Note" 
     And I should see "Public Content" 
@@ -79,20 +79,18 @@ Feature: Notes view
     Then I should see "Private Note" 
     Then I should see "testuser Private Content"
     
-  @notes
+  @notes @wip
   Scenario: Reader integration
     Given a user named "testuser2" exists
     And these notes exist:
-    | Author    | Title           | Content                 | References   | Version | Status  |
-    | testuser  | Public Note     | Public Content          | exod.1.1     | kjv     | Public  |
-    | testuser  | Private Note    | testuser Private Content| exod.1.2     | kjv     | Private |
-    | testuser2 | Another Public  | Another Public Content  | exod.1.3     | kjv     | Public  |
-    | testuser2 | Another Private | Another Private Content | exod.1.4     | kjv     | Private |
+    | Author    | Title           | Content                 | References    | Status  |
+    | testuser  | Public Note     | Public Content          | exod.1.1.kjv  | Public  |
+    | testuser  | Private Note    | testuser Private Content| exod.1.2.kjv  | Private |
+    | testuser2 | Another Public  | Another Public Content  | exod.1.3.kjv  | Public  |
+    | testuser2 | Another Private | Another Private Content | exod.1.4.kjv  | Private |
     When I go to the bible page "exod.1.niv" 
-    Then I should see the following in the notes widget:
-    | Title           |
-    | Public Note     |
-    | Another Public  |
+    Then I should see "Public Note"
+    And I should see "Another Public"
 
   Scenario: No notes for a user
     Given a user named "emptyuser" exists

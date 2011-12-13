@@ -29,12 +29,14 @@ YouversionWeb::Application.routes.draw do
   match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
   match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
   # profile stuff
-  match 'profile'       => 'users#profile', :as => 'profile'
-  match 'password'      => 'users#password', :as => 'password'
-  match 'picture'       => 'users#picture', :as => 'picture'
-  match 'notifications' => 'users#notifications', :as => 'notifications'
-  match 'connections'   => 'users#connections', :as => 'connections'
-  match 'devices'       => 'users#devices', :as => 'devices'
+  match 'settings/password'      => 'users#password', :as => 'password', :via => :get
+  match 'settings/password'      => 'users#update_password', :as => 'password', :via => :post
+  match 'settings/picture'       => 'users#picture', :as => 'picture'
+  match 'settings/notifications' => 'users#notifications', :as => 'notifications'
+  match 'settings/connections'   => 'users#connections', :as => 'connections'
+  match 'settings/devices'       => 'users#devices', :as => 'devices'
+  match 'settings'               => 'users#profile', :as => 'profile', :via => :get
+  match 'settings'               => 'users#update_profile', :as => 'profile', :via => :put
 
   match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'

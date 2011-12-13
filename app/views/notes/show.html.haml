@@ -11,6 +11,6 @@
       = label_tag :user_status, t("notes.status field")
       = @note.user_status
       / = button_to(@note.likes(:user_id => current_user.id).nil? ? t("likes.like button text") : t("likes.unlike button text"), like_path(@note.id), :method => :put) if @note.user_status == 'public' && current_user
-    - if current_user && (current_auth.user_id == @note.user_id.to_i)
+    - if current_auth && (current_auth.user_id.to_i == @note.user_id.to_i)
       = link_to(t("notes.edit"), edit_note_path(@note.id)) 
       = link_to(t("notes.delete"), note_path(@note.id), :confirm => t("notes.confirm delete"), :method => :delete)
