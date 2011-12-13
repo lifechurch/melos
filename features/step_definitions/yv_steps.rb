@@ -18,6 +18,10 @@ Given /^a user named "([^"]*)" with password "([^"]*)" exists$/ do |arg1, arg2|
   User.authenticate(arg1, arg2).should_not == nil
 end
 
+Then /^a user named named "([^"]*)" with password "([^"]*)" should exist$/ do |u, p|
+  User.authenticate(u, p).should be_true
+end
+
 Given /^I am logged in as "([^"]*)"$/ do |arg1|
   visit '/sign-in'
   fill_in "username", :with => arg1

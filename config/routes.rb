@@ -29,7 +29,8 @@ YouversionWeb::Application.routes.draw do
   match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
   match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
   # profile stuff
-  match 'settings/password'      => 'users#password', :as => 'password'
+  match 'settings/password'      => 'users#password', :as => 'password', :via => :get
+  match 'settings/password'      => 'users#update_password', :as => 'password', :via => :post
   match 'settings/picture'       => 'users#picture', :as => 'picture'
   match 'settings/notifications' => 'users#notifications', :as => 'notifications'
   match 'settings/connections'   => 'users#connections', :as => 'connections'

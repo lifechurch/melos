@@ -47,4 +47,18 @@ Feature: Users Functionality
     And I click "Update Profile"
     Then I should see "You have successfully updated your profile."
 
+  Scenario: Changing my password
+    When I go to the versions page
+    And I follow "Profile"
+    And I follow "Change Password"
+    And I fill in "Current Password" with "tenders"
+    And I fill in "New Password" with "tenders2"
+    And I fill in "Confirm Password" with "tenders2"
+    And I click "Change My Password"
+    Then a user named named "useruser" with password "tenders2" should exist
+    When I fill in "Current Password" with "tenders2"
+    And I fill in "New Password" with "tenders"
+    And I fill in "Confirm Password" with "tenders"
+    And I click "Change My Password"
+    Then a user named named "useruser" with password "tenders" should exist
 
