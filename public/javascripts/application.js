@@ -627,7 +627,7 @@ var YV = (function($, window, document, undefined) {
         if (!radio.length) {
           return;
         }
-
+        
         radio.click(function() {
           var el = $(this);
           var font = el.attr('data-setting-font');
@@ -636,6 +636,22 @@ var YV = (function($, window, document, undefined) {
           font && article.attr('data-setting-font', font);
           size && article.attr('data-setting-size', size);
         });
+      },
+      // YV.init.highlightsmenu
+      // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix 
+      highlight: function() {
+        var color = $('.color');
+         color.toggle( 
+      function(){
+        color.empty('span'),
+        $(this).append("<span class='selected'></span>")
+      },
+      function() {
+        color.empty('span');
+      })
+      $(".remove_color").click(function(){
+        color.empty('span');
+      })
       },
       audio_player: function() {
         var audio = $('#audio_player');
@@ -651,9 +667,10 @@ var YV = (function($, window, document, undefined) {
         });
 
         audio_menu.hide();
-      }
+      },
     }
   };
+
 })(this.jQuery, this, this.document);
 
 // Fire it off!

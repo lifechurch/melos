@@ -214,6 +214,64 @@
 .li_active #clear_selected_verses + .button:after
   background: rgba(#fff, 0.4)
 
+  //
+  // Color Picker
+  //
+
+.color_picker_list 
+  float: left
+  width: 100%
+
+
+.color_picker_list a 
+  float: left
+  margin:
+    right: 10px
+
+.color_picker   
+  height: 23px
+  width: 23px
+  display: block
+  border-radius: 4px
+  box-shadow: inset 0px 1px 0px #ddd
+  background: url(../images/menu_color_gradient.png) center center no-repeat, url(../images/menu_color_picker.png) center center no-repeat
+
+.color 
+  background: url(../images/menu_color_gradient.png) center center no-repeat
+  box-shadow:inset 0px 1px 0px #ddd
+  border-radius: 4px
+  height: 23px
+  width: 23px
+  display: block
+
+.color .selected 
+  background: url(../images/menu_color_selected.png) no-repeat
+  position: relative
+  width: 23px
+  height: 20px
+  top: 12px
+  left: 12px
+  display: block
+  
+.color .selected:hover 
+  background-position: 0px -24px
+
+.remove_color
+  display: block
+  float: right
+  margin:
+    top: 15px
+    bottom: 15px
+  background: url(../images/close_plain.png) no-repeat left center
+  padding:
+    left: 15px
+    top: 0px
+    bottom: 0px
+  text-align: right
+
+
+
+
 // `Icons
 //----------------------------------------------------------------------------------------------------
 
