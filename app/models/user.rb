@@ -13,6 +13,7 @@ class User < YouVersion::Resource
   attribute :email
   attribute :gender
   attribute :website
+  attribute :subscribed #clean up this dirt by sweeping it into subscription model
   has_many_remote :badges
 
   def name

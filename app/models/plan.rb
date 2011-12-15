@@ -33,6 +33,7 @@ class Plan < YouVersion::Resource
     super(id, params, &block)
     
   end
+  
   def self.search(query, params = {})
     
     # Get search results for a query.
@@ -57,8 +58,26 @@ class Plan < YouVersion::Resource
     
   end
   
+  def users(params = {})
+    params[:page] ||= 1
+    params[:id] = id
+
+    response = YvApi.get("reading_plans/users", params) do |errors|
+      raise ResourceError.new(errors)
+    end
+    
+    users = ResourceList.new
+    users.total = response.total
+    response.users.each {|user| users << User.new(user.merge(:auth => params[:auth]))}
+    users
+  end
+  
   def title
     name
+  end
+  
+  def length
+    formatted_length
   end
   
   def to_param
