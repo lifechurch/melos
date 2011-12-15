@@ -11,13 +11,7 @@ class Plan < YouVersion::Resource
   attribute :copyright
 
   def self.categories(params = {})
-    params = {page: 1}.merge!(params)
-    
-    response = YvApi.get(list_path, params) do |errors|
-      raise ResourceError.new(errors)
-    end
-    
-    response.categories.children.map! {|c| c.label}
+    PlanCategories.all(params)
   end
   
   def self.list_path
@@ -29,6 +23,7 @@ class Plan < YouVersion::Resource
   end
   
   def self.find(id, params = {}, &block)
+    
 
     if id.is_a?(String) 
       #slug was passed, get id from slug with search, since API doesn't give a better way
@@ -61,6 +56,10 @@ class Plan < YouVersion::Resource
     end
     response.reading_plans.map {|data| new(data.merge(:auth => params[:auth]))}
     
+  end
+  
+  def title
+    name
   end
   
   def to_param

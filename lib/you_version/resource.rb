@@ -60,7 +60,7 @@ module YouVersion
         errors.find {|t| t['key'] =~ /username_and_password.required/}
       end
 
-      def find(id, params = {}, &block)
+      def find(id, params = {}, &block) 
         api_errors = nil
 
         auth = params.delete(:auth)

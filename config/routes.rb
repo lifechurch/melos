@@ -16,6 +16,7 @@ YouversionWeb::Application.routes.draw do
     resources 'notes'
     resources 'likes', :only => [:index]
     resources 'bookmarks', :only => [:index]
+    resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
   resources 'notes', :except => [:index]
   match 'notes' => 'notes#index', :as => 'all_notes'
@@ -41,7 +42,6 @@ YouversionWeb::Application.routes.draw do
   match 'connections'   => 'users#connections', :as => 'connections'
   match 'devices'       => 'users#devices', :as => 'devices'
 
-  match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'
   match 'mobile' => 'coming_soon#index'
 

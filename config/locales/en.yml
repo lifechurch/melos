@@ -103,7 +103,11 @@ en:
     user badges:                  "%{user}'s Badges"
   plans:
     title:                        "Reading Plans"
-    explore title:                "Explore Reading Plans"
+    browse plans:                 "Browse %{category} Plans"
+    all:                          "All"
+    all plans:                    "All Plans"
+    my plans:                     "My Plans"
+    no plans:                     "No Plans Found"
     about publisher:              "About The Publisher"
     overview:                     "Plan Overview"
     start:                        "Start this Plan"

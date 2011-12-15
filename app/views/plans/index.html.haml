@@ -2,28 +2,44 @@
 - @sidebar = false
 
 %article
-  %h1= t("plans.title")
-  %hr
-  
-  %h2= t("plans.explore title")
-  %p
-    -Plan.categories.each do |category|
-      = button_to(category, plans_path(:category => category), :method => :get)
-  
-  %h2= t("plans.title")
-  %ul.big_list
-    - @plans.each do |plan|
-      %li
-        %div
-          %h4
-            = link_to(plan.name.en, plan)
-            %span.plan-type= "» #{plan.formatted_length.en}"
-          %p= plan.about.en
-          %p.copywright
-          %i  
-            /italics tag until copyright class is styled
-            = plan.copyright.en
-            = link_to(t("plans.about publisher"), plan.publisher_url)
-          =button_to(t("plans.overview"), plan)
-          =button_to(t("plans.start"), plan)
-          %br
+  - if current_auth
+    - if request.path == user_plans_path(current_user)
+      %h1= t("plans.my plans")
+      %dl.combo_button.float_right
+        %dt View:
+        %dd
+          = link_to t("plans.all plans"), plans_path
+        %dd.highlighted
+          = link_to t("plans.my plans"), user_plans_path(current_user)
+    - else
+      %h1= t("plans.browse plans", category: @categories.current_name || t("plans.all")) 
+      %dl.combo_button.float_right
+        %dt View:
+        %dd.highlighted
+          = link_to t("plans.all plans"), plans_path
+        %dd
+          = link_to t("plans.my plans"), user_plans_path(current_user)
+  - else
+    %h1= t("plans.browse plans", category: @categories.current_name || t("plans.all")) 
+  - unless @plans.empty?
+    .split_pane
+      .split_pane_sidebar
+        %dl.categories_menu
+          %dd{class: params[:category]? "" : "highlighted"}
+            %b= link_to t("plans.all"), user_plans_path(current_user)
+          -unless @categories.items.empty?
+            - @categories.items.each do |category|
+              %dd{class: params[:category] == category.slug ? "highlighted" : ""}
+                = link_to "#{category.name}", plans_path(category: category.slug)
+      .split_pane_content
+        %ul.big_list
+          - @plans.each do |plan|
+            %li
+              %div
+                %h4= link_to(plan.name.en, plan)
+                %span.float_right= "| #{plan.formatted_length.en}"
+                %p.small= plan.about.en
+                %br
+        = render "shared/pagination", resource_list: @plans
+  - else
+    %div{class: "none"}= t("plans.not found")
