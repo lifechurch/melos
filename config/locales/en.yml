@@ -106,6 +106,7 @@ en:
     browse plans:                 "Browse %{category} Plans"
     all:                          "All"
     all plans:                    "All Plans"
+    all category plans:           "All %{category} Plans"
     my plans:                     "My Plans"
     no plans:                     "No Plans Found"
     about publisher:              "About The Publisher"

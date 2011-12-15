@@ -4,11 +4,10 @@ class Plan < YouVersion::Resource
   attribute :publisher_url
   attribute :id
   attribute :slug
-  attribute :foo
-  attribute :about
-  attribute :name
-  attribute :formatted_length
-  attribute :copyright
+  attr_i18n_reader :about
+  attr_i18n_reader :name
+  attr_i18n_reader :formatted_length
+  attr_i18n_reader :copyright
 
   def self.categories(params = {})
     PlanCategories.all(params)

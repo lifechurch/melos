@@ -1,4 +1,4 @@
-require 'forwardable'
+  require 'forwardable'
 class ReferenceList
   include Enumerable
   extend Forwardable

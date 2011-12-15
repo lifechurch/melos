@@ -25,8 +25,8 @@
     .split_pane
       .split_pane_sidebar
         %dl.categories_menu
-          %dd{class: params[:category]? "" : "highlighted"}
-            %b= link_to t("plans.all"), user_plans_path(current_user)
+          %dd{class: "highlighted"}
+            %b= link_to t("plans.all category plans", category: @categories.current_name), plans_path(category: params[:category])
           -unless @categories.items.empty?
             - @categories.items.each do |category|
               %dd{class: params[:category] == category.slug ? "highlighted" : ""}
@@ -36,9 +36,9 @@
           - @plans.each do |plan|
             %li
               %div
-                %h4= link_to(plan.name.en, plan)
-                %span.float_right= "| #{plan.formatted_length.en}"
-                %p.small= plan.about.en
+                %h4= link_to(plan.name, plan)
+                %span.float_right= "| #{plan.formatted_length}"
+                %p.small= plan.about
                 %br
         = render "shared/pagination", resource_list: @plans
   - else

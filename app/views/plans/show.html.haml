@@ -1,16 +1,15 @@
 %article
-  %h1= @plan.name.en
-  %h2= t("plans.overview")
+  %h1= @plan.name
+  %hr
   %div
-    %p= @plan.about.en
-    %p.copywright
-    %i  
-      /italics tag until copyright class is styled
-      = @plan.copyright.en
+    %p= @plan.about
+    %br
+    %p.small
+      = @plan.copyright
       = link_to(t("plans.about publisher"), @plan.publisher_url)
     %br
     %br
-    %h5="#{t("plans.length")} : #{@plan.formatted_length.en}"
+    %h5="#{t("plans.length")} : #{@plan.formatted_length}"
     =button_to(t("plans.view sample"), @plan)
     =button_to(t("plans.start"), @plan)
     %br
