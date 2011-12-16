@@ -57,18 +57,22 @@ module YouVersion
       end
 
       def retry_with_auth?(errors)
-        errors.find {|t| t['key'] =~ /username_and_password.required/}
+        errors.find {|t| t['key'] =~ /(?:username_and_password.required)|(?:users.auth_user_id.or_isset)/}
       end
 
       def find(id, params = {}, &block)
+        puts "inside the find, id is #{id}, params is #{params}"
         api_errors = nil
 
         auth = params.delete(:auth)
 
-        opts = {id: id}
+        opts = {}
+        opts[:id] = id if id
         opts.merge! params  # Let params override if it already has an :id
         # First try request as an anonymous request
+        puts "lets do this, path is #{resource_path}, opts are #{opts}"
         response = get(resource_path, opts) do |errors|
+          puts errors
           if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
             inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|
@@ -102,11 +106,22 @@ module YouVersion
             raise ResourceError.new(errors)
           end
         end
-        # pp response
-        # TODO: Switch to ResourceList here
+
         list = ResourceList.new
-        list.total = response.total
-        response.send(api_path_prefix).each {|data| list << new(data.merge(:auth => params[:auth]))}
+
+        # argh, sometimes it has a total, sometimes it doesn't
+        if response.respond_to? :total
+          list.total = response.total
+        else
+          list.total = response.length
+        end
+
+        # aaand sometimes it's not encapsulated with api_prefix
+        if response.respond_to? api_path_prefix.to_sym
+          response.send(api_path_prefix).each {|data| list << new(data.merge(:auth => params[:auth]))}
+        else
+          response.each {|data| list << new(data.merge(:auth => params[:auth]))}
+        end
         list
 
       end
@@ -221,6 +236,10 @@ module YouVersion
       return !id.blank?
     end
 
+    def persist_token
+      Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+    end
+
     def to_param
       id
     end
@@ -228,7 +247,7 @@ module YouVersion
     def persist(resource_path)
       response = true
       response_data = nil
-      token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+      token = self.persist_token
       response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }
         self.errors[:base] << new_errors
@@ -272,7 +291,8 @@ module YouVersion
     def after_update(response); after_save(response); end;
 
     def update(updated_attributes)
-      self.attributes = self.attributes.merge(updated_attributes)
+      # self.attributes = self.attributes.merge(updated_attributes)
+      updated_attributes.each { |k, v| self.send("#{k}=".to_sym, v) }
       save
     end
 

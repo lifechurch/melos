@@ -157,6 +157,19 @@ end
     @recent_activity
   end
 
+  def update_picture(uploaded_file)
+    image = Base64.strict_encode64(File.read(uploaded_file.path))
+    response = self.class.post("users/update_avatar", image: image, auth: self.auth) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      self.errors[:base] << new_errors
+      false
+    end
+    return response.true?
+  end
+
+  def devices
+    Device.for_user(self.auth.user_id, auth: self.auth)
+  end
 
 
 #   def attributes(*args)

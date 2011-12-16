@@ -75,4 +75,9 @@ describe User do
       re_act.each { |a| a.class.should be_in [Note, User, Bookmark]  }
     end
   end
+
+  describe "#update_avatar" do
+    # TODO: Seems wonky; am I breaking the API?
+  end
+  
 end

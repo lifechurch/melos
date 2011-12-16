@@ -31,8 +31,30 @@ class UsersController < ApplicationController
     render action: "profile"
   end
 
-  def notifications
+  def picture
   end
+
+  def update_picture
+    puts "image class is #{params[:user][:image].class}"
+    puts "image path is #{params[:user][:image].path}"
+    result = @user.update_picture(params[:user][:image])
+    result ? flash.now[:notice] = t('users.profile.updated picture') : flash.now[:error] = @user.errors
+    render action: "picture"
+  end
+
+  def notifications
+    @notification_settings = NotificationSettings.find(auth: current_auth)
+  end
+
+  def update_notifications
+    @notification_settings = NotificationSettings.find(auth: current_auth)
+    puts params[:notification_settings]
+    result = @notification_settings.update(params[:notification_settings])
+    puts @notification_settings.errors.full_messages
+    result ? flash.now[:notice] = t('users.profile.updated notifications') : flash.now[:error] = @user.errors
+    render action: "notifications"
+  end
+
 
   def password
   end
@@ -55,6 +77,18 @@ class UsersController < ApplicationController
   end
 
   def devices
+    @devices = @user.devices
+  end
+
+  def destroy_device
+    @device = Device.find(params[:id], auth: current_auth)
+    if @device.destroy
+      flash[:notice] = "Device removed."
+      redirect_to devices_path
+    else
+      flash.now[:error] = "Could not delete device."
+      render action: "devices"
+    end
   end
 
   private
