@@ -2,8 +2,7 @@
 Given /^a user named "([^"]*)" exists$/ do |arg1|
   unless user = User.authenticate(arg1, "tenders")
     opts = {email: "#{arg1}@youversion.com", password: "tenders", agree: true, verified: true, username: arg1}
-    new_user = User.new(opts)
-    response = new_user.register
+    response = User.register(opts)
     response.should be_true
     user = User.authenticate(arg1, "tenders")
     unless user
@@ -17,6 +16,10 @@ end
 
 Given /^a user named "([^"]*)" with password "([^"]*)" exists$/ do |arg1, arg2|  
   User.authenticate(arg1, arg2).should_not == nil
+end
+
+Then /^a user named named "([^"]*)" with password "([^"]*)" should exist$/ do |u, p|
+  User.authenticate(u, p).should be_true
 end
 
 Given /^I am logged in as "([^"]*)"$/ do |arg1|
@@ -40,7 +43,7 @@ Given /^these notes exist:$/ do |table|
   @rows.each do |row|
     @user = User.authenticate(row['Author'], 'tenders');
     auth = Hashie::Mash.new( {'user_id' => @user.id, 'username' => @user.username, 'password' => 'tenders' } )
-    note = Note.new(title: row['Title'], content: row['Content'], reference: row['References'], version: row['Version'], user_status: row['Status'].downcase, auth: auth)
+    note = Note.new(title: row['Title'], content: row['Content'], reference_list: row['References'], version: row['Version'], user_status: row['Status'].downcase, auth: auth)
     result = note.save
     result.should_not be_false
   end
@@ -81,6 +84,10 @@ Given /^these users exist:$/ do |table|
       end
     end
     user.should be_a User
+    if r.has_key?('First Name') && r.has_key?('Last Name') && r.has_key?('Location') && r.has_key?('Web Site')
+      result = user.update({first_name: r['First Name'], last_name: r['Last Name'], website: r['Web Site'], location: r['Location']})
+      result.should be_true
+    end
   end
 end
 

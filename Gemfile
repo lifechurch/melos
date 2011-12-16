@@ -13,7 +13,7 @@ gem 'therubyracer'
 gem 'unicorn'
 gem 'newrelic_rpm'
 gem 'exceptional'
-
+gem 'countries'
 
 # Gems used only for assets and not required
 # in production environments by default.
