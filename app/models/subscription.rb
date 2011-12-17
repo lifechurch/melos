@@ -22,8 +22,8 @@ class Subscription < Plan
   
   def current_day
     
-    (Date.today - start).to_i + 1
-    
+    (Date.today - start).to_i
+        
     #TODO: make sure this is logically correct, and make it work with time zones
     
     #Old PHP code for this function
