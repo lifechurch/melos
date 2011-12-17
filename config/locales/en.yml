@@ -148,3 +148,11 @@ en:
     users subscribed:             "%{user_count} Users Reading This Plan"
     more info:                    "More Info"
     publisher:                    "Publisher"
+    success widget title:         "Reading Plan Success"
+    success blurb:                "A reading plan is a teriffic tool to help you engage with the Bible, as each day you learn what it says by reading a manageable, carefully selected portion. We want to help you be succesfull in your reading plans..."
+    success blog link title:      "Read Blog Post"
+    a users plans:                "%{username}'s Plans"
+    you have no plans:            "You're currently not reading any plans"
+    no public plans:              "%{username} isn't publicly reading any plans"
+    subscription:
+      Current Progress String:    "Day %{day} of %{total_days} (%{percentage_complete}%)"

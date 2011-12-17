@@ -39,78 +39,78 @@ class User < YouVersion::Resource
   #   Badge.all(user_id: self.id)
   # end
 
-#   def persisted?
-#     !id.blank?
-#   end
-# 
-#   def self.foreign_key
-#     "user_id"
-#   end
+  #   def persisted?
+  #     !id.blank?
+  #   end
+  # 
+  #   def self.foreign_key
+  #     "user_id"
+  #   end
 
-class << self
-  def register(opts = {})
-    opts = {email: "", username: "", password: "", verified: false, agree: false}.merge!(opts)
-    opts[:token] = Digest::MD5.hexdigest "#{opts[:username]}.Yv6-#{opts[:password]}"
-    opts[:agree] = true if opts[:agree]
-    opts[:secure] = true
-    opts["notification_settings[newsletter][email]"] = true
-    errors = nil
-    response = YvApi.post('users/create', opts) do |ee|
-      errors = ee
-    end    
-    return errors || true
-  end
-
-  def authenticate(username, password)
-    hash = {}
-    response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
-    if response
-      response = response.symbolize_keys
-      response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
-      new(response)
+  class << self
+    def register(opts = {})
+      opts = {email: "", username: "", password: "", verified: false, agree: false}.merge!(opts)
+      opts[:token] = Digest::MD5.hexdigest "#{opts[:username]}.Yv6-#{opts[:password]}"
+      opts[:agree] = true if opts[:agree]
+      opts[:secure] = true
+      opts["notification_settings[newsletter][email]"] = true
+      errors = nil
+      response = YvApi.post('users/create', opts) do |ee|
+        errors = ee
+      end    
+      return errors || true
     end
-  end
 
-  def id_key_for_version
-    case Cfg.api_version
-    when "2.3"
-      :user_id
-    when "2.4"
-      :id
-    else
-      :user_id
-    end
-  end
-
-  def find(user, opts = {})
-    # Pass in a user_id, username, or just an auth mash with a username and id.
-    case user
-    when Fixnum
-      if opts[:auth] && user == opts[:auth].user_id
-        hash = YvApi.get("users/view", id_key_for_version => user, :auth => opts[:auth]).to_hash.symbolize_keys
-      else
-        hash = YvApi.get("users/view", id_key_for_version => user).to_hash.symbolize_keys
+    def authenticate(username, password)
+      hash = {}
+      response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
+      if response
+        response = response.symbolize_keys
+        response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
+        new(response)
       end
-      hash[:auth] = opts[:auth] ||= nil
-    when Hashie::Mash
-      hash = YvApi.get("users/view", id: user.user_id, auth: user).to_hash.symbolize_keys
-      hash[:auth] = user
-    when String
+    end
+
+    def id_key_for_version
+      case Cfg.api_version
+      when "2.3"
+        :user_id
+      when "2.4"
+        :id
+      else
+        :user_id
+      end
+    end
+
+    def find(user, opts = {})
+      # Pass in a user_id, username, or just an auth mash with a username and id.
       case user
-      when /\s*\d+\s*/      # It's just a number in string form
-        hash = YvApi.get("users/view", id_key_for_version => user.to_i).to_hash.symbolize_keys
+      when Fixnum
+        if opts[:auth] && user == opts[:auth].user_id
+          hash = YvApi.get("users/view", id_key_for_version => user, :auth => opts[:auth]).to_hash.symbolize_keys
+        else
+          hash = YvApi.get("users/view", id_key_for_version => user).to_hash.symbolize_keys
+        end
+        hash[:auth] = opts[:auth] ||= nil
+      when Hashie::Mash
+        hash = YvApi.get("users/view", id: user.user_id, auth: user).to_hash.symbolize_keys
         hash[:auth] = user
-      # when /username-type-pattern/
-      #   hash = YvApi.get find-by-username-yay
-      else
-        raise ArgumentError, "Strings not supported yet as value type for 'user' param in User.find"
+      when String
+        case user
+        when /\s*\d+\s*/      # It's just a number in string form
+          hash = YvApi.get("users/view", id_key_for_version => user.to_i).to_hash.symbolize_keys
+          hash[:auth] = user
+          # when /username-type-pattern/
+          #   hash = YvApi.get find-by-username-yay
+        else
+          raise ArgumentError, "Strings not supported yet as value type for 'user' param in User.find"
+        end
+        # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
       end
-      # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
+      usr = User.new(hash)
+      usr
     end
-    usr = User.new(hash)
-    usr
   end
-end
 
 
   # def self.find(id)
@@ -121,18 +121,18 @@ end
   #   User.new(response)
   # end
 
-#   def self.notes(id, auth)
-#     Note.for_user(id, auth: auth)
-#   end
-#   
+  #   def self.notes(id, auth)
+  #     Note.for_user(id, auth: auth)
+  #   end
+  #   
   def notes(opts = {})
     Note.for_user(self.id, opts.merge({auth: self.auth}))
   end
-# 
-#   def self.bookmarks(id, auth)
-#     Bookmark.for_user(id, auth: auth)
-#   end
-  
+  # 
+  #   def self.bookmarks(id, auth)
+  #     Bookmark.for_user(id, auth: auth)
+  #   end
+
   def bookmarks(opts = {})
     Bookmark.for_user(self.id, opts)
   end
@@ -158,19 +158,39 @@ end
     @recent_activity
   end
 
+  def subscriptions(params = {})
+    params[:user_id] = id
 
+    response = YvApi.get("reading_plans/items", params) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        raise ResourceError.new(errors)
+      end
+    end
+    
+    subscriptions = ResourceList.new
+    subscriptions.total = response.total
+    response.reading_plans.each {|plan_hash| subscriptions << Subscription.new(plan_hash.merge(:auth => params[:auth]))}
+    
+    subscriptions
+  end
+  
+  def ==(compare)
+    compare.class == self.class && self.id == compare.id
+  end
 
-#   def attributes(*args)
-#     array = args
-#     array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
-#     attrs = {}
-#     array.each do |var|
-#       attrs[var] = instance_variable_get("@#{var}")
-#     end
-#     attrs
-#   end
-# 
-#   def bookmarks
-#     Bookmark.for_user(id)
-#   end
+  #   def attributes(*args)
+  #     array = args
+  #     array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
+  #     attrs = {}
+  #     array.each do |var|
+  #       attrs[var] = instance_variable_get("@#{var}")
+  #     end
+  #     attrs
+  #   end
+  # 
+  #   def bookmarks
+  #     Bookmark.for_user(id)
+  #   end
 end

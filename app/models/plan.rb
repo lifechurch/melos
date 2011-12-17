@@ -52,7 +52,7 @@ class Plan < YouVersion::Resource
     params = {query: query}.merge!(params)
     
     response = YvApi.get("#{api_path_prefix}/search", params) do |errors|
-      raise ResourceError.new(errors)
+      raise YouVersion::ResourceError.new(errors)
     end
     response.reading_plans.map {|data| new(data.merge(:auth => params[:auth]))}
     
@@ -63,7 +63,7 @@ class Plan < YouVersion::Resource
     params[:id] = id
 
     response = YvApi.get("reading_plans/users", params) do |errors|
-      raise ResourceError.new(errors)
+      raise YouVersion::ResourceError.new(errors)
     end
     
     users = ResourceList.new
