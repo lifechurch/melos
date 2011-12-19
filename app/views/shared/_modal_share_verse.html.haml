@@ -25,32 +25,35 @@
           %a
             %span#link_tab
               Link
-      %div#share_tab_content.tab_content
-        %div.share_message
-          %textarea
-          %span
-            %b
-              http://bible.us/Luke2.15.MSG 
-            will be added
-          %div.character_count
-            198
-          %span.clearfix
-          %div.share_action      
-            %a.action_button_green{:href => '#'} Share Now
-            %a.action_cancel
-              cancel  
-        %div.share_services
-          %span.float_left.width_100
-            %input.checkbox_share_twitter{:type => "checkbox", :name => "share_verse_twitter"}
-            %label{:for => 'share_verse_twitter'}
-              Twitter
-          %span.float_left.width_100
-            %input.checkbox_share_facebook{:type => "checkbox"}
-            %label{:for => 'share_verse_twitter'}
-              Facebook
-          %span.float_left.width_100
-            %input.checkbox_share_google{:type => "checkbox"}
-            %label{:for => 'share_verse_google'}
-              Google +
-        %div.clearfix
-      %div#link_tab
+      %form
+        %fieldset.clearfix
+          %div#share_tab_content.tab_content
+            %div.share_message
+              %textarea
+              %span
+                %b
+                  http://bible.us/Luke2.15.MSG 
+                will be added
+              %div.character_count
+                198
+              %span.clearfix
+              %div.share_action      
+                %a.action_button_green{:href => '#'} Share Now
+                %a.action_cancel
+                  cancel  
+            %div.share_services
+              %span.float_left.width_100
+                %input.checkbox_share_twitter{:type => "checkbox", :name => "share_verse_social", :checked => 'checked'}
+                %label{:for => 'share_verse_twitter', :class => "share_verse_twitter", :value => "Twitter"}
+                  Twitter
+              
+              %span.float_left.width_100
+                %input.checkbox_share_facebook{:type => "checkbox", :name => "share_verse_social"}
+                %label{:for => 'share_verse_facebook', :class => "share_verse_facebook"}
+                  Facebook
+              %span.float_left.width_100
+                %input.checkbox_share_google{:type => "checkbox", :name => "share_verse_social"}
+                %label{:for => 'share_verse_google', :class => "share_verse_google"}
+                  Google +
+            %div.clearfix
+          %div#link_tab
