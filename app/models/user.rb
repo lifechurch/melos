@@ -19,9 +19,14 @@ class User < YouVersion::Resource
   attribute :timezone
   attribute :postal_code
   attribute :bio
-  attribute :birthday
+  attribute :birthdate
   attribute :gender
   attribute :website
+  attribute :twitter
+  attribute :facebook
+  attribute :google
+  attribute :created_dt
+  attribute :last_login_dt
 
   has_many_remote :badges
 
@@ -172,6 +177,12 @@ end
   end
 
 
+  def connections
+    connections = []
+    # connections << TwitterConnection.new(self.twitter.merge(auth: self.auth).symbolize_keys) if self.twitter
+    connections << FacebookConnection.new(self.facebook.merge(auth: self.auth).symbolize_keys) if self.facebook
+    connections
+  end
 #   def attributes(*args)
 #     array = args
 #     array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
