@@ -1,7 +1,7 @@
 class ConnectionsController < ApplicationController
 
   def create
-    render text: "you're here! session auth is #{session[:auth]}"
+    render text: "you're here! session auth is #{cookies.signed[:auth]}"
   end
 
   def new

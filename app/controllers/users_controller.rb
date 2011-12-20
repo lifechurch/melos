@@ -35,8 +35,6 @@ class UsersController < ApplicationController
   end
 
   def update_picture
-    puts "image class is #{params[:user][:image].class}"
-    puts "image path is #{params[:user][:image].path}"
     result = @user.update_picture(params[:user][:image])
     result ? flash.now[:notice] = t('users.profile.updated picture') : flash.now[:error] = @user.errors
     render action: "picture"
@@ -48,9 +46,7 @@ class UsersController < ApplicationController
 
   def update_notifications
     @notification_settings = NotificationSettings.find(auth: current_auth)
-    puts params[:notification_settings]
     result = @notification_settings.update(params[:notification_settings])
-    puts @notification_settings.errors.full_messages
     result ? flash.now[:notice] = t('users.profile.updated notifications') : flash.now[:error] = @user.errors
     render action: "notifications"
   end
@@ -60,14 +56,10 @@ class UsersController < ApplicationController
   end
 
   def update_password
-    puts "old one is #{params[:user][:old_password]}"
-    puts "current password is #{current_auth.password}"
     if params[:user][:old_password] == current_auth.password
-      puts "yay"
       result = @user.update(params[:user]) ? flash.now[:notice]=(t('users.password.updated')) : flash.now[:error]=(t('users.password.error'))
       cookies.signed.permanent[:c] = params[:user][:password] if result
     else
-      puts "d'oh"
       flash.now[:error]= t('users.password.old was invalid')
     end
     render action: "password"
