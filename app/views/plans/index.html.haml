@@ -14,24 +14,36 @@
     - else
       %h1= t("plans.browse plans", category: @categories.current_name || t("plans.all")) 
       %dl.combo_button.float_right
-        %dt
+        %dt 
         %dd.highlighted
           = link_to t("plans.all plans"), plans_path
         %dd
           = link_to t("plans.my plans"), user_plans_path(current_user)
   - else
     %h1= t("plans.browse plans", category: @categories.current_name || t("plans.all")) 
-  - unless @plans.empty?
-    .split_pane
-      .split_pane_sidebar
-        %dl.categories_menu
-          %dd{class: "highlighted"}
-            %b= link_to t("plans.all category plans", category: @categories.current_name), plans_path(category: params[:category])
-          -unless @categories.items.empty?
-            - @categories.items.each do |category|
-              %dd{class: params[:category] == category.slug ? "highlighted" : ""}
-                = link_to "#{category.name}", plans_path(category: category.slug)
-      .split_pane_content
+  .split_pane{:style => "padding-top:15px"}
+    .plan_search
+      %select.float_left{:style => "margin-right: 126px; margin-left:10px"}
+        - I18n.available_locales.each do |loc|
+          %option{value: loc, href: url_for(params.merge!(locale: loc)), selected: loc == I18n.locale}= t("language name", locale: loc)
+      %form{method: 'get'}
+        - if @categories.current
+          %input{:type => "hidden", :name => "category", :value => @categories.current_slug}
+        %input{:style =>"width: 300px; margin-left: 40px;", name: "query", :type => 'search', :placeholder => t("plans.search placeholder", category: @categories.current_name || t("plans.all"))}
+        %input{:type => 'submit', :value => t("plans.search")}
+      %hr{:style => "margin-top:15px"}
+    .split_pane_sidebar
+      %dl.categories_menu
+        %dt
+          Browse by Category
+        %dd{class: "highlighted"}
+          %b= link_to t("plans.all category plans", category: @categories.current_name), plans_path(category: params[:category])
+        -unless @categories.items.empty?
+          - @categories.items.each do |category|
+            %dd{class: params[:category] == category.slug ? "highlighted" : ""}
+              = link_to "#{category.name}", plans_path(category: category.slug)
+    .split_pane_content
+      - if !@plans.empty?
         %ul.big_list
           - @plans.each do |plan|
             %li
@@ -41,5 +53,6 @@
                 %p.small= plan.about
                 %br
         = render "shared/pagination", resource_list: @plans
-  - else
-    %div{class: "none"}= t("plans.not found")
+      -else
+        .none{align: "center"}= t("plans.none found")
+  

@@ -1,0 +1,33 @@
+- @title = @plan.name
+
+- content_for :sidebar do
+  .widget
+    %header
+      %span
+        =t("plans.more info")
+    %ul.widget_menu
+      %li    
+        %p
+          %b=t("plans.length field")
+          = @plan.length
+      %li
+        = link_to(t("plans.view sample"), @plan)
+      %li
+        = link_to(t("plans.users subscribed", user_count: @plan.users.count), plan_users_path(@plan))
+  .widget
+    %header
+      %span
+        =t("plans.publisher")
+    %ul.widget_menu
+      %li
+        %p= @plan.copyright
+      %li
+        = link_to(t("plans.about publisher"), @plan.publisher_url)
+      
+%article
+  -#TODO: put << link back to how we got here
+  %h1= @plan.name
+  %hr
+  %div
+    %p= @plan.about
+    %br

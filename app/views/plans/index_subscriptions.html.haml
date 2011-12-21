@@ -11,6 +11,7 @@
         %p= t("plans.success blurb")
       %li
         = link_to(t("plans.success blog link title"), "http://blog.youversion.com/2011/11/get-ready-for-christmas-with-advent-reading-plans-from-youversion/")
+        -#TODO: Get correct blog link
 
 %article
   - if request.path == user_plans_path(current_user)
@@ -29,8 +30,17 @@
         %li
           %div
             %h4= link_to(plan.name, plan_path(plan))
-            %meter{value: plan.progress, max: 100 }
-            %p= t("plans.subscription.Current Progress String", day: plan.current_day, total_days: plan.total_days, percentage_complete: plan.progress)
+            -#TODO: make clean/i18nized way of showing progress (f/u w/ Nathan)
+            .progress_wrap
+              .progress_counter
+                %b=t("plans.subscription.Current Progress String", day: plan.current_day, total_days: plan.total_days)
+              .progress_bar_outer
+                .progress_bar{:style => "width:#{plan.progress}%"}
+              .progress_bar_cap
+              .progress_bar_shadow
+                .progress_percent_complete{:style => "left:#{plan.progress}%"}
+                  %b="#{plan.progress}%"
+                  .small Complete
     = render "shared/pagination", resource_list: @user.subscriptions
   - else
     %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)

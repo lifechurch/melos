@@ -14,7 +14,11 @@ class CategoryListing
   end
   
   def current_name
-    @current ? @current.name : ""
+    @current ? @current.name : nil
+  end
+  
+  def current_slug
+    @current ? @current.slug : nil
   end
 
   def initialize(categories_json_mash)

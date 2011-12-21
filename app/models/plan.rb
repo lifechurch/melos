@@ -13,6 +13,16 @@ class Plan < YouVersion::Resource
     PlanCategories.all(params)
   end
   
+  def self.all(opts = {})
+    if opts[:query] 
+      #slug was passed, get id from slug with search, since API doesn't give a better way
+      Plan.search(opts[:query], opts)
+    else
+    #TODO: this doesn't work if an integer id is passed?
+      super
+    end
+  end
+  
   def self.list_path
     "#{api_path_prefix}/library"
   end
@@ -30,6 +40,7 @@ class Plan < YouVersion::Resource
       id = lib_plan.id
     end
 
+    #TODO: this doesn't work if an integer id is passed?
     super(id, params, &block)
     
   end
@@ -48,13 +59,21 @@ class Plan < YouVersion::Resource
     #     language_tag  to filter reading plans to (optional, but highly recommended for best search results)
     #     sort  the ordering of the results, defaults to 'score' (relevance), also accepts 'total_days'
     #     page  number of results to return
-    
+    query = '*' if (query == "" || query == nil)
     params = {query: query}.merge!(params)
     
     response = YvApi.get("#{api_path_prefix}/search", params) do |errors|
-      raise YouVersion::ResourceError.new(errors)
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
     end
-    response.reading_plans.map {|data| new(data.merge(:auth => params[:auth]))}
+    
+    list = ResourceList.new
+    list.total = response.total
+    response.reading_plans.each {|data| list << Plan.new(data.merge(:auth => params[:auth]))}
+    list
     
   end
   
@@ -63,7 +82,11 @@ class Plan < YouVersion::Resource
     params[:id] = id
 
     response = YvApi.get("reading_plans/users", params) do |errors|
-      raise YouVersion::ResourceError.new(errors)
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        raise ResourceError.new(errors)
+      end
     end
     
     users = ResourceList.new
@@ -82,6 +105,13 @@ class Plan < YouVersion::Resource
   
   def to_param
     slug
+  end
+  
+  def ==(compare)
+    #if plan is compared to subscription or vice/versa
+    correct_class = compare.class == Plan || compare.class == Subscription
+    
+    correct_class && self.id == compare.id
   end
   
 end
