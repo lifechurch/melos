@@ -23,9 +23,11 @@
     %h1= t("plans.browse plans", category: @categories.current_name || t("plans.all")) 
   .split_pane{:style => "padding-top:15px"}
     .plan_search
-      %select.float_left{:style => "margin-right: 126px; margin-left:10px"}
-        - I18n.available_locales.each do |loc|
-          %option{value: loc, href: url_for(params.merge!(locale: loc)), selected: loc == I18n.locale}= t("language name", locale: loc)
+      %form{method: 'get'}
+        %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "lang", }
+          - I18n.available_locales.each do |loc|
+            %option{value: loc.to_s, selected: loc.to_s == params[:lang]}= t("language name", locale: loc)
+            -#TODO: Get this submitting on select
       %form{method: 'get'}
         - if @categories.current
           %input{:type => "hidden", :name => "category", :value => @categories.current_slug}

@@ -5,6 +5,9 @@ class PlansController < ApplicationController
       @user = User.find(params[:user_id])  
       render :action => "index_subscriptions" 
     end
+    
+    params[:lang] ||= I18n.locale.to_s
+    params[:language_tag] = params[:lang]
     @plans = Plan.all(params)
     @categories = CategoryListing.find(params[:category])
     #debugger
