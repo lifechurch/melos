@@ -7,6 +7,7 @@ class PlansController < ApplicationController
     end
     @plans = Plan.all(params)
     @categories = CategoryListing.find(params[:category])
+    #debugger
     #TODO: We are wasting an API query here, maybe there is an elegant solution?
     
   end

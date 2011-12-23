@@ -36,12 +36,20 @@
       %dl.categories_menu
         %dt
           Browse by Category
-        %dd{class: "highlighted"}
-          %b= link_to t("plans.all category plans", category: @categories.current_name), plans_path(category: params[:category])
-        -unless @categories.items.empty?
+        %dd{class: (params[:category] == "" || params[:category].nil?) ? "highlighted" : ""}
+          = link_to t("plans.all plans"), plans_path
+        - level = 0
+        - if @categories
+          - @categories.breadcrumbs.each do |category|
+            - level += 1
+            %dd{class: params[:category] == category.slug ? "highlighted" : ""}
+              %a{:href => plans_path(category: category.slug), :style => "margin-left:#{level * 20}px"}
+                = (params[:category] == category.slug) ? t("plans.all category plans", category: category.name)  : category.name
+          - level += 1
           - @categories.items.each do |category|
             %dd{class: params[:category] == category.slug ? "highlighted" : ""}
-              = link_to "#{category.name}", plans_path(category: category.slug)
+              %a{:href => plans_path(category: category.slug), :style => "margin-left:#{level * 20}px"}
+                = category.name
     .split_pane_content
       - if !@plans.empty?
         %ul.big_list
