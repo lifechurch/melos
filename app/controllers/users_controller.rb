@@ -56,6 +56,13 @@ class UsersController < ApplicationController
 
   def devices
   end
+  
+  def index
+    if params[:plan_id]
+      @plan = Plan.find(params[:plan_id])
+      @users = @plan.users
+    end
+  end
 
   private
 
@@ -64,4 +71,5 @@ class UsersController < ApplicationController
     @user = current_user
     @user.auth = current_auth
   end
+  
 end

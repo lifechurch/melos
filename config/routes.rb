@@ -16,18 +16,26 @@ YouversionWeb::Application.routes.draw do
     resources 'notes'
     resources 'likes', :only => [:index]
     resources 'bookmarks', :only => [:index]
+    resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
   resources 'notes', :except => [:index]
   match 'notes' => 'notes#index', :as => 'all_notes'
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
   match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
+  
   # Sessions
   match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
   match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
   match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
   match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
+
+  #Reading Plans
+  resources :plans, :only => [:index, :show], :path => 'reading-plans' do
+    resources 'users', :only => [:index]
+  end
+
   # profile stuff
   match 'settings/password'      => 'users#password', :as => 'password', :via => :get
   match 'settings/password'      => 'users#update_password', :as => 'password', :via => :post
@@ -38,7 +46,6 @@ YouversionWeb::Application.routes.draw do
   match 'settings'               => 'users#profile', :as => 'profile', :via => :get
   match 'settings'               => 'users#update_profile', :as => 'profile', :via => :put
 
-  match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'
   match 'mobile' => 'coming_soon#index'
 
