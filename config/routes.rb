@@ -34,6 +34,7 @@ YouversionWeb::Application.routes.draw do
   #Reading Plans
   resources :plans, :only => [:index, :show], :path => 'reading-plans' do
     resources 'users', :only => [:index]
+    match 'start' => 'plans#start'
   end
 
   # profile stuff

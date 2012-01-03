@@ -15,17 +15,23 @@ class PlansController < ApplicationController
     
   end
 
-  def show      
-    @plan = Plan.find(params[:id])  
+  def show
+    @plan = Plan.find(params[:id], auth: current_auth) 
     
-    if current_user.subscriptions.include?(@plan)
-      @subscription = Subscription.find(@user, @plan, auth: current_auth)
-      redirect_to params.merge!(day: @subscription.current_day) unless params[:day]
-      #TODO: is this horrifically inefficient, since the common case is the redirect (and thus extra API calls)?
-       
-      render :action => "show_subscribed"
+    if @subscription = current_user.subscriptions.find {|subscription| subscription == @plan}
+      params[:day] ||= @subscription.current_day
+        render :action => "show_subscribed"
     end  
 
   end
   
+  def start
+    
+    @plan = Plan.find(params[:plan_id]).subscribe(current_auth)
+    #TODO: we're wasting an API call here (finding the plan just to subscribe)
+    #TODO: handle the case where the user isn't logged in
+    redirect_to plan_path(params[:plan_id])
+    
+  end
+
 end

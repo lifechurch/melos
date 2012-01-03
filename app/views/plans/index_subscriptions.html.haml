@@ -36,7 +36,9 @@
                 %b=t("plans.subscription.Current Progress String", day: plan.current_day, total_days: plan.total_days)
               .progress_bar_outer
                 .progress_bar{:style => "width:#{plan.progress}%"}
+                  &nbsp;
               .progress_bar_cap
+                &nbsp;
               .progress_bar_shadow
                 .progress_percent_complete{:style => "left:#{plan.progress}%"}
                   %b="#{plan.progress}%"

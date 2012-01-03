@@ -107,7 +107,7 @@ class User < YouVersion::Resource
         end
         # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
       end
-      usr = User.new(hash)
+      usr = User.new(Hashie::Mash.new(hash))
       usr
     end
   end
@@ -160,6 +160,7 @@ class User < YouVersion::Resource
 
   def subscriptions(params = {})
     params[:user_id] = id
+    params[:auth] ||= @attributes[:auth]
 
     response = YvApi.get("reading_plans/items", params) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
@@ -171,8 +172,8 @@ class User < YouVersion::Resource
     
     subscriptions = ResourceList.new
     subscriptions.total = response.total
-    response.reading_plans.each {|plan_hash| subscriptions << Subscription.new(plan_hash.merge(:auth => params[:auth]))}
-    
+    response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(:auth => @attributes[:auth]))}
+
     subscriptions
   end
   

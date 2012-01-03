@@ -157,5 +157,6 @@ en:
     filter by lang:               "Filter Plans by Language"
     search:                       "Search"
     search placeholder:           "Search %{category} Plans"
+    subscribe to plan:            "Start this plan"
     subscription:
       Current Progress String:    "Day %{day} of %{total_days}"

@@ -1,33 +1,28 @@
-- @title = @plan.name
-
-- content_for :sidebar do
-  .widget
-    %header
-      %span
-        =t("plans.more info")
-    %ul.widget_menu
-      %li    
-        %p
-          %b=t("plans.length field")
-          = @plan.length
-      %li
-        = link_to(t("plans.view sample"), @plan)
-      %li
-        = link_to(t("plans.users subscribed", user_count: @plan.users.count), plan_users_path(@plan))
-  .widget
-    %header
-      %span
-        =t("plans.publisher")
-    %ul.widget_menu
-      %li
-        %p= @plan.copyright
-      %li
-        = link_to(t("plans.about publisher"), @plan.publisher_url)
+- @title = @subscription.name
+- @sidebar = false
       
 %article
-  -#TODO: put << link back to how we got here
-  %h1= @plan.name
-  %hr
-  %div
-    %p= @plan.about
-    %br
+  %h1= @subscription.name
+  - reading = @subscription.current_reading
+  - if reading.devotional
+    %hr
+    %p= reading.devotional.html_safe
+  .split_pane{:style => "padding-top:15px"}
+    .split_pane_sidebar
+      %dl.categories_menu
+        %dt
+          Today's Content
+        - if reading.references
+          - params[:content] ||= 0
+          - reading.references.each_with_index do |ref,i|
+            %dd{class: params[:content].to_i == i ? "highlighted" : ""}
+              %form{method: 'get'}
+                %input{type: "checkbox", onChange: "this.form.submit()", id: ref.ref.to_s} 
+                  =ref.ref.to_s
+                - unless i == 0
+                  %input{type: "hidden", name: "content", value: i}
+                  
+    .split_pane_content
+      - if reading.references
+        %p= reading.references[params[:content].to_i].ref.to_s
+          
