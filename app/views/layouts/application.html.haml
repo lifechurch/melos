@@ -15,12 +15,8 @@
           = yield
           - if content_for? :main_trailer
             = yield :main_trailer
-        - if content_for? :sidebar
-          #sidebar
-            = yield :sidebar
-        - else
-          - unless @sidebar == false
-            = render '/shared/sidebar'
+        #sidebar
+          = render '/shared/sidebar'
       = render '/shared/footer'
     - if @reader_menus == true
       -# = render '/shared/menu_book_chapter'

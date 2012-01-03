@@ -3,6 +3,7 @@ br + select,
 br + textarea
   margin-top: 5px
 
+
 // `Flash Messages
 //----------------------------------------------------------------------------------------------------
 
@@ -222,6 +223,14 @@ textarea
   display: block
   height: auto
 
+.alternate_select
+  +background(linear-gradient(#fefefe, #dbdbdb))
+  height: 24px
+  padding: 2px 10px
+.alternate_select_locked 
+  padding-left: 20px
+  +background(linear-gradient(#fefefe, #dbdbdb))
+
 @media (-webkit-min-device-pixel-ratio: 0)
   select
     background-image: url(../images/select_arrows.png), url(../images/select_gradient.png)
@@ -229,6 +238,16 @@ textarea
     background-position: right 7px, 0 0
     background-repeat: no-repeat, repeat-x
     padding-right: 41px
+  // Alternate_select queues up the smaller select design used in things like parallel notes -jc
+  .alternate_select
+    +background(url(../images/select_wrap_span.png) no-repeat center right, linear-gradient(#fefefe, #dbdbdb))
+    height: 24px
+    padding: 2px 10px
+  .alternate_select_locked 
+    padding-left: 20px
+    +background(url(../images/select_wrap_span.png) no-repeat center right, linear-gradient(#fefefe, #dbdbdb))
+
+
 
 textarea:focus,
 select:focus,
@@ -262,6 +281,8 @@ input[type="url"]:active,
 input[type="week"]:active
   border-color: $blue
   +box-shadow(inset rgba(#000, 0.1) 0 1px 1px 0, #fff 0 1px 0 0, $blue_light 0 0 5px 0, #eeedeb 0 0 0 5px)
+
+
 
 // `Action Buttons
 //----------------------------------------------------------------------------------------------------
@@ -388,3 +409,14 @@ input[type="image"]:active
 
 input[type="image"] + a
   line-height: 29px
+
+// `Date Input
+//
+
+input[type="date"]
+  width: 100%
+
+
+.secret
+  margin: 0
+  display: none

@@ -1,0 +1,31 @@
+.widget.parallel_notes
+  %header
+    %span.header_icon_notes= t('Note')
+  %section
+    %ul.reference_tokens
+      %li
+        %a{:href => "#"}
+          Luke 2:14
+      %li
+        %a
+          Romans 8:28
+    %form
+      %fieldset
+        %input{:value => "Name", :type => "text"}
+        %textarea
+        %select
+          %option
+            NIV - New International Version
+          %option
+            Option 2
+          %option
+            Option 3
+        %select.alternate_select
+          %option
+            Publish Immeadiately
+          %option{:name => "publish _on", :value => "publish_on"}
+            publish_on
+          %option
+            Option 3
+        %input.secret{:value => "secret form", :type => "date"}
+          

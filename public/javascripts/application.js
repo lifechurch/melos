@@ -120,7 +120,11 @@ var YV = (function($, window, document, undefined) {
         overlay.click(function() {
           hide_modal();
         });
-
+        
+        $(".action_cancel").click(function() {
+          hide_modal();
+        });
+        
         close.mousedown(function() {
           hide_modal();
           return false;
@@ -701,6 +705,16 @@ var YV = (function($, window, document, undefined) {
       $(".remove_color").click(function(){
         color.empty('span');
       })
+      },
+      // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix 
+      parallel_notes: function() {
+        $('.alternate_select').on('change', function(){
+          if($(this).val() == "publish_on"){
+            $('.secret').fadeIn();
+          } else{
+            $('.secret').hide();
+          }
+        });
       },
       audio_player: function() {
         var audio = $('#audio_player');
