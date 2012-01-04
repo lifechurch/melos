@@ -1,13 +1,21 @@
 common: &common
-  twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
-  twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
-  facebook_app_id: "105030176203924"
-  facebook_secret: "9d03678ddd8b5588c4e6c91bd996cce2"
+  # youversion.com
+  # twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
+  # twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
+  # facebook_app_id: "105030176203924"
+  # facebook_secret: "9d03678ddd8b5588c4e6c91bd996cce2"
+  #
   # www.cbailey.yvdev.com
   twitter_key: "jJwCaFguoe3a40fXBVWsCw"
   twitter_secret: "Hf7dR18UjU6nuoeVTm15EQSDdR1NmbxlElS3tpFRY"
   facebook_app_id: "214636785287293"
   facebook_secret: "279d2af7fd1de6ed8d74a67ca9de530a"
+  #
+  # yv.chadbailey.net
+  # facebook_app_id: "306713076033387"
+  # facebook_secret: "1a8bf87913629f4162b6c91e5fe943a2"
+  # twitter_key: "KobF6Lt0zWDFBDxZgZyg"
+  # twitter_secret: "GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs"
 
 development:
   <<: *common
