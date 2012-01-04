@@ -44,6 +44,7 @@ class YvApi
     # Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
     puts "** YvApi.post: Calling #{resource_url} with body => #{opts}"
     response = httparty_post(resource_url, body: opts)
+    puts "** YvApi.post: Response: #{response}"
     return api_response_or_rescue(response, block)
   end
 

@@ -11,6 +11,14 @@ module YouVersion
       end
 
       def default_params; end
+      def self.create_path
+        "users/create_connection"
+      end
+
+      def self.delete_path
+        "users/delete_connection"
+      end
+
 
       # these should return URLs for respective actions
       def share_path; end

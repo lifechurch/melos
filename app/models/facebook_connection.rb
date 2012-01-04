@@ -1,52 +1,31 @@
 class FacebookConnection < YouVersion::Connection::Base
-  attr_accessor :access_token
-  attr_accessor :user_id
-  attr_accessor :name
-  attr_accessor :appid
-  attr_accessor :secret
-  attr_accessor :username
+  attribute :access_token
+  attribute :credentials
+  attribute :uid
+  attribute :info
 
   attribute :connection_type
   attribute :connection_user_id
   attribute :data
 
-  # YV API interaction
-  # paths
-  def create_path
-    "users/create_connection"
-  end
-
-  def delete_path
-    "users/delete_connection"
-  end
 
   def before_save
-    connection_type = "fb"
-    connection_user_id = user_info.username unless username
-    data = {name: name, user_id: user_id, access_token: access_token, appid: appid, secret: secret}
+    self.connection_type = "fb"
+    self.connection_user_id = self.uid
+    self.data = {
+            screen_name:  self.info["nickname"],
+            user_id:      uid,
+            oauth_token:  self.credentials["token"],
+            key:          Cfg.facebook_app_id,
+            secret:       Cfg.facebook_secret
+           }.to_json
   end
 
-  # Connection interaction
-  #
-  def default_params
-    {access_token: access_token}
+  def find_friends
+    face = Koala::Facebook::API.new(self.data[:oauth_token])
+    response = face.get_connections("me", "friends")
+    friends = response.map { |e| e["id"] }
+    puts friends
   end
-
-
-  def user_info_path
-    "https://graph.facebook.com/me"
-  end
-
-  def find_friends_path
-    "https://graph.facebook.com/me/friends"
-  end
-
-
-  def delete
-
-  end
-
-
-  
 end
 

@@ -179,8 +179,8 @@ end
 
   def connections
     connections = []
-    # connections << TwitterConnection.new(self.twitter.merge(auth: self.auth).symbolize_keys) if self.twitter
-    connections << FacebookConnection.new(self.facebook.merge(auth: self.auth).symbolize_keys) if self.facebook
+    connections << TwitterConnection.new(data: self.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.twitter
+    connections << FacebookConnection.new(data: self.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.facebook
     connections
   end
 #   def attributes(*args)

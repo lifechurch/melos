@@ -42,9 +42,10 @@ YouversionWeb::Application.routes.draw do
   match 'settings'               => 'users#update_profile', :as => 'profile', :via => :put
 
   # connetions
-  match 'auth/:provider/callback' => 'auth#callback'
-  match 'connections/:provider/new' => 'connections#new'
-  match 'connections/create' => 'connections#create', as: 'create_connection'
+  match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'
+  match 'auth/:provider/connect'  => 'auth#connect', :as => 'auth_connect'
+  match 'connections/:provider/new' => 'connections#new', :as => 'new_connection'
+  match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
 
   match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'
