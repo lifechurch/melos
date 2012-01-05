@@ -158,5 +158,7 @@ en:
     search:                       "Search"
     search placeholder:           "Search %{category} Plans"
     subscribe to plan:            "Start this plan"
+    previous day:                 "Previous Day"
+    next day:                     "Next Day"
     subscription:
       Current Progress String:    "Day %{day} of %{total_days}"

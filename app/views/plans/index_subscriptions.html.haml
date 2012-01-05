@@ -24,9 +24,9 @@
         = link_to t("plans.my plans"), user_plans_path(current_user)
   - else
       
-  - if !@user.subscriptions(params).empty?
+  - if !@user.subscriptions.empty?
     %ul.big_list
-      - @user.subscriptions(auth: current_auth).each do |plan|
+      - @user.subscriptions.each do |plan|
         %li
           %div
             %h4= link_to(plan.name, plan_path(plan))

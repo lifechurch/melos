@@ -3,26 +3,36 @@
       
 %article
   %h1= @subscription.name
-  - reading = @subscription.current_reading
-  - if reading.devotional
-    %hr
-    %p= reading.devotional.html_safe
+  - reading = @subscription.reading(params[:day])
+  - day = params[:day].to_i
   .split_pane{:style => "padding-top:15px"}
+    - if reading.devotional
+      %p{style: "margin-left: 20px; margin-right: 20px;"}= reading.devotional.html_safe
     .split_pane_sidebar
       %dl.categories_menu
         %dt
-          Today's Content
+          %ul.pagination{style: "margin-bottom: 0px; margin-top: 0px; padding-top:0px; border-top-width: 0px;", align: "center"}
+            %li.pagination_previous.float_left
+              - if day > 1
+                = link_to(t("plans.previous day"),day: day - 1)
+            %h4.float_left{style: "margin-left: 50px;margin-bottom: 0px; margin-top: 3px;"}= @subscription.reading_date(day).strftime('%a %b %-d')
+            %li.pagination_next.float_right
+              - if day <= @subscription.total_days - 1
+                = link_to(t("plans.next day"), day: day + 1)
         - if reading.references
           - params[:content] ||= 0
-          - reading.references.each_with_index do |ref,i|
+          - reading.references.each_with_index do |r,i|
             %dd{class: params[:content].to_i == i ? "highlighted" : ""}
-              %form{method: 'get'}
-                %input{type: "checkbox", onChange: "this.form.submit()", id: ref.ref.to_s} 
-                  =ref.ref.to_s
-                - unless i == 0
-                  %input{type: "hidden", name: "content", value: i}
-                  
+              %form{method: 'post'}
+                %input{type: "hidden", name: "_method", value: "put"}
+                %input{type: "hidden", name: "ref", value: r.ref.osis}
+                %input{type: "hidden", name: "completed", value: (!r.completed?).to_s}
+                %input{type: "hidden", name: "day", value: params[:day]}
+                - if i != 0
+                  %input{type: "hidden", name: "content_target", value: i}
+                %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
+                %label{for: "#{i}_box"}= r.ref.to_s
+
     .split_pane_content
       - if reading.references
-        %p= reading.references[params[:content].to_i].ref.to_s
-          
+        .embedded_reader{style: "margin-left: 30px;"}= reading.references[params[:content].to_i].ref.contents(format: 'html').join.html_safe

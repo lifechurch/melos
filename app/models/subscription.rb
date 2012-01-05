@@ -10,6 +10,10 @@ class Subscription < Plan
       @end ||= Date.parse(@attributes.end)
   end
 
+  def reading_date(day)
+    start + day
+  end
+
   def progress
     @progress ||= @attributes.completion_percentage
   end
@@ -19,7 +23,7 @@ class Subscription < Plan
   end
   
   def total_days
-    days
+    days.to_i
   end
   
   def current_day
@@ -78,27 +82,67 @@ class Subscription < Plan
     reading(current_day)
   end
   
-  def reading(day, opts = {})
+  def reading(day)
     
-    validate_reading_json(day, opts)
+    validate_reading_json(day)
     
     reading = Hashie::Mash.new()
 
     reading.devotional = @reading_json.additional_content_html || YouVersion::Resource.i18nize(@reading_json.additional_content)
-    reading.references = @reading_json.adjusted_days.first.references.map {|data| Hashie::Mash.new(ref: Reference.new(data.reference.osis), completed: data.completed)}
+
+    reading.references = @reading_json.adjusted_days.first.references.map {|data| Hashie::Mash.new(ref: Reference.new(data.reference.osis), completed?: (data.completed == "true"))}    
     
     reading
     
   end
   
+  def set_ref_completion(day, ref, completed)
+    #ref could be osis, index in plan day, or Reference object
+    #TODO: possibly handle if day is Date object
+    if auth
+      opts = {auth: auth}
+      opts[:id] = id
+      opts[:day] = day
+      
+      case ref
+      when Fixnum, /\A[\d]+\z/                    #number (possibly in string form) - assume index of reference in the day
+        ref = reading(day).references[ref.to_i].ref   
+      when Reference                              #Good to go
+      when String                                 #try to create Ref, assuming osis string
+        begin
+          ref = Reference.new(ref)
+          rescue
+           raise "incorrect string format for reference"
+        end
+      else
+        raise "incorrect string format for reference"
+      end
+      
+      #Get the list of completed references to send back to the API (all others will be marked as not-complete)
+      completed_refs = ReferenceList.new
+      reading(day).references.each {|r_mash| completed_refs << r_mash.ref if r_mash.completed?}
+        #adjust the ref_list based on the new completion state for the ref
+      completed ? completed_refs << ref : completed_refs.delete(ref)
+      completed_refs.uniq! #just to be safe
+      
+      opts[:references] = completed_refs.to_api_string
+      
+      YouVersion::Resource.post('reading_plans/update_completion', opts) do |errors|
+          raise YouVersion::ResourceError.new(errors)
+      end
+    else
+      raise "Authentication required to update plan progress"
+    end
+  end
+  
   private
   
-  def validate_reading_json(day, opts = {})
+  def validate_reading_json(day)
     
     #TODO:? check that day is number
     #TODO: are we ok to assume auth is the same as the response cached for this request?
     unless(@reading_json && @reading_json.day == day && @reading_json.id == id)
-      opts[:day] = day
+      opts = {day: day}
       opts[:id] = id
       opts[:auth] ||= @attributes[:auth]
       opts[:user_id] = user_id unless opts[:auth].nil?
