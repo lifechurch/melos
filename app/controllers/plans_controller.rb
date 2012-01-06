@@ -18,7 +18,7 @@ class PlansController < ApplicationController
   def show
     @plan = Plan.find(params[:id], auth: current_auth) 
     
-    if @subscription = current_user.subscriptions.find {|subscription| subscription == @plan}
+    if (@subscription = current_user.subscriptions.find {|subscription| subscription == @plan}) && (params[:ignore_subscription] != "true")
       params[:day] ||= @subscription.current_day
       @day = params[:day].to_i
       @reading = @subscription.reading(@day)
@@ -35,8 +35,7 @@ class PlansController < ApplicationController
       @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
       redirect_to plan_path(@plan, content: params[:content_target], day: params[:day_target])
     else
-      #TODO: error
-      puts "can't update a plan you aren't subscribed to"
+      raise "you can't update a plan to which you aren't subscribed"
     end
     
   end
@@ -47,6 +46,23 @@ class PlansController < ApplicationController
     #TODO: we're wasting an API call here (finding the plan just to subscribe)
     #TODO: handle the case where the user isn't logged in
     redirect_to plan_path(params[:plan_id])
+    
+  end
+  
+  def settings
+    
+    @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
+    
+    raise "you can't view a plan's settings unless you're subscribed" if @subscription.nil?
+    
+    
+  end
+  
+  def calendar
+
+    @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
+    
+    raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
     
   end
 
