@@ -133,7 +133,43 @@ var YV = (function($, window, document, undefined) {
         if (hash.match('#share_')) {
           show_modal();
         }
+        //Share Modal Tab System
+        function hide_tabs() {
+          $('#share_tab').removeClass('selected_tab');
+          $('#share_tab_content').hide()
+          $('#link_tab').removeClass('selected_tab');
+          $('#link_tab_content').hide()
+        }
+        function show_link_tab(){
+          hide_tabs();
+          $('#link_tab').addClass('selected_tab');
+          $('#link_tab_content').show()
+        }
+        function show_share_tab(){
+          hide_tabs();
+          $('#share_tab').addClass('selected_tab');
+          $('#share_tab_content').show()
+        }
+        $('#link_tab').click(function(){
+          show_link_tab();
+        })
+        $('#share_tab').click(function(){
+          show_share_tab();
+        })
+        $(".share_message textarea").charCount({
+          css: "character_count"
+        });
 
+        // Opening Share Modal from Dynamic Menu
+
+        $("#open_share_modal").click(function(){
+          show_modal();
+          show_share_tab();
+        })        
+        $("#open_share_modal_link").click(function(){
+          show_modal();
+          show_link_tab();
+        })
         $(document).keydown(function(ev) {
           if (ev.keyCode === KEY_ESC) {
             hide_modal();
@@ -693,28 +729,52 @@ var YV = (function($, window, document, undefined) {
       // YV.init.highlightsmenu
       // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix 
       highlight: function() {
-        var color = $('.color');
-         color.toggle( 
-      function(){
-        color.empty('span'),
-        $(this).append("<span class='selected'></span>")
-      },
-      function() {
-        color.empty('span');
+        var color = $('.color, .color_picker_clear');
+        color.on('click', function(){
+          if(color.has('span')){
+            color.empty('span');
+            $(this).append("<span class='selected'></span>")
+          } else {
+            $(this).append("<span class='selected'></span>")
+          }
+        })
+      // #needsboomsauce - This bit takes the color from the color picker, adds a new color
+      //                   slide to the list of colors, and adds the color to the background,
+      //                   then hides the color picker. But that doesn't work. I don't know how
+      //                   identify the specific <a> it appends on line 742 and give it the hex. HALP?
+      $('.color_picker').ColorPicker({
+        flat: false,
+        onSubmit: function(hsb, hex, rgb, el) {
+          $(".color_picker_list").append("<a class='color' href='#' style='background-color: #'></span>");
+          $(".color_picker_list .color:last").css('backgroundColor', '#' + hex);
+          $(el).ColorPickerHide();
+        }
+      });
+      $(window).resize(function() {
+          $('.colorpicker').hide();
       })
       $(".remove_color").click(function(){
         color.empty('span');
       })
       },
-      // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix 
       parallel_notes: function() {
         $('.alternate_select').on('change', function(){
           if($(this).val() == "publish_on"){
             $('.secret').fadeIn();
+            $('#publish_time').addClass('publish_on_selected');
           } else{
             $('.secret').hide();
+            $('#publish_time').removeClass('publish_on_selected');
           }
         });
+      },
+      reference_tokens: function() {
+        $('#add_reference_token > a').click(function(){
+          $('#add_reference_token input').show();
+        })
+        $('.reference_tokens li').click(function(){
+          $(this).remove();
+        })
       },
       audio_player: function() {
         var audio = $('#audio_player');

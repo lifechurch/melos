@@ -222,11 +222,10 @@
   float: left
   width: 100%
 
-
 .color_picker_list a 
   float: left
   margin:
-    right: 10px
+    right: 7px
 
 .color_picker   
   height: 23px
@@ -236,7 +235,7 @@
   box-shadow: inset 0px 1px 0px #ddd
   background: url(../images/menu_color_gradient.png) center center no-repeat, url(../images/menu_color_picker.png) center center no-repeat
 
-.color 
+.color
   background: url(../images/menu_color_gradient.png) center center no-repeat
   box-shadow:inset 0px 1px 0px #ddd
   border-radius: 4px
@@ -244,7 +243,15 @@
   width: 23px
   display: block
 
-.color .selected 
+.color_picker_clear
+  background: url(../images/menu_color_none.png) center center no-repeat
+  box-shadow:inset 0px 1px 0px #ddd
+  border-radius: 4px
+  height: 23px
+  width: 23px
+  display: block
+
+.color .selected, .color_picker_clear .selected 
   background: url(../images/menu_color_selected.png) no-repeat
   position: relative
   width: 23px
@@ -253,8 +260,13 @@
   left: 12px
   display: block
   
-.color .selected:hover 
-  background-position: 0px -24px
+// Color Picker in Highlight Acc.
+.accordion dd .color_picker_list 
+  margin: 0 0 15px 0
+
+// UX has been changed for right now, this isn't needed
+// .color .selected:hover 
+//  background-position: 0px -24px
 
 .remove_color
   display: block

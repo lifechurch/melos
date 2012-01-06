@@ -108,8 +108,8 @@
   +box-shadow(inset rgba(#fff, 0.3) 0 1px 0 0, rgba(#000, 0.2) 0 0 0 4px)
   margin-left: 4px
   padding:
-    left: 60px
-    right: 60px
+    left: 30px
+    right: 30px
 
 #modal_window .action_button_green:focus,
 #modal_window .action_button_green:active,
@@ -145,14 +145,12 @@
   font-size: 15px
 #modal_window .tabs
   margin: 20px
-#modal_window .tab_content
-  background: #eae9ec
-#modal_window .tab_content span 
-  font-size: 10px
-.tab_content 
+#modal_window .tab_content_container
   background: #eae9ec
   padding: 20px
   +round-bottom
+#modal_window .tab_content_container span 
+  font-size: 10px
 #link_tab_content
   display: none
 
@@ -180,16 +178,16 @@
   margin: 0 auto
   padding-left: 20px
 
-#share_tab
+#share_tab a span
   background: url(../images/share_tab_icon.png) left -30px no-repeat
 
-.selected_tab a #share_tab
+.selected_tab a #share_tab a span
   background: url(../images/share_tab_icon.png) left 5px no-repeat
 
-#link_tab
+#link_tab a span
   background: url(../images/link_tab_icon.png) left -30px no-repeat
 
-.selected_tab a #link_tab
+.selected_tab a #link_tab a span
   background: url(../images/share_tab_icon.png) left 5px no-repeat
 
 
@@ -233,11 +231,13 @@
 .share_action a .action_button_green
   float: right
   padding:
-    left: 30px !important
-    right: 30px !important
+    left: 15px !important
+    right: 15px !important
 .action_cancel
   padding: 5px 0px 0px 0px
   margin-right: 10px
+  color: #676767
+  text-decoration: underline
 
 .share_services span .faux_checkbox
   float: left
