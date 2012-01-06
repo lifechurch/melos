@@ -87,28 +87,27 @@ class User < YouVersion::Resource
       case user
       when Fixnum
         if opts[:auth] && user == opts[:auth].user_id
-          hash = YvApi.get("users/view", id_key_for_version => user, :auth => opts[:auth]).to_hash.symbolize_keys
+          response = YvApi.get("users/view", id_key_for_version => user, :auth => opts[:auth])
         else
-          hash = YvApi.get("users/view", id_key_for_version => user).to_hash.symbolize_keys
+          response = YvApi.get("users/view", id_key_for_version => user)
         end
-        hash[:auth] = opts[:auth] ||= nil
+        response[:auth] = opts[:auth] ||= nil
       when Hashie::Mash
-        hash = YvApi.get("users/view", id: user.user_id, auth: user).to_hash.symbolize_keys
-        hash[:auth] = user
+        response = YvApi.get("users/view", id: user.user_id, auth: user)
+        response[:auth] = user
       when String
         case user
         when /\s*\d+\s*/      # It's just a number in string form
-          hash = YvApi.get("users/view", id_key_for_version => user.to_i).to_hash.symbolize_keys
-          hash[:auth] = user
+          response = YvApi.get("users/view", id_key_for_version => user.to_i)
+          # response[:auth] = user
           # when /username-type-pattern/
-          #   hash = YvApi.get find-by-username-yay
+          # hash = YvApi.get find-by-username-yay
         else
           raise ArgumentError, "Strings not supported yet as value type for 'user' param in User.find"
         end
         # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
       end
-      usr = User.new(hash)
-      usr
+      User.new(response)
     end
   end
 
@@ -158,10 +157,11 @@ class User < YouVersion::Resource
     @recent_activity
   end
 
-  def subscriptions(params = {})
-    params[:user_id] = id
+  def subscriptions(opts = {})
+    opts[:user_id] = id
+    opts[:auth] ||= auth
 
-    response = YvApi.get("reading_plans/items", params) do |errors|
+    response = YvApi.get("reading_plans/items", opts) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
         return []
       else
@@ -171,8 +171,8 @@ class User < YouVersion::Resource
     
     subscriptions = ResourceList.new
     subscriptions.total = response.total
-    response.reading_plans.each {|plan_hash| subscriptions << Subscription.new(plan_hash.merge(:auth => params[:auth]))}
-    
+    response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(:auth => auth))}
+
     subscriptions
   end
   

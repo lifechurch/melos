@@ -19,15 +19,21 @@ class ReferenceList
   # TODO: Fairly brittle - probably only going to work as written
   # with just osis-able strings. Do we need << for this class?
   # Probably not.
+  # Yes, we do (EP), see Subscriptions:set_ref_completion
   def <<(*args)
-    @references.concat args.map{|r| Reference.new(r.to_osis_string, self.version)}
+    args.map do |r| 
+      raise "Reference Lists can only consist of Reference Objects" if r.class != Reference
+      
+      @references << Reference.new(r.osis, self.version)
+    end
   end
 
-  def initialize(args, version = nil)
+  def initialize(args = nil, version = nil)
     self.version = version
     @references = []
 
     case args
+    when nil
     when Array
       # TODO: This needs to be more robust. In my limited experience so far, these
       # arrays that arrive here are made up of scripture strings, meaning they don't
@@ -66,17 +72,9 @@ class ReferenceList
     ref_array.map{|str| Reference.new(str.strip, self.version)}
   end
 
-  # Present our References in a string format suitable for sending to the API,
-  # ever-cognizant of the API version's requirements.
   def to_api_string
-    join_str = case Cfg.api_version
-    when "2.3"
-      '%2b'
-    when "2.4"
-      ','
-    else
-      '%2b'
-    end
-    @references.compact.map(&:osis_noversion).join(join_str)
+    join_str = '+'
+    
+    @references.compact.map{|r| r.osis_noversion.capitalize}.join(join_str)
   end
 end

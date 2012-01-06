@@ -22,11 +22,11 @@
         = link_to t("plans.all plans"), plans_path
       %dd.highlighted
         = link_to t("plans.my plans"), user_plans_path(current_user)
-  - else
+  -#else: is a different veiw
       
-  - if !@user.subscriptions(params).empty?
+  - if !@user.subscriptions.empty?
     %ul.big_list
-      - @user.subscriptions(auth: current_auth).each do |plan|
+      - @user.subscriptions.each do |plan|
         %li
           %div
             %h4= link_to(plan.name, plan_path(plan))
@@ -36,7 +36,9 @@
                 %b=t("plans.subscription.Current Progress String", day: plan.current_day, total_days: plan.total_days)
               .progress_bar_outer
                 .progress_bar{:style => "width:#{plan.progress}%"}
+                  &nbsp;
               .progress_bar_cap
+                &nbsp;
               .progress_bar_shadow
                 .progress_percent_complete{:style => "left:#{plan.progress}%"}
                   %b="#{plan.progress}%"

@@ -32,8 +32,11 @@ YouversionWeb::Application.routes.draw do
   match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
 
   #Reading Plans
-  resources :plans, :only => [:index, :show], :path => 'reading-plans' do
+  resources :plans, :only => [:index, :show, :update], :path => 'reading-plans' do
     resources 'users', :only => [:index]
+    match 'settings' => 'plans#settings'
+    match 'calendar' => 'plans#calendar'
+    match 'start' => 'plans#start'
   end
 
   # profile stuff

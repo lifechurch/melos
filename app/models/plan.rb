@@ -31,9 +31,7 @@ class Plan < YouVersion::Resource
     "reading_plans"
   end
   
-  def self.find(id, params = {}, &block)
-    
-
+  def self.find(id, opts = {}, &block)
     if id.is_a?(String) 
       #slug was passed, get id from slug with search, since API doesn't give a better way
       lib_plan = search(id).find{|plan| plan.slug == id}
@@ -41,7 +39,7 @@ class Plan < YouVersion::Resource
     end
 
     #TODO: this doesn't work if an integer id is passed?
-    super(id, params, &block)
+    super(id, opts, &block)
     
   end
   
@@ -114,4 +112,13 @@ class Plan < YouVersion::Resource
     correct_class && self.id == compare.id
   end
   
+  def subscribe (user_auth, opts = {})
+    
+    #/2.2/reading_plans/subscribe_user
+    opts = opts.merge!(auth: user_auth)
+    opts[:id] = id
+    
+    YouVersion::Resource.post('reading_plans/subscribe_user', opts)
+    
+  end
 end

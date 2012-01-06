@@ -2,7 +2,7 @@ module YvModule
 
   def i18nize(hash)
     lang_key = I18n.locale.to_s.gsub("-", "_")
-    hash.has_key?(lang_key) ? hash[lang_key] : hash["default"]
+    hash.has_key?(lang_key) ? hash[lang_key] : hash["default"] unless hash.nil?
   end
 
   def attributes(*args)
