@@ -32,7 +32,7 @@ class PlansController < ApplicationController
   def update
     @plan = Plan.find(params[:id], auth: current_auth) 
     if @subscription = current_user.subscriptions.find {|subscription| subscription == @plan}
-      @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
+      @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
       redirect_to plan_path(@plan, content: params[:content_target], day: params[:day_target])
     else
       raise "you can't update a plan to which you aren't subscribed"

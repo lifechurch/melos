@@ -165,5 +165,6 @@ en:
     previous day:                 "Previous Day"
     next day:                     "Next Day"
     mark reading complete:        "Mark Reading Complete"
+    read today:                   "View Today's Reading"
     subscription:
       Current Progress String:    "Day %{day} of %{total_days}"
