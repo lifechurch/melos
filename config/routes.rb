@@ -16,11 +16,16 @@ YouversionWeb::Application.routes.draw do
     resources 'notes'
     resources 'likes', :only => [:index]
     resources 'bookmarks', :only => [:index]
+    match 'friends' => 'users#following'
   end
+
   resources 'notes', :except => [:index]
   match 'notes' => 'notes#index', :as => 'all_notes'
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
+  match 'sign-up/facebook' => 'users#create_facebook', :as => 'facebook_sign_up', :via => :post
+  match 'sign-up/facebook' => 'users#new_facebook', as: 'facebook_sign_up', :via => :get
+  match 'sign-up/success' => 'users#sign_up_success', as: 'sign_up_success'
   match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
   # Sessions
   match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
@@ -48,7 +53,6 @@ YouversionWeb::Application.routes.draw do
   match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
 
   match 'reading-plans' => 'coming_soon#index'
-  match 'friends' => 'coming_soon#index'
   match 'mobile' => 'coming_soon#index'
 
 

@@ -1,13 +1,45 @@
 class UsersController < ApplicationController
   before_filter :force_login, except: [:new, :create, :confirm_email]
 
+  # User signup flow:
+  #
+  #  +>  /sign-up (users#new)  <-err--------+
+  #  |     |             |                  |
+  #  |   form submit   facebook btn         |
+  # err    |                 \              |
+  #  |  success?           facebook auth (/auth/facebook/sign-up)
+  #  |   /   \                  \           |
+  #  +-no     yes              success?     |
+  #            |                /    \      |
+  #      /confirm-email      yes     no ----+
+  #          (...)            |
+  #       clicks link      /sign-up/facebook   <----+
+  #           |               |                     |
+  #       /confirm        fill out form & submit    |
+  #           |                     |               |
+  #       valid code?           success?           err
+  #         /     \              /    \             |
+  #       yes     no           yes     no ----------+
+  #        |       \            |
+  #     redirect   /confirm     |
+  #        |       (with error) |
+  #        +--------------------+
+  #        |
+  #   /sign-up/success (or sign_up_redirect)
+
+
+
   def new
+    cookies[:sign_up_redirect] = params[:redirect] if params[:redirect]
     @user = User.new
   end
 
   def create
     @user = User.new(params[:user])
-    if @user.create
+    if @user.save
+      # save username and password so we can sign them back in
+      cookies.signed[:f] = params[:user][:username]
+      cookies.signed[:g] = params[:user][:password]
       redirect_to confirm_email_path
     else
       render action: "new"
@@ -15,6 +47,46 @@ class UsersController < ApplicationController
   end
 
   def confirm_email
+  end
+
+  def confirm
+    response = YvApi.post("users/confirm", hash: params[:hash]) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      self.errors[:base] << new_errors
+      return false
+    end
+    if response
+      redirect_to cookies[:sign_up_redirect] ||= sign_up_success_path(show: "facebook")
+    end
+  end
+
+  def new_facebook
+    flash.now[:notice] = t('users.facebook sign up success')
+    facebook_auth = JSON.parse cookies.signed[:facebook_auth]
+    @user = User.new
+    @user.email = facebook_auth["info"]["email"]
+    @user.verified = true
+  end
+
+  def create_facebook
+    facebook_auth = JSON.parse cookies.signed[:facebook_auth]
+    @user = User.new(params[:user])
+    @user.email = facebook_auth["info"]["email"]
+    @user.verified = true
+    if @user.save
+      # Get the real thing
+      user = User.authenticate(params[:username], params[:password])
+      cookies.permanent.signed[:a] = user.id
+      cookies.permanent.signed[:b] = user.username
+      cookies.permanent.signed[:c] = params[:password]
+      cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+      redirect_to cookies[:sign_up_redirect] ||= sign_up_success_path(show: "facebook")
+    else
+      render action: "new_facebook"
+    end
+  end
+
+  def sign_up_success
   end
 
   def show
@@ -49,6 +121,10 @@ class UsersController < ApplicationController
     result = @notification_settings.update(params[:notification_settings])
     result ? flash.now[:notice] = t('users.profile.updated notifications') : flash.now[:error] = @user.errors
     render action: "notifications"
+  end
+
+  def following
+    @users = current_user.following
   end
 
 

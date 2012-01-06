@@ -1,18 +1,21 @@
 = form_for :user, url: sign_up_path do |f|
-  - if @user.errors
+  - if @user.errors.any?
     .form_errors
       =t("users.creation form errors")
       %ul
-        - @user.errors.each do |e|
+        - @user.errors[:base].each do |e|
           %li= e
   %p
     = f.label :email, t("users.email address")
+    %br
     = f.text_field :email
   %p
     = f.label :username, t("users.user name")
+    %br
     = f.text_field :username
   %p
     = f.label :password, t("users.password")
+    %br
     = f.password_field :password
   %p
     = f.check_box :agree

@@ -15,7 +15,7 @@
         %a{:href => current_auth ? user_notes_path(current_auth.user_id) : notes_path}
           %span=t("notes title")
       %li#nav_primary_friends
-        %a{:href => '/friends'}
+        %a{:href => user_friends_path(current_auth.user_id)}
           %span=t("friends")
       %li#nav_primary_mobile
         %a{:href => '/mobile'}

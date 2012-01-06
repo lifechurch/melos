@@ -250,7 +250,7 @@ module YouVersion
       token = self.persist_token
       response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }
-        self.errors[:base] << new_errors
+        new_errors.each { |e| self.errors[:base] << e }
 
         if block_given?
           yield errors
@@ -265,7 +265,9 @@ module YouVersion
     def before_save; end;
     def after_save(response); end;
     def save
-      return false unless authorized?
+      unless (self.persisted? == false && self.class == User)
+        return false unless authorized?
+      end
 
       response = true
       response_data = nil

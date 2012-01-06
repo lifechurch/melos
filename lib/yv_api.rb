@@ -78,7 +78,10 @@ class YvApi
   end
 
   def self.api_response_or_rescue(response, block)
+    puts "## response is #{response}"
     if response["response"]["code"].to_i >= 400
+      puts "i'm in the error block thingy"
+      puts "response data errors is #{response["response"]["data"]["errors"]}"
       # If there's a block, use it for a substitute API call
       new_response = block.call(response["response"]["data"]["errors"]) if block
       # If the block didn't return a substitute array, throw an exception based on the original error
@@ -95,6 +98,14 @@ class YvApi
     return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
 
     # Otherwise, turn the data back into a Mash and return it
-    response["response"]["data"].is_a?(Array) ? response["response"]["data"].map {|e| Hashie::Mash.new(e)} : Hashie::Mash.new(response["response"]["data"])
+    case response["response"]["data"]
+      when Array
+        response["response"]["data"].map {|e| Hashie::Mash.new(e)}
+      when Hash
+        Hashie::Mash.new(response["response"]["data"])
+      when Fixnum
+        # only for users/user_id
+        Hashie::Mash.new({user_id: response["response"]["data"] })
+      end
   end
 end
