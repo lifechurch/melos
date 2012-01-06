@@ -160,5 +160,6 @@ en:
     subscribe to plan:            "Start this plan"
     previous day:                 "Previous Day"
     next day:                     "Next Day"
+    mark reading complete:        "Mark Reading Complete"
     subscription:
       Current Progress String:    "Day %{day} of %{total_days}"
