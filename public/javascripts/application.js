@@ -17,11 +17,15 @@ var YV = (function($, window, document, undefined) {
   return {
     // Run everything in YV.init
     go: function() {
-      for (var i in YV.init) {
-        YV.init[i]();
+      var i, j = YV.init;
+
+      for (i in j) {
+        j.hasOwnProperty(i) && j[i]();
       }
     },
+    // YV.misc
     misc: {
+      // YV.misc.kill_widget_spacers
       kill_widget_spacers: function() {
         // Kill spacers, if they exist already
         // because this function is called when
@@ -637,6 +641,7 @@ var YV = (function($, window, document, undefined) {
           size && article.attr('data-setting-size', size);
         });
       },
+      // YV.init.audio_player
       audio_player: function() {
         var audio = $('#audio_player');
 
@@ -654,9 +659,9 @@ var YV = (function($, window, document, undefined) {
       }
     }
   };
-})(this.jQuery, this, this.document);
+})(jQuery, this, this.document);
 
 // Fire it off!
-window.jQuery(document).ready(function() {
+jQuery(document).ready(function() {
   YV.go();
 });
