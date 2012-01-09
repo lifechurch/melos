@@ -1,7 +1,7 @@
 #nav_primary{:role => "navigation"}
   %nav
     %ul
-      %li#nav_primary_bible{class: @nav == :bible ? t("highlighted") : ""}
+      %li#nav_primary_bible{class: @nav == :bible ? "highlighted" : ""}
         %a{:href => '/bible'}
           %span=t("bible")
       - if current_auth
