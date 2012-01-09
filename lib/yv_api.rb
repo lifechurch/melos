@@ -10,11 +10,11 @@ class YvApi
 
   def self.get(path, opts={}, &block)
     auth_from_opts!(opts)
-    base = get_base_url(opts.delete(:secure))
+    base = get_base_url!(opts)
     path = clean_up(path)
     resource_url = base + path
     # Rails.logger.info "** YvApi.get: Calling #{resource_url} with query => #{opts}"
-    # puts "** YvApi.get: Calling #{resource_url} with query => #{opts}"
+    puts "** YvApi.get: Calling #{resource_url} with query => #{opts}"
     if (resource_url == "http://api.yvdev.com/2.3/bible/verse.json")
       calling_method = caller.first.match(/`(.*)'$/)[1]
       # puts "** YvApi.get: Called from #{calling_method}"
@@ -38,7 +38,7 @@ class YvApi
 
   def self.post(path, opts={}, &block)
     auth_from_opts!(opts)
-    base = get_base_url(opts.delete(:secure))
+    base = get_base_url!(opts)
     path = clean_up(path)
     resource_url = base + path
     # Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
@@ -70,11 +70,13 @@ class YvApi
     return path
   end
 
-  def self.get_base_url(use_secure = nil)
+  def self.get_base_url!(opts)
+    api_version = opts.delete(:api_version)
+    use_secure = opts.delete(:secure)
     # Set the request protocol
     protocol = use_secure ? 'https' : 'http'
     # Set the base URL
-    base = (protocol + "://" + Cfg.api_root + "/" + Cfg.api_version)
+    base = (protocol + "://" + Cfg.api_root + "/" + (api_version || Cfg.api_version))
   end
 
   def self.api_response_or_rescue(response, block)
@@ -100,7 +102,11 @@ class YvApi
     # Otherwise, turn the data back into a Mash and return it
     case response["response"]["data"]
       when Array
-        response["response"]["data"].map {|e| Hashie::Mash.new(e)}
+        if response["response"]["data"].first.respond_to?(:each_pair)
+          response["response"]["data"].map {|e| Hashie::Mash.new(e)}
+        else
+          response["response"]["data"]
+        end
       when Hash
         Hashie::Mash.new(response["response"]["data"])
       when Fixnum

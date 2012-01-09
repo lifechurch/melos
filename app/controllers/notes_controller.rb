@@ -4,7 +4,7 @@ class NotesController < ApplicationController
 
   def index
     if params[:user_id]
-      @notes = User.find(params[:user_id].to_i, :auth => current_auth).notes(page: @page)
+      @notes = User.find(params[:user_id], :auth => current_auth).notes(page: @page)
     else
       @notes = Note.all(page: @page)
     end

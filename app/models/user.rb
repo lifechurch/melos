@@ -32,6 +32,8 @@ class User < YouVersion::Resource
 
   has_many_remote :badges
 
+  api_version "2.5"
+
   def self.update_path
     "users/update_profile"
   end
@@ -100,7 +102,7 @@ class << self
       hash = YvApi.get("users/view", id: user.user_id, auth: user).to_hash.symbolize_keys
       hash[:auth] = user
     when String
-      response = YvApi.get("users/user_id", username: user)
+      response = YvApi.get("users/user_id", api_version: "2.5", username: user)
       puts "response.user_id is #{response.user_id}"
       if opts[:auth] && user == opts[:auth].username
         hash = YvApi.get("users/view", id_key_for_version => response.user_id, :auth => opts[:auth]).to_hash.symbolize_keys
@@ -242,6 +244,10 @@ end
 
   def following_username_list
     @following_id_list ||= all_following
+  end
+
+  def all_following
+    response = YvApi.get("users/all_following", id: self.id)
   end
 
 

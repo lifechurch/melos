@@ -1,12 +1,8 @@
 - @title = "#{t('users.connected accounts')} | #{@user.name || @user.username}"
 
-- content_for :sidebar do
-  = render "sidebar"
-
-%article
-  %h1= t('users.connected accounts')
-  %p Connect to:
-  %ul
-    %li= link_to "Twitter", new_connection_path("twitter", redirect: connections_path(show: "twitter"))
-    %li= link_to "Facebook", new_connection_path("facebook", redirect: connections_path(show: "facebook"))
+%h1= t('users.connected accounts')
+%p Connect to:
+%ul
+  %li= link_to "Twitter", new_connection_path("twitter", redirect: connections_path(show: "twitter"))
+  %li= link_to "Facebook", new_connection_path("facebook", redirect: connections_path(show: "facebook"))
 

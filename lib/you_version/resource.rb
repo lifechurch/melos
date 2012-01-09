@@ -100,7 +100,10 @@ module YouVersion
 
       def all(params = {})
         response = YvApi.get(list_path, params) do |errors|
-          if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+          if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
+            # Then it's the notes thing where you're auth'ed as a different user
+            all(params.merge(auth: nil))
+          elsif errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
             return []
           else
             raise ResourceError.new(errors)
@@ -171,6 +174,10 @@ module YouVersion
         end
       end
 
+      def api_version(version)
+        @api_version = version
+      end
+
       def secure(*secure_method_names)
         @secure_methods ||= []
         @secure_methods += secure_method_names.map(:to_sym)
@@ -190,10 +197,12 @@ module YouVersion
       end
 
       def post(path, params, &block)
+        params[:api_version] = @api_version if @api_version
         YvApi.post(path, securify(params, caller), &block)
       end
 
       def get(path, params, &block)
+        params[:api_version] = @api_version if @api_version
         YvApi.get(path, securify(params, caller), &block)
       end
       

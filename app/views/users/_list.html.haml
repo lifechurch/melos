@@ -9,7 +9,7 @@
           %br
           %b= u.username
       %form.float_right.gutter_top_half{method: "post", onsubmit: "return false"}
-        - if current_user.following_username_list.include? u.username
+        - if current_user && current_user.following_username_list.include?(u.username)
           %button{title: "#{t('users.unfollow')} #{u.name || u.username}"}= t('users.unfollow')
         - else
           %button{title: "#{t('users.follow')} #{u.name || u.username}"}= t('users.follow')

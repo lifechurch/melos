@@ -1,3 +1,2 @@
-%article
-  %h1= t('users.following title')
-  = render "list"
+= render "list"
+= render "shared/pagination", resource_list: @users 

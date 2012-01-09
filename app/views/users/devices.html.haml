@@ -1,15 +1,11 @@
 - @title = "#{t('users.connected devices')} | #{@user.name || @user.username}"
 
-- content_for :sidebar do
-  = render "sidebar"
-
-%article
-  %h1= t('users.connected devices')
-  %ul.big_list
-    - @devices.each do |d|
-      %li
-        %div.float_right= link_to t('remove'), device_path(d.id), method: :delete, confirm: t('are you sure')
-        %h4= "#{d.vendor} #{d.model}"
-        %p.small.mute.negative_gutter_top_half
-          = d.os
-          = "(#{t('registered')} #{time_ago_in_words(d.created_date)} #{t('ago')})"
+%h1= t('users.connected devices')
+%ul.big_list
+  - @devices.each do |d|
+    %li
+      %div.float_right= link_to t('remove'), device_path(d.id), method: :delete, confirm: t('are you sure')
+      %h4= "#{d.vendor} #{d.model}"
+      %p.small.mute.negative_gutter_top_half
+        = d.os
+        = "(#{t('registered')} #{time_ago_in_words(d.created_date)} #{t('ago')})"

@@ -13,10 +13,10 @@ YouversionWeb::Application.routes.draw do
 
   # Users
   resources 'users', :except => [:new, :create] do
-    resources 'notes'
-    resources 'likes', :only => [:index]
-    resources 'bookmarks', :only => [:index]
-    match 'friends' => 'users#following'
+    match 'notes' => 'users#notes', as: 'notes'
+    match 'bookmarks' => 'users#bookmarks', as: 'bookmarks'
+    match 'likes' => 'users#likes', as: 'likes'
+    match 'friends' => 'users#following', as: 'friends'
   end
 
   resources 'notes', :except => [:index]

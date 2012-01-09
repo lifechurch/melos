@@ -11,10 +11,10 @@
               =current_auth.username
           %ol#header_profile_menu
             %li
-              %a{:href => '#'}
+              %a{:href => profile_path}
                 =t("settings")
             %li
-              %a{:href => user_path(current_auth.user_id)}
+              %a{:href => user_path(current_auth.username)}
                 =t("profile")
             %li
               %a{:href => sign_out_path}
@@ -25,7 +25,7 @@
 
 
       %li
-        %a{:href => '#'}
+        %a{:href => connections_path}
           %span
             =t("find friends")
   %form#header_search_form
