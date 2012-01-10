@@ -2,15 +2,15 @@
 - @sidebar = false
       
 %article
-  %h3.float_left= @subscription.name
   %dl.combo_button.float_right
     %dt
     %dd.highlighted
       = link_to t("plans.day")
-    %dd
+    %dd.settings
       = link_to t("plans.settings"), plan_settings_path(@subscription)
     %dd
       = link_to t("plans.month"), plan_calendar_path(@subscription)
+  %h1{style: "clear: none; width: 600px"}= @subscription.name
       
   .split_pane{:style => "padding-top:15px"}
     - if @reading.devotional
@@ -38,7 +38,8 @@
                 - if @content_page != 0
                   %input{type: "hidden", name: "content_target", value: @content_page}
                 %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
-                %label{for: "#{i}_box"}= r.ref.to_s
+                %span{for: "#{i}_box"}
+                  %a= r.ref.to_s
       %br
         .subscription_plan_links{style: "margin-left: 30px;"}
           %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)

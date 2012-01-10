@@ -15,8 +15,9 @@
         %p
           %b=t("plans.length field")
           = @plan.length
-      %li
-        = link_to(t("plans.view sample"), @plan)
+      - if !current_user.subscribed_to? @plan
+        %li
+          = link_to(t("plans.view sample"), @plan)
       %li
         = link_to(t("plans.users subscribed", user_count: @plan.users.count), plan_users_path(@plan))
   .widget
@@ -28,6 +29,7 @@
         %p= @plan.copyright
       %li
         = link_to(t("plans.about publisher"), @plan.publisher_url)
+        -#TODO: view partial for this sidebar plan content
       
 %article
   -#TODO: put << link back to how we got here

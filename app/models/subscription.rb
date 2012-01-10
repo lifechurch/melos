@@ -1,6 +1,13 @@
 class Subscription < Plan
 
   attribute :user_id
+  attribute :private
+  attribute :system_accountability
+  attribute :group_id
+  
+  def user
+      @user ||= User.find(auth ? auth : user_id)
+  end
 
   def start
       @start ||= Date.parse(@attributes.start)
@@ -24,6 +31,35 @@ class Subscription < Plan
   
   def total_days
     days.to_i
+  end
+  
+  def day_statuses
+    if auth
+      response = YvApi.get('reading_plans/calendar', {auth: auth, id: id, user_id: user_id}) do |errors|
+          raise YouVersion::ResourceError.new(errors)
+      end
+    else
+      raise "Authentication required to view calendar of a reading plan"
+    end
+    response    #In this case, response is an array of mashes...
+  end
+  
+  def last_completed_date
+    #Returnes nil if no days have been completed
+    statuses = day_statuses
+    index = statuses.rindex{|day_mash| day_mash.completed}
+    return nil if index.nil?
+
+    Date.parse(statuses[index].date)
+  end
+  
+  def last_completed_day
+    #Returnes nil if no days have been completed
+    statuses = day_statuses
+    index = statuses.rindex{|day_mash| day_mash.completed}
+    return nil if index.nil?
+
+    statuses[index].day.to_i
   end
   
   def current_day
@@ -130,9 +166,64 @@ class Subscription < Plan
       YouVersion::Resource.post('reading_plans/update_completion', opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
+      #TODO: update object to reflect state change
     else
       raise "Authentication required to update plan progress"
     end
+  end
+  
+  def catch_up
+    if auth
+      response = YouVersion::Resource.post('reading_plans/reset', {auth: auth, id: id}) do |errors|
+          raise YouVersion::ResourceError.new(errors)
+      end
+      @attributes.merge!(response)
+    else
+      raise "Authentication required to catch up on a plan"
+    end  
+  end
+  
+  def restart
+    if auth
+      response = YouVersion::Resource.post('reading_plans/restart', {auth: auth, id: id}) do |errors|
+          raise YouVersion::ResourceError.new(errors)
+      end
+      @attributes.merge!(response)
+    else
+      raise "Authentication required to restart a reading plan"
+    end
+  end
+  
+  def delete_path
+    "#{api_path_prefix}/unsubscribe_user"
+  end
+  
+  def delete
+    destroy
+  end
+  
+  def unsubscribe
+    destroy
+  end
+  
+  def make_public
+    update_subscription(private: false)
+  end
+  
+  def make_private
+    update_subscription(private: true)
+  end
+  
+  def public?
+    !(private?)
+  end
+  
+  def private?
+    private
+  end
+  
+  def accountability
+    Hashie::Mash.new({send_reminder?: true, report_recipients: ["me", "them"]})
   end
   
   private
@@ -150,7 +241,33 @@ class Subscription < Plan
           raise YouVersion::ResourceError.new(errors)
       end
     end
-    
+  end
+  
+  def update_subscription (opts = {})
+    if auth
+      opts[:auth] = auth
+      opts[:id] = id
+      opts[:start] = start.iso8601
+      opts[:total_days] = total_days
+      opts[:group_id] = group_id
+      opts[:private] = private if opts[:private].nil?
+      opts[:accountability] = system_accountability
+      
+      # Note: Not a partial update, if I don't pass these items, they will be overwritten by defaults.
+      # id  of reading plan
+      # start date to start reading plan on
+      # end date to end reading plan on (required if total_days isn't sent, most send total_days)
+      # total_days  of reading plan subscription length, normally you just use the value supplied in the view method
+      # group_id  of group that the user subscribed as a result of, so if a group starts a reading plan and a user subscribes off that group, we track the group id here so that we have record of it
+      # private true/false on whether the subscription should be private
+      # system_accountability true/false on whether you want the system to send you weekly reminders about your progress, can be turned off at a later time
+      response = YouVersion::Resource.post('reading_plans/update_subscribe_user', opts) do |errors|
+          raise YouVersion::ResourceError.new(errors)
+      end
+      @attributes.merge!(response)
+    else
+      raise "Authentication required to unsubscribe from a reading plan"
+    end
   end
 
 end

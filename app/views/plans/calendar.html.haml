@@ -1,0 +1,26 @@
+- @title = "Plan Calendar and Progress"
+- @sidebar = false
+
+%article
+  %dl.combo_button.float_right
+    %dt
+    %dd
+      = link_to t("plans.day"), plan_path(@subscription)
+    %dd.settings
+      = link_to t("plans.settings"), plan_settings_path(@subscription)
+    %dd.highlighted
+      = link_to t("plans.month")
+  %h1{style: "clear: none; width: 600px"}= @subscription.name
+  %hr
+  %h4= t("plans.calendar")
+  .calendar
+    - @subscription.day_statuses.each do |day|
+      - #sample Mash: completed=false date="2012-12-14" day=347 references=["Jas.3.1"] references_completed=[] references_remaining=["Jas.3.1"]
+      - date = Date.parse(day.date)
+      - if @month != date.month
+      - @month = date.month
+        %br
+        %b= date.strftime('%B %Y')
+      .day= "#{date.day}: #{link_to("Day #{day.day}", plan_path(@subscription.slug,day: day.day))} of #{@subscription.total_days}, #{day.completed ? "complete" : !day.references_completed.empty? ? "partially complete" : "incomplete"}".html_safe
+
+    

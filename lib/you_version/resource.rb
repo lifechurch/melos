@@ -83,8 +83,12 @@ module YouVersion
           if api_errors
             # Sadly, all our attempts failed.
             @errors = api_errors.map { |e| e["error"] }
-          #  return false
-            raise ResourceError.new(errors)
+
+            if block_given?
+              block.call(errors)
+            else
+              raise ResourceError.new(errors)
+            end
           end
 
           # Propagate the response from the get-with-auth call as the return

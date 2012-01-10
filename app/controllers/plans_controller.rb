@@ -34,6 +34,7 @@ class PlansController < ApplicationController
     if @subscription = current_user.subscriptions.find {|subscription| subscription == @plan}
       @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
       redirect_to plan_path(@plan, content: params[:content_target], day: params[:day_target])
+      #TODO: sender should send all parameters, then we should mask them with nils for default cases here
     else
       raise "you can't update a plan to which you aren't subscribed"
     end
@@ -54,7 +55,19 @@ class PlansController < ApplicationController
     @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
     
     raise "you can't view a plan's settings unless you're subscribed" if @subscription.nil?
+
+    @subscription.catch_up if params[:catch_up] == "true"
+    @subscription.restart if params[:restart] == "true"
     
+    if (params[:make_public] == "true" || params[:make_private] == "true")
+      params[:make_public] == "true" ? @subscription.make_public : @subscription.make_private
+    end
+    
+    if(params[:unsubscribe] == "true")
+      @subscription.delete
+      debugger
+      redirect user_plans_path(current_auth.user_id)
+    end
     
   end
   
