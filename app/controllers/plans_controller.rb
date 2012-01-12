@@ -19,6 +19,7 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id], auth: current_auth) 
     
     if (@subscription = current_user.subscriptions.find {|subscription| subscription == @plan}) && (params[:ignore_subscription] != "true")
+      #TODO: user.find_subsctiption would be faster
       params[:day] ||= @subscription.current_day
       @day = params[:day].to_i
       @reading = @subscription.reading(@day)
@@ -64,9 +65,36 @@ class PlansController < ApplicationController
     end
     
     if(params[:unsubscribe] == "true")
-      @subscription.delete
-      debugger
-      redirect user_plans_path(current_auth.user_id)
+      @subscription.destroy
+      redirect user_plans_path(current_auth.user_id, alert: "unsubscribed")
+    end
+    
+    if(params[:email_delivery])
+      if params[:email_delivery] == "false"
+        @subscription.disable_email_delivery
+      else
+        @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version)
+      end
+    end
+    
+    if(params[:send_reminder])
+      params[:send_report] == "true" ? @subscription.enable_reminder : @subscription.disable_reminder
+    end
+    
+    if(params[:send_report])
+      if(params[:send_report] == "true")
+        @subscription.add_accountability_user(current_user)
+      else
+        @subscription.remove_all_accountability
+      end
+    end
+    
+    if(params[:add_accountability_partner])
+        @subscription.add_accountability_user(params[:add_accountability_partner])
+    end
+    
+    if(params[:remove_accountability_partner])
+        @subscription.remove_accountability_user(params[:remove_accountability_partner])
     end
     
   end

@@ -60,7 +60,24 @@
       = @subscription.end.strftime("%B %d, %Y")
   
   %hr
-  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.catch me up'), plan_settings_path(@subscription, catch_up: "true"), :class => 'action_button_green', style: "width: 14em; height: 35px")
+  .float_right{style: "margin-top: 0px; margin-right: 0px"}
+    .float_right= button_to(@subscription.email_delivery? ? t('plans.email_off') : t('plans.email_on'),  email_delivery: (!@subscription.email_delivery?).to_s), class: 'action_button_green', style: "width: 14em; height: 35px")
+  %div{style: "width: 330px"}
+    %h5= t("plans.email delivery")
+    %p.float_left= t("plans.email delivery text", email_address: @subscription.user.email)
+    -if @subscription.email_delivery?
+      %form{method: 'get'}
+        %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "email_delivery", }
+          - ["morning","afternoon","evening"].each do |time|
+            %option{value: time, selected: time == @subscription.email_delivery_time_range}= t("plan.#{time}")
+        %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "version", }
+          - Version.all_by_language.each do |k, v|
+            %optgroup{label: Version.languages[k]}
+                - v.each do |k, v|
+                    %option{value: k.to_s, selected: k == @subscription.email_delivery_version}= v
+
+  %hr
+  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.catch me up'), catch_up: "true", :class => 'action_button_green', style: "width: 14em; height: 35px")
   %div{style: "width: 330px"}
     %h5= t("plans.are you behind")
     - if @subscription.last_completed_date
@@ -69,7 +86,7 @@
       %p.float_left= t("plans.catch up description only")
   
   %hr
-  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.restart'), plan_settings_path(@subscription, restart: "true"), :class => 'action_button_green', style: "width: 14em; height: 35px")
+  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.restart'), restart: "true", :class => 'action_button_green', style: "width: 14em; height: 35px")
   %div{style: "width: 330px"}
     %h5= t("plans.do you want to reset")
     %p.float_left= t("plans.restart description")  
@@ -77,9 +94,9 @@
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
     -if @subscription.public?
-      .float_right= button_to(t('plans.make private'), plan_settings_path(@subscription, make_private: "true"), class: 'action_button_green', style: "width: 14em; height: 35px")
+      .float_right= button_to(t('plans.make private'), make_private: "true", class: 'action_button_green', style: "width: 14em; height: 35px")
     -else 
-      .float_right= button_to(t('plans.make public'), plan_settings_path(@subscription, make_public: "true"), class: 'action_button_green', style: "width: 14em; height: 35px")
+      .float_right= button_to(t('plans.make public'), make_public: "true", class: 'action_button_green', style: "width: 14em; height: 35px")
   %div{style: "width: 330px"}
     %h5= t("plans.privacy title")
     %p.float_left= t("plans.privacy description")
@@ -87,15 +104,27 @@
   %hr
   %h5= t("plans.accountability")
   %form{method: 'get'}
-    %input{type: "hidden", name: "send_reminder", value: (!@subscription.accountability.send_reminder?).to_s}
-    %input{type: "checkbox", onChange: "this.form.submit()", id: "email_me_box",  checked: @subscription.accountability.send_reminder? ? "checked" : nil}
+    %input{type: "hidden", name: "send_reminder", value: (!@subscription.reminder_enabled?).to_s}
+    %input{type: "checkbox", onChange: "this.form.submit()", id: "email_me_box",  checked: @subscription.reminder_enabled? ? "checked" : nil}
     %label{for: "email_me_box"}= t("plans.email reminder to me", email_address: @subscription.user.email)
   %form{method: 'get'}
-    %input{type: "hidden", name: "send_report", value: (@subscription.accountability.report_recipients.empty?).to_s}
-    %input{type: "checkbox", onChange: "this.form.submit()", id: "report_box",  checked: @subscription.accountability.report_recipients.empty? ? nil : "checked"}
+    %input{type: "hidden", name: "send_report", value: (@subscription.accountability_partners.empty?).to_s}
+    %input{type: "checkbox", onChange: "this.form.submit()", id: "report_box",  checked: @subscription.accountability_partners.empty? ? nil : "checked"}
     %label{for: "report_box"}= t("plans.email weekly report to a friend", email_address: @subscription.user.email)
+  - if !@subscription.accountability_partners.empty?
+    %form{method: 'get'}
+      %input{:style =>"width: 300px; margin-left: 0px;", name: "add_accountability_partner", :type => 'search', :placeholder => t("plans.search members placeholder")}
+      %input{:type => 'submit', :value => t("plans.search members")}
+    %ul.big_list
+      -@subscription.accountability_partners.each do|user_name|
+        %li.user
+          - user = User.find(user_name)
+          %img.avatar_large{src: user.user_avatar_url["px_48x48"]}
+          %div
+            .float_left=link_to(user.username, @user)
+            =link_to("x", remove_accountability_partner: user.username) if @subscription.accountability_partners.count > 1
 
   %hr
-  .float_left{style: "margin-top: 30px; margin-bottom: 30px;"}= button_to(t('plans.stop reading'), plan_settings_path(@subscription, unsubscribe: "true"), class: 'action_button_blue', style: "width: 14em; height: 35px")
+  .float_left{style: "margin-top: 30px; margin-bottom: 30px;"}= button_to(t('plans.stop reading'), unsubscribe: "true", class: 'action_button_blue', style: "width: 14em; height: 35px")
   
   

@@ -4,6 +4,8 @@ class Subscription < Plan
   attribute :private
   attribute :system_accountability
   attribute :group_id
+  attribute :email_delivery
+  attribute :email_delivery_version
   
   def user
       @user ||= User.find(auth ? auth : user_id)
@@ -222,24 +224,86 @@ class Subscription < Plan
     private
   end
   
-  def accountability
-    Hashie::Mash.new({send_reminder?: true, report_recipients: ["me", "them"]})
+  def email_delivery?
+    !email_delivery.nil?
+  end
+  
+  def email_delivery_time_range    
+    case email_delivery[0..2].to_i
+    when 4..7
+      return "morning"
+    when 12..15
+      return "afternoon"
+    when 16..19
+      return "evening"
+    else
+      return nil
+    end
+  end
+  
+  def enable_email_delivery(opts = {})
+    params = {}
+    params[email_delivery_version] = opts[:picked_version] || version || opts[:default_version]
+    params[email_delivery] = delivery_time(params[:time])
+    
+    update_subscription(params)
+  end
+  
+  def disable_email_delivery
+    update_subscription(email_delivery: "disabled")
+  end
+  
+  def reminder_enabled?
+    system_accountability
+  end
+  
+  def accountability_partners
+    update_accountability_partners if @partners.nil?  #cached so we allow iteration on this array
+    
+    @parnters
+  end
+  
+  def remove_all_accountability
+    accountability.report_recipients.each{|user_name| remove_accountability_user(user_name)}
+  end
+  
+  def add_accountability_user(user)
+    update_accountability(user, action: "add")
+  end
+  
+  def remove_accountability_user(user)
+    update_accountability(user, action: "delete")
+  end
+  
+  def enable_reminder
+    #TODO: do through bool assignment of property
+    update_subscription(system_accountability: true)
+  end
+  
+  def disable_reminder
+    #TODO: do through bool assignment of property
+    update_subscription(system_accountability: false)
   end
   
   private
   
   def validate_reading_json(day)
+  
+  def update_accountability_partners
+    if auth
+    opts = {auth: auth}
+    opts[:page] = 1 #We only support 25 users (max in use is 19) until more are needed (then we can just get them all below)
+    opts[:id] = id
+    opts[:user_id] = user_id
     
-    #TODO:? check that day is number
-    #TODO: are we ok to assume auth is the same as the response cached for this request?
-    unless(@reading_json && @reading_json.day == day && @reading_json.id == id)
-      opts = {day: day}
-      opts[:id] = id
-      opts[:auth] ||= @attributes[:auth]
-      opts[:user_id] = user_id unless opts[:auth].nil?
-      @reading_json = YvApi.get("reading_plans/references", opts) do |errors|
-          raise YouVersion::ResourceError.new(errors)
-      end
+    response ||= YvApi.get("reading_plans/accountability", opts) do |errors|
+        raise YouVersion::ResourceError.new(errors)
+    end
+    
+    @partners = response.users.each {|user_mash| Hashie::Mash.new({username: user_mash.username, id: user_mash.user_id})}
+    
+    else
+      raise "Authentication required to view accountability for a reading plan"
     end
   end
   
@@ -251,7 +315,13 @@ class Subscription < Plan
       opts[:total_days] = total_days
       opts[:group_id] = group_id
       opts[:private] = private if opts[:private].nil?
-      opts[:accountability] = system_accountability
+      opts[:system_accountability] = system_accountability if opts[:system_accountability].nil?
+      opts[:email_delivery] = email_delivery 
+      opts[:email_delivery_version] = email_delivery_version
+      
+      if opts.delete[:email_delivery] == "disabled"
+        opts[:email_delivery] = opts[:email_delivery_version] = nil
+      end
       
       # Note: Not a partial update, if I don't pass these items, they will be overwritten by defaults.
       # id  of reading plan
@@ -261,6 +331,8 @@ class Subscription < Plan
       # group_id  of group that the user subscribed as a result of, so if a group starts a reading plan and a user subscribes off that group, we track the group id here so that we have record of it
       # private true/false on whether the subscription should be private
       # system_accountability true/false on whether you want the system to send you weekly reminders about your progress, can be turned off at a later time
+      # email_delivery  00:00:00 FORMAT for time to deliver email - best if random to spread load
+      # email_delivery_version  OSIS format string for version to deliver. Send default if there is one for plan, else use user's version
       response = YouVersion::Resource.post('reading_plans/update_subscribe_user', opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
@@ -269,5 +341,55 @@ class Subscription < Plan
       raise "Authentication required to unsubscribe from a reading plan"
     end
   end
+  
+  def update_accountability(user, params={})
+    mode = params[:action] ||= "add"
+    
+    if auth
+      opts = {auth: auth}
+      opts[:id] = id
+      
+      case user
+      when User
+        opts[:user_id] = user.id
+      when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
+        opts[:user_id] = user.to_i
+      else                                        #hope the user find can handle it
+        opts[:user_id] = User.find(user).id  
+      end
 
+      raise "user id couldn't be parsed" if opts[:user_id].nil?
+
+      response = YouVersion::Resource.post("reading_plans/#{mode}_accountability", opts) do |errors|
+          raise YouVersion::ResourceError.new(errors)
+      end
+
+      #PERF: could probably just remove from the mash and be safe if we need to save this API call
+      update_accountability_partners
+      
+    else
+      raise "Authentication required to add accountability to a reading plan"
+    end
+  end
+  
+  def delivery_time(time_str)
+    case time_sr
+    when "morning"
+      hours = (4..7)
+    when "afternoon"
+      hours = (12..15)
+    when "evening"
+      hours = (16..19)
+    else
+      return delivery_time(["morning","afternoon","evening"].sample)
+    end
+    
+    # this seems faster and more clear than Time.at((end.to_f - start.to_f)*rand + start.to_f)
+    time = Time.new 
+    time.hour = hours.to_a.sample
+    time.min = (0..59).to_a.sample
+    time.sec = (0..60).to_a.sample
+    
+    time.strftime('%H:%M:%S')
+  end
 end

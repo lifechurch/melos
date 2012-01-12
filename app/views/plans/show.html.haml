@@ -1,10 +1,11 @@
 - @title = @plan.name
 
 - content_for :sidebar do
-  - if current_user.subscriptions.include? @plan
-    = button_to(t('plans.read today'), plan_path(@plan), :class => 'action_button_green')
-  - else
-    = button_to(t('plans.subscribe to plan'), plan_start_path(@plan), :class => 'action_button_green')
+  .widget
+    - if current_user.subscribed_to? @plan
+      = button_to(t('plans.read today'), plan_path(@plan), method: "get" , class: 'action_button_green', style: "width: 300px; height: 40px; margin-bottom: 10px")
+    - else
+      = button_to(t('plans.subscribe to plan'), plan_start_path(@plan), :class => 'action_button_green')
   
   .widget
     %header
