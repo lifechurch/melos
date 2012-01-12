@@ -176,7 +176,7 @@ class Subscription < Plan
   
   def catch_up
     if auth
-      response = YouVersion::Resource.post('reading_plans/reset', {auth: auth, id: id}) do |errors|
+      response = YouVersion::Resource.post('reading_plans/reset_subscription', {auth: auth, id: id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
       @attributes.merge!(response)
@@ -187,9 +187,10 @@ class Subscription < Plan
   
   def restart
     if auth
-      response = YouVersion::Resource.post('reading_plans/restart', {auth: auth, id: id}) do |errors|
+      response = YouVersion::Resource.post('reading_plans/restart_subscription_user', {auth: auth, id: id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
+      debugger
       @attributes.merge!(response)
     else
       raise "Authentication required to restart a reading plan"
@@ -228,7 +229,7 @@ class Subscription < Plan
     !email_delivery.nil?
   end
   
-  def email_delivery_time_range    
+  def email_delivery_time_range
     case email_delivery[0..2].to_i
     when 4..7
       return "morning"
@@ -243,8 +244,8 @@ class Subscription < Plan
   
   def enable_email_delivery(opts = {})
     params = {}
-    params[email_delivery_version] = opts[:picked_version] || version || opts[:default_version]
-    params[email_delivery] = delivery_time(params[:time])
+    params[:email_delivery_version] = opts[:picked_version] || version || opts[:default_version]
+    params[:email_delivery] = delivery_time(opts[:time])
     
     update_subscription(params)
   end
@@ -260,7 +261,7 @@ class Subscription < Plan
   def accountability_partners
     update_accountability_partners if @partners.nil?  #cached so we allow iteration on this array
     
-    @parnters
+    @partners
   end
   
   def remove_all_accountability
@@ -288,20 +289,37 @@ class Subscription < Plan
   private
   
   def validate_reading_json(day)
+    #TODO:? check that day is number
+    #TODO: are we ok to assume auth is the same as the response cached for this request?
+    unless(@reading_json && @reading_json.day == day && @reading_json.id == id)
+      opts = {day: day}
+      opts[:id] = id
+      opts[:auth] ||= @attributes[:auth]
+      opts[:user_id] = user_id unless opts[:auth].nil?
+
+      @reading_json = YvApi.get("reading_plans/references", opts) do |errors|
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+  end
   
   def update_accountability_partners
     if auth
-    opts = {auth: auth}
-    opts[:page] = 1 #We only support 25 users (max in use is 19) until more are needed (then we can just get them all below)
-    opts[:id] = id
-    opts[:user_id] = user_id
-    
-    response ||= YvApi.get("reading_plans/accountability", opts) do |errors|
-        raise YouVersion::ResourceError.new(errors)
-    end
-    
-    @partners = response.users.each {|user_mash| Hashie::Mash.new({username: user_mash.username, id: user_mash.user_id})}
-    
+      opts = {auth: auth}
+      opts[:page] = 1 #We only support 25 users (max in use is 19) until more are needed (then we can just get them all below)
+      opts[:id] = id
+      opts[:user_id] = user_id
+      
+      response = YvApi.get("reading_plans/accountability", opts) do |errors|
+        if errors.length == 1 && [/^Accountability not found$/, /^API Error: Accountability not found$/].detect {|r| r.match(errors.first["error"])}
+          false #returning false stops get from raising errors (will if nil returned) but still allows ternary operation below
+        else
+          raise YouVersion::ResourceError.new(errors)
+        end
+      end
+
+      @partners = response ? response.users.map {|user_mash| Hashie::Mash.new({username: user_mash.username, id: user_mash.user_id.to_i})} : []
+      
     else
       raise "Authentication required to view accountability for a reading plan"
     end
@@ -316,10 +334,10 @@ class Subscription < Plan
       opts[:group_id] = group_id
       opts[:private] = private if opts[:private].nil?
       opts[:system_accountability] = system_accountability if opts[:system_accountability].nil?
-      opts[:email_delivery] = email_delivery 
-      opts[:email_delivery_version] = email_delivery_version
+      opts[:email_delivery] ||= email_delivery
+      opts[:email_delivery_version] ||= email_delivery_version
       
-      if opts.delete[:email_delivery] == "disabled"
+      if opts[:email_delivery] == "disabled"
         opts[:email_delivery] = opts[:email_delivery_version] = nil
       end
       
@@ -372,24 +390,19 @@ class Subscription < Plan
     end
   end
   
-  def delivery_time(time_str)
-    case time_sr
+  def delivery_time(time_range)
+    case time_range
     when "morning"
-      hours = (4..7)
+      hours = (4..6)#4-6:59:59
     when "afternoon"
-      hours = (12..15)
+      hours = (12..14)#12-2:59:59
     when "evening"
-      hours = (16..19)
+      hours = (16..18)#4-6:59:59
     else
-      return delivery_time(["morning","afternoon","evening"].sample)
+      return delivery_time("morning") #Morning seems preferred default #delivery_time(["morning","afternoon","evening"].sample)
     end
     
-    # this seems faster and more clear than Time.at((end.to_f - start.to_f)*rand + start.to_f)
-    time = Time.new 
-    time.hour = hours.to_a.sample
-    time.min = (0..59).to_a.sample
-    time.sec = (0..60).to_a.sample
-    
-    time.strftime('%H:%M:%S')
+    "%02d:%02d:%02d" % [hours.to_a.sample, (0..59).to_a.sample, (0..59).to_a.sample]
   end
+
 end

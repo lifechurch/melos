@@ -168,7 +168,7 @@ class User < YouVersion::Resource
         raise YouVersion::ResourceError.new(errors)
       end
     end
-    
+
     subscriptions = ResourceList.new
     subscriptions.total = response.total
     response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(:auth => auth))}

@@ -60,24 +60,27 @@
       = @subscription.end.strftime("%B %d, %Y")
   
   %hr
-  .float_right{style: "margin-top: 0px; margin-right: 0px"}
-    .float_right= button_to(@subscription.email_delivery? ? t('plans.email_off') : t('plans.email_on'),  email_delivery: (!@subscription.email_delivery?).to_s), class: 'action_button_green', style: "width: 14em; height: 35px")
+  .float_right= button_to(@subscription.email_delivery? ? t('plans.email_off') : t('plans.email_on'),  plan_settings_path(email_delivery: (!@subscription.email_delivery?).to_s), class: 'action_button_green', style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.email delivery")
     %p.float_left= t("plans.email delivery text", email_address: @subscription.user.email)
-    -if @subscription.email_delivery?
-      %form{method: 'get'}
-        %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "email_delivery", }
+  -if @subscription.email_delivery?
+    %form{method: 'get'}
+      %div{style: "clear: both"}
+        %select.float_right{onChange: "this.form.submit()", style: "width: 14em", name: "email_delivery"}
           - ["morning","afternoon","evening"].each do |time|
             %option{value: time, selected: time == @subscription.email_delivery_time_range}= t("plan.#{time}")
-        %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "version", }
+        %b.float_left{style: "width: 230px; margin-top: 5px"}=t("plans.delivery time")
+      %div{style: "clear: both"}
+        %select.float_right{onChange: "this.form.submit()", style: "margin-top: 15px; margin-bottom: 10px; width: 308px", name: "version"}
           - Version.all_by_language.each do |k, v|
             %optgroup{label: Version.languages[k]}
-                - v.each do |k, v|
-                    %option{value: k.to_s, selected: k == @subscription.email_delivery_version}= v
+            - v.each do |k, v|
+              %option{value: k.to_s, selected: k == @subscription.email_delivery_version}= v
+        %b.float_left{style: "width: 230px; margin-top: 20px"}=t("plans.delivery version")
 
   %hr
-  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.catch me up'), catch_up: "true", :class => 'action_button_green', style: "width: 14em; height: 35px")
+  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.catch me up'), plan_settings_path(catch_up: "true"), class: 'action_button_green', style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.are you behind")
     - if @subscription.last_completed_date
@@ -86,7 +89,7 @@
       %p.float_left= t("plans.catch up description only")
   
   %hr
-  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.restart'), restart: "true", :class => 'action_button_green', style: "width: 14em; height: 35px")
+  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.restart'), plan_settings_path(restart: "true"), class: 'action_button_green', style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.do you want to reset")
     %p.float_left= t("plans.restart description")  
@@ -94,9 +97,9 @@
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
     -if @subscription.public?
-      .float_right= button_to(t('plans.make private'), make_private: "true", class: 'action_button_green', style: "width: 14em; height: 35px")
+      .float_right= button_to(t('plans.make private'), plan_settings_path(make_private: "true"), class: 'action_button_green', style: "width: 14em; height: 30px")
     -else 
-      .float_right= button_to(t('plans.make public'), make_public: "true", class: 'action_button_green', style: "width: 14em; height: 35px")
+      .float_right= button_to(t('plans.make public'), plan_settings_path(make_public: "true"), class: 'action_button_green', style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.privacy title")
     %p.float_left= t("plans.privacy description")
@@ -112,19 +115,20 @@
     %input{type: "checkbox", onChange: "this.form.submit()", id: "report_box",  checked: @subscription.accountability_partners.empty? ? nil : "checked"}
     %label{for: "report_box"}= t("plans.email weekly report to a friend", email_address: @subscription.user.email)
   - if !@subscription.accountability_partners.empty?
-    %form{method: 'get'}
-      %input{:style =>"width: 300px; margin-left: 0px;", name: "add_accountability_partner", :type => 'search', :placeholder => t("plans.search members placeholder")}
-      %input{:type => 'submit', :value => t("plans.search members")}
-    %ul.big_list
-      -@subscription.accountability_partners.each do|user_name|
-        %li.user
-          - user = User.find(user_name)
-          %img.avatar_large{src: user.user_avatar_url["px_48x48"]}
-          %div
-            .float_left=link_to(user.username, @user)
+    %form.float_right{method: 'get', style: "margin-top: 15px"}
+      %input{:style =>"width: 220px; margin-left: 0px;", name: "add_accountability_partner", :type => 'search', :placeholder => t("plans.add members placeholder")}
+      %input{:type => 'submit', :value => t("plans.add member")}
+    %ul.float_left{style: "margin-left: 20px; margin-top: 0px;"}
+      -@subscription.accountability_partners.each do|user_mash|
+        %li.user{style: "clear: left"}
+          - user = User.find(user_mash.id)
+          %img.float_left.avatar_large{src: user.user_avatar_url["px_48x48"], style: "margin-right:10px"}
+          %span
+            .float_left=link_to(user.username == current_user.username ? t("myself") : user.username, @user)
+            %br
             =link_to("x", remove_accountability_partner: user.username) if @subscription.accountability_partners.count > 1
 
   %hr
-  .float_left{style: "margin-top: 30px; margin-bottom: 30px;"}= button_to(t('plans.stop reading'), unsubscribe: "true", class: 'action_button_blue', style: "width: 14em; height: 35px")
+  .float_left{style: "height: 30px; margin-bottom: 5px"}= button_to(t('plans.stop reading'), plan_settings_path(unsubscribe: "true"), class: 'action_button_blue', style: "width: 14em; height: 30px")
   
   

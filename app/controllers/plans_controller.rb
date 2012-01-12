@@ -56,7 +56,9 @@ class PlansController < ApplicationController
     @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
     
     raise "you can't view a plan's settings unless you're subscribed" if @subscription.nil?
-
+    
+    #debugger
+    
     @subscription.catch_up if params[:catch_up] == "true"
     @subscription.restart if params[:restart] == "true"
     
@@ -78,7 +80,7 @@ class PlansController < ApplicationController
     end
     
     if(params[:send_reminder])
-      params[:send_report] == "true" ? @subscription.enable_reminder : @subscription.disable_reminder
+      params[:send_reminder] == "true" ? @subscription.enable_reminder : @subscription.disable_reminder
     end
     
     if(params[:send_report])
