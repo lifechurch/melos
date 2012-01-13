@@ -7,9 +7,9 @@
     #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
       #header_outer
         = render '/shared/header'
+      - flash.each do |key, msg|
+        %div{class: "flash_#{key}"}= msg
       #container{:class => @sidebar == false ? 'no_sidebar' : ''}
-        - flash.each do |key, msg|
-          %div{class: "flash_#{key}"}= msg
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
           = render '/shared/nav_primary'
           = yield

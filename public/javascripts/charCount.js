@@ -13,6 +13,7 @@
  *
  */
  
+console.log('loading charcount...');
 (function($) {
 
 	$.fn.charCount = function(options){
@@ -31,6 +32,7 @@
 		var options = $.extend(defaults, options); 
 		
 		function calculate(obj){
+      console.log('calculating...');
 			var count = $(obj).val().length;
 			var available = options.allowed - count;
 			if(available <= options.warning && available >= 0){
@@ -47,6 +49,7 @@
 		};
 				
 		this.each(function() {  			
+      console.log('found something, doing the thing...');
 			$(this).after('<'+ options.counterElement +' class="' + options.css + '">'+ options.counterText +'</'+ options.counterElement +'>');
 			calculate(this);
 			$(this).keyup(function(){calculate(this)});

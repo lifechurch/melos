@@ -39,15 +39,15 @@
         %a{:class => "color_picker_holder", :href =>"#"}
         %a{:class => "color_picker_clear", :href =>"#"}
           <span class='selected'></span>
-        %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
-        %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
-        %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
-        %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+        %a{:class => "color", :id => "highlight_f3a9a9", :href => "#", :style => "background-color:#f3a9a9"}
+        %a{:class => "color", :id => "highlight_f6f0b4", :href => "#", :style => "background-color:#f6f0b4"}
+        %a{:class => "color", :id => "highlight_a8ed9d", :href => "#", :style => "background-color:#a8ed9d"}
+        %a{:class => "color", :id => "highlight_f3a9a9", :href => "#", :style => "background-color:#f3a9a9"}
       %div{:class => "clear"}
     %dt
       Bookmark
     %dd
-      %form{:action => user_bookmarks_path(current_auth.user_id), method: "POST"}
+      %form{:action => bookmarks_path, method: "POST"}
         %p
           %label{:for => 'bookmark_title'}
             Title
