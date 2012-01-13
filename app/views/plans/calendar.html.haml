@@ -13,13 +13,35 @@
   %h1{style: "clear: none; width: 600px"}= @subscription.name
   %hr
   %h4= t("plans.calendar")
-  .calendar
-    - @subscription.day_statuses.each do |day|
-      - #sample Mash: completed=false date="2012-12-14" day=347 references=["Jas.3.1"] references_completed=[] references_remaining=["Jas.3.1"]
-      - date = Date.parse(day.date)
-      - if @month != date.month
-      - @month = date.month
-        %br
-        %b= date.strftime('%B %Y')
-      .day= "#{date.day}: #{link_to("Day #{day.day}", plan_path(@subscription.slug,day: day.day))} of #{@subscription.total_days}, #{day.completed ? "complete" : !day.references_completed.empty? ? "partially complete" : "incomplete"}".html_safe
-            
+
+  - statuses = @subscription.day_statuses
+  - while !statuses.empty?
+    %table.cal_month.cal_janurary{:cellspacing => "0"}
+      = cal_table_header(statuses)
+      %tbody
+        - date = Date.parse(statuses.first.date)
+        - day = date - (date.day - 1) - (date - (date.day - 1)).cwday               #first calendar day (given tabular calendar starting on Sun)
+        - day = day.next_day(7) if date.prev_day(date.day - 1) - day == 7           # if first day of month is a sunday (more clear than doing on the previous line)
+        - last_month_day = date.next_month - 1
+        - full_month = false
+        - # while there are remaining items that are in this current month  -OR-  we haven't listed a full month
+        - while ((!statuses.empty? && (Date.parse((status_day = statuses.first).date).month) == date.month)) || !full_month
+          %tr
+            - # List out a week's worth of days'
+            - 7.times do
+              - # if not in current month  -OR-  not a day on the paln
+              - if day.month != date.month || day < date || statuses.empty?
+                -if day.month != date.month
+                  %td.disabled{class: day == Date.today ? "today" : ""}
+                -else
+                  %td.inactive-day{class: day == Date.today ? "today" : ""}= day.day.to_s
+              - else
+                - status_day = statuses.delete_at(0)
+                - class_str = status_day.completed ? 'read' : !status_day.references_completed.empty? ? 'inactive-day partial' : 'inactive-day'
+                - class_str << ((day == Date.today) ? ' today' : '')
+                %td{class: class_str}
+                  = link_to(day.day.to_s, plan_path(@subscription.slug, day: day.day))
+              - day = day.next
+            - #it's been a full month if the last day we addressed was the last day of the month
+            - full_month = day > last_month_day
+      %br
