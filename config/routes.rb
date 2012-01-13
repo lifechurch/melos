@@ -17,6 +17,7 @@ YouversionWeb::Application.routes.draw do
     resources 'likes', :only => [:index]
     resources 'bookmarks', :only => [:index]
   end
+  resources 'highlights', only: [:create, :delete]
   resources 'notes', :except => [:index]
   match 'notes' => 'notes#index', :as => 'all_notes'
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get

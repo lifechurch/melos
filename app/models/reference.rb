@@ -3,7 +3,7 @@ class Reference
   include ActiveModel::Conversion
 
   def initialize(ref, version = nil)
-    # puts "In Reference.initialize(#{ref})"
+    puts "In Reference.initialize(#{ref})"
     @api_data = {}
     case ref
     when String
@@ -42,6 +42,10 @@ class Reference
 
   def version_string
     @version_string ||= @ref[:version].upcase
+  end
+
+  def version
+    @ref[:version]
   end
 
   def notes_api_string

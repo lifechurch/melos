@@ -143,7 +143,7 @@ module YouVersion
           if serialization_class && attributes[attr_name].present?
             serialization_class.new attributes[attr_name]
           else
-            attributes[attr_name.to_s]
+            attributes[attr_name]
           end
         end
 
@@ -181,6 +181,7 @@ module YouVersion
       def get(path, params, &block)
         YvApi.get(path, securify(params, caller), &block)
       end
+
       
       def belongs_to_remote(association_name)
         association_class = association_name.to_s.classify.constantize
