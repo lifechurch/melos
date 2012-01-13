@@ -5,6 +5,7 @@ class Bookmark < YouVersion::Resource
   attribute :reference
   attribute :title
   attribute :version
+  attribute :user_id
 
   attr_accessor :reference_list
 

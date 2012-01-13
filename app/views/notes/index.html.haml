@@ -25,14 +25,7 @@
     %h1= t("notes.all notes")
   - unless @notes.empty?
     %ul.big_list
-      - @notes.each do |note|
-        %li{id: note.id}
-          %h5
-            %a{href: note_path(note.id), class: ("highlight" if note.highlight_color), style: ("background-color: ##{note.highlight_color}" if note.highlight_color)}= note.title
-
-          %p.mute.small.negative_gutter_top_half= link_to_references(note.reference_list) 
-          %p= note.content
-          %div{class: "status"}= note.user_status
+      - render partial: "item_list", collection: @notes
     = render "shared/pagination", resource_list: @notes
   - else
     %div{class: "none"}= t("notes.not found")

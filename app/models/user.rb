@@ -2,11 +2,13 @@ require 'digest/md5'
 
 class User < YouVersion::Resource
   # include Model
-  attr_accessor :errors
 
   attribute :id
   attribute :username
+  attribute :password
   attribute :email
+  attribute :agree
+  attribute :verified
   attribute :user_avatar_url
   attribute :first_name
   attribute :last_name
@@ -19,15 +21,26 @@ class User < YouVersion::Resource
   attribute :timezone
   attribute :postal_code
   attribute :bio
-  attribute :birthday
+  attribute :birthdate
   attribute :gender
   attribute :website
+  attribute :twitter
+  attribute :facebook
+  attribute :google
+  attribute :created_dt
+  attribute :last_login_dt
   attribute :subscribed #clean up this dirt by sweeping it into subscription model
 
   has_many_remote :badges
 
+  api_version "2.5"
+
   def self.update_path
     "users/update_profile"
+  end
+
+  def self.create_path
+    "users/create"
   end
 
   def name
@@ -35,17 +48,10 @@ class User < YouVersion::Resource
     "#{first_name} #{last_name}"
   end
 
-  # def badges
-  #   Badge.all(user_id: self.id)
-  # end
+  def to_param
+    self.username
+  end
 
-  #   def persisted?
-  #     !id.blank?
-  #   end
-  # 
-  #   def self.foreign_key
-  #     "user_id"
-  #   end
 
   class << self
     def register(opts = {})
@@ -59,6 +65,19 @@ class User < YouVersion::Resource
         errors = ee
       end    
       return errors || true
+    end
+
+    def id_key_for_version
+      case Cfg.api_version
+      when "2.3"
+        :user_id
+      when "2.4"
+        :id
+      when "2.5"
+        :id
+      else
+        :user_id
+      end
     end
 
     def authenticate(username, password)
@@ -80,7 +99,6 @@ class User < YouVersion::Resource
       else
         :user_id
       end
-    end
 
     def find(user, opts = {})
       # Pass in a user_id, username, or just an auth mash with a username and id.
@@ -96,21 +114,54 @@ class User < YouVersion::Resource
         response = YvApi.get("users/view", id: user.user_id, auth: user)
         response[:auth] = user
       when String
-        case user
-        when /\s*\d+\s*/      # It's just a number in string form
-          response = YvApi.get("users/view", id_key_for_version => user.to_i)
-          # response[:auth] = user
-          # when /username-type-pattern/
-          # hash = YvApi.get find-by-username-yay
+        response = YvApi.get("users/user_id", api_version: "2.5", username: user)
+        puts "response.user_id is #{response.user_id}"
+        if opts[:auth] && user == opts[:auth].username
+          hash = YvApi.get("users/view", id_key_for_version => response.user_id, :auth => opts[:auth])
         else
-          raise ArgumentError, "Strings not supported yet as value type for 'user' param in User.find"
+          hash = YvApi.get("users/view", id_key_for_version => response.user_id)
         end
-        # User.new(YvApi.get("users/view", user_id: ### Need an API method here ###, auth: auth))
+        hash[:auth] = opts[:auth] ||= nil
       end
-      User.new(response)
+    User.new(response)
+  end
+
+  def initialize(data = {})
+    puts "hey, data is #{data}"
+    data["agree"] = (data["agree"] == "1") unless data.blank?
+    @attributes = data
+    @associations = {}
+
+    after_build
+  end
+
+  def persist_token
+    Digest::MD5.hexdigest "#{self.username}.Yv6-#{self.password}"
+  end
+  def before_save
+    puts "i'm in before create"
+    # opts = {"email" => "", "username" =>  "", "password" =>  "", "verified" => false, "agree" => false}.merge!(opts)
+    # opts["token"] = Digest::MD5.hexdigest "#{self.username}.Yv6-#{self.password}"
+    # opts["agree"] = true if opts["agree"]
+    # opts[:secure] = true
+    self.attributes[:secure] = true
+    puts self.attributes
+    self.attributes["notification_settings[newsletter][email]"] = true
+    # errors = nil
+    # response = YvApi.post('users/create', opts) do |ee|
+    #   errors = ee
+    #   return false
+    # end    
+    # return errors || true
+  end
+
+  def confirm(hash)
+    YvApi.post("users/confirm", hash: hash) do |errors|
+      new_errors = errors.map { |e| e["error"] }
     end
   end
 
+  def before_update; end
 
   # def self.find(id)
   #   response = YvApi.get('users/view', {:user_id => id, :auth_user_id => :id} ) do |errors|     
@@ -157,6 +208,50 @@ class User < YouVersion::Resource
     @recent_activity
   end
 
+  def update_picture(uploaded_file)
+    image = Base64.strict_encode64(File.read(uploaded_file.path))
+    response = self.class.post("users/update_avatar", image: image, auth: self.auth) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      self.errors[:base] << new_errors
+      false
+    end
+    return response.true?
+  end
+
+  def devices
+    Device.for_user(self.auth.user_id, auth: self.auth)
+  end
+
+
+  def connections
+    connections = []
+    connections << TwitterConnection.new(data: self.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.twitter
+    connections << FacebookConnection.new(data: self.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.facebook
+    connections
+  end
+
+  def following
+    response = YvApi.get("users/following", id: self.id) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      self.errors[:base] << errors
+      return false
+    end
+    if response
+      followings = ResourceList.new
+      followings.total = response.total
+      response.users.each { |u| followings << User.new(u) }
+      @following_id_list = followings.map { |u| u.username }
+      followings
+    end
+  end
+
+  def following_username_list
+    @following_id_list ||= all_following
+  end
+
+  def all_following
+    response = YvApi.get("users/all_following", id: self.id)
+  end
   def subscriptions(opts = {})
     opts[:user_id] = id
     opts[:auth] ||= auth
@@ -180,17 +275,17 @@ class User < YouVersion::Resource
     compare.class == self.class && self.id == compare.id
   end
 
-  #   def attributes(*args)
-  #     array = args
-  #     array = self.instance_variables.map { |e| e.to_s.gsub("@", "").to_sym} if array == []
-  #     attrs = {}
-  #     array.each do |var|
-  #       attrs[var] = instance_variable_get("@#{var}")
-  #     end
-  #     attrs
-  #   end
-  # 
-  #   def bookmarks
-  #     Bookmark.for_user(id)
-  #   end
+  def followers
+    response = YvApi.get("users/followers", id: self.id) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      self.errors[:base] << errors
+      return false
+    end
+    if response
+      fl = ResourceList.new
+      fl.total = response.total
+      response.users.each { |u| fl << User.new(u) }
+      fl
+    end
+  end
 end

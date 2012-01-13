@@ -13,15 +13,20 @@ YouversionWeb::Application.routes.draw do
 
   # Users
   resources 'users', :except => [:new, :create] do
-    resources 'notes'
-    resources 'likes', :only => [:index]
-    resources 'bookmarks', :only => [:index]
+    match 'notes' => 'users#notes', as: 'notes'
+    match 'bookmarks' => 'users#bookmarks', as: 'bookmarks'
+    match 'likes' => 'users#likes', as: 'likes'
+    match 'friends' => 'users#following', as: 'friends'
     resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
+
   resources 'notes', :except => [:index]
   match 'notes' => 'notes#index', :as => 'all_notes'
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
+  match 'sign-up/facebook' => 'users#create_facebook', :as => 'facebook_sign_up', :via => :post
+  match 'sign-up/facebook' => 'users#new_facebook', as: 'facebook_sign_up', :via => :get
+  match 'sign-up/success' => 'users#sign_up_success', as: 'sign_up_success'
   match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
   
   # Sessions
@@ -42,13 +47,23 @@ YouversionWeb::Application.routes.draw do
   # profile stuff
   match 'settings/password'      => 'users#password', :as => 'password', :via => :get
   match 'settings/password'      => 'users#update_password', :as => 'password', :via => :post
-  match 'settings/picture'       => 'users#picture', :as => 'picture'
-  match 'settings/notifications' => 'users#notifications', :as => 'notifications'
+  match 'settings/picture'       => 'users#picture', :as => 'picture', :via => :get
+  match 'settings/picture'       => 'users#update_picture', :as => 'picture', :via => :put
+  match 'settings/notifications' => 'users#notifications', :as => 'notifications', :via => :get
+  match 'settings/notifications' => 'users#update_notifications', :as => 'notifications', :via => :put
   match 'settings/connections'   => 'users#connections', :as => 'connections'
   match 'settings/devices'       => 'users#devices', :as => 'devices'
+  match 'devices/:id'            => 'users#destroy_device', :as => 'device', :via => :delete
   match 'settings'               => 'users#profile', :as => 'profile', :via => :get
   match 'settings'               => 'users#update_profile', :as => 'profile', :via => :put
 
+  # connetions
+  match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'
+  match 'auth/:provider/connect'  => 'auth#connect', :as => 'auth_connect'
+  match 'connections/:provider/new' => 'connections#new', :as => 'new_connection'
+  match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
+
+  match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'
   match 'mobile' => 'coming_soon#index'
 

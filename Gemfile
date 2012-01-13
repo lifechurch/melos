@@ -14,6 +14,12 @@ gem 'unicorn'
 gem 'newrelic_rpm'
 gem 'exceptional'
 gem 'countries'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'grackle'
+gem 'koala'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

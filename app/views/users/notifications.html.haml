@@ -1,7 +1,21 @@
 - @title = "#{t('users.manage notifications')} | #{@user.name || @user.username}"
 
-- content_for :sidebar do
-  = render "sidebar"
-
-%article
-  %h1= t('users.manage notifications')
+%h1= t('users.manage notifications')
+= form_for @notification_settings, url: notifications_path do |n|
+  %p
+    = n.check_box :badges
+    = n.label :badges, t('users.notifications.badges')
+  %p
+    = n.check_box :follower
+    = n.label :follower, t('users.notifications.follower')
+  %p
+    = n.check_box :newsletter
+    = n.label :newsletter, t('users.notifications.newsletter')
+  %p
+    = n.check_box :note_like
+    = n.label :note_like, t('users.notifications.note_like')
+  %p
+    = n.check_box :reading_plans
+    = n.label :reading_plans, t('users.notifications.reading_plans')
+  %p
+    = n.submit t('users.notifications.update')

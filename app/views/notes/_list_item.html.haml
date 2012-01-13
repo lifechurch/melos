@@ -1,0 +1,8 @@
+
+%li{id: list_item.id, class: ("li_note" if display == :icon)}
+  %h5
+    %a{href: note_path(list_item.id), class: ("highlight" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
+
+  %p.mute.small.negative_gutter_top_half= link_to_references(list_item.reference_list) 
+  %p= list_item.content
+  %div{class: "status"}= list_item.user_status

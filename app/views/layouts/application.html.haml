@@ -12,7 +12,7 @@
           %div{class: "flash_#{key}"}= msg
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
           = render '/shared/nav_primary'
-          = yield
+          = content_for?(:main) ? yield(:main) : yield
           - if content_for? :main_trailer
             = yield :main_trailer
         - if content_for? :sidebar
