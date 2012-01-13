@@ -10,8 +10,7 @@ class PlansController < ApplicationController
     params[:language_tag] = params[:lang]
     @plans = Plan.all(params)
     @categories = CategoryListing.find(params[:category])
-    #debugger
-    #TODO: We are wasting an API query here, maybe there is an elegant solution?
+    #PERF: We are wasting an API query here, maybe there is an elegant solution?
     
   end
 
@@ -19,7 +18,7 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id], auth: current_auth) 
     
     if (@subscription = current_user.subscriptions.find {|subscription| subscription == @plan}) && (params[:ignore_subscription] != "true")
-      #TODO: user.find_subsctiption would be faster
+      #PERF: user.find_subsctiption would be faster
       params[:day] ||= @subscription.current_day
       @day = params[:day].to_i
       @reading = @subscription.reading(@day)

@@ -190,7 +190,6 @@ class Subscription < Plan
       response = YouVersion::Resource.post('reading_plans/restart_subscription_user', {auth: auth, id: id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
-      debugger
       @attributes.merge!(response)
     else
       raise "Authentication required to restart a reading plan"
