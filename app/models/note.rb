@@ -23,7 +23,7 @@ class Note < YouVersion::Resource
   end
 
   def self.for_user(user_id, params = {})
-    all(params.merge({:user_id => user_id}))
+    all(params.merge({user_id: user_id}))
   end
 
   # Override Resource's base method here, because Note API

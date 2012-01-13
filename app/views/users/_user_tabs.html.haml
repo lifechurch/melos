@@ -1,0 +1,19 @@
+%ul.header_tabs
+  %li{class: ("highlighted" if selected == :recent_activity)}
+    %a{href: user_path(@user)}
+      %span= t('users.recent activity')
+  %li{class: ("highlighted" if selected == :friends)}
+    %a{href: user_friends_path(@user)}
+      %span= t('friends')
+  %li{class: ("highlighted" if selected == :notes)}
+    %a{href: user_notes_path(@user)}
+      %span= t('notes title')
+  %li{class: ("highlighted" if selected == :bookmarks)}
+    %a{href: user_bookmarks_path(@user)}
+      %span= t('bookmarks.title')
+  %li{class: ("highlighted" if selected == :plans)}
+    %a
+      %span= t('plans')
+  %li{class: ("highlighted" if selected == :likes)}
+    %a
+      %span= t('likes.likes')

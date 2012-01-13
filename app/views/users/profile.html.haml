@@ -1,48 +1,44 @@
 - @title = "#{t('users.my profile')} | #{@user.name || @user.username}"
 
-- content_for :sidebar do
-  = render "sidebar"
-
-%article
-  %h1= t('users.my profile')
-  = form_for @user, url: profile_path do |f|
-    - if @user.errors
-      .form_errors
-        =t("users.profile form errors")
-      %ul
-        - @user.errors.each do |e|
-          %li= e
-    %p
-      = f.label :first_name, t('users.profile.first name')
-      %br
-      = f.text_field :first_name
-    %p
-      = f.label :last_name, t('users.profile.last name')
-      %br
-      = f.text_field :last_name
-    %p
-      = f.label :location, t('users.profile.location')
-      %br
-      = f.text_field :location
-    %p
-      = f.label :postal_code, t('users.profile.postal code')
-      %br
-      = f.text_field :postal_code
-    %p
-      = f.label :website, t('users.profile.website')
-      %br
-      = f.text_field :website
-    %p
-      = f.label :country, t('users.profile.country')
-      %br
-      = f.country_select :country
-    %p
-      = f.label :timezone, t('users.profile.timezone')
-      %br
-      = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["GMT #{ActiveSupport::TimeZone[v].utc_offset/3600}:00: #{v}", v]}.uniq!
-    %p
-      = f.label :language_tag, t('users.profile.language')
-      %br
-      = f.select(:language_tag, Cfg.languages.map { |k, v| [v, k] })
-    %p
-      = f.submit t('users.update profile')
+%h1= t('users.my profile')
+= form_for @user, url: profile_path do |f|
+  - unless @user.errors.blank?
+    .form_errors
+      =t("users.profile form errors")
+    %ul
+      - @user.errors.each do |e|
+        %li= e
+  %p
+    = f.label :first_name, t('users.profile.first name')
+    %br
+    = f.text_field :first_name
+  %p
+    = f.label :last_name, t('users.profile.last name')
+    %br
+    = f.text_field :last_name
+  %p
+    = f.label :location, t('users.profile.location')
+    %br
+    = f.text_field :location
+  %p
+    = f.label :postal_code, t('users.profile.postal code')
+    %br
+    = f.text_field :postal_code
+  %p
+    = f.label :website, t('users.profile.website')
+    %br
+    = f.text_field :website
+  %p
+    = f.label :country, t('users.profile.country')
+    %br
+    = f.country_select :country
+  %p
+    = f.label :timezone, t('users.profile.timezone')
+    %br
+    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["GMT #{ActiveSupport::TimeZone[v].utc_offset/3600}:00: #{v}", v]}.uniq!
+  %p
+    = f.label :language_tag, t('users.profile.language')
+    %br
+    = f.select(:language_tag, Cfg.languages.map { |k, v| [v, k] })
+  %p
+    = f.submit t('users.update profile')

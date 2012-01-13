@@ -1,0 +1,22 @@
+%li{class: ("li_bookmark" if display == :icon)}
+  .float_left
+    %p.gutter_bottom_half
+      %b{class: ("highlight" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
+      - list_item.reference_list.each do |r|
+        %p
+          %b
+            %a{href: bible_path(r)}= r
+          %br
+          = r.contents[0]
+    - if list_item.labels
+      %p.small
+        - list_item.labels.split(",").each do |l|
+          - #TODO: split labels in model
+          %a{href: "#"}= l
+          - # TODO: Label link
+  .float_right
+    %p
+      - if @me
+        = link_to('edit', edit_bookmark_path(list_item.id)) 
+        = link_to('delete', bookmark_path(list_item.id), :confirm => 'Are you sure?', :method => :delete) 
+      = list_item.created_as_date

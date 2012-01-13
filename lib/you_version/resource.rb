@@ -57,7 +57,7 @@ module YouVersion
       end
 
       def retry_with_auth?(errors)
-        errors.find {|t| t['key'] =~ /username_and_password.required/}
+        errors.find {|t| t['key'] =~ /(?:username_and_password.required)|(?:users.auth_user_id.or_isset)/}
       end
 
       def find(id, params = {}, &block) 
@@ -65,10 +65,13 @@ module YouVersion
 
         auth = params.delete(:auth)
 
-        opts = {id: id}
+        opts = {}
+        opts[:id] = id if id
         opts.merge! params  # Let params override if it already has an :id
         # First try request as an anonymous request
+        puts "lets do this, path is #{resource_path}, opts are #{opts}"
         response = get(resource_path, opts) do |errors|
+          puts errors
           if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
             inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|
@@ -100,17 +103,31 @@ module YouVersion
 
       def all(params = {})
         response = YvApi.get(list_path, params) do |errors|
-          if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+          if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
+            # Then it's the notes thing where you're auth'ed as a different user
+            all(params.merge(auth: nil))
+          elsif errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
             return []
           else
             raise ResourceError.new(errors)
           end
         end
-        # pp response
-        # TODO: Switch to ResourceList here
+
         list = ResourceList.new
-        list.total = response.total
-        response.send(api_path_prefix).each {|data| list << new(data.merge(:auth => params[:auth]))}
+
+        # argh, sometimes it has a total, sometimes it doesn't
+        if response.respond_to? :total
+          list.total = response.total
+        else
+          list.total = response.length
+        end
+
+        # aaand sometimes it's not encapsulated with api_prefix
+        if response.respond_to? api_path_prefix.to_sym
+          response.send(api_path_prefix).each {|data| list << new(data.merge(:auth => params[:auth]))}
+        else
+          response.each {|data| list << new(data.merge(:auth => params[:auth]))}
+        end
         list
 
       end
@@ -160,6 +177,10 @@ module YouVersion
         end
       end
 
+      def api_version(version)
+        @api_version = version
+      end
+
       def secure(*secure_method_names)
         @secure_methods ||= []
         @secure_methods += secure_method_names.map(:to_sym)
@@ -179,10 +200,12 @@ module YouVersion
       end
 
       def post(path, params, &block)
+        params[:api_version] = @api_version if @api_version
         YvApi.post(path, securify(params, caller), &block)
       end
 
       def get(path, params, &block)
+        params[:api_version] = @api_version if @api_version
         YvApi.get(path, securify(params, caller), &block)
       end
       
@@ -225,6 +248,10 @@ module YouVersion
       return !id.blank?
     end
 
+    def persist_token
+      Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+    end
+
     def to_param
       id
     end
@@ -232,10 +259,10 @@ module YouVersion
     def persist(resource_path)
       response = true
       response_data = nil
-      token = Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+      token = self.persist_token
       response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }
-        self.errors[:base] << new_errors
+        new_errors.each { |e| self.errors[:base] << e }
 
         if block_given?
           yield errors
@@ -250,7 +277,9 @@ module YouVersion
     def before_save; end;
     def after_save(response); end;
     def save
-      return false unless authorized?
+      unless (self.persisted? == false && self.class == User)
+        return false unless authorized?
+      end
 
       response = true
       response_data = nil
@@ -276,7 +305,8 @@ module YouVersion
     def after_update(response); after_save(response); end;
 
     def update(updated_attributes)
-      self.attributes = self.attributes.merge(updated_attributes)
+      # self.attributes = self.attributes.merge(updated_attributes)
+      updated_attributes.each { |k, v| self.send("#{k}=".to_sym, v) }
       save
     end
 

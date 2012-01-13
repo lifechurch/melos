@@ -1,8 +1,17 @@
 - @title = "#{t('users.picture')} | #{@user.name || @user.username}"
 
-- content_for :sidebar do
-  = render "sidebar"
+%h1= t('users.picture')
+%h3= t('users.profile.your current picture')
+%p
+  %img{src: @user.user_avatar_url["px_128x128"]}
+= form_for @user, url: picture_path do |f|
+  %p
+    = f.label :image, t('users.profile.avatar file')
+    %br
+    = f.file_field :image
+    %br
+    = t('users.profile.avatar help')
+  %p
+    = f.submit t('users.update my picture')
 
-%article
-  %h1= t('users.picture')
 

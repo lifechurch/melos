@@ -62,3 +62,24 @@ Feature: Users Functionality
     And I click "Change My Password"
     Then a user named named "useruser" with password "tenders" should exist
 
+  @wip
+  Scenario: Updating my Picture
+    # TODO: This seems wonky. I think maybe I'm confusing the API.
+    #
+
+  Scenario: Updating Notifications
+    When I go to the sign in page
+    And I follow "Profile"
+    And I follow "Manage Notifications"
+    Then "Notify me about badges I've earned" should be checked
+    And "Notify me when someone follows me" should be checked
+    When I click "Notify me about badges I've earned"
+    And I click "Update Notifications"
+    Then I should see "You have successfully"
+    And "Notify me about badges I've earned" should not be checked
+    And "Notify me when someone follows me" should be checked
+    When I click "Notify me about badges I've earned"
+    And I click "Update Notifications"
+    Then I should see "You have successfully"
+    And "Notify me about badges I've earned" should be checked
+    And "Notify me when someone follows me" should be checked
