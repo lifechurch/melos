@@ -114,14 +114,13 @@ class User < YouVersion::Resource
           response = YvApi.get("users/view", id: user.user_id, auth: user)
           response[:auth] = user
         when String
-          response = YvApi.get("users/user_id", api_version: "2.5", username: user)
-          puts "response.user_id is #{response.user_id}"
+          id_response = YvApi.get("users/user_id", api_version: "2.5", username: user)
           if opts[:auth] && user == opts[:auth].username
-            hash = YvApi.get("users/view", id_key_for_version => response.user_id, :auth => opts[:auth])
+            response = YvApi.get("users/view", id_key_for_version => id_response.user_id, :auth => opts[:auth])
           else
-            hash = YvApi.get("users/view", id_key_for_version => response.user_id)
+            response = YvApi.get("users/view", id_key_for_version => id_response.user_id)
           end
-          hash[:auth] = opts[:auth] ||= nil
+          response[:auth] = opts[:auth] ||= nil
         end
       User.new(response)
     end

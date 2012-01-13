@@ -1,5 +1,9 @@
 ---
 en:
+  my picture:                                   "Update my Picture"
+  my notifications:                             "Manage Notifications"
+  my connections:                               "Connected Accounts"
+  my devices:                                   "Connected Devices"
   language name:                                "English"
   signed in as:                                 "Signed in as %{user}"
   sign out:                                     "Sign out"
@@ -114,12 +118,8 @@ en:
     my profile:                                 "My Profile"
     edit profile:                               "Edit Profile"
     update profile:                             "Update Profile"
-    change my password:                         "Change My Password"
+    my password:                                "Change My Password"
     picture:                                    "Picture"
-    update my picture:                          "Update my Picture"
-    manage notifications:                       "Manage Notifications"
-    connected accounts:                         "Connected Accounts"
-    connected devices:                          "Connected Devices"
     profile:
       first name:                               "First name"
       last name:                                "Last name"

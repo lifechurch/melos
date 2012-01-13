@@ -1,6 +1,5 @@
 - @title = "#{t('users.connected accounts')} | #{@user.name || @user.username}"
 
-%h1= t('users.connected accounts')
 %p Connect to:
 %ul
   %li= link_to "Twitter", new_connection_path("twitter", redirect: connections_path(show: "twitter"))

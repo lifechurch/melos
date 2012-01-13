@@ -123,6 +123,7 @@ class UsersController < ApplicationController
 
   def profile
     force_login
+    @selected = :profile
   end
 
   def update_profile
@@ -133,6 +134,7 @@ class UsersController < ApplicationController
 
   def picture
     force_login
+    @selected = :picture
   end
 
   def update_picture
@@ -145,6 +147,7 @@ class UsersController < ApplicationController
   def notifications
     force_login
     @notification_settings = NotificationSettings.find(auth: current_auth)
+    @selected = :notifications
   end
 
   def update_notifications
@@ -157,6 +160,7 @@ class UsersController < ApplicationController
 
   def password
     force_login
+    @selected = :password
   end
 
   def update_password
@@ -172,11 +176,13 @@ class UsersController < ApplicationController
 
   def connections
     force_login
+    @selected = :connections
   end
 
   def devices
     force_login
     @devices = @user.devices
+    @selected = :devices
   end
 
   def destroy_device

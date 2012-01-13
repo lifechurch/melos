@@ -1,6 +1,5 @@
 - @title = "#{t('users.manage notifications')} | #{@user.name || @user.username}"
 
-%h1= t('users.manage notifications')
 = form_for @notification_settings, url: notifications_path do |n|
   %p
     = n.check_box :badges
