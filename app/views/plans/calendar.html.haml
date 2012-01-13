@@ -6,13 +6,206 @@
     %dt
     %dd
       = link_to t("plans.day"), plan_path(@subscription)
-    %dd.settings
+    %dd.settings.icon_settings
       = link_to t("plans.settings"), plan_settings_path(@subscription)
     %dd.highlighted
       = link_to t("plans.month")
   %h1{style: "clear: none; width: 600px"}= @subscription.name
   %hr
   %h4= t("plans.calendar")
+
+  %div{:class => "cal_month cal_janurary"}
+    %table{:cellspacing => "0"}
+      %caption 
+        Janurary
+      %thead
+        %tr
+          %th
+            S
+          %th
+            M
+          %th
+            T
+          %th
+            W
+          %th
+            T
+          %th
+            F
+          %th
+            S
+      %tbody
+        %tr
+          %td.inactive-day
+            1
+          %td.inactive-day 
+            2
+          %td.inactive-day 
+            3
+          %td.inactive-day 
+            4
+          %td.inactive-day 
+            5
+          %td.inactive-day 
+            6
+          %td.inactive-day 
+            7
+        
+        %tr
+          %td.read
+            8
+          %td.read
+            9
+          %td.read
+            10
+          %td.today
+            11
+          %td
+            12
+          %td 
+            13
+          %td 
+            14
+        
+        %tr
+          %td.inactive-day 
+            15
+          %td.inactive-day 
+            16
+          %td.inactive-day 
+            17
+          %td.inactive-day 
+            18
+          %td.inactive-day 
+            19
+          %td.inactive-day 
+            20
+          %td.inactive-day 
+            21
+        
+        %tr
+          %td.inactive-day  
+            22
+          %td.inactive-day  
+            23
+          %td.inactive-day  
+            24
+          %td.inactive-day  
+            25
+          %td.inactive-day  
+            26
+          %td.inactive-day  
+            27
+          %td.inactive-day  
+            28
+        
+        %tr
+          %td.inactive-day  
+            28
+          %td.inactive-day  
+            29
+          %td.inactive-day  
+            30
+          %td.disabled
+          %td.disabled
+          %td.disabled
+          %td.disabled
+  %div{:class => "cal_month cal_janurary"}
+    %table{:cellspacing => "0"}
+      %caption 
+        Feburary
+      %thead
+        %tr
+          %th
+            S
+          %th
+            M
+          %th
+            T
+          %th
+            W
+          %th
+            T
+          %th
+            F
+          %th
+            S
+      %tbody
+        %tr
+          %td
+            1
+          %td 
+            2
+          %td 
+            3
+          %td 
+            4
+          %td 
+            5
+          %td 
+            6
+          %td 
+            7
+        
+        %tr
+          %td 
+            8
+          %td 
+            9
+          %td 
+            10
+          %td
+            11
+          %td 
+            12
+          %td 
+            13
+          %td 
+            14
+        
+        %tr
+          %td.read
+            15
+          %td.read
+            16
+          %td.read
+            17
+          %td.read
+            18
+          %td 
+            19
+          %td 
+            20
+          %td 
+            21
+        
+        %tr
+          %td 
+            22
+          %td 
+            23
+          %td 
+            24
+          %td 
+            25
+          %td 
+            26
+          %td 
+            27
+          %td 
+            28
+        
+        %tr
+          %td 
+            28
+          %td 
+            29
+          %td 
+            30
+          %td{:class => "disabled"}
+          %td{:class => "disabled"}
+          %td{:class => "disabled"}
+          %td{:class => "disabled"}
   .calendar
     - @subscription.day_statuses.each do |day|
       - #sample Mash: completed=false date="2012-12-14" day=347 references=["Jas.3.1"] references_completed=[] references_remaining=["Jas.3.1"]
@@ -21,6 +214,6 @@
       - @month = date.month
         %br
         %b= date.strftime('%B %Y')
-      .day= "#{date.day}: #{link_to("Day #{day.day}", plan_path(@subscription.slug,day: day.day))} of #{@subscription.total_days}, #{day.completed ? "complete" : !day.references_completed.empty? ? "partially complete" : "incomplete"}".html_safe
+      %td.day= "#{date.day}: #{link_to("Day #{day.day}", plan_path(@subscription.slug,day: day.day))} of #{@subscription.total_days}, #{day.completed ? "complete" : !day.references_completed.empty? ? "partially complete" : "incomplete"}".html_safe
 
     

@@ -35,7 +35,7 @@ class Plan < YouVersion::Resource
     if id.is_a?(String) 
       #slug was passed, get id from slug with search, since API doesn't give a better way
       lib_plan = search(id).find{|plan| plan.slug == id}
-      id = lib_plan.id unless lib_plan.nil
+      id = lib_plan.id unless lib_plan.nil?
     end
 
     #TODO: this doesn't work if an integer id is passed?
