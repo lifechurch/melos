@@ -1,7 +1,7 @@
 #nav_primary{:role => "navigation"}
   %nav
     %ul
-      %li#nav_primary_bible{class: @nav == :bible ? t("highlighted") : ""}
+      %li#nav_primary_bible{class: @nav == :bible ? "highlighted" : ""}
         %a{:href => '/bible'}
           %span=t("bible")
       - if current_auth
@@ -9,8 +9,8 @@
           %a{:href => user_bookmarks_path(current_auth.username)}
             %span Bookmarks
       %li#nav_primary_plans
-        %a{:href => '/reading-plans'}
-          %span=t("plans")
+        %a{:href => user_plans_path(current_auth.user_id)}
+          %span=t("plans title")
       %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
         %a{:href => current_auth ? user_notes_path(current_auth.username) : notes_path}
           %span=t("notes title")

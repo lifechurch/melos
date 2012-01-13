@@ -49,7 +49,7 @@ module YouVersion
 
       def i18nize(hash)
         lang_key = I18n.locale.to_s.gsub("-", "_")
-        hash.has_key?(lang_key) ? hash[lang_key] : hash["default"]
+        hash.has_key?(lang_key) ? hash[lang_key] : hash["default"] unless hash.nil?
       end
 
       def attr_i18n_reader(*args)
@@ -60,8 +60,7 @@ module YouVersion
         errors.find {|t| t['key'] =~ /(?:username_and_password.required)|(?:users.auth_user_id.or_isset)/}
       end
 
-      def find(id, params = {}, &block)
-        puts "inside the find, id is #{id}, params is #{params}"
+      def find(id, params = {}, &block) 
         api_errors = nil
 
         auth = params.delete(:auth)

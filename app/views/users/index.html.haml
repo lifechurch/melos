@@ -1,0 +1,14 @@
+- @title = t("users.subscribed to plan", plan: @plan.name)
+%h2= @plan.name
+%header
+  %div{style: "clear: both;"}
+  %span.header_icon_check= t("users.reading")
+%article
+  %ul.big_list
+    -@users.each do|user|
+      %li.user
+        %img.avatar_large{src: user.user_avatar_url["px_48x48"]}
+        %div
+          %h5=link_to(user.username, @user)
+          %p.mute.small.negative_gutter_top_half= t('users.subscribed previously', time_ago: time_ago_in_words(user.subscribed))
+          

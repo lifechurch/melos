@@ -1,0 +1,54 @@
+- @title = @subscription.name
+- @sidebar = false
+      
+%article
+  %h3.float_left= @subscription.name
+  %dl.combo_button.float_right
+    %dt
+    %dd.highlighted
+      = link_to t("plans.day")
+    %dd
+      = link_to t("plans.settings"), plan_settings_path(@subscription)
+    %dd
+      = link_to t("plans.month"), plan_calendar_path(@subscription)
+      
+  .split_pane{:style => "padding-top:15px"}
+    - if @reading.devotional
+      %p{style: "margin-left: 20px; margin-right: 20px;"}= @reading.devotional.html_safe
+    .split_pane_sidebar
+      %dl.categories_menu
+        %dt
+          %ul.pagination{style: "margin-bottom: 0px; margin-top: 0px; padding-top:0px; border-top-width: 0px;", align: "center"}
+            %li.pagination_previous.float_left
+              - if @day > 1
+                = link_to(t("plans.previous day"),day: @day - 1)
+            %h4.float_left{style: "margin-left: 50px;margin-bottom: 0px; margin-top: 3px;"}= @subscription.reading_date(@day).strftime('%a %b %-d')
+            %li.pagination_next.float_right
+              - if @day <= @subscription.total_days - 1
+                = link_to(t("plans.next day"), day: @day + 1)
+        - if @reading.references
+          - @reading.references.each_with_index do |r,i|
+            %dd{class: @content_page == i ? "highlighted" : ""}
+              %form{method: 'post'}
+                %input{type: "hidden", name: "_method", value: "put"}
+                %input{type: "hidden", name: "ref", value: r.ref.osis}
+                %input{type: "hidden", name: "completed", value: (!r.completed?).to_s}
+                %input{type: "hidden", name: "day_target", value: @day.to_s}
+                - if i != 0
+                  %input{type: "hidden", name: "content_target", value: i}
+                %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
+                %label{for: "#{i}_box"}= r.ref.to_s
+      %br
+        .subscription_plan_links{style: "margin-left: 30px;"}
+          %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
+          %p= link_to(t("plans.about this plan"), ignore_subscription: true)
+    .split_pane_content
+      - if @reading.references
+        .embedded_reader{style: "padding-left: 30px; padding-bottom: 30px;"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
+        %form{method: 'post'}
+          %input{type: "hidden", name: "_method", value: "put"}
+          %input{type: "hidden", name: "ref", value: @reading.references[@content_page].ref.osis}
+          %input{type: "hidden", name: "completed", value: true.to_s}
+          %input{type: "hidden", name: "day_target", value: @day.to_s}
+          %input{type: "hidden", name: "content_target", value: @content_page + 1}
+          %input.action_button_blue.float_right{type: "submit", name: "done_read", value: t('plans.mark reading complete')}
