@@ -33,7 +33,7 @@
     %dd
       = link_to t("plans.day"), plan_path(@subscription)
     %dd.settings.highlighted
-      = link_to t("plans.settings")
+      = link_to t("plans.settings"), :class => "icon_settings"
     %dd
       = link_to t("plans.month"), plan_calendar_path(@subscription)
   %h1{style: "clear: none; width: 300px;"}= @subscription.name
