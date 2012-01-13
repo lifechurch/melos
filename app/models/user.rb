@@ -127,7 +127,6 @@ class User < YouVersion::Resource
   end
 
   def initialize(data = {})
-    puts "hey, data is #{data}"
     data["agree"] = (data["agree"] == "1") unless data.blank?
     @attributes = data
     @associations = {}

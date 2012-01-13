@@ -81,7 +81,6 @@ class YvApi
   end
 
   def self.api_response_or_rescue(response, block)
-    puts "## response is #{response}"
     if response["response"]["code"].to_i >= 400
       puts "i'm in the error block thingy"
       puts "response data errors is #{response["response"]["data"]["errors"]}"
