@@ -52,7 +52,6 @@ class User < YouVersion::Resource
     self.username
   end
 
-
   class << self
     def register(opts = {})
       opts = {email: "", username: "", password: "", verified: false, agree: false}.merge!(opts)
@@ -91,39 +90,41 @@ class User < YouVersion::Resource
     end
 
     def id_key_for_version
-      case Cfg.api_version
-      when "2.3"
-        :user_id
-      when "2.4"
-        :id
-      else
-        :user_id
-      end
+        case Cfg.api_version
+        when "2.3"
+          :user_id
+        when "2.4"
+          :id
+        else
+          :user_id
+        end
+    end
 
     def find(user, opts = {})
-      # Pass in a user_id, username, or just an auth mash with a username and id.
-      case user
-      when Fixnum
-        if opts[:auth] && user == opts[:auth].user_id
-          response = YvApi.get("users/view", id_key_for_version => user, :auth => opts[:auth])
-        else
-          response = YvApi.get("users/view", id_key_for_version => user)
+        # Pass in a user_id, username, or just an auth mash with a username and id.
+        case user
+        when Fixnum
+          if opts[:auth] && user == opts[:auth].user_id
+            response = YvApi.get("users/view", id_key_for_version => user, :auth => opts[:auth])
+          else
+            response = YvApi.get("users/view", id_key_for_version => user)
+          end
+          response[:auth] = opts[:auth] ||= nil
+        when Hashie::Mash
+          response = YvApi.get("users/view", id: user.user_id, auth: user)
+          response[:auth] = user
+        when String
+          response = YvApi.get("users/user_id", api_version: "2.5", username: user)
+          puts "response.user_id is #{response.user_id}"
+          if opts[:auth] && user == opts[:auth].username
+            hash = YvApi.get("users/view", id_key_for_version => response.user_id, :auth => opts[:auth])
+          else
+            hash = YvApi.get("users/view", id_key_for_version => response.user_id)
+          end
+          hash[:auth] = opts[:auth] ||= nil
         end
-        response[:auth] = opts[:auth] ||= nil
-      when Hashie::Mash
-        response = YvApi.get("users/view", id: user.user_id, auth: user)
-        response[:auth] = user
-      when String
-        response = YvApi.get("users/user_id", api_version: "2.5", username: user)
-        puts "response.user_id is #{response.user_id}"
-        if opts[:auth] && user == opts[:auth].username
-          hash = YvApi.get("users/view", id_key_for_version => response.user_id, :auth => opts[:auth])
-        else
-          hash = YvApi.get("users/view", id_key_for_version => response.user_id)
-        end
-        hash[:auth] = opts[:auth] ||= nil
-      end
-    User.new(response)
+      User.new(response)
+    end
   end
 
   def initialize(data = {})
@@ -138,6 +139,7 @@ class User < YouVersion::Resource
   def persist_token
     Digest::MD5.hexdigest "#{self.username}.Yv6-#{self.password}"
   end
+  
   def before_save
     puts "i'm in before create"
     # opts = {"email" => "", "username" =>  "", "password" =>  "", "verified" => false, "agree" => false}.merge!(opts)
@@ -222,7 +224,6 @@ class User < YouVersion::Resource
     Device.for_user(self.auth.user_id, auth: self.auth)
   end
 
-
   def connections
     connections = []
     connections << TwitterConnection.new(data: self.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.twitter
@@ -252,6 +253,7 @@ class User < YouVersion::Resource
   def all_following
     response = YvApi.get("users/all_following", id: self.id)
   end
+  
   def subscriptions(opts = {})
     opts[:user_id] = id
     opts[:auth] ||= auth
@@ -260,15 +262,37 @@ class User < YouVersion::Resource
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
         return []
       else
-        raise ResourceError.new(errors)
+        raise YouVersion::ResourceError.new(errors)
       end
     end
-    
+
     subscriptions = ResourceList.new
     subscriptions.total = response.total
     response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(:auth => auth))}
 
     subscriptions
+  end
+  
+  def subscribed_to? (plan, opts = {})
+    opts[:user_id] = id
+    opts[:auth] = auth #if auth is nil, it will attempt to search for public subscription
+    
+    case plan
+    when Fixnum, /\A[\d]+\z/
+      opts[:id] = plan.to_i
+    when Plan, Subscription
+      opts[:id] = plan.id.to_i
+    end
+
+    response = YvApi.get("reading_plans/view", opts) do |errors| #we can't use Plan.find because it gets an unexpected response from API when trying un-authed call so it never tries the authed call
+      if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
+        return false
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+    
+    return response.id.to_i == opts[:id]
   end
   
   def ==(compare)

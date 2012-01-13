@@ -31,7 +31,6 @@
         %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "lang", }
           - I18n.available_locales.each do |loc|
             %option{value: loc.to_s, selected: loc.to_s == params[:lang]}= t("language name", locale: loc)
-            -#TODO: Get this submitting on select
       %form{method: 'get'}
         - if params[:category]
           %input{:type => "hidden", :name => "category", :value => params[:category]}
