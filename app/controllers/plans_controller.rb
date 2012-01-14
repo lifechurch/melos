@@ -11,7 +11,6 @@ class PlansController < ApplicationController
     @plans = Plan.all(params)
     @categories = CategoryListing.find(params[:category])
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
-    
   end
 
   def show
@@ -26,7 +25,6 @@ class PlansController < ApplicationController
       
       render :action => "show_subscribed"
     end  
-
   end
   
   def update
@@ -38,25 +36,19 @@ class PlansController < ApplicationController
     else
       raise "you can't update a plan to which you aren't subscribed"
     end
-    
   end
   
   def start
-    
     @plan = Plan.find(params[:plan_id]).subscribe(current_auth)
     #TODO: we're wasting an API call here (finding the plan just to subscribe)
     #TODO: handle the case where the user isn't logged in
     redirect_to plan_path(params[:plan_id])
-    
   end
   
   def settings
-    
     @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
     
     raise "you can't view a plan's settings unless you're subscribed" if @subscription.nil?
-    
-    #debugger
     
     @subscription.catch_up if params[:catch_up] == "true"
     @subscription.restart if params[:restart] == "true"
@@ -97,15 +89,12 @@ class PlansController < ApplicationController
     if(params[:remove_accountability_partner])
         @subscription.remove_accountability_user(params[:remove_accountability_partner])
     end
-    
   end
   
   def calendar
-
     @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
 
-    raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
-    
+    raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil? 
   end
 
 end

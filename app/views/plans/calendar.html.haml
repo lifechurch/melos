@@ -22,7 +22,7 @@
   - while !statuses.empty?
     %table.cal_month.cal_janurary{:cellspacing => "0"}
       - first_date = Date.parse(statuses.first.date)
-      - last_date = first_date.next_month - 1
+      - last_date = first_date.next_month - (first_date.next_month.day)
       - full_month = false
       %caption
         =first_date.strftime('%B %Y')
