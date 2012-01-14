@@ -20,7 +20,7 @@ class Subscription < Plan
   end
 
   def reading_date(day)
-    start + day
+    (start + day) - 1
   end
 
   def progress

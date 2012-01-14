@@ -15,33 +15,37 @@
   %h4= t("plans.calendar")
 
   - statuses = @subscription.day_statuses
+  - sunday = Date.new(1984,12,9)#sunday
+  - days_of_week = []
+  - 7.times {|i| days_of_week << sunday.next_day(i).strftime('%^a')[0]}
+  
   - while !statuses.empty?
     %table.cal_month.cal_janurary{:cellspacing => "0"}
-      = cal_table_header(statuses)
+      - first_date = Date.parse(statuses.first.date)
+      - last_date = first_date.next_month - 1
+      - full_month = false
+      %caption
+        =first_date.strftime('%B %Y')
+      %thead
+        %tr
+          -days_of_week.each do |day|
+            %th= day
       %tbody
-        - date = Date.parse(statuses.first.date)
-        - day = date - (date.day - 1) - (date - (date.day - 1)).cwday               #first calendar day (given tabular calendar starting on Sun)
-        - day = day.next_day(7) if date.prev_day(date.day - 1) - day == 7           # if first day of month is a sunday (more clear than doing on the previous line)
-        - last_month_day = date.next_month - 1
-        - full_month = false
+        - cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday       # first calendar day (given tabular calendar starting on Sun)
+        - cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7       # if first day of month is a sunday (more clear than doing on the previous line)
         - # while there are remaining items that are in this current month  -OR-  we haven't listed a full month
-        - while ((!statuses.empty? && (Date.parse((status_day = statuses.first).date).month) == date.month)) || !full_month
+        - while ((!statuses.empty? && (Date.parse((cur_status = statuses.first).date).month) == first_date.month)) || !full_month
           %tr
-            - # List out a week's worth of days'
-            - 7.times do
-              - # if not in current month  -OR-  not a day on the paln
-              - if day.month != date.month || day < date || statuses.empty?
-                -if day.month != date.month
-                  %td.disabled{class: day == Date.today ? "today" : ""}
+            - 7.times do       # List out one week
+              - if cur_date.month != first_date.month || cur_date < first_date || statuses.empty?         # if not in current month  -OR-  not a day on the paln
+                -if cur_date.month != first_date.month
+                  %td.disabled{class: cur_date == Date.today ? "today" : ""}
                 -else
-                  %td.inactive-day{class: day == Date.today ? "today" : ""}= day.day.to_s
+                  %td.inactive-day{class: cur_date == Date.today ? "today" : ""}= cur_date.day.to_s
               - else
-                - status_day = statuses.delete_at(0)
-                - class_str = status_day.completed ? 'read' : !status_day.references_completed.empty? ? 'inactive-day partial' : 'inactive-day'
-                - class_str << ((day == Date.today) ? ' today' : '')
-                %td{class: class_str}
-                  = link_to(day.day.to_s, plan_path(@subscription.slug, day: day.day))
-              - day = day.next
-            - #it's been a full month if the last day we addressed was the last day of the month
-            - full_month = day > last_month_day
+                - cur_status = statuses.delete_at(0)
+                %td{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'inactive-day partial' : 'inactive-day') << ((cur_date == Date.today) ? ' today' : '')}
+                  = link_to(cur_date.day.to_s, plan_path(@subscription.slug, day: cur_status.day))
+              - cur_date = cur_date.next
+            - full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
       %br

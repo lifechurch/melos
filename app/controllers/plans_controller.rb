@@ -103,7 +103,7 @@ class PlansController < ApplicationController
   def calendar
 
     @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
-    
+
     raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
     
   end
