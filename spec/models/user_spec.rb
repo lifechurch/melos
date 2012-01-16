@@ -53,7 +53,6 @@ describe User do
       auth = nil
       friend = User.find(@testuser.id)
       friend.username.should == "testuser"
-      friend.email.should be_empty
 
       auth = Hashie::Mash.new({user_id: @testuser.id, username: "testuser", password: "tenders"})
       User.find(auth).email.should == "testuser@youversion.com"
@@ -71,10 +70,14 @@ describe User do
   describe "#recent_activity" do
     it "returns objects created by the user" do
       Bookmark.new(reference: "gen.1.1.asv", title: "community bookmark", auth: @auth).save.should be_true
-      Note.new(reference: "gen.1.1.asv", title "community note", content: "note", auth: @auth).save.should be_true
+      Note.new(reference: "gen.1.1.asv", title: "community note", content: "note", auth: @auth).save.should be_true
       re_act = @testuser.recent_activity
-      re_act.detect { |e| e.title == "community bookmark" if e.respond_to?("title") }.should_not be_nil
-      re_act.detect { |e| e.title == "community note" if e.respond_to?("title") }.should_not be_nil
+      re_act.each { |a| a.class.should be_in [Note, User, Bookmark]  }
     end
   end
+
+  describe "#update_avatar" do
+    # TODO: Seems wonky; am I breaking the API?
+  end
+  
 end

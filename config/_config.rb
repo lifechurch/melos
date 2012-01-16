@@ -5,11 +5,13 @@
 #
 
 class Cfg 
- @@settings = YAML::load_file(File.expand_path('../_config.yml', __FILE__))[Rails.env] 
- class MissingConfigOptionError < StandardError; end 
- def self.method_missing(key) 
-  raise MissingConfigOptionError("#{key.to_s} is not in the config file") unless @@settings.include?(key.to_s) 
-  @@settings[key.to_s] 
- end 
+  cattr_reader :languages
+  @@settings = YAML::load_file(File.expand_path('../_config.yml', __FILE__))[Rails.env] 
+  @@languages = YAML::load_file(File.expand_path('../languages.yml', __FILE__))
+  class MissingConfigOptionError < StandardError; end 
+  def self.method_missing(key) 
+    raise MissingConfigOptionError("#{key.to_s} is not in the config file") unless @@settings.include?(key.to_s) 
+    @@settings[key.to_s] 
+  end 
 end
 

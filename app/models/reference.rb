@@ -27,6 +27,19 @@ class Reference
     @string += " (#{self.version_string})" if @ref[:version]
     @string
   end
+  
+  def hash
+    osis.hash
+  end
+  
+  def ==(compare)
+    #if same class
+    (compare.class == self.class) &&  compare.hash == hash
+  end
+
+  def eql?(compare)
+    self == compare
+  end
 
   def ref_string
     case @ref[:verse]
@@ -59,6 +72,10 @@ class Reference
       return (1..chapters).map {|r| "#{@ref[:book]}.#{@ref[:chapter]}.#{r}" }.join("+")
     end
   end
+  
+  def plan_api_string
+    notes_api_string.capitalize
+  end
 
   def notes
     Note.for_reference(self)
@@ -81,8 +98,8 @@ class Reference
     osis
   end
 
-  def contents
-    @contents ||= parse_contents
+  def contents(opts={})
+    @contents ||= parse_contents(opts)
   end
 
   def copyright
@@ -122,22 +139,33 @@ class Reference
   end
   private
 
-  def api_data
+  def api_data(opts ={})
     api_type = @ref[:verse] ? 'verse' : 'chapter'
     format = api_type == 'verse' ? 'text' : 'html'
-    @api_data[:format] ||= YvApi.get("bible/#{api_type}",
-                                      format: format,
-                                      version: @ref[:version],
-                                      reference: @ref.except(:version).to_osis_string)
+    format = opts[:format] if (opts[:format] == 'text' || opts[:format] == 'html')
+    format = 'html_basic' if (format == 'html' && api_type == 'verse')
+    #TODO: this is dirty for now, clean up once we understand the use cases for differently formatted text
+    
+    #get new data if the format is the same
+    if(@api_data[:format].nil? || @api_data_format != format)
+      @api_data[:format] = YvApi.get("bible/#{api_type}",
+                                        format: format,
+                                        version: @ref[:version],
+                                        reference: @ref.except(:version).to_osis_string)
+      @api_data_format = format
+    end
+    
+    @api_data[:format]
+
   end
 
-  def parse_contents
+  def parse_contents(opts={})
     if @ref[:verse]
       # then it's a verse range; use the verse style
-      api_data.items.map { |a| a.data.content }
+      api_data(opts).items.map { |a| a.data.content }
     else
       # It's a chapter
-      [api_data[0].data.request.content]
+      [api_data(opts)[0].data.request.content]
     end
   end
 end

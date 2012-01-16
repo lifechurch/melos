@@ -1,0 +1,41 @@
+- @title = @plan.name
+
+- content_for :sidebar do
+  .widget
+    - if current_user.subscribed_to? @plan
+      = button_to(t('plans.read today'), plan_path(@plan), method: "get" , class: 'action_button_green', style: "width: 300px; height: 40px; margin-bottom: 10px")
+    - else
+      = button_to(t('plans.subscribe to plan'), plan_start_path(@plan), :class => 'action_button_green')
+  
+  .widget
+    %header
+      %span
+        =t("plans.more info")
+    %ul.widget_menu
+      %li    
+        %p
+          %b=t("plans.length field")
+          = @plan.length
+      - if !current_user.subscribed_to? @plan
+        %li
+          = link_to(t("plans.view sample"), @plan)
+      %li
+        = link_to(t("plans.users subscribed", user_count: @plan.users.count), plan_users_path(@plan))
+  .widget
+    %header
+      %span
+        =t("plans.publisher")
+    %ul.widget_menu
+      %li
+        %p= @plan.copyright
+      %li
+        = link_to(t("plans.about publisher"), @plan.publisher_url)
+        -#TODO: view partial for this sidebar plan content
+      
+%article
+  -#TODO: put << link back to how we got here
+  %h1= @plan.name
+  %hr
+  %div
+    %p= @plan.about
+    %br

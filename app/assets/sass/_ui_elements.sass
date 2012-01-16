@@ -337,3 +337,107 @@
   .li_active &
     background:
       position: center -47px !important
+
+dd .icon_settings 
+  background-repeat: no-repeat
+  background-position: center 7px !important
+  text-indent: -30000px
+  &:active,
+  &:focus,
+  .li_active &
+    background:
+      position: center -42px !important
+//
+// ` Calendar
+//
+
+.cal_month 
+  float: left
+  margin-right: 15px
+
+.cal_month table 
+  font-family: helvetica
+  border-collapse: collapse
+  border: 1px #d5d0d0 solid
+
+.cal_month table tbody
+  width: 100%
+
+.cal_month table caption 
+  padding: 5px 0px
+  font-weight: bold
+  background: #e53535 /* Old browsers */
+  background: -moz-linear-gradient(top,  #e53535 0%, #ae1b1b 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e53535), color-stop(100%,#ae1b1b)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #e53535 0%,#ae1b1b 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #e53535 0%,#ae1b1b 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #e53535 0%,#ae1b1b 100%) /* IE10+ */
+  background: linear-gradient(top,  #e53535 0%,#ae1b1b 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53535', endColorstr='#ae1b1b',GradientType=0 ) /* IE6-9 */
+  color: #fff
+  text-shadow: 0px 1px 0px #420b0b
+  border: 1px solid #9d2c2c
+  border-top-left-radius: 2px
+  border-top-right-radius: 2px
+  width: 100%
+  box-shadow: 0px 1px 0px #f59595 inset
+  text-align: center
+
+.cal_month table thead tr 
+  background: #f8f8f8
+  font-size: 13px
+  color: #444
+
+.cal_month table thead tr th 
+  border-collapse: collapse
+  border: 0
+  padding: 5px 8px
+  text-align: center
+
+.cal_month td 
+  text-align: center
+  padding: 5px 8px
+  border: 1px #d5d0d0 solid
+  border-collapse: collapse
+  font-size: 12px
+  color: #444
+  background: #f8f8f8
+  box-shadow: 0px 1px 0px #fff inset
+
+.cal_month td:hover 
+  background: #fdfdfd
+
+.cal_month tr 
+  border-collapse: collapse
+
+.cal_month td.disabled 
+  background: #e9e9e9
+  box-shadow: 0px 1px 0px #f1f1f1 inset
+
+.cal_month td.today 
+  +background-image(linear-gradient(#7c7c7c, #a6a6a6))
+  box-shadow: 0px 3px 8px rgba(0,0,0,.7) inset
+  color: #fff
+  border: 0px
+  font-weight: bold
+  text-shadow: 0px 1px 0px #676767
+
+.cal_month td.read 
+  background: #a1d167 /* Old browsers */
+  background: -moz-linear-gradient(top,  #a1d167 0%, #689138 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1d167), color-stop(100%,#689138)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #a1d167 0%,#689138 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #a1d167 0%,#689138 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #a1d167 0%,#689138 100%) /* IE10+ */
+  background: linear-gradient(top,  #a1d167 0%,#689138 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1d167', endColorstr='#689138',GradientType=0 ) /* IE6-9 */
+  box-shadow: 0px 3px 8px rgba(0,0,0,.7) inset
+  color: #fff
+  border: 0px #3F772E solid
+  border: 1px #3F772E solid
+  font-weight: bold
+  text-shadow: 0px 1px 0px #3F772E
+
+
+.cal_month .inactive-day 
+  color: #aaa

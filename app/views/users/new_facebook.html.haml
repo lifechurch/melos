@@ -1,0 +1,22 @@
+%article
+  = form_for :user, url: facebook_sign_up_path do |f|
+    - if @user.errors.any?
+      .form_errors
+        =t("users.creation form errors")
+        %ul
+          - @user.errors[:base].each do |e|
+            %li= e
+    %p= "#{t('users.email address')}: #{@user.email}"
+    %p
+      = f.label :username, t("users.user name")
+      %br
+      = f.text_field :username
+    %p
+      = f.label :password, t("users.password")
+      %br
+      = f.password_field :password
+    %p
+      = f.check_box :agree
+      = f.label :agree, t("users.agreement")
+    %p
+      = f.submit t("users.register")

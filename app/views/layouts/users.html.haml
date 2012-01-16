@@ -1,0 +1,25 @@
+
+- @title = @user.name || @user.username
+
+- content_for :main do
+  - if @me
+    - # Then I'm looking at myself
+    - unless content_for?(:sidebar)
+      - # Default sidebar
+      - content_for :sidebar do
+        = render "shared/widget_profile_settings"
+        = render "shared/widget_user_badges" unless @user.badges.empty?
+    = render(partial: "user_info", locals: {user: @user}) if @selected == :recent_activity
+  - else
+    - # I'm looking at someone else, show their info and stuff
+    - unless content_for?(:sidebar)
+      - # Default sidebar
+      - content_for :sidebar do
+        = render "shared/widget_user_badges" unless @user.badges.empty?
+    = render(partial: "user_info", locals: {user: @user})
+    = render partial: "user_tabs", locals: {selected: @selected}
+  %article
+    %h1= t("my #{@selected.to_s}")
+    = content_for?(:user_main) ? yield(:user_main) : yield
+
+= render template: 'layouts/application'

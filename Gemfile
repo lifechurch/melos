@@ -13,6 +13,12 @@ gem 'therubyracer'
 gem 'unicorn'
 gem 'newrelic_rpm'
 gem 'exceptional'
+gem 'countries'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'grackle'
+gem 'koala'
 
 
 # Gems used only for assets and not required
@@ -32,8 +38,6 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-
 group :test, :development do
   # Pretty printed test output
   gem 'turn', '< 0.8.3', :require => false
@@ -44,6 +48,7 @@ group :test, :development do
   gem 'heroku_san'
   gem 'capistrano'
   gem 'capistrano-ext'
+  # To use, start rails with --debug option ($ rails s --debug)
   gem 'ruby-debug19'
 end
 

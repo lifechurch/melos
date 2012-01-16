@@ -19,4 +19,9 @@ class ResourceList < Array
   def has_pages
     total_pages > 1
   end
+  
+  def count
+    total
+  end
+  
 end

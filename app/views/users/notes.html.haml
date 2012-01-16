@@ -1,0 +1,4 @@
+- content_for :user_main do
+  %ul.big_list
+    = render partial: 'notes/list_item', collection: @notes, locals: {display: :icon}
+  = render partial: 'shared/pagination', locals: {resource_list: @notes}
