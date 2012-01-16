@@ -16,14 +16,22 @@ class Highlight < YouVersion::Resource
     opts = {reference: reference.osis_noversion, version: reference.version}.merge(params)
 
     response = YvApi.get("highlights/chapter", opts) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)not_found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        puts(errors)
+      end
     end
 
     list = ResourceList.new
     list.total = response.total
     response.highlights.each { |h| list << new(h.merge(auth: params[:auth]))}
     list
+  end
+
+  def as_json(options = {})
+    [{reference: self.reference.osis}]
+
   end
 
 end
