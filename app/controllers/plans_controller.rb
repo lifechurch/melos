@@ -16,7 +16,8 @@ class PlansController < ApplicationController
   def show
     @plan = Plan.find(params[:id], auth: current_auth) 
     
-    if (@subscription = current_user.subscriptions.find {|subscription| subscription == @plan}) && (params[:ignore_subscription] != "true")
+    # if users is subscribed
+    if (@subscription = current_user.subscription(@plan) && (params[:ignore_subscription] != "true")) || params[:day]
       #PERF: user.find_subsctiption would be faster
       params[:day] ||= @subscription.current_day
       @day = params[:day].to_i
@@ -25,6 +26,13 @@ class PlansController < ApplicationController
       
       render :action => "show_subscribed"
     end  
+  end
+  
+  def users_index
+    if params[:plan_id]
+      @plan = Plan.find(params[:plan_id])
+      @users = @plan.users(page: params[:page])
+    end
   end
   
   def update

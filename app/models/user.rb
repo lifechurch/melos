@@ -29,7 +29,7 @@ class User < YouVersion::Resource
   attribute :google
   attribute :created_dt
   attribute :last_login_dt
-  attribute :subscribed #clean up this dirt by sweeping it into subscription model
+
 
   has_many_remote :badges
 
@@ -271,6 +271,10 @@ class User < YouVersion::Resource
     subscriptions
   end
   
+  def subscription(plan)
+    
+  end
+  
   def subscribed_to? (plan, opts = {})
     opts[:user_id] = id
     opts[:auth] = auth #if auth is nil, it will attempt to search for public subscription
@@ -281,7 +285,6 @@ class User < YouVersion::Resource
     when Plan, Subscription
       opts[:id] = plan.id.to_i
     end
-
     response = YvApi.get("reading_plans/view", opts) do |errors| #we can't use Plan.find because it gets an unexpected response from API when trying un-authed call so it never tries the authed call
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
         return false

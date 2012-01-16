@@ -38,7 +38,7 @@ YouversionWeb::Application.routes.draw do
 
   #Reading Plans
   resources :plans, :only => [:index, :show, :update], :path => 'reading-plans' do
-    resources 'users', :only => [:index]
+    match 'users' => 'plans#users_index'
     match 'settings' => 'plans#settings'
     match 'calendar' => 'plans#calendar'
     match 'start' => 'plans#start'
