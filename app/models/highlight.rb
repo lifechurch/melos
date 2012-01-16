@@ -5,7 +5,7 @@ class Highlight < YouVersion::Resource
 
   def before_save
     self.reference = Reference.new(self.reference) unless self.reference.is_a? Reference
-    version = self.reference.version
+    self.version = self.reference.version
     self.reference = self.reference.osis_noversion
   end
 
@@ -30,7 +30,7 @@ class Highlight < YouVersion::Resource
   end
 
   def as_json(options = {})
-    [{reference: self.reference.osis}]
+    {reference: self.reference.osis, color: self.color}
 
   end
 
