@@ -15,10 +15,8 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id], auth: current_auth) 
-    
     # if users is subscribed
-    if (@subscription = current_user.subscription(@plan) && (params[:ignore_subscription] != "true")) || params[:day]
-      #PERF: user.find_subsctiption would be faster
+    if ((@subscription = current_user.subscription(@plan)) && (params[:ignore_subscription] != "true")) || params[:day]
       params[:day] ||= @subscription.current_day
       @day = params[:day].to_i
       @reading = @subscription.reading(@day)

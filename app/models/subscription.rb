@@ -35,9 +35,16 @@ class Subscription < Plan
     days.to_i
   end
   
-  def self.find(plan)
-    opts[:user_id] = id
-    opts[:auth] = auth #if auth is nil, it will attempt to search for public subscription
+  def self.find(plan, user, opts = {})
+    #if auth is nil, it will attempt to search for public subscription
+    case user
+    when User
+      opts[:user_id] = user.id
+    when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
+      opts[:user_id] = user.to_i
+    else                                        #hope the user find can handle it
+      opts[:user_id] = User.find(user).id  
+    end
     
     case plan
     when Fixnum, /\A[\d]+\z/
@@ -54,7 +61,7 @@ class Subscription < Plan
       end
     end
     
-    Subscription.new(response.merge(:auth => auth))}
+    Subscription.new(response.merge(:auth => opts[:auth]))
   end
   
   def day_statuses

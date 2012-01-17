@@ -30,7 +30,6 @@ class User < YouVersion::Resource
   attribute :created_dt
   attribute :last_login_dt
 
-
   has_many_remote :badges
 
   api_version "2.5"
@@ -267,11 +266,13 @@ class User < YouVersion::Resource
     subscriptions = ResourceList.new
     subscriptions.total = response.total
     response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(:auth => auth))}
-
+    
     subscriptions
   end
   
   def subscription(plan)
+    
+    Subscription.find(plan, id, auth: auth)
     
   end
   
