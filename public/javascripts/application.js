@@ -896,6 +896,27 @@ var YV = (function($, window, document, undefined) {
           $(this).remove();
         })
       },
+      highlight_references: function() {
+        var highlights = $('article').data('highlights');
+        var book = $('article').data('book-api');
+        var chapter = $('article').data('chapter');
+        for (var h = 0; h < highlights.length; h++) {
+          var hi = highlights[h];
+          console.log(hi);
+          if (h instanceof Array) {
+            alert('true');
+          }
+          if ($.isArray(h)) {
+            alert("hi");
+            for (var hh = 0; hh < h.length; hh++) {
+              console.log("this most recent selector is span." + book + "_" + chapter + "_" + hh);
+              $("span." + book + "_" + chapter + "_" + hh).css("background-color", "#" + hi.color);
+            }
+          } else {
+            $("span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
+          }
+        }
+      },
       // YV.init.audio_player
       audio_player: function() {
         var audio = $('#audio_player');

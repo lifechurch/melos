@@ -3,6 +3,16 @@ class Highlight < YouVersion::Resource
   attribute :reference
   attribute :version
 
+  def after_build
+    puts "!@# in the after build"
+    case reference
+    when String
+      self.reference = Reference.new("#{self.reference}.#{self.version}")
+    when Hashie::Mash
+      self.reference = Reference.new("#{self.reference.osis}.#{self.version}")
+    end
+  end
+
   def before_save
     self.reference = Reference.new(self.reference) unless self.reference.is_a? Reference
     self.version = self.reference.version
@@ -25,12 +35,16 @@ class Highlight < YouVersion::Resource
 
     list = ResourceList.new
     list.total = response.total
+    puts "!@# about to do the each"
     response.highlights.each { |h| list << new(h.merge(auth: params[:auth]))}
     list
   end
 
   def as_json(options = {})
-    {reference: self.reference.osis, color: self.color}
+    puts self
+    puts self.reference
+    puts self.reference.class
+    {verse: self.reference.raw_hash[:verse], color: self.color}
 
   end
 
