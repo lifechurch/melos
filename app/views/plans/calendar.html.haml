@@ -48,4 +48,3 @@
                   = link_to(cur_date.day.to_s, plan_path(@subscription.slug, day: cur_status.day))
               - cur_date = cur_date.next
             - full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
-      %br
