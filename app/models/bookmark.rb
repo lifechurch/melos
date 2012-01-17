@@ -3,6 +3,7 @@ class Bookmark < YouVersion::Resource
   attribute :highlight_color
   attribute :labels
   attribute :reference
+  attribute :references
   attribute :title
   attribute :version
   attribute :user_id
@@ -37,7 +38,7 @@ class Bookmark < YouVersion::Resource
     # :reference key.  When creating an object from an API call, it will bear whatever
     # string the API returned for the 'reference' key in the response->data section.
     # And it could probably be some other things before we're done.
-    self.reference_list = ReferenceList.new(self.reference, self.version)
+    self.reference_list = ReferenceList.new(self.references, self.version)
     self.version =self.reference_list.first[:version]
     # Just here for compatibility - should return the same as what was done before
     # self.reference = self.reference_list.first

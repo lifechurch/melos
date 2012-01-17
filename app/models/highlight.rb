@@ -35,15 +35,11 @@ class Highlight < YouVersion::Resource
 
     list = ResourceList.new
     list.total = response.total
-    puts "!@# about to do the each"
     response.highlights.each { |h| list << new(h.merge(auth: params[:auth]))}
     list
   end
 
   def as_json(options = {})
-    puts self
-    puts self.reference
-    puts self.reference.class
     {verse: self.reference.raw_hash[:verse], color: self.color}
 
   end

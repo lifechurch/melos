@@ -1,3 +1,32 @@
+function setCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+function deleteCookie(name) {
+  setCookie(name,"",-1);
+}
+
+
+
+
+
 // Module pattern + Closure
 var YV = (function($, window, document, undefined) {
   // Private constants.
@@ -42,6 +71,12 @@ var YV = (function($, window, document, undefined) {
           $('li, tr, td, th, dd, span, tbody').filter(':last-child').addClass('last-child');
         }
       },
+      // YV.init.fullscreen
+      // fullscreen: function() {
+      //   if ($("article").data("fullscreen") == "1") {
+      //     HTML.addClass("full_screen");
+      //   }
+      // },
       // YV.init.flash_message
       flash_message: function() {
         var divs = $(".flash_error, .flash_notice");
@@ -228,12 +263,14 @@ var YV = (function($, window, document, undefined) {
         button.click(function() {
           if (HTML.hasClass('full_screen')) {
             HTML.removeClass('full_screen');
+            deleteCookie("full_screen");
             YV.misc.kill_widget_spacers();
             YV.init.fixed_widget_header();
             YV.init.fixed_widget_last();
           }
           else {
             HTML.addClass('full_screen');
+            setCookie("full_screen", 1);
           }
 
           this.blur();
@@ -865,7 +902,8 @@ var YV = (function($, window, document, undefined) {
       $('.color_picker').ColorPicker({
         flat: false,
         onSubmit: function(hsb, hex, rgb, el) {
-          $(".color_picker_list").append("<a class='color' id='highlight_" + hex +"' href='#' style='background-color: #'></span>");
+          $(".color_picker_list").append("<button type='submit' name='highlight[color]' class='color' id='highlight_" + hex +"' value='"+ hex +"' style='background-color: #'" + hex + "'></button>");
+          $("#highlight_" + hex).click();
           $("#highlight_" + hex).css('background-color', '#' + hex);
           $(el).ColorPickerHide();
         }
@@ -933,7 +971,14 @@ var YV = (function($, window, document, undefined) {
 
         audio_menu.hide();
       },
-    }
+      // YV.init.fullscreen
+      fullscreen: function() {
+        if ($("article").data("fullscreen") == "1") {
+          HTML.addClass("full_screen");
+        }
+      }
+   }
+
   };
 })(jQuery, this, this.document);
 

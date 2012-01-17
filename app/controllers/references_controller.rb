@@ -1,6 +1,7 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
   def show
+    @html_class = "full_screen" if cookies[:full_screen]
     if !params[:reference]
       # look for a last reading position, or just go to default
       flash.keep
