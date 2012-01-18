@@ -10,7 +10,7 @@ class Subscription < Plan
   def user
       @user ||= User.find(auth ? auth : user_id)
   end
-
+  
   def start
       @start ||= Date.parse(@attributes.start)
   end
@@ -18,11 +18,11 @@ class Subscription < Plan
   def end
       @end ||= Date.parse(@attributes.end)
   end
-
+  
   def reading_date(day)
     (start + day) - 1
   end
-
+  
   def progress
     @progress ||= @attributes.completion_percentage
   end
@@ -37,6 +37,7 @@ class Subscription < Plan
   
   def self.find(plan, user, opts = {})
     #if auth is nil, it will attempt to search for public subscription
+    
     case user
     when User
       opts[:user_id] = user.id
@@ -51,7 +52,11 @@ class Subscription < Plan
       opts[:id] = plan.to_i
     when Plan, Subscription
       opts[:id] = plan.id.to_i
+    when String
+      opts[:id] = Plan.find(plan).id
     end
+
+    _auth = opts[:auth]
     
     response = YvApi.get("reading_plans/view", opts) do |errors| #we can't use Plan.find because it gets an unexpected response from API when trying un-authed call so it never tries the authed call
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
@@ -61,7 +66,7 @@ class Subscription < Plan
       end
     end
     
-    Subscription.new(response.merge(:auth => opts[:auth]))
+    Subscription.new(response.merge(auth: _auth))
   end
   
   def day_statuses
@@ -132,35 +137,9 @@ class Subscription < Plan
       # 
       # return $current_day;
   end
-    
-  def next_day
-    validate_reading_json(current_day)
-    
-    @reading_json.next
-  end
   
-  def previous_day
-    validate_reading_json(current_day)
-    
-    @reading_json.previous
-  end
-    
   def current_reading
     reading(current_day)
-  end
-  
-  def reading(day)
-    
-    validate_reading_json(day)
-    
-    reading = Hashie::Mash.new()
-
-    reading.devotional = @reading_json.additional_content_html || YouVersion::Resource.i18nize(@reading_json.additional_content)
-
-    reading.references = @reading_json.adjusted_days.first.references.map {|data| Hashie::Mash.new(ref: Reference.new(data.reference.osis), completed?: (data.completed == "true"))}    
-    
-    reading
-    
   end
   
   def set_ref_completion(day, ref, completed)
@@ -225,16 +204,20 @@ class Subscription < Plan
     end
   end
   
-  def delete_path
+  def self.delete_path
     "#{api_path_prefix}/unsubscribe_user"
   end
   
   def delete
-    destroy
+    unsubscribe
   end
   
   def unsubscribe
-    destroy
+    if auth
+      destroy
+    else
+      raise "Can't unsubscribe from a plan without authorization"
+    end
   end
   
   def make_public
@@ -314,22 +297,15 @@ class Subscription < Plan
     update_subscription(system_accountability: false)
   end
   
-  private
-  
-  def validate_reading_json(day)
-    #TODO:? check that day is number
-    #TODO: are we ok to assume auth is the same as the response cached for this request?
-    unless(@reading_json && @reading_json.day == day && @reading_json.id == id)
-      opts = {day: day}
-      opts[:id] = id
-      opts[:auth] ||= @attributes[:auth]
-      opts[:user_id] = user_id unless opts[:auth].nil?
-
-      @reading_json = YvApi.get("reading_plans/references", opts) do |errors|
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end
+  def to_param
+    slug
   end
+  
+  def reading(day, opts = {})
+    super(day, opts.merge!({auth: auth, user_id: user_id}))
+  end
+  
+  private
   
   def update_accountability_partners
     if auth
@@ -429,8 +405,7 @@ class Subscription < Plan
     else
       return delivery_time("morning") #Morning seems preferred default #delivery_time(["morning","afternoon","evening"].sample)
     end
-    
+
     "%02d:%02d:%02d" % [hours.to_a.sample, (0..59).to_a.sample, (0..59).to_a.sample]
   end
-
 end

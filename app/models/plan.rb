@@ -104,6 +104,16 @@ class Plan < YouVersion::Resource
     formatted_length
   end
   
+  def total_days
+    @total_days ||= @attributes.total_days.to_i
+  end
+  
+  def days
+    
+    length
+    
+  end
+  
   def to_param
     slug
   end
@@ -123,5 +133,24 @@ class Plan < YouVersion::Resource
     
     YouVersion::Resource.post('reading_plans/subscribe_user', opts)
     
+  end
+  
+  def reading(day, opts = {})
+    unless(@reading && @reading_day == day)
+      opts[:day] ||= day
+      opts[:id] ||= id
+      # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
+      # to be overriden by Subscription model to send auth and user_id
+
+      response = YvApi.get("reading_plans/references", opts) do |errors|
+        raise YouVersion::ResourceError.new(errors)
+      end
+      
+      @reading = Hashie::Mash.new()
+      @reading.devotional = response.additional_content_html || YouVersion::Resource.i18nize(response.additional_content)
+      @reading.references = response.adjusted_days.first.references.map {|data| Hashie::Mash.new(ref: Reference.new(data.reference.osis), completed?: (data.completed == "true"))}
+    end
+    
+    @reading
   end
 end
