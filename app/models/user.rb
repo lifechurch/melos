@@ -314,4 +314,9 @@ class User < YouVersion::Resource
       fl
     end
   end
+
+  def utc_date_offset
+    timezone ? ActiveSupport::TimeZone[timezone].utc_offset/86400.0 : 0.0
+  end
+
 end

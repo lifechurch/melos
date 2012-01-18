@@ -26,21 +26,21 @@
       
   - if !@user.subscriptions.empty?
     %ul.big_list
-      - @user.subscriptions.each do |plan|
+      - @user.subscriptions.each do |sub|
         %li
           %div
-            %h4= link_to(plan.name, plan_path(plan))
+            %h4= link_to(sub.name, plan_path(sub))
             .progress_wrap
               .progress_counter
-                =t("plans.current progress html", day: plan.current_day, total_days: plan.total_days).html_safe
+                =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
               .progress_bar_outer
-                .progress_bar{:style => "width:#{plan.progress}%"}
+                .progress_bar{:style => "width:#{sub.progress}%"}
                   &nbsp;
               .progress_bar_cap
                 &nbsp;
               .progress_bar_shadow
-                .progress_percent_complete{style: "left:#{plan.progress}%"}
-                  %b= t("percentage display", number: plan.progress)
+                .progress_percent_complete{style: "left:#{sub.progress}%"}
+                  %b= t("percentage display", number: sub.progress)
                   .small= t("plans.completion status (below percentage)")
     = render "shared/pagination", resource_list: @user.subscriptions
   - else
