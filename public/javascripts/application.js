@@ -940,15 +940,10 @@ var YV = (function($, window, document, undefined) {
         var chapter = $('article').data('chapter');
         for (var h = 0; h < highlights.length; h++) {
           var hi = highlights[h];
-          console.log(hi);
-          if (h instanceof Array) {
-            alert('true');
-          }
-          if ($.isArray(h)) {
+          if ((hi.verse) instanceof Array) {
             alert("hi");
-            for (var hh = 0; hh < h.length; hh++) {
-              console.log("this most recent selector is span." + book + "_" + chapter + "_" + hh);
-              $("span." + book + "_" + chapter + "_" + hh).css("background-color", "#" + hi.color);
+            for (var hh = 0; hh < hi.verse.length; hh++) {
+              $("span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
             }
           } else {
             $("span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
