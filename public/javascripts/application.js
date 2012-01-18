@@ -941,7 +941,6 @@ var YV = (function($, window, document, undefined) {
         for (var h = 0; h < highlights.length; h++) {
           var hi = highlights[h];
           if ((hi.verse) instanceof Array) {
-            alert("hi");
             for (var hh = 0; hh < hi.verse.length; hh++) {
               $("span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
             }
