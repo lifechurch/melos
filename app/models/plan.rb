@@ -77,21 +77,23 @@ class Plan < YouVersion::Resource
   end
   
   def users(params = {})
-    params[:page] ||= 1
-    params[:id] = id
-
-    response = YvApi.get("reading_plans/users", params) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        raise ResourceError.new(errors)
+    if !@users || (params[:page] != @users_page)
+      params[:id] = id
+      @users_page = params[:page] ||= 1
+      
+      response = YvApi.get("reading_plans/users", params) do |errors|
+        if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+          return []
+        else
+          raise ResourceError.new(errors)
+        end
       end
-    end
     
-    users = ResourceList.new
-    users.total = response.total
-    response.users.each {|user| users << User.new(user.merge(:auth => params[:auth]))}
-    users
+      @users = ResourceList.new
+      @users.total = response.total
+      response.users.each {|user| @users << Hashie::Mash.new({user: User.new(user.merge(:auth => params[:auth])), date: user.subscribed})}
+    end
+    @users
   end
   
   def title
@@ -100,6 +102,16 @@ class Plan < YouVersion::Resource
   
   def length
     formatted_length
+  end
+  
+  def total_days
+    @total_days ||= @attributes.total_days.to_i
+  end
+  
+  def days
+    
+    length
+    
   end
   
   def to_param
@@ -121,5 +133,24 @@ class Plan < YouVersion::Resource
     
     YouVersion::Resource.post('reading_plans/subscribe_user', opts)
     
+  end
+  
+  def reading(day, opts = {})
+    unless(@reading && @reading_day == day)
+      opts[:day] ||= day
+      opts[:id] ||= id
+      # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
+      # to be overriden by Subscription model to send auth and user_id
+
+      response = YvApi.get("reading_plans/references", opts) do |errors|
+        raise YouVersion::ResourceError.new(errors)
+      end
+      
+      @reading = Hashie::Mash.new()
+      @reading.devotional = response.additional_content_html || YouVersion::Resource.i18nize(response.additional_content)
+      @reading.references = response.adjusted_days.first.references.map {|data| Hashie::Mash.new(ref: Reference.new(data.reference.osis), completed?: (data.completed == "true"))}
+    end
+    
+    @reading
   end
 end

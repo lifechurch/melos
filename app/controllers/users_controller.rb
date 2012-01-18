@@ -202,16 +202,6 @@ class UsersController < ApplicationController
     @users = @user.following
     @selected = :friends
   end
-  
-  def index
-    if params[:plan_id]
-      @plan = Plan.find(params[:plan_id])
-      @users = @plan.users
-    end
-  end
-
-
-
 
   private
 
