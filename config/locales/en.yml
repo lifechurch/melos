@@ -189,7 +189,7 @@ en:
     subscribe to plan:                          "Start this plan"
     previous day:                               "Previous Day"
     next day:                                   "Next Day"
-    mark reading complete:                      "Mark Reading Complete"
+    reading completed (mark and show next):     "Reading Completed"
     read today:                                 "View Today's Reading"
     completion status (below percentage):       "Complete"
     current progress html:                      "Day <b>%{day}</b> of <b>%{total_days}</b>"

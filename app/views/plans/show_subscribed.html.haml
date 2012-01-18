@@ -30,7 +30,7 @@
                   = link_to(t("plans.next day"), day: @day + 1)
           - if @reading.references
             - @reading.references.each_with_index do |r,i|
-              %dd{class: @content_page == i ? "highlighted" : ""}
+              %dd
                 - if @subscription.is_a? Subscription                
                   %form{method: 'post'}
                     %input{type: "hidden", name: "_method", value: "put"}
@@ -41,8 +41,8 @@
                     - if @content_page != 0
                       %input{type: "hidden", name: "content_target", value: @content_page}
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
-                = link_to(r.ref.to_s, content: i > 0 ? i.to_s : nil)
-                .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px;"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
+                    %b= r.ref.to_s
+                .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px; margin-right: 30px"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
         %br
           .subscription_plan_links{style: "margin-left: 30px;"}
             %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
@@ -90,6 +90,6 @@
               %input{type: "hidden", name: "completed", value: true.to_s}
               %input{type: "hidden", name: "day_target", value: @day.to_s}
               %input{type: "hidden", name: "content_target", value: @content_page + 1}
-              %button.action_button_green.float_right{type: "submit", name: "done_read"}= t('plans.mark reading complete')
+              %button.action_button_green.float_right{type: "submit", name: "done_read"}= t('plans.reading completed (mark and show next)')
           - else 
             .float_right= link_to(t('plans.next reading'), plan_path(@subscription.slug, day: @day, content: @content_page + 1), class: 'action_button_green') if @reading.references.count > @content_page
