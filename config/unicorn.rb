@@ -44,7 +44,6 @@ before_fork do |server, worker|
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
     rescue Errno::ENOENT, Errno::ESRCH
-      puts "********oops, kill didn't work"
       # someone else did our job for us
     end
   end
