@@ -1,36 +1,7 @@
 - @title = t("users.subscribed to plan", plan: @plan.name)
 
-- content_for :sidebar do
-  .widget
-    - if current_user.subscribed_to? @plan
-      = link_to(t('plans.read today'), plan_path(@plan), class: 'action_button_green', style: "margin-bottom: 10px")
-    - else
-      = link_to(t('plans.subscribe to plan'), plan_start_path(@plan), :class => 'action_button_green', style: "margin-bottom: 10px")
-  .widget
-    %header
-      %span
-        =t("plans.more info")
-    %ul.widget_menu
-      %li    
-        %p
-          %b=t("plans.length field")
-          = @plan.length
-      - if !current_user.subscribed_to? @plan
-        %li
-          = link_to(t("plans.view sample"), @plan)
-      %li
-        = link_to(t("plans.users subscribed", user_count: @users.count), plan_users_path(@plan))
-  .widget
-    %header
-      %span
-        =t("plans.publisher")
-    %ul.widget_menu
-      %li
-        %p= @plan.copyright
-      - unless @plan.publisher_url.nil?
-        %li
-          = link_to(t("plans.about publisher"), @plan.publisher_url)
-          -#TODO: view partial for this sidebar plan content
+= render "default_sidebar"
+  
 %article
   %h2= @plan.name
   %h5= t("users.reading")
@@ -39,7 +10,7 @@
       %li.user
         %img.avatar_large{src: user.user.user_avatar_url["px_48x48"]}
         %div
-          %h5=link_to(user.user.username, @user)
+          %h5=link_to(user.user.username, user.user)
           %p.mute.small.negative_gutter_top_half= t('users.subscribed previously', time_ago: time_ago_in_words(user.date))
   = render "shared/pagination", resource_list: @users
           

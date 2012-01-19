@@ -45,7 +45,7 @@
                       %input{type: "hidden", name: "content_target", value: @content_page}
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
                     %b= r.ref.to_s
-                .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px; margin-right: 30px"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
+                .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px; margin-right: 30px; font-size: 14px; line-height: 25px"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
         %br
           .subscription_plan_links{style: "margin-left: 30px;"}
             %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
