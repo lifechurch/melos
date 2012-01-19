@@ -12,7 +12,10 @@
       %dd
         = link_to t("plans.month"), plan_calendar_path(@subscription)
   - else
-    .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.slug), :class => 'action_button_green')
+    - if current_user
+      .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.slug), :class => 'action_button_green')
+    - else 
+      .float_right= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green')
   %h1{style: "clear: none; width: 600px"}= @subscription.name
       
   .split_pane{:style => "padding-top:15px"}

@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
   end
   def current_date
     #PERF: could cache but needs benchmarking if faster than checks to correctly invalidate
-    (DateTime.now.utc + (current_user.utc_date_offset || 0.0)).to_date
+    current_user ? (DateTime.now.utc + current_user.utc_date_offset).to_date : Date.today
   end
   def current_version
     cookies[:version] || Version.default_for(params[:locale] ? params[:locale].to_s : "en")

@@ -18,7 +18,7 @@
         %p
           %b=t("plans.length field")
           = @plan.length
-      - if current_user && !current_user.subscribed_to?(@plan)
+      - if !current_user || !current_user.subscribed_to?(@plan)
         %li
           = link_to(t("plans.view sample"), day: 1.to_s)
       %li
