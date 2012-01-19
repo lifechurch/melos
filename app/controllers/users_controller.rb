@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   def new
     cookies[:sign_up_redirect] = params[:redirect] if params[:redirect]
     @user = User.new
+    render action: "new", layout: "application"
   end
 
   def create
