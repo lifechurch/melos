@@ -3,7 +3,6 @@ class ReferencesController < ApplicationController
   def show
     @html_class = "full_screen" if cookies[:full_screen]
     if !params[:reference]
-      # look for a last reading position, or just go to default
       flash.keep
       return redirect_to bible_path(last_read || Reference.new(book: "gen", chapter: "1", version: current_version))
     else
@@ -47,8 +46,9 @@ class ReferencesController < ApplicationController
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
     @notes = Note.for_reference(Reference.new(notes_ref_hash))
-    @bookmarks = current_user.bookmarks
+    @bookmarks = current_user ? current_user.bookmarks : []
     @highlights = Highlight.for_reference(@reference, auth: current_auth).to_json
+
   end
 
   private
