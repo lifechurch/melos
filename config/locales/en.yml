@@ -1,5 +1,7 @@
 ---
 en:
+  read reference:                               "Read %{reference}"
+  compare all versions:                         "Compare All Versions"
   my picture:                                   "Update my Picture"
   my notifications:                             "Manage Notifications"
   my connections:                               "Connected Accounts"

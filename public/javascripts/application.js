@@ -126,9 +126,18 @@ var YV = (function($, window, document, undefined) {
           return false;
         });
 
-        if (hash.match('#verse_')) {
-          show_modal();
+        var verses = $("article").data("selected-verses")
+        if (verses) {
+          if (verses.length == 1) {
+            show_modal();
+          }
         }
+        
+        $("#single_verse_read_link").click(function(e) {
+          e.preventDefault();
+          hide_modal();
+          return false;
+        });
 
         $(document).keydown(function(ev) {
           if (ev.keyCode === KEY_ESC) {
@@ -141,8 +150,10 @@ var YV = (function($, window, document, undefined) {
         var verses = $("article").data("selected-verses");
         var book = $("article").data("book-api");
         var chapter = $("article").data("chapter");
-        for (var i = 0; i < verses.length; i++) {
-          $("span." + book + "_" + chapter + "_" + verses[i]).addClass("selected");
+        if (verses) {
+          for (var i = 0; i < verses.length; i++) {
+            $("span." + book + "_" + chapter + "_" + verses[i]).addClass("selected");
+          }
         }
       },
 
@@ -948,14 +959,16 @@ var YV = (function($, window, document, undefined) {
         var highlights = $('article').data('highlights');
         var book = $('article').data('book-api');
         var chapter = $('article').data('chapter');
-        for (var h = 0; h < highlights.length; h++) {
-          var hi = highlights[h];
-          if ((hi.verse) instanceof Array) {
-            for (var hh = 0; hh < hi.verse.length; hh++) {
-              $("span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
+        if (highlights) {
+          for (var h = 0; h < highlights.length; h++) {
+            var hi = highlights[h];
+            if ((hi.verse) instanceof Array) {
+              for (var hh = 0; hh < hi.verse.length; hh++) {
+                $("span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
+              }
+            } else {
+              $("span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
             }
-          } else {
-            $("span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
           }
         }
       },
