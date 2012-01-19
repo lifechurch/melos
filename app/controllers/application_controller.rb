@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
   helper_method :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :set_current_version, :bible_path, :current_avatar
-  before_filter :set_locale, :check_beta, :set_page
+  before_filter :set_locale, :set_page
 
   def set_page
     @page = (params[:page] || 1).to_i
@@ -21,15 +21,6 @@ class ApplicationController < ActionController::Base
       return redirect_to params.merge!(locale: "") if visitor_locale == :en
     end
     I18n.locale = visitor_locale
-  end
-
-  def check_beta
-    unless request.path == beta_signup_path
-      # Check if the person has beta access
-      return if current_auth && cookies.signed[:d] == "yes"
-      redirect_to beta_signup_path
-
-    end
   end
 
   # Manually throw a 404
