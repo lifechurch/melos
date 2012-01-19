@@ -11,8 +11,10 @@ class ReferencesController < ApplicationController
       puts "!@# ref_hash is #{ref_hash}"
       ref_hash[:version] ||= current_version
       ref_hash[:chapter] ||= 1
-      flash.keep
-      return redirect_to bible_path(Reference.new(ref_hash)) if ref_hash.except(:verse) != params[:reference].to_osis_hash.except(:verse)
+      if ref_hash.except(:verse) != params[:reference].to_osis_hash.except(:verse)
+        flash.keep
+        return redirect_to bible_path(Reference.new(ref_hash)) 
+      end
     end
     case ref_hash[:verse]
     when Fixnum
@@ -44,6 +46,7 @@ class ReferencesController < ApplicationController
     set_current_version @version
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
+    @note = Note.new
     @notes = Note.for_reference(Reference.new(notes_ref_hash))
     @highlights = current_user ? Highlight.for_reference(@reference, auth: current_auth).to_json : []
     @bookmarks = current_user ? current_user.bookmarks : []
