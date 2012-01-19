@@ -69,9 +69,7 @@ module YouVersion
         opts[:id] = id if id
         opts.merge! params  # Let params override if it already has an :id
         # First try request as an anonymous request
-        puts "lets do this, path is #{resource_path}, opts are #{opts}"
         response = get(resource_path, opts) do |errors|
-          puts errors
           if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
             inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|

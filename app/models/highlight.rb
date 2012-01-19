@@ -4,7 +4,6 @@ class Highlight < YouVersion::Resource
   attribute :version
 
   def after_build
-    puts "!@# in the after build"
     case reference
     when String
       self.reference = Reference.new("#{self.reference}.#{self.version}")

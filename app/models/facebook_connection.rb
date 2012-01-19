@@ -25,7 +25,6 @@ class FacebookConnection < YouVersion::Connection::Base
     face = Koala::Facebook::API.new(self.data[:oauth_token])
     response = face.get_connections("me", "friends")
     friends = response.map { |e| e["id"] }
-    puts friends
   end
 end
 
