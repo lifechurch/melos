@@ -27,10 +27,12 @@
               %li.pagination_previous.float_left
                 - if @day > 1
                   = link_to(t("plans.previous day"),day: @day - 1)
-              %h4.float_left{style: "margin-left: 125px;margin-bottom: 0px; margin-top: 3px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
               %li.pagination_next.float_right
                 - if @day <= @subscription.total_days - 1
                   = link_to(t("plans.next day"), day: @day + 1)
+              %div{style: "text-align: center; width: 175px; margin: 0 auto"}
+                %h4{style: "margin-bottom: 0px; margin-top: -4px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
+                .mute{style: "font-weight: normal"}=t("plans.which day in plan", day: @day.to_s, total: @subscription.total_days)
           - if @reading.references
             - @reading.references.each_with_index do |r,i|
               %dd
@@ -61,10 +63,12 @@
               %li.pagination_previous.float_left
                 - if @day > 1
                   = link_to(t("plans.previous day"),day: @day - 1)
-              %h4.float_left{style: "margin-left: 50px;margin-bottom: 0px; margin-top: 3px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
               %li.pagination_next.float_right
                 - if @day <= @subscription.total_days - 1
                   = link_to(t("plans.next day"), day: @day + 1)
+              %div{style: "text-align: center; width: 175px; margin: 0 auto"}
+                %h4{style: "margin-bottom: 0px; margin-top: -4px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
+                .mute{style: "font-weight: normal"}=t("plans.which day in plan", day: @day.to_s, total: @subscription.total_days)
           - if @reading.references
             - @reading.references.each_with_index do |r,i|
               %dd{class: @content_page == i ? "highlighted" : ""}
