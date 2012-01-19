@@ -30,7 +30,10 @@ class YvApi
       end
     else
       # Just ask the API
+      get_start = Time.now.to_f
       response = httparty_get(resource_url, query: opts)
+      get_end = Time.now.to_f
+    puts "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     end
     # Check the API response for error code
     return api_response_or_rescue(response, block)
@@ -44,8 +47,11 @@ class YvApi
     # Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
     puts "** YvApi.post: Calling #{resource_url} with body => #{opts}"
 
+    post_start = Time.now.to_f
     response = httparty_post(resource_url, body: opts)
+    post_end = Time.now.to_f
     puts "** YvApi.post: Response: #{response}"
+    puts "** YvApi.post: Resonse time: #{((post_end - post_start) * 1000).to_i}ms"
     return api_response_or_rescue(response, block)
   end
 
