@@ -1,5 +1,4 @@
 YouversionWeb::Application.routes.draw do
-  resources :beta_registrations
 
   filter :locale, include_default_locale: false
   # Bible
@@ -33,8 +32,6 @@ YouversionWeb::Application.routes.draw do
   match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
   match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
-  match 'beta'     => 'beta_registrations#new', :as => 'beta_signup', :via => :get
-  match 'beta'     => 'beta_registrations#create', :as => 'beta_signup', :via => :post
 
   #Reading Plans
   resources :plans, :only => [:index, :show, :update], :path => 'reading-plans' do

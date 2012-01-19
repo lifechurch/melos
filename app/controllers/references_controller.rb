@@ -2,7 +2,6 @@ class ReferencesController < ApplicationController
   before_filter :set_nav
   def show
     if !params[:reference]
-      # look for a last reading position, or just go to default
       return redirect_to bible_path(last_read || Reference.new(book: "gen", chapter: "1", version: current_version))
     else
       ref_hash = params[:reference].to_osis_hash rescue not_found
@@ -17,8 +16,7 @@ class ReferencesController < ApplicationController
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
     @notes = Note.for_reference(Reference.new(notes_ref_hash))
-    @bookmarks = current_user.bookmarks
-
+    @bookmarks = current_user ? current_user.bookmarks : []
   end
 
   private
