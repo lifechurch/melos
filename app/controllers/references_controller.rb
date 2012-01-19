@@ -43,12 +43,8 @@ class ReferencesController < ApplicationController
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
     @notes = Note.for_reference(Reference.new(notes_ref_hash))
-<<<<<<< HEAD
-    @bookmarks = current_user.bookmarks
     @highlights = Highlight.for_reference(@reference, auth: current_auth).to_json
-=======
     @bookmarks = current_user ? current_user.bookmarks : []
->>>>>>> master
   end
 
   private
