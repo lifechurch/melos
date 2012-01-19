@@ -3,6 +3,8 @@
 
 - content_for :sidebar do
   .widget
+    = link_to(t('plans.read today'), plan_path(@subscription), class: 'action_button_green', style: "margin-bottom: 10px")
+  .widget
     %header
       %span
         =t("plans.more info")
@@ -11,7 +13,7 @@
         %p
           %b=t("plans.length field")
           = @subscription.length
-      - if !current_user.subscribed_to? @subscription      
+      - if !current_user.subscribed_to? @subscription
         %li
           = link_to(t("plans.view sample"), @subscription.slug)
       %li
@@ -23,17 +25,18 @@
     %ul.widget_menu
       %li
         %p= @subscription.copyright
-      %li
-        = link_to(t("plans.about publisher"), @subscription.publisher_url)
-        -#TODO: view partial for this sidebar plan content
+      - unless @subscription.publisher_url.nil?
+        %li
+          = link_to(t("plans.about publisher"), @subscription.publisher_url)
+          -#TODO: view partial for this sidebar plan content
 
 %article
   %dl.combo_button.float_right
     %dt
     %dd
       = link_to t("plans.day"), plan_path(@subscription)
-    %dd.settings.highlighted
-      = link_to t("plans.settings"), :class => "icon_settings"
+    %dd.highlighted
+      = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
     %dd
       = link_to t("plans.month"), plan_calendar_path(@subscription)
   %h1{style: "clear: none; width: 300px;"}= @subscription.name
@@ -54,16 +57,21 @@
   .float_right{style: "margin-bottom: 10px"}
     %div
       %b{style: "margin-right: 10px"}= t("plans.start date (before date string)")
-      = @subscription.start.strftime("%B %d, %Y")
+      = @subscription.start.strftime("%b %d, %Y")
     %div
       %b{style: "margin-right: 16px"}= t("plans.end date (before date string)")
-      = @subscription.end.strftime("%B %d, %Y")
+      = @subscription.end.strftime("%b %d, %Y")
   
   %hr
-  .float_right= button_to(@subscription.email_delivery? ? t('plans.email_off') : t('plans.email_on'),  plan_settings_path(email_delivery: (!@subscription.email_delivery?).to_s), class: 'action_button_green', style: "width: 14em; height: 30px")
+  .div.float_right
+    .float_right= button_to(@subscription.email_delivery? ? t('plans.email_off') : t('plans.email_on'),  plan_settings_path(email_delivery: (!@subscription.email_delivery?).to_s), class: 'action_button_green', style: "width: 14em; height: 30px; margin-bottom: 5px")
+    -if @subscription.email_delivery?
+      %div
+        .float_left{style: "width: 130px; overflow: hidden; t('plans.reading completed (mark and show next)'): ellipsis"}= @subscription.user.email
+        .small.float_right{style: "margin-top: 3px"}= link_to(t("plans.email edit"), profile_path)
   %div{style: "width: 330px"}
     %h5= t("plans.email delivery")
-    %p.float_left= t("plans.email delivery text", email_address: @subscription.user.email)
+    %p.float_left= t("plans.email delivery text")
   -if @subscription.email_delivery?
     %form{method: 'get'}
       %div{style: "clear: both"}
@@ -72,7 +80,7 @@
             %option{value: time, selected: time == @subscription.email_delivery_time_range}= t("plan.#{time}")
         %b.float_left{style: "width: 230px; margin-top: 5px"}=t("plans.delivery time")
       %div{style: "clear: both"}
-        %select.float_right{onChange: "this.form.submit()", style: "margin-top: 15px; margin-bottom: 10px; width: 308px", name: "version"}
+        %select.float_right{onChange: "this.form.submit()", style: "margin-top: 15px; margin-bottom: 25px; width: 308px", name: "version"}
           - Version.all_by_language.each do |k, v|
             %optgroup{label: Version.languages[k]}
             - v.each do |k, v|
@@ -115,10 +123,7 @@
     %input{type: "checkbox", onChange: "this.form.submit()", id: "report_box",  checked: @subscription.accountability_partners.empty? ? nil : "checked"}
     %label{for: "report_box"}= t("plans.email weekly report to a friend", email_address: @subscription.user.email)
   - if !@subscription.accountability_partners.empty?
-    %form.float_right{method: 'get', style: "margin-top: 15px"}
-      %input{:style =>"width: 220px; margin-left: 0px;", name: "add_accountability_partner", :type => 'search', :placeholder => t("plans.add members placeholder")}
-      %input{:type => 'submit', :value => t("plans.add member")}
-    %ul.float_left{style: "margin-left: 20px; margin-top: 0px;"}
+    %ul{style: "margin-left: 20px; margin-top: 0px;"}
       -@subscription.accountability_partners.each do|user_mash|
         %li.user{style: "clear: left"}
           - user = User.find(user_mash.id)
@@ -127,8 +132,11 @@
             .float_left=link_to(user.username == current_user.username ? t("myself") : user.username, @user)
             %br
             =link_to("x", remove_accountability_partner: user.username) if @subscription.accountability_partners.count > 1
+    %form{method: 'get', style: "margin-top: 15px; margin-left: 30px; margin-bottom: 15px"}
+      %input{:style =>"width: 220px; margin-bottom: 10px;", name: "add_accountability_partner", :type => 'search', :placeholder => t("plans.add members placeholder")}
+      %input{:style => "margin-bottom: 10px", :type => 'submit', :value => t("plans.add member")}
 
-  %hr
+  %hr{style: "margin-top: 15px"}
   .float_left{style: "height: 30px; margin-bottom: 5px"}= button_to(t('plans.stop reading'), plan_settings_path(unsubscribe: "true"), class: 'action_button_blue', style: "width: 14em; height: 30px")
   
   

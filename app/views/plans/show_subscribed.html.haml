@@ -2,14 +2,17 @@
 - @sidebar = false
       
 %article
-  %dl.combo_button.float_right
-    %dt
-    %dd.highlighted
-      = link_to t("plans.day")
-    %dd.settings
-      = link_to t("plans.settings"), plan_settings_path(@subscription), :class => "icon_settings"
-    %dd
-      = link_to t("plans.month"), plan_calendar_path(@subscription)
+  - if @subscription.is_a? Subscription
+    %dl.combo_button.float_right
+      %dt
+      %dd.highlighted
+        = link_to t("plans.day")
+      %dd
+        = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
+      %dd
+        = link_to t("plans.month"), plan_calendar_path(@subscription)
+  - else
+    .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.slug), :class => 'action_button_green')
   %h1{style: "clear: none; width: 600px"}= @subscription.name
       
   .split_pane{:style => "padding-top:15px"}
@@ -21,24 +24,25 @@
               %li.pagination_previous.float_left
                 - if @day > 1
                   = link_to(t("plans.previous day"),day: @day - 1)
-              %h4.float_left{style: "margin-left: 125px;margin-bottom: 0px; margin-top: 3px;"}= @subscription.reading_date(@day).strftime('%a %b %-d')
+              %h4.float_left{style: "margin-left: 125px;margin-bottom: 0px; margin-top: 3px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
               %li.pagination_next.float_right
                 - if @day <= @subscription.total_days - 1
                   = link_to(t("plans.next day"), day: @day + 1)
           - if @reading.references
             - @reading.references.each_with_index do |r,i|
-              %dd{class: @content_page == i ? "highlighted" : ""}
-                %form{method: 'post'}
-                  %input{type: "hidden", name: "_method", value: "put"}
-                  %input{type: "hidden", name: "ref", value: r.ref.osis}
-                  %input{type: "hidden", name: "completed", value: (!r.completed?).to_s}
-                  - if @day != @subscription.current_day
-                    %input{type: "hidden", name: "day_target", value: @day.to_s}
-                  - if @content_page != 0
-                    %input{type: "hidden", name: "content_target", value: @content_page}
-                  %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
-                  = link_to(r.ref.to_s, content: i > 0 ? i.to_s : nil)
-                  .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px;"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
+              %dd
+                - if @subscription.is_a? Subscription                
+                  %form{method: 'post'}
+                    %input{type: "hidden", name: "_method", value: "put"}
+                    %input{type: "hidden", name: "ref", value: r.ref.osis}
+                    %input{type: "hidden", name: "completed", value: (!r.completed?).to_s}
+                    - if @day != @subscription.current_day
+                      %input{type: "hidden", name: "day_target", value: @day.to_s}
+                    - if @content_page != 0
+                      %input{type: "hidden", name: "content_target", value: @content_page}
+                    %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
+                    %b= r.ref.to_s
+                .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px; margin-right: 30px"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
         %br
           .subscription_plan_links{style: "margin-left: 30px;"}
             %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
@@ -46,7 +50,7 @@
       .split_pane_content{style: "width: 423px"}
         %p{style: "margin-left: 20px; margin-right: 5px;"}= @reading.devotional.html_safe
 
-    -else
+    - else #No devotional content
       .split_pane_sidebar
         %dl.categories_menu
           %dt
@@ -54,23 +58,24 @@
               %li.pagination_previous.float_left
                 - if @day > 1
                   = link_to(t("plans.previous day"),day: @day - 1)
-              %h4.float_left{style: "margin-left: 50px;margin-bottom: 0px; margin-top: 3px;"}= @subscription.reading_date(@day).strftime('%a %b %-d')
+              %h4.float_left{style: "margin-left: 50px;margin-bottom: 0px; margin-top: 3px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
               %li.pagination_next.float_right
                 - if @day <= @subscription.total_days - 1
                   = link_to(t("plans.next day"), day: @day + 1)
           - if @reading.references
             - @reading.references.each_with_index do |r,i|
               %dd{class: @content_page == i ? "highlighted" : ""}
-                %form{method: 'post'}
-                  %input{type: "hidden", name: "_method", value: "put"}
-                  %input{type: "hidden", name: "ref", value: r.ref.osis}
-                  %input{type: "hidden", name: "completed", value: (!r.completed?).to_s}
-                  - if @day != @subscription.current_day
-                    %input{type: "hidden", name: "day_target", value: @day.to_s}
-                  - if @content_page != 0
-                    %input{type: "hidden", name: "content_target", value: @content_page}
-                  %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
-                  = link_to(r.ref.to_s, content: i > 0 ? i.to_s : nil)
+                - if @subscription.is_a? Subscription
+                  %form{method: 'post'}
+                    %input{type: "hidden", name: "_method", value: "put"}
+                    %input{type: "hidden", name: "ref", value: r.ref.osis}
+                    %input{type: "hidden", name: "completed", value: (!r.completed?).to_s}
+                    - if @day != @subscription.current_day
+                      %input{type: "hidden", name: "day_target", value: @day.to_s}
+                    - if @content_page != 0
+                      %input{type: "hidden", name: "content_target", value: @content_page}
+                    %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
+                = link_to(r.ref.to_s, content: i > 0 ? i.to_s : nil)
         %br
           .subscription_plan_links{style: "margin-left: 30px;"}
             %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
@@ -78,10 +83,13 @@
       .split_pane_content
         - if @reading.references
           .embedded_reader{style: "padding-left: 30px; padding-bottom: 30px;"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
-          %form{method: 'post'}
-            %input{type: "hidden", name: "_method", value: "put"}
-            %input{type: "hidden", name: "ref", value: @reading.references[@content_page].ref.osis}
-            %input{type: "hidden", name: "completed", value: true.to_s}
-            %input{type: "hidden", name: "day_target", value: @day.to_s}
-            %input{type: "hidden", name: "content_target", value: @content_page + 1}
-            %button.action_button_green.float_right{type: "submit", name: "done_read"}= t('plans.mark reading complete')
+          - if @subscription.is_a? Subscription
+            %form{method: 'post'}
+              %input{type: "hidden", name: "_method", value: "put"}
+              %input{type: "hidden", name: "ref", value: @reading.references[@content_page].ref.osis}
+              %input{type: "hidden", name: "completed", value: true.to_s}
+              %input{type: "hidden", name: "day_target", value: @day.to_s}
+              %input{type: "hidden", name: "content_target", value: @content_page + 1}
+              %button.action_button_green.float_right{type: "submit", name: "done_read"}= t('plans.reading completed (mark and show next)')
+          - else 
+            .float_right= link_to(t('plans.next reading'), plan_path(@subscription.slug, day: @day, content: @content_page + 1), class: 'action_button_green') if @reading.references.count > @content_page

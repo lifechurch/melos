@@ -6,8 +6,8 @@
     %dt
     %dd
       = link_to t("plans.day"), plan_path(@subscription)
-    %dd.settings
-      = link_to t("plans.settings"), plan_settings_path(@subscription), :class => "icon_settings"
+    %dd
+      = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
     %dd.highlighted
       = link_to t("plans.month")
   %h1{style: "clear: none; width: 600px"}= @subscription.name
@@ -39,13 +39,12 @@
             - 7.times do       # List out one week
               - if cur_date.month != first_date.month || cur_date < first_date || statuses.empty?         # if not in current month  -OR-  not a day on the paln
                 -if cur_date.month != first_date.month
-                  %td.disabled{class: cur_date == Date.today ? "today" : ""}
+                  %td.disabled{class: cur_date == current_date ? "today" : ""}
                 -else
-                  %td.inactive-day{class: cur_date == Date.today ? "today" : ""}= cur_date.day.to_s
+                  %td.inactive-day{class: cur_date == current_date ? "today" : ""}= cur_date.day.to_s
               - else
                 - cur_status = statuses.delete_at(0)
-                %td{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'inactive-day partial' : 'inactive-day') << ((cur_date == Date.today) ? ' today' : '')}
+                %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'inactive-day partial' : 'inactive-day') << ((cur_date == current_date) ? ' today' : '')}
                   = link_to(cur_date.day.to_s, plan_path(@subscription.slug, day: cur_status.day))
               - cur_date = cur_date.next
             - full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
-      %br

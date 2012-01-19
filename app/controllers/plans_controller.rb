@@ -14,17 +14,27 @@ class PlansController < ApplicationController
   end
 
   def show
-    @plan = Plan.find(params[:id], auth: current_auth) 
-    
-    if (@subscription = current_user.subscriptions.find {|subscription| subscription == @plan}) && (params[:ignore_subscription] != "true")
-      #PERF: user.find_subsctiption would be faster
+    @subscription = current_user.subscription(params[:id])
+
+    # if user is subscribed
+    if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]
       params[:day] ||= @subscription.current_day
+      @subscription = Plan.find(params[:id]) if @subscription.nil?
       @day = params[:day].to_i
       @reading = @subscription.reading(@day)
-      @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0
-      
+      @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0 #coerce content page to 1st page if outside range
+
       render :action => "show_subscribed"
     end  
+
+    @plan = Plan.find(params[:id])
+  end
+  
+  def users_index
+    if params[:plan_id]
+      @plan = Plan.find(params[:plan_id])
+      @users = @plan.users(page: params[:page])
+    end
   end
   
   def update
@@ -42,7 +52,7 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:plan_id]).subscribe(current_auth)
     #TODO: we're wasting an API call here (finding the plan just to subscribe)
     #TODO: handle the case where the user isn't logged in
-    redirect_to plan_path(params[:plan_id])
+    redirect_to plan_path(params[:plan_id]), notice: t("plans.subscribe successful")
   end
   
   def settings
@@ -59,7 +69,7 @@ class PlansController < ApplicationController
     
     if(params[:unsubscribe] == "true")
       @subscription.destroy
-      redirect user_plans_path(current_auth.user_id, alert: "unsubscribed")
+      redirect_to user_plans_path(current_auth.username), notice: t("plans.unsubscribe successful")
     end
     
     if(params[:email_delivery])

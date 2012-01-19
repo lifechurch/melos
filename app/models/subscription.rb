@@ -8,9 +8,9 @@ class Subscription < Plan
   attribute :email_delivery_version
   
   def user
-      @user ||= User.find(auth ? auth : user_id)
+      @user ||= User.find(auth ? auth : user_id.to_i)
   end
-
+  
   def start
       @start ||= Date.parse(@attributes.start)
   end
@@ -18,11 +18,11 @@ class Subscription < Plan
   def end
       @end ||= Date.parse(@attributes.end)
   end
-
+  
   def reading_date(day)
     (start + day) - 1
   end
-
+  
   def progress
     @progress ||= @attributes.completion_percentage
   end
@@ -33,6 +33,40 @@ class Subscription < Plan
   
   def total_days
     days.to_i
+  end
+  
+  def self.find(plan, user, opts = {})
+    #if auth is nil, it will attempt to search for public subscription
+    
+    case user
+    when User
+      opts[:user_id] = user.id
+    when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
+      opts[:user_id] = user.to_i
+    else                                        #hope the user find can handle it
+      opts[:user_id] = User.find(user).id  
+    end
+    
+    case plan
+    when Fixnum, /\A[\d]+\z/
+      opts[:id] = plan.to_i
+    when Plan, Subscription
+      opts[:id] = plan.id.to_i
+    when String
+      opts[:id] = Plan.find(plan).id
+    end
+
+    _auth = opts[:auth]
+    
+    response = YvApi.get("reading_plans/view", opts) do |errors| #we can't use Plan.find because it gets an unexpected response from API when trying un-authed call so it never tries the authed call
+      if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
+        return nil
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+    
+    Subscription.new(response.merge(auth: _auth))
   end
   
   def day_statuses
@@ -65,73 +99,11 @@ class Subscription < Plan
   end
   
   def current_day
-  (Date.today - start).to_i + 1
-
-      #TODO: make sure this is logically correct, and make it work with time zones
-
-      #Old PHP code for this function
-      #     //if the users timezone isn't set in the db use UTC
-      # if($timezone === '' OR $timezone === FALSE)
-      # {
-      #   $timezone = 'UTC';
-      # }
-      # 
-      # date_default_timezone_set($timezone);
-      # 
-      # $start_dt = new DateTime($start);
-      # $current_dt = new DateTime(NULL, new DateTimeZone($timezone));
-      # 
-      # $current_diff = $start_dt->diff($current_dt);
-      # $current_day = $current_diff->days + 1;
-      # 
-      # if ($current_diff->invert === 1)
-      # {
-      #   $current_day = 1;
-      # }
-      # 
-      # if ($current_day > $total_days)
-      # {
-      #   if ($rollover === TRUE)
-      #   {
-      #     $current_day = $current_day % $total_days;
-      #   }
-      #   else
-      #   {
-      #     $current_day = $total_days;
-      #   }
-      # }
-      # 
-      # return $current_day;
-  end
-    
-  def next_day
-    validate_reading_json(current_day)
-    
-    @reading_json.next
+    @current_day ||= [((DateTime.now.utc + user.utc_date_offset) - start).floor + 1, total_days].min
   end
   
-  def previous_day
-    validate_reading_json(current_day)
-    
-    @reading_json.previous
-  end
-    
   def current_reading
     reading(current_day)
-  end
-  
-  def reading(day)
-    
-    validate_reading_json(day)
-    
-    reading = Hashie::Mash.new()
-
-    reading.devotional = @reading_json.additional_content_html || YouVersion::Resource.i18nize(@reading_json.additional_content)
-
-    reading.references = @reading_json.adjusted_days.first.references.map {|data| Hashie::Mash.new(ref: Reference.new(data.reference.osis), completed?: (data.completed == "true"))}    
-    
-    reading
-    
   end
   
   def set_ref_completion(day, ref, completed)
@@ -196,16 +168,20 @@ class Subscription < Plan
     end
   end
   
-  def delete_path
+  def self.delete_path
     "#{api_path_prefix}/unsubscribe_user"
   end
   
   def delete
-    destroy
+    unsubscribe
   end
   
   def unsubscribe
-    destroy
+    if auth
+      destroy
+    else
+      raise "Can't unsubscribe from a plan without authorization"
+    end
   end
   
   def make_public
@@ -285,22 +261,15 @@ class Subscription < Plan
     update_subscription(system_accountability: false)
   end
   
-  private
-  
-  def validate_reading_json(day)
-    #TODO:? check that day is number
-    #TODO: are we ok to assume auth is the same as the response cached for this request?
-    unless(@reading_json && @reading_json.day == day && @reading_json.id == id)
-      opts = {day: day}
-      opts[:id] = id
-      opts[:auth] ||= @attributes[:auth]
-      opts[:user_id] = user_id unless opts[:auth].nil?
-
-      @reading_json = YvApi.get("reading_plans/references", opts) do |errors|
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end
+  def to_param
+    slug
   end
+  
+  def reading(day, opts = {})
+    super(day, opts.merge!({auth: auth, user_id: user_id}))
+  end
+  
+  private
   
   def update_accountability_partners
     if auth
@@ -400,8 +369,7 @@ class Subscription < Plan
     else
       return delivery_time("morning") #Morning seems preferred default #delivery_time(["morning","afternoon","evening"].sample)
     end
-    
+
     "%02d:%02d:%02d" % [hours.to_a.sample, (0..59).to_a.sample, (0..59).to_a.sample]
   end
-
 end

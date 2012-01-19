@@ -29,7 +29,6 @@ class User < YouVersion::Resource
   attribute :google
   attribute :created_dt
   attribute :last_login_dt
-  attribute :subscribed #clean up this dirt by sweeping it into subscription model
 
   has_many_remote :badges
 
@@ -267,8 +266,14 @@ class User < YouVersion::Resource
     subscriptions = ResourceList.new
     subscriptions.total = response.total
     response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(:auth => auth))}
-
+    
     subscriptions
+  end
+  
+  def subscription(plan)
+    
+    Subscription.find(plan, id, auth: auth)
+    
   end
   
   def subscribed_to? (plan, opts = {})
@@ -281,7 +286,6 @@ class User < YouVersion::Resource
     when Plan, Subscription
       opts[:id] = plan.id.to_i
     end
-
     response = YvApi.get("reading_plans/view", opts) do |errors| #we can't use Plan.find because it gets an unexpected response from API when trying un-authed call so it never tries the authed call
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
         return false
@@ -310,4 +314,9 @@ class User < YouVersion::Resource
       fl
     end
   end
+
+  def utc_date_offset
+    timezone ? ActiveSupport::TimeZone[timezone].utc_offset/86400.0 : 0.0
+  end
+
 end

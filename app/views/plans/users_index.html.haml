@@ -1,4 +1,4 @@
-- @title = @plan.name
+- @title = t("users.subscribed to plan", plan: @plan.name)
 
 - content_for :sidebar do
   .widget
@@ -17,9 +17,9 @@
           = @plan.length
       - if !current_user.subscribed_to? @plan
         %li
-          = link_to(t("plans.view sample"), day: 1.to_s)
+          = link_to(t("plans.view sample"), @plan)
       %li
-        = link_to(t("plans.users subscribed", user_count: @plan.users.count), plan_users_path(@plan))
+        = link_to(t("plans.users subscribed", user_count: @users.count), plan_users_path(@plan))
   .widget
     %header
       %span
@@ -30,12 +30,16 @@
       - unless @plan.publisher_url.nil?
         %li
           = link_to(t("plans.about publisher"), @plan.publisher_url)
--#TODO: view partial for this sidebar plan content
-      
+          -#TODO: view partial for this sidebar plan content
 %article
-  -#TODO: put << link back to how we got here
-  %h1= @plan.name
-  %hr
-  %div
-    %p= @plan.about
-    %br
+  %h2= @plan.name
+  %h5= t("users.reading")
+  %ul.big_list
+    -@users.each do|user|
+      %li.user
+        %img.avatar_large{src: user.user.user_avatar_url["px_48x48"]}
+        %div
+          %h5=link_to(user.user.username, @user)
+          %p.mute.small.negative_gutter_top_half= t('users.subscribed previously', time_ago: time_ago_in_words(user.date))
+  = render "shared/pagination", resource_list: @users
+          
