@@ -14,7 +14,7 @@ class PlansController < ApplicationController
   end
 
   def show
-    @subscription = current_user.subscription(params[:id])
+    @subscription = current_user.subscription(params[:id]) if current_user
 
     # if user is subscribed
     if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]

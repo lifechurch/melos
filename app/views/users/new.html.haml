@@ -1,4 +1,8 @@
 %article
   %h1= t("users.sign up for an account")
-  %p= link_to "Sign up with Facebook", auth_connect_path(:facebook, redirect: facebook_sign_up_path)
+  -if params[:source]
+    %hr
+    %p= t("registration.#{params[:source]} blurb")
+    %hr
+  %p= link_to "Sign up with Facebook", auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
   = render 'create_form'

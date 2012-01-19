@@ -2,10 +2,13 @@
 
 - content_for :sidebar do
   .widget
-    - if current_user.subscribed_to? @plan
-      = link_to(t('plans.read today'), plan_path(@plan), class: 'action_button_green', style: "margin-bottom: 10px")
-    - else
-      = link_to(t('plans.subscribe to plan'), plan_start_path(@plan), :class => 'action_button_green', style: "margin-bottom: 10px")
+    - if current_auth
+      -if current_user.subscribed_to?(@plan)
+        = link_to(t('plans.read today'), plan_path(@plan), class: 'action_button_green', style: "margin-bottom: 10px")
+      - else
+        = link_to(t('plans.subscribe to plan'), plan_start_path(@plan), :class => 'action_button_green', style: "margin-bottom: 10px")
+    - else 
+      = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id), class: 'action_button_green', style: "margin-bottom: 10px")
   .widget
     %header
       %span
@@ -15,7 +18,7 @@
         %p
           %b=t("plans.length field")
           = @plan.length
-      - if !current_user.subscribed_to? @plan
+      - if current_user && !current_user.subscribed_to?(@plan)
         %li
           = link_to(t("plans.view sample"), day: 1.to_s)
       %li
