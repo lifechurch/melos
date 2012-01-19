@@ -47,6 +47,7 @@ class UsersController < ApplicationController
   end
 
   def confirm_email
+    render layout: "application"
   end
 
   def confirm

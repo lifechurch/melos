@@ -12,7 +12,10 @@
       %dd
         = link_to t("plans.month"), plan_calendar_path(@subscription)
   - else
-    .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.slug), :class => 'action_button_green')
+    - if current_user
+      .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.slug), :class => 'action_button_green')
+    - else 
+      .float_right= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green')
   %h1{style: "clear: none; width: 600px"}= @subscription.name
       
   .split_pane{:style => "padding-top:15px"}
@@ -42,7 +45,7 @@
                       %input{type: "hidden", name: "content_target", value: @content_page}
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
                     %b= r.ref.to_s
-                .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px; margin-right: 30px"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
+                .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px; margin-right: 30px; font-size: 14px; line-height: 25px"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
         %br
           .subscription_plan_links{style: "margin-left: 30px;"}
             %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
