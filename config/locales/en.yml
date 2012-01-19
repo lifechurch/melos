@@ -2,6 +2,7 @@
 en:
   read reference:                               "Read %{reference}"
   compare all versions:                         "Compare All Versions"
+  link will be added:                           "will be added"
   my picture:                                   "Update my Picture"
   my notifications:                             "Manage Notifications"
   my connections:                               "Connected Accounts"

@@ -58,30 +58,58 @@
           %br
           %input{:type => 'text', :id => 'bookmark_labels', :name => 'bookmark[labels]'}
           %input{:class => "verses_selected_input", name: "bookmark[reference]", type: "hidden"}
-        %span
-          %b
-            Color
-          (optional) 
-        %div{:class => "color_picker_list"}
-          %a{:class => "color_picker", :href =>"#"}
-          %a{:class => "color_picker_holder", :href =>"#"}
-          %a{:class => "color_picker_clear", :href =>"#"}
-            <span class='selected'></span>
-          %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
-          %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
-          %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
-          %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+          / %span
+          /   %b
+          /     Color
+          /   (optional) 
+          / %div{:class => "color_picker_list"}
+          /   %a{:class => "color_picker", :href =>"#"}
+          /   %a{:class => "color_picker_holder", :href =>"#"}
+          /   %a{:class => "color_picker_clear", :href =>"#"}
+          /     <span class='selected'></span>
+          /   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+          /   %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
+          /   %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
+          /   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
         %div{:class => "clear"}
         %p
           %input{:type => 'image', :src => '/images/save_bookmark.png'}
-    %a.open_modal{:href => "#"}
-      %dt#open_share_modal
-        Share
-    %a.open_modal{:href => "#"}
-      %dt#open_share_modal_link
-        Link
     %dt
-      New Note
+      Share
     %dd
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      %form.clearfix
+        %div.share_message
+          %textarea{style: "margin-bottom: 8px"}
+          %div.float_right
+            %b#short_link
+            = t("link will be added")
+
+          %div.clearfix{style: "margin-bottom: 8px"}
+          %div.share_action      
+            %input{:type => 'image', :src => '/images/save_bookmark.png'}
+          %div.share_services
+            %span.float_left{style: "width: 60%"}
+              %input#checkbox_share_twitter{:type => "checkbox", :name => "share_verse_social", :checked => 'checked'}
+              %label{:for => 'share_verse_twitter', :class => "share_verse_twitter", :value => "Twitter"}
+                Twitter
+            
+            %span.float_left{style: "width: 60%"}
+              %input#checkbox_share_facebook{:type => "checkbox", :name => "share_verse_social"}
+              %label{:for => 'share_verse_facebook', :class => "share_verse_facebook"}
+                Facebook
+            %span.float_left{style: "width: 60%"}
+              %input#checkbox_share_google{:type => "checkbox", :name => "share_verse_social"}
+              %label{:for => 'share_verse_google', :class => "share_verse_google"}
+                Google +
+          %div.clearfix{style: "margin-bottom: 15px"}
+    %dt
+      Link
+    %dd
+      %span.text_field_embed
+        %input#copy_link_input.width_100{:value => "", :style => "margin-bottom: 15px;", :type => "text"}
+        %button#copy_link
+          Copy
+    %a.open_modal{:href => "#"}
+      %dt
+        New Note
+

@@ -24,6 +24,10 @@ class Reference
     @ref
   end
 
+  def short_link
+    "http://bible.us/#{@ref.to_osis_string.sub(/\./, "")}"
+  end
+
   def to_s
     @string = self.ref_string
     @string += " (#{self.version_string})" if @ref[:version]
