@@ -36,7 +36,9 @@ class ReferencesController < ApplicationController
       @verses
     end
     @reference = Reference.new(ref_hash.except(:verse))
+    @single_verse = Reference.new(ref_hash) if ref_hash[:verse].is_a?(Fixnum)
     puts "!@# @references is #{@reference}"
+    puts "!@# @single_verse is #{@single_verse}"
     @version = Version.find(@reference[:version])
     set_last_read @reference
     set_current_version @version
