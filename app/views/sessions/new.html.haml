@@ -1,7 +1,13 @@
 %article
+  %h1= t("sign in to youversion")
   = form_tag sign_in_path do
-    = label_tag :username, t("username or email prompt")
-    = text_field_tag :username, params[:username]
-    = label_tag :password, t("password prompt")
-    = password_field_tag :password, params[:password]
-    = submit_tag t("sign in")
+    %p
+      = label_tag :username, t("username or email prompt")
+      %br
+      = text_field_tag :username, params[:username]
+    %p
+      = label_tag :password, t("password prompt")
+      %br
+      = password_field_tag :password, params[:password]
+    %p
+      = submit_tag t("sign in")
