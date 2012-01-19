@@ -41,8 +41,8 @@ class YvApi
     base = get_base_url!(opts)
     path = clean_up(path)
     resource_url = base + path
-    Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
-    # puts "** YvApi.post: Calling #{resource_url} with body => #{opts}"
+    # Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
+    puts "** YvApi.post: Calling #{resource_url} with body => #{opts}"
 
     response = httparty_post(resource_url, body: opts)
     puts "** YvApi.post: Response: #{response}"

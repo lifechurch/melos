@@ -3,6 +3,7 @@ br + select,
 br + textarea
   margin-top: 5px
 
+
 // `Flash Messages
 //----------------------------------------------------------------------------------------------------
 
@@ -15,10 +16,16 @@ br + textarea
     repeat: no-repeat
     position: right bottom
   border: 1px solid
-  font-size: 35px
-  margin: 0 0 10px
-  padding: 5px 20px
+  font-size: 16px
+  margin: 0 0 10px 70px
+  padding: 10px 20px
+  box-sizing: border-box
+  width: 910px
+  opacity: 0.95
+  z-index: 1000
   text-shadow: #fff 0 1px 0
+  position: fixed
+  cursor: pointer
 
 .flash_error
   background:
@@ -218,9 +225,23 @@ input[type="week"]
   padding: 7px 10px
   height: 35px
 
+
+div.color_picker_list button.color
+  display: inline
+  margin-left: 0
+  margin-right: 4px
+
 textarea
   display: block
   height: auto
+
+.alternate_select
+  +background(linear-gradient(#fefefe, #dbdbdb))
+  height: 24px
+  padding: 2px 10px
+.alternate_select_locked 
+  padding-left: 20px
+  +background(linear-gradient(#fefefe, #dbdbdb))
 
 @media (-webkit-min-device-pixel-ratio: 0)
   select
@@ -229,6 +250,16 @@ textarea
     background-position: right 7px, 0 0
     background-repeat: no-repeat, repeat-x
     padding-right: 41px
+  // Alternate_select queues up the smaller select design used in things like parallel notes -jc
+  .alternate_select
+    +background(url(../images/select_wrap_span.png) no-repeat center right, linear-gradient(#fefefe, #dbdbdb))
+    height: 24px
+    padding: 2px 10px
+  .alternate_select_locked 
+    padding-left: 20px
+    +background(url(../images/select_wrap_span.png) no-repeat center right, linear-gradient(#fefefe, #dbdbdb))
+
+
 
 textarea:focus,
 select:focus,
@@ -262,6 +293,8 @@ input[type="url"]:active,
 input[type="week"]:active
   border-color: $blue
   +box-shadow(inset rgba(#000, 0.1) 0 1px 1px 0, #fff 0 1px 0 0, $blue_light 0 0 5px 0, #eeedeb 0 0 0 5px)
+
+
 
 // `Action Buttons
 //----------------------------------------------------------------------------------------------------
@@ -388,3 +421,26 @@ input[type="image"]:active
 
 input[type="image"] + a
   line-height: 29px
+
+// `Date Input
+//
+
+input[type="date"]
+  width: 100%
+
+// `Embedded Text Field
+//
+
+.text_field_embed
+  position: relative
+  display: block
+
+.text_field_embed button
+  position: absolute
+  right: 8px
+  top: 6px
+.text_field_embed + .text_field_embed 
+  margin: 10px 0
+.secret
+  margin: 0
+  display: none

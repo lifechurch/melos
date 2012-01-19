@@ -1,0 +1,49 @@
+.widget.parallel_notes
+  %header
+    %span.header_icon_note= t('New Note')
+    %a.pop_out_button
+      %span
+        Pop Out
+  %section
+    %ul.reference_tokens
+      %li
+        %a{:href => "#"}
+          Luke 2:15
+      %li
+        %a{:href => "#"}
+          John 4:25
+    %form
+      %fieldset
+        %input{:value => "Name", :type => "text"}
+        %textarea
+        %select.alternate_select
+          %option
+            NIV - New International Version
+          %option
+            Option 2
+          %option
+            Option 3
+        %span#publish_time
+          %select.alternate_select.publish
+            %option
+              Publish Immeadiately
+            %option{:name => "publish _on", :value => "publish_on"}
+              Publish
+            %option
+              Option 3
+        %div#parallel_notes_date_time
+          %input.secret{:value => "secret form", :type => "date"}
+        %div{:class => "color_picker_list"}
+          %a{:class => "color_picker", :href =>"#"}
+          %a{:class => "color_picker_holder", :href =>"#"}
+          %a{:class => "color_picker_clear", :href =>"#"}
+            <span class='selected'></span>
+          %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+          %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
+          %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
+          %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+        %div.parallel_notes_submit
+          %button.action_button_green.float_right
+            Save
+          %a.cancel.float_left
+            Cancel

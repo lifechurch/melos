@@ -266,6 +266,78 @@ a.more_arrow:hover
   background: url(../images/more_arrow.png) no-repeat right center
   padding: 5px 25px 5px 0
 
+
+// Parallel Notes Sidebar
+//------------------------------------------------------------------------------------------
+.parallel_notes .pop_out_button
+  float: right
+  +box-shadow(rgba(#fff, 0.7) 0 1px 0 0)
+  +border-radius(9px)
+  border: 1px solid #aaa
+  color: $body_text
+  display: block
+  padding: 2px 10px 3px
+  +background-image(linear-gradient(#fff, #dddcda))
+  background-color: #eeedeb
+  text-indent: -200000px
+  margin-top: 2px
+.parallel_notes .pop_out_button:hover
+  +background-image(linear-gradient(#f1efec, #e0dedb))
+  background-color: #ccc
+.parallel_notes .pop_out_button:active 
+  +glow
+  +background-image(linear-gradient(#d0cdca, #f1efec))
+  background-color: #eee
+.parallel_notes .pop_out_button span
+  background: url(../images/icon_popout.png) no-repeat
+  height: 12px
+  width: 16px
+  display: block
+.parallel_notes section
+  padding: 10px 5px 5px 5px
+  background-image: url(../images/shadow.png) repeat-x !important
+.parallel_notes input[type="text"]
+  height: 25px
+  margin: 0px 0px 10px 0px
+  width: 100%
+.parallel_notes textarea 
+  height: 200px
+.parallel_notes select
+  width: 100%
+  margin: 5px 0px
+
+.parallel_notes_submit 
+  padding: 0px 15px
+#sidebar .parallel_notes .action_button_green 
+  min-width: 100px
+  +border-radius(16px) 
+  box-shadow: inset rgba(#fff, 0.3) 0 1px 0 0, #fff 0 1px 0 0, #bbbabd 0 0 0 5px
+  font-size: 13px
+  margin-top: 10px
+#sidebar .parallel_notes .cancel
+  display: block
+  margin: 0 10px 0 0
+  padding: 15px 0px
+  color: #676767
+  font-size: 13px
+  text-decoration: underline
+  
+#sidebar .parallel_notes .color_picker_list a 
+  box-shadow: 1px 1px 0px #bbbabd, inset 0px 1px #fff
+#sidebar .parallel_notes .color_picker_list
+  box-shadow: 0px 1px #bbbabd, 0px 2px #fff
+  padding: 0px 0px 10px 0px
+  margin: 5px 0px
+#parallel_notes_date_time
+  padding: 0px 0px 0px 25px
+  background: url(../images/icon_calendar.png) no-repeat left center
+.parallel_notes .publish_on_selected
+  padding-left: 25px
+  background: url(../images/icon_lock.png) no-repeat 4px center
+.parallel_notes .publish_on_selected select
+  width: 91%
+.parallel_notes section form fieldset
+  margin: 0
 // `Fixed Widget Header
 //----------------------------------------------------------------------------------------------------
 

@@ -1,12 +1,52 @@
 #menu_bookmark.dynamic_menu
+  %header
+    %a.close{:href => '#'} Close
+    %span
+      Currently Selected:
+    %ul.reference_tokens
+      %li
+        %a{:href => "#"}
+          Luke 2:15
+      %li
+        %a{:href => "#"}
+          John 4:25
+      %div#add_reference_token
+        %a{:href => '#'}
+          ADD
+        %input{:type => 'text'}
+        %ul#add_reference_token_helper
+          %li
+            %a{:href => '#'}
+              Genesis
+          %li
+            %a{:href => '#'}
+              Exodus
+          %li
+            %a{:href => '#'}
+              Leviticus
+          %li
+            %a{:href => '#'}
+              Numbers
   %span.menu_arrow
     &nbsp;
   %dl.accordion
     %dt
-      Bookmark
-      %a.close{:href => '#'} Close
+      Highlight
     %dd
-      %form{:action => user_bookmarks_path(current_auth.user_id), method: "POST"}
+      %form{:action => highlights_path, method: "POST"}
+        %input{:class => "verses_selected_input", name: "highlight[reference]", type: "hidden"}
+        %div{:class => "color_picker_list"}
+          %a{:class => "color_picker", :href =>"#"}
+          %a{:class => "color_picker_holder", :href =>"#"}
+          %a{:class => "color_picker_clear", :href =>"#"}
+          %button{:type => "submit", :name => "highlight[color]", :value => "f3a9a9", :class => "color", :id => "highlight_f3a9a9", :href => "#", :style => "background-color:#f3a9a9"}
+          %button{:type => "submit", :name => "highlight[color]", :value => "f6f0b4", :class => "color", :id => "highlight_f6f0b4", :href => "#", :style => "background-color:#f6f0b4"}
+          %button{:type => "submit", :name => "highlight[color]", :value => "a8ed9d", :class => "color", :id => "highlight_a8ed9d", :href => "#", :style => "background-color:#a8ed9d"}
+        %div{:class => "clear"}
+    %dt
+      Bookmark
+    %dd
+      %form{:action => bookmarks_path, method: "POST"}
         %p
           %label{:for => 'bookmark_title'}
             Title
@@ -18,23 +58,28 @@
           %br
           %input{:type => 'text', :id => 'bookmark_labels', :name => 'bookmark[labels]'}
           %input{:class => "verses_selected_input", name: "bookmark[reference]", type: "hidden"}
+        %span
+          %b
+            Color
+          (optional) 
+        %div{:class => "color_picker_list"}
+          %a{:class => "color_picker", :href =>"#"}
+          %a{:class => "color_picker_holder", :href =>"#"}
+          %a{:class => "color_picker_clear", :href =>"#"}
+            <span class='selected'></span>
+          %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+          %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
+          %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
+          %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+        %div{:class => "clear"}
         %p
           %input{:type => 'image', :src => '/images/save_bookmark.png'}
-    %dt
-      Link
-    %dd
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    %dt
-      Highlight
-    %dd
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    %dt
-      Share
-    %dd
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    %a.open_modal{:href => "#"}
+      %dt#open_share_modal
+        Share
+    %a.open_modal{:href => "#"}
+      %dt#open_share_modal_link
+        Link
     %dt
       New Note
     %dd

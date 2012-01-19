@@ -1,15 +1,17 @@
 !!! 5
-%html
+%html{class: @html_class}
   %head{:lang => 'en-us'}
     = csrf_meta_tags
+    - if @canonical
+      %link{rel: "canonical", href: @canonical}
     = render '/shared/head'
   %body
     #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
       #header_outer
         = render '/shared/header'
+      - flash.each do |key, msg|
+        %div{class: "flash_#{key}"}= msg
       #container{:class => @sidebar == false ? 'no_sidebar' : ''}
-        - flash.each do |key, msg|
-          %div{class: "flash_#{key}"}= msg
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
           = render '/shared/nav_primary'
           = content_for?(:main) ? yield(:main) : yield
@@ -31,4 +33,6 @@
       = render '/shared/menu_settings'
       = render '/shared/menu_audio_player'
       = render '/shared/modal_single_verse'
+      = render '/shared/modal_share_verse'
+
     = render '/shared/javascripts'

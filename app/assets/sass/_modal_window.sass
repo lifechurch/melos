@@ -21,7 +21,6 @@
   position: fixed
   top: 50%
   left: 50%
-  width: 900px
   z-index: 4
 
 #modal_window header
@@ -88,12 +87,12 @@
   line-height: 1.2
   margin-bottom: 25px
 
-#modal_window section
+#modal_single_verse #modal_window section
   background: url(../images/modal_section.png) no-repeat right top
   margin-right: 208px
   padding: 30px 50px 20px
 
-#modal_window aside
+#modal_single_verse #modal_window aside
   +round_bottom_right
   background: #eae9ee
   padding: 20px 20px 0
@@ -109,11 +108,165 @@
   +box-shadow(inset rgba(#fff, 0.3) 0 1px 0 0, rgba(#000, 0.2) 0 0 0 4px)
   margin-left: 4px
   padding:
-    left: 60px
-    right: 60px
+    left: 30px
+    right: 30px
 
 #modal_window .action_button_green:focus,
 #modal_window .action_button_green:active,
 #modal_window .action_button_blue:focus,
 #modal_window .action_button_blue:active
   +box-shadow(rgba(#000, 0.2) 0 0 0 4px, inset rgba(#000, 0.5) 0 5px 10px 0)
+#modal_window #modal_reference_tokens
+
+//
+#modal_single_verse #modal_window 
+  width: 900px
+
+#modal_share_verse #modal_window 
+  width: 500px
+
+#modal_share_verse 
+#modal_window textarea 
+  width: 300px
+  height: 80px
+
+#modal_window .modal_reference_tokens
+  background: #eae9ec
+  +round
+  box-shadow: 0px 1px 0px rgba(#222, .8)
+  margin: 20px
+  padding: 15px 20px
+  ul 
+    margin: 0px
+#modal_window .modal_reference_tokens b 
+  float: left
+  margin:
+    right: 10px
+  font-size: 15px
+#modal_window .tabs
+  margin: 20px
+#modal_window .tab_content_container
+  background: #eae9ec
+  padding: 20px
+  +round-bottom
+#modal_window .tab_content_container span 
+  font-size: 10px
+#link_tab_content
+  display: none
+
+// Share Tab styles
+.tabs ul li a
+  color: $gray_medium
+  font-weight: bold
+  margin: 0 auto
+  background: url(../images/tab_deselected.png) #eae9ec bottom center repeat-x
+  float: left
+  width: 140px
+  +round-top
+  padding: 12px 0px
+  margin: 0 10px 0 0
+  font-size: 13px
+
+
+.tabs ul li.selected_tab a
+  background: url(../images/tab_selected.png) #eae9ec top center repeat-x
+  color: $blue
+
+.tabs ul li a span
+  display: block
+  width: 45px
+  margin: 0 auto
+  padding-left: 20px
+
+#share_tab a span
+  background: url(../images/share_tab_icon.png) left -30px no-repeat
+
+.selected_tab a #share_tab a span
+  background: url(../images/share_tab_icon.png) left 5px no-repeat
+
+#link_tab a span
+  background: url(../images/link_tab_icon.png) left -30px no-repeat
+
+.selected_tab a #link_tab a span
+  background: url(../images/share_tab_icon.png) left 5px no-repeat
+
+
+#share_tab_content .share_services
+  float: left
+  width: 100px
+#share_tab_content .share_services span
+  display: block
+#share_tab_content .share_message
+  float: right
+  width: 300px
+#share_tab_content .share_message span 
+  float: left
+  margin-top: 5px
+
+#share_tab_content .share_message .character_count 
+  float: right
+  background: #fff
+  color: #a20000
+  +round
+  box-shadow: 0px 1px 0px rgba(#222, .5)
+  padding: 2px 5px
+  margin-top: 5px
+  font-size: 11px
+.tabs ul
+  margin: 0px
+  padding: 0px
+.tabs ul li 
+  list-style: none
+  margin:
+    right: 10px
+    left: 0px 
+
+.share_action
+  float: right
+  width: 300px
+  margin: 
+    top: 15px
+.share_action a 
+  float: right
+.share_action a .action_button_green
+  float: right
+  padding:
+    left: 15px !important
+    right: 15px !important
+.action_cancel
+  padding: 5px 0px 0px 0px
+  margin-right: 10px
+  color: #676767
+  text-decoration: underline
+
+.share_services span .faux_checkbox
+  float: left
+  padding-right: 5px
+
+.share_verse_twitter 
+  background: url(../images/share_twitter_logo.png)
+  text-indent: -30000px
+  width: 65px 
+  height: 13px
+  display: block
+  float: left
+  margin-top: 8px
+
+.share_verse_facebook 
+  background: url(../images/share_facebook_logo.png)
+  text-indent: -30000px
+  width: 65px 
+  height: 13px
+  display: block
+  float: left
+  margin-top: 8px
+
+.share_verse_google 
+  background: url(../images/share_google_logo.png) no-repeat
+  text-indent: -30000px
+  width: 65px 
+  height: 18px
+  display: block
+  float: left
+  margin-top: 8px
+

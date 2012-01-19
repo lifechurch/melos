@@ -1,3 +1,32 @@
+function setCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+function deleteCookie(name) {
+  setCookie(name,"",-1);
+}
+
+
+
+
+
 // Module pattern + Closure
 var YV = (function($, window, document, undefined) {
   // Private constants.
@@ -42,15 +71,31 @@ var YV = (function($, window, document, undefined) {
           $('li, tr, td, th, dd, span, tbody').filter(':last-child').addClass('last-child');
         }
       },
+      // YV.init.fullscreen
+      // fullscreen: function() {
+      //   if ($("article").data("fullscreen") == "1") {
+      //     HTML.addClass("full_screen");
+      //   }
+      // },
+      // YV.init.flash_message
+      flash_message: function() {
+        var divs = $(".flash_error, .flash_notice");
+        divs.click(function() {
+          $(this).slideUp(200);
+        });
+        window.setTimeout(function() {
+          divs.slideUp(200);
+        }, 5000);
+      },
       // YV.init.modal_window
       modal_window: function() {
-        var modal = $('#modal_window');
+        var modal = $('#modal_single_verse #modal_window');
 
         if (!modal.length) {
           return;
         }
 
-        var overlay = $('#modal_overlay');
+        var overlay = $('#modal_single_verse #modal_overlay');
         var close = modal.find('.close');
         var hash = window.location.hash;
 
@@ -85,6 +130,105 @@ var YV = (function($, window, document, undefined) {
           show_modal();
         }
 
+        $(document).keydown(function(ev) {
+          if (ev.keyCode === KEY_ESC) {
+            hide_modal();
+          }
+        });
+      },
+      // YV.init.set_selection
+      set_selection: function() {
+        var verses = $("article").data("selected-verses");
+        var book = $("article").data("book-api");
+        var chapter = $("article").data("chapter");
+        for (var i = 0; i < verses.length; i++) {
+          $("span." + book + "_" + chapter + "_" + verses[i]).addClass("selected");
+        }
+      },
+
+      // YV.init.modal_window
+      share_modal_window: function() {
+        var modal = $('#modal_share_verse #modal_window');
+
+        if (!modal.length) {
+          return;
+        }
+
+        var overlay = $('#modal_share_verse #modal_overlay');
+        var close = modal.find('.close');
+        var hash = window.location.hash;
+
+        function show_modal() {
+          overlay.show();
+          modal.show();
+
+          var top = Math.round(modal.outerHeight() / 2);
+          var left = Math.round(modal.outerWidth() / 2);
+
+          modal.css({
+            marginTop: -top,
+            marginLeft: -left
+          });
+        }
+
+        function hide_modal() {
+          overlay.hide();
+          modal.hide();
+        }
+
+        overlay.click(function() {
+          hide_modal();
+        });
+        
+        $(".action_cancel").click(function() {
+          hide_modal();
+        });
+        
+        close.mousedown(function() {
+          hide_modal();
+          return false;
+        });
+
+        if (hash.match('#share_')) {
+          show_modal();
+        }
+        //Share Modal Tab System
+        function hide_tabs() {
+          $('#share_tab').removeClass('selected_tab');
+          $('#share_tab_content').hide()
+          $('#link_tab').removeClass('selected_tab');
+          $('#link_tab_content').hide()
+        }
+        function show_link_tab(){
+          hide_tabs();
+          $('#link_tab').addClass('selected_tab');
+          $('#link_tab_content').show()
+        }
+        function show_share_tab(){
+          hide_tabs();
+          $('#share_tab').addClass('selected_tab');
+          $('#share_tab_content').show()
+        }
+        $('#link_tab').click(function(){
+          show_link_tab();
+        })
+        $('#share_tab').click(function(){
+          show_share_tab();
+        })
+        $(".share_message textarea").charCount({
+          css: "character_count"
+        });
+
+        // Opening Share Modal from Dynamic Menu
+
+        $("#open_share_modal").click(function(){
+          show_modal();
+          show_share_tab();
+        })        
+        $("#open_share_modal_link").click(function(){
+          show_modal();
+          show_link_tab();
+        })
         $(document).keydown(function(ev) {
           if (ev.keyCode === KEY_ESC) {
             hide_modal();
@@ -129,12 +273,14 @@ var YV = (function($, window, document, undefined) {
         button.click(function() {
           if (HTML.hasClass('full_screen')) {
             HTML.removeClass('full_screen');
+            deleteCookie("full_screen");
             YV.misc.kill_widget_spacers();
             YV.init.fixed_widget_header();
             YV.init.fixed_widget_last();
           }
           else {
             HTML.addClass('full_screen');
+            setCookie("full_screen", 1);
           }
 
           this.blur();
@@ -498,7 +644,7 @@ var YV = (function($, window, document, undefined) {
       },
       // YV.init.verse_sharing
       verse_sharing: function() {
-        var verse = $('.verse');
+        var verse = $('#version_primary .verse');
 
         if (!verse.length) {
           return;
@@ -511,31 +657,114 @@ var YV = (function($, window, document, undefined) {
         var input = $('.verses_selected_input');
         var article = $('#main article:first');
         var book = article.attr('data-book');
+        var book_human = article.attr('data-book-human');
+        var book_api = article.attr('data-book-api');
         var chapter = article.attr('data-chapter');
         var version = article.attr('data-version');
         var flag = 'selected';
         var hide = 'hide';
+        var verse_numbers = [];
+        var verse_ranges = [];
 
         function parse_verses() {
           var total = $('#version_primary .verse.' + flag).length;
+          verse_numbers.length = 0;
+          verse_ranges.length = 0;
 
           // Zero out value.
           input.val('');
 
+          console.log("about to call verse.each");
+          console.log("verse count is " + verse.length);
           verse.each(function() {
             var el = $(this);
-            var this_id = book + '.' + chapter + '.' + el.find('strong:first').html() + '.' + version;
+            var verse_number = parseInt(el.find('strong:first').html());
+            console.log("verse number is " + verse_number);
+            var this_id = book + '.' + chapter + '.' + verse_number + '.' + version;
 
             if (el.hasClass(flag)) {
+              console.log("before:");
+              console.log(verse_numbers);
+              verse_numbers.push(verse_number);
+              console.log("after");
+              console.log(verse_numbers);
               if ($.trim(input.val()).length) {
                 // Add to hidden input.
-                input.val(input.val() + ',' + this_id);
-              }
-              else {
-                input.val(this_id);
+             //   input.val(input.val() + ',' + this_id);
+                // Create reference token.
+               // $(".reference_tokens").append("<li><a href='#'>" + book + "</a></li>");
+
               }
             }
           });
+
+          // Create ranges
+          if (verse_numbers.length > 0) {
+            if (verse_numbers.length == 1) {
+              verse_ranges.push(verse_numbers[0]);;
+            } else {
+              var in_range = false;
+              var range_start = 0;
+              var exit = false;
+              for (var i = 0; i < verse_numbers.length; i++) {
+                console.log("i is " + i);
+                if (i == 0) {
+                  if (verse_numbers[i+1] == verse_numbers[i] + 1) {
+                    // Then start a range
+                    in_range = true;
+                    range_start = verse_numbers[i];
+                  } else {
+                    // it's just a single verse
+                    verse_ranges.push(verse_numbers[i]);
+                  }
+                    
+                } else if (i == verse_numbers.length) {
+                  if (in_range == true) {
+                    verse_ranges.push(range_start + "-" + verse_numbers[i]);
+                  } else {
+                    verse_ranges.push(verse_numbers[i]);
+                  }
+                  exit = true;
+                } else {
+                  if (verse_numbers[i+1] == verse_numbers[i] + 1) {
+                    // If we're in a range, don't do anything
+                    // If not, start one
+                    if (in_range == false) {
+                      in_range = true;
+                      range_start = verse_numbers[i];
+                    }
+                  } else {
+                    // Stop a range if we're in it, add number if we're not
+                    if (in_range == true) {
+                      in_range = false;
+                      verse_ranges.push(range_start + "-" + verse_numbers[i]);
+                    } else {
+                      verse_ranges.push(verse_numbers[i]);
+                    }
+                  }
+                }
+              }
+            }
+            console.log("verse_numbers are");
+            console.log(verse_numbers);
+            console.log("verse ranges are");
+            console.log(verse_ranges);
+            //
+            // Add reference info and create tokens
+            
+
+            var verse_refs = [];
+            $(".reference_tokens").html("");
+            $.each(verse_ranges, function(i,e) {
+              verse_refs.push(book + "." + chapter + "." + e + "." + version);
+              $(".reference_tokens").append("<li><a data-verses='" + e + "' href='#'>" + book_human + " " + chapter + ":" + e + "</a></li>");
+            });
+
+            // Populate the verse_numbers hidden input
+            input.val(verse_refs.join(","));
+            
+            // Create reference tokens
+          }
 
           if (total > 0) {
             li.removeClass(hide);
@@ -547,22 +776,24 @@ var YV = (function($, window, document, undefined) {
           count.html(total);
         }
         // Run once, automatically.
+        console.log("at creation");
         parse_verses();
 
         // Watch for verse selection.
         verse.click(function() {
           var el = $(this);
-          var verse_id = el.attr('class').replace('verse', '').replace('selected', '').replace(/\s+/, '');
+          /*var verse_id = Ael.attr('class').replace('verse', '').replace('selected', '').replace(/\s+/, '');
 
           verse_id = $('.' + verse_id);
-
+*/
           if (el.hasClass(flag)) {
-            verse_id.removeClass(flag);
+            el.removeClass(flag);
           }
           else {
-            verse_id.addClass(flag);
+            el.addClass(flag);
           }
 
+          console.log("a verse was clicked");
           parse_verses();
         });
 
@@ -573,10 +804,30 @@ var YV = (function($, window, document, undefined) {
 
         clear_verses.click(function() {
           $('.verse.selected').removeClass('selected');
+          console.log("verses were cleared");
           parse_verses();
           this.blur();
           return false;
         });
+
+        // Watch for clicking a reference token to clear it
+        $("ul.reference_tokens>li>a").live("click", function(e) {
+          e.preventDefault();
+          var verse = $(this).attr('data-verses');
+          if (verse.indexOf('-') == -1) {
+            // Then it's a single one
+            // clear it
+            $("#version_primary span." + book_api + "_" + chapter + "_" + verse).removeClass(flag);
+          } else {
+            // it's a verse range, expand it
+            var ranges = verse.split("-");
+            for (i = ranges[0]; i <= ranges[1]; i++) {
+              $("#version_primary span." + book_api + "_" + chapter + "_" + i).removeClass(flag);
+            }
+          }
+          parse_verses();
+        });
+
       },
       // YV.init.profile_menu
       profile_menu: function() {
@@ -631,7 +882,7 @@ var YV = (function($, window, document, undefined) {
         if (!radio.length) {
           return;
         }
-
+        
         radio.click(function() {
           var el = $(this);
           var font = el.attr('data-setting-font');
@@ -640,6 +891,73 @@ var YV = (function($, window, document, undefined) {
           font && article.attr('data-setting-font', font);
           size && article.attr('data-setting-size', size);
         });
+      },
+      // YV.init.highlightsmenu
+      // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix 
+      highlight: function() {
+        var color = $('.color, .color_picker_clear');
+        color.live('click', function(){
+          color = $('.color, .color_picker_clear');
+          if(color.has('span')){
+            color.empty('span');
+            $(this).append("<span class='selected'></span>")
+          } else {
+            $(this).append("<span class='selected'></span>")
+          }
+        })
+      // #needsboomsauce - This bit takes the color from the color picker, adds a new color
+      //                   slide to the list of colors, and adds the color to the background,
+      //                   then hides the color picker. But that doesn't work. I don't know how
+      //                   identify the specific <a> it appends on line 742 and give it the hex. HALP?
+      $('.color_picker').ColorPicker({
+        flat: false,
+        onSubmit: function(hsb, hex, rgb, el) {
+          $(".color_picker_list").append("<button type='submit' name='highlight[color]' class='color' id='highlight_" + hex +"' value='"+ hex +"' style='background-color: #'" + hex + "'></button>");
+          $("#highlight_" + hex).click();
+          $("#highlight_" + hex).css('background-color', '#' + hex);
+          $(el).ColorPickerHide();
+        }
+      });
+      $(window).resize(function() {
+          $('.colorpicker').hide();
+      })
+      $(".remove_color").click(function(){
+        color.empty('span');
+      })
+      },
+      parallel_notes: function() {
+        $('.alternate_select').on('change', function(){
+          if($(this).val() == "publish_on"){
+            $('.secret').fadeIn();
+            $('#publish_time').addClass('publish_on_selected');
+          } else{
+            $('.secret').hide();
+            $('#publish_time').removeClass('publish_on_selected');
+          }
+        });
+      },
+      reference_tokens: function() {
+        $('#add_reference_token > a').click(function(){
+          $('#add_reference_token input').show();
+        })
+        $('.reference_tokens li').click(function(){
+          $(this).remove();
+        })
+      },
+      highlight_references: function() {
+        var highlights = $('article').data('highlights');
+        var book = $('article').data('book-api');
+        var chapter = $('article').data('chapter');
+        for (var h = 0; h < highlights.length; h++) {
+          var hi = highlights[h];
+          if ((hi.verse) instanceof Array) {
+            for (var hh = 0; hh < hi.verse.length; hh++) {
+              $("span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
+            }
+          } else {
+            $("span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
+          }
+        }
       },
       // YV.init.audio_player
       audio_player: function() {
@@ -656,8 +974,15 @@ var YV = (function($, window, document, undefined) {
         });
 
         audio_menu.hide();
+      },
+      // YV.init.fullscreen
+      fullscreen: function() {
+        if ($("article").data("fullscreen") == "1") {
+          HTML.addClass("full_screen");
+        }
       }
-    }
+   }
+
   };
 })(jQuery, this, this.document);
 

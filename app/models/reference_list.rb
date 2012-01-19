@@ -48,7 +48,8 @@ class ReferenceList
         when String
           Reference.new(ref.to_osis_string.downcase, self.version)
         when Hashie::Mash
-          Reference.new(ref.osis.downcase, self.version)
+          puts "im in hashie mash array case"
+          Reference.new(ref, self.version)
         end
       end
     when String

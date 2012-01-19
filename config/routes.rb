@@ -18,6 +18,7 @@ YouversionWeb::Application.routes.draw do
     match 'friends' => 'users#following', as: 'friends'
     resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
+  resources 'highlights', only: [:create, :delete]
 
   resources 'notes', :except => [:index]
   match 'notes' => 'notes#index', :as => 'all_notes'

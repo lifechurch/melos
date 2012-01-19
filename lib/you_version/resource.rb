@@ -208,6 +208,7 @@ module YouVersion
         params[:api_version] = @api_version if @api_version
         YvApi.get(path, securify(params, caller), &block)
       end
+
       
       def belongs_to_remote(association_name)
         association_class = association_name.to_s.classify.constantize
