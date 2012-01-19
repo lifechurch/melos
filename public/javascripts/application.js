@@ -136,6 +136,16 @@ var YV = (function($, window, document, undefined) {
           }
         });
       },
+      // YV.init.set_selection
+      set_selection: function() {
+        var verses = $("article").data("selected-verses");
+        var book = $("article").data("book-api");
+        var chapter = $("article").data("chapter");
+        for (var i = 0; i < verses.length; i++) {
+          $("span." + book + "_" + chapter + "_" + verses[i]).addClass("selected");
+        }
+      },
+
       // YV.init.modal_window
       share_modal_window: function() {
         var modal = $('#modal_share_verse #modal_window');

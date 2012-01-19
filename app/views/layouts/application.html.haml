@@ -2,6 +2,8 @@
 %html{class: @html_class}
   %head{:lang => 'en-us'}
     = csrf_meta_tags
+    - if @canonical
+      %link{rel: "canonical", href: @canonical}
     = render '/shared/head'
   %body
     #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}

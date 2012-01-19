@@ -10,18 +10,32 @@ class String
       chapters = items[1].split("-")
       hash[:chapter] = chapters.length == 1 ? chapters.first.to_i : (chapters[0].to_i..chapters[1].to_i)
       verses = items[2].split("-")
-      if verses.length > 1
-        hash[:verse] = (verses[0].to_i..verses[1].to_i)
+      case items[2]
+      when /^[0-9\-,]+$/
+        hash[:verse] = items[2].parse_verse
       else
-        items[2].match(/^[0-9]+$/) ? hash[:verse] = items[2].to_i : hash[:version] = items[2]
+        hash[:version] = items[2]
       end
     when 4
       hash[:chapter] = items[1].to_i
       hash[:version] = items[3]
-      verses = items[2].split("-")
-      hash[:verse] = verses.length == 1 ? verses.first.to_i : (verses[0].to_i..verses[1].to_i)
+      hash[:verse]   = items[2].parse_verse
     end
     return hash
+  end
+
+  def parse_verse
+    case self
+    when /^[0-9]+$/
+      # Then it's just a number
+      return self.to_i
+    when /^[0-9-]+$/
+      # Then it's a range
+      verses = self.split("-")
+      return verses[0].to_i..verses[1].to_i
+    else
+      return self
+    end
   end
 
   # Lemme 'splain the pattern here. Most people I know are accustomed to writing Bible references
