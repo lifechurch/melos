@@ -1,0 +1,12 @@
+- @sidebar = false
+
+
+%article
+  %table
+    %tr
+      %th API Call
+      %th Response Times
+    = @results.each do |r|
+      %tr
+        %td= r[:title]
+        %td= r[:data].to_s
