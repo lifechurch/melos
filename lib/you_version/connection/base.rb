@@ -2,7 +2,6 @@ module YouVersion
   module Connection
     class Base < Resource
       def get(path, params = {})
-        puts "getting with path #{path}, params of #{default_params.merge(params)}"
         HTTParty.get(path, query: self.default_params.merge(params))
       end
 

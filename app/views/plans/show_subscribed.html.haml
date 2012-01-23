@@ -13,9 +13,9 @@
         = link_to t("plans.month"), plan_calendar_path(@subscription)
   - else
     - if current_user
-      .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.slug), :class => 'action_button_green')
+      .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.slug), :class => 'action_button_green', style: "width: 200px")
     - else 
-      .float_right= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green')
+      .float_right= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "width: 200px")
   %h1{style: "clear: none; width: 600px"}= @subscription.name
       
   .split_pane{:style => "padding-top:15px"}
@@ -27,10 +27,12 @@
               %li.pagination_previous.float_left
                 - if @day > 1
                   = link_to(t("plans.previous day"),day: @day - 1)
-              %h4.float_left{style: "margin-left: 125px;margin-bottom: 0px; margin-top: 3px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
               %li.pagination_next.float_right
                 - if @day <= @subscription.total_days - 1
                   = link_to(t("plans.next day"), day: @day + 1)
+              %div{style: "text-align: center; width: 175px; margin: 0 auto"}
+                %h4{style: "margin-bottom: 0px; margin-top: -4px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
+                .mute{style: "font-weight: normal"}=t("plans.which day in plan", day: @day.to_s, total: @subscription.total_days)
           - if @reading.references
             - @reading.references.each_with_index do |r,i|
               %dd
@@ -61,15 +63,17 @@
               %li.pagination_previous.float_left
                 - if @day > 1
                   = link_to(t("plans.previous day"),day: @day - 1)
-              %h4.float_left{style: "margin-left: 50px;margin-bottom: 0px; margin-top: 3px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
               %li.pagination_next.float_right
                 - if @day <= @subscription.total_days - 1
                   = link_to(t("plans.next day"), day: @day + 1)
+              %div{style: "text-align: center; width: 175px; margin: 0 auto"}
+                %h4{style: "margin-bottom: 0px; margin-top: -4px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
+                .mute{style: "font-weight: normal"}=t("plans.which day in plan", day: @day.to_s, total: @subscription.total_days)
           - if @reading.references
             - @reading.references.each_with_index do |r,i|
               %dd{class: @content_page == i ? "highlighted" : ""}
                 - if @subscription.is_a? Subscription
-                  %form{method: 'post'}
+                  %form.float_left{method: 'post', style: "margin-top: 4px"}
                     %input{type: "hidden", name: "_method", value: "put"}
                     %input{type: "hidden", name: "ref", value: r.ref.osis}
                     %input{type: "hidden", name: "completed", value: (!r.completed?).to_s}
@@ -78,7 +82,7 @@
                     - if @content_page != 0
                       %input{type: "hidden", name: "content_target", value: @content_page}
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
-                = link_to(r.ref.to_s, content: i > 0 ? i.to_s : nil)
+                %a{href: plan_path(@subscription.slug, day: @day.to_s, content: (i > 0 ? i.to_s : nil)), style: "margin-top: 2px"}= r.ref.to_s
         %br
           .subscription_plan_links{style: "margin-left: 30px;"}
             %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
@@ -95,4 +99,4 @@
               %input{type: "hidden", name: "content_target", value: @content_page + 1}
               %button.action_button_green.float_right{type: "submit", name: "done_read"}= t('plans.reading completed (mark and show next)')
           - else 
-            .float_right= link_to(t('plans.next reading'), plan_path(@subscription.slug, day: @day, content: @content_page + 1), class: 'action_button_green') if @reading.references.count > @content_page
+            .float_right= link_to(t('plans.next reading'), plan_path(@subscription.slug, day: @day, content: @content_page + 1), class: 'action_button_green') if @reading.references.count - 1 > @content_page

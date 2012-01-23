@@ -7,6 +7,7 @@
   = render '/shared/widget_bookmarks' unless @bookmarks.empty?
   = render_cell :notes_list_widget, :display, notes: @notes, title: t("notes.community notes")
   = render '/shared/widget_ad_bible_app'
+  = render partial: '/shared/widget_parallel_notes', locals: {hide_widget: true}
 
 #reader_header
   %header
