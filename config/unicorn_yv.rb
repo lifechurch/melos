@@ -1,9 +1,9 @@
 # Set environment to development unless something else is specified
-env = ENV["RAILS_ENV"] || "production"
+env = ENV["RAILS_ENV"] || "production_yv"
 
 # See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
 # documentation.
-worker_processes 8
+worker_processes 4
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
@@ -18,7 +18,7 @@ timeout 30
 pid "/tmp/unicorn.youversion-web.pid"
 
 # Production specific settings
-if env == "production"
+if env == "production_yv"
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
   working_directory "/var/www/youversion-web/current"
