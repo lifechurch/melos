@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
-
+  before_filter :force_login, only: [:start, :update, :settings, :calendar]
+  
   def index
     if params[:user_id]
       @user = User.find(params[:user_id])  
@@ -38,20 +39,20 @@ class PlansController < ApplicationController
   end
   
   def update
-    @plan = Plan.find(params[:id], auth: current_auth) 
-    if @subscription = current_user.subscriptions.find {|subscription| subscription == @plan}
+    force_login
+    
+    if @subscription = current_user.subscription(params[:id])
       @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
       redirect_to plan_path(@plan, content: params[:content_target], day: params[:day_target])
-      #TODO: sender should send all parameters, then we should mask them with nils for default cases here
+      #EVENTUALLY: sender should just send all parameters, then we should mask them with nils for default cases here in the controller -- this would be better abstraction
     else
       raise "you can't update a plan to which you aren't subscribed"
     end
   end
   
-  def start
-    @plan = Plan.find(params[:plan_id]).subscribe(current_auth)
-    #TODO: we're wasting an API call here (finding the plan just to subscribe)
-    #TODO: handle the case where the user isn't logged in
+  def start    
+    Plan.subscribe(params[:plan_id], current_auth)
+
     redirect_to plan_path(params[:plan_id]), notice: t("plans.subscribe successful")
   end
   
@@ -102,9 +103,8 @@ class PlansController < ApplicationController
   end
   
   def calendar
-    @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
+    @subscription = current_user.subscription(params[:plan_id])
 
     raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil? 
   end
-
 end

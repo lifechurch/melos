@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
 
   def new
-    cookies[:sign_in_redirect] = params[:redirect] ||= URI(request.referer).path
+    cookies[:sign_in_redirect] ||= URI(request.referer).path if request.referer
+    cookies[:sign_in_redirect] = params[:redirect] if params[:redirect]
   end
 
   def create
@@ -24,7 +25,8 @@ class SessionsController < ApplicationController
     cookies.permanent.signed[:a] = nil
     cookies.permanent.signed[:b] = nil
     cookies.permanent.signed[:c] = nil
-    redirect_to versions_url, :notice => "Signed out!"
     cookies.permanent[:avatar] = nil
+
+    redirect_to (request.referer ? URI(request.referer).path : bible_path), notice: "Signed out!"
   end
 end
