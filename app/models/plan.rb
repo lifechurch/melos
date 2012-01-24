@@ -125,6 +125,23 @@ class Plan < YouVersion::Resource
     correct_class && self.id == compare.id
   end
   
+  def self.subscribe (plan, user_auth)
+    opts = {auth: user_auth}
+    
+    case plan
+    when Fixnum, /\A[\d]+\z/
+      opts[:id] = plan.to_i
+    when Plan, Subscription
+      opts[:id] = plan.id.to_i
+    when String
+      opts[:id] = Plan.find(plan).id
+    end
+    
+    YouVersion::Resource.post('reading_plans/subscribe_user', opts)
+    
+    #EVENTUALLY: Do this right with Resource abstraction and on the subscription class(new) and user object(add_subscription) class
+  end
+  
   def subscribe (user_auth, opts = {})
     
     #/2.2/reading_plans/subscribe_user
