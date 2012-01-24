@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :set_current_version, :bible_path, :current_avatar
+  helper_method :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :set_current_version, :bible_path, :current_avatar
   before_filter :set_locale, :set_page
 
   def set_page
@@ -27,8 +27,16 @@ class ApplicationController < ActionController::Base
   def not_found
     raise ActionController::RoutingError.new('Not Found')
   end
-
+  
   private
+  def force_login(opts = {})
+    if current_auth.nil?
+      opts[:redirect] = request.path
+      redirect_to sign_in_path(opts) and return 
+      #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
+    end
+
+  end
   def last_read
     Reference.new(cookies[:last_read]) if cookies[:last_read]
   end
