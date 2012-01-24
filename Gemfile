@@ -55,6 +55,10 @@ end
 group :test do
 end
 
+group :production do
+  gem 'thin'
+end
+
 group :development do
   gem 'pry'
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
