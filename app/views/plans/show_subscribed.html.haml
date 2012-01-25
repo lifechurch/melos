@@ -48,10 +48,9 @@
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
                     %b= r.ref.to_s
                 .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px; margin-right: 30px; font-size: 14px; line-height: 25px"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
-        %br
-          .subscription_plan_links{style: "margin-left: 30px;"}
-            %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
-            %p= link_to(t("plans.about this plan"), ignore_subscription: true)
+          .subscription_plan_links
+            %p.about_publisher= link_to(t("plans.about the publisher"), @subscription.publisher_url)
+            %p.about_plan= link_to(t("plans.about this plan"), ignore_subscription: true)
       .split_pane_content{style: "width: 423px"}
         %p{style: "margin-left: 20px; margin-right: 5px;"}= @reading.devotional.html_safe
 
@@ -73,7 +72,7 @@
             - @reading.references.each_with_index do |r,i|
               %dd{class: @content_page == i ? "highlighted" : ""}
                 - if @subscription.is_a? Subscription
-                  %form.float_left{method: 'post', style: "margin-top: 4px"}
+                  %form.float_left{method: 'post'}
                     %input{type: "hidden", name: "_method", value: "put"}
                     %input{type: "hidden", name: "ref", value: r.ref.osis}
                     %input{type: "hidden", name: "completed", value: (!r.completed?).to_s}

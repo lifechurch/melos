@@ -229,8 +229,8 @@ en:
     add members placeholder:                    "YouVersion Member Name"
     add member:                                 "Add"
     email edit:                                 "Edit"
-    unsubscribe successful:                     "You unsubscribed from this Plan"
-    subscribe successful:                       "You are subscribed to this Plan"
+    unsubscribe successful:                     "You are no longer subscribed to this Plan"
+    subscribe successful:                       "You are now subscribed to this Plan"
     which day in plan:                          "Day %{day} of %{total}"
   registration:
     benefits title:                             "YouVersion, a friend with benefits"
