@@ -24,10 +24,12 @@ class YvApi
     if cache_length = opts.delete(:cache_for)
       cache_key = [path, opts.sort].flatten.join("_")
       Rails.logger.info "*** cache_key is #{cache_key}"
+      get_start = Time.now.to_f
       response = Rails.cache.fetch cache_key, expires_in: cache_length do
         Rails.logger.info "*** cache miss for #{cache_key}"
         # No cache hit; ask the API
         response = httparty_get(resource_url, query: opts)
+    Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
       end
     else
       # Just ask the API
