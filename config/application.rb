@@ -52,6 +52,6 @@ module YouversionWeb
     config.assets.version = '1.0'
 
     # Setting up memcached.
-    config.cache_store = :mem_cache_store, Cfg.memcache_server
+    # config.cache_store = :mem_cache_store, Cfg.memcache_server
   end
 end

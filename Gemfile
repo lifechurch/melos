@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.2'
 gem 'httparty'
-gem 'memcache-client'
+gem 'dalli'
 gem 'hashie'
 gem 'cells'
 gem 'haml-rails', "  ~> 0.3.4"
