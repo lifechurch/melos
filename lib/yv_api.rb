@@ -29,8 +29,9 @@ class YvApi
         Rails.logger.info "*** cache miss for #{cache_key}"
         # No cache hit; ask the API
         response = httparty_get(resource_url, query: opts)
-    Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
       end
+      get_end = Time.now.to_f
+      Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     else
       # Just ask the API
       get_start = Time.now.to_f
