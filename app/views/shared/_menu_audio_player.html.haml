@@ -3,12 +3,7 @@
     &nbsp;
   %dl
     %dt
-      %a.close{:href => '#'} Close
-      NIV Listener's Bible
+      %a.close{:href => '#'}= t("audio.close player menu")
+      = @reference.audio ? @reference.audio.title : t("audio.none")
     %dd
-      %audio#audio_player{:src => '/mp3/test.mp3', :type => 'audio/mp3', :controls => 'controls'}
-    %dt
-      %a.float_right.negative_gutter_top_quarter{:href => '#'}
-        %img{:src => '/images/icon_info.png'}
-      %small
-        Copyright 2011 ACME Corporation
+      %audio#audio_player{:src => @reference.audio ? @reference.audio.url : "", :type => 'audio/mp3', :controls => 'controls'}

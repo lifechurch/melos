@@ -113,6 +113,10 @@ class Reference
     return nil if @copyright.blank?
     @copyright
   end
+  
+  def audio
+    api_data[0].data.request.audio ? Hashie::Mash.new({title: api_data[0].data.request.audio[0].title, url: api_data[0].data.request.audio[0].download_urls.format_mp3_32k}) : nil
+  end
 
   def osis
     @ref.to_osis_string
