@@ -1,5 +1,6 @@
 ---
 en:
+  no audio bible:                               "No audio bible exists for this version"
   read reference:                               "Read %{reference}"
   compare all versions:                         "Compare All Versions"
   link will be added:                           "will be added"
