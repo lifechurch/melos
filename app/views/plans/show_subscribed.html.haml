@@ -35,7 +35,7 @@
                 .mute{style: "font-weight: normal"}=t("plans.which day in plan", day: @day.to_s, total: @subscription.total_days)
           - if @reading.references
             - @reading.references.each_with_index do |r,i|
-              %dd
+              %dd.split_devotional_pane
                 - if @subscription.is_a? Subscription                
                   %form{method: 'post'}
                     %input{type: "hidden", name: "_method", value: "put"}
