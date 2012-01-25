@@ -240,6 +240,13 @@ var YV = (function($, window, document, undefined) {
           show_modal();
           show_link_tab();
         })
+        $("#new_note_modal").click(function() {
+          $('.dynamic_menu').hide();
+          $("div.widget.bookmarks, div.widget.notes, div.widget.ad_bible_app").hide(200, function() {
+            $("div.widget.parallel_notes").show(200);
+          });
+          return false;
+        })
         $(document).keydown(function(ev) {
           if (ev.keyCode === KEY_ESC) {
             hide_modal();
@@ -400,6 +407,7 @@ var YV = (function($, window, document, undefined) {
       accordion: function() {
         var accordion = $('.accordion');
 
+
         if (!accordion.length) {
           return;
         }
@@ -415,6 +423,7 @@ var YV = (function($, window, document, undefined) {
           this.blur();
           return false;
         });
+
       },
       // YV.init.dynamic_menus
       dynamic_menus: function() {
@@ -685,20 +694,13 @@ var YV = (function($, window, document, undefined) {
           // Zero out value.
           input.val('');
 
-          console.log("about to call verse.each");
-          console.log("verse count is " + verse.length);
           verse.each(function() {
             var el = $(this);
             var verse_number = parseInt(el.find('strong:first').html());
-            console.log("verse number is " + verse_number);
             var this_id = book + '.' + chapter + '.' + verse_number + '.' + version;
 
             if (el.hasClass(flag)) {
-              console.log("before:");
-              console.log(verse_numbers);
               verse_numbers.push(verse_number);
-              console.log("after");
-              console.log(verse_numbers);
               if ($.trim(input.val()).length) {
                 // Add to hidden input.
              //   input.val(input.val() + ',' + this_id);
@@ -718,7 +720,6 @@ var YV = (function($, window, document, undefined) {
               var range_start = 0;
               var exit = false;
               for (var i = 0; i < verse_numbers.length; i++) {
-                console.log("i is " + i);
                 if (i == 0) {
                   if (verse_numbers[i+1] == verse_numbers[i] + 1) {
                     // Then start a range
@@ -756,10 +757,6 @@ var YV = (function($, window, document, undefined) {
                 }
               }
             }
-            console.log("verse_numbers are");
-            console.log(verse_numbers);
-            console.log("verse ranges are");
-            console.log(verse_ranges);
             //
             // Add reference info and create tokens
             
@@ -773,6 +770,16 @@ var YV = (function($, window, document, undefined) {
 
             // Populate the verse_numbers hidden input
             input.val(verse_refs.join(","));
+            // Generate a short link
+            var link = "http://bible.us/" + book + chapter + "." + verse_ranges.join(',') + "." + version;
+            $("b#short_link").html(link);
+            $(".share_message .character_count").remove();
+            $(".share_message textarea").charCount({
+              allowed: 140 - link.length - 1,
+              css: "character_count"
+            });
+            // Populate the "link" input
+            $("#copy_link_input").attr("value", link);
             
             // Create reference tokens
           }
@@ -787,7 +794,6 @@ var YV = (function($, window, document, undefined) {
           count.html(total);
         }
         // Run once, automatically.
-        console.log("at creation");
         parse_verses();
 
         // Watch for verse selection.
@@ -804,7 +810,6 @@ var YV = (function($, window, document, undefined) {
             el.addClass(flag);
           }
 
-          console.log("a verse was clicked");
           parse_verses();
         });
 
@@ -815,7 +820,6 @@ var YV = (function($, window, document, undefined) {
 
         clear_verses.click(function() {
           $('.verse.selected').removeClass('selected');
-          console.log("verses were cleared");
           parse_verses();
           this.blur();
           return false;

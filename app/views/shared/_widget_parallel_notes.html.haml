@@ -1,4 +1,4 @@
-.widget.parallel_notes
+.widget.parallel_notes{style: ("display: none;" if hide_widget)}
   %header
     %span.header_icon_note= t('New Note')
     %a.pop_out_button
@@ -12,38 +12,40 @@
       %li
         %a{:href => "#"}
           John 4:25
-    %form
-      %fieldset
-        %input{:value => "Name", :type => "text"}
-        %textarea
-        %select.alternate_select
-          %option
-            NIV - New International Version
-          %option
-            Option 2
-          %option
-            Option 3
-        %span#publish_time
-          %select.alternate_select.publish
-            %option
-              Publish Immeadiately
-            %option{:name => "publish _on", :value => "publish_on"}
-              Publish
-            %option
-              Option 3
-        %div#parallel_notes_date_time
-          %input.secret{:value => "secret form", :type => "date"}
-        %div{:class => "color_picker_list"}
-          %a{:class => "color_picker", :href =>"#"}
-          %a{:class => "color_picker_holder", :href =>"#"}
-          %a{:class => "color_picker_clear", :href =>"#"}
-            <span class='selected'></span>
-          %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
-          %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
-          %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
-          %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
-        %div.parallel_notes_submit
-          %button.action_button_green.float_right
-            Save
-          %a.cancel.float_left
-            Cancel
+    = form_for @note do |f|
+      - if @note.errors.any?
+        .form_errors
+          =t("notes.creation form errors")
+          %ul
+            - @note.errors.each do |e|
+              %li= e
+      %div
+        = f.label :title, t("notes.title field")
+        = f.text_field :title
+      %div{style: "margin-bottom: 4px;"}
+        = f.label :content, t("notes.content field")
+        = f.text_area :content
+      - # %p
+      - #   = f.label :version, t("notes.version field")
+      - #   = f.select :version, options_for_select(versions_dropdown, @note.version), {:prompt => t("notes.select from list")}
+      - # %p
+      - #   = f.label :reference, t("notes.reference field")
+      - #   = f.text_field :reference
+      %div
+        = f.label :user_status, t("notes.status field")
+        = f.select :user_status, options_for_select(object_status, @note.user_status)
+      - # %div{:class => "color_picker_list"}
+      - #   %a{:class => "color_picker", :href =>"#"}
+      - #   %a{:class => "color_picker_holder", :href =>"#"}
+      - #   %a{:class => "color_picker_clear", :href =>"#"}
+      - #     <span class='selected'></span>
+      - #   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+      - #   %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
+      - #   %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
+      - #   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
+      = f.hidden_field :reference, class: "verses_selected_input"
+      %div.parallel_notes_submit
+        %button.action_button_green.float_right
+          Save
+        %a.cancel.float_left
+          Cancel

@@ -50,7 +50,6 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    puts "!@# About to create Bookmark from #{params[:bookmark]}"
     # if params[:bookmark][:reference].is_a? String
     #   ref = params[:bookmark][:reference]
     #   new_ref = ref.to_osis_string
@@ -60,7 +59,6 @@ class BookmarksController < ApplicationController
     #   end
     # end
     @bookmark = Bookmark.new(params[:bookmark])
-    pp @bookmark
     @bookmark.auth = current_auth
 
     if @bookmark.save
@@ -75,9 +73,6 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id], :auth => current_auth)
     Rails.logger.info("Found #{@bookmark.inspect}")
     if @bookmark.update(params[:bookmark])
-      # puts "*"*80
-      pp @bookmark
-      # puts "*"*80
       render action: "show"
     else
       render action: "edit"

@@ -7,7 +7,6 @@ class ReferenceList
   attr_accessor :total, :version
 
   def method_missing(method, *args, &block)
-    # puts "In #{self.class}.method_missing, Caller is #{caller.first}, method is #{method}"
     result = @references.send(method, *args, &block)
     if result.is_a? Array
       ReferenceList.new(result)
@@ -48,7 +47,6 @@ class ReferenceList
         when String
           Reference.new(ref.to_osis_string.downcase, self.version)
         when Hashie::Mash
-          puts "im in hashie mash array case"
           Reference.new(ref, self.version)
         end
       end

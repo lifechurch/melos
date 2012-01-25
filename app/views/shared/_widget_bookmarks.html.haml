@@ -1,4 +1,4 @@
-.widget
+.widget.bookmarks
   %header
     %a.count{href: user_bookmarks_path(current_auth.user_id)}= @bookmarks.total
     %span.header_icon_bookmark= t('recent bookmarks')
@@ -8,9 +8,7 @@
         %b= b.title
         %br
         - b.reference_list.each do |r|
-          - puts "about to link to a bible path"
           = link_to r, bible_path(r)
-          - puts "done linking to bible path"
         - if b.labels
           %span.separator |
           - b.labels.split(",").each do |l|

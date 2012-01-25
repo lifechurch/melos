@@ -14,16 +14,18 @@
   %hr
   %h4= t("plans.calendar")
 
-  - statuses = @subscription.day_statuses
-  - sunday = Date.new(1984,12,9)#sunday
-  - days_of_week = []
-  - 7.times {|i| days_of_week << sunday.next_day(i).strftime('%^a')[0]}
+  :ruby
+    statuses = @subscription.day_statuses
+    sunday = Date.new(1984,12,9)#sunday
+    days_of_week = []
+    7.times {|i| days_of_week << sunday.next_day(i).strftime('%^a')[0]}
   
   - while !statuses.empty?
     %table.cal_month.cal_janurary{:cellspacing => "0"}
-      - first_date = Date.parse(statuses.first.date)
-      - last_date = first_date.next_month - (first_date.next_month.day)
-      - full_month = false
+      :ruby
+        first_date = Date.parse(statuses.first.date)
+        last_date = first_date.next_month - (first_date.next_month.day)
+        full_month = false
       %caption
         =first_date.strftime('%B %Y')
       %thead
@@ -31,9 +33,10 @@
           -days_of_week.each do |day|
             %th= day
       %tbody
-        - rows = 0
-        - cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday       # first calendar day (given tabular calendar starting on Sun)
-        - cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7       # if first day of month is a sunday (more clear than doing on the previous line)
+        :ruby
+          rows = 0
+          cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday       # first calendar day (given tabular calendar starting on Sun)
+          cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7       # if first day of month is a sunday (more clear than doing on the previous line)
         - # while there are remaining items that are in this current month  -OR-  we haven't listed a full month (of days or enough rows)
         - while ((!statuses.empty? && (Date.parse((cur_status = statuses.first).date).month) == first_date.month)) || (!full_month) || rows < 6
           %tr
@@ -53,5 +56,6 @@
                     = link_to(cur_date.day.to_s, plan_path(@subscription.slug, day: cur_status.day))
                 - cur_date = cur_date.next
 
-            - full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
-            - rows += 1
+            :ruby
+              full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
+              rows += 1

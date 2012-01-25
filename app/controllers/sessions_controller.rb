@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    cookies[:sign_in_redirect] = params[:redirect] ||= URI(request.referer).path
   end
 
   def create
@@ -11,7 +12,8 @@ class SessionsController < ApplicationController
       cookies.permanent.signed[:c] = params[:password]
       cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
 
-      redirect_to versions_url, :notice => "Signed in!"
+      redirect_to cookies[:sign_in_redirect] || bible_path
+      cookies[:sign_in_redirect] = nil
     else
       flash.now[:alert] = "Invalid username or password"
       render "new"

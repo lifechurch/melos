@@ -138,13 +138,11 @@ class User < YouVersion::Resource
   end
   
   def before_save
-    puts "i'm in before create"
     # opts = {"email" => "", "username" =>  "", "password" =>  "", "verified" => false, "agree" => false}.merge!(opts)
     # opts["token"] = Digest::MD5.hexdigest "#{self.username}.Yv6-#{self.password}"
     # opts["agree"] = true if opts["agree"]
     # opts[:secure] = true
     self.attributes[:secure] = true
-    puts self.attributes
     self.attributes["notification_settings[newsletter][email]"] = true
     # errors = nil
     # response = YvApi.post('users/create', opts) do |ee|
