@@ -64,7 +64,7 @@ YouversionWeb::Application.routes.draw do
 
   match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'
-  match 'mobile' => 'coming_soon#index'
+  match 'mobile' => 'mobile#index'
 
 
   root to: 'references#show'
