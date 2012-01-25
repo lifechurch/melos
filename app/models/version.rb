@@ -96,7 +96,7 @@ class Version
   end
 
   def self.books_api_data(version)
-    @@books_api_data[version] = YvApi.get("bible/books", version: version) unless @@books_api_data.has_key?(version)
+    @@books_api_data[version] = YvApi.get("bible/books", version: version, cache_for: 30.minutes) unless @@books_api_data.has_key?(version)
     @@books_api_data[version]
   end
 
@@ -114,7 +114,7 @@ class Version
   end
 
   def self.versions_api_data
-    @@versions_api_data ||= YvApi.get("bible/versions", type: "all")
+    @@versions_api_data ||= YvApi.get("bible/versions", type: "all", cache_for: 30.minutes)
   end
 
   def versions_api_data
@@ -122,7 +122,7 @@ class Version
   end
 
   def self.info_api_data(version)
-    @@info_api_data[version] = YvApi.get("bible/copyright", version: version) unless @@info_api_data.has_key?(version)
+    @@info_api_data[version] = YvApi.get("bible/copyright", version: version, cache_for: 30.minutes) unless @@info_api_data.has_key?(version)
     @@info_api_data[version]
   end
 
