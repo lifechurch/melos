@@ -38,7 +38,7 @@ class ReferencesController < ApplicationController
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
     @note = Note.new
-    @notes = Note.for_reference(Reference.new(notes_ref_hash))
+    @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 10.minutes)
     @highlights = current_user ? Highlight.for_reference(@reference, auth: current_auth).to_json : []
     @bookmarks = current_user ? current_user.bookmarks : []
   end
