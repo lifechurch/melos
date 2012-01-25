@@ -79,10 +79,9 @@
                       %input{type: "hidden", name: "content_target", value: @content_page}
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
                 = link_to(r.ref.to_s, content: i > 0 ? i.to_s : nil)
-        %br
-          .subscription_plan_links{style: "margin-left: 30px;"}
-            %p= link_to(t("plans.about the publisher"), @subscription.publisher_url)
-            %p= link_to(t("plans.about this plan"), ignore_subscription: true)
+          .subscription_plan_links
+            %p.about_publisher= link_to(t("plans.about the publisher"), @subscription.publisher_url)
+            %p.about_plan= link_to(t("plans.about this plan"), ignore_subscription: true)
       .split_pane_content
         - if @reading.references
           .embedded_reader{style: "padding-left: 30px; padding-bottom: 30px;"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe

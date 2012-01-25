@@ -39,13 +39,14 @@
           %tr
             - 7.times do       # List out one week
               - if full_month
-                %td.disabled.hidden{style: "height: 21px"}
+                %td.disabled.hidden
               - else
                 - if cur_date.month != first_date.month || cur_date < first_date || statuses.empty?         # if not in current month  -OR-  not a day on the paln
                   -if cur_date.month != first_date.month
                     %td.disabled{class: cur_date == current_date ? "today" : ""}
                   -else
-                    %td.inactive-day{class: cur_date == current_date ? "today" : ""}= cur_date.day.to_s
+                    %td
+                      %span.inactive-day{class: cur_date == current_date ? "today" : ""}= cur_date.day.to_s
                 - else
                   - cur_status = statuses.delete_at(0)
                   %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'inactive-day partial' : 'inactive-day') << ((cur_date == current_date) ? ' today' : '')}
