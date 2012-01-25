@@ -22,7 +22,8 @@ class YvApi
     end
     # If we should cache, try pulling from cache first
     if cache_length = opts.delete(:cache_for)
-      cache_key = {p: path, q: opts}
+      cache_key = {p: path, q: opts}.to_s
+      puts "*** cache_key is #{cache_key}"
       Rails.cache.fetch cache_key, expires_in: cache_length do
         # No cache hit; ask the API
         response = httparty_get(resource_url, query: opts)
