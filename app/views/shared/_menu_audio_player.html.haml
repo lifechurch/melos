@@ -3,7 +3,7 @@
     &nbsp;
   %dl
     %dt
-      %a.close{:href => '#'} Close
-      = @reference.audio ? @reference.audio.title : t("no audio bible")
+      %a.close{:href => '#'}= t("audio.close player menu")
+      = @reference.audio ? @reference.audio.title : t("audio.none")
     %dd
       %audio#audio_player{:src => @reference.audio ? @reference.audio.url : "", :type => 'audio/mp3', :controls => 'controls'}

@@ -1,6 +1,5 @@
 ---
 en:
-  no audio bible:                               "No audio bible exists for this version"
   read reference:                               "Read %{reference}"
   compare all versions:                         "Compare All Versions"
   link will be added:                           "will be added"
@@ -240,4 +239,7 @@ en:
     benefits blurb:                             "WHAT?! You don't have a YouVersion account? But there are so many cool features! Sign up now and you won't regret it -- they've done studies... IT'S IN THE GENEVA CONVENTION!! If you don't believe me, google it. *NC*"
     plan blurb:                                 "Hey, you're tring to start a Reading Plan! Plans are a fantastic way to consistently engage with the Bible. Sign up to keep track of your progress and get other cool features. You can start reading in seconds.*NC*"
     bookmark blurb:                             "Hey, you're tring to use a Bookmark! Bookmarks are a fantastic way to keep track of scripture. Sign up to keep track of your favorite verses and get other cool features. You can start bookmarking in seconds.*NC*"
-    friends blurb:                               "Hey, you're tring to interact with Friends! Friends are a fantastic way to keep up with how your peeps interact with scripture. Sign up to add friends and get other cool features. You can start bookmarking in seconds.*NC*"
+    friends blurb:                              "Hey, you're tring to interact with Friends! Friends are a fantastic way to keep up with how your peeps interact with scripture. Sign up to add friends and get other cool features. You can start bookmarking in seconds.*NC*"
+  audio:
+    none:                                       "No audio bible exists for this version"
+    close player menu:                          "Close"
