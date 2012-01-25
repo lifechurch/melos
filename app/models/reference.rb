@@ -157,7 +157,8 @@ class Reference
       @api_data[:format] = YvApi.get("bible/#{api_type}",
                                         format: format,
                                         version: @ref[:version],
-                                        reference: @ref.except(:version).to_osis_string)
+                                        reference: @ref.except(:version).to_osis_string,
+                                        cache_for: 30.minutes)
       @api_data_format = format
     end
     
