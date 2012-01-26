@@ -132,7 +132,7 @@ var YV = (function($, window, document, undefined) {
             show_modal();
           }
         }
-        
+
         $("#single_verse_read_link").click(function(e) {
           e.preventDefault();
           hide_modal();
@@ -190,11 +190,11 @@ var YV = (function($, window, document, undefined) {
         overlay.click(function() {
           hide_modal();
         });
-        
+
         $(".action_cancel").click(function() {
           hide_modal();
         });
-        
+
         close.mousedown(function() {
           hide_modal();
           return false;
@@ -235,7 +235,7 @@ var YV = (function($, window, document, undefined) {
         $("#open_share_modal").click(function(){
           show_modal();
           show_share_tab();
-        })        
+        })
         $("#open_share_modal_link").click(function(){
           show_modal();
           show_link_tab();
@@ -729,7 +729,7 @@ var YV = (function($, window, document, undefined) {
                     // it's just a single verse
                     verse_ranges.push(verse_numbers[i]);
                   }
-                    
+
                 } else if (i == verse_numbers.length) {
                   if (in_range == true) {
                     verse_ranges.push(range_start + "-" + verse_numbers[i]);
@@ -759,7 +759,7 @@ var YV = (function($, window, document, undefined) {
             }
             //
             // Add reference info and create tokens
-            
+
 
             var verse_refs = [];
             $(".reference_tokens").html("");
@@ -780,7 +780,7 @@ var YV = (function($, window, document, undefined) {
             });
             // Populate the "link" input
             $("#copy_link_input").attr("value", link);
-            
+
             // Create reference tokens
           }
 
@@ -897,7 +897,7 @@ var YV = (function($, window, document, undefined) {
         if (!radio.length) {
           return;
         }
-        
+
         radio.click(function() {
           var el = $(this);
           var font = el.attr('data-setting-font');
@@ -908,7 +908,7 @@ var YV = (function($, window, document, undefined) {
         });
       },
       // YV.init.highlightsmenu
-      // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix 
+      // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix
       highlight: function() {
         var color = $('.color, .color_picker_clear');
         color.live('click', function(){
@@ -987,6 +987,7 @@ var YV = (function($, window, document, undefined) {
         var audio_menu = $('#menu_audio_player').show();
 
         audio.mediaelementplayer({
+          features: ['playpause', 'current', 'progress', 'duration'],
           audioWidth: '100%'
         });
 
