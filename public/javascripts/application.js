@@ -263,7 +263,8 @@ var YV = (function($, window, document, undefined) {
 
         button.click(function() {
           if (HTML.hasClass('parallel_mode')) {
-            HTML.removeClass('parallel_mode').removeClass('full_screen');
+            HTML.removeClass('parallel_mode');
+            if (!getCookie('full_screen')) HTML.removeClass('full_screen') 
             YV.misc.kill_widget_spacers();
             YV.init.fixed_widget_header();
             YV.init.fixed_widget_last();
