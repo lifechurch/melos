@@ -353,7 +353,7 @@ dd .icon_settings
 
 .cal_month 
   float: left
-  margin-right: 21px
+  margin-right: 8px
   font-family: helvetica
   border-collapse: collapse
   border: 1px #d5d0d0 solid
@@ -393,12 +393,12 @@ dd .icon_settings
 
 .cal_month td 
   text-align: center
-  padding: 4px 6px
   border: 1px #d5d0d0 solid
   border-collapse: collapse
   font-size: 12px
   color: #444
-  background: url(../images/cal_bullet.png) no-repeat 15px center #f8f8f8
+  height: 35px
+  width: 28px
   box-shadow: 0px 1px 0px #fff inset
 
 .cal_month td a
@@ -406,9 +406,8 @@ dd .icon_settings
   color: #444
   font-weight: bold
   text-decoration: none
-
-.cal_month td:hover 
-  background: #fdfdfd
+  padding: 4px 7px 7px 7px
+  display: block
 
 .cal_month tr 
   border-collapse: collapse
@@ -422,27 +421,34 @@ dd .icon_settings
   background: #fff
   font-weight: bold
 
-
 .cal_month td.today a 
   color: #000
 
 .cal_month td.read 
-  background: #a1d167 /* Old browsers */
-  background: -moz-linear-gradient(top,  #a1d167 0%, #689138 100%) /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1d167), color-stop(100%,#689138)) /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #a1d167 0%,#689138 100%) /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #a1d167 0%,#689138 100%) /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #a1d167 0%,#689138 100%) /* IE10+ */
-  background: linear-gradient(top,  #a1d167 0%,#689138 100%) /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1d167', endColorstr='#689138',GradientType=0 ) /* IE6-9 */
-  box-shadow: 0px 3px 8px rgba(0,0,0,.7) inset
-  color: #fff
-  border: 0px #3F772E solid
-  border: 1px #3F772E solid
+  color: #444
   font-weight: bold
-  text-shadow: 0px 1px 0px #3F772E
+  background: none
 
+.cal_month td.read a 
+  color: #444
 
-.cal_month .inactive-day
+.cal_month td .inactive-day
   color: #aaa
   background-image: none
+  padding: 4px 0 5px 0px 
+  display: block
+  height: 24px
+
+.cal_month .active-day a
+  background: url(../images/cal_bullet.png)
+  background-position: center 22px
+  background-repeat: no-repeat
+
+.cal_month .active-day:hover 
+  background: url(../images/cal_bullet.png) !important
+  background-position: center 22px !important
+  background-repeat: no-repeat !important
+
+.cal_month .hidden 
+  height: 35px
+  padding: 0
