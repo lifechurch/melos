@@ -32,7 +32,6 @@ class Bookmark < YouVersion::Resource
   end
 
   def after_build
-
     # self.reference does multiple duty here for the moment. When creating a new object,
     # self.reference may contain whatever the user passed in (usually a String) with the
     # :reference key.  When creating an object from an API call, it will bear whatever

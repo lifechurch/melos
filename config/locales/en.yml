@@ -1,5 +1,14 @@
 ---
 en:
+  link:                                         "Link"
+  copy:                                         "Copy"
+  new note:                                     "New Note"
+  twitter:                                      "Twitter"
+  facebook:                                     "Facebook"
+  google plus:                                  "Google +"
+  highlight:                                    "Highlight"
+  bookmark:                                     "Bookmark"
+  currently selected:                           "Currently Selected"
   read reference:                               "Read %{reference}"
   compare all versions:                         "Compare All Versions"
   link will be added:                           "will be added"
@@ -157,8 +166,12 @@ en:
       reading_plans:                            "Notify me about information for reading plans I've started"
       update:                                   "Update Notifications"
   bookmarks:
+    title field:                                "Title"
+    lables:                                     "Labels"
     title:                                      "Bookmarks"
     not found:                                  "Bookmarking enables you to remember where you were reading last, giving you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. In order to add a bookmark select the verse in the Bible reader and then click the bookmark button."
+    successfully created:                       "Bookmark added"
+    labels placeholder:                         "Separate multiple labels with commas"
   badges:
     earned a badge:                             "Earned a badge"
     my badges:                                  "My Badges"
