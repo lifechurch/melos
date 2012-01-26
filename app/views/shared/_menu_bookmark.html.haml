@@ -2,7 +2,7 @@
   %header
     %a.close{:href => '#'} Close
     %span
-      Currently Selected:
+      = t("ref.currently selected")
     %ul.reference_tokens
       %li
         %a{:href => "#"}
@@ -38,7 +38,7 @@
         %div{:class => "color_picker_list"}
           %a{:class => "color_picker", :href =>"#"}
           %a{:class => "color_picker_holder", :href =>"#"}
-          %a{:class => "color_picker_clear", :href =>"#"}
+          %button{:type => "submit", :name => "remove", :value => "true", :class => "color color_picker_clear"}
           %button{:type => "submit", :name => "highlight[color]", :value => "f3a9a9", :class => "color", :id => "highlight_f3a9a9", :href => "#", :style => "background-color:#f3a9a9"}
           %button{:type => "submit", :name => "highlight[color]", :value => "f6f0b4", :class => "color", :id => "highlight_f6f0b4", :href => "#", :style => "background-color:#f6f0b4"}
           %button{:type => "submit", :name => "highlight[color]", :value => "a8ed9d", :class => "color", :id => "highlight_a8ed9d", :href => "#", :style => "background-color:#a8ed9d"}

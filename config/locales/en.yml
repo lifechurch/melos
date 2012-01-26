@@ -97,6 +97,7 @@ en:
     parallel:                                   "Parallel"
     full screen:                                "Full Screen"
     about the:                                  "About the"
+    currently selected:                         "Currently Selected:"
   users:
     creation form errors:                       "The following error(s) prevented creation of your account:"
     profile form errors:                        "The following error(s) prevented updating your profile:"
@@ -243,3 +244,6 @@ en:
   audio:
     none:                                       "No audio bible exists for this version"
     close player menu:                          "Close"
+  highlights:
+    creation error:                             "Sorry, couldn't highlight."
+    delete error:                               "Sorry, couldn't remove highlighting."
