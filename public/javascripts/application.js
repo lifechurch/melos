@@ -993,20 +993,6 @@ var YV = (function($, window, document, undefined) {
 
         audio_menu.hide();
       },
-      // YV.init.reader_header
-      reader_header: function() {
-        // Only relevant if reader header present
-        if (!$('#reader_header').length) {
-          return;
-        }
-
-        // Fix spacing in Firefox & Opera
-        if (BROWSER.opera || BROWSER.mozilla) {
-          $('#wrapper').css({
-            paddingTop: '57px'
-          });
-        }
-      },
       // YV.init.fullscreen
       fullscreen: function() {
         if ($("article").data("fullscreen") == "1") {
