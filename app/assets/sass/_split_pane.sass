@@ -42,7 +42,7 @@
 
 .split_pane_sidebar dt,
 .split_pane_sidebar dd a
-  padding: 10px
+  padding: 15px 10px
 
 .split_pane_sidebar dt
   font-weight: bold
@@ -50,11 +50,14 @@
 
 .split_pane_sidebar dd
   font-size: 13px
+  position: relative
 
 .split_pane_sidebar dd a
   color: $body_text
   display: block
   text-decoration: none
+  padding-left: 32px
+
 
 .split_pane_sidebar dd a:hover
   background:
@@ -71,4 +74,30 @@
 .split_pane_sidebar .highlighted a:hover
   background: url(../images/split_pane_sidebar_highlighted_a.png) no-repeat right center
   color: $blue
-  padding-left: 11px
+  padding-left: 32px
+
+.split_pane_sidebar dd form 
+  position: absolute
+  top: 9px
+
+.split_devotional_pane form
+  position: static !important
+  margin-top: 10px
+.split_devotional_pane .embedded_reader 
+  margin-top: 5px !important
+
+
+.subscription_plan_links p
+  margin: 10px 0 0 0
+
+.about_publisher a
+  background: url(../images/icon_info_blue.png) no-repeat 2px center
+  padding: 5px 5px 5px 22px
+  display: block
+  margin-bottom: 10px
+.about_plan a
+  background: url(../images/icon_copyright.png) no-repeat left center
+  padding: 5px 5px 5px 22px
+  margin-bottom: 10px
+  display: block
+
