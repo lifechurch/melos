@@ -34,15 +34,12 @@ class Highlight < YouVersion::Resource
 
     list = ResourceList.new
     list.total = response.total
-    response.highlights.each do |h| 
-      list << new(h.merge(auth: params[:auth]))
-    end
-    pp response
+    response.highlights.each {|h| list << new(h.merge(auth: params[:auth]))}
     list
   end
 
   def as_json(options = {})
-    #API shouldn't support ranged highlights, but some exist, so use only the first verse if range.
+    #API/apps shouldn't support ranged highlights, but some exist, so use only the first verse if range.
     #EVENTUALLY: make this pervasive/complete so anyone using this object only sees the 1st verse and we can just pass raw_hash[:verse]
     {verse: self.reference.first_verse, color: self.color, id: id, version: version}
   end
