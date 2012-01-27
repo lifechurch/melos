@@ -106,6 +106,7 @@ en:
     parallel:                                   "Parallel"
     full screen:                                "Full Screen"
     about the:                                  "About the"
+    settings:                                   "Reader Settings"
   users:
     creation form errors:                       "The following error(s) prevented creation of your account:"
     profile form errors:                        "The following error(s) prevented updating your profile:"
