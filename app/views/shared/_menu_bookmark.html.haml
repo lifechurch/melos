@@ -21,7 +21,7 @@
         %div{:class => "color_picker_list"}
           %a{:class => "color_picker", :href =>"#"}
           %a{:class => "color_picker_holder", :href =>"#"}
-          %a{:class => "color_picker_clear", :href =>"#"}
+          %button{:type => "submit", :name => "remove", :value => "true", :class => "color color_picker_clear", :id => "clear_highlights"}
           %button{:type => "submit", :name => "highlight[color]", :value => "f3a9a9", :class => "color", :id => "highlight_f3a9a9", :href => "#", :style => "background-color:#f3a9a9"}
           %button{:type => "submit", :name => "highlight[color]", :value => "f6f0b4", :class => "color", :id => "highlight_f6f0b4", :href => "#", :style => "background-color:#f6f0b4"}
           %button{:type => "submit", :name => "highlight[color]", :value => "a8ed9d", :class => "color", :id => "highlight_a8ed9d", :href => "#", :style => "background-color:#a8ed9d"}
@@ -70,6 +70,7 @@
           %div.clearfix{style: "margin-bottom: 8px"}
           %div.share_action      
             %input{:type => 'image', :src => '/images/save_bookmark.png'}
+            -#TODO: get correct image here 
           %div.share_services
             %span.float_left{style: "width: 60%"}
               %input#checkbox_share_twitter{:type => "checkbox", :name => "share_verse_social", :checked => 'checked'}

@@ -40,7 +40,6 @@ class Highlight < YouVersion::Resource
 
   def as_json(options = {})
     {verse: self.reference.raw_hash[:verse], color: self.color}
-
   end
 
 end

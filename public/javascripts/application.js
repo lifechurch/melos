@@ -682,6 +682,7 @@ var YV = (function($, window, document, undefined) {
         var book_api = article.attr('data-book-api');
         var chapter = article.attr('data-chapter');
         var version = article.attr('data-version');
+        var highlights = $('article').data('highlights');
         var flag = 'selected';
         var hide = 'hide';
         var verse_numbers = [];
@@ -761,7 +762,6 @@ var YV = (function($, window, document, undefined) {
             //
             // Add reference info and create tokens
 
-
             var verse_refs = [];
             $(".reference_tokens").html("");
             $.each(verse_ranges, function(i,e) {
@@ -782,6 +782,16 @@ var YV = (function($, window, document, undefined) {
             // Populate the "link" input
             $("#copy_link_input").attr("value", link);
 
+            // Hide highlight clear color box if none of selected verses are highlights
+            var hlt_selected = false;
+            $.each(highlights, function(i,h) {
+              if($.inArray(h.verse, verse_numbers) != -1){
+                hlt_selected = true;
+                return false; //break loop
+              }
+            });
+            hlt_selected ? $('#clear_highlights').removeClass('hide') : $('#clear_highlights').addClass('hide');
+            
             // Create reference tokens
           }
 
@@ -921,7 +931,7 @@ var YV = (function($, window, document, undefined) {
             $(this).append("<span class='selected'></span>")
           }
         })
-      // #needsboomsauce - This bit takes the color from the color picker, adds a new color
+      // #TODO           - This bit takes the color from the color picker, adds a new color
       //                   slide to the list of colors, and adds the color to the background,
       //                   then hides the color picker. But that doesn't work. I don't know how
       //                   identify the specific <a> it appends on line 742 and give it the hex. HALP?
