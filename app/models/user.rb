@@ -295,6 +295,24 @@ class User < YouVersion::Resource
     return response.id.to_i == opts[:id]
   end
   
+  def configuration
+    @config_attributes ||= self.class.configuration(auth: auth, user_id: id)
+  end
+  
+  def highlight_colors
+    configuration.highlight_colors
+  end
+  
+  def self.configuration(opts = {})
+    response = YvApi.get("configuration/items", opts) do |errors|
+      raise YouVersion::ResourceError.new(errors)
+    end
+  end
+  
+  def self.highlight_colors
+    configuration.highlight_colors
+  end
+  
   def ==(compare)
     compare.class == self.class && self.id == compare.id
   end

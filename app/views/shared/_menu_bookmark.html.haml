@@ -17,14 +17,14 @@
       = t("highlight")
     %dd
       %form{:action => highlights_path, method: "POST"}
-        %input{:class => "verses_selected_input", name: "highlight[reference]", type: "hidden"}
+        %input{:class => "individual_verses_selected_input", name: "highlight[references]", type: "hidden"}
+        %input{:class => "verses_selected_highlight_ids_input", name: "highlight[ids]", type: "hidden"}
         %div{:class => "color_picker_list"}
           %a{:class => "color_picker", :href =>"#"}
           %a{:class => "color_picker_holder", :href =>"#"}
           %button{:type => "submit", :name => "remove", :value => "true", :class => "color color_picker_clear", :id => "clear_highlights"}
-          %button{:type => "submit", :name => "highlight[color]", :value => "f3a9a9", :class => "color", :id => "highlight_f3a9a9", :href => "#", :style => "background-color:#f3a9a9"}
-          %button{:type => "submit", :name => "highlight[color]", :value => "f6f0b4", :class => "color", :id => "highlight_f6f0b4", :href => "#", :style => "background-color:#f6f0b4"}
-          %button{:type => "submit", :name => "highlight[color]", :value => "a8ed9d", :class => "color", :id => "highlight_a8ed9d", :href => "#", :style => "background-color:#a8ed9d"}
+          - @highlight_colors.slice(0,10).each_with_index do |c,i| #room for 10 highlights in menu, 10th will be hidden by JS if clear is there
+            %button{:type => "submit", :name => "highlight[color]", :value => c, :class => "color", :id => "highlight_#{i}", :href => "#", :style => "background-color:##{c}"}          
         %div{:class => "clear"}
     %dt
       = t("bookmark")
