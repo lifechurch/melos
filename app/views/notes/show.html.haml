@@ -1,6 +1,6 @@
 %article
   #note
-    %h1= @note.title
+    %h3= @note.title
     / %p.mute= link_to_references(@note.reference)
     %hr
     - @note.reference_list.each do |r|

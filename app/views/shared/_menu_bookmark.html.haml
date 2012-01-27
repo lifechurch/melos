@@ -2,7 +2,7 @@
   %header
     %a.close{:href => '#'} Close
     %span
-      Currently Selected:
+      = t("currently selected")
     %ul.reference_tokens
       %li
         %a{:href => "#"}
@@ -10,28 +10,11 @@
       %li
         %a{:href => "#"}
           John 4:25
-      %div#add_reference_token
-        %a{:href => '#'}
-          ADD
-        %input{:type => 'text'}
-        %ul#add_reference_token_helper
-          %li
-            %a{:href => '#'}
-              Genesis
-          %li
-            %a{:href => '#'}
-              Exodus
-          %li
-            %a{:href => '#'}
-              Leviticus
-          %li
-            %a{:href => '#'}
-              Numbers
   %span.menu_arrow
     &nbsp;
   %dl.accordion
     %dt
-      Highlight
+      = t("highlight")
     %dd
       %form{:action => highlights_path, method: "POST"}
         %input{:class => "verses_selected_input", name: "highlight[reference]", type: "hidden"}
@@ -44,20 +27,20 @@
           %button{:type => "submit", :name => "highlight[color]", :value => "a8ed9d", :class => "color", :id => "highlight_a8ed9d", :href => "#", :style => "background-color:#a8ed9d"}
         %div{:class => "clear"}
     %dt
-      Bookmark
+      = t("bookmark")
     %dd
       %form{:action => bookmarks_path, method: "POST"}
         %p
           %label{:for => 'bookmark_title'}
-            Title
+            = t("bookmarks.title field")
           %br
           %input{:type => 'text', :id => 'bookmark_title', :name => 'bookmark[title]'}
         %p
           %label{:for => 'bookmark_tags'}
-            Labels
+            = t("bookmarks.labels")
           %br
-          %input{:type => 'text', :id => 'bookmark_labels', :name => 'bookmark[labels]'}
-          %input{:class => "verses_selected_input", name: "bookmark[reference]", type: "hidden"}
+          %input{:type => 'text', :id => 'bookmark_labels', :name => 'bookmark[labels]', :placeholder => t("bookmarks.labels placeholder")}
+          %input{:class => "verses_selected_input", name: "bookmark[references]", type: "hidden"}
           / %span
           /   %b
           /     Color
@@ -75,7 +58,7 @@
         %p
           %input{:type => 'image', :src => '/images/save_bookmark.png'}
     %dt
-      Share
+      = t("share")
     %dd
       %form.clearfix
         %div.share_message
@@ -91,25 +74,25 @@
             %span.float_left{style: "width: 60%"}
               %input#checkbox_share_twitter{:type => "checkbox", :name => "share_verse_social", :checked => 'checked'}
               %label{:for => 'share_verse_twitter', :class => "share_verse_twitter", :value => "Twitter"}
-                Twitter
+                = t("twitter")
             
             %span.float_left{style: "width: 60%"}
               %input#checkbox_share_facebook{:type => "checkbox", :name => "share_verse_social"}
               %label{:for => 'share_verse_facebook', :class => "share_verse_facebook"}
-                Facebook
+                = t("Facebook")
             %span.float_left{style: "width: 60%"}
               %input#checkbox_share_google{:type => "checkbox", :name => "share_verse_social"}
               %label{:for => 'share_verse_google', :class => "share_verse_google"}
-                Google +
+                = t("google plus")
           %div.clearfix{style: "margin-bottom: 15px"}
     %dt
-      Link
+      = t("link")
     %dd
       %span.text_field_embed
         %input#copy_link_input.width_100{:value => "", :style => "margin-bottom: 15px;", :type => "text"}
         %button#copy_link
-          Copy
+          = t("copy")
     %a.open_modal{:href => "#"}
       %dt#new_note_modal
-        New Note
+        = t("new note")
 
