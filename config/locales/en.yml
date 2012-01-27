@@ -8,7 +8,7 @@ en:
   google plus:                                  "Google +"
   highlight:                                    "Highlight"
   bookmark:                                     "Bookmark"
-  currently selected:                           "Currently Selected"
+  currently selected:                           "Currently Selected:"
   read reference:                               "Read %{reference}"
   compare all versions:                         "Compare All Versions"
   link will be added:                           "will be added"
@@ -198,7 +198,7 @@ en:
     month:                                      "Month"
     publisher:                                  "Publisher"
     success widget title:                       "Reading Plan Success"
-    success blurb:                              "A reading plan is a teriffic tool to help you engage with the Bible, as each day you learn what it says by reading a manageable, carefully selected portion. We want to help you be succesfull in your reading plans..."
+    success blurb:                              "A reading plan is a terrific tool to help you engage with the Bible, as each day you learn what it says by reading a manageable, carefully selected portion. We want to help you be succesfull in your reading plans..."
     success blog link title:                    "Read Blog Post"
     a users plans:                              "%{username}'s Plans"
     you have no plans:                          "You're not subscribed to any reading plans right now"
@@ -257,3 +257,6 @@ en:
   audio:
     none:                                       "No audio bible exists for this version"
     close player menu:                          "Close"
+  highlights:
+    creation error:                             "Sorry, couldn't highlight."
+    delete error:                               "Sorry, couldn't remove highlighting."

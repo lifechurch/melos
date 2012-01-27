@@ -143,6 +143,16 @@ class Reference
 
   end
 
+  def first_verse
+    verses = raw_hash[:verse]
+    case verses
+    when Range
+      verses.first
+    when Fixnum
+      verses
+    end
+  end
+
   def verse_string
     
     @ref[:verse].is_a?(Range) ? @ref[:verse].first.to_s + "-" + @ref[:verse].last.to_s : @ref[:verse].to_s if @ref[:verse]

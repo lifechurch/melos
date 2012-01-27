@@ -1,14 +1,27 @@
 class HighlightsController < ApplicationController
   def create
-    @highlight = Highlight.new(params[:highlight].merge(auth: current_auth))
-    @highlights = params[:highlight][:reference].split(",").map { |r| Highlight.new(params[:highlight].merge(auth: current_auth, reference: r)) }
-    if @highlights.all?(&:save)
-      redirect_to :back, notice: "Your highlight was created!"
-    else
-      redirect_to :back, error: "Sorry, couldn't highlight."
+    
+    #Parameters: {"highlight"=>{"references"=>"gen.1.1.asv,gen.1.6.asv,gen.1.7.asv", "ids"=>"79,98,-1", "color"=>"861eba"}}
+    @highlights = params[:highlight][:references].split(",").map { |r| Highlight.new(params[:highlight].merge(auth: current_auth, reference: r)) }
+    existing = []
+    params[:highlight][:ids].split(",").each {|id| existing << Highlight.new({auth: current_auth, id: id}) if id.to_i >= 0} # only need id and auth to destroy
+    
+    if params[:remove]
+      if existing.all?(&:destroy)
+        redirect_to :back
+      else
+        redirect_to :back, error: t("highlights.delete error")
+        #TODO: log this error for our research
+      end    
+    else #user is creating highlights
+      
+      if existing.all?(&:destroy) && @highlights.all?(&:save)
+        redirect_to :back
+      else
+        redirect_to :back, error: t("highlights.creation error")
+        #TODO: log this error for our research
+      end
     end
   end
-
-  def destroy
-  end
+  #TODO make the sending form submit a different 'delete' form on clicking the clear icon
 end

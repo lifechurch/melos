@@ -16,9 +16,6 @@ class YvApi
     Rails.logger.info "** YvApi.get: Calling #{resource_url} with query => #{opts}"
     if (resource_url == "http://api.yvdev.com/2.3/bible/verse.json")
       calling_method = caller.first.match(/`(.*)'$/)[1]
-      # puts "** YvApi.get: Called from #{calling_method}"
-      # puts "Top 5 Callers:"
-      # pp caller[0..4]
     end
     # If we should cache, try pulling from cache first
     if cache_length = opts[:cache_for]
@@ -92,8 +89,6 @@ class YvApi
 
   def self.api_response_or_rescue(response, block)
     if response["response"]["code"].to_i >= 400
-      puts "i'm in the error block thingy"
-      puts "response data errors is #{response["response"]["data"]["errors"]}"
       # If there's a block, use it for a substitute API call
       new_response = block.call(response["response"]["data"]["errors"]) if block
       # If the block didn't return a substitute array, throw an exception based on the original error

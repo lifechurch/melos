@@ -17,7 +17,7 @@ class Highlight < YouVersion::Resource
     self.version = self.reference.version
     self.reference = self.reference.osis_noversion
   end
-
+  
   def self.for_reference(reference, params = {})
     reference = Reference.new(reference) unless reference.is_a? Reference
     reference = Reference.new(reference.raw_hash.except(:verse))
@@ -34,13 +34,14 @@ class Highlight < YouVersion::Resource
 
     list = ResourceList.new
     list.total = response.total
-    response.highlights.each { |h| list << new(h.merge(auth: params[:auth]))}
+    response.highlights.each {|h| list << new(h.merge(auth: params[:auth]))}
     list
   end
 
   def as_json(options = {})
-    {verse: self.reference.raw_hash[:verse], color: self.color}
-
+    #API/apps shouldn't support ranged highlights, but some exist, so use only the first verse if range.
+    #EVENTUALLY: make this pervasive/complete so anyone using this object only sees the 1st verse and we can just pass raw_hash[:verse]
+    {verse: self.reference.first_verse, color: self.color, id: id, version: version}
   end
 
 end
