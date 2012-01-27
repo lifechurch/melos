@@ -48,7 +48,7 @@
           %span.icon_settings
             =t("ref.settings")
       %li.hide_in_parallel_mode
-        %a.button.dynamic_menu_trigger{:href => '#menu_audio_player', :title => t("ref.listen")}
+        %a.button{:href => @reference.audio ? '#menu_audio_player' : nil, :title => @reference.audio ? t("ref.listen"): t('audio.none'), class: @reference.audio ? "dynamic_menu_trigger" : "disabled"}
           %span.icon_listen{class: @reference.audio ? nil : "disabled"}
             =t("ref.listen")
       %li.hide_in_parallel_mode
