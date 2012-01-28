@@ -50,7 +50,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(current_auth) if current_auth
   end
   def current_username
-    User.find(cookies.signed[:a]).username if cookies.signed[:a]      
+    User.find(cookies.signed[:a]).username if cookies.signed[:a]
+    #TODO: fix this, it's borked      
   end
   def current_avatar
     cookies[:avatar]

@@ -1,3 +1,4 @@
+
 module YouVersion
   class ResourceError < StandardError
     attr_accessor :errors

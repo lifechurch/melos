@@ -6,4 +6,4 @@
       %a.close{:href => '#'}= t("audio.close player menu")
       = @reference.audio ? @reference.audio.title : t("audio.none")
     %dd
-      %audio#audio_player{:src => @reference.audio ? @reference.audio.url : "", :type => 'audio/mp3', :controls => 'controls'}
+      %audio#audio_player{:src => @reference.audio ? @reference.audio.url : "", :type => 'audio/mpeg', :controls => 'controls'}

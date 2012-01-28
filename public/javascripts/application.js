@@ -676,12 +676,15 @@ var YV = (function($, window, document, undefined) {
         var button = $('#verses_selected_button');
         var count = $('#verses_selected_count');
         var input = $('.verses_selected_input');
+        var input_individual = $('.individual_verses_selected_input');
+        var input_highlights_ids = $('.verses_selected_highlight_ids_input');
         var article = $('#main article:first');
         var book = article.attr('data-book');
         var book_human = article.attr('data-book-human');
         var book_api = article.attr('data-book-api');
         var chapter = article.attr('data-chapter');
         var version = article.attr('data-version');
+        var highlights = $('article').data('highlights');
         var flag = 'selected';
         var hide = 'hide';
         var verse_numbers = [];
@@ -694,6 +697,7 @@ var YV = (function($, window, document, undefined) {
 
           // Zero out value.
           input.val('');
+          input_highlights_ids.val('');
 
           verse.each(function() {
             var el = $(this);
@@ -761,7 +765,6 @@ var YV = (function($, window, document, undefined) {
             //
             // Add reference info and create tokens
 
-
             var verse_refs = [];
             $(".reference_tokens").html("");
             $.each(verse_ranges, function(i,e) {
@@ -771,6 +774,7 @@ var YV = (function($, window, document, undefined) {
 
             // Populate the verse_numbers hidden input
             input.val(verse_refs.join(","));
+            
             // Generate a short link
             var link = "http://bible.us/" + book + chapter + "." + verse_ranges.join(',') + "." + version;
             $("b#short_link").html(link);
@@ -782,6 +786,39 @@ var YV = (function($, window, document, undefined) {
             // Populate the "link" input
             $("#copy_link_input").attr("value", link);
 
+            // get highlight id_s of all selected verses that are highlighted
+            var sel_hlt_ids = [];
+            var hlt_verses = [];
+
+            var hlt_selected = false;
+            $.each(highlights, function(i,h){hlt_verses.push(h.verse)});
+            
+            var i_h;
+            $.each(verse_numbers, function(i,v) {
+              i_h = $.inArray(v, hlt_verses);
+              if (i_h == -1) {
+                sel_hlt_ids.push(-1);
+              } else {
+                sel_hlt_ids.push(highlights[i_h].id);
+                hlt_selected = true;
+              }
+            });
+            
+            // Populate the selected verses and highlight ids hidden input
+            input_highlights_ids.val(sel_hlt_ids.join(","));
+            
+            var sel_verses_osis = [];
+            $.each(verse_numbers, function(i,e) {
+              sel_verses_osis.push(book + "." + chapter + "." + e + "." + version);
+            });
+            input_individual.val(sel_verses_osis.join(","));
+            
+            if (hlt_selected) {
+              $('#clear_highlights').removeClass('hide');
+              $('#highlight_9').addClass('hide'); // hide the 10th icon if we're showing the clear
+            } else {
+              $('#clear_highlights').addClass('hide');
+            }            
             // Create reference tokens
           }
 
@@ -921,7 +958,7 @@ var YV = (function($, window, document, undefined) {
             $(this).append("<span class='selected'></span>")
           }
         })
-      // #needsboomsauce - This bit takes the color from the color picker, adds a new color
+      // #TODO           - This bit takes the color from the color picker, adds a new color
       //                   slide to the list of colors, and adds the color to the background,
       //                   then hides the color picker. But that doesn't work. I don't know how
       //                   identify the specific <a> it appends on line 742 and give it the hex. HALP?
