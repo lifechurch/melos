@@ -3,7 +3,7 @@ class PlansController < ApplicationController
   
   def index
     if params[:user_id]
-      @user = User.find(params[:user_id])  
+      @user = (params[:user_id] == current_user.username) ? current_user : User.find(params[:user_id])
       render :action => "index_subscriptions" 
     end
     
