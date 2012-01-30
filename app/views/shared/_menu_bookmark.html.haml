@@ -56,8 +56,7 @@
           /   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
         %div{:class => "clear"}
         %p
-          %a.float_right.small_action_button{:href => "#"}
-            Save Bookmark
+          %a.float_right.small_action_button{:href => "#"}= t('bookmarks.save')
         %div{:class => "clear", :style => "padding: 0 0 15px 0"}
 
     %dt
@@ -72,8 +71,7 @@
 
           %div.clearfix{style: "margin-bottom: 8px"}
           %div.share_action      
-            %a.float_right.small_action_button{:href => "#"}
-              Share Now
+            %a.float_right.small_action_button{:href => "#"}= t('ref.share now')
           %div.share_services
             %span.float_left{style: "width: 60%"}
               %input#checkbox_share_twitter{:type => "checkbox", :name => "share_verse_social", :checked => 'checked'}
