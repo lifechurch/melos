@@ -14,9 +14,9 @@
           - #TODO: split labels in model
           %a{href: "#"}= l
           - # TODO: Label link
-  .float_right
+  .bookmark_edit.float_right
     %p
       - if @me
-        = link_to('edit', edit_bookmark_path(list_item.id)) 
-        = link_to('delete', bookmark_path(list_item.id), :confirm => 'Are you sure?', :method => :delete) 
+        = link_to('edit', edit_bookmark_path(list_item.id))
+        = link_to('delete', bookmark_path(list_item.id), :confirm => 'Are you sure?', :method => :delete, :style => 'color: red') 
       = list_item.created_as_date

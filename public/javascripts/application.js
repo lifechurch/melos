@@ -1036,6 +1036,17 @@ var YV = (function($, window, document, undefined) {
         if ($("article").data("fullscreen") == "1") {
           HTML.addClass("full_screen");
         }
+      },
+      // YV.init.audio_player
+      bookmarks: function() {
+        $('.li_bookmark').hover(
+          function(){
+            $(this).find('.bookmark_edit').animate({opacity: 1});
+          },
+          function(){
+            $(this).find('.bookmark_edit').animate({opacity: 0});
+          }
+        );
       }
    }
 
