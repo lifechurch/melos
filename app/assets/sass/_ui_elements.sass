@@ -410,7 +410,7 @@ dd .icon_settings
   border-collapse: collapse
   font-size: 12px
   color: #444
-  height: 35px
+  height: 33px
   width: 28px
   box-shadow: 0px 1px 0px #fff inset
 
@@ -419,7 +419,7 @@ dd .icon_settings
   color: #444
   font-weight: bold
   text-decoration: none
-  padding: 4px 7px 7px 7px
+  padding: 4px 7px 5px 7px
   display: block
 
 .cal_month tr 
@@ -442,6 +442,9 @@ dd .icon_settings
   font-weight: bold
   text-decoration: line-through
 
+.cal_month td.active-day.read:hover
+  background: none
+
 .cal_month td.read a 
   color: #444
   background: none
@@ -454,14 +457,7 @@ dd .icon_settings
   height: 24px
 
 .cal_month .active-day a
-  background: url(../images/cal_bullet.png)
-  background-position: center 22px
-  background-repeat: no-repeat
-
-.cal_month .active-day:hover 
-  background: url(../images/cal_bullet.png) !important
-  background-position: center 22px !important
-  background-repeat: no-repeat !important
+  background: url(../images/cal_bullet.png) center 21px no-repeat
 
 .cal_month .hidden 
   height: 35px
