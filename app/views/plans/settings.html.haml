@@ -67,7 +67,7 @@
     .float_right= button_to(@subscription.email_delivery? ? t('plans.email_off') : t('plans.email_on'),  plan_settings_path(email_delivery: (!@subscription.email_delivery?).to_s), class: 'action_button_green', style: "width: 14em; height: 30px; margin-bottom: 5px")
     -if @subscription.email_delivery?
       %div
-        .float_left{style: "width: 130px; overflow: hidden; t('plans.reading completed (mark and show next)'): ellipsis"}= @subscription.user.email
+        .float_left{style: "width: 130px; overflow: hidden; text-overflow: ellipsis"}= @subscription.user.email
         .small.float_right{style: "margin-top: 3px"}= link_to(t("plans.email edit"), profile_path)
   %div{style: "width: 330px"}
     %h5= t("plans.email delivery")

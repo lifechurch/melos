@@ -78,7 +78,9 @@ class PlansController < ApplicationController
       if params[:email_delivery] == "false"
         @subscription.disable_email_delivery and action = 'email delivery off'
       else
-        @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version) and action = 'email delivery on'
+        action = @subscription.email_delivery? ? 'email delivery updated' : 'email delivery on'
+        #TODO: make sure versions with hypens are working
+        @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version) 
       end
     end
     

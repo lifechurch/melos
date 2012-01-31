@@ -257,6 +257,7 @@ en:
     reminder off successful:                    "Daily reminder turned off"
     email delivery on successful:               "You will now receive daily readings via email!"
     email delivery off successful:              "Email delivery turned off"
+    email delivery updated successful:          "Email delivery settings updated"
     report on successful:                       "Weekly accountability turned on"
     report off successful:                      "Weekly accountability turned off"
     catch up successful:                        "You are now caught up on your readings!"
