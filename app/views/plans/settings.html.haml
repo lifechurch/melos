@@ -102,6 +102,7 @@
     %h5= t("plans.do you want to reset")
     %p.float_left= t("plans.restart description")  
   
+  %a{name: "privacy"}
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
     -if @subscription.public?
@@ -113,6 +114,7 @@
     %p.float_left= t("plans.privacy description")
     
   %hr
+  %a{name: "accountability"}
   %h5= t("plans.accountability")
   %form{method: 'get'}
     %input{type: "hidden", name: "send_reminder", value: (!@subscription.reminder_enabled?).to_s}

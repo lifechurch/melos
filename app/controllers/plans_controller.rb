@@ -57,49 +57,57 @@ class PlansController < ApplicationController
   end
   
   def settings
-    @subscription = current_user.subscriptions.find {|subscription| subscription.slug == params[:plan_id]}
+    @subscription = current_user.subscription(params[:plan_id])
     
     raise "you can't view a plan's settings unless you're subscribed" if @subscription.nil?
     
-    @subscription.catch_up if params[:catch_up] == "true"
-    @subscription.restart if params[:restart] == "true"
-    
-    if (params[:make_public] == "true" || params[:make_private] == "true")
-      params[:make_public] == "true" ? @subscription.make_public : @subscription.make_private
-    end
-    
     if(params[:unsubscribe] == "true")
       @subscription.destroy
-      redirect_to user_plans_path(current_auth.username), notice: t("plans.unsubscribe successful")
+      return redirect_to user_plans_path(current_auth.username), notice: t("plans.unsubscribe successful")
+    end
+    
+    @subscription.catch_up and action = 'catch up' if params[:catch_up] == "true"
+    @subscription.restart and action = 'restart' if params[:restart] == "true"
+    
+    if (params[:make_public] == "true" || params[:make_private] == "true")
+      params[:make_public] == "true" ? (@subscription.make_public and action = 'make public') : (@subscription.make_private and action = 'make private')
+      anchor = 'privacy'
     end
     
     if(params[:email_delivery])
       if params[:email_delivery] == "false"
-        @subscription.disable_email_delivery
+        @subscription.disable_email_delivery and action = 'email delivery off'
       else
-        @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version)
+        @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version) and action = 'email delivery on'
       end
     end
     
     if(params[:send_reminder])
-      params[:send_reminder] == "true" ? @subscription.enable_reminder : @subscription.disable_reminder
+      params[:send_reminder] == "true" ? (@subscription.enable_reminder and action = 'reminder on') : (@subscription.disable_reminder and action = 'reminder off')
+      anchor = 'accountability'
     end
     
     if(params[:send_report])
-      if(params[:send_report] == "true")
-        @subscription.add_accountability_user(current_user)
-      else
-        @subscription.remove_all_accountability
-      end
+      params[:send_report] == "true" ? (@subscription.add_accountability_user(current_user) and action = 'report on') : (@subscription.remove_all_accountability and action = 'report off')
+      anchor = 'accountability'
     end
     
     if(params[:add_accountability_partner])
-        @subscription.add_accountability_user(params[:add_accountability_partner])
+        @subscription.add_accountability_user(params[:add_accountability_partner]) 
+        action = 'partner added'
+        t_opts = {username: params[:add_accountability_partner]}
+        anchor = 'accountability'
     end
     
     if(params[:remove_accountability_partner])
-        @subscription.remove_accountability_user(params[:remove_accountability_partner])
+        @subscription.remove_accountability_user(params[:remove_accountability_partner]) 
+        action = 'partner removed' 
+        t_opts = {username: params[:remove_accountability_partner]}
+        anchor = 'accountability'
     end
+
+    redirect_to plan_settings_path(@subscription, anchor: anchor), notice: t("plans.#{action} successful", t_opts) if action 
+    
   end
   
   def calendar
