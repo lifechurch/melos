@@ -264,17 +264,26 @@ var YV = (function($, window, document, undefined) {
         button.click(function() {
           if (HTML.hasClass('parallel_mode')) {
             HTML.removeClass('parallel_mode');
-            if (!getCookie('full_screen')) HTML.removeClass('full_screen') 
+            deleteCookie('parallel_mode');
+            if (getCookie('full_screen') == null) HTML.removeClass('full_screen'); //if user didn't explicitly set full_screen, go back to regular
             YV.misc.kill_widget_spacers();
             YV.init.fixed_widget_header();
             YV.init.fixed_widget_last();
           }
           else {
             HTML.addClass('parallel_mode').addClass('full_screen');
+            setCookie('parallel_mode', 1);
           }
 
           this.blur();
           return false;
+        });
+
+        $(".alt_version_link").click(function(ev) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          setCookie('alt_version', $(this).data('version'));
+          window.location.href = window.location.href;
         });
       },
       // YV.init.full_screen

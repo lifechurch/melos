@@ -1,9 +1,15 @@
 #menu_audio_player.dynamic_menu
   %span.menu_arrow
     &nbsp;
-  %dl
-    %dt
-      %a.close{:href => '#'}= t("audio.close player menu")
-      = @reference.audio ? @reference.audio.title : t("audio.none")
-    %dd
-      %audio#audio_player{:src => @reference.audio ? @reference.audio.url : "", :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+  - if @reference.audio
+    %dl
+      %dt
+        %a.close{:href => '#'}= t("audio.close player menu")
+        = @reference.audio.title
+      %dd
+        %audio#audio_player{:src => @reference.audio.url, :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+      %dt
+        %a.float_right.negative_gutter_top_quarter{:href => @reference.audio.publisher_link, :target => "_blank"}
+          %img{:src => '/images/icon_info.png'}
+        %small
+          = @reference.audio.copyright

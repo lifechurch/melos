@@ -60,7 +60,7 @@ class Reference
   end
 
   def version_string
-    @version_string ||= @ref[:version].upcase
+    @version_string ||= @ref[:version].upcase.match(/\A[^-]*/)
   end
 
   def version
@@ -115,7 +115,22 @@ class Reference
   end
   
   def audio
-    api_data[0].data.request.audio ? Hashie::Mash.new({title: api_data[0].data.request.audio[0].title, url: api_data[0].data.request.audio[0].download_urls.format_mp3_32k}) : nil
+    if api_data[0].data.request.audio && @audio.nil?
+      # {"id"=>"8",
+      #   "version"=>"kjv",
+      #   "title"=>"KJV Listener's Bible",
+      #   "copyright"=>"Copyright 2007 Fellowship for the Performing Arts",
+      #   "description_text"=> "Experience the majestic language of the King James Bible skillfully narrated...
+      #   "description_html"=> ...of the listener.\\r\\n\\r\\nThis audio Bible is provided.... Recorded under licensing agreement. (<a href=\"http://www.listenersbible.com\">http://www.listenersbible.com<?a>)",
+      #   "publisher_link"=>"http://www.listenersbible.com/free-download"}
+      opts = {id: api_data[0].data.request.audio[0].id}
+      
+      response = YvApi.get("audio_bible/view", opts) do |errors|
+          raise YouVersion::ResourceError.new(errors)
+      end
+      @audio = Hashie::Mash.new({url: api_data[0].data.request.audio[0].download_urls.format_mp3_32k}).merge(response)
+    end
+    @audio
   end
 
   def osis
@@ -124,6 +139,10 @@ class Reference
 
   def osis_noversion
     @ref.to_osis_string_noversion
+  end
+  
+  def osis_book_chapter
+    @ref.to_osis_string_book_chapter
   end
 
   def previous
@@ -177,7 +196,6 @@ class Reference
     end
     
     @api_data[:format]
-
   end
 
   def parse_contents(opts={})
