@@ -1,5 +1,5 @@
 !!! 5
-%html{class: @html_classes.join(' ')}
+%html{class: (@html_classes.join(' ') if @html_classes)}
   %head{:lang => 'en-us'}
     = csrf_meta_tags
     - if @canonical
