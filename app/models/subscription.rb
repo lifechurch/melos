@@ -240,7 +240,8 @@ class Subscription < Plan
   end
   
   def remove_all_accountability
-    accountability.report_recipients.each{|user_name| remove_accountability_user(user_name)}
+    update_accountability_partners if @partners.nil?
+    @partners.each{|p| remove_accountability_user(p.id)}
   end
   
   def add_accountability_user(user)
