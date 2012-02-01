@@ -1,5 +1,5 @@
 !!! 5
-%html{class: @html_class}
+%html{class: (@html_classes.join(' ') if @html_classes)}
   %head{:lang => 'en-us'}
     = csrf_meta_tags
     - if @canonical
@@ -28,7 +28,7 @@
       -# = render '/shared/menu_book_chapter'
       = render_cell :book_selector, :display, reference: @reference
       -# = render '/shared/menu_version'
-      = render_cell :version_selector, :display, {reference: @reference}
+      = render_cell :version_selector, :display, {reference: @reference, alt_reference: @alt_reference}
       = render '/shared/menu_bookmark'
       = render '/shared/menu_settings'
       = render '/shared/menu_audio_player'

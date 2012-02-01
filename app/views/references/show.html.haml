@@ -38,9 +38,9 @@
           %input.verses_selected_input{name:'verses', type: 'hidden', value: ''}
     %ul.float_right
       %li.show_in_parallel_mode
-        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_alt_version', :title => t("ref.choose version")}
           %b
-            = @reference.version_string
+            = @alt_reference.version_string
           %span
             =t("ref.choose version")
       %li.hide_in_parallel_mode
@@ -69,7 +69,7 @@
   -# TODO: Make boom sauce, to compliment the awesome sauce.
   -# Aka: Make this thing output a secondary Bible version, KJV or sumthin'.
   #version_secondary
-    - @reference.contents.each do |r|
+    - @alt_reference.contents.each do |r|
       = r.html_safe
 
 %footer

@@ -52,7 +52,7 @@
             %p.about_publisher= link_to(t("plans.about the publisher"), @subscription.publisher_url)
             %p.about_plan= link_to(t("plans.about this plan"), ignore_subscription: true)
       .split_pane_content{style: "width: 423px"}
-        %p{style: "margin-left: 20px; margin-right: 5px;"}= @reading.devotional.html_safe
+        %div{style: "margin-left: 20px; margin-right: 5px;"}= @reading.devotional.html_safe
 
     - else #No devotional content
       .split_pane_sidebar

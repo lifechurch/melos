@@ -1,7 +1,10 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
   def show
-    @html_class = "full_screen" if cookies[:full_screen]
+    @html_classes = []
+    @html_classes << "full_screen" if cookies[:full_screen]
+    @html_classes << ["full_screen", "parallel_mode"] if cookies[:parallel_mode]
+    
     if !params[:reference]
       flash.keep
       return redirect_to bible_path(last_read || Reference.new(book: "gen", chapter: "1", version: current_version))
@@ -31,10 +34,11 @@ class ReferencesController < ApplicationController
       @verses
     end
     @reference = Reference.new(ref_hash.except(:verse))
-    @single_verse = Reference.new(ref_hash) if ref_hash[:verse].is_a?(Fixnum)
     @version = Version.find(@reference[:version])
-    set_last_read @reference
     set_current_version @version
+    @alt_reference = (alt_version == current_version) ? @reference : Reference.new(@reference.raw_hash.except(:version), alt_version)
+    @single_verse = Reference.new(ref_hash) if ref_hash[:verse].is_a?(Fixnum)
+    set_last_read @reference
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
     @note = Note.new

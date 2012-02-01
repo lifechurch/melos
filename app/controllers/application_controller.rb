@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :set_current_version, :bible_path, :current_avatar
+  helper_method :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar
   before_filter :set_locale, :set_page
 
   def set_page
@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
   end
   def current_username
     User.find(cookies.signed[:a]).username if cookies.signed[:a]
-    #TODO: fix this, it's borked      
+    #TODO: fix this, it's borked
   end
   def current_avatar
     cookies[:avatar]
@@ -62,6 +62,9 @@ class ApplicationController < ActionController::Base
   end
   def current_version
     cookies[:version] || Version.default_for(params[:locale] ? params[:locale].to_s : "en")
+  end
+  def alt_version
+    cookies[:alt_version] || current_version
   end
   def set_current_version(ver)
     cookies.permanent[:version] = ver.osis
