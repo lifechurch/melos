@@ -18,6 +18,25 @@
   z-index: 2
   top: 120px
 
+.spinner_wrapper
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  padding: 0
+  background-color: rgba(0,0,0,0.8)
+  z-index: 6
+  .dynamic_menu_spinner
+    position: absolute
+    width: 0
+    height: 0
+    top: 50%
+    left: 50%
+
+
+
+  
 .menu_arrow
   background: url(../images/menu_arrow.png) no-repeat
   font-size: 0
@@ -43,7 +62,7 @@
 
 .dynamic_menu .scroll
   border-right: 0
-  height: 340px
+  height: 740px
   overflow-x: hidden
   overflow-y: scroll
 
@@ -57,6 +76,9 @@
 
 .dynamic_menu .scroll::-webkit-scrollbar-thumb:hover
   background: #ccc
+
+.dynamic_menu .scroll 
+  font-size: 13px
 
 .dynamic_menu table,
 .dynamic_menu ul,

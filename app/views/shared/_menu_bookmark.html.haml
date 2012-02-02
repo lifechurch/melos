@@ -1,4 +1,6 @@
 #menu_bookmark.dynamic_menu
+  .spinner_wrapper{style: "display: none;"}
+    #bookmark_spinner.dynamic_menu_spinner
   %header
     %a.close{:href => '#'} Close
     %span
@@ -56,7 +58,7 @@
           /   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
         %div{:class => "clear"}
         %p
-          %a.float_right.small_action_button{:href => "#"}= t('bookmarks.save')
+          %button{:type => "submit", :name => "bookmark[submit]", :value => "submit", :class => "float_right"}= t('bookmarks.save')
         %div{:class => "clear", :style => "padding: 0 0 15px 0"}
 
     %dt
@@ -71,7 +73,7 @@
 
           %div.clearfix{style: "margin-bottom: 8px"}
           %div.share_action      
-            %a.float_right.small_action_button{:href => "#"}= t('ref.share now')
+            %button{:type => "submit", :name => "share[submit]", :value => "submit", :class => "float_right"}= t('ref.share now')
           %div.share_services
             %span.float_left{style: "width: 60%"}
               %input#checkbox_share_twitter{:type => "checkbox", :name => "share_verse_social", :checked => 'checked'}
