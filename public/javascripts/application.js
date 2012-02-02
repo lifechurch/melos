@@ -452,6 +452,19 @@ var YV = (function($, window, document, undefined) {
           all_menus.hide();
         }
 
+        all_menus.find("form").submit(function() {
+          var spinner = new Spinner({
+            lines: 12,
+            length: 7,
+            width: 5,
+            radius: 10,
+            color: '#fff',
+            speed: 1,
+            shadow: false
+            }).spin(document.getElementById("bookmark_spinner"));
+          $(".spinner_wrapper").fadeIn(200);
+        });
+
         trigger.click(function(ev) {
           ev.preventDefault();
           ev.stopPropagation();
@@ -527,8 +540,9 @@ var YV = (function($, window, document, undefined) {
         $(document).mousedown(function(ev) {
           var el = $(ev.target);
 
-          if (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.dynamic_menu').length)) {
+          if (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.colorpicker').length && !el.closest('.dynamic_menu').length)) {
             hide_all_menus();
+            ev.preventDefault();
           }
         }).keydown(function(ev) {
           if (ev.keyCode === KEY_ESC) {
@@ -895,7 +909,7 @@ var YV = (function($, window, document, undefined) {
       external_links: function() {
         $("a").each(function(i) {
           var that = $(this);
-          if (that.attr("href").substr(0,7) == "http://") {
+          if (that.attr("href") && that.attr("href").substr(0,7) == "http://") {
             that.attr("target", "_blank");
           }
         });
@@ -983,6 +997,9 @@ var YV = (function($, window, document, undefined) {
       //                   identify the specific <a> it appends on line 742 and give it the hex. HALP?
       $('.color_picker').ColorPicker({
         flat: false,
+        onChange: function(hsb, hex, rgb, el) {
+          $(".colorpicker_hex").css('background-color', "#" + hex)
+        },
         onSubmit: function(hsb, hex, rgb, el) {
           $(".color_picker_list").append("<button type='submit' name='highlight[color]' class='color' id='highlight_" + hex +"' value='"+ hex +"' style='background-color: #'" + hex + "'></button>");
           $("#highlight_" + hex).click();
