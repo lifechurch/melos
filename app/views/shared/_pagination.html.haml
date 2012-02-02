@@ -3,7 +3,7 @@
     - unless @page.to_i == 1
       %li.pagination_previous
         =link_to t("previous page"), params.merge({page: @page-1})
-    %li= "#{((@page.to_i - 1)*resource_list.page_length) + 1}&ndash;#{@page.to_i * resource_list.page_length} of #{resource_list.total}".html_safe
+    %li.pagination_pages= "#{((@page.to_i - 1)*resource_list.page_length) + 1}&ndash;#{@page.to_i * resource_list.page_length} of #{resource_list.total}".html_safe
     - unless @page.to_i == resource_list.total_pages
       %li.pagination_next
         =link_to t("next page"), params.merge({page: @page+1})
