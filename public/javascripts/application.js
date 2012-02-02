@@ -156,7 +156,6 @@ var YV = (function($, window, document, undefined) {
           }
         }
       },
-
       // YV.init.modal_window
       share_modal_window: function() {
         var modal = $('#modal_share_verse #modal_window');

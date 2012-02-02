@@ -1,7 +1,7 @@
 - unless @notes.empty?
   %div.widget.notes
     %header
-      %a.count= @notes.total
+      %a.count{href: @link}= @notes.total
       %span.header_icon_note= @title 
     %section
       %table
@@ -9,7 +9,7 @@
           %tr
             %th
             %td.align_right
-              %a.more_arrow= link_to "See all #{@notes.total} notes", @link
+              %a.more_arrow{href: @link}= t('show all notes', total: @notes.total)
 
         %tbody
           - @notes.first(4).each do |note|

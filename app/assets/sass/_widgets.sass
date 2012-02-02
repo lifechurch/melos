@@ -68,7 +68,6 @@
 
 .widget th,
 .widget td
-  vertical-align: middle
   padding: 10px 15px
 
 .widget th
@@ -82,7 +81,7 @@
 
 .widget tbody th
   background:
-    position: right center
+    position: right top
 
 .widget tfoot th
   background:
@@ -324,16 +323,20 @@ a.more_arrow:hover
   
 #sidebar .parallel_notes .color_picker_list a 
   box-shadow: 1px 1px 0px #bbbabd, inset 0px 1px #fff
+  
 #sidebar .parallel_notes .color_picker_list
   box-shadow: 0px 1px #bbbabd, 0px 2px #fff
   padding: 0px 0px 10px 0px
   margin: 5px 0px
+
 #parallel_notes_date_time
   padding: 0px 0px 0px 25px
   background: url(../images/icon_calendar.png) no-repeat left center
+
 .parallel_notes .publish_on_selected
   padding-left: 25px
   background: url(../images/icon_lock.png) no-repeat 4px center
+
 .parallel_notes .publish_on_selected select
   width: 91%
 .parallel_notes section form fieldset
@@ -367,3 +370,10 @@ a.more_arrow:hover
   position: fixed
   top: 82px
   z-index: 1
+
+
+.widget.notes section table tbody tr td
+  display: block
+  width: 215px
+  text-overflow: ellipsis
+  overflow: hidden

@@ -17,12 +17,13 @@
   +round
   float: left
   padding: 1px
+  margin: 0 5px 0 0
 
-#main .pagination li:hover
+#main .pagination li.pagination_previous:hover, #main .pagination li.pagination_next:hover
   +background-image(linear-gradient(#fff, #ddd))
   background-color: #ddd
 
-#main .pagination li:hover,
+#main .pagination li.pagination_previous:hover, #main .pagination li.pagination_next:hover,
 #main .pagination li.highlighted
   border: 1px solid
     color: #ddd #ccc #bbb

@@ -159,7 +159,7 @@ class Reference
   end
 
   def human
-
+    ref_string
   end
 
   def first_verse

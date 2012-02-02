@@ -1,6 +1,6 @@
 .widget.bookmarks
   %header
-    %a.count{href: user_bookmarks_path(current_auth.user_id)}= @bookmarks.total
+    %a.count{href: user_bookmarks_path(current_user)}= @bookmarks.total
     %span.header_icon_bookmark= t('recent bookmarks')
   %ul
     - @bookmarks.first(5).each do |b|
@@ -15,4 +15,4 @@
             %span.tag
               %a{href: ":"}= l
     %li.align_right
-      %a.more_arrow{href: user_bookmarks_path(current_auth.user_id)}= t('show all bookmarks', total: @bookmarks.total)
+      %a.more_arrow{href: user_bookmarks_path(current_user)}= t('show all bookmarks', total: @bookmarks.total)
