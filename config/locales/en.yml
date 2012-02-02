@@ -177,6 +177,7 @@ en:
     successfully created:                       "Bookmark added"
     labels placeholder:                         "Separate multiple labels with commas"
     save:                                       "Save Bookmark"
+    confirm delete:                             "Are you sure?"
   badges:
     earned a badge:                             "Earned a badge"
     my badges:                                  "My Badges"
