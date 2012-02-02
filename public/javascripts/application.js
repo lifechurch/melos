@@ -156,7 +156,6 @@ var YV = (function($, window, document, undefined) {
           }
         }
       },
-
       // YV.init.modal_window
       share_modal_window: function() {
         var modal = $('#modal_share_verse #modal_window');
@@ -895,7 +894,8 @@ var YV = (function($, window, document, undefined) {
       external_links: function() {
         $("a").each(function(i) {
           var that = $(this);
-          if (that.attr("href").substr(0,7) == "http://") {
+          var link = that.attr("href"); // could be undefined
+          if (link && link.substr(0,7) == "http://") {
             that.attr("target", "_blank");
           }
         });
