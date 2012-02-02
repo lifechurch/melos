@@ -34,7 +34,7 @@
   %p
     = f.label :timezone, t('users.profile.timezone')
     %br
-    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["GMT #{ActiveSupport::TimeZone[v].utc_offset/3600}:00: #{v}", v]}.uniq!
+    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}
   %p
     = f.label :language_tag, t('users.profile.language')
     %br

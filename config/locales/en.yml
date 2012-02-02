@@ -80,7 +80,7 @@ en:
   notes:
     creation form errors:                       "The following error(s) prevented creation of your note:"
     status field:                               "Status:"
-    reference field:                            "Reference:"
+    reference field:                            "Reference(s):"
     version field:                              "Version:"
     title field:                                "Title:"
     content field:                              "Content:"
