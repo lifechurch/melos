@@ -35,8 +35,15 @@ class ApplicationController < ActionController::Base
       redirect_to sign_in_path(opts) and return 
       #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
     end
-
   end
+  def force_notification_token_or_login
+    if params[:token]
+      redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return if current_user && current_user.notifications_token != params[:token]
+    else
+      force_login
+    end
+  end
+
   def last_read
     Reference.new(cookies[:last_read]) if cookies[:last_read]
   end

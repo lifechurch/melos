@@ -28,7 +28,6 @@ class SessionsController < ApplicationController
     cookies.permanent.signed[:c] = nil
     cookies.permanent[:avatar] = nil
     cookies[:sign_in_redirect] = nil # user has signed out, if they sign in, new referer should apply
-
-    redirect_to (request.referer ? URI(request.referer).path : bible_path), notice: t("successful sign-out")
+    redirect_to (request.referer ? URI(request.referer).path : params[:redirect] || bible_path), notice: t("successful sign-out")
   end
 end

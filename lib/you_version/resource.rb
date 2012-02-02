@@ -73,6 +73,7 @@ module YouVersion
         response = get(resource_path, opts) do |errors|
           if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
+            #TODO: be smarter about trying to auth first if auth passed (common case), as we're probably wasting a lot of calls here
             inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|
               # Capture errors for handling below
               api_errors = errors

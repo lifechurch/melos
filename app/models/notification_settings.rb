@@ -24,6 +24,30 @@ class NotificationSettings < YouVersion::Resource
   def self.find(opts = {})
     super(nil, opts)
   end
+  
+  def authorized?
+    !(auth || token).nil?
+  end
+  
+  def persist(resource_path)
+    response = true
+    response_data = nil
+    
+    opts = auth ? {auth: auth} : {token: token}
+    
+    response_data = YvApi.post(resource_path, attributes.merge(opts)) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      new_errors.each { |e| self.errors[:base] << e }
+
+      if block_given?
+        yield errors
+      end
+
+      response = false
+    end
+
+    [response, response_data]
+  end
 
   def persist_token
     nil
@@ -36,14 +60,18 @@ class NotificationSettings < YouVersion::Resource
 
   def after_build
     notification_settings.each { |k, v| self.send("#{k}=".to_sym, v["email"]) }
-    @attributes[:token] = nil
+    #@attributes[:token] = nil
+  end
+  
+  def user
+    User.find(@attributes.id)
   end
 
 
   def before_save
     nts = ["badges", "follower", "newsletter", "note_like", "reading_plans"]
     hash = {}
-    self.token = nil
+
     nts.each { |a| hash[a] = {"email" => self.send(a.to_sym).to_i == 1} }
     @attributes['notification_settings'] = hash
   end

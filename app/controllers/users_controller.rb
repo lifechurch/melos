@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :force_login, only: [:profile, :update_profile, :picture, :update_picture, :notifications, :update_notifications, :password, :update_password, :connections, :devices, :destroy_device]
-  before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook]
+  before_filter :force_login, only: [:profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device]
+  before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
+  before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook, :notifications, :update_notifications]
   
   # User signup flow:
   #
@@ -139,15 +140,21 @@ class UsersController < ApplicationController
   end
 
   def notifications
-    @notification_settings = NotificationSettings.find(auth: current_auth)
+    @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
+    @user = @notification_settings.user
+    @me = true
     @selected = :notifications
   end
 
   def update_notifications
-    @notification_settings = NotificationSettings.find(auth: current_auth)
+    @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
+    @user = @notification_settings.user
+    @me = true
     result = @notification_settings.update(params[:notification_settings])
-    result ? flash.now[:notice] = t('users.profile.updated notifications') : flash.now[:error] = @user.errors
-    render action: "notifications"
+    #result ? flash.now[:notice] = t('users.profile.updated notifications') : flash.now[:error] = @notification_settings.errors
+    #render action: "notifications", token: params[:token]
+    #TODO: get the above line to render with the token still instact and replace the below line with the above 2
+    redirect_to notifications_path(token: params[:token]), result ? {notice: t('users.profile.updated notifications')} : {error: @notification_settings.errors}
   end
 
   def password

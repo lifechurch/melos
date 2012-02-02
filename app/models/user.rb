@@ -184,6 +184,10 @@ class User < YouVersion::Resource
     Bookmark.for_user(self.id, opts)
   end
 
+  def notifications_token
+    NotificationSettings.find(auth: auth).token
+  end
+
   def likes
     Like.find(id, auth)
   end
