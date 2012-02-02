@@ -164,7 +164,7 @@ class Plan < YouVersion::Resource
       end
       
       @reading = Hashie::Mash.new()
-      @reading.devotional = response.additional_content_html || YouVersion::Resource.i18nize(response.additional_content)
+      @reading.devotional = response.additional_content_html || "<p>" << YouVersion::Resource.i18nize(response.additional_content).gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\r\n)/, '<br>') << "</p>"
       @reading.references = response.adjusted_days.first.references.map {|data| Hashie::Mash.new(ref: Reference.new(data.reference.osis), completed?: (data.completed == "true"))}
     end
     
