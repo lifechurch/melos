@@ -891,6 +891,16 @@ var YV = (function($, window, document, undefined) {
         });
 
       },
+      // YV.init.external_links
+      external_links: function() {
+        $("a").each(function(i) {
+          var that = $(this);
+          if (that.attr("href").substr(0,7) == "http://") {
+            that.attr("target", "_blank");
+          }
+        });
+
+      },
       // YV.init.profile_menu
       profile_menu: function() {
         var trigger = $('#header_profile_trigger');

@@ -1,6 +1,7 @@
 ---
 en:
   link:                                         "Link"
+  created ago:                                  "Created %{time_ago} ago"
   copy:                                         "Copy"
   new note:                                     "New Note"
   twitter:                                      "Twitter"
