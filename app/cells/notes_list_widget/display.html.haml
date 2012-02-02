@@ -1,7 +1,7 @@
 - unless @notes.empty?
   %div.widget.notes
     %header
-      %a.count= @notes.total
+      %a.count{href: @link}= @notes.total
       %span.header_icon_note= @title 
     %section
       %table

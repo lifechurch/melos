@@ -12,7 +12,7 @@
     %p
       - if @me
         = link_to('edit', edit_bookmark_path(list_item.id))
-        = link_to('delete', bookmark_path(list_item.id), :confirm => 'Are you sure?', :method => :delete, :style => 'color: red') 
+        .caution= link_to('delete', bookmark_path(list_item.id), :confirm => t("bookmarks.confirm delete"), :method => :delete) 
       %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
   - if list_item.labels
     %p.small
