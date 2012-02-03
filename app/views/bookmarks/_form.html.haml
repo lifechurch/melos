@@ -1,4 +1,4 @@
-= form_for @bookmark do |f|
+= form_for @bookmark, :html => {class: 'full_page_form'} do |f|
   - if @bookmark.errors.any?
     .form_errors
       The following error(s) prevented creation of your bookmark:
@@ -10,10 +10,11 @@
     = f.text_field :title
   %p
     = f.label :version, "Version:"
-    = f.select :version, options_for_select(versions_dropdown, (@bookmark.version || nil)), {:prompt => '--Select--'}
+    -# f.select :version, options_for_select(versions_dropdown, (@bookmark.version || nil)), {:prompt => '--Select--'}
+    = Version.find(@bookmark.version).to_s
   %p
     = f.label :reference, "Reference:"
-    = f.text_field :reference
+    = @bookmark.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe
   %p
     = f.label :labels, "Labels (comma-separated):"
     = f.text_field :labels

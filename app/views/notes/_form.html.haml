@@ -1,4 +1,4 @@
-= form_for @note do |f|
+= form_for @note, :html => {class: "full_page_form"} do |f|
   - if @note.errors.any?
     .form_errors
       =t("notes.creation form errors")
@@ -6,19 +6,19 @@
         - @note.errors.each do |e|
           %li= e
   %p
-    = f.label :title, t("notes.title field"), style: "display: block"
+    = f.label :title, t("notes.title field")
     = f.text_field :title
   %p
-    = f.label :content, t("notes.content field"), style: "display: block"
+    = f.label :content, t("notes.content field")
     = f.text_area :content
   %p
-    = f.label :version, t("notes.version field"), style: "display: block"
+    = f.label :version, t("notes.version field")
     = f.select :version, options_for_select(versions_dropdown, @note.version), {:prompt => t("notes.select from list")}
   %p
-    = f.label :reference, t("notes.reference field"), style: "display: block"
+    = f.label :reference, t("notes.reference field")
     = @note.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe
   %p
-    = f.label :user_status, t("notes.status field"), style: "display: block"
+    = f.label :user_status, t("notes.status field")
     = f.select :user_status, options_for_select(object_status, @note.user_status)
   %p
     .float_right= f.submit t("notes.save")
