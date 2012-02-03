@@ -1036,15 +1036,57 @@ var YV = (function($, window, document, undefined) {
         var highlights = $('article').data('highlights');
         var book = $('article').data('book-api');
         var chapter = $('article').data('chapter');
+        
+        function is_dark(hex_color) {
+          //Using same code as android for this algorithm - EP
+          //perform math for WCAG1
+          var brightnessThreshold = 125;
+          var colorThreshold = 500;
+          
+          // testing FG white
+          var fr = 255;
+          var fg = 255;
+          var fb = 255;
+          
+          // hex color as RGB
+          var br = parseInt(hex_color.substring(0, 2), 16);
+          var bg = parseInt(hex_color.substring(2, 4), 16);
+          var bb = parseInt(hex_color.substring(4, 6), 16);
+          
+          var bY= ((br * 299) + (bg * 587) + (bb * 114)) / 1000;
+          var fY= ((255 * 299) + (255 * 587) + (255 * 114)) / 1000;
+          var brightnessDifference = Math.abs(bY-fY);
+          
+          var colorDifference = (Math.max (fr, br) - Math.min (fr, br)) +
+              (Math.max (fg, bg) - Math.min (fg, bg)) +
+              (Math.max (fb, bb) - Math.min (fb, bb));
+          
+          if ((brightnessDifference >= brightnessThreshold) && (colorDifference >= colorThreshold))   {
+              //return "FFFFFF";
+              return true;
+          } else if ((brightnessDifference >= brightnessThreshold) || (colorDifference >= colorThreshold)){
+              //TODO test black here and go with the best option
+              //return "FFFFFF";
+              return true;
+          }
+          
+          // go with black
+          //return "000000";
+          return false;
+        }
+        
         if (highlights) {
           for (var h = 0; h < highlights.length; h++) {
             var hi = highlights[h];
             if ((hi.verse) instanceof Array) {
+              //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
               for (var hh = 0; hh < hi.verse.length; hh++) {
                 $("span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
+                if (is_dark(hi.color)) {$("span." + book + "_" + chapter + "_" + hi.verse[hh]).addClass("dark_highlight");}
               }
             } else {
               $("span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
+              if (is_dark(hi.color)) {$("span." + book + "_" + chapter + "_" + hi.verse).addClass("dark_highlight");}
             }
           }
         }
