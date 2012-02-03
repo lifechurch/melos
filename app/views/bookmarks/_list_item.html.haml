@@ -1,7 +1,7 @@
 %li{class: ("li_bookmark" if display == :icon)}
   .float_left{style: "width: 100%;"}
     %p.gutter_bottom_half
-      %b{class: ("highlight" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
+      %b{class: (is_dark?(list_item.highlight_color) ? "dark_highlight" : "highlight" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
       - list_item.reference_list.each do |r|
         %p
           %b

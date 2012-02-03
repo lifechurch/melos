@@ -47,11 +47,9 @@ class Bookmark < YouVersion::Resource
   def update(fields)
     Rails.logger.info("==  Attempting to merge #{fields} into #{self.attributes}")
     # In API version 2.3, only title, labels, and highlight_color can be updated
-    allowed_keys = [:title, :labels, :highlight_color]
-
+    allowed_keys = [:title, :labels, :highlight_color, "title", "labels", "highlight_color"]
     # Clear out the ones we can't update.
     fields.delete_if {|k, v| ! allowed_keys.include? k}
-
     Rails.logger.info("==  Will actually merge #{fields}")
     super
   end

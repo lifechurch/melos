@@ -23,4 +23,12 @@ module ApplicationHelper
       reference_path(ref.osis)
     end
   end
+  
+  def convert_to_brightness_value(hex_color)
+      (hex_color.scan(/../).map {|color| color.hex}).sum
+  end
+
+  def is_dark?(hex_color)
+    convert_to_brightness_value(hex_color) <= 382.5 #halfway between black (0+0+0 = 0) and white (255+255+255 = 765)
+  end
 end
