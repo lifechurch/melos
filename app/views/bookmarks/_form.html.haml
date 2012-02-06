@@ -19,7 +19,10 @@
     = f.label :labels, "Labels (comma-separated):"
     = f.text_field :labels
   %p
-    = f.label :highlight_color, "Highlight color (rrggbb format):"
-    = f.text_field :highlight_color
-  %p
+    = f.label :highlight_color, "Color:"
+    = f.text_field :highlight_color, class: 'float_left'
+    %div{:class => "color_picker_list", style: "width:auto; margin-top:-10px; margin-left:10px; margin-bottom: 20px"}
+      %a{:class => "color_picker", :href =>"#"}
+      %a{:class => "color_picker_holder", :href =>"#"}
+  %p{style: "clear: left"}
     = f.submit(@bookmark.persisted? ? "Update" : "Save")

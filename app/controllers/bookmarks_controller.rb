@@ -69,7 +69,10 @@ class BookmarksController < ApplicationController
   end
 
   def update
+    params[:bookmark][:highlight_color] = params[:highlight][:color] if params[:highlight]
+
     Rails.logger.info("params[:id] is #{params[:id]}; auth is #{current_auth.inspect}")
+
     @bookmark = Bookmark.find(params[:id], :auth => current_auth)
     Rails.logger.info("Found #{@bookmark.inspect}")
     if @bookmark.update(params[:bookmark])
