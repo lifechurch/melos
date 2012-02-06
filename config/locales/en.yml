@@ -108,7 +108,7 @@ en:
     listen:                                     "Listen"
     parallel:                                   "Parallel"
     full screen:                                "Full Screen"
-    about the:                                  "About the"
+    about the version:                           "About the %{version}"
     settings:                                   "Reader Settings"
   users:
     creation form errors:                       "The following error(s) prevented creation of your account:"

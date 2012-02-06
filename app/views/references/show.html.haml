@@ -74,8 +74,5 @@
 
 %footer
   %p
-    %b
-      %a{:href => '#'}
-        =t("ref.about the")
-        = @version
+    %b= link_to t("ref.about the version", version: @version), version_path(@version) 
   %p= @reference.copyright
