@@ -3,7 +3,7 @@
     %span.header_icon_note= t('New Note')
     %a.pop_out_button
       %span
-        Pop Out
+        = t('notes.pop out')
   %section
     %ul.reference_tokens
       %li
@@ -46,6 +46,6 @@
       = f.hidden_field :reference, class: "verses_selected_input"
       %div.parallel_notes_submit
         %button.action_button_green.float_right
-          Save
-        %a.cancel.float_left
-          Cancel
+          = t('notes.save')
+        %a.cancel.warning.float_left
+          = t('notes.cancel')

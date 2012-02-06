@@ -239,13 +239,21 @@ var YV = (function($, window, document, undefined) {
           show_modal();
           show_link_tab();
         })
+        $("div.widget.parallel_notes").find('a.cancel').click(function(){
+          $("div.widget.parallel_notes").hide(200, function() {
+            $("div.widget.bookmarks, div.widget.notes, div.widget.ad_bible_app").show(200);
+          });
+        return false;
+        });
         $("#new_note_modal").click(function() {
+          $('.dynamic_menu_trigger').parent('li').removeClass('li_active');
           $('.dynamic_menu').hide();
+
           $("div.widget.bookmarks, div.widget.notes, div.widget.ad_bible_app").hide(200, function() {
             $("div.widget.parallel_notes").show(200);
           });
           return false;
-        })
+        });
         $(document).keydown(function(ev) {
           if (ev.keyCode === KEY_ESC) {
             hide_modal();
