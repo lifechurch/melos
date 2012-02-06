@@ -695,6 +695,7 @@ var YV = (function($, window, document, undefined) {
 
         var clear_verses = $('#clear_selected_verses');
         var li = $('#li_selected_verses');
+        var share_menu = $('#menu_bookmark');
         var button = $('#verses_selected_button');
         var count = $('#verses_selected_count');
         var input = $('.verses_selected_input');
@@ -849,6 +850,7 @@ var YV = (function($, window, document, undefined) {
           }
           else {
             li.addClass(hide);
+            share_menu.hide();
           }
 
           count.html(total);
@@ -894,7 +896,7 @@ var YV = (function($, window, document, undefined) {
             // clear it
             $("#version_primary span." + book_api + "_" + chapter + "_" + verse).removeClass(flag);
           } else {
-            // it's a verse range, expand it
+            // it's a verse range, expand it to remove all verses
             var ranges = verse.split("-");
             for (i = ranges[0]; i <= ranges[1]; i++) {
               $("#version_primary span." + book_api + "_" + chapter + "_" + i).removeClass(flag);
