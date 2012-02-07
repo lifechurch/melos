@@ -89,13 +89,13 @@
               %label{:for => 'share_verse_google', :class => "share_verse_google"}
                 = t("google plus")
           %div.clearfix{style: "margin-bottom: 15px"}
-    %dt
+    %dt#link
       = t("link")
     %dd
       %span.text_field_embed
         %input#copy_link_input.width_100{:value => "", :style => "margin-bottom: 15px;", :type => "text"}
-        %button#copy_link
-          = t("copy")
+        %div#copy_link_container{style: "position: absolute; right: 0px; top: 0px; margin-top:-2px"}
+          %button#copy_link{style: "margin-top:0px"}= t("copy")
     %a.open_modal{:href => "#"}
       %dt#new_note_modal
         = t("new note")

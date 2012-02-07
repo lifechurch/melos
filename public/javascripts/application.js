@@ -23,8 +23,9 @@ function deleteCookie(name) {
   setCookie(name,"",-1);
 }
 
-
-
+ZeroClipboard.setMoviePath('/javascripts/ZeroClipboard.swf');
+var clip = new ZeroClipboard.Client();
+var text_to_send = "";
 
 
 // Module pattern + Closure
@@ -434,9 +435,15 @@ var YV = (function($, window, document, undefined) {
           var dd = dt.next('dd');
 
           if (dd.is(':hidden')) {
-            dd.slideDown().siblings('dd').slideUp();
+            dd.slideDown('default', function() {
+                // Animation complete.
+                if (dt.attr('id') == "link"){
+                  clip.glue('copy_link', 'copy_link_container');
+                  console.log('clip glued to copy_link_container');
+                }
+              }).siblings('dd').slideUp();
           }
-
+          
           this.blur();
           return false;
         });
@@ -707,6 +714,7 @@ var YV = (function($, window, document, undefined) {
         var button = $('#verses_selected_button');
         var count = $('#verses_selected_count');
         var input = $('.verses_selected_input');
+        var copy_button = $("#copy_link");
         var input_individual = $('.individual_verses_selected_input');
         var input_highlights_ids = $('.verses_selected_highlight_ids_input');
         var article = $('#main article:first');
@@ -720,6 +728,23 @@ var YV = (function($, window, document, undefined) {
         var hide = 'hide';
         var verse_numbers = [];
         var verse_ranges = [];
+        clip.setHandCursor(true);
+        
+        clip.addEventListener('load', function(client) {
+                console.log( "movie is loaded" );
+        });
+                                
+        clip.addEventListener('complete', function(client, text) {
+                console.log("Copied text to clipboard: " + text);
+         } );
+
+         clip.addEventListener( 'mouseOver', function(client) {
+                clip.setText(text_to_send);
+                console.log(text_to_send + " sent to clip");
+                //this is done in mouseOver due to ZeroClipboard bug
+         } );
+         
+         //Zero clipboard adds and removes "hover" and "active" classes as you would expect
 
         function parse_verses() {
           var total = $('#version_primary .verse.' + flag).length;
@@ -814,8 +839,11 @@ var YV = (function($, window, document, undefined) {
               allowed: 140 - link.length - 1,
               css: "character_count"
             });
+            
             // Populate the "link" input
             $("#copy_link_input").attr("value", link);
+            text_to_send = link;
+            console.log(text_to_send + " stored in global");
 
             // get highlight id_s of all selected verses that are highlighted
             var sel_hlt_ids = [];
@@ -893,6 +921,11 @@ var YV = (function($, window, document, undefined) {
           parse_verses();
           this.blur();
           return false;
+        });
+        
+        
+        copy_button.click(function(){
+          $("#copy_link_input").attr("value");
         });
 
         // Watch for clicking a reference token to clear it
