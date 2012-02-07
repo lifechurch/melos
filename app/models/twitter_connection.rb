@@ -20,17 +20,20 @@ class TwitterConnection < YouVersion::Connection::Base
            }.to_json
   end
 
-  def find_friends
+  def find_friends(opts = {})
+    opts = {api_version: "2.5", connection_type: "tw"}.merge(opts)
     twit = Grackle::Client.new(auth: {consumer_key: data[:key], consumer_secret: data[:secret], token: data[:oauth_token], token_secret: data[:oauth_token_secret], type: :oauth})
     response = twit.friends.ids.json? user_id: self.data[:user_id], cursor: -1
-    friends = response.ids
-    # Waiting for API method to be available to find friends
+    opts[:connection_user_ids] = response.ids
+    response = YvApi.post('users/find_connection_friends', opts)
+    response.map { |u| User.new(u) }
   end
-
 
   def delete
-
+    result = YvApi.post("users/delete_connection", connection_type: "tw", auth: auth)
+    return result.twitter.nil?
   end
+
 
 
   

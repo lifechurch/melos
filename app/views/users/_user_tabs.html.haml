@@ -3,7 +3,7 @@
     %a{href: user_path(@user)}
       %span= t('users.recent activity')
   %li{class: ("highlighted" if selected == :friends)}
-    %a{href: user_friends_path(@user)}
+    %a{href: user_followers_path(@user)}
       %span= t('friends')
   %li{class: ("highlighted" if selected == :notes)}
     %a{href: user_notes_path(@user)}

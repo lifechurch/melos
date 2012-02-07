@@ -3,8 +3,8 @@
     =t("youversion")
   %nav
     %ul
-      %li
-        - if current_auth
+      - if current_auth
+        %li
           %a#header_profile_trigger{:href => '#'}
             %span
               %img{:src => current_avatar}
@@ -19,15 +19,18 @@
             %li
               %a{:href => sign_out_path}
                 =t("sign out")
-        - else
+        %li
+          %a{:href => connections_path}
+            %span
+              =t("find friends")
+      - else
+        %li
           %p= link_to t("sign in"), sign_in_path, :class=> "sign_in"
+        %li
+          %p= link_to t("sign up"), sign_up_path, :class=> "sign_in"
 
 
 
-      %li
-        %a{:href => connections_path}
-          %span
-            =t("find friends")
   %form#header_search_form
     %input#header_search_input{:type => 'search', :placeholder => t("search placeholder")}
     %input#header_search_button{:type => 'submit', :value => t("search")}

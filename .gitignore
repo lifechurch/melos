@@ -8,3 +8,4 @@ bin/*
 *.swo
 *~
 /.sass-cache/
+public/stylesheets/application.css
