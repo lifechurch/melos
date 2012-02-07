@@ -1,4 +1,6 @@
 %article
+  %h1= t('register')
+  %p= t('users.facebook sign up success')
   = form_for :user, url: facebook_sign_up_path do |f|
     - if @user.errors.any?
       .form_errors

@@ -16,6 +16,7 @@ common: &common
   facebook_secret: "1a8bf87913629f4162b6c91e5fe943a2"
   twitter_key: "KobF6Lt0zWDFBDxZgZyg"
   twitter_secret: "GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs"
+  avatar_path: "http://avatars.youversion.com/"
 
 development:
   <<: *common

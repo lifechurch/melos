@@ -15,7 +15,10 @@ YouversionWeb::Application.routes.draw do
     match 'notes' => 'users#notes', as: 'notes'
     match 'bookmarks' => 'users#bookmarks', as: 'bookmarks'
     match 'likes' => 'users#likes', as: 'likes'
-    match 'friends' => 'users#following', as: 'friends'
+    match 'following' => 'users#following', as: 'following'
+    match 'followers' => 'users#followers', as: 'followers'
+    match 'follow' => 'users#follow', as: 'follow'
+    match 'unfollow' => 'users#unfollow', as: 'unfollow'
     resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
   resources 'highlights', only: [:create]
@@ -61,6 +64,7 @@ YouversionWeb::Application.routes.draw do
   match 'auth/:provider/connect'  => 'auth#connect', :as => 'auth_connect'
   match 'connections/:provider/new' => 'connections#new', :as => 'new_connection'
   match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
+  delete 'connections/:provider/delete' => 'connections#destroy', as: 'delete_connection'
 
   match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'

@@ -9,6 +9,9 @@
         = render "shared/widget_profile_settings"
         = render "shared/widget_user_badges" unless @user.badges.empty?
     = render(partial: "user_info", locals: {user: @user}) if @selected == :recent_activity
+    %article
+      %h1= t("my #{@selected.to_s}")
+      = content_for?(:user_main) ? yield(:user_main) : yield
   - else
     - # I'm looking at someone else, show their info and stuff
     - unless content_for?(:sidebar)
@@ -17,8 +20,7 @@
         = render "shared/widget_user_badges" unless @user.badges.empty?
     = render(partial: "user_info", locals: {user: @user})
     = render partial: "user_tabs", locals: {selected: @selected}
-  %article
-    %h1= t("my #{@selected.to_s}")
-    = content_for?(:user_main) ? yield(:user_main) : yield
+    %article
+      = content_for?(:user_main) ? yield(:user_main) : yield
 
 = render template: 'layouts/application'

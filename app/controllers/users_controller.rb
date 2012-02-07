@@ -63,32 +63,53 @@ class UsersController < ApplicationController
   end
 
   def new_facebook
-    flash.now[:notice] = t('users.facebook sign up success')
     facebook_auth = JSON.parse cookies.signed[:facebook_auth]
+    puts "=== facebook auth is #{facebook_auth}"
     @user = User.new
     @user.email = facebook_auth["info"]["email"]
     @user.verified = true
+    render action: "new_facebook", layout: "application"
   end
 
   def create_facebook
     facebook_auth = JSON.parse cookies.signed[:facebook_auth]
+    puts "=== facebook auth is #{facebook_auth}"
     @user = User.new(params[:user])
     @user.email = facebook_auth["info"]["email"]
     @user.verified = true
+    puts "=== @user is #{@user}"
+    puts "=== I have these params: #{params}"
     if @user.save
       # Get the real thing
-      user = User.authenticate(params[:username], params[:password])
+      user = User.authenticate(params[:user][:username], params[:user][:password])
+      puts "=== user is now #{user}"
       cookies.permanent.signed[:a] = user.id
+
       cookies.permanent.signed[:b] = user.username
-      cookies.permanent.signed[:c] = params[:password]
+      cookies.permanent.signed[:c] = params[:user][:password]
       cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+
+      # Create facebook connection
+      #
+      info = facebook_auth.symbolize_keys
+      info[:auth] = Hashie::Mash.new(user_id: user.id, username: user.username, password: params[:user][:password])
+      connection = FacebookConnection.new(info)
+      result = connection.save
+      puts "=== connection save result was #{result}"
+
       redirect_to cookies[:sign_up_redirect] ||= sign_up_success_path(show: "facebook")
     else
-      render action: "new_facebook"
+      render action: "new_facebook", layout: "application"
     end
   end
 
   def sign_up_success
+    puts "### params show is #{params[:show]}"
+    @show = (params[:show] || "facebook").to_s
+    puts "=== @show is NOW #{@show} #{@show.class}"
+    puts "!@$ following username list is #{current_user.following_user_id_list}"
+    @users = @user.connections[@show].find_friends if @user.connections[@show]
+    render action: "sign_up_success", layout: "application"
     
   end
 
@@ -172,7 +193,12 @@ class UsersController < ApplicationController
   end
 
   def connections
+    params[:page] ||= 1
     @selected = :connections
+    @show = params[:show] ||= "twitter"
+    if @user.connections[@show]
+      @users = @user.connections[@show].find_friends(page: params[:page])
+    end
   end
 
   def devices
@@ -194,6 +220,45 @@ class UsersController < ApplicationController
   def following
     @users = @user.following
     @selected = :friends
+    @really_selected = :following
+    if @me
+      @empty_message = t('no following found self', link: connections_path)
+    else
+      @empty_message = t('no following found other', username: @username)
+    end
+    render action: "friends"
+  end
+
+  def followers
+    @users = @user.followers
+    @selected = :friends
+    @really_selected = :followers
+    if @me
+      @empty_message = t('no followers found self', link: connections_path)
+    else
+      @empty_message = t('no followers found other', username: @user.username)
+    end
+    render action: "friends"
+  end
+
+  # Friends, etc
+  def follow
+    puts "!@#in"
+    if @user.follow
+      redirect_to(:back, notice: t('you are now following', username: @user.username))
+    else
+      redirect_to(:back, error: t('error following user'))
+    end
+  end
+
+  def unfollow
+    puts "!@$ in"
+    if @user.unfollow
+      redirect_to(:back, notice: t('you are no longer following', username: @user.username)) 
+    else
+      redirect_to(:back, error: t('error unfollowing user'))
+    end
+
   end
   
 private  

@@ -47,6 +47,10 @@ class User < YouVersion::Resource
     "#{first_name} #{last_name}"
   end
 
+  def user_avatar_url
+    attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
+  end
+
   def to_param
     self.username
   end
@@ -224,19 +228,36 @@ class User < YouVersion::Resource
   end
 
   def connections
-    connections = []
-    connections << TwitterConnection.new(data: self.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.twitter
-    connections << FacebookConnection.new(data: self.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.facebook
+    connections = {}
+    connections["twitter"] = TwitterConnection.new(data: self.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.twitter
+    connections["facebook"] = FacebookConnection.new(data: self.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.facebook
     connections
+  end
+
+  def follow(opts = {})
+    opts = {id: self.id, auth: self.auth}.merge(opts)
+    response = YvApi.post("users/follow", opts)
+    return true
+  end
+
+
+  def unfollow(opts = {})
+    opts = {id: self.id, auth: self.auth}.merge(opts)
+    response = YvApi.post("users/unfollow", opts)
+    return true
   end
 
   def following
     response = YvApi.get("users/following", id: self.id) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      self.errors[:base] << errors
-      return false
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        new_errors = errors.map { |e| e["error"] }
+        self.errors[:base] << errors
+        return false
+      end
     end
-    if response
+    unless response === false
       followings = ResourceList.new
       followings.total = response.total
       response.users.each { |u| followings << User.new(u) }
@@ -245,14 +266,52 @@ class User < YouVersion::Resource
     end
   end
 
-  def following_username_list
+  def following_user_id_list
     @following_id_list ||= all_following
   end
 
   def all_following
-    response = YvApi.get("users/all_following", id: self.id)
+    response = YvApi.get("users/all_following", id: self.id) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
   end
   
+  def followers
+    response = YvApi.get("users/followers", id: self.id) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        new_errors = errors.map { |e| e["error"] }
+        self.errors[:base] << errors
+        return false
+      end
+    end
+    unless response === false
+      fl = ResourceList.new
+      fl.total = response.total
+      response.users.each { |u| fl << User.new(u) }
+      fl
+    end
+  end
+
+  def follower_user_id_list
+    @follower_id_list ||= all_followers
+  end
+
+  def all_followers
+    response = YvApi.get("users/all_followers", id: self.id) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+  end
+
   def subscriptions(opts = {})
     opts[:user_id] = id
     opts[:auth] ||= auth
@@ -320,22 +379,18 @@ class User < YouVersion::Resource
     compare.class == self.class && self.id == compare.id
   end
 
-  def followers
-    response = YvApi.get("users/followers", id: self.id) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      self.errors[:base] << errors
-      return false
-    end
-    if response
-      fl = ResourceList.new
-      fl.total = response.total
-      response.users.each { |u| fl << User.new(u) }
-      fl
-    end
-  end
 
   def utc_date_offset
     timezone ? ActiveSupport::TimeZone[timezone].utc_offset/86400.0 : 0.0
+  end
+
+  def generate_user_avatar_urls
+    sizes = ["24x24", "48x48", "128x128", "512x512"]
+    hash = {}
+    sizes.each do |s|
+      hash["px_#{s}"] = Cfg.avatar_path + Digest::MD5.hexdigest(self.username) + "_" + s + ".png" 
+    end
+    return Hashie::Mash.new(hash)
   end
 
 end

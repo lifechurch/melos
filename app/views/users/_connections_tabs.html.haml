@@ -1,0 +1,22 @@
+%ul.tabs
+  %li{class: ("highlighted" if @show == "twitter")}
+    %a{style: "text-align: center; padding-top: 16px;", href: url_for({show: "twitter"})}
+      %img{src: "/images/twitter_logo_50x50.jpg"}>
+      %br
+      = t('twitter')
+  %li{class: ("highlighted" if @show == "facebook")}
+    %a{style: "text-align: center; padding-top: 16px;", href: url_for({show: "facebook"})}
+      %img{src: "/images/facebook_logo_50x50.jpg"}>
+      %br
+      = t('facebook')
+#connection_info
+  - if @user.connections[@show]
+    %p
+      = t('connected as user', connection: t(@show), username: @user.connections[@show].data.screen_name)
+      %span.caution
+        - puts "--- hey, delete_connection_path(@show.to_sym) is #{delete_connection_path(@show.to_sym)}"
+        %a{:href => delete_connection_path(@show.to_sym), "data-confirm" => "Are you sure?", "data-method" => "delete", :rel => "nofollow"}= t('remove connection')
+    %p= t('connection users', connection: t(@show))
+    = render partial: "list"
+  - else
+    = link_to t('connect to', connection: t(@show)), new_connection_path(@show.to_s, redirect: connections_path(show: @show.to_s))

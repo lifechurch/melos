@@ -27,12 +27,33 @@ br + textarea
   position: fixed
   cursor: pointer
 
-.flash_error
+.flash_error, .form_errors
   background:
     color: #f4cccc
     image: url(../images/flash_error.png)
   border-color: #e89494
   color: #aa0303
+
+.form_errors
+  background:
+    repeat: no-repeat
+    position: right bottom
+  border: 1px solid
+  font-size: 16px
+  opacity: 0.95
+  text-shadow: #fff 0 1px 0
+  padding: 10px 20px
+  box-sizing: border-box
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  margin-bottom: 20px
+  ul
+    margin-bottom: 0
+    list-style: none
+    padding: 0
+    li
+      background-image: none !important
+      padding-left: 0 !important
 
 .flash_notice
   background:

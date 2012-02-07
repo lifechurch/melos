@@ -1,4 +1,4 @@
-- if resource_list.has_pages
+- if resource_list.is_a?(ResourceList)= && resource_list.has_pages
   %ul.pagination
     - unless @page.to_i == 1
       %li.pagination_previous
