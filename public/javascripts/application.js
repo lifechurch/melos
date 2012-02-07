@@ -25,6 +25,7 @@ function deleteCookie(name) {
 
 ZeroClipboard.setMoviePath('/javascripts/ZeroClipboard.swf');
 var clip = new ZeroClipboard.Client();
+clip.setHandCursor(true);
 var text_to_send = "";
 
 
@@ -436,10 +437,12 @@ var YV = (function($, window, document, undefined) {
 
           if (dd.is(':hidden')) {
             dd.slideDown('default', function() {
-                // Animation complete.
+                // Animation complete, items visible
                 if (dt.attr('id') == "link"){
+                  if(!dd.find('#ZeroClipboardMovie_1').length){
                   clip.glue('copy_link', 'copy_link_container');
                   console.log('clip glued to copy_link_container');
+                  }
                 }
               }).siblings('dd').slideUp();
           }
@@ -728,7 +731,11 @@ var YV = (function($, window, document, undefined) {
         var hide = 'hide';
         var verse_numbers = [];
         var verse_ranges = [];
-        clip.setHandCursor(true);
+
+        
+        if (IE8){
+          copy_button.hide();
+        }
         
         clip.addEventListener('load', function(client) {
                 console.log( "movie is loaded" );
@@ -736,6 +743,9 @@ var YV = (function($, window, document, undefined) {
                                 
         clip.addEventListener('complete', function(client, text) {
                 console.log("Copied text to clipboard: " + text);
+                var temp = copy_button.html();
+                copy_button.html(copy_button.data('confirm-text'));
+                setTimeout(function() {copy_button.html(temp);}, 2000);
          } );
 
          clip.addEventListener( 'mouseOver', function(client) {

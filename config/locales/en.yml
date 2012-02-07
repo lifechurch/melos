@@ -3,6 +3,7 @@ en:
   link:                                         "Link"
   created ago:                                  "Created %{time_ago} ago"
   copy:                                         "Copy"
+  copy confirmed:                               "Copied!"
   new note:                                     "New Note"
   twitter:                                      "Twitter"
   facebook:                                     "Facebook"
