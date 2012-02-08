@@ -31,6 +31,6 @@
 
 
 
-  %form#header_search_form
-    %input#header_search_input{:type => 'search', :placeholder => t("search placeholder")}
+  %form#header_search_form{:action => search_path, method: "GET"}
+    %input#header_search_input{:type => 'search', :name => "q", :placeholder => t("search placeholder")}
     %input#header_search_button{:type => 'submit', :value => t("search")}

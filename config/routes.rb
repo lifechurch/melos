@@ -9,6 +9,8 @@ YouversionWeb::Application.routes.draw do
 
   resources 'likes', :only => [:index]
   match 'notes/:id/like' => 'notes#like',    :as => 'like', :via => :put
+  
+  match 'search' => 'search#show'
 
   # Users
   resources 'users', :except => [:new, :create] do
@@ -65,7 +67,7 @@ YouversionWeb::Application.routes.draw do
   match 'connections/:provider/new' => 'connections#new', :as => 'new_connection'
   match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
   delete 'connections/:provider/delete' => 'connections#destroy', as: 'delete_connection'
-
+  
   match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'
   match 'mobile' => 'mobile#index'

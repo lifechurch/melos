@@ -1,4 +1,3 @@
-
 %li{id: list_item.id, class: ("li_note" if display == :icon)}
   %h5
     %a{href: note_path(list_item.id), class: ("highlight" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title

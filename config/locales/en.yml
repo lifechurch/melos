@@ -1,6 +1,7 @@
 ---
 en:
   link:                                         "Link"
+  site search:                                  "YouVersion Search"
   created ago:                                  "Created %{time_ago} ago"
   copy:                                         "Copy"
   copy confirmed:                               "Copied!"
@@ -312,3 +313,9 @@ en:
   highlights:
     creation error:                             "Sorry, couldn't highlight."
     delete error:                               "Sorry, couldn't remove highlighting."
+  searching:
+    bible:                                      "Bible"
+    plans:                                      "Reading Plans"
+    users:                                      "Users"
+    notes:                                      "Notes"
+    total results:                              "About %{total} results"
