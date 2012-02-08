@@ -1,0 +1,25 @@
+- @title = @query.query
+- @subtitle = t("site search")
+- @sidebar = false
+
+%article
+  %h1= t("search")
+  .split_pane{:style => "padding-top:15px"}
+    .split_pane_sidebar
+      %dl.categories_menu
+        %dt
+          %div{style: "text-align: center; margin-bottom: 5px"}
+            = t('searching.total results', total: number_to_human(@query.total_results, :precision => 2).downcase!)
+        - Search.categories.each do |category|
+          %dd{class: @category == category ? "highlighted" : ""}
+            %a{href: search_path(category: category, q: params[:q])}
+              = t("searching.#{category}") 
+              = "(#{@query.results[category].total || 0})"
+    .split_pane_content
+      - if @query.results[@category].items?
+        %ul.big_list
+          - @query.results[@category].items.each do |item|
+            = render partial: "#{@category}_list_item", locals: {item: item}
+        = render "shared/pagination", resource_list: @query.results[@category]
+      - else
+        .none{align: "center"}= "No matching results"
