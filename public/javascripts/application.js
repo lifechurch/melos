@@ -1008,6 +1008,22 @@ var YV = (function($, window, document, undefined) {
       },
       // YV.init.user_settings
       user_settings: function() {
+        var radio = $('.radio_user_setting');
+        var article = $('#main article');
+
+        if (!radio.length) {
+          return;
+        }
+
+        radio.click(function() {
+          var el = $(this);
+          var font = el.attr('data-setting-font');
+          var size = el.attr('data-setting-size');
+
+          font && article.attr('data-setting-font', font);
+          size && article.attr('data-setting-size', size);
+        });
+      },
       // YV.init.parallel_notes
       parallel_notes: function() {
         $('.alternate_select').on('change', function(){
