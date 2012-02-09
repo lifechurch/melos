@@ -318,4 +318,6 @@ en:
     plans:                                      "Reading Plans"
     users:                                      "Users"
     notes:                                      "Notes"
-    total results:                              "About %{total} results"
+    total results:                              "About %{total} results for %{query}"
+    suggestion html:                            "Did you mean %{suggestion_link}?"
+    all versions:                               "Any %{language_name} Version"

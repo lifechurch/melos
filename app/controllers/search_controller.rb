@@ -1,8 +1,9 @@
 class SearchController < ApplicationController
 
   def show
-    @query = Search.new(params[:q], page: params[:page])
-    @category = (params[:category] || @query.recommended_category).to_sym
+    #if no version specified, use the default
+    params[:version] ||= current_version
+    @query = Search.new(params[:q], page: params[:page], category: params[:category], version: params[:version], locale: locale)
   end
   
 end
