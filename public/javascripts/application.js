@@ -553,7 +553,6 @@ var YV = (function($, window, document, undefined) {
 
           if (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.colorpicker').length && !el.closest('.dynamic_menu').length)) {
             hide_all_menus();
-            ev.preventDefault();
           }
         }).keydown(function(ev) {
           if (ev.keyCode === KEY_ESC) {
