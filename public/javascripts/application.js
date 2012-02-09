@@ -550,17 +550,9 @@ var YV = (function($, window, document, undefined) {
 
         $(document).mousedown(function(ev) {
           var el = $(ev.target);
-          console.log("has close class: " + el.hasClass('close'));
-          console.log("el.closest('.dynamic_menu_trigger').length: " + el.closest('.dynamic_menu_trigger').length);
-          console.log("el.closest('.colorpicker').length: " + el.closest('.colorpicker').length);
-          console.log("el.closest('.dynamic_menu').length: " + el.closest('.dynamic_menu').length);
-          console.log("hide all menus: " + (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.colorpicker').length && !el.closest('.dynamic_menu').length)));
+
           if (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.colorpicker').length && !el.closest('.dynamic_menu').length)) {
             hide_all_menus();
-            
-            if(el.attr('id') != "header_search_input" && ){
-            ev.preventDefault();
-            }
           }
         }).keydown(function(ev) {
           if (ev.keyCode === KEY_ESC) {
