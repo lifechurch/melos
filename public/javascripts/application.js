@@ -1090,6 +1090,7 @@ var YV = (function($, window, document, undefined) {
           return false;
         }
         
+        console.log("about to try...");
         if (highlights.length) {
           console.log('in primary');
           for (var h = 0; h < highlights.length; h++) {
