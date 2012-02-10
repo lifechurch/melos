@@ -128,10 +128,15 @@ class UsersController < ApplicationController
   end
 
   def bookmarks
-    @bookmarks = @user.bookmarks(page: params[:page])
 
     @selected = :bookmarks
     if @me
+      if params[:label]
+        puts "!@#!@# Hey, looking for a label by the name of #{params[:label]}"
+        @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
+      else
+        @bookmarks = @user.bookmarks(page: @page)
+      end
       @labels = Bookmark.labels_for_user(@user.id)if Bookmark.labels_for_user(@user.id)
       render "bookmarks/index", layout: "application"
     end

@@ -11,12 +11,15 @@
   .bookmark_edit.float_right
     %p
       - if @me
-        = link_to('edit', edit_bookmark_path(list_item.id))
-        .caution= link_to('delete', bookmark_path(list_item.id), :confirm => t("bookmarks.confirm delete"), :method => :delete) 
+        %span= link_to('edit', edit_bookmark_path(list_item.id))
+        &mdash;
+        %span.caution= link_to('delete', bookmark_path(list_item.id), :confirm => t("bookmarks.confirm delete"), :method => :delete) 
+        &mdash;
       %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
   - if list_item.labels
     %p.small
-      - list_item.labels.split(",").each do |l|
+      %strong= t('bookmarks.labels label')
+      - list_item.labels.split(", ").each do |l|
         - #TODO: split labels in model
-        %a{href: "#"}= l
+        %a{href: user_bookmarks_path(@user, label: l.chomp)}= l
         - # TODO: Label link

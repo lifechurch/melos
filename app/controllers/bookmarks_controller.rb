@@ -3,8 +3,10 @@ class BookmarksController < ApplicationController
 #  before_filter :set_sidebar, :only => [:index]
 
   def index
+      puts "!@#!@# Hey, in index"
     @user = User.find(params[:user_id], auth: current_auth) # TODO : can't wait to port this to a Resource
     if params[:label]
+      puts "!@#!@# Hey, looking for a label by the name of #{params[:label]}"
       @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
     else
       @bookmarks = @user.bookmarks(page: @page)
