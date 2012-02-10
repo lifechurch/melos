@@ -10,17 +10,19 @@ class ApplicationController < ActionController::Base
 
   # Set locale
   def set_locale
-    parsed_locale = params[:locale]
-    if parsed_locale == nil
-      cookies[:locale].blank? ? visitor_locale = I18n.default_locale : visitor_locale = cookies[:locale].to_sym
-      cookies.permanent[:locale] = visitor_locale
-      return redirect_to params.merge!(locale: visitor_locale) unless visitor_locale == :en
-    else
-      visitor_locale = I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale.to_sym : :en
-      cookies.permanent[:locale] = visitor_locale
-      return redirect_to params.merge!(locale: "") if visitor_locale == :en
-    end
-    I18n.locale = visitor_locale
+    params[:locale] ||= :en
+    I18n.locale = params[:locale]
+    # TODO: Take all this out if we decide we like how locales work
+    # if parsed_locale == nil
+    #   cookies[:locale].blank? ? visitor_locale = I18n.default_locale : visitor_locale = cookies[:locale].to_sym
+    #   cookies.permanent[:locale] = visitor_locale
+    #   return redirect_to params.merge!(locale: visitor_locale) unless visitor_locale == :en
+    # else
+    #   visitor_locale = I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale.to_sym : :en
+    #   cookies.permanent[:locale] = visitor_locale
+    #   return redirect_to params.merge!(locale: "") if visitor_locale == :en
+    # end
+    # I18n.locale = visitor_locale
   end
 
   # Manually throw a 404

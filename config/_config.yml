@@ -20,7 +20,7 @@ common: &common
 
 development:
   <<: *common
-  api_root: api.yvdev.com
+  api_root: api.youversion.com
   api_referer: web-dev.youversion.com
   api_version: "2.4"
   memcache_server: localhost

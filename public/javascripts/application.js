@@ -1091,7 +1091,7 @@ var YV = (function($, window, document, undefined) {
         }
         
         console.log("about to try...");
-        if (highlights.length) {
+        if (highlights && highlights.length) {
           console.log('in primary');
           for (var h = 0; h < highlights.length; h++) {
             var hi = highlights[h];
@@ -1108,7 +1108,7 @@ var YV = (function($, window, document, undefined) {
             }
           }
         }
-        if (alt_highlights.length) {
+        if (alt_highlights && alt_highlights.length) {
           console.log('in secondary');
           for (var h = 0; h < alt_highlights.length; h++) {
             var hi = alt_highlights[h];
@@ -1142,6 +1142,12 @@ var YV = (function($, window, document, undefined) {
         });
 
         audio_menu.hide();
+      },
+      // YV.init.language
+      language: function() {
+        $("#choose_language").change(function() {
+          document.location.href = $(this).val();
+        });
       },
       // YV.init.fullscreen
       fullscreen: function() {
