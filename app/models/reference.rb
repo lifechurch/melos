@@ -59,6 +59,26 @@ class Reference
     end
   end
 
+  def verses_string
+    # for reader: turns 3,4,8-12 to 3,4,8,9,10,11,12
+    case @ref[:verse]
+    when Fixnum
+      @verses = @ref[:verse].to_s
+    when Range
+      @verses = @ref[:verse].to_a.join(",")
+    when String
+      @verses = @ref[:verse].split(",").map do |r|
+        case r
+        when /^[0-9]+$/
+          r
+        when /^[0-9-]+$/
+          ((r.split("-")[0])..(r.split("-")[1])).to_a.join(",")
+        end
+      end.flatten.join(",")
+      @verses
+    end
+  end
+
   def version_string
     @version_string ||= @ref[:version].upcase.match(/\A[^-]*/)
   end

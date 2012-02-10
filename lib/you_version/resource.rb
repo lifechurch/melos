@@ -102,6 +102,8 @@ module YouVersion
       end
 
       def all(params = {})
+        puts "!@#!@#!@#"
+        puts params
         response = YvApi.get(list_path, params) do |errors|
           if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
             # Then it's the notes thing where you're auth'ed as a different user
@@ -126,6 +128,8 @@ module YouVersion
         if response.respond_to? api_path_prefix.to_sym
           response.send(api_path_prefix).each {|data| list << new(data.merge(:auth => params[:auth]))}
         else
+          puts "!@#!@#"
+          puts response
           response.each {|data| list << new(data.merge(:auth => params[:auth]))}
         end
         list

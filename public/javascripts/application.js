@@ -719,7 +719,8 @@ var YV = (function($, window, document, undefined) {
         var book_api = article.attr('data-book-api');
         var chapter = article.attr('data-chapter');
         var version = article.attr('data-version');
-        var highlights = $('article').data('highlights');
+        var highlights = $('#version_primary').data('highlights');
+        var alt_highlights = $('#version_secondary').data('highlights');
         var flag = 'selected';
         var hide = 'hide';
         var verse_numbers = [];
@@ -1046,7 +1047,8 @@ var YV = (function($, window, document, undefined) {
       },
       // YV.init.highlight_references
       highlight_references: function() {
-        var highlights = $('article').data('highlights');
+        var highlights = $('#version_primary').data('highlights');
+        var alt_highlights = $('#version_secondary').data('highlights');
         var book = $('article').data('book-api');
         var chapter = $('article').data('chapter');
         
@@ -1088,18 +1090,37 @@ var YV = (function($, window, document, undefined) {
           return false;
         }
         
-        if (highlights) {
+        if (highlights.length) {
+          console.log('in primary');
           for (var h = 0; h < highlights.length; h++) {
             var hi = highlights[h];
+            console.log(highlights[h]);
             if ((hi.verse) instanceof Array) {
               //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
               for (var hh = 0; hh < hi.verse.length; hh++) {
-                $("span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
-                if (is_dark(hi.color)) {$("span." + book + "_" + chapter + "_" + hi.verse[hh]).addClass("dark_highlight");}
+                $("#version_primary span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
+                if (is_dark(hi.color)) {$("#version_primary span." + book + "_" + chapter + "_" + hi.verse[hh]).addClass("dark_highlight");}
               }
             } else {
-              $("span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
-              if (is_dark(hi.color)) {$("span." + book + "_" + chapter + "_" + hi.verse).addClass("dark_highlight");}
+              $("#version_primary span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
+              if (is_dark(hi.color)) {$("#version_primary span." + book + "_" + chapter + "_" + hi.verse).addClass("dark_highlight");}
+            }
+          }
+        }
+        if (alt_highlights.length) {
+          console.log('in secondary');
+          for (var h = 0; h < alt_highlights.length; h++) {
+            var hi = alt_highlights[h];
+            console.log(alt_highlights[h]);
+            if ((hi.verse) instanceof Array) {
+              //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
+              for (var hh = 0; hh < hi.verse.length; hh++) {
+                $("#version_secondary span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
+                if (is_dark(hi.color)) {$("#version_secondary span." + book + "_" + chapter + "_" + hi.verse[hh]).addClass("dark_highlight");}
+              }
+            } else {
+              $("#version_secondary span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
+              if (is_dark(hi.color)) {$("#version_secondary span." + book + "_" + chapter + "_" + hi.verse).addClass("dark_highlight");}
             }
           }
         }

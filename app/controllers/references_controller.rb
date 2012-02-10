@@ -1,10 +1,12 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
   def show
+    # Set HTML classes for full screen/parallel
     @html_classes = []
     @html_classes << "full_screen" if cookies[:full_screen]
     @html_classes << ["full_screen", "parallel_mode"] if cookies[:parallel_mode]
     
+    # Redirect if it's anything other than book.chapter.version, ignoring verses for now
     if !params[:reference]
       flash.keep
       return redirect_to bible_path(last_read || Reference.new(book: "gen", chapter: "1", version: current_version))
@@ -17,35 +19,45 @@ class ReferencesController < ApplicationController
         return redirect_to bible_path(Reference.new(ref_hash)) 
       end
     end
-    case ref_hash[:verse]
-    when Fixnum
-      @verses = ref_hash[:verse].to_s
-    when Range
-      @verses = ref_hash[:verse].to_a.join(",")
-    when String
-      @verses = ref_hash[:verse].split(",").map do |r|
-        case r
-        when /^[0-9]+$/
-          r
-        when /^[0-9-]+$/
-          ((r.split("-")[0])..(r.split("-")[1])).to_a.join(",")
-        end
-      end.flatten.join(",")
-      @verses
-    end
+
+    # Hang on to verses to select them in the reader
+    @verses = Reference.new(ref_hash).verses_string
+
+    # Set the canonical reference for the page to the entire chapter
     @reference = Reference.new(ref_hash.except(:verse))
     @version = Version.find(@reference[:version])
+
+    # Set cookies to save this as the user's current version and reference
     set_current_version @version
-    @alt_reference = (alt_version == current_version) ? @reference : Reference.new(@reference.raw_hash.except(:version), alt_version)
-    @single_verse = Reference.new(ref_hash) if ref_hash[:verse].is_a?(Fixnum)
     set_last_read @reference
+
+    # Set up parallel mode
+    @alt_reference = (alt_version == current_version) ? @reference : Reference.new(@reference.raw_hash.except(:version), alt_version)
+
+    # If the reference was a single verse, set that up so we can display the modal
+    @single_verse = Reference.new(ref_hash) if ref_hash[:verse].is_a?(Fixnum)
+
+    # Set up a fake reference for the fist 5 verses since the API won't let us
+    # search the entire chapter for notes
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
-    @note = Note.new
     @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 10.minutes)
-    @highlights = current_user ? Highlight.for_reference(@reference, auth: current_auth) : []
-    @highlight_colors = current_user ? current_user.highlight_colors : User.highlight_colors
-    @bookmarks = current_user ? current_user.bookmarks : []
+
+    # Create an empty note for the note sidebar widget
+    @note = Note.new
+
+    # Set up user specific stuff
+    if current_user
+      @highlights = Highlight.for_reference(@reference, auth: current_auth)
+      @alt_highlights = Highlight.for_reference(@alt_reference, auth: current_auth)
+      @highlight_colors = current_user.highlight_colors
+      @bookmarks = current_user.bookmarks
+    else
+      @highlights = []
+      @alt_highlights = []
+      @highlight_colors = User.highlight_colors
+      @bookmarks = []
+    end
   end
 
   private
