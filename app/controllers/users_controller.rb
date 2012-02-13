@@ -229,7 +229,7 @@ class UsersController < ApplicationController
     if @me
       @empty_message = t('no following found self', link: connections_path)
     else
-      @empty_message = t('no following found other', username: @username)
+      @empty_message = t('no following found other', username: @user.username)
     end
     render action: "friends"
   end

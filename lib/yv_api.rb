@@ -19,7 +19,7 @@ class YvApi
     end
     # If we should cache, try pulling from cache first
     if cache_length = opts[:cache_for]
-      cache_key = [path, opts.sort].flatten.join("_")
+      cache_key = [path, opts.except(:cache_for).sort].flatten.join("_")
       Rails.logger.info "*** cache_key is #{cache_key}"
       get_start = Time.now.to_f
       response = Rails.cache.fetch cache_key, expires_in: cache_length do
