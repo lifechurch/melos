@@ -16,7 +16,7 @@ Once you've done that, you need to add a few lines to a `~/.rvmrc` file. Just do
 
 	echo -e "rvm_install_on_use_flag=1\nrvm_project_rvmrc=1\n" >> ~/.rvmrc
 
-Now, change into your `youversion-web` directory, and you should notice a shell script that runs to make sure you have the right Ruby and gems installed. This is a superset of what Bundler does, so you'll still want to run that as part of your normal workflow too.
+Now, change into your `youversion-web` directory, and you should notice a shell script that runs to make sure you have the right Ruby and gems installed. This is a superset of what Bundler does, so you'll still want to run that as part of your normal workflow too. If you see errors here, you likely don't have a c compiler. Install [Xcode](https://developer.apple.com/xcode/) or comparable and switch out and back into the `youversion-web` directory.
 
 ### Installing gems, etc ###
 
