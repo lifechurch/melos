@@ -36,6 +36,6 @@ You can use `guard` to automatically run Cucumber and Rspec tests whenever relev
 
 For more cool stuff with Guard, check out [Guard on Github](https://github.com/guard/guard).
 
-### VCR ###
+### VCR ### (not really using this as of 1/1/2012)
 
 To minimize test time, all external API requests are performed once to obtain a response, then cached for future tests. The responses are saved in `fixtures/vcr`. To reset your API cache, simply delete all the files in this folder.
