@@ -3,7 +3,6 @@
 - else
   %ul.big_list
     - @users.each do |u|
-      = puts "!@# this asdf user id is #{u.id}"
       %li
         - if u.user_avatar_url
           %p.float_left.gutter_right_half
@@ -13,7 +12,6 @@
           - if u.name
             %br
             %b= u.username
-        = puts "!@# list is #{current_user.following_user_id_list}, this one is #{u.id}, classes are #{current_user.following_user_id_list.first.class} and #{u.id.class}"
         %div.float_right{style: "text-align: right;"}
           - if current_user && current_user.following_user_id_list.include?(u.id.to_i)
             = puts "true"
