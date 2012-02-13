@@ -11,6 +11,8 @@ YouversionWeb::Application.routes.draw do
   match 'notes/:id/like' => 'notes#like',    :as => 'like', :via => :put
   
   match 'search' => 'search#show'
+  match 'privacy' => 'users#privacy'
+  match 'terms' => 'users#terms'
 
   # Users
   resources 'users', :except => [:new, :create] do
