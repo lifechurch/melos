@@ -1,11 +1,6 @@
 - content_for :sidebar do
-  .widget
-    %header
-      %span
-        =t("registration.benefits title")
-    %ul.widget_menu
-      %li
-        %p= t("registration.benefits blurb")
+  = render "shared/widget_sign_in"
+  = render "shared/widget_account_benefits"
 
 = form_for :user, url: sign_up_path do |f|
   - if @user.errors.any?
