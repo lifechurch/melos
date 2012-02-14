@@ -65,7 +65,7 @@
               %div
                 %h4{style: "margin-bottom: 12px"}= link_to(plan.name, plan)
                 %div{style: "margin-bottom: 10px; line-height: 14px"}= plan.formatted_length
-                %p.small= plan.about
+                %p= plan.about
         = render "shared/pagination", resource_list: @plans
       -else
         .none{align: "center"}= t("plans.none found")

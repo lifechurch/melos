@@ -1,11 +1,6 @@
 - content_for :sidebar do
-  .widget
-    %header
-      %span
-        =t("registration.benefits title")
-    %ul.widget_menu
-      %li
-        %p= t("registration.benefits blurb")
+  = render "shared/widget_sign_in"
+  = render "shared/widget_account_benefits"
 
 = form_for :user, url: sign_up_path do |f|
   - if @user.errors.any?
@@ -28,6 +23,6 @@
     = f.password_field :password
   %p
     = f.check_box :agree
-    = f.label :agree, t("users.agreement")
+    = f.label :agree, t("users.agreement", terms_link: link_to(t("users.terms and conditions"), terms_url())).html_safe
   %p
     = f.submit t("users.register")

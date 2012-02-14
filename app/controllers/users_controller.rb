@@ -266,6 +266,14 @@ class UsersController < ApplicationController
 
   end
   
+  def privacy
+    render action: "privacy", layout: "application"
+  end
+  
+  def terms
+    render action: "terms", layout: "application"
+  end
+  
 private  
   def find_user
     user_id = params[:user_id] || params[:id]

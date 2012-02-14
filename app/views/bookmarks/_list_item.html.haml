@@ -17,7 +17,7 @@
         &mdash;
       %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
   - if list_item.labels
-    %p.small
+    %p
       %strong= t('bookmarks.labels label')
       - list_item.labels.split(", ").each do |l|
         - #TODO: split labels in model

@@ -2,7 +2,7 @@
   %p.float_left
     &copy;
     = Date.today.year
-    %a{:href => '#'}=t("lifechurch short url")
+    %a{:href => 'http://www.lifechurch.tv'}=t("lifechurch short url")
     %span.separator
       |
     %a{:href => '#'}=t("about")
@@ -11,10 +11,10 @@
     %a{:href => '#'}=t("jobs")
     %span.separator
       |
-    %a{:href => '#'}=t("privacy policy")
+    %a{:href => privacy_path}=t("privacy policy")
     %span.separator
       |
-    %a{:href => '#'}=t("terms")
+    %a{:href => terms_path}=t("terms")
     %span.separator
       |
     %a{:href => '#'}=t("press")

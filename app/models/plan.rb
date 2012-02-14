@@ -35,7 +35,7 @@ class Plan < YouVersion::Resource
   def self.find(id, opts = {}, &block)
     if id.is_a?(String) 
       #slug was passed, get id from slug with search, since API doesn't give a better way
-      lib_plan = search(id).find{|plan| plan.slug == id}
+      lib_plan = search(id).find{|plan| plan.slug.downcase == id.downcase}
       id = lib_plan.id unless lib_plan.nil?
     end
 
