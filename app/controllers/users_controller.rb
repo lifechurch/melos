@@ -64,7 +64,6 @@ class UsersController < ApplicationController
 
   def new_facebook
     facebook_auth = JSON.parse cookies.signed[:facebook_auth]
-    puts "=== facebook auth is #{facebook_auth}"
     @user = User.new
     @user.email = facebook_auth["info"]["email"]
     @user.verified = true
@@ -73,16 +72,12 @@ class UsersController < ApplicationController
 
   def create_facebook
     facebook_auth = JSON.parse cookies.signed[:facebook_auth]
-    puts "=== facebook auth is #{facebook_auth}"
     @user = User.new(params[:user])
     @user.email = facebook_auth["info"]["email"]
     @user.verified = true
-    puts "=== @user is #{@user}"
-    puts "=== I have these params: #{params}"
     if @user.save
       # Get the real thing
       user = User.authenticate(params[:user][:username], params[:user][:password])
-      puts "=== user is now #{user}"
       cookies.permanent.signed[:a] = user.id
 
       cookies.permanent.signed[:b] = user.username
@@ -95,7 +90,6 @@ class UsersController < ApplicationController
       info[:auth] = Hashie::Mash.new(user_id: user.id, username: user.username, password: params[:user][:password])
       connection = FacebookConnection.new(info)
       result = connection.save
-      puts "=== connection save result was #{result}"
 
       redirect_to cookies[:sign_up_redirect] ||= sign_up_success_path(show: "facebook")
     else
@@ -104,10 +98,7 @@ class UsersController < ApplicationController
   end
 
   def sign_up_success
-    puts "### params show is #{params[:show]}"
     @show = (params[:show] || "facebook").to_s
-    puts "=== @show is NOW #{@show} #{@show.class}"
-    puts "!@$ following username list is #{current_user.following_user_id_list}"
     @users = @user.connections[@show].find_friends if @user.connections[@show]
     render action: "sign_up_success", layout: "application"
     
@@ -132,7 +123,6 @@ class UsersController < ApplicationController
     @selected = :bookmarks
     if @me
       if params[:label]
-        puts "!@#!@# Hey, looking for a label by the name of #{params[:label]}"
         @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
       else
         @bookmarks = @user.bookmarks(page: @page)
@@ -248,7 +238,6 @@ class UsersController < ApplicationController
 
   # Friends, etc
   def follow
-    puts "!@#in"
     if @user.follow
       redirect_to(:back, notice: t('you are now following', username: @user.username))
     else
@@ -257,7 +246,6 @@ class UsersController < ApplicationController
   end
 
   def unfollow
-    puts "!@$ in"
     if @user.unfollow
       redirect_to(:back, notice: t('you are no longer following', username: @user.username)) 
     else
