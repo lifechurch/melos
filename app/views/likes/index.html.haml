@@ -15,13 +15,6 @@
         = link_to t("likes.all likes"), likes_path
       %dd
         = link_to t("likes.my likes"), user_likes_path(current_user)
-  - if @likes
-    %ul.big_list
-      - @likes.each do |like|
-        %li{id: like.note_id}
-          %h5= link_to like.note_title, note_path(like.note_id)
-          %p.mute.small.negative_gutter_top_half= link_to_references(like.note.references)
-          %p= like.note.content
-          %div{class: "status"}= like.note.user_status
-  - else
-    %div{class: "none"}= t("likes:none exist blurb")
+    = render partial: "list", collection: @likes, locals: {display: :icon}
+    = render "shared/pagination", resource_list: @likes
+

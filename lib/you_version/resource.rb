@@ -103,8 +103,6 @@ module YouVersion
       end
 
       def all(params = {})
-        puts "!@#!@#!@#"
-        puts params
         response = YvApi.get(list_path, params) do |errors|
           if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
             # Then it's the notes thing where you're auth'ed as a different user
@@ -128,7 +126,6 @@ module YouVersion
         # aaand sometimes it's not encapsulated with api_prefix
 
         if response.respond_to? api_path_prefix.to_sym
-          puts response
           response.send(api_path_prefix).each {|data| list << new(data.merge(:auth => params[:auth]))}
         else
           response.each {|data| list << new(data.merge(:auth => params[:auth]))}
