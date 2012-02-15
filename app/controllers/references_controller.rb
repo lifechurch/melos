@@ -70,7 +70,9 @@ class ReferencesController < ApplicationController
   
   protected
     def ref_not_found(ex)
-      @version = Version.find(params[:reference].to_osis_hash[:version])
+      osis_hash = params[:reference].to_osis_hash
+      @alt_reference = @reference = Reference.new(osis_hash.except(:version))
+      @version = Version.find(osis_hash[:version])
       render :invalid_ref
     end
 end

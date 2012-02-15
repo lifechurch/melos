@@ -1,10 +1,11 @@
-- @title = "#{@version} #{@reference.version_string}"
+- @title = "#{@reference.ref_string} #{@version.osis_human}"
+- @reader_menus = true
 
 #reader_header
   %header
     %ul.float_left
       %li.gutter_right_quarter
-        Invalid Chapter
+        = @reference.ref_string
       %li
         %a.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
           %span
@@ -18,9 +19,11 @@
 
 
 %article
-  %p This chapter does not exist in this version.
-  %button#menu_book_chapter_alt Pick a new chapter
-  
+  %div{style:"text-align: center; margin-top:70px"}
+    %h1 Oops
+    %p This chapter does not exist in this version.
+    %div.dynamic_menu_trigger.no_style{:href=> '#menu_book_chapter', style: "margin-left:70px"}
+      %button{style: "margin-left:-70px"} Pick a new chapter
 
 %footer
   %p

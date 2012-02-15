@@ -5,8 +5,8 @@ class VersionSelectorCell < Cell::Rails
   def display(opts ={})
     if opts[:reference]
       @reference = opts[:reference]
-      @version = Version.find(@reference[:version])
-      @alt_version = (!opts[:alt_referemce] || opts[:alt_referemce][:version] == @reference[:verson]) ? @version : Version.find(opts[:reference][:version]) #optimized for common case of no alt_version
+      @version = opts[:version] || Version.find(@reference[:version])
+      @alt_version = (!opts[:alt_reference] || opts[:alt_reference][:version] == @reference[:verson]) ? @version : Version.find(opts[:reference][:version]) #optimized for common case of no alt_version
     elsif opts[:version]
       @version = opts[:version]
       @alt_version = @version
