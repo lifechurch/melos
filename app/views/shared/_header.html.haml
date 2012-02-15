@@ -29,8 +29,11 @@
         %li
           %p= link_to t("sign up"), sign_up_path, :class=> "sign_in"
 
-
-
   %form#header_search_form{:action => search_path, method: "GET"}
     %input#header_search_input{:type => 'search', :name => "q", :placeholder => t("search placeholder")}
     %input#header_search_button{:type => 'submit', :value => t("search")}
+    - if params[:controller] == "search" 
+      -if params[:category]
+        %input{:type => 'hidden', :name => "category", :value => params[:category]}
+      -if params[:version]
+        %input{:type => 'hidden', :name => "version", :value => params[:version]}
