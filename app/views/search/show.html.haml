@@ -6,13 +6,13 @@
   %h1.float_left= @query.query
   - if @query.suggestion
     %span.float_left{style: "margin-left: 20px; margin-top: 13px; font-size: 12px"}
-      = "(#{t('searching.suggestion html', suggestion_link: (link_to @query.suggestion, search_path(q: @query.suggestion)))})".html_safe
+      = "(#{t('searching.suggestion html', suggestion_link: (link_to @query.suggestion, search_path(q: @query.suggestion, category: params[:category], version: params[:version])))})".html_safe
   .split_pane{:style => "padding-top:15px; clear: left"}
     .split_pane_sidebar
       %dl.categories_menu
         %dt
           %div{style: "text-align: center; margin-bottom: 5px"}
-            %em.mute{style: "margin-bottom: 10px; font-size: 12px; font-weight: normal"}= t('searching.total results', total: number_to_human(@query.total_results, :precision => 2).downcase!).html_safe
+            %em.mute{style: "margin-bottom: 10px; font-size: 12px; font-weight: normal"}= t('searching.total results', total: number_to_human(@query.total_results, :precision => 2).downcase).html_safe
         - Search.categories.each do |category|
           %dd{class: @query.category == category ? "highlighted" : ""}
             %a{href: search_path(category: category, q: params[:q])}

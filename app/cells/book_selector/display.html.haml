@@ -14,5 +14,6 @@
       =t("chapter")
     .scroll
       %ol#chapter_selector{class: @reference[:book]}
-        - @version.books[@reference[:book]].chapter.each do |k, v|
-          %li{class: k == @reference[:chapter].to_s ? "selected" : ""}= link_to_unless_current k, bible_path(@reference.merge(chapter: k))
+        - if @version.books[@reference[:book]]
+          - @version.books[@reference[:book]].chapter.each do |k, v|
+            %li{class: k == @reference[:chapter].to_s ? "selected" : ""}= link_to_unless_current k, bible_path(@reference.merge(chapter: k))
