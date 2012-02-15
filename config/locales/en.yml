@@ -137,8 +137,11 @@ en:
     listen:                                     "Listen"
     parallel:                                   "Parallel"
     full screen:                                "Full Screen"
-    about the version:                           "About the %{version}"
+    about the version:                          "About the %{version}"
     settings:                                   "Reader Settings"
+    invalid chapter title:                      "Sorry"
+    invalid chapter text:                       "This chapter does not exist in this version."
+    select another chapter:                     "Pick a New Chapter"
   users:
     creation form errors:                       "The following error(s) prevented creation of your account:"
     profile form errors:                        "The following error(s) prevented updating your profile:"

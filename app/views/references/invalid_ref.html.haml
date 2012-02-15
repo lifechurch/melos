@@ -17,13 +17,12 @@
           %span
             =t("ref.choose version")
 
-
 %article
   %div{style:"text-align: center; margin-top:70px"}
-    %h1 Oops
-    %p This chapter does not exist in this version.
+    %h1= t("ref.invalid chapter title")
+    %p= t("ref.invalid chapter text")
     %div.dynamic_menu_trigger.no_style{:href=> '#menu_book_chapter', style: "margin-left:70px"}
-      %button{style: "margin-left:-70px"} Pick a new chapter
+      %button{style: "margin-left:-70px"}= t("ref.select another chapter")
 
 %footer
   %p
