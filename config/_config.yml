@@ -46,6 +46,10 @@ production: &production
   api_referer: web.youversion.com
   api_version: "2.4"
   memcache_server: memcache.youversion.com
+  twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
+  twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
+  facebook_app_id: "105030176203924"
+  facebook_secret: "9d03678ddd8b5588c4e6c91bd996cce2"
 
 demo: *test
 
