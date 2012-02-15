@@ -1,50 +1,39 @@
-- @title = 'Donate Now'
+- @title = t('donate.donate now')
 - @sidebar = false
 
 -# Specific stylesheet for Donate page:
 
 - content_for :stylesheets do
-  %link{:rel => 'stylesheet', :href => './stylesheets/donate.css'}
+  %link{:rel => 'stylesheet', :href => '/stylesheets/donate.css'}
 
 -# Alt text for 3 promo images:
 
-- alt_for_promo_1 = 'For every $1 you give, 10 more people get access to the bible on their mobile phone.'
-- alt_for_promo_2 = 'With YouVersion, the Bible is always nearby. Watch Our Video.'
-- alt_for_promo_3 = 'This year over 5 billion people will use a mobile phone. Donate Now.'
+- alt_for_promo_1 = t('donate.promo 1')
+- alt_for_promo_2 = t('donate.promo 2')
+- alt_for_promo_3 = t('donate.promo 3')
 
 -# Three 3 promo images, below main content:
 
 - content_for :main_trailer do
   %aside.gutter_top_half.clearfix
     %a.float_left.gutter_right_half{:href => @donate_link}
-      %img{:src => './images/donate_promo_ten_to_one.png', :width => '296', :height => '222', :alt => alt_for_promo_1}
+      %img{:src => '/images/donate_promo_ten_to_one.png', :width => '296', :height => '222', :alt => alt_for_promo_1}
     %a.float_left{:href => '#'}
-      %img{:src => './images/donate_promo_always_near.png', :width => '296', :height => '222', :alt => alt_for_promo_2}
-    %a.float_right{:href => '#'}
-      %img{:src => './images/donate_promo_5_billion.png', :width => '298', :height => '222', :alt => alt_for_promo_3}
+      %img{:src => '/images/donate_promo_always_near.png', :width => '296', :height => '222', :alt => alt_for_promo_2}
+    %a.float_right{:href => @donate_link}
+      %img{:src => '/images/donate_promo_5_billion.png', :width => '298', :height => '222', :alt => alt_for_promo_3}
 
 -# Main content below this line...
 
-%article
-  %h1.float_left
-    Everyone needs God’s Word.
+%article.donate
+  %h1.float_left= t('donate.headline')
   #donate_now_wrap
     %a.action_button_green{:href => @donate_link}
-      %span.icon_arrow
-        Donate Now
+      %span.icon_arrow= t('donate.donate now')
     - # %a{:href => '#'}= image_tag '/images/donate_with_paypal.png'
   %hr
-  %p.callout.gutter_bottom_half
-    You can help put a Bible at<br />
-    the fingertips of millions.
-  %p.gutter_bottom_half
-    Imagine if you could give everyone in the world a free<br />
-    Bible. When you give to YouVersion, you can do just that.<br />
-    We're alive during a time that others have only dreamed<br />
-    of &ndash; when anyone with a phone can access the Bible and<br />
-    experience the story of God's love for us. With your <br />
-    support, we can continue to help more people spend<br />
-    more time in Scripture.
+  %p.narrow.callout.gutter_bottom_half= t('donate.subhead')
+  %p.narrow.gutter_bottom_half= t('donate.copy')
 /   %p.gutter_bottom_half
 /     %b
 /       Set Up Monthly Giving
