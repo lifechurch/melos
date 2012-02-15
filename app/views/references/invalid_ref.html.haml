@@ -1,0 +1,28 @@
+- @title = "#{@version} #{@reference.version_string}"
+
+#reader_header
+  %header
+    %ul.float_left
+      %li.gutter_right_quarter
+        Invalid Chapter
+      %li
+        %a.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+          %span
+            =t("ref.choose book and chapter")
+      %li.separator
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
+          %b
+            = @version.osis_human
+          %span
+            =t("ref.choose version")
+
+
+%article
+  %p This chapter does not exist in this version.
+  %button#menu_book_chapter_alt Pick a new chapter
+  
+
+%footer
+  %p
+    %b= link_to t("ref.about the version", version: @version), version_path(@version) 
+  %p= @version.copyright
