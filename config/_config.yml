@@ -17,6 +17,8 @@ common: &common
   twitter_key: "KobF6Lt0zWDFBDxZgZyg"
   twitter_secret: "GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs"
   avatar_path: "http://avatars.youversion.com/"
+  bloodhound_username: "lifechurchtv"
+  bloodhound_password: "password"
 
 development:
   <<: *common
