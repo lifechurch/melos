@@ -19,6 +19,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'grackle'
 gem 'koala'
+gem 'authorize-net'
 
 
 # Gems used only for assets and not required
