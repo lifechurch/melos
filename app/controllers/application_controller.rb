@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar
+  helper_method :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
   before_filter :set_locale, :set_page
+  rescue_from AuthError, with: :auth_error
 
   def set_page
     @page = (params[:page] || 1).to_i
@@ -30,7 +31,27 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
   
+
   private
+  def sign_in(user)
+    cookies.permanent.signed[:a] = user.id
+    cookies.permanent.signed[:b] = user.username
+    cookies.permanent.signed[:c] = params[:password]
+    cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+  end
+
+  def sign_out
+    cookies.permanent.signed[:a] = nil
+    cookies.permanent.signed[:b] = nil
+    cookies.permanent.signed[:c] = nil
+    cookies.permanent[:avatar] = nil
+  end
+
+  def auth_error
+    sign_out
+    redirect_to(sign_in_path, flash: {error: t('auth error')})
+  end
+
   def force_login(opts = {})
     if current_auth.nil?
       opts[:redirect] = request.path
