@@ -407,6 +407,6 @@ en:
     plans:                                      "Reading Plans"
     users:                                      "Users"
     notes:                                      "Notes"
-    total results:                              "About %{total} results for %{query}"
+    total results:                              "About %{total} results"
     suggestion html:                            "Did you mean %{suggestion_link}?"
     all versions:                               "Any %{language_name} Version"
