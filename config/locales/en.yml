@@ -32,6 +32,7 @@ en:
   no followers found self:                      "You don't have any followers yet. You should visit the <a href='%{link}'>Find Friends</a> page and find some friends! *NC*"
   no followers found other:                     "No one is following %{username} yet."
   no following found other:                     "%{username} is not following anyone yet."
+  no likes found:                               "%{username} hasn't liked anything yet."
   followers:                                    "Followers"
   following:                                    "Following"
   highlight:                                    "Highlight"

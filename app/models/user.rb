@@ -192,8 +192,8 @@ class User < YouVersion::Resource
     NotificationSettings.find(auth: auth).token
   end
 
-  def likes
-    Like.find(id, auth)
+  def likes(opts={})
+    Like.for_user(id, opts)
   end
 
   def recent_activity

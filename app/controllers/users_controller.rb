@@ -101,7 +101,6 @@ class UsersController < ApplicationController
     @show = (params[:show] || "facebook").to_s
     @users = @user.connections[@show].find_friends if @user.connections[@show]
     render action: "sign_up_success", layout: "application"
-    
   end
 
   def show
@@ -114,22 +113,20 @@ class UsersController < ApplicationController
   end
 
   def likes
-    @user.likes(page: params[:page])
+    @likes = @user.likes(page: params[:page])
     @selected = :likes
+    @empty_message = t('no likes found', username: @user.name || @user.username )
   end
 
   def bookmarks
-
     @selected = :bookmarks
-    if @me
-      if params[:label]
-        @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
-      else
-        @bookmarks = @user.bookmarks(page: @page)
-      end
-      @labels = Bookmark.labels_for_user(@user.id)if Bookmark.labels_for_user(@user.id)
-      render "bookmarks/index", layout: "application"
+    if params[:label]
+      @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
+    else
+      @bookmarks = @user.bookmarks(page: params[:page])
     end
+    @labels = Bookmark.labels_for_user(@user.id)if Bookmark.labels_for_user(@user.id)
+    render "bookmarks/index", layout: "application" if @me
   end
 
   #
