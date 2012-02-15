@@ -12,6 +12,7 @@ module YouVersion
     end
   end
 
+
   class Resource
     extend ActiveModel::Naming
     include ActiveModel::Conversion

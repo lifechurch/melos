@@ -2,6 +2,7 @@
 en:
   link:                                         "Link"
   site search:                                  "YouVersion Search"
+  auth error:                                   "Sorry, there was a problem with your username or password. Please sign in to YouVersion to continue. *NC*"
   created ago:                                  "Created %{time_ago} ago"
   copy:                                         "Copy"
   copy confirmed:                               "Copied!"

@@ -89,6 +89,10 @@ class YvApi
 
   def self.api_response_or_rescue(response, block)
     if response["response"]["code"].to_i >= 400
+      # Check if it's bad/expired auth and raise an exception
+      if response["response"]["data"]["errors"].detect { |t| t["error"] =~ /Username\sor\spassword/ }
+        raise AuthError
+      end
       # If there's a block, use it for a substitute API call
       new_response = block.call(response["response"]["data"]["errors"]) if block
       # If the block didn't return a substitute array, throw an exception based on the original error
