@@ -49,6 +49,10 @@ class Version
     @data.title
   end
 
+  def osis_human
+    @version.upcase.match(/\A[^-]*/)
+  end
+
   def osis
     @version
   end
@@ -58,7 +62,7 @@ class Version
   end
 
   def to_s
-    "#{@data.title} (#{@version.upcase})"
+    "#{@data.title} (#{osis_human})"
   end
 
   def to_param

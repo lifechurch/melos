@@ -1,5 +1,6 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
+  rescue_from ActionView::Template::Error, :with => :ref_not_found
   def show
     # Set HTML classes for full screen/parallel
     @html_classes = []
@@ -10,6 +11,7 @@ class ReferencesController < ApplicationController
     if !params[:reference]
       flash.keep
       return redirect_to bible_path(last_read || Reference.new(book: "gen", chapter: "1", version: current_version))
+      #TODO: What if gen.1 doesn't exist for current_version? OK with 'this doesn't exist, select another' view?
     else
       ref_hash = params[:reference].to_osis_hash rescue not_found
       ref_hash[:version] ||= current_version
@@ -65,4 +67,10 @@ class ReferencesController < ApplicationController
   def set_nav
     @nav = :bible
   end
+  
+  protected
+    def ref_not_found(ex)
+      @version = Version.find(params[:reference].to_osis_hash[:version])
+      render :invalid_ref
+    end
 end
