@@ -3,9 +3,9 @@ class LikesController < ApplicationController
 
   def index
     if params[:user_id]
-      @likes = Like.all(params[:user_id])
+      @likes = Like.for_user(params[:user_id])
     else
-      @likes = Like.all(current_user.id) #TODO: Remove User ID once the likes and notes are sync'd
+      @likes = Like.for_user(current_user.id) #TODO: Remove User ID once the likes and notes are sync'd
     end
   end
 
