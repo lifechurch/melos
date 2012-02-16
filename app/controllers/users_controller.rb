@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :force_login, only: [:profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook, :notifications, :update_notifications]
+  before_filter :set_redirect, only: :new
   
   # User signup flow:
   #
@@ -30,7 +31,6 @@ class UsersController < ApplicationController
   #   /sign-up/success (or sign_up_redirect)
 
   def new
-    cookies[:sign_up_redirect] = params[:redirect] if params[:redirect]
     @user = User.new
     render action: "new", layout: "application"
   end

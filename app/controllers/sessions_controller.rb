@@ -1,9 +1,7 @@
 class SessionsController < ApplicationController
+  before_filter :set_redirect, except: [:destroy]
 
   def new
-    cookies[:sign_in_redirect] = nil if cookies[:sign_in_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
-    cookies[:sign_in_redirect] ||= URI(request.referer).path if request.referer
-    cookies[:sign_in_redirect] = params[:redirect] if params[:redirect]
   end
 
   def create
