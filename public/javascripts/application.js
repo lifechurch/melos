@@ -83,6 +83,10 @@ var YV = (function($, window, document, undefined) {
           divs.slideUp(200);
         }, 5000);
       },
+      // YV.init.autofocus
+      autofocus: function() {
+        $(".autofocus").focus();
+      },
       // YV.init.modal_window
       modal_window: function() {
         var modal = $('#modal_single_verse #modal_window');
@@ -1090,7 +1094,6 @@ var YV = (function($, window, document, undefined) {
           return false;
         }
         
-        console.log("about to try...");
         if (highlights && highlights.length) {
           console.log('in primary');
           for (var h = 0; h < highlights.length; h++) {
