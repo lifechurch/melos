@@ -1095,10 +1095,8 @@ var YV = (function($, window, document, undefined) {
         }
         
         if (highlights && highlights.length) {
-          console.log('in primary');
           for (var h = 0; h < highlights.length; h++) {
             var hi = highlights[h];
-            console.log(highlights[h]);
             if ((hi.verse) instanceof Array) {
               //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
               for (var hh = 0; hh < hi.verse.length; hh++) {
@@ -1112,10 +1110,8 @@ var YV = (function($, window, document, undefined) {
           }
         }
         if (alt_highlights && alt_highlights.length) {
-          console.log('in secondary');
           for (var h = 0; h < alt_highlights.length; h++) {
             var hi = alt_highlights[h];
-            console.log(alt_highlights[h]);
             if ((hi.verse) instanceof Array) {
               //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
               for (var hh = 0; hh < hi.verse.length; hh++) {
@@ -1168,9 +1164,29 @@ var YV = (function($, window, document, undefined) {
             $(this).find('.bookmark_edit').animate({opacity: 0});
           }
         );
+      },
+      // YV.init.in_place_confirm
+      in_place_confirm: function() {
+        $('.confirm').click(function(ev){
+          el = $(this);
+          if(el.hasClass('confirm')){
+            ev.preventDefault();
+            ev.stopPropagation();
+            $(this).removeClass('confirm');
+            $(this).addClass('danger');
+            
+            if(el.val()){
+              //button
+              el.val(el.data('confirm') ? el.data('confirm') : (el.val() + '?'));
+            }else{
+              //link
+              el = el.find("a");
+              el.html(el.data('confirm') ? el.data('confirm') : (el.html() + '?'));
+            }
+          }
+        });
       }
    }
-
   };
 })(jQuery, this, this.document);
 
