@@ -87,12 +87,13 @@ class BookmarksController < ApplicationController
   #YO
 
   def destroy
-    @note = Note.find(params[:id], :auth => current_auth)
+    @bookmark = Bookmark.find(params[:id], :auth => current_auth)
 
-    if @note.destroy
-      redirect_to notes_path
+    if @bookmark.destroy
+      redirect_to user_bookmarks_path(current_user), notice: t("bookmarks.successfully deleted")
     else
       render action: "index"
+      #TODO: add flash error?
     end
   end
 
