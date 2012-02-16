@@ -25,9 +25,9 @@
               =t("find friends")
       - else
         %li
-          %p= link_to t("sign in"), sign_in_path, :class=> "sign_in"
+          %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), :class=> "sign_in"
         %li
-          %p= link_to t("sign up"), sign_up_path, :class=> "sign_in"
+          %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), :class=> "sign_in"
 
   %form#header_search_form{:action => search_path, method: "GET"}
     %input#header_search_input{:type => 'search', :name => "q", :placeholder => t("search placeholder")}
