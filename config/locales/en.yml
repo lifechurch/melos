@@ -144,7 +144,7 @@ en:
     full screen:                                "Full Screen"
     about the version:                          "About the %{version}"
     settings:                                   "Reader Settings"
-    invalid chapter title:                      "Reading Note"
+    invalid chapter title:                      "About This Version"
     invalid chapter text:                       "This chapter doesn't exist in this version."
     select another chapter:                     "Pick a Different Chapter"
   users:
