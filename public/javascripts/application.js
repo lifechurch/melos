@@ -1177,11 +1177,11 @@ var YV = (function($, window, document, undefined) {
             
             if(el.val()){
               //button
-              el.val(el.data('confirm') ? el.data('confirm') : (el.val() + '?'));
+              el.val(el.data('confirm-text') ? el.data('confirm-text') : (el.val() + '?'));
             }else{
               //link
               el = el.find("a");
-              el.html(el.data('confirm') ? el.data('confirm') : (el.html() + '?'));
+              el.html(el.data('confirm-text') ? el.data('confirm-text') : (el.html() + '?'));
             }
           }
         });
