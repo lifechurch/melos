@@ -41,6 +41,18 @@
         %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_large'}
         %label{:for => 'user_setting_size_large'}
           Large
+    %fieldset.clearfix
+      %p.gutter_bottom_half
+        %b
+          Highlights:
+      %span.float_left.width_33
+        %input.radio_user_setting{:type => 'radio', :name => 'user_setting_highlights', :id => 'user_setting_highlights_on', :checked => 'checked'}
+        %label{:for => 'user_setting_highlights_on'}
+          On
+      %span.float_left.width_33
+        %input.radio_user_setting{'data-setting-size' => 'user_setting_highlights_off', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_highlights_off'}
+        %label{:for => 'user_setting_highlights_off'}
+          Off
     %fieldset
       %input.float_right{:type => 'image', :alt => 'Save Settings', :src => '/images/save_settings.png'}
       %a.float_left{:href => '#'} Full Settings

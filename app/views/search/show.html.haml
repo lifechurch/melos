@@ -12,7 +12,6 @@
       %dl.categories_menu
         %dt
           %div{style: "text-align: center; margin-bottom: 5px"}
-            %h3{style: "margin-bottom: 10px"}= t("search")
         - Search.categories.each do |category|
           %dd{class: @query.category == category ? "highlighted" : ""}
             %a{href: search_path(category: category, q: params[:q])}
