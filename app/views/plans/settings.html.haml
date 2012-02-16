@@ -97,7 +97,7 @@
       %p.float_left= t("plans.catch up description only")
   
   %hr
-  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.restart'), plan_settings_path(restart: "true"), class: 'action_button_green confirm', "data-confirm-text" => t("are you sure"), style: "width: 14em; height: 30px")
+  .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.restart'), plan_settings_path(restart: "true"), class: 'action_button_green confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.do you want to reset")
     %p.float_left= t("plans.restart description")  
@@ -139,6 +139,6 @@
       %input{:style => "margin-bottom: 10px", :type => 'submit', :value => t("plans.add member")}
 
   %hr{style: "margin-top: 15px"}
-  .float_left{style: "height: 30px; margin-bottom: 5px"}= button_to(t('plans.stop reading'), plan_settings_path(unsubscribe: "true"), class: 'action_button_blue confirm', "data-confirm-text" => t("are you sure"), style: "width: 14em; height: 30px")
+  .float_left{style: "height: 30px; margin-bottom: 5px"}= button_to(t('plans.stop reading'), plan_settings_path(unsubscribe: "true"), class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
   
   
