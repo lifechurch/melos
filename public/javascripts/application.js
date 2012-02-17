@@ -1062,6 +1062,42 @@ var YV = (function($, window, document, undefined) {
           size && article.attr('data-setting-size', size);
         });
       },
+      // YV.init.highlightsmenu
+      // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix
+      highlight: function() {
+        var color = $('.color, .color_picker_clear');
+        color.live('click', function(){
+          color = $('.color, .color_picker_clear');
+          if(color.has('span')){
+            color.empty('span');
+            $(this).append("<span class='selected'></span>")
+          } else {
+            $(this).append("<span class='selected'></span>")
+          }
+        })
+      // #TODO           - This bit takes the color from the color picker, adds a new color
+      //                   slide to the list of colors, and adds the color to the background,
+      //                   then hides the color picker. But that doesn't work. I don't know how
+      //                   identify the specific <a> it appends on line 742 and give it the hex. HALP?
+      $('.color_picker').ColorPicker({
+        flat: false,
+        onChange: function(hsb, hex, rgb, el) {
+          $(".colorpicker_hex").css('background-color', "#" + hex)
+        },
+        onSubmit: function(hsb, hex, rgb, el) {
+          $(".color_picker_list").append("<button type='submit' name='highlight[color]' class='color' id='highlight_" + hex +"' value='"+ hex +"' style='display: none; background-color: #'" + hex + "'></button>");
+          $("#highlight_" + hex).click();
+          $("#highlight_" + hex).css('background-color', '#' + hex);
+          $(el).ColorPickerHide();
+        }
+      });
+      $(window).resize(function() {
+          $('.colorpicker').hide();
+      })
+      $(".remove_color").click(function(){
+        color.empty('span');
+      })
+      },
       // YV.init.parallel_notes
       parallel_notes: function() {
         $('.alternate_select').on('change', function(){
