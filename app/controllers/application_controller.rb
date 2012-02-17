@@ -68,7 +68,7 @@ class ApplicationController < ActionController::Base
   end
   def set_redirect
     cookies[:sign_in_redirect] = nil if cookies[:sign_in_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
-    cookies[:sign_in_redirect] ||= params[:redirect]
+    cookies[:sign_in_redirect] = params[:redirect] if params[:redirect]
     cookies[:sign_in_redirect] ||= URI(request.referer).path if request.referer
   end
   def last_read

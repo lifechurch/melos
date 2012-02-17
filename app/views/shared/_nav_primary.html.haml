@@ -5,7 +5,7 @@
         %a{:href => '/bible'}
           %span=t("bible")
       %li#nav_primary_bookmarks{class: @nav == :bookmarks ? "highlighted" : ""}
-        %a{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark")}
+        %a{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark", redirect: "/bookmarks")}
           %span Bookmarks
       %li#nav_primary_plans
         %a{:href => current_auth ? user_plans_path(current_auth.username) : plans_path}
@@ -14,7 +14,7 @@
         %a{:href => current_auth ? user_notes_path(current_auth.username) : notes_path}
           %span=t("notes title")
       %li#nav_primary_friends
-        %a{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends")}
+        %a{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends")}
           %span=t("friends")
       %li#nav_primary_mobile
         %a{:href => '/mobile'}

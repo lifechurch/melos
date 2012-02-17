@@ -18,7 +18,10 @@
     %dt
       = t("highlight")
     %dd
-      %form{:action => highlights_path, method: "POST"}
+      %form{:action => current_auth ? highlights_path : sign_up_path, method: current_auth ? "POST" : "GET"}
+        - if current_auth.nil?
+          %input{type: 'hidden', name: 'redirect', value: "/bible"}
+          %input{type: 'hidden', name: 'source', value: "highlight"}
         %input{:class => "individual_verses_selected_input", name: "highlight[references]", type: "hidden"}
         %input{:class => "verses_selected_highlight_ids_input", name: "highlight[ids]", type: "hidden"}
         %div{:class => "color_picker_list"}
@@ -31,7 +34,10 @@
     %dt
       = t("bookmark")
     %dd
-      %form{:action => bookmarks_path, method: "POST"}
+      %form{:action => current_auth ? bookmarks_path : sign_up_path, method: current_auth ? "POST" : "GET"}
+        - if current_auth.nil?
+          %input{type: 'hidden', name: 'redirect', value: "/bible"}
+          %input{type: 'hidden', name: 'source', value: "bookmark"}
         %p
           %label{:for => 'bookmark_title'}
             = t("bookmarks.title field")

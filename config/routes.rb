@@ -74,12 +74,12 @@ YouversionWeb::Application.routes.draw do
   match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
   delete 'connections/:provider/delete' => 'connections#destroy', as: 'delete_connection'
   
-  match 'reading-plans' => 'coming_soon#index'
-  match 'friends' => 'coming_soon#index'
   match 'mobile' => 'mobile#index'
   match 'donate' => 'pages#donate'
   match 'l10n' => 'pages#l10n'
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
+  match 'friends' => 'users#following'
+  match 'bookmarks' => 'users#bookmarks'
 
 
   root to: 'references#show'

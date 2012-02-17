@@ -406,6 +406,7 @@ en:
     plan blurb:                                 "It looks like you want to start a Reading Plan. Smart! Plans can help you make the Bible a part of your daily life. Sign in or create an account below and get started!"
     bookmark blurb:                             "It looks like you want to use a bookmark. Great! Bookmarks help you keep track of verses you want to memorize, share, or mark as favorites. Sign in or create an account below, and get started!"
     friends blurb:                              "It looks like you want to interact with Friends. Good idea! You'll be able to share what you're learning and help each other stay on track with reading goals. Sign in or create an account below and get started!"
+    highlight blurb:                            "It looks like you want to highlight scripture. Great! Highlights help you organize and keep track of your favorite verses. Sign in or create an account below, and get started!"
   audio:
     none:                                       "Sorry, audio isn't available for this version."
     close player menu:                          "Close"
