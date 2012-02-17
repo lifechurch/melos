@@ -26,10 +26,14 @@
             %input{type: "hidden", name: "category", value: :bible}
             %div{style: "clear: both"}
               %select.float_right{onChange: "this.form.submit()", style: "margin-right: 5px; margin-top: 10px; margin-bottom: 25px; width: 550px", name: "version"}
-                - Version.all_by_language.each do |k, v|
+                - all_languages = Version.all_by_language
+                - language = locale.to_s
+                %optgroup{label: Version.languages[language]}
+                %option{value: "", selected: @query.version.nil?}= t("searching.all versions", language_name: t("language name"))
+                - all_languages[language].each do |k, v|
+                  %option{value: k.to_s, selected: k == (@query.version)}= v
+                - all_languages.except(language).each do |k, v|
                   %optgroup{label: Version.languages[k]}
-                  - if locale.to_s == k
-                    %option{value: "", selected: @query.version.nil?}= t("searching.all versions", language_name: t("language name"))
                   - v.each do |k, v|
                     %option{value: k.to_s, selected: k == (@query.version)}= v
         %ul.big_list{style: "clear:both"}
