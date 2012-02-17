@@ -41,7 +41,7 @@
         %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_large'}
         %label{:for => 'user_setting_size_large'}
           Large
-    %fieldset.clearfix
+    %fieldset.clearfix{style: "display: none"}
       %p.gutter_bottom_half
         %b
           Highlights:
@@ -53,6 +53,7 @@
         %input.radio_user_setting{'data-setting-size' => 'user_setting_highlights_off', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_highlights_off'}
         %label{:for => 'user_setting_highlights_off'}
           Off
-    %fieldset
+    %fieldset{style: "display: none"}
       %input.float_right{:type => 'image', :alt => 'Save Settings', :src => '/images/save_settings.png'}
-      %a.float_left{:href => '#'} Full Settings
+      -#%a.float_left{:href => profile_path} Full Settings
+      -#TODO: Don't know what this is for...
