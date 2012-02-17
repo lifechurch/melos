@@ -1,0 +1,1 @@
+class NotAChapterError < InvalidReferenceError; end

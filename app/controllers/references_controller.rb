@@ -1,6 +1,7 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
-  rescue_from ActionView::Template::Error, :with => :ref_not_found
+  rescue_from NotAChapterError, :with => :ref_not_found
+  
   def show
     # Set HTML classes for full screen/parallel
     @html_classes = []

@@ -1,0 +1,1 @@
+class NotABookError < InvalidReferenceError; end

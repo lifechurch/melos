@@ -1,0 +1,1 @@
+class NotAVersionError < InvalidReferenceError; end

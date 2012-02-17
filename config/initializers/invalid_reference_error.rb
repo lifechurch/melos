@@ -1,0 +1,1 @@
+class InvalidReferenceError < StandardError; end
