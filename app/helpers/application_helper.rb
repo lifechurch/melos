@@ -14,10 +14,9 @@ module ApplicationHelper
     text.length > length ? text[/\A.{#{l}}\w*\;?/m][/.*[\w\;]/m] + truncate_string : text
   end 
 
-  def bible_path(ref = nil)
+  def bible_path(ref = nil, opts={})
     ref = last_read || Reference.new(book: "gen", chapter: "1", version: current_version) if ref.nil?
-    
-    reference_path(ref.osis)
+    reference_path(ref.osis, opts)
   end
   
   def convert_to_brightness_value(hex_color)

@@ -38,7 +38,9 @@ class ReferencesController < ApplicationController
     @alt_reference = (alt_version == current_version) ? @reference : Reference.new(@reference.raw_hash.except(:version), alt_version)
 
     # If the reference was a single verse, set that up so we can display the modal
-    @single_verse = Reference.new(ref_hash) if ref_hash[:verse].is_a?(Fixnum)
+    if ref_hash[:verse].is_a?(Fixnum)
+      @single_verse = Reference.new(ref_hash) unless params[:modal] == "false"
+    end
 
     # Set up a fake reference for the fist 5 verses since the API won't let us
     # search the entire chapter for notes
