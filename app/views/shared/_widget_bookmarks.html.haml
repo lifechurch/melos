@@ -13,6 +13,6 @@
           %span.separator |
           - b.labels.split(",").each do |l|
             %span.tag
-              %a{href: ":"}= l
+              %a{href: user_bookmarks_path(current_user, :label => l)}= l
     %li.align_right
       %a.more_arrow{href: user_bookmarks_path(current_user)}= t('show all bookmarks', total: @bookmarks.total)
