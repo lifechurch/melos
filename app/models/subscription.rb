@@ -263,7 +263,8 @@ class Subscription < Plan
   end
   
   def to_param
-    slug
+    "#{id}-#{slug}"
+    #TODO: delete function? should just use parent's?
   end
   
   def reading(day, opts = {})
