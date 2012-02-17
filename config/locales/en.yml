@@ -103,6 +103,7 @@ en:
   recent bookmarks:                             "Recent Bookmarks"
   percentage display:                           "%{number}%"
   myself:                                       "Me"
+  none found:                                   "We couldn't find anything to match your criteria. Try widening your search."
   likes:
     my likes:                                   "My Likes"
     all likes:                                  "All Likes"
@@ -418,7 +419,8 @@ en:
     notes:                                      "Notes"
     total results:                              "About %{total} results"
     suggestion html:                            "Did you mean %{suggestion_link}?"
-    all versions:                               "Any %{language_name} Version"
+    all versions:                               "All %{language_name} Versions"
+    not working:                                "Sorry, users search isn't working quite yet. Check back soon!"
   donate:
     donate now:                                 "Donate Now"
     promo 1:                                    "For every $1 you give, 10 more people get access to the bible on their mobile phone."

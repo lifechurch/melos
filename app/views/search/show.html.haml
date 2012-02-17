@@ -37,4 +37,7 @@
             = render partial: "#{@query.category}_list_item", locals: {item: item}
         = render "shared/pagination", resource_list: @query.result_list(@query.category)
       - else
-        .none{align: "center"}= "No matching results"
+        - if @query.category == :users
+          .none{align: "center"}= t("searching.not working")
+        -else
+          .none{align: "center"}= t("none found")
