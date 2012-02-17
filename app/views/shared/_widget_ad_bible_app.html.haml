@@ -2,10 +2,15 @@
   %aside.ad_bible_app
     %p
       %b
-        Download the Free Bible App
+        = t("download ad.title")
     %p
-      More than 100 versions in many<br />
-      different languages, in the palm<br />
-      of your hand.
+      = "#{t('download ad.line 1')}<br />".html_safe
+      = "#{t('download ad.line 2')}<br />".html_safe
+      = t('download ad.line 3')
     %p
-      %a.more_arrow{:href => '#'} Download Now
+      %a.more_arrow{:href => '/mobile'}= t("download ad.download")
+
+
+     
+      
+      

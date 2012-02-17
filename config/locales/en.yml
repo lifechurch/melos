@@ -22,7 +22,7 @@ en:
   deleted connection error:                     "Sorry, there was an error removing your connection to %{connection}."
   remove connection:                            "Remove"
   connection users:                             "Here are some YouVersion users you're connected to on %{connection}:"
-  connection marketing:                         "YouVersion is more fun with friends! Link your YouVersion account to your other social networks and instantly find and follow your friends on YouVersion. Linking your accounts also enables you to share content with just a few clicks."
+  connection marketing:                         "YouVersion is more fun with friends! Link your YouVersion account to your other social networks and instantly find and follow your friends on YouVersion. Linking your accounts also enables you to share content with just a few clicks. We will never post anything without your approval."
   next step connections:                        "Next: Link your accounts and find your friends"
   you are now following:                        "You are now following %{username}"
   you are no longer following:                  "You are no longer following %{username}"
@@ -429,4 +429,10 @@ en:
     headline:                                   "Everyone needs God’s Word."
     subhead:                                    "You can help put a Bible at the fingertips of millions."
     copy:                                       "Imagine if you could give everyone in the world a free Bible. When you give to YouVersion, you can do just that. We're alive during a time that others have only dreamed of &ndash; when anyone with a phone can access the Bible and experience the story of God's love for us. With your support, we can continue to help more people spend more time in Scripture."
+  download ad:
+    title:                                      "Download the Free Bible App"
+    line 1:                                     "Hundreds of versions in many"
+    line 2:                                     "different languages—the Bible that"
+    line 3:                                     "goes with you anywhere."
+    download:                                   "Download Now"
 
