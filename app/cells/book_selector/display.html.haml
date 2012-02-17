@@ -1,4 +1,6 @@
 #menu_book_chapter.dynamic_menu
+  .spinner_wrapper{style: "display: none;"}
+    #book_chapter_spinner.dynamic_menu_spinner
   %span.menu_arrow
     &nbsp;
   #menu_book
@@ -16,4 +18,4 @@
       %ol#chapter_selector{class: @reference[:book]}
         - if @version.books[@reference[:book]]
           - @version.books[@reference[:book]].chapter.each do |k, v|
-            %li{class: k == @reference[:chapter].to_s ? "selected" : ""}= link_to_unless_current k, bible_path(@reference.merge(chapter: k))
+            %li{class: k == @reference[:chapter].to_s ? "selected" : ""}= link_to_unless_current(k, (bible_path(@reference.merge(chapter: k))), :class => 'spinner_trigger')

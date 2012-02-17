@@ -477,7 +477,41 @@ var YV = (function($, window, document, undefined) {
             speed: 1,
             shadow: false
             }).spin(document.getElementById("bookmark_spinner"));
+          var spinner_book_chapter = new Spinner({
+            lines: 12,
+            length: 7,
+            width: 5,
+            radius: 10,
+            color: '#fff',
+            speed: 1,
+            shadow: false
+            }).spin(document.getElementById("book_chapter_spinner"));
+              
           $(".spinner_wrapper").fadeIn(200);
+        });
+        
+        all_menus.find(".spinner_trigger").click(function(){
+           var spinner_book_chapter = new Spinner({
+              lines: 12,
+              length: 7,
+              width: 5,
+              radius: 10,
+              color: '#fff',
+              speed: 1,
+              shadow: false
+              }).spin(document.getElementById("book_chapter_spinner"));
+
+            var spinner_version = new Spinner({
+                lines: 12,
+                length: 7,
+                width: 5,
+                radius: 10,
+                color: '#fff',
+                speed: 1,
+                shadow: false
+                }).spin(document.getElementById("version_spinner"));
+            //TODO make these 3 spinners more generic/dynamic and just one of them :) (use spinner_trigger and click for all)
+            $(".spinner_wrapper").fadeIn(200);
         });
 
         trigger.click(function(ev) {
