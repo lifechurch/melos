@@ -1,0 +1,8 @@
+default:
+  api_login_id: 72mJ4GVwg
+  api_transaction_key: 94K2z4asG83THA3J
+  merchant_hash_value: 72mJ4GVwg
+
+development: 
+test: 
+production: 

@@ -12,5 +12,5 @@
     %a{href: user_bookmarks_path(@user)}
       %span= t('bookmarks.title')
   %li{class: ("highlighted" if selected == :likes)}
-    %a
+    %a{href: user_likes_path(@user)}
       %span= t('likes.likes')

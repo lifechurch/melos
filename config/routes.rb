@@ -1,5 +1,9 @@
 YouversionWeb::Application.routes.draw do
 
+  match 'donate/us', :to => 'donations#us', :as => 'us_donation', :via => [:get]
+  match 'donate/relay_response', :to => 'donations#relay_response', :as => 'donations_relay_response', :via => [:post]
+  match 'donate/receipt', :to => 'donations#receipt', :as => 'donations_receipt', :via => [:get]
+
   filter :locale, include_default_locale: false
   # Bible
   match 'bible(/:reference)' => 'references#show', :as => 'reference', :constraints => {:reference => /.*/}
@@ -73,6 +77,8 @@ YouversionWeb::Application.routes.draw do
   match 'reading-plans' => 'coming_soon#index'
   match 'friends' => 'coming_soon#index'
   match 'mobile' => 'mobile#index'
+  match 'donate' => 'pages#donate'
+  match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
 
 
   root to: 'references#show'

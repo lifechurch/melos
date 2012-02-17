@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.2'
 gem 'httparty'
+gem 'newrelic_rpm'
 gem 'dalli'
 gem 'hashie'
 gem 'cells'
@@ -11,7 +12,6 @@ gem 'routing-filter'
 gem 'execjs'
 gem 'therubyracer'
 gem 'unicorn'
-gem 'newrelic_rpm'
 gem 'exceptional'
 gem 'countries'
 gem 'omniauth-twitter'
@@ -19,6 +19,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'grackle'
 gem 'koala'
+gem 'authorize-net'
 
 
 # Gems used only for assets and not required

@@ -33,6 +33,8 @@ GEM
     ansi (1.4.1)
     archive-tar-minitar (0.5.2)
     arel (2.2.1)
+    authorize-net (1.5.2)
+      nokogiri (~> 1.4)
     builder (3.0.0)
     capistrano (2.9.0)
       highline
@@ -308,6 +310,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authorize-net
   capistrano
   capistrano-ext
   capybara (~> 1.0.0.beta1)

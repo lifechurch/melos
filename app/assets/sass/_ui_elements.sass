@@ -169,8 +169,8 @@
   +box-shadow(inset rgba(#000, 0.25) 0 1px 1px 0, #fff 0 1px 0 0)
 
 .li_active .dynamic_menu_trigger,
-.dynamic_menu_trigger:active,
-.dynamic_menu_trigger:focus
+.dynamic_menu_trigger:not(.no_style):active,
+.dynamic_menu_trigger:not(.no_style):focus
   +glow
   +background-image(linear-gradient(#444, #222))
   background-color: #222
