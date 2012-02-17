@@ -1039,6 +1039,28 @@ var YV = (function($, window, document, undefined) {
             $('#publish_time').removeClass('publish_on_selected');
           }
         });
+        $("#note_content").wysiwyg({
+            css: '/javascripts/wysiwyg/editor.css',
+            initialContent: "",
+            controls: {
+              justifyLeft: { visible: false },
+              justifyCenter: { visible: false },
+              justifyRight: { visible: false },
+              justifyFull: { visible: false },
+              indent: { visible: false },
+              outdent: { visible: false },
+              subscript: { visible: false },
+              superscript: { visible: false },
+              undo: { visible: false },
+              redo: { visible: false },
+              insertHorizontalRule: { visible: false },
+              h1: { visible: false },
+              h2: { visible: false },
+              h3: { visible: false },
+              insertTable: { visible: false },
+              code: { visible: false }
+            }
+          });
       },
       // YV.init.reference_tokens
       reference_tokens: function() {
