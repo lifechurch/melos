@@ -43,7 +43,7 @@ class ReferencesController < ApplicationController
     # search the entire chapter for notes
     notes_ref_hash = ref_hash.dup
     notes_ref_hash[:verse]=1..5
-    @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 10.minutes)
+    @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 30.minutes)
 
     # Create an empty note for the note sidebar widget
     @note = Note.new
