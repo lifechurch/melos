@@ -32,4 +32,5 @@
       %span
         %select{:id => 'choose_language', :name => 'choose_language'}
           - I18n.available_locales.each do |loc|
-            %option{value: url_for(params.merge({locale: loc})), selected: loc == I18n.locale}= t("language name", locale: loc)
+            -#%option{value: url_for(params.merge({locale: loc})), selected: loc == I18n.locale}= t("language name", locale: loc)
+            %option{value: l10n_path, selected: loc == I18n.locale}= t("language name", locale: loc)

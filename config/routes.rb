@@ -78,6 +78,7 @@ YouversionWeb::Application.routes.draw do
   match 'friends' => 'coming_soon#index'
   match 'mobile' => 'mobile#index'
   match 'donate' => 'pages#donate'
+  match 'l10n' => 'pages#l10n'
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
 
 
