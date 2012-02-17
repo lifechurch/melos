@@ -45,7 +45,6 @@ class Plan < YouVersion::Resource
 
     #TODO: this doesn't work if an integer id is passed?
     super(id, opts, &block)
-    
   end
   
   def self.search(query, params = {})
