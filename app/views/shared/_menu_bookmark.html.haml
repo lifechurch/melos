@@ -102,7 +102,12 @@
         %input#copy_link_input.width_100{:value => "", :style => "margin-bottom: 15px;", :type => "text"}
         %div#copy_link_container{style: "position: absolute; right: 0px; top: -2px;"}
           %button#copy_link{"data-confirm-text" => t("copy confirmed"), style: "margin-top:0px"}= t("copy")
-    %a.open_modal{:href => "#"}
-      %dt#new_note_modal
-        = t("new note")
+    - if current_auth
+      %a.open_modal{:href => "#"}
+        %dt#new_note_modal
+          = t("new note")
+    - else 
+      %a.open_modal{:href => sign_up_path(source: "note", redirect: "/bible")}
+        %dt.propagate_click
+          = t("new note")
 

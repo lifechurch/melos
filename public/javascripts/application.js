@@ -446,7 +446,10 @@ var YV = (function($, window, document, undefined) {
           }
           
           this.blur();
-          return false;
+          
+          if(!dt.hasClass("propagate_click")){
+            return false;
+          }
         });
 
       },
