@@ -3,9 +3,9 @@
 # Ruby, Java, .NET, PHP, and Python applications with deep visibility and low overhead.
 # For more information, visit www.newrelic.com.
 #
-# Generated February 16, 2012
+# Generated February 18, 2012
 #
-# This configuration file is custom generated for LifeChurch_1
+# This configuration file is custom generated for LifeChurch_2
 
 # Here are the settings that are common to all environments:
 common: &default_settings
@@ -14,7 +14,7 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
-  license_key: '335e3b349585a4baf47573354334b62504176bfb'
+  license_key: 'c85e2ccc557a80e17c1db790ef2745b5de73f4d0'
   
   # Agent Enabled (Ruby/Rails Only)
   # Use this setting to force the agent to run or not run.
@@ -33,7 +33,7 @@ common: &default_settings
   # "All UI" then specify a semicolon-separated list of up to three
   # distinct names.  If you comment this out, it defaults to the 
   # capitalized RAILS_ENV (i.e., Production, Staging, etc)
-  app_name: YouVersion Web
+  app_name: YV Web 3
 
   # When "true", the agent collects performance data about your 
   # application and reports this data to the New Relic service at
@@ -48,7 +48,7 @@ common: &default_settings
   # The newrelic agent generates its own log file to keep its logging
   # information separate from that of your application.  Specify its
   # log level here.
-  log_level: debug
+  log_level: info
   
   # The newrelic agent communicates with the New Relic service via http by
   # default.  If you want to communicate via https to increase
@@ -98,7 +98,7 @@ common: &default_settings
   # Java: create a config setting called "ignored_params" and set it to
   #     a comma separated list of HTTP parameter names.
   #     ex: ignored_params: credit_card, ssn, password 
-  capture_params: true
+  capture_params: false
 
   # Transaction tracer captures deep information about slow
   # transactions and sends this to the New Relic service once a
@@ -214,10 +214,9 @@ test:
 # testing shows an average performance impact of < 5 ms per
 # transaction, so you can leave this on all the time without
 # incurring any user-visible performance degradation.
-production_heroku:
+production:
   <<: *default_settings
   monitor_mode: true
-  app_name: YouVersion Web (Heroku2)
 
 # Many applications have a staging environment which behaves
 # identically to production.  Support for that environment is provided
@@ -225,4 +224,4 @@ production_heroku:
 staging:
   <<: *default_settings
   monitor_mode: true
-  app_name: YouVersion Web (Staging)
+  app_name: My Application (Staging)
