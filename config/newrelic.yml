@@ -214,10 +214,10 @@ test:
 # testing shows an average performance impact of < 5 ms per
 # transaction, so you can leave this on all the time without
 # incurring any user-visible performance degradation.
-production:
+production_heroku:
   <<: *default_settings
   monitor_mode: true
-  app_name: YouVersion Web (Production)
+  app_name: YouVersion Web (Heroku2)
 
 # Many applications have a staging environment which behaves
 # identically to production.  Support for that environment is provided
@@ -226,12 +226,3 @@ staging:
   <<: *default_settings
   monitor_mode: true
   app_name: YouVersion Web (Staging)
-  
-# Turn on the agent in production for 24x7 monitoring.  New Relic
-# testing shows an average performance impact of < 5 ms per
-# transaction, so you can leave this on all the time without
-# incurring any user-visible performance degradation.
-production_heroku:
-  <<: *default_settings
-  monitor_mode: true
-  app_name: YouVersion Web (Heroku)
