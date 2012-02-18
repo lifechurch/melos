@@ -5,8 +5,9 @@ class Note < YouVersion::Resource
   attribute :id
   attribute :reference
   attribute :title
-  attribute :content_text
   attribute :content
+  attribute :content_text
+  attribute :content_html
   attribute :published
   attribute :user_status
   attribute :share_connections
@@ -33,12 +34,14 @@ class Note < YouVersion::Resource
   end
 
   def content_as_xml
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content}</yv-note>"
+    "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content.gsub(/\n/, " ")}</yv-note>"
   end
 
   def before_save
+    puts "self content is #{self.content}"
     @original_content = self.content
     self.content = self.content_as_xml
+    puts "now, self content is #{self.content}"
     if self.reference.nil? || self.reference.empty?
       self.reference_list = ReferenceList.new("")
     else
@@ -50,7 +53,7 @@ class Note < YouVersion::Resource
   end
 
   def after_save(response)
-    self.content = @original_content
+    self.content_html = response.content_html
     if response
       self.reference = ReferenceList.new(response.reference, response.version)
       self.version = Version.find(response.version)
@@ -58,7 +61,8 @@ class Note < YouVersion::Resource
   end
 
   def after_build
-    self.content = self.content_text unless self.content_text.blank?
+    # self.content = self.content_text unless self.content_text.blank?
+    self.content = self.content_html if self.content_html
     if self.reference
       self.reference_list = ReferenceList.new(self.reference, self.version)
     else

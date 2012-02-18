@@ -7,13 +7,11 @@
           %li= e
   %p
     = f.label :title, t("notes.title field")
-    = f.text_field :title
-  %p
+    = f.text_field :title, {style: "width: 100%;"}
+  %div
     = f.label :content, t("notes.content field")
-    = f.text_area :content
-  %p
-    = f.label :version, t("notes.version field")
-    = f.select :version, options_for_select(versions_dropdown, @note.version), {:prompt => t("notes.select from list")}
+    %div{style: "margin: 20px 0;"}
+      = f.text_area :content
   %p
     = f.label :reference, t("notes.reference field")
     = @note.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe
@@ -21,4 +19,4 @@
     = f.label :user_status, t("notes.status field")
     = f.select :user_status, options_for_select(object_status, @note.user_status)
   %p
-    .float_right= f.submit t("notes.save")
+    .float_right= f.submit t("notes.save"), {class: "action_button_green"}

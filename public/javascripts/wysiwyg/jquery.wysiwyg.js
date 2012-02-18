@@ -2291,7 +2291,6 @@ html: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.o
 					var dialogHeight = this.options.height == 'auto' ? 300 : this.options.height,
 						dialogWidth = this.options.width == 'auto' ? 450 : this.options.width;
 
-					// console.log(that._$dialog);
 					
 					that._$dialog.dialog({
 						modal: this.options.modal,
