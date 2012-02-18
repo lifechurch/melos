@@ -6,7 +6,7 @@
       - else
         = link_to(t('plans.subscribe to plan'), plan_start_path(@plan), :class => 'action_button_green', style: "margin-bottom: 10px")
     - else 
-      = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id), class: 'action_button_green', style: "margin-bottom: 10px")
+      = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: plan_start_path(@plan)), class: 'action_button_green', style: "margin-bottom: 10px")
   .widget
     %header
       %span
