@@ -6,7 +6,7 @@
     - @note.reference_list.each do |r|
       = link_to r, bible_path(r)
     %hr
-    %p= raw(@note.content)
+    %p= raw(@note.content_html)
     %p
       = label_tag :user_status, t("notes.status field")
       = @note.user_status

@@ -10,5 +10,5 @@
       %p.mute.small.negative_gutter_top_half
         %a{href: user_path(list_item.username)}= list_item.username
 
-    %p= list_item.content
+    %p= truncate list_item.content_text, length: 300, separator: " "
     %p.mute.small.negative_gutter_top_half= link_to_references(list_item.reference_list) 

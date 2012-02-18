@@ -9,10 +9,10 @@ li ul
 #main article ol
   margin-top: -10px
 
-#main article li
+#main article li:not(.wysiwyg li)
   padding-top: 10px
 
-#main article ul li
+#main article ul li:not(.wysiwyg li)
   background:
     image: url(../images/main_article_ul_li_arrow.png)
     repeat: no-repeat
@@ -20,6 +20,7 @@ li ul
   margin-left: 0
   padding-left: 30px
   list-style: none
+
 
 #main article li ul,
 #main article li ol
