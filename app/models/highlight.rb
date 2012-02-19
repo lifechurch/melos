@@ -26,8 +26,6 @@ class Highlight < YouVersion::Resource
     response = YvApi.get("highlights/chapter", opts) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)not_found$/].detect { |r| r.match(errors.first["error"]) }
         return []
-      else
-        puts(errors)
       end
     end
 
