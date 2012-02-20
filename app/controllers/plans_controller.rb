@@ -52,12 +52,12 @@ class PlansController < ApplicationController
   
   def start    
     if @subscription = current_user.subscription(params[:plan_id])
-      redirect_to plan_path, notice: t("plans.already subscribed") and return
+      redirect_to plan_path(params[:plan_id]), notice: t("plans.already subscribed") and return
     end
     
     Plan.subscribe(params[:plan_id], current_auth)
 
-    redirect_to plan_path, notice: t("plans.subscribe successful")
+    redirect_to plan_path(params[:plan_id]), notice: t("plans.subscribe successful")
   end
   
   def settings
