@@ -7,4 +7,8 @@ class PagesController < ApplicationController
 
   def l10n
   end
+
+  def open
+    render text: "10"
+  end
 end
