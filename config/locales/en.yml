@@ -292,6 +292,7 @@ en:
       avatar help:                              "Images can be in JPG, PNG, or GIF format. Your image will be converted to a 48x48 thumbnail. The maximum file size is 1MB."
       updated picture:                          "Success! You've updated your picture."
       updated notifications:                    "Success! You've updated your notification settings."
+      notification errors:                      "The following error(s) prevented updating your notifications:"
     password:
       updated:                                  "Success! You've updated your password."
       error:                                    "Sorry, there was an error changing your password."
@@ -387,6 +388,7 @@ en:
     add member:                                 "Add"
     email edit:                                 "Edit"
     unsubscribe successful:                     "You unsubscribed from this plan."
+    already subscribed:                         "You're already subscribed to this plan!"
     partner added successful:                   "Success! %{username} has been added to plan accountability."
     partner removed successful:                 "%{username} has been removed from plan accountability."
     make public successful:                     "Success! Your plan is public."

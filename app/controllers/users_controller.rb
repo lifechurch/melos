@@ -176,10 +176,8 @@ class UsersController < ApplicationController
     @user = @notification_settings.user
     @me = true
     result = @notification_settings.update(params[:notification_settings])
-    #result ? flash.now[:notice] = t('users.profile.updated notifications') : flash.now[:error] = @notification_settings.errors
-    #render action: "notifications", token: params[:token]
-    #TODO: get the above line to render with the token still instact and replace the below line with the above 2
-    redirect_to notifications_path(token: params[:token]), result ? {notice: t('users.profile.updated notifications')} : {error: @notification_settings.errors}
+    result ? flash.now[:notice] = t('users.profile.updated notifications') : flash.now[:error] = t('users.profile.notification errors')
+    render action: "notifications"
   end
 
   def password

@@ -1,5 +1,6 @@
 class YvApi
   include HTTParty
+  default_timeout 2 #HTTParty
   format :json
   headers 'Referer' => "http://" + Cfg.api_referer
 
@@ -25,14 +26,27 @@ class YvApi
       response = Rails.cache.fetch cache_key, expires_in: cache_length do
         Rails.logger.info "*** cache miss for #{cache_key}"
         # No cache hit; ask the API
-        response = httparty_get(resource_url, query: opts.except(:cache_for))
+        begin
+          response = httparty_get(resource_url, query: opts.except(:cache_for))
+        rescue Exception => e
+        #rescue Errno::ETIMEDOUT => e
+          #raise APITimeoutError
+          Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+        end
       end
       get_end = Time.now.to_f
       Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     else
       # Just ask the API
       get_start = Time.now.to_f
-      response = httparty_get(resource_url, query: opts)
+      begin
+        response = httparty_get(resource_url, query: opts) 
+      rescue Exception => e
+      #rescue Errno::ETIMEDOUT => e
+        #raise APITimeoutError
+        Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+      end
+      
       get_end = Time.now.to_f
     Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     end
@@ -90,6 +104,7 @@ class YvApi
   def self.api_response_or_rescue(response, block)
     if response["response"]["code"].to_i >= 400
       # Check if it's bad/expired auth and raise an exception
+      
       if response["response"]["data"]["errors"].detect { |t| t["error"] =~ /Username\sor\spassword/ }
         raise AuthError
       end
