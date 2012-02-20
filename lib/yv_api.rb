@@ -34,8 +34,13 @@ class YvApi
       get_start = Time.now.to_f
       begin
       response = httparty_get(resource_url, query: opts) 
-      rescue Exception => e
-        Rails.logger.info "***HTTParty Err: #{e.class} : #{e.to_s}"
+      rescue Errno::ETIMEDOUT => e
+        begin
+           response = httparty_get(resource_url, query: opts)
+         rescue Errno::ETIMEDOUT => e
+           Rails.logger.info "***API TIMEOUT: #{e.class} : #{e.to_s}"
+           raise APITimeoutError
+        end
       end
       
       get_end = Time.now.to_f
