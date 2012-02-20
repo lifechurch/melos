@@ -5,7 +5,7 @@
     .form_errors
       =t("users.profile form errors")
     %ul
-      - @user.errors.each do |e|
+      - @user.errors.full_messages.each do |e|
         %li= e
   %p
     = f.label :first_name, t('users.profile.first name')

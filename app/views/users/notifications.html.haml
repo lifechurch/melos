@@ -1,6 +1,12 @@
 - @title = "#{t('my notifications')} | #{@user.name || @user.username}"
 
 = form_for @notification_settings, url: notifications_path do |n|
+  - unless @notification_settings.errors.blank?
+    .form_errors
+      =t("users.profile.notification errors")
+    %ul
+      - @notification_settings.errors.full_messages.each do |err|
+        %li= err
   %p
     = n.check_box :badges
     = n.label :badges, t('users.notifications.badges')

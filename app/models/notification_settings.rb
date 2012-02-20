@@ -35,7 +35,7 @@ class NotificationSettings < YouVersion::Resource
     
     opts = auth ? {auth: auth} : {token: token}
     
-    response_data = YvApi.post(resource_path, attributes.merge(opts)) do |errors|
+    response_data = YvApi.post(resource_path, attributes.except(:auth, :token).merge(opts)) do |errors|
       new_errors = errors.map { |e| e["error"] }
       new_errors.each { |e| self.errors[:base] << e }
 
