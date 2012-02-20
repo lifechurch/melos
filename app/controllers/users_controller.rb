@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :force_login, only: [:bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device]
+  before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook, :notifications, :update_notifications]
   before_filter :set_redirect, only: :new
@@ -127,6 +127,18 @@ class UsersController < ApplicationController
     end
     @labels = Bookmark.labels_for_user(@user.id)if Bookmark.labels_for_user(@user.id)
     render "bookmarks/index", layout: "application" if @me
+  end
+
+  def share
+    puts "in controller action"
+    puts request.referer
+    puts params[:share]
+    puts @user
+    if @user.share(params[:share])
+      redirect_to :back, notice: t('share success')
+    else
+      redirect_to :back, error: t('share error')
+    end
   end
 
   #

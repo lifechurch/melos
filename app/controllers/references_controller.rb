@@ -48,6 +48,14 @@ class ReferencesController < ApplicationController
     notes_ref_hash[:verse]=1..5
     @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 30.minutes)
 
+    # If there's a user, see if they have connections
+
+    if current_auth
+      @twitter = true if current_user.connections["twitter"]
+      @facebook = true if current_user.connections["facebook"]
+    end
+
+
     # Create an empty note for the note sidebar widget
     @note = Note.new
 

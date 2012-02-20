@@ -29,6 +29,7 @@ YouversionWeb::Application.routes.draw do
     match 'unfollow' => 'users#unfollow', as: 'unfollow'
     resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
+  post 'share' => 'users#share', as: 'share'
   resources 'highlights', only: [:create]
 
   resources 'notes', :except => [:index]

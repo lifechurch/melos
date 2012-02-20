@@ -879,6 +879,7 @@ var YV = (function($, window, document, undefined) {
             // Generate a short link
             var link = "http://bible.us/" + book + chapter + "." + verse_ranges.join(',') + "." + version;
             $("b#short_link").html(link);
+            $("input#share_link").val(link);
             $(".share_message .character_count").remove();
             $(".share_message textarea").charCount({
               allowed: 140 - link.length - 1,

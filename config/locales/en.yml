@@ -13,6 +13,8 @@ en:
   new note:                                     "New Note"
   twitter:                                      "Twitter"
   facebook:                                     "Facebook"
+  share success:                                "Your message has been shared."
+  share error:                                  "Sorry, there was an error sharing your message. Please try again."
   error following user:                         "Sorry, there was an error following that user."
   error unfollowing user:                       "Sorry, there was an error unfollowing that user."
   google plus:                                  "Google +"

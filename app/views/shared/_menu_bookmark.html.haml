@@ -70,30 +70,27 @@
     %dt
       = t("share")
     %dd
-      %form.clearfix
+      %form.clearfix{action: share_path, method: "post"}
         %div.share_message
-          %textarea{style: "margin-bottom: 8px"}
+          %textarea{name: "share[message]", style: "margin-bottom: 8px"}
           %div.float_right
             %b#short_link
             = t("link will be added")
+          %input{type: "hidden", id: "share_link", name: "share[link]", value: ""}
 
           %div.clearfix{style: "margin-bottom: 8px"}
           %div.share_action      
             %button{:type => "submit", :name => "share[submit]", :value => "submit", :class => "float_right"}= t('ref.share now')
           %div.share_services
             %span.float_left{style: "width: 60%"}
-              %input#checkbox_share_twitter{:type => "checkbox", :name => "share_verse_social", :checked => 'checked'}
+              %input#checkbox_share_twitter{:type => "checkbox", :name => "share[connections][twitter]", checked: ("checked" if @twitter)}
               %label{:for => 'share_verse_twitter', :class => "share_verse_twitter", :value => "Twitter"}
                 = t("twitter")
             
             %span.float_left{style: "width: 60%"}
-              %input#checkbox_share_facebook{:type => "checkbox", :name => "share_verse_social"}
+              %input#checkbox_share_facebook{:type => "checkbox", :name => "share[connections][facebook]", checked: ("checked" if @facebook)}
               %label{:for => 'share_verse_facebook', :class => "share_verse_facebook"}
                 = t("Facebook")
-            %span.float_left{style: "width: 60%"}
-              %input#checkbox_share_google{:type => "checkbox", :name => "share_verse_social"}
-              %label{:for => 'share_verse_google', :class => "share_verse_google"}
-                = t("google plus")
           %div.clearfix{style: "margin-bottom: 15px"}
     %dt#link
       = t("link")

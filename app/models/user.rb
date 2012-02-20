@@ -176,6 +176,16 @@ class User < YouVersion::Resource
   #     Note.for_user(id, auth: auth)
   #   end
   #   
+  def share(opts = {})
+    puts "in"
+    opts[:connections] = opts[:connections].keys.join("+")
+    puts opts
+    result = YvApi.post("users/share", opts.merge({auth: self.auth})) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      self.errors[:base] << new_errors
+      false
+    end
+  end
   def notes(opts = {})
     Note.for_user(self.id, opts.merge({auth: self.auth}))
   end
