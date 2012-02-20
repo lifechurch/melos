@@ -34,7 +34,7 @@ class YvApi
       get_start = Time.now.to_f
       begin
       response = httparty_get(resource_url, query: opts) 
-      rescue
+      rescue Exception => e
         Rails.logger.info "***HTTParty Err: #{e.class} : #{e.to_s}"
       end
       
