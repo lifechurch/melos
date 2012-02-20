@@ -9,6 +9,6 @@ class PagesController < ApplicationController
   end
 
   def open
-    render text: "10"
+    render json: "10".to_json
   end
 end
