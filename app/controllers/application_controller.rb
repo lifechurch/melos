@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
   before_filter :set_locale, :set_page
   rescue_from AuthError, with: :auth_error
+  rescue_from APITimeoutError, with: :timeout_error
 
   def set_page
     @page = (params[:page] || 1).to_i
@@ -51,6 +52,10 @@ class ApplicationController < ActionController::Base
   def auth_error
     sign_out
     redirect_to(sign_in_path, flash: {error: t('auth error')})
+  end
+  def auth_error(ex)
+    @error = ex
+    render "pages/api_timeout"
   end
   def force_login(opts = {})
     if current_auth.nil?

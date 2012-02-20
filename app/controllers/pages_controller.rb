@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   def l10n
   end
 
+  def api_timeout
+  end
+  
   def open
     render json: 0.to_json, callback: params[:callback]
   end
