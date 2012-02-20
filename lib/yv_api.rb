@@ -26,7 +26,13 @@ class YvApi
       response = Rails.cache.fetch cache_key, expires_in: cache_length do
         Rails.logger.info "*** cache miss for #{cache_key}"
         # No cache hit; ask the API
-        response = httparty_get(resource_url, query: opts.except(:cache_for))
+        begin
+          response = httparty_get(resource_url, query: opts.except(:cache_for))
+        rescue Exception => e
+        #rescue Errno::ETIMEDOUT => e
+          #raise APITimeoutError
+          Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+        end
       end
       get_end = Time.now.to_f
       Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
@@ -35,8 +41,10 @@ class YvApi
       get_start = Time.now.to_f
       begin
         response = httparty_get(resource_url, query: opts) 
-      rescue Errno::ETIMEDOUT => e
-        raise APITimeoutError
+      rescue Exception => e
+      #rescue Errno::ETIMEDOUT => e
+        #raise APITimeoutError
+        Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
       end
       
       get_end = Time.now.to_f
