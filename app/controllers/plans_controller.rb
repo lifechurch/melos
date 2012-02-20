@@ -42,8 +42,8 @@ class PlansController < ApplicationController
     
     if @subscription = current_user.subscription(params[:id])
       @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
-      debugger
-      redirect_to plan_path(@plan, content: params[:content_target], day: params[:day_target])
+
+      redirect_to plan_path(content: params[:content_target], day: params[:day_target])
       #EVENTUALLY: sender should just send all parameters, then we should mask them with nils for default cases here in the controller -- this would be better abstraction
     else
       raise "you can't update a plan to which you aren't subscribed"
@@ -52,12 +52,12 @@ class PlansController < ApplicationController
   
   def start    
     if @subscription = current_user.subscription(params[:plan_id])
-      redirect_to plan_path(@subscription), notice: t("plans.already subscribed") and return
+      redirect_to plan_path, notice: t("plans.already subscribed") and return
     end
     
     Plan.subscribe(params[:plan_id], current_auth)
 
-    redirect_to plan_path(params[:plan_id]), notice: t("plans.subscribe successful")
+    redirect_to plan_path, notice: t("plans.subscribe successful")
   end
   
   def settings
