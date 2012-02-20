@@ -35,10 +35,11 @@ class YvApi
       begin
       response = httparty_get(resource_url, query: opts) 
       rescue Errno::ETIMEDOUT => e
+        Rails.logger.info "***API TIMEOUT: #{e.class} : #{e.to_s}"
         begin
            response = httparty_get(resource_url, query: opts)
          rescue Errno::ETIMEDOUT => e
-           Rails.logger.info "***API TIMEOUT: #{e.class} : #{e.to_s}"
+           Rails.logger.info "***API DOUBLE TIMEOUT: #{e.class} : #{e.to_s}"
            raise APITimeoutError
         end
       end
