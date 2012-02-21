@@ -1,6 +1,6 @@
 class YvApi
   include HTTParty
-  default_timeout 2 #HTTParty
+  default_timeout 4 #HTTParty
   format :json
   headers 'Referer' => "http://" + Cfg.api_referer
 
