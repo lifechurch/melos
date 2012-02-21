@@ -1,6 +1,5 @@
 class YvApi
   include HTTParty
-  default_timeout 4 #HTTParty
   format :json
   headers 'Referer' => "http://" + Cfg.api_referer
 
@@ -32,6 +31,7 @@ class YvApi
         #rescue Errno::ETIMEDOUT => e
           #raise APITimeoutError
           Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+          raise
         end
       end
       get_end = Time.now.to_f
@@ -45,6 +45,7 @@ class YvApi
       #rescue Errno::ETIMEDOUT => e
         #raise APITimeoutError
         Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+        raise
       end
       
       get_end = Time.now.to_f
