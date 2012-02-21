@@ -4,7 +4,7 @@ class PlansController < ApplicationController
   def index
     if params[:user_id]
       @user = (params[:user_id] == current_user.username) ? current_user : User.find(params[:user_id])
-      render :action => "index_subscriptions" 
+      render :action => "index_subscriptions" and return
     end
     
     params[:lang] ||= I18n.locale.to_s
@@ -25,7 +25,7 @@ class PlansController < ApplicationController
       @reading = @subscription.reading(@day)
       @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0 #coerce content page to 1st page if outside range
 
-      render :action => "show_subscribed"
+      render :action => "show_subscribed" and return
     end  
 
     @plan = Plan.find(params[:id])
