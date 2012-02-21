@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
   end
   def timeout_error(ex)
     @error = ex
-    render "pages/api_timeout"
+    render "pages/api_timeout" :status => 408
   end
   def force_login(opts = {})
     if current_auth.nil?
