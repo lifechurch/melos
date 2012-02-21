@@ -29,7 +29,7 @@
 #nav_primary span
   background:
     repeat: no-repeat
-    position: center 10px
+    position: 0 10px
   border-top: 1px solid rgba(#fff, 0.15)
   border-bottom: 1px solid rgba(#000, 0.5)
   display: block
@@ -40,6 +40,11 @@
   text-shadow: #000 0 1px 0
   padding-top: 50px
   padding-bottom: 10px
+
+#nav_primary span:hover,
+#nav_primary li.highlighted span
+  background:
+    position: -60px 10px
 
 #nav_primary a
   background: url(../images/nav_primary_a.png) no-repeat -99999px -99999px
@@ -56,11 +61,7 @@
 #nav_primary_bible span
   background:
     image: url(../images/nav_bible.png)
-#nav_primary_bible span:hover,
-#nav_primary_bible.highlighted span
-  background:
-    image: url(../images/nav_bible_active.png)
-
+    
 #nav_primary_plans span
   background:
     image: url(../images/nav_plans.png)
@@ -75,11 +76,11 @@
 
 #nav_primary_friends span
   background:
-    image: url(../images/nav_friends.png)
+    image: url(../images/nav_group.png)
 
 #nav_primary_groups span
   background:
-    image: url(../images/nav_groups.png)
+    image: url(../images/nav_group.png)
 
 #nav_primary_mobile span
   background:
