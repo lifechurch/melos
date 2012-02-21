@@ -100,7 +100,7 @@ class Version
   end
 
   def self.books_api_data(version)
-    @@books_api_data[version] = YvApi.get("bible/books", version: version, cache_for: 12.hours) unless @@books_api_data.has_key?(version)
+    @@books_api_data[version] = YvApi.get("bible/books", cache_for: 12.hours, version: version, cache_for: 12.hours) unless @@books_api_data.has_key?(version)
     @@books_api_data[version]
   end
 

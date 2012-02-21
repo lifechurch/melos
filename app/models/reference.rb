@@ -143,7 +143,7 @@ class Reference
       #   "description_text"=> "Experience the majestic language of the King James Bible skillfully narrated...
       #   "description_html"=> ...of the listener.\\r\\n\\r\\nThis audio Bible is provided.... Recorded under licensing agreement. (<a href=\"http://www.listenersbible.com\">http://www.listenersbible.com<?a>)",
       #   "publisher_link"=>"http://www.listenersbible.com/free-download"}
-      opts = {id: api_data[0].data.request.audio[0].id}
+      opts = {id: api_data[0].data.request.audio[0].id, cache_for: 12.hours}
       
       response = YvApi.get("audio_bible/view", opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
@@ -207,7 +207,7 @@ class Reference
     
     #get new data if the format is the same
     if(@api_data[:format].nil? || @api_data_format != format)
-      @api_data[:format] = YvApi.get("bible/#{api_type}", format: format, version: @ref[:version], reference: @ref.except(:version).to_osis_string) do |errors|
+      @api_data[:format] = YvApi.get("bible/#{api_type}", cache_for: 12.hours, format: format, version: @ref[:version], reference: @ref.except(:version).to_osis_string) do |errors|
         if errors.length == 1 && [/^Reference not found$/].detect { |r| r.match(errors.first["error"]) }
           puts "wrong version"
           raise NotAChapterError

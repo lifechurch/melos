@@ -62,7 +62,7 @@ class Plan < YouVersion::Resource
     #     sort  the ordering of the results, defaults to 'score' (relevance), also accepts 'total_days'
     #     page  number of results to return
     query = '*' if (query == "" || query == nil)
-    params = {query: query}.merge!(params)
+    params = {query: query, cache_for: 12.hours}.merge!(params)
     
     response = YvApi.get("#{api_path_prefix}/search", params) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
@@ -162,7 +162,7 @@ class Plan < YouVersion::Resource
       # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
       # to be overriden by Subscription model to send auth and user_id
 
-      response = YvApi.get("reading_plans/references", opts) do |errors|
+      response = YvApi.get("reading_plans/references", opts.merge({cache_for: 12.hours})) do |errors|
         raise YouVersion::ResourceError.new(errors)
       end
       
