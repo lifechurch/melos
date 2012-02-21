@@ -4,7 +4,8 @@
   %h1 Traffic Jam!
   %hr
   %div{style:"text-align: center; margin-top: 70px"}
-    %p Over 6,000 Bible chapter views per second is a lot of traffic!! Unfortunately your request timed-out. You can try again by reloading the page!
+    %p Over 6,000 Bible chapter views per second is a lot of traffic!! Unfortunately your request has timed-out. 
+    %p You can try again by reloading the page, we're very sorry for the inconvenience!
     %br
-    %p We're working hard to widen the roads in hopes that you never see this page again!
-    %p.small.mute= "#{@error.class} : @error.to_s"
+    %p We're working hard to widen the roads in hopes that soon you will never see this page again!
+  %p.small.mute= "#{@error.class} : #{@error.to_s}"
