@@ -30,9 +30,8 @@ class YvApi
           response = httparty_get(resource_url, query: opts.except(:cache_for))
         rescue Exception => e
         #rescue Errno::ETIMEDOUT => e
-          #raise APITimeoutError
           Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
-          raise
+          raise APITimeoutError, "API Timeout for #{resource_url}"
         end
       end
       get_end = Time.now.to_f
@@ -46,7 +45,7 @@ class YvApi
       #rescue Errno::ETIMEDOUT => e
         #raise APITimeoutError
         Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
-        raise
+        raise APITimeoutError, "API Timeout for #{resource_url}"
       end
       
       get_end = Time.now.to_f
