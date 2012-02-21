@@ -52,7 +52,7 @@ class YvApi
     Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     end
     # Check the API response for error code
-    return api_response_or_rescue(response, block)
+    return api_response_or_rescue(response, block) if response
   end
 
   def self.post(path, opts={}, &block)
