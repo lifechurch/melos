@@ -52,6 +52,6 @@ module YouversionWeb
     config.assets.version = '1.0'
 
     # Setting up memcached.
-    config.cache_store = :dalli_store
+    config.cache_store = :dalli_store, {namespace: "yv", expires_in: 12.hours, compression: true}
   end
 end
