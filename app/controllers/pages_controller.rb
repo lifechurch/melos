@@ -12,6 +12,6 @@ class PagesController < ApplicationController
   end
   
   def open
-    render json: 0.to_json, callback: params[:callback]
+    render json: 10.to_json, callback: params[:callback]
   end
 end
