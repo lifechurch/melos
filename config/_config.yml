@@ -39,7 +39,7 @@ staging:
   <<: *test
   api_root: api.youversion.com
   api_referer: web-staging.youversion.com
-  api_version: "2.4"
+  memcache_server: memcache.youversion.com
   memcache_server: localhost
 
 production: &production

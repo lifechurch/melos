@@ -2,6 +2,7 @@ class YvApi
   include HTTParty
   format :json
   headers 'Referer' => "http://" + Cfg.api_referer
+  default_timeout 5
 
   class << YvApi
     alias_method :httparty_get, :get
