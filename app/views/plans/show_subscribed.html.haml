@@ -46,7 +46,7 @@
                     - if @content_page != 0
                       %input{type: "hidden", name: "content_target", value: @content_page}
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
-                    %b= r.ref.to_s
+                    %b= r.ref.ref_string
                 .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 30px; padding-bottom: 15px; margin-right: 30px; font-size: 14px; line-height: 25px"}= r.ref.contents(format: 'html').join.html_safe
           .subscription_plan_links
             %p.about_publisher= link_to(t("plans.about the publisher"), @subscription.publisher_url)
@@ -81,7 +81,7 @@
                     - if @content_page != 0
                       %input{type: "hidden", name: "content_target", value: @content_page}
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
-                %a{href: plan_path(@subscription.to_param, day: @day.to_s, content: (i > 0 ? i.to_s : nil)), style: "margin-top: 2px"}= r.ref.to_s
+                %a{href: plan_path(@subscription.to_param, day: @day.to_s, content: (i > 0 ? i.to_s : nil)), style: "margin-top: 2px"}= r.ref.ref_string
           .subscription_plan_links
             %p.about_publisher= link_to(t("plans.about the publisher"), @subscription.publisher_url)
             %p.about_plan= link_to(t("plans.about this plan"), ignore_subscription: true)

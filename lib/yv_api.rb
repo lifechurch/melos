@@ -32,14 +32,6 @@ class YvApi
         #rescue Errno::ETIMEDOUT => e
           Rails.logger.error "*** HTTPary ERR: #{e.class} : #{e.to_s}"
           raise APITimeoutError, "API Timeout for #{resource_url}"
-        ensure
-          if response["response"]["data"].is_a?(Hash) && response["response"]["data"]["errors"]
-            if response["response"]["data"]["errors"].first["key"] == "unknown_error"
-              Rails.logger.error "*** API Server ERR"
-              Rails.logger.error "**** Response: #{response}"
-              raise APIError, "Unknown API error for #{resource_url}"
-            end
-          end
         end
       end
       get_end = Time.now.to_f
@@ -54,14 +46,6 @@ class YvApi
         #raise APITimeoutError
         Rails.logger.error "*** HTTPary ERR: #{e.class} : #{e.to_s}"
         raise APITimeoutError, "API Timeout for #{resource_url}"
-      ensure
-        if response["response"]["data"].is_a?(Hash) && response["response"]["data"]["errors"]
-          if response["response"]["data"]["errors"].first["key"] == "unknown_error"
-            Rails.logger.error "*** API Server ERR"
-            Rails.logger.error "**** Response: #{response}"
-            raise APIError, "Unknown API error for #{resource_url}"
-          end
-        end
       end
 
       get_end = Time.now.to_f
@@ -131,6 +115,20 @@ class YvApi
       raise("API Error: " + response["response"]["data"]["errors"].map { |e| e["error"] }.join("; ")) unless !new_response.nil?
       # If it DID work, use the response from the block as the new response
       return new_response
+    end
+    
+    if response["response"]["code"].nil?
+      begin
+        if response["response"]["data"]["errors"].first["key"] == "unknown_error"
+          Rails.logger.error "*** API Server ERR"
+          Rails.logger.error "**** Response: #{response}"
+          raise APIError, "Unknown API error for #{resource_url}"
+        end
+      rescue
+        Rails.logger.error "*** Uncoded API ERR"
+        Rails.logger.error "**** Response: #{response}"
+        raise APIError, "Uncoded API error for #{resource_url}"
+      end
     end
 
     # creating a resource? Just return success

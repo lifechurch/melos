@@ -8,7 +8,6 @@ class Plan < YouVersion::Resource
   attr_i18n_reader :name
   attr_i18n_reader :formatted_length
   attr_i18n_reader :copyright
-  attribute :version
 
   def self.categories(params = {})
     PlanCategories.all(params)
@@ -77,6 +76,14 @@ class Plan < YouVersion::Resource
     response.reading_plans.each {|data| list << Plan.new(data.merge(:auth => params[:auth]))}
     list
     
+  end
+  
+  def version
+    @attributes[:version] || @version
+  end
+  
+  def version=(version)
+    @version = version
   end
   
   def users(params = {})
@@ -169,7 +176,11 @@ class Plan < YouVersion::Resource
       @reading = Hashie::Mash.new()
       @reading.devotional = response.additional_content_html
       @reading.devotional ||= "<p>" << YouVersion::Resource.i18nize(response.additional_content).gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\r\n)/, '<br>') << "</p>" if response.additional_content
-      @reading.references = response.adjusted_days.first.references.map {|data| Hashie::Mash.new(ref: Reference.new(data.reference.osis), completed?: (data.completed == "true"))}
+      @reading.references = response.adjusted_days.first.references.map do |data| 
+        osis_hash = data.reference.osis.to_osis_hash
+        osis_hash[:version] = version
+        Hashie::Mash.new(ref: Reference.new(osis_hash), completed?: (data.completed == "true"))
+      end
     end
     
     @reading
