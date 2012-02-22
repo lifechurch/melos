@@ -13,7 +13,7 @@
         = link_to t("plans.month"), plan_calendar_path(@subscription)
   - else
     - if current_user
-      .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.slug), :class => 'action_button_green', style: "width: 200px")
+      .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.to_param), :class => 'action_button_green', style: "width: 200px")
     - else 
       .float_right= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "width: 200px")
   %h1{style: "clear: none; width: 600px"}= @subscription.name
@@ -81,7 +81,7 @@
                     - if @content_page != 0
                       %input{type: "hidden", name: "content_target", value: @content_page}
                     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{i}_box",  checked: r.completed? ? "checked" : nil}
-                %a{href: plan_path(@subscription.slug, day: @day.to_s, content: (i > 0 ? i.to_s : nil)), style: "margin-top: 2px"}= r.ref.to_s
+                %a{href: plan_path(@subscription.to_param, day: @day.to_s, content: (i > 0 ? i.to_s : nil)), style: "margin-top: 2px"}= r.ref.to_s
           .subscription_plan_links
             %p.about_publisher= link_to(t("plans.about the publisher"), @subscription.publisher_url)
             %p.about_plan= link_to(t("plans.about this plan"), ignore_subscription: true)
@@ -97,4 +97,4 @@
               %input{type: "hidden", name: "content_target", value: @content_page + 1}
               %button.action_button_green.float_right{type: "submit", name: "done_read"}= t('plans.reading completed (mark and show next)')
           - else 
-            .float_right= link_to(t('plans.next reading'), plan_path(@subscription.slug, day: @day, content: @content_page + 1), class: 'action_button_green') if @reading.references.count - 1 > @content_page
+            .float_right= link_to(t('plans.next reading'), plan_path(@subscription.to_param, day: @day, content: @content_page + 1), class: 'action_button_green') if @reading.references.count - 1 > @content_page

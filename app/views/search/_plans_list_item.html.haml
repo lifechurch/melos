@@ -1,5 +1,5 @@
 %li
-  %a= link_to YouVersion::Resource.i18nize(item.name), plan_path(item.slug)
+  %a= link_to YouVersion::Resource.i18nize(item.name), plan_path(item.to_param)
   %p= YouVersion::Resource.i18nize(item.about)
   
   / {"id"=>"20",
