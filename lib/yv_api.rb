@@ -30,8 +30,16 @@ class YvApi
           response = httparty_get(resource_url, query: opts.except(:cache_for))
         rescue Exception => e
         #rescue Errno::ETIMEDOUT => e
-          Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+          Rails.logger.error "*** HTTPary ERR: #{e.class} : #{e.to_s}"
           raise APITimeoutError, "API Timeout for #{resource_url}"
+        ensure
+          if response["response"]["data"].is_a?(Hash) && response["response"]["data"]["errors"]
+            if response["response"]["data"]["errors"].first["key"] == "unknown_error"
+              Rails.logger.error "*** API Server ERR"
+              Rails.logger.error "**** Response: #{response}"
+              raise APIError, "Unknown API error for #{resource_url}"
+            end
+          end
         end
       end
       get_end = Time.now.to_f
@@ -44,10 +52,18 @@ class YvApi
       rescue Exception => e
       #rescue Errno::ETIMEDOUT => e
         #raise APITimeoutError
-        Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+        Rails.logger.error "*** HTTPary ERR: #{e.class} : #{e.to_s}"
         raise APITimeoutError, "API Timeout for #{resource_url}"
+      ensure
+        if response["response"]["data"].is_a?(Hash) && response["response"]["data"]["errors"]
+          if response["response"]["data"]["errors"].first["key"] == "unknown_error"
+            Rails.logger.error "*** API Server ERR"
+            Rails.logger.error "**** Response: #{response}"
+            raise APIError, "Unknown API error for #{resource_url}"
+          end
+        end
       end
-      
+
       get_end = Time.now.to_f
     Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     end
