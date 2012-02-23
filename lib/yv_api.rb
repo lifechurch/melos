@@ -117,19 +117,27 @@ class YvApi
       return new_response
     end
     
-    # if response["response"]["code"].nil?
-    #   begin
-    #     if response["response"]["data"]["errors"].first["key"] == "unknown_error"
-    #       Rails.logger.error "*** API Server ERR"
-    #       Rails.logger.error "**** Response: #{response}"
-    #       raise APIError, "Unknown API error for #{opts[:resource_url]}"
-    #     end
-    #   rescue
-    #     Rails.logger.error "*** Uncoded API ERR"
-    #     Rails.logger.error "**** Response: #{response}"
-    #     raise APIError, "Uncoded API error for #{opts[:resource_url]}"
-    #   end
-    # end
+    if response["response"]["code"].nil?
+      # If there's a block, use it for a substitute API call
+      new_response = block.call(response["response"]["data"]["errors"]) if block
+      
+      # If the block didn't return a substitute, throw an exception based on the original error
+      if new_response.nil? 
+        begin
+          if response["response"]["data"]["errors"] && response["response"]["data"]["errors"].first["key"] == "unknown_error"
+            Rails.logger.error "*** API Server ERR"
+            Rails.logger.error "**** Error: #{response["response"]["data"]["errors"].first["error"]}"
+            Rails.logger.error "**** Response: #{response}"
+            
+            raise APIError, "Unknown API error for #{opts[:resource_url]}"
+          end
+        rescue
+          Rails.logger.error "*** Uncoded API ERR"
+          Rails.logger.error "**** Response: #{response}"
+          raise APIError, "Uncoded API error for #{opts[:resource_url]}"
+        end
+      end
+    end
 
     # creating a resource? Just return success
     # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
