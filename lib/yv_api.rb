@@ -52,7 +52,7 @@ class YvApi
     Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     end
     # Check the API response for error code
-    return api_response_or_rescue(response, block)
+    return api_response_or_rescue(response, block, resource_url: resource_url)
   end
 
   def self.post(path, opts={}, &block)
@@ -102,7 +102,7 @@ class YvApi
     base = (protocol + "://" + Cfg.api_root + "/" + (api_version || Cfg.api_version))
   end
 
-  def self.api_response_or_rescue(response, block)
+  def self.api_response_or_rescue(response, block, opts = {})
     if response["response"]["code"].to_i >= 400
       # Check if it's bad/expired auth and raise an exception
       
@@ -117,19 +117,19 @@ class YvApi
       return new_response
     end
     
-    if response["response"]["code"].nil?
-      begin
-        if response["response"]["data"]["errors"].first["key"] == "unknown_error"
-          Rails.logger.error "*** API Server ERR"
-          Rails.logger.error "**** Response: #{response}"
-          raise APIError, "Unknown API error for #{resource_url}"
-        end
-      rescue
-        Rails.logger.error "*** Uncoded API ERR"
-        Rails.logger.error "**** Response: #{response}"
-        raise APIError, "Uncoded API error for #{resource_url}"
-      end
-    end
+    # if response["response"]["code"].nil?
+    #   begin
+    #     if response["response"]["data"]["errors"].first["key"] == "unknown_error"
+    #       Rails.logger.error "*** API Server ERR"
+    #       Rails.logger.error "**** Response: #{response}"
+    #       raise APIError, "Unknown API error for #{opts[:resource_url]}"
+    #     end
+    #   rescue
+    #     Rails.logger.error "*** Uncoded API ERR"
+    #     Rails.logger.error "**** Response: #{response}"
+    #     raise APIError, "Uncoded API error for #{opts[:resource_url]}"
+    #   end
+    # end
 
     # creating a resource? Just return success
     # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
