@@ -1,5 +1,7 @@
 %li
-  %a= link_to YouVersion::Resource.i18nize(item.name), plan_path(item.to_param)
+  %h5
+    %a= link_to YouVersion::Resource.i18nize(item.name), plan_path("#{item.id}-#{item.slug}")
+  %div{style: "margin-bottom: 10px; line-height: 14px"}= YouVersion::Resource.i18nize(item.formatted_length)
   %p= YouVersion::Resource.i18nize(item.about)
   
   / {"id"=>"20",
