@@ -40,7 +40,6 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
   
-
   private
   def sign_in(user)
     cookies.permanent.signed[:a] = user.id
