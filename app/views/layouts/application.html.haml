@@ -5,6 +5,7 @@
     - if @canonical
       %link{rel: "canonical", href: @canonical}
     = render '/shared/head'
+    %link{rel: "shortcut icon", href:"/favicon.ico"}
   %body
     #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
       #header_outer
