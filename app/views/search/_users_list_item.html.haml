@@ -1,1 +1,46 @@
--#TODO: make a _list_item in /users/ and try to re-use it once the API supports this and we know what items are needed
+%li
+  - u = User.new(item)
+  - if u.user_avatar_url
+    %p.float_left.gutter_right_half
+      %img{src: u.user_avatar_url.px_48x48, style:"margin-top:2px"}
+  %p.float_left
+    = link_to u.name || u.username, u
+    %br
+    %span.mute= u.location || u.country
+  %div.float_right{style: "text-align: right;"}
+    - if current_user && current_user.following_user_id_list.include?(u.id.to_i)
+      %form{action: user_unfollow_path(u.username), method: "post"}
+        %button{title: "#{t('users.unfollow')} #{u.name || u.username}"}= t('users.unfollow')
+    - else
+      %form{action: user_follow_path(u.username), method: "post"}
+        %button{title: "#{t('users.follow')} #{u.name || u.username}"}= t('users.follow')
+
+    - if current_user && current_user.follower_user_id_list.include?(u.id.to_i)
+      %div.mute= t('user follows', user: u.username)
+    - else
+      %div.mute= t('user does not follow', user: u.username)
+  
+  / {"id"=>"2079766",
+  /     "username"=>"eprothro",
+  /     "user_avatar_url"=>
+  /      {"px_24x24"=>
+  /        "http://avatars.youversion.com/0c5d660f86706c53671db35921769537_2
+  /       "px_48x48"=>
+  /        "http://avatars.youversion.com/0c5d660f86706c53671db35921769537_4
+  /       "px_128x128"=>
+  /        "http://avatars.youversion.com/0c5d660f86706c53671db35921769537_1
+  /       "px_512x512"=>
+  /        "http://avatars.youversion.com/0c5d660f86706c53671db35921769537_5
+  /     "first_name"=>"Evan",
+  /     "last_name"=>"Prothro",
+  /     "location"=>"Austin, TX",
+  /     "im_type"=>nil,
+  /     "im_username"=>nil,
+  /     "bio"=>nil,
+  /     "website"=>"theprothros.com",
+  /     "language_tag"=>"en",
+  /     "country"=>"US",
+  /     "timezone"=>"America/Chicago",
+  /     "created_dt"=>"2010-11-09 07:03:32.415639-06",
+  /     "last_login_dt"=>"2012-02-23 12:42:03-06"},
+  

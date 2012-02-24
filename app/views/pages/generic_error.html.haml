@@ -1,0 +1,12 @@
+- @title = "Unknown Error"
+- @reader_menus = false
+- @sidebar = false
+
+%article
+  %h1 Oops!
+  %hr
+  %div{style:"margin-top: 50px"}
+    %p Something went wrong behind the scenes! You can try again by reloading the page, we're very sorry for the inconvenience!
+    %p We've been notified about this and will jump on it as soon as possible.
+    %br
+    %p.small.mute= "#{@error.class}"

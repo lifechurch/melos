@@ -53,7 +53,7 @@
                 - else
                   - cur_status = statuses.delete_at(0)
                   %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '') << ((cur_date == current_date) ? ' today' : '')}
-                    = link_to(cur_date.day.to_s, plan_path(@subscription.slug, day: cur_status.day))
+                    = link_to(cur_date.day.to_s, plan_path(@subscription.to_param, day: cur_status.day))
                 - cur_date = cur_date.next
 
             :ruby

@@ -341,9 +341,7 @@ class User < YouVersion::Resource
   end
   
   def subscription(plan)
-    
     Subscription.find(plan, id, auth: auth)
-    
   end
   
   def subscribed_to? (plan, opts = {})

@@ -1,2 +1,3 @@
 class AuthError < StandardError; end
-class APITimeoutError < StandardError; end
+class APIError < StandardError; end
+class APITimeoutError < APIError; end

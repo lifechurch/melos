@@ -20,7 +20,7 @@ class YvApi
     end
     # If we should cache, try pulling from cache first
     if cache_length = opts[:cache_for]
-      cache_key = [path, opts.except(:cache_for).sort].flatten.join("_")
+      cache_key = [path, opts.except(:cache_for).sort_by{|k,v| k.to_s}].flatten.join("_")
       Rails.logger.info "*** cache_key is #{cache_key}"
       get_start = Time.now.to_f
       response = Rails.cache.fetch cache_key, expires_in: cache_length do
@@ -30,7 +30,7 @@ class YvApi
           response = httparty_get(resource_url, query: opts.except(:cache_for))
         rescue Exception => e
         #rescue Errno::ETIMEDOUT => e
-          Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+          Rails.logger.error "*** HTTPary ERR: #{e.class} : #{e.to_s}"
           raise APITimeoutError, "API Timeout for #{resource_url}"
         end
       end
@@ -44,15 +44,15 @@ class YvApi
       rescue Exception => e
       #rescue Errno::ETIMEDOUT => e
         #raise APITimeoutError
-        Rails.logger.info "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+        Rails.logger.error "*** HTTPary ERR: #{e.class} : #{e.to_s}"
         raise APITimeoutError, "API Timeout for #{resource_url}"
       end
-      
+
       get_end = Time.now.to_f
     Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     end
     # Check the API response for error code
-    return api_response_or_rescue(response, block) if response
+    return api_response_or_rescue(response, block, resource_url: resource_url)
   end
 
   def self.post(path, opts={}, &block)
@@ -102,7 +102,7 @@ class YvApi
     base = (protocol + "://" + Cfg.api_root + "/" + (api_version || Cfg.api_version))
   end
 
-  def self.api_response_or_rescue(response, block)
+  def self.api_response_or_rescue(response, block, opts = {})
     if response["response"]["code"].to_i >= 400
       # Check if it's bad/expired auth and raise an exception
       
@@ -115,6 +115,28 @@ class YvApi
       raise("API Error: " + response["response"]["data"]["errors"].map { |e| e["error"] }.join("; ")) unless !new_response.nil?
       # If it DID work, use the response from the block as the new response
       return new_response
+    end
+    
+    if response["response"]["code"].nil?
+      # If there's a block, use it for a substitute API call
+      new_response = block.call(response["response"]["data"]["errors"]) if block
+      
+      # If the block didn't return a substitute, throw an exception based on the original error
+      if new_response.nil? 
+        begin
+          if response["response"]["data"]["errors"] && response["response"]["data"]["errors"].first["key"] == "unknown_error"
+            Rails.logger.error "*** API Server ERR"
+            Rails.logger.error "**** Error: #{response["response"]["data"]["errors"].first["error"]}"
+            Rails.logger.error "**** Response: #{response}"
+            
+            raise APIError, "Unknown API error for #{opts[:resource_url]}"
+          end
+        rescue
+          Rails.logger.error "*** Uncoded API ERR"
+          Rails.logger.error "**** Response: #{response}"
+          raise APIError, "Uncoded API error for #{opts[:resource_url]}"
+        end
+      end
     end
 
     # creating a resource? Just return success

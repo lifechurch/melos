@@ -3,8 +3,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
   before_filter :set_locale, :set_page
-  rescue_from AuthError, with: :auth_error
-  rescue_from APITimeoutError, with: :timeout_error
+  
+  unless Rails.application.config.consider_all_requests_local
+    rescue_from Exception, with: :generic_error
+    rescue_from APIError, with: :api_error
+    rescue_from AuthError, with: :auth_error
+    rescue_from APITimeoutError, with: :timeout_error
+  end
 
   def set_page
     @page = (params[:page] || 1).to_i
@@ -35,7 +40,6 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
   
-
   private
   def sign_in(user)
     cookies.permanent.signed[:a] = user.id
@@ -55,7 +59,15 @@ class ApplicationController < ActionController::Base
   end
   def timeout_error(ex)
     @error = ex
-    render "pages/api_timeout", :status => 408
+    render "pages/api_timeout", template: 'layouts/application', :status => 408
+  end
+  def api_error(ex)
+    @error = ex
+    render "pages/generic_error", template: 'layouts/application', :status => 502
+  end
+  def generic_error(ex)
+    @error = ex
+    render "pages/generic_error", template: 'layouts/application', :status => 500
   end
   def force_login(opts = {})
     if current_auth.nil?

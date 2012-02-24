@@ -36,7 +36,7 @@
           %input{:type => "hidden", :name => "category", :value => params[:category]}
         - if params[:lang]
           %input{:type => "hidden", :name => "lang", :value => params[:lang]}
-        %input{:style =>"width: 300px; margin-left: 40px;", name: "query", :type => 'search', :placeholder => t("plans.search placeholder", category: @categories.current_name || t("plans.all"))}
+        %input.autofocus{:style =>"width: 300px; margin-left: 40px;", name: "query", :type => 'search', :placeholder => t("plans.search placeholder", category: @categories.current_name || t("plans.all")), value: params[:query]}
         %input{:type => 'submit', :value => t("plans.search")}
       %hr{:style => "margin-top:15px"}
     .split_pane_sidebar

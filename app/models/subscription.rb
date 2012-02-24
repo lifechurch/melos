@@ -37,7 +37,6 @@ class Subscription < Plan
   
   def self.find(plan, user, opts = {})
     #if auth is nil, it will attempt to search for public subscription
-    
     case user
     when User
       opts[:user_id] = user.id
