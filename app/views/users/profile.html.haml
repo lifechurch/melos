@@ -15,6 +15,10 @@
     = f.label :last_name, t('users.profile.last name')
     %br
     = f.text_field :last_name
+  / %p #errors, outside scope of #160
+  /   = f.label :email, t('users.profile.email')
+  /   %br
+  /   = f.text_field :email
   %p
     = f.label :location, t('users.profile.location')
     %br

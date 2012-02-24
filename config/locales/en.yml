@@ -281,6 +281,7 @@ en:
     profile:
       first name:                               "First Name"
       last name:                                "Last Name"
+      email:                                    "Email Address"
       location:                                 "Location"
       postal code:                              "ZIP/Postal code"
       website:                                  "Website"
@@ -293,7 +294,6 @@ en:
       new password:                             "New Password"
       confirm password:                         "Confirm Password"
       avatar file:                              "Select a file for your picture"
-      your current picture:                     "Your Current Picture:"
       avatar help:                              "Images can be in JPG, PNG, or GIF format. Your image will be converted to a 48x48 thumbnail. The maximum file size is 1MB."
       updated picture:                          "Success! You've updated your picture."
       updated notifications:                    "Success! You've updated your notification settings."
