@@ -95,6 +95,9 @@
               %input{type: "hidden", name: "completed", value: true.to_s}
               %input{type: "hidden", name: "day_target", value: @day.to_s}
               %input{type: "hidden", name: "content_target", value: @content_page + 1}
-              %button.action_button_green.float_right{type: "submit", name: "done_read"}= t('plans.reading completed (mark and show next)')
+              %button.action_button_green.float_right{type: "submit", name: "done_read"}= "Done"
+              %div.float_right.mute{style:"clear:both; width: 160px; text-align:center; margin-top:5px"}= "3 of 3"
           - else 
             .float_right= link_to(t('plans.next reading'), plan_path(@subscription.to_param, day: @day, content: @content_page + 1), class: 'action_button_green') if @reading.references.count - 1 > @content_page
+            %div.float_right.mute= "1 of 3"
+            
