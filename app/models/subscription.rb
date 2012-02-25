@@ -266,7 +266,7 @@ class Subscription < Plan
   end
   
   def reading(day, opts = {})
-    super(day, opts.merge!({auth: auth, user_id: user_id}))
+    super(day, opts.merge!({cache_for: 0, auth: auth, user_id: user_id})) # Important: don't allow caching for this authed responses since completion needs to change
   end
   
   private

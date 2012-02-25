@@ -166,10 +166,12 @@ class Plan < YouVersion::Resource
     unless(@reading && @reading_day == day)
       opts[:day] ||= day
       opts[:id] ||= id
+      opts[:cache_for] ||= 12.hours
       # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
       # to be overriden by Subscription model to send auth and user_id
+      # we can cache the non-authed response
 
-      response = YvApi.get("reading_plans/references", opts.merge({cache_for: 12.hours})) do |errors|
+      response = YvApi.get("reading_plans/references", opts) do |errors|
         raise YouVersion::ResourceError.new(errors)
       end
       
