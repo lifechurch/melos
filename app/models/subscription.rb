@@ -119,7 +119,7 @@ class Subscription < Plan
       when Reference                              #Good to go
       when String                                 #try to create Ref, assuming osis string
         begin
-          ref = Reference.new(ref)
+          ref = Reference.new(ref.to_osis_hash.except(:version))
           rescue
            raise "incorrect string format for reference"
         end
@@ -135,7 +135,6 @@ class Subscription < Plan
       completed_refs.uniq! #just to be safe
       
       opts[:references] = completed_refs.to_api_string
-      
       YouVersion::Resource.post('reading_plans/update_completion', opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
