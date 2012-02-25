@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
   before_filter :force_login, only: [:start, :update, :settings, :calendar]
+  before_filter :set_nav
   
   def index
     if params[:user_id]
@@ -121,5 +122,10 @@ class PlansController < ApplicationController
     @subscription = current_user.subscription(params[:plan_id])
 
     raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil? 
+  end
+  
+  private
+  def set_nav
+    @nav = :plans
   end
 end
