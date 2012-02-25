@@ -1,0 +1,3 @@
+.subscription_plan_links{style:"margin-top: 30px; margin-left: 5px"}
+  %p.about_publisher= link_to t("plans.about the publisher"), plan.publisher_url
+  %p.about_plan= link_to t("plans.about this plan"), plan_path(plan.to_param, ignore_subscription: true)
