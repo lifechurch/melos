@@ -3,6 +3,8 @@ en:
   link:                                         "Link"
   site search:                                  "YouVersion Search"
   auth error:                                   "Sorry, there was a problem with your username or password. Please sign in to YouVersion to continue. *NC*"
+
+  about title:                                  "About YouVersion"
   make a donation:                              "Make a Donation"
   thanks for your donation:                     "Thanks for your donation!"
   thanks authorization:                         "Thanks for your gift! Your authorization code is %{code}."
@@ -441,4 +443,12 @@ en:
     line 2:                                     "different languages—the Bible that"
     line 3:                                     "goes with you anywhere."
     download:                                   "Download Now"
-
+  about page:
+    relevancy:                                  "Relevancy"
+    relevancy copy:                             "In generations past, the access people had to the Bible was very limited. Today, this is no longer the case. However, many people who have access to the Bible think its message does not apply to their lives. At the same time, there are others who believe there is a connection between the Bible and their every day experiences."
+    information revolution:                     "Information Revolution"
+    information revolution copy:                "Over the last decade, the Internet has brought about a revolution which empowers people like never before. With the ability to share, contribute, create, broadcast and communicate, it's easy to express who we are and what we believe with the rest of the world."
+    youversion copy:                            "Since its start in 1996, LifeChurch.tv's purpose has been to lead people to become fully devoted followers of Christ. In doing so, we have looked for new ways to help people connect the Bible to their daily lives. Our methods have changed over the years as we've incorporated various technologies and strategies. But at the core, our focus remains on relevancy as we consistently strive to demonstrate and teach people how God's Word relates to everyone, no matter where they are in life."
+    youversion copy 2:                          "YouVersion represents a new frontier in LifeChurch.tv's efforts. We aren't just building a tool to impact the world using innovative technology, more importantly, we are engaging people into relationships with God as they discover the relevance the Bible has for their lives."
+    partners title:                             "A Special Thanks to Our Partners"
+    translation title:                          "Our Translation Teams"
