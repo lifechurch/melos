@@ -73,7 +73,17 @@ class ReferenceList
 
   def to_api_string
     join_str = '+'
+
+    refs = @references.compact.map do |r|
+      osis = r.osis_noversion
+      if numbered_book_splits = osis.match(/(^\d)(\D{1})(.+)/)
+        osis = "#{numbered_book_splits[1]}#{numbered_book_splits[2].upcase}#{numbered_book_splits[3]}"
+      else
+        osis = osis.capitalize
+      end
+      osis
+    end
     
-    @references.compact.map{|r| r.osis_noversion.capitalize}.join(join_str)
+    refs.join(join_str)
   end
 end

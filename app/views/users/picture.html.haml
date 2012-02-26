@@ -1,6 +1,5 @@
 - @title = "#{t('users.picture')} | #{@user.name || @user.username}"
 
-%h3= t('users.profile.your current picture')
 %p
   %img{src: @user.user_avatar_url["px_128x128"]}
 = form_for @user, url: picture_path do |f|

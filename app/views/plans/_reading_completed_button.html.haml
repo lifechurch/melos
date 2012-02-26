@@ -1,0 +1,16 @@
+- if plan.is_a? Subscription
+  %form{method: 'post', style: "height: #{reading.references.count > 1 ? '53 px' : '48px'}; margin-top: 5px; margin-bottom: 3px"}
+    %input{type: "hidden", name: "_method", value: "put"}
+    %input{type: "hidden", name: "ref", value: reading.references[cur_reading_index].ref.osis}
+    %input{type: "hidden", name: "completed", value: true.to_s}
+    %input{type: "hidden", name: "day_target", value: day.to_s}
+    %input{type: "hidden", name: "content_target", value: cur_reading_index + 1}
+    .float_right{style:"text-align: center"}
+      %button.action_button_green{type: "submit", name: "done_read", style:"margin-bottom: 3px"}
+        - if cur_reading_index + 1 < reading.references.count
+          = t('plans.reading completed (mark and show next)', next_reference: reading.references[cur_reading_index+ 1].ref.ref_string)
+        -else
+          = t('plans.done reading')
+      .mute= t("plans.which reading", current: cur_reading_index+ 1, total: reading.references.count) if reading.references.count > 1
+- else 
+  .float_right= link_to(t('plans.next reading'), plan_path(page.to_param, day: day, content: cur_reading_index+ 1), class: 'action_button_green') if reading.references.count - 1 > cur_reading_index

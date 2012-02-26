@@ -1,9 +1,11 @@
-
 %section.top_section
   %div.clearfix
     %a{href: "#"}
       %img.avatar_huge{src: user.user_avatar_url["px_128x128"]}
     %div
+      - if @me
+        %form{action: profile_path}
+          %button.float_right= t("users.profile.edit")
       %h1= user.name || user.username
       %ul
         - if user.name
@@ -14,3 +16,4 @@
           %li.icon_small_link= link_to user.website, user.website
         - if user.bio
           %li= user.bio
+      

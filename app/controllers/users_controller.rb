@@ -119,7 +119,7 @@ class UsersController < ApplicationController
   end
 
   def bookmarks
-    @selected = :bookmarks
+    @nav = @selected = :bookmarks
     if params[:label]
       @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
     else
