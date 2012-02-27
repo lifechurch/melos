@@ -86,4 +86,8 @@ class ReferenceList
     
     refs.join(join_str)
   end
+
+	def smash_verses(refs)
+		refs = refs.sort_by { |i| i.osis }
+	end
 end

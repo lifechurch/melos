@@ -2,17 +2,23 @@
 
 %article
   #note
-    %h3= @note.title
+    %h3{class: @note.user_status}= @note.title
     / %p.mute= link_to_references(@note.reference)
-    %hr
-    - @note.reference_list.each do |r|
-      = link_to r, bible_path(r)
+    - if @note.reference_list
+      %ul.reference_tokens.read_only
+        - @note.reference_list.each do |r|
+          %li
+            = link_to r, bible_path(r)
     %hr
     %p= raw(@note.content_html)
-    %p
-      = label_tag :user_status, t("notes.status field")
-      = @note.user_status
-      / = button_to(@note.likes(:user_id => current_user.id).nil? ? t("likes.like button text") : t("likes.unlike button text"), like_path(@note.id), :method => :put) if @note.user_status == 'public' && current_user
-    - if current_auth && (current_auth.user_id.to_i == @note.user_id.to_i)
-      = link_to(t("notes.edit"), edit_note_path(@note.id)) 
-      .confirm= link_to(t("notes.delete"), note_path(@note.id), "data-confirm-text" => t("notes.confirm delete"), :method => :delete)
+    %hr
+    = render partial: "shared/share_buttons"
+    %hr
+    .float_right
+      %p.small
+        - if current_auth && (current_auth.user_id.to_i == @note.user_id.to_i)
+          %span= link_to('Edit', edit_note_path(@note.id))
+          &mdash;
+          %span.confirm= link_to('Delete', note_path(@note.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete) 
+          &mdash;
+        %span.created_as_date= t('created ago', time_ago: time_ago_in_words(@note.created_as_date))
