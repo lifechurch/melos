@@ -221,7 +221,7 @@ class UsersController < ApplicationController
   end
 
   def following
-    @users = @user.following
+    @users = @user.following({page: params[:page] ||= 1})
     @selected = :friends
     @really_selected = :following
     if @me
@@ -233,7 +233,7 @@ class UsersController < ApplicationController
   end
 
   def followers
-    @users = @user.followers
+    @users = @user.followers({page: params[:page] ||= 1})
     @selected = :friends
     @really_selected = :followers
     if @me

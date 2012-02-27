@@ -106,7 +106,11 @@ module YouVersion
         response = YvApi.get(list_path, params) do |errors|
           if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
             # Then it's the notes thing where you're auth'ed as a different user
-            YvApi.get(list_path, params.merge!(auth: nil))
+            YvApi.get(list_path, params.merge!(auth: nil)) do |errors|
+              if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+                []
+              end
+            end
           elsif errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
             []
           else
