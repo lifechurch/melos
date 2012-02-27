@@ -13,7 +13,7 @@ class Plan < YouVersion::Resource
   def self.categories(params = {})
     PlanCategories.all(params)
   end
-  
+
   def self.all(opts = {})
     if opts[:query] 
       #slug was passed, get id from slug with search, since API doesn't give a better way
@@ -77,6 +77,10 @@ class Plan < YouVersion::Resource
     response.reading_plans.each {|data| list << Plan.new(data.merge(:auth => params[:auth]))}
     list
     
+  end
+  
+  def current_day
+    1 #always show the first day if requested
   end
   
   def users(params = {})
