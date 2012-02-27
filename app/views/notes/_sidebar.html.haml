@@ -1,0 +1,36 @@
+- content_for :sidebar do
+  .widget.gutter_bottom_half
+    %a.action_button_green{href: new_note_path}
+      %span.icon_plus= t('notes.new note')
+  - if current_auth
+    - if current_user.likes
+      .widget
+        %header
+          %span= t('notes.notes i like')
+        %section
+          %table
+            %tfoot
+              %tr
+                %th
+                  &nbsp;
+                %td.align_right
+                  %a.more_arrow{href: user_likes_path(current_auth.username)}= t('notes.see my likes')
+            %tbody
+              - current_user.likes.first(5).each do |i|
+                %tr
+                  %th
+                    %a{href: i.note_url}
+                      %img.avatar_small{src: i.note_user_avatar_url.px_24x24}
+                  %td
+                    %strong
+                      %a{href: i.note_url}= i.note_title
+                    %br
+                    %a{href: i.note_url}= i.note_username
+    - else
+      = render_cell :notes_list_widget, :display, notes: Note.all, title: t("notes.community notes")
+      
+  - else
+    = render_cell :notes_list_widget, :display, notes: Note.all, title: t("notes.community notes")
+
+  = render "shared/widget_ad_bible_app"
+

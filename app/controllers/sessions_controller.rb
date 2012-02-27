@@ -5,7 +5,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate(params[:username], params[:password])
+    begin
+      user = User.authenticate(params[:username], params[:password])
+    rescue AuthError
+      user = false
+    end
+
     if user
       sign_in user
       redirect_to cookies[:sign_in_redirect] || bible_path, notice: t("successful sign-in", user: user.username)
