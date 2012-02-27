@@ -1261,6 +1261,13 @@ var YV = (function($, window, document, undefined) {
           }
         );
       },
+      nav_labels: function() {
+        $("#nav_primary ul li").hover(function(){
+          $(this).find(".tooltip").fadeIn(100);
+        }, function() {
+          $(this).find(".tooltip").fadeOut(100);
+        });
+      },
       // YV.init.in_place_confirm
       in_place_confirm: function() {
         $('.confirm').click(function(ev){
