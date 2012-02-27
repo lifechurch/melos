@@ -100,7 +100,7 @@
         %div#copy_link_container{style: "position: absolute; right: 0px; top: -2px;"}
           %button#copy_link{"data-confirm-text" => t("copy confirmed"), style: "margin-top:0px"}= t("copy")
     - if current_auth
-      %a.open_modal{:href => "#"}
+      %a.open_modal{:href => "#new_note"}
         %dt#new_note_modal
           = t("new note")
     - else 
