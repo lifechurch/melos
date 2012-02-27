@@ -13,7 +13,6 @@
     %p= raw(@note.content_html)
     %hr
     = render partial: "shared/share_buttons"
-    %hr
     .float_right
       %p.small
         - if current_auth && (current_auth.user_id.to_i == @note.user_id.to_i)
