@@ -3,7 +3,8 @@ en:
   link:                                         "Link"
   site search:                                  "YouVersion Search"
   auth error:                                   "Sorry, there was a problem with your username or password. Please sign in to YouVersion to continue. *NC*"
-
+  download:                                     "Download"
+  visit link:                                   "Visit Link"
   about title:                                  "About YouVersion"
   make a donation:                              "Make a Donation"
   thanks for your donation:                     "Thanks for your donation!"
@@ -460,3 +461,23 @@ en:
     youversion copy 2:                          "YouVersion represents a new frontier in LifeChurch.tv's efforts. We aren't just building a tool to impact the world using innovative technology, more importantly, we are engaging people into relationships with God as they discover the relevance the Bible has for their lives."
     partners title:                             "A Special Thanks to Our Partners"
     translation title:                          "Our Translation Teams"
+  press page:
+    title:                                      "Press Area"
+    lead copy:                                  "Based on the online Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle."
+    resources title:                            "Press Resources"
+    resources:
+      about:                                    "About YouVersion and The Bible App"
+      history:                                  "YouVersion History and Stats"
+      manual:                                   "YouVersion Brand Manual"
+    images title:                               "YouVersion Logos and Images"
+    images:
+      logos:                                    "YouVersion Logos Pack"
+      icons:                                    "Bible App Icons"
+      infographic:                              "Infographic: Bible App Stats and Usage"
+      iphone:                                   "Image Collection: iPhone"
+      ipad:                                     "Image Collection: iPad"
+      android:                                  "Image Collection: Android"
+      blackberry:                               "Image Collection: BlackBerry"
+      lifestyle:                                "Image Collection: Lifestyle"
+      screencast:                               "YouVersion Screencast"
+    links title:                                "Media Coverage Links"
