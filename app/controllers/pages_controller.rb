@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   def api_timeout; end
   def about; end
   def press; end
+  def mobile; end
   
   def open
     render json: 10.to_json, callback: params[:callback]

@@ -76,7 +76,7 @@ YouversionWeb::Application.routes.draw do
   match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
   delete 'connections/:provider/delete' => 'connections#destroy', as: 'delete_connection'
   
-  match 'mobile' => 'mobile#index'
+  match 'mobile' => 'pages#mobile'
   match 'donate' => 'pages#donate'
   match 'about' => 'pages#about'
   match 'press' => 'pages#press'
