@@ -463,6 +463,13 @@ en:
     translation title:                          "Our Translation Teams"
   press page:
     title:                                      "Press Area"
+    contact header:                             "Press Contact Information"
+    contact header 2:                           "Around The Web"
+    phone:                                      "Phone"
+    email:                                      "Email"
+    blog:                                       "YouVersion Blog"
+    facebook:                                   "YouVersion on Facebook"
+    twitter:                                    "YouVersion on Twitter"
     lead copy:                                  "Based on the online Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle."
     resources title:                            "Press Resources"
     resources:
