@@ -4,6 +4,7 @@ class Plan < YouVersion::Resource
   attribute :publisher_url
   attribute :id
   attribute :slug
+  attribute :version
   attr_i18n_reader :about
   attr_i18n_reader :name
   attr_i18n_reader :formatted_length
@@ -76,14 +77,6 @@ class Plan < YouVersion::Resource
     response.reading_plans.each {|data| list << Plan.new(data.merge(:auth => params[:auth]))}
     list
     
-  end
-  
-  def version
-    @attributes[:version] || @version
-  end
-  
-  def version=(version)
-    @version = version
   end
   
   def users(params = {})

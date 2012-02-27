@@ -22,10 +22,12 @@ class PlansController < ApplicationController
     if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]
       params[:day] ||= @subscription.current_day
       @subscription = Plan.find(params[:id]) if @subscription.nil?
-      @subscription.version = params[:version] || current_version
+      @subscription.version = params[:version] || @subscription.version || current_version
+      @version = Version.find(@subscription.version)
       @day = params[:day].to_i
       @reading = @subscription.reading(@day)
       @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0 #coerce content page to 1st page if outside range
+      @reference = @reading.references[@content_page].ref
 
       render :action => "show_subscribed" and return
     end  
