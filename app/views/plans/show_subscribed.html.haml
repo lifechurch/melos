@@ -23,7 +23,7 @@
           = "#{@reference.version_string} - #{@version.title}"
         %span
           =t("ref.choose version")
-  = render_cell :version_selector, :display, {version: @version, force_top: "197px"}
+  = render_cell :version_selector, :display, {version: @version, force_top: "197px", link_params: {day: @day == @subscription.current_day ? nil: params[:day], content: @content_page > 0 ? @content_page : nil}}
   %h1{style: "clear: none; min-height: 55px; width: 600px"}= @subscription.name
       
   .split_pane{:style => "padding-top:15px"}

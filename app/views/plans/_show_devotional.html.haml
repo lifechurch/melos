@@ -2,12 +2,7 @@
   %dl.categories_menu
     %dt
       %ul.pagination{style: "margin-right: 10px; margin-bottom: 0px; margin-top: 0px; padding-top:0px; border-top-width: 0px;", align: "center"}
-        %li.pagination_previous.float_left
-          - if @day > 1
-            = link_to(t("plans.previous day"),day: @day - 1)
-        %li.pagination_next.float_right
-          - if @day <= @subscription.total_days - 1
-            = link_to(t("plans.next day"), day: @day + 1)
+        =render partial: "day_nav_lis", locals: {plan: @subscription}
         %div{style: "text-align: center; width: 165px; margin: 0 auto; padding-right: 10px"}
           %h4{style: "margin-bottom: 0px; margin-top: -4px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
           .mute{style: "font-weight: normal"}=t("plans.which day in plan", day: @day.to_s, total: @subscription.total_days)

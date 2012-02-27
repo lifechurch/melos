@@ -13,4 +13,4 @@
           = t('plans.done reading')
       .mute= t("plans.which reading", current: cur_reading_index+ 1, total: reading.references.count) if reading.references.count > 1
 - else 
-  .float_right= link_to(t('plans.next reading'), plan_path(page.to_param, day: day, content: cur_reading_index+ 1), class: 'action_button_green') if reading.references.count - 1 > cur_reading_index
+  .float_right= link_to(t('plans.next reading'), plan_path(page.to_param, day: day == plan.current_day ? nil : day, content: cur_reading_index + 1), class: 'action_button_green') if reading.references.count - 1 > cur_reading_index

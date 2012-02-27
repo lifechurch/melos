@@ -10,18 +10,18 @@
       - @this_language.each do |k, v|
         %tr
           %th
-            %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : plan_path(version: v.osis)}= k.upcase.match(/\A[^-]*/)
+            %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : url_for(@params.merge(version: v.osis))}= k.upcase.match(/\A[^-]*/)
           %td
-            %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : plan_path(version: v.osis)}= v.title
+            %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : url_for(@params.merge(version: v.osis))}= v.title
       - @all_languages.each do |k, v|
         %tr
           %th{:colspan => '2'}= @languages[k]
         - v.each do |kk, vv|
           %tr
             %th
-              %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : plan_path(version: vv.osis)}= kk.upcase.match(/\A[^-]*/)
+              %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : url_for(@params.merge(version: vv.osis))}= kk.upcase.match(/\A[^-]*/)
             %td
-              %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : plan_path(version: vv.osis)}= vv.title
+              %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : url_for(@params.merge(version: vv.osis))}= vv.title
 #menu_alt_version.dynamic_menu
   .spinner_wrapper{style: "display: none;"}
     #version_spinner.dynamic_menu_spinner
