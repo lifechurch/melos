@@ -1,0 +1,28 @@
+The NEW YouVersion.com is brought to you by:
+
+THE DESIGN TEAM:
+Design/UX coordinated by Andy Knight (@andyknight)
+Visual design by Rob Soulé (@rsoule)
+Icons by Rogie (@rogie)
+Front-end development by Nathan Smith (@nathansmith)
+Additional front-end work by Judson Collier (@judsoncollier)
+
+THE DEVELOPMENT TEAM:
+Chad Bailey (@cebailey)
+Evan Prothro (@eprotho)
+
+With additional development help from:
+Arcturo (@arcturo, @jm and @erebor)
+Caedmon Judd of State Digital
+
+THE YOUVERSION API TEAM:
+Josh Turmel (@jt)
+Chris Vaughn (@chrisvaughn)
+Tommy George (@tommygeorge)
+
+TRANSLATION TEAMS:
+Too numerous to list here, but thanks for your help!
+http://www.youversion.com/about
+
+And last but certainly not least, our Air Traffic Controller, Amber Smart (@ambersmart)!
+
