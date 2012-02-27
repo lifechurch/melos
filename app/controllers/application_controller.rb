@@ -75,6 +75,7 @@ class ApplicationController < ActionController::Base
       redirect_to sign_in_path(opts) and return 
       #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
     end
+    @user = current_user
   end
   def force_notification_token_or_login
     if params[:token]
