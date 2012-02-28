@@ -4,7 +4,7 @@
 %article
   %div.float_right
     - if @subscription.is_a? Subscription
-      %dl.combo_button.float_right{style:"margin-bottom: 9px"}
+      %dl.combo_button.float_right{style:"margin-bottom: 21px"}
         %dt
         %dd.highlighted
           = link_to t("plans.day")
@@ -23,8 +23,8 @@
           = "#{@reference.version_string} - #{@version.title}"
         %span
           =t("ref.choose version")
-  = render_cell :version_selector, :display, {version: @version, force_style: "top: 104px; left: 497px; z-index: 1; position: absolute;", link_params: {day: @day == @subscription.current_day ? nil: params[:day], content: @content_page > 0 ? @content_page : nil}}
-  %h1{style: "clear: none; min-height: 55px; width: 600px"}= @subscription.name
+  = render_cell :version_selector, :display, {version: @version, force_style: "top: 116px; left: 497px; z-index: 1; position: absolute;", link_params: {day: @day == @subscription.current_day ? nil: params[:day], content: @content_page > 0 ? @content_page : nil}}
+  %h1{style: "clear: none; min-height: 80px; width: 600px"}= @subscription.name
       
   .split_pane{:style => "padding-top:15px"}
     - if @reading.devotional

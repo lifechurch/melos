@@ -1,4 +1,4 @@
-.split_pane_sidebar{style: "width: 424px"}
+.split_pane_sidebar{style: "width: 424px;"}
   %dl.categories_menu
     %dt
       %ul.pagination{style: "margin-right: 10px; margin-bottom: 0px; margin-top: 0px; padding-top:0px; border-top-width: 0px;", align: "center"}
@@ -11,10 +11,10 @@
         %dd.split_devotional_pane{class: @content_page == i ? "highlighted" : ""}
           = render partial: 'plan_ref_check_and_title', locals: {reference: r, plan: @subscription, index: i, cur_reading_index: @content_page, day: @day}
           - if @content_page == i
-            %span{style: "position: relative; top: -20px"}
-              =render partial: 'ref_buttons', locals: {reference: r.ref}
+            %span{style: "position: absolute; left: 325px; top: 11px"}
+              =render partial: 'ref_buttons', locals: {reference: r.ref, audio_div_style: "top: 32px; left: 2px; position: absolute; z-index: 1;"}
             .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 6px; padding-bottom: 5px; margin-right: 25px; font-size: 14px; line-height: 25px"}= r.ref.contents(format: 'html').join.html_safe
-            %div{style: "margin-right: 30px"}
+            %div{style: "margin-right: 30px; min-height: 45px"}
               = render partial: 'reading_completed_button', locals: {plan: @subscription, cur_reading_index: @content_page, reading: @reading, day: @day}
     = render partial: 'plan_links', locals: {plan: @subscription}
 .split_pane_content{style: "width: 423px"}

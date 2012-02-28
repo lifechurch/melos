@@ -1,5 +1,5 @@
 - if plan.is_a? Subscription
-  %form{method: 'post', style: "height: #{reading.references.count > 1 ? '53 px' : '48px'}; margin-top: 5px; margin-bottom: 3px"}
+  %form{method: 'post', style: "height: #{reading.references.count > 1 ? '53px' : '48px'}; margin-top: 5px; margin-bottom: 3px"}
     %input{type: "hidden", name: "_method", value: "put"}
     %input{type: "hidden", name: "ref", value: reading.references[cur_reading_index].ref.osis}
     %input{type: "hidden", name: "completed", value: true.to_s}
@@ -13,4 +13,4 @@
           = t('plans.done reading')
       .mute= t("plans.which reading", current: cur_reading_index+ 1, total: reading.references.count) if reading.references.count > 1
 - else 
-  .float_right= link_to(t('plans.next reading'), plan_path(page.to_param, day: day == plan.current_day ? nil : day, content: cur_reading_index + 1), class: 'action_button_green') if reading.references.count - 1 > cur_reading_index
+  .float_right{style: "height: 35px"}= link_to(t('plans.next reading'), plan_path(plan.to_param, day: day, content: cur_reading_index + 1), class: 'action_button_green no_style') if reading.references.count - 1 > cur_reading_index
