@@ -169,8 +169,11 @@
   +box-shadow(inset rgba(#000, 0.25) 0 1px 1px 0, #fff 0 1px 0 0)
 
 .li_active .dynamic_menu_trigger,
+.li_active .feaux_dynamic_trigger,
 .dynamic_menu_trigger:not(.no_style):active,
-.dynamic_menu_trigger:not(.no_style):focus
+.dynamic_menu_trigger:not(.no_style):focus,
+.feaux_dynamic_trigger:active,
+.feaux_dynamic_trigger:focus
   +glow
   +background-image(linear-gradient(#444, #222))
   background-color: #222
@@ -310,10 +313,12 @@
   .li_active &
     background:
       position: center -47px !important
+
 .icon_listen.disabled
   background:
     image: url(../images/icon_listen.png)
     position: center -80px !important
+
 .icon_parallel
   background:
     image: url(../images/icon_parallel.png)
@@ -360,6 +365,16 @@ dd .icon_settings
   .li_active &
     background:
       position: center -42px !important
+
+.icon_read
+  background:
+    image: url(../images/icon_read.png)
+    position: center 3px !important
+  &:active,
+  &:focus,
+  .li_active &
+    background:
+      position: center -45px !important
 //
 // ` Calendar
 //

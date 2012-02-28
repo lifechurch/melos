@@ -19,6 +19,11 @@ module ApplicationHelper
     reference_path(ref.osis, opts)
   end
   
+  def bible_url(ref = nil, opts={})
+    ref = last_read || Reference.new(book: "gen", chapter: "1", version: current_version) if ref.nil?
+    reference_url(ref.osis, opts)
+  end
+  
   def convert_to_brightness_value(hex_color)
       (hex_color.scan(/../).map {|color| color.hex}).sum
   end

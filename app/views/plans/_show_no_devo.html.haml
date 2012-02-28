@@ -13,5 +13,7 @@
     = render partial: 'plan_links', locals: {plan: @subscription}
 .split_pane_content
   - if @reading.references
+    %span.float_right{style: "margin-top: -6px"}
+      =render partial: 'ref_buttons', locals: {reference: @reading.references[@content_page].ref, audio_div_style: "top: 172px; left: 463px; position: absolute; z-index: 1;"}
     .embedded_reader{style: "padding-left: 30px; padding-bottom: 30px;"}= @reading.references[@content_page].ref.contents(format: 'html').join.html_safe
     = render partial: 'reading_completed_button', locals: {plan: @subscription, cur_reading_index: @content_page, reading: @reading, day: @day}

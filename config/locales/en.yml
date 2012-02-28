@@ -161,6 +161,7 @@ en:
     invalid chapter title:                      "About This Version"
     invalid chapter text:                       "This chapter doesn't exist in this version."
     select another chapter:                     "Pick a Different Chapter"
+    view in reader:                             "View %{reference} in Reader"
   users:
     creation form errors:                       "The following error(s) prevented creation of your account:"
     profile form errors:                        "The following error(s) prevented updating your profile:"
@@ -431,9 +432,10 @@ en:
     bookmark blurb:                             "It looks like you want to use a bookmark. Great! Bookmarks help you keep track of verses you want to memorize, share, or mark as favorites. Sign in or create an account below, and get started!"
     friends blurb:                              "It looks like you want to interact with Friends. Good idea! You'll be able to share what you're learning and help each other stay on track with reading goals. Sign in or create an account below and get started!"
     highlight blurb:                            "It looks like you want to highlight scripture. Great! Highlights help you organize and keep track of your favorite verses. Sign in or create an account below, and get started!"
-    note blurb:                                 "It looks like you want to take a note about scripture. Great! Notes can help you remember and organize the truth you discover in God's word. Sign in or create an account below, and get started!"
+    note blurb:                                 "It looks like you want to take a note about scripture. Great! Notes can help you remember and organize the truth you discover in God's Word. Sign in or create an account below, and get started!"
   audio:
     none:                                       "Sorry, audio isn't available for this version."
+    chapter only:                               "Sorry, audio isn't available for verses."
     close player menu:                          "Close"
   highlights:
     creation error:                             "Sorry, couldn't highlight."
