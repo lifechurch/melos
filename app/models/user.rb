@@ -206,6 +206,10 @@ class User < YouVersion::Resource
     Like.for_user(id, opts)
   end
 
+  def find_badge(slug, opts = {})
+    self.badges.detect { |b| b.slug == slug }
+  end
+
   def recent_activity
     unless @recent_activity
       response = YvApi.get("community/items", user_id: self.id) do |errors|

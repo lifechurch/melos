@@ -356,6 +356,10 @@ module YouVersion
       Date.parse(attributes['created'])
     end
 
+    def earned_as_date
+      Date.parse(attributes['earned'])
+    end
+
     def updated_as_date
       Date.parse(attributes['updated'])
     end

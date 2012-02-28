@@ -28,6 +28,8 @@ YouversionWeb::Application.routes.draw do
     match 'followers' => 'users#followers', as: 'followers'
     match 'follow' => 'users#follow', as: 'follow'
     match 'unfollow' => 'users#unfollow', as: 'unfollow'
+    match 'badges' => 'users#badges', as: 'badges'
+    match 'badge/:id' => 'badges#show', as: 'badge'
     resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
   post 'share' => 'users#share', as: 'share'
