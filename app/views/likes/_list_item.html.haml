@@ -1,0 +1,12 @@
+%li{id: list_item.note_id, class: ("li_like" if display == :icon)}
+  - if display == :avatar
+    .float_left
+      %a{href: user_path(list_item.note_username)}
+        %img.avatar_large{src: list_item.note_user_avatar_url.px_48x48}
+  %div{style: ("margin-left: 60px;" if display == :avatar)}
+    %h5= link_to list_item.note_title, note_path(list_item.note_id)
+    - if display == :avatar
+      %p.mute.small.negative_gutter_top_half
+        %a{href: user_path(list_item.note_username)}= list_item.note_username
+    %p= list_item.note.content
+    %p.mute.small.negative_gutter_top_half= link_to_references(list_item.note.reference_list)

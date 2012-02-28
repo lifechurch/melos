@@ -208,8 +208,13 @@ class User < YouVersion::Resource
 
   def recent_activity
     unless @recent_activity
-      response = YvApi.get("community/items", user_id: self.id)
-      if response.community
+      response = YvApi.get("community/items", user_id: self.id) do |errors|
+        if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+          []
+        end
+      end
+        
+      unless response.empty?
         activities = response.community.map do |a|
           a.type = "user" if a.type == "follow"
           a.type = "object" if a.type == "reading_plan_completed"
@@ -220,7 +225,7 @@ class User < YouVersion::Resource
         @recent_activity = activities.flatten
       end
     end
-    @recent_activity
+    return @recent_activity || []
   end
 
   def update_picture(uploaded_file)
@@ -257,8 +262,9 @@ class User < YouVersion::Resource
     return true
   end
 
-  def following
-    response = YvApi.get("users/following", id: self.id) do |errors|
+  def following(opts = {})
+    opts[:page] ||= 1
+    response = YvApi.get("users/following", opts.merge({id: self.id})) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
         return []
       else
@@ -290,8 +296,9 @@ class User < YouVersion::Resource
     end
   end
   
-  def followers
-    response = YvApi.get("users/followers", id: self.id) do |errors|
+  def followers(opts = {})
+    opts[:page] ||= 1
+    response = YvApi.get("users/followers", opts.merge({id: self.id})) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
         return []
       else
