@@ -11,6 +11,8 @@
         %dd.split_devotional_pane{class: @content_page == i ? "highlighted" : ""}
           = render partial: 'plan_ref_check_and_title', locals: {reference: r, plan: @subscription, index: i, cur_reading_index: @content_page, day: @day}
           - if @content_page == i
+            %span{style: "position: relative; top: -20px"}
+              =render partial: 'ref_buttons', locals: {reference: r.ref}
             .embedded_reader{style: "font-weight: normal; margin-top: 10px; padding-left: 6px; padding-bottom: 5px; margin-right: 25px; font-size: 14px; line-height: 25px"}= r.ref.contents(format: 'html').join.html_safe
             %div{style: "margin-right: 30px"}
               = render partial: 'reading_completed_button', locals: {plan: @subscription, cur_reading_index: @content_page, reading: @reading, day: @day}

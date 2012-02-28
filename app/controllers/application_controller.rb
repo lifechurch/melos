@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     @page = (params[:page] || 1).to_i
   end
   def default_url_options
-    {:host => "yv.chadbailey.net"}
+    {:host => "localhost"}
   end
 
   # Set locale

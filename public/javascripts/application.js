@@ -557,10 +557,15 @@ var YV = (function($, window, document, undefined) {
             hide_all_menus();
 
             li.addClass(li_class);
-
-            menu.css({
-              left: left
-            }).show();
+            
+            if(menu.css('position') != "absolute"){
+              menu.css({
+                left: left
+              }).show();
+            }
+            else{
+              menu.show();
+            }
           }
           else {
             hide_all_menus();
