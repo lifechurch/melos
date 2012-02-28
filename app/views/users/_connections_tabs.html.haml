@@ -14,7 +14,7 @@
     %p
       = t('connected as user', connection: t(@show), username: @user.connections[@show].data.screen_name)
       %span.confirm
-        %a{:href => delete_connection_path(@show.to_sym), "data-confirm-text" => "Are you sure?", "data-method" => "delete", :rel => "nofollow"}= t('remove connection')
+        %a{:href => delete_connection_path(@show.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", :rel => "nofollow"}= t('remove connection')
     %p= t('connection users', connection: t(@show))
     = render partial: "list"
   - else

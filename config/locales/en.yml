@@ -324,7 +324,7 @@ en:
     successfully deleted:                       "Bookmark Removed"
     labels placeholder:                         "Separate multiple labels with commas."
     save:                                       "Save Bookmark"
-    confirm delete:                             "Yes, I'm sure."
+    confirm delete:                             "Yes, I'm sure"
   badges:
     earned a badge:                             "Earned a Badge"
     my badges:                                  "My Badges"
