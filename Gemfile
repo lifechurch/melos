@@ -20,6 +20,7 @@ gem 'omniauth-google-oauth2'
 gem 'grackle'
 gem 'koala'
 gem 'authorize-net'
+gem 'rack-rewrite', '~> 1.2.1'
 
 
 # Gems used only for assets and not required
