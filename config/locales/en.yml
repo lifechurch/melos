@@ -425,15 +425,15 @@ en:
     restart successful:                         "Your Plan has restarted from the beginning."
     subscribe successful:                       "Great! You're subscribed to this plan."
     which day in plan:                          "Day %{day} of %{total}"
-    must start to complete:                     "Start this plan to complete readings!"
+    must start to complete:                     "Start this plan to save completed readings!"
   registration:
     benefits title:                             "Get the Full Experience"
     benefits blurb:                             "Creating a YouVersion account gives you access to more features like bookmarks and notes. They'll show up on any device where you're signed in. An account also makes it easier to share the Bible with your friends, so take a minute or two and sign up!"
     plan blurb:                                 "It looks like you want to start a Reading Plan. Smart! Plans can help you make the Bible a part of your daily life. Sign in or create an account below and get started!"
     bookmark blurb:                             "It looks like you want to use a bookmark. Great! Bookmarks help you keep track of verses you want to memorize, share, or mark as favorites. Sign in or create an account below, and get started!"
     friends blurb:                              "It looks like you want to interact with Friends. Good idea! You'll be able to share what you're learning and help each other stay on track with reading goals. Sign in or create an account below and get started!"
-    highlight blurb:                            "It looks like you want to highlight scripture. Great! Highlights help you organize and keep track of your favorite verses. Sign in or create an account below, and get started!"
-    note blurb:                                 "It looks like you want to take a note about scripture. Great! Notes can help you remember and organize the truth you discover in God's Word. Sign in or create an account below, and get started!"
+    highlight blurb:                            "It looks like you want to highlight scripture. Great! Highlights help you organize and keep track of your favorite verses. Sign in or create an account below and get started!"
+    note blurb:                                 "It looks like you want to take a note about scripture. Good thinking! Notes can help you remember and organize the truth you discover in God's Word. Sign in or create an account below and get started!"
   audio:
     none:                                       "Sorry, audio isn't available for this version."
     chapter only:                               "Sorry, audio isn't available for verses."
