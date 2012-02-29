@@ -50,8 +50,10 @@ production: &production
   memcache_server: memcache.youversion.com
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
-  facebook_app_id: "105030176203924"
-  facebook_secret: "9d03678ddd8b5588c4e6c91bd996cce2"
+  # facebook_app_id: "105030176203924"
+  # facebook_secret: "9d03678ddd8b5588c4e6c91bd996cce2"
+  facebook_app_id: "306713076033387"
+  facebook_secret: "1a8bf87913629f4162b6c91e5fe943a2"
 
 demo: *test
 
