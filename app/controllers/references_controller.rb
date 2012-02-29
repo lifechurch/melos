@@ -7,6 +7,10 @@ class ReferencesController < ApplicationController
     @html_classes = []
     @html_classes << "full_screen" if cookies[:full_screen]
     @html_classes << ["full_screen", "parallel_mode"] if cookies[:parallel_mode]
+
+    # Get user font and size settings
+    @font = cookies['data-setting-font']
+    @size = cookies['data-setting-size']
     
     # Redirect if it's anything other than book.chapter.version, ignoring verses for now
     if !params[:reference]

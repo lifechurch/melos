@@ -1066,6 +1066,8 @@ var YV = (function($, window, document, undefined) {
           var el = $(this);
           var font = el.attr('data-setting-font');
           var size = el.attr('data-setting-size');
+          font && setCookie('data-setting-font', font);
+          size && setCookie('data-setting-size', size);
 
           font && article.attr('data-setting-font', font);
           size && article.attr('data-setting-size', size);

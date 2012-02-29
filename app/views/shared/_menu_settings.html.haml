@@ -14,15 +14,15 @@
         %label.user_setting_font_helvetica{:for => 'radio_helvetica'}
           Helvetica
       %span.float_left.width_50
-        %input.radio_user_setting{'data-setting-font' => 'user_setting_font_georgia', :type => 'radio', :name => 'user_setting_font', :id => 'radio_georgia', :value => 'Georgia'}
+        %input.radio_user_setting{'data-setting-font' => 'user_setting_font_georgia', :type => 'radio', :name => 'user_setting_font', :id => 'radio_georgia', :value => 'Georgia', :checked => ('checked' if @font == "user_setting_font_georgia")}
         %label.user_setting_font_georgia{:for => 'radio_georgia'}
           Georgia
       %span.float_left.width_50
-        %input.radio_user_setting{'data-setting-font' => 'user_setting_font_baskerville', :type => 'radio', :name => 'user_setting_font', :id => 'radio_baskerville', :value => 'Baskerville'}
+        %input.radio_user_setting{'data-setting-font' => 'user_setting_font_baskerville', :type => 'radio', :name => 'user_setting_font', :id => 'radio_baskerville', :value => 'Baskerville', :checked => ('checked' if @font == "user_setting_font_baskerville")}
         %label.user_setting_font_baskerville{:for => 'radio_baskerville'}
           Baskerville
       %span.float_left.width_50
-        %input.radio_user_setting{'data-setting-font' => 'user_setting_font_verdana', :type => 'radio', :name => 'user_setting_font', :id => 'radio_verdana', :value => 'Verdana'}
+        %input.radio_user_setting{'data-setting-font' => 'user_setting_font_verdana', :type => 'radio', :name => 'user_setting_font', :id => 'radio_verdana', :value => 'Verdana', :checked => ('checked' if @font == "user_setting_font_verdana")}
         %label.user_setting_font_verdana{:for => 'radio_verdana'}
           Verdana
     %fieldset.clearfix
@@ -34,11 +34,11 @@
         %label{:for => 'user_setting_size_small'}
           Small
       %span.float_left.width_33
-        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_medium', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_medium'}
+        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_medium', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_medium', :checked => ('checked' if @size="user_setting_size_medium")}
         %label{:for => 'user_setting_size_medium'}
           Medium
       %span.float_left.width_33
-        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_large'}
+        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_large', :checked => ('checked' if @size="user_setting_size_large")}
         %label{:for => 'user_setting_size_large'}
           Large
     %fieldset.clearfix{style: "display: none"}
