@@ -130,6 +130,11 @@ class UsersController < ApplicationController
     render "bookmarks/index", layout: "application" if @me
   end
 
+  def badges
+    @selected = :badges
+    @badges = @user.badges
+  end
+
   def share
     puts "in controller action"
     puts request.referer
