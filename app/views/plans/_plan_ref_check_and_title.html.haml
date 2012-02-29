@@ -9,4 +9,7 @@
     - if cur_reading_index != 0
       %input{type: "hidden", name: "content_target", value: cur_reading_index}
     %input{type: "checkbox", onChange: "this.form.submit()", id: "#{index}_box",  checked: reference.completed? ? "checked" : nil}
+- else
+  .float_left{title: t("plans.must start to complete"), style: "margin-top: 10px"}
+    %input{type: "checkbox", id: "filler_box#{index}", disabled: "true"}
 %a{href: (cur_reading_index == index) ? nil : plan_path(plan.to_param, day: plan.current_day == day ? nil : day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version]), style: "margin-top: 2px"}= reference.ref.ref_string

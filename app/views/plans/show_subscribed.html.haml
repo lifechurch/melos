@@ -14,9 +14,9 @@
           = link_to t("plans.month"), plan_calendar_path(@subscription)
     - else
       - if current_user
-        %div= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.to_param), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 10px")
+        %div= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.to_param), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
       - else 
-        %div= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 10px")
+        %div= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
     %div.float_right
       %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version"), style: "width: 157px;"}
         %b{style: "white-space:nowrap; overflow: hidden !important; text-overflow: ellipsis !important; text-align: center"}
@@ -28,6 +28,6 @@
       
   .split_pane{:style => "padding-top:15px"}
     - if @reading.devotional
-      = render partial: "show_devotional"
+      = render partial: "pane_devotional"
     - else
-      =render partial: "show_no_devo"
+      =render partial: "pane_no_devotional"

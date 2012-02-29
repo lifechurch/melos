@@ -420,6 +420,7 @@ en:
     restart successful:                         "Your Plan has restarted from the beginning."
     subscribe successful:                       "Great! You're subscribed to this plan."
     which day in plan:                          "Day %{day} of %{total}"
+    must start to complete:                     "Start this plan to complete readings!"
   registration:
     benefits title:                             "Get the Full Experience"
     benefits blurb:                             "Creating a YouVersion account gives you access to more features like bookmarks and notes. They'll show up on any device where you're signed in. An account also makes it easier to share the Bible with your friends, so take a minute or two and sign up!"
