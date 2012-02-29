@@ -135,6 +135,8 @@ class Reference
   end
   
   def audio
+    return nil if api_data[0].nil?
+    
     if api_data[0].data.request.audio && @audio.nil?
       # {"id"=>"8",
       #   "version"=>"kjv",
@@ -195,6 +197,10 @@ class Reference
   def verse_string
     
     @ref[:verse].is_a?(Range) ? @ref[:verse].first.to_s + "-" + @ref[:verse].last.to_s : @ref[:verse].to_s if @ref[:verse]
+  end
+  
+  def is_chapter?
+    @ref[:verse].nil?
   end
   private
 

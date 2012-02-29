@@ -557,10 +557,15 @@ var YV = (function($, window, document, undefined) {
             hide_all_menus();
 
             li.addClass(li_class);
-
-            menu.css({
-              left: left
-            }).show();
+            
+            if(menu.css('position') != "absolute"){
+              menu.css({
+                left: left
+              }).show();
+            }
+            else{
+              menu.show();
+            }
           }
           else {
             hide_all_menus();
@@ -1260,6 +1265,13 @@ var YV = (function($, window, document, undefined) {
             $(this).find('.bookmark_edit').animate({opacity: 0});
           }
         );
+      },
+      nav_labels: function() {
+        $("#nav_primary ul li").hover(function(){
+          $(this).find(".tooltip").fadeIn(100);
+        }, function() {
+          $(this).find(".tooltip").fadeOut(100);
+        });
       },
       // YV.init.in_place_confirm
       in_place_confirm: function() {

@@ -14,3 +14,6 @@
   %li{class: ("highlighted" if selected == :likes)}
     %a{href: user_likes_path(@user)}
       %span= t('likes.likes')
+  %li{class: ("highlighted" if selected == :badges)}
+    %a{href: user_badges_path(@user)}
+      %span= t('badges title')

@@ -2,24 +2,32 @@
 - @sidebar = false
       
 %article
-  - if @subscription.is_a? Subscription
-    %dl.combo_button.float_right
-      %dt
-      %dd.highlighted
-        = link_to t("plans.day")
-      %dd
-        = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
-      %dd
-        = link_to t("plans.month"), plan_calendar_path(@subscription)
-  - else
-    - if current_user
-      .float_right= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.to_param), :class => 'action_button_green', style: "width: 200px")
-    - else 
-      .float_right= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "width: 200px")
-  %h1{style: "clear: none; width: 600px"}= @subscription.name
+  %div.float_right
+    - if @subscription.is_a? Subscription
+      %dl.combo_button.float_right{style:"margin-bottom: 21px"}
+        %dt
+        %dd.highlighted
+          = link_to t("plans.day")
+        %dd
+          = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
+        %dd
+          = link_to t("plans.month"), plan_calendar_path(@subscription)
+    - else
+      - if current_user
+        %div= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.to_param), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
+      - else 
+        %div= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
+    %div.float_right
+      %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version"), style: "width: 157px;"}
+        %b{style: "white-space:nowrap; overflow: hidden !important; text-overflow: ellipsis !important; text-align: center"}
+          = "#{@reference.version_string} - #{@version.title}"
+        %span
+          =t("ref.choose version")
+  = render_cell :version_selector, :display, {version: @version, force_style: "top: 116px; left: 497px; z-index: 1; position: absolute;", link_params: {day: @day == @subscription.current_day ? nil: params[:day], content: @content_page > 0 ? @content_page : nil}}
+  %h1{style: "clear: none; min-height: 80px; width: 600px"}= @subscription.name
       
   .split_pane{:style => "padding-top:15px"}
     - if @reading.devotional
-      = render partial: "show_devotional"
+      = render partial: "pane_devotional"
     - else
-      =render partial: "show_no_devo"
+      =render partial: "pane_no_devotional"

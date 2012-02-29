@@ -16,6 +16,8 @@ class VersionSelectorCell < Cell::Rails
     @this_language = @all_languages[@version.language.iso]
     @all_languages = @all_languages.except(@version.language.iso)
     @languages = Version.languages
+    @force_style = opts[:force_style]
+    @params = opts[:link_params]
     render
   end
 

@@ -1,5 +1,5 @@
 require 'bundler/capistrano'
-
+require 'new_relic/recipes'
 
 
 set :stages, %w(web-test yvdev prod)
@@ -142,6 +142,11 @@ namespace :deploy do
     end
   end
 end
+
+# NewRelic Hook (notify newrelic of deployment)
+## We need to run this after our collector mongrels are up and running
+## This goes out even if the deploy fails, sadly 
+after "deploy:update", "newrelic:notice_deployment"
 
 def run_rake(cmd)
   run "cd #{current_path}; #{rake} #{cmd}"

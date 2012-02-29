@@ -119,7 +119,8 @@ class UsersController < ApplicationController
   end
 
   def bookmarks
-    @nav = @selected = :bookmarks
+    @selected = :bookmarks
+    @nav = :bookmarks if @me
     if params[:label]
       @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
     else
@@ -127,6 +128,11 @@ class UsersController < ApplicationController
     end
     @labels = Bookmark.labels_for_user(@user.id)if Bookmark.labels_for_user(@user.id)
     render "bookmarks/index", layout: "application" if @me
+  end
+
+  def badges
+    @selected = :badges
+    @badges = @user.badges
   end
 
   def share
@@ -220,7 +226,7 @@ class UsersController < ApplicationController
   end
 
   def following
-    @users = @user.following
+    @users = @user.following({page: params[:page] ||= 1})
     @selected = :friends
     @really_selected = :following
     if @me
@@ -232,7 +238,7 @@ class UsersController < ApplicationController
   end
 
   def followers
-    @users = @user.followers
+    @users = @user.followers({page: params[:page] ||= 1})
     @selected = :friends
     @really_selected = :followers
     if @me

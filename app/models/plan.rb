@@ -4,6 +4,7 @@ class Plan < YouVersion::Resource
   attribute :publisher_url
   attribute :id
   attribute :slug
+  attribute :version
   attr_i18n_reader :about
   attr_i18n_reader :name
   attr_i18n_reader :formatted_length
@@ -12,7 +13,7 @@ class Plan < YouVersion::Resource
   def self.categories(params = {})
     PlanCategories.all(params)
   end
-  
+
   def self.all(opts = {})
     if opts[:query] 
       #slug was passed, get id from slug with search, since API doesn't give a better way
@@ -78,12 +79,8 @@ class Plan < YouVersion::Resource
     
   end
   
-  def version
-    @attributes[:version] || @version
-  end
-  
-  def version=(version)
-    @version = version
+  def current_day
+    1 #always show the first day if requested
   end
   
   def users(params = {})
@@ -177,7 +174,7 @@ class Plan < YouVersion::Resource
       
       @reading = Hashie::Mash.new()
       @reading.devotional = response.additional_content_html
-      @reading.devotional ||= "<p>" << YouVersion::Resource.i18nize(response.additional_content).gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\r\n)/, '<br>') << "</p>" if response.additional_content
+      @reading.devotional ||= "<p>" << YouVersion::Resource.i18nize(response.additional_content).gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if response.additional_content
       @reading.references = response.adjusted_days.first.references.map do |data| 
         osis_hash = data.reference.osis.to_osis_hash
         osis_hash[:version] = version
