@@ -241,7 +241,7 @@
 .dynamic_menu dl
   @extend .clearfix
   background: url(../images/menu_scroll.png)
-  border: 1px solid #555
+  border: 1px solid #555 !important
   margin: 0
   text-shadow: #000 0 1px 0
 
@@ -252,7 +252,7 @@
   border-top: 1px solid #2a2a2a
   font-size: 12px
   line-height: 1
-  padding: 10px 15px
+  padding: 10px 15px !important
 
 .dynamic_menu .accordion dt
   cursor: pointer
@@ -263,6 +263,8 @@
 .dynamic_menu header,
 .dynamic_menu dt
   position: relative
+  border-bottom: none !important
+  font-weight: normal !important
 
 .dynamic_menu header .close,
 .dynamic_menu dt .close
@@ -286,6 +288,8 @@
 .dynamic_menu dd
   +box-shadow(inset #000 0 0 5px 0)
   border-top: 1px solid #2a2a2a
+  border-bottom: none !important
+  font-weight: normal !important
   display: none
   padding: 15px 15px 1px
 

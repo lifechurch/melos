@@ -5,12 +5,12 @@
   - if @reference.audio
     %dl
       %dt
-        %a.close{:href => '#'}= t("audio.close player menu")
+        %a.close.no_style{:href => '#'}= t("audio.close player menu")
         = @reference.audio.title
       %dd
         %audio#audio_player{:src => @reference.audio.url, :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
       %dt
-        %a.float_right.negative_gutter_top_quarter{:href => @reference.audio.publisher_link, :target => "_blank"}
+        %a.no_style.float_right.negative_gutter_top_quarter{:href => @reference.audio.publisher_link, :target => "_blank"}
           %img{:src => '/images/icon_info.png'}
         %small
           = @reference.audio.copyright
