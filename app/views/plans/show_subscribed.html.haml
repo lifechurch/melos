@@ -20,7 +20,7 @@
     %div.float_right
       %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version"), style: "width: 157px;"}
         %b{style: "white-space:nowrap; overflow: hidden !important; text-overflow: ellipsis !important; text-align: center"}
-          = "#{@reference.version_string} - #{@version.title}"
+          = "#{@version.osis_human} - #{@version.title}"
         %span
           =t("ref.choose version")
   = render_cell :version_selector, :display, {version: @version, force_style: "top: 116px; left: 497px; z-index: 1; position: absolute;", link_params: {day: @day == @subscription.current_day ? nil: params[:day], content: @content_page > 0 ? @content_page : nil}}

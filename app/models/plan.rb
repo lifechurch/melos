@@ -178,7 +178,7 @@ class Plan < YouVersion::Resource
       @reading.references = response.adjusted_days.first.references.map do |data| 
         osis_hash = data.reference.osis.to_osis_hash
         osis_hash[:version] = version
-        Hashie::Mash.new(ref: Reference.new(osis_hash), completed?: (data.completed == "true"))
+        Hashie::Mash.new(ref: Reference.new(osis_hash), completed?: (data.completed == "true"), no_version_ref: Reference.new(osis_hash.except(:version)))
       end
     end
     

@@ -115,11 +115,11 @@ class Subscription < Plan
       
       case ref
       when Fixnum, /\A[\d]+\z/                    #number (possibly in string form) - assume index of reference in the day
-        ref = reading(day).references[ref.to_i].ref   
+        no_version_ref = reading(day).references[ref.to_i].no_version_ref   
       when Reference                              #Good to go
       when String                                 #try to create Ref, assuming osis string
         begin
-          ref = Reference.new(ref.to_osis_hash.except(:version))
+          no_version_ref = Reference.new(ref.to_osis_hash.except(:version))
           rescue
            raise "incorrect string format for reference"
         end
@@ -129,9 +129,9 @@ class Subscription < Plan
       
       #Get the list of completed references to send back to the API (all others will be marked as not-complete)
       completed_refs = ReferenceList.new
-      reading(day).references.each {|r_mash| completed_refs << r_mash.ref if r_mash.completed?}
+      reading(day).references.each {|r_mash| completed_refs << r_mash.no_version_ref if r_mash.completed?}
         #adjust the ref_list based on the new completion state for the ref
-      completed ? completed_refs << ref : completed_refs.delete(ref)
+      completed ? completed_refs << no_version_ref : completed_refs.delete(no_version_ref)
       completed_refs.uniq! #just to be safe
       
       opts[:references] = completed_refs.to_api_string
