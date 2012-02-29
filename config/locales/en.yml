@@ -438,7 +438,7 @@ en:
     note blurb:                                 "It looks like you want to take a note about scripture. Good thinking! Notes can help you remember and organize the truth you discover in God's Word. Sign in or create an account below and get started!"
   audio:
     none:                                       "Sorry, audio isn't available for this version."
-    chapter only:                               "Sorry, audio isn't available for verses. View reference in the reader for chapter audio."
+    chapter only:                               "Sorry, audio isn't available for verses. View in the reader for chapter audio."
     close player menu:                          "Close"
   highlights:
     creation error:                             "Sorry, couldn't highlight."
