@@ -1,6 +1,6 @@
 %li.pagination_previous.float_left
   - if @day > 1
-    = link_to(t("plans.previous day"),{day: (@day - 1) == plan.current_day ? nil : (@day - 1), version: params[:version]})
+    = link_to(t("plans.previous day"),{day: ((@day - 1) == plan.current_day && plan.is_a?(Subscription)) ? nil : (@day - 1), version: params[:version]})
 %li.pagination_next.float_right
   - if @day <= @subscription.total_days - 1
-    = link_to(t("plans.next day"), {day: (@day + 1) == plan.current_day ? nil : (@day + 1), version: params[:version]})
+    = link_to(t("plans.next day"), {day: ((@day + 1) == plan.current_day && plan.is_a?(Subscription)) ? nil : (@day + 1), version: params[:version]})
