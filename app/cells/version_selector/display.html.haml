@@ -11,7 +11,7 @@
         %tr
           %th
             %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : url_for(@params.merge(version: v.osis))}= k.upcase.match(/\A[^-]*/)
-          %td
+          %td{class: v.audio? ? "audio" : ""}
             %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : url_for(@params.merge(version: v.osis))}= v.title
       - @all_languages.each do |k, v|
         %tr
@@ -20,7 +20,7 @@
           %tr
             %th
               %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : url_for(@params.merge(version: vv.osis))}= kk.upcase.match(/\A[^-]*/)
-            %td
+            %td{class: vv.audio? ? "audio" : ""}
               %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : url_for(@params.merge(version: vv.osis))}= vv.title
 #menu_alt_version.dynamic_menu
   .spinner_wrapper{style: "display: none;"}

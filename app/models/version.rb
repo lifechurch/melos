@@ -14,6 +14,7 @@ class Version
     else
       versions.select { |k, v| v.language == lang }
     end
+    
   end
 
   def self.find(version)
@@ -39,6 +40,10 @@ class Version
   def initialize(version)
     @version = version
     @data = versions_api_data.versions[version]
+  end
+  
+  def audio?
+    @data.audio == "true"
   end
 
   def language
