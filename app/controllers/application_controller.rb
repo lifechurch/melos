@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
 
   def set_page
     @page = (params[:page] || 1).to_i
+    @labels_page = (params[:labels_page] || 1).to_i
   end
 
   # Set locale

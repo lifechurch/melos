@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
     if user
       sign_in user
-      redirect_to cookies[:sign_in_redirect] || bible_path, notice: t("successful sign-in", user: user.username)
+      redirect_to cookies[:sign_in_redirect] || bible_path
       cookies[:sign_in_redirect] = nil
     else
       flash.now[:error] = t("invalid login")
@@ -24,6 +24,6 @@ class SessionsController < ApplicationController
   def destroy
     sign_out
     cookies[:sign_in_redirect] = nil # user has signed out, if they sign in, new referer should apply
-    redirect_to (request.referer ? URI(request.referer).path : params[:redirect] || bible_path), notice: t("successful sign-out")
+    redirect_to (request.referer ? URI(request.referer).path : params[:redirect] || bible_path)
   end
 end

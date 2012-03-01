@@ -11,7 +11,8 @@ class BookmarksController < ApplicationController
     else
       @bookmarks = @user.bookmarks(page: @page)
     end
-    @labels = Bookmark.labels_for_user(@user.id)if Bookmark.labels_for_user(@user.id)
+    puts "the controller thinks that @labels_page is #{@labels_page}"
+    @labels = Bookmark.labels_for_user(@user.id, page: @labels_page)if Bookmark.labels_for_user(@user.id)
   end
 
   def show_label

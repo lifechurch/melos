@@ -27,7 +27,7 @@
   margin-right: -5px
   padding-right: 5px
 
-#nav_primary a span
+#nav_primary a.icon span
   background:
     repeat: no-repeat
     position: 0 10px
@@ -43,52 +43,54 @@
   padding-top: 50px
   padding-bottom: 4px
 
-#nav_primary a span:hover,
-#nav_primary li.highlighted a span
+#nav_primary a.icon span:hover,
+#nav_primary li.highlighted a.icon span
   background:
     position: -60px 10px
 
-#nav_primary a
+#nav_primary a.icon
   background: url(../images/nav_primary_a.png) no-repeat -99999px -99999px
   -webkit-background-size: 100% 100%
   color: #bbb
   display: block
   text-decoration: none
 
-#nav_primary a:hover
+#nav_primary a.icon:hover
   background:
     position: center center
   color: #fff
 
-#nav_primary_bible a span
+#nav_primary_bible a.icon span
   background:
     image: url(../images/nav_bible.png)
     
-#nav_primary_plans a span
+#nav_primary_plans a.icon span
   background:
     image: url(../images/nav_plans.png)
 
-#nav_primary_notes a span
+#nav_primary_notes a.icon span
   background:
     image: url(../images/nav_notes.png)
 
-#nav_primary_bookmarks a span
+#nav_primary_bookmarks a.icon span
   background:
     image: url(../images/nav_bookmarks.png)
 
-#nav_primary_friends a span
+#nav_primary_friends a.icon span
   background:
     image: url(../images/nav_group.png)
 
-#nav_primary_live a span
+#nav_primary_live a.icon span
   background:
     image: url(../images/nav_live.png)
 
-#nav_primary_mobile a span
+#nav_primary_mobile a.icon span
   background:
     image: url(../images/nav_mobile.png)
 
-.tooltip
+#nav_primary a.tooltip
+  display: block
+  width: auto
   height: 31px
   padding-left: 10px
   margin-left: -10px
@@ -97,15 +99,18 @@
   left: 56px
   top: 13px
   z-index: 9
-  cursor: default
+  cursor: pointer
 
-.tooltip span
+#nav_primary a.tooltip:link
+  text-decoration: none
+
+#nav_primary a.tooltip span
   display: block
   line-height: 31px
+  height: 31px
   padding: 0 14px 0 10px
   color: white
   font-weight: bold
   text-shadow: 0 1px 1px #000
   background: url(../images/bg-menu-tooltip-right.png) no-repeat right
-  cursor: default
 

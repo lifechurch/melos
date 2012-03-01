@@ -12,13 +12,13 @@
 #reader_header
   %header
     %ul.float_left
-      %li.gutter_right_quarter
-        = @reference.ref_string
       %li
-        %a.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+          %b
+            = @reference.ref_string
           %span
-            =t("ref.choose book and chapter")
-      %li.separator
+            = t('ref.choose book and chapter')
+      %li
         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
           %b
             = @reference.version_string
