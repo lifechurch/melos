@@ -20,6 +20,10 @@
   /   %br
   /   = f.text_field :email
   %p
+    = f.label :bio, t('users.profile.bio')
+    %br
+    = f.text_area :bio, rows: 5, style: "width: 223px", :maxlength => 160, placeholder: t("160 character limit")
+  %p
     = f.label :location, t('users.profile.location')
     %br
     = f.text_field :location
@@ -32,16 +36,17 @@
     %br
     = f.text_field :website
   %p
-    = f.label :country, t('users.profile.country')
-    %br
-    = f.country_select :country
+    .country_select
+      = f.label :country, t('users.profile.country')
+      %br
+      = f.country_select :country
   %p
     = f.label :timezone, t('users.profile.timezone')
     %br
-    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}
+    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px"}
   %p
     = f.label :language_tag, t('users.profile.language')
     %br
-    = f.select(:language_tag, Cfg.languages.map { |k, v| [v, k] })
+    = f.select(:language_tag, Cfg.languages.map { |k, v| [v, k] }, {}, {style: "min-width: 395px"})
   %p
     = f.submit t('users.update profile')

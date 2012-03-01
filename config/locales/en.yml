@@ -117,6 +117,7 @@ en:
   myself:                                       "Me"
   none found:                                   "We couldn't find anything to match your criteria. Try widening your search."
   paginated items shown:                        "%{first_shown}&ndash;%{last_shown} of %{total_available}"
+  160 character limit:                          "160 characters or less"
   likes:
     my likes:                                   "My Likes"
     all likes:                                  "All Likes"
@@ -314,6 +315,7 @@ en:
       updated notifications:                    "Success! You've updated your notification settings."
       notification errors:                      "The following error(s) prevented updating your notifications:"
       edit:                                     "Edit"
+      bio:                                      "Bio"
     password:
       updated:                                  "Success! You've updated your password."
       error:                                    "Sorry, there was an error changing your password."

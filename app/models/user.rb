@@ -210,6 +210,22 @@ class User < YouVersion::Resource
     self.badges.detect { |b| b.slug == slug }
   end
 
+  def website_url
+    if website.match(/^http/)
+      website
+    else
+      "http://" << website
+    end
+  end
+  
+  def website_human
+    if match = website.match(/(^www\.|^https?:\/\/www.|^https?:\/\/)(.*)/)
+      match[2]
+    else
+      website
+    end
+  end
+
   def recent_activity
     unless @recent_activity
       response = YvApi.get("community/items", user_id: self.id) do |errors|
