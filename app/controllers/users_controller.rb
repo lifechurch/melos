@@ -108,6 +108,7 @@ class UsersController < ApplicationController
   end
 
   def notes
+    @nav = :notes if @me
     @selected = :notes
     @notes = @user.notes(page: params[:page])
   end

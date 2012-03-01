@@ -6,6 +6,7 @@ class NotesController < ApplicationController
     if params[:user_id] || current_auth
       redirect_to user_notes_path(params[:user_id] || current_user) and return
     else
+      @selected = :notes
       @notes = Note.all(page: @page)
     end
   end
