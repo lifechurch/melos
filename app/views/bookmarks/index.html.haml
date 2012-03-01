@@ -8,6 +8,7 @@
       .split_pane_sidebar
         %dl.labels_menu
           %dt
+            = render "shared/labels_pagination", resource_list: @labels
             = t('labels')
           %dd{class: params[:label] == nil ? "highlighted" : ""}
             %b

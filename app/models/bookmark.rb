@@ -130,6 +130,7 @@ class Bookmark < YouVersion::Resource
 
   def self.labels_for_user(user_id, params = {})
     params[:page] ||= 1
+    puts "123123 params page is #{params[:page]}"
     response = get("bookmarks/labels", user_id: user_id, page: params[:page]) do |errors|
       Rails.logger.info "API Error: Bookmark.labels_for_user(#{user_id}) got these errors: #{errors.inspect}"
       if errors.find{|g| g['error'] =~ /Labels not found/}

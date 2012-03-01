@@ -1,0 +1,13 @@
+- if resource_list.is_a?(ResourceList) && resource_list.has_pages
+  %ul.labels.pagination
+    - unless @labels_page.to_i == 1
+      %li.pagination_previous
+        =link_to t("previous page"), params.merge({labels_page: @labels_page-1})
+    - unless @labels_page.to_i == resource_list.total_pages
+      %li.pagination_pages= "#{((@labels_page.to_i - 1)*resource_list.page_length) + 1}&ndash;#{@labels_page.to_i * resource_list.page_length} of #{resource_list.total}".html_safe
+      %li.pagination_next
+        =link_to t("next page"), params.merge({labels_page: @labels_page+1})
+    - else
+      %li.pagination_pages= "#{((@labels_page.to_i - 1)*resource_list.page_length) + 1}&ndash;#{resource_list.total} of #{resource_list.total}".html_safe
+
+        

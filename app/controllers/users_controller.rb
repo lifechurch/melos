@@ -126,7 +126,7 @@ class UsersController < ApplicationController
     else
       @bookmarks = @user.bookmarks(page: params[:page])
     end
-    @labels = Bookmark.labels_for_user(@user.id)if Bookmark.labels_for_user(@user.id)
+    @labels = Bookmark.labels_for_user(@user.id, page: @labels_page) if Bookmark.labels_for_user(@user.id)
     render "bookmarks/index", layout: "application" if @me
   end
 
