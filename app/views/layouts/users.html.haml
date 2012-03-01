@@ -10,8 +10,8 @@
         = render "shared/widget_user_badges" unless @user.badges.empty?
     = render(partial: "user_info", locals: {user: @user}) if @selected == :recent_activity
     %article
-      - if @selected == :recent_activity
-        %h1= t("my #{@selected.to_s}")
+      - if @selected == :recent_activity || @selected == :notes || @selected == :friends
+        %h1= t("users.my #{@selected.to_s}")
       - else
         %h1= t("settings")
         %h4= t("users.edit #{@selected}")

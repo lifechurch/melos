@@ -3,8 +3,8 @@ class NotesController < ApplicationController
   before_filter :set_sidebar, :only => [:index]
 
   def index
-    if params[:user_id]
-      @notes = User.find(params[:user_id], :auth => current_auth).notes(page: @page)
+    if params[:user_id] || current_auth
+      redirect_to user_notes_path(params[:user_id] || current_user) and return
     else
       @notes = Note.all(page: @page)
     end
