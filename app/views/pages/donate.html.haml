@@ -14,14 +14,14 @@
 
 -# Three 3 promo images, below main content:
 
-- content_for :main_trailer do
-  %aside.gutter_top_half.clearfix
-    %a.float_left.gutter_right_half{:href => @donate_link}
-      %img{:src => '/images/donate_promo_ten_to_one.png', :width => '296', :height => '222', :alt => alt_for_promo_1}
-    %a.float_left{:href => '#'}
-      %img{:src => '/images/donate_promo_always_near.png', :width => '296', :height => '222', :alt => alt_for_promo_2}
-    %a.float_right{:href => @donate_link}
-      %img{:src => '/images/donate_promo_5_billion.png', :width => '298', :height => '222', :alt => alt_for_promo_3}
+- # content_for :main_trailer do
+- #  %aside.gutter_top_half.clearfix
+- #    %a.float_left.gutter_right_half{:href => @donate_link}
+- #      %img{:src => '/images/donate_promo_ten_to_one.png', :width => '296', :height => '222', :alt => alt_for_promo_1}
+- #    %a.float_left{:href => '#'}
+- #      %img{:src => '/images/donate_promo_always_near.png', :width => '296', :height => '222', :alt => alt_for_promo_2}
+- #    %a.float_right{:href => @donate_link}
+- #      %img{:src => '/images/donate_promo_5_billion.png', :width => '298', :height => '222', :alt => alt_for_promo_3}
 
 -# Main content below this line...
 
@@ -34,12 +34,3 @@
   %hr
   %p.narrow.callout.gutter_bottom_half= t('donate.subhead')
   %p.narrow.gutter_bottom_half= t('donate.copy').html_safe
-/   %p.gutter_bottom_half
-/     %b
-/       Set Up Monthly Giving
-/   %p
-/     %a.action_button_mini{:href => '#'} $5
-/     %a.action_button_mini{:href => '#'} $20
-/     %a.action_button_mini{:href => '#'} $50
-/     %a.action_button_mini{:href => '#'} $100
-/     %a.action_button_mini{:href => '#'} $250
