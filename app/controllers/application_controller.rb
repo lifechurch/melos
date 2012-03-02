@@ -45,10 +45,10 @@ class ApplicationController < ActionController::Base
   end
   
   private
-  def sign_in(user)
+  def sign_in(user, password = nil)
     cookies.permanent.signed[:a] = user.id
     cookies.permanent.signed[:b] = user.username
-    cookies.permanent.signed[:c] = params[:password]
+    cookies.permanent.signed[:c] = password || params[:password]
     cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
   end
   def sign_out
@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
   def force_login(opts = {})
     if current_auth.nil?
       opts[:redirect] = request.path
-      redirect_to sign_in_path(opts) and return 
+      redirect_to sign_up_path(opts) and return 
       #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
     end
     @user = current_user
