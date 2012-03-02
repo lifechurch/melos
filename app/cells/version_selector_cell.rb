@@ -18,6 +18,7 @@ class VersionSelectorCell < Cell::Rails
     @languages = Version.languages
     @force_style = opts[:force_style]
     @params = opts[:link_params]
+    @recent_versions = opts[:recent_versions] || []
     render
   end
 

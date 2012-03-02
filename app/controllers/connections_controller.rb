@@ -15,15 +15,10 @@ class ConnectionsController < ApplicationController
 
   def destroy
     connection = current_user.connections[params[:provider].to_s]
-    puts "!@# connection is #{connection}"
     result = connection.delete
-    puts "!@# result is #{result}"
     if connection.delete
-      puts "!@# deleted connection"
       redirect_to :back, notice: t('deleted connection', connection: t(params[:provider].to_s))
     else
-      puts "!@# didn't delete connection"
-      puts "errors were #{connection.errors.full_messages}"
       redirect_to :back, error: t('deleted connection error', connection: t(params[:provider].to_s))
     end
 

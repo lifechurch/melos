@@ -1252,6 +1252,25 @@ var YV = (function($, window, document, undefined) {
           document.location.href = $(this).val();
         });
       },
+      // YV.init.recent_version
+      recent_version: function() {
+       $(".version_select").find('a').click(function() {
+          var osis = $(this).data("version");
+          
+          if (osis){
+            var recent = getCookie('recent_versions');
+            if (recent == null) recent = "";
+            recent = recent.split('/');
+            var exits = recent.indexOf(osis);
+            if(exits != -1) recent.splice(exits, 1);
+            recent.unshift(osis);
+            recent_str = recent.splice(0,5).join('/');
+            console.log("pre-seet: " + recent_str);
+            setCookie('recent_versions', recent_str);
+            console.log("get: " + getCookie('recent_versions'));
+          }
+        });
+      },
       // YV.init.fullscreen
       fullscreen: function() {
         if ($("article").data("fullscreen") == "1") {

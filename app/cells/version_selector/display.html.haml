@@ -1,49 +1,42 @@
-#menu_version.dynamic_menu{style: @force_style}
+#menu_version.dynamic_menu.version_select{style: @force_style}
   .spinner_wrapper{style: "display: none;"}
     #version_spinner.dynamic_menu_spinner
   %span.menu_arrow
     &nbsp;
   .scroll
     %table
+      - if !@recent_versions.empty?
+        %tr
+          %th{:colspan => '2'}= t('recent versions')
+        - @recent_versions.each do |v|
+          = render partial: 'item', locals: {version: v}
       %tr
         %th{:colspan => '2'}= @version.language.human
       - @this_language.each do |k, v|
-        %tr
-          %th
-            %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : url_for(@params.merge(version: v.osis))}= k.upcase.match(/\A[^-]*/)
-          %td{class: v.audio? ? "audio" : ""}
-            %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: v.osis)) : url_for(@params.merge(version: v.osis))}= v.title
+        = render partial: 'item', locals: {version: v}
       - @all_languages.each do |k, v|
         %tr
           %th{:colspan => '2'}= @languages[k]
         - v.each do |kk, vv|
-          %tr
-            %th
-              %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : url_for(@params.merge(version: vv.osis))}= kk.upcase.match(/\A[^-]*/)
-            %td{class: vv.audio? ? "audio" : ""}
-              %a.spinner_trigger{:href => @reference ? bible_path(@reference.merge(version: vv.osis)) : url_for(@params.merge(version: vv.osis))}= vv.title
-#menu_alt_version.dynamic_menu
+          = render partial: 'item', locals: {version: vv}
+#menu_alt_version.dynamic_menu.version_select
   .spinner_wrapper{style: "display: none;"}
     #version_spinner.dynamic_menu_spinner
   %span.menu_arrow
     &nbsp;
   .scroll
     %table
+      - if !@recent_versions.empty?
+        %tr
+          %th{:colspan => '2'}= t('recent versions')
+        - @recent_versions.each do |v|
+          = render partial: 'item', locals: {version: v}
       %tr
         %th{:colspan => '2'}= @alt_version.language.human
       - @this_language.each do |k, v|
-        %tr
-          %th
-            %a.spinner_trigger.alt_version_link{"data-version" => v.osis, :href => '#'}= k.upcase.match(/\A[^-]*/) #JS will set cookie and reload page
-          %td
-            %a.spinner_trigger.alt_version_link{"data-version" => v.osis, :href => '#'}= v.title #JS will set cookie and reload page
+        = render partial: 'item', locals: {version: v, alt: true}
       - @all_languages.each do |k, v|
         %tr
           %th{:colspan => '2'}= @languages[k]
         - v.each do |kk, vv|
-          %tr
-            %th
-              %a.spinner_trigger.alt_version_link{"data-version" => vv.osis, :href => '#'}= kk.upcase.match(/\A[^-]*/) #JS will set cookie and reload page
-            %td
-              %a.spinner_trigger.alt_version_link{"data-version" => vv.osis, :href => '#'}= vv.title #JS will set cookie and reload page
-
+          = render partial: 'item', locals: {version: vv, alt: true}

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
+  helper_method :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
   before_filter :set_locale, :set_page
   
   unless Rails.application.config.consider_all_requests_local
@@ -109,6 +109,13 @@ class ApplicationController < ActionController::Base
     
     return true
   end
+  def recent_versions
+    return @recent_versions unless @recent_versions.nil?
+    
+    return [] if cookies[:recent_versions].to_s == ""
+    
+    return @recent_versions = cookies[:recent_versions].split('/').map{|osis| Version.find(osis)}
+  end
   def current_user
     @current_user ||= User.find(current_auth) if current_auth
   end
@@ -127,7 +134,14 @@ class ApplicationController < ActionController::Base
     cookies[:version] || Version.default_for(params[:locale] ? params[:locale].to_s : "en")
   end
   def alt_version
-    cookies[:alt_version] || current_version
+    return @alt_version unless @alt_version.nil?
+    
+    return cookies[:alt_version] if cookies[:alt_version]
+    
+    recent = recent_versions.find{|v| v.osis != current_version}
+    return recent.osis if recent
+    
+    return Version.random_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version)
   end
   def set_current_version(ver)
     cookies.permanent[:version] = ver.osis
