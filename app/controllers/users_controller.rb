@@ -33,17 +33,29 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     render action: "new", layout: "application"
+    cookies[:sign_up_redirect] = params[:redirect]
   end
 
   def create
     @user = User.new(params[:user])
-    if @user.save
-      # save username and password so we can sign them back in
-      cookies.signed[:f] = params[:user][:username]
-      cookies.signed[:g] = params[:user][:password]
-      redirect_to confirm_email_path
-    else
-      render action: "new"
+    # Try authing them first - poor man's login screen
+    begin
+      if test_user = User.authenticate(params[:user][:username], params[:user][:password])
+        puts "hey i am actually an existing user"
+        new_place = cookies[:sign_up_redirect] || :back
+        puts "new place is #{new_place}"
+        sign_in test_user, params[:user][:password]
+        redirect_to new_place
+      end
+    rescue
+      if @user.save
+        # save username and password so we can sign them back in
+        cookies.signed[:f] = params[:user][:username]
+        cookies.signed[:g] = params[:user][:password]
+        redirect_to confirm_email_path
+      else
+        render action: "new"
+      end
     end
   end
 
