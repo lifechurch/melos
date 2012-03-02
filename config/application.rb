@@ -44,6 +44,9 @@ module YouversionWeb
       r301 %r{/reading-plans/category/(\w+)/(\w+)}, '/reading-plans?category=$1.$2'
       r301 %r{/reading-plans/category/(\w+)}, '/reading-plans?category=$1'
       r301 %r{/reading-plans/([\w-]+)/(\d+)}, '/reading-plans/$1?day=$2'
+
+      #jmm
+      r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
