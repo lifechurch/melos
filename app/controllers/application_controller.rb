@@ -110,7 +110,6 @@ class ApplicationController < ActionController::Base
     return true
   end
   def recent_versions
-    #debugger
     return @recent_versions unless @recent_versions.nil?
     
     return [] if cookies[:recent_versions].to_s == ""
