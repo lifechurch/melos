@@ -12,5 +12,7 @@
       = label_tag :password, t("password prompt")
       %br
       = password_field_tag :password, params[:password]
+      %br
+      = link_to t('users.forgot password'), forgot_password_path
     %p
       = submit_tag t("sign in")

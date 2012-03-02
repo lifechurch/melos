@@ -72,6 +72,8 @@ YouversionWeb::Application.routes.draw do
   get   'settings/update_email'  => 'users#update_email_form', as: 'update_email'
   put   'settings/update_email'  => 'users#update_email', as: 'update_email'
   get   'confirm-update-email/:token' => 'users#confirm_update_email', as: 'confirm_update_email'
+  get   'settings/forgot_password' => 'users#forgot_password_form', as: 'forgot_password'
+  post  'settings/forgot_password' => 'users#forgot_password', as: 'forgot_password'
 
   # connetions
   match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'
