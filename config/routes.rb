@@ -1,5 +1,5 @@
 YouversionWeb::Application.routes.draw do
-  filter :locale, include_default_locale: true
+  filter :locale, include_default_locale: false
   match 'donate/us', :to => 'donations#us', :as => 'us_donation', :via => [:get]
   match 'donate/relay_response', :to => 'donations#relay_response', :as => 'donations_relay_response', :via => [:post]
   match 'donate/receipt', :to => 'donations#receipt', :as => 'donations_receipt', :via => [:get]
