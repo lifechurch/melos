@@ -4,19 +4,18 @@
 #reader_header
   %header
     %ul.float_left
-      %li.gutter_right_quarter
-        = @reference.ref_string
       %li
-        %a.dynamic_menu_trigger.drop_down_arrow{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+          %b
+            = @reference.ref_string
           %span
-            =t("ref.choose book and chapter")
+            = t('ref.choose book and chapter')
       %li.separator
         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
           %b
             = @version.osis_human
           %span
             =t("ref.choose version")
-
 %article
   %div{style:"text-align: center; margin-top:70px"}
     %h1= t("ref.invalid chapter title")

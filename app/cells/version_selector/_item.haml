@@ -4,10 +4,12 @@
     %th
       %a.spinner_trigger.alt_version_link{"data-version" => version.osis, :href => '#'}= version.osis_human #JS will set cookie and reload page
     %td
-      %a.spinner_trigger.alt_version_link{"data-version" => version.osis, :href => '#'}= version.title #JS will set cookie and reload page
+    %a.spinner_trigger.alt_version_link{"data-version" => version.osis, :href => '#'}
+      %div= version.title #JS will set cookie and reload page
 - else
   %tr
     %th
       %a.spinner_trigger{"data-version" => version.osis, :href => @reference ? bible_path(@reference.merge(version: version.osis)) : url_for(@params.merge(version: version.osis))}= version.osis_human
     %td{class: version.audio? ? "audio" : ""}
-      %a.spinner_trigger{"data-version" => version.osis, :href => @reference ? bible_path(@reference.merge(version: version.osis)) : url_for(@params.merge(version: version.osis))}= version.title
+      %a.spinner_trigger{"data-version" => version.osis, :href => @reference ? bible_path(@reference.merge(version: version.osis)) : url_for(@params.merge(version: version.osis))}
+        %div= version.title

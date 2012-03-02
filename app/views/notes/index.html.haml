@@ -4,7 +4,7 @@
   = render '/shared/widget_ad_bible_app'
 
 %article
-  %h1= t("notes.all notes")
+  %h1= t("notes.community notes")
   - unless @notes.empty?
     %ul.big_list
       = render partial: "list_item", collection: @notes, locals: {display: :avatar}
