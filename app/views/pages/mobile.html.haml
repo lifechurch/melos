@@ -1,68 +1,39 @@
 - @sidebar = false
 %article.mobile
 	%section#mobile_content.float_left
-		%h2
-			Engage with scripture like never before.
+		%h2= t('mobile page.h2')
 		%section.main
-			%p
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in porta urna. Vestibulum dapibus consequat auctor. Aliquam at enim non lorem fringilla lacinia. Curabi.tur blandit turpis pellentesque enim pharetra et mollis urna blandit. Sed rhoncus leo ut est euismod nec dignissim. 
+			%p= t('mobile page.main')
 		%section.multilingual.float_left
 			%img{:src => "images/mobile_multilingual.png"}
-			%h3
-				Youversion is Multilingual
-			%p
-				Available in hundreds of languages worldwide.
+			%h3= t('mobile page.h3')
+			%p= t('mobile page.h3 sub')
 	%section#mobile_downloads.float_right
-		%h3
-			Download The Bible App Now
+		%h3= t('mobile page.download now')
 		%ul.left_column.float_left
-			%li#dl_iphone
-				%a{:href => "http://youversion.com/mobile/iphone"}
-					iPhone
-			%li#dl_android
-				%a{:href => "http://youversion.com/mobile/android"}
-					Android
-			%li#dl_blackberry
-				%a{:href => "http://youversion.com/mobile/blackberry"}
-					BlackBerry
-			%li#dl_windows
-				%a{:href => "http://youversion.com/mobile/wp"}
-					Windows
+			%li#dl_iphone= t('mobile page.iphone ipad')
+			%li#dl_android= t('mobile page.android')
+			%li#dl_blackberry= t('mobile page.blackberry')
+			%li#dl_windows= t('mobile page.windows phone')
 		%ul.right_column.float_right
-			%li#dl_hppalm
-				%a{:href => "http://youversion.com/mobile/palm"}
-					HP/Palm
-			%li#dl_java
-				%a{:href => "http://youversion.com/mobile/Java"}
-					Java
-			%li#dl_symbian
-				%a{:href => "http://youversion.com/mobile/symbian"} Symbian
-			%li#dl_mobile
-				%a{:href => "http://youversion.com/mobile/mobile-web"}
-					Mobile
+			%li#dl_hppalm= t('mobile page.hp palm')
+			%li#dl_java= t('mobile page.java')
+			%li#dl_symbian= t('mobile page.symbian')
+			%li#dl_mobile= t('mobile page.mobile web')
 		%a.cta
 			%img.float_left{:src => "images/mobile_download.png"}
-			%h4 
-				Go to youversion.com/download
-			%span
-				On your mobile device
+			%h4= t('mobile page.button h4')
+			%span= t('mobile page.button h4 sub')
 	%div.clear
 	%section.testimonials
-		%h2
-			What people are saying about the free Bible app...
+		%h2= t('mobile page.what people')
 		%ul
 			%li
-				%h3
-					Great App, Great Features
-				%p
-					I love this app. The reading plans and numerous translations to choose from make for a wonderful reading experience.
+				%h3= t('mobile page.t1')
+				%p= t('mobile page.t1 copy')
 			%li
-				%h3
-					Great App, Great Features
-				%p
-					I love this app. The reading plans and numerous translations to choose from make for a wonderful reading experience.
+				%h3= t('mobile page.t2')
+				%p= t('mobile page.t2 copy')
 			%li
-				%h3
-					Great App, Great Features
-				%p
-					I love this app. The reading plans and numerous translations to choose from make for a wonderful reading experience.
+				%h3= t('mobile page.t3')
+				%p= t('mobile page.t3 copy')
