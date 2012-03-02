@@ -6,6 +6,7 @@ class User < YouVersion::Resource
   attribute :id
   attribute :username
   attribute :password
+  attribute :password_confirm
   attribute :email
   attribute :agree
   attribute :verified
@@ -175,6 +176,12 @@ class User < YouVersion::Resource
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
+    end
+  end
+
+  def self.forgot_password(email)
+    YvApi.post("users/forgot_password", email: email) do |errors|
+      return false
     end
   end
 

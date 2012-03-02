@@ -218,6 +218,13 @@ en:
     update email check:                         "Please check your email and click the link to confirm your new email address."
     confirm update email success:               "Thanks! You've updated your email address."
     confirm update email error:                 "Sorry, there was a problem completing your email address change."
+    invalid email forgot:                       "Sorry, we weren't able to find an account with that email address. Please try again."
+    send new password button:                   "Send New Password"
+    forgot password copy:                       "Enter your email address and click Send New Password, and we'll email you a new password."
+    forgot password check:                      "Success! Check your email for your new password."
+    yes reset:                                  "Yes, reset my password"
+    yes reset and log out:                      "Yes, sign me out and reset my password"
+    forgot password:                            "Forgot your password?"
     privacy:
       policy:                                   "%{youversion} Privacy Policy"
       intro:                                    "YouVersion, a Website and Application owned and operated by LifeChurch.tv, knows you care how information about you is used and shared. We hope the following statements will help you understand how YouVersion will collect, use and protect the information you provide to us on our site or app. We will not use or share your information with anyone except as described in this Privacy Policy."
