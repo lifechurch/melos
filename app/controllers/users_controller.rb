@@ -32,8 +32,16 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    render action: "new", layout: "application"
+    # Set the blurb
+    if params[:source]
+      @blurb = t("registration.#{params[:source]} blurb")
+    elsif params[:redirect].match(/reading\-plans/)
+      @blurb = t("registration.plan blurb")
+    end
+    puts "blurb is #{@blurb}"
+      # Try reading plan?
     cookies[:sign_up_redirect] = params[:redirect]
+    render action: "new", layout: "application"
   end
 
   def create
