@@ -163,7 +163,7 @@ class User < YouVersion::Resource
   end
 
   def update_email(email)
-    response = YvApi.post("users/update_profile", email: email, auth: self.auth) do |errors|
+    response = YvApi.post("users/update_profile", email: email, api_version: "2.3", auth: self.auth) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
