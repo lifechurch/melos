@@ -14,6 +14,6 @@
       %button.action_button_green{type: "submit", name: "done_read", style:"margin-bottom: 3px"}= done_button_text
       .mute= t("plans.which reading", current: cur_reading_index+ 1, total: reading.references.count) if reading.references.count > 1
 - else 
-  .float_right{style: "height: 35px"}
+  .float_right{style: "height: 35px; text-align: center"}
     = link_to(done_button_text, plan_path(plan.to_param, day: day, content: cur_reading_index + 1), class: 'action_button_green no_style')
     .mute= t("plans.which reading", current: cur_reading_index + 1, total: reading.references.count) if reading.references.count > 1
