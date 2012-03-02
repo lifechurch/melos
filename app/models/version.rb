@@ -85,6 +85,11 @@ class Version
   def self.default_for(lang)
     versions_api_data.defaults.to_hash[lang]
   end
+  
+  def self.random_for(lang, opts={})
+    opts[:except] ||= ""
+    all_by_language[lang].find_all{|k,v| k != opts[:except]}.sample[0]
+  end
 
   private
 

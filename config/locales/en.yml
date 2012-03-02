@@ -118,6 +118,7 @@ en:
   none found:                                   "We couldn't find anything to match your criteria. Try widening your search."
   paginated items shown:                        "%{first_shown}&ndash;%{last_shown} of %{total_available}"
   160 character limit:                          "160 characters or less"
+  recent versions:                              "Recently Used"
   likes:
     my likes:                                   "My Likes"
     all likes:                                  "All Likes"
