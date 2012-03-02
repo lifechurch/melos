@@ -17,7 +17,11 @@ class PlansController < ApplicationController
 
   def show
     @subscription = current_user.subscription(params[:id]) if current_user
-
+    
+    # Get user font and size settings
+    @font = cookies['data-setting-font']
+    @size = cookies['data-setting-size']
+    
     # if user is subscribed
     if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]
       params[:day] ||= @subscription.current_day
