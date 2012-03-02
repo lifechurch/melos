@@ -21,6 +21,12 @@ class ApplicationController < ActionController::Base
     # params[:locale] ||= :en
     # 
     # I18n.locale = params[:locale]
+    #TEMPORARY FOR PREVIEWL #TODO: remove for go-live
+    if params[:locale]
+      cookies.permanent[:locale] = :en
+      return redirect_to l10n_path 
+    end
+    
     if params[:locale].nil?
       visitor_locale = cookies[:locale].blank? ? I18n.default_locale : cookies[:locale].to_sym
       cookies.permanent[:locale] = visitor_locale
