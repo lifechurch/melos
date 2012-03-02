@@ -162,6 +162,22 @@ class User < YouVersion::Resource
     end
   end
 
+  def update_email(email)
+    response = YvApi.post("users/update_profile", email: email, api_version: "2.3", auth: self.auth) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      self.errors[:base] << new_errors
+      false
+    end
+  end
+
+  def confirm_update_email(token)
+    response = YvApi.post("users/update_email", encrypt: token) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      self.errors[:base] << new_errors
+      false
+    end
+  end
+
   def before_update; end
 
   # def self.find(id)

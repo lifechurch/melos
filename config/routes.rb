@@ -69,6 +69,9 @@ YouversionWeb::Application.routes.draw do
   match 'devices/:id'            => 'users#destroy_device', :as => 'device', :via => :delete
   match 'settings'               => 'users#profile', :as => 'profile', :via => :get
   match 'settings'               => 'users#update_profile', :as => 'profile', :via => :put
+  get   'settings/update_email'  => 'users#update_email_form', as: 'update_email'
+  put   'settings/update_email'  => 'users#update_email', as: 'update_email'
+  get   'confirm-update-email/:token' => 'users#confirm_update_email', as: 'confirm_update_email'
 
   # connetions
   match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'

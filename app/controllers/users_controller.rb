@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device]
+  before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook, :notifications, :update_notifications]
   before_filter :set_redirect, only: :new
@@ -244,6 +244,24 @@ class UsersController < ApplicationController
       flash.now[:error] = "Could not delete device."
       render action: "devices"
     end
+  end
+
+  def update_email_form
+    render "update_email"
+
+  end
+
+  def update_email
+    response = @user.update_email(params[:user][:email])
+    if response
+      render "update_email_success"
+    else
+      render "update_email"
+    end
+  end
+
+  def confirm_update_email
+    response = @user.confirm_update_email(params[:token])
   end
 
   def following
