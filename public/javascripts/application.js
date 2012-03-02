@@ -125,9 +125,10 @@ var YV = (function($, window, document, undefined) {
           hide_modal();
           return false;
         });
-
+        
         var verses = $("article").data("selected-verses")
-        if (verses) {
+        
+        if (verses && $("article").data("verse-modal-enabled")) {
           if (verses.length == 1) {
             show_modal();
           }

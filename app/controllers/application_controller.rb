@@ -102,6 +102,13 @@ class ApplicationController < ActionController::Base
   def current_auth
     @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
   end
+  def external_request?
+    return true if request.referrer.nil?
+    
+    return false if request.host == request.referrer.split('/')[2].split(':')[0]
+    
+    return true
+  end
   def current_user
     @current_user ||= User.find(current_auth) if current_auth
   end
