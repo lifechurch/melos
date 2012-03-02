@@ -8,8 +8,8 @@
           %span.separator |
           = @version
         &nbsp;
-        %small
-          %a{:href => reference_path(@single_verse.raw_hash.except(:version).to_osis_string)}= t("compare all versions")
+        / %small
+        /   %a{:href => reference_path(@single_verse.raw_hash.except(:version).to_osis_string)}= t("compare all versions")
             
         %a.close{:href => '#'} Close
       %section
