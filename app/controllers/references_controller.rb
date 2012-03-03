@@ -62,7 +62,6 @@ class ReferencesController < ApplicationController
     # Set up user specific stuff
     if current_user
       @highlights = Highlight.for_reference(@reference, auth: current_auth)
-      @alt_highlights = Highlight.for_reference(@alt_reference, auth: current_auth)
       @highlight_colors = current_user.highlight_colors
       @bookmarks = current_user.bookmarks
     else
