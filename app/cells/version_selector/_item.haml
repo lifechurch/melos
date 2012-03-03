@@ -1,6 +1,6 @@
 - alt ||= nil
 - href = "#"
-- href = (@reference ? bible_path(@reference.merge(version: version.osis)) : url_for(@params.merge(version: version.osis))) if alt
+- href = (@reference ? bible_path(@reference.merge(version: version.osis)) : url_for(@params.merge(version: version.osis))) unless alt
 
 %tr
   %th
