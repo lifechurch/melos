@@ -1,0 +1,50 @@
+#reader_header
+  %header
+    %ul.float_left
+      %li
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+          %b
+            = @reference.ref_string
+          %span
+            = t('ref.choose book and chapter')
+      %li
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
+          %b
+            = @version.osis_human
+          %span
+            =t("ref.choose version")
+      %li#li_selected_verses.separator.hide
+        %a#clear_selected_verses.button{:href => '#', :title => 'Clear Selected Verses'}
+          %span.icon_x
+            = t('ref.clear verses')
+        %a#verses_selected_button.dynamic_menu_trigger.button{:href => '#menu_bookmark', :title => t("ref.share")}
+          %b.icon_share
+            =t("ref.selected")
+            %sup#verses_selected_count
+              0
+        -# Submit via GET to share verses...
+        %form{action: '', id: 'verses_selected_form', method: 'get'}
+          %input.verses_selected_input{name:'verses', type: 'hidden', value: ''}
+    %ul.float_right
+      %li.show_in_parallel_mode
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_alt_version', :title => t("ref.choose second version")}
+          %b
+            = @alt_version.osis_human
+          %span
+            =t("ref.choose version")
+      %li.hide_in_parallel_mode
+        %a.button.dynamic_menu_trigger{:href => '#menu_settings', :title => t("ref.settings")}
+          %span.icon_settings
+            =t("ref.settings")
+      %li.hide_in_parallel_mode
+        %a.button{:href => @reference.audio ? '#menu_audio_player' : nil, :title => @reference.audio ? t("ref.listen"): t('audio.none'), class: @reference.audio ? "dynamic_menu_trigger" : "disabled"}
+          %span.icon_listen{class: @reference.audio ? nil : "disabled"}
+            =t("ref.listen")
+      %li.hide_in_parallel_mode
+        %a.button#button_full_screen{:href => '#', :title => t("ref.full screen")}
+          %span.icon_full_screen
+            =t("ref.full screen")
+      %li.float_right_in_parallel_mode
+        %a#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
+          %span.icon_parallel
+            =t("ref.parallel")

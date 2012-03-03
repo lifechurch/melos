@@ -133,15 +133,14 @@ class ApplicationController < ActionController::Base
   def current_version
     cookies[:version] || Version.default_for(params[:locale] ? params[:locale].to_s : "en")
   end
-  def alt_version
-    return @alt_version unless @alt_version.nil?
-    
+  def alt_version(ref)
+    raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).contains?(ref)
     return cookies[:alt_version] if cookies[:alt_version]
     
-    recent = recent_versions.find{|v| v.osis != current_version}
+    recent = recent_versions.find{|v| v.osis != current_version && v.contains?(ref)}
     return cookies[:alt_version] = recent.osis if recent
     
-    return cookies[:alt_version] = Version.random_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version)
+    return cookies[:alt_version] = Version.sample_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version, has_ref: ref)
   end
   def set_current_version(ver)
     cookies.permanent[:version] = ver.osis

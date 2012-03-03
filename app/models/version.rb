@@ -50,6 +50,17 @@ class Version
     @data.language
   end
 
+  def contains?(ref)
+    raise "versions contain references!" if !ref.is_a? Reference
+    listing = books_list
+
+    #return false if ref.version && ref.version != osis
+    return false if ref.book && listing[ref.book.to_s].nil?
+    return false if ref.chapter && listing[ref.book.to_s].chapter[ref.chapter.to_s].nil?
+    return false if ref.verse && ref.verse > listing[ref.book.to_s].chapter[ref.chapter.to_s].verses
+    return true
+  end
+
   def title
     @data.title
   end
@@ -86,9 +97,21 @@ class Version
     versions_api_data.defaults.to_hash[lang]
   end
   
-  def self.random_for(lang, opts={})
+  def self.sample_for(lang, opts={})
     opts[:except] ||= ""
-    all_by_language[lang].find_all{|k,v| k != opts[:except]}.sample[0]
+    
+    samples = all_by_language[lang].find_all{|k,v| k != opts[:except]}
+    sample = nil
+    
+    until !sample.nil? || samples.empty?
+      sample = samples.delete_at(Random.rand(samples.length))[1]
+
+      sample = nil if opts[:has_ref] && !sample.contains?(opts[:has_ref])
+    end
+    
+    raise NotAChapterError if sample.nil?
+    
+    return sample.osis
   end
 
   private
@@ -105,7 +128,8 @@ class Version
     @@books[version] = Hashie::Mash.new(hash)
   end
 
-  def books_list(version)
+  def books_list(version = nil)
+    version ||= osis 
     self.class.books_list(version)
   end
 

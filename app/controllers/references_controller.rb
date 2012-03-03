@@ -1,6 +1,6 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
-  rescue_from NotAChapterError, :with => :ref_not_found
+  rescue_from NotAChapterError, with: :ref_not_found
   
   def show
     # Set HTML classes for full screen/parallel
@@ -37,9 +37,6 @@ class ReferencesController < ApplicationController
     set_current_version @version
     set_last_read @reference
 
-    # Set up parallel mode
-    @alt_reference = (alt_version == current_version) ? @reference : Reference.new(@reference.raw_hash.except(:version), alt_version)
-
     # If the reference was a single verse, set that up so we can display the modal
     if ref_hash[:verse].is_a?(Fixnum) && (external_request? || params[:modal] == "true") && params[:modal] != "false"
       @single_verse = Reference.new(ref_hash)
@@ -74,6 +71,12 @@ class ReferencesController < ApplicationController
       @highlight_colors = User.highlight_colors
       @bookmarks = []
     end
+    
+    # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
+    @alt_version = Version.find(alt_version(@reference))
+    @alt_reference = Reference.new(@reference.raw_hash.except(:version), @alt_version.osis)
+    @alt_highlights = current_user ? Highlight.for_reference(@alt_reference, auth: current_auth) : []
+    
   end
 
   private
@@ -84,6 +87,14 @@ class ReferencesController < ApplicationController
   
   protected
     def ref_not_found(ex)
+
+      if ex.is_a? BadSecondaryVersionError
+        @bad_secondary = true
+        @alt_version = Version.find(cookies[:alt_version])
+        @alt_reference = Hashie::Mash.new({contents: ["<h1>#{t('ref.invalid chapter title')}</h1>","<p>#{t('ref.invalid chapter text')}</p>"]})
+        return render :show
+      end
+      
       osis_hash = params[:reference].to_osis_hash
       @alt_reference = @reference = Reference.new(osis_hash.except(:version))
       @version = Version.find(osis_hash[:version])
