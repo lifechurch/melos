@@ -139,9 +139,9 @@ class ApplicationController < ActionController::Base
     return cookies[:alt_version] if cookies[:alt_version]
     
     recent = recent_versions.find{|v| v.osis != current_version}
-    return recent.osis if recent
+    return cookies[:alt_version] = recent.osis if recent
     
-    return Version.random_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version)
+    return cookies[:alt_version] = Version.random_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version)
   end
   def set_current_version(ver)
     cookies.permanent[:version] = ver.osis
