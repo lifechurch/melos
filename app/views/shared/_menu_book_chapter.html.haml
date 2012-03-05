@@ -1,4 +1,4 @@
-= cache "book_chapter_#{@version}_#{@reference[:book]}" do
+= cache "book_chapter_#{@version}_#{@reference[:book]}", expires_in: 12.hours do
   #menu_book_chapter.dynamic_menu
     .spinner_wrapper{style: "display: none;"}
       #book_chapter_spinner.dynamic_menu_spinner

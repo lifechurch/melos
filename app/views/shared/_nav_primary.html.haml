@@ -1,4 +1,4 @@
-= cache "nav_primary_#{current_auth.username if current_auth}" do
+= cache "nav_primary_#{current_auth.username if current_auth}", expires_in: 12.hours do
   #nav_primary{:role => "navigation"}
     %nav
       %ul
