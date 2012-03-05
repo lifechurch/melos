@@ -5,4 +5,3 @@
 //= require main
 //= require analytics
 //= require ga
-//= require uservoice
