@@ -1,12 +1,12 @@
 %ul.tabs
   %li{class: ("highlighted" if @show == "twitter")}
     %a{style: "text-align: center; padding-top: 16px;", href: url_for({show: "twitter"})}
-      %img{src: "/images/twitter_logo_50x50.jpg"}>
+      = image_tag "twitter_logo_50x50.jpg"
       %br
       = t('twitter')
   %li{class: ("highlighted" if @show == "facebook")}
     %a{style: "text-align: center; padding-top: 16px;", href: url_for({show: "facebook"})}
-      %img{src: "/images/facebook_logo_50x50.jpg"}>
+      = image_tag "facebook_logo_50x50.jpg"
       %br
       = t('facebook')
 #connection_info

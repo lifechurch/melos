@@ -11,6 +11,6 @@
         %audio#audio_player{:src => @reference.audio.url, :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
       %dt
         %a.no_style.float_right.negative_gutter_top_quarter{:href => @reference.audio.publisher_link, :target => "_blank"}
-          %img{:src => '/images/icon_info.png'}
+          = image_tag "icon_info.png"
         %small
           = @reference.audio.copyright

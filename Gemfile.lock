@@ -15,6 +15,7 @@ GEM
       rack-mount (~> 0.8.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.0)
+    active_reload (0.6.1)
     activemodel (3.1.2)
       activesupport (= 3.1.2)
       builder (~> 3.0.0)
@@ -70,7 +71,7 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (1.0.0.rc.2)
+    compass-rails (1.0.0.rc.3)
       compass (~> 0.12.rc.0)
     countries (0.8.1)
       currencies (= 0.4.0)
@@ -313,13 +314,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_reload
   authorize-net
   capistrano
   capistrano-ext
   capybara (~> 1.0.0.beta1)
   cells
   coffee-rails (~> 3.1.0)
-  compass-rails
+  compass-rails (= 1.0.0.rc.3)
   countries
   css_parser (~> 1.1.9)
   cucumber-rails (~> 0.5.0.beta1)

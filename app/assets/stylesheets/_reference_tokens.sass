@@ -1,0 +1,97 @@
+.modal_reference_tokens ul 
+	margin-left: 10px
+
+.modal_reference_tokens ul li
+	float: left
+	list-style: none
+	margin: 
+		right: 10px
+		left: 0px
+	padding: 0px
+	a 
+		display: block
+		padding: 2px 29px 2px 10px
+		font-weight: bold
+		text-shadow: 0px 1px 0px rgba(#000, .6)
+		font-size: 11px
+		color: white
+		+background-image(image-url("close_reference_token.png"), linear-gradient(#0093d0, #0072bc))
+		background:
+			repeat: no-repeat
+			position: right 5px, center center
+			size: auto
+		border-radius: 15px
+		text-decoration: none
+
+.modal_reference_tokens ul li a:hover
+	+background-image(image-url("close_reference_token.png"), linear-gradient(#007cad, #00588f))
+	background:
+		repeat: no-repeat
+		position: right -23px, center center
+		size: auto
+
+.reference_tokens
+	border: none !important
+	background: transparent
+	background-image: none !important
+	box-shadow: 0px 0px 0px transparent !important
+.reference_tokens > li
+	float: left
+	list-style: none
+	margin: 
+		right: 10px
+		left: 0px
+		top: 6px
+		bottom: 6px
+	padding: 0px
+	border: none !important
+	a 
+		display: block
+		padding: 2px 29px 2px 10px
+		font-weight: bold
+		text-shadow: 0px 1px 0px rgba(#000, .6)
+		font-size: 11px
+		color: white
+		+background-image(image-url("close_reference_token.png"), linear-gradient(#0093d0, #0072bc))
+		background:
+			repeat: no-repeat
+			position: right 5px, center center
+			size: auto
+		border-radius: 15px
+		text-decoration: none
+.reference_tokens > li a:hover
+	+background-image(image-url("close_reference_token.png"), linear-gradient(#007cad, #00588f))
+	background:
+		repeat: no-repeat
+		position: right -23px, center center
+		size: auto
+
+.reference_tokens.read_only > li a
+	padding: 2px 10px 2px 10px
+	background-position: right 40px, center center
+.reference_tokens.read_only > li a:hover
+
+#main article ul.reference_tokens
+	li
+		list-style: none
+		background-image: none
+		padding-left: 0
+
+#add_reference_token input
+	background: #767474 !important
+	display: none 
+#add_reference_token_helper
+	position: absolute
+	z-index: 4
+	width: 365px
+	border: 1px #3a3a3a solid
+	display: none
+
+#add_reference_token_helper li a
+	background: #3e3d3c
+	border-top: 1px #000 solid
+	border-bottom: 1px #4c4b4b solid !important
+
+.dynamic_menu header ul a
+	border-top: 0px
+	border-bottom: 0px

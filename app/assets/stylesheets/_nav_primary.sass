@@ -1,0 +1,116 @@
+#nav_primary
+  -webkit-font-smoothing: subpixel-antialiased
+  background: image-url("nav_primary.png") no-repeat
+  padding-top: 12px
+  white-space: nowrap
+  width: 60px
+  position: fixed
+  top: 82px
+  margin-left: -70px
+
+#nav_primary nav
+  background: image-url("nav_primary.png") no-repeat right bottom
+  padding-bottom: 11px
+
+#nav_primary ul
+  background: #333 image-url("nav_primary_ul.png") repeat-y
+  margin: 0
+
+#nav_primary li
+  margin: 0
+  list-style: none
+  position: relative
+
+#nav_primary .highlighted
+  background: image-url("nav_primary_highlighted.png") no-repeat left center
+  -webkit-background-size: 100% 100%
+  margin-right: -5px
+  padding-right: 5px
+
+#nav_primary a.icon span
+  background:
+    repeat: no-repeat
+    position: 0 10px
+  border-top: 1px solid rgba(#fff, 0.15)
+  border-bottom: 1px solid rgba(#000, 0.5)
+  display: block
+  font-size: 11px
+  line-height: 1
+  height: 0
+  overflow: hidden
+  text-align: center
+  text-shadow: #000 0 1px 0
+  padding-top: 50px
+  padding-bottom: 4px
+
+#nav_primary a.icon span:hover,
+#nav_primary li.highlighted a.icon span
+  background:
+    position: -60px 10px
+
+#nav_primary a.icon
+  background: image-url("nav_primary_a.png") no-repeat -99999px -99999px
+  -webkit-background-size: 100% 100%
+  color: #bbb
+  display: block
+  text-decoration: none
+
+#nav_primary a.icon:hover
+  background:
+    position: center center
+  color: #fff
+
+#nav_primary_bible a.icon span
+  background:
+    image: image-url("nav_bible.png")
+    
+#nav_primary_plans a.icon span
+  background:
+    image: image-url("nav_plans.png")
+
+#nav_primary_notes a.icon span
+  background:
+    image: image-url("nav_notes.png")
+
+#nav_primary_bookmarks a.icon span
+  background:
+    image: image-url("nav_bookmarks.png")
+
+#nav_primary_friends a.icon span
+  background:
+    image: image-url("nav_group.png")
+
+#nav_primary_live a.icon span
+  background:
+    image: image-url("nav_live.png")
+
+#nav_primary_mobile a.icon span
+  background:
+    image: image-url("nav_mobile.png")
+
+#nav_primary a.tooltip
+  display: block
+  width: auto
+  height: 31px
+  padding-left: 10px
+  margin-left: -10px
+  background: image-url("bg-menu-tooltip-left.png") no-repeat left
+  position: absolute
+  left: 56px
+  top: 13px
+  z-index: 9
+  cursor: pointer
+
+#nav_primary a.tooltip:link
+  text-decoration: none
+
+#nav_primary a.tooltip span
+  display: block
+  line-height: 31px
+  height: 31px
+  padding: 0 14px 0 10px
+  color: white
+  font-weight: bold
+  text-shadow: 0 1px 1px #000
+  background: image-url("bg-menu-tooltip-right.png") no-repeat right
+
