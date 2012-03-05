@@ -173,7 +173,7 @@ en:
     profile form errors:                        "The following error(s) prevented updating your profile:"
     email address:                              "Email Address"
     user name:                                  "Username"
-    password:                                   "Password"
+    password title:                             "Password"
     agreement:                                  "I agree to the YouVersion %{terms_link}."
     terms and conditions:                       "terms and conditions"
     facebook sign up success:                   "Great! You've authorized with Facebook. Pick a YouVersion username and password to continue."

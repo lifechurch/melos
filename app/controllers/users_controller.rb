@@ -35,11 +35,11 @@ class UsersController < ApplicationController
     # Set the blurb
     if params[:source]
       @blurb = t("registration.#{params[:source]} blurb")
-    elsif params[:redirect].match(/reading\-plans/)
+    elsif params[:redirect] && params[:redirect].match(/reading\-plans/)
       @blurb = t("registration.plan blurb")
     end
-    puts "blurb is #{@blurb}"
-      # Try reading plan?
+
+    # Try reading plan?
     cookies[:sign_up_redirect] = params[:redirect]
     render action: "new", layout: "application"
   end
