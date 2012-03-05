@@ -32,8 +32,6 @@ YouversionWeb::Application.configure do
   config.assets.debug = true
   config.cache_store = :dalli_store
   
-  # Enable Rack::Cache
-  config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}/body"
 
   # Add HTTP headers to cache static assets for an hour
   config.static_cache_control = "public, max-age=3600"
