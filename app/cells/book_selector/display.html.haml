@@ -1,21 +1,22 @@
-#menu_book_chapter.dynamic_menu
-  .spinner_wrapper{style: "display: none;"}
-    #book_chapter_spinner.dynamic_menu_spinner
-  %span.menu_arrow
-    &nbsp;
-  #menu_book
-    %header
-      =t("book")
-    .scroll
-      %ul
-        - @version.books.each do |k, v|
-          %li{class: k == @reference[:book] ? "selected" : ""}
-            %a{:href => bible_path(@reference.merge(book: k)), "data-book" => k, "data-version" => @version.osis, "data-chapters" => @version.books[k].chapters}=  v.human
-  #menu_chapter
-    %header
-      =t("chapter")
-    .scroll
-      %ol#chapter_selector{class: @reference[:book]}
-        - if @version.books[@reference[:book]]
-          - @version.books[@reference[:book]].chapter.each do |k, v|
-            %li{class: k == @reference[:chapter].to_s ? "selected" : ""}= link_to_unless_current(k, (bible_path(@reference.merge(chapter: k))), :class => 'spinner_trigger')
+= cache "menu_book_chapter_#{@version}_#{@reference[:book]}", expires_in: 12.hours do
+  #menu_book_chapter.dynamic_menu
+    .spinner_wrapper{style: "display: none;"}
+      #book_chapter_spinner.dynamic_menu_spinner
+    %span.menu_arrow
+      &nbsp;
+    #menu_book
+      %header
+        =t("book")
+      .scroll
+        %ul
+          - @version.books.each do |k, v|
+            %li{class: k == @reference[:book] ? "li_active" : ""}
+              %a{:href => bible_path(@reference.merge(book: k)), "data-book" => k, "data-version" => @version.osis, "data-chapters" => @version.books[k].chapters}=  v.human
+    #menu_chapter
+      %header
+        =t("chapter")
+      .scroll
+        %ol#chapter_selector{class: @reference[:book]}
+          - if @version.books[@reference[:book]]
+            - @version.books[@reference[:book]].chapter.each do |k, v|
+              %li= link_to(k, (bible_path(@reference.merge(chapter: k))), :class => 'spinner_trigger')
