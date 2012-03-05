@@ -101,6 +101,6 @@ class ReferencesController < ApplicationController
       osis_hash = params[:reference].to_osis_hash
       @alt_reference = @reference = Reference.new(osis_hash.except(:version))
       @version = Version.find(osis_hash[:version])
-      render :invalid_ref
+      render :invalid_ref, status: 404
     end
 end
