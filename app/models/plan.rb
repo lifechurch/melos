@@ -16,7 +16,7 @@ class Plan < YouVersion::Resource
 
   def self.all(opts = {})
     if opts[:query] 
-      #slug was passed, get id from slug with search, since API doesn't give a better way
+      #query string was passed, search, since API doesn't give a query on library
       Plan.search(opts[:query], opts)
     else
     #TODO: this doesn't work if an integer id is passed?
