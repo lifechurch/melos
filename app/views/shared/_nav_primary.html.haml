@@ -1,39 +1,38 @@
-= cache "nav_primary_#{current_auth.username if current_auth}", expires_in: 12.hours do
-  #nav_primary{:role => "navigation"}
-    %nav
-      %ul
-        %li#nav_primary_bible{class: @nav == :bible ? "highlighted" : ""}
-          %a.icon{:href => '/bible'}
-            %span &nbsp;
-          %a.tooltip{href: "/bible", style: "display: none;"}
-            %span= t('bible')
-        %li#nav_primary_bookmarks{class: @nav == :bookmarks ? "highlighted" : ""}
-          %a.icon{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark", redirect: "/bookmarks")}
-            %span &nbsp;
-          %a.tooltip{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark"), style: "display: none;"}
-            %span= t('bookmarks.title') 
-        %li#nav_primary_plans{class: @nav == :plans ? "highlighted" : ""}
-          %a.icon{:href => current_auth ? user_plans_path(current_auth.username) : plans_path}
-            %span &nbsp;
-          %a.tooltip{:href => current_auth ? user_plans_path(current_auth.username) : plans_path, style: "display: none;"}
-            %span=t("plans title")
-        %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
-          %a.icon{:href => current_auth ? user_notes_path(current_auth.username) : notes_path}
-            %span &nbsp;
-          %a.tooltip{:href => current_auth ? user_notes_path(current_auth.username) : notes_path, style: "display: none;"}
-            %span=t("notes title")
-        %li#nav_primary_friends
-          %a.icon{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends")}
-            %span &nbsp;
-          %a.tooltip{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends"), style: "display: none;"}
-            %span=t("friends")
-        %li#nav_primary_live
-          %a.icon{:href => 'http://www.youversion.com/live'}
-            %span &nbsp;
-          %a.tooltip{:href => 'http://www.youversion.com/live', style: "display: none;"}
-            %span=t("live")
-        %li#nav_primary_mobile
-          %a.icon{:href => '/mobile'}
-            %span &nbsp;
-          %a.tooltip{:href => '/mobile', style: "display: none;"}
-            %span=t("mobile")
+#nav_primary{:role => "navigation"}
+  %nav
+    %ul
+      %li#nav_primary_bible{class: @nav == :bible ? "highlighted" : ""}
+        %a.icon{:href => '/bible'}
+          %span &nbsp;
+        %a.tooltip{href: "/bible", style: "display: none;"}
+          %span= t('bible')
+      %li#nav_primary_bookmarks{class: @nav == :bookmarks ? "highlighted" : ""}
+        %a.icon{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark", redirect: "/bookmarks")}
+          %span &nbsp;
+        %a.tooltip{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark"), style: "display: none;"}
+          %span= t('bookmarks.title') 
+      %li#nav_primary_plans{class: @nav == :plans ? "highlighted" : ""}
+        %a.icon{:href => current_auth ? user_plans_path(current_auth.username) : plans_path}
+          %span &nbsp;
+        %a.tooltip{:href => current_auth ? user_plans_path(current_auth.username) : plans_path, style: "display: none;"}
+          %span=t("plans title")
+      %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
+        %a.icon{:href => current_auth ? user_notes_path(current_auth.username) : notes_path}
+          %span &nbsp;
+        %a.tooltip{:href => current_auth ? user_notes_path(current_auth.username) : notes_path, style: "display: none;"}
+          %span=t("notes title")
+      %li#nav_primary_friends
+        %a.icon{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends")}
+          %span &nbsp;
+        %a.tooltip{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends"), style: "display: none;"}
+          %span=t("friends")
+      %li#nav_primary_live
+        %a.icon{:href => 'http://www.youversion.com/live'}
+          %span &nbsp;
+        %a.tooltip{:href => 'http://www.youversion.com/live', style: "display: none;"}
+          %span=t("live")
+      %li#nav_primary_mobile
+        %a.icon{:href => '/mobile'}
+          %span &nbsp;
+        %a.tooltip{:href => '/mobile', style: "display: none;"}
+          %span=t("mobile")
