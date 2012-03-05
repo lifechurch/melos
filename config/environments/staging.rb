@@ -30,6 +30,7 @@ YouversionWeb::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.cache_store = :dalli_store
   
   # Enable Rack::Cache
   config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}/body"
