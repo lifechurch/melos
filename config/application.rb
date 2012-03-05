@@ -18,6 +18,9 @@ end
 module YouversionWeb
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+      r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
+        :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
+
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)
       r301 %r{/bible/verse/(\w+)/(\w+)/(\w+)/(\w+)}, '/bible/$2.$3.$4.$1'
