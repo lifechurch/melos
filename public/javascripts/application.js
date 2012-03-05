@@ -1279,6 +1279,23 @@ var YV = (function($, window, document, undefined) {
           $(this).find(".tooltip").fadeOut(100);
         });
       },
+      // YV.init.notes_widget
+      notes_widget: function() {
+        $("div.widget.notes").each(function() {
+          var that = $(this);
+          $.ajax({
+            url: "/bible/" + $("#version_primary").data("reference") + "/notes",
+            method: "get",
+            dataType: "html",
+            success: function(data) {
+              that.fadeOut(200, function() {
+                that.html(data);
+                that.fadeIn(200);
+              });
+            }
+          });
+        });
+      },
       // YV.init.in_place_confirm
       in_place_confirm: function() {
         $('.confirm').click(function(ev){

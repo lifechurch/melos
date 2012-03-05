@@ -1,22 +1,21 @@
 - unless @notes.empty?
-  %div.widget.notes
-    %header
-      %a.count{href: @link}= @notes.total
-      %span.header_icon_note= @title 
-    %section
-      %table
-        %tfoot
+  %header
+    %a.count{href: @link}= @notes.total
+    %span.header_icon_note= @title 
+  %section
+    %table
+      %tfoot
+        %tr
+          %th
+          %td.align_right
+            %a.more_arrow{href: @link}= t('show all notes', total: @notes.total)
+
+      %tbody
+        - @notes.first(8).each do |note|
           %tr
             %th
-            %td.align_right
-              %a.more_arrow{href: @link}= t('show all notes', total: @notes.total)
-
-        %tbody
-          - @notes.first(8).each do |note|
-            %tr
-              %th
-                %a
-                  %img.avatar_small{src: note.user_avatar_url.px_24x24} 
-              %td
-                %a= link_to note.title, note_path(note.id)
-                  
+              %a
+                %img.avatar_small{src: note.user_avatar_url.px_24x24} 
+            %td
+              %a= link_to note.title, note_path(note.id)
+                

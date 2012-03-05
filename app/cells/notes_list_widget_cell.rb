@@ -10,4 +10,9 @@ class NotesListWidgetCell < Cell::Rails
     render
   end
 
+  def stub(opts = {})
+    @title = opts[:title] ||= "Notes" 
+    render
+  end
+
 end
