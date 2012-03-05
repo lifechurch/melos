@@ -3,5 +3,4 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     provider :facebook, Cfg.facebook_app_id, Cfg.facebook_secret
     # provider :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
     # hack for nginx proxying
-    OmniAuth.config.full_host = "http://yv.chadbailey.net"
 end
