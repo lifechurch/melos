@@ -11,15 +11,16 @@
 	%section#mobile_downloads.float_right
 		%h3= t('mobile page.download now')
 		%ul.left_column.float_left
-			%li#dl_iphone= t('mobile page.iphone ipad')
-			%li#dl_android= t('mobile page.android')
-			%li#dl_blackberry= t('mobile page.blackberry')
-			%li#dl_windows= t('mobile page.windows phone')
+			%li#dl_iphone= link_to t('mobile page.iphone ipad'), "http://itunes.apple.com/app/bible/id282935706"
+			%li#dl_android= link_to t('mobile page.android'), "https://market.android.com/details?id=com.sirma.mobile.bible.android"
+			%li#dl_blackberry= link_to t('mobile page.blackberry'), "http://appworld.blackberry.com/webstore/content/1222/"
+			%li#dl_windows= link_to t('mobile page.windows phone'), "http://windowsphone.com/s?appid=57f524fa-93e3-df11-a844-00237de2db9e"
+			%li#dl_windows8= link_to t('mobile page.windows 8'), "http://apps.microsoft.com/webpdp/app/bible/af5f6405-7860-49a9-a6b4-a47381974e1d"
 		%ul.right_column.float_right
-			%li#dl_hppalm= t('mobile page.hp palm')
-			%li#dl_java= t('mobile page.java')
-			%li#dl_symbian= t('mobile page.symbian')
-			%li#dl_mobile= t('mobile page.mobile web')
+			%li#dl_hppalm= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm"
+			%li#dl_java= link_to t('mobile page.java'), "http://www.getjar.com/mobile/29005/bible-app"
+			%li#dl_symbian= link_to t('mobile page.symbian'), "http://www.getjar.com/mobile/29005/bible-app"
+			%li#dl_mobile= link_to t('mobile page.mobile web'), "http://m.youversion.com"
 		%a.cta
 			%img.float_left{:src => "images/mobile_download.png"}
 			%h4= t('mobile page.button h4')
