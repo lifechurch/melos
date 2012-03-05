@@ -19,5 +19,4 @@
                   %img.avatar_small{src: note.user_avatar_url.px_24x24} 
               %td
                 %a= link_to note.title, note_path(note.id)
-                %p= truncate(note.content_text, length: 100, separator: " ")
                   
