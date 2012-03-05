@@ -29,7 +29,7 @@
       %li#nav_primary_live
         %a.icon{:href => "http://#{([:en, :de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :en).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"}
           %span &nbsp;
-        %a.tooltip{:href => "http://#{([:en, :de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :en).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"}
+        %a.tooltip{:href => "http://#{([:en, :de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :en).to_s.downcase.gsub("_", "-")}.a.youversion.com/live", style: "display: none;"}
           %span=t("live")
       %li#nav_primary_mobile
         %a.icon{:href => '/mobile'}
