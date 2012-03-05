@@ -322,10 +322,12 @@ class UsersController < ApplicationController
   end
   
   def privacy
+    I18n.locale = :en if [:fr, :ja, :pl, :zh_CN, :zh_TW].find{|loc| loc == I18n.locale}
     render action: "privacy", layout: "application"
   end
   
   def terms
+    I18n.locale = :en if [:fr, :ja, :pl, :zh_CN, :zh_TW].find{|loc| loc == I18n.locale}
     render action: "terms", layout: "application"
   end
   
