@@ -6,24 +6,20 @@
   = @subtitle || t("youversion")
 
 
-<!--[if lt IE 9]>
+/[if IE]
   %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
-<![endif]-->
 
 = stylesheet_link_tag 'application'
 = stylesheet_link_tag 'wysiwyg/jquery.wysiwyg.css'
 
-<!--[if IE 9]>
+/[if IE 9]
   = stylesheet_link_tag "ie9.css"
-<![endif]-->
 
-<!--[if IE 8]>
+/[if IE 8]
   = stylesheet_link_tag "ie8"
-<![endif]-->
 
-<!--[if IE 7]>
+/[if IE 7]
   = stylesheet_link_tag "ie7"
-<![endif]-->
 
 - if content_for? :stylesheets
   = yield :stylesheets
