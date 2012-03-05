@@ -4,30 +4,32 @@
   %nav
     %ul
       - if current_auth
-        %li
-          %a#header_profile_trigger{:href => '#'}
-            %span
-              %img{:src => current_avatar}
-              =current_auth.username
-          %ol#header_profile_menu
-            %li
-              %a{:href => profile_path}
-                =t("settings")
-            %li
-              %a{:href => user_path(current_auth.username)}
-                =t("profile")
-            %li
-              %a{:href => sign_out_path}
-                =t("sign out")
-        %li
-          %a{:href => connections_path}
-            %span
-              =t("find friends")
+        = cache "header_#{current_auth.username}" do
+          %li
+            %a#header_profile_trigger{:href => '#'}
+              %span
+                %img{:src => current_avatar}
+                =current_auth.username
+            %ol#header_profile_menu
+              %li
+                %a{:href => profile_path}
+                  =t("settings")
+              %li
+                %a{:href => user_path(current_auth.username)}
+                  =t("profile")
+              %li
+                %a{:href => sign_out_path}
+                  =t("sign out")
+          %li
+            %a{:href => connections_path}
+              %span
+                =t("find friends")
       - else
-        %li
-          %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), :class=> "sign_in"
-        %li
-          %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), :class=> "sign_in"
+        = cache "header_anon" do
+          %li
+            %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), :class=> "sign_in"
+          %li
+            %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), :class=> "sign_in"
 
   %form#header_search_form{:action => search_path, method: "GET"}
     %input#header_search_input{:type => 'search', :name => "q", :placeholder => t("search placeholder")}

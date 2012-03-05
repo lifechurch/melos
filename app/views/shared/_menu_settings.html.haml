@@ -34,11 +34,11 @@
         %label{:for => 'user_setting_size_small'}
           Small
       %span.float_left.width_33
-        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_medium', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_medium', :checked => ('checked' if @size="user_setting_size_medium")}
+        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_medium', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_medium', :checked => ('checked' if @size=="user_setting_size_medium")}
         %label{:for => 'user_setting_size_medium'}
           Medium
       %span.float_left.width_33
-        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_large', :checked => ('checked' if @size="user_setting_size_large")}
+        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_large', :checked => ('checked' if @size=="user_setting_size_large")}
         %label{:for => 'user_setting_size_large'}
           Large
     %fieldset.clearfix{style: "display: none"}
