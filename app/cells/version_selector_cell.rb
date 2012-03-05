@@ -2,6 +2,10 @@ class VersionSelectorCell < Cell::Rails
   include ApplicationHelper
   helper_method :bible_path
 
+  cache :display do |cell, opts|
+    puts "version selector cache key is #{@this_language}_#{@recent_versions}"
+    "#{@this_language}_#{@recent_versions}"
+
   def display(opts ={})
     if opts[:reference]
       @reference = opts[:reference]
