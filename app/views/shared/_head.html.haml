@@ -4,25 +4,25 @@
   = @title
   = "|" if @title
   = @subtitle || t("youversion")
-  
+
 
 <!--[if lt IE 9]>
-%script{:src => '/javascripts/html5.js'}
+  %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
 <![endif]-->
 
-%link{:rel => 'stylesheet', :href => '/stylesheets/application.css'}
-%link{:rel => 'stylesheet', :href => '/stylesheets/wysiwyg/jquery.wysiwyg.css'}
+= stylesheet_link_tag 'application'
+= stylesheet_link_tag 'wysiwyg/jquery.wysiwyg.css'
 
 <!--[if IE 9]>
-%link{:rel => 'stylesheet', :href => '/stylesheets/ie9.css'}
+  = stylesheet_link_tag "ie9.css"
 <![endif]-->
 
 <!--[if IE 8]>
-%link{:rel => 'stylesheet', :href => '/stylesheets/ie8.css'}
+  = stylesheet_link_tag "ie8"
 <![endif]-->
 
 <!--[if IE 7]>
-%link{:rel => 'stylesheet', :href => '/stylesheets/ie7.css'}
+  = stylesheet_link_tag "ie7"
 <![endif]-->
 
 - if content_for? :stylesheets

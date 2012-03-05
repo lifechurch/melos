@@ -72,4 +72,5 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-spork'
   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'active_reload'
 end
