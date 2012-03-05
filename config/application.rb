@@ -3,6 +3,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
+require "rack"
 require "rack/mobile-detect"
 require "rack/rewrite"
 
@@ -19,8 +20,11 @@ end
 module YouversionWeb
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-      r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
-        :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
+      # puts "#{Rack::Request.env}"
+      # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
+      #   :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
+      # r301 /.*/,  Proc.new {|path, rack_env| "http://m.#{rack_env['SERVER_NAME']}#{path}" },
+      #   :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
 
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)
@@ -53,7 +57,7 @@ module YouversionWeb
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
     end
 
-    config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect, :redirect_to => 'http://m.youversion.com/')
+    # config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect, :redirect_to => 'http://m.youversion.com/')
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
