@@ -18,7 +18,7 @@ end
 
 module YouversionWeb
   class Application < Rails::Application
-    use Rack::MobileDetect, :redirect_to => 'http://m.youversion.com/'
+    config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect, :redirect_to => 'http://m.youversion.com/')
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
         :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
