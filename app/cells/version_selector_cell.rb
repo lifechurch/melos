@@ -5,6 +5,7 @@ class VersionSelectorCell < Cell::Rails
   cache :display do |cell, opts|
     puts "version selector cache key is #{@this_language}_#{@recent_versions}"
     "#{@this_language}_#{@recent_versions}"
+  end
 
   def display(opts ={})
     if opts[:reference]
