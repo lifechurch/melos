@@ -28,10 +28,12 @@ class YvApi
         # No cache hit; ask the API
         begin
           response = httparty_get(resource_url, query: opts.except(:cache_for))
-        rescue Exception => e
-        #rescue Errno::ETIMEDOUT => e
-          Rails.logger.error "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+        rescue Errno::ETIMEDOUT => e
+          Rails.logger.error "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}"
           raise APITimeoutError, "API Timeout for #{resource_url}"
+        rescue Exception => e
+          Rails.logger.error "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}"
+          raise APIError, "Non-timeout API Error for #{resource_url}"
         end
       end
       get_end = Time.now.to_f
@@ -41,17 +43,16 @@ class YvApi
       get_start = Time.now.to_f
       begin
         response = httparty_get(resource_url, query: opts) 
-        get_end = Time.now.to_f
-        Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
-      rescue Exception => e
-      #rescue Errno::ETIMEDOUT => e
-        #raise APITimeoutError
-        Rails.logger.error "*** HTTPary ERR: #{e.class} : #{e.to_s}"
+      rescue Errno::ETIMEDOUT => e
+        Rails.logger.error "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}"
         raise APITimeoutError, "API Timeout for #{resource_url}"
+      rescue Exception => e
+        Rails.logger.error "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}"
+        raise APIError, "Non-timeout API Error for #{resource_url}"
       end
 
       get_end = Time.now.to_f
-    Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
+      Rails.logger.info "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms"
     end
     # Check the API response for error code
     return api_response_or_rescue(response, block, resource_url: resource_url)
@@ -66,10 +67,19 @@ class YvApi
     Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
 
     post_start = Time.now.to_f
-    response = httparty_post(resource_url, body: opts)
+    begin
+      response = httparty_post(resource_url, body: opts)
+    rescue Errno::ETIMEDOUT => e
+      Rails.logger.error "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}"
+      raise APITimeoutError, "API Timeout for #{resource_url}"
+    rescue Exception => e
+      Rails.logger.error "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}"
+      raise APIError, "Non-timeout API Error for #{resource_url}"
+    end
     post_end = Time.now.to_f
     Rails.logger.info "** YvApi.post: Response: #{response}"
     Rails.logger.info "** YvApi.post: Resonse time: #{((post_end - post_start) * 1000).to_i}ms"
+    # Check the API response for error code
     return api_response_or_rescue(response, block)
   end
 
