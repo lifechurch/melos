@@ -47,12 +47,15 @@ module YouversionWeb
       rewrite %r{/notes/(\d+)/(\w*)}, '/notes/$1'
 
       ### READING PLANS
-      r301 'reading-plans/all', 'reading-plans'
+      r301 '/reading-plans/all', '/reading-plans'
       r301 %r{/reading-plans/category/(\w+)/(\w+)/(\w+)}, '/reading-plans?category=$1.$2.$3'
       r301 %r{/reading-plans/category/(\w+)/(\w+)}, '/reading-plans?category=$1.$2'
       r301 %r{/reading-plans/category/(\w+)}, '/reading-plans?category=$1'
       r301 %r{/reading-plans/([\w-]+)/(\d+)}, '/reading-plans/$1?day=$2'
 
+      ### USER
+      r301 '/forgot', '/settings/forgot_password'
+      
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
     end
