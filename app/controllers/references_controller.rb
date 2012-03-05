@@ -60,13 +60,10 @@ class ReferencesController < ApplicationController
     @note = Note.new
 
     # Set up user specific stuff
-    if current_user
-      @highlights = Highlight.for_reference(@reference, auth: current_auth)
+    if current_auth
       @highlight_colors = current_user.highlight_colors
       @bookmarks = current_user.bookmarks
     else
-      @highlights = []
-      @alt_highlights = []
       @highlight_colors = User.highlight_colors
       @bookmarks = []
     end
@@ -74,9 +71,15 @@ class ReferencesController < ApplicationController
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
     @alt_version = Version.find(alt_version(@reference))
     @alt_reference = Reference.new(@reference.raw_hash.except(:version), @alt_version.osis)
-    @alt_highlights = current_user ? Highlight.for_reference(@alt_reference, auth: current_auth) : []
     
   end
+
+  def highlights
+      @highlights = Highlight.for_reference(Reference.new(params[:reference]), auth: current_auth) if current_auth
+      @highlights = [] if @highlights.nil?
+      render json: @highlights
+  end
+
 
   private
 

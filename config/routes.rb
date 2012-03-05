@@ -6,7 +6,8 @@ YouversionWeb::Application.routes.draw do
   match 'open' => 'pages#open'
 
   # Bible
-  match 'bible(/:reference)' => 'references#show', :as => 'reference', :constraints => {:reference => /.*/}
+  match 'bible(/:reference)' => 'references#show', :as => 'reference', :constraints => {:reference => /[^\/]*/}
+  match 'bible/:reference/highlights' => 'references#highlights', :as => 'reference_highlights', :constraints => {:reference => /[^\/]*/}
   resources 'versions', :only => [:index, :show]
 
   resources 'bookmarks', :except => [:index] 

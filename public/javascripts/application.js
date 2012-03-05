@@ -766,8 +766,6 @@ var YV = (function($, window, document, undefined) {
         var book_api = article.attr('data-book-api');
         var chapter = article.attr('data-chapter');
         var version = article.attr('data-version');
-        var highlights = $('#version_primary').data('highlights');
-        var alt_highlights = $('#version_secondary').data('highlights');
         var flag = 'selected';
         var hide = 'hide';
         var verse_numbers = [];
@@ -902,18 +900,7 @@ var YV = (function($, window, document, undefined) {
             var hlt_verses = [];
 
             var hlt_selected = false;
-            $.each(highlights, function(i,h){hlt_verses.push(h.verse)});
             
-            var i_h;
-            $.each(verse_numbers, function(i,v) {
-              i_h = $.inArray(v, hlt_verses);
-              if (i_h == -1) {
-                sel_hlt_ids.push(-1);
-              } else {
-                sel_hlt_ids.push(highlights[i_h].id);
-                hlt_selected = true;
-              }
-            });
             
             // Populate the selected verses and highlight ids hidden input
             input_highlights_ids.val(sel_hlt_ids.join(","));
@@ -1155,10 +1142,6 @@ var YV = (function($, window, document, undefined) {
       },
       // YV.init.highlight_references
       highlight_references: function() {
-        var highlights = $('#version_primary').data('highlights');
-        var alt_highlights = $('#version_secondary').data('highlights');
-        var book = $('article').data('book-api');
-        var chapter = $('article').data('chapter');
         
         function is_dark(hex_color) {
           //Using same code as android for this algorithm - EP
@@ -1197,37 +1180,38 @@ var YV = (function($, window, document, undefined) {
           //return "000000";
           return false;
         }
+
+        $("#version_primary, #version_secondary").each(function() {
+          var that = $(this);
+          $.ajax({ 
+            url: "/bible/" + that.data("reference") + "/highlights",
+            method: "get",
+            dataType: "json",
+            success: function(highlights) {
+              console.log("hmmm");
+              if (highlights && highlights.length) {
+                var book = $('article').data('book-api');
+                var chapter = $('article').data('chapter');
+                for (var h = 0; h < highlights.length; h++) {
+                  var hi = highlights[h];
+                  if ((hi.verse) instanceof Array) {
+                    //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
+                    for (var hh = 0; hh < hi.verse.length; hh++) {
+                      $("span." + book + "_" + chapter + "_" + hi.verse[hh], that).css("background-color", "#" + hi.color);
+                      if (is_dark(hi.color)) {$("#version_primary span." + book + "_" + chapter + "_" + hi.verse[hh]).addClass("dark_highlight");}
+                    }
+                  } else {
+                    $("span." + book + "_" + chapter + "_" + hi.verse, that).css("background-color", "#" + hi.color);
+                    if (is_dark(hi.color)) {$("#version_primary span." + book + "_" + chapter + "_" + hi.verse).addClass("dark_highlight");}
+                  }
+                }
+              }
+            }
+            
+            });
+          });
+
         
-        if (highlights && highlights.length) {
-          for (var h = 0; h < highlights.length; h++) {
-            var hi = highlights[h];
-            if ((hi.verse) instanceof Array) {
-              //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
-              for (var hh = 0; hh < hi.verse.length; hh++) {
-                $("#version_primary span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
-                if (is_dark(hi.color)) {$("#version_primary span." + book + "_" + chapter + "_" + hi.verse[hh]).addClass("dark_highlight");}
-              }
-            } else {
-              $("#version_primary span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
-              if (is_dark(hi.color)) {$("#version_primary span." + book + "_" + chapter + "_" + hi.verse).addClass("dark_highlight");}
-            }
-          }
-        }
-        if (alt_highlights && alt_highlights.length) {
-          for (var h = 0; h < alt_highlights.length; h++) {
-            var hi = alt_highlights[h];
-            if ((hi.verse) instanceof Array) {
-              //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
-              for (var hh = 0; hh < hi.verse.length; hh++) {
-                $("#version_secondary span." + book + "_" + chapter + "_" + hi.verse[hh]).css("background-color", "#" + hi.color);
-                if (is_dark(hi.color)) {$("#version_secondary span." + book + "_" + chapter + "_" + hi.verse[hh]).addClass("dark_highlight");}
-              }
-            } else {
-              $("#version_secondary span." + book + "_" + chapter + "_" + hi.verse).css("background-color", "#" + hi.color);
-              if (is_dark(hi.color)) {$("#version_secondary span." + book + "_" + chapter + "_" + hi.verse).addClass("dark_highlight");}
-            }
-          }
-        }
       },
       // YV.init.audio_player
       audio_player: function() {

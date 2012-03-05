@@ -30,7 +30,7 @@
         %tr
           %th{:colspan => '2'}= t('recent versions')
         - @recent_versions.each do |v|
-          = render partial: 'item', locals: {version: v}
+          = render partial: 'item', locals: {version: v, alt: true}
       %tr
         %th{:colspan => '2'}= @alt_version.language.human
       - @this_language.each do |k, v|
