@@ -21,6 +21,7 @@ gem 'grackle'
 gem 'koala'
 gem 'authorize-net'
 gem 'rack-rewrite', '~> 1.2.1'
+gem 'rack-mobile-detect'
 
 
 # Gems used only for assets and not required
