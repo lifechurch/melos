@@ -6,7 +6,7 @@ class ReferencesController < ApplicationController
     # Set HTML classes for full screen/parallel
     @html_classes = []
     @html_classes << "full_screen" if cookies[:full_screen]
-    @html_classes << ["full_screen", "parallel_mode"] if cookies[:parallel_mode]
+    @html_classes << "full_screen" << "parallel_mode" if cookies[:parallel_mode]
     # Get user font and size settings
     @font = cookies['data-setting-font']
     @size = cookies['data-setting-size']
@@ -94,9 +94,13 @@ class ReferencesController < ApplicationController
         return render :show
       end
       
+      #force to be in non-parallel/fullscreen mode
+      @html_classes.delete "full_screen" and cookies[:full_screen] = nil
+      @html_classes.delete "parallel_mode" and cookies[:parallel_mode] = nil
+
       osis_hash = params[:reference].to_osis_hash
       @alt_reference = @reference = Reference.new(osis_hash.except(:version))
       @version = Version.find(osis_hash[:version])
-      render :invalid_ref
+      render :invalid_ref, status: 404
     end
 end
