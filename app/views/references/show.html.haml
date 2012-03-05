@@ -12,8 +12,8 @@
 = render partial: 'reader_header'
 
 %article{"data-setting-font" => @font, 'data-setting-size' => @size, "data-selected-verses" => "[#{@verses}]", "data-verse-modal-enabled" => "#{!@single_verse.nil?}", "data-fullscreen" =>@full_screen, "data-book" => @reference[:book].to_s, "data-book-api" => @reference[:book].sub(/[a-z]/) {|m| m.upcase}, "data-book-human" => @version.books[@reference[:book]].human, "data-chapter" => @reference[:chapter].to_s, "data-version" => @reference[:version].to_s}
-  = link_to(@reference.previous, bible_path(@reference.previous), class: "nav_prev") if @reference.previous
-  = link_to(@reference.next, bible_path(@reference.next), class: "nav_next") if @reference.next
+  '= link_to("previous", bible_path(@reference.previous), class: "nav_prev") if @reference.previous
+  = link_to("next", bible_path(@reference.next), class: "nav_next") if @reference.next
   #version_primary{"data-highlights" => @highlights.to_json}
     - @reference.contents.each do |r|
       = r.html_safe
