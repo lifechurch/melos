@@ -10,15 +10,16 @@
           %th{:colspan => '2'}= t('recent versions')
         - @recent_versions.each do |v|
           = render partial: 'item', locals: {version: v}
-      %tr
-        %th{:colspan => '2'}= @version.language.human
-      - @this_language.each do |k, v|
-        = render partial: 'item', locals: {version: v}
-      - @all_languages.each do |k, v|
+      = cache "versions_menu_#{@this_language}" do
         %tr
-          %th{:colspan => '2'}= @languages[k]
-        - v.each do |kk, vv|
-          = render partial: 'item', locals: {version: vv}
+          %th{:colspan => '2'}= @version.language.human
+        - @this_language.each do |k, v|
+          = render partial: 'item', locals: {version: v}
+        - @all_languages.each do |k, v|
+          %tr
+            %th{:colspan => '2'}= @languages[k]
+          - v.each do |kk, vv|
+            = render partial: 'item', locals: {version: vv}
 #menu_alt_version.dynamic_menu.version_select
   .spinner_wrapper{style: "display: none;"}
     #version_spinner.dynamic_menu_spinner
@@ -31,12 +32,13 @@
           %th{:colspan => '2'}= t('recent versions')
         - @recent_versions.each do |v|
           = render partial: 'item', locals: {version: v}
-      %tr
-        %th{:colspan => '2'}= @alt_version.language.human
-      - @this_language.each do |k, v|
-        = render partial: 'item', locals: {version: v, alt: true}
-      - @all_languages.each do |k, v|
+      = cache "versions_menu_#{@this_language}" do
         %tr
-          %th{:colspan => '2'}= @languages[k]
-        - v.each do |kk, vv|
-          = render partial: 'item', locals: {version: vv, alt: true}
+          %th{:colspan => '2'}= @alt_version.language.human
+        - @this_language.each do |k, v|
+          = render partial: 'item', locals: {version: v, alt: true}
+        - @all_languages.each do |k, v|
+          %tr
+            %th{:colspan => '2'}= @languages[k]
+          - v.each do |kk, vv|
+            = render partial: 'item', locals: {version: vv, alt: true}
