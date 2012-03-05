@@ -1,3 +1,6 @@
+require 'rack-cache'
+My::Application.configure do
+    #
 YouversionWeb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
@@ -13,7 +16,7 @@ YouversionWeb::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
@@ -29,6 +32,14 @@ YouversionWeb::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Enable Rack::Cache
+  config.middleware.use Rack::Cache,
+  :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}/meta",
+  :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}/body"
+
+  # Add HTTP headers to cache static assets for an hour
+  config.static_cache_control = "public, max-age=3600"
 end
 
 silence_warnings do
