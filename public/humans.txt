@@ -11,7 +11,7 @@ THE DEVELOPMENT TEAM:
 Chad Bailey (@cebailey)
 Evan Prothro (@eprotho)
 Special-addition bottom-of-the-9th asset pipeline pinch hitter:
-Jon McCartie (@jmmcartie)
+Jon McCartie (@jmccartie)
 
 With additional development help from:
 Arcturo (@arcturo, @jm and @erebor)
