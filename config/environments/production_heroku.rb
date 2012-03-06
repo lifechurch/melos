@@ -41,10 +41,17 @@ YouversionWeb::Application.configure do
   config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = Proc.new do |*args|
+    source, request = args
+    if request.try(:ssl?)
+      "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+    else
+      "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+    end
+  end
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -58,7 +65,7 @@ YouversionWeb::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  
+
   # Enable Rack::Cache
   config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}/body"
 

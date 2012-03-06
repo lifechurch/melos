@@ -38,6 +38,18 @@ YouversionWeb::Application.configure do
   config.assets.debug = true
   config.cache_store = :dalli_store
 
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server
+  config.action_controller.asset_host = Proc.new do |*args|
+    source, request = args
+    if request.try(:ssl?)
+      "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+    else
+      "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+    end
+  end
+
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css )
 
   # Add HTTP headers to cache static assets for an hour
   config.static_cache_control = "public, max-age=3600"
