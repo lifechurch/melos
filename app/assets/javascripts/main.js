@@ -1296,6 +1296,23 @@ var YV = (function($, window, document, undefined) {
           });
         });
       },
+      // YV.init.bookmarks_widget
+      bookmarks_widget: function() {
+        $("div.widget.bookmarks").each(function() {
+          var that = $(this);
+          $.ajax({
+            url: "/bible/widgets/bookmarks",
+            method: "get",
+            dataType: "html",
+            success: function(data) {
+              that.fadeOut(100, function() {
+                that.html(data);
+                that.fadeIn(100);
+              });
+            }
+          });
+        });
+      },
       // YV.init.in_place_confirm
       in_place_confirm: function() {
         $('.confirm').click(function(ev){

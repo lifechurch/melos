@@ -148,6 +148,7 @@ en:
     cancel:                                     "Cancel"
     pop out:                                    "Pop out"
     notes i like:                               "Notes I Like"
+    none found:                                 "No notes found..."
     see my likes:                               "See All My Likes"
   ref:
     clear verses:                               "Clear Selected Verses"
@@ -358,6 +359,7 @@ en:
     labels placeholder:                         "Separate multiple labels with commas."
     save:                                       "Save Bookmark"
     confirm delete:                             "Yes, I'm sure"
+    loading:                                    "Loading your bookmarks..."
   badges:
     earned a badge:                             "Earned a Badge"
     my badges:                                  "My Badges"

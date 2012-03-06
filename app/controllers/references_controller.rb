@@ -62,10 +62,8 @@ class ReferencesController < ApplicationController
     # Set up user specific stuff
     if current_auth
       @highlight_colors = current_user.highlight_colors
-      @bookmarks = current_user.bookmarks
     else
       @highlight_colors = User.highlight_colors
-      @bookmarks = []
     end
     
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
@@ -87,6 +85,11 @@ class ReferencesController < ApplicationController
     notes_ref_hash[:verse]=1..5 unless notes_ref_hash[:verse]
     @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 30.minutes)
     render layout: false
+  end
+  
+  def bookmarks
+    @bookmarks = Bookmark.for_user(current_auth.user_id)
+    render '/shared/_widget_bookmarks', layout: false
   end
 
 
