@@ -38,6 +38,11 @@ YouversionWeb::Application.configure do
   config.assets.debug = true
   config.cache_store = :dalli_store
 
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server
+  config.action_controller.asset_host = Proc.new do |source, request|
+    request.ssl? ? "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" : "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+  end
+
 
   # Add HTTP headers to cache static assets for an hour
   config.static_cache_control = "public, max-age=3600"

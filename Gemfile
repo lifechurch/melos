@@ -32,6 +32,7 @@ group :assets do
   gem 'uglifier'
   gem 'compass-rails', '1.0.0.rc.3'
   gem 'css_parser', '~> 1.1.9'
+  gem 'asset_sync'
 end
 
 
