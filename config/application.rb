@@ -6,6 +6,7 @@ require "sprockets/railtie"
 require "rack"
 require "rack/mobile-detect"
 require "rack/rewrite"
+require File.join(File.dirname(__FILE__), '../lib/bb.rb')
 
 require File.expand_path('../_config', __FILE__)
 require File.expand_path('../../lib/osis', __FILE__)
@@ -65,6 +66,15 @@ module YouversionWeb
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
+    config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)
+    # config.middleware.insert_before(Rack::MobileDetect, Rack::JSON) do
+    #   puts "in"
+    #   get '/bb/test.json' do
+    #     puts "in bloc"
+    #     headers 'Content-type' => 'application/json'
+    #     '{"response":{"code":200,"data":{"test":"OK"}},"success":1}'
+    #   end
+    # end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
