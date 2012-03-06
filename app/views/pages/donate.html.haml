@@ -4,8 +4,7 @@
 -# Specific stylesheet for Donate page:
 
 - content_for :stylesheets do
-  %link{:rel => 'stylesheet', :href => '/stylesheets/donate.css'}
-
+  = stylesheet_link_tag "donate"
 -# Alt text for 3 promo images:
 
 - alt_for_promo_1 = t('donate.promo 1')
