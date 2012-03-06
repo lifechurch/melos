@@ -1,0 +1,7 @@
+%article
+  %h1= t('users.resend confirmation title')
+  %p= t('users.resend confirmation copy')
+  = form_tag resend_confirmation_path do 
+    %p
+      = text_field_tag :email
+      = submit_tag t('users.resend confirmation button')

@@ -185,6 +185,12 @@ class User < YouVersion::Resource
     end
   end
 
+  def self.resend_confirmation(email)
+    YvApi.post("users/resend_confirmation", email: email) do |errors|
+      return false
+    end
+  end
+
   def before_update; end
 
   # def self.find(id)

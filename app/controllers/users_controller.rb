@@ -221,6 +221,17 @@ class UsersController < ApplicationController
     render action: "password"
   end
 
+  def resend_confirmation
+    if params[:email]
+      if User.resend_confirmation(params[:email])
+        return render action: "resend_confirmation_success", layout: "application"
+      else
+        flash.now[:error]=(t('users.resend error'))
+      end
+    end
+    render action: "resend_confirmation", layout: "application"
+  end
+
   def connections
     params[:page] ||= 1
     @selected = :connections
