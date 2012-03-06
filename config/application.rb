@@ -20,7 +20,7 @@ end
 module YouversionWeb
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-      puts "env mobile device is #{ENV["X_MOBILE_DEVICE"]}"
+      
       # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
       #   :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
       r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}#{path}" },
@@ -41,6 +41,10 @@ module YouversionWeb
       r301 %r{/bible/(\w+)/(\d+)/(\w+)}, '/bible/$1.$2.$3'
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
+
+      ### GROUPS/LIVE
+      r302 %r{/groups.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
+      r302 %r{/live.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
 
       ### NOTES
       # Ignore SEO text
