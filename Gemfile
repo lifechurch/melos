@@ -22,7 +22,7 @@ gem 'koala'
 gem 'authorize-net'
 gem 'rack-rewrite', '~> 1.2.1'
 gem 'rack-mobile-detect'
-
+gem 'asset_sync'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,7 +32,6 @@ group :assets do
   gem 'uglifier'
   gem 'compass-rails', '1.0.0.rc.3'
   gem 'css_parser', '~> 1.1.9'
-  gem 'asset_sync'
 end
 
 
