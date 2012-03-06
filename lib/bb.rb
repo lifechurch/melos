@@ -6,7 +6,7 @@ module Bb
       @app = app
     end
     def call(env)
-      if env["PATH_INFO"] =~ %r{/bb/latest.json}
+      if env["PATH_INFO"] =~ %r{/bb/test}
         process_request(env)
       else
         @app.call(env)
