@@ -1,6 +1,6 @@
 .widget.bookmarks
   %header
-    %a.count{href: user_bookmarks_path(current_auth.username)}= @bookmarks.total
+    %a.count{href: user_bookmarks_path(current_auth.username)}= @bookmarks.total || 0
     %span.header_icon_bookmark= t('recent bookmarks')
   %ul
     - if !@bookmarks.empty?
@@ -17,6 +17,7 @@
                 %a{href: user_bookmarks_path(current_auth.username, :label => l)}= l
     - else
       %li
-        %p= "No bookmarks found..."
-    %li.align_right
-      %a.more_arrow{href: user_bookmarks_path(current_auth.username)}= t('show all bookmarks', total: @bookmarks.total)
+        %p= t('bookmarks.not found')
+    - unless @bookmarks.empty?
+      %li.align_right
+        %a.more_arrow{href: user_bookmarks_path(current_auth.username)}= t('show all bookmarks', total: @bookmarks.total)
