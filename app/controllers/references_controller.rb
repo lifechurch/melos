@@ -42,12 +42,6 @@ class ReferencesController < ApplicationController
       @single_verse = Reference.new(ref_hash)
     end
 
-    # Set up a fake reference for the fist 5 verses since the API won't let us
-    # search the entire chapter for notes
-    notes_ref_hash = ref_hash.dup
-    notes_ref_hash[:verse]=1..5
-    @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 30.minutes)
-
     # If there's a user, see if they have connections
 
     if current_auth
