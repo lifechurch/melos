@@ -56,7 +56,7 @@ ko:
   "my notifications": "알림 관리"
   "my connections": "연결된 계정"
   "my devices": "연결된 기기"
-  "language name": "한국의"
+  "language name": "한글"
   "sign in": "로그인"
   "sign up": "계정등록"
   "have an account": "이미 계정이 있습니까?"
@@ -309,6 +309,7 @@ ko:
       "updated notifications": "알림 설정이 변경되었습니다!"
       "notification errors": "아래 오류로 인해 알림 설정을 변경하지 못했습니다."
       "edit": "수정"
+      "bio": "자기소개"
       "your current picture": "현재 사진"
     "password": "비밀번호"
     "notifications": 

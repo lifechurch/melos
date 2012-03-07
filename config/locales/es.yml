@@ -147,7 +147,7 @@ es:
     "see my likes": "Ver todos los marcado Me Gusta"
     "my notes": "Mis Notas"
   "ref": 
-    "clear verses": "Borrar Versículos Seleccionados"
+    "clear verses": "Deseleccionar Versículos"
     "choose book and chapter": "Elija Libro + Capítulo"
     "choose version": "Elija Versión"
     "choose second version": "Elegir versión secundaria."
@@ -171,6 +171,7 @@ es:
     "profile form errors": "El (los) siguiente(s) error(es) no permitieron actualizar su perfil:"
     "email address": "Correo Electrónico:"
     "user name": "Nombre de Usuario:"
+    "password title": "Contraseña"
     "agreement": "Estoy de acuerdo con YouVersion %{terms_link}."
     "terms and conditions": "términos y condiciones"
     "facebook sign up success": "¡Muy bien! Usted ha autorizado con Facebook. Escoge un nombre de usuario y contraseña en YouVersion para continuar."
