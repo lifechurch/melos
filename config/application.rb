@@ -68,7 +68,6 @@ module YouversionWeb
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
     config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)
-    config.middleware.insert_before(Bb::EndPoint, Rack::Deflater)
     # config.middleware.insert_before(Rack::MobileDetect, Rack::JSON) do
     #   puts "in"
     #   get '/bb/test.json' do
