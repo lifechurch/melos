@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
+  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
   before_filter :set_page
   before_filter :set_locale
   
@@ -90,10 +90,22 @@ class ApplicationController < ActionController::Base
     end
   end
   def set_redirect
-    cookies[:sign_in_redirect] = nil if cookies[:sign_in_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
-    cookies[:sign_in_redirect] = params[:redirect] if params[:redirect]
-    cookies[:sign_in_redirect] ||= URI(request.referer).path if request.referer
+    cookies[:auth_redirect] = nil if cookies[:auth_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
+    cookies[:auth_redirect] = params[:redirect] if params[:redirect]
+    cookies[:auth_redirect] ||= URI(request.referer).path if request.referer
   end
+  def redirect_path
+    cookies[:auth_redirect]
+  end
+  def clear_redirect
+    cookies[:auth_redirect]= nil
+  end
+  def follow_redirect(opts = {})
+    path = cookies[:auth_redirect] || opts[:alt_path] || bible_path
+    clear_redirect
+    return redirect_to path
+  end
+  
   def last_read
     Reference.new(cookies[:last_read]) if cookies[:last_read]
   end
