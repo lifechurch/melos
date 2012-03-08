@@ -34,11 +34,12 @@ class NotesController < ApplicationController
   end
 
   def create
+    debugger
     @note = Note.new(params[:note])
     @note.auth = current_auth
 
     if @note.save
-      render action: "show"
+      redirect_to @note
     else
       render action: "new"
     end

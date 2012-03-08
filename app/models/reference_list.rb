@@ -73,7 +73,7 @@ class ReferenceList
 
   def to_api_string
     join_str = '+'
-
+    debugger
     refs = @references.compact.map do |r|
       osis = r.osis_noversion
       if numbered_book_splits = osis.match(/(^\d)(\D{1})(.+)/)
