@@ -229,7 +229,7 @@ en:
     forgot password:                            "Forgot your password?"
     resend success:                             "Your confirmation email has been resent. Please check your email."
     resend error:                               "Sorry, there was an error resending your confirmation email. Please make sure you're entering a valid, registered email address that hasn't already been confirmed."
-    resend confirmation title:                  "Didn't get your confimration email?"
+    resend confirmation title:                  "Didn't get your confirmation email?"
     resend confirmation copy:                   "Enter the email address you used to register below and we'll send you another confirmation email."
     resend confirmation button:                 "Resend Confirmation"
     privacy:
