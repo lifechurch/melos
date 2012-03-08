@@ -4,6 +4,7 @@ class NotesController < ApplicationController
 
   def index
     if params[:user_id] || current_auth
+      flash.keep
       redirect_to user_notes_path(params[:user_id] || current_user) and return
     else
       @selected = :notes
@@ -59,7 +60,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id], :auth => current_auth)
 
     if @note.destroy
-      redirect_to notes_path
+      redirect_to notes_path, notice: t("notes.successfully deleted")
     else
       render action: "index"
     end
