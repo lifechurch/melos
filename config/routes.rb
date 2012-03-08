@@ -15,7 +15,11 @@ YouversionWeb::Application.routes.draw do
   resources 'bookmarks', :except => [:index] 
 
   resources 'likes', :only => [:index]
-  match 'notes/:id/like' => 'notes#like',    :as => 'like', :via => :put
+  match 'notes/:id/like' => 'notes#like', :as => 'like', :via => :put
+  
+  resources 'notes', :except => [:index]
+  match 'notes' => 'notes#index', :as => 'all_notes'
+
   
   match 'search' => 'search#show'
   match 'privacy' => 'users#privacy'
@@ -37,8 +41,6 @@ YouversionWeb::Application.routes.draw do
   post 'share' => 'users#share', as: 'share'
   resources 'highlights', only: [:create]
 
-  resources 'notes', :except => [:index]
-  match 'notes' => 'notes#index', :as => 'all_notes'
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
   match 'sign-up/facebook' => 'users#create_facebook', :as => 'facebook_sign_up', :via => :post
