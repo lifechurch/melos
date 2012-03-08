@@ -53,13 +53,13 @@
     .progress_bar_shadow
       .progress_percent_complete{style: "left:#{@subscription.progress}%"}
         %b= t("percentage display", number: @subscription.progress)
-        .small= t("plans.completion status (below percentage)")
+        .small= t("plans.completion status _ below percentage")
   .float_right{style: "margin-bottom: 10px"}
     %div
-      %b{style: "margin-right: 10px"}= t("plans.start date (before date string)")
+      %b{style: "margin-right: 10px"}= t("plans.start date _ before date string")
       = @subscription.start.strftime("%b %d, %Y")
     %div
-      %b{style: "margin-right: 16px"}= t("plans.end date (before date string)")
+      %b{style: "margin-right: 16px"}= t("plans.end date _ before date string")
       = @subscription.end.strftime("%b %d, %Y")
   
   %hr

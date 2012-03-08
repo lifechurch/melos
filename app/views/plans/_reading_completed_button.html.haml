@@ -1,7 +1,7 @@
 :ruby
   done_button_text = t('plans.done reading')
   if (cur_reading_index + 1 < reading.references.count)
-    done_button_text = t('plans.reading completed (mark and show next)', next_reference: reading.references[cur_reading_index+ 1].ref.ref_string)
+    done_button_text = t('plans.reading completed _ mark and show next', next_reference: reading.references[cur_reading_index+ 1].ref.ref_string)
   end
 - if plan.is_a? Subscription
   %form{method: 'post', style: "height: #{reading.references.count > 1 ? '53px' : '48px'}; margin-top: 5px; margin-bottom: 3px"}
