@@ -1,26 +1,40 @@
 class VersionSelectorCell < Cell::Rails
   include ApplicationHelper
   helper_method :bible_path
+  cache :all_versions, :if => proc{|cell, opts| opts[:link_params].nil?} do |cell, opts|  #we only cache if it's a reader link (ie. there are no link_params to force a path)
+      opts[:version].osis
+  end
 
-
+  #version and recent_versions expected as version and array of versions. alt is bool
+  #opts[:force_style] is temporary parameter until we have new reading plan design
+  #opts[:link_params] is temporary parameter until we have new reading plan design
+  
   def display(opts ={})
-    if opts[:reference]
-      @reference = opts[:reference]
-      @version = opts[:version] || Version.find(@reference[:version])
-      @alt_version = (!opts[:alt_reference] || opts[:alt_reference][:version] == @reference[:verson]) ? @version : Version.find(opts[:reference][:version]) #optimized for common case of no alt_version
-    elsif opts[:version]
-      @version = opts[:version]
-      @alt_version = @version
-    end
+    get_opts opts
+    
+    @recent_versions = opts[:recent_versions] || []
+    @force_style = opts[:force_style]
+    render
+  end
+  
+  def all_versions(opts = {})
+    get_opts opts
     
     @all_languages = Version.all_by_language
     @this_language = @all_languages[@version.language.iso]
     @all_languages = @all_languages.except(@version.language.iso)
     @languages = Version.languages
-    @force_style = opts[:force_style]
-    @params = opts[:link_params]
-    @recent_versions = opts[:recent_versions] || []
     render
+  end
+  
+  private
+  
+  def get_opts(opts ={})
+    @ref = opts[:reference]
+    @version = opts[:version]
+    @is_alt = opts[:is_alt] || false
+    @link_params = opts[:link_params]
+    puts "BLAMO 1"
   end
 
 end

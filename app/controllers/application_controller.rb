@@ -105,7 +105,6 @@ class ApplicationController < ActionController::Base
     clear_redirect
     return redirect_to path
   end
-  
   def last_read
     Reference.new(cookies[:last_read]) if cookies[:last_read]
   end
