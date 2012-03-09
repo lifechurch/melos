@@ -15,7 +15,7 @@
         %a.icon{:href => current_auth ? user_plans_path(current_auth.username) : plans_path}
           %span &nbsp;
         %a.tooltip{:href => current_auth ? user_plans_path(current_auth.username) : plans_path, style: "display: none;"}
-          %span=t("plans title")
+          %span=t("plans.title")
       %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
         %a.icon{:href => current_auth ? user_notes_path(current_auth.username) : notes_path}
           %span &nbsp;

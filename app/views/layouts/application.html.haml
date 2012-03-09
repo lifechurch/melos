@@ -26,10 +26,9 @@
             = render '/shared/sidebar'
       = render '/shared/footer'
     - if @reader_menus == true
-      -# = render '/shared/menu_book_chapter'
       = render_cell :book_selector, :display, {reference: @reference, version: @version}
-      -# = render '/shared/menu_version'
-      = render_cell :version_selector, :display, {reference: @reference, alt_reference: @alt_reference, version: @version, recent_versions: recent_versions}
+      = render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, reference: @reference}
+      = render_cell :version_selector, :display, {version: @alt_version, recent_versions: recent_versions, reference: @reference, is_alt: true}
       = render '/shared/menu_bookmark'
       = render '/shared/menu_settings'
       = render '/shared/menu_audio_player'

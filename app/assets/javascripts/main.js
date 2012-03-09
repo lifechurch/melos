@@ -287,7 +287,7 @@ var YV = (function($, window, document, undefined) {
           return false;
         });
 
-        $(".alt_version_link").click(function(ev) {
+        $("#menu_alt_version").find("a").click(function(ev) {
           ev.preventDefault();
           ev.stopPropagation();
           setCookie('alt_version', $(this).data('version'));
@@ -796,6 +796,7 @@ var YV = (function($, window, document, undefined) {
          //Zero clipboard adds and removes "hover" and "active" classes as you would expect
 
         function parse_verses() {
+          $("article").attr('data-selected-verses-rel-link', false);
           var total = $('#version_primary .verse.' + flag).length;
           verse_numbers.length = 0;
           verse_ranges.length = 0;
@@ -882,6 +883,8 @@ var YV = (function($, window, document, undefined) {
 
             // Generate a short link
             var link = "http://bible.us/" + book + chapter + "." + verse_ranges.join(',') + "." + version;
+            var rel_link = "/bible/" + book + "." + chapter + "." + verse_ranges.join(',');
+            $("article").attr('data-selected-verses-rel-link', rel_link);
             $("b#short_link").html(link);
             $("input#share_link").val(link);
             $(".share_message .character_count").remove();
@@ -1188,7 +1191,6 @@ var YV = (function($, window, document, undefined) {
             method: "get",
             dataType: "json",
             success: function(highlights) {
-              console.log("hmmm");
               if (highlights && highlights.length) {
                 var book = $('article').data('book-api');
                 var chapter = $('article').data('chapter');
@@ -1237,9 +1239,11 @@ var YV = (function($, window, document, undefined) {
         });
       },
       // YV.init.recent_version
-      recent_version: function() {
-       $(".version_select").find('a').click(function() {
+      version_links: function() {
+       $("#menu_version").find('a').click(function() {
           var osis = $(this).data("version");
+          var menu = $(this).closest(".dynamic_menu.version_select");
+          var link_base = $("article").data("selected-verses-rel-link");
 
           if (osis){
             var recent = getCookie('recent_versions');
@@ -1249,9 +1253,17 @@ var YV = (function($, window, document, undefined) {
             if(exits != -1) recent.splice(exits, 1);
             recent.unshift(osis);
             recent_str = recent.splice(0,5).join('/');
-            console.log("pre-seet: " + recent_str);
             setCookie('recent_versions', recent_str);
-            console.log("get: " + getCookie('recent_versions'));
+            console.log("clicked link for: " + text_to_send);
+
+            if (!link_base) link_base = menu.data("link-base");
+            
+            if (menu.data("link-needs-param")){
+              var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
+              location.href = link_base + delim + "version=" + osis;
+            }else{
+              location.href = link_base + "." + osis;
+            }
           }
         });
       },

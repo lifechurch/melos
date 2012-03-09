@@ -50,7 +50,7 @@ module YouversionWeb
 
       ### NOTES
       # Ignore SEO text
-      rewrite %r{/notes/(\d+)/(\w*)}, '/notes/$1'
+      rewrite %r{/notes/(\d+)(/edit|/delete)*}, '/notes/$1$2'
 
       ### READING PLANS
       r301 '/reading-plans/all', '/reading-plans'
