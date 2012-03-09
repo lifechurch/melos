@@ -34,7 +34,6 @@ class VersionSelectorCell < Cell::Rails
     @version = opts[:version]
     @is_alt = opts[:is_alt] || false
     @link_params = opts[:link_params]
-    puts "BLAMO 1"
   end
 
 end
