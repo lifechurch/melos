@@ -1,4 +1,4 @@
-.dynamic_menu.version_select{style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-reference" => bible_path(@ref.merge({version: nil, verse: nil}))}
+.dynamic_menu.version_select{style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-reference" => @link_params.nil? ? bible_path(@ref.merge({version: nil, verse: nil})) : nil}
   .spinner_wrapper{style: "display: none;"}
     #version_spinner.dynamic_menu_spinner
   %span.menu_arrow
