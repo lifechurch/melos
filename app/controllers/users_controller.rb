@@ -236,6 +236,7 @@ class UsersController < ApplicationController
     params[:page] ||= 1
     @selected = :connections
     @show = params[:show] ||= "twitter"
+    @empty_message = t('users.no connection friends', connection: t(@show))
     if @user.connections[@show]
       @users = @user.connections[@show].find_friends(page: params[:page])
     end
