@@ -1,9 +1,9 @@
 %tr
   %th{:colspan => '2'}= @version.language.human
 - @this_language.each do |k, v|
-  = render partial: 'item', locals: {version: v, reference: @ref, link_params: @link_params}
+  = render partial: 'item', locals: {version: v}
 - @all_languages.each do |k, v|
   %tr
     %th{:colspan => '2'}= @languages[k]
   - v.each do |kk, vv|
-    = render partial: 'item', locals: {version: vv, reference: @ref, link_params: @link_params}
+    = render partial: 'item', locals: {version: vv}

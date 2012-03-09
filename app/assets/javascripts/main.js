@@ -1242,6 +1242,8 @@ var YV = (function($, window, document, undefined) {
       version_links: function() {
        $("#menu_version").find('a').click(function() {
           var osis = $(this).data("version");
+          var menu = $(this).closest(".dynamic_menu.version_select");
+          var link_base = $("article").data("selected-verses-rel-link");
 
           if (osis){
             var recent = getCookie('recent_versions');
@@ -1254,14 +1256,14 @@ var YV = (function($, window, document, undefined) {
             setCookie('recent_versions', recent_str);
             console.log("clicked link for: " + text_to_send);
 
-            var base = ""
-            if ($("article").data("selected-verses-rel-link")){
-              base = $("article").data("selected-verses-rel-link");
+            if (!link_base) link_base = menu.data("link-base");
+            
+            if (menu.data("link-needs-param")){
+              var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
+              location.href = link_base + delim + "version=" + osis;
+            }else{
+              location.href = link_base + "." + osis;
             }
-            else{
-              base = $(".dynamic_menu.version_select").data("reference");
-            }
-            location.href = base + "." + osis;
           }
         });
       },

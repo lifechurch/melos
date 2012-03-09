@@ -1,8 +1,8 @@
 class VersionSelectorCell < Cell::Rails
   include ApplicationHelper
   helper_method :bible_path
-  cache :all_versions, :if => proc{|cell, opts| opts[:link_params].nil?} do |cell, opts|  #we only cache if it's a reader link (ie. there are no link_params to force a path)
-      opts[:version].osis
+  cache :all_versions do |cell, opts|
+      opts[:version].language.iso
   end
 
   #version and recent_versions expected as version and array of versions. alt is bool
