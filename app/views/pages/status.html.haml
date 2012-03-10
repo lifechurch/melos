@@ -1,0 +1,28 @@
+- @sidebar = false
+
+-# Specific stylesheet for Status page:
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "status"
+  
+:ruby
+  chart_width = 835
+  chart_height = 250
+  
+%article
+  %h1 Status
+  %hr
+  %section  
+    %h3 End User Performance
+    .content
+      %iframe.float_right{src: "https://rpm.newrelic.com/public/charts/fnXO79dHsnG", width: "#{chart_width*0.45}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+      %iframe{src: "https://rpm.newrelic.com/public/charts/hGauGaeuirB", width: "#{chart_width*0.55}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+  %section
+    %h3 Appliction Response
+    .content
+      %iframe{src: "https://rpm.newrelic.com/public/charts/63vqELBV3oK", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+      %iframe{src: "https://rpm.newrelic.com/public/charts/gjZOW2ABkh5", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+  %section
+    %h3 API Performance
+    .content
+      %iframe{src: "https://rpm.newrelic.com/public/charts/4fDldXgs7Js", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
