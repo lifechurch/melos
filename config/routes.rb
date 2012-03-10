@@ -93,6 +93,7 @@ YouversionWeb::Application.routes.draw do
   match 'about' => 'pages#about'
   match 'press' => 'pages#press'
   match 'l10n' => 'pages#l10n'
+  match 'status' => 'pages#status'
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
   match 'friends' => 'users#following'
   match 'bookmarks' => 'users#bookmarks'
