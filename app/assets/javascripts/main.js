@@ -291,7 +291,7 @@ var YV = (function($, window, document, undefined) {
           ev.preventDefault();
           ev.stopPropagation();
           setCookie('alt_version', $(this).data('version'));
-          window.location.href = window.location.href;
+          document.location.href = document.location.href;
         });
       },
       // YV.init.full_screen
@@ -1260,9 +1260,9 @@ var YV = (function($, window, document, undefined) {
             
             if (menu.data("link-needs-param")){
               var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
-              location.href = link_base + delim + "version=" + osis;
+              document.location.href = link_base + delim + "version=" + osis;
             }else{
-              location.href = link_base + "." + osis;
+              document.location.href = link_base + "." + osis;
             }
           }
         });
