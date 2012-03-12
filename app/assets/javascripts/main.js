@@ -440,7 +440,7 @@ var YV = (function($, window, document, undefined) {
                 if (dt.attr('id') == "link"){
                   if(!dd.find('#ZeroClipboardMovie_1').length){
                   clip.glue('copy_link', 'copy_link_container');
-                  console.log('clip glued to copy_link_container');
+                  //console.log('clip glued to copy_link_container');
                   }
                 }
               }).siblings('dd').slideUp();
@@ -777,11 +777,11 @@ var YV = (function($, window, document, undefined) {
         }
 
         clip.addEventListener('load', function(client) {
-                console.log( "movie is loaded" );
+                //console.log( "movie is loaded" );
         });
 
         clip.addEventListener('complete', function(client, text) {
-                console.log("Copied text to clipboard: " + text);
+                //console.log("Copied text to clipboard: " + text);
                 var temp = copy_button.html();
                 copy_button.html(copy_button.data('confirm-text'));
                 setTimeout(function() {copy_button.html(temp);}, 2000);
@@ -789,7 +789,7 @@ var YV = (function($, window, document, undefined) {
 
          clip.addEventListener( 'mouseOver', function(client) {
                 clip.setText(text_to_send);
-                console.log(text_to_send + " sent to clip");
+                //console.log(text_to_send + " sent to clip");
                 //this is done in mouseOver due to ZeroClipboard bug
          } );
 
@@ -896,7 +896,7 @@ var YV = (function($, window, document, undefined) {
             // Populate the "link" input
             $("#copy_link_input").attr("value", link);
             text_to_send = link;
-            console.log(text_to_send + " stored in global");
+            //console.log(text_to_send + " stored in global");
 
             // get highlight id_s of all selected verses that are highlighted
             var sel_hlt_ids = [];
@@ -1254,7 +1254,7 @@ var YV = (function($, window, document, undefined) {
             recent.unshift(osis);
             recent_str = recent.splice(0,5).join('/');
             setCookie('recent_versions', recent_str);
-            console.log("clicked link for: " + text_to_send);
+            //console.log("clicked link for: " + text_to_send);
 
             if (!link_base) link_base = menu.data("link-base");
             
