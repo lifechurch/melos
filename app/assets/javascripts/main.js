@@ -291,7 +291,7 @@ var YV = (function($, window, document, undefined) {
           ev.preventDefault();
           ev.stopPropagation();
           setCookie('alt_version', $(this).data('version'));
-          document.location.href = document.location.href;
+          window.location = window.location.href;
         });
       },
       // YV.init.full_screen
@@ -1235,7 +1235,7 @@ var YV = (function($, window, document, undefined) {
       // YV.init.language
       language: function() {
         $("#choose_language").change(function() {
-          document.location.href = $(this).val();
+          window.location = $(this).val();
         });
       },
       // YV.init.recent_version
@@ -1260,9 +1260,9 @@ var YV = (function($, window, document, undefined) {
             
             if (menu.data("link-needs-param")){
               var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
-              document.location.href = link_base + delim + "version=" + osis;
+              window.location = link_base + delim + "version=" + osis;
             }else{
-              document.location.href = link_base + "." + osis;
+              window.location = link_base + "." + osis;
             }
           }
         });
