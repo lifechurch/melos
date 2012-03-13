@@ -428,6 +428,11 @@ class User < YouVersion::Resource
   def highlight_colors
     configuration.highlight_colors
   end
+
+  def self.highlight_colors(opts = {})
+    opts = opts.merge({user_id: opts[:auth].user_id}) if (opts[:user_id] == nil && opts[:auth])
+    self.configuration(opts).highlight_colors
+  end
   
   def self.configuration(opts = {})
     opts = opts.merge({cache_for: 12.hours}) if opts[:auth] == nil
@@ -436,9 +441,6 @@ class User < YouVersion::Resource
     end
   end
   
-  def self.highlight_colors
-    configuration.highlight_colors
-  end
   
   def ==(compare)
     compare.class == self.class && self.id == compare.id
