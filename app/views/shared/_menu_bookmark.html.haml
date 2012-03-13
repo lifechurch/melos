@@ -26,8 +26,13 @@
           %a{:class => "color_picker", :href =>"#"}
           %a{:class => "color_picker_holder", :href =>"#"}
           %button{:type => "submit", :name => "remove", :value => "true", :class => "color color_picker_clear", :id => "clear_highlights"}
-          - @highlight_colors.slice(0,10).each_with_index do |c,i| #room for 10 highlights in menu, 10th will be hidden by JS if clear is there
-            %button{:type => "submit", :name => "highlight[color]", :value => c, :class => "color", :id => "highlight_#{i}", :href => "#", :style => "background-color:##{c}"}          
+          %span
+          - if current_auth
+            %span.ajax_me{"data-ajax" => highlight_colors_path}
+              = render partial: "users/highlight_color_swatches"
+          - else
+            %span
+              = render partial: "users/highlight_color_swatches"
         %div{:class => "clear"}
     %dt
       = t("bookmark")
@@ -81,12 +86,12 @@
             %button{:type => "submit", :name => "share[submit]", :value => "submit", :class => "float_right"}= t('ref.share now')
           %div.share_services
             %span.float_left{style: "width: 60%"}
-              %input#checkbox_share_twitter{:type => "checkbox", :name => "share[connections][twitter]", checked: ("checked" if @twitter)}
+              %input#checkbox_share_twitter{:type => "checkbox", :name => "share[connections][twitter]"}
               %label{:for => 'share_verse_twitter', :class => "share_verse_twitter", :value => "Twitter"}
                 = t("twitter")
             
             %span.float_left{style: "width: 60%"}
-              %input#checkbox_share_facebook{:type => "checkbox", :name => "share[connections][facebook]", checked: ("checked" if @facebook)}
+              %input#checkbox_share_facebook{:type => "checkbox", :name => "share[connections][facebook]"}
               %label{:for => 'share_verse_facebook', :class => "share_verse_facebook"}
                 = t("Facebook")
           %div.clearfix{style: "margin-bottom: 15px"}

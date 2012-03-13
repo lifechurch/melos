@@ -337,6 +337,12 @@ class UsersController < ApplicationController
     I18n.locale = :en if [:fr, :ja, :pl, :zh_CN, :zh_TW].find{|loc| loc == I18n.locale}
     render action: "terms", layout: "application"
   end
+
+  def highlight_colors
+    @highlight_colors = User.highlight_colors(auth: current_auth)
+    render partial: "users/highlight_color_swatches", layout: false
+  end
+
   
 private  
   def find_user
