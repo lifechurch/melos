@@ -42,7 +42,7 @@
     .split_pane_sidebar
       %dl.categories_menu
         %dt
-          Browse by Category
+          = t("plans.browse by category")
         %dd{class: (params[:category] == "" || params[:category].nil?) ? "highlighted" : ""}
           = link_to t("plans.all plans"), plans_path(lang: params[:lang])
         - level = 0
