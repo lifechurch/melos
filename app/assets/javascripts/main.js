@@ -54,6 +54,13 @@ var YV = (function($, window, document, undefined) {
         j.hasOwnProperty(i) && j[i]();
       }
     },
+    load: function() {
+      var i, j = YV.init_load;
+
+      for (i in j) {
+        j.hasOwnProperty(i) && j[i]();
+      }
+    },
     // YV.misc
     misc: {
       // YV.misc.kill_widget_spacers
@@ -64,6 +71,25 @@ var YV = (function($, window, document, undefined) {
         // them up anew, to clean the slate.
         $('.widget_spacer').remove();
       }
+    },
+
+    init_load: {
+      ajax: function() {
+        $(".ajax_me").each(function() {
+          var that = $(this);
+          $.ajax({
+            url: that.data('ajax'),
+            method: "get",
+            dataType: "html",
+            success: function(data) {
+              that.fadeOut(200, function() {
+                that.html(data);
+                that.fadeIn(200);
+              });
+            }
+          });
+        });
+      },
     },
     // YV.init
     init: {
@@ -440,7 +466,6 @@ var YV = (function($, window, document, undefined) {
                 if (dt.attr('id') == "link"){
                   if(!dd.find('#ZeroClipboardMovie_1').length){
                   clip.glue('copy_link', 'copy_link_container');
-                  console.log('clip glued to copy_link_container');
                   }
                 }
               }).siblings('dd').slideUp();
@@ -777,11 +802,9 @@ var YV = (function($, window, document, undefined) {
         }
 
         clip.addEventListener('load', function(client) {
-                console.log( "movie is loaded" );
         });
 
         clip.addEventListener('complete', function(client, text) {
-                console.log("Copied text to clipboard: " + text);
                 var temp = copy_button.html();
                 copy_button.html(copy_button.data('confirm-text'));
                 setTimeout(function() {copy_button.html(temp);}, 2000);
@@ -789,7 +812,6 @@ var YV = (function($, window, document, undefined) {
 
          clip.addEventListener( 'mouseOver', function(client) {
                 clip.setText(text_to_send);
-                console.log(text_to_send + " sent to clip");
                 //this is done in mouseOver due to ZeroClipboard bug
          } );
 
@@ -896,7 +918,6 @@ var YV = (function($, window, document, undefined) {
             // Populate the "link" input
             $("#copy_link_input").attr("value", link);
             text_to_send = link;
-            console.log(text_to_send + " stored in global");
 
             // get highlight id_s of all selected verses that are highlighted
             var sel_hlt_ids = [];
@@ -1254,7 +1275,6 @@ var YV = (function($, window, document, undefined) {
             recent.unshift(osis);
             recent_str = recent.splice(0,5).join('/');
             setCookie('recent_versions', recent_str);
-            console.log("clicked link for: " + text_to_send);
 
             if (!link_base) link_base = menu.data("link-base");
             
@@ -1291,40 +1311,6 @@ var YV = (function($, window, document, undefined) {
           $(this).find(".tooltip").fadeOut(100);
         });
       },
-      // YV.init.notes_widget
-      notes_widget: function() {
-        $("div.widget.notes").each(function() {
-          var that = $(this);
-          $.ajax({
-            url: "/bible/" + $("#version_primary").data("reference") + "/notes",
-            method: "get",
-            dataType: "html",
-            success: function(data) {
-              that.fadeOut(200, function() {
-                that.html(data);
-                that.fadeIn(200);
-              });
-            }
-          });
-        });
-      },
-      // YV.init.bookmarks_widget
-      bookmarks_widget: function() {
-        $("div.widget.bookmarks").each(function() {
-          var that = $(this);
-          $.ajax({
-            url: "/bible/widgets/bookmarks",
-            method: "get",
-            dataType: "html",
-            success: function(data) {
-              that.fadeOut(100, function() {
-                that.html(data);
-                that.fadeIn(100);
-              });
-            }
-          });
-        });
-      },
       // YV.init.in_place_confirm
       in_place_confirm: function() {
         $('.confirm').click(function(ev){
@@ -1353,4 +1339,7 @@ var YV = (function($, window, document, undefined) {
 // Fire it off!
 jQuery(document).ready(function() {
   YV.go();
+});
+jQuery(window).load(function() {
+  YV.load();
 });
