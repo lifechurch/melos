@@ -63,6 +63,9 @@ module YouversionWeb
       ### USER
       r301 '/forgot', '/settings/forgot_password'
       
+      ### Mobile Downloads
+      r301 '/download', '/mobile'
+      
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
     end
