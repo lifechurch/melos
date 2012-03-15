@@ -28,7 +28,7 @@
             = render '/shared/sidebar'
       = render '/shared/footer'
     - if @reader_menus == true
-      = render_cell :book_selector, :display, {reference: @reference, version: @version}
+      = render_cell :book_selector, :display, {version: @version}
       = render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, reference: @reference}
       = render_cell :version_selector, :display, {version: @alt_version, recent_versions: recent_versions, reference: @reference, is_alt: true}
       = render '/shared/menu_bookmark'
