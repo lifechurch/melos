@@ -1296,10 +1296,15 @@ var YV = (function($, window, document, undefined) {
 
           if (osis){
             var recent = getCookie('recent_versions');
-            if (recent == null) recent = "";
-            recent = recent.split('/');
-            var exits = recent.indexOf(osis);
-            if(exits != -1) recent.splice(exits, 1);
+            if (recent == null){
+              recent = [];
+            }else {   //extra caution here because of IE bug with .indexOf on empty array
+              //buble up the version just picked if it was already in list
+              recent = recent.split('/');
+              var exists = recent.indexOf(osis);
+              if(exists != -1) recent.splice(exists, 1);
+            }
+
             recent.unshift(osis);
             recent_str = recent.splice(0,5).join('/');
             setCookie('recent_versions', recent_str);
