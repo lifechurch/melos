@@ -1,3 +1,33 @@
 %article
+  %h1= t('make a donation')
+  %p= t('donate.header copy')
   = form_tag do
-    = text_field_tag :dolers
+    %p
+      = label_tag 'tr[x_name]', t('donate.name')
+      %br
+      = text_field_tag 'tr[x_name]'
+    %p
+      = label_tag 'tr[x_email]', t('users.email address')
+      %br
+      = text_field_tag 'tr[x_email]'
+    %p
+      = check_box_tag 'tr[x_email_customer]', "yes", true
+      = label_tag 'tr[x_email_customer]', t('donate.receipt')
+    %hr
+    %p
+      = label_tag 'tr[x_amount]', t('donate.amount')
+      %br
+      $
+      = text_field_tag 'tr[x_amount]', nil, type: "tel", value: "10.00"
+    %p
+      = label_tag 'tr[x_card_num]', t('donate.card number')
+      %br
+      = text_field_tag 'tr[x_card_num]', nil, type: "tel"
+    %div.float_right{style: "padding-top: 2em;"}
+      %button{class: "action_button_green", action: "submit"}
+        = t('donate.preview')
+    %p
+      = label_tag 'tr[x_exp_date]', t('donate.card exp date')
+      %br
+      = select_month Time.now + 1.month, use_month_numbers: true
+      = select_year Time.now + 1.month, start_year: Time.now.year, end_year: Time.now.year+10

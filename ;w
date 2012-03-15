@@ -1,6 +1,5 @@
 %article
   %h1= t('make a donation')
-  %p= t('donate.header confirm copy')
   = form_for :sim_transaction, :url => AuthorizeNet::SIM::Transaction::Gateway::TEST do |f|
     = sim_fields(@sim_transaction)
     - @tr.each do |k, v|
@@ -18,11 +17,6 @@
       %br
       %strong= "#{t('donate.card number')}: "
       %span=  @tr[:x_card_num][-4, 4]
-      %br
-      %strong= "#{t('donate.card exp date')}: "
-      %span=  @tr[:x_exp_date]
-      %div
-        %button{class: "action_button_green", action: "submit"}
-          = t('donate.donate now')
 
+      = f.submit 'Purchase'
 
