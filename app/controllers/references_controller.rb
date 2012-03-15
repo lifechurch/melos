@@ -42,31 +42,11 @@ class ReferencesController < ApplicationController
       @single_verse = Reference.new(ref_hash)
     end
 
-    # Set up a fake reference for the fist 5 verses since the API won't let us
-    # search the entire chapter for notes
-    notes_ref_hash = ref_hash.dup
-    notes_ref_hash[:verse]=1..5
-    @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 30.minutes)
-
-    # If there's a user, see if they have connections
-
-    if current_auth
-      @twitter = true if current_user.connections["twitter"]
-      @facebook = true if current_user.connections["facebook"]
-    end
-
-
     # Create an empty note for the note sidebar widget
     @note = Note.new
 
     # Set up user specific stuff
-    if current_auth
-      @highlight_colors = current_user.highlight_colors
-      @bookmarks = current_user.bookmarks
-    else
-      @highlight_colors = User.highlight_colors
-      @bookmarks = []
-    end
+    @highlight_colors = User.highlight_colors
     
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
     @alt_version = Version.find(alt_version(@reference))
@@ -87,6 +67,11 @@ class ReferencesController < ApplicationController
     notes_ref_hash[:verse]=1..5 unless notes_ref_hash[:verse]
     @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 30.minutes)
     render layout: false
+  end
+  
+  def bookmarks
+    @bookmarks = Bookmark.for_user(current_auth.user_id)
+    render '/shared/_widget_bookmarks', layout: false
   end
 
 

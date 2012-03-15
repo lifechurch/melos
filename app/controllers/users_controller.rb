@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook, :notifications, :update_notifications]
-  before_filter :set_redirect, only: :new
+  before_filter :set_redirect, only: [:new, :create]
   
   # User signup flow:
   #
@@ -39,8 +39,6 @@ class UsersController < ApplicationController
       @blurb = t("registration.plan blurb")
     end
 
-    # Try reading plan?
-    cookies[:sign_up_redirect] = params[:redirect]
     render action: "new", layout: "application"
   end
 
@@ -49,11 +47,8 @@ class UsersController < ApplicationController
     # Try authing them first - poor man's login screen
     begin
       if test_user = User.authenticate(params[:user][:username], params[:user][:password])
-        puts "hey i am actually an existing user"
-        new_place = cookies[:sign_up_redirect] || :back
-        puts "new place is #{new_place}"
         sign_in test_user, params[:user][:password]
-        redirect_to new_place
+        follow_redirect
       end
     rescue
       if @user.save
@@ -62,7 +57,7 @@ class UsersController < ApplicationController
         cookies.signed[:g] = params[:user][:password]
         redirect_to confirm_email_path
       else
-        render action: "new"
+        render action: "new", layout: "application"
       end
     end
   end
@@ -78,7 +73,7 @@ class UsersController < ApplicationController
       return false
     end
     if response
-      redirect_to cookies[:sign_up_redirect] ||= sign_up_success_path(show: "facebook")
+      follow_redirect alt_path: sign_up_success_path(show: "facebook")
     end
   end
 
@@ -111,7 +106,7 @@ class UsersController < ApplicationController
       connection = FacebookConnection.new(info)
       result = connection.save
 
-      redirect_to cookies[:sign_up_redirect] ||= sign_up_success_path(show: "facebook")
+      follow_redirect alt_path: sign_up_success_path(show: "facebook")
     else
       render action: "new_facebook", layout: "application"
     end
@@ -236,6 +231,7 @@ class UsersController < ApplicationController
     params[:page] ||= 1
     @selected = :connections
     @show = params[:show] ||= "twitter"
+    @empty_message = t('users.no connection friends', connection: t(@show))
     if @user.connections[@show]
       @users = @user.connections[@show].find_friends(page: params[:page])
     end
@@ -341,6 +337,12 @@ class UsersController < ApplicationController
     I18n.locale = :en if [:fr, :ja, :pl, :zh_CN, :zh_TW].find{|loc| loc == I18n.locale}
     render action: "terms", layout: "application"
   end
+
+  def highlight_colors
+    @highlight_colors = User.highlight_colors(auth: current_auth)
+    render partial: "users/highlight_color_swatches", layout: false
+  end
+
   
 private  
   def find_user

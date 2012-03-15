@@ -12,4 +12,6 @@ class PagesController < ApplicationController
   def open
     render json: 10.to_json, callback: params[:callback]
   end
+  
+  def status; end
 end

@@ -12,6 +12,7 @@ class NotesListWidgetCell < Cell::Rails
 
   def stub(opts = {})
     @title = opts[:title] ||= "Notes" 
+    @reference = opts[:reference]
     render
   end
 

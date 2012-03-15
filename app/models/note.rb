@@ -43,7 +43,7 @@ class Note < YouVersion::Resource
     self.content = self.content_as_xml
     puts "now, self content is #{self.content}"
     if self.reference.nil? || self.reference.empty?
-      self.reference_list = ReferenceList.new("")
+      self.reference_list = ReferenceList.new(nil)
     else
       self.reference_list = self.reference.class == ReferenceList ? self.reference : ReferenceList.new(self.reference)
       self.version = self.reference_list.first[:version] if self.reference_list.first[:version]
@@ -66,7 +66,7 @@ class Note < YouVersion::Resource
     if self.reference
       self.reference_list = ReferenceList.new(self.reference, self.version)
     else
-      self.reference_list = ReferenceList.new("")
+      self.reference_list = ReferenceList.new(nil)
     end
     self.version = Version.find(self.version) if self.version
   end

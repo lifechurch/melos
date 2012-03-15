@@ -1,10 +1,6 @@
-- alt ||= nil
-- href = "#"
-- href = (@reference ? bible_path(@reference.merge(version: version.osis)) : url_for(@params.merge(version: version.osis))) unless alt
-
 %tr
   %th
-    %a{class: alt ? "spinner_trigger alt_version_link" : "spinner_trigger", "data-version" => version.osis, :href => href}= version.osis_human
+    %a.spinner_trigger{"data-version" => version.osis, :href => "#"}= version.osis_human
   %td{class: version.audio? ? "audio" : ""}
-    %a{class: alt ? "spinner_trigger alt_version_link" : "spinner_trigger", "data-version" => version.osis, :href => href}
+    %a.spinner_trigger{"data-version" => version.osis, :href => "#"}
       %div= version.title

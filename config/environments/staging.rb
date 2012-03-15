@@ -1,4 +1,3 @@
-require 'rack-cache'
 YouversionWeb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
@@ -26,7 +25,7 @@ YouversionWeb::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   # Do not compress assets
-  config.assets.compress = true
+  config.assets.compress = false
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
@@ -49,10 +48,8 @@ YouversionWeb::Application.configure do
   end
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css )
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
 
-  # Add HTTP headers to cache static assets for an hour
-  config.static_cache_control = "public, max-age=3600"
 end
 
 silence_warnings do

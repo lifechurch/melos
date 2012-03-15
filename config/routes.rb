@@ -10,12 +10,17 @@ YouversionWeb::Application.routes.draw do
   match 'bible(/:reference)' => 'references#show', :as => 'reference', :constraints => {:reference => /[^\/]*/}
   match 'bible/:reference/highlights' => 'references#highlights', :as => 'reference_highlights', :constraints => {:reference => /[^\/]*/}
   match 'bible/:reference/notes' => 'references#notes', :as => 'reference_notes', :constraints => {:reference => /[^\/]*/}
+  match 'bible/widgets/bookmarks' => 'references#bookmarks'
   resources 'versions', :only => [:index, :show]
 
   resources 'bookmarks', :except => [:index] 
 
   resources 'likes', :only => [:index]
-  match 'notes/:id/like' => 'notes#like',    :as => 'like', :via => :put
+  match 'notes/:id/like' => 'notes#like', :as => 'like', :via => :put
+  
+  resources 'notes', :except => [:index]
+  match 'notes' => 'notes#index', :as => 'all_notes'
+
   
   match 'search' => 'search#show'
   match 'privacy' => 'users#privacy'
@@ -34,17 +39,16 @@ YouversionWeb::Application.routes.draw do
     match 'badge/:id' => 'badges#show', as: 'badge'
     resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
+  match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
   resources 'highlights', only: [:create]
 
-  resources 'notes', :except => [:index]
-  match 'notes' => 'notes#index', :as => 'all_notes'
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
   match 'sign-up/facebook' => 'users#create_facebook', :as => 'facebook_sign_up', :via => :post
   match 'sign-up/facebook' => 'users#new_facebook', as: 'facebook_sign_up', :via => :get
   match 'sign-up/success' => 'users#sign_up_success', as: 'sign_up_success'
-  match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
+  match 'confirm/:hash' => 'users#confirm_email', :as => "confirm_email"
   match 'resend' => 'users#resend_confirmation', :as => "resend_confirmation"
   
   # Sessions
@@ -91,6 +95,7 @@ YouversionWeb::Application.routes.draw do
   match 'about' => 'pages#about'
   match 'press' => 'pages#press'
   match 'l10n' => 'pages#l10n'
+  match 'status' => 'pages#status'
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
   match 'friends' => 'users#following'
   match 'bookmarks' => 'users#bookmarks'

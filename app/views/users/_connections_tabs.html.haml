@@ -15,7 +15,7 @@
       = t('connected as user', connection: t(@show), username: @user.connections[@show].data.screen_name)
       %span.confirm
         %a{:href => delete_connection_path(@show.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", :rel => "nofollow"}= t('remove connection')
-    %p= t('connection users', connection: t(@show))
+    %p= t('connection users', connection: t(@show)) unless @users.empty?
     = render partial: "list"
   - else
     = link_to t('connect to', connection: t(@show)), new_connection_path(@show.to_s, redirect: connections_path(show: @show.to_s))

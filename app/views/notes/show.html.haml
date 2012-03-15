@@ -4,7 +4,7 @@
   #note
     %h3{class: @note.user_status}= @note.title
     / %p.mute= link_to_references(@note.reference)
-    - if @note.reference_list
+    - if !@note.reference_list.empty?
       %ul.reference_tokens.read_only
         - @note.reference_list.each do |r|
           %li

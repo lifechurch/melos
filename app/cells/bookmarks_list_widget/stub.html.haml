@@ -1,0 +1,9 @@
+%div.widget.bookmarks
+  %header
+    %a.count{href: user_bookmarks_path(current_user)}= @bookmarks.total
+    %span.header_icon_bookmark= t('bookmarks')
+  %ul
+    %li
+     %p= "Loading recent bookmarks..."
+    %li.align_right
+      %a.more_arrow{href: user_bookmarks_path(current_user)}= t('show all bookmarks', b.total)
