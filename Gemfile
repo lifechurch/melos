@@ -10,7 +10,7 @@ gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
 gem 'routing-filter'
 gem 'execjs'
-gem 'therubyracer'
+# gem 'therubyracer'
 gem 'unicorn'
 gem 'exceptional'
 gem 'countries'
