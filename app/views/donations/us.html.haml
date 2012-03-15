@@ -1,17 +1,3 @@
 %article
-  %h1= t('make a donation')
-  = form_for :sim_transaction, :url => AuthorizeNet::SIM::Transaction::Gateway::TEST do |f|
-    = sim_fields(@sim_transaction)
-    %p
-      = label_tag 'x_amount', "Total: #{number_to_currency(@amount)}"
-    %p
-      = label_tag 'x_card_num', 'Credit Card Number'
-      %br
-      = text_field_tag 'x_card_num'
-    %p
-      = label_tag 'x_exp_date', 'Expiration Date (MMYY)'
-      %br
-      = text_field_tag 'x_exp_date'
-    %p
-      = f.submit 'Purchase'
-
+  = form_tag do
+    = text_field_tag :dolers

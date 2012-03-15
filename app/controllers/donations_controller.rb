@@ -6,8 +6,16 @@ class DonationsController < ApplicationController
   # GET
   # Displays a payment form.
   def us
-    @amount = 10.00
-    @sim_transaction = AuthorizeNet::SIM::Transaction.new(AUTHORIZE_NET_CONFIG['api_login_id'], AUTHORIZE_NET_CONFIG['api_transaction_key'], @amount, :relay_url => donations_relay_response_url(:only_path => false))
+    
+  end
+
+  def confirm
+    @amount = params[:dolers]
+    @sim_transaction = AuthorizeNet::SIM::Transaction.new(
+          AUTHORIZE_NET_CONFIG['api_login_id'],
+          AUTHORIZE_NET_CONFIG['api_transaction_key'],
+          @amount,
+          :relay_url => donations_relay_response_url(:only_path => false))
   end
 
   # POST
