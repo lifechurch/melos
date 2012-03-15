@@ -43,7 +43,7 @@
   "compare all versions": "Alle Versionen vergleichen"
   "confirm danger": "Ja, ich bin sicher."
   "connect to": "Verbinde dich mit deinem %{connection} Konto."
-  "connected as user": "Du bist mit %{connection} als %{unsername} verbunden."
+  "connected as user": "Du bist mit %{connection} als %{username} verbunden."
   "connection marketing": "YouVersion macht mehr Spaß mit Freunden! Verbinde dein YouVersion-Konto mit deinen sozialen Netzwerken und finde deine Freunde auf YouVersion blitzschnell. So kannst du ihnen auch auf YV folgen. Mit verbundenen Konten kannst du mit wenigen Klicks Inhalte teilen. Wir werden nie etwas ohne dein Einverständnis posten."
   "connection users": "Hier sind einige YouVersion-Nutzer, mit denen du bei %{connection} verbunden bist."
   "copy": "Kopien"
@@ -143,7 +143,7 @@
   "no following found other": "%{username} folgt bisher niemandem."
   "no following found self": "Du folgst bisher niemandem. Du solltest die Seite <a href='%{link}> Freunde finden </a> besuchen und Freunde finden!"
   "no likes found": "%{username} gefällt bisher nichts."
-  "no notes found": "%{unsername} hat keine Notizen."
+  "no notes found": "%{username} hat keine Notizen."
   "no recent activity": "%{username} hat keine neuen Aktivitäten."
   "none found": "Wir haben nichts gefunden, was deinen Kriterien entspricht. Versuche, deine Suche zu erweitern."
   "notes":

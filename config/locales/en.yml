@@ -367,6 +367,7 @@ en:
     user badges:                                "%{user}'s Badges"
   plans:
     title:                                      "Reading Plans"
+    browse by category:                         "Browse by Category"
     browse plans:                               "Browse %{category} Plans"
     all:                                        "All"
     all plans:                                  "All Plans"

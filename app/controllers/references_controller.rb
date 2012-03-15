@@ -42,23 +42,11 @@ class ReferencesController < ApplicationController
       @single_verse = Reference.new(ref_hash)
     end
 
-    # If there's a user, see if they have connections
-
-    if current_auth
-      @twitter = true if current_user.connections["twitter"]
-      @facebook = true if current_user.connections["facebook"]
-    end
-
-
     # Create an empty note for the note sidebar widget
     @note = Note.new
 
     # Set up user specific stuff
-    if current_auth
-      @highlight_colors = current_user.highlight_colors
-    else
-      @highlight_colors = User.highlight_colors
-    end
+    @highlight_colors = User.highlight_colors
     
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
     @alt_version = Version.find(alt_version(@reference))
