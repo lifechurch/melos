@@ -1,0 +1,22 @@
+%article
+  %h1= t('make a donation')
+  = form_for :sim_transaction, :url => AuthorizeNet::SIM::Transaction::Gateway::TEST do |f|
+    = sim_fields(@sim_transaction)
+    - @tr.each do |k, v|
+      = hidden_field_tag k, v
+
+    %p
+      %strong= "#{t('donate.name')}: "
+      %span= "#{@tr[:x_first_name]} #{@tr[:x_last_name]}"
+      %br
+      %strong= "#{t('users.email address')}: "
+      %span= @tr[:x_email]
+    %p
+      %strong= "#{t('donate.amount')}: "
+      %span= "$#{@tr[:x_amount]}"
+      %br
+      %strong= "#{t('donate.card number')}: "
+      %span=  @tr[:x_card_num][-4, 4]
+
+      = f.submit 'Purchase'
+
