@@ -1,7 +1,7 @@
 %article
   %h1= t('make a donation')
   %p= t('donate.header confirm copy')
-  = form_for :sim_transaction, :url => AuthorizeNet::SIM::Transaction::Gateway::TEST do |f|
+  = form_for :sim_transaction, :url => "https://secure.authorize.net/gateway/transact.dll" do |f|
     = sim_fields(@sim_transaction)
     - @tr.each do |k, v|
       = hidden_field_tag k, v

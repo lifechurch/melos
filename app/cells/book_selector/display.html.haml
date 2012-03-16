@@ -9,13 +9,10 @@
     .scroll
       %ul
         - @version.books.each do |k, v|
-          %li{class: k == @reference[:book] ? "li_active" : ""}
-            %a{:href => bible_path(@reference.merge(book: k)), "data-book" => k, "data-version" => @version.osis, "data-chapters" => @version.books[k].chapters}=  v.human
+          %li
+            %a{:href => '#', "data-book" => k, "data-version" => @version.osis, "data-chapters" => @version.books[k].chapters}=  v.human
   #menu_chapter
     %header
       =t("chapter")
     .scroll
-      %ol#chapter_selector{class: @reference[:book]}
-        - if @version.books[@reference[:book]]
-          - @version.books[@reference[:book]].chapter.each do |k, v|
-            %li= link_to(k, (bible_path(@reference.merge(chapter: k))), :class => 'spinner_trigger')
+      %ol#chapter_selector

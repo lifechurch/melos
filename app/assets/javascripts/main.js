@@ -491,6 +491,8 @@ var YV = (function($, window, document, undefined) {
         var all_items = trigger.parent('li');
         var all_menus = $('.dynamic_menu');
         var li_class = 'li_active';
+        var cur_book = $('.main_reader article').data('book');
+        var cur_chapter = $('.main_reader article').data('chapter');
 
         function hide_all_menus() {
           all_items.removeClass(li_class);
@@ -544,6 +546,34 @@ var YV = (function($, window, document, undefined) {
             $(".spinner_wrapper").fadeIn(200);
         });
 
+        function populate_chapter_list(book_a_el){
+          var ol = book_a_el.closest('.dynamic_menu').find('ol:first');
+          var chapters = parseInt(book_a_el.data('chapters'), 10) + 1;
+          var book = book_a_el.data('book');
+          var version = book_a_el.data('version');
+          var li = book_a_el.closest('li');
+          var list = '';
+          
+          for (var i = 1; i < chapters; i++) {
+            list += '<li class="' + (book == cur_book && i == cur_chapter ? li_class : '') + '"><a href="/bible/' + book + '.' + i + '.' + version + '">' + i + '</a></li>';
+          }
+
+          li.addClass(li_class).siblings().removeClass(li_class);
+          ol.html(list);
+        }
+
+        //select initial book and populate chapter list
+        $('#menu_book_chapter #menu_book li').each(function(index) {
+          var li = $(this);
+          var a = $(this).find('a');
+
+          if (a.data('book') == cur_book){
+            li.addClass(li_class).siblings().removeClass(li_class);
+            li.closest('#menu_book').data('selected-book-num', index + 1);
+            populate_chapter_list(a);
+          }
+        });
+
         trigger.click(function(ev) {
           ev.preventDefault();
           ev.stopPropagation();
@@ -589,6 +619,11 @@ var YV = (function($, window, document, undefined) {
               menu.css({
                 left: left
               }).show();
+              
+              if(menu.attr('id') == 'menu_book_chapter'){
+               var index = menu.find('#menu_book').data('selected-book-num');
+               menu.find('.scroll').first().scrollTop((index - 1) * (menu.find('li').height() + 1)); //TODO: why are 1st and last elements 1px shorter than the rest??
+              }
             }
             else{
               menu.show();
@@ -600,22 +635,10 @@ var YV = (function($, window, document, undefined) {
 
           el.blur();
         });
-
+        
+        //show chapters when users clicks a book
         $('#menu_book').delegate('a', 'click', function() {
-          var el = $(this);
-          var ol = el.closest('.dynamic_menu').find('ol:first');
-          var chapters = parseInt(el.data('chapters'), 10) + 1;
-          var book = el.data('book');
-          var version = el.data('version');
-          var li = el.closest('li');
-          var list = '';
-
-          for (var i = 1; i < chapters; i++) {
-            list += '<li><a href="/bible/' + book + '.' + i + '.' + version + '">' + i + '</a></li>';
-          }
-
-          li.addClass(li_class).siblings().removeClass(li_class);
-          ol.html(list);
+          populate_chapter_list($(this));
 
           this.blur();
           return false;
@@ -1273,10 +1296,15 @@ var YV = (function($, window, document, undefined) {
 
           if (osis){
             var recent = getCookie('recent_versions');
-            if (recent == null) recent = "";
-            recent = recent.split('/');
-            var exits = recent.indexOf(osis);
-            if(exits != -1) recent.splice(exits, 1);
+            if (recent == null){
+              recent = [];
+            }else {   //extra caution here because of IE bug with .indexOf on empty array
+              //buble up the version just picked if it was already in list
+              recent = recent.split('/');
+              var exists = recent.indexOf(osis);
+              if(exists != -1) recent.splice(exists, 1);
+            }
+
             recent.unshift(osis);
             recent_str = recent.splice(0,5).join('/');
             setCookie('recent_versions', recent_str);
