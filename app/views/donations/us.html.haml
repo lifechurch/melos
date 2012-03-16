@@ -11,8 +11,9 @@
       %br
       = text_field_tag 'tr[x_email]'
     %p
-      = check_box_tag 'tr[x_email_customer]', "yes", true
-      = label_tag 'tr[x_email_customer]', t('donate.receipt')
+      %div{style: "position: relative; left: -6px"}
+        = check_box_tag 'tr[x_email_customer]', "yes", true
+        = label_tag 'tr[x_email_customer]', t('donate.receipt')
     %hr
     %p
       = label_tag 'tr[x_amount]', t('donate.amount')
