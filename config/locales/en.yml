@@ -8,7 +8,7 @@ en:
   about title:                                  "About YouVersion"
   make a donation:                              "Make a Donation"
   thanks for your donation:                     "Thanks for your donation!"
-  thanks authorization:                         "Thanks for your gift! Your authorization code is %{code}."
+  thanks authorization:                         "If you requested a receipt, it will be in your inbox shortly."
   donation error:                               "We're sorry, but something went wrong with your donation. The error was: %{error_text}"
   created ago:                                  "Created %{time_ago} ago"
   copy:                                         "Copy"
