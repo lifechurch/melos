@@ -1,8 +1,8 @@
 YouversionWeb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
-    [u, p] == ['youversion', 'yv123']
-  end
+  # config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
+  #   [u, p] == ['youversion', 'yv123']
+  # end
   # In the development environment your application's code is reloaded on
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
