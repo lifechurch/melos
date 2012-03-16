@@ -9,7 +9,7 @@ en:
   make a donation:                              "Make a Donation"
   thanks for your donation:                     "Thanks for your donation!"
   thanks authorization:                         "Thanks for your gift! Your authorization code is %{code}."
-  donation error:                               "We're sorry, but something went wrong with your donation. Please try again."
+  donation error:                               "We're sorry, but something went wrong with your donation. The error was: %{error_text}"
   created ago:                                  "Created %{time_ago} ago"
   copy:                                         "Copy"
   copy confirmed:                               "Copied!"
