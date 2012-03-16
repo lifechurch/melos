@@ -1,6 +1,6 @@
 default:
   api_login_id: 3tN29dNh
-  api_transaction_key: foo
+  api_transaction_key: 4qma572f27XLR6eE
   merchant_hash_value: 3tN29dNh
 
 development: 
