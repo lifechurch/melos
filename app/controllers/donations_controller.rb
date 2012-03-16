@@ -27,7 +27,7 @@ class DonationsController < ApplicationController
   # Returns relay response when Authorize.Net POSTs to us.
   def relay_response
     if params[:x_response_code].to_i == 1
-      render :text => sim_response.direct_post_reply(donations_receipt_url(:only_path => false), :include => true)
+      redirect_to donations_receipt_url(:only_path => false)
     else
       @error_text = params[:x_response_reason_text]
       render
