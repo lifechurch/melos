@@ -493,6 +493,8 @@ en:
     preview:                                    "Preview Donation"
     header copy:                                "Donate copy. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. *NC*"
     header confirm copy:                        "Donate copy. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. *NC*"
+    email header:                               "Email header copy"
+    email footer:                               "Email footer copy"
   download ad:
     title:                                      "Download the Free Bible App"
     line 1:                                     "Hundreds of versions in many"

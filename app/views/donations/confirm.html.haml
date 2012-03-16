@@ -5,6 +5,8 @@
     = sim_fields(@sim_transaction)
     - @tr.each do |k, v|
       = hidden_field_tag k, v
+    = hidden_field_tag :x_email_header_receipt, t('donate.email header')
+    = hidden_field_tag :x_email_footer_receipt, t('donate.email footer')
 
     %p
       %strong= "#{t('donate.name')}: "
