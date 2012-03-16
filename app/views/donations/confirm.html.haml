@@ -5,8 +5,8 @@
     = sim_fields(@sim_transaction)
     - @tr.each do |k, v|
       = hidden_field_tag k, v
-    = hidden_field_tag :x_email_header_receipt, t('donate.email header')
-    = hidden_field_tag :x_email_footer_receipt, t('donate.email footer')
+    = hidden_field_tag :x_header_email_receipt, t('donate.email header')
+    = hidden_field_tag :x_footer_email_receipt, t('donate.email footer')
 
     %p
       %strong= "#{t('donate.name')}: "
@@ -19,7 +19,7 @@
       %span= "$#{@tr[:x_amount]}"
       %br
       %strong= "#{t('donate.card number')}: "
-      %span=  @tr[:x_card_num][-4, 4]
+      %span=  "XXXX-XXXX-XXXX-#{@tr[:x_card_num][-4, 4]}"
       %br
       %strong= "#{t('donate.card exp date')}: "
       %span=  @tr[:x_exp_date]
