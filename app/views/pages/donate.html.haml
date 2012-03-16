@@ -27,8 +27,11 @@
 %article.donate
   %h1.float_left= t('donate.headline')
   #donate_now_wrap
-    %a.action_button_green{:href => @donate_link}
-      %span.icon_arrow= t('donate.donate now')
+    #donate_us_wrap
+      %a.action_button_green{:href => @us_donate_link}
+        %span.icon_arrow= t('donate.donate now')
+    %a.intl{:href => @intl_donate_link}
+      %span.icon_arrow= t('donate.donate now intl')
     - # %a{:href => '#'}= image_tag '/images/donate_with_paypal.png'
   %hr
   %p.narrow.callout.gutter_bottom_half= t('donate.subhead')
