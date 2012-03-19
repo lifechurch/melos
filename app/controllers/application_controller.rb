@@ -64,15 +64,15 @@ class ApplicationController < ActionController::Base
   end
   def timeout_error(ex)
     @error = ex
-    render "pages/api_timeout", template: 'layouts/application', :status => 408
+    render "pages/api_timeout", layout: 'application', :status => 408
   end
   def api_error(ex)
     @error = ex
-    render "pages/generic_error", template: 'layouts/application', :status => 502
+    render "pages/generic_error", layout: 'application', :status => 502
   end
   def generic_error(ex)
     @error = ex
-    render "pages/generic_error", template: 'layouts/application', :status => 500
+    render "pages/generic_error", layout: 'application', :status => 500
   end
   def force_login(opts = {})
     if current_auth.nil?
