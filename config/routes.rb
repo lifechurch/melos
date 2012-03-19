@@ -96,7 +96,7 @@ YouversionWeb::Application.routes.draw do
   match 'press' => 'pages#press'
   match 'l10n' => 'pages#l10n'
   match 'status' => 'pages#status'
-  match 'sleep/:time' => 'pages#sleep_me'
+  #  match 'sleep/:time' => 'pages#sleep_me'
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
   match 'friends' => 'users#following'
   match 'bookmarks' => 'users#bookmarks'
