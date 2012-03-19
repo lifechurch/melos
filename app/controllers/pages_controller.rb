@@ -15,4 +15,8 @@ class PagesController < ApplicationController
   end
   
   def status; end
+  def sleep_me
+    sleep(params[:time].to_i)
+    render text: "I'm awake now"
+  end
 end
