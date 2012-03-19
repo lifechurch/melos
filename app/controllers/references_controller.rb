@@ -1,6 +1,6 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
-  rescue_from NotAChapterError, with: :ref_not_found
+  rescue_from InvalidReferenceError, with: :ref_not_found
   
   def show
     # Set HTML classes for full screen/parallel
@@ -83,7 +83,6 @@ class ReferencesController < ApplicationController
   
   protected
     def ref_not_found(ex)
-
       if ex.is_a? BadSecondaryVersionError
         @bad_secondary = true
         @alt_version = Version.find(cookies[:alt_version])
@@ -91,13 +90,14 @@ class ReferencesController < ApplicationController
         return render :show
       end
       
-      #force to be in non-parallel/fullscreen mode
+      #force to be in non-parallel/fullscreen mode for Ref_not_found
       @html_classes.delete "full_screen" and cookies[:full_screen] = nil
       @html_classes.delete "parallel_mode" and cookies[:parallel_mode] = nil
-
-      osis_hash = params[:reference].to_osis_hash
-      @alt_reference = @reference = Reference.new(osis_hash.except(:version))
-      @version = Version.find(osis_hash[:version])
+      debugger
+      osis_hash = params[:reference].to_osis_hash rescue nil
+      @alt_reference = @reference = Reference.new(osis_hash.except(:version)) rescue Reference.new("john.1")
+      @version = Version.find(osis_hash[:version]) rescue Version.find(Version.default_for(I18n.locale))
+      @alt_version ||= @version
       render :invalid_ref, status: 404
     end
 end

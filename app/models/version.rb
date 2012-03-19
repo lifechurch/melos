@@ -18,7 +18,9 @@ class Version
   end
 
   def self.find(version)
-    versions[version]
+    raise NotAVersionError if (ver = versions[version]).nil?
+    
+    ver
   end
 
   def self.languages
@@ -94,7 +96,7 @@ class Version
   end
 
   def self.default_for(lang)
-    versions_api_data.defaults.to_hash[lang]
+    versions_api_data.defaults.to_hash[lang.to_s]
   end
   
   def self.sample_for(lang, opts={})
