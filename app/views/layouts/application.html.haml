@@ -34,7 +34,7 @@
       = render '/shared/menu_bookmark' unless @share_menu == false
       = render '/shared/menu_settings'
       = render '/shared/menu_audio_player'
-      = render '/shared/modal_single_verse'
-      = render '/shared/modal_share_verse'
+      = render '/shared/modal_single_verse' unless @verse_modals == false
+      = render '/shared/modal_share_verse' unless @verse_modals == false
 
     = render '/shared/javascripts'
