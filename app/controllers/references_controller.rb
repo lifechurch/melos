@@ -14,7 +14,7 @@ class ReferencesController < ApplicationController
     # Redirect if it's anything other than book.chapter.version, ignoring verses for now
     if !params[:reference]
       flash.keep
-      return redirect_to bible_path(last_read || Reference.new(book: "gen", chapter: "1", version: current_version))
+      return redirect_to bible_path(last_read || Reference.new(book: "john", chapter: "1", version: current_version))
       #TODO: What if gen.1 doesn't exist for current_version? OK with 'this doesn't exist, select another' view?
     else
       ref_hash = params[:reference].to_osis_hash rescue not_found
@@ -84,20 +84,22 @@ class ReferencesController < ApplicationController
   protected
     def ref_not_found(ex)
       if ex.is_a? BadSecondaryVersionError
-        @bad_secondary = true
         @alt_version = Version.find(cookies[:alt_version])
         @alt_reference = Hashie::Mash.new({contents: ["<h1>#{t('ref.invalid chapter title')}</h1>","<p>#{t('ref.invalid chapter text')}</p>"]})
-        return render :show
+        return render :show if @reference.valid?
       end
       
       #force to be in non-parallel/fullscreen mode for Ref_not_found
       @html_classes.delete "full_screen" and cookies[:full_screen] = nil
       @html_classes.delete "parallel_mode" and cookies[:parallel_mode] = nil
-      debugger
+      
       osis_hash = params[:reference].to_osis_hash rescue nil
-      @alt_reference = @reference = Reference.new(osis_hash.except(:version)) rescue Reference.new("john.1")
+      @alt_reference = @reference = Reference.new(osis_hash.except(:version)) rescue nil
+      @alt_reference = @reference = Reference.new(book: "john", chapter: "1") if @reference.nil? || !@reference.valid?
+      
       @version = Version.find(osis_hash[:version]) rescue Version.find(Version.default_for(I18n.locale))
       @alt_version ||= @version
+
       render :invalid_ref, status: 404
     end
 end

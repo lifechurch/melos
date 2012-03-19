@@ -229,6 +229,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    rack-timeout (0.0.3)
     rails (3.1.2)
       actionmailer (= 3.1.2)
       actionpack (= 3.1.2)
@@ -361,6 +362,7 @@ DEPENDENCIES
   pry
   rack-mobile-detect
   rack-rewrite (~> 1.2.1)
+  rack-timeout
   rails (= 3.1.2)
   routing-filter
   rspec-cells

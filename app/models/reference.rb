@@ -215,6 +215,10 @@ class Reference
   def is_chapter?
     @ref[:verse].nil?
   end
+  
+  def valid?
+    ref_string.is_a?(String) rescue false
+  end
   private
 
   def api_data(opts ={})
