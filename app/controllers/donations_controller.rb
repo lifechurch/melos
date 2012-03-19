@@ -12,9 +12,6 @@ class DonationsController < ApplicationController
   def confirm
     @tr = params[:tr]
     @tr[:x_first_name], @tr[:x_last_name] = @tr[:x_name].split(" ", 2)
-    @month = (params[:date][:month].length < 2) ? "0#{params[:date][:month]}" : "#{params[:date][:month]}"
-    @year = params[:date][:year].gsub(/^20/, "")
-    @tr[:x_exp_date] = "#{@month}#{@year}"
     @amount = @tr[:x_amount]
     @sim_transaction = AuthorizeNet::SIM::Transaction.new(
           AUTHORIZE_NET_CONFIG['api_login_id'],
