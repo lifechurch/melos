@@ -14,7 +14,7 @@ class ReferencesController < ApplicationController
     # Redirect if it's anything other than book.chapter.version, ignoring verses for now
     if !params[:reference]
       flash.keep
-      return redirect_to bible_path(last_read || Reference.new(book: "gen", chapter: "1", version: current_version))
+      return redirect_to bible_path(last_read || Reference.new(book: "john", chapter: "1", version: current_version))
       #TODO: What if gen.1 doesn't exist for current_version? OK with 'this doesn't exist, select another' view?
     else
       ref_hash = params[:reference].to_osis_hash rescue not_found
