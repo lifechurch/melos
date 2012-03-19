@@ -18,14 +18,16 @@
     %p
       %strong= "#{t('donate.amount')}: "
       %span= "$#{@tr[:x_amount]}"
+    %p
+      = label_tag 'x_card_num', t('donate.card number')
       %br
-      %strong= "#{t('donate.card number')}: "
-      %span=  "XXXX-XXXX-XXXX-#{@tr[:x_card_num][-4, 4]}"
+      = text_field_tag 'x_card_num', nil, type: "tel", style: "margin-top: 5px", tabindex: 12
+    %div.float_right{style: 'margin-top: 32px'}
+      %button{class: "action_button_green", tabindex: 36, action: "submit"}
+        = t('donate.donate now button')
+    %p
+      = label_tag 'x_exp_date', t('donate.card exp date')
       %br
-      %strong= "#{t('donate.card exp date')}: "
-      %span=  @tr[:x_exp_date]
-      %div
-        %button{class: "action_button_green", action: "submit"}
-          = t('donate.donate now')
+      = text_field_tag 'x_exp_date', nil, type: "tel", maxlength: 4, tabindex: 24
 
 

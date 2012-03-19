@@ -5,30 +5,20 @@
     %p
       = label_tag 'tr[x_name]', t('donate.name')
       %br
-      = text_field_tag 'tr[x_name]'
+      = text_field_tag 'tr[x_name]', nil, tabindex: 12
     %p
       = label_tag 'tr[x_email]', t('users.email address')
       %br
-      = text_field_tag 'tr[x_email]'
+      = text_field_tag 'tr[x_email]', nil, tabindex: 24
     %p
       %div{style: "position: relative; left: -6px"}
-        = check_box_tag 'tr[x_email_customer]', "yes", true
+        = check_box_tag 'tr[x_email_customer]', "yes", true, tabindex: 36
         = label_tag 'tr[x_email_customer]', t('donate.receipt')
-    %hr
+    %div.float_right{style: "padding-top: 2em; margin-top: 3px"}
+      %button{class: "action_button_green", tabindex: 60, action: "submit"}
+        = t('donate.preview')
     %p
       = label_tag 'tr[x_amount]', t('donate.amount')
       %br
       %span{style: "display: inline-block; margin-right: -1em; top: 4px; left: 4px; position: relative; z-index: 2"} $
-      = text_field_tag 'tr[x_amount]', nil, type: "tel", value: "10.00", style: "padding-left: 14px; margin-top: 5px"
-    %p
-      = label_tag 'tr[x_card_num]', t('donate.card number')
-      %br
-      = text_field_tag 'tr[x_card_num]', nil, type: "tel", style: "margin-top: 5px"
-    %div.float_right{style: "padding-top: 2em; margin-top: 3px"}
-      %button{class: "action_button_green", action: "submit"}
-        = t('donate.preview')
-    %p
-      = label_tag 'tr[x_exp_date]', t('donate.card exp date')
-      %br
-      = select_month Time.now + 1.month, {use_month_numbers: true}, {style: "margin-top: 5px;"}
-      = select_year Time.now + 1.month, {start_year: Time.now.year, end_year: Time.now.year+10}, {style: "margin-top: 5px;"}
+      = text_field_tag 'tr[x_amount]', nil, type: "tel", value: "10.00", style: "padding-left: 14px; margin-top: 5px", tabindex: 48
