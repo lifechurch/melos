@@ -89,6 +89,9 @@ class ReferencesController < ApplicationController
         return render :show if @reference.valid?
       end
       
+      #we don't need to report these types of 404's as long as we have the right redirects.
+      #report_exception(ex)
+      
       #force to be in non-parallel/fullscreen mode for Ref_not_found
       @html_classes.delete "full_screen" and cookies[:full_screen] = nil
       @html_classes.delete "parallel_mode" and cookies[:parallel_mode] = nil

@@ -27,6 +27,16 @@ module ApplicationHelper
   def convert_to_brightness_value(hex_color)
       (hex_color.scan(/../).map {|color| color.hex}).sum
   end
+  
+  def report_exception(exception)
+      #This is only necessarry in the case of an exception handled by rescue_from, as they are swallowed.
+      #This may not be needed in the future if Exceptional adds support for the rescue_from.
+      if Exceptional::Remote.error(Exceptional::ExceptionData.new(exception))
+        Rails.logger.info "Exceptional: #{exception.class} has been reported to Exceptional"
+      else
+        Rails.logger.error "Exceptional: Problem sending exception. Check your API key."
+      end
+  end
 
   def is_dark?(hex_color)
     convert_to_brightness_value(hex_color) <= 382.5 #halfway between black (0+0+0 = 0) and white (255+255+255 = 765)
