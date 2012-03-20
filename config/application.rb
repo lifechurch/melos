@@ -65,6 +65,8 @@ module YouversionWeb
       
       ### Mobile Downloads
       r301 '/download', '/mobile'
+      r301 '/descargar', '/mobile'
+      r301 '/app', '/mobile'
       
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
