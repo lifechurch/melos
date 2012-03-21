@@ -47,11 +47,14 @@ class Subscription < Plan
     end
     
     case plan
+     when /^(\d+)[-](.+)/
+        # format 1234-plan-slug
+      opts[:id] = plan.match(/^(\d+)[-](.+)/)[1].to_i
     when Fixnum, /\A[\d]+\z/
       opts[:id] = plan.to_i
     when Plan, Subscription
       opts[:id] = plan.id.to_i
-    when String
+    else
       opts[:id] = Plan.find(plan).id
     end
 

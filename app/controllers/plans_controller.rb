@@ -16,7 +16,7 @@ class PlansController < ApplicationController
   end
 
   def show
-    @subscription = current_user.subscription(params[:id]) if current_user
+    @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth) if current_auth
     
     # Get user font and size settings
     @font = cookies['data-setting-font']
@@ -47,8 +47,7 @@ class PlansController < ApplicationController
   end
   
   def update
-    
-    if @subscription = current_user.subscription(params[:id])
+    if @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
       @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
 
       redirect_to plan_path(content: params[:content_target], day: params[:day_target], version: params[:version])

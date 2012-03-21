@@ -13,7 +13,7 @@
         %dd
           = link_to t("plans.month"), plan_calendar_path(@subscription)
     - else
-      - if current_user
+      - if current_auth
         %div= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.to_param), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
       - else 
         %div= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
