@@ -59,6 +59,8 @@ module YouversionWeb
       r301 %r{/reading-plans/category/(\w+)/(\w+)}, '/reading-plans?category=$1.$2'
       r301 %r{/reading-plans/category/(\w+)}, '/reading-plans?category=$1'
       r301 %r{/reading-plans/([\w-]+)/(\d+)}, '/reading-plans/$1?day=$2'
+      #Temporary for ACE fix on 3-21
+      r301 '/reading-plans/prayer', '/reading-plans/55-prayer'
 
       ### USER
       r301 '/forgot', '/settings/forgot_password'
