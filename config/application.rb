@@ -66,9 +66,9 @@ module YouversionWeb
       r301 '/forgot', '/settings/forgot_password'
       
       ### Mobile Downloads
-      r301 %r{(/.+)?(/download)}, '$1/mobile'
+      r301 %r{^(/.{2,5})?(/download$)}, '$1/mobile'
       r301 '/descargar', '/es/download'
-      r301 %r{(/.+)?(/app)}, '$1/download'
+      r301 %r{^(/.{2,5})?(/app$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
       
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
