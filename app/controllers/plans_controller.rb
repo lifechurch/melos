@@ -58,7 +58,7 @@ class PlansController < ApplicationController
   end
   
   def start    
-    if @subscription = current_user.subscription(params[:plan_id])
+    if @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
       redirect_to plan_path(params[:plan_id]), notice: t("plans.already subscribed") and return
     end
     
@@ -68,7 +68,7 @@ class PlansController < ApplicationController
   end
   
   def settings
-    @subscription = current_user.subscription(params[:plan_id])
+    @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
     
     raise "you can't view a plan's settings unless you're subscribed" if @subscription.nil?
     
@@ -124,7 +124,7 @@ class PlansController < ApplicationController
   end
   
   def calendar
-    @subscription = current_user.subscription(params[:plan_id])
+    @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
 
     raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil? 
   end
