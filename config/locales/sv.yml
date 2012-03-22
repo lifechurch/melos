@@ -1,5 +1,5 @@
 ---
-sv:
+en:
   link:                                         "Länk"
   site search:                                  "YouVersion-sök"
   auth error:                                   "Det var ett problem med ditt användarnamn eller lösenord. Logga in på YouVersion för att fortsätta."
@@ -330,7 +330,7 @@ sv:
       new password:                             "Nytt lösenord"
       confirm password:                         "Bekräfta lösenord"
       avatar file:                              "Välj en fil för din bild"
-      avatar help:                              "Bilder kan vara i JPG-, PNG- eller GIF-format. Din bild kommer att konverteras till en 48x48 miniatyr. Maximal filstorlek är 1 MB."
+      avatar help:                              "Bilder kan vara i JPG-, PNG- eller GIF-format. Din bild kommer att konverteras till en miniatyr på 48x48. Maximal filstorlek är 1 MB."
       updated picture:                          "Du har uppdaterat din bild."
       updated notifications:                    "Du har uppdaterat dina meddelandeinställningar."
       notification errors:                      "Följande fel förhindrade dig att uppdatera dina meddelanden:"
