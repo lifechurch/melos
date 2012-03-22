@@ -170,6 +170,7 @@ en:
     select another chapter:                     "Choisir un autre chapitre"
     view in reader:                             "Voir%{reference} dans le lecteur"
   users:
+    no connection friends:                      ""
     creation form errors:                       "L'erreur (les erreurs) suivante(s) empêche(nt) la création de votre compte:"
     profile form errors:                        "L'erreur (les erreurs) suivante(s) empêche(nt) la création de votre profil:"
     email address:                              "Adresse Email :"
@@ -239,7 +240,7 @@ en:
       your information title:                   "L'information que vous fournissez"
       your information text:                    ""
       device id title:                          "Numéro UDID"
-      device id text:                           Lorsque vous accédez à la Bible App de YouVersion, nous pouvons récupérer votre numéro de série ("UDID") ou adresse IP. Nous les utilisons afin de vous apporter une expérience sur-mesure. L'UDID est recensée à des fins statistiques, pour l'analyse de données et aussi pour communiquer plus efficacement avec vous. Nous pourrons associer votre UDID avec des informations tierces dans le but d'optimiser votre expérience avec nous et améliorer notre qualité de service. nous ne partageons aucune donnée personnelle relative à votre UDID avec  des tiers.  
+      device id text:                           "Lorsque vous accédez à la Bible App de YouVersion, nous pouvons récupérer votre numéro de série (\"UDID\") ou adresse IP. Nous les utilisons afin de vous apporter une expérience sur-mesure. L'UDID est recensée à des fins statistiques, pour l'analyse de données et aussi pour communiquer plus efficacement avec vous. Nous pourrons associer votre UDID avec des informations tierces dans le but d'optimiser votre expérience avec nous et améliorer notre qualité de service. nous ne partageons aucune donnée personnelle relative à votre UDID avec  des tiers."  
       cookies title:                            "Cookies LifeChurch.tv"
       cookies text:                             ""   
       log title:                                ""
@@ -366,6 +367,7 @@ en:
     user badges:                                "Les badges de %{user}"
   plans:
     title:                                      "Les plans de lecture"
+    browse by category:                         ""
     browse plans:                               "Parcourir les plans de %{category}"
     all:                                        "Tous"
     all plans:                                  "Tous les plans"
@@ -424,7 +426,7 @@ en:
     search members:                             "Rechercher"
     email_on:                                   "Activer l'envoi automatique"
     email_off:                                  "Désactiver l'envoi automatique"
-    email delivery text:                        Veuillez activer l'option d'envoi d'Email si vous souhaitez recevoir votre lecture quotidienne directement dans  votre boîte de réception. Sélectionnez le moment de la journée qui vous convient le mieux pour recevoir l'Email, ainsi que la version de la Bible qui vous correspond.
+    email delivery text:                        "Veuillez activer l'option d'envoi d'Email si vous souhaitez recevoir votre lecture quotidienne directement dans  votre boîte de réception. Sélectionnez le moment de la journée qui vous convient le mieux pour recevoir l'Email, ainsi que la version de la Bible qui vous correspond."
     email delivery:                             "Envoi d'email"
     morning:                                    "Matin"
     afternoon:                                  "Après-midi"
@@ -477,16 +479,28 @@ en:
     all versions:                               "Toutes les traductions en %{language_name}"
   donate:
     donate now:                                 "Faire un don maintenant"
+    donate now intl:                            ""
     promo 1:                                    "Pour chaque dollar donné,10 personnes supplémentaires auront accès à la Bible sur leur téléphone portable."
     promo 2:                                    "Avec YouVersion, la Bible est toujours à portée de main. Regardez notre vidéo."
     promo 3:                                    "Cette année, plus de 5 milliards de personnes utiliseront un téléphone portable. Faire un don maintenant."
     headline:                                   Tout le monde a besoin de la Parole de Dieu.
     subhead:                                    "Permettez à des millions de personnes sur la planète de manipuler la Bible du bout des doigts."
     copy:                                       "Imaginez-vous en train d'offrir une Bible à chaque personne sur terre. Eh bien, faire un don à YouVersion équivaut à ça. Nous vivons à une époque dont d'autres n'ont fait que rêver; où quiconque avec un téléphone a accès à la Bible pour expérimenter l'histoire d'amour de Dieu pour nous. Grâce à votre soutien, nous permettrons à beaucoup plus de personnes de passer plus de temps dans les Écritures."
+    amount:                                     ""
+    name:                                       ""
+    card number:                                ""
+    card exp date:                              ""
+    receipt:                                    ""
+    preview:                                    ""
+    header copy:                                ""
+    header confirm copy:                        ""
+    donate now button:                          ""
+    email header:                               ""
+    email footer:                               ""
   download ad:
     title:                                      "Télécharger la Bible App gratuite"
     line 1:                                     "Des centaines de traductions dans"
-    line 2:                                     Différentes langues - la Bible qui
+    line 2:                                     "Différentes langues - la Bible qui"
     line 3:                                     "vous suit partout"
     download:                                   "Télécharger maintenant"
   about page:
@@ -539,7 +553,7 @@ en:
     t2:                                         "Super application !"
     t2 copy:                                    "Cette app m'aide à rester organisé et à lire la Parole de Dieu chaque jour. Elle est simple d'utilisation et offre de nombreuses fonctionnalités. J'en suis fan !"
     t3:                                         "Superbe app."
-    t3 copy:                                    Super application, avec un large choix de traductions. Les bibles audios sont aussi formidables et faciles à comprendre.
+    t3 copy:                                    "Super application, avec un large choix de traductions. Les bibles audios sont aussi formidables et faciles à comprendre."
     iphone ipad:                                "Iphone/Ipad"
     android:                                    "Android"
     blackberry:                                 "BlackBerry"

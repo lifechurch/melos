@@ -170,6 +170,7 @@ en:
     select another chapter:                     "选择另外的章节"
     view in reader:                             "在阅读版面查看%{reference}"
   users:
+    no connection friends:                      ""
     creation form errors:                       "以下错误阻止您创建帐号："
     profile form errors:                        "以下错误阻止您更新个人资料:"
     email address:                              "电子邮件地址"
@@ -239,7 +240,7 @@ en:
       your information title:                   "您提供的信息"
       your information text:                    "当您注册YouVersion 的帐户，或者其他 LifeChurch.tv 的服务或任何需要注册的活动的时候，我们会向您询问您的个人资料（包括您的姓名，邮件地址和一个帐户密码）。我们会把您申请帐户时提交的资料与LifeChurch.tv 其他服务项目或者第三方所提供的信息合并，以便我们能够向您提供更好的服务并提高我们服务的质量。对于某些服务，我们会允许您决定是否合并这些信息。"
       device id title:                          "唯一设备身份"
-      device id text:                           当您使用YouVersion圣经软件时，我们可以获取您的唯一设备身份（“UDID”）和/或IP地址。通过您的UDID，我们可以为您提供量身定做的服务。获取UDID信息是为了统计使用我们的服务或部分服务的设备总数，跟踪使用总量，分析数据，以及更有效地与您沟通。我们可以把您的UDID和第三方信息结合起来，让您获得更佳体验，提升我们的服务。我们不会与第三方共享与您的UDID相关的个人信息。  
+      device id text:                           "当您使用YouVersion圣经软件时，我们可以获取您的唯一设备身份（“UDID”）和/或IP地址。通过您的UDID，我们可以为您提供量身定做的服务。获取UDID信息是为了统计使用我们的服务或部分服务的设备总数，跟踪使用总量，分析数据，以及更有效地与您沟通。我们可以把您的UDID和第三方信息结合起来，让您获得更佳体验，提升我们的服务。我们不会与第三方共享与您的UDID相关的个人信息。"  
       cookies title:                            "Lifechurch.tv 网站的 cookies"
       cookies text:                             "当您访问%{link}时，我们可以发送一个或多个cookie到您的电脑，这样我们就能识别您的浏览器。（Cookie就是一种小型文档，包含一连串的字符。）接受我们的cookie可以使浏览器在您浏览不同网页的时候记忆您的用户偏好。虽然大多数浏览器默认接受cookie，但您可以设置浏览器拒绝所有cookie，或提醒您正在接收cookie。如果您关闭了cookie的接收，YouVersion的部分功能和服务将无法正常进行。"   
       log title:                                "日志信息"
@@ -366,6 +367,7 @@ en:
     user badges:                                "%{user}的徽章"
   plans:
     title:                                      "读经计划"
+    browse by category:                         ""
     browse plans:                               "浏览%{category}计划"
     all:                                        "全部"
     all plans:                                  "全部读经计划"
@@ -424,7 +426,7 @@ en:
     search members:                             "搜索"
     email_on:                                   "开启邮件投递服务"
     email_off:                                  "关闭邮件投递服务"
-    email delivery text:                        如果您希望在收件箱中收到每日读经计划内容，请开启邮件寄送。选择你愿意收到邮件的时间和您最适用的圣经版本。
+    email delivery text:                        "如果您希望在收件箱中收到每日读经计划内容，请开启邮件寄送。选择你愿意收到邮件的时间和您最适用的圣经版本。"
     email delivery:                             "电子邮件投递"
     morning:                                    "早上"
     afternoon:                                  "下午"
@@ -477,16 +479,28 @@ en:
     all versions:                               "所有%{language_name}版本"
   donate:
     donate now:                                 "现在就捐赠"
+    donate now intl:                            ""
     promo 1:                                    "您每捐出一美元，就能多十个人在他/她们的手机上阅读圣经。"
     promo 2:                                    "有了YouVersion，圣经始终在您身边。观看我们的录像。"
     promo 3:                                    "今年将有50亿人使用手机。现在就捐献！"
     headline:                                   所有人都需要上帝的话语。
     subhead:                                    "帮助世界各地的人，让他们可以随时获得圣经"
     copy:                                       "想象一下如果您能够给世界上的每一个人一本免费的圣经。当您捐献给YouVersion 的时候，您就做到了。我们活在一个别人只能想象的时代 &ndash; 每个有手机的人都能够读到圣经并且经历上帝对我们的爱。有您的支持，我们将继续帮助更多的人花更多时间读经。"
+    amount:                                     ""
+    name:                                       ""
+    card number:                                ""
+    card exp date:                              ""
+    receipt:                                    ""
+    preview:                                    ""
+    header copy:                                ""
+    header confirm copy:                        ""
+    donate now button:                          ""
+    email header:                               ""
+    email footer:                               ""
   download ad:
     title:                                      "免费下载圣经软件"
     line 1:                                     "几百种不同版本的选择"
-    line 2:                                     几十种不同语言的译本
+    line 2:                                     "几十种不同语言的译本"
     line 3:                                     "让圣经随时随地陪伴您！"
     download:                                   "点击下载圣经软件"
   about page:
@@ -539,7 +553,7 @@ en:
     t2:                                         "很好的程序！"
     t2 copy:                                    "这款圣经应用软件可以帮助您每天阅读和整理神的话语。非常简易地就可以上手使用很多功能...您会喜欢上它的！"
     t3:                                         "超赞的圣经应用软件。"
-    t3 copy:                                    超赞的圣经应用软件可以大范围地选择圣经...语言版本的圣经更是简易可用。
+    t3 copy:                                    "超赞的圣经应用软件可以大范围地选择圣经...语言版本的圣经更是简易可用。"
     iphone ipad:                                "iPhone/iPad"
     android:                                    "安卓"
     blackberry:                                 "黑莓手机"

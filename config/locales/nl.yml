@@ -170,6 +170,7 @@ en:
     select another chapter:                     "Kies een ander Hoofdstuk"
     view in reader:                             "Bekijk %{reference} in Lezer"
   users:
+    no connection friends:                      ""
     creation form errors:                       "De volgende fout(en) voorkomen dat je een account kan aanmaken:"
     profile form errors:                        "De volgende fout(en) voorkomen dat je jouw profiel kan updaten:"
     email address:                              "E-mail adres"
@@ -239,7 +240,7 @@ en:
       your information title:                   "Informatie die je beschikbaar stelt"
       your information text:                    "Wanneer je je aanmeldt voor een YouVersion account, of een andere service of aanbieding van LifeChurch.tv die registratie vereist, vragen we je om persoonlijke informatie (zoals je naam, e-mail adres en wachtwoord). Wij kunnen de informatie die jij ons geeft met betrekking tot je account, combineren met informatie van andere LifeChurch.tv diensten of derden die je kunnen voorzien van een betere ervaring en die de kwaliteit van onze diensten kunnen verbeteren. Voor bepaalde diensten kan je weigeren dat wij je informatie gebruiken."
       device id title:                          "Uniek Toestel ID"
-      device id text:                           Wanneer je toegang hebt tot de YouVersion Bijbel Application, verkrijgen wij je Uniek Toestel ID ("UDID") en/of IP adres. We gebruiken je UDID om de gebruikservaring op jou af te stellen. De UDID informatie wordt verzameld om het totaal aantal te bepalen van de toestellen die gebruik maken van onze diensten, of delen van onze diensten. Wij analyseren de gebruikersdata om beter met je te communiceren. Wij kunnen je UDID informatie combineren met derden om je te voorzien van een betere ervaring en om de kwaliteit van onze diensten te verbeteren. Wij delen geen persoonlijke identificeerbare informatie met derden in verband met je UDID.  
+      device id text:                           "Wanneer je toegang hebt tot de YouVersion Bijbel Application, verkrijgen wij je Uniek Toestel ID (\"UDID\") en/of IP adres. We gebruiken je UDID om de gebruikservaring op jou af te stellen. De UDID informatie wordt verzameld om het totaal aantal te bepalen van de toestellen die gebruik maken van onze diensten, of delen van onze diensten. Wij analyseren de gebruikersdata om beter met je te communiceren. Wij kunnen je UDID informatie combineren met derden om je te voorzien van een betere ervaring en om de kwaliteit van onze diensten te verbeteren. Wij delen geen persoonlijke identificeerbare informatie met derden in verband met je UDID."  
       cookies title:                            "LifeChurch.tv cookies"
       cookies text:                             "Als je onze %{link} bezoekt, kunnen wij een of meer cookies naar je computer sturen, zodat wij je unieke browser kunnen identificeren. (Een cookie is een heel klein tekstbestand bestaande uit een reeks tekens.) Het accepteren van onze cookies zorgt ervoor dat jij je voorkeuren bewaart van sessie tot sessie. Hoewel de meeste browsers gewoon cookies accepteren, kan het zijn dat je browser is ingesteld om cookies te weigeren, of om je te informeren als er een cookie aan je gezonden wordt. Sommige onderdelen van YouVersion kunnen onvolledig functioneren als alle cookies zijn uitgeschakeld."   
       log title:                                "Log informatie"
@@ -385,6 +386,7 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
     user badges:                                "%{user}'s Eerbetoon"
   plans:
     title:                                      "Leesplannen"
+    browse by category:                         ""
     browse plans:                               "Blader %{category} Leesplannen"
     all:                                        "Alle"
     all plans:                                  "Alle Leesplannen"
@@ -443,7 +445,7 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
     search members:                             "Zoek"
     email_on:                                   "Zet Levering aan"
     email_off:                                  "Zet Levering uit"
-    email delivery text:                        Zet e-mail levering aan als je graag je dagelijkse leesplan-inhoud wilt ontvangen in je inbox. Kies de tijd van de dag dat je de e-mail wil ontvangen en de Bijbelversie die het beste voor je is.
+    email delivery text:                        "Zet e-mail levering aan als je graag je dagelijkse leesplan-inhoud wilt ontvangen in je inbox. Kies de tijd van de dag dat je de e-mail wil ontvangen en de Bijbelversie die het beste voor je is."
     email delivery:                             "E-mail bezorging"
     morning:                                    "Ochtend"
     afternoon:                                  "Middag"
@@ -496,16 +498,28 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
     all versions:                               "Alle Versies in het %{language_name}"
   donate:
     donate now:                                 "Doneer Nu"
+    donate now intl:                            ""
     promo 1:                                    "Voor elke $ 1 die je geeft, krijgen 10 meer mensen toegang tot de bijbel op hun mobiele telefoon."
     promo 2:                                    "Met YouVersion is de Bijbel altijd in de buurt. Bekijk onze video."
     promo 3:                                    "Dit jaar zullen meer dan 5 miljard mensen gebruik maken van een mobiele telefoon. Geef nu."
     headline:                                   Iedereen heeft behoefte aan Gods Woord.
     subhead:                                    "Jij kan helpen om miljoenen mensen de Bijbel onder hun vinger toppen te geven."
     copy:                                       "Stel je voor dat je iedereen in de wereld een gratis bijbel kon geven. Met een donatie aan YouVersion, kan je dat doen. We leven in een tijd waar anderen alleen van konden dromen - dat iedereen met een telefoon toegang kan krijgen tot de Bijbel en het verhaal van Gods liefde voor ons kan ervaren. Met jouw steun kunnen we doorgaan om meer mensen te helpen meer tijd door te brengen in de Schrift."
+    amount:                                     ""
+    name:                                       ""
+    card number:                                ""
+    card exp date:                              ""
+    receipt:                                    ""
+    preview:                                    ""
+    header copy:                                ""
+    header confirm copy:                        ""
+    donate now button:                          ""
+    email header:                               ""
+    email footer:                               ""
   download ad:
     title:                                      "Download de Gratis Bijbel App"
     line 1:                                     "Honderden versies in vele"
-    line 2:                                     verschillende talen - de Bijbel die
+    line 2:                                     "verschillende talen - de Bijbel die"
     line 3:                                     "met je meegaat, overal heen."
     download:                                   "Nu Downloaden"
   about page:
@@ -558,7 +572,7 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
     t2:                                         "Leuke programma!"
     t2 copy:                                    "Deze app helpt mij om alles in orde te hebben en om Gods Woord te lezen elke dag. Het is makkelijk te bedienen en biedt veel fucties. Ik ben er dol op!"
     t3:                                         "Geweldige app."
-    t3 copy:                                    Leuke app met een brede keuze aan Bijbels. De Audiobijbels zijn ook geweldig en makkelijk te begrijpen.
+    t3 copy:                                    "Leuke app met een brede keuze aan Bijbels. De Audiobijbels zijn ook geweldig en makkelijk te begrijpen."
     iphone ipad:                                "iPhone/iPad"
     android:                                    "Android"
     blackberry:                                 "BlackBerry"

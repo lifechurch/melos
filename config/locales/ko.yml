@@ -170,6 +170,7 @@ en:
     select another chapter:                     "다른 장을 택하세요"
     view in reader:                             "리더에서 %{reference}  보기"
   users:
+    no connection friends:                      ""
     creation form errors:                       "다음의 오류로 인해서 계정을 만들지 못했습니다."
     profile form errors:                        "다음의 오류로 인해서 프로필을 변경하지 못했습니다."
     email address:                              "이메일 주소"
@@ -239,7 +240,7 @@ en:
       your information title:                   "Information you provide"
       your information text:                    "When you sign up for a YouVersion account, or another LifeChurch.tv service or promotion that requires registration, we ask you for personal information (such as your name, email address and an account password). We may combine the information you submit under your account, with information from other LifeChurch.tv services or third parties to provide you with a better experience and to improve the quality of our services. For certain services, we may allow you to opt out of combining such information."
       device id title:                          "Unique Device ID"
-      device id text:                           When you access the YouVersion Bible Application, we may collect your Unique Device ID (“UDID”) and/or IP address. We use your UDID to provide a tailored experience for you. The UDID information is collected in order to determine the aggregate number of unique devices using our service or parts of our service, to track total usage, analyze data, and communicate with you more effectively. We may combine your UDID with information from third parties to provide you with a better experience and to improve the quality of our service. We do not share any personally identifiable information with third parties in association with your UDID.  
+      device id text:                           "When you access the YouVersion Bible Application, we may collect your Unique Device ID (“UDID”) and/or IP address. We use your UDID to provide a tailored experience for you. The UDID information is collected in order to determine the aggregate number of unique devices using our service or parts of our service, to track total usage, analyze data, and communicate with you more effectively. We may combine your UDID with information from third parties to provide you with a better experience and to improve the quality of our service. We do not share any personally identifiable information with third parties in association with your UDID."  
       cookies title:                            "LifeChurch.tv cookies"
       cookies text:                             "When you visit %{link}, we may send one or more cookies to your computer, so that we may uniquely identify your browser. (A cookie is simply a tiny text file containing a string of characters.) Accepting our cookies allows you to keep your user preferences from session to session. Although most browsers accept cookies by default, you can set your browser to refuse all cookies, or to tell you when you're being sent a cookie. Some YouVersion features and services may not function properly if you have cookies disabled."   
       log title:                                "Log information"
@@ -366,6 +367,7 @@ en:
     user badges:                                "%{user}님의 배지"
   plans:
     title:                                      "성경읽기 계획"
+    browse by category:                         ""
     browse plans:                               "%{category} 항목의 계획 보기"
     all:                                        "전체"
     all plans:                                  "전체 계획"
@@ -424,7 +426,7 @@ en:
     search members:                             "검색"
     email_on:                                   "받아보기 켬"
     email_off:                                  "받아보기 끔"
-    email delivery text:                        매일의 읽기계획을 이메일로 받기를 원하신다면, 이메일 전송 설정을 선택하세요. 그리고 받고 싶은 시간과 선호하는 성경 번역본을 선택하세요.
+    email delivery text:                        "매일의 읽기계획을 이메일로 받기를 원하신다면, 이메일 전송 설정을 선택하세요. 그리고 받고 싶은 시간과 선호하는 성경 번역본을 선택하세요."
     email delivery:                             "이메일 발송"
     morning:                                    "오전"
     afternoon:                                  "오후"
@@ -477,16 +479,28 @@ en:
     all versions:                               "%{language_name} 전체 번역본"
   donate:
     donate now:                                 "지금 후원하기"
+    donate now intl:                            ""
     promo 1:                                    "여러분의 1불이 10명의 사람들이 자신의 휴대전화에서 성경을 볼 수 있게 합니다."
     promo 2:                                    "유버전으로 성경은 항상 곁에 있습니다. 동영상을 보세요."
     promo 3:                                    "올해 50억명 이상의 사람들이 휴대폰을 사용할 것입니다. 지금 후원하세요."
     headline:                                   우리 모두 하나님의 말씀이 필요합니다.
     subhead:                                    "지구촌 모든 분들이 손안의 성경을 가질 수있도록 도와주세요."
     copy:                                       "전 세계의 모든 이들에게 무료로 성경을 줄 수 있다는 상상을 해보세요. 유버전을 후원하는 것으로 가능해집니다. 상상을 현실로 이루고 있습니다. &ndash; 휴대폰을 가진 사람이면 누구든지 성경을 접할 수 있고 우리를 향한 하나님의 사랑에 대한 이야기를 경험할 수 있기 때문입니다. 여러분의 후원을 통해, 더 많은 사람들이 보다 많은 시간을 성경과 함께 할 수 있도록 도울 수 있습니다."
+    amount:                                     ""
+    name:                                       ""
+    card number:                                ""
+    card exp date:                              ""
+    receipt:                                    ""
+    preview:                                    ""
+    header copy:                                ""
+    header confirm copy:                        ""
+    donate now button:                          ""
+    email header:                               ""
+    email footer:                               ""
   download ad:
     title:                                      "무료 성경앱을 다운로드하세요"
     line 1:                                     "어디서나 함께 할 수 있는"
-    line 2:                                     다양한 언어로 다양한
+    line 2:                                     "다양한 언어로 다양한"
     line 3:                                     "번역본을 제공하는 성경앱."
     download:                                   "지금 다운로드"
   about page:
@@ -539,7 +553,7 @@ en:
     t2:                                         "훌륭한 프로그램이죠!"
     t2 copy:                                    "이 앱은 효과적으로 매일 매일 하나님의 말씀을 읽을 수 있도록 도움을 줍니다. 그리고 사용하기 편리하고 다양한 기능을 제공합니다 ... 완전 좋아요!"
     t3:                                         "멋진 앱입니다."
-    t3 copy:                                    다양한 성경 번역본을 제공하는 훌륭한 앱입니다. ... 오디오 성경 또한 멋지고 알기 쉽게 해 줍니다.
+    t3 copy:                                    "다양한 성경 번역본을 제공하는 훌륭한 앱입니다. ... 오디오 성경 또한 멋지고 알기 쉽게 해 줍니다."
     iphone ipad:                                "아이폰/아이패드"
     android:                                    "안드로이드"
     blackberry:                                 "블랙베리"

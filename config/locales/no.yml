@@ -170,6 +170,7 @@ en:
     select another chapter:                     "Velg et annet kapittel"
     view in reader:                             "Vis %{reference} i lesemodus"
   users:
+    no connection friends:                      ""
     creation form errors:                       "De følgende feil(ene) forhindret opprettelsen av kontoen din:"
     profile form errors:                        "De følgende feil(ene) forhindret oppdatering av kontoen din:"
     email address:                              "E-postadresse"
@@ -239,7 +240,7 @@ en:
       your information title:                   "Informasjon du gir oss"
       your information text:                    "Når du registrerer deg på YouVersion, eller annen av LifeChurch.tv's tjenester eller aktiviteter som krever registrering, spør vi deg om personlig informasjon (som navn, e-post og passord). Det kan hende vi kombinerer den informasjonen du gir oss på din konto med annen informasjon fra andre LifeChurch.tv's tjenester eller tredjeparter for å gi deg en bedre opplevelse og å forbedre kvaliteten på våre tjenester. For noen tjenester vil vi gi deg muligheten å velge bort muligheten for å kombinere slik informasjon."
       device id title:                          "Unik enhets-ID"
-      device id text:                           Når du bruker YouVersions bibel applikasjon kan vi samle inn den unike ID-en på din enhet ("UDID") og eller IP-adresse. Vi bruker din UDID for å tilby deg en skreddersydd opplevelse. UDID-informasjonen samles inn for å fastslå det samlede antall ulike enheter som bruker en tjeneste eller deler av våre tjenester, for å følge total bruk, analysere data, og kommunisere mer effektivt med deg. Vi kan kombinere din UDID med informasjon fra tredjepart for å tilby deg bedre opplevelse og for å forbedre kvaliteten på vår tjeneste. Vi deler ikke personlig identifiserbar informasjon til tredjepart assosiert med din UDID.  
+      device id text:                           "Når du bruker YouVersions bibel applikasjon kan vi samle inn den unike ID-en på din enhet (\"UDID\") og eller IP-adresse. Vi bruker din UDID for å tilby deg en skreddersydd opplevelse. UDID-informasjonen samles inn for å fastslå det samlede antall ulike enheter som bruker en tjeneste eller deler av våre tjenester, for å følge total bruk, analysere data, og kommunisere mer effektivt med deg. Vi kan kombinere din UDID med informasjon fra tredjepart for å tilby deg bedre opplevelse og for å forbedre kvaliteten på vår tjeneste. Vi deler ikke personlig identifiserbar informasjon til tredjepart assosiert med din UDID."  
       cookies title:                            "LifeChurch.tv cookies"
       cookies text:                             "Når du besøker %{link}, kan vi komme til å sende informasjonskapsler til din datamaskin, slik at vi kan identifisere din nettleser. (En informasjonskapsel er helt enkelt en liten tekstfil som inneholder en streng med bokstaver). Hvis du aksepterer våre informasjonskapsler, får du beholde dine innstillinger fra gang til gang. Selv om de fleste nettlesere har godkjenning av informasjonskapsler som standard, kan du stille inn nettleseren til å forkaste alle informasjonskapsler, eller bli fortalt hver gang noen sender deg en informasjonskapsel. Noen YouVersion-bruksområder og tjenester fungerer kanskje ikke hvis informasjonskapsler er skrudd av."   
       log title:                                "Logginformasjon"
@@ -366,6 +367,7 @@ en:
     user badges:                                "%{user}s merker"
   plans:
     title:                                      "Leseplaner"
+    browse by category:                         ""
     browse plans:                               "Utforsk planer for %{category}"
     all:                                        "Alle"
     all plans:                                  "Alle planer"
@@ -424,7 +426,7 @@ en:
     search members:                             "Søk"
     email_on:                                   "Slå levering på"
     email_off:                                  "Slå levering av"
-    email delivery text:                        Skru e-postlevering på hvis du vil motta innholdet i din daglige leseplan. Velg tidspunkt på dagen du vil motta e-posten, og den bibeloversettelsen som fungerer best for deg.
+    email delivery text:                        "Skru e-postlevering på hvis du vil motta innholdet i din daglige leseplan. Velg tidspunkt på dagen du vil motta e-posten, og den bibeloversettelsen som fungerer best for deg."
     email delivery:                             "E-postlevering"
     morning:                                    "Morgen"
     afternoon:                                  "Ettermiddag"
@@ -477,16 +479,28 @@ en:
     all versions:                               "Alle %{language_name} oversettelser"
   donate:
     donate now:                                 "Gi nå"
+    donate now intl:                            ""
     promo 1:                                    "For hver 1$ du gir vil 10 personer få tilgang til Bibelen på sin mobiltelefon."
     promo 2:                                    "Med YouVersion er Bibelen alltid i nærheten. Se vår video."
     promo 3:                                    "I år vil over fem milliarder mennesker bruke en mobiltelefon. Gi nå."
     headline:                                   Alle trenger Guds ord.
     subhead:                                    "Hjelp mennesker i hele verden å komme i kontakt med Bibelen."
     copy:                                       "Tenk deg at du kunne gi alle i hele verden en gratis bibel. Når du gir til YouVersion, kan du akkurat det. Vi lever i en tid som folk tidligere bare kunne drømme om &ndash; en tid når alle som har en telefon kan få tilgang til Bibelen  og oppleve fortellingen om Guds kjærlighet til oss. Med din støtte kan vi fortsette å hjelpe flere mennesker til å bruke mer tid på Skriften."
+    amount:                                     ""
+    name:                                       ""
+    card number:                                ""
+    card exp date:                              ""
+    receipt:                                    ""
+    preview:                                    ""
+    header copy:                                ""
+    header confirm copy:                        ""
+    donate now button:                          ""
+    email header:                               ""
+    email footer:                               ""
   download ad:
     title:                                      "Last ned gratis Bibel-app."
     line 1:                                     "Hundrevis av oversettelser på mange"
-    line 2:                                     forskjellige språk—Bibelen som
+    line 2:                                     "forskjellige språk—Bibelen som"
     line 3:                                     "er med deg over alt."
     download:                                   "Last ned nå"
   about page:
@@ -539,7 +553,7 @@ en:
     t2:                                         "Supert program!"
     t2 copy:                                    "Denne appen hjelper meg til å være organisert og lese Guds ord hver eneste dag.  Den er lett å bruke og tilbyr mange ulike funksjoner... Elsker den!"
     t3:                                         "Storartet app."
-    t3 copy:                                    Kjempebra app med stort utvalg i bibelutgaver... Lydbiblene er også fantastiske og lette å forstå.
+    t3 copy:                                    "Kjempebra app med stort utvalg i bibelutgaver... Lydbiblene er også fantastiske og lette å forstå."
     iphone ipad:                                "iPhone/iPad"
     android:                                    "Android"
     blackberry:                                 "BlackBerry"

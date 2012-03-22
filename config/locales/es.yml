@@ -170,6 +170,7 @@ en:
     select another chapter:                     "Escoge un Capítulo Diferente"
     view in reader:                             "ver%(referencia) en lector"
   users:
+    no connection friends:                      ""
     creation form errors:                       "El (los) siguiente(s) error(es) no permitieron la creación de su cuenta:"
     profile form errors:                        "El (los) siguiente(s) error(es) no permitieron actualizar su perfil:"
     email address:                              "Correo Electrónico:"
@@ -239,7 +240,7 @@ en:
       your information title:                   "Información que usted provee"
       your information text:                    "Cuando se registre en una cuenta de YouVersion, u otro servicio o promoción de LifeChurch.tv que requiera registro, le solicitaremos información personal (como su nombre, correo electrónico y una contraseña para la cuenta). Podemos combinar la información enviada bajo su cuenta, con información de otros servicios de LifeChurch.tv o terceras personas para darle una mejor experiencia y para mejorar la calidad de nuestros servicios. Para ciertos servicios, le podremos dar la opción de no combinar dicha información."
       device id title:                          "ID de dispositivo único"
-      device id text:                           Al acceder a la aplicación de YouVersion Biblia, podemos recoger el ID de dispositivo único ("UDID") y / o dirección IP. Usamos su UDID para proporcionar una experiencia personalizada para usted. La información se recoge en el UDID para determinar el número total de dispositivos únicos que utilizan nuestro servicio o partes de nuestro servicio, para un seguimiento del uso total, analizar datos, y comunicarse con usted con más eficacia. Podemos combinar su UDID con la información de terceros para ofrecerle una mejor experiencia y mejorar la calidad de nuestro servicio. Nosotros no compartimos ninguna información personal identificable con terceros, en asociación con el UDID.  
+      device id text:                           "Al acceder a la aplicación de YouVersion Biblia, podemos recoger el ID de dispositivo único (\"UDID\") y / o dirección IP. Usamos su UDID para proporcionar una experiencia personalizada para usted. La información se recoge en el UDID para determinar el número total de dispositivos únicos que utilizan nuestro servicio o partes de nuestro servicio, para un seguimiento del uso total, analizar datos, y comunicarse con usted con más eficacia. Podemos combinar su UDID con la información de terceros para ofrecerle una mejor experiencia y mejorar la calidad de nuestro servicio. Nosotros no compartimos ninguna información personal identificable con terceros, en asociación con el UDID."  
       cookies title:                            "Las cookies de LifeChurch.tv"
       cookies text:                             "Cuando usted visite %{link}, podremos enviar una o más cookies a su computadora, de modo que podamos identificar su navegador en especifico. (Una cookie es simplemente un pequeño archivo de texto conteniendo un listado de caracteres.) El aceptar nuestas cookies nos permite mantener sus preferencias de sesión en sesión. Aunque la mayoría de los navegadores acepta las cookies de modo predeterminado, usted puede ajustar su navegador para rechazar las cookies, o avisarle cuando una cookie le está siendo enviada. Algunas características y servicios de YouVersion pueden no funcionar adecuadamente si las cookies están deshabilitadas."   
       log title:                                "Información de Registro"
@@ -366,6 +367,7 @@ en:
     user badges:                                "Insignias de %{user}"
   plans:
     title:                                      "Planes de lectura"
+    browse by category:                         ""
     browse plans:                               "Buscar %{category} planes"
     all:                                        "Todo"
     all plans:                                  "Todos los planes"
@@ -424,7 +426,7 @@ en:
     search members:                             "Buscar"
     email_on:                                   "Encienda la entrega"
     email_off:                                  "Detenga la entrega"
-    email delivery text:                        Encienda la entrega de correo electrónico en caso de que le gustaría recibir el contenido de su plan de lectura diaria en su bandeja de entrada. Elija el momento del día que le gustaría recibir el correo electrónico y la versión de la Biblia que mejor funcione para usted.
+    email delivery text:                        "Encienda la entrega de correo electrónico en caso de que le gustaría recibir el contenido de su plan de lectura diaria en su bandeja de entrada. Elija el momento del día que le gustaría recibir el correo electrónico y la versión de la Biblia que mejor funcione para usted."
     email delivery:                             "Entrega de correo electrónico"
     morning:                                    "Mañana"
     afternoon:                                  "Tarde"
@@ -477,16 +479,28 @@ en:
     all versions:                               "En Todas las Versiones en %{language_name}"
   donate:
     donate now:                                 "Done ahora"
+    donate now intl:                            ""
     promo 1:                                    "Por cada $1 que usted done, 10 personas más tendrán acceso a la Biblia en sus teléfonos móviles."
     promo 2:                                    "Con YouVersion, la Biblia siempre está cerca. Mire nuestro video."
     promo 3:                                    "Este año más de 5 billones de personas utilizarán un teléfono celular. Donar ahora."
     headline:                                   Todos necesitan la Palabra de Dios.
     subhead:                                    "Ayude a la gente alrededor del mundo  a tener la Biblia en sus manos."
     copy:                                       "Imagínese poder darle una Biblia gratis a cada persona en el mundo. Cuando usted da YouVersion, hace precisamente eso. Vivimos en un tiempo con el que otros soñaron &andash; cuando cualquiera que tenga un teléfono puede tener acceso a la Biblia y experimentar la historia del amor de Dios por nosotros. Con su apoyo podemos continuar ayudando a más gente a pasar más tiempo en las Escrituras."
+    amount:                                     ""
+    name:                                       ""
+    card number:                                ""
+    card exp date:                              ""
+    receipt:                                    ""
+    preview:                                    ""
+    header copy:                                ""
+    header confirm copy:                        ""
+    donate now button:                          ""
+    email header:                               ""
+    email footer:                               ""
   download ad:
     title:                                      "Descarga la Aplicación Gratuita de la Biblia"
     line 1:                                     "Cientos de versiones en muchos"
-    line 2:                                     diferentes idiomas-la Biblia que
+    line 2:                                     "diferentes idiomas-la Biblia que"
     line 3:                                     "va con usted a cualquier lugar."
     download:                                   "Descargar ahora"
   about page:
@@ -539,7 +553,7 @@ en:
     t2:                                         "¡Maravilloso programa!"
     t2 copy:                                    "Esta aplicación me mantiene organizado y leyendo La Palabra de Dios todos los días. Es fácil de usar y ofrece múltiples características... ¡Me encanta!"
     t3:                                         "Maravillosa aplicación."
-    t3 copy:                                    Maravillosa aplicación con una variada selección de Biblias para escoger... Las audio Biblias también son maravillosas y fáciles de entender.
+    t3 copy:                                    "Maravillosa aplicación con una variada selección de Biblias para escoger... Las audio Biblias también son maravillosas y fáciles de entender."
     iphone ipad:                                "iPhone/iPad"
     android:                                    "Android"
     blackberry:                                 "BlackBerry"

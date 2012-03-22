@@ -170,6 +170,7 @@ en:
     select another chapter:                     "選擇不同的章節"
     view in reader:                             "在閱讀版面查看%{reference}"
   users:
+    no connection friends:                      ""
     creation form errors:                       "以下錯誤阻止您創建帳號："
     profile form errors:                        "以下錯誤阻止您更新個人資料:"
     email address:                              "電子郵件地址"
@@ -239,7 +240,7 @@ en:
       your information title:                   "您提供的信息"
       your information text:                    "當您註冊YouVersion的帳號，或者其他LifeChurch.tv的服務或任何需要註冊的推廣活動時，我們會向您詢問您的個人資料（包括您的姓名、郵件地址和帳號密碼）。我們會把您申請帳號時提交的資料與LifeChurch.tv其他服務項目，或第三方所提供的信息合併，以便我們能夠給您提供更好的體驗，並提高我們服務的質量。對於某些服務，我們會讓您決定是否合併這些信息。"
       device id title:                          "獨有的設備身份"
-      device id text:                           當您使用 YouVersion 聖經軟體時，我們可能收集您設備的單一識別碼（"UDID"）和/或 IP 位址。我們使用您的 UDID 來為您提供量身訂製的使用者體驗。收集 UDID 訊息是為了不重複計算使用我們的服務或部分服務的設備總數、追踪使用總量、分析數據，並更有效率地與您溝通。我們也許會把您的 UDID 資訊和第三方的服務結合，以提供給您更佳的使用者體驗和提升我們的服務質量。我們不會與第三方分享與 UDID 相關可識別您的個人資訊。  
+      device id text:                           "當您使用 YouVersion 聖經軟體時，我們可能收集您設備的單一識別碼（\"UDID\"）和/或 IP 位址。我們使用您的 UDID 來為您提供量身訂製的使用者體驗。收集 UDID 訊息是為了不重複計算使用我們的服務或部分服務的設備總數、追踪使用總量、分析數據，並更有效率地與您溝通。我們也許會把您的 UDID 資訊和第三方的服務結合，以提供給您更佳的使用者體驗和提升我們的服務質量。我們不會與第三方分享與 UDID 相關可識別您的個人資訊。"  
       cookies title:                            "LifeChurch.tv 網站的 cookies"
       cookies text:                             "當您訪問 %{link} 時，我們可能發送一個或多個 cookie 到您的電腦，這樣我們就能識別您的瀏覽器。（cookie 只是一個含有一連串字符的小型文檔）接受我們的 cookie 能讓您在接下來瀏覽不同網頁時依然保存着您的用戶偏好。雖然多數的瀏覽器默認接受 cookie，您可以設定您的瀏覽器來拒絕所有的 cookie，或提醒您正在接收 cookie。 如果您取消 cookie 功能，有些YouVersion 的功能和服務將無法正常運行。"   
       log title:                                "日誌信息"
@@ -366,6 +367,7 @@ en:
     user badges:                                "%{user}的徽章"
   plans:
     title:                                      "讀經計劃"
+    browse by category:                         ""
     browse plans:                               "瀏覽%{category}計劃"
     all:                                        "所有"
     all plans:                                  "所有的計劃"
@@ -424,7 +426,7 @@ en:
     search members:                             "搜尋"
     email_on:                                   "開啟郵件投遞服務"
     email_off:                                  "關閉郵件投遞服務"
-    email delivery text:                        如果您希望在收信箱裡接收您的每日讀經計劃內容，請開啟郵件投遞服務。選擇您想收到郵件的時間和您最適用的聖經版本。
+    email delivery text:                        "如果您希望在收信箱裡接收您的每日讀經計劃內容，請開啟郵件投遞服務。選擇您想收到郵件的時間和您最適用的聖經版本。"
     email delivery:                             "電郵投遞"
     morning:                                    "上午"
     afternoon:                                  "下午"
@@ -477,16 +479,28 @@ en:
     all versions:                               "所有%{language_name} 版本"
   donate:
     donate now:                                 "現在就捐獻"
+    donate now intl:                            ""
     promo 1:                                    "您每捐獻$1，就有多10個人能夠在他們的手機上閱讀聖經。"
     promo 2:                                    "有了 YouVersion，聖經是隨手可得的。請觀看我們的影片。"
     promo 3:                                    "今年將有超過 50 億人使用手機。請現在就捐獻。"
     headline:                                   每個人都需要上帝的話語
     subhead:                                    "幫助世界各地的人彈指之間都能得到聖經。"
     copy:                                       "試想如果您可以送給世上的每個人一本聖經。當您捐獻給 YouVersion 的時候，您就做到了。我們活在一個別人只能想像的時代 —— 每一個有手機的人都能夠讀到聖經並經歷到上帝對我們的愛。有您的支持，我們就能繼續幫助更多的人更多地讀聖經。"
+    amount:                                     ""
+    name:                                       ""
+    card number:                                ""
+    card exp date:                              ""
+    receipt:                                    ""
+    preview:                                    ""
+    header copy:                                ""
+    header confirm copy:                        ""
+    donate now button:                          ""
+    email header:                               ""
+    email footer:                               ""
   download ad:
     title:                                      "免費下載聖經軟體"
     line 1:                                     "上百種不同的版本"
-    line 2:                                     和不同的語言 —— 這聖經
+    line 2:                                     "和不同的語言 —— 這聖經"
     line 3:                                     "都能隨身跟着您"
     download:                                   "現在就下載"
   about page:
@@ -539,7 +553,7 @@ en:
     t2:                                         "好棒的軟體！"
     t2 copy:                                    "這個軟體幫助我每天都井井有條並閱讀上帝的話語。它非常容易使用還提供了多種功能.... 我喜歡它！"
     t3:                                         "絕妙的軟體。"
-    t3 copy:                                    這是很棒的軟體，因為有很多聖經版本可選擇..... 語音版本的聖經也很美好且容易明白。
+    t3 copy:                                    "這是很棒的軟體，因為有很多聖經版本可選擇..... 語音版本的聖經也很美好且容易明白。"
     iphone ipad:                                "iPhone/iPad"
     android:                                    "Android"
     blackberry:                                 "黑莓手機"

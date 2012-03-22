@@ -170,6 +170,7 @@ en:
     select another chapter:                     "Wybierz inny rozdział"
     view in reader:                             "Zobacz %{reference} w Czytniku"
   users:
+    no connection friends:                      ""
     creation form errors:                       "Poniższe błędy uniemożliwiły utworzenie twojego konta:"
     profile form errors:                        "Poniższe błędy uniemożliwiły aktualizację twojego profilu:"
     email address:                              "Adres e-mail"
@@ -239,7 +240,7 @@ en:
       your information title:                   "Informacje, które przekazujesz"
       your information text:                    ""
       device id title:                          "Unikalny identyfikator urządzenia"
-      device id text:                             
+      device id text:                           ""  
       cookies title:                            "Ciasteczka LifeChurch.tv"
       cookies text:                             ""   
       log title:                                "Informacje logowania"
@@ -366,6 +367,7 @@ en:
     user badges:                                "Odznaczenia użytkownika %{user}"
   plans:
     title:                                      "Plany czytania"
+    browse by category:                         ""
     browse plans:                               "Przeglądaj plany w kategorii %{category}"
     all:                                        "Wszystkie"
     all plans:                                  "Wszystkie plany"
@@ -424,7 +426,7 @@ en:
     search members:                             "Szukaj"
     email_on:                                   "Włącz dostarczanie"
     email_off:                                  "Wyłącz dostarczanie"
-    email delivery text:                        Włącz dostarczanie wiadomości e-mail, jeżeli chcesz codziennie otrzymywać do swojej skrzynki treść planu czytania. Wybierz porę dnia, w której chciałbyś otrzymywać e-mail oraz przekład Biblii, który jest dla ciebie najlepszy.
+    email delivery text:                        "Włącz dostarczanie wiadomości e-mail, jeżeli chcesz codziennie otrzymywać do swojej skrzynki treść planu czytania. Wybierz porę dnia, w której chciałbyś otrzymywać e-mail oraz przekład Biblii, który jest dla ciebie najlepszy."
     email delivery:                             "Dostarczanie e-maili"
     morning:                                    "Poranek"
     afternoon:                                  "Popołudnie"
@@ -477,16 +479,28 @@ en:
     all versions:                               "Wszystkie przekłady języka: %{language_name}"
   donate:
     donate now:                                 "Przekaż dotację teraz"
+    donate now intl:                            ""
     promo 1:                                    "Każdy ofiarowany dolar umożliwia dziesięciu kolejnym osobom uzyskanie dostępu do Biblii na ich telefonach."
     promo 2:                                    "Dzięki YouVersion Biblia jest zawsze blisko. Obejrzyj nasz filmik."
     promo 3:                                    "W tym roku ponad pięć miliardów ludzi będzie używać telefonów komórkowych. Przekaż dotację teraz."
     headline:                                   Każdy potrzebuje Bożego Słowa.
     subhead:                                    "Pomóż włożyć Biblię w ręce ludzi na całym świecie."
     copy:                                       "Wyobraź sobie, że mógłbyś dać każdemu człowiekowi na świecie bezpłatną Biblię. Przekazując dotację dla YouVersion możesz zrobić właśnie coś takiego. Żyjemy w czasach, o jakich inni jedynie marzyli &ndash; gdy każdy użytkownik telefonu może mieć dostęp do Biblii i doświadczać miłości Boga. Dzięki twojemu wsparciu, możemy pomóc większej liczbie ludzi spędzić więcej czasu z Pismem."
+    amount:                                     ""
+    name:                                       ""
+    card number:                                ""
+    card exp date:                              ""
+    receipt:                                    ""
+    preview:                                    ""
+    header copy:                                ""
+    header confirm copy:                        ""
+    donate now button:                          ""
+    email header:                               ""
+    email footer:                               ""
   download ad:
     title:                                      "Pobierz bezpłatną Aplikację Biblii"
     line 1:                                     "Setki przekładów w wielu"
-    line 2:                                     językach - Biblia, która
+    line 2:                                     "językach - Biblia, która"
     line 3:                                     "idzie z tobą wszędzie."
     download:                                   "Pobierz teraz"
   about page:
@@ -539,7 +553,7 @@ en:
     t2:                                         "Świetny program!"
     t2 copy:                                    "Ta aplikacja pomaga mi systematycznie czytać Słowo Boże każdego dnia. Jest łatwa w użyciu i ma wiele możliwości... Jest świetna!"
     t3:                                         "Wspaniała aplikacja."
-    t3 copy:                                    Świetna aplikacja z szerokim wyborem przekładów Biblii. ... Biblia w wersjach audio jest wspaniała i łatwa do zrozumienia.
+    t3 copy:                                    "Świetna aplikacja z szerokim wyborem przekładów Biblii. ... Biblia w wersjach audio jest wspaniała i łatwa do zrozumienia."
     iphone ipad:                                "iPhone/iPad"
     android:                                    "Android"
     blackberry:                                 "BlackBerry"
