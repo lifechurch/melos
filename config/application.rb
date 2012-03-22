@@ -111,7 +111,7 @@ module YouversionWeb
     config.encoding = "utf-8"
     
     # Set available locales to only the files we have in /config/locales (otherwise we would get everything in rails-i18n gem)
-    
+    config.i18n.available_locales = [:de, :en, :es, :fr, :ja, :ko, :nl, :no, :pl, "pt-BR", :ru, :sv, "zh-CN", "zh-TW"]
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

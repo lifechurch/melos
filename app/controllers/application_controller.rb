@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_page
-              debugger
     @page = (params[:page] || 1).to_i
     @labels_page = (params[:labels_page] || 1).to_i
   end

@@ -23,7 +23,7 @@ gem 'rack-rewrite', '~> 1.2.1'
 gem 'rack-mobile-detect'
 gem 'asset_sync'
 gem "rack-timeout"
-#gem 'rails-i18n'
+gem 'rails-i18n'
 
 
 # Gems used only for assets and not required
