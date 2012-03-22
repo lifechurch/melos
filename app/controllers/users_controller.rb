@@ -207,6 +207,7 @@ class UsersController < ApplicationController
   end
 
   def update_password
+    @selected = :password
     if params[:user][:old_password] == current_auth.password
       result = @user.update(params[:user].except(:old_password)) ? flash.now[:notice]=(t('users.password.updated')) : flash.now[:error]=(t('users.password.error'))
       cookies.signed.permanent[:c] = params[:user][:password] if result
@@ -254,11 +255,13 @@ class UsersController < ApplicationController
   end
 
   def update_email_form
+    @selected = :email
     render "update_email"
 
   end
 
   def update_email
+    @selected = :email
     response = @user.update_email(params[:user][:email])
     if response
       render "update_email_success"
@@ -268,14 +271,17 @@ class UsersController < ApplicationController
   end
 
   def confirm_update_email
+    @selected = :email
     response = @user.confirm_update_email(params[:token])
   end
 
   def forgot_password_form
+    @selected = :password
     render "forgot_password", layout: "application"
   end
 
   def forgot_password
+    @selected = :password
     result = User.forgot_password(params[:email])
     if result
       sign_out

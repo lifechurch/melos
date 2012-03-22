@@ -58,7 +58,7 @@
           /   (optional) 
           / %div{:class => "color_picker_list"}
           /   %a{:class => "color_picker", :href =>"#"}
-          /   %a{:class => "color_picker_holder", :href =>"#"}
+          /   %a{:class => "color_picker_hol  der", :href =>"#"}
           /   %a{:class => "color_picker_clear", :href =>"#"}
           /     <span class='selected'></span>
           /   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
@@ -71,7 +71,7 @@
         %div{:class => "clear", :style => "padding: 0 0 15px 0"}
 
     %dt
-      = t("share")
+      = t("ref.share")
     %dd
       %form.clearfix{action: share_path, method: "post"}
         %div.share_message

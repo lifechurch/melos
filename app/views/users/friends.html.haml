@@ -1,6 +1,6 @@
 - content_for :user_main do
   %dl{class: "combo_button float_right"}
-    %dt View:
+    %dt
     %dd{class: ("highlighted" if @really_selected == :followers)}= link_to t('followers'), user_followers_path(@user) 
     %dd{class: ("highlighted" if @really_selected == :following)}= link_to t('following'), user_following_path(@user) 
   = render "list"

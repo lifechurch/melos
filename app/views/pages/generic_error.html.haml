@@ -3,10 +3,10 @@
 - @sidebar = false
 
 %article
-  %h1 Oops!
+  %h1= t('.title')
   %hr
   %div{style:"margin-top: 50px"}
-    %p Something went wrong behind the scenes! You can try again by reloading the page, we're very sorry for the inconvenience!
-    %p We've been notified about this and will jump on it as soon as possible.
+    %p= t('.explanation')
+    %p= t('.our action')
     %br
     %p.small.mute= "#{@error.class}"

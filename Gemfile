@@ -10,7 +10,6 @@ gem 'haml-rails', "  ~> 0.3.4"
 gem 'jquery-rails'
 gem 'routing-filter'
 gem 'execjs'
-# gem 'therubyracer'
 gem 'unicorn'
 gem 'exceptional'
 gem 'countries'
@@ -24,6 +23,7 @@ gem 'rack-rewrite', '~> 1.2.1'
 gem 'rack-mobile-detect'
 gem 'asset_sync'
 gem "rack-timeout"
+#gem 'rails-i18n'
 
 
 # Gems used only for assets and not required

@@ -14,6 +14,9 @@ class PagesController < ApplicationController
     render json: 10.to_json, callback: params[:callback]
   end
   
+  def generic_error
+  end
+  
   def status; end
   def sleep_me
     sleep(params[:time].to_i)

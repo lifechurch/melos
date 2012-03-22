@@ -1,16 +1,1 @@
-- links = [{path: profile_path, string: t('users.edit profile')},
-           {path: update_email_path, string: t('users.update email button')},
-           {path: password_path, string: t('users.change password')},
-           {path: picture_path, string: t('users.picture')},
-           {path: notifications_path, string: t('users.manage notifications')},
-           {path: connections_path, string: t('users.connected accounts')},
-           {path: devices_path, string: t('users.connected devices')}]
-.widget
-  %header
-    %span.header_icon_gear
-      Settings
-  %ul.widget_menu
-    - links.each do |l|
-      %li
-        = link_to_unless_current l[:string], l[:path] do
-          %a.selected= l[:string]
+= render partial: 'widget_profile_settings'

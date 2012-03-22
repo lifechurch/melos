@@ -126,6 +126,9 @@ en:
     like button text:                           "Like"
     unlike button text:                         "Unlike"
   notes:
+    public:                                     "Public"
+    private:                                    "Private"
+    draft:                                      "Draft"
     creation form errors:                       "The following error(s) prevented creation of your note:"
     status field:                               "Status:"
     reference field:                            "Reference(s):"
@@ -170,6 +173,7 @@ en:
     select another chapter:                     "Pick a Different Chapter"
     view in reader:                             "View %{reference} in Reader"
   users:
+    settings:                                   "Settings"
     no connection friends:                      "None of your %{connection} friends appear to be on YouVersion yet."
     creation form errors:                       "The following error(s) prevented creation of your account:"
     profile form errors:                        "The following error(s) prevented updating your profile:"
@@ -189,6 +193,7 @@ en:
     following title:                            "People I'm Following"
     user does not follow you:                   "%{user} does not follow you."
     recent activity:                            "Recent Activity"
+    my recent_activity:                         "My Recent Activity"
     started following:                          "Started Following"
     subscribed to plan:                         "Users Subscribed to %{plan}"
     reading:                                    "Users Reading This Plan"    
@@ -204,7 +209,6 @@ en:
     edit notifications:                         "Manage Notifications"
     edit connections:                           "Connected Accounts"
     edit devices:                               "Connected Devices"
-    my recent activity:                         "My Recent Activity"
     user recent activity:                       "%{user}'s Recent Activity"
     my notes:                                   "My Notes"
     user notes:                                 "%{user}'s Notes"
@@ -215,9 +219,10 @@ en:
     user bookmarks:                             "%{user}'s Bookmarks"
     my likes:                                   "My Likes"
     user likes:                                 "%{user}'s Likes"
+    my badges:                                  "My Badges"
     revised date:                               "Last revised on %{date}"
     update email copy:                          "Enter a new email address and click Update Email. We'll send you a link to confirm your new email address."
-    update email button:                        "Update Email"
+    edit email:                                 "Update Email"
     update email check:                         "Please check your email and click the link to confirm your new email address."
     confirm update email success:               "Thanks! You've updated your email address."
     confirm update email error:                 "Sorry, there was a problem completing your email address change."
@@ -349,8 +354,11 @@ en:
       reading_plans:                            "Notify me about information for reading plans I've started."
       update:                                   "Update Notifications"
   bookmarks:
+    edit:                                       "Edit"
+    delete:                                     "Delete this Bookmark"
     title field:                                "Title"
     lables:                                     "Labels"
+    all:                                        "All"
     labels label:                               "Labels:"
     title:                                      "Bookmarks"
     not found:                                  "Bookmarks give you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. To add a bookmark, select a verse in the Bible reader and then click the Selected button at the top of the reader."
@@ -363,7 +371,6 @@ en:
     loading:                                    "Loading your bookmarks..."
   badges:
     earned a badge:                             "Earned a Badge"
-    my badges:                                  "My Badges"
     user badges:                                "%{user}'s Badges"
   plans:
     title:                                      "Reading Plans"
@@ -455,6 +462,7 @@ en:
     which day in plan:                          "Day %{day} of %{total}"
     must start to complete:                     "Start this plan to save completed readings!"
   registration:
+    with facebook:                              "Sign up with Facebook"
     benefits title:                             "Get the Full Experience"
     benefits blurb:                             "Creating a YouVersion account gives you access to more features like bookmarks and notes. They'll show up on any device where you're signed in. An account also makes it easier to share the Bible with your friends, so take a minute or two and sign up!"
     plan blurb:                                 "It looks like you want to start a Reading Plan. Smart! Plans can help you make the Bible a part of your daily life. Sign in or create an account below and get started!"
@@ -563,3 +571,24 @@ en:
     symbian:                                    "Symbian"
     mobile web:                                 "Mobile Web"
     amazon:                                     "Kindle Fire"
+  pages:
+    generic_error:
+      title:                                    "Oops!"
+      explanation:                              "Something went wrong behind the scenes! You can try again by reloading the page, we're very sorry for the inconvenience!"
+      our action:                               "We've been notified about this and will jump on it as soon as possible."
+  shared:
+    menu_settings:
+        title:                                  "Your Settings"
+        close:                                  "Close"
+        font:                                   "Font:"
+        font1:                                  "Helvetica"
+        font2:                                  "Georgia"
+        font3:                                  "Baskerville"
+        font4:                                  "Verdana"
+        font size:                              "Size:"
+        small:                                  "Small"
+        medium:                                 "Medium"
+        large:                                  "Large"
+        highlights:                             "Highlights:"
+        on:                                     "On"
+        off:                                    "Off"

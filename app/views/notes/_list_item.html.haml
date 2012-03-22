@@ -13,9 +13,9 @@
     .bookmark_edit.float_right
       %p
         - if @me
-          %span= link_to('edit', edit_note_path(list_item.id))
+          %span= link_to(t('notes.edit'), edit_note_path(list_item.id))
           &mdash;
-          %span.confirm= link_to('delete', note_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete) 
+          %span.confirm= link_to(t('notes.delete'), note_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete) 
           &mdash;
         %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
     %p.mute.small.negative_gutter_top_half= link_to_references(list_item.reference_list) 

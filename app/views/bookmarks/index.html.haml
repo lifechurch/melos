@@ -2,17 +2,17 @@
 - @sidebar = false
 
 %article
-  %h1= t('my bookmarks')
+  %h1= t('users.my bookmarks')
   - unless @bookmarks.empty?
     .split_pane
       .split_pane_sidebar
         %dl.labels_menu
           %dt
             = render "shared/labels_pagination", resource_list: @labels
-            = t('labels')
+            = t('bookmarks.labels')
           %dd{class: params[:label] == nil ? "highlighted" : ""}
             %b
-              %a{href: user_bookmarks_path(@user)}= t('all')
+              %a{href: user_bookmarks_path(@user)}= t('bookmarks.all')
           - @labels.each do |l|
             %dd{class: params[:label] == l.label ? "highlighted" : ""}
               = link_to "#{l.label} (#{l.total})", user_bookmarks_path(@user, label: l.label)

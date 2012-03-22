@@ -1,6 +1,6 @@
 .widget
   %header
-    %span.header_icon_badge= @me ? t('badges.my badges') : t('badges.user badges', user: (@user.first_name || @user.username))
+    %span.header_icon_badge= @me ? t('users.my badges') : t('badges.user badges', user: (@user.first_name || @user.username))
   %section
     %table
       %tfoot

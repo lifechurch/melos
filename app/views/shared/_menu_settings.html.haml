@@ -2,58 +2,54 @@
   %span.menu_arrow
     &nbsp;
   %header
-    %a.close{:href => '#'} Close
-    Your Settings
+    %a.close{:href => '#'}= t('.close')
+    = t('.title')
   %form.dynamic_menu_inner{:action => ''}
     %fieldset.clearfix
       %p.gutter_bottom_half
         %b
-          Font:
+          = t('.font')
       %span.float_left.width_50
         %input.radio_user_setting{'data-setting-font' => 'user_setting_font_helvetica', :type => 'radio', :name => 'user_setting_font', :id => 'radio_helvetica', :value => 'Helvetica', :checked => 'checked'}
         %label.user_setting_font_helvetica{:for => 'radio_helvetica'}
-          Helvetica
+          = t('.font1')
       %span.float_left.width_50
         %input.radio_user_setting{'data-setting-font' => 'user_setting_font_georgia', :type => 'radio', :name => 'user_setting_font', :id => 'radio_georgia', :value => 'Georgia', :checked => ('checked' if @font == "user_setting_font_georgia")}
         %label.user_setting_font_georgia{:for => 'radio_georgia'}
-          Georgia
+          = t('.font2')
       %span.float_left.width_50
         %input.radio_user_setting{'data-setting-font' => 'user_setting_font_baskerville', :type => 'radio', :name => 'user_setting_font', :id => 'radio_baskerville', :value => 'Baskerville', :checked => ('checked' if @font == "user_setting_font_baskerville")}
         %label.user_setting_font_baskerville{:for => 'radio_baskerville'}
-          Baskerville
+          = t('.font3')
       %span.float_left.width_50
         %input.radio_user_setting{'data-setting-font' => 'user_setting_font_verdana', :type => 'radio', :name => 'user_setting_font', :id => 'radio_verdana', :value => 'Verdana', :checked => ('checked' if @font == "user_setting_font_verdana")}
         %label.user_setting_font_verdana{:for => 'radio_verdana'}
-          Verdana
+          = t('.font4')
     %fieldset.clearfix
       %p.gutter_bottom_half
         %b
-          Size:
+          = t('.font size')
       %span.float_left.width_33
         %input.radio_user_setting{'data-setting-size' => 'user_setting_size_small', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_small', :checked => 'checked'}
         %label{:for => 'user_setting_size_small'}
-          Small
+          = t('.small')
       %span.float_left.width_33
         %input.radio_user_setting{'data-setting-size' => 'user_setting_size_medium', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_medium', :checked => ('checked' if @size=="user_setting_size_medium")}
         %label{:for => 'user_setting_size_medium'}
-          Medium
+          = t('.medium')
       %span.float_left.width_33
         %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_large', :checked => ('checked' if @size=="user_setting_size_large")}
         %label{:for => 'user_setting_size_large'}
-          Large
+          = t('.large')
     %fieldset.clearfix{style: "display: none"}
       %p.gutter_bottom_half
         %b
-          Highlights:
+          = t('.highlights')
       %span.float_left.width_33
         %input.radio_user_setting{:type => 'radio', :name => 'user_setting_highlights', :id => 'user_setting_highlights_on', :checked => 'checked'}
         %label{:for => 'user_setting_highlights_on'}
-          On
+          = t('.on')
       %span.float_left.width_33
         %input.radio_user_setting{'data-setting-size' => 'user_setting_highlights_off', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_highlights_off'}
         %label{:for => 'user_setting_highlights_off'}
-          Off
-    %fieldset{style: "display: none"}
-      %input.float_right{:type => 'image', :alt => 'Save Settings', :src => asset_path("save_settings.png")}
-      -#%a.float_left{:href => profile_path} Full Settings
-      -#TODO: Don't know what this is for...
+          = t('.off')

@@ -109,6 +109,9 @@ module YouversionWeb
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
+    
+    # Set available locales to only the files we have in /config/locales (otherwise we would get everything in rails-i18n gem)
+    
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

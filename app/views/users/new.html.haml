@@ -4,5 +4,5 @@
     %hr
     %p= @blurb
     %hr
-  %p= link_to "Sign up with Facebook", auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
+  %p= link_to t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
   = render 'create_form'
