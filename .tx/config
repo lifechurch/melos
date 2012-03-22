@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.net
+
+[yv-web-3.app-strings]
+file_filter = config/locales/<lang>.yml
+source_file = config/locales/en.yml
+source_lang = en
+
