@@ -1,5 +1,5 @@
 ---
-en:
+fr:
   link:                                         "Lien"
   site search:                                  "Rechercher dans YouVersion"
   auth error:                                   "Désolé, il semble y avoir un problème avec votre nom d'utilisateur ou mot de passe. Veuillez vous reconnecter à YouVersion pour continuer."
@@ -60,8 +60,8 @@ en:
   language name:                                "Français"
   sign in:                                      "Sign in"
   sign up:                                      "S'inscrire"
-  have an account:                             "Vous avez déjà un compte?"
-  no account:                                  "Vous n'avez pas de compte?"
+  have an account:                              "Vous avez déjà un compte?"
+  no account:                                   "Vous n'avez pas de compte?"
   successful sign-in:                           "Connecté en tant que %{user} !"
   successful sign-out:                          "Déconnecté !"
   invalid login:                                "Nom d'utilisateur ou mot de passe invalide"
@@ -277,12 +277,12 @@ en:
       account text:                             ""
       conduct title:                            ""
       conduct text:                             ""
-      interstate title:                          ""
+      interstate title:                         ""
       interstate text:                          ""
       international title:                      ""
       international text:                       ""
       content title:                            ""
-      content text:                             
+      content text:                             ""
       contributions title:                      ""
       contributions text:                       ""
       indemnity title:                          ""
@@ -483,7 +483,7 @@ en:
     promo 1:                                    "Pour chaque dollar donné,10 personnes supplémentaires auront accès à la Bible sur leur téléphone portable."
     promo 2:                                    "Avec YouVersion, la Bible est toujours à portée de main. Regardez notre vidéo."
     promo 3:                                    "Cette année, plus de 5 milliards de personnes utiliseront un téléphone portable. Faire un don maintenant."
-    headline:                                   Tout le monde a besoin de la Parole de Dieu.
+    headline:                                   "Tout le monde a besoin de la Parole de Dieu."
     subhead:                                    "Permettez à des millions de personnes sur la planète de manipuler la Bible du bout des doigts."
     copy:                                       "Imaginez-vous en train d'offrir une Bible à chaque personne sur terre. Eh bien, faire un don à YouVersion équivaut à ça. Nous vivons à une époque dont d'autres n'ont fait que rêver; où quiconque avec un téléphone a accès à la Bible pour expérimenter l'histoire d'amour de Dieu pour nous. Grâce à votre soutien, nous permettrons à beaucoup plus de personnes de passer plus de temps dans les Écritures."
     amount:                                     ""
@@ -540,10 +540,10 @@ en:
       screencast:                               "Démo d'utilisation YouVersion"
     links title:                                "Dans les médias"
   mobile page:
-    h2:                                         La Parole de Dieu est avec vous.
+    h2:                                         "La Parole de Dieu est avec vous."
     h3:                                         "YouVersion est Planétaire"
     h3 sub:                                     "Disponible dans des centaines de langues de par le monde."
-    main:                                       Des dizaines de millions de personnes utilisent l'application Bible App™ pour intégrer la Parole de Dieu dans leur quotidien. Télécharger l'application gratuite et accéder à vos favoris, notes et Plans de lecture où que vous vous trouviez. Profitez des centaines de versions disponibles, y compris des versions audio, tout cela à partir de votre appareil mobile.
+    main:                                       "Des dizaines de millions de personnes utilisent l'application Bible App™ pour intégrer la Parole de Dieu dans leur quotidien. Télécharger l'application gratuite et accéder à vos favoris, notes et Plans de lecture où que vous vous trouviez. Profitez des centaines de versions disponibles, y compris des versions audio, tout cela à partir de votre appareil mobile."
     button h4:                                  "Aller sur youversion.com/download"
     button h4 sub:                              "Sur votre appareil mobile"
     download now:                               "Télécharger la Bible App maintenant"

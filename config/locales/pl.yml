@@ -1,5 +1,5 @@
 ---
-en:
+pl:
   link:                                         "Odnośnik"
   site search:                                  "Wyszukiwanie w YouVersion"
   auth error:                                   "Wystąpił problem z twoją nazwą użytkownika lub hasłem. Aby kontynuować, zaloguj się do YouVersion."
@@ -60,8 +60,8 @@ en:
   language name:                                "polski"
   sign in:                                      "Sign in"
   sign up:                                      "Zarejestruj się"
-  have an account:                             "Czy masz już konto?"
-  no account:                                  "Nie masz konta?"
+  have an account:                              "Czy masz już konto?"
+  no account:                                   "Nie masz konta?"
   successful sign-in:                           "Jesteś zalagowany jako %{user}!"
   successful sign-out:                          "Wylogowałeś się!"
   invalid login:                                "Nieprawidłowa nazwa lub hasło"
@@ -277,12 +277,12 @@ en:
       account text:                             ""
       conduct title:                            ""
       conduct text:                             ""
-      interstate title:                          ""
+      interstate title:                         ""
       interstate text:                          ""
       international title:                      "Specjalne zalecenia dla użytkowników poza USA"
       international text:                       ""
       content title:                            ""
-      content text:                             
+      content text:                             ""
       contributions title:                      "Wkład w LifeChurch.tv"
       contributions text:                       ""
       indemnity title:                          ""
@@ -483,7 +483,7 @@ en:
     promo 1:                                    "Każdy ofiarowany dolar umożliwia dziesięciu kolejnym osobom uzyskanie dostępu do Biblii na ich telefonach."
     promo 2:                                    "Dzięki YouVersion Biblia jest zawsze blisko. Obejrzyj nasz filmik."
     promo 3:                                    "W tym roku ponad pięć miliardów ludzi będzie używać telefonów komórkowych. Przekaż dotację teraz."
-    headline:                                   Każdy potrzebuje Bożego Słowa.
+    headline:                                   "Każdy potrzebuje Bożego Słowa."
     subhead:                                    "Pomóż włożyć Biblię w ręce ludzi na całym świecie."
     copy:                                       "Wyobraź sobie, że mógłbyś dać każdemu człowiekowi na świecie bezpłatną Biblię. Przekazując dotację dla YouVersion możesz zrobić właśnie coś takiego. Żyjemy w czasach, o jakich inni jedynie marzyli &ndash; gdy każdy użytkownik telefonu może mieć dostęp do Biblii i doświadczać miłości Boga. Dzięki twojemu wsparciu, możemy pomóc większej liczbie ludzi spędzić więcej czasu z Pismem."
     amount:                                     ""
@@ -540,10 +540,10 @@ en:
       screencast:                               "Screencast YouVersion"
     links title:                                "Odnośniki do publikacji"
   mobile page:
-    h2:                                         Słowo Boże jest z tobą.
+    h2:                                         "Słowo Boże jest z tobą."
     h3:                                         "YouVersion jest globalne"
     h3 sub:                                     "Dostępne w setkach języków na całym świecie."
-    main:                                       Dziesiątki milionów ludzi używają Aplikacji Biblii, aby uczynić Słowo Boże częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania z dowolnego miejsca. Ciesz się setkami przekładów i wersjami audio - dostępne na twoim mobilnym urządzeniu.
+    main:                                       "Dziesiątki milionów ludzi używają Aplikacji Biblii, aby uczynić Słowo Boże częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania z dowolnego miejsca. Ciesz się setkami przekładów i wersjami audio - dostępne na twoim mobilnym urządzeniu."
     button h4:                                  "Przejdź do youversion.com/download"
     button h4 sub:                              "Na twoim urządzeniu mobilnym"
     download now:                               "Pobierz teraz Aplikację Biblii"

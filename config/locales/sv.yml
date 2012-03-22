@@ -1,5 +1,5 @@
 ---
-en:
+sv:
   link:                                         "Länk"
   site search:                                  "YouVersion-sök"
   auth error:                                   "Det var ett problem med ditt användarnamn eller lösenord. Logga in på YouVersion för att fortsätta."
@@ -60,8 +60,8 @@ en:
   language name:                                "Svenska"
   sign in:                                      "Sign in"
   sign up:                                      "Registrera dig"
-  have an account:                             "Har redan ett konto?"
-  no account:                                  "Har du inget konto?"
+  have an account:                              "Har redan ett konto?"
+  no account:                                   "Har du inget konto?"
   successful sign-in:                           "Inloggad som %{user}!"
   successful sign-out:                          "Utloggad!"
   invalid login:                                "Ogiltigt användarnamn och lösenord"
@@ -277,12 +277,12 @@ en:
       account text:                             "När du avslutat registreringsprocessen på YouVersion får du ett lösenord och kontoidentitet. Du ansvarar för att upprätthålla sekretessen för lösenordet och kontot, och du är fullt ansvarig för alla aktiviteter som sker under ditt lösenord eller konto. Du samtycker till att: %{item}(a) omedelbart underrätta LifeChurch.tv om eventuell otillåten användning av ditt lösenord eller konto eller något annat brott mot säkerheten, och %{item}(b) se till att du logga ut ditt konto i slutet av varje session."
       conduct title:                            "Uppförandekod för medlemmar"
       conduct text:                             "Du förstår att all information, data, text, mjukvara, musik, ljud, fotografier, grafik, video, meddelanden, taggar, blogg eller forum inlägg, eller annat material (”Innehåll”), vare sig upplagt offentligt eller privat, ensamt ansvaras av personen som är upphov till det. Det betyder att du, och inte LifeChurch.tv, är helt och hållet ansvarig för allt innehåll som du laddar upp, e-posta, överför eller på annat sätt gör tillgänglig via YouVersion. Även om LifeChurch.tv övervakar innehåll lämnat till YouVersion kan LifeChurch.tv inte rimligen garantera korrekthet, integritet, kvalitet eller lämplighet för sådant innehåll. Du förstår och accepterar att genom att använda YouVersion kan du bli utsatt för Innehåll som är stötande, oanständigt eller stötande. Du samtycker till att inte använda YouVersion till att: %{item} ladda upp, e-posta, överföra eller på annat sätt tillhandahålla Innehåll som är olagligt, skadligt, hotfullt, kränkande, trakasserande, skadeståndsgrundande, ärekränkande, nedsättande, förolämpande, vulgärt, obscent,  inkräktande på annans privatliv, hatiskt, diskriminerande eller rasistiskt, etniskt eller på annat sätt anstötligt;%{item}skada minderåriga på något sätt;%{item}uppträda som en annan person eller enhet, inklusive, men inte begränsat till, en LifeChurch.tv-tjänsteman, forumledare, guide eller värd, eller falskeligen uppge eller på annat sätt förvränga din anknytning till en person eller enhet;%{item}förfalska rubriker eller på annat sätt manipulera igenkänningstecken för att dölja ursprunget av Innehåll som överförs via YouVersion;%{item}ladda upp, e-posta , överföra eller på annat sätt tillhandahålla innehåll som du inte har rätt att tillgängliggöra under någon lag eller avtal eller lojalitetsplikt (t.ex. insiderinformation, patentskyddad och konfidentiell information inhämtat eller avslöjat som en del av anställningsförhållanden eller under sekretessavtal);%{item}ladda upp, e-posta, överföra eller på annat sätt tillhandahålla innehåll som utgör intrång i patent, varumärke, affärshemlighet, upphovsrätt eller annan äganderätt (\"rättigheter\") för någon part;%{item}ladda upp, e-post, överföra eller på annat sätt tillhandahålla oönskad eller obehörig reklam, marknadsföringsmaterial, \"skräppost\", \"spam\", \"kedjebrev\", \"pyramidspel\" eller någon annan form av erbjudande%{item}ladda upp, e-post , överföra eller på annat sätt tillhandahålla material som innehåller virus eller annan datakod, filer eller program avsedda att avbryta, förstöra eller begränsa funktionaliteten på någon mjukvara, hårdvara eller telekommunikationsutrustning;%{item}störa det normala flödet av dialog eller på annat sätt agera på ett sätt som negativt påverkar andra användares möjlighet att engagera sig i realtid;%{item}störa eller avbryta YouVersion eller servrar eller nätverk som är anslutna till YouVersion eller inte följa  några krav, procedurer, policys eller bestämmelser för nätverk som är anslutna till YouVersion;%{item}avsiktligt eller oavsiktligt bryta mot någon tillämplig lokal, statlig, nationell eller internationell lag, inklusive men inte begränsat till, utfärdade föreskrifter av US Securities and Exchange Commission, några nationella regler eller börs, inklusive, utan begränsning, New York Stock Exchange, American Stock Exchange eller NASDAQ, och alla föreskrifter som har laga kraft;%{item}ge materiellt stöd eller resurser (eller att hemlighålla eller dölja karaktär, läge, källa eller ägare av materiellt stöd eller resurser) till någon organisation) som utsetts av USA:s regering som ett främmande terroristorganisation enligt avsnitt 219 i Immigration and Nationality Act;%{item}förfölja eller på annat sätt trakassera någon annan, och/eller %{item}samla in eller lagra personuppgifter om andra användare i samband med de förbjudna gärningarna och verksamheterna som anges ovan.% %{item}LifeChurch.tv tillhandahåller YouVersion för okompenserad, personlig, och immateriell andlig och/eller religiös nytta. Du bekräftar att LifeChurch.tv kan förhandsgranska innehåll, men att LifeChurch.tv och dess utsedda har rätt (men inte skyldigheten) på eget bevåg förhandsgranska, neka, eller ta bort innehåll som är tillgänglig via YouVersion av någon anledning. %{line_break} Du godkänner, tillåter och samtycker till att LifeChurch.tv kan få tillgång till, bevara och lämna ut din kontoinformation och innehåll om det krävs enligt lag eller i god tro att sådan åtkomstbevarande eller utlämnande är nödvändigt för att: %{item}(a) följa juridiska processer;%{item}(b) följa ANVÄNDARVILLKOR;%{item}(c) svara på påståenden om att något innehåll bryter mot rättigheterna för tredje part;%{item}(d) svara på dina förfrågningar till kundservice; eller%{item} (e) skydda rättigheter, egendom eller personliga säkerhet LifeChurch.tv, dess användare och allmänheten. %{line_break}Du förstår att den tekniska behandlingen och överföringen av YouVersion, inklusive ditt innehåll, kan involvera %{item}(a) överföring över olika nätverk, och %{item}(b) ändringar för att följa och anpassa sig till tekniska krav för anslutande nätverk eller anordningar."
-      interstate title:                          "Mellanstatlig natur på kommunikation på LifeChurch.tv-nätverket"
+      interstate title:                         "Mellanstatlig natur på kommunikation på LifeChurch.tv-nätverket"
       interstate text:                          "Du accepterar att användning av YouVersion kommer resultera i att du skickar meddelanden via LifeChurch.tv:s datornätverk, varav en del är spritt över hela världen. Som ett resultat av detta kan även kommunikation som verkar vara nationell till sin naturen överföras mellan länder, oavsett var du fysiskt befinner sig för tidpunkten för överföringen. Därför accepterar du att användning av YouVersion resulterar i mellanstatliga dataöverföringar."
       international title:                      "Särskilda förmaningar för internationell användning"
       international text:                       "Genom att känna till den globala karaktären av Internet, samtycker du till att följa alla lokala regler för beteende på nätet och godtagbart innehåll. Specifikt samtycker du till att följa alla tillämpliga lagar om överföring av teknisk data som exporteras från USA eller det land där du bor."
       content title:                            "Innehåll inskickad eller tillgängliggjord för att inkluderas i tjänsten"
-      content text:                             
+      content text:                             ""
       contributions title:                      "Bidrag till LifeChurch.tv"
       contributions text:                       ""
       indemnity title:                          "Skadestånd och friskrivning"
@@ -483,7 +483,7 @@ en:
     promo 1:                                    "För varje $1 du ger kommer ytterligare 10 personer få tillgång till Bibeln på sina mobiltelefoner."
     promo 2:                                    "Med YouVersion är Bibeln alltid nära. Titta på vår video."
     promo 3:                                    "I år kommer över 5 miljarder människor använda en mobiltelefon. Donera nu."
-    headline:                                   Alla behöver Guds Ord.
+    headline:                                   "Alla behöver Guds Ord."
     subhead:                                    "Hjälp människor runt hela värden att komma i kontakt med Bibeln."
     copy:                                       "Tänk om du kunde ge alla i världen en gratis bibel. När du ger till YouVersion kan du göra just det. Vi lever i en tid som andra bara kunnat drömma om &ndash; när någon med en telefon kan komma åt Bibeln och uppleva berättelsen om Guds kärlek till oss. Med ditt stöd kan vi fortsätta att hjälpa fler människor tillbringa mer tid i Skriften."
     amount:                                     ""
@@ -540,10 +540,10 @@ en:
       screencast:                               "YouVersion-presentation"
     links title:                                "Länkar till media"
   mobile page:
-    h2:                                         Guds ord är med dig.
+    h2:                                         "Guds ord är med dig."
     h3:                                         "YouVersion är global"
     h3 sub:                                     "Tillgänglig på hundratals språk över hela världen."
-    main:                                       Tiotals miljoner människor använder Bibelappen™ för att göra Guds Ord till en del av sin vardag. Ladda ner den fria appen för att komma åt dina bokmärken, anteckningar och läsplaner överallt. Få glädje av hundratals översättningar, inklusive ljuduppläsningar, på alla dina mobila enheter.
+    main:                                       "Tiotals miljoner människor använder Bibelappen™ för att göra Guds Ord till en del av sin vardag. Ladda ner den fria appen för att komma åt dina bokmärken, anteckningar och läsplaner överallt. Få glädje av hundratals översättningar, inklusive ljuduppläsningar, på alla dina mobila enheter."
     button h4:                                  "Gå till youversion.com/download"
     button h4 sub:                              "På din mobila enhet"
     download now:                               "Ladda ner Bibelappen nu"

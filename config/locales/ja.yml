@@ -1,5 +1,5 @@
 ---
-en:
+ja:
   link:                                         "リンク"
   site search:                                  "YouVersion内の検索"
   auth error:                                   "申し訳ありませんが、ユーザ名またはパスワードが間違っているようです。続けるにはYouVersionにサインインしてください。"
@@ -60,8 +60,8 @@ en:
   language name:                                "日本語"
   sign in:                                      "Sign in"
   sign up:                                      "アカウント登録"
-  have an account:                             "アカウントをお持ちですか？"
-  no account:                                  "アカウントをお持ちでないですか？"
+  have an account:                              "アカウントをお持ちですか？"
+  no account:                                   "アカウントをお持ちでないですか？"
   successful sign-in:                           "%{user} としてサインインしました！"
   successful sign-out:                          "サインアウトしました！"
   invalid login:                                "ユーザー名かパスワードが正しくありません。"
@@ -277,12 +277,12 @@ en:
       account text:                             ""
       conduct title:                            "メンバーの責務"
       conduct text:                             ""
-      interstate title:                          "LifeChurch.tv ネットワークでの国境を越えるコミュニケーション"
+      interstate title:                         "LifeChurch.tv ネットワークでの国境を越えるコミュニケーション"
       interstate text:                          ""
       international title:                      "国際的利用に関する特記"
       international text:                       ""
       content title:                            "このサービスに組み込むものとして提出された、あるいは、利用できるようになったコンテンツ"
-      content text:                             
+      content text:                             ""
       contributions title:                      "LifeChurch.tv への寄付"
       contributions text:                       ""
       indemnity title:                          "免責と法的責任の放棄"
@@ -483,7 +483,7 @@ en:
     promo 1:                                    "あなたからの1ドルの寄付で、モバイル機器からの聖書へのアクセスが10人に可能となります"
     promo 2:                                    "YouVersion によって、聖書がいつでも身近に。ビデオをご覧ください。"
     promo 3:                                    "今年には、50億人が携帯電話を使用するといわれています。寄付をお願いします。"
-    headline:                                   すべての人に神様の御言葉が必要です。
+    headline:                                   "すべての人に神様の御言葉が必要です。"
     subhead:                                    "世界中の人が聖書に簡単にアクセスできるのに貢献できます。"
     copy:                                       "もしも世界中の全ての人に聖書を無料であげることができたら・・・と想像してみてください。YouVersion に寄付するとは、まさにそのことです。私たちは、携帯電話を持っていれば誰でも聖書にアクセスして、神様の愛に満ちた話を体験することができるという、今までは夢のようであった時代に生きています。より多くの人に、もっと聖句を読んでもらうためには、皆様からの助けが必要です。"
     amount:                                     ""
@@ -540,10 +540,10 @@ en:
       screencast:                               "YouVersion 動画ガイド"
     links title:                                "マスコミ報道へのリンク"
   mobile page:
-    h2:                                         神様の御言葉と共に
+    h2:                                         "神様の御言葉と共に"
     h3:                                         "YouVersion はグローバルです"
     h3 sub:                                     "世界中の多数の言語でご利用いただけます"
-    main:                                       何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。
+    main:                                       "何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。"
     button h4:                                  "youversion.com/download へ行く"
     button h4 sub:                              "モバイル機器で"
     download now:                               "聖書アプリを今すぐダウンロード"
