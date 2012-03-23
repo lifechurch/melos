@@ -126,6 +126,9 @@ ja:
     like button text:                           "お気に入り"
     unlike button text:                         "お気に入りを解除"
   notes:
+    public:                                     ""
+    private:                                    ""
+    draft:                                      ""
     creation form errors:                       "以下のエラーのためノートの作成ができませんでした:"
     status field:                               "Status:"
     reference field:                            "参照："
@@ -170,6 +173,7 @@ ja:
     select another chapter:                     "他の章を選択"
     view in reader:                             "リーダーで %{reference} を表示"
   users:
+    settings:                                   ""
     no connection friends:                      ""
     creation form errors:                       "以下のエラーが原因でアカウントを作成ができませんでした:"
     profile form errors:                        "以下のエラーが原因でプロフィールの更新ができませんでした:"
@@ -189,6 +193,7 @@ ja:
     following title:                            "フォローしている人たち"
     user does not follow you:                   "%{user} さんはあなたをフォローしていません"
     recent activity:                            "最近の利用履歴"
+    my recent_activity:                         ""
     started following:                          "フォローを開始しました"
     subscribed to plan:                         "%{plan} に参加したユーザ"
     reading:                                    "このプランに参加中のユーザ"    
@@ -204,7 +209,6 @@ ja:
     edit notifications:                         "通知状況の管理"
     edit connections:                           "連携済みアカウント"
     edit devices:                               "連携済みデバイス"
-    my recent activity:                         "最近の利用履歴"
     user recent activity:                       "%{user} さんの最近の利用履歴"
     my notes:                                   "My Notes"
     user notes:                                 "%{user} さんのノート"
@@ -215,9 +219,10 @@ ja:
     user bookmarks:                             "%{user} さんのブックマーク"
     my likes:                                   "わたしのお気に入り"
     user likes:                                 "%{user} さんのお気に入り"
+    my badges:                                  ""
     revised date:                               "最終更新日: %{date}"
     update email copy:                          "新しいメールアドレスを入力して、「メールアドレスを更新」をクリックしてください。新しいメールアドレスの確認リンクをメールで送ります。"
-    update email button:                        "メールアドレスを更新"
+    edit email:                                 ""
     update email check:                         "メールをご覧の上、リンクをクリックして新規メールアドレスの確認を行ってください。"
     confirm update email success:               "メールアドレスの更新を受け付けました！"
     confirm update email error:                 "申し訳ございませんが、メールアドレスの変更ができませんでした。"
@@ -349,8 +354,11 @@ ja:
       reading_plans:                            "利用中の読書プランに関する情報の通知を受ける"
       update:                                   "通知設定の更新"
   bookmarks:
+    edit:                                       ""
+    delete:                                     ""
     title field:                                "タイトル"
     lables:                                     "ラベル"
+    all:                                        ""
     labels label:                               "ラベル:"
     title:                                      "ブックマーク"
     not found:                                  "ブックマークを付けることにより、最後に読んだ箇所を思い出すことができたり、好きな聖句が書かれた箇所を見つけやすくなったり、あるいは、ある書物の中でどの章まで読んだかを思い出しやすくなります。ブックマークを付けるためには聖書リーダーの中で特定の箇所を選択し、ブックマークボタンをクリックします。"
@@ -363,7 +371,6 @@ ja:
     loading:                                    "ブックマークを読み込み中..."
   badges:
     earned a badge:                             "獲得したバッジ"
-    my badges:                                  "マイ・バッジ"
     user badges:                                "%{user} さんのバッジ"
   plans:
     title:                                      "読書プラン"
@@ -455,6 +462,7 @@ ja:
     which day in plan:                          "%{total} 日中の%{day} 日目"
     must start to complete:                     "このプランに参加すれば、完了箇所を保存できますよ！"
   registration:
+    with facebook:                              ""
     benefits title:                             "完全な機能の入手"
     benefits blurb:                             "YouVersion のアカウントを作成することで、ブックマークやノートなど多彩な機能をご利用いただけます。サインインすることで、どのデバイスからもご利用いただけます。アカウントがあれば、より簡単にお友だちに聖書をシェアすることがでいます。数分でアカウント登録できますよ！"
     plan blurb:                                 "読書プランを開始されたいようですね。いいですね！聖書を日常生活の一環にするのに読書プランは役立ちます。以下からサインイン、もしくはアカウント登録して開始しましょう！"
@@ -494,7 +502,7 @@ ja:
     preview:                                    ""
     header copy:                                ""
     header confirm copy:                        ""
-    donate now button:                          ""
+    donate now button:                          "すぐに寄付する"
     email header:                               ""
     email footer:                               ""
   download ad:
@@ -563,3 +571,24 @@ ja:
     symbian:                                    "Symbian"
     mobile web:                                 "モバイル機器用サイト"
     amazon:                                     "Kindle Fire"
+  pages:
+    generic_error:
+      title:                                    ""
+      explanation:                              ""
+      our action:                               ""
+  shared:
+    menu_settings:
+        title:                                  ""
+        close:                                  ""
+        font:                                   ""
+        font1:                                  ""
+        font2:                                  ""
+        font3:                                  ""
+        font4:                                  ""
+        font size:                              ""
+        small:                                  ""
+        medium:                                 ""
+        large:                                  ""
+        highlights:                             ""
+        on:                                     ""
+        off:                                    ""

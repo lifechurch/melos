@@ -39,7 +39,7 @@
     .country_select
       = f.label :country, t('users.profile.country')
       %br
-      = f.country_select :country
+      = (f.country_select :country).gsub('Taiwan, Province Of China', 'Taiwan').html_safe #quick hack to make the Taiwanese happy
   %p
     = f.label :timezone, t('users.profile.timezone')
     %br

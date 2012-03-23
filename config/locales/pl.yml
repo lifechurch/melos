@@ -126,6 +126,9 @@ pl:
     like button text:                           "Lubię"
     unlike button text:                         "Cofnij \"lubię\""
   notes:
+    public:                                     ""
+    private:                                    ""
+    draft:                                      ""
     creation form errors:                       "Poniższe błędy uniemożliwiły utworzenie twojej notatki:"
     status field:                               "Status:"
     reference field:                            "Odniesienia:"
@@ -170,6 +173,7 @@ pl:
     select another chapter:                     "Wybierz inny rozdział"
     view in reader:                             "Zobacz %{reference} w Czytniku"
   users:
+    settings:                                   ""
     no connection friends:                      ""
     creation form errors:                       "Poniższe błędy uniemożliwiły utworzenie twojego konta:"
     profile form errors:                        "Poniższe błędy uniemożliwiły aktualizację twojego profilu:"
@@ -189,6 +193,7 @@ pl:
     following title:                            "Osoby, za którymi podążam"
     user does not follow you:                   "%{user} nie podąża za tobą"
     recent activity:                            "Ostatnia aktywność"
+    my recent_activity:                         ""
     started following:                          "Rozpocząłeś podążanie za"
     subscribed to plan:                         "Użytkownicy korzystający z %{plan}"
     reading:                                    "Użytkownicy czytający ten plan"    
@@ -204,7 +209,6 @@ pl:
     edit notifications:                         "Zarządzaj powiadomieniami"
     edit connections:                           "Połączone konta"
     edit devices:                               "Połączone urządzenia"
-    my recent activity:                         "Moja ostatnia aktywność"
     user recent activity:                       "Ostatnia aktywność użytkownika %{user}"
     my notes:                                   "My Notes"
     user notes:                                 "Notatki użytkownika %{user}"
@@ -215,9 +219,10 @@ pl:
     user bookmarks:                             "Zakładki użytkownika %{user}"
     my likes:                                   "Moje polubione"
     user likes:                                 "Polubione użytkownika %{user}"
+    my badges:                                  ""
     revised date:                               "Ostatnia wersja %{date}"
     update email copy:                          "Wprowadź nowy adres e-mail i kliknij Uaktualnij e-mail. Wyślemy ci odnośnik do potwierdzenia nowego adresu e-mail."
-    update email button:                        "Uaktualnij e-mail"
+    edit email:                                 ""
     update email check:                         "Prosimy sprawdź swoją skrzynkę i kliknij odnośnik potwierdzenia twojego nowego adresu."
     confirm update email success:               "Dziękujemy! Uaktualniłeś swój adres e-mail."
     confirm update email error:                 "Niestety, pojawił się problem przy zmianie twojego adresu e-mail."
@@ -349,8 +354,11 @@ pl:
       reading_plans:                            "Powiadamiaj mnie o informacjach dotyczących planów czytania, które rozpocząłem."
       update:                                   "Powiadomienia o akutalizacji"
   bookmarks:
+    edit:                                       ""
+    delete:                                     ""
     title field:                                "Tytuł"
     lables:                                     "Etykieta"
+    all:                                        ""
     labels label:                               "Etykiety:"
     title:                                      "Zakładki"
     not found:                                  "Korzystanie z zakładek ułatwi ci znalezienie ulubionych fragmentów, lub wersetu, który ostatnio czytałeś w określonej księdze. Aby dodać zakładkę, wybierz werset w czytniku Biblii, a następnie kliknij przycisk Wybrane na górze czytnika."
@@ -363,7 +371,6 @@ pl:
     loading:                                    "Ładowanie twoich zakładek..."
   badges:
     earned a badge:                             "Otrzymałeś odznaczenie"
-    my badges:                                  "Moje odznaczenia"
     user badges:                                "Odznaczenia użytkownika %{user}"
   plans:
     title:                                      "Plany czytania"
@@ -455,6 +462,7 @@ pl:
     which day in plan:                          "Dzień %{day} z %{total}"
     must start to complete:                     "Rozpocznij ten plan, aby zapisać przeczytane fragmenty!"
   registration:
+    with facebook:                              ""
     benefits title:                             "Doświadcz pełni korzyści"
     benefits blurb:                             "Utworzenie konta YouVersion daje ci dostęp do większej liczby funkcjonalności jak zakładki czy notatki. Pojawią się one na każdym urządzeniu, z którego się zalogujesz. Konto pomaga również w dzieleniu się Biblią z przyjaciółmi - poświęć więc minutę lub dwie i zarejestruj się!"
     plan blurb:                                 "Hej, próbujesz rozpocząć plan czytania. Mądrze! Plany mogą pomóc ci uczynić z Biblii część twojego codziennego życia. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!"
@@ -494,7 +502,7 @@ pl:
     preview:                                    ""
     header copy:                                ""
     header confirm copy:                        ""
-    donate now button:                          ""
+    donate now button:                          "Przekaż dotację teraz"
     email header:                               ""
     email footer:                               ""
   download ad:
@@ -563,3 +571,24 @@ pl:
     symbian:                                    "Symbian"
     mobile web:                                 "Sieć mobilna"
     amazon:                                     "Kindle Fire"
+  pages:
+    generic_error:
+      title:                                    ""
+      explanation:                              ""
+      our action:                               ""
+  shared:
+    menu_settings:
+        title:                                  ""
+        close:                                  ""
+        font:                                   ""
+        font1:                                  ""
+        font2:                                  ""
+        font3:                                  ""
+        font4:                                  ""
+        font size:                              ""
+        small:                                  ""
+        medium:                                 ""
+        large:                                  ""
+        highlights:                             ""
+        on:                                     ""
+        off:                                    ""

@@ -14,6 +14,7 @@ class YvApi
     base = get_base_url!(opts)
     path = clean_up(path)
     resource_url = base + path
+    opts = clean_up_opts(opts)
     Rails.logger.info "** YvApi.get: Calling #{resource_url} with query => #{opts}"
     if (resource_url == "http://api.yvdev.com/2.3/bible/verse.json")
       calling_method = caller.first.match(/`(.*)'$/)[1]
@@ -63,6 +64,7 @@ class YvApi
     base = get_base_url!(opts)
     path = clean_up(path)
     resource_url = base + path
+    opts = clean_up_opts(opts)
     # Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
     Rails.logger.info "** YvApi.post: Calling #{resource_url} with body => #{opts}"
 
@@ -103,6 +105,11 @@ class YvApi
     path = "/" + path unless path.match(/^\//)
     path += ".json" unless path.match(/\.json$/)
     return path
+  end
+
+  def self.clean_up_opts(opts)
+    opts[:language_tag] = opts[:language_tag].gsub("-", "_") if opts[:language_tag]
+    return opts
   end
 
   def self.get_base_url!(opts)

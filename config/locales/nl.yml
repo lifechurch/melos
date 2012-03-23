@@ -126,6 +126,9 @@ nl:
     like button text:                           "Vind ik leuk"
     unlike button text:                         "Niet leuk meer"
   notes:
+    public:                                     ""
+    private:                                    ""
+    draft:                                      ""
     creation form errors:                       "De volgende fout(en) hebben voorkomen dat je een notitie kan aanmaken:"
     status field:                               "Status:"
     reference field:                            "Verwijzing(en):"
@@ -170,6 +173,7 @@ nl:
     select another chapter:                     "Kies een ander Hoofdstuk"
     view in reader:                             "Bekijk %{reference} in Lezer"
   users:
+    settings:                                   ""
     no connection friends:                      ""
     creation form errors:                       "De volgende fout(en) voorkomen dat je een account kan aanmaken:"
     profile form errors:                        "De volgende fout(en) voorkomen dat je jouw profiel kan updaten:"
@@ -189,6 +193,7 @@ nl:
     following title:                            "Mensen die ik volg"
     user does not follow you:                   "%{user} volgt je niet"
     recent activity:                            "Recente Activiteit"
+    my recent_activity:                         ""
     started following:                          "gestart met volgen"
     subscribed to plan:                         "Gebruikers die geabonneerd zijn op het %{plan}"
     reading:                                    "Gebruikers die dit leesplan lezen"    
@@ -204,7 +209,6 @@ nl:
     edit notifications:                         "Beheer van Meldingen"
     edit connections:                           "Verbonden Accounts"
     edit devices:                               "Verbonden Apparaten"
-    my recent activity:                         "Mijn Recente Activiteit"
     user recent activity:                       "%{user}`s Recente Activiteit"
     my notes:                                   "My Notes"
     user notes:                                 "%{user}`s Notities"
@@ -215,9 +219,10 @@ nl:
     user bookmarks:                             "%{user}'s Bladwijzers"
     my likes:                                   "Mijn 'Vind ik Leuk'"
     user likes:                                 "%{user}'s Leuk gevonden"
+    my badges:                                  ""
     revised date:                               "Laatst herzien op %{date}"
     update email copy:                          "Typ een nieuw e-mail adres in en klik op E-mail Updaten. We zullen je een link sturen naar je nieuwe e-mail adres."
-    update email button:                        "E-mail Updaten"
+    edit email:                                 ""
     update email check:                         "Check a.j.b. je e-mail en klik op de link om je nieuwe e-mail adres te bevestigen."
     confirm update email success:               "Bedankt! Je e-mail adres is geüpdated."
     confirm update email error:                 "Sorry, er was een probleem met het voltooien van je e-mail adres wijziging."
@@ -276,25 +281,8 @@ nl:
       account title:                            "Gebruikers-Account, Wachtwoord en Beveiliging"
       account text:                             "Bij het afronden van YouVersions registratieprocedure, zal je een wachtwoord ontvangen en een account toewijzing. Je bent verantwoordelijk voor de geheimhouding van het wachtwoord en account, en je bent volledig verantwoordelijk voor alle activiteiten die plaatsvinden met je wachtwoord of account. Je gaat akkoord met: %{item}(a) LifeChurch meteen op de hoogte te stellen van elk ongewenst gebruik van je wachtwoord of account, of elke andere beveiligingsbreuk, en %{item}(b) zorgt ervoor dat je uit je account logt aan het einde van elke sessie."
       conduct title:                            "Lid Gedrag"
-      conduct text:                             "U begrijpt dat alle informatie, gegevens, tekst, software, muziek, geluid, foto’s, afbeeldingen, video, berichten, tags, blog, forum berichten of ander materiaal (\"Content\"), of het openbaar gepost is of privé, onder de volledige verantwoordelijkheid valt van degene tot wie de Content behoort. Dit betekent dat u en niet LifeChurch.tv, volledig verantwoordelijk bent voor alle Content die u uploadt, post, e-mailt,overbrengt of op een andere manier beschikbaar maakt via YouVersion. Hoewel LifeChurch.tv Content in de gaten houdt op YouVersion, kan LifeChurch.tv de accuraatheid, integriteit, kwaliteit of geschiktheid van dergelijke Content niet volledig garanderen. U begrijpt en stemt in dat door gebruik van YouVersion, u kunt worden blootgesteld aan Content die aanstootgevend, onfatsoenlijk of verwerpelijk is. U stemt in YouVersion niet te gebruiken voor:
- het uploaden, posten, e-mailen, overbrengen of op andere wijze beschikbaar maken van Content die illegaal, schadelijk, bedreigend, schofterig, ergerlijk, onrechtmatig, eerrovend, vulgair, obsceen, lasterlijk, inbreekt op iemands privacy, hatelijk, discriminerend of raciaal, etnisch of anderszins verwerpelijk is;
- het schaden van minderjarigen op welke manier dan ook;
- het uitgeven voor een persoon of entiteit, inclusief een LifeChurch.tv medewerker, forumleider, gast of host of op een andere manier onjuist presenteren van uw affiliatie met een persoon of entiteit;
- het vervalsen van headers of op een andere manier manipuleren van kenmerken om de herkomst van de Content doorgegeven door YouVersion te verbergen;
- het uploaden, posten, e-mailen, of op andere wijze beschikbaar maken van Content waarvan u het recht niet heeft deze beschikbaar te stellen onder de wet of contractuele of fiduciaire relatie (zoals inside information, eigendoms en vertrouwelijke informatie, geleerd of onderdeel van een werkrelatie of niet-openbaarmakingsovereenkomst);
- het uploaden, posten, e-mailen, of op andere wijze beschikbaar maken van Content die een patent, merknaam, fabrieksgeheim, copyright of ander eigendomsrecht (\"Rechten\") van welke partij dan ook overtreedt;
- het uploaden, posten, e-mailen, of op andere wijze beschikbaar maken van elke ongevraagde of ongeautoriseerde reclame, promotiematerialen, \"junk mail,\" \"spam,\" \"kettingbrieven,\" \"piramidespelen,\" of elke andere vorm van uitnodiging 
-het uploaden, posten, e-mailen, of op andere wijze beschikbaar maken van materiaal dat software virussen of elke andere computer code, bestanden of programma’s bevat, gemaakt om de functionaliteit van de computer software of hardware of telecommunicatieapparatuur te onderbreken, vernietigen of limiteren;
- het verstoren van de normale stroom van dialogen of op een andere manier te gedragen die het vermogen van andere gebruikers om in real-time uitwisselingen te participeren negatief beïnvloeden;
- het verstoren van YouVersion of servers of netwerken verbonden met YouVersion of het niet gehoorzamen van vereisten, procedures, beleid of verordeningen van netwerken verbonden met YouVersion;
- het opzettelijk of onopzettelijk overtreden van toegepaste locale, provinciale, nationale of internationale wetgeving, inclusief verordeningen afgekondigd door de U.S. Securities and Exchange Commission, alle regels van alle nationale of andere beurzen, inclusief de New York Stock Exchange, de American Stock Exchange of de NASDAQ en elke andere verordening onder de wet;
- het leveren van materiële steun of middelen (of om de herkomst, locatie, bron, eigendom van materiële steun of middelen te verbergen) aan organisaties die door de regering van de Verenigde Staten als een buitenlandse terroristische organisatie worden gekenmerkt, volgens sectie 219 van de Immigration and Nationality Act;
- het \"stalken\" of anderszins ergeren van anderen, en/of 
-het verzamelen of opslaan van persoonlijke gegevens over andere gebruikers om bovenstaande activiteiten uit te voeren.
- LifeChurch.tv biedt YouVersion aan voor ongecompenseerde, persoonlijk en ontastbare spirituele en/of religieuze voordelen. U erkent dat LifeChurch.tv Content mag of niet mag voor-screenen maar dat LifeChurch.tv en de ontwerpers het recht zullen hebben (maar niet de verplichting) om naar eigen beoordeling elke Content te voor-screenen, weigeren of te verwijderen dat beschikbaar is via YouVersion, om welke reden dan ook.
- 
+      conduct text:                             "U begrijpt dat alle informatie, gegevens, tekst, software, muziek, geluid, foto’s, afbeeldingen, video, berichten, tags, blog, forum berichten of ander materiaal (\"Content\"), of het openbaar gepost is of privé, onder de volledige verantwoordelijkheid valt van degene tot wie de Content behoort. Dit betekent dat u en niet LifeChurch.tv, volledig verantwoordelijk bent voor alle Content die u uploadt, post, e-mailt,overbrengt of op een andere manier beschikbaar maakt via YouVersion. Hoewel LifeChurch.tv Content in de gaten houdt op YouVersion, kan LifeChurch.tv de accuraatheid, integriteit, kwaliteit of geschiktheid van dergelijke Content niet volledig garanderen. U begrijpt en stemt in dat door gebruik van YouVersion, u kunt worden blootgesteld aan Content die aanstootgevend, onfatsoenlijk of verwerpelijk is. U stemt in YouVersion niet te gebruiken voor: het uploaden, posten, e-mailen, overbrengen of op andere wijze beschikbaar maken van Content die illegaal, schadelijk, bedreigend, schofterig, ergerlijk, onrechtmatig, eerrovend, vulgair, obsceen, lasterlijk, inbreekt op iemands privacy, hatelijk, discriminerend of raciaal, etnisch of anderszins verwerpelijk is; het schaden van minderjarigen op welke manier dan ook; het uitgeven voor een persoon of entiteit, inclusief een LifeChurch.tv medewerker, forumleider, gast of host of op een andere manier onjuist presenteren van uw affiliatie met een persoon of entiteit; het vervalsen van headers of op een andere manier manipuleren van kenmerken om de herkomst van de Content doorgegeven door YouVersion te verbergen; het uploaden, posten, e-mailen, of op andere wijze beschikbaar maken van Content waarvan u het recht niet heeft deze beschikbaar te stellen onder de wet of contractuele of fiduciaire relatie (zoals inside information, eigendoms en vertrouwelijke informatie, geleerd of onderdeel van een werkrelatie of niet-openbaarmakingsovereenkomst); het uploaden, posten, e-mailen, of op andere wijze beschikbaar maken van Content die een patent, merknaam, fabrieksgeheim, copyright of ander eigendomsrecht (\"Rechten\") van welke partij dan ook overtreedt; het uploaden, posten, e-mailen, of op andere wijze beschikbaar maken van elke ongevraagde of ongeautoriseerde reclame, promotiematerialen, \"junk mail,\" \"spam,\" \"kettingbrieven,\" \"piramidespelen,\" of elke andere vorm van uitnodiging het uploaden, posten, e-mailen, of op andere wijze beschikbaar maken van materiaal dat software virussen of elke andere computer code, bestanden of programma’s bevat, gemaakt om de functionaliteit van de computer software of hardware of telecommunicatieapparatuur te onderbreken, vernietigen of limiteren; het verstoren van de normale stroom van dialogen of op een andere manier te gedragen die het vermogen van andere gebruikers om in real-time uitwisselingen te participeren negatief beïnvloeden; het verstoren van YouVersion of servers of netwerken verbonden met YouVersion of het niet gehoorzamen van vereisten, procedures, beleid of verordeningen van netwerken verbonden met YouVersion; het opzettelijk of onopzettelijk overtreden van toegepaste locale, provinciale, nationale of internationale wetgeving, inclusief verordeningen afgekondigd door de U.S. Securities and Exchange Commission, alle regels van alle nationale of andere beurzen, inclusief de New York Stock Exchange, de American Stock Exchange of de NASDAQ en elke andere verordening onder de wet; het leveren van materiële steun of middelen (of om de herkomst, locatie, bron, eigendom van materiële steun of middelen te verbergen) aan organisaties die door de regering van de Verenigde Staten als een buitenlandse terroristische organisatie worden gekenmerkt, volgens sectie 219 van de Immigration and Nationality Act; het \"stalken\" of anderszins ergeren van anderen, en/of het verzamelen of opslaan van persoonlijke gegevens over andere gebruikers om bovenstaande activiteiten uit te voeren. LifeChurch.tv biedt YouVersion aan voor ongecompenseerde, persoonlijk en ontastbare spirituele en/of religieuze voordelen. U erkent dat LifeChurch.tv Content mag of niet mag voor-screenen maar dat LifeChurch.tv en de ontwerpers het recht zullen hebben (maar niet de verplichting) om naar eigen beoordeling elke Content te voor-screenen, weigeren of te verwijderen dat beschikbaar is via YouVersion, om welke reden dan ook.
 U erkent, stemt toe en komt overeen dat LifeChurch.tv uw accountinformatie en Content beschikbaar mag stellen, bewaren en onthullen als dit volgens de wet nodig is of wanneer zulke openbaarmaking of bewaring noodzakelijk is voor: (a) het naleven van de wet; (b) het ten uitvoer brengen van de GEBRUIKERSVOORWAARDEN; (c) het beantwoorden aan claims dat Content de rechten van derden overtreedt; (d) het beantwoorden aan uw verzoeken voor klantenservice; of (e) het beschermen van de rechten, eigendom of persoonlijke veiligheid van LifeChurch.tv, de gebruikers en het publiek.
- 
 U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief uw Content, met zich mee kan brengen (a) overdracht over verschillende netwerken; en (b) aanpassingen om te voldoen aan technische eisen van verbonden netwerken of toestellen."
       interstate title:                         "Interstate Aard van Mededelingen over LifeChurch.tv Network"
       interstate text:                          "Je erkent dat door het gebruik van YouVersion, er berichten verzonden zullen worden door LifeChurch.tv's computernetwerken, waarvan delen zijn gesitueerd over de hele wereld.  Als gevolg daarvan kan het zijn dat berichten die van binnen de staat lijken te komen in werkelijkheid van buiten de staat komen, onafhankelijk van waar je je bevindt op het moment van overdracht.  Evenzo erken je dat gebruik van YouVersion resulteert in gegevensoverdracht tussen staten."
@@ -368,8 +356,11 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
       reading_plans:                            "Laat me weten als er informatie is voor de leesplannen die ik ben begonnen."
       update:                                   "Update Mededelingen"
   bookmarks:
+    edit:                                       ""
+    delete:                                     ""
     title field:                                "Titel"
     lables:                                     "Label"
+    all:                                        ""
     labels label:                               "Labels:"
     title:                                      "Bladwijzers"
     not found:                                  "Bladwijzers geven je een snelle verwijzing naar je favoriete passages of naar het laatste hoofdstuk dat je gelezen hebt in een bepaald boek. Om een bladwijzer toe te voegen, selecteer je een vers in de Bijbellezer en klik je vervolgens op de Geselecteerd-knop aan de bovenkant van de lezer."
@@ -382,7 +373,6 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
     loading:                                    "Laden van uw bladwijzers ..."
   badges:
     earned a badge:                             "Eerbetoon Verdiend"
-    my badges:                                  "Mijn Eerbetoon"
     user badges:                                "%{user}'s Eerbetoon"
   plans:
     title:                                      "Leesplannen"
@@ -474,6 +464,7 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
     which day in plan:                          "Dag %{day} van %{total}"
     must start to complete:                     "Start deze plan om gelezen delen opteslaan"
   registration:
+    with facebook:                              ""
     benefits title:                             "Volle Ervaring ontvangen"
     benefits blurb:                             "Het creëren van een YouVersion account geeft je toegang tot meer functies, zoals bladwijzers en notities. Ze zullen worden weergegeven op elk apparaat waar je aangemeld bent. Met een account wordt het ook makkelijker om de Bijbel te delen met je vrienden, dus neem een minuutje of twee en meld je aan!"
     plan blurb:                                 "Je wil blijkbaar met een Leesplan beginnen. Slim! Leesplannen kunnen je helpen om de Bijbel een deel van je dagelijks leven te maken. Meld je aan of maak hieronder een account aan, en ga aan de slag!"
@@ -513,7 +504,7 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
     preview:                                    ""
     header copy:                                ""
     header confirm copy:                        ""
-    donate now button:                          ""
+    donate now button:                          "Doneer Nu"
     email header:                               ""
     email footer:                               ""
   download ad:
@@ -582,3 +573,24 @@ U begrijpt dat de technische verwerking en overdracht van YouVersion, inclusief 
     symbian:                                    "Symbian"
     mobile web:                                 "Mobiele Internet"
     amazon:                                     "Kindle Fire"
+  pages:
+    generic_error:
+      title:                                    ""
+      explanation:                              ""
+      our action:                               ""
+  shared:
+    menu_settings:
+        title:                                  ""
+        close:                                  ""
+        font:                                   ""
+        font1:                                  ""
+        font2:                                  ""
+        font3:                                  ""
+        font4:                                  ""
+        font size:                              ""
+        small:                                  ""
+        medium:                                 ""
+        large:                                  ""
+        highlights:                             ""
+        on:                                     ""
+        off:                                    ""

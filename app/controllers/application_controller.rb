@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     # end
     
     if params[:locale].nil?
-      visitor_locale = cookies[:locale].blank? ? I18n.default_locale : cookies[:locale].to_sym
+      visitor_locale = cookies[:locale].blank? ? I18n.default_locale : I18n.available_locales.include?(cookies[:locale].to_sym) ? cookies[:locale].to_sym : :en
       cookies.permanent[:locale] = visitor_locale
       return redirect_to params.merge!(locale: visitor_locale) unless visitor_locale == :en
     else
