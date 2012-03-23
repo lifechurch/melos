@@ -107,7 +107,9 @@ class ApplicationController < ActionController::Base
   def follow_redirect(opts = {})
     path = cookies[:auth_redirect] || opts[:alt_path] || bible_path
     clear_redirect
-    return redirect_to path
+    return redirect_to path, notice: opts[:notice] if opts[:notice]
+    return redirect_to path, error: opts[:error] if opts[:error]
+    return redirect_to path 
   end
   def last_read
     Reference.new(cookies[:last_read]) if cookies[:last_read]
