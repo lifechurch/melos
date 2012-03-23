@@ -63,17 +63,20 @@ class UsersController < ApplicationController
   end
 
   def confirm_email
+    @selected = :email
     render layout: "application"
   end
 
   def confirm
+    @selected = :email
     response = YvApi.post("users/confirm", hash: params[:hash]) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      self.errors[:base] << new_errors
+      @errors = errors.map { |e| e["error"] }
       return false
     end
     if response
-      follow_redirect alt_path: sign_up_success_path(show: "facebook")
+      follow_redirect alt_path: sign_up_success_path(show: "facebook"), notice: t('users.account confirmed')
+    else
+      render layout: "application"
     end
   end
 
