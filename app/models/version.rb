@@ -1,11 +1,11 @@
 class Version
-  @versions_api_data = nil
-  @books_api_data = {}
-  @info_api_data = {}
-  @versions = {}
-  @books = {}
-  @version_books = {}
-  @all_by_language = {}
+  @@versions_api_data = nil
+  @@books_api_data = {}
+  @@info_api_data = {}
+  @@versions = {}
+  @@books = {}
+  @@version_books = {}
+  @@all_by_language = {}
   @@languages = {}
   def self.all(lang = "")
 
@@ -24,19 +24,14 @@ class Version
   end
 
   def self.languages
-    if @@languages = {}
-      @@languages = Hash[*Version.all.group_by { |k, v| v.language}.keys.each {|a| a.to_a}.map {|h| h.to_a.flatten - ["iso", "human"]}.flatten]
-    end
-    @@languages
+    Hash[*Version.all.group_by { |k, v| v.language}.keys.each {|a| a.to_a}.map {|h| h.to_a.flatten - ["iso", "human"]}.flatten]
   end
 
   def self.all_by_language
     # versions.group_by { |k, v| v.language }
-    if @all_by_language == {}
-      @all_by_language = Version.all.group_by {|k, v| v.language.iso}
-      @all_by_language.each {|k, v| @all_by_language[k] = Hash[*v.flatten]}
-    end
-    @all_by_language
+    all_by_language = Version.all.group_by {|k, v| v.language.iso}
+    all_by_language.each {|k, v| all_by_language[k] = Hash[*v.flatten]}
+    all_by_language
   end
 
   def initialize(version)
@@ -119,7 +114,6 @@ class Version
   private
 
   def self.books_list(version)
-    return @books[version] unless @books[version].nil?
     hash = {}
     books_api_data(version).each do |v|
       hash[v.osis.downcase] = { human: v.human, chapters: v.chapters.to_i, chapter: {}}
@@ -127,7 +121,7 @@ class Version
          hash[v.osis.downcase][:chapter][x.to_i] = {verses: v.verses[x-1]}
       end
     end
-    @books[version] = Hashie::Mash.new(hash)
+    Hashie::Mash.new(hash)
   end
 
   def books_list(version = nil)
@@ -136,8 +130,7 @@ class Version
   end
 
   def self.books_api_data(version)
-    @books_api_data[version] = YvApi.get("bible/books", cache_for: 12.hours, version: version, cache_for: 12.hours) unless @books_api_data.has_key?(version)
-    @books_api_data[version]
+    YvApi.get("bible/books", cache_for: 12.hours, version: version, cache_for: 12.hours)
   end
 
   def books_api_data(version)
@@ -145,8 +138,9 @@ class Version
   end
 
   def self.versions
-    versions_api_data.versions.each { |k, v| @versions[k] = Version.new(k) } if @versions.empty?
-    @versions
+    versions = {}
+    versions_api_data.versions.each { |k, v| versions[k] = Version.new(k) }
+    versions
   end
 
   def versions
@@ -162,8 +156,7 @@ class Version
   end
 
   def self.info_api_data(version)
-    @info_api_data[version] = YvApi.get("bible/copyright", version: version, cache_for: 12.hours) unless @info_api_data.has_key?(version)
-    @info_api_data[version]
+    YvApi.get("bible/copyright", version: version, cache_for: 12.hours)
   end
 
   def info_api_data(version)
