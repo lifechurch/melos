@@ -49,6 +49,7 @@ YouversionWeb::Application.routes.draw do
   match 'sign-up/facebook' => 'users#new_facebook', as: 'facebook_sign_up', :via => :get
   match 'sign-up/success' => 'users#sign_up_success', as: 'sign_up_success'
   match 'confirm/:hash' => 'users#confirm', :as => "confirm"
+  match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
   match 'resend' => 'users#resend_confirmation', :as => "resend_confirmation"
   
   # Sessions
