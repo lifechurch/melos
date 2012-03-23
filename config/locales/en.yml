@@ -222,7 +222,7 @@ en:
     my badges:                                  "My Badges"
     revised date:                               "Last revised on %{date}"
     update email copy:                          "Enter a new email address and click Update Email. We'll send you a link to confirm your new email address."
-    edit email:                                 "Update Email"
+    edit email:                                 "Update Email Address"
     update email check:                         "Please check your email and click the link to confirm your new email address."
     confirm update email success:               "Thanks! You've updated your email address."
     confirm update email error:                 "Sorry, there was a problem completing your email address change."
