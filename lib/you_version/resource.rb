@@ -50,7 +50,8 @@ module YouVersion
       end
 
       def i18nize(hash)
-        lang_key = I18n.locale.to_s.gsub("-", "_")
+        lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
+        
         hash.has_key?(lang_key) ? hash[lang_key] : hash["default"] unless hash.nil?
       end
 

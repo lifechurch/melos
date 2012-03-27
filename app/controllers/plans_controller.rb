@@ -8,9 +8,9 @@ class PlansController < ApplicationController
       render :action => "index_subscriptions" and return
     end
     
-    params[:lang] ||= I18n.locale.to_s
-    params[:language_tag] = params[:lang]
-    @plans = Plan.all(params)
+    @plan_lang = params[:lang] || I18n.locale.to_s
+    
+    @plans = Plan.all(params.merge(language_tag: @plan_lang))
     @categories = CategoryListing.find(params[:category])
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
   end

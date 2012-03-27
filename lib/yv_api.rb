@@ -84,6 +84,12 @@ class YvApi
     # Check the API response for error code
     return api_response_or_rescue(response, block)
   end
+  
+  def self.to_api_lang_code(lang_code)
+    # ["de","en","es","fr","ko","nl","no","pl","pt","ru","sk","sv","zh_CN", "zh_TW"]}, # API options for 2.4 plans 3/26/12
+    lang_code = lang_code.gsub("pt-BR", "pt")
+    lang_code = lang_code.gsub("-", "_")
+  end
 
   private
 
@@ -108,10 +114,7 @@ class YvApi
   end
 
   def self.clean_up_opts(opts)
-    opts[:language_tag] = opts[:language_tag].gsub("pt-BR", "pt") if opts[:language_tag]
-    opts[:language_tag] = opts[:language_tag].gsub("-", "_") if opts[:language_tag]
-    
-    # ["de","en","es","fr","ko","nl","no","pl","pt","ru","sk","sv","zh_CN", "zh_TW"]}, # API options
+    opts[:language_tag] = to_api_lang_code(opts[:language_tag]) if opts[:language_tag]
     
     return opts
   end
