@@ -22,6 +22,10 @@ module YouversionWeb
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       
+      # re-route /download redirects before the mobile (browser) redirects so the mobile redirects to app stores work
+      r301 '/descargar', '/es/download'
+      r301 %r{^(/.{2,5})?(/app$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
+      
       # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
       #   :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
       r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}#{path}" },
@@ -67,8 +71,6 @@ module YouversionWeb
       
       ### Mobile Downloads
       r301 %r{^(/.{2,5})?(/download$)}, '$1/mobile'
-      r301 '/descargar', '/es/download'
-      r301 %r{^(/.{2,5})?(/app$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
       
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
@@ -105,6 +107,7 @@ module YouversionWeb
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
