@@ -108,7 +108,11 @@ class YvApi
   end
 
   def self.clean_up_opts(opts)
+    opts[:language_tag] = opts[:language_tag].gsub("pt-BR", "pt") if opts[:language_tag]
     opts[:language_tag] = opts[:language_tag].gsub("-", "_") if opts[:language_tag]
+    
+    # ["de","en","es","fr","ko","nl","no","pl","pt","ru","sk","sv","zh_CN", "zh_TW"]}, # API options
+    
     return opts
   end
 
