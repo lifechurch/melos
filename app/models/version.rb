@@ -148,7 +148,11 @@ class Version
   end
 
   def self.versions_api_data
-    @versions_api_data ||= YvApi.get("bible/versions", type: "all", cache_for: 12.hours)
+    return @versions_api_data unless @versions_api_data.nil?
+    
+    @versions_api_data = YvApi.get("bible/versions", type: "all", cache_for: 12.hours)
+    @versions_api_data.versions.each {|k,v| v.language.iso = YvApi::to_app_lang_code(v.language.iso)}
+    @versions_api_data
   end
 
   def versions_api_data

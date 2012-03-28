@@ -90,6 +90,12 @@ class YvApi
     lang_code = lang_code.gsub("pt-BR", "pt")
     lang_code = lang_code.gsub("-", "_")
   end
+  
+  def self.to_app_lang_code(lang_code)
+    # ["de","en","es","fr","ko","nl","no","pl","pt","ru","sk","sv","zh_CN", "zh_TW"]}, # API options for 2.4 plans 3/26/12
+    lang_code = lang_code.gsub("pt", "pt-BR")
+    lang_code = lang_code.gsub("_", "-")
+  end
 
   private
 
