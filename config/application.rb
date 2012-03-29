@@ -55,7 +55,7 @@ module YouversionWeb
 
       ### NOTES
       # Ignore SEO text
-      rewrite %r{/notes/(\d+)(/edit|/delete)*}, '/notes/$1$2'
+      rewrite %r{^(/.{2,5})?/notes/(\d+)(/edit|/delete)*}, '$1/notes/$2$3'
 
       ### READING PLANS
       r301 '/reading-plans/all', '/reading-plans'
