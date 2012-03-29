@@ -80,7 +80,7 @@ class Reference
   end
 
   def version_string
-    @version_string ||= @ref[:version].upcase.match(/\A[^-]*/)
+    @version_string ||= @ref[:version].upcase.match(/\A[^-_]*/)
   end
 
   def version

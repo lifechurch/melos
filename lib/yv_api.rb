@@ -87,8 +87,10 @@ class YvApi
   
   def self.to_api_lang_code(lang_code)
     # ["de","en","es","fr","ko","nl","no","pl","pt","ru","sk","sv","zh_CN", "zh_TW"]}, # API options for 2.4 plans 3/26/12
-    lang_code = lang_code.gsub("pt-BR", "pt")
-    lang_code = lang_code.gsub("-", "_")
+    code = lang_code.to_s.gsub("pt-BR", "pt")
+    code = code.gsub("-", "_")
+    
+    lang_code.is_a?(Symbol) ? code.to_sym : code
   end
   
   def self.to_app_lang_code(lang_code)
@@ -121,6 +123,7 @@ class YvApi
 
   def self.clean_up_opts(opts)
     opts[:language_tag] = to_api_lang_code(opts[:language_tag]) if opts[:language_tag]
+    opts[:language_iso] = to_api_lang_code(opts[:language_iso]) if opts[:language_iso]
     
     return opts
   end

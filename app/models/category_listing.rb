@@ -1,12 +1,14 @@
 class CategoryListing
   attr_reader :current, :breadcrumbs, :items
 
-  def self.find(category_slug)
+  def self.find(category_slug, opts={})
     #we only need 1st page to get all categories in the response
     #the params[:category] param will filter the query to only children of that category
-    params = {page: 1, category: category_slug, cache_for: 12.hours}
+    opts[:page] ||= 1
+    opts[:category] ||= category_slug
+    opts[:cache_for] ||= 12.hours
 
-    response = YvApi.get("reading_plans/library", params) do |errors|
+    response = YvApi.get("reading_plans/library", opts) do |errors|
       raise ResourceError.new(errors)
     end
     

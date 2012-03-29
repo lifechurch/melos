@@ -65,7 +65,7 @@ class ReferencesController < ApplicationController
     # search the entire chapter for notes
     notes_ref_hash = params[:reference].to_osis_hash rescue not_found
     notes_ref_hash[:verse]=1..5 unless notes_ref_hash[:verse]
-    @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 30.minutes)
+    @notes = Note.for_reference(Reference.new(notes_ref_hash), language_iso: I18n.locale, cache_for: 10.minutes)
     render layout: false
   end
   

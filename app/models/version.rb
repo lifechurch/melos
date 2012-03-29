@@ -63,7 +63,7 @@ class Version
   end
 
   def osis_human
-    @version.upcase.match(/\A[^-]*/)
+    @version.upcase.match(/\A[^-_]*/)
   end
 
   def osis

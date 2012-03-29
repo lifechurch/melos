@@ -20,12 +20,12 @@ class Plan < YouVersion::Resource
       Plan.search(opts[:query], opts)
     else
     #TODO: this doesn't work if an integer id is passed?
-      super
+      super(opts.merge(query: '*'))
     end
   end
   
   def self.list_path
-    "#{api_path_prefix}/library"
+    "#{api_path_prefix}/search"
   end
   
   def self.api_path_prefix
@@ -42,8 +42,10 @@ class Plan < YouVersion::Resource
         lib_plan = search(id).find{|plan| plan.slug.downcase == id.downcase}
         id = lib_plan.id unless lib_plan.nil?
     end
-
-    #TODO: this doesn't work if an integer id is passed?
+    
+    opts[:query] ||= '*'
+    
+    #TODO: this doesn't work if an integer id is passed (?)
     super(id, opts, &block)
   end
   
