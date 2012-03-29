@@ -59,7 +59,6 @@
                 = category.name
     .split_pane_content
       - if !@plans.empty?
-        - if params[:no_loc]
         %ul.big_list
           - @plans.each do |plan|
             %li
