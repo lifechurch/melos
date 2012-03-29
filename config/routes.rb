@@ -62,6 +62,7 @@ YouversionWeb::Application.routes.draw do
   resources :plans, :only => [:index, :show, :update], :path => 'reading-plans' do
     match 'users' => 'plans#users_index'
     match 'settings' => 'plans#settings'
+    match 'settings/email' => 'plans#settings' #legacy link
     match 'calendar' => 'plans#calendar'
     match 'start' => 'plans#start'
   end
