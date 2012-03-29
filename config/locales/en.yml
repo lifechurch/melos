@@ -409,6 +409,7 @@ en:
     reading completed _ mark and show next:     "Next: %{next_reference}"
     which reading:                              "%{current} of %{total}"
     done reading:                               "Done"
+    no content:                                 "This day has no content and has been marked as completed."
     read today:                                 "View Today's Reading"
     completion status _ below percentage:       "Complete"
     current progress html:                      "Day <b>%{day}</b> of <b>%{total_days}</b>"
