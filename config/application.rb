@@ -47,7 +47,7 @@ module YouversionWeb
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
 
-      ### GROUPS/LIVE
+      ### Pass-through to 2.0
       r302 %r{/groups.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
       r302 %r{/live.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
       r302 %r{/events.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
