@@ -43,7 +43,7 @@ module ApplicationHelper
   end
   
   def scale_frame(html, opts={})
-    h_w = html.scan(/width=\"(\d+)\" height=\"(\d+)\"/).flatten
+    h_w = html.scan(/<iframe width=\"(\d+)\" height=\"(\d+)\"/).flatten
 
     ratio = 1
     if opts[:width]
@@ -52,6 +52,6 @@ module ApplicationHelper
     scaled_w = (h_w[0].to_f * ratio).to_i
     scaled_h = (h_w[1].to_f * ratio).to_i
 
-    html = html.gsub(/width=\"\d+\" height=\"\d+\"/, 'width="' + scaled_w.to_s + '" height="' + scaled_h.to_s + '"')
+    html = html.gsub(/<iframe width=\"\d+\" height=\"\d+\"/, '<iframe width="' + scaled_w.to_s + '" height="' + scaled_h.to_s + '"')
   end
 end
