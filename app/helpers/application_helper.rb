@@ -44,14 +44,16 @@ module ApplicationHelper
   
   def scale_frame(html, opts={})
     h_w = html.scan(/<iframe width=\"(\d+)\" height=\"(\d+)\"/).flatten
+    unless h_w.empty?
+      ratio = 1
+      if opts[:width]
+        ratio = opts[:width].to_f/h_w[0].to_f
+      end    
+      scaled_w = (h_w[0].to_f * ratio).to_i
+      scaled_h = (h_w[1].to_f * ratio).to_i
 
-    ratio = 1
-    if opts[:width]
-      ratio = opts[:width].to_f/h_w[0].to_f
-    end    
-    scaled_w = (h_w[0].to_f * ratio).to_i
-    scaled_h = (h_w[1].to_f * ratio).to_i
-
-    html = html.gsub(/<iframe width=\"\d+\" height=\"\d+\"/, '<iframe width="' + scaled_w.to_s + '" height="' + scaled_h.to_s + '"')
+      html = html.gsub(/<iframe width=\"\d+\" height=\"\d+\"/, '<iframe width="' + scaled_w.to_s + '" height="' + scaled_h.to_s + '"')
+    end
+    html
   end
 end
