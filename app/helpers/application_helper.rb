@@ -41,4 +41,17 @@ module ApplicationHelper
   def is_dark?(hex_color)
     convert_to_brightness_value(hex_color) <= 382.5 #halfway between black (0+0+0 = 0) and white (255+255+255 = 765)
   end
+  
+  def scale_frame(html, opts={})
+    h_w = html.scan(/width=\"(\d+)\" height=\"(\d+)\"/).flatten
+
+    ratio = 1
+    if opts[:width]
+      ratio = opts[:width].to_f/h_w[0].to_f
+    end    
+    scaled_w = (h_w[0].to_f * ratio).to_i
+    scaled_h = (h_w[1].to_f * ratio).to_i
+
+    html = html.gsub(/width=\"\d+\" height=\"\d+\"/, 'width="' + scaled_w.to_s + '" height="' + scaled_h.to_s + '"')
+  end
 end

@@ -21,4 +21,4 @@
       = t('plans.no content')
     = render partial: 'plan_links', locals: {plan: @subscription}
 .split_pane_content{style: "width: 423px"}
-  %div{style: "margin-left: 25px; margin-right: 5px;"}= @reading.devotional.html_safe
+  %div{style: "margin-left: 25px; margin-right: 5px;"}= scale_frame(@reading.devotional, width: 393).html_safe

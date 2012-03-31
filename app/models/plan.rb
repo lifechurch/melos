@@ -175,7 +175,7 @@ class Plan < YouVersion::Resource
       end
       
       @reading = Hashie::Mash.new()
-      @reading.devotional = response.additional_content_html
+      @reading.devotional = YouVersion::Resource.i18nize(response.additional_content_html)
       @reading.devotional ||= "<p>" << YouVersion::Resource.i18nize(response.additional_content).gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if response.additional_content
       @reading.references = response.adjusted_days.first.references.map do |data| 
         osis_hash = data.reference.osis.to_osis_hash
