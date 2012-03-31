@@ -11,7 +11,7 @@ class PlansController < ApplicationController
     @plan_lang = params[:lang] || I18n.locale.to_s
     
     @plans = Plan.all(params.merge(language_tag: @plan_lang))
-    @categories = CategoryListing.find(params[:category], language_tag: I18n.locale.to_s)
+    @categories = CategoryListing.find(params[:category], language_tag: @plan_lang)
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
   end
 
