@@ -94,7 +94,7 @@ class Plan < YouVersion::Resource
         if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
           return []
         else
-          raise ResourceError.new(errors)
+          raise YouVersion::ResourceError.new(errors)
         end
       end
     

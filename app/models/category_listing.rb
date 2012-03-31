@@ -7,9 +7,14 @@ class CategoryListing
     opts[:page] ||= 1
     opts[:category] ||= category_slug
     opts[:cache_for] ||= 12.hours
+    opts[:query] = '*'
 
-    response = YvApi.get("reading_plans/library", opts) do |errors|
-      raise ResourceError.new(errors)
+    response = YvApi.get("reading_plans/search", opts) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        raise "No Plans in this category!"
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
     end
     
     CategoryListing.new(response.categories) 
