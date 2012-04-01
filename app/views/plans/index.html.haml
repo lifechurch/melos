@@ -26,6 +26,8 @@
       %form{method: 'get'}
         - if params[:category]
           %input{:type => "hidden", :name => "category", :value => params[:category]}
+        - if params[:translate]
+          %input{:type => "hidden", :name => "translate", :value => params[:translate]}
         - if params[:query]
           %input{:type => "hidden", :name => "query", :value => params[:query]}
         %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "lang", }
@@ -34,6 +36,8 @@
       %form{method: 'get'}
         - if params[:category]
           %input{:type => "hidden", :name => "category", :value => params[:category]}
+        - if params[:translate]
+          %input{:type => "hidden", :name => "translate", :value => params[:translate]}
         - if @plan_lang
           %input{:type => "hidden", :name => "lang", :value => @plan_lang}
         %input.autofocus{:style =>"width: 300px; margin-left: 40px;", name: "query", :type => 'search', :placeholder => t("plans.search placeholder", category: @categories.current_name || t("plans.all")), value: params[:query]}
@@ -49,18 +53,18 @@
             - orig_locale = I18n.locale
             - I18n.locale = @plan_lang
         %dd{class: (params[:category] == "" || params[:category].nil?) ? "highlighted" : ""}
-          = link_to t("plans.all plans"), plans_path(lang: @plan_lang)
+          = link_to t("plans.all plans"), plans_path(params.merge(category: nil, locale: orig_locale))
         - level = 0
         - if @categories
           - @categories.breadcrumbs.each do |category|
             - level += 1
             %dd{class: params[:category] == category.slug ? "highlighted" : ""}
-              %a{:href => plans_path(category: category.slug, lang: @plan_lang), :style => "margin-left:#{level * 20}px"}
+              %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug)), :style => "margin-left:#{level * 20}px"}
                 = (params[:category] == category.slug) ? t("plans.all category plans", category: category.name)  : category.name
           - level += 1
           - @categories.items.each do |category|
             %dd{class: params[:category] == category.slug ? "highlighted" : ""}
-              %a{:href => plans_path(category: category.slug, lang: @plan_lang), :style => "margin-left:#{level * 20}px"}
+              %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug)), :style => "margin-left:#{level * 20}px"}
                 = category.name
     .split_pane_content
       - if !@plans.empty?
@@ -68,7 +72,7 @@
           - @plans.each do |plan|
             %li
               %div
-                %h4{style: "margin-bottom: 12px"}= link_to(plan.name, plan)
+                %h4{style: "margin-bottom: 12px"}= link_to(plan.name, plan, locale: orig_locale)
                 %div{style: "margin-bottom: 10px; line-height: 14px"}= plan.formatted_length
                 %p= plan.about
         = render "shared/pagination", resource_list: @plans
