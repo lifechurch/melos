@@ -9,6 +9,7 @@ class PlansController < ApplicationController
     end
     
     @plan_lang = params[:lang] || I18n.locale.to_s
+    @translate_list = params[:translate] == "true"
     
     @plans = Plan.all(params.merge(language_tag: @plan_lang))
     @categories = CategoryListing.find(params[:category], language_tag: @plan_lang)

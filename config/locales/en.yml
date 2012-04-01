@@ -377,6 +377,7 @@ en:
     title:                                      "Reading Plans"
     browse by category:                         "Browse by Category"
     browse plans:                               "Browse %{category} Plans"
+    swap list localization:                     "(<a href='%{swap_link}'>View in %{swap_locale}</a> instead...)"
     all:                                        "All"
     all plans:                                  "All Plans"
     all category plans:                         "All %{category} Plans"

@@ -43,6 +43,11 @@
       %dl.categories_menu
         %dt
           = t("plans.browse by category")
+          - if I18n.locale.to_s != @plan_lang
+            %div.mute{style: "font-weight: normal; font-size: 12px"}= t("plans.swap list localization", swap_locale: t('language name', locale: @translate_list ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: (!@translate_list).to_s))).html_safe
+          - if @translate_list
+            - orig_locale = I18n.locale
+            - I18n.locale = @plan_lang
         %dd{class: (params[:category] == "" || params[:category].nil?) ? "highlighted" : ""}
           = link_to t("plans.all plans"), plans_path(lang: @plan_lang)
         - level = 0
@@ -69,3 +74,4 @@
         = render "shared/pagination", resource_list: @plans
       -else
         .none{align: "center"}= t("plans.none found")
+      - I18n.locale = orig_locale
