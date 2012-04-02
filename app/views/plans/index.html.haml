@@ -43,12 +43,15 @@
         %input.autofocus{:style =>"width: 300px; margin-left: 40px;", name: "query", :type => 'search', :placeholder => t("plans.search placeholder", category: @categories.current_name || t("plans.all")), value: params[:query]}
         %input{:type => 'submit', :value => t("plans.search")}
       %hr{:style => "margin-top:15px"}
+    .plan_filters
+      - if I18n.locale.to_s != @plan_lang
+        %div{style: "margin-left: 254px; text-align:center"}
+          = t('plans.showing language filtered', lang_name: t('language name', locale: @plan_lang))
+          %span.mute{style: "font-weight: normal; font-size: 12px"}= t("plans.swap list localization", swap_locale: t('language name', locale: @translate_list ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: (!@translate_list).to_s))).html_safe
     .split_pane_sidebar
       %dl.categories_menu
         %dt
           = t("plans.browse by category")
-          - if I18n.locale.to_s != @plan_lang
-            %div.mute{style: "font-weight: normal; font-size: 12px"}= t("plans.swap list localization", swap_locale: t('language name', locale: @translate_list ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: (!@translate_list).to_s))).html_safe
           - if @translate_list
             - orig_locale = I18n.locale
             - I18n.locale = @plan_lang
