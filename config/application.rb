@@ -75,6 +75,9 @@ module YouversionWeb
       
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
+      
+      #blogs
+      r301 '/churches', 'http://blog.youversion.com/churches'
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)

@@ -75,7 +75,7 @@
           - @plans.each do |plan|
             %li
               %div
-                %h4{style: "margin-bottom: 12px"}= link_to(plan.name, plan, locale: orig_locale)
+                %h4{style: "margin-bottom: 12px"}= link_to(plan.name, plan_path(plan, locale: orig_locale))
                 %div{style: "margin-bottom: 10px; line-height: 14px"}= plan.formatted_length
                 %p= plan.about
         - I18n.locale = orig_locale
