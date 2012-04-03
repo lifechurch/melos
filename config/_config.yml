@@ -12,16 +12,22 @@ common: &common
   # facebook_secret: "279d2af7fd1de6ed8d74a67ca9de530a"
   #
   # yv.chadbailey.net
-  facebook_app_id: "105030176203924"
-  facebook_secret: "9d03678ddd8b5588c4e6c91bd996cce2"
-  twitter_key: "KobF6Lt0zWDFBDxZgZyg"
-  twitter_secret: "GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs"
-  avatar_path: "http://avatars.youversion.com/"
-  bloodhound_username: "lifechurchtv"
-  bloodhound_password: "password"
+  facebook_app_id: 105030176203924
+  facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
+  twitter_key: KobF6Lt0zWDFBDxZgZyg
+  twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
+  avatar_path: http://avatars.youversion.com/
+  bloodhound_username: lifechurchtv
+  bloodhound_password: password
 
 development:
-  <<: *common
+  facebook_app_id: 105030176203924
+  facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
+  twitter_key: KobF6Lt0zWDFBDxZgZyg
+  twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
+  avatar_path: http://avatars.youversion.com/
+  bloodhound_username: lifechurchtv
+  bloodhound_password: password
   api_root: api.youversion.com
   api_referer: web-dev.youversion.com
   api_version: "2.4"

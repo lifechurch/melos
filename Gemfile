@@ -46,7 +46,7 @@ end
 group :test, :development do
   # Pretty printed test output
   gem 'turn', '< 0.8.3', :require => false
-  gem 'cucumber-rails', "~> 0.5.0.beta1"
+  gem 'cucumber-rails', "~> 0.5.0.beta1", :require => false
   gem 'rspec-cells'
   gem 'capybara', "~> 1.0.0.beta1"
   gem 'rspec-rails'
