@@ -5,7 +5,7 @@ host = https://www.transifex.net
 file_filter = config/locales/<lang>.yml
 source_file = config/locales/en.yml
 source_lang = en
-trans.pt_BR = config/locales/pt-BR.yml
+trans.pt = config/locales/pt-BR.yml
 trans.zh_CN = config/locales/zh-CN.yml
 trans.zh_TW = config/locales/zh-TW.yml
 

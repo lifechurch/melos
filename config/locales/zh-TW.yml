@@ -32,7 +32,7 @@ zh-TW:
   you are now following:                        "您現在正關注 %{username}"
   you are no longer following:                  "您已不再關注 %{username}"
   user follows:                                 "%{user} 正在關注您。"
-  user does not follow:                         "%{user} 已不再關注您。"
+  user does not follow:                         "%{user} 还没有關注您。"
   no following found self:                      "您還未關注任何人。可以到<a href='%{link}'>尋找朋友</a>的頁面找一些朋友！"
   no followers found self:                      "目前還沒有人關注您，請到<a href='%{link}'>尋找朋友</a>的頁面找一些朋友！"
   no followers found other:                     "目前無人關注 %{username}。"
@@ -191,7 +191,7 @@ zh-TW:
     follow:                                     "關注"
     unfollow:                                   "取消關注"
     following title:                            "我關注的人"
-    user does not follow you:                   "%{user}沒有關注您"
+    user does not follow you:                   "%{user} 还沒有關注您"
     recent activity:                            "最近活動"
     my recent_activity:                         "我的近期活動"
     started following:                          "開始關注"
@@ -502,7 +502,7 @@ zh-TW:
     receipt:                                    "給我電郵收據副本"
     preview:                                    "預覽捐贈"
     header copy:                                "我們可以成為歷史上最投入聖經的一代。你的支持可以讓比以往更多的人在更多的平台，版本和語言打開神的話語。請填以下表格並奉獻。我們會在下一個版面收奉獻金。"
-    header confirm copy:                        "Together, we could become the most Bible-engaged generation in history. Your support means people can open God's Word on more platforms, in more languages, in more versions, and in more countries than ever before. Click Donate Now to make your donation."
+    header confirm copy:                        "同心合力的，我們可以成為歷史上最投入聖經的一代。您的支持將在更多的國家裡，讓更多的人在更多的平台上，以更多的語言和更多的版本來打開神的話語。請點選『立刻捐助』來履行您的奉獻。"
     donate now button:                          "現在就捐獻"
     email header:                               "YouVersion, LifeChurch.tv的事工已經收到你的捐獻。雖然你不會因捐獻收到物件或服務，但會有無形的信仰上好處。如有問題，請聯絡 giving@lifechurch.tv。"
     email footer:                               "你的捐獻可以幫助世界上不同的人愛上神的話語。"
@@ -574,7 +574,7 @@ zh-TW:
     amazon:                                     "Kindle Fire"
   pages:
     generic_error:
-      title:                                    "糟糕"
+      title:                                    "抱歉！"
       explanation:                              "發生了錯誤。很抱歉給您帶來不便，請稍後再試。"
       our action:                               "我們已經留意到這個事件並會盡快跟進。"
   shared:

@@ -379,7 +379,7 @@ es:
     browse plans:                               "Buscar %{category} planes"
     all:                                        "Todo"
     all plans:                                  "Todos los planes"
-    all category plans:                         "Todos los %{category} planes"
+    all category plans:                         "Todos los planes de %{category} "
     my plans:                                   "Mis Planes"
     none found:                                 "No hemos podido encontrar un plan que coincida con sus criterios. Intente ampliar su búsqueda."
     about publisher:                            "Acerca del editor"
