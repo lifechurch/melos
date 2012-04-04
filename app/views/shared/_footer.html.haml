@@ -21,7 +21,7 @@
     %span.separator
       |
     %a{:href => 'http://support.youversion.com'}=t("get support")
-    - unless ["es", "pt", "pt-PT", "pt-BR"].include? I18n.locale.to_s
+    - unless [:es, :pt, :"pt-PT", :"pt-BR"].include? I18n.locale
       %span.separator
         |
       %a{:href => donate_path}=t("donate title")

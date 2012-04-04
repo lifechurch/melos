@@ -31,8 +31,10 @@
         - if params[:query]
           %input{:type => "hidden", :name => "query", :value => params[:query]}
         %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "lang", }
-          - I18n.available_locales.each do |loc|
+          - (Plan.available_locales & I18n.available_locales).each do |loc|
             %option{value: loc.to_s, selected: loc.to_s == @plan_lang}= t("language name", locale: loc)
+          - unless (Plan.available_locales & I18n.available_locales).find{|l| l == @plan_lang}
+            %option{value: @plan_lang.to_s, selected: true}= t("language name", locale: @plan_lang)
       %form{method: 'get'}
         - if params[:category]
           %input{:type => "hidden", :name => "category", :value => params[:category]}

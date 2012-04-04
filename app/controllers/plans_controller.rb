@@ -11,8 +11,8 @@ class PlansController < ApplicationController
     @plan_lang = params[:lang] || I18n.locale.to_s
     @translate_list = params[:translate] == "true"
     
-    @plans = Plan.all(params.merge(language_tag: @plan_lang))
-    @categories = CategoryListing.find(params[:category], language_tag: @plan_lang)
+    @plans = Plan.all(params.merge(language_tag: @plan_lang)) rescue []
+    @categories = CategoryListing.find(params[:category], language_tag: @plan_lang) rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
   end
 

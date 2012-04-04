@@ -24,6 +24,17 @@ class Plan < YouVersion::Resource
     end
   end
   
+  def self.available_locales
+    return @available_locales if @available_locales
+    
+    response = YvApi.get("configuration/items", {cache_for: 12.hours}) do |errors|
+      raise YouVersion::ResourceError.new(errors)
+    end
+    
+    @available_locales = response.reading_plans.available_language_tags.map{|tag| YvApi::to_app_lang_code(tag).to_sym}
+    
+  end
+  
   def self.list_path
     "#{api_path_prefix}/search"
   end
