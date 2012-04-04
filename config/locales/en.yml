@@ -126,6 +126,7 @@ en:
     like button text:                           "Like"
     unlike button text:                         "Unlike"
   notes:
+    loading community:                          "Loading community notes..."
     public:                                     "Public"
     private:                                    "Private"
     draft:                                      "Draft"
