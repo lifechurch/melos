@@ -47,12 +47,17 @@ module YouversionWeb
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
 
+      #blogs and other misc redirects
+      r301 '/churches', 'http://blog.youversion.com/churches'
+      r301 '/google', 'http://www.google.com/ig/directory?hl=en&url=www.youversion.com/google/youversion2.xml'
+
       ### Pass-through to 2.0
       r302 %r{/groups.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
       r302 %r{/live.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
       r302 %r{/events.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
       r302 %r{/free\-bible.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
       r302 %r{/widgets$}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
+      r302 %r{/google.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
 
       ### NOTES
       # Ignore SEO text
@@ -75,9 +80,6 @@ module YouversionWeb
       
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
-      
-      #blogs
-      r301 '/churches', 'http://blog.youversion.com/churches'
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
