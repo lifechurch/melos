@@ -28,8 +28,47 @@ module YouversionWeb
       
       # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
       #   :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
-      r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}#{path.to_s.gsub(/reading-plans\/\d+-([^\/]*)/, 'reading-plans/\1')}" },
-        :if => Proc.new { |rack_env| !rack_env["PATH_INFO"].match(/status/) && !rack_env["X_MOBILE_DEVICE"].nil? }
+      #
+      #   Mobile
+      mobile_rewrite = lambda do |path, rack_env|
+        new_path = path.to_s
+        new_server_name = rack_env['SERVER_NAME']
+        # THIS IS HARD-CODED; UPDATE WITH ADDITIONAL LOCALES
+        locales = {"en" => "en",
+                   "de" => "de",
+                   "es" => "es",
+                   "fr" => "fr",
+                   "ko" => "ko",
+                   "nl" => "nl",
+                   "no" => "no",
+                   "pt-BR" => "pt",
+                   "ru" => "ru",
+                   "zh-CN" => "zh-cn",
+                   "zh-TW" => "zh-tw"}
+        
+        # url = "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}"
+        new_server_name = new_server_name.gsub(/www/, "m")
+        new_server_name = "m.youversion.com"
+        
+        # locales
+        if (new_path != "" && new_path != "/")
+          # then there's a path, see if it's a locale
+          test = new_path.split("/")[1]
+          if locales[test]
+            new_server_name = locales[test] + "." + new_server_name
+            new_path_array = new_path.split("/")
+            new_path_array.delete_at(1)
+            new_path = new_path_array.join("/")
+          end
+        end
+        # reading plans support
+        new_path = new_path.gsub(/reading-plans\/\d+-([^\/]*)/, 'reading-plans/\1')
+
+        "http://#{new_server_name}#{new_path}"
+      end
+
+
+      r301 /.*/, mobile_rewrite, :if => Proc.new { |rack_env| !rack_env["PATH_INFO"].match(/status/) && !rack_env["X_MOBILE_DEVICE"].nil? }
 
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)
@@ -84,9 +123,7 @@ module YouversionWeb
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
     # config.middleware.insert_before(Rack::MobileDetect, Rack::JSON) do
-    #   puts "in"
     #   get '/bb/test.json' do
-    #     puts "in bloc"
     #     headers 'Content-type' => 'application/json'
     #     '{"response":{"code":200,"data":{"test":"OK"}},"success":1}'
     #   end
