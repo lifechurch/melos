@@ -210,6 +210,7 @@ en:
     edit notifications:                         "Manage Notifications"
     edit connections:                           "Connected Accounts"
     edit devices:                               "Connected Devices"
+	delete account:                             "Delete Account"
     user recent activity:                       "%{user}'s Recent Activity"
     my notes:                                   "My Notes"
     user notes:                                 "%{user}'s Notes"
