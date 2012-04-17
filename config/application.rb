@@ -6,7 +6,6 @@ require "sprockets/railtie"
 require "rack"
 require "rack/mobile-detect"
 require "rack/rewrite"
-require File.join(File.dirname(__FILE__), '../lib/bb.rb')
 
 require File.expand_path('../_config', __FILE__)
 require File.expand_path('../../lib/osis', __FILE__)
@@ -23,7 +22,7 @@ module YouversionWeb
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       
       #high frequency BB traffic
-      r301 %r{^/bb/latest.json$}, 'http://bb-static.youversion.com/bb/latest.json'
+      r301 %r{^/(bb|js)/(.+)}, 'http://bb-static.youversion.com/$1/$2'
       
       # re-route /download redirects before the mobile (browser) redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
@@ -86,9 +85,6 @@ module YouversionWeb
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
-    
-    #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
-    config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
