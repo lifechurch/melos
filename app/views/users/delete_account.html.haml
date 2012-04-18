@@ -1,0 +1,19 @@
+- @title = "#{t('users.edit account_existence')} | #{@user.name || @user.username}"
+
+%p DON'T DO IT!!
+
+= form_tag delete_account_path do
+  - if @user.errors.any?
+    .form_errors
+      = t('users.error deleting account')
+      %ul
+        - @user.errors[:base].each do |e|
+          %li= e
+  %p
+    = label_tag :password, t("password prompt")
+    %br
+    = password_field_tag :password, params[:password], class: "autofocus"
+    %br
+    = link_to t('users.forgot password'), forgot_password_path
+  %p
+    = submit_tag t("users.delete account button"), class: "confirm", "data-confirm-text" => t('users.yes delete')

@@ -39,7 +39,6 @@ YouversionWeb::Application.routes.draw do
     match 'badge/:id' => 'badges#show', as: 'badge'
     resources 'plans', :only =>[:index], :path =>'reading-plans'
   end
-  match 'settings/delete' => 'users#delete', :as => "delete"
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
   resources 'highlights', only: [:create]
@@ -85,6 +84,8 @@ YouversionWeb::Application.routes.draw do
   get   'confirm-update-email/:token' => 'users#confirm_update_email', as: 'confirm_update_email'
   get   'settings/forgot_password' => 'users#forgot_password_form', as: 'forgot_password'
   post  'settings/forgot_password' => 'users#forgot_password', as: 'forgot_password'
+  get   'settings/delete_account' => 'users#delete_account_form', as: 'delete_account'
+  post  'settings/delete_account' => 'users#delete_account', as: 'delete_account' 
 
   # connetions
   match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'
