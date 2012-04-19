@@ -45,12 +45,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     # Try authing them first - poor man's login screen
-    begin
-      if test_user = User.authenticate(params[:user][:username], params[:user][:password])
-        sign_in test_user, params[:user][:password]
-        follow_redirect
-      end
-    rescue
+    # begin
+    #       if test_user = User.authenticate(params[:user][:username], params[:user][:password])
+    #         sign_in test_user, params[:user][:password]
+    #         follow_redirect
+    #       end
+    #     rescue
       if @user.save
         # save username and password so we can sign them back in
         cookies.signed[:f] = params[:user][:username]
