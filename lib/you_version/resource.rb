@@ -236,6 +236,11 @@ module YouVersion
           associations[association_name] ||= association_class.all(params.merge(self.class.foreign_key => self.id))
         end
       end
+      
+      def persist_token(username, password)
+        Digest::MD5.hexdigest "#{username}.Yv6-#{password}"
+      end
+      
     end
 
     attr_accessor :attributes, :associations
@@ -257,7 +262,7 @@ module YouVersion
     end
 
     def persist_token
-      Digest::MD5.hexdigest "#{self.auth[:username]}.Yv6-#{self.auth[:password]}"
+      self.class.persist_token(self.auth[:username], self.auth[:password])
     end
 
     def to_param

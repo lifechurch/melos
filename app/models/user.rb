@@ -86,6 +86,7 @@ class User < YouVersion::Resource
     def authenticate(username, password)
       hash = {}
       response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
+      pp response
       if response
         response = response.symbolize_keys
         response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
@@ -128,6 +129,11 @@ class User < YouVersion::Resource
         end
       User.new(response)
     end
+    
+    def destroy(auth, &block)
+      post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth, api_version: "2.5"}, &block)
+    end
+    
   end
 
   def initialize(data = {})
@@ -139,7 +145,7 @@ class User < YouVersion::Resource
   end
 
   def persist_token
-    Digest::MD5.hexdigest "#{self.username}.Yv6-#{self.password}"
+    self.class.persist_token(self.username, self.password)
   end
   
   def before_save
@@ -192,6 +198,30 @@ class User < YouVersion::Resource
   end
 
   def before_update; end
+
+  def destroy
+    response = true
+
+    return false unless authorized?
+
+    before_destroy
+
+    begin
+      response = self.class.destroy(self.auth) do |errors|
+        new_errors = errors.map { |e| e["error"] }
+        self.errors[:base] << new_errors
+
+        if block_given?
+          yield errors
+        end
+
+        response = false
+      end
+    ensure
+      after_destroy
+    end
+    response
+  end
 
   # def self.find(id)
   #   response = YvApi.get('users/view', {:user_id => id, :auth_user_id => :id} ) do |errors|     
@@ -440,7 +470,6 @@ class User < YouVersion::Resource
       raise YouVersion::ResourceError.new(errors)
     end
   end
-  
   
   def ==(compare)
     compare.class == self.class && self.id == compare.id
