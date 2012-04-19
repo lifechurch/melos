@@ -6,6 +6,7 @@ require "sprockets/railtie"
 require "rack"
 require "rack/mobile-detect"
 require "rack/rewrite"
+require File.join(File.dirname(__FILE__), '../lib/bb.rb')
 
 require File.expand_path('../_config', __FILE__)
 require File.expand_path('../../lib/osis', __FILE__)
@@ -85,6 +86,9 @@ module YouversionWeb
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
+    
+    #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
+    config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
