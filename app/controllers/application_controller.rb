@@ -42,9 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_site
-    puts "domain is #{request.domain}"
     site_class = SiteConfigs.sites[request.domain]
-    puts site_class
     @site = site_class.new
 
   end
