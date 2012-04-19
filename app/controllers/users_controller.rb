@@ -58,7 +58,7 @@ class UsersController < ApplicationController
         redirect_to confirm_email_path
       else
         render action: "new", layout: "application"
-      end
+    # end
     end
   end
 
