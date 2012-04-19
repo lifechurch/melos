@@ -86,6 +86,7 @@ class User < YouVersion::Resource
     def authenticate(username, password)
       hash = {}
       response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
+      pp response
       if response
         response = response.symbolize_keys
         response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
