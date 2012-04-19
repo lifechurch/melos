@@ -6,7 +6,6 @@ module SiteConfigs
 
     def default_version
       "rvr60-es"
-
     end
   end
 end

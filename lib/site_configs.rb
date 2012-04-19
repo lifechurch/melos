@@ -7,7 +7,7 @@ module SiteConfigs
     # These are strings to prevent rails from barfing on the class names
     hash["biblesocietywebsite.org"] = SiteConfigs::ElSalvador
     hash["biblesociety.co.za"] = SiteConfigs::Sabs
-    hash["lvh.me"] = SiteConfigs::ElSalvador
+    hash["lvh.me"] = SiteConfigs::Sabs
     hash
   end
 
