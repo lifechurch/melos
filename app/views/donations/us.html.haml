@@ -2,23 +2,39 @@
   %h1= t('make a donation')
   %p= t('donate.header copy')
   = form_tag do
-    %p
-      = label_tag 'tr[x_name]', t('donate.name')
-      %br
-      = text_field_tag 'tr[x_name]', nil, tabindex: 12
-    %p
-      = label_tag 'tr[x_email]', t('users.email address')
-      %br
-      = text_field_tag 'tr[x_email]', nil, tabindex: 24
-    %p
-      %div{style: "position: relative; left: -6px"}
-        = check_box_tag 'tr[x_email_customer]', "yes", true, tabindex: 36
-        = label_tag 'tr[x_email_customer]', t('donate.receipt')
-    %div.float_right{style: "padding-top: 2em; margin-top: 3px"}
-      %button{class: "action_button_green", tabindex: 60, action: "submit"}
-        = t('donate.preview')
-    %p
+    %p{style: "background: #EEEDEB; padding: 23px; border: 1px solid #CBC9CF; border-radius: 4px;"}
       = label_tag 'tr[x_amount]', t('donate.amount')
       %br
-      %span{style: "display: inline-block; margin-right: -1em; top: 4px; left: 4px; position: relative; z-index: 2"} $
-      = text_field_tag 'tr[x_amount]', nil, type: "tel", value: "10.00", style: "padding-left: 14px; margin-top: 5px", tabindex: 48
+      %span{style: "font-size:24px; display: inline-block; margin-right: -1em; top: 7px; left: 4px; position: relative; z-index: 2"} $
+      = text_field_tag 'tr[x_amount]', nil, type: "tel", style: "font-size:24px; padding-left: 24px; margin-top: 5px; width: 7em", tabindex: 6
+    %div{style: "padding-left: 17px;"}
+      %p
+        = label_tag 'tr[x_name]', t('donate.name')
+        %br
+        = text_field_tag 'tr[x_name]', nil, tabindex: 12
+      %p
+        = label_tag 'tr[x_email]', t('users.email address')
+        %br
+        = text_field_tag 'tr[x_email]', nil, tabindex: 24
+      %p
+        = label_tag 'tr[x_address]', t('donate.address')
+        %br
+        = text_field_tag 'tr[x_address]', nil, tabindex: 36
+      %p
+        = label_tag 'tr[x_city]', t('donate.city')
+        %br
+        = text_field_tag 'tr[x_city]', nil, tabindex: 48
+      %p
+        = label_tag 'tr[x_state]', t('donate.state')
+        %br
+        = select 'tr', 'x_state', {''=>''}.merge(Cfg.usstates).map { |k, v| [v, k] }, {}, {:tabindex => 60, style: "width: 165px"}
+      %p
+        = label_tag 'tr[x_zip]', t('donate.zip')
+        %br
+        = text_field_tag 'tr[x_zip]', nil, tabindex: 72
+      %div{style: "position: relative; left: -6px"}
+        = check_box_tag 'tr[x_email_customer]', "yes", true, tabindex: 84
+        = label_tag 'tr[x_email_customer]', t('donate.receipt')
+      %div{style: "padding-top: 2em; padding-bottom: 2em"}
+        %button{class: "action_button_green", tabindex: 96, action: "submit"}
+          = t('donate.preview')

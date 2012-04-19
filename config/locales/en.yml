@@ -510,6 +510,10 @@ en:
     donate now button:                          "Donate Now"
     email header:                               "YouVersion, a ministry of LifeChurch.tv, has received your donation. No goods or services were provided in exchange for the donation, except intangible religious benefits. Please contact giving@lifechurch.tv with questions."
     email footer:                               "Your donation will help people around the world fall in love with God's Word."
+    address:                                    "Address"
+    city:                                       "City"
+    state:                                      "State"
+    zip:                                        "Zip"
   download ad:
     title:                                      "Download the Free Bible App"
     line 1:                                     "Hundreds of versions in many"

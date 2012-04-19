@@ -15,6 +15,18 @@
       %br
       %strong= "#{t('users.email address')}: "
       %span= @tr[:x_email]
+      %br
+      %strong= "#{t('donate.address')}: "
+      %span= @tr[:x_address]
+      %br
+      %strong= "#{t('donate.city')}: "
+      %span= @tr[:x_city]
+      %br
+      %strong= "#{t('donate.state')}: "
+      %span= @tr[:x_state]
+      %br
+      %strong= "#{t('donate.zip')}: "
+      %span= @tr[:x_zip]
     %p
       %strong= "#{t('donate.amount')}: "
       %span= "$#{@tr[:x_amount]}"
@@ -22,12 +34,12 @@
       = label_tag 'x_card_num', t('donate.card number')
       %br
       = text_field_tag 'x_card_num', nil, type: "tel", style: "margin-top: 5px", tabindex: 12
-    %div.float_right{style: 'margin-top: 32px'}
-      %button{class: "action_button_green", tabindex: 36, action: "submit"}
-        = t('donate.donate now button')
     %p
       = label_tag 'x_exp_date', t('donate.card exp date')
       %br
       = text_field_tag 'x_exp_date', nil, type: "tel", maxlength: 4, tabindex: 24
+    %div{style: 'padding-top: 1em; padding-bottom: 1em'}
+      %button{class: "action_button_green", tabindex: 36, action: "submit"}
+        = t('donate.donate now button')
 
 
