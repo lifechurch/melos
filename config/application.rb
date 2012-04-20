@@ -22,6 +22,9 @@ module YouversionWeb
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       
+      #high frequency BB traffic
+      r301 %r{^/(bb|js)/(.+)}, 'http://bb-static.youversion.com/$1/$2'
+      
       # re-route /download redirects before the mobile (browser) redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
       r301 %r{^(/.{2,5})?(/app$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
@@ -122,12 +125,9 @@ module YouversionWeb
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
-    # config.middleware.insert_before(Rack::MobileDetect, Rack::JSON) do
-    #   get '/bb/test.json' do
-    #     headers 'Content-type' => 'application/json'
-    #     '{"response":{"code":200,"data":{"test":"OK"}},"success":1}'
-    #   end
-    # end
+    
+    #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
+    config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

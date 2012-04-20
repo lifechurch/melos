@@ -84,6 +84,8 @@ YouversionWeb::Application.routes.draw do
   get   'confirm-update-email/:token' => 'users#confirm_update_email', as: 'confirm_update_email'
   get   'settings/forgot_password' => 'users#forgot_password_form', as: 'forgot_password'
   post  'settings/forgot_password' => 'users#forgot_password', as: 'forgot_password'
+  get   'settings/delete_account' => 'users#delete_account_form', as: 'delete_account'
+  post  'settings/delete_account' => 'users#delete_account', as: 'delete_account' 
 
   # connetions
   match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'

@@ -6,7 +6,8 @@ module Bb
       @app = app
     end
     def call(env)
-      if env["PATH_INFO"] =~ %r{/bb/test}
+
+      if env["PATH_INFO"] =~ %r{^/bb/test}
         process_request(env)
       else
         @app.call(env)
@@ -17,7 +18,7 @@ module Bb
     def process_request(env)
        req = Rack::Request.new(env)
        params = req.params
-       # do stuff
+       # return expected 'success' response
        [ 200,
          {'Content-Type' => 'application/json'},
          ['{"response":{"code":200,"data":{"test":"OK"}},"success":1}']
