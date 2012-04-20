@@ -19,7 +19,8 @@ class FacebookConnection < YouVersion::Connection::Base
             user_id:      uid,
             access_token: self.credentials["token"],
             appid:        Cfg.facebook_app_id,
-            secret:       Cfg.facebook_secret
+            secret:       Cfg.facebook_secret,
+            created_dt:   Time.now.to_i
            }.to_json
   end
 
