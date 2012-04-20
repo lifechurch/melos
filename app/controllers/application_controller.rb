@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_site
-    site_class = SiteConfigs.sites[request.domain]
+    site_class = SiteConfigs.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
     @site = site_class.new
 
   end
