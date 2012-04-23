@@ -13,11 +13,14 @@ class FacebookConnection < YouVersion::Connection::Base
     self.connection_type = "fb"
     self.connection_user_id = self.uid
     self.data = {
+            platform:     "web3"
+            name:         self.info["name"],
             screen_name:  self.info["nickname"],
             user_id:      uid,
-            oauth_token:  self.credentials["token"],
-            key:          Cfg.facebook_app_id,
-            secret:       Cfg.facebook_secret
+            access_token: self.credentials["token"],
+            appid:        Cfg.facebook_app_id,
+            secret:       Cfg.facebook_secret,
+            created_dt:   Time.now.to_i
            }.to_json
   end
 
