@@ -25,9 +25,9 @@ module YouversionWeb
       #high frequency BB traffic
       r301 %r{^/(bb|js)/(.+)}, 'http://bb-static.youversion.com/$1/$2'
       
-      # re-route /download redirects before the mobile (browser) redirects so the mobile redirects to app stores work
+      # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
-      r301 %r{^(/.{2,5})?(/app$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
+      r301 %r{^(/.{2,5})?(/app$|/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
       
       # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
       #   :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
