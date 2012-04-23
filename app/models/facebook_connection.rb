@@ -13,7 +13,7 @@ class FacebookConnection < YouVersion::Connection::Base
     self.connection_type = "fb"
     self.connection_user_id = self.uid
     self.data = {
-            platform:     "web3"
+            platform:     "web3",
             name:         self.info["name"],
             screen_name:  self.info["nickname"],
             user_id:      uid,
