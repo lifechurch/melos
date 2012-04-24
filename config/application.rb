@@ -75,21 +75,21 @@ module YouversionWeb
 
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)
-      r301 %r{/bible/verse/(\w+)/(\w+)/(\w+)/(\w+)}, '/bible/$2.$3.$4.$1'
+      r301 %r{/bible/verse/([\w-]+)/(\w+)/(\w+)/([\w-]+)}, '/bible/$2.$3.$4.$1'
       # /bible/verse/niv/john/3 (redirects to 1st verse)
-      r301 %r{/bible/verse/(\w+)/(\w+)/(\w+)}, '/bible/$2.$3.1.$1'
+      r301 %r{/bible/verse/([\w-]+)/(\w+)/(\w+)}, '/bible/$2.$3.1.$1'
       # /bible/chapter/niv/john/3 (normal)
-      r301 %r{/bible/chapter/(\w+)/(\w+)/(\w+)}, '/bible/$2.$3.$1'
+      r301 %r{/bible/chapter/([\w-]+)/(\w+)/(\w+)}, '/bible/$2.$3.$1'
       # /bible/niv/john/3/16 (normal)
-      r301 %r{/bible/(\w+)/(\w+)/(\d+)/(\d+)}, '/bible/$2.$3.$4.$1'
+      r301 %r{/bible/([\w-]+)/(\w+)/(\d+)/([\d-]+)}, '/bible/$2.$3.$4.$1'
       # /bible/john/3/16/niv (user-typed, corrects)
-      r301 %r{/bible/(\w+)/(\d+)/(\d+)/(\w+)}, '/bible/$1.$2.$3.$4'
+      r301 %r{/bible/(\w+)/(\d+)/([\d-]+)/([\w-]+)}, '/bible/$1.$2.$3.$4'
       # /bible/john/3/niv (user-typed, corrects)
-      r301 %r{/bible/(\w+)/(\d+)/(\w+)}, '/bible/$1.$2.$3'
+      r301 %r{/bible/(\w+)/(\d+)/([\w-]+)}, '/bible/$1.$2.$3'
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
       # /bible/niv/john.3.16 (legacy live event links)
-      r301 %r{/bible/(\w+)/(\w+).(\d+).([\d-]+)}, '/bible/$2.$3.$4.$1'
+      r301 %r{/bible/([\w-]+)/(\w+).(\d+).([\d-]+)}, '/bible/$2.$3.$4.$1'
 
       #blogs and other misc redirects
       r301 '/churches', 'http://blog.youversion.com/churches'
