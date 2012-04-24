@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form]
+  before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook, :notifications, :update_notifications]
   before_filter :set_redirect, only: [:new, :create]

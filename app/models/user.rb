@@ -329,14 +329,27 @@ class User < YouVersion::Resource
 
   def follow(opts = {})
     opts = {id: self.id, auth: self.auth}.merge(opts)
-    response = YvApi.post("users/follow", opts)
+    response = YvApi.post("users/follow", opts) do |errors|
+      if errors.length == 1 && [/^You are already following this user$/].detect { |r| r.match(errors.first["error"]) }
+        return true #if user tried to follow and already did, no worries, operation successful
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+
     return true
   end
 
 
   def unfollow(opts = {})
     opts = {id: self.id, auth: self.auth}.merge(opts)
-    response = YvApi.post("users/unfollow", opts)
+    response = YvApi.post("users/unfollow", opts) do |errors|
+      if errors.length == 1 && [/^You are not following this user$/].detect { |r| r.match(errors.first["error"]) }
+        return true #if user tried to unfollow and wasn't following, no worries, operation successful
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
     return true
   end
 
