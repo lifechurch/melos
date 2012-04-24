@@ -46,7 +46,7 @@ YouversionWeb::Application.configure do
     if request.try(:ssl?)
       "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
     else
-      "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+      "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
     end
   end
 
