@@ -88,7 +88,7 @@ module YouversionWeb
       r301 %r{/bible/(\w+)/(\d+)/(\w+)}, '/bible/$1.$2.$3'
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
-      # /bible/niv/john.3.16 (normal)
+      # /bible/niv/john.3.16 (legacy live event links)
       r301 %r{/bible/(\w+)/(\w+).(\d+).([\d-]+)}, '/bible/$2.$3.$4.$1'
 
       #blogs and other misc redirects
