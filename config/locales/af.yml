@@ -167,7 +167,7 @@ af:
     listen:                                     "Luister"
     parallel:                                   "Parallel"
     full screen:                                "Vol  Skerm"
-    about the version:                          "Aangaande die %{weergawe}"
+    about the version:                          "Aangaande die %{version}"
     settings:                                   "Leser Opsies"
     invalid chapter title:                      "Oor Hierdie Weergawe"
     invalid chapter text:                       "Hierdie hoofstuk bestaan nie in hierdie weergawe nie."
