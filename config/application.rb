@@ -126,7 +126,7 @@ module YouversionWeb
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
       
       #donate HTTPS, needs to not re-route if already https
-      r301 %r{^(/.{2,5})?(/donate)}, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, :if => Proc.new{ |rack_env| rack_env["rack.url_scheme"] == 'http'}
+      r301 %r{^(/.{2,5})?(/donate)}, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, :if => Proc.new{ |rack_env| rack_env["rack.url_scheme"] != 'https'}
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
