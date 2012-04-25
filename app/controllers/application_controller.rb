@@ -150,7 +150,6 @@ class ApplicationController < ActionController::Base
   end
   def current_avatar
     cookies[:avatar] = cookies[:avatar].gsub('http://', 'https://s3.amazonaws.com/') if cookies[:avatar]
-    return nil
   end
   def current_date
     #PERF: could cache but needs benchmarking if faster than checks to correctly invalidate
