@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:a] = user.id
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
-    cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+    cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"].gsub('http://', 'https://s3.amazonaws.com/')
   end
   def sign_out
     cookies.permanent.signed[:a] = nil
@@ -149,7 +149,7 @@ class ApplicationController < ActionController::Base
     #TODO: fix this, it's borked
   end
   def current_avatar
-    cookies[:avatar] = cookies[:avatar].gsub('http://', 'https://s3.amazonaws.com/') if cookies[:avatar]
+    cookies[:avatar] = cookies[:avatar].gsub('http://', 'https://s3.amazonaws.com/') unless cookies[:avatar].to_s.nil?
   end
   def current_date
     #PERF: could cache but needs benchmarking if faster than checks to correctly invalidate
