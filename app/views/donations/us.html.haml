@@ -15,7 +15,7 @@
       .float_left
         = label_tag 'tr[x_email]', t('users.email address')
         %br
-        = text_field_tag 'tr[x_email]', nil, {tabindex: 24, style:"width: 225px"}
+        = text_field_tag 'tr[x_email]', nil, {tabindex: 24, style:"width: 225px", type: "email"}
       %p{style: "clear: left"}
         = label_tag 'tr[x_address]', t('donate.address')
         %br
