@@ -496,7 +496,7 @@ class User < YouVersion::Resource
     sizes = ["24x24", "48x48", "128x128", "512x512"]
     hash = {}
     sizes.each do |s|
-      hash["px_#{s}"] = Cfg.avatar_path + Digest::MD5.hexdigest(self.username) + "_" + s + ".png" 
+      hash["px_#{s}"] = Cfg.avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png" 
     end
     return Hashie::Mash.new(hash)
   end

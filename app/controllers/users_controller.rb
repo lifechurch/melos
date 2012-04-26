@@ -39,7 +39,7 @@ class UsersController < ApplicationController
       @blurb = t("registration.plan blurb")
     end
 
-#    render action: "new", layout: "application"
+    render action: "new", layout: "application"
   end
 
   def create

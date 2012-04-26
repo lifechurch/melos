@@ -16,7 +16,7 @@ common: &common
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
-  avatar_path: http://avatars.youversion.com/
+  avatar_path: https://s3.amazonaws.com/avatars.youversion.com/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
 
@@ -25,7 +25,7 @@ development:
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
-  avatar_path: http://avatars.youversion.com/
+  avatar_path: https://s3.amazonaws.com/avatars.youversion.com/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
   api_root: api.youversion.com
