@@ -24,7 +24,7 @@
     - unless [:es, :pt, :"pt-PT", :"pt-BR"].include? I18n.locale
       %span.separator
         |
-      %a{:href => donate_path}=t("donate title")
+      %a{:href => @site.donate_path || donate_path}=t("donate title")
   %p.float_right
     %label{:for => 'choose_language'}
       =t("choose language field")
