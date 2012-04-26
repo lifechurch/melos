@@ -12,7 +12,7 @@
   %p
     = f.label :email, t("users.email address")
     %br
-    = f.text_field :email, class: "autofocus"
+    = f.text_field :email, {class: "autofocus", type: "email"}
   %p
     = f.label :username, t("users.user name")
     %br

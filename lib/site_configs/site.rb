@@ -6,6 +6,14 @@ module SiteConfigs
     end
 
     def default_version; end
+    
+    def donate_path; end
+    
+    def versions; end
+    
+    def to_s
+      self.class.name.gsub('SiteConfigs::', '')
+    end
 
   end
 end
