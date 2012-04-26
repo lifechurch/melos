@@ -6,7 +6,13 @@ class DonationsController < ApplicationController
   # GET
   # Displays a payment form.
   def us
-    
+    #if user is logged in we can pre-fill some info
+    @name = current_auth ? current_user.name : nil
+    @email = current_auth ? current_user.email : nil
+    @zip = current_auth ? current_user.zip : nil
+    loc = Geokit::Geocoders::GoogleGeocoder.geocode(@zip.to_s) rescue nil if @zip
+    @city = loc ? loc.city : nil
+    @state = loc ? loc.state : nil
   end
 
   def confirm

@@ -11,11 +11,11 @@
       .float_left{style: "margin-right: 15px; margin-bottom: 15px"}
         = label_tag 'tr[x_name]', t('donate.name')
         %br
-        = text_field_tag 'tr[x_name]', nil, {tabindex: 12, style:"width: 225px"}
+        = text_field_tag 'tr[x_name]', @name, {tabindex: 12, style:"width: 225px"}
       .float_left
         = label_tag 'tr[x_email]', t('users.email address')
         %br
-        = text_field_tag 'tr[x_email]', nil, {tabindex: 24, style:"width: 225px", type: "email"}
+        = text_field_tag 'tr[x_email]', @email, {tabindex: 24, style:"width: 225px", type: "email"}
       %p{style: "clear: left"}
         = label_tag 'tr[x_address]', t('donate.address')
         %br
@@ -24,15 +24,15 @@
         .float_left{style: "margin-right: 15px"}
           = label_tag 'tr[x_city]', t('donate.city')
           %br
-          = text_field_tag 'tr[x_city]', nil, tabindex: 48
+          = text_field_tag 'tr[x_city]', @city, tabindex: 48
         .float_left{style: "margin-right: 15px"}
           = label_tag 'tr[x_state]', t('donate.state')
           %br
-          = select_tag 'tr[x_state]', options_for_select(us_states), {:tabindex => 60, style: "width: 172px"}
+          = select_tag 'tr[x_state]', options_for_select(us_states, selected: @state), {:tabindex => 60, style: "width: 172px"}
         .float_left
           = label_tag 'tr[x_zip]', t('donate.zip')
           %br
-          = text_field_tag 'tr[x_zip]', nil, {tabindex: 72, style: "width: 100px"}
+          = text_field_tag 'tr[x_zip]', @zip, {tabindex: 72, style: "width: 100px"}
       %p
         %div{style: "position: relative; top: 15px; left: -6px; clear:left"}
           = check_box_tag 'tr[x_email_customer]', "yes", true, tabindex: 84

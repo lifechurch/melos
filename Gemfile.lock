@@ -119,6 +119,8 @@ GEM
       ruby-hmac
     formatador (0.2.1)
     fssm (0.2.8.1)
+    geokit (1.6.5)
+      multi_json
     gherkin (2.7.4)
       json (>= 1.4.6)
     grackle (0.1.10)
@@ -343,6 +345,7 @@ DEPENDENCIES
   dalli
   exceptional
   execjs
+  geokit (~> 1.6.5)
   grackle
   guard
   guard-bundler

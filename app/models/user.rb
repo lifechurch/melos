@@ -47,6 +47,14 @@ class User < YouVersion::Resource
     return nil unless first_name && last_name
     "#{first_name} #{last_name}"
   end
+  
+  def zip_code
+    postal_code
+  end
+  
+  def zip
+    zip_code
+  end
 
   def user_avatar_url
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls

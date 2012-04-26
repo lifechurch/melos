@@ -23,6 +23,7 @@ gem 'rack-rewrite', '~> 1.2.1'
 gem 'rack-mobile-detect'
 gem 'asset_sync'
 gem "rack-timeout"
+gem "geokit", "~> 1.6.5"
 #gem 'rails-i18n' #using locale files directly in /config/locales/rails-i18n until gem supports aliasing (or we come up with a way to resolve differences between gem lang codes and our tr8n codes, and api codes)
 
 
