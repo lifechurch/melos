@@ -27,9 +27,10 @@ class Version
     Hash[*Version.all.group_by { |k, v| v.language}.keys.each {|a| a.to_a}.map {|h| h.to_a.flatten - ["iso", "human"]}.flatten]
   end
 
-  def self.all_by_language
-    # versions.group_by { |k, v| v.language }
-    all_by_language = Version.all.group_by {|k, v| v.language.iso}
+  def self.all_by_language(opts={})
+    all_by_language = Version.all.find_all{|k, v| opts[:only].include? k}.group_by {|k, v| v.language.iso} if opts[:only]
+    
+    all_by_language ||= Version.all.group_by {|k, v| v.language.iso}
     all_by_language.each {|k, v| all_by_language[k] = Hash[*v.flatten]}
     all_by_language
   end
