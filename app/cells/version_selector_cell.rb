@@ -2,7 +2,7 @@ class VersionSelectorCell < Cell::Rails
   include ApplicationHelper
   helper_method :bible_path
   cache :all_versions, :expires_in => 6.hours do |cell, opts|
-      opts[:version].language.iso
+      "#{opts[:version].language.iso}_#{opts[:site]}"
   end
 
   #version and recent_versions expected as version and array of versions. alt is bool
@@ -20,7 +20,7 @@ class VersionSelectorCell < Cell::Rails
   def all_versions(opts = {})
     get_opts opts
     
-    @all_languages = Version.all_by_language
+    @all_languages = Version.all_by_language(only: @site.versions)
     @this_language = @all_languages[@version.language.iso]
     @all_languages = @all_languages.except(@version.language.iso)
     @languages = Version.languages
@@ -30,6 +30,7 @@ class VersionSelectorCell < Cell::Rails
   private
   
   def get_opts(opts ={})
+    @site = opts[:site]
     @ref = opts[:reference]
     @version = opts[:version]
     @is_alt = opts[:is_alt] || false

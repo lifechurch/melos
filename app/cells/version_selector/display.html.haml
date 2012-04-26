@@ -17,5 +17,5 @@
           %th{:colspan => '2'}= t('recent versions')
         - @recent_versions.each do |v|
           = render partial: 'item', locals: {version: v}
-      = render_cell :version_selector, :all_versions, version: @version, reference: @ref, is_alt: @is_alt, force_style: @force_style, link_params: @link_params
+      = render_cell :version_selector, :all_versions, version: @version, reference: @ref, is_alt: @is_alt, force_style: @force_style, link_params: @link_params, site: @site
 
