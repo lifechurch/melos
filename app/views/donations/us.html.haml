@@ -28,7 +28,7 @@
         .float_left{style: "margin-right: 15px"}
           = label_tag 'tr[x_state]', t('donate.state')
           %br
-          = select 'tr', 'x_state', {''=>''}.merge(Cfg.usstates).map { |k, v| [v, k] }, {}, {:tabindex => 60, style: "width: 172px"}
+          = select_tag 'tr[x_state]', options_for_select(us_states), {:tabindex => 60, style: "width: 172px"}
         .float_left
           = label_tag 'tr[x_zip]', t('donate.zip')
           %br
