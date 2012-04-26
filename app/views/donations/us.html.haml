@@ -6,7 +6,7 @@
       = label_tag 'tr[x_amount]', t('donate.amount')
       %br
       %span{style: "font-size:24px; display: inline-block; margin-right: -1em; top: 7px; left: 4px; position: relative; z-index: 2"} $
-      = text_field_tag 'tr[x_amount]', nil, type: "tel", style: "font-size:24px; padding-left: 24px; margin-top: 5px; width: 7em", tabindex: 6
+      = text_field_tag 'tr[x_amount]', nil, {class: "autofocus", type: "tel", style: "font-size:24px; padding-left: 24px; margin-top: 5px; width: 7em", tabindex: 6}
     %div{style: "padding-left: 17px;"}
       .float_left{style: "margin-right: 15px; margin-bottom: 15px"}
         = label_tag 'tr[x_name]', t('donate.name')
