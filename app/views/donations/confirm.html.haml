@@ -33,7 +33,7 @@
     %p
       = label_tag 'x_card_num', t('donate.card number')
       %br
-      = text_field_tag 'x_card_num', nil, type: "tel", style: "margin-top: 5px", tabindex: 12
+      = text_field_tag 'x_card_num', nil, {class: "autofocus", type: "tel", style: "margin-top: 5px", tabindex: 12}
     %p
       = label_tag 'x_exp_date', t('donate.card exp date')
       %br
