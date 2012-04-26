@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
   before_filter :set_page
   before_filter :set_locale
+  before_filter :set_site
   
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
@@ -40,6 +41,12 @@ class ApplicationController < ActionController::Base
     I18n.locale = visitor_locale
   end
 
+  def set_site
+    site_class = SiteConfigs.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
+    @site = site_class.new
+
+  end
+
   # Manually throw a 404
   def not_found
     raise ActionController::RoutingError.new('Not Found')
@@ -50,7 +57,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:a] = user.id
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
-    cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+    cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"].to_s.gsub('http://', 'https://s3.amazonaws.com/')
   end
   def sign_out
     cookies.permanent.signed[:a] = nil
@@ -142,14 +149,14 @@ class ApplicationController < ActionController::Base
     #TODO: fix this, it's borked
   end
   def current_avatar
-    cookies[:avatar]
+    cookies[:avatar] = cookies[:avatar].gsub('http://', 'https://s3.amazonaws.com/') unless cookies[:avatar].to_s == ''
   end
   def current_date
     #PERF: could cache but needs benchmarking if faster than checks to correctly invalidate
     current_user ? (DateTime.now.utc + current_user.utc_date_offset).to_date : Date.today
   end
   def current_version
-    cookies[:version] || Version.default_for(params[:locale] ? params[:locale].to_s : "en")
+    cookies[:version] || @site.default_version || Version.default_for(params[:locale] ? params[:locale].to_s : "en")
   end
   def alt_version(ref)
     raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).contains?(ref)
