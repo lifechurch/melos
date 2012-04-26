@@ -128,6 +128,11 @@ class User < YouVersion::Resource
         end
       User.new(response)
     end
+    
+    def destroy(auth, &block)
+      post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth, api_version: "2.5"}, &block)
+    end
+    
   end
 
   def initialize(data = {})
@@ -139,7 +144,7 @@ class User < YouVersion::Resource
   end
 
   def persist_token
-    Digest::MD5.hexdigest "#{self.username}.Yv6-#{self.password}"
+    self.class.persist_token(self.username, self.password)
   end
   
   def before_save
@@ -192,6 +197,30 @@ class User < YouVersion::Resource
   end
 
   def before_update; end
+
+  def destroy
+    response = true
+
+    return false unless authorized?
+
+    before_destroy
+
+    begin
+      response = self.class.destroy(self.auth) do |errors|
+        new_errors = errors.map { |e| e["error"] }
+        self.errors[:base] << new_errors
+
+        if block_given?
+          yield errors
+        end
+
+        response = false
+      end
+    ensure
+      after_destroy
+    end
+    response
+  end
 
   # def self.find(id)
   #   response = YvApi.get('users/view', {:user_id => id, :auth_user_id => :id} ) do |errors|     
@@ -300,14 +329,27 @@ class User < YouVersion::Resource
 
   def follow(opts = {})
     opts = {id: self.id, auth: self.auth}.merge(opts)
-    response = YvApi.post("users/follow", opts)
+    response = YvApi.post("users/follow", opts) do |errors|
+      if errors.length == 1 && [/^You are already following this user$/].detect { |r| r.match(errors.first["error"]) }
+        return true #if user tried to follow and already did, no worries, operation successful
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+
     return true
   end
 
 
   def unfollow(opts = {})
     opts = {id: self.id, auth: self.auth}.merge(opts)
-    response = YvApi.post("users/unfollow", opts)
+    response = YvApi.post("users/unfollow", opts) do |errors|
+      if errors.length == 1 && [/^You are not following this user$/].detect { |r| r.match(errors.first["error"]) }
+        return true #if user tried to unfollow and wasn't following, no worries, operation successful
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
     return true
   end
 
@@ -440,7 +482,6 @@ class User < YouVersion::Resource
       raise YouVersion::ResourceError.new(errors)
     end
   end
-  
   
   def ==(compare)
     compare.class == self.class && self.id == compare.id

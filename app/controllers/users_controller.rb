@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email]
+  before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook, :notifications, :update_notifications]
   before_filter :set_redirect, only: [:new, :create]
@@ -45,12 +45,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     # Try authing them first - poor man's login screen
-    begin
-      if test_user = User.authenticate(params[:user][:username], params[:user][:password])
-        sign_in test_user, params[:user][:password]
-        follow_redirect
-      end
-    rescue
+    # begin
+    #       if test_user = User.authenticate(params[:user][:username], params[:user][:password])
+    #         sign_in test_user, params[:user][:password]
+    #         follow_redirect
+    #       end
+    #     rescue
       if @user.save
         # save username and password so we can sign them back in
         cookies.signed[:f] = params[:user][:username]
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
         redirect_to confirm_email_path
       else
         render action: "new", layout: "application"
-      end
+    # end
     end
   end
 
@@ -294,6 +294,32 @@ class UsersController < ApplicationController
       render "forgot_password", layout: "application"
     end
   end
+  
+  def delete_account_form
+    @selected = :account_existence
+    render "delete_account"
+  end
+
+  def delete_account
+    @selected = :account_existence
+    
+    begin
+      #auth first to give the validate user is at keyboard, and doesn't just have valid cookies
+      user = User.authenticate(current_user.username, params[:password])
+    rescue AuthError
+      user = false
+    end
+
+    if user
+      if @user.destroy
+        sign_out
+        return render "delete_account_success", layout: "application"
+      end
+    else
+      flash.now[:error] = t("invalid password")
+    end
+    render "delete_account"
+  end
 
   def following
     @users = @user.following({page: params[:page] ||= 1})
@@ -338,12 +364,12 @@ class UsersController < ApplicationController
   end
   
   def privacy
-    I18n.locale = :en if [:fr, :ja, :pl, :zh_CN, :zh_TW].find{|loc| loc == I18n.locale}
+    I18n.locale = :en if [:fr, :ja, :pl, :af, :km].find{|loc| loc == I18n.locale}
     render action: "privacy", layout: "application"
   end
   
   def terms
-    I18n.locale = :en if [:fr, :ja, :pl, :zh_CN, :zh_TW].find{|loc| loc == I18n.locale}
+    I18n.locale = :en if [:fr, :ja, :pl, :af, :km].find{|loc| loc == I18n.locale}
     render action: "terms", layout: "application"
   end
 

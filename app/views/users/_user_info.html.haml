@@ -6,6 +6,14 @@
       - if @me
         %form{action: profile_path}
           %button.float_right= t("users.profile.edit")
+      - else
+        %div.float_right{style: "text-align: right;"}
+          - if current_user && current_user.following_user_id_list.include?(user.id.to_i)
+            %form{action: user_unfollow_path(user.username), method: "post"}
+              %button{title: "#{t('users.unfollow')} #{user.name || user.username}"}= t('users.unfollow')
+          - else
+            %form{action: user_follow_path(user.username), method: "post"}
+              %button{title: "#{t('users.follow')} #{user.name || user.username}"}= t('users.follow')
       %h1= user.name || user.username
       %ul
         - if user.name
