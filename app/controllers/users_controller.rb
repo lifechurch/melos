@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user].merge(language_tag: I18n.locale))
     # Try authing them first - poor man's login screen
     # begin
     #       if test_user = User.authenticate(params[:user][:username], params[:user][:password])
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
       return redirect_to sign_in_path(redirect: sign_up_success_path(show: "facebook")), notice: t('users.account already confirmed')
     end
     
-    sign_in @user if @user.errors.blank?
+    sign_in @user && flash.now[:notice] = t("users.account confirmed") if @user.errors.blank?
       
     render layout: "application"
   end
