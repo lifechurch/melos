@@ -205,15 +205,24 @@ class User < YouVersion::Resource
   end
   
   def self.confirm(hash)
+    user = nil
+    
     response = YvApi.post("users/confirm", hash: hash) do |errors|
-      if errors.length == 1 && [/^account was already verified.$/].detect { |r| r.match(errors.first["error"]) }
-        return true #if user is already verified, no worries, operation successful
-      else
-        raise YouVersion::ResourceError.new(errors)
+      user = User.new
+
+      if i = errors.find_index{|e| e["key"] == "users.hash.verified"}
+        user.errors.add :already_confirmed, errors.delete_at(i)["error"]
       end
+
+      if i = errors.find_index{|e| e["key"] == "users.hash.invalid"}
+        user.errors.add :invalid_hash, errors.delete_at(i)["error"]
+      end
+
+      errors.each { |e| user.errors.add :base, e["error"] }
+      true #avoid accidentally raising error
     end
       
-    return true
+    user || User.new(response)  
   end
 
   def before_update; end

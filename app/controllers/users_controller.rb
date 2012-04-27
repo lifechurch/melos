@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :force_login, only: [:share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
+  before_filter :force_login, only: [:sign_up_success, :share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :new_facebook, :create_facebook, :notifications, :update_notifications]
+  before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :confirmed,  :new_facebook, :create_facebook, :notifications, :update_notifications]
   before_filter :set_redirect, only: [:new, :create]
   
   # User signup flow:
@@ -69,10 +69,31 @@ class UsersController < ApplicationController
 
   def confirm
     @selected = :email
-    User.confirm(params[:hash])
-    follow_redirect(alt_path: sign_up_success_path(show: "facebook"), notice: t('users.account confirmed'))
-    #if user didn't confirm an exception was thrown -- will handle once we get global architecutre for showing API errors to users
-    #for now it's the 500 page and showing them the error code :/
+    @user = User.confirm(params[:hash])
+
+    if @user.errors.include?(:already_confirmed) && @user.errors.size == 1
+      return redirect_to sign_in_path(redirect: sign_up_success_path(show: "facebook")), notice: t('users.account already confirmed')
+    end
+    
+    sign_in @user if @user.errors.blank?
+      
+    render layout: "application"
+  end
+  
+  def confirmed
+    begin
+      user = User.authenticate(params[:username], params[:password])
+    rescue AuthError
+      user = false
+    end
+
+    if user
+      sign_in user
+      redirect_to sign_up_success_path(show: "facebook")
+    else
+      flash.now[:error] = t("invalid password")
+      render "confirm"
+    end
   end
 
   def new_facebook
@@ -104,7 +125,7 @@ class UsersController < ApplicationController
       connection = FacebookConnection.new(info)
       result = connection.save
 
-      follow_redirect alt_path: sign_up_success_path(show: "facebook")
+      redirect_to sign_up_success_path(show: "facebook")
     else
       render action: "new_facebook", layout: "application"
     end
@@ -113,6 +134,7 @@ class UsersController < ApplicationController
   def sign_up_success
     @show = (params[:show] || "facebook").to_s
     @users = @user.connections[@show].find_friends if @user.connections[@show]
+    clear_redirect
     render action: "sign_up_success", layout: "application"
   end
 

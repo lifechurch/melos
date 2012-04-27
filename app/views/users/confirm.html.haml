@@ -1,5 +1,25 @@
 - content_for :sidebar do
   = render '/shared/widget_ad_bible_app'
 %article
-  %p Errors confirming account
-  %p @errors.to_s
+  -if @user.errors.any?
+    -if @user.errors.include? :invalid_hash
+      %p= t('users.invalid confirm hash')
+    -else
+      %p= t('users.errors confirming account')
+      %p
+        %ul
+          -@user.errors.full_messages.each do |e|
+            %li= e.to_s
+  -else
+    %h1= t('users.welcome to youversion') 
+    %p= t('users.confirm password to continue')
+    = form_tag confirm_path do
+      = hidden_field_tag :username, params[:username] || @user.username
+      %p
+        = label_tag :password, t("password prompt")
+        %br
+        = password_field_tag :password, params[:password], {class: "autofocus"}
+        %br
+        %span.small= link_to t('users.forgot password'), forgot_password_path
+      %p
+        = submit_tag t("sign in")
