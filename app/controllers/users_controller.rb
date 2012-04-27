@@ -69,15 +69,10 @@ class UsersController < ApplicationController
 
   def confirm
     @selected = :email
-    response = YvApi.post("users/confirm", hash: params[:hash]) do |errors|
-      @errors = errors.map { |e| e["error"] }
-      return false
-    end
-    if response
-      follow_redirect alt_path: sign_up_success_path(show: "facebook"), notice: t('users.account confirmed')
-    else
-      render layout: "application"
-    end
+    User.confirm(params[:hash])
+    follow_redirect(alt_path: sign_up_success_path(show: "facebook"), notice: t('users.account confirmed'))
+    #if user didn't confirm an exception was thrown -- will handle once we get global architecutre for showing API errors to users
+    #for now it's the 500 page and showing them the error code :/
   end
 
   def new_facebook

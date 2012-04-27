@@ -203,6 +203,18 @@ class User < YouVersion::Resource
       return false
     end
   end
+  
+  def self.confirm(hash)
+    response = YvApi.post("users/confirm", hash: hash) do |errors|
+      if errors.length == 1 && [/^account was already verified.$/].detect { |r| r.match(errors.first["error"]) }
+        return true #if user is already verified, no worries, operation successful
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+      
+    return true
+  end
 
   def before_update; end
 

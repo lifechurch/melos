@@ -109,14 +109,15 @@ class ApplicationController < ActionController::Base
     cookies[:auth_redirect]
   end
   def clear_redirect
-    cookies[:auth_redirect]= nil
+    cookies[:auth_redirect] = nil
   end
   def follow_redirect(opts = {})
-    path = cookies[:auth_redirect] || opts[:alt_path] || bible_path
+    cookie_path = cookies[:auth_redirect].to_s == '' ? nil : cookies[:auth_redirect] #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
     clear_redirect
+    path = cookie_path || opts[:alt_path] || bible_path
     return redirect_to path, notice: opts[:notice] if opts[:notice]
     return redirect_to path, error: opts[:error] if opts[:error]
-    return redirect_to path 
+    return redirect_to path
   end
   def last_read
     Reference.new(cookies[:last_read]) if cookies[:last_read]
