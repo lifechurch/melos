@@ -237,7 +237,7 @@ en:
     account already confirmed:                  "Your account has already been confirmed! Sign in to continue."
     errors confirming account:                  "Sorry, we weren't able to verify your account due to the following unexpected error. Please refresh your browser to try again or contact support."
     invalid confirm hash:                       "Sorry, but this account confirmation code is invalid. Please try clicking the link sent in the confirmation email."
-    confirm password to continue:               "Please confirm your password to sign in and get started."
+    confirm password to continue:               "Please enter your password to sign in and get started."
     invalid email forgot:                       "Sorry, we weren't able to find an account with that email address. Please try again."
     error deleting account:                     "Sorry, there was a problem on our end. Please try again or contact support."
     send new password button:                   "Send New Password"
