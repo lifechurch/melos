@@ -75,7 +75,10 @@ class UsersController < ApplicationController
       return redirect_to sign_in_path(redirect: sign_up_success_path(show: "facebook")), notice: t('users.account already confirmed')
     end
     
-    sign_in @user && flash.now[:notice] = t("users.account confirmed") if @user.errors.blank?
+    if @user.errors.blank?
+      sign_in @user
+      flash.now[:notice] = t("users.account confirmed") 
+    end
       
     render layout: "application"
   end
