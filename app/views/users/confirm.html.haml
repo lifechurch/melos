@@ -6,10 +6,10 @@
       %p= t('users.invalid confirm hash')
     -else
       %p= t('users.errors confirming account')
-      %p
-        %ul
-          -@user.errors.full_messages.each do |e|
-            %li= e.to_s
+      -@user.errors.full_messages.each do |e|
+        %p.small.mute= e.to_s
+    %br
+    %p= link_to t('users.resend confirmation button'), resend_confirmation_path, class: "action_button_blue"
   -else
     %h1= t('users.welcome to youversion') 
     %p= t('users.confirm password to continue')
