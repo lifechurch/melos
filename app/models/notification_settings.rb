@@ -8,6 +8,7 @@ class NotificationSettings < YouVersion::Resource
   attr_accessor :newsletter
   attr_accessor :note_like
   attr_accessor :reading_plans
+  attr_accessor :partners
 
   def self.resource_path
     "users/view_notification_settings"
@@ -59,7 +60,7 @@ class NotificationSettings < YouVersion::Resource
 
 
   def after_build
-    notification_settings.each { |k, v| self.send("#{k}=".to_sym, v["email"]) }
+    notification_settings.each { |k, v| self.send("#{k}=".to_sym, v["email"]) if self.respond_to? "#{k}=".to_sym}
     #@attributes[:token] = nil
   end
   
@@ -69,7 +70,7 @@ class NotificationSettings < YouVersion::Resource
 
 
   def before_save
-    nts = ["badges", "follower", "newsletter", "note_like", "reading_plans"]
+    nts = ["badges", "follower", "newsletter", "note_like", "reading_plans", "partners"]
     hash = {}
 
     nts.each { |a| hash[a] = {"email" => self.send(a.to_sym).to_i == 1} }

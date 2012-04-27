@@ -23,6 +23,9 @@
     = n.check_box :reading_plans
     = n.label :reading_plans, t('users.notifications.reading_plans')
   %p
+    = n.check_box :partners
+    = n.label :partners, t('users.notifications.publishing partners')
+  %p
     = n.submit t('users.notifications.update')
   - if params[:token]
     = hidden_field_tag :token, params[:token]
