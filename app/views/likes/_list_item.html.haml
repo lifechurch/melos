@@ -8,5 +8,5 @@
     - if display == :avatar
       %p.mute.small.negative_gutter_top_half
         %a{href: user_path(list_item.note_username)}= list_item.note_username
-    %p= list_item.note.content
+    %p= list_item.note.content.html_safe
     %p.mute.small.negative_gutter_top_half= link_to_references(list_item.note.reference_list)
