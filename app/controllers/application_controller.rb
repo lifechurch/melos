@@ -161,10 +161,13 @@ class ApplicationController < ActionController::Base
   end
   def alt_version(ref)
     raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).contains?(ref)
+    
     return cookies[:alt_version] if cookies[:alt_version]
     
     recent = recent_versions.find{|v| v.osis != current_version && v.contains?(ref)}
     return cookies[:alt_version] = recent.osis if recent
+
+    raise NoSecondaryVersionError if Version.all(params[:locale]).except(current_version).empty?
     
     return cookies[:alt_version] = Version.sample_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version, has_ref: ref)
   end

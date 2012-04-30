@@ -172,6 +172,8 @@ en:
     invalid chapter title:                      "About This Version"
     invalid chapter text:                       "This chapter doesn't exist in this version."
     invalid secondary chapter text:             "This chapter doesn't exist for your preferred secondary version."
+    no secondary version title:                 "About Parallel Comparison"
+    no secondary version text:                  "%{language_name} only has one version available, so we couldn't pick a secondary version for you. Please select your secondary version for parallel comparison."
     select another chapter:                     "Pick a Different Chapter"
     view in reader:                             "View %{reference} in Reader"
   users:

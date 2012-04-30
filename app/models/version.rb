@@ -8,13 +8,11 @@ class Version
   @@all_by_language = {}
   @@languages = {}
   def self.all(lang = "")
-
     if lang == ""
       versions
     else
-      versions.select { |k, v| v.language == lang }
+      versions.select { |k, v| v.language.iso == lang }
     end
-    
   end
 
   def self.find(version)

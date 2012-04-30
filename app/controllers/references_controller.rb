@@ -89,6 +89,12 @@ class ReferencesController < ApplicationController
         return render :show if @reference.valid?
       end
       
+      if ex.is_a? NoSecondaryVersionError
+        @alt_version = Version.find(Version.default_for(I18n.locale))
+        @alt_reference = Hashie::Mash.new({contents: ["<h1>#{t('ref.no secondary version title')}</h1>","<p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"]})
+        return render :show if @reference.valid?
+      end
+      
       #we don't need to report these types of 404's as long as we have the right redirects.
       #report_exception(ex)
       
