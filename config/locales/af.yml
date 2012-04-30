@@ -65,7 +65,7 @@ af:
   successful sign-in:                           "Ingeteken as %{user}!"
   successful sign-out:                          "Uitgeteken!"
   invalid login:                                "Ongeldige Gebruikernaam of Wagwoord"
-  invalid password:                             "Inkorrekte Wagwoord"
+  invalid password:                             "Wagwoord Verkeerd"
   sign out:                                     "Sign out"
   youversion:                                   "YouVersion"
   username or email prompt:                     "Gebruikernaam (of E-pos):"
@@ -266,13 +266,13 @@ af:
       information use title:                    "Hoe gebruik ons jou inligting?"
       information use text:                     "Wanneer jy aansluit vir 'n spesifieke diens wat registrasie benodig, vra ons dat jy persoonlike inligting verstrek. As LifeChurch.tv die inligting anders wil aanwend as gestipuleer tydens registrasie, sal ons voor die tyd jou goedkeuring vra vir die gebruik daarvan. Ons sal nie sensitiewe inligting bymekaarmaak of gebruik vir enige ander doel as wat in ons Privaatheidsbeleid en/of spesifieke diens kennisgewings gestipuleer is nie, tensy ons vooraf jou goedkeuring verkry het. Jy mag ons versoek afkeur om persoonlike inligting aan enige van ons dienste te verskaf, in welke geval LifeChurch.tv nie die gekose dienste aan jou kan verskaf nie."
       information sharing title:                "Hoe deel ons jou inligting?"
-      information sharing text:                 "LifeChurch.tv deel nie jou persoonlke inligting met ander instansies buite LifeChurch.tv nie. LifeChurch.tv mag wel jou persoonlike inligting deel slegs as ons in goedertrou glo dat toegang, gebruik, preservering of  blootstelling van sodanige inligting is "
+      information sharing text:                 "LifeChurch.tv does not share your personal information with other institutions outside of LifeChurch.tv. However, LifeChurch.tv may share your personal information only if we have a good faith belief that access, use, preservation or disclosure of such information is reasonably necessary to (a) satisfy any applicable law, regulation, legal process or enforceable governmental request, (b) enforce applicable Terms Of Use, including investigation of potential violations thereof, (c) detect, prevent, or otherwise address fraud, security or technical issues, or (d) protect against imminent harm to the rights, property or safety of LifeChurch.tv, its users or the public as required or permitted by law."
       information security title:               "Informasie Sekuriteit"
       information security text:                "LifeChurch.tv neem toepaslike sekuriteitsmaatreëls om te beskerm teen ongemagtigde toegang tot of ongemagtigde verandering, openbaarmaking of vernietiging van data. Dit sluit in interne kontrole van ons data-insameling, stoor en verwerking prosesering en sekuriteitsmaatreëls, sowel as fisiese sekuriteitmaatreëls om te beskerm teen ongemagtigde toegang tot stelsels waar ons persoonlike data stoor. Ons beperk die toegang tot persoonlike inligting na LifeChurch.tv werknemers, kontrakteurs en agente wat dit nodig het om daardie inligting te bedryf, te ontwikkel of ons dienste te verbeter. Hierdie individue is gebind deur vertroulikheids verpligtinge en kan onderhewig wees aan dissipline, insluitend terminasie en kriminele vervolging, indien hulle versuim om die verpligtinge na te kom."
       data integrity title:                     "Data Integriteit"
       data integrity text:                      "LifeChurch.tv proseseer persoonlike informasie alleenlik vir die doeleindes waarvoor dit ingesamel was en in ooreenstemming met die Privaatheidsbeleid of enige toepaslike diens-spesifieke privaatheids kennisgewing. Ons hersien ons data-insameling, stoor en verwerkings praktyke om te verseker dat ons net die persoonlike informasie insamel, stoor en verwerk wat nodig is om ons dienste te voorsien of verbeter. Ons neem redelike stappe om te verseker dat die persoonlike inligting wat ons verwerk akkuraat, volledig en huidig is, maar ons is afhanklik van ons gebruikers om hul persoonlike inligting op te dateer of te korrigeer wanneer dit nodig is."
       information access title:                 "Toegang tot en opdatering van persoonlike inligting"
-      information access text:                  "Wanneer jy enige LifeChurch.tv diens gebruik, wend ons goeder trou pogings aan om jou te voorsien met toegang tot jou persoonlike informasie en of "
+      information access text:                  "When you use any LifeChurch.tv service, we make good faith efforts to provide you with access to your personal information and either to correct this data if it is inaccurate or to delete such data at your request if it is not otherwise required to be retained by law or for legitimate service purposes. We ask individual users to identify themselves and the information requested to be accessed, corrected or removed before processing such requests, and we may decline to process requests that are unreasonably repetitive or systematic, require disproportionate technical effort, jeopardize the privacy of others, or would be extremely impractical (for instance, requests concerning information residing on backup tapes), or for which access is not otherwise required. In any case where we provide information access and correction, we perform this service free of charge, except if doing so would require a disproportionate effort. Some of our services have different procedures to access, correct or delete users' personal information."
       enforcement title:                        "Afdwinging"
       enforcement text:                         "LifeChurch.tv periodically reviews its compliance with this Privacy Policy. When we receive formal written complaints regarding privacy issues, it is our policy to contact the complaining user regarding his or her concerns. We will cooperate with the appropriate regulatory authorities, including local data protection authorities, to resolve any complaints regarding the transfer of personal data that cannot be resolved between LifeChurch.tv and an individual."
       questions title:                          "Vrae"
@@ -361,10 +361,11 @@ af:
       newsletter:                               "Hou my op hoogste van YouVersion aankondigings."
       note_like:                                "Stel my in kennis as iemand van my notas hou."
       reading_plans:                            "Stel my in kennis van informasie vir leesplanne wat ek begin het."
+      publishing partners:                      "Keep me updated on news from YouVersion's content partners."
       update:                                   "Wysig Kennisgewings"
   bookmarks:
     edit:                                       "Verander"
-    delete:                                     "Vee hierdie boekmerk uit"
+    delete:                                     "Vee hierdie Boekmerk uit"
     title field:                                "Titel"
     lables:                                     "Etikette"
     all:                                        "Alle"
@@ -383,7 +384,7 @@ af:
     user badges:                                "%{user} se Kentekens"
   plans:
     title:                                      "Lees Planne"
-    browse by category:                         "Blaai per kategorie"
+    browse by category:                         "Blaai per Kategorie"
     browse plans:                               "Kyk na %{category} Planne"
     swap list localization:                     "(<a href='%{swap_link}'>Vertoon in %{swap_locale}</a>)"
     showing language filtered:                  "Slegs leesplanne beskikbaar in %{lang_name} word vertoon."
@@ -585,8 +586,8 @@ af:
     amazon:                                     "Kindle Fire"
   pages:
     generic_error:
-      title:                                    "Oops!"
-      explanation:                              "Iets verkeerd geloop het agter die skerms! Jy kan weer probeer deur die bladsy te herlaai, ons is baie jammer vir die ongerief!"
+      title:                                    "Oeps!"
+      explanation:                              "Iets het verkeerd geloop agter die skerms! Jy kan weer probeer deur die bladsy te herlaai, ons is baie jammer vir die ongerief!"
       our action:                               "Ons is hieroor in kennis gestel en sal so spoedig moontlik hieraan aandag gee."
   shared:
     menu_settings:
