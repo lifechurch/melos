@@ -36,7 +36,7 @@ module YouversionWeb
       mobile_rewrite = lambda do |path, rack_env|
         new_path = path.to_s
         new_server_name = rack_env['SERVER_NAME']
-        # THIS IS HARD-CODED; UPDATE WITH ADDITIONAL LOCALES
+        # THIS IS HARD-CODED; UPDATE WITH ADDITIONAL LOCALES -- Kill this as soon as mobile is live, obviously
         locales = {"en" => "en",
                    "de" => "de",
                    "es" => "es",
@@ -75,25 +75,54 @@ module YouversionWeb
 
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)
-      r301 %r{/bible/verse/([\w-]+)/(\w+)/(\w+)/([\w-]+)}, '/bible/$2.$3.$4.$1'
+      r301 %r{/bible/verse/([\w-]+)/(\w+)/(\w+)/([,\w-]+)}, '/bible/$2.$3.$4.$1'
       # /bible/verse/niv/john/3 (redirects to 1st verse)
       r301 %r{/bible/verse/([\w-]+)/(\w+)/(\w+)}, '/bible/$2.$3.1.$1'
       # /bible/chapter/niv/john/3 (normal)
       r301 %r{/bible/chapter/([\w-]+)/(\w+)/(\w+)}, '/bible/$2.$3.$1'
       # /bible/niv/john/3/16 (normal)
-      r301 %r{/bible/([\w-]+)/(\w+)/(\d+)/([\d-]+)}, '/bible/$2.$3.$4.$1'
+      r301 %r{/bible/([\w-]+)/(\w+)/(\d+)/([,\d-]+)}, '/bible/$2.$3.$4.$1'
       # /bible/john/3/16/niv (user-typed, corrects)
-      r301 %r{/bible/(\w+)/(\d+)/([\d-]+)/([\w-]+)}, '/bible/$1.$2.$3.$4'
+      r301 %r{/bible/(\w+)/(\d+)/([,\d-]+)/([\w-]+)}, '/bible/$1.$2.$3.$4'
       # /bible/john/3/niv (user-typed, corrects)
       r301 %r{/bible/(\w+)/(\d+)/([\w-]+)}, '/bible/$1.$2.$3'
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
       # /bible/niv/john.3.16 (legacy live event links)
-      r301 %r{/bible/([\w-]+)/(\w+).(\d+).([\d-]+)}, '/bible/$2.$3.$4.$1'
+      r301 %r{/bible/([\w-]+)/(\w+).(\d+).([,\d-]+)}, '/bible/$2.$3.$4.$1'
 
       #blogs and other misc redirects
       r301 '/churches', 'http://blog.youversion.com/churches'
       r301 '/google', 'http://www.google.com/ig/directory?hl=en&url=www.youversion.com/google/youversion2.xml'
+      
+      #legacy localizations
+      r301 %r{^/(zh_CN|zh_TW|pt_BR)(.*)}, Proc.new{ |path, rack_env| "#{path.to_s.sub('_', '-')}" }
+      legacy_loc_rewrite = lambda do |path, rack_env|
+        locales = {"en" => "en",
+                   "de" => "de",
+                   "es" => "es",
+                   "fr" => "fr",
+                   "ko" => "ko",
+                   "nl" => "nl",
+                   "no" => "no",
+                   "pt" => "pt-BR",
+                   "ru" => "ru",
+                   "zh_CN" => "zh-CN",
+                   "zh_TW" => "zh-TW",
+                   "zh_cn" => "zh-CN",
+                   "zh_tw" => "zh-TW",
+                   "zh-CN" => "zh-CN",
+                   "zh-TW" => "zh-TW",
+                   "zh-cn" => "zh-CN",
+                   "zh-cn" => "zh-TW"}
+                   
+        domains = rack_env["SERVER_NAME"].to_s.split(".")
+        new_url = "http://#{domains.drop(1).join(".")}/#{locales[domains[0]]}#{path.to_s}" if locales[domains[0]]
+        
+        new_url || "http://#{rack_env["SERVER_NAME"]}#{path}"
+      end
+      #only 301 if subdomain isn't www
+      r301 %r{.*}, legacy_loc_rewrite, :if => Proc.new {|rack_env| ['en','de', 'es', 'fr', 'ko', 'nl', 'no', 'pt', 'ru', 'zh_CN', 'zh_TW', 'zh-CN', 'zh-TW', 'zh_cn', 'zh_tw', 'zh-cn', 'zh-cn'].include? rack_env["SERVER_NAME"].split(".")[0]}
 
       ### Pass-through to 2.0
       r302 %r{/groups.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 
