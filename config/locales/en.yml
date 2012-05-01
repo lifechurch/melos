@@ -373,7 +373,7 @@ en:
     edit:                                       "Edit"
     delete:                                     "Delete this Bookmark"
     title field:                                "Title"
-    lables:                                     "Labels"
+    labels:                                     "Labels"
     all:                                        "All"
     labels label:                               "Labels:"
     title:                                      "Bookmarks"
