@@ -157,7 +157,7 @@ class ApplicationController < ActionController::Base
     current_user ? (DateTime.now.utc + current_user.utc_date_offset).to_date : Date.today
   end
   def current_version
-    cookies[:version] || @site.default_version || Version.default_for(params[:locale] ? params[:locale].to_s : "en") || "ssv"#:TODO figure out why /sk doesn't work right on heroku servers
+    cookies[:version] || @site.default_version || Version.default_for(params[:locale] ? params[:locale].to_s : "en")
   end
   def alt_version(ref)
     raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).contains?(ref)
