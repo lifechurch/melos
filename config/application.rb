@@ -50,7 +50,6 @@ module YouversionWeb
                    "zh-TW" => "zh-tw"}
         
         # url = "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}"
-        new_server_name = new_server_name.gsub(/www/, "m")
         new_server_name = "m.youversion.com"
         
         # locales
@@ -66,12 +65,12 @@ module YouversionWeb
         end
         # reading plans support
         new_path = new_path.gsub(/reading-plans\/\d+-([^\/]*)/, 'reading-plans/\1')
-
+        
         "http://#{new_server_name}#{new_path}"
       end
 
 
-      r301 /.*/, mobile_rewrite, :if => Proc.new { |rack_env| !rack_env["PATH_INFO"].match(/status/) && !rack_env["X_MOBILE_DEVICE"].nil? }
+      r301 /.*/, mobile_rewrite, :if => Proc.new { |rack_env| !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/settings\/notifications|^\/status$)/}
 
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)
