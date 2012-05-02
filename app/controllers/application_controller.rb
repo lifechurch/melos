@@ -44,7 +44,6 @@ class ApplicationController < ActionController::Base
   def set_site
     site_class = SiteConfigs.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
     @site = site_class.new
-
   end
 
   # Manually throw a 404

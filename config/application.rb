@@ -50,29 +50,27 @@ module YouversionWeb
                    "zh-TW" => "zh-tw"}
         
         # url = "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}"
-        unless(new_path =~ /\/settings\/notifications\?token=.+/) #these links won't be localized from emails, only from user
-          new_server_name = "m.youversion.com"
+        new_server_name = "m.youversion.com"
         
-          # locales
-          if (new_path != "" && new_path != "/")
-            # then there's a path, see if it's a locale
-            test = new_path.split("/")[1]
-            if locales[test]
-              new_server_name = locales[test] + "." + new_server_name
-              new_path_array = new_path.split("/")
-              new_path_array.delete_at(1)
-              new_path = new_path_array.join("/")
-            end
+        # locales
+        if (new_path != "" && new_path != "/")
+          # then there's a path, see if it's a locale
+          test = new_path.split("/")[1]
+          if locales[test]
+            new_server_name = locales[test] + "." + new_server_name
+            new_path_array = new_path.split("/")
+            new_path_array.delete_at(1)
+            new_path = new_path_array.join("/")
           end
-          # reading plans support
-          new_path = new_path.gsub(/reading-plans\/\d+-([^\/]*)/, 'reading-plans/\1')
         end
+        # reading plans support
+        new_path = new_path.gsub(/reading-plans\/\d+-([^\/]*)/, 'reading-plans/\1')
         
         "http://#{new_server_name}#{new_path}"
       end
 
 
-      r301 /.*/, mobile_rewrite, :if => Proc.new { |rack_env| !rack_env["PATH_INFO"].match(/status/) && !rack_env["X_MOBILE_DEVICE"].nil? }
+      r301 /.*/, mobile_rewrite, :if => Proc.new { |rack_env| !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/settings\/notifications|^\/status$)/}
 
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)
