@@ -1,9 +1,13 @@
 AssetSync.configure do |config|
+  
+  #Disable if there is no asset host specific (useful for alternate staging configuration)
+  #config.enabled = false unless ENV['FOG_DIRECTORY']#coming soon to asset_sync
+  
   config.fog_provider = 'AWS'
   config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
   config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   config.fog_directory = ENV['FOG_DIRECTORY']
-  
+
   # Increase upload performance by configuring your region
   # config.fog_region = 'eu-west-1'
   #
@@ -18,5 +22,5 @@ AssetSync.configure do |config|
   # config.manifest = true
   #
   # Fail silently.  Useful for environments such as Heroku
-  # config.fail_silently = true
+  #config.fail_silently = true
 end

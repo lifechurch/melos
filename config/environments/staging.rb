@@ -1,12 +1,15 @@
 YouversionWeb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  # config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
-  #   [u, p] == ['youversion', 'yv123']
-  # end
+  unless ENV['NO_AUTH']
+    config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
+      [u, p] == ['youversion', 'yv123']
+    end
+  end
+
   # In the development environment your application's code is reloaded on
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = false
+  config.cache_classes = true
 
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
@@ -27,28 +30,32 @@ YouversionWeb::Application.configure do
   # Do not compress assets
   config.assets.compress = false
 
-  # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
-
-  # Generate digests for assets URLs
-  config.assets.digest = true
-
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  #memcache
   config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = Proc.new do |*args|
-    source, request = args
-    if request.try(:ssl?)
-      "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
-    else
-      "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
-    end
-  end
+  if ENV['FOG_DIRECTORY']
+    # Don't fallback to assets pipeline if a precompiled asset is missed
+    config.assets.compile = false
 
-  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
+    # Generate digests for assets URLs
+    config.assets.digest = true
+    
+    config.action_controller.asset_host = Proc.new do |*args|
+      source, request = args
+      if request.try(:ssl?)
+        "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+      else
+        "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+      end
+    end
+    
+    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+    config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
+  end
 
 end
 
