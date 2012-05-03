@@ -93,6 +93,10 @@ class Version
     versions_api_data.defaults.to_hash[lang.to_s]
   end
   
+  def self.default()
+    versions_api_data.defaults.to_hash["en"]
+  end
+  
   def self.sample_for(lang, opts={})
     opts[:except] ||= ""
     
