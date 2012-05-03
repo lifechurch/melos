@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
       visitor_locale ||= I18n.default_locale
       
       cookies.permanent[:locale] = visitor_locale
-      #debugger
+      
       return redirect_to params.merge!(locale: "") if from_param && visitor_locale == I18n.default_locale
       return redirect_to params.merge!(locale: visitor_locale) if !from_param && visitor_locale != I18n.default_locale
       
