@@ -11,5 +11,7 @@ module SiteConfigs
     def default_version
       "rvr60-es"
     end
+    
+    def partners; end
   end
 end

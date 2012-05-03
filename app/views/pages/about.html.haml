@@ -14,7 +14,7 @@
     %p= t('about page.youversion copy')
 
     %p= t('about page.youversion copy 2')
-  - if partners = @site.partners[I18n.locale]
+  - if partners = @site.partners.try(:[], I18n.locale)
     .partners_content
       %h2= t('about page.partners title')
       %p= t('about page.partners text')
