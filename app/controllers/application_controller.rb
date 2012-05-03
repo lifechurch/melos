@@ -20,25 +20,19 @@ class ApplicationController < ActionController::Base
 
   # Set locale
   def set_locale
-    # params[:locale] ||= :en
-    # 
-    # I18n.locale = params[:locale]
-    #TEMPORARY FOR PREVIEWL #TODO: remove for go-live
-    # if params[:locale]
-    #   cookies.permanent[:locale] = :en
-    #   return redirect_to l10n_path 
-    # end
-    
-    if params[:locale].nil?
-      visitor_locale = cookies[:locale].blank? ? I18n.default_locale : I18n.available_locales.include?(cookies[:locale].to_sym) ? cookies[:locale].to_sym : :en
+      visitor_locale = params[:locale].to_sym if I18n.available_locales.include?(params[:locale].try(:to_sym))
+      from_param = !visitor_locale.nil?
+      visitor_locale ||= cookies[:locale].to_sym if I18n.available_locales.include?(cookies[:locale].try(:to_sym)) #forwards compatibility with lang code changes
+      visitor_locale ||= request.preferred_language_from(I18n.available_locales)
+      visitor_locale ||= request.compatible_language_from(I18n.available_locales)
+      visitor_locale ||= I18n.default_locale
+      
       cookies.permanent[:locale] = visitor_locale
-      return redirect_to params.merge!(locale: visitor_locale) unless visitor_locale == :en
-    else
-      visitor_locale = I18n.available_locales.include?(params[:locale].to_sym) ? params[:locale].to_sym : :en
-      cookies.permanent[:locale] = visitor_locale
-      return redirect_to params.merge!(locale: "") if visitor_locale == :en
-    end
-    I18n.locale = visitor_locale
+      
+      return redirect_to params.merge!(locale: "") if from_param && visitor_locale == I18n.default_locale
+      return redirect_to params.merge!(locale: visitor_locale) if !from_param && visitor_locale != I18n.default_locale
+      
+      I18n.locale = visitor_locale
   end
 
   def set_site
@@ -156,7 +150,7 @@ class ApplicationController < ActionController::Base
     current_user ? (DateTime.now.utc + current_user.utc_date_offset).to_date : Date.today
   end
   def current_version
-    cookies[:version] || Version.default_for(params[:locale] ? params[:locale].to_s : "en") || "ssv"
+    cookies[:version] || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s) || Version.default
   end
   def alt_version(ref)
     raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).contains?(ref)

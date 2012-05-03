@@ -96,33 +96,6 @@ module YouversionWeb
       
       #legacy localizations
       r301 %r{^/(zh_CN|zh_TW|pt_BR)(.*)}, Proc.new{ |path, rack_env| "#{path.to_s.sub('_', '-')}" }
-      #this is handled in DNS
-      # legacy_loc_rewrite = lambda do |path, rack_env|
-      #         locales = {"en" => "en",
-      #                    "de" => "de",
-      #                    "es" => "es",
-      #                    "fr" => "fr",
-      #                    "ko" => "ko",
-      #                    "nl" => "nl",
-      #                    "no" => "no",
-      #                    "pt" => "pt-BR",
-      #                    "ru" => "ru",
-      #                    "zh_CN" => "zh-CN",
-      #                    "zh_TW" => "zh-TW",
-      #                    "zh_cn" => "zh-CN",
-      #                    "zh_tw" => "zh-TW",
-      #                    "zh-CN" => "zh-CN",
-      #                    "zh-TW" => "zh-TW",
-      #                    "zh-cn" => "zh-CN",
-      #                    "zh-cn" => "zh-TW"}
-      #                    
-      #         domains = rack_env["SERVER_NAME"].to_s.split(".")
-      #         new_url = "http://#{domains.drop(1).join(".")}/#{locales[domains[0]]}#{path.to_s}" if locales[domains[0]]
-      #         
-      #         new_url || "http://#{rack_env["SERVER_NAME"]}#{path}"
-      #       end
-      #       #only 301 if subdomain isn't www
-      #       r301 %r{.*}, legacy_loc_rewrite, :if => Proc.new {|rack_env| ['en','de', 'es', 'fr', 'ko', 'nl', 'no', 'pt', 'ru', 'zh_CN', 'zh_TW', 'zh-CN', 'zh-TW', 'zh_cn', 'zh_tw', 'zh-cn', 'zh-cn'].include? rack_env["SERVER_NAME"].split(".")[0]}
 
       ### Pass-through to 2.0
       r302 %r{/groups.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" } 

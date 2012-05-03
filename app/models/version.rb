@@ -90,7 +90,11 @@ class Version
   end
 
   def self.default_for(lang)
-    versions_api_data.defaults.to_hash[lang.to_s]
+    versions_api_data.defaults[lang.to_s]
+  end
+  
+  def self.default()
+    versions_api_data.defaults["en"]
   end
   
   def self.sample_for(lang, opts={})
@@ -150,6 +154,7 @@ class Version
     return @versions_api_data unless @versions_api_data.nil?
     
     @versions_api_data = YvApi.get("bible/versions", type: "all", cache_for: 12.hours)
+    @versions_api_data.defaults = Hash[@versions_api_data.defaults.map {|d| [YvApi::to_app_lang_code(d[0]), d[1]]}]
     @versions_api_data.versions.each {|k,v| v.language.iso = YvApi::to_app_lang_code(v.language.iso)}
     @versions_api_data
   end
