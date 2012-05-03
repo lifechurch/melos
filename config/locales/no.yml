@@ -1,5 +1,5 @@
 ---
-"no":
+'no':
   link:                                         "Lenke"
   site search:                                  "YouVersion-søk"
   auth error:                                   "Det oppstod et problem med ditt brukernavn eller passord. Logg inn på YouVersion for å fortsette."
@@ -172,6 +172,8 @@
     invalid chapter title:                      "Om denne versjonen"
     invalid chapter text:                       "Dette kapitlet eksisterer ikke i denne oversettelesn."
     invalid secondary chapter text:             "Dette kapittelet finnes ikke i din foretrukne sekundære oversettelse."
+    no secondary version title:                 "About Parallel Comparison"
+    no secondary version text:                  "%{language_name} only has one version available, so we couldn't pick a secondary version for you. Please select your secondary version for parallel comparison."
     select another chapter:                     "Velg et annet kapittel"
     view in reader:                             "Vis %{reference} i lesemodus"
   users:
@@ -234,6 +236,10 @@
     confirm update email success:               "Takk! Vi har oppdatert epost-adressen din."
     confirm update email error:                 "Beklager, det oppsto et problem og epost-adressen din ble ikke endret."
     account confirmed:                          "Your account has been confirmed!"
+    account already confirmed:                  "Your account has already been confirmed! Sign in to continue."
+    errors confirming account:                  "Sorry, something went wrong on our end. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation email."
+    invalid confirm hash:                       "Sorry, that confirmation code seems to be invalid. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation code."
+    confirm password to continue:               "Please enter your password to sign in and get started."
     invalid email forgot:                       "Beklager, men vi kunne ikke finne noen konto med den epost-adressen. Vennligst prøv igjen."
     error deleting account:                     "Beklager, det var en feil i vår ende. Vennligst prøv igjen eller kontakt support."
     send new password button:                   "Send nytt passord"
@@ -367,7 +373,7 @@
     edit:                                       "Rediger"
     delete:                                     "Slett dette bokmerket"
     title field:                                "Tittel"
-    lables:                                     "Emner"
+    labels:                                     "Merkelapper"
     all:                                        "Alle"
     labels label:                               "Emner:"
     title:                                      "Bokmerker"
@@ -518,6 +524,10 @@
     donate now button:                          "Gi nå"
     email header:                               "YouVersion, a ministry of LifeChurch.tv, has received your donation. No goods or services were provided in exchange for the donation, except intangible religious benefits. Please contact giving@lifechurch.tv with questions."
     email footer:                               "Your donation will help people around the world fall in love with God's Word."
+    address:                                    "Address"
+    city:                                       "City"
+    state:                                      "State"
+    zip:                                        "Zip"
   download ad:
     title:                                      "Last ned gratis Bibel-app."
     line 1:                                     "Hundrevis av oversettelser på mange"
@@ -532,7 +542,9 @@
     youversion copy:                            "Siden det hele startet i 1996 har LifeChurch.tv's mål vært å lede folk til å bli trofaste etterfølgere av Jesus. I arbeidet med dette har vi sett etter nye måter å hjelpe folk til å koble Bibelen til hverdagslivet sitt. Metodene har forandret seg gjennom årene, og vi har tatt i bruk ny teknologi og nye strategier. Uansett teknologi, hovedfokuset er å være relevant, og vi jobber hele tiden for å vise og lære mennesker at Guds Ord er vikitg for alle, uansett hvor de befinner seg i livet."
     youversion copy 2:                          "YouVersion representerer en ny frontlinje i Lifechurch.tv's arbeid. Vi bygger ikke et verktøy bare for å forandre verden med nyskapende teknologi. Enda viktigere er det å gi mennesker muligheter til å bli kjent med Gud og oppdage hvor relevant Bibelen er for livene deres."
     partners title:                             "En spesiell takk til våre partnere"
+    partners text:                              "Without our generous Bible publishing partners, YouVersion simply would not be able to provide our worldwide community with so many Bibles. Many of you have asked how you can thank these vital supporters of YouVersion's mission. You can learn more about them, their ministries, and ways you can support them through the links below."
     translation title:                          "Våre team med oversettere"
+    learn more:                                 "Learn More"
   press page:
     title:                                      "Presseområde"
     contact header:                             "Informasjon om pressekontakter"
