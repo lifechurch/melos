@@ -232,13 +232,10 @@ class Reference
     if(@api_data[:format].nil? || @api_data_format != format)
       @api_data[:format] = YvApi.get("bible/#{api_type}", cache_for: 12.hours, format: format, version: @ref[:version], reference: @ref.except(:version).to_osis_string) do |errors|
         if errors.length == 1 && [/^Reference not found$/].detect { |r| r.match(errors.first["error"]) }
-          puts "wrong version"
           raise NotAChapterError
         elsif errors.length == 1 && [/^Version is invalid$/].detect { |r| r.match(errors.first["error"]) }
-          puts "not a chapter"
           raise NotAVersionError
         elsif errors.length == 1 && [/Invalid chapter reference$/].detect { |r| r.match(errors.first["error"]) }
-          puts "not a book"
           raise NotABookError
         end
       end
