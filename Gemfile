@@ -25,6 +25,7 @@ gem 'asset_sync'
 gem "rack-timeout"
 gem "geokit", "~> 1.6.5"
 gem "http_accept_language", "~> 1.0.2"
+gem "compass",  '0.12.rc.1' #test asset precompilation/sync on staging if you upgrade this
 #gem 'rails-i18n' #using locale files directly in /config/locales/rails-i18n until gem supports aliasing (or we come up with a way to resolve differences between gem lang codes and our tr8n codes, and api codes)
 
 
@@ -48,10 +49,11 @@ end
 group :test, :development do
   # Pretty printed test output
   gem 'turn', '< 0.8.3', :require => false
-  gem 'cucumber-rails', "~> 0.5.0.beta1", :require => false
+  gem 'cucumber-rails', "~> 0.5.0.beta1", :require => false #test asset precompilation/sync on staging if you upgrade this
   gem 'rspec-cells'
-  gem 'capybara', "~> 1.0.0.beta1"
+  gem 'capybara', "~> 1.0.0.beta1" #test asset precompilation/sync on staging if you upgrade this
   gem 'rspec-rails'
+  gem 'heroku', "~> 2.25.0"
   gem 'heroku_san'
   gem 'capistrano'
   gem 'capistrano-ext'

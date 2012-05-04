@@ -18,6 +18,9 @@ YouversionWeb::Application.configure do
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
+  
+  # Restrict log (default is :debug)
+  # config.log_level = :info
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin

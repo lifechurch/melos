@@ -264,9 +264,7 @@ class User < YouVersion::Resource
   #   end
   #   
   def share(opts = {})
-    puts "in"
     opts[:connections] = opts[:connections].keys.join("+")
-    puts opts
     result = YvApi.post("users/share", opts.merge({auth: self.auth})) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors

@@ -38,10 +38,8 @@ class Note < YouVersion::Resource
   end
 
   def before_save
-    puts "self content is #{self.content}"
     @original_content = self.content
     self.content = self.content_as_xml
-    puts "now, self content is #{self.content}"
     if self.reference.nil? || self.reference.empty?
       self.reference_list = ReferenceList.new(nil)
     else
