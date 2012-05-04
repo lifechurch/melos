@@ -175,6 +175,10 @@ class UsersController < ApplicationController
   end
 
   def share
+    puts "in controller action"
+    puts request.referer
+    puts params[:share]
+    puts @user
     if @user.share(params[:share])
       redirect_to :back, notice: t('share success')
     else
