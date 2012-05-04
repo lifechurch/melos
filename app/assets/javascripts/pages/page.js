@@ -2,6 +2,19 @@
 // This class sets up the entire page javascript functionality and interactivity.
 // Long term we should refactor, subclass this page, and dynamicaly load page class at page load time.
 
+// call jRespond and add breakpoints
+var jRes = jRespond([
+    {
+        label: 'mobile',
+        enter: 0,
+        exit: 999
+    },{
+        label: 'widescreen',
+        enter: 1000,
+        exit: 10000
+    }
+]);
+
 function Page() {
   this.selected_menu  = undefined;
   this.menus          = new Array();
@@ -165,6 +178,11 @@ Page.prototype = {
         $(this).find(".tooltip").fadeOut(100);
     });
 
+    // Slide to mobile nav
+    $('#slideToNav').click(function(){
+      $(window).scrollTop($('#nav_mobile').offset().top);
+    });
+
   },
 
   menuClick : function( clicked ) {
@@ -211,7 +229,11 @@ Page.prototype = {
       var settings_trigger  = "#menu_settings_trigger";
       var settings_menu     = "#menu_settings";
       if($(settings_trigger).length && $(settings_menu).length) {
-        var settings_menu   = new SettingsMenu({trigger: settings_trigger , menu: settings_menu })
+        var settings_menu   = new SettingsMenu({trigger: settings_trigger , menu: settings_menu });
+      }
+
+      if($('#version_primary').length) {
+        var mobile_menus   = new MobileMenus();
       }
 
       var version_triggers  = "#menu_version_trigger, #menu_alt_version_trigger";
@@ -230,6 +252,13 @@ Page.prototype = {
       if($(choose_language).length) {
         var language_menu   = new LanguageMenu("#choose_language");
       }
+
+      var share_form = "article > form.share";
+      if($(share_form).length){
+        var share_form = new SharePane(share_form);
+        share_form.initForm();
+      }
+
 
     var thiss = this;
     var all_menu_triggers = $('.dynamic_menu_trigger');

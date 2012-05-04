@@ -1,0 +1,38 @@
+@media only screen and (max-width: 960px)
+  /* Style adjustments for viewports 960px and under go here
+  // `Avatars
+  //----------------------------------------------------------------------------------------------------
+
+  .avatar_small,
+  .avatar_medium,
+  .avatar_large,
+  .avatar_huge
+    +border-radius(2px)
+    +box-shadow(rgba(#000, 0.2) 0 1px 2px 0)
+    border: 2px solid #fff
+
+  a:hover .avatar_small,
+  a:hover .avatar_medium,
+  a:hover .avatar_large
+    +glow
+    border-color: $blue
+
+  .avatar_small
+    width: 20px
+    height: 20px
+
+  .avatar_medium
+    width: 25px
+    height: 25px
+
+  .avatar_large
+    width: 48px
+    height: 48px
+
+  .avatar_huge
+    width: 128px
+    height: 128px
+
+  a:hover .avatar_huge
+    +box-shadow(rgba($blue_light, 0.5) 0 0 5px 0, rgba(#000, 0.15) 0 4px 4px 0)
+    border-color: $blue

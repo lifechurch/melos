@@ -150,6 +150,7 @@ class UsersController < ApplicationController
     @nav = :notes if @me
     @selected = :notes
     @notes = @user.notes(page: params[:page])
+    render 'notes/index', layout: "application"
   end
 
   def likes
@@ -183,6 +184,14 @@ class UsersController < ApplicationController
       flash[:error] = t('share error') and redirect_to :back
     end
   end
+
+  def new_share
+    render "share", layout: "application"
+  end
+
+  #
+  # Profile actions
+  #
 
   def edit
     @selected = :profile

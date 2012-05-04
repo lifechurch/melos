@@ -50,6 +50,13 @@ YouversionWeb::Application.configure do
   # Default is true for `Rails s --debug`, but false for `rails console --debug`
   # Debugger has issues with TDDium service
   #Debugger.settings[:autoeval] = true
+
+
+  # Fallback to assets pipeline to compile on-the-fly if a precompiled asset is missed
+  # Default for development is true so we don't have to precompile assets
+  # Set to false to debug asset compilation/inclusion issues with rake assets:precompile
+  # config.assets.compile = false
+
 end
 
 silence_warnings do

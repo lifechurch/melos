@@ -1,0 +1,249 @@
+// `Profile - avatar, bio, etc
+//----------------------------------------------------------------------------------------------------
+
+.top_section
+  /* @extend .clearfix */
+  +background-image(linear-gradient(#fff, #ececec 1px, #e9e9e9))
+  background-color: #e9e9e9
+  border: none
+  font-size: 13px
+
+  .bio
+    margin: 20px 0 20px 20px
+    width: 60%
+
+    ul
+      margin-bottom: 0
+
+  .highlighted span
+    border-top: 1px solid #cbc9cf
+    margin-top: -1px
+
+  h1
+    margin-bottom: 10px
+
+  ul, li
+    margin-top: 0
+    margin-left: 0
+    padding: 0
+
+  .avatar_huge
+    margin: 20px 0 20px 20px
+    height: 72px
+    width: 72px
+
+  li
+    background:
+      repeat: no-repeat
+      position: left center
+    line-height: 2
+    padding-left: 26px
+    list-style: none
+
+.top_section + .header_tabs
+  +background-image(linear-gradient(#e9e9e9, #d7d6da))
+  +box-shadow(none)
+  background-color: #e9e9e9
+  border-top: 0
+
+.header_tabs
+  background-color: #E9E9E9
+  overflow: hidden
+  a
+    float: left
+    width: 17%
+    height: 44px
+    list-style: none
+    padding: 0
+    margin: 0
+    text-align: center
+    font-size: 12px
+    background-color: #E9E9E9
+    border-top: 1px solid #ccc
+
+  a:first-child
+    width: 15%
+
+  a.badges,
+  a.activity,
+  a.notes,
+  a.bookmarks,
+  a.friends,
+  a.likes
+    overflow: hidden
+    text-indent: 100%
+    white-space: nowrap
+    background-repeat: no-repeat
+    background-size: auto
+
+  .activity
+    background: image-url("mobile/profile_tabs_sprite.png") center 10px
+
+  .friends
+    background: image-url("mobile/profile_tabs_sprite.png") center -42px
+
+  .notes
+    background: image-url("mobile/profile_tabs_sprite.png") center -98px
+
+  .bookmarks
+    background: image-url("mobile/profile_tabs_sprite.png") center -152px
+
+  .likes
+    background: image-url("mobile/profile_tabs_sprite.png") center -206px
+
+  .badges
+    background: image-url("mobile/profile_tabs_sprite.png") center -259px
+
+  .highlighted
+    background-color: #fff
+
+.icon_small_user
+  background:
+    image: image-url("icon_small_user.png")
+
+.icon_small_location
+  background:
+    image: image-url("icon_small_location.png")
+
+.icon_small_link
+  background:
+    image: image-url("icon_small_link.png")
+
+.icon_small_about
+  background:
+    image: image-url("icon_small_about.png")
+
+// `Profile - stuff below the avatar, bio, etc
+//----------------------------------------------------------------------------------------------------
+
+#main article.profile
+  padding: 20px 0 0 0
+
+  h1
+    margin-left: 20px
+
+  .big_list
+    margin-bottom: 0
+
+    .li_badge,
+    .li_social,
+    .li_note,
+    .li_bookmark
+      padding: 12px 20px 12px 44px
+
+    .li_badge,
+    .li_social
+      background-position: 17px 15px
+
+    .li_bookmark
+      background-position: 17px 23px
+
+    .li_note
+      background-position: 17px 16px
+
+    li
+      p
+        margin-bottom: 0
+
+      h5
+        margin-bottom: 8px
+        line-height: 1.3em
+
+      .gutter_top_half
+        margin-top: 0 !important
+        font-weight: bold
+
+    .bookmark_edit
+      margin-top: 4px
+
+    .negative_gutter_top_half
+      margin-top: 4px
+
+  .tabs
+    margin-bottom: -1px
+    overflow: hidden
+    li
+      background-image: none
+      float: left
+      padding: 0
+      margin-left: 8px
+      padding: 8px 8px 0 8px
+      border:
+        left: 1px solid #ccc
+        top: 1px solid #ccc
+        right: 1px solid #ccc
+      a
+        display: block
+    li:first-child
+      margin-left: 20px
+    li.highlighted
+      border-bottom: 1px solid #fff
+
+  #connection_info
+    padding-top: 20px
+    border-top: 1px solid #e1e1e1
+
+  .friends_list
+    margin-top: 0 !important
+    margin-bottom: 0
+
+    li
+      background-image: none
+      padding: 10px 20px
+      border-top: 1px solid #ccc
+      overflow: hidden
+
+      p
+        margin: 0
+
+      .avatar_box
+        width: 20%
+        float: left
+
+      .gutter_top_half
+        float: left
+        width: 80%
+        margin-top: 0 !important
+        a
+          font-weight: bold
+          text-decoration: none
+    li:first-child
+      border-top: 0
+
+  .friends_combo_button
+    font-size: 15px
+    overflow: hidden
+    margin-top: -14px
+    a
+      color: $body_text
+      text-decoration: none
+      height: 38px
+      display: block
+      text-align: center
+      font-weight: bold
+      line-height: 38px
+      float: left
+      width: 50%
+      border:
+        top: 3px solid #eee
+        bottom: 3px solid #aaa
+      background-color: #ccc
+    .highlighted
+      background-color: #999
+      color: #fff
+      height: 40px
+      line-height: 40px
+      border:
+        top: 1px solid #777
+        bottom: 3px solid #999
+
+// Notifications
+//----------------------------------------------------------------------------------------------------
+
+.notifications
+  padding: 0 20px
+
+#main .profile .emphasis + label,
+#main .profile input + label,
+#main .profile select + label
+  display: inline-block

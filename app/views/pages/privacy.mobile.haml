@@ -1,0 +1,53 @@
+- @title = t("users.privacy.policy", youversion: t("youversion"))
+- @sidebar = false
+- @header_title =t('privacy policy')
+- @header = true
+
+- content_for :header do
+  %a#slideRight.nav_btn{:href => '#nav_primary'}
+    View Navigation
+  %h1#page_title= link_to t(@header_title)
+
+%article
+  %h1= t("users.privacy.policy", youversion: t("youversion"))
+  %h4.mute= t("users.revised date", date: "7/16/2012")
+  %hr
+  - if I18n.locale != I18n.default_locale
+    %p.disclaimer= t('users.privacy.translation disclaimer')
+    %hr
+
+  %p= t("users.privacy.intro")
+
+  %h4= t("users.privacy.what we collect")
+  %ul
+    %li
+      %h5= t("users.privacy.your information title")
+      %p= t("users.privacy.your information text")
+    %li
+      %h5= t("users.privacy.device id title")
+      %p= t("users.privacy.device id text")
+    %li
+      %h5= t("users.privacy.cookies title")
+      %p= t("users.privacy.cookies text", link: link_to("www.youversion.com", "http://www.youversion.com")).html_safe
+    %li
+      %h5= t("users.privacy.log title")
+      %p= t("users.privacy.log text")
+    %li
+      %h5= t("users.privacy.communications title")
+      %p= t("users.privacy.communications text", link: link_to("www.youversion.com/live", "http://www.youversion.com/live")).html_safe
+    %li
+      %h5= t("users.privacy.third party title")
+      %p= t("users.privacy.third party text")
+  %h4= t("users.privacy.information use title")
+  %p= t("users.privacy.information use text")
+  %h4= t("users.privacy.information security title")
+  %p= t("users.privacy.information security text")
+  %h4= t("users.privacy.data integrity title")
+  %p= t("users.privacy.data integrity text")
+  %h4= t("users.privacy.information access title")
+  %p= t("users.privacy.information access text")
+  %h4= t("users.privacy.enforcement title")
+  %p= t("users.privacy.enforcement text")
+  %h4= t("users.privacy.questions title")
+  %p= t("users.privacy.questions text", mailto_link: link_to("legal@youversion.com", "mailto:legal@youversion.com")).html_safe
+

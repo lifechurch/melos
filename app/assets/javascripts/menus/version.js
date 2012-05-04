@@ -36,6 +36,11 @@ VersionMenu.prototype = {
       // Todo: refactor
       var tr            = $(this).closest('tr');
       var version_id    = tr.data("version");
+
+      //just follow the link if there's no data-version
+      if (!version_id) return true;
+      e.preventDefault();
+
       var abbrev        = tr.data("abbrev");
       var menu          = $(this).closest(".dynamic_menu.version_select");
       var path_chapter  = $('article .chapter').data('usfm') || 'JHN.1'; //TODO: grab first ref usfm in this version (from json model of version)
@@ -169,7 +174,7 @@ VersionMenu.prototype = {
             $(this).nextUntil('tr.cat').show();
           }
         }
-        else if($(this).attr('data-meta').length){
+        else if($(this).attr('data-meta')){
           // show matching versions and their category headers
           if($(this).attr('data-meta').match(regexp)){
             // show matching version row

@@ -19,4 +19,72 @@
     %meta{name: "twitter:description",  content: truncate(@presenter.modal_verse.content(as: :plaintext), length: 200, separator: " ")}
     %meta{name: "twitter:site",         content: "@YouVersion"}
 
+- content_for :mobile_right_nav do
+  %a.version_btn{:href => 'javascript:void(0);'}
+    = @version.abbreviation
+  %span.right_btn_slice
+  %a.settings_btn.toolbar_trigger{:href => '#'}
+
+- content_for :title do
+  = link_to(@reference.human, 'javascript:void(0);')
+
+.mobile
+  %div.verse_toolbar
+    %nav
+      %a.submenu_btn.bookmark_btn{href: 'javascript:void(0);', "data-action" => new_bookmark_path, "data-method" => 'GET'}
+      %a.submenu_btn.highlight_btn{href: 'javascript:void(0);'}
+      %a.submenu_btn.note_btn{href: 'javascript:void(0);', "data-action" => new_note_path, "data-method" => 'GET'}
+      %a.submenu_btn.share_btn{href: 'javascript:void(0);', "data-action" => new_share_path, "data-method" => 'GET'}
+      //%a.close_btn.menu_close#clear_selected_verses{href: 'javascript:void(0);'}
+      %br.clear
+      %div.close_tab
+        %span.first
+        %div.mid
+          %a.menu_close
+        %span.last
+
+  %div.share_toolbar
+    %nav
+      %a.tertiary_btn.facebook_btn
+      %a.tertiary_btn.twitter_btn
+      %a.tertiary_btn.text_btn
+      %a.tertiary_btn.email_btn
+      %a.tertiary_btn.new_page_btn
+  %div.clear
+
+  %div.color_toolbar
+    %nav
+      %form.highlights{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+        - if current_auth.nil?
+          %input{type: 'hidden', name: 'redirect', value: "/bible"}
+          %input{type: 'hidden', name: 'source', value: "highlight"}
+
+        %input.references{name: "highlight[references]", type: "hidden"}
+        %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
+
+        %div.color_picker_list
+          %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
+          %span
+          - if current_auth
+            %span.ajax_me{"data-ajax" => highlight_colors_path}
+              = render partial: "users/highlight_color_swatches"
+          - else
+            %span
+              = render partial: "users/highlight_color_swatches"
+        %div.clear
+
+  %div.nav_items{class: @reference.audio ? nil : "audio-disabled"}
+    %span.first
+    %ul
+      %li
+        = link_to("Prev", bible_path(@reference.previous_chapter), class: "prev") if @reference.previous_chapter
+      %li{class: ("audio-disabled" unless @version.audio_version?)}
+        %a.button.audio_btn{:href => '#menu_audio_player', :title => t("ref.listen")}
+          %span.icon_listen
+          =t("ref.listen")
+      %li
+        = link_to("Next", bible_path(@reference.next_chapter), class: "next") if @reference.next_chapter
+    %span.last
+  %br.clear
+
 = render partial: 'reader', locals: {presenter: @presenter}

@@ -1,0 +1,45 @@
+@media only screen and (max-width: 960px)
+  /* Style adjustments for viewports 960px and under go here
+
+  //
+  // ` Calendar
+  //
+
+  .cal_month
+    width: 100%
+    caption, th, td
+      text-align: center
+    caption
+      font-weight: bold
+      padding-bottom: 4px
+    th
+      background-color: #ededed
+      border:
+        top: 1px solid #e1e1e1
+        left: 1px solid #e1e1e1
+        bottom: 1px solid #e1e1e1
+      color: #999
+    th:first-child
+      border-left: 0
+    td
+      border: 1px solid #e1e1e1
+      vertical-align: middle
+      height: 44px
+      a
+        font-weight: bold
+        text-decoration: none
+        height: 44px
+        width: 100%
+        display: block
+        line-height: 44px
+
+    td.read
+      font-weight: bold
+      background: image-url("cal_check.png") no-repeat top right
+
+    td.read a
+      color: #888
+      background: none
+
+  .cal_month .active-day a
+    background: image-url("cal_bullet.png") center 31px no-repeat

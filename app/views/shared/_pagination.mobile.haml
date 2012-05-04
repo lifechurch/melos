@@ -1,0 +1,12 @@
+- if resource_list.is_a?(ResourceList) && resource_list.has_pages
+  %ul.pagination
+    - unless @page.to_i == 1
+      %li.pagination_previous
+        =link_to t("previous page"), params.merge({page: @page-1})
+    - unless @page.to_i == resource_list.total_pages
+      %li.pagination_pages
+        = t("paginated items shown", first_shown: number_with_delimiter(((@page.to_i - 1)*resource_list.page_length) + 1), last_shown: number_with_delimiter(@page.to_i * resource_list.page_length), total_available: number_with_delimiter(resource_list.total, precision: 3)).html_safe
+      %li.pagination_next
+        =link_to t("next page"), params.merge({page: @page+1})
+    - else
+      %li.pagination_pages= t("paginated items shown", first_shown: number_with_delimiter(((@page.to_i - 1)*resource_list.page_length) + 1), last_shown: number_with_delimiter(resource_list.total, precision: 3), total_available: number_with_delimiter(resource_list.total, precision: 3)).html_safe

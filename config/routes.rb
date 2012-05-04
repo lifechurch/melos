@@ -99,6 +99,7 @@ YouversionWeb::Application.routes.draw do
 
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
+  get 'share/new' => 'users#new_share', as: 'new_share'
   resources 'highlights', only: [:create]
 
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get

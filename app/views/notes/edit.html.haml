@@ -1,4 +1,13 @@
+- content_for :mobile_left_nav do
+  %a.cancel_btn{:href => '/bookmarks'}= t('cancel')
+
+- content_for :title do
+  = t('bookmarks.edit bookmark')
+
+- content_for :mobile_right_nav do
+  %a.save_btn{:href => 'javascript:void(0);', onclick: "$('*[type=\"submit\"]').click();"}
+    = t('save')
+
 %article
   %h1= t("notes.edit note")
-  %hr
   = render 'form'

@@ -1,0 +1,133 @@
+@media only screen and (max-width: 960px)
+  /* Style adjustments for viewports 960px and under go here
+  #main .pagination
+    border-top: 1px solid #ccc
+    clear: both
+    font:
+      size: 15px
+      weight: bold
+    width: 100%
+    .pagination_pages
+      line-height: 43px
+      background: none
+
+  #main .pagination,
+  #main .pagination li
+    padding: 0
+    float: left
+
+  #main .pagination a
+    color: #888
+    display: block
+    text-decoration: none
+    line-height: 25px
+    height: 44px
+    text-shadow: #fff 0 1px 0
+
+  // Hack for Firefox.
+  @-moz-document url-prefix()
+    #main .pagination a
+      line-height: 23px
+
+  #main .pagination li.highlighted a
+    color: $blue
+
+  #main .pagination a:hover,
+  #main .pagination li.highlighted a:hover
+    color: $blue_dark
+
+  #main .pagination_first a,
+  #main .pagination_previous a,
+  #main .pagination_next a,
+  #main .pagination_last a
+    background:
+      image: image-url("pagination_arrows_m.png")
+      repeat: no-repeat
+    color: transparent
+    font-size: 0
+    overflow: hidden
+    padding: 0
+    text-decoration: none
+    text-indent: 100%
+    text-shadow: none
+    white-space: nowrap
+    width: 44px
+
+  #main .pagination_first
+    a
+      background:
+        position: 0 0
+
+    a:hover
+      background:
+        position: 0 -44px
+
+  #main .pagination_previous
+    a
+      background:
+        position: -44px 0
+
+    a:hover
+      background:
+        position: -44px -44px
+
+  #main .pagination_next
+    a
+      background:
+        position: -88px 0
+
+    a:hover
+      background:
+        position: -88px -44px
+
+  #main .pagination_last
+    a
+      background:
+        position: -132px 0
+
+    a:hover
+      background:
+        position: -132px -44px
+
+  #main .pagination.labels
+    float: right
+    border-top: none
+    margin: 0
+    padding: 0
+    .pagination_pages
+      line-height: 43px
+
+  /* ------------- reading plan list pagination --------------- */
+
+  #main
+    article.readingplans
+      .pagination
+        margin-top: 10px
+      .pagination_pages
+        margin: 0 16px
+      ul li
+        background: none
+
+  /* ------------- reading plan day view pagination ---------------- */
+
+  #main
+    article.readingplans
+      .categories_menu
+        dt
+          overflow: hidden
+          padding: 0
+        .pagination
+          +background(linear-gradient(#f8f8f8, #d4d4d4))
+          text-shadow: #fff 0 1px 0
+          text-align: center
+          height: 44px
+          margin-left: 0
+          padding-top: 8px
+          h4
+            margin-bottom: 0
+            color: #666
+            font-size: 14px
+          li.pagination_next
+            margin: 2px 3px 0 0
+          li.pagination_previous
+            margin: 2px 0 0 3px

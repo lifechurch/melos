@@ -7,6 +7,8 @@
           %b
             %a{href: bible_path(r)}= r
           %br
+          .mobile
+            %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
           .embedded_reader{"data-setting-font" => @font, 'data-setting-size' => @size}= r.content.html_safe
   .bookmark_edit.float_right
     %p
@@ -16,7 +18,7 @@
         %span.confirm= link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
         &mdash;
       %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
-  - if list_item.labels
+  - if list_item.labels.present?
     %p
       %strong= t('bookmarks.labels label')
       - list_item.labels.split(", ").each do |l|

@@ -1,0 +1,88 @@
+- @title = t("plans.title")
+- @sidebar = false
+- @header_title = t('plans.title')
+- @header = true
+
+- content_for :header do
+  %a#slideRight.nav_btn{:href => '#nav_primary'}
+    View Navigation
+  %h1#page_title= link_to t(@header_title)
+
+- if current_auth
+  - if request.path == user_plans_path(current_user)
+    .combo_button
+      = link_to t("plans.all plans"), plans_path
+      = link_to t("plans.my plans"), user_plans_path(current_user), class: 'highlighted'
+  - else
+    .combo_button
+      = link_to t("plans.all plans"), plans_path, class: 'highlighted'
+      = link_to t("plans.my plans"), user_plans_path(current_user)
+%article.readingplans
+  .plan_search
+    %form{method: 'get'}
+      - if params[:category]
+        %input{:type => "hidden", :name => "category", :value => params[:category]}
+      - if params[:translate]
+        %input{:type => "hidden", :name => "translate", :value => params[:translate]}
+      - if params[:query]
+        %input{:type => "hidden", :name => "query", :value => params[:query]}
+      %label{:for => "lang"}
+        Plan language:
+        %br
+      %select{onChange: "this.form.submit()", name: "lang", }
+        - (Plan.available_locales & I18n.available_locales).each do |loc|
+          %option{value: loc.to_s, selected: loc.to_s == @plan_lang}= t("language name", locale: loc)
+        - unless (Plan.available_locales & I18n.available_locales).find{|l| l == @plan_lang.to_sym}
+          %option{value: @plan_lang.to_s, selected: true}= t("language name", locale: @plan_lang)
+    %form{method: 'get'}
+      - if params[:category]
+        %input{:type => "hidden", :name => "category", :value => params[:category]}
+      - if params[:translate]
+        %input{:type => "hidden", :name => "translate", :value => params[:translate]}
+      - if @plan_lang
+        %input{:type => "hidden", :name => "lang", :value => @plan_lang}
+      %input.autofocus{name: "query", :type => 'search', :placeholder => t("plans.search placeholder", category: @categories.current_name || t("plans.all")), value: params[:query]}
+      %br.clear
+      %input{:type => 'submit', :value => t("plans.search")}
+
+  .plan_filters
+    - if I18n.locale.to_s != @plan_lang
+      %div
+        = t('plans.showing language filtered', lang_name: t('language name', locale: @plan_lang))
+        %span.mute{style: "font-weight: normal; font-size: 12px"}= t("plans.swap list localization", swap_locale: t('language name', locale: @translate_list ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: (!@translate_list).to_s))).html_safe
+    /
+      .split_pane_sidebar
+        %dl.categories_menu
+          %dt
+            = t("plans.browse by category")
+            - if @translate_list
+              - orig_locale = I18n.locale
+              - I18n.locale = @plan_lang
+          %dd{class: (params[:category] == "" || params[:category].nil?) ? "highlighted" : ""}
+            = link_to t("plans.all plans"), plans_path(params.merge(category: nil, locale: orig_locale))
+          - level = 0
+          - if @categories
+            - @categories.breadcrumbs.each do |category|
+              - level += 1
+              %dd{class: params[:category] == category.slug ? "highlighted" : ""}
+                %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug)), :style => "margin-left:#{level * 20}px"}
+                  = (params[:category] == category.slug) ? t("plans.all category plans", category: category.name)  : category.name
+            - level += 1
+            - @categories.items.each do |category|
+              %dd{class: params[:category] == category.slug ? "highlighted" : ""}
+                %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug)), :style => "margin-left:#{level * 20}px"}
+                  = category.name
+    .split_pane_content
+      - if !@plans.empty?
+        %ul.big_list
+          - @plans.each do |plan|
+            %li
+              .plan_list
+                %h4= link_to(plan.name, plan_path(plan, locale: orig_locale))
+                .plan_length= plan.formatted_length
+                %p= plan.about
+        - I18n.locale = orig_locale
+        = render "shared/pagination", resource_list: @plans
+      -else
+        .none{align: "center"}= t("plans.none found")
+        - I18n.locale = orig_locale

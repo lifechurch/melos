@@ -9,14 +9,14 @@
     %meta{name: "msApplication-ID", content: "af5f6405-7860-49a9-a6b4-a47381974e1d"}
     %meta{name: "msApplication-PackageFamilyName", content: "LifeChurch.tv.Bible_d1phjsdba8cbj"}
   %body
-    #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
+    #wrapper
       #header_outer
         = render '/shared/header'
       - flash.each do |key, msg|
         %div{class: "flash_#{key}"}= msg
       #container{:class => @sidebar == false ? 'no_sidebar' : ''}
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
-          = render '/shared/nav_primary' unless @main_nav == false
+          = render partial: '/shared/nav_primary' unless @main_nav == false
           = content_for?(:main) ? yield(:main) : yield
           - if content_for? :main_trailer
             = yield :main_trailer
@@ -26,7 +26,7 @@
           - else
             - unless (@sidebar == false || sidebar_presenter.blank?)
               = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
-
+      = render partial: '/shared/nav_mobile' unless @main_nav == false
       = render '/shared/footer'
     = render '/shared/javascripts'
     = render '/shared/google_analytics'

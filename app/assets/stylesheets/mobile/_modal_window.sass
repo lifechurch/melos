@@ -1,0 +1,269 @@
+#modal_window,
+#modal_overlay
+  display: none
+
+#modal_overlay
+  background: rgba(#000, 0.8) image-url("modal_overlay.png")
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 6
+
+#modal_window
+  +round
+  +box-shadow(rgba(#000, 0.5) 0 5px 20px 0)
+  background: #bfbec1 image-url("modal_window.png")
+  border: 1px solid #1e1e20
+  overflow: hidden
+  text-shadow: rgba(#fff, 0.7) 0 1px 0
+  position: fixed
+  top: 50%
+  left: 50%
+  z-index: 7
+
+#modal_window header
+  +box-shadow(inset rgba(#fff, 0.1) 0 1px 0 0, rgba(#000, 0.5) 0 2px 5px 0)
+  +border-top-radius(3px)
+  -webkit-font-smoothing: subpixel-antialiased
+  background: #111 image-url("modal_header.png") repeat-x left bottom
+  color: #fff
+  overflow: hidden
+  padding: 0 25px
+  position: relative
+  text-shadow: none
+  line-height: 50px
+  height: 50px
+  z-index: 1
+
+#modal_window header b
+  font-size: 18px
+
+#modal_window header a
+  color: #999
+  &:hover
+    color: #fff
+
+#modal_window .separator
+  background: image-url("modal_header_separator.png") repeat-y center top
+  color: transparent
+  display: inline-block
+  overflow: hidden
+  padding: 0 10px
+  text-indent: -99999px
+  width: 1px
+  height: 30px
+  position: relative
+  top: 10px
+
+#modal_window .close
+  background: image-url("close_modal.png") no-repeat
+  color: transparent
+  cursor: default
+  font-size: 0
+  margin-top: -15px
+  overflow: hidden
+  text-indent: -99999px
+  position: absolute
+  top: 50%
+  right: 15px
+  width: 27px
+  height: 28px
+
+#modal_window .close:hover
+  background-position: left bottom
+
+#modal_window hr
+  border-top-color: rgba(#000, 0.25)
+  border-bottom: 1px solid rgba(#fff, 0.5)
+  margin-bottom: 35px
+
+#modal_window .big
+  color: #111
+  font:
+    size: 35px
+    weight: 200
+  line-height: 1.2
+  margin-bottom: 25px
+
+#modal_single_verse #modal_window section
+  background: image-url("modal_section.png") no-repeat right top
+  margin-right: 140px
+  padding: 30px 50px 20px
+
+#modal_single_verse #modal_window aside
+  +round_bottom_right
+  background: #eae9ee
+  padding: 20px 20px 0
+  position: absolute
+  top: 50px
+  left: auto
+  right: 0
+  bottom: 0
+  width: 100px
+
+#modal_window .action_button_blue,
+#modal_window .action_button_green
+  +box-shadow(inset rgba(#fff, 0.3) 0 1px 0 0, rgba(#000, 0.2) 0 0 0 4px)
+  margin-left: 4px
+  padding:
+    left: 30px
+    right: 30px
+
+#modal_window .action_button_green:focus,
+#modal_window .action_button_green:active,
+#modal_window .action_button_blue:focus,
+#modal_window .action_button_blue:active
+  +box-shadow(rgba(#000, 0.2) 0 0 0 4px, inset rgba(#000, 0.5) 0 5px 10px 0)
+#modal_window #modal_reference_tokens
+
+//
+#modal_single_verse #modal_window
+  width: 900px
+
+#modal_share_verse #modal_window
+  width: 500px
+
+#modal_share_verse
+#modal_window textarea
+  width: 300px
+  height: 80px
+
+#modal_window .modal_reference_tokens
+  background: #eae9ec
+  +round
+  box-shadow: 0px 1px 0px rgba(#222, .8)
+  margin: 20px
+  padding: 15px 20px
+  ul
+    margin: 0px
+#modal_window .modal_reference_tokens b
+  float: left
+  margin:
+    right: 10px
+  font-size: 15px
+#modal_window .tabs
+  margin: 20px
+#modal_window .tab_content_container
+  background: #eae9ec
+  padding: 20px
+  +round-bottom
+#modal_window .tab_content_container span
+  font-size: 10px
+#link_tab_content
+  display: none
+
+// Share Tab styles
+.tabs ul li a
+  color: $gray_medium
+  font-weight: bold
+  margin: 0 auto
+  background: image-url("tab_deselected.png") #eae9ec bottom center repeat-x
+  float: left
+  width: 140px
+  +round-top
+  padding: 12px 0px
+  margin: 0 10px 0 0
+  font-size: 13px
+
+
+.tabs ul li.selected_tab a
+  background: image-url("tab_selected.png") #eae9ec top center repeat-x
+  color: $blue
+
+.tabs ul li a span
+  display: block
+  width: 45px
+  margin: 0 auto
+  padding-left: 20px
+
+#share_tab a span
+  background: image-url("share_tab_icon.png") left -30px no-repeat
+
+.selected_tab a #share_tab a span
+  background: image-url("share_tab_icon.png") left 5px no-repeat
+
+#link_tab a span
+  background: image-url("link_tab_icon.png") left -30px no-repeat
+
+.selected_tab a #link_tab a span
+  background: image-url("share_tab_icon.png") left 5px no-repeat
+
+
+#share_tab_content .share_services
+  float: left
+  width: 100px
+#share_tab_content .share_services span
+  display: block
+#share_tab_content .share_message
+  float: right
+  width: 300px
+#share_tab_content .share_message span
+  float: left
+  margin-top: 5px
+
+#share_tab_content .share_message .character_count
+  float: right
+  background: #fff
+  color: #a20000
+  +round
+  box-shadow: 0px 1px 0px rgba(#222, .5)
+  padding: 2px 5px
+  margin-top: 5px
+  font-size: 11px
+.tabs ul
+  margin: 0px
+  padding: 0px
+.tabs ul li
+  list-style: none
+  margin:
+    right: 10px
+    left: 0px
+
+.share_action
+  float: right
+.share_action a
+  float: right
+.share_action a .action_button_green
+  float: right
+  padding:
+    left: 15px !important
+    right: 15px !important
+.action_cancel
+  padding: 5px 0px 0px 0px
+  margin-right: 10px
+  color: #676767
+  text-decoration: underline
+
+.share_services span .faux_checkbox
+  float: left
+  padding-right: 5px
+
+.share_verse_twitter
+  background: image-url("share_twitter_logo.png")
+  text-indent: -30000px
+  width: 65px
+  height: 13px
+  display: block
+  float: left
+  margin-top: 8px
+
+.share_verse_facebook
+  background: image-url("share_facebook_logo.png")
+  text-indent: -30000px
+  width: 65px
+  height: 13px
+  display: block
+  float: left
+  margin-top: 8px
+
+.share_verse_google
+  background: image-url("share_google_logo.png") no-repeat
+  text-indent: -30000px
+  width: 65px
+  height: 18px
+  display: block
+  float: left
+  margin-top: 8px
+

@@ -1,0 +1,12 @@
+%div{style: "padding: 0 20px"}
+  %p= t('users.update email copy')
+  - unless @user.errors.blank?
+    .form_errors
+      =t("users.profile form errors")
+      %ul
+        - @user.errors.full_messages.each do |e|
+          %li= e.first
+  = form_for @user, url: update_email_path do |u|
+    %p
+      = u.text_field :email
+      = u.submit(t('users.edit email'), style: "margin: 10px 0 0 0; width: 100%")

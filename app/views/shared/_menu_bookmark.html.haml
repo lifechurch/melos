@@ -21,7 +21,7 @@
       = t("highlight")
     %dd.highlight{id: "highlight-pane"}
 
-      %form{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+      %form.highlight{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
 
         - if current_auth.nil?
           %input{type: 'hidden', name: 'redirect', value: "/bible"}
@@ -76,8 +76,8 @@
           /   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
         %div.clear
         %p
-          %button.float_right{type:"submit",name:"bookmark[submit]",value:"submit"}= t('bookmarks.save')
-        %div.clear{style:"padding: 0 0 15px 0"}
+          %button{:type => "submit", :name => "bookmark[submit]", :value => "submit", :class => "float_right action_button_green dark"}= t('bookmarks.save')
+        %div{:class => "clear", :style => "padding: 0 0 15px 0"}
 
     %dt
       = t("ref.share")
@@ -92,7 +92,7 @@
 
           %div.clearfix{style: "margin-bottom: 8px"}
           %div.share_action
-            %button.float_right{type:"submit",name:"share[submit]",value:"submit"}= t('ref.share now')
+            %button{:type => "submit", :name => "share[submit]", :value => "submit", :class => "float_right action_button_green dark"}= t('ref.share now')
           %div.share_services
 
             %span.float_left{style: "width: 60%"}

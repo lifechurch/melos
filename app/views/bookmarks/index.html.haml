@@ -1,7 +1,10 @@
-- @title = 'Bookmarks'
+- @title = t('bookmarks.title')
 - @sidebar = false
 
-%article
+- content_for :title do
+  = t('bookmarks.title')
+
+%article.bookmarks
   %h1= t('users.my bookmarks')
   - unless @bookmarks.empty?
     .split_pane

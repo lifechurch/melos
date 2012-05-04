@@ -1,0 +1,111 @@
+// `Font Family
+//----------------------------------------------------------------------------------------------------
+
+.user_setting_font_helvetica,
+*[data-setting-font="user_setting_font_helvetica"]
+  font-family: $body_font
+
+.user_setting_font_georgia,
+*[data-setting-font="user_setting_font_georgia"]
+  font-family: Georgia, 'Times New Roman', Times, serif
+
+.user_setting_font_baskerville,
+*[data-setting-font="user_setting_font_baskerville"]
+  font-family: Baskerville, 'Times New Roman', Times, serif
+  -webkit-font-smoothing: subpixel-antialiased
+
+.user_setting_font_verdana,
+*[data-setting-font="user_setting_font_verdana"]
+  font-family: Verdana, sans-serif
+
+// `Text Size
+//----------------------------------------------------------------------------------------------------
+
+.user_setting_size_small,
+*[data-setting-size="user_setting_size_small"]
+  font-size: $text_size
+
+.user_setting_size_medium,
+*[data-setting-size="user_setting_size_medium"]
+  font-size: 17px
+
+.user_setting_size_large,
+*[data-setting-size="user_setting_size_large"]
+  font-size: 20px
+
+// `Dynamic Menu
+//----------------------------------------------------------------------------------------------------
+
+.inner_content
+  padding: 16px
+
+.dynamic_menu label[class^="user_setting_font_"]
+  font-size: 15px
+
+// Version Settings Tab
+//----------------------------------------------------------------------------------------------------
+
+#version select
+  width: 100%
+
+
+// Layout Settings Tab
+//----------------------------------------------------------------------------------------------------
+
+#layout form
+  overflow: hidden
+
+#layout form fieldset
+  width: 50%
+
+#layout form label.top_label
+  position: relative
+  top: -25px
+  left: -24px
+  padding: 1px 5px
+  
+#layout form label.top_label.light
+  background: #fff
+  color: #000
+  border-radius: 3px
+
+#layout form label.top_label.dark
+  background: #000
+  color: #fff
+  border-radius: 3px
+  
+#layout form label.top_label.small
+  font-size: 13px
+ 
+#layout form label.top_label.medium
+  font-size: 16px
+  
+  
+#layout form label.top_label.large
+  font-size: 19px
+  top: -28px
+  
+#layout form label.faux_radio[for="user_setting_size_medium"]
+  left: 1px  
+
+#layout form label.faux_radio[for="user_setting_size_large"]
+  top: -7px
+  left: 2px
+
+
+*[data-setting-theme="user_setting_theme_light"]
+  background: #fff !important
+  color: #444
+  
+*[data-setting-theme="user_setting_theme_dark"]
+  background: #000 !important
+  color: #eee
+  
+// Font Settings Tab
+//----------------------------------------------------------------------------------------------------
+
+#font form label.faux_radio
+  margin-top: 2px
+  
+
+ 

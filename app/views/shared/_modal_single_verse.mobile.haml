@@ -1,0 +1,33 @@
+#modal_single_verse
+  #modal_overlay &nbsp;
+  #modal_window
+    - if @single_verse
+      %header
+        %b= @single_verse.ref_string
+        - if @version
+          %span.separator |
+          = @version
+        &nbsp;
+        / %small
+        /   %a{:href => reference_path(@single_verse.raw_hash.except(:version).to_osis_string)}= t("compare all versions")
+            
+        %a.close{:href => '#'} Close
+      %section
+        %p.big= @single_verse.contents[0]
+        %hr
+        %p
+          - if @reference
+            %a#single_verse_read_link.action_button_green{:href => reference_path(@reference)}= t("read reference", reference: @reference.ref_string)
+      %aside
+        %div{style: "height: 36px;"}
+          %a{href: "http://twitter.com/share", class: "twitter-share-button", "data-url" => @single_verse.short_link, "data-counturl" => request.url, "data-text" => @single_verse.contents[0].chomp, via: "YouVersion", "data-count" => "horizontal", "data-related" => "youversion"} Tweet
+          %script{type: "text/javascript", src: "http://platform.twitter.com/widgets.js"}
+        %div{style: "height: 40px;"}
+          %a{name: "fb_share", class: "fb_iframe_widget", type: "button_count", href: "http://www.facebook.com/sharer.php"} Share
+          %script{src: "http://static.ak.fbcdn.net/connect.php/js/FB.Share", type: "text/javascript"}
+        %div{style: "height: 40px;"}
+          %g:plusone{size: "medium"}
+          :javascript
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);

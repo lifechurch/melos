@@ -1,13 +1,22 @@
-= render "/sidebars/notes/default"
+- content_for :title do
+  = t("notes.list title")
+
+- content_for :sidebar do
+  .widget.gutter_bottom_half
+  %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new")}
+  %span.icon_plus= t('new note')
+
+  = render '/shared/widget_ad_bible_app'
+
 
 %article
+  %h1.float_left= "#{@reference_title} #{t('notes.list title')}"
   - if current_auth
-    %h1.float_left= "#{@reference_title} #{t('notes.list title')}"
     %dl.combo_button.float_right
       %dt
-      %dd.highlighted
+      %dd{class: ('highlighted' unless @me)}
         = link_to t("notes.community notes"), all_notes_path
-      %dd
+      %dd{class: ('highlighted' if @me)}
         = link_to t("notes.my notes"), user_notes_path(current_user)
   - else
     %h1= "#{@reference_title} #{t('notes.list title')}"

@@ -2,6 +2,8 @@
 function SelectedMenu( opts ) {
 
   this.menu                = $(opts.menu);
+  this.mobile_menu           = $(opts.mobile_menu);
+  this.trigger               = $(opts.trigger);
   this.counter             = $('#verses_selected_count');
   this.paneList            = this.menu.find('dl');
   this.accountPane         = this.paneList.find('#need-account');
@@ -63,7 +65,8 @@ SelectedMenu.prototype = {
   },
 
   updateHighlights : function( selected_verses ) {
-    this.highlight_pane.updateForm({ selected_verses : selected_verses })
+    this.highlight_pane.updateForm({ selected_verses : selected_verses });
+    this.mobile_highlight_pane.updateForm({ selected_verses : selected_verses });
   },
 
   updateLink : function( link ) {
@@ -178,4 +181,52 @@ SelectedMenu.prototype = {
     });
 
   },
+
+  open_mobile : function() {
+    thiss = this;
+
+    $('.nav_items').stop().animate({ 'top' : '-46px'}, 200, function(){
+        // nav_items animation complete, show verse toolbar
+        thiss.mobile_menu.stop().animate({ 'top' : '0px'}, 200, function(){
+            $(this).addClass('open');
+            $('.share_toolbar').show();
+        });
+
+    });
+  },
+
+  close_mobile : function() {
+    $('.share_toolbar').hide();
+    this.mobile_menu.stop().animate({ 'top' : '-86px'}, 200, function(){
+        // verse toolbar animation complete, show nav_items
+        $(this).removeClass('open');
+        $('.nav_items').stop().animate({ 'top' : '0px'}, 200);
+    });
+  },
+
+  close : function() {
+    this.trigger.parent('li').removeClass('li_active');
+    $("#li_selected_verses").removeClass("li_active");
+    this.menu.hide();
+  },
+
+  initMobile : function() {
+    thiss = this;
+
+    jRes.addFunc({
+      breakpoint: 'mobile',
+      enter: function() {
+        // bind mobile menu events, giving their handler's the Selected context via $.proxy
+            $('#version_primary').bind("verses:first_selected", $.proxy(thiss.open_mobile, thiss));
+            $('#version_primary').bind("verses:all_deselected", $.proxy(thiss.close_mobile, thiss));
+            console.log('mobile entered');
+      },
+      exit: function() {
+        // unbind mobile menu events, giving their handler's the Selected context via $.proxy
+            $('#version_primary').unbind("verses:first_selected", $.proxy(thiss.open_mobile, thiss));
+            $('#version_primary').unbind("verses:all_deselected", $.proxy(thiss.close_mobile, thiss));
+            console.log('mobile exited');
+      }
+    });
+  }
 }

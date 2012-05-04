@@ -1,0 +1,59 @@
+@media only screen and (max-width: 960px)
+  /* Style adjustments for viewports 960px and under go here
+
+  // `Content Tabs
+  //----------------------------------------------------------------------------------------------------
+
+  // Hack for Firefox.
+  @-moz-document url-prefix()
+    #main article .combo_button
+      line-height: 28px
+
+  .combo_button
+    font-size: 15px
+    overflow: hidden
+    a
+      color: #fff
+      text-decoration: none
+      height: 44px
+      display: block
+      text-align: center
+      font-weight: bold
+      line-height: 43px
+      float: left
+      width: 50%
+      border:
+        top: 3px solid #fff
+        bottom: 3px solid #b9b9b9
+      background-color: #999
+    .highlighted
+      background-color: #fff
+      color: $body_text
+      border: 0
+
+    .unselected_tab
+      border-left: 1px solid #aaa
+      width: 49.99%
+
+  .plan_detail .combo_button
+    width: 100%
+    a
+      color: #fff
+      text-decoration: none
+      height: 33px
+      display: block
+      text-align: center
+      font-weight: bold
+      padding-top: 11px
+    td
+      width: 33.3%
+      background-color: #999
+      border-right: 1px solid #acacac
+    td:first-child
+      width: 33.4%
+      border-right: 0
+    .highlighted
+      background-color: #fff
+      color: $body_text
+      border: 0
+      font-weight: bold

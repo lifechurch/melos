@@ -1,0 +1,28 @@
+- @title = t('donate.donate now')
+- @sidebar = false
+- @header_title = t('donate.donate')
+
+-# Specific stylesheet for Donate page:
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "mobile/donate"
+-# Alt text for 3 promo images:
+
+- alt_for_promo_1 = t('donate.promo 1')
+- alt_for_promo_2 = t('donate.promo 2')
+- alt_for_promo_3 = t('donate.promo 3')
+
+-# Main content below this line...
+
+%article.donate
+  %h1= t('donate.headline')
+  #donate_now_wrap
+    #donate_us_wrap
+      %a.action_button_green{:href => @us_donate_link}
+        %span.icon_arrow= t('donate.donate now')
+    %a.intl{:href => @intl_donate_link}
+      %span.icon_arrow= t('donate.donate now intl')
+    - # %a{:href => '#'}= image_tag '/images/donate_with_paypal.png'
+  %hr
+  %p.narrow.callout.gutter_bottom_half= t('donate.subhead')
+  %p.narrow.gutter_bottom_half= t('donate.copy').html_safe

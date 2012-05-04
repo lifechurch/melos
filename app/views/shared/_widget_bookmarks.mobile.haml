@@ -1,0 +1,23 @@
+.widget.bookmarks
+  %header
+    %a.count{href: user_bookmarks_path(current_auth.username)}= @bookmarks.total || 0
+    %span.header_icon_bookmark= t('recent bookmarks')
+  %ul
+    - if !@bookmarks.empty?
+      - @bookmarks.first(5).each do |b|
+        %li
+          %b= b.title
+          %br
+          - b.reference_list.each do |r|
+            = link_to r, bible_path(r)
+          - if b.labels
+            %span.separator |
+            - b.labels.split(",").each do |l|
+              %span.tag
+                %a{href: user_bookmarks_path(current_auth.username, :label => l)}= l
+    - else
+      %li
+        %p= t('bookmarks.not found')
+    - unless @bookmarks.empty?
+      %li.align_right
+        %a.more_arrow{href: user_bookmarks_path(current_auth.username)}= t('show all bookmarks', total: @bookmarks.total)

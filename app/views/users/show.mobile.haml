@@ -1,0 +1,25 @@
+- @header_title =t('users.my profile')
+
+%ul.big_list
+  - if @user.recent_activity.empty?
+    %p= t('no recent activity', username: @user.username)
+  - else
+    - @user.recent_activity.each do |a|
+      - case a
+      - when Bookmark
+        = render partial: "bookmarks/list_item", locals: {display: :icon, list_item: a}
+      - when Note
+        = render partial: "notes/list_item", locals: {display: :icon, list_item: a}
+      - when User
+        %li.li_social
+          %h5
+            =t('users.started following')
+            =link_to(a.username, user_path(a))
+          %p.mute.small.negative_gutter_top_half= time_ago_in_words(a.most_recent_date)
+      - when Badge
+        %li.li_badge
+          %h5
+            =t('badges.earned a badge')
+            &mdash;
+            = a.name
+          %p.mute.small_negative_gutter_top_half= a.earned

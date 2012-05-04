@@ -1,0 +1,107 @@
+//
+// Split pane view.
+//
+
+.split_pane_content
+  margin-bottom: 20px
+  a
+    text-decoration: none
+
+#main .split_pane_content .big_list li:first-child
+  border-top: 0
+  padding-top: 10px
+
+//
+// Split pane - Menu.
+//
+
+.split_pane_sidebar dl
+  border-right: 1px solid #ccc
+  line-height: 1
+
+.split_pane_sidebar dt,
+.split_pane_sidebar dd
+  border-bottom: 1px solid #ccc
+
+.split_pane_sidebar dt,
+.split_pane_sidebar dd a:not(.no_style)
+  padding: 15px 10px
+
+.split_pane_sidebar dt
+  font-weight: bold
+  padding-bottom: 15px
+  line-height: 25px
+
+.split_pane_sidebar dd
+  font-size: 13px
+
+.split_pane_sidebar dd a:not(.no_style)
+  color: $body_text
+  display: block
+  text-decoration: none
+  padding-left: 32px
+
+
+.split_pane_sidebar dd a:hover:not(.no_style)
+  background:
+    color: rgba(#000, 0.05)
+
+.split_pane_sidebar .highlighted
+  background: #fff image-url("split_pane_sidebar_highlighted.png") no-repeat
+  font-weight: bold
+  margin-right: -1px
+
+.split_pane_sidebar .highlighted a:not(.no_style),
+.split_pane_sidebar .highlighted a:hover:not(.no_style)
+  background: image-url("split_pane_sidebar_highlighted_a.png") no-repeat right center
+  color: $blue
+  padding-left: 32px
+
+.split_pane_sidebar dd form
+
+
+//
+// Reading Plans
+//
+
+.plan_search
+  select
+    margin: 0 0 14px
+  input
+    margin-left: 0
+  input[type="submit"]
+    margin-top: 20px
+
+.split_devotional_pane form
+  position: static !important
+  margin-top: 10px
+
+.split_devotional_pane .embedded_reader
+  margin-top: 5px !important
+
+.split_devotional_pane.highlighted a:not(.no_style),
+.split_devotional_pane.highlighted a:hover:not(.no_style)
+  background: none !important
+  font-size: 15px !important
+
+.split_devotional_pane a:not(.no_style),
+.split_devotional_pane a:hover:not(.no_style)
+  font-size: 15px !important
+
+dd.split_devotional_pane
+  background: #f6f6f6
+
+.subscription_plan_links p
+  margin: 10px 0 0 0
+
+.about_publisher a
+  background: image-url("icon_info_blue.png") no-repeat 2px center
+  padding: 5px 5px 5px 22px
+  display: block
+  margin-bottom: 15px
+.about_plan a
+  background: image-url("icon_copyright.png") no-repeat left center
+  padding: 5px 5px 5px 22px
+  margin-bottom: 15px
+  display: block
+

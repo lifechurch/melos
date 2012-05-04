@@ -1,4 +1,12 @@
 #menu_book_chapter.dynamic_menu
+  .mobile
+    .reader_modal_header
+      %nav
+        %a.close_btn.reference_close_btn
+    .ref_navigation
+      %a.book{:href => '#book', :class => 'selected'} Book
+      %a.chapter{:href => '#chapter'} Chapter
+  %br.clear  
   .spinner_wrapper{style: "display: none;"}
     #book_chapter_spinner.dynamic_menu_spinner
   .search

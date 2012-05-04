@@ -65,6 +65,8 @@ function Reader(opts) {
   this.verse_els      = $('#version_primary .verse');
   this.audio_player   = $('#audio_player');
   this.header         = $('#reader_header header');
+  this.primary        = $('#version_primary');
+  this.secondary      = $('#version_secondary');
 
   // menus
 
@@ -76,7 +78,7 @@ function Reader(opts) {
   this.initNextPrev();
 
   this.book_chapter_menu  = new BookChapterMenu({trigger: "#menu_book_chapter_trigger", menu: "#menu_book_chapter"});
-  this.selected_menu      = new SelectedMenu({menu:"#menu_verse_actions"});
+  this.selected_menu      = new SelectedMenu({menu:"#menu_verse_actions", trigger:"#menu_selected_trigger", mobile_menu:".verse_toolbar"});
 
   $(this.selected_menu).bind("verses:clear", $.proxy(function(e){
     this.clearSelectedVerses();
@@ -112,7 +114,14 @@ Reader.prototype = {
       this.verseClicked(e.delegateTarget);
     },this));
 
-    this.parseVerses(); // run once on load
+    this.parseVerses();
+
+    // fire initial events
+    if (this.numSelectedVerses() >= 1){
+      $(this.primary).trigger("verses:first_selected"); console.log('first verse');
+      $(this.primary).trigger("verses:selected");
+      console.log('verse');
+    }
   },
 
   fetchSelectedVerses : function() {
@@ -130,6 +139,10 @@ Reader.prototype = {
     return $(article_id + '.verse.highlighted');
   },
 
+  numSelectedVerses : function() {
+    return $('#version_primary  .verse.selected > .label').length;
+  },
+
   verseClicked : function( verse ) {
     var v = $(verse);
     (this.isSelected(v)) ? this.deselectVerse(v) : this.selectVerse(v);
@@ -140,12 +153,16 @@ Reader.prototype = {
     $(this.parseVerseClasses(v)).each( function(i,val) {
       $(".verse." + val ).removeClass("selected");
     });
+    $(this.primary).trigger("verses:deselected");
+    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected");  console.log('no verses');}
   },
 
   selectVerse : function( v ) {
     $(this.parseVerseClasses(v)).each( function(i,val) {
       $(".verse." + val ).addClass("selected");
     });
+    if (this.numSelectedVerses() == 1){ $(this.primary).trigger("verses:first_selected"); console.log('first verse');}
+    if (this.numSelectedVerses()){ $(this.primary).trigger("verses:selected");  console.log('verse');}
   },
 
   isSelected : function( v ) {
@@ -159,6 +176,7 @@ Reader.prototype = {
     // Public: clear all selected verses.
   clearSelectedVerses : function() {
     this.allSelectedVerses().removeClass('selected');
+    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected");  console.log('no verses');}
     this.parseVerses();
   },
 

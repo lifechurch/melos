@@ -14,6 +14,9 @@ function BookChapterMenu( opts ) {
   this.active_class     = "li_active";
   this.searchTimer      = null;
   this.firstMatch    = 'first-match';
+  this.book_chapter_tabs = $('.ref_navigation a');
+  this.book_tab          = $('.ref_navigation a.book');
+  this.chapter_tab       = $('.ref_navigation a.chapter');
 
   // Select initial book
   this.setCurrentBook( this.current_book );
@@ -29,7 +32,20 @@ function BookChapterMenu( opts ) {
 
     this.setCurrentBook(book);
     this.populateChapters(book);
+    this.showChapters();
+    window.scrollTo(0,0);
     link.blur();
+  },this));
+
+  // setup click handlers for book/chapter tabs
+  $('.chapter').click($.proxy(function(e){
+    e.preventDefault();
+    this.showChapters();
+  },this));
+
+  $('.book').click($.proxy(function(e){
+    e.preventDefault();
+    this.showBooks();
   },this));
 
 }
@@ -166,6 +182,21 @@ BookChapterMenu.prototype = {
         }
       }
     });
-  }
+  },
 
+  showBooks : function() {
+    this.chapter_menu.hide();
+    this.chapter_tab.removeClass('selected');
+
+    this.book_tab.addClass('selected');
+    this.book_menu.show();
+  },
+
+  showChapters : function() {
+    this.book_menu.hide();
+    this.book_tab.removeClass('selected');
+
+    this.chapter_tab.addClass('selected');
+    this.chapter_menu.show();
+  }
 }

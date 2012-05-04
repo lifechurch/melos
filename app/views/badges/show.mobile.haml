@@ -1,0 +1,10 @@
+- @sidebar = false
+
+%article
+  %div{style: "text-align: center;"}
+    %h1= @badge.name
+    %img{src: @badge.image_url.px_512x512}
+    %h3= @badge.description
+    %p.mute
+      %img{src: @user.user_avatar_url.px_24x24} 
+      = t('earned badge date', username: @user.username, ago: time_ago_in_words(@badge.earned_as_date))
