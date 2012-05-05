@@ -157,5 +157,5 @@ production_heroku:
 # here.  By default, the staging environment has the agent turned on.
 staging:
   <<: *default_settings
-  monitor_mode: true
+  monitor_mode: false
   app_name: YouVersion Web (Staging)
