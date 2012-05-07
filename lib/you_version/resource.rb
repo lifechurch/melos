@@ -80,8 +80,8 @@ module YouVersion
               api_errors = errors
             end
           else
-            Rails.logger.ap "** Resource.find: got non-auth error: ", :info
-            Rails.logger.ap errors, :info
+            Rails.logger.apc "** Resource.find: got non-auth error: ", :info
+            Rails.logger.apc errors, :info
             api_errors = errors
           end
 

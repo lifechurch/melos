@@ -32,9 +32,9 @@ module ApplicationHelper
       #This is only necessarry in the case of an exception handled by rescue_from, as they are swallowed.
       #This may not be needed in the future if Exceptional adds support for the rescue_from.
       if Exceptional::Remote.error(Exceptional::ExceptionData.new(exception))
-        Rails.logger.ap "Exceptional: #{exception.class} has been reported to Exceptional", :info
+        Rails.logger.apc "Exceptional: #{exception.class} has been reported to Exceptional", :info
       else
-        Rails.logger.ap "Exceptional: Problem sending exception. Check your API key.", :error
+        Rails.logger.apc "Exceptional: Problem sending exception. Check your API key.", :error
       end
   end
 

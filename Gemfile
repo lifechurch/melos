@@ -68,5 +68,4 @@ group :development do
   gem 'ruby-prof'
   gem 'spork'
   gem 'thin'
-  gem 'ruby-prof'
 end

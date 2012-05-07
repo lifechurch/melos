@@ -24,8 +24,8 @@ class BookmarksController < ApplicationController
 
   def show
     @bookmark = Bookmark.find(params[:id], auth: current_auth)
-    Rails.logger.ap "Found: ", :info
-    Rails.logger.ap @bookmark.inspect, :info
+    Rails.logger.apc "Found: ", :info
+    Rails.logger.apc @bookmark.inspect, :info
     raise ActionController::RoutingError.new('Not Found') unless @bookmark
   end
 
@@ -40,16 +40,16 @@ class BookmarksController < ApplicationController
   def edit
     if current_auth
       @bookmark = Bookmark.find(params[:id], auth: current_auth)
-      Rails.logger.ap "Found: ", :info
-      Rails.logger.ap @bookmark.inspect, :info
+      Rails.logger.apc "Found: ", :info
+      Rails.logger.apc @bookmark.inspect, :info
       # @bookmark.reference = @bookmark.reference.to_osis_references
-      Rails.logger.ap "First, @bookmark.reference is: ", :info
-      Rails.logger.ap @bookmark.reference, :info
-      Rails.logger.ap "which is a #{@bookmark.reference.class}, doncha know", :info
+      Rails.logger.apc "First, @bookmark.reference is: ", :info
+      Rails.logger.apc @bookmark.reference, :info
+      Rails.logger.apc "which is a #{@bookmark.reference.class}, doncha know", :info
       @bookmark.reference = @bookmark.reference.to_osis_string if @bookmark.reference.respond_to? :to_osis_string
-      Rails.logger.ap "BUT NOW @bookmark.reference is: ", :info
-      Rails.logger.ap @bookmark.reference, :info
-      Rails.logger.ap "which is a #{@bookmark.reference.class}, doncha know", :info
+      Rails.logger.apc "BUT NOW @bookmark.reference is: ", :info
+      Rails.logger.apc @bookmark.reference, :info
+      Rails.logger.apc "which is a #{@bookmark.reference.class}, doncha know", :info
 
     else
       redirect_to bookmarks_path
@@ -61,7 +61,7 @@ class BookmarksController < ApplicationController
     #   ref = params[:bookmark][:reference]
     #   new_ref = ref.to_osis_string
     #   if ref != new_ref
-    #     Rails.logger.ap "Converted ref: #{ref} to this: #{new_ref} so API will like better.", :info
+    #     Rails.logger.apc "Converted ref: #{ref} to this: #{new_ref} so API will like better.", :info
     #     params[:bookmark][:reference] = new_ref
     #   end
     # end
@@ -81,12 +81,12 @@ class BookmarksController < ApplicationController
   def update
     params[:bookmark][:highlight_color] = params[:highlight][:color] if params[:highlight]
 
-    Rails.logger.ap "params[:id] is #{params[:id]}; auth is: ", :info
-    Rails.logger.ap  current_auth.inspect, :info
+    Rails.logger.apc "params[:id] is #{params[:id]}; auth is: ", :info
+    Rails.logger.apc  current_auth.inspect, :info
 
     @bookmark = Bookmark.find(params[:id], auth: current_auth)
-    Rails.logger.ap "Found: ", :info
-    Rails.logger.ap @bookmark.inspect, :info
+    Rails.logger.apc "Found: ", :info
+    Rails.logger.apc @bookmark.inspect, :info
     if @bookmark.update(params[:bookmark])
       render action: "show"
     else
