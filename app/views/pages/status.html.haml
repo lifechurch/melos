@@ -1,5 +1,5 @@
 - @sidebar = false
-
+- I18n.locale = :en
 -# Specific stylesheet for Status page:
 
 - content_for :stylesheets do
@@ -15,8 +15,7 @@
   %section  
     %h3 End User Performance
     .content
-      %iframe.float_right{src: "https://rpm.newrelic.com/public/charts/fnXO79dHsnG", width: "#{chart_width*0.45}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
-      %iframe{src: "https://rpm.newrelic.com/public/charts/hGauGaeuirB", width: "#{chart_width*0.55}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+      %iframe{src: "https://rpm.newrelic.com/public/charts/hGauGaeuirB", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
   %section
     %h3 Appliction Response
     .content
@@ -26,3 +25,9 @@
     %h3 API Performance
     .content
       %iframe{src: "https://rpm.newrelic.com/public/charts/4fDldXgs7Js", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+  %section
+    %h3 Troubleshooting Info
+    .content
+      %p
+        %b App Symbols:
+        %span.mute= Symbol.all_symbols.size
