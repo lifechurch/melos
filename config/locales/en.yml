@@ -372,7 +372,7 @@ en:
   bookmarks:
     edit:                                       "Edit"
     delete:                                     "Delete this Bookmark"
-    title field:                                "Title"
+    title field:                                "Title:"
     labels:                                     "Labels"
     all:                                        "All"
     labels label:                               "Labels:"
@@ -390,7 +390,7 @@ en:
     labels comma separated:                     "Labels (comma-separated):"
     update:                                     "Update"
     color:                                      "Color:"
-    version:                                    "Version:"
+    version field:                              "Version:"
   badges:
     earned a badge:                             "Earned a Badge"
     user badges:                                "%{user}'s Badges"
