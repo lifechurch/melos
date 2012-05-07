@@ -74,15 +74,15 @@ class UsersController < ApplicationController
     if @user.errors.include?(:already_confirmed) && @user.errors.size == 1
       return redirect_to sign_in_path(redirect: sign_up_success_path(show: "facebook")), notice: t('users.account already confirmed')
     end
-    
+
     if @user.errors.blank?
       sign_in @user
       flash.now[:notice] = t("users.account confirmed") 
     end
-      
+
     render layout: "application"
   end
-  
+
   def confirmed
     begin
       user = User.authenticate(params[:username], params[:password])
@@ -200,8 +200,11 @@ class UsersController < ApplicationController
   end
 
   def update_picture
-    result = @user.update_picture(params[:user][:image])
-    result ? flash.now[:notice] = t('users.profile.updated picture') : flash.now[:error] = @user.errors
+    if @user.update_picture(params[:user][:image])
+      flash.now[:notice] = t('users.profile.updated picture')
+    else
+      flash.now[:error] = t("users.profile.#{@user.errors.first.first}")
+    end
     render action: "picture"
   end
 

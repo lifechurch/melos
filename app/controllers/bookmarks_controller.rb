@@ -1,11 +1,11 @@
 class BookmarksController < ApplicationController
   before_filter :set_nav
-#  before_filter :set_sidebar, :only => [:index]
+  # before_filter :set_sidebar, only: [:index]
 
   def index
     @user = User.find(params[:user_id], auth: current_auth) # TODO : can't wait to port this to a Resource
     if params[:label]
-      @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
+      @bookmarks = Bookmark.for_label(params[:label], {page: @page, user_id: @user.id})
     else
       @bookmarks = @user.bookmarks(page: @page)
     end
@@ -15,16 +15,17 @@ class BookmarksController < ApplicationController
   def show_label
     @user = User.find(params[:user_id], auth: current_auth) # TODO : can't wait to port this to a Resource
     if @user && params[:label]  # API requires both, go figger
-      @bookmarks = Bookmark.for_label(params[:label], {:user_id => @user.id})
-      render :template => 'bookmarks/index'
+      @bookmarks = Bookmark.for_label(params[:label], {user_id: @user.id})
+      render template: 'bookmarks/index'
     else
       redirect_to bookmarks_path
     end
   end
 
   def show
-    @bookmark = Bookmark.find(params[:id], :auth => current_auth)
-    Rails.logger.info("Found #{@bookmark.inspect}")
+    @bookmark = Bookmark.find(params[:id], auth: current_auth)
+    Rails.logger.ap "Found: ", :info
+    Rails.logger.ap @bookmark.inspect, :info
     raise ActionController::RoutingError.new('Not Found') unless @bookmark
   end
 
@@ -38,12 +39,18 @@ class BookmarksController < ApplicationController
 
   def edit
     if current_auth
-      @bookmark = Bookmark.find(params[:id], :auth => current_auth)
-      Rails.logger.info("Found #{@bookmark.inspect}")
+      @bookmark = Bookmark.find(params[:id], auth: current_auth)
+      Rails.logger.ap "Found: ", :info
+      Rails.logger.ap @bookmark.inspect, :info
       # @bookmark.reference = @bookmark.reference.to_osis_references
-      Rails.logger.info("First, @bookmark.reference is #{@bookmark.reference}, a #{@bookmark.reference.class}, doncha know")
+      Rails.logger.ap "First, @bookmark.reference is: ", :info
+      Rails.logger.ap @bookmark.reference, :info
+      Rails.logger.ap "which is a #{@bookmark.reference.class}, doncha know", :info
       @bookmark.reference = @bookmark.reference.to_osis_string if @bookmark.reference.respond_to? :to_osis_string
-      Rails.logger.info("BUT NOW @bookmark.reference is #{@bookmark.reference}, a #{@bookmark.reference.class}, doncha know")
+      Rails.logger.ap "BUT NOW @bookmark.reference is: ", :info
+      Rails.logger.ap @bookmark.reference, :info
+      Rails.logger.ap "which is a #{@bookmark.reference.class}, doncha know", :info
+
     else
       redirect_to bookmarks_path
     end
@@ -54,7 +61,7 @@ class BookmarksController < ApplicationController
     #   ref = params[:bookmark][:reference]
     #   new_ref = ref.to_osis_string
     #   if ref != new_ref
-    #     Rails.logger.info("Converted ref: #{ref} to this: #{new_ref} so API will like better.")
+    #     Rails.logger.ap "Converted ref: #{ref} to this: #{new_ref} so API will like better.", :info
     #     params[:bookmark][:reference] = new_ref
     #   end
     # end
@@ -74,10 +81,12 @@ class BookmarksController < ApplicationController
   def update
     params[:bookmark][:highlight_color] = params[:highlight][:color] if params[:highlight]
 
-    Rails.logger.info("params[:id] is #{params[:id]}; auth is #{current_auth.inspect}")
+    Rails.logger.ap "params[:id] is #{params[:id]}; auth is: ", :info
+    Rails.logger.ap  current_auth.inspect, :info
 
-    @bookmark = Bookmark.find(params[:id], :auth => current_auth)
-    Rails.logger.info("Found #{@bookmark.inspect}")
+    @bookmark = Bookmark.find(params[:id], auth: current_auth)
+    Rails.logger.ap "Found: ", :info
+    Rails.logger.ap @bookmark.inspect, :info
     if @bookmark.update(params[:bookmark])
       render action: "show"
     else
@@ -88,7 +97,7 @@ class BookmarksController < ApplicationController
   #YO
 
   def destroy
-    @bookmark = Bookmark.find(params[:id], :auth => current_auth)
+    @bookmark = Bookmark.find(params[:id], auth: current_auth)
 
     if @bookmark.destroy
       redirect_to user_bookmarks_path(current_user), notice: t("bookmarks.successfully deleted")

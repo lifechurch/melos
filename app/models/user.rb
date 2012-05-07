@@ -31,6 +31,8 @@ class User < YouVersion::Resource
   attribute :created_dt
   attribute :last_login_dt
 
+  validate :valid_picture_size?, if: "uploaded_file?"
+
   has_many_remote :badges
 
   api_version "2.5"
@@ -47,11 +49,11 @@ class User < YouVersion::Resource
     return nil unless first_name && last_name
     "#{first_name} #{last_name}"
   end
-  
+
   def zip_code
     postal_code
   end
-  
+
   def zip
     zip_code
   end
@@ -74,7 +76,7 @@ class User < YouVersion::Resource
       errors = nil
       response = YvApi.post('users/create', opts) do |ee|
         errors = ee
-      end    
+      end
       return errors || true
     end
 
@@ -136,11 +138,11 @@ class User < YouVersion::Resource
         end
       User.new(response)
     end
-    
+
     def destroy(auth, &block)
       post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth, api_version: "2.5"}, &block)
     end
-    
+
   end
 
   def initialize(data = {})
@@ -154,7 +156,7 @@ class User < YouVersion::Resource
   def persist_token
     self.class.persist_token(self.username, self.password)
   end
-  
+
   def before_save
     # opts = {"email" => "", "username" =>  "", "password" =>  "", "verified" => false, "agree" => false}.merge!(opts)
     # opts["token"] = Digest::MD5.hexdigest "#{self.username}.Yv6-#{self.password}"
@@ -166,7 +168,7 @@ class User < YouVersion::Resource
     # response = YvApi.post('users/create', opts) do |ee|
     #   errors = ee
     #   return false
-    # end    
+    # end
     # return errors || true
   end
 
@@ -201,10 +203,10 @@ class User < YouVersion::Resource
       return false
     end
   end
-  
+
   def self.confirm(hash)
     user = nil
-    
+
     response = YvApi.post("users/confirm", hash: hash) do |errors|
       user = User.new
 
@@ -219,8 +221,8 @@ class User < YouVersion::Resource
       errors.each { |e| user.errors.add :base, e["error"] }
       true #avoid accidentally raising error
     end
-      
-    user || User.new(response)  
+
+    user || User.new(response)
   end
 
   def before_update
@@ -263,7 +265,7 @@ class User < YouVersion::Resource
   #   def self.notes(id, auth)
   #     Note.for_user(id, auth: auth)
   #   end
-  #   
+  #
   def share(opts = {})
     opts[:connections] = opts[:connections].keys.join("+")
     result = YvApi.post("users/share", opts.merge({auth: self.auth})) do |errors|
@@ -272,10 +274,11 @@ class User < YouVersion::Resource
       false
     end
   end
+
   def notes(opts = {})
     Note.for_user(self.id, opts.merge({auth: self.auth}))
   end
-  # 
+  #
   #   def self.bookmarks(id, auth)
   #     Bookmark.for_user(id, auth: auth)
   #   end
@@ -303,7 +306,7 @@ class User < YouVersion::Resource
       "http://" << website
     end
   end
-  
+
   def website_human
     if match = website.match(/(^www\.|^https?:\/\/www.|^https?:\/\/)(.*)/)
       match[2]
@@ -319,7 +322,7 @@ class User < YouVersion::Resource
           []
         end
       end
-        
+
       unless response.empty?
         activities = response.community.map do |a|
           a.type = "user" if a.type == "follow"
@@ -335,13 +338,27 @@ class User < YouVersion::Resource
   end
 
   def update_picture(uploaded_file)
-    image = Base64.strict_encode64(File.read(uploaded_file.path))
-    response = self.class.post("users/update_avatar", image: image, auth: self.auth) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      self.errors[:base] << new_errors
-      false
+    if uploaded_file.size > 1.megabyte
+      #FIXME: We aren't using the error message below (just checking for the key)
+      self.errors[:picture_too_large] << "Picture should be less than 1 megabyte"
+      return false
     end
-    return response.true?
+
+    image = Base64.strict_encode64(File.read(uploaded_file.path))
+    new_errors = nil
+    response = self.class.post("users/update_avatar", image: image, auth: self.auth, timeout: 25) do |errors|
+      new_errors = errors.map { |e| e["error"] }
+      if new_errors && new_errors[0] == 'users.image_decoded.not_valid_image'
+        self.errors[:picture_invalid_type] << "Picture should be JPG, PNG, or GIF"
+      else
+        self.errors[:base] << new_errors[0]
+      end
+      return false
+    end
+    true
+  end
+
+  def valid_picture_size?
   end
 
   def devices
@@ -414,7 +431,7 @@ class User < YouVersion::Resource
       end
     end
   end
-  
+
   def followers(opts = {})
     opts[:page] ||= 1
     response = YvApi.get("users/followers", opts.merge({id: self.id})) do |errors|
@@ -462,18 +479,18 @@ class User < YouVersion::Resource
     subscriptions = ResourceList.new
     subscriptions.total = response.total
     response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(:auth => auth))}
-    
+
     subscriptions
   end
-  
+
   def subscription(plan)
     Subscription.find(plan, id, auth: auth)
   end
-  
+
   def subscribed_to? (plan, opts = {})
     opts[:user_id] = id
     opts[:auth] = auth #if auth is nil, it will attempt to search for public subscription
-    
+
     case plan
     when Fixnum, /\A[\d]+\z/
       opts[:id] = plan.to_i
@@ -487,14 +504,14 @@ class User < YouVersion::Resource
         raise YouVersion::ResourceError.new(errors)
       end
     end
-    
+
     return response.id.to_i == opts[:id]
   end
-  
+
   def configuration
     @config_attributes ||= self.class.configuration(auth: auth, user_id: id)
   end
-  
+
   def highlight_colors
     configuration.highlight_colors
   end
@@ -503,14 +520,14 @@ class User < YouVersion::Resource
     opts = opts.merge({user_id: opts[:auth].user_id}) if (opts[:user_id] == nil && opts[:auth])
     self.configuration(opts).highlight_colors
   end
-  
+
   def self.configuration(opts = {})
     opts = opts.merge({cache_for: 12.hours}) if opts[:auth] == nil
     response = YvApi.get("configuration/items", opts) do |errors|
       raise YouVersion::ResourceError.new(errors)
     end
   end
-  
+
   def ==(compare)
     compare.class == self.class && self.id == compare.id
   end
@@ -524,7 +541,7 @@ class User < YouVersion::Resource
     sizes = ["24x24", "48x48", "128x128", "512x512"]
     hash = {}
     sizes.each do |s|
-      hash["px_#{s}"] = Cfg.avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png" 
+      hash["px_#{s}"] = Cfg.avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
     end
     return Hashie::Mash.new(hash)
   end

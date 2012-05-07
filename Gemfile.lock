@@ -38,6 +38,7 @@ GEM
       fog
     authorize-net (1.5.2)
       nokogiri (~> 1.4)
+    awesome_print (1.0.2)
     builder (3.0.0)
     capybara (1.0.1)
       mime-types (>= 1.16)
@@ -321,6 +322,7 @@ DEPENDENCIES
   active_reload
   asset_sync (~> 0.2.12)
   authorize-net (~> 1.5.2)
+  awesome_print (~> 1.0.2)
   capybara (~> 1.0.0.beta1)
   cells (~> 3.8.3)
   coffee-rails (~> 3.1.0)

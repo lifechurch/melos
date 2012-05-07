@@ -1,4 +1,3 @@
-
 module YouVersion
   class ResourceError < StandardError
     attr_accessor :errors
@@ -24,7 +23,7 @@ module YouVersion
       def api_path_prefix
         name.tableize
       end
-      
+
       def foreign_key
         "#{model_name.singular}_id"
       end
@@ -51,7 +50,7 @@ module YouVersion
 
       def i18nize(hash)
         lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
-        
+
         hash.has_key?(lang_key) ? hash[lang_key] : hash["default"] unless hash.nil?
       end
 
@@ -81,7 +80,8 @@ module YouVersion
               api_errors = errors
             end
           else
-            Rails.logger.info "** Resource.find: got non-auth error: #{errors}"
+            Rails.logger.ap "** Resource.find: got non-auth error: ", :info
+            Rails.logger.ap errors, :info
             api_errors = errors
           end
 
@@ -100,7 +100,7 @@ module YouVersion
           # value for the outer block.
           inner_response
         end
-        new(response.merge(:auth => auth))
+        new(response.merge(auth: auth))
       end
 
       def all(params = {})
@@ -131,9 +131,9 @@ module YouVersion
         # aaand sometimes it's not encapsulated with api_prefix
 
         if response.respond_to? api_path_prefix.to_sym
-          response.send(api_path_prefix).each {|data| list << new(data.merge(:auth => params[:auth]))}
+          response.send(api_path_prefix).each {|data| list << new(data.merge(auth: params[:auth]))}
         else
-          response.each {|data| list << new(data.merge(:auth => params[:auth]))}
+          response.each {|data| list << new(data.merge(auth: params[:auth]))}
         end
         list
 
@@ -158,7 +158,7 @@ module YouVersion
       end
 
       def destroy(id, auth = nil, &block)
-        post(delete_path, {:id => id, :auth => auth}, &block)
+        post(delete_path, {id: id, auth: auth}, &block)
       end
 
       attr_accessor :resource_attributes
@@ -188,6 +188,10 @@ module YouVersion
         @api_version = version
       end
 
+      def timeout(timeout_sec)
+        @timeout = timeout_sec
+      end
+
       def secure(*secure_method_names)
         @secure_methods ||= []
         @secure_methods += secure_method_names.map(:to_sym)
@@ -200,23 +204,24 @@ module YouVersion
       end
 
       # If the calling method is one of those for which
-      # we need to use https, add :secure => true to params
+      # we need to use https, add secure: true to params
       def securify(params, caller)
-        params.merge!(:secure => true) if secure_caller?(caller)
+        params.merge!(secure: true) if secure_caller?(caller)
         params
       end
 
       def post(path, params, &block)
         params[:api_version] = @api_version if @api_version
+        params[:timeout] = @timeout if @timeout
         YvApi.post(path, securify(params, caller), &block)
       end
 
       def get(path, params, &block)
         params[:api_version] = @api_version if @api_version
+        params[:timeout] = @timeout if @timeout
         YvApi.get(path, securify(params, caller), &block)
       end
 
-      
       def belongs_to_remote(association_name)
         association_class = association_name.to_s.classify.constantize
         attribute association_class.foreign_key.to_sym
@@ -231,16 +236,16 @@ module YouVersion
       def has_many_remote(association_name)
         define_method(association_name.to_s.pluralize) do |params = {}|
           # associations.delete(association_name) if params[:refresh]
-          
+
           association_class = association_name.to_s.classify.constantize
           associations[association_name] ||= association_class.all(params.merge(self.class.foreign_key => self.id))
         end
       end
-      
+
       def persist_token(username, password)
         Digest::MD5.hexdigest "#{username}.Yv6-#{password}"
       end
-      
+
     end
 
     attr_accessor :attributes, :associations
@@ -273,7 +278,7 @@ module YouVersion
       response = true
       response_data = nil
       token = self.persist_token
-      response_data = self.class.post(resource_path, attributes.merge(:token => token, :auth => self.auth)) do |errors|
+      response_data = self.class.post(resource_path, attributes.merge(token: token, auth: self.auth)) do |errors|
         new_errors = errors.map { |e| e["error"] }
         new_errors.each { |e| self.errors[:base] << e }
 

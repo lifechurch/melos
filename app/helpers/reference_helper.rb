@@ -1,10 +1,10 @@
 module ReferenceHelper
 
   def link_to_references(refs)
-#     Rails.logger.info("In link_to_references, refs is a #{refs.class} of size #{refs.size}")
-#     Rails.logger.info("...and first looks like [#{refs.first.class}]")
-#     Rails.logger.info("...and it looks like [#{refs}]")
-#     Rails.logger.info("Also, caller looks like this: #{caller[0]}")
+  # Rails.ap "In link_to_references, refs is a #{refs.class} of size #{refs.size}"
+  # Rails.ap "...and first looks like [#{refs.first.class}]"
+  # Rails.ap "...and it looks like [#{refs}]"
+  # Rails.ap "Also, caller looks like this: #{caller[0]}"
     case refs
     when Reference
       link_to(refs, bible_path(refs))

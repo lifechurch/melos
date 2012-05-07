@@ -3,6 +3,7 @@ source :rubygems
 gem 'rails', '3.1.2'
 
 gem 'asset_sync',             '~> 0.2.12' # 0.4.1
+gem 'awesome_print',          '~> 1.0.2'
 gem 'authorize-net',          '~> 1.5.2'
 gem 'cells',                  '~> 3.8.3'
 gem 'countries',              '~> 0.8.2'

@@ -11,7 +11,7 @@ class Like < YouVersion::Resource
   attribute :user_id
   attribute :username
   attribute :id
-  
+
   def to_param
     id
   end
@@ -19,13 +19,13 @@ class Like < YouVersion::Resource
   def note
     Note.find(note_id)
   end
-  
+
   def self.for_user(user_id = nil, params = {})
     page = params[:page] || 1
     opts = params.merge({user_id: user_id, page: page})
 
     data = all_raw(opts) do |errors|
-      Rails.logger.info "API Error: Likes.for_user(#{user_id}) got these errors: #{errors.inspect}"
+      Rails.logger.ap "API Error: Likes.for_user(#{user_id}) got these errors: #{errors.inspect}", :info
       if errors.find{|g| g['error'] =~ /Likes not found/}
         # return empty hash to avoid raising exception
         { }
@@ -45,12 +45,12 @@ class Like < YouVersion::Resource
 
   # def self.for_note(note_id, user_id = nil)
   #   @return_like = nil
-  # 
+  #
   #   response = YvApi.get('likes/items', user_id: user_id) do |errors|
   #     @errors = errors.map { |e| e["error"] }
   #     return nil
   #   end
-  # 
+  #
   #   @likes = build_objects(response.likes, nil)
   #   @likes.each do |like|
   #     if like.note_id == note_id
@@ -59,7 +59,7 @@ class Like < YouVersion::Resource
   #   end
   #   @return_like
   # end
-  # 
+  #
   # def for_note(note_id, user_id = nil)
   #   self.class.for_note(note_id, user_id)
   # end
@@ -69,7 +69,7 @@ class Like < YouVersion::Resource
   #      @errors = errors.map { |e| e["error"] }
   #      return false
   #    end
-  # 
+  #
   #    build_objects(response.likes, nil)
   #  end
 
@@ -100,13 +100,13 @@ class Like < YouVersion::Resource
   #   end
   #   response
   # end
-  # 
+  #
   # private
-  # 
+  #
   # def self.build_object(response, auth)
   #   @like = Like.new(response.merge(auth: auth))
   # end
-  # 
+  #
   # def self.build_objects(response, auth)
   #   @return_likes = []
   #   response.each do |like|
