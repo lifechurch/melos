@@ -225,7 +225,10 @@ class User < YouVersion::Resource
     user || User.new(response)  
   end
 
-  def before_update; end
+  def before_update
+    self.attributes.delete "im_type"
+    self.attributes.delete "im_username"
+  end
 
   def destroy
     response = true
