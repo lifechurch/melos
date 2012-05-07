@@ -385,6 +385,12 @@ en:
     save:                                       "Save Bookmark"
     confirm delete:                             "Yes, I'm sure"
     loading:                                    "Loading your bookmarks..."
+    edit bookmark:                              "Edit Bookmark"
+    reference:                                  "Reference:"
+    labels comma separated:                     "Labels (comma-separated):"
+    update:                                     "Update"
+    color:                                      "Color:"
+    version:                                    "Version:"
   badges:
     earned a badge:                             "Earned a Badge"
     user badges:                                "%{user}'s Badges"
