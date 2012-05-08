@@ -171,9 +171,7 @@ class User < YouVersion::Resource
   end
 
   def confirm(hash)
-    YvApi.post("users/confirm", hash: hash) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-    end
+    self.class.confirm(hash)
   end
 
   def update_email(email)
