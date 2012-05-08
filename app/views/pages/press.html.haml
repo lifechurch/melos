@@ -13,6 +13,11 @@
           %strong= t('press page.email')
           %br
           lori.bailey@lifechurch.tv
+      %li
+        %p
+          %strong= t('press page.support')
+          %br
+          =link_to "support.youversion.com", "http://support.youversion.com"
   .widget
     %header
       %span= t('press page.contact header 2')
@@ -36,15 +41,17 @@
   %h1= t('press page.title')
   %p{style: "text-align: center;"}= image_tag "press_image.png"
   %p= t('press page.lead copy').html_safe
+  %h2= t('press page.now title')
+  %ul.press_resources
+    %li
+      %a{class: "action_button_blue", href: "http://now.youversion.com"}= t('visit link')
+      %h4= t('press page.resources.now')
   %hr
   %h2= t('press page.resources title')
   %ul.press_resources
     %li
-      %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersionBibleApp.docx"}= t('download')
+      %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/AboutYouVersion%26BibleApp.docx"}= t('download')
       %h4= t('press page.resources.about')
-    %li
-      %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersion_Timeline_Stats_May2011.docx"}= t('download')
-      %h4= t('press page.resources.history')
     %li
       %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersion-Brand-Manual.zip"}= t('download')
       %h4= t('press page.resources.manual')
@@ -52,14 +59,8 @@
   %h2= t('press page.images title')
   %ul.press_resources
     %li
-      %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersion-images-logos.zip"}= t('download')
-      %h4= t('press page.images.logos')
-    %li
       %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/Bible-App-Icons.zip"}= t('download')
       %h4= t('press page.images.icons')
-    %li
-      %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/mobilebible.jpg"}= t('download')
-      %h4= t('press page.images.infographic')
     %li
       %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersion-images-iphone.zip"}= t('download')
       %h4= t('press page.images.iphone')
@@ -73,15 +74,22 @@
       %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersion-images-blackberry.zip"}= t('download')
       %h4= t('press page.images.blackberry')
     %li
+      %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersion-images-windowsphone7.zip"}= t('download')
+      %h4= t('press page.images.win phone 7')
+    %li
+      %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersion-images-windows8.zip"}= t('download')
+      %h4= t('press page.images.windows 8')
+    %li
       %a{class: "action_button_blue", href: "http://web-assets.youversion.com.s3.amazonaws.com/press/YouVersion-images-lifestyle.zip"}= t('download')
       %h4= t('press page.images.lifestyle')
-    %li
-      %a{class: "action_button_blue", href: "#"}= t('visit link')
-      %h4= t('press page.images.screencast')
 
   %hr
   %h2= t('press page.links title')
   %ul.press_resources
+    %li
+      %a{class: "action_button_blue", href: "http://finance.yahoo.com/news/translating-bible-e-book-works-155728110.html"}= t('visit link')
+      %h4 The Atlantic
+      %p Translating the Bible – Into an E-Book...
     %li
       %a{class: "action_button_blue", href: "http://www.fastcompany.com/most-creative-people/2011/bobby-gruenewald-youversion"}= t('visit link')
       %h4 Fast Company
