@@ -50,6 +50,7 @@ group :test, :development do
   gem 'rspec-cells'
   gem 'rspec-rails'
   gem 'turn'
+  gem 'minitest'
 end
 
 group :development do
