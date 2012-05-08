@@ -19,8 +19,8 @@
       %h2= t('about page.partners title')
       %p= t('about page.partners text')
       
-      %ul
       - partners.each do |p|
-        %li
-          %img{src: asset_path(p[:image]), title: p[:name]}
-          =link_to t('about page.learn more'), p[:url], class: 'action_button_blue'
+        .partners_box
+          %div
+            %img{src: asset_path(p[:image]), title: p[:name]}
+          %div=link_to t('about page.learn more'), p[:url], class: 'sm_action_button_blue'
