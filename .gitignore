@@ -8,3 +8,5 @@ bin/*
 *.swo
 *~
 /.sass-cache/
+.bundle/*
+tags
