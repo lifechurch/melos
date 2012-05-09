@@ -1,17 +1,16 @@
 .widget
   - if I18n.locale == :en
-    %div{style: 'background: url(/assets/50million_banner.png)'}
-      %div{style: 'display: table-cell'}
+    %div{style: 'background: url(/assets/50million_banner.png) no-repeat; height: 80px; margin-bottom: 10px;'}
+      %div{style: 'display: table-cell; font-size: 80px; font-weight: bold; font-family: BebasNeueRegular, arial, sans-serif; color: #FC0; padding: 20px 0 0 10px; text-shadow: 0px -1px 1px #660000; vertical-align: top; line-height: 40px;  letter-spacing: -.03em'}
         50
-      %div{style: 'display: table-cell'}
-        %p
+      %div{style: 'display: table-cell; vertical-align: top; padding: 8px 0 0 5px'}
+        -# If you can't get the web fonts working, shrink the p below to 20px
+        %p{style: 'font-size: 23px; font-weight: bold; color: #FC0; line-height: 1em; width: 70%; text-shadow: 0px -1px 1px #660000; letter-spacing: -.03em; margin: 0 0 -3px 0'}
           Million Bible app installs!
-        %p= link_to 'Learn More', external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices')
+        -# Evan, I was trying to style the tag below
+        = link_to 'Learn More', external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices'), style: "color: #FFF; font-size: 13px; font-family: arial, sans-serif"
   - else
-    %div{style: 'background: url(/assets/50million_banner.png)'}
-      %div{style: 'display: table-cell'}
-        50
-      %div{style: 'display: table-cell'}
-        %p
-          Million Bible app installs!
-        %p= link_to 'Learn More', external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices')    
+    %div{style: 'background: url(/assets/50million_banner.png) no-repeat; height: 80px; margin-bottom: 10px'}
+      %p
+        Celebrating 50 million installs!
+      = link_to 'Learn More', external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices'), style: "display: block"
