@@ -29,6 +29,9 @@ module YouversionWeb
       r301 '/descargar', '/es/download'
       r301 %r{^(/.{2,5})?(/app$|/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
       
+      #engagement site (pre mobile redirect)
+      r301 %r{^(/.{2,5})?(/now$)}, 'http://now.youversion.com'
+      
       # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
       #   :if => Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
       #
@@ -126,7 +129,6 @@ module YouversionWeb
       
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
-      r301 %r{^(/.{2,5})?(/now$)}, 'http://now.youversion.com'
       
       #donate HTTPS, needs to not re-route if already https
       r301 %r{^(/.{2,5})?(/donate)}, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, :if => Proc.new{ |rack_env| rack_env["rack.url_scheme"] != 'https' && !Rails.env.development?}
