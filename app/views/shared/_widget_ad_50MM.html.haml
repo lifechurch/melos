@@ -1,3 +1,13 @@
 .widget
+<<<<<<< HEAD
   %a{href: external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices')}
     %img{src: asset_path('50million_banner.png'), style: 'margin-bottom: 10px'}
+=======
+  %div{style: 'background: url(/assets/50million_banner.png)'}
+    %div{style: 'display: table-cell'}
+      50
+    %div{style: 'display: table-cell'}
+      %p
+        Million Bible app installs!
+      %p= link_to 'Learn More', external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices')
+>>>>>>> Reworking 50M banner
