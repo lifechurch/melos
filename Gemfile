@@ -12,6 +12,7 @@ gem 'geokit',                 '~> 1.6.5'
 gem 'grackle',                '~> 0.1.10'
 gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
+gem 'heroku',                 '~> 2.25'
 gem 'httparty',               '~> 0.8.3'
 gem 'http_accept_language',   '~> 1.0.2'
 gem 'koala',                  '~> 1.3.0' # 1.4.1
