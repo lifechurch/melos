@@ -341,6 +341,7 @@ DEPENDENCIES
   guard-spork
   haml-rails (~> 0.3.4)
   hashie (~> 1.2.0)
+  heroku (~> 2.25)
   heroku_san
   http_accept_language (~> 1.0.2)
   httparty (~> 0.8.3)
