@@ -3,6 +3,8 @@
     =t("youversion")
   %nav
     %ul
+      %li
+        %p= link_to '50MM', external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices')#{default: '2012/05/50m', :'pt-BR' => '2012/05/o-app-da-biblia-do-youversion-agora-instalado-em-50-milhoes-de-dispositivos-moveis', de: '2012/05/die-bible-app-von-youversion-auf-50-millionen-mobilen-geraten-installiert'}
       - if current_auth
         = cache "header_#{current_auth.username}_#{I18n.locale}", expires_in: 10.minutes do
           %li
@@ -24,13 +26,13 @@
             %a{:href => connections_path}
               %span
                 =t("find friends")
+      
       - else
         = cache "header_anon_#{I18n.locale}", expires_in: 1.hour do
           %li
             %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), :class=> "sign_in"
           %li
             %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), :class=> "sign_in"
-
   %form#header_search_form{:action => search_path, method: "GET"}
     %input#header_search_input{:type => 'search', :name => "q", :placeholder => t("search placeholder")}
     %input#header_search_button{:type => 'submit', :value => t("search")}

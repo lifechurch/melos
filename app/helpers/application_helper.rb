@@ -24,6 +24,26 @@ module ApplicationHelper
     reference_url(ref.osis, opts)
   end
 
+  def external_url(host, default_locale_path, locale_path={})
+    host = case host
+      when :blog 
+        'http://blog.youversion.com'
+      else 
+        host
+    end
+
+    path = case
+      when locale_path[I18n.locale]
+        locale_path[I18n.locale]
+      when I18n.locale != I18n.default_locale && locale_path[:default]
+        locale_path[:default]
+      else 
+        default_locale_path
+    end
+
+    "#{host}/#{lang_code(I18n.locale, :blog)}/#{path}"
+  end
+
   def convert_to_brightness_value(hex_color)
       (hex_color.scan(/../).map {|color| color.hex}).sum
   end
@@ -55,5 +75,15 @@ module ApplicationHelper
       html = html.gsub(/<iframe width=\"\d+\" height=\"\d+\"/, '<iframe width="' + scaled_w.to_s + '" height="' + scaled_h.to_s + '"')
     end
     html
+  end
+
+  private 
+  def lang_code(locale, host=nil)
+    case host
+      when :blog
+        {:'zh-CN' => 'zh-hans', :'zh-TW' => 'zh-hant', :'pt-BR' => 'pt-br'}[locale] || locale
+      else
+        locale
+    end
   end
 end
