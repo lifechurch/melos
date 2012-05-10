@@ -22,6 +22,7 @@
             = yield :main_trailer
         - if content_for? :sidebar
           #sidebar
+            = render '/shared/sidebar_global_before'
             = yield :sidebar
         - else
           - unless @sidebar == false
