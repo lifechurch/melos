@@ -129,6 +129,7 @@ en:
     unlike button text:                         "Unlike"
   notes:
     loading community:                          "Loading community notes..."
+    no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     public:                                     "Public"
     private:                                    "Private"
     draft:                                      "Draft"

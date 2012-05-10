@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out
+  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out, :verses_in_chapter
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
@@ -166,5 +166,8 @@ class ApplicationController < ActionController::Base
   end
   def set_current_version(ver)
     cookies.permanent[:version] = ver.osis
+  end
+  def verses_in_chapter (ref_hash)
+    Version.find(ref_hash[:version]).books[ref_hash[:book].downcase].chapter[ref_hash[:chapter].to_s].verses
   end
 end

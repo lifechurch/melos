@@ -11,7 +11,7 @@ class ResourceList < Array
     # Default to same as #size
     @total = self.count
   end
-
+  
   def total_pages
     (total.to_f/page_length).ceil
   end

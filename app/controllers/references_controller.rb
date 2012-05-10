@@ -62,10 +62,11 @@ class ReferencesController < ApplicationController
 
   def notes
     # Set up a fake reference for the fist 5 verses since the API won't let us
-    # search the entire chapter for notes
+    # search the entire chapter for notes and 10 results in a param length API err
     notes_ref_hash = params[:reference].to_osis_hash rescue not_found
     notes_ref_hash[:verse]=1..5 unless notes_ref_hash[:verse]
     @notes = Note.for_reference(Reference.new(notes_ref_hash), language_iso: I18n.locale, cache_for: 10.minutes)
+    @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 10.minutes) if @notes.empty?
     render layout: false
   end
   

@@ -1,16 +1,10 @@
-- unless @notes.empty?
-  %header
-    %a.count{href: @link}= @notes.total
-    %span.header_icon_note= @title 
-  %section
-    %table
-      %tfoot
-        %tr
-          %th
-          %td.align_right
-            %a.more_arrow{href: @link}= t('show all notes', total: @notes.total)
-
-      %tbody
+%header
+  %a.count{href: @link}= @notes.total
+  %span.header_icon_note= @title 
+%section
+  %table
+    %tbody
+      - if !@notes.empty?
         - @notes.first(8).each do |note|
           %tr
             %th
@@ -19,4 +13,13 @@
             %td
               %a= link_to note.title, note_path(note.id)
               %p.mute.small.negative_gutter_top_half= note.username
-                
+        %tfoot
+          %tr
+            %th
+            %td.align_right
+              %a.more_arrow{href: @link}= t('show all notes', total: @notes.total)
+      - else
+        %tr
+          %th
+          %td
+            %p= t('notes.no community notes')
