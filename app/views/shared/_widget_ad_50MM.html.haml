@@ -15,6 +15,7 @@
         %a{style: "text-decoration: none;", href: external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices')}
           %p{style: 'font-size: 20px; font-weight: bold; color: #FC0; line-height: 1em; width: 70%; text-shadow: 0px -1px 1px #660000; letter-spacing: -.03em; margin: 0 0 -3px 0; padding-left: 10px; padding-top: 7px'}
             =t('celebrating 50MM')
-        -#%img{src: asset_path("app-icon-#{I18n.locale}-99x99.png") :}
+        -if [:es, :de, :ru, :"zh-CN", :"zh-TW"].find{|l| l == I18n.locale}
+          %img{src: asset_path("app-icon-#{I18n.locale}-99x99.png"), style: "height:58px; width: 58px; position: absolute; top: 11px; right: 13px;"}
           - #link_to t('plans.more info'), external_url(:blog, '2012/05/the-bible-app-by-youversion-now-installed-on-50-million-mobile-devices'), class: 'float_right', style: "display: block; position: absolute; color: #FFF; font-size: 13px; font-family: arial, sans-serif; line-height: 30px; right: 90px; top: 47px"
           - #{default: '2012/05/50m', :'pt-BR' => '2012/05/o-app-da-biblia-do-youversion-agora-instalado-em-50-milhoes-de-dispositivos-moveis', de: '2012/05/die-bible-app-von-youversion-auf-50-millionen-mobilen-geraten-installiert'}
