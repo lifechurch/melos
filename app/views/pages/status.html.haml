@@ -15,28 +15,29 @@
   %section  
     %h3 End User Performance
     .content
-      %iframe{src: "https://rpm.newrelic.com/public/charts/hGauGaeuirB", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+      %iframe{src: "https://rpm.newrelic.com/public/charts/dwESE45pyE8", width: "#{chart_width - 52}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
   %section
     %h3 Appliction Response
     .content
-      %iframe{src: "https://rpm.newrelic.com/public/charts/63vqELBV3oK", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
-      %iframe{src: "https://rpm.newrelic.com/public/charts/gjZOW2ABkh5", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+      %iframe{src: "https://rpm.newrelic.com/public/charts/9UCxD1QtFJ3", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 1px"}
+      %iframe{src: "https://rpm.newrelic.com/public/charts/dPQfWhaZG5W", width: "#{chart_width-66}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 14px"}
   %section
     %h3 API Performance
     .content
-      %iframe{src: "https://rpm.newrelic.com/public/charts/4fDldXgs7Js", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+      %iframe{src: "https://rpm.newrelic.com/public/charts/j9s5IYNKVm0", width: "#{chart_width - 6}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
   %section
-    %h3 Troubleshooting Info
+    %h3 Instance Debug Info (This Unicorn Worker)
     .content
       %p
         %b App Symbols:
         %span.mute= Symbol.all_symbols.size
-      %p                                                                                                                                                        
-        %b App Memory Info:                                                                                                                                     
-        %div                                                                                                                                                    
-          %b Process Memory Usage:                                                                                                                              
-          %span.mute= number_to_human_size(`ps -o rss= -p #{Process.pid}`.to_i * 1024)
-        -ObjectSpace.count_objects.each do |k, v|
-          %div                                                                                                                                                  
-            %b #{k}:                                                                                                                                            
-            %span.mute= v
+      %p
+        %b Memory Usage:
+        %span.mute= number_to_human_size(`ps -o rss= -p #{Process.pid}`.to_i * 1024)
+      %p  
+        %ul
+          %b Objects:
+          -ObjectSpace.count_objects.each do |k, v|
+            %li
+              %b #{k}:
+              %span.mute= v
