@@ -26,9 +26,9 @@ module ApplicationHelper
 
   def external_url(host, default_locale_path, locale_path={})
     host = case host
-      when :blog 
+      when :blog
         'http://blog.youversion.com'
-      else 
+      else
         host
     end
 
