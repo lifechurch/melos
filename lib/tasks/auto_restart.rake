@@ -7,7 +7,7 @@ namespace :heroku do
     @@heroku.ps(ENV['HEROKU_APP']).each do |process|
       if dynos_restarted < 2 && process['elapsed'] > 6 * 60 * 60
         puts "Restarting #{process['process']} (running for #{process['elapsed']} seconds)"
-        @@heroku.ps_restart(ENV['HEROKU_APP'], process['process'])
+        @@heroku.ps_restart(ENV['HEROKU_APP'], ps: process['process'])
         dynos_restarted += 1
       end
     end
