@@ -69,7 +69,7 @@ class User < YouVersion::Resource
     hash ={}
     sizes.each do |size|
       hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
-    end #TODO: DRY up this mash creation with dup in badge.rb
+    end #TODO: DRY up this mash creation with dup in badge.rb and note.rb
     
     @ssl_avatar_urls = Hashie::Mash.new(hash)
   end
