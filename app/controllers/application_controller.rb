@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:a] = user.id
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
-    cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+    #cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
   end
   def sign_out
     cookies.permanent.signed[:a] = nil
