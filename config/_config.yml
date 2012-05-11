@@ -26,6 +26,7 @@ development:
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
   avatar_path: http://avatars.youversion.com/
+  ssl_avatar_path: https://d5xlnxqvcdji7.cloudfront.net/users/images/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
   api_root: api.youversion.com

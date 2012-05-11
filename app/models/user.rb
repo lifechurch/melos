@@ -59,7 +59,19 @@ class User < YouVersion::Resource
   end
 
   def user_avatar_url
+    return @ssl_avatar_urls unless @ssl_avatar_urls.nil?
+    
+    #some calls returning user info don't have avatar URLS
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
+    
+    #we only want to use secure urls
+    sizes = ["24x24", "48x48", "128x128", "512x512"]
+    hash ={}
+    sizes.each do |size|
+      hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
+    end #TODO: DRY up this mash creation with dup in badge.rb
+    
+    @ssl_avatar_urls = Hashie::Mash.new(hash)
   end
 
   def to_param
@@ -542,6 +554,7 @@ class User < YouVersion::Resource
     hash = {}
     sizes.each do |s|
       hash["px_#{s}"] = Cfg.avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
+      hash["px_#{s}_ssl"] = Cfg.ssl_avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
     end
     return Hashie::Mash.new(hash)
   end
