@@ -61,7 +61,7 @@ class User < YouVersion::Resource
   def user_avatar_url
     return @ssl_avatar_urls unless @ssl_avatar_urls.nil?
     
-    #some calls returning user info don't have avatar URLS
+    #some calls returning user info don't have avatar URLS or don't have secure paths
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
     
     #we only want to use secure urls
