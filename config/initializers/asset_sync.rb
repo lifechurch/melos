@@ -1,7 +1,7 @@
 AssetSync.configure do |config|
   
   #Disable if there is no asset host specific (useful for alternate staging configuration)
-  #config.enabled = false unless ENV['FOG_DIRECTORY']#coming soon to asset_sync
+  config.enabled = false unless ENV['FOG_DIRECTORY']
   
   config.fog_provider = 'AWS'
   config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']

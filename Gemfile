@@ -2,7 +2,7 @@ source :rubygems
 
 gem 'rails', '3.1.2'
 
-gem 'asset_sync',             '~> 0.2.12' # 0.4.1
+gem 'asset_sync',             '~> 0.4.1' # 0.4.1
 gem 'awesome_print',          '~> 1.0.2'
 gem 'authorize-net',          '~> 1.5.2'
 gem 'cells',                  '~> 3.8.3'
@@ -37,9 +37,7 @@ group :assets do
   gem 'sass-rails',       '3.1.5' #3.2.5
   gem 'coffee-rails',  '~> 3.1.0' #3.2.2
   gem 'uglifier',      '~> 1.2.4'
-
-  gem 'compass',       '0.12.rc.1'
-  gem 'compass-rails', '1.0.0.rc.3'
+  gem 'compass-rails', '~> 1.0.1'
   gem 'css_parser',    '~> 1.1.9'
   gem 'jquery-rails',  '~> 1.0.19' #2.0.1 is Rails 3.2+ only
 end
