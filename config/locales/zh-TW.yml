@@ -217,8 +217,7 @@ zh-TW:
     edit account_existence:                     "刪除帳號"
     delete account button:                      "刪除我的YouVersion帳號"
     yes delete:                                 "是的，刪除我的帳號"
-    account delete success:                     "您的YouVersion帳號已經成功被刪除了。我們希望您能繼續尋找有意義的方式來與聖經連接。在您要離開之前，請考慮以下也許會有幫助的應用程序：<a href=
-http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
+    account delete success:                     "您的YouVersion帳號已經成功被刪除了。我們希望您能繼續尋找有意義的方式來與聖經連接。在您要離開之前，請考慮以下也許會有幫助的應用程序：<a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description:                 "如果您刪除帳號，您將徹底刪除您在YouVersion網站和聖經軟體上的個人資料、讀經歷史和自訂化的資訊 (比如筆記、書籤、反白顯示等等)。請切記這個行動是您或者我們都不能逆轉的。如果您確定要刪除帳號，請在下方進行。"
     user recent activity:                       "%{user}的近期活動"
     my notes:                                   "My Notes"
