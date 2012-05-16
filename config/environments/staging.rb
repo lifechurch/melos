@@ -31,26 +31,25 @@ YouversionWeb::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   # Do not compress assets
-  config.assets.compress = true
+  config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
   
   #memcache
   config.cache_store = :dalli_store
+  
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = false
 
-  # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  if ENV['FOG_DIRECTORY']
-    # Don't fallback to assets pipeline if a precompiled asset is missed
-    config.assets.compile = false
+  # Generate digests for assets URLs
+  config.assets.digest = true
+  
+  config.action_controller.asset_host = "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
+  
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
 
-    # Generate digests for assets URLs
-    config.assets.digest = true
-    
-    config.action_controller.asset_host = "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
-    
-    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-    config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
   end
 
 end
