@@ -41,6 +41,9 @@ YouversionWeb::Application.configure do
   config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
+  #note:  # If user_env_compile Heroku labs feature is removed or not enabled
+          # the production env is loaded during slug assets precompilation
+
   config.action_controller.asset_host = "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
