@@ -20,7 +20,7 @@
     %a{:href => press_path}=t("press")
     %span.separator
       |
-    %a{:href => 'http://support.youversion.com'}=t("get support")
+    %a{:href => external_url(:support)}=t("get support")
     - unless [:es, :pt, :"pt-PT", :"pt-BR"].include? I18n.locale
       %span.separator
         |
