@@ -42,9 +42,10 @@ YouversionWeb::Application.configure do
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
-  # Generate digests for assets URLs
+  # Generate fingerprints for asset filenames
   config.assets.digest = true
-  
+
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server
   config.action_controller.asset_host = "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
   
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
