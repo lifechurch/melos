@@ -14,7 +14,8 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
-  license_key: '335e3b349585a4baf47573354334b62504176bfb'
+  license_key: '<%= ENV["NEW_RELIC_LICENSE_KEY"] %>'
+  #license_key: '335e3b349585a4baf47573354334b62504176bfb'
   disable_serialization: true
   
   # Agent Enabled (Ruby/Rails Only)
@@ -34,7 +35,8 @@ common: &default_settings
   # "All UI" then specify a semicolon-separated list of up to three
   # distinct names.  If you comment this out, it defaults to the 
   # capitalized RAILS_ENV (i.e., Production, Staging, etc)
-  app_name: YouVersion Web
+  app_name: <%= ENV["NEW_RELIC_APP_NAME"] %>
+  #app_name: YouVersion Web
 
   # When "true", the agent collects performance data about your 
   # application and reports this data to the New Relic service at
@@ -147,15 +149,21 @@ test:
 # testing shows an average performance impact of < 5 ms per
 # transaction, so you can leave this on all the time without
 # incurring any user-visible performance degradation.
+production:
+  <<: *default_settings
+  monitor_mode: true
+
+# Turn on the agent in production for 24x7 monitoring.  New Relic
+# testing shows an average performance impact of < 5 ms per
+# transaction, so you can leave this on all the time without
+# incurring any user-visible performance degradation.
 production_heroku:
   <<: *default_settings
   monitor_mode: true
-  app_name: YouVersion Web (Heroku Production)
 
 # Many applications have a staging environment which behaves
 # identically to production.  Support for that environment is provided
 # here.  By default, the staging environment has the agent turned on.
 staging:
   <<: *default_settings
-  monitor_mode: false
-  app_name: YouVersion Web (Staging)
+  monitor_mode: true

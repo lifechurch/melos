@@ -56,8 +56,8 @@ class YvApi
       get_end = Time.now.to_f
       Rails.logger.apc "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms", :info
     end
-    Rails.logger.apc "** YvApi response: ", :debug
-    Rails.logger.apc response, :debug
+    #Rails.logger.apc "** YvApi response: ", :debug
+    #Rails.logger.apc response, :debug
     # Check the API response for error code
     return api_response_or_rescue(response, block, resource_url: resource_url)
   end
@@ -87,8 +87,8 @@ class YvApi
     Rails.logger.apc "** YvApi.post: Response: ", :info
     Rails.logger.apc response, :info
     Rails.logger.apc "** YvApi.post: Resonse time: #{((post_end - post_start) * 1000).to_i}ms", :info
-    Rails.logger.apc "** YvApi response: ", :debug
-    Rails.logger.apc response, :debug
+    #Rails.logger.apc "** YvApi response: ", :debug
+    #Rails.logger.apc response, :debug
     # Check the API response for error code
     return api_response_or_rescue(response, block)
   end
