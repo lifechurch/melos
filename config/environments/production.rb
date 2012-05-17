@@ -44,7 +44,7 @@ YouversionWeb::Application.configure do
   #note:  # If user_env_compile Heroku labs feature is removed or not enabled
           # the production env is loaded during slug assets precompilation
 
-  config.action_controller.asset_host = "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
+  config.action_controller.asset_host = "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
