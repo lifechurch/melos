@@ -163,7 +163,7 @@ class Reference
           raise YouVersion::ResourceError.new(errors)
       end
       #we only want secure urls, here we hack the server to use a domain that is secure
-      @audio = Hashie::Mash.new({url: api_data[0].data.request.audio[0].download_urls.format_mp3_32k.gsub(/http:\/\/[^\/]+/, 'http://d1pylqioxt940.cloudfront.net')}).merge(response)
+      @audio = Hashie::Mash.new({url: api_data[0].data.request.audio[0].download_urls.format_mp3_32k.gsub(/http:\/\/[^\/]+/, 'https://d1pylqioxt940.cloudfront.net')}).merge(response)
     end
     @audio
   end
