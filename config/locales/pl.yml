@@ -566,7 +566,7 @@ pl:
     support:                                    "Potrzebujesz pomocy z YouVersion?"
     lead copy:                                  "Aplikacja Biblii jest bezpłatną mobilną Biblią, stworzoną na podstawie Biblii internetowej YouVersion.com. Aplikacja Biblii umożliwia użytkownikom czytanie Biblii, dzielenie się wersetami w serwisach społecznościowych, dodawanie zakładek do ulubionych fragmentów i więcej &mdash; wszystko w sposób dostosowany do coraz bardziej mobilnego stylu życia."
     resources title:                            "Materiały dla prasy"
-    now title:                                  "Today in the YouVersion Community"
+    now title:                                  "Dzisiaj w społeczności YouVersion"
     resources:
       now:                                      "Podgląd na żywo zaangażowania i nowych danych"
       about:                                    "O YouVersion i Aplikacji Biblii"

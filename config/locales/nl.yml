@@ -568,7 +568,7 @@ nl:
     resources title:                            "Pers Bronnen"
     now title:                                  "Vandaag in de YouVersion Gemeenschap"
     resources:
-      now:                                      "A live look at engagement and the latest data"
+      now:                                      "Een live kijkje op de laaste data over engagement"
       about:                                    "Over YouVersion en de Bijbel App"
       history:                                  "YouVersion Geschiedenis en Statistieken"
       manual:                                   "YouVersion Merk Handboek"

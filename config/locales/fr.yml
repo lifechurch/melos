@@ -217,7 +217,7 @@ fr:
     edit account_existence:                     "Supprimer mon compte"
     delete account button:                      "Supprimer mon compte YouVersion"
     yes delete:                                 "Oui, supprimer mon compte."
-    account delete success:                     "Your YouVersion account has been successfully deleted. We hope you continue to find meaningful ways to interact with the Bible. Some of these apps might be helpful as you move forward: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
+    account delete success:                     "Votre compte YouVersion a été supprimé avec succès . Nous espérons que vous continuerez à trouver des moyens de méditer la Bible.. Certaines de ces applications pourraient vous être utiles à mesure que vous progressez: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description:                 "Si vous supprimez votre compte, vous éliminer définitivement toutes vos informations, l'histoire, et la personnalisation (comme les notes, signets, surlignages, etc) au sein de YouVersion.com et de l 'App Bible. Cette action ne peut pas être inversée par vous ou par notre équipe. Si vous êtes certain que vous souhaitez progresser, continuez ci-dessous."
     user recent activity:                       "Les activités récentes de %{user}"
     my notes:                                   "My Notes"
