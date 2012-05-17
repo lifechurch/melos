@@ -38,19 +38,19 @@ YouversionWeb::Application.configure do
   
   #memcache
   config.cache_store = :dalli_store
+  
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = false
+
+  # Generate fingerprints for asset filenames
+  config.assets.digest = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  if ENV['FOG_DIRECTORY']
-    # Don't fallback to assets pipeline if a precompiled asset is missed
-    config.assets.compile = false
+  config.action_controller.asset_host = "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
+  
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
 
-    # Generate digests for assets URLs
-    config.assets.digest = true
-    
-    config.action_controller.asset_host = "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
-    
-    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-    config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
   end
 
 end

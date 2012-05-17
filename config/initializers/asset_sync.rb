@@ -1,12 +1,13 @@
 AssetSync.configure do |config|
-  
-  #Disable if there is no asset host specific (useful for alternate staging configuration)
-  #config.enabled = false unless ENV['FOG_DIRECTORY']#coming soon to asset_sync
-  
-  config.fog_provider = 'AWS'
-  config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
-  config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-  config.fog_directory = ENV['FOG_DIRECTORY']
+  if ENV['FOG_DIRECTORY']
+    config.fog_provider = 'AWS'
+    config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+    config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+    config.fog_directory = ENV['FOG_DIRECTORY']
+  else
+    #Disable if there is no asset host specific (useful for alternate staging configuration)
+    config.enabled = false
+  end
 
   # Increase upload performance by configuring your region
   # config.fog_region = 'eu-west-1'

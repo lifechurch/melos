@@ -14,20 +14,22 @@ module ApplicationHelper
     text.length > length ? text[/\A.{#{l}}\w*\;?/m][/.*[\w\;]/m] + truncate_string : text
   end
 
-  def bible_path(ref = nil, opts={})
+  def bible_path(ref=nil, opts={})
     ref = last_read || Reference.new(book: "gen", chapter: "1", version: current_version) if ref.nil?
     reference_path(ref.osis, opts)
   end
 
-  def bible_url(ref = nil, opts={})
+  def bible_url(ref=nil, opts={})
     ref = last_read || Reference.new(book: "gen", chapter: "1", version: current_version) if ref.nil?
     reference_url(ref.osis, opts)
   end
 
-  def external_url(host, default_locale_path, locale_path={})
-    host = case host
+  def external_url(host, default_locale_path='', locale_path={})
+    host_str = case host
       when :blog
         'http://blog.youversion.com'
+      when :support
+        'http://support.youversion.com'
       else
         host
     end
@@ -41,7 +43,18 @@ module ApplicationHelper
         default_locale_path
     end
 
-    "#{host}/#{lang_code(I18n.locale, :blog)}/#{path}"
+    lang_code_str = case host
+      when :support
+        query_param = true
+        delim = path.include?('?') ? '&' : '?'
+        "#{delim}lang=#{lang_code(I18n.locale, host)}"
+      else
+        query_param = false
+        lang_code(I18n.locale, host)
+    end
+
+    return "#{host_str}/#{path}#{lang_code_str}" if query_param
+    return "#{host_str}/#{lang_code_str}/#{path}"
   end
 
   def convert_to_brightness_value(hex_color)
@@ -82,6 +95,8 @@ module ApplicationHelper
     case host
       when :blog
         {:'zh-CN' => 'zh-hans', :'zh-TW' => 'zh-hant', :'pt-BR' => 'pt-br'}[locale] || locale
+      when :support, :generic_i18n
+        locale.to_s.gsub('pt-BR', 'pt').gsub('-','_')
       else
         locale
     end
