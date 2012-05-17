@@ -24,37 +24,44 @@ module ApplicationHelper
     reference_url(ref.osis, opts)
   end
 
-  def external_url(host, default_locale_path='', locale_path={})
+  def external_url(host, default_locale_path='', locale_paths={})
     host_str = case host
       when :blog
         'http://blog.youversion.com'
       when :support
         'http://support.youversion.com'
+      when :now
+        'http://now.youversion.com'
       else
         host
     end
 
     path = case
-      when locale_path[I18n.locale]
-        locale_path[I18n.locale]
-      when I18n.locale != I18n.default_locale && locale_path[:default]
-        locale_path[:default]
+      when locale_paths[I18n.locale]
+        locale_paths[I18n.locale]
+      when I18n.locale != I18n.default_locale && locale_paths[:default]
+        locale_paths[:default]
       else 
         default_locale_path
     end
+    
+    path.insert(0, '/') unless path.to_s == ''
 
+    query_param = false
     lang_code_str = case host
       when :support
         query_param = true
         delim = path.include?('?') ? '&' : '?'
         "#{delim}lang=#{lang_code(I18n.locale, host)}"
+      when :now
+        "##{lang_code(I18n.locale, host)}"
       else
-        query_param = false
         lang_code(I18n.locale, host)
     end
 
-    return "#{host_str}/#{path}#{lang_code_str}" if query_param
-    return "#{host_str}/#{lang_code_str}/#{path}"
+    return "#{host_str}#{path}" if I18n.locale == I18n.default_locale
+    return "#{host_str}#{path}#{lang_code_str}" if query_param
+    return "#{host_str}/#{lang_code_str}#{path}"
   end
 
   def convert_to_brightness_value(hex_color)
@@ -97,6 +104,8 @@ module ApplicationHelper
         {:'zh-CN' => 'zh-hans', :'zh-TW' => 'zh-hant', :'pt-BR' => 'pt-br'}[locale] || locale
       when :support, :generic_i18n
         locale.to_s.gsub('pt-BR', 'pt').gsub('-','_')
+      when :now
+        locale.to_s.gsub('pt-BR', 'pt')
       else
         locale
     end
