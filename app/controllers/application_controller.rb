@@ -160,7 +160,7 @@ class ApplicationController < ActionController::Base
     recent = recent_versions.find{|v| v.osis != current_version && v.contains?(ref)}
     return cookies[:alt_version] = recent.osis if recent
 
-    raise NoSecondaryVersionError if Version.all(params[:locale]).except(current_version).empty?
+    raise NoSecondaryVersionError if Version.all(I18n.locale).except(current_version).empty?
     
     return cookies[:alt_version] = Version.sample_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version, has_ref: ref)
   end

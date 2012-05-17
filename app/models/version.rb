@@ -11,7 +11,7 @@ class Version
     if lang == ""
       versions
     else
-      versions.select { |k, v| v.language.iso == lang }
+      versions.select { |k, v| v.language.iso == lang.to_s }
     end
   end
 
