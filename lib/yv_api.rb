@@ -16,17 +16,18 @@ class YvApi
     timeout = opts.delete(:timeout)
     resource_url = base + path
     opts = clean_up_opts(opts)
-    Rails.logger.apc "** YvApi.get: Calling #{resource_url} with query => #{opts}", :info
+    Rails.logger.apc "** YvApi.get: Calling #{resource_url} with query:", :info
+    Rails.logger.apc opts, :info
     if (resource_url == "http://api.yvdev.com/2.3/bible/verse.json")
       calling_method = caller.first.match(/`(.*)'$/)[1]
     end
     # If we should cache, try pulling from cache first
     if cache_length = opts[:cache_for]
       cache_key = [path, opts.except(:cache_for).sort_by{|k,v| k.to_s}].flatten.join("_")
-      Rails.logger.apc "*** cache_key is #{cache_key}", :info
+      Rails.logger.apc "*** cache_key is #{cache_key}", :debug
       get_start = Time.now.to_f
       response = Rails.cache.fetch cache_key, expires_in: cache_length do
-        Rails.logger.apc "*** cache miss for #{cache_key}", :info
+        Rails.logger.apc "*** cache miss for #{cache_key}", :debug
         # No cache hit; ask the API
         begin
           response = httparty_get(resource_url, timeout: timeout, query: opts.except(:cache_for))
@@ -69,7 +70,7 @@ class YvApi
     timeout = opts.delete(:timeout)
     resource_url = base + path
     opts = clean_up_opts(opts)
-    # Rails.logger.apc "** YvApi.post: Calling #{resource_url} with body => #{opts}", :info
+    
     Rails.logger.apc "** YvApi.post: Calling #{resource_url} with body: ", :info
     Rails.logger.apc opts, :info
 
@@ -84,11 +85,9 @@ class YvApi
       raise APIError, "Non-timeout API Error for #{resource_url}"
     end
     post_end = Time.now.to_f
-    Rails.logger.apc "** YvApi.post: Response: ", :info
-    Rails.logger.apc response, :info
+    Rails.logger.apc "** YvApi.post: Response: ", :debug
+    Rails.logger.apc response, :debug
     Rails.logger.apc "** YvApi.post: Resonse time: #{((post_end - post_start) * 1000).to_i}ms", :info
-    #Rails.logger.apc "** YvApi response: ", :debug
-    #Rails.logger.apc response, :debug
     # Check the API response for error code
     return api_response_or_rescue(response, block)
   end

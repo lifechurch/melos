@@ -25,7 +25,7 @@ class Like < YouVersion::Resource
     opts = params.merge({user_id: user_id, page: page})
 
     data = all_raw(opts) do |errors|
-      Rails.logger.apc "API Error: Likes.for_user(#{user_id}) got these errors: #{errors.inspect}", :info
+      Rails.logger.apc "API Error: Likes.for_user(#{user_id}) got these errors: #{errors.inspect}", :error
       if errors.find{|g| g['error'] =~ /Likes not found/}
         # return empty hash to avoid raising exception
         { }

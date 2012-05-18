@@ -19,10 +19,6 @@ class Bookmark < YouVersion::Resource
   end
 
   def after_save(response)
-    Rails.logger.apc "In Bookmark.after_save, response is:", :info
-    Rails.logger.apc "*"*80, :info
-    Rails.logger.apc response, :info
-    Rails.logger.apc "*"*80, :info
     return unless response
     return
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
@@ -45,12 +41,10 @@ class Bookmark < YouVersion::Resource
 
 
   def update(fields)
-    Rails.logger.apc "==  Attempting to merge #{fields} into #{self.attributes}", :info
     # In API version 2.3, only title, labels, and highlight_color can be updated
     allowed_keys = [:title, :labels, :highlight_color, "title", "labels", "highlight_color"]
     # Clear out the ones we can't update.
     fields.delete_if {|k, v| ! allowed_keys.include? k}
-    Rails.logger.apc "==  Will actually merge #{fields}", :info
     super
   end
 
@@ -64,8 +58,6 @@ class Bookmark < YouVersion::Resource
     params[:page] ||= 1
 
     data = all_raw(params) do |errors|
-      Rails.logger.apc "API Error: Bookmark.all(#{params}) got these errors: ", :info
-      Rails.logger.apc errors.inspect, :info
       if errors.find{|g| g['error'] =~ /Bookmarks not found/}
         # return empty hash to avoid raising exception
         { }
@@ -88,8 +80,8 @@ class Bookmark < YouVersion::Resource
     opts = params.merge({label: label, page: page})
 
     data = all_raw(opts) do |errors|
-      Rails.logger.apc "API Error: Bookmark.for_label(#{label}) got these errors: ", :info
-      Rails.logger.apc errors.inspect, :info
+      Rails.logger.apc "API Error: Bookmark.for_label(#{label}) got these errors: ", :error
+      Rails.logger.apc errors.inspect, :error
       if errors.find{|g| g['error'] =~ /Bookmarks not found/}
         # return empty hash to avoid raising exception
         { }
@@ -112,8 +104,8 @@ class Bookmark < YouVersion::Resource
     opts = params.merge({user_id: user_id, page: page})
 
     data = all_raw(opts) do |errors|
-      Rails.logger.apc "API Error: Bookmark.for_user(#{user_id}) got these errors: ", :info
-      Rails.logger.apc errors.inspect, :info
+      Rails.logger.apc "API Error: Bookmark.for_user(#{user_id}) got these errors: ", :error
+      Rails.logger.apc errors.inspect, :error
       if errors.find{|g| g['error'] =~ /Bookmarks not found/}
         # return empty hash to avoid raising exception
         { }
@@ -134,8 +126,8 @@ class Bookmark < YouVersion::Resource
   def self.labels_for_user(user_id, params = {})
     params[:page] ||= 1
     response = get("bookmarks/labels", user_id: user_id, page: params[:page]) do |errors|
-      Rails.logger.apc "API Error: Bookmark.labels_for_user(#{user_id}) got these errors: ", :info
-      Rails.logger.apc errors.inspect, :info
+      Rails.logger.apc "API Error: Bookmark.labels_for_user(#{user_id}) got these errors: ", :error
+      Rails.logger.apc errors.inspect, :error
       if errors.find{|g| g['error'] =~ /Labels not found/}
         # return empty hash to avoid raising exception
         Hashie::Mash.new(labels: [], total:0)
