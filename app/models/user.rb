@@ -350,21 +350,23 @@ class User < YouVersion::Resource
   end
 
   def update_picture(uploaded_file)
+    unless uploaded_file
+      self.errors.add :picture_empty, "Please select a picture to upload"
+      return false
+    end
+
     if uploaded_file.size > 1.megabyte
-      #FIXME: We aren't using the error message below (just checking for the key)
-      self.errors[:picture_too_large] << "Picture should be less than 1 megabyte"
+      self.errors.add :picture_too_large, "Picture should be less than 1 megabyte"
       return false
     end
 
     image = Base64.strict_encode64(File.read(uploaded_file.path))
-    new_errors = nil
     response = self.class.post("users/update_avatar", image: image, auth: self.auth, timeout: 25) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      if new_errors && new_errors[0] == 'users.image_decoded.not_valid_image'
-        self.errors[:picture_invalid_type] << "Picture should be JPG, PNG, or GIF"
-      else
-        self.errors[:base] << new_errors[0]
+      if i = errors.find_index{ |e| e["key"] == "users.image_decoded.not_valid_image" }
+        self.errors.add :picture_invalid_type, errors.delete_at(i)["error"]
       end
+
+      errors.each { |e| self.errors.add :base, e["error"] }
       return false
     end
     true
