@@ -49,7 +49,6 @@ group :test, :development do
   gem 'heroku_san'
   gem 'rspec-cells'
   gem 'rspec-rails'
-  gem 'turn'
   gem 'minitest'
   gem 'tddium',         '~> 1.4.6'
 end

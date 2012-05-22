@@ -31,7 +31,6 @@ GEM
     activesupport (3.1.2)
       multi_json (~> 1.0)
     addressable (2.2.8)
-    ansi (1.4.2)
     arel (2.2.3)
     asset_sync (0.4.1)
       activemodel
@@ -311,8 +310,6 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    turn (0.9.5)
-      ansi
     tzinfo (0.3.33)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
@@ -375,6 +372,5 @@ DEPENDENCIES
   spork
   tddium (~> 1.4.6)
   thin
-  turn
   uglifier (~> 1.2.4)
   unicorn (~> 4.1.1)
