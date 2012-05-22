@@ -2,7 +2,11 @@ module SiteConfigs
 
   class Site
     def logo_style
-      "background: asset_path(yv_logo.png) no-repeat 0 14px; width: 150px"
+      "background: no-repeat 0 14px; width: 150px"
+    end
+    
+    def logo_image
+      'yv_logo.png'
     end
 
     def default_version; end

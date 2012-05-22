@@ -1,7 +1,11 @@
 module SiteConfigs
   class Sabs < Site
     def logo_style
-      "background: asset_path(biblesociety-nz.png) no-repeat 0 10px; width: 133px"
+      "background: no-repeat 0 10px; width: 133px"
+    end
+    
+    def logo_image
+      'biblesociety-nz.png'
     end
 
     def default_version
