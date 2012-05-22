@@ -5,7 +5,6 @@ Feature: Reader view (homepage)
 
   Background:
     Given a user named "reader_user1" exists
-    And I have beta access as "reader_user1"
   @bible
   Scenario: Showing some Bible text
     # Given a bookmark on Genesis 1:3
@@ -25,8 +24,8 @@ Feature: Reader view (homepage)
     And I should see "The Message" within the version selector
     And I should see "New Century Version" within the version selector
     # And "NIV" should be selected within the version selector
-    When I follow "Douay Rheims" within the version selector
-    Then I should be on the bible page "gen.1.dra"
+    # When I follow "Douay Rheims" within the version selector
+    # Then I should be on the bible page "gen.1.dra"
     # And "DRA" should be selected within the version selector
     # And I should see "Tobit" within the book selector
 
