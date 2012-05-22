@@ -10,3 +10,5 @@ bin/*
 /.sass-cache/
 .bundle/*
 tags
+.tddium*
+.tddium

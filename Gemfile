@@ -43,14 +43,15 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'capybara',       '~> 1.0.0.beta1'
-  gem 'cucumber-rails', '~> 0.5.0.beta1', require: false
+  gem 'capybara',       '~> 1.1.2'
+  gem 'cucumber-rails', '~> 1.3.0', require: false
   gem 'debugger'
   gem 'heroku_san'
   gem 'rspec-cells'
   gem 'rspec-rails'
   gem 'turn'
   gem 'minitest'
+  gem 'tddium',         '~> 1.4.6'
 end
 
 group :development do
