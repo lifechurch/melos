@@ -22,6 +22,7 @@ common: &common
   bloodhound_password: password
 
 development:
+  <<: *common
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   twitter_key: KobF6Lt0zWDFBDxZgZyg
