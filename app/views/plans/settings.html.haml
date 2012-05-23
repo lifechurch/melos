@@ -9,7 +9,7 @@
       %span
         =t("plans.more info")
     %ul.widget_menu
-      %li    
+      %li
         %p
           %b=t("plans.length field")
           = @subscription.length
@@ -17,7 +17,7 @@
         %li
           = link_to(t("plans.view sample"), @subscription.to_param)
       %li
-        = link_to(t("plans.users subscribed", user_count: @subscription.users.count), plan_users_path(@subscription.to_param))
+        = link_to(t("plans.users subscribed", user_count: number_with_delimiter(@subscription.users.count)), plan_users_path(@subscription.to_param))
   .widget
     %header
       %span
@@ -61,7 +61,7 @@
     %div
       %b{style: "margin-right: 16px"}= t("plans.end date _ before date string")
       = @subscription.end.strftime("%b %d, %Y")
-  
+
   %hr
   .div.float_right
     .float_right= button_to(@subscription.email_delivery? ? t('plans.email_off') : t('plans.email_on'),  plan_settings_path(email_delivery: (!@subscription.email_delivery?).to_s), class: 'action_button_green', style: "width: 14em; height: 30px; margin-bottom: 5px")
@@ -93,26 +93,26 @@
     %h5= t("plans.are you behind")
     - if @subscription.last_completed_date
       %p.float_left= t("plans.catch up text", last_completed_day: @subscription.last_completed_day)
-    -else 
+    -else
       %p.float_left= t("plans.catch up description only")
-  
+
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}= button_to(t('plans.restart'), plan_settings_path(restart: "true"), class: 'action_button_green confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.do you want to reset")
-    %p.float_left= t("plans.restart description")  
-  
+    %p.float_left= t("plans.restart description")
+
   %a{name: "privacy"}
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
     -if @subscription.public?
       .float_right= button_to(t('plans.make private'), plan_settings_path(make_private: "true"), class: 'action_button_green', style: "width: 14em; height: 30px")
-    -else 
+    -else
       .float_right= button_to(t('plans.make public'), plan_settings_path(make_public: "true"), class: 'action_button_green', style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.privacy title")
     %p.float_left= t("plans.privacy description")
-    
+
   %hr
   %a{name: "accountability"}
   %h5= t("plans.accountability")
@@ -140,5 +140,4 @@
 
   %hr{style: "margin-top: 15px"}
   .float_left{style: "height: 30px; margin-bottom: 5px"}= button_to(t('plans.stop reading'), plan_settings_path(unsubscribe: "true"), class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
-  
-  
+
