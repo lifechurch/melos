@@ -5,3 +5,4 @@
 //= require main
 //= require analytics
 //= require ga
+//= require_tree ./i18n/

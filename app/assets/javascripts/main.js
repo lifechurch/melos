@@ -1180,6 +1180,9 @@ var YV = (function($, window, document, undefined) {
               h3: { visible: false },
               insertTable: { visible: false },
               code: { visible: false }
+            },
+            plugins: {
+	          i18n: { lang: getCookie('locale').toLowerCase() }
             }
           });
       },
