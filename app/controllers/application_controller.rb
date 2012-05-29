@@ -119,7 +119,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent[:last_read] = ref.osis
   end
   def current_auth
-    @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]  
+    @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]
   end
   def external_request?
     return true if request.referrer.nil?

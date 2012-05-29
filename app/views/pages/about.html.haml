@@ -3,7 +3,7 @@
 
 %article
   %h1= t('about title')
-  %div.about_content
+  .about_content
     %h2= t('about page.relevancy')
     %p= t('about page.relevancy copy')
 
@@ -14,3 +14,13 @@
     %p= t('about page.youversion copy')
 
     %p= t('about page.youversion copy 2')
+  - if partners = @site.partners.try(:[], I18n.locale)
+    .partners_content
+      %h2= t('about page.partners title')
+      %p= t('about page.partners text')
+      
+      - partners.each do |p|
+        .partners_box
+          %div
+            %img{src: asset_path(p[:image]), title: p[:name]}
+          %div=link_to t('about page.learn more'), p[:url], class: 'sm_action_button_blue'
