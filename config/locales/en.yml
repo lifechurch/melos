@@ -543,9 +543,9 @@ en:
     zip:                                        "Zip"
   download ad:
     title:                                      "Download the Free Bible App"
-    line 1:                                     "Hundreds of versions in many"
-    line 2:                                     "different languages - the Bible that"
-    line 3:                                     "goes with you anywhere."
+    line 1:                                     "Hundreds of versions in 100+"
+    line 2:                                     "different languages - the Bible"
+    line 3:                                     "that goes with you anywhere."
     download:                                   "Download Now"
   about page:
     relevancy:                                  "Relevancy"
@@ -591,7 +591,7 @@ en:
   mobile page:
     h2:                                         "God's Word is with you."
     h3:                                         "YouVersion is Global"
-    h3 sub:                                     "Available in hundreds of languages worldwide."
+    h3 sub:                                     "Available in more than 100 languages worldwide."
     main:                                       "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
     button h4:                                  "Go to youversion.com/download"
     button h4 sub:                              "On Your Mobile Device"
