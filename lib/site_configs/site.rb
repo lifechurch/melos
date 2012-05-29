@@ -18,9 +18,9 @@ module SiteConfigs
     
     def partners #this static content will eventually come from the API, putting it here for now as white-labels could have issue
       
-      {:en      => [{name: 'Crossway', url: 'http://www.esv.org', image: 'crossway.jpeg'},
+      {:en      => [{name: 'Biblica', url: 'http://www.biblica.com', image: 'biblica.png'},
+                    {name: 'Crossway', url: 'http://www.esv.org', image: 'crossway.jpeg'},
                     {name: 'God’s Word Translation', url: 'http://www.godswordtranslation.org', image: 'gwt.jpg'},
-                    {name: 'Biblica', url: 'http://www.biblica.com', image: 'biblica.png'},
                     {name: 'Holman Bible Publishers', url: 'http://www.HCSB.org', image: 'hcsb.jpg'},
                     {name: 'The Lockman Foundation', url: 'http://www.nasbible.com', image: 'lockman.jpg'},
                     {name: 'Logos Bible Software', url: 'http://www.logos.com/?utm_source=youversion.com&utm_medium=aboutpage&utm_content=buttonlink&utm_campaign=youversion', image: 'LOGOS.png'},
