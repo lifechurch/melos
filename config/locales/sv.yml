@@ -1,5 +1,6 @@
 ---
 sv:
+  now:                                          "Nu"
   celebrating 50MM:                             "Firar 50 miljoner installationer!"
   link:                                         "Länk"
   site search:                                  "YouVersion-sök"
@@ -129,6 +130,7 @@ sv:
     unlike button text:                         "Sluta gilla"
   notes:
     loading community:                          "Laddar gemensamma anteckningar..."
+    no community notes:                         "Inga offentliga anteckningar hittades som refererar valda verser. För att skapa en anteckning, välj en vers i bibelläsaren och klicka på knappen Markerat högst upp i läsaren. "
     public:                                     "Offentlig"
     private:                                    "Privat"
     draft:                                      "Utkast"
@@ -553,7 +555,9 @@ sv:
     youversion copy:                            "Sedan starten 1996 har syftet för LifeChurch.tv varit att få folk att bli helt hängivna efterföljare till Kristus. För att göra det har vi letat efter nya sätt att hjälpa människor komma i kontakt med Bibeln i deras vardag. Våra metoder har förändrats med åren då vi använt olika tekniker och strategier. Men vårt kärnfokus förändras inte då vi ständigt strävar efter att visa och lära människor hur Guds Ord gäller alla, oavsett var de befinner sig i livet."
     youversion copy 2:                          "YouVersion representerar ett nytt område för LifeChurch.tv:s insatser. Vi bygger inte bara ett verktyg för att påverka världen med innovativ teknik. Framför allt engagerar vi människor i sina relationer med Gud efterhand som de upptäcker den relevans Bibeln har för deras liv."
     partners title:                             "Ett speciellt tack till våra partners"
+    partners text:                              "Utan våra generösa bibelpubliceringspartners skulle YouVersion inte ha möjlighet att tillhandahålla vår världsomspännande gemenskap med så många Biblar. Många av er har frågat oss hur ni kan tacka dessa viktiga supporters till YouVersion. Du kan läsa mer om dem, om deras arbete, och om hur du kan stödja dem via länken nedan."
     translation title:                          "Vårt översättningsteam"
+    learn more:                                 "Läs mer"
   press page:
     title:                                      "Pressområde"
     contact header:                             "Kontaktinformation för press"

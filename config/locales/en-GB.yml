@@ -1,5 +1,6 @@
 ---
 en-GB:
+  now:                                          "Now"
   celebrating 50MM:                             "Celebrating 50 Million App Installs!"
   link:                                         "Link"
   site search:                                  "YouVersion Search"
@@ -129,6 +130,7 @@ en-GB:
     unlike button text:                         "Unlike"
   notes:
     loading community:                          "Loading community notes..."
+    no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     public:                                     "Public"
     private:                                    "Private"
     draft:                                      "Draft"
@@ -553,7 +555,9 @@ en-GB:
     youversion copy:                            "Since its start in 1996, LifeChurch.tv's purpose has been to lead people to become fully devoted followers of Christ. In doing so, we have looked for new ways to help people connect the Bible to their daily lives. Our methods have changed over the years as we've incorporated various technologies and strategies. But at the core, our focus remains on relevancy as we consistently strive to demonstrate and teach people how God's Word relates to everyone, no matter where they are in life."
     youversion copy 2:                          "YouVersion represents a new frontier in LifeChurch.tv's efforts. We aren't just building a tool to impact the world using innovative technology, more importantly, we are engaging people into relationships with God as they discover the relevance the Bible has for their lives."
     partners title:                             "A Special Thanks to Our Partners"
+    partners text:                              "Without our generous Bible publishing partners, YouVersion simply would not be able to provide our worldwide community with so many Bibles. Many of you have asked how you can thank these vital supporters of YouVersion's mission. You can learn more about them, their ministries, and ways you can support them through the links below."
     translation title:                          "Our Translation Teams"
+    learn more:                                 "Learn More"
   press page:
     title:                                      "Press Area"
     contact header:                             "Press Contact Information"

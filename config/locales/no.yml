@@ -1,5 +1,6 @@
 ---
 'no':
+  now:                                          "Nå"
   celebrating 50MM:                             "Vi feirer 50 millioner Bibel-app-installasjoner!"
   link:                                         "Lenke"
   site search:                                  "YouVersion-søk"
@@ -129,6 +130,7 @@
     unlike button text:                         "Ikke lik"
   notes:
     loading community:                          "Laster notater fra fellesskap..."
+    no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     public:                                     "Offentlig"
     private:                                    "Privat"
     draft:                                      "Utkast"
@@ -553,7 +555,9 @@
     youversion copy:                            "Siden det hele startet i 1996 har LifeChurch.tv's mål vært å lede folk til å bli trofaste etterfølgere av Jesus. I arbeidet med dette har vi sett etter nye måter å hjelpe folk til å koble Bibelen til hverdagslivet sitt. Metodene har forandret seg gjennom årene, og vi har tatt i bruk ny teknologi og nye strategier. Uansett teknologi, hovedfokuset er å være relevant, og vi jobber hele tiden for å vise og lære mennesker at Guds Ord er vikitg for alle, uansett hvor de befinner seg i livet."
     youversion copy 2:                          "YouVersion representerer en ny frontlinje i Lifechurch.tv's arbeid. Vi bygger ikke et verktøy bare for å forandre verden med nyskapende teknologi. Enda viktigere er det å gi mennesker muligheter til å bli kjent med Gud og oppdage hvor relevant Bibelen er for livene deres."
     partners title:                             "En spesiell takk til våre partnere"
+    partners text:                              "Uten våre generøse partnere, bibelselskapene, ville ikke YouVersion være i stand til å tilby tilgang på så mange bibeloversettelser til vårt verdensomspennende nettsamfunn. Mange av dere har spurt hvordan man kan takke disse viktige støttespillerne av YouVersion sin misjon. Du kan lære mer om dem, deres arbeid og måter du kan støtte dem på gjennom linkene nedenfor."
     translation title:                          "Våre team med oversettere"
+    learn more:                                 "Lær mer"
   press page:
     title:                                      "Presseområde"
     contact header:                             "Informasjon om pressekontakter"

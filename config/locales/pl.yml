@@ -1,5 +1,6 @@
 ---
 pl:
+  now:                                          "Teraz"
   celebrating 50MM:                             "Świętujemy 50 milionów instalacji aplikacji!"
   link:                                         "Odnośnik"
   site search:                                  "Wyszukiwanie w YouVersion"
@@ -129,6 +130,7 @@ pl:
     unlike button text:                         "Cofnij \"lubię\""
   notes:
     loading community:                          "Ładowanie notatek społeczności..."
+    no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     public:                                     "Publiczne"
     private:                                    "Prywatne"
     draft:                                      "Szkic"
@@ -553,7 +555,9 @@ pl:
     youversion copy:                            "Od powstania w roku 1996, LifeChurch.tv wypełnia swój cel prowadzenia ludzi do bycia w pełni oddanymi naśladowcami Chrystusa. Czyniąc to poszukiwaliśmy nowych sposobów na pomaganie ludziom w połączeniu Biblii z ich codziennym życiem. Nasze metody zmieniały się w ciągu minionych lat, wraz z wprowadzeniem różnorodnych technologii i strategii. Przede wszystkim jednak koncentrujemy nasze działania na odniesieniu Biblii do życia, starając się ciągle pokazywać i uczyć ludzi o znaczeniu Słowa Bożego dla każdego, niezależnie od momentu życia."
     youversion copy 2:                          "YouVersion reprezentuje nowy front działalności LifeChurch.tv. Naszym celem nie jest jedynie zbudowanie narzędzia, które będzie wywierać wpływ na świat przez wykorzystanie innowacyjnej technologii, ale coś ważniejszego: prowadzenie ludzi do więzi z Bogiem przez odkrywanie znaczenia Biblii dla ich życia."
     partners title:                             "Specjalne podziękowania dla naszych partnerów"
+    partners text:                              "Bez naszych hojnych partnerskich wydawnictw biblijnych, YouVersion nie byłoby w stanie zapewnić tak wielu Biblii ludziom na całym świecie. Wielu z Was dowiadywało się w jaki sposób można podziękować tym nieodzownym pomocnikom w realizacji misji YouVersion. Możecie dowiedzieć się więcej o nich, ich służbie i sposobach ich wsparcia za pośrednictwem poniższych linków."
     translation title:                          "Nasze zespoły tłumaczeniowe"
+    learn more:                                 "Dowiedz się więcej"
   press page:
     title:                                      "Strefa prasy"
     contact header:                             "Kontakt dla informacji prasowych"

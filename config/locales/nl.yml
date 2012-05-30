@@ -1,5 +1,6 @@
 ---
 nl:
+  now:                                          "Nu"
   celebrating 50MM:                             "50 miljoen installatie viering!"
   link:                                         "Link"
   site search:                                  "YouVersion Zoekmachine"
@@ -129,6 +130,7 @@ nl:
     unlike button text:                         "Niet leuk meer"
   notes:
     loading community:                          "Gemeenschappelijke Notities worden geladen..."
+    no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     public:                                     "Openbaar"
     private:                                    "Privé"
     draft:                                      "Klad"
@@ -553,7 +555,9 @@ nl:
     youversion copy:                            "Sinds het begin in 1996, is het doel van LifeChurch.tv om mensen te leiden om volledig toegewijde navolgers van Christus te worden. Daarbij hebben wij naar nieuwe middelen gezocht om mensen te helpen een verbanden te leggen tussen de Bijbel en hun dagelijks leven. Onze methodes zijn veranderd in de loop der jaren, omdat wij verschillende technologieën en strategieën hebben ontwikkeld. Maar aan de basis blijft onze focus gericht op relevantie, terwijl we er voortdurend naar streven om mensen te tonen en te leren hoe Gods Woord betrekking heeft op iedereen, ongeacht waar ze staan in het leven."
     youversion copy 2:                          "YouVersion vormt een nieuwe grens in the streven van LifeChurch.tv. Wij zijn niet alleen maar een stuk gereedschap aan het bouwen om de wereld te beinvloeden met behulp van innovatieve technologie; maar nog belangrijker is het dat wij mensen met God verbinden, opdat zij de relevantie ontdekken die de Bijbel heeft voor hun leven."
     partners title:                             "Een speciale dank aan onze Partners"
+    partners text:                              "Zonder de bijdrage van vrijgevige Bijbel uitgevers, zou YouVersion niet in staat zijn om onze wereld weide gemeenschap zo veel Bijbels aan te bieden. Velen onder jullie hebben ons gevraagd hoe jullie die partners in YouVersion's missie konden bedanken Je kan meer te weten komen over hen, hun roeping, en hoe je ze het best kan ondersteunen door deze link te  volgen."
     translation title:                          "Onze Vertaalteams"
+    learn more:                                 "Leer Meer"
   press page:
     title:                                      "Pers Area"
     contact header:                             "Pers contactinformatie"
