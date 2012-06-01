@@ -51,7 +51,7 @@ common: &default_settings
   # The newrelic agent generates its own log file to keep its logging
   # information separate from that of your application.  Specify its
   # log level here.
-  log_level: debug
+  log_level: info
   
   # The newrelic agent communicates with the New Relic service via http by
   # default.  If you want to communicate via https to increase
