@@ -177,6 +177,7 @@ class Plan < YouVersion::Resource
       opts[:day] ||= day
       opts[:id] ||= id
       opts[:cache_for] ||= 12.hours
+      opts.delete :cache_for if opts[:cache_for] == 0
       # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
       # to be overriden by Subscription model to send auth and user_id
       # we can cache the non-authed response
