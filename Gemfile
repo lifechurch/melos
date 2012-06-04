@@ -55,7 +55,7 @@ end
 
 group :development do
   # gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i
-  gem 'active_reload'
+  gem 'active_reload' #TODO: Remove when upgrading to Rails 3.2
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-bundler'
@@ -63,6 +63,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'pry'
+  gem 'quiet_assets'
   gem 'ruby-prof'
   gem 'spork'
   gem 'thin'
