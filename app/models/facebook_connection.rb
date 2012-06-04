@@ -44,6 +44,22 @@ class FacebookConnection < YouVersion::Connection::Base
 
   def nickname
     data.name
+  
+  def update_token
+    oauth = Koala::Facebook::OAuth.new(self.data[:appid], self.data[:secret])
+    new_token = oauth.exchange_access_token_info(self.data[:access_token])["access_token"]
+    if new_token
+      # Delete the existing connection in the API
+      self.delete
+      # Recreate some stuff for saving the connection with the new token
+      self.credentials = {}
+      self.info = {}
+      self.credentials["token"] = new_token
+      self.info["name"] = self.data[:name]
+      self.info["nickname"] = self.data[:screen_name]
+      self.connection_user_id = self.uid = self.data[:user_id]
+      self.save
+    end
   end
 end
 
