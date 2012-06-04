@@ -227,11 +227,12 @@ class ApplicationController < ActionController::Base
   end
 
   def alt_version(ref)
-    raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).contains?(ref)
+    raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).include?(ref)
 
     return cookies[:alt_version] if cookies[:alt_version]
 
-    recent = recent_versions.find{|v| v.osis != current_version && v.contains?(ref)}
+    recent = recent_versions.find{|v| v.osis != current_version && v.include?(ref)}
+
     return cookies[:alt_version] = recent.osis if recent
 
     raise NoSecondaryVersionError if Version.all(I18n.locale).except(current_version).empty?

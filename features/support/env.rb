@@ -4,6 +4,11 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+#if we need to get this to work with spork, see: https://github.com/colszowka/simplecov/issues/42#issuecomment-4440284
+require 'simplecov'
+SimpleCov.start 'rails'
+
+
 require 'spork'
 
 Spork.prefork do

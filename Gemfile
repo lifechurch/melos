@@ -52,6 +52,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'minitest'
   gem 'tddium',         '~> 1.4.6'
+  gem 'simplecov', require: false
 end
 
 group :development do
@@ -62,12 +63,11 @@ group :development do
   gem 'guard-bundler'
   # TODO: Add guard-livereload
   gem 'guard-rspec'
-  gem 'guard-spork'
   gem 'hooves'
   gem 'pry'
   gem 'quiet_assets'
   gem 'ruby-prof'
-  gem 'spork'
+  gem 'spork-rails'
   gem 'thin'
   gem 'debugger'
 end

@@ -38,7 +38,7 @@ class Version
     @data = versions_api_data.versions[version]
   end
 
-  def audio?
+  def audio_version?
     @data.audio == "true"
   end
 
@@ -114,7 +114,7 @@ class Version
     until !sample.nil? || samples.empty?
       sample = samples.delete_at(Random.rand(samples.length))[1]
 
-      sample = nil if opts[:has_ref] && !sample.contains?(opts[:has_ref])
+      sample = nil if opts[:has_ref] && !sample.include?(opts[:has_ref])
     end
 
     raise NotAChapterError if sample.nil?
