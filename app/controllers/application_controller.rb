@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
+  before_filter :check_facebook_cookie
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
@@ -51,12 +52,42 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
     cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
+    set_facebook_cookie user
+  end
+
+  def set_facebook_cookie(user)
+    if user.connections["facebook"]
+      facebook_data = user.connections["facebook"].data
+      facebook_data[:valid_date] = Time.zone.now
+      cookies.permanent.signed[:f] = facebook_data.to_json
+    else
+      cookies.permanent.signed[:f] = "none"
+    end
+  end
+
+  def check_facebook_cookie
+    if current_auth
+      if cookies.signed[:f]
+        if cookies.signed[:f] == "none"
+        else
+          cookie_data = ActiveSupport::JSON.decode(cookies.signed[:f])
+          if Time.zone.parse(cookie_data["valid_date"]) < 1.week.ago
+            current_user.connections["facebook"].update_token
+            set_facebook_cookie current_user
+          else
+          end
+        end
+      else
+        set_facebook_cookie current_user
+      end
+    end
   end
 
   def sign_out
     cookies.permanent.signed[:a] = nil
     cookies.permanent.signed[:b] = nil
     cookies.permanent.signed[:c] = nil
+    cookies.permanent.signed[:f] = nil
     cookies.permanent[:avatar] = nil
   end
 

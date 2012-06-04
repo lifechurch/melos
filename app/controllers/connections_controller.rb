@@ -5,6 +5,7 @@ class ConnectionsController < ApplicationController
     info[:auth] = current_auth
     connection = "#{params[:provider].capitalize}Connection".constantize.new(info)
     result = connection.save
+    cookies.signed[:f] = nil if connection.is_a? FacebookConnection
     redirect_to cookies["#{params[:provider]}_connection_redirect"]
   end
 
@@ -14,7 +15,8 @@ class ConnectionsController < ApplicationController
   end
 
   def destroy
-    connection = current_user.connections[params[:provider].to_s]
+    connection = current_user.connections[params[:provider].to_s]]
+    cookies.signed[:f] = nil if connection.is_a? FacebookConnection
     result = connection.delete
     if connection.delete
       redirect_to :back, notice: t('deleted connection', connection: t(params[:provider].to_s))
