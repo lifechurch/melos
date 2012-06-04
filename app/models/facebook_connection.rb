@@ -46,7 +46,7 @@ class FacebookConnection < YouVersion::Connection::Base
   def nickname
     data.name
   end
-  
+
   def update_token
     oauth = Koala::Facebook::OAuth.new(self.data[:appid], self.data[:secret])
     new_token = oauth.exchange_access_token_info(self.data[:access_token])["access_token"]
