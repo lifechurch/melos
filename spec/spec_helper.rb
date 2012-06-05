@@ -4,10 +4,12 @@ SimpleCov.start 'rails'
 require 'rubygems'
 require 'spork'
 
+
 ENV["RAILS_ENV"] = 'test'
 Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  require 'capybara/rspec'
   RSpec.configure do |config|
     config.mock_with :rspec
   end
@@ -22,3 +24,10 @@ Spork.each_run do
   end
 end
 
+
+module ::RSpec::Core
+  class ExampleGroup
+    include Capybara::DSL
+    include Capybara::RSpecMatchers
+  end
+end
