@@ -130,7 +130,7 @@ ru:
     unlike button text:                         "Не нравится"
   notes:
     loading community:                          "Загружаю заметки сообщества..."
-    no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
+    no community notes:                         "К выбранным стихам сообщество не написало ещё ни одной заметки. Для создания заметки выберите стих в окне чтения Библии, а затем нажмите кнопку \"Выбранное\" в верхней части окна чтения."
     public:                                     "Публичная"
     private:                                    "Личная"
     draft:                                      "Черновик"
@@ -557,7 +557,7 @@ ru:
     partners title:                             "Выражаем особую благодарность нашим партнёрам"
     partners text:                              "Без поддержки наших щедрых партнеров – издателей Библии, YouVersion просто не смог бы обеспечить мировое сообщество таким разнообразным списком переводов Писания. Многие из вас интересовались тем, как можно отблагодарить сторонников миссии YouVersion. Получить больше иноформации о них, их служении и о том, как поддержать их служение, вы сможете по следующим ссылкам."
     translation title:                          "Наши команды переводчиков"
-    learn more:                                 "Далее..."
+    learn more:                                 "Подробнее..."
   press page:
     title:                                      "Уголок прессы"
     contact header:                             "Контакты для прессы"

@@ -1,7 +1,7 @@
 ---
 en-GB:
   now:                                          "Now"
-  celebrating 50MM:                             "Celebrating 50 Million App Installs!"
+  celebrating 50MM:                             "Celebrating 50 Million App Installations!"
   link:                                         "Link"
   site search:                                  "YouVersion Search"
   auth error:                                   "Sorry, there was a problem with your username or password. Please sign in to YouVersion to continue."
@@ -240,7 +240,7 @@ en-GB:
     confirm update email error:                 "Sorry, there was a problem completing your e-mail address change."
     account confirmed:                          "Your account has been confirmed!"
     account already confirmed:                  "Your account has already been confirmed! Sign in to continue."
-    errors confirming account:                  "Sorry, something went wrong on our end. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation email."
+    errors confirming account:                  "Sorry, something went wrong at our end. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation e-mail."
     invalid confirm hash:                       "Sorry, that confirmation code seems to be invalid. You can refresh your browser to try again, or if this keeps happening, click below to request a new confirmation code."
     confirm password to continue:               "Please enter your password to sign in and get started."
     invalid email forgot:                       "Sorry, we weren't able to find an account with that e-mail address. Please try again."
@@ -396,7 +396,7 @@ en-GB:
     reference:                                  "Reference:"
     labels comma separated:                     "Labels (comma-separated):"
     update:                                     "Update"
-    color:                                      "Color:"
+    color:                                      "Colour:"
     version field:                              "Version:"
   badges:
     earned a badge:                             "Earnt a Badge"
@@ -538,9 +538,9 @@ en-GB:
     email header:                               "YouVersion, a ministry of LifeChurch.tv, has received your donation. No goods or services were provided in exchange for the donation, except intangible religious benefits. Please contact giving@lifechurch.tv with questions."
     email footer:                               "Your donation will help people around the world fall in love with God's Word."
     address:                                    "Address"
-    city:                                       "City"
-    state:                                      "State"
-    zip:                                        "Zip"
+    city:                                       "Town"
+    state:                                      "County"
+    zip:                                        "Post code"
   download ad:
     title:                                      "Download the Free Bible App"
     line 1:                                     "Hundreds of versions in many"
@@ -567,7 +567,7 @@ en-GB:
     blog:                                       "YouVersion Blog"
     facebook:                                   "YouVersion on Facebook"
     twitter:                                    "YouVersion on Twitter"
-    support:                                    "Need help with YouVersion?"
+    support:                                    "Do you need help with YouVersion?"
     lead copy:                                  "Based on the online Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle."
     resources title:                            "Press Resources"
     now title:                                  "Today in the YouVersion Community"

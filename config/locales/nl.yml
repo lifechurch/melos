@@ -130,7 +130,7 @@ nl:
     unlike button text:                         "Niet leuk meer"
   notes:
     loading community:                          "Gemeenschappelijke Notities worden geladen..."
-    no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
+    no community notes:                         "Er zijn geen gemeenschappelijke notities gevonden die gekoppelt zijn aan deze verzen. om een notitie aan te maken, selecteer een vers in de Bijbel lezer en klik de geselecteerd knop van boven in de lezer."
     public:                                     "Openbaar"
     private:                                    "Privé"
     draft:                                      "Klad"
