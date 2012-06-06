@@ -12,3 +12,4 @@ bin/*
 tags
 .tddium*
 .tddium
+coverage
