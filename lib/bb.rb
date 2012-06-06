@@ -6,12 +6,18 @@ module Bb
       @app = app
     end
     def call(env)
-
       if env["PATH_INFO"] =~ %r{^/bb/test}
         process_request(env)
       else
-        @app.call(env)
+        dup._call(env)
       end
+    end
+
+    def _call(env)
+      status, headers, body = @app.call(env)
+      new_body = []; body.each { |line| new_body << line }
+      body.close if body.respond_to?(:close)
+      [status, headers, new_body]
     end
 
     private
