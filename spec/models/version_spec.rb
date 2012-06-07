@@ -102,6 +102,7 @@ describe Version do
       Version.default_for("en").should == "kjv"
     end
     it "should not return nil for any supported language" do
+      pending "The API adding support for en-GB"
       I18n.available_locales.each do |loc|
         Version.default_for(loc).should_not be_nil
       end
@@ -109,8 +110,49 @@ describe Version do
   end
   
   describe "#sample_for" do
-    it "should return a version for a language"
-    it "should return a different version in that language than the excepted version"
-    it "should return a version that contains a reference, if specified"
+    it "should return a version for each language" do
+      pending "The API adding support for en-GB"
+      I18n.available_locales.each do |loc|
+        Version.sample_for(loc).should_not be_nil
+      end
+    end
+    describe "when excepting a version" do
+      before(:each) do
+        ntv_rvc_only = filtered_all_by_language languages: ['es'], versions: %w(ntv rvc)
+        Version.stub(:all_by_language).and_return(ntv_rvc_only)
+      end
+      it "should not return the excepted version" do
+        Version.sample_for('es', except: 'ntv').should_not == "ntv"
+      end
+      it "should return another version" do
+        Version.sample_for('es', except: 'ntv').should == 'rvc'
+      end
+      it "should return nil if the excepted version was the only one" do
+        rvc_only = filtered_all_by_language languages: ['es'], versions: %w(rvc) 
+        Version.stub(:all_by_language).and_return(rvc_only)
+        Version.sample_for('es', except: 'rvc').should be_nil
+      end
+    end
+    describe "when ensureing sample has a reference" do
+      before(:each) do
+        books_niv_only = filtered_all_by_language languages: ['en'], versions: %w(books-eng niv) 
+        @gen_1 = Reference.new('gen.1')
+        Version.stub(:all_by_language).and_return(books_niv_only)
+      end
+      it "should return a version with the reference" do  
+        10.times do  #.0001% chance at missing books-eng
+          Version.sample_for('en', has_ref: @gen_1).should == 'niv'
+        end
+      end
+      it "should return nil if there isn't a version with the reference" do 
+        books_only = filtered_all_by_language languages: ['en'], versions: %w(books-eng) 
+        Version.stub(:all_by_language).and_return(books_only)
+        
+        Version.sample_for('en', has_ref: @gen_1).should be_nil
+      end
+      it "should return nil if the only version with the reference is excepted" do
+        Version.sample_for('en', has_ref: @gen_1, except: 'niv').should be_nil
+      end
+    end      
   end
 end

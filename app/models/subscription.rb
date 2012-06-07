@@ -118,7 +118,7 @@ class Subscription < Plan
       
       case ref
       when Fixnum, /\A[\d]+\z/                    #number (possibly in string form) - assume index of reference in the day
-        no_version_ref = reading(day).references[ref.to_i].no_version_ref   
+        no_version_ref = reading(day).references[ref.to_i].no_version_ref
       when Reference                              #Good to go
       when String                                 #try to create Ref, assuming osis string
         begin

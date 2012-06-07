@@ -1,10 +1,11 @@
-  require 'forwardable'
+require 'forwardable'
 class ReferenceList
   include Enumerable
   extend Forwardable
   def_delegators :@references, :each
 
-  attr_accessor :total, :version
+  attr_accessor :version
+  #version accessor isn't being used?
 
   def method_missing(method, *args, &block)
     result = @references.send(method, *args, &block)
@@ -55,20 +56,6 @@ class ReferenceList
     when Hashie::Mash
       @references = split_multi_ref_string(args.osis.downcase)
     end
-    # Default to same as #size
-    @total = self.count
-  end
-
-  def split_multi_ref_string(ref_string)
-    ref_array = case ref_string
-    when /([\+\,])/  # if this case matches, either '+' or ',' will be stored in $1
-      ref_string.split($1)
-    else
-      # just stick the string in a single-element array so we only need to
-      # maintain one create-the-References line at the end
-      [ref_string]
-    end
-    ref_array.map{|str| Reference.new(str.strip, self.version)}
   end
 
   def to_api_string
@@ -84,6 +71,24 @@ class ReferenceList
     end
     
     refs.join(join_str)
+  end
+  
+  def valid?
+    @references.select {|r| r.valid?}.length == length
+  end
+
+  #TODO: why aren't the remaining methods private (or non existent for smash_verses)?
+
+  def split_multi_ref_string(ref_string)
+    ref_array = case ref_string
+    when /([\+\,])/  # if this case matches, either '+' or ',' will be stored in $1
+      ref_string.split($1)
+    else
+      # just stick the string in a single-element array so we only need to
+      # maintain one create-the-References line at the end
+      [ref_string]
+    end
+    ref_array.map{|str| Reference.new(str.strip, self.version)}
   end
 
 	def smash_verses(refs)

@@ -1,7 +1,7 @@
 class CategoryListing
   attr_reader :current, :breadcrumbs, :items
 
-  def self.find(category_slug, opts={})
+  def self.find(category_slug=nil, opts={})
     #we only need 1st page to get all categories in the response
     #the params[:category] param will filter the query to only children of that category
     opts[:page] ||= 1
@@ -33,6 +33,14 @@ class CategoryListing
     @current = @json.current ? PlanCategory.new(@json.current) : nil
     @items = @json.children ? @json.children.map! {|child| PlanCategory.new(child)} : []
     @breadcrumbs = @json.breadcrumbs ? @json.breadcrumbs.map! {|category| PlanCategory.new(category)} : []
+  end
+  
+  def count
+    items.count
+  end
+  
+  def length
+    count
   end
 
 end

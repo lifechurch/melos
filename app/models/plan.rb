@@ -10,37 +10,22 @@ class Plan < YouVersion::Resource
   attr_i18n_reader :formatted_length
   attr_i18n_reader :copyright
 
-  def self.categories(params = {})
-    PlanCategories.all(params)
-  end
-
-  def self.all(opts = {})
-    if opts[:query]
-      #query string was passed, search, since API doesn't give a query on library
-      Plan.search(opts[:query], opts)
-    else
-    #TODO: this doesn't work if an integer id is passed?
-      super(opts.merge(query: '*'))
-    end
-  end
-
-  def self.available_locales
-    return @available_locales if @available_locales
-
-    response = YvApi.get("configuration/items", {cache_for: 1.hour}) do |errors|
-      raise YouVersion::ResourceError.new(errors)
-    end
-
-    @available_locales = response.reading_plans.available_language_tags.map{|tag| YvApi::to_app_lang_code(tag).to_sym}
-
-  end
-
   def self.list_path
     "#{api_path_prefix}/search"
   end
 
   def self.api_path_prefix
     "reading_plans"
+  end
+
+  def self.available_locales
+    return @available_locales if @available_locales
+
+    response = YvApi.get("configuration/items", {cache_for: 12.hours}) do |errors|
+      raise YouVersion::ResourceError.new(errors)
+    end
+
+    @available_locales = response.reading_plans.available_language_tags.map{|tag| YvApi::to_app_lang_code(tag).to_sym}
   end
 
   def self.find(id, opts = {}, &block)
@@ -51,7 +36,8 @@ class Plan < YouVersion::Resource
       when String
         #slug was passed, try to get id from slug with search, since API doesn't give a better way
         lib_plan = search(id).find{|plan| plan.slug.downcase == id.downcase}
-        id = lib_plan.id unless lib_plan.nil?
+        return nil if lib_plan.nil?
+        id = lib_plan.id
     end
 
     opts[:query] ||= '*'
@@ -60,40 +46,45 @@ class Plan < YouVersion::Resource
     super(id, opts, &block)
   end
 
-  def self.search(query, params = {})
+  def self.all(opts = {})
+    if opts[:query]
+      #query string was passed, search, since API doesn't give a query on library
+      Plan.search(opts[:query], opts)
+    else
+      #TODO: this doesn't work if an integer id is passed?
+      super(opts.merge(query: '*'))
+    end
+  end
 
-    # Get search results for a query.
-    #
-    #     URL: /2.3/reading_plans/search.json?query=parenting
-    #     Method: GET
-    #
-    #     Parameters:
-    #     query of what you're wanting to search for
-    #     category  to filter reading plans to (optional)
-    #     total_days  will accept one of the predefined ranges to limit results to '1_day_to_7_days', '1_week_to_1_month', '1_month_to_3_months', '3_months_to_6_months', '6_months_to_1_year', '1_year_to_infinity', it's optional
-    #     language_tag  to filter reading plans to (optional, but highly recommended for best search results)
-    #     sort  the ordering of the results, defaults to 'score' (relevance), also accepts 'total_days'
-    #     page  number of results to return
-    query = '*' if (query == "" || query == nil)
-    params = {query: query, cache_for: 1.hour}.merge!(params.except("query", :query))
+  def self.subscribe (plan, user_auth)
+    opts = {auth: user_auth}
 
-    response = YvApi.get("#{api_path_prefix}/search", params) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
+    case plan
+    when Fixnum, /\A[\d]+\z/
+      opts[:id] = plan.to_i
+    when Plan, Subscription
+      opts[:id] = plan.id.to_i
+    when String
+      opts[:id] = Plan.find(plan).id
     end
 
-    list = ResourceList.new
-    list.total = response.total
-    response.reading_plans.each {|data| list << Plan.new(data.merge(:auth => params[:auth]))}
-    list
+    YouVersion::Resource.post('reading_plans/subscribe_user', opts)
 
+    #EVENTUALLY: Do this correctly with Resource abstraction and on the subscription class(new) and user object(add_subscription) class
+  end
+
+  def subscribe (user_auth, opts = {})
+    opts = opts.merge!(auth: user_auth)
+    opts[:id] = id
+
+    YouVersion::Resource.post('reading_plans/subscribe_user', opts)
+    #TODO: dry this up to call self.subscribe
   end
 
   def current_day
-    1 #always show the first day if requested
+    1
+    #just give the first day if requested for a plan
+    #(i.e. not in context of a subscription)
   end
 
   def users(params = {})
@@ -116,62 +107,6 @@ class Plan < YouVersion::Resource
     @users
   end
 
-  def title
-    name
-  end
-
-  def length
-    formatted_length
-  end
-
-  def total_days
-    @total_days ||= @attributes.total_days.to_i
-  end
-
-  def days
-
-    length
-
-  end
-
-  def to_param
-    "#{id}-#{slug}"
-  end
-
-  def ==(compare)
-    #if plan is compared to subscription or vice/versa
-    correct_class = compare.class == Plan || compare.class == Subscription
-
-    correct_class && self.id == compare.id
-  end
-
-  def self.subscribe (plan, user_auth)
-    opts = {auth: user_auth}
-
-    case plan
-    when Fixnum, /\A[\d]+\z/
-      opts[:id] = plan.to_i
-    when Plan, Subscription
-      opts[:id] = plan.id.to_i
-    when String
-      opts[:id] = Plan.find(plan).id
-    end
-
-    YouVersion::Resource.post('reading_plans/subscribe_user', opts)
-
-    #EVENTUALLY: Do this right with Resource abstraction and on the subscription class(new) and user object(add_subscription) class
-  end
-
-  def subscribe (user_auth, opts = {})
-
-    #/2.2/reading_plans/subscribe_user
-    opts = opts.merge!(auth: user_auth)
-    opts[:id] = id
-
-    YouVersion::Resource.post('reading_plans/subscribe_user', opts)
-
-  end
-
   def reading(day, opts = {})
     unless(@reading && @reading_day == day)
       opts[:day] ||= day
@@ -186,6 +121,7 @@ class Plan < YouVersion::Resource
         raise YouVersion::ResourceError.new(errors)
       end
 
+      #TODO: it probably makes sense for a reading to be it's own class within Plan
       @reading = Hashie::Mash.new()
       @reading.devotional = YouVersion::Resource.i18nize(response.additional_content_html)
       @reading.devotional ||= "<p>" << YouVersion::Resource.i18nize(response.additional_content).gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if response.additional_content
@@ -197,5 +133,77 @@ class Plan < YouVersion::Resource
     end
 
     @reading
+  end
+
+  def day(day, opts = {})
+    reading(day, opts)
+  end
+
+  def title
+    name
+  end
+
+  def description
+    about
+  end
+
+  def length
+    formatted_length
+  end
+
+  def total_days
+    @total_days ||= @attributes.total_days.to_i
+  end
+
+  def days
+    total_days
+  end
+
+  def readings
+    total_days
+  end
+
+  def to_param
+    "#{id}-#{slug}"
+  end
+
+  def ==(compare)
+    #if plan is compared to subscription or vice/versa
+    correct_class = compare.class == Plan || compare.class == Subscription
+
+    correct_class && self.id == compare.id
+  end
+
+  def available_in?(lang_code)
+    lang_key = YvApi::to_api_lang_code(lang_code)
+
+    @attributes["about"].has_key?(lang_key)
+  end
+
+  private
+
+  def self.search(query, params = {})
+    #     Parameters:
+    #     query of what you're wanting to search for
+    #     category  to filter reading plans to (optional)
+    #     total_days  will accept one of the predefined ranges to limit results to '1_day_to_7_days', '1_week_to_1_month', '1_month_to_3_months', '3_months_to_6_months', '6_months_to_1_year', '1_year_to_infinity', it's optional
+    #     language_tag  to filter reading plans to (optional, but highly recommended for best search results)
+    #     sort  the ordering of the results, defaults to 'score' (relevance), also accepts 'total_days'
+    #     page  number of results to return
+    query = '*' if (query == "" || query == nil)
+    params = {query: query, cache_for: 12.hours}.merge!(params.except("query", :query))
+
+    response = YvApi.get("#{api_path_prefix}/search", params) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+        return []
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+
+    list = ResourceList.new
+    list.total = response.total
+    response.reading_plans.each {|data| list << Plan.new(data.merge(:auth => params[:auth]))}
+    list
   end
 end

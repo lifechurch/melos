@@ -108,7 +108,10 @@ class Version
   def self.sample_for(lang, opts={})
     opts[:except] ||= ""
 
-    samples = all_by_language[lang].find_all{|k,v| k != opts[:except]}
+    samples = all_by_language[lang.to_s]
+    return nil if samples.nil?
+    
+    samples = samples.find_all{|k,v| k != opts[:except]}
     sample = nil
 
     until !sample.nil? || samples.empty?
@@ -117,7 +120,7 @@ class Version
       sample = nil if opts[:has_ref] && !sample.include?(opts[:has_ref])
     end
 
-    raise NotAChapterError if sample.nil?
+    return nil if sample.nil?
 
     return sample.osis
   end
