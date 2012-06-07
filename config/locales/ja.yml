@@ -1,6 +1,6 @@
 ---
 ja:
-  now:                                          "いま"
+  now:                                          "現在…"
   celebrating 50MM:                             "アプリのインストール数が5000万に達しました!"
   link:                                         "リンク"
   site search:                                  "YouVersion内の検索"
@@ -130,7 +130,7 @@ ja:
     unlike button text:                         "お気に入りを解除"
   notes:
     loading community:                          "コミュニティーのノートを読み込み中・・・"
-    no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
+    no community notes:                         "選択された聖句に関するコミュニティーノートはありません。ノートを作成するには、聖書リーダー内で聖句を選択し、リーダー上部の「選択箇所」というボタンをクリックしてください。"
     public:                                     "公開"
     private:                                    "非公開"
     draft:                                      "草稿"
@@ -165,7 +165,7 @@ ja:
     choose second version:                      "第二の聖書訳を選択"
     share:                                      "シェアする"
     share now:                                  "すぐにシェアする"
-    selected:                                   "選択された箇所"
+    selected:                                   "選択箇所"
     preferences:                                "設定"
     listen:                                     "音読聖書"
     parallel:                                   "並列表示"
@@ -563,10 +563,10 @@ LifeChurch.tv はYouVersion を無償、個人的、かつ無形の霊的又は�
     information revolution copy:                "過去10年の間に、インターネットもたらした改革により、かつて無い様々な機会が与えられるようになりました。共有、投稿、創造、放送、コミュニケーションといったインターネットが提供する機能により、自分が誰であるのか、自分は何を信じているのかということを、簡単に世界の人びとに伝えることができます。"
     youversion copy:                            "1996年の開始以来、LifeChurch.tvで は、人びとが献身的にキリストに従う者となるよう導くことを目標としています。その中で、私たちは聖書と人びとの日常生活を結びつける新たな方法を探し続けています。その方法も、様々な技術や戦略を取り入れることで、過去何年にも渡って変化を遂げてきました。それでも中核は聖書との関係への焦点であることに変りはなく、人びとが人生のどのような状況にあっても、神様の御言葉は一人ひとりと関係があるということを示し、教えることに努めています。"
     youversion copy 2:                          "YouVersion は、LifeChurch.tv の新しい試みの代表的なものです。私たちは、単に革新的な技術の利用の面でインパクトを与えるツールを作るだけではなく、より重要なことは、人々が聖書と人生の適合性を発見することによって、神様との関係を築く機会を提供しているのです。"
-    partners title:                             "私たちのパートナーへの謝辞"
-    partners text:                              "Without our generous Bible publishing partners, YouVersion simply would not be able to provide our worldwide community with so many Bibles. Many of you have asked how you can thank these vital supporters of YouVersion's mission. You can learn more about them, their ministries, and ways you can support them through the links below."
+    partners title:                             "パートナーへの謝辞"
+    partners text:                              "聖書の出版元とのパートナーシップなくして、YouVersionが世界中の皆様に様々な訳の聖書をご提供することは不可能です。YouVersionの活動に欠かすことのできない、これらのパートナーにお礼の気持ちを伝えたいけど、どうしたらいいでしょうかというご質問を多数の方から承りました。以下のリンクからパートナーについての情報、活動の詳細、貢献方法などをご覧いただけます。"
     translation title:                          "翻訳チーム"
-    learn more:                                 "Learn More"
+    learn more:                                 "詳細"
   press page:
     title:                                      "プレスエリア"
     contact header:                             "プレス用の連絡先"
