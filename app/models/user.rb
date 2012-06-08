@@ -11,6 +11,7 @@ class User < YouVersion::Resource
   attribute :agree
   attribute :verified
   attribute :user_avatar_url
+  attribute :s3_user_avatar_url
   attribute :first_name
   attribute :last_name
   attribute :location
@@ -60,18 +61,31 @@ class User < YouVersion::Resource
 
   def user_avatar_url
     return @ssl_avatar_urls unless @ssl_avatar_urls.nil?
-    
+
     #some calls returning user info don't have avatar URLS or don't have secure paths
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
-    
+
     #we only want to use secure urls
     sizes = ["24x24", "48x48", "128x128", "512x512"]
     hash ={}
     sizes.each do |size|
       hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
     end #TODO: DRY up this mash creation with dup in badge.rb and note.rb
-    
+
     @ssl_avatar_urls = Hashie::Mash.new(hash)
+  end
+
+  def s3_user_avatar_url
+    return @s3_ssl_avatar_urls unless @s3_ssl_avatar_urls.nil?
+    attributes["user_avatar_url"] = self.generate_user_avatar_urls(s3 = true)
+
+    sizes = ["24x24", "48x48", "128x128", "512x512"]
+    hash ={}
+    sizes.each do |size|
+      hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
+    end #TODO: DRY up this mash creation with dup in badge.rb and note.rb
+
+    @s3_ssl_avatar_urls = Hashie::Mash.new(hash)
   end
 
   def to_param
@@ -131,7 +145,7 @@ class User < YouVersion::Resource
         case user
         when Fixnum
           if opts[:auth] && user == opts[:auth].user_id
-            response = YvApi.get("users/view", id_key_for_version => user, :auth => opts[:auth])
+            response = YvApi.get("users/view", id_key_for_version => user, auth: opts[:auth])
           else
             response = YvApi.get("users/view", id_key_for_version => user)
           end
@@ -142,7 +156,7 @@ class User < YouVersion::Resource
         when String
           id_response = YvApi.get("users/user_id", api_version: "2.5", username: user)
           if opts[:auth] && user == opts[:auth].username
-            response = YvApi.get("users/view", id_key_for_version => id_response.user_id, :auth => opts[:auth])
+            response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
           else
             response = YvApi.get("users/view", id_key_for_version => id_response.user_id)
           end
@@ -267,7 +281,7 @@ class User < YouVersion::Resource
   end
 
   # def self.find(id)
-  #   response = YvApi.get('users/view', {:user_id => id, :auth_user_id => :id} ) do |errors|     
+  #   response = YvApi.get('users/view', {user_id: id, auth_user_id: :id} ) do |errors|     
   #     @errors = errors.map { |e| e["error"] }
   #     return false
   #   end
@@ -492,7 +506,7 @@ class User < YouVersion::Resource
 
     subscriptions = ResourceList.new
     subscriptions.total = response.total
-    response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(:auth => auth))}
+    response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(auth: auth))}
 
     subscriptions
   end
@@ -551,12 +565,14 @@ class User < YouVersion::Resource
     timezone ? ActiveSupport::TimeZone[timezone].utc_offset/86400.0 : 0.0
   end
 
-  def generate_user_avatar_urls
+  def generate_user_avatar_urls(s3 = false)
     sizes = ["24x24", "48x48", "128x128", "512x512"]
     hash = {}
+    avatar_path     = Cfg.send("avatar_path#{    s3 ? '_s3' : ''}")
+    ssl_avatar_path = Cfg.send("ssl_avatar_path#{s3 ? '_s3' : ''}")
     sizes.each do |s|
-      hash["px_#{s}"] = Cfg.avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
-      hash["px_#{s}_ssl"] = Cfg.ssl_avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
+      hash["px_#{s}"] = avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
+      hash["px_#{s}_ssl"] = ssl_avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
     end
     return Hashie::Mash.new(hash)
   end

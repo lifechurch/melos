@@ -119,7 +119,7 @@ class UsersController < ApplicationController
 
       cookies.permanent.signed[:b] = user.username
       cookies.permanent.signed[:c] = params[:user][:password]
-      cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+      cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
 
       # Create facebook connection
       #

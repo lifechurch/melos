@@ -7,7 +7,7 @@
 %section.top_section
   %div.clearfix
     %a{href: "#"}
-      %img.avatar_huge{src: @user.user_avatar_url["px_128x128"]}
+      %img.avatar_huge{src: @user.s3_user_avatar_url["px_128x128"]}
     %div
       %h1= @user.name || @user.username
       %ul
