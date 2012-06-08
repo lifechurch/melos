@@ -1,16 +1,16 @@
 class PlansController < ApplicationController
   before_filter :force_login, only: [:start, :update, :settings, :calendar]
   before_filter :set_nav
-  
+
   def index
     if params[:user_id]
-      @user = (params[:user_id] == current_user.username) ? current_user : User.find(params[:user_id])
-      render :action => "index_subscriptions" and return
+      @user = (params[:user_id] == current_user.try(:username)) ? current_user : User.find(params[:user_id])
+      render action: "index_subscriptions" and return
     end
-    
+
     @plan_lang = params[:lang] || I18n.locale.to_s
     @translate_list = params[:translate] == "true"
-    
+
     @plans = Plan.all(params.merge(language_tag: @plan_lang)) rescue []
     @categories = CategoryListing.find(params[:category], language_tag: @plan_lang) rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
@@ -18,11 +18,11 @@ class PlansController < ApplicationController
 
   def show
     @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth) if current_auth
-    
+
     # Get user font and size settings
     @font = cookies['data-setting-font']
     @size = cookies['data-setting-size']
-    
+
     # if user is subscribed
     if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]
       params[:day] ||= @subscription.current_day
@@ -34,19 +34,19 @@ class PlansController < ApplicationController
       @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0 #coerce content page to 1st page if outside range
       @reference = @reading.references[@content_page].ref unless @reading.references.empty?
 
-      render :action => "show_subscribed" and return
-    end  
+      render action: "show_subscribed" and return
+    end
 
     @plan = Plan.find(params[:id])
   end
-  
+
   def users_index
     if params[:plan_id]
       @plan = Plan.find(params[:plan_id])
       @users = @plan.users(page: params[:page])
     end
   end
-  
+
   def update
     if @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
       @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
@@ -57,79 +57,79 @@ class PlansController < ApplicationController
       raise "you can't update a plan to which you aren't subscribed"
     end
   end
-  
-  def start    
+
+  def start
     if @subscription = Subscription.find(params[:plan_id], current_auth.user_id, auth: current_auth)
       redirect_to plan_path(params[:plan_id]), notice: t("plans.already subscribed") and return
     end
-    
+
     Plan.subscribe(params[:plan_id], current_auth)
 
     redirect_to plan_path(params[:plan_id]), notice: t("plans.subscribe successful")
   end
-  
+
   def settings
     @subscription = Subscription.find(params[:plan_id], current_auth.user_id, auth: current_auth)
-    
+
     raise "you can't view a plan's settings unless you're subscribed" if @subscription.nil?
-    
+
     if(params[:unsubscribe] == "true")
       @subscription.destroy
       return redirect_to user_plans_path(current_auth.username), notice: t("plans.unsubscribe successful")
     end
-    
+
     @subscription.catch_up and action = 'catch up' if params[:catch_up] == "true"
     @subscription.restart and action = 'restart' if params[:restart] == "true"
-    
+
     if (params[:make_public] == "true" || params[:make_private] == "true")
       params[:make_public] == "true" ? (@subscription.make_public and action = 'make public') : (@subscription.make_private and action = 'make private')
       anchor = 'privacy'
     end
-    
+
     if(params[:email_delivery])
       if params[:email_delivery] == "false"
         @subscription.disable_email_delivery and action = 'email delivery off'
       else
         action = @subscription.email_delivery? ? 'email delivery updated' : 'email delivery on'
         #TODO: make sure versions with hypens are working
-        @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version) 
+        @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version)
       end
     end
-    
+
     if(params[:send_reminder])
       params[:send_reminder] == "true" ? (@subscription.enable_reminder and action = 'reminder on') : (@subscription.disable_reminder and action = 'reminder off')
       anchor = 'accountability'
     end
-    
+
     if(params[:send_report])
       params[:send_report] == "true" ? (@subscription.add_accountability_user(current_user) and action = 'report on') : (@subscription.remove_all_accountability and action = 'report off')
       anchor = 'accountability'
     end
-    
+
     if(params[:add_accountability_partner])
-        @subscription.add_accountability_user(params[:add_accountability_partner]) 
+        @subscription.add_accountability_user(params[:add_accountability_partner])
         action = 'partner added'
         t_opts = {username: params[:add_accountability_partner]}
         anchor = 'accountability'
     end
-    
+
     if(params[:remove_accountability_partner])
-        @subscription.remove_accountability_user(params[:remove_accountability_partner]) 
-        action = 'partner removed' 
+        @subscription.remove_accountability_user(params[:remove_accountability_partner])
+        action = 'partner removed'
         t_opts = {username: params[:remove_accountability_partner]}
         anchor = 'accountability'
     end
 
-    redirect_to plan_settings_path(@subscription, anchor: anchor), notice: t("plans.#{action} successful", t_opts) if action 
-    
+    redirect_to plan_settings_path(@subscription, anchor: anchor), notice: t("plans.#{action} successful", t_opts) if action
+
   end
-  
+
   def calendar
     @subscription = Subscription.find(params[:plan_id], current_auth.user_id, auth: current_auth)
 
-    raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil? 
+    raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
   end
-  
+
   private
   def set_nav
     @nav = :plans
