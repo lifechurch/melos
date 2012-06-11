@@ -15,15 +15,17 @@ common: &common
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
-  avatar_path: http://avatars.youversion.com/
+  avatar_path: http://d5xlnxqvcdji7.cloudfront.net/users/images/
+  avatar_path_s3: http://static-youversionapi-com.s3.amazonaws.com/users/images/
   ssl_avatar_path: https://d5xlnxqvcdji7.cloudfront.net/users/images/
+  ssl_avatar_path_s3: https://static-youversionapi-com.s3.amazonaws.com/users/images/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
   api_root: api.youversion.com
   api_referer: web-dev.youversion.com
   api_version: "2.4"
   memcache_server: localhost
-  
+
 development:
   <<: *common
 

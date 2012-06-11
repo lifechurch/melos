@@ -119,7 +119,7 @@ class UsersController < ApplicationController
 
       cookies.permanent.signed[:b] = user.username
       cookies.permanent.signed[:c] = params[:user][:password]
-      cookies.permanent[:avatar] = user.user_avatar_url["px_24x24"]
+      cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
 
       # Create facebook connection
       #
@@ -200,10 +200,8 @@ class UsersController < ApplicationController
   end
 
   def update_picture
-    if @user.update_picture(params[:user][:image])
+    if @user.update_picture(params[:user].try(:[], :image))
       flash.now[:notice] = t('users.profile.updated picture')
-    else
-      flash.now[:error] = t("users.profile.#{@user.errors.first.first}")
     end
     render action: "picture"
   end
@@ -397,8 +395,8 @@ class UsersController < ApplicationController
     render partial: "users/highlight_color_swatches", layout: false
   end
 
-  
-private  
+
+private
   def find_user
     user_id = params[:user_id] || params[:id]
     if user_id

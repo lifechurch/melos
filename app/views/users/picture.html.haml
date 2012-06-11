@@ -1,7 +1,16 @@
 - @title = "#{t('users.picture')} | #{@user.name || @user.username}"
 
-%p
-  %img{src: @user.user_avatar_url["px_128x128"]}
+-if @user.errors.any?
+  .form_errors
+    =t("picture_creation form errors")
+    %ul
+      - @user.errors.each do |e|
+        %li= t("users.profile.#{e}")
+
+%img{src: @user.s3_user_avatar_url['px_128x128'] + '?' + rand(1000000).to_s}
+- ['24x24', '48x48', '128x128', '512x512'].each do |s|
+  %img{src: @user.s3_user_avatar_url["px_#{s}"] + '?' + rand(1000000).to_s, style: 'display: none'}
+
 = form_for @user, url: picture_path do |f|
   %p
     = f.label :image, t('users.profile.avatar file')

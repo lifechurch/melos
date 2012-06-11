@@ -157,6 +157,8 @@ GEM
       rake
     highline (1.6.12)
     hike (1.2.1)
+    hooves (0.7)
+      unicorn (> 0)
     http_accept_language (1.0.2)
     httparty (0.8.2)
       multi_json
@@ -350,6 +352,7 @@ DEPENDENCIES
   hashie (~> 1.2.0)
   heroku (~> 2.25)
   heroku_san
+  hooves
   http_accept_language (~> 1.0.2)
   httparty (= 0.8.2)
   jquery-rails (~> 1.0.19)

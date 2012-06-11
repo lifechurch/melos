@@ -62,6 +62,7 @@ group :development do
   # TODO: Add guard-livereload
   gem 'guard-rspec'
   gem 'guard-spork'
+  gem 'hooves'
   gem 'pry'
   gem 'ruby-prof'
   gem 'spork'
