@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:c] = nil
     cookies.permanent[:avatar] = nil
   end
-  def auth_error
+  def auth_error(ex)
     sign_out
     report_exception(ex)
     redirect_to(sign_in_path, flash: {error: t('auth error')})
