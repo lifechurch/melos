@@ -50,7 +50,7 @@ module SiteConfigs
                                 {name: 'Société Biblique de Genève', url: 'http://www.societebiblique.com', image: 'SBG.jpg'}],
                   :"af"     => [{name: 'Bible Society of South Africa', url: 'http://www.bybelgenootskap.co.za/voorblad-artikels/homepage', image: 'BSSA.png'},
                                 {name: 'Christelike Uitgewersmaatskappy (CUM)', url: 'http://www.cumuitgewers.co.za', image: 'CUM.jpg'}],
-                  :"ko"     => [{name: '대한성서공회 / Korean Bible Society', url: 'http://www.bskorea.or.kr.com', image: 'kbs.gif'},
+                  :"ko"     => [{name: '대한성서공회 / Korean Bible Society', url: 'http://www.bskorea.or.kr', image: 'kbs.gif'},
                                 {name: 'Biblica', url: 'http://www.biblica.com', image: 'biblica.png'}],
                   :"nl"     => [{name: 'Biblica', url: 'http://www.biblica.com', image: 'biblica.png'}],
                   :"ja"     => [{name: 'Biblica', url: 'http://www.biblica.com', image: 'biblica.png'}],
