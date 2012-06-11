@@ -18,6 +18,7 @@ end
 Spork.each_run do
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
   include UsersSpecHelper
+  include ConnectionsSpecHelper
   # reload all the models
   Dir["#{Rails.root}/app/models/**/*.rb"].each do |model|
     load model

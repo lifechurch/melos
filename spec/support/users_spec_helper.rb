@@ -6,7 +6,6 @@ module UsersSpecHelper
     rescue
     end
     opts = {email: "#{opts[:username]}@youversion.com", password: "tenders", agree: true, verified: true}.merge opts
-    puts "ensure opts are #{opts}"
     response = User.register(opts)
     response.should be_true
     user = User.authenticate(opts[:username], opts[:password])
