@@ -162,7 +162,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_avatar
-    cookies[:avatar] + "#{controller_name == 'users' && action_name == 'picture' ? '?' + rand(1000000).to_s : ''}"
+    cookies[:avatar] + "#{controller_name == 'users' && action_name == 'picture' ? '?' + rand(1000000).to_s : ''}" if cookies[:avatar]
   end
 
   def current_date
