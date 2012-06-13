@@ -45,10 +45,7 @@ end
 group :test, :development do
   gem 'capybara',       '~> 1.1.2'
   gem 'cucumber-rails', '~> 1.3.0', require: false
-  gem 'ruby-debug19', :require => 'ruby-debug' 
-  #not using debugger gem until we upgrade to ruby 1.9.3
-  #due to debugger-linecache issue with 1.9.2p180
-  #gem 'debugger'
+  gem 'debugger'
   gem 'heroku_san'
   gem 'rspec-cells'
   gem 'rspec-rails'
