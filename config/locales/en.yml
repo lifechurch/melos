@@ -362,6 +362,7 @@ en:
       picture_creation form errors:             "The following error(s) prevented updating your picture:"
       updated picture:                          "Success! You've updated your picture."
       updated notifications:                    "Success! You've updated your notification settings."
+      notifications token error:                "Invalid token, please sign in to edit your notificaiton settings."
       notification errors:                      "The following error(s) prevented updating your notifications:"
       edit:                                     "Edit"
       bio:                                      "Bio"

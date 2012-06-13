@@ -207,7 +207,13 @@ class UsersController < ApplicationController
   end
 
   def notifications
-    @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
+    @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth}) rescue nil
+
+    if @notification_settings.nil?
+      sign_out
+      return redirect_to(sign_in_path(redirect: notifications_path), flash: {error: t('users.profile.notifications token error')})
+    end
+    
     @user = @notification_settings.user
     @me = true
     @selected = :notifications
