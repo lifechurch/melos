@@ -32,7 +32,7 @@ describe Plan do
       end
     end
     describe "without a valid ID" do
-      it "throws an exception for now" do
+      it "should throw an exception for now" do
         invalid_keys = %w(-1, bob_lablahs_law_blog)
         invalid_keys.each do |key|
           Plan.find(key).should raise_error
@@ -151,6 +151,16 @@ describe Plan do
       it "should have the rich content" do 
         @with_video_devo.devotional.should =~ /<iframe/
       end
+    end
+  end
+  
+  describe "#version" do
+    it "should change the version of text returned" do
+      plan = Plan.find('1-robert-roberts')
+      plan.version = 'amp'
+      amp_ref = plan.day(1).references.first.ref
+      plan.version = 'niv'
+      plan.day(1).references.first.ref.should_not == amp_ref
     end
   end
   

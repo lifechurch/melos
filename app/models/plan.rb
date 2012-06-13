@@ -57,6 +57,7 @@ class Plan < YouVersion::Resource
   end
 
   def self.subscribe (plan, user_auth)
+    _auth = user_auth
     opts = {auth: user_auth}
 
     case plan
@@ -68,17 +69,15 @@ class Plan < YouVersion::Resource
       opts[:id] = Plan.find(plan).id
     end
 
-    YouVersion::Resource.post('reading_plans/subscribe_user', opts)
+    response = YouVersion::Resource.post('reading_plans/subscribe_user', opts)
+    
+    Subscription.new(response.merge(auth: _auth))
 
     #EVENTUALLY: Do this correctly with Resource abstraction and on the subscription class(new) and user object(add_subscription) class
   end
 
   def subscribe (user_auth, opts = {})
-    opts = opts.merge!(auth: user_auth)
-    opts[:id] = id
-
-    YouVersion::Resource.post('reading_plans/subscribe_user', opts)
-    #TODO: dry this up to call self.subscribe
+    self.class.subscribe(self, user_auth)
   end
 
   def current_day

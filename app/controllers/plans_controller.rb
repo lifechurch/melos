@@ -49,6 +49,7 @@ class PlansController < ApplicationController
   end
 
   def update
+
     if @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
       @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
 
@@ -91,7 +92,7 @@ class PlansController < ApplicationController
       if params[:email_delivery] == "false"
         @subscription.disable_email_delivery and action = 'email delivery off'
       else
-        action = @subscription.email_delivery? ? 'email delivery updated' : 'email delivery on'
+        action = @subscription.delivered_by_email? ? 'email delivery updated' : 'email delivery on'
         #TODO: make sure versions with hypens are working
         @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version)
       end
