@@ -2,15 +2,13 @@ require 'spec_helper'
 
 describe Subscription do
   before(:all) do
-    #TODO: DRY up this and user_spec.rb before(:all) code with shared helper
-    @params = { email: "testuser@youversion.com", username: "testuser", password: "tenders", agree: TRUE, verified: TRUE, locale: "en_US" }
-    @user = ensure_user({username: "testuser", password: "tenders"})
-    @auth = Hashie::Mash.new({user_id: @user.id, username: "testuser", password: "tenders"})
-    
-    @params_friend = { email: "testuser_friend@youversion.com", username: "testuser_friend", password: "tenders", agree: TRUE, verified: TRUE, locale: "en_US" }
-    @user_friend = ensure_user({username: "testuser_friend", password: "tenders"})
-    @auth_friend = Hashie::Mash.new({user_id: @user_friend.id, username: "testuser_friend", password: "tenders"})
-    
+
+    @user = ensure_user
+    @auth = @user.auth
+
+    @user_friend = ensure_user
+    @auth_friend = @user_friend.auth
+
     @plan = Plan.find('1-robert-roberts')
   end
   after(:each) do
@@ -36,7 +34,7 @@ describe Subscription do
       end
     end
   end
-  
+
   describe "#find" do
     describe "without auth" do
       it "should return all public subscription" do
@@ -55,7 +53,7 @@ describe Subscription do
       end
     end
   end
-  
+
   describe "#unsubscribe" do
     before(:each) do
       @subscription = Plan.subscribe(@plan, @auth)
@@ -67,7 +65,7 @@ describe Subscription do
       expect { @subscription.unsubscribe }.to change{ @user.subscribed_to? @plan }
     end
   end
-  
+
   describe "#reading" do
     it "should have no completions upon subscription" do
       Plan.subscribe(@plan, @auth).day(1).references.each do |ref|
@@ -75,7 +73,7 @@ describe Subscription do
       end
     end
   end
-  
+
   describe "#set_ref_completion" do
     before(:each) do
       @subscription = Plan.subscribe(@plan, @auth)
@@ -98,13 +96,13 @@ describe Subscription do
         @subscription.set_ref_completion(1, r.ref.osis, true)
       end
       @subscription.set_ref_completion(1, 'gen.1.kjv', false)
-      
+
       @subscription.day(1).references.each_with_index do |r,i|
         r.should be_completed unless i == 0
       end
     end
   end
-  
+
   describe "#last_completed_day" do
     it "should move one day forward if I complete all" do
       @subscription = Plan.subscribe(@plan, @auth)
@@ -115,7 +113,7 @@ describe Subscription do
       }.to change{ @subscription.last_completed_day }.from(nil).to(1)
     end
   end
-  
+
   describe "#catch_up" do
     it "should move one day forward if I'm ahead" do
       @subscription = Plan.subscribe(@plan, @auth)
@@ -137,10 +135,10 @@ describe Subscription do
     end
     #This tests my thin abstraction, anything more would be testing API logic
   end
-  
+
   describe "privacy settings" do
     subject { Plan.subscribe(@plan, @auth) }
-    
+
     it "should be public upon subscription" do
       subject.should be_public
     end
@@ -152,10 +150,10 @@ describe Subscription do
       expect { subject.make_public }.to change{ subject.public? }.to(true)
     end
   end
-  
+
   describe "email delivery settings" do
     subject { Plan.subscribe(@plan, @auth) }
-    
+
     it "should be off for new subscription" do
       subject.should_not be_delivered_by_email
     end
@@ -188,10 +186,10 @@ describe Subscription do
         }.to change{ subject.email_delivery_time_range }.to('afternoon')
     end
   end
-  
+
   describe "accountability" do
     subject { Plan.subscribe(@plan, @auth) }
-    
+
     it "should be off for new subscription" do
       subject.should have(0).accountability_partners
     end
@@ -209,10 +207,10 @@ describe Subscription do
       subject.accountability_partners.first.id.to_s.should == @user.id.to_s
     end
   end
-  
+
   describe "reminder" do
     subject { Plan.subscribe(@plan, @auth) }
-    
+
     it "should be off for new subscription" do
       subject.reminder_enabled?.should_not be_true
     end
@@ -224,7 +222,7 @@ describe Subscription do
       expect { subject.disable_reminder }.to change{ subject.reminder_enabled? }.to(false)
     end
   end
-  
+
   describe "making progress" do
     describe "#progress" do
       it "should increase when you complete a day's references" do
@@ -240,7 +238,7 @@ describe Subscription do
     describe "#day_statuses" do
       it "should mark a day as complete when a day's refs are completed" do
         subscription = Plan.subscribe(@plan, @auth)
-        expect { 
+        expect {
           subscription.day(1).references.each do |r|
             subscription.set_ref_completion(1, r.ref.osis, true)
           end
@@ -248,7 +246,7 @@ describe Subscription do
       end
       it "should add a ref to the completed refs when completed" do
         subscription = Plan.subscribe(@plan, @auth)
-        expect { 
+        expect {
             subscription.set_ref_completion(1, 'gen.1.kjv', true)
         }.to change{ subscription.day_statuses.first.references_completed }.from([])
         subscription.day_statuses.first.completed.should_not be_true
@@ -260,7 +258,7 @@ describe Subscription do
       end
       it "should be today when I complete today" do
         subscription = Plan.subscribe(@plan, @auth)
-        expect { 
+        expect {
           subscription.day(1).references.each do |r|
             subscription.set_ref_completion(1, r.ref.osis, true)
           end
@@ -273,16 +271,16 @@ describe Subscription do
       end
       it "should be today when I complete today" do
         subscription = Plan.subscribe(@plan, @auth)
-        expect { 
+        expect {
           subscription.day(1).references.each do |r|
             subscription.set_ref_completion(1, r.ref.osis, true)
           end
         }.to change{ subscription.last_completed_day }.to(1)
       end
     end
-    
+
   end
-  
+
   describe "dates" do
     subject{ Plan.subscribe(@plan, @auth) }
     it "should have the start" do

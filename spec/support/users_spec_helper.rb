@@ -1,11 +1,13 @@
 module UsersSpecHelper
   def ensure_user(opts = {})
+    opts[:username] ||= "testuser#{rand(10000)}"
+    opts[:password] ||= 'tenders'
     begin
       user = User.authenticate(opts[:username], opts[:password])
       user.destroy
     rescue
     end
-    opts = {email: "#{opts[:username]}@youversion.com", password: "tenders", agree: true, verified: true}.merge opts
+    opts = {email: "#{opts[:username]}@youversion.com", agree: true, verified: true, locale: "en_US"}.merge opts
     response = User.register(opts)
     response.should be_true
     user = User.authenticate(opts[:username], opts[:password])
