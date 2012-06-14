@@ -36,8 +36,6 @@ class User < YouVersion::Resource
 
   has_many_remote :badges
 
-  api_version "2.5"
-
   def self.update_path
     "users/update_profile"
   end
@@ -114,6 +112,8 @@ class User < YouVersion::Resource
         :id
       when "2.5"
         :id
+      when "3.0"
+        :id
       else
         :user_id
       end
@@ -127,17 +127,6 @@ class User < YouVersion::Resource
         response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
         new(response)
       end
-    end
-
-    def id_key_for_version
-        case Cfg.api_version
-        when "2.3"
-          :user_id
-        when "2.4"
-          :id
-        else
-          :user_id
-        end
     end
 
     def find(user, opts = {})
@@ -159,9 +148,9 @@ class User < YouVersion::Resource
               response = YvApi.get("users/view", id_key_for_version => user, auth: opts[:auth])
             else
               response = YvApi.get("users/view", id_key_for_version => user)
-            end 
+            end
           else
-            id_response = YvApi.get("users/user_id", api_version: "2.5", username: user)
+            id_response = YvApi.get("users/user_id", username: user)
             if opts[:auth] && user == opts[:auth].username
               response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
             else
@@ -174,7 +163,7 @@ class User < YouVersion::Resource
     end
 
     def destroy(auth, &block)
-      post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth, api_version: "2.5"}, &block)
+      post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth}, &block)
     end
 
   end
@@ -211,7 +200,7 @@ class User < YouVersion::Resource
   end
 
   def update_email(email)
-    response = YvApi.post("users/update_profile", email: email, api_version: "2.3", auth: self.auth) do |errors|
+    response = YvApi.post("users/update_profile", email: email, auth: self.auth) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
@@ -289,7 +278,7 @@ class User < YouVersion::Resource
   end
 
   # def self.find(id)
-  #   response = YvApi.get('users/view', {user_id: id, auth_user_id: :id} ) do |errors|     
+  #   response = YvApi.get('users/view', {user_id: id, auth_user_id: :id} ) do |errors|
   #     @errors = errors.map { |e| e["error"] }
   #     return false
   #   end

@@ -25,7 +25,7 @@ class FacebookConnection < YouVersion::Connection::Base
   end
 
   def find_friends(opts = {})
-    opts = {api_version: "2.5", connection_type: "fb"}.merge(opts)
+    opts = {connection_type: "fb"}.merge(opts)
     face = Koala::Facebook::API.new(self.data[:oauth_token] || self.data[:access_token])
     response = face.get_connections("me", "friends")
 

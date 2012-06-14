@@ -22,9 +22,9 @@ common: &common
   ssl_avatar_path_s3: http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
-  api_root: api.youversion.com
-  api_referer: web-dev.youversion.com
-  api_version: "2.4"
+  api_root: youversionapistaging.com
+  api_referer: web-dev.youversionapistaging.com
+  api_version: "3.0"
   memcache_server: localhost
 
 development:
@@ -32,24 +32,23 @@ development:
 
 test: &test
   <<: *common
-  api_root: api.youversion.com
-  api_referer: web-testing.youversion.com
-  api_version: "2.4"
-  memcache_server: localhost
+  # api_root: youversionapistaging.com
+  # api_referer: web-testing.youversion.com
+  # api_version: "3.0"
+  # memcache_server: localhost
 
 staging:
   <<: *common
   <<: *test
-  api_root: api.youversion.com
-  api_referer: web-staging.youversion.com
+  api_root: youversionapi.com
+  api_referer: web-staging.youversionapi.com
   memcache_server: memcache.youversion.com
   memcache_server: localhost
 
 production: &production
   <<: *common
-  api_root: api.youversion.com
-  api_referer: web.youversion.com
-  api_version: "2.4"
+  api_root: youversionapi.com
+  api_referer: web.youversionapi.com
   memcache_server: memcache.youversion.com
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"

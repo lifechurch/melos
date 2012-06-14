@@ -11,10 +11,8 @@ class YvApi
 
   def self.get(path, opts={}, &block)
     auth_from_opts!(opts)
-    base = get_base_url!(opts)
-    path = clean_up(path)
     timeout = opts.delete(:timeout)
-    resource_url = base + path
+    resource_url = get_resource_url!(path, opts)
     opts = clean_up_opts(opts)
     Rails.logger.apc "** YvApi.get: Calling #{resource_url} with query:", :info
     Rails.logger.apc opts, :info
@@ -65,10 +63,8 @@ class YvApi
 
   def self.post(path, opts={}, &block)
     auth_from_opts!(opts)
-    base = get_base_url!(opts)
-    path = clean_up(path)
     timeout = opts.delete(:timeout)
-    resource_url = base + path
+    resource_url = get_resource_url!(path, opts)
     opts = clean_up_opts(opts)
 
     Rails.logger.apc "** YvApi.post: Calling #{resource_url} with body: ", :info
@@ -122,12 +118,6 @@ class YvApi
     basic_auth a.username, a.password if a
   end
 
-  def self.clean_up(path)
-    path = "/" + path unless path.match(/^\//)
-    path += ".json" unless path.match(/\.json$/)
-    return path
-  end
-
   def self.clean_up_opts(opts)
     opts[:language_tag] = to_api_lang_code(opts[:language_tag]) if opts[:language_tag]
     opts[:language_iso] = to_api_lang_code(opts[:language_iso]) if opts[:language_iso]
@@ -135,13 +125,31 @@ class YvApi
     return opts
   end
 
-  def self.get_base_url!(opts)
-    api_version = opts.delete(:api_version)
-    use_secure = opts.delete(:secure)
+  def self.get_resource_url!(path, opts)
+    #/likes.youversionapi.com/3.0/view.json
+    get_protocol(path) + '://' + get_host!(opts, path) + get_path!(path)
+  end
+
+  def self.get_protocol(path)
     # Set the request protocol
-    protocol = use_secure ? 'https' : 'http'
-    # Set the base URL
-    base = (protocol + "://" + Cfg.api_root + "/" + (api_version || Cfg.api_version))
+    case path
+      when /(bible|audio-bible)\//
+        'http'
+      else
+        'https'
+    end
+  end
+
+  def self.get_host!(opts, path)
+    #/likes.youversionapi.com/3.0
+    path.match(/(.+)\/.*/)[1] + "." + Cfg.api_root + "/" + (opts.delete(:api_version) || Cfg.api_version)
+  end
+
+  def self.get_path!(path)
+    _path = path.match(/.+\/(.*)/)[1]
+    _path = "/" + _path unless _path.match(/^\//)
+    _path += ".json" unless _path.match(/\.json$/)
+    _path
   end
 
   def self.api_response_or_rescue(response, block, opts = {})

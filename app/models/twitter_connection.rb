@@ -21,7 +21,7 @@ class TwitterConnection < YouVersion::Connection::Base
   end
 
   def find_friends(opts = {})
-    opts = {api_version: "2.5", connection_type: "tw"}.merge(opts)
+    opts = {connection_type: "tw"}.merge(opts)
     twit = Grackle::Client.new(auth: {consumer_key: data[:key], consumer_secret: data[:secret], token: data[:oauth_token], token_secret: data[:oauth_token_secret], type: :oauth})
     response = twit.friends.ids.json? user_id: self.data[:user_id], cursor: -1
     opts[:connection_user_ids] = response.ids
@@ -37,6 +37,5 @@ class TwitterConnection < YouVersion::Connection::Base
   def nickname
     '@' + data.screen_name
   end
-
 end
 

@@ -110,7 +110,7 @@ class Version
 
     samples = all_by_language[lang.to_s]
     return nil if samples.nil?
-    
+
     samples = samples.find_all{|k,v| k != opts[:except]}
     sample = nil
 
