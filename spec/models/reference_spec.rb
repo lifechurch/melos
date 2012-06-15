@@ -22,54 +22,59 @@ describe Reference do
   end
 
   describe "#valid?" do
-    describe "with a valid reference string" do 
+    describe "with a valid reference string" do
       valid_refs = %w(gen.1 gen.1.1 gen.1.1-3 gen.1.kjv gen.1.1.kjv gen.1.1-3.kjv john.1.1.books-eng)
       valid_refs.each do |ref|
-        specify "#{ref} should be valid" do 
+        specify "#{ref} should be valid" do
           Reference.new(ref).should be_valid
         end
       end
     end
     describe "with an invalid reference string" do
-      invalid_refs = %w(gen gen.100 gen.1.100 gen.1.books-eng gen.1.invalid gen.1.1.invalid gen.1.1-3.invalid gen.1.1.books-eng)
+      invalid_refs = %w(gen.100 gen.1.100 gen.1.books-eng gen.1.invalid gen.1.1.invalid gen.1.1-3.invalid gen.1.1.books-eng)
       invalid_refs.each do |ref|
         specify "#{ref} should be invalid" do
           Reference.new(ref).should_not be_valid
         end
       end
-      
+
       it "gen.1.1-100 should be invalid" do
         pending "reference rewrite to pull verses and ranges from chapters"
         Reference.new('gen.1.1-100').should_not be_valid
       end
+
+      it "gen should be invalid" do
+        pending "reference rewrite to pull verses and ranges from chapters"
+        Reference.new('gen').should_not be_valid
+      end
     end
   end
-  
+
   describe "#book" do
     it "should be the correct book" do
       @gen_1_2_kjv_ref.book == 'Genesis'
     end
   end
-  
+
   describe "#chapter" do
     it "should be the correct chapter" do
       @gen_1_2_kjv_ref.chapter == 1
     end
   end
-  
+
   describe "#verse" do
     it "should be the correct verse" do
       @gen_1_2_kjv_ref.verse == 2
     end
   end
-  
+
   describe "#version" do
     it "should be the correct version" do
       @gen_1_2_kjv_ref.version == 'KJV'
     end
   end
 
-  
+
   describe "#merge" do
     it "should give a new reference with the argument merged into the old one" do
       @gen_1_1_kjv_ref.merge(book: "exod").osis.should == "exod.1.1.kjv"
@@ -107,7 +112,7 @@ describe Reference do
       @gen_1_kjv_ref.ref_string.should =~ / 1$/
     end
     it "should give the verse" do
-      @gen_1_1_kjv_ref.ref_string.should =~ /:1$/      
+      @gen_1_1_kjv_ref.ref_string.should =~ /:1$/
     end
     it "should not give the version" do
       @gen_1_1_kjv_ref.ref_string.should_not =~ /(KJV|King)/i
@@ -126,7 +131,7 @@ describe Reference do
       @gen_1_1_kjv_ref.raw_hash.should == {book: "gen", chapter: 1, verse: 1, version: "kjv"}
     end
   end
-  
+
   describe "#hash" do
     it "should give a unique hash" do
       @gen_1_1_kjv_ref.hash.should_not == @gen_1_kjv.hash
@@ -134,7 +139,7 @@ describe Reference do
     it "should give the same hash for the same verse" do
       @gen_1_1_kjv_ref.hash.should == Reference.new("gen.1.1.kjv").hash
     end
-    
+
   end
 
   describe "to_param" do
@@ -180,7 +185,7 @@ describe Reference do
       pending "reference rewrite will show how to fully test this"
     end
   end
-  
+
   describe "#previous" do
     it "should be the previous chapter reference" do
       Reference.new("gen.2.kjv").previous.should == @gen_1_kjv_ref
@@ -189,7 +194,7 @@ describe Reference do
       @gen_1_kjv_ref.previous.should be_nil
     end
   end
-  
+
   describe "#next" do
     it "should be the next chapter reference" do
       @gen_1_kjv_ref.next.should == Reference.new("gen.2.kjv")
@@ -198,7 +203,7 @@ describe Reference do
       Reference.new("rev.22.kjv").next.should be_nil
     end
   end
-  
+
   describe "#short_link" do
     it "should be a link to bible.us" do
       @gen_1_kjv_ref.short_link.should =~ %r(^http://bible.us/)
@@ -214,31 +219,31 @@ describe Reference do
       @gen_1_kjv_ref.human.should =~ / 1$/
     end
     it "should give the verse" do
-      @gen_1_1_kjv_ref.human.should =~ /:1$/      
+      @gen_1_1_kjv_ref.human.should =~ /:1$/
     end
     it "should not give the version" do
       @gen_1_1_kjv_ref.human.should_not =~ /(KJV|King)/i
       @gen_1_kjv_ref.human.should_not =~ /(KJV|King)/i
     end
   end
-  
+
   describe "#is_chapter" do
-    it "should be true for a chapter ref" do 
+    it "should be true for a chapter ref" do
       @gen_1_kjv_ref.is_chapter?.should be_true
       #TODO: make this predicate .chapter? instead
     end
-    it "should be false for a full ref" do 
+    it "should be false for a full ref" do
       @gen_1_1_kjv_ref.is_chapter?.should_not be_true
     end
   end
-  
+
   describe "osis representations" do
     it "should give an osis string" do
       @gen_1_1_kjv_ref.osis.should == "gen.1.1.kjv"
     end
     it "should give an ossis string without a version" do
       @gen_1_1_kjv_ref.osis_noversion.should == "gen.1.1"
-    end    
+    end
     it "should give an osis string with only the chapter" do
       @gen_1_1_kjv_ref.osis_book_chapter.should == "gen.1"
     end
@@ -255,7 +260,7 @@ describe Reference do
       Reference.new("gen.1.1.kjv").copyright.should be_nil
     end
   end
-  
+
   describe "#{}verses_string" do
     it "should give a csv of the verses in a ranged reference" do
       Reference.new('gen.1.1-5').verses_string.should == '1,2,3,4,5'
@@ -263,9 +268,9 @@ describe Reference do
     it "should give a csv of the verses in a comma separated reference" do
       Reference.new('gen.1.1,3-5').verses_string.should == '1,3,4,5'
     end
-    
+
   end
-  
+
   describe "#audio" do
     it "should contain a link to an mp3" do
       @gen_1_kjv_ref.audio.url.should =~ /mp3/

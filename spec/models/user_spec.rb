@@ -51,7 +51,7 @@ describe User do
 
   describe ".find" do
     before :all do
-      @new_user = ensure_user({username: "testuser12312", password: "tenders"})
+      @new_user = ensure_user
     end
 
     it "finds a user by their id" do
@@ -63,8 +63,8 @@ describe User do
     end
 
     it "finds itself" do
-      puts User.find(@new_user.id, auth: Hashie::Mash.new({user_id: @new_user.id, username: @new_user.username, password: "tenders"})).email.should_not be_nil
-      puts User.find(@new_user.username, auth: Hashie::Mash.new({user_id: @new_user.id, username: @new_user.username, password: "tenders"})).email.should_not be_nil
+      User.find(@new_user.auth.user_id, {auth: @new_user.auth}).email.should_not be_nil
+      User.find(@new_user.username, {auth: @new_user.auth}).email.should_not be_nil
     end
 
     it "finds a user by their username" do
@@ -75,11 +75,10 @@ describe User do
 
   describe "#recent_activity" do
     it "returns objects created by the user" do
-      pending "Need to fix bookmarks and notes"
-      Bookmark.new(reference: "gen.1.1.asv", title: "community bookmark", auth: @auth).save.should be_true
+      Bookmark.new(references: "gen.1.1.asv", title: "community bookmark", auth: @auth).save.should be_true
       Note.new(reference: "gen.1.1.asv", title: "community note", content: "note", auth: @auth).save.should be_true
       re_act = @testuser.recent_activity
-      re_act.each { |a| a.class.should be_in [Note, User, Bookmark]  }
+      re_act.each { |a| a.class.should be_in [Note, User, Bookmark, Badge]  }
     end
   end
 
@@ -89,20 +88,20 @@ describe User do
   describe "updating email and password" do
     ## WARNING, THESE TESTS BREAK EVERYTHING
     before :all do
-      @confused_1 = ensure_user({username: "testuser12342222", password: "tenders"})
       # This is tied to an account of the same name, but the password keeps
       # getting reset, so we can't log in to it.
-      @confused_email = "testuser123428@youversion.com"
     end
     it "should be able to change their email address" do
+      @confused_1 = ensure_user({username: "testuser12342222", password: "tenders"})
       @confused_1.update_email("new_user@youversion.com").should be_true
       @confused_1.update_email("foo").should be_false
     end
 
-    # it "should request a password change" do
-    #   User.forgot_password(@confused_email).should be_true
-    #   User.forgot_password("foo").should be_false
-    # end
+    it "should request a password change" do
+      @whoami = ensure_user
+      User.forgot_password(@whoami.email).should be_true
+      User.forgot_password("foo").should be_false
+    end
   end
 
   describe "following and followers" do
@@ -135,14 +134,18 @@ describe User do
 
     it "should list all of the users a user is following" do
       @testuser.following.first.should == @testuser_2
+      @testuser.all_following.first.should == @testuser_2.id.to_i
       @testuser.following_user_id_list.should == [@testuser_2.username]
       @testuser_3.following.should == []
+      @testuser_3.all_following.should == []
     end
 
     it "should list all of the users following a user" do
       @testuser.followers.first.should == @testuser_2
+      @testuser.all_followers.first.should == @testuser_2.id.to_i
       @testuser.follower_user_id_list.should == [@testuser_2.id.to_i]
       @testuser_3.followers.should == []
+      @testuser_3.all_followers.should == []
     end
   end
 
@@ -176,12 +179,83 @@ describe User do
     end
 
     it "should return info about itself" do
-      puts @lotsa_info.user_avatar_url.should be_a Hashie::Mash
-      puts @lotsa_info.s3_user_avatar_url.should be_a Hashie::Mash
-      puts @lotsa_info.to_param.should == "testuser-lotsainfo"
-      puts @lotsa_info.website_url.should == "http://www.youversion.com"
-      puts @lotsa_info.website_human.should == "youversion.com"
+      @lotsa_info.user_avatar_url.should be_a Hashie::Mash
+      @lotsa_info.s3_user_avatar_url.should be_a Hashie::Mash
+      @lotsa_info.to_param.should == "testuser-lotsainfo"
+      @lotsa_info.website_url.should == "http://www.youversion.com"
+      @lotsa_info.website_human.should == "youversion.com"
+      @lotsa_info.name.should == "foo bar"
+      @lotsa_info.zip_code.should == "78759"
+      @lotsa_info.zip.should == "78759"
+      puts @lotsa_info.configuration.should have_key(:highlight_colors)
 
+    end
+  end
+
+  describe "avatars" do
+    it "should upload a new avatar" do
+      @file = ActionDispatch::Http::UploadedFile.new({
+        :filename => 'dog.png',
+        :type => 'image/png',
+        :tempfile => File.new("#{Rails.root}/spec/models/fixtures/files/dog.png")
+  })
+      puts @testuser.update_picture(@file)
+      puts @testuser.errors.full_messages
+    end
+  end
+
+  describe "notifications token" do
+    it "should find a notification token" do
+      @testuser.notifications_token.should be_a String
+    end
+  end
+
+  describe "user content" do
+    before :all do
+      @busy_user = ensure_user
+      @boring_user = ensure_user
+      Note.new({title: "My New Note", content: "Some Content", reference: "gen.2.1.asv", user_status: "public", auth: @busy_user.auth }).save
+      Bookmark.new({auth: @auth, references: "matt.1.3.esv,matt.1.4.esv,matt.1.10.esv", title: "Begettings", username: @busy_user.auth}).save
+      Device.new({vendor: "Apple", model: "iPhone 5", os: "iOS 6", device_id: "1232313323314", auth: @busy_user.auth}).save
+      @busy_user = connect_facebook(@busy_user)
+
+    end
+
+    it "should list recent activity" do
+      @busy_user.recent_activity.should be_an Array
+      @busy_user.recent_activity.first.class.should be_in [Note, Bookmark, Badge]
+      @boring_user.recent_activity.should == []
+    end
+
+    it "should list notes" do
+      @busy_user.notes.should be_a ResourceList
+      @boring_user.notes.should == []
+    end
+
+    it "should list bookmarks" do
+      @busy_user.bookmarks.should be_a ResourceList
+      @boring_user.bookmarks.should == []
+    end
+
+    it "should list likes" do
+      Like.new(note_id: @busy_user.notes.first.id, auth: @testuser.auth).save
+      @testuser.likes.first.should be_a Like
+    end
+
+    it "should list devices" do
+      @busy_user.devices.first.should be_a Device
+    end
+
+    it "should list connections" do
+      @busy_user.connections["facebook"].should_not be_nil
+    end
+
+    it "should give a timezone" do
+      @busy_user.utc_date_offset.should_not be_nil
+    end
+
+    it "should return highlight colors" do
+      @busy_user.highlight_colors.should be_an Array
     end
   end
 
