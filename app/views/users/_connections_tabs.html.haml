@@ -12,7 +12,7 @@
 #connection_info
   - if @user.connections[@show]
     %p
-      = t('connected as user', connection: t(@show), username: @user.connections[@show].data.screen_name)
+      = t('connected as user', connection: t(@show), username: @username)
       %span.confirm
         %a{:href => delete_connection_path(@show.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", :rel => "nofollow"}= t('remove connection')
     %p= t('connection users', connection: t(@show)) unless @users.empty?
