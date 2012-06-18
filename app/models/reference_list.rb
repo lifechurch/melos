@@ -21,9 +21,9 @@ class ReferenceList
   # Probably not.
   # Yes, we do (EP), see Subscriptions:set_ref_completion
   def <<(*args)
-    args.map do |r| 
+    args.map do |r|
       raise "Reference Lists can only consist of Reference Objects" if r.class != Reference
-      
+
       @references << Reference.new(r.osis, self.version)
     end
   end
@@ -47,8 +47,6 @@ class ReferenceList
           ref
         when String
           Reference.new(ref.to_osis_string.downcase, self.version)
-        when Hashie::Mash
-          Reference.new(ref, self.version)
         end
       end
     when String
@@ -69,10 +67,10 @@ class ReferenceList
       end
       osis
     end
-    
+
     refs.join(join_str)
   end
-  
+
   def valid?
     @references.select {|r| r.valid?}.length == length
   end

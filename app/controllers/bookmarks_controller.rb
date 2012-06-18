@@ -49,9 +49,9 @@ class BookmarksController < ApplicationController
     @bookmark.auth = current_auth
 
     if @bookmark.save
-      :ruby 
+      :ruby
         ref_hash = params[:bookmark][:reference].to_osis_hash
-        ref_hash = ref_hash.except(:verse) if ref_hash[:verse].is_a?(Fixnum) #TODO: don't just temporarily avoid modal popup with this hack (get modal: "false" to work below?)
+        ref_hash = ref_hash.except(:verses) if ref_hash[:verses].is_a?(Fixnum) #TODO: don't just temporarily avoid modal popup with this hack (get modal: "false" to work below?)
       return redirect_to bible_path(Reference.new(ref_hash), modal: "false"), notice: t('bookmarks.successfully created')
     else
       render action: "new"

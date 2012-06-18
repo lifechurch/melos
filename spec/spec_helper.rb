@@ -4,7 +4,6 @@ SimpleCov.start 'rails'
 require 'rubygems'
 require 'spork'
 
-
 ENV["RAILS_ENV"] = 'test'
 Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
@@ -13,7 +12,7 @@ Spork.prefork do
   RSpec.configure do |config|
     config.mock_with :rspec
   end
-  
+
 end
 Spork.each_run do
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -25,6 +24,10 @@ Spork.each_run do
   end
 end
 
+RSpec.configure do |c|
+  c.filter_run :only => true
+  c.run_all_when_everything_filtered = true
+end
 
 module ::RSpec::Core
   class ExampleGroup

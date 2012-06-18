@@ -4,9 +4,9 @@
 %article
   %h1= t("bible versions")
   %ul
-    - @versions.each do |k, v|
+    - @versions_by_lang.each do |lang, versions|
       %li
-        = @languages[k]
+        = lang[:human]
         %ul
-          - v.each do |kk, vv|
-            %li= link_to vv, version_path(vv)
+          - versions.each do |id, version|
+            %li= link_to version.title , version_path(version)

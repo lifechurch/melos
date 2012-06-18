@@ -1,8 +1,7 @@
 class VersionsController < ApplicationController
 
   def index
-    @versions = Version.all_by_language
-    @languages = Version.languages
+    @versions_by_lang = Version.all_by_language
   end
 
   def show

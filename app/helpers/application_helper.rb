@@ -15,13 +15,21 @@ module ApplicationHelper
   end
 
   def bible_path(ref=nil, opts={})
-    ref = last_read || Reference.new(book: "john", chapter: "1", version: current_version) if ref.nil?
-    reference_path(ref.osis, opts)
+    ref = last_read || default_reference if ref.nil?
+    reference_path(ref, opts)
   end
 
   def bible_url(ref=nil, opts={})
-    ref = last_read || Reference.new(book: "john", chapter: "1", version: current_version) if ref.nil?
-    reference_url(ref.osis, opts)
+    ref = last_read || default_reference if ref.nil?
+    reference_url(ref, opts)
+  end
+
+  def parse_ref_param(ref_param)
+    YvApi::parse_reference_string(ref_param)
+  end
+
+  def default_reference
+    Reference.new(book: "john", chapter: "1", version: current_version) rescue Reference.new('JHN.1', version: @site.default_version)
   end
 
   def external_url(host, default_locale_path='', locale_paths={})

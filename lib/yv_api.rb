@@ -16,16 +16,14 @@ class YvApi
     opts = clean_up_opts(opts)
     Rails.logger.apc "** YvApi.get: Calling #{resource_url} with query:", :info
     Rails.logger.apc opts, :info
-    if (resource_url == "http://api.yvdev.com/2.3/bible/verse.json")
-      calling_method = caller.first.match(/`(.*)'$/)[1]
-    end
+
     # If we should cache, try pulling from cache first
     if cache_length = opts[:cache_for]
       cache_key = [path, opts.except(:cache_for).sort_by{|k,v| k.to_s}].flatten.join("_")
-      Rails.logger.apc "*** cache_key is #{cache_key}", :debug
+      Rails.logger.apc "*** cache fetch for key: #{cache_key}", :debug
       get_start = Time.now.to_f
       response = Rails.cache.fetch cache_key, expires_in: cache_length do
-        Rails.logger.apc "*** cache miss for #{cache_key}", :debug
+        Rails.logger.apc "*** cache miss for key: #{cache_key}", :debug
         # No cache hit; ask the API
         begin
           response = httparty_get(resource_url, timeout: timeout, query: opts.except(:cache_for))
@@ -100,6 +98,34 @@ class YvApi
     # ["de","en","es","fr","ko","nl","no","pl","pt","ru","sk","sv","zh_CN", "zh_TW"]}, # API options for 2.4 plans 3/26/12
     lang_code = lang_code.gsub("pt", "pt-BR")
     lang_code = lang_code.gsub("_", "-")
+  end
+
+  def self.get_usfm_version(osis_version)
+    Cfg.osis_usfm_hash[:versions][osis_version]
+  end
+
+  def self.get_usfm_book(osis_book)
+    Cfg.osis_usfm_hash[:books][osis_book]
+  end
+
+  def self.usfm_delimeter
+    "+"
+  end
+
+  def self.parse_reference_string(ref_str)
+    re =  /^
+            \s*
+            ([1-3]? \s* [A-Za-z]+)                            #book
+            \s*
+            (?:(?:[:\.])(\d+))?                               #optional chapter
+            \s*
+            (?:(?:[:\.]) ([\d\-,\s]+))?                       #optional verse(s)
+            \s*
+            (?: (?:\.) ((?: \d+\-?)? (?: [a-zA-Z_\-]+)?) )?   #optional version
+          $/x
+    matches = ref_str.match(re)
+
+    {book: matches[1], chapter: matches[2], verses: matches[3], version: matches[4]}
   end
 
   private

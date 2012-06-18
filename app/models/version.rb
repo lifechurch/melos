@@ -1,49 +1,77 @@
-class Version
-  @@versions_api_data = nil
-  @@books_api_data = {}
-  @@info_api_data = {}
-  @@versions = {}
-  @@books = {}
-  @@version_books = {}
-  @@all_by_language = {}
-  @@languages = {}
+class Version < YouVersion::Resource
+
+attribute :id
+attribute :title
+attribute :abbreviation
+attribute :audio
+
   def self.all(lang = "")
-    if lang == ""
-      versions
+    iso_3 = case lang
+    when ""
+      return versions
+    when Hash
+      lang.iso.to_s
     else
-      versions.select { |k, v| v.language.iso == lang.to_s }
+      lang.to_s
     end
+
+    versions.select { |k, v| v.language.iso.to_s == iso_3 }
   end
 
   def self.find(version)
-    raise NotAVersionError if (ver = versions[version]).nil?
+    id = case version
+      when /\d+/
+        version.to_i
+      when /(?<id>\d+)-.*/
+        $~[:id].to_i
+      else
+        version
+    end
 
+    ver = versions[id]
+    raise NotAVersionError if ver.nil?
     ver
   end
 
   def self.languages
-    Hash[*Version.all.group_by { |k, v| v.language}.keys.each {|a| a.to_a}.map {|h| h.to_a.flatten - ["iso", "human"]}.flatten]
+    return @languages unless @languages.nil?
+
+    @languages = Hashie::Mash.new(Hash[*Version.all.group_by { |k, v| v.language}.keys.map{|k| [k[:iso], k[:human]]}.flatten])
   end
 
   def self.all_by_language(opts={})
+    # to allow a restricted subset of versions (e.g. for white-list sites)
     all_by_language = Version.all.find_all{|k, v| opts[:only].include? k}.group_by {|k, v| v.language.iso} if opts[:only]
 
-    all_by_language ||= Version.all.group_by {|k, v| v.language.iso}
+    all_by_language ||= Version.all.group_by {|k, v| v.language}
     all_by_language.each {|k, v| all_by_language[k] = Hash[*v.flatten]}
     all_by_language
   end
 
-  def initialize(version)
-    @version = version
-    @data = versions_api_data.versions[version]
+  def language
+    Hashie::Mash.new({iso: YvApi::to_app_lang_code(@attributes.language.iso_639_3), human: @attributes.language.local_name})
+  end
+
+  def copyright
+    detailed_attributes['copyright_short']['html'] || detailed_attributes['copyright_short']['text'] || ""
+  end
+
+  def info
+    detailed_attributes['copyright_long']['html'] || detailed_attributes['copyright_long']['text']
   end
 
   def audio_version?
-    @data.audio == "true"
+    audio
   end
 
-  def language
-    @data.language
+  def books
+    return @books unless @books.nil?
+
+    @books = Hashie::Mash.new
+    detailed_attributes['books'].each do |b|
+      @books[b.usfm.downcase] = b.merge(chapters: b.chapters.count)
+    end
+    @books
   end
 
   def rtl?
@@ -58,15 +86,22 @@ class Version
     raise "versions contain references!" if !ref.is_a? Reference
     listing = books_list
 
-    #return false if ref.version && ref.version != osis
-    return false if ref.book && listing[ref.book.to_s].nil?
-    return false if ref.chapter && listing[ref.book.to_s].chapter[ref.chapter.to_s].nil?
-    return false if ref.verse && ref.verse > listing[ref.book.to_s].chapter[ref.chapter.to_s].verses
+    return false if ref.book && books[ref.book.to_s].nil?
+    return false if ref.chapter && books[ref.book.to_s].chapters >= ref.chapter #[ref.chapter.to_s].nil?
+    #API doesn't send verse information
     return true
   end
 
+  def chapter_before(chapter)
+    nil
+  end
+
+  def chapter_after(chapter)
+    nil
+  end
+
   def title
-    @data.title
+    @attributes.title
   end
 
   def osis_human
@@ -77,32 +112,34 @@ class Version
     @version
   end
 
-  def books
-    @books ||= books_list(@version)
-  end
-
   def to_s
-    "#{@data.title} (#{osis_human})"
+    "#{title} (#{abbreviation})"
   end
 
   def to_param
-    @version
+    "#{id}-#{human}"
   end
 
-  def copyright
-    @copyright ||= @data.copyright
-  end
-
-  def info
-    info_api_data(@version).copyright
+  def human
+    #only return first section (before any - or _ qualifier) of abbreviation
+    abbreviation.upcase.match(/\A[^-_]*/).to_s
   end
 
   def self.default_for(lang)
-    versions_api_data.defaults[lang.to_s]
+    iso_3 = case lang
+    when ""
+      return default
+    when Hash
+      lang.iso.to_s
+    else
+      lang.to_s
+    end
+
+    defaults[iso_3]
   end
 
   def self.default()
-    versions_api_data.defaults["en"]
+    defaults["eng"]
   end
 
   def self.sample_for(lang, opts={})
@@ -125,64 +162,42 @@ class Version
     return sample.osis
   end
 
+
+
+
   private
 
-  def self.books_list(version)
-    hash = {}
-    books_api_data(version).each do |v|
-      hash[v.osis.downcase] = { human: v.human, chapters: v.chapters.to_i, chapter: {}}
-      (1..v.chapters.to_i).each do |x|
-         hash[v.osis.downcase][:chapter][x.to_i] = {verses: v.verses[x-1]}
-      end
-    end
-    Hashie::Mash.new(hash)
-  end
+  def detailed_attributes
+    #attributers that can only be found with a specific /version call
+    return @detailed_attributes unless @detailed_attributes.nil?
 
-  def books_list(version = nil)
-    version ||= osis
-    self.class.books_list(version)
-  end
-
-  def self.books_api_data(version)
-    YvApi.get("bible/books", cache_for: 12.hours, version: version, cache_for: 12.hours)
-  end
-
-  def books_api_data(version)
-    self.class.books_api_data(version)
+    @detailed_attributes = YvApi.get("bible/version", cache_for: 12.hours, id: id)
   end
 
   def self.versions
-    versions = {}
-    versions_api_data.versions.each { |k, v| versions[k] = Version.new(k) }
-    versions
+    return @versions unless @versions.nil?
+    response = YvApi.get("bible/versions", type: "all", cache_for: 12.hours)
+
+    #versions hash of form [<version numerical uid> => <Version object instance>]
+    @versions = Hash[ response.versions.map {|ver| [ver.id, Version.new(ver)]} ]
   end
 
   def versions
     self.class.versions
   end
 
-  def self.versions_api_data
-    return @versions_api_data unless @versions_api_data.nil?
+  def self.defaults
+    return @defaults unless @defaults.nil?
 
-    @versions_api_data = YvApi.get("bible/versions", type: "all", cache_for: 12.hours)
-    @versions_api_data.defaults = Hash[@versions_api_data.defaults.map {|d| [YvApi::to_app_lang_code(d[0]), d[1]]}]
-    @versions_api_data.versions.each {|k,v| v.language.iso = YvApi::to_app_lang_code(v.language.iso)}
-    @versions_api_data
+    response = YvApi.get("bible/configuration", cache_for: 12.hours)
+    @defaults = Hash[response.default_versions.map {|d| [d.iso_639_3, d.id]}]
   end
 
   def versions_api_data
     self.class.versions_api_data
   end
 
-  def self.info_api_data(version)
-    YvApi.get("bible/copyright", version: version, cache_for: 12.hours)
-  end
-
-  def info_api_data(version)
-    self.class.info_api_data(version)
-  end
-
   def to_attribute
-    osis
+    to_param
   end
 end

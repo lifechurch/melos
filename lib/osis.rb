@@ -1,7 +1,7 @@
 class String
   # The OSIS string format used at YouVersion is "[book].[chapter or chapter range].[opt. verse or verse range].[opt. version]"
   def parse_osis_format
-    items = self.downcase.split(".")
+    items = self.split(".")
     hash = {book: items.first}
     case items.length
     when 2
@@ -21,6 +21,18 @@ class String
       hash[:version] = items[3]
       hash[:verse]   = items[2].parse_verse
     end
+
+    #monkey patching support for USFM for now
+    if hash[:version] =~ /[^\d]/
+      hash[:version] = YvApi::get_usfm_version hash[:version]
+      raise 'invalid legacy OSIS version' unless hash[:version]
+    end
+
+    if hash[:book] =~ /[a-z]/
+      hash[:book] = YvApi::get_usfm_book hash[:book]
+      raise 'invalid legacy OSIS book' unless hash[:book]
+    end
+
     return hash
   end
 
@@ -48,11 +60,11 @@ class String
   #   book - leading 1, 2, or 3 are OK, then any series of letters: 1 john, 2 Kings, Exodus, Mat, etc.
   #   chapter - contiguous numbers between the book part and a : or .
   #   verse(s) - numbers, possibly separated by a -, so '9', '9-12', '9 - 10', etc.
-  #   version - any contiguous series of characters after the verse part
+  #   version - since USFM allows changing of abbreviation, we use numerical UUID and abbrev, so '1-kjv'
   # Whever possible, we allow arbitrary spaces betwen elements, so '1  john' and '1john' are OK.
   def human_ref_pattern
     #       --------- book ---------       -- chapter or chapters --           ---- verse or verses ----           - version -
-    /^ \s* ([1-3]? \s* [A-Za-z]+ .? ) \s* (\d+ (?: \s* \-? \s* \d*))? (?:[:.] (\d+ (?: \s* \-? \s* \d*)))? [\.\s]* ([a-zA-Z]+)? \s*? $/x
+    /^ \s* ([1-3]? \s* [A-Za-z]+ .? ) \s* (\d+ (?: \s* \-? \s* \d*))? (?:[:.] (\d+ (?: \s* \-? \s* \d*)))? [\.\s]* ((?: \d+\-?)?[a-zA-Z]+)? \s*? $/x
   end
 
   # Take a string of chapter(s) or verse(s) that can be like "1" or "1 - 3"
@@ -117,7 +129,7 @@ class Hash
     string = self[:book]
     self[:chapter].is_a?(Range) ? string += "." + self[:chapter].first.to_s + "-" + self[:chapter].last.to_s : string += "." + self[:chapter].to_s if self[:chapter]
     self[:verse].is_a?(Range) ? string += "." + self[:verse].first.to_s + "-" + self[:verse].last.to_s : string += "." + self[:verse].to_s if self[:verse]
-    string += "." + self[:version] if self[:version]
+    string += "." + self[:version].to_s if self[:version]
     string
   end
 
@@ -127,7 +139,7 @@ class Hash
     self[:verse].is_a?(Range) ? string += "." + self[:verse].first.to_s + "-" + self[:verse].last.to_s : string += "." + self[:verse].to_s if self[:verse]
     string
   end
-  
+
   def to_osis_string_book_chapter
     string = self[:book]
     self[:chapter].is_a?(Range) ? string += "." + self[:chapter].first.to_s + "-" + self[:chapter].last.to_s : string += "." + self[:chapter].to_s if self[:chapter]

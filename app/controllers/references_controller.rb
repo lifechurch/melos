@@ -12,34 +12,37 @@ class ReferencesController < ApplicationController
     @font = cookies['data-setting-font']
     @size = cookies['data-setting-size']
 
-    # Redirect if it's anything other than book.chapter.version, ignoring verses for now
-    if !params[:reference]
-      flash.keep
-      return redirect_to bible_path(last_read || Reference.new(book: "john", chapter: "1", version: current_version))
-      #TODO: What if gen.1 doesn't exist for current_version? OK with 'this doesn't exist, select another' view?
-    else
-      ref_hash = params[:reference].to_osis_hash rescue not_found
+    # render last read or default if no reference specified
+    # This allows for root to give better meta (SEO)
+    # and saves a redirect for a first time visit
+    params[:reference] ||= last_read.try(:to_param) || default_reference.try(:to_param)
+
+    ref_hash = parse_ref_param params[:reference]
+
+    # If we need to add the chapter or version for the user, redirect
+    # instead of just rendering (SEO strategy: less buckets)
+    unless ref_hash[:version] && ref_hash[:chapter]
       ref_hash[:version] ||= current_version
       ref_hash[:chapter] ||= 1
-      if ref_hash.except(:verse) != params[:reference].to_osis_hash.except(:verse)
-        flash.keep
-        return redirect_to bible_path(Reference.new(ref_hash))
-      end
+      flash.keep
+      return redirect_to bible_path(Reference.new(ref_hash))
     end
 
     # Hang on to verses to select them in the reader
+    # Note: InvalidReferenceError will be raised here if
+    # the reference is invalid
     @verses = Reference.new(ref_hash).verses_string
 
     # Set the canonical reference for the page to the entire chapter
-    @reference = Reference.new(ref_hash.except(:verse))
-    @version = Version.find(@reference[:version])
+    @reference = Reference.new(ref_hash.except(:verses))
+    @version = Version.find(@reference.version)
 
     # Set cookies to save this as the user's current version and reference
     set_current_version @version
     set_last_read @reference
 
     # If the reference was a single verse, set that up so we can display the modal
-    if ref_hash[:verse].is_a?(Fixnum) && (external_request? || params[:modal] == "true") && params[:modal] != "false"
+    if ref_hash[:verses].is_a?(Fixnum) && (external_request? || params[:modal] == "true") && params[:modal] != "false"
       @single_verse = Reference.new(ref_hash)
     end
 
@@ -65,7 +68,7 @@ class ReferencesController < ApplicationController
     # Set up a fake reference for the fist 5 verses since the API won't let us
     # search the entire chapter for notes and 10 results in a param length API err
     notes_ref_hash = params[:reference].to_osis_hash rescue not_found
-    notes_ref_hash[:verse]=1..5 unless notes_ref_hash[:verse]
+    notes_ref_hash[:verses]=1..5 unless notes_ref_hash[:verses]
     @notes = Note.for_reference(Reference.new(notes_ref_hash), language_iso: I18n.locale, cache_for: 10.minutes)
     @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 10.minutes) if @notes.empty?
     render layout: false

@@ -7,13 +7,13 @@
           %b
             %a{href: bible_path(r)}= r
           %br
-          = r.contents[0]
+          = r.content[0]
   .bookmark_edit.float_right
     %p
       - if @me
         %span= link_to(t('bookmarks.edit'), edit_bookmark_path(list_item.id))
         &mdash;
-        %span.confirm= link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete) 
+        %span.confirm= link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
         &mdash;
       %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
   - if list_item.labels

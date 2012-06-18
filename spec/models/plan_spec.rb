@@ -44,7 +44,7 @@ describe Plan do
       end
     end
   end
-  
+
   describe "#all" do
     describe "with no parameters" do
       it "should give 25 unique plans" do
@@ -63,7 +63,7 @@ describe Plan do
       it "should yield 25 different plans" do
          page_1 = Plan.all page: 1
          page_2 = Plan.all page: 2
-         
+
          page_2.each do |a_page_2_plan|
            page_1.should_not include a_page_2_plan
          end
@@ -85,24 +85,24 @@ describe Plan do
       end
     end
   end
-  
+
   describe "#avialable_locales" do
     it "isn't empty" do
       Plan.available_locales.should_not be_empty
     end
   end
-  
+
   describe "#==" do
     it "should compare to true for the same plan" do
       Plan.find('1-robert-roberts').should == Plan.find('1-robert-roberts')
       Plan.find('1-robert-roberts').should == Plan.find('robert-roberts')
     end
-    
+
     it "should compare to false for different plans" do
       Plan.find('1-robert-roberts').should_not == Plan.find('100-hebrews')
     end
   end
-  
+
   describe "#reading" do
     before(:all) do
       @with_no_devotional = @with_chapters = Plan.find('83-lent-for-everyone').day(1)
@@ -119,7 +119,7 @@ describe Plan do
           @with_chapters.references.first.ref.should == Reference.new('matt.1')
         end
         it "should have html contents" do
-          @with_chapters.references.first.ref.contents.first.should =~ /^<div><h1 class=/
+          @with_chapters.references.first.ref.content.first.should =~ /^<div><h1 class=/
         end
       end
       describe "with a partial chapter reference" do
@@ -127,7 +127,7 @@ describe Plan do
           @with_verses.references.first.ref.should == Reference.new('john.14.23')
         end
         it "should have html contents" do
-          @with_verses.references.first.ref.contents(format: 'html').first.should =~ /^<span class=\"verse\"/
+          @with_verses.references.first.ref.content(format: 'html').first.should =~ /^<span class=\"verse\"/
         end
         it "should pull html contents without any config" do
           pending "TODO: reference rewrite to pull verses and ranges from chapters"
@@ -148,12 +148,12 @@ describe Plan do
       end
     end
     describe "with rich devotional content" do
-      it "should have the rich content" do 
+      it "should have the rich content" do
         @with_video_devo.devotional.should =~ /<iframe/
       end
     end
   end
-  
+
   describe "#version" do
     it "should change the version of text returned" do
       plan = Plan.find('1-robert-roberts')
@@ -163,7 +163,7 @@ describe Plan do
       plan.day(1).references.first.ref.should_not == amp_ref
     end
   end
-  
+
   describe "localization" do
     subject {Plan.find('1-robert-roberts')}
     properties = [:title, :length, :description, :copyright]
@@ -173,7 +173,7 @@ describe Plan do
         german_value = subject.send(property)
         I18n.locale = :en
         english_value = subject.send(property)
-        
+
         german_value.should_not == english_value
       end
     end
