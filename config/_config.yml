@@ -16,9 +16,10 @@ common: &common
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
   avatar_path: http://d5xlnxqvcdji7.cloudfront.net/users/images/
-  avatar_path_s3: http://static-youversionapi-com.s3.amazonaws.com/users/images/
+  avatar_path_s3: http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/
   ssl_avatar_path: https://d5xlnxqvcdji7.cloudfront.net/users/images/
-  ssl_avatar_path_s3: https://static-youversionapi-com.s3.amazonaws.com/users/images/
+  #the origin avatar paths aren't working for s3
+  ssl_avatar_path_s3: http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
   api_root: api.youversion.com
