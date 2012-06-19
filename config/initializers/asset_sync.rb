@@ -12,13 +12,14 @@ AssetSync.configure do |config|
   # Increase upload performance by configuring your region
   # config.fog_region = 'eu-west-1'
   #
-  # delete files from the store, since they are thumbprinted (hashed) and changed files will be new files.
-  config.existing_remote_files = "delete"
+  # keep files from the store, since they are needed for rollback
+  # and preboot heroku magig. ('keep' or 'delete')
+  config.existing_remote_files = "keep"
   #
   # Automatically replace files with their equivalent gzip compressed version
   config.gzip_compression = true
   #
-  # Use the Rails generated 'manifest.yml' file to produce the list of files to 
+  # Use the Rails generated 'manifest.yml' file to produce the list of files to
   # upload instead of searching the assets directory.
   # config.manifest = true
   #
