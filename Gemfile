@@ -26,7 +26,8 @@ gem 'rack-rewrite',           '~> 1.2.1'
 gem 'rack-timeout',           '~> 0.0.3'
 # Using locale files directly in /config/locales/rails-i18n until gem supports
 # aliasing (or we come up with a way to resolve differences between gem lang
-# codes and our tr8n codes, and api codes)
+# codes and our tr8n codes, and api codes):
+# github.com/svenfuchs/rails-i18n/tree/master/rails/locale/
 # gem 'rails-i18n',            '~> 0.6.3'
 gem 'routing-filter',         '~> 0.3.1'
 gem 'unicorn',                '~> 4.1.1' #4.3.1
