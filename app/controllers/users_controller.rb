@@ -270,7 +270,7 @@ class UsersController < ApplicationController
   end
 
   def destroy_device
-    @device = Device.find(params[:id], auth: current_auth)
+    @device = Device.find(params[:device_id], auth: current_auth)
     if @device.destroy
       flash[:notice] = "Device removed."
       redirect_to devices_path

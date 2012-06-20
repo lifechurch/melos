@@ -77,7 +77,7 @@ YouversionWeb::Application.routes.draw do
   match 'settings/notifications' => 'users#update_notifications', :as => 'notifications', :via => :put
   match 'settings/connections'   => 'users#connections', :as => 'connections'
   match 'settings/devices'       => 'users#devices', :as => 'devices'
-  match 'devices/:id'            => 'users#destroy_device', :as => 'device', :via => :delete
+  match 'devices/:device_id'     => 'users#destroy_device', :as => 'device', :via => :delete
   match 'settings'               => 'users#profile', :as => 'profile', :via => :get
   match 'settings'               => 'users#update_profile', :as => 'profile', :via => :put
   get   'settings/update_email'  => 'users#update_email_form', as: 'update_email'
