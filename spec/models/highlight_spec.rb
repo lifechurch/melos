@@ -16,6 +16,6 @@ describe Highlight do
 
 	it "should return itself as json" do
 		hgh = Highlight.new({color: "ff0000", reference: "matt.1.3.esv", auth: @user.auth}).save.should be_true
-		puts Highlight.for_reference("matt.1.3.esv", auth: @user.auth).as_json.first[:color].should == "ff0000"
+		Highlight.for_reference("matt.1.3.esv", auth: @user.auth).as_json.first[:color].should == "ff0000"
 	end
 end

@@ -37,7 +37,7 @@ class User < YouVersion::Resource
   has_many_remote :badges
 
   def self.update_path
-    "users/update_profile"
+    "users/update"
   end
 
   def self.create_path
@@ -120,13 +120,20 @@ class User < YouVersion::Resource
     end
 
     def authenticate(username, password)
-      hash = {}
-      response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
-      if response
-        response = response.symbolize_keys
-        response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
-        new(response)
-      end
+      # hash = {}
+      # response = YvApi.post('users/authenticate', auth: Hashie::Mash.new(username: username, password: password)) { return nil }.to_hash
+      # puts "response in authenticate is:"
+      # puts response
+      # if response
+      #   response = response.symbolize_keys
+      #   response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
+      #   new(response)
+  # end
+      id_response = YvApi.get("users/user_id", username: username)
+      auth = Hashie::Mash.new(username: username, password: password, user_id: id_response.user_id)
+      response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: auth)
+      response[:auth] = auth
+      User.new(response)
     end
 
     def find(user, opts = {})
@@ -200,7 +207,7 @@ class User < YouVersion::Resource
   end
 
   def update_email(email)
-    response = YvApi.post("users/update_profile", email: email, auth: self.auth) do |errors|
+    response = YvApi.post("users/update_email", email: email, auth: self.auth) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
@@ -434,10 +441,11 @@ class User < YouVersion::Resource
         return false
       end
     end
+
     unless response === false
       followings = ResourceList.new
       followings.total = response.total
-      response.users.each { |u| followings << User.new(u) }
+      response.following.each { |u| followings << User.new(u) }
       @following_id_list = followings.map { |u| u.username }
       followings
     end
@@ -454,7 +462,7 @@ class User < YouVersion::Resource
       else
         raise YouVersion::ResourceError.new(errors)
       end
-    end
+    end.following
   end
 
   def followers(opts = {})
@@ -471,7 +479,7 @@ class User < YouVersion::Resource
     unless response === false
       fl = ResourceList.new
       fl.total = response.total
-      response.users.each { |u| fl << User.new(u) }
+      response.followers.each { |u| fl << User.new(u) }
       fl
     end
   end
@@ -487,7 +495,7 @@ class User < YouVersion::Resource
       else
         raise YouVersion::ResourceError.new(errors)
       end
-    end
+    end.followers
   end
 
   def subscriptions(opts = {})
@@ -548,9 +556,11 @@ class User < YouVersion::Resource
 
   def self.configuration(opts = {})
     opts = opts.merge({cache_for: 12.hours}) if opts[:auth] == nil
-    response = YvApi.get("configuration/items", opts) do |errors|
+    response = YvApi.get("highlights/configuration", opts) do |errors|
       raise YouVersion::ResourceError.new(errors)
     end
+    response[:highlight_colors] = response.delete(:colors)
+    response
   end
 
   def ==(compare)
