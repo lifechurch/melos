@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :confirmed,  :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation]
   before_filter :set_redirect, only: [:new, :create]
-  
+
   # User signup flow:
   #
   #  +>  /sign-up (users#new)  <-err--------+
@@ -77,7 +77,7 @@ class UsersController < ApplicationController
 
     if @user.errors.blank?
       sign_in @user
-      flash.now[:notice] = t("users.account confirmed") 
+      flash.now[:notice] = t("users.account confirmed")
     end
 
     render layout: "application"
@@ -213,7 +213,7 @@ class UsersController < ApplicationController
       sign_out
       return redirect_to(sign_in_path(redirect: notifications_path), flash: {error: t('users.profile.notifications token error')})
     end
-    
+
     @user = @notification_settings.user
     @me = true
     @selected = :notifications
@@ -317,7 +317,7 @@ class UsersController < ApplicationController
       render "forgot_password", layout: "application"
     end
   end
-  
+
   def delete_account_form
     @selected = :account_existence
     render "delete_account"
@@ -325,7 +325,7 @@ class UsersController < ApplicationController
 
   def delete_account
     @selected = :account_existence
-    
+
     begin
       #auth first to give the validate user is at keyboard, and doesn't just have valid cookies
       user = User.authenticate(current_user.username, params[:password])
@@ -379,20 +379,20 @@ class UsersController < ApplicationController
 
   def unfollow
     if @user.unfollow
-      redirect_to(:back, notice: t('you are no longer following', username: @user.username)) 
+      redirect_to(:back, notice: t('you are no longer following', username: @user.username))
     else
       redirect_to(:back, error: t('error unfollowing user'))
     end
 
   end
-  
+
   def privacy
-    I18n.locale = :en if [:fr, :pl, :af, :km, :ko, :pl, :sk, :sv, :tr, :ro].find{|loc| loc == I18n.locale}
+    I18n.locale = :en if [:fr, :pl, :af, :km, :ko, :pl, :sk, :sv, :tr, :ro, :bg].find{|loc| loc == I18n.locale}
     render action: "privacy", layout: "application"
   end
-  
+
   def terms
-    I18n.locale = :en if [:fr, :pl, :af, :km, :ko, :pl, :sk, :sv, :tr, :ro].find{|loc| loc == I18n.locale}
+    I18n.locale = :en if [:fr, :pl, :af, :km, :ko, :pl, :sk, :sv, :tr, :ro, :bg].find{|loc| loc == I18n.locale}
     render action: "terms", layout: "application"
   end
 
