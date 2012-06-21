@@ -1347,36 +1347,38 @@ var YV = (function($, window, document, undefined) {
       },
       fancy_nav: function() 
         {
-          var initoffset = $('.main_reader article').offset().top;
-          var initviewport = $(window).height();
-          var main_reader_height = $('.main_reader article').height() + 35
-          var offset_height = $('.main_reader article').offset().top;
-          $('.nav_next, .nav_prev').height(initviewport-initoffset-40);
+          if ($("#main_reader").length > 0){
+            var initoffset = $('.main_reader article').offset().top;
+            var initviewport = $(window).height();
+            var main_reader_height = $('.main_reader article').height() + 35
+            var offset_height = $('.main_reader article').offset().top;
+            $('.nav_next, .nav_prev').height(initviewport-initoffset-40);
 
-          if( main_reader_height + offset_height > initviewport ) {
-            //recalculate the nav button height and change the height. 
-            $(window).resize(function(e) {
-              window.offset = $('.main_reader article').offset().top;
-              window.viewport = $(window).height();
-              window.doc_height = $(document).height();
-              window.main_height = $('.main_reader article').height();
-              window.bottom_offset =  doc_height - offset - main_height;
-              $('.nav_next, .nav_prev').height(viewport - offset - 40);
-            })
-            $('.main_reader footer').waypoint(function(event, direction) {
-            // Yeah bro, what do I do?
-            if (direction === 'down') {
-              $('.nav_items, .nav_prev, .nav_next').addClass('snap');
+            if( main_reader_height + offset_height > initviewport ) {
+              //recalculate the nav button height and change the height. 
+              $(window).resize(function(e) {
+                window.offset = $('.main_reader article').offset().top;
+                window.viewport = $(window).height();
+                window.doc_height = $(document).height();
+                window.main_height = $('.main_reader article').height();
+                window.bottom_offset =  doc_height - offset - main_height;
+                $('.nav_next, .nav_prev').height(viewport - offset - 40);
+              })
+              $('.main_reader footer').waypoint(function(event, direction) {
+              // Yeah bro, what do I do?
+              if (direction === 'down') {
+                $('.nav_items, .nav_prev, .nav_next').addClass('snap');
+              }
+              else {
+                $('.nav_items, .nav_prev, .nav_next').removeClass('snap');
+              }
+              }, {
+              offset: '100%'  // middle of the page
+            });
             }
             else {
-              $('.nav_items, .nav_prev, .nav_next').removeClass('snap');
+              $('.nav_prev, .nav_next').height(main_reader_height);
             }
-            }, {
-            offset: '100%'  // middle of the page
-          });
-          }
-          else {
-            $('.nav_prev, .nav_next').height(main_reader_height);
           }
       },
       // YV.init.in_place_confirm
