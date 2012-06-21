@@ -11,4 +11,5 @@
           = t('registered ago', time_ago: time_ago_in_words(d.created_date))
   - else
     %li
-      %h4= "No devices found"
+      %h4= t('users.no devices')
+      %p= t('users.no devices download copy').html_safe
