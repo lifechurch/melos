@@ -1347,7 +1347,7 @@ var YV = (function($, window, document, undefined) {
       },
       fancy_nav: function() 
         {
-          if ($("#main_reader").length > 0){
+          if ($(".main_reader").length > 0){
             var initoffset = $('.main_reader article').offset().top;
             var initviewport = $(window).height();
             var main_reader_height = $('.main_reader article').height() + 35
