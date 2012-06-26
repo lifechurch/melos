@@ -1367,7 +1367,7 @@ var YV = (function($, window, document, undefined) {
                 window.bottom_offset =  doc_height - offset - main_height;
                 $('.nav_next, .nav_prev').height(viewport - offset - 40);
               })
-              if (!$(html).hasClass("full_screen")) {
+              if (!$('html').hasClass("full_screen")) {
               $('.main_reader footer').waypoint(function(event, direction) {
               // Yeah bro, what do I do?
               if (direction === 'down') {
