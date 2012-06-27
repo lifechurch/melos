@@ -120,6 +120,8 @@ module YouversionWeb
       r301 %r{/reading-plans/([\w-]+)/(\d+)}, '/reading-plans/$1?day=$2'
       #Temporary for ACE fix on 3-21
       r301 '/reading-plans/prayer', '/reading-plans/55-prayer'
+      #Temp fix for Piper release 6-27
+      r301 '/reading-plans/15-days-in-the-word-with-john-piper', '/reading-plans/318-15-days-in-the-word-with-john-piper'
 
       ### USER
       r301 '/forgot', '/settings/forgot_password'
