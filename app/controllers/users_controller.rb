@@ -262,13 +262,6 @@ class UsersController < ApplicationController
     if @user.connections[@show]
       @users = @user.connections[@show].find_friends(page: params[:page])
     end
-
-    if @show == "twitter"
-      @username = @user.connections[@show].data.screen_name
-    elsif @show == "facebook"
-      @username = @user.connections[@show].data.name
-    end
-        
   end
 
   def devices
