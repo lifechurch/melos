@@ -38,7 +38,7 @@ class Subscription < Plan
 
     #We can't use Plan.find because it gets an unexpected response from
     #API when trying un-authed call so it never tries the authed call
-    response = YvApi.get("reading_plans/view", opts) do |errors| 
+    response = YvApi.get("reading_plans/view", opts) do |errors|
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
         return nil
       else
@@ -63,7 +63,7 @@ class Subscription < Plan
       when Reference                              #Good to go
       when String                                 #try to create Ref, assuming osis string
         begin
-          no_version_ref = Reference.new(ref.to_osis_hash.except(:version))
+          no_version_ref = Reference.new(ref).merge(version: nil)
           rescue
            raise "incorrect string format for reference"
         end
@@ -284,10 +284,10 @@ class Subscription < Plan
     # Important: don't allow caching for this authed responses since completion needs to change
     super(day, opts.merge!({cache_for: 0, auth: auth, user_id: user_id}))
   end
-  
+
   #TODO: is this definition necessarry with Parent defintion?
   #if parent calls child #reading, then no -- ?
-  def day(day, opts = {}) 
+  def day(day, opts = {})
     reading(day, opts)
   end
 

@@ -176,7 +176,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_last_read(ref)
-    cookies.permanent[:last_read] = ref.osis
+    cookies.permanent[:last_read] = ref.to_param
   end
 
   def current_auth
@@ -196,7 +196,7 @@ class ApplicationController < ActionController::Base
 
     return [] if cookies[:recent_versions].to_s == ""
 
-    return @recent_versions = cookies[:recent_versions].split('/').map{|osis| Version.find(osis)}
+    return @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v)}
   end
 
   def current_user
@@ -231,9 +231,9 @@ class ApplicationController < ActionController::Base
 
     return cookies[:alt_version] if cookies[:alt_version]
 
-    recent = recent_versions.find{|v| v.osis != current_version && v.include?(ref)}
+    recent = recent_versions.find{|v| v.to_param != current_version && v.include?(ref)}
 
-    return cookies[:alt_version] = recent.osis if recent
+    return cookies[:alt_version] = recent.to_param if recent
 
     raise NoSecondaryVersionError if Version.all(I18n.locale).except(current_version).empty?
 
@@ -241,7 +241,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_current_version(ver)
-    cookies.permanent[:version] = ver.osis
+    cookies.permanent[:version] = ver.to_param
   end
 
   def verses_in_chapter (ref_hash)

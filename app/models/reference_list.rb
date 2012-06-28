@@ -24,7 +24,7 @@ class ReferenceList
     args.map do |r|
       raise "Reference Lists can only consist of Reference Objects" if r.class != Reference
 
-      @references << Reference.new(r.osis, self.version)
+      @references << Reference.new(r.to_param, version: self.version)
     end
   end
 
@@ -46,7 +46,7 @@ class ReferenceList
         when Reference
           ref
         when String
-          Reference.new(ref.to_osis_string.downcase, self.version)
+          Reference.new(ref, version: self.version)
         end
       end
     when String
@@ -59,13 +59,13 @@ class ReferenceList
   def to_api_string
     join_str = '+'
     refs = @references.compact.map do |r|
-      osis = r.osis_noversion
-      if numbered_book_splits = osis.match(/(^\d)(\D{1})(.+)/)
-        osis = "#{numbered_book_splits[1]}#{numbered_book_splits[2].upcase}#{numbered_book_splits[3]}"
+      usfm = r.to_usfm
+      if numbered_book_splits = usfm.match(/(^\d)(\D{1})(.+)/)
+        usfm = "#{numbered_book_splits[1]}#{numbered_book_splits[2].upcase}#{numbered_book_splits[3]}"
       else
-        osis = osis.capitalize
+        usfm = usfm.capitalize
       end
-      osis
+      usfm
     end
 
     refs.join(join_str)
@@ -90,6 +90,6 @@ class ReferenceList
   end
 
 	def smash_verses(refs)
-		refs = refs.sort_by { |i| i.osis }
+		refs = refs.sort_by { |i| i.to_usfm }
 	end
 end

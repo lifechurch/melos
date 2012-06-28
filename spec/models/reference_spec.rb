@@ -160,6 +160,9 @@ describe Reference do
       Reference.new("gen.1.1-3.kjv").notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3"
       @gen_1_kjv_ref.notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3+GEN.1.4+GEN.1.5+GEN.1.6+GEN.1.7+GEN.1.8+GEN.1.9+GEN.1.10+GEN.1.11+GEN.1.12+GEN.1.13+GEN.1.14+GEN.1.15+GEN.1.16+GEN.1.17+GEN.1.18+GEN.1.19+GEN.1.20+GEN.1.21+GEN.1.22+GEN.1.23+GEN.1.24+GEN.1.25+GEN.1.26+GEN.1.27+GEN.1.28+GEN.1.29+GEN.1.30+GEN.1.31"
     end
+    it "should work with an invalid reference" do
+      Reference.new("gen.1.1-3,6.kjv").notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3+GEN.1.6"
+    end
   end
 
   describe "[]" do
@@ -244,18 +247,6 @@ describe Reference do
     end
     it "should be false for a full ref" do
       @gen_1_1_kjv_ref.is_chapter?.should_not be_true
-    end
-  end
-
-  describe "osis representations" do
-    it "should give an osis string" do
-      @gen_1_1_kjv_ref.osis.should == "gen.1.1.kjv"
-    end
-    it "should give an ossis string without a version" do
-      @gen_1_1_kjv_ref.osis_noversion.should == "gen.1.1"
-    end
-    it "should give an osis string with only the chapter" do
-      @gen_1_1_kjv_ref.osis_book_chapter.should == "gen.1"
     end
   end
 

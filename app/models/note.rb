@@ -46,7 +46,7 @@ class Note < YouVersion::Resource
       self.reference_list = self.reference.class == ReferenceList ? self.reference : ReferenceList.new(self.reference)
       self.version = self.reference_list.first[:version] if self.reference_list.first[:version]
     end
-    self.version = self.version.osis if self.version.class == Version
+    self.version = self.version.id if self.version.class == Version
     self.reference = self.reference_list.to_api_string
   end
 

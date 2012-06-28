@@ -11,7 +11,7 @@
         %ul
           - @version.books.each do |k, v|
             %li{class: k == @reference[:book] ? t("li_active") : ''}
-              %a{:href => '#', 'data-book' => "#{k}", 'data-version' => "#{@version.osis}", 'data-chapters' => "#{v["chapters"]}"}= v["human"]
+              %a{:href => '#', 'data-book' => "#{k}", 'data-version' => "#{@version.to_param}", 'data-chapters' => "#{v["chapters"]}"}= v["human"]
     #menu_chapter
       %header
         =t("chapter")

@@ -24,7 +24,6 @@ class NotesController < ApplicationController
   def edit
     if current_auth
       @note = Note.find(params[:id], auth: current_auth)
-      #@note.reference = @note.reference_list.to_osis_references
     else
       redirect_to notes_path
     end
@@ -84,7 +83,7 @@ class NotesController < ApplicationController
   # strings instead of the reference / version objects (better way?)
   def set_for_form(note)
     note.reference = Model::hash_to_osis_noversion(note.references)
-    note.version = note.version.osis
+    note.version = note.version.id
   end
 
 end

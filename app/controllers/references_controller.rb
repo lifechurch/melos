@@ -54,7 +54,7 @@ class ReferencesController < ApplicationController
 
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
     @alt_version = Version.find(alt_version(@reference))
-    @alt_reference = Reference.new(@reference.raw_hash.except(:version), @alt_version.osis)
+    @alt_reference = Reference.new(@reference.to_param, version: @alt_version)
 
   end
 
@@ -66,11 +66,11 @@ class ReferencesController < ApplicationController
 
   def notes
     # Set up a fake reference for the fist 5 verses since the API won't let us
-    # search the entire chapter for notes and 10 results in a param length API err
-    notes_ref_hash = params[:reference].to_osis_hash rescue not_found
-    notes_ref_hash[:verses]=1..5 unless notes_ref_hash[:verses]
-    @notes = Note.for_reference(Reference.new(notes_ref_hash), language_iso: I18n.locale, cache_for: 10.minutes)
-    @notes = Note.for_reference(Reference.new(notes_ref_hash), cache_for: 10.minutes) if @notes.empty?
+    # search the entire chapter for notes and 10 results in a param length API error
+    ref = Reference.new(params[:reference]) rescue not_found
+    ref = ref.merge(verses: "1-5") if ref.is_chapter?
+    @notes = Note.for_reference(ref), language_iso: I18n.locale, cache_for: 5.minutes)
+    @notes = Note.for_reference(ref), cache_for: 5.minutes) if @notes.empty?
     render layout: false
   end
 
@@ -107,11 +107,10 @@ class ReferencesController < ApplicationController
       @html_classes.delete "full_screen" and cookies[:full_screen] = nil
       @html_classes.delete "parallel_mode" and cookies[:parallel_mode] = nil
 
-      osis_hash = params[:reference].to_osis_hash rescue nil
-      @alt_reference = @reference = Reference.new(osis_hash.except(:version)) rescue nil
-      @alt_reference = @reference = Reference.new(book: "john", chapter: "1") if @reference.nil? || !@reference.valid?
+      @alt_reference = @reference = Reference.new(params[:reference]).merge(version: nil) rescue nil
+      @alt_reference = @reference = Reference.new(book: "john", chapter: "1") unless @reference.try :valid?
 
-      @version = Version.find(osis_hash[:version]) rescue Version.find(Version.default_for(I18n.locale))
+      @version = Version.find(Reference.new(params[:reference]).version) rescue Version.find(Version.default_for(I18n.locale))
       @alt_version ||= @version
 
       render :invalid_ref, status: 404

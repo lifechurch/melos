@@ -1,3 +1,3 @@
 %li
-  %a= link_to "#{item.reference.human} (#{item.version.upcase.match(/\A[^-_]*/)})", reference_path("#{item.reference.osis}.#{item.version}")
+  %a= link_to "#{item.reference.human} (#{item.version.upcase.match(/\A[^-_]*/)})", reference_path(item.reference)
   %p.search_results= item.highlight ? item.highlight.html_safe : item.content

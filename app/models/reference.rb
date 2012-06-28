@@ -35,8 +35,9 @@ class Reference < YouVersion::Resource
     @chapter = @chapter.to_i if @chapter
     @verses = ref_hash.try :[], :verses || opts[:verse] || opts[:verses]
     @verses = parse_verses(@verses)
-    _version = ref_hash.try(:[], :version) || opts[:version]
+    _version = opts[:version] || ref_hash.try(:[], :version)
     @version = YvApi::get_usfm_version(_version) || _version
+    @version = Version.id_from_param(@version)
 
     unless @book && @chapter
       raise InvalidReferenceError, "Tried to create an invalid reference.
@@ -76,6 +77,10 @@ class Reference < YouVersion::Resource
       return "#{chapter_usfm}" unless verses
       return "#{chapter_usfm}.#{verses}" if single_verse?
       return verses.map {|v| "#{chapter_usfm}.#{v}"}.join(YvApi::usfm_delimeter) if verses
+  end
+
+  def usfm
+    to_usfm
   end
 
   def chapter_usfm
@@ -124,15 +129,18 @@ class Reference < YouVersion::Resource
   end
 
   def audio
-    #DEBUG return @audio unless @audio.nil?
+    return @audio unless @audio.nil?
     return nil if attributes.audio.nil?
 
     opts = {id: attributes.audio[0].id, cache_for: 12.hours}
 
     #we have to make this additional call to get the audio bible copyright info
-    @audio = YvApi.get("audio-bible/view", opts) do |errors|
+    response = YvApi.get("audio-bible/view", opts) do |errors|
         raise YouVersion::ResourceError.new(errors)
     end
+    @audio = attributes.audio[0].merge(response)
+    @audio.url = attributes.audio[0].download_urls.format_mp3_32k
+    @audio
   end
 
   def previous
@@ -236,22 +244,22 @@ class Reference < YouVersion::Resource
 
   def osis
     Rails.logger.apc "#{self.class}##{__method__} is deprecated,use the 'to_param' or 'to_usfm' methods instead", :warn
-    to_hash.to_osis_string
+    to_param
   end
 
   def osis_noversion
     Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :warn
-    to_hash.to_osis_string_noversion
+    to_usfm
   end
 
   def osis_book_chapter
     Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :warn
-    to_hash.to_osis_string_book_chapter
+    chapter_usfm
   end
 
   def to_osis_string
     Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :warn
-    to_hash.to_osis_string
+    to_param
   end
 
   def to_hash
@@ -264,10 +272,10 @@ class Reference < YouVersion::Resource
 
 
 
-  #DEBUGprivate
+  private
 
   def attributes
-    #DEBUGreturn @attributes unless @attributes.nil?
+    return @attributes unless @attributes.nil?
 
     opts = {cache_for: 12.hours}
     # sometimes we just need generic info about a verse, like the human spelling of a chapter

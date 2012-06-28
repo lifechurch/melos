@@ -70,7 +70,7 @@ class Plan < YouVersion::Resource
     end
 
     response = YouVersion::Resource.post('reading_plans/subscribe_user', opts)
-    
+
     Subscription.new(response.merge(auth: _auth))
 
     #EVENTUALLY: Do this correctly with Resource abstraction and on the subscription class(new) and user object(add_subscription) class
@@ -125,9 +125,7 @@ class Plan < YouVersion::Resource
       @reading.devotional = YouVersion::Resource.i18nize(response.additional_content_html)
       @reading.devotional ||= "<p>" << YouVersion::Resource.i18nize(response.additional_content).gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if response.additional_content
       @reading.references = response.adjusted_days.first.references.map do |data|
-        osis_hash = data.reference.osis.to_osis_hash
-        osis_hash[:version] = version
-        Hashie::Mash.new(ref: Reference.new(osis_hash), completed?: (data.completed == "true"), no_version_ref: Reference.new(osis_hash.except(:version)))
+        Hashie::Mash.new(ref: Reference.new(data.reference, version: version), completed?: (data.completed == "true"), no_version_ref: Reference.new(data.reference).merge(version: nil))
       end
     end
 

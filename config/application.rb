@@ -10,7 +10,6 @@ require File.join(File.dirname(__FILE__), '../lib/bb.rb')
 require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
 
 require File.expand_path('../_config', __FILE__)
-require File.expand_path('../../lib/osis', __FILE__)
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line

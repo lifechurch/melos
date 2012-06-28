@@ -19,18 +19,24 @@ attribute :audio
   end
 
   def self.find(version)
-    id = case version
-      when /\d+/
-        version.to_i
-      when /(?<id>\d+)-.*/
-        $~[:id].to_i
-      else
-        version
-    end
-
-    ver = versions[id]
+    ver = versions[self.id_from_param(version)]
     raise NotAVersionError if ver.nil?
     ver
+  end
+
+  def self.id_from_param(ver)
+    case ver
+    when Fixnum
+      ver
+    when /^\d+$/
+      ver.to_i
+    when /^(\d+)\-.*/
+      $1.to_i
+    when Version
+      ver.id
+    else
+      ver
+    end
   end
 
   def self.languages
@@ -104,14 +110,6 @@ attribute :audio
     @attributes.title
   end
 
-  def osis_human
-    @version.upcase.match(/\A[^-_]*/)
-  end
-
-  def osis
-    @version
-  end
-
   def to_s
     "#{title} (#{abbreviation})"
   end
@@ -159,7 +157,7 @@ attribute :audio
 
     return nil if sample.nil?
 
-    return sample.osis
+    return sample.id
   end
 
 

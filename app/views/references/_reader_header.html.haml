@@ -4,13 +4,13 @@
       %li
         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
           %b
-            = @reference.ref_string
+            = @reference.to_s(version:false)
           %span
             = t('ref.choose book and chapter')
       %li
         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
           %b
-            = @version.osis_human
+            = @version.human
           %span
             =t("ref.choose version")
       %li#li_selected_verses.separator.hide
@@ -29,7 +29,7 @@
       %li.show_in_parallel_mode
         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_alt_version', :title => t("ref.choose second version")}
           %b
-            = @alt_version.osis_human
+            = @alt_version.human
           %span
             =t("ref.choose version")
       %li.hide_in_parallel_mode

@@ -1,4 +1,4 @@
-- @title = "#{@reference.ref_string} #{@version.osis_human}"
+- @title = @reference.to_s
 - @reader_menus = true
 - @share_menu = false
 - @verse_modals = false
@@ -14,5 +14,5 @@
 
 %footer
   %p
-    %b= link_to t("ref.about the version", version: @version), version_path(@version) 
+    %b= link_to t("ref.about the version", version: @version), version_path(@version)
   %p= @version.copyright

@@ -1,7 +1,7 @@
 - if plan.is_a? Subscription
   %form.float_left{method: 'post'}
     %input{type: "hidden", name: "_method", value: "put"}
-    %input{type: "hidden", name: "ref", value: reference.ref.osis}
+    %input{type: "hidden", name: "ref", value: reference.ref.to_usfm}
     %input{type: "hidden", name: "completed", value: (!reference.completed?).to_s}
     %input{type: "hidden", name: "version", value: plan.version}
     - if day != plan.current_day

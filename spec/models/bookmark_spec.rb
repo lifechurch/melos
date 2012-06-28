@@ -11,7 +11,7 @@ describe Bookmark do
       bookmark = Bookmark.new({auth: @auth, references: "matt.1.3.esv,matt.1.4.esv,matt.1.10.esv", title: "Begettings", username: @user.username})
       bookmark.save.should_not be_false
       bookmark.reference_list.should be_a ReferenceList
-      bookmark.reference_list.first.osis.should == "matt.1.3.esv"
+      bookmark.reference_list.first.should == Reference.new("matt.1.3.esv")
     end
 
     it "should return false for an invalid bookmark" do

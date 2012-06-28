@@ -10,7 +10,7 @@
       %ul
         - @version.books.each do |k, v|
           %li
-            %a{:href => '#', "data-book" => k, "data-version" => @version.osis, "data-chapters" => @version.books[k].chapters}=  v.human
+            %a{:href => '#', "data-book" => k, "data-version" => @version.human, "data-chapters" => @version.books[k].chapters}=  v.human
   #menu_chapter
     %header
       =t("chapter")
