@@ -74,8 +74,8 @@ attribute :audio
     return @books unless @books.nil?
 
     @books = Hashie::Mash.new
-    detailed_attributes['books'].each do |b|
-      @books[b.usfm.downcase] = b.merge(chapters: b.chapters.count)
+    detailed_attributes['books'].each_with_index do |b, i|
+      @books[b.usfm] = b.merge(chapters: b.chapters)
     end
     @books
   end
@@ -98,12 +98,12 @@ attribute :audio
     return true
   end
 
-  def chapter_before(chapter)
-    nil
+  def chapter_before(book, chapter)
+    debugger
   end
 
-  def chapter_after(chapter)
-    nil
+  def chapter_after(book, chapter)
+    debugger
   end
 
   def title
@@ -163,7 +163,7 @@ attribute :audio
 
 
 
-  private
+  #DEBUGprivate
 
   def detailed_attributes
     #attributers that can only be found with a specific /version call

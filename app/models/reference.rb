@@ -143,12 +143,30 @@ class Reference < YouVersion::Resource
     @audio
   end
 
-  def previous
-    version.previous_chapter if version
+  def previous_chapter
+     return nil unless version
+
+     start = Time.now.to_f
+    _usfm = chapter_usfm
+    @chapter_list = Version.find(version).books.map{|k,v| v["chapters"]}.flatten unless @chapter_list
+    @index = @chapter_list.index{|c| c.usfm == _usfm} unless @index
+    return nil if @index == 0
+
+    Rails.logger.apc "**Reference.previous_chapter took #{Time.now.to_f - start} sec to find the chapter", :debug
+    self.class.new(@chapter_list[@index - 1].usfm, version: version)
   end
 
-  def next
-    version.next_chapter if version
+  def next_chapter
+    return nil unless version
+
+    start = Time.now.to_f
+    _usfm = chapter_usfm
+    @chapter_list = Version.find(version).books.map{|k,v| v["chapters"]}.flatten unless @chapter_list
+    @index = @chapter_list.index{|c| c.usfm == _usfm} unless @index
+    return nil if @index == @chapter_list.count - 1
+
+    Rails.logger.apc "**Reference.next_chapter took #{Time.now.to_f - start} sec to find the chapter", :debug
+    self.class.new(@chapter_list[@index - 1].usfm, version: version)
   end
 
   def first_verse

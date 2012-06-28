@@ -199,22 +199,41 @@ describe Reference do
     end
   end
 
-  describe "#previous" do
-    it "should be the previous chapter reference" do
-      Reference.new("gen.2.kjv").previous.should == @gen_1_kjv_ref
+  describe "#previous_chapter" do
+    it "should give nil for the first chatper" do
+      @gen_1_kjv_ref.previous_chapter.should be_nil
     end
-    it "should be nil if there isn't one" do
-      @gen_1_kjv_ref.previous.should be_nil
+    it "should span books properly" do
+      Reference.new('EXO.1.kjv').previous_chapter.should == Reference.new('Gen.50.kjv')
+    end
+    it "should span canons properly" do
+      Reference.new('MAT.1.kjv').previous_chapter.should == Reference.new('MAL.4.kjv')
+    end
+    it "should be the previous chapter reference" do
+      Reference.new("gen.2.kjv").previous_chapter.should == @gen_1_kjv_ref
+    end
+    it "should work for last book" do
+      Reference.new('Rev.22').previous_chapter.should == Reference.new('Rev.21.kjv')
     end
   end
 
-  describe "#next" do
-    it "should be the next chapter reference" do
-      @gen_1_kjv_ref.next.should == Reference.new("gen.2.kjv")
+  describe "#next_chapter" do
+    it "should give nil for the last chatper" do
+      Reference.new('Rev.22').next_chapter.should be_nil
     end
-    it "should be nil if there isn't one" do
-      Reference.new("rev.22.kjv").next.should be_nil
+    it "should span to books properly" do
+      Reference.new('GEN.50.kjv').next_chapter.should == Reference.new('EXO.1.kjv')
     end
+    it "should span canon's properly" do
+      Reference.new('MAL.4.kjv').next_chapter.should == Reference.new('MAT.1.kjv')
+    end
+    it "should return the next book" do
+      Reference.new('Rev.21').next_chapter.should == Reference.new('Rev.22.kjv')
+    end
+  end
+
+  describe "#verses_in_chapter" do
+
   end
 
   describe "#short_link" do
