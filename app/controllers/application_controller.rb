@@ -131,22 +131,6 @@ class ApplicationController < ActionController::Base
     render "pages/generic_error", layout: 'application', status: 500
   end
 
-  def force_login(opts = {})
-    if current_auth.nil?
-      opts[:redirect] = request.path
-      redirect_to sign_up_path(opts) and return
-      #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
-    end
-    @user = current_user
-  end
-
-  def force_notification_token_or_login
-    if params[:token]
-      redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return if current_user && current_user.notifications_token != params[:token]
-    else
-      force_login
-    end
-  end
 
   def set_redirect
     cookies[:auth_redirect] = nil if cookies[:auth_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
@@ -171,18 +155,6 @@ class ApplicationController < ActionController::Base
     return redirect_to path
   end
 
-  def last_read
-    Reference.new(cookies[:last_read]) if cookies[:last_read]
-  end
-
-  def set_last_read(ref)
-    cookies.permanent[:last_read] = ref.to_param
-  end
-
-  def current_auth
-    @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]
-  end
-
   def external_request?
     return true if request.referrer.nil?
 
@@ -191,12 +163,33 @@ class ApplicationController < ActionController::Base
     return true
   end
 
-  def recent_versions
-    return @recent_versions unless @recent_versions.nil?
+  def last_read
+    Reference.new(cookies[:last_read]) if cookies[:last_read]
+  end
 
-    return [] if cookies[:recent_versions].to_s == ""
+  def set_last_read(ref)
+    cookies.permanent[:last_read] = ref.to_param
+  end
 
-    return @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v)}
+  def force_notification_token_or_login
+    if params[:token]
+      redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return if current_user && current_user.notifications_token != params[:token]
+    else
+      force_login
+    end
+  end
+
+    def force_login(opts = {})
+    if current_auth.nil?
+      opts[:redirect] = request.path
+      redirect_to sign_up_path(opts) and return
+      #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
+    end
+    @user = current_user
+  end
+
+  def current_auth
+    @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]
   end
 
   def current_user
@@ -215,6 +208,14 @@ class ApplicationController < ActionController::Base
 
   def current_avatar
     cookies[:avatar] + "#{controller_name == 'users' && action_name == 'picture' ? '?' + rand(1000000).to_s : ''}" if cookies[:avatar]
+  end
+
+  def recent_versions
+    return @recent_versions unless @recent_versions.nil?
+
+    return [] if cookies[:recent_versions].to_s == ""
+
+    return @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v)}
   end
 
   def current_date

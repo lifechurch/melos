@@ -69,6 +69,7 @@ en:
   invalid login:                                "Invalid Username or Password"
   invalid password:                             "Incorrect Password"
   sign out:                                     "Sign out"
+  sign back in:                                 "For your security, logins expire after two weeks. Please sign in again."
   youversion:                                   "YouVersion"
   username or email prompt:                     "Username (or Email)"
   password prompt:                              "Password"
