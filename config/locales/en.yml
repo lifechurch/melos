@@ -436,6 +436,7 @@ en:
     you have no plans:                          "You're not subscribed to any reading plans right now."
     no public plans:                            "No reading plans are visible for %{username}."
     filter by lang:                             "Filter Plans by Language"
+    settings:                                   "Settings"
     search:                                     "Search"
     search placeholder:                         "Search %{category} Plans"
     subscribe to plan:                          "Start This Plan"
