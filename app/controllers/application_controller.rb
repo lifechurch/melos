@@ -236,7 +236,7 @@ class ApplicationController < ActionController::Base
 
     return cookies[:alt_version] = recent.to_param if recent
 
-    raise NoSecondaryVersionError if Version.all(I18n.locale).except(current_version).empty?
+    raise NoSecondaryVersionError if (Version.all.map(&:to_param)-[current_version]).empty?
 
     return cookies[:alt_version] = Version.sample_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version, has_ref: ref)
   end

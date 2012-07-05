@@ -1,4 +1,4 @@
-- @title = "#{@reference.ref_string} #{@reference.version_string}"
+- @title = "#{@reference.human} #{@reference.version_string}"
 - @reader_menus = true
 - @is_reader = true
 - @canonical = reference_url(@reference)
@@ -16,14 +16,10 @@
     - direction = 'rtl' if @version.try(:rtl?)
     = link_to("previous", bible_path(@reference.previous), class: "nav_prev #{direction}") if @reference.previous
     = link_to("next", bible_path(@reference.next), class: "nav_next #{direction}") if @reference.next
-  #version_primary{"data-reference" => @reference.osis, class: @version.try(:text_direction)}
-    - @reference.contents.each do |r|
-      = r.html_safe
-  -# TODO: Make boom sauce, to compliment the awesome sauce.
-  -# Aka: Make this thing output a secondary Bible version, KJV or sumthin'.
-  #version_secondary{"data-reference" => @alt_reference.osis, class: @alt_version.try(:text_direction)}
-    - @alt_reference.contents.each do |r|
-      = r.html_safe
+  #version_primary{"data-reference" => @reference.to_param, class: @version.try(:text_direction)}
+    = @reference.content.html_safe if @reference.content
+  #version_secondary{"data-reference" => @alt_reference.to_param, class: @alt_version.try(:text_direction)}
+    = @alt_reference.content.html_safe if @alt_reference.content
 
 %footer
   %p

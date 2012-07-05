@@ -5,17 +5,23 @@ attribute :title
 attribute :abbreviation
 attribute :audio
 
-  def self.all(lang = "")
-    iso_3 = case lang
+  def self.all(app_lang_tag = "")
+    # `bible_langauge_id` is the arbitrariy identifier of the language
+    # to the Bible API (iso_639_3[_variant tag]), langauge_tag in the response
+    #
+    # `app_lang_tag` is the language tag used within the app (pt-BR, for example)
+    # that comes from the user's preferred languages or the language they've selected
+    #
+    bible_langauge_id = case app_lang_tag
     when ""
-      return versions
+      return versions.values
     when Hash
-      lang.iso.to_s
+      app_lang_tag.id.to_s
     else
-      lang.to_s
+      YvApi::to_bible_api_lang_code(app_lang_tag).to_s
     end
 
-    versions.select { |k, v| v.language.iso.to_s == iso_3 }
+    versions.select { |k, v| v.language.id.to_s == bible_langauge_id }.values
   end
 
   def self.find(version)
@@ -42,20 +48,22 @@ attribute :audio
   def self.languages
     return @languages unless @languages.nil?
 
-    @languages = Hashie::Mash.new(Hash[*Version.all.group_by { |k, v| v.language}.keys.map{|k| [k[:iso], k[:human]]}.flatten])
+    @languages = Hashie::Mash.new(Hash[*Version.all.group_by { |k, v| v.language}.keys.map{|k| [k[:tag], k[:human]]}.flatten])
   end
 
   def self.all_by_language(opts={})
     # to allow a restricted subset of versions (e.g. for white-list sites)
     all_by_language = Version.all.find_all{|k, v| opts[:only].include? k}.group_by {|k, v| v.language.iso} if opts[:only]
 
-    all_by_language ||= Version.all.group_by {|k, v| v.language}
-    all_by_language.each {|k, v| all_by_language[k] = Hash[*v.flatten]}
-    all_by_language
+    all_by_language ||= all.group_by {|v| v.language.tag}
+    #all_by_language.each {|k, v| all_by_language[k] = Hash[*v.flatten]}
+    #all_by_language
   end
 
   def language
-    Hashie::Mash.new({iso: YvApi::to_app_lang_code(@attributes.language.iso_639_3), human: @attributes.language.local_name})
+    Hashie::Mash.new({tag: YvApi::bible_to_app_lang_code(@attributes.language.iso_639_3),
+                      id: @attributes.language.iso_639_3,
+                      human: @attributes.language.local_name})
   end
 
   def copyright
@@ -93,7 +101,7 @@ attribute :audio
     listing = books_list
 
     return false if ref.book && books[ref.book.to_s].nil?
-    return false if ref.chapter && books[ref.book.to_s].chapters >= ref.chapter #[ref.chapter.to_s].nil?
+    return false if ref.chapter && books[ref.book.to_s].chapters[ref.chapter] >= ref.chapter #[ref.chapter.to_s].nil?
     #API doesn't send verse information
     return true
   end
@@ -137,7 +145,7 @@ attribute :audio
   end
 
   def self.default()
-    defaults["eng"]
+    defaults["eng"] || 1
   end
 
   def self.sample_for(lang, opts={})
@@ -146,11 +154,11 @@ attribute :audio
     samples = all_by_language[lang.to_s]
     return nil if samples.nil?
 
-    samples = samples.find_all{|k,v| k != opts[:except]}
+    samples = samples.find_all{|v| v.id != opts[:except]}
     sample = nil
 
     until !sample.nil? || samples.empty?
-      sample = samples.delete_at(Random.rand(samples.length))[1]
+      sample = samples.delete_at(Random.rand(samples.length))
 
       sample = nil if opts[:has_ref] && !sample.include?(opts[:has_ref])
     end

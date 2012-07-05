@@ -94,10 +94,28 @@ class YvApi
     lang_code.is_a?(Symbol) ? code.to_sym : code
   end
 
+  def self.to_bible_api_lang_code(lang_code)
+    code = bible_api_custom_languages[lang_code.to_s]
+    code = LanguageList::LanguageInfo.find(lang_code.to_s).iso_639_3 if code.nil?
+
+    lang_code.is_a?(Symbol) ? code.to_sym : code.to_s
+  end
+
   def self.to_app_lang_code(lang_code)
     # ["de","en","es","fr","ko","nl","no","pl","pt","ru","sk","sv","zh_CN", "zh_TW"]}, # API options for 2.4 plans 3/26/12
     lang_code = lang_code.gsub("pt", "pt-BR")
     lang_code = lang_code.gsub("_", "-")
+  end
+
+  def self.bible_to_app_lang_code(lang_code)
+    code = bible_api_custom_languages.key(lang_code.to_s)
+    code = LanguageList::LanguageInfo.find(lang_code.to_s).iso_639_1 if code.nil?
+    # the code will be empty if not a common or iso 639_1 language
+    # or if we don't have the language supported in our custom tags
+    # the app won't be able to recognize this code if empty
+    # return the code passed so there's at least something?
+    code = lang_code if code.to_s == ""
+    code
   end
 
   def self.get_usfm_version(osis_version)
@@ -169,6 +187,16 @@ class YvApi
   def self.get_host!(opts, path)
     #/likes.youversionapi.com/3.0
     path.match(/(.+)\/.*/)[1] + "." + Cfg.api_root + "/" + (opts.delete(:api_version) || Cfg.api_version)
+  end
+
+  def self.bible_api_custom_languages
+    {
+      'en-GB' => 'eng_GB',
+      'pt'    => 'por_POR',
+      'pt-BR' => 'por',
+      'zh-CN' => 'cmn',
+      'zh-TW' => 'zho'
+    }
   end
 
   def self.get_path!(path)
