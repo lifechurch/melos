@@ -45,19 +45,16 @@ attribute :audio
     end
   end
 
-  def self.languages
+  def self.languages(opts={})
     return @languages unless @languages.nil?
 
-    @languages = Hashie::Mash.new(Hash[*Version.all.group_by { |k, v| v.language}.keys.map{|k| [k[:tag], k[:human]]}.flatten])
+    @languages = Hashie::Mash.new(Hash[all_by_language(opts).map{|tag,versions| [tag, versions.first.language.human]}])
   end
 
   def self.all_by_language(opts={})
     # to allow a restricted subset of versions (e.g. for white-list sites)
     all_by_language = Version.all.find_all{|k, v| opts[:only].include? k}.group_by {|k, v| v.language.iso} if opts[:only]
-
     all_by_language ||= all.group_by {|v| v.language.tag}
-    #all_by_language.each {|k, v| all_by_language[k] = Hash[*v.flatten]}
-    #all_by_language
   end
 
   def language
@@ -100,18 +97,10 @@ attribute :audio
     raise "versions contain references!" if !ref.is_a? Reference
     listing = books_list
 
-    return false if ref.book && books[ref.book.to_s].nil?
-    return false if ref.chapter && books[ref.book.to_s].chapters[ref.chapter] >= ref.chapter #[ref.chapter.to_s].nil?
-    #API doesn't send verse information
+    return false if ref.book && books[ref.book.to_s].nil? rescue true
+    return false if ref.chapter && books[ref.book.to_s].chapters[ref.chapter].present? rescue true
+    #API doesn't send verse information anymore :(
     return true
-  end
-
-  def chapter_before(book, chapter)
-    debugger
-  end
-
-  def chapter_after(book, chapter)
-    debugger
   end
 
   def title
@@ -150,8 +139,9 @@ attribute :audio
 
   def self.sample_for(lang, opts={})
     opts[:except] ||= ""
+    lang = lang.to_s
 
-    samples = all_by_language[lang.to_s]
+    samples = all_by_language[lang]
     return nil if samples.nil?
 
     samples = samples.find_all{|v| v.id != opts[:except]}

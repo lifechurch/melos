@@ -548,14 +548,15 @@ var YV = (function($, window, document, undefined) {
 
         function populate_chapter_list(book_a_el){
           var ol = book_a_el.closest('.dynamic_menu').find('ol:first');
-          var chapters = parseInt(book_a_el.data('chapters'), 10) + 1;
+          var chapter_refs = book_a_el.data('chapter-refs');
+          var chapters = book_a_el.data('chapters');
           var book = book_a_el.data('book');
           var version = book_a_el.data('version');
           var li = book_a_el.closest('li');
           var list = '';
 
-          for (var i = 1; i < chapters; i++) {
-            list += '<li class="' + (book == cur_book && i == cur_chapter ? li_class : '') + '"><a href="/bible/' + book + '.' + i + '.' + version + '">' + i + '</a></li>';
+          for (var i = 0; i < chapters.length; i++) {
+            list += '<li class="' + (book == cur_book && chapters[i] == cur_chapter ? li_class : '') + '"><a href="/bible/' + chapter_refs[i] + '.' + version + '">' + chapters[i] + '</a></li>';
           }
 
           li.addClass(li_class).siblings().removeClass(li_class);

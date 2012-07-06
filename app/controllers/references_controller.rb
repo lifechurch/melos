@@ -90,13 +90,13 @@ class ReferencesController < ApplicationController
     def ref_not_found(ex)
       if ex.is_a? BadSecondaryVersionError
         @alt_version = Version.find(cookies[:alt_version])
-        @alt_reference = Hashie::Mash.new({contents: ["<h1>#{t('ref.invalid chapter title')}</h1>","<p>#{t('ref.invalid chapter text')}</p>"]})
+        @alt_reference = Hashie::Mash.new({content: "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"})
         return render :show if @reference.valid?
       end
 
       if ex.is_a? NoSecondaryVersionError
         @alt_version = @version
-        @alt_reference = Hashie::Mash.new({contents: ["<h1>#{t('ref.no secondary version title')}</h1>","<p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"]})
+        @alt_reference = Hashie::Mash.new({content: "<h1>#{t('ref.no secondary version title')}</h1> <p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"})
         return render :show if @reference.valid?
       end
 

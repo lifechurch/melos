@@ -228,17 +228,22 @@ class ApplicationController < ActionController::Base
   end
 
   def alt_version(ref)
+    #Cookie may have empty string for some reason -- possibly previous error case
+    cookies[:alt_version] = nil if cookies[:alt_version].blank?
+
     raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).include?(ref)
 
-    return cookies[:alt_version] if cookies[:alt_version]
+    return cookies[:alt_version] if cookies[:alt_version].present?
 
+    #looks like we may have a new user!
     recent = recent_versions.find{|v| v.to_param != current_version && v.include?(ref)}
+    cookies[:alt_version] = recent.to_param if recent
 
-    return cookies[:alt_version] = recent.to_param if recent
+    #raise NoSecondaryVersionError if (Version.all(params[:locale] || "en").map(&:to_param)-[current_version]).empty?
+    cookies[:alt_version] ||= Version.sample_for((params[:locale] || "en"), except: current_version, has_ref: ref)
 
-    raise NoSecondaryVersionError if (Version.all.map(&:to_param)-[current_version]).empty?
-
-    return cookies[:alt_version] = Version.sample_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version, has_ref: ref)
+    raise NoSecondaryVersionError if cookies[:alt_version].blank?
+    cookies[:alt_version]
   end
 
   def set_current_version(ver)
