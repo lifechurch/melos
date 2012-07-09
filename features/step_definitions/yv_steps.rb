@@ -1,21 +1,15 @@
+Dir[
+  File.expand_path(
+    Rails.root.join 'spec/support', '**', '*.rb'
+  )
+].each {|f| require f}
 
 Given /^a user named "([^"]*)" exists$/ do |arg1|
-  unless user = User.authenticate(arg1, "tenders")
-    opts = {email: "#{arg1}@youversion.com", password: "tenders", agree: true, verified: true, username: arg1}
-    response = User.register(opts)
-    response.should be_true
-    user = User.authenticate(arg1, "tenders")
-    unless user
-      # ugh
-      sleep 3
-      user = User.authenticate(arg1, "tenders")
-    end
-  end
-  user.should be_a User
+  ensure_user(username: arg1)
 end
 
-Given /^a user named "([^"]*)" with password "([^"]*)" exists$/ do |arg1, arg2|  
-  User.authenticate(arg1, arg2).should_not == nil
+Given /^a user named "([^"]*)" with password "([^"]*)" exists$/ do |arg1, arg2|
+  ensure_user(username: arg1, password: arg2)
 end
 
 Then /^a user named named "([^"]*)" with password "([^"]*)" should exist$/ do |u, p|
@@ -47,7 +41,7 @@ Given /^these notes exist:$/ do |table|
     result = note.save
     result.should_not be_false
   end
-#     if @notes  
+#     if @notes
 #       @notes.each do |note|
 #         if note.title == row['Title'] && note.username == row['Author'] && note.content == row['Content'] && note.reference.osis == row['References'] && note.user_status.upcase == row['Status'].upcase
 #           @rowsfound << true
@@ -55,13 +49,13 @@ Given /^these notes exist:$/ do |table|
 #       end
 #     end
 #   end
-# 
+#
 #   if @rowsfound.count >= @rows.count
 #     assert true
 #   else
 #     assert false, 'Not all rows found'
-#   end  
-  
+#   end
+
 end
 
 Given /^a user named "([^"]*)" with password "([^"]*)" does not exist$/ do |arg1, arg2|
@@ -75,7 +69,7 @@ Given /^these users exist:$/ do |table|
     unless user.class == User
       resp = User.register({username: r['Username'], password: "tenders", email: "#{r['Username']}@youversion.com", verified: true, agree: true })
       resp.should_not be_false
-      
+
       user = User.authenticate(r['Username'], "tenders")
       unless user
         # ugh

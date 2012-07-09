@@ -34,3 +34,6 @@ module UsersSpecHelper
     end
   end
 end
+
+    #allows cucumber access to these helpers
+    World(UsersSpecHelper) if respond_to?(:World)
