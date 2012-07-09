@@ -8,7 +8,7 @@ class NotesController < ApplicationController
       redirect_to user_notes_path(params[:user_id] || current_user) and return
     else
       @selected = :notes
-      @notes = Note.all(page: @page, language_iso: I18n.locale)
+      @notes = Note.all(page: @page, language_iso: I18n.locale, cache_for: 2.minutes)
     end
   end
 
