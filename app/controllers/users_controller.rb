@@ -387,12 +387,12 @@ class UsersController < ApplicationController
   end
 
   def privacy
-    I18n.locale = :en if [:fr, :pl, :af, :km, :ko, :pl, :sk, :sv, :tr, :ro, :bg].find{|loc| loc == I18n.locale}
+    I18n.locale = :en unless i18n_terms_whitelist.include? I18n.locale
     render action: "privacy", layout: "application"
   end
 
   def terms
-    I18n.locale = :en if [:fr, :pl, :af, :km, :ko, :pl, :sk, :sv, :tr, :ro, :bg].find{|loc| loc == I18n.locale}
+    I18n.locale = :en unless i18n_terms_whitelist.include? I18n.locale
     render action: "terms", layout: "application"
   end
 
@@ -412,5 +412,11 @@ private
       @user = current_user
       @me = true
     end
+  end
+
+  def i18n_terms_whitelist
+    # the following localizations have the legal terms reviewed in a way that is
+    # legally appropriate to show
+    [:en, :de, :"en-GB", :es, :ja, :nl, :no, :"pt-BR", :ru, :"zh-CN", :"zh-TW"]
   end
 end
