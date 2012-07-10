@@ -135,11 +135,11 @@ class YvApi
             \s*
             ([1-3]? \s* [A-Za-z]+)                            #book
             \s*
-            (?:(?:[:\.])(\d+))?                               #optional chapter
+            (?:(?:[:\.])(\d*))?                               #optional chapter
             \s*
-            (?:(?:[:\.]) ([\d\-,\s]+))?                       #optional verse(s)
+            (?:(?:[:\.]) ([\d\-,\s]*))?                       #optional verse(s)
             \s*
-            (?: (?:\.) ((?: \d+\-?)? (?: [a-zA-Z_\-]+)?) )?   #optional version
+            (?: (?:\.) ((?: \d*\-?)? (?: [a-zA-Z_\-]*)) )?    #optional version
           $/x
     matches = ref_str.match(re)
 

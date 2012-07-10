@@ -7,7 +7,9 @@ Feature: Reader view (homepage)
   highlight, bookmark, notate, and share verses.
 
 
-  @bible
+  Background:
+    Given a user named "reader_user1" exists
+  @skip
   Scenario: Showing some Bible text
     # Given a bookmark on Genesis 1:3
     # And a note on Genesis 1:5

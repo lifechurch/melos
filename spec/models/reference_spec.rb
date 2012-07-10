@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'benchmark'
 
 describe Reference do
 
@@ -298,5 +299,23 @@ describe Reference do
     it "should be a secure url" do
       @gen_1_kjv_ref.audio.url.should =~ /^https:/
     end
+  end
+
+  describe "#timing" do
+      it "should initialize without hitting the API" do
+        Benchmark::realtime{Reference.new('gen.1.1.kjv')}.should < 0.0001
+      end
+      it "should give basic properties without hitting the API" do
+        ref = Reference.new('gen.1.1.kjv')
+        Benchmark::realtime{ref.book}.should        < 0.0001
+        Benchmark::realtime{ref.chapter}.should     < 0.0001
+        Benchmark::realtime{ref.verses}.should      < 0.0001
+        Benchmark::realtime{ref.version}.should     < 0.0001
+        Benchmark::realtime{ref.is_chapter?}.should < 0.0001
+      end
+      it "should hit the API to validate a reference" do
+        ref = Reference.new('gen.1.1.kjv')
+        Benchmark::realtime{ref.valid?}.should > 0.001
+      end
   end
 end
