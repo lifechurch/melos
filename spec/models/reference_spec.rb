@@ -140,13 +140,15 @@ describe Reference do
   end
 
   describe "#hash" do
-    it "should give a unique hash" do
+    it "should give a unique hash for different references" do
       @gen_1_1_kjv_ref.hash.should_not == @gen_1_kjv.hash
+    end
+    it "should give a unique hash for different versions" do
+      @gen_1_1_kjv_ref.hash.should_not == Reference.new('gen.1.1.niv').hash
     end
     it "should give the same hash for the same verse" do
       @gen_1_1_kjv_ref.hash.should == Reference.new("gen.1.1.kjv").hash
     end
-
   end
 
   describe "to_param" do

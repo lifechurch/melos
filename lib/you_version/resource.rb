@@ -48,10 +48,17 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
-      def i18nize(hash)
+      def i18nize(mash)
         lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
+        return nil if mash.nil?
 
-        hash.has_key?(lang_key) ? hash[lang_key] : hash["default"] unless hash.nil?
+        return mash[lang_key] unless mash[lang_key].nil?
+
+        val = mash.html[lang_key]
+        val ||= mash.html.default
+        val ||= mash.text[lang_key]
+        val ||= mash.text.default
+        val ||= mash.default
       end
 
       def attr_i18n_reader(*args)
@@ -62,7 +69,7 @@ module YouVersion
         errors.find {|t| t['key'] =~ /(?:username_and_password.required)|(?:users.auth_user_id.or_isset)/}
       end
 
-      def find(id, params = {}, &block) 
+      def find(id, params = {}, &block)
         api_errors = nil
 
         auth = params.delete(:auth)
@@ -74,7 +81,8 @@ module YouVersion
         response = get(resource_path, opts) do |errors|
           if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
-            #TODO: be smarter about trying to auth first if auth passed (common case), as we're probably wasting a lot of calls here
+            #TODO: be smarter about trying to auth first if auth passed (common case),
+            #      we're probably wasting a lot of calls here
             inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|
               # Capture errors for handling below
               api_errors = errors
@@ -108,11 +116,11 @@ module YouVersion
           if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
             # Then it's the notes thing where you're auth'ed as a different user
             YvApi.get(list_path, params.merge!(auth: nil)) do |errors|
-              if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/].detect { |r| r.match(errors.first["error"]) }
+              if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
                 []
               end
             end
-          elsif errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/].detect { |r| r.match(errors.first["error"]) }
+          elsif errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
             []
           else
             raise ResourceError.new(errors)
@@ -121,17 +129,18 @@ module YouVersion
 
         list = ResourceList.new
 
-        # argh, sometimes it has a total, sometimes it doesn't
+        # sometimes it has an explicit total attribute
+        # else we just use implicit length of array returned
         if response.respond_to? :total
           list.total = response.total
         else
           list.total = response.length
         end
 
-        # aaand sometimes it's not encapsulated with api_prefix
-
-        if response.respond_to? api_path_prefix.to_sym
-          response.send(api_path_prefix).each {|data| list << new(data.merge(auth: params[:auth]))}
+        # sometimes the array of items encapsulated with api_prefix
+        # if there is other data that comes back with the response
+        if response.respond_to? api_path_prefix.gsub('-','_').to_sym
+          response.send(api_path_prefix.gsub('-','_')).each {|data| list << new(data.merge(auth: params[:auth]))}
         else
           response.each {|data| list << new(data.merge(auth: params[:auth]))}
         end

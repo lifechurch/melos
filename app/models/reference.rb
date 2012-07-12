@@ -92,7 +92,7 @@ class Reference < YouVersion::Resource
   end
 
     def hash
-    to_usfm.hash
+    to_param.hash
   end
 
   def ==(compare)

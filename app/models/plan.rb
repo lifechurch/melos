@@ -11,21 +11,21 @@ class Plan < YouVersion::Resource
   attr_i18n_reader :copyright
 
   def self.list_path
-    "#{api_path_prefix}/search"
+    "search/reading_plans"
   end
 
   def self.api_path_prefix
-    "reading_plans"
+    "reading-plans"
   end
 
   def self.available_locales
-    return @available_locales if @available_locales
+    #return @available_locales if @available_locales
 
-    response = YvApi.get("configuration/items", {cache_for: 12.hours}) do |errors|
+    response = YvApi.get("#{api_path_prefix}/configuration", {cache_for: 12.hours}) do |errors|
       raise YouVersion::ResourceError.new(errors)
     end
 
-    @available_locales = response.reading_plans.available_language_tags.map{|tag| YvApi::to_app_lang_code(tag).to_sym}
+    @available_locales = response.available_language_tags.map{|tag| YvApi::to_app_lang_code(tag).to_sym}
   end
 
   def self.find(id, opts = {}, &block)
@@ -40,20 +40,18 @@ class Plan < YouVersion::Resource
         id = lib_plan.id
     end
 
-    opts[:query] ||= '*'
-
-    #TODO: this doesn't work if an integer id is passed (?)
-    super(id, opts, &block)
+    super(id, opts) do |errors|
+      if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
+        return nil
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
   end
 
   def self.all(opts = {})
-    if opts[:query]
-      #query string was passed, search, since API doesn't give a query on library
-      Plan.search(opts[:query], opts)
-    else
-      #TODO: this doesn't work if an integer id is passed?
-      super(opts.merge(query: '*'))
-    end
+    opts[:query] ||= '*'
+    super(opts)
   end
 
   def self.subscribe (plan, user_auth)
@@ -91,7 +89,7 @@ class Plan < YouVersion::Resource
       params[:id] = id
       @users_page = params[:page] ||= 1
 
-      response = YvApi.get("reading_plans/users", params) do |errors|
+      response = YvApi.get("reading-plans/users", params) do |errors|
         if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
           return []
         else
@@ -107,7 +105,7 @@ class Plan < YouVersion::Resource
   end
 
   def reading(day, opts = {})
-    unless(@reading && @reading_day == day)
+    unless(@reading && @reading_day == day && @reading_version == version)
       opts[:day] ||= day
       opts[:id] ||= id
       opts[:cache_for] ||= 12.hours
@@ -116,16 +114,19 @@ class Plan < YouVersion::Resource
       # to be overriden by Subscription model to send auth and user_id
       # we can cache the non-authed response
 
-      response = YvApi.get("reading_plans/references", opts) do |errors|
+      response = YvApi.get("#{self.class.api_path_prefix}/references", opts) do |errors|
         raise YouVersion::ResourceError.new(errors)
       end
+      @reading_day = day
+      @reading_version = version
 
       #TODO: it probably makes sense for a reading to be it's own class within Plan
       @reading = Hashie::Mash.new()
-      @reading.devotional = YouVersion::Resource.i18nize(response.additional_content_html)
-      @reading.devotional ||= "<p>" << YouVersion::Resource.i18nize(response.additional_content).gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if response.additional_content
-      @reading.references = response.adjusted_days.first.references.map do |data|
-        Hashie::Mash.new(ref: Reference.new(data.reference, version: version), completed?: (data.completed == "true"), no_version_ref: Reference.new(data.reference).merge(version: nil))
+      #get localized html || text via i18nize method
+      @reading.devotional = YouVersion::Resource.i18nize(response.additional_content)
+      @reading.devotional = "<p>" << @reading.devotional.gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if @reading.devotional
+      @reading.references = response.references.map do |data|
+        Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default), completed?: (data.completed == "true"), no_version_ref: Reference.new(data.reference).merge(version: nil))
       end
     end
 
@@ -174,7 +175,7 @@ class Plan < YouVersion::Resource
   def available_in?(lang_code)
     lang_key = YvApi::to_api_lang_code(lang_code)
 
-    @attributes["about"].has_key?(lang_key)
+    @attributes["about"].has_key?(lang_key) || @attributes["about"].html.has_key?(lang_key) || @attributes["about"].text.has_key?(lang_key)
   end
 
   private
@@ -190,8 +191,8 @@ class Plan < YouVersion::Resource
     query = '*' if (query == "" || query == nil)
     params = {query: query, cache_for: 12.hours}.merge!(params.except("query", :query))
 
-    response = YvApi.get("#{api_path_prefix}/search", params) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
+    response = YvApi.get(list_path, params) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
         return []
       else
         raise YouVersion::ResourceError.new(errors)
