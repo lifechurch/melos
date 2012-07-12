@@ -221,6 +221,20 @@
 #main footer b
   font-size: 13px
 
+// `Main > headers and paragraphs
+//----------------------------------------------------------------------------------------------------
+
+.p
+  margin-bottom: 20px
+
+.chapter > .label
+  display: none
+
+.chapter .heading
+  font-weight: bold
+  font-size: 25px
+  margin-bottom: 20px
+
 // `Main > Verses
 //----------------------------------------------------------------------------------------------------
 
@@ -240,7 +254,7 @@
 .verse + .verse
   margin-left: 3px
 
-.verse > strong:first-child
+.verse > .label
   +round
   +background-image(linear-gradient(#eee, #ddd))
   background-color: #eee
@@ -259,7 +273,10 @@
   padding: 2px 4px 3px
   vertical-align: top
 
-.trans, .study
+.note *
+  display: none
+
+.note > .label
   +round
   +background-image(linear-gradient(#eee, #ddd))
   background-color: #eee
@@ -278,6 +295,9 @@
     bottom: 5px
   padding: 2px 4px 3px
   vertical-align: top
+
+.note > .label:hover
+  display: block
 
 .verse.dark_highlight
   color: $gray_light
