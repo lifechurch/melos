@@ -34,8 +34,9 @@ class TwitterConnection < YouVersion::Connection::Base
     return result.twitter.nil?
   end
 
-
-
+  def nickname
+    data.screen_name
+  end
   
 end
 

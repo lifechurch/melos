@@ -41,5 +41,9 @@ class FacebookConnection < YouVersion::Connection::Base
     result = YvApi.post("users/delete_connection", connection_type: "fb", auth: auth)
     return result.facebook.nil?
   end
+
+  def nickname
+    data.name
+  end
 end
 
