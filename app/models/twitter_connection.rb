@@ -35,8 +35,8 @@ class TwitterConnection < YouVersion::Connection::Base
   end
 
   def nickname
-    data.screen_name
+    '@' + data.screen_name
   end
-  
+
 end
 
