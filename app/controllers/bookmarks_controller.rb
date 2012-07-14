@@ -64,7 +64,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id], auth: current_auth)
 
     if @bookmark.update(params[:bookmark])
-#      render action: "show"
+#      render action: "show" - commented out by DSB 7/14/12
       render action: "index"
     else
       render action: "edit"
