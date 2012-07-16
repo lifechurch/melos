@@ -21,7 +21,7 @@ class Highlight < YouVersion::Resource
   def self.for_reference(reference, params = {})
     reference = Reference.new(reference) unless reference.is_a? Reference
     params[:page] ||= 1
-    opts = {reference: reference.chapter_usfm, version: reference.version}.merge(params)
+    opts = {reference: reference.chapter_usfm, version_id: reference.version}.merge(params)
 
     response = YvApi.get("highlights/chapter", opts) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)not_found$/].detect { |r| r.match(errors.first["error"]) }

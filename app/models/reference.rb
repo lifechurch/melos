@@ -122,8 +122,9 @@ class Reference < YouVersion::Resource
   end
 
   def content(opts={})
-    #DEBUGreturn attributes.content if is_chapter?
-    return content_mock if is_chapter?
+    return content_mock if is_chapter? && mock?
+    return attributes.content if is_chapter?
+
 
     case opts[:as]
       when :plaintext
@@ -340,9 +341,12 @@ class Reference < YouVersion::Resource
   end
 
   def content_document
-    #DEBUG@content_document ||= Nokogiri::HTML(attributes.content)
-    @content_document ||= Nokogiri::HTML(content_mock)
+    @content_document ||= Nokogiri::HTML(attributes.content) unless mock?
+    @content_document ||= Nokogiri::HTML(content_mock) if mock?
     #TODO: #PERF: cache this with memcache if we keep and use it
+  end
+  def mock?
+    false
   end
   def content_mock
     <<-end_of_string

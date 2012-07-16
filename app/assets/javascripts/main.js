@@ -843,7 +843,18 @@ var YV = (function($, window, document, undefined) {
 
         function parse_verses() {
           $("article").attr('data-selected-verses-rel-link', false);
-          var total = $('#version_primary .verse.' + flag).length;
+          var selected_verses_usfm = [];
+
+          var _usfm = "";
+          $('#version_primary .verse.' + flag).each(function() {
+                  _usfm = $(this).data('usfm');
+                  if (selected_verses_usfm.indexOf(_usfm) == -1) {
+                    // New verse, add to array of verses
+                    selected_verses_usfm.push(_usfm)
+                  }
+              });
+          var total = selected_verses_usfm.length;
+
           verse_numbers.length = 0;
           verse_ranges.length = 0;
 
@@ -956,7 +967,6 @@ var YV = (function($, window, document, undefined) {
             // get highlight id_s of all selected verses that are highlighted
             var sel_hlt_ids = [];
             var hlt_verses = [];
-
             var hlt_selected = false;
 
 
@@ -996,16 +1006,9 @@ var YV = (function($, window, document, undefined) {
         verse.click(function() {
           // The classing for all parts of the verse will be the same
           // (In case of verse ranges and verses split across paragraphs)
-          // So we search by those classes for contained content elements
-          // and add or remove the selected class to those
-          var el = $('.' + $(this).attr('class').replace(' ','.') + ' .content');
-
-          if (el.hasClass(flag)) {
-            el.removeClass(flag);
-          }
-          else {
-            el.addClass(flag);
-          }
+          // So we search for all containing verse elements
+          // and add or remove the selected class to all those parts
+          $('.' + $(this).attr('class').replace(' ','.').replace(flag, '')).toggleClass(flag);
 
           parse_verses();
         });
@@ -1016,7 +1019,7 @@ var YV = (function($, window, document, undefined) {
         });
 
         clear_verses.click(function() {
-          $('.verse.selected').removeClass('selected');
+          $('.verse .selected').removeClass('selected');
           parse_verses();
           this.blur();
           return false;
