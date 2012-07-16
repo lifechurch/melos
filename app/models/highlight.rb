@@ -4,12 +4,8 @@ class Highlight < YouVersion::Resource
   attribute :version
 
   def after_build
-    case reference
-    when String
-      self.reference = Reference.new("#{self.reference}.#{self.version}")
-    when Hashie::Mash
-      self.reference = Reference.new(self.reference.to_param, version: self.version)
-    end
+      self.version = attributes.version_id
+      self.reference = Reference.new(attributes.reference.usfm, version: self.version)
   end
 
   def before_save

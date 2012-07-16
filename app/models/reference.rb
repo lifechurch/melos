@@ -350,7 +350,7 @@ class Reference < YouVersion::Resource
   end
   def content_mock
     <<-end_of_string
-      <div class="version vid69 iso6393eng" data-yvID="69" data-iso6393="eng">
+      <div class="version vid69 iso6393eng" data-vid="69" data-iso6393="eng">
         <div class="book bkMRK">
           <div class="chapter ch6" data-usfm="MRK.6">
              <div class="label">6</div>

@@ -59,7 +59,7 @@ class ReferencesController < ApplicationController
   end
 
   def highlights
-      @highlights = Highlight.for_reference(Reference.new(params[:reference]), auth: current_auth) if current_auth
+      @highlights = Highlight.for_reference(params[:reference], auth: current_auth) if current_auth
       @highlights = [] if @highlights.nil?
       render json: @highlights
   end

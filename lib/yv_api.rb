@@ -143,7 +143,7 @@ class YvApi
           $/x
     matches = ref_str.match(re)
 
-    {book: matches[1], chapter: matches[2], verses: matches[3], version: matches[4]}
+    {book: matches.try(:[], 1), chapter: matches.try(:[], 2), verses: matches.try(:[], 3), version: matches.try(:[], 4)}
   end
 
   private

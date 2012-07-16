@@ -1248,33 +1248,27 @@ var YV = (function($, window, document, undefined) {
         }
 
         $("#version_primary, #version_secondary").each(function() {
-          var that = $(this);
+          var chapter = $(this).find('.chapter');
+          var version_id = $(this).find('.version').data('vid') + "-ID";
+          var verse = null;
+
+          if(!chapter || !version_id){return;}
+
           $.ajax({
-            url: "/bible/" + that.data("reference") + "/highlights",
+            url: "/bible/" + chapter.data("usfm") + "." + version_id + "/highlights",
             method: "get",
             dataType: "json",
             success: function(highlights) {
-              if (highlights && highlights.length) {
-                var book = $('article').data('book-api');
-                var chapter = $('article').data('chapter');
-                for (var h = 0; h < highlights.length; h++) {
-                  var hi = highlights[h];
-                  if ((hi.verse) instanceof Array) {
-                    //#TODO: in theory this is unreachable code as highlights can't be multi-verse (enforced in highlights model)
-                    for (var hh = 0; hh < hi.verse.length; hh++) {
-                      $("span." + book + "_" + chapter + "_" + hi.verse[hh], that).css("background-color", "#" + hi.color);
-                      if (is_dark(hi.color)) {$("#version_primary span." + book + "_" + chapter + "_" + hi.verse[hh]).addClass("dark_highlight");}
-                    }
-                  } else {
-                    $("span." + book + "_" + chapter + "_" + hi.verse, that).css("background-color", "#" + hi.color);
-                    if (is_dark(hi.color)) {$("#version_primary span." + book + "_" + chapter + "_" + hi.verse).addClass("dark_highlight");}
+              $.each(highlights, function(i, highlight) {
+                  verse = chapter.find(".verse.v" + highlight.verse);
+                  verse.css("background-color", "#" + highlight.color);
+                  if (is_dark(highlight.color)) {
+                    verse.addClass("dark_highlight");
                   }
-                }
-              }
-            }
-
-            });
-          });
+              });//end highlights each
+            }//end success function
+          });//end ajax delegate
+        });//end primary/secondary each
 
 
       },
