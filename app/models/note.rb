@@ -4,6 +4,7 @@ class Note < YouVersion::Resource
 
   attribute :id
   attribute :reference
+  attribute :references
   attribute :title
   attribute :content
   attribute :content_text
@@ -12,6 +13,7 @@ class Note < YouVersion::Resource
   attribute :user_status
   attribute :share_connections
   attribute :version
+  attribute :version_id
   attribute :user_avatar_url
   attribute :username
   attribute :highlight_color
@@ -20,7 +22,7 @@ class Note < YouVersion::Resource
   has_many_remote :likes
 
   def self.for_reference(ref, params = {})
-    all(params.merge({reference: ref.notes_api_string}))
+    all(params.merge({references: ref.notes_api_string}))
   end
 
   def self.for_user(user_id, params = {})
@@ -40,33 +42,50 @@ class Note < YouVersion::Resource
   def before_save
     @original_content = self.content
     self.content = self.content_as_xml
-    if self.reference.nil? || self.reference.empty?
+    if self.reference.nil? || self.reference.try(:empty?)
       self.reference_list = ReferenceList.new(nil)
     else
       self.reference_list = self.reference.class == ReferenceList ? self.reference : ReferenceList.new(self.reference)
       self.version = self.reference_list.first[:version] if self.reference_list.first[:version]
     end
-    self.version = self.version.id if self.version.class == Version
-    self.reference = self.reference_list.to_api_string
+    self.version_id = case self.version
+                      when Fixnum
+                        self.version
+                      when String
+                        YvApi::get_usfm_version(self.version).id
+                      when Version
+                        self.version.id
+                      end
+    # self.version_id = self.version.class == Version ? self.version.id : YvApi::get_usfm_version(self.version).id
+    self.references = self.reference_list.to_api_string
   end
 
   def after_save(response)
-    self.content_html = response.content_html
+
     if response
-      self.reference = ReferenceList.new(response.reference, response.version)
-      self.version = Version.find(response.version) rescue nil
+      # To map to API 2.x style to minimize changes
+      self.content_html = response.content.html
+      self.content = response.content.text
+
+      self.reference = ReferenceList.new(response.references, Version.find(response.version_id))
+      self.version = Version.find(response.version_id)
     end
   end
 
   def after_build
     # self.content = self.content_text unless self.content_text.blank?
     self.content = self.content_html if self.content_html
-    if self.reference
-      self.reference_list = ReferenceList.new(self.reference, self.version)
+    if self.references
+      self.reference_list = ReferenceList.new(self.references, Version.find(self.version_id))
     else
       self.reference_list = ReferenceList.new(nil)
     end
-    self.version = Version.find(self.version) if self.version
+    self.version = Version.find(self.version_id) if self.version_id
+    # To map to API 2.x style to minimize changes
+    unless self.content.is_a? String
+      self.content_html = self.content.html
+      self.content = self.content.text
+    end
   end
 
   def user_avatar_url

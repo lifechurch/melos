@@ -11,12 +11,9 @@ module UsersSpecHelper
     response = User.register(opts)
     begin
       user = User.authenticate(opts[:username], opts[:password])
-      unless user
-        # ugh
-        sleep 10
-        user = User.authenticate(opts[:username], opts[:password])
-      end
     rescue
+      sleep 10
+      user = User.authenticate(opts[:username], opts[:password])
     end
     user.should be_a User
     user

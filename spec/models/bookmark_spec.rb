@@ -8,10 +8,10 @@ describe Bookmark do
 
   describe ".save" do
     it "should save a valid bookmark" do
-      bookmark = Bookmark.new({auth: @auth, references: "matt.1.3.esv,matt.1.4.esv,matt.1.10.esv", title: "Begettings", username: @user.username})
+      bookmark = Bookmark.new({auth: @auth, references: "matt.1.3.kjv,matt.1.4.kjv,matt.1.10.kjv", title: "Begettings", username: @user.username})
       bookmark.save.should_not be_false
       bookmark.reference_list.should be_a ReferenceList
-      bookmark.reference_list.first.should == Reference.new("matt.1.3.esv")
+      bookmark.reference_list.first.should == Reference.new("matt.1.3.kjv")
     end
 
     it "should return false for an invalid bookmark" do
@@ -23,7 +23,7 @@ describe Bookmark do
 
   describe ".find" do
     it 'should find a bookmark by id' do
-      bk = Bookmark.new({auth: @auth, references: "matt.1.1.esv", title: "Begettings"})
+      bk = Bookmark.new({auth: @auth, references: "matt.1.1.kjv", title: "Begettings"})
       bk.save
       bookmark = Bookmark.find(bk.id)
       bookmark.title.should == 'Begettings'
@@ -41,7 +41,7 @@ describe Bookmark do
 
   describe ".update" do
     it 'should update a bookmark' do
-      bookmark = Bookmark.new({auth: @auth, references: "matt.10.1.esv", title: "UpdateMe"})
+      bookmark = Bookmark.new({auth: @auth, references: "matt.10.1.kjv", title: "UpdateMe"})
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
 
@@ -59,7 +59,7 @@ describe Bookmark do
 
   describe ".destroy" do
     it 'should delete a bookmark' do
-      bookmark = Bookmark.new({auth: @auth, references: "matt.10.1.esv", title: "DeleteMe"})
+      bookmark = Bookmark.new({auth: @auth, references: "matt.10.1.kjv", title: "DeleteMe"})
       bookmark.save.should_not be_false
       bookmark.persisted?.should be_true
 
@@ -77,7 +77,7 @@ describe Bookmark do
 
   describe ".labels_for_user" do
     it "should return a list of labels for a user" do
-      bookmark = Bookmark.new(auth: @auth, version: "esv", references: "matt.10.1", title: "I have lots of labels", labels: "alpha,beta,gamma", username: @auth.username)
+      bookmark = Bookmark.new(auth: @auth, version: "kjv", references: "matt.10.1", title: "I have lots of labels", labels: "alpha,beta,gamma", username: @auth.username)
       bookmark.save.should be_true
       labels = Bookmark.labels_for_user @auth.user_id
       labels.first.should be_a Hashie::Mash
@@ -90,8 +90,11 @@ describe Bookmark do
 
   describe ".all" do
     it "should return all bookmarks" do
+      pending "should be removed for API3, I guess?"
       Bookmark.all.should be_a ResourceList
     end
+  end
+  describe ".for_label" do
 
     it "should return all bookmarks with a given label" do
       Bookmark.for_label("alpha", user_id: @auth.user_id).should be_a ResourceList

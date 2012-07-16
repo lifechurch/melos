@@ -6,6 +6,7 @@ class Bookmark < YouVersion::Resource
   attribute :references
   attribute :title
   attribute :version
+  attribute :version_id
   attribute :user_id
 
   attr_accessor :reference_list
@@ -15,15 +16,17 @@ class Bookmark < YouVersion::Resource
   end
 
   def before_save
-    self.reference = self.reference_list.to_api_string
+    self.references = self.reference_list.to_api_string
+    self.version_id = self.version
   end
 
   def after_save(response)
+
     return unless response
-    return
+    self.version = Version.find(response.version_id)
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
-    if response.reference
-      self.reference_list = ReferenceList.new(self.reference)
+    if response.references
+      self.reference_list = ReferenceList.new(self.references, self.version)
     end
   end
 
@@ -34,7 +37,7 @@ class Bookmark < YouVersion::Resource
     # string the API returned for the 'reference' key in the response->data section.
     # And it could probably be some other things before we're done.
     self.reference_list = ReferenceList.new(self.references, self.version)
-    self.version =self.reference_list.first[:version]
+    self.version = self.reference_list.first[:version]
     # Just here for compatibility - should return the same as what was done before
     # self.reference = self.reference_list.first
   end

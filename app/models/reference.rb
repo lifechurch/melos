@@ -36,7 +36,7 @@ class Reference < YouVersion::Resource
     @chapter = @chapter.to_i if @chapter
     @verses = ref_hash.try :[], :verses || opts[:verse] || opts[:verses]
     @verses = parse_verses(@verses)
-    _version = opts[:version] || ref_hash.try(:[], :version)
+    _version = ref_hash.try(:[], :version) || opts.try(:[], :version)
     @version = YvApi::get_usfm_version(_version) || _version
     @version = Version.id_from_param(@version)
 

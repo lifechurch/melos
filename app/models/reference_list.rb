@@ -47,13 +47,24 @@ class ReferenceList
           ref
         when String
           Reference.new(ref, version: self.version)
+        when Hashie::Mash
+          if ref.respond_to? :osis
+            split_multi_ref_string(ref.osis.downcase)
+          elsif ref.respond_to? :usfm
+            split_multi_ref_string(ref.usfm.downcase)
+          end
         end
       end
     when String
       @references = split_multi_ref_string(args.downcase)
     when Hashie::Mash
-      @references = split_multi_ref_string(args.osis.downcase)
+      if args.respond_to? :osis
+        @references = split_multi_ref_string(args.osis.downcase)
+      elsif args.respond_to? :usfm
+        @references = split_multi_ref_string(args.usfm.downcase)
+      end
     end
+    @references.flatten!
   end
 
   def to_api_string
@@ -65,7 +76,7 @@ class ReferenceList
       else
         usfm = usfm.capitalize
       end
-      usfm
+      usfm.upcase
     end
 
     refs.join(join_str)
@@ -86,7 +97,7 @@ class ReferenceList
       # maintain one create-the-References line at the end
       [ref_string]
     end
-    ref_array.map{|str| Reference.new(str.strip, self.version)}
+    ref_array.map{|str| Reference.new(str.strip, version: self.version)}
   end
 
 	def smash_verses(refs)

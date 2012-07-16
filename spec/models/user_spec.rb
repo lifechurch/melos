@@ -76,8 +76,8 @@ describe User do
   describe "#recent_activity" do
     it "returns objects created by the user" do
       pending "fix bookmarks"
-      Bookmark.new(references: "gen.1.1.asv", title: "community bookmark", auth: @auth).save.should be_true
-      Note.new(reference: "gen.1.1.asv", title: "community note", content: "note", auth: @auth).save.should be_true
+      Bookmark.new(references: "gen.1.1.kjv", title: "community bookmark", auth: @auth).save.should be_true
+      Note.new(reference: "gen.1.1.kjv", title: "community note", content: "note", auth: @auth).save.should be_true
       re_act = @testuser.recent_activity
       re_act.each { |a| a.class.should be_in [Note, User, Bookmark, Badge]  }
     end
@@ -107,8 +107,8 @@ describe User do
 
   describe "following and followers" do
     before :all do
-      @testuser_2 = ensure_user({username: "testuser2", password: "tenders"}) 
-      @testuser_2_auth = Hashie::Mash.new(username: @testuser_2.username, password: "tenders", user_id: @testuser_2.id)
+      @testuser_2 = ensure_user
+      @testuser_2_auth = @testuser_2.auth
     end
     it "should be able to follow a user" do
       @testuser.follow(auth: @testuser_2_auth).should be_true
@@ -126,11 +126,11 @@ describe User do
 
   describe "listing followers and following" do
     before :all do
-      @testuser_2 = ensure_user({username: "testuser2", password: "tenders"}) 
-      @testuser_2_auth = Hashie::Mash.new(username: @testuser_2.username, password: "tenders", user_id: @testuser_2.id)
+      @testuser_2 = ensure_user
+      @testuser_2_auth = @testuser_2.auth
       @testuser.follow(auth: @testuser_2_auth).should be_true
       @testuser_2.follow(auth: @auth).should be_true 
-      @testuser_3 = ensure_user({username: "testuser3333", password: "tenders"})
+      @testuser_3 = ensure_user
     end
 
     it "should list all of the users a user is following" do
@@ -144,7 +144,7 @@ describe User do
     it "should list all of the users following a user" do
       @testuser.followers.first.should == @testuser_2
       @testuser.all_followers.first.should == @testuser_2.id.to_i
-      @testuser.follower_user_id_list.should == [@testuser_2.id.to_i]
+      @testuser.follower_user_id_list.should include(@testuser_2.id.to_i)
       @testuser_3.followers.should == []
       @testuser_3.all_followers.should == []
     end
@@ -196,9 +196,9 @@ describe User do
   describe "avatars" do
     it "should upload a new avatar" do
       @file = ActionDispatch::Http::UploadedFile.new({
-        :filename => 'dog.png',
+        :filename => 'catstronaut.jpg',
         :type => 'image/png',
-        :tempfile => File.new("#{Rails.root}/spec/models/fixtures/files/dog.png")
+        :tempfile => File.new("#{Rails.root}/spec/models/fixtures/files/catstronaut.jpg")
   })
       puts @testuser.update_picture(@file)
       puts @testuser.errors.full_messages
@@ -215,7 +215,7 @@ describe User do
     before :all do
       @busy_user = ensure_user
       @boring_user = ensure_user
-      Note.new({title: "My New Note", content: "Some Content", reference: "gen.2.1.asv", user_status: "public", auth: @busy_user.auth }).save
+      Note.new({title: "My New Note", content: "Some Content", reference: "gen.2.1.kjv", user_status: "public", auth: @busy_user.auth }).save
       Bookmark.new({auth: @auth, references: "matt.1.3.esv,matt.1.4.esv,matt.1.10.esv", title: "Begettings", username: @busy_user.auth}).save
       Device.new({vendor: "Apple", model: "iPhone 5", os: "iOS 6", device_id: "1232313323314", auth: @busy_user.auth}).save
       @busy_user = connect_facebook(@busy_user)

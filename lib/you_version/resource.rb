@@ -167,7 +167,7 @@ module YouVersion
       end
 
       def destroy(id, auth = nil, &block)
-        post(delete_path, {id: id, auth: auth}, &block)
+        post(delete_path, {ids: id, auth: auth}, &block)
       end
 
       attr_accessor :resource_attributes
