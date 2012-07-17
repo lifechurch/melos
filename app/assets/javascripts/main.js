@@ -842,7 +842,7 @@ var YV = (function($, window, document, undefined) {
           $("article").attr('data-selected-verses-rel-link', false);
           var selected_verses = $('#version_primary .verse.' + flag);
           var selected_verses_usfm = [];
-          var selected_verses_params = [];
+          var selected_verses_param = [];
           var ranges_usfm = [];
 
           // Zero out values for new selection analysis
@@ -850,7 +850,7 @@ var YV = (function($, window, document, undefined) {
           verse_ranges.length = 0;
           verse_numbers.length = 0;
 
-          // Get USFM refs for each selected verse
+          // Get USFM refs and App params for each selected verse
           var _usfm = "";
           selected_verses.each(function() {
                   _usfm = $(this).data('usfm');
@@ -858,7 +858,7 @@ var YV = (function($, window, document, undefined) {
                     // New verse, add to array of verses
                     selected_verses_usfm.push(_usfm);
                     verse_numbers.push(parseInt($(this).find('.label').html()));
-                    selected_verses_params.push(_usfm + "." + $(this).closest('.version').data('vid') + "-VID");
+                    selected_verses_param.push(_usfm + "." + $(this).closest('.version').data('vid') + "-VID");
                   }
               });
           var total = selected_verses_usfm.length;
@@ -940,16 +940,17 @@ var YV = (function($, window, document, undefined) {
             $("#copy_link_input").attr("value", link);
             text_to_send = link;
 
-            var sel_verses_osis = [];
-            $.each(verse_numbers, function(i,e) {
-              sel_verses_osis.push(book + "." + chapter + "." + e + "." + version);
-            });
-            highlight_form.find('.references').val(selected_verses_params.join(","));
+            existing_ids = $.makeArray($('.verse.selected.highlighted').map(function(){
+              return $(this).data('highlight-id');
+            }));
 
-            if (selected_verses.find('.highlighted')) {
-              $('#clear_highlights').removeClass('hide');
-              // hide the 10th icon since we're showing the clear
+            highlight_form.find('.references').val(selected_verses_param.join(','));
+            highlight_form.find('.existing_ids').val(existing_ids.join(','));
+
+            if ($('.verse.selected.highlighted').length) {
+              // hide the 10th icon to make room for clear icon
               $('#highlight_9').addClass('hide');
+              $('#clear_highlights').removeClass('hide');
             } else {
               $('#clear_highlights').addClass('hide');
             }
@@ -972,11 +973,11 @@ var YV = (function($, window, document, undefined) {
         // Watch for verse selection.
 
         verse.click(function() {
-          // The classing for all parts of the verse will be the same
-          // (In case of verse ranges and verses split across paragraphs)
-          // So we search for all containing verse elements
-          // and add or remove the selected class to all those parts
-          $('.' + $(this).attr('class').replace(' ','.').replace(flag, '')).toggleClass(flag);
+          // All parts of the verse will have the same usfm identifier
+          // Corner cases of verse ranges and verses split across paragraphs and notes
+          // Require that we search for all parent verse elements
+          // and add or remove the appropriate class to all those parts
+          $('.verse[data-usfm="' + $(this).data('usfm') + '"]').toggleClass(flag);
 
           parse_verses();
         });
@@ -1212,21 +1213,29 @@ var YV = (function($, window, document, undefined) {
 
         $("#version_primary, #version_secondary").each(function() {
           var chapter = $(this).find('.chapter');
-          var version_id = $(this).find('.version').data('vid') + "-ID";
+          var version_id = $(this).find('.version').data('vid');
           var verse = null;
+          var flag = 'highlighted';
 
-          if(!chapter || !version_id){return;}
+          if(!chapter.length || !version_id){return;}
 
           $.ajax({
-            url: "/bible/" + chapter.data("usfm") + "." + version_id + "/highlights",
+            url: "/bible/" + chapter.data("usfm") + "." + version_id + "-ID" + "/highlights",
             method: "get",
             dataType: "json",
             success: function(highlights) {
+              //reset any old highlights
+              $('.verse.' + flag).css("background-color", 'transparent')
+              $('.verse.' + flag).removeClass(flag);
+
+              //apply the new highlights
               $.each(highlights, function(i, highlight) {
                   verse = chapter.find(".verse.v" + highlight.verse);
                   verse.css("background-color", "#" + highlight.color);
+                  verse.attr('data-highlight-id', highlight.id);
+                  verse.addClass(flag);
                   if (is_dark(highlight.color)) {
-                    verse.addClass("dark_highlight");
+                    verse.addClass("dark_bg");
                   }
               });//end highlights each
             }//end success function

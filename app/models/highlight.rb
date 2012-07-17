@@ -3,6 +3,10 @@ class Highlight < YouVersion::Resource
   attribute :reference
   attribute :version
 
+  def self.destroy_id_param
+    :id
+  end
+
   def after_build
       usfm_ref = case reference
       when String       #usfm style string coming from user creation
@@ -15,11 +19,12 @@ class Highlight < YouVersion::Resource
       # string will (should) have it
       self.version = attributes.try :version_id
 
-      self.reference = Reference.new(usfm_ref, version: self.version)
+      #note: it is possible we're creating a highlight from an id alone
+      self.reference = Reference.new(usfm_ref, version: self.version) if usfm_ref
 
       # in case the version_id wasn't available above
       # and was passed in the ref string
-      self.version ||= self.reference.version
+      self.version ||= self.reference.try :version
   end
 
   def before_save

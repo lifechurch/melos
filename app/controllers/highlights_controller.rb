@@ -4,7 +4,6 @@ class HighlightsController < ApplicationController
     @highlights = params[:highlight][:references].split(",").map { |r| Highlight.new(Hashie::Mash.new(params[:highlight].merge(auth: current_auth, reference: r))) }
     existing = []
     params[:highlight][:existing_ids].split(",").each {|id| existing << Highlight.new(Hashie::Mash.new({auth: current_auth, id: id})) if id.to_i >= 0} # only need id and auth to destroy
-    params[:highlight][:existing_ids].split(",").each {|id| existing << Highlight.new(Hashie::Mash.new({auth: current_auth, id: id})) if id.to_i >= 0} # only need id and auth to destroy
 
     if params[:remove]
       if existing.all?(&:destroy)

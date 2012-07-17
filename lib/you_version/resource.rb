@@ -166,8 +166,14 @@ module YouVersion
         new(data).save(&block)
       end
 
+      def self.destroy_id_param
+        :ids
+      end
+
       def destroy(id, auth = nil, &block)
-        post(delete_path, {ids: id, auth: auth}, &block)
+        opts = {auth: auth}
+        opts[self.destroy_id_param] = id
+        post(delete_path, opts, &block)
       end
 
       attr_accessor :resource_attributes
