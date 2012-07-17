@@ -12,16 +12,16 @@
           John 4:25
   %span.menu_arrow
     &nbsp;
-  %dl.accordion
+  %dl.accordion.verses_selected
     %dt
       = t("highlight")
-    %dd
+    %dd.highlight
       %form{:action => current_auth ? highlights_path : sign_up_path, method: current_auth ? "POST" : "GET"}
         - if current_auth.nil?
           %input{type: 'hidden', name: 'redirect', value: "/bible"}
           %input{type: 'hidden', name: 'source', value: "highlight"}
-        %input{:class => "individual_verses_selected_input", name: "highlight[references]", type: "hidden"}
-        %input{:class => "verses_selected_highlight_ids_input", name: "highlight[ids]", type: "hidden"}
+        %input.references{name: "highlight[references]", type: "hidden"}
+        %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
         %div{:class => "color_picker_list"}
           %a{:class => "color_picker", :href =>"#"}
           %a{:class => "color_picker_holder", :href =>"#"}
@@ -55,7 +55,7 @@
           / %span
           /   %b
           /     Color
-          /   (optional) 
+          /   (optional)
           / %div{:class => "color_picker_list"}
           /   %a{:class => "color_picker", :href =>"#"}
           /   %a{:class => "color_picker_hol  der", :href =>"#"}
@@ -82,14 +82,14 @@
           %input{type: "hidden", id: "share_link", name: "share[link]", value: ""}
 
           %div.clearfix{style: "margin-bottom: 8px"}
-          %div.share_action      
+          %div.share_action
             %button{:type => "submit", :name => "share[submit]", :value => "submit", :class => "float_right"}= t('ref.share now')
           %div.share_services
             %span.float_left{style: "width: 60%"}
               %input#checkbox_share_twitter{:type => "checkbox", :name => "share[connections][twitter]"}
               %label{:for => 'share_verse_twitter', :class => "share_verse_twitter", :value => "Twitter"}
                 = t("twitter")
-            
+
             %span.float_left{style: "width: 60%"}
               %input#checkbox_share_facebook{:type => "checkbox", :name => "share[connections][facebook]"}
               %label{:for => 'share_verse_facebook', :class => "share_verse_facebook"}
@@ -106,7 +106,7 @@
       %a.open_modal{:href => "#new_note"}
         %dt#new_note_modal
           = t("new note")
-    - else 
+    - else
       %a.open_modal{:href => sign_up_path(source: "note", redirect: "/bible")}
         %dt.propagate_click
           = t("new note")

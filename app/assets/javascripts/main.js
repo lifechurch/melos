@@ -796,9 +796,7 @@ var YV = (function($, window, document, undefined) {
       verse_sharing: function() {
         var verses = $('#version_primary .verse');
 
-        if (!verses.length) {
-          return;
-        }
+        if (!verse.length) {return;}
 
         var clear_verses = $('#clear_selected_verses');
         var li = $('#li_selected_verses');
@@ -807,14 +805,13 @@ var YV = (function($, window, document, undefined) {
         var count = $('#verses_selected_count');
         var input = $('.verses_selected_input');
         var copy_button = $("#copy_link");
-        var input_individual = $('.individual_verses_selected_input');
-        var input_highlights_ids = $('.verses_selected_highlight_ids_input');
+        var highlight_form = $('.verses_selected .highlight form');
         var article = $('#main article:first');
-        var book = article.attr('data-book');
-        var book_human = article.attr('data-book-human');
-        var book_api = article.attr('data-book-api');
-        var chapter = article.attr('data-chapter');
-        var version = article.attr('data-version');
+        var book = article.data('book');
+        var book_human = article.data('book-human');
+        var book_api = article.data('book-api');
+        var chapter = article.data('chapter');
+        var version = article.data('version');
         var flag = 'selected';
         var hide = 'hide';
         var verse_numbers = [];
@@ -843,55 +840,35 @@ var YV = (function($, window, document, undefined) {
 
         function parse_verses() {
           $("article").attr('data-selected-verses-rel-link', false);
+          var selected_verses = $('#version_primary .verse.' + flag);
           var selected_verses_usfm = [];
+          var selected_verses_params = [];
+          var ranges_usfm = [];
 
+          // Zero out values for new selection analysis
+          input.val('');
+          verse_ranges.length = 0;
+          verse_numbers.length = 0;
+
+          // Get USFM refs for each selected verse
           var _usfm = "";
-          $('#version_primary .verse.' + flag).each(function() {
+          selected_verses.each(function() {
                   _usfm = $(this).data('usfm');
                   if (selected_verses_usfm.indexOf(_usfm) == -1) {
                     // New verse, add to array of verses
-                    selected_verses_usfm.push(_usfm)
+                    selected_verses_usfm.push(_usfm);
+                    verse_numbers.push(parseInt($(this).find('.label').html()));
+                    selected_verses_params.push(_usfm + "." + $(this).closest('.version').data('vid') + "-VID");
                   }
               });
           var total = selected_verses_usfm.length;
 
-          verse_numbers.length = 0;
-          verse_ranges.length = 0;
-
-          // Zero out value.
-          input.val('');
-          input_highlights_ids.val('');
-
-          // Loop through all verses and collect verse numbers
-          verses.each(function() {
-
-            var v, verse_number;
-
-            v = $(this);
-
-            // Verse number is embeded in markup for most versions <span><strong>1</strong>Verse text</span>
-            // NOTE: Some versions like BOOKS don't have verse number embeded in markup.
-
-            verse_number = parseInt(v.find('strong:first').html());
-
-            // We couldn't parse the verse number within the markup - grab it from the class
-
-            if(isNaN(verse_number)) {
-              var classes = v.attr('class'); // should be "verse John_1_1 selected"
-              var reg = /(\w+)_(\d+)_(\d+)/; // matches (John)_(1)_(1)
-              var match = reg.exec(classes);
-              verse_number = parseInt(match[3]);
-            }
-
-            if (v.hasClass(flag)) { // verse is 'selected'
-              verse_numbers.push(verse_number);
-            }
-          });
 
           // Create ranges
           if (verse_numbers.length > 0) {
             if (verse_numbers.length == 1) {
-              verse_ranges.push(verse_numbers[0]);;
+              verse_ranges.push(verse_numbers[0]);
+              ranges_usfm.push(selected_verses_usfm[0]);
             } else {
               var in_range = false;
               var range_start = 0;
@@ -936,12 +913,11 @@ var YV = (function($, window, document, undefined) {
             }
             //
             // Add reference info and create tokens
-
             var verse_refs = [];
             $(".reference_tokens").html("");
-            $.each(verse_ranges, function(i,e) {
-              verse_refs.push(book + "." + chapter + "." + e + "." + version);
-              $(".reference_tokens").append("<li><a data-verses='" + e + "' href='#'>" + book_human + " " + chapter + ":" + e + "</a></li>");
+            $.each(verse_ranges, function(i, range) {
+              verse_refs.push(ranges_usfm[i] + "." + version);
+              $(".reference_tokens").append("<li><a data-usfm='" + ranges_usfm[i] + "' href='#'>" + book_human + " " + chapter + ":" + range + "</a></li>");
             });
 
             // Populate the verse_numbers hidden input
@@ -964,24 +940,16 @@ var YV = (function($, window, document, undefined) {
             $("#copy_link_input").attr("value", link);
             text_to_send = link;
 
-            // get highlight id_s of all selected verses that are highlighted
-            var sel_hlt_ids = [];
-            var hlt_verses = [];
-            var hlt_selected = false;
-
-
-            // Populate the selected verses and highlight ids hidden input
-            input_highlights_ids.val(sel_hlt_ids.join(","));
-
             var sel_verses_osis = [];
             $.each(verse_numbers, function(i,e) {
               sel_verses_osis.push(book + "." + chapter + "." + e + "." + version);
             });
-            input_individual.val(sel_verses_osis.join(","));
+            highlight_form.find('.references').val(selected_verses_params.join(","));
 
-            if (hlt_selected) {
+            if (selected_verses.find('.highlighted')) {
               $('#clear_highlights').removeClass('hide');
-              $('#highlight_9').addClass('hide'); // hide the 10th icon if we're showing the clear
+              // hide the 10th icon since we're showing the clear
+              $('#highlight_9').addClass('hide');
             } else {
               $('#clear_highlights').addClass('hide');
             }
@@ -1019,7 +987,7 @@ var YV = (function($, window, document, undefined) {
         });
 
         clear_verses.click(function() {
-          $('.verse .selected').removeClass('selected');
+          $('.verse.selected').removeClass('selected');
           parse_verses();
           this.blur();
           return false;
@@ -1125,7 +1093,6 @@ var YV = (function($, window, document, undefined) {
         });
       },
       // YV.init.highlightsmenu
-      // This code up to line 651 is totally bobo. Eventually it kind of just breaks down. #needtofix
       highlight: function() {
         var color = $('.color, .color_picker_clear');
         color.live('click', function(){
@@ -1136,11 +1103,7 @@ var YV = (function($, window, document, undefined) {
           } else {
             $(this).append("<span class='selected'></span>")
           }
-        })
-      // #TODO           - This bit takes the color from the color picker, adds a new color
-      //                   slide to the list of colors, and adds the color to the background,
-      //                   then hides the color picker. But that doesn't work. I don't know how
-      //                   identify the specific <a> it appends on line 742 and give it the hex. HALP?
+        });
       $('.color_picker').ColorPicker({
         flat: false,
         onChange: function(hsb, hex, rgb, el) {
@@ -1155,10 +1118,10 @@ var YV = (function($, window, document, undefined) {
       });
       $(window).resize(function() {
           $('.colorpicker').hide();
-      })
+      });
       $(".remove_color").click(function(){
         color.empty('span');
-      })
+      });
       },
       // YV.init.parallel_notes
       parallel_notes: function() {

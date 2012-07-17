@@ -4,13 +4,27 @@ class Highlight < YouVersion::Resource
   attribute :version
 
   def after_build
-      self.version = attributes.version_id
-      self.reference = Reference.new(attributes.reference.usfm, version: self.version)
+      usfm_ref = case reference
+      when String       #usfm style string coming from user creation
+        attributes.reference
+      when Hashie::Mash #Mash coming back from existing highlight in API
+        attributes.reference.usfm
+      end
+
+      # if the versid_id isn't passed, then the reference
+      # string will (should) have it
+      self.version = attributes.try :version_id
+
+      self.reference = Reference.new(usfm_ref, version: self.version)
+
+      # in case the version_id wasn't available above
+      # and was passed in the ref string
+      self.version ||= self.reference.version
   end
 
   def before_save
     self.reference = Reference.new(self.reference) unless self.reference.is_a? Reference
-    self.version = self.reference.version
+    self.attributes.version_id = self.reference.version
     self.reference = self.reference.to_usfm
   end
 
