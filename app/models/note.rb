@@ -83,8 +83,8 @@ class Note < YouVersion::Resource
     self.version = Version.find(self.version_id) if self.version_id
     # To map to API 2.x style to minimize changes
     unless self.content.is_a? String
-      self.content_html = self.content.html
-      self.content = self.content.text
+      self.content_html = self.content.try :html
+      self.content = self.content.try :text
     end
   end
 
