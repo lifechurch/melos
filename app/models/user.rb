@@ -28,6 +28,7 @@ class User < YouVersion::Resource
   attribute :website
   attribute :twitter
   attribute :facebook
+  attribute :apps
   attribute :google
   attribute :created_dt
   attribute :last_login_dt
@@ -122,8 +123,6 @@ class User < YouVersion::Resource
     def authenticate(username, password)
       # hash = {}
       # response = YvApi.post('users/authenticate', auth: Hashie::Mash.new(username: username, password: password)) { return nil }.to_hash
-      # puts "response in authenticate is:"
-      # puts response
       # if response
       #   response = response.symbolize_keys
       #   response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
@@ -399,8 +398,8 @@ class User < YouVersion::Resource
 
   def connections
     connections = {}
-    connections["twitter"] = TwitterConnection.new(data: self.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.twitter
-    connections["facebook"] = FacebookConnection.new(data: self.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.facebook
+    connections["twitter"] = TwitterConnection.new(data: self.apps.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.twitter
+    connections["facebook"] = FacebookConnection.new(data: self.apps.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.facebook
     connections
   end
 

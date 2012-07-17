@@ -75,7 +75,6 @@ describe User do
 
   describe "#recent_activity" do
     it "returns objects created by the user" do
-      pending "fix bookmarks"
       Bookmark.new(references: "gen.1.1.kjv", title: "community bookmark", auth: @auth).save.should be_true
       Note.new(reference: "gen.1.1.kjv", title: "community note", content: "note", auth: @auth).save.should be_true
       re_act = @testuser.recent_activity
@@ -200,8 +199,6 @@ describe User do
         :type => 'image/png',
         :tempfile => File.new("#{Rails.root}/spec/models/fixtures/files/catstronaut.jpg")
   })
-      puts @testuser.update_picture(@file)
-      puts @testuser.errors.full_messages
     end
   end
 
@@ -217,7 +214,11 @@ describe User do
       @boring_user = ensure_user
       Note.new({title: "My New Note", content: "Some Content", reference: "gen.2.1.kjv", user_status: "public", auth: @busy_user.auth }).save
       Bookmark.new({auth: @auth, references: "matt.1.3.esv,matt.1.4.esv,matt.1.10.esv", title: "Begettings", username: @busy_user.auth}).save
-      Device.new({vendor: "Apple", model: "iPhone 5", os: "iOS 6", device_id: "1232313323314", auth: @busy_user.auth}).save
+      ### TODO
+      ### FIXME
+      ### Won't take a device_id as of API 3.
+      dev = Device.new({vendor: "Apple", model: "iPhone 5", os: "iOS 6", auth: @busy_user.auth})
+      dev.save
       @busy_user = connect_facebook(@busy_user)
 
     end

@@ -2,6 +2,7 @@ class Like < YouVersion::Resource
 
   attribute :errors
   attribute :note_id
+  attribute :note
   attribute :note_title
   attribute :note_url
   attribute :note_user_avatar_url
@@ -17,7 +18,7 @@ class Like < YouVersion::Resource
   end
 
   def note
-    Note.find(note_id)
+    Note.find(note_id, user_id: self.user_id )
   end
 
   def self.for_user(user_id = nil, params = {})
@@ -42,6 +43,15 @@ class Like < YouVersion::Resource
     likes.total = data['total'].to_i if data['total']
     likes
   end
+
+  def after_save(response)
+    self.note_id = response.note.id
+  end
+
+#  def after_build
+#    self.note_id = self.note.id
+#    self.note = Note.find(self.note_id)
+#  end
 
   # def self.for_note(note_id, user_id = nil)
   #   @return_like = nil

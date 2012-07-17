@@ -15,6 +15,7 @@ module ConnectionsSpecHelper
 			})
 		@connection = FacebookConnection.new(@connection_info)
 		@connection.save.should be_true
+
 		User.authenticate(user.username, "tenders")
 	end
 
