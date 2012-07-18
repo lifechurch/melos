@@ -15,7 +15,7 @@ class ConnectionsController < ApplicationController
   end
 
   def destroy
-    connection = current_user.connections[params[:provider].to_s]]
+    connection = current_user.connections[params[:provider].to_s]
     cookies.signed[:f] = nil if connection.is_a? FacebookConnection
     result = connection.delete
     if connection.delete
