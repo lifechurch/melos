@@ -260,7 +260,11 @@ class UsersController < ApplicationController
     @show = params[:show] ||= "twitter"
     @empty_message = t('users.no connection friends', connection: t(@show))
     if @user.connections[@show]
-      @users = @user.connections[@show].find_friends(page: params[:page])
+      begin
+        @users = @user.connections[@show].find_friends(page: params[:page])
+      rescue
+       flash.now[:error] = t('users.reset connection') 
+      end
     end
   end
 

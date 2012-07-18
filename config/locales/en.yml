@@ -180,6 +180,7 @@ en:
     select another chapter:                     "Pick a Different Chapter"
     view in reader:                             "View %{reference} in Reader"
   users:
+    reset connection:                           "Sorry, an error occurred. Please disconnect and reconnect this account."
     settings:                                   "Settings"
     no connection friends:                      "None of your %{connection} friends appear to be on YouVersion yet."
     creation form errors:                       "The following error(s) prevented creation of your account:"
