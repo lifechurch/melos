@@ -15,7 +15,7 @@ attribute :audio
     bible_langauge_id = case app_lang_tag
     when ""
       return versions.values
-    when Hash
+    when Hash, Hashie::Mash
       app_lang_tag.id.to_s
     else
       YvApi::to_bible_api_lang_code(app_lang_tag).to_s
@@ -124,21 +124,19 @@ attribute :audio
     detailed_attributes.publisher
   end
 
-  def self.default_for(lang)
-    iso_3 = case lang
-    when ""
-      return default
-    when Hash
-      lang.iso.to_s
+  def self.default_for(app_lang_tag)
+    bible_langauge_id = case app_lang_tag
+    when Hash, Hashie::Mash
+      app_lang_tag.id.to_s
     else
-      lang.to_s
+      YvApi::to_bible_api_lang_code(app_lang_tag).to_s
     end
 
-    defaults[iso_3]
+    defaults[bible_langauge_id]
   end
 
   def self.default()
-    defaults["eng"] || 1
+    defaults["eng"] || find(1)
   end
 
   def self.sample_for(lang, opts={})
