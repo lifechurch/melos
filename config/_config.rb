@@ -7,7 +7,10 @@
 class Cfg
   cattr_reader :languages
   cattr_reader :osis_usfm_hash
-  @@settings = YAML::load_file(File.expand_path('../_config.yml', __FILE__))[Rails.env]
+
+  all_settings = YAML::load_file(File.expand_path('../_config.yml', __FILE__))
+  @@settings = all_settings[Rails.env] ? all_settings["common"].merge(all_settings[Rails.env]) : all_settings["common"]
+
   @@languages = YAML::load_file(File.expand_path('../languages.yml', __FILE__))
   @@osis_usfm_hash = YAML::load_file(File.expand_path('../osis_to_usfm.yml', __FILE__))
   class MissingConfigOptionError < StandardError; end

@@ -21,6 +21,10 @@ Then /^"(.*)" should be selected$/ do |value|
   with_scope("selected") { page.should have_content value }
 end
 
+Then /^"([^"]*)" should not be visible$/ do |text|
+  page.should have_no_css('*', :text => text, :visible => true)
+end
+
 Then /^an unverified user named "([^"]*)" with password "([^"]*)" should exist$/ do |arg1, arg2|
   lambda do
     YvApi.get("users/authenticate", auth_username: arg1, auth_password: arg2)
