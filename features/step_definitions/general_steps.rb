@@ -25,6 +25,10 @@ Then /^"([^"]*)" should not be visible$/ do |text|
   page.should have_no_css('*', :text => text, :visible => true)
 end
 
+Then /^I should not have any javascript errors$/ do
+  page.driver.error_messages.should be_empty
+end
+
 Then /^an unverified user named "([^"]*)" with password "([^"]*)" should exist$/ do |arg1, arg2|
   lambda do
     YvApi.get("users/authenticate", auth_username: arg1, auth_password: arg2)
