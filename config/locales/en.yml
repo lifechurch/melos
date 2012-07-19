@@ -80,7 +80,6 @@ en:
   registered ago:                               "Registered %{time_ago} ago"
   version header:                               "Version: %{version}"
   bible versions:                               "Bible Versions"
-  read this version:                            "Read this Version"
   reader:                                       "Reader"
   lifechurch short url:                         "LifeChurch.tv"
   about:                                        "About"
@@ -648,3 +647,7 @@ en:
   app errors:
     404 explanation:                            "You might try starting again from the <a href='%{reader_path}'>home page</a>. Still having trouble? Contact our <a href='%{support_url}'>support team</a>."
     404 message:                                "We're sorry, the page you're looking for can't be found."
+  versions:
+    widget title:                               "About This Version"
+    visit publisher:                                 "Visit Publisher's Website"
+    read title:                                 "Read This Version"

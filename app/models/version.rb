@@ -120,6 +120,10 @@ attribute :audio
     abbreviation.upcase.match(/\A[^-_]*/).to_s
   end
 
+  def publisher
+    detailed_attributes.publisher
+  end
+
   def self.default_for(lang)
     iso_3 = case lang
     when ""
