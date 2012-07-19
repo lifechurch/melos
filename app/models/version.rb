@@ -68,7 +68,7 @@ attribute :audio
   end
 
   def info
-    detailed_attributes['copyright_long']['html'] || detailed_attributes['copyright_long']['text']
+    detailed_attributes['copyright_long']['html'] || detailed_attributes['copyright_long']['text'] || ""
   end
 
   def audio_version?
