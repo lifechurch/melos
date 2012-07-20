@@ -130,7 +130,7 @@ attribute :audio
     @attributes.title
   end
   def to_s
-    "#{title} (#{abbreviation})"
+    "#{title} (#{abbreviation.upcase})"
   end
   def to_param
     "#{id}-#{human}"

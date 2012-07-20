@@ -5,13 +5,13 @@
         =t("versions.widget title")
     %ul.widget_menu
       %li
-        %p= @version.publisher.name
-      - unless @version.publisher.url.nil?
+        %p= @version.publisher.try :name
+      - unless @version.publisher.try(:url).nil?
         %li
           = link_to(t("versions.visit publisher"), @version.publisher.url)
         %li
           = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version))
 %article
   %h1= @version
-  %h2= @version.publisher.name
-  %p.copyright= @version.info.html_safe
+  %h2= @version.publisher.try :name
+  %p.copyright= @version.info.try :html_safe
