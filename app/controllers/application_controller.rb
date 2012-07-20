@@ -215,7 +215,9 @@ class ApplicationController < ActionController::Base
 
     return [] if cookies[:recent_versions].to_s == ""
 
-    return @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v)}
+    @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v) rescue nil}
+    @recent_versions.compact!
+    @recent_versions
   end
 
   def current_date
