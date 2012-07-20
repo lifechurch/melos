@@ -2,11 +2,11 @@
 - @sidebar = false
 
 %article
-  %h1= t("bible versions")
+  %h1= "#{t('bible versions')} (#{@versions_by_lang.values.flatten.count})"
   %ul
     - @versions_by_lang.each do |lang, versions|
       %li
-        = versions.first.language.human
+        = "#{versions.first.language.human} (#{versions.count})"
         %ul
           - versions.each do |version|
             %li= link_to version.title , version_path(version)
