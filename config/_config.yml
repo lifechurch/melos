@@ -17,8 +17,6 @@ common:
 staging:
   api_root: youversionapi.com
   api_referer: web-staging.youversionapi.com
-  memcache_server: memcache.youversion.com
-  memcache_server: localhost
 
 production:
   api_root: youversionapi.com

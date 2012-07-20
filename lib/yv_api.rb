@@ -109,7 +109,7 @@ class YvApi
 
   def self.bible_to_app_lang_code(lang_code)
     code = bible_api_custom_languages.key(lang_code.to_s)
-    code = LanguageList::LanguageInfo.find(lang_code.to_s).iso_639_1 if code.nil?
+    code ||= LanguageList::LanguageInfo.find(lang_code.to_s).try(:iso_639_1)
     # the code will be empty if not a common or iso 639_1 language
     # or if we don't have the language supported in our custom tags
     # the app won't be able to recognize this code if empty
