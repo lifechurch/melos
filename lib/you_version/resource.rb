@@ -260,9 +260,20 @@ module YouVersion
       def persist_token(username, password)
         Digest::MD5.hexdigest "#{username}.Yv6-#{password}"
       end
-
     end
-
+    def self.a_long_time
+      #DEBUG12.hours
+      3.minutes
+    end
+    def a_long_time
+      self.class.a_long_time
+    end
+    def self.a_short_time
+      3.minutes
+    end
+    def a_short_time
+      self.class.a_short_time
+    end
     attr_accessor :attributes, :associations
 
     attribute :id

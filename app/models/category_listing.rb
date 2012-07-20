@@ -6,7 +6,7 @@ class CategoryListing
     #the params[:category] param will filter the query to only children of that category
     opts[:page] ||= 1
     opts[:category] ||= category_slug
-    opts[:cache_for] ||= 1.hour
+    opts[:cache_for] ||= a_long_time
     opts[:query] = '*'
 
     response = YvApi.get("reading_plans/search", opts) do |errors|
@@ -34,11 +34,11 @@ class CategoryListing
     @items = @json.children ? @json.children.map! {|child| PlanCategory.new(child)} : []
     @breadcrumbs = @json.breadcrumbs ? @json.breadcrumbs.map! {|category| PlanCategory.new(category)} : []
   end
-  
+
   def count
     items.count
   end
-  
+
   def length
     count
   end

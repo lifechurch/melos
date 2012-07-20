@@ -5,20 +5,6 @@ attribute :title
 attribute :abbreviation
 attribute :audio
 
-  def self.a_long_time
-    #DEBUG12.hours
-    3.minutes
-  end
-  def a_long_time
-    self.class.a_long_time
-  end
-  def self.a_short_time
-    5.minutes
-  end
-  def a_short_time
-    self.class.a_long_time
-  end
-
   def self.all(app_lang_tag = "")
     # `bible_langauge_id` is the arbitrariy identifier of the language
     # to the Bible API (iso_639_3[_variant tag]), langauge_tag in the response

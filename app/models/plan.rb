@@ -21,7 +21,7 @@ class Plan < YouVersion::Resource
   def self.available_locales
     #return @available_locales if @available_locales
 
-    response = YvApi.get("#{api_path_prefix}/configuration", {cache_for: 12.hours}) do |errors|
+    response = YvApi.get("#{api_path_prefix}/configuration", {cache_for: a_long_time}) do |errors|
       raise YouVersion::ResourceError.new(errors)
     end
 
@@ -108,7 +108,7 @@ class Plan < YouVersion::Resource
     unless(@reading && @reading_day == day && @reading_version == version)
       opts[:day] ||= day
       opts[:id] ||= id
-      opts[:cache_for] ||= 12.hours
+      opts[:cache_for] ||= a_long_time
       opts.delete :cache_for if opts[:cache_for] == 0
       # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
       # to be overriden by Subscription model to send auth and user_id
@@ -189,7 +189,7 @@ class Plan < YouVersion::Resource
     #     sort  the ordering of the results, defaults to 'score' (relevance), also accepts 'total_days'
     #     page  number of results to return
     query = '*' if (query == "" || query == nil)
-    params = {query: query, cache_for: 12.hours}.merge!(params.except("query", :query))
+    params = {query: query, cache_for: a_long_time}.merge!(params.except("query", :query))
 
     response = YvApi.get(list_path, params) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
