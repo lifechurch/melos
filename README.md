@@ -26,7 +26,7 @@ If you see red errors switching into the directory, the most likely cause is not
 
 ### Installing gems, etc ###
 
-Now that you're in that directory (and in your `yv-web` gemset), you'll have to install the `rails` gem before you can use Bundler. Check the `Gemfile` to get the version of Rails we're locked to; currently, it's **3.1.0**. Run `gem install rails -v 3.1.0` to install the Rails gem; then, run `bundle install` to get everything else.
+Now that you're in that directory (and in your `yv-web` gemset), you'll have to install the `rails` gem before you can use Bundler. Check the `Gemfile` to get the version of Rails we're locked to; currently, it's **3.1.2**. Run `gem install rails -v 3.1.2` to install the Rails gem; then, run `bundle install` to get everything else.
 
 ### Running the app ###
 
