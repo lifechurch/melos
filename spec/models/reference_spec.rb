@@ -202,7 +202,7 @@ describe Reference do
     end
   end
 
-  describe "#previous_chapter" do
+  describe "#previous_chapter", only: true do
     it "should give nil for the first chatper" do
       @gen_1_kjv_ref.previous_chapter.should be_nil
     end
@@ -216,11 +216,11 @@ describe Reference do
       Reference.new("gen.2.kjv").previous_chapter.should == @gen_1_kjv_ref
     end
     it "should work for last book" do
-      Reference.new('Rev.22').previous_chapter.should == Reference.new('Rev.21.kjv')
+      Reference.new('Rev.22.kjv').previous_chapter.should == Reference.new('Rev.21.kjv')
     end
   end
 
-  describe "#next_chapter" do
+  describe "#next_chapter", only: true do
     it "should give nil for the last chatper" do
       Reference.new('Rev.22').next_chapter.should be_nil
     end
@@ -231,7 +231,7 @@ describe Reference do
       Reference.new('MAL.4.kjv').next_chapter.should == Reference.new('MAT.1.kjv')
     end
     it "should return the next book" do
-      Reference.new('Rev.21').next_chapter.should == Reference.new('Rev.22.kjv')
+      Reference.new('Rev.21.kjv').next_chapter.should == Reference.new('Rev.22.kjv')
     end
   end
 

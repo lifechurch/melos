@@ -85,7 +85,8 @@ class Reference < YouVersion::Resource
   end
 
   def chapter_usfm
-    "#{book}.#{chapter}"
+    #memoizing because of chapter_list indexing
+    @chapter_usfm ||= "#{book}.#{chapter}"
   end
 
   def [](arg)
@@ -159,26 +160,21 @@ class Reference < YouVersion::Resource
      return nil unless version
 
      start = Time.now.to_f
-    _usfm = chapter_usfm
-    @chapter_list = Version.find(version).books.map{|k,v| v["chapters"]}.flatten unless @chapter_list
-    @index = @chapter_list.index{|c| c.usfm == _usfm} unless @index
-    return nil if @index == 0
-
+    #no previous chapter if at start
+    return nil if chapter_list_index == 0
     Rails.logger.apc "**Reference.previous_chapter took #{Time.now.to_f - start} sec to find the chapter", :debug
-    self.class.new(@chapter_list[@index - 1].usfm, version: version)
+
+    self.class.new(chapter_list[chapter_list_index - 1].usfm, version: version)
   end
 
   def next_chapter
     return nil unless version
 
     start = Time.now.to_f
-    _usfm = chapter_usfm
-    @chapter_list = Version.find(version).books.map{|k,v| v["chapters"]}.flatten unless @chapter_list
-    @index = @chapter_list.index{|c| c.usfm == _usfm} unless @index
-    return nil if @index == @chapter_list.count - 1
-
+    return nil if chapter_list_index >= chapter_list.count - 1
     Rails.logger.apc "**Reference.next_chapter took #{Time.now.to_f - start} sec to find the chapter", :debug
-    self.class.new(@chapter_list[@index - 1].usfm, version: version)
+
+    self.class.new(chapter_list[chapter_list_index + 1].usfm, version: version)
   end
 
   def first_verse
@@ -338,6 +334,14 @@ class Reference < YouVersion::Resource
     else
       verses_str
     end
+  end
+
+  def chapter_list_index
+    @index ||= chapter_list.index{|c| c.usfm == chapter_usfm}
+  end
+
+  def chapter_list
+    @chapter_list ||= Version.find(version).books.map{|usfm, book| book["chapters"]}.flatten
   end
 
   def content_document
