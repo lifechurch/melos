@@ -155,10 +155,9 @@ attribute :audio
     detailed_attributes.publisher
   end
 
-  #DEBUGprivate
+  private
    def self.versions
     #DEBUGreturn @versions unless @versions.nil?
-    #DEBUGresponse = YvApi.get("bible/versions", type: "all", cache_for: a_long_time)
     response = YvApi.get("bible/versions", type: "all", cache_for: a_long_time)
 
     #versions hash of form [<version numerical uid> => <Version object instance>]
@@ -172,7 +171,7 @@ attribute :audio
   end
   def detailed_attributes
     #attributers that can only be found with a specific /version call
-    #DEBUGreturn @detailed_attributes unless @detailed_attributes.nil?
+    return @detailed_attributes unless @detailed_attributes.nil?
 
     @detailed_attributes = YvApi.get("bible/version", cache_for: a_long_time, id: id)
   end
