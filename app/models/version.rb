@@ -46,13 +46,13 @@ attribute :audio
     defaults["eng"] || find(1)
   end
   def self.sample_for(lang, opts={})
-    opts[:except] ||= ""
+    except_id = id_from_param(opts[:except])
     lang = lang.to_s
 
     samples = all_by_language[lang]
     return nil if samples.nil?
 
-    samples = samples.find_all{|v| v.id != opts[:except]}
+    samples = samples.find_all{|v| v.id != except_id}
     sample = nil
 
     until !sample.nil? || samples.empty?
@@ -72,12 +72,14 @@ attribute :audio
   end
   def self.id_from_param(ver)
     case ver
-    when Fixnum
+    when Fixnum         # 1
       ver
-    when /^\d+$/
+    when /^\d+$/        # "1"
       ver.to_i
-    when /^(\d+)\-.*/
+    when /^(\d+)\-.*/   #  "1-KJV"
       $1.to_i
+    when String
+      YvApi::get_usfm_version(ver) || ver
     when Version
       ver.id
     else
@@ -85,6 +87,16 @@ attribute :audio
     end
   end
 
+  def hash
+    to_param.hash
+  end
+  def ==(compare)
+    #if same class
+    (compare.class == self.class) &&  compare.hash == hash
+  end
+  def eql?(compare)
+    self == compare
+  end
   def language
     Hashie::Mash.new({tag: YvApi::bible_to_app_lang_code(@attributes.language.iso_639_3),
                       id: @attributes.language.iso_639_3,
@@ -122,7 +134,7 @@ attribute :audio
     listing = books_list
 
     return false if ref.book && books[ref.book.to_s].nil? rescue true
-    return false if ref.chapter && books[ref.book.to_s].chapters[ref.chapter].present? rescue true
+    return false if ref.chapter && books[ref.book.to_s].chapters[ref.chapter - 1].nil? rescue true
     #API doesn't send verse information anymore :(
     return true
   end
