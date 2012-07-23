@@ -1,12 +1,14 @@
-- @title = 'Publisher'
+- @title = t('versions.index title')
 - @sidebar = false
 
 %article
-  %h1= "#{t('bible versions')} (#{@versions_by_lang.values.flatten.count})"
+  %h1= "#{t('bible versions')}"
+  %hr
+  %h4= "#{@versions_by_lang.values.flatten.count} versions in #{@versions_by_lang.count} languages"
   %ul
     - @versions_by_lang.each do |lang, versions|
       %li
         = "#{versions.first.language.human} (#{versions.count})"
         %ul
           - versions.each do |version|
-            %li= link_to version.title , version_path(version)
+            %li= link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)

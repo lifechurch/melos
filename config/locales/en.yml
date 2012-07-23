@@ -648,6 +648,7 @@ en:
     404 explanation:                            "You might try starting again from the <a href='%{reader_path}'>home page</a>. Still having trouble? Contact our <a href='%{support_url}'>support team</a>."
     404 message:                                "We're sorry, the page you're looking for can't be found."
   versions:
+    index title:                                "List of Versions"
     widget title:                               "About This Version"
     visit publisher:                                 "Visit Publisher's Website"
     read title:                                 "Read This Version"
