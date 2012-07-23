@@ -2,7 +2,7 @@ class YvApi
   include HTTParty
   format :json
   headers 'Referer' => "http://" + Cfg.api_referer
-  default_timeout 5
+  default_timeout Cfg.api_default_timeout
 
   class << YvApi
     alias_method :httparty_get, :get
@@ -29,7 +29,7 @@ class YvApi
           response = httparty_get(resource_url, timeout: timeout, query: opts.except(:cache_for))
         rescue Timeout::Error => e
           Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
-          raise APITimeoutError, "API Timeout for #{resource_url}"
+          raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - get_start)*1000).to_i} ms)"
         rescue Exception => e
           Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
           raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
@@ -44,7 +44,7 @@ class YvApi
         response = httparty_get(resource_url, timeout: timeout, query: opts)
       rescue Timeout::Error => e
         Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
-        raise APITimeoutError, "API Timeout for #{resource_url}"
+        raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - get_start)*1000).to_i} ms)"
       rescue Exception => e
         Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
         raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
@@ -73,7 +73,7 @@ class YvApi
       response = httparty_post(resource_url, timeout: timeout, body: opts)
     rescue Timeout::Error => e
       Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
-      raise APITimeoutError, "API Timeout for #{resource_url}"
+      raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - post_start)*1000).to_i} ms)"
     rescue Exception => e
       Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
       raise APIError, "Non-timeout API Error for #{resource_url}"

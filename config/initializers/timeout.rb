@@ -1,2 +1,2 @@
-Rack::Timeout.timeout = 15
+Rack::Timeout.timeout = Cfg.rack_execution_timeout
 

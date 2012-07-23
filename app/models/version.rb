@@ -127,7 +127,7 @@ attribute :audio
     return true
   end
   def title
-    @attributes.title
+    @attributes.local_title || @attributes.title
   end
   def to_s
     "#{title} (#{abbreviation.upcase})"
