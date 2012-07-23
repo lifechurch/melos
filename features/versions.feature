@@ -4,19 +4,22 @@ Feature: Versions view
   I want to:   See available Bible translations by language
                and learn more information about them.
 
-  Background:
-    Given a user named "cukeuser_bookmark1" exists
-    And I have beta access as "cukeuser_bookmark1"
-
-  @bible
   Scenario: Listing versions
     When I go to the versions page
     Then I should see "English"
-    And I should see a link to "King James Version"
-    And I should see a link to "The Message"
-    When I follow "The Message"
-    Then I should be on the version page for "msg"
-    # And I should see "The best answer to that question comes from Eugene Peterson himself"
-    When I follow "Read this version"
-    Then I should be on the bible page "gen.1.msg"
-    # TODO: swap the Bible page above for last read position when user stuff is in place
+    And I should see a link to "King James Version (KJV)"
+    And I should see a link to "The Message (MSG)"
+    When I follow "King James Version (KJV)"
+    Then I should be on the version page for "1-KJV"
+
+  Scenario: View Version Info
+    When I go to the version page for "59-ESV"
+    Then I should see "English Standard Version"
+    And I should see "Crossway Bibles"
+    And I should see "Good News Publishers"
+    And I should see "stands in the classic mainstream of English Bible translations over the past half-millennium"
+
+  # Scenario: Path to Read Version
+  #   When I go to the version page
+  #   And I follow "Read this version"
+  #   Then I should be on the bible page "JON.1.59-MSG"
