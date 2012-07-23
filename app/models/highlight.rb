@@ -19,8 +19,12 @@ class Highlight < YouVersion::Resource
       # string will (should) have it
       self.version = attributes.try :version_id
 
-      #note: it is possible we're creating a highlight from an id alone
-      self.reference = Reference.new(usfm_ref, version: self.version) if usfm_ref
+      # if a version ID is specified, use it as the overriding version
+      forced_opts = self.version.nil? ? {} : {version: self.version}
+
+      # note: it is possible we're creating a highlight from an id alone
+      # so it's not necessarrily an error if we don't have a usfm_ref
+      self.reference = Reference.new(usfm_ref, forced_opts) if usfm_ref
 
       # in case the version_id wasn't available above
       # and was passed in the ref string
@@ -36,8 +40,7 @@ class Highlight < YouVersion::Resource
   def self.for_reference(reference, params = {})
     reference = Reference.new(reference) unless reference.is_a? Reference
     params[:page] ||= 1
-    opts = {reference: reference.chapter_usfm, version_id: reference.version}.merge(params)
-
+    opts = params.merge(reference: reference.chapter_usfm, version_id: reference.version)
     response = YvApi.get("highlights/chapter", opts) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)not_found$/].detect { |r| r.match(errors.first["error"]) }
         return []

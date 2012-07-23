@@ -13,7 +13,6 @@ class HighlightsController < ApplicationController
         #TODO: log this error for our research
       end
     else #user is creating highlights
-
       if existing.all?(&:destroy) && @highlights.all?(&:save)
         redirect_to :back
       else

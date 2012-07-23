@@ -54,13 +54,13 @@ class ReferencesController < ApplicationController
 
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
     @alt_version = Version.find(alt_version(@reference))
-    @alt_reference = Reference.new(@reference.to_param, version: @alt_version)
+    @alt_reference = Reference.new(@reference, version: @alt_version)
 
   end
 
   def highlights
       @highlights = Highlight.for_reference(params[:reference], auth: current_auth) if current_auth
-      @highlights = [] if @highlights.nil?
+      @highlights ||= []
       render json: @highlights
   end
 

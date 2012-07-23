@@ -21,6 +21,17 @@ describe Reference do
       pending "us actually needing this -- removed for now to test that theory"
       Reference.new(Hashie::Mash.new({osis: "gen.1.1.kjv", human: "Genesis 1:1"})).should be_valid
     end
+    it "should be able to be created from a Reference" do
+      Reference.new(@gen_1_2_kjv_ref).should be_valid
+      Reference.new(@gen_1_2_kjv_ref).should == @gen_1_2_kjv_ref
+    end
+    it "should use the options as the overriding property" do
+      Reference.new('gen.1.2.kjv', book: "JHN").book.should == "JHN"
+      Reference.new('gen.1.2.kjv', chapter: "3").chapter.should == 3
+      Reference.new('gen.1.2.kjv', verses: "4").verses.should == 4
+      Reference.new('gen.1.2.kjv', version: "5").version.should == 5
+      Reference.new('gen.1.2.kjv', version: nil).version.should == nil
+    end
   end
 
   describe "#valid?" do
@@ -202,7 +213,7 @@ describe Reference do
     end
   end
 
-  describe "#previous_chapter", only: true do
+  describe "#previous_chapter" do
     it "should give nil for the first chatper" do
       @gen_1_kjv_ref.previous_chapter.should be_nil
     end
@@ -220,7 +231,7 @@ describe Reference do
     end
   end
 
-  describe "#next_chapter", only: true do
+  describe "#next_chapter" do
     it "should give nil for the last chatper" do
       Reference.new('Rev.22').next_chapter.should be_nil
     end

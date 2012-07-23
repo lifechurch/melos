@@ -22,21 +22,27 @@ class Reference < YouVersion::Resource
     ref_hash = case ref
     when String
       YvApi::parse_reference_string ref
-    when Hash
+    when Hash#, Hashie::Mash (is mash creation even used/necessary?)
       ref
+    when Reference
+      ref.to_hash
     else
       {}
     end
 
     #attempt to convert book and version from legacy OSIS to USFM
-    _book = ref_hash.try(:[], :book) || opts[:book]
+    #opts hash acts as overriding value to ref parameter
+    _book = opts.has_key?(:book) ? opts[:book] : ref_hash.try(:[], :book)
     @book = YvApi::get_usfm_book(_book) || _book
     @book = @book.try :upcase
-    @chapter = ref_hash.try :[], :chapter || opts[:chapter]
-    @chapter = @chapter.to_i if @chapter
-    @verses = ref_hash.try :[], :verses || opts[:verse] || opts[:verses]
+
+    @chapter = opts.has_key?(:chapter) ? opts[:chapter] : ref_hash.try(:[], :chapter)
+    @chapter = @chapter.try :to_i
+
+    @verses = opts.has_key?(:verses) ? opts[:verses] : ref_hash.try(:[], :verses)
     @verses = parse_verses(@verses)
-    _version = ref_hash.try(:[], :version) || opts.try(:[], :version)
+
+    _version = opts.has_key?(:version) ? opts[:version] : ref_hash.try(:[], :version)
     @version = YvApi::get_usfm_version(_version) || _version
     @version = Version.id_from_param(@version)
 
@@ -94,7 +100,8 @@ class Reference < YouVersion::Resource
   end
 
     def hash
-    to_param.hash
+    #not using to_param so we don't have to hit the API to compare References
+    "#{to_usfm}.#{version}"
   end
 
   def ==(compare)
