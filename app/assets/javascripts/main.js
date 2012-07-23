@@ -1225,14 +1225,24 @@ var YV = (function($, window, document, undefined) {
             dataType: "json",
             success: function(highlights) {
               //reset any old highlights
-              $('.verse.' + flag).css("background-color", 'transparent')
+              $('.verse.' + flag).css("background-color", 'transparent');
               $('.verse.' + flag).removeClass(flag);
 
               //apply the new highlights
               $.each(highlights, function(i, highlight) {
                   verse = chapter.find(".verse.v" + highlight.verse);
                   verse.css("background-color", "#" + highlight.color);
-                  verse.attr('data-highlight-id', highlight.id);
+
+                  //add the highlight ids (so if user clears they can clear them all)
+                  highlight_ids = verse.attr('data-highlight-ids');
+                  if (highlight_ids){
+                    highlight_ids = highlight_ids.split(',');
+                  }else{highlight_ids = [];}
+                  highlight_ids.push(highlight.id);
+                  verse.each(function(){
+                    $(this).attr('data-highlight-ids', highlight_ids.join(','));
+                  });
+
                   verse.addClass(flag);
                   if (is_dark(highlight.color)) {
                     verse.addClass("dark_bg");
