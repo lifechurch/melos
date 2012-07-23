@@ -139,7 +139,7 @@ class YvApi
             \s*
             (?:(?:[:\.]) ([\d\-,\s]*))?                       #optional verse(s)
             \s*
-            (?: (?:\.) ((?: \d*\-?)? (?: [a-zA-Z_\-]*)) )?    #optional version
+            (?: (?:\.) ((?: \d*\-?)? (?: [0-9a-zA-Z_\-]*)) )?    #optional version
           $/x
     matches = ref_str.match(re)
 
