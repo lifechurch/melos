@@ -56,7 +56,7 @@ class Highlight < YouVersion::Resource
   def as_json(options = {})
     #API/apps shouldn't support ranged highlights, but some exist, so use only the first verse if range.
     #EVENTUALLY: make this pervasive/complete so anyone using this object only sees the 1st verse and we can just pass raw_hash[:verses]
-    {verse: self.reference.first_verse, color: self.color, id: id, version: version}
+    {verse: self.reference.verses.first, color: self.color, id: id, version: version}
   end
 
 end

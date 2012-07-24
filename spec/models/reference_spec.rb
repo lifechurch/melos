@@ -28,7 +28,7 @@ describe Reference do
     it "should use the options as the overriding property" do
       Reference.new('gen.1.2.kjv', book: "JHN").book.should == "JHN"
       Reference.new('gen.1.2.kjv', chapter: "3").chapter.should == 3
-      Reference.new('gen.1.2.kjv', verses: "4").verses.should == 4
+      Reference.new('gen.1.2.kjv', verses: "4").verses.should == [4]
       Reference.new('gen.1.2.kjv', version: "5").version.should == 5
       Reference.new('gen.1.2.kjv', version: nil).version.should == nil
     end
@@ -36,7 +36,7 @@ describe Reference do
 
   describe "#valid?" do
     describe "with a valid reference string" do
-      valid_refs = %w(gen.1 gen.1.1 gen.1.1-3 gen.1.kjv gen.1.1.kjv gen.1.1-3.kjv john.1.1.books-eng)
+      valid_refs = %w(gen.1 gen.1.1 gen.1.1-3 gen.1.kjv gen.1.1.kjv gen.1.1-3.kjv john.1.1.299-NGBM)
       valid_refs.each do |ref|
         specify "#{ref} should be valid" do
           Reference.new(ref).should be_valid
@@ -44,7 +44,7 @@ describe Reference do
       end
     end
     describe "with an invalid reference string" do
-      invalid_refs = %w(gen.100 gen.1.books-eng gen.1.invalid gen.1.1.invalid gen.1.1-3.invalid gen.1.1.books-eng)
+      invalid_refs = %w(gen.100 gen.1.299-NGBM gen.1.invalid gen.1.1.invalid gen.1.1-3.invalid gen.1.1.299-NGBM)
       invalid_refs.each do |ref|
         specify "#{ref} should be invalid" do
           Reference.new(ref).should_not be_valid
@@ -75,9 +75,9 @@ describe Reference do
     end
   end
 
-  describe "#verse" do
+  describe "#verses" do
     it "should be the correct verse" do
-      @gen_1_2_kjv_ref.verses == 2
+      @gen_1_2_kjv_ref.verses == [2]
     end
   end
 
@@ -145,7 +145,7 @@ describe Reference do
     it "should match the values" do
       subject[:book].should == 'GEN'
       subject[:chapter].should == 1
-      subject[:verses].should == 1
+      subject[:verses].should == [1]
       subject[:version].should == 1
     end
   end
@@ -175,6 +175,7 @@ describe Reference do
       @gen_1_kjv_ref.notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3+GEN.1.4+GEN.1.5+GEN.1.6+GEN.1.7+GEN.1.8+GEN.1.9+GEN.1.10+GEN.1.11+GEN.1.12+GEN.1.13+GEN.1.14+GEN.1.15+GEN.1.16+GEN.1.17+GEN.1.18+GEN.1.19+GEN.1.20+GEN.1.21+GEN.1.22+GEN.1.23+GEN.1.24+GEN.1.25+GEN.1.26+GEN.1.27+GEN.1.28+GEN.1.29+GEN.1.30+GEN.1.31"
     end
     it "should work with an invalid reference" do
+      pending "us needing to support this style of reference creation (not actually a valid reference)"
       Reference.new("gen.1.1-3,6.kjv").notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3+GEN.1.6"
     end
   end
@@ -184,7 +185,7 @@ describe Reference do
       ref = Reference.new('gen.1.2.kjv')
       ref[:book].should == 'GEN'
       ref[:chapter].should == 1
-      ref[:verses].should == 2
+      ref[:verses].should == [2]
       ref[:version].should == 1
     end
   end
@@ -192,7 +193,6 @@ describe Reference do
   describe "#content" do
     it "should have only the text of a single verse" do
       @gen_1_1_kjv_ref.content.should include "In the beginning God created the heaven and the earth."
-      pending "verse parinig"
       @gen_1_1_kjv_ref.content.should_not include "And the earth was without form"
     end
     it "should have the text of a chapter" do
@@ -200,16 +200,12 @@ describe Reference do
       @gen_1_kjv_ref.content.should include "And the earth was without form"
     end
     it "should give the html for a chapter" do
-      @gen_1_kjv_ref.content.should include "<div class=\" chapter_heading"
-      @gen_1_kjv_ref.content.should include "class=\" verse_content"
+      @gen_1_kjv_ref.content.should include "<div class=\"chapter ch1\" data-usfm=\"GEN.1\">\n            <div class=\"label\">1</div>\n"
+      @gen_1_kjv_ref.content.should include "<span class=\"content\">In the beginning"
     end
     it "should give the html for a verse" do
-      @gen_1_1_kjv_ref.content.should include "class=\" verse_content"
-      pending "verse parinig"
-      @gen_1_1_kjv_ref.content.should_not include "<div class=\" chapter_heading"
-    end
-    it "should have particular html classes" do
-      pending "reference rewrite will show how to fully test this"
+      @gen_1_1_kjv_ref.content.should include "<span class=\"content\">In the beginning"
+      @gen_1_1_kjv_ref.content.should_not include "<div class=\"chapter ch1\" data-usfm=\"GEN.1\">\n            <div class=\"label\">1</div>\n"
     end
   end
 
@@ -295,16 +291,6 @@ describe Reference do
     end
   end
 
-  describe "#{}verses_string" do
-    it "should give a csv of the verses in a ranged reference" do
-      Reference.new('gen.1.1-5').verses_string.should == '1,2,3,4,5'
-    end
-    it "should give a csv of the verses in a comma separated reference" do
-      Reference.new('gen.1.1,3-5').verses_string.should == '1,3,4,5'
-    end
-
-  end
-
   describe "#audio" do
     it "should contain a link to an mp3" do
       @gen_1_kjv_ref.audio.url.should =~ /mp3/
@@ -317,6 +303,7 @@ describe Reference do
   describe "#timing" do
       it "should initialize without hitting the API" do
         Benchmark::realtime{Reference.new('gen.1.1.kjv')}.should < 0.0001
+        #TODO: add more cases (ranges, creation from References, etc to flesh out the supported 'lazy-load' cases)
       end
       it "should give basic properties without hitting the API" do
         ref = Reference.new('gen.1.1.kjv')

@@ -6,7 +6,7 @@ describe Version do
     @kjv = Version.find(@kjv_id)
     @kjv.title.should == "King James Version"
     @cevuk = Version.find(294)
-    @nt_only_id = 299 #NGBM
+    @nt_only_id = 299 #299-NGBM
     @nt_only = Version.find(@nt_only_id)
     @msg = Version.find(97)
     @rvr60_id = 148

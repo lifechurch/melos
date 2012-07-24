@@ -12,9 +12,9 @@ describe ReferenceList do
     end
     it "should have the right number of items" do
       ReferenceList.new('gen.1.1.kjv,gen.2.kjv').should have(2).items
-    end     
+    end
   end
-  
+
   describe "#<<" do
     it "should add a reference to the list" do
       list = ReferenceList.new
@@ -30,7 +30,7 @@ describe ReferenceList do
       list.should_not include Reference.new('gen.1.kjv')
     end
   end
-  
+
   describe "#uniq!" do
     it "should remove a duplicate reference" do
       list = ReferenceList.new('gen.1.kjv, gen.1.kjv')
@@ -42,8 +42,8 @@ describe ReferenceList do
       list.should include Reference.new('gen.2.kjv')
     end
   end
-  
-  
+
+
   describe "#to_api_string" do
     subject{ @list = ReferenceList.new('gen.1.2.kjv, 1sam.8.amp').to_api_string }
 
@@ -54,27 +54,16 @@ describe ReferenceList do
       should =~ /1\.2/i
     end
     it "should be + separated" do
-      should =~ /.*\+1sam/i
+      should =~ /.*\+1SA/i
     end
     it "should not contain the version" do
       should_not =~ /(kjv|amp)/i
     end
-    it "should have an upper case first letter" do
+    it "should be upper case for numberless books" do
       should =~ /^G/
     end
-    it "should have an upper case first alpha letter for a numbered book" do
-      should =~ /1Sam/
-    end
-  end
-  
-  describe "#to_osis_references" do
-    subject{ @list = ReferenceList.new('gen.1.2.kjv, 1sam.8.amp').to_osis_references }
-    
-    it "should be + separated" do
-      should =~ /.*\+1sam/i
-    end
-    it "should contain the version" do
-      should =~ /\.kjv.*\.amp/i
+    it "should upper cased for numbered books" do
+      should =~ /1SA/
     end
   end
 end

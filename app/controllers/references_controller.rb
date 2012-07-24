@@ -28,10 +28,13 @@ class ReferencesController < ApplicationController
       return redirect_to bible_path(Reference.new(ref_hash))
     end
 
-    # Hang on to verses to select them in the reader
-    # Note: InvalidReferenceError will be raised here if
-    # the reference is invalid
-    @verses = Reference.new(ref_hash).verses_string
+    # Hang on to all the verses to select them in the reader
+    # This should probably all be done with a ReferenceList
+    # with a lot more functionality and smarts
+    #
+    # Note: InvalidReferenceError used to be raised here if
+    # the reference was invalid
+    @verses = ref_hash[:verses]
 
     # Set the canonical reference for the page to the entire chapter
     @reference = Reference.new(ref_hash.except(:verses))
