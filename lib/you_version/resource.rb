@@ -262,8 +262,7 @@ module YouVersion
       end
     end
     def self.a_long_time
-      #DEBUG12.hours
-      3.minutes
+      12.hours
     end
     def a_long_time
       self.class.a_long_time

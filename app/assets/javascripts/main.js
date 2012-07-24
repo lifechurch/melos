@@ -941,7 +941,7 @@ var YV = (function($, window, document, undefined) {
             text_to_send = link;
 
             existing_ids = $.makeArray($('.verse.selected.highlighted').map(function(){
-              return $(this).data('highlight-id');
+              return $(this).data('highlight-ids');
             }));
 
             highlight_form.find('.references').val(selected_verses_param.join(','));
@@ -1224,14 +1224,19 @@ var YV = (function($, window, document, undefined) {
             method: "get",
             dataType: "json",
             success: function(highlights) {
-              //reset any old highlights
-              $('.verse.' + flag).css("background-color", 'transparent');
-              $('.verse.' + flag).removeClass(flag);
+              //reset any old highlights in the current chapter
+              chapter.find('.verse.' + flag).css("background-color", 'transparent');
+              chapter.find('.verse.' + flag).removeClass(flag);
 
               //apply the new highlights
               $.each(highlights, function(i, highlight) {
                   verse = chapter.find(".verse.v" + highlight.verse);
                   verse.css("background-color", "#" + highlight.color);
+
+                  verse.addClass(flag);
+                  if (is_dark(highlight.color)) {
+                    verse.addClass("dark_bg");
+                  }
 
                   //add the highlight ids (so if user clears they can clear them all)
                   highlight_ids = verse.attr('data-highlight-ids');
@@ -1239,14 +1244,7 @@ var YV = (function($, window, document, undefined) {
                     highlight_ids = highlight_ids.split(',');
                   }else{highlight_ids = [];}
                   highlight_ids.push(highlight.id);
-                  verse.each(function(){
-                    $(this).attr('data-highlight-ids', highlight_ids.join(','));
-                  });
-
-                  verse.addClass(flag);
-                  if (is_dark(highlight.color)) {
-                    verse.addClass("dark_bg");
-                  }
+                  verse.attr('data-highlight-ids', highlight_ids.join(','));
               });//end highlights each
             }//end success function
           });//end ajax delegate
