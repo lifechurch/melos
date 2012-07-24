@@ -8,13 +8,14 @@
   - if I18n.locale != I18n.default_locale
     %p.disclaimer= t('users.terms.translation disclaimer')
     %hr
-  - sections = ["acceptance", "description", "registration", "privacy", "account", "conduct", "international", "content", "contributions", "indemnity", "storage", "modifications", "termination", "dealings", "links", "rights", "limitation", "beneficiaries", "notice", "trademark", "copyright"]
+  - sections = ["acceptance", "description", "registration", "privacy", "account", "conduct", "international", "content", "contributions", "indemnity", "resale", "storage", "modifications", "termination", "dealings", "links", "rights", "limitation", "beneficiaries", "notice", "trademark", "copyright"]
   - opts = {home_link: link_to("http://youversion.com", "http://youversion.com"), terms_link: link_to("http://youversion.com/terms", "http://youversion.com/terms"), mailto_link: link_to("legal@youversion.com", "mailto:legal@youversion.com"), lifechurch_link: link_to("LifeChurch.tv", "http://www.lifechurch.tv"), line_break: "<br><br>", item: "<br><span style='margin-left:30px'></span>", newline: "<br>"}
   %ol
     - sections.each do |section|
       %h4
         %li
           = t("users.terms.#{section} title")
-      %p.li_1= t("users.terms.#{section} text", opts).html_safe
+      .li_1= t("users.terms.#{section} text", opts).html_safe
+      %br
   %h4= t("users.terms.general title")
   %p.li_1= t("users.terms.general text", opts).html_safe
