@@ -5,6 +5,9 @@
   %h1= t("users.privacy.policy", youversion: t("youversion"))
   %h4.mute= t("users.revised date", date: "7/16/2012")
   %hr
+  - if I18n.locale != I18n.default_locale
+    %p.disclaimer= t('users.privacy.translation disclaimer')
+    %hr
 
   %p= t("users.privacy.intro")
 
