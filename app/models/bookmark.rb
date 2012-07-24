@@ -15,31 +15,31 @@ class Bookmark < YouVersion::Resource
     self.attributes['user_id']
   end
 
-  def before_save
-    self.references = self.reference_list.to_api_string
-    self.version_id = self.version
-  end
-
-  def after_save(response)
-
-    return unless response
-    self.version = Version.find(response.version_id)
-    # Sometimes references come back as an array, sometimes just one, Hashie::Mash
-    if response.references
-      self.reference_list = ReferenceList.new(self.references, self.version)
-    end
-  end
-
   def after_build
     # self.reference does multiple duty here for the moment. When creating a new object,
     # self.reference may contain whatever the user passed in (usually a String) with the
     # :reference key.  When creating an object from an API call, it will bear whatever
     # string the API returned for the 'reference' key in the response->data section.
     # And it could probably be some other things before we're done.
+
+    self.version = attributes.try :version_id
     self.reference_list = ReferenceList.new(self.references, self.version)
-    self.version = self.reference_list.first[:version]
-    # Just here for compatibility - should return the same as what was done before
-    # self.reference = self.reference_list.first
+    self.version = self.reference_list.first.try :version
+  end
+
+  def before_save
+    self.references = self.reference_list.to_api_string
+    self.version_id = self.version
+  end
+
+  def after_save(response)
+    return unless response
+
+    self.version = Version.find(response.version_id)
+    # Sometimes references come back as an array, sometimes just one, Hashie::Mash
+    if response.references
+      self.reference_list = ReferenceList.new(self.references, self.version)
+    end
   end
 
 
