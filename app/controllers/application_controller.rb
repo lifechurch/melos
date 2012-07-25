@@ -71,7 +71,7 @@ class ApplicationController < ActionController::Base
         if cookies.signed[:f] == "none"
         else
           cookie_data = ActiveSupport::JSON.decode(cookies.signed[:f])
-          if Time.zone.parse(cookie_data["valid_date"]) < 1.week.ago
+          if Time.zone.parse(cookie_data["valid_date"]) > 1.week.ago
             current_user.connections["facebook"].update_token
             set_facebook_cookie current_user
           else
