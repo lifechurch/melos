@@ -52,29 +52,43 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
     cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
-    set_facebook_cookie user
+    check_facebook_cookie user
   end
 
   def set_facebook_cookie(user)
-    if user.connections["facebook"]
-      facebook_data = user.connections["facebook"].data
-      facebook_data[:valid_date] = Time.zone.now
-      cookies.permanent.signed[:f] = facebook_data.to_json
-    else
-      cookies.permanent.signed[:f] = "none"
+    begin
+      if user.connections["facebook"]
+        facebook_data = user.connections["facebook"].data
+        # if the FB cookie doesn't exist, update the potentially outdated token
+        # to be safe
+        current_user.connections["facebook"].update_token unless cookies.signed[:f].present?
+        facebook_data[:valid_date] = Time.zone.now
+        cookies.permanent.signed[:f] = facebook_data.to_json
+      else
+        cookies.permanent.signed[:f] = "none"
+      end
+    rescue
+      # if an error occurs with FB weirness, we don't want
+      # that stopping all site access
     end
   end
 
   def check_facebook_cookie
     if current_auth
-      if cookies.signed[:f]
+      if cookies.signed[:f].present?
         if cookies.signed[:f] == "none"
         else
-          cookie_data = ActiveSupport::JSON.decode(cookies.signed[:f])
-          if Time.zone.parse(cookie_data["valid_date"]) > 1.week.ago
-            current_user.connections["facebook"].update_token
-            set_facebook_cookie current_user
-          else
+          begin
+            cookie_data = ActiveSupport::JSON.decode(cookies.signed[:f])
+            if Time.zone.parse(cookie_data["valid_date"]) > 1.week.ago
+              debugger
+              current_user.connections["facebook"].update_token
+              set_facebook_cookie current_user
+            else
+            end
+          rescue
+            # if an error occurs with FB weirness, we don't want
+            # that stopping all site access
           end
         end
       else
@@ -118,7 +132,7 @@ class ApplicationController < ActionController::Base
   def force_login(opts = {})
     if current_auth.nil?
       opts[:redirect] = request.path
-      redirect_to sign_up_path(opts) and return 
+      redirect_to sign_up_path(opts) and return
       #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
     end
     @user = current_user
