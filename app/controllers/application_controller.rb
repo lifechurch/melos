@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
     cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
-    check_facebook_cookie user
+    check_facebook_cookie
   end
 
   def set_facebook_cookie(user)
@@ -80,8 +80,7 @@ class ApplicationController < ActionController::Base
         else
           begin
             cookie_data = ActiveSupport::JSON.decode(cookies.signed[:f])
-            if Time.zone.parse(cookie_data["valid_date"]) > 1.week.ago
-              debugger
+            if Time.zone.parse(cookie_data["valid_date"]) < 1.week.ago
               current_user.connections["facebook"].update_token
               set_facebook_cookie current_user
             else
