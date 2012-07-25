@@ -263,7 +263,9 @@ class UsersController < ApplicationController
       begin
         @users = @user.connections[@show].find_friends(page: params[:page])
       rescue
-       flash.now[:error] = t('users.reset connection') 
+        @users = []
+        @users_error = true
+        flash.now[:error] = t('users.reset connection')
       end
     end
   end
