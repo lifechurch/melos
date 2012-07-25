@@ -197,7 +197,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(current_auth) if current_auth
+    begin
+      @current_user ||= User.find(current_auth) if current_auth
+    rescue
+      sign_out
+      force_login
+    end
   end
 
   def current_username
