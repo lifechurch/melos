@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
+  before_filter :check_facebook_cookie
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
@@ -51,12 +52,55 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
     cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
+    check_facebook_cookie
+  end
+
+  def set_facebook_cookie(user)
+    begin
+      if user.connections["facebook"]
+        facebook_data = user.connections["facebook"].data
+        # if the FB cookie doesn't exist, update the potentially outdated token
+        # to be safe
+        current_user.connections["facebook"].update_token unless cookies.signed[:f].present?
+        facebook_data[:valid_date] = Time.zone.now
+        cookies.permanent.signed[:f] = facebook_data.to_json
+      else
+        cookies.permanent.signed[:f] = "none"
+      end
+    rescue
+      # if an error occurs with FB weirness, we don't want
+      # that stopping all site access
+    end
+  end
+
+  def check_facebook_cookie
+    if current_auth
+      if cookies.signed[:f].present?
+        if cookies.signed[:f] == "none"
+        else
+          begin
+            cookie_data = ActiveSupport::JSON.decode(cookies.signed[:f])
+            if Time.zone.parse(cookie_data["valid_date"]) < 1.week.ago
+              current_user.connections["facebook"].update_token
+              set_facebook_cookie current_user
+            else
+            end
+          rescue
+            # if an error occurs with FB weirness, we don't want
+            # that stopping all site access
+          end
+        end
+      else
+        set_facebook_cookie current_user
+      end
+    end
   end
 
   def sign_out
     cookies.permanent.signed[:a] = nil
     cookies.permanent.signed[:b] = nil
     cookies.permanent.signed[:c] = nil
+    cookies.permanent.signed[:f] = nil
     cookies.permanent[:avatar] = nil
   end
 
@@ -87,7 +131,7 @@ class ApplicationController < ActionController::Base
   def force_login(opts = {})
     if current_auth.nil?
       opts[:redirect] = request.path
-      redirect_to sign_up_path(opts) and return 
+      redirect_to sign_up_path(opts) and return
       #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
     end
     @user = current_user
@@ -153,7 +197,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(current_auth) if current_auth
+    begin
+      @current_user ||= User.find(current_auth) if current_auth
+    rescue
+      sign_out
+      force_login
+    end
   end
 
   def current_username
