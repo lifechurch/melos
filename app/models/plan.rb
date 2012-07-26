@@ -85,7 +85,7 @@ class Plan < YouVersion::Resource
   end
 
   def users(params = {})
-    if !@users || (params[:page] != @users_page)
+    #if !@users || (params[:page] != @users_page)
       params[:id] = id
       @users_page = params[:page] ||= 1
 
@@ -99,8 +99,8 @@ class Plan < YouVersion::Resource
 
       @users = ResourceList.new
       @users.total = response.total
-      response.users.each {|user| @users << Hashie::Mash.new({user: User.new(user.merge(:auth => params[:auth])), date: user.subscribed})}
-    end
+      response.users.each {|user| @users << Hashie::Mash.new({user: User.new(user.merge(:auth => params[:auth])), date: user.start_dt})}
+    #end
     @users
   end
 

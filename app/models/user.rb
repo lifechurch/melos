@@ -32,6 +32,7 @@ class User < YouVersion::Resource
   attribute :google
   attribute :created_dt
   attribute :last_login_dt
+  attribute :start_dt
 
   validate :valid_picture_size?, if: "uploaded_file?"
 
