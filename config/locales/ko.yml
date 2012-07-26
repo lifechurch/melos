@@ -218,8 +218,8 @@ ko:
     edit devices:                               "접속 기기"
     edit account_existence:                     "계정 삭제"
     delete account button:                      "유버전 계정 삭제하기"
-    no devices:                                 "No devices connected to your YouVersion Account"
-    no devices download copy:                   "Based on the online Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any mobile device. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle. Visit <a href='http://www.youversion.com/download'>youversion.com/download</a> from your mobile device to download the Bible App and connect your account!"
+    no devices:                                 "유버전 계정에 연결된 기기가 없습니다."
+    no devices download copy:                   "온라인 성경인 YouVersion.com을 기본으로 하여, 성경앱은 대부분의 이동기기에 설치가 가능한 무료 이동기기용 성경입니다. 성경앱은 사용자가 성경을 읽고, 소셜네트워크를 통하여 말씀을 공유하고, 좋아하는 구절을 책갈피하는 등&mdash;늘어가는 이동기기 사용에 따른 모든 형태를 지원하고 있습니다. 지금 여러분의 이동기기로 <a href='http://www.youversion.com/download'>youversion.com/download</a>를 방문하셔서 성경앱을 다운로드하고 계정을 연결하세요!"
     yes delete:                                 "계정을 삭제해주세요."
     account delete success:                     "유버전 계정이 삭제되었습니다. 앞으로도 성경과 계속 동행하시기를 바랍니다.  아래의 앱들이 혹 도움이 될 것 같아서 소개합니다.
 <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"

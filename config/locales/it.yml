@@ -389,7 +389,7 @@ it:
     all:                                        "Tutte"
     labels label:                               "Etichette:"
     title:                                      "Segnalibri"
-    not found:                                  "I segnalibri ti danno una rapida guida di riferimento ai tuoi brani preferiti o all'ultimo capitolo che hai letto nel libro specifico. Per aggiunger un segnalibro, seleziona un versetto nel lettore Bibbia e poi clicca il bottone Selezionati in alto nel lettore."
+    not found:                                  "I segnalibri ti danno una rapida guida di riferimento ai tuoi brani preferiti o all'ultimo capitolo che hai letto nel libro specifico. Per aggiungere un segnalibro, seleziona un versetto nel lettore Bibbia e poi clicca il bottone Selezionati in alto nel lettore."
     other user not found:                       "%{username} non ha ancora salvato dei segnalibri."
     successfully created:                       "Segnalibro Aggiunto"
     successfully deleted:                       "Segnalibro eliminato."
