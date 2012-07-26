@@ -235,7 +235,7 @@ class UsersController < ApplicationController
   def update_password
     @selected = :password
     if params[:user][:old_password] == current_auth.password
-      result = @user.update(params[:user].except(:old_password)) ? flash.now[:notice]=(t('users.password.updated')) : flash.now[:error]=(t('users.password.error'))
+      result = @user.update_password(params[:user].except(:old_password)) ? flash.now[:notice]=(t('users.password.updated')) : flash.now[:error]=(t('users.password.error'))
       cookies.signed.permanent[:c] = params[:user][:password] if result
     else
       flash.now[:error]= t('users.password.old was invalid')

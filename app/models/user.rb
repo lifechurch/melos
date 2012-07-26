@@ -259,6 +259,14 @@ class User < YouVersion::Resource
     self.attributes.delete "im_username"
   end
 
+  def update_password(opts)
+    opts[:auth] = self.auth
+    result = YvApi.post("users/update_password", opts) do |errors|
+      errors.each { |e| self.errors.add e }
+      false
+    end
+  end
+
   def destroy
     response = true
 
