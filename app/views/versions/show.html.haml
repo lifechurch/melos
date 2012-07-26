@@ -6,11 +6,11 @@
     %ul.widget_menu
       %li
         %p= @version.publisher.try :name
-      - unless @version.publisher.try(:url).nil?
+      - if @version.publisher.try(:url).present?
         %li
           = link_to(t("versions.visit publisher"), @version.publisher.url)
-        %li
-          = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version))
+      %li
+        = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version))
 %article
   %h1= @version
   %h2= @version.publisher.try :name
