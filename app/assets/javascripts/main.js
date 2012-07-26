@@ -811,7 +811,8 @@ var YV = (function($, window, document, undefined) {
         var book_human = article.data('book-human');
         var book_api = article.data('book-api');
         var chapter = article.data('chapter');
-        var version = article.data('version');
+        var version_id = $('#version_primary .version').data('vid');
+        var version_abbreviation = $('#version_primary').data('abbreviation');
         var flag = 'selected';
         var hide = 'hide';
         var verse_numbers = [];
@@ -916,7 +917,7 @@ var YV = (function($, window, document, undefined) {
             var verse_refs = [];
             $(".reference_tokens").html("");
             $.each(verse_ranges, function(i, range) {
-              verse_refs.push(ranges_usfm[i] + "." + version);
+              verse_refs.push(ranges_usfm[i] + "." + version_abbreviation);
               $(".reference_tokens").append("<li><a data-usfm='" + ranges_usfm[i] + "' href='#'>" + book_human + " " + chapter + ":" + range + "</a></li>");
             });
 
@@ -924,10 +925,13 @@ var YV = (function($, window, document, undefined) {
             input.val(verse_refs.join(","));
 
             // Generate a short link
-            var link = "http://bible.us/" + book + chapter + "." + verse_ranges.join(',') + "." + version;
+            var link = "http://bible.us/" + version_id + "/" + book + chapter + "." + verse_ranges.join(',') + "." + version_abbreviation;
             var rel_link = "/bible/" + book + "." + chapter + "." + verse_ranges.join(',');
 
             $("article").attr('data-selected-verses-rel-link', rel_link);
+            $('.share_message textarea').html($.makeArray($('.verse.selected .content').map(function(){
+              return $(this).html();
+            })).join(' ').trim());
             $("b#short_link").html(link);
             $("input#share_link").val(link);
             $(".share_message .character_count").remove();

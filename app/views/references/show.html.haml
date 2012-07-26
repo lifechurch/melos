@@ -16,9 +16,9 @@
     - direction = 'rtl' if @version.try(:rtl?)
     = link_to("previous", bible_path(@reference.previous), class: "nav_prev #{direction}") if @reference.previous
     = link_to("next", bible_path(@reference.next), class: "nav_next #{direction}") if @reference.next
-  #version_primary{"data-reference" => @reference.to_param, class: @version.try(:text_direction)}
+  #version_primary{"data-reference" => @reference.to_param, "data-abbreviation" => @version.try(:abbreviation).upcase, class: @version.try(:text_direction)}
     = @reference.content.html_safe if @reference.content
-  #version_secondary{"data-reference" => @alt_reference.to_param, class: @alt_version.try(:text_direction)}
+  #version_secondary{"data-reference" => @alt_reference.to_param, "data-abbreviation" => @alt_version.try(:abbreviation).upcase, class: @alt_version.try(:text_direction)}
     = @alt_reference.content.html_safe if @alt_reference.content
 
 %footer
