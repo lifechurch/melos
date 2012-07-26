@@ -104,6 +104,13 @@ describe User do
     end
   end
 
+  describe "#change_password" do
+    it "should work with a valid old password" do
+      @user = ensure_user
+      @user.update_password(password: "tenders2", confirm_password: "tenders2").should_not be_false
+    end
+  end
+
   describe "following and followers" do
     before :all do
       @testuser_2 = ensure_user
