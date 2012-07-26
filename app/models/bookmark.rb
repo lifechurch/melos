@@ -22,7 +22,7 @@ class Bookmark < YouVersion::Resource
     # string the API returned for the 'reference' key in the response->data section.
     # And it could probably be some other things before we're done.
 
-    self.version = attributes.try :version_id
+    self.version = attributes.try :[], :version_id
     self.reference_list = ReferenceList.new(self.references, self.version)
     self.version = self.reference_list.first.try :version
   end
