@@ -49,7 +49,7 @@ class BookmarksController < ApplicationController
     @bookmark.auth = current_auth
 
     if @bookmark.save
-      return redirect_to bible_path(Reference.new(params[:bookmark][:reference])), notice: t('bookmarks.successfully created')
+      return redirect_to bible_path(@bookmark.reference_list.first), notice: t('bookmarks.successfully created')
     else
       render action: "new"
     end

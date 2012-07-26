@@ -917,7 +917,7 @@ var YV = (function($, window, document, undefined) {
             var verse_refs = [];
             $(".reference_tokens").html("");
             $.each(verse_ranges, function(i, range) {
-              verse_refs.push(ranges_usfm[i] + "." + version_abbreviation);
+              verse_refs.push(ranges_usfm[i] + "." + version_id + '-' + version_abbreviation);
               $(".reference_tokens").append("<li><a data-usfm='" + ranges_usfm[i] + "' href='#'>" + book_human + " " + chapter + ":" + range + "</a></li>");
             });
 
@@ -957,6 +957,7 @@ var YV = (function($, window, document, undefined) {
               $('#clear_highlights').removeClass('hide');
             } else {
               $('#clear_highlights').addClass('hide');
+              $('#highlight_9').removeClass('hide');
             }
             // Create reference tokens
           }
