@@ -10,7 +10,7 @@
       = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
     %dd.highlighted
       = link_to t("plans.month")
-  %h1{style: "clear: none; width: 600px"}= @subscription.name
+  %h1.float_left{style: "clear: none; width: 600px"}= @subscription.name
   %hr
   %h4= t("plans.calendar")
 
@@ -19,7 +19,7 @@
     sunday = Date.new(1984,12,9)#sunday
     days_of_week = []
     7.times {|i| days_of_week << sunday.next_day(i).strftime('%^a')[0]}
-  
+
   - while !statuses.empty?
     %table.cal_month.cal_janurary{:cellspacing => "0"}
       :ruby

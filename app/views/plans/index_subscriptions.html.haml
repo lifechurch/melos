@@ -14,7 +14,7 @@
 
 %article
   - if request.path == user_plans_path(current_user)
-    %h1= (@user == current_user) ? t("plans.my plans") : t("plans.a users plans", username: @user.username)
+    %h1.float_left= (@user == current_user) ? t("plans.my plans") : t("plans.a users plans", username: @user.username)
     %dl.combo_button.float_right
       %dt
       %dd
@@ -22,7 +22,7 @@
       %dd.highlighted
         = link_to t("plans.my plans"), user_plans_path(current_user)
   -#else: is a different view
-      
+
   - if !@user.subscriptions.empty?
     %ul.big_list
       - @user.subscriptions.each do |sub|
