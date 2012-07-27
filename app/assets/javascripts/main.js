@@ -1337,6 +1337,15 @@ var YV = (function($, window, document, undefined) {
           $(this).find(".tooltip").fadeOut(100);
         });
       },
+      translation_notes: function() {
+        $('.verse .note .body').wrap('<div class="outer_container"></div>');
+        $('.verse .note .body').wrap('<div class="inner_container"></div>')
+        $('.note .label').hoverIntent(function(){
+          $(this).next('.outer_container').animate({opacity: 1}, "200");
+        }, function(){
+          $(this).next('.outer_container').delay(350).animate({opacity: 0}, "200");
+        })
+      },
       fancy_nav: function()
         {
           if ($(".main_reader").length > 0){
