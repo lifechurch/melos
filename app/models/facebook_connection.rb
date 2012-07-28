@@ -32,10 +32,18 @@ class FacebookConnection < YouVersion::Connection::Base
     if response.empty?
       []
     else
-      opts[:connection_user_ids] = response.map { |e| e["id"] }
-      response = YvApi.post('users/find_connection_friends', opts)
-      response.map { |u| User.new(u) }
+      ids = response.map { |e| e["id"] }
+      users = []
+      responses = ids.each_slice(25).to_a
+      responses.each do |s|
+        opts[:connection_user_ids] = s
+        response = YvApi.post('users/find_connection_friends', opts) do |errors|
+          []
+        end
+        response.each { |u| users << User.new(u) }
+      end
     end
+    users
   end
 
   def delete

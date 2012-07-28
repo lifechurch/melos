@@ -1,6 +1,10 @@
 common:
-  facebook_app_id: 105030176203924
-  facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
+  #facebook_app_id: 105030176203924
+  #facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
+  # yv-development-cb (works for youversion-web.dev)
+  facebook_app_id: 306713076033387
+  facebook_secret: 1a8bf87913629f4162b6c91e5fe943a2
+
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
   avatar_path: http://d5xlnxqvcdji7.cloudfront.net/users/images/

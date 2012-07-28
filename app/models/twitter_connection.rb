@@ -26,17 +26,13 @@ class TwitterConnection < YouVersion::Connection::Base
     response = twit.friends.ids.json? user_id: self.data[:user_id], cursor: -1
     users = []
     responses = response.ids.each_slice(25).to_a
-    Rails.logger.debug "responses is #{responses}"
     responses.each do |s|
-      Rails.logger.debug "s is #{s}"
       opts[:connection_user_ids] = s
-      Rails.logger.debug "opts are #{opts}"
       response = YvApi.post('users/find_connection_friends', opts) do |errors|
         []
       end
       response.each { |u| users << User.new(u) }
     end
-    Rails.logger.debug "hey now, users is #{users}" 
     users
   end
 
