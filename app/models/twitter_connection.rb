@@ -24,9 +24,20 @@ class TwitterConnection < YouVersion::Connection::Base
     opts = {connection_type: "tw"}.merge(opts)
     twit = Grackle::Client.new(auth: {consumer_key: data[:key], consumer_secret: data[:secret], token: data[:oauth_token], token_secret: data[:oauth_token_secret], type: :oauth})
     response = twit.friends.ids.json? user_id: self.data[:user_id], cursor: -1
-    opts[:connection_user_ids] = response.ids
-    response = YvApi.post('users/find_connection_friends', opts)
-    response.map { |u| User.new(u) }
+    users = []
+    responses = response.ids.each_slice(25).to_a
+    Rails.logger.debug "responses is #{responses}"
+    responses.each do |s|
+      Rails.logger.debug "s is #{s}"
+      opts[:connection_user_ids] = s
+      Rails.logger.debug "opts are #{opts}"
+      response = YvApi.post('users/find_connection_friends', opts) do |errors|
+        []
+      end
+      response.each { |u| users << User.new(u) }
+    end
+    Rails.logger.debug "hey now, users is #{users}" 
+    users
   end
 
   def delete

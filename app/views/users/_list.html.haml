@@ -3,6 +3,10 @@
 - else
   %ul.big_list
     - @users.each do |u|
+    - Rails.logger.debug "u is"
+    - Rails.logger.debug u.inspect
+    - Rails.logger.debug "u.user_avatar_url is"
+    - Rails.logger.debug u.user_avatar_url
       %li
         - if u.user_avatar_url
           %p.float_left.gutter_right_half
