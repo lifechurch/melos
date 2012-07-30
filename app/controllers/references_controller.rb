@@ -4,8 +4,9 @@ class ReferencesController < ApplicationController
 
   def show
     # Set HTML classes for full screen/parallel
+    cookies[:full_screen] ||= 1 if params[:full_screen]
     @html_classes = []
-    @html_classes << "full_screen" if cookies[:full_screen] || params[:full_screen]
+    @html_classes << "full_screen" if cookies[:full_screen]
     @html_classes << "full_screen" << "parallel_mode" if cookies[:parallel_mode]
     # Get user font and size settings
     @font = cookies['data-setting-font']
