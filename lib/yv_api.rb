@@ -64,7 +64,6 @@ class YvApi
     timeout = opts.delete(:timeout)
     resource_url = get_resource_url!(path, opts)
     opts = clean_up_opts(opts)
-
     Rails.logger.apc "** YvApi.post: Calling #{resource_url} with body: ", :info
     Rails.logger.apc opts, :info
 

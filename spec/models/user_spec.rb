@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   before :all do
-    ensure_user({username: "testusercb", password: "tenders"})
+    # ensure_user({username: "testusercb111", password: "tenders"})
     @test_creds = {username: "testuser#{rand(10000)}", password: 'tenders'}
     @testuser = ensure_user @test_creds
     @auth = @testuser.auth

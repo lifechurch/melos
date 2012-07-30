@@ -173,7 +173,7 @@ class User < YouVersion::Resource
     end
 
     def destroy(auth, &block)
-      post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth}, &block)
+      response = post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth}, &block)
     end
 
   end
@@ -379,12 +379,10 @@ class User < YouVersion::Resource
   end
 
   def update_picture(uploaded_file)
-    puts "hey, i'm in"
     unless uploaded_file
       self.errors.add :picture_empty, "Please select a picture to upload"
       return false
     end
-    puts "file size is #{uploaded_file.size}"
 
     if uploaded_file.size > 1.megabyte
       self.errors.add :picture_too_large, "Picture should be less than 1 megabyte"
@@ -400,7 +398,6 @@ class User < YouVersion::Resource
       errors.each { |e| self.errors.add :base, e["error"] }
       return false
     end
-    puts "response is #{response}"
     true
   end
 
