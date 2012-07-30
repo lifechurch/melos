@@ -287,7 +287,7 @@ en:
       enforcement title:                        "Enforcement"
       enforcement text:                         "LifeChurch.tv periodically reviews its compliance with this Privacy Policy. When we receive formal written complaints regarding privacy issues, it is our policy to contact the complaining user regarding his or her concerns. We will cooperate with the appropriate regulatory authorities, including local data protection authorities, to resolve any complaints regarding the transfer of personal data that cannot be resolved between LifeChurch.tv and an individual."
       questions title:                          "Questions"
-      questions text:                           "Any questions about the privacy policy can be directed to: <a href='legal@youversion.com'>legal@youversion.com</a>"
+      questions text:                           "Any questions about the privacy policy can be directed to: <a href='mailto:legal@youversion.com'>legal@youversion.com</a>"
     terms:
       title:                                    "Terms of Use"
       translation disclaimer:                   "The terms of use have been translated for your convenience; however, LifeChurch.tv makes no warranties or representations with respect to the accuracy of the translation.  If any discrepancies are found between the English and the translated version, the English version will control."
