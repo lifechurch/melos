@@ -112,9 +112,11 @@ module YouVersion
       end
 
       def all(params = {})
+        _auth = params[:auth]
         response = YvApi.get(list_path, params) do |errors|
           if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
             # Then it's the notes thing where you're auth'ed as a different user
+            _auth
             YvApi.get(list_path, params.merge!(auth: nil)) do |errors|
               if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
                 []
@@ -127,25 +129,22 @@ module YouVersion
           end
         end
 
-        list = ResourceList.new
-
+        items = ResourceList.new
         # sometimes it has an explicit total attribute
         # else we just use implicit length of array returned
         if response.respond_to? :total
-          list.total = response.total
+          items.total = response.total
         else
-          list.total = response.length
+          items.total = response.length
         end
-
         # sometimes the array of items encapsulated with api_prefix
         # if there is other data that comes back with the response
         if response.respond_to? api_path_prefix.gsub('-','_').to_sym
-          response.send(api_path_prefix.gsub('-','_')).each {|data| list << new(data.merge(auth: params[:auth]))}
+          response.send(api_path_prefix.gsub('-','_')).each {|data| items << new(data.merge(auth:_auth))}
         else
-          response.each {|data| list << new(data.merge(auth: params[:auth]))}
+          response.each {|data| items << new(data.merge(auth: _auth))}
         end
-        list
-
+        items
       end
 
       # Resource list, but just return whatever the API gives us.

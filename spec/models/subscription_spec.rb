@@ -79,7 +79,7 @@ describe Subscription do
       @subscription = Plan.subscribe(@plan, @auth)
       @subscription.set_ref_completion(1, 'gen.1.kjv', true)
     end
-    it "should complete a reference" do
+    it "should complete a reference", only: true do
       @subscription.day(1).references.first.should be_completed
     end
     it "should only complete the specified reference" do

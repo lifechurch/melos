@@ -56,19 +56,8 @@ class ReferenceList
     @references.flatten!
   end
 
-  def to_api_string
-    join_str = '+'
-    refs = @references.compact.map do |r|
-      usfm = r.to_usfm
-      if numbered_book_splits = usfm.match(/(^\d)(\D{1})(.+)/)
-        usfm = "#{numbered_book_splits[1]}#{numbered_book_splits[2].upcase}#{numbered_book_splits[3]}"
-      else
-        usfm = usfm.capitalize
-      end
-      usfm.upcase
-    end
-
-    refs.join(join_str)
+  def to_usfm
+    @references.compact.map{|r| r.to_usfm}
   end
 
   def valid?

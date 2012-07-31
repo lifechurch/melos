@@ -510,21 +510,7 @@ class User < YouVersion::Resource
   end
 
   def subscriptions(opts = {})
-    opts[:user_id] = id
-    opts[:auth] ||= auth
-    response = YvApi.get("reading_plans/items", opts) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end
-
-    subscriptions = ResourceList.new
-    subscriptions.total = response.total
-    response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(auth: auth))}
-
-    subscriptions
+    Subscription.all(user_id: id, auth: auth)
   end
 
   def subscription(plan)
@@ -532,24 +518,8 @@ class User < YouVersion::Resource
   end
 
   def subscribed_to? (plan, opts = {})
-    opts[:user_id] = id
-    opts[:auth] = auth #if auth is nil, it will attempt to search for public subscription
-
-    case plan
-    when Fixnum, /\A[\d]+\z/
-      opts[:id] = plan.to_i
-    when Plan, Subscription
-      opts[:id] = plan.id.to_i
-    end
-    response = YvApi.get("reading_plans/view", opts) do |errors| #we can't use Plan.find because it gets an unexpected response from API when trying un-authed call so it never tries the authed call
-      if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
-        return false
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end
-
-    return response.id.to_i == opts[:id]
+    #if auth is nil, it will attempt to search for public subscription
+    return Subscription.find(plan, id, auth: auth).present? rescue false
   end
 
   def configuration

@@ -185,7 +185,7 @@ class YvApi
 
   def self.get_host!(opts, path)
     #/likes.youversionapi.com/3.0
-    path.match(/(.+)\/.*/)[1] + "." + Cfg.api_root + "/" + (opts.delete(:api_version) || Cfg.api_version)
+    path.match(/(.+)\/.*/).try(:[], 1) + "." + Cfg.api_root + "/" + (opts.delete(:api_version) || Cfg.api_version)
   end
 
   def self.bible_api_custom_languages

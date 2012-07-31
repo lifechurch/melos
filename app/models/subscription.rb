@@ -7,38 +7,38 @@ class Subscription < Plan
   attribute :email_delivery
   attribute :email_delivery_version
 
+  def self.list_path
+    "#{api_path_prefix}/items"
+  end
+
   def self.delete_path
     "#{api_path_prefix}/unsubscribe_user"
   end
 
+  def self.destroy_id_param
+    :id
+  end
+
   def self.find(plan, user, opts = {})
-    #if auth is nil, it will attempt to search for public subscription
+    # We can't use Plan.find because it gets an unexpected response from
+    # API when trying un-authed call so it never tries the authed call
+    #
+    # if auth is nil, the API will attempt to search for public subscription
     case user
-    when User
-      opts[:user_id] = user.id
-    when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
-      opts[:user_id] = user.to_i
-    else                                        #hope the user find can handle it
-      opts[:user_id] = User.find(user).id
+      when User
+        opts[:user_id] = user.id
+      when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
+        opts[:user_id] = user.to_i
+      else                                        #hope the user find can handle it
+        opts[:user_id] = User.find(user).id
     end
 
-    case plan
-     when /^(\d+)[-](.+)/
-        # format 1234-plan-slug
-      opts[:id] = plan.match(/^(\d+)[-](.+)/)[1].to_i
-    when Fixnum, /\A[\d]+\z/
-      opts[:id] = plan.to_i
-    when Plan, Subscription
-      opts[:id] = plan.id.to_i
-    else
-      opts[:id] = Plan.find(plan).id
-    end
-
+    opts[:id] = id_from_param plan
     _auth = opts[:auth]
 
     #We can't use Plan.find because it gets an unexpected response from
     #API when trying un-authed call so it never tries the authed call
-    response = YvApi.get("reading_plans/view", opts) do |errors|
+    response = YvApi.get("#{api_path_prefix}/view", opts) do |errors|
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
         return nil
       else
@@ -49,53 +49,40 @@ class Subscription < Plan
     Subscription.new(response.merge(auth: _auth))
   end
 
+  def self.id_from_param(param)
+    case param
+      when Subscription
+        param.id.to_i
+      else
+        super
+    end
+  end
+
   def set_ref_completion(day, ref, completed)
-    #ref could be osis, index in plan day, or Reference object
     #TODO: possibly handle if day is Date object
     if auth
       opts = {auth: auth}
       opts[:id] = id
       opts[:day] = day
+      #using no version ref to use native #delete and #uniq methods below
+      no_version_ref = Reference.new(ref, version: nil)
 
-      case ref
-      when Fixnum, /\A[\d]+\z/                    #number (possibly in string form) - assume index of reference in the day
-        no_version_ref = reading(day).references[ref.to_i].no_version_ref
-      when Reference                              #Good to go
-      when String                                 #try to create Ref, assuming osis string
-        begin
-          no_version_ref = Reference.new(ref).merge(version: nil)
-          rescue
-           raise "incorrect string format for reference"
-        end
-      else
-        raise "incorrect string format for reference"
-      end
-
-      #Get the list of completed references to send back to the API (all others will be marked as not-complete)
+      # Get the list of completed references to send back to the API
+      # (all others will be marked as not-complete)
       completed_refs = ReferenceList.new
-      reading(day).references.each {|r_mash| completed_refs << r_mash.no_version_ref if r_mash.completed?}
-        #adjust the ref_list based on the new completion state for the ref
-      completed ? completed_refs << no_version_ref : completed_refs.delete(no_version_ref)
-      completed_refs.uniq! #just to be safe
+      reading(day).references.each {|r_mash| completed_refs << Reference.new(r_mash.ref, version: nil) if r_mash.completed?}
 
-      opts[:references] = completed_refs.to_api_string
-      response = YouVersion::Resource.post('reading_plans/update_completion', opts) do |errors|
+      #adjust the ref_list based on the new completion state for the ref
+      completed ? completed_refs << no_version_ref : completed_refs.delete(no_version_ref)
+      completed_refs.uniq!
+
+      opts[:references] = completed_refs.to_usfm
+      response = YouVersion::Resource.post("#{self.class.api_path_prefix}/update_completion", opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
-      #TODO: update object to reflect state change since we only get parital response:
-      # {
-      #     "response" => {
-      #              "code" => 200,
-      #              "data" => {
-      #             "reading_plan_id" => "59",
-      #                     "user_id" => "12137786",
-      #                         "day" => "1",
-      #                  "references" => [],
-      #                   "completed" => false
-      #         },
-      #         "buildtime" => "2012-06-13T21:27:57+00:00"
-      #     }
-      # }
+
+      #update object to reflect state change since we only get parital response
+      process_references_response response
     else
       raise "Authentication required to update plan progress"
     end
@@ -104,7 +91,7 @@ class Subscription < Plan
 
   def catch_up
     if auth
-      response = YouVersion::Resource.post('reading_plans/reset_subscription', {auth: auth, id: id}) do |errors|
+      response = YouVersion::Resource.post('#{api_path_prefix}/reset_subscription', {auth: auth, id: id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
       @attributes.merge!(response)
@@ -115,7 +102,7 @@ class Subscription < Plan
 
   def restart
     if auth
-      response = YouVersion::Resource.post('reading_plans/restart_subscription_user', {auth: auth, id: id}) do |errors|
+      response = YouVersion::Resource.post('#{api_path_prefix}/restart_subscription_user', {auth: auth, id: id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
       @attributes.merge!(response)
@@ -225,7 +212,7 @@ class Subscription < Plan
 
   def day_statuses
     if auth
-      response = YvApi.get('reading_plans/calendar', {auth: auth, id: id, user_id: user_id}) do |errors|
+      response = YvApi.get('#{api_path_prefix}/calendar', {auth: auth, id: id, user_id: user_id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
     else
@@ -300,7 +287,7 @@ class Subscription < Plan
       opts[:id] = id
       opts[:user_id] = user_id
 
-      response = YvApi.get("reading_plans/accountability", opts) do |errors|
+      response = YvApi.get("#{api_path_prefix}/accountability", opts) do |errors|
         if errors.length == 1 && [/^Accountability not found$/, /^API Error: Accountability not found$/].detect {|r| r.match(errors.first["error"])}
           false #returning false stops get from raising errors (will if nil returned) but still allows ternary operation below
         else
@@ -341,7 +328,7 @@ class Subscription < Plan
       # system_accountability true/false on whether you want the system to send you weekly reminders about your progress, can be turned off at a later time
       # email_delivery  00:00:00 FORMAT for time to deliver email - best if random to spread load (re: convo with CV)
       # email_delivery_version  OSIS format string for version to deliver. Send default if there is one for plan, else use user's version
-      response = YouVersion::Resource.post('reading_plans/update_subscribe_user', opts) do |errors|
+      response = YouVersion::Resource.post('#{api_path_prefix}/update_subscribe_user', opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
       @attributes.merge!(response)
@@ -368,7 +355,7 @@ class Subscription < Plan
 
       raise "user id couldn't be parsed" if opts[:user_id].nil?
 
-      response = YouVersion::Resource.post("reading_plans/#{mode}_accountability", opts) do |errors|
+      response = YouVersion::Resource.post("#{api_path_prefix}/#{mode}_accountability", opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
 

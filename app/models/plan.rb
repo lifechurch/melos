@@ -29,16 +29,7 @@ class Plan < YouVersion::Resource
   end
 
   def self.find(id, opts = {}, &block)
-    case id
-      when /^(\d+)[-](.+)/
-        # format 1234-plan-slug
-        id = id.match(/^(\d+)[-](.+)/)[1].to_i
-      when String
-        #slug was passed, try to get id from slug with search, since API doesn't give a better way
-        lib_plan = search(id).find{|plan| plan.slug.downcase == id.downcase}
-        return nil if lib_plan.nil?
-        id = lib_plan.id
-    end
+    id = id_from_param id
 
     super(id, opts) do |errors|
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
@@ -57,21 +48,29 @@ class Plan < YouVersion::Resource
   def self.subscribe (plan, user_auth)
     _auth = user_auth
     opts = {auth: user_auth}
+    opts[:id] = id_from_param plan
 
-    case plan
-    when Fixnum, /\A[\d]+\z/
-      opts[:id] = plan.to_i
-    when Plan, Subscription
-      opts[:id] = plan.id.to_i
-    when String
-      opts[:id] = Plan.find(plan).id
-    end
-
-    response = YouVersion::Resource.post('reading_plans/subscribe_user', opts)
+    response = YouVersion::Resource.post("#{api_path_prefix}/subscribe_user", opts)
 
     Subscription.new(response.merge(auth: _auth))
 
     #EVENTUALLY: Do this correctly with Resource abstraction and on the subscription class(new) and user object(add_subscription) class
+  end
+
+  def self.id_from_param(param)
+    case param
+      when /^(\d+)[-](.+)/    # format 1234-plan-slug
+        param.match(/^(\d+)[-](.+)/)[1].to_i
+      when Fixnum, /\A[\d]+\z/
+        param.to_i
+      when String             #slug was passed
+        #try to get id from slug with search, since API doesn't give a better way
+        lib_plan = search(param).find{|plan| plan.slug.downcase == param.downcase}
+        return nil if lib_plan.blank?
+        lib_plan.id
+      when Plan
+        param.id.to_i
+    end
   end
 
   def subscribe (user_auth, opts = {})
@@ -89,7 +88,7 @@ class Plan < YouVersion::Resource
       params[:id] = id
       @users_page = params[:page] ||= 1
 
-      response = YvApi.get("reading-plans/users", params) do |errors|
+      response = YvApi.get("#{api_path_prefix}/users", params) do |errors|
         if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
           return []
         else
@@ -117,20 +116,28 @@ class Plan < YouVersion::Resource
       response = YvApi.get("#{self.class.api_path_prefix}/references", opts) do |errors|
         raise YouVersion::ResourceError.new(errors)
       end
-      @reading_day = day
+
+      process_references_response(response)
+    end
+
+    @reading
+  end
+
+  def process_references_response(response)
+      @reading_day = response.day.to_i
       @reading_version = version
 
       #TODO: it probably makes sense for a reading to be it's own class within Plan
+      #      so this should all be done resourcefully in a after_create class, etc
       @reading = Hashie::Mash.new()
       #get localized html || text via i18nize method
       @reading.devotional = YouVersion::Resource.i18nize(response.additional_content)
       @reading.devotional = "<p>" << @reading.devotional.gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if @reading.devotional
-      @reading.references = response.references.map do |data|
-        Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default), completed?: (data.completed == "true"), no_version_ref: Reference.new(data.reference).merge(version: nil))
-      end
-    end
 
-    @reading
+      @reading.references = response.references.map do |data|
+        Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default),
+                         completed?: (data.completed == "true"))
+      end
   end
 
   def day(day, opts = {})
