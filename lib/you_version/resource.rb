@@ -389,19 +389,19 @@ module YouVersion
     end
 
     def created_as_date
-      Date.parse(attributes['created'])
+      Date.parse(attributes['created_dt'])
     end
 
     def earned_as_date
-      Date.parse(attributes['earned'])
+      Date.parse(attributes['earned_dt'])
     end
 
     def updated_as_date
-      Date.parse(attributes['updated'])
+      Date.parse(attributes['updated_dt'])
     end
 
     def most_recent_date
-      Date.parse(attributes['updated'] || attributes['created'])
+      Date.parse(attributes['updated_dt'] || attributes['created_dt'])
     end
 
   end

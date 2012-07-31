@@ -15,7 +15,7 @@ describe Note do
   
   describe ".save" do
     it 'creates a new note and returns the correct response' do
-      @note = Note.new( title: "My New Note", content: "Some Content", reference: "gen.1.1-3.kjv", auth: @auth )
+      @note = Note.new( title: "My New Note", content: "Some Content", reference: "gen.1.1-3.1-kjv", auth: @auth )
       @response = @note.save
       @response.should be_true
       @note.version.should be_a Version
@@ -75,7 +75,7 @@ describe Note do
       @note = Note.new( title: "My New Note", content: "Some Content", reference: "gen.2.1.kjv", auth: @auth )
       @note.save.should be_true
       ## HACK HACK HACK
-      result = Note.destroy(@note.id, @auth)
+      result = @note.destroy
       result.should be_true
     end
   end

@@ -31,10 +31,14 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(params[:note])
+    Rails.logger.debug "note is:"
+    Rails.logger.debug @note.inspect
     @note.auth = current_auth
 
     if @note.save
-      redirect_to @note
+      Rails.logger.debug "now note is:"
+      Rails.logger.debug @note.inspect
+      redirect_to note_path(@note.id)
     else
       render action: "new"
     end

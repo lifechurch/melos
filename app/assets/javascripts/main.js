@@ -920,6 +920,7 @@ var YV = (function($, window, document, undefined) {
               verse_refs.push(ranges_usfm[i] + "." + version_id + '-' + version_abbreviation);
               $(".reference_tokens").append("<li><a data-usfm='" + ranges_usfm[i] + "' href='#'>" + book_human + " " + chapter + ":" + range + "</a></li>");
             });
+            console.log(verse_refs);
 
             // Populate the verse_numbers hidden input
             input.val(verse_refs.join(","));
@@ -1129,7 +1130,7 @@ var YV = (function($, window, document, undefined) {
         color.empty('span');
       });
       },
-      // YV.init.parallel_notes
+      // YV.init.parallel_notesnotes
       parallel_notes: function() {
         $('.alternate_select').on('change', function(){
           if($(this).val() == "publish_on"){

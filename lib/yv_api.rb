@@ -206,6 +206,8 @@ class YvApi
   end
 
   def self.api_response_or_rescue(response, block, opts = {})
+    Rails.logger.debug "response:"
+    Rails.logger.debug response
     if response["response"]["code"].to_i >= 400
       # Check if it's bad/expired auth and raise an exception
       if response["response"]["data"]["errors"].detect { |t| t["error"] =~ /Username\sor\spassword/ }

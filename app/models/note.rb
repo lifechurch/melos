@@ -28,6 +28,10 @@ class Note < YouVersion::Resource
   def self.for_user(user_id, params = {})
     all(params.merge({user_id: user_id}))
   end
+  
+  def self.destroy_id_param
+    :ids
+  end
 
   # Override Resource's base method here, because Note API
   # returns a different error key for non-auth requests.
