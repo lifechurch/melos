@@ -91,7 +91,7 @@ class Subscription < Plan
 
   def catch_up
     if auth
-      response = YouVersion::Resource.post('#{api_path_prefix}/reset_subscription', {auth: auth, id: id}) do |errors|
+      response = YouVersion::Resource.post("#{api_path_prefix}/reset_subscription", {auth: auth, id: id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
       @attributes.merge!(response)
@@ -102,7 +102,7 @@ class Subscription < Plan
 
   def restart
     if auth
-      response = YouVersion::Resource.post('#{api_path_prefix}/restart_subscription_user', {auth: auth, id: id}) do |errors|
+      response = YouVersion::Resource.post("#{api_path_prefix}/restart_subscription_user", {auth: auth, id: id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
       @attributes.merge!(response)
@@ -212,7 +212,7 @@ class Subscription < Plan
 
   def day_statuses
     if auth
-      response = YvApi.get('#{api_path_prefix}/calendar', {auth: auth, id: id, user_id: user_id}) do |errors|
+      response = YvApi.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
     else
@@ -328,7 +328,7 @@ class Subscription < Plan
       # system_accountability true/false on whether you want the system to send you weekly reminders about your progress, can be turned off at a later time
       # email_delivery  00:00:00 FORMAT for time to deliver email - best if random to spread load (re: convo with CV)
       # email_delivery_version  OSIS format string for version to deliver. Send default if there is one for plan, else use user's version
-      response = YouVersion::Resource.post('#{api_path_prefix}/update_subscribe_user', opts) do |errors|
+      response = YouVersion::Resource.post("#{api_path_prefix}/update_subscribe_user", opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
       @attributes.merge!(response)
