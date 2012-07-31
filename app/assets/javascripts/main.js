@@ -880,16 +880,20 @@ var YV = (function($, window, document, undefined) {
                     // Then start a range
                     in_range = true;
                     range_start = verse_numbers[i];
+                    usfm_range_start = selected_verses_usfm[i];
                   } else {
                     // it's just a single verse
                     verse_ranges.push(verse_numbers[i]);
+                    ranges_usfm.push(selected_verses_usfm[i]);
                   }
 
                 } else if (i == verse_numbers.length) {
                   if (in_range == true) {
                     verse_ranges.push(range_start + "-" + verse_numbers[i]);
+                    ranges_usfm.push(usfm_range_start + "-" + verse_numbers[i]);
                   } else {
                     verse_ranges.push(verse_numbers[i]);
+                    ranges_usfm.push(selected_verses_usfm[i]);
                   }
                   exit = true;
                 } else {
@@ -899,14 +903,17 @@ var YV = (function($, window, document, undefined) {
                     if (in_range == false) {
                       in_range = true;
                       range_start = verse_numbers[i];
+                      usfm_range_start = selected_verses_usfm[i];
                     }
                   } else {
                     // Stop a range if we're in it, add number if we're not
                     if (in_range == true) {
                       in_range = false;
                       verse_ranges.push(range_start + "-" + verse_numbers[i]);
+                    ranges_usfm.push(usfm_range_start + "-" + verse_numbers[i]);
                     } else {
                       verse_ranges.push(verse_numbers[i]);
+                      ranges_usfm.push(selected_verses_usfm[i]);
                     }
                   }
                 }
@@ -920,7 +927,6 @@ var YV = (function($, window, document, undefined) {
               verse_refs.push(ranges_usfm[i] + "." + version_id + '-' + version_abbreviation);
               $(".reference_tokens").append("<li><a data-usfm='" + ranges_usfm[i] + "' href='#'>" + book_human + " " + chapter + ":" + range + "</a></li>");
             });
-            console.log(verse_refs);
 
             // Populate the verse_numbers hidden input
             input.val(verse_refs.join(","));

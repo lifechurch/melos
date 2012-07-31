@@ -15,7 +15,7 @@ describe Note do
   
   describe ".save" do
     it 'creates a new note and returns the correct response' do
-      @note = Note.new( title: "My New Note", content: "Some Content", reference: "gen.1.1-3.1-kjv", auth: @auth )
+      @note = Note.new( title: "My New Note", content: "<p>Some Content</p>", reference: "gen.1.1-3.1-kjv", auth: @auth )
       @response = @note.save
       @response.should be_true
       @note.version.should be_a Version
