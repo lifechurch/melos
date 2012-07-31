@@ -1,4 +1,4 @@
-class CategoryListing
+class CategoryListing < YouVersion::Resource
   attr_reader :current, :breadcrumbs, :items
 
   def self.find(category_slug=nil, opts={})
@@ -9,7 +9,7 @@ class CategoryListing
     opts[:cache_for] ||= a_long_time
     opts[:query] = '*'
 
-    response = YvApi.get("reading_plans/search", opts) do |errors|
+    response = YvApi.get("search/reading_plans", opts) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
         raise "No Plans in this category!"
       else

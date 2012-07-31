@@ -54,11 +54,11 @@ module YouVersion
 
         return mash[lang_key] unless mash[lang_key].nil?
 
-        val = mash.html[lang_key]
-        val ||= mash.html.default
-        val ||= mash.text[lang_key]
-        val ||= mash.text.default
-        val ||= mash.default
+        val = mash.html.try(:[], lang_key)
+        val ||= mash.html.try(:[], :default)
+        val ||= mash.text.try(:[], lang_key)
+        val ||= mash.text.try(:[], :default)
+        val ||= mash.try(:[], :default)
       end
 
       def attr_i18n_reader(*args)
