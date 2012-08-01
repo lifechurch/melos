@@ -59,7 +59,9 @@ class ReferenceList
   end
 
   def to_usfm
-    @references.compact.map{|r| r.to_usfm}.join("+")
+    # The API requires multiple references to be
+    # referenced as arrays of + separated verses.
+    @references.compact.map{|r| r.to_usfm}
   end
   
   def to_flat_usfm

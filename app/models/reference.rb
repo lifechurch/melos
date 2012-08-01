@@ -266,7 +266,7 @@ class Reference < YouVersion::Resource
   end
 
   def parse_verses(verses)
-    # This method is not allowed to hit the API
+    # This method should not hit the API
     # for lazy-loading to work
     case verses
     when NilClass

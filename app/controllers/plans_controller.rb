@@ -98,11 +98,6 @@ class PlansController < ApplicationController
       end
     end
 
-    if(params[:send_reminder])
-      params[:send_reminder] == "true" ? (@subscription.enable_reminder and action = 'reminder on') : (@subscription.disable_reminder and action = 'reminder off')
-      anchor = 'accountability'
-    end
-
     if(params[:send_report])
       params[:send_report] == "true" ? (@subscription.add_accountability_user(current_user) and action = 'report on') : (@subscription.remove_all_accountability and action = 'report off')
       anchor = 'accountability'

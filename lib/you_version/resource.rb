@@ -286,6 +286,34 @@ module YouVersion
       after_build
     end
 
+    def api_path_prefix
+      self.class.api_path_prefix
+    end
+
+    def foreign_key
+      self.class.foreign_key
+    end
+
+    def list_path
+      self.class.list_path
+    end
+
+    def resource_path
+      self.class.resource_path
+    end
+
+    def update_path
+      self.class.update_path
+    end
+
+    def create_path
+      self.class.create_path
+    end
+
+    def delete_path
+      self.class.delete_path
+    end
+
     def persisted?
       return !id.blank?
     end

@@ -10,6 +10,9 @@ describe Subscription do
     @auth_friend = @user_friend.auth
 
     @plan = Plan.find('1-robert-roberts')
+    @esv_id = 59
+    @nlt_id = 116
+    @niv_id = 111
   end
   after(:each) do
     #clear user of all subscriptions after every example
@@ -158,31 +161,31 @@ describe Subscription do
       subject.should_not be_delivered_by_email
     end
     it "should be able to be turned on" do
-      opts = {time: "morning", picked_version: nil, default_version: 'amp'}
+      opts = {time: "morning", picked_version: nil, default_version: @esv_id}
       expect { subject.enable_email_delivery opts }.to change{ subject.delivered_by_email? }.to(true)
     end
     it "should be able to be turned off" do
-      subject.enable_email_delivery(time: "morning", picked_version: nil, default_version: 'amp')
+      subject.enable_email_delivery(time: "morning", picked_version: nil, default_version: @esv_id)
       expect { subject.disable_email_delivery }.to change{ subject.delivered_by_email? }.to(false)
     end
-    it "should pick the default version if there is one" do
+    it "should ignore the users's default version if the plan has one" do
       subscription = Plan.subscribe('59-life-application-study-bible-devotion', @auth)
-      subscription.enable_email_delivery(time: "morning", picked_version: nil, default_version: 'amp')
-      subscription.email_delivery_version.should == "nlt"
+      subscription.enable_email_delivery(time: "morning", picked_version: nil, default_version: @esv_id)
+      subscription.email_delivery_version_id.should == @nlt_id
     end
     it "should use the users's default version if there isn't a plan default" do
-      subject.enable_email_delivery(time: "morning", picked_version: nil, default_version: 'amp')
-      subject.email_delivery_version.should == "amp"
+      subject.enable_email_delivery(time: "morning", picked_version: nil, default_version: @esv_id)
+      subject.email_delivery_version_id.should == @esv_id
     end
     it "should allow the user to select the version for delivery" do
       subscription = Plan.subscribe('59-life-application-study-bible-devotion', @auth)
-      subscription.enable_email_delivery(time: "morning", picked_version: 'niv', default_version: 'amp')
-      subscription.email_delivery_version.should == "niv"
+      subscription.enable_email_delivery(time: "morning", picked_version: @niv_id, default_version: @esv_id)
+      subscription.email_delivery_version_id.should == @niv_id
     end
     it "should allow the user to change the delivery time" do
-      subject.enable_email_delivery(time: "morning", picked_version: nil, default_version: 'amp')
+      subject.enable_email_delivery(time: "morning", picked_version: nil, default_version: @esv_id)
       expect {
-        subject.enable_email_delivery(time: "afternoon", default_version: 'amp')
+        subject.enable_email_delivery(time: "afternoon", default_version: @esv_id)
         }.to change{ subject.email_delivery_time_range }.to('afternoon')
     end
   end
@@ -208,28 +211,13 @@ describe Subscription do
     end
   end
 
-  describe "reminder" do
-    subject { Plan.subscribe(@plan, @auth) }
-
-    it "should be off for new subscription" do
-      subject.reminder_enabled?.should_not be_true
-    end
-    it "should be able to be turned on" do
-      expect { subject.enable_reminder }.to change{ subject.reminder_enabled? }.to(true)
-    end
-    it "should be able to be turned off" do
-      subject.enable_reminder
-      expect { subject.disable_reminder }.to change{ subject.reminder_enabled? }.to(false)
-    end
-  end
-
-  describe "making progress" do
+  describe "making progress", only: true do
     describe "#progress" do
       it "should increase when you complete a day's references" do
         subscription = Plan.subscribe(@plan, @auth)
         original_progress = subscription.progress
         subscription.day(1).references.each do |r|
-          subscription.set_ref_completion(1, r.ref.osis, true)
+          subscription.set_ref_completion(1, r.ref, true)
         end
         Subscription.find(@plan, @auth).progress.should_not == original_progress
       end
@@ -240,7 +228,7 @@ describe Subscription do
         subscription = Plan.subscribe(@plan, @auth)
         expect {
           subscription.day(1).references.each do |r|
-            subscription.set_ref_completion(1, r.ref.osis, true)
+            subscription.set_ref_completion(1, r.ref, true)
           end
         }.to change{ subscription.day_statuses.first.completed }.to(true)
       end

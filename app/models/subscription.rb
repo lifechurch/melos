@@ -2,10 +2,10 @@ class Subscription < Plan
 
   attribute :user_id
   attribute :private
-  attribute :system_accountability
   attribute :group_id
   attribute :email_delivery
-  attribute :email_delivery_version
+  attribute :email_delivery_version_id
+
 
   def self.list_path
     "#{api_path_prefix}/items"
@@ -77,7 +77,7 @@ class Subscription < Plan
       completed_refs.uniq!
 
       opts[:references] = completed_refs.to_usfm
-      response = YouVersion::Resource.post("#{self.class.api_path_prefix}/update_completion", opts) do |errors|
+      response = YouVersion::Resource.post("#{api_path_prefix}/update_completion", opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
 
@@ -102,7 +102,7 @@ class Subscription < Plan
 
   def restart
     if auth
-      response = YouVersion::Resource.post("#{api_path_prefix}/restart_subscription_user", {auth: auth, id: id}) do |errors|
+      response = YouVersion::Resource.post("#{api_path_prefix}/restart_subscription", {auth: auth, id: id}) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end
       @attributes.merge!(response)
@@ -128,9 +128,9 @@ class Subscription < Plan
   end
 
   def enable_email_delivery(opts={})
-    #TODO: make required opts params and/or handle nils
+    #TODO: make required opts params and/or handle nils, this is too opaque
     params = {}
-    params[:email_delivery_version] = opts[:picked_version] || version || opts[:default_version]
+    params[:email_delivery_version_id] = opts[:picked_version] || version_id || opts[:default_version]
     params[:email_delivery] = delivery_time(opts[:time])
 
     update_subscription(params)
@@ -154,7 +154,7 @@ class Subscription < Plan
   end
 
   def disable_email_delivery
-    update_subscription(email_delivery: "disabled")
+    update_subscription(email_delivery: nil)
   end
 
   def add_accountability_user(user)
@@ -174,20 +174,6 @@ class Subscription < Plan
   def remove_all_accountability
     update_accountability_partners if @partners.nil?
     @partners.each{|p| remove_accountability_user(p.id)}
-  end
-
-  def enable_reminder
-    #TODO: do through bool assignment of property
-    update_subscription(system_accountability: true)
-  end
-
-  def disable_reminder
-    #TODO: do through bool assignment of property
-    update_subscription(system_accountability: false)
-  end
-
-  def reminder_enabled?
-    system_accountability
   end
 
   def delete
@@ -240,11 +226,11 @@ class Subscription < Plan
   end
 
   def start
-    Date.parse(@attributes.start)
+    Date.parse(@attributes.start_dt)
   end
 
   def end
-    Date.parse(@attributes.end)
+    Date.parse(@attributes.end_dt)
   end
 
   def reading_date(day)
@@ -252,7 +238,7 @@ class Subscription < Plan
   end
 
   def days
-    @attributes.subscription_total_days
+    @attributes.total_days
   end
 
   def total_days
@@ -272,8 +258,6 @@ class Subscription < Plan
     super(day, opts.merge!({cache_for: 0, auth: auth, user_id: user_id}))
   end
 
-  #TODO: is this definition necessarry with Parent defintion?
-  #if parent calls child #reading, then no -- ?
   def day(day, opts = {})
     reading(day, opts)
   end
@@ -306,28 +290,17 @@ class Subscription < Plan
     if auth
       opts[:auth] = auth
       opts[:id] = id
-      opts[:start] = start.iso8601
-      opts[:total_days] = total_days
-      opts[:group_id] = group_id
       opts[:private] = private if opts[:private].nil?
-      opts[:system_accountability] = system_accountability if opts[:system_accountability].nil?
-      opts[:email_delivery] ||= email_delivery
-      opts[:email_delivery_version] ||= email_delivery_version
 
-      if opts[:email_delivery] == "disabled"
-        opts[:email_delivery] = opts[:email_delivery_version] = nil
+      if opts[:email_delivery].blank?
+        opts[:email_delivery] = opts[:email_delivery_version_id] = nil
+      else
+        opts[:email_delivery] ||= email_delivery
+        opts[:email_delivery_version_id] ||= email_delivery_version_id
       end
+      # email_delivery  00:00:00 FORMAT for time to deliver email
+      # best if random to spread load (re: convo with CV)
 
-      # Note: Not a partial update, if I don't pass these items, they will be overwritten by defaults.
-      # id  of reading plan
-      # start date to start reading plan on
-      # end date to end reading plan on (required if total_days isn't sent, most send total_days)
-      # total_days  of reading plan subscription length, normally you just use the value supplied in the view method
-      # group_id  of group that the user subscribed as a result of, so if a group starts a reading plan and a user subscribes off that group, we track the group id here so that we have record of it
-      # private true/false on whether the subscription should be private
-      # system_accountability true/false on whether you want the system to send you weekly reminders about your progress, can be turned off at a later time
-      # email_delivery  00:00:00 FORMAT for time to deliver email - best if random to spread load (re: convo with CV)
-      # email_delivery_version  OSIS format string for version to deliver. Send default if there is one for plan, else use user's version
       response = YouVersion::Resource.post("#{api_path_prefix}/update_subscribe_user", opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
       end

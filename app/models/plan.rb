@@ -4,7 +4,7 @@ class Plan < YouVersion::Resource
   attribute :publisher_url
   attribute :id
   attribute :slug
-  attribute :version
+  attribute :version_id
   attr_i18n_reader :about
   attr_i18n_reader :name
   attr_i18n_reader :formatted_length
@@ -104,7 +104,7 @@ class Plan < YouVersion::Resource
   end
 
   def reading(day, opts = {})
-    unless(@reading && @reading_day == day && @reading_version == version)
+    unless(@reading && @reading_day == day && @reading_version == version_id)
       opts[:day] ||= day
       opts[:id] ||= id
       opts[:cache_for] ||= a_long_time
@@ -112,8 +112,7 @@ class Plan < YouVersion::Resource
       # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
       # to be overriden by Subscription model to send auth and user_id
       # we can cache the non-authed response
-
-      response = YvApi.get("#{self.class.api_path_prefix}/references", opts) do |errors|
+      response = YvApi.get("#{api_path_prefix}/references", opts) do |errors|
         raise YouVersion::ResourceError.new(errors)
       end
 
@@ -125,7 +124,7 @@ class Plan < YouVersion::Resource
 
   def process_references_response(response)
       @reading_day = response.day.to_i
-      @reading_version = version
+      @reading_version = version_id
 
       #TODO: it probably makes sense for a reading to be it's own class within Plan
       #      so this should all be done resourcefully in a after_create class, etc
@@ -136,7 +135,7 @@ class Plan < YouVersion::Resource
 
       @reading.references = response.references.map do |data|
         Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default),
-                         completed?: (data.completed == "true"))
+                         completed?: (data.completed || data.completed == "true"))
       end
   end
 

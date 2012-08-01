@@ -117,10 +117,6 @@
   %a{name: "accountability"}
   %h5= t("plans.accountability")
   %form{method: 'get'}
-    %input{type: "hidden", name: "send_reminder", value: (!@subscription.reminder_enabled?).to_s}
-    %input{type: "checkbox", onChange: "this.form.submit()", id: "email_me_box",  checked: @subscription.reminder_enabled? ? "checked" : nil}
-    %label{for: "email_me_box"}= t("plans.email reminder to me", email_address: @subscription.user.email)
-  %form{method: 'get'}
     %input{type: "hidden", name: "send_report", value: (@subscription.accountability_partners.empty?).to_s}
     %input{type: "checkbox", onChange: "this.form.submit()", id: "report_box",  checked: @subscription.accountability_partners.empty? ? nil : "checked"}
     %label{for: "report_box"}= t("plans.email weekly report to a friend", email_address: @subscription.user.email)
