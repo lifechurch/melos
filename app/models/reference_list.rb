@@ -22,6 +22,7 @@ class ReferenceList
   end
 
   def initialize(refs = nil, version = nil)
+    Rails.logger.debug "refs is #{refs}, #{refs.class}"
     # if there is an explicit version, we will override the version
     # when creating the references
     force_ref_opts = version.present? ? {version: version} : {}
@@ -31,6 +32,7 @@ class ReferenceList
     when nil
     when Array
       @references = refs.map do |ref|
+        Rails.logger.debug "inside the array one, this one happens to be a #{ref.class}"
         case ref
         when Reference
           ref
@@ -38,9 +40,9 @@ class ReferenceList
           Reference.new(ref, force_ref_opts)
         when Hashie::Mash
           if ref.respond_to? :osis
-            split_multi_ref_string(ref.osis).map{|ref| Reference.new(ref, force_ref_opts)}
+            @references = split_multi_ref_string(ref.osis).map{|ref| Reference.new(ref, force_ref_opts)}
           elsif ref.respond_to? :usfm
-            split_multi_ref_string(ref.usfm).map{|ref| Reference.new(ref, force_ref_opts)}
+            @references = split_multi_ref_string(ref.usfm).map{|ref| Reference.new(ref, force_ref_opts)}
           end
         end
       end
@@ -57,7 +59,7 @@ class ReferenceList
   end
 
   def to_usfm
-    @references.compact.map{|r| r.to_usfm}
+    @references.compact.map{|r| r.to_usfm}.join("+")
   end
 
   def valid?

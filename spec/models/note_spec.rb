@@ -22,6 +22,10 @@ describe Note do
       @note.reference_list.should be_a ReferenceList
       @note.reference_list.first.should be_a Reference
     end
+    
+    it 'creates a note with no references' do
+      @note = Note.new( title: "My New Note", content: "<p>Some Content</p>", auth: @auth ).save.should be_true
+    end
   end
 
   describe ".find" do

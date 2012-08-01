@@ -61,7 +61,7 @@ class Note < YouVersion::Resource
                         self.version.id
                       end
     # self.version_id = self.version.class == Version ? self.version.id : YvApi::get_usfm_version(self.version).id
-    self.references = self.reference_list.to_api_string
+    self.references = self.reference_list.to_usfm unless self.reference_list.empty?
   end
 
   def after_save(response)
@@ -71,16 +71,19 @@ class Note < YouVersion::Resource
       self.content_html = response.content.html
       self.content = response.content.text
 
-      self.reference = ReferenceList.new(response.references, Version.find(response.version_id))
-      self.version = Version.find(response.version_id)
+      self.reference = ReferenceList.new(response.references, Version.find(response.version_id)) if response.references
+      self.reference_list = self.reference
+      self.version = Version.find(response.version_id) if response.version_id
     end
   end
 
   def after_build
     # self.content = self.content_text unless self.content_text.blank?
+    Rails.logger.debug "im in after_build"
     self.content = self.content_html if self.content_html
     if self.references
-      self.reference_list = ReferenceList.new(self.references, Version.find(self.version_id))
+      Rails.logger.debug "my references is #{self.references}"
+      self.reference_list = ReferenceList.new(self.references, self.version_id)
     else
       self.reference_list = ReferenceList.new(nil)
     end

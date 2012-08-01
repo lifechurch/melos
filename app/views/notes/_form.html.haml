@@ -1,4 +1,4 @@
-= form_for @note, :html => {class: "full_page_form"} do |f|
+= form_for @note, as: :note, url: note_path(@note.id), :html => {class: "full_page_form"} do |f|
   - if @note.errors.any?
     .form_errors
       =t("notes.creation form errors")
@@ -15,6 +15,7 @@
   %p
     = f.label :reference, t("notes.reference field")
     = @note.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe
+    = hidden_field_tag "note[references]", @note.reference_list.to_usfm
   %p
     = f.label :user_status, t("notes.status field")
     = f.select :user_status, options_for_select(object_status, @note.user_status)

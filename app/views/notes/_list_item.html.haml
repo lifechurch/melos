@@ -9,7 +9,7 @@
     - if display == :avatar
       %p.mute.small.negative_gutter_top_half
         %a{href: user_path(list_item.username)}= list_item.username
-    %p= truncate list_item.content_text, length: 300, separator: " "
+    %p= truncate list_item.content, length: 300, separator: " "
     .bookmark_edit.float_right
       %p
         - if @me
