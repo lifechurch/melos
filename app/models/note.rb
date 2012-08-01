@@ -79,10 +79,8 @@ class Note < YouVersion::Resource
 
   def after_build
     # self.content = self.content_text unless self.content_text.blank?
-    Rails.logger.debug "im in after_build"
     self.content = self.content_html if self.content_html
     if self.references
-      Rails.logger.debug "my references is #{self.references}"
       self.reference_list = ReferenceList.new(self.references, self.version_id)
     else
       self.reference_list = ReferenceList.new(nil)

@@ -61,6 +61,10 @@ class ReferenceList
   def to_usfm
     @references.compact.map{|r| r.to_usfm}.join("+")
   end
+  
+  def to_flat_usfm
+    @references.compact.map{|r| r.to_usfm}.join("+")
+  end
 
   def valid?
     @references.select {|r| r.valid?}.length == length
