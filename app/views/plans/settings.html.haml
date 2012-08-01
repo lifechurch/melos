@@ -83,8 +83,8 @@
         %select.float_right{onChange: "this.form.submit()", style: "margin-top: 15px; margin-bottom: 25px; width: 308px", name: "version"}
           - Version.all_by_language.each do |k, v|
             %optgroup{label: Version.languages[k]}
-            - v.each do |k, v|
-              %option{value: k.to_s, selected: k == @subscription.email_delivery_version}= v
+            - v.each do |v|
+              %option{value: v.id, selected: v.id == @subscription.email_delivery_version_id}= v
         %b.float_left{style: "width: 230px; margin-top: 20px"}=t("plans.delivery version")
 
   %hr

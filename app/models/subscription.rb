@@ -130,7 +130,11 @@ class Subscription < Plan
   def enable_email_delivery(opts={})
     #TODO: make required opts params and/or handle nils, this is too opaque
     params = {}
-    params[:email_delivery_version_id] = opts[:picked_version] || version_id || opts[:default_version]
+    #TODO replace this with Version object creation when lazyloading is implemented
+    implicit_version = Version.id_from_param opts[:default_version]
+    explicit_version = Version.id_from_param opts[:picked_version]
+
+    params[:email_delivery_version_id] = explicit_version || version_id || implicit_version
     params[:email_delivery] = delivery_time(opts[:time])
 
     update_subscription(params)
