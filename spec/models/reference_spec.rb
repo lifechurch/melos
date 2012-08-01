@@ -25,6 +25,10 @@ describe Reference do
       Reference.new(@gen_1_2_kjv_ref).should be_valid
       Reference.new(@gen_1_2_kjv_ref).should == @gen_1_2_kjv_ref
     end
+    it "should be able to be created from an API string" do
+      Reference.new("2CH.33.1+2CH.33.2+2CH.33.3").should be_valid
+      Reference.new("2CH.33.1+2CH.33.2+2CH.33.3").should == Reference.new("2CH.33.1-3")
+    end
     it "should use the options as the overriding property" do
       Reference.new('gen.1.2.kjv', book: "JHN").book.should == "JHN"
       Reference.new('gen.1.2.kjv', chapter: "3").chapter.should == 3
