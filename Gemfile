@@ -60,6 +60,7 @@ end
 
 group :development do
   # gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i
+  gem 'debugger'
   gem 'active_reload' #TODO: Remove when upgrading to Rails 3.2
   gem 'guard'
   gem 'guard-cucumber'
