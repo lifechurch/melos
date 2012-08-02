@@ -66,7 +66,7 @@ attribute :audio
     return sample.id
   end
   def self.languages(opts={})
-    return @languages unless @languages.nil?
+    #DEBUGreturn @languages unless @languages.nil?
 
     @languages = Hashie::Mash.new(Hash[all_by_language(opts).map{|tag,versions| [tag, versions.first.language.human]}])
   end
@@ -157,14 +157,14 @@ attribute :audio
 
   private
    def self.versions
-    return @versions unless @versions.nil?
+    #DEBUGreturn @versions unless @versions.nil?
     response = YvApi.get("bible/versions", type: "all", cache_for: a_long_time)
 
     #versions hash of form [<version numerical uid> => <Version object instance>]
     @versions = Hash[ response.versions.map {|ver| [ver.id, Version.new(ver)]} ]
   end
   def self.defaults
-    return @defaults unless @defaults.nil?
+    #DEBUGreturn @defaults unless @defaults.nil?
 
     response = YvApi.get("bible/configuration", cache_for: a_long_time)
     @defaults = Hash[response.default_versions.map {|d| [d.iso_639_3, d.id]}]
