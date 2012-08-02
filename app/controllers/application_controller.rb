@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_site
   before_filter :check_facebook_cookie
+  before_filter :tend_caches
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
@@ -254,5 +255,16 @@ class ApplicationController < ActionController::Base
 
   def verses_in_chapter (ref_hash)
     Version.find(ref_hash[:version]).books[ref_hash[:book].downcase].chapter[ref_hash[:chapter].to_s].verses
+  end
+
+  def tend_caches
+    @@last_clear_time ||= Time.zone.now
+
+    if @@last_clear_time < 15.minutes.ago
+      # Clear all versions, languages, and default versions
+      # from memoization caches
+      Version.clear_memoization
+      @@last_clear_time = Time.zone.now
+    end
   end
 end

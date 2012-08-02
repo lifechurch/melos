@@ -1,9 +1,9 @@
 class Version < YouVersion::Resource
 
-attribute :id
-attribute :title
-attribute :abbreviation
-attribute :audio
+  attribute :id
+  attribute :title
+  attribute :abbreviation
+  attribute :audio
 
   def self.all(app_lang_tag = "")
     # `bible_langauge_id` is the arbitrariy identifier of the language
@@ -66,7 +66,7 @@ attribute :audio
     return sample.id
   end
   def self.languages(opts={})
-    return @languages unless @languages.nil?
+    return @languages if @languages.present?
 
     @languages = Hashie::Mash.new(Hash[all_by_language(opts).map{|tag,versions| [tag, versions.first.language.human]}])
   end
@@ -112,7 +112,7 @@ attribute :audio
     audio
   end
   def books
-    return @books unless @books.nil?
+    return @books if @books.present?
 
     @books = Hashie::Mash.new
     detailed_attributes['books'].each_with_index do |b, i|
@@ -157,14 +157,14 @@ attribute :audio
 
   private
    def self.versions
-    return @versions unless @versions.nil?
+    return @versions if @versions.present?
     response = YvApi.get("bible/versions", type: "all", cache_for: a_long_time)
 
     #versions hash of form [<version numerical uid> => <Version object instance>]
     @versions = Hash[ response.versions.map {|ver| [ver.id, Version.new(ver)]} ]
   end
   def self.defaults
-    return @defaults unless @defaults.nil?
+    return @defaults if @defaults.present?
 
     response = YvApi.get("bible/configuration", cache_for: a_long_time)
     @defaults = Hash[response.default_versions.map {|d| [d.iso_639_3, d.id]}]

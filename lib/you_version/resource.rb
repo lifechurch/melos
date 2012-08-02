@@ -261,8 +261,8 @@ module YouVersion
       end
     end
     def self.a_long_time
-      #DEBUG12.hours
-      5.minutes
+      #DEBUG11.hours
+      45.minutes
     end
     def a_long_time
       self.class.a_long_time
@@ -432,5 +432,14 @@ module YouVersion
       Date.parse(attributes['updated_dt'] || attributes['created_dt'])
     end
 
+    def self.clear_memoization
+      #class instance variables that persist across requests
+      self.instance_variables.each do |var|
+        unless [:@inheritable_attributes, :@resource_attributes, :@parent_name].include?(var)
+          self.instance_variable_set(var, nil)
+        end
+      end
+      true
+    end
   end
 end
