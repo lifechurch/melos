@@ -52,7 +52,7 @@ class Reference < YouVersion::Resource
     @verses = parse_verses(@verses)
 
     unless @book && @chapter
-      raise InvalidReferenceError, "Tried to create an invalid reference.
+      raise InvalidReferenceError, "Tried to create an invalid reference. (#{ref}, #{opts})
             Make sure you're passing a valid period separated string or hash, with
             at least a book and chapter"
     end

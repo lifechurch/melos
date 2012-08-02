@@ -6,7 +6,7 @@
   %h1.float_left= @query.query
   - if @query.suggestion
     %span.float_left{style: "margin-left: 20px; margin-top: 13px; font-size: 12px"}
-      = "(#{t('searching.suggestion html', suggestion_link: (link_to @query.suggestion, search_path(q: @query.suggestion, category: params[:category], version: params[:version])))})".html_safe
+      = "(#{t('searching.suggestion html', suggestion_link: (link_to @query.suggestion, search_path(q: @query.suggestion, category: params[:category], version_id: params[:version_id])))})".html_safe
   .split_pane{:style => "padding-top:15px; clear: left"}
     .split_pane_sidebar
       %dl.categories_menu
@@ -16,29 +16,28 @@
         - Search.categories.each do |category|
           %dd{class: @query.category == category ? "highlighted" : ""}
             %a{href: search_path(category: category, q: params[:q])}
-              = t("searching.#{category}") 
+              = t("searching.#{category}")
               = "(#{@query.raw_results[category].total || 0})"
     .split_pane_content
-      - if @query.raw_results[@query.category].items?
-        - if @query.category == :bible
-          %form{method: 'get'}
-            %input{type: "hidden", name: "q", value: @query.query}
-            %input{type: "hidden", name: "category", value: :bible}
-            %div{style: "clear: both"}
-              %select.float_right{onChange: "this.form.submit()", style: "margin-right: 5px; margin-top: 10px; margin-bottom: 25px; width: 550px", name: "version"}
-                - all_languages = Version.all_by_language
-                - language = locale.to_s
-                %optgroup{label: Version.languages[language]}
-                %option{value: "", selected: @query.version.nil?}= t("searching.all versions", language_name: t("language name"))
-                - all_languages[language].each do |k, v|
-                  %option{value: k.to_s, selected: k == (@query.version)}= v
-                - all_languages.except(language).each do |k, v|
-                  %optgroup{label: Version.languages[k]}
-                  - v.each do |k, v|
-                    %option{value: k.to_s, selected: k == (@query.version)}= v
+      - if @query.category == :bible
+        %form{method: 'get'}
+          %input{type: "hidden", name: "q", value: @query.query}
+          %input{type: "hidden", name: "category", value: :bible}
+          %div{style: "clear: both"}
+            %select.float_right{onChange: "this.form.submit()", style: "margin-right: 5px; margin-top: 10px; margin-bottom: 25px; width: 550px", name: "version_id"}
+              - all_languages = Version.all_by_language
+              %optgroup{label: Version.languages[I18n.locale.to_s]}
+              %option{value: "", selected: @query.version_id.nil?}= t("searching.all versions", language_name: t("language name"))
+              - all_languages[I18n.locale.to_s].each do |v|
+                %option{value: v.id, selected: v.id == (@query.version_id)}= v
+              - all_languages.except(I18n.locale.to_s).each do |lang, versions|
+                %optgroup{label: Version.languages[lang]}
+                - versions.each do |v|
+                  %option{value: v.id, selected: v.id == (@query.version_id)}= v
+      - if @query.result_list(@query.category).present?
         %ul.big_list{style: "clear:both"}
-          - @query.raw_results[@query.category].items.each do |item|
+          - @query.result_list(@query.category).each do |item|
             = render partial: "#{@query.category}_list_item", locals: {item: item}
         = render "shared/pagination", resource_list: @query.result_list(@query.category)
       - else
-        .none{align: "center"}= t("none found")
+        .none{style:"clear:both", align: "center"}= t("none found")
