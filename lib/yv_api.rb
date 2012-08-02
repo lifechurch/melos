@@ -75,7 +75,7 @@ class YvApi
       raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - post_start)*1000).to_i} ms)"
     rescue Exception => e
       Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
-      raise APIError, "Non-timeout API Error for #{resource_url}"
+      raise APIError, "Non-timeout API Error for #{resource_url}: #{e.class} : #{e.to_s}"
     end
     post_end = Time.now.to_f
     # Rails.logger.apc "** YvApi.post: Response: ", :debug
@@ -206,8 +206,6 @@ class YvApi
   end
 
   def self.api_response_or_rescue(response, block, opts = {})
-    Rails.logger.debug "response:"
-    Rails.logger.debug response
     if response["response"]["code"].to_i >= 400
       # Check if it's bad/expired auth and raise an exception
       if response["response"]["data"]["errors"].detect { |t| t["error"] =~ /Username\sor\spassword/ }

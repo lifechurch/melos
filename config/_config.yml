@@ -13,10 +13,10 @@ common:
   ssl_avatar_path_s3: http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
-  #api_root: youversionapi.com
-  #api_referer: web-dev.youversionapi.com
-  api_root: youversionapistaging.com
-  api_referer: web-dev.youversionapistaging.com
+  api_root: youversionapi.com
+  api_referer: web-dev.youversionapi.com
+  # api_root: youversionapistaging.com
+  # api_referer: web-dev.youversionapistaging.com
   api_version: "3.0"
   memcache_server: localhost
   api_default_timeout: 7
