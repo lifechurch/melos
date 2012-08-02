@@ -68,10 +68,9 @@ class ReferencesController < ApplicationController
   end
 
   def notes
-    # Set up a fake reference for the fist 5 verses since the API won't let us
-    # search the entire chapter for notes and 10 results in a param length API error
+    #API Constraint to be put in model eventually
     ref = Reference.new(params[:reference]) rescue not_found
-    ref = ref.merge(verses: "1-5") if ref.is_chapter?
+    ref = ref.merge(verses: "1-10") unless ref.is_chapter?
     @notes = Note.for_reference(ref, language_iso: I18n.locale, cache_for: 5.minutes)
     @notes = Note.for_reference(ref, cache_for: 5.minutes) if @notes.empty?
     render layout: false

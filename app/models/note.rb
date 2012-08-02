@@ -22,13 +22,33 @@ class Note < YouVersion::Resource
   has_many_remote :likes
 
   def self.for_reference(ref, params = {})
-    all(params.merge({references: ref.notes_api_string}))
+    params.merge!({references: ref.to_usfm, query: '*'})
+    #TODO: constrain this to only work for <= 10 verses or chapter
+    all(params)
+  end
+
+  def self.all(params = {})
+    params[:query] ||= '*'
+
+    _auth = params[:auth]
+    response = YvApi.get('search/notes', params) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
+        Hashie::Mash.new(notes: [])
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+
+    notes = ResourceList.new
+    notes.total = response.total || 0
+    response.notes.each {|data| notes << new(data.merge(auth:_auth))}
+    notes
   end
 
   def self.for_user(user_id, params = {})
     all(params.merge({user_id: user_id}))
   end
-  
+
   def self.destroy_id_param
     :ids
   end
