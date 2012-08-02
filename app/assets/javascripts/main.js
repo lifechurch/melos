@@ -86,7 +86,10 @@ var YV = (function($, window, document, undefined) {
                 that.html(data);
                 that.fadeIn(200);
               });
-            }
+            },
+            error: function(req, status, err) {
+              //console.log(status + err);
+            }//end error function
           });
         });
       },
@@ -1258,7 +1261,10 @@ var YV = (function($, window, document, undefined) {
                   highlight_ids.push(highlight.id);
                   verse.attr('data-highlight-ids', highlight_ids.join(','));
               });//end highlights each
-            }//end success function
+            },//end success function
+            error: function(req, status, err) {
+              //console.log(status + err);
+            }//end error function
           });//end ajax delegate
         });//end primary/secondary each
 
