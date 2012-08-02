@@ -20,6 +20,7 @@ class Search
     params[:version_id] = @version_id = Version.id_from_param(opts[:version_id]) if opts[:version_id].present?
     # API says pass only version_id OR language_tag
     params[:language_tag] = opts[:locale].to_s if @version_id.blank?
+    params[:cache_for] = 2.minutes
 
     @responses = Hashie::Mash.new()
 
@@ -31,13 +32,9 @@ class Search
       if(c == :bible && params[:language_tag].present?)
         parameters[:language_tag] = YvApi::to_bible_api_lang_code(parameters[:language_tag])
       end
-      @responses[c] = YvApi.get("search/#{resource}", parameters) do |errors|
-        # if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        #           Hashie::Mash.new()
-        #         else
-        #           raise ResourceError.new(errors)
-        #         end
-        Hashie::Mash.new()
+      @responses[c] = YvApi.get("search/#{resource}", parameters) do |errors, response|
+        #treat any error as empty results for now, but return suggestions if there were any
+        Hashie::Mash.new(suggestions: response.try(:[], 'response').try(:[], 'data').try(:[], 'suggestions'))
       end
 
       @responses[c].items ||= @responses[c][items]
@@ -51,9 +48,9 @@ class Search
   end
 
   def suggestion
-    return raw_results[category].suggestion if raw_results[category].suggestion.to_s != ""
+    return raw_results[category].suggestions.first if raw_results[category].suggestions.present?
 
-    self.class.categories.each {|c| return raw_results[c].suggestion if raw_results[c].suggestion.to_s != ""}
+    self.class.categories.each {|c| return raw_results[c].suggestions.first if raw_results[c].suggestions.present?}
 
     return nil
   end
