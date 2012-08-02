@@ -61,6 +61,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id], auth: current_auth)
 
     if @bookmark.update(params[:bookmark])
+      #TODO: flash now: notice: t("bookmarks.successfully updated")
       render action: "index"
     else
       render action: "edit"

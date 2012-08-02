@@ -30,6 +30,7 @@ YouversionWeb::Application.configure do
 
   # Turn off quiet assets (defaults to true)
   # config.quiet_assets = false
+  config.cache_store = :dalli_store
 
   # For Twitter oAuth.
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE

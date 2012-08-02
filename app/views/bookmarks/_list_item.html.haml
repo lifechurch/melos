@@ -7,7 +7,7 @@
           %b
             %a{href: bible_path(r)}= r
           %br
-          = r.content[0]
+          = r.content.html_safe
   .bookmark_edit.float_right
     %p
       - if @me

@@ -28,13 +28,12 @@ class Bookmark < YouVersion::Resource
   end
 
   def before_save
-    self.references = self.reference_list.to_api_string
+    self.references = self.reference_list.to_flat_usfm
     self.version_id = self.version
   end
 
   def after_save(response)
     return unless response
-
     self.version = Version.find(response.version_id)
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
     if response.references

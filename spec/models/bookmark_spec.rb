@@ -77,7 +77,7 @@ describe Bookmark do
 
   describe ".labels_for_user" do
     it "should return a list of labels for a user" do
-      bookmark = Bookmark.new(auth: @auth, version: "kjv", references: "matt.10.1", title: "I have lots of labels", labels: "alpha,beta,gamma", username: @auth.username)
+      bookmark = Bookmark.new(auth: @auth, version_id: 1, references: "matt.10.1", title: "I have lots of labels", labels: "alpha,beta,gamma", username: @auth.username)
       bookmark.save.should be_true
       labels = Bookmark.labels_for_user @auth.user_id
       labels.first.should be_a Hashie::Mash

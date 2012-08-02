@@ -1,4 +1,4 @@
-= form_for @bookmark, :html => {class: 'full_page_form'} do |f|
+= form_for @bookmark, as: :bookmark, url: bookmark_path(@bookmark.id), :html => {class: 'full_page_form'} do |f|
   - if @bookmark.errors.any?
     .form_errors
       =t("bookmarks.creation form errors")

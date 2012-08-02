@@ -392,6 +392,7 @@ en:
     creation form errors:                       "The following error(s) prevented creation of your bookmark:"
     successfully created:                       "Bookmark Added"
     successfully deleted:                       "Bookmark Removed"
+    successfully updated:                       "Bookmark Updated"
     labels placeholder:                         "Separate multiple labels with commas."
     save:                                       "Save Bookmark"
     confirm delete:                             "Yes, I'm sure"
