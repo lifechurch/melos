@@ -111,7 +111,6 @@ module ApplicationHelper
 
   def a_long_time
     YouVersion::Resource.a_long_time
-    debugger
   end
 
   private

@@ -88,8 +88,8 @@ class Note < YouVersion::Resource
 
     if response
       # To map to API 2.x style to minimize changes
-      self.content_html = response.content.html
-      self.content = response.content.text
+      self.content_html = response.content.try :html
+      self.content = response.content.try :text
 
       self.reference = ReferenceList.new(response.references, Version.find(response.version_id)) if response.references
       self.reference_list = self.reference
