@@ -7,7 +7,7 @@
           %b
             %a{href: bible_path(r)}= r
           %br
-          = r.content.html_safe
+          .embedded_reader{"data-setting-font" => @font, 'data-setting-size' => @size}= r.content.html_safe
   .bookmark_edit.float_right
     %p
       - if @me
