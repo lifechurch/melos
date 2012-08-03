@@ -1,4 +1,4 @@
-= form_for @note, as: :note, url: note_path(@note.id), :html => {class: "full_page_form"} do |f|
+= form_for @note, as: :note, url: @note.id ? note_path(@note.id) : notes_path, :html => {class: "full_page_form"} do |f|
   - if @note.errors.any?
     .form_errors
       =t("notes.creation form errors")

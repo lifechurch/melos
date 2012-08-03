@@ -100,7 +100,7 @@ class Note < YouVersion::Resource
   def after_build
     # self.content = self.content_text unless self.content_text.blank?
     self.content = self.content_html if self.content_html
-    if self.references
+    unless self.references.blank?
       self.reference_list = ReferenceList.new(self.references, self.version_id)
     else
       self.reference_list = ReferenceList.new(nil)
