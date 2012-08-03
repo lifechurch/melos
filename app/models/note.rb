@@ -81,7 +81,7 @@ class Note < YouVersion::Resource
                         self.version.id
                       end
     # self.version_id = self.version.class == Version ? self.version.id : YvApi::get_usfm_version(self.version).id
-    self.references = self.reference_list.to_usfm unless self.reference_list.empty?
+    self.references = self.reference_list.to_flat_usfm unless self.reference_list.empty?
   end
 
   def after_save(response)
@@ -113,18 +113,6 @@ class Note < YouVersion::Resource
     end
   end
 
-  def user_avatar_url
-    return @ssl_avatar_urls unless @ssl_avatar_urls.nil?
-
-    #we only want to use secure urls
-    sizes = ["24x24", "48x48", "128x128", "512x512"]
-    hash ={}
-    sizes.each do |size|
-      hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
-    end
-
-    @ssl_avatar_urls = Hashie::Mash.new(hash)
-  end
 #   def update(fields)
 #     self.version = Version.find(fields[:version]) if fields[:version]
 #     self.reference = ReferenceList.new(fields[:reference], self.version) if fields[:reference]
