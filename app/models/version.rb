@@ -98,9 +98,10 @@ class Version < YouVersion::Resource
     self == compare
   end
   def language
-    Hashie::Mash.new({tag: YvApi::bible_to_app_lang_code(@attributes.language.iso_639_3),
-                      id: @attributes.language.iso_639_3,
-                      human: @attributes.language.local_name})
+    @language ||= Hashie::Mash.new({tag: YvApi::bible_to_app_lang_code(@attributes.language.iso_639_3),
+                                    id: @attributes.language.iso_639_3,
+                                    human: @attributes.language.local_name,
+                                    direction: @attributes.language.text_direction})
   end
   def copyright
     detailed_attributes['copyright_short']['html'] || detailed_attributes['copyright_short']['text'] || ""
@@ -122,16 +123,15 @@ class Version < YouVersion::Resource
   end
 
   def rtl?
-    @data.text_direction=="rtl"
+   text_direction =="rtl"
   end
 
   def text_direction
-    @data.text_direction
+    language.direction
   end
 
-  def contains?(ref)
-    raise "versions contain references!" if !ref.is_a? Reference
-    listing = books_list
+def include?(ref)
+    raise "versions only contain references!" unless ref.is_a? Reference
 
     return false if ref.book && books[ref.book.to_s].nil? rescue true
     return false if ref.chapter && books[ref.book.to_s].chapters[ref.chapter - 1].nil? rescue true
