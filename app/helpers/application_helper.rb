@@ -109,6 +109,11 @@ module ApplicationHelper
     html
   end
 
+  def a_long_time
+    YouVersion::Resource.a_long_time
+    debugger
+  end
+
   private
   def lang_code(locale, host=nil)
     case host
