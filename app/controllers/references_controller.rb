@@ -18,10 +18,13 @@ class ReferencesController < ApplicationController
     params[:reference] ||= last_read.try(:to_param) || default_reference.try(:to_param)
 
     ref_hash = parse_ref_param params[:reference]
+    # override the version in the reference param with the explicit version in the URL
+    # this is a temporary hack until Version/Reference class clean-up
+    ref_hash[:version] = params[:version]
 
     # If we need to add the chapter or version for the user, redirect
     # instead of just rendering (SEO strategy: less buckets)
-    unless ref_hash[:version] && ref_hash[:chapter]
+    unless params[:version] && ref_hash[:chapter]
       ref_hash[:version] ||= current_version
       ref_hash[:chapter] ||= 1
       flash.keep
@@ -58,11 +61,10 @@ class ReferencesController < ApplicationController
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
     @alt_version = Version.find(alt_version(@reference))
     @alt_reference = Reference.new(@reference, version: @alt_version)
-
   end
 
   def highlights
-      @highlights = Highlight.for_reference(params[:reference], auth: current_auth) if current_auth
+      @highlights = Highlight.for_reference(ref_from_params(params), auth: current_auth) if current_auth
       @highlights ||= []
       render json: @highlights
   end
@@ -112,9 +114,9 @@ class ReferencesController < ApplicationController
       @alt_reference = @reference = Reference.new(params[:reference]).merge(version: nil) rescue nil
       @alt_reference = @reference = default_reference unless @reference.try :valid?
 
-      @version = Version.find(Reference.new(params[:reference]).version) rescue Version.default_for(I18n.locale) || Version.default
+      @version = Version.find(Reference.new(params[:reference]).version) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
       @alt_version ||= @version
-
+      debugger
       render :invalid_ref, status: 404
     end
 end

@@ -8,8 +8,6 @@
           %span.separator |
           = @version
         &nbsp;
-        / %small
-        /   %a{:href => reference_path(@single_verse.to_usfm)}= t("compare all versions")
 
         %a.close{:href => '#'} Close
       %section
@@ -17,7 +15,7 @@
         %hr
         %p
           - if @reference
-            %a#single_verse_read_link.action_button_green{:href => reference_path(@reference)}= t("read reference", reference: @reference.ref_string)
+            %a#single_verse_read_link.action_button_green{:href => bible_path(@reference)}= t("read reference", reference: @reference.ref_string)
       %aside
         %div{style: "height: 36px;"}
           %a{href: "http://twitter.com/share", class: "twitter-share-button", "data-url" => @single_verse.short_link, "data-counturl" => request.url, "data-text" => @single_verse.content[0].chomp, via: "YouVersion", "data-count" => "horizontal", "data-related" => "youversion"} Tweet

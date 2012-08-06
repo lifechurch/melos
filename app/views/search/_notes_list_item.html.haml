@@ -2,6 +2,6 @@
   %h5
     %a{href: note_path(item.id), class: ("highlight" if item.highlight_color), style: ("background-color: ##{item.highlight_color}" if item.highlight_color)}= item.title
   -if item.reference
-    %p.mute.small.negative_gutter_top_half= item.reference.map { |r| link_to "#{r.human} (#{item.version})", reference_path(r)}.join(", ").html_safe
+    %p.mute.small.negative_gutter_top_half= item.reference.map { |r| link_to "#{r.human} (#{item.version})", bible_path(r)}.join(", ").html_safe
   %p= item.content_text
   %div{class: "status"}= item.user_status

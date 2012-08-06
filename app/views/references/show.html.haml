@@ -1,7 +1,7 @@
 - @title = "#{@reference.human} #{@reference.version_string}"
 - @reader_menus = true
 - @is_reader = true
-- @canonical = reference_url(@reference)
+- @canonical = bible_url(@reference)
 
 - content_for :sidebar do
   = render partial: '/shared/widget_bookmarks_stub' if current_auth

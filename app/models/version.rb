@@ -145,7 +145,7 @@ def include?(ref)
     "#{title} (#{abbreviation.upcase})"
   end
   def to_param
-    "#{id}-#{human}"
+    "#{id}"
   end
   def human
     #only return first section (before any - or _ qualifier) of abbreviation

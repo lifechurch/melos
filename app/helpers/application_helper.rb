@@ -16,16 +16,29 @@ module ApplicationHelper
 
   def bible_path(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
-    reference_path(ref, opts)
+    ver = opts[:version_id] || opts[:version] || ref.version
+    debugger unless ver && ref
+    reference_path(ver, ref, opts)
   end
 
   def bible_url(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
-    reference_url(ref, opts)
+    ver = opts[:version_id] || opts[:version] || ref.version
+    debugger unless ver && ref
+    reference_url(ver, ref, opts)
   end
 
   def parse_ref_param(ref_param)
     YvApi::parse_reference_string(ref_param)
+  end
+
+  def ref_from_params(params)
+    case params
+    when has_key?(:version)
+      Reference.new(params[:reference], version: params[:version])
+    else
+      Reference.new(params[:reference])
+    end
   end
 
   def default_reference

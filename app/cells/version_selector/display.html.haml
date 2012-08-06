@@ -2,7 +2,7 @@
   if @link_params
     href = url_for(@link_params)
   else
-    href = bible_path(@ref.merge({version: nil, verses: nil}))
+    href = "#DEBUG"
   end
 
 .dynamic_menu.version_select{style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-link-base" => href, "data-link-needs-param" => (!@link_params.nil?).to_s}

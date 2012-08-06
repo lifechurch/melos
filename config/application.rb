@@ -101,7 +101,8 @@ module YouversionWeb
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
       # /bible/niv/john.3.16 (legacy live event links)
-      r301 %r{/bible/([\w-]+)/(\w+).(\d+).([,\d-]+)}, '/bible/$2.$3.$4.$1'
+      # we handle this path natively now - delete once confirmed
+      #r301 %r{/bible/([\w-]+)/(\w+).(\d+).([,\d-]+)}, '/bible/$2.$3.$4.$1'
 
       #blogs and other misc redirects
       r301 '/churches', 'http://blog.youversion.com/churches'
