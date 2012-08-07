@@ -41,7 +41,7 @@ class Note < YouVersion::Resource
 
     notes = ResourceList.new
     notes.total = response.total || 0
-    response.notes.each {|data| notes << new(data.merge(auth:_auth))}
+    response.notes.each {|data| (notes << new(data.merge(auth:_auth))) rescue nil}
     notes
   end
 

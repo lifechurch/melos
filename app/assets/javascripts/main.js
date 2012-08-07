@@ -554,11 +554,12 @@ var YV = (function($, window, document, undefined) {
           var chapters = book_a_el.data('chapters');
           var book = book_a_el.data('book');
           var version = book_a_el.data('version');
+          var abbrev = book_a_el.data('abbrev');
           var li = book_a_el.closest('li');
           var list = '';
 
           for (var i = 0; i < chapters.length; i++) {
-            list += '<li class="' + (book == cur_book && chapters[i] == cur_chapter ? li_class : '') + '"><a href="/bible/' + chapter_refs[i] + '.' + version + '">' + chapters[i] + '</a></li>';
+            list += '<li class="' + (book == cur_book && chapters[i] == cur_chapter ? li_class : '') + '"><a href="/bible/' + version + "/" + chapter_refs[i] + '.' + abbrev + '">' + chapters[i] + '</a></li>';
           }
 
           li.addClass(li_class).siblings().removeClass(li_class);

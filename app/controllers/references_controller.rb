@@ -73,6 +73,7 @@ class ReferencesController < ApplicationController
     ref = ref.merge(verses: "1-10") unless ref.is_chapter?
     @notes = Note.for_reference(ref, language_iso: I18n.locale, cache_for: 5.minutes)
     @notes = Note.for_reference(ref, cache_for: 5.minutes) if @notes.empty?
+    #bizarre bug in where try isn't working (sometimes)
     render layout: false
   end
 
@@ -106,8 +107,8 @@ class ReferencesController < ApplicationController
       #report_exception(ex)
 
       #force to be in non-parallel/fullscreen mode for Ref_not_found
-      @html_classes.delete "full_screen" and cookies[:full_screen] = nil
-      @html_classes.delete "parallel_mode" and cookies[:parallel_mode] = nil
+      @html_classes.try(:delete, "full_screen") and cookies[:full_screen] = nil
+      @html_classes.try(:delete, "parallel_mode") and cookies[:parallel_mode] = nil
 
       @alt_reference = @reference = Reference.new(params[:reference]).merge(version: nil) rescue nil
       @alt_reference = @reference = default_reference unless @reference.try :valid?

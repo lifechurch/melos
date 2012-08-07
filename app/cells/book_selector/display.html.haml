@@ -10,7 +10,7 @@
       %ul
         - @version.books.each do |book_usfm, book_info|
           %li
-            %a{:href => '#', "data-book" => book_usfm, "data-version" => @version.to_param, "data-chapters" => @version.books[book_usfm].chapters.map(&:human), "data-chapter-refs" => @version.books[book_usfm].chapters.map(&:usfm)}=  book_info.human
+            %a{:href => '#', "data-book" => book_usfm, "data-version" => @version.to_param, "data-abbrev" => @version.abbreviation, "data-chapters" => @version.books[book_usfm].chapters.map(&:human), "data-chapter-refs" => @version.books[book_usfm].chapters.map(&:usfm)}=  book_info.human
   #menu_chapter
     %header
       =t("chapter")
