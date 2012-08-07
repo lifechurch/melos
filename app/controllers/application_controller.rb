@@ -169,7 +169,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_last_read(ref)
-    cookies.permanent[:last_read] = ref.to_usfm
+    cookies.permanent[:last_read] = ref.to_usfm if ref.try :valid?
   end
 
   def force_notification_token_or_login

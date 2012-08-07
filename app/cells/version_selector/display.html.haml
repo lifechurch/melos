@@ -1,7 +1,6 @@
-- link_params = url_for(@link_params).match(/\?(.+)/).try(:[], 1) if @link_params
+- plan_url = url_for(@link_params) if @link_params
 
-
-.dynamic_menu.version_select{style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-link-params" => link_params}
+.dynamic_menu.version_select{style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-plan-url" => plan_url, "data-link-needs-param" => @add_version_param.to_s}
   .spinner_wrapper{style: "display: none;"}
     #version_spinner.dynamic_menu_spinner
   %span.menu_arrow

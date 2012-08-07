@@ -19,5 +19,5 @@
         = "#{@version.human} - #{@version.title}"
       %span
         =t("ref.choose version")
-= render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, site: @site, force_style: "top: 116px; left: 457px; z-index: 1; position: absolute;", link_params: {day: (@day == @subscription.current_day && @subscription.is_a?(Subscription)) ? nil: params[:day], content: @content_page > 0 ? @content_page : nil}}
+= render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, site: @site, force_style: "top: 116px; left: 457px; z-index: 1; position: absolute;", add_version_param: true, link_params: {day: (@day == @subscription.current_day && @subscription.is_a?(Subscription)) ? nil: params[:day], content: @content_page > 0 ? @content_page : nil}}
 %h1{style: "clear: none; min-height: 80px; width: 600px"}= @subscription.name

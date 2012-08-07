@@ -1301,14 +1301,16 @@ var YV = (function($, window, document, undefined) {
           var version_id = $(this).closest('tr').data("version");
           var abbrev = $(this).closest('tr').data("abbrev");
           var menu = $(this).closest(".dynamic_menu.version_select");
-          var link_params = menu.data("link-params");
           var path_verses = $("article").data("selected-verses-path-partial");
           var path_chapter = $('article .chapter').data('usfm');
           var link_base = '/bible/' + version_id + '/' + path_chapter;
 
           if (path_verses) link_base = link_base + path_verses;
           link_base = link_base + "." + abbrev;
-          if (link_params) link_base = link_base + link_params;
+
+          //TODO: erase this hack with new reading plans design (in-reader
+          var plan_url = menu.data("plan-url");
+          if (plan_url) link_base = plan_url;
 
           if (version_id){
             var recent = getCookie('recent_versions');
@@ -1324,15 +1326,14 @@ var YV = (function($, window, document, undefined) {
             recent.unshift(version_id);
             recent_str = recent.splice(0,5).join('/');
             setCookie('recent_versions', recent_str);
-
-            window.location = link_base;
-
-            // if (menu.data("link-needs-param")){
-            //   var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
-            //   window.location = link_base + delim + "version=" + version_id;
-            // }else{
-            //   window.location = link_base + "." + version_id;
-            // }
+            console.log(menu.data("link-needs-param"));
+            console.log(menu.data("link-needs-param").length);
+            if (menu.data("link-needs-param")){
+              var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
+              window.location = link_base + delim + "version=" + version_id;
+            }else{
+              window.location = link_base;
+            }
           }
         });
       },
