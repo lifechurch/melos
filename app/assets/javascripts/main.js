@@ -1235,7 +1235,7 @@ var YV = (function($, window, document, undefined) {
           if(!chapter.length || !version_id){return;}
 
           $.ajax({
-            url: "/bible/" + chapter.data("usfm") + "." + version_id + "-ID" + "/highlights",
+            url: "/bible/" + version_id + "/" + chapter.data("usfm") + "/highlights",
             method: "get",
             dataType: "json",
             success: function(highlights) {
@@ -1296,33 +1296,41 @@ var YV = (function($, window, document, undefined) {
       // YV.init.recent_version
       version_links: function() {
        $("#menu_version").find('a').click(function() {
-          var osis = $(this).data("version");
+          var version_id = $(this).closest('tr').data("version");
+          var abbrev = $(this).closest('tr').data("abbrev");
           var menu = $(this).closest(".dynamic_menu.version_select");
-          var link_base = $("article").data("selected-verses-rel-link");
+          var link_params = menu.data("link-params");
+          var path_verses = $("article").data("selected-verses-path-partial");
+          var path_chapter = $('article .chapter').data('usfm');
+          var link_base = '/bible/' + version_id + '/' + path_chapter;
 
-          if (osis){
+          if (path_verses) link_base = link_base + path_verses;
+          link_base = link_base + "." + abbrev;
+          if (link_params) link_base = link_base + link_params;
+
+          if (version_id){
             var recent = getCookie('recent_versions');
             if (recent == null){
               recent = [];
             }else {   //extra caution here because of IE bug with .indexOf on empty array
               //buble up the version just picked if it was already in list
               recent = recent.split('/');
-              var exists = recent.indexOf(osis);
+              var exists = recent.indexOf(version_id);
               if(exists != -1) recent.splice(exists, 1);
             }
 
-            recent.unshift(osis);
+            recent.unshift(version_id);
             recent_str = recent.splice(0,5).join('/');
             setCookie('recent_versions', recent_str);
 
-            if (!link_base) link_base = menu.data("link-base");
+            window.location = link_base;
 
-            if (menu.data("link-needs-param")){
-              var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
-              window.location = link_base + delim + "version=" + osis;
-            }else{
-              window.location = link_base + "." + osis;
-            }
+            // if (menu.data("link-needs-param")){
+            //   var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
+            //   window.location = link_base + delim + "version=" + version_id;
+            // }else{
+            //   window.location = link_base + "." + version_id;
+            // }
           }
         });
       },

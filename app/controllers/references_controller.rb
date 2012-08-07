@@ -64,14 +64,14 @@ class ReferencesController < ApplicationController
   end
 
   def highlights
-      @highlights = Highlight.for_reference(ref_from_params(params), auth: current_auth) if current_auth
+      @highlights = Highlight.for_reference(ref_from_params, auth: current_auth) if current_auth
       @highlights ||= []
       render json: @highlights
   end
 
   def notes
     #API Constraint to be put in model eventually
-    ref = Reference.new(params[:reference]) rescue not_found
+    ref = ref_from_params rescue not_found
     ref = ref.merge(verses: "1-10") unless ref.is_chapter?
     @notes = Note.for_reference(ref, language_iso: I18n.locale, cache_for: 5.minutes)
     @notes = Note.for_reference(ref, cache_for: 5.minutes) if @notes.empty?
@@ -116,7 +116,6 @@ class ReferencesController < ApplicationController
 
       @version = Version.find(Reference.new(params[:reference]).version) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
       @alt_version ||= @version
-      debugger
       render :invalid_ref, status: 404
     end
 end

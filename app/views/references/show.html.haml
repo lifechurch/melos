@@ -5,7 +5,7 @@
 
 - content_for :sidebar do
   = render partial: '/shared/widget_bookmarks_stub' if current_auth
-  = render_cell :notes_list_widget, :stub, title: t("notes.community notes"), reference: @reference.to_param
+  = render_cell :notes_list_widget, :stub, title: t("notes.community notes"), reference: @reference
   = render '/shared/widget_ad_bible_app'
   = render partial: '/shared/widget_parallel_notes', locals: {hide_widget: true}
 

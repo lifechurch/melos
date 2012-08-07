@@ -2,7 +2,6 @@ class Version < YouVersion::Resource
 
   attribute :id
   attribute :title
-  attribute :abbreviation
   attribute :audio
 
   def self.all(app_lang_tag = "")
@@ -140,6 +139,9 @@ def include?(ref)
   end
   def title
     @attributes.local_title || @attributes.title
+  end
+  def abbreviation
+    @attributes.abbreviation.try :upcase
   end
   def to_s
     "#{title} (#{abbreviation.upcase})"
