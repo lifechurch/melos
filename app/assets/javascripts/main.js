@@ -1317,7 +1317,7 @@ var YV = (function($, window, document, undefined) {
             }else {   //extra caution here because of IE bug with .indexOf on empty array
               //buble up the version just picked if it was already in list
               recent = recent.split('/');
-              var exists = recent.indexOf(version_id);
+              var exists = recent.indexOf(String(version_id));
               if(exists != -1) recent.splice(exists, 1);
             }
 
