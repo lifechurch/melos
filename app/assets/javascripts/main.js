@@ -936,9 +936,11 @@ var YV = (function($, window, document, undefined) {
 
             // Generate a short link
             var link = "http://bible.us/" + version_id + "/" + book + chapter + "." + verse_ranges.join(',') + "." + version_abbreviation;
-            var rel_link = "/bible/" + book + "." + chapter + "." + verse_ranges.join(',');
+            var sel_verses_path_partial = "." + verse_ranges.join(',');
+            var rel_link = "/bible/" + book + "." + chapter + sel_verses_path_partial;
 
             $("article").attr('data-selected-verses-rel-link', rel_link);
+            $("article").attr('data-selected-verses-path-partial', sel_verses_path_partial);
             $('.share_message textarea').html($.makeArray($('.verse.selected .content').map(function(){
               return $(this).html();
             })).join(' ').trim());
