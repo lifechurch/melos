@@ -11,7 +11,6 @@ class ReferencesController < ApplicationController
     # Get user font and size settings
     @font = cookies['data-setting-font']
     @size = cookies['data-setting-size']
-
     # render last read or default if no reference specified
     # This allows for root to give better meta (SEO)
     # and saves a redirect for a first time visit
@@ -30,7 +29,6 @@ class ReferencesController < ApplicationController
       flash.keep
       return redirect_to bible_path(Reference.new(ref_hash))
     end
-
     # Hang on to all the verses to select them in the reader
     # This should probably all be done with a ReferenceList
     # with a lot more functionality and smarts

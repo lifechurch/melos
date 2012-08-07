@@ -319,7 +319,7 @@ var YV = (function($, window, document, undefined) {
         $("#menu_alt_version").find("a").click(function(ev) {
           ev.preventDefault();
           ev.stopPropagation();
-          setCookie('alt_version', $(this).data('version'));
+          setCookie('alt_version', $(this).closest('tr').data('version'));
           window.location = window.location.href;
         });
       },

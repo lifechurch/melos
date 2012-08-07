@@ -73,7 +73,7 @@ class Reference < YouVersion::Resource
   end
 
   def to_param
-    return "#{to_usfm}.#{Version.find(version).to_param}" if version
+    return "#{to_usfm}.#{Version.find(version).abbreviation}" if version
     to_usfm
   end
 
@@ -101,7 +101,7 @@ class Reference < YouVersion::Resource
 
   def hash
     #not using to_param so we don't have to hit the API to compare References
-    "#{to_usfm}.#{version}".hash
+    "#{to_usfm}+#{version}".hash
   end
 
   def ==(compare)
@@ -126,7 +126,7 @@ class Reference < YouVersion::Resource
   end
 
   def short_link
-    "http://bible.us/#{self.to_param.sub(/\./, "")}"
+    "http://bible.us/#{version}/#{self.to_param.sub(/\./, "")}"
   end
 
   def content(opts={})

@@ -165,11 +165,11 @@ class ApplicationController < ActionController::Base
   end
 
   def last_read
-    Reference.new(cookies[:last_read]) if cookies[:last_read]
+    Reference.new(cookies[:last_read], version: current_version) if cookies[:last_read]
   end
 
   def set_last_read(ref)
-    cookies.permanent[:last_read] = ref.to_param
+    cookies.permanent[:last_read] = ref.to_usfm
   end
 
   def force_notification_token_or_login
@@ -214,7 +214,7 @@ class ApplicationController < ActionController::Base
   def recent_versions
     return @recent_versions unless @recent_versions.nil?
 
-    return [] if cookies[:recent_versions].to_s == ""
+    return [] if cookies[:recent_versions].blank?
 
     @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v) rescue nil}
     @recent_versions.compact!
@@ -234,7 +234,7 @@ class ApplicationController < ActionController::Base
     #Cookie may have empty string for some reason -- possibly previous error case
     cookies[:alt_version] = nil if cookies[:alt_version].blank?
 
-    raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).include?(ref)
+    raise BadSecondaryVersionError if cookies[:alt_version].present? && !Version.find(cookies[:alt_version]).include?(ref)
 
     return cookies[:alt_version] if cookies[:alt_version].present?
 
