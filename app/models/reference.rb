@@ -44,8 +44,7 @@ class Reference < YouVersion::Resource
     @chapter = @chapter.try :to_i
 
     _version = opts.has_key?(:version) ? opts[:version] : ref_hash.try(:[], :version)
-    @version = YvApi::get_usfm_version(_version) || _version
-    @version = Version.id_from_param(@version)
+    @version = Version.id_from_param(_version)
 
     #we evaluate verses last, as it may hit the API
     @verses = opts.has_key?(:verses) ? opts[:verses] : ref_hash.try(:[], :verses)

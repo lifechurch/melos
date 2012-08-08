@@ -86,6 +86,8 @@ module YouversionWeb
       r301 /.*/, mobile_rewrite, if: should_rewrite_mobile
 
       ### BIBLE REDIRECTS
+      # /bible/john.3.16-17,19,21.ESV (legacy web3 API2 links, verse(s) optional)
+      r301 %r{/bible/(\w+)\.(\d+(?:(?:\.[,\d-]+)?))\.(\w+)}, '/bible/$3/$1.$2.$3'
       # /bible/verse/niv/john/3/16 (normal)
       r301 %r{/bible/verse/([\w-]+)/(\w+)/(\w+)/([,\w-]+)}, '/bible/$2.$3.$4.$1'
       # /bible/verse/niv/john/3 (redirects to 1st verse)
@@ -100,9 +102,6 @@ module YouversionWeb
       r301 %r{/bible/(\w+)/(\d+)/([\w-]+)}, '/bible/$1.$2.$3'
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
-      # /bible/niv/john.3.16 (legacy live event links)
-      # we handle this path natively now - delete once confirmed
-      #r301 %r{/bible/([\w-]+)/(\w+).(\d+).([,\d-]+)}, '/bible/$2.$3.$4.$1'
 
       #blogs and other misc redirects
       r301 '/churches', 'http://blog.youversion.com/churches'

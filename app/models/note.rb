@@ -72,14 +72,8 @@ class Note < YouVersion::Resource
       self.reference_list = self.reference.class == ReferenceList ? self.reference : ReferenceList.new(self.reference)
       self.version = self.reference_list.first[:version] if self.reference_list.first[:version]
     end
-    self.version_id = case self.version
-                      when Fixnum
-                        self.version
-                      when String
-                        YvApi::get_usfm_version(self.version).id
-                      when Version
-                        self.version.id
-                      end
+    self.version_id = Version.id_from_param self.version
+
     # self.version_id = self.version.class == Version ? self.version.id : YvApi::get_usfm_version(self.version).id
     self.references = self.reference_list.to_flat_usfm unless self.reference_list.empty?
   end
