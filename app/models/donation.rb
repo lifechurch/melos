@@ -3,6 +3,7 @@
 class Donation
 
 	include ActiveModel::Validations
+	include ActiveModel::Translation
 
 	attr_accessor :amount, :name, :email, :address, :city, :state, :zip
 

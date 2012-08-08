@@ -3,7 +3,7 @@
   %p= t('donate.header copy')
   - if @donation.errors.any?
     .form_errors
-      The following error(s) prevented making a donation:
+      =t("donate.creation form errors")
       %ul
         - @donation.errors.full_messages.each do |e|
           %li= e

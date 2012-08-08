@@ -544,6 +544,7 @@ en:
     city:                                       "City"
     state:                                      "State"
     zip:                                        "Zip"
+    creation form errors:                       "The following error(s) prevented making a donation:"
   download ad:
     title:                                      "Download the Free Bible App"
     line 1:                                     "Hundreds of versions in 100+"
@@ -637,4 +638,4 @@ en:
         large:                                  "Large"
         highlights:                             "Highlights:"
         on:                                     "On"
-        off:                                    "Off"
+        off:                                    "Off"  
