@@ -938,7 +938,7 @@ var YV = (function($, window, document, undefined) {
             // Generate a short link
             var link = "http://bible.us/" + version_id + "/" + book + chapter + "." + verse_ranges.join(',') + "." + version_abbreviation;
             var sel_verses_path_partial = "." + verse_ranges.join(',');
-            var rel_link = "/bible/" + book + "." + chapter + sel_verses_path_partial;
+            var rel_link = "/bible/" + version_id + "/" + book + "." + chapter + sel_verses_path_partial;
 
             $("article").attr('data-selected-verses-rel-link', rel_link);
             $("article").attr('data-selected-verses-path-partial', sel_verses_path_partial);
