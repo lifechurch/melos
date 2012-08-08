@@ -211,7 +211,7 @@ describe Subscription do
     end
   end
 
-  describe "making progress", only: true do
+  describe "making progress" do
     describe "#progress" do
       it "should increase when you complete a day's references" do
         subscription = Plan.subscribe(@plan, @auth)

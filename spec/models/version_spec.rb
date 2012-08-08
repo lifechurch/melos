@@ -83,7 +83,7 @@ describe Version do
 
   describe "#to_param" do
     it "params itself with a uuid" do
-      Version.find(@kjv.id).to_param.should =~ /^1-/
+      Version.find(@kjv.id).to_param.should =~ /^1/
     end
   end
 
@@ -91,7 +91,7 @@ describe Version do
     before(:all) do
     end
     it "should return the short copyright" do
-      @msg.copyright.should include "Eugene H. Peterson by NavPress Publishing"
+      @msg.copyright.should include "Eugene H. Peterson"
     end
     it "should return the short copyright by default" do
       @cevuk.copyright.should include "British & Foreign Bible Society"
@@ -139,7 +139,7 @@ describe Version do
     end
   end
 
-  describe "#sample_for", only: true do
+  describe "#sample_for" do
     it "should return a version for each language" do
       pending "The API adding support for en-GB"
       I18n.available_locales.each do |loc|

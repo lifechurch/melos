@@ -168,7 +168,7 @@ describe Reference do
 
   describe "to_param" do
     it "should parameterize itself as a string" do
-      @gen_1_1_kjv_ref.to_param.should =~ /GEN.1.1.1-KJV/i
+      @gen_1_1_kjv_ref.to_param.should =~ /GEN.1.1.KJV/i
     end
   end
 
@@ -299,8 +299,8 @@ describe Reference do
     it "should contain a link to an mp3" do
       @gen_1_kjv_ref.audio.url.should =~ /mp3/
     end
-    it "should be a secure url" do
-      @gen_1_kjv_ref.audio.url.should =~ /^https:/
+    it "should be a secure url or respect protocol with // trick" do
+      @gen_1_kjv_ref.audio.url.should =~ /^[https:|\/\/]/
     end
   end
 
