@@ -388,6 +388,7 @@ en:
     title:                                      "Bookmarks"
     not found:                                  "Bookmarks give you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. To add a bookmark, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     other user not found:                       "%{username} hasn't saved any bookmarks yet."
+    creation form errors:                       "The following error(s) prevented creation of your bookmark:"
     successfully created:                       "Bookmark Added"
     successfully deleted:                       "Bookmark Removed"
     labels placeholder:                         "Separate multiple labels with commas."
