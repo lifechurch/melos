@@ -218,7 +218,7 @@ class User < YouVersion::Resource
   end
 
   def confirm_update_email(token)
-    response = YvApi.post("users/update_email", encrypt: token) do |errors|
+    response = YvApi.post("users/confirm_update_email", token: token) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false

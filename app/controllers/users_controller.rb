@@ -305,6 +305,9 @@ class UsersController < ApplicationController
   def confirm_update_email
     @selected = :email
     response = @user.confirm_update_email(params[:token])
+    if response
+      redirect_to update_email_path, notice: t('users.confirm update email success')
+    end
   end
 
   def forgot_password_form
