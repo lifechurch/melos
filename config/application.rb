@@ -144,7 +144,7 @@ module YouversionWeb
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
 
       #force HTTPS traffic
-      r301 /.*/, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, if: Proc.new{ |rack_env| rack_env["rack.url_scheme"] != 'https' && !Rails.env.development?}
+      r301 /.*/, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, if: Proc.new{ |rack_env| rack_env["rack.url_scheme"] != 'https' && ENV['SECURE_TRAFFIC']}
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
