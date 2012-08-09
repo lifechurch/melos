@@ -15,7 +15,7 @@ class Highlight < YouVersion::Resource
   def before_save
     self.reference = Reference.new(self.reference) unless self.reference.is_a? Reference
     self.version = self.reference.version
-    self.reference = self.reference.osis_noversion
+    self.reference = self.reference.osis_noversion.sub(/(\D{1})/){$1.upcase}
   end
 
   def self.for_reference(reference, params = {})
