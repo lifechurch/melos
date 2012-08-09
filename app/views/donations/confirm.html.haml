@@ -3,33 +3,33 @@
   %p= t('donate.header confirm copy')
   = form_for :sim_transaction, :url => "https://secure.authorize.net/gateway/transact.dll" do |f|
     = sim_fields(@sim_transaction)
-    - @tr.each do |k, v|
-      = hidden_field_tag k, v
-    = hidden_field_tag :x_header_email_receipt, t('donate.email header')
-    = hidden_field_tag :x_footer_email_receipt, t('donate.email footer')
-    = hidden_field_tag :x_merchant_email, "giving@lifechurch.tv"
+    = donation_fields(@donation)
+    = hidden_field_tag( :x_email_customer, @email_customer) if @email_customer
+    = hidden_field_tag( :x_header_email_receipt, t('donate.email header'))
+    = hidden_field_tag( :x_footer_email_receipt, t('donate.email footer'))
+    = hidden_field_tag( :x_merchant_email, "giving@lifechurch.tv")
 
     %p
       %strong= "#{t('donate.name')}: "
-      %span= "#{@tr[:x_first_name]} #{@tr[:x_last_name]}"
+      %span= @donation.name
       %br
       %strong= "#{t('users.email address')}: "
-      %span= @tr[:x_email]
+      %span= @donation.email
       %br
       %strong= "#{t('donate.address')}: "
-      %span= @tr[:x_address]
+      %span= @donation.address
       %br
       %strong= "#{t('donate.city')}: "
-      %span= @tr[:x_city]
+      %span= @donation.city
       %br
       %strong= "#{t('donate.state')}: "
-      %span= @tr[:x_state]
+      %span= @donation.state
       %br
       %strong= "#{t('donate.zip')}: "
-      %span= @tr[:x_zip]
+      %span= @donation.zip
     %p
       %strong= "#{t('donate.amount')}: "
-      %span= "$#{@tr[:x_amount]}"
+      %span= number_to_currency(@donation.amount)
     %p
       = label_tag 'x_card_num', t('donate.card number')
       %br

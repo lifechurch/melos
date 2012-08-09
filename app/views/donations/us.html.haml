@@ -1,42 +1,48 @@
 %article
   %h1= t('make a donation')
   %p= t('donate.header copy')
+  - if @donation.errors.any?
+    .form_errors
+      =t("donate.creation form errors")
+      %ul
+        - @donation.errors.full_messages.each do |e|
+          %li= e
   = form_tag do
     %p{class: "emphasis"}
-      = label_tag 'tr[x_amount]', t('donate.amount')
+      = label_tag 'tr[amount]', t('donate.amount')
       %br
       %span{style: "font-size:24px; display: inline-block; margin-right: -1em; top: 7px; left: 4px; position: relative; z-index: 2"} $
-      = text_field_tag 'tr[x_amount]', nil, {class: "autofocus", type: "tel", style: "font-size:24px; padding-left: 24px; margin-top: 5px; width: 7em", tabindex: 6}
+      = text_field_tag 'tr[amount]', @donation.amount, {class: "autofocus", type: "tel", style: "font-size:24px; padding-left: 24px; margin-top: 5px; width: 7em", tabindex: 6}
     %div{style: "padding-left: 17px;"}
       .float_left{style: "margin-right: 15px; margin-bottom: 15px"}
-        = label_tag 'tr[x_name]', t('donate.name')
+        = label_tag 'tr[name]', t('donate.name')
         %br
-        = text_field_tag 'tr[x_name]', @name, {tabindex: 12, style:"width: 225px"}
+        = text_field_tag 'tr[name]', @donation.name, {tabindex: 12, style:"width: 225px"}
       .float_left
-        = label_tag 'tr[x_email]', t('users.email address')
+        = label_tag 'tr[email]', t('users.email address')
         %br
-        = text_field_tag 'tr[x_email]', @email, {tabindex: 24, style:"width: 225px", type: "email"}
+        = text_field_tag 'tr[email]', @donation.email, {tabindex: 24, style:"width: 225px", type: "email"}
       %p{style: "clear: left"}
-        = label_tag 'tr[x_address]', t('donate.address')
+        = label_tag 'tr[address]', t('donate.address')
         %br
-        = text_field_tag 'tr[x_address]', nil, {tabindex: 36, class: "address"}
+        = text_field_tag 'tr[address]', @donation.address, {tabindex: 36, class: "address"}
       %p
         .float_left{style: "margin-right: 15px"}
           = label_tag 'tr[x_city]', t('donate.city')
           %br
-          = text_field_tag 'tr[x_city]', @city, tabindex: 48
+          = text_field_tag 'tr[city]', @donation.city, tabindex: 48
         .float_left{style: "margin-right: 15px"}
-          = label_tag 'tr[x_state]', t('donate.state')
+          = label_tag 'tr[state]', t('donate.state')
           %br
-          = select_tag 'tr[x_state]', options_for_select(us_states, selected: @state), {:tabindex => 60, style: "width: 172px"}
+          = select_tag 'tr[state]', options_for_select(us_states, selected: @donation.state), {:tabindex => 60, style: "width: 172px"}
         .float_left
-          = label_tag 'tr[x_zip]', t('donate.zip')
+          = label_tag 'tr[zip]', t('donate.zip')
           %br
-          = text_field_tag 'tr[x_zip]', @zip, {tabindex: 72, style: "width: 100px"}
+          = text_field_tag 'tr[zip]', @donation.zip, {tabindex: 72, style: "width: 100px"}
       %p
         %div{style: "position: relative; top: 15px; left: -6px; clear:left"}
-          = check_box_tag 'tr[x_email_customer]', "yes", true, tabindex: 84
-          = label_tag 'tr[x_email_customer]', t('donate.receipt')
+          = check_box_tag 'email_customer', "yes", true, tabindex: 84
+          = label_tag 'email_customer', t('donate.receipt')
       %div{style: "padding-top: 1em; padding-bottom: 2em"}
         %button{class: "action_button_green", tabindex: 96, action: "submit"}
           = t('donate.preview')

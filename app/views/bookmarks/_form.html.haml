@@ -1,7 +1,7 @@
 = form_for @bookmark, :html => {class: 'full_page_form'} do |f|
   - if @bookmark.errors.any?
     .form_errors
-      The following error(s) prevented creation of your bookmark:
+      =t("bookmarks.creation form errors")
       %ul
         - @bookmark.errors.each do |e|
           %li= e
