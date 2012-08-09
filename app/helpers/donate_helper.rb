@@ -1,4 +1,14 @@
 module DonateHelper
+  
+  def donation_fields( donation )
+    output = ""
+    fields = %w( x_amount x_name x_first_name x_last_name x_email x_address x_city x_state x_zip )
+    fields.each do |field_name|
+        output << hidden_field_tag( field_name , h(donation.send(field_name.gsub('x_',''))) )
+    end
+    output.html_safe
+  end
+
   def us_states
       [
         ['',''],
