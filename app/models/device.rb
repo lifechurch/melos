@@ -6,6 +6,11 @@ class Device < YouVersion::Resource
   attribute :notes
   attribute :carrier
   attribute :created
+  attribute :created_dt
+
+  def self.destroy_id_param
+    :id
+  end
 
   def self.list_path
     "users/items_device"
@@ -32,6 +37,6 @@ class Device < YouVersion::Resource
   end
 
   def created_date
-    Date.parse(self.created)
+    Date.parse(self.created_dt)
   end
 end

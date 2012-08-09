@@ -218,7 +218,7 @@ describe User do
 
   describe "user content" do
     before :all do
-      @busy_user = ensure_user
+      @busy_user = ensure_user({username: "testusercb", password: "tenders", email: "testusercb@gmail.com"})
       @boring_user = ensure_user
       Note.new({title: "My New Note", content: "Some Content", reference: "gen.2.1.kjv", user_status: "public", auth: @busy_user.auth }).save
       Bookmark.new({auth: @auth, references: "matt.1.3.esv,matt.1.4.esv,matt.1.10.esv", title: "Begettings", username: @busy_user.auth}).save
