@@ -97,8 +97,8 @@ class Version < YouVersion::Resource
     self == compare
   end
   def language
-    @language ||= Hashie::Mash.new({tag: YvApi::bible_to_app_lang_code(@attributes.language.iso_639_3),
-                                    id: @attributes.language.iso_639_3,
+    @language ||= Hashie::Mash.new({tag: YvApi::bible_to_app_lang_code(@attributes.language.language_tag),
+                                    id: @attributes.language.language_tag,
                                     human: @attributes.language.local_name,
                                     direction: @attributes.language.text_direction})
   end
@@ -169,7 +169,7 @@ def include?(ref)
     return @defaults if @defaults.present?
 
     response = YvApi.get("bible/configuration", cache_for: a_long_time)
-    @defaults = Hash[response.default_versions.map {|d| [d.iso_639_3, d.id]}]
+    @defaults = Hash[response.default_versions.map {|d| [d.language_tag, d.id]}]
   end
   def detailed_attributes
     #attributers that can only be found with a specific /version call

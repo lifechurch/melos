@@ -95,7 +95,7 @@ class YvApi
 
   def self.to_bible_api_lang_code(lang_code)
     code = bible_api_custom_languages[lang_code.to_s]
-    code = LanguageList::LanguageInfo.find(lang_code.to_s).iso_639_3 if code.nil?
+    code = LanguageList::LanguageInfo.find(lang_code.to_s).try(:iso_639_3) if code.nil?
 
     lang_code.is_a?(Symbol) ? code.to_sym : code.to_s
   end
@@ -191,10 +191,11 @@ class YvApi
   def self.bible_api_custom_languages
     {
       'en-GB' => 'eng_GB',
-      'pt'    => 'por_POR',
+      'pt'    => 'por_PT',
       'pt-BR' => 'por',
       'zh-CN' => 'cmn',
-      'zh-TW' => 'zho'
+      'zh-TW' => 'zho',
+      'es-ES' => 'spa_ES'
     }
   end
 
@@ -206,7 +207,6 @@ class YvApi
   end
 
   def self.api_response_or_rescue(response, block, opts = {})
-    Rails.logger.debug "response: #{response}"
     if response["response"]["code"].to_i >= 400
       # Check if it's bad/expired auth and raise an exception
       if response["response"]["data"]["errors"].detect { |t| t["error"] =~ /Username\sor\spassword/ }
