@@ -157,7 +157,7 @@ class YvApi
   def self.log_response?
     return false if Rails.env.production?
     return true if ENV["LOG_API_RESPONSES"]
-    #return false # <=Comment out this line to enable response logging in developent
+    return false # <=Comment out this line to enable response logging in developent
     return true
   end
   def self.auth_from_opts!(opts)
