@@ -24,7 +24,18 @@ class Note < YouVersion::Resource
   def self.for_reference(ref, params = {})
     params.merge!({references: ref.to_usfm, query: '*'})
     #TODO: constrain this to only work for <= 10 verses or chapter
-    all(params)
+    response = YvApi.get('notes/items', params) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
+        Hashie::Mash.new(notes: [])
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+
+    notes = ResourceList.new
+    notes.total = response.total || 0
+    response.notes.each {|data| (notes << new(data.merge(auth:params[:auth]))) rescue nil}
+    notes
   end
 
   def self.all(params = {})
@@ -46,7 +57,19 @@ class Note < YouVersion::Resource
   end
 
   def self.for_user(user_id, params = {})
-    all(params.merge({user_id: user_id}))
+    params.merge!({user_id: user_id})
+    response = YvApi.get('notes/items', params) do |errors|
+      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
+        Hashie::Mash.new(notes: [])
+      else
+        raise YouVersion::ResourceError.new(errors)
+      end
+    end
+
+    notes = ResourceList.new
+    notes.total = response.total || 0
+    response.notes.each {|data| (notes << new(data.merge(auth:params[:auth]))) rescue nil}
+    notes
   end
 
   def self.destroy_id_param
