@@ -244,14 +244,15 @@ class YvApi
             Rails.logger.apc "*** API Server ERR", :error
             Rails.logger.apc "**** Error: #{response["response"]["data"]["errors"].first["error"]}", :error
             Rails.logger.apc "**** Response: #{response}", :error
-
-            raise APIError, "Unknown API error for #{opts[:resource_url]}"
+            unknown_error =  response["response"]["data"]["errors"].first["error"]
           end
         rescue
           Rails.logger.apc "*** Uncoded API ERR", :error
           Rails.logger.apc "**** Response: #{response}", :error
           raise APIError, "Uncoded API error for #{opts[:resource_url]}"
         end
+
+        raise APIError, "'Unknown' API error for #{opts[:resource_url]}:\n'#{unknown_error}'" if unknown_error
       end
     end
 
