@@ -437,6 +437,7 @@ module YouVersion
       self.instance_variables.each do |var|
         unless [:@inheritable_attributes, :@resource_attributes, :@parent_name].include?(var)
           self.instance_variable_set(var, nil)
+          Rails.logger.apc "Memoization cleared: #{self.name}.#{var.to_s}", :info rescue nil
         end
       end
       true
