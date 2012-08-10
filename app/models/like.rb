@@ -20,6 +20,9 @@ class Like < YouVersion::Resource
   def note
     Note.find(note_id, user_id: self.user_id )
   end
+  def note_hash
+    @attributes["note"]
+  end
 
   def self.for_user(user_id = nil, params = {})
     page = params[:page] || 1

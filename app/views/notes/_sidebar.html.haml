@@ -19,13 +19,13 @@
               - current_user.likes.first(5).each do |i|
                 %tr
                   %th
-                    %a{href: i.note_url}
-                      %img.avatar_small{src: i.note_user_avatar_url.px_24x24}
+                    %a{href: user_path(i.note_hash.username)}
+                      %img.avatar_small{src: i.note_hash.user_avatar_url.px_24x24}
                   %td
                     %strong
-                      %a{href: i.note_url}= i.note_title
+                      %a{href: note_path(i.note_hash.id)}= i.note_hash.title
                     %br
-                    %a{href: i.note_url}= i.note_username
+                    %a{href: note_path(i.note_hash.id)}= i.note_hash.username
     - else
       = render_cell :notes_list_widget, :display, notes: Note.all(language_iso: I18n.locale, cache_for: 2.minutes), title: t("notes.community notes")
 
