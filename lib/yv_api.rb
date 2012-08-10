@@ -53,8 +53,12 @@ class YvApi
       get_end = Time.now.to_f
       Rails.logger.apc "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms", :info
     end
-    #Rails.logger.apc "** YvApi response: ", :debug
-    #Rails.logger.apc response, :debug
+
+    if log_response?
+      Rails.logger.apc "** YvApi response: ", :debug
+      Rails.logger.apc response, :debug
+    end
+
     # Check the API response for error code
     return api_response_or_rescue(response, block, resource_url: resource_url)
   end
@@ -78,8 +82,12 @@ class YvApi
       raise APIError, "Non-timeout API Error for #{resource_url}: #{e.class} : #{e.to_s}"
     end
     post_end = Time.now.to_f
-    # Rails.logger.apc "** YvApi.post: Response: ", :debug
-    # Rails.logger.apc response, :debug
+
+    if log_response?
+      Rails.logger.apc "** YvApi.post: Response: ", :debug
+      Rails.logger.apc response, :debug
+    end
+
     Rails.logger.apc "** YvApi.post: Resonse time: #{((post_end - post_start) * 1000).to_i}ms", :info
     # Check the API response for error code
     return api_response_or_rescue(response, block)
@@ -146,7 +154,12 @@ class YvApi
   end
 
   private
-
+  def self.log_response?
+    return false if Rails.env.production?
+    return true if ENV["LOG_API_RESPONSES"]
+    #return false # <=Comment out this line to enable response logging in developent
+    return true
+  end
   def self.auth_from_opts!(opts)
     # Clear the auth state or it'll keep it around between requests
     default_options.delete(:basic_auth)
