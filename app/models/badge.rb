@@ -7,7 +7,7 @@ class Badge < YouVersion::Resource
   attribute :username
 
   def earned
-    Date.parse(attributes["earned"])
+    Date.parse(attributes["earned_dt"])
   end
 
   def to_param
