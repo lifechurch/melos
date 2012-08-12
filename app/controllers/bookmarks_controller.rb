@@ -59,10 +59,9 @@ class BookmarksController < ApplicationController
     params[:bookmark][:highlight_color] = params[:highlight][:color] if params[:highlight]
 
     @bookmark = Bookmark.find(params[:id], auth: current_auth)
-
     if @bookmark.update(params[:bookmark])
       #TODO: flash now: notice: t("bookmarks.successfully updated")
-      render action: "index"
+      redirect_to bookmarks_path, notice: t("bookmarks.successfully updated")
     else
       render action: "edit"
     end

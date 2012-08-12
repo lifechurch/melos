@@ -61,19 +61,14 @@ class User < YouVersion::Resource
 
   def user_avatar_url
     return @ssl_avatar_urls unless @ssl_avatar_urls.nil?
-    Rails.logger.debug "in"
     #some calls returning user info don't have avatar URLS or don't have secure paths
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
-    Rails.logger.debug "attr usr avatar"
-    Rails.logger.debug attributes["user_avatar_url"]
     #we only want to use secure urls
     sizes = ["24x24", "48x48", "128x128", "512x512"]
     hash ={}
     sizes.each do |size|
       hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}"]
     end #TODO: DRY up this mash creation with dup in badge.rb and note.rb
-    Rails.logger.debug "hash:"
-    Rails.logger.debug hash
 
     @ssl_avatar_urls = Hashie::Mash.new(hash)
   end

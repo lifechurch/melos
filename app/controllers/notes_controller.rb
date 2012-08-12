@@ -24,8 +24,6 @@ class NotesController < ApplicationController
   def edit
     if current_auth
       @note = Note.find(params[:id], auth: current_auth)
-      Rails.logger.debug "@note is #{@note.inspect}"
-      Rails.logger.debug "@note reference_list is a #{@note.reference_list.class}, inspect is #{@note.reference_list.inspect}"
     else
       redirect_to notes_path
     end
@@ -33,13 +31,9 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(params[:note])
-    Rails.logger.debug "note is:"
-    Rails.logger.debug @note.inspect
     @note.auth = current_auth
 
     if @note.save
-      Rails.logger.debug "now note is:"
-      Rails.logger.debug @note.inspect
       redirect_to note_path(@note.id)
     else
       render action: "new"
@@ -48,7 +42,6 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id], :auth => current_auth)
-    Rails.logger.debug "params are #{params}"
     if @note.update(params[:note])
       render action: "show"
     else
