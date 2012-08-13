@@ -93,7 +93,7 @@ class Bookmark < YouVersion::Resource
     bookmarks = ResourceList.new
     if data['bookmarks']
       data.bookmarks.each do |b|
-        bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
+        (bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash) rescue nil
       end
     end
     bookmarks.page = opts[:page].to_i
@@ -117,7 +117,8 @@ class Bookmark < YouVersion::Resource
     bookmarks = ResourceList.new
     if data['bookmarks']
       data.bookmarks.each do |b|
-        bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
+        #TODO: capture errors and report to API team (error in data)
+        (bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash) rescue nil
       end
     end
     bookmarks.page = opts[:page].to_i

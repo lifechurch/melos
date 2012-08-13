@@ -73,7 +73,6 @@ class ReferencesController < ApplicationController
     ref = ref.merge(verses: "1-10") if ref.is_chapter?
     @notes = Note.for_reference(ref, language_iso: I18n.locale, cache_for: 5.minutes)
     @notes = Note.for_reference(ref, cache_for: 5.minutes) if @notes.empty?
-    #bizarre bug in where try isn't working (sometimes)
     render layout: false
   end
 
