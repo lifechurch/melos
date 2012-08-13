@@ -17,22 +17,17 @@ describe Reference do
     it "should be able to be created from a hash" do
       Reference.new({book: "gen", chapter: 1, version: "kjv"}).should be_valid
     end
-    it "should be able to be created from a Mash" do
-      pending "us actually needing this -- removed for now to test that theory"
-      Reference.new(Hashie::Mash.new({osis: "gen.1.1.kjv", human: "Genesis 1:1"})).should be_valid
-    end
     it "should be able to be created from a Reference" do
       Reference.new(@gen_1_2_kjv_ref).should be_valid
       Reference.new(@gen_1_2_kjv_ref).should == @gen_1_2_kjv_ref
     end
     it "should be able to be created from an API string" do
-      Reference.new("2CH.33.1+2CH.33.2+2CH.33.3").should be_valid
       Reference.new("2CH.33.1+2CH.33.2+2CH.33.3").should == Reference.new("2CH.33.1-3")
     end
     it "should use the options as the overriding property" do
       Reference.new('gen.1.2.kjv', book: "JHN").book.should == "JHN"
-      Reference.new('gen.1.2.kjv', chapter: "3").chapter.should == 3
-      Reference.new('gen.1.2.kjv', verses: "4").verses.should == [4]
+      Reference.new('gen.1.2.kjv', chapter: "3").chapter.should == "3"
+      Reference.new('gen.1.2.kjv', verses: "4").verses.should == ["4"]
       Reference.new('gen.1.2.kjv', version: "5").version.should == 5
       Reference.new('gen.1.2.kjv', version: nil).version.should == nil
     end
@@ -40,10 +35,26 @@ describe Reference do
 
   describe "#valid?" do
     describe "with a valid reference string" do
-      valid_refs = %w(gen.1 gen.1.1 gen.1.1-3 gen.1.kjv gen.1.1.kjv gen.1.1-3.kjv john.1.1.299-NGBM)
-      valid_refs.each do |ref|
+      {
+        'Gen.1.kjv' => {def: 'legacy osis version',                       book: 'GEN', chap: '1', verses: [],    version: 1},
+        'Gen.1.2.kjv' => {def: 'legacy osis version with verse',          book: 'GEN', chap: '1', verses: ['2'],    version: 1},
+        'Gen.1.2-3.kjv' => {def: 'legacy osis version with verse range',  book: 'GEN', chap: '1', verses: ['2', '3'],  version: 1},
+        'Gen.1.1-kjv' => {def: 'API3 version',                            book: 'GEN', chap: '1', verses: [],    version: 1},
+        'Gen.1.2.1-kjv' => {def: 'API3 version with verse',               book: 'GEN', chap: '1', verses: ['2'],    version: 1},
+        'Gen.1.2-3.1-kjv' => {def: 'API3 version with verse range',       book: 'GEN', chap: '1', verses: ['2', '3'],  version: 1},
+        'ESG.1_1.346-CEVD' => {def: 'Greek Ester, non numerical chapter', book: 'ESG', chap: '1_1', verses: [],  version: 346}
+      }.each do |ref, expect|
+        subject = Reference.new(ref)
+
         specify "#{ref} should be valid" do
-          Reference.new(ref).should be_valid
+          subject.should be_valid
+        end
+
+        specify "#{ref} should parse correctly" do
+          subject.book.should == expect[:book]
+          subject.chapter.should == expect[:chap]
+          subject.verses.should == expect[:verses]
+          subject.version.should == expect[:version]
         end
       end
     end
@@ -75,19 +86,19 @@ describe Reference do
 
   describe "#chapter" do
     it "should be the correct chapter" do
-      @gen_1_2_kjv_ref.chapter == 1
+      @gen_1_2_kjv_ref.chapter == "1"
     end
   end
 
   describe "#verses" do
     it "should be the correct verse" do
-      @gen_1_2_kjv_ref.verses == [2]
+      @gen_1_2_kjv_ref.verses == ["2"]
     end
   end
 
   describe "#version" do
     it "should be the correct version" do
-      @gen_1_2_kjv_ref.version == 'KJV'
+      @gen_1_2_kjv_ref.version == 1
     end
   end
 
@@ -148,8 +159,8 @@ describe Reference do
     end
     it "should match the values" do
       subject[:book].should == 'GEN'
-      subject[:chapter].should == 1
-      subject[:verses].should == [1]
+      subject[:chapter].should == "1"
+      subject[:verses].should == ["1"]
       subject[:version].should == 1
     end
   end
@@ -188,8 +199,8 @@ describe Reference do
     it "should index the reference like a hash" do
       ref = Reference.new('gen.1.2.kjv')
       ref[:book].should == 'GEN'
-      ref[:chapter].should == 1
-      ref[:verses].should == [2]
+      ref[:chapter].should == "1"
+      ref[:verses].should == ["2"]
       ref[:version].should == 1
     end
   end
@@ -285,12 +296,11 @@ describe Reference do
 
   describe "#copyright" do
     it "should be the copyright text for the reference's version" do
-      [Reference.new("gen.1.niv"), Reference.new("gen.1.1.niv"), Reference.new("gen.1.1-3.niv")].each do |ref|
-        ref.copyright.should == "Holy Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica, Inc. Used by permission. All rights reserved worldwide."
-      end
+      Reference.new("gen.1.niv").copyright.should == "Holy Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica, Inc. Used by permission. All rights reserved worldwide."
     end
 
     it "should be nil for versions with no copyright" do
+      pending "API not returning 'crown copyright in UK' for this"
       Reference.new("gen.1.1.kjv").copyright.should be_nil
     end
   end

@@ -121,6 +121,7 @@ module ApplicationHelper
   end
 
   def a_long_time
+    #TODO: Cache timers should probably all come from Config/ENV vars
     YouVersion::Resource.a_long_time
   end
 

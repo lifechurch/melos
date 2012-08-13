@@ -39,6 +39,7 @@ describe YvApi do
         'Gen.1-kjv' => {def: 'book with version',                       book: 'Gen', chap: nil, verses: nil,    version: '1-kjv'},
         'Gen' => {def: 'book only',                                     book: 'Gen', chap: nil, verses: nil,    version: nil},
         'Gen.1' => {def: 'chapter only',                                book: 'Gen', chap: '1', verses: nil,    version: nil},
+        'ESG.1_1' => {def: 'greek ester chapters',                      book: 'ESG', chap: '1_1', verses: nil,    version: nil},
         'Gen.1.kjv' => {def: 'legacy osis version',                     book: 'Gen', chap: '1', verses: nil,    version: 'kjv'},
         'Gen.1.2.kjv' => {def: 'legacy osis version with verse',        book: 'Gen', chap: '1', verses: '2',    version: 'kjv'},
         'Gen.1.2-3.kjv' => {def: 'legacy osis version with verse range',book: 'Gen', chap: '1', verses: '2-3',  version: 'kjv'},

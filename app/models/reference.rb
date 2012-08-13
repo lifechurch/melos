@@ -41,7 +41,6 @@ class Reference < YouVersion::Resource
     @book = @book.try :upcase
 
     @chapter = opts.has_key?(:chapter) ? opts[:chapter] : ref_hash.try(:[], :chapter)
-    @chapter = @chapter.try :to_i
 
     _version = opts.has_key?(:version) ? opts[:version] : ref_hash.try(:[], :version)
     @version = Version.id_from_param(_version)
@@ -251,7 +250,7 @@ class Reference < YouVersion::Resource
     opts = {cache_for: a_long_time}
     # sometimes we just need generic info about a verse, like the human spelling of a chapter
     # in this rare case, we will just use the YouVersion default Version
-    opts[:id] =  version || Version.default
+    opts[:id] =  version || Version.default.id
     # we will always just get the chapter, and parse down to verses if needed
     # this will utilize server side cache more effectively
     # as the alternative (for multiple verses) is multiple bible/verse calls
@@ -279,9 +278,9 @@ class Reference < YouVersion::Resource
     when Fixnum
       [verses]
     when /^\d+$/
-      [verses.to_i]
+      [verses.to_s]
     when /^(\d+)\-(\d+)/
-      Range.new($1, $2).to_a
+      Range.new($1, $2).map{|i| i.to_s}
     when Array
       @is_chapter = true if verses.empty?
       verses

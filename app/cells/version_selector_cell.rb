@@ -1,7 +1,7 @@
 class VersionSelectorCell < Cell::Rails
   include ApplicationHelper
   helper_method :bible_path
-  cache :all_versions, :expires_in => 6.hours do |cell, opts|
+  cache :all_versions, :expires_in => 1.hour do |cell, opts|
       "#{opts[:version].language.id}_#{opts[:site]}"
   end
 

@@ -142,7 +142,7 @@ class YvApi
             \s*
             ([1-3]? \s* [A-Za-z]+)                            #book
             \s*
-            (?:(?:[:\.])(\d*))?                               #optional chapter
+            (?:(?:[:\.])([\w]*))?                               #optional chapter
             \s*
             (?:(?:[:\.]) ([\d\-,\s]*))?                       #optional verse(s)
             \s*
