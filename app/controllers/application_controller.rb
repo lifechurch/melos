@@ -212,8 +212,7 @@ class ApplicationController < ActionController::Base
   end
 
   def recent_versions
-    return @recent_versions unless @recent_versions.nil?
-
+    return @recent_versions if @recent_versions.present?
     return [] if cookies[:recent_versions].blank?
 
     @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v) rescue nil}
@@ -234,11 +233,20 @@ class ApplicationController < ActionController::Base
     #Cookie may have empty string for some reason -- possibly previous error case
     cookies[:alt_version] = nil if cookies[:alt_version].blank?
 
-    raise BadSecondaryVersionError if cookies[:alt_version].present? && !Version.find(cookies[:alt_version]).include?(ref)
+    if cookies[:alt_version].present?
+      begin
+        # validate that the preferred secondary version has the reference in question
+        includes_ref = Version.find(cookies[:alt_version]).include?(ref)
+        raise BadSecondaryVersionError unless includes_ref
+      rescue
+        # bad version was in cookie, nuke it
+        cookies[:alt_version] = nil
+      end
+    end
 
     return cookies[:alt_version] if cookies[:alt_version].present?
 
-    #looks like we may have a new user!
+    # new user or bad version was in cookie
     recent = recent_versions.find{|v| v.to_param != current_version && v.include?(ref)}
     cookies[:alt_version] = recent.to_param if recent
 

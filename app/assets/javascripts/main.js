@@ -1317,18 +1317,21 @@ var YV = (function($, window, document, undefined) {
             var recent = getCookie('recent_versions');
             if (recent == null){
               recent = [];
-            }else {   //extra caution here because of IE bug with .indexOf on empty array
+            }else {
+              //extra caution here because of IE bug with .indexOf on empty array
               //buble up the version just picked if it was already in list
               recent = recent.split('/');
               var exists = recent.indexOf(String(version_id));
+              //remove version if it already is in recent list
               if(exists != -1) recent.splice(exists, 1);
             }
 
+            //add new version to beginning of recents list cookie
             recent.unshift(version_id);
             recent_str = recent.splice(0,5).join('/');
             setCookie('recent_versions', recent_str);
-            console.log(menu.data("link-needs-param"));
-            console.log(menu.data("link-needs-param").length);
+
+            //send user on to new page as requested
             if (menu.data("link-needs-param")){
               var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
               window.location = link_base + delim + "version=" + version_id;
