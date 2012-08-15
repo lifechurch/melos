@@ -218,7 +218,7 @@ class ApplicationController < ActionController::Base
     @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v) rescue nil}.compact.uniq
     # Handle conversion from API2 (osis) to API3 (version_ids)
     # But not a bad idea in general to validate/curate user's recent versions
-    cookies[:recent_versions] = @recent_versions.map{|v| v.id}.join('/') rescue nil
+    cookies[:recent_versions] = @recent_versions.map{|v| v.to_param}.join('/') rescue nil
     @recent_versions
   end
 
@@ -228,7 +228,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_version
-    cookies[:version] || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s) || Version.default
+    return @current_version if @current_version.present?
+
+    @current_version = cookies[:version] || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s) || Version.default
+    # check to make sure it's a valid version (handling version deprecation)
+    @current_version = Version.find(@current_version).to_param rescue Version.default
   end
 
   def alt_version(ref)

@@ -40,7 +40,7 @@ module ApplicationHelper
   end
 
   def default_reference
-    Reference.new(book: "john", chapter: "1", version: current_version) rescue Reference.new('JHN.1', version: @site.default_version)
+    Reference.new(book: "JHN", chapter: "1", version: current_version) rescue Reference.new('JHN.1', version: @site.default_version)
   end
 
   def external_url(host, default_locale_path='', locale_paths={})

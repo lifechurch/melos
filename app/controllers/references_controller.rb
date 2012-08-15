@@ -114,6 +114,7 @@ class ReferencesController < ApplicationController
 
       @version = Version.find(Reference.new(params[:reference]).version) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
       @alt_version ||= @version
+
       render :invalid_ref, status: 404
     end
 end
