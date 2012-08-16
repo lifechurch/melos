@@ -10,8 +10,6 @@ class User < YouVersion::Resource
   attribute :email
   attribute :agree
   attribute :verified
-  attribute :user_avatar_url
-  attribute :s3_user_avatar_url
   attribute :first_name
   attribute :last_name
   attribute :location
@@ -60,30 +58,14 @@ class User < YouVersion::Resource
   end
 
   def user_avatar_url
-    return @ssl_avatar_urls unless @ssl_avatar_urls.nil?
-    #some calls returning user info don't have avatar URLS or don't have secure paths
+    # some calls returning user info don't have avatar URLS
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
-    #we only want to use secure urls
-    sizes = ["24x24", "48x48", "128x128", "512x512"]
-    hash ={}
-    sizes.each do |size|
-      hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}"]
-    end #TODO: DRY up this mash creation with dup in badge.rb and note.rb
-
-    @ssl_avatar_urls = Hashie::Mash.new(hash)
   end
 
-  def s3_user_avatar_url
-    return @s3_ssl_avatar_urls unless @s3_ssl_avatar_urls.nil?
-    attributes["user_avatar_url"] = self.generate_user_avatar_urls(s3 = true)
-
-    sizes = ["24x24", "48x48", "128x128", "512x512"]
-    hash ={}
-    sizes.each do |size|
-      hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
-    end #TODO: DRY up this mash creation with dup in badge.rb and note.rb
-
-    @s3_ssl_avatar_urls = Hashie::Mash.new(hash)
+  def direct_user_avatar_url
+    # some calls returning user info don't have avatar URLS
+    # we need the direct path to avoid CDN cache in certain cases
+    attributes["direct_user_avatar_url"] ||= self.generate_user_avatar_urls(direct: true)
   end
 
   def to_param
@@ -548,16 +530,15 @@ class User < YouVersion::Resource
     timezone ? ActiveSupport::TimeZone[timezone].utc_offset/86400.0 : 0.0
   end
 
-  def generate_user_avatar_urls(s3 = false)
+  def generate_user_avatar_urls(opts = {})
     sizes = ["24x24", "48x48", "128x128", "512x512"]
-    hash = {}
-    avatar_path     = Cfg.send("avatar_path#{    s3 ? '_s3' : ''}")
-    ssl_avatar_path = Cfg.send("ssl_avatar_path#{s3 ? '_s3' : ''}")
+    avatar_path = opts[:direct] ? "avatar_path_direct" : "avatar_path"
+
+    mash = Hashie::Mash.new()
     sizes.each do |s|
-      hash["px_#{s}"] = avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
-      hash["px_#{s}_ssl"] = ssl_avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
+      mash["px_#{s}"] = Cfg.send(avatar_path) + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
     end
-    return Hashie::Mash.new(hash)
+    mash
   end
 
 end

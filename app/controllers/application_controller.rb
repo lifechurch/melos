@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out, :verses_in_chapter, :bdc_user?, :a_long_time
+  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:a] = user.id
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
-    cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
+    set_current_avatar(user.user_avatar_url["px_24x24"])
     check_facebook_cookie
   end
 
@@ -105,7 +105,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:b] = nil
     cookies.permanent.signed[:c] = nil
     cookies.permanent.signed[:f] = nil
-    cookies.permanent[:avatar] = nil
+    set_current_avatar(nil)
   end
 
   def auth_error(ex)
@@ -208,7 +208,27 @@ class ApplicationController < ActionController::Base
   end
 
   def current_avatar
-    cookies[:avatar] + "#{controller_name == 'users' && action_name == 'picture' ? '?' + rand(1000000).to_s : ''}" if cookies[:avatar]
+    # cookie may hold old path that can't be secure
+    # use CDN path instead if so (API2 to API3 switch)
+    if ((avatar_path = cookies[:avatar]).present?)
+      # we may bust browser cache if user just changed avatar
+      cache_bust = @bust_avatar_cache ? "#{'?' + rand(1000000).to_s}" : ""
+
+      if avatar_path.include? 'http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/'
+        set_current_avatar(avatar_path.gsub('http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/','https://d5xlnxqvcdji7.cloudfront.net/users/images/'))
+      end
+
+      # If we're asking for avatar, users has to be signed in
+      # which would have populated avatar cookie
+      # if they're not, we can't get avatar anyway
+      cookies[:avatar] +  cache_bust if cookies[:avatar].present?
+    end
+  end
+
+  def set_current_avatar(avatar_url)
+    cookies.permanent[:avatar] = avatar_url
+    # expire header that contains avatar
+    expire_fragment "header_#{current_auth.username}_#{I18n.locale}" if current_auth
   end
 
   def recent_versions

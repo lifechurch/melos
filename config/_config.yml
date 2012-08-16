@@ -7,10 +7,10 @@ common:
 
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
-  avatar_path: http://d5xlnxqvcdji7.cloudfront.net/users/images/
-  avatar_path_s3: http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/
-  ssl_avatar_path: https://d5xlnxqvcdji7.cloudfront.net/users/images/
-  ssl_avatar_path_s3: http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/
+  avatar_path: https://d5xlnxqvcdji7.cloudfront.net/users/images/
+  #note: this direct path will not work for users without avatars (404's)
+  #workaround should be coming by EOY 2012
+  avatar_path_direct: https://static-youversionapi-com.s3.amazonaws.com/users/images/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
   api_root: youversionapi.com

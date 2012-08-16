@@ -30,6 +30,8 @@ YouversionWeb::Application.configure do
 
   # Turn off quiet assets (defaults to true)
   # config.quiet_assets = false
+
+  # memcache for action and fragment caches
   config.cache_store = :dalli_store
 
   # For Twitter oAuth.

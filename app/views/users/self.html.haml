@@ -7,7 +7,7 @@
 %section.top_section
   %div.clearfix
     %a{href: "#"}
-      %img.avatar_huge{src: @user.s3_user_avatar_url["px_128x128"]}
+      %img.avatar_huge{src: @user.user_avatar_url["px_128x128"]}
     %div
       %h1= @user.name || @user.username
       %ul
@@ -40,7 +40,7 @@
         %li.li_note
           %h5
             %a{href: note_path(a.id), class: ("highlight" if a.highlight_color), style: ("background-color: ##{a.highlight_color}" if a.highlight_color)}= a.title
-          %p.mute.small.negative_gutter_top_half= link_to_references(a.reference_list) 
+          %p.mute.small.negative_gutter_top_half= link_to_references(a.reference_list)
           %p= a.content
           %p.mute.small.negative_gutter_top_half= time_ago_in_words(a.most_recent_date)
       - when User

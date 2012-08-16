@@ -119,14 +119,14 @@ describe User do
     end
     it "should be able to follow a user" do
       @testuser.follow(auth: @testuser_2_auth).should be_true
-      # Do it again to make sure it doesn't throw an error 
+      # Do it again to make sure it doesn't throw an error
       @testuser.follow(auth: @testuser_2_auth).should be_true
     end
 
     it "should be able to unfollow a user" do
-      @testuser_2.follow(auth: @auth) 
+      @testuser_2.follow(auth: @auth)
       @testuser_2.unfollow(auth: @auth).should be_true
-      # Do it again to make sure it doesn't throw an error 
+      # Do it again to make sure it doesn't throw an error
       @testuser_2.unfollow(auth: @auth).should be_true
     end
   end
@@ -136,7 +136,7 @@ describe User do
       @testuser_2 = ensure_user
       @testuser_2_auth = @testuser_2.auth
       @testuser.follow(auth: @testuser_2_auth).should be_true
-      @testuser_2.follow(auth: @auth).should be_true 
+      @testuser_2.follow(auth: @auth).should be_true
       @testuser_3 = ensure_user
     end
 
@@ -162,7 +162,7 @@ describe User do
   describe "profile" do
     # Test:
     # user_avatar_url
-    # s3_user_avatar_url
+    # direct_user_avatar_url
     # to_param
     # website_url
     # website_human
@@ -188,7 +188,7 @@ describe User do
 
     it "should return info about itself" do
       @lotsa_info.user_avatar_url.should be_a Hashie::Mash
-      @lotsa_info.s3_user_avatar_url.should be_a Hashie::Mash
+      @lotsa_info.direct_user_avatar_url.should be_a Hashie::Mash
       @lotsa_info.to_param.should == "testuser-lotsainfo"
       @lotsa_info.website_url.should == "http://www.youversion.com"
       @lotsa_info.website_human.should == "youversion.com"

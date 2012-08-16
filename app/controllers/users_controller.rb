@@ -116,10 +116,9 @@ class UsersController < ApplicationController
       # Get the real thing
       user = User.authenticate(params[:user][:username], params[:user][:password])
       cookies.permanent.signed[:a] = user.id
-
       cookies.permanent.signed[:b] = user.username
       cookies.permanent.signed[:c] = params[:user][:password]
-      cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
+      set_current_avatar(user.user_avatar_url["px_24x24"])
 
       # Create facebook connection
       #
@@ -197,11 +196,18 @@ class UsersController < ApplicationController
 
   def picture
     @selected = :picture
+    # we don't know if user has an avatar or not
+    @user_avatar_urls = @user.user_avatar_url
   end
 
   def update_picture
+    @user_avatar_urls = @user.user_avatar_url
     if @user.update_picture(params[:user].try(:[], :image))
       flash.now[:notice] = t('users.profile.updated picture')
+      @user_avatar_urls = @user.direct_user_avatar_url
+      @bust_avatar_cache = true
+      # set cookie so header menu will show new avatar
+      set_current_avatar(@user.direct_user_avatar_url["px_24x24"])
     end
     render action: "picture"
   end
