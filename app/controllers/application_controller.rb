@@ -208,20 +208,20 @@ class ApplicationController < ActionController::Base
   end
 
   def current_avatar
-    # cookie may hold old path that can't be secure
-    # use CDN path instead if so (API2 to API3 switch)
+    # If we're asking for avatar, users has to be signed in
+    # which would have populated avatar cookie
+    # if they're not, we can't get avatar anyway
     if ((avatar_path = cookies[:avatar]).present?)
       # we may bust browser cache if user just changed avatar
       cache_bust = @bust_avatar_cache ? "#{'?' + rand(1000000).to_s}" : ""
 
+      # cookie may hold old path that can't be secure
+      # use CDN path instead if so (API2 to API3 switch)
       if avatar_path.include? 'http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/'
         set_current_avatar(avatar_path.gsub('http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/','https://d5xlnxqvcdji7.cloudfront.net/users/images/'))
       end
 
-      # If we're asking for avatar, users has to be signed in
-      # which would have populated avatar cookie
-      # if they're not, we can't get avatar anyway
-      cookies[:avatar] +  cache_bust if cookies[:avatar].present?
+      avatar_path +  cache_bust
     end
   end
 

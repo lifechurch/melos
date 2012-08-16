@@ -25,7 +25,7 @@ module SiteConfigs
     end
 
     def versions
-      ['afr83', 'afr53-af', 'abd07-af', 'nso00-nso', 'nso51-nso', 'sso61so-st', 'sso89so-st', 'tso89-ts', 'tsw08no-tn', 'tsw70-tn', 'ven98-ve', 'xho75-xh', 'xho960xh', 'zul59-zu', 'cevuk-en', 'gntuk-en', 'kjv', 'nkjv', 'niv', 'esv', 'hcsb', 'nr94', 'arc_1-pt', 'dhhe-es', 'lsg-fr', 'delut', 'avd-ar', 'gna93-ar', 'mg1865', 'bsn-sna', 'kqa', 'suv-sw', 'cunp']
+      [6, 5, 2, 256, 124, 273, 274, 184, 278, 185, 280, 281, 282, 286, 294, 296, 1, 114, 111, 59, 72, 123, 212, 53, 93, 51, 13, 67, 96, 32, 87, 164, 46]
     end
 
     def partners; end

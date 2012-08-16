@@ -23,8 +23,9 @@ class Version < YouVersion::Resource
   end
   def self.all_by_language(opts={})
     # to allow a restricted subset of versions (e.g. for white-list sites)
-    all_by_language = Version.all.find_all{|k, v| opts[:only].include? k}.group_by {|k, v| v.language.iso} if opts[:only]
-    all_by_language ||= all.group_by {|v| v.language.tag}
+    _all = Version.all.find_all{|v| opts[:only].include? v.id} if opts[:only]
+    _all ||= all
+    _all.group_by {|v| v.language.tag}
   end
   def self.find(version)
     ver = versions[self.id_from_param(version)]
