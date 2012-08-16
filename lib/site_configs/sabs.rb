@@ -17,7 +17,7 @@ module SiteConfigs
     end
 
     def default_version
-      "afr83"
+      6
     end
 
     def donate_path
