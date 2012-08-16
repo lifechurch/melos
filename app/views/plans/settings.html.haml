@@ -16,8 +16,8 @@
       - if !current_user.subscribed_to? @subscription
         %li
           = link_to(t("plans.view sample"), @subscription.to_param)
-      %li
-        = link_to(t("plans.users subscribed", user_count: number_with_delimiter(@subscription.users.count)), plan_users_path(@subscription.to_param))
+      / %li
+      /   = link_to(t("plans.users subscribed", user_count: number_with_delimiter(@subscription.users.count)), plan_users_path(@subscription.to_param))
   .widget
     %header
       %span

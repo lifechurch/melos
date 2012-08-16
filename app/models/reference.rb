@@ -215,22 +215,22 @@ class Reference < YouVersion::Resource
   end
 
   def osis
-    Rails.logger.apc "#{self.class}##{__method__} is deprecated,use the 'to_param' or 'to_usfm' methods instead", :warn
+    Rails.logger.apc "#{self.class}##{__method__} is deprecated,use the 'to_param' or 'to_usfm' methods instead", :debug
     to_param
   end
 
   def osis_noversion
-    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :warn
+    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
     to_usfm
   end
 
   def osis_book_chapter
-    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :warn
+    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
     chapter_usfm
   end
 
   def to_osis_string
-    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :warn
+    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
     to_param
   end
 
