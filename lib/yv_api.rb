@@ -55,8 +55,8 @@ class YvApi
     end
 
     if log_response?
-      Rails.logger.apc "** YvApi response: ", :debug
-      Rails.logger.apc response, :debug
+      Rails.logger.apc "** YvApi response: ", :info
+      Rails.logger.apc response, :info
     end
 
     # Check the API response for error code
@@ -84,8 +84,8 @@ class YvApi
     post_end = Time.now.to_f
 
     if log_response?
-      Rails.logger.apc "** YvApi.post: Response: ", :debug
-      Rails.logger.apc response, :debug
+      Rails.logger.apc "** YvApi.post: Response: ", :info
+      Rails.logger.apc response, :info
     end
 
     Rails.logger.apc "** YvApi.post: Resonse time: #{((post_end - post_start) * 1000).to_i}ms", :info
