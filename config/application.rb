@@ -58,8 +58,11 @@ module YouversionWeb
         # url = "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}"
         new_server_name = "m.youversion.com"
 
+        # bible.us paths: /es/bible/12/jhn3.16-17,19,21.esv
+        # mDot paths: http://es.m.youversion.com/bible/asv/john/3/16-17
+
         # locales
-        if (new_path != "" && new_path != "/")
+        if (new_path.present? && new_path != "/")
           # then there's a path, see if it's a locale
           test = new_path.split("/")[1]
           if locales[test]
@@ -69,8 +72,21 @@ module YouversionWeb
             new_path = new_path_array.join("/")
           end
         end
-        # reading plans support
-        new_path = new_path.gsub(/reading-plans\/\d+-([^\/]*)/, 'reading-plans/\1')
+
+        # reform url for mDot
+        case new_path
+        when /^\/bible\/(?:(\d+)\/)?(\w{3})\.?([^\.]+)(?:(?:\.([,\w-]+))?)\.(\w+)/
+          book = YvApi::get_osis_book($2)
+          version = YvApi::get_osis_version($1) || $5 || 'kjv'
+          chapter = $3
+
+          (chapter = 1 && book = 'john') if book.blank?
+
+          new_path = "/bible/#{version.downcase}/#{book}/#{chapter}"
+          new_path = new_path + "/$4" if $4.present?
+        when /^\/reading-plans\/\d+-([^\/]*)/
+          new_path = "/reading-plans/#{$1}"
+        end
 
         "http://#{new_server_name}#{new_path}"
       end

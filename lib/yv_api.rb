@@ -129,8 +129,16 @@ class YvApi
     Cfg.osis_usfm_hash[:versions][osis_version.downcase] if osis_version.is_a? String
   end
 
+  def self.get_osis_version(usfm_version)
+    Cfg.osis_usfm_hash[:versions].key(usfm_version.to_i)
+  end
+
   def self.get_usfm_book(osis_book)
     Cfg.osis_usfm_hash[:books][osis_book.downcase] if osis_book.is_a? String
+  end
+
+  def self.get_osis_book(usfm_book)
+    Cfg.osis_usfm_hash[:books].key(usfm_book.upcase) if usfm_book.is_a? String
   end
 
   def self.usfm_delimeter
