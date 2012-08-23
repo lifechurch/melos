@@ -179,7 +179,7 @@ es:
     no secondary version title:                 "Sobre Comparación Paralela"
     no secondary version text:                  "%{language_name} solo tiene una versión disponible, por eso no pudimos seleccionar una versión secundaria.  Por favor seleccione su versión secundaria para realizar una comparación paralela."
     select another chapter:                     "Escoger Capítulo Diferente"
-    view in reader:                             "Ver %{referencia} en Lector"
+    view in reader:                             "Ver %{reference} en Lector"
   users:
     settings:                                   "Configuración"
     no connection friends:                      "Aparentemente ninguno de sus amigos de %{connection} está conectado a YouVersion aún."
