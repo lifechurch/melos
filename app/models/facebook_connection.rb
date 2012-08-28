@@ -28,6 +28,7 @@ class FacebookConnection < YouVersion::Connection::Base
     opts = {api_version: "2.5", connection_type: "fb"}.merge(opts)
     face = Koala::Facebook::API.new(self.data[:oauth_token] || self.data[:access_token])
     response = face.get_connections("me", "friends")
+
     if response.empty?
       []
     else
@@ -40,6 +41,27 @@ class FacebookConnection < YouVersion::Connection::Base
   def delete
     result = YvApi.post("users/delete_connection", connection_type: "fb", auth: auth)
     return result.facebook.nil?
+  end
+
+  def nickname
+    data.name
+  end
+  
+  def update_token
+    oauth = Koala::Facebook::OAuth.new(self.data[:appid], self.data[:secret])
+    new_token = oauth.exchange_access_token_info(self.data[:access_token])["access_token"]
+    if new_token
+      # Delete the existing connection in the API
+      self.delete
+      # Recreate some stuff for saving the connection with the new token
+      self.credentials = {}
+      self.info = {}
+      self.credentials["token"] = new_token
+      self.info["name"] = self.data[:name]
+      self.info["nickname"] = self.data[:screen_name]
+      self.connection_user_id = self.uid = self.data[:user_id]
+      self.save
+    end
   end
 end
 

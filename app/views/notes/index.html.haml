@@ -4,7 +4,7 @@
   .widget.gutter_bottom_half
     %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new")}
       %span.icon_plus= t('notes.new note')
-      
+
   = render '/shared/widget_ad_bible_app'
 
 %article
@@ -12,6 +12,5 @@
   - unless @notes.empty?
     %ul.big_list
       = render partial: "list_item", collection: @notes, locals: {display: :avatar}
-    = render "shared/pagination", resource_list: @notes
   - else
     %div{class: "none"}= t("notes.not found")

@@ -260,7 +260,13 @@ class UsersController < ApplicationController
     @show = params[:show] ||= "twitter"
     @empty_message = t('users.no connection friends', connection: t(@show))
     if @user.connections[@show]
-      @users = @user.connections[@show].find_friends(page: params[:page])
+      begin
+        @users = @user.connections[@show].find_friends(page: params[:page])
+      rescue
+        @users = []
+        @users_error = true
+        flash.now[:error] = t('users.reset connection')
+      end
     end
   end
 
@@ -387,12 +393,12 @@ class UsersController < ApplicationController
   end
 
   def privacy
-    I18n.locale = :en if [:fr, :pl, :af, :km, :ko, :pl, :sk, :sv, :tr, :ro, :bg].find{|loc| loc == I18n.locale}
+    I18n.locale = :en unless i18n_terms_whitelist.include? I18n.locale
     render action: "privacy", layout: "application"
   end
 
   def terms
-    I18n.locale = :en if [:fr, :pl, :af, :km, :ko, :pl, :sk, :sv, :tr, :ro, :bg].find{|loc| loc == I18n.locale}
+    I18n.locale = :en unless i18n_terms_whitelist.include? I18n.locale
     render action: "terms", layout: "application"
   end
 
@@ -412,5 +418,11 @@ private
       @user = current_user
       @me = true
     end
+  end
+
+  def i18n_terms_whitelist
+    # the following localizations have the legal terms reviewed in a way that is
+    # legally appropriate to show in a localized state
+    [:en]
   end
 end

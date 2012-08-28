@@ -1,6 +1,6 @@
 %article
   - if request.path == user_likes_path(current_user)
-    %h1= t("likes.my likes")
+    %h1.float_left= t("likes.my likes")
     %dl.combo_button.float_right
       %dt View:
       %dd
@@ -8,7 +8,7 @@
       %dd.highlighted
         = link_to t("likes.my likes"), user_likes_path(current_user)
   - else
-    %h1= t("likes.all likes")
+    %h1.float_left= t("likes.all likes")
     %dl.combo_button.float_right
       %dt View:
       %dd.highlighted

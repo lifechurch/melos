@@ -65,11 +65,15 @@
 .full_screen .nav_next
   margin-left: 0
 
-.full_screen .nav_prev
-  left: 25px
+.full_screen .nav_prev,
+.full_screen .nav_next.rtl
+  background-position: 10px 48%
+  margin-left: -82px
 
-.full_screen .nav_next
-  right: 40px
+.full_screen .nav_next,
+.full_screen .nav_prev.rtl
+  margin-left: 740px
+  background-position: -58px 48%
 
 // `Tweak text larger for legibility
 //----------------------------------------------------------------------------------------------------

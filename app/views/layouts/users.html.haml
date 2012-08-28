@@ -11,7 +11,7 @@
     = render(partial: "user_info", locals: {user: @user}) if @selected == :recent_activity
     %article
       - if @selected == :recent_activity || @selected == :notes || @selected == :friends || @selected == :badges
-        %h1= t("users.my #{@selected.to_s}")
+        %h1{class: @selected == :friends ? "float_left" : ""}= t("users.my #{@selected.to_s}")
       - else
         %h1= t("settings")
         %h4= t("users.edit #{@selected}")

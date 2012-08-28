@@ -17,7 +17,7 @@ class Version
 
   def self.find(version)
     raise NotAVersionError if (ver = versions[version]).nil?
-    
+
     ver
   end
 
@@ -27,7 +27,7 @@ class Version
 
   def self.all_by_language(opts={})
     all_by_language = Version.all.find_all{|k, v| opts[:only].include? k}.group_by {|k, v| v.language.iso} if opts[:only]
-    
+
     all_by_language ||= Version.all.group_by {|k, v| v.language.iso}
     all_by_language.each {|k, v| all_by_language[k] = Hash[*v.flatten]}
     all_by_language
@@ -37,13 +37,21 @@ class Version
     @version = version
     @data = versions_api_data.versions[version]
   end
-  
+
   def audio?
     @data.audio == "true"
   end
 
   def language
     @data.language
+  end
+
+  def rtl?
+    @data.text_direction=="rtl"
+  end
+
+  def text_direction
+    @data.text_direction
   end
 
   def contains?(ref)
@@ -92,25 +100,25 @@ class Version
   def self.default_for(lang)
     versions_api_data.defaults[lang.to_s]
   end
-  
+
   def self.default()
     versions_api_data.defaults["en"]
   end
-  
+
   def self.sample_for(lang, opts={})
     opts[:except] ||= ""
-    
+
     samples = all_by_language[lang].find_all{|k,v| k != opts[:except]}
     sample = nil
-    
+
     until !sample.nil? || samples.empty?
       sample = samples.delete_at(Random.rand(samples.length))[1]
 
       sample = nil if opts[:has_ref] && !sample.contains?(opts[:has_ref])
     end
-    
+
     raise NotAChapterError if sample.nil?
-    
+
     return sample.osis
   end
 
@@ -128,7 +136,7 @@ class Version
   end
 
   def books_list(version = nil)
-    version ||= osis 
+    version ||= osis
     self.class.books_list(version)
   end
 
@@ -152,7 +160,7 @@ class Version
 
   def self.versions_api_data
     return @versions_api_data unless @versions_api_data.nil?
-    
+
     @versions_api_data = YvApi.get("bible/versions", type: "all", cache_for: 12.hours)
     @versions_api_data.defaults = Hash[@versions_api_data.defaults.map {|d| [YvApi::to_app_lang_code(d[0]), d[1]]}]
     @versions_api_data.versions.each {|k,v| v.language.iso = YvApi::to_app_lang_code(v.language.iso)}
@@ -170,7 +178,7 @@ class Version
   def info_api_data(version)
     self.class.info_api_data(version)
   end
-  
+
   def to_attribute
     osis
   end

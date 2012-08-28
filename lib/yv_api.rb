@@ -70,7 +70,7 @@ class YvApi
     timeout = opts.delete(:timeout)
     resource_url = base + path
     opts = clean_up_opts(opts)
-    
+
     Rails.logger.apc "** YvApi.post: Calling #{resource_url} with body: ", :info
     Rails.logger.apc opts, :info
 
@@ -85,8 +85,8 @@ class YvApi
       raise APIError, "Non-timeout API Error for #{resource_url}"
     end
     post_end = Time.now.to_f
-    Rails.logger.apc "** YvApi.post: Response: ", :debug
-    Rails.logger.apc response, :debug
+    # Rails.logger.apc "** YvApi.post: Response: ", :debug
+    # Rails.logger.apc response, :debug
     Rails.logger.apc "** YvApi.post: Resonse time: #{((post_end - post_start) * 1000).to_i}ms", :info
     # Check the API response for error code
     return api_response_or_rescue(response, block)
@@ -118,7 +118,7 @@ class YvApi
     # TODO: Clean up the call around this so it's unnecessary
     a = Hashie::Mash.new(opts.delete(:auth)) if opts[:auth]
 
-    # For auth'ed API calls with :user => current_user    
+    # For auth'ed API calls with :user => current_user
     basic_auth a.username, a.password if a
   end
 
@@ -164,7 +164,7 @@ class YvApi
       new_response = block.call(response["response"]["data"]["errors"]) if block
 
       # If the block didn't return a substitute, throw an exception based on the original error
-      if new_response.nil? 
+      if new_response.nil?
         begin
           if response["response"]["data"]["errors"] && response["response"]["data"]["errors"].first["key"] == "unknown_error"
             Rails.logger.apc "*** API Server ERR", :error

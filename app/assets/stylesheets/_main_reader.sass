@@ -313,21 +313,21 @@
   position: fixed
   border-radius: 4px
 
-.nav_prev
+.nav_prev,
+.nav_next.rtl
   background-position: 10px 48%
   margin-left: -55px
 
-.nav_prev:hover
-  background-color: #f1f1f1
-
-.nav_next
+.nav_next,
+.nav_prev.rtl
   margin-left: 473px
   background-position: -58px 48%
 
+.nav_prev:hover,
 .nav_next:hover
   background-color: #f1f1f1
 
-.snap 
+.snap
   position: absolute
   bottom: 30px
 
@@ -423,7 +423,7 @@
   background:
     image: image-url("big_list_badge.png")
     position: 0 19px
-  
+
 #main .big_list .user
   overflow: hidden
   img

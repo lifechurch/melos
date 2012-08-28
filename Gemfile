@@ -16,7 +16,7 @@ gem 'hashie',                 '~> 1.2.0'
 gem 'heroku',                 '~> 2.25'
 gem 'httparty',               '0.8.2' # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (effecting memcache)
 gem 'http_accept_language',   '~> 1.0.2'
-gem 'koala',                  '~> 1.3.0' # 1.4.1
+gem 'koala',                  '~> 1.4.1'
 gem 'newrelic_rpm',           '~> 3.3.4'
 gem 'omniauth-facebook',      '~> 1.2.0' # 1.3.0
 gem 'omniauth-google-oauth2', '~> 0.1.9'
