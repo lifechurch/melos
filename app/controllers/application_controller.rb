@@ -39,6 +39,9 @@ class ApplicationController < ActionController::Base
   def set_site
     site_class = SiteConfigs.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
     @site = site_class.new
+
+    #render marketing page if bible.com root
+    render 'pages/bdc_home' if @site.class == SiteConfigs::Bible && request.path =~ /^\W*$/
   end
 
   # Manually throw a 404

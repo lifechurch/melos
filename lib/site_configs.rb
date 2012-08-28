@@ -6,7 +6,8 @@ module SiteConfigs
     # Define white-label classes here.
     hash["biblesocietywebsite.org"] = SiteConfigs::ElSalvador
     hash["biblesociety.co.za"] = SiteConfigs::Sabs
-    hash["lvh.me"] = SiteConfigs::Sabs
+    hash["bible.com"] = SiteConfigs::Bible
+    hash["lvh.me"] = SiteConfigs::Bible
     hash
   end
 

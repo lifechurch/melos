@@ -16,7 +16,7 @@
         %div{class: "flash_#{key}"}= msg
       #container{:class => @sidebar == false ? 'no_sidebar' : ''}
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
-          = render '/shared/nav_primary'
+          = render '/shared/nav_primary' unless @main_nav == false
           = content_for?(:main) ? yield(:main) : yield
           - if content_for? :main_trailer
             = yield :main_trailer
