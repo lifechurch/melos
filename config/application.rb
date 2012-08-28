@@ -73,7 +73,15 @@ module YouversionWeb
         "http://#{new_server_name}#{new_path}"
       end
 
-      r301 /.*/, mobile_rewrite, if: Proc.new { |rack_env| !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/settings\/notifications|^\/status$)/}
+      should_rewrite_mobile = Proc.new do |rack_env|
+        # forward to mDot if a mobile device and not: notifications or status pages, assets (for staging and local dev)
+        mobile = !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/settings\/notifications|^\/status$|^\/assets\/)/
+        # don't forwards to mDot if bible.com root
+        mobile = false if rack_env["SERVER_NAME"] =~ /^(?:(?:.*\.)?bible\.com|lvh\.me)/ && rack_env["PATH_INFO"] =~ /^\W*$/
+        mobile
+      end
+
+      r301 /.*/, mobile_rewrite, if: should_rewrite_mobile
 
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)
