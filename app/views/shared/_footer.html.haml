@@ -41,3 +41,5 @@
               - url = "/#{loc}" + url_for(params.merge({locale: loc, only_path:true})) if loc == I18n.default_locale #default locale is ommited (routing-filter gem) for overall convenience, but removes /<default locale> from url_for path, so we must add it explicitly here.
               %option{value: url, selected: loc == I18n.locale}= t("language name", locale: loc)
               -#%option{value: l10n_path, selected: loc == I18n.locale}= t("language name", locale: loc)
+  -unless ENV['RACK_ENV'] =~ /production/i
+    %p.small.mute.float_right= "Non-production deployment, pointing at: #{Cfg.try :api_root}"
