@@ -41,6 +41,10 @@ class ApplicationController < ActionController::Base
     @site = site_class.new
 
     #render marketing page if bible.com root
+    Rails.logger.apc "Request.domain == #{request.domain}", :info
+    Rails.logger.apc "Request.domain(2) == #{request.domain(2)}", :info
+    Rails.logger.apc "Request.subdomain == #{request.subdomain}", :info
+    Rails.logger.apc "Request.path == #{request.path}", :info
     render 'pages/bdc_home' if @site.class == SiteConfigs::Bible && request.path =~ /^\W*$/
   end
 

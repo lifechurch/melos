@@ -7,6 +7,7 @@ module SiteConfigs
     hash["biblesocietywebsite.org"] = SiteConfigs::ElSalvador
     hash["biblesociety.co.za"] = SiteConfigs::Sabs
     hash["bible.com"] = SiteConfigs::Bible
+    hash["dev.bible.com"] = SiteConfigs::Bible
     hash["lvh.me"] = SiteConfigs::Bible
     hash
   end
