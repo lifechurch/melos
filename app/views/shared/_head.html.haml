@@ -4,15 +4,17 @@
   %meta{property: "og:image", content: "#{url_for(asset_path('app-icon-english-512x512.png'))}"}
 
   /[if IE]
-  %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
+    %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
+
   = stylesheet_link_tag 'application'
   = stylesheet_link_tag 'wysiwyg/jquery.wysiwyg.css'
+
   /[if IE 9]
-  = stylesheet_link_tag "ie9.css"
+    = stylesheet_link_tag "ie9.css"
   /[if IE 8]
-  = stylesheet_link_tag "ie8"
+    = stylesheet_link_tag "ie8"
   /[if IE 7]
-  = stylesheet_link_tag "ie7"
+    = stylesheet_link_tag "ie7"
 
 - if content_for? :stylesheets
   = yield :stylesheets
