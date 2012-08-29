@@ -23,7 +23,7 @@ YouversionWeb::Application.configure do
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
-  
+
   # See everything in the log (default is :info)
   config.log_level = :debug
 
@@ -35,10 +35,10 @@ YouversionWeb::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
+
   #memcache
   config.cache_store = :dalli_store
-  
+
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
@@ -47,9 +47,9 @@ YouversionWeb::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   config.action_controller.asset_host = "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
-  
+
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css )
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css bdc_home.css )
 
 end
 
