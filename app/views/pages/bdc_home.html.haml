@@ -1,34 +1,55 @@
 - @main_nav = false
 - @sidebar = false
-- @title = 'Bible'
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "bdc_home"
 
 = cache "bdc_welcome", expires_in: 5.minutes do
   %article
-    %h1 Bible.com has joined the YouVersion family!
-    %p
-      Now, Bible.com features a free online Bible from YouVersion. The simple, ad-free Bible experience loved by millions is available right here at Bible.com.
-    %p
-      It’s a new way to experience the unchanging truth of the Bible.
-      = link_to('Read the Bible Now', bible_path)
-
-    %ul
-      %li
-        %h2 Now the Bible is an app!
+    %div#hero
+      %div#hero_content
+        %h1 Welcome to the New Bible.com!
         %p
-          Download the free YouVersion Bible App on your mobile device and you’ll have your Bible with you no matter where you go.
-          = link_to('Download the Bible App', mobile_path)
-      %li
-        %h2 Read the Bible.
-        %p Take your choice from hundreds of Bible versions and languages. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it.
-      %li
-        %h2 Study the Bible.
-        %p Highlight in your favorite color, bookmark your favorite Bible verses, and make notes about what you’re learning. Not only are you spending time in God’s Word, you’re building a history of your interaction with the Bible.
-      %li
-        %h2 Subscribe to Bible Plans.
-        %p Cover the whole Bible, focus on a topic, or read a devotional from a gifted teacher. Choose your plan and each day you’ll find a Bible selection waiting for you.
-      %li
-        %h2 Take the Bible with you.
-        %p When you use the Bible App, all of your notes, bookmarks, highlights, plans, and more from Bible.com will be synced with your mobile device. You’ll have access to it all, no matter if you’re reading the Bible on your phone, tablet, or computer.
+          Now, Bible.com features a <strong>free</strong> online Bible from YouVersion. The simple, <strong>ad-free Bible experience</strong> loved by millions is available right here at Bible.com.
+        %div.clear
+        %span
+          = link_to('Read the Bible Now', bible_path, :class => 'cta')
+    %img.hero_shadow{:src => '/assets/section_shadow.png'}
+    %ul
+      %li.read_bible.first
+        %div.pod_content
+          %h2 Read the Bible.
+          %p
+            %span.narrow Take your choice from <strong>nearly 300 hundred Bible versions</strong> in <strong>more than 150 languages</strong>.
+          %p Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it.
+      %li.study_bible
+        %div.pod_content
+          %h2 Study the Bible.
+          %p
+            %span.narrow <strong>Highlight</strong> in your favorite color, <strong>bookmark</strong> your favorite Bible verses, and make notes about what you’re learning.
+          %p Not only are you spending time in God’s Word, you’re building a history of your interaction with the Bible.
+      %li.subscribe_bible
+        %div.pod_content
+          %h2 Subscribe to Bible Plans.
+          %p
+            %span.narrow Cover the whole Bible, focus on a topic, or read a devotional from a gifted teacher.
+          %p Choose your plan and each day you’ll find a Bible selection waiting for you.
+      %li.take_bible.last
+        %div.pod_content
+          %h2 Take the Bible with you.
+          %p
+            %span.narrow You can also <a href="mobile">download</a> the Bible App for free on any mobile device.
+          %p When you use the mobile app, your notes, bookmarks, highlights, plans, and more will be <strong>synced with Bible.com</strong>. You’ll have access to it all, no matter if you’re reading the Bible on your phone, tablet, or computer.
 
+    %div.explore_cta
+      %h1 Get started now.
+      %span
+        = link_to('Explore the new Bible.com', bible_path)
 
+    %div.bottom_cta
+      %h2 Now the Bible is an app!
+      %p
+        Download the free YouVersion Bible App on your mobile device and you’ll have your Bible with you no matter where you go.
+      %span
+        = link_to('Download the Bible App', 'http://youversion.com/download')
 

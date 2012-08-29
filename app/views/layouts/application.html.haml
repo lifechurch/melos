@@ -27,7 +27,7 @@
         - else
           - unless @sidebar == false
             = render '/shared/sidebar'
-      = render '/shared/footer'
+        = render '/shared/footer'
     - if @reader_menus == true
       = render_cell :book_selector, :display, {version: @version}
       = render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, reference: @reference, site: @site}
