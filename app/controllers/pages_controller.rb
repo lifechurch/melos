@@ -25,6 +25,10 @@ class PagesController < ApplicationController
 
 
   def routing_error
-    render 'pages/error_404'
+    if bdc_user?
+      render 'pages/bdc_home', status: 404
+    else
+      render 'pages/error_404', status: 404
+    end
   end
 end
