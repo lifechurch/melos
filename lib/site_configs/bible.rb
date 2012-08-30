@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module SiteConfigs
   class Bible < Site
 
@@ -10,7 +11,7 @@ module SiteConfigs
     end
 
     def description
-      "The simple, ad-free Bible experience loved by millions is available right here at Bible.com. It's a new way to experience the unchanging truth of the Bible."
+      "Bible.com is all new! Enjoy a free online Bible from YouVersion. Now, the simple, ad-free Bible experience loved by millions is available at Bible.com."
     end
 
     def to_s
