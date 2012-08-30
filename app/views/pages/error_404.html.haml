@@ -3,7 +3,8 @@
 - @title = 'Page not found'
 
 %article.error
-  %h3= page_not_found_messages.sample.html_safe
+  %h2= page_not_found_messages.sample.html_safe
+  %hr
   %p
   - if bdc_user?
     Bible.com copy
