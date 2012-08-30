@@ -26,11 +26,14 @@ module YouversionWeb
       #high frequency BB traffic
       r301 %r{^/(bb|js)/(.+)}, 'http://bb-static.youversion.com/$1/$2'
 
+      # re-direct Bible.com /mobile and /download traffic to youversion for SEO
+      r301 %r{^(/.{2,5})?(/download$|/mobile$|/app$|/iphone$|/bb$|/android$/$descargar)}, 'http://www.youversion.com$1$2', if: Proc.new{|rack_env| rack_env["SERVER_NAME"] =~ /^(?:(?:.*\.)?bible\.com|lvh\.me)/}
+
       # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
       r301 %r{^(/.{2,5})?(/app$|/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
 
-      #engagement site (pre mobile redirect)
+      # engagement site (pre mobile redirect)
       r301 %r{^(/.{2,5})?(/now$)}, 'http://now.youversion.com'
 
       # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
