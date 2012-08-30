@@ -13,15 +13,15 @@ YouversionWeb::Application.routes.draw do
   match 'bible/widgets/bookmarks' => 'references#bookmarks'
   resources 'versions', :only => [:index, :show]
 
-  resources 'bookmarks', :except => [:index] 
+  resources 'bookmarks', :except => [:index]
 
   resources 'likes', :only => [:index]
   match 'notes/:id/like' => 'notes#like', :as => 'like', :via => :put
-  
+
   resources 'notes', :except => [:index]
   match 'notes' => 'notes#index', :as => 'all_notes'
 
-  
+
   match 'search' => 'search#show'
   match 'privacy' => 'users#privacy'
   match 'terms' => 'users#terms'
@@ -52,7 +52,7 @@ YouversionWeb::Application.routes.draw do
   match 'confirm' => 'users#confirmed', :as => "confirm", :via => :post
   match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
   match 'resend' => 'users#resend_confirmation', :as => "resend_confirmation"
-  
+
   # Sessions
   match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
   match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
@@ -86,7 +86,7 @@ YouversionWeb::Application.routes.draw do
   get   'settings/forgot_password' => 'users#forgot_password_form', as: 'forgot_password'
   post  'settings/forgot_password' => 'users#forgot_password', as: 'forgot_password'
   get   'settings/delete_account' => 'users#delete_account_form', as: 'delete_account'
-  post  'settings/delete_account' => 'users#delete_account', as: 'delete_account' 
+  post  'settings/delete_account' => 'users#delete_account', as: 'delete_account'
 
   # connetions
   match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'
@@ -94,7 +94,7 @@ YouversionWeb::Application.routes.draw do
   match 'connections/:provider/new' => 'connections#new', :as => 'new_connection'
   match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
   delete 'connections/:provider/delete' => 'connections#destroy', as: 'delete_connection'
-  
+
   match 'mobile' => 'pages#mobile'
   match 'donate' => 'pages#donate'
   match 'about' => 'pages#about'
@@ -109,6 +109,8 @@ YouversionWeb::Application.routes.draw do
 
 
   root to: 'references#show'
+
+  match '*a', :to => 'pages#routing_error'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
