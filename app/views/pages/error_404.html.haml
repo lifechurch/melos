@@ -1,0 +1,11 @@
+- @main_nav = true
+- @sidebar = false
+- @title = 'Page not found'
+
+%article.error
+  %h3= page_not_found_messages.sample.html_safe
+  %p
+  - if bdc_user?
+    Bible.com copy
+  - else
+    YouVersion.com copy

@@ -25,8 +25,6 @@ class PagesController < ApplicationController
 
 
   def routing_error
-    flash[:error] = "We're sorry, your page could not be found."
-    render('public/404.html', :layout => false) and return unless @site.class == SiteConfigs::Bible
-    render('pages/bdc_home')
+    render 'pages/error_404'
   end
 end

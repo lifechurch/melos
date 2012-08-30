@@ -110,7 +110,9 @@ YouversionWeb::Application.routes.draw do
 
   root to: 'references#show'
 
-  match '*a', :to => 'pages#routing_error'
+  # Rails 3.1 hack to catch any remaining routes (404's)
+  # with globbing setting params[:path] to the bad path
+  match '*path', :to => 'pages#routing_error'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -41,10 +41,10 @@ module ApplicationHelper
         locale_paths[I18n.locale]
       when I18n.locale != I18n.default_locale && locale_paths[:default]
         locale_paths[:default]
-      else 
+      else
         default_locale_path
     end
-    
+
     path.insert(0, '/') unless path.to_s == ''
 
     query_param = false
@@ -78,6 +78,10 @@ module ApplicationHelper
       end
   end
 
+  def bdc_user?
+    @site.class == SiteConfigs::Bible rescue false
+  end
+
   def is_dark?(hex_color)
     convert_to_brightness_value(hex_color) <= 382.5 #halfway between black (0+0+0 = 0) and white (255+255+255 = 765)
   end
@@ -97,7 +101,7 @@ module ApplicationHelper
     html
   end
 
-  private 
+  private
   def lang_code(locale, host=nil)
     case host
       when :blog

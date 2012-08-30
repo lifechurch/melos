@@ -1,7 +1,8 @@
-= cache "head_meta", expires_in: 3.minutes do
+= cache "head_meta_#{@site}", expires_in: 3.minutes do
   %meta{:charset => 'utf-8'}
   %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
   %meta{property: "og:image", content: "#{url_for(asset_path('app-icon-english-512x512.png'))}"}
+  %meta{name: 'Description', content: @site.description}
 
   /[if IE]
     %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
