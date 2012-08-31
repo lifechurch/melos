@@ -1,15 +1,15 @@
-The NEW YouVersion.com is brought to you by:
+The NEW YouVersion.com and Bible.com are brought to you by:
 
 THE DESIGN TEAM:
-Design/UX coordinated by Andy Knight (@andyknight)
+Design/UX coordinated by Andy Knight (@andyknight) and Hugh Griffith (@interactionhero)
 Visual design by Rob Soulé (@rsoule)
 Icons by Rogie (@rogie)
-Front-end development by Nathan Smith (@nathansmith)
+Front-end development by Nathan Smith (@nathansmith) and Jon Stutzman (@psddesigner)
 Additional front-end work by Judson Collier (@judsoncollier)
 
 THE DEVELOPMENT TEAM:
-Chad Bailey (@cebailey)
 Evan Prothro (@eprotho)
+Chad Bailey (@cebailey)
 Special-addition bottom-of-the-9th asset pipeline pinch hitter:
 Jon McCartie (@jmccartie)
 
@@ -22,9 +22,13 @@ Josh Turmel (@jt)
 Chris Vaughn (@chrisvaughn)
 Tommy George (@tommygeorge)
 
+The YouVersion Dev Ops Team:
+Will Platnick (@WillPlatnick)
+Sean Corder
+
 TRANSLATION TEAMS:
 Too numerous to list here, but thanks for your help!
 http://www.youversion.com/about
 
-And last but certainly not least, our Scrum Master, Amber Smart (@ambersmart)!
+And last but _certainly_ not least, our Scrum Master, Amber Smart (@ambersmart)!
 
