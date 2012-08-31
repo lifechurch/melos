@@ -1,9 +1,9 @@
 /**
  * Internationalization: Afrikaans language
- * 
+ *
  * Depends on jWYSIWYG, $.wysiwyg.i18n
- * 
- * By: 
+ *
+ * By:
  */
 (function ($) {
 	if (undefined === $.wysiwyg) {
@@ -71,7 +71,7 @@
 				"upload_action": 		"Upload new file to current directory",
 				"mkdir_action": 		"Create new directory",
 				"remove_action": 		"Remove this file",
-				"rename_action": 		"Rename this file" ,	
+				"rename_action": 		"Rename this file" ,
 				"delete_message": 		"Are you sure you want to delete this file?",
 				"new_directory": 		"New Directory",
 				"previous_directory": 	"Go to previous directory",

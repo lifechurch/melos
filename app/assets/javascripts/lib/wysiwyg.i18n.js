@@ -1,6 +1,6 @@
 /**
  * Internationalization plugin
- * 
+ *
  * Depends on jWYSIWYG
  */
 (function ($) {
@@ -39,8 +39,6 @@
 					$.wysiwyg.autoload.lang("lang." + lang + ".js", function () {
 						$.wysiwyg.i18n.init(Wysiwyg, lang);
 					});
-				} else {
-					throw 'Language "' + lang + '" not found in $.wysiwyg.i18n. You need to include this language file';
 				}
 			}
 
