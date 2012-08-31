@@ -1,21 +1,37 @@
 # encoding: UTF-8
 module SiteConfigs
-  
+
   class Site
     def logo_style
       "background: no-repeat 0 14px; width: 150px"
     end
-    
+
     def logo_image
       'yv_logo.png'
     end
-    
+
+    def title
+      'YouVersion.com'
+    end
+
+    def description
+      'YouVersion is the online Bible website for YouVersion, makers of the free Bible App™, with all of the same tools: Bookmarks, Plans, Notes, and more.'
+    end
+
+    def ga_code
+      'UA-351257-4'
+    end
+
+    def ga_domain
+      'youversion.com'
+    end
+
     def default_version; end
-    
+
     def donate_path; end
-    
+
     def versions; end
-    
+
     def partners #this static content will eventually come from the API, putting it here for now as white-labels could have issue
 
       partners = {:en      => [{name: 'American Bible Society', url: 'http://www.americanbible.org/', image: 'ABS.jpg'},
@@ -65,10 +81,10 @@ module SiteConfigs
       partners[:"en-GB"] = partners[:en]
       partners
     end
-    
+
     def to_s
       self.class.name.gsub('SiteConfigs::', '')
     end
-  
+
   end
 end

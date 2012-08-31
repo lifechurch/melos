@@ -26,11 +26,14 @@ module YouversionWeb
       #high frequency BB traffic
       r301 %r{^/(bb|js)/(.+)}, 'http://bb-static.youversion.com/$1/$2'
 
+      # re-direct Bible.com /mobile and /download traffic to youversion for SEO
+      r301 %r{^(/.{2,5})?(/download$|/mobile$|/app$|/iphone$|/bb$|/android$|/descargar$|/donate.*$)}, 'http://www.youversion.com$1$2', if: Proc.new{|rack_env| rack_env["SERVER_NAME"] =~ /^(?:(?:.*\.)?bible\.com|lvh\.me)/}
+
       # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
       r301 %r{^(/.{2,5})?(/app$|/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
 
-      #engagement site (pre mobile redirect)
+      # engagement site (pre mobile redirect)
       r301 %r{^(/.{2,5})?(/now$)}, 'http://now.youversion.com'
 
       # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
@@ -73,7 +76,15 @@ module YouversionWeb
         "http://#{new_server_name}#{new_path}"
       end
 
-      r301 /.*/, mobile_rewrite, if: Proc.new { |rack_env| !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/settings\/notifications|^\/status$)/}
+      should_rewrite_mobile = Proc.new do |rack_env|
+        # forward to mDot if a mobile device and not: notifications or status pages, assets (for staging and local dev)
+        mobile = !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/settings\/notifications|^\/status$|^\/assets\/)/
+        # don't forwards to mDot if bible.com root
+        mobile = false if rack_env["SERVER_NAME"] =~ /^(?:(?:.*\.)?bible\.com|lvh\.me)/ && rack_env["PATH_INFO"] =~ /^\W*$/
+        mobile
+      end
+
+      r301 /.*/, mobile_rewrite, if: should_rewrite_mobile
 
       ### BIBLE REDIRECTS
       # /bible/verse/niv/john/3/16 (normal)

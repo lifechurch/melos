@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out, :verses_in_chapter
+  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out, :verses_in_chapter, :bdc_user?
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
@@ -39,6 +39,9 @@ class ApplicationController < ActionController::Base
   def set_site
     site_class = SiteConfigs.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
     @site = site_class.new
+
+    #render marketing page if bible.com root
+    render 'pages/bdc_home' if @site.class == SiteConfigs::Bible && request.path =~ /^\W*$/
   end
 
   # Manually throw a 404

@@ -563,6 +563,8 @@ en:
     partners text:                              "Without our generous Bible publishing partners, YouVersion simply would not be able to provide our worldwide community with so many Bibles. Many of you have asked how you can thank these vital supporters of YouVersion's mission. You can learn more about them, their ministries, and ways you can support them through the links below."
     translation title:                          "Our Translation Teams"
     learn more:                                 "Learn More"
+    bible dot com title:                        "What happened to the old Bible.com?"
+    bible dot com copy:                         "If you are looking for content from Bud and Betty Miller or the old Bible.com website please visit their new website at <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title:                                      "Press Area"
     contact header:                             "Press Contact Information"
@@ -640,3 +642,9 @@ en:
         highlights:                             "Highlights:"
         on:                                     "On"
         off:                                    "Off"
+  app errors:
+    404 explanation:                             "Unfortunately, we didn't find a page for <em>%{requested_path}</em>. If you think this page should exist, please let our <a href='%{support_url}'>support team</a> know, or head back to the <a href='%{reader_path}'>reader</a>."
+    404 message 1:                               "That page is so lost, only Jesus could find it."
+    404 message 2:                               "Book of Errors 4:04 - 'And it was said unto them, that page was not found.'"
+    404 message 3:                               "Seek and ye shall find -- except for this page. It's missing."
+    404 message 4:                               "Sorry, this page may have been raptured -- we couldn't find it."

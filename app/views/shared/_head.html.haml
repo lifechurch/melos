@@ -1,26 +1,29 @@
-%meta{:charset => 'utf-8'}
-%meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
-%meta{property: "og:image", content: "#{url_for(asset_path('app-icon-english-512x512.png'))}"}
-%title
-  = @title
-  = "|" if @title
-  = @subtitle || t("youversion")
+= cache "head_meta_#{@site}", expires_in: 3.minutes do
+  %meta{:charset => 'utf-8'}
+  %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
+  %meta{property: "og:image", content: "#{url_for(asset_path('app-icon-english-512x512.png'))}"}
+  %meta{name: 'Description', content: @site.description}
+  %meta{name: "HandheldFriendly", content: "True"}
+  %meta{name: "MobileOptimized", content: "320"}
+  %meta{name: "viewport", content: "width=device-width, target-densitydpi=160dpi, initial-scale=1.0"}
 
+  = stylesheet_link_tag 'application'
+  = stylesheet_link_tag 'wysiwyg/jquery.wysiwyg.css'
+
+  /[if IE 9]
+    = stylesheet_link_tag "ie9.css"
+  /[if IE 8]
+    = stylesheet_link_tag "ie8"
+  /[if IE 7]
+    = stylesheet_link_tag "ie7"
+
+- if content_for? :stylesheets
+  = yield :stylesheets
 
 /[if IE]
   %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
 
-= stylesheet_link_tag 'application'
-= stylesheet_link_tag 'wysiwyg/jquery.wysiwyg.css'
-
-/[if IE 9]
-  = stylesheet_link_tag "ie9.css"
-
-/[if IE 8]
-  = stylesheet_link_tag "ie8"
-
-/[if IE 7]
-  = stylesheet_link_tag "ie7"
-
-- if content_for? :stylesheets
-  = yield :stylesheets
+%title
+  = @title
+  = "|" if @title
+  = @subtitle || @site.title

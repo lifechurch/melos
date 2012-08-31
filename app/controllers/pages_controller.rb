@@ -9,17 +9,26 @@ class PagesController < ApplicationController
   def about; end
   def press; end
   def mobile; end
-  
+
   def open
     render json: 10.to_json, callback: params[:callback]
   end
-  
+
   def generic_error
   end
-  
+
   def status; end
   def sleep_me
     sleep(params[:time].to_i)
     render text: "I'm awake now"
+  end
+
+
+  def routing_error
+    if bdc_user?
+      render 'pages/bdc_home', status: 404
+    else
+      render 'pages/error_404', status: 404
+    end
   end
 end
