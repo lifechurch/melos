@@ -3,6 +3,9 @@
   %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
   %meta{property: "og:image", content: "#{url_for(asset_path('app-icon-english-512x512.png'))}"}
   %meta{name: 'Description', content: @site.description}
+  %meta{name: "HandheldFriendly", content: "True"}
+  %meta{name: "MobileOptimized", content: "320"}
+  %meta{name: "viewport", content: "width=device-width, target-densitydpi=160dpi, initial-scale=1.0"}
 
   /[if IE]
     %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
