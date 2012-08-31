@@ -201,9 +201,10 @@ p
   #header_outer
     background: none
     padding: 0
-    position: static
+    position: relative
     width: auto
     z-index: 0
+    left: -2px
 
   #header
     width: 100%
@@ -218,7 +219,7 @@ p
     margin: 0
 
     article
-      position: static
+      position: relative
       min-height: auto
       padding: 0
 
@@ -235,9 +236,12 @@ p
 
           .cta
             padding: 5px 35px
-            width: 90%
+            width: 80%
             margin: 0 auto
             float: none
+          
+          .cta:hover
+            color: #fff
 
           h1
             font-size: 36px
@@ -247,8 +251,8 @@ p
             font-size: 15px
 
       .hero_shadow
-        position: static
-        margin-top: -23px
+        position: relative
+        top: -13px
 
       ul
         margin: 0
@@ -259,23 +263,26 @@ p
           padding: 0
           width: 90%
           border-radius: 10px
+          background: none
           .pod_content
             border-radius: 10px
           p
             margin: 0
-          h2, p
+          h2, p span.narrow
             width: 70%
+          p span.narrow
+            display: block
+          
         li.last
           margin-bottom: 0
-
-        li.read_bible
-          background: image-url("read_bible_icon_m.png") no-repeat 93% 20px #F0EFED
-        li.study_bible
-          background: image-url("highlight_bible_icon_m.png") no-repeat 93% 20px #F0EFED
-        li.subscribe_bible
-          background: image-url("subscribe_bible_icon_m.png") no-repeat 93% 20px #F0EFED
-        li.take_bible
-          background: image-url("take_bible_icon_m.png") no-repeat 93% 20px #F0EFED
+        li.read_bible div
+          background: #F0EFED image-url("read_bible_icon_m.png") no-repeat 93% 20px 
+        li.study_bible div
+          background: #F0EFED image-url("highlight_bible_icon_m.png") no-repeat 93% 20px
+        li.subscribe_bible div
+          background: #F0EFED image-url("subscribe_bible_icon_m.png") no-repeat 93% 20px
+        li.take_bible div
+          background: #F0EFED image-url("take_bible_icon_m.png") no-repeat 93% 20px
 
       .explore_cta
         border-radius: 0
@@ -286,7 +293,9 @@ p
           margin: 0
         h1
           margin-bottom: 10px
-
+        a
+          width: 80%
+          
       .bottom_cta
         width: auto
         padding: 0 20px
@@ -301,7 +310,7 @@ p
           margin: 0 0 0 90px
         a
           margin: 20px 0
-          width: 100%
+          width: 90%
 
   .flash_error
     width: auto
