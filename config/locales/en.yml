@@ -642,3 +642,5 @@ en:
         highlights:                             "Highlights:"
         on:                                     "On"
         off:                                    "Off"
+  app errors:
+    404 explanation:                                   "Unfortunately, we didn't find a page for <em>%{requested_path}</em>. If you think this page should exist, please let our <a href='%{support_url}}'>support team</a> know, or head back to the <a href='%{reader_path}'>reader</a>."

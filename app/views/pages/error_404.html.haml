@@ -5,8 +5,4 @@
 %article.error
   %h2= page_not_found_messages.sample.html_safe
   %hr
-  %p
-  - if bdc_user?
-    Bible.com copy
-  - else
-    YouVersion.com copy
+  %p= t('app errors.404 explanation', requested_path: params[:path], support_url: external_url(:support), reader_path: bible_path).html_safe

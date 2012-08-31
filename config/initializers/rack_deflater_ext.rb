@@ -63,7 +63,7 @@ module Rack
         @body.close if @body.respond_to?(:close)
       end
     end
- 
+
     class DeflateStream
       def each
         @deflater = ::Zlib::Deflate.new(*DEFLATE_ARGS)
