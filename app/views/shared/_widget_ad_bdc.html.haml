@@ -1,5 +1,5 @@
 = cache "widget_ad_bdc", expires_in: 5.minutes do
-  .widget
-    %aside
-      %h4 Bible.com has joined the YouVersion family!
-      = link_to 'Learn more', 'http://www.bible.com'
+  %div{style: "background-color: #91B164; border-radius: 5px; border: 1px solid #91B164; margin-bottom: 10px; padding: 10px 20px; box-shadow: inset 0px 1px #C8D8B2; -moz-box-shadow: inset 0px 1px #c8d8b2; -webkit-box-shadow: inset 0px 1px #c8d8b2"}
+    %aside{style: "background: none !important; border-radius: 0; border: none"}
+      %h4{style: "font-size: 25px; font-weight: normal; color: #FFF; letter-spacing: -0.04em; margin-bottom: 2px !important; line-height: 1.1em"} Bible.com has joined the YouVersion family!
+      = link_to 'Learn more', 'http://www.bible.com', style: "color: #FFF; font-weight: bold; font-size: 18px"
