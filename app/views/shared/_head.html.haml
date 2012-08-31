@@ -7,9 +7,6 @@
   %meta{name: "MobileOptimized", content: "320"}
   %meta{name: "viewport", content: "width=device-width, target-densitydpi=160dpi, initial-scale=1.0"}
 
-  /[if IE]
-    %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
-
   = stylesheet_link_tag 'application'
   = stylesheet_link_tag 'wysiwyg/jquery.wysiwyg.css'
 
@@ -22,6 +19,9 @@
 
 - if content_for? :stylesheets
   = yield :stylesheets
+
+/[if IE]
+  %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
 
 %title
   = @title
