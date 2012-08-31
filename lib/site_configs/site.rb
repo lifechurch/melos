@@ -18,6 +18,14 @@ module SiteConfigs
       'YouVersion is the online Bible website for YouVersion, makers of the free Bible App™, with all of the same tools: Bookmarks, Plans, Notes, and more.'
     end
 
+    def ga_code
+      'UA-351257-4'
+    end
+
+    def ga_domain
+      'youversion.com'
+    end
+
     def default_version; end
 
     def donate_path; end
