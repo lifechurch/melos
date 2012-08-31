@@ -24,8 +24,8 @@ class ApplicationController < ActionController::Base
       visitor_locale = params[:locale].to_sym if I18n.available_locales.include?(params[:locale].try(:to_sym))
       from_param = !visitor_locale.nil?
       visitor_locale ||= cookies[:locale].to_sym if I18n.available_locales.include?(cookies[:locale].try(:to_sym)) #forwards compatibility with lang code changes
-      visitor_locale ||= request.preferred_language_from(I18n.available_locales)
-      visitor_locale ||= request.compatible_language_from(I18n.available_locales)
+      visitor_locale ||= request.preferred_language_from(I18n.available_locales).try(:to_sym)
+      visitor_locale ||= request.compatible_language_from(I18n.available_locales).try(:to_sym)
       visitor_locale ||= I18n.default_locale
 
       cookies.permanent[:locale] = visitor_locale
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
       return redirect_to params.merge!(locale: "") if from_param && visitor_locale == I18n.default_locale
       return redirect_to params.merge!(locale: visitor_locale) if !from_param && visitor_locale != I18n.default_locale
 
-      I18n.locale = visitor_locale
+      I18n.locale = visitor_locale.to_sym
   end
 
   def set_site
