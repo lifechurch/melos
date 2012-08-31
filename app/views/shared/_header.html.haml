@@ -1,7 +1,7 @@
 %header#header{:role => 'banner'}
   = cache "header_logo_#{@site}", expires_in: 1.hour do
     %a#yv_logo{:href => '/', style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})" }
-      =t("youversion")
+      =@site.title
   %nav
     %ul
       - if current_auth
@@ -25,7 +25,7 @@
             %a{:href => connections_path}
               %span
                 =t("find friends")
-      
+
       - else
         = cache "header_anon_#{I18n.locale}", expires_in: 1.hour do
           %li

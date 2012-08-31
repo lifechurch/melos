@@ -14,11 +14,17 @@
     %p= t('about page.youversion copy')
 
     %p= t('about page.youversion copy 2')
+
+  - if @site.class == SiteConfigs::Bible
+
+    %h2= t('about page.bible dot com title')
+    %p= t('about page.bible dot com copy').html_safe
+
   - if partners = @site.partners.try(:[], I18n.locale)
     .partners_content
       %h2= t('about page.partners title')
       %p= t('about page.partners text')
-      
+
       - partners.each do |p|
         .partners_box
           %div

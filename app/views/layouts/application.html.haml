@@ -16,7 +16,7 @@
         %div{class: "flash_#{key}"}= msg
       #container{:class => @sidebar == false ? 'no_sidebar' : ''}
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
-          = render '/shared/nav_primary'
+          = render '/shared/nav_primary' unless @main_nav == false
           = content_for?(:main) ? yield(:main) : yield
           - if content_for? :main_trailer
             = yield :main_trailer
@@ -37,5 +37,7 @@
       = render '/shared/menu_audio_player'
       = render '/shared/modal_single_verse' unless @verse_modals == false
       = render '/shared/modal_share_verse' unless @verse_modals == false
+    =cache "js_#{@site}", expires_in: 5.minutes do
+      = render '/shared/javascripts'
+      = render '/shared/google_analytics'
 
-    = render '/shared/javascripts'
