@@ -34,7 +34,12 @@
 				lang = this.options.lang;
 			}
 
+			console.log("here");
+			console.log(lang);
+			console.log(this.options.wysiwygLang);
+
 			if ((lang !== this.options.wysiwygLang) && (undefined === $.wysiwyg.i18n.lang[lang])) {
+
 				if ($.wysiwyg.autoload) {
 					$.wysiwyg.autoload.lang("lang." + lang + ".js", function () {
 						$.wysiwyg.i18n.init(Wysiwyg, lang);
