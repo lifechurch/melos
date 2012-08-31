@@ -7,7 +7,7 @@ module SiteConfigs
     end
 
     def title
-      "Bible.com"
+      "The New Bible.com"
     end
 
     def description
