@@ -4,8 +4,9 @@
       &copy;
       = Date.today.year
       %a{:href => 'http://www.lifechurch.tv'}=t("lifechurch short url")
-      %span.separator
+      %span.separator.mobile-remove
         |
+      %br.mobile-add
       %a{:href => external_url(:now)}=t("now")
       %span.separator
         |
