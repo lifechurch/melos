@@ -15,12 +15,12 @@ module ApplicationHelper
   end
 
   def bible_path(ref=nil, opts={})
-    ref = last_read || Reference.new(book: "gen", chapter: "1", version: current_version) if ref.nil?
+    ref = last_read || Reference.new(book: "john", chapter: "1", version: current_version) if ref.nil?
     reference_path(ref.osis, opts)
   end
 
   def bible_url(ref=nil, opts={})
-    ref = last_read || Reference.new(book: "gen", chapter: "1", version: current_version) if ref.nil?
+    ref = last_read || Reference.new(book: "john", chapter: "1", version: current_version) if ref.nil?
     reference_url(ref.osis, opts)
   end
 
