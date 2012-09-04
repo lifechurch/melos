@@ -1,34 +1,35 @@
 %footer#footer{:role => "contentinfo"}
-  %p.float_left
-    &copy;
-    = Date.today.year
-    %a{:href => 'http://www.lifechurch.tv'}=t("lifechurch short url")
-    %span.separator.mobile-remove
-      |
-    %br.mobile-add
-    %a{:href => external_url(:now)}=t("now")
-    %span.separator
-      |
-    %a{:href => about_path}=t("about")
-    %span.separator
-      |
-    %a{:href => 'http://blog.youversion.com/jobs'}=t("jobs")
-    %span.separator
-      |
-    %a{:href => privacy_path}=t("privacy policy")
-    %span.separator
-      |
-    %a{:href => terms_path}=t("terms")
-    %span.separator
-      |
-    %a{:href => press_path}=t("press")
-    %span.separator
-      |
-    %a{:href => external_url(:support)}=t("get support")
-    - unless [:es, :pt, :"pt-PT", :"pt-BR"].include? I18n.locale
+  = cache "#{@site}_footer_#{I18n.locale}", expires_in: 3.minutes do
+    %p.float_left
+      &copy;
+      = Date.today.year
+      %a{:href => 'http://www.lifechurch.tv'}=t("lifechurch short url")
+      %span.separator.mobile-remove
+        |
+      %br.mobile-add
+      %a{:href => external_url(:now)}=t("now")
       %span.separator
         |
-      %a{:href => @site.donate_path || donate_path}=t("donate title")
+      %a{:href => about_path}=t("about")
+      %span.separator
+        |
+      %a{:href => 'http://blog.youversion.com/jobs'}=t("jobs")
+      %span.separator
+        |
+      %a{:href => privacy_path}=t("privacy policy")
+      %span.separator
+        |
+      %a{:href => terms_path}=t("terms")
+      %span.separator
+        |
+      %a{:href => press_path}=t("press")
+      %span.separator
+        |
+      %a{:href => external_url(:support)}=t("get support")
+      - unless [:es, :pt, :"pt-PT", :"pt-BR"].include? I18n.locale
+        %span.separator
+          |
+        %a{:href => @site.donate_path || donate_path}=t("donate title")
   %p.float_right
     %label{:for => 'choose_language'}
       =t("choose language field")
