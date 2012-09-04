@@ -34,6 +34,7 @@ p
 #hero
   background: image-url("laptop.jpg") no-repeat
   height: 535px
+  overflow: hidden
 
   #hero_content
     float: right
@@ -272,7 +273,7 @@ p
         background: none
         background-color: #FFF
         height: auto
-        padding: 16px
+        padding: 16px 16px 0 16px
 
         #hero_content
           float: none
@@ -294,10 +295,19 @@ p
 
           p
             font-size: 15px
+            margin-bottom: 20px
+            
+        #hero_links
+          float: none
+          padding-right: 0
+          margin: 20px auto 0
+          width: 46%
+          div:first-child
+            margin-left: 0
 
       .hero_shadow
         position: relative
-        top: -13px
+        top: -11px
 
       ul
         margin: 0
