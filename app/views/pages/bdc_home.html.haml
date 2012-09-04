@@ -14,6 +14,26 @@
         %div.clear
         %span
           = link_to('Read the Bible Now', bible_path, :class => 'cta')
+      %dev#hero_links
+        %div{style: "height: 40px;"}
+          %div{id: "fb-root"}
+          :javascript
+            function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=#{Cfg.facebook_app_id}";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk');
+          %div.fb-like{'data-href' => "http://www.bible.com", 'data-send' => "false", 'data-layout' => "button_count", 'data-width' => "450", 'data-show-faces' => "true", 'data-font' => "arial"}
+
+        %div{style: "height: 40px;"}
+          %g:plusone{size: "medium", href: "http://www.bible.com"}
+          :javascript
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+
     %img.hero_shadow{:src => asset_path('section_shadow.png')}
     %ul
       %li.read_bible.first
