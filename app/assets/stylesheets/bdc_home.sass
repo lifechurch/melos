@@ -34,6 +34,7 @@ p
 #hero
   background: image-url("laptop.jpg") no-repeat
   height: 535px
+  overflow: hidden
 
   #hero_content
     float: right
@@ -72,6 +73,17 @@ p
       background: #3787d6
       border-color: #3787d6
       color: #FFF
+
+  #hero_links
+    width: 250px
+    clear: right
+    overflow: hidden
+    float: right
+    padding-right: 100px
+    margin-top: 15px
+    div
+      float: left
+      margin-left: 20px
 
 .hero_shadow
   position: relative
@@ -259,7 +271,7 @@ p
         background: none
         background-color: #FFF
         height: auto
-        padding: 16px
+        padding: 16px 16px 0 16px
 
         #hero_content
           float: none
@@ -281,10 +293,19 @@ p
 
           p
             font-size: 15px
+            margin-bottom: 20px
+            
+        #hero_links
+          float: none
+          padding-right: 0
+          margin: 20px auto 0
+          width: 46%
+          div:first-child
+            margin-left: 0
 
       .hero_shadow
         position: relative
-        top: -13px
+        top: -11px
 
       ul
         margin: 0
