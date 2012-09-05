@@ -14,17 +14,17 @@
         %div.clear
         %span
           = link_to('Read the Bible Now', bible_path, :class => 'cta')
-      %div#hero_links
-        %div{style: "height: 40px;"}
-          %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
-          %fb:like{:layout => "button_count", :show_faces => "false", :width => "450", font: "arial"}
-        %div{style: "height: 40px;"}
-          %g:plusone{size: "medium", href: "http://www.bible.com"}
-          :javascript
-            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-            po.src = 'https://apis.google.com/js/plusone.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-
+        %div#hero_links
+          %div{style: "height: 40px;"}
+            %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
+            %fb:like{:layout => "button_count", :show_faces => "false", :width => "450", font: "arial"}
+          %div{style: "height: 40px;"}
+            %g:plusone{size: "medium", href: "http://www.bible.com"}
+            :javascript
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      %br.clear
     %img.hero_shadow{:src => asset_path('section_shadow.png')}
     %ul
       %li.read_bible.first
