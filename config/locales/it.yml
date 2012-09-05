@@ -558,6 +558,8 @@ it:
     partners text: "Senza la generosità degli editori della Bibbia che collaborano con noi, YouVersion semplicemente non potrebbe fornire tante Bibbie alla nostra comunità mondiale. Molti di voi avete chiesto come ringraziare questi sostenitori vitali della missione di YouVersion. Puoi imparare di più su loro, i loro ministeri e i modi per sostenerli attraverso i link seguenti."
     translation title: "I nostri Equipe di Traduzione"
     learn more: "Per Saperne di Più"
+    bible dot com title: "Che cosa è successo al vecchio sito Bible.com?"
+    bible dot com copy: "Se stai cercando materiale da Bud e Betty Miller o il vecchio sito Bible.com, visita il loro nuovo sito web a  <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Area Stampa"
     contact header: "Informazioni di Contatto per la Stampa"
@@ -635,3 +637,9 @@ it:
       highlights: "Evidenziazioni:"
       'on': "Attivo"
       'off': "Spento"
+  app errors:
+    404 explanation: "Purtruppo non abbiamo trovato una pagina per  <em>%{requested_path}</em>. Se pensi che questa pagina dovrebbe esistere, fallo sapere al nostro <a href='%{support_url}'>team assistenza</a>, o ritorna al <a href='%{reader_path}'>lettore</a>."
+    404 message 1: "Quella pagina si è talmente persa che solo Gesù la potrebbe ritrovare."
+    404 message 2: "Libro degli Errori 4:04 - 'E fu detto loro che quella pagina non si trovava.'"
+    404 message 3: "Cercate e troverete - tranne per questa pagina. Non si trova."
+    404 message 4: "Scusate, forse questa pagina è stata rapita -- non siamo riusciti a trovarla."

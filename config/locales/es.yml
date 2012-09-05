@@ -176,6 +176,7 @@ es:
     select another chapter: "Escoger Capítulo Diferente"
     view in reader: "Ver %{reference} en Lector"
   users:
+    reset connection: "Lo sentimos, ha ocurrido un error. Por favor, retire y vuelva a conectar esta conexión."
     settings: "Configuración"
     no connection friends: "Aparentemente ninguno de sus amigos de %{connection} está conectado a YouVersion aún."
     creation form errors: "El(los) siguiente(s) error(es) no permitieron la creación de su cuenta:"
@@ -256,6 +257,7 @@ es:
     privacy:
       policy: "%{youversion} Política de Privacidad"
       intro: "En YouVersion, una página web y aplicaciones, propiedades operados por LifeChurch.tv, sabemos que a usted le importa mucho como la  información es usada y compartida. Esperamos que las siguientes declaraciones  le ayuden a entender cómo YouVersion recoge, utiliza y protege la información que usted nos proporciona en nuestro sitio o aplicación. Nosotros no utilizamos ni compartimos su información con nadie, excepto como se describe en esta Política de Privacidad."
+      translation disclaimer: "La política de privacidad se ha traducido para su conveniencia, sin embargo, LifeChurch.tv no ofrece ninguna garantía ni declaración alguna respecto a la exactitud de la traducción. Si se encuentran discrepancias entre el Inglés y la versión traducida, la versión en Inglés prevalecerá."
       what we collect: "Lo que recogemos y cómo la usamos"
       your information title: "Información que usted provee"
       your information text: "Cuando se registre en una cuenta de YouVersion, u otro servicio o promoción de LifeChurch.tv que requiera registro, le solicitaremos información personal (como su nombre, correo electrónico y una contraseña para la cuenta). Podemos combinar la información enviada bajo su cuenta, con información de otros servicios de LifeChurch.tv o terceras personas para darle una mejor experiencia y para mejorar la calidad de nuestros servicios. Para ciertos servicios, le podremos dar la opción de no combinar dicha información."
@@ -283,6 +285,7 @@ es:
       questions text: "Cualquier pregunta sobre la política de privacidad se pueden dirigir a: %{mailto_link}"
     terms:
       title: "Términos de Uso"
+      translation disclaimer: "Los términos de uso se han traducido para su conveniencia, sin embargo, LifeChurch.tv no ofrece ninguna garantía ni declaración alguna respecto a la exactitud de la traducción. Si se encuentran discrepancias entre el Inglés y la versión traducida, la versión en Inglés prevalecerá."
       acceptance title: "Aceptación de las Condiciones"
       acceptance text: "LifeChurch.tv presta servicios en la Internet y la World Wide Web (la \"Web\") a través de su sitio web en %{home_link} ('YouVersion'), con sujeción a las siguientes TÉRMINOS DE USO. LifeChurch.tv puede actualizar los TÉRMINOS DE USO de vez en cuando, sin previo aviso, y mantiene la versión más reciente de estos TÉRMINOS DE USO en: %{terms_link} Cuando se utiliza YouVersion, también estará sujeto a las guías o normas adicionales que pueden ser publicadas de vez en cuando en el sitio de YouVersion. Todas las guías de uso o reglas se encuentran incorporadas por referencia en estos TÉRMINOS DE USO. Violaciónes de estos TÉRMINOS DE USO debe ser informado por correo electrónico a %{mail_link}."
       description title: "Descripción del Servicio"
@@ -380,6 +383,7 @@ es:
     title: "Marcadores"
     not found: "Los Marcadores le brindan una guía  de referencia rápida  a sus pasajes favoritos o al último capítulo que leyó de un libro en particular.  Para agregar un marcador, seleccione el versículo en el lector de la Biblia y luego presione el botón de marcadores en la parte superior del lector."
     other user not found: "%{username} no ha guardado ningún marcador todavía."
+    creation form errors: "El siguiente error (s) impidió la creación de su marcador:"
     successfully created: "Marcador Añadido"
     successfully deleted: "Marcador eliminado"
     labels placeholder: "Separe las  diferentes etiquetas con comas."
@@ -536,6 +540,7 @@ es:
     city: "Ciudad"
     state: "Estado"
     zip: "Código Postal"
+    creation form errors: "El siguiente error (s) impidió hacer una donación:"
   download ad:
     title: "Descargue la Aplicación Gratuita de la Biblia"
     line 1: "Cientos de versiones en 100+"
@@ -553,6 +558,8 @@ es:
     partners text: "Sin nuestros generosos editores de la Biblia asociados, YouVersion simplemente no podría ser capaz de proveer a nuestra comunidad mundial tantas Biblias. Muchos de ustedes han preguntado cómo pueden agradecerles a estos partidarios vitales de la misión de YouVersion. Pueden aprender más acerca de ellos, sus ministerios, y formas en las que se les puede apoyar a través de los enlaces abajo."
     translation title: "Nuestros Equipos de Traducción"
     learn more: "Aprenda más"
+    bible dot com title: "¿Qué sucedio con el antiguo Bible.com?"
+    bible dot com copy: "Si usted está buscando el contenido de Bud y Betty Miller o el sitio web Bible.com viejo, por favor visite su sitio web en <a href='http://www.bibleresources.org'>BibleResources.org</a>."
   press page:
     title: "Área de Prensa"
     contact header: "Información de Contacto"
@@ -630,3 +637,9 @@ es:
       highlights: "Resaltados:"
       'on': "Activado"
       'off': "Desactivado"
+  app errors:
+    404 explanation: "Desafortunadamente, no hemos encontrado una página para <em>%{requested_path}</em>. Si crees que esta página debería existir, por favor, permita que nuestro <a href='%{support_url}'>equipo de apoyo </a> sepa, o regresa a la <a href='%{reader_path}'>reader</a>."
+    404 message 1: "Esa página está tan perdida, sólo Jesús puede encontrarla."
+    404 message 2: "Libro de errores 4:04 - 'Y se les dijo, esa página no fue encontrada. '"
+    404 message 3: "Buscad y hallaréis - a excepción de esta página. Le faltan."
+    404 message 4: "Lo sentimos, esta página puede haber sido raptada -- no pudimos encontrarla."
