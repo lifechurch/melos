@@ -7,6 +7,7 @@
   width: 100%
 
 #main article
+  @extend .clearfix
   +round
   +box-shadow(#fff 0 1px 0 0)
   background:
@@ -16,21 +17,6 @@
   padding: 30px 30px 15px
   position: relative
   min-height: 368px
-
-  &:after
-    +round_top
-    +box-shadow(#f2f1ef 0 -4px 0 0)
-    +background-image(linear-gradient(#fff, rgba(#fff, 0)))
-    border: 1px solid #cbc9cf
-      bottom: 0
-    content: ''
-    margin-left: -31px
-    width: 598px
-    height: 30px
-    position: fixed
-    top: 82px
-    z-index: 1
-    pointer-events: none
 
   .no_sidebar &:after
     width: 908px
