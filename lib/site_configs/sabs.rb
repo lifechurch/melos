@@ -9,11 +9,11 @@ module SiteConfigs
     end
 
     def title
-      'Bible Society of South Africa - Online Bible from YouVersion'
+      'Online Bibles in South African languages'
     end
 
     def description
-      "The Bible Society would like to encourage people to read the Bible and allow them to have access to the Bible in the language of their choice. The printed Bible is not always at hand, but, since you're already online, the Word of God is only a few mouse clicks away."
+      "Read the Bible in English, Afrikaans, Setswana, Sesotho, Sepedi, Tshivenda, Xitsonga, isiXhosa, isiZulu, Swahili, Spanish, Portuguese, Italian, Chinese and more."
     end
 
     def default_version
