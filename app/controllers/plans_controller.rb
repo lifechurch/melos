@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
   before_filter :force_login, only: [:start, :update, :settings, :calendar]
   before_filter :set_nav
+  rescue_from InvalidReferenceError, with: :ref_not_found
 
   def index
     if params[:user_id]
@@ -121,13 +122,16 @@ class PlansController < ApplicationController
     end
 
     redirect_to plan_settings_path(@subscription, anchor: anchor), notice: t("plans.#{action} successful", t_opts) if action
-
   end
 
   def calendar
     @subscription = Subscription.find(params[:plan_id], current_auth.user_id, auth: current_auth)
 
     raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
+  end
+
+  def ref_not_found
+    render 'invalid_ref'
   end
 
   private

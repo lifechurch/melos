@@ -1,0 +1,23 @@
+%div.float_right
+  - if @subscription.is_a? Subscription
+    %dl.combo_button.float_right{style:"margin-bottom: 21px"}
+      %dt
+      %dd.highlighted
+        = link_to t("plans.day")
+      %dd
+        = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
+      %dd
+        = link_to t("plans.month"), plan_calendar_path(@subscription)
+  - else
+    - if current_auth
+      %div= link_to(t('plans.subscribe to plan'), plan_start_path(@subscription.to_param), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
+    - else
+      %div= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
+  %div.float_right
+    %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version"), style: "width: 157px;"}
+      %b{style: "white-space:nowrap; overflow: hidden !important; text-overflow: ellipsis !important; text-align: center"}
+        = "#{@version.osis_human} - #{@version.title}"
+      %span
+        =t("ref.choose version")
+= render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, site: @site, force_style: "top: 116px; left: 457px; z-index: 1; position: absolute;", link_params: {day: (@day == @subscription.current_day && @subscription.is_a?(Subscription)) ? nil: params[:day], content: @content_page > 0 ? @content_page : nil}}
+%h1{style: "clear: none; min-height: 80px; width: 600px"}= @subscription.name

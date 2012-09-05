@@ -1,0 +1,7 @@
+- @title = @subscription.name
+- @sidebar = false
+
+%article
+  = render partial: "plan_day_header"
+  %hr
+  .align_center= t('plans.invalid reference', support_url: external_url(:support)).html_safe
