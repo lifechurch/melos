@@ -423,6 +423,6 @@ private
   def i18n_terms_whitelist
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
-    [:en]
+    [:en,:sv]
   end
 end
