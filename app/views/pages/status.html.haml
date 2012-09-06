@@ -4,15 +4,15 @@
 
 - content_for :stylesheets do
   = stylesheet_link_tag "status"
-  
+
 :ruby
   chart_width = 835
   chart_height = 250
-  
+
 %article
   %h1 Status
   %hr
-  %section  
+  %section
     %h3 End User Performance
     .content
       %iframe{src: "https://heroku.newrelic.com/public/charts/dfMtFadfGXx", width: "#{chart_width - 52}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
@@ -29,12 +29,15 @@
     %h3 Instance Debug Info (This Unicorn Worker)
     .content
       %p
+        %b Log Level:
+        %span.mute= "#{%w(debug info warn error fatal)[Rails.logger.level]}(#{Rails.logger.level})"
+      %p
         %b App Symbols:
         %span.mute= Symbol.all_symbols.size
       %p
         %b Memory Usage:
         %span.mute= number_to_human_size(`ps -o rss= -p #{Process.pid}`.to_i * 1024)
-      %p  
+      %p
         %ul
           %b Objects:
           -ObjectSpace.count_objects.each do |k, v|

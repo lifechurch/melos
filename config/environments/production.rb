@@ -31,8 +31,10 @@ YouversionWeb::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
-  # See everything in the log (default is :debugger)
-  config.log_level = :info
+  # The available log levels are: :debug, :info, :warn, :error, :fatal
+  # corresponding to the log level numbers from 0 up to 4 respectively
+  # production is set to :info by default
+  config.log_level = ENV["LOG_LEVEL"].to_sym if %w(debug info warn error fatal).include? ENV["LOG_LEVEL"]
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
