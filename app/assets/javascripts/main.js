@@ -553,7 +553,7 @@ var YV = (function($, window, document, undefined) {
           var version = book_a_el.data('version');
           var li = book_a_el.closest('li');
           var list = '';
-          
+
           for (var i = 1; i < chapters; i++) {
             list += '<li class="' + (book == cur_book && i == cur_chapter ? li_class : '') + '"><a href="/bible/' + book + '.' + i + '.' + version + '">' + i + '</a></li>';
           }
@@ -619,7 +619,7 @@ var YV = (function($, window, document, undefined) {
               menu.css({
                 left: left
               }).show();
-              
+
               if(menu.attr('id') == 'menu_book_chapter'){
                var index = menu.find('#menu_book').data('selected-book-num');
                menu.find('.scroll').first().scrollTop((index - 1) * (menu.find('li').height() + 1)); //TODO: why are 1st and last elements 1px shorter than the rest??
@@ -635,7 +635,7 @@ var YV = (function($, window, document, undefined) {
 
           el.blur();
         });
-        
+
         //show chapters when users clicks a book
         $('#menu_book').delegate('a', 'click', function() {
           populate_chapter_list($(this));
@@ -794,9 +794,9 @@ var YV = (function($, window, document, undefined) {
       },
       // YV.init.verse_sharing
       verse_sharing: function() {
-        var verse = $('#version_primary .verse');
+        var verses = $('#version_primary .verse');
 
-        if (!verse.length) {
+        if (!verses.length) {
           return;
         }
 
@@ -854,20 +854,29 @@ var YV = (function($, window, document, undefined) {
           input.val('');
           input_highlights_ids.val('');
 
-          verse.each(function() {
-            var el = $(this);
-            var verse_number = parseInt(el.find('strong:first').html());
-            var this_id = book + '.' + chapter + '.' + verse_number + '.' + version;
+          // Loop through all verses and collect verse numbers
+          verses.each(function() {
 
-            if (el.hasClass(flag)) {
+            var v, verse_number;
+
+            v = $(this);
+
+            // Verse number is embeded in markup for most versions <span><strong>1</strong>Verse text</span>
+            // NOTE: Some versions like BOOKS don't have verse number embeded in markup.
+
+            verse_number = parseInt(v.find('strong:first').html());
+
+            // We couldn't parse the verse number within the markup - grab it from the class
+
+            if(isNaN(verse_number)) {
+              var classes = v.attr('class'); // should be "verse John_1_1 selected"
+              var reg = /(\w+)_(\d+)_(\d+)/; // matches (John)_(1)_(1)
+              var match = reg.exec(classes);
+              verse_number = parseInt(match[3]);
+            }
+
+            if (v.hasClass(flag)) { // verse is 'selected'
               verse_numbers.push(verse_number);
-              if ($.trim(input.val()).length) {
-                // Add to hidden input.
-             //   input.val(input.val() + ',' + this_id);
-                // Create reference token.
-               // $(".reference_tokens").append("<li><a href='#'>" + book + "</a></li>");
-
-              }
             }
           });
 
@@ -933,6 +942,7 @@ var YV = (function($, window, document, undefined) {
             // Generate a short link
             var link = "http://bible.us/" + book + chapter + "." + verse_ranges.join(',') + "." + version;
             var rel_link = "/bible/" + book + "." + chapter + "." + verse_ranges.join(',');
+
             $("article").attr('data-selected-verses-rel-link', rel_link);
             $("b#short_link").html(link);
             $("input#share_link").val(link);
@@ -986,7 +996,7 @@ var YV = (function($, window, document, undefined) {
         parse_verses();
 
         // Watch for verse selection.
-        verse.click(function() {
+        verses.click(function() {
           var el = $(this);
           /*var verse_id = Ael.attr('class').replace('verse', '').replace('selected', '').replace(/\s+/, '');
 
@@ -1314,7 +1324,7 @@ var YV = (function($, window, document, undefined) {
             //console.log("clicked link for: " + text_to_send);
 
             if (!link_base) link_base = menu.data("link-base");
-            
+
             if (menu.data("link-needs-param")){
               var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
               window.location = link_base + delim + "version=" + osis;
@@ -1348,7 +1358,7 @@ var YV = (function($, window, document, undefined) {
           $(this).find(".tooltip").fadeOut(100);
         });
       },
-      fancy_nav: function() 
+      fancy_nav: function()
         {
           if ($(".main_reader").length > 0){
             var initoffset = $('.main_reader article').offset().top;
@@ -1358,7 +1368,7 @@ var YV = (function($, window, document, undefined) {
             $('.nav_next, .nav_prev').height(initviewport-initoffset-40);
 
             if( main_reader_height + offset_height > initviewport ) {
-              //recalculate the nav button height and change the height. 
+              //recalculate the nav button height and change the height.
               $(window).resize(function(e) {
                 window.offset = $('.main_reader article').offset().top;
                 window.viewport = $(window).height();
