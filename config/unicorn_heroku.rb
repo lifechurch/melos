@@ -16,4 +16,4 @@ preload_app true
 # Listen on a Unix data socket instead of a TCP port
 # Note: only works if ngnix is on the same machine
 # (e.g. has reliable access to the sockeet file)
-listen '/tmp/unicorn.sock'#, :backlog => 2048
+# listen '/tmp/unicorn.sock'#, :backlog => 2048
