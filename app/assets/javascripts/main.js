@@ -880,8 +880,6 @@ var YV = (function($, window, document, undefined) {
             }
           });
 
-          console.log("verse numbers count: " + verse_numbers.length);
-
           // Create ranges
           if (verse_numbers.length > 0) {
             if (verse_numbers.length == 1) {
