@@ -24,8 +24,10 @@ YouversionWeb::Application.configure do
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
-  # See everything in the log (default is :info)
-  config.log_level = :debug
+  # The available log levels are: :debug, :info, :warn, :error, :fatal
+  # corresponding to the log level numbers from 0 up to 4 respectively
+  # staging is set to :info by default
+  config.log_level = ENV["LOG_LEVEL"].to_sym if %w(debug info warn error fatal).include? ENV["LOG_LEVEL"]
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
