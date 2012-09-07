@@ -28,10 +28,11 @@ gem 'rack-timeout',           '~> 0.0.3'
 # aliasing (or we come up with a way to resolve differences between gem lang
 # codes and our tr8n codes, and api codes):
 # github.com/svenfuchs/rails-i18n/tree/master/rails/locale/
-# gem 'rails-i18n',            '~> 0.6.3'
+# gem 'rails-i18n',           '~> 0.6.3'
 gem 'routing-filter',         '~> 0.3.1'
-gem "unicorn-heroku",         '~> 4.3.1.1.gc608.dirty'
-# gem "unicorn",                '~> 4.3.1'
+gem "puma",                   "~> 1.6.3"
+# gem "unicorn-heroku",        '~> 4.3.1.1.gc608.dirty'
+# gem "unicorn",               '~> 4.3.1'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do

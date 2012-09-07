@@ -1,2 +1,1 @@
-web: bundle exec unicorn -p $PORT -c ./config/unicorn_heroku.rb
-
+web: bundle exec puma -p $PORT -e $RACK_ENV -t 2:2

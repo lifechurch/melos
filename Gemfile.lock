@@ -220,6 +220,8 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.7.1)
       slop (>= 2.4.4, < 3)
+    puma (1.6.3)
+      rack (~> 1.2)
     quiet_assets (1.0.1)
       railties (~> 3.1)
     rack (1.3.6)
@@ -322,10 +324,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    unicorn-heroku (4.3.1.1.gc608.dirty)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -369,6 +367,7 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 0.1.9)
   omniauth-twitter (~> 0.0.11)
   pry
+  puma (~> 1.6.3)
   quiet_assets
   rack-mobile-detect (~> 0.3.0)
   rack-rewrite (~> 1.2.1)
@@ -383,4 +382,3 @@ DEPENDENCIES
   tddium (~> 1.4.6)
   thin
   uglifier (~> 1.2.4)
-  unicorn-heroku (~> 4.3.1.1.gc608.dirty)
