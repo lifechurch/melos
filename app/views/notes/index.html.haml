@@ -8,7 +8,16 @@
   = render '/shared/widget_ad_bible_app'
 
 %article
-  %h1= t("notes.community notes")
+  - if current_auth
+    %h1.float_left= t("notes.community notes")
+    %dl.combo_button.float_right
+      %dt
+      %dd.highlighted
+        = link_to t("notes.community notes"), all_notes_path
+      %dd
+        = link_to t("notes.my notes"), user_notes_path(current_user)
+  - else
+    %h1= t("notes.community notes")
   - unless @notes.empty?
     %ul.big_list
       = render partial: "list_item", collection: @notes, locals: {display: :avatar}

@@ -3,14 +3,14 @@ class NotesController < ApplicationController
   before_filter :set_sidebar, :only => [:index]
 
   def index
-    if params[:user_id] || current_auth
-      flash.keep
-      redirect_to user_notes_path(params[:user_id] || current_user) and return
-    else
+#    if params[:user_id] || current_auth
+#      flash.keep
+#      redirect_to user_notes_path(params[:user_id] || current_user) and return
+#    else
       @selected = :notes
       #we don't pass page query here due to long DB behavior
       @notes = Note.all(language_iso: I18n.locale, cache_for: 2.minutes)
-    end
+#    end
   end
 
   def show
