@@ -2,7 +2,7 @@ source :rubygems
 
 gem 'rails', '3.1.2'
 
-gem 'asset_sync',             '~> 0.4.1' # 0.4.1
+gem 'asset_sync',             '~> 0.5.0'
 gem 'awesome_print',          '~> 1.0.2'
 gem 'authorize-net',          '~> 1.5.2'
 gem 'cells',                  '~> 3.8.3'
@@ -13,7 +13,7 @@ gem 'geokit',                 '~> 1.6.5'
 gem 'grackle',                '~> 0.1.10'
 gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
-gem 'heroku',                 '~> 2.25'
+gem 'heroku',                 '~> 2.31.2'
 gem 'httparty',               '0.8.2' # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (effecting memcache)
 gem 'http_accept_language',   '~> 1.0.2'
 gem 'koala',                  '~> 1.4.1'
@@ -30,7 +30,6 @@ gem 'rack-timeout',           '~> 0.0.3'
 # github.com/svenfuchs/rails-i18n/tree/master/rails/locale/
 # gem 'rails-i18n',           '~> 0.6.3'
 gem 'routing-filter',         '~> 0.3.1'
-# gem "puma",                   "~> 1.6.3"
 # gem "unicorn-heroku",        '~> 4.3.1.1.gc608.dirty'
 gem "unicorn",               '~> 4.3.1'
 
