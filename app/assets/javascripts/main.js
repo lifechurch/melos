@@ -557,11 +557,8 @@ var YV = (function($, window, document, undefined) {
           var version = version_json.id;
           var abbrev  = version_json.abbreviation;
 
-          var selected_book_json = version_json.books[book];
-
           var list = '';
-          var chapters = selected_book_json.chapters;
-          var chapters_ol = $("#chapter_selector");
+          var chapters = version_json.books[book].chapters;
 
           for( var i = 0; i < chapters.length; i++) {
             var canonical = chapters[i].canon;
@@ -576,8 +573,8 @@ var YV = (function($, window, document, undefined) {
 
             list += '<li class="' + classes + '"><a href="/bible/' + version + "/" + chapter_usfm + '.' + abbrev + '">' + link_body + '</a></li>';
           }
-
-          chapters_ol.html(list);
+          var chapters_ol = $("#chapter_selector");
+              chapters_ol.html(list);
 
           // add / remove active class from appropriate elements
           book_a_el.closest('li').addClass(active_class).siblings().removeClass(active_class);
