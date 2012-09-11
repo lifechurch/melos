@@ -3,6 +3,6 @@
 - @title = 'Page not found'
 
 %article.error
-  %h2= page_not_found_messages.sample.html_safe
+  %h2= t('app errors.404 message').html_safe
   %hr
-  %p= t('app errors.404 explanation', requested_path: params[:path], support_url: external_url(:support), reader_path: bible_path).html_safe
+  %p= t('app errors.404 explanation', support_url: external_url(:support), reader_path: bible_path).html_safe
