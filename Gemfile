@@ -47,7 +47,6 @@ end
 group :test, :development do
   gem 'capybara',       '~> 1.1.2'
   gem 'cucumber-rails', '~> 1.3.0', require: false
-  gem 'debugger'
   gem 'heroku_san'
   gem 'rspec-cells'
   gem 'rspec-rails'
@@ -70,4 +69,5 @@ group :development do
   gem 'ruby-prof'
   gem 'spork'
   gem 'thin'
+  gem 'debugger'
 end
