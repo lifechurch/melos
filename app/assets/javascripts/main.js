@@ -800,7 +800,7 @@ var YV = (function($, window, document, undefined) {
       verse_sharing: function() {
         var verses = $('#version_primary .verse');
 
-        if (!verse.length) {return;}
+        if (!verses.length) {return;}
 
         var clear_verses = $('#clear_selected_verses');
         var li = $('#li_selected_verses');
@@ -990,7 +990,7 @@ var YV = (function($, window, document, undefined) {
 
         // Watch for verse selection.
 
-        verse.click(function() {
+        verses.click(function() {
           // All parts of the verse will have the same usfm identifier
           // Corner cases of verse ranges and verses split across paragraphs and notes
           // Require that we search for all parent verse elements
