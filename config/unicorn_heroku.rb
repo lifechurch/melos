@@ -5,11 +5,15 @@
 #       more than the benefit of the added parallelism.
 worker_processes 2
 
-# Restart any workers that haven't responded in 25 seconds,
-# resulting in a 502 response for the slow request that was killed
-# we want something shorter than the heroku 30 sec so that we know
-# when a worker has been restarted
-timeout 25
+# Restart any workers that haven't responded in 17 seconds
+# This results in a 502 response for the slow request in the worker
+# that was killed, and forks a new worker, who will pull the next
+# request from the master/port backlog
+#
+# We want something shorter than the heroku 30 sec so that we know
+# when a worker has been restarted, but longer than the rack-timeout
+# of 15 seconds, since unicorn timeout as last-resort is preferred
+timeout 17
 
 # Load rails + app code into the master before forking workers
 # for super-fast worker spawn times
@@ -20,8 +24,10 @@ preload_app true
 # has bound to it and doesn't refuse the request.
 #
 # a shorter backlog makes failover more responsive
-# a longer backlog allows for deeper queues and higher througput
-# we set to 10, if the master has more than 10 requests for our
+# a longer backlog allows for deeper queues and higher througput.
+#
+# We set to 5, if the router has more than 5 (2*W + 1) requests for our
 # 2 workers, we want the backlog to show up with heroku and have the
-# chance to go to another instance, since our worker is likely dead
-listen ENV['PORT'] || 3000, :backlog => 10
+# chance to go to another instance. In case our worker is dead or slow
+# we don't want requests sitting in the unicorn backlog timing out.
+listen ENV['PORT'] || 3000, :backlog => 5
