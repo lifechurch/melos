@@ -32,7 +32,7 @@ development:
 
 test: &test
   <<: *common
-  api_root: api.yvstaging.com
+  api_root: api.youversion.com
   api_referer: web-testing.youversion.com
   api_version: "2.4"
   memcache_server: localhost
