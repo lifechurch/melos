@@ -57,8 +57,8 @@ class ReferencesController < ApplicationController
     @highlight_colors = User.highlight_colors
 
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
-    @alt_version = @version#Version.find(alt_version(@reference))
-    @alt_reference = @reference#Reference.new(@reference, version: @alt_version)
+    @alt_version = Version.find(alt_version(@reference))
+    @alt_reference = Reference.new(@reference, version: @alt_version)
   end
 
   def highlights

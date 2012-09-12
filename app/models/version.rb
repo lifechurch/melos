@@ -130,11 +130,20 @@ class Version < YouVersion::Resource
     language.direction
   end
 
-def include?(ref)
+  def include?(ref)
     raise "versions only contain references!" unless ref.is_a? Reference
 
-    return false if ref.book && books[ref.book.to_s].nil? rescue true
-    return false if ref.chapter && books[ref.book.to_s].chapters[ref.chapter - 1].nil? rescue true
+    begin
+      book = books[ref.book.to_s]
+      return false if book.nil?
+
+      chapter_found = book.chapters.any? {|hash| hash.usfm == ref.usfm }
+      return false if chapter_found == false
+
+    rescue
+      return false #if we get any errors here false is the better choice.
+    end
+
     #API doesn't send verse information anymore :(
     return true
   end

@@ -7,8 +7,8 @@
 / Json representation of our version. Currently used for building our dynamic chapter grid menu.
 / This will be cached along with the entire template
 %script
-    :plain
-      version_json = #{version.to_json.html_safe};
+  :plain
+    version_json = #{version.to_json.html_safe};
 
 #menu_book_chapter.dynamic_menu
   .spinner_wrapper{style: "display: none;"}

@@ -119,12 +119,31 @@ describe Version do
   end
 
   describe "#include?" do
+
+    it "should be true for a ref that contains same book and chapter" do
+      john_1 = Reference.new("jhn.1.gntd")
+      @kjv.should include john_1
+    end
+
     it "should be true for an OT ref in a full Bible" do
       @kjv.should include Reference.new("gen.1.kjv")
     end
+
     it "should be false for an OT ref in a NT only bible" do
       @nt_only.should_not include Reference.new("gen.1.1")
     end
+
+    it "should be false for a ref that contains a unique book" do
+      esther_greek = Reference.new("ESG.1_1.GNTD")
+      @kjv.should_not include esther_greek
+    end
+
+    it "should be false for a ref that contains a unique chapter" do
+      intro_chapter = Reference.new("JHN.INTRO1.GNTD")
+      @kjv.should_not include intro_chapter
+    end
+
+
   end
 
   describe "#default_for" do
