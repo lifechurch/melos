@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require_self
 //= require_tree ./lib/
+//= require reader
 //= require main
 //= require analytics
 //= require_tree ./i18n/

@@ -324,34 +324,7 @@ var YV = (function($, window, document, undefined) {
         });
       },
       // YV.init.full_screen
-      full_screen: function() {
-        var button = $('#button_full_screen');
 
-        if (!button.length) {
-          return;
-        }
-
-        if (IE7 || IE8 || IE9) {
-          $('#main article > div *:last-child').addClass('ie_last_child');
-        }
-
-        button.click(function() {
-          if (HTML.hasClass('full_screen')) {
-            HTML.removeClass('full_screen');
-            deleteCookie("full_screen");
-            YV.misc.kill_widget_spacers();
-            YV.init.fixed_widget_header();
-            YV.init.fixed_widget_last();
-          }
-          else {
-            HTML.addClass('full_screen');
-            setCookie("full_screen", 1);
-          }
-
-          this.blur();
-          return false;
-        });
-      },
       // YV.init.table_cellspacing
       table_cellspacing: function() {
         var table = $('table');
