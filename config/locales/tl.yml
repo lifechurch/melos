@@ -558,6 +558,8 @@ tl:
     partners text: "Kung di sa aming mapagbigay na mga kasama sa paglalathala ng Bibliya, ang YouVersion ay di makapagbibigay ng napakaraming Bibliya sa ating pandaigdigang komunidad.  Marami sa inyo ang nagtatanong kung paano ninyo pasasalamatan itong mga importanteng taga-suporta ng tungkulin ng YouVersion.  Ang mga link sa ibaba ay may karagdagang impormasyon tungkol sa kanila, kanilang mga ministry, at paraan ng pagsuporta sa kanila. "
     translation title: "Ang Aming Pangkat sa Pagsasalin"
     learn more: "Higit na Impormasyon"
+    bible dot com title: "Anong nangyari sa lumang Bible.com?"
+    bible dot com copy: "Kung ika'y naghahanap ng nilalaman ng Bud at Betty Miller o di kaya'y lumang Bible.com webiste, bumisita lamang sa <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Lugar para sa Press"
     contact header: "Impormasyon Tungkol sa Press Contact "
@@ -635,3 +637,5 @@ tl:
       highlights: "Highlights:"
       'on': "On"
       'off': "Off"
+  app errors:
+    404 explanation: "Hindi namin makita ang pahina para sa <em>%{requested_path}</em>. Kung sa iyong palagay na dapat nakikita ang pahinang ito, ipaalam lamang sa aming <a href='%{support_url}'>support team</a>, o balikan lamang ang  <a href='%{reader_path}'>reader</a>."

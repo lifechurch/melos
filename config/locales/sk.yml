@@ -492,6 +492,7 @@ sk:
     subscribe successful: "Výborne! Začali ste čítať tento plán."
     which day in plan: "Deň %{day} z %{total}"
     must start to complete: "Aby ste si mohli zaznačiť prečítaný úsek, je potrebné začať tento plán čítania!"
+    invalid reference: "Prepáčte, v tomto preklade nie sú dostupné jedny, alebo viacero súradníc zo zvoleného čítania. Skúste si z ponuky vyššie zvoliť iný preklad. Ak sa aj napriek tomu táto hláška opakuje, dajte o tom prosím vedieť nášmu <a href='%{support_url}'>tímu podpory</a>."
   registration:
     with facebook: "Zaregistrovať sa s Facebook účtom"
     benefits title: "Získajte maximum"
@@ -558,6 +559,8 @@ sk:
     partners text: "Bez našich štedrých partnerov z oblasti publikovania Biblie by YouVersion nedokázalo poskytnúť našej celosvetovej komunite také množstvo prekladov Biblie. Mnohí ste sa nás pýtali, ako môžete poďakovať tým, ktorí tak intenzívne podporujú misiu YouVersion. Viac o nich, o ich službách a spôsoboch, ako ich môžete podporiť nájdete na nižšie uvedených odkazoch."
     translation title: "Naše tímy prekladateľov"
     learn more: "Zistiť viac"
+    bible dot com title: "Čo sa stalo so starou stránkou Bible.com?"
+    bible dot com copy: "Ak hľadáte stránku Christ Unlimited Ministries od Buda a Betty Millerových, alebo pôvodnú verziu stránky Bible.com, navštívte prosím novú stránku na <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Tlačové informácie"
     contact header: "Kontaktné informácie pre tlač"
@@ -635,3 +638,6 @@ sk:
       highlights: "Zvýraznenia"
       'on': "Zapnuté"
       'off': "Vypnuté"
+  app errors:
+    404 explanation: "Skúste začať odznova na <a href='%{reader_path}'>úvodnej stránke</a>. Ak problém stále pretrváva, kontaktujte náš <a href='%{support_url}'>tím podpory</a>."
+    404 message: "Prepáčte, ale stránku, ktorú hľadáte, sa nepodarilo nájsť."

@@ -492,6 +492,7 @@ ro:
     subscribe successful: "Minunat! Acum ești abonat la acest plan."
     which day in plan: "Ziua %{day} din %{total}"
     must start to complete: "Începe acest plan pentru a salva părțile citite."
+    invalid reference: "Ne pare rău, este posibil ca unul din pasajele pentru azi să nu fie în versiunea selectată. Încearcă să selectezi o altă versiune de mai sus. Dacă vei vedea din nou acest mesaj, te rugăm să anunți <a href='%{support_url}'>echipa de asistență</a> în legătură cu această problemă."
   registration:
     with facebook: "Înregistrare cu Facebook"
     benefits title: "Bucură-te de întreaga experiență"
@@ -639,7 +640,4 @@ ro:
       'off': "Oprit"
   app errors:
     404 explanation: "Nu am găsit pagina <em>%{requested_path}</em>. Dacă crezi că această pagină ar trebui să existe, anunță <a href='%{support_url}'>support team</a> know, sau navighează înapoi la <a href='%{reader_path}'>reader</a>."
-    404 message 1: "Această pagină este așa pierdută încât doar Isus o poate găsi."
-    404 message 2: "Cartea Erorilor 4:04 - „Și li s-a zis că pagina nu este de găsit”."
-    404 message 3: "Caută și vei găsi -- cu excepția acestei pagini. Lipsește."
-    404 message 4: "Ne pare rău, această pagină se poate sa fi fost răpită -- nu o găsim."
+    404 message: " Ne pare rău, pagina pe care o cauți nu poate fi găsită."

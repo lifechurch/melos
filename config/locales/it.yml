@@ -492,6 +492,7 @@ it:
     subscribe successful: "Bene! Hai sottoscritto questo piano."
     which day in plan: "Giorno %{day} di %{total}"
     must start to complete: "Inizia questo piano per salvare le letture fatte!"
+    invalid reference: "Ci dispiace - uno dei riferimenti biblici per questa lettura potrebbe non esistere nella versione selezionata. Prova a selezionare un'altra versione, sopra. Se continui a vedere questo messaggio, presenta il problema al nostro <a href='%{support_url}'>servizio assistenza</a>."
   registration:
     with facebook: "Entra con Facebook"
     benefits title: "Vivi l'Esperienza Completa"
@@ -639,7 +640,4 @@ it:
       'off': "Spento"
   app errors:
     404 explanation: "Purtruppo non abbiamo trovato una pagina per  <em>%{requested_path}</em>. Se pensi che questa pagina dovrebbe esistere, fallo sapere al nostro <a href='%{support_url}'>team assistenza</a>, o ritorna al <a href='%{reader_path}'>lettore</a>."
-    404 message 1: "Quella pagina si è talmente persa che solo Gesù la potrebbe ritrovare."
-    404 message 2: "Libro degli Errori 4:04 - 'E fu detto loro che quella pagina non si trovava.'"
-    404 message 3: "Cercate e troverete - tranne per questa pagina. Non si trova."
-    404 message 4: "Scusate, forse questa pagina è stata rapita -- non siamo riusciti a trovarla."
+    404 message: "Ci dispiace - non si trova la pagina che cerchi."

@@ -492,6 +492,7 @@ sv:
     subscribe successful: "Toppen! Du prenumererar nu på planen."
     which day in plan: "Dag %{day} av %{total}"
     must start to complete: "Starta denna läsplan för att spara utförd läsning!"
+    invalid reference: "En av skrifterna refererade för denna läsning verka inte existera i den valda översättningen. Försök att välja en annan översättning ovan. Om du fortsätter se detta meddelande, var snäll och meddela vår <a href='%{support_url}'>support-grupp</a> om problemet. "
   registration:
     with facebook: "Registrera dig genom Facebook"
     benefits title: "Få hela upplevelsen"
@@ -638,8 +639,5 @@ sv:
       'on': "På"
       'off': "Av"
   app errors:
-    404 explanation: "Tyvärr hittade vi ingen sida för <em>%{requested_path}</em>. Om du tycker att denna sidan borde existera, låt vår <a href='%{support_url}}'>support-team</a> veta det, eller gå tillbaka till <a href='%{reader_path}'>läsaren</a>."
-    404 message 1: "Den sidan är så försvunnen att bara Jesus skulle kunna hitta den."
-    404 message 2: "Felevangeliet 4:04 - \"Och det sades till dem, denna sidan kunde inte hittas.\""
-    404 message 3: "Sök och du skall finna - förutom denna sidan. Den finns helt enkelt inte. "
-    404 message 4: "Tyvärr verka denna sidan har blivit uppryckt till himmelen - vi kunde inte hitta den."
+    404 explanation: "Tyvärr hittade vi ingen sida för <em>%{requested_path}</em>. Om du tycker att denna sidan borde existera, låt vårt <a href='%{support_url}}'>support-team</a> veta det, eller gå tillbaka till <a href='%{reader_path}'>läsaren</a>."
+    404 message: "Vi är ledsna, kan inte hitta sidan du söker ."

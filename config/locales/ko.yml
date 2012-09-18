@@ -492,6 +492,7 @@ ko:
     subscribe successful: "아주 잘 하셨습니다! 이 계획을 시작하셨습니다."
     which day in plan: "%{total}일 중 %{day}일"
     must start to complete: "읽기를 저장하려면 먼저 이 읽기계획을 시작해야 합니다."
+    invalid reference: "죄송합니다.  이 성경읽기에서 언급된 참고 구절중 일부가 이 번역본에는 없습니다.  다른 번역본을 선택해주세요.  이 메시지가 반복적으로 나타나면 <a href='%{support_url}'>지원팀</a> 으로 연락주십시요."
   registration:
     with facebook: "페이스북 계정으로 등록"
     benefits title: "완전한 체험을 하세요"
@@ -639,7 +640,4 @@ ko:
       'off': "끄기"
   app errors:
     404 explanation: "<em>%{requested_path}</em> 페이지를 발견하지 못했습니다.  만약 이 페이지가 존재하는 페이지라고 생각되시면, <a href='%{support_url}'>지원팀</a>에게 알려 주십시오. 혹은 <a href='%{reader_path}'>reader</a>로 되돌아 가십시오."
-    404 message 1: "페이지를 찾을 수가 없군요. "
-    404 message 2: "Book of Errors 4:04 - '페이지를 찾을 수 없습니다.'"
-    404 message 3: "구하라 그리면 찾을 것이요... 하지만 이 페이지는 찾을 수가 없습니다."
-    404 message 4: "죄송합니다. 이 페이지는 찾을 수가 없습니다."
+    404 message: "죄송합니다. 찾으시는 페이지가 없습니다."

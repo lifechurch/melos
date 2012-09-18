@@ -407,7 +407,7 @@ es:
     showing language filtered: "Solo mostrar los planes disponibles en %{lang_name}"
     all: "Todos"
     all plans: "Todos los Planes"
-    all category plans: "Todos los Planes de '%{category}'"
+    all category plans: "Todos los Planes de '%{category}' "
     my plans: "Mis Planes"
     none found: "No hemos podido encontrar un plan que coincida con sus criterios. Por favor, intente ampliar su búsqueda."
     about publisher: "Acerca del Editor"
@@ -639,7 +639,3 @@ es:
       'off': "Desactivado"
   app errors:
     404 explanation: "Desafortunadamente, no hemos encontrado una página para <em>%{requested_path}</em>. Si crees que esta página debería existir, por favor, permita que nuestro <a href='%{support_url}'>equipo de apoyo </a> sepa, o regresa a la <a href='%{reader_path}'>reader</a>."
-    404 message 1: "Esa página está tan perdida, sólo Jesús puede encontrarla."
-    404 message 2: "Libro de errores 4:04 - 'Y se les dijo, esa página no fue encontrada. '"
-    404 message 3: "Buscad y hallaréis - a excepción de esta página. Le faltan."
-    404 message 4: "Lo sentimos, esta página puede haber sido raptada -- no pudimos encontrarla."

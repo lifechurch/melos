@@ -492,6 +492,7 @@ ms:
     subscribe successful: "Bagus! Anda kini mengikuti pelan ini."
     which day in plan: "Hari %{day} dari %{total}"
     must start to complete: "Mulailah pelan ini dan selamatkan bacaan yang dilengkapi!"
+    invalid reference: "Maaf, satu daripada rujukan Alkitab untuk bacaan ini mungkin tidak terjumpa dalam versi tersebut. Cuba pilih versi yang berbeza di atas. Sekiranya anda terus menerima mesej ini, sila hubungi <a href='%{support_url}'>pihak sokongan</a> kami tentang masalah ini."
   registration:
     with facebook: "Log masuk menggunakan Facebook"
     benefits title: "Dapatkan Pengalaman Sepenuhnya"
@@ -558,6 +559,8 @@ ms:
     partners text: "Tanpa kemurahan hati rakan penerbit Alkitab kita, YouVersion tidak mungkin membekalkan begitu banyak Alkitab ke seluruh dunia. Ramai orang ingin mengucapkan terima kasih kepada penyokong kami yang penting ini. Anda boleh berbuat demikian melalui link di bawah, secara memahami lebih lanjut tentang mereka, perkhidmatan mereka, serta bagaimana anda boleh menyokong mereka."
     translation title: "Pasukan Penterjemah Kami"
     learn more: "Ketahui Lebih Lanjut"
+    bible dot com title: "Apakah terjadi kepada Bible.com yang lama?"
+    bible dot com copy: "Sekiranya anda mencari kandungan Christ Unlimited Ministries oleh Bud dan Betty Miller atau laman web Bible.com yang lama, sila kunjungi laman web baru di <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Kawasan Media"
     contact header: "Informasi Perhubungan Media"
@@ -635,3 +638,6 @@ ms:
       highlights: "Highlight:"
       'on': "Aktifkan"
       'off': "Batalkan"
+  app errors:
+    404 explanation: "Anda boleh bermula kembali dari <a href='%{reader_path}'>halaman utama</a>. Sekiranya masih ada kesulitan, sila hubungi <a href='%{support_url}'>pihak sokongan</a> kami."
+    404 message: "Maaf, halaman yang diminta tidak tercari."

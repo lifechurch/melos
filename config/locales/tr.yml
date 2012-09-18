@@ -639,7 +639,4 @@ tr:
       'off': "Kapalı"
   app errors:
     404 explanation: "<em>%{requested_path}</em> adresine bağlı olan sayfayı bulamadık. Bu sayfanın mevcut olması gerektiği kanısındaysanız, lütfen <a href='%{support_url}'>destek takımı</a> ile irtibata geçiniz. Yoksa <a href='%{reader_path}'>okuyucuya</a> geri gidiniz."
-    404 message 1: "Bu sayfa kayboldu. Yalnızca İsa Mesih onu bulabilir."
-    404 message 2: "Hatalar Kitabı 4:04 - \"Ve onlara şöyle söylendi: Aradığınız sayfa bulunamadı.\""
-    404 message 3: "Arayın bulacaksınız. Bu sayfa hariç!"
-    404 message 4: "Özür dileriz, bu sayfa göğe alınmış olabilir. Biz onu bulamadık."
+    404 message: "Aradığınız sayfa bulunamıyor, özür dileriz."

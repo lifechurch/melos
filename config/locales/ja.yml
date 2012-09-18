@@ -492,6 +492,7 @@ ja:
     subscribe successful: "やったね! このプランに参加しました。"
     which day in plan: "%{total} 日中の%{day} 日目"
     must start to complete: "このプランに参加すれば、完了箇所を保存できますよ！"
+    invalid reference: "申し訳ありませんが、参照聖句の一部が選択された聖書訳ではご覧になれないようです。上記にある別の聖書訳を選んでお試しください。このメッセージが継続して表示される場合は、 <a href='%{support_url}'>support team</a> までお知らせください。"
   registration:
     with facebook: "Facebookでアカウント登録"
     benefits title: "完全な機能の入手"
@@ -639,7 +640,4 @@ ja:
       'off': "オフ"
   app errors:
     404 explanation: "残念ながら、<em>%{requested_path}</em>のページは見つかりませんでした。このページがあるはずだという場合は、<a href='%{support_url}'>サポートチーム</a>までお知らせいただくか、または、<a href='%{reader_path}'>聖書リーダー</a>にお戻りください。"
-    404 message 1: "そのページはイエス様だけにしか見つけられません。"
-    404 message 2: "エラーの書第4章04節－「そして彼らに言われた。そのページは見つからなかった。｣"
-    404 message 3: "求めよ、そうすれば与えられるであろう。このページは例外で、見つかりません。"
-    404 message 4: "申し訳ありませんが、このページは昇天してしまったのかもしれません。見つかりませんでした。"
+    404 message: "申し訳ありませんが、お探しのページは見つかりません。"

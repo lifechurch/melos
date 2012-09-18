@@ -492,6 +492,7 @@ id:
     subscribe successful: "Bagus! Anda telah berlangganan Bacaan ini."
     which day in plan: "Hari ke %{day} dari %{total}"
     must start to complete: "Mulai rencana ini untuk menyimpan bacaan-bacaan yang telah selesai!"
+    invalid reference: "Maaf, ayat rujukan untuk bacaan ini belum tersedia pada versi yang dipilih. Cobalah memilih versi berbeda di atas. Jika anda tetap menerima pesan ini, mohon beritahukan kepada  <a href='%{support_url}'>support team</a> mengenai hal ini."
   registration:
     with facebook: "Daftar lewat Facebook"
     benefits title: "Dapatkan pengalaman penuh"
@@ -558,6 +559,8 @@ id:
     partners text: "Tanpa mitra-mitra penerbit Alkitab kami yang dermawan, YouVersion takkan mampu menyediakan begitu banyak Alkitab bagi komunitas dunia. Banyak dari Anda bertanya bagaimana Anda dapat berterima kasih kepada para pendukung penting misi YouVersion ini. Anda dapat belajar lebih banyak tentang mereka, pelayanan mereka, dan berbagai cara mendukung mereka melalui tautan di bawah ini."
     translation title: "Para Tim Penerjemah Kami"
     learn more: "Ketahui Lebih Lanjut"
+    bible dot com title: "Apa yang terjadi dengan Bible.com yang lama"
+    bible dot com copy: "jika anda mencari konten dari laman Bud and Betty Miller atau Bible.com lama, silahkan mengunjungi laman mereka yang baru di <ahref='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Area Pers / Media"
     contact header: "Kontak Informasi Pers / Media"
@@ -635,3 +638,6 @@ id:
       highlights: "Sorotan:"
       'on': "Hidup"
       'off': "Mati"
+  app errors:
+    404 explanation: "sayang sekali, kami tidak mendapatkan sebuah halaman untuk <em>%{requested_path}</em>. If you think this page should exist, please let our <a href='%{support_url}'>support team</a> know, or head back to the <a href='%{reader_path}'>reader</a>."
+    404 message: "Mohon maaf, halaman yang anda cari tidak dapat ditemukan."
