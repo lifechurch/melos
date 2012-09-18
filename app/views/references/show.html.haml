@@ -28,7 +28,8 @@
 
 
 - content_for :javascripts do
-  - fullscreen = (cookies[:full_screen] && cookies[:full_screen].to_i == 1) ? true : false;
+  - fullscreen  = (cookies[:full_screen] && cookies[:full_screen].to_i == 1) ? true : false;
+  - parallel    = (cookies[:parallel_mode] && cookies[:parallel_mode].to_i == 1) ? true : false;
   %script
     :plain
 
@@ -43,5 +44,6 @@
         font: "#{@font}",
         size: "#{@size}",
         full_screen: #{fullscreen},
+        parallel_mode: #{parallel}
       });
       reader.init();

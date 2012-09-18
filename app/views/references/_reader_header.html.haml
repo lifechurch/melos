@@ -8,7 +8,7 @@
           %span
             = t('ref.choose book and chapter')
       %li
-        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
+        %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_version_trigger", title: t("ref.choose version")}
           %b
             = @version.human
           %span
@@ -17,7 +17,7 @@
         %a#clear_selected_verses.button{:href => '#', :title => 'Clear Selected Verses'}
           %span.icon_x
             = t('ref.clear verses')
-        %a#verses_selected_button.dynamic_menu_trigger.button{:href => '#menu_bookmark', :title => t("ref.share")}
+        %a#verses_selected_button.dynamic_menu_trigger.button{id:"menu_selected_trigger", href:"#menu_bookmark", title:t("ref.share")}
           %b.icon_share
             =t("ref.selected")
             %sup#verses_selected_count
@@ -33,7 +33,7 @@
           %span
             =t("ref.choose version")
       %li.hide_in_parallel_mode
-        %a.button.dynamic_menu_trigger{:href => '#menu_settings', :title => t("ref.settings")}
+        %a.button.dynamic_menu_trigger{href:"#menu_settings", id:"menu_settings_trigger", title:t("ref.settings")}
           %span.icon_settings
             =t("ref.settings")
       %li.hide_in_parallel_mode
