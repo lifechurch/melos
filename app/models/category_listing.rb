@@ -6,7 +6,7 @@ class CategoryListing
     #the params[:category] param will filter the query to only children of that category
     opts[:page] ||= 1
     opts[:category] ||= category_slug
-    opts[:cache_for] ||= 12.hours
+    opts[:cache_for] ||= 1.hour
     opts[:query] = '*'
 
     response = YvApi.get("reading_plans/search", opts) do |errors|
@@ -16,14 +16,14 @@ class CategoryListing
         raise YouVersion::ResourceError.new(errors)
       end
     end
-    
-    CategoryListing.new(response.categories) 
+
+    CategoryListing.new(response.categories)
   end
-  
+
   def current_name
     @current ? @current.name : nil
   end
-  
+
   def current_slug
     @current ? @current.slug : nil
   end
