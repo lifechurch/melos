@@ -72,6 +72,5 @@ group :development do
   gem 'quiet_assets'
   gem 'ruby-prof'
   gem 'spork-rails'
-  gem 'thin'
-  gem 'debugger'
+  # gem 'thin'
 end
