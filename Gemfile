@@ -58,19 +58,16 @@ group :test, :development do
   gem 'simplecov', require: false
 end
 
-group :development do
-  # gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i
+group :development, :tddium_ignore do
   gem 'debugger'
   gem 'active_reload' #TODO: Remove when upgrading to Rails 3.2
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-bundler'
-  # TODO: Add guard-livereload
   gem 'guard-rspec'
   gem 'hooves'
   gem 'pry'
   gem 'quiet_assets'
   gem 'ruby-prof'
   gem 'spork-rails'
-  # gem 'thin'
 end

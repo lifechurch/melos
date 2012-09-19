@@ -40,6 +40,20 @@ RSpec.configure do |c|
   c.run_all_when_everything_filtered = true
 end
 
+# Capybara.server do |app, port|
+#   require 'hooves/unicorn'
+#   Rack::Handler::Hooves::Unicorn.run(app, :Port => port, worker_processes: 1)
+# end
+
+# working around TDDium issue with capybara-webkit
+# where using Thin causes invalid responses and EPIPE errors
+# https://github.com/thoughtbot/capybara-webkit/issues/331
+Capybara.server do |app, port|
+  require 'rack/handler/webrick'
+  Rack::Handler::WEBrick.run(app, :Port => port, :AccessLog => [], :Logger => WEBrick::Log::new(nil, 0))
+end
+
+
 module ::RSpec::Core
   class ExampleGroup
     include Capybara::DSL
