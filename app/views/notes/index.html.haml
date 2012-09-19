@@ -3,13 +3,13 @@
   / = render_cell :likes_list_widget, :display, likes: @likes, title: t("likes.likes"), user_id: @user_id
   .widget.gutter_bottom_half
     %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new")}
-      %span.icon_plus= t('notes.new note')
+      %span.icon_plus= t('new note')
 
   = render '/shared/widget_ad_bible_app'
 
 %article
   - if current_auth
-    %h1.float_left= t("notes.community notes")
+    %h1.float_left= t("notes.list title")
     %dl.combo_button.float_right
       %dt
       %dd.highlighted
