@@ -3,8 +3,6 @@ Feature: Reader view (homepage)
   As a:        Visitor
   I want to:   Select and view a selection of Bible text.
 
-  Background:
-    Given a user named "reader_user1" exists
   @bible
   Scenario: Showing some Bible text
     # Given a bookmark on Genesis 1:3
