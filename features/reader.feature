@@ -6,9 +6,6 @@ Feature: Reader view (homepage)
   view publisher reference notes, change the version of the scripture,
   highlight, bookmark, notate, and share verses.
 
-
-  Background:
-    Given a user named "reader_user1" exists
   @skip
   Scenario: Showing some Bible text
     # Given a bookmark on Genesis 1:3
