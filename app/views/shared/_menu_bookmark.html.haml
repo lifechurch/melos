@@ -15,13 +15,17 @@
   %dl.accordion.verses_selected
     %dt
       = t("highlight")
-    %dd.highlight
+    %dd.highlight{id: "highlights-pane"}
+
       %form{:action => current_auth ? highlights_path : sign_up_path, method: current_auth ? "POST" : "GET"}
+
         - if current_auth.nil?
           %input{type: 'hidden', name: 'redirect', value: "/bible"}
           %input{type: 'hidden', name: 'source', value: "highlight"}
+
         %input.references{name: "highlight[references]", type: "hidden"}
         %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
+
         %div{:class => "color_picker_list"}
           %a{:class => "color_picker", :href =>"#"}
           %a{:class => "color_picker_holder", :href =>"#"}

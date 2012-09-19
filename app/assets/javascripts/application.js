@@ -4,6 +4,7 @@
 //= require_tree ./lib/
 //= require_tree ./menus/
 //= require_tree ./widgets/
+//= require_tree ./panes/
 //= require page
 //= require reader
 //= require main

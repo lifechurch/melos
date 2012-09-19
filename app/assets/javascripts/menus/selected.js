@@ -5,6 +5,9 @@ function SelectedMenu( opts ) {
   this.selected_count = 0;
   this.initAccordion(); // setup our accordion actions / handlers
 
+
+  this.highlights_pane = new HighlightsPane("#highlights-pane");
+
   $('#clear_selected_verses').on("click",$.proxy(function(e) {
     $(this).trigger("verses:clear");
     this.setTotal(0);

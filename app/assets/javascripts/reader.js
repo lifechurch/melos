@@ -42,7 +42,6 @@ function Reader(opts) {
     this.clearSelectedVerses();
   },this));
 
-  this.selected_verses = $('#version_primary  .verse.selected')
   this.parseVerses(); // run once on load
 }
 
@@ -271,9 +270,9 @@ Reader.prototype = {
       // Deselect verse in reader markup via toggling selected class
       a.click( function(e) {
         e.preventDefault();
+
         var usfm = $(this).data("usfm");
-        alert(usfm + "usfm");
-        $("#version_primary .verse[data-usfm='" + usfm + "']").removeClass("selected");
+        thiss.deselectVerse($("#version_primary .verse[data-usfm='" + usfm + "']"));
         thiss.parseVerses();
       });
 
