@@ -4,6 +4,8 @@ class NotesController < ApplicationController
 
   def index
       @notes = Note.all(language_iso: I18n.locale, cache_for: 2.minutes)
+      # drop language tag filter if no notes found
+      @notes = Note.all(cache_for: 2.minutes) if @notes.empty?
   end
 
   def show
