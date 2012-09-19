@@ -1,11 +1,18 @@
 - content_for :sidebar do
   .widget.gutter_bottom_half
     %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new")}
-      %span.icon_plus= t('notes.new note')
-      
+      %span.icon_plus= t('new note')
+
   = render '/shared/widget_ad_bible_app'
 
 - content_for :user_main do
+  -if @me
+    %dl.combo_button.float_right
+      %dt
+      %dd
+        = link_to t("notes.community notes"), all_notes_path
+      %dd.highlighted
+        = link_to t("notes.my notes"), user_notes_path(current_user)
   - if @notes.empty?
     %p= t('no notes found', username: @user.username)
   - else
