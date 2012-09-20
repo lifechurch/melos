@@ -126,6 +126,7 @@ ja:
     like button text: "お気に入り"
     unlike button text: "お気に入りを解除"
   notes:
+    list title: "ノート"
     loading community: "コミュニティーのノートを読み込み中・・・"
     no community notes: "選択された聖句に関するコミュニティーノートはありません。ノートを作成するには、聖書リーダー内で聖句を選択し、リーダー上部の「選択箇所」というボタンをクリックしてください。"
     public: "公開"
@@ -639,5 +640,5 @@ ja:
       'on': "オン"
       'off': "オフ"
   app errors:
-    404 explanation: "残念ながら、<em>%{requested_path}</em>のページは見つかりませんでした。このページがあるはずだという場合は、<a href='%{support_url}'>サポートチーム</a>までお知らせいただくか、または、<a href='%{reader_path}'>聖書リーダー</a>にお戻りください。"
+    404 explanation: "<a href='%{reader_path}'>ホームページ</a>へ戻ってみてください。\n問題が継続する場合は、<a href='%{support_url}'>support team</a>までご連絡ください。"
     404 message: "申し訳ありませんが、お探しのページは見つかりません。"

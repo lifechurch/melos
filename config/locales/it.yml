@@ -126,6 +126,7 @@ it:
     like button text: "Mi Piace"
     unlike button text: "Non mi piace più"
   notes:
+    list title: "Note"
     loading community: "Sto caricando le note della comunità..."
     no community notes: "Non sono state trovate note condivise relative ai versetti selezionati. Per creare una nota, seleziona un versetto nel lettore della Bibbia a poi clicca sul pulsante Selezionato nella parte superiore del lettore."
     public: "Pubblica"
@@ -639,5 +640,5 @@ it:
       'on': "Attivo"
       'off': "Spento"
   app errors:
-    404 explanation: "Purtruppo non abbiamo trovato una pagina per  <em>%{requested_path}</em>. Se pensi che questa pagina dovrebbe esistere, fallo sapere al nostro <a href='%{support_url}'>team assistenza</a>, o ritorna al <a href='%{reader_path}'>lettore</a>."
+    404 explanation: "Potresti provare nuovamente partendo dal <a href='%{reader_path}'>home page</a>. Ci sono ancora problemi? Contatta il nostro <a href='%{support_url}'>servizio assistenza</a>."
     404 message: "Ci dispiace - non si trova la pagina che cerchi."

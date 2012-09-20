@@ -126,6 +126,7 @@ pl:
     like button text: "Lubię"
     unlike button text: "Cofnij \"lubię\""
   notes:
+    list title: "Notatki"
     loading community: "Ładowanie notatek społeczności..."
     no community notes: "Nie znaleziono notatek odnoszących się do wybranych wersetów. Aby utworzyć notatkę, wybierz werset w czytniku Biblii i kliknij przycisk Wybrane u góry czytnika."
     public: "Publiczne"

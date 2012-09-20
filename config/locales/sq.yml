@@ -126,6 +126,7 @@ sq:
     like button text: "Pëlqej"
     unlike button text: "Nuk pëlqej"
   notes:
+    list title: "Shënime"
     loading community: "Duke hapur shënimet e komunitetit..."
     no community notes: "Nuk u gjet asnjë shënim komuniteti referuar vargjeve të përzgjedhuara. Për të krijuar një shënim, përzgjidh një varg në lexuesin e Biblës dhe më pas kliko butonin Përzgjedhës në krye të lexuesit."
     public: "Publik"
@@ -639,5 +640,5 @@ sq:
       'on': "Ndezur"
       'off': "Fikur"
   app errors:
-    404 explanation: "Fatkeqësisht, ne nuk mundëm të gjenim një faqe për <em>%{requested_path}</em>. Nëse mendoni se kjo faqe duhet të ekzistojë, ju lutemi njoftoni <a href='%{support_url}'>ekipin tonë të ndihmës</a> ose kthehuni mbrapa në <a href='%{reader_path}'>reader</a>."
+    404 explanation: "Mund të provoni të filloni sërish nga <a href='%{reader_path}'>faqja kryesore</a>. A keni akoma probleme? Kontaktoni <a href='%{support_url}'>ekipin e ndihmës</a>."
     404 message: "Na vjen keq, faqja për po kërkoni nuk mund të gjendet."

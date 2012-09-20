@@ -126,6 +126,7 @@ ms:
     like button text: "Like"
     unlike button text: "Batalkan \"Like\""
   notes:
+    list title: "Nota"
     loading community: "Kini load nota komuniti..."
     no community notes: "Kami tidak terjumpa nota komuniti berkaitan ayat tersebut. Untuk mencatat nota, pilihlah suatu ayat dalam pembaca Alkitab dan klik butang Terpilih di bahagian atas pembaca."
     public: "Awam"

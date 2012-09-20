@@ -126,6 +126,7 @@ ro:
     like button text: "Îmi place"
     unlike button text: "Nu-mi mai place"
   notes:
+    list title: "Notițe"
     loading community: "Se încarcă notițele comunității..."
     no community notes: "Nici o notiță a comunității cu privire la versete selectate nu a fost găsită. Pentru a crea o notiță, alege un verset în cititorul de Biblie, apoi fă click pe butonul Selectează aflat în partea de sus a cititorului."
     public: "Public"

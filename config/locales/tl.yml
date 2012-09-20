@@ -126,6 +126,7 @@ tl:
     like button text: "Gusto"
     unlike button text: "Ayaw"
   notes:
+    list title: "Mga tala"
     loading community: "Ang iyong mga community notes ay nagloload..."
     no community notes: "Walang nakitang notes sa komunidad na tumutukoy sa mga napiling berso.  Para gumawa ng note, pumili ng berso sa Bibliya at i-click ang Napiling butones sa taas ng reader. "
     public: "Pang-publiko"
@@ -492,6 +493,7 @@ tl:
     subscribe successful: "Magaling! Naka-subscribe ka sa plan na ito."
     which day in plan: "Araw %{day} ng %{total}"
     must start to complete: "Simulan itong plano para ma-save ang mga natapos na babasahin!"
+    invalid reference: "Paumanhin, isa sa mga sangguniang talata ng Bibliya para sa babasahing ito ay maaaring hindi kasama sa napiling salin. Maaaring pumili ng ibang salin ng Bibliya sa itaas. Kung patuloy na nakikita ang mensahe tungkol sa pagkakamaling ito, paki bigay alam sa aming <a href='%{support_url}'>support team</a>. Salamat po."
   registration:
     with facebook: "Mag-sign up gamit ang Facebook"
     benefits title: "Maranasan ang Kabuuan"
@@ -619,7 +621,7 @@ tl:
   pages:
     generic_error:
       title: "Oops!"
-      explanation: "Nagkaproblema sa likuran ng eksena! Maaari mong subukan ulit sa pamamagitan ng pag-reload ng pahina, kami ay humihiling ng paumanhin sa gambala! "
+      explanation: "Nagkaproblema sa pahina na gusto mong makita! Maaari mong subukan ulit sa pamamagitan ng pag-reload ng pahina, paumanhin sa gambala! "
       our action: "Kami ay napagbigay alaman na tungkol dito at ito'y bibigyang pansin sa madaling panahon.   "
   shared:
     menu_settings:
@@ -638,4 +640,5 @@ tl:
       'on': "On"
       'off': "Off"
   app errors:
-    404 explanation: "Hindi namin makita ang pahina para sa <em>%{requested_path}</em>. Kung sa iyong palagay na dapat nakikita ang pahinang ito, ipaalam lamang sa aming <a href='%{support_url}'>support team</a>, o balikan lamang ang  <a href='%{reader_path}'>reader</a>."
+    404 explanation: "Maaaring mag-umpisang mula sa <a href='%{reader_path}'>home page</a>. Kung sa iyong palagay na dapat nakikita ang pahinang ito, ipaalam lamang sa aming <a href='%{support_url}'>support team</a>."
+    404 message: "Ikinalulungkot namin, subalit ang pahinang hinahanap mo ay nawawala."

@@ -126,6 +126,7 @@ sv:
     like button text: "Gilla"
     unlike button text: "Sluta gilla"
   notes:
+    list title: "Anteckningar"
     loading community: "Laddar gemensamma anteckningar..."
     no community notes: "Inga offentliga anteckningar hittades som refererar valda verser. För att skapa en anteckning, välj en vers i bibelläsaren och klicka på knappen Markerat högst upp i läsaren. "
     public: "Offentlig"
@@ -492,7 +493,7 @@ sv:
     subscribe successful: "Toppen! Du prenumererar nu på planen."
     which day in plan: "Dag %{day} av %{total}"
     must start to complete: "Starta denna läsplan för att spara utförd läsning!"
-    invalid reference: "En av skrifterna refererade för denna läsning verka inte existera i den valda översättningen. Försök att välja en annan översättning ovan. Om du fortsätter se detta meddelande, var snäll och meddela vår <a href='%{support_url}'>support-grupp</a> om problemet. "
+    invalid reference: "En av skrifterna refererade för denna läsning verka inte existera i den valda översättningen. Försök att välja en annan översättning ovan. Om du fortsätter se detta meddelande, var snäll och meddela vår <a href='%{support_url}'>supportgrupp</a> om problemet. "
   registration:
     with facebook: "Registrera dig genom Facebook"
     benefits title: "Få hela upplevelsen"
@@ -541,7 +542,7 @@ sv:
     city: "Stad"
     state: "Stat"
     zip: "Postkod"
-    creation form errors: "Följande fel gjorde att du inte kunde lägga en donation:"
+    creation form errors: "Följande fel gjorde att du inte kunde göra en donation:"
   download ad:
     title: "Ladda ner den fria Bibelappen"
     line 1: "Hundratals översättningar på mer"
@@ -560,7 +561,7 @@ sv:
     translation title: "Vårt översättningsteam"
     learn more: "Läs mer"
     bible dot com title: "Vad hände med gamla Bible.com?"
-    bible dot com copy: "Om du söker efter innehåll från Bud och Betty Miller eller gamla Bible.com, besök deras nya hemsida på <a href='http://www.bibleresources.org'>BibleResources.org</a>"
+    bible dot com copy: "Om du söker efter innehåll från Bud och Betty Miller eller gamla Bible.com så besök deras nya hemsida på <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Pressområde"
     contact header: "Kontaktinformation för press"
@@ -639,5 +640,5 @@ sv:
       'on': "På"
       'off': "Av"
   app errors:
-    404 explanation: "Tyvärr hittade vi ingen sida för <em>%{requested_path}</em>. Om du tycker att denna sidan borde existera, låt vårt <a href='%{support_url}}'>support-team</a> veta det, eller gå tillbaka till <a href='%{reader_path}'>läsaren</a>."
-    404 message: "Vi är ledsna, kan inte hitta sidan du söker ."
+    404 explanation: "Du kan pröva att gå tillbaka till <a href='%{reader_path}'>startsidan</a>.\nOm du fortfarande har problem kan du kontakta vår <a href='%{support_url}'>supportgrupp</a>."
+    404 message: "Tyvärr, men sidan du letar efter kan inte hittas."

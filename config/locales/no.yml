@@ -126,6 +126,7 @@
     like button text: "Lik"
     unlike button text: "Ikke lik"
   notes:
+    list title: "Notater"
     loading community: "Laster fellesnotater..."
     no community notes: "Ingen fellesnotater med henvisning til valgte vers ble funnet. For å lage et notat, kan du velge et bibelvers og så klikke på 'Valgt' øverst i lesemodus."
     public: "Offentlig"

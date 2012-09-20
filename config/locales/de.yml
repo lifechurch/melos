@@ -126,6 +126,7 @@ de:
     like button text: "gefällt mir"
     unlike button text: "gefällt mir nicht mehr"
   notes:
+    list title: "Notizen"
     loading community: "Lade Gemeinschaftsnotizen... "
     no community notes: "Es wurden keine Gemeinschaftsnotizen zu diesen Versen gefunden. Um eine Notiz anzulegen, wähle einen Vers in der Leseansicht und dann klicke auf \"Auswählen\" oben in der Leseansicht."
     public: "Öffentlich"

@@ -126,6 +126,7 @@ af:
     like button text: "Merk Gunsteling"
     unlike button text: "Herroep Gunsteling"
   notes:
+    list title: "Notas"
     loading community: "Gemeenskapsnotas besig om te laai..."
     no community notes: "Geen gemeenskap notas is gevind wat verwys na enige geselekteerde verse. Om 'n nota te maak, kies 'n vers in die Bybel leser en kliek dan op die Selekteer knoppie aan die bokant van die leser."
     public: "Publiek"

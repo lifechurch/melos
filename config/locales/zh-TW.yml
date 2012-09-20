@@ -126,6 +126,7 @@ zh-TW:
     like button text: "喜歡"
     unlike button text: "取消喜歡"
   notes:
+    list title: "筆記"
     loading community: "正在加載社群筆記..."
     no community notes: "未找到任何有參考經文的社群筆記。要建立筆記，請在聖經閱讀器裡選擇一個經節，然後在頂部點選【選中的】按鈕。"
     public: "公開"

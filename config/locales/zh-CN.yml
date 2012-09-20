@@ -126,6 +126,7 @@ zh-CN:
     like button text: "喜欢"
     unlike button text: "不喜欢"
   notes:
+    list title: "笔记"
     loading community: "载入社区评论"
     no community notes: "未找到任何有参考经文的社区笔记。要创建笔记，请在圣经阅读器中选择一个经节，然后在顶部点击【选中的】按钮。"
     public: "公开"

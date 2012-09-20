@@ -126,6 +126,7 @@ ca:
     like button text: "M'agrada"
     unlike button text: "Ja no m'agrada"
   notes:
+    list title: "Notes"
     loading community: "Carregant les notes de la comunitat"
     no community notes: "No hi ha notes de la comunitat que facin referència als versets seleccionats. Per crear una nota, selecciona un verset al lector de la Bíblia i després feu clic al botó \"Seleccionat\" situat a la part superior del lector."
     public: "Públic"

@@ -126,6 +126,7 @@ tr:
     like button text: "Beğen"
     unlike button text: "Beğenme"
   notes:
+    list title: "Notlar"
     loading community: "Toplumdaki notlar yükleniyor..."
     no community notes: "Seçili ayetleri kasteden toplum notları bulunmadı. Bir notu yaratmak için, Kutsal Kitap okuyucusundan bir not seçin. Ondan sonra okuyucunun tepesindeki Seçili düğmesini tıklayın."
     public: "Topluma Açık"

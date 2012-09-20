@@ -126,6 +126,7 @@ sk:
     like button text: "Páči sa mi to"
     unlike button text: "Už sa mi to nepáči"
   notes:
+    list title: "Poznámky"
     loading community: "Načítavajú sa komunitné poznámky..."
     no community notes: "Nenašli sa žiadne komunitné poznámky odkazujúce na označené verše. Ak chcete vytvoriť poznámku, označte verš v Biblii a kliknite na tlačítko Označené na vrchu stránky."
     public: "Verejná"
