@@ -126,6 +126,7 @@ sq:
     like button text: "Pëlqej"
     unlike button text: "Nuk pëlqej"
   notes:
+    list title: "Shënime"
     loading community: "Duke hapur shënimet e komunitetit..."
     no community notes: "Nuk u gjet asnjë shënim komuniteti referuar vargjeve të përzgjedhuara. Për të krijuar një shënim, përzgjidh një varg në lexuesin e Biblës dhe më pas kliko butonin Përzgjedhës në krye të lexuesit."
     public: "Publik"
@@ -492,6 +493,7 @@ sq:
     subscribe successful: "Shkëlqyeshëm! Ju jeni abonuar në këtë plan."
     which day in plan: "Dita %{day} nga %{total}"
     must start to complete: "Filloje këtë plan për të ruajtur leximet e përfunduara!"
+    invalid reference: "Na vjen keq, një nga referimet biblike për këtë lexim mund të mos ekzistojë në versionin e zgjedhur. Provoni të zgjidhni një version tjetër, lart. Nëse vazhdoni ta shihni këtë mesazh, bëjani të ditur <a href='%{support_url}'>grupit të ndihmës</a> këtë problem."
   registration:
     with facebook: "Hyr me Facebook"
     benefits title: "Përjetoni përvojën e plotë"
@@ -638,8 +640,5 @@ sq:
       'on': "Ndezur"
       'off': "Fikur"
   app errors:
-    404 explanation: "Fatkeqësisht, ne nuk mundëm të gjenim një faqe për <em>%{requested_path}</em>. Nëse mendoni se kjo faqe duhet të ekzistojë, ju lutemi njoftoni <a href='%{support_url}'>ekipin tonë të ndihmës</a> ose kthehuni mbrapa në <a href='%{reader_path}'>reader</a>."
-    404 message 1: "Kjo faqe është aq e humbur, që vetëm Jezusi mund ta gjejë."
-    404 message 2: "Libri i Gabimeve 4:04 - 'Dhe atyre ju thanë, kjo faqe nuk u gjet'."
-    404 message 3: "Kërkoni dhe do të gjeni -- veçse për këtë faqe. Ka humbur."
-    404 message 4: "Na falni, kjo faqe mund të jetë rrëmbyer -- ne nuk mund ta gjejmë dot."
+    404 explanation: "Mund të provoni të filloni sërish nga <a href='%{reader_path}'>faqja kryesore</a>. A keni akoma probleme? Kontaktoni <a href='%{support_url}'>ekipin e ndihmës</a>."
+    404 message: "Na vjen keq, faqja për po kërkoni nuk mund të gjendet."

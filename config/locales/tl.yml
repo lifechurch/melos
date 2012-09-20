@@ -126,6 +126,7 @@ tl:
     like button text: "Gusto"
     unlike button text: "Ayaw"
   notes:
+    list title: "Mga tala"
     loading community: "Ang iyong mga community notes ay nagloload..."
     no community notes: "Walang nakitang notes sa komunidad na tumutukoy sa mga napiling berso.  Para gumawa ng note, pumili ng berso sa Bibliya at i-click ang Napiling butones sa taas ng reader. "
     public: "Pang-publiko"
@@ -492,6 +493,7 @@ tl:
     subscribe successful: "Magaling! Naka-subscribe ka sa plan na ito."
     which day in plan: "Araw %{day} ng %{total}"
     must start to complete: "Simulan itong plano para ma-save ang mga natapos na babasahin!"
+    invalid reference: "Paumanhin, isa sa mga sangguniang talata ng Bibliya para sa babasahing ito ay maaaring hindi kasama sa napiling salin. Maaaring pumili ng ibang salin ng Bibliya sa itaas. Kung patuloy na nakikita ang mensahe tungkol sa pagkakamaling ito, paki bigay alam sa aming <a href='%{support_url}'>support team</a>. Salamat po."
   registration:
     with facebook: "Mag-sign up gamit ang Facebook"
     benefits title: "Maranasan ang Kabuuan"
@@ -558,6 +560,8 @@ tl:
     partners text: "Kung di sa aming mapagbigay na mga kasama sa paglalathala ng Bibliya, ang YouVersion ay di makapagbibigay ng napakaraming Bibliya sa ating pandaigdigang komunidad.  Marami sa inyo ang nagtatanong kung paano ninyo pasasalamatan itong mga importanteng taga-suporta ng tungkulin ng YouVersion.  Ang mga link sa ibaba ay may karagdagang impormasyon tungkol sa kanila, kanilang mga ministry, at paraan ng pagsuporta sa kanila. "
     translation title: "Ang Aming Pangkat sa Pagsasalin"
     learn more: "Higit na Impormasyon"
+    bible dot com title: "Anong nangyari sa lumang Bible.com?"
+    bible dot com copy: "Kung ika'y naghahanap ng nilalaman ng Bud at Betty Miller o di kaya'y lumang Bible.com webiste, bumisita lamang sa <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Lugar para sa Press"
     contact header: "Impormasyon Tungkol sa Press Contact "
@@ -617,7 +621,7 @@ tl:
   pages:
     generic_error:
       title: "Oops!"
-      explanation: "Nagkaproblema sa likuran ng eksena! Maaari mong subukan ulit sa pamamagitan ng pag-reload ng pahina, kami ay humihiling ng paumanhin sa gambala! "
+      explanation: "Nagkaproblema sa pahina na gusto mong makita! Maaari mong subukan ulit sa pamamagitan ng pag-reload ng pahina, paumanhin sa gambala! "
       our action: "Kami ay napagbigay alaman na tungkol dito at ito'y bibigyang pansin sa madaling panahon.   "
   shared:
     menu_settings:
@@ -635,3 +639,6 @@ tl:
       highlights: "Highlights:"
       'on': "On"
       'off': "Off"
+  app errors:
+    404 explanation: "Maaaring mag-umpisang mula sa <a href='%{reader_path}'>home page</a>. Kung sa iyong palagay na dapat nakikita ang pahinang ito, ipaalam lamang sa aming <a href='%{support_url}'>support team</a>."
+    404 message: "Ikinalulungkot namin, subalit ang pahinang hinahanap mo ay nawawala."

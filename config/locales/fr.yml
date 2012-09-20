@@ -126,6 +126,7 @@ fr:
     like button text: "J'aime"
     unlike button text: "Je n'aime plus"
   notes:
+    list title: "Notes"
     loading community: "Chargement des notes de la communauté ..."
     no community notes: "Aucune note de la communauté ne mettant en référence aucun vers choisi n'a été trouvée. Pour créer un note, vous devez sélectionner le vers dans le Lecteur de Bible et puis clic le bouton sélectionné au dessus du lecteur."
     public: "Publiques"
@@ -492,6 +493,7 @@ fr:
     subscribe successful: "Génial! Vous êtes inscrit à ce plan."
     which day in plan: "Jour %{day} de %{total}"
     must start to complete: "Commencez ce plan pour sauvegarder les lectures achevées!"
+    invalid reference: "Désolé, une des références Biblique pour cette lecture semble ne plus exister pour cette traduction. Veuillez sélectionner une autre traduction. Si vous rencontrez à nouveau ce message, veuillez prévenir notre <a href='%{support_url}'>support team</a> à propos de ce problème."
   registration:
     with facebook: "Se connecter sur Facebook"
     benefits title: "Vivez Pleinement l'Expérience"
@@ -558,6 +560,8 @@ fr:
     partners text: "Sans nos généreux partenaires d'édition de la Bible,  YouVersion ne serait tout simplement pas en mesure de fournir autant de Bibles à notre communauté du monde entier. Beaucoup d'entre vous nous ont demandé comment vous pouvez remercier ces supporters vitaux de la mission de YouVersion. Vous pouvez en apprendre plus sur eux, leurs ministères, et sur les façons dont vous pouvez les soutenir à travers les liens ci-dessous."
     translation title: "Nos équipes de traduction"
     learn more: "Savoir plus"
+    bible dot com title: "Qu'est devenu l'ancien Bible.com ?"
+    bible dot com copy: "Si vous cherchez le Ministère illimité de Christ Upar Bud and Betty Miller ou l'ancien site de Bible.com veuillez aller voir notre nouveau site sur <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Zone de presse"
     contact header: "Contacts pour la presse"
@@ -635,3 +639,6 @@ fr:
       highlights: "Surbrillances:"
       'on': "En marche"
       'off': "A l'arrêt"
+  app errors:
+    404 explanation: "Vous devrez peut être ré-essayer depuis <a href='%{reader_path}'>home page</a>. Still having trouble? Contact our <a href='%{support_url}'>support team</a>."
+    404 message: "Nous sommes désolés, la page que vous cherchez ne peut être trouvée."
