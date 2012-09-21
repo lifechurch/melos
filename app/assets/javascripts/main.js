@@ -23,11 +23,6 @@ function deleteCookie(name) {
   setCookie(name,"",-1);
 }
 
-ZeroClipboard.setMoviePath('/assets/lib/ZeroClipboard.swf');
-var clip = new ZeroClipboard.Client();
-clip.setHandCursor(true);
-var text_to_send = "";
-
 
 // Module pattern + Closure
 var YV = (function($, window, document, undefined) {
@@ -215,25 +210,7 @@ var YV = (function($, window, document, undefined) {
       // YV.init.verse_sharing
       verse_sharing: function() {
 
-        if (IE8){
-          copy_button.hide();
-        }
 
-        clip.addEventListener('load', function(client) {
-        });
-
-        clip.addEventListener('complete', function(client, text) {
-                var temp = copy_button.html();
-                copy_button.html(copy_button.data('confirm-text'));
-                setTimeout(function() {copy_button.html(temp);}, 2000);
-         } );
-
-         clip.addEventListener( 'mouseOver', function(client) {
-                clip.setText(text_to_send);
-                //this is done in mouseOver due to ZeroClipboard bug
-         } );
-
-         //Zero clipboard adds and removes "hover" and "active" classes as you would expect
       },
 
       // YV.init.parallel_notesnotes

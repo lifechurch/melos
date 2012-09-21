@@ -1,3 +1,5 @@
+// Bible Reader
+
 function Reader(opts) {
   this.version    = opts.version || "";
   this.abbrev     = opts.abbrev || "";
@@ -6,14 +8,11 @@ function Reader(opts) {
   this.book_api   = opts.book_api || "";
   this.book_human = opts.book_human || "";
   this.chapter    = opts.chapter || "";
+
+  this.full_screen     = opts.full_screen || false;
+  this.parallel_mode   = opts.parallel_mode || false;
   this.selected_verses = [];
 
-
-
-
-
-  this.full_screen    = opts.full_screen || false;
-  this.parallel_mode  = opts.parallel_mode || false;
 
   this.font           = opts.font || "";
   this.size           = opts.size || "";
@@ -26,17 +25,14 @@ function Reader(opts) {
 
   // menus
 
-  this.book_chapter_menu = new BookChapterMenu();
-
-
   this.initSelectedVerses();
   this.initHighlights();
   this.initAudioPlayer();
   this.initTranslationNotes();
   this.initNextPrev();
 
-
-  this.selected_menu = new SelectedMenu({trigger:"#menu_selected_trigger",menu:"#menu_bookmark"});  // need to update this html id.
+  this.book_chapter_menu  = new BookChapterMenu();
+  this.selected_menu      = new SelectedMenu({trigger:"#menu_selected_trigger",menu:"#menu_bookmark"});  // need to update this html id.
 
   $(this.selected_menu).bind("verses:clear", $.proxy(function(e){
     this.clearSelectedVerses();
@@ -194,67 +190,27 @@ Reader.prototype = {
       }
     }
 
-    // Need to move this functionality.
-    var highlight_form = $('.verses_selected .highlight form');
-    existing_ids = $.makeArray($('.verse.selected.highlighted').map(function(){
-      return $(this).data('highlight-ids');
-    }));
+    // Generate links, short, relative, etc.
+      var link = "http://bible.us/" + this.version + "/" + this.book + "." + this.chapter + "." + verse_ranges.join(',') + "." + this.abbrev;
+      var sel_verses_path_partial = "." + verse_ranges.join(',');
+      var rel_link = "/bible/" + this.version + "/" + this.book + "." + this.chapter + sel_verses_path_partial;
 
-    highlight_form.find('.references').val(selected_verses_param.join(','));
-    highlight_form.find('.existing_ids').val(existing_ids.join(','));
+      $("article").attr('data-selected-verses-rel-link', rel_link);
+      $("article").attr('data-selected-verses-path-partial', sel_verses_path_partial);
 
-    if ($('.verse.selected.highlighted').length) {
-      // hide the 10th icon to make room for clear icon
-      $('#highlight_9').addClass('hide');
-      $('#clear_highlights').removeClass('hide');
-    } else {
-      $('#clear_highlights').addClass('hide');
-      $('#highlight_9').removeClass('hide');
-    }
+      this.selected_menu.updateLink(link);
+      this.selected_menu.updateSharing({ link: link });
 
+    // After parsing, update the highlights pane.
+      this.selected_menu.updateHighlights( selected_verses_param );
 
+    // Set total selected verse count
+      this.selected_menu.setTotal(total);
 
     // FIX.  When a range is created (consecutive verses) clicking the token
     // does not currently remove the range from being selected.  In markup and pill/token.
-
-    this.generateReferenceTokens( verse_ranges , ranges_usfm );
-
-    // Generate a short link
-    var link = "http://bible.us/" + this.version + "/" + this.book + "." + this.chapter + "." + verse_ranges.join(',') + "." + this.abbrev;
-    var sel_verses_path_partial = "." + verse_ranges.join(',');
-    var rel_link = "/bible/" + this.version + "/" + this.book + "." + this.chapter + sel_verses_path_partial;
-
-    $("b#short_link").html(link); // Populate visual short link
-    $("input#share_link").val(link); // Populate hidden field
-
-    $("article").attr('data-selected-verses-rel-link', rel_link);
-    $("article").attr('data-selected-verses-path-partial', sel_verses_path_partial);
-
-    // Sharing functionality
-    // Prefill Textarea for sharing verse(s)
-    $('.share_message textarea').html(
-      $.makeArray($('.verse.selected .content').map(function(){ return $(this).html(); })).join(' ').trim()
-    );
-
-    // Set character count
-    var chars_left = 140 - link.length - 1;
-    $(".share_message .character_count").remove();
-    $(".share_message textarea").charCount({
-      allowed: 140 - link.length - 1,
-      css: "character_count"
-    });
-
-    // Set copy link value
-    $("#copy_link_input").attr("value", link);
-
-    this.selected_menu.setTotal(total);
-
-    var copy_button = $("#copy_link");
-        copy_button.click(function(){
-          $("#copy_link_input").attr("value");
-        });
+      this.generateReferenceTokens( verse_ranges , ranges_usfm );
   },
-
 
   generateReferenceTokens : function( verse_ranges , ranges_usfm ) {
 
@@ -263,7 +219,8 @@ Reader.prototype = {
     var thiss = this;
     $(".reference_tokens").html("");
     $.each(verse_ranges, function(i, range) {
-      verse_refs.push(ranges_usfm[i] + "." + thiss.version + '-' + thiss.abbrev);
+      var ref = ranges_usfm[i] + "." + thiss.version + '-' + thiss.abbrev; //ex: JHN.1.1.69-GNTD
+      verse_refs.push(ref);
       var li = $("<li/>");
       var a  = $("<a/>",{ href: "#", "data-usfm": ranges_usfm[i]}).html(thiss.book_human + " " + thiss.chapter + ":" + range);
 
@@ -280,12 +237,9 @@ Reader.prototype = {
 
       // Append token to all .reference_token lists
       $(".reference_tokens").append(li);
-
-      // Populate hidden fields with verse refs
-      // FIX shouldn't be here
-      $('.verses_selected_input').val(verse_refs.join(","));
     });
 
+    this.selected_menu.setSelectedRefs(verse_refs);
   },
 
 

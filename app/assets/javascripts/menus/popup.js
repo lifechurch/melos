@@ -69,7 +69,6 @@ PopupMenu.prototype = {
 
     if (this.menu.is(':hidden')) {
 
-      this.hideAll();
       li.addClass(active_class);
 
       if(this.menu.css('position') != "absolute"){
@@ -93,8 +92,8 @@ PopupMenu.prototype = {
 
   hideAll : function() {
     var active_class = 'li_active';
-    var items = this.trigger.parent('li');
-        items.removeClass(active_class);
+    var item = this.trigger.parent('li');
+        item.removeClass(active_class);
 
     var menus = $('.dynamic_menu');
         menus.hide();
