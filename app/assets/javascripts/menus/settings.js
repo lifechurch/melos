@@ -1,6 +1,8 @@
+// Class to manage Settings menu in reader header.
+
 function SettingsMenu( opts ) {
-  this.trigger = $(opts.trigger);
   this.menu    = $(opts.menu);
+  this.trigger = $(opts.trigger);
   this.init();
 }
 

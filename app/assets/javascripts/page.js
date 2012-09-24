@@ -1,5 +1,12 @@
+// Page class.  This is the main class that is run when the page loads.
+// This class sets up the entire page javascript functionality and interactivity.
+
 function Page() {
 
+  this.selected_menu = undefined;
+  this.menus = new Array();
+
+  this.initConstants();
   this.initHTML();
   this.initNav();
   this.initInputs();
@@ -14,21 +21,21 @@ function Page() {
 
 
 
-  this.selected_menu = undefined;
-
-
-  // Internet Explorer detection.
-  this.BROWSER = $.browser;
-  this.VERSION = parseInt(this.BROWSER.version, 10);
-  this.IE = this.BROWSER.msie;
-  this.IE7 = !!(this.IE && VERSION === 7);
-  this.IE8 = !!(this.IE && VERSION === 8);
-  this.IE9 = !!(this.IE && VERSION === 9);
-
 }
 
 Page.prototype = {
   constructor : Page,
+
+  initConstants : function() {
+    // Internet Explorer detection.
+    this.BROWSER = $.browser;
+    this.VERSION = parseInt(this.BROWSER.version, 10);
+    this.IE = this.BROWSER.msie;
+    this.IE7 = !!(this.IE && VERSION === 7);
+    this.IE8 = !!(this.IE && VERSION === 8);
+    this.IE9 = !!(this.IE && VERSION === 9);
+
+  },
 
   // Setup miscellaneous html needs.
   initHTML : function() {
@@ -125,8 +132,10 @@ Page.prototype = {
     );
   },
 
+
   initNav : function() {
 
+    // Primary navigation tooltips
     $("#nav_primary ul li").hover(function(){
         $(this).find(".tooltip").fadeIn(100);
       }, function() {
@@ -135,22 +144,50 @@ Page.prototype = {
 
   },
 
+  menuClick : function( clicked ) {
+    this.hideMenus( clicked );
+  },
+
+  hideMenus : function( except ) {
+    var thiss = this;
+    $(this.menus).each(function() {
+      if(this == except) { except.show(); }
+      else               { this.hide(); }
+    });
+  },
+
   initMenus : function() {
 
 
-    var note_widget = new NoteWidget("#widget_new_note");
-    var settings_menu = new SettingsMenu({trigger: "#menu_settings_trigger" , menu: "#menu_settings" })
-    var version_menu = new VersionMenu({trigger: "#menu_version_trigger" , menu: "#menu_version"});
-    var language_menu = new LanguageMenu("#choose_language");
-    var profile_menu = new ProfileMenu({trigger: "#header_profile_trigger" , menu: "#header_profile_menu" });
+    var note_widget     = new NoteWidget("#widget_new_note");
+    var settings_menu   = new SettingsMenu({trigger: "#menu_settings_trigger" , menu: "#menu_settings" })
+    var version_menu    = new VersionMenu({trigger: "#menu_version_trigger" , menu: "#menu_version"});
+    var language_menu   = new LanguageMenu("#choose_language");
+    var profile_menu    = new ProfileMenu({trigger: "#header_profile_trigger" , menu: "#header_profile_menu" });
 
-
-
-
+    var thiss = this;
     var all_menu_triggers = $('.dynamic_menu_trigger');
         all_menu_triggers.each( function(index) {
           var m = new PopupMenu({trigger: this});
+          thiss.menus.push(m);
+          $(m).bind("menu:click", function(e) {
+            thiss.menuClick(e.target);
+          });
         });
+
+        $(window).resize(function() {
+          thiss.hideMenus(true);
+        });
+
+        $(document).mousedown(function(ev) {
+          var el = $(ev.target);
+          if (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.colorpicker').length && !el.closest('.dynamic_menu').length)) {
+            thiss.hideMenus(true);
+          }
+        }).keydown(function(ev) {
+          if (ev.keyCode === 27) { thiss.hideMenus(true); }
+        });
+
 
     var all_menus = $('.dynamic_menu');
         all_menus.find("form").submit(function() {

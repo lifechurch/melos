@@ -1,3 +1,5 @@
+// Class to manage Profile Menu functionality in site top header.
+
 function ProfileMenu( opts ) {
 
   this.menu       = $(opts.menu);
@@ -16,7 +18,6 @@ ProfileMenu.prototype = {
     this.trigger.on("click", $.proxy( function(e) {
       e.preventDefault();
       (this.activated()) ? this.hide() : this.show()
-
     }, this));
 
     $(window).on("resize", $.proxy( function(e) {

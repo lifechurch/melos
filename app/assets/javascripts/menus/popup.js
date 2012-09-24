@@ -1,3 +1,6 @@
+// Class to manage dynamic menu / popup menu functionality.
+// Eventually this should become a base class for all /menus/*
+
 function PopupMenu( opts ) {
   this.trigger  = $(opts.trigger);
   this.menu     = $(this.trigger.attr("href"));
@@ -5,43 +8,34 @@ function PopupMenu( opts ) {
 
   this.active_class = "li_active";
 
-  this.trigger.on("click", $.proxy(this.triggerClick,this));
-
-
-  var thiss = this;
-  $(document).mousedown(function(ev) {
-    var el = $(ev.target);
-
-    if (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.colorpicker').length && !el.closest('.dynamic_menu').length)) {
-      thiss.hideAll();
-    }
-  }).keydown(function(ev) {
-    if (ev.keyCode === 27) {
-      thiss.hideAll();
-    }
-  });
-
-  $(window).resize(function() {
-    thiss.hideAll();
-  });
-
-
-
+  this.trigger.on("click", $.proxy( function(e) {
+    e.preventDefault();
+    var ev = jQuery.Event("menu:click", {menu: this, stuff: "Stuff"});
+    $(this).trigger( ev );
+  },this));
 }
 
 PopupMenu.prototype = {
   constructor : PopupMenu,
 
-  triggerClick : function( e ) {
-    e.preventDefault();
-    e.stopPropagation();
+  hide : function() {
+    this.trigger.parent("li").removeClass( this.active_class );
+    this.menu.hide();
+  },
+
+  show : function() {
+
+    this.trigger.closest("li").addClass( this.active_class );
+    this.showMenu();
+  },
+
+  showMenu : function() {
 
     var li            = this.trigger.closest('li');
     var offset        = this.icon.offset();
     var offset_right  = offset.left + this.menu.outerWidth();
     var window_width  = $(window).innerWidth();
     var reverse       = 'dynamic_menu_reverse';
-    var active_class  = this.active_class;
     var reverse_nudge;
     var left;
 
@@ -49,10 +43,9 @@ PopupMenu.prototype = {
     if (offset_right >= window_width) {
       reverse_nudge = this.trigger.hasClass('button') ? 31 : 30;
       left = offset.left - this.menu.outerWidth() + reverse_nudge;
-      menu.addClass(reverse);
+      this.menu.addClass(reverse);
     }
     else {
-
       this.menu.removeClass(reverse);
 
       if (this.trigger.attr('id') === 'verses_selected_button') {
@@ -66,37 +59,22 @@ PopupMenu.prototype = {
       }
     }
 
-
     if (this.menu.is(':hidden')) {
 
-      li.addClass(active_class);
+      li.addClass(this.active_class);
 
+      // Menu hasn't been positioned yet. Position it and show it.
       if(this.menu.css('position') != "absolute"){
-         this.menu.css({ left: left }).show();
 
+        this.menu.css({ left: left }).show();
+
+        // Scroll to book if this menu is book/chapter menu.
         if(this.menu.attr('id') == 'menu_book_chapter'){
          var index = this.menu.find('#menu_book').data('selected-book-num');
          this.menu.find('.scroll').first().scrollTop((index - 1) * (this.menu.find('li').height() + 1)); //TODO: why are 1st and last elements 1px shorter than the rest??
         }
       }
-      else{
-        this.menu.show();
-      }
+      else{ this.menu.show(); }
     }
-    else {
-      this.hideAll();
-    }
-
-    this.trigger.blur();
-  },
-
-  hideAll : function() {
-    var active_class = 'li_active';
-    var item = this.trigger.parent('li');
-        item.removeClass(active_class);
-
-    var menus = $('.dynamic_menu');
-        menus.hide();
   }
-
 }

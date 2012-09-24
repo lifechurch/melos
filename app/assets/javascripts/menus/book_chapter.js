@@ -1,37 +1,40 @@
-function BookChapterMenu() {
+// Class for managing the Books/Chapter dynamic menu selector.
+// Found in the bible reader header.
 
-  this.book_menu        = $('#menu_book');
-  this.chapter_menu     = $('#menu_chapter');
-  this.current_book     = $('.main_reader article').data('book');;
-  this.current_chapter  = $('.main_reader article').data('chapter');
-  this.active_class = "li_active";
+function BookChapterMenu( opts ) {
+
+  this.menu             = $(opts.menu);
+  this.trigger          = $(opts.trigger);
+  this.book_menu        = this.menu.find('#menu_book');
+  this.chapter_menu     = this.menu.find('#menu_chapter');
+  this.current_book     = $('#main article').data('book');
+  this.current_chapter  = $('#main article').data('chapter');
+  this.active_class     = "li_active";
 
   var thiss = this;
 
   this.selectInitialBook();
 
   //show chapters when users clicks a book
-  this.book_menu.delegate('a', 'click', function(e) {
-    var book = $(this).data("book");  // data-book attribute on book menu a tag.
-    var link = $(this);
-    var active_class = "li_active";
-
-    thiss.setCurrentBook(book)
-    thiss.populateChapters(book);
-
+  this.book_menu.delegate('a', 'click', $.proxy(function(e) {
     e.preventDefault();
-    this.blur();
-  });
+
+    var link = $(e.currentTarget);
+    var book = link.data("book");  // data-book attribute on book menu a tag.
+
+    this.setCurrentBook(book)
+    this.populateChapters(book);
+    link.blur();
+
+  },this));
 }
 
 BookChapterMenu.prototype = {
   constructor : BookChapterMenu,
 
   selectInitialBook : function() {
-
     this.setCurrentBook( this.current_book );
     this.populateChapters( this.current_book );
-
   },
 
   populateChapters : function( book ) {
@@ -65,19 +68,20 @@ BookChapterMenu.prototype = {
   setCurrentBook : function( book ) {
 
     this.current_book = book;
+
+    var book = book;
     var active_class = this.active_class;
+    var book_menu = this.book_menu;
+        book_menu.find("li").each(function(index) {
+          var li      = $(this);
+          var a       = li.find("a");
+          var a_book  = a.data("book");
 
-    $('#menu_book_chapter #menu_book li').each(function(index) {
-      var li      = $(this);
-      var a       = $(this).find("a");
-      var a_book  = a.data("book");
-
-      if ( a_book == book ){
-        li.addClass(active_class).siblings().removeClass(active_class);
-        li.closest('#menu_book').data('selected-book-num', index + 1);
-      }
-
-    });
+          if ( a_book == book ){
+            li.addClass(active_class).siblings().removeClass(active_class);
+            book_menu.data('selected-book-num', index + 1);
+          }
+        });
   }
 
 }

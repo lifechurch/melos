@@ -31,7 +31,7 @@ function Reader(opts) {
   this.initTranslationNotes();
   this.initNextPrev();
 
-  this.book_chapter_menu  = new BookChapterMenu();
+  this.book_chapter_menu  = new BookChapterMenu({trigger: "#menu_book_chapter_trigger", menu: "#menu_book_chapter"});
   this.selected_menu      = new SelectedMenu({trigger:"#menu_selected_trigger",menu:"#menu_bookmark"});  // need to update this html id.
 
   $(this.selected_menu).bind("verses:clear", $.proxy(function(e){

@@ -22,24 +22,23 @@ function SelectedMenu( opts ) {
 
 
   // Hide/show note form in widget sidebar
+  var widgets = $("div.widget.bookmarks, div.widget.notes, div.widget.ad_bible_app");
+  var pnotes = $("div.widget.parallel_notes");
+      pnotes.find('.cancel').click(function(e){
+        e.preventDefault();
+        pnotes.hide(200, function() {
+          widgets.show(200);
+        });
+      });
 
-  $("div.widget.parallel_notes").find('a.cancel').click(function(){
-    $("div.widget.parallel_notes").hide(200, function() {
-      $("div.widget.bookmarks, div.widget.notes, div.widget.ad_bible_app").show(200);
-    });
-    return false;
-  });
-
+  // Show note form when clicking the "New Note" menu item in the accordion.
   $("#new_note_modal").click( $.proxy(function(e) {
     e.preventDefault();
     this.close();
-    $("div.widget.bookmarks, div.widget.notes, div.widget.ad_bible_app").hide(200, function() {
-      $("div.widget.parallel_notes").show(200);
+    widgets.hide(200, function() {
+      pnotes.show(200);
     });
   },this));
-
-
-
 }
 
 SelectedMenu.prototype = {

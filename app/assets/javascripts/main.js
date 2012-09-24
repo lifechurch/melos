@@ -206,51 +206,8 @@ var YV = (function($, window, document, undefined) {
           // in a repetetive loop due to window scroll firing.
           timer = setTimeout(pin_widget, 1);
         });
-      },
-      // YV.init.verse_sharing
-      verse_sharing: function() {
-
-
-      },
-
-      // YV.init.parallel_notesnotes
-      parallel_notes: function() {
-        $('.alternate_select').on('change', function(){
-          if($(this).val() == "publish_on"){
-            $('.secret').fadeIn();
-            $('#publish_time').addClass('publish_on_selected');
-          } else{
-            $('.secret').hide();
-            $('#publish_time').removeClass('publish_on_selected');
-          }
-        });
-        $("#note_content").wysiwyg({
-            css: '/assets/wysiwyg/editor.css',
-            initialContent: "",
-            controls: {
-              justifyLeft: { visible: false },
-              justifyCenter: { visible: false },
-              justifyRight: { visible: false },
-              justifyFull: { visible: false },
-              indent: { visible: false },
-              outdent: { visible: false },
-              subscript: { visible: false },
-              superscript: { visible: false },
-              undo: { visible: false },
-              redo: { visible: false },
-              insertHorizontalRule: { visible: false },
-              h1: { visible: false },
-              h2: { visible: false },
-              h3: { visible: false },
-              insertTable: { visible: false },
-              code: { visible: false }
-            },
-            plugins: {
-	          i18n: { lang: getCookie('locale').toLowerCase() }
-            }
-          });
-      },
-   }
+      }
+    }
   };
 })(jQuery, this, this.document);
 
