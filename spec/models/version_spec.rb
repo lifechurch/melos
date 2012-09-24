@@ -47,6 +47,20 @@ describe Version do
     end
   end
 
+  describe "#all_by_publisher" do
+    it "doesn't hit the API for each version" do
+      Benchmark::realtime{Version.all_by_publisher}.should < 10
+    end
+    it "returns a hash of arrays of versions, grouped by publisher" do
+      pubs = Version.all_by_publisher
+      pubs.should have_at_least(2).items
+      pubs[16].should have_at_least(2).items
+      pubs[16].should include Version.find(8)
+      pubs[1].should have_at_least(1).items
+      pubs[1].first.should be_a Version
+    end
+  end
+
   describe "#title" do
     it "returns the version's name" do
       Version.find(@kjv.id).title.should =~ /King James/i

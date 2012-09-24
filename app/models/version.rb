@@ -3,6 +3,7 @@ class Version < YouVersion::Resource
   attribute :id
   attribute :title
   attribute :audio
+  attribute :publisher_id
 
   def self.all(app_lang_tag = "")
     # `bible_langauge_id` is the arbitrariy identifier of the language
@@ -26,6 +27,12 @@ class Version < YouVersion::Resource
     _all = Version.all.find_all{|v| opts[:only].include? v.id} if opts[:only]
     _all ||= all
     _all.group_by {|v| v.language.tag}
+  end
+  def self.all_by_publisher(opts={})
+    # to allow a restricted subset of versions (e.g. for white-list sites)
+    _all = Version.all.find_all{|v| opts[:only].include? v.id} if opts[:only]
+    _all ||= all
+    _all.group_by {|v| v.publisher_id}
   end
   def self.find(version)
     ver = versions[self.id_from_param(version)]

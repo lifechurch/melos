@@ -2,16 +2,30 @@
   .widget
     %header
       %span
-        =t("versions.widget title")
+        =t("versions.read title")
+    %ul.widget_menu
+      %li
+        = link_to @version, bible_path((last_read || default_reference).merge(version: @version))
+  .widget
+    %header
+      %span
+        =t("versions.publisher widget title")
     %ul.widget_menu
       %li
         %p= @version.publisher.try :name
       - if @version.publisher.try(:url).present?
         %li
           = link_to(t("versions.visit publisher"), @version.publisher.url)
-      %li
-        = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version))
+  - if @related.present?
+    .widget
+      %header
+        %span
+          =t("versions.other versions")
+      %ul.widget_menu
+        - @related.each do |v|
+          %li
+            = link_to v
 %article
   %h1= @version
-  %h2= @version.publisher.try :name
-  %p.copyright= @version.info.try :html_safe
+  %h4= @version.publisher.try :name
+  .copyright= @version.info.try :html_safe

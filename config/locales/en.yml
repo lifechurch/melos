@@ -650,6 +650,7 @@ en:
     404 message:                                "We're sorry, the page you're looking for can't be found."
   versions:
     index title:                                "List of Versions"
-    widget title:                               "About This Version"
-    visit publisher:                                 "Visit Publisher's Website"
+    publisher widget title:                     "Publisher"
+    visit publisher:                            "Visit Publisher's Website"
     read title:                                 "Read This Version"
+    other versions:                             "Other Versions from This Publisher"

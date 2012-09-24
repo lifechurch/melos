@@ -6,5 +6,8 @@ class VersionsController < ApplicationController
 
   def show
     @version = Version.find(params[:id])
+
+    @related = Version.all_by_publisher[@version.publisher.id]
+    @related = @related - [@version] if @related
   end
 end
