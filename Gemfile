@@ -68,6 +68,5 @@ group :development, :tddium_ignore do
   gem 'hooves'
   gem 'pry', require: false
   gem 'quiet_assets'
-  gem 'ruby-prof'
   gem 'spork-rails'
 end

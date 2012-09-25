@@ -398,7 +398,6 @@ DEPENDENCIES
   routing-filter (~> 0.3.1)
   rspec-cells
   rspec-rails
-  ruby-prof
   sass-rails (= 3.1.5)
   simplecov
   spork-rails
