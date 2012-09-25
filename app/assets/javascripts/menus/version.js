@@ -16,13 +16,17 @@ VersionMenu.prototype = {
         });
 
 
-    this.menu.find('a').click(function() {
-      var version_id = $(this).closest('tr').data("version");
-      var abbrev = $(this).closest('tr').data("abbrev");
-      var menu = $(this).closest(".dynamic_menu.version_select");
-      var path_verses = $("article").data("selected-verses-path-partial");
-      var path_chapter = $('article .chapter').data('usfm');
-      var link_base = '/bible/' + version_id + '/' + path_chapter;
+    this.menu.find('a').click(function(e) {
+      e.preventDefault();
+      // Todo: should definitely be refactored / figured out
+
+      var tr            = $(this).closest('tr');
+      var version_id    = tr.data("version");
+      var abbrev        = tr.data("abbrev");
+      var menu          = $(this).closest(".dynamic_menu.version_select");
+      var path_verses   = $("article").data("selected-verses-path-partial");
+      var path_chapter  = $('article .chapter').data('usfm');
+      var link_base     = '/bible/' + version_id + '/' + path_chapter;
 
       if (path_verses) link_base = link_base + path_verses;
       link_base = link_base + "." + abbrev;

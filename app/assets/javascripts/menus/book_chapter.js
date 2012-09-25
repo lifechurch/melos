@@ -11,9 +11,9 @@ function BookChapterMenu( opts ) {
   this.current_chapter  = $('#main article').data('chapter');
   this.active_class     = "li_active";
 
-  var thiss = this;
-
-  this.selectInitialBook();
+  // Select initial book
+  this.setCurrentBook( this.current_book );
+  this.populateChapters( this.current_book );
 
   //show chapters when users clicks a book
   this.book_menu.delegate('a', 'click', $.proxy(function(e) {
@@ -22,7 +22,7 @@ function BookChapterMenu( opts ) {
     var link = $(e.currentTarget);
     var book = link.data("book");  // data-book attribute on book menu a tag.
 
-    this.setCurrentBook(book)
+    this.setCurrentBook(book);
     this.populateChapters(book);
     link.blur();
 
@@ -31,11 +31,6 @@ function BookChapterMenu( opts ) {
 
 BookChapterMenu.prototype = {
   constructor : BookChapterMenu,
-
-  selectInitialBook : function() {
-    this.setCurrentBook( this.current_book );
-    this.populateChapters( this.current_book );
-  },
 
   populateChapters : function( book ) {
 

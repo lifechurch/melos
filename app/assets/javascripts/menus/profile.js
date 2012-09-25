@@ -1,7 +1,6 @@
 // Class to manage Profile Menu functionality in site top header.
 
 function ProfileMenu( opts ) {
-
   this.menu       = $(opts.menu);
   this.trigger    = $(opts.trigger);
   this.active_class = "li_active";

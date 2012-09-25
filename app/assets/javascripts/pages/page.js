@@ -1,11 +1,11 @@
 // Page class.  This is the main class that is run when the page loads.
 // This class sets up the entire page javascript functionality and interactivity.
+// Long term we should refactor, subclass this page, and dynamicaly load page class at page load time.
 
 function Page() {
   this.selected_menu  = undefined;
   this.menus          = new Array();
   this.html_el        = $(document.documentElement);
-
 
   this.initConstants();
   this.initHTML();
@@ -157,6 +157,7 @@ Page.prototype = {
   },
 
   initMenus : function() {
+
 
     var note_widget     = new NoteWidget("#widget_new_note");
     var settings_menu   = new SettingsMenu({trigger: "#menu_settings_trigger" , menu: "#menu_settings" })

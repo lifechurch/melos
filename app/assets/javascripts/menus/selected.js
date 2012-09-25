@@ -7,8 +7,9 @@ function SelectedMenu( opts ) {
   this.counter    = $('#verses_selected_count');
   this.accordion  = this.menu.find('.accordion');
   this.selected_count = 0;
-  this.initAccordion(); // setup our accordion actions / handlers
   this.selected_references = [];
+
+  this.initAccordion(); // setup our accordion actions / handlers
 
   this.bookmark_pane    = new BookmarkPane("#bookmark-pane");
   this.highlight_pane   = new HighlightPane("#highlight-pane");
@@ -20,25 +21,26 @@ function SelectedMenu( opts ) {
     this.setTotal(0);
   },this));
 
-
-  // Hide/show note form in widget sidebar
   var widgets = $("div.widget.bookmarks, div.widget.notes, div.widget.ad_bible_app");
   var pnotes = $("div.widget.parallel_notes");
-      pnotes.find('.cancel').click(function(e){
-        e.preventDefault();
-        pnotes.hide(200, function() {
-          widgets.show(200);
-        });
-      });
+  var speed = 200;
 
   // Show note form when clicking the "New Note" menu item in the accordion.
   $("#new_note_modal").click( $.proxy(function(e) {
     e.preventDefault();
     this.close();
-    widgets.hide(200, function() {
-      pnotes.show(200);
+    widgets.hide( speed , function() {
+      pnotes.show( speed );
     });
   },this));
+
+  // Hide/show note form in widget sidebar
+  pnotes.find('.cancel').click(function(e){
+    e.preventDefault();
+    pnotes.hide( speed , function() {
+      widgets.show( speed );
+    });
+  });
 }
 
 SelectedMenu.prototype = {
@@ -106,6 +108,7 @@ SelectedMenu.prototype = {
 
   close : function() {
     this.trigger.parent('li').removeClass('li_active');
+    $("#li_selected_verses").removeClass("li_active");
     this.menu.hide();
   }
 }

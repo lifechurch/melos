@@ -10,7 +10,7 @@ function PopupMenu( opts ) {
 
   this.trigger.on("click", $.proxy( function(e) {
     e.preventDefault();
-    var ev = jQuery.Event("menu:click", {menu: this, stuff: "Stuff"});
+    var ev = jQuery.Event("menu:click", {menu: this});
     $(this).trigger( ev );
   },this));
 }
@@ -48,7 +48,7 @@ PopupMenu.prototype = {
     else {
       this.menu.removeClass(reverse);
 
-      if (this.trigger.attr('id') === 'verses_selected_button') {
+      if (this.trigger.attr('id') === 'menu_selected_trigger') {
         left = offset.left - 1;
       }
       else if (this.trigger.hasClass('button')) {

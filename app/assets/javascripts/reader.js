@@ -1,6 +1,17 @@
 // Bible Reader
 
 function Reader(opts) {
+
+  this.selected = {
+    verses : [],
+    verse_usfms : [],
+    verse_params : [],
+    verse_numbers : [],
+    verse_usfm_ranges : [],
+    verse_number_ranges : [],
+  }
+
+
   this.version    = opts.version || "";
   this.abbrev     = opts.abbrev || "";
   this.reference  = opts.reference || "";
@@ -12,7 +23,6 @@ function Reader(opts) {
   this.full_screen     = opts.full_screen || false;
   this.parallel_mode   = opts.parallel_mode || false;
   this.selected_verses = [];
-
 
   this.font           = opts.font || "";
   this.size           = opts.size || "";
@@ -102,43 +112,69 @@ Reader.prototype = {
     this.parseVerses();
   },
 
+  numFromVerse : function( verse_el ) {
+    return parseInt( $(verse_el).find(".label").html() );
+  },
+
+  referenceParam : function( opts ) {
+    var usfm    = opts.usfm || undefined;
+    var version = opts.version || undefined;
+    if(usfm && version) { return usfm + "." + version + "-VID";}
+  },
+
   parseVerses : function() {
 
-    // Todo: potentially optimize with return if selected_verses.length == 0
-
-    var thiss = this;
-    var selected_verses_usfm  = [];
-    var selected_verses_param = [];
-    var ranges_usfm           = [];
-    var verse_numbers         = [];
-    var verse_ranges          = [];
-    this.selected_verses = this.fetchSelectedVerses();
-
+    // Zero out values
     $("article").attr('data-selected-verses-rel-link', false);
-
-    // Zero out values for new selection analysis
     $('.verses_selected_input').val('');
-    verse_ranges.length = 0;
-    verse_numbers.length = 0;
+
+    this.selected.verses = this.fetchSelectedVerses();
+    this.selected.verse_usfms.length = 0;
+    this.selected.verse_params.length = 0;
+    this.selected.verse_numbers.length = 0;
+    this.selected.verse_usfm_ranges.length = 0;
+    this.selected.verse_number_ranges.length = 0;
 
     // Get USFM refs and App params for each selected verse
-    var _usfm = "";
-    this.selected_verses.each(function() {
-        _usfm = $(this).data('usfm');
-        if (selected_verses_usfm.indexOf(_usfm) == -1) {
-          // New verse, add to array of verses
-          selected_verses_usfm.push(_usfm);
-          verse_numbers.push(parseInt($(this).find('.label').html()));
-          selected_verses_param.push(_usfm + "." + $(this).closest('.version').data('vid') + "-VID");
+      var thiss = this;
+      var selected = this.selected;
+
+      this.selected.verses.each(function() {
+        var verse   = $(this);
+        var _usfm   = verse.data('usfm');
+        var _vid    = verse.closest('.version').data('vid')
+        if(selected.verse_usfms.indexOf(_usfm) == -1) { //usfm reference not in array
+           selected.verse_usfms.push( _usfm );                                                // ex. 2CO.1.1
+           selected.verse_numbers.push( thiss.numFromVerse(verse) );                          // ex. 1,2,3
+           selected.verse_params.push( thiss.referenceParam({usfm: _usfm, version: _vid } ));  // ex. 2CO.1.1.1-VID
         }
-    });
-    var total = selected_verses_usfm.length;
+      });
+
+      this.parseRanges();
+
+    // FIX.  When a range is created (consecutive verses) clicking the token
+    // does not currently remove the range from being selected.  In markup and pill/token.
+      this.generateReferenceTokens();
+
+    // Generate short link and document link paths
+      this.generateLinks();
+
+    // Update any menus and widgets now that we have parsed our selected verses
+      this.updateMenus();
+  },
+
+  parseRanges : function() {
+
+    // setup variables for creating ranges.
+    var verse_numbers = this.selected.verse_numbers;
+    var usfm_ranges   = [];
+    var verse_ranges  = [];
 
     // Create ranges
     if (verse_numbers.length > 0) {
       if (verse_numbers.length == 1) {
-        verse_ranges.push(verse_numbers[0]);
-        ranges_usfm.push(selected_verses_usfm[0]);
+        verse_ranges.push(this.selected.verse_numbers[0]);
+        usfm_ranges.push(this.selected.verse_usfms[0]);
       } else {
         var in_range = false;
         var range_start = 0;
@@ -149,20 +185,20 @@ Reader.prototype = {
               // Then start a range
               in_range = true;
               range_start = verse_numbers[i];
-              usfm_range_start = selected_verses_usfm[i];
+              usfm_range_start = this.selected.verse_usfms[i];
             } else {
               // it's just a single verse
               verse_ranges.push(verse_numbers[i]);
-              ranges_usfm.push(selected_verses_usfm[i]);
+              usfm_ranges.push(this.selected.verse_usfms[i]);
             }
 
           } else if (i == verse_numbers.length) {
             if (in_range == true) {
               verse_ranges.push(range_start + "-" + verse_numbers[i]);
-              ranges_usfm.push(usfm_range_start + "-" + verse_numbers[i]);
+              usfm_ranges.push(usfm_range_start + "-" + verse_numbers[i]);
             } else {
               verse_ranges.push(verse_numbers[i]);
-              ranges_usfm.push(selected_verses_usfm[i]);
+              usfm_ranges.push(this.selected.verse_usfms[i]);
             }
             exit = true;
           } else {
@@ -172,17 +208,17 @@ Reader.prototype = {
               if (in_range == false) {
                 in_range = true;
                 range_start = verse_numbers[i];
-                usfm_range_start = selected_verses_usfm[i];
+                usfm_range_start = this.selected.verse_usfms[i];
               }
             } else {
               // Stop a range if we're in it, add number if we're not
               if (in_range == true) {
                 in_range = false;
                 verse_ranges.push(range_start + "-" + verse_numbers[i]);
-              ranges_usfm.push(usfm_range_start + "-" + verse_numbers[i]);
+                usfm_ranges.push(usfm_range_start + "-" + verse_numbers[i]);
               } else {
                 verse_ranges.push(verse_numbers[i]);
-                ranges_usfm.push(selected_verses_usfm[i]);
+                usfm_ranges.push(this.selected.verse_usfms[i]);
               }
             }
           }
@@ -190,41 +226,55 @@ Reader.prototype = {
       }
     }
 
-    // Generate links, short, relative, etc.
-      var link = "http://bible.us/" + this.version + "/" + this.book + "." + this.chapter + "." + verse_ranges.join(',') + "." + this.abbrev;
-      var sel_verses_path_partial = "." + verse_ranges.join(',');
-      var rel_link = "/bible/" + this.version + "/" + this.book + "." + this.chapter + sel_verses_path_partial;
-
-      $("article").attr('data-selected-verses-rel-link', rel_link);
-      $("article").attr('data-selected-verses-path-partial', sel_verses_path_partial);
-
-      this.selected_menu.updateLink(link);
-      this.selected_menu.updateSharing({ link: link });
-
-    // After parsing, update the highlights pane.
-      this.selected_menu.updateHighlights( selected_verses_param );
-
-    // Set total selected verse count
-      this.selected_menu.setTotal(total);
-
-    // FIX.  When a range is created (consecutive verses) clicking the token
-    // does not currently remove the range from being selected.  In markup and pill/token.
-      this.generateReferenceTokens( verse_ranges , ranges_usfm );
+    // populate our selected hash with values after creating ranges.
+    this.selected.verse_usfm_ranges = usfm_ranges;
+    this.selected.verse_number_ranges = verse_ranges;
   },
 
-  generateReferenceTokens : function( verse_ranges , ranges_usfm ) {
+  updateMenus : function() {
+
+    // Set total selected verse count
+      var total = this.selected.verse_usfms.length;
+      this.selected_menu.setTotal(total);
+
+    // After parsing, update the highlights pane.
+      this.selected_menu.updateHighlights( this.selected.verse_params );
+
+    // Set selected references
+      this.selected_menu.setSelectedRefs( this.selected.verse_usfm_ranges );
+
+  },
+
+  generateLinks : function( ) {
+    var joined        = this.selected.verse_number_ranges.join(",");
+    var short_link    = "http://bible.us/" + this.version + "/" + this.book + "." + this.chapter + "." + joined + "." + this.abbrev;
+    var partial_path  = "." + joined;
+    var relative_link = "/bible/" + this.version + "/" + this.book + "." + this.chapter + partial_path;
+
+    this.selected_menu.updateLink( short_link );
+    this.selected_menu.updateSharing({ link: short_link });
+
+    $("article").attr('data-selected-verses-rel-link', relative_link);
+    $("article").attr('data-selected-verses-path-partial', partial_path);
+  },
+
+  generateReferenceTokens : function( ) {
+
+    var verse_ranges  = this.selected.verse_number_ranges;
+    var usfm_ranges   = this.selected.verse_usfm_ranges;
 
     // Reference info, tokens and handlers
     var verse_refs = [];
     var thiss = this;
-    $(".reference_tokens").html("");
-    $.each(verse_ranges, function(i, range) {
-      var ref = ranges_usfm[i] + "." + thiss.version + '-' + thiss.abbrev; //ex: JHN.1.1.69-GNTD
-      verse_refs.push(ref);
-      var li = $("<li/>");
-      var a  = $("<a/>",{ href: "#", "data-usfm": ranges_usfm[i]}).html(thiss.book_human + " " + thiss.chapter + ":" + range);
+    var lists = $(".reference_tokens");
+        lists.html("");
 
-      // Deselect verse in reader markup via toggling selected class
+    var temp = [];
+    $.each(verse_ranges, function(i, range) {
+      var li = $("<li/>");
+      var a  = $("<a/>",{ href: "#", "data-usfm": usfm_ranges[i]}).html(thiss.book_human + " " + thiss.chapter + ":" + range);
+
+      // Clicking reference token will deselect verse and run parsing
       a.click( function(e) {
         e.preventDefault();
 
@@ -234,12 +284,8 @@ Reader.prototype = {
       });
 
       li.append(a);
-
-      // Append token to all .reference_token lists
-      $(".reference_tokens").append(li);
+      lists.append(li); // Append token to all .reference_token lists
     });
-
-    this.selected_menu.setSelectedRefs(verse_refs);
   },
 
 
@@ -411,14 +457,17 @@ Reader.prototype = {
 
   // Public: toggle full screen mode for Reader
   toggleFullScreen : function() {
+
+    var page = window.app.getPage(); //window.page;
+
     if( this.isFullScreen() ) {
       this.html_el.removeClass("full_screen");
       deleteCookie("full_screen");
       this.full_screen = false;
 
-      YV.misc.kill_widget_spacers();
-      YV.init.fixed_widget_header();
-      YV.init.fixed_widget_last();
+      page.killWidgetSpacers();
+      page.fixWidgetHeader();
+      page.fixWidgetLast();
     }
     else {
       this.html_el.addClass("full_screen");
@@ -436,17 +485,20 @@ Reader.prototype = {
   toggleParallel : function() {
 
     var alt_version_menu_link = $("#menu_alt_version").find("a");
+    var page = window.app.getPage();
 
     if( this.isParallel() ) {
 
       this.html_el.removeClass('parallel_mode');
       deleteCookie('parallel_mode');
       if (getCookie('full_screen') == null) this.html_el.removeClass('full_screen'); //if user didn't explicitly set full_screen, go back to regular
-      YV.misc.kill_widget_spacers();
-      YV.init.fixed_widget_header();
-      YV.init.fixed_widget_last();
 
       alt_version_menu_link.off('click'); // remove click handler from element
+
+      page.killWidgetSpacers();
+      page.fixWidgetHeader();
+      page.fixWidgetLast();
+
       this.parallel_mode = false;
     }
     else {
