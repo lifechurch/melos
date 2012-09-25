@@ -9,7 +9,7 @@ class VersionsController < ApplicationController
   def show
     @version = Version.find(params[:id])
 
-    @related = Version.all_by_publisher[@version.publisher.id].find_all{|v| v.language.tag == I18n.locale.to_s}
+    @related = Version.all_by_publisher[@version.publisher.id].find_all{|v| v.language.tag == @version.language.tag}
     @related = @related - [@version] if @related
   end
 end
