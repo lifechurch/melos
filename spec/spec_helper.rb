@@ -4,8 +4,7 @@ require 'spork'
 ENV["RAILS_ENV"] = 'test'
 
 Spork.prefork do
-  unless ENV['DRB'] || ENV['TDDIUM']
-    # TDDium doesn't support simplecov
+  unless ENV['DRB']
     # this configuration is required to get simplecov
     # to execute correctly with DRB servers like Spork
     require 'simplecov'
