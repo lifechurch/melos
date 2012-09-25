@@ -46,8 +46,7 @@ YouversionWeb::Application.configure do
   # Default is true for `Rails s --debug`, but false for `rails console --debug`
 
   unless ENV['TDDIUM']
-  require 'debugger'
-  Debugger.settings[:autoeval] = true
+    Debugger.settings[:autoeval] = true
   end
 end
 
