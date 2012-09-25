@@ -45,9 +45,7 @@ YouversionWeb::Application.configure do
   # for easier debugging in the console (rails console --debug)
   # Default is true for `Rails s --debug`, but false for `rails console --debug`
   # Debugger has issues with TDDium service
-  unless ENV['TDDIUM']
-    Debugger.settings[:autoeval] = true
-  end
+  Debugger.settings[:autoeval] = true
 end
 
 silence_warnings do
