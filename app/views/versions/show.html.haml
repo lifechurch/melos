@@ -2,16 +2,19 @@
 
   .widget.sticky.gutter_bottom_half
     = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
-  .widget
-    %header
-      %span
-        =t("versions.publisher widget title")
-    %ul.widget_menu
-      %li
-        %p= @version.publisher.try :name
-      - if @version.publisher.try(:url).present?
+
+  - if @version.publisher.name.present?
+    .widget
+      %header
+        %span
+          =t("versions.publisher widget title")
+      %ul.widget_menu
         %li
-          = link_to(t("versions.visit publisher"), @version.publisher.url)
+          - if @version.publisher.url.present?
+            = link_to @version.publisher.name, @version.publisher.url
+          -else
+            %p= @version.publisher.name
+
   - if @related.present?
     .widget
       %header

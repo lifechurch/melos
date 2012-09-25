@@ -193,6 +193,9 @@ class Version < YouVersion::Resource
     return @detailed_attributes unless @detailed_attributes.nil?
 
     @detailed_attributes = YvApi.get("bible/version", cache_for: a_long_time, id: id)
+    # uncommenting to show API issue, leavning here in case we need it in a pinch
+    # @detailed_attributes.publisher.name = nil if @detailed_attributes.publisher.name == 'null'
+    @detailed_attributes
   end
   def versions
     self.class.versions

@@ -44,7 +44,7 @@ YouversionWeb::Application.configure do
   # Enable auto evalution of unrecognized commands
   # for easier debugging in the console (rails console --debug)
   # Default is true for `Rails s --debug`, but false for `rails console --debug`
-
+  # Debugger has issues with TDDium service
   unless ENV['TDDIUM']
     Debugger.settings[:autoeval] = true
   end
