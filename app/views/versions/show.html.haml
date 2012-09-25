@@ -1,11 +1,7 @@
 - content_for :sidebar do
-  .widget
-    %header
-      %span
-        =t("versions.read title")
-    %ul.widget_menu
-      %li
-        = link_to @version, bible_path((last_read || default_reference).merge(version: @version))
+
+  .widget.sticky.gutter_bottom_half
+    = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
   .widget
     %header
       %span
