@@ -21,8 +21,7 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  if ENV['DRB'] || !ENV['TDDIUM']
-    # TDDium doesn't support simplecov
+  if ENV['DRB']
     # this configuration is required to get simplecov
     # to execute correctly with DRB servers like Spork
     require 'simplecov'
