@@ -148,11 +148,9 @@ Page.prototype = {
   menuClick : function( clicked ) {
     // if menu clicked is already selected, hide all menus and set to null.
     if(this.current_menu == clicked) {
-      this.hideMenus(null)
-      this.current_menu = null;
+      this.hideMenus(null);
     } else {
       this.hideMenus( clicked );
-      this.current_menu = clicked;
     }
   },
 
@@ -162,6 +160,8 @@ Page.prototype = {
       if(this == except) { except.show(); }
       else               { this.hide(); }
     });
+
+    this.current_menu = except;
 
     // Remove all handlers created on menu:click
     $(document).off("mousedown", this.onDocumentMouseDown);
