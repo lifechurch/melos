@@ -27,8 +27,6 @@ function deleteCookie(name) {
 jQuery(document).ready(function() {
   window.app = new App();
   window.app.setPage( new Page() );
-  //window.app.setPage(new Page());
-  //YV.setPage(new Page());
 });
 
 jQuery(window).load(function() { });
