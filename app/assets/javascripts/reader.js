@@ -106,9 +106,7 @@ Reader.prototype = {
     // Public: clear all selected verses.
   clearSelectedVerses : function() {
     //$('.verse.selected').removeClass('selected');
-    $(this.selected_verses).each(function(index) {
-      $(this).removeClass("selected");
-    });
+    this.fetchSelectedVerses().removeClass('selected');
     this.parseVerses();
   },
 

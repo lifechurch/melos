@@ -17,6 +17,7 @@ function SelectedMenu( opts ) {
   this.share_pane       = new SharePane("#share-pane");
 
   $('#clear_selected_verses').on("click",$.proxy(function(e) {
+    e.preventDefault();
     $(this).trigger("verses:clear");
     this.setTotal(0);
   },this));
