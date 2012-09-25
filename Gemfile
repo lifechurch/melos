@@ -59,14 +59,14 @@ group :test, :development do
 end
 
 group :development, :tddium_ignore do
-  gem 'debugger'
+  gem 'debugger', require: false
   gem 'active_reload' #TODO: Remove when upgrading to Rails 3.2
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'hooves'
-  gem 'pry'
+  gem 'pry', require: false
   gem 'quiet_assets'
   gem 'ruby-prof'
   gem 'spork-rails'

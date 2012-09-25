@@ -58,8 +58,11 @@ end
 
 silence_warnings do
   begin
-    require 'pry'
-    IRB = Pry
+    unless ENV['TDDIUM']
+    #TDDium service has issues with pry/debugger
+      require 'pry'
+      IRB = Pry
+    end
   rescue LoadError
   end
 end
