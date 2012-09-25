@@ -8,7 +8,7 @@
 //= require_tree ./panes/
 //= require_tree ./pages/
 //= require reader
-//= require main
 //= require app
+//= require main
 //= require analytics
 //= require_tree ./i18n/
