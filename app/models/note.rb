@@ -54,7 +54,7 @@ class Note < YouVersion::Resource
     self.content_html = response.content_html
     if response
       self.reference = ReferenceList.new(response.reference, response.version)
-      self.version = Version.find(response.version)
+      self.version = Version.find(response.version) rescue nil
     end
   end
 
@@ -71,14 +71,14 @@ class Note < YouVersion::Resource
 
   def user_avatar_url
     return @ssl_avatar_urls unless @ssl_avatar_urls.nil?
-    
+
     #we only want to use secure urls
     sizes = ["24x24", "48x48", "128x128", "512x512"]
     hash ={}
     sizes.each do |size|
       hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
     end
-    
+
     @ssl_avatar_urls = Hashie::Mash.new(hash)
   end
 #   def update(fields)
