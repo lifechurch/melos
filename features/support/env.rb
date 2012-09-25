@@ -21,7 +21,10 @@ Capybara.server do |app, port|
 end
 
 Spork.prefork do
-  unless ENV['DRB']
+  unless ENV['DRB'] || ENV['TDDIUM']
+    # TDDium doesn't support simplecov
+    # this configuration is required to get simplecov
+    # to execute correctly with DRB servers like Spork
     require 'simplecov'
     SimpleCov.start 'rails'
   end
@@ -55,9 +58,10 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  if ENV['DRB']
+  if ENV['DRB'] && !ENV['TDDIUM']
+    # TDDium doesn't support simplecov
     # this configuration is required to get simplecov
-    # to execute correctly with a DRB servers like Spork
+    # to execute correctly with DRB servers like Spork
     require 'simplecov'
     SimpleCov.start 'rails'
   end

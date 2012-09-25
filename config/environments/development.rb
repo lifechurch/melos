@@ -44,13 +44,20 @@ YouversionWeb::Application.configure do
   # Enable auto evalution of unrecognized commands
   # for easier debugging in the console (rails console --debug)
   # Default is true for `Rails s --debug`, but false for `rails console --debug`
+
+  unless ENV['TDDIUM']
+  require 'debugger'
   Debugger.settings[:autoeval] = true
+  end
 end
 
 silence_warnings do
   begin
-    require 'pry'
-    IRB = Pry
+    unless ENV['TDDIUM']
+    #TDDium service has issues with pry/debugger
+      require 'pry'
+      IRB = Pry
+    end
   rescue LoadError
   end
 end
