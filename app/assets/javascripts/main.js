@@ -492,12 +492,12 @@ var YV = (function($, window, document, undefined) {
 
         var all_items = trigger.parent('li');
         var all_menus = $('.dynamic_menu');
-        var li_class = 'li_active';
+        var active_class = 'li_active';
         var cur_book = $('.main_reader article').data('book');
         var cur_chapter = $('.main_reader article').data('chapter');
 
         function hide_all_menus() {
-          all_items.removeClass(li_class);
+          all_items.removeClass(active_class);
           all_menus.hide();
         }
 
@@ -549,21 +549,35 @@ var YV = (function($, window, document, undefined) {
         });
 
         function populate_chapter_list(book_a_el){
-          var ol = book_a_el.closest('.dynamic_menu').find('ol:first');
-          var chapter_refs = book_a_el.data('chapter-refs');
-          var chapters = book_a_el.data('chapters');
-          var book = book_a_el.data('book');
-          var version = book_a_el.data('version');
-          var abbrev = book_a_el.data('abbrev');
-          var li = book_a_el.closest('li');
+
+          // version_json is currently embedded directly in markup.
+          // Could create an endpoint for this and make a separate request or store locally in another format
+
+          var book    = book_a_el.data('book');    // USFM book abbreviation pulled from clicked html element
+          var version = version_json.id;
+          var abbrev  = version_json.abbreviation;
+
           var list = '';
+          var chapters = version_json.books[book].chapters;
 
-          for (var i = 0; i < chapters.length; i++) {
-            list += '<li class="' + (book == cur_book && chapters[i] == cur_chapter ? li_class : '') + '"><a href="/bible/' + version + "/" + chapter_refs[i] + '.' + abbrev + '">' + chapters[i] + '</a></li>';
+          for( var i = 0; i < chapters.length; i++) {
+            var canonical = chapters[i].canon;
+
+            var chapter_name = chapters[i].human;
+            var chapter_usfm = chapters[i].usfm;
+
+            var link_body = (canonical) ? chapter_name : "i";
+            var classes = ""
+                classes += (book == cur_book && chapter_name == cur_chapter ? active_class : '');
+                classes += (canonical) ? "canonical" : "info";
+
+            list += '<li class="' + classes + '"><a href="/bible/' + version + "/" + chapter_usfm + '.' + abbrev + '">' + link_body + '</a></li>';
           }
+          var chapters_ol = $("#chapter_selector");
+              chapters_ol.html(list);
 
-          li.addClass(li_class).siblings().removeClass(li_class);
-          ol.html(list);
+          // add / remove active class from appropriate elements
+          book_a_el.closest('li').addClass(active_class).siblings().removeClass(active_class);
         }
 
         //select initial book and populate chapter list
@@ -572,7 +586,7 @@ var YV = (function($, window, document, undefined) {
           var a = $(this).find('a');
 
           if (a.data('book') == cur_book){
-            li.addClass(li_class).siblings().removeClass(li_class);
+            li.addClass(active_class).siblings().removeClass(active_class);
             li.closest('#menu_book').data('selected-book-num', index + 1);
             populate_chapter_list(a);
           }
@@ -617,7 +631,7 @@ var YV = (function($, window, document, undefined) {
           if (menu.is(':hidden')) {
             hide_all_menus();
 
-            li.addClass(li_class);
+            li.addClass(active_class);
 
             if(menu.css('position') != "absolute"){
               menu.css({
@@ -1055,18 +1069,18 @@ var YV = (function($, window, document, undefined) {
         }
 
         var li = trigger.closest('li');
-        var li_class = 'li_active';
+        var active_class = 'li_active';
 
         function hide_profile_menu() {
-          li.removeClass(li_class);
+          li.removeClass(active_class);
         }
 
         function show_profile_menu() {
-          li.addClass(li_class);
+          li.addClass(active_class);
         }
 
         trigger.click(function() {
-          if (li.hasClass(li_class)) {
+          if (li.hasClass(active_class)) {
             hide_profile_menu();
           }
           else {
