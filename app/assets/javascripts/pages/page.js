@@ -5,6 +5,7 @@
 function Page() {
   this.selected_menu  = undefined;
   this.menus          = new Array();
+  this.current_menu   = null;
   this.html_el        = $(document.documentElement);
 
   this.initConstants();
@@ -145,7 +146,14 @@ Page.prototype = {
   },
 
   menuClick : function( clicked ) {
-    this.hideMenus( clicked );
+    // if menu clicked is already selected, hide all menus and set to null.
+    if(this.current_menu == clicked) {
+      this.hideMenus(null)
+      this.current_menu = null;
+    } else {
+      this.hideMenus( clicked );
+      this.current_menu = clicked;
+    }
   },
 
   hideMenus : function( except ) {
@@ -154,6 +162,11 @@ Page.prototype = {
       if(this == except) { except.show(); }
       else               { this.hide(); }
     });
+
+    // Remove all handlers created on menu:click
+    $(document).off("mousedown", this.onDocumentMouseDown);
+    $(document).off("keydown", this.onDocKeydown);
+    $(window).off("resize", this.onWindowResized);
   },
 
   initMenus : function() {
@@ -172,22 +185,13 @@ Page.prototype = {
           thiss.menus.push(m);
           $(m).bind("menu:click", function(e) {
             thiss.menuClick(e.target);
+            // Add handlers only after click
+            $(window).on("resize", $.proxy(thiss.onWindowResized,thiss));
+            $(document).on("mousedown", $.proxy(thiss.onDocMousedown, thiss));
+            $(document).on("keydown", $.proxy(thiss.onDocKeydown, thiss));
+            // ------------------------------------------------------------------------
           });
         });
-
-        $(window).resize(function() {
-          thiss.hideMenus(true);
-        });
-
-        $(document).mousedown(function(ev) {
-          var el = $(ev.target);
-          if (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.colorpicker').length && !el.closest('.dynamic_menu').length)) {
-            thiss.hideMenus(true);
-          }
-        }).keydown(function(ev) {
-          if (ev.keyCode === 27) { thiss.hideMenus(true); }
-        });
-
 
     var all_menus = $('.dynamic_menu');
         all_menus.find("form").submit(function() {
@@ -237,6 +241,21 @@ Page.prototype = {
             //TODO make these 3 spinners more generic/dynamic and just one of them :) (use spinner_trigger and click for all)
             $(".spinner_wrapper").fadeIn(200);
         });
+  },
+
+  onDocKeydown : function(e) {
+    if (e.keyCode === 27) { this.hideMenus(null); }
+  },
+
+  onWindowResized : function(e) {
+    this.hideMenus(null);
+  },
+
+  onDocMousedown : function(e) {
+    var el = $(e.target);
+    if (el.hasClass('close') || (!el.closest('.dynamic_menu_trigger').length && !el.closest('.colorpicker').length && !el.closest('.dynamic_menu').length)) {
+      this.hideMenus(null);
+    }
   },
 
   initProgressBars : function() {

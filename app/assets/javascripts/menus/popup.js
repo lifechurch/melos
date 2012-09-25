@@ -5,6 +5,7 @@ function PopupMenu( opts ) {
   this.trigger  = $(opts.trigger);
   this.menu     = $(this.trigger.attr("href"));
   this.icon     = this.trigger.find('span:first').length ? this.trigger.find('span:first') : this.trigger;
+  this.active   = false;
 
   this.active_class = "li_active";
 
@@ -19,12 +20,13 @@ PopupMenu.prototype = {
   constructor : PopupMenu,
 
   hide : function() {
+    this.active = false;
     this.trigger.parent("li").removeClass( this.active_class );
     this.menu.hide();
   },
 
   show : function() {
-
+    this.active = true;
     this.trigger.closest("li").addClass( this.active_class );
     this.showMenu();
   },
