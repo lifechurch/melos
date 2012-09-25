@@ -229,15 +229,16 @@
 //----------------------------------------------------------------------------------------------------
 
 .p
-  margin-bottom: 20px
+  text-indent: 1em
 
 .chapter > .label
   display: none
 
 .chapter .heading
   font-weight: bold
-  font-size: 25px
-  margin-bottom: 20px
+  font-size: 1.5em
+  line-height: 1em
+  margin-bottom: 1em
   -webkit-font-smoothing: subpixel-antialiased
 
 // `Main > Verses
@@ -278,9 +279,11 @@
     right: 2px
   padding: 2px 4px 3px
   vertical-align: top
+  text-indent: 0
 
 .note
   display: inline-block
+  text-indent: 0
 
 .inner_container
   left: 0
@@ -328,6 +331,211 @@
 
 .verse.highlighted.dark_bg
   color: $gray_light
+
+// `Reader paragraph styles
+//----------------------------------------------------------------------------------------------------
+
+.imt, .mt, .ms
+  font-size: 1.3em
+  line-height: 1.3em
+  margin: 1em 0 0 0
+  font-weight: bold
+
+.iot, .imt1
+  font-size: 1.3em
+  line-height: 1.3em
+  margin: .5em 0
+  font-weight: bold
+
+.io1
+  list-style-type: disc
+  margin-left: 1em
+  display: list-item
+
+.io2, io3
+  list-style-type: disc
+  margin-left: 2em
+  display: list-item
+
+.ipi
+  text-indent: 1em
+
+.imt2, .imt3, imt4
+  font-size: 1em
+  line-height: 1em
+  margin: .5em 0
+  font-weight: bold
+
+.is, .s1, .heading
+  font-size: 1.5em
+  font-weight: bold
+  line-height: 1.5em
+  margin: 0 0 1em 0
+
+.s2, .s3, .s4
+  font-size: 0.85em
+  font-weight: bold
+  line-height: 1.3em
+  margin: 0 0 1em 0
+
+.verse > .label
+  display: inline
+  font-weight: bold
+  padding-right: 0.3em
+
+.ip, .im, .iex, .p, .m, .nb, .cls
+  font-size: 1.0em
+  line-height: 1.5em
+  margin: 0 0 1.5em 0
+
+.ipi, .imi, .pm, .pmc, .pi, .mi
+  margin: 0 1em
+  line-height: 1.5em
+
+.imi
+  margin-left: 1em
+  text-indent: 0
+
+.ipr, .pr, .qr
+  text-align: right
+
+.iq1, .q, .q1, .qm1
+  margin-left: 1em
+  line-height: 1.5em
+
+.iqt
+  margin-left: 1em
+
+.iq2, .q2, .qm2
+  padding-left: 1.0em
+  line-height: 1.5em
+
+.lb, .b
+  line-height: 1.5em
+  height: 24px
+
+.ili1, .io1, .li1
+  margin-left: 2em
+  padding-left: 0
+  line-height: 1.5em
+
+.ili2, .io2, .li2
+  margin-left: 4em
+  padding-left: 0
+  line-height: 1.4em
+
+.iot, .d, .qa
+  font-size: 1.0em
+  line-height: 1.4em
+
+.ior
+  font-style: italic
+
+.iqt, .bk, .sls, .tl, .r
+  font-style: italic
+
+.mr
+  font-style: italic
+  font-weight: bold
+
+.sr, .r
+  display: none
+  font-style: italic
+
+.sp
+  font-style: italic
+
+.pmr
+  text-align: right
+  margin-right: 0.3em
+
+.pc, .qc
+  text-align: center
+
+.ph1
+  text-indent: -2em
+  padding-left: 2em
+
+.ph2
+  text-indent: -2em
+  padding-left: 4em
+
+.qs, .lit
+  float: right
+
+.q1
+  text-indent: 1em
+
+.q2
+  text-indent: 2em
+
+.b
+  height: 1em
+
+.table
+  border-bottom: 1em
+
+.table th, .th1
+  background: #444
+  color: #fff
+  font-weight: bold
+  padding: 5px
+
+.thr1
+  text-align: right
+  font-weight: bold
+  padding: 5px
+
+.table td, .tc
+  border: 1px solid #eee
+  padding: 5px
+
+.tcr
+  border: 1px solid #eee
+  padding: 5px
+  text-align: right
+
+.add, .dc, .k, .qt, .sig
+  padding: 0
+  margin: 0
+  font-size: 1.0em
+  line-height: 1.4em
+  text-indent: 0
+  font-weight: normal
+  font-style: normal
+  text-transform: none
+  text-decoration: none
+
+.nd
+  font-variant: small-caps
+
+.ord
+  font-size: .75em
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+  top: -0.5em
+
+.pn
+  text-decoration: underline
+
+.em, .bd
+  font-weight: normal
+
+.it
+  font-style: italic
+
+.bdit
+  font-weight: bold
+  font-style: italic
+
+.no
+  font-weight: normal
+  font-style: normal
+
+.sc
+  font-variant: small-caps
+
 
 // `Nav Arrows
 //----------------------------------------------------------------------------------------------------
@@ -469,4 +677,5 @@
 
 #main h2
   font-weight: bold
-  font-size: 25px
+  font-size: 1.5em
+  line-height: 1.5em
