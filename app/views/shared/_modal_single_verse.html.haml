@@ -1,9 +1,15 @@
+- if @single_verse
+  - content_for :javascripts do
+    %script
+      :plain
+        var modal = new VerseModal();
+
 #modal_single_verse
   #modal_overlay &nbsp;
   #modal_window
     - if @single_verse
       %header
-        %b= @single_verse.ref_string
+        %b= @single_verse.human
         - if @version
           %span.separator |
           = @version
@@ -11,11 +17,11 @@
 
         %a.close{:href => '#'} Close
       %section
-        %p.big= @single_verse.content[0]
+        %p.big= @single_verse.content.html_safe
         %hr
         %p
           - if @reference
-            %a#single_verse_read_link.action_button_green{:href => bible_path(@reference)}= t("read reference", reference: @reference.ref_string)
+            %a#single_verse_read_link.action_button_green{:href => bible_path(@reference)}= t("read reference", reference: @reference.human)
       %aside
         %div{style: "height: 36px;"}
           %a{href: "http://twitter.com/share", class: "twitter-share-button", "data-url" => @single_verse.short_link, "data-counturl" => request.url, "data-text" => @single_verse.content[0].chomp, via: "YouVersion", "data-count" => "horizontal", "data-related" => "youversion"} Tweet

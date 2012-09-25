@@ -187,7 +187,7 @@
 #menu_chapter
   float: right
 
-#menu_book .li_active a
+#menu_book .li_active a, #menu_book .li_active a:visited
   background: image-url("menu_book_highlighted_a.png") no-repeat right center
 
 #menu_chapter ol
@@ -295,6 +295,7 @@
 
 .dynamic_menu header .close
   right: 5px
+  cursor: pointer
 
 .dynamic_menu dd
   +box-shadow(inset #000 0 0 5px 0)
@@ -313,10 +314,10 @@
 .dynamic_menu .open_modal
   text-decoration: none
 
-.dynamic_menu .open_modal dt
+.dynamic_menu #new_note_modal
   background: image-url("icon_open_modal.png") no-repeat 95% center #1f1f1f
 
-.dynamic_menu .open_modal dt:hover
+.dynamic_menu #new_note_modal:hover
   background: image-url("icon_open_modal.png") no-repeat 95% center #2e2e2e
 
 #menu_bookmark header ul.reference_tokens

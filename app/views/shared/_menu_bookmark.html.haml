@@ -15,13 +15,17 @@
   %dl.accordion.verses_selected
     %dt
       = t("highlight")
-    %dd.highlight
+    %dd.highlight{id: "highlight-pane"}
+
       %form{:action => current_auth ? highlights_path : sign_up_path, method: current_auth ? "POST" : "GET"}
+
         - if current_auth.nil?
           %input{type: 'hidden', name: 'redirect', value: "/bible"}
           %input{type: 'hidden', name: 'source', value: "highlight"}
+
         %input.references{name: "highlight[references]", type: "hidden"}
         %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
+
         %div{:class => "color_picker_list"}
           %a{:class => "color_picker", :href =>"#"}
           %a{:class => "color_picker_holder", :href =>"#"}
@@ -36,7 +40,7 @@
         %div{:class => "clear"}
     %dt
       = t("bookmark")
-    %dd
+    %dd{id: "bookmark-pane"}
       %form{:action => current_auth ? bookmarks_path : sign_up_path, method: current_auth ? "POST" : "GET"}
         - if current_auth.nil?
           %input{type: 'hidden', name: 'redirect', value: "/bible"}
@@ -72,7 +76,7 @@
 
     %dt
       = t("ref.share")
-    %dd
+    %dd#share-pane
       %form.clearfix{action: share_path, method: "post"}
         %div.share_message
           %textarea{name: "share[message]", style: "margin-bottom: 8px"}
@@ -97,15 +101,14 @@
           %div.clearfix{style: "margin-bottom: 15px"}
     %dt#link
       = t("link")
-    %dd
+    %dd#link-pane
       %span.text_field_embed
         %input#copy_link_input.width_100{:value => "", :style => "margin-bottom: 15px;", :type => "text"}
         %div#copy_link_container{style: "position: absolute; right: 0px; top: -2px;"}
-          %button#copy_link{"data-confirm-text" => t("copy confirmed"), style: "margin-top:0px"}= t("copy")
+          %button#copy_link{"data-confirm-text" => t("copy confirmed"), style: "margin-top:0px; width:51px; height:23px;"}= t("copy")
     - if current_auth
-      %a.open_modal{:href => "#new_note"}
-        %dt#new_note_modal
-          = t("new note")
+      %dt#new_note_modal
+        = t("new note")
     - else
       %a.open_modal{:href => sign_up_path(source: "note", redirect: "/bible")}
         %dt.propagate_click

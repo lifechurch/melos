@@ -1,4 +1,4 @@
-.widget.parallel_notes{style: ("display: none;" if hide_widget)}
+.widget.parallel_notes{id: "widget_new_note", style: ("display: none;" if hide_widget)}
   %header
     %span.header_icon_note= t('notes.new note')
     %a.pop_out_button
@@ -6,12 +6,6 @@
         = t('notes.pop out')
   %section
     %ul.reference_tokens
-      %li
-        %a{:href => "#"}
-          Luke 2:15
-      %li
-        %a{:href => "#"}
-          John 4:25
     = form_for @note do |f|
       - if @note.errors.any?
         .form_errors

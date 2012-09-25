@@ -1,7 +1,7 @@
 - versions.each do |v|
   %tr{"data-version" => v.id, "data-abbrev" => v.abbreviation}
     %th
-      %a.spinner_trigger{:href => "#"}= v.human
+      %a{:href => "#"}= v.human
     %td{class: v.audio_version? ? "audio" : ""}
-      %a.spinner_trigger{:href => "#"}
+      %a{:href => "#"}
         %div= v.title
