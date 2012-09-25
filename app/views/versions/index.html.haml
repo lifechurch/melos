@@ -1,14 +1,27 @@
 - @title = t('versions.index title')
-- @sidebar = false
+
+- content_for :sidebar do
+  .widget
+    %header
+      %span
+        = t('versions.index title')
+    %ul.widget_menu
+      %li
+        %p
+          %b= t("versions.number of versions field")
+          = @versions_by_lang.values.flatten.count
+      %li
+        %p
+          %b= t("versions.number of languages field")
+          = @versions_by_lang.count
+  = render '/shared/widget_ad_bible_app'
 
 %article
   %h1= "#{t('bible versions')}"
-  %hr
-  %h4= "#{@versions_by_lang.values.flatten.count} versions in #{@versions_by_lang.count} languages"
   %ul
     - @versions_by_lang.each do |lang, versions|
       %li
-        = "#{versions.first.language.human} (#{versions.count})"
+        = t("versions.language and count", language_name: versions.first.language.human,  language_count: versions.count)
         %ul
           - versions.each do |version|
             %li= link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
