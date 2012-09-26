@@ -172,11 +172,37 @@ Page.prototype = {
   initMenus : function() {
 
 
-    var note_widget     = new NoteWidget("#widget_new_note");
-    var settings_menu   = new SettingsMenu({trigger: "#menu_settings_trigger" , menu: "#menu_settings" })
-    var version_menu    = new VersionMenu({trigger: "#menu_version_trigger" , menu: "#menu_version"});
-    var language_menu   = new LanguageMenu("#choose_language");
-    var profile_menu    = new ProfileMenu({trigger: "#header_profile_trigger" , menu: "#header_profile_menu" });
+    // only create menu / widget if element id is found on the page.
+    // should eventually be in a subclass of Page for each individual page type.
+
+      var widget_note = "#widget_note";
+      if($(widget_note).length) {
+        var note_widget     = new NoteWidget( widget_note );
+      }
+
+      var settings_trigger  = "#menu_settings_trigger";
+      var settings_menu     = "#menu_settings";
+      if($(settings_trigger).length && $(settings_menu).length) {
+        var settings_menu   = new SettingsMenu({trigger: settings_trigger , menu: settings_menu })
+      }
+
+      var version_trigger  = "#menu_version_trigger";
+      var version_menu     = "#menu_version";
+      if($(version_trigger).length && $(version_menu).length) {
+        var version_menu    = new VersionMenu({trigger: version_trigger , menu: version_menu});
+      }
+
+      var profile_trigger  = "#header_profile_trigger";
+      var profile_menu     = "#header_profile_menu";
+      if($(version_trigger).length && $(version_menu).length) {
+        var profile_menu    = new ProfileMenu({trigger: profile_trigger , menu: profile_menu });
+      }
+
+      var choose_language  = "#choose_language";
+      if($(choose_language).length) {
+        var language_menu   = new LanguageMenu("#choose_language");
+      }
+
 
     var thiss = this;
     var all_menu_triggers = $('.dynamic_menu_trigger');
