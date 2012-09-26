@@ -324,10 +324,6 @@ Page.prototype = {
           that.fadeOut(200, function() {
             that.html(data);
             that.fadeIn(200);
-
-            page.killWidgetSpacers();
-            page.fixWidgetHeader();
-            page.fixWidgetLast();
           });
         },
         error: function(req, status, err) {
@@ -348,32 +344,39 @@ Page.prototype = {
 
   fixWidgetHeader : function() {
 
-    var header = $('.widget header');
-
-    if (!header.length) { return; }
-
     // Used later.
     var timer;
 
     // Last sidebar widget is special, leave it alone.
     var last_widget = $('#sidebar').find('.widget:last');
 
-    // Insert spacers.
-    header.each(function() {
-      var el = $(this);
-      var this_widget = el.closest('.widget');
-
-      if (this_widget[0] === last_widget[0]) {
-        return;
-      }
-
-      $('<div class="widget_spacer">&nbsp;</div>').insertBefore(el);
-    });
 
     function position_widgets() {
       // For IE. Really belongs in the window event listener,
       // but having it cleared here doesn't hurt anything.
       clearTimeout(timer);
+
+      // have to retrieve headers on each call because widgets can be loaded dynamically
+      // TODO: this may need to be optimized.  look into a fix/optimization for this.
+      // It would be great if we could load just the content of the widget into the widget shell
+      // rather than loading the entire widget markup shell + content.
+      var header = $('.widget header');
+
+      if (!header.length) { return; }
+
+      // Insert spacers.
+      header.each(function() {
+        var el = $(this);
+        var this_widget = el.closest('.widget');
+
+        if ((this_widget[0] === last_widget[0]) || this_widget.has(".widget_spacer").length) {
+          return;
+        }
+
+        $('<div class="widget_spacer">&nbsp;</div>').insertBefore(el);
+      });
+
+
 
       header.each(function() {
         var el = $(this);
@@ -385,11 +388,12 @@ Page.prototype = {
           return;
         }
 
-        var TOP_OFFSET = 82;
+        var TOP_OFFSET  = 82;
         var next_widget = this_widget.next('.widget');
-        var window_top = $(window).scrollTop() + TOP_OFFSET;
-        var spacer = el.siblings('.widget_spacer:first');
-        var spacer_top = spacer.offset().top;
+        var window_top  = $(window).scrollTop() + TOP_OFFSET;
+        var spacer      = el.siblings('.widget_spacer:first');
+        var spacer_top  = spacer.offset().top;
+
 
         if (window_top >= spacer_top) {
           el.addClass('widget_header_fixed');
