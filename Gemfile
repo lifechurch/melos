@@ -13,7 +13,7 @@ gem 'geokit',                 '~> 1.6.5'
 gem 'grackle',                '~> 0.1.10'
 gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
-gem 'heroku',                 '~> 2.31.2'
+gem 'heroku',                 '~> 2.32.4'
 gem 'httparty',               '0.8.2' # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (effecting memcache)
 gem 'http_accept_language',   '~> 1.0.2'
 gem 'koala',                  '~> 1.4.1'
