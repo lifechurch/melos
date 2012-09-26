@@ -1,6 +1,7 @@
 function VersionMenu( opts ) {
-  this.menu       = $(opts.menu);
-  this.trigger    = $(opts.trigger);
+  this.menu         = $(opts.menu);
+  this.trigger      = $(opts.trigger);
+  this.alt_version  = $(opts.alt_version) || false;
   this.initLinks();  // Copied directly from previous code.  Needs refactoring.
 }
 
@@ -15,11 +16,12 @@ VersionMenu.prototype = {
           $(this).attr("data-spinner-trigger", true );
         });
 
+    var thiss = this;
 
     this.menu.find('a').click(function(e) {
       e.preventDefault();
-      // Todo: should definitely be refactored / figured out
 
+      // Todo: should definitely look at being refactored
       var tr            = $(this).closest('tr');
       var version_id    = tr.data("version");
       var abbrev        = tr.data("abbrev");
@@ -27,6 +29,13 @@ VersionMenu.prototype = {
       var path_verses   = $("article").data("selected-verses-path-partial");
       var path_chapter  = $('article .chapter').data('usfm');
       var link_base     = '/bible/' + version_id + '/' + path_chapter;
+
+      // hack, but works for now.
+        if(thiss.alt_version) {
+          setCookie('alt_version', version_id );
+          window.location = window.location.href;
+          return;
+        }
 
       if (path_verses) link_base = link_base + path_verses;
       link_base = link_base + "." + abbrev;
