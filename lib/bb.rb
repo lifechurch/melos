@@ -6,7 +6,7 @@ module Bb
       @app = app
     end
     def call(env)
-      if env["PATH_INFO"] =~ %r{^/bb/test}
+      if env["PATH_INFO"] =~ %r{^(/bb/test|/health)}
         process_request(env)
       else
         dup._call(env)
