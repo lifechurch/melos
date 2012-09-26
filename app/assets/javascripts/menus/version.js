@@ -1,7 +1,7 @@
 function VersionMenu( opts ) {
   this.menu         = $(opts.menu);
   this.trigger      = $(opts.trigger);
-  this.alt_version  = $(opts.alt_version) || false;
+  this.alt_version  = opts.alt_version || false;
   this.initLinks();  // Copied directly from previous code.  Needs refactoring.
 }
 
