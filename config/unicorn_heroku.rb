@@ -3,7 +3,7 @@
 # Note: we only use 2, because (presumably) there are a lot of external
 #       network calls that are blocking. N > 2 saw performance decay
 #       more than the benefit of the added parallelism.
-worker_processes 2
+worker_processes 4
 
 # Restart any workers that haven't responded in 17 seconds
 # This results in a 502 response for the slow request in the worker
@@ -30,4 +30,4 @@ preload_app true
 # 2 workers, we want the backlog to show up with heroku and have the
 # chance to go to another instance. In case our worker is dead or slow
 # we don't want requests sitting in the unicorn backlog timing out.
-listen ENV['PORT'] || 3000, :backlog => 5
+listen ENV['PORT'] || 3000, :backlog => 8
