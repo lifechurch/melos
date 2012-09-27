@@ -198,10 +198,10 @@ Page.prototype = {
         var alt_menu    = new VersionMenu({trigger: alt_version_trigger , menu: alt_version_menu, alt_version: true});
       }
 
-      var profile_trigger  = "#header_profile_trigger";
-      var profile_menu     = "#header_profile_menu";
-      if($(version_trigger).length && $(version_menu).length) {
-        var profile_menu    = new ProfileMenu({trigger: profile_trigger , menu: profile_menu });
+      var pro_trigger  = "#header_profile_trigger";
+      var pro_menu     = "#header_profile_menu";
+      if($(pro_trigger).length && $(pro_menu).length) {
+        var profile_menu    = new ProfileMenu({trigger: pro_trigger , menu: pro_menu });
       }
 
       var choose_language  = "#choose_language";
