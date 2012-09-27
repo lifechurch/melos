@@ -36,7 +36,7 @@ class YvApi
           raise APITimeoutError, "API Timeout for #{resource_url}"
         rescue Exception => e
           Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
-          raise APIError, "Non-timeout API Error for #{resource_url}"
+          raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
         end
       end
       get_end = Time.now.to_f
@@ -51,7 +51,7 @@ class YvApi
         raise APITimeoutError, "API Timeout for #{resource_url}"
       rescue Exception => e
         Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
-        raise APIError, "Non-timeout API Error for #{resource_url}"
+        raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
       end
 
       get_end = Time.now.to_f
