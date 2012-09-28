@@ -654,6 +654,6 @@ en:
     visit publisher:                            "Visit Publisher's Website"
     read title:                                 "Read This Version"
     other versions:                             "Other Versions from This Publisher"
-    number of versions field:                   "Unique Versions:"
-    number of languages field:                  "Unique Languages:"
+    number of versions field:                   "Total Versions:"
+    number of languages field:                  "Total Languages:"
     language and count:                         "%{language_name} (%{language_count})"
