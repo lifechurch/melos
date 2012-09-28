@@ -403,6 +403,8 @@ Page.prototype = {
 
         //if ((this_widget[0] === last_widget[0]) || this_widget.has(".widget_spacer").length) { return; }
 
+        if (this_widget.has(".widget_spacer").length) { return; }
+
         $('<div class="widget_spacer">&nbsp;</div>').insertBefore(el);
       });
 
