@@ -380,7 +380,7 @@ Page.prototype = {
     var timer;
 
     // Last sidebar widget is special, leave it alone.
-    var last_widget = $('#sidebar').find('.widget:last');
+    //var last_widget = $('#sidebar').find('.widget:last');
 
 
     function position_widgets() {
@@ -401,9 +401,7 @@ Page.prototype = {
         var el = $(this);
         var this_widget = el.closest('.widget');
 
-        if ((this_widget[0] === last_widget[0]) || this_widget.has(".widget_spacer").length) {
-          return;
-        }
+        //if ((this_widget[0] === last_widget[0]) || this_widget.has(".widget_spacer").length) { return; }
 
         $('<div class="widget_spacer">&nbsp;</div>').insertBefore(el);
       });
@@ -414,11 +412,11 @@ Page.prototype = {
         var el = $(this);
         var this_widget = el.closest('.widget');
 
-        if (this_widget[0] === last_widget[0]) {
+        //if (this_widget[0] === last_widget[0]) {
           // Don't do anything, we'll treat this differently
           // if it's within the very last sidebar widget.
-          return;
-        }
+        //  return;
+        //}
 
         var TOP_OFFSET  = 82;
         var next_widget = this_widget.next('.widget');
@@ -474,7 +472,8 @@ Page.prototype = {
   },
 
   fixWidgetLast : function() {
-    var el = $('#sidebar > .widget:last-child');
+    // only targeting the new note widget for now.
+    var el = $("#widget_new_note");//$('#sidebar > .widget:last-child');
 
     if (!el.length) { return; }
 
