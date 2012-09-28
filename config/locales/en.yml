@@ -657,3 +657,4 @@ en:
     number of versions field:                   "Total Versions:"
     number of languages field:                  "Total Languages:"
     language and count:                         "%{language_name} (%{language_count})"
+    public domain:                              "Public Domain"

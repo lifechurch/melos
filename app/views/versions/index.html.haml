@@ -24,4 +24,8 @@
         = t("versions.language and count", language_name: versions.first.language.human,  language_count: versions.count)
         %ul
           - versions.each do |version|
-            %li= link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+            %li
+              - if version.publisher_id
+                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+              - else
+                "#{version.title} (#{version.abbreviation.upcase})"

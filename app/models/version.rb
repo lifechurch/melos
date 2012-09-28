@@ -171,7 +171,7 @@ class Version < YouVersion::Resource
     abbreviation.upcase.match(/\A[^-_]*/).to_s
   end
   def publisher
-    detailed_attributes.publisher
+    detailed_attributes.publisher || Hashie::Mash.new({"id"=>nil, "name"=>nil, "url"=>nil, "description"=>nil})
   end
 
   private

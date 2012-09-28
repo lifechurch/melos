@@ -3,7 +3,8 @@
   .widget.sticky.gutter_bottom_half
     = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
 
-  - if @version.publisher.name.present?
+  - if @version.publisher.name.present? || @version.publisher.id.blank?
+    - pub_name = @version.publisher.name || t('versions.public domain')
     .widget
       %header
         %span
@@ -11,9 +12,9 @@
       %ul.widget_menu
         %li
           - if @version.publisher.url.present?
-            = link_to @version.publisher.name, @version.publisher.url
+            = link_to pub_name, @version.publisher.url
           -else
-            %p= @version.publisher.name
+            %p= pub_name
 
   - if @related.present?
     .widget
@@ -23,8 +24,8 @@
       %ul.widget_menu
         - @related.each do |v|
           %li
-            = link_to v
+            = link_to v, v
 %article
   %h1= @version
-  %h4= @version.publisher.try :name
+  %h4= @version.publisher.name
   .copyright= @version.info.try :html_safe
