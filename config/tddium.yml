@@ -1,7 +1,7 @@
 ---
 :tddium:
   :test_pattern:
-    # - features/root_load.feature
+    - features/root_load.feature
     # - features/versions.feature
     # - spec/**_spec.rb
     # - test/**_test.rb
