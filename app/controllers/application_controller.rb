@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     rescue_from Exception, with: :generic_error
     rescue_from APIError, with: :api_error
     rescue_from AuthError, with: :auth_error
+    rescue_from Timeout::Error, with: :timeout_error
     rescue_from APITimeoutError, with: :timeout_error
   end
 

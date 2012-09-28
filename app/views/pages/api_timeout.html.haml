@@ -2,11 +2,7 @@
 - @reader_menus = false
 - @sidebar = false
 
-%article
-  %h1 Traffic Jam!
+%article.error
+  %h2= t('app errors.408 message')
   %hr
-  %div{style:"margin-top: 50px"}
-    %p Unfortunately your request has timed-out. You can try again by reloading the page, we're very sorry for the inconvenience!
-    %p We're working hard to widen the roads in hopes that soon you will never see this page again!
-    %br
-    %p.small.mute= "#{@error.class}"
+  %p= t('app errors.408 explanation', reload_path: "").html_safe

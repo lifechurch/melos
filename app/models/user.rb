@@ -367,12 +367,17 @@ class User < YouVersion::Resource
     end
 
     image = Base64.strict_encode64(File.read(uploaded_file.path))
-    response = self.class.post("users/update_avatar", image: image, auth: self.auth, timeout: 25) do |errors|
-      if i = errors.find_index{ |e| e["key"] == "users.image_decoded.not_valid_image" }
-        self.errors.add :picture_invalid_type, errors.delete_at(i)["error"]
-      end
+    begin
+      response = self.class.post("users/update_avatar", image: image, auth: self.auth, timeout: 12) do |errors|
+        if i = errors.find_index{ |e| e["key"] == "users.image_decoded.not_valid_image" }
+          self.errors.add :picture_invalid_type, errors.delete_at(i)["error"]
+        end
 
-      errors.each { |e| self.errors.add :base, e["error"] }
+        errors.each { |e| self.errors.add :base, e["error"] }
+        return false
+      end
+    rescue APITimeoutError
+      self.errors.add :transfer_too_slow, "Choose a smaller picture or find a faster connection"
       return false
     end
     true

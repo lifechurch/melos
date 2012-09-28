@@ -2,7 +2,7 @@ class YvApi
   include HTTParty
   format :json
   headers 'Referer' => "http://" + Cfg.api_referer
-  default_timeout Cfg.api_default_timeout.to_i
+  default_timeout Cfg.api_default_timeout.to_f
 
   class << YvApi
     alias_method :httparty_get, :get
@@ -11,22 +11,30 @@ class YvApi
 
   def self.get(path, opts={}, &block)
     auth_from_opts!(opts)
-    timeout = opts.delete(:timeout)
     resource_url = get_resource_url!(path, opts)
     opts = clean_up_opts(opts)
+
+    request_opts = {}
+    # don't allow timeout to be nil, as this will override the default timeout set in HTTParty
+    request_opts[:timeout] = opts.delete(:timeout) if opts[:timeout]
+    request_opts[:query] = opts.except(:cache_for)
+
     Rails.logger.apc "** YvApi.get: Calling #{resource_url} with query:", :info
-    Rails.logger.apc opts, :info
+    Rails.logger.apc request_opts[:query], :info
 
     # If we should cache, try pulling from cache first
     if cache_length = opts[:cache_for]
-      cache_key = [path, opts.except(:cache_for).sort_by{|k,v| k.to_s}].flatten.join("_")
+      cache_key = [path, request_opts[:query].sort_by{|k,v| k.to_s}].flatten.join("_")
       Rails.logger.apc "*** cache fetch for key: #{cache_key}", :debug
+
       get_start = Time.now.to_f
+
       response = Rails.cache.fetch cache_key, expires_in: cache_length do
+        # cache miss -- must call to API
         Rails.logger.apc "*** cache miss for key: #{cache_key}", :debug
-        # No cache hit; ask the API
         begin
-          response = httparty_get(resource_url, timeout: timeout, query: opts.except(:cache_for))
+          response = httparty_get(resource_url, request_opts)
+
         rescue Timeout::Error => e
           Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
           raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - get_start)*1000).to_i} ms)"
@@ -35,13 +43,15 @@ class YvApi
           raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
         end
       end
-      get_end = Time.now.to_f
-      Rails.logger.apc "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms", :info
+
+      Rails.logger.apc "** YvApi.get #{path}: Response time= #{((Time.now.to_f - get_start) * 1000).to_i}ms", :info
     else
-      # Just ask the API
+      # no caching, just ask the API directly
       get_start = Time.now.to_f
+
       begin
-        response = httparty_get(resource_url, timeout: timeout, query: opts)
+        response = httparty_get(resource_url, request_opts)
+
       rescue Timeout::Error => e
         Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
         raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - get_start)*1000).to_i} ms)"
@@ -50,8 +60,7 @@ class YvApi
         raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
       end
 
-      get_end = Time.now.to_f
-      Rails.logger.apc "** YvApi.get: Response time: #{((get_end - get_start) * 1000).to_i}ms", :info
+      Rails.logger.apc "** YvApi.get #{path}: Response time= #{((Time.now.to_f - get_start) * 1000).to_i}ms", :info
     end
 
     if log_response?
@@ -65,15 +74,21 @@ class YvApi
 
   def self.post(path, opts={}, &block)
     auth_from_opts!(opts)
-    timeout = opts.delete(:timeout)
     resource_url = get_resource_url!(path, opts)
     opts = clean_up_opts(opts)
+
+    request_opts = {}
+    # don't allow timeout to be nil, as this will override the default timeout set in HTTParty
+    request_opts[:timeout] = opts.delete(:timeout) if opts[:timeout]
+    request_opts[:body] = opts
+
     Rails.logger.apc "** YvApi.post: Calling #{resource_url} with body: ", :info
-    Rails.logger.apc opts, :info
+    Rails.logger.apc request_opts[:body], :info
 
     post_start = Time.now.to_f
     begin
-      response = httparty_post(resource_url, timeout: timeout, body: opts)
+      response = httparty_post(resource_url, request_opts)
+
     rescue Timeout::Error => e
       Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
       raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - post_start)*1000).to_i} ms)"
@@ -81,14 +96,14 @@ class YvApi
       Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
       raise APIError, "Non-timeout API Error for #{resource_url}: #{e.class} : #{e.to_s}"
     end
-    post_end = Time.now.to_f
+
+    Rails.logger.apc "** YvApi.post #{path}: Response time= #{((Time.now.to_f - post_start) * 1000).to_i}ms", :info
 
     if log_response?
       Rails.logger.apc "** YvApi.post: Response: ", :info
       Rails.logger.apc response, :info
     end
 
-    Rails.logger.apc "** YvApi.post: Resonse time: #{((post_end - post_start) * 1000).to_i}ms", :info
     # Check the API response for error code
     return api_response_or_rescue(response, block)
   end
