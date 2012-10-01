@@ -57,8 +57,7 @@ NoteWidget.prototype = {
   updateForm : function( data ) {
     var refs = data.references || "";
     var refs_field = this.form.find("input[name='note[references]']");
-    var vals  = refs.join("+");
-        refs_field.val( encodeURIComponent(vals) );
+        refs_field.val( refs.join("+") );
   }
 
 }
