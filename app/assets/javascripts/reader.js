@@ -85,6 +85,10 @@ Reader.prototype = {
     return $('#version_primary  .verse.selected');
   },
 
+  allSelectedVerses : function() {
+    return $('.verse.selected');
+  },
+
   verseClicked : function( verse ) {
     var v = $(verse);
     (this.isSelected(v)) ? this.deselectVerse(v) : this.selectVerse(v);
@@ -109,8 +113,7 @@ Reader.prototype = {
 
     // Public: clear all selected verses.
   clearSelectedVerses : function() {
-    //$('.verse.selected').removeClass('selected');
-    this.fetchSelectedVerses().removeClass('selected');
+    this.allSelectedVerses().removeClass('selected');
     this.parseVerses();
   },
 
