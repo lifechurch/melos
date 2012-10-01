@@ -432,6 +432,6 @@ private
   def i18n_terms_whitelist
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
-    [:en, :sv, :ja, :vi, :nl, :"pt-BR"]
+    [:en, :sv, :ja, :vi, :nl, :"pt-BR", :"no", :"zh-CN", :"zh-TW"]
   end
 end
