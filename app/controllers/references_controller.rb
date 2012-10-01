@@ -51,7 +51,7 @@ class ReferencesController < ApplicationController
     end
 
     # Create an empty note for the note sidebar widget
-    @note = Note.new
+    @note = Note.new(version_id: @version.id)
 
     # Set up user specific stuff
     @highlight_colors = User.highlight_colors

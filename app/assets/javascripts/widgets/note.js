@@ -52,6 +52,14 @@ NoteWidget.prototype = {
     //    $('#publish_time').removeClass('publish_on_selected');
     //  }
     //});
+  },
+
+  updateForm : function( data ) {
+    alert("CALLING");
+    var refs = data.references || "";
+    var refs_field = this.form.find("input[name='note[references]']");
+    var vals  = refs.join("+");
+        refs_field.val( encodeURIComponent(vals) );
   }
 
 }

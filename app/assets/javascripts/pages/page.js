@@ -8,6 +8,11 @@ function Page() {
   this.current_menu   = null;
   this.html_el        = $(document.documentElement);
 
+  //page interactive elements
+  this.new_note_widget = undefined;
+  this.reader = undefined;
+
+
   this.initConstants();
   this.initHTML();
   this.initNav();
@@ -22,6 +27,9 @@ function Page() {
   this.initInplaceConfirms();
   this.fixWidgetLast();
   this.fixWidgetHeader();
+
+
+
 }
 
 Page.prototype = {
@@ -36,6 +44,28 @@ Page.prototype = {
     this.IE8 = !!(this.IE && VERSION === 8);
     this.IE9 = !!(this.IE && VERSION === 9);
 
+  },
+
+
+  getNewNoteWidget : function() {
+    return this.new_note_widget;
+  },
+
+  // Ability to set the reader on the page publicly.
+  setReader : function( rdr ) {
+    this.reader = rdr;
+    $(this.reader).on("verses:parsed", $.proxy(this.onVersesParsed, this) );
+  },
+
+  onVersesParsed : function() {
+    var note_widget = this.new_note_widget;
+    var reader      = this.reader;
+
+    if(reader && note_widget) {
+      var selected_data = reader.getSelectedData();
+      var usfms = selected_data.verse_usfms;
+          note_widget.updateForm({references: usfms});
+    }
   },
 
   // Setup miscellaneous html needs.
@@ -169,15 +199,18 @@ Page.prototype = {
     $(window).off("resize", this.onWindowResized);
   },
 
+
+
+
   initMenus : function() {
 
 
     // only create menu / widget if element id is found on the page.
     // should eventually be in a subclass of Page for each individual page type.
 
-      var widget_note = "#widget_note";
+      var widget_note = "#widget_new_note";
       if($(widget_note).length) {
-        var note_widget     = new NoteWidget( widget_note );
+        this.new_note_widget = new NoteWidget( widget_note );
       }
 
       var settings_trigger  = "#menu_settings_trigger";

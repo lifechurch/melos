@@ -103,6 +103,10 @@ Reader.prototype = {
     return v.hasClass("selected");
   },
 
+  getSelectedData : function() {
+    return this.selected;
+  },
+
     // Public: clear all selected verses.
   clearSelectedVerses : function() {
     //$('.verse.selected').removeClass('selected');
@@ -159,6 +163,8 @@ Reader.prototype = {
 
     // Update any menus and widgets now that we have parsed our selected verses
       this.updateMenus();
+
+      $(this).trigger("verses:parsed");
   },
 
   parseRanges : function() {
@@ -240,6 +246,8 @@ Reader.prototype = {
 
     // Set selected references
       this.selected_menu.setSelectedRefs( this.selected.verse_usfm_ranges );
+
+      console.log(this.selected.verse_usfms + " : VERSE USFMs");
 
   },
 

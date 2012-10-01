@@ -37,7 +37,8 @@
       - #   %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
       - #   %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
       - #   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
-      = f.hidden_field :reference, class: "verses_selected_input"
+      = f.hidden_field :references, class: "verses_selected_input"
+      = f.hidden_field :version_id
       %div.parallel_notes_submit.clearfix
         %button.action_button_green.float_right
           = t('notes.save')

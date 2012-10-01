@@ -33,17 +33,24 @@
   %script
     :plain
 
-      reader = new Reader({
-        version: "#{@reference[:version].to_s}",
-        abbrev: "#{@version.try(:abbreviation).upcase}",
-        reference: "#{@reference.to_param}",
-        book: "#{@reference[:book].to_s}",
-        book_api: "#{@reference[:book].sub(/[a-z]/) {|m| m.upcase}}",
-        book_human: "#{@version.books[@reference[:book]].human}",
-        chapter: "#{@reference[:chapter].to_s}",
-        font: "#{@font}",
-        size: "#{@size}",
-        full_screen: #{fullscreen},
-        parallel_mode: #{parallel}
+      // Fire it off!
+      jQuery(document).ready(function() {
+
+        reader = new Reader({
+          version: "#{@reference[:version].to_s}",
+          abbrev: "#{@version.try(:abbreviation).upcase}",
+          reference: "#{@reference.to_param}",
+          book: "#{@reference[:book].to_s}",
+          book_api: "#{@reference[:book].sub(/[a-z]/) {|m| m.upcase}}",
+          book_human: "#{@version.books[@reference[:book]].human}",
+          chapter: "#{@reference[:chapter].to_s}",
+          font: "#{@font}",
+          size: "#{@size}",
+          full_screen: #{fullscreen},
+          parallel_mode: #{parallel}
+        });
+        reader.init();
+
+        var page = window.app.getPage();
+            page.setReader( reader );
       });
-      reader.init();
