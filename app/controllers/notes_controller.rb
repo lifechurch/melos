@@ -53,7 +53,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id], :auth => current_auth)
 
     if @note.destroy
-      redirect_to notes_path, notice: t("notes.successfully deleted")
+      redirect_to user_notes_path(current_auth.username), notice: t("notes.successfully deleted")
     else
       render action: "index"
     end
