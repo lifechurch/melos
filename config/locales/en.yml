@@ -649,7 +649,7 @@ en:
     404 explanation:                            "You might try starting again from the <a href='%{reader_path}'>home page</a>. Still having trouble? Contact our <a href='%{support_url}'>support team</a>."
     404 message:                                "We're sorry, the page you're looking for can't be found."
     408 message:                                "Unfortunately our servers didn't respond in a timely fashion."
-    408 explanation:                            "You can try again by <a href= %{reload_path}>reloading</a> the page. We have been alerted and will address any persistent issues as quickly as possible."
+    408 explanation:                            "You can try again by <a href= '%{reload_path}'>reloading</a> the page. We have been alerted and will address any persistent issues as quickly as possible."
   versions:
     index title:                                "Available Versions"
     publisher widget title:                     "Publisher"
