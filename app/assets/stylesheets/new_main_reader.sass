@@ -261,7 +261,7 @@
 .verse + .verse
   margin-left: 3px
 
-.verse > .label,
+.verse > .label
   +round
   +background-image(linear-gradient(#eee, #ddd))
   background-color: #eee
@@ -275,9 +275,9 @@
     weight: bold
   line-height: 1
   margin:
-    top: 2px
+    top: 4px
     right: 2px
-  padding: 2px 0.3em 3px
+  padding: 2px 4px 3px
   vertical-align: top
   text-indent: 0
 
@@ -285,24 +285,32 @@
   display: inline-block
   text-indent: 0
 
-.note .body
-  display: none
-
-.note > .label
-  background:
-    image: image-url('trans-note-light@2x.png')
-    size: 50% 50%
-  text-indent: -1200px
-  width: 16px
-  height: 16px
-
 .inner_container
   left: 0
   display: block
   position: relative
   max-width: 120px
 
-
+.note > .label
+  +round
+  +background-image(linear-gradient(#eee, #ddd))
+  background-color: #eee
+  border-top: 1px solid #ccc
+  color: #666
+  cursor: pointer
+  display: inline-block
+  font:
+    family: $body_font
+    size: 10px
+    weight: bold
+  line-height: 1
+  margin:
+    top: 4px
+    right: 2px
+    bottom: 5px
+    left: 2px
+  padding: 2px 4px 3px
+  vertical-align: top
 
 .note > .outer_container > .inner_container >.body
   +round
@@ -324,21 +332,16 @@
 .verse.highlighted.dark_bg
   color: $gray_light
 
-// `Reader paragraph styles
-//----------------------------------------------------------------------------------------------------
 
-// introductory paragraph after a header paragraph
-.s + .p
-  text-indent: 0
 
-.chapter div:first-child
-  margin-top: 0
+
 
 .imt, .mt, .ms
   font-size: 1.3em
   line-height: 1.3em
   margin: 1em 0 0 0
   font-weight: bold
+
 
 .iot, .imt1
   font-size: 1.3em
@@ -359,11 +362,13 @@
 .ipi
   text-indent: 1em
 
+
 .imt2, .imt3, imt4
-  font-size: 1em
-  line-height: 1em
-  margin: .5em 0
-  font-weight: bold
+  font-size: 1em;
+  line-height: 1em;
+  margin: .5em 0;
+  font-weight: bold;
+
 
 .is, .s1, .heading
   font-size: 1.5em
@@ -371,16 +376,26 @@
   line-height: 1.5em
   margin: 0 0 1em 0
 
+
 .s2, .s3, .s4
-  font-size: 0.85em
+    font-size: 0.85em
   font-weight: bold
   line-height: 1.3em
   margin: 0 0 1em 0
+
+
+.verse > .label
+  display: inline
+  font-weight: bold
+  padding-right: 0.3em
+
 
 .ip, .im, .iex, .p, .m, .nb, .cls
   font-size: 1.0em
   line-height: 1.5em
   margin: 0
+
+
 
 .ipi, .imi, .pm, .pmc, .pi, .mi
   margin: 0 1em
@@ -393,6 +408,7 @@
 .ipr, .pr, .qr
   text-align: right
 
+
 .iq1, .q, .q1, .qm1
   margin-left: 1em
   line-height: 1.5em
@@ -400,62 +416,79 @@
 .iqt
   margin-left: 1em
 
+
 .iq2, .q2, .qm2
   padding-left: 1.0em
   line-height: 1.5em
 
+
 .lb, .b
   line-height: 1.5em
   height: 24px
+
 
 .ili1, .io1, .li1
   margin-left: 2em
   padding-left: 0
   line-height: 1.5em
 
+
 .ili2, .io2, .li2
   margin-left: 4em
   padding-left: 0
   line-height: 1.4em
 
+
 .iot, .d, .qa
   font-size: 1.0em
   line-height: 1.4em
 
+
 .ior
   font-style: italic
 
+
 .iqt, .bk, .sls, .tl, .r
   font-style: italic
+
 
 .mr
   font-style: italic
   font-weight: bold
 
+
 .sr, .r
-  display: none
+    display: none
   font-style: italic
+
 
 .sp
   font-style: italic
+
+
 
 .pmr
   text-align: right
   margin-right: 0.3em
 
+
 .pc, .qc
   text-align: center
+
 
 .ph1
   text-indent: -2em
   padding-left: 2em
 
+
 .ph2
   text-indent: -2em
   padding-left: 4em
 
+
 .qs, .lit
   float: right
+
 
 .q1
   text-indent: 1em
@@ -475,6 +508,7 @@
   font-weight: bold
   padding: 5px
 
+
 .thr1
   text-align: right
   font-weight: bold
@@ -489,6 +523,7 @@
   padding: 5px
   text-align: right
 
+
 .add, .dc, .k, .qt, .sig
   padding: 0
   margin: 0
@@ -500,35 +535,45 @@
   text-transform: none
   text-decoration: none
 
+
 .nd
   font-variant: small-caps
 
+
 .ord
   font-size: .75em
-  line-height: 0
-  position: relative
-  vertical-align: baseline
-  top: -0.5em
+    line-height: 0
+    position: relative
+    vertical-align: baseline
+    top: -0.5em
+
 
 .pn
   text-decoration: underline
 
+
 .em, .bd
   font-weight: normal
 
+
 .it
   font-style: italic
+
 
 .bdit
   font-weight: bold
   font-style: italic
 
+
 .no
   font-weight: normal
   font-style: normal
 
+
 .sc
   font-variant: small-caps
+
+
 
 // `Nav Arrows
 //----------------------------------------------------------------------------------------------------
