@@ -1,23 +1,27 @@
 class ApiTestController < ApplicationController
 
   def index
-    @results = [{title: "gen.1.asv", data: time_call("bible/chapter", reference: "gen.1", version: "asv", cache_for: 2.minutes)},
-                {title: "gen.2.3.niv", dataa: time_call("bible/verse", reference: "gen.2.3", version: "niv", cache_for: 2.minutes)},
-                {title: "gen.5.msg", data: time_call("bible/chapter", reference: "gen.5", version: "msg", cache_for: 2.minutes)},
-                {title: "reading plans index", data: time_call("reading_plans/library", cache_for: 2.minutes)},
-                {title: "notes for genesis 1:1", data: time_call("notes/index", reference: "gen.1", cache_for: 2.minutes)},
-               ]
+    if params[:p] == 'yv123'
+      @results = [{title: "versions all", times: time_call("bible/versions", type: 'all')},
+                  {title: "bible chapter: gen.1.esv", times: time_call("bible/chapter", reference: "GEN.1", id: 59)},
+                  {title: "reading plans index", times: time_call("search/reading_plans", query: '*')},
+                  {title: "notes for genesis 1", times: time_call("search/notes", reference: "GEN.1", query: "*")},
+                  {title: "highlights for gen.1", times: time_call("highlights/chapter", reference: "JHN.1", version_id: 1, auth: current_auth)}]
+    end
   end
 
   private
 
   def time_call(path, opts = {})
-    10.times.map do
+
+
+    (params[:i].to_i || 3).times.map do
       get_start = Time.now.to_f
-      YvApi.get(path, opts)
+      # cache for 1 min: don't just **allow** a DDOS attack :D
+      YvApi.get(path, opts) do
+        -1 #error
+      end
       ((Time.now.to_f - get_start) * 1000).to_i
     end
   end
-
-
 end
