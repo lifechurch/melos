@@ -338,8 +338,8 @@ Reader.prototype = {
 
   // In text notes, hover over # to display.
   initTranslationNotes : function() {
-    $('.verse .note .body').wrap('<div class="outer_container"></div>');
-    $('.verse .note .body').wrap('<div class="inner_container"></div>')
+    $('.note .body').wrap('<div class="outer_container"></div>');
+    $('.note .body').wrap('<div class="inner_container"></div>')
     $('.note .label').hoverIntent(function(){
       $(this).next('.outer_container').animate({opacity: 1}, "200");
     }, function(){
