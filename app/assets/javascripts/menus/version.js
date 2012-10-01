@@ -8,6 +8,10 @@ function VersionMenu( opts ) {
 VersionMenu.prototype = {
   constructor : VersionMenu,
 
+  isAlternateVersion : function() {
+    return this.alt_version;
+  },
+
   initLinks : function() {
 
     // Add spinner trigger class.
@@ -26,19 +30,26 @@ VersionMenu.prototype = {
       var version_id    = tr.data("version");
       var abbrev        = tr.data("abbrev");
       var menu          = $(this).closest(".dynamic_menu.version_select");
-      var path_verses   = $("article").data("selected-verses-path-partial");
       var path_chapter  = $('article .chapter').data('usfm');
+      // using attr instead of data() to ensure that value doesn't get type cast to a number
+      // ex: ".1" should not be type cast to 0.1 --> toString() turns into "0.1". In this case ".1" we want to be ".1"
+      var path_verses   = $("article").attr("data-selected-verses-path-partial");
+
       var link_base     = '/bible/' + version_id + '/' + path_chapter;
 
       // hack, but works for now.
-        if(thiss.alt_version) {
+        if(thiss.isAlternateVersion()) {
           setCookie('alt_version', version_id );
           window.location = window.location.href;
           return;
         }
 
-      if (path_verses) link_base = link_base + path_verses;
-      link_base = link_base + "." + abbrev;
+      // Could/should be properly refactored to not store path partial on html element.
+      // Ex: path_verses --> ".1" or ".1,2,3" or ".1,22,45"
+
+      if (path_verses && (path_verses != ".")) { link_base = link_base + path_verses;}
+
+         link_base = link_base + "." + abbrev;
 
       //TODO: erase this hack with new reading plans design (in-reader
       var plan_url = menu.data("plan-url");
