@@ -15,7 +15,7 @@ class ApiTestController < ApplicationController
   def time_call(path, opts = {})
 
 
-    (params[:i].to_i || 3).times.map do
+    (params[:i] || 3).to_i.times.map do
       get_start = Time.now.to_f
       # cache for 1 min: don't just **allow** a DDOS attack :D
       YvApi.get(path, opts) do
