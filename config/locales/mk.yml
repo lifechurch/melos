@@ -76,7 +76,6 @@ mk:
   registered ago: "Регистриран пред %{time_ago}"
   version header: "Верзија: %{version}"
   bible versions: "Верзии на Библијата"
-  read this version: "Читај ја оваа верзија"
   reader: "Читач"
   lifechurch short url: "LifeChurch.tv"
   about: "За"
@@ -192,8 +191,8 @@ mk:
     welcome to youversion: "Добредојде во заедницата на YouVersion!"
     confirm email: "Провери е-пошта и кликни на линкот што го пративме за потврдување на регистрацијата."
     sign up for an account: "Создадете бесплатен YouVersion профил"
-    follow user: "Следи го/ја %{user}"
     follow: "Следи"
+    follow user: "Следи го/ја %{user}"
     unfollow: "Не следи"
     following title: "Луѓе кои ги следам"
     user does not follow you: "%{user} не те следи."
@@ -633,3 +632,5 @@ mk:
       highlights: "Означувања:"
       'on': "Вклучено"
       'off': "Исклучено"
+  versions:
+    publisher widget title: "Автор"

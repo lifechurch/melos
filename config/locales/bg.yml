@@ -76,7 +76,6 @@ bg:
   registered ago: "Регистриран преди %{time_ago}"
   version header: "Версия: %{version}"
   bible versions: "Библейски версии"
-  read this version: "Чети тази версия"
   reader: "Четец"
   lifechurch short url: "LifeChurch.tv"
   about: "За нас"
@@ -192,8 +191,8 @@ bg:
     welcome to youversion: "Добре дошли в YouVersion!"
     confirm email: "Проверете ел.поща и кликнете на получения линк за да потвърдите регистрацията си."
     sign up for an account: "Създай безплатен профил в YouVersion"
-    follow user: "Следвай %{user}"
     follow: "Следвай"
+    follow user: "Следвай %{user}"
     unfollow: "Спри да следваш"
     following title: "Потребители които следвам"
     user does not follow you: "%{user} не ви следва."
@@ -636,3 +635,5 @@ bg:
       highlights: "Маркирани:"
       'on': "Включи"
       'off': "Изключи"
+  versions:
+    publisher widget title: "Издател"

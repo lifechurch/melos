@@ -76,7 +76,6 @@ ca:
   registered ago: "Registrat/da fa %{time_ago}"
   version header: "Versió: %{version}"
   bible versions: "Versions de la Bíblia"
-  read this version: "Llegeix aquesta versió"
   reader: "Lector"
   lifechurch short url: "LifeChurch.tv"
   about: "Amb"
@@ -173,7 +172,7 @@ ca:
     invalid chapter text: "Aquest capítol no existeix en aquesta versió."
     invalid secondary chapter text: "Aquest capítol no existeix a la teva versió secundària."
     no secondary version title: "Sobre la comparació paral·lela"
-    no secondary version text: "%{language_name} només té una versió disponible, així que no em pogut recollir una versió secundària per a tu. Si us plau, selecciona la seva versió secundària per a la comparació paral·lela."
+    no secondary version text: "%{language_name} només té una versió disponible, així que no em pogut recollir una versió secundària per a tu. Si us plau, selecciona la teva versió secundària per la comparació paral·lela."
     select another chapter: "Tria un capítol diferent"
     view in reader: "Mira %{reference} al lector"
   users:
@@ -192,8 +191,8 @@ ca:
     welcome to youversion: "Benvingut/uda a la comunitat de YouVersion!"
     confirm email: "Si us plau, revisa el teu correu electrònic i clica a l'enllaç per confirmar el teu registre."
     sign up for an account: "Cres un compte gratuït de YouVersion"
-    follow user: "Segueix a %{user}"
     follow: "Segueix"
+    follow user: "Segueix a %{user}"
     unfollow: "Deixa de seguir"
     following title: "Gent a qui segueixo"
     user does not follow you: "%{user} no t'està seguint."
@@ -379,7 +378,7 @@ ca:
     title field: "Títol"
     title field field: "Títol:"
     labels: "Etiquetes"
-    all: "Tots"
+    all: "Tots els marcadors"
     labels label: "Etiquetes"
     title: "Marcadors"
     not found: "Els marcadors et donen una ràpida referència cap als teus passatges preferits o a l'últim capítol que has llegit en un llibre en particular. Per afegir un marcador, selecciona un verset al lector de la Bíblia i després clica al botó Seleccionat a dalt del lector."
@@ -493,7 +492,7 @@ ca:
     subscribe successful: "T'has subscrit a aquest pla amb èxit!"
     which day in plan: "Dia %{day} de %{total}"
     must start to complete: "Comença aquest pla per desar les lectures finalitzades!"
-    invalid reference: "Malauradament, una de les referències de les escriptures per aquesta lectura pot no existir en la versió seleccionada. Intenta seleccionar una versió diferent, mès amunt. Si segueix apareixent aquest missatge, si us plau, permeti que el nostre equip de suport <a href='%{support_url}'>support team<a/a> saber sobre la tema. "
+    invalid reference: "Malauradament, una de les referències de les escriptures per aquesta lectura no existeix en la versió seleccionada. Intenta seleccionar una versió diferent, més amunt. Si segueix apareixent aquest missatge, si us plau, permet que el nostre equip de suport <a href='%{support_url}'>support team<a/a> en sàpiga sobre el problema"
   registration:
     with facebook: "Registra't amb Facebook"
     benefits title: "Obté l'experiència completa"
@@ -641,4 +640,7 @@ ca:
       'off': "Desactivat"
   app errors:
     404 explanation: "Desafortunadament, no hem trobat la pàgina <em>%{requested_path}</em>. Si penses que la pàgina hauria d'existir, deixa que el nostre <a href='%{support_url}'>equip d'ajuda</a> ho sàpiga, o torna enrere al <a href='%{reader_path}'>lector</a>."
-    404 message: "Ho sentim, la pàgina que està buscant no es pot trobar. "
+    404 message: "Ho sentim, la pàgina que busques no es pot trobar. "
+  versions:
+    publisher widget title: "Editor"
+    public domain: "Domini públic"

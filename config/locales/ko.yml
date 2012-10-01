@@ -76,7 +76,6 @@ ko:
   registered ago: "%{time_ago} 전에 등록하셨습니다."
   version header: "번역본: %{version}"
   bible versions: "성경 번역본"
-  read this version: "이 번역본 읽기"
   reader: "리더"
   lifechurch short url: "LifeChurch.tv"
   about: "소개"
@@ -192,8 +191,8 @@ ko:
     welcome to youversion: "YouVersion 공동체에 오신 것을 환영합니다."
     confirm email: "이메일 수신을 확인 후 등록을 확인하기 위하여 링크를 클릭하세요."
     sign up for an account: "무료 YouVersion계정 만들기"
-    follow user: "%{user}님 팔로우 하기"
     follow: "팔로우"
+    follow user: "%{user}님 팔로우 하기"
     unfollow: "팔로우 취소"
     following title: "팔로윙하는 사람들"
     user does not follow you: "%{user} 님은 회원님을 팔로우하지 않습니다."
@@ -642,3 +641,6 @@ ko:
   app errors:
     404 explanation: "<em>%{requested_path}</em> 페이지를 발견하지 못했습니다.  만약 이 페이지가 존재하는 페이지라고 생각되시면, <a href='%{support_url}'>지원팀</a>에게 알려 주십시오. 혹은 <a href='%{reader_path}'>reader</a>로 되돌아 가십시오."
     404 message: "죄송합니다. 찾으시는 페이지가 없습니다."
+  versions:
+    publisher widget title: "출판자"
+    public domain: "공개판"
