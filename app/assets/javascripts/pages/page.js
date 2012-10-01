@@ -46,11 +46,6 @@ Page.prototype = {
 
   },
 
-
-  getNewNoteWidget : function() {
-    return this.new_note_widget;
-  },
-
   // Ability to set the reader on the page publicly.
   setReader : function( rdr ) {
     this.reader = rdr;

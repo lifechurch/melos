@@ -247,8 +247,6 @@ Reader.prototype = {
     // Set selected references
       this.selected_menu.setSelectedRefs( this.selected.verse_usfm_ranges );
 
-      console.log(this.selected.verse_usfms + " : VERSE USFMs");
-
   },
 
   generateLinks : function( ) {
