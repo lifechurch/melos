@@ -1,0 +1,7 @@
+- versions.each do |v|
+  %tr{"data-version" => v.id, "data-abbrev" => v.abbreviation.downcase}
+    %th
+      %a{:href => "#"}= v.human
+    %td{class: v.audio_version? ? "audio" : ""}
+      %a{:href => "#"}
+        %div= v.title

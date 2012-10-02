@@ -31,12 +31,21 @@ YouversionWeb::Application.configure do
   # Turn off quiet assets (defaults to true)
   # config.quiet_assets = false
 
+  # memcache for action and fragment caches
+  config.cache_store = :dalli_store
+
   # For Twitter oAuth.
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
+
+  # Enable auto evalution of unrecognized commands
+  # for easier debugging in the console (rails console --debug)
+  # Default is true for `Rails s --debug`, but false for `rails console --debug`
+  # Debugger has issues with TDDium service
+  Debugger.settings[:autoeval] = true
 end
 
 silence_warnings do

@@ -76,7 +76,6 @@ fr:
   registered ago: "Inscrit il y a %{time_ago}"
   version header: "Traduction: %{version}"
   bible versions: "Traductions bibliques"
-  read this version: "Lire cette traduction"
   reader: "Lecteur"
   lifechurch short url: "LifeChurch.tv"
   about: "À propos de"
@@ -192,8 +191,8 @@ fr:
     welcome to youversion: "Bienvenue dans la communauté YouVersion!"
     confirm email: "Merci de vous être inscrit! Veuillez consulter votre courriel et cliquer sur le lien afin de confirmer."
     sign up for an account: "Créer un compte gratuit YouVersion"
-    follow user: "S'abonner à %{user}"
     follow: "S'abonner"
+    follow user: "S'abonner à %{user}"
     unfollow: "Se désabonner"
     following title: "Personnes que je suis"
     user does not follow you: "%{user} ne vous suit pas"
@@ -251,10 +250,10 @@ fr:
     yes reset and log out: "Oui, me déconnecter et réinitialiser mon mot de passe"
     forgot password: "Mot de passe oublié?"
     resend success: "Un mail de confirmation vous a été renvoyé. Merci de consulter votre boîte mail."
-    resend error: "Désolé il y a eu une erreur lors du renvoi de votre mail de confirmation. Merci de vérifier que vous entrer une adresse mail en cours de validité qui n'a pas encore été confirmée."
+    resend error: "Désolé il y a eu une erreur lors du renvoi de votre mail de confirmation. Merci de vérifier que vous entrez une adresse mail en cours de validité qui n'a pas encore été confirmée."
     resend confirmation title: "Vous n'avez pas reçu d'e-mail de confirmation ?"
-    resend confirmation copy: "Entrez l'adresse mail que vous avez utilisé pour vous enregistrer ci-dessous et nous vous renverrons un autre mail de confirmation."
-    resend confirmation button: "Renvoi du lien de confirmation."
+    resend confirmation copy: "Entrez l'adresse mail que vous avez utilisée pour vous enregistrer ci-dessous et nous vous renverrons un autre email de confirmation."
+    resend confirmation button: "Renvoi de confirmation."
     privacy:
       policy: "Politique de Confidentialité %{youversion}"
       intro: "YouVersion est une site web et application mobile qui est partie de LifeChurch.tv, nous savons l'importance pour vous de savoir comme votre information est utilisé et partagé. Nous espérons les rapports suivantes vous aideront à entendre comment YouVersion rassemblera, utilisera et protégera l'information que vous nous donnons sur notre site et app. Nous n'utiliserons pas ou partagerons votre information avec n'importe qui excepté comme décrit dans cette déclaration de confidentialité. "
@@ -642,3 +641,6 @@ fr:
   app errors:
     404 explanation: "Vous devrez peut être ré-essayer depuis <a href='%{reader_path}'>home page</a>. Still having trouble? Contact our <a href='%{support_url}'>support team</a>."
     404 message: "Nous sommes désolés, la page que vous cherchez ne peut être trouvée."
+  versions:
+    publisher widget title: "Éditeur"
+    public domain: "Domaine public"

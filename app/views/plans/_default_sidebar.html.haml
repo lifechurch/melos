@@ -19,8 +19,8 @@
       - if !current_user || !current_user.subscribed_to?(@plan)
         %li
           = link_to(t("plans.view sample"), day: 1.to_s)
-      %li
-        = link_to(t("plans.users subscribed", user_count: number_with_delimiter(@plan.users.count)), plan_users_path(@plan))
+      / %li
+      /   = link_to(t("plans.users subscribed", user_count: number_with_delimiter(@plan.users.count)), plan_users_path(@plan))
   .widget
     %header
       %span

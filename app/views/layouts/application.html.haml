@@ -36,8 +36,6 @@
       = render '/shared/menu_settings'
       = render '/shared/menu_audio_player'
       = render '/shared/modal_single_verse' unless @verse_modals == false
-      = render '/shared/modal_share_verse' unless @verse_modals == false
-    =cache "js_#{@site}", expires_in: 5.minutes do
-      = render '/shared/javascripts'
-      = render '/shared/google_analytics'
+    = render '/shared/javascripts'
+    = render '/shared/google_analytics'
 

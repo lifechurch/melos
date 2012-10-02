@@ -1,6 +1,10 @@
 // `Main
 //----------------------------------------------------------------------------------------------------
 
+.outer_container
+  position: absolute
+  opacity: 0
+
 #main
   float: left
   margin: 0 0 10px
@@ -221,8 +225,21 @@
 #main footer b
   font-size: 13px
 
+// `Main > headers and paragraphs
+//----------------------------------------------------------------------------------------------------
+
+.p
+  text-indent: 1em
+
+.chapter > .label
+  display: none
+
 // `Main > Verses
 //----------------------------------------------------------------------------------------------------
+
+.wordsofchrist,
+.wj .content
+  color: #cc0000
 
 #verses_selected_form
   display: block
@@ -230,17 +247,14 @@
   width: 0
   height: 0
 
-.verse.selected
-  background: #ddd !important
-  color: $body_text !important
-
-.verse
-  border-radius: 4px
+.verse.selected .content
+  border-bottom: 1px
+  border-bottom-style: dotted
 
 .verse + .verse
   margin-left: 3px
 
-.verse > strong:first-child
+.verse > .label
   +round
   +background-image(linear-gradient(#eee, #ddd))
   background-color: #eee
@@ -254,33 +268,289 @@
     weight: bold
   line-height: 1
   margin:
-    top: 4px
+    top: 2px
     right: 2px
-  padding: 2px 4px 3px
+  padding: 2px 0.3em 3px
   vertical-align: top
+  text-indent: 0
 
-.trans, .study
-  +round
-  +background-image(linear-gradient(#eee, #ddd))
-  background-color: #eee
-  border-top: 1px solid #ccc
-  color: #666
-  cursor: pointer
+article .verse > .label,
+article[data-setting-size="user_setting_size_small"] .verse > .label
+  margin-top: 0.5em
+
+article[data-setting-size="user_setting_size_medium"] .verse > .label
+  margin-top: 0.9em
+
+article[data-setting-size="user_setting_size_large"] .verse > .label
+  margin-top: 1.2em
+
+.note
   display: inline-block
+  text-indent: 0
+
+.note .body
+  display: none
+
+.note > .label
+  text-indent: -99999px
+  display: inline-block
+  background: image-url('trans-note-light@2x.png') no-repeat
+    size: 16px 16px
+  height: 16px
+  width: 16px
+  margin-right: 4px
+
+.inner_container
+  left: 0
+  display: block
+  position: relative
+  max-width: 120px
+
+.note > .outer_container > .inner_container >.body
+  +round
+  +background-image(linear-gradient(#f7f7f7, #e8e8e8))
+  background-color: #eee
+  border: 1px solid #ccc
   font:
     family: $body_font
     size: 10px
     weight: bold
-  line-height: 1
+  line-height: 1.3
   margin:
     top: 4px
     right: 2px
     bottom: 5px
-  padding: 2px 4px 3px
-  vertical-align: top
+  padding: 4px 8px 6px
+  display: block
 
-.verse.dark_highlight
+.verse.highlighted.dark_bg
   color: $gray_light
+
+// `Reader paragraph styles
+//----------------------------------------------------------------------------------------------------
+
+// introductory paragraph after a header paragraph
+.s + .p
+  text-indent: 0
+
+.p + .s,
+.p + .s1,
+.p + .s2,
+.p + .s3,
+.p + .s4,
+.p + .s5,
+.p + .s6
+  margin-top: 1em
+
+.s
+  line-height: 1em
+  margin: 1em 0
+
+.chapter div:first-child
+  margin-top: 0
+
+.imt, .mt, .ms
+  font-size: 1.3em
+  line-height: $reader_line_height
+  margin: 1em 0 0 0
+  font-weight: bold
+
+.iot, .imt1
+  font-size: 1.3em
+  line-height: $reader_line_height
+  margin: .5em 0
+  font-weight: bold
+
+.io1
+  list-style-type: disc
+  margin-left: 1em
+  display: list-item
+
+.io2, io3
+  list-style-type: disc
+  margin-left: 2em
+  display: list-item
+
+.ipi
+  text-indent: 1em
+
+.imt2, .imt3, imt4
+  font-size: 1em
+  line-height: $reader_line_height
+  margin: .5em 0
+  font-weight: bold
+
+.is, .s1
+  font-size: 1.5em
+  font-weight: bold
+  line-height: $reader_line_height
+  margin: 0 0 1em 0
+
+.heading
+  font-size: 1.5em
+  font-weight: bold
+  line-height: 1em
+  margin: 0 0 1em 0
+  -webkit-font-smoothing: subpixel-antialiased
+
+.s2, .s3, .s4
+  font-size: 0.85em
+  font-weight: bold
+  line-height: $reader_line_height
+  margin: 0 0 1em 0
+
+.ip, .im, .iex, .p, .m, .nb, .cls
+  font-size: 1.0em
+  line-height: $reader_line_height
+  margin: 0
+
+.ipi, .imi, .pm, .pmc, .pi, .mi
+  margin: 0 1em
+  line-height: $reader_line_height
+
+.imi
+  margin-left: 1em
+  text-indent: 0
+
+.ipr, .pr, .qr
+  text-align: right
+
+.iq1, .q, .q1, .qm1
+  margin-left: 1em
+  line-height: $reader_line_height
+
+.iqt
+  margin-left: 1em
+
+.iq2, .q2, .qm2
+  padding-left: 1.0em
+  line-height: $reader_line_height
+
+.lb, .b
+  line-height: $reader_line_height
+  height: 24px
+
+.ili1, .io1, .li1
+  margin-left: 2em
+  padding-left: 0
+  line-height: $reader_line_height
+
+.ili2, .io2, .li2
+  margin-left: 4em
+  padding-left: 0
+  line-height: $reader_line_height
+
+.iot, .d, .qa
+  font-size: 1.0em
+  line-height: $reader_line_height
+
+.ior
+  font-style: italic
+
+.iqt, .bk, .sls, .tl, .r
+  font-style: italic
+
+.mr
+  font-style: italic
+  font-weight: bold
+
+.sr, .r
+  display: none
+  font-style: italic
+
+.sp
+  font-style: italic
+
+.pmr
+  text-align: right
+  margin-right: 0.3em
+
+.pc, .qc
+  text-align: center
+
+.ph1
+  text-indent: -2em
+  padding-left: 2em
+
+.ph2
+  text-indent: -2em
+  padding-left: 4em
+
+.qs, .lit
+  float: right
+
+.q1
+  text-indent: 1em
+
+.q2
+  text-indent: 2em
+
+.b
+  height: 1em
+
+.table
+  border-bottom: 1em
+
+.table th, .th1
+  background: #444
+  color: #fff
+  font-weight: bold
+  padding: 5px
+
+.thr1
+  text-align: right
+  font-weight: bold
+  padding: 5px
+
+.table td, .tc
+  border: 1px solid #eee
+  padding: 5px
+
+.tcr
+  border: 1px solid #eee
+  padding: 5px
+  text-align: right
+
+.add, .dc, .k, .qt, .sig
+  padding: 0
+  margin: 0
+  font-size: 1.0em
+  line-height: $reader_line_height
+  text-indent: 0
+  font-weight: normal
+  font-style: normal
+  text-transform: none
+  text-decoration: none
+
+.nd
+  font-variant: small-caps
+
+.ord
+  font-size: .75em
+  line-height: $reader_line_height
+  position: relative
+  vertical-align: baseline
+  top: -0.5em
+
+.pn
+  text-decoration: underline
+
+.em, .bd
+  font-weight: normal
+
+.it
+  font-style: italic
+
+.bdit
+  font-weight: bold
+  font-style: italic
+
+.no
+  font-weight: normal
+  font-style: normal
+
+.sc
+  font-variant: small-caps
 
 // `Nav Arrows
 //----------------------------------------------------------------------------------------------------
@@ -422,4 +692,5 @@
 
 #main h2
   font-weight: bold
-  font-size: 25px
+  font-size: 1.5em
+  line-height: 1.5em

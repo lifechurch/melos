@@ -24,7 +24,6 @@ class NotesController < ApplicationController
   def edit
     if current_auth
       @note = Note.find(params[:id], auth: current_auth)
-      #@note.reference = @note.reference_list.to_osis_references
     else
       redirect_to notes_path
     end
@@ -35,7 +34,7 @@ class NotesController < ApplicationController
     @note.auth = current_auth
 
     if @note.save
-      redirect_to @note
+      redirect_to note_path(@note.id)
     else
       render action: "new"
     end
@@ -43,7 +42,6 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id], :auth => current_auth)
-
     if @note.update(params[:note])
       render action: "show"
     else
@@ -55,7 +53,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id], :auth => current_auth)
 
     if @note.destroy
-      redirect_to notes_path, notice: t("notes.successfully deleted")
+      redirect_to user_notes_path(current_auth.username), notice: t("notes.successfully deleted")
     else
       render action: "index"
     end
@@ -84,7 +82,7 @@ class NotesController < ApplicationController
   # strings instead of the reference / version objects (better way?)
   def set_for_form(note)
     note.reference = Model::hash_to_osis_noversion(note.references)
-    note.version = note.version.osis
+    note.version = note.version.id
   end
 
 end

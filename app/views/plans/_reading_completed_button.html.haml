@@ -1,19 +1,19 @@
 :ruby
   done_button_text = t('plans.done reading')
   if (cur_reading_index + 1 < reading.references.count)
-    done_button_text = t('plans.reading completed _ mark and show next', next_reference: reading.references[cur_reading_index+ 1].ref.ref_string)
+    done_button_text = t('plans.reading completed _ mark and show next', next_reference: reading.references[cur_reading_index+ 1].ref.human)
   end
 - if plan.is_a? Subscription
   %form{method: 'post', style: "height: #{reading.references.count > 1 ? '53px' : '48px'}; margin-top: 5px; margin-bottom: 3px"}
     %input{type: "hidden", name: "_method", value: "put"}
-    %input{type: "hidden", name: "ref", value: reading.references[cur_reading_index].ref.osis}
+    %input{type: "hidden", name: "ref", value: reading.references[cur_reading_index].ref.to_usfm}
     %input{type: "hidden", name: "completed", value: true.to_s}
     %input{type: "hidden", name: "day_target", value: day.to_s}
     %input{type: "hidden", name: "content_target", value: cur_reading_index + 1}
     .float_right{style:"text-align: center"}
       %button.action_button_green{type: "submit", name: "done_read", style:"margin-bottom: 3px"}= done_button_text
       .mute= t("plans.which reading", current: cur_reading_index+ 1, total: reading.references.count) if reading.references.count > 1
-- else 
+- else
   .float_right{style: "height: 35px; text-align: center"}
     = link_to(done_button_text, plan_path(plan.to_param, day: day, content: cur_reading_index + 1), class: 'action_button_green no_style')
     .mute= t("plans.which reading", current: cur_reading_index + 1, total: reading.references.count) if reading.references.count > 1

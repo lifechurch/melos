@@ -8,6 +8,7 @@ gem 'authorize-net',          '~> 1.5.2'
 gem 'cells',                  '~> 3.8.3'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.0.4'
+gem 'descriptive_statistics', '~> 1.1.0', require: false
 gem 'exceptional',            '~> 2.0.32'
 gem 'geokit',                 '~> 1.6.5'
 gem 'grackle',                '~> 0.1.10'
@@ -17,6 +18,7 @@ gem 'heroku',                 '~> 2.32.4'
 gem 'httparty',               '0.8.2' # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (effecting memcache)
 gem 'http_accept_language',   '~> 1.0.2'
 gem 'koala',                  '~> 1.4.1'
+gem "language_list",          '~> 0.0.3'
 gem 'newrelic_rpm',           '~> 3.3.4'
 gem 'omniauth-facebook',      '~> 1.2.0' # 1.3.0
 gem 'omniauth-google-oauth2', '~> 0.1.9'
@@ -46,28 +48,26 @@ end
 
 group :test, :development do
   gem 'capybara',       '~> 1.1.2'
+  gem 'capybara-mechanize', '~> 0.3.0'
+  gem "capybara-webkit", "~> 0.12.1"
   gem 'cucumber-rails', '~> 1.3.0', require: false
   gem 'heroku_san'
   gem 'rspec-cells'
   gem 'rspec-rails'
   gem 'minitest'
   gem 'tddium',         '~> 1.4.6'
+  gem 'simplecov', require: false
 end
 
-group :development do
-  # gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i
+group :development, :tddium_ignore do
+  gem 'debugger'
   gem 'active_reload' #TODO: Remove when upgrading to Rails 3.2
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-bundler'
-  # TODO: Add guard-livereload
   gem 'guard-rspec'
-  gem 'guard-spork'
   gem 'hooves'
-  gem 'pry'
+  gem 'pry', require: false
   gem 'quiet_assets'
-  gem 'ruby-prof'
-  gem 'spork'
-  gem 'thin'
-  gem 'debugger'
+  gem 'spork-rails'
 end

@@ -1,21 +1,14 @@
-:ruby
-  if @link_params
-    href = url_for(@link_params)
-  else
-    href = bible_path(@ref.merge({version: nil, verse: nil}))
-  end
+- plan_url = url_for(@link_params) if @link_params
 
-.dynamic_menu.version_select{style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-link-base" => href, "data-link-needs-param" => (!@link_params.nil?).to_s}
+.dynamic_menu.version_select{style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-plan-url" => plan_url, "data-link-needs-param" => @add_version_param.to_s}
   .spinner_wrapper{style: "display: none;"}
     #version_spinner.dynamic_menu_spinner
   %span.menu_arrow
     &nbsp;
   .scroll
     %table
-      - if !@recent_versions.empty?
+      - if @recent_versions.present?
         %tr
           %th{:colspan => '2'}= t('recent versions')
-        - @recent_versions.each do |v|
-          = render partial: 'item', locals: {version: v}
+        = render partial: 'items', locals: {versions: @recent_versions}
       = render_cell :version_selector, :all_versions, version: @version, reference: @ref, is_alt: @is_alt, force_style: @force_style, link_params: @link_params, site: @site
-

@@ -28,8 +28,8 @@ class PlansController < ApplicationController
     if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]
       params[:day] ||= @subscription.current_day
       @subscription = Plan.find(params[:id]) if @subscription.nil?
-      @subscription.version = params[:version] || @subscription.version || current_version
-      @version = Version.find(@subscription.version)
+      @subscription.version_id = params[:version] || @subscription.version_id || current_version
+      @version = Version.find(@subscription.version_id)
       @day = params[:day].to_i
       @reading = @subscription.reading(@day)
       @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0 #coerce content page to 1st page if outside range
@@ -49,6 +49,7 @@ class PlansController < ApplicationController
   end
 
   def update
+
     if @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
       @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
 
@@ -91,15 +92,9 @@ class PlansController < ApplicationController
       if params[:email_delivery] == "false"
         @subscription.disable_email_delivery and action = 'email delivery off'
       else
-        action = @subscription.email_delivery? ? 'email delivery updated' : 'email delivery on'
-        #TODO: make sure versions with hypens are working
+        action = @subscription.delivered_by_email? ? 'email delivery updated' : 'email delivery on'
         @subscription.enable_email_delivery(time: params[:email_delivery], picked_version: params[:version], default_version: current_version)
       end
-    end
-
-    if(params[:send_reminder])
-      params[:send_reminder] == "true" ? (@subscription.enable_reminder and action = 'reminder on') : (@subscription.disable_reminder and action = 'reminder off')
-      anchor = 'accountability'
     end
 
     if(params[:send_report])

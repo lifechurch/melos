@@ -6,8 +6,8 @@
         %span.icon_listen{class: @reference.audio ? nil : "disabled"}
           =t("ref.listen")
     %li.float_left{style: "background: none; padding: 0; margin-left: 7px"}
-      %a.no_style.feaux_dynamic_trigger.button{:href => bible_url(reference), :title => t("ref.view in reader", reference: reference.ref_string)}
+      %a.no_style.feaux_dynamic_trigger.button{:href => bible_url(reference), :title => t("ref.view in reader", reference: reference.human)}
         %span.icon_read
-          =t("ref.view in reader", reference: reference.ref_string)
+          =t("ref.view in reader", reference: reference.human)
   - if reference.is_chapter?
     = render '/shared/menu_audio_player', force_style: audio_div_style

@@ -1,15 +1,15 @@
-class CategoryListing
+class CategoryListing < YouVersion::Resource
   attr_reader :current, :breadcrumbs, :items
 
-  def self.find(category_slug, opts={})
+  def self.find(category_slug=nil, opts={})
     #we only need 1st page to get all categories in the response
     #the params[:category] param will filter the query to only children of that category
     opts[:page] ||= 1
     opts[:category] ||= category_slug
-    opts[:cache_for] ||= 1.hour
+    opts[:cache_for] ||= a_long_time
     opts[:query] = '*'
 
-    response = YvApi.get("reading_plans/search", opts) do |errors|
+    response = YvApi.get("search/reading_plans", opts) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
         raise "No Plans in this category!"
       else
@@ -33,6 +33,14 @@ class CategoryListing
     @current = @json.current ? PlanCategory.new(@json.current) : nil
     @items = @json.children ? @json.children.map! {|child| PlanCategory.new(child)} : []
     @breadcrumbs = @json.breadcrumbs ? @json.breadcrumbs.map! {|category| PlanCategory.new(category)} : []
+  end
+
+  def count
+    items.count
+  end
+
+  def length
+    count
   end
 
 end

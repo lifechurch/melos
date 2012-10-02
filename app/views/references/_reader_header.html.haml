@@ -2,22 +2,22 @@
   %header
     %ul.float_left
       %li
-        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', :title => t("ref.choose book and chapter")}
+        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', id:"menu_book_chapter_trigger", :title => t("ref.choose book and chapter")}
           %b
-            = @reference.ref_string
+            = @reference.to_s(version:false)
           %span
             = t('ref.choose book and chapter')
       %li
-        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version")}
+        %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_version_trigger", title: t("ref.choose version")}
           %b
-            = @version.osis_human
+            = @version.human
           %span
             =t("ref.choose version")
       %li#li_selected_verses.separator.hide
-        %a#clear_selected_verses.button{:href => '#', :title => 'Clear Selected Verses'}
+        %a#clear_selected_verses.button{:href => '#', :title => ('ref.clear verses')}
           %span.icon_x
             = t('ref.clear verses')
-        %a#verses_selected_button.dynamic_menu_trigger.button{:href => '#menu_bookmark', :title => t("ref.share")}
+        %a.dynamic_menu_trigger.button{id:"menu_selected_trigger", href:"#menu_bookmark", title:t("ref.share")}
           %b.icon_share
             =t("ref.selected")
             %sup#verses_selected_count
@@ -27,13 +27,13 @@
           %input.verses_selected_input{name:'verses', type: 'hidden', value: ''}
     %ul.float_right
       %li.show_in_parallel_mode
-        %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_alt_version', :title => t("ref.choose second version")}
+        %a.dynamic_menu_trigger.drop_down_select{href:"#menu_alt_version", id:"menu_alt_version_trigger", title: t("ref.choose second version")}
           %b
-            = @alt_version.osis_human
+            = @alt_version.human
           %span
             =t("ref.choose version")
       %li.hide_in_parallel_mode
-        %a.button.dynamic_menu_trigger{:href => '#menu_settings', :title => t("ref.settings")}
+        %a.button.dynamic_menu_trigger{href:"#menu_settings", id:"menu_settings_trigger", title:t("ref.settings")}
           %span.icon_settings
             =t("ref.settings")
       %li.hide_in_parallel_mode

@@ -1,185 +1,211 @@
-class Version
-  @@versions_api_data = nil
-  @@books_api_data = {}
-  @@info_api_data = {}
-  @@versions = {}
-  @@books = {}
-  @@version_books = {}
-  @@all_by_language = {}
-  @@languages = {}
-  def self.all(lang = "")
-    if lang == ""
-      versions
+class Version < YouVersion::Resource
+
+  attribute :id
+  attribute :title
+  attribute :audio
+  attribute :publisher_id
+
+  def self.all(app_lang_tag = "")
+    # `bible_langauge_id` is the arbitrariy identifier of the language
+    # to the Bible API (iso_639_3[_variant tag]), langauge_tag in the response
+    #
+    # `app_lang_tag` is the language tag used within the app (pt-BR, for example)
+    # that comes from the user's preferred languages or the language they've selected
+    bible_langauge_id = case app_lang_tag
+    when ""
+      return versions.values
+    when Hash, Hashie::Mash
+      app_lang_tag.id.to_s
     else
-      versions.select { |k, v| v.language.iso == lang.to_s }
+      YvApi::to_bible_api_lang_code(app_lang_tag).to_s
     end
+
+    versions.select { |k, v| v.language.id.to_s == bible_langauge_id }.values
   end
-
+  def self.all_by_language(opts={})
+    # to allow a restricted subset of versions (e.g. for white-list sites)
+    _all = Version.all.find_all{|v| opts[:only].include? v.id} if opts[:only]
+    _all ||= all
+    _all.group_by {|v| v.language.tag}
+  end
+  def self.all_by_publisher(opts={})
+    # to allow a restricted subset of versions (e.g. for white-list sites)
+    _all = Version.all.find_all{|v| opts[:only].include? v.id} if opts[:only]
+    _all ||= all
+    _all.group_by {|v| v.publisher_id}
+  end
   def self.find(version)
-    raise NotAVersionError if (ver = versions[version]).nil?
-
+    ver = versions[self.id_from_param(version)]
+    raise NotAVersionError if ver.nil?
     ver
   end
+  def self.default_for(app_lang_tag)
+    bible_langauge_id = case app_lang_tag
+    when Hash, Hashie::Mash
+      app_lang_tag.id.to_s
+    else
+      YvApi::to_bible_api_lang_code(app_lang_tag).to_s
+    end
 
-  def self.languages
-    Hash[*Version.all.group_by { |k, v| v.language}.keys.each {|a| a.to_a}.map {|h| h.to_a.flatten - ["iso", "human"]}.flatten]
+    defaults[bible_langauge_id]
   end
-
-  def self.all_by_language(opts={})
-    all_by_language = Version.all.find_all{|k, v| opts[:only].include? k}.group_by {|k, v| v.language.iso} if opts[:only]
-
-    all_by_language ||= Version.all.group_by {|k, v| v.language.iso}
-    all_by_language.each {|k, v| all_by_language[k] = Hash[*v.flatten]}
-    all_by_language
-  end
-
-  def initialize(version)
-    @version = version
-    @data = versions_api_data.versions[version]
-  end
-
-  def audio?
-    @data.audio == "true"
-  end
-
-  def language
-    @data.language
-  end
-
-  def rtl?
-    @data.text_direction=="rtl"
-  end
-
-  def text_direction
-    @data.text_direction
-  end
-
-  def contains?(ref)
-    raise "versions contain references!" if !ref.is_a? Reference
-    listing = books_list
-
-    #return false if ref.version && ref.version != osis
-    return false if ref.book && listing[ref.book.to_s].nil?
-    return false if ref.chapter && listing[ref.book.to_s].chapter[ref.chapter.to_s].nil?
-    return false if ref.verse && ref.verse > listing[ref.book.to_s].chapter[ref.chapter.to_s].verses
-    return true
-  end
-
-  def title
-    @data.title
-  end
-
-  def osis_human
-    @version.upcase.match(/\A[^-_]*/)
-  end
-
-  def osis
-    @version
-  end
-
-  def books
-    @books ||= books_list(@version)
-  end
-
-  def to_s
-    "#{@data.title} (#{osis_human})"
-  end
-
-  def to_param
-    @version
-  end
-
-  def copyright
-    @copyright ||= @data.copyright
-  end
-
-  def info
-    info_api_data(@version).copyright
-  end
-
-  def self.default_for(lang)
-    versions_api_data.defaults[lang.to_s]
-  end
-
   def self.default()
-    versions_api_data.defaults["en"]
+    defaults["eng"] || find(1)
   end
-
   def self.sample_for(lang, opts={})
-    opts[:except] ||= ""
+    except_id = id_from_param(opts[:except])
+    lang = lang.to_s
 
-    samples = all_by_language[lang].find_all{|k,v| k != opts[:except]}
+    samples = all_by_language[lang]
+    return nil if samples.nil?
+
+    samples = samples.find_all{|v| v.id != except_id}
     sample = nil
 
     until !sample.nil? || samples.empty?
-      sample = samples.delete_at(Random.rand(samples.length))[1]
+      sample = samples.delete_at(Random.rand(samples.length))
 
-      sample = nil if opts[:has_ref] && !sample.contains?(opts[:has_ref])
+      sample = nil if opts[:has_ref] && !sample.include?(opts[:has_ref])
     end
 
-    raise NotAChapterError if sample.nil?
+    return nil if sample.nil?
 
-    return sample.osis
+    return sample.id
+  end
+  def self.languages(opts={})
+    return @languages if @languages.present?
+
+    @languages = Hashie::Mash.new(Hash[all_by_language(opts).map{|tag,versions| [tag, versions.first.language.human]}])
+  end
+  def self.id_from_param(ver)
+    case ver
+    when Fixnum         # 1
+      ver
+    when /^\d+$/        # "1"
+      ver.to_i
+    when /^(\d+)\-.*/   #  "1-KJV"
+      $1.to_i
+    when String
+      YvApi::get_usfm_version(ver) || ver
+    when Version
+      ver.id
+    else
+      ver
+    end
+  end
+
+  def hash
+    to_param.hash
+  end
+  def ==(compare)
+    #if same class
+    (compare.class == self.class) &&  compare.hash == hash
+  end
+  def eql?(compare)
+    self == compare
+  end
+  def language
+    @language ||= Hashie::Mash.new({tag: YvApi::bible_to_app_lang_code(@attributes.language.language_tag),
+                                    id: @attributes.language.language_tag,
+                                    human: @attributes.language.local_name,
+                                    direction: @attributes.language.text_direction})
+  end
+  def copyright
+    detailed_attributes['copyright_short']['html'] || detailed_attributes['copyright_short']['text'] || ""
+  end
+  def info
+    detailed_attributes['copyright_long']['html'] || detailed_attributes['copyright_long']['text'] || ""
+  end
+  def audio_version?
+    audio
+  end
+  def books
+    return @books if @books.present?
+
+    @books = Hashie::Mash.new
+    detailed_attributes['books'].each_with_index do |b, i|
+      @books[b.usfm] = b.merge(chapters: b.chapters)
+    end
+    @books
+  end
+
+  def rtl?
+   text_direction =="rtl"
+  end
+
+  def text_direction
+    language.direction
+  end
+
+  def include?(ref)
+    raise "versions only contain references!" unless ref.is_a? Reference
+
+    begin
+      book = books[ref.book.to_s]
+      return false if book.nil?
+
+      chapter_found = book.chapters.any? {|hash| hash.usfm == ref.usfm }
+      return false if chapter_found == false
+
+    rescue
+      return false #if we get any errors here false is the better choice.
+    end
+
+    #API doesn't send verse information anymore :(
+    return true
+  end
+  def title
+    @attributes.local_title || @attributes.title
+  end
+  def abbreviation
+    @attributes.abbreviation.try :upcase
+  end
+  def to_s
+    "#{title} (#{abbreviation.upcase})"
+  end
+  def to_param
+    "#{id}"
+  end
+  def human
+    #only return first section (before any - or _ qualifier) of abbreviation
+    abbreviation.upcase.match(/\A[^-_]*/).to_s
+  end
+  def publisher
+    detailed_attributes.publisher || Hashie::Mash.new({"id"=>nil, "name"=>nil, "url"=>nil, "description"=>nil})
   end
 
   private
+   def self.versions
+    return @versions if @versions.present?
+    # note: all caches in this model could be a_very_long_time, but during release, we want caches to be short
+    # to allow for quick discovery of changes/additions
+    response = YvApi.get("bible/versions", type: "all", cache_for: a_long_time)
 
-  def self.books_list(version)
-    hash = {}
-    books_api_data(version).each do |v|
-      hash[v.osis.downcase] = { human: v.human, chapters: v.chapters.to_i, chapter: {}}
-      (1..v.chapters.to_i).each do |x|
-         hash[v.osis.downcase][:chapter][x.to_i] = {verses: v.verses[x-1]}
-      end
-    end
-    Hashie::Mash.new(hash)
+    #versions hash of form [<version numerical uid> => <Version object instance>]
+    @versions = Hash[ response.versions.map {|ver| [ver.id, Version.new(ver)]} ]
   end
+  def self.defaults
+    return @defaults if @defaults.present?
 
-  def books_list(version = nil)
-    version ||= osis
-    self.class.books_list(version)
+    response = YvApi.get("bible/configuration", cache_for: a_long_time)
+    @defaults = Hash[response.default_versions.map {|d| [d.language_tag, d.id]}]
   end
+  def detailed_attributes
+    #attributers that can only be found with a specific /version call
+    return @detailed_attributes unless @detailed_attributes.nil?
 
-  def self.books_api_data(version)
-    YvApi.get("bible/books", cache_for: 12.hours, version: version, cache_for: 12.hours)
+    @detailed_attributes = YvApi.get("bible/version", cache_for: a_long_time, id: id)
+    # uncommenting to show API issue, leavning here in case we need it in a pinch
+    # @detailed_attributes.publisher.name = nil if @detailed_attributes.publisher.name == 'null'
+    @detailed_attributes
   end
-
-  def books_api_data(version)
-    self.class.books_api_data(version)
-  end
-
-  def self.versions
-    versions = {}
-    versions_api_data.versions.each { |k, v| versions[k] = Version.new(k) }
-    versions
-  end
-
   def versions
     self.class.versions
   end
-
-  def self.versions_api_data
-    return @versions_api_data unless @versions_api_data.nil?
-
-    @versions_api_data = YvApi.get("bible/versions", type: "all", cache_for: 12.hours)
-    @versions_api_data.defaults = Hash[@versions_api_data.defaults.map {|d| [YvApi::to_app_lang_code(d[0]), d[1]]}]
-    @versions_api_data.versions.each {|k,v| v.language.iso = YvApi::to_app_lang_code(v.language.iso)}
-    @versions_api_data
-  end
-
   def versions_api_data
     self.class.versions_api_data
   end
-
-  def self.info_api_data(version)
-    YvApi.get("bible/copyright", version: version, cache_for: 12.hours)
-  end
-
-  def info_api_data(version)
-    self.class.info_api_data(version)
-  end
-
   def to_attribute
-    osis
+    to_param
   end
 end

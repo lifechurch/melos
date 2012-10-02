@@ -10,7 +10,6 @@ require File.join(File.dirname(__FILE__), '../lib/bb.rb')
 require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
 
 require File.expand_path('../_config', __FILE__)
-require File.expand_path('../../lib/osis', __FILE__)
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -59,8 +58,11 @@ module YouversionWeb
         # url = "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}"
         new_server_name = "m.youversion.com"
 
+        # bible.us paths: /es/bible/12/jhn3.16-17,19,21.esv
+        # mDot paths: http://es.m.youversion.com/bible/asv/john/3/16-17
+
         # locales
-        if (new_path != "" && new_path != "/")
+        if (new_path.present? && new_path != "/")
           # then there's a path, see if it's a locale
           test = new_path.split("/")[1]
           if locales[test]
@@ -70,8 +72,21 @@ module YouversionWeb
             new_path = new_path_array.join("/")
           end
         end
-        # reading plans support
-        new_path = new_path.gsub(/reading-plans\/\d+-([^\/]*)/, 'reading-plans/\1')
+
+        # reform url for mDot
+        case new_path
+        when /^\/bible\/(?:(\d+)\/)?(\w{3})\.?([^\.]+)(?:(?:\.([,\w-]+))?)\.(\w+)/
+          book = YvApi::get_osis_book($2)
+          version = YvApi::get_osis_version($1) || $5 || 'kjv'
+          chapter = $3
+
+          (chapter = 1 && book = 'john') if book.blank?
+
+          new_path = "/bible/#{version.downcase}/#{book}/#{chapter}"
+          new_path = new_path + "/$4" if $4.present?
+        when /^\/reading-plans\/\d+-([^\/]*)/
+          new_path = "/reading-plans/#{$1}"
+        end
 
         "http://#{new_server_name}#{new_path}"
       end
@@ -87,6 +102,8 @@ module YouversionWeb
       r301 /.*/, mobile_rewrite, if: should_rewrite_mobile
 
       ### BIBLE REDIRECTS
+      # /bible/john.3.16-17,19,21.ESV (legacy web3 API2 links, verse(s) optional)
+      r301 %r{/bible/(\w+)\.(\d+(?:(?:\.[,\d-]+)?))\.(\w+)}, '/bible/$3/$1.$2.$3'
       # /bible/verse/niv/john/3/16 (normal)
       r301 %r{/bible/verse/([\w-]+)/(\w+)/(\w+)/([,\w-]+)}, '/bible/$2.$3.$4.$1'
       # /bible/verse/niv/john/3 (redirects to 1st verse)
@@ -101,8 +118,6 @@ module YouversionWeb
       r301 %r{/bible/(\w+)/(\d+)/([\w-]+)}, '/bible/$1.$2.$3'
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
-      # /bible/niv/john.3.16 (legacy live event links)
-      r301 %r{/bible/([\w-]+)/(\w+).(\d+).([,\d-]+)}, '/bible/$2.$3.$4.$1'
 
       #blogs and other misc redirects
       r301 '/churches', 'http://blog.youversion.com/churches'
@@ -112,6 +127,7 @@ module YouversionWeb
       r301 %r{^/(zh_CN|zh_TW|pt_BR)(.*)}, Proc.new{ |path, rack_env| "#{path.to_s.sub('_', '-')}" }
 
       ### Pass-through to 2.0
+      # doesn't have SSL cert, use http protocol
       r302 %r{/groups.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" }
       r302 %r{/live.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" }
       r302 %r{/events.*}, Proc.new{ |path, rack_env| "http://#{rack_env["SERVER_NAME"].gsub(/youversion/, "a.youversion")}#{path}" }
@@ -142,8 +158,9 @@ module YouversionWeb
 
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
-      #donate HTTPS, needs to not re-route if already https
-      #r301 %r{^(/.{2,5})?(/donate)}, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, if: Proc.new{ |rack_env| rack_env["rack.url_scheme"] != 'https' && !Rails.env.development?}
+
+      #force HTTPS traffic
+      r301 /.*/, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, if: Proc.new{ |rack_env| rack_env["rack.url_scheme"] != 'https' && ENV['SECURE_TRAFFIC']}
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)

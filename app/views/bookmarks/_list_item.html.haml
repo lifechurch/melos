@@ -1,19 +1,19 @@
 %li{class: ("li_bookmark" if display == :icon)}
   .float_left{style: "width: 100%;"}
     %p.gutter_bottom_half
-      %b{class: (is_dark?(list_item.highlight_color) ? "dark_highlight" : "highlight" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
+      %b{class: (is_dark?(list_item.highlight_color) ? "dark_bg highlighted" : "highlighted" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
       - list_item.reference_list.each do |r|
         %p
           %b
             %a{href: bible_path(r)}= r
           %br
-          = r.contents[0]
+          .embedded_reader{"data-setting-font" => @font, 'data-setting-size' => @size}= r.content.html_safe
   .bookmark_edit.float_right
     %p
       - if @me
         %span= link_to(t('bookmarks.edit'), edit_bookmark_path(list_item.id))
         &mdash;
-        %span.confirm= link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete) 
+        %span.confirm= link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
         &mdash;
       %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
   - if list_item.labels

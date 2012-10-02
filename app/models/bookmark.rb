@@ -6,6 +6,7 @@ class Bookmark < YouVersion::Resource
   attribute :references
   attribute :title
   attribute :version
+  attribute :version_id
   attribute :user_id
 
   attr_accessor :reference_list
@@ -14,29 +15,30 @@ class Bookmark < YouVersion::Resource
     self.attributes['user_id']
   end
 
-  def before_save
-    self.reference = self.reference_list.to_api_string
-  end
-
-  def after_save(response)
-    return unless response
-    return
-    # Sometimes references come back as an array, sometimes just one, Hashie::Mash
-    if response.reference
-      self.reference_list = ReferenceList.new(self.reference)
-    end
-  end
-
   def after_build
     # self.reference does multiple duty here for the moment. When creating a new object,
     # self.reference may contain whatever the user passed in (usually a String) with the
     # :reference key.  When creating an object from an API call, it will bear whatever
     # string the API returned for the 'reference' key in the response->data section.
     # And it could probably be some other things before we're done.
+
+    self.version = attributes.try :[], :version_id
     self.reference_list = ReferenceList.new(self.references, self.version)
-    self.version =self.reference_list.first[:version]
-    # Just here for compatibility - should return the same as what was done before
-    # self.reference = self.reference_list.first
+    self.version = self.reference_list.first.try :version
+  end
+
+  def before_save
+    self.references = self.reference_list.to_flat_usfm
+    self.version_id = self.version
+  end
+
+  def after_save(response)
+    return unless response
+    self.version = Version.find(response.version_id)
+    # Sometimes references come back as an array, sometimes just one, Hashie::Mash
+    if response.references
+      self.reference_list = ReferenceList.new(self.references, self.version)
+    end
   end
 
 
@@ -91,7 +93,7 @@ class Bookmark < YouVersion::Resource
     bookmarks = ResourceList.new
     if data['bookmarks']
       data.bookmarks.each do |b|
-        bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
+        (bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash) rescue nil
       end
     end
     bookmarks.page = opts[:page].to_i
@@ -115,7 +117,8 @@ class Bookmark < YouVersion::Resource
     bookmarks = ResourceList.new
     if data['bookmarks']
       data.bookmarks.each do |b|
-        bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
+        #TODO: capture errors and report to API team (error in data)
+        (bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash) rescue nil
       end
     end
     bookmarks.page = opts[:page].to_i

@@ -15,10 +15,10 @@
         %div.float_right{style: "text-align: right;"}
           - if current_user && current_user.following_user_id_list.include?(u.id.to_i)
             %form{action: user_unfollow_path(u.username), method: "post"}
-              %button{title: "#{t('users.unfollow')} #{u.name || u.username}"}= t('users.unfollow')
+              %button{title: t('users.unfollow user', user: u.name || u.username)}= t('users.unfollow')
           - else
             %form{action: user_follow_path(u.username), method: "post"}
-              %button{title: "#{t('users.follow')} #{u.name || u.username}"}= t('users.follow')
+              %button{title: t('users.follow user', user: u.name || u.username)}= t('users.follow')
 
           - if current_user && current_user.follower_user_id_list.include?(u.id.to_i)
             %div.mute= t('user follows', user: u.username)

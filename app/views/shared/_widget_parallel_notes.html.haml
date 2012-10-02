@@ -1,4 +1,4 @@
-.widget.parallel_notes{style: ("display: none;" if hide_widget)}
+.widget.parallel_notes{id: "widget_new_note", style: ("display: none;" if hide_widget)}
   %header
     %span.header_icon_note= t('notes.new note')
     %a.pop_out_button
@@ -6,12 +6,6 @@
         = t('notes.pop out')
   %section
     %ul.reference_tokens
-      %li
-        %a{:href => "#"}
-          Luke 2:15
-      %li
-        %a{:href => "#"}
-          John 4:25
     = form_for @note do |f|
       - if @note.errors.any?
         .form_errors
@@ -43,7 +37,8 @@
       - #   %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
       - #   %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
       - #   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
-      = f.hidden_field :reference, class: "verses_selected_input"
+      = f.hidden_field :references, class: "verses_selected_input"
+      = f.hidden_field :version_id
       %div.parallel_notes_submit.clearfix
         %button.action_button_green.float_right
           = t('notes.save')

@@ -10,8 +10,6 @@ class User < YouVersion::Resource
   attribute :email
   attribute :agree
   attribute :verified
-  attribute :user_avatar_url
-  attribute :s3_user_avatar_url
   attribute :first_name
   attribute :last_name
   attribute :location
@@ -28,18 +26,18 @@ class User < YouVersion::Resource
   attribute :website
   attribute :twitter
   attribute :facebook
+  attribute :apps
   attribute :google
   attribute :created_dt
   attribute :last_login_dt
+  attribute :start_dt
 
   validate :valid_picture_size?, if: "uploaded_file?"
 
   has_many_remote :badges
 
-  api_version "2.5"
-
   def self.update_path
-    "users/update_profile"
+    "users/update"
   end
 
   def self.create_path
@@ -60,32 +58,14 @@ class User < YouVersion::Resource
   end
 
   def user_avatar_url
-    return @ssl_avatar_urls unless @ssl_avatar_urls.nil?
-
-    #some calls returning user info don't have avatar URLS or don't have secure paths
+    # some calls returning user info don't have avatar URLS
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
-
-    #we only want to use secure urls
-    sizes = ["24x24", "48x48", "128x128", "512x512"]
-    hash ={}
-    sizes.each do |size|
-      hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
-    end #TODO: DRY up this mash creation with dup in badge.rb and note.rb
-
-    @ssl_avatar_urls = Hashie::Mash.new(hash)
   end
 
-  def s3_user_avatar_url
-    return @s3_ssl_avatar_urls unless @s3_ssl_avatar_urls.nil?
-    attributes["user_avatar_url"] = self.generate_user_avatar_urls(s3 = true)
-
-    sizes = ["24x24", "48x48", "128x128", "512x512"]
-    hash ={}
-    sizes.each do |size|
-      hash["px_#{size}"] = attributes["user_avatar_url"]["px_#{size}_ssl"]
-    end #TODO: DRY up this mash creation with dup in badge.rb and note.rb
-
-    @s3_ssl_avatar_urls = Hashie::Mash.new(hash)
+  def direct_user_avatar_url
+    # some calls returning user info don't have avatar URLS
+    # we need the direct path to avoid CDN cache in certain cases
+    attributes["direct_user_avatar_url"] ||= self.generate_user_avatar_urls(direct: true)
   end
 
   def to_param
@@ -114,30 +94,26 @@ class User < YouVersion::Resource
         :id
       when "2.5"
         :id
+      when "3.0"
+        :id
       else
         :user_id
       end
     end
 
     def authenticate(username, password)
-      hash = {}
-      response = YvApi.get('users/authenticate', auth_username: username, auth_password: password) { return nil }.to_hash
-      if response
-        response = response.symbolize_keys
-        response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
-        new(response)
-      end
-    end
-
-    def id_key_for_version
-        case Cfg.api_version
-        when "2.3"
-          :user_id
-        when "2.4"
-          :id
-        else
-          :user_id
-        end
+      # hash = {}
+      # response = YvApi.post('users/authenticate', auth: Hashie::Mash.new(username: username, password: password)) { return nil }.to_hash
+      # if response
+      #   response = response.symbolize_keys
+      #   response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
+      #   new(response)
+  # end
+      id_response = YvApi.get("users/user_id", username: username)
+      auth = Hashie::Mash.new(username: username, password: password, user_id: id_response.user_id)
+      response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: auth)
+      response[:auth] = auth
+      User.new(response)
     end
 
     def find(user, opts = {})
@@ -154,19 +130,27 @@ class User < YouVersion::Resource
           response = YvApi.get("users/view", id: user.user_id, auth: user)
           response[:auth] = user
         when String
-          id_response = YvApi.get("users/user_id", api_version: "2.5", username: user)
-          if opts[:auth] && user == opts[:auth].username
-            response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
+          if user.match(/^[0-9]+$/)
+            if opts[:auth] && user == opts[:auth].user_id
+              response = YvApi.get("users/view", id_key_for_version => user, auth: opts[:auth])
+            else
+              response = YvApi.get("users/view", id_key_for_version => user)
+            end
           else
-            response = YvApi.get("users/view", id_key_for_version => id_response.user_id)
+            id_response = YvApi.get("users/user_id", username: user)
+            if opts[:auth] && user == opts[:auth].username
+              response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
+            else
+              response = YvApi.get("users/view", id_key_for_version => id_response.user_id)
+            end
+            response[:auth] = opts[:auth] ||= nil
           end
-          response[:auth] = opts[:auth] ||= nil
         end
       User.new(response)
     end
 
     def destroy(auth, &block)
-      post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth, api_version: "2.5"}, &block)
+      response = post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth}, &block)
     end
 
   end
@@ -203,7 +187,7 @@ class User < YouVersion::Resource
   end
 
   def update_email(email)
-    response = YvApi.post("users/update_profile", email: email, api_version: "2.3", auth: self.auth) do |errors|
+    response = YvApi.post("users/update_email", email: email, auth: self.auth) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
@@ -211,7 +195,7 @@ class User < YouVersion::Resource
   end
 
   def confirm_update_email(token)
-    response = YvApi.post("users/update_email", encrypt: token) do |errors|
+    response = YvApi.post("users/confirm_update_email", token: token) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
@@ -233,7 +217,7 @@ class User < YouVersion::Resource
   def self.confirm(hash)
     user = nil
 
-    response = YvApi.post("users/confirm", hash: hash) do |errors|
+    response = YvApi.post("users/confirm", token: hash) do |errors|
       user = User.new
 
       if i = errors.find_index{|e| e["key"] == "users.hash.verified"}
@@ -254,6 +238,14 @@ class User < YouVersion::Resource
   def before_update
     self.attributes.delete "im_type"
     self.attributes.delete "im_username"
+  end
+
+  def update_password(opts)
+    opts[:auth] = self.auth
+    result = YvApi.post("users/update_password", opts) do |errors|
+      errors.each { |e| self.errors.add e }
+      false
+    end
   end
 
   def destroy
@@ -281,7 +273,7 @@ class User < YouVersion::Resource
   end
 
   # def self.find(id)
-  #   response = YvApi.get('users/view', {user_id: id, auth_user_id: :id} ) do |errors|     
+  #   response = YvApi.get('users/view', {user_id: id, auth_user_id: :id} ) do |errors|
   #     @errors = errors.map { |e| e["error"] }
   #     return false
   #   end
@@ -375,12 +367,17 @@ class User < YouVersion::Resource
     end
 
     image = Base64.strict_encode64(File.read(uploaded_file.path))
-    response = self.class.post("users/update_avatar", image: image, auth: self.auth, timeout: 25) do |errors|
-      if i = errors.find_index{ |e| e["key"] == "users.image_decoded.not_valid_image" }
-        self.errors.add :picture_invalid_type, errors.delete_at(i)["error"]
-      end
+    begin
+      response = self.class.post("users/update_avatar", image: image, auth: self.auth, timeout: 12) do |errors|
+        if i = errors.find_index{ |e| e["key"] == "users.image_decoded.not_valid_image" }
+          self.errors.add :picture_invalid_type, errors.delete_at(i)["error"]
+        end
 
-      errors.each { |e| self.errors.add :base, e["error"] }
+        errors.each { |e| self.errors.add :base, e["error"] }
+        return false
+      end
+    rescue APITimeoutError
+      self.errors.add :transfer_too_slow, "Choose a smaller picture or find a faster connection"
       return false
     end
     true
@@ -395,8 +392,8 @@ class User < YouVersion::Resource
 
   def connections
     connections = {}
-    connections["twitter"] = TwitterConnection.new(data: self.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.twitter
-    connections["facebook"] = FacebookConnection.new(data: self.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.facebook
+    connections["twitter"] = TwitterConnection.new(data: self.apps.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.twitter
+    connections["facebook"] = FacebookConnection.new(data: self.apps.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.facebook
     connections
   end
 
@@ -437,10 +434,11 @@ class User < YouVersion::Resource
         return false
       end
     end
+
     unless response === false
       followings = ResourceList.new
       followings.total = response.total
-      response.users.each { |u| followings << User.new(u) }
+      response.following.each { |u| followings << User.new(u) }
       @following_id_list = followings.map { |u| u.username }
       followings
     end
@@ -457,7 +455,7 @@ class User < YouVersion::Resource
       else
         raise YouVersion::ResourceError.new(errors)
       end
-    end
+    end.following
   end
 
   def followers(opts = {})
@@ -474,7 +472,7 @@ class User < YouVersion::Resource
     unless response === false
       fl = ResourceList.new
       fl.total = response.total
-      response.users.each { |u| fl << User.new(u) }
+      response.followers.each { |u| fl << User.new(u) }
       fl
     end
   end
@@ -490,25 +488,11 @@ class User < YouVersion::Resource
       else
         raise YouVersion::ResourceError.new(errors)
       end
-    end
+    end.followers
   end
 
   def subscriptions(opts = {})
-    opts[:user_id] = id
-    opts[:auth] ||= auth
-    response = YvApi.get("reading_plans/items", opts) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end
-
-    subscriptions = ResourceList.new
-    subscriptions.total = response.total
-    response.reading_plans.each {|plan_mash| subscriptions << Subscription.new(plan_mash.merge(auth: auth))}
-
-    subscriptions
+    Subscription.all(user_id: id, auth: auth)
   end
 
   def subscription(plan)
@@ -516,24 +500,8 @@ class User < YouVersion::Resource
   end
 
   def subscribed_to? (plan, opts = {})
-    opts[:user_id] = id
-    opts[:auth] = auth #if auth is nil, it will attempt to search for public subscription
-
-    case plan
-    when Fixnum, /\A[\d]+\z/
-      opts[:id] = plan.to_i
-    when Plan, Subscription
-      opts[:id] = plan.id.to_i
-    end
-    response = YvApi.get("reading_plans/view", opts) do |errors| #we can't use Plan.find because it gets an unexpected response from API when trying un-authed call so it never tries the authed call
-      if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
-        return false
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end
-
-    return response.id.to_i == opts[:id]
+    #if auth is nil, it will attempt to search for public subscription
+    return Subscription.find(plan, id, auth: auth).present? rescue false
   end
 
   def configuration
@@ -550,10 +518,12 @@ class User < YouVersion::Resource
   end
 
   def self.configuration(opts = {})
-    opts = opts.merge({cache_for: 12.hours}) if opts[:auth] == nil
-    response = YvApi.get("configuration/items", opts) do |errors|
+    opts = opts.merge({cache_for: a_very_long_time}) if opts[:auth] == nil
+    response = YvApi.get("highlights/configuration", opts) do |errors|
       raise YouVersion::ResourceError.new(errors)
     end
+    response[:highlight_colors] = response.delete(:colors)
+    response
   end
 
   def ==(compare)
@@ -565,16 +535,15 @@ class User < YouVersion::Resource
     timezone ? ActiveSupport::TimeZone[timezone].utc_offset/86400.0 : 0.0
   end
 
-  def generate_user_avatar_urls(s3 = false)
+  def generate_user_avatar_urls(opts = {})
     sizes = ["24x24", "48x48", "128x128", "512x512"]
-    hash = {}
-    avatar_path     = Cfg.send("avatar_path#{    s3 ? '_s3' : ''}")
-    ssl_avatar_path = Cfg.send("ssl_avatar_path#{s3 ? '_s3' : ''}")
+    avatar_path = opts[:direct] ? "avatar_path_direct" : "avatar_path"
+
+    mash = Hashie::Mash.new()
     sizes.each do |s|
-      hash["px_#{s}"] = avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
-      hash["px_#{s}_ssl"] = ssl_avatar_path + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
+      mash["px_#{s}"] = Cfg.send(avatar_path) + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
     end
-    return Hashie::Mash.new(hash)
+    mash
   end
 
 end

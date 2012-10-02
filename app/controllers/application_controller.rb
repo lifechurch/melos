@@ -1,16 +1,18 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :sign_in, :sign_out, :verses_in_chapter, :bdc_user?
+  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
   before_filter :check_facebook_cookie
+  before_filter :tend_caches
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
     rescue_from APIError, with: :api_error
     rescue_from AuthError, with: :auth_error
+    rescue_from Timeout::Error, with: :timeout_error
     rescue_from APITimeoutError, with: :timeout_error
   end
 
@@ -54,7 +56,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:a] = user.id
     cookies.permanent.signed[:b] = user.username
     cookies.permanent.signed[:c] = password || params[:password]
-    cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
+    set_current_avatar(user.user_avatar_url["px_24x24"])
     check_facebook_cookie
   end
 
@@ -104,7 +106,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:b] = nil
     cookies.permanent.signed[:c] = nil
     cookies.permanent.signed[:f] = nil
-    cookies.permanent[:avatar] = nil
+    set_current_avatar(nil)
   end
 
   def auth_error(ex)
@@ -131,22 +133,6 @@ class ApplicationController < ActionController::Base
     render "pages/generic_error", layout: 'application', status: 500
   end
 
-  def force_login(opts = {})
-    if current_auth.nil?
-      opts[:redirect] = request.path
-      redirect_to sign_up_path(opts) and return
-      #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
-    end
-    @user = current_user
-  end
-
-  def force_notification_token_or_login
-    if params[:token]
-      redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return if current_user && current_user.notifications_token != params[:token]
-    else
-      force_login
-    end
-  end
 
   def set_redirect
     cookies[:auth_redirect] = nil if cookies[:auth_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
@@ -171,18 +157,6 @@ class ApplicationController < ActionController::Base
     return redirect_to path
   end
 
-  def last_read
-    Reference.new(cookies[:last_read]) if cookies[:last_read]
-  end
-
-  def set_last_read(ref)
-    cookies.permanent[:last_read] = ref.osis
-  end
-
-  def current_auth
-    @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]
-  end
-
   def external_request?
     return true if request.referrer.nil?
 
@@ -191,12 +165,33 @@ class ApplicationController < ActionController::Base
     return true
   end
 
-  def recent_versions
-    return @recent_versions unless @recent_versions.nil?
+  def last_read
+    Reference.new(cookies[:last_read], version: current_version) if cookies[:last_read]
+  end
 
-    return [] if cookies[:recent_versions].to_s == ""
+  def set_last_read(ref)
+    cookies.permanent[:last_read] = ref.to_usfm if ref.try :valid?
+  end
 
-    return @recent_versions = cookies[:recent_versions].split('/').map{|osis| Version.find(osis)}
+  def force_notification_token_or_login
+    if params[:token]
+      redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return if current_user && current_user.notifications_token != params[:token]
+    else
+      force_login
+    end
+  end
+
+    def force_login(opts = {})
+    if current_auth.nil?
+      opts[:redirect] = request.path
+      redirect_to sign_up_path(opts) and return
+      #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
+    end
+    @user = current_user
+  end
+
+  def current_auth
+    @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]
   end
 
   def current_user
@@ -214,7 +209,38 @@ class ApplicationController < ActionController::Base
   end
 
   def current_avatar
-    cookies[:avatar] + "#{controller_name == 'users' && action_name == 'picture' ? '?' + rand(1000000).to_s : ''}" if cookies[:avatar]
+    # If we're asking for avatar, users has to be signed in
+    # which would have populated avatar cookie
+    # if they're not, we can't get avatar anyway
+    if ((avatar_path = cookies[:avatar]).present?)
+      # we may bust browser cache if user just changed avatar
+      cache_bust = @bust_avatar_cache ? "#{'?' + rand(1000000).to_s}" : ""
+
+      # cookie may hold old path that can't be secure
+      # use CDN path instead if so (API2 to API3 switch)
+      if avatar_path.include? 'http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/'
+        set_current_avatar(avatar_path.gsub('http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/','https://d5xlnxqvcdji7.cloudfront.net/users/images/'))
+      end
+
+      avatar_path +  cache_bust
+    end
+  end
+
+  def set_current_avatar(avatar_url)
+    cookies.permanent[:avatar] = avatar_url
+    # expire header that contains avatar
+    expire_fragment "header_#{current_auth.username}_#{I18n.locale}" if current_auth
+  end
+
+  def recent_versions
+    return @recent_versions if @recent_versions.present?
+    return [] if cookies[:recent_versions].blank?
+
+    @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v) rescue nil}.compact.uniq
+    # Handle conversion from API2 (osis) to API3 (version_ids)
+    # But not a bad idea in general to validate/curate user's recent versions
+    cookies[:recent_versions] = @recent_versions.map{|v| v.to_param}.join('/') rescue nil
+    @recent_versions
   end
 
   def current_date
@@ -223,27 +249,57 @@ class ApplicationController < ActionController::Base
   end
 
   def current_version
-    cookies[:version] || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s) || Version.default
+    return @current_version if @current_version.present?
+
+    @current_version = cookies[:version] || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s) || Version.default
+    # check to make sure it's a valid version (handling version deprecation)
+    @current_version = Version.find(@current_version).to_param rescue Version.default
   end
 
   def alt_version(ref)
-    raise BadSecondaryVersionError if cookies[:alt_version] && !Version.find(cookies[:alt_version]).contains?(ref)
+    #Cookie may have empty string for some reason -- possibly previous error case
+    cookies[:alt_version] = nil if cookies[:alt_version].blank?
 
-    return cookies[:alt_version] if cookies[:alt_version]
+    if cookies[:alt_version].present?
+      begin
+        # validate that the preferred secondary version has the reference in question
+        includes_ref = Version.find(cookies[:alt_version]).include?(ref)
+        raise BadSecondaryVersionError unless includes_ref
+      rescue
+        # bad version was in cookie, nuke it
+        cookies[:alt_version] = nil
+      end
+    end
 
-    recent = recent_versions.find{|v| v.osis != current_version && v.contains?(ref)}
-    return cookies[:alt_version] = recent.osis if recent
+    return cookies[:alt_version] if cookies[:alt_version].present?
 
-    raise NoSecondaryVersionError if Version.all(I18n.locale).except(current_version).empty?
+    # new user or bad version was in cookie
+    recent = recent_versions.find{|v| v.to_param != current_version && v.include?(ref)}
+    cookies[:alt_version] = recent.to_param if recent
 
-    return cookies[:alt_version] = Version.sample_for((params[:locale] ? params[:locale].to_s : "en"), except: current_version, has_ref: ref)
+    #raise NoSecondaryVersionError if (Version.all(params[:locale] || "en").map(&:to_param)-[current_version]).empty?
+    cookies[:alt_version] ||= Version.sample_for((params[:locale] || "en"), except: current_version, has_ref: ref)
+
+    raise NoSecondaryVersionError if cookies[:alt_version].blank?
+    cookies[:alt_version]
   end
 
   def set_current_version(ver)
-    cookies.permanent[:version] = ver.osis
+    cookies.permanent[:version] = ver.to_param
   end
 
   def verses_in_chapter (ref_hash)
     Version.find(ref_hash[:version]).books[ref_hash[:book].downcase].chapter[ref_hash[:chapter].to_s].verses
+  end
+
+  def tend_caches
+    @@last_clear_time ||= Time.zone.now
+
+    if @@last_clear_time < 15.minutes.ago
+      # Clear all versions, languages, and default versions
+      # from memoization caches
+      Version.clear_memoization
+      @@last_clear_time = Time.zone.now
+    end
   end
 end

@@ -7,9 +7,10 @@
       - @user.errors.each do |e|
         %li= t("users.profile.#{e}")
 
-%img{src: @user.s3_user_avatar_url['px_128x128'] + '?' + rand(1000000).to_s}
+- cache_bust = '?' + rand(1000000).to_s
+%img{src: @user_avatar_urls['px_128x128'] + cache_bust}
 - ['24x24', '48x48', '128x128', '512x512'].each do |s|
-  %img{src: @user.s3_user_avatar_url["px_#{s}"] + '?' + rand(1000000).to_s, style: 'display: none'}
+  %img{src: @user_avatar_urls["px_#{s}"] + cache_bust, style: 'display: none'}
 
 = form_for @user, url: picture_path do |f|
   %p

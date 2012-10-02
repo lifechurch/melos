@@ -13,11 +13,11 @@
           - if @content_page == i
             %span{style: "position: absolute; left: 325px; top: 11px"}
               =render partial: 'ref_buttons', locals: {reference: r.ref, audio_div_style: "top: 32px; left: 2px; position: absolute; z-index: 1;"}
-            .embedded_reader{"data-setting-font" => @font, 'data-setting-size' => @size, style: "font-weight: normal; margin-top: 10px; padding-left: 6px; padding-bottom: 5px; margin-right: 25px; font-size: 14px; line-height: 25px"}= r.ref.contents(format: 'html').join.html_safe
-            -if r.ref.contents(format: 'html').count > 6
+            .embedded_reader{"data-setting-font" => @font, 'data-setting-size' => @size, style: "font-weight: normal; margin-top: 10px; padding-left: 6px; padding-bottom: 5px; margin-right: 25px; font-size: 14px; line-height: 25px"}= r.ref.content.html_safe
+            -if r.ref.verses.count > 6
               %div{style: "margin-right: 30px; min-height: 45px"}
                 = render partial: 'reading_completed_button', locals: {plan: @subscription, cur_reading_index: @content_page, reading: @reading, day: @day}
-    -else 
+    -else
       = t('plans.no content')
     = render partial: 'plan_links', locals: {plan: @subscription}
 .split_pane_content{style: "width: 423px"}

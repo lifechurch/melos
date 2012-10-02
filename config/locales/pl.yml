@@ -76,7 +76,6 @@ pl:
   registered ago: "Zarejestrowano %{time_ago} temu"
   version header: "Wersja: %{version}"
   bible versions: "Wersje Biblii"
-  read this version: "Czytaj tą wersję"
   reader: "Czytnik"
   lifechurch short url: "LifeChurch.tv"
   about: "O YouVersion"
@@ -177,6 +176,7 @@ pl:
     select another chapter: "Wybierz inny rozdział"
     view in reader: "Zobacz %{reference} w Czytniku"
   users:
+    reset connection: "Niestety, wystąpił błąd. Prosimy usuń i podłącz ponownie to połączenie."
     settings: "Ustawienia"
     no connection friends: "Wydaje się, że żaden z Twoich %{connection} znajomych nie zarejestrował się jeszcze w YouVersion."
     creation form errors: "Poniższe błędy uniemożliwiły utworzenie twojego konta:"
@@ -191,8 +191,8 @@ pl:
     welcome to youversion: "Witaj w społeczności YouVersion!"
     confirm email: "Aby potwierdzić rejestrację, sprawdź swój e-mail i kliknij link potwierdzenia."
     sign up for an account: "Utwórz bezpłatne konto YouVersion"
-    follow user: "Podążaj za użytkownikiem %{user}"
     follow: "Podążaj"
+    follow user: "Podążaj za użytkownikiem %{user}"
     unfollow: "Przestań podążać"
     following title: "Osoby, za którymi podążam"
     user does not follow you: "%{user} nie podąża za tobą"
@@ -381,6 +381,7 @@ pl:
     title: "Zakładki"
     not found: "Korzystanie z zakładek ułatwi ci znalezienie ulubionych fragmentów, lub wersetu, który ostatnio czytałeś w określonej księdze. Aby dodać zakładkę, wybierz werset w czytniku Biblii, a następnie kliknij przycisk Wybrane na górze czytnika."
     other user not found: "%{username} nie zachował jeszcze żadnych zakładek."
+    creation form errors: "Poniższe błędy nie pozwoliły na utworzenie zakładki:"
     successfully created: "Zakładka dodana"
     successfully deleted: "Zakładka usunięta"
     labels placeholder: "Oddziel kolejne etykiety przecinkami."
@@ -537,6 +538,7 @@ pl:
     city: "Miasto"
     state: "Stan"
     zip: "Kod pocztowy"
+    creation form errors: "Poniższe błędy nie pozwoliły na dotację:"
   download ad:
     title: "Pobierz bezpłatną Aplikację Biblii"
     line 1: "Setki przekładów w ponad 100"
@@ -554,6 +556,7 @@ pl:
     partners text: "Bez naszych hojnych partnerskich wydawnictw biblijnych, YouVersion nie byłoby w stanie zapewnić tak wielu Biblii ludziom na całym świecie. Wielu z Was dowiadywało się w jaki sposób można podziękować tym nieodzownym pomocnikom w realizacji misji YouVersion. Możecie dowiedzieć się więcej o nich, ich służbie i sposobach ich wsparcia za pośrednictwem poniższych linków."
     translation title: "Nasze zespoły tłumaczeniowe"
     learn more: "Dowiedz się więcej"
+    bible dot com title: "Co stało się ze starym Bible.com?"
   press page:
     title: "Strefa prasy"
     contact header: "Kontakt dla informacji prasowych"
@@ -631,3 +634,8 @@ pl:
       highlights: "Zakreślenia:"
       'on': "Włącz"
       'off': "Wyłącz"
+  app errors:
+    404 message: "Niestety, strona którą szukasz nie została znaleziona."
+  versions:
+    publisher widget title: "Wydawca"
+    public domain: "Domena publiczna"

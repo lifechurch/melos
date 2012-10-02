@@ -1,4 +1,5 @@
 - @sidebar = false
+- @main_nav = false
 - I18n.locale = :en
 -# Specific stylesheet for Status page:
 
@@ -10,37 +11,40 @@
   chart_height = 250
 
 %article
-  %h1 Status
-  %hr
-  %section
-    %h3 End User Performance
-    .content
-      %iframe{src: "https://heroku.newrelic.com/public/charts/dfMtFadfGXx", width: "#{chart_width - 52}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
-  %section
-    %h3 Appliction Response
-    .content
-      %iframe{src: "https://heroku.newrelic.com/public/charts/4Q9BxebHruV", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 1px"}
-      %iframe{src: "https://heroku.newrelic.com/public/charts/jF1PySF3n4c", width: "#{chart_width-66}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 14px"}
-  %section
-    %h3 API Performance
-    .content
-      %iframe{src: "https://heroku.newrelic.com/public/charts/b4d7wMyMWrC", width: "#{chart_width - 6}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
-  %section
-    %h3 Instance Debug Info (This Unicorn Worker)
-    .content
-      %p
-        %b Log Level:
-        %span.mute= "#{%w(debug info warn error fatal)[Rails.logger.level]}(#{Rails.logger.level})"
-      %p
-        %b App Symbols:
-        %span.mute= Symbol.all_symbols.size
-      %p
-        %b Memory Usage:
-        %span.mute= number_to_human_size(`ps -o rss= -p #{Process.pid}`.to_i * 1024)
-      %p
-        %ul
-          %b Objects:
-          -ObjectSpace.count_objects.each do |k, v|
-            %li
-              %b #{k}:
-              %span.mute= v
+  -if params[:p]= "yv123"
+    %h1 Status
+    %hr
+    %section
+      %h3 End User Performance
+      .content
+        %iframe{src: "https://heroku.newrelic.com/public/charts/dfMtFadfGXx", width: "#{chart_width - 52}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+    %section
+      %h3 Appliction Response
+      .content
+        %iframe{src: "https://heroku.newrelic.com/public/charts/4Q9BxebHruV", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 1px"}
+        %iframe{src: "https://heroku.newrelic.com/public/charts/jF1PySF3n4c", width: "#{chart_width-66}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 14px"}
+    %section
+      %h3 API Performance
+      .content
+        %iframe{src: "https://heroku.newrelic.com/public/charts/b4d7wMyMWrC", width: "#{chart_width - 6}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
+    %section
+      %h3 Instance Debug Info (This Unicorn Worker)
+      .content
+        %p
+          %b Log Level:
+          %span.mute= "#{%w(debug info warn error fatal)[Rails.logger.level]}(#{Rails.logger.level})"
+        %p
+          %b App Symbols:
+          %span.mute= Symbol.all_symbols.size
+        %p
+          %b Memory Usage:
+          %span.mute= number_to_human_size(`ps -o rss= -p #{Process.pid}`.to_i * 1024)
+        %p
+          %ul
+            %b Objects:
+            -ObjectSpace.count_objects.each do |k, v|
+              %li
+                %b #{k}:
+                %span.mute= v
+  - else
+    %h1 Stranger Danger!

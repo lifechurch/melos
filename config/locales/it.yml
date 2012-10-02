@@ -76,7 +76,6 @@ it:
   registered ago: "Registrato %{time_ago} fa"
   version header: "Versione: %{version}"
   bible versions: "Versioni Bibbia"
-  read this version: "Leggi questa Versione"
   reader: "Lettore"
   lifechurch short url: "LifeChurch.tv"
   about: "Informazione"
@@ -192,8 +191,8 @@ it:
     welcome to youversion: "Benvenuto alla comunità YouVersion!"
     confirm email: "Per favore, controlla la tua e-mail e clicca sul link per confermare la tua registrazione."
     sign up for an account: "Crea un account YouVersion gratis"
-    follow user: "Segui a %{user}"
     follow: "Segui"
+    follow user: "Segui a %{user}"
     unfollow: "Smetti di seguire"
     following title: "Persone a cui sto seguendo"
     user does not follow you: "%{user} non ti sta seguendo."
@@ -642,3 +641,6 @@ it:
   app errors:
     404 explanation: "Potresti provare nuovamente partendo dal <a href='%{reader_path}'>home page</a>. Ci sono ancora problemi? Contatta il nostro <a href='%{support_url}'>servizio assistenza</a>."
     404 message: "Ci dispiace - non si trova la pagina che cerchi."
+  versions:
+    publisher widget title: "Editore"
+    public domain: "Dominio Pubblico"

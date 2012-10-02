@@ -5,17 +5,17 @@
         %img.avatar_large{src: list_item.user_avatar_url.px_48x48}
   %div{style: ("margin-left: 60px;" if display == :avatar)}
     %h5{class: list_item.user_status}
-      %a{href: note_path(list_item.id), class: (is_dark?(list_item.highlight_color) ? "dark_highlight" : "highlight" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
+      %a{href: note_path(list_item.id), class: (is_dark?(list_item.highlight_color) ? "dark_bg highlighted" : "highlighted" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
     - if display == :avatar
       %p.mute.small.negative_gutter_top_half
         %a{href: user_path(list_item.username)}= list_item.username
-    %p= truncate list_item.content_text, length: 300, separator: " "
+    %p= truncate list_item.content, length: 300, separator: " "
     .bookmark_edit.float_right
       %p
         - if @me
           %span= link_to(t('notes.edit'), edit_note_path(list_item.id))
           &mdash;
-          %span.confirm= link_to(t('notes.delete'), note_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete) 
+          %span.confirm= link_to(t('notes.delete'), note_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
           &mdash;
         %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
-    %p.mute.small.negative_gutter_top_half= link_to_references(list_item.reference_list) 
+    %p.mute.small.negative_gutter_top_half= link_to_references(list_item.reference_list)

@@ -1,7 +1,7 @@
-%div.widget.notes.ajax_me{"data-ajax" => "/bible/#{@reference}/notes"}
+%div.widget.notes.ajax_me{"data-ajax" => "#{bible_path(@reference)}/notes"}
 
   %header
-    %span.header_icon_note= @title 
+    %span.header_icon_note= @title
   %section
     %table
       %tbody

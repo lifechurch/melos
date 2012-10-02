@@ -1,43 +1,109 @@
-class Reference
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
 
-  def initialize(ref, version = nil)
-    @api_data = {}
-    case ref
+# encoding: UTF-8
+class Reference < YouVersion::Resource
+
+  attr_reader :book
+  attr_reader :chapter
+  attr_reader :verses
+  attr_reader :version
+
+  # We lazy load API attributes for performance
+  # see attributes method and attributes.<attr name> for use.
+  # The following lines are just for documentation
+  #
+  # attribute reference
+  # attribute copyright
+  # attribute audio
+
+  def initialize(ref="", opts={})
+    #sometimes we use reference classes just for data management
+    #i.e. we don't always need to hit the API. So we'll lazy load
+    #API attributes
+
+    ref_hash = case ref
+    when /(.{3}\.[^\+]+\.[^\+]+)\+(?:.*)(?:.{3}\..+\.(.+))/ # + separated API string
+      # to be a valid reference, these have to be verses
+      # regex selected first usfm and last verse
+      YvApi::parse_reference_string "#{$1}-#{$2}"
     when String
-      @ref = ref.to_osis_hash
-    when Hashie::Mash
-      @ref = ref.osis.to_osis_hash
-      @human = ref.human
-    when Hash
-      @ref = ref
+      YvApi::parse_reference_string ref
+    when Hash#, Hashie::Mash (is mash creation even used/necessary?)
+      ref
+    when Reference
+      ref.to_hash
+    else
+      {}
     end
 
-    # Only user version param if 'ref' didn't include version info
-    @ref[:version] ||= version
+    #attempt to convert book and version from legacy OSIS to USFM
+    #opts hash acts as overriding value to ref parameter
+    _book = opts.has_key?(:book) ? opts[:book] : ref_hash.try(:[], :book)
+    @book = YvApi::get_usfm_book(_book) || _book
+    @book = @book.try :upcase
 
-    # raise "Tried to create an invalid reference. Make sure you're passing an OSIS string or hash with at least a book name, chapter, and version." unless (@ref[:book] && @ref[:chapter] && @ref[:version])
+    @chapter = opts.has_key?(:chapter) ? opts[:chapter] : ref_hash.try(:[], :chapter)
+    @chapter = @chapter.try :upcase
+
+    _version = opts.has_key?(:version) ? opts[:version] : ref_hash.try(:[], :version)
+    @version = Version.id_from_param(_version)
+
+    #we evaluate verses last, as it may hit the API
+    @verses = opts.has_key?(:verses) ? opts[:verses] : ref_hash.try(:[], :verses)
+    @verses = parse_verses(@verses)
+
+    unless @book && @chapter
+      raise InvalidReferenceError, "Tried to create an invalid reference. (#{ref}, #{opts})
+            Make sure you're passing a valid period separated string or hash, with
+            at least a book and chapter"
+    end
   end
 
-  def raw_hash
-    @ref
+  def to_s(opts={})
+    return human if opts[:version] == false
+    return "#{human} (#{version_string})" if version
+    return human
   end
 
-  def short_link
-    "http://bible.us/#{@ref.to_osis_string.sub(/\./, "")}"
+  def human
+      return attributes.reference.human.to_s + ":#{verses.first}" if single_verse?
+      return attributes.reference.human.to_s if is_chapter?
+      # we only support references being consecutive ranges
+      # so at this point we can assume it is
+      attributes.reference.human.to_s + ":#{verses.first.to_s}" + "-#{verses.last.to_s}"
   end
 
-  def to_s
-    @string = self.ref_string
-    @string += " (#{self.version_string})" if @ref[:version]
-    @string
+  def to_param
+    return "#{to_usfm}.#{Version.find(version).abbreviation}".downcase if version
+    to_usfm.downcase
   end
-  
+
+  def version_string
+    Version.find(version).human if version
+  end
+
+  def to_usfm
+      return "#{chapter_usfm}" if is_chapter?
+      return verses.map {|v| "#{chapter_usfm}.#{v}"}.join(YvApi::usfm_delimeter) if verses
+  end
+
+  def usfm
+    to_usfm
+  end
+
+  def chapter_usfm
+    #memoizing because of chapter_list indexing
+    @chapter_usfm ||= "#{book}.#{chapter}"
+  end
+
+  def [](arg)
+    return self.try(arg.to_sym)
+  end
+
   def hash
-    osis.hash
+    #not using to_param so we don't have to hit the API to compare References
+    "#{to_usfm}+#{version}".hash
   end
-  
+
   def ==(compare)
     #if same class
     (compare.class == self.class) &&  compare.hash == hash
@@ -47,212 +113,194 @@ class Reference
     self == compare
   end
 
-  def ref_string
-    case @ref[:verse]
-    when Fixnum
-      @human ||= api_data.items[0].data.reference.human.to_s
-    when Range
-      @human ||= api_data.items[0].data.reference.human.to_s + "-#{@ref[:verse].last.to_s}"
-    when NilClass
-      # it's a chapter only; use the chapter API data
-      @human ||= api_data[0].data.request.reference.human.to_s
+  def notes
+    Note.for_reference(self)
+  end
+
+  def merge(hash)
+    Reference.new(to_hash.merge(hash))
+  end
+
+  def single_verse?
+    verses.count == 1
+  end
+
+  def short_link
+    "http://bible.us/#{version}/#{self.to_param.sub(/\./, "")}"
+  end
+
+  def content(opts={})
+    return attributes.content if is_chapter?
+
+    case opts[:as]
+      when :plaintext
+        selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
+        content_document.css(selector).inner_html
+      else #:html
+        selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
+        content_document.css(selector).to_html
     end
   end
 
-  def verses_string
-    # for reader: turns 3,4,8-12 to 3,4,8,9,10,11,12
-    case @ref[:verse]
-    when Fixnum
-      @verses = @ref[:verse].to_s
-    when Range
-      @verses = @ref[:verse].to_a.join(",")
-    when String
-      @verses = @ref[:verse].split(",").map do |r|
-        case r
-        when /^[0-9]+$/
-          r
-        when /^[0-9-]+$/
-          ((r.split("-")[0])..(r.split("-")[1])).to_a.join(",")
-        end
-      end.flatten.join(",")
-      @verses
+  def copyright
+    attributes.copyright.html || attributes.copyright.text if version
+  end
+
+  def audio
+    return @audio unless @audio.nil?
+    return nil if attributes.audio.nil?
+
+    opts = {id: attributes.audio[0].id, cache_for: a_very_long_time}
+
+    #we have to make this additional call to get the audio bible copyright info
+    response = YvApi.get("audio-bible/view", opts) do |errors|
+        raise YouVersion::ResourceError.new(errors)
     end
+    @audio = attributes.audio[0].merge(response)
+    @audio.url = attributes.audio[0].download_urls.format_mp3_32k
+    @audio
   end
 
-  def version_string
-    @version_string ||= @ref[:version].upcase.match(/\A[^-_]*/).to_s
+  def previous_chapter
+     return nil unless version
+
+     start = Time.now.to_f
+    #no previous chapter if at start
+    return nil if chapter_list_index == 0
+    Rails.logger.apc "**Reference.previous_chapter took #{Time.now.to_f - start} sec to find the chapter", :debug
+
+    self.class.new(chapter_list[chapter_list_index - 1].usfm, version: version)
   end
 
-  def version
-    @ref[:version]
+  def next_chapter
+    return nil unless version
+
+    start = Time.now.to_f
+    return nil if chapter_list_index >= chapter_list.count - 1
+    Rails.logger.apc "**Reference.next_chapter took #{Time.now.to_f - start} sec to find the chapter", :debug
+
+    self.class.new(chapter_list[chapter_list_index + 1].usfm, version: version)
   end
 
-  def book
-    @ref[:book]
+  def verses_in_chapter
+    return @verses_in_chapter unless @verses_in_chapter.nil?
+
+    start = Time.now.to_f
+    # it takes about the same amount of time to parse the html as a document
+    # as it does to run a regular expression on it. Since we may need multiple
+    # queries, we might as well create and cache the DOM-style document tree
+    @verses_in_chapter = content_document.css(".verse > .label").map{|node| node.inner_html}
+    Rails.logger.apc "** Reference.verses_in_chapter: It took #{Time.now.to_f - start} seconds to scan the content", :debug
+    @verses_in_chapter
   end
-    
-  def chapter
-    @ref[:chapter]
-  end  
-  
-  def verse
-    @ref[:verse]
+
+  def implicit_verses
+    # we need this as separate from #verses, so #verses can stay cheap
+    # giving us lazy-loading capability
+    is_chapter? ? verses_in_chapter : verses
   end
-  
+
+  def is_chapter?
+    @is_chapter || verses.empty? || false
+  end
+
+  def valid?
+    attributes.reference.human.is_a?(String) rescue false
+  end
+
   def notes_api_string
-    case @ref[:verse]
-    when Fixnum
-      return @ref.except(:version).to_osis_string
-    when Range
-      return @ref[:verse].map { |r| "#{@ref[:book]}.#{@ref[:chapter]}.#{r}" }.join("+")
-    when NilClass
-      chapters = Version.find(@ref[:version]).books[@ref[:book]].chapter[@ref[:chapter]].verses
-      return (1..chapters).map {|r| "#{@ref[:book]}.#{@ref[:chapter]}.#{r}" }.join("+")
-    end
+      return implicit_verses.map {|verse| "#{chapter_usfm}.#{verse}" }.join("+")
   end
-  
+
   def plan_api_string
     notes_api_string.capitalize
   end
 
-  def notes
-    Note.for_reference(self)
-  end
-  
-  def merge(hash)
-    Reference.new(@ref.merge(hash))
-  end
-
-  def merge!(hash)
-    @ref.merge!(hash)
-    return self
-  end
-
-  def [](arg)
-    @ref[arg]
-  end
-
-  def to_param
-    osis
-  end
-
-  def contents(opts={})
-    @contents ||= parse_contents(opts)
-  end
-
-  def copyright
-    @copyright ||= @ref[:verse] ? api_data.copyright : api_data[0].data.copyright
-    return nil if @copyright.blank?
-    @copyright
-  end
-  
-  def audio
-    return nil if api_data[0].nil?
-    
-    if api_data[0].data.request.audio && @audio.nil?
-      # {"id"=>"8",
-      #   "version"=>"kjv",
-      #   "title"=>"KJV Listener's Bible",
-      #   "copyright"=>"Copyright 2007 Fellowship for the Performing Arts",
-      #   "description_text"=> "Experience the majestic language of the King James Bible skillfully narrated...
-      #   "description_html"=> ...of the listener.\\r\\n\\r\\nThis audio Bible is provided.... Recorded under licensing agreement. (<a href=\"http://www.listenersbible.com\">http://www.listenersbible.com<?a>)",
-      #   "publisher_link"=>"http://www.listenersbible.com/free-download"}
-      opts = {id: api_data[0].data.request.audio[0].id, cache_for: 12.hours}
-      
-      response = YvApi.get("audio_bible/view", opts) do |errors|
-          raise YouVersion::ResourceError.new(errors)
-      end
-      #we only want secure urls, here we hack the server to use a domain that is secure
-      @audio = Hashie::Mash.new({url: api_data[0].data.request.audio[0].download_urls.format_mp3_32k.gsub(/http:\/\/[^\/]+/, 'https://d1pylqioxt940.cloudfront.net')}).merge(response)
-    end
-    @audio
-  end
-
   def osis
-    @ref.to_osis_string
+    Rails.logger.apc "#{self.class}##{__method__} is deprecated,use the 'to_param' or 'to_usfm' methods instead", :debug
+    to_param
   end
 
   def osis_noversion
-    @ref.to_osis_string_noversion
+    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
+    to_usfm
   end
-  
+
   def osis_book_chapter
-    @ref.to_osis_string_book_chapter
+    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
+    chapter_usfm
   end
 
-  def previous
-    return nil if api_data[0].data.previous.blank?
-    @previous ||= Reference.new("#{api_data[0].data.previous.reference.osis}.#{@ref[:version]}")
-  end
-  
-  def next
-    return nil if api_data[0].data.next.blank?
-    @next ||= Reference.new("#{api_data[0].data.next.reference.osis}.#{@ref[:version]}")
+  def to_osis_string
+    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
+    to_param
   end
 
-  def to_api
-
+  def to_hash
+    {book: book, chapter: chapter, verses: verses, version: version}
   end
 
-  def human
-    ref_string
-  end
 
-  def first_verse
-    verses = raw_hash[:verse]
-    case verses
-    when Range
-      verses.first
-    when Fixnum
-      verses
-    end
-  end
 
-  def verse_string
-    
-    @ref[:verse].is_a?(Range) ? @ref[:verse].first.to_s + "-" + @ref[:verse].last.to_s : @ref[:verse].to_s if @ref[:verse]
-  end
-  
-  def is_chapter?
-    @ref[:verse].nil?
-  end
-  
-  def valid?
-    ref_string.is_a?(String) rescue false
-  end
-  private
 
-  def api_data(opts ={})
-    api_type = @ref[:verse] ? 'verse' : 'chapter'
-    format = api_type == 'verse' ? 'text' : 'html'
-    format = opts[:format] if (opts[:format] == 'text' || opts[:format] == 'html')
-    format = 'html_basic' if (format == 'html' && api_type == 'verse')
-    #TODO: this is dirty for now, clean up once we understand the use cases for differently formatted text
-    
-    #get new data if the format is the same
-    if(@api_data[:format].nil? || @api_data_format != format)
-      @api_data[:format] = YvApi.get("bible/#{api_type}", cache_for: 12.hours, format: format, version: @ref[:version], reference: @ref.except(:version).to_osis_string) do |errors|
-        if errors.length == 1 && [/^Reference not found$/].detect { |r| r.match(errors.first["error"]) }
+
+  #DEBUGprivate
+
+  def attributes
+    return @attributes unless @attributes.nil?
+
+    opts = {cache_for: a_very_long_time}
+    # sometimes we just need generic info about a verse, like the human spelling of a chapter
+    # in this rare case, we will just use the YouVersion default Version
+    opts[:id] =  version || Version.default.id
+    # we will always just get the chapter, and parse down to verses if needed
+    # this will utilize server side cache more effectively
+    # as the alternative (for multiple verses) is multiple bible/verse calls
+    opts[:reference] = chapter_usfm
+
+      @attributes = YvApi.get("bible/chapter", opts) do |errors|
+        if errors.length == 1 && [/^bible.reference.not_found$/].detect { |r| r.match(errors.first["key"]) }
           raise NotAChapterError
-        elsif errors.length == 1 && [/^Version is invalid$/].detect { |r| r.match(errors.first["error"]) }
+        elsif errors.length == 1 && [/^bible.id.not_found$/].detect { |r| r.match(errors.first["key"]) }
           raise NotAVersionError
-        elsif errors.length == 1 && [/Invalid chapter reference$/].detect { |r| r.match(errors.first["error"]) }
-          raise NotABookError
         end
       end
-      @api_data_format = format
-    end
-    
-    @api_data[:format]
   end
 
-  def parse_contents(opts={})
-    if @ref[:verse]
-      # then it's a verse range; use the verse style
-      api_data(opts).items.map { |a| a.data.content }
+  def parse_verses(verses)
+    # This method should not hit the API
+    # for lazy-loading to work
+    case verses
+    when NilClass
+      @is_chapter = true
+      #eventually API will return verses and we won't need to parse this
+      []
+    when Fixnum
+      [verses]
+    when /^\d+$/
+      [verses.to_s]
+    when /^(\d+)\-(\d+)/
+      Range.new($1, $2).map{|i| i.to_s}
+    when Array
+      @is_chapter = true if verses.empty?
+      verses
+    when String
+      verses
     else
-      # It's a chapter
-      [api_data(opts)[0].data.request.content]
+      []
     end
+  end
+
+  def chapter_list_index
+    @index ||= chapter_list.index{|c| c.usfm == chapter_usfm}
+  end
+
+  def chapter_list
+    @chapter_list ||= Version.find(version).books.map{|usfm, book| book["chapters"]}.flatten
+  end
+
+  def content_document
+    @content_document ||= Nokogiri::HTML(attributes.content)
+    #TODO: #PERF: cache this with memcache if we keep and use it
   end
 end

@@ -1,0 +1,719 @@
+// `Main
+//----------------------------------------------------------------------------------------------------
+
+.outer_container
+  position: absolute
+  opacity: 0
+
+#main
+  float: left
+  margin: 0 0 10px
+  width: 100%
+
+#main article
+  @extend .clearfix
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  background:
+    color: #fff
+    repeat: repeat-x
+  border: 1px solid #cbc9cf
+  padding: 30px 30px 15px
+  position: relative
+  min-height: 368px
+
+  .no_sidebar &:after
+    width: 908px
+    display: block
+
+#main.main_reader article
+  padding: 40px 70px 45px
+
+#main header + article,
+#reader_header + article,
+#main .header_tabs + article,
+#main .top_section + article
+  +round_top_none
+  background:
+    image: image-url("shadow.png")
+
+  &:after
+    content: none
+
+#main .top_section + header
+  +round_top_none
+
+// `Main > Headers
+//----------------------------------------------------------------------------------------------------
+
+.widget header,
+#main header,
+#main footer,
+.header_tabs,
+.top_section
+  @extend .clearfix
+  +box-shadow(inset #fff 0 1px 0 0)
+  +background-image(linear-gradient(#eeedeb, #dddcda))
+  background-color: #dddcda
+  border: 1px solid #cbc9cf
+  text-shadow: #fff 0 1px 0
+
+.widget header,
+#main header
+  font:
+    size: 14px
+    weight: bold
+  line-height: 23px
+  padding: 5px 20px
+
+.widget header,
+#main header,
+.header_tabs
+  +round_top
+  border-bottom: 0
+
+.widget header ul,
+#main header ul
+  margin: 0
+  list-style: none
+
+.widget header li,
+#main header li
+  float: left
+  margin-left: 5px
+  height: 23px
+
+.widget header li:first-child,
+#main header li:first-child
+  margin-left: 0
+
+.widget header li.separator,
+#main header li.separator
+  background: image-url("separator.png") repeat-y
+  margin-left: 10px
+  padding-left: 11px
+
+#main .top_section + header
+  padding-left: 30px
+  position: relative
+
+.header_arrow
+  background: image-url("header_arrow.png") no-repeat
+  color: transparent
+  font-size: 0
+  overflow: hidden
+  text-indent: -99999px
+  width: 9px
+  height: 6px
+  position: absolute
+  left: 28px
+  bottom: -6px
+
+// `Reader Header
+//----------------------------------------------------------------------------------------------------
+
+#reader_header
+  background: #f2f1ef image-url("body.png")
+  border-bottom: 1px solid #cbc9cf
+  padding-top: 10px
+  width: 600px
+  position: fixed
+  top: 72px
+  z-index: 2
+
+#reader_header:after
+  background: image-url("shadow.png") repeat-x
+  content: ''
+  font-size: 0
+  line-height: 0
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  height: 5px
+  pointer-events: none
+
+#reader_header + article
+  background-image: none
+  margin-top: 34px
+
+// `Article Top Section
+//----------------------------------------------------------------------------------------------------
+
+.top_section
+  @extend .clearfix
+  +round_top
+  +background-image(linear-gradient(#fff, #ececec 1px, #e9e9e9))
+  background-color: #e9e9e9
+  border: 1px solid #cbc9cf
+    bottom: 0
+  font-size: 12px
+  padding: 30px 30px 0 195px
+  position: relative
+  min-height: 170px
+
+.top_section + .header_tabs
+  +round_top_none
+  +background-image(linear-gradient(#e9e9e9, #d7d6da))
+  +box-shadow(none)
+  background-color: #e9e9e9
+  border-top: 0
+
+.top_section + .header_tabs .highlighted span
+  border-top: 1px solid #cbc9cf
+  margin-top: -1px
+
+.top_section h1
+  margin-bottom: 10px
+
+.top_section ul
+  margin-bottom: 15px
+
+.top_section ul,
+.top_section li
+  margin-top: 0
+  margin-left: 0
+  padding: 0
+  list-style: none
+
+.top_section .avatar_huge
+  position: absolute
+  top: 30px
+  left: 30px
+
+.top_section li
+  background:
+    repeat: no-repeat
+    position: left center
+  line-height: 2
+  padding-left: 26px
+
+.icon_small_user
+  background:
+    image: image-url("icon_small_user.png")
+
+.icon_small_location
+  background:
+    image: image-url("icon_small_location.png")
+
+.icon_small_link
+  background:
+    image: image-url("icon_small_link.png")
+
+.icon_small_about
+  background:
+    image: image-url("icon_small_about.png")
+
+// `Main > Footers
+//----------------------------------------------------------------------------------------------------
+
+#main footer
+  +round_bottom
+  +box-shadow(#fff 0 1px 0 0)
+  font-size: 11px
+  padding: 10px 20px 15px
+
+#main article + footer
+  margin-top: -5px
+  position: relative
+
+#main footer p
+  margin: 0
+  padding-top: 5px
+
+#main header b,
+#main footer b
+  font-size: 13px
+
+// `Main > headers and paragraphs
+//----------------------------------------------------------------------------------------------------
+
+.p
+  text-indent: 1em
+
+.chapter > .label
+  display: none
+
+.chapter .heading
+  font-weight: bold
+  font-size: 1.5em
+  line-height: 1em
+  margin-bottom: 1em
+  -webkit-font-smoothing: subpixel-antialiased
+
+// `Main > Verses
+//----------------------------------------------------------------------------------------------------
+
+.wordsofchrist,
+.wj .content
+  color: #cc0000
+
+#verses_selected_form
+  display: block
+  overflow: hidden
+  width: 0
+  height: 0
+
+.verse.selected .content
+  border-bottom: 1px
+  border-bottom-style: dotted
+
+.verse + .verse
+  margin-left: 3px
+
+.verse > .label
+  +round
+  +background-image(linear-gradient(#eee, #ddd))
+  background-color: #eee
+  border-top: 1px solid #ccc
+  color: #666
+  cursor: pointer
+  display: inline-block
+  font:
+    family: $body_font
+    size: 10px
+    weight: bold
+  line-height: 1
+  margin:
+    top: 4px
+    right: 2px
+  padding: 2px 4px 3px
+  vertical-align: top
+  text-indent: 0
+
+.note
+  display: inline-block
+  text-indent: 0
+
+.inner_container
+  left: 0
+  display: block
+  position: relative
+  max-width: 120px
+
+.note > .label
+  +round
+  +background-image(linear-gradient(#eee, #ddd))
+  background-color: #eee
+  border-top: 1px solid #ccc
+  color: #666
+  cursor: pointer
+  display: inline-block
+  font:
+    family: $body_font
+    size: 10px
+    weight: bold
+  line-height: 1
+  margin:
+    top: 4px
+    right: 2px
+    bottom: 5px
+    left: 2px
+  padding: 2px 4px 3px
+  vertical-align: top
+
+.note > .outer_container > .inner_container >.body
+  +round
+  +background-image(linear-gradient(#f7f7f7, #e8e8e8))
+  background-color: #eee
+  border: 1px solid #ccc
+  font:
+    family: $body_font
+    size: 10px
+    weight: bold
+  line-height: 1.3
+  margin:
+    top: 4px
+    right: 2px
+    bottom: 5px
+  padding: 4px 8px 6px
+  display: block
+
+.verse.highlighted.dark_bg
+  color: $gray_light
+
+
+
+
+
+.imt, .mt, .ms
+  font-size: 1.3em
+  line-height: 1.3em
+  margin: 1em 0 0 0
+  font-weight: bold
+
+
+.iot, .imt1
+  font-size: 1.3em
+  line-height: 1.3em
+  margin: .5em 0
+  font-weight: bold
+
+.io1
+  list-style-type: disc
+  margin-left: 1em
+  display: list-item
+
+.io2, io3
+  list-style-type: disc
+  margin-left: 2em
+  display: list-item
+
+.ipi
+  text-indent: 1em
+
+
+.imt2, .imt3, imt4
+  font-size: 1em;
+  line-height: 1em;
+  margin: .5em 0;
+  font-weight: bold;
+
+
+.is, .s1, .heading
+  font-size: 1.5em
+  font-weight: bold
+  line-height: 1.5em
+  margin: 0 0 1em 0
+
+
+.s2, .s3, .s4
+    font-size: 0.85em
+  font-weight: bold
+  line-height: 1.3em
+  margin: 0 0 1em 0
+
+
+.verse > .label
+  display: inline
+  font-weight: bold
+  padding-right: 0.3em
+
+
+.ip, .im, .iex, .p, .m, .nb, .cls
+  font-size: 1.0em
+  line-height: 1.5em
+  margin: 0
+
+
+
+.ipi, .imi, .pm, .pmc, .pi, .mi
+  margin: 0 1em
+  line-height: 1.5em
+
+.imi
+  margin-left: 1em
+  text-indent: 0
+
+.ipr, .pr, .qr
+  text-align: right
+
+
+.iq1, .q, .q1, .qm1
+  margin-left: 1em
+  line-height: 1.5em
+
+.iqt
+  margin-left: 1em
+
+
+.iq2, .q2, .qm2
+  padding-left: 1.0em
+  line-height: 1.5em
+
+
+.lb, .b
+  line-height: 1.5em
+  height: 24px
+
+
+.ili1, .io1, .li1
+  margin-left: 2em
+  padding-left: 0
+  line-height: 1.5em
+
+
+.ili2, .io2, .li2
+  margin-left: 4em
+  padding-left: 0
+  line-height: 1.4em
+
+
+.iot, .d, .qa
+  font-size: 1.0em
+  line-height: 1.4em
+
+
+.ior
+  font-style: italic
+
+
+.iqt, .bk, .sls, .tl, .r
+  font-style: italic
+
+
+.mr
+  font-style: italic
+  font-weight: bold
+
+
+.sr, .r
+    display: none
+  font-style: italic
+
+
+.sp
+  font-style: italic
+
+
+
+.pmr
+  text-align: right
+  margin-right: 0.3em
+
+
+.pc, .qc
+  text-align: center
+
+
+.ph1
+  text-indent: -2em
+  padding-left: 2em
+
+
+.ph2
+  text-indent: -2em
+  padding-left: 4em
+
+
+.qs, .lit
+  float: right
+
+
+.q1
+  text-indent: 1em
+
+.q2
+  text-indent: 2em
+
+.b
+  height: 1em
+
+.table
+  border-bottom: 1em
+
+.table th, .th1
+  background: #444
+  color: #fff
+  font-weight: bold
+  padding: 5px
+
+
+.thr1
+  text-align: right
+  font-weight: bold
+  padding: 5px
+
+.table td, .tc
+  border: 1px solid #eee
+  padding: 5px
+
+.tcr
+  border: 1px solid #eee
+  padding: 5px
+  text-align: right
+
+
+.add, .dc, .k, .qt, .sig
+  padding: 0
+  margin: 0
+  font-size: 1.0em
+  line-height: 1.4em
+  text-indent: 0
+  font-weight: normal
+  font-style: normal
+  text-transform: none
+  text-decoration: none
+
+
+.nd
+  font-variant: small-caps
+
+
+.ord
+  font-size: .75em
+    line-height: 0
+    position: relative
+    vertical-align: baseline
+    top: -0.5em
+
+
+.pn
+  text-decoration: underline
+
+
+.em, .bd
+  font-weight: normal
+
+
+.it
+  font-style: italic
+
+
+.bdit
+  font-weight: bold
+  font-style: italic
+
+
+.no
+  font-weight: normal
+  font-style: normal
+
+
+.sc
+  font-variant: small-caps
+
+
+
+// `Nav Arrows
+//----------------------------------------------------------------------------------------------------
+.nav_prev,
+.nav_next
+  background:
+    image: image-url("arrow_sprite_thin.png")
+    repeat: no-repeat
+  color: transparent
+  font-size: 0
+  margin-top: -20px
+  overflow: hidden
+  text-indent: -99999px
+  width: 44px
+  position: fixed
+  border-radius: 4px
+
+.nav_prev,
+.nav_next.rtl
+  background-position: 10px 48%
+  margin-left: -55px
+
+.nav_next,
+.nav_prev.rtl
+  margin-left: 473px
+  background-position: -58px 48%
+
+.nav_prev:hover,
+.nav_next:hover
+  background-color: #f1f1f1
+
+.snap
+  position: absolute
+  bottom: 30px
+
+// `Misc Classes
+//----------------------------------------------------------------------------------------------------
+
+.check_count
+  background: image-url("icon_check_green.png") no-repeat 0 7px
+  color: #72a32c
+  float: right
+  font-weight: bold
+  padding-left: 20px
+
+.icon_share_light
+  background: image-url("icon_share_light.png") no-repeat left center
+  padding: 5px 0 5px 22px
+
+#main article .separator
+  color: transparent
+  background: image-url("separator.png") repeat-y center bottom
+  display: inline-block
+  height: 14px
+  margin: 0 10px
+  overflow: hidden
+  text-indent: -99999px
+  vertical-align: middle
+  width: 1px
+  zoom: 1
+
+.callout_blue,
+.callout_green
+  color: $body_text
+  padding: 5px 10px
+  text-decoration: none
+
+.callout_blue:hover,
+.callout_green:hover
+  color: $body_text
+  text-decoration: underline
+
+.callout_blue
+  background: #d9edf8
+
+.callout_green
+  background: #ddfad5
+
+// `Big List
+//----------------------------------------------------------------------------------------------------
+
+//
+// For chunks of content that could be grouped as simple <p> and <hr/>,
+// but semantically make sense as a bigger list: Activity Stream, etc.
+//
+
+#main .big_list,
+#main .big_list li
+  background: none
+  margin: 0
+  padding: 0
+
+#main .big_list li
+  @extend .clearfix
+  border-top: 1px solid #ccc
+  padding-top: 20px
+
+#main .big_list li[class^="li_"]
+  background:
+    repeat: no-repeat
+  padding-left: 26px
+
+#main > .big_list:first-child
+  margin-top: -20px
+
+#main > .big_list:first-child li:first-child
+  border: 0
+
+#main .big_list .li_bookmark
+  background:
+    image: image-url("big_list_bookmark.png")
+    position: 0 20px
+
+#main .big_list .li_note
+  background:
+    image: image-url("big_list_note.png")
+    position: 0 21px
+
+#main .big_list .li_social
+  background:
+    image: image-url("big_list_social.png")
+    position: 0 22px
+
+#main .big_list .li_badge
+  background:
+    image: image-url("big_list_badge.png")
+    position: 0 19px
+
+#main .big_list .user
+  overflow: hidden
+  img
+    float: left
+    margin-right: 10px
+  &>div
+    float: left
+
+// `Type
+//---------------------------------------------------------------------------------------
+
+#main h2
+  font-weight: bold
+  font-size: 1.5em
+  line-height: 1.5em

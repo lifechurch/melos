@@ -76,7 +76,6 @@ cs:
   registered ago: "Zaregistrován/a před %{time_ago}"
   version header: "Překlad: %{version}"
   bible versions: "Překlady Bible"
-  read this version: "Číst tento překlad"
   reader: "Čtenář"
   lifechurch short url: "LifeChurch.tv"
   about: "O aplikaci"
@@ -192,8 +191,8 @@ cs:
     welcome to youversion: "Vítejte v komunitě YouVersion!"
     confirm email: "Prosím zkontrolujte si svůj e-mail a klikněte na tlačítko pro potvrzení vaší registrace."
     sign up for an account: "Vytvořit zdarma YouVersion účet"
-    follow user: "Sledovat %{user}"
     follow: "Sleduj"
+    follow user: "Sledovat %{user}"
     unfollow: "Ukončit sledování"
     following title: "Lidé, které následuji"
     user does not follow you: "%{user} vás nenásleduje."
@@ -642,3 +641,6 @@ cs:
   app errors:
     404 explanation: "Možná zkuste začít znovu na <a href='%{reader_path}'>úvodní stránce</a>. Stále máte potíže? Kontaktujte náš <a href='%{support_url}'>tým podpory</a>."
     404 message: "Je nám to líto, ale stránka, kterou hledáte nemohla být nalezena."
+  versions:
+    publisher widget title: "Autor"
+    public domain: "Veřejná doména"

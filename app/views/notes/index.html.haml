@@ -1,6 +1,5 @@
 - content_for :sidebar do
 
-  / = render_cell :likes_list_widget, :display, likes: @likes, title: t("likes.likes"), user_id: @user_id
   .widget.gutter_bottom_half
     %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new")}
       %span.icon_plus= t('new note')

@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 require 'yv_api'
+require 'benchmark'
 
-describe YvApi, "GETting the YV API" do
-  # use_vcr_cassette "api-get"
+describe YvApi do
   describe ".get" do
     it "gets a KJV booklist" do
       list = YvApi.get("bible/books", version: "kjv")
@@ -30,6 +30,36 @@ describe YvApi, "GETting the YV API" do
       lambda do
         YvApi.post("users/authenticate", auth_username: "asdf", auth_password: "ghjkl")
       end.should raise_error(RuntimeError, "API Error: Username or password is invalid")
+    end
+  end
+
+  describe '.parse_reference_string', :only => true do
+    describe 'with a valid reference string' do
+      {
+        'Gen.1-kjv' => {def: 'book with version',                       book: 'Gen', chap: nil, verses: nil,    version: '1-kjv'},
+        'Gen' => {def: 'book only',                                     book: 'Gen', chap: nil, verses: nil,    version: nil},
+        'Gen.1' => {def: 'chapter only',                                book: 'Gen', chap: '1', verses: nil,    version: nil},
+        'ESG.1_1' => {def: 'greek ester chapters',                      book: 'ESG', chap: '1_1', verses: nil,    version: nil},
+        'Gen.1.kjv' => {def: 'legacy osis version',                     book: 'Gen', chap: '1', verses: nil,    version: 'kjv'},
+        'Gen.1.2.kjv' => {def: 'legacy osis version with verse',        book: 'Gen', chap: '1', verses: '2',    version: 'kjv'},
+        'Gen.1.2-3.kjv' => {def: 'legacy osis version with verse range',book: 'Gen', chap: '1', verses: '2-3',  version: 'kjv'},
+        'Gen.1.1-kjv' => {def: 'API3 version',                          book: 'Gen', chap: '1', verses: nil,    version: '1-kjv'},
+        'Gen.1.2.1-kjv' => {def: 'API3 version with verse',             book: 'Gen', chap: '1', verses: '2',    version: '1-kjv'},
+        'Gen.1.2-3.1-kjv' => {def: 'API3 version with verse range',     book: 'Gen', chap: '1', verses: '2-3',  version: '1-kjv'},
+        'esg.intro1.69-gntd' => {def: 'API3 version with verse range',     book: 'esg', chap: 'intro1', verses: nil,  version: '69-gntd'}
+      }.each do |ref_str, expect|
+        specify "should split to hash for '#{ref_str}' (a #{expect[:def]})" do
+          subject = YvApi.parse_reference_string(ref_str)
+
+          subject[:book].should == expect[:book]
+          subject[:chapter].should == expect[:chap]
+          subject[:verses].should == expect[:verses]
+          subject[:version].should == expect[:version]
+        end
+      end
+    end
+    it "should execute in less than 100us" do
+      Benchmark::realtime{YvApi.parse_reference_string('gen.1.1.asv')}.should < 0.0001
     end
   end
 end

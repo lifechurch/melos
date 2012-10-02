@@ -1,9 +1,7 @@
 %tr
   %th{:colspan => '2'}= @version.language.human
-- @this_language.each do |k, v|
-  = render partial: 'item', locals: {version: v}
-- @all_languages.each do |k, v|
+= render partial: 'items', locals: {versions: @this_language}
+- @all_languages.each do |lang, versions|
   %tr
-    %th{:colspan => '2'}= @languages[k]
-  - v.each do |kk, vv|
-    = render partial: 'item', locals: {version: vv}
+    %th{:colspan => '2'}= @languages[lang]
+  = render partial: 'items', locals: {versions: versions}

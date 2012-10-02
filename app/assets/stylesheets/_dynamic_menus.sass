@@ -36,7 +36,7 @@
 
 
 
-  
+
 .menu_arrow
   background: image-url("menu_arrow.png") no-repeat
   font-size: 0
@@ -77,7 +77,7 @@
 .dynamic_menu .scroll::-webkit-scrollbar-thumb:hover
   background: #ccc
 
-.dynamic_menu .scroll 
+.dynamic_menu .scroll
   font-size: 13px
 
 .dynamic_menu table,
@@ -187,7 +187,7 @@
 #menu_chapter
   float: right
 
-#menu_book .li_active a
+#menu_book .li_active a, #menu_book .li_active a:visited
   background: image-url("menu_book_highlighted_a.png") no-repeat right center
 
 #menu_chapter ol
@@ -207,6 +207,16 @@
     repeat: no-repeat
     position: -99999px -99999px
   display: block
+
+#menu_chapter li.info a
+  background:
+    image: image-url("nav_icons_mobile.png")
+    repeat: no-repeat
+    position: 6px -129px
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+
 
 #menu_chapter .li_active a
   background:
@@ -285,6 +295,7 @@
 
 .dynamic_menu header .close
   right: 5px
+  cursor: pointer
 
 .dynamic_menu dd
   +box-shadow(inset #000 0 0 5px 0)
@@ -303,30 +314,30 @@
 .dynamic_menu .open_modal
   text-decoration: none
 
-.dynamic_menu .open_modal dt
+.dynamic_menu #new_note_modal
   background: image-url("icon_open_modal.png") no-repeat 95% center #1f1f1f
 
-.dynamic_menu .open_modal dt:hover
+.dynamic_menu #new_note_modal:hover
   background: image-url("icon_open_modal.png") no-repeat 95% center #2e2e2e
 
 #menu_bookmark header ul.reference_tokens
   background: none
 
-#menu_bookmark header ul.reference_tokens > a 
+#menu_bookmark header ul.reference_tokens > a
   border: none !important
 
 #menu_bookmark header span
   font-weight: bold
-  margin: 0 0 5px 0 
+  margin: 0 0 5px 0
   display: block
 #menu_bookmark header .close
   top: 15px
 
 .dynamic_menu.version_select
   width: 415px
-  
+
 #menu_version td.audio a div
-  background: 
-    image: image-url("icon_listen.png") 
-    repeat: no-repeat 
+  background:
+    image: image-url("icon_listen.png")
+    repeat: no-repeat
     position: 100% -46px

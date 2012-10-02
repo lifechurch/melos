@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :force_login, only: [:sign_up_success, :share, :bookmarks, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
+  before_filter :force_login, only: [:sign_up_success, :share, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:new, :create, :confirm_email, :confirm, :confirmed,  :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation]
   before_filter :set_redirect, only: [:new, :create]
@@ -116,10 +116,9 @@ class UsersController < ApplicationController
       # Get the real thing
       user = User.authenticate(params[:user][:username], params[:user][:password])
       cookies.permanent.signed[:a] = user.id
-
       cookies.permanent.signed[:b] = user.username
       cookies.permanent.signed[:c] = params[:user][:password]
-      cookies.permanent[:avatar] = user.s3_user_avatar_url["px_24x24"]
+      set_current_avatar(user.user_avatar_url["px_24x24"])
 
       # Create facebook connection
       #
@@ -197,11 +196,18 @@ class UsersController < ApplicationController
 
   def picture
     @selected = :picture
+    # we don't know if user has an avatar or not
+    @user_avatar_urls = @user.user_avatar_url
   end
 
   def update_picture
+    @user_avatar_urls = @user.user_avatar_url
     if @user.update_picture(params[:user].try(:[], :image))
       flash.now[:notice] = t('users.profile.updated picture')
+      @user_avatar_urls = @user.direct_user_avatar_url
+      @bust_avatar_cache = true
+      # set cookie so header menu will show new avatar
+      set_current_avatar(@user.direct_user_avatar_url["px_24x24"])
     end
     render action: "picture"
   end
@@ -235,7 +241,7 @@ class UsersController < ApplicationController
   def update_password
     @selected = :password
     if params[:user][:old_password] == current_auth.password
-      result = @user.update(params[:user].except(:old_password)) ? flash.now[:notice]=(t('users.password.updated')) : flash.now[:error]=(t('users.password.error'))
+      result = @user.update_password(params[:user].except(:old_password)) ? flash.now[:notice]=(t('users.password.updated')) : flash.now[:error]=(t('users.password.error'))
       cookies.signed.permanent[:c] = params[:user][:password] if result
     else
       flash.now[:error]= t('users.password.old was invalid')
@@ -305,6 +311,9 @@ class UsersController < ApplicationController
   def confirm_update_email
     @selected = :email
     response = @user.confirm_update_email(params[:token])
+    if response
+      redirect_to update_email_path, notice: t('users.confirm update email success')
+    end
   end
 
   def forgot_password_form
@@ -423,6 +432,6 @@ private
   def i18n_terms_whitelist
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
-    [:en, :sv, :ja, :vi, :nl, :"pt-BR"]
+    [:en, :sv, :ja, :vi, :nl, :"pt-BR", :"no", :"zh-CN", :"zh-TW"]
   end
 end

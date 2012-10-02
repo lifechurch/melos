@@ -15,13 +15,32 @@ module ApplicationHelper
   end
 
   def bible_path(ref=nil, opts={})
-    ref = last_read || Reference.new(book: "john", chapter: "1", version: current_version) if ref.nil?
-    reference_path(ref.osis, opts)
+    ref = last_read || default_reference if ref.nil?
+    ver = opts[:version_id] || opts[:version] || ref.version
+    reference_path(ver, ref, opts)
   end
 
   def bible_url(ref=nil, opts={})
-    ref = last_read || Reference.new(book: "john", chapter: "1", version: current_version) if ref.nil?
-    reference_url(ref.osis, opts)
+    ref = last_read || default_reference if ref.nil?
+    ver = opts[:version_id] || opts[:version] || ref.version
+    reference_url(ver, ref, opts)
+  end
+
+  def parse_ref_param(ref_param)
+    YvApi::parse_reference_string(ref_param)
+  end
+
+  def ref_from_params
+    case
+    when params.has_key?(:version)
+      Reference.new(params[:reference], version: params[:version])
+    else
+      Reference.new(params[:reference])
+    end
+  end
+
+  def default_reference
+    Reference.new(book: "JHN", chapter: "1", version: current_version) rescue Reference.new('JHN.1', version: @site.default_version)
   end
 
   def external_url(host, default_locale_path='', locale_paths={})
@@ -99,6 +118,16 @@ module ApplicationHelper
       html = html.gsub(/<iframe width=\"\d+\" height=\"\d+\"/, '<iframe width="' + scaled_w.to_s + '" height="' + scaled_h.to_s + '"')
     end
     html
+  end
+
+  def a_long_time
+    #TODO: Cache timers should probably all come from Config/ENV vars
+    YouVersion::Resource.a_long_time
+  end
+
+  def a_very_long_time
+    #TODO: Cache timers should probably all come from Config/ENV vars
+    YouVersion::Resource.a_very_long_time
   end
 
   private

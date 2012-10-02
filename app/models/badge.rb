@@ -7,23 +7,11 @@ class Badge < YouVersion::Resource
   attribute :username
 
   def earned
-    Date.parse(attributes["earned"])
+    Date.parse(attributes["earned_dt"])
   end
 
   def to_param
     self.slug
   end
   
-  def image_url
-    return @ssl_image_urls unless @ssl_image_urls.nil?
-    
-    #we only want to use secure urls
-    sizes = ["24x24", "48x48", "128x128", "512x512"]
-    hash ={}
-    sizes.each do |size|
-      hash["px_#{size}"] = attributes["image_url"]["px_#{size}_ssl"]
-    end
-    
-    @ssl_image_urls = Hashie::Mash.new(hash)
-  end
 end

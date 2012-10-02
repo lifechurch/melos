@@ -25,17 +25,25 @@ class FacebookConnection < YouVersion::Connection::Base
   end
 
   def find_friends(opts = {})
-    opts = {api_version: "2.5", connection_type: "fb"}.merge(opts)
+    opts = {connection_type: "fb"}.merge(opts)
     face = Koala::Facebook::API.new(self.data[:oauth_token] || self.data[:access_token])
     response = face.get_connections("me", "friends")
 
     if response.empty?
       []
     else
-      opts[:connection_user_ids] = response.map { |e| e["id"] }
-      response = YvApi.post('users/find_connection_friends', opts)
-      response.map { |u| User.new(u) }
+      ids = response.map { |e| e["id"] }
+      users = []
+      responses = ids.each_slice(25).to_a
+      responses.each do |s|
+        opts[:connection_user_ids] = s
+        response = YvApi.post('users/find_connection_friends', opts) do |errors|
+          []
+        end
+        response.each { |u| users << User.new(u) }
+      end
     end
+    users
   end
 
   def delete
@@ -46,7 +54,7 @@ class FacebookConnection < YouVersion::Connection::Base
   def nickname
     data.name
   end
-  
+
   def update_token
     oauth = Koala::Facebook::OAuth.new(self.data[:appid], self.data[:secret])
     new_token = oauth.exchange_access_token_info(self.data[:access_token])["access_token"]

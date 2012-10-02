@@ -48,10 +48,17 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
-      def i18nize(hash)
+      def i18nize(mash)
         lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
+        return nil if mash.nil?
 
-        hash.has_key?(lang_key) ? hash[lang_key] : hash["default"] unless hash.nil?
+        return mash[lang_key] unless mash[lang_key].nil?
+
+        val = mash.html.try(:[], lang_key)
+        val ||= mash.html.try(:[], :default)
+        val ||= mash.text.try(:[], lang_key)
+        val ||= mash.text.try(:[], :default)
+        val ||= mash.try(:[], :default)
       end
 
       def attr_i18n_reader(*args)
@@ -62,7 +69,7 @@ module YouVersion
         errors.find {|t| t['key'] =~ /(?:username_and_password.required)|(?:users.auth_user_id.or_isset)/}
       end
 
-      def find(id, params = {}, &block) 
+      def find(id, params = {}, &block)
         api_errors = nil
 
         auth = params.delete(:auth)
@@ -74,7 +81,8 @@ module YouVersion
         response = get(resource_path, opts) do |errors|
           if retry_with_auth?(errors)
             # If API said it wants authorization, try again with auth
-            #TODO: be smarter about trying to auth first if auth passed (common case), as we're probably wasting a lot of calls here
+            #TODO: be smarter about trying to auth first if auth passed (common case),
+            #      we're probably wasting a lot of calls here
             inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|
               # Capture errors for handling below
               api_errors = errors
@@ -104,39 +112,39 @@ module YouVersion
       end
 
       def all(params = {})
+        _auth = params[:auth]
         response = YvApi.get(list_path, params) do |errors|
           if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
             # Then it's the notes thing where you're auth'ed as a different user
+            _auth
             YvApi.get(list_path, params.merge!(auth: nil)) do |errors|
-              if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/].detect { |r| r.match(errors.first["error"]) }
+              if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
                 []
               end
             end
-          elsif errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/].detect { |r| r.match(errors.first["error"]) }
+          elsif errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
             []
           else
             raise ResourceError.new(errors)
           end
         end
 
-        list = ResourceList.new
-
-        # argh, sometimes it has a total, sometimes it doesn't
+        items = ResourceList.new
+        # sometimes it has an explicit total attribute
+        # else we just use implicit length of array returned
         if response.respond_to? :total
-          list.total = response.total
+          items.total = response.total
         else
-          list.total = response.length
+          items.total = response.length
         end
-
-        # aaand sometimes it's not encapsulated with api_prefix
-
-        if response.respond_to? api_path_prefix.to_sym
-          response.send(api_path_prefix).each {|data| list << new(data.merge(auth: params[:auth]))}
+        # sometimes the array of items encapsulated with api_prefix
+        # if there is other data that comes back with the response
+        if response.respond_to? api_path_prefix.gsub('-','_').to_sym
+          response.send(api_path_prefix.gsub('-','_')).each {|data| items << new(data.merge(auth:_auth))}
         else
-          response.each {|data| list << new(data.merge(auth: params[:auth]))}
+          response.each {|data| items << new(data.merge(auth: _auth))}
         end
-        list
-
+        items
       end
 
       # Resource list, but just return whatever the API gives us.
@@ -157,8 +165,14 @@ module YouVersion
         new(data).save(&block)
       end
 
+      def self.destroy_id_param
+        :ids
+      end
+
       def destroy(id, auth = nil, &block)
-        post(delete_path, {id: id, auth: auth}, &block)
+        opts = {auth: auth}
+        opts[self.destroy_id_param] = id
+        post(delete_path, opts, &block)
       end
 
       attr_accessor :resource_attributes
@@ -245,9 +259,25 @@ module YouVersion
       def persist_token(username, password)
         Digest::MD5.hexdigest "#{username}.Yv6-#{password}"
       end
-
     end
-
+    def self.a_very_long_time
+      12.hours
+    end
+    def a_very_long_time
+      self.class.a_very_long_time
+    end
+    def self.a_long_time
+      45.minutes
+    end
+    def a_long_time
+      self.class.a_long_time
+    end
+    def self.a_short_time
+      3.minutes
+    end
+    def a_short_time
+      self.class.a_short_time
+    end
     attr_accessor :attributes, :associations
 
     attribute :id
@@ -260,6 +290,34 @@ module YouVersion
       @associations = {}
 
       after_build
+    end
+
+    def api_path_prefix
+      self.class.api_path_prefix
+    end
+
+    def foreign_key
+      self.class.foreign_key
+    end
+
+    def list_path
+      self.class.list_path
+    end
+
+    def resource_path
+      self.class.resource_path
+    end
+
+    def update_path
+      self.class.update_path
+    end
+
+    def create_path
+      self.class.create_path
+    end
+
+    def delete_path
+      self.class.delete_path
     end
 
     def persisted?
@@ -364,20 +422,30 @@ module YouVersion
     end
 
     def created_as_date
-      Date.parse(attributes['created'])
+      Date.parse(attributes['created_dt'])
     end
 
     def earned_as_date
-      Date.parse(attributes['earned'])
+      Date.parse(attributes['earned_dt'])
     end
 
     def updated_as_date
-      Date.parse(attributes['updated'])
+      Date.parse(attributes['updated_dt'])
     end
 
     def most_recent_date
-      Date.parse(attributes['updated'] || attributes['created'])
+      Date.parse(attributes['updated_dt'] || attributes['created_dt'])
     end
 
+    def self.clear_memoization
+      #class instance variables that persist across requests
+      self.instance_variables.each do |var|
+        unless [:@inheritable_attributes, :@resource_attributes, :@parent_name].include?(var)
+          self.instance_variable_set(var, nil)
+          Rails.logger.apc "Memoization cleared: #{self.name}.#{var.to_s}", :info rescue nil
+        end
+      end
+      true
+    end
   end
 end
