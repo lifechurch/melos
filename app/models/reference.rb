@@ -258,12 +258,10 @@ class Reference < YouVersion::Resource
     opts[:reference] = chapter_usfm
 
       @attributes = YvApi.get("bible/chapter", opts) do |errors|
-        if errors.length == 1 && [/^Reference not found$/].detect { |r| r.match(errors.first["error"]) }
+        if errors.length == 1 && [/^bible.reference.not_found$/].detect { |r| r.match(errors.first["key"]) }
           raise NotAChapterError
-        elsif errors.length == 1 && [/^Version is invalid$/].detect { |r| r.match(errors.first["error"]) }
+        elsif errors.length == 1 && [/^bible.id.not_found$/].detect { |r| r.match(errors.first["key"]) }
           raise NotAVersionError
-        elsif errors.length == 1 && [/Invalid chapter reference$/].detect { |r| r.match(errors.first["error"]) }
-          raise NotABookError
         end
       end
   end
