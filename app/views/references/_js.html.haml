@@ -1,0 +1,28 @@
+- # Temporary partial for now. Shared between show.html and invalid_ref.html to ensure
+- # both pages get setup with the javascript Reader object.
+- content_for   :javascripts do
+  - fullscreen  = (cookies[:full_screen] && cookies[:full_screen].to_i == 1) ? true : false;
+  - parallel    = (cookies[:parallel_mode] && cookies[:parallel_mode].to_i == 1) ? true : false;
+  %script
+    :plain
+
+      jQuery(document).ready(function() {
+
+        reader = new Reader({
+          version: "#{@reference[:version].to_s}",
+          abbrev: "#{@version.try(:abbreviation).downcase}",
+          reference: "#{@reference.to_param}",
+          book: "#{@reference[:book].to_s.downcase}",
+          book_api: "#{@reference[:book].sub(/[A-Z]+/) {|m| m.downcase}}",
+          book_human: "#{@version.books[@reference[:book]].human}",
+          chapter: "#{@reference[:chapter].to_s}",
+          font: "#{@font}",
+          size: "#{@size}",
+          full_screen: #{fullscreen},
+          parallel_mode: #{parallel}
+        });
+        reader.init();
+
+        var page = window.app.getPage();
+            page.setReader( reader );
+      });

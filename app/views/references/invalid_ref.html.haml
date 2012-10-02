@@ -15,3 +15,5 @@
   %p
     %b= link_to t("ref.about the version", version: @version), version_path(@version)
   %p= @version.copyright
+
+= render partial: "js"
