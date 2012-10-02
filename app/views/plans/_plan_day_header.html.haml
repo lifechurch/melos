@@ -14,7 +14,7 @@
     - else
       %div= link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan"), :class => 'action_button_green', style: "min-width: 140px; margin-bottom: 19px")
   %div.float_right
-    %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_version', :title => t("ref.choose version"), style: "width: 157px;"}
+    %a.dynamic_menu_trigger.drop_down_select#menu_version_trigger{:href => '#menu_version', :title => t("ref.choose version"), style: "width: 157px;"}
       %b{style: "white-space:nowrap; overflow: hidden !important; text-overflow: ellipsis !important; text-align: center"}
         = "#{@version.human} - #{@version.title}"
       %span
