@@ -7,8 +7,8 @@ function BookChapterMenu( opts ) {
   this.trigger          = $(opts.trigger);
   this.book_menu        = this.menu.find('#menu_book');
   this.chapter_menu     = this.menu.find('#menu_chapter');
-  this.current_book     = $('#main article').data('book');
-  this.current_chapter  = $('#main article').data('chapter');
+  this.current_book     = $('#main article').data('book') || "jhn";
+  this.current_chapter  = $('#main article').data('chapter') || "1";
   this.active_class     = "li_active";
 
   // Select initial book

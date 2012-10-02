@@ -181,10 +181,13 @@ Page.prototype = {
 
   hideMenus : function( except ) {
     var thiss = this;
+    var menu_to_show;
     $(this.menus).each(function() {
-      if(this == except) { except.show(); }
-      else               { this.hide(); }
+      if(this == except) { menu_to_show = this; }
+      this.hide();
     });
+
+    if(except != null) {menu_to_show.show();}
 
     this.current_menu = except;
 
