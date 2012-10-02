@@ -260,8 +260,13 @@ module YouVersion
         Digest::MD5.hexdigest "#{username}.Yv6-#{password}"
       end
     end
+    def self.a_very_long_time
+      12.hours
+    end
+    def a_very_long_time
+      self.class.a_very_long_time
+    end
     def self.a_long_time
-      #DEBUG11.hours
       45.minutes
     end
     def a_long_time

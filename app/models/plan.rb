@@ -107,7 +107,7 @@ class Plan < YouVersion::Resource
     unless(@reading && @reading_day == day && @reading_version == version_id)
       opts[:day] ||= day
       opts[:id] ||= id
-      opts[:cache_for] ||= a_long_time
+      opts[:cache_for] ||= a_very_long_time
       opts.delete :cache_for if opts[:cache_for] == 0
       # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
       # to be overriden by Subscription model to send auth and user_id

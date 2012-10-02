@@ -125,6 +125,11 @@ module ApplicationHelper
     YouVersion::Resource.a_long_time
   end
 
+  def a_very_long_time
+    #TODO: Cache timers should probably all come from Config/ENV vars
+    YouVersion::Resource.a_very_long_time
+  end
+
   private
   def lang_code(locale, host=nil)
     case host

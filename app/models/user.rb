@@ -518,7 +518,7 @@ class User < YouVersion::Resource
   end
 
   def self.configuration(opts = {})
-    opts = opts.merge({cache_for: a_long_time}) if opts[:auth] == nil
+    opts = opts.merge({cache_for: a_very_long_time}) if opts[:auth] == nil
     response = YvApi.get("highlights/configuration", opts) do |errors|
       raise YouVersion::ResourceError.new(errors)
     end

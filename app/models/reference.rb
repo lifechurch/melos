@@ -149,7 +149,7 @@ class Reference < YouVersion::Resource
     return @audio unless @audio.nil?
     return nil if attributes.audio.nil?
 
-    opts = {id: attributes.audio[0].id, cache_for: a_long_time}
+    opts = {id: attributes.audio[0].id, cache_for: a_very_long_time}
 
     #we have to make this additional call to get the audio bible copyright info
     response = YvApi.get("audio-bible/view", opts) do |errors|
@@ -248,7 +248,7 @@ class Reference < YouVersion::Resource
   def attributes
     return @attributes unless @attributes.nil?
 
-    opts = {cache_for: a_long_time}
+    opts = {cache_for: a_very_long_time}
     # sometimes we just need generic info about a verse, like the human spelling of a chapter
     # in this rare case, we will just use the YouVersion default Version
     opts[:id] =  version || Version.default.id
