@@ -261,7 +261,7 @@
 .verse + .verse
   margin-left: 3px
 
-.verse > .label,
+.verse > .label
   +round
   +background-image(linear-gradient(#eee, #ddd))
   background-color: #eee
@@ -280,6 +280,16 @@
   padding: 2px 0.3em 3px
   vertical-align: top
   text-indent: 0
+
+article .verse > .label,
+article[data-setting-size="user_setting_size_small"] .verse > .label
+  margin-top: 0.5em
+
+article[data-setting-size="user_setting_size_medium"] .verse > .label
+  margin-top: 0.9em
+
+article[data-setting-size="user_setting_size_large"] .verse > .label
+  margin-top: 1.2em
 
 .note
   display: inline-block
@@ -330,18 +340,22 @@
 .s + .p
   text-indent: 0
 
+.s
+  line-height: 1em
+  margin: 1em 0
+
 .chapter div:first-child
   margin-top: 0
 
 .imt, .mt, .ms
   font-size: 1.3em
-  line-height: 1.3em
+  line-height: $reader_line_height
   margin: 1em 0 0 0
   font-weight: bold
 
 .iot, .imt1
   font-size: 1.3em
-  line-height: 1.3em
+  line-height: $reader_line_height
   margin: .5em 0
   font-weight: bold
 
@@ -360,30 +374,36 @@
 
 .imt2, .imt3, imt4
   font-size: 1em
-  line-height: 1em
+  line-height: $reader_line_height
   margin: .5em 0
   font-weight: bold
 
-.is, .s1, .heading
+.is, .s1
   font-size: 1.5em
   font-weight: bold
-  line-height: 1.5em
+  line-height: $reader_line_height
+  margin: 0 0 1em 0
+
+.heading
+  font-size: 1.5em
+  font-weight: bold
+  line-height: 1em
   margin: 0 0 1em 0
 
 .s2, .s3, .s4
   font-size: 0.85em
   font-weight: bold
-  line-height: 1.3em
+  line-height: $reader_line_height
   margin: 0 0 1em 0
 
 .ip, .im, .iex, .p, .m, .nb, .cls
   font-size: 1.0em
-  line-height: 1.5em
+  line-height: $reader_line_height
   margin: 0
 
 .ipi, .imi, .pm, .pmc, .pi, .mi
   margin: 0 1em
-  line-height: 1.5em
+  line-height: $reader_line_height
 
 .imi
   margin-left: 1em
@@ -394,32 +414,32 @@
 
 .iq1, .q, .q1, .qm1
   margin-left: 1em
-  line-height: 1.5em
+  line-height: $reader_line_height
 
 .iqt
   margin-left: 1em
 
 .iq2, .q2, .qm2
   padding-left: 1.0em
-  line-height: 1.5em
+  line-height: $reader_line_height
 
 .lb, .b
-  line-height: 1.5em
+  line-height: $reader_line_height
   height: 24px
 
 .ili1, .io1, .li1
   margin-left: 2em
   padding-left: 0
-  line-height: 1.5em
+  line-height: $reader_line_height
 
 .ili2, .io2, .li2
   margin-left: 4em
   padding-left: 0
-  line-height: 1.4em
+  line-height: $reader_line_height
 
 .iot, .d, .qa
   font-size: 1.0em
-  line-height: 1.4em
+  line-height: $reader_line_height
 
 .ior
   font-style: italic
@@ -492,7 +512,7 @@
   padding: 0
   margin: 0
   font-size: 1.0em
-  line-height: 1.4em
+  line-height: $reader_line_height
   text-indent: 0
   font-weight: normal
   font-style: normal
@@ -504,7 +524,7 @@
 
 .ord
   font-size: .75em
-  line-height: 0
+  line-height: $reader_line_height
   position: relative
   vertical-align: baseline
   top: -0.5em
