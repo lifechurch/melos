@@ -109,9 +109,10 @@ class User < YouVersion::Resource
       #   response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
       #   new(response)
   # end
-      id_response = YvApi.get("users/user_id", username: username)
-      auth = Hashie::Mash.new(username: username, password: password, user_id: id_response.user_id)
-      response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: auth)
+      id_opts = {}
+      id_response = YvApi.post("users/authenticate", auth: {username: username, password: password})
+      auth = Hashie::Mash.new(username: username, password: password, user_id: id_response.id)
+      response = YvApi.get("users/view", id_key_for_version => id_response.id, auth: auth)
       response[:auth] = auth
       User.new(response)
     end
@@ -137,6 +138,9 @@ class User < YouVersion::Resource
               response = YvApi.get("users/view", id_key_for_version => user)
             end
           else
+            id_opts = {}
+            # 10-2 Josh would prefer to not fix broken behavior, hope we don't hit it.
+            raise APIError, "API can't handle email addresses" if user.include? '@'
             id_response = YvApi.get("users/user_id", username: user)
             if opts[:auth] && user == opts[:auth].username
               response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
