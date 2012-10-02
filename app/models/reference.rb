@@ -72,8 +72,8 @@ class Reference < YouVersion::Resource
   end
 
   def to_param
-    return "#{to_usfm}.#{Version.find(version).abbreviation}" if version
-    to_usfm
+    return "#{to_usfm}.#{Version.find(version).abbreviation}".downcase if version
+    to_usfm.downcase
   end
 
   def version_string
