@@ -234,13 +234,6 @@
 .chapter > .label
   display: none
 
-.chapter .heading
-  font-weight: bold
-  font-size: 1.5em
-  line-height: 1em
-  margin-bottom: 1em
-  -webkit-font-smoothing: subpixel-antialiased
-
 // `Main > Verses
 //----------------------------------------------------------------------------------------------------
 
@@ -299,7 +292,7 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
   display: none
 
 .note > .label
-  text-indent: -900px
+  text-indent: -9999px
   display: inline-block
   background: image-url('trans-note-light@2x.png') no-repeat
     size: 16px 16px
@@ -339,6 +332,15 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 // introductory paragraph after a header paragraph
 .s + .p
   text-indent: 0
+
+.p + .s,
+.p + .s1,
+.p + .s2,
+.p + .s3,
+.p + .s4,
+.p + .s5,
+.p + .s6
+  margin-top: 1em
 
 .s
   line-height: 1em
@@ -389,6 +391,7 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
   font-weight: bold
   line-height: 1em
   margin: 0 0 1em 0
+  -webkit-font-smoothing: subpixel-antialiased
 
 .s2, .s3, .s4
   font-size: 0.85em

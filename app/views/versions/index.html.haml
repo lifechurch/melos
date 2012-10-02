@@ -25,7 +25,4 @@
         %ul
           - versions.each do |version|
             %li
-              - if version.publisher_id
-                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
-              - else
-                = "#{version.title} (#{version.abbreviation.upcase})"
+              = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
