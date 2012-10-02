@@ -20,7 +20,7 @@ function LinkPane( el ) {
 
   // have to set the text on mouseover to avoid bug with ZeroClipboard.
   this.clipper.addEventListener('mouseover', $.proxy(function(client) {
-    client.setText( this.clipper_text );
+    client.setText( this.link );
   },this));
 
 }
@@ -39,6 +39,8 @@ LinkPane.prototype = {
 
   setLink : function( link ) {
     this.link = link;
+    this.el.find("#copy_link_input").val( link );
+
   }
 
 }
