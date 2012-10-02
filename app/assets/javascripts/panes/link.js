@@ -38,9 +38,8 @@ LinkPane.prototype = {
   },
 
   setLink : function( link ) {
-    this.link = link;
-    this.el.find("#copy_link_input").val( link );
-
+    this.link = link.toLowerCase();
+    this.el.find("#copy_link_input").val( this.link );
   }
 
 }
