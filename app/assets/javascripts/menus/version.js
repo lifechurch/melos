@@ -78,7 +78,7 @@ VersionMenu.prototype = {
           var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
           window.location = link_base + delim + "version=" + version_id;
         }else{
-          window.location = link_base;
+          window.location = link_base.toLowerCase();
         }
       }
     });

@@ -261,7 +261,7 @@ Reader.prototype = {
     this.selected_menu.updateLink( short_link );
     this.selected_menu.updateSharing({ link: short_link });
 
-    $("article").attr('data-selected-verses-rel-link', relative_link);
+    $("article").attr('data-selected-verses-rel-link', relative_link.toLowerCase());
     $("article").attr('data-selected-verses-path-partial', partial_path);
   },
 
