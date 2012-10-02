@@ -226,12 +226,12 @@ class YvApi
 
   def self.bible_api_custom_languages
     {
-      'en-GB' => 'eng_GB',
-      'pt'    => 'por_PT',
+      'en-GB' => 'eng_gb',
+      'pt'    => 'por_pt',
       'pt-BR' => 'por',
-      'zh-CN' => 'cmn',
+      'zh-CN' => 'zho_tw',
       'zh-TW' => 'zho',
-      'es-ES' => 'spa_ES'
+      'es-ES' => 'spa_es'
     }
   end
 
