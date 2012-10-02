@@ -14,7 +14,7 @@ SharePane.prototype = {
   updateForm : function( params ) {
 
     // Populate link fields
-    var link = params.link;
+    var link = params.link.toLowerCase();
     this.short_link.html( link );
     this.share_link_field.val( link );
 
