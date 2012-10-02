@@ -102,13 +102,6 @@ class User < YouVersion::Resource
     end
 
     def authenticate(username, password)
-      # hash = {}
-      # response = YvApi.post('users/authenticate', auth: Hashie::Mash.new(username: username, password: password)) { return nil }.to_hash
-      # if response
-      #   response = response.symbolize_keys
-      #   response[:auth] = Hashie::Mash.new(user_id: response[:id].to_i, username: response[:username], password: password)
-      #   new(response)
-  # end
       id_opts = {}
       id_response = YvApi.post("users/authenticate", auth: {username: username, password: password})
       auth = Hashie::Mash.new(username: username, password: password, user_id: id_response.id)
@@ -139,9 +132,12 @@ class User < YouVersion::Resource
             end
           else
             id_opts = {}
-            # 10-2 Josh would prefer to not fix broken behavior, hope we don't hit it.
-            raise APIError, "API can't handle email addresses" if user.include? '@'
-            id_response = YvApi.get("users/user_id", username: user)
+            if user.include? '@'
+              id_opts[:email] = user
+            else
+              id_opts[:username] = user
+            end
+            id_response = YvApi.get("users/user_id", id_opts)
             if opts[:auth] && user == opts[:auth].username
               response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
             else
