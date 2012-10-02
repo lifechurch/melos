@@ -46,6 +46,7 @@ describe YvApi do
         'Gen.1.1-kjv' => {def: 'API3 version',                          book: 'Gen', chap: '1', verses: nil,    version: '1-kjv'},
         'Gen.1.2.1-kjv' => {def: 'API3 version with verse',             book: 'Gen', chap: '1', verses: '2',    version: '1-kjv'},
         'Gen.1.2-3.1-kjv' => {def: 'API3 version with verse range',     book: 'Gen', chap: '1', verses: '2-3',  version: '1-kjv'},
+        'esg.intro1.69-gntd' => {def: 'API3 version with verse range',     book: 'esg', chap: 'intro1', verses: nil,  version: '69-gntd'}
       }.each do |ref_str, expect|
         specify "should split to hash for '#{ref_str}' (a #{expect[:def]})" do
           subject = YvApi.parse_reference_string(ref_str)
