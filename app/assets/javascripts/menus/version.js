@@ -30,7 +30,7 @@ VersionMenu.prototype = {
       var version_id    = tr.data("version");
       var abbrev        = tr.data("abbrev");
       var menu          = $(this).closest(".dynamic_menu.version_select");
-      var path_chapter  = $('article .chapter').data('usfm');
+      var path_chapter  = $('article .chapter').data('usfm') || 'JHN.1'; //TODO: grab first ref usfm in this version (from json model of version)
       // using attr instead of data() to ensure that value doesn't get type cast to a number
       // ex: ".1" should not be type cast to 0.1 --> toString() turns into "0.1". In this case ".1" we want to be ".1"
       var path_verses   = $("article").attr("data-selected-verses-path-partial");
