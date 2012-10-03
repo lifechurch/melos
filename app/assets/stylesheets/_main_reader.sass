@@ -274,6 +274,11 @@
   vertical-align: top
   text-indent: 0
 
+.rtl > .version .verse > .label
+  margin:
+    right: 0px
+    left: 2px
+
 article .verse > .label,
 article[data-setting-size="user_setting_size_small"] .verse > .label
   margin-top: 0.5em
@@ -330,21 +335,50 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 //----------------------------------------------------------------------------------------------------
 
 // introductory paragraph after a header paragraph
-.s + .p
+.s + .p,
+.s1 + .p,
+.s2 + .p,
+.ms1 + .p,
+.ms2 + .p
   text-indent: 0
+  margin: 1em 0 0 0
+
+.s
+  line-height: 1em
 
 .p + .s,
 .p + .s1,
 .p + .s2,
-.p + .s3,
-.p + .s4,
-.p + .s5,
-.p + .s6
+.p + .ms,
+.p + .m1,
+.p + .m2,
+.q + .s,
+.q + .s1,
+.q + .s2,
+.q + .ms,
+.q + .m1,
+.q + .m2,
+.q1 + .s,
+.q1 + .s1,
+.q1 + .s2,
+.q1 + .ms,
+.q1 + .m1,
+.q1 + .m2,
+.q2 + .s,
+.q2 + .s1,
+.q2 + .s2,
+.q2 + .ms,
+.q2 + .m1,
+.q2 + .m2
   margin-top: 1em
 
-.s
-  line-height: 1em
-  margin: 1em 0
+// give quotes a 1em border
+.p + .q,
+.p + .q1,
+.q + .p,
+.q1 + p,
+.q2 + .p
+  margin-top: 1em
 
 .chapter div:first-child
   margin-top: 0
@@ -380,7 +414,7 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
   margin: .5em 0
   font-weight: bold
 
-.is, .s1
+.is, .s1, .ms1
   font-size: 1.5em
   font-weight: bold
   line-height: $reader_line_height
@@ -393,7 +427,7 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
   margin: 0 0 1em 0
   -webkit-font-smoothing: subpixel-antialiased
 
-.s2, .s3, .s4
+.s2, .s3, .s4, .ms2, .ms3, .ms4
   font-size: 0.85em
   font-weight: bold
   line-height: $reader_line_height
