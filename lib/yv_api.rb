@@ -163,13 +163,13 @@ class YvApi
   def self.parse_reference_string(ref_str)
     re =  /^
             \s*
-            ([1-3]? \s* [A-Za-z]+)                            #book
+            ([1-3]? \s* [A-Za-z0-9]+)                            #book
             \s*
-            (?:(?:[:\.])([\w]*))?                               #optional chapter
+            (?:(?:[:\.])([\w]*))?                             #optional chapter
             \s*
             (?:(?:[:\.]) ([\d\-,\s]*))?                       #optional verse(s)
             \s*
-            (?: (?:\.) ((?: \d*\-?)? (?: [0-9a-zA-Z_\-]*)) )?    #optional version
+            (?: (?:\.) ((?: \d*\-?)? (?: [0-9a-zA-Z_\-]*)) )? #optional version
           $/x
     matches = ref_str.match(re)
 
