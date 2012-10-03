@@ -2,6 +2,7 @@ class YvApi
   include HTTParty
   format :json
   headers 'Referer' => "http://" + Cfg.api_referer
+  headers 'User-Agent' => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}"
   default_timeout Cfg.api_default_timeout.to_f
 
   class << YvApi
