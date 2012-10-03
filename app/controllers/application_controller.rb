@@ -219,7 +219,8 @@ class ApplicationController < ActionController::Base
       # cookie may hold old path that can't be secure
       # use CDN path instead if so (API2 to API3 switch)
       if avatar_path.include? 'http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/'
-        set_current_avatar(avatar_path.gsub('http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/','https://d5xlnxqvcdji7.cloudfront.net/users/images/'))
+        avatar_path.gsub!('http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/','https://d5xlnxqvcdji7.cloudfront.net/users/images/')
+        set_current_avatar(avatar_path)
       end
 
       avatar_path +  cache_bust
