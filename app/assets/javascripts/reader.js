@@ -449,7 +449,7 @@ Reader.prototype = {
           });//end highlights each
         },//end success function
         error: function(req, status, err) {
-          console.log(status + err);
+          //console.log(status + err);
         }//end error function
       });//end ajax delegate
     });//end primary/secondary each

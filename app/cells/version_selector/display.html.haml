@@ -1,6 +1,6 @@
 - plan_url = url_for(@link_params) if @link_params
 
-.dynamic_menu.version_select{style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-plan-url" => plan_url, "data-link-needs-param" => @add_version_param.to_s}
+.dynamic_menu.version_select{class: @force_style.present? ? 'static dynamic_menu_reverse' : '',style: @force_style, id: @is_alt ? "menu_alt_version" : "menu_version", "data-plan-url" => plan_url, "data-link-needs-param" => @add_version_param.to_s}
   .spinner_wrapper{style: "display: none;"}
     #version_spinner.dynamic_menu_spinner
   %span.menu_arrow

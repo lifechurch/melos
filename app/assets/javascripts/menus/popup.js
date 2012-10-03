@@ -44,7 +44,8 @@ PopupMenu.prototype = {
       this.menu.addClass(reverse);
     }
     else {
-      this.menu.removeClass(reverse);
+      //hacking with this static class for temporary reading plan version menu :/
+      if(!this.menu.hasClass('static')){this.menu.removeClass(reverse);}
 
       if (this.trigger.attr('id') === 'menu_selected_trigger') {
         left = offset.left - 1;
@@ -57,12 +58,19 @@ PopupMenu.prototype = {
       }
     }
 
-    li.addClass(this.active_class);
-    this.menu.css({ left: left }).show();
-    // Scroll to book if this menu is book/chapter menu.
-    if(this.menu.attr('id') == 'menu_book_chapter'){
-      var index = this.menu.find('#menu_book').data('selected-book-num');
-      this.menu.find('.scroll').first().scrollTop((index - 1) * (this.menu.find('li').height() + 1)); //TODO: why are 1st and last elements 1px shorter than the rest??
+    // Menu hasn't been positioned yet. Position it and show it.
+    if(this.menu.css('position') != "absolute"){
+
+      this.menu.css({ left: left }).show();
+
+      // Scroll to book if this menu is book/chapter menu.
+      if(this.menu.attr('id') == 'menu_book_chapter'){
+       var index = this.menu.find('#menu_book').data('selected-book-num');
+       this.menu.find('.scroll').first().scrollTop((index - 1) * (this.menu.find('li').height() + 1)); //TODO: why are 1st and last elements 1px shorter than the rest??
+      }
     }
+    else{ this.menu.show(); }
+
+    li.addClass(this.active_class);
   }
 }
