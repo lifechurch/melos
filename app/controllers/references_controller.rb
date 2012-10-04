@@ -16,7 +16,10 @@ class ReferencesController < ApplicationController
     # and saves a redirect for a first time visit
     params[:reference] ||= last_read.try(:to_param) || default_reference.try(:to_param)
 
-    ref_hash = parse_ref_param params[:reference]
+    ref_str   = YouVersion::ReferenceString.new(params[:reference])
+    ref_hash  = ref_str.to_hash
+
+
     # override the version in the reference param with the explicit version in the URL
     # this is a temporary hack until Version/Reference class clean-up
     ref_hash[:version] = params[:version]
@@ -35,7 +38,8 @@ class ReferencesController < ApplicationController
     #
     # Note: InvalidReferenceError used to be raised here if
     # the reference was invalid
-    @verses = ref_hash[:verses]
+
+    @verses = ref_str.verses # array of verse numbers.
 
     # Set the canonical reference for the page to the entire chapter
     @reference = Reference.new(ref_hash.except(:verses))
