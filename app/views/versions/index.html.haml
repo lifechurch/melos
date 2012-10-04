@@ -20,9 +20,10 @@
   %h1= "#{t('bible versions')}"
   %ul
     - @versions_by_lang.each do |lang, versions|
-      %li
-        = t("versions.language and count", language_name: versions.first.language.human,  language_count: versions.count)
-        %ul
-          - versions.each do |version|
-            %li
-              = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+      - if versions.present?
+        %li
+          = t("versions.language and count", language_name: versions.first.language.human,  language_count: versions.count)
+          %ul
+            - versions.each do |version|
+              %li
+                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
