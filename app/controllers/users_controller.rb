@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     @user = User.confirm(params[:hash])
 
     if @user.errors.include?(:already_confirmed) && @user.errors.size == 1
-      return redirect_to sign_in_path(redirect: sign_up_success_path(show: "facebook")), notice: t('users.account already confirmed')
+      redirect_to sign_in_path(redirect: sign_up_success_path(show: "facebook")), notice: t('users.account already confirmed') and return
     end
 
     if @user.errors.blank?
