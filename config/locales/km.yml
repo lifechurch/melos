@@ -195,6 +195,7 @@ km:
     follow: "តាម"
     follow user: "តាម %{user}"
     unfollow: "ឈប់​តាម"
+    unfollow user: "ឈប់តាម %{user}"
     following title: "មនុស្ស​ដែល​ខ្ញុំ​កំពុង​តាម"
     user does not follow you: "%{user} មិន​អនុញ្ញាតិ​អោយ​អ្នក​តាម​ឡើយ។"
     recent activity: "សកម្ម​ភាព​ថ្មីៗ"
@@ -643,7 +644,15 @@ km:
   app errors:
     404 explanation: "លោក​អ្នក​ប្រហែល​ជា​ចាប់​ផ្ដើម​ម្ដង​ទៀត​ពី  <a href='%{reader_path}'>ទំព័រ​ដើម</a>. នៅ​តែ​មាន​បញ្ហា? សូម​ទាក់​ទង​មក​យើង <a href='%{support_url}'>ក្រុម​ជំនួយ</a>."
     404 message: "យើង​សូម​ទោស, ទំព័រ​ដែល​អ្នក​កំពុង​រក​មិន​មាន​ទេ។"
+    408 message: "សូម​ទោស​ ម៉ាស៊ីន​មេ​របស់​យើង​មិន​ឆ្លើយតប​ក្នុង​កំឡុង​ពេល​បង្ហាញ​នេះ​។"
+    408 explanation: "លោក​អ្នក​អាច​សាកល្បង​ម្ដង​ទៀត​ដោយ <a href= '%{reload_path}'>ទាញ​ឡើង​វិញ</a> លើ​ទំព័រ។ មាន​អ្នក​រាយ​ការណ៍​ប្រាប់​យើង ហើយ​យើង​នឹង​ដោះ​ស្រាយ​បញ្ហា​អោយ​ឆាប់​ជា​ទី​បំផុត។"
   versions:
+    index title: "មាន​ជំនាន់​នេះ"
     publisher widget title: "អ្នក​បោះ​ផ្សាយ"
     visit publisher: "ទស្សនា​វែប​សាយ​អ្នក​បោះ​ផ្សាយ"
     read title: "អាន​ជំនាន់​នេះ"
+    other versions: "ជំនាន់​ផ្សេង​ទៀត​ពី​អ្នក​បោះ​ផ្សាយ​នេះ"
+    number of versions field: "សរុប​ជំនាន់"
+    number of languages field: "សរុប​ភាសា"
+    language and count: "%{language_name} (%{language_count})"
+    public domain: "ដូមេន សាធារណះ"

@@ -195,6 +195,7 @@ es:
     follow: "Seguir"
     follow user: "Seguir a %{user}"
     unfollow: "Dejar de seguir"
+    unfollow user: "No Seguir %{user}"
     following title: "Personas a quienes sigo"
     user does not follow you: "%{user} no le sigue."
     recent activity: "Actividad Reciente"

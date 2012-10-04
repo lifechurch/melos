@@ -195,6 +195,7 @@ nl:
     follow: "Volg"
     follow user: "Volg %{user}"
     unfollow: "Stop met volgen"
+    unfollow user: "Stop met %{user} te volgen"
     following title: "Mensen die ik volg"
     user does not follow you: "%{user} volgt je niet"
     recent activity: "Recente Activiteit"
@@ -644,7 +645,7 @@ nl:
     404 explanation: "Je kan opnieuw starten vanaf de <a href='%{reader_path}'>beginpagina</a>. Ervaar je nog steeds problemen? Neem contact op met onze <a href='%{support_url}'>ondersteuningsteam</a>."
     404 message: "Sorry, de pagina die je zoekt kan niet worden gevonden."
     408 message: "Jammer genoeg konden onze servers niet tijdig reageren."
-    408 explanation: "Je kan het nog eens proberen door de pagina te <a href= %{reload_path}>herladen</a>. Wezijn op de hoogte van het probleem en zullen het zo snel mogelijk verhelpen."
+    408 explanation: "Je kan het nog eens proberen door de pagina te <a href= %{reload_path}>herladen</a>. We zijn op de hoogte van het probleem en zullen het zo snel mogelijk verhelpen."
   versions:
     index title: "Beschikbare Versies"
     publisher widget title: "Uitgever"

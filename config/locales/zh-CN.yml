@@ -195,6 +195,7 @@ zh-CN:
     follow: "关注"
     follow user: "关注%{user}"
     unfollow: "取消关注"
+    unfollow user: "不再关注 %{user}"
     following title: "我关注的人"
     user does not follow you: "%{user} 没有关注你。"
     recent activity: "近期活动"

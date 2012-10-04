@@ -195,6 +195,7 @@ ja:
     follow: "フォローする"
     follow user: "%{user} さんをフォローする"
     unfollow: "フォローを解除する"
+    unfollow user: "フォロー解除"
     following title: "フォローしている人たち"
     user does not follow you: "%{user} さんはあなたをフォローしていません"
     recent activity: "最近の利用履歴"
@@ -644,7 +645,7 @@ ja:
     404 explanation: "<a href='%{reader_path}'>ホームページ</a>へ戻ってみてください。\n問題が継続する場合は、<a href='%{support_url}'>support team</a>までご連絡ください。"
     404 message: "申し訳ありませんが、お探しのページは見つかりません。"
     408 message: "申し訳ございませんが、サーバが応答するのに時間がかかっています。"
-    408 explanation: "You can try again by <a href= %{reload_path}>reloading</a> the page. 当方でも事態を把握しておりますので、持続的問題につきましては、できるだけ早く対処させていただきます。"
+    408 explanation: "もう一度ページを <a href= %{reload_path}>リロード</a> してみてください。こちらでも事態を把握しておりますので、継続して発生する問題につきましては、できるだけ早く対処させていただきます。"
   versions:
     index title: "ご利用いただける聖書訳"
     publisher widget title: "出版元"

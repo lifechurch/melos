@@ -195,6 +195,7 @@ id:
     follow: "Ikuti"
     follow user: "Ikuti %{user}"
     unfollow: "Berhenti ikuti"
+    unfollow user: "tidak/stop mengikuti %{pengguna}"
     following title: "Orang-orang yang saya ikuti"
     user does not follow you: "%{user} tidak ikuti anda"
     recent activity: "Aktivitas terbaru"

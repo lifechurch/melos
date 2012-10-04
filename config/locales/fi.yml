@@ -195,6 +195,7 @@ fi:
     follow: "Seuraa"
     follow user: "Seuraa käyttäjää %{user}"
     unfollow: "Lopeta seuraaminen"
+    unfollow user: "Lopeta käyttäjän %{user} seuraaminen"
     following title: "Ihmiset, joita seuraan"
     user does not follow you: "Käyttäjä %{user} ei seuraa sinua."
     recent activity: "Viimeaikainen toiminta"
@@ -552,7 +553,7 @@ fi:
     download: "Lataa nyt"
   about page:
     relevancy: "Ajankohtaisuus"
-    relevancy copy: "Aiempien sukupolvien aikana Raamatun saatavuus oli hyvin rajallista. Tänä päivänä on toisin. Silti monet ihmiset, joille raamattu on saatavilla, ajattelevat ettei sen sanoma enää koske heidän elämäänsä. Samaan aikaan on muita, jotka uskovat, että Raamatun ja heidän jokapäiväisten kokemustensa välillä on yhteys."
+    relevancy copy: "Aiempien sukupolvien aikana Raamatun saatavuus oli hyvin rajallista. Tänä päivänä on toisin. Silti monet ihmiset, joille raamattu on saatavilla, ajattelevat ettei sen sanoma enää koske heidän elämäänsä. Samaan aikaan on myös ihmisiä, jotka uskovat, että Raamatun ja heidän jokapäiväisten kokemustensa välillä on yhteys."
     information revolution: "Informaatiovallankumous"
     information revolution copy: "Viime vuosikymmenen aikana Internet on synnyttänyt vallankumouksen, joka antaa ihmisille aivan uusia mahdollisuuksia. Kyky jakaa, osallistua, luoda, lähettää ja olla yhteydessä auttaa meitä helposti viestimään muiden kanssa siitä keitä olemme ja mihin uskomme."
     youversion copy: "LifeChurch.tv:n tarkoitus, vuodesta 1996 lähtien, on ollut johdattaa ihmisiä seuramaan Kristusta täysipainoisesti. Niin tehdessämme olemme etsineet uusia tapoja auttaa ihmisiä yhdistämään Raamatun jokaipäiväiseen elämäänsä. Menetelmämme ovat muuttuneet vuosien saatossa ottaessamme käyttöön erilaisia tekniikoita ja strategioita. Mutta pohjimmiltaan huomiomme on itse Raamatussa, kun johdonmukaisesti esittelemme ja opetamme ihmisille kuinka Jumalan sana koskettaa jokaista, oli heidän elämäntilanteensa mikä tahansa.  "

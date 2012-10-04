@@ -195,6 +195,7 @@ pt-BR:
     follow: "Seguir"
     follow user: "Seguir %{user}"
     unfollow: "Deixar de seguir"
+    unfollow user: "Deixar de seguir %{usuário} "
     following title: "Pessoas que estou seguindo"
     user does not follow you: "%{user} não está te seguindo."
     recent activity: "Atividade Recente"
@@ -643,8 +644,15 @@ pt-BR:
   app errors:
     404 explanation: "Você pode tentar reiniciar na <a href='%{reader_path}'>página inicial</a>. Ainda tendo problemas? Contate nossa  <a href='%{support_url}'>equipe de suporte</a>."
     404 message: "Desculpe, a página que você está procurando não pôde ser encontrada. "
+    408 message: "Infelizmente nossos servidores não responderam no tempo adequado. "
+    408 explanation: "Nós podemos tentar novamente <a href= '%{recarregar_caminho}'>recarregando</a> a página. Nós fomos alertados e iremos endereçar quaisquer problemas persistentes o mais rápido possível. "
   versions:
+    index title: "Versões Disponíveis "
     publisher widget title: "Editora\n"
     visit publisher: "Visitar o Website do Editor "
     read title: "Ler Esta Versão "
+    other versions: "Outras Versões Deste Editor"
+    number of versions field: "Total de Versões: "
+    number of languages field: "Total de Idiomas: "
+    language and count: "%{idioma_nome} (%{idioma_contar})"
     public domain: "Domínio Público"

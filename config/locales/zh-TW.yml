@@ -195,6 +195,7 @@ zh-TW:
     follow: "關注"
     follow user: "關注%{user}"
     unfollow: "取消關注"
+    unfollow user: "取消關注 %{user}"
     following title: "我關注的人"
     user does not follow you: "%{user} 还沒有關注您"
     recent activity: "最近活動"
