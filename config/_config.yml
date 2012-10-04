@@ -24,7 +24,7 @@ common:
 
 staging:
   api_root: youversionapi.com
-  api_referer: web.youversionapi.com
+  api_referer: web-staging.youversionapi.com
   api_default_timeout: 5
   rack_execution_timeout: 15
 
