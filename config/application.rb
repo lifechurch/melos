@@ -83,7 +83,7 @@ module YouversionWeb
           (chapter = 1 && book = 'john') if book.blank?
 
           new_path = "/bible/#{version.downcase}/#{book}/#{chapter}"
-          new_path = new_path + "/$4" if $4.present?
+          new_path = new_path + "/" + $4 if $4.present?
         when /^\/reading-plans\/\d+-([^\/]*)/
           new_path = "/reading-plans/#{$1}"
         end
