@@ -26,10 +26,6 @@ module ApplicationHelper
     reference_url(ver, ref, opts)
   end
 
-  def parse_ref_param(ref_param)
-    YvApi::parse_reference_string(ref_param)
-  end
-
   def ref_from_params
     case
     when params.has_key?(:version)

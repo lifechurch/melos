@@ -364,12 +364,12 @@ Reader.prototype = {
 
   initSelectedVerses : function() {
 
-    var verses = $("article").data("selected-verses");
+    var verses = $("article").data("selected-verses").split(",");
     var book = $("article").data("book-api");
     var chapter = $("article").data("chapter");
     if (verses) {
       for (var i = 0; i < verses.length; i++) {
-        $(".verse" + ".v" + verses[i]).addClass("selected");
+        $(".verse.v" + verses[i]).addClass("selected");
       }
     }
 
