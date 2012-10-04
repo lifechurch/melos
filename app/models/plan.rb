@@ -65,7 +65,7 @@ class Plan < YouVersion::Resource
         param.to_i
       when String             #slug was passed
         #try to get id from slug with search, since API doesn't give a better way
-        lib_plan = search(param).find{|plan| plan.slug.downcase == param.downcase}
+        lib_plan = Plan.search(param).find{|plan| plan.slug.downcase == param.downcase}
         return nil if lib_plan.blank?
         lib_plan.id
       when Plan
