@@ -364,9 +364,10 @@ Reader.prototype = {
 
   initSelectedVerses : function() {
 
-    var verses = $("article").data("selected-verses");            // list of verses "" or "1" or "1,2,3"
-    if(typeof verses == "number") { verses = new String(verses);} // single selected verse
-    verses = verses.split(",");
+    // list of verses "" or "1" or "1,2,3"
+    // .attr retrieves value as string and doesn't attempt to cast to other type.
+    var verses = $("article").attr("data-selected-verses");
+        verses = verses.split(",");
 
     if (verses.length) {
       for (var i = 0; i < verses.length; i++) {
