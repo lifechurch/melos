@@ -103,7 +103,7 @@ class ReferencesController < ApplicationController
       end
 
       #we don't need to report these types of 404's as long as we have the right redirects.
-      #report_exception(ex)
+      #report_exception(ex, self, request)
 
       #force to be in non-parallel/fullscreen mode for Ref_not_found
       @html_classes.try(:delete, "full_screen") and cookies[:full_screen] = nil
