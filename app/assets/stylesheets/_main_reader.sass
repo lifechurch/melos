@@ -346,12 +346,27 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 .s
   line-height: 1em
 
+// Giving top margins to body text that follows headers
+// and to headers that follow body text
 .p + .s,
 .p + .s1,
 .p + .s2,
 .p + .ms,
 .p + .m1,
 .p + .m2,
+.p + .q,
+.p + .q1,
+.m + .s,
+.m + .s1,
+.m + .s2,
+.m + .ms,
+.m + .m1,
+.m + .m2,
+.m + .q,
+.m + .q1,
+.m + .p,
+.q1 + .p,
+.q2 + .p,
 .q + .s,
 .q + .s1,
 .q + .s2,
@@ -369,7 +384,15 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 .q2 + .s2,
 .q2 + .ms,
 .q2 + .m1,
-.q2 + .m2
+.q2 + .m2,
+.imt + .is1,
+.ip + .is1,
+.io1 + .is1,
+.io2 + .is1,
+.io3 + .is1,
+.ip + .io1,
+.ip + .io2,
+.ip + .io3
   margin-top: 1em
 
 // give quotes a 1em border
@@ -382,6 +405,10 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 
 .chapter div:first-child
   margin-top: 0
+
+.p, .ip
+  margin-bottom: 0
+  text-indent: 1em
 
 .imt, .mt, .ms
   font-size: 1.3em
@@ -420,8 +447,9 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
   line-height: $reader_line_height
   margin: 0 0 1em 0
 
+// Font size should be set in the parent element: (for example .s)
 .heading
-  font-size: 1.5em
+  font-size: 1em
   font-weight: bold
   line-height: 1em
   margin: 0 0 1em 0
@@ -449,15 +477,20 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 .ipr, .pr, .qr
   text-align: right
 
+// hanging indents for quotes
 .iq1, .q, .q1, .qm1
-  margin-left: 1em
+  padding-left: 2.5em
+  text-indent: -1em
+  //line-height: 1.5em
   line-height: $reader_line_height
 
 .iqt
   margin-left: 1em
 
 .iq2, .q2, .qm2
-  padding-left: 1.0em
+  padding-left: 3.5em
+  text-indent: -1em
+  //line-height: 1.5em
   line-height: $reader_line_height
 
 .lb, .b
@@ -585,6 +618,12 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 
 .sc
   font-variant: small-caps
+
+// for versions that have no space in front of the verse label
+.vid8 .content:after,
+.vid58 .content:after,
+.vid111 .content:after
+  content: " "
 
 // `Nav Arrows
 //----------------------------------------------------------------------------------------------------
