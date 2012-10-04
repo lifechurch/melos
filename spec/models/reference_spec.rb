@@ -21,7 +21,7 @@ describe Reference do
       Reference.new(@gen_1_2_kjv_ref).should be_valid
       Reference.new(@gen_1_2_kjv_ref).should == @gen_1_2_kjv_ref
     end
-    it "should be able to be created from an API string" do
+    it "should be able to be created from an API string", only: true do
       Reference.new("2CH.33.1+2CH.33.2+2CH.33.3").should == Reference.new("2CH.33.1-3")
     end
     it "should use the options as the overriding property" do
@@ -34,7 +34,7 @@ describe Reference do
   end
 
   describe "#valid?" do
-    describe "with a valid reference string", only: true do
+    describe "with a valid reference string" do
       {
         'Gen.1.kjv' => {def: 'legacy osis version',                       book: 'GEN', chap: '1', verses: [],    version: 1},
         'Gen.1.2.kjv' => {def: 'legacy osis version with verse',          book: 'GEN', chap: '1', verses: ['2'],    version: 1},
@@ -179,9 +179,18 @@ describe Reference do
     end
   end
 
-  describe "to_param" do
-    it "should parameterize itself as a string" do
+  describe "to_param", only: true do
+    it "should parameterize itself as a string for a ref with a verse" do
       @gen_1_1_kjv_ref.to_param.should =~ /GEN.1.1.KJV/i
+    end
+    it "should parameterize itself as a string for a ref without verses" do
+      Reference.new("2CH.33", version: 1).to_param.should == '2ch.33.kjv'
+    end
+    it "should parameterize itself as a string for a ref with a verse range" do
+      Reference.new("2CH.33.1-3", version: 1).to_param.should == '2ch.33.1-3.kjv'
+    end
+    it "should provide a hyphenated param string if created from an API string" do
+      Reference.new("2CH.33.1+2CH.33.2+2CH.33.3", version: 1).to_param.should == '2ch.33.1-3.kjv'
     end
   end
 

@@ -73,8 +73,10 @@ class Reference < YouVersion::Resource
   end
 
   def to_param
-    return "#{to_usfm}.#{Version.find(version).abbreviation}".downcase if version
-    to_usfm.downcase
+    _ref = "#{to_usfm}" if is_chapter? || single_verse?
+    _ref ||= "#{chapter_usfm}.#{verses.first}-#{verses.last}"
+    _ver = ".#{Version.find(version).abbreviation}" if version
+    "#{_ref}#{_ver}".downcase
   end
 
   def version_string
@@ -122,7 +124,7 @@ class Reference < YouVersion::Resource
   end
 
   def single_verse?
-    verses.count == 1
+    verses.count == 1 rescue false
   end
 
   def short_link
