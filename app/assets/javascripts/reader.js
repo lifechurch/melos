@@ -364,10 +364,12 @@ Reader.prototype = {
 
   initSelectedVerses : function() {
 
-    var verses = $("article").data("selected-verses").split(",");
-    var book = $("article").data("book-api");
-    var chapter = $("article").data("chapter");
-    if (verses) {
+    // list of verses "" or "1" or "1,2,3"
+    // .attr retrieves value as string and doesn't attempt to cast to other type.
+    var verses = $("article").attr("data-selected-verses");
+        verses = verses.split(",");
+
+    if (verses.length) {
       for (var i = 0; i < verses.length; i++) {
         $(".verse.v" + verses[i]).addClass("selected");
       }
