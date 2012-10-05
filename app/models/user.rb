@@ -217,7 +217,7 @@ class User < YouVersion::Resource
   def self.confirm(hash)
     user = nil
 
-    response = YvApi.post("users/confirm", token: hash) do |errors|
+    response = YvApi.post("users/confirm", token: hash, timeout: 10) do |errors|
       user = User.new
 
       if i = errors.find_index{|e| e["key"] == "users.hash.verified"}
