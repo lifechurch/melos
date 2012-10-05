@@ -28,7 +28,7 @@ class ReferencesController < ApplicationController
     # instead of just rendering (SEO strategy: less buckets)
     unless params[:version] && ref_hash[:chapter]
       ref_hash[:version] ||= current_version
-      ref_hash[:chapter] ||= 1
+      ref_hash[:chapter] ||= "1"
       flash.keep
       return redirect_to bible_path(Reference.new(ref_hash))
     end
