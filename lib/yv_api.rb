@@ -230,8 +230,8 @@ class YvApi
       'en-GB' => 'eng_gb',
       'pt'    => 'por_pt',
       'pt-BR' => 'por',
-      'zh-CN' => 'zho_tw',
-      'zh-TW' => 'zho',
+      'zh-CN' => 'zho',
+      'zh-TW' => 'zho_tw',
       'es-ES' => 'spa_es'
     }
   end
