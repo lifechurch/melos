@@ -11,6 +11,7 @@ describe "Requesting the Reader" do
     it "should 404" do
       get "/bible/RSV/Ezekiel-8"
       response.code.should == "404"
+      response.should render_template(:invalid_ref)
     end
 
     it "should redirect without a chapter" do
