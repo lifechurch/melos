@@ -42,7 +42,7 @@ class Reference < YouVersion::Resource
     @book = @book.try :upcase
 
     @chapter = opts.has_key?(:chapter) ? opts[:chapter] : ref_hash.try(:[], :chapter)
-    @chapter = @chapter.try :upcase
+    @chapter = @chapter.to_s.upcase
 
     _version = opts.has_key?(:version) ? opts[:version] : ref_hash.try(:[], :version)
     @version = Version.id_from_param(_version)
