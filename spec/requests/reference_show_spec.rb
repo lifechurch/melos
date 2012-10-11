@@ -48,6 +48,18 @@ describe "Requesting the Reader (References#show)" do
       end
     end
 
+    describe "Get public domain version" do
+
+      it "should render the page regardless of copyright details" do
+
+        get "/bible/12/mat.1.asv"
+        response.code.should == "200"
+        response.should render_template(:show)
+
+      end
+
+    end
+
 
 
   end
