@@ -24,6 +24,6 @@
 %footer
   %p
     %b= link_to t("ref.about the version", version: @version), version_path(@version)
-  %p= @reference.copyright
+  %p= @reference.copyright.html_safe
 
 = render partial: "js"
