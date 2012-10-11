@@ -40,9 +40,9 @@ Page.prototype = {
     this.BROWSER = $.browser;
     this.VERSION = parseInt(this.BROWSER.version, 10);
     this.IE = this.BROWSER.msie;
-    this.IE7 = !!(this.IE && VERSION === 7);
-    this.IE8 = !!(this.IE && VERSION === 8);
-    this.IE9 = !!(this.IE && VERSION === 9);
+    this.IE7 = !!(this.IE && this.VERSION === 7);
+    this.IE8 = !!(this.IE && this.VERSION === 8);
+    this.IE9 = !!(this.IE && this.VERSION === 9);
 
   },
 
