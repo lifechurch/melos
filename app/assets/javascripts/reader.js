@@ -334,17 +334,19 @@ Reader.prototype = {
         $('.nav_prev, .nav_next').height(main_reader_height);
       }
     }
-
   },
 
   // In text notes, hover over # to display.
   initTranslationNotes : function() {
     $('.note .body').wrap('<div class="outer_container"></div>');
-    $('.note .body').wrap('<div class="inner_container"></div>')
+    $('.note .body').wrap('<div class="inner_container"></div>');
     $('.note .label').hoverIntent(function(){
-      $(this).next('.outer_container').animate({opacity: 1}, "200");
+      var ctn = $(this).next('.outer_container');
+          ctn.show();
+          ctn.animate({opacity: 1}, "200");
     }, function(){
-      $(this).next('.outer_container').delay(350).animate({opacity: 0}, "200");
+      var ctn = $(this).next('.outer_container');
+          ctn.delay(350).animate({opacity: 0}, "200", function() {ctn.hide();});
     })
   },
 
