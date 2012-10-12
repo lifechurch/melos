@@ -96,11 +96,15 @@ Reader.prototype = {
   },
 
   deselectVerse : function( v ) {
-    v.removeClass("selected");
+    $(this.parseVerseClasses(v)).each( function(i,val) {
+      $(".verse." + val ).removeClass("selected");
+    });
   },
 
   selectVerse : function( v ) {
-    v.addClass("selected");
+    $(this.parseVerseClasses(v)).each( function(i,val) {
+      $(".verse." + val ).addClass("selected");
+    });
   },
 
   isSelected : function( v ) {
@@ -125,6 +129,16 @@ Reader.prototype = {
     var usfm    = opts.usfm || undefined;
     var version = opts.version || undefined;
     if(usfm && version) { return usfm + "." + version + "-VID";}
+  },
+
+  parseVerseClasses : function(v) {
+    var classes = v.attr('class').split(/\s+/);
+    var v_classes = [];
+        classes.map( function(val,i) {
+          var match = val.match(/v[0-9]+/g);
+          if(match && match.length) { v_classes.push(match[0].toString())}
+        });
+    return v_classes;
   },
 
   parseVerses : function() {
