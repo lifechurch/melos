@@ -121,10 +121,6 @@ Reader.prototype = {
     this.parseVerses();
   },
 
-  numFromVerse : function( verse_el ) {
-    return parseInt( $(verse_el).find(".label").html() );
-  },
-
   referenceParam : function( opts ) {
     var usfm    = opts.usfm || undefined;
     var version = opts.version || undefined;
@@ -139,6 +135,20 @@ Reader.prototype = {
           if(match && match.length) { v_classes.push(match[0].toString())}
         });
     return v_classes;
+  },
+
+  // expected to return an array with a single element or more.
+  parseVerseUsfms : function( verse_el ) {
+    // multi verse usfm strings can exist: ex. JHN.1.1+JHN.1.2
+    var usfm = verse_el.data("usfm");
+    return usfm.split("+");
+  },
+
+  // expected to return an array with a single element or more.
+  parseVerseNums : function( verse_el ) {
+    var v_classes = this.parseVerseClasses( verse_el );
+    var v_nums = $.map( v_classes , function(val) { return parseInt(val.match(/(\d+)$/)[0], 10); });
+    return v_nums;
   },
 
   parseVerses : function() {
@@ -160,13 +170,23 @@ Reader.prototype = {
 
       this.selected.verses.each(function() {
         var verse   = $(this);
-        var _usfm   = verse.data('usfm');
-        var _vid    = verse.closest('.version').data('vid')
-        if(selected.verse_usfms.indexOf(_usfm) == -1) { //usfm reference not in array
-           selected.verse_usfms.push( _usfm );                                                // ex. 2CO.1.1
-           selected.verse_numbers.push( thiss.numFromVerse(verse) );                          // ex. 1,2,3
-           selected.verse_params.push( thiss.referenceParam({usfm: _usfm, version: _vid } ));  // ex. 2CO.1.1.1-VID
-        }
+        var _usfms  = thiss.parseVerseUsfms(verse);
+        var _vid    = verse.closest('.version').data('vid');
+        var _nums   = thiss.parseVerseNums(verse);
+
+        // aggregate all selected verse usfms and params
+        $(_usfms).each( function(i,usfm) {
+          if(selected.verse_usfms.indexOf(usfm) == -1) {  //usfm reference not in array
+             selected.verse_usfms.push(usfm);                                                    // ex. 2CO.1.1
+             selected.verse_params.push( thiss.referenceParam({usfm: usfm, version: _vid } ));  // ex. 2CO.1.1.1-VID
+          }
+        });
+        // aggregate all selected verse numbers
+        $(_nums).each( function(i,num) {
+          if(selected.verse_numbers.indexOf(num) == -1) {
+             selected.verse_numbers.push( num );
+          }
+        });
       });
 
       this.parseRanges();
@@ -428,6 +448,7 @@ Reader.prototype = {
       return false;
     }
 
+    var _this = this;
 
     $("#version_primary, #version_secondary").each( function() {
       var chapter = $(this).find('.chapter');
@@ -450,12 +471,10 @@ Reader.prototype = {
           //apply the new highlights
           $.each(highlights, function(i, highlight) {
               verse = chapter.find(".verse.v" + highlight.verse);
-              verse.css("background-color", "#" + highlight.color);
-
               verse.addClass(flag);
-              if (is_dark(highlight.color)) {
-                verse.addClass("dark_bg");
-              }
+
+              verse.css("background-color", "#" + highlight.color);
+              if (is_dark(highlight.color)) { verse.addClass("dark_bg"); }
 
               //add the highlight ids (so if user clears they can clear them all)
               highlight_ids = verse.attr('data-highlight-ids');
@@ -465,6 +484,10 @@ Reader.prototype = {
               highlight_ids.push(highlight.id);
               verse.attr('data-highlight-ids', highlight_ids.join(','));
           });//end highlights each
+
+          // have to reparse the verses again due to adding new attribute values
+          _this.parseVerses();
+
         },//end success function
         error: function(req, status, err) {
           //console.log(status + err);
