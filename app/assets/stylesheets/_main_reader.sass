@@ -620,11 +620,20 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 .sc
   font-variant: small-caps
 
+// processor instruction intended to give the typesetter
+// the printable chapter name
+.cl
+  display: none
+
 // for versions that have no space in front of the verse label
 .vid8 .content:after,
 .vid58 .content:after,
 .vid111 .content:after
   content: " "
+
+// Chinese versions have proper nouns underlined
+.iso6393zho .pn
+  text-decoration: underline
 
 // BOOKS version should not display verse numbers
 .vid31 .verse span.label
