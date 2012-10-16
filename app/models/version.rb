@@ -158,7 +158,7 @@ class Version < YouVersion::Resource
     @attributes.local_title || @attributes.title
   end
   def abbreviation
-    @attributes.abbreviation.try :upcase
+    (@attributes.local_abbreviation || @attributes.abbreviation).try :upcase
   end
   def to_s
     "#{title} (#{abbreviation.upcase})"
