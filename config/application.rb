@@ -79,11 +79,11 @@ module YouversionWeb
           book = YvApi::get_osis_book($2)
           version = YvApi::get_osis_version($1) || $5 || 'kjv'
           chapter = $3
+          verses = $4
 
           (chapter = 1 && book = 'john') if book.blank?
-
-          new_path = "/bible/#{version.downcase}/#{book}/#{chapter}"
-          new_path = new_path + "/" + $4 if $4.present?
+          new_path = "/bible/verse/#{version.downcase}/#{book}/#{chapter}/#{verses}" if verses.present?
+          new_path ||= "/bible/#{version.downcase}/#{book}/#{chapter}"
         when /^\/reading-plans\/\d+-([^\/]*)/
           new_path = "/reading-plans/#{$1}"
         end
@@ -118,6 +118,8 @@ module YouversionWeb
       r301 %r{/bible/(\w+)/(\d+)/([\w-]+)}, '/bible/$1.$2.$3'
       # /bible/kjv (anything without a dot)
       r301 %r{/bible/([a-z-]+)$}, '/versions/$1'
+      # /bible/1/john3.16-17,19,21.ESV (possible API3 short links, verse(s) optional)
+      r301 %r{/bible/(\d+)/(\w{3})(\d+(?:(?:\.[,\d-]+)?))\.(\w+)}, '/bible/$1/$2.$3.$4'
 
       #blogs and other misc redirects
       r301 '/churches', 'http://blog.youversion.com/churches'
