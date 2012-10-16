@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require File.dirname(__FILE__) + '/../spec_helper'
 require 'benchmark'
 
@@ -22,6 +23,16 @@ describe YouVersion::ReferenceString do
     end
   end
 
+  describe ".[] (hash access)" do
+    subject {YouVersion::ReferenceString.new("jhn.1.2-3.kjv")}
+    it "should return the hash elements" do
+      subject[:book].should == "jhn"
+      subject[:chapter].should == "1"
+      subject[:version].should == "kjv"
+      subject[:verses].should == "2-3"
+    end
+  end
+
   describe 'with a valid reference string' do
     describe ".hash" do
       {
@@ -38,7 +49,8 @@ describe YouVersion::ReferenceString do
         'jhn.1.1-5,7.1-kjv' => {def: "API3 version with range and single verse",book: 'jhn', chap: '1', verses: "1-5,7",version: '1-kjv'},
         'Gen.1.2-3.1-kjv' => {def: 'API3 version with verse range',     book: 'Gen', chap: '1', verses: '2-3',  version: '1-kjv'},
         'esg.intro1.69-gntd' => {def: 'API3 version with verse range',  book: 'esg', chap: 'intro1', verses: nil,  version: '69-gntd'},
-        'S3Y.1.1.296-GNB' => {def: 'GNB, book with # in middle',        book: 'S3Y', chap: '1', verses: '1',  version: '296-GNB'}
+        'S3Y.1.1.296-GNB' => {def: 'GNB, book with # in middle',        book: 'S3Y', chap: '1', verses: '1',  version: '296-GNB'},
+        'act.1.47-cunpss-上帝' => {def: 'version abbrev w/ utf-8',         book: 'act', chap: '1', verses: nil,  version: '47-cunpss-上帝'}
       }.each do |ref_str, expect|
         specify "should split to hash for '#{ref_str}' (a #{expect[:def]})" do
           string  = YouVersion::ReferenceString.new(ref_str)

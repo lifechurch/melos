@@ -161,22 +161,6 @@ class YvApi
     "+"
   end
 
-  def self.parse_reference_string(ref_str)
-    re =  /^
-            \s*
-            ([1-3]? \s* [A-Za-z0-9]+)                            #book
-            \s*
-            (?:(?:[:\.])([\w]*))?                             #optional chapter
-            \s*
-            (?:(?:[:\.]) ([\d\-,\s]*))?                       #optional verse(s)
-            \s*
-            (?: (?:\.) ((?: \d*\-?)? (?: [0-9a-zA-Z_\-]*)) )? #optional version
-          $/x
-    matches = ref_str.match(re)
-
-    {book: matches.try(:[], 1), chapter: matches.try(:[], 2), verses: matches.try(:[], 3), version: matches.try(:[], 4)}
-  end
-
   private
   def self.log_response?
     return false if Rails.env.production?

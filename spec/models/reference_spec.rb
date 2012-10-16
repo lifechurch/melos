@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 require 'benchmark'
 
@@ -21,7 +22,7 @@ describe Reference do
       Reference.new(@gen_1_2_kjv_ref).should be_valid
       Reference.new(@gen_1_2_kjv_ref).should == @gen_1_2_kjv_ref
     end
-    it "should be able to be created from an API string", only: true do
+    it "should be able to be created from an API string" do
       Reference.new("2CH.33.1+2CH.33.2+2CH.33.3").should == Reference.new("2CH.33.1-3")
     end
     it "should use the options as the overriding property" do
@@ -179,7 +180,7 @@ describe Reference do
     end
   end
 
-  describe "to_param", only: true do
+  describe "to_param" do
     it "should parameterize itself as a string for a ref with a verse" do
       @gen_1_1_kjv_ref.to_param.should =~ /GEN.1.1.KJV/i
     end
@@ -226,8 +227,8 @@ describe Reference do
       @gen_1_kjv_ref.content.should include "And the earth was without form"
     end
     it "should give the html for a chapter" do
-      @gen_1_kjv_ref.content.should include "<div class=\"chapter ch1\" data-usfm=\"GEN.1\">\n            <div class=\"label\">1</div>\n"
-      @gen_1_kjv_ref.content.should include "<span class=\"content\">In the beginning"
+      @gen_1_kjv_ref.content.should =~ /<div class="chapter ch1" data-usfm="GEN.1">/
+      @gen_1_kjv_ref.content.should =~ /<span class="content">In the beginning/
     end
     it "should give the html for a verse" do
       @gen_1_1_kjv_ref.content.should include "<span class=\"content\">In the beginning"
@@ -307,7 +308,7 @@ describe Reference do
 
   describe "#copyright" do
     it "should be the copyright text for the reference's version" do
-      Reference.new("gen.1.niv").copyright.should == "Holy Bible, New International Version, NIV. Copyright 1973, 1978, 1984, 2011 by Biblica, Inc. Used by permission. All rights reserved worldwide."
+      Reference.new("gen.1.niv").copyright.should =~ /Holy Bible, New International Version/
     end
 
     it "should be nil for versions with no copyright" do

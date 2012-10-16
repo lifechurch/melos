@@ -20,18 +20,22 @@ module YouVersion
       @raw
     end
 
+    def [](arg)
+      return @hash.try(:[], arg.to_sym)
+    end
+
     private
 
     def parse
       re =  /^
             \s*
-            ([1-3]? \s* [A-Za-z0-9]+)                            #book
+            ([1-3]? \s* [A-Za-z0-9]+)                         #book
             \s*
             (?:(?:[:\.])([\w]*))?                             #optional chapter
             \s*
             (?:(?:[:\.]) ([\d\-,\s]*))?                       #optional verse(s)
             \s*
-            (?: (?:\.) ((?: \d*\-?)? (?: [0-9a-zA-Z_\-]*)) )? #optional version
+            (?: (?:\.) ((?: \d*\-?)? (?: [\S]*)) )? #optional version
           $/x
 
       matches = @raw.match(re)

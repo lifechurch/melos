@@ -1,5 +1,5 @@
-
 # encoding: UTF-8
+
 class Reference < YouVersion::Resource
 
   attr_reader :book
@@ -24,9 +24,9 @@ class Reference < YouVersion::Resource
     when /(.{3}\.[^\+]+\.[^\+]+)\+(?:.*)(?:.{3}\..+\.(.+))/ # + separated API string
       # to be a valid reference, these have to be verses
       # regex selected first usfm and last verse
-      YvApi::parse_reference_string "#{$1}-#{$2}"
+      YouVersion::ReferenceString.new "#{$1}-#{$2}"
     when String
-      YvApi::parse_reference_string ref
+      YouVersion::ReferenceString.new ref
     when Hash#, Hashie::Mash (is mash creation even used/necessary?)
       ref
     when Reference
@@ -254,7 +254,7 @@ class Reference < YouVersion::Resource
     opts = {cache_for: a_very_long_time}
     # sometimes we just need generic info about a verse, like the human spelling of a chapter
     # in this rare case, we will just use the YouVersion default Version
-    opts[:id] =  version || Version.default.id
+    opts[:id] =  version || Version.default
     # we will always just get the chapter, and parse down to verses if needed
     # this will utilize server side cache more effectively
     # as the alternative (for multiple verses) is multiple bible/verse calls
