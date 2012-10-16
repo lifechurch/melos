@@ -252,7 +252,7 @@ class UsersController < ApplicationController
   def resend_confirmation
     if params[:email]
       if User.resend_confirmation(params[:email])
-        return render action: "resend_confirmation_success", layout: "application"
+        render action: "resend_confirmation_success", layout: "application" and return
       else
         flash.now[:error]=(t('users.resend error'))
       end

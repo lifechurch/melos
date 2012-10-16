@@ -181,6 +181,8 @@ en:
     select another chapter:                     "Pick a Different Chapter"
     view in reader:                             "View %{reference} in Reader"
   users:
+    unverified heading:                         "Almost Done!"
+    unverified message:                         "It looks like you're trying to sign in to an account that hasn't been set up completely. You only have one more step: simply click on the verification link in the confirmation email you received from YouVersion. Can't find it? Check your spam folder or <a href='%{resend_path}'>resend the confirmation email</a>."
     reset connection:                           "Sorry, an error has occurred. Please remove and then reconnect this connection."
     settings:                                   "Settings"
     no connection friends:                      "None of your %{connection} friends appear to be on YouVersion yet."
