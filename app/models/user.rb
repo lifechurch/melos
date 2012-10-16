@@ -103,7 +103,10 @@ class User < YouVersion::Resource
 
     def authenticate(username, password)
       id_opts = {}
-      id_response = YvApi.post("users/authenticate", auth: {username: username, password: password})
+      id_response = YvApi.post("users/authenticate", auth: {username: username, password: password}) do |errors|
+        debugger
+      end
+
       auth = Hashie::Mash.new(username: username, password: password, user_id: id_response.id)
       response = YvApi.get("users/view", id_key_for_version => id_response.id, auth: auth)
       response[:auth] = auth

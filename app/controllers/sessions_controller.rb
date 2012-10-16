@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
   def create
     begin
       user = User.authenticate(params[:username], params[:password])
+    rescue UnverifiedAccountError
+      user = false
+      params[:email] = params[:username] if params[:username].include? "@"
+      render "unverified" and return
     rescue AuthError
       user = false
     end
