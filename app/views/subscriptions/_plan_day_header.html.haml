@@ -5,7 +5,7 @@
       %dd.highlighted
         = link_to t("plans.day")
       %dd
-        = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
+        = link_to t("plans.settings"), user_subscription_path(current_user,@subscription), class: "icon_settings"
       %dd
         = link_to t("plans.month"), plan_calendar_path(@subscription)
   - else

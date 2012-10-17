@@ -40,7 +40,8 @@ YouversionWeb::Application.routes.draw do
     match 'unfollow' => 'users#unfollow', as: 'unfollow'
     match 'badges' => 'users#badges', as: 'badges'
     match 'badge/:id' => 'badges#show', as: 'badge'
-    resources 'plans', :only =>[:index], :path =>'reading-plans'
+
+    resources 'subscriptions', :path => '/reading-plans'
   end
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
@@ -65,10 +66,8 @@ YouversionWeb::Application.routes.draw do
   #Reading Plans
   resources :plans, :only => [:index, :show, :update], :path => 'reading-plans' do
     match 'users' => 'plans#users_index'
-    match 'settings' => 'plans#settings'
     match 'settings/email' => 'plans#settings' #legacy link
     match 'calendar' => 'plans#calendar'
-    match 'start' => 'plans#start'
   end
 
   # profile stuff
