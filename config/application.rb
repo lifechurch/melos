@@ -92,8 +92,8 @@ module YouversionWeb
       end
 
       should_rewrite_mobile = Proc.new do |rack_env|
-        # forward to mDot if a mobile device and not: notifications or status pages, assets (for staging and local dev)
-        mobile = !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/settings\/notifications|^\/status$|^\/assets\/)/
+        # forward to mDot if a mobile device and not: notifications, terms/privacy, or status pages, assets (for staging and local dev)
+        mobile = !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/settings\/notifications|^(\/.{2,5})?\/terms|privacy|^\/status$|^\/assets\/)/
         # don't forwards to mDot if bible.com root
         mobile = false if rack_env["SERVER_NAME"] =~ /^(?:(?:.*\.)?bible\.com|lvh\.me)/ && rack_env["PATH_INFO"] =~ /^\W*$/
         mobile

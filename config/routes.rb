@@ -25,6 +25,9 @@ YouversionWeb::Application.routes.draw do
   match 'search' => 'search#show'
   match 'privacy' => 'users#privacy'
   match 'terms' => 'users#terms'
+  #catch non-supported languages and still render them
+  match '/:locale/terms', :to => 'users#terms'
+  match '/:locale/privacy', :to => 'users#privacy'
 
   # Users
   resources 'users', :except => [:new, :create] do
@@ -106,7 +109,6 @@ YouversionWeb::Application.routes.draw do
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
   match 'friends' => 'users#following'
   match 'bookmarks' => 'users#bookmarks'
-
 
   root to: 'references#show'
 
