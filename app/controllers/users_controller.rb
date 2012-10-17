@@ -402,11 +402,13 @@ class UsersController < ApplicationController
   end
 
   def privacy
+    @mobile = env["X_MOBILE_DEVICE"].present?
     I18n.locale = :en unless i18n_terms_whitelist.include? I18n.locale
     render action: "privacy", layout: "application"
   end
 
   def terms
+    @mobile = env["X_MOBILE_DEVICE"].present?
     I18n.locale = :en unless i18n_terms_whitelist.include? I18n.locale
     render action: "terms", layout: "application"
   end

@@ -1,6 +1,12 @@
 - @title = t("users.privacy.policy", youversion: t("youversion"))
 - @sidebar = false
 
+/ attach bdc stylesheet for better mobile styling for now (kill me)
+/ pull this code the second mobile web is live
+- if @mobile
+  - content_for :stylesheets do
+    = stylesheet_link_tag "bdc_home"
+
 %article
   %h1= t("users.privacy.policy", youversion: t("youversion"))
   %h4.mute= t("users.revised date", date: "7/16/2012")
