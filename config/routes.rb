@@ -23,11 +23,11 @@ YouversionWeb::Application.routes.draw do
 
 
   match 'search' => 'search#show'
-  match 'privacy' => 'users#privacy'
-  match 'terms' => 'users#terms'
+  match 'privacy' => 'pages#privacy'
+  match 'terms' => 'pages#terms'
   #catch non-supported languages and still render them
-  match '/:locale/terms', :to => 'users#terms'
-  match '/:locale/privacy', :to => 'users#privacy'
+  match '/:locale/terms', :to => 'pages#terms'
+  match '/:locale/privacy', :to => 'pages#privacy'
 
   # Users
   resources 'users', :except => [:new, :create] do

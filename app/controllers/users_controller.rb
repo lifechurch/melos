@@ -401,18 +401,6 @@ class UsersController < ApplicationController
 
   end
 
-  def privacy
-    @mobile = env["X_MOBILE_DEVICE"].present?
-    I18n.locale = :en unless i18n_terms_whitelist.include? I18n.locale
-    render action: "privacy", layout: "application"
-  end
-
-  def terms
-    @mobile = env["X_MOBILE_DEVICE"].present?
-    I18n.locale = :en unless i18n_terms_whitelist.include? I18n.locale
-    render action: "terms", layout: "application"
-  end
-
   def highlight_colors
     @highlight_colors = User.highlight_colors(auth: current_auth)
     render partial: "users/highlight_color_swatches", layout: false
@@ -429,11 +417,5 @@ private
       @user = current_user
       @me = true
     end
-  end
-
-  def i18n_terms_whitelist
-    # the following localizations have the legal terms reviewed in a way that is
-    # legally appropriate to show in a localized state
-    [:en, :sv, :ja, :vi, :nl, :"pt-BR", :"no", :"zh-CN", :"zh-TW", :ms]
   end
 end
