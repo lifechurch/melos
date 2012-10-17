@@ -451,26 +451,24 @@ Page.prototype = {
         //  return;
         //}
 
-        var TOP_OFFSET  = 82;
-        var next_widget = this_widget.next('.widget');
-        var window_top  = $(window).scrollTop() + TOP_OFFSET;
-        var spacer      = el.siblings('.widget_spacer:first');
-        var spacer_top  = spacer.offset().top;
-
+        var TOP_OFFSET    = 82;
+        var next_widget   = this_widget.next('.widget');
+        var window_top    = $(window).scrollTop() + TOP_OFFSET;
+        var spacer        = el.siblings('.widget_spacer:first');
+        var spacer_top    = spacer.offset().top;
+        var extra_padding = 12;
 
         if (window_top >= spacer_top) {
           el.addClass('widget_header_fixed');
 
-          spacer.css({
-            height: 34
-          });
+          // set the height of the spacer to the height of the header element to account
+          // for expanding / extra long header content.
+
+          spacer.css({ height: (el.height() + extra_padding) });
         }
         else {
           el.removeClass('widget_header_fixed');
-
-          spacer.css({
-            height: 0
-          });
+          spacer.css({ height: 0 });
         }
 
         if (next_widget.length) {
