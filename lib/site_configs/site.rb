@@ -75,8 +75,8 @@ module SiteConfigs
                   :"ro"     => [{name: 'Biblica', url: 'http://www.biblica.com', image: 'biblica.png'}],
                   :"ru"     => [{name: 'Bible League International', url: 'http://www.bibleleague.org', image: 'bli.gif'},
                                 {name: 'Biblica', url: 'http://www.biblica.com', image: 'biblica.png'}],
-                  :"zh-TW"  => [{name: 'Asia Bible Society', url: 'http://www.asiabiblesociety.org', image: 'asiabiblesociety.png'}],
-                  :"zh-CN"  => [{name: 'Asia Bible Society', url: 'http://www.asiabiblesociety.org', image: 'asiabiblesociety.png'},
+                  :"zh-TW"  => [{name: 'Asia Bible Society', url: 'http://www.asiabiblesociety.org', image: 'AsiaBibleTrad.png'}],
+                  :"zh-CN"  => [{name: 'Asia Bible Society', url: 'http://www.asiabiblesociety.org', image: 'AsiaBibleSimp.png'},
                                 {name: 'Biblica', url: 'http://www.biblica.com', image: 'biblica.png'}]}
       partners[:"en-GB"] = partners[:en]
       partners
