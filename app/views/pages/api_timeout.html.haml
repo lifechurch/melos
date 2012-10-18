@@ -5,4 +5,7 @@
 %article.error
   %h2= t('app errors.408 message')
   %hr
-  %p= t('app errors.408 explanation', reload_path: "").html_safe
+  / leave reload_path var to not have errors during i18n transition
+  / can remove once translators have finished and new strings are live
+  %p= t('app errors.408 explanation', reload_path: nil).html_safe
+  = link_to t("app errors.try again"), nil, class: "action_button_green"
