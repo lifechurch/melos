@@ -17,19 +17,6 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id])
   end
 
-  def users_index
-    if params[:plan_id]
-      @plan = Plan.find(params[:plan_id])
-      @users = @plan.users(page: params[:page])
-    end
-  end
-
-  def calendar
-    @subscription = Subscription.find(params[:plan_id], current_auth.user_id, auth: current_auth)
-
-    raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
-  end
-
   def ref_not_found
     render 'invalid_ref'
   end

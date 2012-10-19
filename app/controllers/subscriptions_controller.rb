@@ -31,6 +31,25 @@ class SubscriptionsController < ApplicationController
     respond_with(@subscription)
   end
 
+  def orig
+    @subscription = subscription_for(params[:id])
+
+    # Get user font and size settings
+    @font, @size = cookies['data-setting-font'], cookies['data-setting-size']
+
+    if (params[:ignore_subscription] != "true") || params[:day]
+      params[:day] ||= @subscription.current_day
+      @day = params[:day].to_i
+      @subscription.version_id = params[:version] || @subscription.version_id || current_version
+      @version = Version.find(@subscription.version_id)
+      @reading = @subscription.reading(@day)
+      @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0 #coerce content page to 1st page if outside range
+      @reference = @reading.references[@content_page].ref unless @reading.references.empty?
+    end
+
+    respond_with(@subscription)
+  end
+
   def create
     if @subscription = subscription_for(params[:plan_id])
       redirect_to user_subscription_path(current_user,params[:plan_id]), notice: t("plans.already subscribed") and return
@@ -112,6 +131,12 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
     #redirect_to user_subscription_settings_path(current_user, @subscription, anchor: anchor), notice: t("plans.#{action} successful", t_opts) if action
   end
+
+  def calendar
+    @subscription = subscription_for(params[:id])
+    raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
+  end
+
 
   private
 

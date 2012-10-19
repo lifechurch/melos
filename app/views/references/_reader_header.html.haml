@@ -14,12 +14,13 @@
           %span
             =t("ref.choose version")
     %ul.float_right
-      %li.show_in_parallel_mode
-        %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_alt_version_trigger", title: t("ref.choose second version")}
-          %b
-            = @alt_version.human
-          %span
-            =t("ref.choose version")
+      - if @alt_version.present?
+        %li.show_in_parallel_mode
+          %a.dynamic_menu_trigger.drop_down_select{href:"#menu_alt_version", id:"menu_alt_version_trigger", title: t("ref.choose second version")}
+            %b
+              = @alt_version.human
+            %span
+              =t("ref.choose version")
       %li.hide_in_parallel_mode
         %a.button.dynamic_menu_trigger{href:"#menu_settings", id:"menu_settings_trigger", title:t("ref.settings")}
           %span.icon_settings

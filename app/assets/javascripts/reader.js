@@ -589,8 +589,9 @@ Reader.prototype = {
 
     // list of verses "" or "1" or "1,2,3"
     // .attr retrieves value as string and doesn't attempt to cast to other type.
-    var verses = $("article").attr("data-selected-verses") || '';
-        verses = verses.split(",");
+    var verses = $("article").attr("data-selected-verses");
+        verses = (verses) ? verses.split(",") : [];
+
     var thiss = this;
 
     if (verses.length) {

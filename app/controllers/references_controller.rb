@@ -59,9 +59,6 @@ class ReferencesController < ApplicationController
     # Create an empty note for the note sidebar widget
     @note = Note.new(version_id: @version.id)
 
-    # Set up user specific stuff
-    @highlight_colors = User.highlight_colors
-
     # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
     @alt_version = Version.find(alt_version(@reference))
     @alt_reference = Reference.new(@reference, version: @alt_version)

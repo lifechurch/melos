@@ -1,18 +1,31 @@
 - @title = "Plan Calendar and Progress"
-- @sidebar = false
+
+- content_for :sidebar do
+  .widget
+    = link_to(t('plans.read today'), user_subscription_path(current_user,@subscription), class: 'action_button_green', style: "margin-bottom: 10px")
+
+  .widget
+    %header
+      %span= @subscription.name
+    %ul.widget_menu
+      %li
+        =render :partial => "progress", :locals => {subscription: @subscription}
+      %li
+        =link_to( t("plans.calendar"), calendar_user_subscription_path(current_user,@subscription))
+      %li
+        =link_to( t("plans.settings"), edit_user_subscription_path(current_user,@subscription))
+
+  .widget
+    %header
+      %span About this Plan
+    %ul.widget_menu
+      %li
+        %p= @subscription.about
+
 
 %article
-  %dl.combo_button.float_right
-    %dt
-    %dd
-      = link_to t("plans.day"), plan_path(@subscription)
-    %dd
-      = link_to t("plans.settings"), plan_settings_path(@subscription), class: "icon_settings"
-    %dd.highlighted
-      = link_to t("plans.month")
-  %h1.float_left{style: "clear: none; width: 600px"}= @subscription.name
+  %h1= t("plans.calendar")
   %hr
-  %h4= t("plans.calendar")
 
   :ruby
     statuses = @subscription.day_statuses
@@ -53,7 +66,7 @@
                 - else
                   - cur_status = statuses.delete_at(0)
                   %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '') << ((cur_date == current_date) ? ' today' : '')}
-                    = link_to(cur_date.day.to_s, plan_path(@subscription.to_param, day: cur_status.day))
+                    = link_to(cur_date.day.to_s, user_subscription_path(current_user,@subscription, day: cur_status.day))
                 - cur_date = cur_date.next
 
             :ruby

@@ -1,0 +1,24 @@
+// Locals:
+// subscription: subscription record
+- show_dates = false
+.progress_wrap
+  .progress_counter
+    =t("plans.current progress html", day: subscription.current_day, total_days: subscription.total_days).html_safe
+  .progress_bar_outer
+    .progress_bar{:style => "width:#{@subscription.progress}%"}
+      &nbsp;
+  .progress_bar_cap
+    &nbsp;
+  .progress_bar_shadow
+    .progress_percent_complete{style: "left:#{@subscription.progress}%"}
+      %b= t("percentage display", number: subscription.progress)
+      .small= t("plans.completion status _ below percentage")
+
+- if show_dates
+  .float_right{style: "margin-bottom: 10px"}
+    %div
+      %b{style: "margin-right: 10px"}= t("plans.start date _ before date string")
+      = subscription.start.strftime("%b %d, %Y")
+    %div
+      %b{style: "margin-right: 16px"}= t("plans.end date _ before date string")
+      = subscription.end.strftime("%b %d, %Y")

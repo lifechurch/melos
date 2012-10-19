@@ -1,19 +1,60 @@
 - @title = @subscription.name
-- @sidebar = false
 
-%article
-  = render partial: "plan_day_header"
+%style
+  :plain
+    .widget li.content_target {position:relative;}
+    .widget li.content_target.active {background:#ddd; border-top:none;}
+    .widget li.content_target.active span {display:block; font-size: 13px; padding:10px 20px 10px 15px; line-height:1;}
+    .widget li.content_target a {background-image:none; padding-left:15px;}
+    .widget li.content_target form { margin:0; margin-top:4px; padding:0; width:30px; position:absolute; right:10px; top:0;}
+    .widget li.calendar {position:relative;}
+    .widget li.calendar div.icon {width:35px; height:35px; background:#ddd; position:absolute; left:15px; top:15px; }
+    .widget li.calendar div.icon a {display:block; height:35px; width:35px; margin:0; padding:0; color:#999; background-image:none; text-align:center; line-height:34px;}
+    .widget li.calendar div.day {padding:15px; margin-left:45px;}
 
-  .split_pane{:style => "padding-top:15px"}
-    - if @reading.devotional
-      = render partial: "pane_devotional"
-    - else
-      =render partial: "pane_no_devotional"
+- content_for :sidebar do
+  .widget
+    %header
+      =link_to("S",edit_user_subscription_path(current_user,@subscription),{class: "count"})
+      %span= link_to @subscription.name, plan_path(@subscription)
+    %ul.widget_menu
+      %li.calendar
+        %div.icon
+          =link_to( "C", calendar_user_subscription_path(current_user,@subscription))
+        %div.day
+          %h4{style: "margin-bottom: 0px;"}= (@subscription.respond_to?(:reading_date) ? @subscription.reading_date(@day) : current_date + (@day - 1)).strftime('%a %b %-d')
+          .mute{style: "font-weight: normal"}=t("plans.which day in plan", day: @day.to_s, total: @subscription.total_days)
 
-- content_for :javascripts do
-  %script
-    :plain
+      - unless @reading.references.empty?
+        - @reading.references.each_with_index do |ref,index|
+          %li.content_target{class: (@content_page == index) ? "active" : nil }
+            = form_tag(user_subscription_path(current_user, @subscription), method: :put) do
+              = hidden_field_tag(:ref, ref.ref.to_usfm)
+              = hidden_field_tag(:completed, (!ref.completed?).to_s)
+              = hidden_field_tag(:version, @version.id)
+              = hidden_field_tag(:day_target, @day.to_s)  if @day != @subscription.current_day
+              = hidden_field_tag(:content_target, index ) if index != 0
+              = check_box_tag(:completion, nil, ref.completed?, {id:"#{index}_box",onChange: "this.form.submit()"} )
+            - if @content_page == index
+              %span= ref.ref.human
+            - else
+              //= link_to(ref.ref.human, user_subscription_path(current_user, @subscription , day: @day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version]) )
+              %a{href: (@content_page == index) ? nil : user_subscription_path(current_user, @subscription , day: @day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
+                = ref.ref.human
+  -if @reading.devotional
+    .widget
+      %header
+        %span Devotional
+      %ul.widget_menu
+        %li.devotional_content= scale_frame(@reading.devotional, width: 393).html_safe
 
-      jQuery(document).ready(function() {
-        var menu = new VersionMenu({menu:"#menu_version",trigger:"#menu_version_trigger"});
-      });
+//  .widget
+//    %header
+//      %span Calendar & Settings
+//    %ul.widget_menu
+//      %li
+//        =link_to( t("plans.calendar"), calendar_user_subscription_path(current_user,@subscription))
+//      %li
+//        =link_to( t("plans.settings"), edit_user_subscription_path(current_user,@subscription))
+
+= render partial: "/references/reader"

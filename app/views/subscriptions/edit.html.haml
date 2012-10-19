@@ -3,66 +3,28 @@
 
 - content_for :sidebar do
   .widget
-    = link_to(t('plans.read today'), plan_path(@subscription), class: 'action_button_green', style: "margin-bottom: 10px")
+    = link_to(t('plans.read today'), user_subscription_path(current_user,@subscription), class: 'action_button_green', style: "margin-bottom: 10px")
+
   .widget
     %header
-      %span
-        =t("plans.more info")
+      %span= @subscription.name
     %ul.widget_menu
       %li
-        %p
-          %b=t("plans.length field")
-          = @subscription.length
-      - if !current_user.subscribed_to? @subscription
-        %li
-          = link_to(t("plans.view sample"), @subscription.to_param)
-      / %li
-      /   = link_to(t("plans.users subscribed", user_count: number_with_delimiter(@subscription.users.count)), plan_users_path(@subscription.to_param))
+        =render :partial => "progress", :locals => {subscription: @subscription}
+      %li
+        =link_to( t("plans.calendar"), calendar_user_subscription_path(current_user,@subscription))
+      %li
+        =link_to( t("plans.settings"), edit_user_subscription_path(current_user,@subscription))
+
   .widget
     %header
-      %span
-        =t("plans.publisher")
+      %span About this Plan
     %ul.widget_menu
       %li
-        %p= @subscription.copyright
-      - unless @subscription.publisher_url.nil?
-        %li
-          = link_to(t("plans.about publisher"), @subscription.publisher_url)
-          -#TODO: view partial for this sidebar plan content
+        %p= @subscription.about
 
 %article
-  %dl.combo_button.float_right
-    %dt
-    %dd
-      = link_to t("plans.day"), plan_path(@subscription)
-    %dd.highlighted
-      = link_to t("plans.settings"), edit_user_subscription_path(current_user,@subscription), class: "icon_settings"
-    %dd
-      = link_to t("plans.month"), plan_calendar_path(@subscription)
-  %h1{style: "clear: none; width: 300px;"}= @subscription.name
-
-  // Plan progress settings
-  %hr
-  %h4= t("plans.settings")
-  .progress_wrap{style: "margin-bottom: 10px"}
-    .progress_counter
-      =t("plans.current progress html", day: @subscription.current_day, total_days: @subscription.total_days).html_safe
-    .progress_bar_outer
-      .progress_bar{:style => "width:#{@subscription.progress}%"}
-        &nbsp;
-    .progress_bar_cap
-      &nbsp;
-    .progress_bar_shadow
-      .progress_percent_complete{style: "left:#{@subscription.progress}%"}
-        %b= t("percentage display", number: @subscription.progress)
-        .small= t("plans.completion status _ below percentage")
-  .float_right{style: "margin-bottom: 10px"}
-    %div
-      %b{style: "margin-right: 10px"}= t("plans.start date _ before date string")
-      = @subscription.start.strftime("%b %d, %Y")
-    %div
-      %b{style: "margin-right: 16px"}= t("plans.end date _ before date string")
-      = @subscription.end.strftime("%b %d, %Y")
+  %h1{style: "clear: none; width: 300px;"}= t("plans.settings")
 
   // Email delivery settings
   %hr

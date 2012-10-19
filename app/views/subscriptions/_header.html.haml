@@ -1,0 +1,17 @@
+#reader_header
+  %header
+    %ul.float_left
+      %li
+        %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_version_trigger", title: t("ref.choose version")}
+          %b= @version.human
+          %span= t("ref.choose version")
+    %ul.float_right
+      %li
+        %a.button{:href => @reference.audio ? '#menu_audio_player' : nil, :title => @reference.audio ? t("ref.listen"): t('audio.none'), class: @reference.audio ? "dynamic_menu_trigger" : "disabled"}
+          %span.icon_listen{class: @reference.audio ? nil : "disabled"}
+            =t("ref.listen")
+
+      %li
+        %a.no_style.feaux_dynamic_trigger.button{:href => bible_url(@reference), :title => t("ref.view in reader", reference: @reference.human)}
+          %span.icon_read
+            =t("ref.view in reader", reference: @reference.human)

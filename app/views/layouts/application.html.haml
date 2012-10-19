@@ -28,12 +28,6 @@
           - unless @sidebar == false
             = render '/shared/sidebar'
       = render '/shared/footer'
-    - if @reader_menus == true
-      = render_cell :book_selector, :display, {version: @version}
-      = render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, reference: @reference, site: @site}
-      = render '/shared/menu_settings'
-      = render '/shared/menu_audio_player'
-      = render '/shared/modal_single_verse' unless @verse_modals == false
     = render '/shared/javascripts'
     = render '/shared/google_analytics'
 
