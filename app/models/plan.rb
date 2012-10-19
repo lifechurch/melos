@@ -131,7 +131,7 @@ class Plan < YouVersion::Resource
       @reading = Hashie::Mash.new()
       #get localized html || text via i18nize method
       @reading.devotional = YouVersion::Resource.i18nize(response.additional_content)
-      @reading.devotional = "<p>" << @reading.devotional.gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if @reading.devotional
+      @reading.devotional = "<p>" << @reading.devotional.gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '</p><p>').gsub(/(\n)/, '</p><p>') << "</p>" if @reading.devotional
 
       @reading.references = response.references.map do |data|
         Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default),
