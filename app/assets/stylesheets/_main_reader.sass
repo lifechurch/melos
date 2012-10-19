@@ -226,14 +226,6 @@
 #main footer b
   font-size: 13px
 
-// `Main > headers and paragraphs
-//----------------------------------------------------------------------------------------------------
-
-.p
-  text-indent: 1em
-
-.chapter > .label
-  display: none
 
 // `Main > Verses
 //----------------------------------------------------------------------------------------------------
@@ -322,6 +314,19 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 
 .verse.highlighted.dark_bg
   color: $gray_light
+
+// `Main > headers and paragraphs
+//----------------------------------------------------------------------------------------------------
+
+.p
+  text-indent: 1em
+
+.chapter > .label
+  display: none
+
+// first paragraph after a chapter label
+.chapter > .label + .p
+  text-indent: 0
 
 // `Reader paragraph styles
 //----------------------------------------------------------------------------------------------------
