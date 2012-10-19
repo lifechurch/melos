@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/nesquena/rabl.git
+  revision: 973b0b3e62c1c057164b1c0698c46a4c7282bb3e
+  specs:
+    rabl (0.7.3)
+      activesupport (>= 2.3.14)
+      multi_json (~> 1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -392,6 +400,7 @@ DEPENDENCIES
   omniauth-twitter (~> 0.0.11)
   pry
   quiet_assets
+  rabl!
   rack-mobile-detect (~> 0.3.0)
   rack-rewrite (~> 1.2.1)
   rack-timeout (~> 0.0.3)

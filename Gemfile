@@ -23,6 +23,8 @@ gem 'newrelic_rpm',           '~> 3.5.0'
 gem 'omniauth-facebook',      '~> 1.2.0' # 1.3.0
 gem 'omniauth-google-oauth2', '~> 0.1.9'
 gem 'omniauth-twitter',       '~> 0.0.11'
+# temporarily building from source, rubygems is down
+gem 'rabl', :git => 'git://github.com/nesquena/rabl.git'
 gem 'rack-mobile-detect',     '~> 0.3.0'
 gem 'rack-rewrite',           '~> 1.2.1'
 gem 'rack-timeout',           '~> 0.0.3'
