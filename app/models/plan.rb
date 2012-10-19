@@ -131,7 +131,12 @@ class Plan < YouVersion::Resource
       @reading = Hashie::Mash.new()
       #get localized html || text via i18nize method
       @reading.devotional = YouVersion::Resource.i18nize(response.additional_content)
-      @reading.devotional = "<p>" << @reading.devotional.gsub(/(\r\n\r\n)/, '</p><p>').gsub(/(\n\n)/, '</p><p>').gsub(/(\r\n)/, '<br>').gsub(/(\n)/, '<br>') << "</p>" if @reading.devotional
+
+      # if ascii spacing is in the html, just remove it, instead of adding p's
+      # to avoid adding unecessarry spacing
+      spacer = YouVersion::Resource.html_present?(response.additional_content) ? '' : '</p><p>'
+      @reading.devotional = @reading.devotional.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer) if @reading.devotional
+      @reading.devotional = "<p>" << @reading.devotional << "</p>" if spacer.present?
 
       @reading.references = response.references.map do |data|
         Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default),

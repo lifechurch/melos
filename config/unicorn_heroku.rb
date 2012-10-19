@@ -11,7 +11,7 @@ worker_processes 3
 # We want something shorter than the heroku 30 sec so that we know
 # when a worker has been restarted, but longer than the rack-timeout
 # of 15 seconds, since unicorn timeout as last-resort is preferred
-timeout 17
+timeout ENV['CFG_UNICORN_TIMEOUT'] || 17
 
 # Load rails + app code into the master before forking workers
 # for super-fast worker spawn times

@@ -48,6 +48,17 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
+      def html_present?(mash)
+        lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
+        return false if mash.nil?
+
+        return false unless mash[lang_key].nil?
+
+        val = mash.html.try(:[], lang_key)
+        val ||= mash.html.try(:[], :default)
+        val.present?
+      end
+
       def i18nize(mash)
         lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
         return nil if mash.nil?
