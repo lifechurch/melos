@@ -6,7 +6,7 @@ function VerseModal(opts) {
   this.close    = this.window.find(".close");
 
   // show the modal
-  var verses = $("article").data("selected-verses");
+  var verses = $("article").attr("data-selected-verses").split(","); //using attr() here so jQuery doesn't type cast, just give me a string.
   if (verses && this.enabled()) {
     if (verses.length == 1) { this.show(); }
   }
@@ -36,7 +36,7 @@ VerseModal.prototype = {
   constructor: VerseModal,
 
   enabled : function() {
-    return $("article").data("verse-modal-enabled")
+    return $("article").data("verse-modal-enabled");
   },
 
   show : function() {
