@@ -7,7 +7,6 @@ function VerseModal(opts) {
 
   // show the modal
   var verses = $("article").attr("data-selected-verses").split(","); //using attr() here so jQuery doesn't type cast, just give me a string.
-  alert(verses);
   if (verses && this.enabled()) {
     if (verses.length == 1) { this.show(); }
   }
