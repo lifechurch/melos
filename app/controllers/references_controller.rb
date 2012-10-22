@@ -96,7 +96,7 @@ class ReferencesController < ApplicationController
   def strip_format
     # we allow .s in our reference constraint, so we pull
     # the format manually in this case
-    if params[:reference].end_with? '.json'
+    if params[:reference].try(:"end_with?", '.json')
       params[:reference].gsub!('.json', '')
       request.format = :json
     end

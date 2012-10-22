@@ -36,6 +36,7 @@ function Reader(opts) {
   // menus
 
   this.initSelectedVerses();
+  this.initSecondaryVersion();
   this.initHighlights();
   this.initAudioPlayer();
   this.initTranslationNotes();
@@ -410,6 +411,31 @@ Reader.prototype = {
         $(".verse.v" + verses[i]).addClass("selected");
       }
     }
+
+  },
+
+  initSecondaryVersion : function() {
+    var thiss = $('#version_secondary');
+    var v_id = getCookie('alt_version') || 1;
+    var usfm = thiss.data('usfm');
+
+    $.ajax({
+        url: "/bible/" + v_id + "/" + usfm + ".json",
+        method: "get",
+        dataType: "json",
+        success: function(ref) {
+          thiss.html(ref.content);
+          console.log('success setting secondary version');
+          console.log(ref);
+        },//end success function
+        error: function(req, status, err) {
+          // set HTML to error HTML
+          if(status = '404'){
+            thiss.html(thiss.data('404-content'));
+          }
+          console.log('error setting secondary version');
+        }//end error function
+      });//end ajax delegate
 
   },
 

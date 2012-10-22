@@ -160,6 +160,7 @@ en:
     see my likes:                               "See All My Likes"
     successfully deleted:                       "Note Removed"
   ref:
+    loading secondary:                          "Loading Reference in Secondary Version..."
     clear verses:                               "Clear Selected Verses"
     choose book and chapter:                    "Choose Book + Chapter"
     choose version:                             "Choose Version"
