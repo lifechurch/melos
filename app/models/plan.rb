@@ -129,14 +129,15 @@ class Plan < YouVersion::Resource
       #TODO: it probably makes sense for a reading to be it's own class within Plan
       #      so this should all be done resourcefully in a after_create class, etc
       @reading = Hashie::Mash.new()
-      #get localized html || text via i18nize method
-      @reading.devotional = YouVersion::Resource.i18nize(response.additional_content)
 
-      # if ascii spacing is in the html, just remove it, instead of adding p's
-      # to avoid adding unecessarry spacing
-      spacer = YouVersion::Resource.html_present?(response.additional_content) ? '' : '</p><p>'
-      @reading.devotional = @reading.devotional.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer) if @reading.devotional
-      @reading.devotional = "<p>" << @reading.devotional << "</p>" if spacer.present? && @reading.devotional
+      #get localized html || text via i18nize method and massage a bit
+      if @reading.devotional = YouVersion::Resource.i18nize(response.additional_content)
+        # if ascii spacing is in the html, just remove it, instead of adding p's
+        # to avoid adding unecessarry spacing
+        spacer = YouVersion::Resource.html_present?(response.additional_content) ? '' : '</p><p>'
+        @reading.devotional = @reading.devotional.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer)
+        @reading.devotional = "<p>" << @reading.devotional << "</p>" if spacer.present?
+      end
 
       @reading.references = response.references.map do |data|
         Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default),
