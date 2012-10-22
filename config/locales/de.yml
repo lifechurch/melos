@@ -177,6 +177,7 @@ de:
     select another chapter: "Wähle ein anderes Kapitel"
     view in reader: "Lies %{reference} in der Leseansicht"
   users:
+    unverified heading: "Fast fertig!"
     reset connection: "Leider ist ein Fehler aufgetreten. Bitte trenne diese Verbindung und dann baue sie wieder auf."
     settings: "Einstellungen"
     no connection friends: "Scheinbar sind noch keine %{connection}-Freunde von dir bei YouVersion."
@@ -646,6 +647,7 @@ de:
     404 message: "Leider kann die Seite, die du suchst, nicht gefunden werden."
     408 message: "Leider haben unsere Server nicht schnell genug geantwortet."
     408 explanation: "Du kannst es erneut versuchen, indem du die Seite <a href= '%{reload_path}'>aktualisierst</a>. Wir wurden benachrichtigt und werden alle bestehenden Probleme so schnell wie möglich lösen."
+    try again: "Versuche es noch einmal"
   versions:
     index title: "Zur Verfügung stehende Versionen"
     publisher widget title: "Herausgeber"

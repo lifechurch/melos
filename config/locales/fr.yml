@@ -646,6 +646,7 @@ fr:
     404 message: "Nous sommes désolés, la page que vous cherchez ne peut être trouvée."
     408 message: "Malheureusement nos serveurs ne répondent pas en temps utile."
     408 explanation: "Vous-pouvez essayer de nouveau par <a href= '%{reload_path}'>reloading</a> la page. Nous avons été alertés aussi et nous allons envoyer quelques problèmes persistants très rapidement."
+    try again: "Essayer à nouveau"
   versions:
     index title: "Versions disponibles"
     publisher widget title: "Éditeur"

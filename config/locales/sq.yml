@@ -195,6 +195,7 @@ sq:
     follow: "Ndiq"
     follow user: "Ndiq përdoruesin %{user}"
     unfollow: "Mos e ndiq"
+    unfollow user: "Mos e ndiq përdoruesin %{user}"
     following title: "Njerëzit që jam duke ndjekur"
     user does not follow you: "Përdoruesi %{user} nuk po të ndjek ty."
     recent activity: "Aktiviteti i fundit"
@@ -643,7 +644,15 @@ sq:
   app errors:
     404 explanation: "Mund të provoni të filloni sërish nga <a href='%{reader_path}'>faqja kryesore</a>. A keni akoma probleme? Kontaktoni <a href='%{support_url}'>ekipin e ndihmës</a>."
     404 message: "Na vjen keq, faqja për po kërkoni nuk mund të gjendet."
+    408 message: "Fatkeqësisht, serverat tanë nuk u përgjigjën në kohë."
+    408 explanation: "Ju mund të provoni sërish duke <a href= '%{reload_path}'>ringarkuar</a> faqen. Ne jemi vënë në dijeni dhe do të merremi me çdo problem të vazhdueshëm sa më shpejt që të jetë e mundur."
   versions:
+    index title: "Versione të disponueshme"
     publisher widget title: "Publikuesi"
     visit publisher: "Vizitoni uebfaqen e publikuesit"
     read title: "Lexo këtë version"
+    other versions: "Versione të tjera nga ky publikues"
+    number of versions field: "Versione në total:"
+    number of languages field: "Gjuhët në total:"
+    language and count: "%{language_name} (%{language_count})"
+    public domain: "Domen publik"

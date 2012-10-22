@@ -635,6 +635,8 @@ en-GB:
       highlights: "Highlights:"
       'on': "On"
       'off': "Off"
+  app errors:
+    try again: "Try Again"
   versions:
     publisher widget title: "Publisher"
     public domain: "Public Domain"

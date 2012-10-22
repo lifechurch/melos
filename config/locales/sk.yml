@@ -177,6 +177,8 @@ sk:
     select another chapter: "Zvoľte si inú kapitolu"
     view in reader: "Čítať %{reference}"
   users:
+    unverified heading: "Takmer hotovo!"
+    unverified message: "Zdá sa, že sa chcete prihlásiť s účtom, ktorého vytvorenie nebolo úplne dokončené. Zostáva už len posledný krok: jednoducho kliknite na overovací odkaz v potvrdzujúcom emaili, ktorý ste dostali od YouVersion. Nemôžete ho nájsť? Skontrolujte si svoj priečinok so spamom, alebo si nechajte potvrdzujúci email <a href='%{resend_path}'>preposlať ešte raz</a>."
     reset connection: "Prepáčte, vyskytla sa chyba. Prosím odstráňte toto pripojenie a znova ho pridajte."
     settings: "Nastavenia"
     no connection friends: "Žiadny z vašich %{connection} priateľov ešte nie je zaregistrovaný na YouVersion."
@@ -646,6 +648,7 @@ sk:
     404 message: "Prepáčte, ale stránku, ktorú hľadáte, sa nepodarilo nájsť."
     408 message: "Žiaľ, časový limit na odpoveď nášho servera vypršal."
     408 explanation: "Môžete sa pokúsiť stránku <a href='%{reload_path}'>opäť načítať</a>. Na tento problém sme boli upozornení a odstránime ho tak rýchlo, ako to bude možné."
+    try again: "Skúste znova"
   versions:
     index title: "Dostupné preklady"
     publisher widget title: "Vydavateľ"

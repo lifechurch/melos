@@ -177,6 +177,8 @@ pt-BR:
     select another chapter: "Selecione um Capítulo Diferente"
     view in reader: "Ver %{reference} no Leitor"
   users:
+    unverified heading: "Quase Pronto!"
+    unverified message: "Parece que você está tentando entrar em uma conta que ainda não foi completamente estabelecida. Você tem mais uma etapa: simplesmente clique no link de verificação no e-mail que você recebeu do YouVersion. Não encontrou o e-mail? Cheque sua caixa de spam ou <a href='%{resend_path}'>reenvie e e-mail de confirmação</a>. "
     reset connection: "Desculpe, ocorreu um erro. Por favor desconecte a conexão e tente novamente. "
     settings: "Configurações"
     no connection friends: "Nenhum dos seus amigos do %{connection} parecem fazer parte do YouVersion ainda."
@@ -644,8 +646,9 @@ pt-BR:
   app errors:
     404 explanation: "Você pode tentar reiniciar na <a href='%{reader_path}'>página inicial</a>. Ainda tendo problemas? Contate nossa  <a href='%{support_url}'>equipe de suporte</a>."
     404 message: "Desculpe, a página que você está procurando não pôde ser encontrada. "
-    408 message: "Infelizmente nossos servidores não responderam no tempo adequado. "
-    408 explanation: "Nós podemos tentar novamente <a href= '%{recarregar_caminho}'>recarregando</a> a página. Nós fomos alertados e iremos endereçar quaisquer problemas persistentes o mais rápido possível. "
+    408 message: "Desculpe, mas nossos servidores não responderam no tempo adequado. "
+    408 explanation: "Nós fomos alertados e tentaremos resolver quaisquer problemas persistentes o quanto antes. Vamos ver se conseguimos  te levar de volta para sua leitura da Bíblia! "
+    try again: "Tente Novamente"
   versions:
     index title: "Versões Disponíveis "
     publisher widget title: "Editora\n"

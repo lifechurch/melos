@@ -177,6 +177,7 @@ mn:
     select another chapter: "Ѳѳр Бүлэг Сонгоно уу"
     view in reader: "Уншигчийн дээр %{reference} Үзэх"
   users:
+    unverified heading: "Бараг Дуслаа!"
     reset connection: "Уучлаарай, алдаа заалаа. Дахин шинээр холболт хийнэ үү. "
     settings: "Тохиргоо "
     no connection friends: "Одоогоор таны %{connection} найзууд YouVersion-д бүртгэгдээгүй байна."
@@ -195,6 +196,7 @@ mn:
     follow: "Дагах"
     follow user: "%{user} -г Дагах"
     unfollow: "Үл дагах "
+    unfollow user: "%{user} Дагахгүй"
     following title: "Миний Дагаж Байгаа Хүмүүс"
     user does not follow you: "%{user} таныг дагаагүй байна."
     recent activity: "Сүүлийн Үйл Явдал"
@@ -642,7 +644,16 @@ mn:
       'off': "Унтрах"
   app errors:
     404 explanation: "Харамсалтай нь, бид <em>%{requested_path}</em> хуудсыг олсонгүй. Хэрвээ та энэ хуудсыг байх ёстой гэж үзэж байвал, манай тусламжийн багт <a href='%{support_url}'>support team</a> хандаарай, эсвэл буцаад <a href='%{reader_path}'>уншигч</a> руу очоорой."
+    404 message: "Уучлаарай, Таны хайж байгаа хуудас олдсонгүй."
+    408 message: "Харамсалтай нь, бидний серверүүд хариулахгүй байна."
+    try again: "Дахин Оролдоно уу"
   versions:
+    index title: "Унших Боломжтой Орчуулагууд"
+    publisher widget title: "Хэвлэгч"
     visit publisher: "Нийтлэгчийн Вэбсайтад Зочилох "
     read title: "Энэ Хувилбарыг Унших "
+    other versions: "Энэ Хэвлэгчийн бусад Орчуулгууд"
+    number of versions field: "Нийт Орчуулгууд:"
+    number of languages field: "Нийт Хэл:"
+    language and count: "%{language_name} (%{language_count})"
     public domain: "Нийтийн Хүртээл "

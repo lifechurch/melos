@@ -646,6 +646,7 @@ id:
     404 message: "Mohon maaf, halaman yang anda cari tidak dapat ditemukan."
     408 message: "Server tidak dapat merespon tepat waktu"
     408 explanation: "Anda bisa mencoba lagi dengan <a href= %{reload_path}>memuat ulang</a> halaman. Kami sudah diingatkan dan akan secepatnya mengatasi segala permasalahan yang tetap berlangsung."
+    try again: "Coba lagi"
   versions:
     index title: "Versi tersedia"
     publisher widget title: "Penerbit"
