@@ -177,6 +177,8 @@ zh-TW:
     select another chapter: "選擇不同的章節"
     view in reader: "在閱讀版面查看%{reference}"
   users:
+    unverified heading: "幾乎完成了！"
+    unverified message: "看起來您要登錄的賬戶還未完全設置好。不過只差一步了：您只要點擊從YouVersion 發來的確認郵件裡的賬戶驗證連接就行了。若是找不到那份郵件，請查看一下您的垃圾郵件箱，或點擊<a href='%{resend_path}'>重發確認郵件</a>。"
     reset connection: "抱歉，出錯了！請移除這個連接然後重新連接。"
     settings: "設定"
     no connection friends: "看來您在%{connection}的朋友還沒有 YouVersion。"
@@ -646,9 +648,10 @@ zh-TW:
     404 message: "非常抱歉！您搜尋的頁面並不存在。"
     408 message: "很遺憾我們的伺服器沒有及時響應。"
     408 explanation: "您可嘗試 <a href= %{reload_path}>重新載入</a> 頁面。 我們已經接到警示並將盡快解決一切持續存在的問題。"
+    try again: "再試一次"
   versions:
     index title: "可用的版本"
-    publisher widget title: "發行人"
+    publisher widget title: "出版社"
     visit publisher: "造訪出版社的網站"
     read title: "閱讀此版本"
     other versions: "此出版社發行的其他版本"

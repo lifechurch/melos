@@ -177,6 +177,8 @@ it:
     select another chapter: "Scegli un Altro Capitolo"
     view in reader: "Visualizza %{reference} nel Lettore"
   users:
+    unverified heading: "Quasi Fatto!"
+    unverified message: "Sembra che tu stia cercando di accedere a un account che non è stato completamente impostato. Ti rimane solo un altro passo: clicca semplicemente sul link di verifica nell'e-mail di conferma che hai ricevuto da YouVersion. Non lo trovi? Controlla la tua cartella di posta indesiderata o <a href='%{resend_path}'>invia nuovamente l'e-mail di conferma</a>."
     reset connection: "Ci dispiace, c'è stato un errore. Rimuovi per favore questo collegamento e poi ricollegati."
     settings: "Opzioni"
     no connection friends: "Sembra che nessuno dei tuoi amici %{connection} sia ancora su YouVersion."
@@ -449,7 +451,7 @@ it:
     end date _ before date string: "Data Fine: "
     are you behind: "Sei rimasto un po' indietro?"
     do you want to reset: "Vuoi ricominciare?"
-    catch up text: "Sposta la lettura di oggi all'ultima lettura completata (il giorno % {last_completed_day} del piano)."
+    catch up text: "Sposta la lettura di oggi all'ultima lettura completata (day %{last_completed_day} del piano)."
     catch up description only: "Se rimarrai indietro sulle tue letture, non preoccuparti! Puoi sempre spostare la lettura attuale all'ultima lettura completata."
     catch me up: "Aggiornami"
     restart description: "Puoi ricominciare il tuo piano. Le informazioni sulle tue letture e progresso saranno resettate e comincerai dall'inizio."
@@ -654,4 +656,5 @@ it:
     other versions: "Altre versioni di Questo Editore "
     number of versions field: "Versioni complessive:"
     number of languages field: "Lingue complessive:"
+    language and count: "%{language_name} (%{language_count})"
     public domain: "Dominio Pubblico"

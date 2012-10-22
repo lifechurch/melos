@@ -177,6 +177,8 @@ ms:
     select another chapter: "Pilihilah Bab yang Berbeza"
     view in reader: "Lihat %{reference} di Pembaca"
   users:
+    unverified heading: "Hampir Selesai!"
+    unverified message: "Rupanya anda cuba log masuk akaun yang belum selesai didaftarkan. Hanya ada satu langkah terakhir: sila klik link pengesahan dalam e-mel pengesahan yang anda terima daripada YouVersion. Tidak terjumpakah? Sila periksa folder spam anda ataupun <a href='%{resend_path}'>kirim lagi e-mel pengesahan</a>."
     reset connection: "Maaf, kesilapan berlaku. Sila putuskan hubungan, kemudian sambung kembali."
     settings: "Setting"
     no connection friends: "Rupanya sahabat %{connection} anda belum menggunakan YouVersion."
@@ -646,6 +648,7 @@ ms:
     404 message: "Maaf, halaman yang diminta tidak tercari."
     408 message: "Maaf, server kami terlewat respons."
     408 explanation: "Anda boleh cuba <a href= %{reload_path}>reload</a> halaman itu. Kami sudah diberitahu tentang hal ini dan akan menyelesaikan masalah yang berterusan secepat mungkin."
+    try again: "Cuba lagi"
   versions:
     index title: "Versi yang Tersedia"
     publisher widget title: "Penerbit"

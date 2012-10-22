@@ -177,6 +177,8 @@ vi:
     select another chapter: "Chọn một đoạn khác"
     view in reader: "Xem %{reference} trong bài đọc"
   users:
+    unverified heading: "Gần xong rồi!"
+    unverified message: "Hình như bạn đang cố đăng nhập với một tài khoản chưa được thiết lập hoàn chỉnh. Chỉ còn một bước nữa: nhấp vào đường dẫn trong email xác nhận từ YouVersion. Nếu bạn không tìm thấy nó, hãy kiểm tra hòm thư rác của bạn, hoặc yêu cầu <a href='%{resend_path}'>gởi lại email xác nhận</a>."
     reset connection: "Có lỗi kỹ thuật, xin hãy tháo bỏ và kết nối lại."
     settings: "Cài đặt"
     no connection friends: "Chưa có bạn bè nào của bạn trên %{connection} sử dụng YouVersion."
@@ -425,8 +427,8 @@ vi:
     day: "Ngày"
     month: "Tháng"
     publisher: "Nhà phát hành"
-    success widget title: "Khai triển kế hoạch cách hiệu quả nhất"
-    success blurb: "Các kế hoạch đọc Kinh Thánh là cách tốt nhất để Lời Chúa trở thành một phần trong đời sống hằng ngày của bạn. Nếu bạn bị rớt lại trong kế hoạch, chúng tôi đã có vài mẹo sau để giúp bạn theo kịp, vì nghe tiếng Chúa mỗi ngày thật quan trọng lắm!"
+    success widget title: "Khai triển tối đa kế hoạch đọc"
+    success blurb: "Có kế hoạch đọc Kinh Thánh là cách tốt nhất để Lời Chúa trở thành một phần trong đời sống hằng ngày. Nếu bạn hay bị trễ kế hoạch, chúng tôi đã có vài mẹo sau để giúp bạn, vì nghe được tiếng Chúa mỗi ngày thật quan trọng lắm!"
     success blog link title: "Đọc bài blog"
     a users plans: "Kế hoạch của %{username}"
     you have no plans: "Hiện giờ bạn chưa đăng ký kế hoạch nào."
@@ -646,6 +648,7 @@ vi:
     404 message: "Xin lỗi bạn, chúng tôi không tìm được trang mà bạn yêu cầu."
     408 message: "Phản hồi chậm từ các máy chủ."
     408 explanation: "Bạn có thể thử <a href= '%{reload_path}'>tải lại</a> trang này. Chúng tôi sẽ cố gắng giải quyết cách nhanh chóng cho bất cứ vấn đề nào bị kéo dài."
+    try again: "Thử lại"
   versions:
     index title: "Các bản dịch có sẵn"
     publisher widget title: "Phát hành"

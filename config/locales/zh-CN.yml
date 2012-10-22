@@ -177,6 +177,8 @@ zh-CN:
     select another chapter: "选择另外的章节"
     view in reader: "在阅读器中查看 %{reference}"
   users:
+    unverified heading: "几乎完成了！"
+    unverified message: "看起来您要登录的账户还未完全设置好。不过只差一步了：您只要点击从 YouVersion 发来的确认邮件里的账户验证连接就行了。若是找不到那份邮件，请查看一下您的垃圾邮件箱，或点击<a href='%{resend_path}'>重发确认邮件</a>。"
     reset connection: "很抱歉，出错了！请移除这个连接然后重新连接！"
     settings: "设置"
     no connection friends: "您在 %{connection}上 的朋友现在不在 YouVersion 上。"
@@ -646,6 +648,7 @@ zh-CN:
     404 message: "很抱歉！您要寻找的页面未被找到！"
     408 message: "很遗憾我们的服务器没有及时响应。"
     408 explanation: "您可尝试 <a href= %{reload_path}>重新载入</a> 页面。我们已经接到警示并将尽快解决一切持续存在的问题。"
+    try again: "再试一次"
   versions:
     index title: "可用的版本"
     publisher widget title: "发行商"

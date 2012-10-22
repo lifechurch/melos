@@ -81,7 +81,7 @@ nl:
   lifechurch short url: "LifeChurch.tv"
   about: "Over"
   jobs: "Vacatures"
-  privacy policy: "Privacy Policy"
+  privacy policy: "Privacybeleid"
   terms: "Voorwaarden"
   press: "Pers"
   get support: "Ondersteuning"
@@ -177,6 +177,8 @@ nl:
     select another chapter: "Kies een ander Hoofdstuk"
     view in reader: "Bekijk %{reference} in Lezer"
   users:
+    unverified heading: "Bijna Klaar!"
+    unverified message: "Het lijkt erop dat je probeert om je in te loggen op een account die niet volledig is ingesteld. Je hoeft alleen nog maar één stap voltooien: gewoon op de verificatie link in de bevestigingsmail die je van YouVersion hebt ontvangen klikken. Kan je het niet vinden? Controleer dan je spam map  of <a href='%{resend_path}'>ontvang een nieuwe bevestigings- mail</a>."
     reset connection: "Sorry, er is een fout opgetreden. Gelieve de verbinding verbreken en te herstellen."
     settings: "Instellingen"
     no connection friends: "Geen van je %{connection} vrienden lijkt YouVersion te gebruiken."
@@ -646,6 +648,7 @@ nl:
     404 message: "Sorry, de pagina die je zoekt kan niet worden gevonden."
     408 message: "Jammer genoeg konden onze servers niet tijdig reageren."
     408 explanation: "Je kan het nog eens proberen door de pagina te <a href= %{reload_path}>herladen</a>. We zijn op de hoogte van het probleem en zullen het zo snel mogelijk verhelpen."
+    try again: "opnieuw proberen"
   versions:
     index title: "Beschikbare Versies"
     publisher widget title: "Uitgever"

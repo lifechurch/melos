@@ -177,6 +177,8 @@ sv:
     select another chapter: "Välj ett annat kapitel"
     view in reader: "Visa %{reference} i läsare"
   users:
+    unverified heading: "Nästan klar!"
+    unverified message: "Det ser ut som att du försöker logga in med ett konto som inte färdigkonfigurerat än.  Du har bara ett steg kvar: klicka helt enkelt på verifieringslänken i e-brevet med bekräftelse som du har fått från YouVersion. Kan du inte hitta det? Kolla bland skräppost eller <a href='%{resend_path}'>Skicka om e-brevet med bekräftelse</a>."
     reset connection: "Ett fel har tyvärr inträffat. Stäng ner och försök sedan att återansluta."
     settings: "Inställningar"
     no connection friends: "Ingen av dina vänner på %{connection} finns ännu på YouVerson."
@@ -646,6 +648,7 @@ sv:
     404 message: "Tyvärr, men sidan du letar efter kan inte hittas."
     408 message: "Tyvärr svarade inte våra servrar i tid."
     408 explanation: "Du kan försöka igen genom att <a href= %{reload_path}>uppdatera</a> sidan. Vi har blivit informerade och kommer se till att åtgärda eventuella problem så fort som möjligt."
+    try again: "Försök igen"
   versions:
     index title: "Tillgängliga översättningar"
     publisher widget title: "Utgivare"
