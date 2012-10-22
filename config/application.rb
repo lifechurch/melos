@@ -127,6 +127,9 @@ module YouversionWeb
 
       #legacy localizations
       r301 %r{^/(zh_CN|zh_TW|pt_BR)(.*)}, Proc.new{ |path, rack_env| "#{path.to_s.sub('_', '-')}" }
+      # redirect alternate portugese to pt-BR until we support pt-PT
+      r301 %r{^/(pt|pt_PT|pt-PT)(.*)}, '/pt-BR$2'
+      r301 %r{^/(es_MX|es-MX|es_ES|es-ES)(.*), '/es$2'
 
       ### Pass-through to 2.0
       # doesn't have SSL cert, use http protocol
