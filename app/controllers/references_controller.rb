@@ -50,7 +50,7 @@ class ReferencesController < ApplicationController
     set_last_read @reference
 
     # If the reference was a single verse, set that up so we can display the modal
-    if ref_hash[:verses].is_a?(Fixnum) && (external_request? || params[:modal] == "true") && params[:modal] != "false"
+    if ref_hash[:verses].present? && (external_request? || params[:modal] == "true") && params[:modal] != "false"
       @single_verse = Reference.new(ref_hash)
     end
 
