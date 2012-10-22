@@ -136,7 +136,7 @@ class Plan < YouVersion::Resource
       # to avoid adding unecessarry spacing
       spacer = YouVersion::Resource.html_present?(response.additional_content) ? '' : '</p><p>'
       @reading.devotional = @reading.devotional.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer) if @reading.devotional
-      @reading.devotional = "<p>" << @reading.devotional << "</p>" if spacer.present?
+      @reading.devotional = "<p>" << @reading.devotional << "</p>" if spacer.present? && @reading.devotional
 
       @reading.references = response.references.map do |data|
         Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default),
