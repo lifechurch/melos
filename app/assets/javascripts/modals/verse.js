@@ -6,7 +6,7 @@ function VerseModal(opts) {
   this.close    = this.window.find(".close");
 
   // show the modal
-  var verses = $("article").data("selected-verses"); // value can be a single verse ("1") or multiple ("1,2,3") conditional not passing for multi selected verses
+  var verses = $("article").data("selected-verses"); // value can be a single verse ("1") or multiple ("1,2,3")
   if (verses && this.enabled()) {
     if (verses >= 1) { this.show(); } // given ("1,2,3") this conditional does not pass for multi selected verses ex. /bible/1/jhn.1.3-5.kjv
   }
