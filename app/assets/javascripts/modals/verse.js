@@ -6,7 +6,7 @@ function VerseModal(opts) {
   this.close    = this.window.find(".close");
 
   // show the modal
-  var verses = $("article").data("selected-verses");
+  var verses = $("article").data("selected-verses"); // value can be a single verse ("1") or multiple ("1,2,3") hence the first conditional not passing for multi selected verses
   if (verses && this.enabled()) {
     if (verses >= 1) { this.show(); }
   }
