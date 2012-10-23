@@ -501,8 +501,11 @@ Reader.prototype = {
         method: "get",
         dataType: "json",
         success: function(ref) {
-          article.html(ref.content);
-          thiss.loadHighlights("#version_secondary");
+          article.fadeOut(100, function() {
+            article.html(ref.content);
+            article.fadeIn(200);
+            thiss.loadHighlights("#version_secondary");
+          });
         },//end success function
         error: function(xhr, status, err) {
           // set HTML to error HTML
