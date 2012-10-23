@@ -1,6 +1,7 @@
 object @reference
+extends "references/show"
 
-node(:error){|ref| 'Reference not found.'}
-node(:reference){|ref| ref.to_s}
-node(:version){|ref| (ref.version || @version).to_s}
-node(:version_id){|ref| (ref.version || @version).try :id}
+node(:content) do |ref|
+  "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"
+end
+node(:error){|ref| {message: 'Reference not found.', params: params.to_s}}

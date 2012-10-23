@@ -425,15 +425,17 @@ Reader.prototype = {
         dataType: "json",
         success: function(ref) {
           thiss.html(ref.content);
-          console.log('success setting secondary version');
-          console.log(ref);
         },//end success function
-        error: function(req, status, err) {
+        error: function(xhr, status, err) {
           // set HTML to error HTML
-          if(status = '404'){
-            thiss.html(thiss.data('404-content'));
-          }
-          console.log('error setting secondary version');
+          if(xhr.status == '404'){
+            var ref = jQuery.parseJSON(xhr.responseText);
+            thiss.html(ref.content);
+          }else{thiss.html("<h1>Error Loading Secondary Version</h1>\
+                            <p>You might try <a href=''>reloading</a>. \
+                            Still having trouble? Contact our \
+                            <a href='http://support.youversion.com' \
+                            target='_blank'>support team</a>.</p>");}
         }//end error function
       });//end ajax delegate
 
