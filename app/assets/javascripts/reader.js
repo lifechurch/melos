@@ -1,4 +1,36 @@
 // Bible Reader
+function isColorDark(hex_color) {
+    //Using same code as android for this algorithm - EP
+    //perform math for WCAG1
+    var brightnessThreshold = 125;
+    var colorThreshold = 500;
+
+    // testing FG white
+    var fr = 255;
+    var fg = 255;
+    var fb = 255;
+
+    // hex color as RGB
+    var br = parseInt(hex_color.substring(0, 2), 16);
+    var bg = parseInt(hex_color.substring(2, 4), 16);
+    var bb = parseInt(hex_color.substring(4, 6), 16);
+
+    var bY= ((br * 299) + (bg * 587) + (bb * 114)) / 1000;
+    var fY= ((255 * 299) + (255 * 587) + (255 * 114)) / 1000;
+    var brightnessDifference = Math.abs(bY-fY);
+
+    var colorDifference = (Math.max (fr, br) - Math.min (fr, br)) +
+        (Math.max (fg, bg) - Math.min (fg, bg)) +
+        (Math.max (fb, bb) - Math.min (fb, bb));
+
+    if ((brightnessDifference >= brightnessThreshold) && (colorDifference >= colorThreshold))   {
+      return true;
+    } else if ((brightnessDifference >= brightnessThreshold) || (colorDifference >= colorThreshold)){
+      return true;
+    }
+
+    return false;
+}
 
 function Reader(opts) {
 
@@ -36,6 +68,7 @@ function Reader(opts) {
   // menus
 
   this.initSelectedVerses();
+  this.initSecondaryVersion();
   this.initHighlights();
   this.initAudioPlayer();
   this.initTranslationNotes();
@@ -272,8 +305,53 @@ Reader.prototype = {
     this.selected.verse_number_ranges = verse_ranges;
   },
 
-  updateMenus : function() {
+  loadHighlights : function(article_id) {
+    var chapter = $(article_id).find('.chapter');
+    var version = $(article_id).find('.version').data("vid");
+    var verse = null;
+    var flag = 'highlighted';
+    var thiss = this;
 
+    if(!chapter.length || !version){return;}
+
+    $.ajax({
+      url: "/bible/" + version + "/" + chapter.data("usfm") + "/highlights",
+      method: "get",
+      dataType: "json",
+      success: function(highlights) {
+
+        //reset any old highlights in the current chapter
+        chapter.find('.verse.' + flag).css("background-color", 'transparent');
+        chapter.find('.verse.' + flag).removeClass(flag);
+
+        //apply the new highlights
+        $.each(highlights, function(i, highlight) {
+            verse = chapter.find(".verse.v" + highlight.verse);
+            verse.addClass(flag);
+
+            verse.css("background-color", "#" + highlight.color);
+            if (isColorDark(highlight.color)) { verse.addClass("dark_bg"); }
+
+            //add the highlight ids (so if user clears they can clear them all)
+            highlight_ids = verse.attr('data-highlight-ids');
+            if (highlight_ids){
+              highlight_ids = highlight_ids.split(',');
+            }else{highlight_ids = [];}
+            highlight_ids.push(highlight.id);
+            verse.attr('data-highlight-ids', highlight_ids.join(','));
+        });//end highlights each
+
+        // have to reparse the verses again due to adding new attribute values
+        thiss.parseVerses();
+
+      },//end success function
+      error: function(req, status, err) {
+        //console.log(status + err);
+      }//end error function
+    });//end ajax delegate
+  },
+
+  updateMenus : function() {
     // Set total selected verse count
       var total = this.selected.verse_usfms.length;
       this.selected_menu.setTotal(total);
@@ -283,7 +361,6 @@ Reader.prototype = {
 
     // Set selected references
       this.selected_menu.setSelectedRefs( this.selected.verse_usfm_ranges );
-
   },
 
   generateLinks : function( ) {
@@ -413,90 +490,41 @@ Reader.prototype = {
 
   },
 
-  initHighlights : function() {
+  initSecondaryVersion : function() {
+    var article = $('#version_secondary');
+    var v_id = getCookie('alt_version') || 1;
+    var usfm = article.data('usfm');
+    var thiss = this;
 
-    function is_dark(hex_color) {
-      //Using same code as android for this algorithm - EP
-      //perform math for WCAG1
-      var brightnessThreshold = 125;
-      var colorThreshold = 500;
-
-      // testing FG white
-      var fr = 255;
-      var fg = 255;
-      var fb = 255;
-
-      // hex color as RGB
-      var br = parseInt(hex_color.substring(0, 2), 16);
-      var bg = parseInt(hex_color.substring(2, 4), 16);
-      var bb = parseInt(hex_color.substring(4, 6), 16);
-
-      var bY= ((br * 299) + (bg * 587) + (bb * 114)) / 1000;
-      var fY= ((255 * 299) + (255 * 587) + (255 * 114)) / 1000;
-      var brightnessDifference = Math.abs(bY-fY);
-
-      var colorDifference = (Math.max (fr, br) - Math.min (fr, br)) +
-          (Math.max (fg, bg) - Math.min (fg, bg)) +
-          (Math.max (fb, bb) - Math.min (fb, bb));
-
-      if ((brightnessDifference >= brightnessThreshold) && (colorDifference >= colorThreshold))   {
-        return true;
-      } else if ((brightnessDifference >= brightnessThreshold) || (colorDifference >= colorThreshold)){
-        return true;
-      }
-
-      return false;
-    }
-
-    var _this = this;
-
-    $("#version_primary, #version_secondary").each( function() {
-      var chapter = $(this).find('.chapter');
-      var version = $(this).find('.version').data("vid");
-      var verse = null;
-      var flag = 'highlighted';
-
-      if(!chapter.length || !version){return;}
-
-      $.ajax({
-        url: "/bible/" + version + "/" + chapter.data("usfm") + "/highlights",
+    $.ajax({
+        url: "/bible/" + v_id + "/" + usfm + ".json",
         method: "get",
         dataType: "json",
-        success: function(highlights) {
-
-          //reset any old highlights in the current chapter
-          chapter.find('.verse.' + flag).css("background-color", 'transparent');
-          chapter.find('.verse.' + flag).removeClass(flag);
-
-          //apply the new highlights
-          $.each(highlights, function(i, highlight) {
-              verse = chapter.find(".verse.v" + highlight.verse);
-              verse.addClass(flag);
-
-              verse.css("background-color", "#" + highlight.color);
-              if (is_dark(highlight.color)) { verse.addClass("dark_bg"); }
-
-              //add the highlight ids (so if user clears they can clear them all)
-              highlight_ids = verse.attr('data-highlight-ids');
-              if (highlight_ids){
-                highlight_ids = highlight_ids.split(',');
-              }else{highlight_ids = [];}
-              highlight_ids.push(highlight.id);
-              verse.attr('data-highlight-ids', highlight_ids.join(','));
-          });//end highlights each
-
-          // have to reparse the verses again due to adding new attribute values
-          _this.parseVerses();
-
+        success: function(ref) {
+          article.fadeOut(100, function() {
+            article.html(ref.content);
+            article.fadeIn(200);
+            thiss.loadHighlights("#version_secondary");
+          });
         },//end success function
-        error: function(req, status, err) {
-          //console.log(status + err);
+        error: function(xhr, status, err) {
+          // set HTML to error HTML
+          if(xhr.status == '404'){
+            var ref = jQuery.parseJSON(xhr.responseText);
+            article.html(ref.content);
+          }else{article.html("<h1>Error Loading Secondary Version</h1>\
+                            <p>You might try <a href=''>reloading</a>. \
+                            Still having trouble? Contact our \
+                            <a href='http://support.youversion.com' \
+                            target='_blank'>support team</a>.</p>");}
         }//end error function
       });//end ajax delegate
-    });//end primary/secondary each
+
   },
 
-
+  initHighlights : function() {
+    this.loadHighlights("#version_primary");
+  },
 
   // Public: returns true/false if reader is in full screen mode
   isFullScreen : function() {

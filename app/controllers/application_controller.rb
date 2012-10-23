@@ -265,11 +265,11 @@ class ApplicationController < ActionController::Base
       begin
         # validate that the preferred secondary version has the reference in question
         includes_ref = Version.find(cookies[:alt_version]).include?(ref)
-        raise BadSecondaryVersionError unless includes_ref
       rescue
         # bad version was in cookie, nuke it
         cookies[:alt_version] = nil
       end
+      raise BadSecondaryVersionError unless includes_ref
     end
 
     return cookies[:alt_version] if cookies[:alt_version].present?

@@ -1,5 +1,6 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
+  before_filter :strip_format, only: [:show]
   rescue_from InvalidReferenceError, with: :ref_not_found
 
   def show
@@ -90,6 +91,15 @@ class ReferencesController < ApplicationController
 
   def set_nav
     @nav = :bible
+  end
+
+  def strip_format
+    # we allow .s in our reference constraint, so we pull
+    # the format manually in this case
+    if params[:reference].try(:"end_with?", '.json')
+      params[:reference].gsub!('.json', '')
+      request.format = :json
+    end
   end
 
   protected
