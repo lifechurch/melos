@@ -22,7 +22,7 @@ class YvApi
     # we don't use the cache expiration in the cache key
     # so we need to remove the cache_for if invalid
     # so we don't pull from the cache when we shouldn't
-    opts.delete :cache_for if opts[:cache_for] <= 0
+    opts.delete :cache_for if opts[:cache_for].try(:<= , 0)
 
     Rails.logger.apc "** YvApi.get: Calling #{resource_url} with query:", :info
     Rails.logger.apc request_opts[:query], :info
