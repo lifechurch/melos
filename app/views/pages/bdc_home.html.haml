@@ -4,7 +4,7 @@
 - content_for :stylesheets do
   = stylesheet_link_tag "bdc_home"
 
-= cache "bdc_welcome", expires_in: 5.minutes do
+= cache "bdc_welcome", expires_in: a_short_time do
   %article
     %div#hero
       %div#hero_content

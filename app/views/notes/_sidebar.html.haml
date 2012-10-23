@@ -27,10 +27,10 @@
                     %br
                     %a{href: note_path(i.note_hash.id)}= i.note_hash.username
     - else
-      = render_cell :notes_list_widget, :display, notes: Note.all(language_iso: I18n.locale, cache_for: 2.minutes), title: t("notes.community notes")
+      = render_cell :notes_list_widget, :display, notes: Note.all(language_iso: I18n.locale, cache_for: a_very_short_time), title: t("notes.community notes")
 
   - else
-    = render_cell :notes_list_widget, :display, notes: Note.all(language_iso: I18n.locale, cache_for: 2.minutes), title: t("notes.community notes")
+    = render_cell :notes_list_widget, :display, notes: Note.all(language_iso: I18n.locale, cache_for: a_very_short_time), title: t("notes.community notes")
 
   = render "shared/widget_ad_bible_app"
 

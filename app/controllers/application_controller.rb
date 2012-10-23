@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_long_time, :a_very_long_time, :bdc_user?
+  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
@@ -296,7 +296,7 @@ class ApplicationController < ActionController::Base
   def tend_caches
     @@last_clear_time ||= Time.zone.now
 
-    if @@last_clear_time < 15.minutes.ago
+    if @@last_clear_time < Cfg.memoization_cache_expiration.to_f.minutes.ago
       # Clear all versions, languages, and default versions
       # from memoization caches
       Version.clear_memoization

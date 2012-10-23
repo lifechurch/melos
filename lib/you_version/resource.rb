@@ -272,22 +272,28 @@ module YouVersion
       end
     end
     def self.a_very_long_time
-      12.hours
+      Cfg.very_long_cache_expiration.to_f.minutes
+    end
+    def self.a_long_time
+      Cfg.long_cache_expiration.to_f.minutes
+    end
+    def self.a_short_time
+      Cfg.short_cache_expiration.to_f.minutes
+    end
+    def self.a_very_short_time
+      Cfg.very_short_cache_expiration.to_f.minutes
     end
     def a_very_long_time
       self.class.a_very_long_time
     end
-    def self.a_long_time
-      45.minutes
-    end
     def a_long_time
       self.class.a_long_time
     end
-    def self.a_short_time
-      3.minutes
-    end
     def a_short_time
       self.class.a_short_time
+    end
+    def a_very_short_time
+      self.class.a_very_short_time
     end
     attr_accessor :attributes, :associations
 

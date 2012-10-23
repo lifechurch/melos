@@ -123,14 +123,20 @@ module ApplicationHelper
     html
   end
 
+  def a_very_short_time
+    Cfg.very_short_cache_expiration.to_f.minutes
+  end
+
+  def a_short_time
+    Cfg.short_cache_expiration.to_f.minutes
+  end
+
   def a_long_time
-    #TODO: Cache timers should probably all come from Config/ENV vars
-    YouVersion::Resource.a_long_time
+    Cfg.long_cache_expiration.to_f.minutes
   end
 
   def a_very_long_time
-    #TODO: Cache timers should probably all come from Config/ENV vars
-    YouVersion::Resource.a_very_long_time
+    Cfg.very_long_cache_expiration.to_f.minutes
   end
 
   private
