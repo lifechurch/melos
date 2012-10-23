@@ -1,5 +1,4 @@
 class PopularNotesListWidgetCell < Cell::Rails
-  helper ApplicationHelper
 
   def display(opts = {})
     @notes = opts[:notes]

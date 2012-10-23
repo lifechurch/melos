@@ -30,6 +30,7 @@ class Plan < YouVersion::Resource
 
   def self.find(id, opts = {}, &block)
     id = id_from_param id
+    opts[:cache_for] ||= a_long_time
 
     super(id, opts) do |errors|
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
@@ -42,6 +43,7 @@ class Plan < YouVersion::Resource
 
   def self.all(opts = {})
     opts[:query] ||= '*'
+    opts[:cache_for] ||= a_long_time
     super(opts)
   end
 

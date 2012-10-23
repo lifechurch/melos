@@ -20,7 +20,7 @@ class Search
     params[:version_id] = @version_id = Version.id_from_param(opts[:version_id]) if opts[:version_id].present?
     # API says pass only version_id OR language_tag
     params[:language_tag] = opts[:locale].to_s if @version_id.blank?
-    params[:cache_for] = 2.minutes
+    params[:cache_for] = a_very_short_time
 
     @responses = Hashie::Mash.new()
 

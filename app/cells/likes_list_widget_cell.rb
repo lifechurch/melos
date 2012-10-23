@@ -1,5 +1,4 @@
 class LikesListWidgetCell < Cell::Rails
-  helper ApplicationHelper
 
   def display(opts = {})
     @likes = opts[:likes]

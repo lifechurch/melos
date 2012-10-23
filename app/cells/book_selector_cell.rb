@@ -1,7 +1,6 @@
 class BookSelectorCell < Cell::Rails
-include ApplicationHelper
-helper_method :bible_path
-  cache :display, :expires_in => 6.hours do |cell, opts|
+
+  cache :display, :expires_in => 1.hour do |cell, opts|
     "#{opts[:version]}_#{I18n.locale}"
   end
 

@@ -1,5 +1,5 @@
 %footer#footer{:role => "contentinfo"}
-  = cache "#{@site}_footer_#{I18n.locale}", expires_in: 3.minutes do
+  = cache "#{@site}_footer_#{I18n.locale}", expires_in: a_short_time do
     %p.float_left
       &copy;
       = Date.today.year

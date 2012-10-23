@@ -1,11 +1,11 @@
 %header#header{:role => 'banner'}
-  = cache "header_logo_#{@site}", expires_in: 1.hour do
+  = cache "header_logo_#{@site}", expires_in: a_short_time do
     %a#yv_logo{:href => '/', style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})" }
       =@site.title
   %nav
     %ul
       - if current_auth
-        = cache "header_#{current_auth.username}_#{I18n.locale}", expires_in: 10.minutes do
+        = cache "header_#{current_auth.username}_#{I18n.locale}", expires_in: a_short_time do
           %li
             %a#header_profile_trigger{:href => '#'}
               %span
@@ -27,7 +27,7 @@
                 =t("find friends")
 
       - else
-        = cache "header_anon_#{I18n.locale}", expires_in: 1.hour do
+        = cache "header_anon_#{I18n.locale}", expires_in: a_short_time do
           %li
             %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), :class=> "sign_in"
           %li
