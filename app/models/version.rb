@@ -173,6 +173,12 @@ class Version < YouVersion::Resource
   def publisher
     detailed_attributes.publisher || Hashie::Mash.new({"id"=>nil, "name"=>nil, "url"=>nil, "description"=>nil})
   end
+  def self.cache_length
+    Cfg.version_data_cache_expiration.to_f.minutes || a_long_time
+  end
+  def cache_length
+    self.class.cache_length
+  end
 
   private
    def self.versions
@@ -189,12 +195,6 @@ class Version < YouVersion::Resource
 
     response = YvApi.get("bible/configuration", cache_for: cache_length)
     @defaults = Hash[response.default_versions.map {|d| [d.language_tag, d.id]}]
-  end
-  def self.cache_length
-    Cfg.version_data_cache_expiration || a_long_time
-  end
-  def cache_length
-    self.class.cache_length
   end
   def detailed_attributes
     #attributers that can only be found with a specific /version call
