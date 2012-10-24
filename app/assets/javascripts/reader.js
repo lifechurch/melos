@@ -486,8 +486,15 @@ Reader.prototype = {
       for (var i = 0; i < verses.length; i++) {
         $(".verse.v" + verses[i]).addClass("selected");
       }
-    }
 
+      $(window).load(function() {
+        //reader is loaded, scroll to first verse
+        var first = $('#version_primary .selected:first')
+        var newPosition = first.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(first.css('line-height'))/4;
+        $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: 'easeInOutCirc', duration:1200});
+        console.log('did it');
+      });
+    }
   },
 
   initSecondaryVersion : function() {

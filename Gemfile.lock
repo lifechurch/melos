@@ -1,5 +1,5 @@
 GEM
-  remote: http://bundler-api.herokuapp.com/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.1.2)
       actionpack (= 3.1.2)
