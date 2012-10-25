@@ -156,10 +156,13 @@ Reader.prototype = {
 
   scrollToSelectedVerse : function(easingType) {
     // TODO: set this up in a way we can cancel if user scrolls before it happens
+    easingType = easingType || 'easeInOutCirc';
     var first = $('#version_primary .selected:first');
     if (first.length){
       var newPosition = first.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(first.css('line-height'))/4;
-      $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: easingType || 'easeInOutCirc', duration:1200});
+      if(app.getPage().MODERN_BROWSER){
+        $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: easingType, duration:1200});
+      }else {$(window).scrollTop(newPosition);}
     }
   },
 
