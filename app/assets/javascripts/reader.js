@@ -154,6 +154,18 @@ Reader.prototype = {
     this.parseVerses();
   },
 
+  scrollToSelectedVerse : function(easingType) {
+    // TODO: set this up in a way we can cancel if user scrolls before it happens
+    easingType = easingType || 'easeInOutCirc';
+    var first = $('#version_primary .selected:first');
+    if (first.length){
+      var newPosition = first.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(first.css('line-height'))/4;
+      if(app.getPage().MODERN_BROWSER){
+        $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: easingType, duration:1200});
+      }else {$(window).scrollTop(newPosition);}
+    }
+  },
+
   referenceParam : function( opts ) {
     var usfm    = opts.usfm || undefined;
     var version = opts.version || undefined;
@@ -161,9 +173,9 @@ Reader.prototype = {
   },
 
   parseVerseClasses : function(v) {
-    var classes = v.attr('class').split(/\s+/);
+    var classes = v.attr('class').split(/\s+/) || [];
     var v_classes = [];
-        classes.map( function(val,i) {
+        $(classes).each( function(i, val) {
           var match = val.match(/v[0-9]+/g);
           if(match && match.length) { v_classes.push(match[0].toString())}
         });
@@ -208,7 +220,7 @@ Reader.prototype = {
         var _nums   = thiss.parseVerseNums(verse);
 
         // aggregate all selected verse usfms and params
-        $(_usfms).each( function(i,usfm) {
+        $(_usfms).each( function(i, usfm) {
           if(selected.verse_usfms.indexOf(usfm) == -1) {  //usfm reference not in array
              selected.verse_usfms.push(usfm);                                                    // ex. 2CO.1.1
              selected.verse_params.push( thiss.referenceParam({usfm: usfm, version: _vid } ));  // ex. 2CO.1.1.1-VID
@@ -481,13 +493,18 @@ Reader.prototype = {
     // .attr retrieves value as string and doesn't attempt to cast to other type.
     var verses = $("article").attr("data-selected-verses");
         verses = verses.split(",");
+    var thiss = this;
 
     if (verses.length) {
       for (var i = 0; i < verses.length; i++) {
         $(".verse.v" + verses[i]).addClass("selected");
       }
-    }
 
+      $(document).ready(function() {
+        //DOM is loaded, wait a bit for css to load then scroll to first verse
+        window.setTimeout(thiss.scrollToSelectedVerse, 300);
+      });
+    }
   },
 
   initSecondaryVersion : function() {

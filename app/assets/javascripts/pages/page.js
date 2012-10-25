@@ -43,7 +43,7 @@ Page.prototype = {
     this.IE7 = !!(this.IE && this.VERSION === 7);
     this.IE8 = !!(this.IE && this.VERSION === 8);
     this.IE9 = !!(this.IE && this.VERSION === 9);
-
+    this.MODERN_BROWSER = !((this.IE && this.VERSION < 9) || this.BROWSER.opera);
   },
 
   // Ability to set the reader on the page publicly.
