@@ -508,9 +508,9 @@ Reader.prototype = {
   },
 
   initSecondaryVersion : function() {
-    var article = $('#version_secondary');
+    var version_elem = $('#version_secondary');
     var v_id = getCookie('alt_version') || 1;
-    var usfm = article.data('usfm');
+    var usfm = version_elem.attr('data-usfm');
     var thiss = this;
 
     $.ajax({
@@ -518,18 +518,25 @@ Reader.prototype = {
         method: "get",
         dataType: "json",
         success: function(ref) {
-          article.fadeOut(100, function() {
-            article.html(ref.content);
-            article.fadeIn(200);
-            thiss.loadHighlights("#version_secondary");
-          });
+          if (thiss.isParallel()){
+            //fade in/out adds in-line style that will bork our css styling
+            var origStyle = version_elem.attr('style') || '';
+            console.log(origStyle);
+            version_elem.fadeOut(100, function() {
+              version_elem.html(ref.content);
+              version_elem.fadeIn(200);
+              version_elem.attr('style', origStyle);
+            });
+          }else{version_elem.html(ref.content);}
+
+          thiss.loadHighlights("#version_secondary");
         },//end success function
         error: function(xhr, status, err) {
           // set HTML to error HTML
           if(xhr.status == '404'){
             var ref = jQuery.parseJSON(xhr.responseText);
-            article.html(ref.content);
-          }else{article.html("<h1>Error Loading Secondary Version</h1>\
+            version_elem.html(ref.content);
+          }else{version_elem.html("<h1>Error Loading Secondary Version</h1>\
                             <p>You might try <a href=''>reloading</a>. \
                             Still having trouble? Contact our \
                             <a href='http://support.youversion.com' \
