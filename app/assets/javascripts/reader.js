@@ -173,9 +173,9 @@ Reader.prototype = {
   },
 
   parseVerseClasses : function(v) {
-    var classes = v.attr('class').split(/\s+/);
+    var classes = v.attr('class').split(/\s+/) || [];
     var v_classes = [];
-        classes.map( function(val,i) {
+        $(classes).each( function(i, val) {
           var match = val.match(/v[0-9]+/g);
           if(match && match.length) { v_classes.push(match[0].toString())}
         });
@@ -220,7 +220,7 @@ Reader.prototype = {
         var _nums   = thiss.parseVerseNums(verse);
 
         // aggregate all selected verse usfms and params
-        $(_usfms).each( function(i,usfm) {
+        $(_usfms).each( function(i, usfm) {
           if(selected.verse_usfms.indexOf(usfm) == -1) {  //usfm reference not in array
              selected.verse_usfms.push(usfm);                                                    // ex. 2CO.1.1
              selected.verse_params.push( thiss.referenceParam({usfm: usfm, version: _vid } ));  // ex. 2CO.1.1.1-VID
