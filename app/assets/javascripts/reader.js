@@ -154,6 +154,15 @@ Reader.prototype = {
     this.parseVerses();
   },
 
+  scrollToSelectedVerse : function() {
+    // TODO: set this up in a way we can cancel if user scrolls before it happens
+    var first = $('#version_primary .selected:first');
+    if (first.length){
+      var newPosition = first.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(first.css('line-height'))/4;
+      $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: 'easeInOutCirc', duration:1200});
+    }
+  },
+
   referenceParam : function( opts ) {
     var usfm    = opts.usfm || undefined;
     var version = opts.version || undefined;
@@ -481,6 +490,7 @@ Reader.prototype = {
     // .attr retrieves value as string and doesn't attempt to cast to other type.
     var verses = $("article").attr("data-selected-verses");
         verses = verses.split(",");
+    var thiss = this;
 
     if (verses.length) {
       for (var i = 0; i < verses.length; i++) {
@@ -489,12 +499,7 @@ Reader.prototype = {
 
       $(document).ready(function() {
         //DOM is loaded, wait a bit for css to load then scroll to first verse
-        window.setTimeout(function() {
-          // TODO: set this up in a way we can cancel if user scrolls before it happens
-          var first = $('#version_primary .selected:first');
-          var newPosition = first.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(first.css('line-height'))/4;
-          $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: 'easeInOutCirc', duration:1200});
-        }, 200);
+        window.setTimeout(thiss.scrollToSelectedVerse, 200);
       });
     }
   },
