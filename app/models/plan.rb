@@ -42,7 +42,7 @@ class Plan < YouVersion::Resource
   end
 
   def self.all(opts = {})
-    opts[:query] ||= '*'
+    opts[:query] = '*' if opts[:query].blank?
     opts[:cache_for] ||= a_long_time
     super(opts)
   end
@@ -202,7 +202,7 @@ class Plan < YouVersion::Resource
     #     language_tag  to filter reading plans to (optional, but highly recommended for best search results)
     #     sort  the ordering of the results, defaults to 'score' (relevance), also accepts 'total_days'
     #     page  number of results to return
-    query = '*' if (query == "" || query == nil)
+    query = '*' if query.blank?
     params = {query: query, cache_for: a_long_time}.merge!(params.except("query", :query))
 
     response = YvApi.get(list_path, params) do |errors|
