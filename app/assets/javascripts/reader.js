@@ -526,10 +526,12 @@ Reader.prototype = {
               version_elem.html(ref.content);
               version_elem.fadeIn(200);
               version_elem.attr('style', origStyle);
+              thiss.loadHighlights("#version_secondary");
             });
-          }else{version_elem.html(ref.content);}
-
-          thiss.loadHighlights("#version_secondary");
+          }else{
+            version_elem.html(ref.content);
+            thiss.loadHighlights("#version_secondary");
+          }
         },//end success function
         error: function(xhr, status, err) {
           // set HTML to error HTML
