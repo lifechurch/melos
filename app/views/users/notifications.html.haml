@@ -1,5 +1,12 @@
 - @title = "#{t('my notifications')} | #{@user.name || @user.username}"
 
+/ attach bdc stylesheet for better mobile styling for now (kill me)
+/ pull this code the second mobile web is live
+- if @mobile
+  - content_for :stylesheets do
+    = stylesheet_link_tag "bdc_home"
+  - @sidebar = false
+
 = form_for @notification_settings, url: notifications_path do |n|
   - unless @notification_settings.errors.blank?
     .form_errors
@@ -26,6 +33,6 @@
     = n.check_box :partners
     = n.label :partners, t('users.notifications.publishing partners')
   %p
-    = n.submit t('users.notifications.update')
+    %button{class: "action_button_green", action: "submit"}= t('users.notifications.update')
   - if params[:token]
     = hidden_field_tag :token, params[:token]

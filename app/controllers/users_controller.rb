@@ -213,6 +213,7 @@ class UsersController < ApplicationController
   end
 
   def notifications
+    @mobile = env["X_MOBILE_DEVICE"].present?
     @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth}) rescue nil
 
     if @notification_settings.nil?
@@ -226,6 +227,7 @@ class UsersController < ApplicationController
   end
 
   def update_notifications
+    @mobile = env["X_MOBILE_DEVICE"].present?
     @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
     @user = @notification_settings.user
     @me = true
