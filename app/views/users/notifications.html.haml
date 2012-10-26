@@ -5,7 +5,7 @@
 - if @mobile
   - content_for :stylesheets do
     = stylesheet_link_tag "bdc_home"
-  - @sidebar = false
+  - @sidebar = @main_nav = false
 
 = form_for @notification_settings, url: notifications_path do |n|
   - unless @notification_settings.errors.blank?
