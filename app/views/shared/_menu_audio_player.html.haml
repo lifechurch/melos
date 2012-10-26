@@ -1,16 +1,20 @@
+// Local Parameters
+// Required:
+// - reference
+
 - force_style ||= nil
 #menu_audio_player.dynamic_menu{style: force_style}
   %span.menu_arrow
     &nbsp;
-  - if @reference.audio
+  - if reference.audio
     %dl
       %dt
         %a.close.no_style{:href => '#'}= t("audio.close player menu")
-        = @reference.audio.title
+        = reference.audio.title
       %dd
-        %audio#audio_player{:src => @reference.audio.url, :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+        %audio#audio_player{:src => reference.audio.url, :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
       %dt
-        %a.no_style.float_right.negative_gutter_top_quarter{:href => @reference.audio.publisher_link, :target => "_blank"}
+        %a.no_style.float_right.negative_gutter_top_quarter{:href => reference.audio.publisher_link, :target => "_blank"}
           = image_tag "icon_info.png"
         %small
-          = @reference.audio.copyright
+          = reference.audio.copyright

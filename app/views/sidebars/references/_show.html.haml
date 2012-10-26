@@ -1,0 +1,18 @@
+// PARAMETERS
+// presenter: Reference Presenter (Presenter::Reference)
+
+- note      = presenter.note
+- reference = presenter.reference
+
+// Bookmarks widget requires no local variables
+.widget.bookmarks.ajax_me{"data-ajax" => "/bible/widgets/bookmarks"}
+  %header
+    %span.header_icon_bookmark= t('recent bookmarks')
+  %ul
+    %li= t('bookmarks.loading')
+
+// Notes widget
+= render_cell :notes_list_widget, :stub, title: t("notes.community notes"), reference: reference
+
+// App widget requires no local variables
+= render '/shared/widget_ad_bible_app'

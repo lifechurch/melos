@@ -42,6 +42,7 @@ end
 RSpec.configure do |c|
   c.filter_run :only => true
   c.run_all_when_everything_filtered = true
+  c.include IntegrationHelpers
 end
 
 # Capybara.server do |app, port|
@@ -59,7 +60,6 @@ end
 
 Capybara.javascript_driver = :webkit
 Capybara.default_wait_time = 5
-
 
 module ::RSpec::Core
   class ExampleGroup

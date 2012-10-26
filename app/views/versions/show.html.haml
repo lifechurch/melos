@@ -25,6 +25,7 @@
         - @related.each do |v|
           %li
             = link_to v, v
+
 %article
   %h1= @version
   .copyright= @version.info.try :html_safe

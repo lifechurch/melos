@@ -68,7 +68,7 @@ function Reader(opts) {
 
   // menus
 
-  this.initSelectedVerses();
+  this.initVerses();
   this.initSecondaryVersion();
   this.initHighlights();
   this.initAudioPlayer();
@@ -160,6 +160,17 @@ Reader.prototype = {
   clearSelectedVerses : function() {
     this.allSelectedVerses().removeClass('selected');
     this.parseVerses();
+  },
+
+  scrollToVerse : function(verse) {
+    easingType = 'easeInOutCirc';
+    var first = $('#version_primary .selected:first');
+    if (verse.length){
+      var newPosition = verse.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(verse.css('line-height'))/4;
+      if(app.getPage().MODERN_BROWSER){
+        $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: easingType, duration:1200});
+      }else {$(window).scrollTop(newPosition);}
+    }
   },
 
   scrollToSelectedVerse : function(easingType) {
@@ -585,10 +596,11 @@ Reader.prototype = {
     audio_menu.hide();
   },
 
-  initSelectedVerses : function() {
-
+  initVerses : function() {
     // list of verses "" or "1" or "1,2,3"
     // .attr retrieves value as string and doesn't attempt to cast to other type.
+
+    // Selected verses
     var verses = $("article").attr("data-selected-verses");
         verses = (verses) ? verses.split(",") : [];
 
@@ -598,12 +610,27 @@ Reader.prototype = {
       for (var i = 0; i < verses.length; i++) {
         $(".verse.v" + verses[i]).addClass("selected");
       }
+      var scroll_verse = $('#version_primary .selected:first');
+    }
 
+    // Focused verses
+    var verses = $("article").attr("data-focused-verses");
+        verses = (verses) ? verses.split(",") : [];
+
+    if (verses.length) {
+      for (var i = 0; i < verses.length; i++) {
+        $(".verse.v" + verses[i]).addClass("focused");
+      }
+      var scroll_verse = $('#version_primary .focused:first');
+    }
+
+    if(scroll_verse) {
       $(document).ready(function() {
         //DOM is loaded, wait a bit for css to load then scroll to first verse
-        window.setTimeout(thiss.scrollToSelectedVerse, 300);
+        window.setTimeout(function(){thiss.scrollToVerse(scroll_verse)}, 300);
       });
     }
+
   },
 
   initSecondaryVersion : function() {

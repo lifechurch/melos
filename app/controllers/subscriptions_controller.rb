@@ -1,52 +1,30 @@
 class SubscriptionsController < ApplicationController
 
   before_filter :force_login
-
   respond_to :html #, :json #uncomment for .json representation of subscriptions.
 
   def index
     @user = current_user
     @subscriptions = @user.subscriptions
+    self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
   end
 
   # TODO - ensure user subscribed.
   def show
-
     @subscription = subscription_for(params[:id])
+    client_settings.app_state       = YouVersion::ClientSettings::SUBSCRIPTION_STATE
+    client_settings.subscription_id = @subscription.id
 
-    # Get user font and size settings
-    @font, @size = cookies['data-setting-font'], cookies['data-setting-size']
-
-    if (params[:ignore_subscription] != "true") || params[:day]
-      params[:day] ||= @subscription.current_day
-      @day = params[:day].to_i
-      @subscription.version_id = params[:version] || @subscription.version_id || current_version
-      @version = Version.find(@subscription.version_id)
-      @reading = @subscription.reading(@day)
-      @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0 #coerce content page to 1st page if outside range
-      @reference = @reading.references[@content_page].ref unless @reading.references.empty?
-    end
-
+    @presenter = Presenter::Subscription.new(@subscription , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::Subscription.new(@subscription , params, self)
     respond_with(@subscription)
   end
 
-  def orig
+  def devotional
     @subscription = subscription_for(params[:id])
-
-    # Get user font and size settings
-    @font, @size = cookies['data-setting-font'], cookies['data-setting-size']
-
-    if (params[:ignore_subscription] != "true") || params[:day]
-      params[:day] ||= @subscription.current_day
-      @day = params[:day].to_i
-      @subscription.version_id = params[:version] || @subscription.version_id || current_version
-      @version = Version.find(@subscription.version_id)
-      @reading = @subscription.reading(@day)
-      @content_page = Range.new(0, @reading.references.count - 1).include?(params[:content].to_i) ? params[:content].to_i : 0 #coerce content page to 1st page if outside range
-      @reference = @reading.references[@content_page].ref unless @reading.references.empty?
-    end
-
+    @presenter = Presenter::Subscription.new(@subscription , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::Subscription.new(@subscription , params, self)
     respond_with(@subscription)
   end
 
@@ -129,19 +107,30 @@ class SubscriptionsController < ApplicationController
   # TODO - ensure user subscribed.
   def edit
     @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
+    self.sidebar_presenter = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
     #redirect_to user_subscription_settings_path(current_user, @subscription, anchor: anchor), notice: t("plans.#{action} successful", t_opts) if action
   end
 
   def calendar
     @subscription = subscription_for(params[:id])
+    self.sidebar_presenter = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
     raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
   end
 
+  # Verb: the act of shelving your reading plan. Putting a book on the shelf.
+  # This is a controller/action server side end point to pull a visitor out of 'reading plan mode'
+  # Might also be a nice metric to capture, this provides an appropriate hook for capture.
+  # POST
+  def shelf
+    presenter = Presenter::Subscription.new(subscription_for(params[:id]) , params, self)
+    client_settings.app_state = YouVersion::ClientSettings::DEFAULT_STATE
+    redirect_to(bible_path(presenter.reference))
+  end
 
   private
 
-  def subscription_for( plan )
-    Subscription.find(plan, current_auth.user_id, auth: current_auth)
+  def subscription_for( plan_id )
+    Subscription.find(plan_id, current_auth.user_id, auth: current_auth)
   end
 
 end

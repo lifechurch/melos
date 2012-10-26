@@ -1,21 +1,10 @@
 -@title = "Localization"
-- content_for :sidebar do
-  .widget.volunteer_translate
-    %header
-      %span
-        YouVersion in Your Language!
-    %ul.widget_menu
-      %li
-        %p
-          = "Our volunteer translators are working hard to make YouVersion available in hundreds of languages &ndash; more every month! If you want to help make YouVersion localized for your lanaguage, we would love your help!".html_safe
-      %li
-        = link_to("Visit the YouVersion Volunteer Site", "http://volunteer.youversion.com/become-a-volunteer")
+
+=render partial: "/sidebars/pages/l10n"
 
 %article
   %h1 Preview Localization
   %hr
   %div{style:"text-align: center; margin-top: 70px"}
-    %p Sorry, the new YouVersion.com preview is currently English-only. 
+    %p Sorry, the new YouVersion.com preview is currently English-only.
     %p Please check back as we'll be adding language support as it becomes available.
-
-    

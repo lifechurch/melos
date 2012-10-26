@@ -1,0 +1,71 @@
+// Current Parameters:
+// presenter: Presenter::Sidebar::Subscription
+
+- subscription  = presenter.subscription
+- day           = presenter.day
+- reading       = presenter.reading
+- content_page  = presenter.content_page
+
+#sb-subscription
+  .widget.widget-notice
+    %p
+      = t("plans.sidebar notice")
+      %span= link_to("Close", shelf_user_subscription_path(current_user, subscription), method: :post)
+
+  .widget
+    %header
+      - settings_text = t("settings")
+      =link_to(edit_user_subscription_path(current_user,subscription),{class: "settings", title: settings_text}) do
+        %span= settings_text
+
+      %span= link_to subscription.name, plan_path(subscription)
+    %ul.widget_menu
+      %li#sb-calendar.calendar
+        %div.icon
+          - cal_text = t("plans.calendar")
+          =link_to(calendar_user_subscription_path(current_user,subscription), {title: cal_text }) do
+            %span= cal_text
+        %div.day
+          %h4= (subscription.respond_to?(:reading_date) ? subscription.reading_date(day) : current_date + (day - 1)).strftime('%a %b %-d')
+          .mute=t("plans.which day in plan", day: day.to_s, total: subscription.total_days)
+
+          // Next / Prev navigation
+          - prev_text = t("plans.previous day") # used in 3 places below
+          - if day > 1
+            = link_to(user_subscription_path(current_user,subscription, day: ((day - 1) == subscription.current_day) ? nil : (day - 1), version: params[:version]), {class: "prev", title: prev_text }) do
+              %span= prev_text
+          - else
+            = link_to("#", class: "disabled prev") do
+              %span= prev_text
+
+          - next_text = t("plans.next day") # used in 3 places below
+          - if day <= subscription.total_days - 1
+            = link_to(user_subscription_path(current_user, subscription, day: ((day + 1) == subscription.current_day) ? nil : (day + 1), version: params[:version]), {class: "next", title: next_text}) do
+              %span= next_text
+          - else
+            = link_to("#", class: "disabled next") do
+              %span= next_text
+
+      - unless reading.references.empty?
+        - reading.references.each_with_index do |ref,index|
+          %li.content_target{class: (content_page == index) ? "active" : nil }
+            = form_tag(user_subscription_path(current_user, subscription), method: :put) do
+              = hidden_field_tag(:ref,            ref.ref.to_usfm)
+              = hidden_field_tag(:completed,      (!ref.completed?).to_s)
+              = hidden_field_tag(:version,        subscription.version_id)
+              = hidden_field_tag(:day_target,     day.to_s)   if day != subscription.current_day
+              = hidden_field_tag(:content_target, index )     if index != 0
+              = check_box_tag(:completion, nil, ref.completed?, {id:"#{index}_box",onChange: "this.form.submit()"} )
+
+            - if content_page == index
+              %span= ref.ref.human
+            - else
+              %a{href: (content_page == index) ? nil : user_subscription_path(current_user, subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
+                = ref.ref.human
+
+  - if reading.devotional
+    .widget
+      %header= t("plans.devotional")
+      %ul.widget_menu
+        %li
+          %p= reading.devotional.html_safe

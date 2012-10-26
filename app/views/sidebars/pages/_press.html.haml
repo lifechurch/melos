@@ -1,0 +1,39 @@
+- content_for :sidebar do
+  .widget
+    %header
+      %span= t('press page.contact header')
+    %ul.widget_menu
+      %li
+        %p
+          %strong= t('press page.phone')
+          %br
+          405.216.2332
+      %li
+        %p
+          %strong= t('press page.email')
+          %br
+          lori.bailey@lifechurch.tv
+      %li
+        %p
+          %strong= t('press page.support')
+          %br
+          =link_to "support.youversion.com", external_url(:support)
+  .widget
+    %header
+      %span= t('press page.contact header 2')
+    %ul.widget_menu
+      %li
+        %p
+          %strong= t('press page.blog')
+          %br
+          =link_to "blog.youversion.com", "http://blog.youversion.com"
+      %li
+        %p
+          %strong= t('press page.facebook')
+          %br
+          =link_to "facebook.com/youversion", "http://facebook.com/youversion"
+      %li
+        %p
+          %strong= t('press page.twitter')
+          %br
+          =link_to "twitter.com/youversion", "http://twitter.com/youversion"

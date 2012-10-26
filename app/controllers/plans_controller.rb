@@ -9,15 +9,18 @@ class PlansController < ApplicationController
     @translate_list = params[:translate] == "true"
     @plans = Plan.all(params.merge(language_tag: @plan_lang)) rescue []
     @categories = CategoryListing.find(params[:category], language_tag: @plan_lang) rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
+    @sidebar = false
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
   end
 
   def show
     # TODO: redirect if user logged in and subscribed to this plan
     @plan = Plan.find(params[:id])
+    self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
   end
 
   def ref_not_found
+    @sidebar = false
     render 'invalid_ref'
   end
 

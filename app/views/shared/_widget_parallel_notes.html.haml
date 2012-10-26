@@ -1,9 +1,0 @@
-.widget.parallel_notes{id: "widget_new_note", style: ("display: none;" if hide_widget)}
-  %header
-    %span.header_icon_note= t('notes.new note')
-    %a.pop_out_button
-      %span
-        = t('notes.pop out')
-  %section
-    %ul.reference_tokens
-    = render partial: 'notes/widget_form'

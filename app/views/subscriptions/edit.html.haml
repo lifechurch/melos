@@ -1,27 +1,4 @@
 - @title = "Plan Settings"
-- @sidebar = true
-
-- content_for :sidebar do
-  .widget
-    = link_to(t('plans.read today'), user_subscription_path(current_user,@subscription), class: 'action_button_green', style: "margin-bottom: 10px")
-
-  .widget
-    %header
-      %span= @subscription.name
-    %ul.widget_menu
-      %li
-        =render :partial => "progress", :locals => {subscription: @subscription}
-      %li
-        =link_to( t("plans.calendar"), calendar_user_subscription_path(current_user,@subscription))
-      %li
-        =link_to( t("plans.settings"), edit_user_subscription_path(current_user,@subscription))
-
-  .widget
-    %header
-      %span About this Plan
-    %ul.widget_menu
-      %li
-        %p= @subscription.about
 
 %article
   %h1{style: "clear: none; width: 300px;"}= t("plans.settings")
@@ -115,4 +92,4 @@
   // Unsubscribe action
   %hr{style: "margin-top: 15px"}
     .float_left{style: "height: 30px; margin-bottom: 5px"}
-    = button_to(t('plans.stop reading'),user_subscription_path(current_user,@subscription), method: :delete, class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
+    = button_to(t('plans.stop reading'),user_subscription_path(current_user,@subscription), method: :delete, id: "subscription-destroy", class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")

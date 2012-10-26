@@ -1,46 +1,115 @@
-- @reader_menus = true
+// Reader partial to encapsulate all reader functionality
+// Local Parameters
+// presenter: (required) Presenter::Reference or Presenter::Subscription
 
-= render partial: "/references/reader_header"
-= render partial: "/references/js"
+- @is_reader    = true
+- reader_menus  = true
+- version       = presenter.version
+- reference     = presenter.reference
+- alt_version   = presenter.respond_to?(:alt_version)   ? presenter.alt_version : nil
+- alt_reference = presenter.respond_to?(:alt_reference) ? presenter.alt_reference : nil
+- verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
+- focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
+- modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
 
-%article{"data-setting-font" => @font, 'data-setting-size' => @size, "data-selected-verses" => @verses.try(:join,","), "data-verse-modal-enabled" => "#{!@single_verse.nil?}", "data-fullscreen" =>@full_screen, "data-book" => @reference[:book].to_s.downcase, "data-book-api" => @reference[:book].sub(/[A-Z]+/) {|m| m.downcase}, "data-book-human" => @version.books[@reference[:book]].human, "data-chapter" => @reference[:chapter].to_s, "data-version" => @reference[:version].to_s}
-  %div.nav_items
-    - direction = 'rtl' if @version.try(:rtl?)
-    = link_to("previous", bible_path(@reference.previous_chapter), class: "nav_prev #{direction}") if @reference.previous_chapter
-    = link_to("next", bible_path(@reference.next_chapter), class: "nav_next #{direction}") if @reference.next_chapter
-  #version_primary{"data-reference" => @reference.to_param, "data-abbreviation" => @version.try(:abbreviation).downcase, class: @version.try(:text_direction)}
-    = @reference.content.html_safe if @reference.content
-  #version_secondary{"data-reference" => @alt_reference.to_param,
-                     "data-abbreviation" => @alt_version.try(:abbreviation).try(:downcase),
-                     "data-usfm" => @reference.chapter_usfm,
-                     class: @alt_version.try(:text_direction)}
-    = t('ref.loading secondary')
+
+= render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
+
+%article#reader{"data-setting-font" => client_settings.reader_font,
+         'data-setting-size' => client_settings.reader_font_size,
+         "data-fullscreen"   => client_settings.reader_full_screen,
+         "data-selected-verses" => (focus_verses ? nil : verses.try(:join,",")),
+         "data-focused-verses" => (focus_verses ? verses.try(:join,",") : nil),
+         "data-verse-modal-enabled" => "#{!modal_verse.nil?}",
+         "data-book"       => reference[:book].to_s.downcase,
+         "data-book-api"   => reference[:book].sub(/[A-Z]+/) {|m| m.downcase},
+         "data-book-human" => version.books[reference[:book]].human,
+         "data-chapter"    => reference[:chapter].to_s,
+         "data-version"    => reference[:version].to_s,
+         "data-setting-trans-notes" => client_settings.reader_trans_notes,
+         "data-setting-cross-refs" => client_settings.reader_cross_refs,
+         "data-setting-show-highlights" => client_settings.reader_highlights,
+         "class" => (focus_verses ? "mute" : nil)}
+  .wrap
+    %div.nav_items
+      - direction = 'rtl' if version.try(:rtl?)
+      = link_to("previous", bible_path(reference.previous_chapter), class: "nav_prev #{direction}") if reference.previous_chapter
+      = link_to("next", bible_path(reference.next_chapter), class: "nav_next #{direction}") if reference.next_chapter
+
+    // Primary version content
+    #version_primary{"data-reference"     => reference.to_param,
+                     "data-abbreviation"  => version.try(:abbreviation).downcase,
+                     "data-usfm"          => reference.chapter_usfm,
+                     class:               version.try(:text_direction)}
+      = reference.content.html_safe if reference.content
+
+    // Secondary version content
+    #version_secondary{"data-reference"     => alt_reference.to_param,
+                       "data-abbreviation"  => alt_version.try(:abbreviation).try(:downcase),
+                       "data-usfm"          => reference.chapter_usfm,
+                       class:               alt_version.try(:text_direction)}
+      = t('ref.loading secondary')
+
 
 %footer
-  - if @version.has_publisher?
+  - if version.has_publisher?
     .publisher.as_table
       .vcenter
         .courtesy
-          %strong= t("versions.courtesy of", abbreviation: @version.abbreviation, publisher: @version.publisher.name) if @version.blurb
-        .blurb= (@version.blurb || @version.copyright).try :html_safe
+          %strong= t("versions.courtesy of", abbreviation: version.abbreviation, publisher: version.publisher.name) if version.blurb
+        .blurb= (version.blurb || version.copyright).try :html_safe
       .vcenter
-        =link_to t('versions.learn more'), @version.url || version_path(@version), class: 'button'
+        =link_to t('versions.learn more'), version.url || version_path(version), class: 'button'
 
-- if @reader_menus == true
-  = render_cell :book_selector, :display, {version: @version}
-  = render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, reference: @reference, site: @site}
-  = render '/shared/modal_single_verse' unless @verse_modals == false
-  = render '/shared/menu_settings'
-  = render '/shared/menu_audio_player'
 
-- version = {abbreviation: @version.abbreviation.downcase, id: @version.to_param }
-- version[:books] = {}
-- @version.books.each do |book_usfm, book_info|
-  - chapters = @version.books[book_usfm].chapters.map {|c| {human: c.human, usfm: c.usfm.downcase, canon: c.canonical }}
-  - version[:books][book_usfm.downcase] = {human: book_info.human, chapters: chapters }
+// Setup our Reader js object
+
+- content_for   :javascripts do
+  - fullscreen  = (client_settings.reader_full_screen && client_settings.reader_full_screen == 1) ? true : false;
+  - parallel    = (client_settings.reader_parallel_mode && client_settings.reader_parallel_mode == 1) ? true : false;
+  %script
+    :plain
+
+      jQuery(document).ready(function() {
+        reader = new Reader({
+          version: "#{reference[:version].to_s}",
+          abbrev: "#{version.try(:abbreviation).downcase}",
+          reference: "#{reference.to_param}",
+          book: "#{reference[:book].to_s.downcase}",
+          book_api: "#{reference[:book].sub(/[A-Z]+/) {|m| m.downcase}}",
+          book_human: "#{version.books[reference[:book]].human}",
+          chapter: "#{reference[:chapter].to_s}",
+          font: "#{client_settings.reader_font}",
+          size: "#{client_settings.reader_font_size}",
+          trans_notes: #{client_settings.reader_trans_notes},
+          cross_refs: #{client_settings.reader_cross_refs},
+          show_highlights: #{client_settings.reader_highlights},
+          full_screen: #{fullscreen},
+          parallel_mode: #{parallel}
+        });
+        reader.init();
+        var page = window.app.getPage();
+            page.setReader( reader );
+      });
+
+// Render all necessary menus
+- if reader_menus == true
+  = render_cell :book_selector, :display, {version: version}
+  = render_cell :version_selector, :display, {version: version, recent_versions: recent_versions, reference: reference, site: @site}
+  = render(partial:'/shared/modal_single_verse',locals: {modal_verse: modal_verse, reference: reference, version: version}) unless @verse_modals == false ||  modal_verse == nil
+  = render(partial: '/shared/menu_settings')
+  = render(partial: '/shared/menu_audio_player', locals: {reference: reference})
+
+// Dump a json representation of our @version into the markup for use by reader menus.
+// Would like to move this at some point to an API call if at all possible.
+- version_json = {abbreviation: version.abbreviation.downcase, id: version.to_param }
+- version_json[:books] = {}
+- version.books.each do |book_usfm, book_info|
+  - chapters = version.books[book_usfm].chapters.map {|c| {human: c.human, usfm: c.usfm.downcase, canon: c.canonical }}
+  - version_json[:books][book_usfm.downcase] = {human: book_info.human, chapters: chapters }
 
 / Json representation of our version. Currently used for building our dynamic chapter grid menu.
 / This will be cached along with the entire template
 %script
   :plain
-    version_json = #{version.to_json.html_safe};
+    version_json = #{version_json.to_json.html_safe};

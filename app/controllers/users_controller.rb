@@ -38,8 +38,8 @@ class UsersController < ApplicationController
     elsif params[:redirect] && params[:redirect].match(/reading\-plans/)
       @blurb = t("registration.plan blurb")
     end
-
-    render action: "new", layout: "application"
+    self.sidebar_presenter = Presenter::Sidebar::UsersNew.new(@user,params,self)
+    render action: "new", layout: "application" #neccessary to user app layout instead of users layout.
   end
 
   def create
@@ -171,6 +171,7 @@ class UsersController < ApplicationController
   def badges
     @selected = :badges
     @badges = @user.badges
+    self.sidebar_presenter = Presenter::Sidebar::Default.new
   end
 
   def share
@@ -410,14 +411,14 @@ class UsersController < ApplicationController
 
 
 private
+  # Find requested user and setup appropriate sidebar presenter
   def find_user
     user_id = params[:user_id] || params[:id]
     if user_id
       @user = User.find(user_id, auth: current_auth)
-      @me = (current_auth && @user.id.to_i == current_auth.user_id.to_i)
     else
       @user = current_user
-      @me = true
     end
+    self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
   end
 end

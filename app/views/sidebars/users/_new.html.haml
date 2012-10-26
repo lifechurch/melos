@@ -1,0 +1,16 @@
+// Local parameters
+// presenter: Presenter::Sidebar::UsersNew
+
+.widget.sign_in
+  %aside.sign_in
+    %p
+      %b= t("have an account")
+      %span.float_right{style: "margin-left: 10px; margin-top: 3px"}= link_to t("sign in"), sign_in_path(redirect: params[:redirect])
+
+.widget.account_benefits
+  %header
+    %span
+      =t("registration.benefits title")
+  %ul.widget_menu
+    %li
+      %p= t("registration.benefits blurb")

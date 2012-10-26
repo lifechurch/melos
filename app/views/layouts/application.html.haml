@@ -20,14 +20,13 @@
           = content_for?(:main) ? yield(:main) : yield
           - if content_for? :main_trailer
             = yield :main_trailer
-        - if content_for? :sidebar
-          #sidebar
-            = render '/shared/sidebar_global_before'
+        #sidebar
+          - if content_for? :sidebar
             = yield :sidebar
-        - else
-          - unless @sidebar == false
-            = render '/shared/sidebar'
+          - else
+            - unless (@sidebar == false || sidebar_presenter.blank?)
+              = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
+
       = render '/shared/footer'
     = render '/shared/javascripts'
     = render '/shared/google_analytics'
-

@@ -42,8 +42,8 @@ YouversionWeb::Application.routes.draw do
     match 'badge/:id' => 'badges#show', as: 'badge'
 
     resources 'subscriptions', :path => '/reading-plans' do
-      get :calendar, on: :member
-      get :orig, on: :member
+      get   :calendar,    on: :member
+      post  :shelf,       on: :member
     end
   end
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'

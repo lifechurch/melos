@@ -3,11 +3,6 @@
 - content_for :main do
   - if @me
     - # Then I'm looking at myself
-    - unless content_for?(:sidebar)
-      - # Default sidebar
-      - content_for :sidebar do
-        = render "shared/widget_profile_settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
-        = render "shared/widget_user_badges" unless @user.badges.empty?
     = render(partial: "user_info", locals: {user: @user}) if @selected == :recent_activity
     %article
       - if @selected == :recent_activity || @selected == :notes || @selected == :friends || @selected == :badges
@@ -18,10 +13,6 @@
       = content_for?(:user_main) ? yield(:user_main) : yield
   - else
     - # I'm looking at someone else, show their info and stuff
-    - unless content_for?(:sidebar)
-      - # Default sidebar
-      - content_for :sidebar do
-        = render "shared/widget_user_badges" unless @user.badges.empty?
     = render(partial: "user_info", locals: {user: @user})
     = render partial: "user_tabs", locals: {selected: @selected}
     %article

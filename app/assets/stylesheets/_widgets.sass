@@ -194,6 +194,28 @@ header .count
   float: right
   margin-top: 2px
 
+header .settings
+  display: block
+  width: 15px
+  height: 15px
+  opacity: .5
+  background:
+    image: image-url("icon_settings.png")
+  float: right
+  margin-top: 4px
+
+  span
+    display: block
+    text-indent: 100%
+    white-space: nowrap
+    overflow: hidden
+
+header .settings:hover
+  opacity: .8
+
+
+
+
 // `Tags
 //----------------------------------------------------------------------------------------------------
 
@@ -366,13 +388,24 @@ a.more_arrow:hover
   position: relative
   z-index: 1
 
+.widget header
+  +round_top
+  border-bottom: 0
+
 .widget header.widget_header_fixed
   +box-shadow(#f2f1ef 0 -4px 0 0, inset #fff 0 1px 0 0)
   border-bottom: 1px solid #cbc9cf !important
-  width: 258px
+  width: 263px
   position: fixed !important
   top: 82px
   z-index: 0
+
+.widget-fixed
+  width: 300px
+  position: fixed !important
+  top: 82px
+  z-index: 0
+
 
 .widget_spacer
   display: block
@@ -395,3 +428,16 @@ a.more_arrow:hover
   width: 215px
   text-overflow: ellipsis
   overflow: hidden
+
+.widget-notice
+  +round_top
+  +round_bottom
+  +box-shadow(inset #fff 0 1px 0 0)
+  +background-image(linear-gradient(#eeedeb, #dddcda))
+  background-color: #dddcda
+  border: 1px solid #cbc9cf
+  padding: 10px 15px
+  margin-bottom: 10px
+
+  p
+    margin-bottom: 0
