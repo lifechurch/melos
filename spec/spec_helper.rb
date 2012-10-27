@@ -55,6 +55,8 @@ Capybara.server do |app, port|
   Rack::Handler::WEBrick.run(app, :Port => port, :AccessLog => [], :Logger => WEBrick::Log::new(nil, 0))
 end
 
+Capybara.javascript_driver = :webkit
+
 
 module ::RSpec::Core
   class ExampleGroup
