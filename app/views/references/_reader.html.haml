@@ -10,3 +10,9 @@
                      "data-usfm" => @reference.chapter_usfm,
                      class: @alt_version.try(:text_direction)}
     = t('ref.loading secondary')
+%footer
+  - if @version.has_publisher?
+    .float_right= link_to t('versions.learn more'), @version.url || version_path(@version), class: 'button'
+    .publisher
+      %strong.mute= t("versions.courtesy of", abbreviation: @version.abbreviation, publisher: @version.publisher.name)
+      .blurb= @version.blurb.try :html_safe

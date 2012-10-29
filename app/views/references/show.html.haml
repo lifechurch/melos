@@ -12,9 +12,4 @@
 = render partial: 'reader_header'
 = render 'reader'
 
-%footer
-  %p
-    %b= link_to t("ref.about the version", version: @version), version_path(@version)
-  %p= @reference.copyright.html_safe if @reference.copyright
-
 = render partial: "js"

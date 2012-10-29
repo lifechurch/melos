@@ -16,7 +16,7 @@
           -else
             %p= pub_name
 
-  - if @related.present?
+  - if @related.present? && @version.has_publisher?
     .widget
       %header
         %span
