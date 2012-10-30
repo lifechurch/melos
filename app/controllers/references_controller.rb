@@ -9,9 +9,11 @@ class ReferencesController < ApplicationController
     @html_classes = []
     @html_classes << "full_screen" if cookies[:full_screen]
     @html_classes << "full_screen" << "parallel_mode" if cookies[:parallel_mode]
+
     # Get user font and size settings
     @font = cookies['data-setting-font']
     @size = cookies['data-setting-size']
+
     # render last read or default if no reference specified
     # This allows for root to give better meta (SEO)
     # and saves a redirect for a first time visit
@@ -19,7 +21,6 @@ class ReferencesController < ApplicationController
 
     ref_str   = YouVersion::ReferenceString.new(params[:reference])
     ref_hash  = ref_str.to_hash
-
 
     # override the version in the reference param with the explicit version in the URL
     # this is a temporary hack until Version/Reference class clean-up
@@ -33,13 +34,13 @@ class ReferencesController < ApplicationController
       flash.keep
       return redirect_to bible_path(Reference.new(ref_hash))
     end
+
     # Hang on to all the verses to select them in the reader
     # This should probably all be done with a ReferenceList
     # with a lot more functionality and smarts
     #
     # Note: InvalidReferenceError used to be raised here if
     # the reference was invalid
-
     @verses = ref_str.verses # array of verse numbers.
 
     # Set the canonical reference for the page to the entire chapter
@@ -47,8 +48,10 @@ class ReferencesController < ApplicationController
     @version = Version.find(@reference.version)
 
     # Set cookies to save this as the user's current version and reference
-    set_current_version @version
-    set_last_read @reference
+    if request.format == :html
+      set_current_version @version
+      set_last_read @reference
+    end
 
     # If the reference was a single verse, set that up so we can display the modal
     if ref_hash[:verses].present? && (external_request? || params[:modal] == "true") && params[:modal] != "false"
