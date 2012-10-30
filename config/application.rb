@@ -133,7 +133,7 @@ module YouversionWeb
 
       ### Pass-through to 2.0
       # doesn't have SSL cert, use http protocol
-      r302 %r{/groups|live|events|free\-bible|widgets|google.*}, Proc.new{ |path, rack_env| "http://www.a.youversion.com/#{path}" }
+      r302 %r{/groups|live|events|free\-bible|widgets|google.*}, Proc.new{ |path, rack_env| "http://www.a.youversion.com#{path}" }
 
       ### NOTES
       # Ignore SEO text
