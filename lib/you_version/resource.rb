@@ -75,6 +75,7 @@ module YouVersion
         # allow html/text root values
         val ||= mash.try(:[], :html) unless mash.try(:[], :html).is_a?(Hashie::Mash)
         val ||= mash.try(:[], :text) unless mash.try(:[], :text).is_a?(Hashie::Mash)
+        val
       end
 
       def attr_i18n_reader(*args)
