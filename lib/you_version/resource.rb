@@ -69,9 +69,19 @@ module YouVersion
         val ||= mash.html.try(:[], 'default')
         val ||= mash.text.try(:[], lang_key)
         val ||= mash.text.try(:[], 'default')
-        val ||= mash.try(:[], :html)
-        val ||= mash.try(:[], :text)
         val ||= mash.try(:[], 'default')
+
+        return val if val.present?
+
+        # if html or text elements returned nil and the keys existed
+        # the value is just really intentionally nil
+        return nil if mash.has_key?(:html) && mash.html.is_a?(Hashie::Mash)
+        return nil if mash.has_key?(:text) && mash.text.is_a?(Hashie::Mash)
+
+        # if there is no i18nized string to pull
+        # allow html/text root values
+        val ||= mash.try(:[], :html) unless mash.try(:[], :html).is_a?(Hashie::Mash)
+        val ||= mash.try(:[], :text) unless mash.try(:[], :text).is_a?(Hashie::Mash)
       end
 
       def attr_i18n_reader(*args)
