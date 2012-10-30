@@ -12,7 +12,10 @@
     = t('ref.loading secondary')
 %footer
   - if @version.has_publisher?
-    .float_right= link_to t('versions.learn more'), @version.url || version_path(@version), class: 'button'
-    .publisher
-      %strong.mute= t("versions.courtesy of", abbreviation: @version.abbreviation, publisher: @version.publisher.name)
-      .blurb= @version.blurb.try :html_safe
+    .publisher.as_table
+      .vcenter
+        .courtesy
+          %strong= t("versions.courtesy of", abbreviation: @version.abbreviation, publisher: @version.publisher.name) if @version.blurb
+        .blurb= (@version.blurb || @version.copyright).try :html_safe
+      .vcenter
+        =link_to t('versions.learn more'), @version.url || version_path(@version), class: 'button'

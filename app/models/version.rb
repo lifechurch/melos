@@ -111,7 +111,7 @@ class Version < YouVersion::Resource
                                     direction: @attributes.language.text_direction})
   end
   def blurb
-    self.class.i18nize(detailed_attributes.reader_footer) || copyright
+    self.class.i18nize(detailed_attributes.reader_footer)
   end
   def copyright
     self.class.i18nize(detailed_attributes.copyright_short)
