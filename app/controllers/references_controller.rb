@@ -13,6 +13,8 @@ class ReferencesController < ApplicationController
     # Get user font and size settings
     @font = cookies['data-setting-font']
     @size = cookies['data-setting-size']
+    @trans_notes = cookies['data-setting-trans-notes']
+    @cross_refs = cookies['data-setting-cross-refs']
 
     # render last read or default if no reference specified
     # This allows for root to give better meta (SEO)

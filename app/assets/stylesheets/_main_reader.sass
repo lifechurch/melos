@@ -307,16 +307,18 @@ article[data-setting-size="user_setting_size_medium"] .verse > .label
 article[data-setting-size="user_setting_size_large"] .verse > .label
   margin-top: 1.2em
 
-.note
-  display: inline-block
-  text-indent: 0
-
 .note .body
   display: none
 
+article[data-setting-trans-notes="true"] .note.f .body,
+article[data-setting-trans-notes="true"] .note.f > .label,
+article[data-setting-cross-refs="true"] .note.x .body,
+article[data-setting-cross-refs="true"] .note.x > .label
+  display: inline-block !important
+
 .note > .label
   text-indent: -99999px
-  display: inline-block
+  display: none
   background: image-url('trans-note-light@2x.png') no-repeat
     size: 10px 10px
   height: 10px

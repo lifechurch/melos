@@ -18,8 +18,10 @@
           chapter: "#{@reference[:chapter].to_s}",
           font: "#{@font}",
           size: "#{@size}",
-          full_screen: #{fullscreen},
-          parallel_mode: #{parallel}
+          trans_notes: "#{@trans_notes}",
+          cross_refs: "#{@cross_refs}",
+          full_screen: "#{fullscreen}",
+          parallel_mode: "#{parallel}"
         });
         reader.init();
 

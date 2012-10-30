@@ -23,6 +23,8 @@ class PlansController < ApplicationController
     # Get user font and size settings
     @font = cookies['data-setting-font']
     @size = cookies['data-setting-size']
+    @trans_notes = cookies['data-trans-notes']
+    @cross_refs = cookies['data-cross-refs']
 
     # if user is subscribed
     if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]
