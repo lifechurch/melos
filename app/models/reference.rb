@@ -145,7 +145,7 @@ class Reference < YouVersion::Resource
   end
 
   def copyright
-    attributes.copyright.html || attributes.copyright.text if version
+    self.class.i18nize(attributes.copyright) if version
   end
 
   def audio
@@ -246,7 +246,7 @@ class Reference < YouVersion::Resource
 
 
 
-  #DEBUGprivate
+  private
 
   def attributes
     return @attributes unless @attributes.nil?

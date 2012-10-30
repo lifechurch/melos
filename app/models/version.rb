@@ -110,11 +110,14 @@ class Version < YouVersion::Resource
                                     human: @attributes.language.local_name,
                                     direction: @attributes.language.text_direction})
   end
+  def blurb
+    self.class.i18nize(detailed_attributes.reader_footer)
+  end
   def copyright
-    detailed_attributes['copyright_short']['html'] || detailed_attributes['copyright_short']['text'] || ""
+    self.class.i18nize(detailed_attributes.copyright_short)
   end
   def info
-    detailed_attributes['copyright_long']['html'] || detailed_attributes['copyright_long']['text'] || ""
+    self.class.i18nize(detailed_attributes.copyright_)
   end
   def audio_version?
     audio
@@ -172,6 +175,12 @@ class Version < YouVersion::Resource
   end
   def publisher
     detailed_attributes.publisher || Hashie::Mash.new({"id"=>nil, "name"=>nil, "url"=>nil, "description"=>nil})
+  end
+  def url
+    detailed_attributes.reader_footer_url
+  end
+  def has_publisher?
+    publisher_id.present?
   end
   def self.cache_length
     Cfg.version_data_cache_expiration.to_f.minutes || a_long_time
