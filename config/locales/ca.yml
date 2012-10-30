@@ -177,6 +177,8 @@ ca:
     select another chapter: "Tria un capítol diferent"
     view in reader: "Mira %{reference} al lector"
   users:
+    unverified heading: "Gaire bé acabat!"
+    unverified message: "Sembla que estàs intentant entrar a un compte que no està completament donat d'alta. Només et queda fer un pas: simplement fes clic a l'enllaç de verificació que trobaràs al correu electrònic de confirmació que has rebut de YouVersion. No el trobes? Mira la teva carpeta de correu brossa o <a href='%{resend_path}'>reenvia el correu electrònic de confirmació</a>"
     reset connection: "Ens sap greu, però hi ha hagut un error. Si us plau, retira i torna a connectar aquesta connexió."
     settings: "Configuració"
     no connection friends: "Encara no apareix cap dels teus amics de %{connection} a YouVersion."
@@ -646,7 +648,9 @@ ca:
     404 message: "Ho sentim, la pàgina que busques no es pot trobar. "
     408 message: "Malhauradament els nostres servidors no han respost a temps."
     408 explanation: "Pots intentar <a href= '%{reload_path}'>a tornar a carregar</a> la pàgina. Hem rebut l'alerta i corregirem la incidència tan aviat com ens sigui possible."
+    try again: "Intenta-ho una altra vegada"
   versions:
+    learn more: "Llegeix-ne més"
     index title: "Versions disponibles"
     publisher widget title: "Editor"
     visit publisher: "Visita la pàgina web de l'editorial"

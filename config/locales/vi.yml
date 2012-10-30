@@ -537,7 +537,7 @@ vi:
     card exp date: "Ngày hết hạn (TTNN)"
     receipt: "Email bản sao hóa đơn cho tôi."
     preview: "Tóm lược dâng hiến"
-    header copy: "Chúng ta có thể cùng nhau trở thành thế hệ quan tâm đến Kinh Thánh nhiều nhất trong lịch sử. Ủng hộ của bạn sẽ giúp mọi người tiếp cận Lời Chúa trong nhiều hoàn cảnh, ngôn ngữ, bản dịch, và trong nhiều quốc gia hơn từ trước đến nay. Hãy điền vào mẫu dưới đây để dâng hiến. Chúng tôi sẽ thu nhận thông tin về hiện kim ở trang kế tiếp."
+    header copy: "Chúng ta có thể cùng nhau trở thành thế hệ quan tâm đến Kinh Thánh nhiều nhất trong lịch sử. Ủng hộ của bạn sẽ giúp mọi người tiếp cận Lời Chúa trong nhiều hoàn cảnh, ngôn ngữ, bản dịch, và trong nhiều quốc gia hơn bao giờ hết. Hãy điền vào mẫu dưới đây để dâng hiến. Chúng tôi sẽ thu nhận thông tin về hiện kim (thẻ Visa hoặc Mastercard) ở trang kế tiếp."
     header confirm copy: "Chúng ta có thể cùng nhau trở thành thế hệ quan tâm đến Kinh Thánh nhiều nhất trong lịch sử. Ủng hộ của bạn sẽ giúp mọi người tiếp cận Lời Chúa trong nhiều hoàn cảnh, ngôn ngữ, bản dịch, và trong nhiều quốc gia hơn từ trước đến nay. Hãy nhấp vào \"Dâng hiến bây giờ\" để thực hiện điều đó."
     donate now button: "Dâng hiến bây giờ"
     email header: "YouVersion, một mục vụ của LifeChurch.tv, đã nhận được quyên góp của bạn. Không có hàng hóa hay dịch vụ nào được trao đổi cho quyên góp này, ngoại trừ các lợi ích thuộc linh. Hãy liên hệ giving@lifechurch.tv nếu bạn có gì thắc mắc."
@@ -646,10 +646,11 @@ vi:
   app errors:
     404 explanation: "Bạn có thể thử lại từ đầu ở <a href='%{reader_path}'>trang nhà</a>. Nếu vẫn có trục trặc, hãy liên hệ <a href='%{support_url}'>nhóm hỗ trợ</a> của chúng tôi."
     404 message: "Xin lỗi bạn, chúng tôi không tìm được trang mà bạn yêu cầu."
-    408 message: "Phản hồi chậm từ các máy chủ."
-    408 explanation: "Bạn có thể thử <a href= '%{reload_path}'>tải lại</a> trang này. Chúng tôi sẽ cố gắng giải quyết cách nhanh chóng cho bất cứ vấn đề nào bị kéo dài."
+    408 message: "Xin lỗi bạn vì phản hồi chậm từ các máy chủ."
+    408 explanation: "Chúng tôi đã nghe đến và sẽ cố gắng giải quyết nhanh chóng bất cứ vấn đề dai dẳng nào. Bây giờ chúng ta hãy thử trở lại bài đọc Kinh Thánh!"
     try again: "Thử lại"
   versions:
+    learn more: "Tìm hiểu thêm"
     index title: "Các bản dịch có sẵn"
     publisher widget title: "Phát hành"
     visit publisher: "Xem trang phát hành"

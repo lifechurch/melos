@@ -537,7 +537,7 @@ zh-TW:
     card exp date: "過期日期（MM/YY)"
     receipt: "給我電郵收據副本"
     preview: "預覽捐贈"
-    header copy: "同心合力的，我們可以成為歷史上最投入閱讀聖經的一代。您的支持將在更多的國家裡、讓更多的人在更多的平台上、以更多的語言和更多的版本來打開神的話語。請填寫以下表格來履行您的奉獻。我們將會在下一個版面收集您的付款資料。"
+    header copy: "同心合力的，我們可以成為歷史上最投入閱讀聖經的一代。您的支持將在更多的國家裡、讓更多的人在更多的平台上、以更多的語言和更多的版本來打開神的話語。請填寫以下表格來履行您的奉獻。我們將會在下一個版面收集您的付款資料。我們接受Visa或MasterCard卡。"
     header confirm copy: "同心合力的，我們可以成為歷史上最投入閱讀聖經的一代。您的支持將在更多的國家裡、讓更多的人在更多的平台上、以更多的語言和更多的版本來打開神的話語。請點選【立刻捐助】來履行您的奉獻。"
     donate now button: "現在就捐獻"
     email header: "YouVersion, LifeChurch.tv 的事工已經收到您的捐獻。除了宗教上無形的好處，沒有任何的產品或者服務作為這個捐助的交換。如有問題請聯絡 giving@lifechurch.tv。"
@@ -646,10 +646,11 @@ zh-TW:
   app errors:
     404 explanation: "您可能需要再次從<a href='%{reader_path}'>首頁</a>試一下。如果仍然不行，請通知我們的 <a href='%{support_url}'>支援團隊</a>！"
     404 message: "非常抱歉！您搜尋的頁面並不存在。"
-    408 message: "很遺憾我們的伺服器沒有及時響應。"
-    408 explanation: "您可嘗試 <a href= %{reload_path}>重新載入</a> 頁面。 我們已經接到警示並將盡快解決一切持續存在的問題。"
+    408 message: "很抱歉我們的伺服器沒有及時響應。"
+    408 explanation: "我們已經接到警示並將盡快解決一切持續存在的問題。希望您能盡快返回到聖經的閱讀中！"
     try again: "再試一次"
   versions:
+    learn more: "暸解更多"
     index title: "可用的版本"
     publisher widget title: "出版社"
     visit publisher: "造訪出版社的網站"

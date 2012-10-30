@@ -629,3 +629,5 @@ cy:
       highlights: "Uwcholeuo:\n\n"
       'on': "Ymlaen"
       'off': "Diffodd"
+  versions:
+    learn more: "Dysgwch Fwy "

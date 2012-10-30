@@ -177,6 +177,8 @@ fi:
     select another chapter: "Valitse eri luku"
     view in reader: "Näytä %{reference} lukijassa"
   users:
+    unverified heading: "Melkein valmista!"
+    unverified message: "Yritit kirjautua tilille, jota ei ole vielä vahvistettu. Jäljellä on vielä yksi vaihe: klikkaa vahvistusviestissä YouVersionilta saamaasi linkkiä. Etkö löydä sitä? Tarkista roskaposti-kansiosi tai <a href='%{resend_path}'>lähetä vahvistusviesti uudelleen</a>."
     reset connection: "Tapahtui virhe. Ole hyvä ja poista yhteys ja muodosta se sitten uudelleen."
     settings: "Asetukset"
     no connection friends: "Kukaan %{connection}-kavereistasi ei ole vielä YouVersionissa."
@@ -535,7 +537,7 @@ fi:
     card exp date: "Voimassaoloaika (KKVV)"
     receipt: "Lähetä kopio kuitista sähköpostiini."
     preview: "Lahjoituksen esikatselu"
-    header copy: "Yhdessä meistä voisi tulla historian Raamattuun sitoutunein sukupolvi. Tukesi mahdollistaa Jumalan sanan lukemisen useammilla alustoilla, kielillä ja käännöksinä, sekä useammissa maissa kuin koskaan aikaisemmin. Ole hyvä ja täytä alla oleva lomake lahjoituksen tekemiseksi. Keräämme maksutiedot seuraavalla sivulla."
+    header copy: "Yhdessä meistä voisi tulla historian Raamattuun sitoutunein sukupolvi. Tukesi mahdollistaa Jumalan sanan lukemisen useammilla alustoilla, kielillä, eri käännöksinä sekä useammissa maissa kuin koskaan aikaisemmin. Ole hyvä ja täytä alla oleva lomake lahjoituksen tekemiseksi. Maksutiedot syötetään seuraavalla sivulla. Maksuvälineenä käy Visa tai Mastercard."
     header confirm copy: "Yhdessä meistä voisi tulla historian Raamattuun sitoutunein sukupolvi. Tukesi mahdollistaa Jumalan sanan lukemisen useammilla alustoilla, kielillä ja käännöksinä, sekä useammissa maissa kuin koskaan aikaisemmin. Klikkaa \"Tee lahjoitus\" tehdäksesi lahjoituksen."
     donate now button: "Tee lahjoitus"
     email header: "YouVersion, LifeChurch.tv:n palvelumuoto, on vastaanottanut lahjoituksesi. Mitään hyödykettä tai palvelua ei ole tarjottu lahjoitusta vastaan, paitsi aineettomia hengellisiä etuja. Mikäli sinulla on kysyttävää, ota yhteyttä: giving@lifechurch.tv"
@@ -644,9 +646,11 @@ fi:
   app errors:
     404 explanation: "Voit aloittaa uudelleen palaamalla <a href='%{reader_path}'>etusivulle</a>. Jos ongelma toistuu, ota yhteyttä <a href='%{support_url}'>tukeemme</a>."
     404 message: "Etsimääsi sivua ei löydy."
-    408 message: "Valitettavasti palvelimemme eivät vastanneet ajallaan."
-    408 explanation: "Voit yrittää <a href= %{reload_path}>ladata sivun uudelleen</a>. Olemme saaneet tiedon tapahtuneesta ja ongelman jatkuessa selvitämme sen mahdollisimman pian."
+    408 message: "Olemme pahoillamme, mutta palvelimemme eivät vastanneet ajallaan."
+    408 explanation: "Olemme saaneet tiedon ongelmasta ja puutumme siihen mahdollisimman nopeasti. Etköhän pian ole taas Raamatun parissa!"
+    try again: "Yritä uudelleen"
   versions:
+    learn more: "Lisätietoja"
     index title: "Saatavilla olevat käännökset"
     publisher widget title: "Julkaisija"
     visit publisher: "Vieraile julkaisijan nettisivuilla"

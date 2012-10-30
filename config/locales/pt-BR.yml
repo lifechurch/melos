@@ -537,7 +537,7 @@ pt-BR:
     card exp date: "Data de expiração (MMAA)"
     receipt: "Me envie cópia do recibo."
     preview: "Visualização da doação"
-    header copy: "Juntos podemos nos tornar a geração mais comprometida na história. Seu apoio significa abertura da Palavra de Deus em mais plataforma, em mais línguas, em mais versões, e em mais países do que antes. Por favor, preencha o formulário abaixo para realizar sua doação. Nós coletaremos informações de pagamento na próxima tela."
+    header copy: "Juntos podemos nos tornar a geração mais comprometida na história. Seu apoio significa abertura da Palavra de Deus em mais plataforma, em mais línguas, em mais versões, e em mais países do que antes. Por favor, preencha o formulário abaixo para realizar sua doação. Nós coletaremos informações de pagamento na próxima tela. São aceitos Visa ou Mastercard. "
     header confirm copy: "Juntos podemos nos tornar a geração mais comprometida na história. Seu apoio significa abertura da Palavra de Deus em mais plataforma, em mais línguas, em mais versões, e em mais países do que antes. Clique em Doar Agora para realizar sua doação."
     donate now button: "Doar Agora"
     email header: "YouVersion, um ministério da LifeChurch.tv, recebeu sua doação. Bens ou serviços não foram providos em troca, exceto os inatingíveis benefícios religiosos. Por favor, em dúvidas entre em contato com giving@lifechurch.tv ."
@@ -650,6 +650,7 @@ pt-BR:
     408 explanation: "Nós fomos alertados e tentaremos resolver quaisquer problemas persistentes o quanto antes. Vamos ver se conseguimos  te levar de volta para sua leitura da Bíblia! "
     try again: "Tente Novamente"
   versions:
+    learn more: "Saiba Mais"
     index title: "Versões Disponíveis "
     publisher widget title: "Editora\n"
     visit publisher: "Visitar o Website do Editor "

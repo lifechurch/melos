@@ -644,6 +644,7 @@ tr:
     404 message: "Aradığınız sayfa bulunamıyor, özür dileriz."
     try again: "Yeninde dene"
   versions:
+    learn more: "Daha Bilgi"
     publisher widget title: "Yayıncı"
     visit publisher: "Yayımcının Web Sitesi"
     read title: "Çeviriyi Oku"
