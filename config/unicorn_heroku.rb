@@ -1,7 +1,7 @@
 # 3 workers and 1 master
 #
 # Note: we only use 3, because of memory restrictions on Heroku dynos
-worker_processes 3
+worker_processes 2
 
 # Restart any workers that haven't responded in 17 seconds
 # This results in a 502 response for the slow request in the worker
@@ -28,4 +28,4 @@ preload_app true
 # 2 workers, we want the backlog to show up with heroku and have the
 # chance to go to another instance. In case our worker is dead or slow
 # we don't want requests sitting in the unicorn backlog timing out.
-listen ENV['PORT'] || 3000, :backlog => 6
+listen ENV['PORT'] || 3000, :backlog => 4
