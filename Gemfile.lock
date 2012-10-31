@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/lifechurch/rpm.git
-  revision: cc0c555751123d6d07d049d2bcc4628de0f93d15
+  revision: 2080b4464d1616c1583cd3e237195ea0f5342c2b
   specs:
     newrelic_rpm (3.5.0.1)
 
