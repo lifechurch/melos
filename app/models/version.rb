@@ -117,7 +117,7 @@ class Version < YouVersion::Resource
     self.class.i18nize(detailed_attributes.copyright_short)
   end
   def info
-    self.class.i18nize(detailed_attributes.copyright_)
+    self.class.i18nize(detailed_attributes.copyright_long)
   end
   def audio_version?
     audio
