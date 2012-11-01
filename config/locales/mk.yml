@@ -633,4 +633,5 @@ mk:
       'on': "Вклучено"
       'off': "Исклучено"
   versions:
+    learn more: "Дознај повеќе"
     publisher widget title: "Автор"

@@ -648,7 +648,9 @@ it:
     404 message: "Ci dispiace - non si trova la pagina che cerchi."
     408 message: "Sfortunatamente i nostri servers non rispondono in modo tempestivo."
     408 explanation: "Puoi provare ancora  nel <un href='%='% ricarica_via??????la pagina.Siamo stati avvertiti ed affronteremo i problemi persistenti il più velocemente possibile."
+    try again: "Riprova"
   versions:
+    learn more: "Per Saperne di Più"
     index title: "Versioni disponibili"
     publisher widget title: "Editore"
     visit publisher: "Visita il sito dell'Editore"

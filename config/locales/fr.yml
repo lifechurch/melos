@@ -156,6 +156,7 @@ fr:
     see my likes: "Voir toutes mes mentions j'aime"
     successfully deleted: "Note supprimée"
   ref:
+    loading secondary: "Charge les références dans la version secondaire..."
     clear verses: "Effacer les versets selectionnés"
     choose book and chapter: "Choisir un livre et un chapitre"
     choose version: "Choisir une traduction"
@@ -177,6 +178,8 @@ fr:
     select another chapter: "Choisir un autre chapitre"
     view in reader: "Voir %{reference} dans le lecteur"
   users:
+    unverified heading: "C'est presque fini!"
+    unverified message: "On dirait que vous essayez de vous connecter à un compte qui n'a pas été mis en place complètement. Il ne reste plus qu'une seule étape: il suffit de cliquer sur le lien contenu dans l'email de confirmation que vous avez reçu de YouVersion. Vous ne le trouvez pas? Vérifiez vos courriers indésirables ou <a href='%{resend_path}'>demandez le renvoi de l'email de confirmation</a>."
     reset connection: "Désolé, une erreur est survenue! Merci de vous déconnecter et vous reconnecter à nouveau."
     settings: "Paramètres"
     no connection friends: "Aucun de vos amis %{connection} ne semblent encore être sur YouVersion."
@@ -648,10 +651,13 @@ fr:
     408 explanation: "Vous-pouvez essayer de nouveau par <a href= '%{reload_path}'>reloading</a> la page. Nous avons été alertés aussi et nous allons envoyer quelques problèmes persistants très rapidement."
     try again: "Essayer à nouveau"
   versions:
+    courtesy of: "%{abbreviation} mise à disposition par %{publisher}"
+    learn more: "Savoir plus"
     index title: "Versions disponibles"
     publisher widget title: "Éditeur"
     visit publisher: "Visiter le site Web du Publicateur "
-    read title: "Lissez cette version"
+    about: "En savoir plus au sujet de cette version..."
+    read title: "Lisez cette version"
     other versions: "Autres versions de cette Publicateur"
     number of versions field: "Versions totales"
     number of languages field: "Langages totales"

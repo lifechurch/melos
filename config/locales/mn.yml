@@ -648,6 +648,7 @@ mn:
     408 message: "Харамсалтай нь, бидний серверүүд хариулахгүй байна."
     try again: "Дахин Оролдоно уу"
   versions:
+    learn more: "Илүү Мэдэх"
     index title: "Унших Боломжтой Орчуулагууд"
     publisher widget title: "Хэвлэгч"
     visit publisher: "Нийтлэгчийн Вэбсайтад Зочилох "

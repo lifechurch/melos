@@ -648,6 +648,7 @@ af:
     408 explanation: "Jy kan weer probeer om <a href= '%{reload_path}'>reloading</a> se bladsy te herlaai. Ons is in kennis gestel en sal enige aanhoudende kwessies so gou as moontlik oplos."
     try again: "Probeer Weer"
   versions:
+    learn more: "Leer Meer "
     index title: "Beskikbare Weergawes"
     publisher widget title: "Publiseerder"
     visit publisher: "Besoek Uitgewer se Webwerf"
