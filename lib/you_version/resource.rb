@@ -65,16 +65,23 @@ module YouVersion
 
         return mash[lang_key] unless mash[lang_key].nil?
 
-        val = mash.html.try(:[], lang_key)
-        val ||= mash.html.try(:[], 'default')
-        val ||= mash.text.try(:[], lang_key)
-        val ||= mash.text.try(:[], 'default')
-        val ||= mash.try(:[], 'default')
+        # try to get localized html
+        if mash.html.is_a?(Hashie::Mash)
+          val = mash.html.try(:[], lang_key)
+          val ||= mash.html.try(:[], 'default')
+        end
+        # try to get localized text
+        if val.blank? && mash.text.is_a?(Hashie::Mash)
+          val ||= mash.text.try(:[], lang_key)
+          val ||= mash.text.try(:[], 'default')
+        end
+
+        val ||= mash.default if mash.has_key?(:default)
 
         # if there is no i18nized string to pull
-        # allow html/text root values
-        val ||= mash.try(:[], :html) unless mash.try(:[], :html).is_a?(Hashie::Mash)
-        val ||= mash.try(:[], :text) unless mash.try(:[], :text).is_a?(Hashie::Mash)
+        # allow root html/text root
+        val ||= mash.try(:[], :html) if mash.try(:[], :html).is_a?(String)
+        val ||= mash.try(:[], :text) if mash.try(:[], :text).is_a?(String)
         val
       end
 
