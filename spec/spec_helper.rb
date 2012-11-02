@@ -56,6 +56,8 @@ Capybara.server do |app, port|
 end
 
 Capybara.javascript_driver = :webkit
+Capybara.default_wait_time = 5
+Capybara.app_host = "http://youversion-web.dev"
 
 
 module ::RSpec::Core
