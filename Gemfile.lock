@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/lifechurch/rpm.git
-  revision: 2080b4464d1616c1583cd3e237195ea0f5342c2b
-  specs:
-    newrelic_rpm (3.5.0.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -213,6 +207,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
     netrc (0.7.7)
+    newrelic_rpm (3.5.1.beta1)
     nokogiri (1.5.2)
     ntlm-http (0.1.1)
     oauth (0.4.6)
@@ -394,7 +389,7 @@ DEPENDENCIES
   koala (~> 1.4.1)
   language_list (~> 0.0.3)
   minitest
-  newrelic_rpm!
+  newrelic_rpm (= 3.5.1.beta1)
   omniauth-facebook (~> 1.2.0)
   omniauth-google-oauth2 (~> 0.1.9)
   omniauth-twitter (~> 0.0.11)
