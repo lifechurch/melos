@@ -4,9 +4,11 @@ AssetSync.configure do |config|
     config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
     config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
     config.fog_directory = ENV['FOG_DIRECTORY']
+    puts "AssetSync Enabled: Syncing to #{config.fog_provider}: #{config.fog_directory}."
   else
     #Disable if there is no asset host specific (useful for alternate staging configuration)
     config.enabled = false
+    puts "AssetSync Disabled: no FOG_DIRECTORY ENV var specified."
   end
 
   # Increase upload performance by configuring your region
