@@ -44,6 +44,7 @@ YouversionWeb::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
+  puts "ENV['SECURE_TRAFFIC'] => #{ENV['SECURE_TRAFFIC']}"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css bdc_home.css)
