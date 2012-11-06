@@ -7,7 +7,7 @@
   = stylesheet_link_tag "status"
 
 :ruby
-  chart_width = 835
+  chart_width = 835 - 56 + 70
   chart_height = 250
 
 %article
@@ -17,19 +17,24 @@
     %section
       %h3 End User Performance
       .content
-        %iframe{src: "https://heroku.newrelic.com/public/charts/dfMtFadfGXx", width: "#{chart_width - 52}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
+        %iframe{src: "https://heroku.newrelic.com/public/charts/2Arj4WHkQjz", width: "#{chart_width - 11}", height: "#{chart_height}", scrolling: "no", frameborder: "no"}
     %section
-      %h3 Appliction Response
+      %h3 Appliction Performance
       .content
-        %iframe{src: "https://rpm.newrelic.com/public/charts/6HipkH06PRE", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 1px"}
-        %iframe{src: "https://rpm.newrelic.com/public/charts/4kQd3EfVuIj", width: "#{chart_width-66}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 14px"}
+        %iframe{src: "https://heroku.newrelic.com/public/charts/DOmdRVI7Ul", width: "#{chart_width}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 1px"}
+    %section
+      %h3 Throughput
+      .content
+        %iframe{src: "https://heroku.newrelic.com/public/charts/dkVpeFQ0WCw", width: "#{chart_width - 20}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 1px"}
     %section
       %h3 API Performance
       .content
-        %iframe{src: "https://rpm.newrelic.com/public/charts/a54EBDL5jZK", width: "#{chart_width - 6}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
-        %iframe{src: "https://rpm.newrelic.com/public/charts/fKCnSIf12Xu", width: "#{chart_width - 6}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
+        %iframe{src: "https://heroku.newrelic.com/public/charts/id0y42XZr2A", width: "#{chart_width + 10}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
+        %iframe{src: "https://heroku.newrelic.com/public/charts/gvf2t0V1TO", width: "#{chart_width + 3}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-left: 2px"}
+        %h6{style: "margin-left: 30px"} Bible API Performance
+        %iframe{src: "https://heroku.newrelic.com/public/charts/hREc5tcSRzS", width: "#{chart_width + 50}", height: "#{chart_height}", scrolling: "no", frameborder: "no", style: "margin-right: 0px"}
     %section
-      %h3 Instance Debug Info (This Unicorn Worker)
+      %h3 Instance Debug Info (This Dyno)
       .content
         %p
           %b Log Level:
