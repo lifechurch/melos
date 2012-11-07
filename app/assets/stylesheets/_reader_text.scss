@@ -7,6 +7,8 @@
 .s + .p,
 .s1 + .p,
 .s2 + .p,
+.s + .pi1,
+.pi1 + .p,
 .ms1 + .p,
 .ms2 + .p {
   text-indent: 0;
@@ -27,6 +29,9 @@
 .p + .m2,
 .p + .q,
 .p + .q1,
+.p + .li1,
+.li1 + .li2,
+.li2 + .li1,
 .m + .s,
 .m + .s1,
 .m + .s2,
@@ -69,7 +74,8 @@
 .io3 + .is1,
 .ip + .io1,
 .ip + .io2,
-.ip + .io3 {
+.ip + .io3,
+.pi1 + .s {
   margin-top: 1em;
 }
 
