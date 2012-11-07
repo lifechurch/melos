@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require select2
 //= require_self
 //= require_tree ./lib/
 //= require_tree ./menus/

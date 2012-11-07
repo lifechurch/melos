@@ -5,6 +5,7 @@ function BookChapterMenu( opts ) {
 
   this.menu             = $(opts.menu);
   this.trigger          = $(opts.trigger);
+  this.search           = this.menu.find('#search');
   this.book_menu        = this.menu.find('#menu_book');
   this.chapter_menu     = this.menu.find('#menu_chapter');
   this.current_book     = $('#main article').data('book') || "jhn";
@@ -14,6 +15,7 @@ function BookChapterMenu( opts ) {
   // Select initial book
   this.setCurrentBook( this.current_book );
   this.populateChapters( this.current_book );
+  this.initSearch( this.current_book );
 
   //show chapters when users clicks a book
   this.book_menu.delegate('a', 'click', $.proxy(function(e) {
@@ -77,6 +79,32 @@ BookChapterMenu.prototype = {
             book_menu.data('selected-book-num', index + 1);
           }
         });
+  },
+
+  initSearch : function( book ) {
+
+    var book_sel = this.search.find('.book');
+
+    $.each(this.book_menu.find('ul li'), function() {
+      book_sel.append(
+        $('<option></option>').val($(this).attr('data-book')).html($(this).find('a').html())
+      );
+    });
+
+    book_sel.select2({
+                allowClear: true
+    });
+
+    var chapter_sel = this.search.find('.chapter');
+    chapter_sel.select2({
+                allowClear: true
+    });
+
+    var verse_sel = this.search.find('.verse');
+    verse_sel.select2({
+                allowClear: true
+    });
+
   }
 
 }
