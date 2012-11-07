@@ -20,7 +20,7 @@ class PlansController < ApplicationController
   def show
     @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth) if current_auth
 
-    get_reader_settings
+    populate_reader_settings
 
     # if user is subscribed
     if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]
