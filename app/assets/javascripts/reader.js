@@ -547,7 +547,7 @@ Reader.prototype = {
         method: "get",
         dataType: "json",
         success: function(ref) {
-          if (thiss.isParallel()){
+          if (thiss.isParallel() == 'true'){
             //fade in/out adds in-line style that will bork our css styling
             var origStyle = version_elem.attr('style') || '';
             version_elem.fadeOut(100, function() {
