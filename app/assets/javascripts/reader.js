@@ -112,6 +112,7 @@ Reader.prototype = {
       e.preventDefault();
       this.verseClicked(e.delegateTarget);
     },this));
+
   },
 
   fetchSelectedVerses : function() {
@@ -120,6 +121,13 @@ Reader.prototype = {
 
   allSelectedVerses : function() {
     return $('.verse.selected');
+  },
+
+  fetchHighlightedVerses : function(article_id) {
+    //if no article passed, just grab all highlights
+    if (article_id) { article_id += " " } else { var article_id = '' }
+
+    return $(article_id + '.verse.highlighted');
   },
 
   verseClicked : function( verse ) {
@@ -317,11 +325,31 @@ Reader.prototype = {
     this.selected.verse_number_ranges = verse_ranges;
   },
 
+  clearHighlights : function(article_id) {
+    var highlights = this.fetchHighlightedVerses(article_id);
+
+    highlights.css("background-color", 'transparent');
+    highlights.removeClass('highlighted dark_bg');
+  },
+
+  showHighlights : function(article_id) {
+    $.each(this.fetchHighlightedVerses(article_id), function() {
+      $(this).css('background-color', $(this).attr('data-highlight-color'));
+    });
+  },
+
+  hideHighlights : function(article_id) {
+    $.each(this.fetchHighlightedVerses(article_id), function() {
+      $(this).css('background-color', 'transparent');
+    });
+  },
+
   loadHighlights : function(article_id) {
     var chapter = $(article_id).find('.chapter');
     var version = $(article_id).find('.version').data("vid");
     var verse = null;
-    var flag = 'highlighted';
+    var userShowsHighlights = $('#main article').attr('data-setting-show-highlights') || 'true';
+
     var thiss = this;
 
     if(!chapter.length || !version){return;}
@@ -330,18 +358,17 @@ Reader.prototype = {
       url: "/bible/" + version + "/" + chapter.data("usfm") + "/highlights",
       method: "get",
       dataType: "json",
-      success: function(highlights) {
+      success: function(jsonHighlights) {
 
         //reset any old highlights in the current chapter
-        chapter.find('.verse.' + flag).css("background-color", 'transparent');
-        chapter.find('.verse.' + flag).removeClass(flag);
+        thiss.clearHighlights(article_id);
 
         //apply the new highlights
-        $.each(highlights, function(i, highlight) {
+        $.each(jsonHighlights, function(i, highlight) {
             verse = chapter.find(".verse.v" + highlight.verse);
-            verse.addClass(flag);
+            verse.addClass("highlighted");
 
-            verse.css("background-color", "#" + highlight.color);
+            verse.attr("data-highlight-color", "#" + highlight.color);
             if (isColorDark(highlight.color)) { verse.addClass("dark_bg"); }
 
             //add the highlight ids (so if user clears they can clear them all)
@@ -352,6 +379,8 @@ Reader.prototype = {
             highlight_ids.push(highlight.id);
             verse.attr('data-highlight-ids', highlight_ids.join(','));
         });//end highlights each
+
+        if (userShowsHighlights == 'true') { thiss.showHighlights(article_id); }
 
         // have to reparse the verses again due to adding new attribute values
         thiss.parseVerses();
@@ -521,7 +550,6 @@ Reader.prototype = {
           if (thiss.isParallel()){
             //fade in/out adds in-line style that will bork our css styling
             var origStyle = version_elem.attr('style') || '';
-            console.log(origStyle);
             version_elem.fadeOut(100, function() {
               version_elem.html(ref.content);
               version_elem.fadeIn(200);

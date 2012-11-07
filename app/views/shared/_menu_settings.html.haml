@@ -53,6 +53,11 @@
         %input.checkbox_user_setting{type:"checkbox", name: "user_setting_cross_refs", id: 'user_setting_cross_refs', :checked => ('checked' if @cross_refs == "true")}
         %label{for: 'user_setting_cross_refs'}
           = t('.cross references')
+      - if current_auth
+        %span.float_left.width_50
+          %input.checkbox_user_setting{type:"checkbox", name: "user_setting_show_highlights", id: 'user_setting_show_highlights', :checked => ('checked' if @show_highlights == "true")}
+          %label{for: 'user_setting_show_highlights'}
+            = t('.highlights')
     %fieldset.clearfix{style: "display: none"}
       %p.gutter_bottom_half
         %b

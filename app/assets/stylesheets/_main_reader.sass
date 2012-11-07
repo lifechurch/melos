@@ -283,7 +283,7 @@ footer .publisher .courtesy + .blurb
   margin-left: 3px
 
 .verse > .label
-  color: #666
+  color: $label_text
   font:
     family: $body_font
     weight: bold
@@ -349,8 +349,21 @@ article[data-setting-cross-refs="true"] .note.x > .label
   padding: 4px 8px 6px
   display: block
 
-.verse.highlighted.dark_bg
+article[data-setting-show-highlights="true"] .verse.highlighted
+  background:
+    image: image-url('bg-highlighted-text@2x.png')
+    repeat: repeat
+    position: left top
+
+article[data-setting-show-highlights="true"] .verse.highlighted.dark_bg,
+article[data-setting-show-highlights="true"] .verse.highlighted.dark_bg > .label
   color: $gray_light
+
+article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg
+  color: $body_text
+
+article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .label
+  color: $label_text
 
 // `Main > headers and paragraphs
 //----------------------------------------------------------------------------------------------------

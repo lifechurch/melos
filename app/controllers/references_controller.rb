@@ -10,11 +10,7 @@ class ReferencesController < ApplicationController
     @html_classes << "full_screen" if cookies[:full_screen]
     @html_classes << "full_screen" << "parallel_mode" if cookies[:parallel_mode]
 
-    # Get user font and size settings
-    @font = cookies['data-setting-font']
-    @size = cookies['data-setting-size']
-    @trans_notes = cookies['data-setting-trans-notes']
-    @cross_refs = cookies['data-setting-cross-refs']
+    populate_reader_settings
 
     # render last read or default if no reference specified
     # This allows for root to give better meta (SEO)

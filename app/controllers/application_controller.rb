@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
+  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?, :get_reader_settings
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
@@ -44,6 +44,19 @@ class ApplicationController < ActionController::Base
 
     #render marketing page if bible.com root
     render 'pages/bdc_home' if @site.class == SiteConfigs::Bible && request.path =~ /^\W*$/
+  end
+
+  def populate_reader_settings
+    # Get user font and size settings
+    # TODO:
+    # move into a memoized settings hash, handle similarly
+    # to FB cookie with JSON data and accessor instead of blind
+    # setting of opaque variables
+    @font = cookies['data-setting-font']
+    @size = cookies['data-setting-size']
+    @trans_notes = cookies['data-setting-trans-notes']
+    @cross_refs = cookies['data-setting-cross-refs']
+    @show_highlights = cookies['data-setting-show-highlights'] || "true"
   end
 
   # Manually throw a 404

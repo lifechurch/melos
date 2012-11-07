@@ -20,11 +20,7 @@ class PlansController < ApplicationController
   def show
     @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth) if current_auth
 
-    # Get user font and size settings
-    @font = cookies['data-setting-font']
-    @size = cookies['data-setting-size']
-    @trans_notes = cookies['data-trans-notes']
-    @cross_refs = cookies['data-cross-refs']
+    get_reader_settings
 
     # if user is subscribed
     if (@subscription && (params[:ignore_subscription] != "true")) || params[:day]

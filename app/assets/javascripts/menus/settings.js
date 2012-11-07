@@ -44,6 +44,18 @@ SettingsMenu.prototype = {
       setCookie('data-setting-cross-refs', 'false');
       article.attr('data-setting-cross-refs', 'false');
     }
-  });
+    });
+
+    $('#user_setting_show_highlights').click(function(){
+    if($(this).parent('.is_checked').length) {
+      setCookie('data-setting-show-highlights', 'true');
+      article.attr('data-setting-show-highlights', 'true');
+      reader.showHighlights();
+    } else {
+      setCookie('data-setting-show-highlights', 'false');
+      article.attr('data-setting-show-highlights', 'false');
+      reader.hideHighlights();
+    }
+    });
   }
 }
