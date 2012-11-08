@@ -76,7 +76,7 @@ module YouVersion
           val ||= mash.text.try(:[], 'default')
         end
 
-        val ||= mash.default if mash.has_key?(:default)
+        val ||= mash["default"] if mash.has_key?(:default)
 
         # if there is no i18nized string to pull
         # allow root html/text root
