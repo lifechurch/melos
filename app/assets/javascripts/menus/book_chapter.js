@@ -27,8 +27,10 @@ function BookChapterMenu( opts ) {
     this.setCurrentBook(book);
     this.populateChapters(book);
     link.blur();
-
   },this));
+
+  //setup search timer
+  this.searchTimer = null;
 }
 
 BookChapterMenu.prototype = {
@@ -62,6 +64,10 @@ BookChapterMenu.prototype = {
         chapters_ol.html(list);
   },
 
+  clearChapters : function() {
+    $("#chapter_selector").html('');
+  },
+
   setCurrentBook : function( book ) {
 
     this.current_book = book;
@@ -81,33 +87,45 @@ BookChapterMenu.prototype = {
         });
   },
 
+  scrollToSelected : function(){
+    // Scroll to book if this menu is book/chapter menu.
+    if (this.book_menu.is(':visible')){
+      var location = this.book_menu.find('li.' + this.active_class).offset().top - this.book_menu.offset().top + this.book_menu.scrollTop() - 27;
+      this.book_menu.find('.scroll').scrollTop(location);
+    }
+    // TODO: set up event to execute code when made visible (else for ^^)
+  },
+
+  //user is "finished typing," do something
+  filterBooks : function (filter) {
+    if(filter.length){
+      $("#menu_book li").hide();
+      $("#menu_book li[data-search*='" + filter + "']").show();
+      this.clearChapters();
+      this.book_menu.find('.' + this.active_class).removeClass(this.active_class);
+      //TODO: fire hover event and fill chapter list for first match
+    }
+    else{
+      //empty search, show and restore current book
+      $("#menu_book li").show();
+      this.setCurrentBook(this.current_book);
+      this.scrollToSelected();
+      this.populateChapters(this.current_book);
+    }
+
+  },
+
   initSearch : function( book ) {
-
-    var book_sel = this.search.find('.book');
-    var book = book || this.current_book;
-
-    $.each(this.book_menu.find('ul li a'), function() {
-      book_sel.append(
-        $('<option></option>').val($(this).attr('data-book')).html($(this).html())
-      );
+    //on keyup, start the countdown
+    thiss = this;
+    $('#search input').keyup(function(){
+      clearTimeout(thiss.searchTimer);
+      thiss.searchTimer = setTimeout(thiss.filterBooks($('#search input').val()), 350);
     });
 
-    book_sel.find('option[value='+ book +']').attr('selected', 'selected');
-
-    book_sel.select2({
-                allowClear: true
+    this.trigger.click(function() {
+      $('#search input').focus();
     });
-
-    var chapter_sel = this.search.find('.chapter');
-    chapter_sel.select2({
-                allowClear: true
-    });
-
-    var verse_sel = this.search.find('.verse');
-    verse_sel.select2({
-                allowClear: true
-    });
-
-  }
+  },
 
 }

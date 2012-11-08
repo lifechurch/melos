@@ -127,7 +127,7 @@ class Version < YouVersion::Resource
 
     @books = Hashie::Mash.new
     detailed_attributes['books'].each_with_index do |b, i|
-      @books[b.usfm] = b.merge(chapters: b.chapters)
+      @books[b.usfm] = b.merge({chapters: b.chapters, search: "#{b.usfm} #{b.human}"})
     end
     @books
   end

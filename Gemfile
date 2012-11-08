@@ -34,7 +34,6 @@ gem 'rack-timeout',           '~> 0.0.3'
 # github.com/svenfuchs/rails-i18n/tree/master/rails/locale/
 # gem 'rails-i18n',           '~> 0.6.3'
 gem 'routing-filter',         '~> 0.3.1'
-gem 'select2-rails',          '~> 3.2.1'
 # gem "unicorn-heroku",        '~> 4.3.1.1.gc608.dirty'
 gem "unicorn",               '~> 4.3.1'
 
