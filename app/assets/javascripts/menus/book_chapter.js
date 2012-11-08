@@ -84,12 +84,15 @@ BookChapterMenu.prototype = {
   initSearch : function( book ) {
 
     var book_sel = this.search.find('.book');
+    var book = book || this.current_book;
 
-    $.each(this.book_menu.find('ul li'), function() {
+    $.each(this.book_menu.find('ul li a'), function() {
       book_sel.append(
-        $('<option></option>').val($(this).attr('data-book')).html($(this).find('a').html())
+        $('<option></option>').val($(this).attr('data-book')).html($(this).html())
       );
     });
+
+    book_sel.find('option[value='+ book +']').attr('selected', 'selected');
 
     book_sel.select2({
                 allowClear: true
