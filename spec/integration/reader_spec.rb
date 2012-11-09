@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Reader", js: true do
 	describe "when signed out" do
 		before :all do
-			visit "/sign-out"
+			# visit "/sign-out"
 		end
 
 		scenario "selecting verses" do
@@ -45,8 +45,33 @@ feature "Reader", js: true do
 	describe "when signed in" do
 		before :all do
 			# Given I am signed in as "testusercb" with the password "tenders"
+			@auth = Hashie::Mash.new(username: "testusercb", password: "tenders")
 		end
 		describe "with selected verses" do
+			before :all do
+				hgh = Highlight.for_reference(Reference.new("jhn.1.kjv"), auth: @auth)
+				puts "hgh:"
+				ap hgh
+				hgh.each(&:destroy)
+				hgh = Highlight.for_reference(Reference.new("jhn.1.kjv"), auth: @auth)
+				puts "hgh now:"
+				ap hgh
+
+				bkm = User.find("testusercb", auth: @auth).bookmarks
+				puts "bookmarks:"
+				ap bkm
+				bkm.each do |b|
+					b = Bookmark.find(b.id, auth: @auth)
+					puts "destryoing #{b.id}"
+					puts b.destroy
+					puts b.errors.full_messages
+				end
+				bkm = User.find("testusercb", auth: @auth).bookmarks
+				puts "NOW bookmarks:"
+				ap bkm
+
+			end
+
 			before :each do
 				# Given I an on the chapter page for KJV John 1
 				visit "/bible/1/jhn.1.kjv"
@@ -60,16 +85,19 @@ feature "Reader", js: true do
 			end
 
 			scenario "highlighting a verse" do
-				puts "im on #{current_path}"
-				page.find("#highlight_0").click
-				puts "now im on #{current_path}"
-				page.find("#version_primary span.verse.v1.highlighted").should
 
+				expect{page.find("#version_primary span.verse.v1.highlighted")}.to raise_exception
+				page.find("#highlight_0").click
+				page.find("#version_primary span.verse.v1.highlighted").should
+			end
+
+			scenario "creating a bookmark" do
+				# Bookmark blurb text
+				page.find(".widget.bookmarks").should have_content("give you a quick reference")
+				page.find("#bookmark-pane").find("button[type='submit']").click
+				page.find(".widget.bookmarks").should have_content("John 1:1 (KJV)")
 
 			end
-				
-
 		end
 	end
-
 end
