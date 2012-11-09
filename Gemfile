@@ -62,6 +62,7 @@ group :test, :development do
 end
 
 group :development, :tddium_ignore do
+  gem 'powder'
   gem 'debugger'
   gem 'active_reload' #TODO: Remove when upgrading to Rails 3.2
   gem 'guard'
