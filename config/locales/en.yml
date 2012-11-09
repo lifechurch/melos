@@ -97,6 +97,7 @@ en:
   search placeholder:                           "Search..."
   search:                                       "Search"
   book:                                         "Book"
+  filter book:                                  "Filter Books..."
   try the beta:                                 "Try the Beta"
   welcome to the beta:                          "Welcome to the new YouVersion.com!"
   selected:                                     "Selected"
@@ -659,6 +660,7 @@ en:
     408 explanation:                            "We've been alerted and will address any persistent issues as quickly as possible. Let's see if we can get you back to your Bible reading!"
     try again:                                  "Try Again"
   versions:
+    filter:                                     "Filter Versions..."
     courtesy of:                                "%{abbreviation} brought to you by %{publisher}"
     learn more:                                 "Learn More"
     index title:                                "Available Versions"
