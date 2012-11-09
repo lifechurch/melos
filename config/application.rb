@@ -7,6 +7,7 @@ require "rack"
 require "rack/mobile-detect"
 require "rack/rewrite"
 require File.join(File.dirname(__FILE__), '../lib/bb.rb')
+require File.join(File.dirname(__FILE__), '../lib/health.rb')
 require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
 
 require File.expand_path('../_config', __FILE__)
@@ -164,6 +165,9 @@ module YouversionWeb
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
+
+    # Heroku health check
+    #config.middleware.insert_before(Rack::MobileDetect, Heroku::HttpHealth)
 
     #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
     config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)
