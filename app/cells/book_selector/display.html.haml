@@ -13,9 +13,9 @@
 #menu_book_chapter.dynamic_menu
   .spinner_wrapper{style: "display: none;"}
     #book_chapter_spinner.dynamic_menu_spinner
-  #search
+  .search
     %input{type: "text"}
-  #browse
+  .browse
     %span.menu_arrow
       &nbsp;
     #menu_book
@@ -24,7 +24,7 @@
       .scroll
         %ul
           - @version.books.each do |book_usfm, book_info|
-            %li{"data-search" => book_info.search}
+            %li{"data-meta" => book_info.to_meta}
               %a{:href => '#', "data-book" => book_usfm.downcase}=  book_info.human
     #menu_chapter
       %header

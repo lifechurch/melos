@@ -117,7 +117,7 @@
     weight: normal
   line-height: 1
 
-#menu_book_chapter #search input
+.dynamic_menu .search input,
   width: 100%
 
 .dynamic_menu table
@@ -174,12 +174,14 @@
 // `Book & Chapter Menu
 //----------------------------------------------------------------------------------------------------
 
-#menu_book_chapter #browse
+#menu_book_chapter .browse
   @extend .clearfix
   background:
     image: image-url("menu_book_chapter.png")
     repeat: repeat-y
     position: center top
+
+.dynamic_menu .browse
   padding-top: 5px
 
 

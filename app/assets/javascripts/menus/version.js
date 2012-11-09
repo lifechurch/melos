@@ -2,7 +2,11 @@ function VersionMenu( opts ) {
   this.menu         = $(opts.menu);
   this.trigger      = $(opts.trigger);
   this.alt_version  = opts.alt_version || false;
+  this.search_input = this.menu.find('.search input');
+  this.searchTimer  = null;
+
   this.initLinks();  // Copied directly from previous code.  Needs refactoring.
+  this.initSearch();
 }
 
 VersionMenu.prototype = {
@@ -83,5 +87,42 @@ VersionMenu.prototype = {
       }
     });
 
+  },
+
+  filterVersions : function (filter) {
+    if(filter.length){
+      var regexp = new RegExp(filter, 'i');
+      this.menu.find("tr[data-meta]").hide();
+      $.each(this.menu.find("tr[data-meta]"), function() {
+        if($(this).attr('data-meta').match(regexp)) $(this).show();
+      });
+      //TODO: fire hover event so user knows what would select if enter is pressed
+    }
+    else{
+      //empty search, show list
+      this.menu.find("tr").show();
+    }
+
+  },
+
+  initSearch : function() {
+    //on keyup, start the countdown
+    var thiss = this;
+
+    this.search_input.keyup(function(){     // search as user types
+      clearTimeout(thiss.searchTimer);
+      thiss.searchTimer = setTimeout(thiss.filterVersions(thiss.search_input.val()), 350);
+    });
+
+    this.trigger.click(function(){          // focus search on menu open
+      setTimeout(function() {               // we have to wait because it takes a bit
+        thiss.search_input.focus();         // to show the menu (?!)
+      }, 100);
+    });
+
+    this.search_input.focus( function(){
+      $(this).select();
+    });
   }
+
 }

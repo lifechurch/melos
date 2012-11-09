@@ -5,12 +5,13 @@ function BookChapterMenu( opts ) {
 
   this.menu             = $(opts.menu);
   this.trigger          = $(opts.trigger);
-  this.search           = this.menu.find('#search');
+  this.search_input     = this.menu.find('.search input');
   this.book_menu        = this.menu.find('#menu_book');
   this.chapter_menu     = this.menu.find('#menu_chapter');
   this.current_book     = $('#main article').data('book') || "jhn";
   this.current_chapter  = $('#main article').data('chapter') || "1";
   this.active_class     = "li_active";
+  this.searchTimer      = null;
 
   // Select initial book
   this.setCurrentBook( this.current_book );
@@ -29,8 +30,7 @@ function BookChapterMenu( opts ) {
     link.blur();
   },this));
 
-  //setup search timer
-  this.searchTimer = null;
+
 }
 
 BookChapterMenu.prototype = {
@@ -96,11 +96,13 @@ BookChapterMenu.prototype = {
     // TODO: set up event to execute code when made visible (else for ^^)
   },
 
-  //user is "finished typing," do something
   filterBooks : function (filter) {
     if(filter.length){
+      var regexp = new RegExp(filter, 'i');
       $("#menu_book li").hide();
-      $("#menu_book li[data-search*='" + filter + "']").show();
+      $.each($("#menu_book li"), function() {
+        if($(this).attr('data-meta').match(regexp)) $(this).show();
+      });
       this.clearChapters();
       this.book_menu.find('.' + this.active_class).removeClass(this.active_class);
       //TODO: fire hover event and fill chapter list for first match
@@ -117,15 +119,22 @@ BookChapterMenu.prototype = {
 
   initSearch : function( book ) {
     //on keyup, start the countdown
-    thiss = this;
-    $('#search input').keyup(function(){
+    var thiss = this;
+
+    thiss.search_input.keyup(function(){
       clearTimeout(thiss.searchTimer);
-      thiss.searchTimer = setTimeout(thiss.filterBooks($('#search input').val()), 350);
+      thiss.searchTimer = setTimeout(thiss.filterBooks(thiss.search_input.val()), 350);
     });
 
     this.trigger.click(function() {
-      $('#search input').focus();
+      setTimeout(function() {               // we wait because it may take a bit
+        thiss.search_input.focus();         // to show the menu on slow browsers
+      }, 100);
     });
-  },
+
+    this.search_input.focus( function(){
+      $(this).select();
+    });
+  }
 
 }

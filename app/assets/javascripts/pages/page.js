@@ -240,7 +240,6 @@ Page.prototype = {
         var language_menu   = new LanguageMenu("#choose_language");
       }
 
-
     var thiss = this;
     var all_menu_triggers = $('.dynamic_menu_trigger');
         all_menu_triggers.each( function(index) {
