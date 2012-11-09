@@ -92,15 +92,27 @@ VersionMenu.prototype = {
   filterVersions : function (filter) {
     if(filter.length){
       var regexp = new RegExp(filter, 'i');
-      this.menu.find("tr[data-meta]").hide();
+      // hide all rows
+      this.menu.find("tr").hide();
+      var category = null;
+      // show matching versions and their category headers
       $.each(this.menu.find("tr[data-meta]"), function() {
-        if($(this).attr('data-meta').match(regexp)) $(this).show();
+        if($(this).attr('data-meta').match(regexp)){
+          $(this).show();
+          // show closest language header
+          // TODO: avoid firing this prevAll if already shown! CPU ouch.
+          category = $(this).prev('tr.cat');
+          if (category.length == 0){
+            category = $(this).prevUntil('tr.cat').last().prev();
+          }
+          category.show();
+        }
       });
       //TODO: fire hover event so user knows what would select if enter is pressed
     }
     else{
       //empty search, show list
-      this.menu.find("tr").show();
+      this.menu.find("tr, th").show();
     }
 
   },
