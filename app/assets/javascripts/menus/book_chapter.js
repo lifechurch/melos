@@ -12,6 +12,7 @@ function BookChapterMenu( opts ) {
   this.current_chapter  = $('#main article').data('chapter') || "1";
   this.active_class     = "li_active";
   this.searchTimer      = null;
+  this.firstMatch    = 'first-match';
 
   // Select initial book
   this.setCurrentBook( this.current_book );
@@ -29,7 +30,6 @@ function BookChapterMenu( opts ) {
     this.populateChapters(book);
     link.blur();
   },this));
-
 
 }
 
@@ -66,6 +66,7 @@ BookChapterMenu.prototype = {
 
   clearChapters : function() {
     $("#chapter_selector").html('');
+    this.current_chapter = null;
   },
 
   setCurrentBook : function( book ) {
@@ -98,11 +99,28 @@ BookChapterMenu.prototype = {
 
   filterBooks : function (filter) {
     if(filter.length){
+      var thiss = this;
       var regexp = new RegExp(filter, 'i');
-      $("#menu_book li").hide();
-      $.each($("#menu_book li"), function() {
-        if($(this).attr('data-meta').match(regexp)) $(this).show();
+
+      // hide all books and unflag first match
+      this.menu.find("li").hide();
+      this.menu.find("li." + this.firstMatch).removeClass(this.firstMatch);
+      var noMatch = true;
+
+      // show matching books
+      $.each(thiss.menu.find("li[data-meta]"), function() {
+        if($(this).attr('data-meta').match(regexp)){
+          $(this).show();
+
+          // mark first match
+          if(noMatch) {
+            $(this).addClass(thiss.firstMatch);
+            noMatch = false;
+          }
+        }
       });
+
+      // select and populate chapter list for first match
       this.clearChapters();
       this.book_menu.find('.' + this.active_class).removeClass(this.active_class);
       //TODO: fire hover event and fill chapter list for first match
@@ -121,19 +139,30 @@ BookChapterMenu.prototype = {
     //on keyup, start the countdown
     var thiss = this;
 
-    thiss.search_input.keyup(function(){
+    this.trigger.click(function() {                           // focus filter input on menu show
+      setTimeout(function() {          // we wait because it may take a bit
+        thiss.search_input.focus();    // to show the menu on slow browsers
+      }, 100);
+    });
+
+    this.search_input.focus( function(){                      // select any existing text on focus
+      $(this).select();
+    });
+
+    this.search_input.keyup(function(){
       clearTimeout(thiss.searchTimer);
       thiss.searchTimer = setTimeout(thiss.filterBooks(thiss.search_input.val()), 350);
     });
 
-    this.trigger.click(function() {
-      setTimeout(function() {               // we wait because it may take a bit
-        thiss.search_input.focus();         // to show the menu on slow browsers
-      }, 100);
-    });
-
-    this.search_input.focus( function(){
-      $(this).select();
+    this.search_input.keyup(function(e){                  // enter or tab selects first match
+      if(e.keyCode == 13 || e.keyCode == 9) {
+        var firstMatchLink = thiss.menu.find('.' + thiss.firstMatch + ' a');
+        if (firstMatchLink.click()){
+          thiss.setCurrentBook(firstMatchLink.data("book"));
+          thiss.search_input.val(firstMatchLink.html()).blur();
+          thiss.menu.find("li." + thiss.firstMatch).removeClass(thiss.firstMatch);
+        }
+      }
     });
   }
 

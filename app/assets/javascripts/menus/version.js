@@ -155,10 +155,7 @@ VersionMenu.prototype = {
 
     this.search_input.keyup(function(e){                  // enter selects first match
       if(e.keyCode == 13) {
-        var firstMatchLink = thiss.menu.find('.' + thiss.firstMatch + ' a');
-        if (firstMatchLink.length){
-          firstMatchLink.click();
-        }
+        thiss.menu.find('.' + thiss.firstMatch + ' a').click();
       }
     });
   }
