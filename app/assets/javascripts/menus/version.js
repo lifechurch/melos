@@ -102,26 +102,45 @@ VersionMenu.prototype = {
       var noMatch = true;
 
 
-      // show matching versions and their category headers
-      $.each(this.menu.find("tr[data-meta]"), function() {
-        if($(this).attr('data-meta').match(regexp)){
-          // show matching version row
-          $(this).show();
+      // show matching rows
+      $.each(this.menu.find("tr"), function() {
+        if($(this).hasClass('cat')){
+          //show matching categories and all versision 'within'
+          if($(this).find('th').html().match(regexp)){
+            // show matching version row
+            $(this).show();
 
-          // give first match hover style
-          if (noMatch){
-            $(this).addClass(thiss.firstMatch);
-            noMatch = false;
-          }
+            // give first match hover style
+            if (noMatch){
+              $(this).next('tr').addClass(thiss.firstMatch);
+              noMatch = false;
+            }
 
-          // show closest language header
-          category = $(this).prev('tr.cat'); //if immediately previous sibling
-          if (category.length == 0){
-            // if more than one sibling back -- avoiding use of prevAll() inefficiently
-            category = $(this).prevUntil('tr.cat').last().prev();
+            // and all versions
+            $(this).nextUntil('tr.cat').show();
           }
-          category.show();
         }
+        else if($(this).attr('data-meta').length){
+          // show matching versions and their category headers
+          if($(this).attr('data-meta').match(regexp)){
+            // show matching version row
+            $(this).show();
+
+            // give first match hover style
+            if (noMatch){
+              $(this).addClass(thiss.firstMatch);
+              noMatch = false;
+            }
+
+            // show closest language header
+            category = $(this).prev('tr.cat'); //if immediately previous sibling
+            if (category.length == 0){
+              // if more than one sibling back -- avoiding use of prevAll() inefficiently
+              category = $(this).prevUntil('tr.cat').last().prev();
+            }
+            category.show();
+          }
+      }
       });
       //TODO: highlight first result via css
       //.dynamic_menu .browse.searching li:first(visible)
