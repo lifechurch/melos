@@ -117,6 +117,9 @@
     weight: normal
   line-height: 1
 
+.dynamic_menu .search input,
+  width: 100%
+
 .dynamic_menu table
   border-collapse: separate
   cursor: default
@@ -171,11 +174,16 @@
 // `Book & Chapter Menu
 //----------------------------------------------------------------------------------------------------
 
-#menu_book_chapter
+#menu_book_chapter .browse
+  @extend .clearfix
   background:
     image: image-url("menu_book_chapter.png")
     repeat: repeat-y
     position: center top
+
+.dynamic_menu .browse
+  padding-top: 5px
+
 
 #menu_book_chapter ul,
 #menu_book_chapter ol
@@ -224,7 +232,8 @@
 
 .dynamic_menu tr:hover a,
 #menu_book li:hover,
-#menu_chapter li:hover
+#menu_chapter li:hover,
+.dynamic_menu .first-match
   background-color: $blue-dark
   +background-image(linear-gradient($blue_light, $blue_dark))
   text-shadow: rgba(#000, 0.5) 0 -1px 0

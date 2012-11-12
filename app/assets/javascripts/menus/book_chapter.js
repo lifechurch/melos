@@ -5,15 +5,19 @@ function BookChapterMenu( opts ) {
 
   this.menu             = $(opts.menu);
   this.trigger          = $(opts.trigger);
+  this.search_input     = this.menu.find('.search input');
   this.book_menu        = this.menu.find('#menu_book');
   this.chapter_menu     = this.menu.find('#menu_chapter');
   this.current_book     = $('#main article').data('book') || "jhn";
   this.current_chapter  = $('#main article').data('chapter') || "1";
   this.active_class     = "li_active";
+  this.searchTimer      = null;
+  this.firstMatch    = 'first-match';
 
   // Select initial book
   this.setCurrentBook( this.current_book );
   this.populateChapters( this.current_book );
+  this.initSearch( this.current_book );
 
   //show chapters when users clicks a book
   this.book_menu.delegate('a', 'click', $.proxy(function(e) {
@@ -25,8 +29,8 @@ function BookChapterMenu( opts ) {
     this.setCurrentBook(book);
     this.populateChapters(book);
     link.blur();
-
   },this));
+
 }
 
 BookChapterMenu.prototype = {
@@ -60,6 +64,11 @@ BookChapterMenu.prototype = {
         chapters_ol.html(list);
   },
 
+  clearChapters : function() {
+    $("#chapter_selector").html('');
+    this.current_chapter = null;
+  },
+
   setCurrentBook : function( book ) {
 
     this.current_book = book;
@@ -77,6 +86,84 @@ BookChapterMenu.prototype = {
             book_menu.data('selected-book-num', index + 1);
           }
         });
+  },
+
+  scrollToSelected : function(){
+    // Scroll to book if this menu is book/chapter menu.
+    if (this.book_menu.is(':visible')){
+      var location = this.book_menu.find('li.' + this.active_class).offset().top - this.book_menu.offset().top + this.book_menu.scrollTop() - 27;
+      this.book_menu.find('.scroll').scrollTop(location);
+    }
+    // TODO: set up event to execute code when made visible (else for ^^)
+  },
+
+  filterBooks : function (filter) {
+    if(filter.length){
+      var thiss = this;
+      var regexp = new RegExp(filter, 'i');
+
+      // hide all books and unflag first match
+      this.menu.find("li").hide();
+      this.menu.find("li." + this.firstMatch).removeClass(this.firstMatch);
+      var noMatch = true;
+
+      // show matching books
+      $.each(thiss.menu.find("li[data-meta]"), function() {
+        if($(this).attr('data-meta').match(regexp)){
+          $(this).show();
+
+          // mark first match
+          if(noMatch) {
+            $(this).addClass(thiss.firstMatch);
+            noMatch = false;
+          }
+        }
+      });
+
+      // select and populate chapter list for first match
+      this.clearChapters();
+      this.book_menu.find('.' + this.active_class).removeClass(this.active_class);
+      //TODO: fire hover event and fill chapter list for first match
+    }
+    else{
+      //empty search, show and restore current book
+      $("#menu_book li").show();
+      this.setCurrentBook(this.current_book);
+      this.scrollToSelected();
+      this.populateChapters(this.current_book);
+    }
+
+  },
+
+  initSearch : function( book ) {
+    //on keyup, start the countdown
+    var thiss = this;
+
+    this.trigger.click(function() {                           // focus filter input on menu show
+      setTimeout(function() {          // we wait because it may take a bit
+        thiss.search_input.focus();    // to show the menu on slow browsers
+      }, 100);
+    });
+
+    this.search_input.focus( function(){                      // select any existing text on focus
+      $(this).select();
+    });
+
+    this.search_input.keyup(function(){
+      clearTimeout(thiss.searchTimer);
+      thiss.searchTimer = setTimeout(thiss.filterBooks(thiss.search_input.val()), 350);
+    });
+
+    this.search_input.keyup(function(e){                  // enter or tab selects first match
+      if(e.keyCode == 13 || e.keyCode == 9) {
+        var firstMatchLink = thiss.menu.find('.' + thiss.firstMatch + ' a');
+        if (firstMatchLink.click()){
+          thiss.setCurrentBook(firstMatchLink.data("book"));
+          thiss.search_input.val(firstMatchLink.html()).blur();
+          thiss.menu.find("li." + thiss.firstMatch).removeClass(thiss.firstMatch);
+        }
+      }
+    });
   }
 
 }

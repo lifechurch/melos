@@ -127,7 +127,7 @@ class Version < YouVersion::Resource
 
     @books = Hashie::Mash.new
     detailed_attributes['books'].each_with_index do |b, i|
-      @books[b.usfm] = b.merge(chapters: b.chapters)
+      @books[b.usfm] = b.merge({chapters: b.chapters, to_meta: "#{b.usfm} #{b.human}"})
     end
     @books
   end
@@ -165,6 +165,9 @@ class Version < YouVersion::Resource
   end
   def to_s
     "#{title} (#{abbreviation.upcase})"
+  end
+  def to_meta
+    to_s
   end
   def to_param
     "#{id}"
