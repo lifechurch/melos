@@ -4,10 +4,12 @@
 module YouVersion
   class ReferenceString
 
-    attr_accessor :raw, :hash, :verses
+    attr_accessor :hash, :verses
+    attr_reader :raw, :validated
 
     def initialize( ref_str )
       @raw = ref_str
+      @validated = false
       parse
       return self
     end
@@ -18,6 +20,62 @@ module YouVersion
 
     def to_s
       @raw
+    end
+
+    def book
+      @hash[:book]
+    end
+
+    def chapter
+      @hash[:chapter]
+    end
+
+    #verses is attr_accessor
+    def hash=(value)
+      @validated = false
+      @hash = value
+    end
+
+    def version
+      @hash[:version]
+    end
+
+    def validated?
+      @validated
+    end
+
+    def validate!
+      return self if @validated
+      # checks to see if the string is as valid as we can check without hitting API
+      # If it is deemed valid, it replaces the book and version elements
+      # to be valid USFM and API3 codes/ids.
+      if book.is_a? String
+        # leave it if it's already a USFM code
+        _book = book if Cfg.osis_usfm_hash[:books].key(book.upcase)
+        # try to parse from known values
+        _book ||= Cfg.osis_usfm_hash[:books][@hash[:book]]
+        return nil if _book.blank?
+      else
+        # no book specified, invalid
+        return nil
+      end
+
+      # need to have a chapter
+      return nil if chapter.blank?
+
+      # if there is a version it needs to be API3 id or match our known versions
+      if version.present?
+        # leave it if it's already an API3 id (positive #)
+        _ver = version if version.is_a?(Fixnum) || (version.match(/\A\d*\z/)&& version.to_i > 0)
+        # try to parse from known values
+        _ver ||= Cfg.osis_usfm_hash[:versions][version.downcase] if version.is_a? String
+        return nil if _ver.blank?
+      end
+
+      @hash[:book] = _book
+      @hash[:version] = _ver
+      @validated = true
+      return self
     end
 
     def [](arg)
