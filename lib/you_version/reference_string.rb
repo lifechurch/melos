@@ -72,7 +72,7 @@ module YouVersion
         return nil if _ver.blank?
       end
 
-      @hash[:book] = _book
+      @hash[:book] = _book.upcase
       @hash[:version] = _ver
       @validated = true
       return self
@@ -89,11 +89,11 @@ module YouVersion
             \s*
             ([1-3]? \s* [A-Za-z0-9]+)                         #book
             \s*
-            (?:(?:[:\.])([\w]*))?                             #optional chapter
+            (?:(?:[\s:\.])([\w]*))?                             #optional chapter
             \s*
-            (?:(?:[:\.]) ([\d\-,\s]*))?                       #optional verse(s)
+            (?:(?:[\s:\.]) ([\d\-,\s]*))?                       #optional verse(s)
             \s*
-            (?: (?:\.) ((?: \d*\-?)? (?: [\S]*)) )? #optional version
+            (?: (?:[\s\.]) ((?: \d*\-?)? (?: [\S]*)) )? #optional version
           $/x
 
       matches = @raw.match(re)

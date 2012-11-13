@@ -43,6 +43,7 @@ describe YouVersion::ReferenceString do
         'jhn.1.1-5,7.kjv' => {def: "legacy with range and single verse",book: 'jhn', chap: '1', verses: "1-5,7",version: 'kjv'},
         'Gen.1.kjv' => {def: 'legacy osis version',                     book: 'Gen', chap: '1', verses: nil,    version: 'kjv'},
         'Gen.1.2.kjv' => {def: 'legacy osis version with verse',        book: 'Gen', chap: '1', verses: '2',    version: 'kjv'},
+        'Gen 1 2 kjv' => {def: 'book chapter verse with spaces',        book: 'Gen', chap: '1', verses: '2',    version: 'kjv'},
         'Gen.1.2-3.kjv' => {def: 'legacy osis version with verse range',book: 'Gen', chap: '1', verses: '2-3',  version: 'kjv'},
         'Gen.1.1-kjv' => {def: 'API3 version',                          book: 'Gen', chap: '1', verses: nil,    version: '1-kjv'},
         'Gen.1.2.1-kjv' => {def: 'API3 version with verse',             book: 'Gen', chap: '1', verses: '2',    version: '1-kjv'},
@@ -66,25 +67,14 @@ describe YouVersion::ReferenceString do
     end
     describe ".validate!" do
       @valid_ref_strings = {
-        'Gen.1' => {def: 'chapter only',                                book: 'Gen', chap: '1', verses: nil,    version: nil},
-        'ESG.1_1' => {def: 'greek ester chapters',                      book: 'ESG', chap: '1_1', verses: nil,    version: nil},
-        'jhn.1.1-5,7.kjv' => {def: "legacy with range and single verse",book: 'jhn', chap: '1', verses: "1-5,7",version: 'kjv'},
-        'Gen.1.kjv' => {def: 'legacy osis version',                     book: 'Gen', chap: '1', verses: nil,    version: 'kjv'},
-        'Gen.1.2.kjv' => {def: 'legacy osis version with verse',        book: 'Gen', chap: '1', verses: '2',    version: 'kjv'},
-        'Gen.1.2-3.kjv' => {def: 'legacy osis version with verse range',book: 'Gen', chap: '1', verses: '2-3',  version: 'kjv'},
-        'Gen.1.1-kjv' => {def: 'API3 version',                          book: 'Gen', chap: '1', verses: nil,    version: '1-kjv'},
-        'Gen.1.2.1-kjv' => {def: 'API3 version with verse',             book: 'Gen', chap: '1', verses: '2',    version: '1-kjv'},
-        'jhn.1.1-5,7.1-kjv' => {def: "API3 version with range and single verse",book: 'jhn', chap: '1', verses: "1-5,7",version: '1-kjv'},
-        'Gen.1.2-3.1-kjv' => {def: 'API3 version with verse range',     book: 'Gen', chap: '1', verses: '2-3',  version: '1-kjv'},
-        'esg.intro1.69-gntd' => {def: 'API3 version with verse range',  book: 'esg', chap: 'intro1', verses: nil,  version: '69-gntd'},
-        'S3Y.1.1.296-GNB' => {def: 'GNB, book with # in middle',        book: 'S3Y', chap: '1', verses: '1',  version: '296-GNB'},
-        'act.1.47-cunpss-上帝' => {def: 'version abbrev w/ utf-8',       book: 'act', chap: '1', verses: nil,  version: '47-cunpss-上帝'}
+        'Gen.1.KJV' => {def: 'chapter only',                            book: 'GEN', chap: '1', verses: nil,    version: 1},
+        'John 1 KJV' => {def: 'chapter only with spaces',               book: 'JHN', chap: '1', verses: nil,    version: 1}
       }
       @valid_ref_strings.each do |ref_str, expect|
-        specify "should validate for '#{ref_str}')" do
+        specify "should validate for '#{ref_str}'" do
           YouVersion::ReferenceString.new(ref_str).validate!.should_not be_nil
         end
-        specify "should yield a valid Reference after '#{ref_str}' is validated)" do
+        specify "should yield a valid Reference after '#{ref_str}' is validated" do
           Reference.new(YouVersion::ReferenceString.new(ref_str).validate!).should be_valid
         end
       end
