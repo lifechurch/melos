@@ -642,6 +642,9 @@ mn:
       highlights: "Тодруулгууд:"
       'on': "Асаах"
       'off': "Унтрах"
+      extras: "Илүү:"
+      translation notes: "Нэмэлт Мэдээлэл"
+      cross references: "Солбицон Ишлэлүүд"
   app errors:
     404 explanation: "Харамсалтай нь, бид <em>%{requested_path}</em> хуудсыг олсонгүй. Хэрвээ та энэ хуудсыг байх ёстой гэж үзэж байвал, манай тусламжийн багт <a href='%{support_url}'>support team</a> хандаарай, эсвэл буцаад <a href='%{reader_path}'>уншигч</a> руу очоорой."
     404 message: "Уучлаарай, Таны хайж байгаа хуудас олдсонгүй."

@@ -117,7 +117,7 @@ vi:
   none found: "Không tìm thấy gì phù hợp với tiêu chí của bạn. Hãy thử mở rộng tìm kiếm."
   paginated items shown: "%{first_shown}&ndash;%{last_shown} trong số %{total_available}"
   160 character limit: "Dưới 160 ký tự"
-  recent versions: "Sử dụng gần đầy"
+  recent versions: "Sử dụng gần đây"
   likes:
     my likes: "Các ưa thích của tôi"
     all likes: "Tất cả ưa thích"
@@ -156,6 +156,7 @@ vi:
     see my likes: "Xem tất cả ưa thích của tôi"
     successfully deleted: "Ghi chú đã tháo bỏ"
   ref:
+    loading secondary: "Đang tải các tham khảo trong bản song hành..."
     clear verses: "Xóa các câu được chọn"
     choose book and chapter: "Chọn sách và đoạn"
     choose version: "Chọn bản dịch"
@@ -537,7 +538,7 @@ vi:
     card exp date: "Ngày hết hạn (TTNN)"
     receipt: "Email bản sao hóa đơn cho tôi."
     preview: "Tóm lược dâng hiến"
-    header copy: "Chúng ta có thể cùng nhau trở thành thế hệ quan tâm đến Kinh Thánh nhiều nhất trong lịch sử. Ủng hộ của bạn sẽ giúp mọi người tiếp cận Lời Chúa trong nhiều hoàn cảnh, ngôn ngữ, bản dịch, và trong nhiều quốc gia hơn bao giờ hết. Hãy điền vào mẫu dưới đây để dâng hiến. Chúng tôi sẽ thu nhận thông tin về hiện kim (thẻ Visa hoặc Mastercard) ở trang kế tiếp."
+    header copy: "Chúng ta có thể cùng nhau trở thành thế hệ quan tâm đến Kinh Thánh nhiều nhất trong lịch sử. Ủng hộ của bạn sẽ giúp mọi người tiếp cận Lời Chúa trong nhiều hoàn cảnh, ngôn ngữ, bản dịch, và trong nhiều quốc gia hơn bao giờ hết. Hãy điền vào mẫu dưới đây để dâng hiến. Chúng tôi sẽ thu nhận thông tin ở trang kế tiếp."
     header confirm copy: "Chúng ta có thể cùng nhau trở thành thế hệ quan tâm đến Kinh Thánh nhiều nhất trong lịch sử. Ủng hộ của bạn sẽ giúp mọi người tiếp cận Lời Chúa trong nhiều hoàn cảnh, ngôn ngữ, bản dịch, và trong nhiều quốc gia hơn từ trước đến nay. Hãy nhấp vào \"Dâng hiến bây giờ\" để thực hiện điều đó."
     donate now button: "Dâng hiến bây giờ"
     email header: "YouVersion, một mục vụ của LifeChurch.tv, đã nhận được quyên góp của bạn. Không có hàng hóa hay dịch vụ nào được trao đổi cho quyên góp này, ngoại trừ các lợi ích thuộc linh. Hãy liên hệ giving@lifechurch.tv nếu bạn có gì thắc mắc."
@@ -629,7 +630,7 @@ vi:
       our action: "Chúng tôi đã được thông báo về điều này và sẽ giải quyết nó sớm nhất có thể!"
   shared:
     menu_settings:
-      title: "Cài đặt của bạn"
+      title: "Cài đặt giao diện đọc"
       close: "Đóng"
       font: "Kiểu chữ:"
       font1: "Helvetica"
@@ -640,9 +641,12 @@ vi:
       small: "Nhỏ"
       medium: "Trung bình"
       large: "Lớn"
-      highlights: "Các tô màu:"
+      highlights: "Các tô màu"
       'on': "Bật"
       'off': "Tắt"
+      extras: "Phụ mục:"
+      translation notes: "Chú thích"
+      cross references: "Chú dẫn"
   app errors:
     404 explanation: "Bạn có thể thử lại từ đầu ở <a href='%{reader_path}'>trang nhà</a>. Nếu vẫn có trục trặc, hãy liên hệ <a href='%{support_url}'>nhóm hỗ trợ</a> của chúng tôi."
     404 message: "Xin lỗi bạn, chúng tôi không tìm được trang mà bạn yêu cầu."
@@ -650,6 +654,7 @@ vi:
     408 explanation: "Chúng tôi đã nghe đến và sẽ cố gắng giải quyết nhanh chóng bất cứ vấn đề dai dẳng nào. Bây giờ chúng ta hãy thử trở lại bài đọc Kinh Thánh!"
     try again: "Thử lại"
   versions:
+    courtesy of: "%{abbreviation} được cung cấp bởi %{publisher}"
     learn more: "Tìm hiểu thêm"
     index title: "Các bản dịch có sẵn"
     publisher widget title: "Phát hành"

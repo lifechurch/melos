@@ -644,6 +644,9 @@ sq:
       highlights: "Theksimet:"
       'on': "Ndezur"
       'off': "Fikur"
+      extras: "Ekstra:"
+      translation notes: "Poshtëshënime"
+      cross references: "Referime kryq"
   app errors:
     404 explanation: "Mund të provoni të filloni sërish nga <a href='%{reader_path}'>faqja kryesore</a>. A keni akoma probleme? Kontaktoni <a href='%{support_url}'>ekipin e ndihmës</a>."
     404 message: "Na vjen keq, faqja për po kërkoni nuk mund të gjendet."
@@ -656,7 +659,6 @@ sq:
     index title: "Versione të disponueshme"
     publisher widget title: "Publikuesi"
     visit publisher: "Vizitoni uebfaqen e publikuesit"
-    about: "Mësoni më shumë për këtë version..."
     read title: "Lexo këtë version"
     other versions: "Versione të tjera nga ky publikues"
     number of versions field: "Versione në total:"

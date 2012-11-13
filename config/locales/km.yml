@@ -156,6 +156,7 @@ km:
     see my likes: "មើល​ការចូល​ចិត្ត​ទាំង​អស់​របស់​ខ្ញុំ"
     successfully deleted: "កំណត់​ត្រា ត្រូវ​បាន​ដក​ចេញ"
   ref:
+    loading secondary: "ទាញយកអំណៈអំណាង​ពី​ជំនាន់​ទី២..."
     clear verses: "សំអាតខ​ដែល​បាន​ជ្រើស​រើស"
     choose book and chapter: "ជ្រើស​រើស ព្រគម្ពីរ + ជំពូក"
     choose version: "ជ្រើស​រើស​ជំនាន់"
@@ -643,6 +644,9 @@ km:
       highlights: "គូស​ចំណាំៈ"
       'on': "បើ"
       'off': "បិទ"
+      extras: "បន្ថែម"
+      translation notes: "កំណត់ចំណាំ"
+      cross references: "ឯកសារ​យោង"
   app errors:
     404 explanation: "លោក​អ្នក​ប្រហែល​ជា​ចាប់​ផ្ដើម​ម្ដង​ទៀត​ពី  <a href='%{reader_path}'>ទំព័រ​ដើម</a>. នៅ​តែ​មាន​បញ្ហា? សូម​ទាក់​ទង​មក​យើង <a href='%{support_url}'>ក្រុម​ជំនួយ</a>."
     404 message: "យើង​សូម​ទោស, ទំព័រ​ដែល​អ្នក​កំពុង​រក​មិន​មាន​ទេ។"
@@ -650,6 +654,7 @@ km:
     408 explanation: "លោក​អ្នក​អាច​សាកល្បង​ម្ដង​ទៀត​ដោយ <a href= '%{reload_path}'>ទាញ​ឡើង​វិញ</a> លើ​ទំព័រ។ មាន​អ្នក​រាយ​ការណ៍​ប្រាប់​យើង ហើយ​យើង​នឹង​ដោះ​ស្រាយ​បញ្ហា​អោយ​ឆាប់​ជា​ទី​បំផុត។"
     try again: "សូម​ព្យាយាម​ម្ដង​ទៀត"
   versions:
+    courtesy of: "%{abbreviation} នាំ​មកជូនលោកអ្នកដោយ %{publisher}"
     learn more: "រៀន​ថែម​ទៀត"
     index title: "មាន​ជំនាន់​នេះ"
     publisher widget title: "អ្នក​បោះ​ផ្សាយ"
