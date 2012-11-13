@@ -7,7 +7,6 @@ require "rack"
 require "rack/mobile-detect"
 require "rack/rewrite"
 require File.join(File.dirname(__FILE__), '../lib/bb.rb')
-require File.join(File.dirname(__FILE__), '../lib/health.rb')
 require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
 
 require File.expand_path('../_config', __FILE__)

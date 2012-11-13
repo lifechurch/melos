@@ -2,6 +2,7 @@
 # Load in cnofig/application.rb
 # config.middleware.use Heroku::HttpHealth
 # Be sure to put this middleware at the front of all other middlewares.
+
 module Heroku
   class HttpHealth
     def initialize(app)
