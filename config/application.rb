@@ -166,9 +166,6 @@ module YouversionWeb
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
 
-    # Heroku health check
-    #config.middleware.insert_before(Rack::MobileDetect, Heroku::HttpHealth)
-
     #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
     config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)
 
