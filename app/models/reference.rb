@@ -21,6 +21,8 @@ class Reference < YouVersion::Resource
     #API attributes
 
     ref_hash = case ref
+    when YouVersion::ReferenceString
+      ref.to_hash
     when /(.{3}\.[^\+]+\.[^\+]+)\+(?:.*)(?:.{3}\..+\.(.+))/ # + separated API string
       # to be a valid reference, these have to be verses
       # regex selected first usfm and last verse
