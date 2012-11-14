@@ -66,16 +66,29 @@ describe YouVersion::ReferenceString do
       end
     end
     describe ".validate!" do
-      @valid_ref_strings = {
-        'Gen.1.KJV' => {def: 'chapter only',                            book: 'GEN', chap: '1', verses: nil,    version: 1},
-        'John 1 KJV' => {def: 'chapter only with spaces',               book: 'JHN', chap: '1', verses: nil,    version: 1}
+      @valid = {
+        'Gen.1.KJV' => {def: 'chapter only'},
+        'Exodus 1 KJV' => {def: 'chapter only with spaces'},
+        'Exodus 2' => {def: 'implicit version'},
+        'Exodus INTRO1 GNTD' => {def: 'non numerical chapter'}
       }
-      @valid_ref_strings.each do |ref_str, expect|
+      @invalid = {
+        'John' => {def: 'no chapter'},
+        'John The Baptist Beheaded Tray' => {def: 'too many arguments'},
+        'John The Baptist' => {def: 'non numerical verse'}
+      }
+
+      @valid.each do |ref_str, expect|
         specify "should validate for '#{ref_str}'" do
           YouVersion::ReferenceString.new(ref_str).validate!.should_not be_nil
         end
         specify "should yield a valid Reference after '#{ref_str}' is validated" do
           Reference.new(YouVersion::ReferenceString.new(ref_str).validate!).should be_valid
+        end
+      end
+      @invalid.each do |ref_str, expect|
+        specify "should not validate for '#{ref_str}'" do
+          YouVersion::ReferenceString.new(ref_str).validate!.should be_nil
         end
       end
     end

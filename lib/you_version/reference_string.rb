@@ -5,10 +5,11 @@ module YouVersion
   class ReferenceString
 
     attr_accessor :hash, :verses
-    attr_reader :raw, :validated
+    attr_reader :raw, :defaults
 
-    def initialize( ref_str )
+    def initialize( ref_str, opts={})
       @raw = ref_str
+      @defaults = opts[:defaults] || {}
       @validated = false
       parse
       return self
@@ -53,7 +54,7 @@ module YouVersion
         # leave it if it's already a USFM code
         _book = book if Cfg.osis_usfm_hash[:books].key(book.upcase)
         # try to parse from known values
-        _book ||= Cfg.osis_usfm_hash[:books][@hash[:book]]
+        _book ||= Cfg.osis_usfm_hash[:books][@hash[:book].downcase]
         return nil if _book.blank?
       else
         # no book specified, invalid
@@ -97,7 +98,7 @@ module YouVersion
           $/x
 
       matches = @raw.match(re)
-      @hash = {book: matches.try(:[], 1), chapter: matches.try(:[], 2), verses: matches.try(:[], 3), version: matches.try(:[], 4)}
+      @hash = {book: matches.try(:[], 1), chapter: matches.try(:[], 2), verses: matches.try(:[], 3), version: matches.try(:[], 4) || defaults[:version]}
       parse_verses
     end
 
