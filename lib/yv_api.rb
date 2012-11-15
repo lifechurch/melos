@@ -154,7 +154,10 @@ class YvApi
   end
 
   def self.get_usfm_book(osis_book)
-    Cfg.osis_usfm_hash[:books][osis_book.downcase] if osis_book.is_a? String
+    if osis_book.is_a? String
+      return osis_book.upcase if Cfg.osis_usfm_hash[:books].key(osis_book.upcase)
+      return Cfg.osis_usfm_hash[:books][osis_book.downcase]
+    end
   end
 
   def self.get_osis_book(usfm_book)
