@@ -125,6 +125,7 @@ cy:
     like button text: "Hoffi "
     unlike button text: "Ddim yn hoffi "
   notes:
+    list title: "Nodiadau "
     loading community: "Llwytho nodiadau cymunedol…"
     no community notes: "Doedd dim nodiadau cymunedol yn cyfeirio at adnodau dethol i’w gweld. Er mwyn creu nodyn, dewiswch adnod yn adran ddarllen y Beibl, cliciwch y botwm Dewiswyd ar dop y darllenydd.    "
     public: "Cyhoeddus "
@@ -631,3 +632,4 @@ cy:
       'off': "Diffodd"
   versions:
     learn more: "Dysgwch Fwy "
+    publisher widget title: "Cyhoeddwr "

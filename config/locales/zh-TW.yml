@@ -94,6 +94,7 @@ zh-TW:
   search placeholder: "搜尋..."
   search: "搜尋"
   book: "書卷"
+  filter book: "篩選書卷..."
   try the beta: "嘗試測試版"
   welcome to the beta: "歡迎來到新的 YouVersion.com!"
   selected: "已選的"
@@ -156,6 +157,7 @@ zh-TW:
     see my likes: "看我所有喜歡的"
     successfully deleted: "筆記已刪除"
   ref:
+    loading secondary: "載入第二版本裡的參考經文..."
     clear verses: "清除選中的經節"
     choose book and chapter: "選擇書卷＋章節"
     choose version: "選擇版本"
@@ -643,6 +645,9 @@ zh-TW:
       highlights: "反白顯示："
       'on': "開"
       'off': "關"
+      extras: "附加功能："
+      translation notes: "註腳"
+      cross references: "交叉引用經文"
   app errors:
     404 explanation: "您可能需要再次從<a href='%{reader_path}'>首頁</a>試一下。如果仍然不行，請通知我們的 <a href='%{support_url}'>支援團隊</a>！"
     404 message: "非常抱歉！您搜尋的頁面並不存在。"
@@ -650,6 +655,8 @@ zh-TW:
     408 explanation: "我們已經接到警示並將盡快解決一切持續存在的問題。希望您能盡快返回到聖經的閱讀中！"
     try again: "再試一次"
   versions:
+    filter: "篩選版本..."
+    courtesy of: "%{abbreviation} 是由 %{publisher} 提供"
     learn more: "暸解更多"
     index title: "可用的版本"
     publisher widget title: "出版社"

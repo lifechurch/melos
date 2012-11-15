@@ -156,6 +156,7 @@ af:
     see my likes: "Sien Al My Gunstellinge"
     successfully deleted: "Nota Verwyder"
   ref:
+    loading secondary: "Laai in alternatiewe weergawe..."
     clear verses: "Verwyder Geselekteerde Verse"
     choose book and chapter: "Kies Boek + Hoofstuk"
     choose version: "Kies Weergawe"
@@ -177,6 +178,8 @@ af:
     select another chapter: "Kies 'n Ander Hoofstuk"
     view in reader: "Besigtig %{reference} in Leser"
   users:
+    unverified heading: "Amper klaar!"
+    unverified message: "Dit lyk asof jy probeer inteken op 'n rekening wat nie volledig opgestel is nie. Jy het nog net 1 stap oor: Klik op die verifikasie link in die epos wat YouVersion vir jou gestuur het. Indien jy dit nie kry nie, kyk in jou spam leer of  <a href='%{resend_path}'>herstuur die verifikasie epos</a>."
     reset connection: "Jammer, 'n fout het voorgekom. Verwyder asseblief en herskep hierdie verbinding."
     settings: "Stellings"
     no connection friends: "Dit lyk nie of enige van jou %{connection} vriende tans op YouVersion is nie."
@@ -641,6 +644,9 @@ af:
       highlights: "Kleur Merkers:"
       'on': "Aan"
       'off': "Af"
+      extras: "Ekstras:"
+      translation notes: "Voetnotas"
+      cross references: "Kruis-verwysings"
   app errors:
     404 explanation: "Jy kan dalk weer probeer vanaf die <a href='%{reader_path}'>tuisblad</a>. Nog steeds moeilikheid? Kontak ons <a href='%{support_url}'>ondersteuning span</a>."
     404 message: "Ons is jammer, maar die bladsy wat u gesoek het, kon ons nie vind nie."
@@ -648,6 +654,7 @@ af:
     408 explanation: "Jy kan weer probeer om <a href= '%{reload_path}'>reloading</a> se bladsy te herlaai. Ons is in kennis gestel en sal enige aanhoudende kwessies so gou as moontlik oplos."
     try again: "Probeer Weer"
   versions:
+    courtesy of: "%{abbreviation} na jou to gebring deur %{publisher}"
     learn more: "Leer Meer "
     index title: "Beskikbare Weergawes"
     publisher widget title: "Publiseerder"
