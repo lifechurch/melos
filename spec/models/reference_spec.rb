@@ -45,7 +45,7 @@ describe Reference do
         'Gen.1.2-3.1-kjv' => {def: 'API3 version with verse range',       book: 'GEN', chap: '1', verses: ['2', '3'],  version: 1},
         'ESG.1_1.346-CEVD' => {def: 'Greek Ester, non numerical chapter', book: 'ESG', chap: '1_1', verses: [],  version: 346},
         'esg.intro1.69-GNTD' => {def: 'Greek Ester, intro chapter', book: 'ESG', chap: 'INTRO1', verses: [],  version: 69},
-        'S3Y.1.1.296-GNB' => {def: 'GNB, book with # in middle', book: 'S3Y', chap: '1', verses: ['1'],  version: 296}
+        'S3Y.1.1.416-GNB' => {def: 'GNB, book with # in middle', book: 'S3Y', chap: '1', verses: ['1'],  version: 416}
       }.each do |ref, expect|
         subject = Reference.new(ref)
 
