@@ -94,6 +94,7 @@ fi:
   search placeholder: "Haku..."
   search: "Hae"
   book: "Kirja"
+  filter book: "Suodata kirjoja..."
   try the beta: "Kokeile Beta-versiota"
   welcome to the beta: "Tervetuloa uudistettuun YouVersion.comiin!"
   selected: "Valittu"
@@ -645,8 +646,8 @@ fi:
       'on': "käytössä"
       'off': "ei käytössä"
       extras: "Ekstrat:"
-      translation notes: "Lisähuomatukset:"
-      cross references: "Ristiviitteet:"
+      translation notes: "Alaviitteet:"
+      cross references: "Viitteet:"
   app errors:
     404 explanation: "Voit aloittaa uudelleen palaamalla <a href='%{reader_path}'>etusivulle</a>. Jos ongelma toistuu, ota yhteyttä <a href='%{support_url}'>tukeemme</a>."
     404 message: "Etsimääsi sivua ei löydy."
@@ -654,6 +655,7 @@ fi:
     408 explanation: "Olemme saaneet tiedon ongelmasta ja puutumme siihen mahdollisimman nopeasti. Etköhän pian ole taas Raamatun parissa!"
     try again: "Yritä uudelleen"
   versions:
+    filter: "Suodata käännöksiä..."
     courtesy of: "%{abbreviation} käännöksen tarjoaa %{publisher}"
     learn more: "Lisätietoja"
     index title: "Saatavilla olevat käännökset"

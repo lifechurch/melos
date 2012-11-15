@@ -94,6 +94,7 @@ hi:
   search placeholder: "अन्वेषण..."
   search: "अन्वेषण"
   book: "ग्रन्थ"
+  filter book: "ग्रन्थ फ़िल्टर करे ............."
   try the beta: "Beta का उपयोग करके देखिये|"
   welcome to the beta: "YouVersion.com के नवीन संस्करण में आपका स्वागत हैं|"
   selected: "चुना हुआ"
@@ -654,6 +655,7 @@ hi:
     408 explanation: "दोबारा कोशिश करे <a href= %{reload_path}>reloading</a>.हमे इस सांकेतिक खराबी की जानकारी हैं,दोहराए जाने पर जल्द से जल्द सुधारने की तैयारी हैं| "
     try again: "पुन:कोशिश करे"
   versions:
+    filter: "संस्करण फ़िल्टर करे .............."
     courtesy of: "%{abbreviation} %{publisher}के द्वारा प्रस्तुत किया गया "
     learn more: "और अधिक जानकारी "
     index title: "उपलब्ध संस्करण "

@@ -94,6 +94,7 @@ mn:
   search placeholder: "Хайх..."
   search: "Хайх"
   book: "Ном"
+  filter book: "Шүүгч Ном "
   try the beta: "Beta ашиглаж үзэх"
   welcome to the beta: "Шинэ YouVersion.com-д тавтай морилно уу!"
   selected: "сонгосон"
@@ -156,6 +157,7 @@ mn:
     see my likes: "Миний Likes Үзэх"
     successfully deleted: "Тэмдэглэл Арилгагдлаа"
   ref:
+    loading secondary: "Хоёрдагч Хувилбараар зааварчилгаа ачааллаж байна..."
     clear verses: "Сонгогдсон Ишлэлүүдийг Хасах"
     choose book and chapter: "Ном ба Бүлэгийг Сонгох"
     choose version: "Орчуулга Сонгох"
@@ -651,6 +653,8 @@ mn:
     408 message: "Харамсалтай нь, бидний серверүүд хариулахгүй байна."
     try again: "Дахин Оролдоно уу"
   versions:
+    filter: "Шүүгч Хувилбар "
+    courtesy of: "%{abbreviation} танд %{publisher} -р дамжуулан аваачна"
     learn more: "Илүү Мэдэх"
     index title: "Унших Боломжтой Орчуулагууд"
     publisher widget title: "Хэвлэгч"

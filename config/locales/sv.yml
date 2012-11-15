@@ -94,6 +94,7 @@ sv:
   search placeholder: "Sök..."
   search: "Sök"
   book: "Bok"
+  filter book: "Filtrera böcker..."
   try the beta: "Prova betan"
   welcome to the beta: "Välkommen till nya YouVersion.com!"
   selected: "Markerat"
@@ -654,6 +655,7 @@ sv:
     408 explanation: "Vi har blivit informerade och kommer se till att åtgärda eventuella problem så fort som möjligt. Låt oss se om vi kan få dig tillbaka till din bibelläsning!"
     try again: "Försök igen"
   versions:
+    filter: "Filtrera översättningar..."
     courtesy of: "%{abbreviation} tillhandahållen av %{publisher}"
     learn more: "Läs mer"
     index title: "Tillgängliga översättningar"

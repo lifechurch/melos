@@ -539,7 +539,7 @@
     card exp date: "Utløpsdato (MMÅÅ)"
     receipt: "Send meg kopi av min kvittering på e-post"
     preview: "Forhåndsvis Gave"
-    header copy: "Sammen kan vi komme til å bli den generasjonen i historien som benytter seg mest av Bibelen. Din støtte betyr at folk kan åpne Guds Ord på flere plattformer, på flere språk, i flere bibeloversettelser og i flere land enn noen gang tidligere. Fyll ut skjemaet nedenfor for å gi en gave. Du vil bli bedt om å fylle ut betalingsinformasjon i neste bilde."
+    header copy: "Sammen kan vi komme til å bli den generasjonen i historien som benytter oss mest av Bibelen. Din støtte betyr at folk kan åpne Guds Ord på flere plattformer, på flere språk, i flere bibeloversettelser og i flere land enn noen gang tidligere. Fyll ut skjemaet nedenfor for å gi en gave. Du vil bli bedt om å fylle ut betalingsinformasjon i neste bilde."
     header confirm copy: "Sammen kan vi bli den generasjonen i historien som benytter seg mest av Bibelen. Din støtte betyr at folk kan åpne Guds Ord på flere plattformer, på flere språk, i flere bibeloversettelser og i flere land enn noen gang tidligere. Klikk Gi nå for å gi en gave."
     donate now button: "Gi nå"
     email header: "YouVersion, en tjeneste underlagt LifeChurch.tv, har mottatt din pengegave. Ingen varer eller tjenester er formidlet som vederlag for gaven, foruten immaterielle religiøse fordeler. Kontakt giving@lifechurch.tv om du lurer på noe."
@@ -631,7 +631,7 @@
       our action: "Vi har fått melding om dette og vil ta oss av det så snart som mulig."
   shared:
     menu_settings:
-      title: "Leserinnstillinger"
+      title: "Leseinnstillinger"
       close: "Lukk"
       font: "Skrifttype:"
       font1: "Helvetica"
@@ -647,7 +647,7 @@
       'off': "Av"
       extras: "Ekstra:"
       translation notes: "Fotnoter"
-      cross references: "Referanser"
+      cross references: "Kryssreferanser"
   app errors:
     404 explanation: "Du kan kanskje prøve å starte igjen fra  <a href='%{reader_path}'>hjemmesiden</a>. Om du fremdeles har problemer, kontakt vårt  <a href='%{support_url}'>support team</a>."
     404 message: "Beklager, siden du ser etter finnes ikke."

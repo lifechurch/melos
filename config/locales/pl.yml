@@ -94,6 +94,7 @@ pl:
   search placeholder: "Wyszukaj..."
   search: "Szukaj"
   book: "Księga"
+  filter book: "Filtruj księgi..."
   try the beta: "Wypróbuj wersję Beta"
   welcome to the beta: "Witaj w nowym YouVersion.com!"
   selected: "wybrane"
@@ -654,6 +655,7 @@ pl:
     408 explanation: "Zostaliśmy zaalarmowani i usuniemy uciążliwości tak szybko jak to tylko możliwe. Sprawdźmy, czy możemy przenieść cię ponownie do czytania Biblii!"
     try again: "Spróbuj ponownie"
   versions:
+    filter: "Filtruj przekłady..."
     courtesy of: "%{abbreviation} dzięki %{publisher}"
     learn more: "Dowiedz się więcej"
     index title: "Dostępne przekłady"
