@@ -274,25 +274,8 @@ class Reference < YouVersion::Resource
   def parse_verses(verses)
     # This method should not hit the API
     # for lazy-loading to work
-    case verses
-    when NilClass
-      @is_chapter = true
-      #eventually API will return verses and we won't need to parse this
-      []
-    when Fixnum
-      [verses]
-    when /^\d+$/
-      [verses.to_s]
-    when /^(\d+)\-(\d+)/
-      Range.new($1, $2).map{|i| i.to_s}
-    when Array
-      @is_chapter = true if verses.empty?
-      verses
-    when String
-      verses
-    else
-      []
-    end
+    if verses.nil? then @is_chapter = true and return [] end
+    return YouVersion::ReferenceString.parse_verses(verses).map(&:to_s)
   end
 
   def chapter_list_index
