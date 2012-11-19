@@ -40,6 +40,8 @@ describe Reference do
         'Gen.1.kjv' => {def: 'legacy osis version',                       book: 'GEN', chap: '1', verses: [],    version: 1},
         'Gen.1.2.kjv' => {def: 'legacy osis version with verse',          book: 'GEN', chap: '1', verses: ['2'],    version: 1},
         'Gen.1.2-3.kjv' => {def: 'legacy osis version with verse range',  book: 'GEN', chap: '1', verses: ['2', '3'],  version: 1},
+        'Gen.1.7,9.kjv' => {def: 'Multi verse',                           book: 'GEN', chap: '1', verses: ['7', '9'],  version: 1},
+        'Gen.1.7,9,11-13.kjv' => {def: 'Multi verse with range',          book: 'GEN', chap: '1', verses: ['7','9','11','12','13'],  version: 1},
         'Gen.1.1-kjv' => {def: 'API3 version',                            book: 'GEN', chap: '1', verses: [],    version: 1},
         'Gen.1.2.1-kjv' => {def: 'API3 version with verse',               book: 'GEN', chap: '1', verses: ['2'],    version: 1},
         'Gen.1.2-3.1-kjv' => {def: 'API3 version with verse range',       book: 'GEN', chap: '1', verses: ['2', '3'],  version: 1},

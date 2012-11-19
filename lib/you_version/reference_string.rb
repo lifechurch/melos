@@ -103,11 +103,17 @@ module YouVersion
     end
 
 
-    def parse_verses
-      @verses = []
-      return unless @hash[:verses]
+    # Class utility method for parsing verse strings returning an array of verse numbers found in the string
+    #
+    # Example verse strings:
+    # - "1-6,7,10"  => [1,2,3,4,5,6,7,10]
+    # - "1"         => [1]
+    # - "1,4"       => [1,4]
+    # - "1-5"       => [1,2,3,4,5]
 
-      pieces = @hash[:verses].split(",") #split verses at comma. ex: "1-6,7,10"
+    def self.parse_verses( verses )
+      vs = []
+      pieces = verses.split(",")
       pieces.each do |piece|
 
         arr = case piece
@@ -127,9 +133,17 @@ module YouVersion
           []
         end
 
-        verses.push(arr)
+        vs.push(arr)
       end
-      @verses = verses.flatten!.map(&:to_i)
+      return vs.flatten!.map(&:to_i)
+    end
+
+
+    def parse_verses
+
+      @verses = []
+      return unless @hash[:verses]
+      @verses = YouVersion::ReferenceString.parse_verses(@hash[:verses])
     end
   end
 end
