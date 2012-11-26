@@ -503,7 +503,7 @@ Reader.prototype = {
         ctn.css('left', left + "px");
       } else {
         // reverse tip to fit in reader
-        ctn.css('left', left - ctn.outerWidth() + "px");
+        ctn.css('left', left - ctn.outerWidth() + $(this).closest('.note').outerWidth() + "px");
       }
 
       ctn.show();
