@@ -490,19 +490,6 @@ Reader.prototype = {
 
   // In text notes, hover over # to display.
   initTranslationNotes : function() {
-    //     var li            = this.trigger.closest('li');
-    // var offset        = this.icon.offset();
-    // var offset_right  = offset.left + this.menu.outerWidth();
-    // var window_width  = $(window).innerWidth();
-    // var reverse       = 'dynamic_menu_reverse';
-    // var reverse_nudge;
-    // var left;
-
-    // if (offset_right >= window_width) {
-    //   reverse_nudge = this.trigger.hasClass('button') ? 31 : 30;
-    //   left = offset.left - this.menu.outerWidth() + reverse_nudge;
-    //   this.menu.addClass(reverse);
-    // }
 
     // We dynamically position note on each hover, as position
     // can change based on interactive reader options
@@ -512,17 +499,13 @@ Reader.prototype = {
       var reader_right = $(this).closest('.version').innerWidth() + $(this).closest('.version').offset().left;
       var left = $(this).position().left;
 
-      console.log(label_left);
-      console.log(ctn.outerWidth());
-      console.log(reader_right);
-      console.log((label_left + ctn.outerWidth()) > reader_right);
-
       if ((label_left + ctn.outerWidth()) < reader_right){
         ctn.css('left', left + "px");
       } else {
         // reverse tip to fit in reader
         ctn.css('left', left - ctn.outerWidth() + "px");
       }
+
       ctn.show();
       ctn.animate({opacity: 1}, "200");
     }
