@@ -1,11 +1,6 @@
 // `Main
 //----------------------------------------------------------------------------------------------------
 
-.outer_container
-  position: absolute
-  opacity: 0
-  display: none
-
 #main
   float: left
   margin: 0 0 10px
@@ -310,9 +305,9 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 .note .body
   display: none
 
-article[data-setting-trans-notes="true"] .note.f .body,
+article[data-setting-trans-notes="true"] .note.f .outer_container .body,
 article[data-setting-trans-notes="true"] .note.f > .label,
-article[data-setting-cross-refs="true"] .note.x .body,
+article[data-setting-cross-refs="true"] .note.x  .outer_container .body,
 article[data-setting-cross-refs="true"] .note.x > .label
   display: inline-block !important
 
@@ -326,11 +321,16 @@ article[data-setting-cross-refs="true"] .note.x > .label
   margin-right: 4px
   margin-left: 2px
 
+.outer_container
+  position: absolute
+  opacity: 0
+  display: none
+
 .inner_container
   left: 0
   display: block
   position: relative
-  max-width: 120px
+  max-width: 200px
 
 .note > .outer_container > .inner_container >.body
   +round
@@ -341,13 +341,13 @@ article[data-setting-cross-refs="true"] .note.x > .label
     family: $body_font
     size: 10px
     weight: bold
+  text-indent: 0px
   line-height: 1.3
   margin:
     top: 4px
     right: 2px
     bottom: 5px
   padding: 4px 8px 6px
-  display: block
 
 article[data-setting-show-highlights="true"] .verse.highlighted
   background:

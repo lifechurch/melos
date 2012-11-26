@@ -490,16 +490,35 @@ Reader.prototype = {
 
   // In text notes, hover over # to display.
   initTranslationNotes : function() {
+
+    // We dynamically position note on each hover, as position
+    // can change based on interactive reader options
+    function overNote(){
+      var ctn = $(this).next('.outer_container');
+      var label_left  = $(this).offset().left;
+      var reader_right = $(this).closest('.version').innerWidth() + $(this).closest('.version').offset().left;
+      var left = $(this).position().left;
+
+      if ((label_left + ctn.outerWidth()) < reader_right){
+        ctn.css('left', left + "px");
+      } else {
+        // reverse tip to fit in reader
+        ctn.css('left', left - ctn.outerWidth() + $(this).closest('.note').outerWidth() + "px");
+      }
+
+      ctn.show();
+      ctn.animate({opacity: 1}, "200");
+    }
+
+    function offNote(){
+      // MouseOut
+      var ctn = $(this).next('.outer_container');
+      ctn.delay(350).animate({opacity: 0}, "200", function() {ctn.hide();});
+    }
+
     $('.note .body').wrap('<div class="outer_container"></div>');
     $('.note .body').wrap('<div class="inner_container"></div>');
-    $('.note .label').hoverIntent(function(){
-      var ctn = $(this).next('.outer_container');
-          ctn.show();
-          ctn.animate({opacity: 1}, "200");
-    }, function(){
-      var ctn = $(this).next('.outer_container');
-          ctn.delay(350).animate({opacity: 0}, "200", function() {ctn.hide();});
-    })
+    $('.note .label').hoverIntent(overNote, offNote)
   },
 
   initAudioPlayer : function() {
