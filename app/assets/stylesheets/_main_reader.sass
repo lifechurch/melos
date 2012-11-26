@@ -305,9 +305,9 @@ article[data-setting-size="user_setting_size_large"] .verse > .label
 .note .body
   display: none
 
-article[data-setting-trans-notes="true"] .note.f .body,
+article[data-setting-trans-notes="true"] .note.f .outer_container .body,
 article[data-setting-trans-notes="true"] .note.f > .label,
-article[data-setting-cross-refs="true"] .note.x .body,
+article[data-setting-cross-refs="true"] .note.x  .outer_container .body,
 article[data-setting-cross-refs="true"] .note.x > .label
   display: inline-block !important
 
@@ -348,7 +348,6 @@ article[data-setting-cross-refs="true"] .note.x > .label
     right: 2px
     bottom: 5px
   padding: 4px 8px 6px
-  display: block
 
 article[data-setting-show-highlights="true"] .verse.highlighted
   background:
