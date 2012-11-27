@@ -94,6 +94,7 @@ bg:
   search placeholder: "Търсене..."
   search: "Търси"
   book: "Книга"
+  filter book: "Филтър книги..."
   try the beta: "Опитай БЕТА версията"
   welcome to the beta: "Добре дошли в новата YouVersion.com!"
   selected: "Избрани"
@@ -654,6 +655,7 @@ bg:
     408 explanation: "В момента поправяме този проблем."
     try again: "Опитай отново"
   versions:
+    filter: "Филтър версии..."
     courtesy of: "%{abbreviation} от %{publisher}"
     learn more: "Научи повече"
     index title: "Възможни версии"

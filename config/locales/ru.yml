@@ -94,6 +94,7 @@ ru:
   search placeholder: "Поиск..."
   search: "Искать"
   book: "Книга"
+  filter book: "Фильтр по книгам..."
   try the beta: "Попробовать бета-версию"
   welcome to the beta: "Добро пожаловать но обновлённый YouVersion.com!"
   selected: "Выбранное"
@@ -654,6 +655,7 @@ ru:
     408 explanation: "Мы получили уведомление об этой ошибке и попробуем её решить как можно скорее. Попробуем вернуться к чтению Библии?"
     try again: "Попробуйте еще раз"
   versions:
+    filter: "Фильтр по переводам..."
     courtesy of: "%{abbreviation} подготовлено для Вас %{publisher}"
     learn more: "Подробнее..."
     index title: "Доступные переводы"

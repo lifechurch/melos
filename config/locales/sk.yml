@@ -645,7 +645,9 @@ sk:
       highlights: "Zvýraznenia"
       'on': "Zapnuté"
       'off': "Vypnuté"
+      extras: "Ďalšie:"
       translation notes: "Poznámky"
+      cross references: "Odkazy"
   app errors:
     404 explanation: "Skúste začať odznova na <a href='%{reader_path}'>úvodnej stránke</a>. Ak problém stále pretrváva, kontaktujte náš <a href='%{support_url}'>tím podpory</a>."
     404 message: "Prepáčte, ale stránku, ktorú hľadáte, sa nepodarilo nájsť."

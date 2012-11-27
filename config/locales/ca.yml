@@ -94,6 +94,7 @@ ca:
   search placeholder: "Cerca..."
   search: "Cerca"
   book: "Llibre"
+  filter book: "Filtrar per llibres..."
   try the beta: "Prova la Beta"
   welcome to the beta: "Benvingut/uda al nou YouVersion.com!"
   selected: "Seleccionat/ada"
@@ -654,6 +655,7 @@ ca:
     408 explanation: "Hem rebut l'alerta i corregirem la incidència tan aviat com ens sigui possible. Intentarem que puguis seguir llegint per on anaves!"
     try again: "Intenta-ho una altra vegada"
   versions:
+    filter: "Filtrar per versions..."
     courtesy of: "%{abbreviation} proporcionada per %{publisher}"
     learn more: "Llegeix-ne més"
     index title: "Versions disponibles"

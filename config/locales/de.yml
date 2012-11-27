@@ -94,6 +94,7 @@ de:
   search placeholder: "Suche..."
   search: "Suche"
   book: "Buch"
+  filter book: "Filtere Bücher..."
   try the beta: "Teste die Beta-Version!"
   welcome to the beta: "Willkommen bei der neuen YouVersion.com!"
   selected: "Ausgewählt"
@@ -648,12 +649,13 @@ de:
       translation notes: "Fussnoten"
       cross references: "Querverweise"
   app errors:
-    404 explanation: "Du kannst es noch einmal von <a href='%{reader_path}'>home page</a> aus versuchen. Gibt es da immer noch Probleme? Kontaktiere unser <a href='%{support_url}'>Support-Team</a>."
+    404 explanation: "Du kannst es noch einmal von der <a href='%{reader_path}'>Home page</a> aus versuchen. Falls es da immer noch Probleme geben sollte, kontaktiere bitte unser <a href='%{support_url}'>Support-Team</a>."
     404 message: "Leider kann die Seite, die du suchst, nicht gefunden werden."
     408 message: "Leider haben unsere Server nicht schnell genug geantwortet."
     408 explanation: "Wir wurden benachrichtigt und werden alle bestehenden Probleme so schnell wie möglich lösen. Lass uns probieren, deine Bibel wieder zugänglich zu machen. "
     try again: "Versuche es noch einmal"
   versions:
+    filter: " Filtere Übersetzungen..."
     courtesy of: "%{abbreviation} von %{publisher}"
     learn more: "Mehr erfahren"
     index title: "Zur Verfügung stehende Versionen"
