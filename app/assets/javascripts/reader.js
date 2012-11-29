@@ -494,31 +494,57 @@ Reader.prototype = {
     // We dynamically position note on each hover, as position
     // can change based on interactive reader options
     function overNote(){
-      var ctn = $(this).next('.outer_container');
-      var label_left  = $(this).offset().left;
-      var reader_right = $(this).closest('.version').innerWidth() + $(this).closest('.version').offset().left;
-      var left = $(this).position().left;
+      var label = $(this).find('.label');
+      var ctn = $(this).find('.outer_container');
+      var label_left  = label.offset().left;
+      var label_bottom  = label.offset().top + label.outerHeight();
+      var reader_right = label.closest('.version').innerWidth() + $(this).closest('.version').offset().left;
+      var reader_top = $(this).closest('.version').position().top;
+      var reader_bottom = label.closest('.version').innerHeight() + $(this).closest('.version').offset().top;
+      var left = label.position().left;
+      var top = label.position().top;
 
+
+      // Set X position
       if ((label_left + ctn.outerWidth()) < reader_right){
         ctn.css('left', left + "px");
       } else {
         // reverse tip to fit in reader
-        ctn.css('left', left - ctn.outerWidth() + $(this).closest('.note').outerWidth() + "px");
+        ctn.css('left', left - ctn.outerWidth() + $(this).outerWidth() + "px");
+      }
+
+      // Flip vertically if too tall for reader
+      if ((label_bottom + ctn.outerHeight()) > reader_bottom){
+        var newTop = top - ctn.outerHeight();
+        if(newTop >= reader_top){
+          ctn.css('top', newTop);
+        }else {
+          // note reaches past the top of the reader when flipped,
+          // do the best we can by positioning at top of reader
+          ctn.css('top', reader_top + "px");
+        }
+
+
       }
 
       ctn.show();
       ctn.animate({opacity: 1}, "200");
     }
 
-    function offNote(){
+    function offNote(event){
       // MouseOut
-      var ctn = $(this).next('.outer_container');
+      var ctn = $(this).find('.outer_container');
       ctn.delay(350).animate({opacity: 0}, "200", function() {ctn.hide();});
     }
 
     $('.note .body').wrap('<div class="outer_container"></div>');
     $('.note .body').wrap('<div class="inner_container"></div>');
-    $('.note .label').hoverIntent(overNote, offNote)
+    var hoverConfig = {
+     over: overNote,
+     timeout: 350, // number = milliseconds delay before onMouseOut
+     out: offNote
+    };
+    $('.note .label').closest('.note').hoverIntent( hoverConfig )
   },
 
   initAudioPlayer : function() {
