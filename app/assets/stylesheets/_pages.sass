@@ -213,9 +213,15 @@ a.cta span
   h1, h2, h3, h4, h5, h6
     // override heading styles, since some publishers
     // have headings here where we don't want them
-    font-size: $text_size !important
     font-family: $body_font
-    font-weight: normal !important
+    font-weight: bold !important
     color: $body_text
+  h1
+    font-size: 25px !important
+  h2
+    font-size: 18px !important
+  h3, h4, h5, h6
+    font-size: $text_size !important
+
   br + br
     display: none
