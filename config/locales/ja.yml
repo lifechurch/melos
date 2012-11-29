@@ -94,6 +94,7 @@ ja:
   search placeholder: "検索..."
   search: "検索"
   book: "書物"
+  filter book: "書の名前から検索・・・"
   try the beta: "ベータ版を試してみる"
   welcome to the beta: "新しくなった YouVersion.com へようこそ！"
   selected: "選択箇所"
@@ -654,6 +655,7 @@ ja:
     408 explanation: "こちらでも事態を把握しておりますので、継続して発生する問題につきましては、できるだけ早く対処させていただきます。読書中の聖書の箇所に戻っていただけるように試みています。"
     try again: "もう一度お試しください。"
   versions:
+    filter: "訳の名前から検索・・・"
     courtesy of: " %{publisher}より%{abbreviation} をお届けします"
     learn more: "詳細"
     index title: "ご利用いただける聖書訳"

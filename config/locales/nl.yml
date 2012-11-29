@@ -94,6 +94,7 @@ nl:
   search placeholder: "Zoek..."
   search: "Zoek"
   book: "Boek"
+  filter book: "Filter Boeken..."
   try the beta: "Probeer de Beta versie"
   welcome to the beta: "Welkom op de vernieuwde YouVersion.com!"
   selected: "Geselecteerd"
@@ -654,6 +655,7 @@ nl:
     408 explanation: "We zijn op de hoogte van het probleem en zullen het zo snel mogelijk verhelpen. Laten we kijken als we je weer de Bijbel kunnen laten lezen!"
     try again: "opnieuw proberen"
   versions:
+    filter: "Filter Versies..."
     courtesy of: "%{abbreviation} aan jou gebracht door %{publisher}"
     learn more: "Leer Meer"
     index title: "Beschikbare Versies"

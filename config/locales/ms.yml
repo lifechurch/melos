@@ -643,6 +643,7 @@ ms:
       highlights: "Highlight:"
       'on': "Aktifkan"
       'off': "Batalkan"
+      extras: "Ekstra:"
   app errors:
     404 explanation: "Anda boleh bermula kembali dari <a href='%{reader_path}'>halaman utama</a>. Sekiranya masih ada kesulitan, sila hubungi <a href='%{support_url}'>pihak sokongan</a> kami."
     404 message: "Maaf, halaman yang diminta tidak tercari."

@@ -94,6 +94,7 @@ vi:
   search placeholder: "Tìm kiếm..."
   search: "Tìm kiếm"
   book: "Sách"
+  filter book: "Lựa sách..."
   try the beta: "Thử phiên bản Beta"
   welcome to the beta: "Chào mừng bạn đến với YouVersion.com phiên bản mới!"
   selected: "Đã chọn"
@@ -654,6 +655,7 @@ vi:
     408 explanation: "Chúng tôi đã nghe đến và sẽ cố gắng giải quyết nhanh chóng bất cứ vấn đề dai dẳng nào. Bây giờ chúng ta hãy thử trở lại bài đọc Kinh Thánh!"
     try again: "Thử lại"
   versions:
+    filter: "Lựa bản dịch..."
     courtesy of: "%{abbreviation} được cung cấp bởi %{publisher}"
     learn more: "Tìm hiểu thêm"
     index title: "Các bản dịch có sẵn"
