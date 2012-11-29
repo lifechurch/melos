@@ -12,10 +12,10 @@ common:
   avatar_path_direct: https://static-youversionapi-com.s3.amazonaws.com/users/images/
   bloodhound_username: lifechurchtv
   bloodhound_password: password
-  # api_root: youversionapi.com
-  # api_referer: web-dev.youversionapi.com
-  api_root: youversionapistaging.com
-  api_referer: web-dev.youversionapistaging.com
+  api_root: youversionapi.com
+  api_referer: web-dev.youversionapi.com
+  # api_root: youversionapistaging.com
+  # api_referer: web-dev.youversionapistaging.com
   api_version: "3.0"
   memcache_server: localhost
   #
