@@ -216,7 +216,7 @@
 
 .lb, .b {
   line-height: $reader_line_height;
-  height: 24px;
+  height: 1em;
 }
 
 .ili, .ili1, io, .io1, li, .li1 {
@@ -295,10 +295,6 @@
   margin-top: 1em;
   display: inline-block;
   text-indent: 1em;
-}
-
-.b {
-  height: 1em;
 }
 
 .table {
