@@ -52,6 +52,7 @@ class YvApi
       Rails.logger.apc "** YvApi.get #{path}: Response time= #{((Time.now.to_f - get_start) * 1000).to_i}ms", :info
     else
       # no caching, just ask the API directly
+      Rails.logger.apc "*** no cache length specified, direct query made", :debug
       get_start = Time.now.to_f
 
       begin
