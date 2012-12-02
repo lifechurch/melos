@@ -21,6 +21,7 @@ Spork.prefork do
 end
 
 Spork.each_run do
+	include ApplicationHelper
   if ENV['DRB']
     # this configuration is required to get simplecov
     # to execute correctly with DRB servers like Spork
