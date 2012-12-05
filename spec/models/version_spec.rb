@@ -135,7 +135,7 @@ describe Version do
   describe "#include?" do
 
     it "should be true for a ref that contains same book and chapter" do
-      john_1 = Reference.new("jhn.1.gntd")
+      john_1 = Reference.new("jhn.1.1.gntd")
       @kjv.should include john_1
     end
 

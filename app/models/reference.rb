@@ -166,24 +166,17 @@ class Reference < YouVersion::Resource
   end
 
   def previous_chapter
-     return nil unless version
+    return nil unless version
+    return nil if attributes.previous.blank?
 
-     start = Time.now.to_f
-    #no previous chapter if at start
-    return nil if chapter_list_index == 0
-    Rails.logger.apc "**Reference.previous_chapter took #{Time.now.to_f - start} sec to find the chapter", :debug
-
-    self.class.new(chapter_list[chapter_list_index - 1].usfm, version: version)
+    self.class.new(attributes.previous.usfm, version: version)
   end
 
   def next_chapter
     return nil unless version
+    return nil if attributes.next.blank?
 
-    start = Time.now.to_f
-    return nil if chapter_list_index >= chapter_list.count - 1
-    Rails.logger.apc "**Reference.next_chapter took #{Time.now.to_f - start} sec to find the chapter", :debug
-
-    self.class.new(chapter_list[chapter_list_index + 1].usfm, version: version)
+    self.class.new(attributes.next.usfm, version: version)
   end
 
   def verses_in_chapter
@@ -248,10 +241,12 @@ class Reference < YouVersion::Resource
 
 
 
-  private
+ private
 
   def attributes
     return @attributes unless @attributes.nil?
+
+    validate
 
     opts = {cache_for: a_very_long_time}
     # sometimes we just need generic info about a verse, like the human spelling of a chapter
@@ -271,19 +266,22 @@ class Reference < YouVersion::Resource
       end
   end
 
+  def validate
+    # check book, chapter and version against data we have in Version object
+    # to avoid 404 calls to the API (DDoS avoidance and performance advantage)
+
+    _version = Version.find(Version.default) if version.blank?
+    # this will raise not a version if invalid version
+    _version ||= Version.find(version)
+
+    raise NotAChapterError unless _version.include? self
+  end
+
   def parse_verses(verses)
     # This method should not hit the API
     # for lazy-loading to work
     if verses.nil? then @is_chapter = true and return [] end
     return YouVersion::ReferenceString.parse_verses(verses).map(&:to_s)
-  end
-
-  def chapter_list_index
-    @index ||= chapter_list.index{|c| c.usfm == chapter_usfm}
-  end
-
-  def chapter_list
-    @chapter_list ||= Version.find(version).books.map{|usfm, book| book["chapters"]}.flatten
   end
 
   def content_document

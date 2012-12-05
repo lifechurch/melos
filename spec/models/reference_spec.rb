@@ -12,6 +12,7 @@ describe Reference do
   end
 
   describe "#initialize" do
+
     it "should be able to be created from a string" do
       Reference.new("gen.1.1.kjv").should be_valid
     end
@@ -32,10 +33,12 @@ describe Reference do
       Reference.new('gen.1.2.kjv', version: "5").version.should == 5
       Reference.new('gen.1.2.kjv', version: nil).version.should == nil
     end
+
   end
 
   describe "#valid?" do
-    describe "with a valid reference string" do
+
+    context "with a valid reference string" do
       {
         'Gen.1.kjv' => {def: 'legacy osis version',                       book: 'GEN', chap: '1', verses: [],    version: 1},
         'Gen.1.2.kjv' => {def: 'legacy osis version with verse',          book: 'GEN', chap: '1', verses: ['2'],    version: 1},
@@ -51,6 +54,11 @@ describe Reference do
       }.each do |ref, expect|
         subject = Reference.new(ref)
 
+        it "should hit the API to validate a reference" do
+          YvApi.should_receive(:get)
+          subject.valid?
+        end
+
         specify "#{ref} should be valid" do
           subject.should be_valid
         end
@@ -62,12 +70,21 @@ describe Reference do
           subject.version.should == expect[:version]
         end
       end
+
     end
-    describe "with an invalid reference string" do
-      invalid_refs = %w(gen.100 gen.1.299-NGBM gen.1.invalid gen.1.1.invalid gen.1.1-3.invalid gen.1.1.299-NGBM)
+
+    context "with an invalid reference string" do
+      #299-NGBM is nt-only versions
+      invalid_refs = %w(gen.100 gen.1.299-NGBM gen.1.invalid gen.1.1.invalid gen.1.1-3.invalid gen.1.1.299-NGBM invalid.1.8-AMP)
+
       invalid_refs.each do |ref|
         specify "#{ref} should be invalid" do
           Reference.new(ref).should_not be_valid
+        end
+
+        specify "#{ref} should not hit the Bible API" do
+          YvApi.should_receive(:get).exactly(0).times
+          Reference.new(ref).valid?
         end
       end
 
@@ -81,6 +98,7 @@ describe Reference do
         Reference.new('gen').should_not be_valid
       end
     end
+
   end
 
   describe "#book" do
@@ -109,6 +127,7 @@ describe Reference do
 
 
   describe "#merge" do
+
     it "should give a new reference with the argument merged into the old one" do
       @gen_1_1_kjv_ref.merge(book: "exod").should == Reference.new("exod.1.1.kjv")
     end
@@ -149,12 +168,15 @@ describe Reference do
   end
 
   describe "#version_string" do
+
     it "should give the abbreviation for the reference version" do
       @gen_1_1_kjv_ref.version_string.should == "KJV"
     end
+
   end
 
   describe "#to_hash" do
+
     subject {@gen_1_1_kjv_ref.to_hash}
     it "should give a hash of book, chapter, verse, version" do
       should have_key :book
@@ -168,9 +190,11 @@ describe Reference do
       subject[:verses].should == ["1"]
       subject[:version].should == 1
     end
+
   end
 
   describe "#hash" do
+
     it "should give a unique hash for different references" do
       @gen_1_1_kjv_ref.hash.should_not == @gen_1_kjv.hash
     end
@@ -180,9 +204,11 @@ describe Reference do
     it "should give the same hash for the same verse" do
       @gen_1_1_kjv_ref.hash.should == Reference.new("gen.1.1.kjv").hash
     end
+
   end
 
   describe "to_param" do
+
     it "should parameterize itself as a string for a ref with a verse" do
       @gen_1_1_kjv_ref.to_param.should =~ /GEN.1.1.KJV/i
     end
@@ -195,9 +221,11 @@ describe Reference do
     it "should provide a hyphenated param string if created from an API string" do
       Reference.new("2CH.33.1+2CH.33.2+2CH.33.3", version: 1).to_param.should == '2ch.33.1-3.kjv'
     end
+
   end
 
   describe "#to_api_string" do
+
     it "should give a /notes API-frendly string" do
       @gen_1_1_kjv_ref.notes_api_string.should == "GEN.1.1"
       Reference.new("gen.1.1-3.kjv").notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3"
@@ -207,9 +235,11 @@ describe Reference do
       pending "us needing to support this style of reference creation (not actually a valid reference)"
       Reference.new("gen.1.1-3,6.kjv").notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3+GEN.1.6"
     end
+
   end
 
   describe "[]" do
+
     it "should index the reference like a hash" do
       ref = Reference.new('gen.1.2.kjv')
       ref[:book].should == 'GEN'
@@ -217,9 +247,11 @@ describe Reference do
       ref[:verses].should == ["2"]
       ref[:version].should == 1
     end
+
   end
 
   describe "#content" do
+
     it "should have only the text of a single verse" do
       @gen_1_1_kjv_ref.content.should include "In the beginning God created the heaven and the earth."
       @gen_1_1_kjv_ref.content.should_not include "And the earth was without form"
@@ -236,9 +268,11 @@ describe Reference do
       @gen_1_1_kjv_ref.content.should include "<span class=\"content\">In the beginning"
       @gen_1_1_kjv_ref.content.should_not include "<div class=\"chapter ch1\" data-usfm=\"GEN.1\">\n            <div class=\"label\">1</div>\n"
     end
+
   end
 
   describe "#previous_chapter" do
+
     it "should give nil for the first chatper" do
       @gen_1_kjv_ref.previous_chapter.should be_nil
     end
@@ -254,9 +288,11 @@ describe Reference do
     it "should work for last book" do
       Reference.new('Rev.22.kjv').previous_chapter.should == Reference.new('Rev.21.kjv')
     end
+
   end
 
   describe "#next_chapter" do
+
     it "should give nil for the last chatper" do
       Reference.new('Rev.22').next_chapter.should be_nil
     end
@@ -269,6 +305,7 @@ describe Reference do
     it "should return the next book" do
       Reference.new('Rev.21.kjv').next_chapter.should == Reference.new('Rev.22.kjv')
     end
+
   end
 
   describe "#verses_in_chapter" do
@@ -276,13 +313,16 @@ describe Reference do
   end
 
   describe "#short_link" do
+
     it "should be a link to bible.us" do
       @gen_1_kjv_ref.short_link.should =~ %r(^http://bible.us/)
     end
     it "should have the format that our old facebook and g+ counts use"
+
   end
 
   describe "#human" do
+
     it "should give the chapter" do
       @gen_1_kjv_ref.human.should =~ /^Genesis/
     end
@@ -296,9 +336,11 @@ describe Reference do
       @gen_1_1_kjv_ref.human.should_not =~ /(KJV|King)/i
       @gen_1_kjv_ref.human.should_not =~ /(KJV|King)/i
     end
+
   end
 
   describe "#is_chapter" do
+
     it "should be true for a chapter ref" do
       @gen_1_kjv_ref.is_chapter?.should be_true
       #TODO: make this predicate .chapter? instead
@@ -306,9 +348,11 @@ describe Reference do
     it "should be false for a full ref" do
       @gen_1_1_kjv_ref.is_chapter?.should_not be_true
     end
+
   end
 
   describe "#copyright" do
+
     it "should be the copyright text for the reference's version" do
       Reference.new("gen.1.niv").copyright.should =~ /Holy Bible, New International Version/
     end
@@ -317,33 +361,37 @@ describe Reference do
       pending "API not returning 'crown copyright in UK' for this"
       Reference.new("gen.1.1.kjv").copyright.should be_nil
     end
+
   end
 
   describe "#audio" do
+
     it "should contain a link to an mp3" do
       @gen_1_kjv_ref.audio.url.should =~ /mp3/
     end
     it "should be a secure url or respect protocol with // trick" do
       @gen_1_kjv_ref.audio.url.should =~ /^[https:|\/\/]/
     end
+
   end
 
   describe "#timing" do
+
       it "should initialize without hitting the API" do
-        Benchmark::realtime{Reference.new('gen.1.1.kjv')}.should < 0.0001
+        YvApi.should_receive(:get).exactly(0).times
+        Reference.new('gen.1.1.kjv')
         #TODO: add more cases (ranges, creation from References, etc to flesh out the supported 'lazy-load' cases)
       end
       it "should give basic properties without hitting the API" do
+        YvApi.should_receive(:get).exactly(0).times
+
         ref = Reference.new('gen.1.1.kjv')
-        Benchmark::realtime{ref.book}.should        < 0.0001
-        Benchmark::realtime{ref.chapter}.should     < 0.0001
-        Benchmark::realtime{ref.verses}.should      < 0.0001
-        Benchmark::realtime{ref.version}.should     < 0.0001
-        Benchmark::realtime{ref.is_chapter?}.should < 0.0001
+        ref.book
+        ref.chapter
+        ref.verses
+        ref.version
+        ref.is_chapter?
       end
-      it "should hit the API to validate a reference" do
-        ref = Reference.new('gen.1.1.kjv')
-        Benchmark::realtime{ref.valid?}.should > 0.001
-      end
+
   end
 end

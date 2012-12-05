@@ -147,7 +147,7 @@ class Version < YouVersion::Resource
       book = books[ref.book.to_s]
       return false if book.nil?
 
-      chapter_found = book.chapters.any? {|hash| hash.usfm == ref.usfm }
+      chapter_found = book.chapters.any? {|hash| hash.usfm == ref.chapter_usfm }
       return false if chapter_found == false
 
     rescue
