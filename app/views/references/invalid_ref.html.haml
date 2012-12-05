@@ -4,6 +4,10 @@
 - @verse_modals = false
 = render partial: 'reader_header'
 
+- content_for :additional_meta do
+  %meta{name: "robots", content: "noindex"}
+
+
 %article
   %div{style:"text-align: center; margin-top:70px"}
     %h1= t("ref.invalid chapter title")

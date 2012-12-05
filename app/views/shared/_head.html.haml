@@ -17,6 +17,9 @@
   /[if IE 7]
     = stylesheet_link_tag "ie7"
 
+- if content_for? :additional_meta
+  = yield :additional_meta
+
 - if content_for? :stylesheets
   = yield :stylesheets
 
