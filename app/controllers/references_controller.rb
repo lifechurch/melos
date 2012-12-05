@@ -124,11 +124,17 @@ class ReferencesController < ApplicationController
       @html_classes.try(:delete, "full_screen") and cookies[:full_screen] = nil
       @html_classes.try(:delete, "parallel_mode") and cookies[:parallel_mode] = nil
 
-      @alt_reference = @reference = Reference.new(params[:reference]).merge(version: nil) rescue nil
-      @alt_reference = @reference = default_reference unless @reference.try :valid?
-
-      @version = Version.find(Reference.new(params[:reference]).version) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
+      @version = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
       @alt_version ||= @version
+
+      # try to validate reference against default version
+      # to show the reference title as it would be displayed in a valid version
+      @alt_reference = @reference = Reference.new( params[:reference], version: Version.default ) rescue nil
+
+      unless @reference.try :valid?
+        # completely invalid reference, just fake it
+        @alt_reference = @reference = default_reference
+      end
 
       render :invalid_ref, status: 404
     end

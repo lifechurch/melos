@@ -15,8 +15,13 @@
       %button{style: "margin-left:-68px"}= t("ref.select another chapter")
 
 %footer
-  %p
-    %b= link_to t("ref.about the version", version: @version), version_path(@version)
-  %p= @version.copyright
+  - if @version.has_publisher?
+    .publisher.as_table
+      .vcenter
+        .courtesy
+          %strong= t("versions.courtesy of", abbreviation: @version.abbreviation, publisher: @version.publisher.name) if @version.blurb
+        .blurb= (@version.blurb || @version.copyright).try :html_safe
+      .vcenter
+        =link_to t('versions.learn more'), @version.url || version_path(@version), class: 'button'
 
 = render partial: "js"

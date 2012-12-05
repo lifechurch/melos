@@ -14,7 +14,7 @@
           reference: "#{@reference.to_param}",
           book: "#{@reference[:book].to_s.downcase}",
           book_api: "#{@reference[:book].sub(/[A-Z]+/) {|m| m.downcase}}",
-          book_human: "#{@version.books[@reference[:book]].human}",
+          book_human: "#{@version.books[@reference[:book]].try :human || 'John'}",
           chapter: "#{@reference[:chapter].to_s}",
           font: "#{@font}",
           size: "#{@size}",
