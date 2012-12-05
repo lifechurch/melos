@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def block_spam
-    render 'pages/error_404' if request.ip == '59.57.165.125'
+    render 'pages/error_404', status: 403 if request.ip == '59.57.165.125'
   end
 
   def set_page
