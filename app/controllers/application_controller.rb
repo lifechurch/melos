@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_site
   before_filter :check_facebook_cookie
   before_filter :tend_caches
+  before_filter :deny_spammers
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
@@ -14,6 +15,10 @@ class ApplicationController < ActionController::Base
     rescue_from AuthError, with: :auth_error
     rescue_from Timeout::Error, with: :timeout_error
     rescue_from APITimeoutError, with: :timeout_error
+  end
+
+  def deny_spammers
+   render 'pages/error_404', status: 403 if request.ip == '59.57.165.125'
   end
 
   def set_page
