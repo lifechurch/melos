@@ -207,7 +207,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
     netrc (0.7.7)
-    newrelic_rpm (3.5.1.beta1)
+    newrelic_rpm (3.5.3.25)
     nokogiri (1.5.2)
     ntlm-http (0.1.1)
     oauth (0.4.6)
@@ -393,7 +393,7 @@ DEPENDENCIES
   koala (~> 1.4.1)
   language_list (~> 0.0.3)
   minitest
-  newrelic_rpm (= 3.5.1.beta1)
+  newrelic_rpm (~> 3.5.3.25)
   nokogiri (~> 1.5.2)
   omniauth-facebook (~> 1.2.0)
   omniauth-google-oauth2 (~> 0.1.9)
