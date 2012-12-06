@@ -296,6 +296,14 @@
   display: inline-block;
   text-indent: 1em;
 }
+span.fk {
+	font-weight: bold;
+	font-style: italic;
+}
+span.fqa {
+	font-style: italic;
+}
+
 
 .table {
   border-bottom: 1em;
@@ -363,21 +371,20 @@
 }
 
 .em, .bd {
-  font-weight: normal;
+  font-weight: bold;
+}
+.it, .cd {
+  font-style: italic;
 }
 
-.it, .cd {
+.bdit {
+  font-weight: bold;
   font-style: italic;
 }
 
 .d {
   font-style: italic;
   margin-bottom: 1em;
-}
-
-.bdit {
-  font-weight: bold;
-  font-style: italic;
 }
 
 .no {
@@ -426,4 +433,9 @@
 .vid111 .bkPSA .note .it {
   display: inline;
   margin-bottom: 0;
+}
+
+//Certain headlines should be centered in NABRE
+.vid463 div.s2 {
+  text-align:center;
 }
