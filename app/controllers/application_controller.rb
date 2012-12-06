@@ -128,7 +128,7 @@ class ApplicationController < ActionController::Base
   end
 
   def blacklist
-    ["59.57.166.184" , "59.57.165.125", "27.154.193.127", "27.154.194.119"]
+    @blacklist ||= (ENV['BLACKLIST'] || '59.57.166.184, 59.57.165.125, 27.154.193.127, 27.154.194.119').split(', ')
   end
 
   def auth_error(ex)
