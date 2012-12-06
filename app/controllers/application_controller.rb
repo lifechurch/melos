@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_site
   before_filter :check_facebook_cookie
   before_filter :tend_caches
-  before_filter :deny_spammers
+  #before_filter :deny_spammers
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
