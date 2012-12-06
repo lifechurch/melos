@@ -128,7 +128,7 @@ class ApplicationController < ActionController::Base
   end
 
   def blacklist
-    ["59.57.166.184" , "59.57.165.125"]
+    ["59.57.166.184" , "59.57.165.125", "27.154.193.127"]
   end
 
   def auth_error(ex)
