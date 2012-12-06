@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def deny_spammers
-   render 'pages/error_404', status: 403 if request.ip == '59.57.165.125'
+   render 'pages/error_404', status: 403 if blacklist.include? request.ip
   end
 
   def set_page
@@ -125,6 +125,10 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:c] = nil
     cookies.permanent.signed[:f] = nil
     set_current_avatar(nil)
+  end
+
+  def blacklist
+    ["59.57.166.184" , "59.57.165.125"]
   end
 
   def auth_error(ex)
