@@ -6,6 +6,8 @@ require "sprockets/railtie"
 require "rack"
 require "rack/mobile-detect"
 require "rack/rewrite"
+require 'rack/throttle'
+
 require File.join(File.dirname(__FILE__), '../lib/bb.rb')
 require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
 
@@ -164,6 +166,12 @@ module YouversionWeb
     end
 
     config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
+
+    # rate limit clients to 2 req/sec sustained
+    # (only on production or staging where we have external assets)
+    if ENV['FOG_DIRECTORY']
+      config.middleware.use  Rack::Throttle::Minute, :max => (Cfg.rate_limit).to_i, cache: Dalli::Client.new, :key_prefix => :throttle
+    end
 
     #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
     config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)

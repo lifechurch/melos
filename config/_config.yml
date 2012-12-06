@@ -29,6 +29,7 @@ common:
   short_cache_expiration: 10
   long_cache_expiration: 45
   very_long_cache_expiration: 720
+  rate_limit: 120
 
 staging:
   api_root: youversionapi.com

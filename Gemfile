@@ -29,6 +29,8 @@ gem 'rabl',                   '~> 0.7.3'
 gem 'rack-mobile-detect',     '~> 0.3.0'
 gem 'rack-rewrite',           '~> 1.2.1'
 gem 'rack-timeout',           '~> 0.0.3'
+gem 'viximo-rack-throttle',   '~> 0.5.0'
+
 # Using locale files directly in /config/locales/rails-i18n until gem supports
 # aliasing (or we come up with a way to resolve differences between gem lang
 # codes and our tr8n codes, and api codes):
