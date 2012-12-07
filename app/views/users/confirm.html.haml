@@ -2,16 +2,25 @@
   = render '/shared/widget_ad_bible_app'
 %article
   -if @user.errors.any?
-    -if @user.errors.include? :invalid_hash
+
+    -if @user.errors.include?(:base) && @user.errors.get(:base).include?("users.token.verified")
+      %p= t('users.account already confirmed')
+      %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "action_button_blue"
+
+    -elsif @user.errors.include? :invalid_hash
       %p= t('users.invalid confirm hash')
+      %br
+      %p= link_to t('users.resend confirmation button'), resend_confirmation_path, class: "action_button_blue"
+
     -else
       %p= t('users.errors confirming account')
       -@user.errors.full_messages.each do |e|
         %p.small.mute= e.to_s
-    %br
-    %p= link_to t('users.resend confirmation button'), resend_confirmation_path, class: "action_button_blue"
+      %br
+      %p= link_to t('users.resend confirmation button'), resend_confirmation_path, class: "action_button_blue"
+
   -else
-    %h1= t('users.welcome to youversion') 
+    %h1= t('users.welcome to youversion')
     %p= t('users.confirm password to continue')
     = form_tag confirm_path do
       = hidden_field_tag :username, params[:username] || @user.username
