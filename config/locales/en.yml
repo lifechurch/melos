@@ -135,6 +135,7 @@ en:
     no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     public:                                     "Public"
     private:                                    "Private"
+    is private:                                 "The requested note is private."
     draft:                                      "Draft"
     creation form errors:                       "The following error(s) prevented creation of your note:"
     status field:                               "Status:"

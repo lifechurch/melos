@@ -9,6 +9,10 @@ module YouVersion
     def message
       @errors.join("\n")
     end
+
+    def has_error?( err )
+      @errors.include? err
+    end
   end
 
 

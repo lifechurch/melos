@@ -9,7 +9,11 @@ class NotesController < ApplicationController
   end
 
   def show
-    @note = Note.find(params[:id], :auth => current_auth)
+    begin
+      @note = Note.find(params[:id], :auth => current_auth)
+    rescue YouVersion::ResourceError => e
+      e.has_error?("Note is private") ? (redirect_to(notes_path, notice: t("notes.is private")) and return) : raise(e)
+    end
     raise ActionController::RoutingError.new('Not Found') unless @note
   end
 
