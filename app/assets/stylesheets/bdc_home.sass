@@ -1,16 +1,46 @@
+@font-face
+  font-family: 'RobotoLight'
+  src: url('Roboto-Light-webfont.eot')
+  src: url('Roboto-Light-webfont.eot?#iefix') format('embedded-opentype')
+  src: url('Roboto-Light-webfont.woff') format('woff')
+  src: url('Roboto-Light-webfont.ttf') format('truetype')
+  src: url('Roboto-Light-webfont.svg#RobotoLight') format('svg')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'BebasNeueRegular'
+  src: url('../fonts/BebasNeue-webfont.eot')
+  src: url('../fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype')
+  src: url('../fonts/BebasNeue-webfont.woff') format('woff')
+  src: url('../fonts/BebasNeue-webfont.ttf') format('truetype')
+  src: url('../fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+body, html
+  width: 100%
+
 body
-  background: image-url('white_top_bg.jpg') repeat-x
+  background: #eaeae8 image-url('bdc_bg.gif') repeat-x
 
 p
   margin-bottom: 0
 
 #wrapper
   padding: 4px 10px 0px
+  width: 100%
+  background: image-url("bdc_pics.jpg") repeat-x center 356px
+
+#header_outer,
+#container.no_sidebar,
+#footer
+  width: 980px
+  margin: 0 auto
 
 #header_outer
   background: none
   position: relative
-  width: 100%
 
 #header
   padding: 0px
@@ -28,54 +58,52 @@ p
   background: none
   background-image: none
   border: none
-  padding: 10px
+  padding: 0
   box-shadow: none
 
 #hero
-  background: image-url("laptop.jpg") no-repeat
-  height: 535px
+  background: image-url("laptop.jpg") no-repeat 500px 10px
+  margin-top: 20px
 
   #hero_content
-    float: right
-    width: 350px
-    margin-top: 100px
+    padding-left: 20px
 
     h1
-      font-size: 50px
-      font-family: Arial
+      font: 50px 'RobotoLight'
       letter-spacing: -0.05em
-      margin-left: -20px
+      width: 545px
     p
       font-size: 18px
       color: #666
       line-height: 1.3em
-      margin-bottom: 40px
+      margin: -10px 0 20px
+      width: 340px
 
     .cta
       background: #91B164
-      display: block
       color: #fff
       font-weight: bold
-      font-size: 16px
+      font-size: 15px
       text-align: center
       text-decoration: none
-      padding: 5px 35px
-      width: 175px
-      margin-left: 20px
-      float: left
+      padding: 4px 14px 6px
       border-radius: 4px
-      border: 1px #607346 solid
       box-shadow: inset 0px 2px 0px rgba(255, 255, 255, 0.3), inset 0px -2px 0px rgba(0, 0, 0, 0.3)
-      text-shadow: 0 -1px 0 #657C46
 
     .cta:hover
       background: #3787d6
-      border-color: #3787d6
       color: #FFF
+
+    span
+      display: block
+      margin: -4px 0 10px
+
+    label[for="skip"]
+      font-weight: normal
+      color: #666
 
   #hero_links
     width: 250px
-    float: left
     margin-top: 15px
     div
       float: left
@@ -87,104 +115,145 @@ p
   width: 100%
 
 #main article ul
-  margin-top: 30px
+  margin: 240px auto 0 auto
+  width: 940px
 
   li
     display: block
     float: left
     width: 220px
-    margin-right: 20px
+    margin-left: 20px
     padding-top: 220px
     padding-left: 0px
+    line-height: 1.4em
 
   li.first
-    margin-left: 10px
-    margin-top: 50px
+    margin-left: 0px
 
-  li.last
-    margin-right: 0px
-    margin-top: 50px
+  li
+    h2
+      font-size: 16px
+      letter-spacing: -0.02em
 
-  li h2
-    font-size: 16px
+    .pod_content
+      border-radius: 10px
+      padding: 20px
+      background: #fff
+      height: 260px
 
   li.read_bible
-    background: image-url("read_bible_icon.jpg") no-repeat 15px 0px
+    background: image-url("read_bible_icon.png") no-repeat center 0px
 
-  .study_bible
-    background: image-url("highlight_bible_icon.jpg") no-repeat 15px 0px
+  li.study_bible
+    background: image-url("highlight_bible_icon.png") no-repeat center 0px
+    margin-top: 20px
 
   li.subscribe_bible
-    background: image-url("subscribe_bible_icon.jpg") no-repeat 15px 0px
+    background: image-url("subscribe_bible_icon.png") no-repeat center 0px
+    margin-top: 20px
 
   .take_bible
-    background: image-url("take_bible_icon.jpg") no-repeat 15px 0px
+    background: image-url("take_bible_icon.png") no-repeat center 0px
 
-  li .pod_content
-    border: 1px solid #E5E4E2
-    border-bottom: 1px solid #FFF
-    border-radius: 10px
-    padding: 20px
-    background: #f5f5f4
-    box-shadow: inset 0px 2px 4px rgba(#000, .12)
+  .study_bible .pod_content, .subscribe_bible .pod_content
+    height: 240px
 
     p
       display: inline
 
 #main article .explore_cta
-  background: #3787d6
-  padding: 20px 20px 10px 130px
-  border-radius: 5px
+  margin: 40px auto 30px
+  text-align: center
   overflow: hidden
-  margin-bottom: 30px
-  box-shadow: inset 0px -2px 0px rgba(255, 255, 255, 1)
 
   h1
-    font-family: Arial
+    font: 39px 'RobotoLight'
     letter-spacing: -0.05em
+    color: #666
+    margin-bottom: 30px
 
-  a
-    float: left
-    background: #91B164
+  span
     display: block
-    color: #fff
-    font-weight: bold
-    font-size: 16px
-    text-align: center
-    text-decoration: none
-    padding: 5px 35px
-    margin-left: 20px
-    border-radius: 4px
-    border: 1px #607346 solid
-    box-shadow: inset 0px 2px 0px rgba(255, 255, 255, 0.3), inset 0px -2px 0px rgba(0, 0, 0, 0.3)
-    text-shadow: 0 -1px 0 #657C46
+    overflow: hidden
 
-  h1
-    margin-bottom: 10px
-    margin-left: 80px
-    font-size: 42px
+  .fb
+    width: 440px
+    text-align: right
     float: left
-    margin-right: 30px
-    color: #fff
+    a
+      background: #3B5998
+      display: block
+      color: #fff
+      font-weight: bold
+      font-size: 16px
+      text-align: center
+      text-decoration: none
+      padding: 5px 20px
+      border-radius: 4px
+      box-shadow: inset 0px 3px 0px rgba(255, 255, 255, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.3)
+
+  .or
+    width: 100px
+    text-align: center
+    float: left
+    font: bold 18px Arial, sans-serif
+    padding-top: 6px
+    color: #666
+
+  .email
+    width: 440px
+    float: left
+    a
+      background: #999
+      display: block
+      color: #fff
+      font-weight: bold
+      font-size: 16px
+      text-align: center
+      text-decoration: none
+      padding: 5px 20px
+      border-radius: 4px
+      box-shadow: inset 0px 3px 0px rgba(255, 255, 255, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.3)
 
 #main article .bottom_cta
-  background: #eaeae8 image-url("app-icon-en-73x73.png") no-repeat 30px 52%
-  padding: 20px 20px 15px 130px
-  border-radius: 10px
-  box-shadow: inset 0px 2px 4px rgba(#000, .12)
   overflow: hidden
-  border: 1px solid #E5E4E2
-  border-bottom: 1px solid #FFF
+  width: 880px
+  margin: 100px auto 0
+
+  div
+    float: left
+    width: 260px
+    background: image-url("bdc_mobile_icons.png") no-repeat 0 0
+  div:first-child
+    width: 620px
+    background: none
 
   p
-    width: 500px
-    float: left
-    margin-right: 50px
+    width: 300px
     line-height: 1.3em
+    float: left
+    border-right: 1px solid #CCC
+    margin: 10px 20px 0 0
+    padding-right: 20px
+
+  .counter
+    float: left
+    width: 260px
+    color: #999
+    padding-left: 10px
+    margin-top: 10px
+
+    p
+      font-size: 13px
+      border: none
+      margin-top: -8px
+    p:first-child
+      font: 50px 'BebasNeueRegular'
+      letter-spacing: -.03em
+      margin-top: -10px
 
   a
-    float: left
-    background: #666
+    background: #91b164
     display: block
     color: #fff
     font-weight: bold
@@ -192,29 +261,20 @@ p
     text-align: center
     text-decoration: none
     padding: 5px 15px
-    width: 200px
     border-radius: 5px
-    border: 1px #575757 solid
-    box-shadow: inset 0px 2px 0px rgba(#FFF, 0.3), inset 0 -2px 0 rgba(#000, 0.3)
-    margin-top: -20px
+    box-shadow: inset 0px 3px 0px rgba(#FFF, 0.3), inset 0 -3px 0 rgba(#000, 0.3)
+    margin-top: 80px
 
   h2
     margin-bottom: 10px
-
-.old_cta
-  overflow: hidden
-  width: 700px
-  margin: 30px auto 0px
-  font-style: italic
-  text-align: center
-
-
-  p
-    text-align: center
-    line-height: 1.3em
+    padding-left: 65px
+    font: 50px 'RobotoLight'
+    letter-spacing: -.05em
+    background: image-url("Bible-app-icon-english-50x50.png") no-repeat 0 52%
 
 #footer
   padding: 20px 10px
+  margin-top: 40px
 
 .flash_error
   margin: 0px
@@ -291,7 +351,7 @@ p
           p
             font-size: 15px
             margin-bottom: 20px
-            
+
         #hero_links
           float: left
           padding-right: 0

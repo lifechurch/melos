@@ -6,15 +6,19 @@
 
 = cache "bdc_welcome", expires_in: a_short_time do
   %article
-    %div#hero
-      %div#hero_content
-        %h1 Welcome to the New Bible.com!
+    #hero
+      #hero_content
+        %h1 A free Bible on your phone, tablet, and computer.
         %p
-          Now, Bible.com features a <strong>free</strong> online Bible from YouVersion. The simple, <strong>ad-free Bible experience</strong> loved by millions is available right here at Bible.com.
-        %div.clear
+          YouVersion is a simple, ad-free Bible that brings God’s Word into your daily life.
         %span
-          = link_to('Read the Bible Now', bible_path, :class => 'cta')
-        %div#hero_links
+          = link_to('Start reading', bible_path, :class => 'cta')
+          &nbsp; or learn more below
+        %form
+          %input{:type => "checkbox", :name => "skip", :value => "Skip"}
+          %label{:for => "skip"}
+            Skip this page in the future
+        -#hero_links
           %div{style: "height: 40px;"}
             %script{:src => "https://connect.facebook.net/en_US/all.js#xfbml=1"}
             %fb:like{:layout => "button_count", :show_faces => "false", :width => "450", font: "arial"}
@@ -24,14 +28,12 @@
               var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
               po.src = 'https://apis.google.com/js/plusone.js';
               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      %br.clear
-    %img.hero_shadow{:src => asset_path('section_shadow.png')}
     %ul
       %li.read_bible.first
         %div.pod_content
           %h2 Read the Bible.
           %p
-            %span.narrow Take your choice from <strong>nearly 300 Bible versions</strong> in <strong>more than 150 languages</strong>. Compare two
+            %span.narrow Take your choice from <strong>hundreds of Bible versions and languages.</strong>. Compare two
           %p versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it.
       %li.study_bible
         %div.pod_content
@@ -49,21 +51,27 @@
         %div.pod_content
           %h2 Take the Bible with you.
           %p
-            %span.narrow You can also <a href="mobile">download</a> the Bible App for free on any mobile device. When you use the mobile
+            %span.narrow <a href="mobile">Download</a> the Bible App for free on any mobile device. When you use the mobile
           %p app, your notes, bookmarks, highlights, plans, and more will be <strong>synced with Bible.com</strong>. You’ll have access to it all, no matter if you’re reading the Bible on your phone, tablet, or computer.
 
-    %div.explore_cta
-      %h1 Get started now.
-      %span
-        = link_to('Explore the new Bible.com', bible_path)
+    .explore_cta
+      %h1 Get started with your free account.
+      %span.fb
+        = link_to('Sign up using Facebook', bible_path)
+      %span.or
+        OR
+      %span.email
+        = link_to('Sign up using your email address', bible_path)
 
-    %div.bottom_cta
-      %h2 Now the Bible is an app!
-      %p
-        Download the free YouVersion Bible App on your mobile device and you’ll have your Bible with you no matter where you go.
-      %span
+    .bottom_cta
+      %div
+        %h2 God’s word is with you.
+        %p
+          Download the free YouVersion Bible App on your mobile device and you’ll have your Bible with you no matter where you go.
+        %span.counter
+          %p
+            71,034,791
+          %p
+            Installs around the world
+      %div
         = link_to('Download the Bible App', 'http://youversion.com/download')
-
-    %div.old_cta
-      %p
-        If you are looking for the Christ Unlimited Ministries content by Bud and Betty Miller or the old Bible.com website please visit their new website at <a href='http://www.bibleresources.org'>BibleResources.org</a>
