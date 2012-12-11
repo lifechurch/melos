@@ -496,6 +496,7 @@ Reader.prototype = {
     function overNote(){
       var label = $(this).find('.label');
       var ctn = $(this).find('.outer_container');
+      var inner = ctn.find('.inner_container');
       var label_left  = label.offset().left;
       var label_bottom  = label.offset().top + label.outerHeight();
       var reader_right = label.closest('.version').innerWidth() + $(this).closest('.version').offset().left;
@@ -521,7 +522,13 @@ Reader.prototype = {
         }else {
           // note reaches past the top of the reader when flipped,
           // do the best we can by positioning at top of reader
-          ctn.css('top', reader_top + "px");
+          // reducing font size, and increasing width
+          if (!inner.hasClass('hacked')){
+            ctn.css('top', reader_top + "px");
+            inner.css('font-size', parseInt(inner.css('font-size')) - 2 + "px");
+            inner.css('max-width', parseInt(inner.css('max-width')) + 30 + "px");
+            inner.addClass('hacked');
+          }
         }
 
 
