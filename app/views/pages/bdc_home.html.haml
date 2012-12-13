@@ -71,11 +71,13 @@
             %input{:type => "text", :tabindex => "2", :name => "username", :placeholder => "Enter your username"}
           %li
             %input{:type => "text", :tabindex => "3", :name => "pass", :placeholder => "Enter your email address"}
-          %li
-            %input{:type => "checkbox", :tabindex => "4", :name => "terms", :value => "terms"}
-            %label{:for => "terms"}
-              I agree to the
-              = link_to('YouVersion terms and conditions.', terms_path)
+          %li.terms
+            %span
+              %input{:type => "checkbox", :tabindex => "4", :name => "terms", :value => "terms"}
+            %span
+              %label{:for => "terms"}
+                I agree to the
+                = link_to('YouVersion terms and conditions.', terms_path)
           %li
             %input{:type => "submit", :tabindex => "5", :name => "submit", :value => "Submit", :class => "cta"}
 
