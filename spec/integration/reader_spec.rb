@@ -79,26 +79,46 @@ feature "Reader", js: true do
 			page.find("div#menu_version tr[data-abbrev='amp'] td a div").click
 			current_path.should eq bible_path(Reference.new(@ref.merge(version: "amp")))
 		end
+
+		scenario "full screen" do
+			page.find("header#header").should be_visible
+			page.find("div#nav_primary").should be_visible
+
+			page.find("span.icon_full_screen").click
+
+			page.find("header#header").should_not be_visible
+			page.find("div#nav_primary").should_not be_visible
+
+			page.find("span.icon_full_screen").click
+
+			page.find("header#header").should be_visible
+			page.find("div#nav_primary").should be_visible
+
+		end
+
+		scenario "parallel" do
+			page.find("div#version_secondary").should_not be_visible
+			page.find("span.icon_parallel").click
+			page.find("div#version_secondary").should be_visible
+			page.find("span.icon_parallel").click
+			page.find("div#version_secondary").should_not be_visible
+		end
 	end
 
 	describe "when signed in" do
 		before :all do
 			# Given I am signed in as "testusercb" with the password "tenders"
 			@user = ensure_user
-			@auth = Hashie::Mash.new(username: @user.username, password: "tenders")
 		end
 
 		describe "with selected verses" do
 			before :all do
-				hgh = Highlight.for_reference(@ref, auth: @auth)
+				hgh = Highlight.for_reference(@ref, auth: @user.auth)
 				hgh.each(&:destroy)
 
 				bkm = @user.bookmarks
 				bkm.each do |b|
-					b = Bookmark.find(b.id, auth: @auth)
-					puts "destryoing #{b.id}"
-					puts b.destroy
-					puts b.errors.full_messages
+					b = Bookmark.find(b.id, auth: @user.auth)
 				end
 
 			end
@@ -106,10 +126,7 @@ feature "Reader", js: true do
 			before :each do
 				# Given I an on the chapter page for KJV John 2
 				visit bible_path(@ref)
-				visit "/sign-in"
-				page.fill_in "username", with: @user.username # or whoever
-				page.fill_in "password", with: "tenders"
-				page.find("input[name='commit']").click
+				sign_in_user! @user
 				# And I have selected verse 1
 				visit bible_path(@ref)
 				page.find("span.verse.v1").click
