@@ -58,10 +58,6 @@ end
 
 Capybara.javascript_driver = :webkit
 Capybara.default_wait_time = 5
-# I'm using Pow to run my app locally, so I'm using the Pow address
-# for Capybara-webkit. If you use localhost:3000 or whatever, change
-# that here.
-Capybara.app_host = "http://youversion-web.dev"
 
 
 module ::RSpec::Core
