@@ -70,27 +70,26 @@
             e.preventDefault();
             $("#signup").show();
             $("#get-started-buttons").hide();
+            $("#signup input[type='email']").focus();
           })
 
 
       #signup.explore_cta.form{style: "display:none;"}
-        %form
+        = form_for :user, url: sign_up_path do |f|
           %ul
             %li
-              %input{:type => "email", :tabindex => "1", :name => "email", :placeholder => "Enter your email address"}
+              = f.text_field :email, {class:"autofocus", type:"email", tabindex:"1", placeholder:"Enter your email address" }
             %li
-              %input{:type => "text", :tabindex => "2", :name => "username", :placeholder => "Enter your username"}
+              = f.text_field :username, {tabindex:"2", placeholder:"Enter your username"}
             %li
-              %input{:type => "password", :tabindex => "3", :name => "pass", :placeholder => "Enter your password"}
+              = f.password_field :password, {tabindex:"3", placeholder:"Enter your password"}
             %li.terms
               %span
-                %input{:type => "checkbox", :tabindex => "4", :name => "terms", :value => "terms"}
+                = f.check_box :agree, {tabindex:"4"}
               %span
-                %label{:for => "terms"}
-                  I agree to the
-                  = link_to('YouVersion terms and conditions.', terms_path)
+                = f.label :agree, t("users.agreement", terms_link: link_to(t("users.terms and conditions"), terms_url())).html_safe
             %li
-              %input{:type => "submit", :tabindex => "5", :name => "submit", :value => "Submit", :class => "cta"}
+              = f.submit t("users.register"), {tabindex:"5", class:"cta"}
 
     .bottom_cta
       %div
