@@ -21,6 +21,7 @@ Spork.prefork do
 end
 
 Spork.each_run do
+	include ApplicationHelper
   if ENV['DRB']
     # this configuration is required to get simplecov
     # to execute correctly with DRB servers like Spork
@@ -54,6 +55,9 @@ Capybara.server do |app, port|
   require 'rack/handler/webrick'
   Rack::Handler::WEBrick.run(app, :Port => port, :AccessLog => [], :Logger => WEBrick::Log::new(nil, 0))
 end
+
+Capybara.javascript_driver = :webkit
+Capybara.default_wait_time = 5
 
 
 module ::RSpec::Core
