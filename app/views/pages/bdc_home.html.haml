@@ -56,30 +56,41 @@
 
     .explore_cta
       %h1 Get started with your free account.
-      %span.fb
-        = link_to('Sign up using Facebook', bible_path)
-      %span.or
-        OR
-      %span.email
-        = link_to('Sign up using your email address', bible_path)
-    .explore_cta.form
-      %form
-        %ul
-          %li
-            %input{:type => "email", :tabindex => "1", :name => "email", :placeholder => "Enter your email address"}
-          %li
-            %input{:type => "text", :tabindex => "2", :name => "username", :placeholder => "Enter your username"}
-          %li
-            %input{:type => "text", :tabindex => "3", :name => "pass", :placeholder => "Enter your email address"}
-          %li.terms
-            %span
-              %input{:type => "checkbox", :tabindex => "4", :name => "terms", :value => "terms"}
-            %span
-              %label{:for => "terms"}
-                I agree to the
-                = link_to('YouVersion terms and conditions.', terms_path)
-          %li
-            %input{:type => "submit", :tabindex => "5", :name => "submit", :value => "Submit", :class => "cta"}
+      #get-started-buttons
+        %span.fb
+          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
+        %span.or
+          OR
+        %span.email
+          = link_to('Sign up using your email address', bible_path, {id: "signup-via-email"})
+
+      - content_for :javascripts do
+        :javascript
+          $("#signup-via-email").on("click", function(e) {
+            e.preventDefault();
+            $("#signup").show();
+            $("#get-started-buttons").hide();
+          })
+
+
+      #signup.explore_cta.form{style: "display:none;"}
+        %form
+          %ul
+            %li
+              %input{:type => "email", :tabindex => "1", :name => "email", :placeholder => "Enter your email address"}
+            %li
+              %input{:type => "text", :tabindex => "2", :name => "username", :placeholder => "Enter your username"}
+            %li
+              %input{:type => "password", :tabindex => "3", :name => "pass", :placeholder => "Enter your password"}
+            %li.terms
+              %span
+                %input{:type => "checkbox", :tabindex => "4", :name => "terms", :value => "terms"}
+              %span
+                %label{:for => "terms"}
+                  I agree to the
+                  = link_to('YouVersion terms and conditions.', terms_path)
+            %li
+              %input{:type => "submit", :tabindex => "5", :name => "submit", :value => "Submit", :class => "cta"}
 
     .bottom_cta
       %div
