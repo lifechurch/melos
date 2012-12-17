@@ -331,14 +331,15 @@ p
     margin: 0
     padding: 0
     width: auto
+    background: transparent
 
   #header_outer
     background: transparent
     padding: 0
-    position: relative
     width: auto
-    z-index: 0
-    left: -2px
+
+  #container.no_sidebar
+    width: auto
 
   #header
     width: 100%
@@ -367,14 +368,15 @@ p
         background-color: #FFF
         height: auto
         padding: 16px 16px 0 16px
+        margin: 0
 
         #hero_content
           float: none
           width: auto
           margin-top: 0
+          padding: 0 0 10px
 
           .cta
-            padding: 5px 0px
             width: 100%
             margin: 0 auto
             float: none
@@ -385,10 +387,12 @@ p
           h1
             font-size: 36px
             margin-left: 0
+            width: auto
 
           p
             font-size: 15px
             margin-bottom: 20px
+            width: auto
 
         #hero_links
           float: left
@@ -403,17 +407,21 @@ p
         top: -13px
 
       ul
-        margin: 0
+        margin: 0 auto
+        padding-top: 20px
+        width: auto
+        background: image-url("section_shadow.png") top center no-repeat
+        background-size: 500px 6px
         li, li.last, li.first
           float: none
-          width: auto
-          margin: 0 auto 20px
+          margin: 0 auto
           padding: 0
           width: 90%
           border-radius: 10px
           background: transparent
           .pod_content
             border-radius: 10px
+            height: auto
           p
             margin: 0
           h2, p span.narrow
@@ -421,16 +429,19 @@ p
           p span.narrow
             display: block
 
+        .study_bible .pod_content, .subscribe_bible .pod_content
+          height: auto
+
         li.last
           margin-bottom: 0
         li.read_bible div
-          background: #F0EFED image-url("read_bible_icon_m.png") no-repeat 93% 20px
+          background: #FFF image-url("read_bible_icon_m.png") no-repeat 93% 20px
         li.study_bible div
-          background: #F0EFED image-url("highlight_bible_icon_m.png") no-repeat 93% 20px
+          background: #FFF image-url("highlight_bible_icon_m.png") no-repeat 93% 20px
         li.subscribe_bible div
-          background: #F0EFED image-url("subscribe_bible_icon_m.png") no-repeat 93% 20px
+          background: #FFF image-url("subscribe_bible_icon_m.png") no-repeat 93% 20px
         li.take_bible div
-          background: #F0EFED image-url("take_bible_icon_m.png") no-repeat 93% 20px
+          background: #FFF image-url("take_bible_icon_m.png") no-repeat 93% 20px
 
       .explore_cta
         border-radius: 0
@@ -442,25 +453,91 @@ p
         h1
           margin-bottom: 10px
         a
-          width: 100%
+          width: auto
           padding: 5px 0px
+        .fb, .email, .or
+          width: auto
+          float: none
+          overflow: auto
+        .or
+          padding: 5px 0
+
+      .explore_cta.form
+        width: auto
+        margin: 0
+        padding: 0 20px
+        display: none
+
+        ul
+          background: transparent
+        li
+          float: none
+          width: auto
+
+          input[name="email"], input[name="username"]
+            width: 100%
+            margin-right: 0
+          input[name="pass"]
+            width: 100%
+            margin-right: 0
+          input[type="submit"]
+            width: 100%
+            margin-left: 0
+        li.terms
+          width: auto
+          text-align: left
+          font-size: 13px
+          line-height: 1em
+          overflow: auto
+          span
+            width: 10%
+            float: left
+          span:last-child
+            width: 90%
+            padding-top: 8px
 
       .bottom_cta
         width: auto
-        padding: 0 20px
-        background-position: 20px 0
-        box-shadow: none
-        border: 0
+        padding: 20px
+        margin: 0 auto
+        background-color: #fff
+        div
+          width: auto
+          float: none
+          height: 100px
+          background: url(/assets/bdc_mobile_icons.png) no-repeat 0 50px
+        div:first-child
+          width: auto
+          height: auto
+          background: transparent
+          p
+            display: block
+            padding-right: 70px
+            background: image-url("Bible-app-icon-english-50x50.png") no-repeat top right
+          span
+            p
+              background: transparent
+        h2
+          font-size: 39px
+          background: transparent
+          padding: 0
         h2, p
           width: auto
-        h2
-          margin-left: 90px
         p
-          margin: 0 0 0 90px
+          margin: 0
+          border: none
+          float: none
         a
           margin: 20px 0
           width: 100%
           padding: 5px 0px
+        .counter
+          display: block
+          float: none
+          width: auto
+          padding: 0
+          margin-top: 20px
+
 
       .old_cta
         width: auto
@@ -484,3 +561,7 @@ p
     display: none
   .mobile-add
     display: block
+
+#footer
+  margin-top: 10px
+
