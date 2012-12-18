@@ -6,7 +6,8 @@
   z-index: 901
   position: relative
 
-#header, .reader_modal_header
+#header,
+.reader_modal_header
   -webkit-font-smoothing: subpixel-antialiased
   background: #333 image-url("header.png") repeat-x
   /* border: 1px solid #1e1e1f */
@@ -36,10 +37,16 @@
 #header table
   width: 100%
 
-#header #nav_btn, #header #nav_avatar, #header #nav_search_btn, #header #nav_signin
+#header #nav_btn,
+#header #nav_avatar,
+#header #nav_search_btn,
+#header #nav_signin
   width: 44px
 
-#header #nav_btn a, #header #nav_avatar a, #header #nav_search_btn a, #header #nav_signin a
+#header #nav_btn a,
+#header #nav_avatar a,
+#header #nav_search_btn a,
+#header #nav_signin a
   text-indent: 100%
   white-space: nowrap
   overflow: hidden
@@ -53,7 +60,16 @@
 #header #nav_signin
   background: image-url("nav_signin.gif") center 8px no-repeat
 
-#header .nav_btn, #header .settings_btn, .cancel_btn, .close_btn, #header #nav_avatar, #header #nav_search_btn, #header #nav_signin, #header .profile_btn
+#header .nav_btn,
+#header .settings_btn,
+#header .info_btn,
+#header .subscription_btn,
+.cancel_btn,
+.close_btn,
+#header #nav_avatar,
+#header #nav_search_btn,
+#header #nav_signin,
+#header .profile_btn
   text-indent: 100%
   white-space: nowrap
   overflow: hidden
@@ -63,7 +79,8 @@
   float: left
   padding: 8px 10px
 
-#header .close_btn, .reader_modal_header .close_btn
+#header .close_btn,
+.reader_modal_header .close_btn
   background: image-url("mobile/close_btn.png") 12px 8px no-repeat
 
 #header .save_btn
@@ -73,9 +90,11 @@
   float: right
   border-radius: 4px
   color: #fff !important
-  font-size: 13px
+  font-size: 15px
   margin-right: 12px
   margin-top: 8px
+  height: 25px
+  line-height: 26px
 
 #header .cancel_btn
   display: block
@@ -86,30 +105,37 @@
   margin-left: 12px
   margin-top: 8px
 
-#header
-  .version_btn
-    background: image-url("mobile/nav_button_bg.png") 0px 8px no-repeat
-    padding: 18px 7px 18px 10px
-    display: block
-    border-radius: 4px
-    float: left
-    color: #fff !important
-    font-size: 15px
-    font-weight: bold
-    height: 15px
-    margin-left: 10px
-    line-height: 10px
+#header .version_btn
+  background: image-url("mobile/nav_button_bg.png") 0px 8px no-repeat
+  padding: 18px 7px 18px 10px
+  display: block
+  border-radius: 4px
+  float: left
+  color: #fff !important
+  font-size: 15px
+  font-weight: bold
+  height: 15px
+  margin: 0px 0px 0px 10px
+  line-height: 10px
 
-  span.right_btn_slice
-    background: image-url("mobile/nav_button_bg_right.png") 0px 8px no-repeat
-    padding: 18px 0px
-    height: 15px
-    display: block
-    float: left
-    margin-right: 2px
-    width: 5px
-#header .settings_btn
+#header span.right_btn_slice
+  background: image-url("mobile/nav_button_bg_right.png") 0px 8px no-repeat
+  padding: 18px 0px
+  height: 15px
+  display: block
+  float: left
+  margin-right: 10px
+  width: 5px
+
+#header .settings_btn,
+.settings_btn,
   background: image-url("mobile/settings_btn.png") 12px 8px no-repeat
+
+#header .info_btn
+  background: image-url("mobile/info_btn.png") 12px 8px no-repeat
+
+#header .subscription_btn
+  background: image-url("mobile/subscription_btn.png") 12px 8px no-repeat
 
 #header .profile_btn
   background: image-url("mobile/profile_btn.png") 12px 8px no-repeat
@@ -128,9 +154,18 @@
   color: #999 !important
   text-shadow: none !important
   float: left
-  padding: 13px 10px
   width: auto
   text-align: center
+  background: image-url("mobile/nav_button_bg.png") 0px 8px no-repeat
+
+#header #page_title a
+  padding: 15px 7px 7px 0px
+  height: 15px
+  font-size: 15px
+  max-width: 205px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
 
 #header nav.right_nav
   float: right

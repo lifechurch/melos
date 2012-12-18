@@ -7,13 +7,18 @@
   reading       = presenter.reading
   content_page  = presenter.content_page
 
+.mobile
+  .reader_modal_header
+    %nav
+      %a.close_btn.subscription_close_btn
+
 #sb-subscription
   .widget.widget-notice.widget_last_fixed{style: "width:268px;"}
     %p
       = t("plans.sidebar notice")
       %span.exit= link_to(t("plans.exit"), shelf_user_subscription_path(current_user, subscription, content: content_page, day: day ), method: :post)
 
-  .widget{style: "margin-top:54px;"}
+  .widget.subcription{style: "margin-top:54px;"}
     %header
       - settings_text = t("settings")
       =link_to(edit_user_subscription_path(current_user,subscription),{class: "settings", title: settings_text}) do
@@ -64,9 +69,18 @@
               %a{href: (content_page == index) ? nil : user_subscription_path(current_user, subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
                 = ref.ref.safe_human
 
+<<<<<<< HEAD
 - if reading.devotional
   .widget
     %header= t("plans.devotional")
     %ul.widget_menu
       %li
         %p= reading.devotional.html_safe
+=======
+  - if reading.devotional
+    .widget.devotional
+      %header= t("plans.devotional")
+      %ul.widget_menu
+        %li
+          %p= reading.devotional.html_safe
+>>>>>>> Share Button and Share menu JS

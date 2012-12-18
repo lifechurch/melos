@@ -4,7 +4,7 @@
 - @reference      = @presenter.reference
 - @alt_reference  = @presenter.alt_reference
 
-- @title = "#{@reference.human} #{@reference.version_string}"
+- @title = @presenter.title
 - @is_reader = true
 - @canonical = bible_url(@reference)
 - @html_classes = []
@@ -86,5 +86,9 @@
         = link_to("Next", bible_path(@reference.next_chapter), class: "next") if @reference.next_chapter
     %span.last
   %br.clear
+
+- if current_auth && client_settings.subscription_state?
+  - content_for :mobile_subscription_nav do
+    %a.subscription_btn{:href => 'javascript:void(0);'}
 
 = render partial: 'reader', locals: {presenter: @presenter}

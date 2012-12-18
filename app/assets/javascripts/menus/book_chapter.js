@@ -3,20 +3,26 @@
 
 function BookChapterMenu( opts ) {
 
-  this.menu             = $(opts.menu);
-  this.trigger          = $(opts.trigger);
-  this.search_input     = this.menu.find('.search input');
-  this.book_menu        = this.menu.find('#menu_book');
-  this.chapter_menu     = this.menu.find('#menu_chapter');
-  this.loaded_book      = $('#main article').data('book');
-  this.current_book     = $('#main article').data('book') || "jhn";
-  this.current_chapter  = $('#main article').data('chapter') || "1";
-  this.active_class     = "li_active";
-  this.searchTimer      = null;
-  this.firstMatch    = 'first-match';
-  this.book_chapter_tabs = $('.ref_navigation a');
-  this.book_tab          = $('.ref_navigation a.book');
-  this.chapter_tab       = $('.ref_navigation a.chapter');
+  this.menu              = $(opts.menu);
+  this.trigger           = $(opts.trigger);
+  this.search_input      = this.menu.find('.search input');
+  this.book_menu         = this.menu.find('#menu_book');
+  this.chapter_menu      = this.menu.find('#menu_chapter');
+  this.loaded_book       = $('#main article').data('book');
+  this.current_book      = $('#main article').data('book') || "jhn";
+  this.current_chapter   = $('#main article').data('chapter') || "1";
+  this.active_class      = "li_active";
+  this.searchTimer       = null;
+  this.firstMatch        = 'first-match';
+  this.book_chapter_tabs = $('.tab_navigation.ref a');
+  this.book_tab          = $('a.book');
+  this.chapter_tab       = $('a.chapter');
+  this.FontSettings      = $('#font_settings');
+  this.SizeSettings      = $('#size_settings');
+  this.ExtraSettings     = $('#extra_settings');
+  this.font              = $('.tab_navigation.settings a.font');
+  this.font_size         = $('.tab_navigation.settings a.font_size');
+  this.extras            = $('.tab_navigation.settings a.extras');
 
   // Select initial book
   this.setCurrentBook( this.current_book );
@@ -46,6 +52,22 @@ function BookChapterMenu( opts ) {
   $('.book').click($.proxy(function(e){
     e.preventDefault();
     this.showBooks();
+  },this));
+
+  // setup click handlers for the settings tabs
+  $('.font').click($.proxy(function(e){
+    e.preventDefault();
+    this.showFontSettings();
+  },this));
+
+  $('.font_size').click($.proxy(function(e){
+    e.preventDefault();
+    this.showSizeSettings();
+  },this));
+
+  $('.extras').click($.proxy(function(e){
+    e.preventDefault();
+    this.showExtraSettings();
   },this));
 
 }
@@ -185,18 +207,43 @@ BookChapterMenu.prototype = {
   },
 
   showBooks : function() {
-    this.chapter_menu.hide();
+    this.chapter_menu.addClass('hide_list');
+    this.book_menu.removeClass('hide_list');
     this.chapter_tab.removeClass('selected');
-
     this.book_tab.addClass('selected');
-    this.book_menu.show();
   },
 
   showChapters : function() {
-    this.book_menu.hide();
+    this.book_menu.addClass('hide_list');
+    this.chapter_menu.removeClass('hide_list');
     this.book_tab.removeClass('selected');
-
     this.chapter_tab.addClass('selected');
-    this.chapter_menu.show();
+  },
+
+  showFontSettings : function() {
+    this.SizeSettings.addClass('hide_list');
+    this.ExtraSettings.addClass('hide_list');
+    this.FontSettings.removeClass('hide_list');
+    this.font.addClass('selected');
+    this.font_size.removeClass('selected');
+    this.extras.removeClass('selected');
+  },
+
+  showSizeSettings : function() {
+    this.FontSettings.addClass('hide_list');
+    this.ExtraSettings.addClass('hide_list');
+    this.SizeSettings.removeClass('hide_list');
+    this.font_size.addClass('selected');
+    this.font.removeClass('selected');
+    this.extras.removeClass('selected');
+  },
+
+  showExtraSettings : function() {
+    this.FontSettings.addClass('hide_list');
+    this.SizeSettings.addClass('hide_list');
+    this.ExtraSettings.removeClass('hide_list');
+    this.extras.addClass('selected');
+    this.font_size.removeClass('selected');
+    this.font.removeClass('selected');
   }
 }

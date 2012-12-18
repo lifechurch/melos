@@ -38,12 +38,12 @@
 @import webfonts
 
 @media only screen and (min-width: 990px)
-  /* Style adjustments for viewports over 1000px go here
+  /* Style adjustments for viewports over 990px go here
   .mobile
     display: none !important
 
 @media only screen and (max-width: 990px)
-  /* Style adjustments for viewports 1000px and under go here
+  /* Style adjustments for viewports 990px and under go here
   #main article p
     font-size: 15px
   body
@@ -71,7 +71,9 @@
   header nav.sign_in,
   #yv_logo
     display: none !important
-  article .nav_items
+
+  article .nav_items,
+  .search
     display: none
 
   #header
@@ -88,26 +90,37 @@
     background: #202020
     border: 0px
     width: 100%
-    height: 100%
     padding: 0px
-    position: absolute
+    position: fixed
     top: 0px
     z-index: 1005
 
+  #menu_book_chapter .browse
+    background: none
+    padding: 0px
+
+  #menu_book_chapter .menu_arrow,
+  .version_select .menu_arrow
+    display: none
+
   .version_select
+    position: fixed
     top: 0px
     border-radius: 0px
     border: 0px
     padding: 0px
-    height: 100%
+    background: #202020
     width: 100% !important
 
-  .version_select .menu_arrow
-    display: none
 
-  .version_select .scroll
-    height: 100%
+  .version_select .browse
+    padding: 0px
+
+  .version_select .scroll,
+  #menu_book_chapter .scroll
     border: 0px
+    background: none
+    overflow-y: scroll
 
   .version_select th div,
   .version_select td div
@@ -123,20 +136,35 @@
   .version_select th
     min-width: 6em
 
+    a 
+      padding: 10px
   .version_select td
     width: 80%
 
     a
       display: block
       width: 100%
+      padding: 10px
 
   .version_select tr.other_lang,
   .version_select tr.other_lang ~ tr
     display: none
 
-  .version_select tr#see_all
+  .version_select #see_all
     display: table-row
 
+  .version_select #see_all a
+    color: $blue
+    font-size: 18px
+    border: 0px
+    background-color: #0C0C0C !important
+    margin-left: 20px
+
+  .version_select #see_all a:hover
+    background-color: #0C0C0C !important
+
+  .dynamic_menu .scroll::-webkit-scrollbar-thumb
+    background: none
 
   article > form.share .character_count
     float: left
@@ -155,6 +183,28 @@
     background-image: none !important
     text-shadow: none !important
 
+  .dynamic_menu tr:hover th a
+    color: #A6C2CC
+
+  .hide_list
+    display: none
+
+  #sidebar
+    background-image: none
+    background: #202020
+    border: 0px
+    width: 100%
+    height: 100%
+    padding: 0px
+    position: absolute
+    top: -46px
+    z-index: 1005
+
+  #sidebar.open
+    display: block !important
+
+  // TODO: delete as many as possible, moving only
+  // necessarry SASS into better organized folders/files
   @import mobile/avatars
   @import mobile/ui_elements
   @import mobile/pagination
@@ -169,7 +219,6 @@
   @import mobile/user_settings
   @import mobile/progress_bars
   @import mobile/split_pane
-  @import mobile/sidebar
   @import mobile/footer
   @import mobile/modal_window
   @import mobile/reference_tokens

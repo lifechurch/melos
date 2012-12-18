@@ -20,6 +20,8 @@
           %input.references{name: "highlight[references]", type: "hidden"}
           %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
           %div.color_picker_list
+            %a.color_picker{href:"#"}
+            %a.color_picker_holder{href:"#"}
             %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
             %span
             - if current_auth
@@ -28,8 +30,6 @@
             - else
               %span
                 = render partial: "users/highlight_color_swatches"
-            %a.color_picker{href:"#"}
-            %a.color_picker_holder{href:"#"}
           %div.clear
 
     %dt.bookmark

@@ -128,13 +128,15 @@ div.close_tab
 .color_toolbar
   height: auto
   position: absolute
-  top: 0px
+  top: -155px
   left: 0px
   width: 100%
-  display: none
-  background-color: #282828
   z-index: 192
-  padding: 10px 10px
+
+.color_toolbar nav
+  background: #2b2b2c
+  padding: 20px 10px
+
 
 .color_toolbar .color_picker_list button.color
   margin: 10px
@@ -157,8 +159,7 @@ div.close_tab
 
 #menu_settings header,
 #menu_settings .menu_arrow,
-#menu_settings form p,
-#menu_chapter
+#menu_settings form p
   display: none
 
 #menu_settings form
@@ -211,7 +212,7 @@ div.close_tab
   border-top: 1px solid #282828
   border-right: 1px solid #282828
   border-bottom: 1px solid #101010
-  border-left: 1px solid #101010  
+  border-left: 1px solid #101010
 
 .audio_toolbar .inner_content
   background: #2c2b2b !important
@@ -298,12 +299,13 @@ div.close_tab
   margin: 0px !important
 
 
-.tab_navigation, .ref_navigation
+.tab_navigation
   display: block
   width: 100%
   a
     display: block
     float: left
+    width: 33.3%
     height: 44px
     background: #2C2B2B
     margin: 0px
@@ -313,30 +315,29 @@ div.close_tab
     font-weight: bold
     font-size: 15px
     text-decoration: none
-    +box-shadow(inset #4b4b4b 0 2px 0 0, inset #0d0d0d 0 -2px 0 0)
+    +box-shadow(inset #000000 0 1px 1px 0px)
+    //+box-shadow(inset #4b4b4b 0 2px 0 0, inset #0d0d0d 0 -2px 0 0)
+    border-bottom: 1px solid #1f1f1f
   a:first-child
     border-left: 0
   a.selected
     background: #666
     +box-shadow(inset #000000 0 1px 1px 1px)
 
-.ref_navigation a
+.tab_navigation.ref a
   width: 49.99%
 
-.tab_navigation a
-  width: 33.2%
-
 .nav_items.audio-disabled
-  width: 128px
+  width: 170px
 
   ul
-    width: 90px
+    width: 132px
 
-  li.audio-disabled
-    display: none
+    li.audio-disabled
+      display: none
 
 .nav_items
-  width: 170px
+  width: 212px
   height: 46px
   margin: 0 auto
   position: relative
@@ -361,7 +362,7 @@ div.close_tab
     background: image-url("reader_tab_mid.png") repeat-x
     list-style: none
     margin: 0 auto
-    width: 134px
+    width: 176px
     float: left
 
     li
@@ -393,6 +394,15 @@ div.close_tab
       font-size: 0px
 
       span.icon_listen
+        background: none
+
+    a.reader_settings_btn
+      background: image-url("icon_reader_settings.png") center -36px no-repeat
+      background-size: auto
+      text-indent: -99999px
+      font-size: 0px
+
+      span.icon_reader_settings
         background: none
 
     a.audio_btn.disabled, a.audio_btn.disabled:hover
@@ -584,21 +594,39 @@ div.close_tab
 #menu_audio_player
   -webkit-font-smoothing: subpixel-antialiased
   background:
-    color: #2C2B2B
+    color: transparent
   display: none
   font-size: 13px
-  padding: 8px
-  text-shadow: #000 0 1px 0
   color: #FFF
-  dt
-    padding-bottom: 4px
+  border-radius: 0px
+  border: 0px
+  width: 100%
+  padding: 0px
+  position: absolute
+  top: -208px
+  box-shadow: none
+  z-index: 291
+  
+  .menu_arrow
+    display: none
+
   dl
     margin-bottom: 0
-  a
-    height: 44px
-    width: 44px
-    display: block
-    background: image-url("icon_info.png") no-repeat center 10px
-    text-indent: 100%
-    white-space: nowrap
-    overflow: hidden
+    background:
+      image: none
+      color: #2C2B2B
+    border: 0px !important
+    text-shadow: none
+    padding: 10px 0px 30px
+
+    dt
+      background: none
+      border-top: 0px !important
+      box-shadow: none
+
+    dd
+      box-shadow: none
+      border: 0px 
+
+  a.close
+    display: none
