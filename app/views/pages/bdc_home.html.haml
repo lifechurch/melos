@@ -15,8 +15,8 @@
           = link_to('Start reading', bible_path, :class => 'cta')
           &nbsp; or learn more below
         %form
-          %input{:type => "checkbox", :name => "skip", :value => "Skip"}
-          %label{:for => "skip"}
+          %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
+          %label{for:"setting-skip-home",id:"label-setting-skip-home"}
             Skip this page in the future
         -#hero_links
           %div{style: "height: 40px;"}
@@ -66,13 +66,28 @@
 
       - content_for :javascripts do
         :javascript
+          // Display signup form.
+          var fade = 200;
           $("#signup-via-email").on("click", function(e) {
             e.preventDefault();
-            $("#signup").show();
-            $("#get-started-buttons").hide();
+            $("#get-started-buttons").fadeOut(fade, function() { $("#signup").fadeIn(fade)});
             $("#signup input[type='email']").focus();
           })
 
+          // Setttings for skipping home page
+          $("#setting-skip-home").on("click",function(e) {
+            var checked = $(this).attr("checked");
+            var label = $("#label-setting-skip-home");
+            if(checked){
+              setCookie("setting-skip-home","true",365);
+              label.html("This page will now be skipped.");
+            }
+            else {
+              alert("here");
+              deleteCookie("setting-skip-home");
+              label.html("Skip this page in the future.");
+            }
+          });
 
       #signup.explore_cta.form{style: "display:none;"}
         = form_for :user, url: sign_up_path do |f|
