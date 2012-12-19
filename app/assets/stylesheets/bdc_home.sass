@@ -99,9 +99,10 @@ p
       display: block
       margin: -4px 0 10px
 
-    label[for="skip"]
+    label[for="setting-skip-home"]
       font-weight: normal
       color: #666
+      font-size: 13px
 
   #hero_links
     width: 250px
@@ -232,15 +233,27 @@ p
     margin: 0
     padding: 0
 
-    input[name="email"], input[name="username"]
+    input[name="user[email]"], input[name="user[username]"]
       width: 230px
       margin-right: 10px
-    input[name="pass"]
+    input[name="user[password]"]
       width: 170px
       margin-right: 10px
     input[type="submit"]
       width: 110px
       margin-left: 10px
+      background: #91B164
+      color: #fff
+      font-weight: bold
+      font-size: 15px
+      text-align: center
+      text-decoration: none
+      padding: 7px 0 8px
+      border-radius: 4px
+      box-shadow: inset 0px 3px 0px rgba(255, 255, 255, 0.4), inset 0px -3px 0px rgba(99, 122, 68, 1)
+      text-shadow: none
+      border: 0
+
   li.terms
     width: 150px
     text-align: left
@@ -442,6 +455,7 @@ p
           background: #FFF image-url("subscribe_bible_icon_m.png") no-repeat 93% 20px
         li.take_bible div
           background: #FFF image-url("take_bible_icon_m.png") no-repeat 93% 20px
+          margin-top: 20px
 
       .explore_cta
         border-radius: 0
@@ -473,16 +487,30 @@ p
         li
           float: none
           width: auto
+          height: auto
+          margin-bottom: 10px
 
-          input[name="email"], input[name="username"]
+          input[name="user[email]"], input[name="user[username]"]
             width: 100%
             margin-right: 0
-          input[name="pass"]
+          input[name="user[password]"]
             width: 100%
             margin-right: 0
           input[type="submit"]
             width: 100%
-            margin-left: 0
+            margin: 10px 0 0 0
+            background: #91B164
+            color: #fff
+            font-weight: bold
+            font-size: 15px
+            text-align: center
+            text-decoration: none
+            padding: 7px 0 8px
+            border-radius: 4px
+            box-shadow: inset 0px 3px 0px rgba(255, 255, 255, 0.4), inset 0px -3px 0px rgba(99, 122, 68, 1)
+            text-shadow: none
+            border: 0
+
         li.terms
           width: auto
           text-align: left
