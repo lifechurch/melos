@@ -64,31 +64,6 @@
         %span.email
           = link_to('Sign up using your email address', bible_path, {id: "signup-via-email"})
 
-      - content_for :javascripts do
-        :javascript
-          // Display signup form.
-          var fade = 200;
-          $("#signup-via-email").on("click", function(e) {
-            e.preventDefault();
-            $("#get-started-buttons").fadeOut(fade, function() { $("#signup").fadeIn(fade)});
-            $("#signup input[type='email']").focus();
-          })
-
-          // Setttings for skipping home page
-          $("#setting-skip-home").on("click",function(e) {
-            var checked = $(this).attr("checked");
-            var label = $("#label-setting-skip-home");
-            if(checked){
-              setCookie("setting-skip-home","true",365);
-              label.html("This page will now be skipped.");
-            }
-            else {
-              alert("here");
-              deleteCookie("setting-skip-home");
-              label.html("Skip this page in the future.");
-            }
-          });
-
       #signup.explore_cta.form{style: "display:none;"}
         = form_for :user, url: sign_up_path do |f|
           %ul
@@ -111,10 +86,59 @@
         %h2 God’s word is with you.
         %p
           Download the free YouVersion Bible App on your mobile device and you’ll have your Bible with you no matter where you go.
-        %span.counter
-          %p
-            71,034,791
+        %span.counter#download-counter
+          %p &nbsp;
           %p
             Installs around the world
       %div
         = link_to('Download the Bible App', 'http://youversion.com/download')
+
+- content_for :javascripts do
+  :javascript
+    // Display signup form.
+    var fade = 200;
+    $("#signup-via-email").on("click", function(e) {
+      e.preventDefault();
+      $("#get-started-buttons").fadeOut(fade, function() { $("#signup").fadeIn(fade)});
+      $("#signup input[type='email']").focus();
+    })
+
+    // Settings for skipping home page
+    $("#setting-skip-home").on("click",function(e) {
+      var checked = $(this).attr("checked");
+      var label = $("#label-setting-skip-home");
+      if(checked){
+        setCookie("setting-skip-home","true",365);
+        label.html("This page will now be skipped.");
+      }
+      else {
+        deleteCookie("setting-skip-home");
+        label.html("Skip this page in the future.");
+      }
+    });
+
+    // Utility to format
+    function commas(nStr)
+    {
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+        return x1 + x2;
+    }
+
+    // Jsonp callback for https://s3.amazonaws.com/now.youversion.com/flurry.js
+    function flurryData(data, last_modified_str) {
+      if (data['installs']) {
+        $("#download-counter p:first").html(commas(data['installs'][0]))
+      }
+    }
+
+    // Fire off request for download stats jsonp
+    $(window).load(function() {
+      $.getScript('https://s3.amazonaws.com/now.youversion.com/flurry.js');
+    });
