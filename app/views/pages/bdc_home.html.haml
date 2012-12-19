@@ -95,27 +95,7 @@
 
 - content_for :javascripts do
   :javascript
-    // Display signup form.
-    var fade = 200;
-    $("#signup-via-email").on("click", function(e) {
-      e.preventDefault();
-      $("#get-started-buttons").fadeOut(fade, function() { $("#signup").fadeIn(fade)});
-      $("#signup input[type='email']").focus();
-    })
 
-    // Settings for skipping home page
-    $("#setting-skip-home").on("click",function(e) {
-      var checked = $(this).attr("checked");
-      var label = $("#label-setting-skip-home");
-      if(checked){
-        setCookie("setting-skip-home","true",365);
-        label.html("This page will now be skipped.");
-      }
-      else {
-        deleteCookie("setting-skip-home");
-        label.html("Skip this page in the future.");
-      }
-    });
 
     // Utility to format
     function commas(nStr)
@@ -141,4 +121,28 @@
     // Fire off request for download stats jsonp
     $(window).load(function() {
       $.getScript('https://s3.amazonaws.com/now.youversion.com/flurry.js');
+
+      // Display signup form.
+      var fade = 200;
+      $("#signup-via-email").on("click", function(e) {
+        e.preventDefault();
+        $("#get-started-buttons").fadeOut(fade, function() {
+          $("#signup").fadeIn(fade);
+          $("#user_email").focus();
+        });
+      });
+
+      // Settings for skipping home page
+      $("#setting-skip-home").on("click",function(e) {
+        var checked = $(this).attr("checked");
+        var label = $("#label-setting-skip-home");
+        if(checked){
+          setCookie("setting-skip-home","true",365);
+          label.html("This page will now be skipped.");
+        }
+        else {
+          deleteCookie("setting-skip-home");
+          label.html("Skip this page in the future.");
+        }
+      });
     });
