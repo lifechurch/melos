@@ -415,7 +415,7 @@ tl:
     all: "Lahat"
     all plans: "Lahat ng Plans"
     all category plans: "Lahat ng %{category} Plans"
-    my plans: "Mga Plan"
+    my plans: "Mga Plano"
     none found: "Hindi kami makahanap ng plano na angkop sa iyong piniling criteria. Subukang palawakin pa ang paghahanap."
     about publisher: "Tungkol sa Naglathala"
     overview: "Overview ng Plan"
