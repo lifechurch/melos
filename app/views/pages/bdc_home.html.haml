@@ -13,7 +13,8 @@
           YouVersion is a simple, ad-free Bible that brings God’s Word into your daily life.
         %span
           = link_to('Start reading', bible_path, :class => 'cta')
-          &nbsp; or learn more below
+          &nbsp; or
+          %a#scroll-anchor{href:"#scroll-point"} learn more below
         %form
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
@@ -29,7 +30,7 @@
               po.src = 'https://apis.google.com/js/plusone.js';
               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     %ul
-      %li.read_bible.first
+      %li.read_bible.first#scroll-point
         %div.pod_content
           %h2 Read the Bible.
           %p
@@ -145,4 +146,15 @@
           label.html("Skip this page in the future.");
         }
       });
+
+      $("#scroll-anchor").on("click", function(e) {
+        e.preventDefault();
+        var pos = $("#scroll-point").offset().top;
+        if(app.getPage().MODERN_BROWSER){
+          $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{easing: 'easeInOutCirc', duration:1000});
+        } else {$(window).scrollTop(pos);}
+
+      });
+
+
     });
