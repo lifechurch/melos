@@ -371,7 +371,7 @@ nl:
       error: "Sorry, er is een fout opgetreden bij het wijzigen van je wachtwoord."
       old was invalid: "Sorry, je moet je oude wachtwoord correct invoeren om je wachtwoord te wijzigen."
     notifications:
-      badges: "Laat me weten wanneer ik een eerbetoon heb verdiend."
+      badges: "Laat me weten wanneer ik een medaille heb verdiend."
       follower: "Laat me weten wanneer iemand me volgt."
       newsletter: "Houd mij op de hoogte over aankondigingen van YouVersion."
       note_like: "Laat me weten wanneer iemand mijn notities leuk vindt."
@@ -404,8 +404,8 @@ nl:
     color: "Kleur:"
     version field: "Versie:"
   badges:
-    earned a badge: "Eerbetoon Verdiend"
-    user badges: "%{user}'s Eerbetoon"
+    earned a badge: "Medaille Verdiend"
+    user badges: "%{user}'s Medailles"
   plans:
     title: "Leesplannen"
     browse by category: "Blader door categorie"
