@@ -258,9 +258,9 @@
   font-weight: bold;
 }
 
-.sr, .r {
-  display: none;
+.sr, .r, .sr .heading, .r .heading, .rq  {
   font-style: italic;
+  font-size: 0.8em;
 }
 
 .sp {
