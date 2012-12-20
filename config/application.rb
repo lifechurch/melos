@@ -37,6 +37,9 @@ module YouversionWeb
       # engagement site (pre mobile redirect)
       r301 %r{^(/.{2,5})?(/now$)}, 'http://now.youversion.com'
 
+      # lifekids redirect
+      r301 %r{^(/.{2,5})?(/lifekids$)}, '$1/reading-plans?category=family'
+
       # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
       #   if: Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
       #
@@ -90,6 +93,8 @@ module YouversionWeb
 
         when /^\/reading-plans\/\d+-([^\/]*)/
           new_path = "/reading-plans/#{$1}"
+        when /^\/reading-plans\?.*category=([^&\/]*)/
+          new_path = "/reading-plans/category/#{$1}"
         end
 
         "http://#{new_server_name}#{new_path}"
