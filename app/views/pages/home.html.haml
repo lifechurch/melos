@@ -65,7 +65,7 @@
         %span.or
           OR
         %span.email
-          = link_to('Sign up using your email address', bible_path, {id: "signup-via-email"})
+          = link_to('Sign up using your email address', sign_up_path, {id: "signup-via-email"})
 
       #signup.explore_cta.form{style: "display:none;"}
         = form_for :user, url: sign_up_path do |f|

@@ -110,7 +110,7 @@ YouversionWeb::Application.routes.draw do
   match 'friends' => 'users#following'
   match 'bookmarks' => 'users#bookmarks'
 
-  root to: 'references#show'
+  root to: 'pages#home'
 
   # Rails 3.1 hack to catch any remaining routes (404's)
   # with globbing setting params[:path] to the bad path
