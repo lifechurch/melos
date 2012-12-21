@@ -99,7 +99,6 @@
 - content_for :javascripts do
   :javascript
 
-
     // Utility to format
     function commas(nStr)
     {
@@ -114,15 +113,32 @@
         return x1 + x2;
     }
 
+    var infographic = {};
+
+    function tickInfographic() {
+        var now = new Date();
+        currentRatio = (now - new Date((now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear())) / 86400000;
+        var figure = Math.ceil((infographic.installs.total - infographic.installs.daily) + (infographic.installs.daily * currentRatio));
+        $("#download-counter p:first").html(commas(figure))
+    }
+
+
     // Jsonp callback for https://s3.amazonaws.com/now.youversion.com/flurry.js
     function flurryData(data, last_modified_str) {
       if (data['installs']) {
-        $("#download-counter p:first").html(commas(data['installs'][0]))
+        //$("#download-counter p:first").html(commas(data['installs'][0]))
+        for (var i in data) {
+          var item = data[i];
+          infographic[i] = { total: item[0], daily: item[1] };
+        }
       }
+      setInterval(tickInfographic, 500);
+      tickInfographic();
     }
 
     // Fire off request for download stats jsonp
     $(window).load(function() {
+
       $.getScript('https://s3.amazonaws.com/now.youversion.com/flurry.js');
 
       // Display signup form.
