@@ -2,14 +2,12 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
   helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?, :populate_reader_settings
-  before_filter :skip_home
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
+  before_filter :skip_home
   before_filter :check_facebook_cookie
   before_filter :tend_caches
-
-  #before_filter :deny_spammers
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
@@ -19,12 +17,9 @@ class ApplicationController < ActionController::Base
     rescue_from APITimeoutError, with: :timeout_error
   end
 
-  def deny_spammers
-   render 'pages/error_404', status: 403 if blacklist.include? request.ip
-  end
-
   def skip_home
-    if cookies["setting-skip-home"] && request.path =~ /^\W*$/
+    # temporarily skip if != en until we get content localized
+    if params[:controller] == 'pages' && params[:action] == 'home' && (cookies["setting-skip-home"] || I18n.locale != :en)
       redirect_to( bible_path( last_read || default_reference ))
     end
   end
