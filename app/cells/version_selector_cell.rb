@@ -4,7 +4,7 @@ class VersionSelectorCell < Cell::Rails
       "#{opts[:version].language.id}_#{opts[:site]}"
   end
 
-  #version and recent_versions expected as version and array of versions. alt is bool
+  #version and recent_versions expected as version and array of versions
   #opts[:force_style] is temporary parameter until we have new reading plan design
   #opts[:link_params] is temporary parameter until we have new reading plan design
 
@@ -31,7 +31,6 @@ class VersionSelectorCell < Cell::Rails
     @site = opts[:site]
     @ref = opts[:reference]
     @version = opts[:version]
-    @is_alt = opts[:is_alt] || false
     @link_params = opts[:link_params]
     @add_version_param = opts[:add_version_param] || false
   end
