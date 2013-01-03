@@ -17,13 +17,6 @@ class ApplicationController < ActionController::Base
     rescue_from APITimeoutError, with: :timeout_error
   end
 
-  def skip_home
-    # temporarily skip if != en until we get content localized
-    if params[:controller] == 'pages' && params[:action] == 'home' && (cookies["setting-skip-home"] || I18n.locale != :en)
-      redirect_to( bible_path( last_read || default_reference ))
-    end
-  end
-
   def set_page
     @page = (params[:page] || 1).to_i
     @labels_page = (params[:labels_page] || 1).to_i
@@ -49,6 +42,13 @@ class ApplicationController < ActionController::Base
   def set_site
     site_class = SiteConfigs.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
     @site = site_class.new
+  end
+
+  def skip_home
+    # temporarily skip if != en until we get content localized
+    if params[:controller] == 'pages' && params[:action] == 'home' && (cookies["setting-skip-home"] || I18n.locale != :en)
+      redirect_to( bible_path( last_read || default_reference ))
+    end
   end
 
   def populate_reader_settings
