@@ -31,7 +31,6 @@
     - if @reader_menus == true
       = render_cell :book_selector, :display, {version: @version}
       = render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, reference: @reference, site: @site}
-      = render_cell :version_selector, :display, {version: @alt_version, recent_versions: recent_versions, reference: @reference, site: @site, is_alt: true}
       = render '/shared/menu_bookmark' unless @share_menu == false
       = render '/shared/menu_settings'
       = render '/shared/menu_audio_player'

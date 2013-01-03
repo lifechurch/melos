@@ -24,7 +24,6 @@ gem 'nokogiri',               '~> 1.5.2'
 gem 'omniauth-facebook',      '~> 1.2.0' # 1.3.0
 gem 'omniauth-google-oauth2', '~> 0.1.9'
 gem 'omniauth-twitter',       '~> 0.0.11'
-# temporarily building from source, rubygems is down
 gem 'rabl',                   '~> 0.7.3'
 gem 'rack-mobile-detect',     '~> 0.3.0'
 gem 'rack-rewrite',           '~> 1.2.1'
@@ -37,7 +36,6 @@ gem 'viximo-rack-throttle',   '~> 0.5.0'
 # github.com/svenfuchs/rails-i18n/tree/master/rails/locale/
 # gem 'rails-i18n',           '~> 0.6.3'
 gem 'routing-filter',         '~> 0.3.1'
-# gem "unicorn-heroku",        '~> 4.3.1.1.gc608.dirty'
 gem "unicorn",               '~> 4.3.1'
 
 # Gems used only for assets & not required in production environments by default

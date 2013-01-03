@@ -4,9 +4,10 @@ function VersionMenu( opts ) {
   this.alt_version  = opts.alt_version || false;
   this.search_input = this.menu.find('.search input');
   this.searchTimer  = null;
-  this.firstMatch    = 'first-match';
+  this.firstMatch   = 'first-match';
+  this.activeClass  =  'li_active';
 
-  this.initLinks();  // Copied directly from previous code.  Needs refactoring.
+  this.initLinks();  // TODO: refactor.
   this.initSearch();
 }
 
@@ -21,9 +22,9 @@ VersionMenu.prototype = {
 
     // Add spinner trigger class.
     var links = this.menu.find("th a, td a");
-        links.each(function(i) {
-          $(this).attr("data-spinner-trigger", true );
-        });
+    links.each(function(i) {
+      $(this).attr("data-spinner-trigger", true );
+    });
 
     var thiss = this;
 
@@ -43,11 +44,11 @@ VersionMenu.prototype = {
       var link_base     = '/bible/' + version_id + '/' + path_chapter;
 
       // hack, but works for now.
-        if(thiss.isAlternateVersion()) {
-          setCookie('alt_version', version_id );
-          window.location = window.location.href;
-          return;
-        }
+      if(thiss.isAlternateVersion() && thiss.trigger.closest('li').hasClass(thiss.activeClass)) {
+        setCookie('alt_version', version_id );
+        window.location = window.location.href;
+        return;
+      }
 
       // Could/should be properly refactored to not store path partial on html element.
       // Ex: path_verses --> ".1" or ".1,2,3" or ".1,22,45"
