@@ -8,17 +8,18 @@
   %article
     #hero
       #hero_content
-        %h1 A free Bible on your phone, tablet, and computer.
-        %p
-          YouVersion is a simple, ad-free Bible that brings God’s Word into your daily life.
+        %h1= t("home.hero heading")
+        %p=  t("home.hero description")
+
         %span
-          = link_to('Start reading', bible_path, :class => 'cta')
+          = link_to(t("home.start reading"), bible_path, :class => 'cta')
           &nbsp; or
-          %a#scroll-anchor{href:"#scroll-point"} learn more below
+          %a#scroll-anchor{href:"#scroll-point"}= t("home.hero learn more")
         %form
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
-            Skip this page in the future
+            =t("home.skip in future")
+
         -#hero_links
           %div{style: "height: 40px;"}
             %script{:src => "https://connect.facebook.net/en_US/all.js#xfbml=1"}
@@ -32,50 +33,46 @@
     %ul
       %li.read_bible.first#scroll-point
         %div.pod_content
-          %h2 Read the Bible.
+          %h2= t("home.features.read heading")
           %p
-            %span.narrow Take your choice from <strong>hundreds of Bible versions and languages</strong>. Compare two
-          %p versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it.
+            %span.narrow= t("home.features.read description").html_safe
+
       %li.study_bible
         %div.pod_content
-          %h2 Study the Bible.
+          %h2= t("home.features.study heading")
           %p
-            %span.narrow <strong>Highlight</strong> in your favorite color, <strong>bookmark</strong> your favorite Bible verses, and make notes about
-          %p  what you’re learning. Not only are you spending time in God’s Word, you’re building a history of your interaction with the Bible.
+            %span.narrow= t("home.features.study description").html_safe
+
       %li.subscribe_bible
         %div.pod_content
-          %h2 Subscribe to Bible Plans.
+          %h2= t("home.features.subscribe heading")
           %p
-            %span.narrow Cover the whole Bible, focus on a topic, or read a devotional from a gifted teacher. Choose your plan
-          %p and each day you’ll find a Bible selection waiting for you.
+            %span.narrow= t("home.features.subscribe description").html_safe
       %li.take_bible.last
         %div.pod_content
-          %h2 Take the Bible with you.
+          %h2= t("home.features.download heading")
           %p
-            %span.narrow <a href="/download">Download</a> the Bible App for free on any mobile device. When you use the mobile
-          %p app, your notes, bookmarks, highlights, plans, and more will be automatically synced across all of your devices.
-
-
+            %span.narrow= t("home.features.download description").html_safe
 
     .explore_cta
-      %h1 Get started with your free account.
+      %h2= t("home.get started")
       #get-started-buttons
         %span.fb
           = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
         %span.or
           OR
         %span.email
-          = link_to('Sign up using your email address', sign_up_path, {id: "signup-via-email"})
+          = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email"})
 
       #signup.explore_cta.form{style: "display:none;"}
         = form_for :user, url: sign_up_path do |f|
           %ul
             %li
-              = f.text_field :email, {class:"autofocus", type:"email", tabindex:"1", placeholder:"Enter your email address" }
+              = f.text_field :email, {class:"autofocus", type:"email", tabindex:"1", placeholder: t("registration.placeholder.email") }
             %li
-              = f.text_field :username, {tabindex:"2", placeholder:"Enter your username"}
+              = f.text_field :username, {tabindex:"2", placeholder: t("registration.placeholder.username")}
             %li
-              = f.password_field :password, {tabindex:"3", placeholder:"Enter your password"}
+              = f.password_field :password, {tabindex:"3", placeholder: t("registration.placeholder.password")}
             %li.terms
               %span
                 = f.check_box :agree, {tabindex:"4"}
@@ -86,15 +83,13 @@
 
     .bottom_cta
       %div
-        %h2 God’s word is with you.
-        %p
-          Download the free YouVersion Bible App on your mobile device and you’ll have your Bible with you no matter where you go.
+        %h2= t("home.word with you")
+        %p= t("home.download description")
         %span.counter#download-counter
           %p &nbsp;
-          %p
-            Installs around the world
+          %p= t("home.world installs")
       %div
-        = link_to('Download the Bible App', '/download')
+        = link_to(t("home.download action"), '/download')
 
 - content_for :javascripts do
   :javascript
@@ -157,11 +152,11 @@
         var label = $("#label-setting-skip-home");
         if(checked){
           setCookie("setting-skip-home","true",365);
-          label.html("This page will now be skipped.");
+          label.html("#{t("home.now skipped")}");
         }
         else {
           deleteCookie("setting-skip-home");
-          label.html("Skip this page in the future.");
+          label.html("#{t("home.skip in future")}");
         }
       });
 
