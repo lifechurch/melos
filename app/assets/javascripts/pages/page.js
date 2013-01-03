@@ -224,7 +224,7 @@ Page.prototype = {
       }
 
       var alt_version_trigger  = "#menu_alt_version_trigger";
-      var alt_version_menu     = "#menu_alt_version";
+      var alt_version_menu     = "#menu_version";
       if($(alt_version_trigger).length && $(alt_version_menu).length) {
         var alt_menu    = new VersionMenu({trigger: alt_version_trigger , menu: alt_version_menu, alt_version: true});
       }
