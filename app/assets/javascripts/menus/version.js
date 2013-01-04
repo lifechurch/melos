@@ -6,7 +6,6 @@ function VersionMenu( opts ) {
   this.searchTimer  = null;
   this.firstMatch   = 'first-match';
   this.activeClass  = 'li_active';
-  this.hiddenClass  = 'hide';
 
   this.trigger.bind('click', $.proxy(this.loadVersions, this));
 
@@ -114,7 +113,7 @@ VersionMenu.prototype = {
           rows += '<tr class="cat"><th colspan="2">' + languageGroup.name + '</th></tr>';
 
           $.each(languageGroup.versions, function(j, v){
-            rows += '<tr data-version="' + v.id + '" data-meta="' + v.meta + '" >';
+            rows += '<tr data-abbrev="' + v.abbr + '" data-version="' + v.id + '" data-meta="' + v.meta + '" >';
             rows += '<th><a href="#">' + v.abbr + '</a></th>';
             rows += '<td ' + ((v.audio) ? 'class="audio"' : '') + '><a href="#">' + '<div>' + v.title + '</div></a></td>';
             rows += '</tr>';
