@@ -5,9 +5,11 @@ function VersionMenu( opts ) {
   this.search_input = this.menu.find('.search input');
   this.searchTimer  = null;
   this.firstMatch   = 'first-match';
-  this.activeClass  =  'li_active';
+  this.activeClass  = 'li_active';
+  this.hiddenClass  = 'hide';
 
-  this.initLinks();  // TODO: refactor.
+  this.trigger.bind('click', $.proxy(this.loadVersions, this));
+
   this.initSearch();
 }
 
@@ -89,6 +91,52 @@ VersionMenu.prototype = {
       }
     });
 
+  },
+
+  loadVersions : function(){
+    var thiss = this;
+    var rows = '';
+
+    if (!this.menu.find('.loading').length > 0){
+      // menu was loaded from another trigger, unbind
+      this.trigger.unbind('click', $.proxy(thiss.loadVersions, thiss));
+      return;
+    }
+
+    $.ajax({
+      url: "/versions",
+      method: "get",
+      dataType: "json",
+      success: function(languageGroups) {
+
+        // create the new rows
+        $.each(languageGroups.by_language, function(i, languageGroup) {
+          rows += '<tr class="cat"><th colspan="2">' + languageGroup.name + '</th></tr>';
+
+          $.each(languageGroup.versions, function(j, v){
+            rows += '<tr data-version="' + v.id + '" data-meta="' + v.meta + '" >';
+            rows += '<th><a href="#">' + v.abbr + '</a></th>';
+            rows += '<td ' + ((v.audio) ? 'class="audio"' : '') + '><a href="#">' + '<div>' + v.title + '</div></a></td>';
+            rows += '</tr>';
+          });
+        });
+
+        // add new rows to table
+        thiss.menu.find('.browse table').append(rows);
+
+        // hookup click handlers for links
+        // TODO: refactor to just create the links here, inline
+        thiss.initLinks();
+
+        // unbind all click handlers to load versions, hide loading text
+        thiss.trigger.unbind('click', $.proxy(thiss.loadVersions, thiss));
+        thiss.menu.find('.loading').remove();
+
+      },//end success function
+      error: function(req, status, err) {
+        thiss.loadingText.val(thiss.loadingText.data('error-text'));
+      }//end error function
+    });//end ajax delegate
   },
 
   filterVersions : function (filter) {

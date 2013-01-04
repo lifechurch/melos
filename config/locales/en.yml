@@ -695,3 +695,5 @@ en:
     number of languages field:                  "Total Languages:"
     language and count:                         "%{language_name} (%{language_count})"
     public domain:                              "Public Domain"
+    loading:                                    "Loading More Versions..."
+    load error:                                 "Sorry, there was a problem loading more versions. Close this menu and repopen to try again."
