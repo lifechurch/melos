@@ -134,7 +134,8 @@ VersionMenu.prototype = {
 
       },//end success function
       error: function(req, status, err) {
-        thiss.loadingText.val(thiss.loadingText.data('error-text'));
+        var loading = thiss.menu.find('.loading');
+        loading.html(loading.data('error-text'));
       }//end error function
     });//end ajax delegate
   },
