@@ -8,17 +8,17 @@
   %article
     #hero
       #hero_content
-        %h1= t("home.hero heading")
-        %p=  t("home.hero description")
+        %h1= t(".hero.heading")
+        %p=  t(".hero.description")
 
         %span
-          = link_to(t("home.start reading"), bible_path, :class => 'cta')
+          = link_to(t(".hero.start reading"), bible_path, :class => 'cta')
           &nbsp; or
-          %a#scroll-anchor{href:"#scroll-point"}= t("home.hero learn more")
+          %a#scroll-anchor{href:"#scroll-point"}= t(".hero.learn more")
         %form
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
-            =t("home.skip in future")
+            =t(".hero.skip in future")
 
         -#hero_links
           %div{style: "height: 40px;"}
@@ -33,29 +33,29 @@
     %ul
       %li.read_bible.first#scroll-point
         %div.pod_content
-          %h2= t("home.features.read heading")
+          %h2= t(".features.read heading")
           %p
-            %span.narrow= t("home.features.read description").html_safe
+            %span.narrow= t(".features.read description").html_safe
 
       %li.study_bible
         %div.pod_content
-          %h2= t("home.features.study heading")
+          %h2= t(".features.study heading")
           %p
-            %span.narrow= t("home.features.study description").html_safe
+            %span.narrow= t(".features.study description").html_safe
 
       %li.subscribe_bible
         %div.pod_content
-          %h2= t("home.features.subscribe heading")
+          %h2= t(".features.subscribe heading")
           %p
-            %span.narrow= t("home.features.subscribe description").html_safe
+            %span.narrow= t(".features.subscribe description").html_safe
       %li.take_bible.last
         %div.pod_content
-          %h2= t("home.features.download heading")
+          %h2= t(".features.download heading")
           %p
-            %span.narrow= t("home.features.download description").html_safe
+            %span.narrow= t(".features.download description").html_safe
 
     .explore_cta
-      %h2= t("home.get started")
+      %h2= t(".get started")
       #get-started-buttons
         %span.fb
           = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
@@ -83,13 +83,13 @@
 
     .bottom_cta
       %div
-        %h2= t("home.word with you")
-        %p= t("home.download description")
+        %h2= t(".word with you")
+        %p= t(".download description")
         %span.counter#download-counter
           %p &nbsp;
-          %p= t("home.world installs")
+          %p= t(".world installs")
       %div
-        = link_to(t("home.download action"), '/download')
+        = link_to(t(".download action"), '/download')
 
 - content_for :javascripts do
   :javascript
@@ -152,11 +152,11 @@
         var label = $("#label-setting-skip-home");
         if(checked){
           setCookie("setting-skip-home","true",365);
-          label.html("#{t("home.now skipped")}");
+          label.html("#{t(".hero.now skipped")}");
         }
         else {
           deleteCookie("setting-skip-home");
-          label.html("#{t("home.skip in future")}");
+          label.html("#{t(".hero.skip in future")}");
         }
       });
 
