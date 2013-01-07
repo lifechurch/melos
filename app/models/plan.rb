@@ -44,6 +44,7 @@ class Plan < YouVersion::Resource
   def self.all(opts = {})
     opts[:query] = '*' if opts[:query].blank?
     opts[:cache_for] ||= a_long_time
+    opts[:cache_for] = 0 if opts[:user_id].present?
     super(opts)
   end
 
