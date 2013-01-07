@@ -1,9 +1,6 @@
 %tr.cat
   %th{:colspan => '2'}= @version.language.human
 = render partial: 'items', locals: {versions: @this_language}
-/ # rest of versions are now appended via AJAX when user
-/ # clicks the menu trigger
-/ - @all_languages.each do |lang, versions|
-/   %tr.cat
-/     %th{:colspan => '2'}= @languages[lang]
-/   = render partial: 'items', locals: {versions: versions}
+-#
+  the rest of versions are appended via AJAX when user
+  opens the menu, to not clutter the DOM on initial load
