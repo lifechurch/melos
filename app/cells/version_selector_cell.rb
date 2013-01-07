@@ -18,10 +18,7 @@ class VersionSelectorCell < Cell::Rails
 
   def all_versions(opts = {})
     get_opts opts
-    @all_languages = Version.all_by_language(only: @site.versions)
-    @this_language = @all_languages[@version.language.tag]
-    @all_languages = @all_languages.except(@version.language.tag)
-    @languages = Version.languages
+    @this_language = Version.all_by_language(only: @site.versions)[@version.language.tag]
     render
   end
 

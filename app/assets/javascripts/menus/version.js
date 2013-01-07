@@ -1,22 +1,23 @@
 function VersionMenu( opts ) {
   this.menu         = $(opts.menu);
-  this.trigger      = $(opts.trigger);
-  this.alt_version  = opts.alt_version || false;
+  this.triggers      = $(opts.triggers);
   this.search_input = this.menu.find('.search input');
   this.searchTimer  = null;
   this.firstMatch   = 'first-match';
   this.activeClass  = 'li_active';
 
-  this.trigger.bind('click', $.proxy(this.loadVersions, this));
+  this.triggers.bind('click', $.proxy(this.loadVersions, this));
 
   this.initSearch();
+  this.initLinks();
 }
 
 VersionMenu.prototype = {
   constructor : VersionMenu,
 
   isAlternateVersion : function() {
-    return this.alt_version;
+    // super coupled, but then again, so is the logic...
+    return $('#menu_alt_version_trigger').closest('li').hasClass(this.activeClass);
   },
 
   initLinks : function() {
@@ -28,11 +29,11 @@ VersionMenu.prototype = {
     });
 
     var thiss = this;
-
-    this.menu.find('a').click(function(e) {
+    this.menu.find('a').unbind('click');
+    this.menu.find('a').bind('click', (function(e) {
       e.preventDefault();
 
-      // Todo: should definitely look at being refactored
+      // Todo: refactor
       var tr            = $(this).closest('tr');
       var version_id    = tr.data("version");
       var abbrev        = tr.data("abbrev");
@@ -45,8 +46,8 @@ VersionMenu.prototype = {
       var link_base     = '/bible/' + version_id + '/' + path_chapter;
 
       // hack, but works for now.
-      if(thiss.isAlternateVersion() && thiss.trigger.closest('li').hasClass(thiss.activeClass)) {
-        setCookie('alt_version', version_id );
+      if(thiss.isAlternateVersion()) {
+        setCookie('alt_version', version_id);
         window.location = window.location.href;
         return;
       }
@@ -88,7 +89,7 @@ VersionMenu.prototype = {
           window.location = link_base.toLowerCase();
         }
       }
-    });
+    }));
 
   },
 
@@ -97,8 +98,8 @@ VersionMenu.prototype = {
     var rows = '';
 
     if (!this.menu.find('.loading').length > 0){
-      // menu was loaded from another trigger, unbind
-      this.trigger.unbind('click', $.proxy(thiss.loadVersions, thiss));
+      // menu was loaded from another source, unbind
+      this.triggers.unbind('click', $.proxy(thiss.loadVersions, thiss));
       return;
     }
 
@@ -107,6 +108,8 @@ VersionMenu.prototype = {
       method: "get",
       dataType: "json",
       success: function(languageGroups) {
+        // remove the first group (current language), which is already rendered
+        languageGroups.by_language.splice(0, 1);
 
         // create the new rows
         $.each(languageGroups.by_language, function(i, languageGroup) {
@@ -126,9 +129,11 @@ VersionMenu.prototype = {
         // hookup click handlers for links
         // TODO: refactor to just create the links here, inline
         thiss.initLinks();
+        // re-filter
+        if (thiss.search_input.val()) {thiss.filterVersions(thiss.search_input.val());}
 
         // unbind all click handlers to load versions, hide loading text
-        thiss.trigger.unbind('click', $.proxy(thiss.loadVersions, thiss));
+        thiss.triggers.unbind('click', $.proxy(thiss.loadVersions, thiss));
         thiss.menu.find('.loading').remove();
 
       },//end success function
@@ -206,7 +211,7 @@ VersionMenu.prototype = {
     //on keyup, start the countdown
     var thiss = this;
 
-    this.trigger.click(function(){                        // focus search on menu open
+    this.triggers.click(function(){                        // focus search on menu open
       setTimeout(function() {                             // we have to wait because it takes a bit
         thiss.search_input.focus();                       // to show the menu (?!)
       }, 100);

@@ -217,16 +217,10 @@ Page.prototype = {
         var settings_menu   = new SettingsMenu({trigger: settings_trigger , menu: settings_menu })
       }
 
-      var version_trigger  = "#menu_version_trigger";
+      var version_triggers  = "#menu_version_trigger, #menu_alt_version_trigger";
       var version_menu     = "#menu_version";
-      if($(version_trigger).length && $(version_menu).length) {
-        var version_menu    = new VersionMenu({trigger: version_trigger , menu: version_menu});
-      }
-
-      var alt_version_trigger  = "#menu_alt_version_trigger";
-      var alt_version_menu     = "#menu_version";
-      if($(alt_version_trigger).length && $(alt_version_menu).length) {
-        var alt_menu    = new VersionMenu({trigger: alt_version_trigger , menu: alt_version_menu, alt_version: true});
+      if($(version_triggers).length && $(version_menu).length) {
+        var version_menu    = new VersionMenu({triggers: version_triggers , menu: version_menu});
       }
 
       var pro_trigger  = "#header_profile_trigger";

@@ -14,5 +14,6 @@
           %tr.cat
             %th{:colspan => '2'}= t('recent versions')
           = render partial: 'items', locals: {versions: @recent_versions}
+        = render_cell :version_selector, :all_versions, version: @version, site: @site
       .loading{'data-error-text' => t('versions.load error')}
         = t('versions.loading')
