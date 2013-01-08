@@ -10,4 +10,4 @@ Feature: root page loads without error
 
   Scenario: No Rails Errors
     Then I should see "A free Bible on your phone"
-    And I should see "God’s word is with you"
+    And I should see "God’s Word is with you"
