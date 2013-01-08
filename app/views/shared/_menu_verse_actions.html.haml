@@ -1,31 +1,21 @@
-#menu_bookmark.dynamic_menu
-  .spinner_wrapper{style: "display: none;"}
-    #bookmark_spinner.dynamic_menu_spinner
+#menu_verse_actions
   %header
-    %a.close{href:"#"} Close
     %ul.reference_tokens
       %li
-        %a{href:"#"}
-          Luke 2:15
+        %a{href:"#"}= 'Luke 2:15'
       %li
-        %a{href:"#"}
-          John 4:25
-  %span.menu_arrow
-    &nbsp;
-  %dl.accordion.verses_selected
-    %dt
+        %a{href:"#"}= 'John 4:25'
+  %dl.verses_selected
+
+    %dt.highlight
       = t("highlight")
-    %dd.highlight{id: "highlight-pane"}
-
+    %dd#highlight-pane
       %form{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
-
         - if current_auth.nil?
           %input{type: 'hidden', name: 'redirect', value: "/bible"}
           %input{type: 'hidden', name: 'source', value: "highlight"}
-
         %input.references{name: "highlight[references]", type: "hidden"}
         %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
-
         %div.color_picker_list
           %a.color_picker{href:"#"}
           %a.color_picker_holder{href:"#"}
@@ -38,9 +28,10 @@
             %span
               = render partial: "users/highlight_color_swatches"
         %div.clear
-    %dt
+
+    %dt.bookmark
       = t("bookmark")
-    %dd{id: "bookmark-pane"}
+    %dd#bookmark-pane
       %form{action: (current_auth ? bookmarks_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
         - if current_auth.nil?
           %input{type: 'hidden', name: 'redirect', value: "/bible"}
@@ -57,25 +48,12 @@
           %input{type:'text',id: 'bookmark_labels',name:'bookmark[labels]',placeholder: t("bookmarks.labels placeholder")}
           %input.verses_selected_input{name: "bookmark[references]", type: "hidden"}
           %input{type: "hidden", name: "bookmark[version_id]", value: @version.id }
-          / %span
-          /   %b
-          /     Color
-          /   (optional)
-          / %div{:class => "color_picker_list"}
-          /   %a{:class => "color_picker", :href =>"#"}
-          /   %a{:class => "color_picker_hol  der", :href =>"#"}
-          /   %a{:class => "color_picker_clear", :href =>"#"}
-          /     <span class='selected'></span>
-          /   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
-          /   %a{:class => "color", :href => "#", :style => "background-color:#f6f0b4"}
-          /   %a{:class => "color", :href => "#", :style => "background-color:#a8ed9d"}
-          /   %a{:class => "color", :href => "#", :style => "background-color:#f3a9a9"}
         %div.clear
         %p
           %button.float_right{type:"submit",name:"bookmark[submit]",value:"submit"}= t('bookmarks.save')
         %div.clear{style:"padding: 0 0 15px 0"}
 
-    %dt
+    %dt.share
       = t("ref.share")
     %dd#share-pane
       %form.clearfix{action: share_path, method: "post"}
@@ -100,18 +78,23 @@
               %label.share_verse_facebook{for: 'share_verse_facebook'}= t("Facebook")
 
           %div.clearfix{style: "margin-bottom: 15px"}
-    %dt#link
+
+    %dt.link
       = t("link")
     %dd#link-pane
       %span.text_field_embed
         %input#copy_link_input.width_100{value:"",style: "margin-bottom: 15px;",type: "text"}
         %div#copy_link_container{style: "position: absolute; right: 0px; top: -2px;"}
           %button#copy_link{"data-confirm-text" => t("copy confirmed"), style: "margin-top:0px; width:51px; height:23px;"}= t("copy")
-    - if current_auth
-      %dt#new_note_modal
-        = t("new note")
-    - else
-      %a.open_modal{:href => sign_up_path(source: "note", redirect: "/bible")}
-        %dt.propagate_click
-          = t("new note")
 
+    %dt.note
+      = t("new note")
+    %dd#note-pane
+      = render partial: 'notes/widget_form'
+
+    %dt.clear
+      %a#clear_selected_verses.button{:href => '#', :title => ('ref.clear verses')}
+        %span.icon_x
+          = t('ref.clear verses')
+        %sup#verses_selected_count
+          0
