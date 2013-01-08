@@ -12,9 +12,9 @@
         %p=  t(".hero.description")
 
         %span
-          = link_to(t(".hero.start reading"), bible_path, :class => 'cta')
-          &nbsp; or
-          %a#scroll-anchor{href:"#scroll-point"}= t(".hero.learn more")
+          = link_to(t(".hero.start reading"), bible_path, class: 'cta')
+          = t("or.lower")
+          = link_to(t(".hero.learn more"),"#scroll-point", id: "scroll-anchor" )
         %form
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
@@ -60,7 +60,7 @@
         %span.fb
           = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
         %span.or
-          OR
+          = t("or.upper")
         %span.email
           = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email"})
 

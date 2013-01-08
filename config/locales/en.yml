@@ -122,6 +122,9 @@ en:
   paginated items shown:                        "%{first_shown}&ndash;%{last_shown} of %{total_available}"
   160 character limit:                          "160 characters or less"
   recent versions:                              "Recently Used"
+  or:
+    lower:                                      "or"
+    upper:                                      "OR"
   likes:
     my likes:                                   "My Likes"
     all likes:                                  "All Likes"
@@ -653,7 +656,7 @@ en:
         download heading:                       "Take the Bible with you."
         download description:                   "<a href='http://youversion.com/download'>Download</a> the Bible App for free on any mobile device. When you use the mobile app, your notes, bookmarks, highlights, plans, and more will be automatically synced across all of your devices."
       get started:                              "Get started with your free account."
-      word with you:                            "God’s word is with you."
+      word with you:                            "God’s Word is with you."
       download action:                          "Download the Bible App"
       download description:                     "Download the free YouVersion Bible App on your mobile device and you’ll have your Bible with you no matter where you go."
       world installs:                           "Installs around the world"
