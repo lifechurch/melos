@@ -92,9 +92,7 @@
     %dd#note-pane
       = render partial: 'notes/widget_form'
 
-    %dt.clear
-      %a#clear_selected_verses.button{:href => '#', :title => ('ref.clear verses')}
-        %span.icon_x
-          = t('ref.clear verses')
-        %sup#verses_selected_count
-          0
+    %dt.clear-verses
+      = t('ref.clear verses')
+      %sup#verses_selected_count
+        0

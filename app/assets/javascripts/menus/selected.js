@@ -2,46 +2,26 @@
 
 function SelectedMenu( opts ) {
 
-  this.menu       = $(opts.menu);
-  this.trigger    = $(opts.trigger);
-  this.counter    = $('#verses_selected_count');
-  this.accordion  = this.menu.find('.accordion');
-  this.selected_count = 0;
+  this.menu                = $(opts.menu);
+  this.counter             = $('#verses_selected_count');
+  this.panes               = this.menu.find('dl');
+  this.selected_count      = 0;
   this.selected_references = [];
+  this.clear_trigger       = this.menu.find('dt.clear-verses');
 
-  this.initAccordion(); // setup our accordion actions / handlers
+  this.initPanes(); // setup our pane actions / handlers
 
-  this.bookmark_pane    = new BookmarkPane("#bookmark-pane");
   this.highlight_pane   = new HighlightPane("#highlight-pane");
-  this.link_pane        = new LinkPane("#link-pane");
+  this.bookmark_pane    = new BookmarkPane("#bookmark-pane");
   this.share_pane       = new SharePane("#share-pane");
+  this.link_pane        = new LinkPane("#link-pane");
+  this.note_pane       = new SharePane("#note-pane");
 
-  $('#clear_selected_verses').on("click",$.proxy(function(e) {
+  this.clear_trigger.on("click",$.proxy(function(e) {
     e.preventDefault();
     $(this).trigger("verses:clear");
     this.setTotal(0);
   },this));
-
-  var widgets = $("div.widget.bookmarks, div.widget.notes, div.widget.ad_bible_app");
-  var pnotes = $("div.widget.parallel_notes");
-  var speed = 200;
-
-  // Show note form when clicking the "New Note" menu item in the accordion.
-  $("#new_note_modal").click( $.proxy(function(e) {
-    e.preventDefault();
-    this.close();
-    widgets.hide( speed , function() {
-      pnotes.show( speed );
-    });
-  },this));
-
-  // Hide/show note form in widget sidebar
-  pnotes.find('.cancel').click(function(e){
-    e.preventDefault();
-    pnotes.hide( speed , function() {
-      widgets.show( speed );
-    });
-  });
 }
 
 SelectedMenu.prototype = {
@@ -51,15 +31,15 @@ SelectedMenu.prototype = {
     this.selected_count = total;
     this.counter.html(total);
 
-    var li = $('#li_selected_verses');
+    (total > 0) ? this.open() : this.close()
+  },
 
-    if (total > 0) {
-      li.removeClass("hide");
-    }
-    else {
-      li.addClass("hide");
-      this.menu.hide();
-    }
+  open : function() {
+    this.menu.show();
+  },
+
+  close : function() {
+    this.menu.hide();
   },
 
   setSelectedRefs : function( refs ) {
@@ -79,13 +59,13 @@ SelectedMenu.prototype = {
     this.share_pane.updateForm( params )
   },
 
-  initAccordion : function() {
+  initPanes : function() {
 
-    if (!this.accordion.length) { return; }
+    if (!this.panes.length) { return; }
 
     var thiss = this;
 
-    this.accordion.find('dt').click(function(e) {
+    this.panes.find('dt').click(function(e) {
       var dt = $(this);
       var dd = dt.next('dd');
 
@@ -100,16 +80,8 @@ SelectedMenu.prototype = {
         }).siblings('dd').slideUp();
       }
 
-      if(!dt.hasClass("propagate_click")){ e.stopPropagation(); return false; }
       this.blur();
-
     });
 
   },
-
-  close : function() {
-    this.trigger.parent('li').removeClass('li_active');
-    $("#li_selected_verses").removeClass("li_active");
-    this.menu.hide();
-  }
 }

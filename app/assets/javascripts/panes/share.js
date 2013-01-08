@@ -4,6 +4,7 @@ function SharePane( el ) {
   this.short_link   = this.el.find("#short_link");
   this.share_link_field     = this.el.find("#share_link");
   this.share_message_field  = this.el.find("textarea");
+  console.log(this);
 }
 
 SharePane.prototype = {

@@ -34,9 +34,6 @@
     top: 50%
     left: 50%
 
-
-
-
 .menu_arrow
   background: image-url("menu_arrow.png") no-repeat
   font-size: 0
@@ -347,12 +344,19 @@
 // #menu_bookmark header .close
 //   top: 15px
 
-#menu_verse_actions,
+#menu_verse_actions
+  display: none
+  position: relative
+
 #menu_verse_actions dd
   display: none
+  position: absolute
+  top: 92px
 
 #menu_verse_actions dt
   cursor: pointer
+  float: left
+  margin: 10px 10px
 
 .dynamic_menu.version_select
   width: 415px
