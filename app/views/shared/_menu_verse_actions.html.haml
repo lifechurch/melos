@@ -1,5 +1,5 @@
-#menu_verse_actions
-  %header
+#menu_verse_actions.clearfix
+  .references
     %ul.reference_tokens
       %li
         %a{href:"#"}= 'Luke 2:15'
@@ -92,7 +92,7 @@
     %dd#note-pane
       = render partial: 'notes/widget_form'
 
-    %dt.clear-verses
+    %dt.clear-selected
       = t('ref.clear verses')
       %sup#verses_selected_count
         0

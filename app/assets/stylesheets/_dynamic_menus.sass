@@ -331,32 +331,71 @@
 .dynamic_menu #new_note_modal:hover
   background: image-url("icon_open_modal.png") no-repeat 95% center #2e2e2e
 
-// #menu_bookmark header ul.reference_tokens
-//   background: none
-
-// #menu_bookmark header ul.reference_tokens > a
-//   border: none !important
-
-// #menu_bookmark header span
-//   font-weight: bold
-//   margin: 0 0 5px 0
-//   display: block
-// #menu_bookmark header .close
-//   top: 15px
-
 #menu_verse_actions
   display: none
   position: relative
+  background-color: #2f2f2f
+
+#menu_verse_actions .references
+  padding: 0px 5px
+
+#menu_verse_actions .references ul
+  margin: 0
+
+#menu_verse_actions dl
+  background-color: #2f2f2f
+  border-top: 1px solid #000
 
 #menu_verse_actions dd
   display: none
   position: absolute
-  top: 92px
+  top: 102px
 
 #menu_verse_actions dt
   cursor: pointer
   float: left
-  margin: 10px 10px
+  width: 98px
+  height: 44px
+  background-color: #2f2f2f
+  border-left: 1px solid #444
+  border-top: 1px solid #444
+  border-right: 1px solid #000
+  background:
+    image: image-url("verse_action_sprite.png")
+    repeat: no-repeat
+  text-indent: -1000px
+  overflow: hidden
+
+#menu_verse_actions dt.highlight
+  background-position: 36px 10px
+
+#menu_verse_actions dt.comment
+  background-position: -48px 10px
+
+#menu_verse_actions dt.comment
+  background-position: -48px 10px
+
+#menu_verse_actions dt.bookmark
+  background-position: -132px 10px
+
+#menu_verse_actions dt.note
+  background-position: -216px 10px
+
+#menu_verse_actions dt.share
+  background-position: -300px 10px
+
+#menu_verse_actions dt.clear-selected
+  background-position: -384px 10px
+
+#menu_verse_actions dt.link
+  background-position: -468px 10px
+
+#menu_verse_actions dt.active
+  background-position-y: -68px
+
+#menu_verse_actions dl .pane
+  width: 100%
+  background-color: #fff
 
 .dynamic_menu.version_select
   width: 415px
