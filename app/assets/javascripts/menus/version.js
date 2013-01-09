@@ -64,24 +64,10 @@ VersionMenu.prototype = {
       if (plan_url) link_base = plan_url;
 
       if (version_id){
-        var recent = getCookie('recent_versions');
-        if (recent == null){
-          recent = [];
-        }else {
-          //extra caution here because of IE bug with .indexOf on empty array
-          //buble up the version just picked if it was already in list
-          recent = recent.split('/');
-          var exists = recent.indexOf(String(version_id));
-          //remove version if it already is in recent list
-          if(exists != -1) recent.splice(exists, 1);
-        }
 
-        //add new version to beginning of recents list cookie
-        recent.unshift(version_id);
-        recent_str = recent.splice(0,5).join('/');
-        setCookie('recent_versions', recent_str);
+        thiss.setRecentVersion(version_id);
 
-        //send user on to new page as requested
+        //send user on to new page as requested via click
         if (menu.data("link-needs-param")){
           var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
           window.location = link_base + delim + "version=" + version_id;
@@ -91,6 +77,19 @@ VersionMenu.prototype = {
       }
     }));
 
+  },
+
+  setRecentVersion : function( version_id ) {
+    var recent_versions = decodeURIComponent(getCookie('recent_versions'));
+    var recents = (recent_versions == null) ? [] : recent_versions.split("/");
+
+    //remove version if it already is in recent list
+    var exists = recents.indexOf(String(version_id))
+    if (exists != -1) { recents.splice(exists,1); }
+
+    //add new version to beginning of recents list cookie
+    recents.unshift(version_id);
+    setCookie('recent_versions', recents.splice(0,5).join('/'););  // take only the first 5 and add delimiter
   },
 
   loadVersions : function(){
