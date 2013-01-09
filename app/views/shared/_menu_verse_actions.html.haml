@@ -9,6 +9,7 @@
 
     %dt.highlight
       = t("highlight")
+      .arrow
     %dd#highlight-pane
       .pane
         %form{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
@@ -32,6 +33,7 @@
 
     %dt.bookmark
       = t("bookmark")
+      .arrow
     %dd#bookmark-pane
       .pane
         %form{action: (current_auth ? bookmarks_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
@@ -57,6 +59,7 @@
 
     %dt.share
       = t("ref.share")
+      .arrow
     %dd#share-pane
       .pane
         %form.clearfix{action: share_path, method: "post"}
@@ -84,6 +87,7 @@
 
     %dt.link
       = t("link")
+      .arrow
     %dd#link-pane
       .pane
         %span.text_field_embed
@@ -93,6 +97,7 @@
 
     %dt.note
       = t("new note")
+      .arrow
     %dd#note-pane
       .pane
         = render partial: 'notes/widget_form'

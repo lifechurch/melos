@@ -37,15 +37,22 @@ SelectedMenu.prototype = {
   },
 
   open : function() {
-    this.menu.show();
+    var newMargin = reader.header.outerHeight() + this.menu.height();
+    this.menu.slideDown();
+    this.readerArticle.stop().animate({ marginTop : newMargin}, 400);
   },
 
   close : function() {
-    this.menu.hide();
+    var thiss = this;
+    this.menu.slideUp('default', function(){
+      // de-activate any panes after it has slid up
+      thiss.paneList.find('dd').hide();
+      thiss.paneList.find('dt').removeClass(thiss.activeClass);
+    });
 
-    // de-activate any panes
-    this.paneList.find('dd').hide();
-    this.paneList.find('dt').removeClass(this.activeClass);
+    // put readerHeader margin back
+    var newMargin = reader.header.outerHeight();
+    thiss.readerArticle.stop().animate({ marginTop : newMargin}, 400);
   },
 
   setSelectedRefs : function( refs ) {
@@ -76,7 +83,10 @@ SelectedMenu.prototype = {
       var dd = dt.next('dd');
 
       if (dd.is(':hidden')) {
+        dt.siblings('dt').removeClass(thiss.activeClass);
         dt.addClass(thiss.activeClass);
+        var newMargin = reader.header.outerHeight() + thiss.menu.height() + dd.height();
+
         dd.slideDown('default', function() {
           // Animation complete, items visible
           if (dd.attr('id') == "link-pane"){
@@ -84,15 +94,14 @@ SelectedMenu.prototype = {
               thiss.link_pane.renderClipboard();
             }
           }
-        }).siblings('dd').slideUp().removeClass(thiss.activeClass);
-        // adjust margin of reader to position relatively to new reader header height
-        var newMargin = 400;
+        }).siblings('dd').slideUp();
+
         thiss.readerArticle.stop().animate({ marginTop : newMargin}, 400);
       } else {
         dd.slideUp();
         dt.removeClass(thiss.activeClass);
         // put readerHeader margin back
-        var newMargin = 34;
+        var newMargin = reader.header.outerHeight() + thiss.menu.height();
         thiss.readerArticle.stop().animate({ marginTop : newMargin}, 400);
       }
 

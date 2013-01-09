@@ -64,6 +64,7 @@ function Reader(opts) {
   this.html_el        = $(document.documentElement);
   this.verse_els      = $('#version_primary .verse');
   this.audio_player   = $('#audio_player');
+  this.header         = $('#reader_header header');
 
   // menus
 
@@ -80,8 +81,6 @@ function Reader(opts) {
   $(this.selected_menu).bind("verses:clear", $.proxy(function(e){
     this.clearSelectedVerses();
   },this));
-
-  this.parseVerses(); // run once on load
 }
 
 Reader.prototype = {
@@ -113,6 +112,7 @@ Reader.prototype = {
       this.verseClicked(e.delegateTarget);
     },this));
 
+    this.parseVerses(); // run once on load
   },
 
   fetchSelectedVerses : function() {
@@ -166,7 +166,7 @@ Reader.prototype = {
     // TODO: set this up in a way we can cancel if user scrolls before it happens
     easingType = easingType || 'easeInOutCirc';
     var first = $('#version_primary .selected:first');
-    if (first.length){
+    if ( first.length && !first.hasClass('v1') ){
       var newPosition = first.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(first.css('line-height'))/4;
       if(app.getPage().MODERN_BROWSER){
         $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: easingType, duration:1200});
@@ -446,7 +446,6 @@ Reader.prototype = {
       lists.append(li); // Append token to all .reference_token lists
     });
   },
-
 
   // Next & Prev navigation controls on reader
   initNextPrev : function() {

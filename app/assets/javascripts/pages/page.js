@@ -27,9 +27,6 @@ function Page() {
   this.initInplaceConfirms();
   this.fixWidgetLast();
   this.fixWidgetHeader();
-
-
-
 }
 
 Page.prototype = {
