@@ -89,7 +89,7 @@ VersionMenu.prototype = {
 
     //add new version to beginning of recents list cookie
     recents.unshift(version_id);
-    setCookie('recent_versions', recents.splice(0,5).join('/'););  // take only the first 5 and add delimiter
+    setCookie('recent_versions', recents.splice(0,5).join('/'));  // take only the first 5 and add delimiter
   },
 
   loadVersions : function(){
