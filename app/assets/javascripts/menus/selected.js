@@ -18,7 +18,7 @@ function SelectedMenu( opts ) {
   this.bookmark_pane       = new BookmarkPane("#bookmark-pane");
   this.share_pane          = new SharePane("#share-pane");
   this.link_pane           = new LinkPane("#link-pane");
-  this.note_pane           = new SharePane("#note-pane");
+  this.note_pane           = new NotePane("#note-pane");
 
   this.clear_trigger.on("click",$.proxy(function(e) {
     e.preventDefault();
@@ -59,6 +59,7 @@ SelectedMenu.prototype = {
   setSelectedRefs : function( refs ) {
     this.selected_references = refs;
     this.bookmark_pane.updateForm({references: this.selected_references});
+    this.note_pane.updateForm({references: reader.getSelectedData().verse_usfms});
   },
 
   updateHighlights : function( selected_verses ) {
