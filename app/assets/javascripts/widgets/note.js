@@ -40,18 +40,6 @@ NoteWidget.prototype = {
         i18n: { lang: getCookie('locale').toLowerCase() }
       }
     });
-
-    // Unsure what this did previously...
-
-    //$('.alternate_select').on('change', function(){
-    //  if($(this).val() == "publish_on"){
-    //    $('.secret').fadeIn();
-    //    $('#publish_time').addClass('publish_on_selected');
-    // } else{
-    //    $('.secret').hide();
-    //    $('#publish_time').removeClass('publish_on_selected');
-    //  }
-    //});
   },
 
   updateForm : function( data ) {
