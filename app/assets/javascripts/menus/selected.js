@@ -1,5 +1,4 @@
-// Selected Verses dynamic menu
-
+// Selected Verses menu
 function SelectedMenu( opts ) {
 
   this.menu                = $(opts.menu);
@@ -39,13 +38,13 @@ SelectedMenu.prototype = {
 
   open : function() {
     var newMargin = reader.header.outerHeight() + this.menu.height();
-    this.menu.slideDown();
+    this.menu.moveDown();
     this.readerArticle.stop().animate({ marginTop : newMargin}, this.speed);
   },
 
   close : function() {
     var thiss = this;
-    this.menu.slideUp(this.speed, function(){
+    this.menu.moveUp(this.speed, function(){
       // de-activate any panes after it has slid up
       thiss.paneList.find('dd').hide();
       thiss.paneList.find('dt').removeClass(thiss.activeClass);
@@ -74,6 +73,78 @@ SelectedMenu.prototype = {
     this.share_pane.updateForm( params )
   },
 
+  openPane : function( dt ) {
+    var dd = dt.next('dd');
+    var newMargin = reader.header.outerHeight() + this.menu.height() + dd.height();
+    var thiss = this;
+
+    function _open(){
+      // slide down the pane
+      console.log(dd);
+      dd.moveDown(thiss.speed, function() {
+        console.log('pulling pane down');
+        // Animation complete, items visible
+        if (dd.attr('id') == "link-pane"){
+          if(!dd.find('#ZeroClipboardMovie_1').length){
+            thiss.link_pane.renderClipboard();
+          }
+        }
+        // set active class
+        dt.siblings('dt').removeClass(thiss.activeClass);
+        dt.addClass(thiss.activeClass);
+
+        // bind escape key to close the pane
+        $(document).on("keydown", $.proxy(function(e) {
+          if (e.keyCode === 27) { // 27 === Escape key
+            e.preventDefault();
+            this.closePanes();
+          }
+        }, thiss));
+      });
+
+      // slide up the article margin at the same time
+      thiss.readerArticle.stop().animate({ marginTop : newMargin}, thiss.speed);
+    }
+
+    var open_dd = dt.siblings('.' + this.activeClass).next('dd');
+    if (open_dd.length){
+      // quickly slide up any active panes
+      thiss.closePanes(thiss.speed / 2, function(){
+        // then after up, slide the new one down
+        _open();
+      });
+    } else{
+      // no open pane, just slide the new one down
+      _open();
+    }
+
+  },
+
+  closePanes : function(speed, complete) {
+    var dt = this.paneList.find('dt.' + this.activeClass);
+    var dd = dt.next('dd');
+    var thiss = this;
+
+    speed = speed || this.speed;
+
+    if(dt.length){
+      dd.moveUp(speed, complete);
+      dt.removeClass(thiss.activeClass);
+
+      // unbind escape key to close the pane
+      $(document).off("keydown", $.proxy(function(e) {
+        if (e.keyCode === 27) { // 27 === Escape key
+          e.preventDefault();
+          this.closePanes();
+        }
+      }, thiss));
+
+      // put readerHeader margin back
+      var newMargin = reader.header.outerHeight() + thiss.menu.height();
+      thiss.readerArticle.stop().animate({ marginTop : newMargin}, speed);
+    }
+  },
+
   initPanes : function() {
 
     if (!this.paneList.length) { return; }
@@ -85,26 +156,9 @@ SelectedMenu.prototype = {
       var dd = dt.next('dd');
 
       if (dd.is(':hidden')) {
-        var newMargin = reader.header.outerHeight() + thiss.menu.height() + dd.height();
-
-        dd.slideDown(thiss.speed, function() {
-          // Animation complete, items visible
-          if (dd.attr('id') == "link-pane"){
-            if(!dd.find('#ZeroClipboardMovie_1').length){
-              thiss.link_pane.renderClipboard();
-            }
-          }
-          dt.siblings('dt').removeClass(thiss.activeClass);
-          dt.addClass(thiss.activeClass);
-        }).siblings('dd').slideUp();
-
-        thiss.readerArticle.stop().animate({ marginTop : newMargin}, thiss.speed);
+        thiss.openPane(dt);
       } else {
-        dd.slideUp();
-        dt.removeClass(thiss.activeClass);
-        // put readerHeader margin back
-        var newMargin = reader.header.outerHeight() + thiss.menu.height();
-        thiss.readerArticle.stop().animate({ marginTop : newMargin}, thiss.speed);
+        thiss.closePanes();
       }
 
       this.blur();
