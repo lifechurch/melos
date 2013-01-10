@@ -28,6 +28,10 @@ YouversionWeb::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  # Fallback to assets pipeline since we don't require
+  # precompilation of assets in development
+  config.assets.compile = true
+
   # Turn off quiet assets (defaults to true)
   # config.quiet_assets = false
 
