@@ -15,52 +15,57 @@
       moveDown: function(speed, complete) {
 
           var options = {
-            speed: speed || 'default',
+            speed: speed || 400,
             complete: complete || null
           };
 
           return this.each(function() {
                 var $this = $(this);
-                // initialize the original top to current position
-                if ($this.data('orig-top') == null){
-                  $this.data('orig-top', parseInt($this.css('top')));
-                }
+                // // initialize the original top to current position
+                // if ($this.data('orig-top') == null){
+                //   var _top = parseInt($this.css('top'));
+                //   if (isNaN(_top)){ _top = $this.css('top') }
+                //   $this.data('orig-top', _top);
+                // }
 
-                // ensure it's up
-                $this.css({top: $this.data('orig-top') - $this.outerHeight()});
+                // // ensure it's up
+                // $this.css({top: $this.data('orig-top') - $this.outerHeight()});
 
-                // make visible
-                $this.show();
+                // // make visible
+                // $this.show();
 
-                // slide down to normal position
-                $this.stop().animate({top: $this.data('orig-top')}, options.speed, options.complete);
+                // // slide down to normal position
+                // console.log(options);
+                // $this.stop().animate({top: $this.data('orig-top')}, options.speed);
 
-                // $this.slideDown(options.speed, options.complete);
+                $this.slideDown(options.speed, options.complete);
           });
       },
 
       moveUp: function(speed, complete) {
 
           var options = {
-            speed: speed || 'default',
+            speed: speed || 400,
             complete: complete || null
           };
 
           return this.each(function() {
                 var $this = $(this);
-                // initialize the original top to current position
-                if ($this.data('orig-top') == null){
-                  $this.data('orig-top', parseInt($this.css('top')));
-                }
+                // // initialize the original top to current position
+                // if ($this.data('orig-top') == null){
+                //   var _top = parseInt($this.css('top'));
+                //   if (isNaN(_top)){ _top = $this.css('top') }
+                //   $this.data('orig-top', _top);
+                // }
 
-                // slide up to -height
-                $this.stop().animate({top: $this.data('orig-top') - $this.outerHeight()}, options.speed, function(){
-                  // hide once animation is complete
-                  $this.hide();
-                  if(options.complete){ options.complete(); }
-                });
+                // // slide up to -height
+                // $this.stop().animate({top: $this.data('orig-top') - $this.outerHeight()}, options.speed, function(){
+                //   // hide once animation is complete
+                //   $this.hide();
+                //   if(options.complete){ options.complete(); }
+                // });
 
-                // $this.slideUp(options.speed, options.complete);
+                $this.slideUp(options.speed, options.complete);
           });
       }
   });

@@ -38,7 +38,7 @@ SelectedMenu.prototype = {
 
   open : function() {
     var newMargin = reader.header.outerHeight() + this.menu.height();
-    this.menu.moveDown();
+    this.menu.moveDown(this.speed);
     this.readerArticle.stop().animate({ marginTop : newMargin}, this.speed);
   },
 
