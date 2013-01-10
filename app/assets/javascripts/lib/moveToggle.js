@@ -21,12 +21,19 @@
 
           return this.each(function() {
                 var $this = $(this);
+                // initialize the original top to current position
+                if (!$this.data('orig-top')){
+                  $this.data('orig-top', $this.position().top);
+                }
+
+                // ensure it's up
+                $this.css({top: $this.data('orig-top') - $this.outerHeight()});
 
                 // make visible
                 $this.show();
 
                 // slide down to normal position
-                $this.stop().animate({top: 0}, options.speed, options.complete);
+                $this.stop().animate({top: $this.data('orig-top')}, options.speed, options.complete);
 
                 // $this.slideDown(options.speed, options.complete);
           });
@@ -41,12 +48,16 @@
 
           return this.each(function() {
                 var $this = $(this);
+                // initialize the original top to current position
+                if (!$this.data('orig-top')){
+                  $this.data('orig-top', $this.position().top);
+                }
 
                 // slide up to -height
-                $this.stop().animate({top: -($this.outerHeight())}, options.speed, function(){
+                $this.stop().animate({top: $this.data('orig-top') - $this.outerHeight()}, options.speed, function(){
                   // hide once animation is complete
                   $this.hide();
-                  options.complete();
+                  if(options.complete){ options.complete(); }
                 });
 
                 // $this.slideUp(options.speed, options.complete);

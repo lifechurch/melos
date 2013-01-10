@@ -80,9 +80,8 @@ SelectedMenu.prototype = {
 
     function _open(){
       // slide down the pane
-      console.log(dd);
       dd.moveDown(thiss.speed, function() {
-        console.log('pulling pane down');
+
         // Animation complete, items visible
         if (dd.attr('id') == "link-pane"){
           if(!dd.find('#ZeroClipboardMovie_1').length){
