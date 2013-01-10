@@ -22,8 +22,8 @@
           return this.each(function() {
                 var $this = $(this);
                 // initialize the original top to current position
-                if (!$this.data('orig-top')){
-                  $this.data('orig-top', $this.position().top);
+                if ($this.data('orig-top') == null){
+                  $this.data('orig-top', parseInt($this.css('top')));
                 }
 
                 // ensure it's up
@@ -49,8 +49,8 @@
           return this.each(function() {
                 var $this = $(this);
                 // initialize the original top to current position
-                if (!$this.data('orig-top')){
-                  $this.data('orig-top', $this.position().top);
+                if ($this.data('orig-top') == null){
+                  $this.data('orig-top', parseInt($this.css('top')));
                 }
 
                 // slide up to -height
