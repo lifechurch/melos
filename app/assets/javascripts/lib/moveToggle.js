@@ -22,13 +22,13 @@
           return this.each(function() {
                 var $this = $(this);
 
-                // ensure position is -height before showing
-
                 // make visible
+                $this.show();
 
                 // slide down to normal position
+                $this.stop().animate({top: 0}, options.speed, options.complete);
 
-                $this.slideDown(options.speed, options.complete);
+                // $this.slideDown(options.speed, options.complete);
           });
       },
 
@@ -43,9 +43,13 @@
                 var $this = $(this);
 
                 // slide up to -height
-                $this.slideUp(options.speed, options.complete);
+                $this.stop().animate({top: -($this.outerHeight())}, options.speed, function(){
+                  // hide once animation is complete
+                  $this.hide();
+                  options.complete();
+                });
 
-                // hide
+                // $this.slideUp(options.speed, options.complete);
           });
       }
   });
