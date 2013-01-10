@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '3.1.2'
+gem 'rails', '3.2.11'
 
 gem 'asset_sync',             '~> 0.5.0'
 gem 'awesome_print',          '~> 1.0.2'
@@ -17,7 +17,7 @@ gem 'hashie',                 '~> 1.2.0'
 gem 'heroku',                 '~> 2.32.4'
 gem 'httparty',               '0.8.2' # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'http_accept_language',   '~> 1.0.2'
-gem 'koala',                  '~> 1.4.1'
+gem 'koala',                  '~> 1.6.0'
 gem "language_list",          '~> 0.0.3'
 gem 'newrelic_rpm',           '~> 3.5.3.25'
 gem 'nokogiri',               '~> 1.5.2'
@@ -40,9 +40,8 @@ gem "unicorn",               '~> 4.3.1'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
-  # There is a bug in 3.1.6 so this is locked until we upgrade to Rails 3.2
-  gem 'sass-rails',       '3.1.5' #3.2.5
-  gem 'coffee-rails',  '~> 3.1.0' #3.2.2
+  gem 'sass-rails',       '3.2.5'
+  gem 'coffee-rails',  '~> 3.2.1'
   gem 'compass-rails', '~> 1.0.1'
   gem 'uglifier',      '~> 1.2.4'
   gem 'css_parser',    '~> 1.1.9'
