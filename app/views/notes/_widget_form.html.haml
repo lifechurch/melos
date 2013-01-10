@@ -5,19 +5,17 @@
       %ul
         - @note.errors.each do |e|
           %li= e
-  %div
+  %div.title
     = f.label :title, t("notes.title field")
     = f.text_field :title
-  %div{style: "margin-bottom: 4px;"}
-    -#= f.label :content, t("notes.content field")
-    = f.text_area :content
-  %div
+  %div.status
     = f.label :user_status, t("notes.status field")
     = f.select :user_status, options_for_select(object_status, @note.user_status)
+  %div{style: "margin-bottom: 4px;"}
+    -#= f.label :content, t("notes.content field")
+    = f.text_area :content, rows: 4
   = f.hidden_field :references, class: "verses_selected_input"
   = f.hidden_field :version_id
-  %div.parallel_notes_submit.clearfix
-    %button.action_button_green.float_right
+  %div.save
+    %button
       = t('notes.save')
-    %a.cancel.warning.float_left
-      = t('notes.cancel')
