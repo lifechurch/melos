@@ -3,6 +3,14 @@
 - @is_reader = true
 - @canonical = bible_url(@reference)
 
+- if @single_verse
+  - content_for :additional_meta do
+    %meta{name: "twitter:card",         content: "summary"}
+    %meta{name: "twitter:url",          content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
+    %meta{name: "twitter:title" ,       content: @title }
+    %meta{name: "twitter:description",  content: truncate(@single_verse.content(as: :plaintext), length: 200, separator: " ")}
+    %meta{name: "twitter:site",         content: "@YouVersion"}
+
 - content_for :sidebar do
   = render partial: '/shared/widget_bookmarks_stub' if current_auth
   = render_cell :notes_list_widget, :stub, title: t("notes.community notes"), reference: @reference

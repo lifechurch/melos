@@ -139,7 +139,7 @@ class Reference < YouVersion::Resource
     case opts[:as]
       when :plaintext
         selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
-        content_document.css(selector).inner_html
+        content_document.css(selector).inner_html.strip
       else #:html
         selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
         content_document.css(selector).to_html
