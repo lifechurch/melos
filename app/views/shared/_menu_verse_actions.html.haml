@@ -65,7 +65,7 @@
         %form.clearfix{action: share_path, method: "post"}
           %div.share_message
             %textarea{name: "share[message]"}
-            %div.float_right
+            %div
               %b#short_link
               = t("link will be added")
             %input{type: "hidden", id: "share_link", name: "share[link]", value: ""}
