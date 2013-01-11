@@ -56,6 +56,7 @@ group :test, :development do
   gem 'capybara',       '~> 1.1.2'
   gem 'capybara-mechanize', '~> 0.3.0'
   gem "capybara-webkit", "~> 0.12.1"
+  gem "capybara-screenshot", "~> 0.3.4"
   gem 'cucumber-rails', '~> 1.3.0', require: false
   gem 'heroku_san'
   gem 'rspec-cells'

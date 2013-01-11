@@ -105,6 +105,9 @@ class ReferencesController < ApplicationController
 
   protected
     def ref_not_found(ex)
+      @highlight_colors = User.highlight_colors rescue []
+      @note = Note.new
+
       if ex.is_a? BadSecondaryVersionError
         @alt_version = Version.find(cookies[:alt_version])
         @alt_reference = Hashie::Mash.new({content: "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"})

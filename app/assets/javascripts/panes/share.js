@@ -3,7 +3,9 @@ function SharePane( el ) {
   this.form         = this.el.find("form");
   this.short_link   = this.el.find("#short_link");
   this.share_link_field     = this.el.find("#share_link");
-  this.share_message_field  = this.el.find("textarea");
+  this.tw_share_message_field  = this.el.find(".share_verse_twitter");
+  this.fb_share_message_field  = this.el.find(".share_verse_facebook");
+  this.textarea = this.el.find('textarea');
 }
 
 SharePane.prototype = {
@@ -27,14 +29,23 @@ SharePane.prototype = {
         })
       ).join(' ').trim();
 
-      this.share_message_field.html( verses_str );
+      this.textarea.html( verses_str );
 
       // Populate character count info
       var chars_left = 140 - link.length - 1;
-          this.share_message_field.charCount({
-            allowed: chars_left,
-            css: "character_count"
-          });
+      this.tw_share_message_field.charCount({
+        allowed: chars_left,
+        css: "character_count",
+        target: this.textarea
+      });
+
+      // Populate character count info
+      chars_left = 420 - link.length - 1;
+      this.fb_share_message_field.charCount({
+        allowed: chars_left,
+        css: "character_count",
+        target: this.textarea
+      });
     }
 
   },

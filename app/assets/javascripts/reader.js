@@ -64,6 +64,7 @@ function Reader(opts) {
   this.html_el        = $(document.documentElement);
   this.verse_els      = $('#version_primary .verse');
   this.audio_player   = $('#audio_player');
+  this.header         = $('#reader_header header');
 
   // menus
 
@@ -75,13 +76,11 @@ function Reader(opts) {
   this.initNextPrev();
 
   this.book_chapter_menu  = new BookChapterMenu({trigger: "#menu_book_chapter_trigger", menu: "#menu_book_chapter"});
-  this.selected_menu      = new SelectedMenu({trigger:"#menu_selected_trigger",menu:"#menu_bookmark"});  // need to update this html id.
+  this.selected_menu      = new SelectedMenu({menu:"#menu_verse_actions"});
 
   $(this.selected_menu).bind("verses:clear", $.proxy(function(e){
     this.clearSelectedVerses();
   },this));
-
-  this.parseVerses(); // run once on load
 }
 
 Reader.prototype = {
@@ -113,6 +112,7 @@ Reader.prototype = {
       this.verseClicked(e.delegateTarget);
     },this));
 
+    this.parseVerses(); // run once on load
   },
 
   fetchSelectedVerses : function() {
@@ -166,7 +166,7 @@ Reader.prototype = {
     // TODO: set this up in a way we can cancel if user scrolls before it happens
     easingType = easingType || 'easeInOutCirc';
     var first = $('#version_primary .selected:first');
-    if (first.length){
+    if ( first.length && !first.hasClass('v1') ){
       var newPosition = first.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(first.css('line-height'))/4;
       if(app.getPage().MODERN_BROWSER){
         $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: easingType, duration:1200});
@@ -181,13 +181,15 @@ Reader.prototype = {
   },
 
   parseVerseClasses : function(v) {
-    var classes = v.attr('class').split(/\s+/) || [];
-    var v_classes = [];
-        $(classes).each( function(i, val) {
-          var match = val.match(/v[0-9]+/g);
-          if(match && match.length) { v_classes.push(match[0].toString())}
-        });
-    return v_classes;
+    if (v.length > 0){
+      var classes = v.attr('class').split(/\s+/) || [];
+      var v_classes = [];
+          $(classes).each( function(i, val) {
+            var match = val.match(/v[0-9]+/g);
+            if(match && match.length) { v_classes.push(match[0].toString())}
+          });
+      return v_classes;
+    } else { return ""; }
   },
 
   // expected to return an array with a single element or more.
@@ -438,7 +440,23 @@ Reader.prototype = {
         e.preventDefault();
 
         var usfm = $(this).data("usfm");
-        thiss.deselectVerse($("#version_primary .verse[data-usfm='" + usfm + "']"));
+
+        var verses = [];
+        if( usfm.indexOf('-') == -1){
+          // single verse
+          verses.push(usfm.split('.')[2]);
+        } else {
+          // verse range
+          var nums = usfm.split('.')[2].split('-');
+          for (var i = nums[0]; i <= nums[1]; i++) {
+           verses.push(i);
+          }
+        }
+
+        $("#version_primary .verse.v" + verses.join(', #version_primary .verse.v')).each( function(){
+          thiss.deselectVerse($(this));
+        });
+
         thiss.parseVerses();
       });
 
@@ -446,7 +464,6 @@ Reader.prototype = {
       lists.append(li); // Append token to all .reference_token lists
     });
   },
-
 
   // Next & Prev navigation controls on reader
   initNextPrev : function() {

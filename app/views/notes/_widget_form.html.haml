@@ -1,0 +1,21 @@
+= form_for @note do |f|
+  - if @note.errors.any?
+    .form_errors
+      =t("notes.creation form errors")
+      %ul
+        - @note.errors.each do |e|
+          %li= e
+  %div.title
+    = f.label :title, t("notes.title field")
+    = f.text_field :title
+  %div.status
+    = f.label :user_status, t("notes.status field")
+    = f.select :user_status, options_for_select(object_status, @note.user_status)
+  %div{style: "margin-bottom: 4px;"}
+    -#= f.label :content, t("notes.content field")
+    = f.text_area :content, rows: 4, cols: 68
+  = f.hidden_field :references, class: "verses_selected_input"
+  = f.hidden_field :version_id
+  %div.save
+    %button
+      = t('notes.save')

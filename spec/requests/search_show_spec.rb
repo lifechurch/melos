@@ -25,10 +25,10 @@ describe "Requesting a Search (Search#show)" do
       'John Tyler',
       'John'
     ].each do |query, ref_str|
-      specify "should redirect to reader for '#{query}' search" do
+      specify "should not redirect to reader for '#{query}' search" do
         url = search_path(q: query)
         get(url)
-        response.should redirect_to(bible_path(Reference.new(ref_str)))
+        response.should render_template('search/show')
       end
     end
   end

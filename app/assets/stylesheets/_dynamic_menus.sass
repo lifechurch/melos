@@ -34,9 +34,6 @@
     top: 50%
     left: 50%
 
-
-
-
 .menu_arrow
   background: image-url("menu_arrow.png") no-repeat
   font-size: 0
@@ -279,12 +276,6 @@
   line-height: 1
   padding: 10px 15px !important
 
-.dynamic_menu .accordion dt
-  cursor: pointer
-
-.dynamic_menu .accordion dt:hover
-  background: #2f2f2f
-
 .dynamic_menu header,
 .dynamic_menu dt
   position: relative
@@ -334,18 +325,95 @@
 .dynamic_menu #new_note_modal:hover
   background: image-url("icon_open_modal.png") no-repeat 95% center #2e2e2e
 
-#menu_bookmark header ul.reference_tokens
-  background: none
+#menu_verse_actions
+  display: none
+  position: relative
+  background-color: #323232
 
-#menu_bookmark header ul.reference_tokens > a
-  border: none !important
+#menu_verse_actions .references
+  padding: 0px 5px
 
-#menu_bookmark header span
-  font-weight: bold
-  margin: 0 0 5px 0
+#menu_verse_actions .references .reference_tokens > li
+  margin-top: 7px
+
+#menu_verse_actions .references .reference_tokens > li a
+  border-radius: 4px
+
+#menu_verse_actions .references ul
+  margin: 0
+
+#menu_verse_actions dl
+  background-color: #323232
+  border-top: 1px solid #000
+
+#menu_verse_actions dd
+  display: none
+  position: absolute
+  top: 81px
+
+#menu_verse_actions dt
+  cursor: pointer
+  float: left
+  width: 98px
+  height: 44px
+  background-color: #323232
+  border-left: 1px solid #444
+  border-top: 1px solid #444
+  border-right: 1px solid #000
+  background:
+    image: image-url("verse_action_sprite.png")
+    repeat: no-repeat
+  text-indent: -2000px
+
+#menu_verse_actions dt.highlight
+  background-position: 37px 10px
+
+#menu_verse_actions dt.comment
+  background-position: -47px 10px
+
+#menu_verse_actions dt.comment
+  background-position: -47px 10px
+
+#menu_verse_actions dt.bookmark
+  background-position: -131px 10px
+
+#menu_verse_actions dt.note
+  background-position: -215px 10px
+
+#menu_verse_actions dt.share
+  background-position: -299px 10px
+
+#menu_verse_actions dt.clear-selected
+  background-position: -383px 10px
+
+#menu_verse_actions dt.link
+  background-position: -467px 10px
+
+#menu_verse_actions dt.active,
+#menu_verse_actions dt:hover
+  background-position-y: -70px
+
+#menu_verse_actions dt .arrow
+  display: none
+
+#menu_verse_actions dt.active .arrow
   display: block
-#menu_bookmark header .close
-  top: 15px
+  height: 8px
+  width: 16px
+  background:
+    image: image-url('active_arrow_down.png')
+    repeat: no-repeat
+  position: relative
+  top: 16px
+  left: 41px
+  z-index: 1
+
+#menu_verse_actions dl .pane
+  width: 558px
+  background-color: #fff
+  border: 1px solid #cbc9cf
+  border-top: none
+  padding: 10px 20px
 
 .dynamic_menu.version_select
   width: 415px
@@ -359,3 +427,95 @@
     image: image-url("icon_listen.png")
     repeat: no-repeat
     position: 100% -46px
+
+#menu_verse_actions #bookmark-pane .pane
+  padding-bottom: 0
+
+#menu_verse_actions #bookmark-pane .pane input[type="text"]
+  width: 300px
+
+#menu_verse_actions #share-pane .pane
+  padding: 20px 20px 0
+
+#menu_verse_actions #share-pane .share_message textarea
+  margin-bottom: 8px
+  line-height: 18px
+
+#menu_verse_actions #share-pane .share_action
+  clear: both
+  margin-top: 8px
+
+#menu_verse_actions #share-pane .share_services
+  overflow: hidden
+  margin-top: 10px
+
+#menu_verse_actions #share-pane .share_action
+  float: none
+  margin-bottom: 20px
+
+#menu_verse_actions #share-pane .share_services span
+  display: block
+  float: left
+  margin-left: 5px
+  border-radius: 4px
+  border: 1px solid #e1e1e1
+  padding: 4px 6px 0 1px
+
+#menu_verse_actions #share-pane .share_services span:first-child
+  margin-left: 0
+
+#menu_verse_actions #share-pane .share_services span .character_count
+  background-color: #CDCDCD
+  border: 0
+  color: white
+  font-size: 12px
+  font-weight: bold
+  margin-top: 2px
+  padding: 1px 4px 0
+
+#menu_verse_actions #share-pane .share_services span .translation_missing
+  border: 0
+
+#menu_verse_actions #link-pane .pane
+  padding: 20px
+
+#menu_verse_actions #note-pane .pane
+  padding: 20px
+
+#menu_verse_actions #note-pane .pane label
+  display: block
+
+#menu_verse_actions #note-pane .pane input#note_title
+  width: 300px
+  margin-bottom: 20px
+
+#menu_verse_actions #note-pane .title
+  float: left
+  margin-right: 25px
+
+#menu_verse_actions #note-pane .save
+  margin-top: 10px
+
+#menu_verse_actions #link-pane #copy_link_input
+  width: 400px
+
+#menu_verse_actions #link-pane #copy_link_container
+  position: absolute
+  left: 400px
+  top: 0px
+
+#menu_verse_actions #link-pane #copy_link
+  margin-top: 0px
+  width: 100px
+  height: 23px
+
+#menu_verse_actions #need-account h4
+  text-align: center
+  color: #666
+  margin-top: 25px
+
+#menu_verse_actions #get-started-buttons
+  margin-bottom: 10px
+
+#menu_verse_actions #get-started-buttons .or
+  margin: 0 9px

@@ -1,0 +1,122 @@
+#menu_verse_actions.clearfix
+  .references
+    %ul.reference_tokens
+      %li
+        %a{href:"#"}= 'Luke 2:15'
+      %li
+        %a{href:"#"}= 'John 4:25'
+  %dl.verses_selected
+
+    %dt.highlight
+      = t("highlight")
+      .arrow
+    %dd#highlight-pane.auth
+      .pane
+        %form{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+          - if current_auth.nil?
+            %input{type: 'hidden', name: 'redirect', value: "/bible"}
+            %input{type: 'hidden', name: 'source', value: "highlight"}
+          %input.references{name: "highlight[references]", type: "hidden"}
+          %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
+          %div.color_picker_list
+            %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
+            %span
+            - if current_auth
+              %span.ajax_me{"data-ajax" => highlight_colors_path}
+                = render partial: "users/highlight_color_swatches"
+            - else
+              %span
+                = render partial: "users/highlight_color_swatches"
+            %a.color_picker{href:"#"}
+            %a.color_picker_holder{href:"#"}
+          %div.clear
+
+    %dt.bookmark
+      = t("bookmark")
+      .arrow
+    %dd#bookmark-pane.auth
+      .pane
+        %form{action: (current_auth ? bookmarks_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+          - if current_auth.nil?
+            %input{type: 'hidden', name: 'redirect', value: "/bible"}
+            %input{type: 'hidden', name: 'source', value: "bookmark"}
+          %p
+            %label{for:'bookmark_title'}
+              = t("bookmarks.title field")
+            %br
+            %input{type:'text',id:'bookmark_title',name:'bookmark[title]'}
+          %p
+            %label{for:'bookmark_tags'}
+              = t("bookmarks.labels")
+            %br
+            %input{type:'text',id: 'bookmark_labels',name:'bookmark[labels]',placeholder: t("bookmarks.labels placeholder")}
+            %input.verses_selected_input{name: "bookmark[references]", type: "hidden"}
+            %input{type: "hidden", name: "bookmark[version_id]", value: @version.id }
+          %div.clear
+          %p
+            %button{type:"submit",name:"bookmark[submit]",value:"submit"}= t('bookmarks.save')
+          %div.clear{style:"padding: 0 0 15px 0"}
+
+    %dt.share
+      = t("ref.share")
+      .arrow
+    %dd#share-pane.auth
+      .pane
+        %form.clearfix{action: share_path, method: "post"}
+          %div.share_message
+            %textarea{name: "share[message]"}
+            %div
+              %b#short_link
+              = t("link will be added")
+            %input{type: "hidden", id: "share_link", name: "share[link]", value: ""}
+
+            %div.share_services
+              %span
+                %input#checkbox_share_twitter{type:"checkbox",name:"share[connections][twitter]"}
+                %label.share_verse_twitter{for: 'share_verse_twitter', value: "Twitter"} = t("twitter")
+
+              %span
+                %input#checkbox_share_facebook{type:"checkbox", name: "share[connections][facebook]"}
+                %label.share_verse_facebook{for: 'share_verse_facebook'}= t("Facebook")
+
+            %div.share_action
+              %button{type:"submit",name:"share[submit]",value:"submit"}= t('ref.share now')
+
+    %dt.link
+      = t("link")
+      .arrow
+    %dd#link-pane
+      .pane
+        %span.text_field_embed
+          %input#copy_link_input{value:"",type: "text"}
+          %div#copy_link_container
+            %button#copy_link{"data-confirm-text" => t("copy confirmed")}= t("copy")
+
+    %dt.note
+      = t("new note")
+      .arrow
+    %dd#note-pane.auth
+      .pane
+        = render partial: 'notes/widget_form'
+
+    %dt.clear-selected
+      = t('ref.clear verses')
+      %sup#verses_selected_count
+        0
+    - unless current_auth
+      %dt.account.hide
+      %dd#need-account
+        .pane
+          .blurbs
+            %p.highlight= t('registration.highlight blurb');
+            %p.bookmark= t('registration.bookmark blurb');
+            %p.share= t('registration.share blurb');
+            %p.note= t('registration.note blurb');
+          %h4= t("pages.home.get started")
+          #get-started-buttons
+            %span.fb
+              = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: 'action_button_blue')
+            %span.or
+              = t("or.upper")
+            %span.email
+              = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})
