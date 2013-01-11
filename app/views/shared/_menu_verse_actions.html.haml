@@ -19,8 +19,6 @@
           %input.references{name: "highlight[references]", type: "hidden"}
           %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
           %div.color_picker_list
-            %a.color_picker{href:"#"}
-            %a.color_picker_holder{href:"#"}
             %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
             %span
             - if current_auth
@@ -29,6 +27,8 @@
             - else
               %span
                 = render partial: "users/highlight_color_swatches"
+            %a.color_picker{href:"#"}
+            %a.color_picker_holder{href:"#"}
           %div.clear
 
     %dt.bookmark
@@ -64,7 +64,7 @@
       .pane
         %form.clearfix{action: share_path, method: "post"}
           %div.share_message
-            %textarea{name: "share[message]", style: "margin-bottom: 8px"}
+            %textarea{name: "share[message]"}
             %div.float_right
               %b#short_link
               = t("link will be added")
@@ -88,9 +88,9 @@
     %dd#link-pane
       .pane
         %span.text_field_embed
-          %input#copy_link_input.width_100{value:"",style: "margin-bottom: 15px;",type: "text"}
-          %div#copy_link_container{style: "position: absolute; right: 0px; top: -2px;"}
-            %button#copy_link{"data-confirm-text" => t("copy confirmed"), style: "margin-top:0px; width:51px; height:23px;"}= t("copy")
+          %input#copy_link_input{value:"",type: "text"}
+          %div#copy_link_container
+            %button#copy_link{"data-confirm-text" => t("copy confirmed")}= t("copy")
 
     %dt.note
       = t("new note")

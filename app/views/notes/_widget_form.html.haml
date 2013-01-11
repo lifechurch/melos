@@ -13,7 +13,7 @@
     = f.select :user_status, options_for_select(object_status, @note.user_status)
   %div{style: "margin-bottom: 4px;"}
     -#= f.label :content, t("notes.content field")
-    = f.text_area :content, rows: 4
+    = f.text_area :content, rows: 4, cols: 68
   = f.hidden_field :references, class: "verses_selected_input"
   = f.hidden_field :version_id
   %div.save

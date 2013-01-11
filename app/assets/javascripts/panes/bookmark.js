@@ -10,6 +10,7 @@ BookmarkPane.prototype = {
 
   updateForm : function( data ) {
     var refs = data.references || [];
+    console.log(data);
     this.references_field.val(refs.join(",")); // populate hidden field
   }
 }
