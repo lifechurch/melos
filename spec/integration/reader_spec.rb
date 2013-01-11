@@ -76,7 +76,8 @@ feature "Reader", js: true do
 
     scenario "changing version" do
       page.find("a#menu_version_trigger").click
-      page.find("div#menu_version tr[data-abbrev='amp'] td a div").click
+      click_link "Amplified Bible"
+      sleep 1
       current_path.should eq bible_path(Reference.new(@ref.merge(version: "amp")))
     end
 
