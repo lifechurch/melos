@@ -10,7 +10,7 @@
     %dt.highlight
       = t("highlight")
       .arrow
-    %dd#highlight-pane
+    %dd#highlight-pane.auth
       .pane
         %form{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
           - if current_auth.nil?
@@ -34,7 +34,7 @@
     %dt.bookmark
       = t("bookmark")
       .arrow
-    %dd#bookmark-pane
+    %dd#bookmark-pane.auth
       .pane
         %form{action: (current_auth ? bookmarks_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
           - if current_auth.nil?
@@ -60,7 +60,7 @@
     %dt.share
       = t("ref.share")
       .arrow
-    %dd#share-pane
+    %dd#share-pane.auth
       .pane
         %form.clearfix{action: share_path, method: "post"}
           %div.share_message
@@ -95,7 +95,7 @@
     %dt.note
       = t("new note")
       .arrow
-    %dd#note-pane
+    %dd#note-pane.auth
       .pane
         = render partial: 'notes/widget_form'
 
@@ -103,3 +103,20 @@
       = t('ref.clear verses')
       %sup#verses_selected_count
         0
+    - unless current_auth
+      %dt.account.hide
+      %dd#need-account
+        .pane
+          .blurbs
+            %p.highlight= t('registration.highlight blurb');
+            %p.bookmark= t('registration.bookmark blurb');
+            %p.share= t('registration.share blurb');
+            %p.note= t('registration.note blurb');
+          %h4= t("pages.home.get started")
+          #get-started-buttons
+            %span.fb
+              = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: 'action_button_blue')
+            %span.or
+              = t("or.upper")
+            %span.email
+              = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})

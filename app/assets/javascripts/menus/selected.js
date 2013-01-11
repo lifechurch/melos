@@ -4,12 +4,13 @@ function SelectedMenu( opts ) {
   this.menu                = $(opts.menu);
   this.counter             = $('#verses_selected_count');
   this.paneList            = this.menu.find('dl');
+  this.accountPane         = this.paneList.find('#need-account');
   this.selected_count      = 0;
   this.selected_references = [];
   this.clear_trigger       = this.menu.find('dt.clear-selected');
   this.activeClass         = 'active';
   this.readerArticle       = $('article');
-  this.speed               = 200;
+  this.speed               = 250;
 
   this.initPanes(); // setup our pane actions / handlers
 
@@ -75,8 +76,19 @@ SelectedMenu.prototype = {
 
   openPane : function( dt ) {
     var dd = dt.next('dd');
-    var newMargin = reader.header.outerHeight() + this.menu.height() + dd.height();
     var thiss = this;
+
+    // TODO: move open pane logic into pane classes, and have panelist contian them
+    // instead of the dual lists we use here (panelist and the _pane objects)
+    if (dd.hasClass('auth') && this.accountPane.length > 0){
+      // user needs to auth, show them why and how
+      dd = this.accountPane;
+      dt = dt.add(dd.prev('dt'));
+      this.accountPane.find('.blurbs p').hide();
+      this.accountPane.find('.blurbs p.' + dt.attr('class').trim()).show();
+    };
+
+    var newMargin = reader.header.outerHeight() + this.menu.height() + dd.height();
 
     function _open(){
       // slide down the pane
@@ -108,7 +120,7 @@ SelectedMenu.prototype = {
     var open_dd = dt.siblings('.' + this.activeClass).next('dd');
     if (open_dd.length){
       // quickly slide up any active panes
-      thiss.closePanes(thiss.speed / 2, function(){
+      thiss.closePanes(thiss.speed * 0.75, function(){
         // then after up, slide the new one down
         _open();
       });
@@ -154,10 +166,12 @@ SelectedMenu.prototype = {
       var dt = $(this);
       var dd = dt.next('dd');
 
-      if (dd.is(':hidden')) {
-        thiss.openPane(dt);
-      } else {
+      if(dd.length == 0){ return; }
+
+      if (dt.hasClass('active')) {
         thiss.closePanes();
+      } else {
+        thiss.openPane(dt);
       }
 
       this.blur();
