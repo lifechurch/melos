@@ -26,14 +26,10 @@ describe "Requesting the Reader (References#show)" do
 
     describe "Get home page" do
 
-      it "should show '/bible/1/jhn.1.kjv' for first time users" do
+      it "should show the landing page for first time users" do
         get "/"
-        response.code.should == "302"
-        response.location.should == @base_url + "/bible/1/jhn.1.kjv"
-        follow_redirect!
-
         response.code.should == "200"
-        response.should render_template(:show)
+        response.should render_template(:home)
       end
 
       it "should remember your last read reference" do
@@ -42,7 +38,7 @@ describe "Requesting the Reader (References#show)" do
         response.code.should == "200"
         response.should render_template(:show)
 
-        get "/"
+        get "/bible"
         response.code.should == "302"
         response.location.should == @base_url + url
       end
