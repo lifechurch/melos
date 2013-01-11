@@ -181,13 +181,15 @@ Reader.prototype = {
   },
 
   parseVerseClasses : function(v) {
-    var classes = v.attr('class').split(/\s+/) || [];
-    var v_classes = [];
-        $(classes).each( function(i, val) {
-          var match = val.match(/v[0-9]+/g);
-          if(match && match.length) { v_classes.push(match[0].toString())}
-        });
-    return v_classes;
+    if (v.length > 0){
+      var classes = v.attr('class').split(/\s+/) || [];
+      var v_classes = [];
+          $(classes).each( function(i, val) {
+            var match = val.match(/v[0-9]+/g);
+            if(match && match.length) { v_classes.push(match[0].toString())}
+          });
+      return v_classes;
+    } else { return ""; }
   },
 
   // expected to return an array with a single element or more.
@@ -438,7 +440,23 @@ Reader.prototype = {
         e.preventDefault();
 
         var usfm = $(this).data("usfm");
-        thiss.deselectVerse($("#version_primary .verse[data-usfm='" + usfm + "']"));
+
+        var verses = [];
+        if( usfm.indexOf('-') == -1){
+          // single verse
+          verses.push(usfm.split('.')[2]);
+        } else {
+          // verse range
+          var nums = usfm.split('.')[2].split('-');
+          for (var i = nums[0]; i <= nums[1]; i++) {
+           verses.push(i);
+          }
+        }
+
+        $("#version_primary .verse.v" + verses.join(', #version_primary .verse.v')).each( function(){
+          thiss.deselectVerse($(this));
+        });
+
         thiss.parseVerses();
       });
 
