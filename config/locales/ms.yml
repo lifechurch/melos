@@ -118,6 +118,8 @@ ms:
   paginated items shown: "%{first_shown}&ndash;%{last_shown} dari %{total_available}"
   160 character limit: "160 karakter ataupun kurang"
   recent versions: "Baru Diguna"
+  or:
+    lower: "atau"
   likes:
     my likes: "\"Like\" Saya"
     all likes: "Segala \"Like\""
@@ -589,12 +591,6 @@ ms:
       logos: "Pakej Logo YouVersion"
       icons: "Simbol App Injil"
       infographic: "Infografik: Statistik dan Penggunaan App Injil"
-      iphone: "Kutipan Imej: iPhone"
-      ipad: "Kutipan Imej: iPad"
-      android: "Kutipan Imej: Android"
-      blackberry: "Kutipan Imej: Blackberry"
-      win phone 7: "Kutipan Imej: Windows Phone 7"
-      windows 8: "Kutipan Imej: Windows 8"
       lifestyle: "Kutipan Imej: Lifestyle"
       screencast: "Screencast YouVersion"
     links title: "Link Liputan Media"

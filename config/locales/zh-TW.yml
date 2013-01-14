@@ -119,6 +119,8 @@ zh-TW:
   paginated items shown: "%{total_available}中的%{first_shown}&ndash;%{last_shown}"
   160 character limit: "160 個字體或更少"
   recent versions: "最近使用版本"
+  or:
+    lower: "或"
   likes:
     my likes: "我喜歡的"
     all likes: "所有喜歡的"
@@ -591,12 +593,6 @@ zh-TW:
       logos: "YouVersion 圖標集"
       icons: "聖經軟體圖標"
       infographic: "圖表：聖經軟體使用統計"
-      iphone: "圖片集：iPhone"
-      ipad: "圖片集：iPad"
-      android: "圖片集：Android"
-      blackberry: "圖片集：黑莓機"
-      win phone 7: "影像集合: Windows Phone 7"
-      windows 8: "影像集合: Windows 8"
       lifestyle: "圖片集：生活方式"
       screencast: "YouVersion 螢幕截圖"
     links title: "媒體報導鏈結"
@@ -629,6 +625,9 @@ zh-TW:
       title: "抱歉！"
       explanation: "系統出現故障！抱歉給您帶來不便，請嘗試重新載入頁面。"
       our action: "我們已經留意到這個事件並會盡快跟進。"
+    home:
+      hero:
+        start reading: "開始閱讀"
   shared:
     menu_settings:
       title: "閱讀器設定"

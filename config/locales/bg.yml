@@ -119,6 +119,8 @@ bg:
   paginated items shown: "%{first_shown}&ndash;%{last_shown} of %{total_available}"
   160 character limit: "Лимит 160 символа"
   recent versions: "Последно изпозлвани"
+  or:
+    lower: "или"
   likes:
     my likes: "Моите харесвания"
     all likes: "Всички харесвания"
@@ -591,12 +593,6 @@ bg:
       logos: "Лого пакет на YouVersion"
       icons: "Икони на Библията"
       infographic: "Инфорграфия: Статистика и използване на Библейски приложения"
-      iphone: "Галерия: iPhone"
-      ipad: "Галерия: iPad"
-      android: "Галерия: Андроид"
-      blackberry: "Галерия: Блекбери"
-      win phone 7: "Галерия за телефон с Windows 7"
-      windows 8: "Галерия за телефон с Windows 8"
       lifestyle: "Галерия: Lifestyle"
       screencast: "YouVersion скрийнкаст"
     links title: "Връзки на медийното покритие"

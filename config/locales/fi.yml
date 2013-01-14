@@ -119,6 +119,9 @@ fi:
   paginated items shown: "%{first_shown}&ndash;%{last_shown} / %{total_available}"
   160 character limit: "160 merkkiä tai vähemmän"
   recent versions: "Viimeksi käytetty"
+  or:
+    lower: "tai"
+    upper: "TAI"
   likes:
     my likes: "Tykkäämiseni"
     all likes: "Kaikki tykkäämiset"
@@ -132,6 +135,7 @@ fi:
     no community notes: "Yksikään yhteisön tekemä muistiinpano ei viittaa löytämiimme versioihin. Luodaksesi muistiinpanon, valitse Raamatun jae lukijassa ja klikkaa Valittu-painiketta lukijan yläosassa."
     public: "Julkinen"
     private: "Yksityinen"
+    is private: "Valittu muistiinpano on yksityinen."
     draft: "Luonnos"
     creation form errors: "Seuraava virhe (seuraavat virheet) estivät muistiinpanon luomisen:"
     reference field: "Viitteet"
@@ -501,6 +505,11 @@ fi:
     must start to complete: "Aloita tämä suunnitelma tallentaaksesi jo luetut kohdat!"
     invalid reference: "Pahoittelemme, yhtä tämän luvun tekstiviittausta ei löydy valitusta käännöksestä. Valitse toinen käännös yläpuolelta. Jos edelleen näet tämän viestin, ilmoita asiasta <a href='%{support_url}'>tukeemme</a>."
   registration:
+    placeholder:
+      email: "Syötä sähköpostiosoitteesi"
+      username: "Syötä käyttäjänimesi"
+      password: "Syötä salasanasi"
+    with email: "Kirjaudu sähköpostiosoitteellasi"
     with facebook: "Rekisteröidy Facebook-tunnuksilla"
     benefits title: "Ota kaikki irti"
     benefits blurb: "Luomalla YouVersion-tilin saat paljon lisäominaisuuksia, kuten kirjanmerkit ja mahdollisuuden tehdä omia muistiinpanoja. Ne näkyvät kaikissa laitteissasi, joilla olet sisäänkirjautuneena. Tilin avulla on myös helpompaa jakaa Raamatun sanaa ystäviesi kanssa. Rekisteröityminen vie vain pari minuuttia!"
@@ -591,12 +600,7 @@ fi:
       logos: "YouVersionin logopaketti"
       icons: "Raamattusovellus-kuvakkeet"
       infographic: "Kuvaaja: Raamattusovelluksen tilastot ja käyttö"
-      iphone: "Kuvakokoelma: iPhone"
-      ipad: "Kuvakokoelma: iPad"
-      android: "Kuvakokoelma: Android"
-      blackberry: "Kuvakokoelma: BlackBerry"
-      win phone 7: "Kuvakokoelma: Windows Phone 7"
-      windows 8: "Kuvakokoelma: Windows 8"
+      devices: "Kuvakokoelma: Laitteet"
       lifestyle: "Kuvakokoelma: Elämäntapa"
       screencast: "YouVersionin screencast"
     links title: "Medialle"
@@ -629,6 +633,28 @@ fi:
       title: "Oho!"
       explanation: "Jokin meni vikaan! Voit yrittää uudestaan päivittämällä sivun, pahoittelemme vaivaa!"
       our action: "Olemme saaneet tiedon ongelmasta ja käymme sen kimppuun mahdollisimman pian."
+    home:
+      hero:
+        heading: "Ilmainen Raamattu puhelimessasi, tabletissasi ja tietokoneellasi."
+        description: "YouVersion on yksinkertainen, mainoksista vapaa Raamattu, joka tuo Jumalan sanan päivittäiseen elämääsi."
+        learn more: "lisätietoja alla"
+        start reading: "Aloita lukeminen"
+        skip in future: "Ohita tämä sivu tulevaisuudessa"
+        now skipped: "Tämä sivu ohitetaan."
+      features:
+        read heading: "Lue Raamattua."
+        read description: "Valitse <strong>sadoista Raamatun käännöksistä ja kielistä</strong>. Vertaile kahta käännöstä rinnakkain. Voit jopa valita kirjasimen ja sen koon. Tee Raamatun lukemisesta omanlaisesi kokemus."
+        study heading: "Perehdy Raamattuun."
+        study description: "<strong>Korosta</strong> lempivärilläsi, <strong>kirjanmerkitse</strong> lempi jakeesi, tee muistiinpanoja oppimastasi. Et ainoastaan vietä aikaa Jumalan sanan parissa, teet historiaa vuorovaikutuksestasi Raamatun kanssa."
+        subscribe heading: "Kirjaudu Raamatunlukusuunnitelmiin."
+        subscribe description: "Lue koko Raamattu, keskity tiettyihin aihealueisiin tai lue hartauksia lahjakkailta opettajilta. Valitse suunnitelmasi ja löydät joka päivä Raamatun kohdan odottamasta."
+        download heading: "Ota Raamattu mukaasi."
+        download description: "<a href='http://youversion.com/download'>Lataa</a> Raamattusovellus ilmaiseksi mille tahansa mobiililaitteelle. Kun käytät mobiilisovellusta, muistiinpanosi, kirjanmerkkisi, korostuksesi, suunnitelmasi ja paljon muuta synkronoituu automaattisesti kaikille laitteillesi."
+      get started: "Aloita ilmaisen tilin käyttö."
+      word with you: "Jumalan Sana on kanssasi."
+      download action: "Lataa Raamattusovellus"
+      download description: "Lataa ilmainen YouVersionin Raamattusovellus mobiililaitteeseesi ja sinulla on Raamattu mukanasi mihin tahansa menetkin."
+      world installs: "Asentuu ympäri maailmaa"
   shared:
     menu_settings:
       title: "Lukijan asetukset"
@@ -667,3 +693,5 @@ fi:
     number of languages field: "Kieliä yhteensä:"
     language and count: "%{language_name} (%{language_count})"
     public domain: "Tekijänoikeusvapaa"
+    loading: "Ladataan enemmän käännöksiä..."
+    load error: "Käännöksien latauksessa tapahtui valitettavasti virhe. Sulje tämä valikko ja avaa uudestaan."

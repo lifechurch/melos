@@ -119,6 +119,9 @@ pt-BR:
   paginated items shown: "%{first_shown}&ndash;%{last_shown} de %{total_available}"
   160 character limit: "160 caracteres ou menos"
   recent versions: "Usado Recentemente"
+  or:
+    lower: "ou"
+    upper: "OU"
   likes:
     my likes: "Eu Curto"
     all likes: "Tudo o que Curto"
@@ -132,6 +135,7 @@ pt-BR:
     no community notes: "Não foram encontradas anotações comunitárias com referência aos versículos selecionados. Para criar uma anotação, selecione um versículo no leitor da Bíblia e então clique no botão selecionado no topo do leitor. "
     public: "Público"
     private: "Privado"
+    is private: "A anotação solicitada é privada. "
     draft: "Rascunho"
     creation form errors: "O(s) seguinte(s) erro(s) impediu(ram) a criação de sua anotação"
     reference field: "Referência(s):"
@@ -501,6 +505,11 @@ pt-BR:
     must start to complete: "Comece este plano para salvar as leituras completadas!"
     invalid reference: "Desculpe, uma das referências de escritura para esta leitura pode não existir na versão selecionada. Tente selecionar uma versão diferente acima. Se continuar a receber esta mensagem, por favor avise nosso <a href='%{support_url}'>support team</a> sobre este problema. "
   registration:
+    placeholder:
+      email: "Digite seu endereço de e-mail "
+      username: "Digite seu nome de usuário"
+      password: "Digite sua senha "
+    with email: "Cadastre-se usando seu endereço de e-mail "
     with facebook: "Registre-se com Facebook"
     benefits title: "Obtenha a Experiência Completa"
     benefits blurb: "Criar uma conta no YouVersion lhe dá acesso a mais recursos, como marcadores e anotações. Eles aparecerão em qualquer dispositivo em que você estiver conectado. Uma conta também facilita o compartilhamento da Bíblia com amigos, então use um ou dois minutos e se inscreva!"
@@ -591,12 +600,7 @@ pt-BR:
       logos: "Pacote de Logotipos do YouVersion"
       icons: "Ícones do App da Bíblia"
       infographic: "Infográfico: Estatísticas e Uso do Aplicativo da Bíblia"
-      iphone: "Coleção de Imagens: iPhone"
-      ipad: "Coleção de Imagens: iPad"
-      android: "Coleção de Imagens: Android"
-      blackberry: "Coleção de Imagens: BlackBerry"
-      win phone 7: "Coleção de Imagens: Windows 7"
-      windows 8: "Coleção de Imagens: Windows 8"
+      devices: "Coleção de Imagens: Dispositivos "
       lifestyle: "Coleção de Imagens: Lifestyle"
       screencast: "Tutorial do YouVersion"
     links title: "Links de Cobertura de Mídia"
@@ -629,6 +633,28 @@ pt-BR:
       title: "Opa!"
       explanation: "Alguma coisa deu errado! Você pode tentar novamente recarregando a página, nós sentimos muito pelo incoveniente."
       our action: "Fomos notificados sobre isto e solucionaremos o mais breve possível."
+    home:
+      hero:
+        heading: "Uma Bíblia gratuita no seu celular, tablet ou computador. "
+        description: "YouVersion é uma Bíblia simples, sem propagandas, que traz a Palavra de Deus para sua vida diária. "
+        learn more: "saiba mais abaixo "
+        start reading: "Iniciar leitura "
+        skip in future: "Pular esta página no futuro"
+        now skipped: "Esta página não será pulada "
+      features:
+        read heading: "Leia a Bíblia. "
+        read description: "Faça escolha entre <strong>centenas de versões Bíblicas e idiomas</strong>. Compare duas versões lado a lado. Você pode até mesmo escolher a fonte e o tamanho da exibição. Personalize sua experiência online da Bíblia. "
+        study heading: "Estude a Bíblia. "
+        study description: "<strong>Destaque</strong> na sua cor favorita, <strong>marque</strong>seus versículos favoritos, e faça anotações sobre o que você está aprendendo. Você não estará apenas passando um tempo na Palavra de Deus, mas estará construindo uma história de interação com a Bíblia.  "
+        subscribe heading: "Inscreva-se em Planos de Leitura de Bíblia. "
+        subscribe description: "Leia toda a Bíblia, foque em um tópico ou leia um plano devocional de um mestre talentoso. Escolha um plano e a cada dia você encontrará uma seleção da Bíblia esperando por você. "
+        download heading: "Leve a Bíblia com você. "
+        download description: "<a href='https://www.youversion.com/pt-BR/mobile'>Faça o download</a> do App da Bíblia gratuitamente em qualquer dispositivo móvel. Quando você utiliza o app móvel, sua anotações, marcadores, destaques, planos e mais serão automaticamente sincronizados em todos seus dispositivos.  "
+      get started: "Dê início a sua conta gratuita. "
+      word with you: "A Palavra de Deus está com você. "
+      download action: "Baixe o App da Bíblia "
+      download description: "Baixe de forma gratuita o App da Bíblia YouVersion no seu dispositivo móvel e tenha a Bíblia com você não importa aonde vá. "
+      world installs: "Instalações em todo o mundo "
   shared:
     menu_settings:
       title: "Configurações do Leitor "
@@ -667,3 +693,5 @@ pt-BR:
     number of languages field: "Total de Idiomas: "
     language and count: "%{language_name} (%{language_count})"
     public domain: "Domínio Público"
+    loading: "Carregando Mais Versões..."
+    load error: "Desculpe, houve um problema ao carregar mais versões. Feche este menu e reabra para tentar novamente. "

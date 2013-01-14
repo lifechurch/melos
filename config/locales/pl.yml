@@ -119,6 +119,9 @@ pl:
   paginated items shown: "%{first_shown}&ndash;%{last_shown} z %{total_available}"
   160 character limit: "160 znaków lub mniej"
   recent versions: "Ostatnio używane"
+  or:
+    lower: "lub"
+    upper: "LUB"
   likes:
     my likes: "Moje polubione"
     all likes: "Wszystkie polubione"
@@ -132,6 +135,7 @@ pl:
     no community notes: "Nie znaleziono notatek odnoszących się do wybranych wersetów. Aby utworzyć notatkę, wybierz werset w czytniku Biblii i kliknij przycisk Wybrane u góry czytnika."
     public: "Publiczne"
     private: "Prywatne"
+    is private: "Wybrana notatka jest prywatna."
     draft: "Szkic"
     creation form errors: "Poniższe błędy uniemożliwiły utworzenie twojej notatki:"
     reference field: "Odniesienia:"
@@ -501,6 +505,11 @@ pl:
     must start to complete: "Rozpocznij ten plan, aby zapisać przeczytane fragmenty!"
     invalid reference: "Niestety, jedna z referencji do Pisma Świętego z tego planu nie istnieje w wybranym przekładzie. Spróbuj wybrać inny przekład. Jeśli ta wiadomość będzie wciąż wyświetlana, prosimy powiadom nasz <a href='%{support_url}'>zespół wsparcia</a> o tym problemie."
   registration:
+    placeholder:
+      email: "Wprowadź swój adres e-mail"
+      username: "Wprowadź swój login"
+      password: "Wpisz swoje hasło"
+    with email: "Zarejestruj się używając adresu e-mail"
     with facebook: "Zarejestruj się do Facebook'a"
     benefits title: "Doświadcz pełni korzyści"
     benefits blurb: "Utworzenie konta YouVersion daje ci dostęp do większej liczby funkcjonalności jak zakładki czy notatki. Pojawią się one na każdym urządzeniu, z którego się zalogujesz. Konto pomaga również w dzieleniu się Biblią z przyjaciółmi - poświęć więc minutę lub dwie i zarejestruj się!"
@@ -591,12 +600,7 @@ pl:
       logos: "Pakiet logo YouVersion"
       icons: "Ikony Aplikacji Biblii"
       infographic: "Ikonograficzne: Statystyki i użycie Aplikacji Biblii"
-      iphone: "Kolekcja ilustracji: iPhone"
-      ipad: "Kolekcja ilustracji: iPad"
-      android: "Kolekcja ilustracji: Android"
-      blackberry: "Kolekcja ilustracji: BlackBerry"
-      win phone 7: "Kolekcja obrazków: Windows Phone 7"
-      windows 8: "Kolekcja obrazków: Windows 8"
+      devices: "Kolekcja obrazków: Urządzenie"
       lifestyle: "Kolekcja ilustacji: Styl życia"
       screencast: "Screencast YouVersion"
     links title: "Odnośniki do publikacji"
@@ -629,6 +633,28 @@ pl:
       title: "Ups!"
       explanation: "Wystąpił błąd techniczny. Możesz spróbować ponownie poprzez odświeżenie strony. Przepraszamy bardzo za niedogodności."
       our action: "Zostaliśmy powiadomienie i zajmiemy się tym w najbliższym czasie."
+    home:
+      hero:
+        heading: "Darmowa Biblia na twoim telefonie, tablecie i komputerze."
+        description: "YouVersion jest prostą, wolną od reklam Biblią, która wprowadza Słowo Boże w twoje życie. "
+        learn more: "dowiedz się więcej poniżej"
+        start reading: "Rozpocznij czytanie"
+        skip in future: "Pomiń tą stronę w przyszłości"
+        now skipped: "Ta strona nie będzie pominięta."
+      features:
+        read heading: "Czytaj tą Biblię."
+        read description: "Wybieraj spośród <strong>setek przekładów i języków Biblii</strong>. Porównuj dwa przekłady obok siebie. Możesz wybrać czcionkę i jej wielkość. Dostosuj czytanie Biblii on-line do twoich upodobań."
+        study heading: "Studiuj tą Biblię."
+        study description: "<strong>Podkreślaj</strong> w swoim ulubionym kolorze, <strong>zaznaczaj</strong> swoje ulubione wersety i zapisuj notatki o tym czego się nauczyłeś. Nie tylko spędzasz czas ze Słowem Bożym, ale budujesz historię swojej relacji z Biblią."
+        subscribe heading: "Zapisz się do planów Biblii."
+        subscribe description: "Przeglądnij całą Biblię, skup się na temacie lub czytaj przemyślenia uzdolnionych nauczycieli. Wybierz plan a każdego dnia otrzymasz odpowiedni fragment Biblii."
+        download heading: "Weź tą Biblię ze sobą."
+        download description: "<a href='http://youversion.com/download'>Pobierz</a> Aplikację Biblii za darmo na dowolne urządzenie. Używaj aplikacji, notatek, zakładek, podkreśleń, planów czytania i innych funkcji a twoje treści będą automatycznie synchronizowane."
+      get started: "Użyj swojego darmowego konta."
+      word with you: "Słowo Boże jest z tobą."
+      download action: "Pobierz Aplikację Biblii"
+      download description: "Pobierz darmową Aplikację Biblii YouVersion na swoje urządzenie i miej swoją Biblię zawsze ze sobą, gdziekolwiek idziesz."
+      world installs: "Instalacje na świecie"
   shared:
     menu_settings:
       title: "Ustawienia czytnika"
@@ -667,3 +693,5 @@ pl:
     number of languages field: "Łączna ilość języków:"
     language and count: "%{language_name} (%{language_count})"
     public domain: "Domena publiczna"
+    loading: "Ładowanie dodatkowych przekładów..."
+    load error: "Pojawił się problem z ładowaniem przekładów. Zamknij to menu i otwórz ponownie, aby spróbować jeszcze raz."

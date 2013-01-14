@@ -138,7 +138,7 @@ module YouversionWeb
       r301 %r{^/(zh_CN|zh_TW|pt_BR)/(.*)}, Proc.new{ |path, rack_env| "#{path.to_s.sub('_', '-')}" }
       # redirect portugese and espanol URLs (from apps) until we support es-ES
       r301 %r{^/(pt)/(.*)}, '/pt-BR/$2'
-      r301 %r{^/(es_MX|es-MX|es_ES|es-ES)/(.*)}, '/es/$2'
+      r301 %r{^/(es_MX|es-MX)/(.*)}, '/es/$2'
 
       ### Pass-through to 2.0
       # doesn't have SSL cert, use http protocol

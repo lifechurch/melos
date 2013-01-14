@@ -119,6 +119,8 @@ tr:
   paginated items shown: "%{total_available}% öğeden {first_shown}&ndash;%{last_shown}"
   160 character limit: "En fazla 160 karekter"
   recent versions: "En Son Kullanılan"
+  or:
+    lower: "veya"
   likes:
     my likes: "Beğendiklerim"
     all likes: "Bütün Beğendiklerim"
@@ -591,12 +593,6 @@ tr:
       logos: "YouVersion Logo Paketi"
       icons: "Kutsal Kitap Uygulaması Resimleri"
       infographic: "Bilgi Resimi: Kutsal Kitap Uygulamasının İstatistikleri ve Kullanımı"
-      iphone: "Resim Koleksyonu: iPhone"
-      ipad: "Resim Koleksyonu: iPad"
-      android: "Resim Koleksyonu: Android"
-      blackberry: "Resim Koleksyonu: BlackBerry"
-      win phone 7: "Resim Koleksyonu: Windows Phone 7"
-      windows 8: "Resim Koleksyonu: Windows 8"
       lifestyle: "Resim Koleksyonu: Yaşam Tarzı"
       screencast: "YouVersion Ekran Kaydı"
     links title: "Medyada Yer Alma Linkleri"

@@ -119,6 +119,8 @@ sv:
   paginated items shown: "%{first_shown}&ndash;%{last_shown} av %{total_available}"
   160 character limit: "160 tecken eller färre"
   recent versions: "Senast använda"
+  or:
+    lower: "eller"
   likes:
     my likes: "Mina gillade"
     all likes: "Alla gillade"
@@ -132,6 +134,7 @@ sv:
     no community notes: "De valda verserna finns inte med i någon delad anteckning. För att skapa en ny anteckning, välj en vers i bibelläsaren och klicka på knappen Markerat högst upp i läsaren."
     public: "Delad"
     private: "Egen"
+    is private: "Den valda anteckningen är privat."
     draft: "Utkast"
     creation form errors: "Följande fel hindrade dig att skapa din anteckning:"
     reference field: "Referens(er):"
@@ -501,6 +504,11 @@ sv:
     must start to complete: "Starta denna läsplan för att spara utförd läsning!"
     invalid reference: "En av skrifterna refererade för denna läsning verka inte existera i den valda översättningen. Försök att välja en annan översättning ovan. Om du fortsätter se detta meddelande, var snäll och meddela vår <a href='%{support_url}'>supportgrupp</a> om problemet. "
   registration:
+    placeholder:
+      email: "Ange din e-postadress"
+      username: "Ange ditt användarnamn"
+      password: "Ange ditt lösenord"
+    with email: "Registrera dig genom att ange din e-postadress"
     with facebook: "Registrera dig via Facebook"
     benefits title: "Få hela upplevelsen"
     benefits blurb: "Genom att skapa ett YouVersion-konto får du tillgång till fler funktioner som till exempel bokmärken och anteckningar. De kommer att visas på valfri enhet där du är inloggad. Ett konto gör det också enklare att dela Bibeln med dina vänner. Så ge det en minut eller två och registrera dig!"
@@ -591,12 +599,7 @@ sv:
       logos: "YouVersion logotyppaket"
       icons: "Ikoner till Bibelappen"
       infographic: "Informationsgrafik: Statistik och användning för Bibelappen"
-      iphone: "Bildsamling: iPhone"
-      ipad: "Bildsamling: iPad"
-      android: "Bildsamling: Android"
-      blackberry: "Bildsamling: BlackBerry"
-      win phone 7: "Bildsamling: Windows Phone 7"
-      windows 8: "Bildsamling: Windows 8"
+      devices: "Galleri: Enheter"
       lifestyle: "Bildsamling: Livsstil"
       screencast: "YouVersion-presentation"
     links title: "Länkar till media"
@@ -629,6 +632,28 @@ sv:
       title: "Upps!"
       explanation: "Något gick fel bakom kulisserna! Du kan prova igen genom att ladda om sidan, vi är mycket ledsna för besväret!"
       our action: "Vi har meddelats om detta och kommer att ta tag i det så snart som möjligt."
+    home:
+      hero:
+        heading: "En gratis Bibel på din telefon, läsplatta och dator."
+        description: "YouVersion är en enkel, reklamfri Bibelapp som tar Guds Ord in i ditt dagliga liv."
+        learn more: "Lär dig mer nedan"
+        start reading: "Börja läsning"
+        skip in future: "Hoppa över den här sidan i framtiden"
+        now skipped: "Den här sidan hoppas nu över."
+      features:
+        read heading: "Läs Bibeln."
+        read description: "Välj bland <strong> hundratals bibelöversättningar och språk</strong>. Jämför två översättningar sida vid sida. Du kan till och med välja vilket typsnitt och storlek som visas. Anpassa din Bibelupplevelse helt efter din personliga smak."
+        study heading: "Studera Bibeln."
+        study description: "<strong>Markera</strong> i din favoritfärg, <strong>spara</strong> dina favoritverser och anteckna det du lär dig. Du spenderar inte bara tid i Guds Ord, utan du bygger din historia över hur du interagerar med Bibeln."
+        subscribe heading: "Anmäl dig till Bibelplaner."
+        subscribe description: "Läs hela Bibeln, fokusera på ett ämne eller läs en andakt från en begåvad lärare. Välj en plan så har du ett urval ur Bibeln som väntar dig varje dag."
+        download heading: "Ta Bibeln med dig."
+        download description: "<a href='http://youversion.com/download'>Ladda ner</a> Bibel-appen gratis till alla mobila enheter. När du använder den mobila appen så synkroniseras dina anteckningar, bokmärken, markeringar och planer på samtliga dina enheter."
+      get started: "Kom igång med ditt gratis-konto."
+      word with you: "Guds Ord är med dig."
+      download action: "Ladda hem Bibel-appen"
+      download description: "Ladda ner din gratisversion av Bibel-appen i din mobil så har du med dig Bibeln var du än går."
+      world installs: "Installeras runt om i världen"
   shared:
     menu_settings:
       title: "Läsinställningar"
@@ -667,3 +692,5 @@ sv:
     number of languages field: "Totalt antal språk:"
     language and count: "%{language_name} (%{language_count})"
     public domain: "Allmän egendom"
+    loading: "Laddar fler versioner..."
+    load error: "Beklagar, ett problem uppstod och det gick inte att ladda ner fler versioner. Stäng denna meny och starta om för att försöka igen."

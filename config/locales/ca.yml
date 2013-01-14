@@ -119,6 +119,8 @@ ca:
   paginated items shown: "%{first_shown}&ndash;%{last_shown} de %{total_available}"
   160 character limit: "160 caràcters o menys"
   recent versions: "Utilitzat recentment"
+  or:
+    lower: "o"
   likes:
     my likes: "El que m'agrada a mi"
     all likes: "Tots els \"m'agrada\""
@@ -591,12 +593,6 @@ ca:
       logos: "Paquet de logotips de YouVersion"
       icons: "Icones de l'aplicació de la Bíblia"
       infographic: "Infografia: estadístiques i Ús de l'aplicació de la Bíblia"
-      iphone: "Col·lecció d'imatges: iPhone"
-      ipad: "Col·lecció d'imatges: iPad"
-      android: "Col·lecció d'imatges: Android"
-      blackberry: "Col·lecció d'imatges: BlackBerry"
-      win phone 7: "Col·lecció d'imatges: Windows Phone 7"
-      windows 8: "Col·lecció d'imatges: Windows 8"
       lifestyle: "Col·lecció d'imatges: estil de vida"
       screencast: "Captura de pantalla de YouVersion"
     links title: "Enllaços per als mitjans de cobertura"
