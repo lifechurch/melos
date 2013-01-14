@@ -98,6 +98,6 @@ class ReferencesController < ApplicationController
         @alt_reference = @reference = default_reference
       end
 
-      render :invalid_ref, status: 404
+      render :invalid_ref, status: 404, locals: {reference: @reference, version: @version, alt_version: @alt_version}
     end
 end

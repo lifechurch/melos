@@ -1,7 +1,7 @@
 - @title = t("ref.invalid chapter title")
 - @share_menu = false
 - @verse_modals = false
-= render partial: 'reader_header'
+= render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: @presenter}
 
 - content_for :additional_meta do
   %meta{name: "robots", content: "noindex"}
@@ -14,13 +14,13 @@
       %button{style: "margin-left:-68px"}= t("ref.select another chapter")
 
 %footer
-  - if @version.has_publisher?
+  - if version.has_publisher?
     .publisher.as_table
       .vcenter
         .courtesy
-          %strong= t("versions.courtesy of", abbreviation: @version.abbreviation, publisher: @version.publisher.name) if @version.blurb
-        .blurb= (@version.blurb || @version.copyright).try :html_safe
+          %strong= t("versions.courtesy of", abbreviation: version.abbreviation, publisher: version.publisher.name) if version.blurb
+        .blurb= (version.blurb || version.copyright).try :html_safe
       .vcenter
-        =link_to t('versions.learn more'), @version.url || version_path(@version), class: 'button'
+        =link_to t('versions.learn more'), version.url || version_path(version), class: 'button'
 
 = render partial: "js"
