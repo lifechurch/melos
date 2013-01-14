@@ -63,5 +63,11 @@ module Presenter
       false
     end
 
+    # Default implementation for note for verse actions menu
+    #
+    def note
+      Note.new()
+    end
+
   end
 end

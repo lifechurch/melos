@@ -75,11 +75,17 @@ module Presenter
       true
     end
 
+    def note
+      Note.new(version_id: subscription.version_id)
+    end
+
 
     # implementation for Presenter::ReaderInterface method
     def modal_verse
       nil
     end
+
+
 
   end
 end
