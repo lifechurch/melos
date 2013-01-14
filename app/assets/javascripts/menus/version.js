@@ -101,9 +101,10 @@ VersionMenu.prototype = {
       this.triggers.unbind('click', $.proxy(thiss.loadVersions, thiss));
       return;
     }
-
+    var context = "";
+    if (reader.version) {context = "?context_version=" + reader.version;}
     $.ajax({
-      url: "/versions",
+      url: "/versions" + context,
       method: "get",
       dataType: "json",
       success: function(languageGroups) {
