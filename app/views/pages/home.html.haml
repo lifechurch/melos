@@ -83,7 +83,8 @@
 
     .bottom_cta
       %div
-        %h2= t(".word with you")
+        - style = "background-image: url(#{image_path(localized_bible_icon)})" if localized_bible_icon
+        %h2{style: style}= t(".word with you")
         %p= t(".download description")
         %span.counter#download-counter
           %p &nbsp;
