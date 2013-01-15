@@ -23,3 +23,16 @@
       %li#nav_mobile_mobile
         %a.icon{:href => '/mobile'}
           %span=t("mobile apps")
+  %nav
+    %ul
+      - if current_auth
+        %li#nav_mobile_sign_out
+          %a{:href => sign_out_path}
+            =t("sign out")
+      - else
+        %li#nav_mobile_sign_in
+          %a{:href => sign_in_path(redirect: params[:redirect])}
+            =t("sign in")
+        %li#nav_mobile_sign_up
+          %a{:href => sign_up_path(redirect: params[:redirect])}
+            =t("sign up")
