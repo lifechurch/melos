@@ -10,7 +10,7 @@
   .widget.widget-notice
     %p
       = t("plans.sidebar notice")
-      %span= link_to("Close", shelf_user_subscription_path(current_user, subscription), method: :post)
+      %span.exit= link_to("Exit", shelf_user_subscription_path(current_user, subscription), method: :post)
 
   .widget
     %header
