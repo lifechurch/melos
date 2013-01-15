@@ -17,6 +17,7 @@ function SelectedMenu( opts ) {
   this.initPanes(); // setup our pane actions / handlers
 
   this.highlight_pane      = new HighlightPane("#highlight-pane");
+  this.mobile_highlight_pane = new HighlightPane("div.color_toolbar");
   this.bookmark_pane       = new BookmarkPane("#bookmark-pane");
   this.share_pane          = new SharePane("#share-pane");
   this.link_pane           = new LinkPane("#link-pane");

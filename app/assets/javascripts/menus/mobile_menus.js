@@ -158,11 +158,9 @@ MobileMenus.prototype = {
 
         thiss.versionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass(this.openFlag);
     });
-
     // Version menu close trigger
     $('.version_close_btn').click(function(e){
         e.preventDefault();
-
         thiss.versionMenu.fadeOut('fast').removeClass('open');
         $(document).scrollTop(0);
         $('.version_close_btn').toggleClass('selected');

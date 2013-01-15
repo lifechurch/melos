@@ -3,14 +3,6 @@
 // reference:
 // alt_version:
 
-- content_for :mobile_right_nav do
-  %a.version_btn{:href => 'javascript:void(0);'}
-    = version.abbreviation
-  %span.right_btn_slice
-
-- content_for :title do
-  = link_to(reference.human, 'javascript:void(0);')
-
 .mobile
   %div.verse_toolbar
     %nav

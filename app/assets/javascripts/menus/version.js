@@ -31,6 +31,7 @@ VersionMenu.prototype = {
     var _this = this;
     this.menu.find('a').unbind('click');
     this.menu.find('a').bind('click', (function(e) {
+
       e.preventDefault();
 
       // Todo: refactor
