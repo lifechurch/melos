@@ -324,7 +324,7 @@ p
     padding-left: 65px
     font: 50px 'RobotoLight', Arial, sans-serif
     letter-spacing: -.05em
-    background: image-url("Bible-app-icon-english-50x50.png") no-repeat 0 52%
+    background: image-url("Bible-app-icon-en-small.png") no-repeat 0 52%
 
 #footer
   padding: 20px 10px
@@ -544,13 +544,13 @@ p
           p
             display: block
             padding-right: 70px
-            background: image-url("Bible-app-icon-english-50x50.png") no-repeat top right
+            background: image-url("Bible-app-icon-en-small.png") no-repeat top right
           span
             p
               background: transparent
         h2
           font-size: 39px
-          background: transparent
+          background: transparent !important
           padding: 0
         h2, p
           width: auto
@@ -596,3 +596,6 @@ p
 #footer
   margin-top: 10px
 
+@media only screen and (min-width: 481px)
+  #main article .bottom_cta div:first-child p
+    background: transparent !important

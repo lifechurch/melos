@@ -85,7 +85,7 @@
       %div
         - style = "background-image: url(#{image_path(localized_bible_icon)})" if localized_bible_icon
         %h2{style: style}= t(".word with you")
-        %p= t(".download description")
+        %p{style: style}= t(".download description")
         %span.counter#download-counter
           %p &nbsp;
           %p= t(".world installs")

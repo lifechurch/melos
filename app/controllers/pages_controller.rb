@@ -54,15 +54,15 @@ class PagesController < ApplicationController
   end
 
   def localized_bible_icon
-    # the following localizations have a 50x50 asset localized
-    # add a new code here if you have added the image asset
-    # as named below
+    # the following localizations have a 50x50 or slightly larger
+    # asset localized. Add a new code here if you have
+    # added the image asset as named below
     if [:km, :af, :ar, :nl, :en, :tl, :fi, :fr, :de, :hu,
         :ko, :ms, :no, :pl, :"pt-BR", :"pt-PT", :ro, :ru,
         :"zh-CN", :sk, :es, :sv, :zh_TW, :uk, :bg, :ca,
         :"en-GB", :"es-ES", :hi, :id, :it, :ja, :mk, :mn,
         :sq, :tr, :vi].include? I18n.locale
-      "Bible-app-icon-#{I18n.locale}-50x50.png"
+      "Bible-app-icon-#{I18n.locale}-small.png"
     end
   end
 end
