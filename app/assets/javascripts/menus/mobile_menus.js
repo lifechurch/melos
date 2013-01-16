@@ -91,7 +91,7 @@ MobileMenus.prototype = {
         e.preventDefault();
         var $this = $(this);
 
-        thiss.colorMenu.stop().animate({ top : '-155px'}, 400, function(){
+        thiss.colorMenu.stop().animate({ top : '-329px'}, 400, function(){
             thiss.navItems.stop().animate({ top : '0px'}, 400).addClass(thiss.openFlag);
         }).removeClass('open');
     });
