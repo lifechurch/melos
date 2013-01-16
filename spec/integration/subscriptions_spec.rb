@@ -12,7 +12,6 @@ end
 def should_have_settings_sidebar
   page.find("#sidebar").should have_link("Calendar")
   page.find("#sidebar").should have_link("Settings")
-  page.find("#sidebar").should have_link("View Today's Reading", :href => "#{test_user_base_url}#{url}")
 end
 
 def should_have_reader_sidebar
@@ -65,7 +64,7 @@ feature "Subscriptions", js: true do
       scenario "start, visit, complete and uncomplete a reading" do
         start_subscription
         visit "#{test_user_base_url}#{url}?day=1"
-          list = page.find("#sb-subscription div.widget.fix ul")
+          list = page.find("#sb-subscription div.widget ul")
           list.should have_content("Genesis 1")
           list.should have_content("Genesis 2")
           list.should have_content("Matthew 1")
@@ -143,13 +142,8 @@ feature "Subscriptions", js: true do
       visit url
         page.find("#subscription-start").click
 
-      # Sidebar should have devotional link
-      visit "#{test_user_base_url}#{url}?day=1"
-        page.find("#sidebar").should have_link("Devotional")
-
       # Page should have devotional content
-      visit "#{test_user_base_url}#{url}/devotional?day=1"
-        page.should have_content("Gravity - Lecrae") # Devotional heading
+      page.should have_content("Gravity - Lecrae") # Devotional heading
 
       # quit subscription
       visit "#{test_user_base_url}#{url}/edit"
