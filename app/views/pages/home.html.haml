@@ -13,7 +13,9 @@
 
         %span
           = link_to(t(".hero.start reading"), bible_path, class: 'cta')
+          &nbsp;
           = t("or.lower")
+          &nbsp;
           = link_to(t(".hero.learn more"),"#scroll-point", id: "scroll-anchor" )
         %form
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
@@ -30,6 +32,8 @@
               var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
               po.src = 'https://apis.google.com/js/plusone.js';
               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    .hero_pics
+      &nbsp;
     %ul
       %li.read_bible.first#scroll-point
         %div.pod_content
@@ -83,14 +87,15 @@
 
     .bottom_cta
       %div
-        - style = "background-image: url(#{image_path(localized_bible_icon)})" if localized_bible_icon
-        %h2{style: style}= t(".word with you")
-        %p{style: style}= t(".download description")
-        %span.counter#download-counter
-          %p &nbsp;
-          %p= t(".world installs")
-      %div
-        = link_to(t(".download action"), 'http://youversion.com/download')
+        %div
+          - style = "background-image: url(#{image_path(localized_bible_icon)})" if localized_bible_icon
+          %h2{style: style}= t(".word with you")
+          %p{style: style}= t(".download description")
+          %span.counter#download-counter
+            %p &nbsp;
+            %p= t(".world installs")
+        %div
+          = link_to(t(".download action"), 'http://youversion.com/download')
 
 - content_for :javascripts do
   :javascript
