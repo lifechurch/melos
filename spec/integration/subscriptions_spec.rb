@@ -25,10 +25,14 @@ end
 feature "Subscriptions", js: true do
 
   describe "when signed in" do
+    before :all do
+      @user = ensure_user
+    end
 
     before :each do
-      # Given I an on the chapter page for KJV John 1
-      login_test_user
+      # not sure why this has to be in :each and not :all
+      # maybe a race condition?
+      sign_in_user! @user
     end
 
     describe "core actions" do
