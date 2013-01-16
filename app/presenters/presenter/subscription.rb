@@ -49,6 +49,10 @@ module Presenter
       reading.references[content_page].ref.is_chapter?
     end
 
+    def is_chapter?
+      reading.references[content_page].ref.is_chapter?
+    end
+
     # implementation for Presenter::ReaderInterface method
     # subscription.reference will always be a chapter ref
     # this is so we can display the whole chapter in the reader

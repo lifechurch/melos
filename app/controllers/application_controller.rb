@@ -368,6 +368,7 @@ class ApplicationController < ActionController::Base
     # Find recent version that is not the current version and includes ref.
     recent = recent_versions.find{|v| v.to_param != current_version && v.include?(ref)}
     cookies[:alt_version] = recent.to_param if recent
+
     # Nothing? Okay let's call sample_for with locale, version and validating ref
     cookies[:alt_version] ||= Version.sample_for((params[:locale] || "en"), except: current_version, has_ref: ref)
     # Still nothing? Let's fall back to KJV.  This is secondary version that they can switch at any time.
