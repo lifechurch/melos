@@ -102,7 +102,7 @@ MobileMenus.prototype = {
 
     // Reference createBookmark
     $('.mobile .verse_toolbar .bookmark_btn').click(function () {
-      var form = $('#menu_bookmark #bookmark-pane form');
+      var form = $('#menu_verse_actions #bookmark-pane form');
       form.attr('action', $(this).attr('data-action'));
       form.attr('method', $(this).attr('data-method'));
       form.find('*[type="submit"]').click();
@@ -123,7 +123,7 @@ MobileMenus.prototype = {
 
     // createShare
     $('.mobile .verse_toolbar .share_btn').click(function () {
-      var form = $('#menu_bookmark #share-pane form');
+      var form = $('#menu_verse_actions #share-pane form');
       form.attr('action', $(this).attr('data-action'));
       form.attr('method', $(this).attr('data-method'));
       form.submit();

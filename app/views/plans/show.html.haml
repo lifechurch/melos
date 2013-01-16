@@ -6,7 +6,7 @@
 - content_for :mobile_right_nav do
   - if current_auth
     - if current_user.try(:"subscribed_to?", @plan)
-      = link_to t("plan settings"), edit_user_subscription_path(current_user,plan_id: @plan.to_param), class: "settings_btn"
+      = link_to t("plan settings"), edit_user_subscription_path(current_user, plan_id: @plan.to_param), class: "settings_btn"
     - else
       = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "save_btn", method: :post)
   - else
