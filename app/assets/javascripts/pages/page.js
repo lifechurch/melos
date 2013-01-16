@@ -25,8 +25,8 @@ function Page() {
   this.initRadiosAndChecks();
   this.initProgressBars();
   this.initInplaceConfirms();
-  this.fixWidgetLast();
-  this.fixWidgetHeader();
+  //this.fixWidgetLast();
+  //this.fixWidgetHeader();
 }
 
 Page.prototype = {

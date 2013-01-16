@@ -7,12 +7,12 @@
 - content_page  = presenter.content_page
 
 #sb-subscription
-  .widget.widget-notice
+  .widget.widget-notice.widget_last_fixed{style: "width:268px;"}
     %p
       = t("plans.sidebar notice")
       %span.exit= link_to("Exit", shelf_user_subscription_path(current_user, subscription), method: :post)
 
-  .widget
+  .widget{style: "margin-top:54px;"}
     %header
       - settings_text = t("settings")
       =link_to(edit_user_subscription_path(current_user,subscription),{class: "settings", title: settings_text}) do
