@@ -170,22 +170,27 @@
   background: image-url("nav_search.gif") 5px 8px no-repeat
 
 #header #page_title
-  width: auto
-  color: #999 !important
+  color: #fff !important
   text-shadow: none !important
   float: left
   width: auto
-  text-align: center
-  background: image-url("mobile/nav_button_bg.png") 0px 8px no-repeat
+  max-width: 205px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  padding-left: 0px
 
 #header #page_title a
-  padding: 15px 7px 7px 0px
+  padding: 14px 5px 8px 8px
   height: 15px
+  display: block
+  float: left
   font-size: 15px
   max-width: 205px
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
+  background: image-url("mobile/nav_button_bg.png") 0px 8px no-repeat
 
 #header nav.right_nav
   float: right

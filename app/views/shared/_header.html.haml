@@ -42,7 +42,6 @@
           View Navigation
       - if content_for? :title
         %h1#page_title= yield :title
-        %span.right_btn_slice
       - if content_for? :mobile_right_nav
         %nav.right_nav
           - if content_for? :mobile_subscription_nav

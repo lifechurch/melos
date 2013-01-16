@@ -19,8 +19,4 @@
     %meta{name: "twitter:description",  content: truncate(@presenter.modal_verse.content(as: :plaintext), length: 200, separator: " ")}
     %meta{name: "twitter:site",         content: "@YouVersion"}
 
-- if current_auth && client_settings.subscription_state?
-  - content_for :mobile_subscription_nav do
-    %a.subscription_btn{:href => 'javascript:void(0);'}
-
 = render partial: 'reader', locals: {presenter: @presenter}
