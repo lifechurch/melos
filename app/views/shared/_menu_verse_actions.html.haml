@@ -25,7 +25,7 @@
             %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
             %span
             - if current_auth
-              %span.ajax_me{"data-ajax" => highlight_colors_path}
+              %span.ajax_me{"data-ajax" => highlight_colors_path, "data-dup" => "#dup_mobile_highlights"}
                 = render partial: "users/highlight_color_swatches"
             - else
               %span
