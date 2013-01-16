@@ -310,10 +310,19 @@ class ApplicationController < ActionController::Base
       begin
         # validate that the preferred secondary version has the reference in question
         includes_ref = Version.find(cookies[:alt_version]).include?(ref)
+
+      # Catch versions that don't exist and raise proper error
+      rescue NotAVersionError
+        cookies[:alt_version] = nil # nuke the bad cookie. BAD COOKIE!
+        raise NoSecondaryVersionError
+
+      # rescue anything else, nuke cookie
       rescue
-        # bad version was in cookie, nuke it
-        cookies[:alt_version] = nil
+        cookies[:alt_version] = nil # nuke the bad cookie. BAD COOKIE!
       end
+
+      # We've got a valid version, but it doesn't include the requested reference
+      # ex: Gen 1 for BOOKS version.  Valid version, invalid reference.
       raise BadSecondaryVersionError unless includes_ref
     end
 
@@ -322,8 +331,6 @@ class ApplicationController < ActionController::Base
     # new user or bad version was in cookie
     recent = recent_versions.find{|v| v.to_param != current_version && v.include?(ref)}
     cookies[:alt_version] = recent.to_param if recent
-
-    #raise NoSecondaryVersionError if (Version.all(params[:locale] || "en").map(&:to_param)-[current_version]).empty?
     cookies[:alt_version] ||= Version.sample_for((params[:locale] || "en"), except: current_version, has_ref: ref)
 
     raise NoSecondaryVersionError if cookies[:alt_version].blank?

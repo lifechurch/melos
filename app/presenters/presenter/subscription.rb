@@ -40,7 +40,14 @@ module Presenter
       return @content_page
     end
 
+    def is_chapter?
+      reading.references[content_page].ref.is_chapter?
+    end
+
     # implementation for Presenter::ReaderInterface method
+    # subscription.reference will always be a chapter ref
+    # this is so we can display the whole chapter in the reader
+    # and then focus only the verses we need to later.
     def reference
       unless reading.references.empty?
         ref_with_verses = reading.references[content_page].ref

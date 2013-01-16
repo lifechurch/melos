@@ -8,7 +8,7 @@ class ReferencesController < ApplicationController
     # Set HTML classes for full screen/parallel
 
     client_settings.reader_full_screen = 1 if params[:full_screen]
-    @presenter          = Presenter::Reference.new(params,self)
+    @presenter = Presenter::Reference.new(params,self)
     set_sidebar_for_state(default_to: Presenter::Sidebar::Reference.new(params,self))
   end
 
@@ -63,41 +63,46 @@ class ReferencesController < ApplicationController
   end
 
   protected
-    def ref_not_found(ex)
-      @highlight_colors = User.highlight_colors rescue []
-      @note = Note.new
+    def ref_not_found(exception)
 
-      if ex.is_a? BadSecondaryVersionError
-        @alt_version = Version.find(cookies[:alt_version])
-        @alt_reference = Hashie::Mash.new({content: "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"})
-        return render :show if @reference.valid?
+      if exception.is_a? BadSecondaryVersionError
+        @presenter = Presenter::Reference.new(params,self, {
+          alt_version: Version.find(cookies[:alt_version]),
+          alt_reference: Hashie::Mash.new({content: "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"})
+        })
+        return render :show if @presenter.reference.valid?
       end
 
-      if ex.is_a? NoSecondaryVersionError
-        @alt_version = @version
-        @alt_reference = Hashie::Mash.new({content: "<h1>#{t('ref.no secondary version title')}</h1> <p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"})
-        return render :show if @reference.valid?
-      end
+      if exception.is_a? NoSecondaryVersionError
+        @presenter = Presenter::Reference.new(params,self, {
+          alt_version: Version.find(1),
+          alt_reference: Hashie::Mash.new({content: "<h1>#{t('ref.no secondary version title')}</h1> <p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"})
+        })
+        # TODO: temporary hack until we can simply set both version and alt_version
+        # initially set version above to KJV, which is valid, then reassign to @presenter.version
+        @presenter.alt_version = @presenter.version
 
-      #we don't need to report these types of 404's as long as we have the right redirects.
-      #report_exception(ex, self, request)
+        return render :show if @presenter.reference.valid?
+      end
 
       #force to be in non-parallel/fullscreen mode for Ref_not_found
       client_settings.reader_full_screen = nil
       client_settings.reader_parallel_mode = nil
 
-      @version = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
-      @alt_version ||= @version
+      # Setup defaults
+      # ------------------------------------------------------------------------------------------------------
+      # try to validate reference against default version to show the reference title as it would be displayed in a valid version
+        alt_reference = reference = Reference.new( params[:reference], version: Version.default ) rescue nil
 
-      # try to validate reference against default version
-      # to show the reference title as it would be displayed in a valid version
-      @alt_reference = @reference = Reference.new( params[:reference], version: Version.default ) rescue nil
+      # completely invalid reference, just fake it
+        alt_reference = reference = default_reference unless reference.try :valid?
 
-      unless @reference.try :valid?
-        # completely invalid reference, just fake it
-        @alt_reference = @reference = default_reference
-      end
+      @presenter = Presenter::InvalidReference.new(params,self)
+        @presenter.version        = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
+        @presenter.alt_version    = Version.find(cookies[:alt_version]) || @presenter.version
+        @presenter.reference      = reference
+        @presenter.alt_reference  = alt_reference
 
-      render :invalid_ref, status: 404, locals: {reference: @reference, version: @version, alt_version: @alt_version}
+      render :invalid_ref, status: 404, locals: {presenter: @presenter}
     end
 end

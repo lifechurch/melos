@@ -3,7 +3,10 @@ module Presenter
 
     include Presenter::ReaderInterface
 
-    def initialize( params = {}, controller = nil)
+    attr_accessor :reference, :alt_reference, :version, :alt_version
+
+
+    def initialize( params = {}, controller = nil, opts = {})
       super(params,controller)
       # render last read or default if no reference specified
       # This allows for root to give better meta (SEO)
@@ -11,9 +14,15 @@ module Presenter
       ref_param = params[:reference] || controller.send(:last_read).try(:to_param) || controller.send(:default_reference).try(:to_param)
       @reference_string = YouVersion::ReferenceString.new( ref_param )
 
-      reference_hash[:version] = params[:version]
       # override the version in the reference param with the explicit version in the URL
       # this is a temporary hack until Version/Reference class clean-up
+      reference_hash[:version] = params[:version]
+
+
+      @reference     = ::Reference.new(reference_hash.except(:verses))
+      @version       = Version.find(reference.version)
+      @alt_version   = opts[:alt_version]   || Version.find(controller.send(:alt_version,reference))
+      @alt_reference = opts[:alt_reference] || ::Reference.new(reference, version: alt_version)
     end
 
     def reference_string
@@ -27,26 +36,6 @@ module Presenter
     def note
       # Create an empty note for the note sidebar widget
       @note ||= Note.new(version_id: version.id)
-    end
-
-    # implementation for Presenter::ReaderInterface method
-    def version
-      @version ||= Version.find(reference.version)
-    end
-
-    # implementation for Presenter::ReaderInterface method
-    def alt_version
-      @alt_version ||= Version.find(controller.send(:alt_version,reference))
-    end
-
-    # implementation for Presenter::ReaderInterface method
-    def reference
-      @reference ||= ::Reference.new(reference_hash.except(:verses))
-    end
-
-    # implementation for Presenter::ReaderInterface method
-    def alt_reference
-      @alt_reference ||= ::Reference.new(reference, version: alt_version)
     end
 
     # implementation for Presenter::ReaderInterface method

@@ -8,8 +8,8 @@
 - @is_reader = true
 - @canonical = bible_url(@reference)
 - @html_classes = []
-- @html_classes << "full_screen" if client_settings.reader_full_screen
-- @html_classes << "full_screen" << "parallel_mode" if client_settings.reader_parallel_mode
+- @html_classes << "full_screen" if client_settings.reader_full_screen.present?
+- @html_classes << "full_screen" << "parallel_mode" if client_settings.reader_parallel_mode.present?
 
 - if @presenter.modal_verse.present?
   - content_for :additional_meta do

@@ -1,6 +1,10 @@
 - @title = t("ref.invalid chapter title")
 - @share_menu = false
 - @verse_modals = false
+- version = presenter.version
+- reference = presenter.reference
+- alt_version = presenter.alt_version
+
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: @presenter}
 
 - content_for :additional_meta do
@@ -23,4 +27,4 @@
       .vcenter
         =link_to t('versions.learn more'), version.url || version_path(version), class: 'button'
 
-= render partial: "js"
+= render partial: "/references/js", locals: {presenter: @presenter}
