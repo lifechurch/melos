@@ -398,18 +398,16 @@ Page.prototype = {
 
     $(".ajax_me").each(function() {
       var that = $(this);
-      console.log("-------------");
-      if (that.attr('data-dup')){ console.log('yep'); console.log(that.add(that.attr('data-dup'))); }
-      console.log(that);
-      console.log(that.length);
+      var targets = that;
+      if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
       $.ajax({
         url: that.data('ajax'),
         method: "get",
         dataType: "html",
         success: function(data) {
-          that.fadeOut(200, function() {
-            that.html(data);
-            that.fadeIn(200);
+          targets.fadeOut(200, function() {
+            targets.html(data);
+            targets.fadeIn(200);
           });
         },
         error: function(req, status, err) {

@@ -118,9 +118,8 @@ Reader.prototype = {
 
     // fire initial events
     if (this.numSelectedVerses() >= 1){
-      $(this.primary).trigger("verses:first_selected"); console.log('first verse');
+      $(this.primary).trigger("verses:first_selected");
       $(this.primary).trigger("verses:selected");
-      console.log('verse');
     }
   },
 
@@ -154,15 +153,15 @@ Reader.prototype = {
       $(".verse." + val ).removeClass("selected");
     });
     $(this.primary).trigger("verses:deselected");
-    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected");  console.log('no verses');}
+    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected"); }
   },
 
   selectVerse : function( v ) {
     $(this.parseVerseClasses(v)).each( function(i,val) {
       $(".verse." + val ).addClass("selected");
     });
-    if (this.numSelectedVerses() == 1){ $(this.primary).trigger("verses:first_selected"); console.log('first verse');}
-    if (this.numSelectedVerses()){ $(this.primary).trigger("verses:selected");  console.log('verse');}
+    if (this.numSelectedVerses() == 1){ $(this.primary).trigger("verses:first_selected"); }
+    if (this.numSelectedVerses()){ $(this.primary).trigger("verses:selected"); }
   },
 
   isSelected : function( v ) {
@@ -176,7 +175,7 @@ Reader.prototype = {
     // Public: clear all selected verses.
   clearSelectedVerses : function() {
     this.allSelectedVerses().removeClass('selected');
-    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected");  console.log('no verses');}
+    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected"); }
     this.parseVerses();
   },
 

@@ -112,7 +112,6 @@ SelectedMenu.prototype = {
 
         // bind escape key to close the pane
         $(document).on("keydown", $.proxy(function(e) {
-          console.log('keydown');
           if (e.keyCode === 27) { // 27 === Escape key
             e.preventDefault();
             this.closePanes();
@@ -159,8 +158,6 @@ SelectedMenu.prototype = {
 
       // put readerHeader margin back
       var newMargin = reader.header.outerHeight() + thiss.menu.height();
-      console.log(thiss.readerArticle);
-      console.log(newMargin);
       thiss.readerArticle.stop().animate({ marginTop : newMargin}, speed);
     }
   },
@@ -219,13 +216,13 @@ SelectedMenu.prototype = {
         // bind mobile menu events, giving their handler's the Selected context via $.proxy
             $('#version_primary').bind("verses:first_selected", $.proxy(thiss.open_mobile, thiss));
             $('#version_primary').bind("verses:all_deselected", $.proxy(thiss.close_mobile, thiss));
-            console.log('mobile entered');
+            // console.log('mobile entered');
       },
       exit: function() {
         // unbind mobile menu events, giving their handler's the Selected context via $.proxy
             $('#version_primary').unbind("verses:first_selected", $.proxy(thiss.open_mobile, thiss));
             $('#version_primary').unbind("verses:all_deselected", $.proxy(thiss.close_mobile, thiss));
-            console.log('mobile exited');
+            // console.log('mobile exited');
       }
     });
   }
