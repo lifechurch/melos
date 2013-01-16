@@ -21,7 +21,7 @@
           %a.icon{:href => user_path(current_auth.username)}
             %span=t("Profile")
       %li#nav_mobile_live
-        %a.icon{:href => "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"}
+        %a.icon{:href => "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale.to_s + "." : "").downcase.gsub("_", "-")}m.youversion.com/live"}
           %span=t("live")
       %li#nav_mobile_mobile
         %a.icon{:href => '/mobile'}
