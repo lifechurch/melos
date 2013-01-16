@@ -1,2 +1,2 @@
-- User.highlight_colors(auth: current_auth).slice(0,10).each_with_index do |c,i| #room for 10 highlights in menu, 10th will be hidden by JS if clear is there
+- User.highlight_colors(auth: (auth rescue nil)).slice(0,10).each_with_index do |c,i| #room for 10 highlights in menu, 10th will be hidden by JS if clear is there
   %button{:type => "submit", :name => "highlight[color]", :value => c, :class => "color", :id => "highlight_#{i}", :href => "#", :style => "background-color:##{c}"}

@@ -405,8 +405,7 @@ class UsersController < ApplicationController
   end
 
   def highlight_colors
-    @highlight_colors = User.highlight_colors(auth: current_auth)
-    render partial: "users/highlight_color_swatches", layout: false
+    render partial: "users/highlight_color_swatches", layout: false, locals: {auth: current_auth}
   end
 
 
