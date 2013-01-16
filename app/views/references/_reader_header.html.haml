@@ -10,22 +10,6 @@
       %a.submenu_btn.highlight_btn{href: 'javascript:void(0);'}
       %a.submenu_btn.note_btn{href: 'javascript:void(0);', "data-action" => new_note_path, "data-method" => 'GET'}
       %a.submenu_btn.share_btn{href: 'javascript:void(0);', "data-action" => new_share_path, "data-method" => 'GET'}
-      //%a.close_btn.menu_close#clear_selected_verses{href: 'javascript:void(0);'}
-      %br.clear
-      %div.close_tab
-        %span.first
-        %div.mid
-          %a.menu_close
-        %span.last
-
-  %div.share_toolbar
-    %nav
-      %a.tertiary_btn.facebook_btn
-      %a.tertiary_btn.twitter_btn
-      %a.tertiary_btn.text_btn
-      %a.tertiary_btn.email_btn
-      %a.tertiary_btn.new_page_btn
-  %div.clear
 
   %div.color_toolbar
     %nav
@@ -54,7 +38,7 @@
           %a.menu_close.highlight_close_btn
         %span.last
 
-
+.mobile
   %div.nav_items{class: reference.audio ? nil : "audio-disabled"}
     %span.first
     %ul

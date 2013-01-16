@@ -23,6 +23,8 @@ function SelectedMenu( opts ) {
   this.link_pane           = new LinkPane("#link-pane");
   this.note_pane           = new NotePane("#note-pane");
 
+  this.initMobile();
+
   this.clear_trigger.on("click",$.proxy(function(e) {
     e.preventDefault();
     $(this).trigger("verses:clear");
@@ -110,6 +112,7 @@ SelectedMenu.prototype = {
 
         // bind escape key to close the pane
         $(document).on("keydown", $.proxy(function(e) {
+          console.log('keydown');
           if (e.keyCode === 27) { // 27 === Escape key
             e.preventDefault();
             this.closePanes();
@@ -156,6 +159,8 @@ SelectedMenu.prototype = {
 
       // put readerHeader margin back
       var newMargin = reader.header.outerHeight() + thiss.menu.height();
+      console.log(thiss.readerArticle);
+      console.log(newMargin);
       thiss.readerArticle.stop().animate({ marginTop : newMargin}, speed);
     }
   },
@@ -203,12 +208,6 @@ SelectedMenu.prototype = {
         $(this).removeClass('open');
         $('.nav_items').stop().animate({ 'top' : '0px'}, 200);
     });
-  },
-
-  close : function() {
-    this.trigger.parent('li').removeClass('li_active');
-    $("#li_selected_verses").removeClass("li_active");
-    this.menu.hide();
   },
 
   initMobile : function() {
