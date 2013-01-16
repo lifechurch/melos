@@ -7,7 +7,7 @@
   %p
     = f.label :username, t("users.user name")
     %br
-    = f.text_field :username
+    = f.text_field :username, {autocorrect: "off", autocapitalize: "off"}
   %p
     = f.label :password, t("password prompt")
     %br
