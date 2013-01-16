@@ -91,10 +91,10 @@ class ApplicationController < ActionController::Base
   def set_sidebar_for_state(options={})
     if current_auth && client_settings.subscription_state?
       sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
-      @sb_presenter = Presenter::Sidebar::Subscription.new(sub , params, self)
-    else
-      @sb_presenter = options[:default_to]
+      # user may have unsubscribed elsewhere, handle nil sub case gracefully
+      @sb_presenter = Presenter::Sidebar::Subscription.new(sub , params, self) if sub.present?
     end
+    @sb_presenter ||= options[:default_to]
   end
 
   def sign_in(user, password = nil)
