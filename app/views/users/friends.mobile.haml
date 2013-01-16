@@ -1,8 +1,0 @@
-- @header_title =t('users.my friends')
-
-- content_for :user_main do
-  .friends_combo_button
-    = link_to t('followers'), user_followers_path(@user),{class: ("highlighted" if @really_selected == :followers)}
-    = link_to t('following'), user_following_path(@user),{class: ("highlighted" if @really_selected == :following)}
-  = render "list"
-  = render "shared/pagination", resource_list: @users
