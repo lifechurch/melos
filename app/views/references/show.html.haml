@@ -19,14 +19,6 @@
     %meta{name: "twitter:description",  content: truncate(@presenter.modal_verse.content(as: :plaintext), length: 200, separator: " ")}
     %meta{name: "twitter:site",         content: "@YouVersion"}
 
-- content_for :mobile_right_nav do
-  %a.version_btn{:href => 'javascript:void(0);'}
-    = @version.abbreviation
-  %span.right_btn_slice
-
-- content_for :title do
-  = link_to(@reference.human, 'javascript:void(0);')
-
 - if current_auth && client_settings.subscription_state?
   - content_for :mobile_subscription_nav do
     %a.subscription_btn{:href => 'javascript:void(0);'}

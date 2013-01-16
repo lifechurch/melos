@@ -17,6 +17,14 @@
 - modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
 - a_chapter = presenter.try(:is_chapter?)
 
+- content_for :mobile_right_nav do
+  %a.version_btn{:href => 'javascript:void(0);'}
+    = version.abbreviation
+  %span.right_btn_slice
+
+- content_for :title do
+  = link_to(reference.human, 'javascript:void(0);')
+
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
 %article#reader{"data-setting-font" => client_settings.reader_font,
