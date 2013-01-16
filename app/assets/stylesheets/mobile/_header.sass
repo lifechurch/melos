@@ -79,9 +79,11 @@
   float: left
   padding: 8px 10px
 
-#header .close_btn,
-.reader_modal_header .close_btn
+#header .close_btn
   background: image-url("mobile/close_btn.png") 12px 8px no-repeat
+
+.reader_modal_header .close_btn
+  background: image-url("nav_back.png") 12px 8px no-repeat  
 
 #header .save_btn
   background: image-url("mobile/save_btn.jpg") repeat-x
@@ -105,7 +107,8 @@
   margin-left: 12px
   margin-top: 8px
 
-#header .version_btn
+#header .version_btn,
+#header .reading_plans_btn
   background: image-url("mobile/nav_button_bg.png") 0px 8px no-repeat
   padding: 18px 7px 18px 10px
   display: block
@@ -115,8 +118,23 @@
   font-size: 15px
   font-weight: bold
   height: 15px
-  margin: 0px 0px 0px 10px
+  margin: 0px
   line-height: 10px
+
+#header .reading_plans_btn
+  padding: 10px 4px 13px 10px !important
+  margin-left: 0px
+  cursor: pointer
+
+#header .plan_day
+  color: white !important
+  text-indent: 0%
+  white-space: normal
+  display: block
+  min-width: 42px
+  max-width: 62px
+  line-height: 27px
+  float: left
 
 #header span.right_btn_slice
   background: image-url("mobile/nav_button_bg_right.png") 0px 8px no-repeat
@@ -135,7 +153,9 @@
   background: image-url("mobile/info_btn.png") 12px 8px no-repeat
 
 #header .subscription_btn
-  background: image-url("mobile/subscription_btn.png") 12px 8px no-repeat
+  background: image-url("icon_plan.png") right center no-repeat
+  padding: 0px 8px 0px 14px
+  width: auto
 
 #header .profile_btn
   background: image-url("mobile/profile_btn.png") 12px 8px no-repeat
@@ -173,6 +193,7 @@
   width: auto
   font-size: 100%
   background: none
+
 
 // `Header > Search
 //----------------------------------------------------------------------------------------------------

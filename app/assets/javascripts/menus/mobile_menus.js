@@ -170,7 +170,7 @@ MobileMenus.prototype = {
   initSubscriptionMenu : function(){
     var thiss = this;
     // Version menu trigger
-    $('.subscription_btn').click(function(e){
+    $('.reading_plans_btn').click(function(e){
         e.preventDefault();
 
         thiss.subscriptionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass('open');

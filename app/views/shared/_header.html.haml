@@ -45,9 +45,9 @@
         %span.right_btn_slice
       - if content_for? :mobile_right_nav
         %nav.right_nav
-          = yield :mobile_right_nav
           - if content_for? :mobile_subscription_nav
             = yield :mobile_subscription_nav
+          = yield :mobile_right_nav
 
     %form#header_search_form{:action => search_path, method: "GET"}
       %input#header_search_input{:type => 'search', :name => "q", :placeholder => t("search placeholder")}
