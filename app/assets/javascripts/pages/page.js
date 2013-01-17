@@ -158,14 +158,24 @@ Page.prototype = {
   // On user/bookmarks page.  Fades in edit controls.
   initBookmarkEdits : function() {
 
-    $('.li_bookmark').hover(
-      function(){
-        $(this).find('.bookmark_edit').animate({opacity: 1});
+    jRes.addFunc({
+      breakpoint: 'mobile',
+      enter: function() {
+        // bind mobile menu events, giving their handler's the Selected context via $.proxy
+        $('.li_bookmark').unbind('mouseenter mouseleave');
       },
-      function(){
-        $(this).find('.bookmark_edit').animate({opacity: 0});
+      exit: function() {
+        // unbind mobile menu events, giving their handler's the Selected context via $.proxy
+        $('.li_bookmark').hover(
+          function(){
+            $(this).find('.bookmark_edit').animate({opacity: 1});
+          },
+          function(){
+            $(this).find('.bookmark_edit').animate({opacity: 0});
+          }
+        );
       }
-    );
+    });
   },
 
 

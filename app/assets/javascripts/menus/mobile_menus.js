@@ -46,6 +46,10 @@ MobileMenus.prototype = {
     // Toggle Functionality for all overlays
     this.settingsToolbar.css({'top' : -(this.settingsH)});
 
+    if ($('#page_title').children().length > 0){
+      $('#page_title').removeClass('pad');
+    }
+
     // Close menus tab trigger
     $('.menu_close').click($.proxy(function(e) {
       e.preventDefault();

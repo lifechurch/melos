@@ -256,15 +256,34 @@
 
   .mobile nav + nav
     margin-top: -20px
+  
+  .mobile nav + nav ul
+    height: 87px
 
   .mobile #nav_mobile_sign_in a,
   .mobile #nav_mobile_sign_out a,
   .mobile #nav_mobile_sign_up a
     padding-left: 20px
+    
+  .mobile #nav_mobile_sign_up a
+    +background-image(linear-gradient(#1a90cd, #0077b4))
+    background-color: #0077b4
+    //border-bottom: 1px solid #efefef !important
 
   #invalid_chapter button
     display: none
 
+  input[type="submit"].action_button_green
+    display: none
+
+  input[type="submit"].action_button_green,
+  input[type="submit"].action_button_blue,
+  input[type="submit"].action_button_red,
+  .action_button_blue,
+  .action_button_green,
+  .action_button_green
+    padding: 5px 20px !important
+      
   // TODO: delete as many as possible, moving only
   // necessarry SASS into better organized folders/files
   @import mobile/avatars

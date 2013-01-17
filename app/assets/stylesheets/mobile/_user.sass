@@ -122,6 +122,13 @@
   h1
     margin-left: 20px
 
+  form
+    padding: 20px
+
+  form select
+    min-width: 250px !important
+    max-width: 250px !important
+
   .big_list
     margin-bottom: 0
 
@@ -159,25 +166,22 @@
     .negative_gutter_top_half
       margin-top: 4px
 
-  .tabs
-    margin-bottom: -1px
-    overflow: hidden
-    li
-      background-image: none
-      float: left
-      padding: 0
-      margin-left: 8px
-      padding: 8px 8px 0 8px
-      border:
-        left: 1px solid #ccc
-        top: 1px solid #ccc
-        right: 1px solid #ccc
-      a
-        display: block
-    li:first-child
-      margin-left: 20px
-    li.highlighted
-      border-bottom: 1px solid #fff
+.tabs
+  margin: 0 auto 10px !important
+  padding: 0px 25px !important
+  overflow: hidden
+  width: 80%
+
+.tabs dd a, .tabs dd a:hover
+  border-radius: 0px
+  padding: 8px 15px
+  font-size: 15px
+  background: none
+  background-color: #eee
+
+.tabs dd.highlighted a
+  +box-shadow(inset #fff 0 1px 0 0, inset rgba(#000, 0.05) 0 -2px 0 0)
+  background-color: #fff
 
   #connection_info
     padding-top: 20px
