@@ -1,5 +1,8 @@
 - @title = t("plans.title")
-- translate = params[:translate] == "true"
+
+- content_for :title do
+  = t("plans.title")
+
 %article
   - if current_auth
     %h1.float_left= t("plans.browse plans", category: @categories.current_name || t("plans.all"))

@@ -46,6 +46,7 @@ MobileMenus.prototype = {
     // Toggle Functionality for all overlays
     this.settingsToolbar.css({'top' : -(this.settingsH)});
 
+    // TODO: Fix this hacky solution to the alignment issue on mobile header page titles
     if ($('#page_title').children().length > 0){
       $('#page_title').removeClass('pad');
     }

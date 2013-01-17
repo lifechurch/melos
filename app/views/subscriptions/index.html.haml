@@ -1,5 +1,8 @@
 - @title = t("plans.title")
 
+- content_for :title do
+  = t("plans.title")
+
 %article
   - if current_auth
     - if request.path.downcase == user_subscriptions_path(current_user, locale: false).downcase # we're on valid current_users plans page - show button navigation
