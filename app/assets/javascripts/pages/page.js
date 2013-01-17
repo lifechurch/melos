@@ -188,18 +188,17 @@ Page.prototype = {
         $(this).find(".tooltip").fadeOut(100);
     });
 
-<<<<<<< Updated upstream
     // Slide to mobile nav
     $('#slideToNav').click(function(){
       $(window).scrollTop($('#nav_mobile').offset().top);
-=======
+    });
+
     // Hide address bar on smartphones
     window.addEventListener("load",function() {
       setTimeout(function(){
         // Hide the address bar!
         window.scrollTo(0, 1);
-      }, 0);
->>>>>>> Stashed changes
+    }, 0);
     });
 
   },

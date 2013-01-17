@@ -5,22 +5,36 @@ function VerseModal(opts) {
   this.overlay  = $('#modal_single_verse .overlay');
   this.close    = this.window.find(".close");
   this.open     = false;
+
   // show the modal
   var verses = $("article").attr("data-selected-verses").split(","); //using attr() here so jQuery doesn't type cast, just give me a string.
   if (verses && this.enabled()) {
+    if (verses.length > 0) {
+      this.open = true;
+      var thiss = this;
 
-    if (verses.length == 1) { this.show();
-    jRes.addFunc({
-      breakpoint: 'mobile',
-      enter: function() {
-        // done with CSS
-      },
-      exit: function() {
-        // 
-        
-      }
-    });
+      jRes.addFunc({
+        breakpoint: 'mobile',
+        enter: function() {
+          // done with CSS
+          if (this.open){ thiss.showMobile(); }
+        },
+        exit: function() {
+          // noop
+        }
+      });
 
+      jRes.addFunc({
+        breakpoint: 'widescreen',
+        enter: function() {
+          if (verses.length > 0 && this.open) {
+            thiss.showWidescreen();
+          }
+        },
+        exit: function() {
+          // noop
+        }
+      });
     }
   }
 
@@ -69,5 +83,6 @@ VerseModal.prototype = {
   hide : function() {
     this.window.hide();
     this.overlay.hide();
+    this.open = false;
   }
 }
