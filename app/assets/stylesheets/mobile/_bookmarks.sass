@@ -1,13 +1,27 @@
 #main article.bookmarks
   padding: 0
 
+  .split_pane
+    padding-top: 10px
+
+  .split_pane_content
+    width: auto
+    margin-bottom: 0
+
   .big_list
     margin: 0
 
   .li_bookmark
     background: none
 
-  li p:last-child
+    div
+      float: none !important
+      width: auto
+
+  .li_bookmark:first-child
+    padding-top: 0
+
+  li p
     margin-bottom: 0
 
 .bookmark_edit
