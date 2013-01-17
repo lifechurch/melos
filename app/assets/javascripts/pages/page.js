@@ -408,6 +408,7 @@ Page.prototype = {
       var that = $(this);
       var targets = that;
       if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
+      // console.log(that.data('ajax') + ' abstractly ajaxed');
       $.ajax({
         url: that.data('ajax'),
         method: "get",
