@@ -664,7 +664,7 @@ Reader.prototype = {
     var thiss = this;
 
     if (this.secondary_loaded) { return; }
-    console.log('secondary version ajaxed');
+    // console.log('secondary version ajaxed');
     $.ajax({
         url: "/bible/" + v_id + "/" + usfm + ".json",
         method: "get",
@@ -703,7 +703,7 @@ Reader.prototype = {
     var thiss = this;
     if (this.notes_loaded) { return; }
 
-    console.log('notes ajaxed');
+    // console.log('notes ajaxed');
     $(".ajax_notes").each(function() {
       var that = $(this);
       var targets = that;
@@ -734,7 +734,7 @@ Reader.prototype = {
       var that = $(this);
       var targets = that;
       if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
-      console.log('bookmarks ajaxed');
+      // console.log('bookmarks ajaxed');
       $.ajax({
         url: that.data('ajax'),
         method: "get",
