@@ -108,8 +108,11 @@ MobileMenus.prototype = {
     // Reference createBookmark
     $('.mobile .verse_toolbar .bookmark_btn').click(function () {
       var form = $('#menu_verse_actions #bookmark-pane form');
-      form.attr('action', $(this).attr('data-action'));
-      form.attr('method', $(this).attr('data-method'));
+      if (thiss.verseToolbar.hasClass('authed')){
+        // if not authed, just submit form so we hit sign-up
+        form.attr('action', $(this).attr('data-action'));
+        form.attr('method', $(this).attr('data-method'));
+      }
       form.find('*[type="submit"]').click();
     });
 
@@ -121,16 +124,20 @@ MobileMenus.prototype = {
     // createNote
     $('.mobile .verse_toolbar .note_btn').click(function () {
       var form = $('form#new_note');
-      form.attr('action', $(this).attr('data-action'));
-      form.attr('method', $(this).attr('data-method'));
+      if (thiss.verseToolbar.hasClass('authed')){
+        form.attr('action', $(this).attr('data-action'));
+        form.attr('method', $(this).attr('data-method'));
+      }
       form.submit();
     });
 
     // createShare
     $('.mobile .verse_toolbar .share_btn').click(function () {
       var form = $('#menu_verse_actions #share-pane form');
-      form.attr('action', $(this).attr('data-action'));
-      form.attr('method', $(this).attr('data-method'));
+      if (thiss.verseToolbar.hasClass('authed')){
+        form.attr('action', $(this).attr('data-action'));
+        form.attr('method', $(this).attr('data-method'));
+      }
       form.submit();
     });
   },

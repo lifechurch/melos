@@ -1,10 +1,13 @@
-= form_for note do |f|
+= form_for note, url: (current_auth ? notes_path : sign_up_path), method: (current_auth ? :post : :get) do |f|
   - if note.errors.any?
     .form_errors
       =t("notes.creation form errors")
       %ul
         - note.errors.each do |e|
           %li= e
+  - unless current_auth
+    %input{type: 'hidden', name: 'redirect', value: "/bible"}
+    %input{type: 'hidden', name: 'source', value: "note"}
   %div.title
     = f.label :title, t("notes.title field")
     = f.text_field :title
