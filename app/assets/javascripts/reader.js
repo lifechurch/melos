@@ -56,6 +56,8 @@ function Reader(opts) {
   this.parallel_mode    = opts.parallel_mode || false;
   this.selected_verses  = [];
   this.secondary_loaded = false;
+  this.bookmarks_loaded = false;
+  this.notes_loaded = false;
 
   this.font             = opts.font || "";
   this.size             = opts.size || "";
@@ -77,6 +79,7 @@ function Reader(opts) {
   this.initAudioPlayer();
   this.initTranslationNotes();
   this.initNextPrev();
+  this.initSidebar();
 
   this.book_chapter_menu  = new BookChapterMenu({trigger: "#menu_book_chapter_trigger", menu: "#menu_book_chapter"});
   this.selected_menu      = new SelectedMenu({menu:"#menu_verse_actions", trigger:"#menu_selected_trigger", mobile_menu:".verse_toolbar"});
@@ -681,7 +684,6 @@ Reader.prototype = {
             thiss.loadHighlights("#version_secondary");
           }
           thiss.secondary_loaded = true;
-          console.log('secondary ajaxed in');
         },//end success function
         error: function(xhr, status, err) {
           // set HTML to error HTML
@@ -697,16 +699,82 @@ Reader.prototype = {
       });//end ajax delegate
   },
 
+  ajaxNotesWidget : function() {
+    if (this.notes_loaded) { return; }
+
+    $(".ajax_notes").each(function() {
+      var that = $(this);
+      var targets = that;
+      if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
+      $.ajax({
+        url: that.data('ajax'),
+        method: "get",
+        dataType: "html",
+        success: function(data) {
+          targets.fadeOut(200, function() {
+            targets.html(data);
+            targets.fadeIn(200);
+          });
+          this.notes_loaded = true;
+        },
+        error: function(req, status, err) {
+          //console.log(status + err);
+        }//end error function
+      });
+    });
+
+  },
+
+  ajaxBookmarksWidget : function() {
+    if (this.bookmarks_loaded) { return; }
+
+    $(".ajax_bookmarks").each(function() {
+      var that = $(this);
+      var targets = that;
+      if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
+      $.ajax({
+        url: that.data('ajax'),
+        method: "get",
+        dataType: "html",
+        success: function(data) {
+          targets.fadeOut(200, function() {
+            targets.html(data);
+            targets.fadeIn(200);
+          });
+          this.bookmarks_loaded = true;
+        },
+        error: function(req, status, err) {
+          //console.log(status + err);
+        }//end error function
+      });
+    });
+
+  },
+
+  initSidebar : function() {
+    var thiss = this;
+    jRes.addFunc({
+      breakpoint: 'widescreen',
+      enter: function() {
+        thiss.ajaxNotesWidget();
+        thiss.ajaxBookmarksWidget();
+      },
+      exit: function() {
+        // already loaded, no worries
+      }
+    });
+  },
+
   initSecondaryVersion : function() {
     var thiss = this;
 
     jRes.addFunc({
-      breakpoint: 'mobile',
+      breakpoint: 'widescreen',
       enter: function() {
-        // no need to load secondary version
+        thiss.ajaxSecondaryVersion();
       },
       exit: function() {
-        thiss.ajaxSecondaryVersion();
+        // already loaded, no worries
       }
     });
   },

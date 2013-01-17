@@ -157,6 +157,10 @@ MobileMenus.prototype = {
 
   initVersionMenu : function(){
     var thiss = this;
+
+    // TODO: make this load on page.js with other menus, but
+    // make sure to modify version.js to only ajax for widescreen!
+
     // Version menu trigger
     $('.version_btn').click(function(e){
         e.preventDefault();

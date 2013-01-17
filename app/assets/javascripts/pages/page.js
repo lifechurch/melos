@@ -7,10 +7,10 @@ var jRes = jRespond([
     {
         label: 'mobile',
         enter: 0,
-        exit: 999
+        exit: 989
     },{
         label: 'widescreen',
-        enter: 1000,
+        enter: 990,
         exit: 10000
     }
 ]);
@@ -403,8 +403,6 @@ Page.prototype = {
 
 
   initAjaxReplace : function() {
-
-    var page = this;
 
     $(".ajax_me").each(function() {
       var that = $(this);
