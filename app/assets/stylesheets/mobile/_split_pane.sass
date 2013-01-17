@@ -2,8 +2,16 @@
 // Split pane view.
 //
 
+.split_pane
+  border-top: 0px
+
 .split_pane_content
   margin-bottom: 20px
+  border: 0px
+  width: 100%
+
+  ul
+    margin-left: 0px !important
   a
     text-decoration: none
 
@@ -66,11 +74,19 @@
 
 .plan_search
   select
-    margin: 0 0 14px
+    margin: 0 0 24px !important
+    width: 100%
   input
-    margin-left: 0
+    margin-left: 0 !important
+    width: 100% !important
   input[type="submit"]
     margin-top: 20px
+    +background-image(linear-gradient(#1a90cd, #0077b4))
+    background-color: #0077b4
+    padding: 10px 20px
+    color: #fff
+    text-shadow: none
+    font-size: 16px
 
 .split_devotional_pane form
   position: static !important
