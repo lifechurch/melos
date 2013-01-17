@@ -60,9 +60,9 @@ class PagesController < ApplicationController
     # added the image asset as named below
     if [:km, :af, :ar, :nl, :en, :tl, :fi, :fr, :de, :hu,
         :ko, :ms, :no, :pl, :"pt-BR", :"pt-PT", :ro, :ru,
-        :"zh-CN", :sk, :es, :sv, :zh_TW, :uk, :bg, :ca,
+        :"zh-CN", :sk, :es, :sv, :"zh-TW", :uk, :bg, :ca,
         :"en-GB", :"es-ES", :hi, :id, :it, :ja, :mk, :mn,
-        :sq, :tr, :vi].include? I18n.locale
+        :sq, :tr, :vi, :cs].include? I18n.locale
       "Bible-app-icon-#{I18n.locale}-small.png"
     end
   end
