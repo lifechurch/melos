@@ -3,7 +3,8 @@
 - content_for :title do
   = t("plans.title")
 
-%article
+%article.readingplans
+  - other_users_plans = t("plans.a users plans", username: @user.username)
   - if current_auth
     - if request.path.downcase == user_subscriptions_path(current_user, locale: false).downcase # we're on valid current_users plans page - show button navigation
       %h1.float_left= t("plans.my plans")
