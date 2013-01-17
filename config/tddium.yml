@@ -1,7 +1,7 @@
 ---
 :tddium:
   :test_pattern:
-    #- features/pages.feature
+    # - features/pages.feature
     # - features/versions.feature
     - spec/integration/**_spec.rb
     - spec/request/**_spec.rb

@@ -44,29 +44,30 @@ function Reader(opts) {
   }
 
 
-  this.version    = opts.version || "";
-  this.abbrev     = opts.abbrev || "";
-  this.reference  = opts.reference || "";
-  this.book       = opts.book || "";
-  this.book_api   = opts.book_api || "";
-  this.book_human = opts.book_human || "";
-  this.chapter    = opts.chapter || "";
+  this.version          = opts.version || "";
+  this.abbrev           = opts.abbrev || "";
+  this.reference        = opts.reference || "";
+  this.book             = opts.book || "";
+  this.book_api         = opts.book_api || "";
+  this.book_human       = opts.book_human || "";
+  this.chapter          = opts.chapter || "";
 
-  this.full_screen     = opts.full_screen || false;
-  this.parallel_mode   = opts.parallel_mode || false;
-  this.selected_verses = [];
+  this.full_screen      = opts.full_screen || false;
+  this.parallel_mode    = opts.parallel_mode || false;
+  this.selected_verses  = [];
+  this.secondary_loaded = false;
 
-  this.font           = opts.font || "";
-  this.size           = opts.size || "";
+  this.font             = opts.font || "";
+  this.size             = opts.size || "";
 
   // elements
 
-  this.html_el        = $(document.documentElement);
-  this.verse_els      = $('#version_primary .verse');
-  this.audio_player   = $('#audio_player');
-  this.header         = $('#reader_header header');
-  this.primary        = $('#version_primary');
-  this.secondary      = $('#version_secondary');
+  this.html_el          = $(document.documentElement);
+  this.verse_els        = $('#version_primary .verse');
+  this.audio_player     = $('#audio_player');
+  this.header           = $('#reader_header header');
+  this.primary          = $('#version_primary');
+  this.secondary        = $('#version_secondary');
 
   // menus
 
@@ -653,11 +654,13 @@ Reader.prototype = {
 
   },
 
-  initSecondaryVersion : function() {
+  ajaxSecondaryVersion : function() {
     var version_elem = $('#version_secondary');
     var v_id = getCookie('alt_version') || 1;
     var usfm = version_elem.attr('data-usfm');
     var thiss = this;
+
+    if (this.secondary_loaded) { return; }
 
     $.ajax({
         url: "/bible/" + v_id + "/" + usfm + ".json",
@@ -677,6 +680,8 @@ Reader.prototype = {
             version_elem.html(ref.content);
             thiss.loadHighlights("#version_secondary");
           }
+          thiss.secondary_loaded = true;
+          console.log('secondary ajaxed in');
         },//end success function
         error: function(xhr, status, err) {
           // set HTML to error HTML
@@ -690,7 +695,20 @@ Reader.prototype = {
                             target='_blank'>support team</a>.</p>");}
         }//end error function
       });//end ajax delegate
+  },
 
+  initSecondaryVersion : function() {
+    var thiss = this;
+
+    jRes.addFunc({
+      breakpoint: 'mobile',
+      enter: function() {
+        // no need to load secondary version
+      },
+      exit: function() {
+        thiss.ajaxSecondaryVersion();
+      }
+    });
   },
 
   initHighlights : function() {
