@@ -46,7 +46,6 @@ ru:
   see users badges: "Посмотреть все значки %{username}"
   followers: "Вы в друзьях у"
   following: "Ваши друзья"
-  highlight: "Выделить цветом"
   bookmark: "Закладка"
   earned badge date: "Заработан %{username} %{ago} назад"
   badges title: "Значки"
@@ -95,8 +94,12 @@ ru:
   search: "Искать"
   book: "Книга"
   filter book: "Фильтр по книгам..."
+  save: "Сохранить"
+  cancel: "Отменить"
   try the beta: "Попробовать бета-версию"
   welcome to the beta: "Добро пожаловать но обновлённый YouVersion.com!"
+  highlight: "Выделить цветом"
+  note: "Новая заметка"
   selected: "Выбранное"
   chapter: "Глава"
   bible: "Библия"
@@ -121,6 +124,7 @@ ru:
   recent versions: "Недавно использованные"
   or:
     lower: "или"
+    upper: "ИЛИ"
   likes:
     my likes: "Понравилось мне"
     all likes: "Всё понравившееся"
@@ -439,6 +443,7 @@ ru:
     you have no plans: "Вы ещё не подписаны на планы чтения."
     no public plans: "У %{username} нет публичных планов чтения."
     filter by lang: "Фильтровать планы по языку"
+    plan settings: "Настройки плана"
     settings: "Настройки"
     search: "Поиск"
     search placeholder: "Искать в планах: %{category}"
@@ -635,7 +640,7 @@ ru:
     home:
       hero:
         heading: "Бесплатная Библия на вашем мобильном устройстве и компьютере."
-        description: "YouVersion - бесплатный онлайн сервис, который делает Слово Божие частью вашей повседневной жизни."
+        description: "YouVersion — бесплатный онлайн сервис, который делает Слово Божие частью вашей повседневной жизни."
         learn more: "узнать больше"
         start reading: "Начать чтение"
         skip in future: "Больше не показывать эту страницу"
@@ -663,6 +668,7 @@ ru:
       medium: "Средний"
       large: "Большой"
       highlights: "Выделение цветом:"
+      contrast: "Контрастный"
       'on': "Вкл"
       'off': "Выкл"
       extras: "Дополнительно:"
