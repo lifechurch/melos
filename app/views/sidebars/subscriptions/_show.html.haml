@@ -10,7 +10,7 @@
   .widget.widget-notice.widget_last_fixed{style: "width:268px;"}
     %p
       = t("plans.sidebar notice")
-      %span.exit= link_to("Exit", shelf_user_subscription_path(current_user, subscription), method: :post)
+      %span.exit= link_to("Exit", shelf_user_subscription_path(current_user, subscription, content: content_page, day: day ), method: :post)
 
   .widget{style: "margin-top:54px;"}
     %header
@@ -48,7 +48,7 @@
 
       - unless reading.references.empty?
         - reading.references.each_with_index do |ref,index|
-          %li.content_target{class: (content_page == index) ? "active" : nil }
+          %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
             = form_tag(user_subscription_path(current_user, subscription), method: :put) do
               = hidden_field_tag(:ref,            ref.ref.to_usfm)
               = hidden_field_tag(:completed,      (!ref.completed?).to_s)
@@ -63,9 +63,9 @@
               %a{href: (content_page == index) ? nil : user_subscription_path(current_user, subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
                 = ref.ref.human
 
-  - if reading.devotional
-    .widget
-      %header= t("plans.devotional")
-      %ul.widget_menu
-        %li
-          %p= reading.devotional.html_safe
+- if reading.devotional
+  .widget
+    %header= t("plans.devotional")
+    %ul.widget_menu
+      %li
+        %p= reading.devotional.html_safe

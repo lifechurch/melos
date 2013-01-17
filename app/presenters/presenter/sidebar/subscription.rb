@@ -3,7 +3,7 @@ module Presenter
     class Subscription < Presenter::Subscription
 
       def sidebar_partial
-        "/sidebars/subscriptions/show"
+        "/sidebars/subscriptions/display"
       end
 
     end

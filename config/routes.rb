@@ -46,6 +46,10 @@ YouversionWeb::Application.routes.draw do
       post  :shelf,       on: :member
     end
   end
+
+  match "subscriptions/:id/sidebar" => "subscriptions#sidebar"
+
+
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
   resources 'highlights', only: [:create]

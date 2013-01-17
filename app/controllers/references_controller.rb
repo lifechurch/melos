@@ -10,6 +10,7 @@ class ReferencesController < ApplicationController
     client_settings.reader_full_screen = 1 if params[:full_screen]
     @presenter = Presenter::Reference.new(params,self)
     set_sidebar_for_state(default_to: Presenter::Sidebar::Reference.new(params,self))
+    now_reading(@presenter.reference)
   end
 
   def highlights

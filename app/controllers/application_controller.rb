@@ -65,6 +65,19 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
+  protected
+
+    # For client, get the last known read reference
+    def last_read
+      Reference.new( client_settings.last_read , version: current_version) if client_settings.last_read.present?
+    end
+
+    # For client, set the currently reading (and therefore last read) reference to the provided ref.
+    def now_reading(ref)
+      client_settings.last_read = ref
+    end
+
+
   private
 
 
@@ -90,9 +103,9 @@ class ApplicationController < ActionController::Base
   # Can later be extended through options for further customization on other states
   def set_sidebar_for_state(options={})
     if current_auth && client_settings.subscription_state?
-      sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
+      # sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
       # user may have unsubscribed elsewhere, handle nil sub case gracefully
-      @sb_presenter = Presenter::Sidebar::Subscription.new(sub , params, self) if sub.present?
+      @sb_presenter = Presenter::Sidebar::Subscription.new( client_settings.subscription_id, params, self) if client_settings.subscription_id.present?
     end
     @sb_presenter ||= options[:default_to]
   end
@@ -212,10 +225,6 @@ class ApplicationController < ActionController::Base
     return false if request.host == request.referrer.split('/')[2].split(':')[0]
 
     return true
-  end
-
-  def last_read
-    Reference.new( client_settings.last_read , version: current_version) if cookies[:last_read]
   end
 
   def force_notification_token_or_login

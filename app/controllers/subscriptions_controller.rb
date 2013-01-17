@@ -3,6 +3,11 @@ class SubscriptionsController < ApplicationController
   before_filter :force_login
   respond_to :html #, :json #uncomment for .json representation of subscriptions.
 
+  def sidebar
+    presenter = Presenter::Sidebar::Subscription.new(params[:id] , params, self)
+    render partial: "/sidebars/subscriptions/show", locals: {presenter: presenter}, layout: false
+  end
+
   def index
     @user = current_user
     @subscriptions = @user.subscriptions
@@ -12,20 +17,23 @@ class SubscriptionsController < ApplicationController
 
   # TODO - ensure user subscribed.
   def show
-    @subscription = subscription_for(params[:id])
+    #@subscription = subscription_for(params[:id])
     client_settings.app_state       = YouVersion::ClientSettings::SUBSCRIPTION_STATE
-    client_settings.subscription_id = @subscription.id
+    client_settings.subscription_id = params[:id] #@subscription.id
 
-    @presenter = Presenter::Subscription.new(@subscription , params, self)
-    self.sidebar_presenter = Presenter::Sidebar::Subscription.new(@subscription , params, self)
-    respond_with(@subscription)
+    # TODO: Need to decorate or compose the sidebar presenter rather than
+    # have an essentially duplicate presenter for the sidebar.
+    @presenter = Presenter::Subscription.new(params[:id] , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::Subscription.new(params[:id] , params, self)
+    now_reading(@presenter.reference)
+    respond_with(@presenter.subscription)
   end
 
   def devotional
-    @subscription = subscription_for(params[:id])
-    @presenter = Presenter::Subscription.new(@subscription , params, self)
-    self.sidebar_presenter = Presenter::Sidebar::Subscription.new(@subscription , params, self)
-    respond_with(@subscription)
+    #@subscription = subscription_for(params[:id])
+    @presenter = Presenter::Subscription.new(params[:id] , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::Subscription.new(params[:id] , params, self)
+    respond_with(@presenter.subscription)
   end
 
   def create
@@ -122,9 +130,9 @@ class SubscriptionsController < ApplicationController
   # Might also be a nice metric to capture, this provides an appropriate hook for capture.
   # POST
   def shelf
-    presenter = Presenter::Subscription.new(subscription_for(params[:id]) , params, self)
+    presenter = Presenter::Subscription.new( params[:id], params, self)
     client_settings.app_state = YouVersion::ClientSettings::DEFAULT_STATE
-    redirect_to(bible_path(presenter.reference))
+    redirect_to(bible_path(last_read))
   end
 
   private
