@@ -41,7 +41,7 @@
         %a#slideToNav.nav_btn{:href => 'javascript:void(0);'}
           View Navigation
       - if content_for? :title
-        %h1#page_title.pad= yield :title
+        %h1#page_title= yield :title
       - if content_for? :mobile_right_nav
         %nav.right_nav
           - if content_for? :mobile_subscription_nav

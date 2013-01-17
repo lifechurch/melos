@@ -1,6 +1,6 @@
 #modal_window,
 #modal_overlay
-  display: none
+  display: block
 
 #modal_overlay
   background: rgba(#000, 0.8) image-url("modal_overlay.png")
@@ -14,31 +14,51 @@
 #modal_window
   +round
   +box-shadow(rgba(#000, 0.5) 0 5px 20px 0)
-  background: #bfbec1 image-url("modal_window.png")
+  background: #f1f1f1
+  //background: #bfbec1 image-url("modal_window.png")
   border: 1px solid #1e1e20
   overflow: hidden
   text-shadow: rgba(#fff, 0.7) 0 1px 0
+  height: 100%
+  width: 100% !important
   position: fixed
-  top: 50%
-  left: 50%
-  z-index: 7
+  top: 0px
+  left: 0px
+  z-index: 100000
+
 
 #modal_window header
-  +box-shadow(inset rgba(#fff, 0.1) 0 1px 0 0, rgba(#000, 0.5) 0 2px 5px 0)
-  +border-top-radius(3px)
+  box-shadow: none
+  border-radius: 0px !important
   -webkit-font-smoothing: subpixel-antialiased
   background: #111 image-url("modal_header.png") repeat-x left bottom
   color: #fff
-  overflow: hidden
+  overflow: visible
   padding: 0 25px
   position: relative
   text-shadow: none
   line-height: 50px
   height: 50px
   z-index: 1
+  border: 0px
 
-#modal_window header b
-  font-size: 18px
+#modal_window header a#modal_logo
+  background: image-url("yv_logo.png") no-repeat 0 14px
+  width: 150px
+  height: 50px
+  display: block
+
+#modal_window header span#modal_ref
+  font-size: 34px
+  position: absolute
+  top: 70px
+  color: #303030
+
+#modal_window header span#modal_version
+  color: #909090
+  position: absolute
+  top: 100px
+  font-weight: normal
 
 #modal_window header a
   color: #999
@@ -48,7 +68,7 @@
 #modal_window .separator
   background: image-url("modal_header_separator.png") repeat-y center top
   color: transparent
-  display: inline-block
+  display: none
   overflow: hidden
   padding: 0 10px
   text-indent: -99999px
@@ -70,6 +90,7 @@
   right: 15px
   width: 27px
   height: 28px
+  display: none
 
 #modal_window .close:hover
   background-position: left bottom
@@ -92,16 +113,28 @@
   margin-right: 140px
   padding: 30px 50px 20px
 
+#modal_window .verse .label
+  display: none
+
+#modal_window .verse .content
+  border: 0px
+
 #modal_single_verse #modal_window aside
   +round_bottom_right
   background: #eae9ee
   padding: 20px 20px 0
-  position: absolute
+  position: relative
   top: 50px
   left: auto
   right: 0
   bottom: 0
-  width: 100px
+  width: 100%
+  overflow: hidden
+  display: none
+
+  div
+    float: left
+    margin-left: 10px
 
 #modal_window .action_button_blue,
 #modal_window .action_button_green
@@ -160,13 +193,16 @@
   padding: 10px 0px
 
 #modal_single_verse #modal_window section .big
-  font-size: 18px
-  width: 50%
-  padding: 2% 5% 0%
+  font-size: 24px
+  width: 90%
+  padding: 25% 5% 0%
+  line-height: 45px
 
 #modal_window .action_button_blue,
 #modal_window .action_button_green
   margin-left: 12px
+  width: 87% !important
+  padding: 8px 10px !important
 
 #link_tab_content
   display: none

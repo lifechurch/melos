@@ -8,10 +8,13 @@
   #modal_overlay.overlay &nbsp;
   #modal_window.window
     %header
-      %b= verse.human
+      %a#modal_logo
+
+      %span#modal_ref= verse.human
       - if version
         %span.separator |
-        = version
+        %span#modal_version
+          = version
       &nbsp;
 
       %a.close{:href => '#'} Close
@@ -19,8 +22,10 @@
       %p.big{:itemprop => 'description'}= verse.content.html_safe
       %hr
       %p
-        - if reference
-          %a#single_verse_read_link.action_button_green{:href => bible_path(reference)}= t("read reference", reference: reference.human)
+        %a#single_verse_read_link.action_button_blue{:href => bible_path(reference)}= t("read reference", reference: reference.human)
+      %p.mobile
+        = link_to t('mobile page.download now'), '/download', class: 'action_button_green'
+
     %aside
       %div{style: "height: 36px;"}
         %a{href: "http://twitter.com/share", class: "twitter-share-button", "data-url" => verse.short_link, "data-counturl" => request.url, "data-text" => verse.content[0].chomp, via: "YouVersion", "data-count" => "horizontal", "data-related" => "youversion"} Tweet

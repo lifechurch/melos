@@ -4,12 +4,24 @@ function VerseModal(opts) {
   this.window   = $('#modal_single_verse .window');
   this.overlay  = $('#modal_single_verse .overlay');
   this.close    = this.window.find(".close");
-
+  this.open     = false;
   // show the modal
   var verses = $("article").attr("data-selected-verses").split(","); //using attr() here so jQuery doesn't type cast, just give me a string.
   if (verses && this.enabled()) {
 
-    if (verses.length == 1) { this.show();}
+    if (verses.length == 1) { this.show();
+    jRes.addFunc({
+      breakpoint: 'mobile',
+      enter: function() {
+        // done with CSS
+      },
+      exit: function() {
+        // 
+        
+      }
+    });
+
+    }
   }
 
   this.overlay.click($.proxy( function(e){
@@ -40,7 +52,7 @@ VerseModal.prototype = {
     return $("article").data("verse-modal-enabled");
   },
 
-  show : function() {
+  showWidescreen : function() {
     this.window.show();
     this.overlay.show();
 
@@ -48,6 +60,10 @@ VerseModal.prototype = {
     var left = Math.round(this.window.outerWidth() / 2);
 
     this.window.css({ marginTop: -top, marginLeft: -left });
+  },
+
+  showMobile : function() {
+    this.window.css({ marginTop: 0, marginLeft: 0 });
   },
 
   hide : function() {
