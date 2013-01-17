@@ -6,9 +6,6 @@
 - content_for :title do
   = t("users.privacy.policy", youversion: t("youversion"))
 
-- content_for :stylesheets do
-  = stylesheet_link_tag "bdc_home"
-
 %article
   %h1= t.call("users.privacy.policy", youversion: t.call("youversion"))
   %h4.mute= t.call("users.revised date", date: "7/16/2012")

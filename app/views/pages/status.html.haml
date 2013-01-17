@@ -12,7 +12,6 @@
 
 %article
   -if params[:p] == "yv123"
-    %h1 Status
     %hr
     %section
       %h3 End User Performance
@@ -60,4 +59,13 @@
           - strs.sort_by {|k,v| -v}[0..100].each do |str|
             %p= pp str
   - else
-    %h1 Stranger Danger!
+    %section
+      %h3 User Info
+      .content
+        %p
+          %b UA String
+          %p.mute= request.env["HTTP_USER_AGENT"]
+          %b X_MOBILE_DEVICE String
+          %P.mute= request.env["X_MOBILE_DEVICE"] || (null)
+
+
