@@ -102,8 +102,7 @@ VersionMenu.prototype = {
       this.triggers.unbind('click', $.proxy(thiss.loadVersions, thiss));
       return;
     }
-
-
+    // console.log('versions ajaxed');
     var context = "";
     if (typeof(reader) !== 'undefined' && reader.version) {context = "?context_version=" + reader.version;}
     $.ajax({
