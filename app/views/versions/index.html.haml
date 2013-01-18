@@ -1,5 +1,9 @@
 - @title = t('versions.index title')
 
+- content_for :title do
+  = t('versions.index title')
+
+
 %article
   %h1= "#{t('bible versions')}"
   %ul
