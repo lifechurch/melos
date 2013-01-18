@@ -47,8 +47,8 @@ MobileMenus.prototype = {
     //this.settingsToolbar.css({'top' : -(this.settingsH)});
 
     // TODO: Fix this hacky solution to the alignment issue on mobile header page titles
-    if ($('#page_title').children().length === 0){
-      $('#page_title').addClass('pad');
+    if ($('.mobile #page_title').children().length == 0){
+      $('.mobile #page_title').addClass('pad');
     }
 
     // Close menus tab trigger
