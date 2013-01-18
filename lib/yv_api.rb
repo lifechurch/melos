@@ -220,7 +220,7 @@ class YvApi
   def self.bible_api_custom_languages
     {
       'en-GB' => 'eng_gb',
-      'pt'    => 'por_pt',
+      'pt-PT' => 'por_pt',
       'pt-BR' => 'por',
       'zh-CN' => 'zho',
       'zh-TW' => 'zho_tw',
