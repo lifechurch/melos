@@ -3,7 +3,7 @@
 - content_for :title do
   = t("plans.title")
 
-%article
+%article#plan-index
   - if current_auth
     %h1.float_left= t("plans.browse plans", category: @categories.current_name || t("plans.all"))
     %dl.combo_button.float_right
