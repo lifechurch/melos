@@ -57,7 +57,7 @@ function Reader(opts) {
   this.selected_verses  = [];
   this.secondary_loaded = false;
   this.bookmarks_loaded = false;
-  this.notes_loaded = false;
+  this.notes_loaded     = false;
 
   this.font             = opts.font || "";
   this.size             = opts.size || "";
