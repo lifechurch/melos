@@ -1,10 +1,10 @@
 function VerseModal(opts) {
 
-  this.el       = $('#modal_single_verse');
-  this.window   = $('#modal_single_verse .window');
-  this.overlay  = $('#modal_single_verse .overlay');
-  this.close    = this.window.find(".close");
-  this.open     = false;
+  this.el         = $('#modal_single_verse');
+  this.window     = $('#modal_single_verse .window');
+  this.overlay    = $('#modal_single_verse .overlay');
+  this.close      = this.window.find(".close");
+  this.open       = false;
 
   // show the modal
   var verses = $("article").attr("data-selected-verses").split(","); //using attr() here so jQuery doesn't type cast, just give me a string.
@@ -12,12 +12,17 @@ function VerseModal(opts) {
     if (verses.length > 0) {
       this.open = true;
       var thiss = this;
+      var windowH = $(window).height();
 
       jRes.addFunc({
         breakpoint: 'mobile',
         enter: function() {
           // done with CSS
-          if (this.open){ thiss.showMobile(); }
+          if (this.open){ 
+            thiss.showMobile();
+            $('article').css({'height' : '0px'});
+            $(thiss.window).css({'height' : windowH});
+          }
         },
         exit: function() {
           // noop
@@ -51,6 +56,7 @@ function VerseModal(opts) {
   $("#single_verse_read_link").click($.proxy( function(e) {
       e.preventDefault();
       this.hide();
+      $('article').css({'height' : 'auto'});
     },this ));
 
   $(document).keydown($.proxy(function(e) {
