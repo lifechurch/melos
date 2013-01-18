@@ -105,6 +105,10 @@ MobileMenus.prototype = {
   initReferenceMenu : function(){
     var thiss = this;
 
+    $('verse_close_btn').click(function(){
+      this.closeVerseMenu();
+    });
+
     // Reference createBookmark
     $('.mobile .verse_toolbar .bookmark_btn').click(function () {
       var form = $('#menu_verse_actions #bookmark-pane form');
