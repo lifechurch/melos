@@ -183,7 +183,7 @@ MobileMenus.prototype = {
         e.preventDefault();
         thiss.versionMenu.fadeOut('fast').removeClass('open');
         $(document).scrollTop(0);
-        $('.version_close_btn').toggleClass('selected');
+        $('.version_close_btn').toggleClass('selected').scrollTop(0);
     });
   },
 
