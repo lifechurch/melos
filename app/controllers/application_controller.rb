@@ -329,10 +329,6 @@ class ApplicationController < ActionController::Base
       rescue
         cookies[:alt_version] = nil # nuke the bad cookie. BAD COOKIE!
       end
-
-      # We've got a valid version, but it doesn't include the requested reference
-      # ex: Gen 1 for BOOKS version.  Valid version, invalid reference.
-      raise BadSecondaryVersionError unless includes_ref
     end
 
     return cookies[:alt_version] if cookies[:alt_version].present?

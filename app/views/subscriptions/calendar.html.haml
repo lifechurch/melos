@@ -1,11 +1,12 @@
 - @title = "Plan Calendar and Progress"
+- subscription = @presenter.subscription
 
 %article
   %h1= t("plans.calendar")
   %hr
 
   :ruby
-    statuses = @subscription.day_statuses
+    statuses = subscription.day_statuses
     sunday = Date.new(1984,12,9)#sunday
     days_of_week = []
     7.times {|i| days_of_week << sunday.next_day(i).strftime('%^a')[0]}
@@ -43,7 +44,7 @@
                 - else
                   - cur_status = statuses.delete_at(0)
                   %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '') << ((cur_date == current_date) ? ' today' : '')}
-                    = link_to(cur_date.day.to_s, user_subscription_path(current_user,@subscription, day: cur_status.day))
+                    = link_to(cur_date.day.to_s, user_subscription_path(current_user,subscription, day: cur_status.day))
                 - cur_date = cur_date.next
 
             :ruby

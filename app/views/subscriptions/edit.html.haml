@@ -1,4 +1,5 @@
 - @title = "Plan Settings"
+- subscription = @presenter.subscription
 
 %article
   %h1{style: "clear: none; width: 300px;"}= t("plans.settings")
@@ -7,47 +8,47 @@
   %hr
   .div.float_right
     .float_right
-      = button_to(@subscription.delivered_by_email? ? t('plans.email_off') : t('plans.email_on'),  user_subscription_path(current_user, @subscription, email_delivery: (!@subscription.delivered_by_email?).to_s), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px; margin-bottom: 5px")
+      = button_to(subscription.delivered_by_email? ? t('plans.email_off') : t('plans.email_on'),  user_subscription_path(current_user, subscription, email_delivery: (!subscription.delivered_by_email?).to_s), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px; margin-bottom: 5px")
 
-    -if @subscription.delivered_by_email?
+    -if subscription.delivered_by_email?
       %div
-        .float_left{style: "width: 130px; overflow: hidden; text-overflow: ellipsis"}= @subscription.user.email
+        .float_left{style: "width: 130px; overflow: hidden; text-overflow: ellipsis"}= subscription.user.email
         .small.float_right{style: "margin-top: 3px"}= link_to(t("plans.email edit"), profile_path)
 
   %div{style: "width: 330px"}
     %h5= t("plans.email delivery")
     %p.float_left= t("plans.email delivery text")
 
-  -if @subscription.delivered_by_email?
-    = form_tag(user_subscription_path(current_user, @subscription), method: :put)
+  -if subscription.delivered_by_email?
+    = form_tag(user_subscription_path(current_user, subscription), method: :put)
     %div{style: "clear: both"}
       %select.float_right{onChange: "this.form.submit()", style: "width: 14em", name: "email_delivery"}
         - ["morning","afternoon","evening"].each do |time|
-          %option{value: time, selected: time == @subscription.email_delivery_time_range}= t("plan.#{time}")
+          %option{value: time, selected: time == subscription.email_delivery_time_range}= t("plan.#{time}")
       %b.float_left{style: "width: 230px; margin-top: 5px"}=t("plans.delivery time")
     %div{style: "clear: both"}
       %select.float_right{onChange: "this.form.submit()", style: "margin-top: 15px; margin-bottom: 25px; width: 308px", name: "version"}
         - Version.all_by_language.each do |k, v|
           %optgroup{label: Version.languages[k]}
           - v.each do |v|
-            %option{value: v.id, selected: v.id == @subscription.email_delivery_version_id}= v
+            %option{value: v.id, selected: v.id == subscription.email_delivery_version_id}= v
       %b.float_left{style: "width: 230px; margin-top: 20px"}=t("plans.delivery version")
 
   // Catch up settings
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
-    = button_to(t('plans.catch me up'), user_subscription_path(current_user,@subscription,catch_up: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
+    = button_to(t('plans.catch me up'), user_subscription_path(current_user,subscription,catch_up: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.are you behind")
-    - if @subscription.last_completed_date
-      %p.float_left= t("plans.catch up text", last_completed_day: @subscription.last_completed_day)
+    - if subscription.last_completed_date
+      %p.float_left= t("plans.catch up text", last_completed_day: subscription.last_completed_day)
     -else
       %p.float_left= t("plans.catch up description only")
 
   // Restart settings
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
-    = button_to(t('plans.restart'), user_subscription_path(current_user,@subscription,restart: "true"), method: :put, class: 'action_button_green confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
+    = button_to(t('plans.restart'), user_subscription_path(current_user,subscription,restart: "true"), method: :put, class: 'action_button_green confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.do you want to reset")
     %p.float_left= t("plans.restart description")
@@ -56,10 +57,10 @@
   %a{name: "privacy"}
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
-    -if @subscription.public?
-      .float_right= button_to(t('plans.make private'), user_subscription_path(current_user,@subscription,make_private: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
+    -if subscription.public?
+      .float_right= button_to(t('plans.make private'), user_subscription_path(current_user,subscription,make_private: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
     -else
-      .float_right= button_to(t('plans.make public'), user_subscription_path(current_user,@subscription,make_public: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
+      .float_right= button_to(t('plans.make public'), user_subscription_path(current_user,subscription,make_public: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
   %div{style: "width: 330px"}
     %h5= t("plans.privacy title")
     %p.float_left= t("plans.privacy description")
@@ -68,23 +69,23 @@
   %hr
     %a{name: "accountability"}
     %h5= t("plans.accountability")
-    = form_tag(user_subscription_path(current_user, @subscription), method: :put) do
-      %input{type: "hidden", name: "send_report", value: (@subscription.accountability_partners.empty?).to_s}
-      %input{type: "checkbox", onChange: "this.form.submit()", id: "report_box",  checked: @subscription.accountability_partners.empty? ? nil : "checked"}
-      %label{for: "report_box"}= t("plans.email weekly report to a friend", email_address: @subscription.user.email)
+    = form_tag(user_subscription_path(current_user, subscription), method: :put) do
+      %input{type: "hidden", name: "send_report", value: (subscription.accountability_partners.empty?).to_s}
+      %input{type: "checkbox", onChange: "this.form.submit()", id: "report_box",  checked: subscription.accountability_partners.empty? ? nil : "checked"}
+      %label{for: "report_box"}= t("plans.email weekly report to a friend", email_address: subscription.user.email)
 
-  - if !@subscription.accountability_partners.empty?
+  - if !subscription.accountability_partners.empty?
     %ul{style: "margin-left: 20px; margin-top: 0px;"}
-      -@subscription.accountability_partners.each do|user_mash|
+      -subscription.accountability_partners.each do|user_mash|
         %li.user{style: "clear: left"}
           - user = User.find(user_mash.id)
           %img.float_left.avatar_large{src: user.user_avatar_url["px_48x48"], style: "margin-right:10px"}
           %span
             .float_left=link_to(user.username == current_user.username ? t("myself") : user.username, @user)
             %br
-            =link_to("x", user_subscription_path(current_user, @subscription,remove_accountability_partner: user.username),method: :put) if @subscription.accountability_partners.count > 1
+            =link_to("x", user_subscription_path(current_user, subscription,remove_accountability_partner: user.username),method: :put) if subscription.accountability_partners.count > 1
 
-    = form_tag(user_subscription_path(current_user, @subscription), method: :put, style: "margin-top: 15px; margin-left: 30px; margin-bottom: 15px") do
+    = form_tag(user_subscription_path(current_user, subscription), method: :put, style: "margin-top: 15px; margin-left: 30px; margin-bottom: 15px") do
       %input{:style =>"width: 220px; margin-bottom: 10px;", name: "add_accountability_partner", :type => 'search', :placeholder => t("plans.add members placeholder")}
       %input{:style => "margin-bottom: 10px", :type => 'submit', :value => t("plans.add member")}
 
@@ -92,4 +93,4 @@
   // Unsubscribe action
   %hr{style: "margin-top: 15px"}
     .float_left{style: "height: 30px; margin-bottom: 5px"}
-    = button_to(t('plans.stop reading'),user_subscription_path(current_user,@subscription), method: :delete, id: "subscription-destroy", class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
+    = button_to(t('plans.stop reading'),user_subscription_path(current_user,subscription), method: :delete, id: "subscription-destroy", class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")

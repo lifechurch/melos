@@ -5,12 +5,12 @@
   .progress_counter
     =t("plans.current progress html", day: subscription.current_day, total_days: subscription.total_days).html_safe
   .progress_bar_outer
-    .progress_bar{:style => "width:#{@subscription.progress}%"}
+    .progress_bar{:style => "width:#{subscription.progress}%"}
       &nbsp;
   .progress_bar_cap
     &nbsp;
   .progress_bar_shadow
-    .progress_percent_complete{style: "left:#{@subscription.progress}%"}
+    .progress_percent_complete{style: "left:#{subscription.progress}%"}
       %b= t("percentage display", number: subscription.progress)
       .small= t("plans.completion status _ below percentage")
 

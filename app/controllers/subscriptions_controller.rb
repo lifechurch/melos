@@ -30,7 +30,6 @@ class SubscriptionsController < ApplicationController
   end
 
   def devotional
-    #@subscription = subscription_for(params[:id])
     @presenter = Presenter::Subscription.new(params[:id] , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new(params[:id] , params, self)
     respond_with(@presenter.subscription)
@@ -114,15 +113,15 @@ class SubscriptionsController < ApplicationController
 
   # TODO - ensure user subscribed.
   def edit
-    @subscription = Subscription.find(params[:id], current_auth.user_id, auth: current_auth)
-    self.sidebar_presenter = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
-    #redirect_to user_subscription_settings_path(current_user, @subscription, anchor: anchor), notice: t("plans.#{action} successful", t_opts) if action
+    @presenter = Presenter::Subscription.new(params[:id] , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::SubscriptionProgress.new(params[:id],params,self)
   end
 
+  # TODO - ensure user subscribed.
   def calendar
-    @subscription = subscription_for(params[:id])
-    self.sidebar_presenter = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
-    raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
+    @presenter = Presenter::Subscription.new(params[:id] , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::SubscriptionProgress.new(params[:id],params,self)
+    #raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
   end
 
   # Verb: the act of shelving your reading plan. Putting a book on the shelf.
