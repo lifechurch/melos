@@ -589,6 +589,7 @@ es-ES:
     partners title: "Socios publicitarios de la Biblia"
     partners text: "Sin nuestros generosos editores asociados de la Biblia, YouVersion simplemente no podía ser capaz de proveer a nuestra comunidad mundial tal cantidad de Biblias. Muchos de vosotros habéis preguntado cómo podéis agradecer a estos partidarios vitales para la misión de YouVersion. Podéis aprender más acerca de ellos, sus ministerios, y formas en las que podéis ayudarles, a través de los siguientes enlaces."
     translation title: "Nuestros equipos de traducción"
+    learn more: "Conocer más"
     bible dot com title: "¿Que ha pasado con la antigua Bible.com?"
     bible dot com copy: "Si estás buscando el contenido de Christ Unlimited Ministries por Bud y Betty Miller o la antigua página Bible.com, por favor, visita su nueva página en <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
@@ -699,6 +700,7 @@ es-ES:
     filter: "Filtrar versiones..."
     see all: "Ver todas las versiones..."
     courtesy of: "%{abbreviation} presentada por %{publisher}"
+    learn more: "Conocer más"
     index title: "Versiones disponibles"
     publisher widget title: "Editor"
     visit publisher: "Visita la página de la editorial"

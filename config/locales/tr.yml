@@ -165,7 +165,7 @@ tr:
     see my likes: "Beğendiklerimin Hepsini Görüntüle"
     successfully deleted: "Not Silindi"
   ref:
-    loading secondary: "Ayetler İkincil Çeviride Yükleniyor..."
+    loading secondary: "Ayetler İkinci Çeviride Yükleniyor..."
     clear verses: "Seçili Ayetleri Sıfırla"
     choose book and chapter: "Kitap ve Bölüm Seçimi"
     choose version: "Çeviri Seçimi"
@@ -522,8 +522,8 @@ tr:
       email: "E-posta adresinizi giriniz"
       username: "Kullanıcı adınızı giriniz"
       password: "Parolanızı giriniz"
-    with email: "E-posta adresinizi kullanarak kaydolun."
-    with facebook: "Facebook Kimliğini Kullanarak Kaydol"
+    with email: "E-posta adresinizi kullanarak kaydolun"
+    with facebook: "Facebook kimliğinizi kullanarak kaydolun"
     benefits title: "Deneyimlerin Tamamına Erişin"
     benefits blurb: "YouVersion hesabını oluşturursanız, sitemizdeki birçok özelliğe erişebilirsiniz. Bunların arasında yer imi saklamak veya not yazmak vardır. Giriş yaptığınız mobil cihazınızda görüntülenirler. Hesabınız olursa, Kutsal Kitap'ı arkadaşlarınız ile paylaşmanız çok kolaylaşır. Hadi, gelin. Hesabınızı oluşturun!"
     plan blurb: "Bir Okuma Planı kullamak istiyor musunuz? Çok akıllıca! Okuma Planları, Kutsal Kitap’ı günlük hayatınızın bir parçası haline getirmeye çok yardımcı olur. Başlamak için aşağıdan giriş yapın veya bir hesap oluşturun!"
@@ -650,7 +650,7 @@ tr:
       our action: "Sorun bize bildirildi ve onu olabildiğince kadar çabuk çözmeye çabalıyoruz."
     home:
       hero:
-        heading: "Cep telefonunuz, tabletiniz ve bilgisayarınız için ücretsiz bir Kutsal Kitap."
+        heading: "Cep telefonunuz, tabletiniz ve bilgisayarınız için ücretsiz<br /> bir Kutsal Kitap."
         description: "YouVersion Tanrı'nın Sözünü hayatınızn bir parçası haline getiren basit, reklamsız Kutsal Kitap yazılımıdır."
         learn more: "aşağıda daha fazla öğrenin"
         start reading: "Okumaya başlayın."
@@ -658,11 +658,11 @@ tr:
         now skipped: "Bu sayfa artık gösterilmeyecek."
       features:
         read heading: "Kutsal Kitap'ı okuyun."
-        read description: "<strong>Yüzlerce dildeki yüzlerce çeviriden</strong> seçiniz. İki  çeviri yan yana koyup karşılaştırın. Yazı tipi ve görüntü boyutunu bile ayarlayabilirsiniz. On-line Kutsal Kitap deneyiminiz tam istediğiniz gibi olsun."
+        read description: "<strong>Yüzlerce dildeki yüzlerce çeviriden</strong> seçiniz. İki  çeviriyi yan yana koyup karşılaştırın. Yazı tipi ve görüntü boyutunu bile ayarlayabilirsiniz. On-line Kutsal Kitap deneyiminiz tam istediğiniz gibi olsun."
         study heading: "Kutsal Kitap'ı çalışın."
-        study description: "En sevdiğiniz renkleri kullanarak <strong>vurgalayın</strong>, en sevdiğiniz Kutsal Kitap ayetleri <strong>yer imlerinize ekleyin</strong>, ve öğrendikleriniz hakkında notları yazın. Tanrı'nın Sözü ile vakit geçirmekten öte, Kutsal Kitap ile etkileşiminizin tarihini kaydediyorsunuz."
+        study description: "En sevdiğiniz renkleri kullanarak <strong>vurgalayın</strong>, en sevdiğiniz Kutsal Kitap ayetleri <strong>yer imlerinize ekleyin</strong>, ve öğrendikleriniz hakkında notlar yazın. Tanrı'nın Sözü ile vakit geçirmekten öte, Kutsal Kitap ile etkileşiminizin tarihini kaydediyorsunuz."
         subscribe heading: "Kutsal Kitap okuma planlarına abone olun."
-        subscribe description: "Kutsal Kitap'ın tamamını okuyun. Belirli bir konuya odaklayın. Veya yetenekli bir hocanın düşüncelerini okuyun. Okuma Planınızı seçın. Her gün Kutsal Kitap'ın yeni bir bölümü sizin için hazır olsun."
+        subscribe description: "Kutsal Kitap'ın tamamını okuyun. Belirli bir konuya odaklanın. Veya yetenekli bir hocanın düşüncelerini okuyun. Okuma Planınızı seçın. Her gün Kutsal Kitap'ın yeni bir bölümü sizin için hazır olsun."
         download heading: "Kutsal Kitap'ı yanınızda bulundurun."
         download description: "Kutsal Kitap Uygulamasını herhangi bir mobil cihaza bedavaya <a href='http://youversion.com/download'>indirin</a>. Mobil uygulamayı kullanırsanız notlarınız, yer imleriniz, vurgularınız, okuma planlarınız ve daha neler otomatik olarak tüm cihazlarınızda güncellenir."
       get started: "Bedavaya kaydolup Kutsal Kitap kullanımınıza başlayın."
