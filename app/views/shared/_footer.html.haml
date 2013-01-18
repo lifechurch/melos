@@ -24,8 +24,8 @@
         %span.separator
           |
         %a{:href => @site.donate_path || donate_path}=t("donate title")
-  .lang.float_right
-    %p
+  .float_right
+    .lang
       %label{:for => 'choose_language'}
         =t("choose language field")
         &nbsp;
@@ -40,8 +40,5 @@
       %span &copy;
       = Date.today.year
       %a{:href => 'http://www.lifechurch.tv'}=t("lifechurch short url")
-      %span.separator.mobile-remove
-        |
-      %br.mobile-add
 -unless ENV['RACK_ENV'] =~ /production/i
   %p.small.mute.float_right= "Non-production deployment, pointing at: #{Cfg.try :api_root}"
