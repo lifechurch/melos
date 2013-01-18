@@ -1,8 +1,5 @@
 - @title = @plan.title.dup
 
-- content_for :title do
-  = @plan.name
-
 - content_for :mobile_right_nav do
   - if current_auth
     - if current_user.try(:"subscribed_to?", @plan)
@@ -23,7 +20,9 @@
       %strong= t("plans.length field")
       = @plan.length
     - if !current_user || !current_user.subscribed_to?(@plan)
-      = link_to t("plans.view sample"), day: 1.to_s, class: 'float_right'
+      = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_blue'}
+      = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "action_button_green", method: :post)
+
 
     %p.mute= @plan.copyright
     - unless @plan.publisher_url.nil?
