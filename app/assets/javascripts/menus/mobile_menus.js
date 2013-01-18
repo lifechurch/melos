@@ -44,7 +44,7 @@ MobileMenus.prototype = {
     this.referenceToolbar.find('.scroll').css({'height':(this.windowH) - 100});
 
     // Toggle Functionality for all overlays
-    this.settingsToolbar.css({'top' : -(this.settingsH)});
+    //this.settingsToolbar.css({'top' : -(this.settingsH)});
 
     // TODO: Fix this hacky solution to the alignment issue on mobile header page titles
     if ($('#page_title').children().length === 0){
@@ -352,7 +352,9 @@ MobileMenus.prototype = {
 
   closeSettingsMenu : function(){
     var thiss = this;
-    this.settingsToolbar.stop().animate({ top : -(thiss.settingsH)}, 400);
+    this.settingsToolbar.stop().animate({ top : -(thiss.settingsH)}, 400, function(){
+      thiss.settingsToolbar.hide();
+    });
 
   }
 
