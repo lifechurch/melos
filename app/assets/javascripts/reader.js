@@ -185,7 +185,7 @@ Reader.prototype = {
 
   scrollToVerse : function(verse) {
     easingType = 'easeInOutCirc';
-    var first = $('#version_primary .selected:first');
+    verse = verse || $('#version_primary .selected:first');
     if (verse.length){
       var newPosition = verse.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(verse.css('line-height'))/4;
       if(app.getPage().MODERN_BROWSER){
@@ -648,7 +648,8 @@ Reader.prototype = {
       var scroll_verse = $('#version_primary .focused:first');
     }
 
-    if(scroll_verse) {
+    if(scroll_verse && $('head meta[name="apple-itunes-app"]').length == 0){
+      //TODO: make the 2nd part actually if there is modal display
       $(document).ready(function() {
         //DOM is loaded, wait a bit for css to load then scroll to first verse
         window.setTimeout(function(){thiss.scrollToVerse(scroll_verse)}, 300);

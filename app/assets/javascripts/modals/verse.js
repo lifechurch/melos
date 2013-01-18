@@ -90,5 +90,6 @@ VerseModal.prototype = {
     this.window.hide();
     this.overlay.hide();
     this.open = false;
+    reader.scrollToVerse();
   }
 }
