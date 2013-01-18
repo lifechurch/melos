@@ -648,7 +648,7 @@ Reader.prototype = {
       var scroll_verse = $('#version_primary .focused:first');
     }
 
-    if(scroll_verse && $('head meta[name="apple-itunes-app"]').length == 0){
+    if(scroll_verse && $('head meta[name="apple-itunes-app"]').length == 0 && $('#mobile-sb-subscription.initial').length == 0){
       //TODO: make the 2nd part actually if there is modal display
       $(document).ready(function() {
         //DOM is loaded, wait a bit for css to load then scroll to first verse

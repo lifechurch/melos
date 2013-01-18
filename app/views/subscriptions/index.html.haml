@@ -26,7 +26,7 @@
       - @subscriptions.each do |sub|
         %li
           %div
-            %h4= link_to(sub.name, user_subscription_path(@user,sub))
+            %h4= link_to(sub.name, user_subscription_path(@user, sub, initial: 'true'))
             .progress_wrap
               .progress_counter
                 =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe

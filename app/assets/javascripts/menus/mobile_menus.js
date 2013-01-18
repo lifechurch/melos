@@ -187,25 +187,41 @@ MobileMenus.prototype = {
     });
   },
 
+  openSubscriptionMenu : function(){
+    this.subscriptionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass('open');
+  },
+
+  closeSubscriptionMenu : function(){
+    var thiss = this;
+    this.subscriptionMenu.fadeOut('fast', function() {
+      // remove the inline display style so CSS styles work for widescreen
+      thiss.subscriptionMenu.css('display', '');
+      $(document).scrollTop(0);
+    }).removeClass('open');
+    $('.subscription_close_btn').toggleClass('selected');
+  },
+
   initSubscriptionMenu : function(){
     var thiss = this;
+
+    // open subscription modal initially in some cases
+    if(this.subscriptionMenu.find('.initial').length){
+      thiss.openSubscriptionMenu();
+    }
+
     // Version menu trigger
     $('.reading_plans_btn').click(function(e){
         e.preventDefault();
 
-        thiss.subscriptionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass('open');
+        thiss.openSubscriptionMenu();
     });
 
     // Version menu close trigger
-    $('.subscription_close_btn').click(function(e){
+    $('.subscription_close_btn, .active.content_target').click(function(e){
         e.preventDefault();
 
-        thiss.subscriptionMenu.fadeOut('fast', function() {
-          // remove the inline display style so CSS styles work for widescreen
-          thiss.subscriptionMenu.css('display', '');
-          $(document).scrollTop(0);
-        }).removeClass('open');
-        $('.subscription_close_btn').toggleClass('selected');
+        thiss.subscriptionMenu.find('.initial').removeClass('initial');
+        thiss.closeSubscriptionMenu();
     });
   },
 

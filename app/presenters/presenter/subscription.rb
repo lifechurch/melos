@@ -12,6 +12,10 @@ module Presenter
       @sid = subscription.id.to_i
     end
 
+    def initial_load?
+      @params[:initial] || @controller.send(:external_request?)
+    end
+
     def subscription_id
       @sid
     end
