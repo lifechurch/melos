@@ -72,7 +72,7 @@ YouversionWeb::Application.routes.draw do
     end
   end
 
-  match "subscriptions/:id/sidebar" => "subscriptions#sidebar"
+  #match "subscriptions/:id/sidebar" => "subscriptions#sidebar"
 
   # /reading-plans
   # /reading-plans/:id

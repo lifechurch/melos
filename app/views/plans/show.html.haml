@@ -19,11 +19,18 @@
     %p
       %strong= t("plans.length field")
       = @plan.length
-    - if !current_user || !current_user.subscribed_to?(@plan)
+    - if current_auth.blank? || !current_user.try(:subscribed_to?, @plan)
       %p
         = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_blue'}
       %p
-        = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "action_button_green", method: :post)
+        - if current_auth
+          = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "action_button_green", method: :post)
+        - else
+          = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: '#TODO'), class: "action_button_green"
+    - if current_user.try(:subscribed_to?, @plan)
+      %p= link_to(t('plans.read today'), user_subscription_path(current_user, @plan), class: 'action_button_blue')
+
+
 
 
     %p.mute= @plan.copyright
