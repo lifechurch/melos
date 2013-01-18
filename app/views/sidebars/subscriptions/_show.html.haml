@@ -11,7 +11,8 @@
   .reader_modal_header
     %nav
       %a.close_btn.subscription_close_btn
-
+    %nav.nav_right
+      = link_to t("plan settings"), edit_user_subscription_path(current_user, plan_id: @plan.to_param), class: "settings_btn"
 #sb-subscription
   .widget.widget-notice.widget_last_fixed{style: "width:268px;"}
     %p
