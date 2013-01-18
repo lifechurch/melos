@@ -26,6 +26,13 @@
           %li
             = link_to v, v
 
+- content_for :title do
+  = @version
+
+- content_for :mobile_right_nav do
+  = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'save_btn'
+
 %article
   %h1= @version
   .copyright= @version.info.try :html_safe
+  = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
