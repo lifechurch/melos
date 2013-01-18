@@ -10,7 +10,7 @@
     = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: '#TODO'), class: "save_btn"
 
 
-%article
+%article.reading_plan_index
   %h1= @plan.name
   %div
     %p= @plan.about
@@ -20,8 +20,10 @@
       %strong= t("plans.length field")
       = @plan.length
     - if !current_user || !current_user.subscribed_to?(@plan)
-      = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_blue'}
-      = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "action_button_green", method: :post)
+      %p
+        = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_blue'}
+      %p
+        = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "action_button_green", method: :post)
 
 
     %p.mute= @plan.copyright
