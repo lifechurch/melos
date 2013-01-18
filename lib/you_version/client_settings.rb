@@ -11,7 +11,7 @@ module YouVersion
     end
 
     def reader_font_size
-      @cookies['data-setting-font']
+      @cookies['data-setting-size']
     end
 
     def reader_full_screen
