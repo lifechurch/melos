@@ -10,7 +10,7 @@ function MobileMenus() {
   this.verseToolbar       = $('.verse_toolbar');
   this.verse              = $('.verse');
   this.audioToolbar       = $('#menu_audio_player');
-  this.bookChapterTrigger = $('#page_title a');
+  this.bookChapterTrigger = $('#chapter_title a');
   this.referenceToolbar   = $('#menu_book_chapter');
   this.referenceH         = this.referenceToolbar.height();
   this.subscriptionMenu   = $('#sidebar');

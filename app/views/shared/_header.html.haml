@@ -43,7 +43,7 @@
       - if content_for? :title
         %h1#page_title= yield :title
       - if content_for? :title_link
-        %h1= yield :title_link
+        %h1#chapter_title= yield :title_link
       - if content_for? :mobile_right_nav
         %nav.right_nav
           - if content_for? :mobile_subscription_nav

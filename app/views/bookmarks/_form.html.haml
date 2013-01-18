@@ -20,11 +20,11 @@
   %p
     = f.label :labels, t("bookmarks.labels comma separated")
     = f.text_field :labels
-  %p
+  %p.color
     = f.label :highlight_color, t("bookmarks.color")
     = f.text_field :highlight_color, class: 'float_left'
     %div{:class => "color_picker_list", style: "width:auto; margin-top:-10px; margin-left:10px; margin-bottom: 20px"}
       %a{:class => "color_picker", :href =>"#"}
       %a{:class => "color_picker_holder", :href =>"#"}
-  %p{style: "clear: left"}
+  %p#bookmark_update_btn{style: "clear: left"}
     = f.submit(@bookmark.persisted? ? t("bookmarks.update") : t("bookmarks.save"))
