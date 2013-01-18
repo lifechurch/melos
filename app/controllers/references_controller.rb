@@ -1,76 +1,22 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
   before_filter :strip_format, only: [:show]
+  before_filter :redirect_incorrect_reference, only: [:show]
   rescue_from InvalidReferenceError, with: :ref_not_found
 
   def show
     # Set HTML classes for full screen/parallel
-    cookies[:full_screen] ||= 1 if params[:full_screen]
-    @html_classes = []
-    @html_classes << "full_screen" if cookies[:full_screen]
-    @html_classes << "full_screen" << "parallel_mode" if cookies[:parallel_mode]
 
-    populate_reader_settings
-
-    # render last read or default if no reference specified
-    # This allows for root to give better meta (SEO)
-    # and saves a redirect for a first time visit
-    params[:reference] ||= last_read.try(:to_param) || default_reference.try(:to_param)
-
-    ref_str   = YouVersion::ReferenceString.new(params[:reference])
-    ref_hash  = ref_str.to_hash
-
-    # override the version in the reference param with the explicit version in the URL
-    # this is a temporary hack until Version/Reference class clean-up
-    ref_hash[:version] = params[:version]
-
-    # If we need to add the chapter or version for the user, redirect
-    # instead of just rendering (SEO strategy: less buckets)
-    unless params[:version] && ref_hash[:chapter]
-      ref_hash[:version] ||= current_version
-      ref_hash[:chapter] ||= "1"
-      flash.keep
-      return redirect_to bible_path(Reference.new(ref_hash))
-    end
-
-    # Hang on to all the verses to select them in the reader
-    # This should probably all be done with a ReferenceList
-    # with a lot more functionality and smarts
-    #
-    # Note: InvalidReferenceError used to be raised here if
-    # the reference was invalid
-    @verses = ref_str.verses # array of verse numbers.
-
-    # Set the canonical reference for the page to the entire chapter
-    @reference = Reference.new(ref_hash.except(:verses))
-    @version = Version.find(@reference.version)
-
-    # Set cookies to save this as the user's current version and reference
-    if request.format == :html
-      set_current_version @version
-      set_last_read @reference
-    end
-
-    # If the reference was a single verse, set that up so we can display the modal
-    if ref_hash[:verses].present? && (external_request? || params[:modal] == "true") && params[:modal] != "false"
-      @single_verse = Reference.new(ref_hash)
-    end
-
-    # Create an empty note for the note sidebar widget
-    @note = Note.new(version_id: @version.id)
-
-    # Set up user specific stuff
-    @highlight_colors = User.highlight_colors
-
-    # Set up parallel mode stuff -- if it fails, we're at the end so the other values are populated
-    @alt_version = Version.find(alt_version(@reference))
-    @alt_reference = Reference.new(@reference, version: @alt_version)
+    client_settings.reader_full_screen = 1 if params[:full_screen]
+    @presenter = Presenter::Reference.new(params,self)
+    set_sidebar_for_state(default_to: Presenter::Sidebar::Reference.new(params,self))
+    now_reading(@presenter.reference)
   end
 
   def highlights
-      @highlights = Highlight.for_reference(ref_from_params, auth: current_auth) if current_auth
-      @highlights ||= []
-      render json: @highlights
+    @highlights = Highlight.for_reference(ref_from_params, auth: current_auth) if current_auth
+    @highlights ||= []
+    render json: @highlights
   end
 
   def notes
@@ -90,6 +36,20 @@ class ReferencesController < ApplicationController
 
   private
 
+  def redirect_incorrect_reference
+
+    ref = params[:reference] || last_read.try(:to_param) || default_reference.try(:to_param)
+    ref_hash = YouVersion::ReferenceString.new(ref).to_hash
+    ref_hash[:version] = params[:version]
+
+    unless params[:version] && ref_hash[:chapter]
+      ref_hash[:version] ||= current_version
+      ref_hash[:chapter] ||= "1"
+      flash.keep
+      return redirect_to bible_path(Reference.new(ref_hash))
+    end
+  end
+
   def set_nav
     @nav = :bible
   end
@@ -104,41 +64,46 @@ class ReferencesController < ApplicationController
   end
 
   protected
-    def ref_not_found(ex)
-      @highlight_colors = User.highlight_colors rescue []
-      @note = Note.new
+    def ref_not_found(exception)
 
-      if ex.is_a? BadSecondaryVersionError
-        @alt_version = Version.find(cookies[:alt_version])
-        @alt_reference = Hashie::Mash.new({content: "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"})
-        return render :show if @reference.valid?
+      if exception.is_a? BadSecondaryVersionError
+        @presenter = Presenter::Reference.new(params,self, {
+          alt_version: Version.find(cookies[:alt_version]),
+          alt_reference: Hashie::Mash.new({content: "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"})
+        })
+        return render :show if @presenter.reference.valid?
       end
 
-      if ex.is_a? NoSecondaryVersionError
-        @alt_version = @version
-        @alt_reference = Hashie::Mash.new({content: "<h1>#{t('ref.no secondary version title')}</h1> <p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"})
-        return render :show if @reference.valid?
-      end
+      if exception.is_a? NoSecondaryVersionError
+        @presenter = Presenter::Reference.new(params,self, {
+          alt_version: Version.find(1),
+          alt_reference: Hashie::Mash.new({content: "<h1>#{t('ref.no secondary version title')}</h1> <p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"})
+        })
+        # TODO: temporary hack until we can simply set both version and alt_version
+        # initially set version above to KJV, which is valid, then reassign to @presenter.version
+        @presenter.alt_version = @presenter.version
 
-      #we don't need to report these types of 404's as long as we have the right redirects.
-      #report_exception(ex, self, request)
+        return render :show if @presenter.reference.valid?
+      end
 
       #force to be in non-parallel/fullscreen mode for Ref_not_found
-      @html_classes.try(:delete, "full_screen") and cookies[:full_screen] = nil
-      @html_classes.try(:delete, "parallel_mode") and cookies[:parallel_mode] = nil
+      client_settings.reader_full_screen = nil
+      client_settings.reader_parallel_mode = nil
 
-      @version = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
-      @alt_version ||= @version
+      # Setup defaults
+      # ------------------------------------------------------------------------------------------------------
+      # try to validate reference against default version to show the reference title as it would be displayed in a valid version
+        alt_reference = reference = Reference.new( params[:reference], version: Version.default ) rescue nil
 
-      # try to validate reference against default version
-      # to show the reference title as it would be displayed in a valid version
-      @alt_reference = @reference = Reference.new( params[:reference], version: Version.default ) rescue nil
+      # completely invalid reference, just fake it
+        alt_reference = reference = default_reference unless reference.try :valid?
 
-      unless @reference.try :valid?
-        # completely invalid reference, just fake it
-        @alt_reference = @reference = default_reference
-      end
+      @presenter = Presenter::InvalidReference.new(params,self)
+        @presenter.version        = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
+        @presenter.alt_version    = Version.find(cookies[:alt_version]) || @presenter.version
+        @presenter.reference      = reference
+        @presenter.alt_reference  = alt_reference
 
-      render :invalid_ref, status: 404
+      render :invalid_ref, status: 404, locals: {presenter: @presenter}
     end
 end

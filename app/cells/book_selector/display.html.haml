@@ -1,15 +1,3 @@
-- version = {abbreviation: @version.abbreviation.downcase, id: @version.to_param }
-- version[:books] = {}
-- @version.books.each do |book_usfm, book_info|
-  - chapters = @version.books[book_usfm].chapters.map {|c| {human: c.human, usfm: c.usfm.downcase, canon: c.canonical }}
-  - version[:books][book_usfm.downcase] = {human: book_info.human, chapters: chapters }
-
-/ Json representation of our version. Currently used for building our dynamic chapter grid menu.
-/ This will be cached along with the entire template
-%script
-  :plain
-    version_json = #{version.to_json.html_safe};
-
 #menu_book_chapter.dynamic_menu
   .spinner_wrapper{style: "display: none;"}
     #book_chapter_spinner.dynamic_menu_spinner

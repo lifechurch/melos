@@ -1,0 +1,24 @@
+// Local parameters
+// presenter: Presenter::Sidebar::SubscriptionProgress
+- subscription = presenter.subscription
+
+.widget
+  = link_to(t('plans.read today'), user_subscription_path(current_user,subscription), class: 'action_button_green', style: "margin-bottom: 10px")
+
+.widget
+  %header
+    %span= subscription.name
+  %ul.widget_menu
+    %li
+      =render :partial => "progress", :locals => {subscription: subscription}
+    %li
+      =link_to( t("plans.calendar"), calendar_user_subscription_path(current_user,subscription))
+    %li
+      =link_to( t("plans.settings"), edit_user_subscription_path(current_user,subscription))
+
+.widget
+  %header
+    %span About this Plan
+  %ul.widget_menu
+    %li
+      %p= subscription.about

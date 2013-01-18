@@ -33,6 +33,7 @@ Spork.each_run do
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
   include UsersSpecHelper
   include ConnectionsSpecHelper
+  include IntegrationHelpers
   # reload all the models
   Dir["#{Rails.root}/app/models/**/*.rb"].each do |model|
     load model
@@ -59,7 +60,6 @@ end
 
 Capybara.javascript_driver = :webkit
 Capybara.default_wait_time = 5
-
 
 module ::RSpec::Core
   class ExampleGroup

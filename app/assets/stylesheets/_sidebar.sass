@@ -55,3 +55,125 @@
 #sidebar .action_button_note a,
 #sidebar .action_button_note button
   margin: -2px -1px 5px
+
+#sb-subscription
+
+  .widget-notice
+    .exit
+      display: block
+      float: right
+
+  .widget li.content_target
+    position: relative
+
+  .widget li.content_target.active
+    background: #ddd
+    border-top: none
+
+  .widget li.content_target.active span
+    display: block
+    font-size: 13px
+    padding: 10px 20px 10px 15px
+    line-height: 1
+
+  .widget li.content_target a
+    background-image: none
+    padding-left: 15px
+
+  .widget li.content_target form
+    margin: 0
+    margin-top: 4px
+    padding: 0
+    width: 30px
+    position: absolute
+    right: 10px
+    top: 0
+
+  #sb-calendar
+    position: relative
+
+    div.icon
+      width: 35px
+      height: 35px
+      position: absolute
+      left: 15px
+      top: 15px
+
+      a
+        display: block
+        height: 35px
+        width: 35px
+        margin: 0
+        padding: 0
+        background:
+          color: transparent
+          image: image-url("sprite-subscription-calendar.png")
+          position: -73px 0px
+
+        span
+          display: block
+          text-indent: 100%
+          white-space: nowrap
+          overflow: hidden
+
+      a:hover
+        background:
+          color: transparent
+          image: image-url("sprite-subscription-calendar.png")
+          position: -73px 1px
+
+
+    div.day
+      padding: 15px
+      margin-left: 45px
+      position: relative
+
+      h4
+        margin-bottom: 0
+
+
+
+
+    .day
+      a.prev, a.next
+        text-indent: 100%
+        white-space: nowrap
+        overflow: hidden
+        padding: 0
+        background-image: none
+        background-position: none
+        position: absolute
+        width: 24px
+        height: 24px
+        top: 20px
+        border: 1px solid #d5d5d5
+        background: #eee
+
+      a.prev
+        +round_top_left
+        +round_bottom_left
+        border-right: none
+        right: 41px
+        background:
+          image: image-url("sprite-prev-next-arrows.png")
+          position: -62px -13px
+
+      a.next
+        +round_top_right
+        +round_bottom_right
+        right: 15px
+        background:
+          image: image-url("sprite-prev-next-arrows.png")
+          position: -11px -13px
+
+      a.disabled
+        cursor: default
+
+      a.next:hover, a.prev:hover
+        background:
+          color: rgba(#fff, 0.4)
+
+      a.disabled:hover
+        background:
+          color: transparent
+

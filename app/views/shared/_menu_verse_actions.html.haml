@@ -51,7 +51,7 @@
             %br
             %input{type:'text',id: 'bookmark_labels',name:'bookmark[labels]',placeholder: t("bookmarks.labels placeholder")}
             %input.verses_selected_input{name: "bookmark[references]", type: "hidden"}
-            %input{type: "hidden", name: "bookmark[version_id]", value: @version.id }
+            %input{type: "hidden", name: "bookmark[version_id]", value: presenter.version.id }
           %div.clear
           %p
             %button{type:"submit",name:"bookmark[submit]",value:"submit"}= t('bookmarks.save')
@@ -97,7 +97,7 @@
       .arrow
     %dd#note-pane.auth
       .pane
-        = render partial: 'notes/widget_form'
+        = render partial: 'notes/widget_form', locals: {note: presenter.note}
 
     %dt.clear-selected
       = t('ref.clear verses')

@@ -1,13 +1,14 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :set_last_read, :current_version, :alt_version, :set_current_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?, :populate_reader_settings
+  helper_method :sidebar_presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_locale
   before_filter :set_site
   before_filter :skip_home
   before_filter :check_facebook_cookie
   before_filter :tend_caches
+  before_filter :set_default_sidebar
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
     rescue_from AuthError, with: :auth_error
     rescue_from Timeout::Error, with: :timeout_error
     rescue_from APITimeoutError, with: :timeout_error
+  end
+
+  def client_settings
+    @client_settings ||= YouVersion::ClientSettings.new(cookies)
   end
 
   def set_page
@@ -55,25 +60,56 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def populate_reader_settings
-    # Get user font and size settings
-    # TODO:
-    # move into a memoized settings hash, handle similarly
-    # to FB cookie with JSON data and accessor instead of blind
-    # setting of opaque variables
-    @font = cookies['data-setting-font']
-    @size = cookies['data-setting-size']
-    @trans_notes = cookies['data-setting-trans-notes']
-    @cross_refs = cookies['data-setting-cross-refs']
-    @show_highlights = cookies['data-setting-show-highlights'] || "true"
-  end
-
   # Manually throw a 404
   def not_found
     raise ActionController::RoutingError.new('Not Found')
   end
 
+  protected
+
+    # For client, get the last known read reference
+    def last_read
+      Reference.new( client_settings.last_read , version: current_version) if client_settings.last_read.present?
+    end
+
+    # For client, set the currently reading (and therefore last read) reference to the provided ref.
+    def now_reading(ref)
+      client_settings.last_read = ref
+    end
+
+
   private
+
+
+  # Sidebar presenter helpers
+
+  # Before filter
+  def set_default_sidebar
+    sidebar_presenter = Presenter::Sidebar::Default.new
+  end
+
+  # setter for controllers
+  def sidebar_presenter=( pres )
+    @sb_presenter = pres
+  end
+
+  # getter for controllers and views as a view helper
+  def sidebar_presenter( opts = {} )
+    return @sb_presenter
+  end
+
+  # would have loved to do this in a after filter concept.  Can't create instance variables in after filters
+  # Call this to setup the subscription sidebar in necessary actions.
+  # Can later be extended through options for further customization on other states
+  def set_sidebar_for_state(options={})
+    if current_auth && client_settings.subscription_state?
+      # sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
+      # user may have unsubscribed elsewhere, handle nil sub case gracefully
+      @sb_presenter = Presenter::Sidebar::Subscription.new( client_settings.subscription_id, params, self) if client_settings.subscription_id.present?
+    end
+    @sb_presenter ||= options[:default_to]
+  end
+
   def sign_in(user, password = nil)
     cookies.permanent.signed[:a] = user.id
     cookies.permanent.signed[:b] = user.username
@@ -191,14 +227,6 @@ class ApplicationController < ActionController::Base
     return true
   end
 
-  def last_read
-    Reference.new(cookies[:last_read], version: current_version) if cookies[:last_read]
-  end
-
-  def set_last_read(ref)
-    cookies.permanent[:last_read] = ref.to_usfm if ref.try :valid?
-  end
-
   def force_notification_token_or_login
     if params[:token]
       redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return if current_user && current_user.notifications_token != params[:token]
@@ -278,7 +306,7 @@ class ApplicationController < ActionController::Base
   def current_version
     return @current_version if @current_version.present?
 
-    @current_version = cookies[:version] || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s) || Version.default
+    @current_version = client_settings.version || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s) || Version.default
     # check to make sure it's a valid version (handling version deprecation)
     @current_version = Version.find(@current_version).to_param rescue Version.default
   end
@@ -291,11 +319,16 @@ class ApplicationController < ActionController::Base
       begin
         # validate that the preferred secondary version has the reference in question
         includes_ref = Version.find(cookies[:alt_version]).include?(ref)
+
+      # Catch versions that don't exist and raise proper error
+      rescue NotAVersionError
+        cookies[:alt_version] = nil # nuke the bad cookie. BAD COOKIE!
+        raise NoSecondaryVersionError
+
+      # rescue anything else, nuke cookie
       rescue
-        # bad version was in cookie, nuke it
-        cookies[:alt_version] = nil
+        cookies[:alt_version] = nil # nuke the bad cookie. BAD COOKIE!
       end
-      raise BadSecondaryVersionError unless includes_ref
     end
 
     return cookies[:alt_version] if cookies[:alt_version].present?
@@ -303,16 +336,10 @@ class ApplicationController < ActionController::Base
     # new user or bad version was in cookie
     recent = recent_versions.find{|v| v.to_param != current_version && v.include?(ref)}
     cookies[:alt_version] = recent.to_param if recent
-
-    #raise NoSecondaryVersionError if (Version.all(params[:locale] || "en").map(&:to_param)-[current_version]).empty?
     cookies[:alt_version] ||= Version.sample_for((params[:locale] || "en"), except: current_version, has_ref: ref)
 
     raise NoSecondaryVersionError if cookies[:alt_version].blank?
     cookies[:alt_version]
-  end
-
-  def set_current_version(ver)
-    cookies.permanent[:version] = ver.to_param
   end
 
   def verses_in_chapter (ref_hash)

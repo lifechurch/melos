@@ -20,20 +20,13 @@
           = content_for?(:main) ? yield(:main) : yield
           - if content_for? :main_trailer
             = yield :main_trailer
-        - if content_for? :sidebar
-          #sidebar
-            = render '/shared/sidebar_global_before'
+        #sidebar
+          - if content_for? :sidebar
             = yield :sidebar
-        - else
-          - unless @sidebar == false
-            = render '/shared/sidebar'
+          - else
+            - unless (@sidebar == false || sidebar_presenter.blank?)
+              = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
+
       = render '/shared/footer'
-    - if @reader_menus == true
-      = render_cell :book_selector, :display, {version: @version}
-      = render_cell :version_selector, :display, {version: @version, recent_versions: recent_versions, reference: @reference, site: @site}
-      = render '/shared/menu_settings'
-      = render '/shared/menu_audio_player'
-      = render '/shared/modal_single_verse' unless @verse_modals == false
     = render '/shared/javascripts'
     = render '/shared/google_analytics'
-

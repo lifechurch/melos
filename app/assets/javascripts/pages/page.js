@@ -25,8 +25,8 @@ function Page() {
   this.initRadiosAndChecks();
   this.initProgressBars();
   this.initInplaceConfirms();
-  this.fixWidgetLast();
-  this.fixWidgetHeader();
+  //this.fixWidgetLast();
+  //this.fixWidgetHeader();
 }
 
 Page.prototype = {
@@ -421,26 +421,16 @@ Page.prototype = {
       header.each(function() {
         var el = $(this);
         var this_widget = el.closest('.widget');
-
-        //if ((this_widget[0] === last_widget[0]) || this_widget.has(".widget_spacer").length) { return; }
-
         if (this_widget.has(".widget_spacer").length) { return; }
-
         $('<div class="widget_spacer">&nbsp;</div>').insertBefore(el);
       });
 
 
 
       header.each(function() {
-        var el = $(this);
-        var this_widget = el.closest('.widget');
-
-        //if (this_widget[0] === last_widget[0]) {
-          // Don't do anything, we'll treat this differently
-          // if it's within the very last sidebar widget.
-        //  return;
-        //}
-
+        var el            = $(this);
+        var fix_widget    = el.parents('.fix');
+        var this_widget   = el.closest('.widget');
         var TOP_OFFSET    = 82;
         var next_widget   = this_widget.next('.widget');
         var window_top    = $(window).scrollTop() + TOP_OFFSET;
@@ -448,25 +438,33 @@ Page.prototype = {
         var spacer_top    = spacer.offset().top;
         var extra_padding = 12;
 
-        if (window_top >= spacer_top) {
-          el.addClass('widget_header_fixed');
+        // Temp solution for fixing an entire widget.  Need to consider sidebar markup + long term behavior and needs
+        // to design a proper solution.
 
-          // set the height of the spacer to the height of the header element to account
-          // for expanding / extra long header content.
-
-          spacer.css({ height: (el.height() + extra_padding) });
+        if(fix_widget.length) {
+          (window_top >= spacer_top) ? fix_widget.addClass("widget-fixed") : fix_widget.removeClass("widget-fixed")
         }
         else {
-          el.removeClass('widget_header_fixed');
-          spacer.css({ height: 0 });
-        }
+          if (window_top >= spacer_top) {
+            el.addClass('widget_header_fixed');
 
-        if (next_widget.length) {
-          if (window_top >= next_widget.offset().top) {
-            el.hide();
+            // set the height of the spacer to the height of the header element to account
+            // for expanding / extra long header content.
+
+            spacer.css({ height: (el.height() + extra_padding) });
           }
           else {
-            el.show();
+            el.removeClass('widget_header_fixed');
+            spacer.css({ height: 0 });
+          }
+
+          if (next_widget.length) {
+            if (window_top >= next_widget.offset().top) {
+              el.hide();
+            }
+            else {
+              el.show();
+            }
           }
         }
       });

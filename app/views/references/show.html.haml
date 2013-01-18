@@ -1,22 +1,22 @@
+// Variables necessary for templates and partials to render properly
+- @version        = @presenter.version
+- @alt_version    = @presenter.alt_version
+- @reference      = @presenter.reference
+- @alt_reference  = @presenter.alt_reference
+
 - @title = "#{@reference.human} #{@reference.version_string}"
-- @reader_menus = true
 - @is_reader = true
 - @canonical = bible_url(@reference)
+- @html_classes = []
+- @html_classes << "full_screen" if client_settings.reader_full_screen.present?
+- @html_classes << "full_screen" << "parallel_mode" if client_settings.reader_parallel_mode.present?
 
-- if @single_verse
+- if @presenter.modal_verse.present?
   - content_for :additional_meta do
     %meta{name: "twitter:card",         content: "summary"}
     %meta{name: "twitter:url",          content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
-    %meta{name: "twitter:title" ,       content: @title }
-    %meta{name: "twitter:description",  content: truncate(@single_verse.content(as: :plaintext), length: 200, separator: " ")}
+    %meta{name: "twitter:title" ,       content: @title}
+    %meta{name: "twitter:description",  content: truncate(@presenter.modal_verse.content(as: :plaintext), length: 200, separator: " ")}
     %meta{name: "twitter:site",         content: "@YouVersion"}
 
-- content_for :sidebar do
-  = render partial: '/shared/widget_bookmarks_stub' if current_auth
-  = render_cell :notes_list_widget, :stub, title: t("notes.community notes"), reference: @reference
-  = render '/shared/widget_ad_bible_app'
-
-= render partial: 'reader_header'
-= render 'reader'
-
-= render partial: "js"
+= render partial: 'reader', locals: {presenter: @presenter}

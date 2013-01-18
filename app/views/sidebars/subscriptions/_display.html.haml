@@ -1,0 +1,12 @@
+// Current Parameters:
+// presenter: Presenter::Sidebar::Subscription
+
+- if controller_name == "subscriptions" && action_name == "show"
+  = render partial: "/sidebars/subscriptions/show", locals: {presenter: presenter}
+
+- else
+  - url = "/subscriptions/#{presenter.subscription_id}/sidebar"
+  #sb-subscription
+    .ajax_me{"data-ajax" => url}
+      .widget.widget-notice.widget_last_fixed{style: "width:268px;"}
+        %p Loading sidebar content

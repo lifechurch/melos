@@ -12,4 +12,4 @@
 - else
   .float_left{title: t("plans.must start to complete"), style: "margin-top: 10px"}
     %input{type: "checkbox", id: "filler_box#{index}", disabled: "true"}
-%a{href: (cur_reading_index == index) ? nil : plan_path(plan.to_param, day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version]), style: "margin-top: 2px"}= reference.ref.human
+%a{href: (cur_reading_index == index) ? nil : user_subscription_path(current_user,plan, day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version]), style: "margin-top: 2px"}= reference.ref.human

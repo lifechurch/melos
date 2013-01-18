@@ -1,24 +1,14 @@
 - @title = t("plans.title")
-- @sidebar = false
 
 %article
   - if current_auth
-    - if request.path == user_plans_path(current_user)
-      %h1.float_left= t("plans.my plans")
-      %dl.combo_button.float_right
-        %dt
-        %dd
-          = link_to t("plans.all plans"), plans_path
-        %dd.highlighted
-          = link_to t("plans.my plans"), user_plans_path(current_user)
-    - else
-      %h1.float_left= t("plans.browse plans", category: @categories.current_name || t("plans.all"))
-      %dl.combo_button.float_right
-        %dt
-        %dd.highlighted
-          = link_to t("plans.all plans"), plans_path
-        %dd
-          = link_to t("plans.my plans"), user_plans_path(current_user)
+    %h1.float_left= t("plans.browse plans", category: @categories.current_name || t("plans.all"))
+    %dl.combo_button.float_right
+      %dt
+      %dd.highlighted
+        = link_to t("plans.all plans"), plans_path
+      %dd
+        = link_to t("plans.my plans"), user_subscriptions_path(current_user)
   - else
     %h1= t("plans.browse plans", category: @categories.current_name || t("plans.all"))
   .split_pane{:style => "padding-top:15px"}

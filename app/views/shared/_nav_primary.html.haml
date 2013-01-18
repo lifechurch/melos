@@ -10,11 +10,11 @@
         %a.icon{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark", redirect: "/bookmarks")}
           %span &nbsp;
         %a.tooltip{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark"), style: "display: none;"}
-          %span= t('bookmarks.title') 
+          %span= t('bookmarks.title')
       %li#nav_primary_plans{class: @nav == :plans ? "highlighted" : ""}
-        %a.icon{:href => current_auth ? user_plans_path(current_auth.username) : plans_path}
+        %a.icon{:href => current_auth ? user_subscriptions_path(current_auth.username) : plans_path}
           %span &nbsp;
-        %a.tooltip{:href => current_auth ? user_plans_path(current_auth.username) : plans_path, style: "display: none;"}
+        %a.tooltip{:href => current_auth ? user_subscriptions_path(current_auth.username) : plans_path, style: "display: none;"}
           %span=t("plans.title")
       %li#nav_primary_notes{class: @nav == :notes ? "highlighted" : ""}
         %a.icon{:href => current_auth ? user_notes_path(current_auth.username) : notes_path}

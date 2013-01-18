@@ -1,0 +1,18 @@
+// Local parameters
+// presenter: Presenter::Sidebar::Versions
+
+- versions = presenter.versions
+.widget
+  %header
+    %span
+      = t('versions.index title')
+  %ul.widget_menu
+    %li
+      %p
+        %b= t("versions.number of versions field")
+        = versions.values.flatten.count
+    %li
+      %p
+        %b= t("versions.number of languages field")
+        = versions.count
+= render '/shared/widget_ad_bible_app'

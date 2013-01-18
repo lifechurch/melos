@@ -1,34 +1,29 @@
 - @title = t("plans.title")
-- @sidebar = true
-
-- content_for :sidebar do
-  .widget
-    %header
-      %span
-        =t("plans.success widget title")
-    %ul.widget_menu
-      %li
-        %p= t("plans.success blurb")
-      %li
-        = link_to(t("plans.success blog link title"), "http://blog.youversion.com/2012/01/how-to-make-the-most-of-your-youversion-reading-plan/")
 
 %article
-  - if request.path == user_plans_path(current_user)
-    %h1.float_left= (@user == current_user) ? t("plans.my plans") : t("plans.a users plans", username: @user.username)
-    %dl.combo_button.float_right
-      %dt
-      %dd
-        = link_to t("plans.all plans"), plans_path
-      %dd.highlighted
-        = link_to t("plans.my plans"), user_plans_path(current_user)
-  -#else: is a different view
+  - other_users_plans = t("plans.a users plans", username: @user.username)
+  - if current_auth
+    - if request.path.downcase == user_subscriptions_path(current_user).downcase # we're on valid current_users plans page - show button navigation
+      %h1.float_left= t("plans.my plans")
+      %dl.combo_button.float_right
+        %dt
+        %dd
+          = link_to t("plans.all plans"), plans_path
+        %dd.highlighted
+          = link_to t("plans.my plans"), user_subscriptions_path(current_user)
 
-  - if !@user.subscriptions.empty?
+    - else # on another users reading plans - only show their name
+      %h1= other_users_plans
+
+  - else # no current_auth session.  Show the users name and no navigation.
+    %h1= other_users_plans
+
+  - unless @subscriptions.empty?
     %ul.big_list
-      - @user.subscriptions.each do |sub|
+      - @subscriptions.each do |sub|
         %li
           %div
-            %h4= link_to(sub.name, plan_path(sub))
+            %h4= link_to(sub.name, user_subscription_path(@user,sub))
             .progress_wrap
               .progress_counter
                 =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe

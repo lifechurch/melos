@@ -40,8 +40,16 @@ YouversionWeb::Application.routes.draw do
     match 'unfollow' => 'users#unfollow', as: 'unfollow'
     match 'badges' => 'users#badges', as: 'badges'
     match 'badge/:id' => 'badges#show', as: 'badge'
-    resources 'plans', :only =>[:index], :path =>'reading-plans'
+
+    resources 'subscriptions', :path => '/reading-plans' do
+      get   :calendar,    on: :member
+      post  :shelf,       on: :member
+    end
   end
+
+  match "subscriptions/:id/sidebar" => "subscriptions#sidebar"
+
+
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
   resources 'highlights', only: [:create]
@@ -62,13 +70,17 @@ YouversionWeb::Application.routes.draw do
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
   match 'api-test' => 'api_test#index'
 
-  #Reading Plans
-  resources :plans, :only => [:index, :show, :update], :path => 'reading-plans' do
-    match 'users' => 'plans#users_index'
-    match 'settings' => 'plans#settings'
-    match 'settings/email' => 'plans#settings' #legacy link
-    match 'calendar' => 'plans#calendar'
-    match 'start' => 'plans#start'
+  # Reading Plans
+  # Legacy links that need to be supported
+
+  # Community emails send this link
+  # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
+
+  # featuredplans.youversion.com use this link.
+  # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
+
+  resources :plans, :only => [:index, :show], :path => 'reading-plans' do
+    #match 'settings/email' => 'plans#settings' #legacy link
   end
 
   # profile stuff
