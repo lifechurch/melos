@@ -81,6 +81,20 @@ class Reference < YouVersion::Resource
     "#{_ref}#{_ver}".downcase
   end
 
+  # Get a chapter reference (all verses) from current reference
+  #
+  # example:
+  #   reference => Genesis 1:1
+  #   reference.to_chapter => Genesis 1
+  #
+  # returns:
+  #   an instance of Reference
+  #
+  def to_chapter
+    self.class.new(self, verses: nil)
+  end
+
+
   def version_string
     Version.find(version).human if version
   end

@@ -1,0 +1,13 @@
+// Locals
+// plan - instance of Plan
+
+.widget
+  %header
+    %span
+      =t("plans.publisher")
+  %ul.widget_menu
+    %li
+      %p= plan.copyright
+    - unless plan.publisher_url.nil?
+      %li
+        = link_to(t("plans.about publisher"), plan.publisher_url)

@@ -11,7 +11,7 @@
 - verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
 - focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
 - modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
-- a_subscription_chapter = presenter.is_a?(Presenter::Subscription) && presenter.is_chapter?
+- a_chapter = presenter.try(:is_chapter?)
 
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
@@ -29,7 +29,7 @@
          "data-setting-trans-notes" => client_settings.reader_trans_notes,
          "data-setting-cross-refs" => client_settings.reader_cross_refs,
          "data-setting-show-highlights" => client_settings.reader_highlights,
-         "class" => (focus_verses && (not a_subscription_chapter)) ? "mute" : nil}
+         "class" => (focus_verses && (not a_chapter)) ? "mute" : nil}
   .wrap
     %div.nav_items
       - direction = 'rtl' if version.try(:rtl?)

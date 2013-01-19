@@ -63,8 +63,8 @@ module Presenter
     # and then focus only the verses we need to later.
     def reference
       unless reading.references.empty?
-        ref_with_verses = reading.references[content_page || 0].ref #content page can be nil
-        ::Reference.new(ref_with_verses, verses: nil)     # return a reference for the whole chapter
+        ref = reading.references[content_page || 0].ref #content page can be nil
+        ref.to_chapter
       end
     end
 
