@@ -38,19 +38,30 @@ small,
 .li_1,
   margin-left: 30px !important
 
+// Muted styles for reader
 .mute,
 .mute a
   color: $mute
-
+// mute coloring for bold verse labels.  Needs a paler grey due to the bold style
+// lighter than $mute at #888
 .mute .verse .label
-  color: #AAA // making this color lighter than $mute at #888
+  color: #AAA
+
+// Mute words of jesus to a pale red
+.mute .wj .content
+  color: #C45E5E
 
 .mute a:hover
   color: $body_text
 
+// Focused styles for reader
 .mute .focused,
 .mute .focused .label
   color: $body_text
+
+// Focused style for words of jesus (back to proper red)
+.mute .focused .wj .content
+  color: #C00
 
 
 .callout
