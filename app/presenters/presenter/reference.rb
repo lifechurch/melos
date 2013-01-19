@@ -33,6 +33,10 @@ module Presenter
       @reference_hash ||= @reference_string.to_hash
     end
 
+    def is_chapter?
+      @reference_string.verses.blank?
+    end
+
     def note
       # Create an empty note for the note sidebar widget
       @note ||= Note.new(version_id: version.id)
