@@ -11,7 +11,7 @@
 - verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
 - focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
 - modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
-- a_subscription_chapter = presenter.is_a?(Presenter::Subscription) && presenter.is_chapter?
+- a_subscription_chapter = presenter.try(:is_chapter?)
 
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 

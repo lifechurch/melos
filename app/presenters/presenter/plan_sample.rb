@@ -47,6 +47,10 @@ module Presenter
       @alt_reference ||= ::Reference.new(reference, version: alt_version)
     end
 
+    def is_chapter?
+      raw_reference.is_chapter?
+    end
+
     def focus?
       true
     end
