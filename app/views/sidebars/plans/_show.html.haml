@@ -26,13 +26,5 @@
       %li{class: current_page?(controller:"plans",action:"sample") ? "active" : nil }
         = link_to_unless_current(t("plans.view sample"), sample_plan_path(plan.id)) do
           %span= t("plans.view sample")
-.widget
-  %header
-    %span
-      =t("plans.publisher")
-  %ul.widget_menu
-    %li
-      %p= plan.copyright
-    - unless plan.publisher_url.nil?
-      %li
-        = link_to(t("plans.about publisher"), plan.publisher_url)
+
+=render partial: "/sidebars/plans/publisher", locals: {plan: plan}

@@ -15,10 +15,7 @@
       =link_to( t("plans.calendar"), calendar_user_subscription_path(current_user,subscription))
     %li
       =link_to( t("plans.settings"), edit_user_subscription_path(current_user,subscription))
-
-.widget
-  %header
-    %span About this Plan
-  %ul.widget_menu
     %li
-      %p= subscription.about
+      =link_to( t("plans.about this plan"), plan_path(subscription))
+
+=render partial: "/sidebars/plans/publisher", locals: {plan: subscription}
