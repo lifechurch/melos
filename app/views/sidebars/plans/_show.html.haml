@@ -17,11 +17,15 @@
   %ul.widget_menu
     %li
       %p
+        %b Plan name:
+        = plan.name
+      %p
         %b=t("plans.length field")
         = plan.length
-    - if !current_user || !current_user.subscribed_to?(plan)
-      %li
-        = link_to(t("plans.view sample"), day: 1.to_s)
+    - if (!current_user || !current_user.subscribed_to?(plan))
+      %li{class: current_page?(controller:"plans",action:"sample") ? "active" : nil }
+        = link_to_unless_current(t("plans.view sample"), sample_plan_path(plan.id)) do
+          %span= t("plans.view sample")
 .widget
   %header
     %span

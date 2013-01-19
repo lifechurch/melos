@@ -42,11 +42,16 @@ small,
 .mute a
   color: $mute
 
+.mute .verse .label
+  color: #AAA // making this color lighter than $mute at #888
+
 .mute a:hover
   color: $body_text
 
-.mute .focused
+.mute .focused,
+.mute .focused .label
   color: $body_text
+
 
 .callout
   background:

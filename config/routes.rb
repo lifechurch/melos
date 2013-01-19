@@ -80,7 +80,7 @@ YouversionWeb::Application.routes.draw do
   # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
 
   resources :plans, :only => [:index, :show], :path => 'reading-plans' do
-    #match 'settings/email' => 'plans#settings' #legacy link
+    get :sample, on: :member
   end
 
   # profile stuff

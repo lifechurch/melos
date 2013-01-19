@@ -15,8 +15,13 @@ class PlansController < ApplicationController
 
   def show
     # TODO: redirect if user logged in and subscribed to this plan
-    @plan = Plan.find(params[:id])
-    self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
+    self.sidebar_presenter = Presenter::Sidebar::Plan.new(params[:id],params,self)
+    @plan = sidebar_presenter.plan
+  end
+
+  def sample
+    @presenter = Presenter::PlanSample.new(params[:id],params,self)
+    self.sidebar_presenter = Presenter::Sidebar::Plan.new(@presenter.plan,params,self)
   end
 
   def ref_not_found
