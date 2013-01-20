@@ -73,15 +73,21 @@ YouversionWeb::Application.routes.draw do
   # Reading Plans
   # Legacy links that need to be supported
 
-  # Community emails send this link
-  # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
 
-  # featuredplans.youversion.com use this link.
-  # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
 
   resources :plans, :only => [:index, :show], :path => 'reading-plans' do
     get :sample, on: :member
   end
+
+  # legacy route/link
+  # featuredplans.youversion.com use this link.
+  # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
+  match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
+
+  # legacy route/link
+  # Community emails send this link
+  # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
+  match "/reading-plans/:id/settings/email" => "plans#mail_settings"
 
   # profile stuff
   match 'settings/password'      => 'users#password', :as => 'password', :via => :get
