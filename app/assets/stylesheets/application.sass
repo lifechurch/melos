@@ -37,12 +37,15 @@
 @import wysiwyg/jquery.wysiwyg
 @import webfonts
 
+html.widescreen,
 @media only screen and (min-width: 990px)
   // ----------Style adjustments for viewports over 990px go here
   .mobile
     display: none !important
 
+html.mobile,
 @media only screen and (max-width: 990px)
+
   // ----------Style adjustments for viewports 990px and under go here
   #main article p
     font-size: 15px
