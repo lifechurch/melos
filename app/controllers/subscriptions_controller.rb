@@ -9,7 +9,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def index
-    @user = current_user
+    @user = User.find(params[:user_id])
     @subscriptions = @user.subscriptions
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
