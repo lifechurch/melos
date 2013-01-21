@@ -28,12 +28,10 @@ p
   margin-bottom: 0
 
 #wrapper
-  padding: 4px 10px 0px
+  padding: 4px 0 0
   width: 100%
-  background:  image-url("bdc_pics.jpg") repeat-x center 370px
 
 #header_outer,
-#container.no_sidebar,
 #footer
   width: 980px
   margin: 0 auto
@@ -54,6 +52,12 @@ p
 #container.no_sidebar
   padding-left: 0px
   background: transparent
+  width: 100%
+
+#container.no_sidebar #main
+  width: 100%
+  margin: 0 auto
+  float: none
 
 #main article, #main article:after
   background: transparent
@@ -61,10 +65,13 @@ p
   border: none
   padding: 0
   box-shadow: none
+  width: 100%
 
 #hero
   background: image-url("laptop.jpg") no-repeat 500px 10px
   margin-top: 20px
+  width: 980px
+  margin: 20px auto 0
 
   #hero_content
     padding-left: 20px
@@ -116,8 +123,14 @@ p
   top: -1px
   width: 100%
 
+.hero_pics
+  width: 100%
+  background:  image-url("bdc_pics.jpg") repeat-x center top
+  height: 221px
+
+
 #main article ul
-  margin: 280px auto 0 auto
+  margin: 20px auto 0 auto
   width: 940px
 
   li
@@ -141,7 +154,6 @@ p
       border-radius: 10px
       padding: 20px
       background: #fff
-      height: 260px
 
       p
         line-height: 1.6em
@@ -160,16 +172,14 @@ p
   .take_bible
     background: image-url("take_bible_icon.png") no-repeat center 0px
 
-  .study_bible .pod_content, .subscribe_bible .pod_content
-    height: 240px
-
     p
       display: inline
 
 #main article .explore_cta
-  margin: 30px auto 30px
+  margin: 40px auto 50px
   text-align: center
   overflow: hidden
+  width: 980px
 
   h2
     font: 39px 'RobotoLight', Arial, sans-serif
@@ -270,17 +280,20 @@ p
       width: 100px
 
 #main article .bottom_cta
-  overflow: hidden
-  width: 880px
-  margin: 80px auto 20px
+  background-color: #fff
+  width: 100%
 
   div
-    float: left
-    width: 260px
-    background: image-url("bdc_mobile_icons.png") no-repeat 0 0
-  div:first-child
-    width: 620px
-    background: transparent
+    width: 880px
+    margin: 40px auto 40px
+    overflow: hidden
+    div
+      float: left
+      width: 260px
+      background: image-url("bdc_mobile_icons.png") no-repeat 0 0
+    div:first-child
+      width: 620px
+      background: transparent
 
   p
     width: 300px
@@ -322,13 +335,12 @@ p
   h2
     margin-bottom: 10px
     padding-left: 65px
-    font: 50px 'RobotoLight', Arial, sans-serif
+    font: 45px 'RobotoLight', Arial, sans-serif
     letter-spacing: -.05em
-    background: image-url("Bible-app-icon-english-50x50.png") no-repeat 0 52%
+    background: image-url("Bible-app-icon-en-small.png") no-repeat 0 52%
 
 #footer
-  padding: 20px 10px
-  margin-top: 40px
+  padding: 0 10px 20px
 
 .flash_error
   margin: 0px
@@ -544,13 +556,13 @@ p
           p
             display: block
             padding-right: 70px
-            background: image-url("Bible-app-icon-english-50x50.png") no-repeat top right
+            background: image-url("Bible-app-icon-en-small.png") no-repeat top right
           span
             p
               background: transparent
         h2
           font-size: 39px
-          background: transparent
+          background: transparent !important
           padding: 0
         h2, p
           width: auto
@@ -596,3 +608,6 @@ p
 #footer
   margin-top: 10px
 
+@media only screen and (min-width: 481px)
+  #main article .bottom_cta div:first-child p
+    background: transparent !important

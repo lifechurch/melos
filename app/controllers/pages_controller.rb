@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  helper_method :localized_bible_icon
+
   def donate
     @us_donate_link = us_donation_path
     @intl_donate_link = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P87AYS9RLXTEE"
@@ -48,6 +50,20 @@ class PagesController < ApplicationController
   def i18n_terms_whitelist
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
-    [:en, :sv, :ja, :vi, :nl, :"pt-BR", :"no", :"zh-CN", :"zh-TW", :ms, :ru, :ro]
+    [ :en, :sv, :ja, :vi, :nl, :"pt-BR", :"no", :"zh-CN",
+      :"zh-TW", :ms, :ru, :ro, :"es-ES", :uk ]
+  end
+
+  def localized_bible_icon
+    # the following localizations have a 50x50 or slightly larger
+    # asset localized. Add a new code here if you have
+    # added the image asset as named below
+    if [:km, :af, :ar, :nl, :en, :tl, :fi, :fr, :de, :hu,
+        :ko, :ms, :no, :pl, :"pt-BR", :"pt-PT", :ro, :ru,
+        :"zh-CN", :sk, :es, :sv, :"zh-TW", :uk, :bg, :ca,
+        :"en-GB", :"es-ES", :hi, :id, :it, :ja, :mk, :mn,
+        :sq, :tr, :vi, :cs].include? I18n.locale
+      "Bible-app-icon-#{I18n.locale}-small.png"
+    end
   end
 end

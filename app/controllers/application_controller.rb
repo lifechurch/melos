@@ -54,8 +54,7 @@ class ApplicationController < ActionController::Base
   end
 
   def skip_home
-    # temporarily skip if != en until we get content localized
-    if params[:controller] == 'pages' && params[:action] == 'home' && (cookies["setting-skip-home"] || I18n.locale != :en)
+    if params[:controller] == 'pages' && params[:action] == 'home' && cookies["setting-skip-home"]
       redirect_to( bible_path( last_read || default_reference ))
     end
   end
