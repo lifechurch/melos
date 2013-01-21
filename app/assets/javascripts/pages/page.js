@@ -55,26 +55,6 @@ Page.prototype = {
     this.IE9 = !!(this.IE && this.VERSION === 9);
     this.MODERN_BROWSER = !((this.IE && this.VERSION < 9) || this.BROWSER.opera);
 
-    // add html class for browsers that don't support media queries
-    jRes.addFunc({
-      breakpoint: 'mobile',
-      enter: function() {
-        $('html').addClass('mobile');
-      },
-      exit: function() {
-        $('html').removeClass('mobile');
-      }
-    });
-    jRes.addFunc({
-      breakpoint: 'widescreen',
-      enter: function() {
-        $('html').addClass('widescreen');
-      },
-      exit: function() {
-        $('html').removeClass('widescreen');
-      }
-    });
-
   },
 
   // Ability to set the reader on the page publicly.
