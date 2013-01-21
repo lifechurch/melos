@@ -321,6 +321,7 @@ class UsersController < ApplicationController
 
   def forgot_password_form
     @selected = :password
+    sidebar_presenter = Presenter::Sidebar::Default.new
     render "forgot_password", layout: "application"
   end
 
