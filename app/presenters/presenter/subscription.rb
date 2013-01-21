@@ -16,7 +16,9 @@ module Presenter
 
     def subscription
       auth = @controller.send(:current_auth)
-      @subscription ||= ::Subscription.find( subscription_id , auth.user_id, auth: auth)
+      user = @controller.send(:current_user)
+      # call Sub.find with user object to avoid later lookup
+      @subscription ||= ::Subscription.find( subscription_id , user , auth: auth)
       @subscription.version_id = @params[:version] || @subscription.version_id || @controller.send(:current_version)
       return @subscription
     end
