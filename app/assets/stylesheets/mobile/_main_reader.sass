@@ -325,6 +325,18 @@ div.close_tab
     background: #666
     +box-shadow(inset #000000 0 1px 1px 1px)
 
+.tab_navigation.plan_settings
+  width: 100%
+  position: absolute
+  left: 0px
+  top: -5px
+  display: block
+  height: 44px 
+
+.tab_navigation.plan_settings a
+  width: 49.99%
+  line-height: 48px
+
 .tab_navigation.ref a
   width: 49.99%
 
@@ -401,7 +413,8 @@ div.close_tab
   border-radius: 0px
 
 #main article .combo_button + .big_list,
-#main article .combo_button + .split_pane
+#main article .combo_button + .split_pane,
+#main article .tab_navigation + table
   margin-top: 50px !important
 
 .nav_items.audio-disabled

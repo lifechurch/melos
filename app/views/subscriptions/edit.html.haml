@@ -9,12 +9,9 @@
 %article
   %h1{style: "clear: none; width: 300px;"}= t("plans.settings")
 
-  .mobile
-    %dl.tabs
-      %dd.highlighted
-        = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription)
-      %dd
-        = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription)
+  .tab_navigation.plan_settings.mobile
+    = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription),{:class => "selected"}
+    = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription)
 
   // Email delivery settings
   .div.float_right
@@ -26,7 +23,7 @@
         .float_left{style: "width: 130px; overflow: hidden; text-overflow: ellipsis"}= subscription.user.email
         .small.float_right{style: "margin-top: 3px"}= link_to(t("plans.email edit"), email_user_path(current_user))
 
-  %div{style: "width: 330px"}
+  %div{style: "width: 330px; margin-top: 50px"}
     %h5= t("plans.email delivery")
     %p.float_left= t("plans.email delivery text")
 

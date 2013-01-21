@@ -10,12 +10,9 @@
 %article
   %h1= t("plans.calendar")
 
-  .mobile
-    %dl.tabs
-      %dd
-        = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription)
-      %dd.highlighted
-        = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription)
+  .tab_navigation.plan_settings.mobile
+    = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription)
+    = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription),{:class => "selected"}
 
   :ruby
     statuses = subscription.day_statuses
