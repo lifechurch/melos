@@ -6,6 +6,11 @@ class Subscription < Plan
   attribute :email_delivery
   attribute :email_delivery_version_id
 
+  def initialize( data , opts = {})
+    super(data)
+    @user = opts[:user] || nil # keep @user around to avoid further api calls
+  end
+
 
   def self.list_path
     "#{api_path_prefix}/items"
@@ -19,18 +24,20 @@ class Subscription < Plan
     :id
   end
 
-  def self.find(plan, user, opts = {})
+  def self.find(plan, u, opts = {})
     # We can't use Plan.find because it gets an unexpected response from
     # API when trying un-authed call so it never tries the authed call
     #
     # if auth is nil, the API will attempt to search for public subscription
-    case user
+
+    case u
       when User
-        opts[:user_id] = user.id
+        opts[:user] = u
+        opts[:user_id] = u.id
       when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
-        opts[:user_id] = user.to_i
+        opts[:user_id] = u.to_i
       else                                        #hope the user find can handle it
-        opts[:user_id] = User.find(user).id
+        opts[:user_id] = User.find(u).id
     end
 
     opts[:id] = id_from_param plan
@@ -46,7 +53,7 @@ class Subscription < Plan
       end
     end
 
-    Subscription.new(response.merge(auth: _auth))
+    Subscription.new(response.merge(auth: _auth),opts)
   end
 
   def self.id_from_param(param)
