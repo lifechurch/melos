@@ -3,5 +3,6 @@
   :test_pattern:
     # - features/pages.feature
     # - features/versions.feature
-    - spec/integration/**_spec.rb
+    # - spec/integration/**_spec.rb
+    - spec/integration/pages_spec.rb
     - spec/request/**_spec.rb
