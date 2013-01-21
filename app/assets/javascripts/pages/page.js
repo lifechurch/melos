@@ -266,6 +266,11 @@ Page.prototype = {
     // only create menu / widget if element id is found on the page.
     // should eventually be in a subclass of Page for each individual page type.
 
+      var modal_el = "#modal_single_verse";
+      if($(modal_el).length) {
+        var single_verse_modal = new VerseModal();
+      }
+
       var widget_note = "#widget_new_note";
       if($(widget_note).length) {
         this.new_note_widget = new NoteWidget( widget_note );
