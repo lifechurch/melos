@@ -95,6 +95,30 @@ Page.prototype = {
         link.attr("target", "_blank");
       }
     });
+
+    // responsive links
+    jRes.addFunc({
+      breakpoint: 'mobile',
+      enter: function() {
+        // make data-mobile-href elements hrefs
+        var $this = null;
+        $('a[data-mobile-href]').each(function() {
+          $this = $(this);
+          $this.attr('data-original-href', $this.attr('href'));
+          $this.attr('href', $this.attr('data-mobile-href'));
+        });
+      },
+      exit: function() {
+        // set mobile links back
+        var $this = null;
+        $('a[data-original-href]').each(function() {
+          $this = $(this);
+          $this.attr('href', $this.attr('data-original-href'));
+          $this.removeAttr('data-original-href');
+        });
+      }
+    });
+
   },
 
   initInputs : function() {
