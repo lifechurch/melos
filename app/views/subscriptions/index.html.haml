@@ -1,9 +1,8 @@
 - @title = t("plans.title")
 
 %article
-  - other_users_plans = t("plans.a users plans", username: @user.username)
   - if current_auth
-    - if request.path.downcase == user_subscriptions_path(current_user).downcase # we're on valid current_users plans page - show button navigation
+    - if request.path.downcase == user_subscriptions_path(current_user, locale: false).downcase # we're on valid current_users plans page - show button navigation
       %h1.float_left= t("plans.my plans")
       %dl.combo_button.float_right
         %dt
@@ -13,7 +12,7 @@
           = link_to t("plans.my plans"), user_subscriptions_path(current_user)
 
     - else # on another users reading plans - only show their name
-      %h1= other_users_plans
+      %h1= t("plans.a users plans", username: @user.username)
 
   - else # no current_auth session.  Show the users name and no navigation.
     %h1= other_users_plans

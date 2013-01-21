@@ -9,7 +9,8 @@ class SubscriptionsController < ApplicationController
   end
 
   def index
-    @user = current_user
+    # Avoid extra api call for user here
+    @user = (params[:user_id] == current_user.try(:id)) ? current_user : User.find(params[:user_id])
     @subscriptions = @user.subscriptions
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
