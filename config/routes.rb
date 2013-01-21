@@ -159,6 +159,8 @@ YouversionWeb::Application.routes.draw do
 
   root to: 'pages#home'
 
+  mount_sextant if Rails.env.development?
+
   # Rails 3.1 hack to catch any remaining routes (404's)
   # with globbing setting params[:path] to the bad path
   match '*path', :to => 'pages#routing_error'

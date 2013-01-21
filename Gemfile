@@ -81,6 +81,7 @@ group :development, :tddium_ignore do
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'hooves'
+  gem 'sextant', '~> 0.1.3'
   gem 'pry', require: false
   gem 'quiet_assets'
   gem 'spork-rails'
