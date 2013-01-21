@@ -1,8 +1,12 @@
+- content_for :title do
+  =t('sign up')
+
 %article
   %h1= t("users.sign up for an account")
   -if @blurb
     %hr
     %p= @blurb
+    %p= link_to t("have an account"), sign_in_path, class: "action_button_green"
     %hr
   %p= link_to t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
   = render 'create_form'
