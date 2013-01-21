@@ -23,6 +23,9 @@
 // Split pane - Menu.
 //
 
+.split_pane_sidebar
+  min-height: 100px 
+
 .split_pane_sidebar dl
   border-right: 1px solid #ccc
   line-height: 1
@@ -30,6 +33,10 @@
 .split_pane_sidebar dt,
 .split_pane_sidebar dd
   border-bottom: 1px solid #ccc
+
+.split_pane_sidebar dd
+  border-left: 1px solid #ccc
+  border-right: 1px solid #ccc
 
 .split_pane_sidebar dt,
 .split_pane_sidebar dd a:not(.no_style)
@@ -39,6 +46,7 @@
   font-weight: bold
   padding-bottom: 15px
   line-height: 25px
+  font-size: 22px
 
 .split_pane_sidebar dd
   font-size: 13px
@@ -49,6 +57,10 @@
   text-decoration: none
   padding-left: 32px
 
+.split_pane_sidebar dd a
+  font-size: 15px
+  margin-left: 0px !important
+
 
 .split_pane_sidebar dd a:hover:not(.no_style)
   background:
@@ -57,7 +69,10 @@
 .split_pane_sidebar .highlighted
   background: #fff image-url("split_pane_sidebar_highlighted.png") no-repeat
   font-weight: bold
-  margin-right: -1px
+  margin-right: 0px
+
+.split_pane_sidebar .highlighted a
+  font-size: 16px
 
 .split_pane_sidebar .highlighted a:not(.no_style),
 .split_pane_sidebar .highlighted a:hover:not(.no_style)
