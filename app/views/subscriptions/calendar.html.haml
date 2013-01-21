@@ -5,17 +5,17 @@
   = t("plans.month")
 
 - content_for :mobile_right_nav do
-  =link_to t('plans.overview'), plan_path(@subscription), class: 'info_btn'
+  =link_to t('plans.overview'), plan_path(subscription), class: 'info_btn'
 
 %article
   %h1= t("plans.calendar")
 
   .mobile
     %dl.tabs
-      %dd.highlighted
-        = link_to t("plans.settings"), edit_user_subscription_path(current_user, @subscription)
       %dd
-        = link_to t("plans.month"), calendar_user_subscription_path(current_user, @subscription)
+        = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription)
+      %dd.highlighted
+        = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription)
 
   :ruby
     statuses = subscription.day_statuses
