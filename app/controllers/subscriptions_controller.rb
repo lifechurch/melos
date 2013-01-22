@@ -140,7 +140,8 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_for( plan_id )
-    Subscription.find(plan_id, current_auth.user_id, auth: current_auth)
+    # find with current_user to avoid extra api calls
+    Subscription.find(plan_id, current_user, auth: current_auth)
   end
 
 end
