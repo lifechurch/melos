@@ -1,7 +1,9 @@
 - content_for :title do
   =t('sign in')
 
-=render partial: "/sidebars/sessions/new"
+- content_for :mobile_right_nav do
+  %a.save_btn{:href => 'javascript:void(0);', onclick: "$('input[type=\"submit\"]').click();"}
+    = t('sign in')
 
 %article
   %h1= t("sign in to youversion")
