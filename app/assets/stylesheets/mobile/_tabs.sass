@@ -1,59 +1,96 @@
-@media only screen and (max-width: 990px)
-  /* Style adjustments for viewports 990px and under go here
+// Style adjustments for viewports 990px and under go here
 
-  // `Content Tabs
-  //----------------------------------------------------------------------------------------------------
+// `Content Tabs
+//----------------------------------------------------------------------------------------------------
 
-  // Hack for Firefox.
-  @-moz-document url-prefix()
-    #main article .combo_button
-      line-height: 28px
+// Hack for Firefox.
+@-moz-document url-prefix()
+  #main article .combo_button
+    line-height: 28px
 
-  .combo_button
-    font-size: 15px
-    overflow: hidden
-    a
-      color: #fff
-      text-decoration: none
-      height: 44px
-      display: block
-      text-align: center
-      font-weight: bold
-      line-height: 43px
-      float: left
-      width: 50%
-      border:
-        top: 3px solid #fff
-        bottom: 3px solid #b9b9b9
-      background-color: #999
-    .highlighted
-      background-color: #fff
-      color: $body_text
-      border: 0
+#main article .combo_button
+  width: 100%
+  position: absolute
+  left: 0px
+  top: -5px
+  display: block
+  height: 44px
+  margin: 0px
+  text-align: center
+  line-height: 43px
+  color: #444
+  font-weight: bold
+  font-size: 15px
+  text-decoration: none
+  border-bottom: 0px
+  float: none !important
+  overflow: hidden
 
-    .unselected_tab
-      border-left: 1px solid #aaa
-      width: 49.99%
+#main article .combo_button
+  dt
+    display: none
 
-  .plan_detail .combo_button
+  dt:first-child + dd,
+  dd:last-child,
+  dt:first-child + dd a,
+  dd:last-child a
+    +border-radius(0)
+
+  dd
+    width: 49.99%
+    border: 0px
+    background: none
+    background-color: #666
+    text-shadow: none
+    color: #fff
+    margin-left: 0
+
+  dd:hover
+    background: #666
+    border-color: none
+
+  dd:first-child
+    border-left: 0
+
+  dd.highlighted,
+  dd.highlighted:hover
+    background: #fff
+    border-radius: 0px
+    color: #666 !important
+
+  dd.highlighted a
+    padding-left: 0px
+    color: #444 !important
+    text-decoration: none
+
+  dd.highlighted a:hover
+    color: #666
+
+  dd:hover a
+    color: #222 !important
+
+#main article .combo_button
+  a
+    border: 0px
     width: 100%
-    a
-      color: #fff
-      text-decoration: none
-      height: 33px
-      display: block
-      text-align: center
-      font-weight: bold
-      padding-top: 11px
-    td
-      width: 33.3%
-      background-color: #999
-      border-right: 1px solid #acacac
-    td:first-child
-      width: 33.4%
-      border-right: 0
-    .highlighted
-      background-color: #fff
-      color: $body_text
-      border: 0
-      font-weight: bold
+    padding: 0 !important
+    height: auto
+    background: none !important
+    color: #fff
+    text-align: center
+    +border-radius(0 !important)
+
+  a:last-child
+    +border-radius(0 !important)
+
+  .highlighted a
+    box-shadow: none
+
+
+  dt:first-child + dd
+    border-radius: 0px
+
+#main article .combo_button + .big_list,
+#main article .combo_button + .split_pane,
+#main article .tab_navigation + table
+  margin-top: 50px !important

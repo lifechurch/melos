@@ -1,66 +1,16 @@
 @media only screen and (max-width: 990px)
   /* Style adjustments for viewports 990px and under go here
-  br + input,
-  br + textarea
-    margin-top: 5px
-
 
   // `Flash Messages
   //----------------------------------------------------------------------------------------------------
 
   .flash_error,
   .flash_notice
-    @extend .clearfix
-    +box-shadow(#fff 0 1px 0 0)
-    background:
-      repeat: no-repeat
-      position: right bottom
-    border: 1px solid
-    font-size: 16px
     margin: 0px
-    padding: 10px 20px
-    box-sizing: border-box
-    opacity: 0.95
-    z-index: 5
-    text-shadow: #fff 0 1px 0
     position: relative
-    cursor: pointer
     width: 100%
 
-  .flash_error, .form_errors
-    background:
-      color: #f4cccc
-      image: image-url("flash_error.png")
-    border-color: #e89494
-    color: #aa0303
-
-  .form_errors
-    background:
-      repeat: no-repeat
-      position: right bottom
-    border: 1px solid
-    font-size: 16px
-    opacity: 0.95
-    text-shadow: #fff 0 1px 0
-    padding: 10px 20px
-    box-sizing: border-box
-    +round
-    +box-shadow(#fff 0 1px 0 0)
-    margin-bottom: 20px
-    ul
-      margin-bottom: 0
-      list-style: none
-      padding: 0
-      li
-        background-image: none !important
-        padding-left: 0 !important
-
   .flash_notice
-    background:
-      color: #d9e4c9
-      image: image-url("flash_notice.png")
-    border-color: #91b164
-    color: #4b7518
     width: 100%
     top: 47px
     left: 0px !important
@@ -69,123 +19,8 @@
     margin: 0px !important
     opacity: 1 !important
 
-  // `Radio buttons & Checkboxes
-  //----------------------------------------------------------------------------------------------------
-
-  .faux_radio,
-  .faux_checkbox
-    background:
-      image: image-url("checkbox_radio_sprite.png")
-      repeat: no-repeat
-    cursor: pointer
-    display: inline-block
-    overflow: hidden
-    width: 30px
-    height: 30px
-    vertical-align: middle
-    position: relative
-    top: -3px
-    zoom: 1
-
-  .faux_radio input,
-  .faux_checkbox input
-    width: 1px
-    height: 1px
-    position: absolute
-    top: auto
-    left: -99999px
-    right: auto
-    bottom: auto
-
-  .faux_checkbox
-    background-position: 0 0
-
-  .faux_checkbox:hover,
-  .faux_checkbox.is_focused
-    background-position: -30px 0
-
-  .faux_checkbox.is_checked
-    background-position: -60px 0
-
-  .faux_checkbox.is_checked:hover,
-  .faux_checkbox.is_checked.is_focused
-    background-position: -90px 0
-
-  .faux_radio
-    background-position: 0 -30px
-
-  .faux_radio:hover,
-  .faux_radio.is_focused
-    background-position: -30px -30px
-
-  .faux_radio.is_checked
-    background-position: -60px -30px
-
-  .faux_radio.is_checked:hover,
-  .faux_radio.is_checked.is_focused
-    background-position: -90px -30px
-
-  /* Disabled states... */
-
-  .faux_radio.is_disabled,
-  .faux_checkbox.is_disabled
-    +opacity(0.4)
-    cursor: default
-
-  .faux_radio.is_disabled:hover
-    background-position: 0 -30px
-
-  .faux_radio.is_checked.is_disabled:hover
-    background-position: -60px -30px
-
-  .faux_checkbox.is_disabled:hover
-    background-position: 0 0
-
-  .faux_checkbox.is_checked.is_disabled:hover
-    background-position: -60px 0
-
-  .faux_radio + label,
-  .faux_checkbox + label,
-  input[type="radio"] + label,
-  input[type="checkbox"] + label
-    cursor: pointer
-
-  .faux_radio + label,
-  .faux_checkbox + label
-    margin-left: -5px
-
-  .faux_radio.is_disabled + label,
-  .faux_checkbox.is_disabled + label,
-  input[type="radio"][disabled] + label,
-  input[type="checkbox"][disabled] + label
-    color: #aaa
-    cursor: default
-
-  // `Spacing, to account for box-shadow gray "border".
-  //----------------------------------------------------------------------------------------------------
-
-  input + input,
-  input + button,
-  input + select,
-  select + input,
-  select + button,
-  select + select,
-  button + input,
-  button + button,
-  button + select
-    margin-left: 15px
-
-
-  label + input,
-  label + select,
-  label + textarea
-    margin-top: 5px
-
   // `Form Overrides
   //----------------------------------------------------------------------------------------------------
-
-  label
-    font-weight: bold
 
   button,
   input[type="button"],
@@ -224,17 +59,6 @@
     background-image: none
     background-color: #6A833C
 
-  button:focus,
-  input[type="button"]:focus,
-  input[type="submit"]:focus,
-  input[type="reset"]:focus,
-  button:active,
-  input[type="button"]:active,
-  input[type="submit"]:active,
-  input[type="reset"]:active,
-  button.active
-    +box-shadow(inset rgba(#000, 0.5) 0 1px 3px 0)
-
   textarea,
   input[type="date"],
   input[type="datetime"],
@@ -250,69 +74,10 @@
   input[type="url"],
   input[type="week"]
     border-color: #bbb
-    +round
     +background-image(linear-gradient(#eee, #fff))
-    padding: 7px 0 7px 10px
     height: 44px
     width: 100%
     font-size: 15px
-
-  form p.emphasis
-    background: #EEEDEB
-    padding: 5px 23px 10px
-    border: 1px solid #CBC9CF
-    border-radius: 4px
-
-  input.address
-    width: 465px
-
-  div.color_picker_list button.color
-    display: inline
-    margin-left: 0
-    margin-right: 4px
-
-  textarea
-    display: block
-    height: auto
-
-
-  textarea:focus,
-  input[type="date"]:focus,
-  input[type="datetime"]:focus,
-  input[type="datetime-local"]:focus,
-  input[type="email"]:focus,
-  input[type="month"]:focus,
-  input[type="number"]:focus,
-  input[type="password"]:focus,
-  input[type="search"]:focus,
-  input[type="tel"]:focus,
-  input[type="text"]:focus,
-  input[type="time"]:focus,
-  input[type="url"]:focus,
-  input[type="week"]:focus,
-  textarea:active,
-  input[type="date"]:active,
-  input[type="datetime"]:active,
-  input[type="datetime-local"]:active,
-  input[type="email"]:active,
-  input[type="month"]:active,
-  input[type="number"]:active,
-  input[type="password"]:active,
-  input[type="search"]:active,
-  input[type="tel"]:active,
-  input[type="text"]:active,
-  input[type="time"]:active,
-  input[type="url"]:active,
-  input[type="week"]:active
-    border-color: $blue
-
-  input[type="search"]
-    padding-right: 1px
-    -webkit-appearance: none
-
-  button.color
-    +box-shadow(none)
-    border: none
 
   select
     padding: 8px 10px

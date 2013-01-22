@@ -37,14 +37,14 @@
 @import wysiwyg/jquery.wysiwyg
 @import webfonts
 
-@media only screen and (min-width: 990px)
-  // ----------Style adjustments for viewports over 990px go here
+@media only screen and (min-width: 769px)
+  // ----------Style adjustments for viewports over 769px go here
   .mobile
     display: none !important
 
-@media only screen and (max-width: 990px)
+@media only screen and (max-width: 768px)
 
-  // ----------Style adjustments for viewports 990px and under go here
+  // ----------Style adjustments for viewports 768px and under go here
   #main article p
     font-size: 15px
   body
@@ -299,7 +299,11 @@
   .action_button_blue,
   .action_button_green,
   .action_button_green
-    padding: 5px 20px !important
+    padding: 10px 20px !important
+    +box-shadow(inset rgba(0,0,0,0.2) 0 -2px 0, inset rgba(255, 255, 255,0.2) 0 2px 0 !important)
+    border-radius: 4px
+    border: none
+    text-shadow: rgba(#000, 0.5) 0 -1px 0
 
   .version_select .scroll .loading
     display: none
@@ -336,452 +340,25 @@
   .reading_plan_index .action_button_blue
     width: 90%
 
-  // ---------- Pages
-
-  // -------------Donate page
-  // Note: Styles for the "Donate Now" button are combined
-  // with the sidebar button styles, in _sidebar.sass
-
-
-  #main article.donate
-    padding-bottom: 0
-    padding-top: 16px
-    background: none
-    h1
-      line-height: 1em
-      float: none !important
-      width: auto
-      display: block
-
-    .callout
-      background: none
-      padding-left: 0
-
-    .intl
-      padding-top: 8px
-
-    .action_button_green
-      .icon_arrow
-        background-image: none
-        padding: 0
-
-  #main article.donate
-    #donate_now_wrap
-      margin-bottom: 15px
-      text-align: right
-      float: none
-      width: auto
-
-      .intl
-        text-align: center
-        display: block
-        font-weight: bold
-
-        &:link
-          text-decoration: none
-        &:hover
-          text-decoration: underline
-
-    p.narrow
-      width: auto
-
-  #main article.donate
-    .float_left
-      float: none !important
-
-    div
-      padding-left: 0 !important
-
-    input[name="tr[city]"], input[name="tr[email]"], select[name="tr[state]"]
-      margin-bottom: 10px
-
-  #main article.donate
-    .emphasis + label,
-    input + label,
-    select + label
-      display: block
-
-    input.address
-      width: 100%
-
-  //  label
-  //    margin-top: 16px
-
-    label[for="tr_x_email_customer"]
-      margin-top: 0
-
-    div
-      button[action="submit"]
-        margin-top: 2em
-        margin-bottom: 2em
-
-    select#tr_x_state
-      margin-top: 0
-
-  // -------------About page
-
-  .partners_content .partners_box
-    margin: 0 0 24px 0
-    div
-      margin: 0
-      padding: 0
-      text-align: center
-      img
-        border: 1px solid #F4F4F4
-        width: 100%
-
-  // -------------Press page
-
-  #main article.press
-    .press_resources
-    ul
-      margin-top: 0
-      li
-        margin: 0
-        padding: 0
-        background: none
-        padding-top: 20px
-        h4
-          line-height: 20px
-          margin-bottom: 4px
-        a
-          font-weight: bold
-          text-decoration: none
-        p
-          line-height: 20px
-          margin: 0
-      li:first-child
-        padding-top: 0
-    img[alt="Press_image"]
-      width: 100%
-
-  // -------------Mobile page
-
-  #main article.mobile
-    font-size: 13px
-    line-height: 1.7
-    background: none
-    padding-top: 20px
-
-    #mobile_content
-      overflow: hidden
-      margin-bottom: 10px
-      width: auto
-      float: none !important
-      h1
-        line-height: 1.18em
-
-    #mobile_content
-      .main
-        width: 46%
-        padding-right: 4%
-        float: left
-        line-height: 1.45em
-        p
-          margin-bottom: 10px
-
-    #mobile_content
-      .multilingual
-        float: right
-        text-align: center
-        padding: 0 0 0 4%
-        width: 45%
-        border-left: 1px solid #e1e1e1
-
-        p
-          font-size: 13px
-          line-height: 1.4
-        h3
-          font-size: 12px
-          margin: 0 0 5px 0
-
-  #mobile_downloads
-    float: none !important
-    width: auto
-    padding: 0
-    border-left: 0
-
-    .left_column
-      float: left
-      width: 50%
-    .right_column
-      float: left
-      padding-left: 10px
-      width: 46%
-
-  #mobile_downloads a.cta
-    background: image-url("mobile_download.png") 14px center no-repeat #81a951 !important
-    display: block
-    padding: 15px 15px 12px 54px
-    border-radius: 4px
-    border: 1px #607346 solid
-    box-shadow: inset 0px 1px 0px rgba(#fff, .3)
-    overflow: hidden
-    clear: both
-
-    img
-      display: none
-  a.cta h3
-    margin-bottom: 0
-
-  #main section.testimonials ul li
-    padding: 5px 20px 10px 35px
-    margin: 0 0 10px
-    background: image-url("mobile_quote.png") no-repeat top left
-    float: none
-    width: auto
-    border-right: 0
-
-
-  // ----------------- Reading plans
-
-  #main article.readingplans
-    padding: 0
-
-    hr
-      margin: 20px 0px
-      border-top: 1px solid #e1e1e1
-
-    h1
-      font:
-        size: 15px
-        weight: normal
-      color: #666
-
-    form
-      .faux_checkbox
-        float: left
-        margin: 8px 10px 0px 10px
-
-
-    ul
-      margin-bottom: 0
-
-    p
-      margin-bottom: 0
-      font-size: 15px
-      line-height: 1.4em
-
-    .big_list
-      margin-top: 0
-      li
-        padding: 12px 18px
-        display: block
-        min-height: 85px
-      h4
-        margin-bottom: 12px
-
-      .plan_list
-        h4
-          margin-bottom: 4px
-          cursor: pointer
-
-      h5
-        float: left
-
-    .progress_counter
-      width: 100%
-      text-align: left
-      position: relative
-      height: auto
-      line-height: auto
-      top: -16px
-
-    .progress_wrap
-      width: 95%
-      height: 55px
-      float: left
-      padding: 0
-      background: none
-
-    .progress_bar_outer
-      left: 7px
-      width: 100%
-
-    .progress_percent_complete
-      display: none
-
-    .progress_date
-      @extend .clearfix
-      width: 12%
-      float: left
-      padding: 10px 2% 0
-
-      p:first-child
-        font-size: 12px
-        color: #aaa
-
-      p
-        text-align: center
-        font-size: 13px
-        font-weight: bold
-
-      p:first-child, p:last-child
-        font-weight: normal
-
-    .plan_search
-      padding: 0 20px 20px
-      border-bottom: 1px solid #CCC
-      margin-top: 10px
-      +box-shadow(rgba(#000, 0.08) 0 2px 4px 0)
-
-    .plan_length
-      background: image-url("rp_calendar_icon.png") left center no-repeat
-      padding-left: 20px
-      color: #999
-      font-weight: bold
-
-    .plan_about
-      display: block
-      float: right
-      height: 44px
-      width: 20%
-      background: image-url("icon_small_about.png") top center no-repeat
-      text-indent: 100%
-      white-space: nowrap
-      overflow: hidden
-
-    .about_length
-      width: 50%
-      background: image-url("rp_about_calendar.gif") 24px center no-repeat
-
-    .about_users
-      width: 49.7%
-      background: image-url("rp_about_users.png") 24px center no-repeat
-      border-left: 1px solid #d9d9d9
-
-    .about_users, .about_length
-      float: left
-      height: 51px
-      border-bottom: 1px solid #d9d9d9
-      span, strong
-        margin-left: 68px
-        display: block
-      strong
-        font-size: 11px
-        color: #999
-        margin: 6px 0 -6px 68px
-
-    .about
-      padding: 20px 20px 0 20px
-
-    .action_button_green,
-    .action_button_grey,
-    .action_button_red
-      margin-top: 20px
-
-    input[type="submit"].action_button_green,
-    input[type="submit"].action_button_grey,
-    input[type="submit"].action_button_red
-      width: 100%
-
-    .action_button_red.confirm
-      margin-bottom: 20px
-
-      div
-        text-align: center
-        margin: 0 auto
-        padding-right: 10px
-
-      h4
-        margin-bottom: 0
-        margin-top: -4px
-
-    .split_pane_content
-      .devo_content
-        padding: 0 20px
-        p
-          margin-bottom: 12px
-
-    table:first-child
-      margin-top: 20px
-
-  #main article.readingplans.myplans
-    .progress_counter
-      position: absolute
-      text-align: left
-      top: 20px
-
-    .progress_wrap
-      width: 100%
-      margin: 0
-
-  #main article.readingplans
-    .rp_settings
-      clear: both
-
-      div
-        padding: 0 20px
-        div
-          padding: 0
-
-      h5
-        margin-bottom: 8px
-
-      .faux_checkbox
-        margin-top: 0px
-
-  // ----------------- Single verse page
-
-  #header
-    a
-      display: block
-    a.logo
-      height: 44px
-      width: 150px
-      background: image-url('yv_logo.png') left 11px no-repeat
-      overflow: hidden
-      text-indent: 100%
-      white-space: nowrap
-      margin-left: 20px
-      float: left
-    .get_app
-      height: 34px
-      color: #fff
-      text-decoration: underline
-      float: right
-      margin-right: 20px
-      font-size: 13px
-      padding-top: 10px
-      width: 35%
-      text-align: right
-      line-height: 1.2em
-
-  section.single_verse
-    margin: 12px
-    border: 1px solid #e1e1e1
-    padding: 20px
-    text-align: center
-    +border-radius(10px)
-
-    h3
-      color: #808080
-      margin-bottom: 4px
-
-    p
-      font-size: 37px
-      line-height: 1.3em
-      letter-spacing: -.03em
-
-    h3 + p
-      font-size: 12px
-      color: #808080
-      letter-spacing: none
-
-  .flash_notice
-    background:
-      color: #d9e4c9
-      image: image-url("flash_notice.png")
-    border-color: #91b164
-    color: #4b7518
+  // -------------Button stuff
+  input[type="submit"]
+    background-color: #81a950
+    +background-image(none)
     width: 100%
-    top: 47px
-    left: 0px
-    position: absolute 
-    border-radius: 0px
-    margin: 0px 
-    opacity: 1
-    box-shadow: none
+    padding: 10px 0
+    color: #fff
+    text-shadow: rgba(0,0,0,0.3) 0 -1px 0
+    font-size: 15px
+    +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0, inset rgba(255, 255, 255,0.2) 0 3px 0 !important)
+    border: none
+
+  input[type="submit"]:hover
+    background-color: #81a950
+    +background-image(none)
+    color: #fff
+    text-shadow: rgba(0,0,0,0.3) 0 -1px 0
+    +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0, inset rgba(255, 255, 255,0.2) 0 3px 0 !important)
+    border: none
 
   // TODO: delete as many as possible, moving only
   // necessarry SASS into better organized folders/files
@@ -801,13 +378,11 @@
   @import mobile/split_pane
   @import mobile/footer
   @import mobile/modal_window
-  @import mobile/reference_tokens
-  @import mobile/parallel_mode
+  // @import mobile/reference_tokens
   @import mobile/embedded_reader
   @import mobile/audio_player
-  @import mobile/picker_modals
   @import mobile/bookmarks
   @import mobile/pages
   @import mobile/webfonts
-  // @import mobile/donate
+  @import mobile/donate
   @import mobile/user

@@ -481,55 +481,56 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
 // but semantically make sense as a bigger list: Activity Stream, etc.
 //
 
-#main .big_list,
-#main .big_list li
-  background: none
-  margin: 0
-  padding: 0
+#main .main_reader
+  .big_list,
+  .big_list li
+    background: none
+    margin: 0
+    padding: 0
 
-#main .big_list li
-  @extend .clearfix
-  border-top: 1px solid #ccc
-  padding-top: 20px
+  .big_list li
+    @extend .clearfix
+    border-top: 1px solid #ccc
+    padding-top: 20px
 
-#main .big_list li[class^="li_"]
-  background:
-    repeat: no-repeat
-  padding-left: 26px
+  .big_list li[class^="li_"]
+    background:
+      repeat: no-repeat
+    padding-left: 26px
 
-#main > .big_list:first-child
-  margin-top: -20px
+  > .big_list:first-child
+    margin-top: -20px
 
-#main > .big_list:first-child li:first-child
-  border: 0
+  > .big_list:first-child li:first-child
+    border: 0
 
-#main .big_list .li_bookmark
-  background:
-    image: image-url("big_list_bookmark.png")
-    position: 0 20px
+  .big_list .li_bookmark
+    background:
+      image: image-url("big_list_bookmark.png")
+      position: 0 20px
 
-#main .big_list .li_note
-  background:
-    image: image-url("big_list_note.png")
-    position: 0 21px
+  .big_list .li_note
+    background:
+      image: image-url("big_list_note.png")
+      position: 0 21px
 
-#main .big_list .li_social
-  background:
-    image: image-url("big_list_social.png")
-    position: 0 22px
+  .big_list .li_social
+    background:
+      image: image-url("big_list_social.png")
+      position: 0 22px
 
-#main .big_list .li_badge
-  background:
-    image: image-url("big_list_badge.png")
-    position: 0 19px
+  .big_list .li_badge
+    background:
+      image: image-url("big_list_badge.png")
+      position: 0 19px
 
-#main .big_list .user
-  overflow: hidden
-  img
-    float: left
-    margin-right: 10px
-  &>div
-    float: left
+  .big_list .user
+    overflow: hidden
+    img
+      float: left
+      margin-right: 10px
+    &>div
+      float: left
 
 // `Type
 //---------------------------------------------------------------------------------------

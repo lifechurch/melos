@@ -1,69 +1,5 @@
-//
-// `Overrides for "full screen" mode
-//
-
-// `Disable scrolling, move to #main instead.
-//----------------------------------------------------------------------------------------------------
-
-.full_screen
-  overflow: hidden
-
-.full_screen body
-  background: #fff
-
-// `Hide excess UI elements
-//----------------------------------------------------------------------------------------------------
-
-.full_screen #nav_primary,
-.full_screen #header_outer,
-.full_screen #sidebar,
-.full_screen #footer,
-.full_screen #main footer
-  display: none
-
-// `Zero out containers
-//----------------------------------------------------------------------------------------------------
-
-.full_screen #wrapper,
-.full_screen #container
-  padding: 0
-  width: auto
-
-// `Pin reader header to top of browser
-//----------------------------------------------------------------------------------------------------
-
-.full_screen #reader_header
-  @extend .clearfix
-  +box-shadow(inset #fff 0 1px 0 0)
-  +background-image(linear-gradient(#eeedeb, #dddcda))
-  background-color: #dddcda
-  border-bottom: 1px solid #cbc9cf
-  padding: 0 100px
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  width: auto
-
-.full_screen #reader_header header
-  +round_top_none
-  border: 0
-  margin: 0 auto
-  padding:
-    left: 0
-    right: 0
-  width: 715px
-
-// Hide shadow used when *not* full screen
-.full_screen #reader_header:after
-  display: none
-
 // `Previous & Next verse arrows
 //----------------------------------------------------------------------------------------------------
-
-.full_screen .nav_prev,
-.full_screen .nav_next
-  margin-left: 0
 
 .full_screen .nav_prev
   left: 25px
@@ -71,83 +7,11 @@
 .full_screen .nav_next
   right: 40px
 
-// `Tweak text larger for legibility
-//----------------------------------------------------------------------------------------------------
 
-.full_screen #main,
-.full_screen #main article,
-.full_screen #main.main_reader article
-  +round_none
-  +box-shadow(none)
-  background: none
-  border: 0
-  margin: 0
-  padding: 0
-
-.full_screen #main
-  background: image-url("shadow.png") repeat-x 0 34px fixed
-  float: none
-  padding: 40px 100px 100px
-  position: absolute
-  top: 34px
-  left: 0
-  right: 0
-  bottom: 0
-  overflow-x: hidden
-  overflow-y: scroll
-  width: auto
-
-.full_screen #main:after
-  +background-image(linear-gradient(rgba(#fff, 0), #fff))
-  content: ''
-  position: fixed
-  top: auto
-  left: 0
-  right: 0
-  bottom: 0
-  height: 50px
-  pointer-events: none
-
-.full_screen #main article,
-.full_screen #main.main_reader article
-  margin:
-    left: auto
-    right: auto
-  width: 700px
-
-// `Custom scrollbar for Chrome & Safari
-//----------------------------------------------------------------------------------------------------
-
-.full_screen #main::-webkit-scrollbar
-  background: #eee
-  width: 15px
-
-.full_screen #main::-webkit-scrollbar-thumb
-  background: #999
-  border: 5px solid #eee
-
-.full_screen #main::-webkit-scrollbar-thumb:hover
-  background: #666
 
 // `Re-position drop-down menus
 //----------------------------------------------------------------------------------------------------
 
-.full_screen .dynamic_menu
-  top: 37px
-
 .full_screen #menu_bookmark .menu_arrow
   left: auto
   right: 10px
-
-// `Monkey-patch for IE7, IE8, IE9
-//----------------------------------------------------------------------------------------------------
-
-.full_screen .button sup
-  top: auto
-  bottom: -9px
-
-// `Monkey-patch for IE7, IE8, IE9
-//----------------------------------------------------------------------------------------------------
-
-.full_screen .ie_last_child
-  padding-bottom: 70px

@@ -228,82 +228,11 @@
   // `Accordion.
   //----------------------------------------------------------------------------------------------------
 
-  .dynamic_menu label
-    font-weight: normal
-
-  .dynamic_menu input[type="text"],
-  .dynamic_menu textarea
-    +box-shadow(inset rgba(#000, 0.5) 0 1px 2px 0, inset rgba(#fff, 0.05) 0 -1px 0 0, rgba(#fff, 0.1) 0 1px 0 0)
-    background: #494949 !important
-    border: 1px solid #000
-    color: #cbc9cf
-    text-shadow: rgba(#000, 0.5) 0 -1px 0
-    width: 100%
-    height: auto
-
-  .dynamic_menu dl
-    @extend .clearfix
-    background: image-url("menu_scroll.png")
-    border: 1px solid #555 !important
-    margin: 0
-    text-shadow: #000 0 1px 0
-
-  .dynamic_menu fieldset,
-  .dynamic_menu dt
-    +box-shadow(inset #0c0c0c 0 -1px 0 0)
-    background: #1f1f1f
-    border-top: 1px solid #2a2a2a
-    font-size: 12px
-    line-height: 1
-    padding: 10px 15px !important
-
   .dynamic_menu .accordion dt
     cursor: pointer
 
   .dynamic_menu .accordion dt:hover
     background: #2f2f2f
-
-  .dynamic_menu header,
-  .dynamic_menu dt
-    position: relative
-    border-bottom: none !important
-    font-weight: normal !important
-
-  .dynamic_menu header .close,
-  .dynamic_menu dt .close
-    background: image-url("close.png") no-repeat
-    color: transparent
-    cursor: default
-    font-size: 0
-    margin-top: -11px
-    overflow: hidden
-    text-decoration: none
-    text-indent: -99999px
-    width: 21px
-    height: 21px
-    position: absolute
-    top: 50%
-    right: 10px
-
-  .dynamic_menu header .close
-    right: 5px
-
-  .dynamic_menu dd
-    +box-shadow(inset #000 0 0 5px 0)
-    border-top: 1px solid #2a2a2a
-    border-bottom: none !important
-    font-weight: normal !important
-    display: none
-    padding: 15px 15px 1px
-
-  .dynamic_menu dt:first-child + dd
-    display: block
-
-  .dynamic_menu dl p
-    margin-bottom: 15px
-
-  .dynamic_menu .open_modal
-    text-decoration: none
 
   .dynamic_menu .open_modal dt
     background: image-url("icon_open_modal.png") no-repeat 95% center #1f1f1f

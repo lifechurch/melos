@@ -1,6 +1,4 @@
-// ------- File should be clear of redundant desktop code
-
-/* About page */
+// -------------About page
 
 .partners_content .partners_box
   margin: 0 0 24px 0
@@ -12,7 +10,7 @@
       border: 1px solid #F4F4F4
       width: 100%
 
-/* Press page */
+// -------------Press page
 
 #main article.press
   .press_resources
@@ -37,7 +35,7 @@
   img[alt="Press_image"]
     width: 100%
 
-/* Mobile page */
+// -------------Mobile page
 
 #main article.mobile
   font-size: 13px
@@ -67,7 +65,7 @@
       float: right
       text-align: center
       padding: 0 0 0 4%
-      width: 46%
+      width: 45%
       border-left: 1px solid #e1e1e1
 
       p
@@ -115,10 +113,12 @@ a.cta h3
   border-right: 0
 
 
-/* ----------------- Reading plans ---------------------- */
+// ----------------- Reading plans
 
-#main article.readingplans
+#main article.readingplans,
+#main article#plan-index
   padding: 0
+  margin-bottom: -10px
 
   hr
     margin: 20px 0px
@@ -135,7 +135,6 @@ a.cta h3
       float: left
       margin: 8px 10px 0px 10px
 
-
   ul
     margin-bottom: 0
 
@@ -147,9 +146,12 @@ a.cta h3
   .big_list
     margin-top: 0
     li
-      padding: 12px 18px
+      padding: 20px
       display: block
-      min-height: 85px
+
+    li:first-child
+      padding-top: 0
+
     h4
       margin-bottom: 12px
 
@@ -161,6 +163,8 @@ a.cta h3
     h5
       float: left
 
+#main article.readingplans,
+#main article#plan-index
   .progress_counter
     width: 100%
     text-align: left
@@ -171,8 +175,7 @@ a.cta h3
 
   .progress_wrap
     width: 95%
-    height: 55px
-    float: left
+    // height: 55px
     padding: 0
     background: none
 
@@ -201,11 +204,27 @@ a.cta h3
     p:first-child, p:last-child
       font-weight: normal
 
+#main article.readingplans
   .plan_search
     padding: 0 20px 20px
     border-bottom: 1px solid #CCC
     margin-top: 10px
     +box-shadow(rgba(#000, 0.08) 0 2px 4px 0)
+
+    select
+      margin: 0 0 24px !important
+      width: auto
+    input
+      margin-left: 0 !important
+      width: auto !important
+    input[type="submit"]
+      margin-top: 20px
+      +background-image(linear-gradient(#1a90cd, #0077b4))
+      background-color: #0077b4
+      padding: 10px 20px
+      color: #fff
+      text-shadow: none
+      font-size: 16px
 
   .plan_length
     background: image-url("rp_calendar_icon.png") left center no-repeat
@@ -278,6 +297,16 @@ a.cta h3
   table:first-child
     margin-top: 20px
 
+#main article#plan-index
+
+  .split_pane_sidebar
+    margin-top: -30px
+
+    dd
+      border:
+        left: 0
+        right: 0
+
 #main article.readingplans.myplans
   .progress_counter
     position: absolute
@@ -303,7 +332,7 @@ a.cta h3
     .faux_checkbox
       margin-top: 0px
 
-/* ----------------- Single verse page ---------------------- */
+// ----------------- Single verse page
 
 #header
   a
@@ -349,3 +378,18 @@ section.single_verse
     font-size: 12px
     color: #808080
     letter-spacing: none
+
+.flash_notice
+  background:
+    color: #d9e4c9
+    image: image-url("flash_notice.png")
+  border-color: #91b164
+  color: #4b7518
+  width: 100%
+  top: 47px
+  left: 0px
+  position: absolute
+  border-radius: 0px
+  margin: 0px
+  opacity: 1
+  box-shadow: none

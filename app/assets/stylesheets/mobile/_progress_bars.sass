@@ -7,44 +7,12 @@
 .progress_bar_shadow
   height: 12px
 
-.progress_bar_outer,
-.progress_bar,
-.progress_bar_shadow,
-.progress_bar_cap
-  color: transparent
-  font-size: 0
-  line-height: 0
-
 .progress_wrap
-  @extend .clearfix
-  +border-radius(20px)
   margin-bottom: 18px
-  padding: 6px
-  position: relative
 
 .progress_counter
-  width: 180px
-  height: 39px
-  line-height: 38px
-  position: absolute
   top: 20px
   font-size: 12px
-
-.progress_bar_outer
-  +background-image(linear-gradient(#fff, #ddd 95%, #ccc))
-  background-color: #ccc
-  overflow: hidden
-  position: relative
-
-.progress_bar
-  +border-left-radius(14px)
-  background: #789d4a image-url("progress_bar.png") repeat-x top center
-  border-right: 1px solid #808f6b
-  visibility: hidden
-
-.progress_bar_outer,
-.progress_bar_shadow
-  +border-radius(14px)
 
 .progress_bar_shadow
   +box-shadow(inset rgba(#000, 0.6) 0 1px 3px 0)
@@ -55,39 +23,4 @@
 // bar would overflow with a hard 90 degree
 // right edge, in WebKit and Opera. Booh! :(
 .progress_bar_cap
-  background: image-url("progress_bar_cap.png") no-repeat
-  width: 13px
-  height: 29px
-  position: absolute
-  top: 5px
-  right: 184px
   display: none
-
-.progress_percent_complete
-  +opacity(0)
-  visibility: hidden
-  background: image-url("progress_percent_complete.png")
-  color: #fff
-  line-height: 1
-  overflow: hidden
-  margin-left: -34px
-  padding-top: 10px
-  text-align: center
-  text-shadow: rgba(#000, 0.5) 0 1px 0
-  width: 68px
-  height: 33px
-  position: absolute
-  top: 14px
-
-.progress_wrap:hover .progress_percent_complete
-  +transition-property(all)
-  +transition-duration(0.25s)
-  +opacity(1)
-
-.progress_percent_complete b
-  display: block
-  font-size: 12px
-  margin-bottom: 2px
-
-.progress_percent_complete small
-  font-size: 10px
