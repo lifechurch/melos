@@ -4,7 +4,8 @@ class SubscriptionsController < ApplicationController
   respond_to :html #, :json #uncomment for .json representation of subscriptions.
 
   def sidebar
-    presenter = Presenter::Sidebar::Subscription.new(params[:id] , params, self)
+    subscription = subscription_for(params[:id])
+    presenter = Presenter::Sidebar::Subscription.new( subscription , params, self )
     render partial: "/sidebars/subscriptions/show", locals: {presenter: presenter}, layout: false
   end
 
@@ -18,18 +19,17 @@ class SubscriptionsController < ApplicationController
 
   # TODO - ensure user subscribed.
   def show
-    #@subscription = subscription_for(params[:id])
     client_settings.app_state       = YouVersion::ClientSettings::SUBSCRIPTION_STATE
     client_settings.subscription_id = params[:id] #@subscription.id
 
-    # TODO: Need to decorate or compose the sidebar presenter rather than
-    # have an essentially duplicate presenter for the sidebar.
-    @presenter = Presenter::Subscription.new(params[:id] , params, self)
-    self.sidebar_presenter = Presenter::Sidebar::Subscription.new(params[:id] , params, self)
+    subscription            = subscription_for(params[:id])
+    @presenter              = Presenter::Subscription.new( subscription , params, self)
+    self.sidebar_presenter  = Presenter::Sidebar::Subscription.new( subscription , params, self)
     now_reading(@presenter.reference)
     respond_with(@presenter.subscription)
   end
 
+  # TODO: this can be removed when sure we'll no longer move this direction
   def devotional
     @presenter = Presenter::Subscription.new(params[:id] , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new(params[:id] , params, self)
@@ -114,14 +114,16 @@ class SubscriptionsController < ApplicationController
 
   # TODO - ensure user subscribed.
   def edit
-    @presenter = Presenter::Subscription.new(params[:id] , params, self)
-    self.sidebar_presenter = Presenter::Sidebar::SubscriptionProgress.new(params[:id],params,self)
+    subscription            = subscription_for(params[:id])
+    @presenter              = Presenter::Subscription.new(subscription,params,self)
+    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(subscription,params,self)
   end
 
   # TODO - ensure user subscribed.
   def calendar
-    @presenter = Presenter::Subscription.new(params[:id] , params, self)
-    self.sidebar_presenter = Presenter::Sidebar::SubscriptionProgress.new(params[:id],params,self)
+    subscription            = subscription_for(params[:id])
+    @presenter              = Presenter::Subscription.new(subscription,params, self)
+    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(subscription,params,self)
     #raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
   end
 
@@ -130,8 +132,8 @@ class SubscriptionsController < ApplicationController
   # Might also be a nice metric to capture, this provides an appropriate hook for capture.
   # POST
   def shelf
-    presenter = Presenter::Subscription.new( params[:id], params, self)
-    client_settings.app_state = YouVersion::ClientSettings::DEFAULT_STATE
+    client_settings.app_state       = YouVersion::ClientSettings::DEFAULT_STATE
+    client_settings.subscription_id = nil
     redirect_to(bible_path(last_read))
   end
 

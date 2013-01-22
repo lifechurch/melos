@@ -5,9 +5,11 @@ module Presenter
 
     delegate :name, to: :subscription, prefix: true
 
-    def initialize( subid, params = {}, controller = nil )
+    def initialize( subscription, params = {}, controller = nil )
       super(params,controller)
-      @sid = subid.to_i
+      @subscription = subscription
+      @subscription.version_id = params[:version] || @subscription.version_id || controller.send(:current_version)
+      @sid = subscription.id.to_i
     end
 
     def subscription_id
@@ -15,12 +17,7 @@ module Presenter
     end
 
     def subscription
-      auth = @controller.send(:current_auth)
-      user = @controller.send(:current_user)
-      # call Sub.find with user object to avoid later lookup
-      @subscription ||= ::Subscription.find( subscription_id , user , auth: auth)
-      @subscription.version_id = @params[:version] || @subscription.version_id || @controller.send(:current_version)
-      return @subscription
+      @subscription
     end
 
     def day

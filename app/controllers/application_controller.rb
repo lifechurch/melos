@@ -101,10 +101,9 @@ class ApplicationController < ActionController::Base
   # Call this to setup the subscription sidebar in necessary actions.
   # Can later be extended through options for further customization on other states
   def set_sidebar_for_state(options={})
-    if current_auth && client_settings.subscription_state?
-      # sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
-      # user may have unsubscribed elsewhere, handle nil sub case gracefully
-      @sb_presenter = Presenter::Sidebar::Subscription.new( client_settings.subscription_id, params, self) if client_settings.subscription_id.present?
+    if current_auth && client_settings.subscription_state? && client_settings.subscription_id.present?
+      sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
+      @sb_presenter = Presenter::Sidebar::Subscription.new( sub , params, self)
     end
     @sb_presenter ||= options[:default_to]
   end
