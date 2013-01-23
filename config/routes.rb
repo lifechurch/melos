@@ -125,8 +125,9 @@ YouversionWeb::Application.routes.draw do
   match 'generic_error' => 'pages#generic_error'
   #  match 'sleep/:time' => 'pages#sleep_me'
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
-  match 'friends' => 'users#following'
-  match 'bookmarks' => 'users#bookmarks'
+
+  match 'friends'   => 'redirects#friends'
+  match 'bookmarks' => 'redirects#bookmarks'
 
   root to: 'pages#home'
 

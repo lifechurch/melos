@@ -2,7 +2,7 @@
   %li{class: ("highlighted" if selected == :recent_activity)}
     %a{href: user_path(@user)}
       %span= t('users.recent activity')
-  %li{class: ("highlighted" if selected == :friends)}
+  %li{class: ("highlighted" if selected == :friends || selected == :followers || selected == :following)}
     %a{href: user_followers_path(@user)}
       %span= t('friends')
   %li{class: ("highlighted" if selected == :notes)}

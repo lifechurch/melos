@@ -367,26 +367,24 @@ class UsersController < ApplicationController
 
   def following
     @users = @user.following({page: params[:page] ||= 1})
-    @selected = :friends
-    @really_selected = :following
+    @selected = :following
     if @me
       @empty_message = t('no following found self', link: connections_path)
     else
       @empty_message = t('no following found other', username: @user.username)
     end
-    render action: "friends"
+    render template: "users/friends"
   end
 
   def followers
     @users = @user.followers({page: params[:page] ||= 1})
-    @selected = :friends
-    @really_selected = :followers
+    @selected = :followers
     if @me
       @empty_message = t('no followers found self', link: connections_path)
     else
       @empty_message = t('no followers found other', username: @user.username)
     end
-    render action: "friends"
+    render template: "users/friends"
   end
 
   # Friends, etc

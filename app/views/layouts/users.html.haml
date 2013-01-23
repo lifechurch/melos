@@ -7,6 +7,8 @@
     %article
       - if @selected == :recent_activity || @selected == :notes || @selected == :friends || @selected == :badges
         %h1{class: @selected == :friends || @selected == :notes ? "float_left" : ""}= t("users.my #{@selected.to_s}")
+      - elsif @selected == :following || @selected == :followers
+        %h1{class: "float_left"}= t("users.my friends")
       - else
         %h1= t("settings")
         %h4= t("users.edit #{@selected}")
