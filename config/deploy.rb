@@ -151,3 +151,6 @@ after "deploy:update", "newrelic:notice_deployment"
 def run_rake(cmd)
   run "cd #{current_path}; #{rake} #{cmd}"
 end
+
+        require './config/boot'
+        require 'honeybadger/capistrano'

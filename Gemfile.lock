@@ -101,8 +101,6 @@ GEM
     domain_name (0.5.7)
       unf (~> 0.0.3)
     erubis (2.7.0)
-    exceptional (2.0.33)
-      rack
     excon (0.16.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -163,6 +161,9 @@ GEM
       rake
     highline (1.6.15)
     hike (1.2.1)
+    honeybadger (1.5.0)
+      activesupport
+      json
     hooves (0.7)
       unicorn (> 0)
     http_accept_language (1.0.2)
@@ -385,7 +386,6 @@ DEPENDENCIES
   dalli (~> 2.0.4)
   debugger
   descriptive_statistics (~> 1.1.0)
-  exceptional (~> 2.0.32)
   geokit (~> 1.6.5)
   grackle (~> 0.1.10)
   guard
@@ -396,6 +396,7 @@ DEPENDENCIES
   hashie (~> 1.2.0)
   heroku (~> 2.32.4)
   heroku_san
+  honeybadger
   hooves
   http_accept_language (~> 1.0.2)
   httparty (= 0.8.2)
