@@ -415,12 +415,9 @@ class UsersController < ApplicationController
 private
   # Find requested user and setup appropriate sidebar presenter
   def find_user
-    user_id = params[:user_id] || params[:id]
-    if user_id
-      @user = User.find(user_id, auth: current_auth)
-    else
-      @user = current_user
-    end
+    user_id   = params[:user_id] || params[:id]
+    @user     = (user_id.to_s.downcase == current_user.try(:username).to_s.downcase) ? current_user : User.find(user_id)
+    @me       = true if (@user == current_user)
     self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
   end
 end
