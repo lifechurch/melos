@@ -105,6 +105,9 @@ class ApplicationController < ActionController::Base
       # Ensure that we only create subscription sidebar presenter if we have a valid subscription
       if sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
          @sb_presenter = Presenter::Sidebar::Subscription.new( sub , params, self)
+      else #clean up client_settings
+         client_settings.app_state       = YouVersion::ClientSettings::DEFAULT_STATE
+         client_settings.subscription_id = nil
       end
     end
     @sb_presenter ||= options[:default_to]
