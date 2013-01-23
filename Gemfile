@@ -9,7 +9,6 @@ gem 'cells',                  '~> 3.8.3'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.0.4'
 gem 'descriptive_statistics', '~> 1.1.0', require: false
-#gem 'exceptional',            '~> 2.0.32'
 gem 'geokit',                 '~> 1.6.5'
 gem 'grackle',                '~> 0.1.10'
 gem 'haml-rails',             '~> 0.3.4'

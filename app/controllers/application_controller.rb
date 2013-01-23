@@ -171,28 +171,24 @@ class ApplicationController < ActionController::Base
 
   def auth_error(ex)
     sign_out
-    #report_exception(ex, self, request)
     notify_honeybadger(ex)
     redirect_to(sign_in_path, flash: {error: t('auth error')})
   end
 
   def timeout_error(ex)
     @error = ex
-    #report_exception(ex, self, request)
     notify_honeybadger(ex)
     render "pages/api_timeout", layout: 'application', status: 408
   end
 
   def api_error(ex)
     @error = ex
-    #report_exception(ex, self, request)
     notify_honeybadger(ex)
     render "pages/generic_error", layout: 'application', status: 502
   end
 
   def generic_error(ex)
     @error = ex
-    #report_exception(ex, self, request)
     notify_honeybadger(ex)
     render "pages/generic_error", layout: 'application', status: 500
   end

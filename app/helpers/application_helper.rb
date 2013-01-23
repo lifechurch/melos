@@ -83,23 +83,6 @@ module ApplicationHelper
       (hex_color.scan(/../).map {|color| color.hex}).sum
   end
 
-  def report_exception(exception, controller=nil, request=nil)
-
-    data =  if controller && request
-              Exceptional::ControllerExceptionData.new(exception, controller, request)
-            else
-              Exceptional::ExceptionData.new(exception)
-            end
-    #This is only necessarry in the case of an exception handled by rescue_from, as they are swallowed.
-    #This may not be needed in the future if Exceptional adds support for the rescue_from.
-    if Exceptional::Remote.error( data )
-      Rails.logger.apc "Exceptional: #{exception.class} has been reported to Exceptional", :info
-    else
-      Rails.logger.apc "Exceptional: Problem sending exception. Check your API key.", :error
-    end
-  end
-
-
   def bdc_user?
     @site.class == SiteConfigs::Bible rescue false
   end
