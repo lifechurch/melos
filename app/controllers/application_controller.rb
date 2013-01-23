@@ -102,8 +102,10 @@ class ApplicationController < ActionController::Base
   # Can later be extended through options for further customization on other states
   def set_sidebar_for_state(options={})
     if current_auth && client_settings.subscription_state? && client_settings.subscription_id.present?
-      sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
-      @sb_presenter = Presenter::Sidebar::Subscription.new( sub , params, self)
+      # Ensure that we only create subscription sidebar presenter if we have a valid subscription
+      if sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
+         @sb_presenter = Presenter::Sidebar::Subscription.new( sub , params, self)
+      end
     end
     @sb_presenter ||= options[:default_to]
   end

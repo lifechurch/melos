@@ -49,6 +49,8 @@ class SubscriptionsController < ApplicationController
   def destroy
     @subscription = subscription_for(params[:id])
     @subscription.destroy
+    client_settings.app_state       = YouVersion::ClientSettings::DEFAULT_STATE
+    client_settings.subscription_id = nil
     flash[:notice] = t("plans.unsubscribe successful")
     respond_with([@subscription], location: user_subscriptions_path(current_user))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
