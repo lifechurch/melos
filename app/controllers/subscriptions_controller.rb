@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
 
   before_filter :force_login
+  before_filter :find_subscription, only: [:show]
   respond_to :html #, :json #uncomment for .json representation of subscriptions.
 
   def sidebar
@@ -21,10 +22,8 @@ class SubscriptionsController < ApplicationController
   def show
     client_settings.app_state       = YouVersion::ClientSettings::SUBSCRIPTION_STATE
     client_settings.subscription_id = params[:id] #@subscription.id
-
-    subscription            = subscription_for(params[:id])
-    @presenter              = Presenter::Subscription.new( subscription , params, self)
-    self.sidebar_presenter  = Presenter::Sidebar::Subscription.new( subscription , params, self)
+    @presenter              = Presenter::Subscription.new( @subscription , params, self)
+    self.sidebar_presenter  = Presenter::Sidebar::Subscription.new( @subscription , params, self)
     now_reading(@presenter.reference)
     respond_with(@presenter.subscription)
   end
@@ -144,6 +143,12 @@ class SubscriptionsController < ApplicationController
   def subscription_for( plan_id )
     # find with current_user to avoid extra api calls
     Subscription.find(plan_id, current_user, auth: current_auth)
+  end
+
+  def find_subscription
+    unless @subscription = subscription_for(params[:id])
+      redirect_to user_subscriptions_path(current_user)
+    end
   end
 
 end
