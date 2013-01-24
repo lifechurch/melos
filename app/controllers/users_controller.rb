@@ -395,7 +395,7 @@ class UsersController < ApplicationController
 
   # Friends, etc
   def follow
-    if @user.follow
+    if @user.follow(auth: current_auth)
       redirect_to(:back, notice: t('you are now following', username: @user.username))
     else
       redirect_to(:back, error: t('error following user'))
@@ -403,7 +403,7 @@ class UsersController < ApplicationController
   end
 
   def unfollow
-    if @user.unfollow
+    if @user.unfollow(auth: current_auth)
       redirect_to(:back, notice: t('you are no longer following', username: @user.username))
     else
       redirect_to(:back, error: t('error unfollowing user'))
