@@ -16,7 +16,7 @@ class NotesController < ApplicationController
       if e.has_error?("Note is private")
         redirect_to(notes_path, notice: t("notes.is private")) and return
       elsif e.has_error?("Note not found")
-        not_found
+        render_404 #render here, don't trigger an exception notification.  404's are not exceptions.
       else
         raise(e)
       end

@@ -64,6 +64,10 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
+  def render_404
+    render "pages/error_404", layout: 'application', status: 404 and return
+  end
+
   protected
 
     # For client, get the last known read reference
