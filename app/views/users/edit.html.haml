@@ -1,6 +1,6 @@
 - @title = "#{t('users.my profile')} | #{@user.name || @user.username}"
 
-= form_for @user, url: profile_path do |f|
+= form_for @user do |f|
   - unless @user.errors.blank?
     .form_errors
       =t("users.profile form errors")

@@ -2,7 +2,7 @@
 
 %p= t('users.delete account description')
 
-= form_tag delete_account_path do
+= form_tag user_path(@user), method: :delete do
   - if @user.errors.any?
     .form_errors
       = t('users.error deleting account')

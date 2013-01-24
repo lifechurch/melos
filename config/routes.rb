@@ -1,5 +1,6 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, include_default_locale: false
+
   get 'donate/us', :to => 'donations#us', :as => 'us_donation'
   post 'donate/us', :to => 'donations#confirm', :as => 'confirm_donation'
   match 'donate/relay_response', :to => 'donations#relay_response', :as => 'donations_relay_response'
@@ -31,6 +32,24 @@ YouversionWeb::Application.routes.draw do
 
   # Users
   resources 'users', :except => [:new, :create] do
+
+    get :connections, on: :member
+
+    get :email, on: :member
+    put :update_email, on: :member
+
+    get :password, on: :member
+    put :update_password, on: :member
+
+    get :picture, on: :member
+    put :update_picture, on: :member
+
+    get :notifications, on: :member
+    put :update_notifications, on: :member
+
+    get :devices, on: :member
+    get :delete_account, on: :member
+
     match 'notes' => 'users#notes', as: 'notes'
     match 'bookmarks' => 'users#bookmarks', as: 'bookmarks'
     match 'likes' => 'users#likes', as: 'likes'
@@ -70,44 +89,15 @@ YouversionWeb::Application.routes.draw do
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
   match 'api-test' => 'api_test#index'
 
-  # Reading Plans
-  # Legacy links that need to be supported
-
-
-
   resources :plans, :only => [:index, :show], :path => 'reading-plans' do
     get :sample, on: :member
   end
 
-  # legacy route/link
-  # featuredplans.youversion.com use this link.
-  # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
-  match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
-
-  # legacy route/link
-  # Community emails send this link
-  # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
-  match "/reading-plans/:id/settings/email" => "plans#mail_settings"
-
   # profile stuff
-  match 'settings/password'      => 'users#password', :as => 'password', :via => :get
-  match 'settings/password'      => 'users#update_password', :as => 'password', :via => :post
-  match 'settings/picture'       => 'users#picture', :as => 'picture', :via => :get
-  match 'settings/picture'       => 'users#update_picture', :as => 'picture', :via => :put
-  match 'settings/notifications' => 'users#notifications', :as => 'notifications', :via => :get
-  match 'settings/notifications' => 'users#update_notifications', :as => 'notifications', :via => :put
-  match 'settings/connections'   => 'users#connections', :as => 'connections'
-  match 'settings/devices'       => 'users#devices', :as => 'devices'
   match 'devices/:device_id'     => 'users#destroy_device', :as => 'device', :via => :delete
-  match 'settings'               => 'users#profile', :as => 'profile', :via => :get
-  match 'settings'               => 'users#update_profile', :as => 'profile', :via => :put
-  get   'settings/update_email'  => 'users#update_email_form', as: 'update_email'
-  put   'settings/update_email'  => 'users#update_email', as: 'update_email'
   get   'confirm-update-email/:token' => 'users#confirm_update_email', as: 'confirm_update_email'
   get   'settings/forgot_password' => 'users#forgot_password_form', as: 'forgot_password'
   post  'settings/forgot_password' => 'users#forgot_password', as: 'forgot_password'
-  get   'settings/delete_account' => 'users#delete_account_form', as: 'delete_account'
-  post  'settings/delete_account' => 'users#delete_account', as: 'delete_account'
 
   # connetions
   match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'
@@ -123,11 +113,36 @@ YouversionWeb::Application.routes.draw do
   match 'l10n' => 'pages#l10n'
   match 'status' => 'pages#status'
   match 'generic_error' => 'pages#generic_error'
-  #  match 'sleep/:time' => 'pages#sleep_me'
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
 
+
+  # Current redirects to support previous urls.
   match 'friends'   => 'redirects#friends'
   match 'bookmarks' => 'redirects#bookmarks'
+  match 'settings'  => 'redirects#settings'
+  match 'settings/profile'        => 'redirects#settings'
+  match 'settings/connections'    => 'redirects#settings_connections'
+  match 'settings/update_email'   => 'redirects#settings_email'
+  match 'settings/password'       => 'redirects#settings_password'
+  match 'settings/picture'        => 'redirects#settings_picture'
+  match 'settings/notifications'  => 'redirects#settings_notifications'
+  match 'settings/devices'        => 'redirects#settings_devices'
+  match 'settings/delete_account' => 'redirects#delete_account'
+
+  # Reading Plans
+  # Legacy links that need to be supported
+  # ------------------------------------------------------------------------------------------
+
+  # legacy route/link
+  # featuredplans.youversion.com use this link.
+  # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
+  match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
+
+  # legacy route/link
+  # Community emails send this link
+  # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
+  match "/reading-plans/:id/settings/email" => "plans#mail_settings"
+
 
   root to: 'pages#home'
 

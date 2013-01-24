@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   layout "application", :only => [ :confirm ]
 
-  before_filter :force_login, only: [:sign_up_success, :share, :profile, :update_profile, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
+  before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:highlight_colors, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :confirm, :confirmed,  :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation]
+  before_filter :find_user, except: [:destroy_device, :highlight_colors, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :confirm, :confirmed,  :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :confirm_update_email]
   before_filter :set_redirect, only: [:new, :create]
+
+  before_filter :authorize, only: [:edit,:update, :connections, :email, :update_email, :password, :update_password, :picture, :update_picture, :devices, :destroy_device, :delete_account,:destroy]
 
   # User signup flow:
   #
@@ -182,18 +184,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @selected = :profile
+  end
+
+  def update
+    result = @user.update(params[:user]) ? flash[:notice]=(t('users.profile.updated')) : flash[:error]=(t('users.profile.error'))
+    redirect_to edit_user_path(@user)
+  end
+
   #
   # Profile actions
   #
 
-  def profile
-    @selected = :profile
-  end
-
-  def update_profile
-    result = @user.update(params[:user]) ? flash.now[:notice]=(t('users.profile.updated')) : flash.now[:error]=(t('users.profile.error'))
-    render action: "profile"
-  end
+  # Remove routes for #profile and #update_profile
 
   def picture
     @selected = :picture
@@ -204,13 +208,13 @@ class UsersController < ApplicationController
   def update_picture
     @user_avatar_urls = @user.user_avatar_url
     if @user.update_picture(params[:user].try(:[], :image))
-      flash.now[:notice] = t('users.profile.updated picture')
+      flash[:notice] = t('users.profile.updated picture')
       @user_avatar_urls = @user.direct_user_avatar_url
       @bust_avatar_cache = true
       # set cookie so header menu will show new avatar
       set_current_avatar(@user.direct_user_avatar_url["px_24x24"])
     end
-    render action: "picture"
+    redirect_to(picture_user_path(@user))
   end
 
   def notifications
@@ -225,6 +229,7 @@ class UsersController < ApplicationController
     @user = @notification_settings.user
     @me = true
     @selected = :notifications
+    self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
   end
 
   def update_notifications
@@ -233,8 +238,9 @@ class UsersController < ApplicationController
     @user = @notification_settings.user
     @me = true
     result = @notification_settings.update(params[:notification_settings])
-    result ? flash.now[:notice] = t('users.profile.updated notifications') : flash.now[:error] = t('users.profile.notification errors')
-    render action: "notifications"
+    result ? flash[:notice] = t('users.profile.updated notifications') : flash[:error] = t('users.profile.notification errors')
+
+    redirect_to(notifications_user_path(@user,token: params[:token]))
   end
 
   def password
@@ -244,12 +250,13 @@ class UsersController < ApplicationController
   def update_password
     @selected = :password
     if params[:user][:old_password] == current_auth.password
-      result = @user.update_password(params[:user].except(:old_password)) ? flash.now[:notice]=(t('users.password.updated')) : flash.now[:error]=(t('users.password.error'))
+      result = @user.update_password(params[:user].except(:old_password)) ? flash[:notice]=(t('users.password.updated')) : flash[:error]=(t('users.password.error'))
       cookies.signed.permanent[:c] = params[:user][:password] if result
     else
-      flash.now[:error]= t('users.password.old was invalid')
+      flash[:error]= t('users.password.old was invalid')
     end
-    render action: "password"
+    redirect_to(password_user_path(@user))
+    #render action: "password"
   end
 
   def resend_confirmation
@@ -286,19 +293,18 @@ class UsersController < ApplicationController
 
   def destroy_device
     @device = Device.find(params[:device_id], auth: current_auth)
-    if @device.destroy
-      flash[:notice] = "Device removed."
-      redirect_to devices_path
-    else
-      flash.now[:error] = "Could not delete device."
-      render action: "devices"
-    end
+    @device.destroy ? flash[:notice] = "Device removed." : flash[:error] = "Could not delete device."
+    redirect_to devices_user_path(current_user)
+  end
+
+  def email
+    @selected = :email
+    render template: "users/update_email"
   end
 
   def update_email_form
     @selected = :email
     render "update_email"
-
   end
 
   def update_email
@@ -307,15 +313,16 @@ class UsersController < ApplicationController
     if response
       render "update_email_success"
     else
-      render "update_email"
+      redirect_to( email_user_path(current_user))
     end
   end
 
   def confirm_update_email
+    @user = current_user
     @selected = :email
     response = @user.confirm_update_email(params[:token])
     if response
-      redirect_to update_email_path, notice: t('users.confirm update email success')
+      redirect_to email_user_path(current_user), notice: t('users.confirm update email success')
     end
   end
 
@@ -339,12 +346,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete_account_form
+  def delete_account
     @selected = :account_existence
-    render "delete_account"
   end
 
-  def delete_account
+  def destroy
     @selected = :account_existence
 
     begin
@@ -415,7 +421,13 @@ private
   def find_user
     user_id   = params[:user_id] || params[:id]
     @user     = (user_id.to_s.downcase == current_user.try(:username).to_s.downcase) ? current_user : User.find(user_id)
-    @me       = true if (@user == current_user)
+    @me       = true if (@user.id == current_user.id)
     self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+  end
+
+  def authorize
+    unless @user.id == current_user.id
+      redirect_to(edit_user_path(current_user))
+    end
   end
 end

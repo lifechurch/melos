@@ -5,7 +5,7 @@
     %ul
       - @user.errors.full_messages.each do |e|
         %li= e.first
-= form_for @user, url: update_email_path do |u|
+= form_for @user, url: update_email_user_path(@user) do |u|
   %p
     = u.text_field :email
     = u.submit t('users.edit email')
