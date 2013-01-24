@@ -13,7 +13,7 @@
     -if subscription.delivered_by_email?
       %div
         .float_left{style: "width: 130px; overflow: hidden; text-overflow: ellipsis"}= subscription.user.email
-        .small.float_right{style: "margin-top: 3px"}= link_to(t("plans.email edit"), profile_path)
+        .small.float_right{style: "margin-top: 3px"}= link_to(t("plans.email edit"), email_user_path(current_user))
 
   %div{style: "width: 330px"}
     %h5= t("plans.email delivery")
