@@ -13,6 +13,7 @@
     %dd#highlight-pane.auth
       .pane
         %form{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+          %input{type: "hidden", name:"authenticity_token", value: form_authenticity_token }
           - if current_auth.nil?
             %input{type: 'hidden', name: 'redirect', value: "/bible"}
             %input{type: 'hidden', name: 'source', value: "highlight"}
@@ -37,6 +38,7 @@
     %dd#bookmark-pane.auth
       .pane
         %form{action: (current_auth ? bookmarks_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+          %input{type: "hidden", name:"authenticity_token", value: form_authenticity_token }
           - if current_auth.nil?
             %input{type: 'hidden', name: 'redirect', value: "/bible"}
             %input{type: 'hidden', name: 'source', value: "bookmark"}
@@ -63,6 +65,7 @@
     %dd#share-pane.auth
       .pane
         %form.clearfix{action: share_path, method: "post"}
+          %input{type: "hidden", name:"authenticity_token", value: form_authenticity_token }
           %div.share_message
             %textarea{name: "share[message]"}
             %div
