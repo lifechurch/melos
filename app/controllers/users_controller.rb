@@ -177,7 +177,7 @@ class UsersController < ApplicationController
   end
 
   def share
-    if @user.share(params[:share])
+    if current_user.share(params[:share])
       redirect_to :back, notice: t('share success')
     else
       redirect_to :back, error: t('share error')
