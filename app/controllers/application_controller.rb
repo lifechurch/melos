@@ -206,7 +206,9 @@ class ApplicationController < ActionController::Base
   def set_redirect
     cookies[:auth_redirect] = nil if cookies[:auth_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
     cookies[:auth_redirect] = params[:redirect] if params[:redirect]
-    cookies[:auth_redirect] ||= URI(request.referer).path if request.referer
+    # Do we always want to go back to where we were?
+    #cookies[:auth_redirect] ||= URI(request.referer).path if request.referer
+
   end
 
   def redirect_path

@@ -75,14 +75,11 @@ class UsersController < ApplicationController
     @selected = :email
     @user = User.confirm(params[:hash])
 
-    if @user.errors.include?(:already_confirmed) && @user.errors.size == 1
-      redirect_to sign_in_path(redirect: sign_up_success_path(show: "facebook")), notice: t('users.account already confirmed') and return
-    end
-
     if @user.errors.blank?
       sign_in @user
       flash.now[:notice] = t("users.account confirmed")
     end
+    self.sidebar_presenter = Presenter::Sidebar::Default.new
   end
 
   def confirmed

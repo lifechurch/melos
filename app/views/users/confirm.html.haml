@@ -2,8 +2,9 @@
   -if @user.errors.any?
 
     -if @user.errors.include?(:base) && @user.errors.get(:base).include?("users.token.verified")
+      %h1= t("sign in to youversion")
       %p= t('users.account already confirmed')
-      %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "action_button_blue"
+      = render partial:"sessions/signin"
 
     -elsif @user.errors.include? :invalid_hash
       %p= t('users.invalid confirm hash')

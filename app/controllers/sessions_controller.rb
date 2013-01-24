@@ -28,6 +28,8 @@ class SessionsController < ApplicationController
   def destroy
     sign_out
     clear_redirect # user has signed out, if they sign in, new referer should apply
-    redirect_to (request.referer ? URI(request.referer).path : params[:redirect] || bible_path)
+    #redirect_to (request.referer ? URI(request.referer).path : params[:redirect] || bible_path)
+    # Lets always send them back to a specific redirect or else the bible.
+    redirect_to (params[:redirect] || bible_path)
   end
 end
