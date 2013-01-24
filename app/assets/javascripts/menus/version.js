@@ -28,7 +28,7 @@ VersionMenu.prototype = {
       $(this).attr("data-spinner-trigger", true );
     });
 
-    var thiss = this;
+    var _this = this;
     this.menu.find('a').unbind('click');
     this.menu.find('a').bind('click', (function(e) {
       e.preventDefault();
@@ -39,39 +39,33 @@ VersionMenu.prototype = {
       var abbrev        = tr.data("abbrev");
       var menu          = $(this).closest(".dynamic_menu.version_select");
       var path_chapter  = $('article .chapter').data('usfm') || 'JHN.1'; //TODO: grab first ref usfm in this version (from json model of version)
-      // using attr instead of data() to ensure that value doesn't get type cast to a number
-      // ex: ".1" should not be type cast to 0.1 --> toString() turns into "0.1". In this case ".1" we want to be ".1"
-      var path_verses   = $("article").attr("data-selected-verses-path-partial");
-
-      var link_base     = '/bible/' + version_id + '/' + path_chapter;
 
       // hack, but works for now.
-      if(thiss.isAlternateVersion()) {
+      if(_this.isAlternateVersion()) {
         setCookie('alt_version', version_id);
         window.location = window.location.href;
         return;
       }
 
-      // Could/should be properly refactored to not store path partial on html element.
-      // Ex: path_verses --> ".1" or ".1,2,3" or ".1,22,45"
+      if(version_id) {
+        _this.setRecentVersion(version_id);
 
-      if (path_verses && (path_verses != ".")) { link_base = link_base + path_verses;}
+        var url = document.location.href;
 
-         link_base = link_base + "." + abbrev;
+        if( url.indexOf("/reading-plans/") > -1) // on reading plan
+        { window.location.reload(); } // simply reload the page, cookie set in #setRecentVersion above will be observed
+        else
+        {
+          // using attr instead of data() to ensure that value doesn't get type cast to a number
+          // ex: ".1" should not be type cast to 0.1 --> toString() turns into "0.1". In this case ".1" we want to be ".1"
+          var path_verses   = $("article").attr("data-selected-verses-path-partial");
+          var link_base     = '/bible/' + version_id + '/' + path_chapter;
 
-      //TODO: erase this hack with new reading plans design (in-reader
-      var plan_url = menu.data("plan-url");
-      if (plan_url) link_base = plan_url;
+          // Could/should be properly refactored to not store path partial on html element.
+          // Ex: path_verses --> ".1" or ".1,2,3" or ".1,22,45"
+          if (path_verses && (path_verses != ".")) { link_base = link_base + path_verses;}
 
-      if (version_id){
-
-        thiss.setRecentVersion(version_id);
-
-        //send user on to new page as requested via click
-        if (menu.data("link-needs-param")){
-          var delim = (link_base.indexOf("?") != -1) ? "&" : "?";
-          window.location = link_base + delim + "version=" + version_id;
-        }else{
+          link_base = link_base + "." + abbrev;
           window.location = link_base.toLowerCase();
         }
       }
@@ -90,6 +84,7 @@ VersionMenu.prototype = {
     //add new version to beginning of recents list cookie
     recents.unshift(version_id);
     setCookie('recent_versions', recents.splice(0,5).join('/'));  // take only the first 5 and add delimiter
+    setCookie('version',version_id); // set our cookie version to the newly selected version
   },
 
   loadVersions : function(){
