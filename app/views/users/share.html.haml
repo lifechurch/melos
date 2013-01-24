@@ -1,3 +1,6 @@
+- content_for :mobile_left_nav do
+  = render partial: 'shared/back_button'
+  
 - content_for :mobile_right_nav do
   = render partial: 'shared/save_button', locals: {text: t('ref.share')}
 

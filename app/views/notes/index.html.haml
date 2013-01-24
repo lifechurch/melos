@@ -9,8 +9,9 @@
   = render '/shared/widget_ad_bible_app'
 
 
-%article
-  %h1.float_left= "#{@reference_title} #{t('notes.list title')}"
+
+%article.note
+  %h1{class: ('float_left' if current_auth)}= t("notes.list title")
   - if current_auth
     %dl.combo_button.float_right
       %dt

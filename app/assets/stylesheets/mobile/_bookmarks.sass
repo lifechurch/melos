@@ -8,29 +8,34 @@
     width: auto
     margin-bottom: 0
 
+    .li_bookmark
+      div
+        float: none !important
+
   .big_list
     margin: 0
 
-  .li_bookmark
-    background: none
+    .li_bookmark
+      background: none
 
-  .li_bookmark:first-child
-    padding-top: 0
+    .li_bookmark:first-child
+      padding-top: 0
 
-  li p
-    margin-bottom: 0
+    li p
+      margin-bottom: 0
+
+    .gutter_bottom_half
+      margin-bottom: 0 !important
+
+    li
+      .content
+        line-height: 1.25em !important
 
 .bookmark_edit
-  opacity: 1
+  opacity: 1 !important
   font-size: 12px
-  margin-top: 20px
 
-  span:first-child
-    a
-      margin-right: 20px
-
-  .created_as_date,
-  .mdash
+  .created_as_date
     display: none
 
 .bookmark_edit p a
@@ -39,3 +44,32 @@
 .created_as_date
   color: #888
   font-size: 12px
+
+//-----------Notes - added here cuz the markup is so similar to bookmarks
+
+#main article.note
+  padding: 0
+
+  .big_list
+    margin-bottom: 0
+
+    li
+      padding: 20px
+    li:first-child
+      padding-top: 0
+      margin-top: 16px
+
+      div
+        float: none !important
+
+      h5
+        margin-bottom: 0
+
+    .li_note
+      background: none
+
+    .negative_gutter_top_half
+      margin-top: -5px !important
+
+    p
+      margin-bottom: 0

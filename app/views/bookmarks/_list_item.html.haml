@@ -10,6 +10,14 @@
           .mobile
             %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
           .embedded_reader{"data-setting-font" => @font, 'data-setting-size' => @size}= r.content.html_safe
+  - if list_item.labels.present?
+    %p
+      %strong= t('bookmarks.labels label')
+      - list_item.labels.split(", ").each do |l|
+        - #TODO: split labels in model
+        %a{href: user_bookmarks_path(@user, label: l.chomp)}= l
+        - # TODO: Label link
+
   .bookmark_edit.float_right
     %p
       - if @me
@@ -20,10 +28,4 @@
         %span.mdash
           &mdash;
       %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
-  - if list_item.labels.present?
-    %p
-      %strong= t('bookmarks.labels label')
-      - list_item.labels.split(", ").each do |l|
-        - #TODO: split labels in model
-        %a{href: user_bookmarks_path(@user, label: l.chomp)}= l
-        - # TODO: Label link
+  
