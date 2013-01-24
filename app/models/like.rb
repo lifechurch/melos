@@ -18,7 +18,7 @@ class Like < YouVersion::Resource
   end
 
   def note
-    Note.find(note_id, user_id: self.user_id )
+    Note.find(attributes["note"]["id"], user_id: self.user_id )
   end
   def note_hash
     @attributes["note"]

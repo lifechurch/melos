@@ -1,0 +1,17 @@
+
+- note = likes.attributes["note"]
+- id = note["id"]
+
+
+%li{id: note["id"], class: ("li_like" if display == :icon)}
+  - if display == :avatar
+    .float_left
+      %a{href: (user_path(note["username"]))}
+        %img.avatar_large{src: (note["user_avatar_url"]["px_48x48"])}
+  %div{style: ("margin-left: 60px;" if display == :avatar)}
+    %h5= link_to note["title"], note_path(note["id"])
+    - if display == :avatar
+      %p.mute.small.negative_gutter_top_half
+        %a{href: user_path(note["username"])}= note["username"]
+//    %p= likes.note.content.html_safe
+//    %p.mute.small.negative_gutter_top_half= link_to_references(likes.note.reference_list)

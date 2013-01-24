@@ -4,5 +4,5 @@
 
   - else
     %ul.big_list
-      = render partial: 'likes/list_item', collection: @likes, locals: {display: :avatar}
+      = render partial: 'likes/likes', collection: @likes, locals: {display: :avatar}
     = render partial: 'shared/pagination', locals: {resource_list: @likes}
