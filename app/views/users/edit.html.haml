@@ -49,4 +49,4 @@
     %br
     = f.select(:language_tag, Cfg.languages.map { |k, v| [v, k] }, {}, {style: "min-width: 395px"})
   %p
-    = f.submit t('users.update profile')
+    = button_tag t('users.update profile') , {class: "action_button_green"}
