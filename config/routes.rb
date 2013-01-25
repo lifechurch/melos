@@ -12,16 +12,15 @@ YouversionWeb::Application.routes.draw do
   match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/highlights' => 'references#highlights', :as => 'reference_highlights', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'references#notes', :as => 'reference_notes', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
+
   resources 'versions', :only => [:index, :show]
-
   resources 'bookmarks', :except => [:index]
-
   resources 'likes', :only => [:index]
+
+  match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
+  match '/notes' => 'notes#index', :as => 'all_notes'
   match 'notes/:id/like' => 'notes#like', :as => 'like', :via => :put
-
   resources 'notes', :except => [:index]
-  match 'notes' => 'notes#index', :as => 'all_notes'
-
 
   match 'search' => 'search#show'
   match 'privacy' => 'pages#privacy'

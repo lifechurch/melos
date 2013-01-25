@@ -1,6 +1,6 @@
 - content_for :sidebar do
   .widget.gutter_bottom_half
-    %a.action_button_green{href: new_note_path}
+    %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source:"note")}
       %span.icon_plus= t('new note')
   - if current_auth
     - if current_user.likes

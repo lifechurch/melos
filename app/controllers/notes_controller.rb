@@ -9,6 +9,15 @@ class NotesController < ApplicationController
       self.sidebar_presenter = Presenter::Sidebar::Notes.new
   end
 
+  def related
+    #API Constraint to be put in model eventually
+    ref = ref_from_params rescue not_found
+    @notes = Note.for_reference(ref, language_iso: I18n.locale, cache_for: a_short_time)
+    @notes = Note.for_reference(ref, cache_for: a_short_time) if @notes.empty?
+    @reference_title = ref.human
+    render template:"notes/index"
+  end
+
   def show
     begin
       @note = Note.find(params[:id], :auth => current_auth)
@@ -53,11 +62,7 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id], :auth => current_auth)
-    if @note.update(params[:note])
-      render action: "show"
-    else
-      render action: "edit"
-    end
+    @note.update(params[:note]) ? redirect_to(note_path(@note)) : render(action: "edit")
   end
 
   def destroy
