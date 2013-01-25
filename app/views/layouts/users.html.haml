@@ -11,7 +11,7 @@
         = render "shared/widget_profile_settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
       = render "shared/widget_user_badges" unless @user.badges.empty?
 
-  = render partial: "user_info", locals: {user: @user, me: @me} if @selected == :recent_activity
+  = render partial: "user_info", locals: {user: @user, me: @me}
   = render partial: "user_tabs", locals: {selected: @selected} if !@me
 
   %article.profile

@@ -1,19 +1,19 @@
 %ul.header_tabs
-  %li{class: ("highlighted" if selected == :recent_activity)}
+  %li.activity{class: ("highlighted" if selected == :recent_activity)}
     %a{href: user_path(@user)}
       %span= t('users.recent activity')
-  %li{class: ("highlighted" if selected == :friends || selected == :followers || selected == :following)}
+  %li.friends{class: ("highlighted" if selected == :friends)}
     %a{href: user_followers_path(@user)}
       %span= t('friends')
-  %li{class: ("highlighted" if selected == :notes)}
+  %li.notes{class: ("highlighted" if selected == :notes)}
     %a{href: user_notes_path(@user)}
       %span= t('notes title')
-  %li{class: ("highlighted" if selected == :bookmarks)}
+  %li.bookmarks{class: ("highlighted" if selected == :bookmarks)}
     %a{href: user_bookmarks_path(@user)}
       %span= t('bookmarks.title')
-  %li{class: ("highlighted" if selected == :likes)}
+  %li.likes{class: ("highlighted" if selected == :likes)}
     %a{href: user_likes_path(@user)}
       %span= t('likes.likes')
-  %li{class: ("highlighted" if selected == :badges)}
+  %li.badges{class: ("highlighted" if selected == :badges)}
     %a{href: user_badges_path(@user)}
       %span= t('badges title')

@@ -2,11 +2,12 @@
 //----------------------------------------------------------------------------------------------------
 
 .top_section
-  /* @extend .clearfix */
+  // @extend .clearfix
   +background-image(linear-gradient(#fff, #ececec 1px, #e9e9e9))
   background-color: #e9e9e9
   border: none
   font-size: 13px
+  padding: 0px
 
   .bio
     margin: 20px 0 20px 20px
@@ -21,16 +22,11 @@
 
   h1
     margin-bottom: 10px
+    font-size: 36px
 
   ul, li
     margin-top: 0
     margin-left: 0
-    padding: 0
-
-  .avatar_huge
-    margin: 20px 0 20px 20px
-    height: 72px
-    width: 72px
 
   li
     background:
@@ -40,62 +36,77 @@
     padding-left: 26px
     list-style: none
 
-.top_section + .header_tabs
-  +background-image(linear-gradient(#e9e9e9, #d7d6da))
-  +box-shadow(none)
-  background-color: #e9e9e9
-  border-top: 0
+  .profile_info
+    padding: 15px 30px
+    overflow: hidden
 
-.header_tabs
+.header_tabs,
+.top_section .header_tabs
+  +box-shadow(none)
+  padding-left: 0
   background-color: #E9E9E9
   overflow: hidden
-  a
-    float: left
+  border-top: 0
+
+  li
     width: 17%
-    height: 44px
     list-style: none
     padding: 0
     margin: 0
     text-align: center
     font-size: 12px
-    background-color: #E9E9E9
     border-top: 1px solid #ccc
+    background-color: #E9E9E9
 
-  a:first-child
+  li:first-child
     width: 15%
 
-  a.badges,
-  a.activity,
-  a.notes,
-  a.bookmarks,
-  a.friends,
-  a.likes
-    overflow: hidden
+  a,
+  span
+    height: 44px
+    width: auto
+    display: block
     text-indent: 100%
+    overflow: hidden
     white-space: nowrap
-    background-repeat: no-repeat
-    background-size: auto
-
-  .activity
-    background: image-url("mobile/profile_tabs_sprite.png") center 10px
-
-  .friends
-    background: image-url("mobile/profile_tabs_sprite.png") center -42px
-
-  .notes
-    background: image-url("mobile/profile_tabs_sprite.png") center -98px
-
-  .bookmarks
-    background: image-url("mobile/profile_tabs_sprite.png") center -152px
-
-  .likes
-    background: image-url("mobile/profile_tabs_sprite.png") center -206px
-
-  .badges
-    background: image-url("mobile/profile_tabs_sprite.png") center -259px
+    padding: 0
+    margin: 0
+    background: none
 
   .highlighted
-    background-color: #fff
+    li:first-child
+      background: none
+    a
+      background: #fff
+    span
+      background: none
+
+  .activity span
+    background: image-url("mobile/profile_tabs_sprite.png") no-repeat center 10px
+
+  .friends span
+    background: image-url("mobile/profile_tabs_sprite.png") no-repeat center -42px
+
+  .notes span
+    background: image-url("mobile/profile_tabs_sprite.png") no-repeat center -98px
+
+  .bookmarks span
+    background: image-url("mobile/profile_tabs_sprite.png") no-repeat center -152px
+
+  .likes span
+    background: image-url("mobile/profile_tabs_sprite.png") no-repeat center -206px
+
+  .badges span
+    background: image-url("mobile/profile_tabs_sprite.png") no-repeat center -259px
+
+  .badges,
+  .activity,
+  .notes,
+  .bookmarks,
+  .friends,
+  .likes
+    background-repeat: no-repeat
+    background-size: auto
 
 .icon_small_user
   background:
@@ -118,6 +129,7 @@
 
 #main article.profile
   padding: 20px 0 0 0
+  background: none
 
   h1
     margin-left: 20px
@@ -159,6 +171,9 @@
       .gutter_top_half
         margin-top: 0 !important
         font-weight: bold
+
+      div
+        float: none !important
 
     .bookmark_edit
       margin-top: 4px
