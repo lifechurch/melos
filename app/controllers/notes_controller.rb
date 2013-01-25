@@ -11,9 +11,10 @@ class NotesController < ApplicationController
 
   def related
     #API Constraint to be put in model eventually
+    page = params[:page] || 1
     ref = ref_from_params rescue not_found
-    @notes = Note.for_reference(ref, language_iso: I18n.locale, cache_for: a_short_time)
-    @notes = Note.for_reference(ref, cache_for: a_short_time) if @notes.empty?
+    @notes = Note.for_reference(ref, language_iso: I18n.locale, page: page, cache_for: a_short_time)
+    @notes = Note.for_reference(ref, page:page, cache_for:a_short_time) if @notes.empty?
     @reference_title = ref.human
     render template:"notes/index"
   end

@@ -14,5 +14,6 @@
   - unless @notes.empty?
     %ul.big_list
       = render partial: "list_item", collection: @notes, locals: {display: :avatar}
+    = render "shared/pagination", resource_list: @notes
   - else
     %div{class: "none"}= t("notes.not found")
