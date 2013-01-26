@@ -67,6 +67,14 @@ YouversionWeb::Application.routes.draw do
 
   match "subscriptions/:id/sidebar" => "subscriptions#sidebar"
 
+  # /reading-plans
+  # /reading-plans/:id
+  # /reading-plans/:id/day/:day
+  resources :plans, :only => [:index, :show], :path => 'reading-plans'
+  match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
+
+
+
 
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
@@ -87,10 +95,6 @@ YouversionWeb::Application.routes.draw do
   match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
   match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
   match 'api-test' => 'api_test#index'
-
-  resources :plans, :only => [:index, :show], :path => 'reading-plans' do
-    get :sample, on: :member
-  end
 
   # profile stuff
   match 'devices/:device_id'     => 'users#destroy_device', :as => 'device', :via => :delete

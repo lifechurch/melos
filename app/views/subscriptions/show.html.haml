@@ -1,4 +1,4 @@
-- @title        = @presenter.subscription_name
+- @title        = @presenter.subscription_name.dup
 
 - if @presenter.reference
   = render partial: "/references/reader", locals: {presenter: @presenter}

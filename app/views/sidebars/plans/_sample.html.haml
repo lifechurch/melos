@@ -1,0 +1,54 @@
+// Local parameters
+// presenter: Presenter::Sidebar::PlanSample
+- plan          = presenter.plan
+- day           = (params[:day] || 1).to_i
+- content_page  = (params[:content] || 0).to_i
+- reading       = plan.day(day)
+- references    = reading.references
+
+= render partial: "/sidebars/plans/button", locals: {plan: plan}
+
+#sb-subscription
+  .widget
+    %header= link_to plan.name, plan_path(plan)
+    %ul.widget_menu
+      %li#sb-calendar.calendar
+        %div.icon
+          - cal_text = t("plans.calendar")
+          =link_to("#", {title: cal_text }) do
+            %span= cal_text
+        %div.day
+          %h4= t("plans.which day in plan", day: day.to_s, total: plan.total_days)
+          .mute= pluralize(references.size,"reading")
+
+          // Next / Prev navigation
+          - prev_text = t("plans.previous day") # used in 3 places below
+          - if day > 1
+            = link_to(sample_plan_path(plan.to_param, day: (day - 1)), {class: "prev", title: prev_text }) do
+              %span= prev_text
+          - else
+            = link_to("#", class: "disabled prev") do
+              %span= prev_text
+
+          - next_text = t("plans.next day") # used in 3 places below
+          - if day <= plan.total_days - 1
+            = link_to(sample_plan_path(plan.to_param, day: (day + 1)), {class: "next", title: next_text}) do
+              %span= next_text
+          - else
+            = link_to("#", class: "disabled next") do
+              %span= next_text
+      - unless references.empty?
+        - reading.references.each_with_index do |ref,index|
+          %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
+            - if content_page == index
+              %span= ref.ref.human
+            - else
+              %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
+                = ref.ref.human
+
+- if reading.devotional
+  .widget
+    %header= t("plans.devotional")
+    %ul.widget_menu
+      %li
+        %p= reading.devotional.html_safe

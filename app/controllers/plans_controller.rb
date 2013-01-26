@@ -20,8 +20,14 @@ class PlansController < ApplicationController
   end
 
   def sample
-    @presenter = Presenter::PlanSample.new(params[:id],params,self)
-    self.sidebar_presenter = Presenter::Sidebar::Plan.new(@presenter.plan,params,self)
+    #@presenter = Presenter::PlanSample.new(params[:id],params,self)
+    @plan = Plan.find(params[:id])
+    if current_auth && current_user.subscribed_to?(@plan)
+       redirect_to user_subscription_path(current_user,id: @plan.to_param) and return
+    else
+      @presenter = Presenter::Subscription.new( @plan , params, self)
+      self.sidebar_presenter = Presenter::Sidebar::PlanSample.new(@plan,params,self)
+    end
   end
 
   def ref_not_found
@@ -37,6 +43,7 @@ class PlansController < ApplicationController
   end
 
   private
+
   def set_nav
     @nav = :plans
   end

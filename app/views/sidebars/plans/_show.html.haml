@@ -2,14 +2,8 @@
 // presenter: Presenter::Sidebar::Plan
 - plan = presenter.plan
 
-.widget
-  - if current_auth
-    -if current_user.subscribed_to?(plan)
-      = link_to(t('plans.read today'), user_subscription_path(current_user,plan), id: "subscription-read", class: 'action_button_green', style: "margin-bottom: 10px")
-    - else
-      = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: plan.to_param), id: "subscription-start", class: 'action_button_green', style: "margin-bottom: 10px", method: :post)
-  - else
-    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", id: plan.id, redirect: plan_path(plan)), class: 'action_button_green', style: "margin-bottom: 10px")
+= render partial: "/sidebars/plans/button", locals: {plan: plan}
+
 .widget
   %header
     %span
@@ -24,7 +18,7 @@
         = plan.length
     - if (!current_user || !current_user.subscribed_to?(plan))
       %li{class: current_page?(controller:"plans",action:"sample") ? "active" : nil }
-        = link_to_unless_current(t("plans.view sample"), sample_plan_path(plan.id)) do
+        = link_to_unless_current(t("plans.view sample"), sample_plan_path(plan.to_param, day: 1)) do
           %span= t("plans.view sample")
 
 =render partial: "/sidebars/plans/publisher", locals: {plan: plan}
