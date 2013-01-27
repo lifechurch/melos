@@ -1,14 +1,8 @@
 class SubscriptionsController < ApplicationController
 
   before_filter :force_login
-  before_filter :find_subscription, only: [:show]
-  respond_to :html #, :json #uncomment for .json representation of subscriptions.
-
-  def sidebar
-    subscription = subscription_for(params[:id])
-    presenter = Presenter::Sidebar::Subscription.new( subscription , params, self )
-    render partial: "/sidebars/subscriptions/show", locals: {presenter: presenter}, layout: false
-  end
+  before_filter :find_subscription, only: [:show,:destroy,:edit,:update,:calendar]
+  respond_to :html
 
   def index
     # Avoid extra api call for user here
@@ -28,13 +22,6 @@ class SubscriptionsController < ApplicationController
     respond_with(@presenter.subscription)
   end
 
-  # TODO: this can be removed when sure we'll no longer move this direction
-  def devotional
-    @presenter = Presenter::Subscription.new(params[:id] , params, self)
-    self.sidebar_presenter = Presenter::Sidebar::Subscription.new(params[:id] , params, self)
-    respond_with(@presenter.subscription)
-  end
-
   def create
     if @subscription = subscription_for(params[:plan_id])
       redirect_to user_subscription_path(current_user,params[:plan_id]), notice: t("plans.already subscribed") and return
@@ -46,7 +33,6 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
-    @subscription = subscription_for(params[:id])
     @subscription.destroy
     client_settings.app_state       = YouVersion::ClientSettings::DEFAULT_STATE
     client_settings.subscription_id = nil
@@ -56,8 +42,6 @@ class SubscriptionsController < ApplicationController
   end
 
   def update
-    @subscription = subscription_for(params[:id])
-    raise "you can't view a plan's settings unless you're subscribed" if @subscription.nil?
 
     if params[:catch_up] == "true"
       @subscription.catch_up
@@ -113,19 +97,14 @@ class SubscriptionsController < ApplicationController
     redirect_to edit_user_subscription_path(current_user,@subscription,anchor: anchor)
   end
 
-  # TODO - ensure user subscribed.
   def edit
-    subscription            = subscription_for(params[:id])
-    @presenter              = Presenter::Subscription.new(subscription,params,self)
-    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(subscription,params,self)
+    @presenter              = Presenter::Subscription.new(@subscription,params,self)
+    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
   end
 
-  # TODO - ensure user subscribed.
   def calendar
-    subscription            = subscription_for(params[:id])
-    @presenter              = Presenter::Subscription.new(subscription,params, self)
-    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(subscription,params,self)
-    #raise "you can't view a plan's calendar unless you're subscribed" if @subscription.nil?
+    @presenter              = Presenter::Subscription.new(@subscription,params, self)
+    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
   end
 
   # Verb: the act of shelving your reading plan. Putting a book on the shelf.
@@ -138,17 +117,24 @@ class SubscriptionsController < ApplicationController
     redirect_to(bible_path(last_read))
   end
 
-  private
-
-  def subscription_for( plan_id )
-    # find with current_user to avoid extra api calls
-    Subscription.find(plan_id, current_user, auth: current_auth)
+  # action/endpoint for rendering subscription sidebar controls when not on subscription#show
+  def sidebar
+    subscription = subscription_for(params[:id])
+    presenter = Presenter::Sidebar::Subscription.new( subscription , params, self )
+    render partial: "/sidebars/subscriptions/show", locals: {presenter: presenter}, layout: false
   end
+
+  private
 
   def find_subscription
     unless @subscription = subscription_for(params[:id])
       redirect_to user_subscriptions_path(current_user)
     end
+  end
+
+  def subscription_for( plan_id )
+    # find with current_user to avoid extra api calls
+    Subscription.find(plan_id, current_user, auth: current_auth)
   end
 
 end

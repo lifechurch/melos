@@ -73,7 +73,21 @@ YouversionWeb::Application.routes.draw do
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
 
+  # Reading Plans
+  # Legacy links that need to be supported
+  # ------------------------------------------------------------------------------------------
 
+  # featuredplans.youversion.com use this link.
+  # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
+  match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
+
+  # Community emails send this link
+  # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
+  match "/reading-plans/:id/settings/email" => "plans#mail_settings", via: :get
+
+  # Community emails send this link
+  # /reading-plans/199-promises-for-your-everyday-life/calendar
+  match "/reading-plans/:id/calendar" => "plans#calendar", via: :get
 
 
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
@@ -132,19 +146,7 @@ YouversionWeb::Application.routes.draw do
   match 'settings/devices'        => 'redirects#settings_devices'
   match 'settings/delete_account' => 'redirects#delete_account'
 
-  # Reading Plans
-  # Legacy links that need to be supported
-  # ------------------------------------------------------------------------------------------
 
-  # legacy route/link
-  # featuredplans.youversion.com use this link.
-  # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
-  match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
-
-  # legacy route/link
-  # Community emails send this link
-  # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
-  match "/reading-plans/:id/settings/email" => "plans#mail_settings"
 
 
   root to: 'pages#home'

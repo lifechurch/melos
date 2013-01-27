@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_filter :force_login, only: [:start, :update, :settings, :calendar, :mail_settings]
+  before_filter :force_login, only: [:start, :update, :settings, :calendar, :mail_settings, :calendar]
   before_filter :set_nav
   rescue_from InvalidReferenceError, with: :ref_not_found
 
@@ -35,11 +35,16 @@ class PlansController < ApplicationController
     render 'invalid_ref'
   end
 
-  # Action needed to capture legacy links sent via email to our users
+  # Actions needed to capture legacy links sent via email to our users. DO NOT remove
+  # ---------------------------------------------------------------------------------
   # See routes.rb: "Community emails send this link"
   # TODO: get API team to update the link sent via email.
   def mail_settings
     redirect_to edit_user_subscription_path( current_user, params[:id])
+  end
+
+  def calendar
+    redirect_to calendar_user_subscription_path( current_user, params[:id])
   end
 
   private
