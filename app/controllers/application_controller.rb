@@ -198,7 +198,7 @@ class ApplicationController < ActionController::Base
 
   def generic_error(ex)
     @error = ex
-    notify_honeybadger(ex)
+    notify_honeybadger(ex) unless ex.is_a?(NotAVersionError)
     render "pages/generic_error", layout: 'application', status: 500
   end
 
