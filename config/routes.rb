@@ -18,7 +18,7 @@ YouversionWeb::Application.routes.draw do
   resources 'likes', :only => [:index]
 
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
-  match '/notes' => 'notes#index', :as => 'all_notes'
+  match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
   match 'notes/:id/like' => 'notes#like', :as => 'like', :via => :put
   resources 'notes', :except => [:index]
 
