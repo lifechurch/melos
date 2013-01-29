@@ -2,17 +2,17 @@ module Presenter
   module Sidebar
     class Plan < Presenter::Base
 
-      def initialize( plan_id , params = {}, controller = nil)
+      def initialize( plan , params = {}, controller = nil)
         super(params,controller)
-        @plan_id = plan_id
+        @plan = plan
       end
 
       def plan_id
-        @plan_id
+        plan.id
       end
 
       def plan
-        @plan ||= ::Plan.find(params[:id])
+        @plan
       end
 
       def sidebar_partial

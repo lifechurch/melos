@@ -83,7 +83,7 @@ YouversionWeb::Application.routes.draw do
 
   # Community emails send this link
   # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
-  match "/reading-plans/:id/settings/email" => "plans#mail_settings", via: :get
+  match "/reading-plans/:id/settings(/email)" => "plans#settings", via: :get
 
   # Community emails send this link
   # /reading-plans/199-promises-for-your-everyday-life/calendar

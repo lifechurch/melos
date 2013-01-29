@@ -14,9 +14,12 @@ class PlansController < ApplicationController
   end
 
   def show
-    # TODO: redirect if user logged in and subscribed to this plan
-    self.sidebar_presenter = Presenter::Sidebar::Plan.new(params[:id],params,self)
-    @plan = sidebar_presenter.plan
+    @plan = Plan.find(params[:id])
+    if current_auth && current_user.subscribed_to?(@plan)
+       redirect_to user_subscription_path(current_user,id: @plan.to_param,day: params[:day], content: params[:content]) and return
+    else
+      self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
+    end
   end
 
   def sample
@@ -39,7 +42,7 @@ class PlansController < ApplicationController
   # ---------------------------------------------------------------------------------
   # See routes.rb: "Community emails send this link"
   # TODO: get API team to update the link sent via email.
-  def mail_settings
+  def settings
     redirect_to edit_user_subscription_path( current_user, params[:id])
   end
 
