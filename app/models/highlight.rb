@@ -59,9 +59,13 @@ class Highlight < YouVersion::Resource
 
     http = HTTPClient.new
     http.set_auth( "https://#{resource}.#{domain}", auth.username, auth.password )
-    response = JSON.parse(http.get_content( request_url, query , headers ))
-    data = Hashie::Mash.new(response["response"]["data"])
+    begin
+      response = JSON.parse(http.get_content( request_url, query , headers ))
+    rescue HTTPClient::BadResponseError
+      return []
+    end
 
+    data = Hashie::Mash.new(response["response"]["data"])
     list = ResourceList.new
     list.total = data.total
     data.highlights.each {|h| list << new(h.merge(auth: params[:auth]))}
