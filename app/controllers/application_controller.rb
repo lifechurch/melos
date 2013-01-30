@@ -229,10 +229,8 @@ class ApplicationController < ActionController::Base
   end
 
   def external_request?
-    return true if request.referrer.nil?
-
-    return false if request.host == request.referrer.split('/')[2].split(':')[0]
-
+    return true  if request.referer.blank?
+    return false if request.host == request.referer.split('/')[2].split(':')[0]
     return true
   end
 

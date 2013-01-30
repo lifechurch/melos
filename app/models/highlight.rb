@@ -1,6 +1,3 @@
-require 'httpclient'
-require 'json'
-
 class Highlight < YouVersion::Resource
   attribute :color
   attribute :reference
@@ -38,38 +35,6 @@ class Highlight < YouVersion::Resource
     self.reference = Reference.new(self.reference) unless self.reference.is_a? Reference
     self.attributes.version_id = self.reference.version
     self.reference = self.reference.to_usfm
-  end
-
-  def self.for_ref(reference, params = {})
-
-    auth = params[:auth]
-    reference = Reference.new(reference) unless reference.is_a? Reference
-    domain = "youversionapi.com"
-    resource = "highlights"
-    request_url = "https://#{resource}.#{domain}/3.0/chapter.json"
-    headers = {
-      'Referer' => "http://web-dev.youversionapi.com",
-      'User-Agent' => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}"
-    }
-    query = {
-      'reference'     => reference.chapter_usfm,
-      'version_id'    => reference.version,
-      'auth_user_id'  => auth.user_id
-    }
-
-    http = HTTPClient.new
-    http.set_auth( "https://#{resource}.#{domain}", auth.username, auth.password )
-    begin
-      response = JSON.parse(http.get_content( request_url, query , headers ))
-    rescue HTTPClient::BadResponseError
-      return []
-    end
-
-    data = Hashie::Mash.new(response["response"]["data"])
-    list = ResourceList.new
-    list.total = data.total
-    data.highlights.each {|h| list << new(h.merge(auth: params[:auth]))}
-    list
   end
 
   def self.for_reference(reference, params = {})
