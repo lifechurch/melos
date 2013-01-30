@@ -199,6 +199,10 @@ class Subscription < Plan
     end
   end
 
+  def user=(u)
+    @user = u
+  end
+
   def user
     @user ||= User.find(auth ? auth : user_id.to_i)
   end

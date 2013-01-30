@@ -493,7 +493,8 @@ class User < YouVersion::Resource
   end
 
   def subscriptions(opts = {})
-    Subscription.all(user_id: id, auth: auth)
+    subs = Subscription.all(user_id: id, auth: auth)
+    subs.each {|s| s.user = self } #populate each subscription with user object to avoid api lookups
   end
 
   def subscription(plan)
