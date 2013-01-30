@@ -247,7 +247,7 @@ class YvApi
       # If there's a block, use it for a substitute API call
       new_response = block.call(response["response"]["data"]["errors"], response) if block
       # If the block didn't return a substitute array, throw an exception based on the original error
-      raise("API Error: " + response["response"]["data"]["errors"].map { |e| e["error"] }.join("; ")) unless !new_response.nil?
+      raise(APIError, response["response"]["data"]["errors"].map { |e| e["error"] }.join("; ")) if new_response.nil?
       # If it DID work, use the response from the block as the new response
       return new_response
     end
