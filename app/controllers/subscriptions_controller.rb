@@ -89,7 +89,7 @@ class SubscriptionsController < ApplicationController
 
     # Completing a day of reading
     if(params[:completed])
-      @subscription.set_ref_completion(params[:day_target] || @subscription.current_day, params[:ref], params[:completed] == "true")
+      @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
       if @subscription.completed?
         redirect_to(user_subscriptions_path(current_auth.username), notice: t("plans.completed notice")) and return
       else

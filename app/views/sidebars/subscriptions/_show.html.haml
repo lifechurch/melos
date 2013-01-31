@@ -54,7 +54,7 @@
               = hidden_field_tag(:ref,            ref.ref.to_usfm)
               = hidden_field_tag(:completed,      (!ref.completed?).to_s)
               = hidden_field_tag(:version,        subscription.version_id)
-              = hidden_field_tag(:day_target,     day.to_s)   if day != subscription.current_day
+              = hidden_field_tag(:day_target,     day.to_s)
               = hidden_field_tag(:content_target, index )     if index != 0
               = check_box_tag(:completion, nil, ref.completed?, {id:"#{index}_box",onChange: "this.form.submit()"} )
 
