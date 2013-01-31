@@ -523,6 +523,7 @@ en:
     must start to complete:                     "Start this plan to save completed readings!"
     invalid reference:                          "Sorry, one of the scripture references for this reading may not exist in the selected version. Try selecting a different version, above. If you continue to see this message, please let our <a href='%{support_url}'>support team</a> know about the issue."
     sidebar notice:                             "You are viewing a reading plan."
+    completed notice:                           "Congratulations! You have completed your reading plan."
   registration:
     placeholder:
       email:                                    "Enter your email address"

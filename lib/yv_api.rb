@@ -94,7 +94,10 @@ class YvApi
     post_start = Time.now.to_f
     begin
       response = httparty_post(resource_url, request_opts)
-
+      if response.code == 205
+         response = Hash.new
+         response["response"] = {"code" => 205,"complete" => true}
+      end
     rescue Timeout::Error => e
       Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
       raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - post_start)*1000).to_i} ms)"
@@ -270,7 +273,6 @@ class YvApi
           Rails.logger.apc "**** Response: #{response}", :error
           raise APIError, "Uncoded API error for #{opts[:resource_url]}"
         end
-
         raise APIError, "'Unknown' API error for #{opts[:resource_url]}:\n'#{unknown_error}'" if unknown_error
       end
     end
@@ -281,6 +283,8 @@ class YvApi
     return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
 
     return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
+
+    return Hashie::Mash.new(response["response"]) if response["response"]["code"] == 205
 
     # Otherwise, turn the data back into a Mash and return it
     case response["response"]["data"]

@@ -88,12 +88,21 @@ class Subscription < Plan
           raise YouVersion::ResourceError.new(errors)
       end
 
+      # API returns a 205 when plan is completed.
+      # Look at YvApi#post for specific implementation details.
+      # return here and don't process the response as this isn't a typical response object.
+      @completed = true and return if (response.code == 205 && response.complete)
+
       #update object to reflect state change since we only get parital response
       process_references_response response
     else
       raise "Authentication required to update plan progress"
     end
     return true
+  end
+
+  def completed?
+    @completed || false
   end
 
   def catch_up
