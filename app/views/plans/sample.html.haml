@@ -1,3 +1,9 @@
 - @title = @plan.title.dup
 
-= render partial: "/references/reader", locals: {presenter: @presenter}
+- if @presenter.reference
+  = render partial: "/references/reader", locals: {presenter: @presenter}
+
+- else
+  %article
+    %h2= t('plans.no verses')
+    %p= t('plans.no content')
