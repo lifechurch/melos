@@ -589,6 +589,7 @@ Reader.prototype = {
     var audio_menu = $('#menu_audio_player').show();
 
     this.audio_player.mediaelementplayer({
+      pluginPath: "/assets/",
       features: ['playpause', 'current', 'progress', 'duration'],
       audioWidth: '100%'
     });
