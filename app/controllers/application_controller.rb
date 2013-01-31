@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     rescue_from APIError, with: :api_error
     rescue_from AuthError, with: :auth_error
     rescue_from Timeout::Error, with: :timeout_error
-    rescue_from APITimeoutError, with: :timeout_error
+    rescue_from APITimeoutError, with: :api_timeout_error
   end
 
   def client_settings
@@ -187,6 +187,11 @@ class ApplicationController < ActionController::Base
   def timeout_error(ex)
     @error = ex
     notify_honeybadger(ex)
+    render "pages/api_timeout", layout: 'application', status: 408
+  end
+
+  def api_timeout_error(ex)
+    @error = ex
     render "pages/api_timeout", layout: 'application', status: 408
   end
 
