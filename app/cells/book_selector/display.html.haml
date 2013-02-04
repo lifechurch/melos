@@ -12,8 +12,8 @@
       .scroll
         %ul
           - @version.books.each do |book_usfm, book_info|
-            %li{"data-meta" => book_info.to_meta}
-              %a{:href => '#', "data-book" => book_usfm.downcase}=  book_info.human
+            %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
+              %a{:href => '#', "data-book" => book_usfm.downcase}=  truncate(book_info.human, length: 40, separator: " ")
     #menu_chapter
       %header
         =t("chapter")
