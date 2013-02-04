@@ -1,5 +1,5 @@
 - @title = t("plans.title")
-
+- translate = params[:translate] == "true"
 %article
   - if current_auth
     %h1.float_left= t("plans.browse plans", category: @categories.current_name || t("plans.all"))
@@ -11,8 +11,10 @@
         = link_to t("plans.my plans"), user_subscriptions_path(current_user)
   - else
     %h1= t("plans.browse plans", category: @categories.current_name || t("plans.all"))
+
   .split_pane{:style => "padding-top:15px"}
     .plan_search
+
       %form{method: 'get'}
         - if params[:category]
           %input{:type => "hidden", :name => "category", :value => params[:category]}
@@ -22,9 +24,8 @@
           %input{:type => "hidden", :name => "query", :value => params[:query]}
         %select.float_left{onChange: "this.form.submit()", style: "margin-right: 126px; margin-left:10px", name: "lang", }
           - (Plan.available_locales & I18n.available_locales).each do |loc|
-            %option{value: loc.to_s, selected: loc.to_s == @plan_lang}= t("language name", locale: loc)
-          - unless (Plan.available_locales & I18n.available_locales).find{|l| l == @plan_lang.to_sym}
-            %option{value: @plan_lang.to_s, selected: true}= t("language name", locale: @plan_lang)
+            %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}= t("language name", locale: loc)
+
       %form{method: 'get'}
         - if params[:category]
           %input{:type => "hidden", :name => "category", :value => params[:category]}
@@ -35,16 +36,17 @@
         %input.autofocus{:style =>"width: 300px; margin-left: 40px;", name: "query", :type => 'search', :placeholder => t("plans.search placeholder", category: @categories.current_name || t("plans.all")), value: params[:query]}
         %input{:type => 'submit', :value => t("plans.search")}
       %hr{:style => "margin-top:15px"}
+
     .plan_filters
-      - if I18n.locale.to_s != @plan_lang
+      - if I18n.locale.to_s != @plan_lang.to_s
         %div{style: "margin-left: 254px; text-align:center"}
           = t('plans.showing language filtered', lang_name: t('language name', locale: @plan_lang))
-          %span.mute{style: "font-weight: normal; font-size: 12px"}= t("plans.swap list localization", swap_locale: t('language name', locale: @translate_list ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: (!@translate_list).to_s))).html_safe
+          %span.mute{style: "font-weight: normal; font-size: 12px"}= t("plans.swap list localization", swap_locale: t('language name', locale: translate ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: (!translate).to_s))).html_safe
     .split_pane_sidebar
       %dl.categories_menu
         %dt
           = t("plans.browse by category")
-          - if @translate_list
+          - if translate
             - orig_locale = I18n.locale
             - I18n.locale = @plan_lang
         %dd{class: (params[:category] == "" || params[:category].nil?) ? "highlighted" : ""}
