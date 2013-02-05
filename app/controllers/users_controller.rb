@@ -435,7 +435,7 @@ private
     if exception.message == "No user with this username/email address"
       render_404
     else
-      raise(e)
+      raise(exception)
     end
   end
 
