@@ -12,4 +12,8 @@ class VideosController < ApplicationController
 
   end
 
+  def publisher
+
+  end
+
 end
