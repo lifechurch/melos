@@ -6,6 +6,15 @@ function SharePane( el ) {
   this.tw_share_message_field  = this.el.find(".share_verse_twitter");
   this.fb_share_message_field  = this.el.find(".share_verse_facebook");
   this.textarea = this.el.find('textarea');
+
+  $(this.form).submit(function(e){
+    var tw = $("#checkbox_share_twitter");
+    var fb = $("#checkbox_share_facebook");
+    if(!tw.is(':checked') && !fb.is(":checked")) {
+      alert("Twitter? Facebook?"); // Eventually make this more user friendly / I18n'd. Quick fix to mitigate the issue.
+      e.preventDefault();
+    }
+  })
 }
 
 SharePane.prototype = {

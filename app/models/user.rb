@@ -286,6 +286,9 @@ class User < YouVersion::Resource
   #   end
   #
   def share(opts = {})
+    # validate that a connection was specified.  TODO: populate errors object + I18n
+    return false unless opts[:connections]
+
     opts[:connections] = opts[:connections].keys.join("+")
     result = YvApi.post("users/share", opts.merge({auth: self.auth})) do |errors|
       new_errors = errors.map { |e| e["error"] }

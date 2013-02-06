@@ -178,9 +178,9 @@ class UsersController < ApplicationController
 
   def share
     if current_user.share(params[:share])
-      redirect_to :back, notice: t('share success')
+      flash[:notice] = t('share success') and redirect_to :back
     else
-      redirect_to :back, error: t('share error')
+      flash[:error] = t('share error') and redirect_to :back
     end
   end
 
