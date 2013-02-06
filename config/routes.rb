@@ -29,6 +29,10 @@ YouversionWeb::Application.routes.draw do
   match '/:locale/terms', :to => 'pages#terms'
   match '/:locale/privacy', :to => 'pages#privacy'
 
+  resources :videos do
+    get :category, on: :collection
+  end
+
   # Users
   resources 'users', :except => [:new, :create] do
 
