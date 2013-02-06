@@ -172,8 +172,11 @@
         margin-top: 0 !important
         font-weight: bold
 
-      div
-        float: none !important
+    .li_bookmark div.float_left,
+    .li_badge div.float_left,
+    .li_note div.float_left,
+    .li_social div.float_left
+      float: none !important
 
     .bookmark_edit
       margin-top: 4px
@@ -202,59 +205,33 @@
     padding-top: 20px
     border-top: 1px solid #e1e1e1
 
+#main article.profile
   .friends_list
     margin-top: 0 !important
     margin-bottom: 0
 
-    li
-      background-image: none
-      padding: 10px 20px
-      border-top: 1px solid #ccc
-      overflow: hidden
+    .big_list
+      margin-top: 15px
 
-      p
-        margin: 0
+      .gutter_right_half
+        width: 15%
+        margin-right: 2% !important
+        padding: 5% 0 5% 5%
 
-      .avatar_box
-        width: 20%
-        float: left
+      .gutter_right_half + div
+        width: 78%
 
       .gutter_top_half
-        float: left
-        width: 80%
-        margin-top: 0 !important
-        a
-          font-weight: bold
-          text-decoration: none
-    li:first-child
-      border-top: 0
+        margin-top: -23px !important
 
-  .friends_combo_button
+      .mute
+        font-size: 12px
+
+      li
+        padding: 0
+
+  .combo_button
     font-size: 15px
-    overflow: hidden
-    margin-top: -14px
-    a
-      color: $body_text
-      text-decoration: none
-      height: 38px
-      display: block
-      text-align: center
-      font-weight: bold
-      line-height: 38px
-      float: left
-      width: 50%
-      border:
-        top: 3px solid #eee
-        bottom: 3px solid #aaa
-      background-color: #ccc
-    .highlighted
-      background-color: #999
-      color: #fff
-      height: 40px
-      line-height: 40px
-      border:
-        top: 1px solid #777
-        bottom: 3px solid #999
 
 // Notifications
 //----------------------------------------------------------------------------------------------------

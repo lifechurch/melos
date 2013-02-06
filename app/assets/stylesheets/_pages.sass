@@ -1,4 +1,4 @@
-/* About page */
+// About page
 
 .about_content
   padding-right: 520px
@@ -191,7 +191,7 @@ a.cta span
   margin: 3px 0 0 0
 
 
-/* Profile page */
+// ----------Profile page
 
 #main article.profile
   .big_list
@@ -205,7 +205,7 @@ a.cta span
   font-size: 15px
   text-shadow: none
 
-/* 404 page */
+// -----------404 page
 
 #main article.error
   text-align: center
@@ -221,12 +221,12 @@ a.cta span
     margin-top: 40px
     margin-bottom: 30px
 
-/* Versions#show */
+// Versions#show
 
 .copyright
   h1, h2, h3, h4, h5, h6
     // override heading styles, since some publishers
-    // have headings here where we don't want them
+    // have headings here where we dont want them
     font-family: $body_font
     font-weight: bold !important
     color: $body_text
@@ -239,3 +239,41 @@ a.cta span
 
   br + br
     display: none
+
+// -------------------Friends page
+
+#main article .friends_list .big_list
+  li
+    overflow: hidden
+    background: none
+    padding: 15px 0
+    border-top: 1px solid #ccc
+
+  li:first-child
+    border-top: none
+    padding-top: 0
+
+  div
+    width: 480px
+
+  .gutter_right_half
+    margin: 0
+    width: 48px
+
+  .gutter_top_half
+    margin-top: -4px !important
+    margin-bottom: -4px
+
+    a
+      font-weight: bold
+      font-size: 16px
+      letter-spacing: -.05em
+
+    button
+      margin-top: 6px
+
+  p
+    margin-bottom: 0
+
+
+
