@@ -4,7 +4,7 @@
     :plain
       var modal = new VerseModal();
 
-#modal_single_verse.modal
+#modal_single_verse.modal{:itemscope => true, :itemtype => 'http://schema.org/Article'}
   #modal_overlay.overlay &nbsp;
   #modal_window.window
     %header
@@ -16,7 +16,7 @@
 
       %a.close{:href => '#'} Close
     %section
-      %p.big= verse.content.html_safe
+      %p.big{:itemprop => 'description'}= verse.content.html_safe
       %hr
       %p
         - if reference
