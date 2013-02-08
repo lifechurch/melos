@@ -239,15 +239,7 @@ class ApplicationController < ActionController::Base
     return true
   end
 
-  def force_notification_token_or_login
-    if params[:token]
-      redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return if current_user && current_user.notifications_token != params[:token]
-    else
-      force_login
-    end
-  end
-
-    def force_login(opts = {})
+  def force_login(opts = {})
     if current_auth.nil?
       opts[:redirect] = request.path
       redirect_to sign_up_path(opts) and return

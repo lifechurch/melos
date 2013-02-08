@@ -425,6 +425,16 @@ private
     self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
   end
 
+  def force_notification_token_or_login
+    if params[:token]
+      if current_user && current_user.notifications_token != params[:token]
+        redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return
+      end
+    else
+      force_login
+    end
+  end
+
   def authorize
     unless @user.id == current_user.id
       redirect_to(edit_user_path(current_user))
