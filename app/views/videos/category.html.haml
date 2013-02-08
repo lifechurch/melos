@@ -1,7 +1,58 @@
 - @sidebar = false
 
-%article
-  %h1 Video Category Page
+%article.videos-series
+  %h1 The Bible Series
+  =link_to(publisher_video_path(id: "test"), {class: "video-pub"}) do
+    %h5
+      By Sum Dudes
+
+  %h4
+    Full Episodes
+
+  .video-box
+    =link_to(video_path(id: "test"), {class: "video-name"}) do
+      %div
+        %h3
+          The Bible series
+        %p
+          Subcopy goes here
+
+  .video-box
+    =link_to(video_path(id: "test"), {class: "video-name"}) do
+      %div
+        %h3
+          The Bible series
+        %p
+          Subcopy goes here
+
+  %h4
+    Clips
+
+  .video-box
+    =link_to(video_path(id: "test"), {class: "video-name"}) do
+      %div
+        %h3
+          The Bible series
+        %p
+          Subcopy goes here
+
+  .video-box
+    =link_to(video_path(id: "test"), {class: "video-name"}) do
+      %div
+        %h3
+          The Bible series
+        %p
+          Subcopy goes here
+
+  .video-box
+    =link_to(video_path(id: "test"), {class: "video-name"}) do
+      %div
+        %h3
+          The Bible series
+        %p
+          Subcopy goes here
+
+/
   %ul
     %li
       =link_to("Video detail",video_path(id:"test"))

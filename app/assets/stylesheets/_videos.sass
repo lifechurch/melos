@@ -1,2 +1,205 @@
-article#videos
-  border: 1px solid red
+// ------------Common styles
+
+article.videos-home .video-box,
+article.videos-series .video-box,
+article.videos-detail .video-box,
+article.videos-publisher .video-box
+  border: 1px solid #e1e1e1
+  width: 399px
+  float: left
+  padding: 4px
+  margin: 0 0 40px 30px
+
+article.videos-home .video-box:first-child,
+article.videos-series .video-box:first-child,
+article.videos-detail .video-box:first-child,
+article.videos-publisher .video-box:first-child
+  margin: 0 0 40px 0
+
+// ------------Landing page
+
+article.videos-home,
+article.videos-publisher
+  overflow: hidden
+
+  .video-box
+    a
+      display: block
+
+    .video-name
+      height: 70px
+      color: #fff
+      text-decoration: none
+      padding-top: 185px
+
+      div
+        background: rgba(0,0,0,.4) image-url("blue-arrow@2x.png") no-repeat 358px 14px
+        padding-bottom: 5px
+
+        h2,
+        p
+          text-shadow: 0 0 5px #000
+          filter: dropshadow(color=#000, offx=0, offy=0)
+          margin: 0
+
+        h2
+          padding: 5px 0 5px 20px
+
+        p
+          display: block
+          padding: 0 0 0 20px
+          margin-top: -6px
+
+    .video-pub
+      text-decoration: none
+
+      h5
+        margin: 0
+        padding: 8px 0 9px 42px
+        background: image-url("icon_small_about.png") no-repeat 20px center
+        color: #777
+
+article.videos-home .video-box,
+article.videos-publisher .video-box
+
+  // Backgrounds for each series
+
+  .bible-series
+    background: image-url("video-bible-series.jpg") no-repeat top left
+
+  .jesus-film
+    background: image-url("video-jesus-film.jpg") no-repeat top left
+
+article.videos-home .video-box:hover,
+article.videos-publisher .video-box:hover
+  +box-shadow(rgba(0,0,0,0.3) 0 2px 15px)
+
+// ------------Series detail page
+
+article.videos-series
+  background: image-url("videos-bs-hero.jpg")
+  background-repeat: no-repeat !important
+  background-position: top center
+
+  h1
+    color: #fff
+    margin-top: 280px
+    font-size: 60px
+
+  .video-pub
+    color: #fff
+    margin: -10px 0 46px 0
+    display: block
+    padding-left: 25px
+    background: image-url("icon_info.png") no-repeat top left
+
+  .video-box
+    width: 245px
+    height: 128px
+    margin: 0 25px 40px 0
+    padding: 0
+    background: image-url("video-bible-series.jpg") no-repeat top center
+
+    .video-name
+      display: block
+      color: #fff
+      text-decoration: none
+      text-shadow: 0 0 5px #000
+      filter: dropshadow(color=#000, offx=0, offy=0)
+
+      h3
+        padding: 80px 0 0 15px
+        font-size: 16px
+        margin: 0
+
+      p
+        padding: 0 0 0 15px
+        margin: 0
+
+      div:hover
+        background: image-url("video-play.png") no-repeat center 30px
+
+
+article.videos-series
+  h4
+    clear: both
+
+// -------------- Video detail page
+
+article.videos-detail
+
+  h1
+    margin-bottom: 4px
+
+  .video-pub
+    color: #777
+
+    h5
+      margin: 0 0 8px 0
+      padding: 8px 0 9px 25px
+      background: image-url("icon_small_about.png") no-repeat left center
+
+  .videos-verses
+    display: block
+    color: #666
+    text-transform: uppercase
+    font-size: 11px
+    padding-top: 10px
+    border-top: 1px solid #e1e1e1
+
+  .reference_tokens
+    margin-bottom: 6px
+
+  .reference_tokens > li a
+    border-radius: 4px
+
+  .video-info
+    padding: 15px 0
+    border-top: 1px solid #e1e1e1
+    border-bottom: 1px solid #e1e1e1
+
+#main article.videos-detail,
+#main article.videos-publisher
+
+  .videos-list
+    h5
+      display: inline
+      padding-right: 10px
+
+    a
+      text-decoration: none
+      font-weight: bold
+
+    ul
+      margin: 10px 0 10px 0
+
+      li
+        margin: 1px 0
+        padding: 5px 0 5px 40px
+        background: #F2F2F2 image-url("more_arrow.png") no-repeat 10px center
+
+      li:first-child
+        border-top: none
+
+// ----------------Publisher page
+// ----------------Styles for the list of available videos is right above this comment
+
+article.videos-publisher
+
+  h1
+    margin-bottom: 5px
+
+  .video-pub
+    background: image-url("icon_small_link.png") no-repeat left center
+    color: #777
+    padding-left: 20px
+    text-decoration: none
+    font-weight: bold
+    margin-bottom: 20px
+    display: block
+
+  .video-box .video-name
+    height: auto
+
+  .videos-list
+    margin-bottom: 10px

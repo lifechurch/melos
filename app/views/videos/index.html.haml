@@ -1,11 +1,26 @@
 - @sidebar = false
-%article#videos
-  %h1 Video Home/Index page
+%article.videos-home
+  %h1
+    Videos
 
-  %p The red border comes from _videos.sass - do all your video related css work in this file.
+  .video-box
+    =link_to(category_videos_path, {class: "video-name bible-series"}) do
+      %div
+        %h2
+          The Bible series
+        %p
+          Subcopy goes here
+    =link_to(publisher_video_path(id: "test"), {class: "video-pub"}) do
+      %h5
+        By Sum Dudes
 
-  %ul
-    %li
-      =link_to("Video detail",video_path(id:"test"))
-    %li
-      =link_to("Video category",category_videos_path())
+  .video-box
+    =link_to(category_videos_path, {class: "video-name bible-series"}) do
+      %div
+        %h2
+          The Bible series
+        %p
+          Subcopy goes here
+    =link_to(publisher_video_path(id: "test"), {class: "video-pub"}) do
+      %h5
+        By Sum Dudes

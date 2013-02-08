@@ -1,9 +1,45 @@
 - @sidebar = false
 
-%article
-  %h1 Video Detail Page
-  %ul
+%article.videos-detail
+
+  -# Video code here
+  %video
+
+  %h1
+    The Bible Series - Part 1
+  =link_to(publisher_video_path(id: "test"), {class: "video-pub"}) do
+    %h5
+      By Sum Dudes
+
+  -# Related scripture
+  %span.videos-verses
+    Related Scripture
+
+  %ul.reference_tokens
     %li
-      =link_to("Video home/index page",videos_path)
+      %a
+        John 1:1
     %li
-      =link_to("Video category",category_videos_path())
+      %a
+        Revelation 2:12
+
+  %p.video-info
+    Therefore if there is any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any affection and mercy, 2fulfill my joy by being like-minded, having the same love, being of one accord, of one mind. 3Let nothing be done through selfish ambition or conceit, but in lowliness of mind let each esteem others better than himself. 4Let each of you look out not only for his own interests, but also for the interests of others.
+
+  .videos-list
+    %h5
+      Other videos in this series
+
+    =link_to(category_videos_path()) do
+      &#91;View all&#93;
+
+    %ul
+      %li
+        =link_to(publisher_video_path(id: "test")) do
+          Part 2 - Description would go here
+      %li
+        =link_to(publisher_video_path(id: "test")) do
+          Part 3 - Description would go here
+      %li
+        =link_to(publisher_video_path(id: "test")) do
+          Part 4 - Description would go here

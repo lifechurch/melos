@@ -1,7 +1,28 @@
 - @sidebar = false
 
-%article
-  %h1 Publisher info page
+%article.videos-publisher
+  %h1
+    Publisher name
+  =link_to("#", {class: "video-pub"}) do
+    publisherswebsite.com
+
+  %p.video-info
+    Therefore if there is any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any affection and mercy, 2fulfill my joy by being like-minded, having the same love, being of one accord, of one mind. 3Let nothing be done through selfish ambition or conceit, but in lowliness of mind let each esteem others better than himself. 4Let each of you look out not only for his own interests, but also for the interests of others.
+
+  .videos-list
+    %h5
+      Videos by this publisher
+
+  .video-box
+    =link_to(category_videos_path, {class: "video-name bible-series"}) do
+      %div
+        %h2
+          The Bible series
+        %p
+          Subcopy goes here
+
+
+/
   %ul
     %li
       =link_to("Video home/index page",videos_path)
