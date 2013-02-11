@@ -21,6 +21,11 @@
           %span &nbsp;
         %a.tooltip{:href => current_auth ? user_notes_path(current_auth.username) : notes_path, style: "display: none;"}
           %span=t("notes title")
+      %li#nav_primary_videos{class: @nav == :videos ? "highlighted" : ""}
+        %a.icon{:href => "/videos"}
+          %span &nbsp;
+        %a.tooltip{:href => "/videos", style: "display: none;"}
+          %span=t("videos")
       %li#nav_primary_friends
         %a.icon{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends")}
           %span &nbsp;
