@@ -5,17 +5,8 @@
 
   .video-box
     =link_to(category_videos_path, {class: "video-name bible-series"}) do
-      %div
-        %h2
-          The Bible series
-        %p
-          Subcopy goes here
-    =link_to(publisher_video_path(id: "test"), {class: "video-pub"}) do
-      %h5
-        By Sum Dudes
-
-  .video-box
-    =link_to(category_videos_path, {class: "video-name bible-series"}) do
+      %h2 The Bible Series
+    -# Biz is asking for no text on images but leaving this in case they change their minds
       %div
         %h2
           The Bible series
