@@ -13,6 +13,9 @@ class PlansController < ApplicationController
   end
 
   def show
+    # Redirect for url format that is shared from mobile devices.
+    if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
+
     @plan = Plan.find(params[:id])
     if current_auth && current_user.subscribed_to?(@plan)
        redirect_to user_subscription_path(current_user,id: @plan.to_param,day: params[:day], content: params[:content]) and return
