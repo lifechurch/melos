@@ -142,7 +142,7 @@ YouversionWeb::Application.routes.draw do
   match 'settings/update_email'   => 'redirects#settings_email'
   match 'settings/password'       => 'redirects#settings_password'
   match 'settings/picture'        => 'redirects#settings_picture'
-  match 'settings/notifications'  => 'redirects#settings_notifications'
+  match 'settings/notifications'  => 'redirects#settings_notifications', as: "notification_settings"
   match 'settings/devices'        => 'redirects#settings_devices'
   match 'settings/delete_account' => 'redirects#delete_account'
 

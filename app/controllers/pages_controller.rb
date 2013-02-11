@@ -1,6 +1,13 @@
 class PagesController < ApplicationController
   helper_method :localized_bible_icon
 
+  # TODO: remove the redirect for token as soon as we get the OK from API team.
+  # This was introduced due to a bad email campaign sending the unsubscribe link as yv.com/?token=b990f8e2e6ea57e1156ed7c513251cbd6d30197f
+  def home
+    if params[:token] then redirect_to notification_settings_url(token: params[:token]) and return end
+  end
+
+
   def donate
     @us_donate_link = us_donation_path
     @intl_donate_link = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P87AYS9RLXTEE"
