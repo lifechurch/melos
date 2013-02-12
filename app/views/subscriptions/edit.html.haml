@@ -10,8 +10,9 @@
   %h1{style: "clear: none; width: 300px;"}= t("plans.settings")
 
   .tab_navigation.plan_settings.mobile
-    = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription),{:class => "selected"}
-    = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription)
+    .inner_wrapper
+      = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription),{:class => "selected"}
+      = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription)
 
   // Email delivery settings
   .div.float_right
