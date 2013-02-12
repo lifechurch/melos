@@ -135,7 +135,7 @@ module YouVersion
 
         vs.push(arr)
       end
-      return vs.flatten!.map(&:to_i)
+      return vs.flatten.map(&:to_i)
     end
 
 
