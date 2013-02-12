@@ -187,7 +187,6 @@ SelectedMenu.prototype = {
 
   open_mobile : function() {
     thiss = this;
-
     $('.nav_items').stop().animate({ 'top' : '-46px'}, 200, function(){
         // nav_items animation complete, show verse toolbar
         thiss.mobile_menu.stop().animate({ 'top' : '0px'}, 200, function(){

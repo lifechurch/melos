@@ -147,7 +147,7 @@ div.close_tab
   background: transparent
   border: 0px
   border-radius: 0px
-  box-shadow: none
+  box-shadow: none !important
   width: 100%
   position: absolute
   z-index: 191
@@ -303,27 +303,32 @@ div.close_tab
 .tab_navigation
   display: block
   width: 100%
-  a
-    display: block
-    float: left
-    width: 33.33%
-    height: 44px
-    background: #2C2B2B
-    margin: 0px
-    text-align: center
-    line-height: 43px
-    color: #fff
-    font-weight: bold
-    font-size: 15px
-    text-decoration: none
-    +box-shadow(inset #000000 0 1px 1px 0px)
-    //+box-shadow(inset #4b4b4b 0 2px 0 0, inset #0d0d0d 0 -2px 0 0)
-    border-bottom: 1px solid #1f1f1f
-  a:first-child
-    border-left: 0
-  a.selected
-    background: #666
-    +box-shadow(inset #000000 0 1px 1px 1px)
+
+  .inner_wrapper
+    width: 101%
+    overflow: hidden
+
+    a
+      display: block
+      float: left
+      width: 33.33333333%
+      height: 44px
+      background: #2C2B2B
+      margin: 0px
+      text-align: center
+      line-height: 43px
+      color: #fff
+      font-weight: bold
+      font-size: 15px
+      text-decoration: none
+      +box-shadow(inset #000000 0 1px 1px 0px)
+      //+box-shadow(inset #4b4b4b 0 2px 0 0, inset #0d0d0d 0 -2px 0 0)
+      border-bottom: 1px solid #1f1f1f
+    a:first-child
+      border-left: 0
+    a.selected
+      background: #666
+      +box-shadow(inset #000000 0 1px 1px 1px)
 
 .tab_navigation.plan_settings
   width: 100%
