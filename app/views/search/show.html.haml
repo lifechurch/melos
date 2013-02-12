@@ -24,12 +24,13 @@
           %input{type: "hidden", name: "q", value: @query.query}
           %input{type: "hidden", name: "category", value: :bible}
           %div{style: "clear: both"}
+            - all_languages = Version.all_by_language
             %select.float_right{onChange: "this.form.submit()", style: "margin-right: 5px; margin-top: 10px; margin-bottom: 25px; width: 550px", name: "version_id"}
-              - all_languages = Version.all_by_language
               %optgroup{label: Version.languages[I18n.locale.to_s]}
               %option{value: "", selected: @query.version_id.nil?}= t("searching.all versions", language_name: t("language name"))
-              - all_languages[I18n.locale.to_s].each do |v|
-                %option{value: v.id, selected: v.id == (@query.version_id)}= v
+              - if langs = all_languages[I18n.locale.to_s]
+                -  langs.each do |v|
+                  %option{value: v.id, selected: v.id == (@query.version_id)}= v
               - all_languages.except(I18n.locale.to_s).each do |lang, versions|
                 %optgroup{label: Version.languages[lang]}
                 - versions.each do |v|
