@@ -9,49 +9,26 @@
   %h4
     Full Episodes
 
-  .video-box
-    =link_to(video_path(id: "test"), {class: "video-name"}) do
-      %div
-        %h3
-          The Bible series
-        %p
-          Subcopy goes here
-
-  .video-box
-    =link_to(video_path(id: "test"), {class: "video-name"}) do
-      %div
-        %h3
-          The Bible series
-        %p
-          Subcopy goes here
+  - 2.times do
+    .video-box
+      =link_to(video_path(id: "test"), {class: "video-name"}) do
+        %div
+          %h3
+            The Bible series
+          %p
+            Subcopy goes here
 
   %h4
     Clips
 
-  .video-box
-    =link_to(video_path(id: "test"), {class: "video-name"}) do
-      %div
-        %h3
-          The Bible series
-        %p
-          Subcopy goes here
-
-  .video-box
-    =link_to(video_path(id: "test"), {class: "video-name"}) do
-      %div
-        %h3
-          The Bible series
-        %p
-          Subcopy goes here
-
-  .video-box
-    =link_to(video_path(id: "test"), {class: "video-name"}) do
-      %div
-        %h3
-          The Bible series
-        %p
-          Subcopy goes here
-
+  - 4.times do
+    .video-box
+      =link_to(video_path(id: "test"), {class: "video-name"}) do
+        %div
+          %h3
+            The Bible series
+          %p
+            Subcopy goes here
 /
   %ul
     %li
