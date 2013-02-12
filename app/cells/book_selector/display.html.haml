@@ -4,9 +4,12 @@
       %nav
         %a.close_btn.reference_close_btn
     .tab_navigation.ref
-      %a.book{:href => '#book', :class => 'selected'} Book
-      %a.chapter{:href => '#chapter'} Chapter
-  %br.clear  
+      .inner_wrapper
+        %a.book{:href => '#book', :class => 'selected'}
+          = t('Book')
+        %a.chapter{:href => '#chapter'}
+          = t('Chapter')
+  %br.clear
   .spinner_wrapper{style: "display: none;"}
     #book_chapter_spinner.dynamic_menu_spinner
   .search

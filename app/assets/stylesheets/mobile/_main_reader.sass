@@ -330,19 +330,22 @@ div.close_tab
       background: #666
       +box-shadow(inset #000000 0 1px 1px 1px)
 
-.tab_navigation.plan_settings
+.tab_navigation.plan_settings,
+.tab_navigation.ref
   width: 100%
   left: 0px
   top: -5px
   display: block
   height: 44px
 
-.tab_navigation.plan_settings a
-  width: 49.99%
-  line-height: 48px
+  .inner_wrapper
+    width: 101%
+    overflow: hidden
 
-.tab_navigation.ref a
-  width: 49.99%
+    a
+      width: 49.99%
+      line-height: 48px
+
 
 .nav_items.audio-disabled
   width: 170px
