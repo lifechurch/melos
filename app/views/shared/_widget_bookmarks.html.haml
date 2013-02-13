@@ -6,8 +6,8 @@
     - if !@bookmarks.empty?
       - @bookmarks.first(5).each do |b|
         %li
-          %b= b.title
-          %br
+          - if title = b.title
+            %b= title
           - b.reference_list.each do |r|
             = link_to r, bible_path(r)
           - if b.labels
