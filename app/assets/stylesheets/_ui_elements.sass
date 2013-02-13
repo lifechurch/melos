@@ -378,11 +378,10 @@ dd .icon_settings
 //
 
 .cal_month
-  float: left
+  display: inline-block
   margin-right: 8px
   font-family: helvetica
   border-collapse: collapse
-  border: 1px #d5d0d0 solid
 
 .cal_month tbody
   width: 100%
@@ -406,6 +405,10 @@ dd .icon_settings
   box-shadow: 0px 1px 0px #f59595 inset
   text-align: center
 
+.cal_month thead
+  border-right: 1px #d5d0d0 solid
+  border-left: 1px #d5d0d0 solid
+
 .cal_month thead tr
   background: #f8f8f8
   font-size: 13px
@@ -422,8 +425,8 @@ dd .icon_settings
   border: 1px #d5d0d0 solid
   border-collapse: collapse
   font-size: 12px
-  height: 33px
-  width: 28px
+  height: 35px
+  width: 35px
   box-shadow: 0px 1px 0px #fff inset
 
 .cal_month td a
