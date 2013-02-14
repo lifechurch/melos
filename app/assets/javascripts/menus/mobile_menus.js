@@ -293,7 +293,8 @@ MobileMenus.prototype = {
     $('.audio_close_btn').click(function(e){
         e.preventDefault();
         var $this = $(this);
-
+        //if audio is playing, pause it.
+        $('.mejs-pause button').click();
         thiss.audioToolbar.stop().animate({ top : '-208px'}, 400, function(){
             thiss.navItems.stop().animate({ top : '0px'}, 400).addClass(thiss.openFlag);
         }).removeClass('open');

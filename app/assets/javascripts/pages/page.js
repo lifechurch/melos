@@ -107,6 +107,11 @@ Page.prototype = {
           $this.attr('data-original-href', $this.attr('href'));
           $this.attr('href', $this.attr('data-mobile-href'));
         });
+
+        $('.widget_menu .prev').click(function(e){
+          thiss.openSubscriptionMenu();
+
+        });
       },
       exit: function() {
         // set mobile links back

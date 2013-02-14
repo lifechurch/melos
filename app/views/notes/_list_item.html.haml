@@ -10,6 +10,7 @@
       %p.mute.small.negative_gutter_top_half
         %a{href: user_path(list_item.username)}= list_item.username
     %p= truncate list_item.content, length: 300, separator: " "
+    %p.mute.small.negative_gutter_top_half= link_to_references(list_item.reference_list)
     .bookmark_edit.float_right
       %p
         - if @me
@@ -20,4 +21,3 @@
           %span.mdash
             &mdash;
         %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
-    %p.mute.small.negative_gutter_top_half= link_to_references(list_item.reference_list)
