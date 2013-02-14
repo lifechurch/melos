@@ -395,12 +395,21 @@ a.more_arrow:hover
   width: 91%
 .parallel_notes section form fieldset
   margin: 0
+
 // `Fixed Widget Header
 //----------------------------------------------------------------------------------------------------
 
 .widget
   position: relative
   z-index: 1
+
+  .body-rounded
+    +round_bottom
+    +box-shadow(#fff 0 1px 0 0)
+    background:
+      color: $gray_light
+    border: 1px solid #cbc9cf
+    margin: 0 0 10px
 
 .widget header
   +round_top

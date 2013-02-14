@@ -1,5 +1,11 @@
 module ApplicationHelper
 
+  def html_attributes( atts = {} )
+    classes = [atts[:classes]] if atts[:classes].is_a? String
+    @html_id      = atts[:id] if atts[:id]
+    @html_classes = classes if classes
+  end
+
   def object_status   #TODO: More useful name?
     status = {}
     status[t('notes.public')] = 'public'

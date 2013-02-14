@@ -30,7 +30,7 @@ YouversionWeb::Application.routes.draw do
   match '/:locale/privacy', :to => 'pages#privacy'
 
   resources :videos do
-    get :category, on: :collection
+    get :series,    on: :member
     get :publisher, on: :member
   end
 

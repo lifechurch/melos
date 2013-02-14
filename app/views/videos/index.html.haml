@@ -1,18 +1,15 @@
+- html_attributes(id:"videos-index")
 - @sidebar = false
-%article.videos-home
-  %h1
-    Videos
+%article
+  .inner
+    %h1
+      Videos
 
-  - 3.times do
-    .video-box
-      =link_to(category_videos_path, {class: "video-name bible-series"}) do
-        %h2 The Bible Series
-      -# Biz is asking for no text on images but leaving this in case they change their minds
-        %div
-          %h2
-            The Bible series
-          %p
-            Subcopy goes here
-      =link_to(publisher_video_path(id: "test"), {class: "video-pub"}) do
-        %h5
-          By Sum Dudes
+    %ul.videos
+      - @videos.each do |v|
+        %li{class:cycle('even', 'odd')}
+          =link_to( series_video_path(id:v.id)) do
+            = image_tag( v.thumbnails.second.url )
+          %div.info
+            %span.count= pluralize(v.total_videos,"clip")
+            =link_to(v.credits, publisher_video_path(id: v.publisher.id), {class: "publisher"})

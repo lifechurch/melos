@@ -1,35 +1,8 @@
-- @sidebar = false
+- html_attributes(id:"video-publisher")
+- content_for :sidebar do
+  = render partial: "sidebars/videos/publisher", locals: {video: @video, publisher: @publisher}
 
 %article.videos-publisher
-  %h1
-    Publisher name
-  =link_to("#", {class: "video-pub"}) do
-    publisherswebsite.com
+  %h1= @publisher.name
 
-  %p.video-info
-    Therefore if there is any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any affection and mercy, 2fulfill my joy by being like-minded, having the same love, being of one accord, of one mind. 3Let nothing be done through selfish ambition or conceit, but in lowliness of mind let each esteem others better than himself. 4Let each of you look out not only for his own interests, but also for the interests of others.
-
-  .videos-list
-    %h5
-      Videos by this publisher
-
-  .video-box
-    =link_to(category_videos_path, {class: "video-name bible-series"}) do
-      %div
-        %h2
-          The Bible series
-        %p
-          Subcopy goes here
-
-
-/
-  %ul
-    %li
-      =link_to("Video home/index page",videos_path)
-    %li
-      =link_to("Video detail page",video_path(id: "test"))
-    %li
-      =link_to("Video category",category_videos_path())
-    %li
-      =link_to("Video category",publisher_video_path(id: "test"))
-
+  %p.video-info= @publisher.description

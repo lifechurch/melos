@@ -1,0 +1,25 @@
+- html_attributes(id: "video-series",classes:"videos")
+
+- @sidebar = false
+
+%article
+  #title-bar
+    %h1= @video.title
+    %span.publisher
+      by
+      =link_to(@video.credits, publisher_video_path(id: @video.id))
+    %span.share
+      =link_to("Share","#")
+
+  = image_tag(@video.hero_image.url, id:"hero")
+
+  .inner
+    %ul#episodes
+      - @video.videos.each do |vid|
+        - thumb = vid.small_image
+        %li
+          =link_to(video_path(vid), class: "video-name") do
+            = image_tag(thumb.url)
+            .info
+              %h3.title= vid.title
+              %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")
