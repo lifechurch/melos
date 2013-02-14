@@ -704,7 +704,7 @@ en-GB:
     index title: "Available Versions"
     publisher widget title: "Publisher"
     visit publisher: "Visit Publisher's Website"
-    read title: "Read This Version"
+    read title: "Read Version"
     other versions: "Other Versions from this Publisher"
     number of versions field: "Total Versions:"
     number of languages field: "Total Languages:"

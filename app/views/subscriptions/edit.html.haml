@@ -6,18 +6,18 @@
 - content_for :mobile_right_nav do
   =link_to t('plans.overview'), plan_path(subscription), class: 'info_btn'
 
-%article
-  %h1{style: "clear: none; width: 300px;"}= t("plans.settings")
+.tab_navigation.plan_settings.mobile
+  .inner_wrapper
+    = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription),{:class => "selected"}
+    = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription)
 
-  .tab_navigation.plan_settings.mobile
-    .inner_wrapper
-      = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription),{:class => "selected"}
-      = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription)
+%article.rp_settings
+  %h1{style: "clear: none; width: 300px;"}= t("plans.settings")
 
   // Email delivery settings
   .div.float_right
     .float_right
-      = button_to(subscription.delivered_by_email? ? t('plans.email_off') : t('plans.email_on'),  user_subscription_path(current_user, subscription, email_delivery: (!subscription.delivered_by_email?).to_s), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px; margin-bottom: 5px")
+      = button_to(subscription.delivered_by_email? ? t('plans.email_off') : t('plans.email_on'),  user_subscription_path(current_user, subscription, email_delivery: (!subscription.delivered_by_email?).to_s), method: :put, class: 'action_button_green')
 
     -if subscription.delivered_by_email?
       %div
@@ -46,7 +46,7 @@
   // Catch up settings
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
-    = button_to(t('plans.catch me up'), user_subscription_path(current_user,subscription,catch_up: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
+    = button_to(t('plans.catch me up'), user_subscription_path(current_user,subscription,catch_up: "true"), method: :put, class: 'action_button_green')
   %div{style: "width: 330px"}
     %h5= t("plans.are you behind")
     - if subscription.last_completed_date
@@ -57,7 +57,7 @@
   // Restart settings
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
-    = button_to(t('plans.restart'), user_subscription_path(current_user,subscription,restart: "true"), method: :put, class: 'action_button_green confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
+    = button_to(t('plans.restart'), user_subscription_path(current_user,subscription,restart: "true"), method: :put, class: 'action_button_green confirm', "data-confirm-text" => t("confirm danger"))
   %div{style: "width: 330px"}
     %h5= t("plans.do you want to reset")
     %p.float_left= t("plans.restart description")
@@ -67,9 +67,9 @@
   %hr
   .float_right{style: "margin-top: 0px; margin-right: 0px"}
     -if subscription.public?
-      .float_right= button_to(t('plans.make private'), user_subscription_path(current_user,subscription,make_private: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
+      .float_right= button_to(t('plans.make private'), user_subscription_path(current_user,subscription,make_private: "true"), method: :put, class: 'action_button_green')
     -else
-      .float_right= button_to(t('plans.make public'), user_subscription_path(current_user,subscription,make_public: "true"), method: :put, class: 'action_button_green', style: "width: 14em; height: 30px")
+      .float_right= button_to(t('plans.make public'), user_subscription_path(current_user,subscription,make_public: "true"), method: :put, class: 'action_button_green')
   %div{style: "width: 330px"}
     %h5= t("plans.privacy title")
     %p.float_left= t("plans.privacy description")
@@ -102,4 +102,4 @@
   // Unsubscribe action
   %hr{style: "margin-top: 15px"}
     .float_left{style: "height: 30px; margin-bottom: 5px"}
-    = button_to(t('plans.stop reading'),user_subscription_path(current_user,subscription), method: :delete, id: "subscription-destroy", class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"), style: "width: 14em; height: 30px")
+    = button_to(t('plans.stop reading'),user_subscription_path(current_user,subscription), method: :delete, id: "subscription-destroy", class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"))
