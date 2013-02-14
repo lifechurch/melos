@@ -318,7 +318,10 @@ class User < YouVersion::Resource
   end
 
   def find_badge(slug, opts = {})
-    self.badges.detect { |b| b.slug == slug }
+    unless badge = self.badges.detect { |b| b.slug == slug }
+      raise YouVersion::API::RecordNotFound
+    end
+    return badge
   end
 
   def website_url

@@ -8,4 +8,6 @@ class NotAChapterError < InvalidReferenceError; end
 class BadSecondaryVersionError < NotAChapterError; end
 class NoSecondaryVersionError < NotAChapterError; end
 class NotABookError < InvalidReferenceError; end
-
+module YouVersion::API
+  class RecordNotFound < StandardError; end
+end

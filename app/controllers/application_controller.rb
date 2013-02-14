@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     rescue_from AuthError, with: :auth_error
     rescue_from Timeout::Error, with: :timeout_error
     rescue_from APITimeoutError, with: :api_timeout_error
+    rescue_from YouVersion::API::RecordNotFound, with: :api_record_not_found
   end
 
   def client_settings
@@ -210,6 +211,10 @@ class ApplicationController < ActionController::Base
     @error = ex
     notify_honeybadger(ex) unless ex.is_a?(NotAVersionError)
     render "pages/generic_error", layout: 'application', status: 500
+  end
+
+  def api_record_not_found(ex)
+    render_404
   end
 
 
