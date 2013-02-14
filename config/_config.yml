@@ -32,14 +32,18 @@ common:
   rate_limit: 120
 
 staging:
-  api_root: youversionapi.com
-  api_referer: web-staging.youversionapi.com
+  api_root: youversionapistaging.com
+  api_referer: web-dev.youversionapistaging.com
+  #api_root: youversionapi.com
+  #api_referer: web-staging.youversionapi.com
   api_default_timeout: 5
   rack_execution_timeout: 15
 
 production:
-  api_root: youversionapi.com
-  api_referer: web.youversionapi.com
+  api_root: youversionapistaging.com
+  api_referer: web-dev.youversionapistaging.com
+  #api_root: youversionapi.com
+  #api_referer: web.youversionapi.com
   api_default_timeout: 5
   rack_execution_timeout: 15
   memcache_server: memcache.youversion.com
