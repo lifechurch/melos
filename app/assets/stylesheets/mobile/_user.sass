@@ -10,24 +10,29 @@
   padding: 0px
 
   .profile_header
-    padding: 30px 30px 10px 130px
-    overflow: visible
+    padding: 0
+    overflow: hidden
     height: auto
 
-  .bio
-    margin: 20px 0 20px 20px
-    width: 60%
+    img
+      position: relative
+      float: left
+      margin: 20px 20px 5px
+      top: 0
+      left: 0
 
-    ul
-      margin-bottom: 0
+    h1
+      margin: 20px 0 10px
+      font-size: 33px
+      width: 59%
+      float: left
+
+    .avatar_huge
+      border: 0
 
   .highlighted span
     border-top: 1px solid #cbc9cf
     margin-top: -1px
-
-  h1
-    margin-bottom: 10px
-    font-size: 36px
 
   ul, li
     margin-top: 0
@@ -42,14 +47,28 @@
     list-style: none
 
   .profile_info
-    padding: 15px 30px
+    padding: 15px 20px
     overflow: visible
+    clear: both
 
     ul.float_left
       float: none !important
 
     .icon_small_about
-      background-position: top left
+      background-position: 0 5px
+
+    div
+      position: relative
+      top: 0
+      left: 0
+
+    .action_button_green,
+    .action_button_red
+      display: block
+
+    .action_button_red
+      text-shadow: none
+      padding: 10px 20px
 
 .header_tabs,
 .top_section .header_tabs

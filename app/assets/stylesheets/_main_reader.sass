@@ -184,25 +184,43 @@
   padding: 0
   list-style: none
 
-.top_section .avatar_huge
-  position: absolute
-  top: 30px
-  left: 30px
+// Profile and friend pages ----------------------------------------
 
-.profile_header
-  padding: 30px 30px 10px 160px
-  overflow: hidden
-  height: 100px
+.top_section
+  .avatar_huge
+    position: absolute
+    top: 30px
+    left: 30px
 
-  button
-    float: left
-    border-radius: 4px
-    padding: 4px 20px !important
+  .profile_header
+    padding: 30px 30px 10px 160px
+    overflow: hidden
+    height: 100px
 
-.profile_info
-  padding: 20px 30px
-  overflow: hidden
+    button
+      float: left
+      border-radius: 4px
+      padding: 4px 20px !important
 
+  .profile_info
+    padding: 20px 30px
+    overflow: visible
+
+    ul
+      float: none !important
+
+    div
+      position: absolute
+      top: 40px
+      left: 80px
+
+    .action_button_green,
+    .action_button_red
+      padding: 4px 20px
+      +border-radius(4px)
+
+    .action_button_red
+      text-shadow: none
 
 .top_section li
   background:
