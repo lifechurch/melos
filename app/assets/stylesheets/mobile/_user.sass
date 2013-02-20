@@ -213,7 +213,7 @@
       margin-top: 4px
 
     .negative_gutter_top_half
-      margin-top: 4px
+      margin-top: 4px !important
 
 .tabs
   margin: 0 auto 10px !important
@@ -305,3 +305,11 @@
 #main .profile input + label,
 #main .profile select + label
   display: inline-block
+
+// Edit/delete controls in news feed + notes and bookmarks sections
+//----------------------------------------------------------------------------------------------------
+
+.li_note,
+.li_bookmark
+  .float_right
+    float: none !important
