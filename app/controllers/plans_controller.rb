@@ -6,7 +6,7 @@ class PlansController < ApplicationController
   # TODO ALL/APPROPRIATE: respond_to / respond_with where at all possible
   def index
     @plan_lang      = available_plan_language()
-    @plans = Plan.all( query: params[:query], category: params[:category], language_tag: @plan_lang) rescue []
+    @plans = Plan.all( query: params[:query], page: params[:page] || 1, category: params[:category], language_tag: @plan_lang) rescue []
     @categories = CategoryListing.find(params[:category], language_tag: @plan_lang) rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
     @sidebar = false
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
