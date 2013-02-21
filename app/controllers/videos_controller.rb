@@ -8,7 +8,8 @@ class VideosController < ApplicationController
   end
 
   def series
-    @video = Video.find params[:id]
+    opts = current_auth ? {auth: current_auth, force_auth: true} : {}
+    @video = Video.find(params[:id], opts )
     respond_with(@video)
   end
 

@@ -99,8 +99,7 @@ module YouVersion
 
       def find(id, params = {}, &block)
         api_errors = nil
-
-        auth = params.delete(:auth)
+        auth = params.delete(:auth) unless (params[:force_auth] == true)
 
         opts = {}
         opts[:id] = id if id
