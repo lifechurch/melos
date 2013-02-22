@@ -168,11 +168,14 @@
       // #episodes a .info
       .info
         padding: 0
+        height: 140px
+        margin-top: -140px
+        background: image-url("videos-thumb-grad1.png") no-repeat bottom center
 
         // #episodes a .info .title
         .title
           font-size: 15px
-          margin: -50px 0 0
+          margin: 0
           color: #fff
           text-shadow: 0 0 3px #000
           overflow: hidden
@@ -180,7 +183,7 @@
           text-overflow: ellipsis
           width: 220px
           height: 30px
-          padding: 0 15px
+          padding: 95px 15px 0
 
         // #episodes a .info .runtime
         .runtime
@@ -191,12 +194,20 @@
           margin-top: -15px
           text-shadow: 0 0 3px #000
 
+      // Play button that appears on thumb hover
+      .info:hover
+        background: image-url("videos-thumb-grad2.png") no-repeat bottom center
+
   // overriding #main article ul li styling :-(
   ul li
     background:
       image: none
     padding-left: 0
     padding-top: 0
+
+  // Publisher logo
+  .pub-logo
+    margin: 40px 0 0 50px
 
 // -------------- Video detail page
 #video-show
@@ -274,6 +285,10 @@
 
       li:first-child
         border-top: none
+
+  // Publisher logo
+  .pub-logo
+    margin: 30px 0 0 20px
 
 // Publisher page
 
