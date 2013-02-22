@@ -11,5 +11,5 @@
           =link_to( series_video_path(id:v.id)) do
             = image_tag( v.thumbnails.second.url )
           %div.info
-            %span.count= pluralize(v.total_videos,"clip")
             =link_to(v.credits, publisher_video_path(id: v.publisher.id), {class: "publisher"})
+            %span.count= pluralize(v.total_videos,"clip")

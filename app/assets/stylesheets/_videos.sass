@@ -12,15 +12,13 @@
 
 =video_container
   list-style-type: none
-  background: rgb(240,240,240)
-  border: 1px solid rgb(220,220,220)
-  +round_top
-  +round_bottom
+  background: #F4F3F1
 
 =video_container_info
   overflow: auto
   position: relative
-  margin-top: 4px
+  color: #666
+  padding: 4px 10px 0
 
 =video_thumbnail_image
   display:block
@@ -61,21 +59,25 @@
 
     .share
       +top_right
-      top: 30%
+      top: 85%
       right: 25px
 
       a
-        border: 1px solid #AAA
+        border: 1px solid #005A88
         font-weight: bold
         text-decoration: none
         color: #fff
         padding: 4px 11px
         display: block
         font-size: 15px
-        text-shadow: #000 0 1px 0
-        +gradient(#CCC,#AAA)
+        text-shadow: #000 0 -1px 0
+        background-color: #0084c8
         +round_bottom
         +round_top
+        +box-shadow(inset rgba(0,0,0,0.18) 0 -2px 0, inset rgba(255,255,255,.3) 0 2px 0)
+
+      a:hover
+        background-color: #008DD5
 
 
 
@@ -84,6 +86,7 @@
 #videos-index
 
   ul.videos
+    overflow: hidden
 
     li:hover
       +box-shadow(rgba(0,0,0,0.3) 0 2px 8px)
@@ -93,9 +96,10 @@
 
     li
       float: left
-      width: 391px
-      padding: 8px
-      margin: 0 30px 40px 0
+      width: 400px
+      padding: 5px
+      margin: 0 30px 30px 0
+      border: 1px solid #ddd
       +video_container
 
       img
@@ -104,45 +108,58 @@
       .info
         +video_container_info
 
+      .publisher,
+      .count
+        display: block
+
       .publisher
-        +top_right
         padding-left: 22px
         background: image-url("icon_small_about.png") no-repeat 0px center
         color: #777
 
       .count
         font-weight: bold
+        margin-top: -4px
 
 // ------------Series detail page
 #video-series
   // special case we need article to have zero padding for hero image.
   // .inner defined below to add back in the padding where necessary
 
-  #hero
-    width: 888px
-    display: block
-    margin: 10px auto
-    +round_top
-    +round_bottom
+  article
+    background: #fff image-url("videos-bs-hero.jpg") no-repeat center top
+
+  h1
+    margin-top: 250px
+    color: #fff
+
+  #title-bar .publisher a
+    color: #fff
+    padding-left: 25px
+    background: image-url("icon_info.png") no-repeat left top
+
+  .inner
+    margin-top: 30px
 
   #episodes
+    margin: -10px 0 0 26px
 
     li:hover
       +box-shadow(rgba(0,0,0,0.3) 0 2px 8px)
 
     li
-      width: 336px
       float: left
-      margin-right: 20px
+      margin: 0 30px 30px 0
       padding-left: 0
       +video_container
 
     // #episodes a
     a
       display: block
-      padding: 8px
       margin: 0
       text-decoration: none
+      height: 140px
+      width: 250px
 
       // #episodes a img
       img
@@ -150,18 +167,29 @@
 
       // #episodes a .info
       .info
-        +video_container_info
+        padding: 0
 
         // #episodes a .info .title
         .title
-          font-size: 16px
-          margin: 6px 0 1px 4px
+          font-size: 15px
+          margin: -50px 0 0
+          color: #fff
+          text-shadow: 0 0 3px #000
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+          width: 220px
+          height: 30px
+          padding: 0 15px
 
         // #episodes a .info .runtime
         .runtime
-          color: #777
+          color: #fff
           font-size: 12px
-          +top_right
+          display: block
+          padding: 0 15px
+          margin-top: -15px
+          text-shadow: 0 0 3px #000
 
   // overriding #main article ul li styling :-(
   ul li
@@ -172,6 +200,10 @@
 
 // -------------- Video detail page
 #video-show
+
+  #title-bar
+    .share
+      top: 34%
 
   article .inner
     padding-top: 0
@@ -206,6 +238,17 @@
         margin-bottom: 0
       .reference_tokens > li a
         border-radius: 4px
+
+    ul
+      margin: 0
+
+      li
+        list-style: none
+        background: none
+        padding: 0
+        text-decoration: underline
+        display: inline-block
+        margin-right: 5px
 
   #other
     padding: 15px 0
