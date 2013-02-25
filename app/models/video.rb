@@ -67,7 +67,8 @@ class Video < YouVersion::Resource
   # page  number of results to return
   def self.search(query = "*", params = {})
     page   = params[:page] || 1
-    params = {query: query, page: page}
+    language_tag = params[:language_tag] || "en"
+    params = {query: query, page: page, language_tag: language_tag}
 
     response = YvApi.get(list_path, params) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }

@@ -5,7 +5,7 @@ class VideosController < ApplicationController
   rescue_from YouVersion::ResourceError, with: :resource_error
 
   def index
-    @videos = Video.search
+    @videos = Video.search(language_tag: I18n.locale.to_s)
     respond_with(@videos)
   end
 
