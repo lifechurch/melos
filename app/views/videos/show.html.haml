@@ -15,7 +15,6 @@
   %video{width:908, height: 511}
     %source{type: "video/webm", src: @video.webm.url}
 
-
   - content_for :javascripts do
     :javascript
       $('video').mediaelementplayer({
@@ -25,11 +24,6 @@
         videoHeight: -1,
         videoWidth: -1
       });
-
-  - content_for :stylesheets do
-    = stylesheet_link_tag("mejs/mediaelementplayer.min.css")
-    = stylesheet_link_tag("mejs/mejs-skins.css")
-
 
   .inner
 

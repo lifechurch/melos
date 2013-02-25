@@ -15,7 +15,7 @@ module Videos
     end
 
     def ad_image
-      image(915)
+      image(360)
     end
 
     def image( size )

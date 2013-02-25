@@ -12,3 +12,4 @@
 //= require main
 //= require analytics
 //= require_tree ./i18n/
+//= require mediaelement_rails
