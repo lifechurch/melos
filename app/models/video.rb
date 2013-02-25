@@ -41,6 +41,14 @@ class Video < YouVersion::Resource
     @renditions
   end
 
+  def webm
+    rendition("webm").first
+  end
+
+  def rendition(format)
+    @renditions.reject {|rend| rend.format != format}
+  end
+
   def publisher
     @publisher
   end

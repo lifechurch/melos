@@ -1,5 +1,5 @@
 - html_attributes(id:"video-show",classes:"videos")
-
+- publisher = @video.publisher
 - @sidebar = false
 
 %article
@@ -7,13 +7,29 @@
     %h1= @video.title
 
     %span.publisher
-      by
       =link_to(@video.credits, publisher_video_path(id: @video.id))
 
     %span.share
       =link_to("Share","#")
 
-  #video
+  %video{width:908, height: 511}
+    %source{type: "video/webm", src: @video.webm.url}
+
+
+  - content_for :javascripts do
+    :javascript
+      $('video').mediaelementplayer({
+        features: ['playpause','progress','current','duration','tracks','volume','fullscreen'],
+        defaultVideoWidth: 908,
+        defaultVideoHeight: 511,
+        videoHeight: -1,
+        videoWidth: -1
+      });
+
+  - content_for :stylesheets do
+    = stylesheet_link_tag("mejs/mediaelementplayer.min.css")
+    = stylesheet_link_tag("mejs/mejs-skins.css")
+
 
   .inner
 
@@ -27,7 +43,7 @@
             - @video.references.each do |ref|
               %li
                 %a= ref.human
-      %p.description= @video.description
+      %p.description= @video.description.html_safe
 
     #other
       .videos-list
@@ -44,6 +60,4 @@
             =link_to(publisher_video_path(id: "test")) do
               Part 4 - Description would go here
 
-  .pub-logo
-    %a
-      Pub logo can go here
+  = render partial: "videos/publisher_banner", locals: {publisher: publisher}

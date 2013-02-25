@@ -5,25 +5,38 @@ module Videos
     attribute :description
     attribute :links
     attribute :video_id
-  end
 
-  def images
-    @images
-  end
+    def images
+      @images
+    end
 
-  def after_build
-    @images = build_images(self.attributes.images)
-  end
+    def website
+      links.first
+    end
 
-  protected
+    def ad_image
+      image(915)
+    end
 
-  def build_images( images_array )
-    return nil if images_array.blank?
-    images = ResourceList.new do |list|
-      list.total = images_array.count
-      images_array.each do |img|
-        list << Videos::Image.new(img)
+    def image( size )
+      images.select {|th| th.width == size }.first
+    end
+
+    def after_build
+      @images = build_images(self.attributes.images)
+    end
+
+    protected
+
+    def build_images( images_array )
+      return nil if images_array.blank?
+      images = ResourceList.new do |list|
+        list.total = images_array.count
+        images_array.each do |img|
+          list << Videos::Image.new(img)
+        end
       end
     end
+
   end
 end

@@ -1,10 +1,10 @@
 - html_attributes(id: "video-series",classes:"videos")
-
+- publisher  = @video.publisher
 - @sidebar = false
 
-%article
+%article{ style: "background-image: url('#{}')"}
   #title-bar
-    %h1= @video.title
+    %h1= @video.title.html_safe
     %span.publisher
       =link_to(@video.credits, publisher_video_path(id: @video.id))
     %span.share
@@ -15,12 +15,10 @@
       - @video.videos.each do |vid|
         - thumb = vid.small_image
         %li
-          =link_to(video_path(vid), class: "video-name", title: "vid.title") do
+          =link_to(video_path(vid), class: "video-name", title: vid.title) do
             = image_tag(thumb.url)
             .info
               %h3.title= vid.title
               %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")
 
-  .pub-logo
-    %a
-      Publisher image can go here
+  = render partial: "videos/publisher_banner", locals: {publisher: publisher}

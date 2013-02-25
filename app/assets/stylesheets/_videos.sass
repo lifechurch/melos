@@ -56,6 +56,8 @@
       color: #333
       margin: -10px 0 46px 0
       font-size: 13px
+      padding-left: 22px
+      background: image-url("icon_small_about.png") no-repeat 0px center
 
     .share
       +top_right
@@ -80,6 +82,18 @@
         background-color: #008DD5
 
 
+
+// Publisher logo
+.pub-banner
+  margin: 40px 0 0 0
+
+  a
+    display: block
+    width: 908px
+
+  img
+    width: 100%
+    +round_bottom
 
 // ------------Landing page
 
@@ -108,18 +122,11 @@
       .info
         +video_container_info
 
-      .publisher,
-      .count
-        display: block
-
       .publisher
         padding-left: 22px
         background: image-url("icon_small_about.png") no-repeat 0px center
         color: #777
-
-      .count
-        font-weight: bold
-        margin-top: -4px
+        display: block
 
 // ------------Series detail page
 #video-series
@@ -133,10 +140,10 @@
     margin-top: 250px
     color: #fff
 
-  #title-bar .publisher a
-    color: #fff
-    padding-left: 25px
+  #title-bar .publisher
     background: image-url("icon_info.png") no-repeat left top
+    a
+      color: #fff
 
   .inner
     margin-top: 30px
@@ -206,14 +213,12 @@
     padding-left: 0
     padding-top: 0
 
-  // Publisher logo
-  .pub-logo
-    margin: 40px 0 0 50px
 
 // -------------- Video detail page
 #video-show
 
   #title-bar
+    margin-bottom: 10px
     .share
       top: 34%
 
@@ -286,10 +291,6 @@
 
       li:first-child
         border-top: none
-
-  // Publisher logo
-  .pub-logo
-    margin: 30px 0 0 20px
 
 // Publisher page
 
