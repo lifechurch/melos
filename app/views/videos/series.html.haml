@@ -2,7 +2,7 @@
 - publisher  = @video.publisher
 - @sidebar = false
 
-%article{ style: "background-image: url('#{}')"}
+%article{ style: "background-image: url('#{@video.hero_image.url}')"}
   #title-bar
     %h1= @video.title.html_safe
     %span.publisher

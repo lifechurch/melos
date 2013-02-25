@@ -17,7 +17,7 @@ class Video < YouVersion::Resource
   end
 
   def hero_image
-    thumbnails.select {|th| th.width == 915 }.first
+    thumbnails.select {|th| th.width == 910 }.first
   end
 
   def self.list_path
