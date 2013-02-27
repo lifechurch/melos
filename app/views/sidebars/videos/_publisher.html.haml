@@ -1,13 +1,13 @@
 .widget
   %header
-    %span= link_to(@video.title, video_path(@video))
+    %span= link_to(video.title.html_safe, (video.parent? ? series_video_path(video) : video_path(video)))
   %div.body-rounded
-    - thumb = @video.thumbnails.last
+    - thumb = video.thumbnails.last
     = image_tag(thumb.url, {style:"width:100%;"})
 
 .widget
   %header
     %span Publisher Website
   %ul.widget_menu
-    - @publisher.links.each do |link|
+    - publisher.links.each do |link|
       %li= link_to(link.title, link.url, class: "video-pub")

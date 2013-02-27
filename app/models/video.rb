@@ -12,12 +12,24 @@ class Video < YouVersion::Resource
   attribute :language_tag
   attribute :short_url
 
+  def parent?
+    videos.present? ? true : false
+  end
+
   def small_image
     thumbnails.select {|th| th.width == 320 }.first
   end
 
   def hero_image
     thumbnails.select {|th| th.width == 910 }.first
+  end
+
+  def poster_image
+    if image = thumbnails.select {|th| th.width == 1280 }.first
+       return image
+    elsif image = thumbnails.select {|th| th.width == 640 }.first
+       return image
+    end
   end
 
   def self.list_path
@@ -28,10 +40,6 @@ class Video < YouVersion::Resource
     "videos"
   end
 
-  def total_videos
-    return 0 unless videos
-    videos.count
-  end
 
   def videos
     @videos
@@ -42,11 +50,19 @@ class Video < YouVersion::Resource
   end
 
   def webm
-    rendition("webm").first
+    rendition("webm","http").first
   end
 
-  def rendition(format)
-    @renditions.reject {|rend| rend.format != format}
+  def hls
+    rendition("mpeg4","hls").first
+  end
+
+  def mp4
+    rendition("hls","rtsp").first
+  end
+
+  def rendition(format, protocol)
+    @renditions.reject {|rend| rend.format != format && rend.protocol != protocol}
   end
 
   def publisher

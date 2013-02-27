@@ -12,18 +12,15 @@
     %span.share
       =link_to("Share","#")
 
-  %video{width:908, height: 511}
-    %source{type: "video/webm", src: @video.webm.url}
+  %div#player
 
-  - content_for :javascripts do
-    :javascript
-      $('video').mediaelementplayer({
-        features: ['playpause','progress','current','duration','tracks','volume','fullscreen'],
-        defaultVideoWidth: 908,
-        defaultVideoHeight: 511,
-        videoHeight: -1,
-        videoWidth: -1
-      });
+  :javascript
+    jwplayer('player').setup({
+      file: "#{@video.hls.url}",
+      width: '908',
+      height: '511',
+      image: "#{@video.poster_image.url}"
+    })
 
   .inner
 
@@ -40,18 +37,5 @@
       %p.description= @video.description.html_safe
 
     #other
-      .videos-list
-        %h5 Other videos in this series
-
-        %ul
-          %li
-            =link_to(publisher_video_path(id: "test")) do
-              Part 2 - Description would go here
-          %li
-            =link_to(publisher_video_path(id: "test")) do
-              Part 3 - Description would go here
-          %li
-            =link_to(publisher_video_path(id: "test")) do
-              Part 4 - Description would go here
-
-  = render partial: "videos/publisher_banner", locals: {publisher: publisher}
+      = link_to("Back to videos", "#")
+      = render partial: "videos/publisher_banner", locals: {publisher: publisher}

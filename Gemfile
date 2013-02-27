@@ -15,7 +15,6 @@ gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'heroku',                 '~> 2.32.4'
 gem 'honeybadger'
-gem "mediaelement_rails"
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
