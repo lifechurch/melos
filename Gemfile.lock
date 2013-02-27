@@ -204,9 +204,6 @@ GEM
       nokogiri (~> 1.4)
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (~> 0.0, >= 0.0.9)
-    mediaelement_rails (0.5.0)
-      jquery-rails (>= 1.0)
-      railties (>= 3.1)
     method_source (0.8.1)
     mime-types (1.19)
     minitest (4.4.0)
@@ -406,7 +403,6 @@ DEPENDENCIES
   jquery-rails (~> 2.1.4)
   koala (~> 1.6.0)
   language_list (~> 0.0.3)
-  mediaelement_rails
   minitest
   newrelic_rpm (~> 3.5.3.25)
   nokogiri (~> 1.5.2)
