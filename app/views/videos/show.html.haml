@@ -35,5 +35,6 @@
       %p.description= @video.description.html_safe
 
     #other
-      = link_to("All videos", "#", class: "action_button_green")
+      - video_series = client_settings.video_series
+      = link_to("All videos", video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
       = render partial: "videos/publisher_banner", locals: {publisher: publisher}

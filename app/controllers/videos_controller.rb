@@ -12,12 +12,14 @@ class VideosController < ApplicationController
   def series
     opts = current_auth ? {auth: current_auth, force_auth: true} : {}
     @video = Video.find(params[:id], opts )
+    client_settings.video_series = @video.id
     respond_with(@video)
   end
 
   def show
     opts = current_auth ? {auth: current_auth, force_auth: true} : {}
     @video = Video.find(params[:id], opts )
+    redirect_to(series_video_path(@video)) and return if @video.series?
     respond_with(@video)
   end
 

@@ -12,7 +12,7 @@ class Video < YouVersion::Resource
   attribute :language_tag
   attribute :short_url
 
-  def parent?
+  def series?
     videos.present? ? true : false
   end
 

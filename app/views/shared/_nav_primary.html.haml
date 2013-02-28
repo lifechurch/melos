@@ -14,7 +14,7 @@
         %a.tooltip{:href => current_auth ? user_subscriptions_path(current_auth.username) : plans_path, style: "display: none;"}
           %span=t("plans.title")
 
-      %li#nav_primary_videos{class: @nav == :videos ? "highlighted" : ""}
+      %li#nav_primary_videos{class: controller_name == "videos" ? "highlighted" : ""}
         %a.icon{:href => "/videos"}
           %span &nbsp;
         %a.tooltip{:href => "/videos", style: "display: none;"}

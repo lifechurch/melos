@@ -81,6 +81,12 @@ module YouVersion
       @cookies[:app_state_subscription_id] = id
     end
 
+    def video_series
+      @cookies[:video_series_id]
+    end
 
+    def video_series=( id )
+      @cookies[:video_series_id] = id
+    end
   end
 end
