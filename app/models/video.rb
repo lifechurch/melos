@@ -12,6 +12,14 @@ class Video < YouVersion::Resource
   attribute :language_tag
   attribute :short_url
 
+  def self.list_path
+    "search/videos"
+  end
+
+  def self.api_path_prefix
+    "videos"
+  end
+
   def series?
     videos.present? ? true : false
   end
@@ -31,15 +39,6 @@ class Video < YouVersion::Resource
        return image
     end
   end
-
-  def self.list_path
-    "search/videos"
-  end
-
-  def self.api_path_prefix
-    "videos"
-  end
-
 
   def videos
     @videos
