@@ -20,6 +20,11 @@ module ApplicationHelper
     text.length > length ? text[/\A.{#{l}}\w*\;?/m][/.*[\w\;]/m] + truncate_string : text
   end
 
+  def ref_url(usfm,version)
+    "/bible/#{version}/#{usfm.downcase}"
+  end
+
+
   def bible_path(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
     ver = opts[:version_id] || opts[:version] || ref.version

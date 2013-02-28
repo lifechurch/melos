@@ -23,7 +23,6 @@
     })
 
   .inner
-
     #details
       %div.refs
         - if @video.references
@@ -32,10 +31,9 @@
 
           %ul
             - @video.references.each do |ref|
-              %li
-                %a= ref.human
+              %li= link_to(ref.human, bible_path(Reference.new(ref.usfm, version: current_version)))
       %p.description= @video.description.html_safe
 
     #other
-      = link_to("Back to videos", "#")
+      = link_to("All videos", "#", class: "action_button_green")
       = render partial: "videos/publisher_banner", locals: {publisher: publisher}
