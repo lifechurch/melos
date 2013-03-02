@@ -121,6 +121,7 @@
             _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
           });
 
+          var timestamp = Math.round((new Date()).getTime() / 1000);
           trackVideoEvent( function() {
             _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
           });
