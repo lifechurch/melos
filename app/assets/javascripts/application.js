@@ -11,4 +11,5 @@
 //= require app
 //= require main
 //= require analytics
+//= require videos
 //= require_tree ./i18n/

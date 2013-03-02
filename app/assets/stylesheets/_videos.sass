@@ -32,6 +32,12 @@
 
 // ------------Common styles
 
+.share_bg_effect
+  background: #eaeaea
+  -moz-box-shadow:    1px -2px 4px 0px #707070
+  -webkit-box-shadow: 1px -2px 4px 0px #707070
+  box-shadow:         1px -2px 4px 0px #707070
+
 #video-show,
 #video-series,
 #videos-index
@@ -62,24 +68,80 @@
     .share
       +top_right
       top: 85%
-      right: 25px
+      right: 35px
+      text-align: center
+      z-index: 1
 
-      a
-        border: 1px solid #005A88
-        font-weight: bold
-        text-decoration: none
-        color: #fff
-        padding: 4px 11px
+      .share_wrapper
         display: block
-        font-size: 15px
-        text-shadow: #000 0 -1px 0
-        background-color: #0084c8
-        +round_bottom
-        +round_top
-        +box-shadow(inset rgba(0,0,0,0.18) 0 -2px 0, inset rgba(255,255,255,.3) 0 2px 0)
+        padding: 10px
+        width: 100%
+        border-radius: 6px 6px 0px 0px
+        position: relative
+        z-index: 1999
 
-      a:hover
-        background-color: #008DD5
+        a
+          border: 1px solid #005A88
+          font-weight: bold
+          text-decoration: none
+          color: #fff
+          padding: 4px 11px
+          display: block
+          font-size: 15px
+          text-shadow: #000 0 -1px 0
+          background-color: #0084c8
+          +round_bottom
+          +round_top
+          +box-shadow(inset rgba(0,0,0,0.18) 0 -2px 0, inset rgba(255,255,255,.3) 0 2px 0)
+
+        a:hover
+          background-color: #008DD5
+
+    .share_panel
+      -moz-box-shadow:    0px 0px 5px 1px #404040
+      -webkit-box-shadow: 0px 0px 5px 1px #404040
+      box-shadow:         0px 0px 5px 1px #404040
+      position: absolute
+      right: 15px
+      z-index: 1998
+      background: #eaeaea
+      padding: 5px 0px 30px 5px
+      width: 230px
+      border-radius: 6px 0px 6px 6px
+      height: 34px
+      display: none
+
+      ul
+        margin-top: 10px
+
+        li
+          background: none
+          display: inline
+
+          a
+            display: block
+            float: left
+            margin: 0px 5px
+            text-align: center
+            border: 1px solid #005A88
+            font-weight: bold
+            text-decoration: none
+            color: #fff
+            padding: 4px 11px
+            display: block
+            font-size: 15px
+            text-shadow: #000 0 -1px 0
+            background-color: #5674a6
+            +round_bottom
+            +round_top
+            +box-shadow(inset rgba(0,0,0,0.18) 0 -2px 0, inset rgba(255,255,255,.3) 0 2px 0)
+
+          a.twitter_share_btn
+            background-color: #404040
+            border: 1px solid #323232
+
+          a.facebook_share_btn
+            margin-right: 40px
 
 
 
