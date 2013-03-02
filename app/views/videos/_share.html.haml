@@ -1,0 +1,9 @@
+%div.share
+  %span.share_wrapper
+    =link_to("Share","#")
+%div.share_panel
+  %ul
+    %li
+      =link_to("Facebook", "http://www.facebook.com/sharer/sharer.php",{:class => "facebook_share_btn"})
+    %li
+      =link_to("Twitter", 'http://twitter.com/intent/tweet?text=' + u("I'm watching #{video.title}. #{video.short_url}"),{:class => "twitter_share_btn"})

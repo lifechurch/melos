@@ -7,16 +7,7 @@
     %h1= @video.title.html_safe
     %span.publisher
       =link_to(@video.credits, publisher_video_path(id: @video.id))
-    
-    %div.share
-      %span.share_wrapper
-        =link_to("Share","#")
-    %div.share_panel
-      %ul
-        %li
-          =link_to("Facebook", "http://www.facebook.com/sharer/sharer.php",{:class => "facebook_share_btn"})
-        %li
-          =link_to("Twitter", "http://twitter.com/intent/tweet?text=Share%20video%20on%20Twitter",{:class => "twitter_share_btn"})
+    = render partial: "videos/share", locals: {video: @video}
 
   .inner
     %ul#episodes

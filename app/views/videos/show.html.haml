@@ -1,6 +1,8 @@
 - html_attributes(id:"video-show",classes:"videos")
 - publisher = @video.publisher
 - @sidebar = false
+- set_ga_tracker_id "UA-38522090-4"
+
 
 %article
   #title-bar
@@ -9,25 +11,9 @@
     %span.publisher
       =link_to(@video.credits, publisher_video_path(id: @video.id))
 
-    %div.share
-      %span.share_wrapper
-        =link_to("Share","#")
-    %div.share_panel
-      %ul
-        %li
-          =link_to("Facebook", "http://www.facebook.com/sharer/sharer.php",{:class => "facebook_share_btn"})
-        %li
-          =link_to("Twitter", "http://twitter.com/intent/tweet?text=Share%20video%20on%20Twitter",{:class => "twitter_share_btn"})
+    = render partial: "videos/share", locals: {video: @video}
 
   %div#player
-
-  :javascript
-    jwplayer('player').setup({
-      file: "#{@video.hls.url}",
-      width: '908',
-      height: '511',
-      image: "#{@video.poster_image.url}"
-    })
 
   .inner
     #details
@@ -45,3 +31,82 @@
       - video_series = client_settings.video_series
       = link_to("All videos", video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
       = render partial: "videos/publisher_banner", locals: {publisher: publisher}
+
+
+-content_for :javascripts do
+  - videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
+  - # Create our player for all videos
+
+  :javascript
+    $(window).load(function () {
+      jwplayer('player').setup({
+        file: "#{@video.hls.url}",
+        width: '908',
+        height: '511',
+        image: "#{@video.poster_image.url}"
+      })
+    });
+
+  - #only setup tracking at the moment for Jesus Film
+  - if publisher.id == 1
+    :javascript
+
+      $(window).load(function () {
+
+        var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+          return v.toString(16);
+        });
+
+        // Push the apiSessionId var to our GUID
+        _gaq.push(['_setCustomVar',1,'apiSessionId', guid]);
+
+        var videoStarted  = false;
+        var startTime     = 0;
+
+        // Array to keep track of start/end segments that a user has watched.
+        // Each item in the array is an object: {start: 0, end: 2.4}
+        // Custom total method setup to iterate through items and total up all segments into total time watched.
+        var playTimes = [];
+            playTimes.total = function() {
+              var timeWatched = 0;
+              for(var i = 0; i < this.length; i++) {
+                timeWatched += (this[i].end - this[i].start);
+              }
+              return Math.round(timeWatched);
+            }
+
+        // All video player api handlers below:
+        // - onPlay: any time the video starts playing
+        // - onPause: any time the video is paused
+        // - onComplete: when the video has reached the end
+        jwplayer().onPlay( function(event) {
+          if(videoStarted == false) {
+            _gaq.push(['_trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]);
+            videoStarted = true;
+          }
+          // set the new start time every time the video begins playing
+          startTime = jwplayer().getPosition()
+        });
+
+        jwplayer().onPause( function(event) {
+          playTimes.push({start: startTime, end: jwplayer().getPosition()})
+        });
+
+        jwplayer().onComplete( function(event) {
+          var timestamp = Math.round((new Date()).getTime() / 1000);
+          _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
+          _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
+
+          // Reset to initial values.
+          videoStarted = false;
+          startTime = 0;
+          playTimes = [];
+        });
+
+        $(window).unload(function() {
+          _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
+          _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
+        });
+
+      });

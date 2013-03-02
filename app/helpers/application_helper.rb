@@ -6,6 +6,15 @@ module ApplicationHelper
     @html_classes = classes if classes
   end
 
+  def ga_tracker_id
+    return @ga_tracker_id || @site.ga_code
+  end
+
+  def set_ga_tracker_id(id)
+    @ga_tracker_id = id
+  end
+
+
   def object_status   #TODO: More useful name?
     status = {}
     status[t('notes.public')] = 'public'
