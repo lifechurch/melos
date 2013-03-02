@@ -47,7 +47,7 @@
       })
     });
 
-  - #only setup tracking at the moment for Jesus Film
+  - #only setup tracking at the moment for Jesus Film (id: 1)
   - if publisher.id == 1
     :javascript
 
@@ -58,8 +58,12 @@
           return v.toString(16);
         });
 
-        // Push the apiSessionId var to our GUID
-        _gaq.push(['_setCustomVar',1,'apiSessionId', guid]);
+        var trackVideoEvent = function( fn ) {
+          // Push the apiSessionId var with our GUID
+          // Then execute tracking code via anon function.
+          _gaq.push(['_setCustomVar',1,'apiSessionId', guid]);
+          fn();
+        }
 
         var videoStarted  = false;
         var startTime     = 0;
@@ -82,7 +86,9 @@
         // - onComplete: when the video has reached the end
         jwplayer().onPlay( function(event) {
           if(videoStarted == false) {
-            _gaq.push(['_trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]);
+            trackVideoEvent( function() {
+              _gaq.push(['_trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]);
+            });
             videoStarted = true;
           }
           // set the new start time every time the video begins playing
@@ -95,8 +101,14 @@
 
         jwplayer().onComplete( function(event) {
           var timestamp = Math.round((new Date()).getTime() / 1000);
-          _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
-          _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
+
+          trackVideoEvent( function() {
+            _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
+          });
+
+          trackVideoEvent( function() {
+            _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
+          });
 
           // Reset to initial values.
           videoStarted = false;
@@ -105,8 +117,13 @@
         });
 
         $(window).unload(function() {
-          _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
-          _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
+          trackVideoEvent( function() {
+            _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
+          });
+
+          trackVideoEvent( function() {
+            _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
+          });
         });
 
       });
