@@ -5,6 +5,7 @@ module Videos
     attribute :description
     attribute :links
     attribute :video_id
+    attribute :ga_tracking_id
 
     def images
       @images

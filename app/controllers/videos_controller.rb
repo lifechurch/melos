@@ -1,11 +1,12 @@
 class VideosController < ApplicationController
 
   respond_to :html
+  before_filter :check_locale
 
   rescue_from YouVersion::ResourceError, with: :resource_error
 
   def index
-    @videos = Video.search(language_tag: I18n.locale.to_s)
+    @videos = Video.search("*",language_tag: I18n.locale.to_s)
     respond_with(@videos)
   end
 
@@ -30,6 +31,12 @@ class VideosController < ApplicationController
   end
 
   private
+
+  def check_locale
+    unless Video.available_locales.include? I18n.locale
+      render_404
+    end
+  end
 
   def resource_error(exception)
     if exception.message == "videos.video.not_found"

@@ -14,11 +14,12 @@
         %a.tooltip{:href => current_auth ? user_subscriptions_path(current_auth.username) : plans_path, style: "display: none;"}
           %span=t("plans.title")
 
-      %li#nav_primary_videos{class: controller_name == "videos" ? "highlighted" : ""}
-        %a.icon{:href => "/videos"}
-          %span &nbsp;
-        %a.tooltip{:href => "/videos", style: "display: none;"}
-          %span=t("videos")
+      - if Video.available_locales.include? I18n.locale
+        %li#nav_primary_videos{class: controller_name == "videos" ? "highlighted" : ""}
+          %a.icon{:href => "/videos"}
+            %span &nbsp;
+          %a.tooltip{:href => "/videos", style: "display: none;"}
+            %span=t("videos")
 
       %li#nav_primary_bookmarks{class: @nav == :bookmarks ? "highlighted" : ""}
         %a.icon{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark", redirect: "/bookmarks")}

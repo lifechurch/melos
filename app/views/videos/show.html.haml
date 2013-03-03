@@ -1,7 +1,7 @@
 - html_attributes(id:"video-show",classes:"videos")
 - publisher = @video.publisher
 - @sidebar = false
-- #set_ga_tracker_id "UA-38522090-4"
+- @title = @video.title
 
 
 %article
@@ -49,12 +49,13 @@
 
   - #only setup tracking at the moment for Jesus Film (id: 1)
   - if publisher.id == 1
+
     :javascript
 
       $(window).load(function () {
 
         // create a custom tracker for video events
-        var tracker = _gat._createTracker("UA-38522090-4","videoTracker");
+        var tracker = _gat._createTracker("#{publisher.ga_tracking_id}","videoTracker");
 
         var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
           var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
