@@ -113,8 +113,8 @@
             var timestamp = Math.round((new Date()).getTime() / 1000);
             _gaq.push(
               ['videoTracker._setCustomVar',1,'apiSessionId', guid],
-              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0],
-              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0],
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total().toString() , 0],
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp.toString() , 0],
               ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]
             );
             //tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
