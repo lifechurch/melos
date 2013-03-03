@@ -1,7 +1,7 @@
 - html_attributes(id:"video-show",classes:"videos")
 - publisher = @video.publisher
 - @sidebar = false
-- @title = @video.title
+- @title = strip_tags(@video.title)
 
 
 %article

@@ -4,4 +4,4 @@
 %div.share_panel
   %ul
     %li
-      =link_to("Twitter", 'http://twitter.com/intent/tweet?text=' + u("I'm watching #{video.title} on @YouVersion. #{video.short_url}"),{:class => "twitter_share_btn"})
+      =link_to("Twitter", 'http://twitter.com/intent/tweet?text=' + u("I'm watching #{strip_tags(video.title)} on @YouVersion. #{video.short_url}"),{:class => "twitter_share_btn"})

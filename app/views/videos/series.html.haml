@@ -1,7 +1,7 @@
 - html_attributes(id: "video-series",classes:"videos")
 - publisher  = @video.publisher
 - @sidebar = false
-- @title = @video.title
+- @title = strip_tags(@video.title)
 
 %article{ style: "background-image: url('#{@video.hero_image.url}')"}
   #title-bar
