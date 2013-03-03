@@ -13,3 +13,4 @@
 //= require analytics
 //= require videos
 //= require_tree ./i18n/
+//= require_tree ./jw/

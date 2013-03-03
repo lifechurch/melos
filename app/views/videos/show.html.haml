@@ -34,6 +34,7 @@
 
 
 -content_for :javascripts do
+
   - videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
   - # Create our player for all videos
 
