@@ -1,7 +1,7 @@
 - html_attributes(id:"video-show",classes:"videos")
 - publisher = @video.publisher
 - @sidebar = false
-- set_ga_tracker_id "UA-38522090-4"
+- #set_ga_tracker_id "UA-38522090-4"
 
 
 %article
@@ -53,6 +53,9 @@
 
       $(window).load(function () {
 
+        // create a custom tracker for video events
+        var tracker = _gat._createTracker("UA-38522090-4");
+
         var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
           var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
           return v.toString(16);
@@ -61,8 +64,11 @@
         var trackVideoEvent = function( fn ) {
           // Push the apiSessionId var with our GUID
           // Then execute tracking code via anon function.
-          _gaq.push(['_setCustomVar',1,'apiSessionId', guid]);
+          //_gaq.push(['_setCustomVar',1,'apiSessionId', guid]); //async style
+
+          tracker._setCustomVar( 1, "apiSessionId", guid );
           fn();
+          console.log("tracking event");
         }
 
         var videoStarted  = false;
@@ -87,7 +93,8 @@
         jwplayer().onPlay( function(event) {
           if(videoStarted == false) {
             trackVideoEvent( function() {
-              _gaq.push(['_trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]);
+              //_gaq.push(['_trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]); //async style
+              tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
             });
             videoStarted = true;
           }
@@ -100,14 +107,16 @@
         });
 
         jwplayer().onComplete( function(event) {
-          var timestamp = Math.round((new Date()).getTime() / 1000);
 
           trackVideoEvent( function() {
-            _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
+            //_gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]); //async style
+            tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
           });
 
+          var timestamp = Math.round((new Date()).getTime() / 1000);
           trackVideoEvent( function() {
-            _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
+            //_gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]); //async style
+            tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
           });
 
           // Reset to initial values.
@@ -117,14 +126,20 @@
         });
 
         $(window).unload(function() {
-          trackVideoEvent( function() {
-            _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]);
-          });
+          // dont track anything if the video is not in a started/playing state
+          if(videoStarted != false) {
 
-          var timestamp = Math.round((new Date()).getTime() / 1000);
-          trackVideoEvent( function() {
-            _gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]);
-          });
+            trackVideoEvent( function() {
+              //_gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]); //async style
+              tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
+            });
+
+            var timestamp = Math.round((new Date()).getTime() / 1000);
+            trackVideoEvent( function() {
+              //_gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]); //async style
+              tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
+            });
+          }
         });
 
       });
