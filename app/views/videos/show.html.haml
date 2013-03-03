@@ -110,6 +110,7 @@
           playTimes.push({start: startTime, end: jwplayer().getPosition()})
 
           trackVideoEvent( function() {
+            var timestamp = Math.round((new Date()).getTime() / 1000);
             tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
             tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
             tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
