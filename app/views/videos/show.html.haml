@@ -66,7 +66,7 @@
           // Then execute tracking code via anon function.
           //_gaq.push(['_setCustomVar',1,'apiSessionId', guid]); //async style
 
-          tracker._setCustomVar( 1, "apiSessionId", guid );
+          //tracker._setCustomVar( 1, "apiSessionId", guid );
           fn();
         }
 
@@ -112,9 +112,10 @@
           trackVideoEvent( function() {
             var timestamp = Math.round((new Date()).getTime() / 1000);
             _gaq.push(
-              ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0],
+              ['videoTracker._setCustomVar',1,'apiSessionId', guid],
               ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0],
-              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0],
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]
             );
             //tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
             //tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
