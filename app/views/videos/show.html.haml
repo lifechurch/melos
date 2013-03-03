@@ -61,12 +61,8 @@
           return v.toString(16);
         });
 
+        // Keep this around in case we ever need to wrap the tracking code.
         var trackVideoEvent = function( fn ) {
-          // Push the apiSessionId var with our GUID
-          // Then execute tracking code via anon function.
-          //_gaq.push(['_setCustomVar',1,'apiSessionId', guid]); //async style
-
-          //tracker._setCustomVar( 1, "apiSessionId", guid );
           fn();
         }
 
@@ -77,13 +73,15 @@
         // Each item in the array is an object: {start: 0, end: 2.4}
         // Custom total method setup to iterate through items and total up all segments into total time watched.
         var playTimes = [];
-            playTimes.total = function() {
+        // Create a named function so that we can reassing the function later on after its cleared.
+        var playTimeTotal = function() {
               var timeWatched = 0;
               for(var i = 0; i < this.length; i++) {
                 timeWatched += (this[i].end - this[i].start);
               }
               return Math.round(timeWatched);
             }
+            playTimes.total = playTimeTotal;
 
         // All video player api handlers below:
         // - onPlay: any time the video starts playing
@@ -91,18 +89,20 @@
         // - onComplete: when the video has reached the end
         jwplayer().onPlay( function(event) {
           if(videoStarted == false) {
-            //trackVideoEvent( function() {
-              //_gaq.push(['_trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]); //async style
-              //tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
-            //});
             videoStarted = true;
           }
           // set the new start time every time the video begins playing
           startTime = jwplayer().getPosition()
         });
 
+        jwplayer().onSeek( function(event) {
+          playTimes.push({start: startTime, end: jwplayer().getPosition()});
+          startTime = event.offset;
+          // event.offset is not super accurate - more than likely due to encoding with low number of key frames.
+        });
+
         jwplayer().onPause( function(event) {
-          playTimes.push({start: startTime, end: jwplayer().getPosition()})
+          playTimes.push({start: startTime, end: jwplayer().getPosition()});
         });
 
         jwplayer().onComplete( function(event) {
@@ -117,30 +117,28 @@
               ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp.toString() , 0],
               ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]
             );
-            //tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
-            //tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
-            //tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
           });
 
           // Reset to initial values.
-          videoStarted = false;
-          startTime = 0;
-          playTimes = [];
+          videoStarted    = false;
+          startTime       = 0;
+          playTimes       = [];
+          playTimes.total = playTimeTotal;
         });
 
         $(window).unload(function() {
           // dont track anything if the video is not in a started/playing state
           if(videoStarted != false) {
+            playTimes.push({start: startTime, end: jwplayer().getPosition()})
 
             trackVideoEvent( function() {
-              //_gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]); //async style
-              //tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
-            });
-
-            var timestamp = Math.round((new Date()).getTime() / 1000);
-            trackVideoEvent( function() {
-              //_gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]); //async style
-              //tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
+              var timestamp = Math.round((new Date()).getTime() / 1000);
+              _gaq.push(
+                ['videoTracker._setCustomVar',1,'apiSessionId', guid],
+                ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total().toString() , 0],
+                ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp.toString() , 0],
+                ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]
+              );
             });
           }
         });
