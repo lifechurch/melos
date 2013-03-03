@@ -54,7 +54,7 @@
       $(window).load(function () {
 
         // create a custom tracker for video events
-        var tracker = _gat._createTracker("UA-38522090-4");
+        var tracker = _gat._createTracker("UA-38522090-4","videoTracker");
 
         var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
           var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
@@ -91,10 +91,10 @@
         // - onComplete: when the video has reached the end
         jwplayer().onPlay( function(event) {
           if(videoStarted == false) {
-            trackVideoEvent( function() {
+            //trackVideoEvent( function() {
               //_gaq.push(['_trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]); //async style
               //tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
-            });
+            //});
             videoStarted = true;
           }
           // set the new start time every time the video begins playing
@@ -111,9 +111,14 @@
 
           trackVideoEvent( function() {
             var timestamp = Math.round((new Date()).getTime() / 1000);
-            tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
-            tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
-            tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
+            _gaq.push(
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0],
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0],
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]
+            );
+            //tracker._trackEvent( '#{videoRefId}', 'domain', 'YouVersion', 0 );
+            //tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
+            //tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
           });
 
           // Reset to initial values.
@@ -128,13 +133,13 @@
 
             trackVideoEvent( function() {
               //_gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total() , 0]); //async style
-              tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
+              //tracker._trackEvent( '#{videoRefId}', 'mediaViewTime', playTimes.total() , 0 );
             });
 
             var timestamp = Math.round((new Date()).getTime() / 1000);
             trackVideoEvent( function() {
               //_gaq.push(['_trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp , 0]); //async style
-              tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
+              //tracker._trackEvent( '#{videoRefId}', 'mediaComplete', timestamp , 0 );
             });
           }
         });
