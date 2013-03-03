@@ -14,8 +14,8 @@ common:
   bloodhound_password: password
   api_root: youversionapi.com
   api_referer: web-dev.youversionapi.com
-  # api_root: youversionapistaging.com
-  # api_referer: web-dev.youversionapistaging.com
+  #api_root: youversionapistaging.com
+  #api_referer: web-dev.youversionapistaging.com
   api_version: "3.0"
   memcache_server: localhost
   #

@@ -1,0 +1,352 @@
+=gradient($from, $to)
+  /* fallback/image non-cover color */
+  background-color: $from
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to)
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to))
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to)
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to)
+
+=video_container
+  list-style-type: none
+  background: #F4F3F1
+
+=video_container_info
+  overflow: auto
+  position: relative
+  color: #666
+  padding: 4px 10px 0
+
+=video_thumbnail_image
+  display:block
+  width: 100%
+
+=top_right
+  display: block
+  position: absolute
+  top: 0
+  right: 0
+
+// ------------Common styles
+
+.share_bg_effect
+  background: #eaeaea
+  -moz-box-shadow:    1px 2px 4px 0px #707070
+  -webkit-box-shadow: 1px 2px 4px 0px #707070
+  box-shadow:         1px 2px 4px 0px #707070
+
+#video-show,
+#video-series,
+#videos-index
+  article
+    padding: 0
+
+    .inner
+      overflow: auto
+      padding: 20px
+
+#video-show,
+#video-series
+  #title-bar
+    position: relative
+    padding: 20px
+    padding-bottom: 0
+
+    h1
+      margin-bottom: 0
+
+    .publisher
+      color: #333
+      margin: -10px 0 46px 0
+      font-size: 13px
+      padding-left: 22px
+      background: image-url("icon_small_about.png") no-repeat 0px center
+
+    .share
+      +top_right
+      top: 85%
+      right: 35px
+      text-align: center
+      z-index: 1
+
+      .share_wrapper
+        display: block
+        padding: 10px
+        width: 100%
+        border-radius: 4px 4px 0px 0px
+        position: relative
+        z-index: 1999
+
+        a
+          border: 1px solid #005A88
+          font-weight: bold
+          text-decoration: none
+          color: #fff
+          padding: 4px 11px
+          display: block
+          font-size: 15px
+          text-shadow: #000 0 -1px 0
+          background-color: #0084c8
+          +round_bottom
+          +round_top
+          +box-shadow(inset rgba(0,0,0,0.18) 0 -2px 0, inset rgba(255,255,255,.3) 0 2px 0)
+
+        a:hover
+          background-color: #008DD5
+
+    .share_panel
+      -moz-box-shadow:    1px 2px 4px 0px #707070
+      -webkit-box-shadow: 1px 2px 4px 0px #707070
+      box-shadow:         1px 2px 4px 0px #707070
+      position: absolute
+      right: 15px
+      z-index: 2000
+      background: #eaeaea
+      padding: 5px 0px 30px 5px
+      width: 120px
+      border-radius: 4px 0px 4px 4px
+      height: 23px
+      display: none
+
+      ul
+        margin-top: 5px
+
+        li
+          background: none
+          display: inline
+
+          a
+            display: block
+            float: left
+            margin: 0px 5px
+            text-align: center
+            border: 1px solid #005A88
+            font-weight: bold
+            text-decoration: none
+            color: #fff
+            padding: 4px 11px
+            display: block
+            font-size: 15px
+            text-shadow: #000 0 -1px 0
+            background-color: #5674a6
+            width: 80px
+            +round_bottom
+            +round_top
+            +box-shadow(inset rgba(0,0,0,0.18) 0 -2px 0, inset rgba(255,255,255,.3) 0 2px 0)
+
+          a.twitter_share_btn
+            background-color: #404040
+            border: 1px solid #323232
+
+
+
+// Publisher logo
+.pub-banner
+  margin: 0 auto
+  width: 340px
+
+  a
+    display: block
+
+  img
+    width: 100%
+    +round_bottom
+    +round_top
+
+// ------------Landing page
+
+#videos-index
+
+  ul.videos
+    overflow: hidden
+
+    li:hover
+      +box-shadow(rgba(0,0,0,0.3) 0 2px 8px)
+
+    li.odd
+      margin-right: 0px
+
+    li
+      float: left
+      width: 400px
+      padding: 5px
+      margin: 0 30px 30px 0
+      border: 1px solid #ddd
+      +video_container
+
+      img
+        +video_thumbnail_image
+
+      .info
+        +video_container_info
+
+      .publisher
+        padding-left: 22px
+        background: image-url("icon_small_about.png") no-repeat 0px center
+        color: #777
+        display: block
+
+// ------------Series detail page
+#video-series
+  // special case we need article to have zero padding for hero image.
+  // .inner defined below to add back in the padding where necessary
+
+  article
+    background: #fff image-url("videos-bs-hero.jpg") no-repeat center top
+
+  h1
+    margin-top: 250px
+    color: #fff
+
+  #title-bar .publisher
+    background: image-url("icon_info.png") no-repeat left top
+    a
+      color: #fff
+
+  .inner
+    margin-top: 30px
+
+  #episodes
+    margin: -10px 0 0 26px
+
+    li:hover
+      +box-shadow(rgba(0,0,0,0.3) 0 2px 8px)
+
+    li
+      float: left
+      margin: 0 30px 30px 0
+      padding-left: 0
+      +video_container
+
+    // #episodes a
+    a
+      display: block
+      margin: 0
+      text-decoration: none
+      height: 140px
+      width: 250px
+
+      // #episodes a img
+      img
+        +video_thumbnail_image
+
+      // #episodes a .info
+      .info
+        padding: 0
+        height: 140px
+        margin-top: -140px
+        background: image-url("videos-thumb-grad.png") no-repeat 0px 0px
+        position: relative
+
+        // #episodes a .info .title
+        .title
+          font-size: 15px
+          margin: 0
+          color: #fff
+          text-shadow: 0 0 3px #000
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+          width: 220px
+          height: 30px
+          padding: 95px 15px 0
+
+        // #episodes a .info .runtime
+        .runtime
+          color: #fff
+          font-size: 12px
+          display: block
+          padding: 0 15px
+          margin-top: -15px
+          text-shadow: 0 0 3px #000
+
+      // Play button that appears on thumb hover
+      .info:hover
+        background-position: 0px -140px
+
+  // overriding #main article ul li styling :-(
+  ul li
+    background:
+      image: none
+    padding-left: 0
+    padding-top: 0
+
+
+// -------------- Video detail page
+#video-show
+
+  #title-bar
+    margin-bottom: 10px
+    .share
+      top: 20px
+    .share_panel
+      top: 76px
+
+  article .inner
+    padding-top: 0
+
+  #video
+    background: #333
+    width: 888px
+    height: 500px
+    display: block
+    margin: 10px auto
+    +round_top
+    +round_bottom
+
+  #details
+    width: 500px
+    float: left
+    padding: 15px 0
+    margin: 0
+
+    .refs
+      border-bottom: 1px solid #e1e1e1
+      padding-bottom: 8px
+      margin-bottom: 8px
+
+      span
+        display: block
+        color: #666
+        text-transform: uppercase
+        font-size: 11px
+
+      .reference_tokens
+        margin-bottom: 0
+      .reference_tokens > li a
+        border-radius: 4px
+
+    ul
+      margin: 0
+
+      li
+        list-style: none
+        background: none
+        padding: 0
+        text-decoration: underline
+        display: inline-block
+        margin-right: 5px
+
+  #other
+    padding: 15px 0
+    width: 340px
+    float: right
+
+    .action_button_green
+      display: block
+      margin-bottom: 20px
+      +border-radius(4px)
+      margin-top: 1px
+
+    .pub-banner
+      padding-top: 20px
+      border-top: 1px solid #e1e1e1
+
+// Publisher page
+
+#video-publisher
+  h1
+    margin-bottom: 15px

@@ -1,0 +1,147 @@
+- html_attributes(id:"video-show",classes:"videos")
+- publisher = @video.publisher
+- @sidebar = false
+- @title = @video.title
+
+
+%article
+  #title-bar
+    %h1= @video.title
+
+    %span.publisher
+      =link_to(@video.credits, publisher_video_path(id: @video.id))
+
+    = render partial: "videos/share", locals: {video: @video}
+
+  %div#player
+
+  .inner
+    #details
+      %div.refs
+        - if @video.references
+          %span
+            Related Scripture
+
+          %ul
+            - @video.references.each do |ref|
+              %li= link_to(ref.human, bible_path(Reference.new(ref.usfm, version: current_version)))
+      %p.description= @video.description.html_safe
+
+    #other
+      - video_series = client_settings.video_series
+      = link_to("All videos", video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
+      = render partial: "videos/publisher_banner", locals: {publisher: publisher}
+
+
+-content_for :javascripts do
+  - videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
+  - # Create our player for all videos
+
+  :javascript
+    $(window).load(function () {
+      jwplayer('player').setup({
+        file: "#{@video.hls.url}",
+        width: '908',
+        height: '511',
+        image: "#{@video.poster_image.url}"
+      })
+    });
+
+  - #only setup tracking at the moment for Jesus Film (id: 1)
+  - if publisher.id == 1
+
+    :javascript
+
+      $(window).load(function () {
+
+        // create a custom tracker for video events
+        var tracker = _gat._createTracker("#{publisher.ga_tracking_id}","videoTracker");
+
+        var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+          return v.toString(16);
+        });
+
+        // Keep this around in case we ever need to wrap the tracking code.
+        var trackVideoEvent = function( fn ) {
+          fn();
+        }
+
+        var videoStarted  = false;
+        var startTime     = 0;
+
+        // Array to keep track of start/end segments that a user has watched.
+        // Each item in the array is an object: {start: 0, end: 2.4}
+        // Custom total method setup to iterate through items and total up all segments into total time watched.
+        var playTimes = [];
+        // Create a named function so that we can reassing the function later on after its cleared.
+        var playTimeTotal = function() {
+              var timeWatched = 0;
+              for(var i = 0; i < this.length; i++) {
+                timeWatched += (this[i].end - this[i].start);
+              }
+              return Math.round(timeWatched);
+            }
+            playTimes.total = playTimeTotal;
+
+        // All video player api handlers below:
+        // - onPlay: any time the video starts playing
+        // - onPause: any time the video is paused
+        // - onComplete: when the video has reached the end
+        jwplayer().onPlay( function(event) {
+          if(videoStarted == false) {
+            videoStarted = true;
+          }
+          // set the new start time every time the video begins playing
+          startTime = jwplayer().getPosition()
+        });
+
+        jwplayer().onSeek( function(event) {
+          playTimes.push({start: startTime, end: jwplayer().getPosition()});
+          startTime = event.offset;
+          // event.offset is not super accurate - more than likely due to encoding with low number of key frames.
+        });
+
+        jwplayer().onPause( function(event) {
+          playTimes.push({start: startTime, end: jwplayer().getPosition()});
+        });
+
+        jwplayer().onComplete( function(event) {
+
+          playTimes.push({start: startTime, end: jwplayer().getPosition()})
+
+          trackVideoEvent( function() {
+            var timestamp = Math.round((new Date()).getTime() / 1000);
+            _gaq.push(
+              ['videoTracker._setCustomVar',1,'apiSessionId', guid],
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total().toString() , 0],
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp.toString() , 0],
+              ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]
+            );
+          });
+
+          // Reset to initial values.
+          videoStarted    = false;
+          startTime       = 0;
+          playTimes       = [];
+          playTimes.total = playTimeTotal;
+        });
+
+        $(window).unload(function() {
+          // dont track anything if the video is not in a started/playing state
+          if(videoStarted != false) {
+            playTimes.push({start: startTime, end: jwplayer().getPosition()})
+
+            trackVideoEvent( function() {
+              var timestamp = Math.round((new Date()).getTime() / 1000);
+              _gaq.push(
+                ['videoTracker._setCustomVar',1,'apiSessionId', guid],
+                ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total().toString() , 0],
+                ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp.toString() , 0],
+                ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]
+              );
+            });
+          }
+        });
+
+      });

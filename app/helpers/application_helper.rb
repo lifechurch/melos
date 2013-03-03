@@ -1,5 +1,11 @@
 module ApplicationHelper
 
+  def html_attributes( atts = {} )
+    classes = [atts[:classes]] if atts[:classes].is_a? String
+    @html_id      = atts[:id] if atts[:id]
+    @html_classes = classes if classes
+  end
+
   def object_status   #TODO: More useful name?
     status = {}
     status[t('notes.public')] = 'public'
@@ -13,6 +19,11 @@ module ApplicationHelper
     l = length - truncate_string.length
     text.length > length ? text[/\A.{#{l}}\w*\;?/m][/.*[\w\;]/m] + truncate_string : text
   end
+
+  def ref_url(usfm,version)
+    "/bible/#{version}/#{usfm.downcase}"
+  end
+
 
   def bible_path(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?

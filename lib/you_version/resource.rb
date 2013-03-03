@@ -52,6 +52,17 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
+      def configuration
+        response = YvApi.get("#{api_path_prefix}/configuration", {cache_for: a_long_time}) do |errors|
+          raise YouVersion::ResourceError.new(errors)
+        end
+        return response
+      end
+
+      def available_locales
+        configuration.available_language_tags.map{|tag| YvApi::to_app_lang_code(tag).to_sym}
+      end
+
       def html_present?(mash)
         lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
         return false if mash.nil?
@@ -99,8 +110,7 @@ module YouVersion
 
       def find(id, params = {}, &block)
         api_errors = nil
-
-        auth = params.delete(:auth)
+        auth = params.delete(:auth) unless (params[:force_auth] == true)
 
         opts = {}
         opts[:id] = id if id

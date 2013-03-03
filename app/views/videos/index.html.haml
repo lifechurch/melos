@@ -1,0 +1,16 @@
+- html_attributes(id:"videos-index")
+- @sidebar = false
+- @title = "Watch videos"
+
+%article
+  .inner
+    %h1
+      Videos
+
+    %ul.videos
+      - @videos.each do |v|
+        %li{class:cycle('even', 'odd')}
+          =link_to( series_video_path(id:v.id)) do
+            = image_tag( v.thumbnails.second.url )
+          %div.info
+            =link_to(v.credits, publisher_video_path(id: v.publisher.id), {class: "publisher"})

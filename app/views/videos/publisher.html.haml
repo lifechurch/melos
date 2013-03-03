@@ -1,0 +1,10 @@
+- html_attributes(id:"video-publisher")
+- @title = @publisher.name
+
+- content_for :sidebar do
+  = render partial: "sidebars/videos/publisher", locals: {video: @video, publisher: @publisher}
+
+%article.videos-publisher
+  %h1= @publisher.name
+
+  %p.video-info= @publisher.description.html_safe

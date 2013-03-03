@@ -10,8 +10,10 @@ class ResourceList < Array
     @page_length = 25
     # Default to same as #size
     @total = self.count
+
+    yield self if block_given?
   end
-  
+
   def total_pages
     (total.to_f/page_length).ceil
   end
@@ -19,9 +21,9 @@ class ResourceList < Array
   def has_pages
     total_pages > 1
   end
-  
+
   def count
     total
   end
-  
+
 end
