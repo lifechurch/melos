@@ -1,8 +1,6 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
-  match "/app" => "trackings#app"
-
   get 'donate/us', :to => 'donations#us', :as => 'us_donation'
   post 'donate/us', :to => 'donations#confirm', :as => 'confirm_donation'
   match 'donate/relay_response', :to => 'donations#relay_response', :as => 'donations_relay_response'
