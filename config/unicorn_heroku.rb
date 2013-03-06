@@ -1,7 +1,7 @@
-# 3 workers and 1 master
-#
-# Note: we only use 3, because of memory restrictions on Heroku dynos
-worker_processes 2
+# Previously had 2 unicorn workers - with an average of 170mb memory usage per dyno
+# Also were seeing times of up to 2 seconds for request queuing
+# Heroku allows 512mb per dyno\
+worker_processes 4
 
 # Restart any workers that haven't responded in 17 seconds
 # This results in a 502 response for the slow request in the worker
