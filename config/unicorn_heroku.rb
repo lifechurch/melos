@@ -28,4 +28,4 @@ preload_app true
 # 2 workers, we want the backlog to show up with heroku and have the
 # chance to go to another instance. In case our worker is dead or slow
 # we don't want requests sitting in the unicorn backlog timing out.
-listen ENV['PORT'] || 3000, :backlog => 4
+listen ENV['PORT'] || 3000, :backlog => Integer(ENV['UNICORN_BACKLOG'] || 100)
