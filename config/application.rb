@@ -27,9 +27,6 @@ module YouversionWeb
       #high frequency BB traffic
       r301 %r{^/(bb|js)/(.+)}, 'http://bb-static.youversion.com/$1/$2'
 
-      # re-direct Bible.com /mobile and /download traffic to youversion for SEO
-      # r301 %r{^(/.{2,5})?(/download$|/mobile$|/app$|/iphone$|/bb$|/android$|/descargar$|/donate.*$)}, 'http://www.youversion.com$1$2', if: Proc.new{|rack_env| rack_env["SERVER_NAME"] =~ /^(?:(?:.*\.)?bible\.com|lvh\.me)/}
-
       # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
       r301 %r{^(/.{2,5})?(/app$|/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
@@ -97,6 +94,10 @@ module YouversionWeb
           new_path = "/reading-plans/category/#{$1}"
         end
 
+        # If this is a mobile client asking for the /mobile page
+        # - forward them to "http://m.youversion.com/download"
+        # - where there is a script to detect proper app store redirection.
+        return "http://m.youversion.com/download" if new_path == "/mobile"
         "http://#{new_server_name}#{new_path}"
       end
 
