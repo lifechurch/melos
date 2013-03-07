@@ -53,12 +53,13 @@
 = cache "reader_version_json_#{version.to_param}", expires_in: a_long_time do
   - version_json = {abbreviation: version.abbreviation.downcase, id: version.to_param }
   - version_json[:books] = {}
-  - version.books.each do |book_usfm, book_info|
-    - chapters = version.books[book_usfm].chapters.map {|c| {human: c.human, usfm: c.usfm.downcase, canon: c.canonical }}
-    - version_json[:books][book_usfm.downcase] = {human: truncate(book_info.human,length: 40,separator: " "), chapters: chapters }
+  - books = version.books
+  - books.each do |usfm, info|
+    - chapters = books[usfm].chapters#.map {|c| {human: c.human, usfm: c.usfm.downcase, canon: c.canonical }}
+    - version_json[:books][usfm.downcase] = {human: truncate(info.human,length: 40,separator: " "), chapters: chapters }
 
   / Json representation of our version. Currently used for building our dynamic chapter grid menu.
   / This will be cached along with the entire template
   %script
     :plain
-      version_json = #{version_json.to_json.html_safe};
+      version_json = #{Oj.dump(version_json).html_safe};

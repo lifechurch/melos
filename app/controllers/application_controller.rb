@@ -10,6 +10,17 @@ class ApplicationController < ActionController::Base
   before_filter :tend_caches
   before_filter :set_default_sidebar
 
+  # Rack Mini Profiler uncomment Gem as well as these lines to enable basic profiling.
+  #before_filter :miniprofiler
+  #def miniprofiler
+  #  Rack::MiniProfiler.authorize_request
+  #end
+
+
+
+
+
+
   unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, with: :generic_error
     rescue_from APIError, with: :api_error
