@@ -163,7 +163,7 @@ module YouversionWeb
       r301 '/forgot', '/settings/forgot_password'
 
       ### Mobile Downloads
-      #r301 %r{^(/.{2,5})?(/download$)}, '$1/mobile'
+      r301 %r{^(/.{2,5})?(/download$)}, '$1/mobile'
 
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
