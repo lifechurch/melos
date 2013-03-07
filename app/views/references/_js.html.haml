@@ -55,7 +55,7 @@
   - version_json[:books] = {}
   - books = version.books
   - books.each do |usfm, info|
-    - chapters = books[usfm].chapters#.map {|c| {human: c.human, usfm: c.usfm.downcase, canon: c.canonical }}
+    - chapters = books[usfm].chapters.map {|c| {human: c.human, usfm: c.usfm.downcase, canon: c.canonical }}
     - version_json[:books][usfm.downcase] = {human: truncate(info.human,length: 40,separator: " "), chapters: chapters }
 
   / Json representation of our version. Currently used for building our dynamic chapter grid menu.
