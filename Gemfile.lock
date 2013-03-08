@@ -119,6 +119,7 @@ GEM
       ruby-hmac
     formatador (0.2.4)
     fssm (0.2.9)
+    gabba (1.0.1)
     geokit (1.6.5)
       multi_json
     gherkin (2.11.5)
@@ -387,6 +388,7 @@ DEPENDENCIES
   dalli (~> 2.0.4)
   debugger
   descriptive_statistics (~> 1.1.0)
+  gabba
   geokit (~> 1.6.5)
   grackle (~> 0.1.10)
   guard
