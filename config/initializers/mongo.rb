@@ -1,0 +1,1 @@
+MongoConnector.connection_string = "mongodb://yv-web:yYfu824CWq7qTy0enjg9w5uYqw27U@linus.mongohq.com:10005/Stats"

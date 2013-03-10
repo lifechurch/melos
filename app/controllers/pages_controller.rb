@@ -12,13 +12,6 @@ class PagesController < ApplicationController
   def press; end
   def mobile; end
 
-  def tracking
-    analytics_id = "UA-351257-4" #YouVersion GA ID.
-    tracker = Gabba::Gabba.new(analytics_id, "youversion.com")
-    tracker.event("Download", "Request", "page", "/test", true)
-    redirect_to("/mobile")
-  end
-
 
   def privacy
     @mobile = env["X_MOBILE_DEVICE"].present?

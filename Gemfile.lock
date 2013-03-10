@@ -36,6 +36,9 @@ GEM
     authorize-net (1.5.2)
       nokogiri (~> 1.4)
     awesome_print (1.0.2)
+    bson (1.8.3)
+    bson_ext (1.8.3)
+      bson (~> 1.8.3)
     builder (3.0.4)
     capybara (1.1.4)
       mime-types (>= 1.16)
@@ -208,6 +211,8 @@ GEM
     method_source (0.8.1)
     mime-types (1.19)
     minitest (4.4.0)
+    mongo (1.8.3)
+      bson (~> 1.8.3)
     multi_json (1.5.0)
     multi_xml (0.5.1)
     multipart-post (1.1.5)
@@ -375,6 +380,7 @@ DEPENDENCIES
   asset_sync (~> 0.5.3)
   authorize-net (~> 1.5.2)
   awesome_print (~> 1.0.2)
+  bson_ext
   capybara (~> 1.1.2)
   capybara-mechanize (~> 0.3.0)
   capybara-screenshot (~> 0.3.4)
@@ -407,6 +413,7 @@ DEPENDENCIES
   koala (~> 1.6.0)
   language_list (~> 0.0.3)
   minitest
+  mongo
   newrelic_rpm (~> 3.5.7.59)
   nokogiri (~> 1.5.2)
   oj

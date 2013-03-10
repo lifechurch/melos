@@ -18,6 +18,9 @@ gem 'honeybadger'
 gem 'oj'
 gem 'gabba'
 
+gem 'mongo'
+gem 'bson_ext'
+
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
 
