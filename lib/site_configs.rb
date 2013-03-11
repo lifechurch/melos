@@ -12,6 +12,8 @@ module SiteConfigs
     hash["staging.bible.com"] = SiteConfigs::Bible
     hash["lvh.me"] = SiteConfigs::Bible
     hash["www.lvh.me"] = SiteConfigs::Bible
+    hash["sbb.org.br"] = SiteConfigs::Sbb
+    hash["sbiblica.youversion.com"] = SiteConfigs::Sbg
     hash
   end
 

@@ -20,12 +20,15 @@
       %span.separator
         |
       %a{:href => external_url(:support)}=t("get support")
-      - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt-BR", :tr].include? I18n.locale
-        %span.separator
-          |
-        %a{:href => @site.donate_path || donate_path}=t("donate title")
-  .float_right
-    .lang
+
+      - if @site.allow_donate
+        - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt-BR", :tr].include? I18n.locale
+          %span.separator
+            |
+          %a{:href => @site.donate_path || donate_path}=t("donate title")
+
+  - if I18n.available_locales.length > 1
+    %p.float_right
       %label{:for => 'choose_language'}
         =t("choose language field")
         &nbsp;
@@ -36,9 +39,11 @@
               - url = url_for(params.merge(locale: loc))
               - url = "/#{loc}" + url_for(params.merge({locale: loc, only_path: true})) if loc == I18n.default_locale #default locale is ommited (routing-filter gem) for overall convenience, but removes /<default locale> from url_for path, so we must add it explicitly here.
               %option{value: url, selected: loc == I18n.locale}= t("language name", locale: loc)
+
     .copy.float_right
       %span &copy;
       = Date.today.year
       %a{:href => 'http://www.lifechurch.tv'}=t("lifechurch short url")
+
 -unless ENV['RACK_ENV'] =~ /production/i
   %p.small.mute.float_right= "Non-production deployment, pointing at: #{Cfg.try :api_root}"

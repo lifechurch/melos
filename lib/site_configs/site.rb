@@ -26,7 +26,17 @@ module SiteConfigs
       'youversion.com'
     end
 
+    def skip_splash; end
+
     def default_version; end
+
+    def default_locale; end
+    
+    def available_locales; end
+
+    def allow_donate
+        true
+    end
 
     def donate_path; end
 
