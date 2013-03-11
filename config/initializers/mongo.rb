@@ -1,2 +1,2 @@
-MongoConnector.connection_string = "mongodb://yv-web:yYfu824CWq7qTy0enjg9w5uYqw27U@candidate.2.mongolayer.com:10008/BibleSeries"
+MongoConnector.connection_string = "mongodb://yv-web:yYfu824CWq7qTy0enjg9w5uYqw27U@candidate.1.mongolayer.com:10008/BibleSeries"
 #"mongodb://yv-web:yYfu824CWq7qTy0enjg9w5uYqw27U@linus.mongohq.com:10005/Stats"
