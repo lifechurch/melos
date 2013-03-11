@@ -4,15 +4,17 @@ require 'mongo'
 module MongoConnector
   extend self
 
-  def connection_string=(string)
-    @@connection_string = string
+  def connection_info=(info_hsh)
+    @@connection_info = info_hsh
   end
 
   def connect!
-    db         = URI.parse(@@connection_string)
-    @@database = db.path.gsub(/^\//, '')
-    connection = Mongo::Connection.new(db.host, db.port).db(@@database)
-    connection.authenticate(db.user, db.password) unless (db.user.nil? || db.user.nil?)
+    replicas = @@connection_info[:replicas]
+    dbname   = @@connection_info[:database]
+    user     = @@connection_info[:user]
+    pass     = @@connection_info[:password]
+    connection = Mongo::ReplSetConnection.new(replicas).db(dbname)
+    connection.authenticate(user, pass)
     connection
   end
 
