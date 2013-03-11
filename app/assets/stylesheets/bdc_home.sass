@@ -397,6 +397,7 @@ p
         height: auto
         padding: 16px 16px 0 16px
         margin: 0
+        width: auto
 
         #hero_content
           float: none
@@ -413,8 +414,9 @@ p
             color: #fff
 
           h1
-            font-size: 36px
+            font-size: 33px
             margin-left: 0
+            margin-top: 20px
             width: auto
 
           p
@@ -476,14 +478,15 @@ p
         border-radius: 0
         padding: 20px
         margin-top: 20px
+        width: auto
         h1, a
           float: none
           margin: 0
         h1
           margin-bottom: 10px
         a
-          width: auto
-          padding: 5px 0px
+          width: 100%
+          padding: 5px 0px !important
         .fb, .email, .or
           width: auto
           float: none
@@ -544,13 +547,18 @@ p
         padding: 20px
         margin: 0 auto
         background-color: #fff
+
+        div.mobile_platforms
+          background: image-url("bdc_mobile_icons.png") no-repeat 0 60px !important
         div
-          width: auto
           float: none
           height: 100px
-          background: image-url("bdc_mobile_icons.png") no-repeat 0 50px
+          
+          div
+            width: 100%
+
         div:first-child
-          width: auto
+          width: auto !important
           height: auto
           background: transparent
           p
@@ -571,7 +579,7 @@ p
           border: none
           float: none
         a
-          margin: 20px 0
+          margin: 0px 0 10px
           width: 100%
           padding: 5px 0px
         .counter
@@ -607,6 +615,7 @@ p
 
 #footer
   margin-top: 10px
+  width: auto
 
 @media only screen and (min-width: 481px)
   #main article .bottom_cta div:first-child p
