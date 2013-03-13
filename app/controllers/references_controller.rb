@@ -1,8 +1,16 @@
 class ReferencesController < ApplicationController
   before_filter :set_nav
+  before_filter :fix_bad_reference, only: [:show]
   before_filter :strip_format, only: [:show]
   before_filter :redirect_incorrect_reference, only: [:show]
   rescue_from InvalidReferenceError, with: :ref_not_found
+
+  def fix_bad_reference
+    # HACK (km): sometimes the url can have invalid utf-8 characters
+    # /bible/46/rom.8.15.cunp-%E7%A5%EF
+    # so strip those out before attempting to parse as a reference
+    params[:reference] = params[:reference].encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
+  end
 
   def show
     # Set HTML classes for full screen/parallel
