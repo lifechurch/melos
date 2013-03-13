@@ -1,4 +1,10 @@
 class YvApi
+  # TODO: remove this HACK to deal with invalid API response
+  # API sprint.ly ticket: https://sprint.ly/product/390/#!/item/119
+  # - the issue is the nginx server sometimes returns an HTML error
+  # message rather than json, so we are working around that limitation
+  JSON_500 = JSON.parse('{"response": {"buildtime": "", "code": 500, "data": {"errors": []}}}')
+
   include HTTParty
   format :json
   headers 'Referer' => "http://" + Cfg.api_referer
@@ -43,6 +49,8 @@ class YvApi
         rescue Timeout::Error => e
           Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
           raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - get_start)*1000).to_i} ms)"
+        rescue MultiJson::DecodeError => e
+          response = JSON_500
         rescue Exception => e
           Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
           raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
@@ -61,6 +69,8 @@ class YvApi
       rescue Timeout::Error => e
         Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
         raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - get_start)*1000).to_i} ms)"
+      rescue MultiJson::DecodeError => e
+          response = JSON_500
       rescue Exception => e
         Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
         raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
@@ -101,6 +111,8 @@ class YvApi
     rescue Timeout::Error => e
       Rails.logger.apc "*** HTTPary Timeout ERR: #{e.class} : #{e.to_s}", :error
       raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - post_start)*1000).to_i} ms)"
+    rescue MultiJson::DecodeError => e
+      response = JSON_500
     rescue Exception => e
       Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
       raise APIError, "Non-timeout API Error for #{resource_url}: #{e.class} : #{e.to_s}"
