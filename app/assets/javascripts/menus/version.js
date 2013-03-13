@@ -97,7 +97,7 @@ VersionMenu.prototype = {
       return;
     }
     var context = "";
-    if (reader.version) {context = "?context_version=" + reader.version;}
+    if (typeof(reader) !== 'undefined' && reader.version) {context = "?context_version=" + reader.version;}
     $.ajax({
       url: "/versions" + context,
       method: "get",

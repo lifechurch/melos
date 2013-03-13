@@ -1,6 +1,15 @@
 - @title = @plan.name
 
+#reader_header
+  %header
+    %ul.float_left
+      %li
+        %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_version_trigger", title: t("ref.choose version")}
+          %b
+            = @presenter.version.human
+          %span
+            =t("ref.choose version")
+  = render_cell :version_selector, :display, {version: @presenter.version, recent_versions: recent_versions, reference: nil, site: @site}
 %article
-  = render partial: "plan_day_header"
-  %hr
-  .align_center= t('plans.invalid reference', support_url: external_url(:support)).html_safe
+  .wrap
+    .align_center= t('plans.invalid reference', support_url: external_url(:support)).html_safe
