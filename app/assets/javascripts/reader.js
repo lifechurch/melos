@@ -365,7 +365,9 @@ Reader.prototype = {
 
     var thiss = this;
 
-    if(!chapter.length || !version){return;}
+    //HACK: looking for "intro" is not a great way to check if a chapter may have
+    //highlights, but it "works"
+    if(!chapter.length || !version || chapter.data("usfm").match(/intro/i)){return;}
 
     $.ajax({
       url: "/bible/" + version + "/" + chapter.data("usfm") + "/highlights",
