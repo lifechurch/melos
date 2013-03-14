@@ -17,11 +17,11 @@
           if (ua.indexOf("Version/") >= 0) { // ***User Agent in BlackBerry 6 and BlackBerry 7
               Verposition = ua.indexOf("Version/") + 8;
               TotLenght = ua.length;
-              document.write("Jorgesys  BB OS Version :: " + ua.substring(Verposition, Verposition + 3));
+              document.write("BB OS Version :: " + ua.substring(Verposition, Verposition + 3));
           }
           else {// ***User Agent in BlackBerry Device Software 4.2 to 5.0
               var SplitUA = ua.split("/");
-              document.write("Jorgesys BB OS Version :: " + SplitUA[1].substring(0, 3));
+              document.write("BB OS Version :: " + SplitUA[1].substring(0, 3));
           }
       }
 
