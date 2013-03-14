@@ -254,13 +254,12 @@ class ApplicationController < ActionController::Base
     render_404
   end
 
-
-  def set_redirect
-    cookies[:auth_redirect] = nil if cookies[:auth_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
-    cookies[:auth_redirect] = params[:redirect] if params[:redirect]
-    # Do we always want to go back to where we were?
-    #cookies[:auth_redirect] ||= URI(request.referer).path if request.referer
-
+  # set redirect for (to) argument
+  # otherwise set redirect location to a redirect param if available
+  def set_redirect(to = nil)
+    clear_redirect if cookies[:auth_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
+    cookies[:auth_redirect] = to unless to.nil?
+    cookies[:auth_redirect] ||= params[:redirect] if params[:redirect]
   end
 
   def redirect_path

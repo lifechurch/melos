@@ -1,6 +1,7 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
+  # Route for tracking requests to /app url.  Specifically desired for BibleSeries analytics
   get "/app", to: "trackings#app"
 
   get 'donate/us', :to => 'donations#us', :as => 'us_donation'
@@ -15,9 +16,15 @@ YouversionWeb::Application.routes.draw do
   match 'bible/:version/:reference/highlights' => 'references#highlights', :as => 'reference_highlights', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'references#notes', :as => 'reference_notes', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
 
-  resources 'versions', :only => [:index, :show]
-  resources 'bookmarks', :except => [:index]
-  resources 'likes', :only => [:index]
+  resources 'versions',   :only => [:index, :show]
+  resources 'bookmarks',  :except => [:index]
+  resources 'likes',      :only => [:index]
+
+  resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do
+    get :authorize, on: :collection
+    get :authenticate, on: :collection
+  end
+
 
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
   match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
