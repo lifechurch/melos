@@ -335,15 +335,19 @@ class UsersController < ApplicationController
   def forgot_password
     @selected = :password
     self.sidebar_presenter = Presenter::Sidebar::Default.new
-    result = User.forgot_password(params[:email])
-
-    if result
-      sign_out
-      render "forgot_password_success", layout: "application"
-    else
-      flash.now[:error] = t('users.invalid email forgot')
-      render "forgot_password", layout: "application"
+    begin
+      result = User.forgot_password(params[:email])
+      if result
+        sign_out
+        render "forgot_password_success", layout: "application"
+      else
+        flash.now[:error] = t('users.invalid email forgot')
+        render "forgot_password", layout: "application"
+      end
+    rescue UnverifiedAccountError => e
+      render "sessions/unverified", layout: "application"
     end
+
   end
 
   def delete_account
