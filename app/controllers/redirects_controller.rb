@@ -35,8 +35,12 @@ class RedirectsController < ApplicationController
 
     token = params[:token]
     if token and settings = NotificationSettings.find({token: token})
-       user = User.find(settings.id)
-       redirect_to(notifications_user_url(user, token: params[:token]))
+      begin
+        user = User.find(settings.id)
+        redirect_to(notifications_user_url(user, token: params[:token]))
+      rescue APIError
+        force_login
+      end
     else
       force_login
     end
