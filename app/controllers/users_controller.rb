@@ -228,7 +228,7 @@ class UsersController < ApplicationController
     rescue => ex
       track_exception(ex)
       sign_out
-      return redirect_to(sign_in_path(redirect: notifications_user_path), flash: {error: t('users.profile.notifications token error')})
+      return redirect_to(sign_in_path(redirect: notification_settings_path), flash: {error: t('users.profile.notifications token error')})
     end
   end
 
@@ -432,7 +432,7 @@ private
   def force_notification_token_or_login
     if params[:token]
       if current_user && current_user.notifications_token != params[:token]
-        redirect_to sign_out_path(redirect: notifications_user_path(token: params[:token])) and return
+        redirect_to sign_out_path(redirect: notification_settings_path) and return
       end
     else
       force_login
