@@ -16,7 +16,7 @@
                   =current_auth.username
               %ol#header_profile_menu
                 %li
-                  %a{:href => profile_path}
+                  %a{:href => edit_user_path(current_auth.username)}
                     =t("settings")
                 %li
                   %a{:href => user_path(current_auth.username)}
@@ -25,7 +25,7 @@
                   %a{:href => sign_out_path}
                     =t("sign out")
             %li
-              %a{:href => connections_path}
+              %a{:href => connections_user_path(current_auth.username)}
                 %span
                   =t("find friends")
         - else

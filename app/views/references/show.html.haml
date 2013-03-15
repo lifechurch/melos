@@ -4,7 +4,7 @@
 - @reference      = @presenter.reference
 - @alt_reference  = @presenter.alt_reference
 
-- @title = @presenter.title
+- @title = "#{@reference.human} #{@reference.version_string}"
 - @is_reader = true
 - @canonical = bible_url(@reference)
 - @html_classes = []
