@@ -97,6 +97,10 @@ class ApplicationController < ActionController::Base
       client_settings.last_read = ref
     end
 
+    def track_exception( ex )
+      #notify_honeybadger(ex)
+      Raven.capture_exception(ex)
+    end
 
   private
 
@@ -197,8 +201,7 @@ class ApplicationController < ActionController::Base
 
   def auth_error(ex)
     sign_out
-    notify_honeybadger(ex)
-    Raven.capture_exception(ex)
+    track_exception(ex)
     redirect_to(sign_in_path, flash: {error: t('auth error')})
   end
 
@@ -214,15 +217,13 @@ class ApplicationController < ActionController::Base
 
   def api_error(ex)
     @error = ex
-    notify_honeybadger(ex)
-    Raven.capture_exception(ex)
+    track_exception(ex)
     render "pages/generic_error", layout: 'application', status: 502
   end
 
   def generic_error(ex)
     @error = ex
-    notify_honeybadger(ex) unless ex.is_a?(NotAVersionError)
-    Raven.capture_exception(ex) unless ex.is_a?(NotAVersionError)
+    track_exception(ex) unless ex.is_a?(NotAVersionError)
     render "pages/generic_error", layout: 'application', status: 500
   end
 

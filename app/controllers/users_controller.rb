@@ -219,17 +219,17 @@ class UsersController < ApplicationController
 
   def notifications
     @mobile = env["X_MOBILE_DEVICE"].present?
-    @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth}) rescue nil
-
-    if @notification_settings.nil?
+    begin
+      @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
+      @user = @notification_settings.user
+      @me = true
+      @selected = :notifications
+      self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+    rescue => ex
+      track_exception(ex)
       sign_out
-      return redirect_to(sign_in_path(redirect: notifications_path), flash: {error: t('users.profile.notifications token error')})
+      return redirect_to(sign_in_path(redirect: notification_settings_path), flash: {error: t('users.profile.notifications token error')})
     end
-
-    @user = @notification_settings.user
-    @me = true
-    @selected = :notifications
-    self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
   end
 
   def update_notifications
@@ -432,7 +432,7 @@ private
   def force_notification_token_or_login
     if params[:token]
       if current_user && current_user.notifications_token != params[:token]
-        redirect_to sign_out_path(redirect: notifications_path(token: params[:token])) and return
+        redirect_to sign_out_path(redirect: notification_settings_path) and return
       end
     else
       force_login
