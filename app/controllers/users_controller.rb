@@ -221,12 +221,12 @@ class UsersController < ApplicationController
     @mobile = env["X_MOBILE_DEVICE"].present?
     begin
       @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
-    @user = @notification_settings.user
-    @me = true
-    @selected = :notifications
-    self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+      @user = @notification_settings.user
+      @me = true
+      @selected = :notifications
+      self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
     rescue => ex
-      Raven.capture_exception(ex)
+      track_exception(ex)
       sign_out
       return redirect_to(sign_in_path(redirect: notifications_user_path), flash: {error: t('users.profile.notifications token error')})
     end
