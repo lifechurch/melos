@@ -1,10 +1,5 @@
 = form_for :user, url: sign_up_path do |f|
-  - if @user.errors.any?
-    .form_errors
-      =t("users.creation form errors")
-      %ul
-        - @user.errors[:base].each do |e|
-          %li= e
+  = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.creation form errors")}
   %p
     = f.label :email, t("users.email address")
     %br

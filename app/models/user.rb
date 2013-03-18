@@ -244,7 +244,7 @@ class User < YouVersion::Resource
   def update_password(opts)
     opts[:auth] = self.auth
     result = YvApi.post("users/update_password", opts) do |errors|
-      errors.each { |e| self.errors.add e }
+      errors.each { |e| self.errors.add :base, YvApi.api_error_i18n(e) }
       false
     end
   end

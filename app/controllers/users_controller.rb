@@ -250,13 +250,15 @@ class UsersController < ApplicationController
   def update_password
     @selected = :password
     if params[:user][:old_password] == current_auth.password
-      result = @user.update_password(params[:user].except(:old_password)) ? flash[:notice]=(t('users.password.updated')) : flash[:error]=(t('users.password.error'))
-      cookies.signed.permanent[:c] = params[:user][:password] if result
+      if @user.update_password(params[:user].except(:old_password))
+        flash[:notice]=t('users.password.updated')
+        cookies.signed.permanent[:c] = params[:user][:password]
+      end
     else
-      flash[:error]= t('users.password.old was invalid')
+      @user.errors.add :base, t('users.password.old was invalid')
     end
-    redirect_to(password_user_path(@user))
-    #render action: "password"
+    #redirect_to(password_user_path(@user))
+    render action: "password"
   end
 
   def resend_confirmation

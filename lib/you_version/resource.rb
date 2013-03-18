@@ -381,7 +381,7 @@ module YouVersion
       response_data = nil
       token = self.persist_token
       response_data = self.class.post(resource_path, attributes.merge(token: token, auth: self.auth)) do |errors|
-        new_errors = errors.map { |e| e["error"] }
+        new_errors = errors.map { |e| YvApi.api_error_i18n(e) }
         new_errors.each { |e| self.errors[:base] << e }
 
         if block_given?
