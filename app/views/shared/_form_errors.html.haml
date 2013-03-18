@@ -1,0 +1,6 @@
+- if errors.any?
+  .form_errors
+    =heading
+    %ul
+      - errors[:base].each do |e|
+        %li= e

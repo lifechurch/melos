@@ -10,6 +10,10 @@ class YvApi
     alias_method :httparty_post, :post
   end
 
+  def self.api_error_i18n(error)
+    I18n.t("api.".concat(error['key'].gsub(/[._]/, ' ')), default: error['error'])
+  end
+
   def self.get(path, opts={}, &block)
     auth_from_opts!(opts)
     resource_url = get_resource_url!(path, opts)
