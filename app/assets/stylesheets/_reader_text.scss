@@ -15,7 +15,8 @@
 .pi1 + .p,
 .ms + .p,
 .ms1 + .p,
-.ms2 + .p {
+.ms2 + .p,
+.r + .p {
   text-indent: 0;
   margin: 1em 0 0 0;
 }
@@ -60,7 +61,9 @@
 .m + .p,
 .q + .p,
 .q1 + .p,
+.q1 + p,
 .q2 + .p,
+.q + .p,
 .q + .s,
 .q + .s1,
 .q + .s2,
@@ -70,18 +73,22 @@
 .q1 + .s,
 .q1 + .s1,
 .q1 + .s2,
+.q1 + .m,
 .q1 + .ms,
 .q1 + .ms1,
 .q1 + .ms2,
+.q2 + .p,
 .q2 + .s,
 .q2 + .s1,
 .q2 + .s2,
+.q2 + .m,
 .q2 + .ms,
 .q2 + .ms1,
 .q2 + .ms2,
 .q3 + .s,
 .q3 + .s1,
 .q3 + .s2,
+.q3 + .m,
 .q3 + .ms,
 .q3 + .ms1,
 .q3 + .ms2,
@@ -102,16 +109,11 @@
 .ip + .io1,
 .ip + .io2,
 .ip + .io3,
-.pi + .s, .pi + .s1, .pi1 + .s, .pi1 + .s1 {
-  margin-top: 1em;
-}
-
-// give quotes a 1em border
-.p + .q,
-.p + .q1,
-.q + .p,
-.q1 + p,
-.q2 + .p {
+.pi + .s,
+.pi + .s1,
+.pi1 + .s,
+.pi1 + .s1,
+.mr + .s1 {
   margin-top: 1em;
 }
 
@@ -129,6 +131,10 @@
   line-height: $reader_line_height;
   margin: 1em 0 0 0;
   font-weight: bold;
+}
+
+.ms + .mr {
+  margin-top: -1em;
 }
 
 .iot, .imt, .imt1 {
@@ -447,4 +453,8 @@ span.fqa {
 //Certain headlines should be centered in NABRE
 .vid463 div.s2 {
   text-align:center;
+}
+
+.vid483 {
+	word-spacing: .4em;
 }
