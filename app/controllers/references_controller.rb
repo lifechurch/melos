@@ -9,7 +9,10 @@ class ReferencesController < ApplicationController
     # HACK (km): sometimes the url can have invalid utf-8 characters
     # /bible/46/rom.8.15.cunp-%E7%A5%EF
     # so strip those out before attempting to parse as a reference
-    params[:reference] = params[:reference].encode('UTF-16le', :invalid => :replace, :replace => '').encode('UTF-8')
+    if params[:reference]
+      params[:reference] = params[:reference].encode('UTF-16le', :invalid => :replace, :replace => '')
+      params[:reference] = params[:reference].encode('UTF-8')
+    end
   end
 
   def show
