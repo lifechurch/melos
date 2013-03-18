@@ -215,6 +215,12 @@ class Reference < YouVersion::Resource
     @is_chapter || verses.empty? || false
   end
 
+  #HACK: looking for "intro" is not a great way to check if a chapter is
+  #actually an intro, but it will do for now
+  def is_intro?
+    !self.usfm.match(/\.intro/i).nil?
+  end
+
   def valid?
     attributes.reference.human.is_a?(String) rescue false
   end
