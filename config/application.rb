@@ -100,6 +100,9 @@ module YouversionWeb
         mobile = !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] !~ /(\/app$|\/settings\/notifications|\/users\/\w+(-|_)*(?:-|_|\w+)*\/(?:update_)?notifications|^(\/.{2,5})?\/terms|privacy|^\/status$|^\/assets\/|^\/videos(\/)*[0-9]*(\/)*\w*)/
         # don't forwards to mDot if bible.com root
         mobile = false if rack_env["SERVER_NAME"] =~ /^(?:(?:.*\.)?bible\.com|^mobile\.dev\.youversion\.com|lvh\.me)/ && rack_env["PATH_INFO"] =~ /^\W*$/
+
+        # don't forward to mdot on mobile dev site
+        mobile = false if rack_env["SERVER_NAME"] == "mobile.dev.youversion.com"
         mobile
       end
 

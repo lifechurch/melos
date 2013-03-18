@@ -6,6 +6,8 @@ class PagesController < ApplicationController
     @intl_donate_link = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P87AYS9RLXTEE"
   end
 
+
+
   def l10n; end
   def api_timeout; end
   def about; end
