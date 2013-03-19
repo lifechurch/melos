@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
 
   unless Rails.application.config.consider_all_requests_local
-    rescue_from Exception, with: :generic_error
+    rescue_from StandardError, with: :generic_error
     rescue_from APIError, with: :api_error
     rescue_from AuthError, with: :auth_error
     rescue_from Timeout::Error, with: :timeout_error
