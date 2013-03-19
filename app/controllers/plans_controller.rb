@@ -16,11 +16,16 @@ class PlansController < ApplicationController
     # Redirect for url format that is shared from mobile devices.
     if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
 
-    @plan = Plan.find(params[:id])
-    if current_auth && current_user.subscribed_to?(@plan)
-       redirect_to user_subscription_path(current_user,id: @plan.to_param,day: params[:day], content: params[:content]) and return
-    else
-      self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
+    begin
+      @plan = Plan.find(params[:id])
+      if current_auth && current_user.subscribed_to?(@plan)
+         redirect_to user_subscription_path(current_user,id: @plan.to_param,day: params[:day], content: params[:content]) and return
+      else
+        self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
+      end
+    rescue YouVersion::API::RecordNotFound => ex
+      @suggestion = ex.suggestion
+      render "error_404"
     end
   end
 

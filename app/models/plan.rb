@@ -18,18 +18,20 @@ class Plan < YouVersion::Resource
     "reading-plans"
   end
 
+  def self.find(param, opts ={}, &block)
+    id, slug = id_and_slug_from_param param
+    raise YouVersion::API::RecordNotFound unless id.present?
 
-  def self.find(id, opts = {}, &block)
-    id = id_from_param id
     opts[:cache_for] ||= a_long_time
-
-    super(id, opts) do |errors|
+    plan = super(id, opts) do |errors|
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
-        return nil
+        raise YouVersion::API::RecordNotFound
       else
         raise YouVersion::ResourceError.new(errors)
       end
     end
+    raise YouVersion::API::RecordNotFound.new(plan) unless plan.slug == slug
+    return plan
   end
 
   def self.all(opts = {})
@@ -64,6 +66,16 @@ class Plan < YouVersion::Resource
         lib_plan.id
       when Plan
         param.id.to_i
+    end
+  end
+
+  def self.id_and_slug_from_param(param)
+    case param
+      when /\A(\d+)-(.+)/    # format 1234-plan-slug
+        return param.match(/\A(\d+)-(.+)/)[1].to_i, param.match(/\A(\d+)-(.+)/)[2]
+      when Plan
+        return param.id, param.slug
+      else return nil
     end
   end
 
