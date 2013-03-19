@@ -97,9 +97,11 @@ class ApplicationController < ActionController::Base
       client_settings.last_read = ref
     end
 
-    def track_exception( ex )
-      #notify_honeybadger(ex)
-      Raven.capture_exception(ex)
+    def track_exception(exception)
+      #notify_honeybadger(exception)
+      #Raven.capture_exception(exception)
+      evt = Raven::Event.capture_rack_exception(exception, request.env)
+      Raven.send(evt)
     end
 
   private
