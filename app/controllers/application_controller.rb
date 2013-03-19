@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
 
   unless Rails.application.config.consider_all_requests_local
-    rescue_from Exception, with: :generic_error
+    rescue_from StandardError, with: :generic_error
     rescue_from APIError, with: :api_error
     rescue_from AuthError, with: :auth_error
     rescue_from Timeout::Error, with: :timeout_error
@@ -97,9 +97,11 @@ class ApplicationController < ActionController::Base
       client_settings.last_read = ref
     end
 
-    def track_exception( ex )
-      #notify_honeybadger(ex)
-      Raven.capture_exception(ex)
+    def track_exception(exception)
+      #notify_honeybadger(exception)
+      #Raven.capture_exception(exception)
+      evt = Raven::Event.capture_rack_exception(exception, request.env)
+      Raven.send(evt)
     end
 
   private
