@@ -74,6 +74,10 @@ class Reference < YouVersion::Resource
       attributes.reference.human.to_s + ":#{verses.first.to_s}" + "-#{verses.last.to_s}"
   end
 
+  # In some legitimate cases, the reference is valid in some versions, but
+  # maybe not the current version. In such cases we want to display a "best
+  # visual representation" of a USFM value without knowing what the human book
+  # should be, because it technically doesn't exist.
   def safe_human
     begin
       human
