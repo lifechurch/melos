@@ -1,24 +1,20 @@
 class BookmarksController < ApplicationController
-  before_filter :set_nav
-  # before_filter :set_sidebar, only: [:index]
 
+
+  # action to display a users bookmarks /users/:user_id/bookmarks
   def index
-    @user = User.find(params[:user_id], auth: current_auth) # TODO : can't wait to port this to a Resource
+    @user = User.find(params[:user_id])
+
     if params[:label]
       @bookmarks = Bookmark.for_label(params[:label], {page: @page, user_id: @user.id})
     else
       @bookmarks = @user.bookmarks(page: @page)
     end
     @labels = Bookmark.labels_for_user(@user.id, page: @labels_page)if Bookmark.labels_for_user(@user.id)
-  end
-
-  def show_label
-    @user = User.find(params[:user_id], auth: current_auth) # TODO : can't wait to port this to a Resource
-    if @user && params[:label]  # API requires both, go figger
-      @bookmarks = Bookmark.for_label(params[:label], {user_id: @user.id})
-      render template: 'bookmarks/index'
-    else
-      redirect_to bookmarks_path
+    unless current_user_is?(@user)
+      @selected = :bookmarks
+      self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+      render "users/bookmarks", layout: "users"
     end
   end
 
@@ -86,16 +82,6 @@ class BookmarksController < ApplicationController
   end
 
   private
-
-  def set_nav
-    @nav = :bookmarks
-  end
-
-  # Set sidebar values for the Likes cell
-  def set_sidebar
-    @likes = Like.for_user(current_user.id) if current_user
-    @user_id = current_user.id if current_user
-  end
 
   # Setup required in order to show update since form will post
   # strings instead of the reference / version objects (better way?)

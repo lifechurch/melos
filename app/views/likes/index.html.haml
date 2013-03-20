@@ -1,20 +1,8 @@
-%article
-  - if request.path == user_likes_path(current_user)
-    %h1.float_left= t("likes.my likes")
-    %dl.combo_button.float_right
-      %dt View:
-      %dd
-        = link_to t("likes.all likes"), likes_path
-      %dd.highlighted
-        = link_to t("likes.my likes"), user_likes_path(current_user)
-  - else
-    %h1.float_left= t("likes.all likes")
-    %dl.combo_button.float_right
-      %dt View:
-      %dd.highlighted
-        = link_to t("likes.all likes"), likes_path
-      %dd
-        = link_to t("likes.my likes"), user_likes_path(current_user)
-    = render partial: "list", collection: @likes, locals: {display: :icon}
-    = render "shared/pagination", resource_list: @likes
+- content_for :user_main do
+  - if @likes.empty?
+    %p= t('no likes found', username: @user.username)
 
+  - else
+    %ul.big_list
+      = render partial: 'likes/likes', collection: @likes, locals: {display: :avatar}
+    = render partial: 'shared/pagination', locals: {resource_list: @likes}

@@ -19,12 +19,10 @@ YouversionWeb::Application.routes.draw do
 
   resources 'versions',   :only => [:index, :show]
   resources 'bookmarks',  :except => [:index]
-  resources 'likes',      :only => [:index]
 
   resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do
     get :authorize, on: :collection
   end
-
 
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
   match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
@@ -63,9 +61,10 @@ YouversionWeb::Application.routes.draw do
     get :devices, on: :member
     get :delete_account, on: :member
 
+    resources :bookmarks, only: [:index] #, shallow: true  <-- TODO - update bookmarks implementation to properly POST for users/:user_id/bookmarks generated route
+    resources :likes,     only: [:index] #, shallow: true  <-- TODO
+
     match 'notes' => 'users#notes', as: 'notes'
-    match 'bookmarks' => 'users#bookmarks', as: 'bookmarks'
-    match 'likes' => 'users#likes', as: 'likes'
     match 'following' => 'users#following', as: 'following'
     match 'followers' => 'users#followers', as: 'followers'
     match 'follow' => 'users#follow', as: 'follow'

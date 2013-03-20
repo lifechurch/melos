@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :sidebar_presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
+  helper_method :current_user_is?, :sidebar_presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_site
   before_filter :set_locale
@@ -110,6 +110,12 @@ class ApplicationController < ActionController::Base
       #Raven.capture_exception(exception)
       evt = Raven::Event.capture_rack_exception(exception, request.env)
       Raven.send(evt)
+    end
+
+    # Appropriate method to use to check if current_user is the passed in user
+    # Using current_auth avoids an extra API call to users#view for current user information
+    def current_user_is?( user )
+      current_auth && current_auth.username == user.username
     end
 
   private

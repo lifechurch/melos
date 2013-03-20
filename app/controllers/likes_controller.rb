@@ -1,17 +1,17 @@
 class LikesController < ApplicationController
-  before_filter :set_nav
+
+  respond_to :html
+  layout "layouts/users"
 
   def index
-    if params[:user_id]
-      @likes = Like.for_user(params[:user_id])
-    else
-      @likes = Like.for_user(current_user.id) #TODO: Remove User ID once the likes and notes are sync'd
-    end
+    @selected = :likes
+    @user     = User.find params[:user_id]
+    @likes    = @user.likes(page: params[:page])
+    self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+
+    #HACK - remove eventually by getting rid of the @me template var in layouts/users.
+    @me = current_user_is?(@user)
+    respond_with(@likes)
   end
 
-  private
-
-  def set_nav
-    @nav = :notes
-  end
 end

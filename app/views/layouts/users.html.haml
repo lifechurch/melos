@@ -1,24 +1,28 @@
 - @title = @user.name || @user.username if @user
 
+- unless content_for?(:sidebar)
+  - content_for :sidebar do
+    - if @me
+      = render "shared/widget_profile_settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
+    = render "shared/widget_user_badges" unless @user.badges.empty?
+
+
+
 - if @me
   - content_for :mobile_right_nav do
     %a.settings_btn{:href => settings_profile_path}
 
 - content_for :main do
-  - unless content_for?(:sidebar)
-    - content_for :sidebar do
-      - if @me
-        = render "shared/widget_profile_settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
-      = render "shared/widget_user_badges" unless @user.badges.empty?
 
-  = render partial: "user_info", locals: {user: @user, me: @me} unless @me
-  = render partial: "user_tabs", locals: {selected: @selected} unless @me
+  = render partial: "users/user_info", locals: {user: @user, me: @me} unless @me
+  = render partial: "users/user_tabs", locals: {selected: @selected} unless @me
 
   %article.profile
     - if @me
       - if @selected == :recent_activity || @selected == :notes || @selected == :friends || @selected == :badges
         - title = t("users.my #{@selected.to_s}")
         %h1{class: @selected == :friends || @selected == :notes ? "float_left" : ""}= title
+
       - else
         - title = t("users.edit #{@selected}")
         %h1= title
@@ -32,6 +36,7 @@
               = link_to t("users.edit notifications"), notification_settings_path
             %dd{class: ('highlighted' if @selected == :connections)}
               = link_to t("users.edit connections"), settings_connections_path
+
       -unless content_for? :title
         - content_for :title do
           = title

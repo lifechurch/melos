@@ -146,24 +146,6 @@ class UsersController < ApplicationController
     render 'notes/index', layout: "application" if @me
   end
 
-  def likes
-    @likes = @user.likes(page: params[:page])
-    @selected = :likes
-    @empty_message = t('no likes found', username: @user.name || @user.username )
-  end
-
-  def bookmarks
-    @selected = :bookmarks
-    @nav = :bookmarks if @me
-    if params[:label]
-      @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
-    else
-      @bookmarks = @user.bookmarks(page: params[:page])
-    end
-    @labels = Bookmark.labels_for_user(@user.id, page: @labels_page) if Bookmark.labels_for_user(@user.id)
-    render "bookmarks/index", layout: "application" if @me
-  end
-
   def badges
     @selected = :badges
     @badges = @user.badges

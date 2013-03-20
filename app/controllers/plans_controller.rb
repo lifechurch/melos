@@ -1,6 +1,5 @@
 class PlansController < ApplicationController
   before_filter :force_login, only: [:start, :update, :settings, :calendar, :mail_settings, :calendar]
-  before_filter :set_nav
   rescue_from InvalidReferenceError, with: :ref_not_found
   rescue_from YouVersion::API::RecordNotFound, with: :handle_404
 
@@ -64,10 +63,6 @@ class PlansController < ApplicationController
   end
 
   private
-
-  def set_nav
-    @nav = :plans
-  end
 
   def available_plan_language
     langs = [params[:lang],params[:locale],:en].compact
