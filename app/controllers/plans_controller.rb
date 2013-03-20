@@ -2,6 +2,7 @@ class PlansController < ApplicationController
   before_filter :force_login, only: [:start, :update, :settings, :calendar, :mail_settings, :calendar]
   before_filter :set_nav
   rescue_from InvalidReferenceError, with: :ref_not_found
+  rescue_from YouVersion::API::RecordNotFound, with: :handle_404
 
   # TODO ALL/APPROPRIATE: respond_to / respond_with where at all possible
   def index
@@ -16,16 +17,11 @@ class PlansController < ApplicationController
     # Redirect for url format that is shared from mobile devices.
     if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
 
-    begin
-      @plan = Plan.find(params[:id])
-      if current_auth && current_user.subscribed_to?(@plan)
-         redirect_to user_subscription_path(current_user,id: @plan.to_param,day: params[:day], content: params[:content]) and return
-      else
-        self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
-      end
-    rescue YouVersion::API::RecordNotFound => ex
-      @suggestion = ex.suggestion
-      render "error_404"
+    @plan = Plan.find(params[:id])
+    if current_auth && current_user.subscribed_to?(@plan)
+       redirect_to user_subscription_path(current_user,id: @plan.to_param,day: params[:day], content: params[:content]) and return
+    else
+      self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
     end
   end
 
@@ -42,6 +38,11 @@ class PlansController < ApplicationController
   def ref_not_found
     @sidebar = false
     render 'invalid_ref'
+  end
+
+  def handle_404(ex)
+    @suggestion = ex.suggestion
+    render "error_404"
   end
 
   # Actions needed to capture legacy links sent via email to our users. DO NOT remove
