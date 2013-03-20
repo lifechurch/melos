@@ -1,0 +1,10 @@
+- @main_nav = true
+- @sidebar = false
+- @title = 'Page not found'
+
+%article.error
+  %h2= t('app errors.404 message').html_safe
+  %hr
+  - if @suggestion
+    %p= t('app errors.404 plans explanation', plan_path: plan_path(@suggestion.to_param), title: @suggestion.title.rstrip).html_safe
+  %p= t('app errors.404 contact support', support_url: external_url(:support)).html_safe

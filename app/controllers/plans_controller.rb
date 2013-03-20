@@ -2,6 +2,7 @@ class PlansController < ApplicationController
   before_filter :force_login, only: [:start, :update, :settings, :calendar, :mail_settings, :calendar]
   before_filter :set_nav
   rescue_from InvalidReferenceError, with: :ref_not_found
+  rescue_from YouVersion::API::RecordNotFound, with: :handle_404
 
   # TODO ALL/APPROPRIATE: respond_to / respond_with where at all possible
   def index
@@ -37,6 +38,11 @@ class PlansController < ApplicationController
   def ref_not_found
     @sidebar = false
     render 'invalid_ref'
+  end
+
+  def handle_404(ex)
+    @suggestion = ex.suggestion
+    render "error_404"
   end
 
   # Actions needed to capture legacy links sent via email to our users. DO NOT remove

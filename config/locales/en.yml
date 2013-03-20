@@ -715,6 +715,8 @@ en:
         translation notes:                      "Footnotes"
         cross references:                       "Cross References"
   app errors:
+    404 plans explanation:                      "Are you looking for the <a href='%{plan_path}'>%{title}</a> plan?"
+    404 contact support:                        "Having trouble? Contact our <a href='%{support_url}'>support team</a>."
     404 explanation:                            "You might try starting again from the <a href='%{reader_path}'>home page</a>. Still having trouble? Contact our <a href='%{support_url}'>support team</a>."
     404 message:                                "We're sorry, the page you're looking for can't be found."
     408 message:                                "We're sorry, but our servers didn't respond in a timely fashion."

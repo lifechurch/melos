@@ -8,6 +8,13 @@ class NotAChapterError < InvalidReferenceError; end
 class BadSecondaryVersionError < NotAChapterError; end
 class NoSecondaryVersionError < NotAChapterError; end
 class NotABookError < InvalidReferenceError; end
-module YouVersion::API
-  class RecordNotFound < StandardError; end
+module YouVersion
+  module API
+    class RecordNotFound < StandardError
+      attr_accessor :suggestion
+      def initialize(suggestion=nil)
+        @suggestion = suggestion
+      end
+    end
+  end
 end
