@@ -1,5 +1,5 @@
-- title = @title || ""
-- title << " | " if @title.present?
+- title = ""
+- title << @title << " | " if @title.present?
 - title << (@subtitle || @site.title).to_s
 %title= title
 
