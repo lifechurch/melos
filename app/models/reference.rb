@@ -74,6 +74,25 @@ class Reference < YouVersion::Resource
       attributes.reference.human.to_s + ":#{verses.first.to_s}" + "-#{verses.last.to_s}"
   end
 
+  # In some legitimate cases, the reference is valid in some versions, but
+  # maybe not the current version. In such cases we want to display a "best
+  # visual representation" of a USFM value without knowing what the human book
+  # should be, because it technically doesn't exist.
+  def safe_human
+    begin
+      human
+    rescue NotAChapterError
+      usfms = to_usfm.split('+')
+      if usfms.length > 1
+        # these are reference ranges which should be guaranteed to have verses
+        # and be consecutive
+        "#{usfms[0]}-#{usfms[-1].split('.')[2]}"
+      else
+        usfms[0]
+      end
+    end
+  end
+
   def to_param
     _ref = "#{to_usfm}" if is_chapter? || single_verse?
     _ref ||= "#{chapter_usfm}.#{verses.first}-#{verses.last}"
