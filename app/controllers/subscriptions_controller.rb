@@ -6,8 +6,9 @@ class SubscriptionsController < ApplicationController
   rescue_from NotAChapterError, with: :ref_not_found
 
   def index
-    # Avoid extra api call for user here
-    @user = (params[:user_id].to_s == current_user.try(:username).to_s) ? current_user : User.find(params[:user_id])
+    return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
+
+    @user = current_user
     @subscriptions = @user.subscriptions
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
