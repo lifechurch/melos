@@ -59,10 +59,10 @@
               = check_box_tag(:completion, nil, ref.completed?, {id:"#{index}_box",onChange: "this.form.submit()"} )
 
             - if content_page == index
-              %span= ref.ref.human
+              %span= ref.ref.safe_human
             - else
               %a{href: (content_page == index) ? nil : user_subscription_path(current_user, subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
-                = ref.ref.human
+                = ref.ref.safe_human
 
 - if reading.devotional
   .widget
