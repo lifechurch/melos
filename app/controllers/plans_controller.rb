@@ -36,6 +36,7 @@ class PlansController < ApplicationController
   end
 
   def ref_not_found
+    @title = plan.name
     @presenter = Presenter::Subscription.new( @plan , params, self)
     self.sidebar_presenter = Presenter::Sidebar::PlanSample.new(@plan,params,self)
     render 'invalid_ref'

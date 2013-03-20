@@ -3,6 +3,7 @@ class SubscriptionsController < ApplicationController
   before_filter :force_login
   before_filter :find_subscription, only: [:show,:destroy,:edit,:update,:calendar]
   respond_to :html
+  rescue_from NotAChapterError, with: :ref_not_found
 
   def index
     # Avoid extra api call for user here
@@ -140,5 +141,12 @@ class SubscriptionsController < ApplicationController
     # find with current_user to avoid extra api calls
     Subscription.find(plan_id, current_user, auth: current_auth)
   end
+
+  def ref_not_found
+    @title = @subscription.name
+    @presenter              = Presenter::Subscription.new( @subscription , params, self)
+    self.sidebar_presenter  = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    render 'plans/invalid_ref'
+   end
 
 end
