@@ -11,6 +11,7 @@ class Note < YouVersion::Resource
   attribute :content_html
   attribute :published
   attribute :user_status
+  attribute :system_status
   attribute :share_connections
   attribute :version
   attribute :version_id
@@ -116,6 +117,10 @@ class Note < YouVersion::Resource
       self.content_html = self.content.try :html
       self.content = self.content.try :text
     end
+  end
+
+  def can_share?
+    return (self.system_status == "new" || self.system_status == "approved") && self.user_status == "public"
   end
 
 #   def update(fields)
