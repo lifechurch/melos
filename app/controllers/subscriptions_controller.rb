@@ -145,8 +145,8 @@ class SubscriptionsController < ApplicationController
 
   def ref_not_found
     @title = @subscription.name
-    @presenter              = Presenter::Subscription.new( @subscription , params, self)
-    self.sidebar_presenter  = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    @presenter = Presenter::Subscription.new( @subscription , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
     render 'plans/invalid_ref'
    end
 
