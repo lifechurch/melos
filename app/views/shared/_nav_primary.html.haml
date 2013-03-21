@@ -45,12 +45,6 @@
         %a.tooltip{:href => current_auth ? user_notes_path(current_auth.username) : notes_path, style: "display: none;"}
           %span=t("notes title")
 
-      %li#nav_primary_friends
-        %a.icon{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends")}
-          %span &nbsp;
-        %a.tooltip{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends"), style: "display: none;"}
-          %span=t("friends")
-
       %li#nav_primary_live
         %a.icon{:href => "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"}
           %span &nbsp;

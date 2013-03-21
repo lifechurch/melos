@@ -19,7 +19,6 @@ class Note < YouVersion::Resource
   attribute :highlight_color
 
   belongs_to_remote :user
-  has_many_remote :likes
 
   def self.for_reference(ref, params = {})
     params.merge!({references: ref.to_usfm, query: '*'})

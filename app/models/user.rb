@@ -321,10 +321,6 @@ class User < YouVersion::Resource
     NotificationSettings.find(auth: auth).token
   end
 
-  def likes(opts={})
-    Like.for_user(id, opts)
-  end
-
   def find_badge(slug, opts = {})
     unless badge = self.badges.detect { |b| b.slug == slug }
       raise YouVersion::API::RecordNotFound
@@ -358,13 +354,11 @@ class User < YouVersion::Resource
 
       unless response.empty?
         activities = response.community.map do |a|
-          a.type = "user" if a.type == "follow"
           a.type = "object" if a.type == "reading_plan_completed"
           a.type = "object" if a.type == "reading_plan_subscription"
-          class_name = a.type.camelize.constantize
-
-          a.data.map do |b|
-            class_name.new(b) unless a.type == "object"
+          if a.type != "like" && a.type != "object"
+            class_name = a.type.camelize.constantize
+            a.data.map { |b| class_name.new(b) }
           end
         end
         @recent_activity = activities.flatten
@@ -413,100 +407,6 @@ class User < YouVersion::Resource
     connections["twitter"] = TwitterConnection.new(data: self.apps.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.twitter
     connections["facebook"] = FacebookConnection.new(data: self.apps.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.facebook
     connections
-  end
-
-  def follow(opts = {})
-    opts = {id: self.id, auth: self.auth}.merge(opts)
-    response = YvApi.post("users/follow", opts) do |errors|
-      if errors.length == 1 && [/^You are already following this user$/].detect { |r| r.match(errors.first["error"]) }
-        return true #if user tried to follow and already did, no worries, operation successful
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end
-
-    return true
-  end
-
-
-  def unfollow(opts = {})
-    opts = {id: self.id, auth: self.auth}.merge(opts)
-    response = YvApi.post("users/unfollow", opts) do |errors|
-      if errors.length == 1 && [/^You are not following this user$/].detect { |r| r.match(errors.first["error"]) }
-        return true #if user tried to unfollow and wasn't following, no worries, operation successful
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end
-    return true
-  end
-
-  def following(opts = {})
-    opts[:page] ||= 1
-    response = YvApi.get("users/following", opts.merge({id: self.id})) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        new_errors = errors.map { |e| e["error"] }
-        self.errors[:base] << errors
-        return false
-      end
-    end
-
-    unless response === false
-      followings = ResourceList.new
-      followings.total = response.total
-      response.following.each { |u| followings << User.new(u) }
-      @following_id_list = followings.map { |u| u.username }
-      followings
-    end
-  end
-
-  def following_user_id_list
-    @following_id_list ||= all_following
-  end
-
-  def all_following
-    response = YvApi.get("users/all_following", id: self.id) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end.following
-  end
-
-  def followers(opts = {})
-    opts[:page] ||= 1
-    response = YvApi.get("users/followers", opts.merge({id: self.id})) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        new_errors = errors.map { |e| e["error"] }
-        self.errors[:base] << errors
-        return false
-      end
-    end
-    unless response === false
-      fl = ResourceList.new
-      fl.total = response.total
-      response.followers.each { |u| fl << User.new(u) }
-      fl
-    end
-  end
-
-  def follower_user_id_list
-    @follower_id_list ||= all_followers
-  end
-
-  def all_followers
-    response = YvApi.get("users/all_followers", id: self.id) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        raise YouVersion::ResourceError.new(errors)
-      end
-    end.followers
   end
 
   def subscriptions(opts = {})

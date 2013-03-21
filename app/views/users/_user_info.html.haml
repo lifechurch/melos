@@ -16,14 +16,16 @@
         %li.icon_small_about= user.bio
 
     %div
-      - if me
-        %form{action: settings_profile_path}
-          %button.action_button_blue= t("users.edit profile")
-      - else
-        %div.follow_btn.clearfix{style: "text-align: right;"}
-          - if current_user && current_user.following_user_id_list.include?(user.id.to_i)
-            %form{action: user_unfollow_path(user.username), method: "post"}
-              %button.action_button_red{title: "#{t('users.unfollow')} #{user.name || user.username}"}= t('users.unfollow')
-          - else
-            %form{action: user_follow_path(user.username), method: "post"}
-              %button.action_button_green{title: "#{t('users.follow')} #{user.name || user.username}"}= t('users.follow')
+      - if @me
+        %form{action: edit_user_path(user)}
+          %button.float_right= t("users.profile.edit")
+      %h1= user.name || user.username
+      %ul
+        - if user.name
+          %li.icon_small_user= user.username
+        - if user.location
+          %li.icon_small_location= user.location
+        - if user.website
+          %li.icon_small_link= link_to user.website_human, user.website_url
+        - if user.bio
+          %li.icon_small_about= user.bio

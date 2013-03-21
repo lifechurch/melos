@@ -76,13 +76,6 @@ class NotesController < ApplicationController
     end
   end
 
-  def like
-    Like.update(params[:id], current_auth)
-
-    @note = Note.find(params[:id], current_auth)
-    render action: "show"
-  end
-
   private
 
   def set_nav
@@ -91,7 +84,6 @@ class NotesController < ApplicationController
 
   # Set sidebar values for the Likes cell
   def set_sidebar
-    @likes = Like.for_user(current_user.id) if current_user
     @user_id = current_user.id if current_user
   end
 

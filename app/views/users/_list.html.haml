@@ -7,30 +7,8 @@
         - if u.user_avatar_url
           .float_left.gutter_right_half
             %img{src: u.user_avatar_url.px_48x48}
-        .float_left
-          - if current_user && current_user.following_user_id_list.include?(u.id.to_i)
-            %form{action: user_unfollow_path(u.username), method: "post"}
-              %button.float_right{title: t('users.unfollow user', user: u.name || u.username)}= t('users.unfollow')
-          - else
-            %form{action: user_follow_path(u.username), method: "post"}
-              %button.float_right{title: t('users.follow user', user: u.name || u.username)}= t('users.follow')
-
-          %p.gutter_top_half
-            = link_to u.name || u.username, u
-            - if u.name
-              %br
-              %b= u.username
-
-            - if current_user && current_user.follower_user_id_list.include?(u.id.to_i)
-              %p.mute= t('user follows', user: u.username)
-            - else
-              %p.mute= t('user does not follow', user: u.username)
-
-      /
-        %div.float_right{style: "text-align: right;"}
-          - if current_user && current_user.following_user_id_list.include?(u.id.to_i)
-            %form{action: user_unfollow_path(u.username), method: "post"}
-              %button.action_button_red{title: t('users.unfollow user', user: u.name || u.username)}= t('users.unfollow')
-          - else
-            %form{action: user_follow_path(u.username), method: "post"}
-              %button{title: t('users.follow user', user: u.name || u.username)}= t('users.follow')
+        %p.gutter_top_half.float_left
+          = link_to u.name || u.username, u
+          - if u.name
+            %br
+            %b= u.username

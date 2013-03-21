@@ -74,13 +74,6 @@ class BookmarksController < ApplicationController
     end
   end
 
-  def like
-    Like.update(params[:id], current_auth)
-
-    @note = Note.find(params[:id], current_auth)
-    render action: "show"
-  end
-
   private
 
   # Setup required in order to show update since form will post
