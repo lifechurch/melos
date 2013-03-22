@@ -546,8 +546,8 @@ en:
     loading sidebar content:                    "Loading sidebar content..."
   licenses:
     auth:
-      login notice:                             "To validate your purchased content, please login to your YouVersion account below or <a href='/licenses/register'>%{signup}</a>."
-      signup notice:                            "To validate your purchased content, register a free YouVersion account below or <a href='/licenses/authenticate'>%{login}</a> if you already have an account."
+      login notice:                             "To validate your purchased content, please login to your YouVersion account below or <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice:                            "To validate your purchased content, register a free YouVersion account below or <a href='/sign-in?source=licenses'>%{login}</a> if you already have an account."
       signup link text:                         "sign up for a free account"
       login link text:                          "sign in"
   registration:

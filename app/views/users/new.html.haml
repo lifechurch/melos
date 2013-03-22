@@ -4,19 +4,36 @@
 - content_for :mobile_right_nav do
   = submit_tag t("users.register"),{:class => "submit_btn"}
 
+
+- content_for :sidebar do
+  =render partial: "/sidebars/users/new"
+
 :ruby
-  @blurb = if params[:source]
+  @blurb = if params[:source] && params[:source] != "licenses"
     t("registration.#{params[:source]} blurb")
   elsif params[:redirect] && params[:redirect].match(/reading\-plans/)
     t("registration.plan blurb")
   end
 
+  licensing_flow = params[:source] && params[:source] == "licenses"
+  if licensing_flow
+    @main_nav = false
+    content_for :header do
+      render partial: "shared/header/basic"
+    end
+  end
+
 %article
   %h1= t("users.sign up for an account")
-  -if @blurb
-    %hr
-    %p= @blurb
-    %p= link_to t("have an account"), sign_in_path, class: "action_button_green"
-    %hr
-  %p= link_to t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
+
+  -if licensing_flow
+    %p#license-notice= t("licenses.auth.signup notice", login:t("licenses.auth.login link text")).html_safe
+
+  - else # show blurb and facebook registration only if we're not in licensing flow.
+    -if @blurb
+      %hr
+      %p= @blurb
+      %hr
+      %p= link_to t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
+
   = render 'create_form'

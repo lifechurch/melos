@@ -26,12 +26,22 @@
       }
 
   %body
-    #wrapper
-      #header_outer
-        = render '/shared/header'
+    #wrapper{:class => @fixed_width == true ? 'fixed_width' : ''}
+
+      - if content_for?(:header)
+        = yield :header
+      - else
+        = render '/shared/header/default'
+
       - flash.each do |key, msg|
         %div{class: "flash_#{key}"}= msg
-      #container{:class => @sidebar == false ? 'no_sidebar' : ''}
+
+      :ruby
+        container_classes = []
+        container_classes << "no_sidebar" if @sidebar == false
+        container_classes << "no_primary_nav" if @main_nav == false
+
+      #container{class: container_classes.join(" ")}
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
           = render partial: '/shared/nav_primary' unless @main_nav == false
           = content_for?(:main) ? yield(:main) : yield

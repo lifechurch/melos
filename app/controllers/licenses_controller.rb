@@ -83,7 +83,7 @@ private
        store_params if params_present #store cookies only if params are in the url.
        unless current_auth
          set_redirect("/licenses/authorize")
-         redirect_to("/licenses/authenticate") and return
+         redirect_to( sign_in_path(source:"licenses")) and return
        end
     else
       render text: "Don't have required params or cookies." and return

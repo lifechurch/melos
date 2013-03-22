@@ -5,18 +5,20 @@
   %a.save_btn{:href => 'javascript:void(0);', onclick: "$('input[type=\"submit\"]').click();"}
     = t('sign in')
 
+- content_for :sidebar do
+  =render partial: "/sidebars/sessions/new"
+
+:ruby
+  licensing_flow = params[:source] && params[:source] == "licenses"
+  if licensing_flow
+    @main_nav = false
+    content_for :header do
+      render partial: "shared/header/basic"
+    end
+  end
+
 %article
   %h1= t("sign in to youversion")
-  = form_tag sign_in_path do
-    %p
-      = label_tag :username, t("username or email prompt")
-      %br
-      = text_field_tag :username, params[:username], {class: "autofocus", type: 'text', autocorrect: "off", autocapitalize: "off"}
-    %p
-      = label_tag :password, t("password prompt")
-      %br
-      = password_field_tag :password, params[:password]
-      %br
-      %span.small= link_to t('users.forgot password'), forgot_password_path
-    %p
-      = submit_tag t("sign in")
+  - if licensing_flow
+    %p#license-notice= t("licenses.auth.login notice", signup:t("licenses.auth.signup link text")).html_safe
+  = render partial: "sessions/signin"

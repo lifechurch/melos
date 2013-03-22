@@ -1,3 +1,11 @@
-- content_for :sidebar do
-  = render "shared/widget_sign_up"
+= render "shared/widget_sign_up"
+- if params[:source] == "licenses"
+  .widget.account_benefits
+    %header
+      %span
+        =t("registration.benefits title")
+    %ul.widget_menu
+      %li
+        %p= t("registration.benefits blurb")
+- else
   = render '/shared/widget_ad_bible_app'

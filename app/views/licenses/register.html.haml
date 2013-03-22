@@ -1,7 +1,0 @@
-- content_for :sidebar do
-  =render partial: "/sidebars/licenses/register"
-
-%article
-  %h1= t("users.sign up for an account")
-  %p#license-notice= t("licenses.auth.signup notice", login:t("licenses.auth.login link text")).html_safe
-  = render partial: 'users/create_form'
