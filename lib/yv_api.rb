@@ -293,10 +293,7 @@ class YvApi
       end
     end
 
-    # creating a resource? Just return success
-    # -- Won't work because we need to 'show' the newly created record and we would not have the ID yet. Commented -- Caedmon
-    # return true if response["response"]["code"] == 201
-    return true if (response["response"]["code"] ==  201 and response["response"]["data"] == "Created")
+    return true if response["response"]["code"] ==  201 && response["response"]["data"] == "Created"
 
     return true if response["response"]["code"] == 200 && response["response"]["data"] == "OK"
 
@@ -315,6 +312,6 @@ class YvApi
       when Fixnum
         # only for users/user_id
         Hashie::Mash.new({user_id: response["response"]["data"] })
-      end
+    end
   end
 end

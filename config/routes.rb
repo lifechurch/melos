@@ -23,6 +23,7 @@ YouversionWeb::Application.routes.draw do
   resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do
     get :authorize, on: :collection
     get :authenticate, on: :collection
+    get :register, on: :collection
   end
 
 

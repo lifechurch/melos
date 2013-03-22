@@ -74,16 +74,24 @@ class User < YouVersion::Resource
 
   class << self
     def register(opts = {})
-      opts = {email: "", username: "", password: "", verified: false, agree: false}.merge!(opts)
-      opts[:token] = Digest::MD5.hexdigest "#{opts[:username]}.Yv6-#{opts[:password]}"
+      opts = {email: "", username: "", password: "", verified: false, agree: false}.merge!(opts.symbolize_keys)
+      opts[:token] = YouVersion::Resource.persist_token(opts[:username],opts[:password])
       opts[:agree] = true if opts[:agree]
       opts[:secure] = true
       opts["notification_settings[newsletter][email]"] = true
-      errors = nil
-      response = YvApi.post('users/create', opts) do |ee|
-        errors = ee
+
+      errors   = nil
+      response = YvApi.post('users/create', opts) {|e| errors = e}
+
+      user = if errors
+        u = self.new(opts)
+        u.add_errors(errors)
+        u
+      else
+        self.new(response)
       end
-      return errors || true
+
+      return user
     end
 
     def id_key_for_version

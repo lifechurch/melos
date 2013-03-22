@@ -1,5 +1,6 @@
-=render partial: "/sidebars/sessions/new"
+=render partial: "/sidebars/licenses/auth"
 
 %article
   %h1= t("sign in to youversion")
+  %p#license-notice= t("licenses.auth.login notice", signup:t("licenses.auth.signup link text")).html_safe
   = render partial: "sessions/signin"

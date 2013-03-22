@@ -4,6 +4,13 @@
 - content_for :mobile_right_nav do
   = submit_tag t("users.register"),{:class => "submit_btn"}
 
+:ruby
+  @blurb = if params[:source]
+    t("registration.#{params[:source]} blurb")
+  elsif params[:redirect] && params[:redirect].match(/reading\-plans/)
+    t("registration.plan blurb")
+  end
+
 %article
   %h1= t("users.sign up for an account")
   -if @blurb
