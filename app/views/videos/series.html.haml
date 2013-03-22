@@ -3,6 +3,9 @@
 - @sidebar = false
 - @title = strip_tags(@video.title)
 
+- content_for :title do
+  = t(@video.title)
+
 %article{ style: "background-image: url('#{@video.hero_image.url}')"}
   #title-bar
     %h1= @video.title.html_safe

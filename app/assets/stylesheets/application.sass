@@ -43,7 +43,7 @@
     display: none !important
 
 @media only screen and (max-width: 768px)
-
+  
   // ----------Style adjustments for viewports 768px and under go here
   #main article p
     font-size: 15px
@@ -54,7 +54,7 @@
   h4
     font-size: 17px
 
-  article > h1
+  article > h1, article .inner > h1
     display: none
 
   #container
@@ -729,6 +729,83 @@
     .float_left,
     .float_right
       float: none !important
+
+  // ----------------- Video pages
+  #videos-index
+
+  ul.videos
+
+    li
+      width: auto
+      padding: 1% !important
+      margin: 0px 0px 30px !important
+      background: none !important
+
+      img
+        display:block
+        width: 100%
+
+      .info
+        overflow: auto
+        position: relative
+        color: #666
+        padding: 4px 10px 0
+
+      .publisher
+        padding-left: 22px
+        background: image-url("icon_small_about.png") no-repeat 0px center
+        color: #777
+        display: block
+
+  #video-series
+    article
+      background: none !important
+      
+      #title-bar
+      h1,
+      .share,
+      .share_panel
+        display: none
+
+      .publisher
+        a
+          text-decoration: none
+          color: #aaa
+          margin-bottom: 10px
+          display: block
+
+        a:hover
+          color: $blue
+
+    ul#episodes
+      li
+        background: none !important
+        padding-left: 0px !important
+        
+        a
+          img
+            display: block
+            width: 100%
+            padding-bottom: 10px
+
+            .info
+              h3
+                margin-bottom: 10px
+
+  #video-show
+    #title-bar
+      h1
+        display: none
+
+    #player_wrapper
+      width: 100% !important
+      height: 200px !important
+      margin-bottom: 20px
+
+    .inner
+      #other
+        a
+          margin-bottom: 30px
 
   // ----------------- Single verse page
 
