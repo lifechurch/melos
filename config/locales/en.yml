@@ -542,6 +542,7 @@ en:
     sidebar notice:                             "You are viewing a reading plan."
     completed notice:                           "Congratulations! You have completed your reading plan."
     exit:                                       "Exit"
+    loading sidebar content:                    "Loading sidebar content..."
   registration:
     placeholder:
       email:                                    "Enter your email address"
