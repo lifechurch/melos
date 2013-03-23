@@ -7,8 +7,8 @@ br + textarea
 // `Flash Messages
 //----------------------------------------------------------------------------------------------------
 
-.flash_error,
-.flash_notice
+#flash_error,
+#flash_notice
   @extend .clearfix
   +round
   +box-shadow(#fff 0 1px 0 0)
@@ -28,12 +28,19 @@ br + textarea
   cursor: pointer
   +box-sizing(border-box)
 
-.flash_error, .form_errors
+#flash_error, .form_errors
   background:
     color: #f4cccc
     image: image-url("flash_error.png")
   border-color: #e89494
   color: #aa0303
+
+#flash_notice
+  background:
+    color: #d9e4c9
+    image: image-url("flash_notice.png")
+  border-color: #91b164
+  color: #4b7518
 
 .form_errors
   background:
@@ -54,14 +61,13 @@ br + textarea
     padding: 0
     li
       background-image: none !important
-      padding-left: 0 !important
+      padding-left: 10px !important
 
-.flash_notice
-  background:
-    color: #d9e4c9
-    image: image-url("flash_notice.png")
-  border-color: #91b164
-  color: #4b7518
+#flash_error.no_primary_nav,
+#flash_notice.no_primary_nav
+  width: 980px
+  margin-left: 0
+
 
 // `Radio buttons & Checkboxes
 //----------------------------------------------------------------------------------------------------

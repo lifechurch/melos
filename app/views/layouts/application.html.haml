@@ -41,6 +41,9 @@
         container_classes << "no_sidebar" if @sidebar == false
         container_classes << "no_primary_nav" if @main_nav == false
 
+      - flash.each do |key, msg|
+        %div{class: container_classes.join(" "), id: "flash_#{key}"}= msg
+
       #container{class: container_classes.join(" ")}
         #main{:role => "main", :class => @is_reader == true ? 'main_reader' : ''}
           = render partial: '/shared/nav_primary' unless @main_nav == false

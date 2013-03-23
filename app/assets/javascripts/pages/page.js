@@ -481,7 +481,7 @@ Page.prototype = {
   },
 
   initFlash : function() {
-    var divs = $(".flash_error, .flash_notice");
+    var divs = $("#flash_error, #flash_notice");
     divs.click(function() {
       $(this).slideUp(200);
     });
