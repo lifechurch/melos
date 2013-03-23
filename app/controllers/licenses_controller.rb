@@ -15,19 +15,6 @@ class LicensesController < ApplicationController
     end
   end
 
-  # GET
-  # endpoint for user login
-  def authenticate
-
-  end
-
-  # GET
-  # endpoint for user registration
-  def register
-    @user = User.new
-    render layout: "application" #neccessary to use app layout instead of users layout.
-  end
-
 private
 
   # Collect the required parameters + values for the authorize request
