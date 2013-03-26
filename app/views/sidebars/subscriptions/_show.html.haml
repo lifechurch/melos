@@ -11,7 +11,7 @@
   .widget.widget-notice.widget_last_fixed{style: "width:268px;"}
     %p
       = t("plans.sidebar notice")
-      %span.exit= link_to("Exit", shelf_user_subscription_path(current_user, subscription, content: content_page, day: day ), method: :post)
+      %span.exit= link_to(t("plans.exit"), shelf_user_subscription_path(current_user, subscription, content: content_page, day: day ), method: :post)
 
   .widget{style: "margin-top:54px;"}
     %header
