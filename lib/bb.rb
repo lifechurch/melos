@@ -6,8 +6,11 @@ module Bb
       @app = app
     end
     def call(env)
-      if env["PATH_INFO"] =~ %r{^(/bb/test|/health)}
-        process_request(env)
+      path = env["PATH_INFO"]
+      if path =~ %r{^(/bb/test|/health)}
+        process_test_request(env)
+      elsif path =~ %r{^(/bb/latest)}
+        process_latest_request(env)
       else
         dup._call(env)
       end
@@ -21,7 +24,17 @@ module Bb
     end
 
     private
-    def process_request(env)
+
+    # Support /bb/latest.json requests
+    def process_latest_request(env)
+      req = Rack::Request.new(env)
+      [ 200, {'Content-Type' => 'application/json'},
+        ['{"default":{"version":"3.5.2","required":"false","download":"http://m.youversion.com/download?blackberry=true"},"480x360":{"version":"3.5.2","required":"false","download":"http://m.youversion.com/download?blackberry=true"},"480x320":{"version":"3.5.2","required":"false","download":"http://m.youversion.com/download?blackberry=true"},"360x480":{"version":"3.5.2","required":"false","download":"http://m.youversion.com/download?blackberry=true"},"320x240":{"version":"3.5.2","required":"false","download":"http://m.youversion.com/download?blackberry=true"},"240x320":{"version":"3.5.2","required":"false","download":"http://m.youversion.com/download?blackberry=true"},"240x260":{"version":"3.5.2","required":"false","download":"http://m.youversion.com/download?blackberry=true"}}']
+      ]
+    end
+
+    # Support /bb/test.json requests
+    def process_test_request(env)
        req = Rack::Request.new(env)
        params = req.params
        # return expected 'success' response
