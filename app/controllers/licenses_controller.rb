@@ -6,12 +6,16 @@ class LicensesController < ApplicationController
   # Authorize get request as defined in our license initiation documentation
   # http://developers.youversion.com/api/docs/3.0/sections/licenses/initiation.html
   def authorize
-    @success = License.authorize(params_for_request.merge(user_id: current_auth.user_id)).to_s
+    request_params = params_for_request
+    @success, @error = License.authorize(request_params.merge(user_id: current_auth.user_id))
+    @vendor = Vendor.find(request_params[:vendor_id])
+    # If this is a duplicate transaction (customer clicked on the link a second+ time)
+    # then don't show an error, just show a confirmation page and link to content
+    @success = true if @error.message.include? "licenses.vendor_transaction_id.duplicate"
+
     if @success
       cleanup_params
-      render text: @success
-    else
-
+      clear_redirect
     end
   end
 
@@ -69,8 +73,8 @@ private
     if params_present || required_cookies_present?
        store_params if params_present #store cookies only if params are in the url.
        unless current_auth
-         set_redirect("/licenses/authorize")
-         redirect_to( sign_in_path(source:"licenses")) and return
+         set_redirect(authorize_licenses_path)
+         redirect_to(sign_in_path(source:"licenses")) and return
        end
     else
       render text: "Don't have required params or cookies." and return

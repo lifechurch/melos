@@ -1,5 +1,3 @@
-require 'cgi'
-
 class License < YouVersion::Resource
 
   INTERNAL_SECRET_KEY = "vqc1U3nsjZzlhJqCG0aL5jmmzZ1gRMYWx42l66UbysAiqN1shAZ77DVAJloMPPo"
@@ -20,11 +18,16 @@ class License < YouVersion::Resource
     }
 
     internal_signature = Licenses::Request.sign( params , INTERNAL_SECRET_KEY )
+    errors  = nil
+    success = false
 
-    response = YvApi.post("licenses/authorize", params.merge(internal_signature: internal_signature)) do |errors|
-      raise YouVersion::ResourceError.new(errors)
+    response = YvApi.post("licenses/authorize", params.merge(internal_signature: internal_signature)) do |errs|
+      YouVersion::ResourceError.new(errs)
     end
-    return response
+
+    success = (response == true)
+    errors  = response if success == false
+    return success, errors
   end
 
 end

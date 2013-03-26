@@ -49,7 +49,13 @@ class UsersController < ApplicationController
       cookies.signed[:a] = @user.id
       cookies.signed[:f] = params[:user][:username]
       cookies.signed[:g] = params[:user][:password]
-      redirect_to confirm_email_path
+
+      if next_redirect?(authorize_licenses_path)
+        redirect_to(authorize_licenses_path(confirm: true))
+      else
+        redirect_to confirm_email_path
+      end
+
     else
       render action: "new", layout: "application"
     end

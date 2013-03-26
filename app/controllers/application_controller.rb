@@ -215,6 +215,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent.signed[:b] = nil
     cookies.permanent.signed[:c] = nil
     cookies.permanent.signed[:f] = nil
+    cookies.signed[:a]           = nil
     set_current_avatar(nil)
   end
 
@@ -269,6 +270,11 @@ class ApplicationController < ActionController::Base
   def clear_redirect
     cookies[:auth_redirect] = nil
   end
+
+  def next_redirect?( to )
+    redirect_path == to
+  end
+
 
   def follow_redirect(opts = {})
     cookie_path = cookies[:auth_redirect].to_s == '' ? nil : cookies[:auth_redirect] #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
