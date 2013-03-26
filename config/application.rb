@@ -78,7 +78,7 @@ module YouversionWeb
 
         # reform url for mDot
         case new_path
-        when /^\/bible\/(?:(\d+)\/)?(\w{3})\.?([^\.]+)(?:(?:\.([,\w-]+))?)\.(\w+)/
+        when /^\/bible\/(?:(\d+)\/)?(\w{3})\.?([^\.]+)(?:(?:\.([,\w-]+))?)\.([\w-]+)/
           new_path = nil
           book = YvApi::get_osis_book($2)
           version = YvApi::get_osis_version($1) || $5 || 'kjv'
