@@ -24,13 +24,9 @@ module YouversionWeb
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 
-      #high frequency BB traffic
-      r301 %r{^/(bb|js)/(.+)}, 'http://bb-static.youversion.com/$1/$2'
-
       # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
       r301 %r{^(/.{2,5})?(/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
-      #r301 %r{^(/.{2,5})?(/app$|/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
 
       # engagement site (pre mobile redirect)
       r301 %r{^(/.{2,5})?(/now$)}, 'http://now.youversion.com'
@@ -38,9 +34,6 @@ module YouversionWeb
       # lifekids redirect
       r301 %r{^(/.{2,5})?(/lifekids$)}, '$1/reading-plans?category=family'
 
-      # r301 /.*/,  Proc.new {|path, rack_env| "http://#{rack_env['SERVER_NAME'].gsub(/fr\./i, '') }/fr#{path}" },
-      #   if: Proc.new {|rack_env| rack_env['SERVER_NAME'] =~ /fr\./i}
-      #
       #   Mobile
       mobile_rewrite = lambda do |path, rack_env|
         new_path = path.to_s
