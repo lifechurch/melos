@@ -42,5 +42,22 @@
         %p
           %b Memory Usage:
           %span.mute= number_to_human_size(`ps -o rss= -p #{Process.pid}`.to_i * 1024)
+    %section
+      %h3 ObjectSpace
+      .content
+        %p
+          %b Total objects:
+          =  ObjectSpace.each_object(Class){}
+
+          :ruby
+            objects = Hash.new(0)
+            ObjectSpace.each_object{|obj| objects[obj.class] += 1 }
+
+            strs = Hash.new(0)
+            ObjectSpace.each_object(String).each{|str| strs[str] += 1}
+
+          %p= pp objects.sort_by{|k,v| -v}
+          - strs.sort_by {|k,v| -v}[0..100].each do |str|
+            %p= pp str
   - else
     %h1 Stranger Danger!
