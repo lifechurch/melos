@@ -77,6 +77,10 @@ VersionMenu.prototype = {
       }
     }));
 
+    //KM: this is a pretty hacky way to do this, but seemed simpler than
+    //complicating the jquery selectors above to exclude this one. The
+    //following works, but definitely can be improved.
+    this.menu.find('#see_all a').unbind('click');
   },
 
   setRecentVersion : function( version_id ) {
