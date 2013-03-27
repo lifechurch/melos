@@ -19,7 +19,7 @@
       = t("plans.sidebar notice")
       %span.exit= link_to(t("plans.exit"), shelf_user_subscription_path(current_user, subscription, content: content_page, day: day ), method: :post)
 
-  .widget.subcription{style: "margin-top:54px;"}
+  .widget.subscription{style: "margin-top:54px;"}
     %header
       - settings_text = t("settings")
       =link_to(edit_user_subscription_path(current_user,subscription),{class: "settings", title: settings_text}) do

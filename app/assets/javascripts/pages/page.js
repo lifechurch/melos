@@ -4,13 +4,14 @@
 
 // call jRespond and add breakpoints
 var jRes = jRespond([
+
     {
         label: 'mobile',
         enter: 0,
-        exit: 989
+        exit: 770
     },{
         label: 'widescreen',
-        enter: 990,
+        enter: 771,
         exit: 10000
     }
 ]);
@@ -100,6 +101,7 @@ Page.prototype = {
     jRes.addFunc({
       breakpoint: 'mobile',
       enter: function() {
+        $("html").addClass("mobile");
         // make data-mobile-href elements hrefs
         var $this = null;
         $('a[data-mobile-href]').each(function() {
@@ -114,6 +116,7 @@ Page.prototype = {
         });
       },
       exit: function() {
+        $("html").removeClass("mobile");
         // set mobile links back
         var $this = null;
         $('a[data-original-href]').each(function() {
