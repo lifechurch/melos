@@ -1,5 +1,11 @@
 - @title = @plan.title.dup
 
+- content_for :mobile_subscription_nav do
+  %span.reading_plans_btn
+    %span.plan_day= t('plans.day number', day: @presenter.day)
+    %a.subscription_btn{:href => 'javascript:void(0);'}
+  %span.right_btn_slice
+
 - if @presenter.reference
   = render partial: "/references/reader", locals: {presenter: @presenter}
 

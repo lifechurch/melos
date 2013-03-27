@@ -1,11 +1,11 @@
 - # Local Parameters
 - # plan - instance of Plan
 
-.widget
+#action-start.widget
   - if current_auth
     -if current_user.subscribed_to?(plan)
-      = link_to(t('plans.read today'), user_subscription_path(current_user,id: plan.to_param), id: "subscription-read", class: 'action_button_green', style: "margin-bottom: 10px")
+      = link_to(t('plans.read today'), user_subscription_path(current_user,id: plan.to_param), id: "subscription-read", class: 'action_button_green')
     - else
-      = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: plan.to_param), id: "subscription-start", class: 'action_button_green', style: "margin-bottom: 10px", method: :post)
+      = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: plan.to_param), id: "subscription-start", class: 'action_button_green', method: :post)
   - else
-    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", id: plan.id, redirect: plan_path(plan)), class: 'action_button_green', style: "margin-bottom: 10px")
+    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", id: plan.id, redirect: plan_path(plan)), class: 'action_button_green')
