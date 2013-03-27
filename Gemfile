@@ -1,5 +1,6 @@
-source :rubygems
+source "https://rubygems.org"
 
+ruby '1.9.3'
 gem 'rails', '3.2.11'
 
 gem 'asset_sync',             '~> 0.5.3'
@@ -74,7 +75,6 @@ end
 
 group :development, :tddium_ignore do
   gem 'powder'
-  gem 'debugger'
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-bundler'
