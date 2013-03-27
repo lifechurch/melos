@@ -354,7 +354,10 @@ class User < YouVersion::Resource
           a.type = "object" if a.type == "reading_plan_completed"
           a.type = "object" if a.type == "reading_plan_subscription"
           class_name = a.type.camelize.constantize
-          a.data.map { |b| class_name.new(b) }
+
+          a.data.map do |b|
+            class_name.new(b) unless a.type == "object"
+          end
         end
         @recent_activity = activities.flatten
       end
