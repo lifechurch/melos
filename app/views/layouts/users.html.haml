@@ -2,7 +2,7 @@
 
 - if @me
   - content_for :mobile_right_nav do
-    %a.settings_btn{:href => profile_path}
+    %a.settings_btn{:href => settings_profile_path}
 
 - content_for :main do
   - unless content_for?(:sidebar)
@@ -25,13 +25,13 @@
         .mobile
           %dl.tabs
             %dd{class: ('highlighted' if @selected == :profile)}
-              = link_to t("users.edit profile"), profile_path
+              = link_to t("users.edit profile"), settings_profile_path
             %dd{class: ('highlighted' if @selected == :password)}
-              = link_to t("users.edit password"), password_path
+              = link_to t("users.edit password"), settings_password_path
             %dd{class: ('highlighted' if @selected == :notifications)}
-              = link_to t("users.edit notifications"), notifications_path
+              = link_to t("users.edit notifications"), notification_settings_path
             %dd{class: ('highlighted' if @selected == :connections)}
-              = link_to t("users.edit connections"), connections_path
+              = link_to t("users.edit connections"), settings_connections_path
       -unless content_for? :title
         - content_for :title do
           = title

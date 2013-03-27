@@ -17,7 +17,7 @@
 
     %div
       - if me
-        %form{action: profile_path}
+        %form{action: settings_profile_path}
           %button.action_button_blue= t("users.edit profile")
       - else
         %div.follow_btn.clearfix{style: "text-align: right;"}
