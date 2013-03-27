@@ -1,14 +1,5 @@
 - @title = @plan.title.dup
 
-- content_for :mobile_right_nav do
-  - if current_auth
-    - if current_user.try(:"subscribed_to?", @plan)
-      = link_to t("plan settings"), edit_user_subscription_path(current_user, plan_id: @plan.to_param), class: "settings_btn"
-    - else
-      = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "save_btn", method: :post)
-  - else
-    = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: '#TODO'), class: "save_btn"
-
 
 %article.reading_plan_index
   %h1= @plan.name
@@ -19,6 +10,7 @@
     %p
       %strong= t("plans.length field")
       = @plan.length
+
     - if current_auth.blank? || !current_user.try(:subscribed_to?, @plan)
       %p
         = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_blue'}
@@ -27,11 +19,6 @@
           = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "action_button_green", method: :post)
         - else
           = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: '#TODO'), class: "action_button_green"
-    - if current_user.try(:subscribed_to?, @plan)
-      %p= link_to(t('plans.read today'), user_subscription_path(current_user, @plan), class: 'action_button_blue')
-
-
-
 
     %p.mute= @plan.copyright
     - unless @plan.publisher_url.nil?
