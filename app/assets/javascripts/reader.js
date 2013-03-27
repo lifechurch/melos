@@ -611,13 +611,32 @@ Reader.prototype = {
 
     var audio_menu = $('#menu_audio_player').show();
 
+    var adjustBarWidth = function() {
+        $('.mejs-time-rail').css('width', 191);
+        $('.mejs-time-total').css('width', 190);
+    };
+
     this.audio_player.mediaelementplayer({
       pluginPath: "/assets/",
       features: ['playpause', 'current', 'progress', 'duration'],
-      audioWidth: '100%'
+      audioWidth: '100%',
+      success: function(mediaElement, domObject) {
+        //KM: using the timeupdate event for this which gets fired quite a bit.
+        //There might be a less frequent event we can use but this work for
+        //now.
+        mediaElement.addEventListener('timeupdate', function(e) {
+            adjustBarWidth();
+        }, false);
+      }
     });
 
     audio_menu.hide();
+
+    //KM: the player sets the width in JS sometime after loading but I don't
+    //see an event to hook into. This timer seems to do the trick.
+    setTimeout(function() {
+        adjustBarWidth();
+    }, 100);
   },
 
   initVerses : function() {
