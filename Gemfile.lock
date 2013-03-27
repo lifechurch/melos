@@ -441,6 +441,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (= 3.2.5)
   sentry-raven!
+  sextant (~> 0.1.3)
   simplecov
   spork-rails
   tddium (~> 1.4.6)
