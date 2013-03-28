@@ -23,25 +23,18 @@ function isColorDark(hex_color) {
         (Math.max (fg, bg) - Math.min (fg, bg)) +
         (Math.max (fb, bb) - Math.min (fb, bb));
 
-    if ((brightnessDifference >= brightnessThreshold) && (colorDifference >= colorThreshold))   {
-      return true;
-    } else if ((brightnessDifference >= brightnessThreshold) || (colorDifference >= colorThreshold)){
-      return true;
-    }
-
-    return false;
+    return ((brightnessDifference >= brightnessThreshold) || (colorDifference >= colorThreshold));
 }
 
 function Reader(opts) {
-
   this.selected = {
     verses : [],
     verse_usfms : [],
     verse_params : [],
     verse_numbers : [],
     verse_usfm_ranges : [],
-    verse_number_ranges : [],
-  }
+    verse_number_ranges : []
+  };
 
 
   this.version          = opts.version || "";
@@ -109,7 +102,7 @@ Reader.prototype = {
           thiss.toggleParallel();
           e.preventDefault();
           this.blur();
-        })
+        });
 
     // Set click handlers for all verses
     // Todo, potentially set click delegate on parent element for optimization?
@@ -148,7 +141,11 @@ Reader.prototype = {
 
   verseClicked : function( verse ) {
     var v = $(verse);
-    (this.isSelected(v)) ? this.deselectVerse(v) : this.selectVerse(v);
+    if (this.isSelected(v)) {
+        this.deselectVerse(v);
+    } else {
+        this.selectVerse(v);
+    }
     this.parseVerses();
   },
 
@@ -157,14 +154,14 @@ Reader.prototype = {
       $(".verse." + val ).removeClass("selected");
     });
     $(this.primary).trigger("verses:deselected");
-    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected"); }
+    if (this.numSelectedVerses() === 0){ $(this.primary).trigger("verses:all_deselected"); }
   },
 
   selectVerse : function( v ) {
     $(this.parseVerseClasses(v)).each( function(i,val) {
       $(".verse." + val ).addClass("selected");
     });
-    if (this.numSelectedVerses() == 1){ $(this.primary).trigger("verses:first_selected"); }
+    if (this.numSelectedVerses() === 1){ $(this.primary).trigger("verses:first_selected"); }
     if (this.numSelectedVerses()){ $(this.primary).trigger("verses:selected"); }
   },
 
@@ -184,10 +181,10 @@ Reader.prototype = {
   },
 
   scrollToVerse : function(verse) {
-    easingType = 'easeInOutCirc';
+    var easingType = 'easeInOutCirc';
     verse = verse || $('#version_primary .selected:first');
     if (verse.length){
-      var newPosition = verse.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(verse.css('line-height'))/4;
+      var newPosition = verse.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(verse.css('line-height'), 10)/4;
       if(app.getPage().MODERN_BROWSER){
         $('html:not(:animated),body:not(:animated)').animate({scrollTop: newPosition },{easing: easingType, duration:1200});
       }else {$(window).scrollTop(newPosition);}

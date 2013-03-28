@@ -19,7 +19,7 @@
     :plain
 
       jQuery(document).ready(function() {
-        reader = new Reader({
+        window.reader = new Reader({
           version: "#{reference[:version].to_s}",
           abbrev: "#{version.try(:abbreviation).downcase}",
           reference: "#{reference.to_param}",
@@ -63,4 +63,4 @@
   / This will be cached along with the entire template
   %script
     :plain
-      version_json = #{Oj.dump(version_json).html_safe};
+      var version_json = #{Oj.dump(version_json).html_safe};
