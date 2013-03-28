@@ -7,6 +7,9 @@
       %li#nav_mobile_plans{class: @nav == :plans ? "highlighted" : ""}
         %a.icon{:href => current_auth ? user_subscriptions_path(current_auth.username) : plans_path}
           %span=t("plans.title")
+      %li#nav_mobile_videos{class: @nav == :videos ? "highlighted" : ""}
+        %a.icon{:href => '/videos'}
+          %span=t("videos")
       %li#nav_mobile_bookmarks{class: @nav == :bookmarks ? "highlighted" : ""}
         %a.icon{:href => current_auth ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark", redirect: "/bookmarks")}
           %span= t('bookmarks.title')
