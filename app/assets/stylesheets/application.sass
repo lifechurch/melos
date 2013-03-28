@@ -739,7 +739,7 @@
   ul.videos
 
     li
-      width: auto
+      width: auto !important
       padding: 1% !important
       margin: 0px 0px 30px !important
       background: none !important
@@ -765,10 +765,7 @@
       background: none !important
 
       #title-bar
-      h1,
-      .share,
-      .share_panel
-        display: none
+        display: none !important
 
       .publisher
         a
@@ -789,7 +786,6 @@
           img
             display: block
             width: 100%
-            padding-bottom: 10px
 
             .info
               h3
@@ -798,7 +794,13 @@
   #video-show
     #title-bar
       h1
-        display: none
+        display: none !important
+
+      .share
+        top: -5px
+
+      .share_panel
+        top: 50px
 
     #player_wrapper
       width: 100% !important
@@ -806,9 +808,20 @@
       margin-bottom: 20px
 
     .inner
+      padding: 0px !important
+      width: auto
+
+      #details
+        width: auto
+
       #other
+        width: auto
+        padding: 0px
+        float: none
+
         a
           margin-bottom: 30px
+          clear: both
 
   .about_content
     padding-right: 0px
