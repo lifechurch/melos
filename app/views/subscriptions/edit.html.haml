@@ -1,7 +1,5 @@
 - @title = t("plans.plan settings")
 - subscription = @presenter.subscription
-- content_for :title do
-  = t("plans.plan settings")
 
 - content_for :mobile_right_nav do
   =link_to t('plans.overview'), plan_path(subscription), class: 'info_btn'
@@ -13,6 +11,7 @@
 
 %article.rp_settings
   %h1{style: "clear: none; width: 300px;"}= t("plans.settings")
+  %h2.mobile= subscription.title
 
   // Email delivery settings
   .div.float_right

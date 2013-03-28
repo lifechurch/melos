@@ -1,20 +1,17 @@
 - @title = "Plan Calendar and Progress"
 - subscription = @presenter.subscription
 
-- content_for :title do
-  = t("plans.month")
-
 - content_for :mobile_right_nav do
   =link_to t('plans.overview'), plan_path(subscription), class: 'info_btn'
 
+.tab_navigation.plan_settings.mobile
+  .inner_wrapper
+    = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription)
+    = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription),{:class => "selected"}
+
 %article
   %h1= t("plans.calendar")
-
-  .tab_navigation.plan_settings.mobile
-    .inner_wrapper
-      = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription)
-      = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription),{:class => "selected"}
-
+  %h2.mobile= subscription.title
   :ruby
     statuses = subscription.day_statuses
     sunday = Date.new(1984,12,9)#sunday
