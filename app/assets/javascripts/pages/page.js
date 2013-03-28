@@ -2,6 +2,47 @@
 // This class sets up the entire page javascript functionality and interactivity.
 // Long term we should refactor, subclass this page, and dynamicaly load page class at page load time.
 
+// KM: add string.trim() for IE
+if(typeof String.prototype.trim !== 'function') {
+  String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g, ''); 
+  }
+}
+
+// KM: add array.indexOf() for IE
+if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function (searchElement /*, fromIndex */ ) {
+        "use strict";
+        if (this == null) {
+            throw new TypeError();
+        }
+        var t = Object(this);
+        var len = t.length >>> 0;
+        if (len === 0) {
+            return -1;
+        }
+        var n = 0;
+        if (arguments.length > 1) {
+            n = Number(arguments[1]);
+            if (n != n) { // shortcut for verifying if it's NaN
+                n = 0;
+            } else if (n != 0 && n != Infinity && n != -Infinity) {
+                n = (n > 0 || -1) * Math.floor(Math.abs(n));
+            }
+        }
+        if (n >= len) {
+            return -1;
+        }
+        var k = n >= 0 ? n : Math.max(len - Math.abs(n), 0);
+        for (; k < len; k++) {
+            if (k in t && t[k] === searchElement) {
+                return k;
+            }
+        }
+        return -1;
+    }
+}
+
 // call jRespond and add breakpoints
 var jRes = jRespond([
 
@@ -227,14 +268,14 @@ Page.prototype = {
     });
 
     // Hide address bar on smartphones, unless there is smart banner
-    if ($('head meta[name="apple-itunes-app"]').length == 0){
-      window.addEventListener("load",function() {
-        setTimeout(function(){
-          // console.log('Hide the address bar!');
-          window.scrollTo(0, 1);
-      }, 0);
-      });
-    }
+    //if ($('head meta[name="apple-itunes-app"]').length == 0){
+      //window.addEventListener("load",function() {
+        //setTimeout(function(){
+          //// console.log('Hide the address bar!');
+          //window.scrollTo(0, 1);
+      //}, 0);
+      //});
+    //}
 
   },
 
