@@ -217,7 +217,7 @@ MobileMenus.prototype = {
     });
 
     // Version menu close trigger
-    $('.subscription_close_btn, .active.content_target').click(function(e){
+    $('.subscription_close_btn, .active.content_target span').click(function(e){
         e.preventDefault();
 
         thiss.subscriptionMenu.find('.initial').removeClass('initial');
