@@ -227,14 +227,14 @@ Page.prototype = {
     });
 
     // Hide address bar on smartphones, unless there is smart banner
-    if ($('head meta[name="apple-itunes-app"]').length == 0){
-      window.addEventListener("load",function() {
-        setTimeout(function(){
-          // console.log('Hide the address bar!');
-          window.scrollTo(0, 1);
-      }, 0);
-      });
-    }
+    //if ($('head meta[name="apple-itunes-app"]').length == 0){
+      //window.addEventListener("load",function() {
+        //setTimeout(function(){
+          //// console.log('Hide the address bar!');
+          //window.scrollTo(0, 1);
+      //}, 0);
+      //});
+    //}
 
   },
 
