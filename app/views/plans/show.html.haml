@@ -1,9 +1,25 @@
 - @title = @plan.title.dup
 
-%article
-  -#TODO: put << link back to how we got here
+
+%article.reading_plan_index
   %h1= @plan.name
-  %hr
   %div
     %p= @plan.about
-    %br
+
+  .mobile
+    %p
+      %strong= t("plans.length field")
+      = @plan.length
+
+    - if current_auth.blank? || !current_user.try(:subscribed_to?, @plan)
+      %p
+        = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_blue'}
+      %p
+        - if current_auth
+          = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "action_button_green", method: :post)
+        - else
+          = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: '#TODO'), class: "action_button_green"
+
+    %p.mute= @plan.copyright
+    - unless @plan.publisher_url.nil?
+      = link_to(t("plans.about publisher"), @plan.publisher_url)

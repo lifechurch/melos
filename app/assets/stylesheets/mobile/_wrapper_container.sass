@@ -1,0 +1,55 @@
+// `Wrapper + Container
+//----------------------------------------------------------------------------------------------------
+
+#wrapper
+  position: absolute
+  z-index: 190
+  left: 0
+  top: 0
+  width: 100%
+  padding: 0
+
+#container
+  position: relative
+  background: #fff
+
+#content
+  position: relative
+  z-index: 191
+  left: 0
+  width: 100%
+
+.overlay_container
+  position: absolute
+  width: 100%
+  height: 100%
+  background: #fff
+  z-index: 10
+
+.bottom_toolbar
+  position: absolute
+  width: 100%
+  height: 300px
+  background: #fff
+  z-index: 10
+
+.overlay_container .inner_content, .bottom_toolbar .inner_content
+  padding: 20px
+
+.overlay_container .inner_content input[type='text']
+  width: 100%
+  margin-bottom: 20px
+
+#header_outer
+  position: relative
+  z-index: 7
+  width: auto
+
+#nav
+  position: absolute
+  z-index: 189
+  left: 0
+  width: 100%
+  background: #171717
+  height: 100%
+

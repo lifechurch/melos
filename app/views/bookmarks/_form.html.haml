@@ -1,4 +1,4 @@
-= form_for @bookmark, as: :bookmark, url: bookmark_path(@bookmark.id), :html => {class: 'full_page_form'} do |f|
+= form_for @bookmark, as: :bookmark, url: @bookmark.id ? bookmark_path(@bookmark.id) : bookmarks_path, :html => {class: 'full_page_form'} do |f|
   - if @bookmark.errors.any?
     .form_errors
       =t("bookmarks.creation form errors")
@@ -11,18 +11,20 @@
   %p
     = f.label :version, t("bookmarks.version field")
     -# f.select :version, options_for_select(versions_dropdown, (@bookmark.version || nil)), {:prompt => '--Select--'}
-    = Version.find(@bookmark.version).to_s
+    = Version.find(@bookmark.version).to_s if @bookmark.version.present?
+    = f.hidden_field :version_id
   %p
     = f.label :reference, t("bookmarks.reference")
     = @bookmark.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe
+    = f.hidden_field :references
   %p
     = f.label :labels, t("bookmarks.labels comma separated")
     = f.text_field :labels
-  %p
+  %p.color
     = f.label :highlight_color, t("bookmarks.color")
     = f.text_field :highlight_color, class: 'float_left'
     %div{:class => "color_picker_list", style: "width:auto; margin-top:-10px; margin-left:10px; margin-bottom: 20px"}
       %a{:class => "color_picker", :href =>"#"}
       %a{:class => "color_picker_holder", :href =>"#"}
-  %p{style: "clear: left"}
+  %p#bookmark_update_btn{style: "clear: left"}
     = f.submit(@bookmark.persisted? ? t("bookmarks.update") : t("bookmarks.save"))

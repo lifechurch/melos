@@ -36,7 +36,7 @@ class NotesController < ApplicationController
 
   def new
     if current_auth
-      @note = Note.new
+      @note = Note.new(params[:note])
     else
       redirect_to notes_path
     end

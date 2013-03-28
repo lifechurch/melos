@@ -14,7 +14,7 @@ feature "Users", js: true do
 
 	scenario "editing profile" do
 		visit profile_path
-		page.find("article h1").text.should eq "Settings"
+		page.find("article h1").text.should eq "Edit Profile"
 		page.fill_in "user_first_name", with: "user_first_#{@random_string}"
 		page.fill_in "user_last_name", with: "user_last_#{@random_string}"
 		page.fill_in "user_bio", with: "user_bio_#{@random_string}"
@@ -75,7 +75,7 @@ feature "Users", js: true do
 		page.find("input[name='commit']").click
 		page.find("div.flash_error").text.should eq "Sorry, you'll need to enter your old password correctly to change your password."
 	end
-	
+
 	scenario "changing picture" do
 		pending "todo"
 	end

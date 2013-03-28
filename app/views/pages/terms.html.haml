@@ -1,13 +1,10 @@
-- t = Proc.new do |key, options={}| 
+- t = Proc.new do |key, options={}|
   - I18n.t(key, options.merge(:locale => @locale))
 - @title = t.call("users.terms.title", youversion: t.call("youversion"))
 - @sidebar = false
 
-/ attach bdc stylesheet for better mobile styling for now (kill me)
-/ pull this code the second mobile web is live
-- if @mobile
-  - content_for :stylesheets do
-    = stylesheet_link_tag "bdc_home"
+- content_for :title do
+  = t("users.terms.title")
 
 %article
   %h1= t.call("users.terms.title", youversion: t.call("youversion"))

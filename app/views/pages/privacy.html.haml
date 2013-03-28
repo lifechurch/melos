@@ -3,11 +3,8 @@
 - @title = t.call("users.privacy.policy", youversion: t.call("youversion"))
 - @sidebar = false
 
-/ attach bdc stylesheet for better mobile styling for now (kill me)
-/ pull this code the second mobile web is live
-- if @mobile
-  - content_for :stylesheets do
-    = stylesheet_link_tag "bdc_home"
+- content_for :title do
+  = t("users.privacy.policy", youversion: t("youversion"))
 
 %article
   %h1= t.call("users.privacy.policy", youversion: t.call("youversion"))

@@ -6,10 +6,16 @@
 - reading       = plan.day(day)
 - references    = reading.references
 
+
+.mobile#mobile-sb-subscription
+  .reader_modal_header
+    %nav
+      %a.close_btn.subscription_close_btn
+
 = render partial: "/sidebars/plans/button", locals: {plan: plan}
 
 #sb-subscription
-  .widget
+  .widget.plan
     %header= link_to plan.name, plan_path(plan)
     %ul.widget_menu
       %li#sb-calendar.calendar
@@ -47,7 +53,7 @@
                 = ref.ref.safe_human
 
 - if reading.devotional
-  .widget
+  #sb-devotional.widget
     %header= t("plans.devotional")
     %ul.widget_menu
       %li

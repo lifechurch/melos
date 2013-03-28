@@ -31,7 +31,8 @@ gem 'koala',                  '~> 1.6.0'
 gem "language_list",          '~> 0.0.3'
 gem 'newrelic_rpm',           '~> 3.5.7.59'
 gem 'nokogiri',               '~> 1.5.2'
-gem 'omniauth-facebook',      '~> 1.2.0'
+gem 'mobylette',              '~> 3.3.1'
+gem 'omniauth-facebook',      '~> 1.2.0' # 1.3.0
 gem 'omniauth-google-oauth2', '~> 0.1.9'
 gem 'omniauth-twitter',       '~> 0.0.11'
 gem 'rabl',                   '~> 0.7.3'
@@ -80,6 +81,7 @@ group :development, :tddium_ignore do
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'hooves'
+  gem 'sextant', '~> 0.1.3'
   gem 'pry', require: false
   gem 'quiet_assets'
   gem 'spork-rails'

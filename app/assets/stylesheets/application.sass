@@ -1,0 +1,954 @@
+@import compass/css3
+@import vars
+@import clearfix
+@import helper_classes
+@import reset
+@import global_html
+@import text
+@import formalize
+@import form_elements
+@import avatars
+@import widgets
+@import ui_elements
+@import bulleted_lists
+@import pagination
+@import tabs
+@import tables
+@import dynamic_menus
+@import wrapper_container
+@import header
+@import nav_primary
+@import main_reader
+@import reader_text
+@import user_settings
+@import progress_bars
+@import split_pane
+@import sidebar
+@import footer
+@import modal_window
+@import reference_tokens
+@import full_screen
+@import parallel_mode
+@import embedded_reader
+@import audio_player
+@import picker_modals
+@import bookmarks
+@import pages
+@import wysiwyg/jquery.wysiwyg
+@import webfonts
+
+
+@media only screen and (min-width: 769px)
+  // ----------Style adjustments for viewports over 769px go here
+  .mobile
+    display: none !important
+
+@media only screen and (max-width: 768px)
+
+  // ----------Style adjustments for viewports 768px and under go here
+  #main article p
+    font-size: 15px
+  body
+    background: #efefef
+  h3
+    font-size: 18px
+  h4
+    font-size: 17px
+
+  article > h1, article .inner > h1
+    display: none
+
+  #container
+    padding: 0px
+
+  body
+    min-width: 0px
+
+  #main article
+    min-height: 0px !important
+
+  #sidebar,
+  .split_pane_sidebar,
+  #nav_primary,
+  header nav.sign_in,
+  #yv_logo
+    display: none !important
+
+  #reader_header
+    display: none !important
+
+  article .nav_items,
+  .search
+    display: none
+
+  #header
+    height: 45px !important
+    border-radius: 0px !important
+    padding: 0px !important
+
+  .publisher.as_table
+    a
+      min-width: 84px !important
+
+  #menu_book_chapter
+    background-image: none
+    background: #202020
+    border: 0px
+    width: 100%
+    padding: 0px
+    position: fixed
+    top: 0px
+    z-index: 1005
+
+  #menu_book_chapter .browse
+    background: none
+    padding: 0px
+
+  #menu_book_chapter .menu_arrow,
+  .version_select .menu_arrow
+    display: none
+
+  .version_select
+    position: fixed
+    top: 0px
+    border-radius: 0px
+    border: 0px
+    padding: 0px
+    background: #202020
+    width: 100% !important
+
+
+  .version_select .browse
+    padding: 0px
+
+  .version_select .scroll,
+  #menu_book_chapter .scroll
+    border: 0px
+    background: none
+    overflow-y: scroll
+
+  .version_select th div,
+  .version_select td div
+    word-wrap: normal
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    width: 40%
+
+  .version_select tr
+    width 100%
+
+  .version_select th
+    min-width: 6em
+
+    a
+      padding: 10px
+  .version_select td
+    width: 80%
+
+    a
+      display: block
+      width: 100%
+      padding: 10px
+
+  .version_select tr.other_lang,
+  .version_select tr.other_lang ~ tr
+    display: none
+
+  .version_select #see_all
+    display: table-row
+
+  .version_select #see_all a
+    color: $blue
+    font-size: 18px
+    border: 0px
+    background-color: #0C0C0C !important
+    margin-left: 20px
+
+  .version_select #see_all a:hover
+    background-color: #0C0C0C !important
+
+  .dynamic_menu .scroll::-webkit-scrollbar-thumb
+    background: none
+
+  article > form.share .character_count
+    float: left
+    background: #fff
+    color: #a20000
+    +round
+    box-shadow: 0px 1px 0px rgba(#CCC, .5)
+    padding: 2px 5px
+    margin-top: 5px
+    font-size: 11px
+
+  .dynamic_menu tr:hover a,
+  #menu_book li:hover,
+  #menu_chapter li:hover
+    background-color: #1f1f1f !important
+    background-image: none !important
+    text-shadow: none !important
+
+  .dynamic_menu tr:hover th a
+    color: #A6C2CC
+
+  .hide_list
+    display: none
+
+  #sidebar
+    background-image: none
+    background: #EEEDEB
+    border: 0px
+    width: 100%
+    height: 100%
+    padding: 0px
+    position: absolute
+    top: -46px
+    z-index: 1005
+    margin: 0px
+
+  #sidebar.open
+    display: block !important
+
+  #sidebar .widget.subscription header,
+  #sidebar .widget.plan header,
+  #sidebar .widget_spacer
+    display: none !important
+
+  #sidebar #sb-subscription .widget_menu,
+  #sidebar #sb-subscription .widget li.content_target
+    border-radius: 0px
+
+  #sidebar #sb-subscription .widget li.content_target form
+    margin-top: 10px
+
+  #sidebar #sb-subscription .widget li.content_target a,
+  #sidebar #sb-subscription .widget li.content_target.active span
+    padding: 15px 20px 15px 15px
+    font-size: 15px
+
+  #sidebar .widget.devotional
+    margin-top: 30px
+
+  #sidebar .widget.subscription
+    margin-top: 0px !important
+
+  #sidebar .widget.devotional header
+    position: static !important
+    width: 100%
+    border-radius: 0px
+    background: #2C2B2B
+    color: white
+    text-shadow: none
+    padding: 8px 20px
+    font-size: 16px
+    border: 0px
+
+  #sidebar .widget-notice
+    border-radius: 0px
+    background: $blue
+    color: #fff
+    font-weight: bold
+    border: 0px
+    box-shadow: none
+    margin: 0px
+    position: relative
+    top: 0px
+    width: auto !important
+
+  #sidebar .widget-notice a
+    color: #202020
+    float: right
+    text-decoration: none
+
+  #sidebar .widget-notice a:hover
+    text-decoration: none
+
+  .mobile#nav_mobile nav + nav
+    margin-top: -20px
+
+  .mobile #nav_mobile_sign_in a,
+  .mobile #nav_mobile_sign_out a,
+  .mobile #nav_mobile_sign_up a
+    padding-left: 20px
+
+  .mobile #nav_mobile_sign_up
+    background-color: #0077b4
+    border-top: 1px solid #2492CA
+    border-bottom: 1px solid #00669A
+
+  .mobile #nav_mobile_sign_out
+    background-color: #993300
+    border-bottom: 1px solid #7F2A00
+    border-top: 1px solid #A63700
+
+  .mobile #nav_mobile_sign_in
+    background-color: #555
+    border-bottom: 1px solid #353535
+    border-top: 1px solid #777
+
+  #invalid_chapter button
+    display: none
+
+  // input[type="submit"].action_button_green
+    // display: none
+
+  input[type="submit"].action_button_green,
+  input[type="submit"].action_button_blue,
+  input[type="submit"].action_button_red,
+  .action_button_blue,
+  .action_button_green,
+  .action_button_green
+    padding: 10px 20px !important
+    +box-shadow(inset rgba(0,0,0,0.2) 0 -2px 0, inset rgba(255, 255, 255,0.2) 0 2px 0 !important)
+    border-radius: 4px
+    border: none
+    text-shadow: rgba(#000, 0.5) 0 -1px 0
+
+  .version_select .scroll .loading
+    display: none
+
+  #menu_book_chapter .scroll::-webkit-scrollbar,
+  .version_select .scroll::-webkit-scrollbar,
+  .full_page_form .color,
+  .full_page_form .color_picker_list,
+  #bookmark_update_btn
+    display: none
+
+  article#plan-index .plan_filters,
+  article#plan-index .plan_search
+    display: none
+
+  article#plan-index .split_pane_sidebar
+    display: block !important
+    width: 100%
+    background: transparent
+
+  article#plan-index .split_pane_sidebar dl
+    border: 0
+
+  article#plan-index dd.highlighted a,
+  .split_pane_sidebar dd a:hover
+    background: transparent
+
+  .reading_plan_index h1
+    display: block !important
+    font-size: 32px
+    margin-top: 20px
+
+  .reading_plan_index .action_button_green,
+  .reading_plan_index .action_button_blue
+    width: 90%
+
+  .dynamic_menu.version_select th a
+    min-width: 4em
+
+  // ---------- Pages
+
+  // -------------Donate page
+  // Note: Styles for the "Donate Now" button are combined
+  // with the sidebar button styles, in _sidebar.sass
+
+
+  #main article.donate
+    padding-bottom: 0
+    padding-top: 16px
+    background: none
+    h1
+      line-height: 1em
+      float: none !important
+      width: auto
+      display: block
+
+    .callout
+      background: none
+      padding-left: 0
+
+    .intl
+      padding-top: 8px
+
+    .action_button_green
+      .icon_arrow
+        background-image: none
+        padding: 0
+
+  #main article.donate
+    #donate_now_wrap
+      margin-bottom: 15px
+      text-align: right
+      float: none
+      width: auto
+
+      .intl
+        text-align: center
+        display: block
+        font-weight: bold
+
+        &:link
+          text-decoration: none
+        &:hover
+          text-decoration: underline
+
+    p.narrow
+      width: auto
+
+  #main article.donate
+    .float_left
+      float: none !important
+
+    div
+      padding-left: 0 !important
+
+    input[name="tr[city]"], input[name="tr[email]"], select[name="tr[state]"]
+      margin-bottom: 10px
+
+  #main article.donate
+    .emphasis + label,
+    input + label,
+    select + label
+      display: block
+
+    input.address
+      width: 100%
+
+  //  label
+  //    margin-top: 16px
+
+    label[for="tr_x_email_customer"]
+      margin-top: 0
+
+    div
+      button[action="submit"]
+        margin-top: 2em
+        margin-bottom: 2em
+
+    select#tr_x_state
+      margin-top: 0
+
+  // -------------About page
+
+  .partners_content .partners_box
+    margin: 0 0 24px 0
+    div
+      margin: 0
+      padding: 0
+      text-align: center
+      img
+        border: 1px solid #F4F4F4
+        width: 100%
+
+  // -------------Press page
+
+  #main article.press
+    .press_resources
+    ul
+      margin-top: 0
+      li
+        margin: 0
+        padding: 0
+        background: none
+        padding-top: 20px
+        h4
+          line-height: 20px
+          margin-bottom: 4px
+        a
+          font-weight: bold
+          text-decoration: none
+        p
+          line-height: 20px
+          margin: 0
+      li:first-child
+        padding-top: 0
+    img[alt="Press_image"]
+      width: 100%
+
+  // -------------Mobile page
+
+  #main article.mobile
+    font-size: 13px
+    line-height: 1.7
+    background: none
+    padding-top: 20px
+
+    #mobile_content
+      overflow: hidden
+      margin-bottom: 10px
+      width: auto
+      float: none !important
+      h1
+        line-height: 1.18em
+
+    #mobile_content
+      .main
+        width: 46%
+        padding-right: 4%
+        float: left
+        line-height: 1.45em
+        p
+          margin-bottom: 10px
+
+    #mobile_content
+      .multilingual
+        float: right
+        text-align: center
+        padding: 0 0 0 4%
+        width: 45%
+        border-left: 1px solid #e1e1e1
+
+        p
+          font-size: 13px
+          line-height: 1.4
+        h3
+          font-size: 12px
+          margin: 0 0 5px 0
+
+  #mobile_downloads
+    float: none !important
+    width: auto
+    padding: 0
+    border-left: 0
+
+    .left_column
+      float: left
+      width: 50%
+    .right_column
+      float: left
+      padding-left: 10px
+      width: 46%
+
+  #mobile_downloads a.cta
+    background: image-url("mobile_download.png") 14px center no-repeat #81a951 !important
+    display: block
+    padding: 15px 15px 12px 54px
+    border-radius: 4px
+    border: 1px #607346 solid
+    box-shadow: inset 0px 1px 0px rgba(#fff, .3)
+    overflow: hidden
+    clear: both
+
+    img
+      display: none
+  a.cta h3
+    margin-bottom: 0
+
+  #main section.testimonials ul li
+    padding: 5px 20px 10px 35px
+    margin: 0 0 10px
+    background: image-url("mobile_quote.png") no-repeat top left
+    float: none
+    width: auto
+    border-right: 0
+
+
+  // ----------------- Reading plans
+
+  #main article.readingplans
+    padding: 0
+
+    hr
+      margin: 20px 0px
+      border-top: 1px solid #e1e1e1
+
+    h1
+      font:
+        size: 15px
+        weight: normal
+      color: #666
+
+    form
+      .faux_checkbox
+        float: left
+        margin: 8px 10px 0px 10px
+
+
+    ul
+      margin-bottom: 0
+
+    p
+      margin-bottom: 0
+      font-size: 15px
+      line-height: 1.4em
+
+    .big_list
+      margin-top: 0
+      li
+        padding: 12px 18px
+        display: block
+        min-height: 85px
+      h4
+        margin-bottom: 12px
+
+      .plan_list
+        h4
+          margin-bottom: 4px
+          cursor: pointer
+
+      h5
+        float: left
+
+    .progress_counter
+      width: 100%
+      text-align: left
+      position: relative
+      height: auto
+      line-height: auto
+      top: -16px
+
+    .progress_wrap
+      width: 95%
+      height: 55px
+      padding: 0
+      background: none
+      margin-bottom: 0
+
+    .progress_bar_outer
+      left: 7px
+      width: 100%
+
+    .progress_percent_complete
+      display: none
+
+    .progress_date
+      @extend .clearfix
+      width: 12%
+      float: left
+      padding: 10px 2% 0
+
+      p:first-child
+        font-size: 12px
+        color: #aaa
+
+      p
+        text-align: center
+        font-size: 13px
+        font-weight: bold
+
+      p:first-child, p:last-child
+        font-weight: normal
+
+    .plan_search
+      padding: 0 20px 20px
+      border-bottom: 1px solid #CCC
+      margin-top: 10px
+      +box-shadow(rgba(#000, 0.08) 0 2px 4px 0)
+
+    .plan_length
+      background: image-url("rp_calendar_icon.png") left center no-repeat
+      padding-left: 20px
+      color: #999
+      font-weight: bold
+
+    .plan_about
+      display: block
+      float: right
+      height: 44px
+      width: 20%
+      background: image-url("icon_small_about.png") top center no-repeat
+      text-indent: 100%
+      white-space: nowrap
+      overflow: hidden
+
+    .about_length
+      width: 50%
+      background: image-url("rp_about_calendar.gif") 24px center no-repeat
+
+    .about_users
+      width: 49.7%
+      background: image-url("rp_about_users.png") 24px center no-repeat
+      border-left: 1px solid #d9d9d9
+
+    .about_users, .about_length
+      float: left
+      height: 51px
+      border-bottom: 1px solid #d9d9d9
+      span, strong
+        margin-left: 68px
+        display: block
+      strong
+        font-size: 11px
+        color: #999
+        margin: 6px 0 -6px 68px
+
+    .about
+      padding: 20px 20px 0 20px
+
+    .action_button_green,
+    .action_button_grey,
+    .action_button_red
+      margin-top: 20px
+
+    input[type="submit"].action_button_green,
+    input[type="submit"].action_button_grey,
+    input[type="submit"].action_button_red
+      width: 100%
+
+    .action_button_red.confirm
+      margin-bottom: 20px
+
+      div
+        text-align: center
+        margin: 0 auto
+        padding-right: 10px
+
+      h4
+        margin-bottom: 0
+        margin-top: -4px
+
+    .split_pane_content
+      .devo_content
+        padding: 0 20px
+        p
+          margin-bottom: 12px
+
+    table:first-child
+      margin-top: 20px
+
+  #main article.readingplans.myplans
+    .progress_counter
+      position: absolute
+      text-align: left
+      top: 20px
+
+    .progress_wrap
+      width: 100%
+      margin: 0
+
+  #main article.readingplans
+    .rp_settings
+      clear: both
+
+      div
+        padding: 0 20px
+        div
+          padding: 0
+
+      h5
+        margin-bottom: 8px
+
+      .faux_checkbox
+        margin-top: 0px
+
+  #main article.rp_settings
+    .float_left,
+    .float_right
+      float: none !important
+
+  // ----------------- Video pages
+  #videos-index
+
+  ul.videos
+
+    li
+      width: auto
+      padding: 1% !important
+      margin: 0px 0px 30px !important
+      background: none !important
+
+      img
+        display:block
+        width: 100%
+
+      .info
+        overflow: auto
+        position: relative
+        color: #666
+        padding: 4px 10px 0
+
+      .publisher
+        padding-left: 22px
+        background: image-url("icon_small_about.png") no-repeat 0px center
+        color: #777
+        display: block
+
+  #video-series
+    article
+      background: none !important
+
+      #title-bar
+      h1,
+      .share,
+      .share_panel
+        display: none
+
+      .publisher
+        a
+          text-decoration: none
+          color: #aaa
+          margin-bottom: 10px
+          display: block
+
+        a:hover
+          color: $blue
+
+    ul#episodes
+      li
+        background: none !important
+        padding-left: 0px !important
+
+        a
+          img
+            display: block
+            width: 100%
+            padding-bottom: 10px
+
+            .info
+              h3
+                margin-bottom: 10px
+
+  #video-show
+    #title-bar
+      h1
+        display: none
+
+    #player_wrapper
+      width: 100% !important
+      height: 200px !important
+      margin-bottom: 20px
+
+    .inner
+      #other
+        a
+          margin-bottom: 30px
+
+  .about_content
+    padding-right: 0px
+    background: none
+
+  #beta-banner
+    overflow: hidden
+    height: 20px
+    padding: 2px 10px 7px
+    background: #81a951
+    background: -moz-linear-gradient(top,  #81a951 0%, #679037 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#81a951), color-stop(100%,#679037))
+    background: -webkit-linear-gradient(top,  #81a951 0%,#679037 100%)
+    background: -o-linear-gradient(top,  #81a951 0%,#679037 100%)
+    background: -ms-linear-gradient(top,  #81a951 0%,#679037 100%)
+    background: linear-gradient(top,  #81a951 0%,#679037 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81a951', endColorstr='#679037',GradientType=0 )
+
+    span
+      display: block
+      float: left
+      color: #fff !important
+      font-weight: bold
+
+    a
+      display: block
+      float: right
+      color: #fff !important
+      font-weight: bold
+      text-decoration: none
+
+    a:hover
+      text-decoration: underline
+
+  // ----------------- Single verse page
+
+  #header
+    a
+      display: block
+    a.logo
+      height: 44px
+      width: 150px
+      background: image-url('yv_logo.png') left 11px no-repeat
+      overflow: hidden
+      text-indent: 100%
+      white-space: nowrap
+      margin-left: 20px
+      float: left
+    .get_app
+      height: 34px
+      color: #fff
+      text-decoration: underline
+      float: right
+      margin-right: 20px
+      font-size: 13px
+      padding-top: 10px
+      width: 35%
+      text-align: right
+      line-height: 1.2em
+
+  section.single_verse
+    margin: 12px
+    border: 1px solid #e1e1e1
+    padding: 20px
+    text-align: center
+    +border-radius(10px)
+
+    h3
+      color: #808080
+      margin-bottom: 4px
+
+    p
+      font-size: 37px
+      line-height: 1.3em
+      letter-spacing: -.03em
+
+    h3 + p
+      font-size: 12px
+      color: #808080
+      letter-spacing: none
+
+  .flash_notice
+    background:
+      color: #d9e4c9
+      image: image-url("flash_notice.png")
+    border-color: #91b164
+    color: #4b7518
+    width: 100%
+    top: 47px
+    left: 0px
+    position: absolute
+    border-radius: 0px
+    margin: 0px
+    opacity: 1
+    box-shadow: none
+    z-index: 100000
+
+  // -------------Button stuff
+  input[type="submit"]
+    background-color: #81a950
+    +background-image(none)
+    width: 100%
+    padding: 10px 0
+    color: #fff
+    text-shadow: rgba(0,0,0,0.3) 0 -1px 0
+    font-size: 15px
+    +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0, inset rgba(255, 255, 255,0.2) 0 3px 0 !important)
+    border: none
+
+  input[type="submit"]:hover
+    background-color: #81a950
+    +background-image(none)
+    color: #fff
+    text-shadow: rgba(0,0,0,0.3) 0 -1px 0
+    +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0, inset rgba(255, 255, 255,0.2) 0 3px 0 !important)
+    border: none
+
+  // TODO: delete as many as possible, moving only
+  // necessarry SASS into better organized folders/files
+  @import mobile/avatars
+  @import mobile/ui_elements
+  @import mobile/pagination
+  @import mobile/tabs
+  //@import mobile/dynamic_menus
+  @import mobile/wrapper_container
+  @import mobile/header
+  @import mobile/nav_primary
+  @import main_reader
+  // override widescreen main_reader styles
+  @import mobile/main_reader
+  @import mobile/user_settings
+  @import mobile/progress_bars
+  @import mobile/split_pane
+  @import mobile/footer
+  @import mobile/modal_window
+  // @import mobile/reference_tokens
+  @import mobile/embedded_reader
+  @import mobile/audio_player
+  @import mobile/bookmarks
+  @import mobile/pages
+  @import mobile/webfonts
+  @import mobile/donate
+  @import mobile/user
+  @import mobile/plans

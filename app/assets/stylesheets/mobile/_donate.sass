@@ -1,0 +1,79 @@
+// -------------Donate page
+// Note: Styles for the "Donate Now" button are combined
+// with the sidebar button styles, in _sidebar.sass
+
+
+#main article.donate
+  padding-bottom: 0
+  padding-top: 16px
+  background: none
+  h1
+    line-height: 1em
+    float: none !important
+    width: auto
+    display: block
+
+  .callout
+    background: none
+    padding-left: 0
+
+  .intl
+    padding-top: 8px
+
+  .action_button_green
+    .icon_arrow
+      background-image: none
+      padding: 0
+
+#main article.donate
+  #donate_now_wrap
+    margin-bottom: 15px
+    text-align: right
+    float: none
+    width: auto
+
+    .intl
+      text-align: center
+      display: block
+      font-weight: bold
+
+      &:link
+        text-decoration: none
+      &:hover
+        text-decoration: underline
+
+  p.narrow
+    width: auto
+
+#main article.donate
+  .float_left
+    float: none !important
+
+  div
+    padding-left: 0 !important
+
+  input[name="tr[city]"], input[name="tr[email]"], select[name="tr[state]"]
+    margin-bottom: 10px
+
+#main article.donate
+  .emphasis + label,
+  input + label,
+  select + label
+    display: block
+
+  input.address
+    width: 100%
+
+//  label
+//    margin-top: 16px
+
+  label[for="tr_x_email_customer"]
+    margin-top: 0
+
+  div
+    button[action="submit"]
+      margin-top: 2em
+      margin-bottom: 2em
+
+  select#tr_x_state
+    margin-top: 0

@@ -17,6 +17,7 @@
   padding: 30px 30px 15px
   position: relative
   min-height: 368px
+  border-radius: 0
 
   .no_sidebar &:after
     width: 908px
@@ -141,6 +142,10 @@
   background-image: none
   margin-top: 34px
 
+.book .p
+  display: inline
+  margin-left: 5px
+
 // `Article Top Section
 //----------------------------------------------------------------------------------------------------
 
@@ -152,7 +157,7 @@
   border: 1px solid #cbc9cf
     bottom: 0
   font-size: 12px
-  padding: 30px 30px 0 195px
+  padding: 0px
   position: relative
   min-height: 170px
 
@@ -180,10 +185,43 @@
   padding: 0
   list-style: none
 
-.top_section .avatar_huge
-  position: absolute
-  top: 30px
-  left: 30px
+// Profile and friend pages ----------------------------------------
+
+.top_section
+  .avatar_huge
+    position: absolute
+    top: 30px
+    left: 30px
+
+  .profile_header
+    padding: 30px 30px 10px 160px
+    overflow: hidden
+    height: 100px
+
+    button
+      float: left
+      border-radius: 4px
+      padding: 4px 20px !important
+
+  .profile_info
+    padding: 20px 30px
+    overflow: visible
+
+    ul
+      float: none !important
+
+    div
+      position: absolute
+      top: 40px
+      left: 80px
+
+    .action_button_green,
+    .action_button_red
+      padding: 4px 20px
+      +border-radius(4px)
+
+    .action_button_red
+      text-shadow: none
 
 .top_section li
   background:
@@ -477,55 +515,56 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
 // but semantically make sense as a bigger list: Activity Stream, etc.
 //
 
-#main .big_list,
-#main .big_list li
-  background: none
-  margin: 0
-  padding: 0
+#main .main_reader
+  .big_list,
+  .big_list li
+    background: none
+    margin: 0
+    padding: 0
 
-#main .big_list li
-  @extend .clearfix
-  border-top: 1px solid #ccc
-  padding-top: 20px
+  .big_list li
+    @extend .clearfix
+    border-top: 1px solid #ccc
+    padding-top: 20px
 
-#main .big_list li[class^="li_"]
-  background:
-    repeat: no-repeat
-  padding-left: 26px
+  .big_list li[class^="li_"]
+    background:
+      repeat: no-repeat
+    padding-left: 26px
 
-#main > .big_list:first-child
-  margin-top: -20px
+  > .big_list:first-child
+    margin-top: -20px
 
-#main > .big_list:first-child li:first-child
-  border: 0
+  > .big_list:first-child li:first-child
+    border: 0
 
-#main .big_list .li_bookmark
-  background:
-    image: image-url("big_list_bookmark.png")
-    position: 0 20px
+  .big_list .li_bookmark
+    background:
+      image: image-url("big_list_bookmark.png")
+      position: 0 20px
 
-#main .big_list .li_note
-  background:
-    image: image-url("big_list_note.png")
-    position: 0 21px
+  .big_list .li_note
+    background:
+      image: image-url("big_list_note.png")
+      position: 0 21px
 
-#main .big_list .li_social
-  background:
-    image: image-url("big_list_social.png")
-    position: 0 22px
+  .big_list .li_social
+    background:
+      image: image-url("big_list_social.png")
+      position: 0 22px
 
-#main .big_list .li_badge
-  background:
-    image: image-url("big_list_badge.png")
-    position: 0 19px
+  .big_list .li_badge
+    background:
+      image: image-url("big_list_badge.png")
+      position: 0 19px
 
-#main .big_list .user
-  overflow: hidden
-  img
-    float: left
-    margin-right: 10px
-  &>div
-    float: left
+  .big_list .user
+    overflow: hidden
+    img
+      float: left
+      margin-right: 10px
+    &>div
+      float: left
 
 // `Type
 //---------------------------------------------------------------------------------------

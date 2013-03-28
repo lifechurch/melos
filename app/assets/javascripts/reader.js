@@ -44,27 +44,32 @@ function Reader(opts) {
   }
 
 
-  this.version    = opts.version || "";
-  this.abbrev     = opts.abbrev || "";
-  this.reference  = opts.reference || "";
-  this.book       = opts.book || "";
-  this.book_api   = opts.book_api || "";
-  this.book_human = opts.book_human || "";
-  this.chapter    = opts.chapter || "";
+  this.version          = opts.version || "";
+  this.abbrev           = opts.abbrev || "";
+  this.reference        = opts.reference || "";
+  this.book             = opts.book || "";
+  this.book_api         = opts.book_api || "";
+  this.book_human       = opts.book_human || "";
+  this.chapter          = opts.chapter || "";
 
-  this.full_screen     = opts.full_screen || false;
-  this.parallel_mode   = opts.parallel_mode || false;
-  this.selected_verses = [];
+  this.full_screen      = opts.full_screen || false;
+  this.parallel_mode    = opts.parallel_mode || false;
+  this.selected_verses  = [];
+  this.secondary_loaded = false;
+  this.bookmarks_loaded = false;
+  this.notes_loaded     = false;
 
-  this.font           = opts.font || "";
-  this.size           = opts.size || "";
+  this.font             = opts.font || "";
+  this.size             = opts.size || "";
 
   // elements
 
-  this.html_el        = $(document.documentElement);
-  this.verse_els      = $('#version_primary .verse');
-  this.audio_player   = $('#audio_player');
-  this.header         = $('#reader_header header');
+  this.html_el          = $(document.documentElement);
+  this.verse_els        = $('#version_primary .verse');
+  this.audio_player     = $('#audio_player');
+  this.header           = $('#reader_header header');
+  this.primary          = $('#version_primary');
+  this.secondary        = $('#version_secondary');
 
   // menus
 
@@ -74,9 +79,10 @@ function Reader(opts) {
   this.initAudioPlayer();
   this.initTranslationNotes();
   this.initNextPrev();
+  this.initSidebar();
 
   this.book_chapter_menu  = new BookChapterMenu({trigger: "#menu_book_chapter_trigger", menu: "#menu_book_chapter"});
-  this.selected_menu      = new SelectedMenu({menu:"#menu_verse_actions"});
+  this.selected_menu      = new SelectedMenu({menu:"#menu_verse_actions", trigger:"#menu_selected_trigger", mobile_menu:".verse_toolbar"});
 
   $(this.selected_menu).bind("verses:clear", $.proxy(function(e){
     this.clearSelectedVerses();
@@ -112,7 +118,13 @@ Reader.prototype = {
       this.verseClicked(e.delegateTarget);
     },this));
 
-    this.parseVerses(); // run once on load
+    this.parseVerses();
+
+    // fire initial events
+    if (this.numSelectedVerses() >= 1){
+      $(this.primary).trigger("verses:first_selected");
+      $(this.primary).trigger("verses:selected");
+    }
   },
 
   fetchSelectedVerses : function() {
@@ -130,6 +142,10 @@ Reader.prototype = {
     return $(article_id + '.verse.highlighted');
   },
 
+  numSelectedVerses : function() {
+    return $('#version_primary  .verse.selected > .label').length;
+  },
+
   verseClicked : function( verse ) {
     var v = $(verse);
     (this.isSelected(v)) ? this.deselectVerse(v) : this.selectVerse(v);
@@ -140,12 +156,16 @@ Reader.prototype = {
     $(this.parseVerseClasses(v)).each( function(i,val) {
       $(".verse." + val ).removeClass("selected");
     });
+    $(this.primary).trigger("verses:deselected");
+    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected"); }
   },
 
   selectVerse : function( v ) {
     $(this.parseVerseClasses(v)).each( function(i,val) {
       $(".verse." + val ).addClass("selected");
     });
+    if (this.numSelectedVerses() == 1){ $(this.primary).trigger("verses:first_selected"); }
+    if (this.numSelectedVerses()){ $(this.primary).trigger("verses:selected"); }
   },
 
   isSelected : function( v ) {
@@ -159,12 +179,13 @@ Reader.prototype = {
     // Public: clear all selected verses.
   clearSelectedVerses : function() {
     this.allSelectedVerses().removeClass('selected');
+    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected"); }
     this.parseVerses();
   },
 
   scrollToVerse : function(verse) {
     easingType = 'easeInOutCirc';
-    var first = $('#version_primary .selected:first');
+    verse = verse || $('#version_primary .selected:first');
     if (verse.length){
       var newPosition = verse.offset().top - $('article').offset().top + $('article').scrollTop() - parseInt(verse.css('line-height'))/4;
       if(app.getPage().MODERN_BROWSER){
@@ -590,13 +611,32 @@ Reader.prototype = {
 
     var audio_menu = $('#menu_audio_player').show();
 
+    var adjustBarWidth = function() {
+        $('.mejs-time-rail').css('width', 191);
+        $('.mejs-time-total').css('width', 190);
+    };
+
     this.audio_player.mediaelementplayer({
       pluginPath: "/assets/",
       features: ['playpause', 'current', 'progress', 'duration'],
-      audioWidth: '100%'
+      audioWidth: '100%',
+      success: function(mediaElement, domObject) {
+        //KM: using the timeupdate event for this which gets fired quite a bit.
+        //There might be a less frequent event we can use but this work for
+        //now.
+        mediaElement.addEventListener('timeupdate', function(e) {
+            adjustBarWidth();
+        }, false);
+      }
     });
 
     audio_menu.hide();
+
+    //KM: the player sets the width in JS sometime after loading but I don't
+    //see an event to hook into. This timer seems to do the trick.
+    setTimeout(function() {
+        adjustBarWidth();
+    }, 100);
   },
 
   initVerses : function() {
@@ -627,7 +667,8 @@ Reader.prototype = {
       var scroll_verse = $('#version_primary .focused:first');
     }
 
-    if(scroll_verse) {
+    if(scroll_verse && $('head meta[name="apple-itunes-app"]').length == 0 && $('#mobile-sb-subscription.initial').length == 0){
+      //TODO: make the 2nd part actually if there is modal display
       $(document).ready(function() {
         //DOM is loaded, wait a bit for css to load then scroll to first verse
         window.setTimeout(function(){thiss.scrollToVerse(scroll_verse)}, 300);
@@ -636,12 +677,14 @@ Reader.prototype = {
 
   },
 
-  initSecondaryVersion : function() {
+  ajaxSecondaryVersion : function() {
     var version_elem = $('#version_secondary');
     var v_id = getCookie('alt_version') || 1;
     var usfm = version_elem.attr('data-usfm');
     var thiss = this;
 
+    if (this.secondary_loaded) { return; }
+    // console.log('secondary version ajaxed');
     $.ajax({
         url: "/bible/" + v_id + "/" + usfm + ".json",
         method: "get",
@@ -660,6 +703,7 @@ Reader.prototype = {
             version_elem.html(ref.content);
             thiss.loadHighlights("#version_secondary");
           }
+          thiss.secondary_loaded = true;
         },//end success function
         error: function(xhr, status, err) {
           // set HTML to error HTML
@@ -673,7 +717,89 @@ Reader.prototype = {
                             target='_blank'>support team</a>.</p>");}
         }//end error function
       });//end ajax delegate
+  },
 
+  ajaxNotesWidget : function() {
+    var thiss = this;
+    if (this.notes_loaded) { return; }
+
+    // console.log('notes ajaxed');
+    $(".ajax_notes").each(function() {
+      var that = $(this);
+      var targets = that;
+      if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
+      $.ajax({
+        url: that.data('ajax'),
+        method: "get",
+        dataType: "html",
+        success: function(data) {
+          targets.fadeOut(200, function() {
+            targets.html(data);
+            targets.fadeIn(200);
+          });
+          thiss.notes_loaded = true;
+        },
+        error: function(req, status, err) {
+          //console.log(status + err);
+        }//end error function
+      });
+    });
+
+  },
+
+  ajaxBookmarksWidget : function() {
+    if (this.bookmarks_loaded) { return; }
+
+    $(".ajax_bookmarks").each(function() {
+      var that = $(this);
+      var targets = that;
+      if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
+      // console.log('bookmarks ajaxed');
+      $.ajax({
+        url: that.data('ajax'),
+        method: "get",
+        dataType: "html",
+        success: function(data) {
+          targets.fadeOut(200, function() {
+            targets.html(data);
+            targets.fadeIn(200);
+          });
+          this.bookmarks_loaded = true;
+        },
+        error: function(req, status, err) {
+          //console.log(status + err);
+        }//end error function
+      });
+    });
+
+  },
+
+  initSidebar : function() {
+    var thiss = this;
+    jRes.addFunc({
+      breakpoint: 'widescreen',
+      enter: function() {
+        thiss.ajaxNotesWidget();
+        thiss.ajaxBookmarksWidget();
+      },
+      exit: function() {
+        // already loaded, no worries
+      }
+    });
+  },
+
+  initSecondaryVersion : function() {
+    var thiss = this;
+
+    jRes.addFunc({
+      breakpoint: 'widescreen',
+      enter: function() {
+        thiss.ajaxSecondaryVersion();
+      },
+      exit: function() {
+        // already loaded, no worries
+      }
+    });
   },
 
   initHighlights : function() {

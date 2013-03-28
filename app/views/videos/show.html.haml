@@ -3,6 +3,8 @@
 - @sidebar = false
 - @title = strip_tags(@video.title)
 
+- content_for :title do
+  = t(@video.title)
 
 %article
   #title-bar

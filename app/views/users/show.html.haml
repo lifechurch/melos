@@ -1,3 +1,6 @@
+- content_for :title do
+  = @me ? t('users.my profile') : t('users.other user profile', username: @user.name || @user.username)
+
 %ul.big_list
   - if @user.recent_activity.empty?
     %p= t('no recent activity', username: @user.username)

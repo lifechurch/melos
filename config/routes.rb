@@ -99,6 +99,7 @@ YouversionWeb::Application.routes.draw do
 
   match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
+  get 'share/new' => 'users#new_share', as: 'new_share'
   resources 'highlights', only: [:create]
 
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
@@ -157,6 +158,8 @@ YouversionWeb::Application.routes.draw do
 
 
   root to: 'pages#home'
+
+  mount_sextant if Rails.env.development?
 
   # Rails 3.1 hack to catch any remaining routes (404's)
   # with globbing setting params[:path] to the bad path

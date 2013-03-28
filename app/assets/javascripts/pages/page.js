@@ -2,6 +2,20 @@
 // This class sets up the entire page javascript functionality and interactivity.
 // Long term we should refactor, subclass this page, and dynamicaly load page class at page load time.
 
+// call jRespond and add breakpoints
+var jRes = jRespond([
+
+    {
+        label: 'mobile',
+        enter: 0,
+        exit: 770
+    },{
+        label: 'widescreen',
+        enter: 771,
+        exit: 10000
+    }
+]);
+
 function Page() {
   this.selected_menu  = undefined;
   this.menus          = new Array();
@@ -41,6 +55,7 @@ Page.prototype = {
     this.IE8 = !!(this.IE && this.VERSION === 8);
     this.IE9 = !!(this.IE && this.VERSION === 9);
     this.MODERN_BROWSER = !((this.IE && this.VERSION < 9) || this.BROWSER.opera);
+
   },
 
   // Ability to set the reader on the page publicly.
@@ -81,6 +96,37 @@ Page.prototype = {
         link.attr("target", "_blank");
       }
     });
+
+    // responsive links
+    jRes.addFunc({
+      breakpoint: 'mobile',
+      enter: function() {
+        $("html").addClass("mobile");
+        // make data-mobile-href elements hrefs
+        var $this = null;
+        $('a[data-mobile-href]').each(function() {
+          $this = $(this);
+          $this.attr('data-original-href', $this.attr('href'));
+          $this.attr('href', $this.attr('data-mobile-href'));
+        });
+
+        $('.widget_menu .prev').click(function(e){
+          thiss.openSubscriptionMenu();
+
+        });
+      },
+      exit: function() {
+        $("html").removeClass("mobile");
+        // set mobile links back
+        var $this = null;
+        $('a[data-original-href]').each(function() {
+          $this = $(this);
+          $this.attr('href', $this.attr('data-original-href'));
+          $this.removeAttr('data-original-href');
+        });
+      }
+    });
+
   },
 
   initInputs : function() {
@@ -145,14 +191,24 @@ Page.prototype = {
   // On user/bookmarks page.  Fades in edit controls.
   initBookmarkEdits : function() {
 
-    $('.li_bookmark').hover(
-      function(){
-        $(this).find('.bookmark_edit').animate({opacity: 1});
+    jRes.addFunc({
+      breakpoint: 'mobile',
+      enter: function() {
+        // bind mobile menu events, giving their handler's the Selected context via $.proxy
+        $('.li_bookmark').unbind('mouseenter mouseleave');
       },
-      function(){
-        $(this).find('.bookmark_edit').animate({opacity: 0});
+      exit: function() {
+        // unbind mobile menu events, giving their handler's the Selected context via $.proxy
+        $('.li_bookmark').hover(
+          function(){
+            $(this).find('.bookmark_edit').animate({opacity: 1});
+          },
+          function(){
+            $(this).find('.bookmark_edit').animate({opacity: 0});
+          }
+        );
       }
-    );
+    });
   },
 
 
@@ -164,6 +220,21 @@ Page.prototype = {
       }, function() {
         $(this).find(".tooltip").fadeOut(100);
     });
+
+    // Slide to mobile nav
+    $('#slideToNav').click(function(){
+      $(window).scrollTop($('#nav_mobile').offset().top);
+    });
+
+    // Hide address bar on smartphones, unless there is smart banner
+    if ($('head meta[name="apple-itunes-app"]').length == 0){
+      window.addEventListener("load",function() {
+        setTimeout(function(){
+          // console.log('Hide the address bar!');
+          window.scrollTo(0, 1);
+      }, 0);
+      });
+    }
 
   },
 
@@ -203,6 +274,11 @@ Page.prototype = {
     // only create menu / widget if element id is found on the page.
     // should eventually be in a subclass of Page for each individual page type.
 
+      var modal_el = "#modal_single_verse";
+      if($(modal_el).length) {
+        var single_verse_modal = new VerseModal();
+      }
+
       var widget_note = "#widget_new_note";
       if($(widget_note).length) {
         this.new_note_widget = new NoteWidget( widget_note );
@@ -211,7 +287,11 @@ Page.prototype = {
       var settings_trigger  = "#menu_settings_trigger";
       var settings_menu     = "#menu_settings";
       if($(settings_trigger).length && $(settings_menu).length) {
-        var settings_menu   = new SettingsMenu({trigger: settings_trigger , menu: settings_menu })
+        var settings_menu   = new SettingsMenu({trigger: settings_trigger , menu: settings_menu });
+      }
+
+      if($('#version_primary').length) {
+        var mobile_menus   = new MobileMenus();
       }
 
       var version_triggers  = "#menu_version_trigger, #menu_alt_version_trigger";
@@ -230,6 +310,13 @@ Page.prototype = {
       if($(choose_language).length) {
         var language_menu   = new LanguageMenu("#choose_language");
       }
+
+      var share_form = "article > form.share";
+      if($(share_form).length){
+        var share_form = new SharePane(share_form);
+        share_form.initForm();
+      }
+
 
     var thiss = this;
     var all_menu_triggers = $('.dynamic_menu_trigger');
@@ -365,18 +452,19 @@ Page.prototype = {
 
   initAjaxReplace : function() {
 
-    var page = this;
-
     $(".ajax_me").each(function() {
       var that = $(this);
+      var targets = that;
+      if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
+      // console.log(that.data('ajax') + ' abstractly ajaxed');
       $.ajax({
         url: that.data('ajax'),
         method: "get",
         dataType: "html",
         success: function(data) {
-          that.fadeOut(200, function() {
-            that.html(data);
-            that.fadeIn(200);
+          targets.fadeOut(200, function() {
+            targets.html(data);
+            targets.fadeIn(200);
           });
         },
         error: function(req, status, err) {

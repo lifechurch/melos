@@ -93,6 +93,11 @@ class Reference < YouVersion::Resource
     end
   end
 
+  def to_ios_path
+    return "bible?reference=#{chapter_usfm}&version_id=#{version}" if version
+    return "bible?reference=#{chapter_usfm}"
+  end
+
   def to_param
     _ref = "#{to_usfm}" if is_chapter? || single_verse?
     _ref ||= "#{chapter_usfm}.#{verses.first}-#{verses.last}"

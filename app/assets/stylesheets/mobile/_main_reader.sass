@@ -1,0 +1,665 @@
+// `Main
+//----------------------------------------------------------------------------------------------------
+
+#reader_header + article
+  margin-top: 0px
+
+#main article
+  padding: 18px 24px 16px
+  background: #fff
+  overflow: hidden
+  border: none
+
+#main.main_reader article
+  padding: 18px 24px 16px
+
+// `Main > Headers
+//----------------------------------------------------------------------------------------------------
+
+.widget header,
+#main header,
+#main footer,
+  @extend .clearfix
+  +box-shadow(inset #fff 0 1px 0 0)
+  +background-image(linear-gradient(#eeedeb, #dddcda))
+  background-color: #dddcda
+  border-top: 1px solid #cbc9cf
+  border-bottom: 1px solid #cbc9cf
+  text-shadow: #fff 0 1px 0
+
+// `Reader Header
+//----------------------------------------------------------------------------------------------------
+
+.audio_toolbar
+  height: 91px
+  position: absolute
+  background: #2c2b2b
+  top: -190px
+  left: 0px
+  //width: 100%
+  z-index: 194
+  color: #fff
+  padding: 10px 0px 10px
+
+  div.mejs-audio, dl, dt
+    //width: 95%
+    margin: 0 auto
+
+  div.mejs-audio
+    margin-bottom: 10px
+
+  .info_btn
+    display: block
+    float: right
+    height: 44px
+    width: 44px
+    background: image-url("nav_icons_mobile.png") 14px -122px no-repeat
+    text-indent: -99999px
+    font-size: 0.1em
+    position: relative
+    top: -5px
+    right: -20px
+
+div.close_tab
+  width: 80px
+  margin: 0 auto
+
+  span.first
+    background: image-url("reader_tab_l.png") no-repeat
+    width: 18px
+    height: 46px
+    display: block
+    float: left
+
+  div.mid
+    background: image-url("reader_tab_mid.png") repeat-x
+    height: 44px
+    width: 44px
+    float: left
+
+    a
+      display: block
+      height: 44px
+      width: 44px
+      float: left
+      background: image-url("nav_icons_mobile.png") 14px -346px no-repeat
+
+  span.last
+    background: image-url("reader_tab_r.png") no-repeat
+    width: 18px
+    height: 46px
+    display: block
+    float: left
+
+.reference_toolbar, .version_toolbar
+  position: absolute
+  left: 0px
+  top: -46px
+  width: 100%
+  display: none
+  color: #fff
+  z-index: 10000
+  background: #2b2b2b
+  overflow: y-scroll
+
+  nav
+    background: #202020
+    overflow: hidden
+
+.verse_toolbar
+  height: 86px
+  position: absolute
+  top: -86px
+  left: 0px
+  width: 100%
+  background: url("mobile/verse_toolbar_bg.jpg") repeat-x
+  z-index: 193
+
+.share_toolbar
+  height: 46px
+  position: absolute
+  top: 0px
+  left: 0px
+  width: 100%
+  display: none
+  background: url("mobile/verse_toolbar_bg.jpg") repeat-x
+  z-index: 192
+
+.color_toolbar
+  height: auto
+  position: absolute
+  top: -329px
+  left: 0px
+  width: 100%
+  z-index: 192
+
+.color_toolbar nav
+  background: #2b2b2c
+  padding: 20px 10px
+
+
+.color_toolbar .color_picker_list button.color
+  margin: 10px
+  height: 51px
+  width: 51px
+
+.color
+  background: none
+
+.color_toolbar button[type="submit"]
+  background: none
+  background-image: none
+
+#menu_settings
+  background: transparent
+  border: 0px
+  border-radius: 0px
+  box-shadow: none !important
+  width: 100%
+  position: absolute
+  z-index: 191
+  padding: 0px
+  overflow: hidden
+  color: #fff
+  display: none
+  left: 0px
+  top: -171px
+
+#menu_settings header,
+#menu_settings .menu_arrow,
+#menu_settings form p
+  display: none
+
+#menu_settings form
+  background: url("mobile/toolbar.png") repeat !important
+  border: 0px
+
+#menu_settings form fieldset
+  background: transparent
+  box-shadow: none
+  border: 0px
+
+#menu_book,
+#menu_chapter
+  width: 100%
+
+#menu_book .scroll,
+#menu_chapter .scroll
+  height: 100%
+  border: 0px
+
+#menu_book header,
+#menu_chapter header,
+#menu_settings header
+  display: none
+
+#menu_book .scroll ul,
+#menu_chapter .scroll ul
+  width: 100% !important
+
+#menu_book .scroll ul li a,
+#menu_chapter .scroll ul li a
+  padding: 10px
+
+#menu_book .scroll ol,
+#menu_chapter .scroll ol
+  background-image: none
+  width: 100%
+
+#menu_book .scroll ol li,
+#menu_chapter .scroll ol li
+  width: auto
+  height: auto
+
+#menu_book .scroll ol li a,
+#menu_chapter .scroll ol li a
+  background: none
+  padding: 10px
+  width: 24px
+  text-align: center
+  border-top: 1px solid #282828
+  border-right: 1px solid #282828
+  border-bottom: 1px solid #101010
+  border-left: 1px solid #101010
+
+.audio_toolbar .inner_content
+  background: #2c2b2b !important
+  padding: 0px 0px 32px
+
+.settings_toolbar .inner_content
+  background: #2c2b2b !important
+  padding: 10px 20px 20px 20px
+
+.reference_toolbar .inner_content, .version_toolbar .inner_content
+  background: #2c2b2b !important
+  padding: 0px
+
+.reference_toolbar .inner_content ul li, .version_toolbar .inner_content ul li
+  width: 100%
+  padding: 10px
+  border-bottom: 1px solid #202020
+
+.reference_toolbar .inner_content ul li a, .version_toolbar .inner_content ul li a
+  width: 100%
+  display: block
+  padding: 0px 10px
+  text-decoration: none
+
+.reference_toolbar .inner_content ol li
+  margin: 0px
+  padding: 0px
+
+.reference_toolbar .inner_content ol li a, .version_toolbar .inner_content ol li a
+  display: block
+  padding: 10px 20px
+  text-decoration: none
+  border-right: 1px solid #101010
+  border-bottom: 1px solid #101010
+  text-align: center
+
+
+.verse_toolbar nav
+  padding-left: 8px
+
+.verse_toolbar nav, .share_toolbar nav, .settings_toolbar nav
+  overflow: hidden
+
+.verse_toolbar nav a, .share_toolbar nav a, .settings_toolbar nav a
+  float: left
+  margin-right: 10px
+  text-indent: -99999px
+  overflow: hidden
+  display: block
+  height: 26px
+  width: 40px
+  float: left
+  padding: 8px 0px
+
+.verse_toolbar nav a.close_btn
+  background: image-url("mobile/close_btn.png") no-repeat
+  background-position: 2px 8px
+  float: right
+  margin-right: 0px
+
+.verse_toolbar nav a.submenu_btn
+  background: image-url("mobile/verse_task_sprite.png") no-repeat
+
+.verse_toolbar nav a.bookmark_btn
+  background-position: 10px -34px
+
+.verse_toolbar nav a.comment_btn
+  background-position: -45px -34px
+
+.verse_toolbar nav a.highlight_btn
+  background-position: -91px -34px
+
+.verse_toolbar nav a.note_btn
+  background-position: -139px -34px
+
+.verse_toolbar nav a.share_btn
+  background-position: -191px -34px
+
+.share_toolbar nav a.tertiary_btn
+  //background: image-url("mobile/share_sprite.png") no-repeat
+
+.settings_tab, .tab
+  background: none !important
+  margin: 0px !important
+
+
+.tab_navigation
+  display: block
+  width: 100%
+
+  .inner_wrapper
+    width: 101%
+    overflow: hidden
+
+    a
+      display: block
+      float: left
+      width: 33.33333333%
+      height: 44px
+      margin: 0px
+      text-align: center
+      line-height: 43px
+      color: #fff
+      font-weight: bold
+      font-size: 15px
+      text-decoration: none
+      background: #2C2B2B
+      +box-shadow(inset #111 0 1px 2px 2px)
+      border-bottom: 1px solid #1f1f1f
+    a:first-child
+      border-left: 0
+    a.selected
+      background: #666
+      +box-shadow(inset #666 0 0 0 0)
+
+.tab_navigation.plan_settings,
+.tab_navigation.ref
+  width: 100%
+  left: 0px
+  top: -5px
+  display: block
+  height: 44px
+
+  .inner_wrapper
+    width: 101%
+    overflow: hidden
+
+    a
+      width: 49.99%
+      line-height: 48px
+
+
+.nav_items.audio-disabled
+  width: 170px
+
+  ul
+    width: 132px
+
+    li.audio-disabled
+      display: none
+
+.nav_items
+  width: 212px
+  height: 46px
+  margin: 0 auto
+  position: relative
+  z-index: 194
+  top: 0px
+
+  span.first
+    background: image-url("reader_tab_l.png") no-repeat
+    width: 18px
+    height: 46px
+    display: block
+    float: left
+
+  span.last
+    background: image-url("reader_tab_r.png") no-repeat
+    width: 18px
+    height: 46px
+    display: block
+    float: left
+
+  ul
+    background: image-url("reader_tab_mid.png") repeat-x
+    list-style: none
+    margin: 0 auto
+    width: 176px
+    float: left
+
+    li
+      padding: 0px
+      margin: 0px
+      display: block
+      float: left
+
+    a
+      text-indent: -99999px
+      overflow: hidden
+      height: 44px
+      width: 44px
+      display: block
+      float: left
+      background-color: none
+      border: none
+      box-shadow: none
+
+    a:hover, a:link, a:visited
+      background-color: none
+      border: none
+      box-shadow: none
+
+    a.audio_btn
+      background: image-url("icon_listen.png") center -36px no-repeat
+      background-size: auto
+      text-indent: -99999px
+      font-size: 0px
+
+      span.icon_listen
+        background: none
+
+    a.reader_settings_btn
+      background: image-url("icon_reader_settings.png") center -36px no-repeat
+      background-size: auto
+      text-indent: -99999px
+      font-size: 0px
+
+      span.icon_reader_settings
+        background: none
+
+    a.audio_btn.disabled, a.audio_btn.disabled:hover
+      background:
+        position: center -110px !important
+      cursor: default
+      background-color: transparent !important
+      box-shadow: none !important
+
+
+
+      span
+        display: none
+    a.prev
+      background: image-url("mobile/prev_arrow.png") 14px 13px no-repeat
+    a.next
+      background: image-url("mobile/next_arrow.png") 22px 13px no-repeat
+
+// `Main > Footers
+//----------------------------------------------------------------------------------------------------
+
+#main footer
+  padding: 5px 20px 5px
+  margin: 0 auto
+  border-radius: 0
+  border:
+    left: 0
+    right: 0
+
+  .as_table,
+  .vcenter
+    display: inline
+
+  a
+    text-decoration: none
+  a.button
+    background: none
+    background-color: none
+    padding: 0
+    margin: 0 0 4px 0
+    border-radius: 0
+    border: none
+    box-shadow: none
+    float: none
+    line-height: normal
+    color: #0084c8
+    height: auto
+
+// `Main > Verses
+//----------------------------------------------------------------------------------------------------
+
+
+
+//
+// For chunks of content that could be grouped as simple <p> and <hr/>,
+// but semantically make sense as a bigger list: Activity Stream, etc.
+//
+
+#main .big_list
+  a
+    text-decoration: none
+    line-height: 1.3em
+
+  a.action_button_grey, a.action_button_green, a.action_button_red
+    line-height: 40px
+
+  li
+    background: none
+    margin: 0
+    padding: 12px 16px
+    @extend .clearfix
+    border-top: 1px solid #ccc
+  li:first-child
+    border-top: 0
+  h4
+    margin-bottom: 12px
+  .li_bookmark
+    background:
+      image: image-url("big_list_bookmark.png")
+      position: 0 20px
+  .li_note
+    background:
+      image: image-url("big_list_note.png")
+      position: 0 13px
+  .li_social
+    background:
+      image: image-url("big_list_social.png")
+      position: 0 22px
+  .li_badge
+    background:
+      image: image-url("big_list_badge.png")
+      position: 0 19px
+  .user
+    overflow: hidden
+    img
+      float: left
+      margin-right: 10px
+    &>div
+      float: left
+  li[class^="li_"]
+    background:
+      repeat: no-repeat
+    padding-left: 26px
+
+// Book-chap-verse select table
+//---------------------------------------------------------------------------------------
+
+.book_select
+  width: 100%
+  th, td
+    text-align: center
+    vertical-align: middle
+    height: 44px
+    width: 50%
+  th
+    font-weight: bold
+    border-bottom: 1px solid #e5e5e5
+  tr
+    th:first-child, td:first-child
+      border-right: 1px solid #e5e5e5
+
+.verse_select
+  width: 100%
+  td
+    width: 14.2%
+    height: 44px
+    border-bottom: 1px solid #e5e5e5
+    border-right: 1px solid #e5e5e5
+    vertical-align: middle
+    text-align: center
+  tr
+    td:last-child
+      width: 14.8%
+      border-right: 0
+
+// Verse task pages (highlight, notes, etc)
+//---------------------------------------------------------------------------------------
+
+.inner_content
+  background-color: #efefef
+  padding: 20px
+  ul.social
+    margin-top: 8px
+  li
+    float: left
+    list-style: none
+    margin: 0
+    padding: 5px
+  li:first-child
+    margin-left: 0
+  ul.social
+    margin-bottom: 0
+    li
+      border: 1px solid #dedede
+      +box-shadow(#fff 0 1px 0 0, inset #fff 0 1px 0 0)
+      +border-radius(5px)
+      margin-left: 8px
+    li:first-child
+      margin-left: 0
+  div.divider
+    text-align: center
+    background: image-url("divider.gif") center center repeat-x
+    margin: 8px 0
+    span
+      strong
+        color: #999
+      margin: 0 auto
+      background-color: #efefef
+      padding: 0 8px
+      text-shadow: #fff 0 1px 0
+      font-size: 13px
+  textarea
+    height: 100px
+  .help_txt
+    margin-top: 8px
+    font-size: 12
+    color: #999
+
+  label ~ input
+    display: block
+
+  input, textarea
+    margin-bottom: 8px
+
+  strong
+    padding-right: 8px
+
+// Audio player
+//---------------------------------------------------------------------------------------
+
+#menu_audio_player
+  -webkit-font-smoothing: subpixel-antialiased
+  background:
+    color: transparent
+  display: none
+  font-size: 13px
+  color: #FFF
+  border-radius: 0px
+  border: 0px
+  width: 100%
+  padding: 0px
+  position: absolute
+  top: -208px
+  box-shadow: none
+  z-index: 291
+
+  .menu_arrow
+    display: none
+
+  dl
+    margin-bottom: 0
+    background:
+      image: none
+      color: #2C2B2B
+    border: 0px !important
+    text-shadow: none
+    padding: 10px 0px 30px
+
+    dt
+      background: none
+      border-top: 0px !important
+      box-shadow: none
+
+    dd
+      box-shadow: none
+      border: 0px
+
+  a.close
+    display: none
+
+// KM: temporary HACK to remove the share button for initial launch until 
+// it can be implemented properly
+.verse_toolbar nav a.share_btn
+  display: none

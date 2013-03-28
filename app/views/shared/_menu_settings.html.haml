@@ -1,11 +1,16 @@
 #menu_settings.dynamic_menu
   %span.menu_arrow
     &nbsp;
-  %header
-    %a.close{:href => '#'}= t('.close')
-    = t('.title')
+  .tab_navigation.settings.mobile
+    .inner_wrapper
+      %a.font{:href => '#font', :class => 'selected'} 
+        = t('Font')
+      %a.font_size{:href => '#size'}
+        = t('Size')
+      %a.extras{:href => '#extras'}
+        = t('Extras')
   %form.dynamic_menu_inner{:action => ''}
-    %fieldset.clearfix
+    %fieldset.clearfix#font_settings
       %p.gutter_bottom_half
         %b
           = t('.font')
@@ -25,7 +30,7 @@
         %input.radio_user_setting{'data-setting-font' => 'user_setting_font_verdana', :type => 'radio', :name => 'user_setting_font', :id => 'radio_verdana', :value => 'Verdana', :checked => ('checked' if client_settings.reader_font == "user_setting_font_verdana")}
         %label.user_setting_font_verdana{:for => 'radio_verdana'}
           = t('.font4')
-    %fieldset.clearfix
+    %fieldset.clearfix.hide_list#size_settings
       %p.gutter_bottom_half
         %b
           = t('.font size')
@@ -41,7 +46,7 @@
         %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_size_large', :checked => ('checked' if client_settings.reader_font_size=="user_setting_size_large")}
         %label{:for => 'user_setting_size_large'}
           = t('.large')
-    %fieldset.clearfix
+    %fieldset.clearfix.hide_list#extra_settings
       %p.gutter_bottom_half
         %b
           = t('.extras')
@@ -70,3 +75,10 @@
         %input.radio_user_setting{'data-setting-size' => 'user_setting_highlights_off', :type => 'radio', :name => 'user_setting_size', :id => 'user_setting_highlights_off'}
         %label{:for => 'user_setting_highlights_off'}
           = t('.off')
+
+  .mobile
+    %div.close_tab
+      %span.first
+      %div.mid
+        %a.menu_close
+      %span.last

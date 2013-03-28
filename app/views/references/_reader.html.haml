@@ -3,6 +3,10 @@
 // presenter: (required) Presenter::Reference or Presenter::Subscription
 
 - @is_reader    = true
+- @canonical    = bible_url(presenter.reference)
+- @html_classes = []
+- @html_classes << "full_screen" if client_settings.reader_full_screen
+- @html_classes << "full_screen" << "parallel_mode" if client_settings.reader_parallel_mode
 - reader_menus  = true
 - version       = presenter.version
 - reference     = presenter.reference
@@ -12,6 +16,16 @@
 - focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
 - modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
 - a_chapter = presenter.try(:is_chapter?)
+
+- content_for :mobile_right_nav do
+  %a.version_btn{:href => 'javascript:void(0);'}
+    = version.abbreviation
+  %span.right_btn_slice
+
+- content_for :title_link do
+  = link_to(reference.human, 'javascript:void(0);')
+  %span.right_btn_slice
+
 
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 

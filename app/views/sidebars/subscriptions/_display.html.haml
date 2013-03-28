@@ -6,6 +6,10 @@
 
 - else
   - url = "/subscriptions/#{presenter.subscription_id}/sidebar"
+  .mobile#mobile-sb-subscription{class: ('initial' if presenter.initial_load?)}
+    .reader_modal_header
+      %nav
+        %a.close_btn.subscription_close_btn
   #sb-subscription
     .ajax_me{"data-ajax" => url}
       .widget.widget-notice.widget_last_fixed{style: "width:268px;"}

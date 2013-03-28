@@ -1,22 +1,41 @@
 - @title = @user.name || @user.username if @user
 
+- if @me
+  - content_for :mobile_right_nav do
+    %a.settings_btn{:href => settings_profile_path}
+
 - content_for :main do
-  - if @me
-    - # Then I'm looking at myself
-    = render(partial: "user_info", locals: {user: @user}) if @selected == :recent_activity
-    %article
+  - unless content_for?(:sidebar)
+    - content_for :sidebar do
+      - if @me
+        = render "shared/widget_profile_settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
+      = render "shared/widget_user_badges" unless @user.badges.empty?
+
+  = render partial: "user_info", locals: {user: @user, me: @me}
+  = render partial: "user_tabs", locals: {selected: @selected} if !@me
+
+  %article.profile
+    - if @me
       - if @selected == :recent_activity || @selected == :notes || @selected == :friends || @selected == :badges
-        %h1{class: @selected == :friends || @selected == :notes ? "float_left" : ""}= t("users.my #{@selected.to_s}")
-      - elsif @selected == :following || @selected == :followers
-        %h1{class: "float_left"}= t("users.my friends")
+        - title = t("users.my #{@selected.to_s}")
+        %h1{class: @selected == :friends || @selected == :notes ? "float_left" : ""}= title
       - else
-        %h1{style: "border-bottom:1px solid #DDD; padding-bottom:.5em"}= t("users.edit #{@selected}")
-      = content_for?(:user_main) ? yield(:user_main) : yield
-  - else
-    - # I'm looking at someone else, show their info and stuff
-    = render(partial: "user_info", locals: {user: @user})
-    = render partial: "user_tabs", locals: {selected: @selected}
-    %article
-      = content_for?(:user_main) ? yield(:user_main) : yield
+        - title = t("users.edit #{@selected}")
+        %h1= title
+        .mobile
+          %dl.tabs
+            %dd{class: ('highlighted' if @selected == :profile)}
+              = link_to t("users.edit profile"), settings_profile_path
+            %dd{class: ('highlighted' if @selected == :password)}
+              = link_to t("users.edit password"), settings_password_path
+            %dd{class: ('highlighted' if @selected == :notifications)}
+              = link_to t("users.edit notifications"), notification_settings_path
+            %dd{class: ('highlighted' if @selected == :connections)}
+              = link_to t("users.edit connections"), settings_connections_path
+      -unless content_for? :title
+        - content_for :title do
+          = title
+
+    = content_for?(:user_main) ? yield(:user_main) : yield
 
 = render template: 'layouts/application'

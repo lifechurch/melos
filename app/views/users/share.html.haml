@@ -1,0 +1,32 @@
+- content_for :mobile_left_nav do
+  = render partial: 'shared/back_button'
+  
+- content_for :mobile_right_nav do
+  = render partial: 'shared/save_button', locals: {text: t('ref.share')}
+
+%article
+  %h1= t('share')
+
+  %form.clearfix.share{action: share_path, method: "post"}
+    %div.share_message
+      %textarea{name: "share[message]", style: "margin-bottom: 8px"}= params[:share][:message]
+      %div.float_right
+        %b#short_link
+          = params[:share][:link]
+        = t("link will be added")
+      %input{type: "hidden", id: "share_link", name: "share[link]", value: params[:share][:link]}
+
+      %div.clearfix{style: "margin-bottom: 8px"}
+      -# %div.share_action
+        -# %button{:type => "submit", :name => "share[submit]", :value => "submit", :class => "float_right action_button_green dark"}= t('ref.share now')
+      %div.share_services
+
+        %span.float_left{style: "width: 60%"}
+          %input#checkbox_share_twitter{type:"checkbox",name:"share[connections][twitter]"}
+          %label.share_verse_twitter{for: 'share_verse_twitter', value: "Twitter"} = t("twitter")
+
+        %span.float_left{style: "width: 60%"}
+          %input#checkbox_share_facebook{type:"checkbox", name: "share[connections][facebook]"}
+          %label.share_verse_facebook{for: 'share_verse_facebook'}= t("Facebook")
+
+      %div.clearfix{style: "margin-bottom: 15px"}

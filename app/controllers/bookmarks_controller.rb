@@ -29,7 +29,7 @@ class BookmarksController < ApplicationController
 
   def new
     if current_auth
-      @bookmark = Bookmark.new
+      @bookmark = Bookmark.new(params[:bookmark])
     else
       redirect_to bookmarks_path
     end

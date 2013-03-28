@@ -23,7 +23,7 @@ SharePane.prototype = {
   updateForm : function( params ) {
 
     // Populate link fields
-    var link = params.link.toLowerCase();
+    var link = params.link.trim().toLowerCase();
     this.short_link.html( link );
     this.share_link_field.val( link );
 
@@ -56,11 +56,24 @@ SharePane.prototype = {
         target: this.textarea
       });
     }
+  },
 
+  resetCounter : function(){
+    // Populate character count info
+    var chars_left = 140 - this.short_link.text().length - 1;
+        this.share_message_field.charCount({
+          allowed: chars_left,
+          css: "character_count"
+        });
   },
 
   getSelectedVersesContent : function() {
     return $('#version_primary .verse.selected .content');
+  },
+
+  initForm : function(){
+    this.updateForm({link: this.short_link.text()});
+    this.resetCounter();
   }
 
 }

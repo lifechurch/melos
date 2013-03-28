@@ -3,11 +3,11 @@
   %p
     = f.label :email, t("users.email address")
     %br
-    = f.text_field :email, {class: "autofocus", type: "email"}
+    = f.text_field :email, {class: "autofocus", type: "email", autocorrect: "off", autocapitalize: "off"}
   %p
     = f.label :username, t("users.user name")
     %br
-    = f.text_field :username
+    = f.text_field :username, {autocorrect: "off", autocapitalize: "off"}
   %p
     = f.label :password, t("password prompt")
     %br

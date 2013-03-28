@@ -1,0 +1,43 @@
+// -----------------Calendar
+.cal_month
+  width: 100%
+  caption, th, td
+    text-align: center
+  caption
+    font-weight: bold
+    padding-bottom: 4px
+  th
+    background-color: #ededed
+    border:
+      top: 1px solid #e1e1e1
+      left: 1px solid #e1e1e1
+      bottom: 1px solid #e1e1e1
+    color: #999
+  th:first-child
+    border-left: 0
+  td
+    border: 1px solid #e1e1e1
+    vertical-align: middle
+    height: 44px
+    box-shadow: none
+
+    a
+      font-weight: bold
+      text-decoration: none
+      height: 44px
+      display: block
+      line-height: 44px
+
+  td.read
+    font-weight: bold
+    background: image-url("cal_check.png") no-repeat top right
+
+  td.read a
+    color: #888
+    background: none
+
+.cal_month .active-day a
+  background: image-url("cal_bullet.png") center 36px no-repeat
+
+#main article .tab_navigation + table
+  margin-top: 20px !important

@@ -330,7 +330,7 @@ module YouVersion
     def after_build; end
 
     def initialize(data = {})
-      @attributes = data
+      @attributes = data || {}
       @associations = {}
 
       after_build

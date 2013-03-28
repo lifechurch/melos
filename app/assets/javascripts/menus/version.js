@@ -31,11 +31,17 @@ VersionMenu.prototype = {
     var _this = this;
     this.menu.find('a').unbind('click');
     this.menu.find('a').bind('click', (function(e) {
+
       e.preventDefault();
 
       // Todo: refactor
       var tr            = $(this).closest('tr');
       var version_id    = tr.data("version");
+
+      //just follow the link if there's no data-version
+      if (!version_id) return true;
+      e.preventDefault();
+
       var abbrev        = tr.data("abbrev");
       var menu          = $(this).closest(".dynamic_menu.version_select");
       var path_chapter  = $('article .chapter').data('usfm') || 'JHN.1'; //TODO: grab first ref usfm in this version (from json model of version)
@@ -71,6 +77,10 @@ VersionMenu.prototype = {
       }
     }));
 
+    //KM: this is a pretty hacky way to do this, but seemed simpler than
+    //complicating the jquery selectors above to exclude this one. The
+    //following works, but definitely can be improved.
+    this.menu.find('#see_all a').unbind('click');
   },
 
   setRecentVersion : function( version_id ) {
@@ -96,6 +106,7 @@ VersionMenu.prototype = {
       this.triggers.unbind('click', $.proxy(thiss.loadVersions, thiss));
       return;
     }
+    // console.log('versions ajaxed');
     var context = "";
     if (typeof(reader) !== 'undefined' && reader.version) {context = "?context_version=" + reader.version;}
     $.ajax({
@@ -169,7 +180,7 @@ VersionMenu.prototype = {
             $(this).nextUntil('tr.cat').show();
           }
         }
-        else if($(this).attr('data-meta').length){
+        else if($(this).attr('data-meta')){
           // show matching versions and their category headers
           if($(this).attr('data-meta').match(regexp)){
             // show matching version row

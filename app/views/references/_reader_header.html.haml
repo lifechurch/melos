@@ -3,6 +3,64 @@
 // reference:
 // alt_version:
 
+#m-toolbar.mobile
+  %div.verse_toolbar{class: ('authed' if current_auth)}
+    %nav
+      %a.submenu_btn.highlight_btn{href: 'javascript:void(0);'}
+      %a.submenu_btn.bookmark_btn{href: 'javascript:void(0);', "data-action" => new_bookmark_path, "data-method" => 'GET'}
+      %a.submenu_btn.note_btn{href: 'javascript:void(0);', "data-action" => new_note_path, "data-method" => 'GET'}
+      %a.submenu_btn.share_btn{href: 'javascript:void(0);', "data-action" => new_share_path, "data-method" => 'GET'}
+    %div.close_tab
+      %span.first
+      %div.mid
+        %a.menu_close.verse_close_btn
+      %span.last
+
+  %div.color_toolbar
+    %nav
+      %form.highlights{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+        - if current_auth.nil?
+          %input{type: 'hidden', name: 'redirect', value: "/bible"}
+          %input{type: 'hidden', name: 'source', value: "highlight"}
+
+        %input.references{name: "highlight[references]", type: "hidden"}
+        %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
+
+        %div.color_picker_list
+          %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
+          %span
+          - if current_auth
+            %span#dup_mobile_highlights
+              = render partial: "users/highlight_color_swatches"
+          - else
+            %span
+              = render partial: "users/highlight_color_swatches"
+      %div.clear
+    .mobile
+      %div.close_tab
+        %span.first
+        %div.mid
+          %a.menu_close.highlight_close_btn
+        %span.last
+
+#m-navitems.mobile
+  %div.nav_items{class: reference.audio ? nil : "audio-disabled"}
+    %span.first
+    %ul
+      %li
+        = link_to("Prev", bible_path(reference.previous_chapter), class: "prev") if reference.previous_chapter
+      %li
+        %a.button.reader_settings_btn{:href => 'javascript:void(0);'}
+          %span.icon_reader_settings
+      %li{class: ("audio-disabled" unless version.audio_version?)}
+        %a.button.audio_btn{:href => '#menu_audio_player', :title => t("ref.listen")}
+          %span.icon_listen
+          =t("ref.listen")
+      %li
+        = link_to("Next", bible_path(reference.next_chapter), class: "next") if reference.next_chapter
+    %span.last
+  %br.clear
+
 #reader_header
   %header
     %ul.float_left

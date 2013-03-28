@@ -50,13 +50,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user].merge(language_tag: I18n.locale))
-    # Try authing them first - poor man's login screen
-    # begin
-    #       if test_user = User.authenticate(params[:user][:username], params[:user][:password])
-    #         sign_in test_user, params[:user][:password]
-    #         follow_redirect
-    #       end
-    #     rescue
+    # Try authing them first - some users accidentally use this as a login
+    begin
+      if test_user = User.authenticate(params[:user][:username], params[:user][:password])
+        sign_in test_user, params[:user][:password]
+        follow_redirect
+      end
+    rescue
       if @user.save
         # save username and password so we can sign them back in
         cookies.signed[:f] = params[:user][:username]
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
         redirect_to confirm_email_path
       else
         render action: "new", layout: "application"
-    # end
+      end
     end
   end
 
@@ -150,6 +150,7 @@ class UsersController < ApplicationController
     @nav = :notes if @me
     @selected = :notes
     @notes = @user.notes(page: params[:page])
+    render 'notes/index', layout: "application"
   end
 
   def likes
@@ -183,6 +184,14 @@ class UsersController < ApplicationController
       flash[:error] = t('share error') and redirect_to :back
     end
   end
+
+  def new_share
+    render "share", layout: "application"
+  end
+
+  #
+  # Profile actions
+  #
 
   def edit
     @selected = :profile

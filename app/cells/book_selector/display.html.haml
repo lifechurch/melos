@@ -1,4 +1,15 @@
 #menu_book_chapter.dynamic_menu
+  .mobile
+    .reader_modal_header
+      %nav
+        %a.close_btn.reference_close_btn
+    .tab_navigation.ref
+      .inner_wrapper
+        %a.book{:href => '#book', :class => 'selected'}
+          = t('Book')
+        %a.chapter{:href => '#chapter'}
+          = t('Chapter')
+  %br.clear
   .spinner_wrapper{style: "display: none;"}
     #book_chapter_spinner.dynamic_menu_spinner
   .search

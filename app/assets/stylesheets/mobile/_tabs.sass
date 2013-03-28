@@ -1,0 +1,97 @@
+// Style adjustments for viewports 990px and under go here
+
+// `Content Tabs
+//----------------------------------------------------------------------------------------------------
+
+// Hack for Firefox.
+@-moz-document url-prefix()
+  #main article .combo_button
+    line-height: 28px
+
+#main article .combo_button
+  width: 100%
+  position: absolute
+  left: 0px
+  top: -5px
+  display: block
+  height: 44px
+  margin: 0px
+  text-align: center
+  line-height: 43px
+  color: #444
+  font-weight: bold
+  font-size: 15px
+  text-decoration: none
+  border-bottom: 0px
+  float: none !important
+  overflow: hidden
+
+#main article .combo_button
+  dt
+    display: none
+
+  dt:first-child + dd,
+  dd:last-child,
+  dt:first-child + dd a,
+  dd:last-child a
+    +border-radius(0)
+
+  dd
+    width: 49.99%
+    border: 0px
+    background: none
+    background-color: #666
+    text-shadow: none
+    color: #fff
+    margin-left: 0
+
+  dd:hover
+    background: #666
+    border-color: none
+
+  dd:first-child
+    border-left: 0
+
+  dd.highlighted,
+  dd.highlighted:hover
+    background: #fff
+    border-radius: 0px
+    color: #666 !important
+    +box-shadow(none)
+
+  dd.highlighted a
+    padding-left: 0px
+    color: #444 !important
+    text-decoration: none
+
+  dd.highlighted a:hover
+    color: #666
+
+  dd:hover a
+    color: #222 !important
+
+#main article .combo_button
+  a
+    border: 0px
+    width: 100%
+    padding: 0 !important
+    height: auto
+    background: none !important
+    color: #fff
+    text-align: center
+    +border-radius(0 !important)
+
+  a:last-child
+    +border-radius(0 !important)
+
+  .highlighted a
+    box-shadow: none
+
+
+  dt:first-child + dd
+    border-radius: 0px
+
+#main article .combo_button + .big_list,
+#main article .combo_button + .split_pane,
+#main article .tab_navigation + table
+  margin-top: 60px !important

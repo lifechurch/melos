@@ -16,9 +16,16 @@
       %p
         %b=t("plans.length field")
         = plan.length
-    - if (!current_user || !current_user.subscribed_to?(plan))
-      %li{class: current_page?(controller:"plans",action:"sample") ? "active" : nil }
-        = link_to_unless_current(t("plans.view sample"), sample_plan_path(plan.to_param, day: 1)) do
-          %span= t("plans.view sample")
-
-=render partial: "/sidebars/plans/publisher", locals: {plan: plan}
+    - if !current_user || !current_user.subscribed_to?(plan)
+      %li
+        = link_to(t("plans.view sample"), day: 1.to_s, initial: 'true')
+.widget
+  %header
+    %span
+      =t("plans.publisher")
+  %ul.widget_menu
+    %li
+      %p= plan.copyright
+    - unless plan.publisher_url.nil?
+      %li
+        = link_to(t("plans.about publisher"), plan.publisher_url)

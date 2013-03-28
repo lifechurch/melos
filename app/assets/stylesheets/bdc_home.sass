@@ -362,7 +362,7 @@ p
 
 // ----------------------------------- Media queries -----------------------------------
 
-@media only screen and (max-width: 480px)
+@media only screen and (max-width: 990px)
 
   body
     background: transparent
@@ -372,13 +372,19 @@ p
   #wrapper
     margin: 0
     padding: 0
-    width: auto
+    width: 100% !important
     background: transparent
 
   #header_outer
     background: transparent
     padding: 0
     width: auto
+
+  header #slideToNav
+    display: none !important
+
+  header #yv_logo
+    display: block !important
 
   #container.no_sidebar
     width: auto
@@ -578,7 +584,8 @@ p
           p
             display: block
             padding-right: 70px
-            background: image-url("Bible-app-icon-en-small.png") no-repeat top right
+            background: image-url("Bible-app-icon-english-50x50.png") no-repeat top right
+            min-height: 50px
           span
             p
               background: transparent
@@ -635,6 +642,7 @@ p
 
   .bs-promo
     display: none
+
 
 @media only screen and (min-width: 481px)
   #main article .bottom_cta div:first-child p

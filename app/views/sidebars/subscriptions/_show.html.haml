@@ -7,13 +7,19 @@
   reading       = presenter.reading
   content_page  = presenter.content_page
 
+.mobile#mobile-sb-subscription{class: ('initial' if presenter.initial_load?)}
+  .reader_modal_header
+    %nav
+      %a.close_btn.subscription_close_btn
+    %nav.nav_right
+      = link_to t("plan settings"), edit_user_subscription_path(current_user, plan_id: @plan.to_param), class: "settings_btn"
 #sb-subscription
   .widget.widget-notice.widget_last_fixed{style: "width:268px;"}
     %p
       = t("plans.sidebar notice")
       %span.exit= link_to(t("plans.exit"), shelf_user_subscription_path(current_user, subscription, content: content_page, day: day ), method: :post)
 
-  .widget{style: "margin-top:54px;"}
+  .widget.subscription{style: "margin-top:54px;"}
     %header
       - settings_text = t("settings")
       =link_to(edit_user_subscription_path(current_user,subscription),{class: "settings", title: settings_text}) do
@@ -59,13 +65,15 @@
               = check_box_tag(:completion, nil, ref.completed?, {id:"#{index}_box",onChange: "this.form.submit()"} )
 
             - if content_page == index
-              %span= ref.ref.safe_human
+              %span
+                %b.mobile= t("plans.read today").capitalize
+                = ref.ref.safe_human
             - else
               %a{href: (content_page == index) ? nil : user_subscription_path(current_user, subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
                 = ref.ref.safe_human
 
 - if reading.devotional
-  .widget
+  #sb-devotional.widget
     %header= t("plans.devotional")
     %ul.widget_menu
       %li

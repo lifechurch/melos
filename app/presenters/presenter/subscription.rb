@@ -12,6 +12,10 @@ module Presenter
       @sid = subscription.id.to_i
     end
 
+    def initial_load?
+      @params[:initial] || @controller.send(:external_request?)
+    end
+
     def subscription_id
       @sid
     end
@@ -43,6 +47,10 @@ module Presenter
                         (c_name == "plans" && c_action == "sample")
 
       @content_page ||= Range.new(0, reading.references.count - 1).include?(@params[:content].to_i) ? @params[:content].to_i : 0 #coerce content page to 1st page if outside range
+    end
+
+    def is_chapter?
+      reading.references[content_page].ref.is_chapter?
     end
 
     def is_chapter?
