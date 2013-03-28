@@ -34,37 +34,6 @@ module YouversionWeb
       # lifekids redirect
       r301 %r{^(/.{2,5})?(/lifekids$)}, '$1/reading-plans?category=family'
 
-      #   Mobile
-      do_rewrite = lambda do |path, rack_env|
-        new_path = path.to_s
-
-        # url = "http://#{rack_env['SERVER_NAME'].gsub(/www/, "m")}"
-        new_server_name = "bible.com"
-
-        # reform url for mDot
-        case new_path
-        when /^\/bible\/(?:(\d+)\/)?(\w{3})\.?([^\.]+)(?:(?:\.([,\w-]+))?)\.([\w-]+)/
-          new_path = nil
-          book = YvApi::get_osis_book($2)
-          version = YvApi::get_osis_version($1) || $5 || 'kjv'
-          chapter = $3
-          verses = $4
-
-          (chapter = 1 && book = 'john') if book.blank?
-          new_path = "/bible/verse/#{version.downcase}/#{book}/#{chapter}/#{verses}" if verses.present?
-          new_path ||= "/bible/#{version.downcase}/#{book}/#{chapter}"
-
-        when /^\/reading-plans\/\d+-([^\/]*)/
-          new_path = "/reading-plans/#{$1}"
-        when /^\/reading-plans\?.*category=([^&\/]*)/
-          new_path = "/reading-plans/category/#{$1}"
-        end
-
-        "https://#{new_server_name}#{new_path}"
-      end
-
-      r301 /.*/, do_rewrite
-
       ### BIBLE REDIRECTS
       # /bible/john.3.16-17,19,21.ESV (legacy web3 API2 links, verse(s) optional)
       r301 %r{/bible/(\w+)\.(\d+(?:(?:\.[,\d-]+)?))\.(\w+)}, '/bible/$3/$1.$2.$3'
