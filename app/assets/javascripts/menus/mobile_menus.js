@@ -10,7 +10,7 @@ function MobileMenus() {
   this.verseToolbar       = $('.verse_toolbar');
   this.verse              = $('.verse');
   this.audioToolbar       = $('#menu_audio_player');
-  this.bookChapterTrigger = $('#chapter_title a');
+  this.bookChapterTrigger = $('#m_book_chap_btn');
   this.referenceToolbar   = $('#menu_book_chapter');
   this.referenceH         = this.referenceToolbar.height();
   this.subscriptionMenu   = $('#sidebar');
@@ -173,7 +173,7 @@ MobileMenus.prototype = {
     // make sure to modify version.js to only ajax for widescreen!
 
     // Version menu trigger
-    $('.version_btn').click(function(e){
+    $('#m_version_btn').click(function(e){
         e.preventDefault();
 
         thiss.versionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass(this.openFlag);
@@ -210,7 +210,7 @@ MobileMenus.prototype = {
     }
 
     // Version menu trigger
-    $('.reading_plans_btn').click(function(e){
+    $('#m_plan_btn').click(function(e){
         e.preventDefault();
 
         thiss.openSubscriptionMenu();

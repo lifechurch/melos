@@ -11,8 +11,7 @@
   %meta{name: "robots", content: "noindex"}
 
 - content_for :mobile_right_nav do
-  %a.version_btn{:href => 'javascript:void(0);'}
-    = version.abbreviation
+  = link_to(version.abbreviation, "javascript:void(0);", id: "m_version_btn")
   %span.right_btn_slice
 
 - content_for :title do
