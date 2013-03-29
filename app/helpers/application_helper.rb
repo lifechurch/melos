@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  def overwrite_content_for(name, content = nil, &block)
+    @view_flow.set(name, ActiveSupport::SafeBuffer.new)
+    content_for(name, content, &block)
+  end
+
   def html_attributes( atts = {} )
     classes = [atts[:classes]] if atts[:classes].is_a? String
     @html_id      = atts[:id] if atts[:id]

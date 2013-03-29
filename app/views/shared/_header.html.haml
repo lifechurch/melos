@@ -3,7 +3,7 @@
     %span
       Mobile Beta
     %a{:href => 'mailto:mobilewebfeedback@youversion.zendesk.com?Subject=Mobile%20Beta%20Feedback'}
-      Feedback 
+      Feedback
 %header#header{:role => 'banner'}
   - if content_for? :header
     = yield :header
@@ -41,21 +41,26 @@
             %li
               %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), :class=> "sign_in"
     .mobile
-      - if content_for? :mobile_left_nav
-        = yield :mobile_left_nav
+
+      - if content_for?(:mobile_left_nav)
+        = content_for(:mobile_left_nav)
       - else
         %a#slideToNav.nav_btn{:href => 'javascript:void(0);'}
           View Navigation
-      - if content_for? :title
-        %h1#page_title= yield :title
-      - if content_for? :title_link
-        %h1#chapter_title= yield :title_link
-      - if content_for? :mobile_right_nav
+
+      - if content_for?(:title)
+        %h1#page_title= content_for(:title)
+
+      - if content_for?(:title_link)
+        %h1#chapter_title= content_for(:title_link)
+
+      - if content_for?(:mobile_right_nav)
         %nav.right_nav
-          - if content_for? :mobile_subscription_nav
-            = yield :mobile_subscription_nav
+
+          - if content_for?(:mobile_subscription_nav)
+            = content_for(:mobile_subscription_nav)
           - else
-            = yield :mobile_right_nav
+            = content_for(:mobile_right_nav)
 
     %form#header_search_form{:action => search_path, method: "GET"}
       %input#header_search_input{:type => 'search', :name => "q", :placeholder => t("search placeholder")}
