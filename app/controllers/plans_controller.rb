@@ -27,12 +27,16 @@ class PlansController < ApplicationController
 
   def sample
     @plan = Plan.find(params[:id])
+
+    # render 404 unless day param is a valid day for the plan
+    return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
+
     if current_auth && current_user.subscribed_to?(@plan)
        redirect_to user_subscription_path(current_user,id: @plan.to_param) and return
-    else
-      @presenter = Presenter::Subscription.new( @plan , params, self)
-      self.sidebar_presenter = Presenter::Sidebar::PlanSample.new(@plan,params,self)
     end
+
+    @presenter = Presenter::Subscription.new( @plan , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::PlanSample.new(@plan,params,self)
   end
 
   def ref_not_found
@@ -42,8 +46,8 @@ class PlansController < ApplicationController
     render 'invalid_ref'
   end
 
-  def handle_404(ex)
-    @suggestion = ex.suggestion
+  def handle_404(ex = nil)
+    @suggestion = ex.try(:suggestion)
     render "error_404"
   end
 
