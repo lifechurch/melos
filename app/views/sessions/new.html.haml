@@ -1,10 +1,6 @@
 - content_for :title do
   =t('sign in')
 
-- content_for :mobile_right_nav do
-  %a.save_btn{:href => 'javascript:void(0);', onclick: "$('input[type=\"submit\"]').click();"}
-    = t('sign in')
-
 - content_for :sidebar do
   =render partial: "/sidebars/sessions/new"
 

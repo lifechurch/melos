@@ -1,10 +1,6 @@
 - content_for :title do
   =t('sign up')
 
-- content_for :mobile_right_nav do
-  = submit_tag t("users.register"),{:class => "submit_btn"}
-
-
 - content_for :sidebar do
   =render partial: "/sidebars/users/new"
 

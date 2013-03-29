@@ -7,8 +7,8 @@
 
   %header#header{role:"banner"}
     = cache "header_logo_#{@site}", expires_in: a_short_time do
-      %a#yv_logo{:href => '/', style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})" }
-        =@site.title
+      = link_to(@site.title, "/" , style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})", id:"yv_logo")
+
     %nav.sign_in
       %ul
         - if current_auth
@@ -20,31 +20,31 @@
                   =current_auth.username
               %ol#header_profile_menu
                 %li
-                  %a{:href => "/settings"}
+                  %a{href: "/settings"}
                     =t("settings")
                 %li
-                  %a{:href => user_path(current_auth.username)}
+                  %a{href: user_path(current_auth.username)}
                     =t("profile")
                 %li
-                  %a{:href => sign_out_path}
+                  %a{href: sign_out_path}
                     =t("sign out")
             %li
-              %a{:href => "/settings/connections"}
+              %a{href: "/settings/connections"}
                 %span
                   =t("find friends")
 
         - else
           = cache "header_anon_#{I18n.locale}", expires_in: a_short_time do
             %li
-              %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), :class=> "sign_in"
+              %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
             %li
-              %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), :class=> "sign_in"
+              %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign_in"
 
     .mobile
       - if content_for? :mobile_left_nav
         = yield :mobile_left_nav
       - else
-        %a#slideToNav.nav_btn{:href => 'javascript:void(0);'}
+        %a#slideToNav.nav_btn{href: 'javascript:void(0);'}
           View Navigation
       - if content_for? :title
         %h1#page_title= yield :title
@@ -57,11 +57,11 @@
           - else
             = yield :mobile_right_nav
 
-    %form#header_search_form{:action => search_path, method: "GET"}
-      %input#header_search_input{:type => 'search', :name => "q", :placeholder => t("search placeholder")}
-      %input#header_search_button{:type => 'submit', :value => t("search")}
+    %form#header_search_form{action: search_path, method: "GET"}
+      %input#header_search_input{type: 'search', name:"q", placeholder: t("search placeholder")}
+      %input#header_search_button{type: 'submit', value: t("search")}
       - if params[:controller] == "search"
         -if params[:category]
-          %input{:type => 'hidden', :name => "category", :value => params[:category]}
+          %input{type: 'hidden', name: "category", value: params[:category]}
         -if params[:version]
-          %input{:type => 'hidden', :name => "version", :value => params[:version]}
+          %input{type: 'hidden', name: "version", value: params[:version]}
