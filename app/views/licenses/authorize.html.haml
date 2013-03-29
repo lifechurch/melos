@@ -5,7 +5,7 @@
     render partial: "shared/header/basic"
   end
 
-
+// same content is rendered in article tag for mobile only
 - content_for :sidebar do
   .widget.account_benefits
     %header
@@ -14,7 +14,7 @@
       - @vendor.links.each do |link|
         %li= link_to(link.title, link.url)
 
-%article
+%article.licensing
 
   - if @confirming && @success #user signed up and success on licensing call
 
@@ -40,3 +40,10 @@
     %ul
     - @error.errors.each do |err|
       %li= t(err)
+
+  .mobile.support-info
+    %h4
+      %span= @vendor.name
+    %ul
+      - @vendor.links.each do |link|
+        %li= link_to(link.title, link.url)
