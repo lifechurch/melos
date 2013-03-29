@@ -20,7 +20,7 @@ module SiteConfigs
       :es
     end
 
-    def allow_donate
+    def allow_donate?
         false
     end
 

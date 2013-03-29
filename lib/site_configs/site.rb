@@ -31,10 +31,10 @@ module SiteConfigs
     def default_version; end
 
     def default_locale; end
-    
+
     def available_locales; end
 
-    def allow_donate
+    def allow_donate?
         true
     end
 
