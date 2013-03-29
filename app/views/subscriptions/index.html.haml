@@ -1,4 +1,6 @@
-- @title = t("plans.title")
+:ruby
+  @title = t("plans.title")
+  html_attributes(id: "subscriptions-index")
 
 - content_for :title do
   = t("plans.title")
