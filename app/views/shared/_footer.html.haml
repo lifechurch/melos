@@ -1,44 +1,34 @@
-%footer#footer{:role => "contentinfo"}
+%footer#footer{role: "contentinfo"}
   = cache "#{@site}_footer_#{I18n.locale}", expires_in: a_short_time do
-    %p.float_left
-      %a{:href => external_url(:now)}=t("now")
-      %span.separator
-        |
-      %a{:href => about_path}=t("about")
-      %span.separator
-        |
-      %a{:href => 'http://blog.youversion.com/jobs'}=t("jobs")
-      %span.separator
-        |
-      %a{:href => privacy_path}=t("privacy policy")
-      %span.separator
-        |
-      %a{:href => terms_path}=t("terms")
-      %span.separator
-        |
-      %a{:href => press_path}=t("press")
-      %span.separator
-        |
-      %a{:href => external_url(:support)}=t("get support")
-      - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt-BR", :tr].include? I18n.locale
-        %span.separator
-          |
-        %a{:href => @site.donate_path || donate_path}=t("donate title")
-  .float_right
-    .lang
-      %label{:for => 'choose_language'}
-        =t("choose language field")
-        &nbsp;
-      %label.select_wrap{:for => 'choose_language'}
-        %span
-          %select{:id => 'choose_language', :name => 'choose_language'}
-            - I18n.available_locales.each do |loc|
-              - url = url_for(params.merge(locale: loc))
-              - url = "/#{loc}" + url_for(params.merge({locale: loc, only_path: true})) if loc == I18n.default_locale #default locale is ommited (routing-filter gem) for overall convenience, but removes /<default locale> from url_for path, so we must add it explicitly here.
-              %option{value: url, selected: loc == I18n.locale}= t("language name", locale: loc)
-    .copy.float_right
-      %span &copy;
-      = Date.today.year
-      %a{:href => 'http://www.lifechurch.tv'}=t("lifechurch short url")
+    %p.links
+      = link_to( t("now"),  external_url(:now))
+      = link_to( t("about"),about_path)
+      = link_to( t("jobs"), "http://blog.youversion.com/jobs")
+      = link_to( t("privacy policy"), privacy_path)
+      = link_to( t("terms"), terms_path)
+      = link_to( t("press"), press_path)
+      = link_to( t("get support"), external_url(:support) )
+
+      - if @site.allow_donate?
+        - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt-BR", :tr].include? I18n.locale
+          = link_to( t("donate title"), (@site.donate_path || donate_path))
+
+  - if I18n.available_locales.length > 1
+
+    #languages
+      %div
+        %label{for: 'choose_language'}= t("choose language field")
+        %div.select_wrap
+          %span
+            %select{ id: 'choose_language', name: 'choose_language'}
+              - I18n.available_locales.each do |loc|
+                - url = url_for(params.merge(locale: loc))
+                - url = "/#{loc}" + url_for(params.merge({locale: loc, only_path: true})) if loc == I18n.default_locale #default locale is ommited (routing-filter gem) for overall convenience, but removes /<default locale> from url_for path, so we must add it explicitly here.
+                %option{value: url, selected: loc == I18n.locale}= t("language name", locale: loc)
+
+    .copyright
+      %span= "&copy; #{Date.today.year}".html_safe
+      = link_to( t("lifechurch short url"),'http://www.lifechurch.tv')
+
 -unless ENV['RACK_ENV'] =~ /production/i
   %p.small.mute.float_right= "Non-production deployment, pointing at: #{Cfg.try :api_root}"

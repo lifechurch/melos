@@ -1,7 +1,7 @@
 class VersionsController < ApplicationController
 
   def index
-    @versions_by_lang = Version.all_by_language
+    @versions_by_lang = Version.all_by_language({:only => @site.versions})
     primary_locale = Version.find(params[:context_version]).language.tag rescue nil if params[:context_version].present?
     primary_locale ||= I18n.locale.to_s
     cur_lang = Hash[primary_locale, @versions_by_lang.delete(primary_locale)]

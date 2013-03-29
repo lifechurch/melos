@@ -1,14 +1,65 @@
 #footer
   clear: both
+  color: #888
   font-size: 11px
   padding: 20px 0 10px 70px
+  position: relative
 
-#footer,
-#footer a
-  color: #888
 
-#footer a:hover
-  color: $blue_light
+  p.links
+    overflow: auto
+    line-height: 1em
+    float: left
 
-#footer .separator
-  padding: 0 5px
+    a
+      display: block
+      margin-bottom: 1.4em
+      float: left
+      padding: 0 10px
+      border-left: 1px solid #ccc
+      color: inherit
+
+    a:first-child
+      border-left: none
+      padding-left: 0
+
+    a:hover
+      color: $blue_light
+
+  #languages
+    float: right
+
+    label
+      padding-right: 5px
+
+  .copyright
+    float: right
+    clear: right
+
+
+html.mobile
+
+  #footer
+    height: 120px
+
+    #languages
+      float: none
+      position: absolute
+      top: 20px
+
+    .copyright
+      float: none
+      position: absolute
+      bottom: 0
+
+    p.links
+      float: none
+      position: absolute
+      bottom: 15px
+
+    p.links a
+      font-size: 13px
+
+    p.links a:first-child
+      border-left: 1px solid #ccc
+      padding-left: 10px

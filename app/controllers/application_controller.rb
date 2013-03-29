@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :sidebar_presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
-  before_filter :set_locale
   before_filter :set_site
+  before_filter :set_locale
   before_filter :skip_home
   before_filter :check_facebook_cookie
   before_filter :tend_caches
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   #  Rack::MiniProfiler.authorize_request
   #end
 
-
+  original_locales = nil
 
 
 
@@ -42,10 +42,21 @@ class ApplicationController < ActionController::Base
 
   # Set locale
   def set_locale
+    if !@site.default_locale.nil?
+        I18n.default_locale = @site.default_locale
+    else
+        I18n.default_locale = :en
+    end
+
     visitor_locale = params[:locale].to_sym if I18n.available_locales.include?(params[:locale].try(:to_sym))
     from_param = !visitor_locale.nil?
 
-    visitor_locale ||= cookies[:locale].to_sym if I18n.available_locales.include?(cookies[:locale].try(:to_sym)) #forwards compatibility with lang code changes
+    if cookies[:locale]
+        visitor_locale ||= cookies[:locale].to_sym if I18n.available_locales.include?(cookies[:locale].try(:to_sym)) #forwards compatibility with lang code changes
+    elsif !@site.default_locale.nil?
+        visitor_locale = @site.default_locale
+    end
+
     visitor_locale ||= request.preferred_language_from(I18n.available_locales).try(:to_sym)
     visitor_locale ||= request.compatible_language_from(I18n.available_locales).try(:to_sym)
     visitor_locale ||= I18n.default_locale
@@ -59,6 +70,15 @@ class ApplicationController < ActionController::Base
     return redirect_to params.merge!(locale: visitor_locale) if !from_param && visitor_locale != I18n.default_locale
 
     I18n.locale = visitor_locale.to_sym
+
+    if !@site.available_locales.nil?
+        if @original_locales.nil?
+            @original_locales = I18n.available_locales
+        end
+        I18n.available_locales = @site.available_locales
+    else
+        I18n.available_locales = @original_locales
+    end
   end
 
   def set_site
@@ -72,7 +92,7 @@ class ApplicationController < ActionController::Base
     # This was introduced due to a bad email campaign sending the unsubscribe link as yv.com/?token=b990f8e2e6ea57e1156ed7c513251cbd6d30197f
     if home_page && params[:token] then redirect_to notification_settings_url(token: params[:token]) and return end
 
-    if home_page && cookies["setting-skip-home"]
+    if home_page && (@site.skip_splash || cookies["setting-skip-home"])
       redirect_to( bible_path( last_read || default_reference ))
     end
   end
