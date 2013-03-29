@@ -33,9 +33,6 @@
       - else
         = render '/shared/header/default'
 
-      - flash.each do |key, msg|
-        %div{class: "flash_#{key}"}= msg
-
       :ruby
         container_classes = []
         container_classes << "no_sidebar" if @sidebar == false
