@@ -33,7 +33,7 @@
   - elsif @success #user successfully authorized content, is not signing up
 
     %h1= t("licenses.authorized.heading")
-    %p=  t("licenses.authorized.description", vendor: @vendor.name, content_link: videos_url).html_safe
+    %p#license-notice=  t("licenses.authorized.description", vendor: @vendor.name, content_link: videos_url).html_safe
 
   - else  # validation failed, user is not signing up
     %h1= t("licenses.has errors")
