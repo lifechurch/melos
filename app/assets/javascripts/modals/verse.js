@@ -18,10 +18,9 @@ function VerseModal(opts) {
         breakpoint: 'mobile',
         enter: function() {
           // done with CSS
-          if (this.open){ 
+          if (this.open){
             thiss.showMobile();
-            $('article').css({'height' : '0px'});
-            $(thiss.window).css({'height' : windowH});
+            $('#modal_window').css({'height' : 'auto'}); // let the container determine it's height
           }
         },
         exit: function() {
