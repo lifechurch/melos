@@ -39,7 +39,7 @@ module YouversionWeb
 
       mobile_rewrite = lambda do |path, rack_env|
         new_path = path.to_s
-        return "http://m.youversion.com/download" if new_path == "/mobile"
+        return "http://m.youversion.com/download" if new_path =~ /\/mobile/
       end
 
       should_rewrite_mobile = Proc.new do |rack_env|
