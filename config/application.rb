@@ -24,6 +24,7 @@ module YouversionWeb
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 
+
       # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
       r301 %r{^(/.{2,5})?(/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
@@ -33,6 +34,22 @@ module YouversionWeb
 
       # lifekids redirect
       r301 %r{^(/.{2,5})?(/lifekids$)}, '$1/reading-plans?category=family'
+
+      ## ----- KEEP. Comments coming later.
+
+      mobile_rewrite = lambda do |path, rack_env|
+        new_path = path.to_s
+        return "http://m.youversion.com/download" if new_path == "/mobile"
+      end
+
+      should_rewrite_mobile = Proc.new do |rack_env|
+        mobile = !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] =~ /(\/mobile)/
+        mobile
+      end
+
+      r301 /.*/, mobile_rewrite, if: should_rewrite_mobile
+
+      ## END ----- KEEP.
 
       ### BIBLE REDIRECTS
       # /bible/john.3.16-17,19,21.ESV (legacy web3 API2 links, verse(s) optional)
