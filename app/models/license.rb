@@ -1,6 +1,6 @@
 class License < YouVersion::Resource
 
-  INTERNAL_SECRET_KEY = "vqc1U3nsjZzlhJqCG0aL5jmmzZ1gRMYWx42l66UbysAiqN1shAZ77DVAJloMPPo"
+  INTERNAL_SECRET_KEY = ENV['LICENSES_INTERNAL_SECRET']
 
   def self.authorize( opts = {} )
     user_id           = opts[:user_id].to_s || raise("options must contain :user_id")

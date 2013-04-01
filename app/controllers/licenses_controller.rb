@@ -77,7 +77,7 @@ private
          redirect_to(sign_in_path(source:"licenses")) and return
        end
     else
-      render text: "Don't have required params or cookies." and return
+      render text: "Required parameters have not been sent." and return
     end
   end
 
