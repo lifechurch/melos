@@ -1,0 +1,49 @@
+:ruby
+  @main_nav = false
+  @confirming = params[:confirm] == "true"
+  content_for :header do
+    render partial: "shared/header/basic"
+  end
+
+// same content is rendered in article tag for mobile only
+- content_for :sidebar do
+  .widget.account_benefits
+    %header
+      %span= @vendor.name
+    %ul.widget_menu
+      - @vendor.links.each do |link|
+        %li= link_to(link.title, link.url)
+
+%article.licensing
+
+  - if @confirming && @success #user signed up and success on licensing call
+
+    %h1= t("users.thanks for registering")
+    %p#license-notice= t("licenses.confirm.email")
+
+  - elsif @confirming && !@success #user signed up with errors on licensing call
+
+    %h1= t("users.thanks for registering")
+    %p#license-notice= t("users.confirm email")
+    %h2{style:"margin-bottom:0;"}= t("licenses.has errors")
+    %ul
+    - @error.errors.each do |err|
+      %li= t(err)
+
+  - elsif @success #user successfully authorized content, is not signing up
+
+    %h1= t("licenses.authorized.heading")
+    %p#license-notice=  t("licenses.authorized.description", vendor: @vendor.name, content_link: videos_url).html_safe
+
+  - else  # validation failed, user is not signing up
+    %h1= t("licenses.has errors")
+    %ul
+    - @error.errors.each do |err|
+      %li= t(err)
+
+  .mobile.support-info
+    %h4
+      %span= @vendor.name
+    %ul
+      - @vendor.links.each do |link|
+        %li= link_to(link.title, link.url)

@@ -38,6 +38,7 @@
 @import webfonts
 @import videos
 @import plans
+@import licenses
 
 
 @media only screen and (min-width: 769px)
@@ -305,6 +306,7 @@
     border-radius: 4px
     border: none
     text-shadow: rgba(#000, 0.5) 0 -1px 0
+    width: 100%
 
   .version_select .scroll .loading
     display: none
@@ -680,7 +682,7 @@
 
     input[type="submit"].action_button_green,
     input[type="submit"].action_button_grey,
-    input[type="submit"].action_button_red
+    input[type="submit"].action_button_red,
       width: 100%
 
     .action_button_red.confirm
@@ -920,6 +922,11 @@
     box-shadow: none
     z-index: 100000
 
+  #flash_error
+    width: 100%
+    border-radius: 0px
+    margin-left: 0px
+
   // -------------Button stuff
   input[type="submit"]
     background-color: #81a950
@@ -966,4 +973,3 @@
   @import mobile/webfonts
   @import mobile/donate
   @import mobile/user
-  @import mobile/plans

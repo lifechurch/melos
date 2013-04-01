@@ -16,9 +16,10 @@ class SessionsController < ApplicationController
     end
 
     if user
-      sign_in user
-      redirect_to redirect_path || bible_path
+      sign_in(user)
+      location = redirect_path
       clear_redirect
+      redirect_to(location || bible_path)
     else
       flash.now[:error] = t("invalid login")
       render "new"

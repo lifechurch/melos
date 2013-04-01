@@ -38,33 +38,26 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    # Set the blurb
-    if params[:source]
-      @blurb = t("registration.#{params[:source]} blurb")
-    elsif params[:redirect] && params[:redirect].match(/reading\-plans/)
-      @blurb = t("registration.plan blurb")
-    end
     self.sidebar_presenter = Presenter::Sidebar::UsersNew.new(@user,params,self)
-    render action: "new", layout: "application" #neccessary to user app layout instead of users layout.
+    render action: "new", layout: "application" #neccessary to use app layout instead of users layout.
   end
 
   def create
-    @user = User.new(params[:user].merge(language_tag: I18n.locale))
-    # Try authing them first - some users accidentally use this as a login
-    begin
-      if test_user = User.authenticate(params[:user][:username], params[:user][:password])
-        sign_in test_user, params[:user][:password]
-        follow_redirect
-      end
-    rescue
-      if @user.save
-        # save username and password so we can sign them back in
-        cookies.signed[:f] = params[:user][:username]
-        cookies.signed[:g] = params[:user][:password]
-        redirect_to confirm_email_path
+    @user = User.register(params[:user].merge(language_tag: I18n.locale))
+    if @user.persisted?
+      # save username and password so we can sign them back in
+      cookies.signed[:a] = @user.id
+      cookies.signed[:f] = params[:user][:username]
+      cookies.signed[:g] = params[:user][:password]
+
+      if next_redirect?(authorize_licenses_path)
+        redirect_to(authorize_licenses_path(confirm: true))
       else
-        render action: "new", layout: "application"
+        redirect_to confirm_email_path
       end
+
+    else
+      render action: "new", layout: "application"
     end
   end
 

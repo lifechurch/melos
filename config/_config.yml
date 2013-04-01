@@ -32,8 +32,10 @@ common:
   rate_limit: 120
 
 staging:
-  api_root: youversionapi.com
-  api_referer: web-staging.youversionapi.com
+  #api_root: youversionapi.com
+  #api_referer: web-staging.youversionapi.com
+  api_root: youversionapistaging.com
+  api_referer: web-dev-staging.youversionapistaging.com
   api_default_timeout: 5
   rack_execution_timeout: 15
 

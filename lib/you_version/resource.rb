@@ -332,6 +332,7 @@ module YouVersion
     def initialize(data = {})
       @attributes = data || {}
       @associations = {}
+      yield self if block_given?
 
       after_build
     end
@@ -396,6 +397,7 @@ module YouVersion
 
     def before_save; end;
     def after_save(response); end;
+
     def save
       unless (self.persisted? == false && self.class == User)
         return false unless authorized?
@@ -491,5 +493,14 @@ module YouVersion
       end
       true
     end
+
+    # Instance method to add errors to a given resource
+    def add_errors( api_errors_array )
+      api_errors_array.each do |error|
+        self.errors.add(:base, error["error"])
+      end
+    end
+
+
   end
 end

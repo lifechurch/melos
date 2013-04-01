@@ -5,7 +5,7 @@
   %aside.sign_in
     %p
       %b= t("have an account")
-      %span.float_right{style: "margin-left: 10px; margin-top: 3px"}= link_to t("sign in"), sign_in_path(redirect: params[:redirect])
+      %span.float_right{style: "margin-left: 10px; margin-top: 3px"}= link_to t("sign in"), sign_in_path(redirect: params[:redirect], source: params[:source])
 
 .widget.account_benefits
   %header

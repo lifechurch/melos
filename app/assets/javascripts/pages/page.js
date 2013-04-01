@@ -5,7 +5,7 @@
 // KM: add string.trim() for IE
 if(typeof String.prototype.trim !== 'function') {
   String.prototype.trim = function() {
-    return this.replace(/^\s+|\s+$/g, ''); 
+    return this.replace(/^\s+|\s+$/g, '');
   }
 }
 
@@ -142,7 +142,7 @@ Page.prototype = {
     jRes.addFunc({
       breakpoint: 'mobile',
       enter: function() {
-        $("html").addClass("mobile");
+        $("html").addClass("mobile-client");
         // make data-mobile-href elements hrefs
         var $this = null;
         $('a[data-mobile-href]').each(function() {
@@ -157,7 +157,7 @@ Page.prototype = {
         });
       },
       exit: function() {
-        $("html").removeClass("mobile");
+        $("html").removeClass("mobile-client");
         // set mobile links back
         var $this = null;
         $('a[data-original-href]').each(function() {
@@ -481,7 +481,7 @@ Page.prototype = {
   },
 
   initFlash : function() {
-    var divs = $(".flash_error, .flash_notice");
+    var divs = $("#flash_error, #flash_notice");
     divs.click(function() {
       $(this).slideUp(200);
     });
