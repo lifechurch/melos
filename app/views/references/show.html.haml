@@ -1,32 +1,27 @@
 // Variables necessary for templates and partials to render properly
-- @version        = @presenter.version
-- @alt_version    = @presenter.alt_version
-- @reference      = @presenter.reference
-- @alt_reference  = @presenter.alt_reference
+:ruby
+  reference      = @presenter.reference
+  modal_verse    = @presenter.modal_verse
+  @title = "#{reference.human} #{reference.version_string}"
 
-- @title = "#{@reference.human} #{@reference.version_string}"
-- @is_reader = true
-- @canonical = bible_url(@reference)
-- @html_classes = []
-- @html_classes << "full_screen" if client_settings.reader_full_screen.present?
-- @html_classes << "full_screen" << "parallel_mode" if client_settings.reader_parallel_mode.present?
-
-- if @presenter.modal_verse.present?
+- if modal_verse.present?
   - content_for :additional_meta do
-    %meta{name: "twitter:card",         content: "summary"}
-    %meta{name: "twitter:url",          content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
-    %meta{name: "twitter:title" ,       content: @title}
-    %meta{name: "twitter:description",  content: truncate(@presenter.modal_verse.content(as: :plaintext), length: 200, separator: " ")}
-    %meta{name: "twitter:site",         content: "@YouVersion"}
-    %meta{name: "twitter:app:name:iphone", content:"Bible"}
-    %meta{name: "twitter:app:id:iphone", content:"282935706"}
-    %meta{name: "twitter:app:url:iphone", content:"youversion://#{@presenter.modal_verse.to_ios_path}"}
-    %meta{name: "twitter:app:name:ipad", content:"Bible"}
-    %meta{name: "twitter:app:id:ipad", content:"282935706"}
-    %meta{name: "twitter:app:url:ipad", content:"youversion://#{@presenter.modal_verse.to_ios_path}"}
-    %meta{name: "twitter:app:name:googleplay", content:"Bible"}
-    %meta{name: "twitter:app:id:googleplay", content:"com.sirma.mobile.bible.android"}
-    %meta{name: "twitter:app:url:googleplay", content:"youversion://#{@presenter.modal_verse.to_ios_path}"}
-    %meta{name: "apple-itunes-app",     content: "app-id=282935706, app-argument=youversion://#{@presenter.modal_verse.to_ios_path}"}
+    - deep_link = "youversion://#{@presenter.modal_verse.deep_link_path}"
+    %meta{name: "apple-itunes-app",         content: "app-id=282935706, app-argument=#{deep_link}"}
+    %meta{name: "twitter:card",             content: "summary"}
+    %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
+    %meta{name: "twitter:title" ,           content: @title}
+    %meta{name: "twitter:description",      content: truncate(modal_verse.content(as: :plaintext), length: 200, separator: " ")}
+    %meta{name: "twitter:site",             content: "@YouVersion"}
+    %meta{name: "twitter:app:name:iphone",  content:"Bible"}
+    %meta{name: "twitter:app:id:iphone",    content:"282935706"}
+    %meta{name: "twitter:app:url:iphone",   content: deep_link}
+    %meta{name: "twitter:app:name:ipad",    content:"Bible"}
+    %meta{name: "twitter:app:id:ipad",      content:"282935706"}
+    %meta{name: "twitter:app:url:ipad",     content: deep_link}
+    %meta{name: "twitter:app:name:googleplay",  content:"Bible"}
+    %meta{name: "twitter:app:id:googleplay",    content:"com.sirma.mobile.bible.android"}
+    %meta{name: "twitter:app:url:googleplay",   content: deep_link }
+    %link{rel:  "canonical", href: bible_url(reference)}
 
 = render partial: 'reader', locals: {presenter: @presenter}

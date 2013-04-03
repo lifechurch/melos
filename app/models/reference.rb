@@ -93,7 +93,7 @@ class Reference < YouVersion::Resource
     end
   end
 
-  def to_ios_path
+  def deep_link_path
     return "bible?reference=#{chapter_usfm}&version_id=#{version}" if version
     return "bible?reference=#{chapter_usfm}"
   end
