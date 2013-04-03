@@ -118,7 +118,6 @@ class ApplicationController < ActionController::Base
     end
 
     def track_exception(exception)
-      #notify_honeybadger(exception)
       #Raven.capture_exception(exception)
       evt = Raven::Event.capture_rack_exception(exception, request.env)
       Raven.send(evt)
