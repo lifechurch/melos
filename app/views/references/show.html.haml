@@ -18,6 +18,10 @@
     %meta{name: "twitter:title" ,       content: @title}
     %meta{name: "twitter:description",  content: truncate(@presenter.modal_verse.content(as: :plaintext), length: 200, separator: " ")}
     %meta{name: "twitter:site",         content: "@YouVersion"}
+    %meta{name: "twitter:app:name:iphone", content:"Bible"}
+    %meta{name: "twitter:app:id:iphone", content:"282935706"}
+    %meta{name: "twitter:app:name:ipad", content:"Bible"}
+    %meta{name: "twitter:app:id:ipad", content:"282935706"}
     %meta{name: "apple-itunes-app",     content: "app-id=282935706, app-argument=youversion://#{@presenter.modal_verse.to_ios_path}"}
 
 = render partial: 'reader', locals: {presenter: @presenter}
