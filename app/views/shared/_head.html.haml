@@ -1,9 +1,12 @@
-- title = ""
-- title << @title << " | " if @title.present?
-- title << (@subtitle || @site.title).to_s
+:ruby
+  title = ""
+  title << @title << " | " if @title.present?
+  title << (@subtitle || @site.title).to_s
+
 %title= title
 
 = cache "head_meta_#{@site}", expires_in: a_short_time do
+  %link{rel: "shortcut icon", href:"/favicon.ico"}
   %meta{:charset => 'utf-8'}
   %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
   %meta{property: "og:image", content: "#{url_for(asset_path('app-icon-english-512x512.png'))}"}
@@ -11,13 +14,16 @@
   %meta{name: "HandheldFriendly", content: "True"}
   %meta{name: "MobileOptimized", content: "320"}
   %meta{name: "viewport", content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
+  %meta{name: "msApplication-ID", content: "af5f6405-7860-49a9-a6b4-a47381974e1d"}
+  %meta{name: "msApplication-PackageFamilyName", content: "LifeChurch.tv.Bible_d1phjsdba8cbj"}
 
   = stylesheet_link_tag 'application'
   = stylesheet_link_tag 'wysiwyg/jquery.wysiwyg.css'
   = javascript_include_tag "/assets/jw/jwplayer.js"
   %script jwplayer.key="78lie9ccvQjr8uJGZzLhFeI1t94sTOzTqA3A9QpRvK0="
 
-
+  /[if IE]
+    %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
   /[if IE 9]
     = stylesheet_link_tag "ie9.css"
   /[if IE 8]
@@ -25,11 +31,19 @@
   /[if IE 7]
     = stylesheet_link_tag "ie7"
 
-/[if IE]
-  %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
+= content_for?(:additional_meta) ? yield(:additional_meta) : nil
+= content_for?(:stylesheets) ? yield(:stylesheets) : nil
 
-- if content_for? :additional_meta
-  = yield :additional_meta
+:javascript
+  var isMobile = {
+      BlackBerry: function() {
+          var ua = navigator.userAgent;
+          return (ua.indexOf("BlackBerry") >= 0) ? true : false;
+      } // you can add more tests here for other phones
+  };
 
-- if content_for? :stylesheets
-  = yield :stylesheets
+  var ua = navigator.userAgent;
+  if( isMobile.BlackBerry() ) {
+      var SplitUA = ua.split("/");
+      document.write("BB OS Version :: " + SplitUA[1].substring(0, 3));
+  }
