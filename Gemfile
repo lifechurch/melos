@@ -34,7 +34,7 @@ gem 'omniauth-google-oauth2', '~> 0.1.9'
 gem 'omniauth-twitter',       '~> 0.0.11'
 gem 'rabl',                   '~> 0.7.3'
 gem 'rack-mobile-detect',     '~> 0.3.0'
-gem 'rack-rewrite',           '~> 1.2.1'
+gem 'rack-rewrite',           '~> 1.3.3'
 gem 'rack-timeout',           '~> 0.0.3'
 gem 'viximo-rack-throttle',   '~> 0.5.0'
 

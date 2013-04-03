@@ -24,6 +24,40 @@ module YouversionWeb
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 
+      store_redirect = lambda do |path,rack_env|
+        case rack_env["X_MOBILE_DEVICE"]
+
+        when /iphone|iPhone|ipad|iPad|ipod|iPod/
+          'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=282935706&mt=8'
+
+        when /android|Android/
+          'market://details?id=com.sirma.mobile.bible.android'
+
+        when /silk|Silk/
+          'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
+
+        when /blackberry|BlackBerry/
+          'http://appworld.blackberry.com/webstore/content/1222'
+
+        when /SymbianOS/
+          'http://store.ovi.mobi/content/47384'
+
+        when /J2ME/
+          'http://getjar.com/bible-app'
+
+        when /Windows Phone OS/
+          'zune://navigate/?phoneappid=57f524fa-93e3-df11-a844-00237de2db9e'
+
+        when /webOS|hpwOS/
+          'http://developer.palm.com/webChannel/index.php?packageid=com.youversion.palm'
+        end
+      end
+
+      should_redirect_store = lambda do |rack_env|
+        !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] =~ /\/download|\/mobile/
+      end
+
+      r307 %r{\/download|\/mobile}, store_redirect, if: should_redirect_store
 
       # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'
@@ -34,22 +68,6 @@ module YouversionWeb
 
       # lifekids redirect
       r301 %r{^(/.{2,5})?(/lifekids$)}, '$1/reading-plans?category=family'
-
-      ## ----- KEEP. Comments coming later.
-
-      mobile_rewrite = lambda do |path, rack_env|
-        new_path = path.to_s
-        return "http://m.youversion.com/download" if new_path =~ /\/mobile/
-      end
-
-      should_rewrite_mobile = Proc.new do |rack_env|
-        mobile = !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] =~ /(\/mobile)/
-        mobile
-      end
-
-      r301 /.*/, mobile_rewrite, if: should_rewrite_mobile
-
-      ## END ----- KEEP.
 
       ### BIBLE REDIRECTS
       # /bible/john.3.16-17,19,21.ESV (legacy web3 API2 links, verse(s) optional)
@@ -113,7 +131,11 @@ module YouversionWeb
       r301 /.*/, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, if: Proc.new{ |rack_env| rack_env["rack.url_scheme"] != 'https' && ENV['SECURE_TRAFFIC']}
     end
 
-    config.middleware.insert_before(Rack::Rewrite, Rack::MobileDetect)
+    config.middleware.insert_before(
+      Rack::Rewrite,
+      Rack::MobileDetect,
+      targeted: /Android|android|iPhone|iphone|iPod|ipod|iPad|ipad|BlackBerry|blackberry|Silk|silk|SymbianOS|J2ME|Windows Phone OS|webOS|hpwOS/
+    )
 
     # rate limit clients to 2 req/sec sustained
     # (only on production or staging where we have external assets)
