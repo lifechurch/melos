@@ -15,9 +15,7 @@ gem 'grackle',                '~> 0.1.10'
 gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'heroku',                 '~> 2.32.4'
-gem 'honeybadger'
 gem 'oj'
-gem 'gabba'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
 gem 'mongo'

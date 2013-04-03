@@ -121,7 +121,7 @@ namespace :deploy do
   desc "Stop unicorn"
   task :stop, :except => { :no_release => true } do
     run "kill -s QUIT `cat /tmp/unicorn.#{application}.pid`"
-  end  
+  end
 
   namespace :rollback do
     desc "Moves the repo back to the previous version of HEAD"
@@ -145,12 +145,11 @@ end
 
 # NewRelic Hook (notify newrelic of deployment)
 ## We need to run this after our collector mongrels are up and running
-## This goes out even if the deploy fails, sadly 
+## This goes out even if the deploy fails, sadly
 after "deploy:update", "newrelic:notice_deployment"
 
 def run_rake(cmd)
   run "cd #{current_path}; #{rake} #{cmd}"
 end
 
-        require './config/boot'
-        require 'honeybadger/capistrano'
+require './config/boot'
