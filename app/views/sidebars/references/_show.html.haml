@@ -4,6 +4,9 @@
 - note      = presenter.note
 - reference = presenter.reference
 
+// App widget requires no local variables
+= render '/shared/widget_reader_help'
+
 // Bookmarks widget requires no local variables
 - if current_auth
   .widget.bookmarks.ajax_bookmarks{"data-ajax" => "/bible/widgets/bookmarks"}
