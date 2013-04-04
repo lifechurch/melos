@@ -2,17 +2,18 @@
   = t("notes.list title")
 
 - content_for :sidebar do
-  .widget.gutter_bottom_half
+  
   %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new")}
-  %span.icon_plus= t('new note')
+    %span.icon_plus= t('new note')
+  .widget.gutter_bottom_half
 
   = render '/shared/widget_ad_bible_app'
 
 
 
 %article.note
-  %h1{class: ('float_left' if current_auth)}= t("notes.list title")
   - if current_auth
+    %h1{class: ('float_left' if current_auth)}= t("notes.list title")
     %dl.combo_button.float_right
       %dt
       %dd{class: ('highlighted' unless @me)}
