@@ -1,4 +1,20 @@
 "no":
+  api:
+    users agree bool: "Du må godta brukervilkårene før du registrerer deg."
+    users confirm password matches: "Passordene samsvarer ikke"
+    users email email: "E-postadressen er ugyldig."
+    users email email rfc: "E-postadressen du oppga er ugyldig."
+    users email not available: "En konto er allerede registrert med den e-postadressen."
+    users email not found: "Det finnes ingen konto med den e-postadressen."
+    users email required: "Du må skrive inn en e-postadresse"
+    users hash verified: "Denne brukerkontoen er allerede verifisert."
+    users password change: "Ditt nye passord kan ikke være likt det gamle passordet"
+    users password length: "Passordet må være på minst 6 tegn."
+    users password required: "Du må skrive inn et passord"
+    users username alpha numeric extra: "Brukernavnet skal inneholde bokstaver, tall eller bindestreker."
+    users username not available: "Brukernavnet du oppga er ikke tilgjengelig."
+    users username or password invalid: "Brukernavnet eller passordet du oppgav er ikke gyldig."
+    users username required: "Du må skrive inn et brukernavn"
   now: "Nå"
   celebrating 50MM: "Vi feirer 50 millioner Bibel-app-installasjoner!"
   link: "Lenke"
@@ -12,7 +28,7 @@
   thanks authorization: "Hvis du ba om en kvittering, vil du finne den i innboksen din snart."
   donation error: "Beklager, men noe gikk galt med gaven din. Feilen var: %{error_text}"
   created ago: "Opprettet for %{time_ago} siden"
-  copy: "Copy"
+  copy: "Kopier"
   copy confirmed: "Kopiert!"
   new note: "Nytt notat"
   twitter: "Twitter"
@@ -105,6 +121,7 @@
   chapter: "Kapittel"
   bible: "Bibel"
   notes title: "Notater"
+  videos: "Videoer"
   friends: "Venner"
   groups: "Grupper"
   mobile: "Mobil"
@@ -225,6 +242,7 @@
     other user profile: "%{username}s profil"
     my password: "Endre mitt passord"
     edit password: "Endre passord"
+    edit password errors: "Følgende feil forhindret endring av passordet ditt"
     picture: "Bilde"
     edit picture: "Endre bilde"
     edit notifications: "Varslingsinnstillinger"
@@ -517,6 +535,27 @@
     must start to complete: "Abonner på denne planen for å lagre det du har lest."
     invalid reference: "Beklager, men en av skrifthenvisningene i denne andakten finnes ikke i den valgte bibelutgaven. Forsøk å velge en av de andre bibelutgavene ovenfor. Om du fremdeles får denne meldingen, meld fra om problemet til vårt <a href='%{support_url}'>support team</a>."
     sidebar notice: "Du viser en leseplan"
+    completed notice: "Gratulerer! Du har fullført din leseplan."
+    exit: "Avslutt"
+    loading sidebar content: "Laster innhold fra sidemenyen..."
+  licenses:
+    authorized:
+      heading: "Innholdet er godkjent"
+      description: "Du kan nå <a href='%{content_link}'> se på innholdet du kjøpte</a> fra %{vendor} hos YouVersion!"
+    has errors: "Det var feil ved din bestilling:"
+    confirm:
+      email: "For å bekrefte videoen du kjøpte, vennligst sjekk din epost innboks for en bekreftelsesmail fra YouVersion og klikk på lenken for å bekrefte registreringen din."
+    request:
+      invalid_vendor_signature: "Godkjenning av lisens mislyktes: Ugyldig forhandlersignatur"
+      invalid_vendor_id: "Godkjenning av lisens mislyktes: Ugyldig forhandler ID"
+      invalid_item_ids: "Godkjenning av lisens mislyktes: Ugyldig valg"
+    vendor_transaction_id:
+      duplicate: "Overførings ID: Overførings ID er allerede registrert"
+    auth:
+      login notice: "For å bekrefte kjøpet, vennligst logg inn på din YouVersion konto under eller <a href='/sign-up?\nsourse=licenses'>%{signup}</a>."
+      signup notice: "For å bekrefte kjøpet, registrer deg for en gratis YouVersion brukerkonto under eller <a href='/sign-in?\nsource=licenses'>%{login}</a> hvis du allerede har en brukerkonto"
+      signup link text: "Registrer deg for fri brukerkonto"
+      login link text: "logg inn"
   registration:
     placeholder:
       email: "Fyll inn e-postadresse"
@@ -691,6 +730,8 @@
       translation notes: "Fotnoter"
       cross references: "Kryssreferanser"
   app errors:
+    404 plans explanation: "Leter du etter denne planen: <a href='%{plan_path}'>%{title}</a> ?"
+    404 contact support: "Problemer? Kontakt vårt <a href='{support_url}'>support team</a>."
     404 explanation: "Du kan kanskje prøve å starte igjen fra  <a href='%{reader_path}'>hjemmesiden</a>. Om du fremdeles har problemer, kontakt vårt  <a href='%{support_url}'>support team</a>."
     404 message: "Beklager, siden du ser etter finnes ikke."
     408 message: "Beklager,men våre servere har desverre ikke gitt respons innen rimelig tid."
