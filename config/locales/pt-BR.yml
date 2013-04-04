@@ -1,4 +1,20 @@
 pt-BR:
+  api:
+    users agree bool: "Você deve concordar com os termos e condições para criar uma conta."
+    users confirm password matches: "As novas senhas não são iguais."
+    users email email: "O endereço de e-mail é inválido."
+    users email email rfc: "O endereço de e-mail que você forneceu é inválido."
+    users email not available: "Uma conta já está registrada com esse endereço de e-mail."
+    users email not found: "Não existe nenhuma conta com esse endereço de e-mail."
+    users email required: "Você deve inserir um endereço de e-mail."
+    users hash verified: "Essa conta já foi verificada."
+    users password change: "Sua nova senha deve ser diferente da sua antiga senha."
+    users password length: "Sua senha deve conter pelo menos 6 caracteres."
+    users password required: "Você deve inserir uma senha."
+    users username alpha numeric extra: "O nome de usuário deve conter apenas letras, números ou traços. "
+    users username not available: "O nome de usuário informado não está disponível."
+    users username or password invalid: "O nome de usuário ou senha que você forneceu é inválido. "
+    users username required: "Você deve inserir um usuário."
   now: "Agora"
   celebrating 50MM: "Comemorando 50 milhões de instalações!"
   link: "Link"
@@ -105,6 +121,7 @@ pt-BR:
   chapter: "Capítulo"
   bible: "Bíblia"
   notes title: "Anotações"
+  videos: "Vídeos"
   friends: "Amigos"
   groups: "Grupos"
   mobile: "Celular"
@@ -225,6 +242,7 @@ pt-BR:
     other user profile: "Perfil de %{username}"
     my password: "Mudar Minha Senha"
     edit password: "Alterar a Senha"
+    edit password errors: "O(s) seguinte(s) erro(s) impediu(ram) a mudança da sua senha:"
     picture: "Foto"
     edit picture: "Alterar Foto"
     edit notifications: "Gerenciar Notificações"
@@ -517,6 +535,27 @@ pt-BR:
     must start to complete: "Comece este plano para salvar as leituras completadas!"
     invalid reference: "Desculpe, uma das referências de escritura para esta leitura pode não existir na versão selecionada. Tente selecionar uma versão diferente acima. Se continuar a receber esta mensagem, por favor avise nosso <a href='%{support_url}'>support team</a> sobre este problema. "
     sidebar notice: "Você está visualizando um plano de leitura. "
+    completed notice: "Parabéns! Você completou seu plano de leitura."
+    exit: "Sair"
+    loading sidebar content: "Carregando barra lateral..."
+  licenses:
+    authorized:
+      heading: "Seu conteúdo foi autorizado"
+      description: "Você pode agora <a href='%{content_link}'>ver o conteúdo que você comprou</a> de %{vendor} no YouVersion!"
+    has errors: "Houve erros com seu pedido:"
+    confirm:
+      email: "Para autorizar o conteúdo de vídeo que você comprou, por favor verifique na sua caixa de e-mail a confirmação do YouVersion e clique no link neste para confirmar seu registro."
+    request:
+      invalid_vendor_signature: "Falha na validação da licença: assinatura do fornecedor inválida"
+      invalid_vendor_id: "Falha na validação da licença: ID do fornecedor inválida"
+      invalid_item_ids: "Falha na validação da licença: itens inválidos"
+    vendor_transaction_id:
+      duplicate: "ID da transação: Essa id da transação já foi registrada"
+    auth:
+      login notice: "Para validar o conteúdo comprado, por favor, faça login com sua conta YouVersion abaixo ou <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice: "Para validar o conteúdo comprado, cadastre-se para uma conta gratuita YouVersion abaixo ou <a href='/sign-in?source=licenses'>%{login}</a> se você já tem uma conta."
+      signup link text: "Cadastre-se para uma conta gratuita"
+      login link text: "entrar"
   registration:
     placeholder:
       email: "Digite seu endereço de e-mail "
@@ -691,6 +730,8 @@ pt-BR:
       translation notes: "Notas de Rodapé "
       cross references: "Cruzar Referências "
   app errors:
+    404 plans explanation: "Está procurando pelo plano <a href='%{plan_path}'>%{title}</a>?"
+    404 contact support: "Tendo problemas? Contate nosso <a href='%{support_url}'>suporte</a>."
     404 explanation: "Você pode tentar reiniciar na <a href='%{reader_path}'>página inicial</a>. Ainda tendo problemas? Contate nossa  <a href='%{support_url}'>equipe de suporte</a>."
     404 message: "Desculpe, a página que você está procurando não pôde ser encontrada. "
     408 message: "Desculpe, mas nossos servidores não responderam no tempo adequado. "
