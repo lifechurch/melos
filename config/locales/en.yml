@@ -760,7 +760,5 @@ en:
     loading:                                    "Loading More Versions..."
     load error:                                 "Sorry, there was a problem loading more versions. Close this menu and reopen to try again."
   reader help:
-    title:                                      "Reader Help"
-    line 1:                                     "Line 1 (<strong>Allows HTML</strong>)"
-    line 2:                                     "Line 2?"
-    line 3:                                     "Line 3!"
+    title:                                      "Select a verse…"
+    line 1:                                     "Click or tap on any verse or collection of verses to bookmark, highlight, create a note, or share with your friends!"

@@ -1,10 +1,8 @@
 = cache "widget_reader_help#{I18n.locale}", expires_in: a_short_time do
   .widget.reader_help
+    %header
+      %span
+        = t("reader help.title")
     %aside.reader_help
       %p
-        %b
-          = t("reader help.title")
-      %p
         = "#{t('reader help.line 1')}<br />".html_safe
-        = "#{t('reader help.line 2')}<br />".html_safe
-        = t('reader help.line 3')
