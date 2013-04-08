@@ -87,10 +87,6 @@ class ApplicationController < ActionController::Base
 
   def skip_home
     home_page = (params[:controller] == 'pages' && params[:action] == 'home')
-    # TODO: remove the redirect for token as soon as we get the OK from API team.
-    # This was introduced due to a bad email campaign sending the unsubscribe link as yv.com/?token=b990f8e2e6ea57e1156ed7c513251cbd6d30197f
-    if home_page && params[:token] then redirect_to notification_settings_url(token: params[:token]) and return end
-
     if home_page && (@site.skip_splash || cookies["setting-skip-home"])
       redirect_to( bible_path( last_read || default_reference ))
     end
