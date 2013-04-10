@@ -50,6 +50,9 @@ module YouversionWeb
 
         when /webOS|hpwOS/
           'http://developer.palm.com/webChannel/index.php?packageid=com.youversion.palm'
+
+        else
+          'https://www.bible.com'
         end
       end
 
