@@ -11,6 +11,6 @@
   - if @notes.empty?
     %p= t('no notes found', username: @user.username)
   - else
-    %ul.big_list
-      = render partial: 'notes/list_item', collection: @notes, locals: {display: :icon}
+    %ul.resource_list
+      = render partial: 'notes/list_item', collection: @notes
     = render partial: 'shared/pagination', locals: {resource_list: @notes}

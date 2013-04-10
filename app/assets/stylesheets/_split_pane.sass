@@ -1,120 +1,113 @@
-//
-// Split pane view.
-//
+// Split Pane common styles
+// MOBILE styles located at bottom half of sheet
 
 .split_pane
-  border-top: 1px solid #ccc
-  padding-top: 30px
+  border-top: 1px solid #ddd
 
-.split_pane_sidebar,
-.split_pane_content
-  float: left
+  div.sidebar,
+  div.content
+    float: left
 
-.split_pane_sidebar
-  background: image-url("split_pane_sidebar.png") no-repeat top right
-  min-height: 533px
-  width: 30%
+  div.content
+    border-left: 1px solid #ddd
+    margin-left: -1px
+    margin-bottom: 20px
+    width: 70%
 
-.split_pane_content
-  border-left: 1px solid #ccc
-  margin-left: -1px
-  margin-bottom: 20px
-  width: 70%
+    > ul
+      margin-left: 40px
 
-#main .split_pane_content > ul
-  margin-left: 40px
+  div.sidebar
+    background: image-url("split_pane_sidebar.png") no-repeat top right
+    min-height: 533px
+    width: 30%
 
-#main .split_pane_content .big_list li:first-child
-  border-top: 0
-  padding-top: 10px
+    dl
+      border-right: 1px solid #ddd
+      line-height: 1
 
-//
-// Split pane - Menu.
-//
+    dt, dd
+      border-bottom: 1px solid #ddd
 
-.split_pane_sidebar dl
-  border-right: 1px solid #ccc
-  line-height: 1
+    dt, dd a:not(.no_style)
+      padding: 15px 10px
 
-.split_pane_sidebar dt,
-.split_pane_sidebar dd
-  border-bottom: 1px solid #ccc
+    dt
+      font-weight: bold
+      padding-bottom: 15px
+      line-height: 25px
 
-.split_pane_sidebar dt,
-.split_pane_sidebar dd a:not(.no_style)
-  padding: 15px 10px
+    dd
+      font-size: 13px
+      position: relative
 
-.split_pane_sidebar dt
-  font-weight: bold
-  padding-bottom: 15px
-  line-height: 25px
-
-.split_pane_sidebar dd
-  font-size: 13px
-  position: relative
-
-.split_pane_sidebar dd a:not(.no_style)
-  color: $body_text
-  display: block
-  text-decoration: none
-  padding-left: 32px
+    dd a:not(.no_style)
+      color: $body_text
+      display: block
+      text-decoration: none
+      padding-left: 32px
 
 
-.split_pane_sidebar dd a:hover:not(.no_style)
-  background:
-    color: rgba(#000, 0.05)
+    dd a:hover:not(.no_style)
+      background:
+        color: rgba(#000, 0.05)
 
-.split_pane_sidebar .highlighted
-  background: #fff image-url("split_pane_sidebar_highlighted.png") no-repeat
-  font-weight: bold
-  margin-right: -1px
-  position: relative
-  z-index: 1
+    .highlighted
+      background: #fff image-url("split_pane_sidebar_highlighted.png") no-repeat
+      font-weight: bold
+      margin-right: -1px
+      position: relative
+      z-index: 1
 
-.split_pane_sidebar .highlighted a:not(.no_style),
-.split_pane_sidebar .highlighted a:hover:not(.no_style)
-  background: image-url("split_pane_sidebar_highlighted_a.png") no-repeat right center
-  color: $blue
-  padding-left: 32px
+    .highlighted a:not(.no_style),
+    .highlighted a:hover:not(.no_style)
+      background: image-url("split_pane_sidebar_highlighted_a.png") no-repeat right center
+      color: $blue
+      padding-left: 32px
 
-.split_pane_sidebar dd form 
-  position: absolute
-  top: 9px
+    dd form
+      position: absolute
+      top: 9px
+
+  .pagination
+    margin-left: 25px
 
 
-//
-// Reading Plans
-//
-.split_devotional_pane form
-  position: static !important
-  margin-top: 10px
+// MOBILE - Mobile client split pane styles
+// ----------------------------------------------------------------------------------------
 
-.split_devotional_pane .embedded_reader 
-  margin-top: 5px !important
+.mobile-client
+  .split_pane
+    border-top: 0px
 
-.split_devotional_pane.highlighted a:not(.no_style),
-.split_devotional_pane.highlighted a:hover:not(.no_style)
-  background: none !important
-  font-size: 15px !important
-  
-.split_devotional_pane a:not(.no_style),
-.split_devotional_pane a:hover:not(.no_style)
-  font-size: 15px !important
+    .content
+      margin-bottom: 20px
+      border: 0px
+      width: 100%
 
-dd.split_devotional_pane.highlighted
-  background: none
+      a
+        text-decoration: none
 
-.subscription_plan_links p
-  margin: 10px 0 0 0
+    .sidebar
+      min-height: 100px
 
-.about_publisher a
-  background: image-url("icon_info_blue.png") no-repeat 2px center
-  padding: 5px 5px 5px 22px
-  display: block
-  margin-bottom: 15px
-.about_plan a
-  background: image-url("icon_copyright.png") no-repeat left center
-  padding: 5px 5px 5px 22px
-  margin-bottom: 15px
-  display: block
+      dt
+        font-size: 22px
 
+      dd
+        font-size: 13px
+        border-left: 1px solid #ddd
+        border-right: 1px solid #ddd
+
+      dd a
+        font-size: 15px
+
+      .highlighted
+        margin-right: 0px
+
+      .highlighted a
+        font-size: 16px
+
+      .categories_menu
+        dd a
+          padding-left: 20px

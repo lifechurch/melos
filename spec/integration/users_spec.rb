@@ -104,9 +104,9 @@ feature "Users", js: true do
 	scenario "removing coneected devices" do
 		Device.new({vendor: "Apple", model: "iPhone 6", os: "iOS 7", device_id: "1232313323314", auth: @user.auth}).save.should
 		visit devices_path
-		page.find("ul.big_list li h4").text.should eq "Apple Iphone 6" # argh, come on guys
-		page.find("ul.big_list li div.confirm a").click
-		page.find("ul.big_list li div.danger a").click
+		page.find("ul.resource_list li h4").text.should eq "Apple Iphone 6" # argh, come on guys
+		page.find("ul.resource_list li div.confirm a").click
+		page.find("ul.resource_list li div.danger a").click
 		page.should_not have_content "Apple Iphone 6"
 	end
 

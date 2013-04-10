@@ -5,7 +5,7 @@
 - content_for :title do
   = t("plans.title")
 
-%article.readingplans
+%article
   - other_users_plans = t("plans.a users plans", username: @user.username)
   - if current_auth
     - if request.path.downcase == user_subscriptions_path(current_user, locale: false).downcase # we're on valid current_users plans page - show button navigation
@@ -24,11 +24,11 @@
     %h1= other_users_plans
 
   - unless @subscriptions.empty?
-    %ul.big_list
+    %ul.resource_list
       - @subscriptions.each do |sub|
-        %li
+        %li.subscription
           %div
-            %h4= link_to(sub.name, user_subscription_path(@user, sub, initial: 'true'))
+            %h3= link_to(sub.name, user_subscription_path(@user, sub, initial: 'true'))
             .progress_wrap
               .progress_counter
                 =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe

@@ -11,7 +11,5 @@
   %div{style: ("margin-left: 60px;" if display == :avatar)}
     %h5= link_to note["title"], note_path(note["id"])
     - if display == :avatar
-      %p.mute.small.negative_gutter_top_half
+      %p.mute
         %a{href: user_path(note["username"])}= note["username"]
-//    %p= likes.note.content.html_safe
-//    %p.mute.small.negative_gutter_top_half= link_to_references(likes.note.reference_list)

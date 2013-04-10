@@ -1,6 +1,6 @@
 - content_for :user_main do
   - if @bookmarks.empty?
     %p= t('bookmarks.other user not found', username: @user.username)
-  %ul.big_list
+  %ul.resource_list
     = render partial: 'bookmarks/list_item', collection: @bookmarks, locals: {display: :icon}
   = render partial: 'shared/pagination', locals: {resource_list: @bookmarks}

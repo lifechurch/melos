@@ -115,10 +115,8 @@ a.cta h3
 
 // ----------------- Reading plans
 
-#main article.readingplans,
+#subscriptions-index,
 #main article#plan-index
-  padding: 0
-  margin-bottom: -10px
 
   hr
     margin: 20px 0px
@@ -143,28 +141,11 @@ a.cta h3
     font-size: 15px
     line-height: 1.4em
 
-  .big_list
-    margin-top: 0
-    li
-      padding: 20px
-      display: block
-
-    li:first-child
-      padding-top: 0
-
-    h4
-      margin-bottom: 12px
-
-    .plan_list
-      h4
-        margin-bottom: 4px
-        cursor: pointer
-
-    h5
-      float: left
-
-#main article.readingplans,
+#subscriptions-index,
 #main article#plan-index
+
+  h4
+    margin-bottom: .5em
   .progress_counter
     width: 100%
     text-align: left
@@ -172,10 +153,11 @@ a.cta h3
     height: auto
     line-height: auto
     top: -16px
+    margin-left: 10px
 
   .progress_wrap
     width: 95%
-    // height: 55px
+    height: auto
     padding: 0
     background: none
 
@@ -204,7 +186,7 @@ a.cta h3
     p:first-child, p:last-child
       font-weight: normal
 
-#main article.readingplans
+#subscriptions-index
   .plan_search
     padding: 0 20px 20px
     border-bottom: 1px solid #CCC
@@ -288,7 +270,7 @@ a.cta h3
       margin-bottom: 0
       margin-top: -4px
 
-  .split_pane_content
+  .split_pane .content
     .devo_content
       padding: 0 20px
       p
@@ -299,25 +281,14 @@ a.cta h3
 
 #main article#plan-index
 
-  .split_pane_sidebar
-    margin-top: -30px
+  .split_pane .sidebar
 
     dd
       border:
         left: 0
         right: 0
 
-#main article.readingplans.myplans
-  .progress_counter
-    position: absolute
-    text-align: left
-    top: 20px
-
-  .progress_wrap
-    width: 100%
-    margin: 0
-
-#main article.readingplans
+#subscriptions-index
   .rp_settings
     clear: both
 

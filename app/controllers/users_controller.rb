@@ -143,7 +143,7 @@ class UsersController < ApplicationController
     @nav = :notes if @me
     @selected = :notes
     @notes = @user.notes(page: params[:page])
-    render 'notes/index', layout: "application"
+    render 'notes/index', layout: "application" if @me
   end
 
   def likes

@@ -1,7 +1,10 @@
-%li{id: item.id, class: "li_note"}
-  %h5
-    %a{href: note_path(item.id), class: ("highlight" if item.highlight_color), style: ("background-color: ##{item.highlight_color}" if item.highlight_color)}= item.title
-  -if item.reference
-    %p.mute.small.negative_gutter_top_half= item.reference.map { |r| link_to "#{r.human} (#{item.version})", bible_path(r)}.join(", ").html_safe
+- item = notes_list_item
+
+%li.note{id: item.id}
+  %h3
+    = link_to( item.title, note_path(item.id))
+  -if item.references
+    /%p.references
+    /  = # TODO: bible_path doesn't generate the proper url here: item.references.map { |r| link_to "#{r.human} (#{item.version})", bible_path(r)}.join(", ").html_safe
   %p= item.content_text
-  %div{class: "status"}= item.user_status
+  .status= item.user_status

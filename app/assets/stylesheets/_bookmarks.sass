@@ -1,8 +1,70 @@
-.bookmark_edit
-  opacity: 0
-  font-size: 12px
+.edit_controls
 
-.bookmark_edit p a
-  text-transform: capitalize
-.bookmark_edit .created_as_date
-  color: #888
+  font-size: 12px
+  margin-top: 0
+  line-height: 1em
+  color: #999
+
+  span
+    padding: 0 10px
+    border-left: 1px solid #ddd
+
+  span:first-child
+    border-left: none
+    padding-left: 0
+
+  span.hidden
+    opacity: 0
+
+  span.date
+    opacity: 1.0
+
+  a
+    text-transform: capitalize
+    color: #999
+
+
+
+// Mobile bookmark styles
+// -------------------------------------------------------
+.mobile-client
+
+  .note p.references
+    font-size: 13px
+
+  // Hoverable edit controls that display edit / delete+confirm links
+  .edit_controls
+    font-size: 12px
+    span.hidden
+      opacity: 1.0
+
+    a
+      text-transform: capitalize
+      text-decoration: underline
+
+  .split_pane
+    padding-top: 0
+
+    .content
+      width: auto
+      margin-bottom: 0
+
+      > ul
+        margin-left: 0
+
+      li:first-child
+        padding-top: 0
+
+      ul ul
+        margin: 0 !important
+
+      .bookmark
+        background: none
+        overflow: hidden
+
+      li p
+        margin-bottom: 0
+
+      li
+        .content
+          line-height: 1.25em !important

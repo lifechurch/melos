@@ -1,7 +1,7 @@
 - if @users.empty?
   %p= @empty_message.html_safe
 - else
-  %ul.big_list
+  %ul.resource_list
     - @users.each do |u|
       %li
         - if u.user_avatar_url

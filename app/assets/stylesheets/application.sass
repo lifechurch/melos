@@ -10,7 +10,6 @@
 @import avatars
 @import widgets
 @import ui_elements
-@import bulleted_lists
 @import pagination
 @import tabs
 @import tables
@@ -39,7 +38,10 @@
 @import videos
 @import plans
 @import licenses
-
+@import notes
+@import mobile
+@import search
+@import resource_lists
 
 @media only screen and (min-width: 769px)
   // ----------Style adjustments for viewports over 769px go here
@@ -71,7 +73,7 @@
     min-height: 0px !important
 
   #sidebar,
-  .split_pane_sidebar,
+  .split_pane .sidebar,
   #nav_primary,
   header nav.sign_in,
   #yv_logo
@@ -322,16 +324,16 @@
   article#plan-index .plan_search
     display: none
 
-  article#plan-index .split_pane_sidebar
+  article#plan-index .split_pane .sidebar
     display: block !important
     width: 100%
     background: transparent
 
-  article#plan-index .split_pane_sidebar dl
+  article#plan-index .split_pane .sidebar dl
     border: 0
 
   article#plan-index dd.highlighted a,
-  .split_pane_sidebar dd a:hover
+  .split_pane .sidebar dd a:hover
     background: transparent
 
   .reading_plan_index h1
@@ -545,12 +547,7 @@
 
   // ----------------- Reading plans
 
-  #main article.readingplans
-    padding: 0
-
-    hr
-      margin: 20px 0px
-      border-top: 1px solid #e1e1e1
+  #main #subscriptions-index
 
     h1
       font:
@@ -571,23 +568,6 @@
       margin-bottom: 0
       font-size: 15px
       line-height: 1.4em
-
-    .big_list
-      margin-top: 0
-      li
-        padding: 12px 18px
-        display: block
-        min-height: 85px
-      h4
-        margin-bottom: 12px
-
-      .plan_list
-        h4
-          margin-bottom: 4px
-          cursor: pointer
-
-      h5
-        float: left
 
     .progress_counter
       width: 100%
@@ -697,7 +677,7 @@
         margin-bottom: 0
         margin-top: -4px
 
-    .split_pane_content
+    .split_pane .content
       .devo_content
         padding: 0 20px
         p
@@ -706,17 +686,7 @@
     table:first-child
       margin-top: 20px
 
-  #main article.readingplans.myplans
-    .progress_counter
-      position: absolute
-      text-align: left
-      top: 20px
-
-    .progress_wrap
-      width: 100%
-      margin: 0
-
-  #main article.readingplans
+  #subscriptions-index
     .rp_settings
       clear: both
 
@@ -962,13 +932,11 @@
   @import mobile/main_reader
   @import mobile/user_settings
   @import mobile/progress_bars
-  @import mobile/split_pane
   @import mobile/footer
   @import mobile/modal_window
   // @import mobile/reference_tokens
   @import mobile/embedded_reader
   @import mobile/audio_player
-  @import mobile/bookmarks
   @import mobile/pages
   @import mobile/webfonts
   @import mobile/donate
