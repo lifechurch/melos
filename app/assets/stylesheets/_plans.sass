@@ -1,16 +1,43 @@
-#subscriptions-index
+#plan-index
+  .sidebar
+    .search
+      margin-top: 25px
+      margin-left: 10px
+      form
+        margin-bottom: 20px
 
-  ul.big_list li
+        select.language, input.field, input.submit
+          width: 200px
+          margin-left: 0
 
-    padding: 20px 0
-    margin: 0
-    background: 0
-    border-top: 1px solid #ddd
+        input.submit
+          margin-top: 20px
+          line-height: 2em
 
+  #filter-message
+    text-align: center
+    margin: 20px
+
+.resource_list
+  .subscription
+    overflow: hidden
+    h3
+      margin-left: 10px
+      margin-bottom: .5em
     .progress_wrap
       margin-bottom: 0
 
-// --------------------------------- Mobile styles
+
+// For plan index page
+.resource_list
+  .plan
+    .length
+      display: block
+      margin-bottom: 10px
+      line-height: 14px
+
+
+// Mobile styles ---------------------------------
 html.mobile-client
 
   #sidebar

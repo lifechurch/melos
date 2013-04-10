@@ -2,6 +2,6 @@
   - if @badges.empty?
     %p= t('no badges found yourself')
   - else
-    %ul.big_list
+    %ul.resource_list
       = render partial: "badges/list_item", collection: @badges, locals: {display: :icon}
     = render partial: 'shared/pagination', locals: {resource_list: @badges}

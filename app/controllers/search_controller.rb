@@ -1,5 +1,7 @@
 class SearchController < ApplicationController
 
+  respond_to :html
+
   def show
     # if no version specified, use the default
     params[:version_id] ||= current_version
@@ -26,6 +28,8 @@ class SearchController < ApplicationController
     #if no category selected, use the query's selected category
     #(so a path created with param.merge will have the right parameter)
     params[:category] ||= @query.category
+
+    respond_with @query
   end
 
 end

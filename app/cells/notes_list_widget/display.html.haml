@@ -13,7 +13,7 @@
                   %img.avatar_small{src: note.user_avatar_url.px_24x24}
               %td
                 %a= link_to note.title, note_path(note.id)
-                %p.mute.small.negative_gutter_top_half= note.username
+                %p.mute.small= note.username
           %tfoot
             %tr
               %th

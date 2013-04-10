@@ -57,10 +57,10 @@ module YouversionWeb
       end
 
       should_redirect_store = lambda do |rack_env|
-        !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] =~ /\/download|\/mobile/
+        !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] =~ /^\/download|^\/mobile/
       end
 
-      r307 %r{\/download|\/mobile}, store_redirect, if: should_redirect_store
+      r307 %r{^\/download|^\/mobile}, store_redirect, if: should_redirect_store
 
       # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
       r301 '/descargar', '/es/download'

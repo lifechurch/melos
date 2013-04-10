@@ -1,23 +1,30 @@
-%li{id: list_item.id, class: ("li_note li_bookmark" if display == :icon)}
-  - if display == :avatar
-    .float_left
-      %a{href: user_path(list_item.username)}
-        %img.avatar_large{src: list_item.user_avatar_url.px_48x48}
-  %div{style: ("margin-left: 60px;" if display == :avatar)}
-    %h5{class: list_item.user_status}
-      %a{href: note_path(list_item.id), class: (is_dark?(list_item.highlight_color) ? "dark_bg highlighted" : "highlighted" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
-    - if display == :avatar
-      %p.mute.small.negative_gutter_top_half
-        %a{href: user_path(list_item.username)}= list_item.username
+- display_avatar = display == :avatar
+
+%li{id: list_item.id, class: "note"}
+  - if display_avatar
+    .avatar.float_left
+      = link_to user_path(list_item.username) do
+        = image_tag(list_item.user_avatar_url.px_48x48)
+
+  %div{class: ("for_avatar" if display_avatar), style: ("margin-left: 60px;" if display_avatar)}
+    %h3{class: list_item.user_status}
+      = link_to( list_item.title, note_path(list_item.id))
+
+    - if display_avatar
+      %p.mute.small{style: "margin-top: -10px"}
+        = link_to(list_item.username, user_path(list_item.username))
+
     %p= truncate list_item.content, length: 300, separator: " "
-    %p.mute.small.negative_gutter_top_half= link_to_references(list_item.reference_list)
-    .bookmark_edit.float_right
-      %p
-        - if @me
-          %span= link_to(t('notes.edit'), edit_note_path(list_item.id))
-          %span.mdash
-            &mdash;
-          %span.confirm= link_to(t('notes.delete'), note_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
-          %span.mdash
-            &mdash;
-        %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
+
+    - unless list_item.reference_list.empty?
+      %p.references
+        = link_to_references(list_item.reference_list)
+
+    .edit_controls
+      - if @me
+        %span.date
+          = t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
+        %span.hidden
+          = link_to(t('notes.edit'), edit_note_path(list_item.id))
+        %span.confirm.hidden
+          = link_to(t('notes.delete'), note_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)

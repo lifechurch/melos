@@ -73,15 +73,13 @@ function Page() {
   this.initNav();
   this.initInputs();
   this.initMenus();
-  this.initBookmarkEdits();
+  this.initEditControls();
   this.initAjaxReplace();
   this.initFlash();
   this.initAutoFocus();
   this.initRadiosAndChecks();
   this.initProgressBars();
   this.initInplaceConfirms();
-  //this.fixWidgetLast();
-  //this.fixWidgetHeader();
 }
 
 Page.prototype = {
@@ -230,22 +228,33 @@ Page.prototype = {
   },
 
   // On user/bookmarks page.  Fades in edit controls.
-  initBookmarkEdits : function() {
+  initEditControls : function() {
+
+    $('.resource_list .bookmark, .resource_list .note').hover(
+      function(){
+        $(this).find('.edit_controls .hidden').animate({opacity: 1});
+      },
+      function(){
+        $(this).find('.edit_controls .hidden').animate({opacity: 0});
+      }
+    );
 
     jRes.addFunc({
       breakpoint: 'mobile',
       enter: function() {
         // bind mobile menu events, giving their handler's the Selected context via $.proxy
-        $('.li_bookmark').unbind('mouseenter mouseleave');
+        $('.resource_list .bookmark, .resource_list .note').unbind('mouseenter mouseleave');
+        $('.edit_controls .hidden').css("opacity","1.0");
       },
       exit: function() {
+        $('.edit_controls .hidden').css("opacity","0");
         // unbind mobile menu events, giving their handler's the Selected context via $.proxy
-        $('.li_bookmark').hover(
+        $('.resource_list .bookmark, .resource_list .note').hover(
           function(){
-            $(this).find('.bookmark_edit').animate({opacity: 1});
+            $(this).find('.edit_controls .hidden').animate({opacity: 1});
           },
           function(){
-            $(this).find('.bookmark_edit').animate({opacity: 0});
+            $(this).find('.edit_controls .hidden').animate({opacity: 0});
           }
         );
       }

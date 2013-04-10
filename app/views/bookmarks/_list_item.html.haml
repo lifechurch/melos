@@ -1,31 +1,29 @@
-%li{class: ("li_bookmark" if display == :icon)}
-  .float_left{style: "width: 100%;"}
-    %p.gutter_bottom_half
-      %b{class: (is_dark?(list_item.highlight_color) ? "dark_bg highlighted" : "highlighted" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}= list_item.title
-      - list_item.reference_list.each do |r|
-        %p
-          %b
-            %a{href: bible_path(r)}= r
-          %br
-          .mobile
-            %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
-          .embedded_reader{"data-setting-font" => @font, 'data-setting-size' => @size}= r.content.html_safe
+- has_title = list_item.title
+
+%li.bookmark
+  - if has_title
+    %h3= list_item.title
+    -# %span{class: (is_dark?(list_item.highlight_color) ? "dark_bg highlighted" : "highlighted" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}=
+  %ul.references
+    - list_item.reference_list.each do |r|
+      %li
+        - link = link_to(r,bible_path(r))
+        - if has_title # display the link as an h4 if we've displayed an h3 title, otherwise display verse as h3
+          %h4= link
+        - else
+          %h3= link
+        .reader{"data-setting-font" => @font, 'data-setting-size' => @size}= r.content.html_safe
+
   - if list_item.labels.present?
-    %p
+    %p.labels
       %strong= t('bookmarks.labels label')
       - list_item.labels.split(", ").each do |l|
-        - #TODO: split labels in model
         %a{href: user_bookmarks_path(@user, label: l.chomp)}= l
-        - # TODO: Label link
 
-  .bookmark_edit.float_right
-    %p
-      - if @me
-        %span= link_to(t('bookmarks.edit'), edit_bookmark_path(list_item.id))
-        %span.mdash
-          &mdash;
-        %span.confirm= link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
-        %span.mdash
-          &mdash;
-      %span.created_as_date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
-  
+  - if @me
+    .edit_controls
+      %span.date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
+      %span.hidden
+        = link_to(t('bookmarks.edit'), edit_bookmark_path(list_item.id))
+      %span.confirm.hidden
+        = link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)

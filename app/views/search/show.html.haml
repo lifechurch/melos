@@ -1,44 +1,33 @@
-- @title = @query.query
-- @subtitle = t("site search")
-- @sidebar = false
+:ruby
+  @title    = @query.query
+  @subtitle = t("site search")
+  @sidebar  = false
 
-%article
-  %h1.float_left= @query.query
+%article#search-show
+  %h1= @title
   - if @query.suggestion
-    %span.float_left{style: "margin-left: 20px; margin-top: 13px; font-size: 12px"}
+    %p#suggestion
       = "(#{t('searching.suggestion html', suggestion_link: (link_to @query.suggestion, search_path(q: @query.suggestion, category: params[:category], version_id: params[:version_id])))})".html_safe
-  .split_pane{:style => "padding-top:15px; clear: left"}
-    .split_pane_sidebar
-      %dl.categories_menu
+
+  .split_pane
+
+    .sidebar
+      %dl#categories.categories_menu
         %dt
-          %div{style: "text-align: center; margin-bottom: 5px"}
-            %em.mute{style: "margin-bottom: 10px; font-size: 12px; font-weight: normal"}= t('searching.total results', total: number_with_delimiter(@query.total_results, :precision => 2).downcase).html_safe
+          %em.mute= t('searching.total results', total: number_with_delimiter(@query.total_results, :precision => 2).downcase).html_safe
         - Search.categories.each do |category|
           %dd{class: @query.category == category ? "highlighted" : ""}
-            %a{href: search_path(category: category, q: params[:q])}
-              = t("searching.#{category}")
-              = "(#{@query.raw_results[category].total || 0})"
-    .split_pane_content
+            = link_to( search_path(category: category, q: params[:q])) do
+              = t("searching.#{category}") << " (#{@query.raw_results[category].total || 0})"
+
+    .content
       - if @query.category == :bible
-        %form{method: 'get'}
-          %input{type: "hidden", name: "q", value: @query.query}
-          %input{type: "hidden", name: "category", value: :bible}
-          %div{style: "clear: both"}
-            - all_languages = Version.all_by_language
-            %select.float_right{onChange: "this.form.submit()", style: "margin-right: 5px; margin-top: 10px; margin-bottom: 25px; width: 550px", name: "version_id"}
-              %optgroup{label: Version.languages[I18n.locale.to_s]}
-              %option{value: "", selected: @query.version_id.nil?}= t("searching.all versions", language_name: t("language name"))
-              - if langs = all_languages[I18n.locale.to_s]
-                -  langs.each do |v|
-                  %option{value: v.id, selected: v.id == (@query.version_id)}= v
-              - all_languages.except(I18n.locale.to_s).each do |lang, versions|
-                %optgroup{label: Version.languages[lang]}
-                - versions.each do |v|
-                  %option{value: v.id, selected: v.id == (@query.version_id)}= v
+        = render "bible_version_form"
+
       - if @query.result_list(@query.category).present?
-        %ul.big_list{style: "clear:both"}
-          - @query.result_list(@query.category).each do |item|
-            = render partial: "#{@query.category}_list_item", locals: {item: item}
+        %ul.resource_list
+          = render partial: "#{@query.category}_list_item", collection: @query.result_list(@query.category)
         = render "shared/pagination", resource_list: @query.result_list(@query.category)
+
       - else
-        .none{style:"clear:both", align: "center"}= t("none found")
+        #noresults= t("none found")

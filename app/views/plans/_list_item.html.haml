@@ -1,0 +1,13 @@
+:ruby
+  # Required parameters
+  # - collection
+  # - original_locale
+
+  plan = list_item
+
+%li.plan
+  %h3
+    = link_to(plan.name, plan_path(plan, locale: original_locale))
+  %span.length
+    = plan.formatted_length
+  %p= plan.about
