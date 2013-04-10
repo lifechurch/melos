@@ -4,14 +4,14 @@ class Search
   attr_reader :version_id
 
   def self.categories
-    [:bible, :plans, :notes, :users]
+    [:bible, :plans, :notes, :users] #:videos
   end
 
   def self.category_resource_paths
-    {bible: "bible", plans: "reading_plans", notes: "notes", users: "users"}
+    {bible: "bible", plans: "reading_plans", notes: "notes", users: "users"} #, videos: "videos"
   end
   def self.category_item_names
-    {bible: "verses", plans: "reading_plans", notes: "notes", users: "users"}
+    {bible: "verses", plans: "reading_plans", notes: "notes", users: "users"} #,videos: "videos"
   end
 
   def initialize (query, opts = {})
@@ -29,9 +29,15 @@ class Search
       resource = self.class.category_resource_paths[c]
       items = self.class.category_item_names[c]
       parameters = params
+
+      # Set language tag for bible search if @version_id wasn't set above.
       if(c == :bible && params[:language_tag].present?)
         parameters[:language_tag] = YvApi::to_bible_api_lang_code(parameters[:language_tag])
       end
+
+      # Set language tag for search if it's for videos.
+      parameters[:language_tag] = opts[:locale].to_s if(c == :videos)
+
       @responses[c] = YvApi.get("search/#{resource}", parameters) do |errors, response|
         #treat any error as empty results for now, but return suggestions if there were any
         Hashie::Mash.new(suggestions: response.try(:[], 'response').try(:[], 'data').try(:[], 'suggestions'))

@@ -25,7 +25,8 @@ class Video < YouVersion::Resource
   end
 
   def small_image
-    thumbnails.select {|th| th.width == 320 }.first
+    image = thumbnails.select {|th| th.width == 320 }.first || thumbnails.select {|th| th.width == 360 }.first
+    return image
   end
 
   def hero_image

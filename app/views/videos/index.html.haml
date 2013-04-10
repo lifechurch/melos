@@ -7,9 +7,9 @@
     %h1
       Videos
 
-    %ul.videos
+    %ul.resource_list
       - @videos.each do |v|
-        %li{class:cycle('even', 'odd')}
+        %li.video{class:cycle('even', 'odd')}
           =link_to( series_video_path(id:v.id)) do
             = image_tag( v.thumbnails.second.url )
           %div.info

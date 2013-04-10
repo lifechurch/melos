@@ -158,18 +158,16 @@
 
 // ------------Landing page
 
-#videos-index
+#videos-index,
+#search-show
 
-  ul.videos
+  .resource_list
     overflow: hidden
 
-    li:hover
+    li.video:hover
       +box-shadow(rgba(0,0,0,0.3) 0 2px 8px)
 
-    li.odd
-      margin-right: 0px
-
-    li
+    li.video
       float: left
       width: 400px
       padding: 5px
@@ -188,6 +186,13 @@
         background: image-url("icon_small_about.png") no-repeat 0px center
         color: #777
         display: block
+
+    li.odd
+      margin-right: 0px !important
+
+#search-show
+  li.video:first-child
+    margin-top: 30px
 
 // ------------Series detail page
 #video-series

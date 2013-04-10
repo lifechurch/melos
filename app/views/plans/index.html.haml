@@ -41,7 +41,7 @@
               %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
                 = t("language name", locale: loc)
 
-      %dl.categories_menu
+      %dl
         %dt
           = t("plans.browse by category")
           - if translate

@@ -2,8 +2,9 @@
   @title    = @query.query
   @subtitle = t("site search")
   @sidebar  = false
+  html_attributes(id:"search-show")
 
-%article#search-show
+%article
   %h1= @title
   - if @query.suggestion
     %p#suggestion
@@ -12,7 +13,7 @@
   .split_pane
 
     .sidebar
-      %dl#categories.categories_menu
+      %dl
         %dt
           %em.mute= t('searching.total results', total: number_with_delimiter(@query.total_results, :precision => 2).downcase).html_safe
         - Search.categories.each do |category|

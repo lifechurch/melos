@@ -1,4 +1,4 @@
-%form{method: 'get'}
+%form#version_form{method: 'get'}
   %input{type: "hidden", name: "q", value: @query.query}
   %input{type: "hidden", name: "category", value: :bible}
   - all_languages = Version.all_by_language

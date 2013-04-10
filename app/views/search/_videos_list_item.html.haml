@@ -1,0 +1,6 @@
+- video = Video.new(videos_list_item)
+%li.video{class:cycle('even', 'odd')}
+  =link_to( series_video_path(id:video.id)) do
+    = image_tag( video.small_image.url )
+  %div.info
+    =link_to(video.credits, publisher_video_path(id: video.publisher.id), {class: "publisher"})
