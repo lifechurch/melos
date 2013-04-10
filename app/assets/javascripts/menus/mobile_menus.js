@@ -34,6 +34,10 @@ MobileMenus.prototype = {
 
   constructor : MobileMenus,
 
+  isMobileClient : function() {
+    return $('html').hasClass('mobile-client');
+  },
+
   init : function() {
     var thiss = this;
 
@@ -188,41 +192,56 @@ MobileMenus.prototype = {
   },
 
   openSubscriptionMenu : function(){
-    this.subscriptionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass('open');
+    if(this.isMobileClient()) {
+      this.subscriptionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass('open');
+    }
   },
 
   closeSubscriptionMenu : function(){
-    var thiss = this;
+    var _this = this;
     this.subscriptionMenu.fadeOut('fast', function() {
       // remove the inline display style so CSS styles work for widescreen
-      thiss.subscriptionMenu.css('display', '');
+      _this.subscriptionMenu.css('display', '');
       $(document).scrollTop(0);
     }).removeClass('open');
     $('.subscription_close_btn').toggleClass('selected');
   },
 
   initSubscriptionMenu : function(){
-    var thiss = this;
+    var _this = this;
 
     // open subscription modal initially in some cases
     if(this.subscriptionMenu.find('.initial').length){
-      thiss.openSubscriptionMenu();
+      this.openSubscriptionMenu();
     }
 
     // Version menu trigger
     $('#m_plan_btn').click(function(e){
         e.preventDefault();
-
-        thiss.openSubscriptionMenu();
+        _this.openSubscriptionMenu();
     });
 
     // Version menu close trigger
     $('.subscription_close_btn, .active.content_target span').click(function(e){
         e.preventDefault();
-
-        thiss.subscriptionMenu.find('.initial').removeClass('initial');
-        thiss.closeSubscriptionMenu();
+        _this.subscriptionMenu.find('.initial').removeClass('initial');
+        _this.closeSubscriptionMenu();
     });
+
+    // Adjust our subscription menu / sidebar if we enter/exit mobile-client states
+    // Possible on tablets at the moment.
+    jRes.addFunc({
+      breakpoint: 'mobile',
+      enter: function() {
+        if(_this.subscriptionMenu.find('.initial').length){
+          _this.openSubscriptionMenu();
+        }
+      },
+      exit: function() {
+        _this.subscriptionMenu.css({'z-index':'0'}).removeClass('open');
+      }
+    });
+
   },
 
   initSettingsMenu : function(){
