@@ -1,9 +1,10 @@
 #header_outer
-  .mobile
-    %div#beta-banner
-      %span
-        Mobile Beta
-      = link_to("Feedback", "mailto:mobilewebfeedback@youversion.zendesk.com?Subject=Mobile%20Beta%20Feedback")
+  - if ENV['DISPLAY_MOBILE_BANNER'] == "true" # use Heroku config var to turn off/on mobile banner.
+    .mobile
+      %div#beta-banner
+        %span
+          Mobile Beta
+        = link_to("Feedback", "mailto:mobilewebfeedback@youversion.zendesk.com?Subject=Mobile%20Beta%20Feedback")
 
   %header#header{role:"banner"}
     = cache "header_logo_#{@site}", expires_in: a_short_time do
