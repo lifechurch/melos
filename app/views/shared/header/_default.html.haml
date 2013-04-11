@@ -7,8 +7,7 @@
         = link_to("Feedback", "mailto:mobilewebfeedback@youversion.zendesk.com?Subject=Mobile%20Beta%20Feedback")
 
   %header#header{role:"banner"}
-    = cache "header_logo_#{@site}", expires_in: a_short_time do
-      = link_to(@site.title, "/" , style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})", id:"yv_logo")
+    = link_to(@site.title, "/" , style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})", id:"logo")
 
     %nav.sign_in
       %ul

@@ -295,7 +295,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_auth
-    @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} ) if cookies.signed[:a]
+    if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
+      @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
+    end
   end
 
   def current_user
