@@ -4,7 +4,7 @@
 - @title = strip_tags(@video.title)
 
 - content_for :title do
-  = t(@video.title)
+  = @video.title.html_safe
 
 %article{ style: "background-image: url('#{@video.hero_image.url}')"}
   #title-bar
