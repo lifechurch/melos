@@ -42,10 +42,12 @@ MobileMenus.prototype = {
     var thiss = this;
 
     // make refToolbar the height of the document
-    this.referenceH = this.referenceToolbar.css({'height':this.documentH});
-    this.versionH = this.versionMenu.css({'height':this.documentH});
-    this.versionMenu.find('.scroll').css({'height':(this.windowH) - 50});
-    this.referenceToolbar.find('.scroll').css({'height':(this.windowH) - 100});
+    if(this.isMobileClient()) {
+      this.referenceH = this.referenceToolbar.css({'height':this.documentH});
+      this.versionH = this.versionMenu.css({'height':this.documentH});
+      this.versionMenu.find('.scroll').css({'height':(this.windowH) - 50});
+      this.referenceToolbar.find('.scroll').css({'height':(this.windowH) - 100});
+    }
 
     // Toggle Functionality for all overlays
     //this.settingsToolbar.css({'top' : -(this.settingsH)});
