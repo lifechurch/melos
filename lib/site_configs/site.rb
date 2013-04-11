@@ -3,7 +3,7 @@ module SiteConfigs
 
   class Site
     def logo_style
-      "background: no-repeat 0 12px; width: 150px; display: block; margin-left: 20px; text-indent: -99999px"
+      "background: no-repeat 0 12px; width: 150px; display: block; text-indent: -99999px"
     end
 
     def logo_image

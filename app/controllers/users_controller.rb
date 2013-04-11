@@ -47,8 +47,6 @@ class UsersController < ApplicationController
     if @user.persisted?
       # save username and password so we can sign them back in
       cookies.signed[:a] = @user.id
-      cookies.signed[:f] = params[:user][:username]
-      cookies.signed[:g] = params[:user][:password]
 
       if next_redirect?(authorize_licenses_path)
         redirect_to(authorize_licenses_path(confirm: true))
