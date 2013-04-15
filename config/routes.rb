@@ -114,10 +114,14 @@ YouversionWeb::Application.routes.draw do
   match 'sign-up/facebook' => 'users#create_facebook', :as => 'facebook_sign_up', :via => :post
   match 'sign-up/facebook' => 'users#new_facebook', as: 'facebook_sign_up', :via => :get
   match 'sign-up/success' => 'users#sign_up_success', as: 'sign_up_success'
-  match 'confirm/:hash' => 'users#confirm', :as => "confirm"
-  match 'confirm' => 'users#confirmed', :as => "confirm", :via => :post
 
-  match 'resend' => 'users#resend_confirmation', :as => "resend_confirmation"
+  get   'confirm/resend',to: 'users#resend_confirmation', :as => "resend_confirmation"
+  post  'confirm/resend',to: 'users#resend_confirmation', :as => "resend_confirmation"
+
+  get   'confirm/:hash', to: 'users#confirm',    :as => "confirm"
+  post  'confirm/:hash', to: 'users#confirmed',  :as => "confirm"
+
+
 
 
   # Sessions

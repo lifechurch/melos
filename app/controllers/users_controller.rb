@@ -87,9 +87,11 @@ class UsersController < ApplicationController
       redirect_to sign_up_success_path(show: "facebook")
     else
       flash.now[:error] = t("invalid password")
-      render "confirm"
+      render action: "confirm", layout: "application"
     end
   end
+
+
 
   def new_facebook
     facebook_auth = JSON.parse cookies.signed[:facebook_auth]

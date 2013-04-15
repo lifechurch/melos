@@ -1,5 +1,10 @@
+- @main_nav = false
+
+- content_for :sidebar do
+  = render "shared/widget_ad_bible_app"
+
 %article
-  -if @user.errors.any?
+  -if @user.try(:errors) && @user.errors.any?
 
     -if @user.errors.include?(:base) && @user.errors.get(:base).include?("users.token.verified")
       %h1= t("sign in to youversion")
@@ -14,7 +19,7 @@
     -else
       %p= t('users.errors confirming account')
       -@user.errors.full_messages.each do |e|
-        %p.small.mute= e.to_s
+        %p.mute= e.to_s
       %br
       %p= link_to t('users.resend confirmation button'), resend_confirmation_path, class: "action_button_blue"
 
