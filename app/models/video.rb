@@ -78,6 +78,18 @@ class Video < YouVersion::Resource
     videos.count > 0
   end
 
+  def self.licensed?(video_id, auth)
+    begin
+      find(video_id,{auth: auth, force_auth: true})
+    rescue YouVersion::ResourceError => e
+      if e.message.include?("not_found")
+         return false
+      else
+         raise e
+      end
+    end
+  end
+
   # Parameters:
   # query of what you're wanting to search for
   # page  number of results to return

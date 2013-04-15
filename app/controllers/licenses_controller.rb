@@ -9,17 +9,22 @@ class LicensesController < ApplicationController
     request_params = params_for_request
     @success, @error = License.authorize(request_params.merge(user_id: current_auth.user_id))
     @vendor = Vendor.find(request_params[:vendor_id])
-    # If this is a duplicate transaction (customer clicked on the link a second+ time)
-    # then don't show an error, just show a confirmation page and link to content
-    @success = true if @error.message.include? "licenses.vendor_transaction_id.duplicate"
 
-    if @success
-      cleanup_params
-      clear_redirect
+    if (@error.try(:message) && @error.message.include?("licenses.vendor_transaction_id.duplicate"))
+      item_video_ids.each do |vid|
+        break if @success = Video.licensed?(vid,current_auth)
+      end
     end
+
+    cleanup_params and clear_redirect if @success
   end
 
 private
+
+  def item_video_ids
+    video_items = params[:item_ids] || cookies[:item_ids] # "video:1,video:2,video:3"
+    video_items.split(",").map {|str| str.split(":").second.to_i}
+  end
 
   # Collect the required parameters + values for the authorize request
   # They can come from either params or cookies depending on whether
