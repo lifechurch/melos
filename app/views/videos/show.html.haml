@@ -4,7 +4,7 @@
 - @title = strip_tags(@video.title)
 
 - content_for :title do
-  = t(@video.title)
+  = @video.title
 
 %article
   #title-bar
@@ -15,7 +15,8 @@
 
     = render partial: "videos/share", locals: {video: @video}
 
-  %div#player
+  #player-container
+    #player
 
   .inner
     #details
@@ -44,8 +45,8 @@
     $(window).load(function () {
       jwplayer('player').setup({
         file: "#{@video.hls.url}",
-        width: '908',
-        height: '511',
+        width: '100%',
+        height: '100%',
         image: "#{@video.poster_image.url}"
       })
     });

@@ -759,3 +759,6 @@ en:
     public domain:                              "Public Domain"
     loading:                                    "Loading More Versions..."
     load error:                                 "Sorry, there was a problem loading more versions. Close this menu and reopen to try again."
+  reader help:
+    title:                                      "Select a verse…"
+    line 1:                                     "Click or tap on any verse or collection of verses to bookmark, highlight, create a note, or share with your friends!"

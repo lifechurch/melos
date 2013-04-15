@@ -3,11 +3,12 @@ YouversionWeb::Application.routes.draw do
 
   # Route for tracking requests to /app url.  Specifically desired for BibleSeries analytics
   get "/app", to: "trackings#app"
+  get '/confirm-email', to: 'users#confirm_email', as: "confirm_email"
 
-  get 'donate/us', :to => 'donations#us', :as => 'us_donation'
-  post 'donate/us', :to => 'donations#confirm', :as => 'confirm_donation'
-  match 'donate/relay_response', :to => 'donations#relay_response', :as => 'donations_relay_response'
-  match 'donate/receipt', :to => 'donations#receipt', :as => 'donations_receipt', :via => [:get]
+  get 'donate/us', to: 'donations#us', as: 'us_donation'
+  post 'donate/us', to: 'donations#confirm', as: 'confirm_donation'
+  match 'donate/relay_response', to: 'donations#relay_response', as: 'donations_relay_response'
+  match 'donate/receipt', to: 'donations#receipt', as: 'donations_receipt', via: [:get]
   match 'open' => 'pages#open'
 
   # Bible
@@ -115,8 +116,9 @@ YouversionWeb::Application.routes.draw do
   match 'sign-up/success' => 'users#sign_up_success', as: 'sign_up_success'
   match 'confirm/:hash' => 'users#confirm', :as => "confirm"
   match 'confirm' => 'users#confirmed', :as => "confirm", :via => :post
-  match 'confirm-email' => 'users#confirm_email', :as => "confirm_email"
+
   match 'resend' => 'users#resend_confirmation', :as => "resend_confirmation"
+
 
   # Sessions
   match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
@@ -126,9 +128,9 @@ YouversionWeb::Application.routes.draw do
 
   # profile stuff
   match 'devices/:device_id'     => 'users#destroy_device', :as => 'device', :via => :delete
-  get   'confirm-update-email/:token' => 'users#confirm_update_email', as: 'confirm_update_email'
-  get   'settings/forgot_password' => 'users#forgot_password_form', as: 'forgot_password'
-  post  'settings/forgot_password' => 'users#forgot_password', as: 'forgot_password'
+  get   'confirm-update-email/:token', to: 'users#confirm_update_email', as: 'confirm_update_email'
+  get   'settings/forgot_password', to: 'users#forgot_password_form', as: 'forgot_password'
+  post  'settings/forgot_password', to: 'users#forgot_password', as: 'forgot_password'
 
   # connetions
   match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'

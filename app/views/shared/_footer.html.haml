@@ -1,4 +1,4 @@
-%footer#footer{role: "contentinfo"}
+%footer#footer{role: "contentinfo", class: footer_classes}
   = cache "#{@site}_footer_#{I18n.locale}", expires_in: a_short_time do
     %p.links
       = link_to( t("now"),  external_url(:now))

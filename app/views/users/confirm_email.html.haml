@@ -1,3 +1,8 @@
+- @main_nav = false
+
+- content_for :sidebar do
+  = render partial: "shared/widget_ad_bible_app"
+
 %article
-  %h1= t("users.thanks for registering")
+  %h1.keep= t("users.thanks for registering")
   %p= t("users.confirm email")
