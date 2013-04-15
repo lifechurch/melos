@@ -1,24 +1,14 @@
 class ReferencesController < ApplicationController
+
   before_filter :set_nav
-  before_filter :fix_bad_reference, only: [:show]
-  before_filter :strip_format, only: [:show]
-  before_filter :redirect_incorrect_reference, only: [:show]
+  before_filter :check_site_requirements,       only: [:show]
+  before_filter :fix_invalid_reference,         only: [:show]
+  before_filter :strip_format,                  only: [:show]
+  before_filter :redirect_incorrect_reference,  only: [:show]
+
   rescue_from InvalidReferenceError, with: :ref_not_found
 
-  def fix_bad_reference
-    # HACK (km): sometimes the url can have invalid utf-8 characters
-    # /bible/46/rom.8.15.cunp-%E7%A5%EF
-    # so strip those out before attempting to parse as a reference
-    if params[:reference]
-      params[:reference] = params[:reference].encode('UTF-16le', :invalid => :replace, :replace => '')
-      params[:reference] = params[:reference].encode('UTF-8')
-    end
-  end
-
   def show
-    # Set HTML classes for full screen/parallel
-
-    client_settings.reader_full_screen = 1 if params[:full_screen]
     @presenter = Presenter::Reference.new(params,self)
     set_sidebar_for_state(default_to: Presenter::Sidebar::Reference.new(params,self))
     now_reading(@presenter.reference)
@@ -47,8 +37,24 @@ class ReferencesController < ApplicationController
 
   private
 
-  def redirect_incorrect_reference
+  # HACK (km): sometimes the url can have invalid utf-8 characters
+  # /bible/46/rom.8.15.cunp-%E7%A5%EF
+  # so strip those out before attempting to parse as a reference
+  def fix_invalid_reference
+    if params[:reference]
+      params[:reference] = params[:reference].encode('UTF-16le', invalid: :replace, replace: '')
+      params[:reference] = params[:reference].encode('UTF-8')
+    end
+  end
 
+  # Filter any possible @site requirements here.
+  def check_site_requirements
+    if @site.versions && (not @site.versions.include?(params[:version].to_i))  # some sites don't define a versions array
+      render_404
+    end
+  end
+
+  def redirect_incorrect_reference
     ref = params[:reference] || last_read.try(:to_param) || default_reference.try(:to_param)
     ref_hash = YouVersion::ReferenceString.new(ref).to_hash
     ref_hash[:version] = params[:version]
@@ -65,9 +71,9 @@ class ReferencesController < ApplicationController
     @nav = :bible
   end
 
+  # we allow .s in our reference constraint, so we pull
+  # the format manually in this case
   def strip_format
-    # we allow .s in our reference constraint, so we pull
-    # the format manually in this case
     if params[:reference].try(:"end_with?", '.json')
       params[:reference].gsub!('.json', '')
       request.format = :json

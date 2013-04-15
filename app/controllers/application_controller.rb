@@ -10,16 +10,7 @@ class ApplicationController < ActionController::Base
   before_filter :tend_caches
   before_filter :set_default_sidebar
 
-  # Rack Mini Profiler uncomment Gem as well as these lines to enable basic profiling.
-  #before_filter :miniprofiler
-  #def miniprofiler
-  #  Rack::MiniProfiler.authorize_request
-  #end
-
   original_locales = nil
-
-
-
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from StandardError, with: :generic_error
@@ -80,6 +71,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+  # Whitelabel sites are configured in /lib/site_configs
   def set_site
     site_class = SiteConfigs.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
     @site = site_class.new
