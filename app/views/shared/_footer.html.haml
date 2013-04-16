@@ -1,5 +1,9 @@
-%footer#footer{role: "contentinfo", class: footer_classes}
-  = cache "#{@site}_footer_#{I18n.locale}", expires_in: a_short_time do
+:ruby
+  available_locales = I18n.available_locales
+  current_locale    = I18n.locale
+
+= cache "#{@site}_footer_#{current_locale}", expires_in: a_short_time do
+  %footer#footer{role: "contentinfo", class: footer_classes}
     %p.links
       = link_to( t("now"),  external_url(:now))
       = link_to( t("about"),about_path)
@@ -10,25 +14,24 @@
       = link_to( t("get support"), external_url(:support) )
 
       - if @site.allow_donate?
-        - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt-BR", :tr].include? I18n.locale
+        - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt-BR", :tr].include?(current_locale)
           = link_to( t("donate title"), (@site.donate_path || donate_path))
 
-  - if I18n.available_locales.length > 1
+    - if available_locales.length > 1
 
-    #languages
-      %div
-        %label{for: 'choose_language'}= t("choose language field")
-        %div.select_wrap
-          %span
-            %select{ id: 'choose_language', name: 'choose_language'}
-              - I18n.available_locales.each do |loc|
-                - url = url_for(params.merge(locale: loc))
-                - url = "/#{loc}" + url_for(params.merge({locale: loc, only_path: true})) if loc == I18n.default_locale #default locale is ommited (routing-filter gem) for overall convenience, but removes /<default locale> from url_for path, so we must add it explicitly here.
-                %option{value: url, selected: loc == I18n.locale}= t("language name", locale: loc)
+      #languages
+        %div
+          %label{for: 'choose_language'}= t("choose language field")
+          %div.select_wrap
+            %span
+              %select{ id: 'choose_language', name: 'choose_language'}
+                - available_locales.each do |loc|
+                  - url = (loc == I18n.default_locale) ? ("/#{loc}" + url_for(params.merge({locale: loc, only_path: true}))) : (url_for params.merge({locale: loc}))
+                  %option{value: url, selected: loc == current_locale}= t("language name", locale: loc)
 
-    .copyright
-      %span= "&copy; #{Date.today.year}".html_safe
-      = link_to( t("lifechurch short url"),'http://www.lifechurch.tv')
+      .copyright
+        %span= "&copy; #{Date.today.year}".html_safe
+        = link_to( t("lifechurch short url"),'http://www.lifechurch.tv')
 
--unless ENV['RACK_ENV'] =~ /production/i
-  %p.small.mute.float_right= "Non-production deployment, pointing at: #{Cfg.try :api_root}"
+  -unless ENV['RACK_ENV'] =~ /production/i
+    %p.small.mute.float_right= "Non-production deployment, pointing at: #{Cfg.try :api_root}"
