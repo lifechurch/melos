@@ -2,7 +2,7 @@
   available_locales = I18n.available_locales
   current_locale    = I18n.locale
 
-= cache "#{@site}_footer_#{current_locale}", expires_in: a_short_time do
+= cache "#{@site}_footer_#{current_locale}", expires_in: a_long_time do
   %footer#footer{role: "contentinfo", class: footer_classes}
     %p.links
       = link_to( t("now"),  external_url(:now))
@@ -26,8 +26,7 @@
             %span
               %select{ id: 'choose_language', name: 'choose_language'}
                 - available_locales.each do |loc|
-                  - url = (loc == I18n.default_locale) ? ("/#{loc}" + url_for(params.merge({locale: loc, only_path: true}))) : (url_for params.merge({locale: loc}))
-                  %option{value: url, selected: loc == current_locale}= t("language name", locale: loc)
+                  %option{value: loc, selected: loc == current_locale}= t("language name", locale: loc)
 
       .copyright
         %span= "&copy; #{Date.today.year}".html_safe
