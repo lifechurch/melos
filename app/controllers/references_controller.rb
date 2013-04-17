@@ -1,6 +1,5 @@
 class ReferencesController < ApplicationController
 
-  before_filter :set_nav
   before_filter :check_site_requirements,       only: [:show]
   before_filter :fix_invalid_reference,         only: [:show]
   before_filter :strip_format,                  only: [:show]
@@ -65,10 +64,6 @@ class ReferencesController < ApplicationController
       flash.keep
       return redirect_to bible_path(Reference.new(ref_hash))
     end
-  end
-
-  def set_nav
-    @nav = :bible
   end
 
   # we allow .s in our reference constraint, so we pull

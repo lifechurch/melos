@@ -27,6 +27,8 @@ class NotesController < ApplicationController
         redirect_to(notes_path, notice: t("notes.is private")) and return
       elsif e.has_error?("Note not found")
         render_404 #render here, don't trigger an exception notification.  404's are not exceptions.
+      elsif e.has_error?("Note has been reported and is in review")
+        @note = Note.find(params[:id], :auth => current_auth, :force_auth => true)
       else
         raise(e)
       end
@@ -76,13 +78,6 @@ class NotesController < ApplicationController
     end
   end
 
-  def like
-    Like.update(params[:id], current_auth)
-
-    @note = Note.find(params[:id], current_auth)
-    render action: "show"
-  end
-
   private
 
   def set_nav
@@ -91,7 +86,6 @@ class NotesController < ApplicationController
 
   # Set sidebar values for the Likes cell
   def set_sidebar
-    @likes = Like.for_user(current_user.id) if current_user
     @user_id = current_user.id if current_user
   end
 

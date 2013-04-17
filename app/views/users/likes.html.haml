@@ -1,8 +1,0 @@
-- content_for :user_main do
-  - if @likes.empty?
-    %p= t('no likes found', username: @user.username)
-
-  - else
-    %ul.resource_list
-      = render partial: 'likes/likes', collection: @likes, locals: {display: :avatar}
-    = render partial: 'shared/pagination', locals: {resource_list: @likes}

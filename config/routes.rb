@@ -19,16 +19,13 @@ YouversionWeb::Application.routes.draw do
 
   resources 'versions',   :only => [:index, :show]
   resources 'bookmarks',  :except => [:index]
-  resources 'likes',      :only => [:index]
 
   resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do
     get :authorize, on: :collection
   end
 
-
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
   match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
-  match 'notes/:id/like' => 'notes#like', :as => 'like', :via => :put
   resources 'notes', :except => [:index]
 
   match 'search' => 'search#show'
@@ -63,13 +60,9 @@ YouversionWeb::Application.routes.draw do
     get :devices, on: :member
     get :delete_account, on: :member
 
+    resources :bookmarks, only: [:index] #, shallow: true  <-- TODO - update bookmarks implementation to properly POST for users/:user_id/bookmarks generated route
+
     match 'notes' => 'users#notes', as: 'notes'
-    match 'bookmarks' => 'users#bookmarks', as: 'bookmarks'
-    match 'likes' => 'users#likes', as: 'likes'
-    match 'following' => 'users#following', as: 'following'
-    match 'followers' => 'users#followers', as: 'followers'
-    match 'follow' => 'users#follow', as: 'follow'
-    match 'unfollow' => 'users#unfollow', as: 'unfollow'
     match 'badges' => 'users#badges', as: 'badges'
     match 'badge/:id' => 'badges#show', as: 'badge'
 
@@ -154,7 +147,7 @@ YouversionWeb::Application.routes.draw do
 
 
   # Current redirects to support previous urls.
-  match 'friends'   => 'redirects#friends'
+  match 'friends'   => 'redirects#settings' # friends is going away temporarily
   match 'bookmarks' => 'redirects#bookmarks'
   match 'settings'  => 'redirects#settings'
   match 'settings/profile'        => 'redirects#settings'

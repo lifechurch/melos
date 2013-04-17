@@ -112,51 +112,6 @@ describe User do
     end
   end
 
-  describe "following and followers" do
-    before :all do
-      @testuser_2 = ensure_user
-      @testuser_2_auth = @testuser_2.auth
-    end
-    it "should be able to follow a user" do
-      @testuser.follow(auth: @testuser_2_auth).should be_true
-      # Do it again to make sure it doesn't throw an error
-      @testuser.follow(auth: @testuser_2_auth).should be_true
-    end
-
-    it "should be able to unfollow a user" do
-      @testuser_2.follow(auth: @auth)
-      @testuser_2.unfollow(auth: @auth).should be_true
-      # Do it again to make sure it doesn't throw an error
-      @testuser_2.unfollow(auth: @auth).should be_true
-    end
-  end
-
-  describe "listing followers and following" do
-    before :all do
-      @testuser_2 = ensure_user
-      @testuser_2_auth = @testuser_2.auth
-      @testuser.follow(auth: @testuser_2_auth).should be_true
-      @testuser_2.follow(auth: @auth).should be_true
-      @testuser_3 = ensure_user
-    end
-
-    it "should list all of the users a user is following" do
-      @testuser.following.first.should == @testuser_2
-      @testuser.all_following.first.should == @testuser_2.id.to_i
-      @testuser.following_user_id_list.should == [@testuser_2.username]
-      @testuser_3.following.should == []
-      @testuser_3.all_following.should == []
-    end
-
-    it "should list all of the users following a user" do
-      @testuser.followers.first.should == @testuser_2
-      @testuser.all_followers.first.should == @testuser_2.id.to_i
-      @testuser.follower_user_id_list.should include(@testuser_2.id.to_i)
-      @testuser_3.followers.should == []
-      @testuser_3.all_followers.should == []
-    end
-  end
-
   describe "configuration" do; end
 
   describe "profile" do
@@ -245,11 +200,6 @@ describe User do
     it "should list bookmarks" do
       @busy_user.bookmarks.should be_a ResourceList
       @boring_user.bookmarks.should == []
-    end
-
-    it "should list likes" do
-      Like.new(note_id: @busy_user.notes.first.id, auth: @testuser.auth).save
-      @testuser.likes.first.should be_a Like
     end
 
     it "should list devices" do

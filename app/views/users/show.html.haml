@@ -11,12 +11,6 @@
         = render partial: "bookmarks/list_item", locals: {display: :icon, list_item: a}
       - when Note
         = render partial: "notes/list_item", locals: {display: :icon, list_item: a}
-      - when User
-        %li.li_social
-          %h5
-            =t('users.started following')
-            =link_to(a.username, user_path(a))
-          %p.mute= time_ago_in_words(a.most_recent_date)
       - when Badge
         %li.li_badge
           %h5

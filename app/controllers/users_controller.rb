@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   layout "application", :only => [ :confirm ]
 
-  before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form, :follow, :unfollow]
+  before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:destroy_device, :highlight_colors, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :confirm, :confirmed,  :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :confirm_update_email, :sign_up_success, :share]
   before_filter :set_redirect, only: [:new, :create]
@@ -129,7 +129,6 @@ class UsersController < ApplicationController
 
   def sign_up_success
     @show = (params[:show] || "facebook").to_s
-    @users = @user.connections[@show].find_friends if @user.connections[@show]
     clear_redirect
     self.sidebar_presenter = Presenter::Sidebar::Default.new
     render action: "sign_up_success", layout: "application"
@@ -144,24 +143,6 @@ class UsersController < ApplicationController
     @selected = :notes
     @notes = @user.notes(page: params[:page])
     render 'notes/index', layout: "application" if @me
-  end
-
-  def likes
-    @likes = @user.likes(page: params[:page])
-    @selected = :likes
-    @empty_message = t('no likes found', username: @user.name || @user.username )
-  end
-
-  def bookmarks
-    @selected = :bookmarks
-    @nav = :bookmarks if @me
-    if params[:label]
-      @bookmarks = Bookmark.for_label(params[:label], {page: @page, :user_id => @user.id})
-    else
-      @bookmarks = @user.bookmarks(page: params[:page])
-    end
-    @labels = Bookmark.labels_for_user(@user.id, page: @labels_page) if Bookmark.labels_for_user(@user.id)
-    render "bookmarks/index", layout: "application" if @me
   end
 
   def badges
@@ -377,46 +358,6 @@ class UsersController < ApplicationController
       flash.now[:error] = t("invalid password")
     end
     render "delete_account"
-  end
-
-  def following
-    @users = @user.following({page: params[:page] ||= 1})
-    @selected = :following
-    if @me
-      @empty_message = t('no following found self', link: "/settings/connections")
-    else
-      @empty_message = t('no following found other', username: @user.username)
-    end
-    render template: "users/friends"
-  end
-
-  def followers
-    @users = @user.followers({page: params[:page] ||= 1})
-    @selected = :followers
-    if @me
-      @empty_message = t('no followers found self', link: "/settings/connections")
-    else
-      @empty_message = t('no followers found other', username: @user.username)
-    end
-    render template: "users/friends"
-  end
-
-  # Friends, etc
-  def follow
-    if @user.follow(auth: current_auth)
-      redirect_to(:back, notice: t('you are now following', username: @user.username))
-    else
-      redirect_to(:back, error: t('error following user'))
-    end
-  end
-
-  def unfollow
-    if @user.unfollow(auth: current_auth)
-      redirect_to(:back, notice: t('you are no longer following', username: @user.username))
-    else
-      redirect_to(:back, error: t('error unfollowing user'))
-    end
-
   end
 
   def highlight_colors
