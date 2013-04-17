@@ -16,9 +16,6 @@
       %li#nav_mobile_notes{class: @nav == :notes ? "highlighted" : ""}
         %a.icon{:href => current_auth ? user_notes_path(current_auth.username) : notes_path}
           %span=t("notes title")
-      %li#nav_mobile_friends
-        %a.icon{:href => current_auth ? user_following_path(current_auth.username) : sign_up_path(source: "friends", redirect: "/friends")}
-          %span=t("friends")
       - if current_auth
         %li#nav_mobile_profile
           %a.icon{:href => user_path(current_auth.username)}
