@@ -122,7 +122,7 @@ class ApplicationController < ActionController::Base
   private
 
   def log_syms
-    Rails.logger.apc "----- SYMS: #{Symbol.all_symbols.size}", :info
+    Rails.logger.apc "----- SYMS: #{Symbol.all_symbols.size} PATH: #{request.path}", :info
   end
 
 
