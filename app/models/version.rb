@@ -196,23 +196,19 @@ class Version < YouVersion::Resource
   private
 
    def self.versions
-    #return @versions if @versions.present?
-    return Rails.cache.fetch "class_version_@versions", expires_in: cache_length do
-      # note: all caches in this model could be a_very_long_time, but during release, we want caches to be short
-      # to allow for quick discovery of changes/additions
-      response = YvApi.get("bible/versions", type: "all", cache_for: cache_length)
+    return @versions if @versions.present?
+    # note: all caches in this model could be a_very_long_time, but during release, we want caches to be short
+    # to allow for quick discovery of changes/additions
+    response = YvApi.get("bible/versions", type: "all", cache_for: cache_length)
 
-      #versions hash of form [<version numerical uid> => <Version object instance>]
-      Hash[ response.versions.map {|ver| [ver.id, Version.new(ver)]} ]
-    end
+    #versions hash of form [<version numerical uid> => <Version object instance>]
+    @versions = Hash[ response.versions.map {|ver| [ver.id, Version.new(ver)]} ]
   end
 
   def self.defaults
-    #return @defaults if @defaults.present?
-    return Rails.cache.fetch "class_version_@defaults", expires_in: cache_length do
-      response = YvApi.get("bible/configuration", cache_for: cache_length)
-      Hash[response.default_versions.map {|d| [d.language_tag, d.id]}]
-    end
+    return @defaults if @defaults.present?
+    response = YvApi.get("bible/configuration", cache_for: cache_length)
+    @defaults = Hash[response.default_versions.map {|d| [d.language_tag, d.id]}]
   end
 
   def detailed_attributes

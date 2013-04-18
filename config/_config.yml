@@ -24,7 +24,7 @@ common:
   rack_execution_timeout: 1000
   #
   # Caching: all times are in minutes
-  memoization_cache_expiration: 15
+  memoization_cache_expiration: 720
   very_short_cache_expiration: 2
   short_cache_expiration: 10
   long_cache_expiration: 45
