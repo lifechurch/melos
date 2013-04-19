@@ -57,6 +57,8 @@ class ApplicationController < ActionController::Base
     # redirect to either:
     # a) remove locale from path if default and present, or
     # b) user's locale if not default and not in url already
+
+    visitor_locale = visitor_locale.to_sym
     return redirect_to params.merge!(locale: "") if from_param && visitor_locale == I18n.default_locale
     return redirect_to params.merge!(locale: visitor_locale) if !from_param && visitor_locale != I18n.default_locale
 

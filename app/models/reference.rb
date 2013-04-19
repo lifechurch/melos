@@ -39,18 +39,18 @@ class Reference < YouVersion::Resource
 
     #attempt to convert book and version from legacy OSIS to USFM
     #opts hash acts as overriding value to ref parameter
-    _book = opts.has_key?(:book) ? opts[:book] : ref_hash.try(:[], :book)
+    _book = opts.has_key?(:book) ? opts[:book] : ref_hash[:book]
     @book = YvApi::get_usfm_book(_book) || _book
     @book = @book.try :upcase
 
-    @chapter = opts.has_key?(:chapter) ? opts[:chapter] : ref_hash.try(:[], :chapter)
+    @chapter = opts.has_key?(:chapter) ? opts[:chapter] : ref_hash[:chapter]
     @chapter = @chapter.to_s.upcase
 
-    _version = opts.has_key?(:version) ? opts[:version] : ref_hash.try(:[], :version)
+    _version = opts.has_key?(:version) ? opts[:version] : ref_hash[:version]
     @version = Version.id_from_param(_version)
 
     #we evaluate verses last, as it may hit the API
-    @verses = opts.has_key?(:verses) ? opts[:verses] : ref_hash.try(:[], :verses)
+    @verses = opts.has_key?(:verses) ? opts[:verses] : ref_hash[:verses]
     @verses = parse_verses(@verses)
 
     unless @book && @chapter
