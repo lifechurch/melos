@@ -33,23 +33,23 @@ class ApplicationController < ActionController::Base
 
   # Set locale
   def set_locale
-    if !@site.default_locale.nil?
-        I18n.default_locale = @site.default_locale
-    else
-        I18n.default_locale = :en
-    end
 
-    visitor_locale = params[:locale].to_sym if I18n.available_locales.include?(params[:locale].try(:to_sym))
+    # grab available locales as array of strings and compare against strings.
+    available_locales = I18n.available_locales.map {|l| l.to_s}
+
+    I18n.default_locale = (@site.default_locale.nil?) ? :en : @site.default_locale
+
+    visitor_locale = params[:locale] if available_locales.include?(params[:locale])
     from_param = !visitor_locale.nil?
 
-    if cookies[:locale]
-        visitor_locale ||= cookies[:locale].to_sym if I18n.available_locales.include?(cookies[:locale].try(:to_sym)) #forwards compatibility with lang code changes
+    visitor_locale ||= if cookies[:locale]
+      cookies[:locale] if available_locales.include?(cookies[:locale]) #forwards compatibility with lang code changes
     elsif !@site.default_locale.nil?
-        visitor_locale = @site.default_locale
+      @site.default_locale
     end
 
-    visitor_locale ||= request.preferred_language_from(I18n.available_locales).try(:to_sym)
-    visitor_locale ||= request.compatible_language_from(I18n.available_locales).try(:to_sym)
+    visitor_locale ||= request.preferred_language_from(I18n.available_locales)
+    visitor_locale ||= request.compatible_language_from(I18n.available_locales)
     visitor_locale ||= I18n.default_locale
 
     cookies.permanent[:locale] = visitor_locale
@@ -60,7 +60,7 @@ class ApplicationController < ActionController::Base
     return redirect_to params.merge!(locale: "") if from_param && visitor_locale == I18n.default_locale
     return redirect_to params.merge!(locale: visitor_locale) if !from_param && visitor_locale != I18n.default_locale
 
-    I18n.locale = visitor_locale.to_sym
+    I18n.locale = visitor_locale
 
     if !@site.available_locales.nil?
         if @original_locales.nil?

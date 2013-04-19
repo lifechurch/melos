@@ -58,8 +58,8 @@ module YouVersion
       @cookies.permanent[:last_read] = ref.to_usfm if ref.try :valid?
     end
 
-    SUBSCRIPTION_STATE  = :subscription
-    DEFAULT_STATE       = :default
+    SUBSCRIPTION_STATE  = "subscription"
+    DEFAULT_STATE       = "default"
 
     def app_state
       @cookies[:app_state] ||= DEFAULT_STATE
@@ -70,7 +70,7 @@ module YouVersion
     end
 
     def subscription_state?
-      app_state.to_sym == SUBSCRIPTION_STATE.to_sym
+      app_state == SUBSCRIPTION_STATE
     end
 
     def subscription_id
