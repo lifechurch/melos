@@ -65,8 +65,9 @@ class PlansController < ApplicationController
   private
 
   def available_plan_language
-    langs = [params[:lang],params[:locale],:en].compact
-    langs.each {|lang| return lang.to_s if Plan.available_locales.include?(lang.to_sym)}
+    langs = [params[:lang],params[:locale],"en"].compact
+    available_locales = Plan.available_locales.map {|loc| loc.to_s}           # get available locales in array of strings
+    langs.each {|lang| return lang.to_sym if available_locales.include?(lang)}  # so we can compare lang to string rather than symbol
   end
 
 end
