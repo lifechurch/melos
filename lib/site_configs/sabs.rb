@@ -5,7 +5,7 @@ module SiteConfigs
     end
 
     def logo_image
-      'biblesociety-nz.png'
+      'sites/biblesociety-nz.png'
     end
 
     def title
