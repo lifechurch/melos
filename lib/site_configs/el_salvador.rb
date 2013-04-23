@@ -5,7 +5,7 @@ module SiteConfigs
     end
 
     def logo_image
-      'biblesocietywebsite.png'
+      'sites/biblesocietywebsite.png'
     end
 
     def default_version

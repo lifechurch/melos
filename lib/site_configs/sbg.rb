@@ -5,7 +5,7 @@ module SiteConfigs
     end
 
     def logo_image
-      'sbg.png'
+      'sites/sbg.png'
     end
 
     def default_version
