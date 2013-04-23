@@ -1,0 +1,1 @@
+YouversionWeb::Application.middleware.use( Oink::Middleware, logger: Rails.logger, instruments: :memory )
