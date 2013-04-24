@@ -1,3 +1,7 @@
+:ruby
+  is_authed = current_auth ? true : false
+  authed_form_method = is_authed ? "post" : "get"
+
 #menu_verse_actions.clearfix
   .references
     %ul.reference_tokens
@@ -12,9 +16,10 @@
       .arrow
     %dd#highlight-pane.auth
       .pane
-        %form{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+        %form{action: (is_authed ? highlights_path : sign_up_path), method: authed_form_method }
           %input{type: "hidden", name:"authenticity_token", value: form_authenticity_token }
-          - if current_auth.nil?
+
+          - unless is_authed
             %input{type: 'hidden', name: 'redirect', value: "/bible"}
             %input{type: 'hidden', name: 'source', value: "highlight"}
           %input.references{name: "highlight[references]", type: "hidden"}
@@ -31,7 +36,7 @@
       .arrow
     %dd#bookmark-pane.auth
       .pane
-        %form{action: (current_auth ? bookmarks_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+        %form{action: (is_authed ? bookmarks_path : sign_up_path), method: authed_form_method }
           %input{type: "hidden", name:"authenticity_token", value: form_authenticity_token }
           - if current_auth.nil?
             %input{type: 'hidden', name: 'redirect', value: "/bible"}
@@ -94,7 +99,25 @@
       .arrow
     %dd#note-pane.auth
       .pane
-        = render partial: 'notes/widget_form', locals: {note: presenter.note}
+        - note = presenter.note
+        = form_for note, url: (is_authed ? notes_path : sign_up_path), method: authed_form_method do |f|
+          = f.hidden_field :version_id
+          = f.hidden_field :references, class: "verses_selected_input"
+          - unless is_authed
+            %input{type: 'hidden', name: 'redirect', value: "/bible"}
+            %input{type: 'hidden', name: 'source', value: "note"}
+          %div.title
+            = f.label :title, t("notes.title field")
+            = f.text_field :title
+          %div.status
+            = f.label :user_status, t("notes.status field")
+            = f.select :user_status, options_for_select(object_status, note.user_status)
+          %div
+            = f.text_area :content, rows: 4, cols: 68
+          %div.save
+            %button
+              = t('notes.save')
+
 
     %dt.clear-selected
       = t('ref.clear verses')
