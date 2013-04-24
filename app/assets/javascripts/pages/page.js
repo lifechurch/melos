@@ -506,20 +506,21 @@ Page.prototype = {
       var that = $(this);
       var targets = that;
       if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
-      // console.log(that.data('ajax') + ' abstractly ajaxed');
       $.ajax({
         url: that.data('ajax'),
         method: "get",
         dataType: "html",
+
         success: function(data) {
           targets.fadeOut(200, function() {
             targets.html(data);
             targets.fadeIn(200);
           });
         },
+
         error: function(req, status, err) {
-          //console.log(status + err);
-        }//end error function
+
+        }
       });
     });
   },
