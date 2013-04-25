@@ -230,6 +230,7 @@ class UsersController < ApplicationController
     @selected = :password
   end
 
+  # TODO: move this to its own resourceful controller
   def update_password
     @selected = :password
     if params[:user][:old_password] == current_auth.password
@@ -244,12 +245,13 @@ class UsersController < ApplicationController
     render action: "password"
   end
 
+  # TODO: move this to its own resourceful controller
   def resend_confirmation
+    @confirmation = Accounts::Confirmation.new
     if params[:email]
-      if User.resend_confirmation(params[:email])
+      @confirmation.email = params[:email]
+      if @confirmation.resend!
         render action: "resend_confirmation_success", layout: "application" and return
-      else
-        flash.now[:error]=(t('users.resend error'))
       end
     end
     render action: "resend_confirmation", layout: "application"

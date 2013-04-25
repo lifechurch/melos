@@ -6,7 +6,11 @@
 %article
   %h1= t('users.resend confirmation title')
   %p= t('users.resend confirmation copy')
+
+  = render(partial: "shared/form_errors", locals: {errors: @confirmation.errors}) if @confirmation.errors?
+
   = form_tag resend_confirmation_path do
     %p
       = text_field_tag :email, params[:email]
+    %p
       = submit_tag t('users.resend confirmation button')

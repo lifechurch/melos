@@ -1,6 +1,9 @@
 - if errors.any?
   .form_errors
-    %h4=heading
+
+    - if defined?(heading)
+      %h4=heading
+
     %ul
       - errors[:base].each do |e|
         %li= e
