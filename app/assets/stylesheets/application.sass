@@ -44,12 +44,15 @@
 @import resource_lists
 @import users
 
-@media only screen and (min-width: 769px)
-  // ----------Style adjustments for viewports over 769px go here
-  .mobile
-    display: none !important
+
+// ------------
+.mobile
+  display: none !important
 
 @media only screen and (max-width: 768px)
+
+  .mobile
+    display: block !important
 
   // ----------Style adjustments for viewports 768px and under go here
   #main article p
