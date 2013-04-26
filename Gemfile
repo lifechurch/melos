@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 ruby '1.9.3'
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 
 gem 'asset_sync',             '~> 0.5.3'
 gem 'awesome_print',          '~> 1.0.2'
