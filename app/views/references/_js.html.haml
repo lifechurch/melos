@@ -63,4 +63,4 @@
   / This will be cached along with the entire template
   %script
     :plain
-      var version_json = #{Oj.dump(version_json).html_safe};
+      var version_json = #{Oj.dump(version_json, mode: :compat).html_safe};
