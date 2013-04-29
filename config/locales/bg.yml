@@ -1,4 +1,20 @@
 bg:
+  api:
+    users agree bool: "Трябва да се съгласите с условията за създаване на акаунт"
+    users confirm password matches: "Новата парола не съвпада."
+    users email email: "Ел.поща е невалидна"
+    users email email rfc: "Ел.поща е невалидна"
+    users email not available: "Вече има профил с тази ел.поща"
+    users email not found: "Няма профил с тази ел.поща"
+    users email required: "Трябва да въведете email адрес"
+    users hash verified: "Профилът е проверен"
+    users password change: "Новата ви парола трябва да бъде различна от старата."
+    users password length: "Паролата трябва да съдържа най-малко 6 символа"
+    users password required: "Трябва да въведете парола."
+    users username alpha numeric extra: "Потребителското може трябва да съдържа букви, цифри или тирета"
+    users username not available: "Няма такъв потребител"
+    users username or password invalid: "Името или паролата са невалидни"
+    users username required: "Трябва да въведете потребителско име"
   now: "Сега"
   celebrating 50MM: "С над 50 милиона инсталирани приложения"
   link: "Връзка"
@@ -105,6 +121,7 @@ bg:
   chapter: "Глава"
   bible: "Библия"
   notes title: "Бележки"
+  videos: "Видеа"
   friends: "Приятели"
   groups: "Групи"
   mobile: "Мобилен"
@@ -225,6 +242,7 @@ bg:
     other user profile: "Профила на %{username}"
     my password: "Смени паролата ми"
     edit password: "Смени паролата"
+    edit password errors: "Следните грешки попречиха на смяната на паролата ви:"
     picture: "Снимка"
     edit picture: "Смени снимката"
     edit notifications: "Съобщения"
@@ -448,6 +466,7 @@ bg:
     you have no plans: "Не сте записани в план за четене"
     no public plans: "Няма избран план за четене за %{username}."
     filter by lang: "Филтрирай плановете по език"
+    plan settings: "Настройки на плана"
     settings: "Настройки"
     search: "Търси"
     search placeholder: "Търси планове в %{category}"
@@ -516,6 +535,25 @@ bg:
     must start to complete: "Започни този план и запази завършеното четене"
     invalid reference: "Няма такава препратка в посочената версия. Опитай друга версия или се свържи с нашия <a href='%{support_url}'>екип</a>."
     sidebar notice: "Разглеждате план за четене"
+    completed notice: "Поздравления! Вие завършихте вашия план за прочит."
+    exit: "Изход"
+    loading sidebar content: "Зареждане на съдържанието..."
+  licenses:
+    authorized:
+      heading: "Вашето съдържание беше удобрено"
+      description: "Сега вече можете <a href='%{content_link}'> да видите съдържанието, което поръчахте </a> от %{vendor} на YouVersion!"
+    has errors: "Имаше проблеми с вашата заявка:"
+    confirm:
+      email: "За да оторизирате видео съдържанието, което поръчахте, моля проверете email адреса си за потвърдителен линк от YouVersion и натиснете линка, за да потвърдите регистрацията."
+    request:
+      invalid_vendor_signature: "Грешка при валидацията: Невалиден подпис на производител"
+      invalid_vendor_id: "Грешка при валидацията: Невалидно ID на производителя"
+      invalid_item_ids: "Грешка при валидацията: Невалидни пункотве"
+    vendor_transaction_id:
+      duplicate: "Номер на транзакция: Този номер на транзакция е вече регистриран"
+    auth:
+      signup link text: "Регистрирайте безплатен акаунт"
+      login link text: "Влез"
   registration:
     placeholder:
       email: "Въведи ел.поща"

@@ -1,4 +1,20 @@
 ro:
+  api:
+    users agree bool: "Pentru a-ți crea cont trebuie să fii de acord cu termenii și condițiile de utilizare."
+    users confirm password matches: "Parola nouă și confirmarea acesteia nu coincid."
+    users email email: "Adresa de e-mail nu este validă."
+    users email email rfc: "Adresa de e-mail introdusă nu este validă."
+    users email not available: "Un alt cont este deja înregistrat cu această adresă de e-mail."
+    users email not found: "Nu există niciun cont de utilizator cu această adresă de e-mail."
+    users email required: "Trebuie să introduci o adresă de e-mail."
+    users hash verified: "Contul acesta a fost deja verificat."
+    users password change: "Parola nouă trebuie să fie diferită de cea veche."
+    users password length: "Parola trebuie să conțină cel puțin 6 caractere."
+    users password required: "Trebuie să introduci o parolă."
+    users username alpha numeric extra: "Numele de utilizator trebuie să conțină litere, numere sau cratime."
+    users username not available: "Numele de utilizator introdus nu este disponibil."
+    users username or password invalid: "Numele de utilizator sau parola nu sunt furnizate corect."
+    users username required: "Trebuie să introduci un nume de utilizator."
   now: "Acum"
   celebrating 50MM: "Sărbătorind 50 de milioane de instalări ale aplicației!"
   link: "Legătură"
@@ -105,6 +121,7 @@ ro:
   chapter: "Capitolul"
   bible: "Biblia"
   notes title: "Notițe"
+  videos: "Videoclipuri"
   friends: "Prieteni"
   groups: "Grupuri"
   mobile: "Mobil"
@@ -225,6 +242,7 @@ ro:
     other user profile: "Profilul lui %{username}"
     my password: "Schimbă parola"
     edit password: "Schimbă parola"
+    edit password errors: "Următoarea eroare a împiedicat schimbarea parolei:"
     picture: "Fotografie"
     edit picture: "Schimbă fotografia"
     edit notifications: "Gestionează notificările"
@@ -517,6 +535,27 @@ ro:
     must start to complete: "Începe acest plan pentru a salva părțile citite."
     invalid reference: "Ne pare rău, este posibil ca unul din pasajele pentru azi să nu fie în versiunea selectată. Încearcă să selectezi o altă versiune de mai sus. Dacă vei vedea din nou acest mesaj, te rugăm să anunți <a href='%{support_url}'>echipa de asistență</a> în legătură cu această problemă."
     sidebar notice: "Vizualizezi un plan de citire"
+    completed notice: "Felicitări! Ai finalizat planul de citire."
+    exit: "Ieșire"
+    loading sidebar content: "Se încarcă conținutul barei laterale..."
+  licenses:
+    authorized:
+      heading: "Conținutul tău a fost autorizat"
+      description: "Acum poți <a href='%{content_link}'>vedea conținutul achiziționat</a> de la %{vendor} pe YouVersion!"
+    has errors: "S-au produs erori în legătură cu solicitarea ta:"
+    confirm:
+      email: "Pentru autorizarea conținutului video pe care l-ai achiziționat, verifică-ți e-mailul pentru confirmarea primită de la YouVersion și efectuează clic pe legătura furnizată pentru a confirma înregistrarea."
+    request:
+      invalid_vendor_signature: "Validarea licenței a eșuat: semnătură invalidă furnizor"
+      invalid_vendor_id: "Validarea licenței a eșuat: identitate invalidă furnizor"
+      invalid_item_ids: "Validarea licenței a eșuat: termeni neconformi"
+    vendor_transaction_id:
+      duplicate: "Identificator tranzacție: acest identificator de tranzacție este deja înregistrat"
+    auth:
+      login notice: "Pentru validarea conținutului achiziționat, autentifică-te pe contul YouVersion mai jos sau <a href='/sign-up?source=licenses'>%{crează-ți cont}</a>."
+      signup notice: "Pentru validarea conținutului achiziționat, înregistrează-te mai jos pentru un cont nou YouVersion sau <a href='/sign-in?source=licenses'>%{autentifică-te}</a> dacă deja ai un cont."
+      signup link text: "Crează-ți un cont gratuit"
+      login link text: "autentificare"
   registration:
     placeholder:
       email: "Introdu adresa de e-mail"
@@ -691,6 +730,8 @@ ro:
       translation notes: "Note de subsol"
       cross references: "Trimiteri la alte referințe"
   app errors:
+    404 plans explanation: "Cauți planul <a href='%{plan_path}'>%{title}</a>?"
+    404 contact support: "Întâmpini probleme? Contactează <a href='%{support_url}'>echipa noastră de asistență</a>."
     404 explanation: "Încearcă să reîncepi de aici <a href='%{reader_path}'>home page</a>. Nu merge nici așa? Contactează <a href='%{support_url}'>echipa de asistență</a>."
     404 message: " Ne pare rău, pagina pe care o cauți nu poate fi găsită."
     408 message: "Din păcate, serverele noastre nu au răspuns în timp util."

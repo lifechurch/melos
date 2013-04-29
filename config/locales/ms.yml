@@ -1,4 +1,14 @@
 ms:
+  api:
+    users email email: "Alamat e-mel ini tidak sah."
+    users email email rfc: "Alamat e-mel yang dibekalkan tidak sah."
+    users email not available: "Alamat e-mel ini sudah terdaftar akaun lain."
+    users email not found: "Tiada akaun yang berdasarkan alamat e-mel tersebut."
+    users hash verified: "Akaun ini sudah di sahkan."
+    users password length: "Kata laluan mesti mengandungi sekurangnya 6 karakter."
+    users username alpha numeric extra: "Nama pengguna harus menggunakan huruf, nombor atau sengkang."
+    users username not available: "Nama pengguna yang dibekalkan tidak tersedia."
+    users username or password invalid: "Nama pengguna atau kata laluan tidak sah."
   now: "Sekarang"
   celebrating 50MM: "Merayakan 50 Juta Pemasangan App!"
   link: "Link"
@@ -93,6 +103,7 @@ ms:
   search placeholder: "Kini Mencari..."
   search: "Cari"
   book: "Kitab"
+  filter book: "Pilih Kitab..."
   save: "Selamatkan"
   cancel: "Batalkan"
   try the beta: "Cubailah versi Beta"
@@ -103,6 +114,7 @@ ms:
   chapter: "Bab"
   bible: "Alkitab"
   notes title: "Nota"
+  videos: "Video"
   friends: "Sahabat"
   groups: "Group"
   mobile: "Mobil"
@@ -123,6 +135,7 @@ ms:
   recent versions: "Baru Diguna"
   or:
     lower: "atau"
+    upper: "ATAU"
   likes:
     my likes: "\"Like\" Saya"
     all likes: "Segala \"Like\""
@@ -136,6 +149,7 @@ ms:
     no community notes: "Kami tidak terjumpa nota komuniti berkaitan ayat tersebut. Untuk mencatat nota, pilihlah suatu ayat dalam pembaca Alkitab dan klik butang Terpilih di bahagian atas pembaca."
     public: "Awam"
     private: "Private"
+    is private: "Catatan nota permohonan adalah private."
     draft: "Draf"
     creation form errors: "Kesilapan berikut menghalang penciptaan nota anda:"
     reference field: "Rujukan:"
@@ -161,6 +175,7 @@ ms:
     see my likes: "Lihat Segala \"Like\" Saya"
     successfully deleted: "Nota Dibatalkan"
   ref:
+    loading secondary: "Memuatkan Rujukan dalam Versi Kedua..."
     clear verses: "Batalkan Ayat-ayat yang Terpilih"
     choose book and chapter: "Pilih Kitab + Bab"
     choose version: "Pilih Versi"
@@ -504,7 +519,13 @@ ms:
     which day in plan: "Hari %{day} dari %{total}"
     must start to complete: "Mulailah pelan ini dan selamatkan bacaan yang dilengkapi!"
     invalid reference: "Maaf, satu daripada rujukan Alkitab untuk bacaan ini mungkin tidak terjumpa dalam versi tersebut. Cuba pilih versi yang berbeza di atas. Sekiranya anda terus menerima mesej ini, sila hubungi <a href='%{support_url}'>pihak sokongan</a> kami tentang masalah ini."
+    exit: "Keluar"
   registration:
+    placeholder:
+      email: "Masukkan alamat e-mel anda"
+      username: "Masukkan nama pengguna anda"
+      password: "Masukkan kata laluan anda"
+    with email: "Sign up menggunakan alamat e-mel anda"
     with facebook: "Log masuk menggunakan Facebook"
     benefits title: "Dapatkan Pengalaman Sepenuhnya"
     benefits blurb: "Bila anda mendaftarkan akaun YouVersion anda akan mendapat akses kepada pelbagai fungsi seperti bookmark dan nota. Ini akan dipaparkan ke sebarang peranti yang di-log masuk. Dengan akaun, anda juga lebih mudah memberitakan Alkitab kepada sahabat. Cubalah!"
@@ -595,6 +616,7 @@ ms:
       logos: "Pakej Logo YouVersion"
       icons: "Simbol App Injil"
       infographic: "Infografik: Statistik dan Penggunaan App Injil"
+      devices: "Kutipan Imej: Peranti"
       lifestyle: "Kutipan Imej: Lifestyle"
       screencast: "Screencast YouVersion"
     links title: "Link Liputan Media"
@@ -627,6 +649,24 @@ ms:
       title: "Maaf!"
       explanation: "Ada kesilapan di balik tabir! Kami meminta maaf, sila reload halaman sekali lagi!"
       our action: "Kami sudah diberitahu tentang hal ini dan akan menyelesaikannya secepat mungkin."
+    home:
+      hero:
+        heading: "Alkitab yang percuma dalam telefon, tablet, dan komputer anda."
+        learn more: "Ketahui lebih lanjut di bawah"
+        start reading: "Mula membaca"
+        skip in future: "Skip halaman ini pada masa akan datang"
+        now skipped: "Halaman ini akan di skip sekarang"
+      features:
+        read heading: "Baca Alkitab."
+        read description: "Ambil pilihan anda daripada <strong>ratusan versi Alkitab dan bahasa</strong>. Bandingkan dua versi sebelah menyebelah. Anda juga boleh memilih font dan saiz display anda. Jadikan pengalaman Alkitab online anda sepertimana yang anda suka."
+        study heading: "Pelajari Alkitab."
+        subscribe heading: "Subscribe Pelan Alkitab."
+        download heading: "Bawa Alkitab bersama anda."
+        download description: "<a href='http://youversion.com/download'>Muat turun</a> Bible App secara percuma dalam mana-mana peranti mudah alih. Apabila anda menggunakan app mudah alih, nota anda, bookmark, highlight, pelan dan sebagainya akan di sync secara automatik di seluruh peranti anda."
+      get started: "Mulakan dengan akaun percuma anda."
+      download action: "Muat turun Bible App"
+      download description: "Muat turun YouVersion Bible App secara percuma dalam alat peranti mudah alih anda dan anda akan ada bersama Alkitab anda di mana sahaja anda pergi."
+      world installs: "Install di seluruh dunia"
   shared:
     menu_settings:
       title: "Setting Anda"
@@ -645,6 +685,8 @@ ms:
       'on': "Aktifkan"
       'off': "Batalkan"
       extras: "Ekstra:"
+      translation notes: "Footnotes"
+      cross references: "Rujuk Silang"
   app errors:
     404 explanation: "Anda boleh bermula kembali dari <a href='%{reader_path}'>halaman utama</a>. Sekiranya masih ada kesulitan, sila hubungi <a href='%{support_url}'>pihak sokongan</a> kami."
     404 message: "Maaf, halaman yang diminta tidak tercari."
@@ -652,6 +694,8 @@ ms:
     408 explanation: "Kami sudah diberitahu tentang hal ini dan akan menyelesaikan masalah yang berterusan secepat mungkin. Semoga anda dapat pantas kembali kepada bacaan Alkitab!"
     try again: "Cuba lagi"
   versions:
+    filter: "Pilih Versi..."
+    courtesy of: "%{singkatan} dibawakan untuk anda daripada %{penerbit}"
     learn more: "Ketahui Lebih Lanjut"
     index title: "Versi yang Tersedia"
     publisher widget title: "Penerbit"
@@ -662,3 +706,5 @@ ms:
     number of languages field: "Jumlah Bahasa"
     language and count: "%{language_name} (%{language_count})"
     public domain: "Domain Awam"
+    loading: "Memuat Versi Lain..."
+    load error: "Maaf, memuat versi lain mempunyai masalah. Tutup menu ini dan buka semula untuk mencuba kembali."

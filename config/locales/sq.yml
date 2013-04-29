@@ -1,4 +1,20 @@
 sq:
+  api:
+    users agree bool: "Ju duhet të pajtoheni me rregullat dhe kushtet për të krijuar një llogari."
+    users confirm password matches: "Fjalëkalimet e reja nuk përputhen."
+    users email email: "Adresa elektronike është e pavlefshme."
+    users email email rfc: "Adresa elektronike që dhatë është e pavlefshme."
+    users email not available: "Një llogari tashmë është regjistruar me këtë adresë elektronike."
+    users email not found: "Nuk ka një llogari me këtë adresë elektronike."
+    users email required: "Ju duhet të shkruani një adresë elektronike."
+    users hash verified: "Kjo llogari tashmë është verifikuar."
+    users password change: "Fjalëkalimi tuaj i ri duhet të jetë ndryshe nga fjalëkalimi i vjetër."
+    users password length: "Fjalëkalimi juaj duhet të jetë të paktën 6 karaktere."
+    users password required: "Ju duhet të shkruani një fjalëkalim."
+    users username alpha numeric extra: "Emri i përdoruesit duhet të jetë shkronja, numra ose viza"
+    users username not available: "Emri i përdoruesit që dhatë nuk është i disponueshëm."
+    users username or password invalid: "Emri i përdoruesit ose fjalëkalimi që dhatë është i pavlefshëm."
+    users username required: "Ju duhet të shkruani një emër përdoruesi."
   now: "Tani"
   celebrating 50MM: "Duke festuar 50 milion instalime të programit!"
   link: "Lidhje"
@@ -105,6 +121,7 @@ sq:
   chapter: "Kapitulli"
   bible: "Bibla"
   notes title: "Shënimet"
+  videos: "Video"
   friends: "Miqtë"
   groups: "Grupet"
   mobile: "Celular"
@@ -225,6 +242,7 @@ sq:
     other user profile: "Profili për përdoruesin %{username}"
     my password: "Ndrysho fjalëkalimin tim"
     edit password: "Ndrysho fjalëkalimin"
+    edit password errors: "Gabimi(et) më poshtë penguan ndryshimin e fjalëkalimit tuaj:"
     picture: "Foto"
     edit picture: "Ndrysho foton"
     edit notifications: "Menaxho njoftimet"
@@ -517,6 +535,27 @@ sq:
     must start to complete: "Filloje këtë plan për të ruajtur leximet e përfunduara!"
     invalid reference: "Na vjen keq, një nga referimet biblike për këtë lexim mund të mos ekzistojë në versionin e zgjedhur. Provoni të zgjidhni një version tjetër, lart. Nëse vazhdoni ta shihni këtë mesazh, bëjani të ditur <a href='%{support_url}'>grupit të ndihmës</a> këtë problem."
     sidebar notice: "Jeni duke parë një plan leximi."
+    completed notice: "Përgëzime! Ju e përfunduat planin tuaj të leximit."
+    exit: "Dil"
+    loading sidebar content: "Duke vendosur përmbajtjen e kolonës anësore..."
+  licenses:
+    authorized:
+      heading: "Përmbajtja tuaj u autorizua"
+      description: "Tani ju mund <a href='%{content_link}'>të shikoni përmbajtjen që keni blerë</a> from %{vendor} në YouVersion!"
+    has errors: "Pati gabime me kërkesën tuaj:"
+    confirm:
+      email: "Për të autorizuar përmbajtjen video të blerë, ju lutemi kontrolloni kutinë tuaj të mesazheve për një e-postë konfirmimi nga YouVersion dhe klikoni adresën në të për të konfirmuar regjistrimin tuaj."
+    request:
+      invalid_vendor_signature: "Vlefshmëria e licensës dështoi: nënshkrim shitje i pavlefshëm"
+      invalid_vendor_id: "Vlefshmëria e licensës dështoi: ID e shitjes e pavlefshme"
+      invalid_item_ids: "Vlefshmëria e licensës dëstoi: Kushte të pavlefshme"
+    vendor_transaction_id:
+      duplicate: "ID e shitblerjes: Kjo id e shitblerjes tashmë është e regjistruar"
+    auth:
+      login notice: "Për të vërtetuar përmbajtjen e blerë, ju lutemi kyçuni në llogarinë tuaj në YouVersion më poshtë ose <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice: "Për të vërtetuar përmbajtjen e blerë, regjistroni një llogari falas në YouVersion më poshtë ose <a href='/sign-in?source=licenses'>%{login}</a> nëse tashmë keni një llogari."
+      signup link text: "regjistrohuni për një llogari falas"
+      login link text: "Hyr"
   registration:
     placeholder:
       email: "Futni adresën tuaj elektronike"
@@ -668,7 +707,7 @@ sq:
       get started: "Filloni me llogarinë tuaj falas."
       word with you: "Fjala e Perëndisë është me ty."
       download action: "Shkarko Programin e Biblës"
-      download description: "Shkarko falas Programin e Biblës YouVersion në pajisjen tuaj të lëvizshme dhe do ta kesh Biblën me vete në çdo vend që të shkosh."
+      download description: "Shkarko falas Programin e Biblës YouVersion në pajisjen tënde të lëvizshme dhe do ta kesh Biblën me vete në çdo vend që të shkosh."
       world installs: "instalime nëpër botë"
   shared:
     menu_settings:
@@ -691,6 +730,8 @@ sq:
       translation notes: "Poshtëshënime"
       cross references: "Referime kryq"
   app errors:
+    404 plans explanation: "A jeni duke kërkuar planin <a href='%{plan_path}'>%{title}</a>?"
+    404 contact support: "Keni probleme? Kontaktoni <a href='%{support_url}'>ekipin e ndihmës</a>."
     404 explanation: "Mund të provoni të filloni sërish nga <a href='%{reader_path}'>faqja kryesore</a>. A keni akoma probleme? Kontaktoni <a href='%{support_url}'>ekipin e ndihmës</a>."
     404 message: "Na vjen keq, faqja për po kërkoni nuk mund të gjendet."
     408 message: "Na vjen keq, por serverat tanë nuk u përgjigjën në kohë."

@@ -1,4 +1,14 @@
 fr:
+  api:
+    users email email: "L'adresse e-mail n'est pas valide."
+    users email email rfc: "L'adresse email saisie n'est pas valide."
+    users email not available: "Cette adresse email est déjà associée à un compte."
+    users email not found: "Il n'y a pas de compte avec cette adresse email."
+    users hash verified: "Ce compte a déjà été vérifié."
+    users password length: "Le mot de passe doit contenir au moins 6 caractères."
+    users username alpha numeric extra: "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres ou des tirets."
+    users username not available: "Le nom d'utilisateur saisi n'est pas disponible."
+    users username or password invalid: "Le nom d'utilisateur ou le mot de passe est invalide."
   now: "Maintenant"
   celebrating 50MM: "Célébration des 50 millions d'installations de cette app!"
   link: "Lien"
@@ -105,6 +115,7 @@ fr:
   chapter: "Chapitre"
   bible: "Bible"
   notes title: "Notes"
+  videos: "Vidéos"
   friends: "Amis"
   groups: "Groupes"
   mobile: "Mobile"
@@ -517,6 +528,10 @@ fr:
     must start to complete: "Commencez ce plan pour sauvegarder les lectures achevées!"
     invalid reference: "Désolé, une des références Biblique pour cette lecture semble ne plus exister pour cette traduction. Veuillez sélectionner une autre traduction. Si vous rencontrez à nouveau ce message, veuillez prévenir notre <a href='%{support_url}'>équipe de support</a> à propos de ce problème."
     sidebar notice: "Vous visualisez un plan de lecture"
+    exit: "Quitter"
+  licenses:
+    auth:
+      login link text: "connexion"
   registration:
     placeholder:
       email: "Saisissez votre adresse email"

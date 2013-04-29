@@ -1,4 +1,20 @@
 en-GB:
+  api:
+    users agree bool: "You must agree to the terms and conditions to create an account."
+    users confirm password matches: "The new passwords do not match."
+    users email email: "The e-mail address is invalid."
+    users email email rfc: "The e-mail address you supplied is invalid."
+    users email not available: "An account is already registered with that e-mail address."
+    users email not found: "There is no account with that e-mail address."
+    users email required: "You must enter an e-mail address."
+    users hash verified: "This account has already been verified."
+    users password change: "Your new password must be different from your old password."
+    users password length: "Your password must be at least 6 characters."
+    users password required: "You must enter a password."
+    users username alpha numeric extra: "The username should be letters, numbers or dashes."
+    users username not available: "The username you supplied is not available."
+    users username or password invalid: "The username or password you supplied is invalid."
+    users username required: "You must enter a username."
   now: "Now"
   celebrating 50MM: "Celebrating 50 Million App Installations!"
   link: "Link"
@@ -105,6 +121,7 @@ en-GB:
   chapter: "Chapter"
   bible: "Bible"
   notes title: "Notes"
+  videos: "Videos"
   friends: "Friends"
   groups: "Groups"
   mobile: "Mobile"
@@ -225,6 +242,7 @@ en-GB:
     other user profile: "%{username}'s Profile"
     my password: "Change My Password"
     edit password: "Change Password"
+    edit password errors: "The following error(s) prevented changing your password:"
     picture: "Picture"
     edit picture: "Change Picture"
     edit notifications: "Manage Notifications"
@@ -468,7 +486,7 @@ en-GB:
     end date _ before date string: "End Date:"
     are you behind: "Falling a bit behind?"
     do you want to reset: "Want to try again?"
-    catch up text: "Shift today's reading back to your last completed reading (day %{last_completed_day} of the plan)."
+    catch up text: "Shift today's reading to your last completed reading (day %{last_completed_day} of the plan)."
     catch up description only: "If you ever fall behind on your readings, don't worry! You can always shift the current reading back to your last completed reading."
     catch me up: "Reset the reading plan?"
     restart description: "You can restart your plan. All of your reading history and progress will be reset and start from the beginning."
@@ -517,6 +535,27 @@ en-GB:
     must start to complete: "Start this plan to save completed readings!"
     invalid reference: "Sorry, one of the scripture references for this reading may not exist in the selected version. Try selecting a different version, above. If you continue to see this message, please let our <a href='%{support_url}'>support team</a> know about the issue."
     sidebar notice: "You are viewing a reading plan."
+    completed notice: "Congratulations! You have completed your reading plan."
+    exit: "Exit"
+    loading sidebar content: "Loading sidebar content..."
+  licenses:
+    authorized:
+      heading: "Your content has been authorized"
+      description: "You may now <a href='%{content_link}'>view the content you purchased</a> from %{vendor} on YouVersion!"
+    has errors: "There were errors with your request:"
+    confirm:
+      email: "To authorize the video content you purchased, please check your email inbox for a confirmation email from YouVersion and click the link inside to confirm your registration."
+    request:
+      invalid_vendor_signature: "Licence validation failed: Invalid vendor signature"
+      invalid_vendor_id: "Licence validation failed: Invalid vendor ID"
+      invalid_item_ids: "Licence validation failed: Invalid items"
+    vendor_transaction_id:
+      duplicate: "Transaction id: This transaction id has already been registered"
+    auth:
+      login notice: "To validate your purchased content, please login to your YouVersion account below or <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice: "To validate your purchased content, sign up for a free YouVersion account below or <a href='/sign-in?source=licenses'>%{login}</a> if you already have an account."
+      signup link text: "sign up for a free account"
+      login link text: "sign in"
   registration:
     placeholder:
       email: "Enter your e-mail address"
@@ -691,6 +730,8 @@ en-GB:
       translation notes: "Footnotes"
       cross references: "Cross References"
   app errors:
+    404 plans explanation: "Are you looking for the <a href='%{plan_path}'>%{title}</a> plan?"
+    404 contact support: "Having trouble? Contact our <a href='%{support_url}'>support team</a>."
     404 explanation: "You might try starting again from the <a href='%{reader_path}'>home page</a>. Still having trouble? Contact our <a href='%{support_url}'>support team</a>."
     404 message: "We're sorry, the page you're looking for can't be found."
     408 message: "We're sorry, but our servers didn't respond in a timely fashion."
@@ -704,7 +745,7 @@ en-GB:
     index title: "Available Versions"
     publisher widget title: "Publisher"
     visit publisher: "Visit Publisher's Website"
-    read title: "Read Version"
+    read title: "Read This Version"
     other versions: "Other Versions from this Publisher"
     number of versions field: "Total Versions:"
     number of languages field: "Total Languages:"

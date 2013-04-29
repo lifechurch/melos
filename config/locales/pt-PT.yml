@@ -1,4 +1,20 @@
 pt-PT:
+  api:
+    users agree bool: "Deve concordar com os Termos de Utilização para se registar."
+    users confirm password matches: "As novas palavras-passe não coincidem."
+    users email email: "O endereço de email não é válido."
+    users email email rfc: "O endereço de email que forneceu é invalido."
+    users email not available: "Já existe uma conta registada com esse endereço de e-mail."
+    users email not found: "Não existe uma conta com esse endereço de email."
+    users email required: "Deverá inserir um endereço de email."
+    users hash verified: "Esta conta já foi verificada."
+    users password change: "A sua nova palavra-passe deve ser diferente da anterior."
+    users password length: "A palavra-passe deve ter pelo menos 6 caracteres."
+    users password required: "Deverá inserir uma palavra-passe."
+    users username alpha numeric extra: "O nome de utilizador deve ser composto por letras, números ou travessões."
+    users username not available: "O nome de utilizador que forneceu não está disponível."
+    users username or password invalid: "Forneceu um utilizador ou palavra-passe inválidos."
+    users username required: "Deverá inserir um nome de utilizador."
   now: "Agora"
   celebrating 50MM: "A celebrar 50 milhões de instalações da App!"
   link: "Link"
@@ -105,6 +121,7 @@ pt-PT:
   chapter: "Capítulo"
   bible: "Bíblia"
   notes title: "Notas"
+  videos: "Vídeos"
   friends: "Amigos"
   groups: "Grupos"
   mobile: "Telemóvel"
@@ -225,6 +242,7 @@ pt-PT:
     other user profile: "Perfil de %{username}"
     my password: "Alterar a Minha Palavra-Passe"
     edit password: "Alterar Palavra-Passe"
+    edit password errors: "O(s) erro(s) seguinte(s) impede(m) a alteração da sua palavra-passe:"
     picture: "Imagem"
     edit picture: "Alterar Imagem"
     edit notifications: "Gerir Notificações"
@@ -517,6 +535,27 @@ pt-PT:
     must start to complete: "Comece este plano para guardar as leituras já completas!"
     invalid reference: "Desculpe, uma das referências às escrituras desta leitura pode não existir na versão selecionada. Tente selecionar em cima uma versão diferente. Se ainda assim continuar a ver esta mensagem, por favor informe a nossa <a href='%{support_url}'>equipe de suporte</a> sobre esta ocorrência."
     sidebar notice: "Está a ver um plano de leitura."
+    completed notice: "Parabéns! Completou o seu plano de leitura."
+    exit: "Sair"
+    loading sidebar content: "A carregar os conteúdos da barra lateral..."
+  licenses:
+    authorized:
+      heading: "O seu conteúdo foi autorizado"
+      description: "Poderá  <a href='%{content_link}'>visualizar o conteúdo</a> de %{vendor} adquirido no Youversion! "
+    has errors: "Foram encontrados erros no seu pedido:"
+    confirm:
+      email: "Para autorizar o conteúdo adquirido, por favor procure na sua caixa de email por um email de confirmação enviado pelo YouVersion e clique no link para confirmar o seu registo."
+    request:
+      invalid_vendor_signature: "A validação da licença falhou: assinatura do fornecedor inválida  "
+      invalid_vendor_id: "A validação da licença falhou: ID do fornecedor inválido"
+      invalid_item_ids: "A validação da licença falhou: itens inválidos"
+    vendor_transaction_id:
+      duplicate: "ID da transação: Esta transação já foi registada"
+    auth:
+      login notice: "Para validar o conteúdo adquirido, por favor efectue login na sua conta YouVersion ou em <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice: "Para validar o conteúdo adquirido, por favor registe-se gratuitamente no YouVersion ou<a href='/sign-in?source=licenses'>%{login}</a> caso já possua uma conta. "
+      signup link text: "registe-se gratuitamente"
+      login link text: "Iniciar sessão"
   registration:
     placeholder:
       email: "Insira o seu endereço de email"
@@ -563,7 +602,7 @@ pt-PT:
     card exp date: "Data de expiração (MMAA)"
     receipt: "Enviem-me por email cópia do recibo."
     preview: "Vista Prévia da Doação"
-    header copy: "Juntos, podemos ser a geração da história que mais se dedicou à Bíblia. O seu apoio significa que mais pessoas poderão abrir a Palavra de Deus em mais plataformas, em mais idiomas, em mais versões, e em mais países do que alguma vez foi possível. Por favor preencha o formulário em baixo para fazer a sua doação. Recolheremos informação sobre o pagamento no ecrã seguinte."
+    header copy: "Juntos, podemos ser a geração da história que mais se dedicou à Bíblia. O seu apoio significa que mais pessoas poderão abrir a Palavra de Deus em mais plataformas, em mais idiomas, em mais versões, e em mais países do que alguma vez foi possível. Por favor preencha o formulário em baixo para fazer o seu donativo. Recolheremos informação sobre o pagamento no ecrã seguinte."
     header confirm copy: "Juntos, podemos ser a geração da história que mais se dedicou à Bíblia. O seu apoio significa que mais pessoas poderão abrir a Palavra de Deus em mais plataformas, em mais idiomas, em mais versões, e em mais países do que alguma vez foi possível. Clique Doar Agora para fazer a sua doação."
     donate now button: "Contribua Agora."
     email header: "YouVersion, um ministério de LifeChurch.tv, recebeu a sua doação. Não foram cedidos bens ou serviços em troca da doação, à exceção de benefícios religiosos não materiais. Por favor contate giving@lifechurch.tv se tiver alguma questão."
@@ -691,6 +730,8 @@ pt-PT:
       translation notes: "Notas de Rodapé"
       cross references: "Referências Cruzadas"
   app errors:
+    404 plans explanation: "Procura o plano <a href='%{plan_path}'>%{title}</a>?"
+    404 contact support: "Tem dificuldades? Contacte a nossa <a href='%{support_url}'>equipa de suporte</a>."
     404 explanation: "Experimente iniciar novamente a partir da <a href='%{reader_path}'>página de início</a>. Ainda com problemas? Contate a nossa <a href='%{support_url}'>equipe de suporte</a>."
     404 message: "Pedimos desculpa, a página que procura não pode ser disponibilizada."
     408 message: "Pedimos desculpa mas os nossos servidores não deram uma resposta atempada."
