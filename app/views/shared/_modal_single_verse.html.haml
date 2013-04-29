@@ -1,26 +1,30 @@
 - verse = modal_verse
 
-#modal_single_verse.modal{:itemscope => true, :itemtype => 'http://schema.org/Article'}
+#modal_single_verse.modal{itemscope: true, itemtype: 'http://schema.org/Article'}
   #modal_overlay.overlay &nbsp;
   #modal_window.window
+
     %header
       %a#modal_logo
+      %a#modal_download.mobile{href:"http://www.bible.com/mobile"}
+        %span.icon
+        = t('mobile page.download now')
 
       %span#modal_ref= verse.human
       - if version
         %span.separator |
         %span#modal_version
           = version
-      &nbsp;
 
-      %a.close{:href => '#'} Close
+      %a.close{href: '#'} Close
     %section
-      %p.big{:itemprop => 'description'}= verse.content.html_safe
+      %p.big{itemprop:'description'}
+        = verse.content.html_safe
       %hr
       %p
-        %a#single_verse_read_link.action_button_blue{:href => bible_path(reference)}= t("read reference", reference: reference.human)
-      %p.mobile
-        = link_to t('mobile page.download now'), '/download', class: 'action_button_green'
+        %a#single_verse_read_link.action_button_blue{href: bible_path(reference)}
+          = t("read reference", reference: reference.human)
+
 
     %aside
       %div{style: "height: 36px;"}

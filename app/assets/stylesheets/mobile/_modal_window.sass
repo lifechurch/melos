@@ -34,7 +34,7 @@
   background: #111 image-url("modal_header.png") repeat-x left bottom
   color: #fff
   overflow: visible
-  padding: 0 25px
+  padding: 0 !important
   position: relative
   text-shadow: none
   line-height: 50px
@@ -47,18 +47,43 @@
   width: 150px
   height: 50px
   display: block
+  margin-left: 90px
+
+#modal_window header #modal_download
+  display: block
+  background: #DDD
+  text-indent: 90px
+  position: relative
+  color: #777
+  height: 38px
+  line-height: 38px
+
+
+  span.icon
+    width: 60px
+    height: 65px
+    display: block
+    position: absolute
+    top: -37px
+    left: 15px
+
+    background:
+      image: image-url("ad_bible_app.png")
+      position: -50px 0px
 
 #modal_window header span#modal_ref
-  font-size: 34px
+  font-size: 28px
   position: absolute
-  top: 70px
+  top: 110px
   color: #303030
+  margin-left: 20px
 
 #modal_window header span#modal_version
   color: #909090
   position: absolute
-  top: 100px
+  top: 134px
   font-weight: normal
+  margin-left: 20px
 
 #modal_window header a
   color: #999
@@ -98,14 +123,14 @@
 #modal_window hr
   border-top-color: rgba(#000, 0.25)
   border-bottom: 1px solid rgba(#fff, 0.5)
-  margin-bottom: 35px
+  margin-bottom: 25px
 
 #modal_window .big
   color: #111
   font:
-    size: 35px
+    size: 24px
     weight: 200
-  line-height: 1.2
+  line-height: 1.4em
   margin-bottom: 25px
 
 #modal_single_verse #modal_window section
@@ -193,10 +218,8 @@
   padding: 10px 0px
 
 #modal_single_verse #modal_window section .big
-  font-size: 24px
   width: 90%
-  padding: 120px 5% 0%
-  line-height: 45px
+  padding: 130px 5% 0%
 
 #modal_window .action_button_blue,
 #modal_window .action_button_green
