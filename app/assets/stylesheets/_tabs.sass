@@ -160,11 +160,11 @@
 
 #main article .combo_button li,
 #main article .combo_button dd
-  +background-image(linear-gradient(#fff, #ddd))
-  background-color: #f6f6f6
-  border: 1px solid #aaa
+  background-color: #E5E5E5
+  border: 1px solid #aeaeae
   margin-left: -1px
   text-shadow: #fff 0 1px 0
+  +box-shadow(inset rgba(255,255,255, 0.8) 0 2px 0 0, inset rgba(0,0,0, 0.10) 0 -2px 0 0)
 
 #main article .combo_button li:first-child,
 #main article .combo_button dt:first-child + dd
@@ -172,19 +172,19 @@
 
 #main article .combo_button li:first-child,
 #main article .combo_button dt:first-child + dd
-  +border-left-radius(16px)
+  +border-left-radius(5px)
 
 #main article .combo_button li:last-child,
 #main article .combo_button dd:last-child
-  +border-right-radius(16px)
+  +border-right-radius(5px)
 
 #main article .combo_button li:first-child a,
 #main article .combo_button dt:first-child + dd a
-  +border-left-radius(15px)
+  +border-left-radius(5px)
 
 #main article .combo_button li:last-child a,
 #main article .combo_button dd:last-child a
-  +border-right-radius(15px)
+  +border-right-radius(5px)
 
 #main article .combo_button a
   color: $body_text
@@ -207,20 +207,23 @@
   z-index: 1
 
 #main article .combo_button li:hover,
-#main article .combo_button dd:hover,
-#main article .combo_button .highlighted
-  +background-image(linear-gradient(#ecebed, #c9c8cA))
-  background-color: #ecebed
+#main article .combo_button dd:hover
+  background-color: #ccc
 
-#main article .combo_button li:hover a,
-#main article .combo_button dd:hover a,
-#main article .combo_button .highlighted a
-  color: $blue
+#main article .combo_button
+  .highlighted
+    background-color: #09c
+    +box-shadow(none)
 
-#main article .combo_button .highlighted a
-  +box-shadow(inset rgba(#000, 0.5) 0 1px 4px 0)
-  border: 0
-  padding:
-    top: 1px
-    left: 21px
-  font-weight: bold
+    a
+      +box-shadow(inset rgba(#000, 0.6) 0 2px 3px 0)
+      border: 0
+      padding:
+        top: 1px
+        left: 21px
+      font-weight: bold
+      color: #fff
+      text-shadow: #2271A0 0 -1px 0
+
+  .highlighted:hover
+    background-color: #08c
