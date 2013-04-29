@@ -1,4 +1,16 @@
 hi:
+  api:
+    users agree bool: "अकाउंट निर्माण हेतु उपयोग के नियमों और शर्तों से सहमत होना अनिवार्य हैं।"
+    users confirm password matches: "नए पासवर्ड एक दूसरे से मेल नहीं खातें हैं ।"
+    users email email: "यह इमेल अड्रेस अमान्य हैं।"
+    users email email rfc: "आपके द्वारा उपलब्ध कराया गया इमेल अमान्य हैं।"
+    users email not available: "इस इमेल अड्रेस के द्वारा पहले से ही एक अकाउंट रेजिस्टर्ड हैं।"
+    users email not found: "इस इमेल अड्रेस से कोई अकाउंट नहीं हैं।"
+    users hash verified: "यह अकाउंट पहले से सुनिश्चित किया गया हैं।"
+    users password length: "आपका पासवर्ड कम से कम 6 अक्षरों का होना अनिवार्य हैं।"
+    users username alpha numeric extra: "username अक्षरों,अंकों या डाश के रूप में होना अनिवार्य हैं।"
+    users username not available: "प्रस्तुत username उपलब्ध नहीं हैं।"
+    users username or password invalid: "आपके द्वारा उपलब्धित उपयोगकर्ता नाम या पासवर्ड अमान्य हैं।"
   now: "अभी "
   celebrating 50MM: "50 मिलियन app स्थापना उत्सव!"
   link: "लिंक"
@@ -105,6 +117,7 @@ hi:
   chapter: "अध्याय"
   bible: "बाइबिल"
   notes title: "टिप्पणियाँ"
+  videos: "वीडियो "
   friends: "मित्रों "
   groups: "समूह"
   mobile: "मोबाइल"
@@ -517,6 +530,10 @@ hi:
     must start to complete: "पूर्ण रीडिंग को save करने के लिए यह योजना शुरू करे!"
     invalid reference: "कृपया क्षमा कीजिए,आपके द्वारा चयनित संस्करण में इस पाठक योजना से सम्बंधित पद्य टिपण्णीयाँ नहीं हैं।दूसरा संस्करण चुनिए,यदि आप दोबारा यह सन्देश पाते हैं, संपर्क करे <a href='%{support_url}'>support team</a> और इसकी जानकारी दे।"
     sidebar notice: "आप एक पाठक योजना का दर्शन कर रहे हैं "
+    exit: "एक्सिट "
+  licenses:
+    auth:
+      login link text: "साइन इन "
   registration:
     placeholder:
       email: "अपना इमेल अड्रेस इंटर करे "

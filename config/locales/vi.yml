@@ -1,4 +1,20 @@
 vi:
+  api:
+    users agree bool: "Bạn cần đồng ý với điều khoản sử dụng để tạo tài khoản."
+    users confirm password matches: "Mật khẩu mới không khớp."
+    users email email: "Địa chỉ email không hợp lệ."
+    users email email rfc: "Địa chỉ email này không hợp lệ."
+    users email not available: "Địa chỉ email này đã được đăng ký với tài khoản khác."
+    users email not found: "Không có tài khoản nào có địa chỉ email này."
+    users email required: "Bạn cần nhập địa chỉ email."
+    users hash verified: "Tài khoản này đã được xác nhận."
+    users password change: "Mật khẩu mới của bạn phải khác mật khẩu cũ."
+    users password length: "Mật khẩu phải có ít nhất 6 ký tự."
+    users password required: "Bạn cần nhập mật khẩu."
+    users username alpha numeric extra: "Tên sử dụng phải là chữ, số, hoặc gạch nối."
+    users username not available: "Tên này không sử dụng được."
+    users username or password invalid: "Tên sử dụng hoặc mật khẩu không hợp lệ."
+    users username required: "Bạn cần nhập tên sử dụng."
   now: "Bây giờ"
   celebrating 50MM: "Chúc mừng 50 triệu lượt cài đặt ứng dụng!"
   link: "Đường dẫn"
@@ -105,6 +121,7 @@ vi:
   chapter: "Đoạn"
   bible: "Kinh Thánh"
   notes title: "Ghi chú"
+  videos: "Video"
   friends: "Bạn bè"
   groups: "Nhóm"
   mobile: "Di động"
@@ -225,6 +242,7 @@ vi:
     other user profile: "Hồ sơ của %{username}"
     my password: "Đổi mật khẩu"
     edit password: "Đổi mật khẩu"
+    edit password errors: "Các lỗi sau khiến bạn không đổi mật khẩu được:"
     picture: "Hình ảnh"
     edit picture: "Đổi hình ảnh"
     edit notifications: "Quản lý thông báo"
@@ -517,6 +535,27 @@ vi:
     must start to complete: "Bắt đầu kế hoạch này để lưu lại các phần đã đọc xong!"
     invalid reference: "Xin lỗi bạn, một trong các tham khảo Kinh Thánh này không có trong bản dịch được chọn. Hãy thử chọn một bản dịch khác ở trên. Nếu bạn vẫn nhận được thông báo này, hãy cho <a href='%{support_url}'>nhóm hỗ trợ</a> của chúng tôi biết."
     sidebar notice: "Bạn đang xem một kế hoạch đọc."
+    completed notice: "Chúc mừng bạn đã hoàn tất kế hoạch!"
+    exit: "Thoát"
+    loading sidebar content: "Đang tải nội dung của thanh bên..."
+  licenses:
+    authorized:
+      heading: "Nội dung của bạn đã được cho phép"
+      description: "Giờ bạn có thể <a href='%{content_link}'>xem nội dung mà bạn vừa mua</a> từ %{vendor} trên YouVersion!"
+    has errors: "Yêu cầu của bạn có lỗi:"
+    confirm:
+      email: "Để cho phép nội dung video bạn mua, xin hãy kiểm tra email xác nhận từ YouVersion, và nhấp vào đường dẫn trong đó để xác nhận đăng ký của bạn."
+    request:
+      invalid_vendor_signature: "Không xác nhận được giấy phép: Chữ ký của nhà phát hành không hợp lệ"
+      invalid_vendor_id: "Không xác nhận được giấy phép: Tên của nhà phát hành không hợp lệ"
+      invalid_item_ids: "Không xác nhận được giấy phép: Sản phẩm của nhà phát hành không hợp lệ"
+    vendor_transaction_id:
+      duplicate: "Mã số giao dịch: Mã số này đã được đăng ký"
+    auth:
+      login notice: "Hãy đăng nhập tài khoản YouVersion bên dưới hoặc <a href='/sign-up?source=licenses'>%{signup}</a> để xác nhận nội dung bạn muốn mua."
+      signup notice: "Để xác nhận nội dung bạn muốn mua, hãy đăng ký tài khoản YouVersion miễn phí bên dưới hoặc <a href='/sign-in?source=licenses'>%{login}</a> nếu bạn đã có tài khoản."
+      signup link text: "đăng ký tài khoản miễn phí"
+      login link text: "đăng nhập"
   registration:
     placeholder:
       email: "Nhập địa chỉ email"
@@ -691,6 +730,8 @@ vi:
       translation notes: "Chú thích"
       cross references: "Chú dẫn"
   app errors:
+    404 plans explanation: "Có phải bạn đang tìm kế hoạch \"<a href='%{plan_path}'>%{title}</a>\"?"
+    404 contact support: "Có trở ngại? Hãy liên hệ <a href='%{support_url}'>đội hỗ trợ kỹ thuật</a> của chúng tôi."
     404 explanation: "Bạn có thể thử lại từ đầu ở <a href='%{reader_path}'>trang nhà</a>. Nếu vẫn có trục trặc, hãy liên hệ <a href='%{support_url}'>nhóm hỗ trợ</a> của chúng tôi."
     404 message: "Xin lỗi bạn, chúng tôi không tìm được trang mà bạn yêu cầu."
     408 message: "Xin lỗi bạn vì phản hồi chậm từ các máy chủ."

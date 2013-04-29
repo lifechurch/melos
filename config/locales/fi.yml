@@ -1,4 +1,20 @@
 fi:
+  api:
+    users agree bool: "Sinun täytyy hyväksyä käyttöehdot rekisteröityäksesi."
+    users confirm password matches: "Salasanat eivät täsmää."
+    users email email: "Sähköpostiosoite on virheellinen."
+    users email email rfc: "Syöttämäsi sähköpostiosoite on virheellinen."
+    users email not available: "Tällä sähköpostiosoitteella on jo rekisteröity tili."
+    users email not found: "Tällä sähköpostiosoitteella ei ole tiliä."
+    users email required: "Sinun täytyy syöttää sähköpostiosoite."
+    users hash verified: "Tämä tili on jo vahvistettu."
+    users password change: "Salasanan on oltava eri kuin aikaisempi salasanasi."
+    users password length: "Salasanasi pitää olla vähintään 6 merkkiä pitkä."
+    users password required: "Salasana täytyy syöttää."
+    users username alpha numeric extra: "Käyttäjänimen tulee koostua kirjaimista, numeroista tai väliviivoista."
+    users username not available: "Syöttämäsi käyttäjänimi ei ole vapaana."
+    users username or password invalid: "Syöttämäsi käyttäjänimi tai salasana on virheellinen."
+    users username required: "Käytäjänimi täytyy syöttää."
   now: "Nyt"
   celebrating 50MM: "Juhlimme 50 miljoonatta asennettua sovellusta!"
   link: "Linkki"
@@ -105,6 +121,7 @@ fi:
   chapter: "Luku"
   bible: "Raamattu"
   notes title: "Muistiinpanot"
+  videos: "Videot"
   friends: "Ystävät"
   groups: "Ryhmät"
   mobile: "Mobiili"
@@ -225,6 +242,7 @@ fi:
     other user profile: "%{username}:n profiili"
     my password: "Vaihda salasanani"
     edit password: "Vaihda salasana"
+    edit password errors: "Virhe(et), jotka estivät salasanan vaihdon:"
     picture: "Kuva"
     edit picture: "Vaihda profiilikuva"
     edit notifications: "Hallitse ilmoituksia"
@@ -517,6 +535,27 @@ fi:
     must start to complete: "Aloita tämä suunnitelma tallentaaksesi jo luetut kohdat!"
     invalid reference: "Pahoittelemme, yhtä tämän luvun tekstiviittausta ei löydy valitusta käännöksestä. Valitse toinen käännös yläpuolelta. Jos edelleen näet tämän viestin, ilmoita asiasta <a href='%{support_url}'>tukeemme</a>."
     sidebar notice: "Katselet lukusuunnitelmaa."
+    completed notice: "Onneksi olkoon, olet suorittanut lukusuunnitelman!"
+    exit: "Poistu"
+    loading sidebar content: "Ladataan sisältöä..."
+  licenses:
+    authorized:
+      heading: "Sisältösi on auktorisoitu"
+      description: "Voit nyt <a href='%{content_link}'>tarkastella ostamaasi sisältöä</a> YouVersionissa! Palveluntarjoaja: %{vendor}"
+    has errors: "Pyynnössäsi oli virheitä:"
+    confirm:
+      email: "Auktorisoidaksesi ostamasi videosisällön, tarkista YouVersionilta saamasi vahvistusviesti ja klikkaa viestin linkkiä vahvistaaksesi rekisteröinnin."
+    request:
+      invalid_vendor_signature: "Lisenssin tarkistus epäonnistui: Virheellinen kauppiaan allekirjoitus"
+      invalid_vendor_id: "Lisenssin tarkistus epäonnistui: Virheellinen kauppiastunnus"
+      invalid_item_ids: "Lisenssin tarkistus epäonnistui: Virheelliset tuotteet"
+    vendor_transaction_id:
+      duplicate: "Maksutapahtuma ID: Maksutapahtuman id on jo rekisteröity "
+    auth:
+      login notice: "Tarkistaaksesi ostamasi sisällön, kirjaudu YouVersion tilillesi alla tai <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice: "Tarkistaaksesi ostamasi sisällön, luo ilmainen YouVersion tili alla tai <a href='/sign-in?source=licenses'>%{login}</a> jos sinulla on jo tili."
+      signup link text: "luo ilmainen käyttäjätili"
+      login link text: "kirjaudu sisään"
   registration:
     placeholder:
       email: "Syötä sähköpostiosoitteesi"
@@ -691,6 +730,8 @@ fi:
       translation notes: "Alaviitteet:"
       cross references: "Viitteet:"
   app errors:
+    404 plans explanation: "Etsitkö <a href='%{plan_path}'>%{title}</a> suunnitelmaa?"
+    404 contact support: "Ongelmia? Ota yhteyttä <a href='%{support_url}'>tukeemme</a>."
     404 explanation: "Voit aloittaa uudelleen palaamalla <a href='%{reader_path}'>etusivulle</a>. Jos ongelma toistuu, ota yhteyttä <a href='%{support_url}'>tukeemme</a>."
     404 message: "Etsimääsi sivua ei löydy."
     408 message: "Olemme pahoillamme, mutta palvelimemme eivät vastanneet ajallaan."

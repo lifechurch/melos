@@ -1,4 +1,6 @@
 mn:
+  api:
+    users email not available: "Энэ и-мэйл бүртгэгдсэн байна"
   now: "Одоо"
   celebrating 50MM: "50 Сая Апп суулгагдсан баяраа тэмдэглэж байна!"
   link: "Холбоос"
@@ -105,6 +107,7 @@ mn:
   chapter: "Бүлэг"
   bible: "Библи"
   notes title: "Тэмдэглэлүүд"
+  videos: "Видеонууд"
   friends: "Найзууд "
   groups: "Группүүд"
   mobile: "Мобайл"

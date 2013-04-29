@@ -1,4 +1,20 @@
 ca:
+  api:
+    users agree bool: "Has d'estar d'acord amb les condicions per crear un compte."
+    users confirm password matches: "Les noves contrassenyes no coincideixen."
+    users email email: "L'adreça de correu electrònic és invàlida."
+    users email email rfc: "L'adreça de correu electrònic que has escrit no serveix."
+    users email not available: "Ja hi ha un compte registrat amb aquesta adreça de correu electrònic."
+    users email not found: "No existeix cap compte amb aquesta adreça de correu electrònic."
+    users email required: "Has d'introduïr una adreça de correu electrònic."
+    users hash verified: "Aquest compte ja ha estat verificat"
+    users password change: "La nova contrassenya ha de ser diferent a l'anterior."
+    users password length: "La teva contrasenya a de tenir com a mínim 6 caràcters."
+    users password required: "Has d'introduir una contrassenya."
+    users username alpha numeric extra: "El nom d'usuari/ària pot estar format per lletres, nombres, o guions."
+    users username not available: "El nom d'usuari/ària que has demanat no està disponible."
+    users username or password invalid: "El nom d'usuari/ària o contrasenya que has introduït és invàlid/a."
+    users username required: "Has d'introduir un nom d'usuari."
   now: "Ara"
   celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
   link: "Enllaç"
@@ -105,6 +121,7 @@ ca:
   chapter: "Capítol"
   bible: "La Bíblia"
   notes title: "Notes"
+  videos: "Vídeos"
   friends: "Amics"
   groups: "Grups"
   mobile: "Mòbil"
@@ -225,6 +242,7 @@ ca:
     other user profile: "El perfil de %{username}"
     my password: "Canvia la meva contrasenya"
     edit password: "Canvia la contrasenya"
+    edit password errors: "El(s) següent(s) error(s) no permeten canviar la teva contrassenya."
     picture: "Fotografia"
     edit picture: "Canvia la fotografia"
     edit notifications: "Configura els avisos"
@@ -517,6 +535,27 @@ ca:
     must start to complete: "Comença aquest pla per desar les lectures finalitzades!"
     invalid reference: "Malauradament, una de les referències de les escriptures per aquesta lectura no existeix en la versió seleccionada. Intenta seleccionar una versió diferent, més amunt. Si segueix apareixent aquest missatge, si us plau, permet que el nostre equip de suport <a href='%{support_url}'>support team<a/a> en sàpiga sobre el problema"
     sidebar notice: "Estàs veient un pla de lectura"
+    completed notice: "Enhorabona! Has completat el teu pla de lectura."
+    exit: "Sortida"
+    loading sidebar content: "Carregant el contingut de la barra lateral..."
+  licenses:
+    authorized:
+      heading: "El teu contingut ha estat autoritzat."
+      description: "Ja pots <a href='%{content_link}'>veure el contingut que has adquirit</a> de %{vendor} a YouVersion!"
+    has errors: "Hi ha hagut errors a la teva sol·licitud:"
+    confirm:
+      email: "Per autoritzar el contingut del vídeo que has adquirit, si us plau comprova que has rebut a la safata d'entrada del teu correu electrònic el missatge de YouVersion i clica l'enllaç per confirmar el teu registre."
+    request:
+      invalid_vendor_signature: "Ha fallat la validació de la llicència: signatura del proveïdor invàlida."
+      invalid_vendor_id: "Ha fallat la validació de la llicència: ID del proveïdor invàlida."
+      invalid_item_ids: "Ha fallat la validació de la llicència: articles invàlids."
+    vendor_transaction_id:
+      duplicate: "ID de la transacció: aquesta ID de la transacció ja ha estat registrada."
+    auth:
+      login notice: "Per validar el contingut que has adquirit, si us plau inicia sessió al teu compte de YouVersion més avall o <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice: "Per validar el contingut que has adquirit, inicia la sessió de manera gratuïta a YouVersion a o <a href='/sign-in?source=licenses'>%{login}</a> si ja disposes d'un compte."
+      signup link text: "registra un nou compte"
+      login link text: "inicia la sessió"
   registration:
     placeholder:
       email: "Escriu la teva adreça de correu electrònic"
@@ -650,7 +689,7 @@ ca:
       our action: "Ens han avisat sobre això i ho arreglarem tan aviat com sigui possible"
     home:
       hero:
-        heading: "Una Bíblia gratuïta al teu telèfon, tauleta i ordinador."
+        heading: "Una Bíblia gratuïta en el teu telèfon, tauleta i ordinador."
         description: "YouVersion és una Bíblia simple i sense publicitat que posa la Paraula de Déu a la teva vida diària."
         learn more: "Més informació"
         start reading: "Comença a llegir"
@@ -691,6 +730,8 @@ ca:
       translation notes: "Notes a peu de pàgina"
       cross references: "Referències creuades"
   app errors:
+    404 plans explanation: "Busques el pla <a href='%{plan_path}'>%{title}</a> ?"
+    404 contact support: "Tens algun problema? Contacta amb el nostre <a href='%{support_url}'>equip de suport</a>."
     404 explanation: "Desafortunadament, no hem trobat la pàgina <em>%{requested_path}</em>. Si penses que la pàgina hauria d'existir, deixa que el nostre <a href='%{support_url}'>equip d'ajuda</a> ho sàpiga, o torna enrere al <a href='%{reader_path}'>lector</a>."
     404 message: "Ho sentim, la pàgina que busques no es pot trobar. "
     408 message: "Malauradament els nostres servidors no han respost a temps."

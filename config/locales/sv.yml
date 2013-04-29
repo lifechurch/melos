@@ -1,4 +1,14 @@
 sv:
+  api:
+    users email email: "E-postadressen är ogiltig."
+    users email email rfc: "E-postadressen du angett är inte korrekt."
+    users email not available: "Det finns redan ett konto registrerat med den e-postadressen."
+    users email not found: "Det finns inget konto med den e-postadressen."
+    users hash verified: "Kontot har redan verifierats."
+    users password length: "Ditt lösenord måste bestå av minst 6 tecken."
+    users username alpha numeric extra: "Användarnamnet ska innehålla bokstäver, siffror eller snedstreck."
+    users username not available: "Användarnamnet du valt är tyvärr inte ledigt."
+    users username or password invalid: "Användarnamnet eller lösenordet är felaktigt."
   now: "Nu"
   celebrating 50MM: "Firar 50 miljoner installationer!"
   link: "Länk"
@@ -105,6 +115,7 @@ sv:
   chapter: "Kapitel"
   bible: "Bibeln"
   notes title: "Anteckningar"
+  videos: "Videor"
   friends: "Vänner"
   groups: "Grupper"
   mobile: "Mobil"
@@ -517,6 +528,10 @@ sv:
     must start to complete: "Starta denna läsplan för att spara utförd läsning!"
     invalid reference: "En av skrifterna refererade för denna läsning verka inte existera i den valda översättningen. Försök att välja en annan översättning ovan. Om du fortsätter se detta meddelande, var snäll och meddela vår <a href='%{support_url}'>supportgrupp</a> om problemet. "
     sidebar notice: "Du visar en läsplan."
+    exit: "Avsluta"
+  licenses:
+    auth:
+      login link text: "Logga in"
   registration:
     placeholder:
       email: "Ange din e-postadress"
