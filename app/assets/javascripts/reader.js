@@ -383,12 +383,19 @@ Reader.prototype = {
 
     var thiss = this;
 
+    // Apply locale to our ajax urls to avoid 302 to correct locale'd url.
+    var locale = "";
+    var html_locale = $('html').data("locale");
+    if(html_locale != "en") { locale = "/" + html_locale; }
+
     //HACK: looking for "intro" is not a great way to check if a chapter may have
     //highlights, but it "works"
     if(!chapter.length || !version || chapter.data("usfm").match(/intro/i)){return;}
 
+
+
     $.ajax({
-      url: "/bible/" + version + "/" + chapter.data("usfm") + "/highlights",
+      url: locale + "/bible/" + version + "/" + chapter.data("usfm") + "/highlights",
       method: "get",
       dataType: "json",
       success: function(jsonHighlights) {
@@ -675,15 +682,21 @@ Reader.prototype = {
   },
 
   ajaxSecondaryVersion : function() {
+    if (this.secondary_loaded) { return; }
+
     var version_elem = $('#version_secondary');
     var v_id = getCookie('alt_version') || 1;
     var usfm = version_elem.attr('data-usfm');
     var thiss = this;
 
-    if (this.secondary_loaded) { return; }
-    // console.log('secondary version ajaxed');
+    // Apply locale to our ajax urls to avoid 302 to correct locale'd url.
+    var locale = "";
+    var html_locale = $('html').data("locale");
+    if(html_locale != "en") { locale = "/" + html_locale; }
+
+
     $.ajax({
-        url: "/bible/" + v_id + "/" + usfm + ".json",
+        url: locale + "/bible/" + v_id + "/" + usfm + ".json",
         method: "get",
         dataType: "json",
         success: function(ref) {
