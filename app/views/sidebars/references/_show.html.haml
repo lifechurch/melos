@@ -9,7 +9,8 @@
 
 // Bookmarks widget requires no local variables
 - if current_auth
-  .widget.bookmarks.ajax_bookmarks{"data-ajax" => "/bible/widgets/bookmarks"}
+  - ajax_url = (I18n.locale.to_s == "en") ? "/bible/widgets/bookmarks" : "/#{I18n.locale}/bible/widgets/bookmarks"
+  .widget.bookmarks.ajax_bookmarks{"data-ajax" => ajax_url}
     %header
       %span.header_icon_bookmark= t('recent bookmarks')
     %ul
