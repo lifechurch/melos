@@ -110,8 +110,7 @@ class ApplicationController < ActionController::Base
     end
 
     def track_exception(exception)
-      #Raven.capture_exception(exception)
-      evt = Raven::Event.capture_rack_exception(exception, request.env)
+      evt = Raven::Rack.capture_exception(exception, request.env)
       Raven.send(evt)
     end
 
