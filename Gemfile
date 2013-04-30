@@ -30,7 +30,7 @@ gem 'koala',                  '~> 1.6.0'
 gem "language_list",          '~> 0.0.3'
 gem 'newrelic_rpm',           '~> 3.5.7.59'
 gem 'nokogiri',               '~> 1.5.2'
-gem 'omniauth-facebook',      '~> 1.2.0' # 1.3.0
+gem 'omniauth-facebook',      '~> 1.4.1'
 gem 'omniauth-google-oauth2', '~> 0.1.9'
 gem 'omniauth-twitter',       '~> 0.0.16'
 gem 'rabl',                   '~> 0.7.3'
