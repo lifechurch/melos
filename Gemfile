@@ -47,6 +47,7 @@ gem 'viximo-rack-throttle',   '~> 0.5.0'
 
 gem 'routing-filter',         '~> 0.3.1'
 gem "unicorn",               '~> 4.3.1'
+gem 'unicorn-worker-killer', '~> 0.4.1'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
