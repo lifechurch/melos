@@ -110,8 +110,7 @@ class ApplicationController < ActionController::Base
     end
 
     def track_exception(exception)
-      evt = Raven::Rack.capture_exception(exception, request.env)
-      Raven.send(evt)
+      Raven::Rack.capture_exception(exception, request.env)
     end
 
     # Appropriate method to use to check if current_user is the passed in user
