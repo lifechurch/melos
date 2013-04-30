@@ -16,4 +16,4 @@
     = f.check_box :agree
     = f.label :agree, t("users.agreement", terms_link: link_to(t("users.terms and conditions"), terms_url())).html_safe
   %p
-    = f.submit t("users.register")
+    = f.submit t("users.register"), {class: "action_button_green"}
