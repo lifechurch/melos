@@ -249,7 +249,7 @@ GEM
     omniauth-oauth2 (1.0.3)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
-    omniauth-twitter (0.0.14)
+    omniauth-twitter (0.0.16)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
     polyglot (0.3.3)
@@ -423,7 +423,7 @@ DEPENDENCIES
   oj
   omniauth-facebook (~> 1.2.0)
   omniauth-google-oauth2 (~> 0.1.9)
-  omniauth-twitter (~> 0.0.11)
+  omniauth-twitter (~> 0.0.16)
   powder
   pry
   quiet_assets

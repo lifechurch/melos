@@ -32,7 +32,7 @@ gem 'newrelic_rpm',           '~> 3.5.7.59'
 gem 'nokogiri',               '~> 1.5.2'
 gem 'omniauth-facebook',      '~> 1.2.0' # 1.3.0
 gem 'omniauth-google-oauth2', '~> 0.1.9'
-gem 'omniauth-twitter',       '~> 0.0.11'
+gem 'omniauth-twitter',       '~> 0.0.16'
 gem 'rabl',                   '~> 0.7.3'
 gem 'rack-mobile-detect',     '~> 0.3.0'
 gem 'rack-rewrite',           '~> 1.3.3'
