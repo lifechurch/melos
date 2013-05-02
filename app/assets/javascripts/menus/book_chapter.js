@@ -77,6 +77,10 @@ BookChapterMenu.prototype = {
 
   populateChapters : function( book ) {
 
+    // Handle case where requested book/chapters is not actually available in this version
+    // One book versions is an example (v564) - can't request any other version than "mrk".
+    if(book == undefined || version_json.books[book] == undefined) return;
+
     // version_json is currently embedded directly in markup.
     // Could create an endpoint for this and make a separate request or store locally in another format
 
