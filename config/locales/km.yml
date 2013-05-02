@@ -137,7 +137,7 @@ km:
   percentage display: "%{number}%"
   myself: "ខ្ញុំ"
   none found: "យើង​រក​អ្វី​ដែល​ដូច​នឹង​តំរូវ​ការ​អ្នក​មិន​ទាន់​បាន​ទេ។ សូម​សាករក​បន្ថែម​ទៀត។"
-  paginated items shown: "%{first_shwon}&ndash;%{last_shown}នៃ%{total_available}"
+  paginated items shown: "%{first_shown}&ndash;%{last_shown}នៃ%{total_available}"
   160 character limit: "ចំនួន​តួ​អក្សរ​160 ឬ​តិច​ជាង"
   recent versions: "បាន​ប្រើប្រាស់​ថ្មីៗ"
   or:
