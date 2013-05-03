@@ -11,6 +11,12 @@ class TrackingsController < ApplicationController
     insert      = {'$inc' => {"cnt" => 1 }}
 
     collection.update(resolution, insert, {:upsert  => true}) # fire and forget
+
+
+    tracker = Gabba::Gabba.new(@site.ga_code, @site.ga_domain)
+    tracker.identify_user(cookies[:__utma], cookies[:__utmz])
+    tracker.event("App", "Download", "url", "#{request.host_with_port}#{request.fullpath}", true)
+
     redirect_to("/download", status: 302)
   end
 

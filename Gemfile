@@ -21,6 +21,7 @@ gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 gem 'mongo'
 gem 'bson_ext'
 gem "oink"
+gem "gabba"
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
