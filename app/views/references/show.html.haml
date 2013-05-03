@@ -1,8 +1,9 @@
 // Variables necessary for templates and partials to render properly
 :ruby
   reference      = @presenter.reference
+  version        = @presenter.version
   modal_verse    = @presenter.modal_verse
-  @title = "#{reference.human} #{reference.version_string}"
+  @title = "#{reference.human} #{version.title}"
 
 - if modal_verse.present?
   - content_for :additional_meta do
