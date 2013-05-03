@@ -1,8 +1,5 @@
 class VersionSelectorCell < Cell::Rails
 
-  cache :all_versions, :expires_in => 1.hour do |cell, opts|
-      "#{opts[:version].language.id}_#{opts[:site]}"
-  end
 
   #version and recent_versions expected as version and array of versions
   #opts[:force_style] is temporary parameter until we have new reading plan design
