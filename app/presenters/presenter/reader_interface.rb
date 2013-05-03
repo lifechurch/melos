@@ -29,7 +29,11 @@ module Presenter
     # instance of Reference for display within reader and setting up appropriate data
     # Return a Reference for display. Required.
     def reference
-      raise Presenter::InterfaceNotImplementedError.new("version method not implemented for interface ReaderInterface!")
+      raise Presenter::InterfaceNotImplementedError.new("reference method not implemented for interface ReaderInterface!")
+    end
+
+    def reference_string
+      raise Presenter::InterfaceNotImplementedError.new("reference_string method not implemented for interface ReaderInterface!")
     end
 
     # Sets up appropriate secondary version data for parallel mode feature of reader

@@ -114,6 +114,7 @@ class ReferencesController < ApplicationController
         @presenter.version        = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
         @presenter.alt_version    = cookies[:alt_version].present? ? Version.find(cookies[:alt_version]) : @presenter.version
         @presenter.reference      = reference
+        @presenter.reference_string = YouVersion::ReferenceString.new(reference.to_param)
         @presenter.alt_reference  = alt_reference
 
       render :invalid_ref, status: 404, locals: {presenter: @presenter}
