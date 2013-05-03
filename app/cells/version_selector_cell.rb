@@ -27,6 +27,7 @@ class VersionSelectorCell < Cell::Rails
     @version = opts[:version]
     @link_params = opts[:link_params]
     @add_version_param = opts[:add_version_param] || false
+    @presenter = opts[:presenter]
   end
 
 end

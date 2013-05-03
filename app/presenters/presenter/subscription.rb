@@ -68,6 +68,10 @@ module Presenter
       end
     end
 
+    def reference_string
+      YouVersion::ReferenceString.new(reference.to_param)
+    end
+
     # implementation for Presenter::ReaderInterface method
     def alt_reference
       @alt_reference ||= ::Reference.new(reference, version: alt_version)

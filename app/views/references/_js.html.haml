@@ -42,8 +42,8 @@
 
 // Render all necessary menus
 - if reader_menus == true
-  = render_cell :book_selector, :display, {version: version}
-  = render_cell :version_selector, :display, {version: version, recent_versions: recent_versions, reference: reference, site: @site}
+  = render_cell :book_selector, :display, {version: version, presenter: @presenter}
+  = render_cell :version_selector, :display, {presenter: @presenter, version: version, recent_versions: recent_versions, reference: reference, site: @site}
   - if modal_verse.present?
     = render(partial:'/shared/modal_single_verse',locals: {modal_verse: modal_verse, reference: reference, version: version}) unless @verse_modals == false ||  modal_verse == nil
   = render(partial: '/shared/menu_settings')

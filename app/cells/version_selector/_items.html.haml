@@ -1,4 +1,4 @@
-- ref_str = YouVersion::ReferenceString.new(params[:reference])
+- ref_str = @presenter.reference_string
 - book, chapter = ref_str.book, ref_str.chapter
 - versions.each do |v|
   - version = v.abbreviation.downcase

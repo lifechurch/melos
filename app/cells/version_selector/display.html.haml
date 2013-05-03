@@ -17,8 +17,8 @@
         - if @recent_versions.present?
           %tr.cat.recent
             %th{:colspan => '2'}= t('recent versions')
-          = render partial: 'items', locals: {versions: @recent_versions}
-        = render_cell :version_selector, :all_versions, version: @version, site: @site
+          = render partial: 'items', locals: {versions: @recent_versions, presenter: @presenter}
+        = render_cell :version_selector, :all_versions, version: @version, site: @site, presenter: @presenter
         %tr.mobile#see_all
           %th{:colspan => '2'}
             = link_to t('versions.see all'), versions_path

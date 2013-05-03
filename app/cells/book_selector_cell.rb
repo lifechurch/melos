@@ -10,6 +10,7 @@ class BookSelectorCell < Cell::Rails
 
   def display(opts = {})
     @version = opts[:version]
+    @presenter = opts[:presenter]
     render
   end
 
