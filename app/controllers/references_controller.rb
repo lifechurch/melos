@@ -3,13 +3,11 @@ class ReferencesController < ApplicationController
   before_filter :check_site_requirements,       only: [:show]
   before_filter :fix_invalid_reference,         only: [:show]
   before_filter :strip_format,                  only: [:show]
-  before_filter :redirect_incorrect_reference,  only: [:show]
+  before_filter :setup_presenters,              only: [:show]
 
   rescue_from InvalidReferenceError, with: :ref_not_found
 
   def show
-    @presenter = Presenter::Reference.new(params,self)
-    set_sidebar_for_state(default_to: Presenter::Sidebar::Reference.new(params,self))
     now_reading(@presenter.reference)
   end
 
@@ -36,6 +34,30 @@ class ReferencesController < ApplicationController
 
   private
 
+  def setup_presenters
+    ref = params[:reference] || last_read.try(:to_param) || default_reference.try(:to_param)
+
+    # override the version in the reference param with the explicit version in the URL this is a temporary hack until Version/Reference class clean-up
+    ref_string  = YouVersion::ReferenceString.new(ref, overrides: {version: params[:version]})
+    ref_hash    = ref_string.to_hash
+
+    # If somebody visits just /bible
+    unless params[:version] && ref_hash[:chapter]
+      ref_hash[:version] ||= current_version
+      ref_hash[:chapter] ||= "1"
+      flash.keep
+      return redirect_to bible_path(Reference.new(ref_hash))
+    end
+
+    # Setup presenters, check for a valid reference
+    @presenter = Presenter::Reference.new(ref_string, params, self)
+    if @presenter.valid_reference?
+      set_sidebar_for_state(default_to: Presenter::Sidebar::Reference.new(ref_string, params ,self))
+    else
+      return render_404
+    end
+  end
+
   # HACK (km): sometimes the url can have invalid utf-8 characters
   # /bible/46/rom.8.15.cunp-%E7%A5%EF
   # so strip those out before attempting to parse as a reference
@@ -50,19 +72,6 @@ class ReferencesController < ApplicationController
   def check_site_requirements
     if @site.versions && (not @site.versions.include?(params[:version].to_i))  # some sites don't define a versions array
       render_404
-    end
-  end
-
-  def redirect_incorrect_reference
-    ref = params[:reference] || last_read.try(:to_param) || default_reference.try(:to_param)
-    ref_hash = YouVersion::ReferenceString.new(ref).to_hash
-    ref_hash[:version] = params[:version]
-
-    unless params[:version] && ref_hash[:chapter]
-      ref_hash[:version] ||= current_version
-      ref_hash[:chapter] ||= "1"
-      flash.keep
-      return redirect_to bible_path(Reference.new(ref_hash))
     end
   end
 

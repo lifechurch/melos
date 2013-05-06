@@ -20,17 +20,26 @@ module Presenter
 
   module ReaderInterface
 
+    # instance of Reference for display within reader and setting up appropriate data
+    # Return a Reference for display. Required.
+    def reference
+      raise Presenter::InterfaceNotImplementedError.new("reference method not implemented for interface ReaderInterface!")
+    end
+
+
+    # Implementation for reference content displayed as main content in reader.  Defaults to calling reference.content
+    # Override as necessary to provide different content for presentation.
+    def content
+      @content ||= reference.content
+    end
+
     # instance of Version for setting up appropriate version data within the Reader
     # return a Version for display/data. Required.
     def version
       raise Presenter::InterfaceNotImplementedError.new("version method not implemented for interface ReaderInterface!")
     end
 
-    # instance of Reference for display within reader and setting up appropriate data
-    # Return a Reference for display. Required.
-    def reference
-      raise Presenter::InterfaceNotImplementedError.new("reference method not implemented for interface ReaderInterface!")
-    end
+
 
     def reference_string
       raise Presenter::InterfaceNotImplementedError.new("reference_string method not implemented for interface ReaderInterface!")

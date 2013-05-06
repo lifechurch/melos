@@ -172,7 +172,8 @@ class Reference < YouVersion::Resource
   end
 
   def content(opts={})
-    return attributes.content if is_chapter?
+    for_chapter = opts[:chapter]
+    return attributes.content if for_chapter || is_chapter?
 
     case opts[:as]
       when :plaintext
@@ -219,13 +220,7 @@ class Reference < YouVersion::Resource
 
   def verses_in_chapter
     return @verses_in_chapter unless @verses_in_chapter.nil?
-
-    start = Time.now.to_f
-    # it takes about the same amount of time to parse the html as a document
-    # as it does to run a regular expression on it. Since we may need multiple
-    # queries, we might as well create and cache the DOM-style document tree
     @verses_in_chapter = content_document.css(".verse > .label").map{|node| node.inner_html}
-    Rails.logger.apc "** Reference.verses_in_chapter: It took #{Time.now.to_f - start} seconds to scan the content", :debug
     @verses_in_chapter
   end
 
@@ -236,7 +231,7 @@ class Reference < YouVersion::Resource
   end
 
   def is_chapter?
-    @is_chapter || verses.empty? || false
+    @is_chapter ||= (verses.empty? || false)
   end
 
   #HACK: looking for "intro" is not a great way to check if a chapter is
@@ -246,7 +241,7 @@ class Reference < YouVersion::Resource
   end
 
   def valid?
-    attributes.reference.human.is_a?(String) rescue false
+    return content != ""
   end
 
   def notes_api_string
