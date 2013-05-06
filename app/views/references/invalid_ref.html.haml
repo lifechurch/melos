@@ -1,11 +1,11 @@
-- @title = t("ref.invalid chapter title")
+- @title = t("ref.invalid chapter text")
 - @share_menu = false
 - @verse_modals = false
 - version = presenter.version
 - reference = presenter.reference
 - alt_version = presenter.alt_version
 
-= render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: @presenter}
+= render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: @presenter, invalid: true}
 
 - content_for :additional_meta do
   %meta{name: "robots", content: "noindex"}
@@ -17,6 +17,9 @@
 - content_for :title do
   = link_to(reference.human, 'javascript:void(0);')
 
+- content_for :sidebar do
+  = render "shared/widget_ad_bible_app"
+
 %article
   %div#invalid_chapter{style:"text-align: center; margin-top:70px"}
     %h1= t("ref.invalid chapter title")
@@ -24,14 +27,6 @@
     %div.dynamic_menu_trigger.no_style{:href=> '#menu_book_chapter', style: "height: 0; margin-left:68px"}
       %button{style: "margin-left:-68px"}= t("ref.select another chapter")
 
-%footer
-  - if version.has_publisher?
-    .publisher.as_table
-      .vcenter
-        .courtesy
-          %strong= t("versions.courtesy of", abbreviation: version.abbreviation, publisher: version.publisher.name) if version.blurb
-        .blurb= (version.blurb || version.copyright).try :html_safe
-      .vcenter
-        =link_to t('versions.learn more'), version.url || version_path(version), class: 'button'
+
 
 = render partial: "/references/js", locals: {presenter: @presenter}

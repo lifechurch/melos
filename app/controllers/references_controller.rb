@@ -86,8 +86,8 @@ class ReferencesController < ApplicationController
 
   protected
     def ref_not_found(exception)
-
-      return render_404 if exception.is_a? NotAChapterError
+      #force to be in non-parallel/fullscreen mode for Ref_not_found
+      client_settings.reader_full_screen = client_settings.reader_parallel_mode = nil
 
       if exception.is_a? BadSecondaryVersionError
         @presenter = Presenter::Reference.new(params,self, {
@@ -109,17 +109,13 @@ class ReferencesController < ApplicationController
         return render :show if @presenter.reference.valid?
       end
 
-      #force to be in non-parallel/fullscreen mode for Ref_not_found
-      client_settings.reader_full_screen = nil
-      client_settings.reader_parallel_mode = nil
-
       # Setup defaults
       # ------------------------------------------------------------------------------------------------------
       # try to validate reference against default version to show the reference title as it would be displayed in a valid version
-        alt_reference = reference = Reference.new( params[:reference], version: Version.default ) rescue nil
+      # alt_reference = reference = Reference.new( params[:reference], version: Version.default ) rescue nil
 
       # completely invalid reference, just fake it
-        alt_reference = reference = default_reference unless reference.try :valid?
+      alt_reference = reference = default_reference
 
       @presenter = Presenter::InvalidReference.new(params,self)
         @presenter.version        = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
