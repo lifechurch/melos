@@ -87,6 +87,8 @@ class ReferencesController < ApplicationController
   protected
     def ref_not_found(exception)
 
+      return render_404 if exception.is_a? NotAChapterError
+
       if exception.is_a? BadSecondaryVersionError
         @presenter = Presenter::Reference.new(params,self, {
           alt_version: Version.find(cookies[:alt_version]),

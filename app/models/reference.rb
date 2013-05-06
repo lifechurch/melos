@@ -309,9 +309,7 @@ class Reference < YouVersion::Resource
     # check book, chapter and version against data we have in Version object
     # to avoid 404 calls to the API (DDoS avoidance and performance advantage)
 
-    _version = Version.find(Version.default) if version.blank?
-    # this will raise not a version if invalid version
-    _version ||= Version.find(version)
+    _version = (version.blank?) ? Version.find(Version.default) : Version.find(version)
 
     raise NotAChapterError unless _version.include? self
   end
