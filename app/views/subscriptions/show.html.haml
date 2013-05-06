@@ -1,5 +1,5 @@
 :ruby
-  @title = @presenter.subscription_name
+  @title = "#{t('plans.day number', day: @presenter.day)} - #{@presenter.subscription_name}"
 
 - if @presenter.reference
   = render partial: "/references/reader", locals: {presenter: @presenter}

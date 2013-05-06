@@ -53,7 +53,7 @@
                      "data-abbreviation"  => version.try(:abbreviation).downcase,
                      "data-usfm"          => reference.chapter_usfm,
                      class:               version.try(:text_direction)}
-      = reference.content.html_safe if reference.content
+      = presenter.content.html_safe if presenter.content
 
     // Secondary version content
     #version_secondary{"data-reference"     => alt_reference.to_param,

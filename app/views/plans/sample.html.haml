@@ -1,4 +1,4 @@
-- @title = @plan.title
+- @title = "#{t('plans.day number', day: params[:day])} - #{@plan.title} "
 
 - if @presenter.reference
   = render partial: "/references/reader", locals: {presenter: @presenter}

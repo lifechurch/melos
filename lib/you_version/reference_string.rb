@@ -8,9 +8,10 @@ module YouVersion
     attr_reader :raw, :defaults
 
     def initialize( ref_str, opts={})
-      @raw = ref_str
-      @defaults = opts[:defaults] || {}
-      @validated = false
+      @raw        = ref_str
+      @validated  = false
+      @defaults   = opts[:defaults]   || {}
+      @overrides  = opts[:overrides]  || {}
       parse
       return self
     end
@@ -98,7 +99,7 @@ module YouVersion
           $/x
 
       matches = @raw.match(re)
-      @hash = {book: matches.try(:[], 1), chapter: matches.try(:[], 2), verses: matches.try(:[], 3), version: matches.try(:[], 4) || defaults[:version]}
+      @hash = {book: matches.try(:[], 1), chapter: matches.try(:[], 2), verses: matches.try(:[], 3), version: @overrides[:version] || matches.try(:[], 4) || defaults[:version]}
       parse_verses
     end
 
