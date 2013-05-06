@@ -43,6 +43,8 @@ class UsersController < ApplicationController
   end
 
   def create
+    return render_404 unless params[:user].present?
+
     @user = User.register(params[:user].merge(language_tag: I18n.locale))
     if @user.persisted?
       # save username and password so we can sign them back in
