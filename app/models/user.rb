@@ -417,28 +417,6 @@ class User < YouVersion::Resource
     return Subscription.find(plan, id, auth: auth).present? rescue false
   end
 
-  def configuration
-    @config_attributes ||= self.class.configuration(auth: auth, user_id: id)
-  end
-
-  def highlight_colors
-    configuration.highlight_colors
-  end
-
-  def self.highlight_colors(opts = {})
-    opts = opts.merge({user_id: opts[:auth].user_id}) if (opts[:user_id] == nil && opts[:auth])
-    self.configuration(opts).highlight_colors
-  end
-
-  def self.configuration(opts = {})
-    opts = opts.merge({cache_for: a_very_long_time}) if opts[:auth] == nil
-    response = YvApi.get("highlights/configuration", opts) do |errors|
-      raise YouVersion::ResourceError.new(errors)
-    end
-    response[:highlight_colors] = response.delete(:colors)
-    response
-  end
-
   def ==(compare)
     compare.class == self.class && self.id == compare.id
   end

@@ -52,8 +52,9 @@ module YouVersion
         "#{api_path_prefix}/delete"
       end
 
-      def configuration
-        response = YvApi.get("#{api_path_prefix}/configuration", {cache_for: a_long_time}) do |errors|
+      def configuration(opts = {})
+        opts = opts.merge({cache_for: a_very_long_time}) if opts[:auth] == nil
+        response = YvApi.get("#{api_path_prefix}/configuration", opts) do |errors|
           raise YouVersion::ResourceError.new(errors)
         end
         return response

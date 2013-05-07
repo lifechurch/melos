@@ -72,6 +72,10 @@ YouversionWeb::Application.routes.draw do
     end
   end
 
+  resources 'highlights', only: [:create] do
+    get :colors, on: :collection
+  end
+
   match "subscriptions/:id/sidebar" => "subscriptions#sidebar"
 
   # /reading-plans
@@ -96,11 +100,10 @@ YouversionWeb::Application.routes.draw do
   # /reading-plans/199-promises-for-your-everyday-life/calendar
   match "/reading-plans/:id/calendar" => "plans#calendar", via: :get
 
-
-  match 'highlight_colors' => 'users#highlight_colors', as: 'highlight_colors'
   post 'share' => 'users#share', as: 'share'
   get 'share/new' => 'users#new_share', as: 'new_share'
-  resources 'highlights', only: [:create]
+
+
 
   match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
   match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post

@@ -7,6 +7,14 @@ class Highlight < YouVersion::Resource
     :id
   end
 
+  # Return color list from configuration call
+  # Send in user_id or auth for options and get color list scoped to user.
+  def self.colors(opts = {})
+    opts = opts.merge({user_id: opts[:auth].user_id}) if (opts[:user_id] == nil && opts[:auth])
+    response = self.configuration(opts)
+    response.delete(:colors)
+  end
+
   def after_build
       usfm_ref = case reference
       when String       #usfm style string coming from user creation

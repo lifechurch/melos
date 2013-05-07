@@ -1,4 +1,5 @@
 class HighlightsController < ApplicationController
+
   def create
     #Parameters: {"highlight"=>{"references"=>"gen.1.1.asv,gen.1.6.asv,gen.1.7.asv", "ids"=>"79,98,-1", "color"=>"861eba"}}
     @highlights = params[:highlight][:references].split(",").uniq.map { |r| Highlight.new(Hashie::Mash.new(params[:highlight].merge(auth: current_auth, reference: r))) }
@@ -21,5 +22,14 @@ class HighlightsController < ApplicationController
       end
     end
   end
+
+  # TODO: turn this into a json action and render the html client side.
+  # Endpoint returns a list of default colors *or* colors scoped to the current_user
+  def colors
+    render partial: "colors",
+           layout: false,
+           locals: {colors: Highlight.colors(auth: (current_auth rescue nil)).slice(0,10)}
+  end
+
   #TODO make the sending form submit a different 'delete' form on clicking the clear icon
 end
