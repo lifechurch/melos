@@ -14,7 +14,6 @@ YouversionWeb::Application.routes.draw do
   # Bible
   match 'bible/widgets/bookmarks' => 'references#bookmarks'
   match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
-  match 'bible/:version/:reference/highlights' => 'references#highlights', :as => 'reference_highlights', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'references#notes', :as => 'reference_notes', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
 
   resources 'versions',   :only => [:index, :show]
@@ -34,6 +33,14 @@ YouversionWeb::Application.routes.draw do
   #catch non-supported languages and still render them
   match '/:locale/terms', :to => 'pages#terms'
   match '/:locale/privacy', :to => 'pages#privacy'
+
+
+  resources 'highlights', only: [:create] do
+    get :colors, on: :collection
+  end
+  get "/highlights/:version/:reference", to: "highlights#for_reference", constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
+
+
 
   resources :videos do
     get :series,    on: :member
@@ -70,10 +77,6 @@ YouversionWeb::Application.routes.draw do
       get   :calendar,    on: :member
       post  :shelf,       on: :member
     end
-  end
-
-  resources 'highlights', only: [:create] do
-    get :colors, on: :collection
   end
 
   match "subscriptions/:id/sidebar" => "subscriptions#sidebar"

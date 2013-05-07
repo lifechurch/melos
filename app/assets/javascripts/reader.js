@@ -376,12 +376,13 @@ Reader.prototype = {
   },
 
   loadHighlights : function(article_id) {
-    var chapter = $(article_id).find('.chapter');
+    var ref     = $(article_id).data("reference");
     var version = $(article_id).find('.version').data("vid");
+    var chapter = $(article_id).find('.chapter');
     var verse = null;
     var userShowsHighlights = $('#main article').attr('data-setting-show-highlights') || 'true';
 
-    var thiss = this;
+    var _this = this;
 
     // Apply locale to our ajax urls to avoid 302 to correct locale'd url.
     var locale = "";
@@ -392,16 +393,14 @@ Reader.prototype = {
     //highlights, but it "works"
     if(!chapter.length || !version || chapter.data("usfm").match(/intro/i)){return;}
 
-
-
     $.ajax({
-      url: locale + "/bible/" + version + "/" + chapter.data("usfm") + "/highlights",
+      url: locale + "/highlights/" + version + "/" + ref,
       method: "get",
       dataType: "json",
       success: function(jsonHighlights) {
 
         //reset any old highlights in the current chapter
-        thiss.clearHighlights(article_id);
+        _this.clearHighlights(article_id);
 
         //apply the new highlights
         $.each(jsonHighlights, function(i, highlight) {
@@ -420,15 +419,14 @@ Reader.prototype = {
             verse.attr('data-highlight-ids', highlight_ids.join(','));
         });//end highlights each
 
-        if (userShowsHighlights == 'true') { thiss.showHighlights(article_id); }
+        if (userShowsHighlights == 'true') { _this.showHighlights(article_id); }
 
         // have to reparse the verses again due to adding new attribute values
-        thiss.parseVerses();
+        _this.parseVerses();
 
       },//end success function
-      error: function(req, status, err) {
-        //console.log(status + err);
-      }//end error function
+      error: function(req, status, err) { }
+
     });//end ajax delegate
   },
 

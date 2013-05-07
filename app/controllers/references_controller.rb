@@ -11,12 +11,6 @@ class ReferencesController < ApplicationController
     now_reading(@presenter.reference)
   end
 
-  def highlights
-    @highlights = Highlight.for_reference(ref_from_params, auth: current_auth) if current_auth
-    @highlights ||= []
-    render json: @highlights
-  end
-
   def notes
     #API Constraint to be put in model eventually
     @ref = ref_from_params rescue not_found
