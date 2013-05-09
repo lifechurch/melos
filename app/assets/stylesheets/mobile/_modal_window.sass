@@ -50,38 +50,66 @@
   margin-left: 90px
 
 #modal_window header #modal_download
-  display: block
   background: #DDD
-  text-indent: 90px
   position: relative
-  color: #777
-  height: 38px
-  line-height: 38px
 
+  a.action_button_blue
+    padding: 6px 10px !important
+    width: auto
+    margin-left: 90px
+    color: #FFF
+    font-size: 13px
+    font-weight: normal
+    letter-spacing: 0
+    border-radius: 8px
+    -webkit-border-radius: 8px
+    -moz-border-radius: 8px
 
   span.icon
     width: 60px
     height: 65px
     display: block
     position: absolute
-    top: -37px
+    top: -30px
     left: 15px
 
     background:
       image: image-url("ad_bible_app.png")
       position: -50px 0px
 
+#modal_window #read_chapter
+  margin-left: 15px
+
+  a
+    color: #888
+    display: inline !important
+    padding: 6px 22px !important
+    background: rgb(250,250,250)
+    margin: 0 auto
+    font-size: 13px
+    font-weight: normal
+    text-decoration: none
+    text-shadow: none !important
+    border: 1px solid #DDD
+    border-radius: 20px
+    -webkit-border-radius: 20px
+    -moz-border-radius: 20px
+
+  a:active
+    color: #555
+    background: rgb(200,200,200)
+
 #modal_window header span#modal_ref
-  font-size: 28px
+  font-size: 26px
   position: absolute
-  top: 110px
+  top: 120px
   color: #303030
   margin-left: 20px
 
 #modal_window header span#modal_version
   color: #909090
   position: absolute
-  top: 134px
+  top: 144px
   font-weight: normal
   margin-left: 20px
 
@@ -121,17 +149,21 @@
   background-position: left bottom
 
 #modal_window hr
-  border-top-color: rgba(#000, 0.25)
+  border-top-color: rgba(#444, 0.25)
   border-bottom: 1px solid rgba(#fff, 0.5)
-  margin-bottom: 25px
+  margin-bottom: 35px
+  margin-top: 40px
 
 #modal_window .big
+  width: 90%
+  margin-bottom: 35px
+  padding: 130px 5% 0%
   color: #111
   font:
-    size: 24px
+    size: 22px
     weight: 200
   line-height: 1.4em
-  margin-bottom: 25px
+
 
 #modal_single_verse #modal_window section
   background: image-url("modal_section.png") no-repeat right top
@@ -164,17 +196,12 @@
 #modal_window .action_button_blue,
 #modal_window .action_button_green
   +box-shadow(inset rgba(#fff, 0.3) 0 1px 0 0, rgba(#000, 0.2) 0 0 0 4px)
-  margin-left: 4px
-  padding:
-    left: 30px
-    right: 30px
 
 #modal_window .action_button_green:focus,
 #modal_window .action_button_green:active,
 #modal_window .action_button_blue:focus,
 #modal_window .action_button_blue:active
   +box-shadow(rgba(#000, 0.2) 0 0 0 4px, inset rgba(#000, 0.5) 0 5px 10px 0)
-#modal_window #modal_reference_tokens
 
 //
 #modal_single_verse #modal_window
@@ -216,16 +243,6 @@
 #modal_single_verse #modal_window section
   margin-right: 0px
   padding: 10px 0px
-
-#modal_single_verse #modal_window section .big
-  width: 90%
-  padding: 130px 5% 0%
-
-#modal_window .action_button_blue,
-#modal_window .action_button_green
-  margin-left: 12px
-  width: 87% !important
-  padding: 8px 10px !important
 
 #link_tab_content
   display: none

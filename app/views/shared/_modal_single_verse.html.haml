@@ -6,9 +6,10 @@
 
     %header
       %a#modal_logo
-      %a#modal_download.mobile{href:"http://www.bible.com/mobile"}
+      %div#modal_download.mobile{href:"http://www.bible.com/mobile"}
         %span.icon
-        = t('mobile page.download now')
+        %a.action_button_blue{href:"http://www.bible.com/mobile"}
+          = t('mobile page.download now')
 
       %span#modal_ref= verse.human
       - if version
@@ -20,9 +21,8 @@
     %section
       %p.big{itemprop:'description'}
         = verse.content.html_safe
-      %hr
-      %p
-        %a#single_verse_read_link.action_button_blue{href: bible_path(reference)}
+      %p#read_chapter
+        %a.action_button_blue{href: bible_path(reference)}
           = t("read reference", reference: reference.human)
 
 

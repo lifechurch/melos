@@ -52,7 +52,7 @@ function VerseModal(opts) {
       this.hide();
     },this ));
 
-  $("#single_verse_read_link").click($.proxy( function(e) {
+  $("#modal_window #read_chapter").click($.proxy( function(e) {
       e.preventDefault();
       this.hide();
       $('article').css({'height' : 'auto'});
