@@ -27,225 +27,122 @@
   z-index: 100000
 
 
-#modal_window header
-  box-shadow: none
-  border-radius: 0px !important
-  -webkit-font-smoothing: subpixel-antialiased
-  background: #111 image-url("modal_header.png") repeat-x left bottom
-  color: #fff
-  overflow: visible
-  padding: 0 !important
-  position: relative
-  text-shadow: none
-  line-height: 50px
-  height: 50px
-  z-index: 1
-  border: 0px
-
-#modal_window header a#modal_logo
-  background: image-url("yv_logo.png") no-repeat 0 14px
-  width: 150px
-  height: 50px
-  display: block
-  margin-left: 90px
-
-#modal_window header #modal_download
-  background: #DDD
-  position: relative
-
-  a.action_button_blue
-    padding: 6px 10px !important
-    width: auto
-    margin-left: 90px
-    color: #FFF
-    font-size: 13px
-    font-weight: normal
-    letter-spacing: 0
-    border-radius: 8px
-    -webkit-border-radius: 8px
-    -moz-border-radius: 8px
-
-  span.icon
-    width: 60px
-    height: 65px
-    display: block
-    position: absolute
-    top: -30px
-    left: 15px
-
-    background:
-      image: image-url("ad_bible_app.png")
-      position: -50px 0px
-
-#modal_window #read_chapter
-  margin-left: 15px
-
-  a
-    color: #888
-    display: inline !important
-    padding: 6px 22px !important
-    background: rgb(250,250,250)
-    margin: 0 auto
-    font-size: 13px
-    font-weight: normal
-    text-decoration: none
-    text-shadow: none !important
-    border: 1px solid #DDD
-    border-radius: 20px
-    -webkit-border-radius: 20px
-    -moz-border-radius: 20px
-
-  a:active
-    color: #555
-    background: rgb(200,200,200)
-
-#modal_window header span#modal_ref
-  font-size: 26px
-  position: absolute
-  top: 120px
-  color: #303030
-  margin-left: 20px
-
-#modal_window header span#modal_version
-  color: #909090
-  position: absolute
-  top: 144px
-  font-weight: normal
-  margin-left: 20px
-
-#modal_window header a
-  color: #999
-  &:hover
+  header
+    box-shadow: none
+    border-radius: 0px !important
+    -webkit-font-smoothing: subpixel-antialiased
+    background: #111 image-url("modal_header.png") repeat-x left bottom
     color: #fff
+    overflow: visible
+    padding: 0 !important
+    position: relative
+    text-shadow: none
+    line-height: 50px
+    height: 50px
+    z-index: 1
+    border: 0px
 
-#modal_window .separator
-  background: image-url("modal_header_separator.png") repeat-y center top
-  color: transparent
-  display: none
-  overflow: hidden
-  padding: 0 10px
-  text-indent: -99999px
-  width: 1px
-  height: 30px
-  position: relative
-  top: 10px
+    #modal_logo
+      background: image-url("yv_logo.png") no-repeat 0 14px
+      width: 150px
+      height: 50px
+      display: block
+      margin-left: 90px
 
-#modal_window .close
-  background: image-url("close_modal.png") no-repeat
-  color: transparent
-  cursor: default
-  font-size: 0
-  margin-top: -15px
-  overflow: hidden
-  text-indent: -99999px
-  position: absolute
-  top: 50%
-  right: 15px
-  width: 27px
-  height: 28px
-  display: none
+    #modal_download
+      background: #DDD
+      position: relative
 
-#modal_window .close:hover
-  background-position: left bottom
+      a.action_button_blue
+        padding: 6px 10px !important
+        width: auto
+        margin-left: 90px
+        color: #FFF
+        font-size: 13px
+        font-weight: normal
+        letter-spacing: 0
+        border-radius: 8px
+        -webkit-border-radius: 8px
+        -moz-border-radius: 8px
 
-#modal_window hr
-  border-top-color: rgba(#444, 0.25)
-  border-bottom: 1px solid rgba(#fff, 0.5)
-  margin-bottom: 35px
-  margin-top: 40px
+      span.icon
+        width: 60px
+        height: 65px
+        display: block
+        position: absolute
+        top: -30px
+        left: 15px
+        background:
+          image: image-url("ad_bible_app.png")
+          position: -50px 0px
 
-#modal_window .big
-  width: 90%
-  margin-bottom: 35px
-  padding: 130px 5% 0%
-  color: #111
-  font:
-    size: 22px
-    weight: 200
-  line-height: 1.4em
+    #modal_ref
+      font-size: 26px
+      position: absolute
+      top: 120px
+      color: #303030
+      margin-left: 20px
 
+    #modal_version
+      color: #909090
+      position: absolute
+      top: 144px
+      font-weight: normal
+      margin-left: 20px
 
-#modal_single_verse #modal_window section
-  background: image-url("modal_section.png") no-repeat right top
-  margin-right: 140px
-  padding: 30px 50px 20px
+  // end #modal_window header
 
-#modal_window .verse .label
-  display: none
+  section
+    background: none
+    margin-right: 0px
+    padding: 10px 0px
 
-#modal_window .verse .content
-  border: 0px
+  .big
+    width: 90%
+    margin-bottom: 25px
+    padding: 130px 5% 0%
+    color: #111
+    font:
+      size: 22px
+      weight: 200
+    line-height: 1.4em
 
-#modal_single_verse #modal_window aside
-  +round_bottom_right
-  background: #eae9ee
-  padding: 20px 20px 0
-  position: relative
-  top: 50px
-  left: auto
-  right: 0
-  bottom: 0
-  width: 100%
-  overflow: hidden
-  display: none
+  #read_chapter
+    margin-left: 15px
 
-  div
-    float: left
-    margin-left: 10px
+    a
+      color: #888
+      display: inline !important
+      padding: 6px 22px !important
+      background: rgb(250,250,250)
+      margin: 0 auto
+      font-size: 13px
+      font-weight: normal
+      text-decoration: none
+      text-shadow: none !important
+      border: 1px solid #DDD
+      border-radius: 20px
+      -webkit-border-radius: 20px
+      -moz-border-radius: 20px
 
-#modal_window .action_button_blue,
-#modal_window .action_button_green
-  +box-shadow(inset rgba(#fff, 0.3) 0 1px 0 0, rgba(#000, 0.2) 0 0 0 4px)
+    a:active
+      color: #555
+      background: rgb(200,200,200)
 
-#modal_window .action_button_green:focus,
-#modal_window .action_button_green:active,
-#modal_window .action_button_blue:focus,
-#modal_window .action_button_blue:active
-  +box-shadow(rgba(#000, 0.2) 0 0 0 4px, inset rgba(#000, 0.5) 0 5px 10px 0)
+  aside,
+  .close,
+  .separator,
+  .verse .label
+    display: none
 
-//
-#modal_single_verse #modal_window
-  width: 900px
+  .verse .content
+    border: 0px
 
-#modal_share_verse #modal_window
-  width: 500px
-
-#modal_share_verse
-#modal_window textarea
-  width: 300px
-  height: 80px
-
-#modal_window .modal_reference_tokens
-  background: #eae9ec
-  +round
-  box-shadow: 0px 1px 0px rgba(#222, .8)
-  margin: 20px
-  padding: 15px 20px
-  ul
-    margin: 0px
-#modal_window .modal_reference_tokens b
-  float: left
-  margin:
-    right: 10px
-  font-size: 15px
-#modal_window .tabs
-  margin: 20px
-#modal_window .tab_content_container
-  background: #eae9ec
-  padding: 20px
-  +round-bottom
-#modal_window .tab_content_container span
-  font-size: 10px
-
-#modal_single_verse #modal_window
-  width: 90%
-
-#modal_single_verse #modal_window section
-  margin-right: 0px
-  padding: 10px 0px
-
-#link_tab_content
-  display: none
+  .action_button_green:focus,
+  .action_button_green:active,
+  .action_button_blue:focus,
+  .action_button_blue:active
+    +box-shadow(rgba(#000, 0.2) 0 0 0 4px, inset rgba(#000, 0.5) 0 5px 10px 0)
 
 // Share Tab styles
 .tabs ul li a
@@ -354,13 +251,3 @@
   display: block
   float: left
   margin-top: 8px
-
-.share_verse_google
-  background: image-url("share_google_logo.png") no-repeat
-  text-indent: -30000px
-  width: 65px
-  height: 18px
-  display: block
-  float: left
-  margin-top: 8px
-

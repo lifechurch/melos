@@ -14,15 +14,16 @@
 
 #modal_window
   +round
-  +box-shadow(rgba(#000, 0.5) 0 5px 20px 0)
+  +box-shadow(rgba(#000, 0.75) 0 0px 20px 0)
   background: #bfbec1 image-url("modal_window.png")
-  border: 1px solid #1e1e20
+  border: none
   overflow: hidden
   text-shadow: rgba(#fff, 0.7) 0 1px 0
   position: fixed
   top: 50%
   left: 50%
   z-index: 7
+  width: 900px
 
   header
     +box-shadow(inset rgba(#fff, 0.1) 0 1px 0 0, rgba(#000, 0.5) 0 2px 5px 0)
@@ -37,6 +38,7 @@
     line-height: 50px
     height: 50px
     z-index: 1
+    border: none
 
     b
       font-size: 18px
@@ -71,6 +73,7 @@
     right: 15px
     width: 27px
     height: 28px
+    cursor: pointer
 
   .close:hover
     background-position: left bottom
@@ -119,46 +122,8 @@
   .action_button_blue:active
     +box-shadow(rgba(#000, 0.2) 0 0 0 4px, inset rgba(#000, 0.5) 0 5px 10px 0)
 
-  .modal_reference_tokens
-    background: #eae9ec
-    +round
-    box-shadow: 0px 1px 0px rgba(#222, .8)
-    margin: 20px
-    padding: 15px 20px
-
-    ul
-      margin: 0px
-
-    b
-      float: left
-      margin:
-        right: 10px
-      font-size: 15px
-  .tabs
-    margin: 20px
-  .tab_content_container
-    background: #eae9ec
-    padding: 20px
-    +round-bottom
-
-    span
-      font-size: 10px
-
 // End #modal_window
 
-#modal_single_verse #modal_window
-  width: 900px
-
-#modal_share_verse #modal_window
-  width: 500px
-
-#modal_share_verse
-#modal_window textarea
-  width: 300px
-  height: 80px
-
-#link_tab_content
-  display: none
 
 // Share Tab styles
 .tabs ul li a
@@ -260,15 +225,6 @@
   text-indent: -30000px
   width: 65px
   height: 13px
-  display: block
-  float: left
-  margin-top: 8px
-
-.share_verse_google
-  background: image-url("share_google_logo.png") no-repeat
-  text-indent: -30000px
-  width: 65px
-  height: 18px
   display: block
   float: left
   margin-top: 8px
