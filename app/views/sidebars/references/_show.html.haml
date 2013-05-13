@@ -1,23 +1,20 @@
 // PARAMETERS
 // presenter: Reference Presenter (Presenter::Reference)
+:ruby
+  note      = presenter.note
+  reference = presenter.reference
+  locale = I18n.locale.to_s
+  ajax_url = (locale == "en") ? "/bible/widgets/bookmarks" : "/#{locale}/bible/widgets/bookmarks"
 
-- note      = presenter.note
-- reference = presenter.reference
+= render '/widgets/reader_help'
 
-// App widget requires no local variables
-= render '/shared/widget_reader_help'
+- if current_auth #only show bookmarks widget if authed
+  #widget-bookmarks.widget.ajax_bookmarks{"data-ajax" => ajax_url}
+    %h3.hd
+      %span= t('recent bookmarks')
+    %div.bd
+      %p= t('bookmarks.loading')
 
-// Bookmarks widget requires no local variables
-- if current_auth
-  - ajax_url = (I18n.locale.to_s == "en") ? "/bible/widgets/bookmarks" : "/#{I18n.locale}/bible/widgets/bookmarks"
-  .widget.bookmarks.ajax_bookmarks{"data-ajax" => ajax_url}
-    %header
-      %span.header_icon_bookmark= t('recent bookmarks')
-    %ul
-      %li= t('bookmarks.loading')
-
-// Notes widget
 = render_cell :notes_list_widget, :stub, title: t("notes.community notes"), reference: reference
 
-// App widget requires no local variables
-= render '/shared/widget_ad_bible_app'
+= render 'widgets/download_app'

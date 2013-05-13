@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :current_user_is?, :sidebar_presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
+  helper_method :current_user_is?, :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_site
   before_filter :set_locale
@@ -109,6 +109,34 @@ class ApplicationController < ActionController::Base
       client_settings.last_read = ref
     end
 
+    # Presenter helpers
+
+    # setter
+    def presenter=(pres)
+      @presenter = pres
+    end
+
+    # getter
+    def presenter
+      @presenter
+    end
+
+    # Before filter
+    def set_default_sidebar
+      sidebar_presenter = Presenter::Sidebar::Default.new
+    end
+
+    # setter for controllers
+    def sidebar_presenter=( pres )
+      @sb_presenter = pres
+    end
+
+    # getter for controllers and views as a view helper
+    def sidebar_presenter( opts = {} )
+      @sb_presenter
+    end
+
+
     def track_exception(exception)
       Raven::Rack.capture_exception(exception, request.env)
     end
@@ -123,40 +151,6 @@ class ApplicationController < ActionController::Base
 
   def log_syms
     Rails.logger.apc "----- SYMS: #{Symbol.all_symbols.size} PATH: #{request.path}", :info
-  end
-
-
-  # Sidebar presenter helpers
-
-  # Before filter
-  def set_default_sidebar
-    sidebar_presenter = Presenter::Sidebar::Default.new
-  end
-
-  # setter for controllers
-  def sidebar_presenter=( pres )
-    @sb_presenter = pres
-  end
-
-  # getter for controllers and views as a view helper
-  def sidebar_presenter( opts = {} )
-    return @sb_presenter
-  end
-
-  # would have loved to do this in a after filter concept.  Can't create instance variables in after filters
-  # Call this to setup the subscription sidebar in necessary actions.
-  # Can later be extended through options for further customization on other states
-  def set_sidebar_for_state(options={})
-    if current_auth && client_settings.subscription_state? && client_settings.subscription_id.present?
-      # Ensure that we only create subscription sidebar presenter if we have a valid subscription
-      if sub = Subscription.find(client_settings.subscription_id, current_auth.user_id, auth: current_auth)
-         @sb_presenter = Presenter::Sidebar::Subscription.new( sub , params, self)
-      else #clean up client_settings
-         client_settings.app_state       = YouVersion::ClientSettings::DEFAULT_STATE
-         client_settings.subscription_id = nil
-      end
-    end
-    @sb_presenter ||= options[:default_to]
   end
 
   def sign_in(user, password = nil)

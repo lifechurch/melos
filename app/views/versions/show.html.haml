@@ -1,27 +1,26 @@
+- @title = @version.to_s
 - content_for :sidebar do
 
-  .widget.sticky.gutter_bottom_half
+  .widget-button
     = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
 
   - if @version.publisher.name.present? || @version.publisher.id.blank?
     - pub_name = @version.publisher.name || t('versions.public domain')
     .widget
-      %header
-        %span
-          =t("versions.publisher widget title")
-      %ul.widget_menu
+      %h3.hd
+        =t("versions.publisher widget title")
+      %ul.menu
         %li
           - if @version.publisher.url.present?
             = link_to pub_name, @version.publisher.url
           -else
             %p= pub_name
 
-  - if @related.present? && @version.has_publisher?
+  - if @related.present?
     .widget
-      %header
-        %span
-          =t("versions.other versions")
-      %ul.widget_menu
+      %h3.hd
+        =t("versions.other versions")
+      %ul.menu
         - @related.each do |v|
           %li
             = link_to v, v

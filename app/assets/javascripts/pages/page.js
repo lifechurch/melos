@@ -148,11 +148,6 @@ Page.prototype = {
           $this.attr('data-original-href', $this.attr('href'));
           $this.attr('href', $this.attr('data-mobile-href'));
         });
-
-        $('.widget_menu .prev').click(function(e){
-          thiss.openSubscriptionMenu();
-
-        });
       },
       exit: function() {
         $("html").removeClass("mobile-client");
@@ -499,7 +494,6 @@ Page.prototype = {
     }, 5000);
   },
 
-
   initAjaxReplace : function() {
 
     $(".ajax_me").each(function() {
@@ -516,158 +510,10 @@ Page.prototype = {
             targets.html(data);
             targets.fadeIn(200);
           });
-        },
-
-        error: function(req, status, err) {
-
         }
+
       });
     });
-  },
-
-
-  killWidgetSpacers: function() {
-    // Kill spacers, if they exist already
-    // because this function is called when
-    // exiting "full screen" mode, so make
-    // them up anew, to clean the slate.
-    $('.widget_spacer').remove();
-  },
-
-  fixWidgetHeader : function() {
-
-    // Used later.
-    var timer;
-
-    // Last sidebar widget is special, leave it alone.
-    //var last_widget = $('#sidebar').find('.widget:last');
-
-
-    function position_widgets() {
-      // For IE. Really belongs in the window event listener,
-      // but having it cleared here doesn't hurt anything.
-      clearTimeout(timer);
-
-      // have to retrieve headers on each call because widgets can be loaded dynamically
-      // TODO: this may need to be optimized.  look into a fix/optimization for this.
-      // It would be great if we could load just the content of the widget into the widget shell
-      // rather than loading the entire widget markup shell + content.
-      var header = $('.widget header');
-
-      if (!header.length) { return; }
-
-      // Insert spacers.
-      header.each(function() {
-        var el = $(this);
-        var this_widget = el.closest('.widget');
-        if (this_widget.has(".widget_spacer").length) { return; }
-        $('<div class="widget_spacer">&nbsp;</div>').insertBefore(el);
-      });
-
-
-
-      header.each(function() {
-        var el            = $(this);
-        var fix_widget    = el.parents('.fix');
-        var this_widget   = el.closest('.widget');
-        var TOP_OFFSET    = 82;
-        var next_widget   = this_widget.next('.widget');
-        var window_top    = $(window).scrollTop() + TOP_OFFSET;
-        var spacer        = el.siblings('.widget_spacer:first');
-        var spacer_top    = spacer.offset().top;
-        var extra_padding = 12;
-
-        // Temp solution for fixing an entire widget.  Need to consider sidebar markup + long term behavior and needs
-        // to design a proper solution.
-
-        if(fix_widget.length) {
-          (window_top >= spacer_top) ? fix_widget.addClass("widget-fixed") : fix_widget.removeClass("widget-fixed")
-        }
-        else {
-          if (window_top >= spacer_top) {
-            el.addClass('widget_header_fixed');
-
-            // set the height of the spacer to the height of the header element to account
-            // for expanding / extra long header content.
-
-            spacer.css({ height: (el.height() + extra_padding) });
-          }
-          else {
-            el.removeClass('widget_header_fixed');
-            spacer.css({ height: 0 });
-          }
-
-          if (next_widget.length) {
-            if (window_top >= next_widget.offset().top) {
-              el.hide();
-            }
-            else {
-              el.show();
-            }
-          }
-        }
-      });
-    }
-
-    // Initial call.
-    position_widgets();
-
-    var thiss = this;
-    // Kill off event listeners, re-create them.
-    $(window).off('.widget_header').on('scroll.widget_header resize.widget_header load.widget_header', function() {
-      // Irrelevant, if in "full screen" mode.
-      if (thiss.html_el.hasClass('full_screen')) {
-        return;
-      }
-
-      clearTimeout(timer);
-
-      // Super-low timer, just so that we don't get caught
-      // in a repetetive loop due to window scroll firing.
-      timer = setTimeout(position_widgets, 1);
-    });
-
-  },
-
-  fixWidgetLast : function() {
-    // only targeting the new note widget for now.
-    var el = $("#widget_new_note");//$('#sidebar > .widget:last-child');
-
-    if (!el.length) { return; }
-
-    var timer;
-    var spacer = $('<div class="widget_spacer">&nbsp;</div>').insertBefore(el);
-    var TOP_OFFSET = 82;
-
-    function pin_widget() {
-      // For IE. Really belongs in the window event listener,
-      // but having it cleared here doesn't hurt anything.
-      clearTimeout(timer);
-
-      var spacer = el.prev('.widget_spacer');
-      var spacer_top = spacer.offset().top;
-      var window_top = $(window).scrollTop() + TOP_OFFSET;
-
-      if (window_top >= spacer_top) { el.addClass('widget_last_fixed'); }
-      else                          { el.removeClass('widget_last_fixed'); }
-    }
-
-    // Initial call.
-    pin_widget();
-
-    var thiss = this;
-
-    $(window).off('.widget_last').on('scroll.widget_last resize.widget_last load.widget_last', function() {
-      if (thiss.html_el.hasClass('full_screen')) {
-        return;
-      }
-
-      clearTimeout(timer);
-
-      // Super-low timer, just so that we don't get caught
-      // in a repetetive loop due to window scroll firing.
-      timer = setTimeout(pin_widget, 1);
-    });
-  },
+  }
 
 }

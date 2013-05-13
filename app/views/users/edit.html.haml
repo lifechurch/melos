@@ -1,5 +1,8 @@
 - @title = "#{t('users.my profile')} | #{@user.name || @user.username}"
 
+- content_for :sidebar do
+  = render partial: "widgets/settings"
+
 = form_for @user do |f|
   - unless @user.errors.blank?
     .form_errors

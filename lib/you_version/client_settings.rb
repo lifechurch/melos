@@ -58,29 +58,6 @@ module YouVersion
       @cookies.permanent[:last_read] = ref.to_usfm if ref.try :valid?
     end
 
-    SUBSCRIPTION_STATE  = "subscription"
-    DEFAULT_STATE       = "default"
-
-    def app_state
-      @cookies[:app_state] ||= DEFAULT_STATE
-    end
-
-    def app_state=(state = DEFAULT_STATE)
-      @cookies[:app_state] = state
-    end
-
-    def subscription_state?
-      app_state == SUBSCRIPTION_STATE
-    end
-
-    def subscription_id
-      @cookies[:app_state_subscription_id]
-    end
-
-    def subscription_id=( id )
-      @cookies[:app_state_subscription_id] = id
-    end
-
     def video_series
       @cookies[:video_series_id]
     end

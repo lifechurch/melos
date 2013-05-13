@@ -2,12 +2,7 @@
   = t("notes.list title")
 
 - content_for :sidebar do
-
-  %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new")}
-    %span.icon_plus= t('new note')
-  .widget.gutter_bottom_half
-
-  = render '/shared/widget_ad_bible_app'
+  = render partial: "sidebars/notes/index"
 
 %article.note
   - if current_auth

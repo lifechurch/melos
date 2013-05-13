@@ -1,27 +1,24 @@
 - content_for :sidebar do
   .widget
-    %header
-      %span= t('press page.contact header')
-    %ul.widget_menu
+    %h3.hd
+      = t('press page.contact header')
+    %ul.menu
       %li
         %p
           %strong= t('press page.phone')
-          %br
           405.216.2332
       %li
         %p
           %strong= t('press page.email')
-          %br
           lori.bailey@lifechurch.tv
       %li
         %p
           %strong= t('press page.support')
-          %br
           =link_to "support.youversion.com", external_url(:support)
   .widget
-    %header
-      %span= t('press page.contact header 2')
-    %ul.widget_menu
+    %h3.hd
+      = t('press page.contact header 2')
+    %ul.menu
       %li
         %p
           %strong= t('press page.blog')

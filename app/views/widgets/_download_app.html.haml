@@ -1,0 +1,11 @@
+#widget-download.widget.simple
+  %div.bd
+    %h3= t("download ad.title")
+    %p
+      - #TODO.  Should refactor these lines and the breakup in locale files. Unnecessary unless I'm missing something here.
+      = "#{t('download ad.line 1')}<br />".html_safe
+      = "#{t('download ad.line 2')}<br />".html_safe
+      = t('download ad.line 3')
+    %p
+      %a.more_arrow{href:'/app'}
+        = t("download ad.download")

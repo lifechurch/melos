@@ -146,7 +146,6 @@ YouversionWeb::Application.routes.draw do
   match 'donate' => 'pages#donate', constraints: lambda { |request| request.params[:locale] != "tr" }
   match 'about' => 'pages#about'
   match 'press' => 'pages#press'
-  match 'l10n' => 'pages#l10n'
   match 'status' => 'pages#status'
   match 'generic_error' => 'pages#generic_error'
   match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
