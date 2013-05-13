@@ -5,30 +5,7 @@
 
 %p= t('connection marketing')
 
-%ul.tabs
-  %li{class: ("highlighted" if @show == "twitter")}
-    %a{style: "text-align: center; padding-top: 16px;", href: url_for({show: "twitter"})}
-      = image_tag "twitter_logo_50x50.jpg"
-      %br
-      = t('twitter')
-  %li{class: ("highlighted" if @show == "facebook")}
-    %a{style: "text-align: center; padding-top: 16px;", href: url_for({show: "facebook"})}
-      = image_tag "facebook_logo_50x50.jpg"
-      %br
-      = t('facebook')
-#connection_info
-  - if @user.connections[@show]
-    %p
-      = t('connected as user', connection: t(@show), username: @user.connections[@show].nickname)
-      %span.confirm
-        %a{:href => delete_connection_path(@show.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", :rel => "nofollow"}= t('remove connection')
-    - if @users.present?
-      %p= t('connection users', connection: t(@show))
-      = render partial: "list"
-    - else
-      %p= @users_error ? t('users.reset connection') : @empty_message
-  - else
-    = link_to t('connect to', connection: t(@show)), new_connection_path(@show.to_s, redirect: "/settings/connections")
+= render partial: "connections"
 
 
 
