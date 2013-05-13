@@ -4,5 +4,5 @@
 - user = presenter.user
 
 - if presenter.for_me?
-  = render "shared/widget_profile_settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
-= render "shared/widget_user_badges" unless user.badges.empty?
+  = render "widgets/settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
+= render "widgets/badges" unless user.badges.empty?

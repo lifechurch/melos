@@ -1,7 +1,7 @@
 - # Local Parameters
 - # plan - instance of Plan
 
-#action-start.widget
+.widget-button
   - if current_auth
     -if current_user.subscribed_to?(plan)
       = link_to(t('plans.read today'), user_subscription_path(current_user,id: plan.to_param), id: "subscription-read", class: 'action_button_green')

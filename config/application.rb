@@ -132,7 +132,7 @@ module YouversionWeb
 
       #force HTTPS traffic
       exclude_from_force = /^\/app|^\/download|^\/mobile/
-      r301 /.*/, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, if: Proc.new{ |rack_env| rack_env["rack.url_scheme"] != 'https' && rack_env["PATH_INFO"] !~ exclude_from_force }
+      r301 /.*/, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, if: Proc.new{ |rack_env| ENV['SECURE_TRAFFIC'] && rack_env["rack.url_scheme"] != 'https' && rack_env["PATH_INFO"] !~ exclude_from_force }
     end
 
     config.middleware.insert_before(

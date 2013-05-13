@@ -1,12 +1,6 @@
-%div.widget.notes.ajax_notes{"data-ajax" => "#{bible_path(@reference)}/notes"}
-
-  %header
-    %span.header_icon_note= @title
-  %section
-    %table
-      %tbody
-        %tr
-          %th
-          %td
-            %p= t('notes.loading community')
+#widget-notes.widget.ajax_notes{"data-ajax" => "#{bible_path(@reference)}/notes"}
+  %div.hd
+    %span= @title
+  %div.bd
+    %p= t('notes.loading community')
 

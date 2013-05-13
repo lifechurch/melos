@@ -1,89 +1,205 @@
 // `Widgets
 //----------------------------------------------------------------------------------------------------
 
-.widget li.active
-  background: #ddd
-  border-top: none
+.widget.simple
+  .bd
+    border: none
+    margin: 0
+  p
+    margin: 0
 
-.widget li.active span
-  display: block
-  font-size: 13px
-  padding: 10px 20px 10px 15px
-  line-height: 1
-
-.widget li.content_target a
-  background-image: none
-  padding-left: 15px
-
-.widget h2
-  font-size: 16px
-  margin: 20px 20px 10px 20px
-  font-weight: 500
-
-.widget ul,
-.widget section,
-.widget aside,
-.action_button_note
-  +box-shadow(#fff 0 1px 0 0)
-  background:
-    color: $gray_light
-  border: 1px solid #cbc9cf
+.widget-button
   margin: 0 0 10px
 
-.widget ul,
-.widget section
-  +round_bottom
-
-.widget aside
+.widget
+  color: #333
+  z-index: 1
+  padding: 0
+  margin: 0 0 10px
+  position: relative
+  border: 1px solid #cbc9cf
+  background: $gray_light image-url("shadow.png") repeat-x
+  +box-shadow(#fff 0 1px 0 0)
   +round
-  padding: 15px 20px 10px
 
-.widget aside b
-  font-size: 14px
-  text-shadow: #fff 0 1px 0
+  h3
+    margin: 0
+    font-size: 14px
 
-.widget aside p
-  margin-bottom: 10px
+  h3 em
+    float: right
+    font-style: normal
 
-.widget .ad_bible_app
-  background:
-    image: image-url("ad_bible_app.png")
-    repeat: no-repeat
-    position: 90% 85%
+  ul
+    margin-bottom: 0
+    background: $gray_light image-url("shadow.png") repeat-x
 
-.widget .separator
-  background: image-url("separator.png") repeat-y center top
-  color: transparent
-  overflow: hidden
-  padding: 0 5px 2px
-  text-indent: -99999px
+  li
+    margin: 0
+    padding: 10px 20px
+    border-top: 1px solid #fff
+    border-bottom: 1px solid #cbc9cf
+    list-style: none
 
-.widget ul
-  background:
-    image: image-url("shadow.png")
-    repeat: repeat-x
+  li:first-child
+    border-top: 0
 
-.widget li
-  @extend .clearfix
-  border-bottom: 1px solid #cbc9cf
-  border-top: 1px solid #fff
-  list-style: none
-  margin: 0
-  padding: 10px 20px
+  .separator
+    background: image-url("separator.png") repeat-y center top
+    color: transparent
+    overflow: hidden
+    padding: 0 5px 2px
+    text-indent: -99999px
 
-.widget ul li:first-child
-  border-top: 0
+  .more_arrow
+    color: #555
+    padding: 5px 25px 5px 0
+    background: image-url("more_arrow.png") no-repeat right center
+
+  .more_arrow:hover
+    color: inherit
+    text-decoration: none
+
+  .hd
+    font-size: 14px
+    font-weight: bold
+    line-height: 24px
+    padding: 5px 15px
+    position: relative
+    border-bottom: 1px solid #cbc9cf
+    background-color: #dddcda
+    +round_top
+    +box-shadow(inset #fff 0 1px 0 0)
+    +background-image(linear-gradient(#eeedeb, #dddcda))
+
+    a, a:link
+      color: #444
+
+    a:hover
+      color: #666
+
+    a.count
+      position: absolute
+      top: 8px
+      right: 8px
+      background-color: #eeedeb
+      border: 1px solid #aaa
+      color: $body_text
+      display: inline-block
+      font-size: 11px
+      line-height: 1
+      padding: 2px 10px 3px
+      text-decoration: none
+      +background-image(linear-gradient(#fff, #dddcda))
+      +box-shadow(rgba(#fff, 0.7) 0 1px 0 0)
+      +border-radius(9px)
+
+    a.count:hover
+      background:
+        color: #fff
+        image: none
+
+    a.count:active
+      background:
+        color: #eee
+        image: none
+
+  .bd
+    padding: 20px
+    font-weight: normal
+    background: $gray_light image-url("shadow.png") repeat-x
+
+    p
+      margin: 0
+
+    ul
+      border: none !important
+      border-radius: none !important
+      font-weight: normal
+      list-style: square outside none
+      margin: 0 0 0 20px
+
+    li
+      list-style: square outside none
+      border: none
+      padding: 0
+      margin: 0
+      padding: 7px 0
+
+  .bd.nopad
+    padding: 0
+
+  .ft
+    padding: 10px 15px
+    border-top: 1px solid #cbc9cf
+
+  .ft.link
+    padding: 0
+    a
+      display: block
+      padding: 8px 20px 8px 30px
+      text-decoration: none
+      border-top: 1px solid #fff
+      background: image-url("main_article_ul_li_arrow.png") no-repeat 15px center
+
+    a, a:hover
+      color: $body_text
+
+    a:hover,
+    a.selected
+      background-color: rgba(#fff, 0.4)
+
+
+  .menu
+    margin-bottom: 0 !important
+    background: image-url("shadow.png") repeat-x
+
+    li
+      padding: 0
+
+    li.active
+      background: #ddd
+      border-top: none
+
+    a,
+    span
+      display: block
+      font-size: 13px
+      line-height: 1
+      padding: 10px 20px 10px 30px
+      text-decoration: none
+      background:
+        image: image-url("main_article_ul_li_arrow.png")
+        repeat: no-repeat
+        position: 15px center
+
+    a, a:hover
+      color: $body_text
+
+    a:hover,
+    a.selected
+      background-color: rgba(#fff, 0.4)
+
+    p
+      padding: 0
+      overflow: hidden
+      margin: 10px 20px 10px 20px
+
+  // Basic ul.menu
+  // links don't have > arrow icon or extra left padding.
+  .menu.basic
+    a, span
+      background: none !important
+      padding: 10px 15px
 
 .widget ul li:last-child
   border-bottom: 0
 
-.widget section table
-  background: image-url("shadow.png") repeat-x
-  margin: 0
-
 .widget table
-  border-collapse: separate
   width: 100%
+  margin: 0
+  border-collapse: separate
+  background: image-url("shadow.png") repeat-x
 
 .widget th,
 .widget td
@@ -130,339 +246,6 @@
   display: block
   margin: 0 auto
 
-.widget_crop
-  display: inline-block
-  max-width: 120px
-  white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
-  vertical-align: bottom
-
-// Fix to Hide WYSIWYG labels in Firefox unless hovering
-.widget .wysiwyg li:before
-  display: none
-
-// `Menu
-//----------------------------------------------------------------------------------------------------
-
-.widget_menu li
-  padding: 0
-
-.widget_menu li:last-child a
-  +round_bottom
-
-.widget_menu a
-  background:
-    image: image-url("main_article_ul_li_arrow.png")
-    repeat: no-repeat
-    position: 15px center
-  display: block
-  font-size: 13px
-  line-height: 1
-  padding: 10px 20px 10px 30px
-  text-decoration: none
-
-.widget_menu a,
-.widget_menu a:hover
-  color: $body_text
-
-.widget_menu a:hover,
-.widget_menu a.selected
-  background:
-    color: rgba(#fff, 0.4)
-
-.widget_menu p
-  margin: 10px 20px 10px 20px
-  padding: 0
-  overflow: hidden
-
-// `Count
-//----------------------------------------------------------------------------------------------------
-
-a.count
-  +background-image(linear-gradient(#fff, #dddcda))
-  background-color: #eeedeb
-
-a.count,
-a.count:hover
-  +box-shadow(rgba(#fff, 0.7) 0 1px 0 0)
-  +border-radius(9px)
-  border: 1px solid #aaa
-  color: $body_text
-  display: inline-block
-  font-size: 11px
-  line-height: 1
-  padding: 2px 10px 3px
-  text-decoration: none
-
-a.count:hover
-  +background-image(linear-gradient(#f1efec, #e0dedb))
-  background-color: #ccc
-
-a.count:active
-  +glow
-  +background-image(linear-gradient(#d0cdca, #f1efec))
-  background-color: #eee
-
-header .count
-  float: right
-  margin-top: 2px
-
-header .settings
-  display: block
-  width: 15px
-  height: 15px
-  opacity: .5
-  background:
-    image: image-url("icon_settings.png")
-  float: right
-  margin-top: 4px
-
-  span
-    display: block
-    text-indent: 100%
-    white-space: nowrap
-    overflow: hidden
-
-header .settings:hover
-  opacity: .8
-
-
-
-
-// `Tags
-//----------------------------------------------------------------------------------------------------
-
-.tag
-  font-style: italic
-
-.tag:after
-  content: ','
-  margin-left: -2px
-
-.tag:last-child:after
-  content: ''
-
-.tag,
-.tag a,
-a.more_arrow,
-.tag a:hover,
-a.more_arrow:hover
-  color: #555
-
-.tag a,
-a.more_arrow
-  text-decoration: none
-
-.tag a:hover,
-a.more_arrow:hover
-  text-decoration: underline
-
-// `Header Icons
-//----------------------------------------------------------------------------------------------------
-
-.header_icon_clock,
-.header_icon_gear,
-.header_icon_bookmark,
-.header_icon_check,
-.header_icon_badge,
-.header_icon_note
-  background:
-    repeat: no-repeat
-    position: left center
-  padding:
-    top: 5px
-    bottom: 5px
-  position: relative
-  left: -5px
-
-.header_icon_clock
-  background:
-    image: image-url("header_icon_clock.png")
-  padding-left: 25px
-
-.header_icon_gear
-  background:
-    image: image-url("header_icon_gear.png")
-  padding-left: 25px
-
-.header_icon_bookmark
-  background:
-    image: image-url("header_icon_bookmark.png")
-  padding-left: 20px
-
-.header_icon_check
-  background:
-    image: image-url("header_icon_check.png")
-  padding-left: 20px
-
-.header_icon_badge
-  background:
-    image: image-url("header_icon_badge.png")
-  padding-left: 25px
-
-.header_icon_note
-  background:
-    image: image-url("header_icon_note.png")
-  padding-left: 25px
-
-.more_arrow
-  background: image-url("more_arrow.png") no-repeat right center
-  padding: 5px 25px 5px 0
-
-
-// Bookmarks
-//------------------------------------------------------------------------------------------
-
-.widget.bookmarks
-  ul
-    li
-      b
-        display: block
-        font:
-          size: 13px
-
-// Parallel Notes Sidebar
-//------------------------------------------------------------------------------------------
-.parallel_notes .pop_out_button
-  float: right
-  +box-shadow(rgba(#fff, 0.7) 0 1px 0 0)
-  +border-radius(9px)
-  border: 1px solid #aaa
-  color: $body_text
-  display: block
-  padding: 2px 10px 3px
-  +background-image(linear-gradient(#fff, #dddcda))
-  background-color: #eeedeb
-  text-indent: -200000px
-  margin-top: 2px
-.parallel_notes .pop_out_button:hover
-  +background-image(linear-gradient(#f1efec, #e0dedb))
-  background-color: #ccc
-.parallel_notes .pop_out_button:active
-  +glow
-  +background-image(linear-gradient(#d0cdca, #f1efec))
-  background-color: #eee
-.parallel_notes .pop_out_button span
-  background: image-url("icon_popout.png") no-repeat
-  height: 12px
-  width: 16px
-  display: block
-.parallel_notes section
-  padding: 10px 5px 5px 5px
-  background-image: image-url("shadow.png") repeat-x !important
-.parallel_notes input[type="text"]
-  height: 25px
-  margin: 0px 0px 10px 0px
-  width: 100%
-.parallel_notes textarea
-  height: 200px
-.parallel_notes select
-  width: 100%
-  margin: 5px 0px
-
-.parallel_notes_submit
-  padding: 0px 15px
-#sidebar .parallel_notes .action_button_green
-  min-width: 100px
-  +border-radius(16px)
-  box-shadow: inset rgba(#fff, 0.3) 0 1px 0 0, #fff 0 1px 0 0, #bbbabd 0 0 0 5px
-  font-size: 13px
-  margin-top: 10px
-#sidebar .parallel_notes .cancel
-  display: block
-  margin: 0 10px 0 0
-  padding: 15px 0px
-  color: #676767
-  font-size: 13px
-  text-decoration: underline
-
-#sidebar .parallel_notes .color_picker_list a
-  box-shadow: 1px 1px 0px #bbbabd, inset 0px 1px #fff
-
-#sidebar .parallel_notes .color_picker_list
-  box-shadow: 0px 1px #bbbabd, 0px 2px #fff
-  padding: 0px 0px 10px 0px
-  margin: 5px 0px
-
-#parallel_notes_date_time
-  padding: 0px 0px 0px 25px
-  background: image-url("icon_calendar.png") no-repeat left center
-
-.parallel_notes .publish_on_selected
-  padding-left: 25px
-  background: image-url("icon_lock.png") no-repeat 4px center
-
-.private:after
-  padding-left: 0.4em
-  content: image-url("icon_lock.png")
-
-.draft:after
-  content: " (draft)"
-  color: red
-  font-weight: normal
-
-.parallel_notes .publish_on_selected select
-  width: 91%
-.parallel_notes section form fieldset
-  margin: 0
-
-// `Fixed Widget Header
-//----------------------------------------------------------------------------------------------------
-
-.widget
-  position: relative
-  z-index: 1
-
-  .body-rounded
-    +round_bottom
-    +box-shadow(#fff 0 1px 0 0)
-    background:
-      color: $gray_light
-    border: 1px solid #cbc9cf
-    margin: 0 0 10px
-
-.widget header
-  +round_top
-  border-bottom: 0
-
-.widget header.widget_header_fixed
-  +box-shadow(#f2f1ef 0 -4px 0 0, inset #fff 0 1px 0 0)
-  border-bottom: 1px solid #cbc9cf !important
-  width: 263px
-  position: fixed !important
-  top: 82px
-  z-index: 0
-
-.widget-fixed
-  width: 300px
-  position: fixed !important
-  top: 82px
-  z-index: 0
-
-
-.widget_spacer
-  display: block
-  overflow: hidden
-  width: 0
-  height: 0
-
-#sidebar .widget:first-child .widget_spacer
-  height: 34px
-
-.widget.widget_last_fixed
-  width: 300px
-  position: fixed
-  top: 82px
-  z-index: 1000
-
-
-.widget.notes section table tbody tr td
-  display: block
-  width: 215px
-  text-overflow: ellipsis
-  overflow: hidden
-
 .widget-notice
   +round_top
   +round_bottom
@@ -473,24 +256,237 @@ a.more_arrow:hover
   padding: 10px 15px
   margin-bottom: 10px
 
+  .exit
+    display: block
+    float: right
+
   p
     margin-bottom: 0
 
+#widget-user-settings
+  .hd span
+    display: block
+    padding-left: 21px
+    background: image-url("header_icon_gear.png") no-repeat left center
 
-#sidebar #action-start.widget
-  margin-bottom: 10px
+#widget-user-badges
+  .hd span
+    display: block
+    padding-left: 21px
+    background: image-url("header_icon_badge.png") no-repeat left center
 
-// `Reader sidebar help widget
-//----------------------------------------------------------------------------------------------------
+#widget-reader-help
+  .hd span
+    display: block
+    padding-left: 21px
+    background: image-url("icon_help.png") no-repeat left center
 
-.widget.reader_help
-  header
-    span
+#widget-bookmarks
+  .hd span
+    display: block
+    background: image-url("header_icon_bookmark.png") no-repeat left center
+    padding-left: 21px
+
+  .ft
+    text-align: right
+
+
+  .tag
+    color: #555
+    font-style: italic
+
+    a
+      color: inherit
+      text-decoration: none
+
+    a:hover
+      text-decoration: underline
+
+  .tag:after
+    content: ','
+    margin-left: -2px
+
+  .tag:last-child:after
+    content: ''
+
+#widget-notes
+  .hd span
+    background: image-url("header_icon_note.png") no-repeat left center
+    padding-left: 25px
+
+#widget-download
+  .bd
+    background:
+      image: image-url("ad_bible_app.png")
+      position: 90% 80%
+      repeat: no-repeat
+
+    h3
+      margin-bottom: 1.3em
+    p
+      margin-bottom: 10px
+
+#widget-devotional
+  h2
+    margin: .5em 0 1em 0
+    padding: 0
+    font-size: 16px
+    font-weight: bold
+
+  p
+    margin-bottom: 20px
+
+#widget-plan-controls
+  .hd
+    .settings
       display: block
-      padding-left: 21px
-      background: image-url("icon_help.png") no-repeat left center
+      width: 15px
+      height: 15px
+      opacity: .5
+      background:
+        image: image-url("icon_settings.png")
+      float: right
+      margin-top: 4px
 
-  aside
-    +border-radius(0 0 4px 4px)
-    border-top: none
-    +box-shadow(inset rgba(0,0,0,.06) 0 3px 3px)
+      span
+        display: block
+        text-indent: 100%
+        white-space: nowrap
+        overflow: hidden
+
+    .settings:hover
+      opacity: .8
+
+  .menu
+    li.content_target
+      position: relative
+    form
+      margin: 0
+      margin-top: 4px
+      padding: 0
+      width: 30px
+      position: absolute
+      right: 10px
+      top: 0
+
+  #calendar
+    position: relative
+
+    div.icon
+      width: 35px
+      height: 35px
+      position: absolute
+      left: 15px
+      top: 15px
+
+      a
+        display: block
+        height: 35px
+        width: 35px
+        margin: 0
+        padding: 0
+        background:
+          color: transparent
+          image: image-url("sprite-subscription-calendar.png")
+          position: -73px 0px
+
+        span
+          display: block
+          text-indent: 100%
+          white-space: nowrap
+          overflow: hidden
+
+      a:hover
+        background:
+          color: transparent
+          image: image-url("sprite-subscription-calendar.png")
+          position: -73px 1px
+
+    div.day
+      padding: 15px
+      margin-left: 45px
+      position: relative
+
+      h4
+        margin-bottom: 0
+
+    .day
+      a.prev, a.next
+        text-indent: 100%
+        white-space: nowrap
+        overflow: hidden
+        padding: 0
+        background-image: none
+        background-position: none
+        position: absolute
+        width: 24px
+        height: 24px
+        top: 20px
+        border: 1px solid #d5d5d5
+        background: #eee
+
+      a.prev
+        +round_top_left
+        +round_bottom_left
+        border-right: none
+        right: 41px
+        background:
+          image: image-url("sprite-prev-next-arrows.png")
+          position: -62px -13px
+
+      a.next
+        +round_top_right
+        +round_bottom_right
+        right: 15px
+        background:
+          image: image-url("sprite-prev-next-arrows.png")
+          position: -11px -13px
+
+      a.disabled
+        cursor: default
+
+      a.next:hover, a.prev:hover
+        background:
+          color: rgba(#fff, 0.4)
+
+      a.disabled:hover
+        background:
+          color: transparent
+
+
+// -- Mobile Styles --------------------
+
+html.mobile-client
+
+  .widget ul
+    border: 0
+
+  #widget-plan-controls
+    .hd
+      display: none !important
+    .menu
+      border-radius: 0px !important
+
+    li.content_target
+      form
+        margin-top: 10px
+
+    li.content_target a,
+    li.content_target.active span
+      padding: 15px 20px 15px 15px
+      font-size: 15px
+
+  #sidebar
+    .widget-button
+      padding: 15px
+      margin-bottom: 0
+
+  #widget-devotional
+    margin: 15px
+
+  .content_target b
+    display: block
+    margin-bottom: .3em
+
+  .widget-notice
+    display: none

@@ -1,11 +1,9 @@
-= render "shared/widget_sign_up"
+= render "widgets/sign_up"
 - if params[:source] == "licenses"
-  .widget.account_benefits
-    %header
-      %span
-        =t("registration.benefits title")
-    %ul.widget_menu
-      %li
-        %p= t("registration.benefits blurb")
+  .widget
+    %h3.hd
+      = t("registration.benefits title")
+    %div.bd
+      = t("registration.benefits blurb")
 - else
-  = render '/shared/widget_ad_bible_app'
+  = render 'widgets/download_app'

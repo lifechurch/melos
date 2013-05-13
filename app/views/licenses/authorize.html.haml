@@ -7,10 +7,10 @@
 
 // same content is rendered in article tag for mobile only
 - content_for :sidebar do
-  .widget.account_benefits
-    %header
-      %span= @vendor.name
-    %ul.widget_menu
+  .widget
+    %h3.hd
+      = @vendor.name
+    %ul.menu
       - @vendor.links.each do |link|
         %li= link_to(link.title, link.url)
 

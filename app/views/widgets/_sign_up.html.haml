@@ -1,0 +1,6 @@
+#widget-signup.widget.simple
+  .bd
+    %h3
+      = t("no account")
+      - redirect = params[:redirect] || (request.referer ? URI(request.referer).path : nil)
+      %em= link_to t("sign up"), sign_up_path(redirect: redirect, source: params[:source])

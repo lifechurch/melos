@@ -6,11 +6,12 @@
            {path: "/settings/connections", string: t('users.edit connections')},
            {path: "/settings/devices", string: t('users.edit devices')},
            {path: "/settings/delete_account", string: t('users.edit account_existence')}]
-.widget
-  %header
-    %span.header_icon_gear
+
+#widget-user-settings.widget
+  %h3.hd
+    %span
       = t('users.settings')
-  %ul.widget_menu
+  %ul.menu
     - links.each do |l|
       %li
         = link_to_unless_current l[:string], l[:path] do

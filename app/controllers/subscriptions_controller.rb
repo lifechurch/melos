@@ -16,12 +16,10 @@ class SubscriptionsController < ApplicationController
 
   # TODO - ensure user subscribed.
   def show
-    client_settings.app_state       = YouVersion::ClientSettings::SUBSCRIPTION_STATE
-    client_settings.subscription_id = params[:id] #@subscription.id
-    @presenter              = Presenter::Subscription.new( @subscription , params, self)
-    self.sidebar_presenter  = Presenter::Sidebar::Subscription.new( @subscription , params, self)
-    now_reading(@presenter.reference)
-    respond_with(@presenter.subscription)
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    now_reading(presenter.reference)
+    respond_with(presenter.subscription)
   end
 
   def create
@@ -36,8 +34,6 @@ class SubscriptionsController < ApplicationController
 
   def destroy
     @subscription.destroy
-    client_settings.app_state       = YouVersion::ClientSettings::DEFAULT_STATE
-    client_settings.subscription_id = nil
     flash[:notice] = t("plans.unsubscribe successful")
     respond_with([@subscription], location: user_subscriptions_path(current_user))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
@@ -104,12 +100,12 @@ class SubscriptionsController < ApplicationController
   end
 
   def edit
-    @presenter              = Presenter::Subscription.new(@subscription,params,self)
+    self.presenter          = Presenter::Subscription.new(@subscription,params,self)
     self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
   end
 
   def calendar
-    @presenter              = Presenter::Subscription.new(@subscription,params, self)
+    self.presenter          = Presenter::Subscription.new(@subscription,params, self)
     self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
   end
 
@@ -118,16 +114,15 @@ class SubscriptionsController < ApplicationController
   # Might also be a nice metric to capture, this provides an appropriate hook for capture.
   # POST
   def shelf
-    client_settings.app_state       = YouVersion::ClientSettings::DEFAULT_STATE
-    client_settings.subscription_id = nil
     redirect_to(bible_path(last_read))
   end
 
   # action/endpoint for rendering subscription sidebar controls when not on subscription#show
   def sidebar
     subscription = subscription_for(params[:id])
-    presenter = Presenter::Sidebar::Subscription.new( subscription , params, self )
-    render partial: "/sidebars/subscriptions/show", locals: {presenter: presenter}, layout: false
+    render partial: "/sidebars/subscriptions/show",
+           locals: {presenter: Presenter::Sidebar::Subscription.new( subscription , params, self )},
+           layout: false
   end
 
   private
@@ -149,7 +144,7 @@ class SubscriptionsController < ApplicationController
 
   def ref_not_found
     @title = @subscription.name
-    @presenter = Presenter::Subscription.new( @subscription , params, self)
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
     render 'plans/invalid_ref'
    end

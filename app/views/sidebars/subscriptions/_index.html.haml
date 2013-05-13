@@ -1,9 +1,7 @@
 .widget
-  %header
-    %span
-      =t("plans.success widget title")
-  %ul.widget_menu
-    %li
-      %p= t("plans.success blurb")
-    %li
-      = link_to(t("plans.success blog link title"), "http://blog.youversion.com/2012/01/how-to-make-the-most-of-your-youversion-reading-plan/")
+  %h3.hd
+    =t("plans.success widget title")
+  %div.bd
+    %p= t("plans.success blurb")
+  %div.ft.link
+    = link_to(t("plans.success blog link title"), "http://blog.youversion.com/2012/01/how-to-make-the-most-of-your-youversion-reading-plan/")

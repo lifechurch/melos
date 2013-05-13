@@ -14,47 +14,51 @@
 
 = render partial: "/sidebars/plans/button", locals: {plan: plan}
 
-#sb-subscription
-  .widget.plan
-    %header= link_to plan.name, plan_path(plan)
-    %ul.widget_menu
-      %li#sb-calendar.calendar
-        %div.icon
-          - cal_text = t("plans.calendar")
-          =link_to("#", {title: cal_text }) do
-            %span= cal_text
-        %div.day
-          %h4= t("plans.which day in plan", day: day.to_s, total: plan.total_days)
-          .mute= pluralize(references.size,"reading")
 
-          // Next / Prev navigation
-          - prev_text = t("plans.previous day") # used in 3 places below
-          - if day > 1
-            = link_to(sample_plan_path(plan.to_param, day: (day - 1)), {class: "prev", title: prev_text }) do
-              %span= prev_text
-          - else
-            = link_to("#", class: "disabled prev") do
-              %span= prev_text
+#widget-plan-controls.widget
+  %h3.hd
+    = link_to plan.name, plan_path(plan)
 
-          - next_text = t("plans.next day") # used in 3 places below
-          - if day <= plan.total_days - 1
-            = link_to(sample_plan_path(plan.to_param, day: (day + 1)), {class: "next", title: next_text}) do
-              %span= next_text
+  #calendar.bd.nopad.calendar
+    - cal_text = t("plans.calendar")
+
+    %div.icon
+      =link_to("#", {title: cal_text }) do
+        %span= cal_text
+
+    %div.day
+      %h4= t("plans.which day in plan", day: day.to_s, total: plan.total_days)
+      .mute= pluralize(references.size,"reading")
+
+      // Next / Prev navigation
+      - prev_text = t("plans.previous day") # used in 3 places below
+      - if day > 1
+        = link_to(sample_plan_path(plan.to_param, day: (day - 1)), {class: "prev", title: prev_text }) do
+          %span= prev_text
+      - else
+        = link_to("#", class: "disabled prev") do
+          %span= prev_text
+
+      - next_text = t("plans.next day") # used in 3 places below
+      - if day <= plan.total_days - 1
+        = link_to(sample_plan_path(plan.to_param, day: (day + 1)), {class: "next", title: next_text}) do
+          %span= next_text
+      - else
+        = link_to("#", class: "disabled next") do
+          %span= next_text
+
+  %ul.menu.basic
+    - unless references.empty?
+      - reading.references.each_with_index do |ref,index|
+        %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
+          - if content_page == index
+            %span= ref.ref.safe_human
           - else
-            = link_to("#", class: "disabled next") do
-              %span= next_text
-      - unless references.empty?
-        - reading.references.each_with_index do |ref,index|
-          %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
-            - if content_page == index
-              %span= ref.ref.safe_human
-            - else
-              %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
-                = ref.ref.safe_human
+            %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
+              = ref.ref.safe_human
 
 - if reading.devotional
-  #sb-devotional.widget
-    %header= t("plans.devotional")
-    %ul.widget_menu
-      %li
-        %p= reading.devotional.html_safe
+  #widget-devotional.widget
+    %h3.hd= t("plans.devotional")
+    %div.bd= reading.devotional.html_safe
+

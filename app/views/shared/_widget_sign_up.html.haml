@@ -1,6 +1,0 @@
-.widget.sign_up
-  %aside.sign_up
-    %p
-      %b= t("no account")
-      - redirect = params[:redirect] || (request.referer ? URI(request.referer).path : nil)
-      %span.float_right{style: "margin-left: 10px; margin-top: 3px"}= link_to t("sign up"), sign_up_path(redirect: redirect, source: params[:source])

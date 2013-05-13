@@ -5,27 +5,25 @@
 = render partial: "/sidebars/plans/button", locals: {plan: plan}
 
 .widget
-  %header
-    %span
-      =t("plans.more info")
-  %ul.widget_menu
-    %li
-      %p
-        %b Plan name:
-        = plan.name
-      %p
-        %b=t("plans.length field")
-        = plan.length
-    - if !current_user || !current_user.subscribed_to?(plan)
-      %li
-        = link_to(t("plans.view sample"), day: 1.to_s, initial: 'true')
+  %h3.hd
+    =t("plans.more info")
+  %div.bd
+    %p
+      %b Plan name:
+      = plan.name
+    %p
+      %b=t("plans.length field")
+      = plan.length
+
+  - if !current_user || !current_user.subscribed_to?(plan)
+    %div.ft.link
+      = link_to(t("plans.view sample"), day: 1.to_s, initial: 'true')
+
 .widget
-  %header
-    %span
-      =t("plans.publisher")
-  %ul.widget_menu
-    %li
-      %p= plan.copyright
-    - unless plan.publisher_url.nil?
-      %li
-        = link_to(t("plans.about publisher"), plan.publisher_url)
+  %h3.hd
+    =t("plans.publisher")
+  %div.bd
+    %p= plan.copyright
+  - unless plan.publisher_url.nil?
+    %div.ft.link
+      = link_to(t("plans.about publisher"), plan.publisher_url)

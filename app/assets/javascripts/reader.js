@@ -728,28 +728,30 @@ Reader.prototype = {
   },
 
   ajaxNotesWidget : function() {
-    var thiss = this;
     if (this.notes_loaded) { return; }
+    var _this = this;
 
-    // console.log('notes ajaxed');
     $(".ajax_notes").each(function() {
-      var that = $(this);
-      var targets = that;
-      if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
+      var widget = $(this);
+      var targets = widget;
+
+      if (widget.attr('data-dup')) targets = targets.add(widget.attr('data-dup'));
+
       $.ajax({
-        url: that.data('ajax'),
+        url: widget.data('ajax'),
         method: "get",
         dataType: "html",
         success: function(data) {
+
           targets.fadeOut(200, function() {
-            targets.html(data);
-            targets.fadeIn(200);
+            var new_widget = $('<div>').html(data).hide();
+            targets.after(new_widget); // place new widget in markup directly after loading widget (not inside)
+            new_widget.fadeIn(200);
+            widget.remove();
           });
-          thiss.notes_loaded = true;
-        },
-        error: function(req, status, err) {
-          //console.log(status + err);
-        }//end error function
+
+          _this.notes_loaded = true;
+        }
       });
     });
 
@@ -758,25 +760,30 @@ Reader.prototype = {
   ajaxBookmarksWidget : function() {
     if (this.bookmarks_loaded) { return; }
 
+    var _this = this;
+
     $(".ajax_bookmarks").each(function() {
-      var that = $(this);
-      var targets = that;
-      if (that.attr('data-dup')){ targets = targets.add(that.attr('data-dup')); }
-      // console.log('bookmarks ajaxed');
+      var widget = $(this);
+      var targets = widget;
+
+      if (widget.attr('data-dup')){ targets = targets.add(widget.attr('data-dup')); }
+
       $.ajax({
-        url: that.data('ajax'),
+        url: widget.data('ajax'),
         method: "get",
         dataType: "html",
         success: function(data) {
+
           targets.fadeOut(200, function() {
-            targets.html(data);
-            targets.fadeIn(200);
+            var new_widget = $('<div>').html(data).hide();
+            targets.after(new_widget); // place new widget in markup directly after loading widget (not inside)
+            new_widget.fadeIn(200);
+            widget.remove();
           });
-          this.bookmarks_loaded = true;
-        },
-        error: function(req, status, err) {
-          //console.log(status + err);
-        }//end error function
+
+          _this.bookmarks_loaded = true;
+        }
+
       });
     });
 
@@ -828,10 +835,6 @@ Reader.prototype = {
       this.html_el.removeClass("full_screen");
       deleteCookie("full_screen");
       this.full_screen = false;
-
-      page.killWidgetSpacers();
-      page.fixWidgetHeader();
-      page.fixWidgetLast();
     }
     else {
       this.html_el.addClass("full_screen");
@@ -858,10 +861,6 @@ Reader.prototype = {
       if (getCookie('full_screen') == null) this.html_el.removeClass('full_screen'); //if user didn't explicitly set full_screen, go back to regular
 
       alt_version_menu_link.off('click'); // remove click handler from element
-
-      page.killWidgetSpacers();
-      page.fixWidgetHeader();
-      page.fixWidgetLast();
 
       this.parallel_mode = false;
     }
