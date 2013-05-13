@@ -6,6 +6,26 @@
   .dynamic_menu
     position: absolute
     top: 98px
+    font-size: 13px
+
+    .scroll
+      background: image-url("menu_scroll.png")
+      border: 1px solid #555
+      border-right: 0
+      overflow-x: hidden
+      overflow-y: scroll
+
+    .scroll::-webkit-scrollbar
+      background: #222
+      width: 15px
+
+    .scroll::-webkit-scrollbar-thumb
+      background: #999
+      border: 5px solid #222
+
+    .scroll::-webkit-scrollbar-thumb:hover
+      background: #ccc
+
 
   .menu_arrow
     left: 48%
