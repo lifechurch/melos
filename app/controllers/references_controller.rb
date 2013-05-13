@@ -110,7 +110,7 @@ class ReferencesController < ApplicationController
 
       pres = Presenter::InvalidReference.new(params,self)
         pres.version        = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
-        pres.alt_version    = cookies[:alt_version].present? ? Version.find(cookies[:alt_version]) : @presenter.version
+        pres.alt_version    = cookies[:alt_version].present? ? Version.find(cookies[:alt_version]) : pres.version
         pres.reference      = reference
         pres.reference_string = YouVersion::ReferenceString.new(reference.to_param)
         pres.alt_reference  = alt_reference
