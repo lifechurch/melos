@@ -60,7 +60,7 @@ YouversionWeb::Application.configure do
   config.active_support.deprecation = :notify
 
   # Enable Rack::Cache
-  config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}/body"
+  config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/body"
 
   # Add HTTP headers to cache static assets for an hour
   config.static_cache_control = "public, max-age=3600"

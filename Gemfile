@@ -8,7 +8,7 @@ gem 'awesome_print',          '~> 1.0.2'
 gem 'authorize-net',          '~> 1.5.2'
 gem 'cells',                  '~> 3.8.3'
 gem 'countries',              '~> 0.8.2'
-gem 'dalli',                  '~> 2.0.4'
+gem 'dalli',                  '~> 2.6.3'
 gem 'descriptive_statistics', '~> 1.1.0', require: false
 gem 'geokit',                 '~> 1.6.5'
 gem 'grackle',                '~> 0.1.10'
@@ -18,10 +18,9 @@ gem 'heroku',                 '~> 2.32.4'
 gem 'oj'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
-gem 'mongo'
-gem 'bson_ext'
-gem "oink"
-gem "gabba"
+gem 'oink'
+gem 'gabba'
+gem 'memcachier'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
