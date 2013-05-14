@@ -6,6 +6,7 @@
   day           = presenter.day
   reading       = presenter.reading
   content_page  = presenter.content_page
+  references    = reading.references
 
 .mobile#mobile-sb-subscription{class: ('initial' if presenter.initial_load?)}
   .reader_modal_header
@@ -13,8 +14,6 @@
       %a.close_btn.subscription_close_btn
     %nav.nav_right
       = link_to t("plan settings"), edit_user_subscription_path(current_user, plan_id: @plan.to_param), class: "settings_btn"
-
-
 
 .widget.widget-notice{style: "width:268px;"}
   %p
@@ -39,7 +38,7 @@
 
     %div.day
       %h4= (subscription.respond_to?(:reading_date) ? subscription.reading_date(day) : current_date + (day - 1)).strftime('%a %b %-d')
-      .mute=t("plans.which day in plan", day: day.to_s, total: subscription.total_days)
+      .mute= pluralize(references.size,"reading")
 
       // Next / Prev navigation
       - prev_text = t("plans.previous day") # used in 3 places below
@@ -59,8 +58,8 @@
           %span= next_text
 
   %ul.menu.basic
-    - unless reading.references.empty?
-      - reading.references.each_with_index do |ref,index|
+    - unless references.empty?
+      - references.each_with_index do |ref,index|
         %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
           = form_tag(user_subscription_path(current_user, subscription), method: :put) do
             = hidden_field_tag(:ref,            ref.ref.to_usfm)

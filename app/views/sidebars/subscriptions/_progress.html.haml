@@ -10,7 +10,7 @@
     = subscription.name
   %ul.menu
     %li
-      =render :partial => "progress", :locals => {subscription: subscription}
+      =render partial: "progress", locals: {subscription: subscription}
     %li
       =link_to( t("plans.calendar"), calendar_user_subscription_path(current_user,subscription))
     %li
