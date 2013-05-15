@@ -1,6 +1,8 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
+  get "/100million", to: "campaigns#hundred_million"
+
   # Route for tracking requests to /app url.  Specifically desired for BibleSeries analytics
   get "/app", to: "trackings#app"
   get '/confirm-email', to: 'users#confirm_email', as: "confirm_email"
