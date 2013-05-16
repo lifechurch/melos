@@ -7,11 +7,69 @@
 
     %article
 
-      %p Styles go in /assets/stylesheets/campaigns/100m.sass
-      %p Images go in /assets/images/campaigns/100m/
+      -# BA headline and logo
+      .intro
+        %h1.intro-logo
+          YouVersion: The Bible app
+        %h2.intro-starts
+          It starts with
+        %h2.intro-100m
+          100 million
+        %p.intro-copy
+          Can the Bible App reach 100 million installs before our 5th anniversary on July 10th? Only with your help!
 
-      %div{style: "width: 128px; height: 128px; position: relative;"}
-        %h1{style: "position: absolute; left: 100px; bottom: 16px;"}
-          100Millls!!
-        %div
-          = image_tag("campaigns/100m/andy_avatar.png")
+      -# Share buttons
+      .share
+        %p.share-copy
+          Share with your friends
+        .share-btns
+          %a.share-fb{:href => '#'}
+            Share on Facebook
+          %a.share-tw{:href => '#'}
+            Share on Twitter
+          %a.share-em{:href => '#'}
+            Share by email
+
+      -# App ticker
+      .ticker
+        %span.ticker-nos
+          092,351, 864
+        = image_tag "campaigns/100m/ticker-divider.png", class: "ticker-divider"
+
+      -# Day counter
+      .counter
+        %span.counter-days
+          %span.counter-bigtxt
+            42
+          %span.counter-smtxt
+            days
+
+        %span.counter-hrs
+          %span.counter-bigtxt
+            12
+          %span.counter-smtxt
+            hours
+
+        %span.counter-min
+          %span.counter-bigtxt
+            35
+          %span.counter-smtxt
+            minutes
+
+        %span.counter-sec
+          %span.counter-bigtxt
+            18
+          %span.counter-smtxt
+            seconds
+
+      -# Video
+      .video
+        .video-box
+          %iframe {width="640" height="360" src="http://www.youtube.com/embed/gGclEW8E7GU?list=PL0429142BE6C7A21B" frameborder="0" allowfullscreen}
+        .video-copy
+          %p
+            July 10 is going to be a big day. Not only is it the 5th anniversary of the Bible App, it also marks 5 years since the launch of Apple’s iTunes Store.
+          %p
+            But even bigger? With your help, it’s the day the Bible App will reach 100 million downloads.
+          %p.video-copy-big
+            We’ve learned God uses milestones like this to fuel even greater growth. Let’s make history together.
