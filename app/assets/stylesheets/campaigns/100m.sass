@@ -1,2 +1,213 @@
-h1
-  color: red
+@font-face
+  font-family: 'BebasNeueRegular'
+  src: url('../fonts/BebasNeue-webfont.eot')
+  src: url('../fonts/BebasNeue-webfont.woff') format('woff')
+  src: url('../fonts/BebasNeue-webfont.ttf') format('truetype')
+  src: url('../fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+// ------------------------ Desktop styles
+
+body
+  background: #252A30 image-url("campaigns/100m/bg.jpg") no-repeat center 290px
+  color: #fff
+  margin: 0
+  padding: 0
+  font: normal 15px arial, sans-serif
+
+p
+  margin: 0
+
+article
+  width: 960px
+  margin: 0 auto
+
+// ---- Intro
+
+.intro-logo,
+.intro-starts,
+.intro-100m
+  margin: 0
+
+.intro-logo
+  background: image-url("campaigns/100m/logo.png") no-repeat center top
+  overflow: hidden
+  white-space: nowrap
+  text-indent: 100%
+  height: 48px
+  margin-top: 20px
+
+.intro-starts
+  color: #FECC0E
+  text-transform: uppercase
+  letter-spacing: .85em
+  padding-left: .85em
+  font-size: 26px
+  font-weight: normal
+  text-align: center
+  margin-top: 25px
+
+.intro-100m
+  font: 240px 'BebasNeueRegular', arial, sans-serif
+  line-height: 220px
+  color: #435971
+  text-align: center
+  text-transform: uppercase
+  margin-top: 5px
+
+.intro-copy
+  font-size: 20px
+  text-align: center
+  display: block
+  width: 500px
+  margin: 245px auto 0
+
+// ---- Share buttons
+
+.share-copy
+  color: #FECC0D
+  text-transform: uppercase
+  font-size: 21px
+  letter-spacing: .7em
+  display: block
+  text-align: center
+  margin-top: 40px
+  padding-left: .7em
+
+.share-btns
+  overflow: hidden
+
+.share-fb, .share-tw, .share-em
+  float: left
+  margin: 30px 0 0 20px
+  display: block
+  padding: 14px 0
+  text-align: center
+  color: #fff
+  text-decoration: none
+  font-size: 21px
+  text-shadow: 0px -2px 0px rgba(0, 0, 0, .3)
+  -webkit-border-radius: 5px
+  border-radius: 5px
+  -webkit-box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, .3), inset 0px 3px 0px 0px rgba(255, 255, 255, .4)
+  box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, .3), inset 0px 3px 0px 0px rgba(255, 255, 255, .4)
+  font-weight: bold
+
+.share-fb
+  margin-left: 0
+  background: #3A5998 image-url("campaigns/100m/fb.png") no-repeat 70px 10px
+  padding-left: 30px
+  width: 278px
+
+.share-tw
+  background: #00ACED image-url("campaigns/100m/twitter.png") no-repeat 85px 12px
+  padding-left: 30px
+  width: 273px
+
+.share-em
+  background: #AAAAAA image-url("campaigns/100m/email.png") no-repeat 84px 12px
+  padding-left: 30px
+  width: 278px
+
+// ---- Ticker
+
+.ticker
+  margin-top: 75px
+  overflow: hidden
+  background: image-url("campaigns/100m/ticker-commas.png") no-repeat center 100px
+
+.ticker-group-1,
+.ticker-group-2,
+.ticker-group-3
+  width: 290px
+  float: left
+  margin-left: 45px
+  display: block
+  overflow: hidden
+
+.ticker-group-1
+  margin-left: 0
+
+.ticker-1,
+.ticker-2,
+.ticker-3,
+.ticker-4,
+.ticker-5,
+.ticker-6,
+.ticker-7,
+.ticker-8,
+.ticker-9
+  width: 90px
+  font-size: 120px
+  text-align: center
+  background: image-url("campaigns/100m/ticker-boxes.png") no-repeat center 4px
+  display: block
+  float: left
+  margin-left: 10px
+
+.ticker-1,
+.ticker-4,
+.ticker-7
+  margin-left: 0
+
+.ticker-divider
+  margin-top: -82px
+
+// ---- Counter
+
+.counter
+  clear: both
+  margin: 110px auto 0
+  overflow: hidden
+  width: 663px
+
+.counter-days,
+.counter-hrs,
+.counter-min,
+.counter-sec
+  float: left
+  width: 165px
+  display: block
+  border-left: 1px solid #435971
+  padding: 0
+
+.counter-days
+  border-left: 0
+
+.counter-bigtxt,
+.counter-smtxt
+  display: block
+  text-align: center
+  color: #96999D
+  text-transform: uppercase
+  padding: 0
+
+.counter-bigtxt
+  font-size: 84px
+
+// ---- Video
+
+.video
+  margin-top: 70px
+  clear: both
+  overflow: hidden
+
+.video-box
+  float: left
+  width: 640px
+
+.video-copy
+  width: 290px
+  padding-left: 30px
+  font-size: 17px
+  float: left
+
+  p
+    margin-bottom: 14px
+    line-height: 1.8em
+
+// ---- Footer
+
+footer
+  margin: 30px 0

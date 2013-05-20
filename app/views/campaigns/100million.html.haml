@@ -24,17 +24,38 @@
           Share with your friends
         .share-btns
           %a.share-fb{:href => '#'}
-            Share on Facebook
+            Facebook
           %a.share-tw{:href => '#'}
-            Share on Twitter
+            Twitter
           %a.share-em{:href => '#'}
-            Share by email
+            Email
 
       -# App ticker
       .ticker
-        %span.ticker-nos
-          092,351, 864
-        = image_tag "campaigns/100m/ticker-divider.png", class: "ticker-divider"
+        -# Each cluster of three numbers is grouped
+        %span.ticker-group-1
+          %span.ticker-1
+            0
+          %span.ticker-2
+            0
+          %span.ticker-3
+            0
+        %span.ticker-group-2
+          %span.ticker-4
+            0
+          %span.ticker-5
+            0
+          %span.ticker-6
+            0
+        %span.ticker-group-3
+          %span.ticker-7
+            0
+          %span.ticker-8
+            0
+          %span.ticker-9
+            0
+      .ticker-divider
+        = image_tag "campaigns/100m/ticker-divider.png"
 
       -# Day counter
       .counter
@@ -65,11 +86,17 @@
       -# Video
       .video
         .video-box
-          %iframe {width="640" height="360" src="http://www.youtube.com/embed/gGclEW8E7GU?list=PL0429142BE6C7A21B" frameborder="0" allowfullscreen}
+          %iframe{width:"640",height:"360",src:"http://www.youtube.com/embed/gGclEW8E7GU?list=PL0429142BE6C7A21B", frameborder:"0", allowfullscreen:"true"}
         .video-copy
           %p
             July 10 is going to be a big day. Not only is it the 5th anniversary of the Bible App, it also marks 5 years since the launch of Apple’s iTunes Store.
           %p
             But even bigger? With your help, it’s the day the Bible App will reach 100 million downloads.
-          %p.video-copy-big
-            We’ve learned God uses milestones like this to fuel even greater growth. Let’s make history together.
+          %p
+            We’ve learned God uses milestones like this to fuel even greater growth.
+          %p
+            Let’s make history together.
+
+      %footer
+        %p
+          Learn more about the Bible app at <a href="#">bible.com</a>
