@@ -159,35 +159,27 @@ article
 
 // ---- Counter
 
-.counter
+#date_countdown
   clear: both
   margin: 110px auto 0
   overflow: hidden
   width: 663px
-
-.counter-days,
-.counter-hrs,
-.counter-min,
-.counter-sec
-  float: left
-  width: 165px
-  display: block
-  border-left: 1px solid #435971
-  padding: 0
-
-.counter-days
-  border-left: 0
-
-.counter-bigtxt,
-.counter-smtxt
-  display: block
-  text-align: center
   color: #96999D
-  text-transform: uppercase
-  padding: 0
 
-.counter-bigtxt
-  font-size: 84px
+  .countdown_section
+    float: left
+    width: 165px
+    display: block
+    border-left: 1px solid #435971
+    padding: 0
+    text-align: center
+    text-transform: uppercase
+
+  .countdown_section:first-child
+    border-left: none
+
+  .countdown_amount
+    font-size: 84px
 
 // ---- Video
 

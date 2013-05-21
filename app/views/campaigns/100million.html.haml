@@ -2,6 +2,8 @@
 %html
   %head
     = stylesheet_link_tag "campaigns/100m"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    = javascript_include_tag "campaigns/100m/jquery.countdown.min.js"
 
   %body
 
@@ -67,31 +69,15 @@
       .ticker-divider
         = image_tag "campaigns/100m/ticker-divider.png"
 
+
+      #date_countdown
+
       -# Day counter
-      .counter
-        %span.counter-days
-          %span.counter-bigtxt
-            42
-          %span.counter-smtxt
-            days
+      :javascript
+        var timestamp = 1373529600;
+        var deadline  = new Date( timestamp * 1000);
+        $('#date_countdown').countdown({until: deadline});
 
-        %span.counter-hrs
-          %span.counter-bigtxt
-            12
-          %span.counter-smtxt
-            hours
-
-        %span.counter-min
-          %span.counter-bigtxt
-            35
-          %span.counter-smtxt
-            minutes
-
-        %span.counter-sec
-          %span.counter-bigtxt
-            18
-          %span.counter-smtxt
-            seconds
 
       -# Video
       .video
