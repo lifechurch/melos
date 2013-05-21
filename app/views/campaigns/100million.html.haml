@@ -13,8 +13,8 @@
           YouVersion: The Bible app
         %h2.intro-starts
           It starts with
-        %h2.intro-100m
-          100 million
+          %em
+            100 million
         %p.intro-copy
           Can the Bible App reach 100 million installs before our 5th anniversary on July 10th? Only with your help!
 
@@ -23,11 +23,21 @@
         %p.share-copy
           Share with your friends
         .share-btns
-          %a.share-fb{:href => '#'}
+          - fb_app_id   = Cfg.facebook_app_id
+          - fb_name     = "Do you have the Bible App?"
+          - fb_desc     = "I love the Bible App! It’s really helped me make the Bible part of my everyday life. It lets me highlight, listen to audio Bibles, make notes, follow devotional plans…even watch videos! Go download it now (it’s free): http://www.bible.com/app"
+          - fb_link     = "http://www.bible.com/app"
+          - fb_redirect = "http://www.bible.com/100million"
+          %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{u(fb_name)}&description=#{u(fb_desc)}&link=#{u(fb_link)}&redirect_uri=#{u(fb_redirect)}"}
             Facebook
-          %a.share-tw{:href => '#'}
+
+          - twitter = "The Bible App from @YouVersion has a permanent spot on my home screen. Read, watch, listen, and share...all in a free app: bible.com/app"
+          %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{u(twitter)}#"}
             Twitter
-          %a.share-em{:href => '#'}
+
+          - subject = "Do you have the Bible App?"
+          - body    = "I've been enjoying the Bible App from YouVersion and thought you might like it too. I’m opening the Bible a lot more these days because it’s so easy to read, watch, listen, and share. It even has Plans, which have a selection of the Bible all picked out and waiting for me every day. \n\n You can get it (free!) for pretty much any mobile device here: \n http://www.bible.com/app"
+          %a.share-em{href: "mailto:?subject=#{u(subject)}&body=#{u(body)}"}
             Email
 
       -# App ticker
