@@ -10,7 +10,7 @@
 // ------------------------ Desktop styles
 
 body
-  background: #252A30 image-url("campaigns/100m/bg.jpg") no-repeat center 290px
+  background: #252A30
   color: #fff
   margin: 0
   padding: 0
@@ -22,6 +22,11 @@ p
 article
   width: 960px
   margin: 0 auto
+
+
+a
+  color: #fecc0d
+
 
 // ---- Intro
 
@@ -64,7 +69,10 @@ article
   text-align: center
   display: block
   width: 500px
-  margin: 245px auto 0
+  margin: 25px auto 0
+
+.world-map
+  width: 100%
 
 // ---- Share buttons
 
@@ -365,3 +373,109 @@ footer
 
   footer
     margin: 1% 0
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px)
+
+  .intro-starts
+    letter-spacing: 0.60em
+    font-size: 22px
+    margin-top: 60px
+    padding-left: 0px
+
+
+    span
+      width: 100%
+      display: block
+      text-align: center
+      margin: 0 auto
+      padding-left: 10px
+
+    em
+      font-size: 95px
+
+  .intro-copy
+    padding: 0px 20px
+    font-size: 16px
+
+  .share-copy
+    margin: 50px 0px 30px
+
+
+  .share-fb,
+  .share-tw,
+  .share-em
+    width: 90%
+    margin: 0 auto 20px
+    padding: 8px 0px
+    background-position: 85px 5px !important
+
+
+  // ---- Counter
+
+  #date_countdown
+    clear: both
+    margin: 50px auto 100px
+    overflow: hidden
+    width: 100%
+    color: #96999D
+
+    .countdown_section
+      float: left
+      width: 24%
+      display: block
+      border-left: 1px solid #435971
+      padding: 0
+      text-align: center
+      text-transform: uppercase
+
+    .countdown_section:first-child
+      border-left: none
+
+    .countdown_amount
+      font-size: 34px
+
+  .ticker
+    margin-top: 60px
+    background-position: 6px 40px
+    background-size: 97%
+
+  .ticker-group-1,
+  .ticker-group-2,
+  .ticker-group-3
+    margin-left: 3%
+        
+
+  .ticker-1,
+  .ticker-2,
+  .ticker-3,
+  .ticker-4,
+  .ticker-5,
+  .ticker-6,
+  .ticker-7,
+  .ticker-8,
+  .ticker-9
+    font-size: 48px
+
+  .ticker-divider
+    img
+      width: 95%
+      margin-left: 3%
+
+  .video-box
+    iframe
+      height: 280px
+      width: 90%
+      margin-left: 5%
+
+  .video-copy
+    width: 90%
+    font-size: 16px
+    float: none
+    padding: 5% 5%
+
+  footer
+    width: 90%
+    padding: 0 5%
+    margin: 0px 0px 40px
+
