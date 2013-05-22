@@ -123,46 +123,39 @@ a
 
 // ---- Ticker
 
-.ticker
+
+
+#counter
   margin-top: 75px
   overflow: hidden
   background: image-url("campaigns/100m/ticker-commas.png") no-repeat center 100px
 
-.ticker-group-1,
-.ticker-group-2,
-.ticker-group-3
-  width: 290px
-  float: left
-  margin-left: 45px
-  display: block
-  overflow: hidden
+  .separator
+    display: none
 
-.ticker-group-1
-  margin-left: 0
+  .part
+    width: 290px
+    float: left
+    margin-left: 45px
+    display: block
+    overflow: hidden
 
-.ticker-1,
-.ticker-2,
-.ticker-3,
-.ticker-4,
-.ticker-5,
-.ticker-6,
-.ticker-7,
-.ticker-8,
-.ticker-9
-  width: 90px
-  font-size: 120px
-  text-align: center
-  background: image-url("campaigns/100m/ticker-boxes.png") no-repeat center 4px
-  display: block
-  float: left
-  margin-left: 10px
+  .part0
+    margin-left: 0
 
-.ticker-1,
-.ticker-4,
-.ticker-7
-  margin-left: 0
+  .digit
+    width: 90px
+    font-size: 120px
+    text-align: center
+    background: image-url("campaigns/100m/ticker-boxes.png") no-repeat center 4px
+    display: block
+    float: left
+    margin-left: 10px
 
-.ticker-divider
+  .part .digit:first-child
+    margin-left: 0
+
+#counter-divider
   margin-top: -82px
 
 // ---- Counter
@@ -447,7 +440,7 @@ footer
   .ticker-group-2,
   .ticker-group-3
     margin-left: 3%
-        
+
 
   .ticker-1,
   .ticker-2,
