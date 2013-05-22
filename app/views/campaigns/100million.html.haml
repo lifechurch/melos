@@ -4,6 +4,7 @@
     = stylesheet_link_tag "campaigns/100m"
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     = javascript_include_tag "campaigns/100m/jquery.countdown.min.js"
+    = javascript_include_tag "campaigns/100m/counter_mini.js"
 
   %body
 
@@ -72,13 +73,55 @@
         = image_tag "campaigns/100m/ticker-divider.png"
 
 
+      #counter{style: "color:#FFF;"}
+
       #date_countdown
 
       -# Day counter
       :javascript
-        var timestamp = 1373529600;
-        var deadline  = new Date( timestamp * 1000);
-        $('#date_countdown').countdown({until: deadline});
+
+        function installs_data(data) {
+          STATS = data;
+          var start_count = STATS.start_count;
+          var start_date = STATS.start_date;
+          var average_per_day = STATS.average_per_day;
+
+          var single_pace = 950;
+
+          // Todays Unix type timestamp (seconds):
+          var today_date = Math.round((new Date()).getTime() / 1000);
+          // Approximate days since start_time (seconds):
+          var date_difference_seconds = Math.abs(today_date - start_date);
+          var date_difference_days = Math.round(date_difference_seconds / 86400);
+          // Corrected total downloads (to start the counter with):
+          // tcg updated corrected_total_downloads and start_date/start_count on
+          // Oct 18, 2012 -- via: https://sprint.ly/product/390/#!/item/223
+          var corrected_total_downloads = Math.round(start_count + (average_per_day*date_difference_days));
+          //var myCounter = new flipCounter('counter', {value: corrected_total_downloads, inc: 1, pace: single_pace, auto:true, tFH: 55, bFH: 55, fW: 82 });
+
+
+          var config = {
+            digitsNumber : 10,
+            direction : Counter.ScrollDirection.Upwards,
+            characterSet : Counter.DefaultCharacterSets.numericUp
+          };
+
+          var myCounter = new Counter("counter", config);
+
+              myCounter.setValue(corrected_total_downloads, 1000);
+        }
+
+        (function() {
+
+          var timestamp = 1373529600;
+          var deadline  = new Date( timestamp * 1000);
+          $('#date_countdown').countdown({until: deadline});
+          $.getScript('http://installs.youversion.com/stats_jsonp.js');
+
+        })();
+
+
+
 
 
       -# Video
