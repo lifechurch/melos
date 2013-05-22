@@ -375,7 +375,10 @@ footer
     margin: 1% 0
 
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px)
+@media only screen and (min-width : 320px)
+
+  .intro-logo
+    background-size: 65%
 
   .intro-starts
     letter-spacing: 0.60em
@@ -437,7 +440,7 @@ footer
 
   .ticker
     margin-top: 60px
-    background-position: 6px 40px
+    background-position: 9px 40px
     background-size: 97%
 
   .ticker-group-1,
@@ -456,6 +459,10 @@ footer
   .ticker-8,
   .ticker-9
     font-size: 48px
+    width: 32%
+    margin-left: 1%
+    background-position: center 2px
+    border-radius: 7px
 
   .ticker-divider
     img
@@ -478,4 +485,8 @@ footer
     width: 90%
     padding: 0 5%
     margin: 0px 0px 40px
+
+    .ad-img
+      float: left
+      margin: 20px 0 0 20px
 
