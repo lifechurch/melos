@@ -5,43 +5,41 @@
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     = javascript_include_tag "campaigns/100m/jquery.counter.js"
     = javascript_include_tag "campaigns/100m/jquery.countdown.min.js"
-
+    %title= strip_tags t("campaigns.100m.tagline")
   %body
 
     %article
 
       -# BA headline and logo
       .intro
-        %h1.intro-logo
-          YouVersion: The Bible app
-        %h2.intro-starts
-          %span
-            It starts with
-          %em
-            100 million
+        .intro-logo
+          = t("campaigns.100m.logo")
+        %h1.intro-starts
+          = t("campaigns.100m.tagline").html_safe
         %img.world-map{ src: "/assets/campaigns/100m/bg.jpg"}
         %p.intro-copy
-          Can the Bible App reach 100 million installs before our 5th anniversary on July 10th? Only with your help!
+          = t("campaigns.100m.intro")
 
       -# Share buttons
       .share
         %p.share-copy
-          Share with your friends
+          = t("campaigns.100m.share.with friends")
+
         .share-btns
           - fb_app_id   = Cfg.facebook_app_id
-          - fb_name     = "Do you have the Bible App?"
-          - fb_desc     = "I love the Bible App! It’s really helped me make the Bible part of my everyday life. It lets me highlight, listen to audio Bibles, make notes, follow devotional plans…even watch videos! Go download it now (it’s free): http://www.bible.com/app"
+          - fb_name     = t("campaigns.100m.share.fb.dialog name")
+          - fb_desc     = t("campaigns.100m.share.fb.dialog desc")
           - fb_link     = "http://www.bible.com/app"
           - fb_redirect = "http://www.bible.com/100million"
           %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{u(fb_name)}&description=#{u(fb_desc)}&link=#{u(fb_link)}&redirect_uri=#{u(fb_redirect)}"}
             Facebook
 
-          - twitter = "The Bible App from @YouVersion has a permanent spot on my home screen. Read, watch, listen, and share...all in a free app: bible.com/app"
+          - twitter     = t("campaigns.100m.share.tw.tweet")
           %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{u(twitter)}#"}
             Twitter
 
-          - subject = "Do you have the Bible App?"
-          - body    = "I've been enjoying the Bible App from YouVersion and thought you might like it too. I’m opening the Bible a lot more these days because it’s so easy to read, watch, listen, and share. It even has Plans, which have a selection of the Bible all picked out and waiting for me every day. \n\n You can get it (free!) for pretty much any mobile device here: \n http://www.bible.com/app"
+          - subject     = t("campaigns.100m.share.em.subject")
+          - body        = t("campaigns.100m.share.em.body")
           %a.share-em{href: "mailto:?subject=#{u(subject)}&body=#{u(body)}"}
             Email
 
@@ -100,23 +98,18 @@
         .video-box
           %iframe{width:"640",height:"360",src:"http://www.youtube.com/embed/gGclEW8E7GU?list=PL0429142BE6C7A21B", frameborder:"0", allowfullscreen:"true"}
         .video-copy
-          %p
-            July 10 is going to be a big day. Not only is it the 5th anniversary of the Bible App, it also marks 5 years since the launch of Apple’s iTunes Store.
-          %p
-            But even bigger? With your help, it’s the day the Bible App will reach 100 million downloads.
-          %p
-            We’ve learned God uses milestones like this to fuel even greater growth.
-          %p
-            Let’s make history together.
+          %p= t("campaigns.100m.body.p1")
+          %p= t("campaigns.100m.body.p2")
+          %p= t("campaigns.100m.body.p3")
+          %p= t("campaigns.100m.body.p4")
 
       %footer
         = image_tag "campaigns/100m/app-icon.png", class: "ad-img"
         %p.ad-title
-          The Bible App is completely free and a great way to explore the Bible.
+          = t("campaigns.100m.ad.title")
 
         %p.ad-copy
-          Read, Listen, Watch, Share. Get the Bible App for your smartphone or tablet:
-          %a{href:"http://bible.com/app"} Download Now
+          = t("campaigns.100m.ad.copy").html_safe
 
         = link_to("http://bible.com/app") do
           = image_tag "campaigns/100m/app-icon.png", class: "ad-img"
