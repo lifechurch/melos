@@ -104,12 +104,12 @@
           %p= t("campaigns.100m.body.p4")
 
       %footer
-        = image_tag "campaigns/100m/app-icon.png", class: "ad-img"
+        = link_to("http://bible.com/app") do
+          = image_tag "campaigns/100m/app-icon.png", class: "ad-img"
+          
         %p.ad-title
           = t("campaigns.100m.ad.title")
 
         %p.ad-copy
           = t("campaigns.100m.ad.copy").html_safe
 
-        = link_to("http://bible.com/app") do
-          = image_tag "campaigns/100m/app-icon.png", class: "ad-img"
