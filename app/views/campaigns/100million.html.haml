@@ -1,0 +1,118 @@
+!!! 5
+%html
+  %head
+    %title= strip_tags t("campaigns.100m.tagline")
+    = stylesheet_link_tag "campaigns/100m"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    = javascript_include_tag "campaigns/100m/jquery.counter.js"
+    = javascript_include_tag "campaigns/100m/jquery.countdown.min.js"
+    = render '/shared/google_analytics'
+    %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %meta{:charset => 'utf-8'}
+  %body
+
+    %article
+
+      -# BA headline and logo
+      .intro
+        .intro-logo
+          = t("campaigns.100m.logo")
+        %h1.intro-starts
+          = t("campaigns.100m.tagline").html_safe
+        %img.intro-title{ src: "/assets/campaigns/100m/100m.png", alt: "It starts with 100 million"}
+        %img.world-map{ src: "/assets/campaigns/100m/bg.jpg", alt: "Map of the world"}
+        %p.intro-copy
+          = t("campaigns.100m.intro")
+
+      -# Share buttons
+      .share
+        %p.share-copy
+          = t("campaigns.100m.share.with friends")
+
+        .share-btns
+          - fb_app_id   = Cfg.facebook_app_id
+          - fb_name     = t("campaigns.100m.share.fb.dialog name")
+          - fb_desc     = t("campaigns.100m.share.fb.dialog desc")
+          - fb_link     = "http://www.bible.com/app"
+          - fb_redirect = "http://www.bible.com/100million"
+          %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{u(fb_name)}&description=#{u(fb_desc)}&link=#{u(fb_link)}&redirect_uri=#{u(fb_redirect)}"}
+            Facebook
+
+          - twitter     = t("campaigns.100m.share.tw.tweet")
+          %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{u(twitter)}#"}
+            Twitter
+
+          - subject     = t("campaigns.100m.share.em.subject")
+          - body        = t("campaigns.100m.share.em.body")
+          %a.share-em{href: "mailto:?subject=#{u(subject)}&body=#{u(body)}"}
+            Email
+
+      -# App ticker
+      #counter
+      #counter-divider
+        = image_tag "campaigns/100m/ticker-divider.png"
+
+      #date_countdown
+
+      -# Day counter
+      :javascript
+
+        function colonize(nStr)
+        {
+          nStr += '';
+          var rgx = /(\d+)(\d{3})/;
+          while (rgx.test(nStr)) { nStr = nStr.replace(rgx, '$1' + ':' + '$2');}
+          return nStr;
+        }
+
+
+        function installs_data(data) {
+          STATS = data;
+
+          var start_count = STATS.start_count;
+          var start_date = STATS.start_date;
+          var average_per_day = STATS.average_per_day;
+
+          var today_date = Math.round((new Date()).getTime() / 1000);
+          var date_difference_seconds = Math.abs(today_date - start_date);
+          var date_difference_days = Math.round(date_difference_seconds / 86400);
+          var corrected_total_downloads = Math.round(start_count + (average_per_day*date_difference_days));
+
+          $("#counter").counter({
+            direction: "up",
+            format: "999:999:999",
+            stop: "100:000:000",
+            initial: colonize(corrected_total_downloads)
+          });
+
+        }
+
+        (function() {
+
+          var timestamp = 1373529600;
+          var deadline  = new Date( timestamp * 1000);
+          $('#date_countdown').countdown({until: deadline});
+          $.getScript('http://installs.youversion.com/stats_jsonp.js');
+
+        })();
+
+
+      -# Video
+      .video
+        .video-box
+          %iframe{width:"640",height:"360",src:"http://www.youtube.com/embed/gGclEW8E7GU?list=PL0429142BE6C7A21B", frameborder:"0", allowfullscreen:"true"}
+        .video-copy
+          %p= t("campaigns.100m.body.p1")
+          %p= t("campaigns.100m.body.p2")
+          %p= t("campaigns.100m.body.p3")
+          %p= t("campaigns.100m.body.p4")
+
+      %footer
+        = image_tag "campaigns/100m/app-icon.png", class: "ad-img"
+
+        %p.ad-title
+          = t("campaigns.100m.ad.title")
+
+        %p.ad-copy
+          = t("campaigns.100m.ad.copy").html_safe
+

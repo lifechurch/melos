@@ -729,3 +729,26 @@ en:
   reader help:
     title:                                      "Select a verse…"
     line 1:                                     "Click or tap on any verse or collection of verses to bookmark, highlight, create a note, or share with your friends!"
+  campaigns:
+    100m:
+      logo:                                     "YouVersion: The Bible app"
+      tagline:                                  "It starts with <em>100 million</em>"
+      intro:                                    "Can the Bible App reach 100 million installs before our 5th anniversary on July 10th? Only with your help!"
+      share:
+        with friends:                           "Share with your friends"
+        fb:
+          dialog name:                          "Do you have the Bible App?"
+          dialog desc:                          "I love the Bible App! It’s really helped me make the Bible part of my everyday life. It lets me highlight, listen to audio Bibles, make notes, follow devotional plans…even watch videos! Go download it now (it’s free): http://www.bible.com/app"
+        tw:
+          tweet:                                "The Bible App from @YouVersion has a permanent spot on my home screen. Read, watch, listen, and share...all in a free app: bible.com/app"
+        em:
+          subject:                              "Do you have the Bible App?"
+          body:                                 "I've been enjoying the Bible App from YouVersion and thought you might like it too. I’m opening the Bible a lot more these days because it’s so easy to read, watch, listen, and share. It even has Plans, which have a selection of the Bible all picked out and waiting for me every day. \n\n You can get it (free!) for pretty much any mobile device here: \n http://www.bible.com/app"
+      body:
+        p1:                                     "July 10 is going to be a big day. Not only is it the 5th anniversary of the Bible App, it also marks 5 years since the launch of Apple’s iTunes Store."
+        p2:                                     "But even bigger? With your help, it’s the day the Bible App will reach 100 million downloads."
+        p3:                                     "We’ve learned God uses milestones like this to fuel even greater growth."
+        p4:                                     "Let’s make history together."
+      ad:
+        title:                                  "The Bible App is completely free and a great way to explore the Bible."
+        copy:                                   "Read, Listen, Watch, Share. Get the Bible App for your smartphone or tablet: <a href='http://bible.com/app'>Download Now</a>"
