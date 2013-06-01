@@ -1,11 +1,14 @@
 !!! 5
 %html
   %head
+    %title= strip_tags t("campaigns.100m.tagline")
     = stylesheet_link_tag "campaigns/100m"
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     = javascript_include_tag "campaigns/100m/jquery.counter.js"
     = javascript_include_tag "campaigns/100m/jquery.countdown.min.js"
-    %title= strip_tags t("campaigns.100m.tagline")
+    = render '/shared/google_analytics'
+    %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %meta{:charset => 'utf-8'}
   %body
 
     %article
