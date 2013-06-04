@@ -763,3 +763,6 @@ en:
       ad:
         title:                                  "The Bible App is completely free and a great way to explore the Bible."
         copy:                                   "Read, Listen, Watch, Share. Get the Bible App for your smartphone or tablet: <a href='http://bible.com/app'>Download Now</a>"
+      sidebar:
+        tagline:                                "Let's make history together"
+        button:                                 "Share the Bible App"
