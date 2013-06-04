@@ -20,7 +20,7 @@
       - list_item.labels.split(", ").each do |l|
         %a{href: user_bookmarks_path(@user, label: l.chomp)}= l
 
-  - if @me
+  - if current_user_is?(@user)
     .edit_controls
       %span.date= t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
       %span.hidden
