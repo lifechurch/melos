@@ -16,6 +16,13 @@ en:
     users username not available:               "The username you supplied is not available."
     users username or password invalid:         "The username or password you supplied is invalid."
     users username required:                    "You must enter a username."
+  meta:
+    100million:
+      title:                                    "It Starts with 100 Million"
+      description:                              "The Bible App has been installed almost 100 million times - an incredible milestone! But we are just getting started. Download the free Bible App today - and then share the app with your friends. Let’s make history together."
+    mobile:
+      title:                                    "The Bible App"
+      description:                              "Tens of millions of people are using the Bible App to read, listen to, watch and share God's Word, making it a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
   now:                                          "Now"
   celebrating 50MM:                             "Celebrating 50 Million App Installs!"
   link:                                         "Link"

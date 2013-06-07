@@ -1,4 +1,18 @@
-- @sidebar = false
+:ruby
+  meta_title        = t("meta.mobile.title")
+  meta_description  = t("meta.mobile.description")
+  meta_url          = "http://bible.com/app"
+
+  @sidebar          = false
+  @title            = meta_title
+  @meta_description = meta_description
+
+- content_for :additional_meta do
+  %meta{name: "url",            content: meta_url}
+  %meta{name: "og:title",       content: meta_title }
+  %meta{name: "og:url",         content: meta_url }
+  %meta{name: "og:description", content: meta_description }
+
 %article.mobileapps
   %section#mobile_content
     %h2= t('mobile page.h2')

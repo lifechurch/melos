@@ -1,11 +1,20 @@
+:ruby
+  meta_title        = t("meta.100million.title")
+  meta_description  = t("meta.100million.description")
+  meta_url          = "http://bible.com/100million"
 !!! 5
 %html
   %head
-    %title= strip_tags t("campaigns.100m.tagline")
+    %title= strip_tags(meta_title)
     %link{href: "http://fonts.googleapis.com/css?family=Fjalla+One&subset=latin,cyrillic-ext,cyrillic,greek-ext,vietnamese,latin-ext", rel: "stylesheet", type: "text/css"}
     %link{rel: "shortcut icon", href:"/favicon.ico"}
     %meta{charset:"utf-8"}
-    %meta{name: "viewport", content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
+    %meta{name: "viewport",       content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
+    %meta{name: "description",    content: meta_description}
+    %meta{name: "url",            content: meta_url}
+    %meta{name: "og:title",       content: meta_title }
+    %meta{name: "og:url",         content: meta_url }
+    %meta{name: "og:description", content: meta_description }
     = stylesheet_link_tag "campaigns/100m"
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     = javascript_include_tag "campaigns/100m/jquery.counter.js"
