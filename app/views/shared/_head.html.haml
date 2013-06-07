@@ -10,7 +10,7 @@
   %meta{:charset => 'utf-8'}
   %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
   %meta{property: "og:image", content: "#{url_for(asset_path('app-icon-english-512x512.png'))}"}
-  %meta{name: 'Description', content: @site.description}
+  %meta{name: 'Description', content: @meta_description || @site.description}
   %meta{name: "HandheldFriendly", content: "True"}
   %meta{name: "MobileOptimized", content: "320"}
   %meta{name: "viewport", content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
