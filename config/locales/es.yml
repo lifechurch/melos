@@ -1,5 +1,6 @@
 es:
   api:
+    users agree bool: "Para crear una cuenta debe estar de acuerdo con los terminos y condiciones."
     users confirm password matches: "Las nuevas contrasenas no coinciden."
     users email email: "La dirección de correo electrónico no es válida."
     users email email rfc: "La dirección de correo proporcionada es inválida."
@@ -7,11 +8,20 @@ es:
     users email not found: "No existe una cuenta con esa dirección de correo electrónico."
     users email required: "Debes entrar una direccion de correo electronico."
     users hash verified: "Esta cuenta ya ha sido verificada."
+    users password change: "Su contraseña nueva debe ser diferente de su contraseña antigua."
     users password length: "Su contraseña debe tener al menos 6 caracteres."
     users password required: "Ingrese su contrasena."
     users username alpha numeric extra: "El nombre de usuario debe de contener letras, números o guiones."
     users username not available: "El nombre de usuario proporcionado no está disponible."
     users username or password invalid: "El nombre de usuario o contraseña que usted proveyó es invalido."
+    users username required: "Debes entrar su contraseña."
+  meta:
+    100million:
+      title: "Inicia con 100 Millones"
+      description: "La Biblia App ha sido instalada casi 100 millones de veces – ¡Un increíble logro!  Pero solo estamos iniciando.  Descargue gratuitamente la Biblia App hoy – y luego comparta la App con sus amigos.  Hagamos historia juntos."
+    mobile:
+      title: "La Biblia App"
+      description: "Decenas de millones de personas utilizan la Biblia App para leer, escuchar, ver y compartir la Palabra de Dios, haciéndola parte de sus vidas diarias.  Descargue la App gratuita y acceda a sus marcadores, notas, y planes de lectura desde cualquier lugar.  Disfrute cientos de versiones, incluyendo audio, todo desde su dispositivo móvil."
   now: "Ahora"
   celebrating 50MM: "¡Celebrando 50 millones de instalaciones!"
   link: "Enlace"
@@ -39,6 +49,7 @@ es:
   deleted connection error: "Lo sentimos, hubo un error con la eliminación de su conexión a %{connection}."
   remove connection: "Eliminar"
   connection users: " Estos son algunos usuarios de YouVersion a los que está conectado en %{connection}:"
+  connection marketing: "YouVersion es mas divertido con amigos! Conecta su cuenta de YouVersion con sus otras redes sociales y instantemente encuentra sus amigos en YouVersion. Conectando sus cuentas tambien te permite que compartas contenido con solo unos pocos clics. Nunca publicaremos nada sin su aprobacion."
   next step connections: "Siguiente: Vincule sus cuentas, y encuentre a sus amigos."
   no notes found: "%{username} no tiene ninguna nota."
   no recent activity: "%{username} no tiene ninguna actividad reciente."
@@ -132,7 +143,7 @@ es:
     no community notes: "No hay notas de la comunidad que hagan referencia a los versículos seleccionados.  Para crear una nota, seleccione un versículo en el Lector de la Biblia y luego haga clic en el botón Seleccionado ubicado en la parte superior del lector."
     public: "Público"
     private: "Privado"
-    is private: "La nota que solicitas es privada. "
+    is private: "La nota que solicita es privada. "
     draft: "Borrador"
     creation form errors: "El (los) siguiente(s) error(es) no permitieron la creación de su nota:"
     reference field: "Referencia(s):"
@@ -207,6 +218,7 @@ es:
     other user profile: "Perfil de %{username}"
     my password: "Cambiar Mi Contraseña"
     edit password: "Cambiar Contraseña"
+    edit password errors: "El (Los) siguente(s) error(es) impidio/impidieron el cambio de su contraseña:"
     picture: "Fotografía"
     edit picture: "Cambiar Fotografía"
     edit notifications: "Gestionar Notificaciones"
@@ -271,7 +283,7 @@ es:
       information use title: "¿Cómo utilizamos su información?"
       information use text: "Cuando usted se registra para un servicio concreto que requiere una inscripción, le pedimos que nos proporcione información personal. Si a LifeChurch.tv le gustaría utilizar esta información de una manera diferente de la que fue solicitada, entonces le pediremos su consentimiento previo a tal uso. Usted puede declinar someter la información personal a cualquiera de nuestros servicios, en ese caso nosotros no podríamos ser capaces de proporcionarle dichos servicios."
       information security title: "¿Cómo podemos proteger su información?"
-      information security text: "LifeChurch.tv no comparte su información personal con otras instituciones fuera de LifeChurch.tv sin su consentimiento expreso. LifeChurch.tv puede compartir su información personal sólo si tiene una creencia de buena fe que el acceso, el uso, la conservación o la divulgación de dicha información es razonablemente necesaria para (a) cumplir con leyes, regulaciones, procesos legales o peticiones gubernamentales aplicables, (b ) hacer cumplir las Condiciones de Uso, incluyendo la investigación de posibles violaciónes de los mismos, (c) detectar, prevenir o gestionar el fraude, los temas de seguridad o técnicos, o (d) proteger contra daños inminentes los derechos, propiedad o seguridad de LifeChurch.tv , sus usuarios o el público según requiera o permita la ley. LifeChurch.tv toma las medidas adecuadas de seguridad para proteger contra el acceso no autorizado o la alteración, divulgación o destrucción de datos. Esto incluye revisiones internas de nuestras prácticas de recopilación de datos, almacenamiento y tratamiento y las medidas de seguridad, así como las medidas de seguridad físicas para protegerla del acceso no autorizado a sistemas en los que almacenamos datos personales. Nosotros restringimos el acceso a la información personal a los empleados de LifeChurch.tv, contratistas y agentes que necesitan conocer dicha información para operar, desarrollar o mejorar nuestros servicios. Estas personas están sujetas a obligaciones de confidencialidad y pueden estar sujetos a medidas disciplinarias, incluyendo despido y enjuiciamiento penal, si éstas no cumplen con estas obligaciones."
+      information security text: "LifeChurch.tv no comparte su información personal con otras instituciones fuera de LifeChurch.tv sin su consentimiento expreso. LifeChurch.tv puede compartir su información personal sólo si cree de buena fe que el acceso, uso, conservación o divulgación de dicha información es razonablemente necesaria para (a) cumplir con leyes, regulaciones, procesos legales o peticiones gubernamentales aplicables, (b ) hacer cumplir las Condiciones de Uso, incluyendo la investigación de posibles violaciones de los mismos, (c) detectar, prevenir o enfrentar fraude, temas de seguridad o técnicos, o (d) proteger contra daños inminentes los derechos, propiedad o seguridad de LifeChurch.tv , sus usuarios o el público según requiera o permita la ley. LifeChurch.tv toma las medidas adecuadas de seguridad para proteger contra el acceso no autorizado o la alteración, divulgación o destrucción de datos. Esto incluye revisiones internas de nuestras prácticas de recopilación de datos, almacenamiento y tratamiento y las medidas de seguridad, así como las medidas de seguridad físicas para protegerla del acceso no autorizado a sistemas en los que almacenamos datos personales. Nosotros restringimos el acceso a la información personal a los empleados de LifeChurch.tv, contratistas y agentes que necesitan conocer dicha información para operar, desarrollar o mejorar nuestros servicios. Estas personas están sujetas a obligaciones de confidencialidad y pueden estar sujetos a medidas disciplinarias, incluyendo despido y enjuiciamiento penal, si éstas no cumplen con estas obligaciones."
       data integrity title: "Integridad de los datos"
       data integrity text: "LifeChurch.tv revisa nuestra recopilación de datos, almacenamiento y procesamiento para asegurar que sólo recogemos, almacenamos y procesamos la información personal necesaria para proporcionar o mejorar nuestros servicios. Tomamos medidas razonables para asegurar que la información personal que procesamos es precisa, completa y actual, pero dependemos de los usuarios para actualizar o corregir su información personal cuando sea necesario.\n"
       information access title: "Acceso y actualización de información personal"
@@ -497,14 +509,31 @@ es:
     must start to complete: "¡Iniciar este plan para salvar lecturas completadas!"
     invalid reference: "Lo siento, una de las refencias de la Escritura para esta lectura puede ser que no existe en la versión elegida. Intente seleccionar una versión diferente, arriba. Si usted continúa viendo este mensaje, por favor permita que nuestro <a href='%{support_url}'>support team</a>  conozca sobre el problema. "
     sidebar notice: "Está revisando un plan de lectura"
+    completed notice: "Felicidades! Has completado su plan de lectura."
     exit: "Salir"
+    loading sidebar content: "Cargando contenido de barra lateral..."
   licenses:
+    authorized:
+      heading: "Su contenido ha sido autorizado."
+      description: "Ya puede <a href='%{content_link}'>ver el contenido que compro</a> de %{vendor} en YouVersion!"
+    has errors: "Habian errores con su solicitud:"
+    confirm:
+      email: "Para autorizar el contenido de video que compro, por favor consultar su correo electronico para un mail de confirmacion de YouVersion y haga clic en el enlace para confirmar su registro."
+    request:
+      invalid_vendor_signature: "Fallo la validacion de la licencia: Firma de vendedor no valida."
+      invalid_vendor_id: "Validacion de la licencia fallo: Identidad de vendedor no valido."
+      invalid_item_ids: "Fallo la validacion de la licencia: articulos invalidos."
+    vendor_transaction_id:
+      duplicate: "Identidad de transaccion: Esta identidad de transaccion ya esta registrado."
     auth:
+      login notice: "Para validar su contenido comprado, por favor conectarse a su cuenta de YouVersion abajo o <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice: "Para validar su contendio comprado, insribete a un cuenta de YouVersio abjao o <a href='/sign-in?source=licenses'>%{login}</a> si ya tienes una cuenta."
+      signup link text: "Inscribete para una nueva cuenta."
       login link text: "ingresar"
   registration:
     placeholder:
-      email: "Introduces tu correo electrónico"
-      username: "Introduces tu nombre de usuario "
+      email: "Ingrese su correo electrónico"
+      username: "Ingrese su nombre de usuario "
       password: "Ingrese su contraseña"
     with email: "Ingresar utilizando tu correo electrónico."
     with facebook: "Ingresar utilizando Facebook"
@@ -675,6 +704,8 @@ es:
       translation notes: "Notas"
       cross references: "Referencias Cruzadas"
   app errors:
+    404 plans explanation: "Estas buscando por el <a href='%{plan_path}'>%{title}</a> plan?"
+    404 contact support: "Teiene problmeas? Contacta nuestro <a href='%{support_url}'>equipo de apoyo</a>."
     404 explanation: "Usted puede intentar comenzar otra vez desde <a href='%{reader_path}'>home page</a>. Aún persiste el problema? Contacte nuestro <a href='%{support_url}'>support team</a>."
     404 message: "Lo sentimos, la página que usted está buscando no puede ser hallada. "
     408 message: "Lo sentimos, nuestros servidores no respondieron en el tiempo estimado."
@@ -696,3 +727,29 @@ es:
     public domain: "Dominio público"
     loading: "Cargando Más versiones..."
     load error: "Lo sentimos, hubo un problema técnico cargando más versiones. Cierre este menú e inicie nuevamente."
+  reader help:
+    title: "Seleccione un verso..."
+    line 1: "Haga clic o toque cualquier verso o coleccion de versos para marcar, destacar, crear un a nota, o compartir con sus amigos!"
+  campaigns:
+    100m:
+      logo: "YouVersion: La Biblia App"
+      tagline: "Inicia con <em>100 millones</em>"
+      intro: "¿Podrá la Biblia App alcanzar los 100 millones de instalaciones antes de nuestro 5to aniversario el 10 de Julio?  ¡Solamente con su ayuda!"
+      share:
+        with friends: "Comparta con sus amigos"
+        fb:
+          dialog name: "¿Tiene instalada la Biblia App?"
+          dialog desc: "¡Me gusta mucho la Biblia App! Me ha ayudado a hacer de la Biblia parte de mi vida diaria.  Me permite resaltar versículos, escuchar Audio-Biblias, hacer notas, seguir Planes de Lectura…!y hasta ver videos! Descárguela ahora mismo (es gratis): http://www.bible.com/descargar"
+        tw:
+          tweet: "La Biblia App de @YouVersion tiene un lugar permanente en mi pantalla principal.  Lea, vea, escuche y comparta…todo en un App gratuita: bible.com/es/app"
+        em:
+          subject: "¿Tiene instalada la Biblia App?"
+          body: "He disfrutado de la Biblia App y pensé que le gustaría también.  He estado leyendo la Biblia mucho más que antes porque es muy fácil de leer, ver, escuchar y compartir.  Cuenta con Planes de Lectura, los cuales tienen una selección de pasajes y versículos que esperan por mi cada día.\n\nEs gratis y puede descargarla, casi a cualquier dispositivo móvil, aquí:\nhttp://www.bible.com/descargar"
+      body:
+        p1: "Julio 10 será el gran día.  No solo porque es el 5to aniversario de la Biblia App, sino porque también hace 5 años se lanzó a través de iTunes Store de Apple."
+        p2: "¿Pero aún más? Con su ayuda, es el día en que la Biblia App alcance 100 millones de descargas."
+        p3: "Hemos aprendido que Dios utiliza metas como estas para fomentar un crecimiento aún más grande."
+        p4: "Hagamos historia juntos."
+      ad:
+        title: "La Biblia App es completamente gratis y una excelente herramienta para explorar la Biblia."
+        copy: "Lea, Escuche, Vea, Comparta.  Instale la Biblia App en su teléfono o tablet: <a href='http://www.bible.com/descargar'>Descargar Ahora</a>"

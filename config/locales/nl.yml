@@ -15,6 +15,13 @@ nl:
     users username not available: "De gebruikersnaam die je hebt ingevoerd is niet beschikbaar."
     users username or password invalid: "De gebruikersnaam of het wachtwoord is ongeldig."
     users username required: "Je moet een gebruikersnaam invoeren."
+  meta:
+    100million:
+      title: "Het begint met 100 miljoen"
+      description: "De Bijbel App is al bijna 100 miljoen keer geïnstalleerd - een geweldige mijlpaal! Maar we zijn pas begonnen. Download vandaag de gratis Bijbel App nog -en deel de app met jouw vrienden. Laten we samen geschiedenis maken."
+    mobile:
+      title: "De Bijbel App"
+      description: "Tientallen millioenen mensen gebruiken de Bible App om Gods Woord een deel van hun leven te maken door te lezen, luisteren, bekijken en het delen ervan. Download de gratis app en krijg toegang op je bladwijzers, notitities en leesplannen vanaf elke plek. Geniet van honderden vertalingen, inclusief audio, alles op je mobiele apparaat."
   now: "Nu"
   celebrating 50MM: "We vieren de 50 miljoenste installatie!"
   link: "Link"
@@ -723,3 +730,24 @@ nl:
   reader help:
     title: "Selecteer een vers..."
     line 1: "Klik of raak een vers of verzen aan om een bladwijzer, makering, een notitie aan te maken, of deel ze met je vrienden!"
+  campaigns:
+    100m:
+      logo: "YouVersion: De Bijbel app"
+      tagline: "Het begint met <em>100 miljoen</em>"
+      intro: "Kan de Bijbel App 100 miljoen installaties bereiken voor onze 5de verjaardag op 10 Juli? Alleen maar met jou hulp!"
+      share:
+        with friends: "Deel met jouw vrienden"
+        fb:
+          dialog name: "Heb jij de Bijbel App?"
+          dialog desc: "Ik hou van de Bijbel App! Het heeft me echt geholpen om van de Bijbel een deel van mijn dagelijkse leven te maken. Het geef me de mogelijkheid om tekst te markeren, te luisteren naar audio Bijbels, het maken van notities, het volgen van toewijdings-leesplannen... zelfs het bekijken van video's! Ga en download het nu (het is gratis): http://www.bible.com/app"
+        em:
+          subject: "Heb jij de Bijbel App?"
+          body: "Ik ben aan het genieten van de Bijbel App van YouVersion en dacht dat jij dat misschien ook zou doen. Ik sla de Bijbel veel vaker open de laatste tijd omdat het makkelijk is om te lezen, kijken, luisteren en delen. Het heeft zelfs leesplannen, die selecties hebben van de Bijbel allemaal geselecteerd die me dagelijks opwachten.\n\nJe kan het (gratis!) voor bijna iedere mobiele toestel krijgen via:\nhttp://www.bible.com/app"
+      body:
+        p1: "10 Juli zal een grote dag zijn. Het is niet alleen de 5de verjaardag van de Bijbel App, het markeert ook de 5de jaar sinds de lancering van de Apple iTunes Winkel."
+        p2: "Maar groter zelfs! Met jou hulp, wordt het de dag dat de Bijbel App 100 miljoen downloads zal hebben."
+        p3: "We hebben geleerd dat God mijlpalen als deze gebruikt om nog meer groei te veroorzaken."
+        p4: "Laten we samen geschiedenis maken."
+      ad:
+        title: "De Bijbel App is volledig gratis en een geweldige manier om de Bijbel te verkennen."
+        copy: "Lees, Luister, Kijk, Deel. Neem de Bijbel App voor je smartphone of tablet:<a href='http://bible.com/app'>Download Nu</a>"

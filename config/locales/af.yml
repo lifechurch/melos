@@ -276,7 +276,6 @@ af:
       information use title: "Hoe gebruik ons jou inligting?"
       information use text: "Wanneer jy inteken op 'n spesifieke diens wat registrasie benodig, vra ons dat jy persoonlike inligting verstrek. As LifeChurch.tv die inligting anders wil aanwend as gestipuleer tydens registrasie, sal ons voor die tyd jou goedkeuring vra vir die gebruik daarvan. Ons sal nie sensitiewe inligting bymekaarmaak of gebruik vir enige ander doel as wat in ons Privaatheidsbeleid en/of spesifieke diens kennisgewings gestipuleer is nie, tensy ons vooraf jou goedkeuring verkry het. Jy mag ons versoek afkeur om persoonlike inligting aan enige van ons dienste te verskaf, in welke geval LifeChurch.tv nie die gekose dienste aan jou kan verskaf nie."
       information security title: "Hoe ons jou persoonlike inligting beskerm?"
-      information security text: "LifeChurch.tv deel nie jou persoonlike inligting met ander instellings buite LifeChurch.tv sonder jou toestemming. LifeChurch.tv mag u persoonlike inligting deel slegs indien dit in goeie geloof oortuig is dat toegang, gebruik, bewaring of die openbaarmaking van sodanige inligting redelikerwys nodig is om (a) te voldoen aan enige toepaslike wet, regulasie, wettige proses of afdwingbaar owerheid versoek, (b) die toepaslike terme van gebruik, met inbegrip van ondersoek na moontlike oortredings daarvan uit te voer, (c) bedrog, sekuriteit of tegniese probleme op te spoor, te voorkom of andersins aan te spreek, of (d) te beskerm teen dreigende skade aan die regte, eiendom of veiligheid van LifeChurch.tv, sy gebruikers of die publiek, soos vereis of toegelaat word deur wet. LifeChurch.tv neem toepaslike veiligheidsmaatreëls om te beskerm teen ongemagtigde toegang tot of ongemagtigde verandering, openbaarmaking of vernietiging van data, insluitende interne kontrole van ons data-insameling, stoor en verwerking van praktyke en sekuriteitsmaatreëls, sowel as fisiese sekuriteit maatreëls om te beskerm teen ongemagtigde toegang tot stelsels waar ons persoonlike data stoor. Tensy uitdruklike toestemming verkry word van jou, beperk LifeChurch.tv die toegang van persoonlike inligting tot sy werknemers, kontrakteurs en agente wat dit nodig het om die inligting te bedryf, te ontwikkel of ons dienste te verbeter om. Hierdie individue is gebind deur vertroulikheidsverpligtinge en kan onderhewig wees aan dissipline, insluitend die werksbeëindiging en kriminele vervolging, indien hulle versuim om hierdie verpligtinge na te kom."
       data integrity title: "Data Integriteit"
       data integrity text: "LifeChurch.tv hersien ons data-insameling, stoor en verwerkings praktyke om te verseker dat ons net die persoonlike informasie insamel, stoor en verwerk wat nodig is om ons dienste te voorsien of verbeter. Ons neem redelike stappe om te verseker dat die persoonlike inligting wat ons verwerk akkuraat, volledig en huidig is, maar ons is afhanklik van ons gebruikers om hul persoonlike inligting op te dateer of te korrigeer wanneer dit nodig is."
       information access title: "Toegang tot en opdatering van persoonlike inligting"
@@ -723,3 +722,11 @@ af:
   reader help:
     title: "Kies 'n vers..."
     line 1: "Kliek of druk op enige vers of versameling van verse om die verse te boekmerk, uitlig, nota skryf of met jou vriende te deel!"
+  campaigns:
+    100m:
+      intro: "Kan die Bible App 100 miljoen inskrywings bereik voor ons 5de herdenking die 10de Julie? Slegs met julle hulp!"
+      share:
+        fb:
+          dialog name: "Het jy die Bybel App?"
+        em:
+          subject: "Het jy die Bybel App?"

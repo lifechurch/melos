@@ -42,7 +42,7 @@ pt-PT:
   deleted connection error: "Desculpe, houve um erro ao remover a sua associação a %{connection}."
   remove connection: "Remover"
   connection users: "Aqui estão alguns utilizadores do YouVersion aos quais está ligado em %{connection}:"
-  connection marketing: "O YouVersion é mais divertido com amigos! Ligue a sua conta YouVersion às suas outras redes sociais e encontre instantaneamente os seus amigos no YouVersion. Ligar as suas contas também permite partilhar conteúdo em apenas alguns cliques. Nunca iremos publicar alguma coisa sem a sua aprovação."
+  connection marketing: "O YouVersion é mais divertido com amigos! Ligue a sua conta YouVersion às suas outras redes sociais e encontre instantaneamente os seus amigos no YouVersion. Ligar as suas contas também permite partilhar conteúdo em apenas alguns cliques. Nunca iremos publicar nada sem a sua aprovação."
   next step connections: "Seguinte: Ligue as suas contas e encontre os seus amigos"
   no notes found: "%{username} não tem notas criadas."
   no recent activity: "%{username} não tem atividade recente."
@@ -276,7 +276,6 @@ pt-PT:
       information use title: "do not translate"
       information use text: "do not translate"
       information security title: "do not translate"
-      information security text: "do not translate"
       data integrity title: "do not translate"
       data integrity text: "do not translate"
       information access title: "do not translate"
@@ -723,3 +722,23 @@ pt-PT:
   reader help:
     title: "Selecione um versículo..."
     line 1: "Clique ou toque em qualquer versículo ou grupo de versículos para colocar um marcador, destacar, criar uma nota, ou partilhar com os seus amigos!"
+  campaigns:
+    100m:
+      logo: "YouVersion: A app da Bíblia"
+      tagline: "Tem início nos <em>100 milhões</em>"
+      intro: "Poderá a App da Bíblia atingir os 100 milhões de instalações antes do nosso 5º aniversário em 10 de Julho? Só com a sua ajuda!"
+      share:
+        with friends: "Partilhe com os seus amigos"
+        fb:
+          dialog name: "Já tem a App da Bíblia?"
+          dialog desc: "Gosto bastante da App da Bíblia! Ajudou-me realmente a fazer da Bíblia uma parte da minha vida diária. Permite-me destacar versículos, ouvir a Bíblia em áudio, criar notas, subscrever planos devocionais... até ver vídeos! Descarregue agora (é grátis): http://www.bible.com/app"
+        em:
+          subject: "Já instalou a App da Bíblia?"
+      body:
+        p1: "10 de Julho vai ser um grande dia. Não só é o dia em que a App da Bíblia cumpre o seu 5º aniversário, mas também a loja iTunes da Apple celebra 5 anos desde o seu lançamento."
+        p2: "Mas quer um dia ainda melhor? Com a sua ajuda, é o dia em que a App da Bíblia irá atingir os 100 milhões de downloads."
+        p3: "Sabemos que Deus usa este tipo de acontecimentos para causar um crescimento ainda maior."
+        p4: "Vamos fazer história juntos."
+      ad:
+        title: "A App da Bíblia é completamente gratuita e é uma ótima maneira de explorar a Bíblia."
+        copy: "Leia, Escute, Veja, Partilhe. Descarregue a App da Bíblia para o seu smartphone ou tablet: <a href='http://bible.com/app'>Descarregue Agora</a>"

@@ -15,6 +15,9 @@ bg:
     users username not available: "Няма такъв потребител"
     users username or password invalid: "Името или паролата са невалидни"
     users username required: "Трябва да въведете потребителско име"
+  meta:
+    100million:
+      title: "Започва със 100 милиона"
   now: "Сега"
   celebrating 50MM: "С над 50 милиона инсталирани приложения"
   link: "Връзка"
@@ -276,7 +279,6 @@ bg:
       information use title: "Как използваме вашата информация?"
       information use text: "When you sign up for a particular service that requires registration, we ask you to provide personal information. If LifeChurch.tv would like to use this information in a manner different than the purpose for which it was collected, then we will ask for your consent prior to such use. We will not collect or use sensitive information for purposes other than those described in this Privacy Policy and/or in the specific service notices, unless we have obtained your prior consent. You may decline to submit personal information to any of our services, in which case LifeChurch.tv may not be able to provide those services to you."
       information security title: "Сигурност на информацията"
-      information security text: "LifeChurch.tv takes appropriate security measures to protect against unauthorized access to or unauthorized alteration, disclosure or destruction of data. These include internal reviews of our data collection, storage and processing practices and security measures, as well as physical security measures to guard against unauthorized access to systems where we store personal data. We restrict access to personal information to LifeChurch.tv employees, contractors and agents who need to know that information to operate, develop or improve our services. These individuals are bound by confidentiality obligations and may be subject to discipline, including termination and criminal prosecution, if they fail to meet these obligations."
       data integrity title: "Цялост на данните"
       data integrity text: "LifeChurch.tv processes personal information only for the purposes for which it was collected and in accordance with this Privacy Policy or any applicable service-specific privacy notice. We review our data collection, storage and processing practices to ensure that we only collect, store and process the personal information needed to provide or improve our services. We take reasonable steps to ensure that the personal information we process is accurate, complete, and current, but we depend on our users to update or correct their personal information whenever necessary."
       information access title: "Влизане и обноваване на личната информация."
@@ -723,3 +725,22 @@ bg:
   reader help:
     title: "Изберете стих..."
     line 1: "Натиснете на който и да било стих или сбор от стихове за да ги запазите, маркирате, да напишете бележка за тях или да ги споделите с приятели!"
+  campaigns:
+    100m:
+      intro: "Може ли Библията да достигне 100 милиона инсталации преди петата си годишнина на 10 юли? Само с твоята помощ!"
+      share:
+        with friends: "Сподели с приятели"
+        fb:
+          dialog name: "Имаш ли приложение Библията?"
+          dialog desc: "Харесва ми приложение Библията! Много ми помогна да направя Библията част от всекидневния ми живот. Позволява ми да си отбелязвам стихове, да слушам аудио Библия, да си водя записки, да следвам планове за прочит...дори да гледам видеа! Свали си я сега (безплатна е):"
+        em:
+          subject: "Имаш ли приложение Библията?"
+          body: "Наслаждавам се на приложение Библията от YouVersion и смятам, че и на теб може да ти хареса. Тези дни си чета Библията доста повече, защото с приложението е много по-лесно да четеш, да гледаш, да слушаш и да споделяш. Дори има Планове за прочит, които са прекрасни за прочитане на Библията и ме чакат да ги прочета всеки ден <br />\n<br />\nМожеш да си я свалиш (безплатно!) за почти всякакви мобилни устройства от тук:"
+      body:
+        p1: "10 юли ще бъде голям ден. Не само е петата годишнина на приложение Библията, но също така стават пет години от пускането на iTunes Store на Apple"
+        p2: "Но дори по-голямо? С твоя помощ, това е денят, в който приложение Библията достигна 100 милиона сваляния."
+        p3: "Научихме, че Бог използва събития, за да подхрани дори по-голям растеж."
+        p4: "Нека правим история заедно."
+      ad:
+        title: "Приложение Библията е напълни безплатно и е прекрасен начин за иследване на Писанието."
+        copy: "Чети, Слушай, Гледай, Споделяй. Вземи приложение Библията за твоя смартфон или таблет: <a href='http://bible.com/app'>Свали сега</a> "

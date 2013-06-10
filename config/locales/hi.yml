@@ -6,11 +6,15 @@ hi:
     users email email rfc: "आपके द्वारा उपलब्ध कराया गया इमेल अमान्य हैं।"
     users email not available: "इस इमेल अड्रेस के द्वारा पहले से ही एक अकाउंट रेजिस्टर्ड हैं।"
     users email not found: "इस इमेल अड्रेस से कोई अकाउंट नहीं हैं।"
+    users email required: "ईमेल अड्रेस आवश्यक हैं। "
     users hash verified: "यह अकाउंट पहले से सुनिश्चित किया गया हैं।"
+    users password change: "पुराने पासवर्ड से अलग नया पासवर्ड एंटर करे। "
     users password length: "आपका पासवर्ड कम से कम 6 अक्षरों का होना अनिवार्य हैं।"
+    users password required: " पासवर्ड आवश्यक हैं। "
     users username alpha numeric extra: "username अक्षरों,अंकों या डाश के रूप में होना अनिवार्य हैं।"
     users username not available: "प्रस्तुत username उपलब्ध नहीं हैं।"
     users username or password invalid: "आपके द्वारा उपलब्धित उपयोगकर्ता नाम या पासवर्ड अमान्य हैं।"
+    users username required: "username इंटर करना अनिवार्य हैं। "
   now: "अभी "
   celebrating 50MM: "50 मिलियन app स्थापना उत्सव!"
   link: "लिंक"
@@ -270,7 +274,6 @@ hi:
       information use title: " आपके द्वारा उपलब्ध जानकारी का हम कैसे उपयोग करते हैं? "
       information use text: "do not translate"
       information security title: "जानकारियों की सुरक्षा"
-      information security text: "do not translate"
       data integrity title: "डाटा की सम्पूर्णता "
       data integrity text: "do not translate"
       information access title: "व्यक्तिगत जानकारी का accessing और updation कार्य प्रगति पर हैं"
@@ -695,3 +698,10 @@ hi:
     public domain: "सार्वजनिक कार्यक्षेत्र "
     loading: "और अधिक संस्करण लोड किया जा रहा हैं......"
     load error: "कृपया क्षमा कीजिये और अधिक संस्करण लोड करने में कठिनाई हैं।इस मेनू को निरस्त कर दोबारा कोशिश करे।"
+  campaigns:
+    100m:
+      share:
+        fb:
+          dialog name: "क्या आपके पास बाइबिल App है?"
+        em:
+          subject: "क्या आपके पास बाइबिल App है?"

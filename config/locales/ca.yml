@@ -275,7 +275,6 @@ ca:
       information use title: "Com utilitzem la teva informació?"
       information use text: "Quan et registres en un servei particular que necessita un registre, et demanem que ens donis informació personal. Si LifeChurch.tv volgués utilitzar aquesta informació d'una manera diferent que la proposada en demanar-la, et demanarem el teu consentiment abans d'utilitzar-la. Pots rebutjar l'enviament d'informació personal a qualsevol dels nostres serveis. En aquest cas, no podrem donar-te aquest serveis."
       information security title: "Com protegim la teva informació?"
-      information security text: "LifeChurch.tv no comparteix la teva informació principal amb altres institucions fora de LifeChurch.tv sense el teu consentiment explícit. LifeChurch.tv pot compartir la teva informació només si pensa que l'accés a la informació, el seu ús, preservació o divulgació es raonablement necessari per:\n(a) Satisfer qualsevol llei, regulació, procés legal o fer complir una demanda governamental;\n(b) Fer complir els temes d'ús aplicables, incloent la investigació de violacions potencial d'aquests;\n(c) Detectar o prevenir frau d'identitat, seguretat o problemes tècnics;\n(d) Protegir d'una violació imminent dels drets, de la propietat o de la seguretat de LifeChurch.tv, els seus usuaris o el públic que requereix o permet la llei.\nLifeChurch.tv pren mesures apropiades de seguretat per protegir-se contra accés o alteració no autoritzats, revelació o destrucció de dades, incloent revisions internes sobre l'obtenció, l'emmagatzemament i processament de dades, i mesures de seguretat, com ara mesures físiques de seguretat per guardar-nos d'atacs als sistemes on desem la informació personat. Excepte amb el teu permís explícit, LifeChurch.tv restringeix l'accés a la informació personal als seus empleats, contractants i agents que necessiten saber aquesta informació per fer funcionar, desenvolupar o millorar els nostres serveis. Aquests individus estan sotmesos a obligacions de confidencialitat i poden estar subjectes a mesures disciplinàries, incloent l'acomiadament i accions penals, si no compleixen amb aquestes obligacions."
       data integrity title: "Integritat de les dades"
       data integrity text: "LifeChurch.tv revisa com s'obtenen, s'emmagatzemen i es processen les dades per assegurar-nos que només obtenim, emmagatzem i processem la informació personal necessària per proporcionar o arreglar els nostres serveis. Nosaltres fem els passos necessaris per assegurar-nos que la informació personal que processem és acurada, completa i actualitzada, però depenem dels nostres usuaris per actualitzar o corregir la seva informació personal sempre que sigui necessari."
       information access title: "Accedint i actualitzant la informació personal"
@@ -721,3 +720,12 @@ ca:
     load error: "Ho sentim, hi ha hagut un problema carregant més versions. Tanca aquest menú i intenta tornar-lo a obrir."
   reader help:
     title: "Selecciona una verset..."
+    line 1: "Clica a quasevol verset o grup de versets per marcar, ressaltar, crear una nota o compartir amb els teus amics!"
+  campaigns:
+    100m:
+      intro: "Podem fer que l'aplicació de la Bíblia arribi als 100 milions d'instal·lacions abans del nostre 5è aniversari el 10 de juliol? Amb la teva ajuda sí!"
+      share:
+        fb:
+          dialog name: "Tens l'aplicació de la Bíblia?"
+        em:
+          subject: "Tens l'aplicació de la Bíblia?"

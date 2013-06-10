@@ -28,7 +28,7 @@ vi:
   thanks authorization: "Nếu bạn yêu cầu, hóa đơn sẽ được gởi vào hòm thư của bạn trong giây lát."
   donation error: "Chúng tôi xin lỗi, dâng hiến của bạn có vấn đề như sau: %{error_text}"
   created ago: "Được tạo %{time_ago} trước"
-  copy: "Copy"
+  copy: "Sao chép"
   copy confirmed: "Đã copy!"
   new note: "Ghi chú mới"
   twitter: "Twitter"
@@ -37,9 +37,9 @@ vi:
   share error: "Xin lỗi bạn, có lỗi kỹ thuật khi chia sẻ thông điệp. Xin hãy thử lại."
   google plus: "Google +"
   connect to: "Kết nối với tài khoản %{connection} của bạn"
-  connected as user: "Bạn đã kết nối %{connection} với tên %{username}."
-  deleted connection: "Tháo bỏ thành công kết nối với %{connection}."
-  deleted connection error: "Báo lỗi khi tháo bỏ kết nối với %{connection}!"
+  connected as user: "Bạn đã kết nối %{connection} bằng tài khoản %{username}."
+  deleted connection: "Hủy bỏ thành công kết nối với %{connection}."
+  deleted connection error: "Báo lỗi khi hủy bỏ kết nối với %{connection}!"
   remove connection: "Tháo bỏ"
   connection users: "Vài người sử dụng YouVersion mà bạn kết nối trên %{connection}:"
   connection marketing: "Càng đông càng vui! Hãy kết nối tài khoản YouVersion của bạn với các mạng xã hội khác và tìm thấy bạn bè của bạn ngay trên YouVersion. Kết nối tài khoản cũng giúp bạn chia sẻ nhanh hơn. Những gì được bạn cho phép mới được đăng tải."
@@ -74,7 +74,7 @@ vi:
   password prompt: "Mật khẩu"
   sign in: "Đăng nhập"
   sign in to youversion: "Đăng nhập YouVersion"
-  remove: "Tháo bỏ"
+  remove: "Hủy bỏ"
   confirm danger: "Vâng, tôi chắc!"
   registered ago: "Đã đăng ký vào %{time_ago} trước"
   version header: "Phiên bản: %{version}"
@@ -276,7 +276,6 @@ vi:
       information use title: "Chúng tôi sử dụng thông tin của bạn như thế nào?"
       information use text: "Khi bạn đăng ký một dịch vụ, chúng tôi sẽ yêu cầu bạn cung cấp thông tin cá nhân. Nếu LifeChurch.tv muốn sử dụng thông tin này theo một cách khác với mục đích ban đầu, chúng tôi sẽ hỏi xin phép bạn trước. Bạn có thể từ chối trình báo thông tin cá nhân cho bất kỳ dịch vụ nào của chúng tôi, cũng có nghĩa là bạn có thể sẽ không nhận được dịch vụ đó."
       information security title: "Chúng tôi bảo vệ thông tin của bạn như thế nào?"
-      information security text: "LifeChurch.tv không chia sẻ thông tin cá nhân của bạn cho các hội đoàn khác ngoài LifeChurch.tv mà chưa được bạn đồng ý. LifeChurch.tv chia sẻ thông tin ấy chỉ khi có sự tin cậy chắc chắn rằng việc truy cập, sử dụng, bảo lưu, hoặc tiết lộ thông tin là thích hợp và cần thiết để (a) đáp ứng mọi luật ứng dụng, quy định, quá trình pháp lý hoặc yêu cầu thi hành của chính phủ, (b) thực thi các Điều khoản sử dụng, bao gồm việc điều tra các vi phạm có thể xảy ra, (c) tra tìm, ngăn chặn, hoặc xử lý việc giả mạo, vấn đề an ninh hoặc kỹ thuật, hoặc (d) bảo vệ sự xâm phạm quyền lợi, tài sản hoặc an toàn của LifeChurch.tv, người sử dụng hoặc cộng đồng, thể theo yêu cầu và sự cho phép của pháp luật. LifeChurch.tv sử dụng những biện pháp an ninh thích hợp để chống lại việc truy cập hoặc sử dụng dữ liệu một cách trái phép (thay đổi, tiết lộ, hoặc phá hủy), bằng cách kiểm soát nội bộ việc thu thập, lưu trữ và xử lý dữ liệu và các biện pháp an ninh, cũng như các biện pháp thực thể như phòng chống truy cập trái phép vào hệ thống lưu trữ dữ liệu cá nhân. Trừ phi bạn đã chính thức đồng ý, LifeChurch.tv hạn chế việc truy cập thông tin cá nhân của bạn trong vòng các nhân viên và đối tác nào cần có những thông tin ấy để vận hành, phát triển, và nâng cao dịch vụ của chúng tôi. Các cá nhân này đều có nghĩa vụ giữ gìn cẩn mật thông tin của bạn và sẽ chịu kỷ luật (bao gồm việc cắt bỏ chức vụ và truy tố hình sự) nếu họ thất bại trong trách nhiệm này."
       data integrity title: "Sự toàn vẹn dữ liệu"
       data integrity text: "LifeChurch.tv kiểm soát việc thu nhận, lưu trữ, và xử lý dữ liệu để bảo đảm là chúng tôi chỉ thu thập, lưu, và xử lý các thông tin cá nhân cần thiết để cung cấp và nâng cao dịch vụ. Chúng tôi thực hiện các bước hợp lý để bảo đảm các thông tin được xử lý là chính xác, đầy đủ, và hiện thời, nhưng chúng tôi bị phụ thuộc vào người sử dụng về việc cập nhật hoặc chỉnh sửa các thông tin cá nhân của họ khi cần thiết."
       information access title: "Xử lý và cập nhật thông tin cá nhân"
@@ -723,3 +722,24 @@ vi:
   reader help:
     title: "Chọn câu Kinh Thánh..."
     line 1: "Gõ vào một hoặc nhiều câu Kinh Thánh bất kỳ để đánh dấu, tô màu, tạo ghi chú, hoặc chia sẻ cùng bạn bè!"
+  campaigns:
+    100m:
+      logo: "YouVersion: Ứng dụng Kinh Thánh"
+      tagline: "Bắt đầu với <em>100 triệu</em>"
+      intro: "Ứng dụng Kinh Thánh có thể đạt mốc 100 triệu lượt tải về trước sinh nhật lần thứ 5, ngày 10 tháng 7 không? Chúng tôi cần sự trợ giúp của bạn!"
+      share:
+        with friends: "Chia sẻ với bạn bè"
+        fb:
+          dialog name: "Bạn đã tải Ứng dụng Kinh Thánh?"
+          dialog desc: "Tôi yêu Ứng dụng Kinh Thánh! Nó thực sự mang Kinh Thánh đến như là một phần trong mỗi ngày sống của tôi. Tôi có thể tô màu, nghe, ghi chú, theo dõi kế hoạch đọc... thậm chí xem videos! Hãy tải về ngay bây giờ (hoàn toàn miễn phí): http://www.bible.com/app"
+        em:
+          subject: "Bạn đã có Ứng dụng Kinh Thánh chưa?"
+          body: "Tôi yêu thích Ứng dụng Kinh Thánh từ YouVersion và có thể bạn giống tôi. Tôi đọc Kinh Thánh ngày một nhiều hơn, vì thật dễ dàng để đọc, xem, nghe và chia sẻ với mọi người. Ứng dụng này thậm chí còn có nhiều kế hoạch đọc, giúp tự động trích dẫn một đoạn Kinh Thánh mỗi ngày.\n\nBạn có thể tải ứng dụng miễn phí, cho hầu hết các thiết bị di động tại đây:\nhttp://www.bible.com/app"
+      body:
+        p1: "Ngày 10 tháng 7 tới là một ngày đặc biệt. Đó là ngày kỉ niệm sinh nhật lần thứ 5 của Ứng dụng Kinh Thánh, và đánh dấu 5 năm chúng ta bắt đầu trên itunes Store."
+        p2: "Đó là ngày Ứng dụng Kinh Thánh đạt mốc 100 triệu lượt tải về, nhờ sự trợ giúp của bạn."
+        p3: "Chúng ta biết rằng Thiên Chúa dùng những sự kiện này để giúp con người được thăng tiến."
+        p4: "Chúng ta hãy cùng tạo nên lịch sử."
+      ad:
+        title: "Ứng dụng Kinh Thánh hoàn toàn miễn phí và là cách tuyệt vời để khám phá Kinh Thánh"
+        copy: "Đọc, Nghe, Xem và Chia sẻ. Tải Ứng dụng Kinh Thánh về điện thoại hoặc máy tính bảng của bạn: <a href='http://bible.com/app'>Tải về</a>"
