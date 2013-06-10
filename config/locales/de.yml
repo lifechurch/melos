@@ -15,6 +15,13 @@ de:
     users username not available: "Der eingegebene Benutzername ist nicht verfügbar."
     users username or password invalid: "Benutzername oder Passwort ungültig."
     users username required: "Du musst einen Benutzernamen eingeben."
+  meta:
+    100million:
+      title: "Es fängt mit 100 Mio. an."
+      description: "Die Bibel App ist schon fast 100 Mio. Mal installiert worden - ein unbeschreiblicher Meilenstein! Aber jetzt fangen wir erst richtig. Lade dir die kostenlose Bibel App heute herunter - und dann teile sie mit deinen Freunden. Lass uns zusammen Geschichte schreiben."
+    mobile:
+      title: "Die Bibel App "
+      description: "Zehntausende nutzten die Bibel App, um Gottes Wort zu lesen, anzuhören, Videos dazu anzuschauen und es zu teilen. Lade dir die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Lesepläne zu. Auf deinem mobilen Gerät kannst du hunderte von Übersetzungen sowie Hörbibeln genießen. "
   now: "Jetzt  "
   celebrating 50MM: "Zur Feier der 50 Mio. Downloads!"
   link: "Link"
@@ -276,7 +283,7 @@ de:
       information use title: "Wie nutzen wir deine Informationen?"
       information use text: "Wenn du dich bei einem Dienst anmeldest, für den eine Registrierung nötig ist, bitten wir dich um persönliche Informationen. Wenn LifeChurch.tv diese Informationen auf andere Weise nutzen will, als für den Zweck, für den sie gesammelt wurden, werden wir dich vorab um Zustimmung für diese Nutzung bitten. Du kann die Übertragung persönlicher Informationen an jeden unserer Dienste ablehnen. In diesem Fall ist LifeChurch.tv möglicherweise nicht in der Lage, dir diese Dienste zur Verfügung zu stellen."
       information security title: "Wie schützen wir deine Informationen? "
-      information security text: "LifeChurch.tv gibt deine persönlichen Daten ohne deine ausdrückliche Zustimmung nicht an andere Parteien außerhalb von LifeChurch.tv weiter. LifeChurch.tv kann deine persönlichen Informationen weitergeben, wenn er in Treu und Glauben der Überzeugung ist, dass Zugang, Nutzung, Aufbewahrung oder Offenlegung solcher Informationen vernünftiger Weise nötig ist, (a) um den Gesetzen, Regelungen, gerichtlichen Prozessen oder der Durchsetzung von behördlichen Anweisungen gerecht zu werden, (b) um die gültigen Nutzungsbedingungen umzusetzen, einschließlich der Untersuchung von potentiellen Verstößen dagegen, (c) um Betrug, sicherheitsrelevante oder technische Probleme aufzudecken, zu verhindern oder zu behandeln oder (d) um eine drohende Gefahr für die Rechte, den Besitz oder die Sicherheit von LifeChurch.tv, seinen Nutzern oder der Öffentlichkeit abzuwenden, wie es gesetzgemäß gefordert wird oder zulässig ist. LifeChurch.tv ergreift geeignete Sicherheitsmaßnahmen zum Schutz der Daten vor unbefugtem Zugriff, nicht genehmigter Änderung, Weitergabe oder Vernichtung. Hierzu gehören interne Überprüfungen unserer Datenerhebung, -speicherung und -verarbeitung und Sicherheitsmaßnahmen sowie physische Sicherheitsmaßnahmen zum Schutz vor unberechtigtem Zugriff auf Systeme, in denen wir personenbezogene Daten speichern. Ohne deine ausdrückliche Zustimmung beschränkt LifeChurch.tv den Zugang zu persönlichen Daten auf LifeChurch.tv-Mitarbeiter, Auftragnehmer und Dienstleister, die diese Informationen zum Betreiben, Entwickeln oder Verbessern unseres Services benötigen. Diese Personen unterliegen der Schweigepflicht und müssen mit Disziplinarmaßnahmen, einschließlich Kündigung und strafrechtlicher Verfolgung, rechnen, wenn sie diesen Verpflichtungen nicht nachkommen."
+      information security text: "LifeChurch.tv gibt deine persönlichen Daten nicht ohne deine ausdrückliche Zustimmung an andere Institutionen außerhalb von LifeChurch.tv weiter. LifeChurch.tv kann deine persönlichen Informationen nur weitergeben, wenn sie gutem Gewissens davon ausgehen kann, dass Zugang, Nutzung, Speicherung oder Offenlegung solcher Informationen erforderlich ist, um (a) geltendes Recht, gerichtliche Auflagen, Verfahren oder durchsetzbare behördliche Anfragen, zu erfüllen, (b) geltende Nutzungsbedingungen, einschließlich der Untersuchung möglicher Verstöße dagegen, durchzusetzen, (c) Betrug, Sicherheits- oder technische Probleme zu erkennen, zu verhindern oder anderweitig anzugehen oder (d) um die Rechte, das Eigentum oder die Sicherheit von LifeChurch.tv, ihren Nutzern oder der Öffentlichkeit, vor drohenden Schäden zu schützen - insofern dies gesetzlich erforderlich oder zulässig ist. LifeChurch.tv ergreift geeignete Sicherheitsmaßnahmen zum Schutz vor unbefugtem Zugriff oder unbefugter Veränderung, Weitergabe oder Vernichtung von Daten, einschließlich der internen Bewertungen unserer Datenerfassungs-, Speicherungs- und Verarbeitungsmethoden und Sicherheitsmaßnahmen sowie physische Sicherheitsmaßnahmen zum Schutz vor unberechtigtem Zugriff auf Systeme, auf denen wir personenbezogene Daten speichern. Ohne deine ausdrückliche Erlaubnis schränkt LifeChurch.tv den Zugang zu persönlichen Informationen auf seine Mitarbeiter, Auftragnehmer und Vertreter auf die Informationen ein, die notwendig sind, um unsere Dienstleistungen bereitzustellen, zu entwickeln oder zu verbessern. Diese Personen unterliegen der Schweigepflicht und müssen mit Disziplinarmaßnahmen, einschließlich Kündigung und strafrechtlicher Verfolgung, rechnen, wenn sie diesen Verpflichtungen nicht nachkommen. "
       data integrity title: "Datenintegrität"
       data integrity text: "LifeChurch.tv überprüft seine Datenerhebung, -speicherung und -verarbeitung, um zu gewährleisten, dass wir nur solche persönlichen Daten erheben, speichern und verarbeiten, die zur Bereitstellung oder Verbesserung unserer Dienstleistungen erforderlich sind. Wir unternehmen angemessene Schritte, um sicherzustellen, dass die persönlichen Daten, die wir verarbeiten, richtig, vollständig und aktuell sind. Allerdings müssen wir uns darauf verlassen, dass unsere Nutzer ihre personenbezogenen Daten, wenn nötig, aktualisieren oder korrigieren."
       information access title: "Persönliche Informationen werden gerade aktualisiert..."
@@ -723,3 +730,26 @@ de:
   reader help:
     title: "Wähle einen Vers..."
     line 1: "Klicke oder tippe auf einen Vers oder eine Sammlung von Versen, um Lesezeichen zu erstellen, zum Markieren, um eine Notiz zu erstellen oder mit deinen Freunden zu teilen!"
+  campaigns:
+    100m:
+      logo: "YouVersion: Die Bibel App"
+      tagline: "Es beginnt mit <em>100 Millionen</em>"
+      intro: "Wird die Bibel App noch vor unserem 5. Jahrestag am 10. Juli 100 Millionen mal installiert werden? Nur mit deiner Hilfe!"
+      share:
+        with friends: "Teile die App mit Freunden."
+        fb:
+          dialog name: "Hast du schon die Bibel App?"
+          dialog desc: "Ich benutze die Bibel App sehr gern! Sie hat mir wirklich geholfen, die Bibel zu einem Teil meines Alltags zu machen. Ich kann Verse hervorheben, mir die Bibel anhören, Notizen machen, Lesepläne nutzen und sogar Videos anschauen! Lade sie dir jetzt gratis unter http://www.bible.com/app herunter."
+        tw:
+          tweet: "Die Bibel App von @YouVersion hat einen festen Platz auf meinem Startbildschirm. Die Bibel lesen, anschauen, anhören und teilen - all dies in einer kostenlosen App: bible.com/app"
+        em:
+          subject: "Hast du schon die Bibel App?"
+          body: "Ich mag die Bibel App von YouVersion wirklich sehr und dachte, sie könnte dir vielleicht auch gefallen? Ich öffne die Bibel jetzt viel öfter. Die App macht es leicht, die Bibel zu lesen, die Videos anzuschauen und Verse zu teilen. Sie hat sogar Lesepläne, so dass ich jeden Tag ausgewählte Abschnitte lesen kann. \n\nDu kannst sie gratis für fast jedes mobile Gerät herunterladen:\nhttp://www.bible.com/app"
+      body:
+        p1: "Der 10. Juli ist ein wichtiger Tag. Dann ist nicht nur das 5. Jubiläum der Bibel App; vor fünf Jahren wurde auch der Apple iTunes Store eröffnet."
+        p2: "Aber was vielleicht noch wichtiger ist: Mit deiner Hilfe wird es der Tag, an dem die Bibel App 100 Millionen Downloads feiert."
+        p3: "Wir wissen, dass Gott solche Meilensteine benutzt, um noch mehr Wachstum zu bewirken. "
+        p4: "Lasst uns zusammen Geschichte schreiben."
+      ad:
+        title: "Die App ist vollkommen kostenlos und bietet die Gelegenheit, die Bibel wirklich kennen zu lernen."
+        copy: "Lesen, anhören, anschauen, teilen. Hol dir die Bibel App auf dein Smartphone oder Tablet: <a href='http://bible.com/app'>Jetzt herunterladen</a>"

@@ -15,6 +15,13 @@ cs:
     users username not available: "Zadané uživatelské jméno není k dispozici."
     users username or password invalid: "Uživatelské jméno nebo heslo, které jste napsali, není správně."
     users username required: "Zde musíte zadat uživatelské jméno. "
+  meta:
+    100million:
+      title: "Začíná to se 100 milióny"
+      description: "Aplikace Bible byla již nainstalována skoro 100 milionkrát -  je to neuvěřitelný historický milník. A to jsme ještě ani pořádně nezačali. Již dnes si stáhněte aplikaci Bible, která je zdarma - a pak sdílejte aplikaci se svými přáteli. Začněme společné tvořit dějiny. "
+    mobile:
+      title: "Aplikace Bible"
+      description: "Desítky miliónů lidí používají aplikaci Bible ke čtení, poslouchání, sledování a sdílení Božího Slova. Stalo se to součástí jejich života. Stáhněte si bezplatnou aplikaci a získejte odkudkoli přístup ke svým záložkám, poznámkám a plánům čtení. Užívejte si stovky překladů, včetně zvukových nahrávek, na svém mobilním zařízení."
   now: "Aktuálně"
   celebrating 50MM: "Oslavujeme 50 milionů instalací aplikace!"
   link: "Odkaz"
@@ -276,7 +283,7 @@ cs:
       information use title: "do not translate"
       information use text: "do not translate"
       information security title: "do not translate"
-      information security text: "do not translate"
+      information security text: "LifeChurch.tv nesdílí vaše osobní informace s ostatními institucemi mimo LifeChurch.tv bez vašeho zvláštního souhlasu. LifeChurch.tv může sdílet vaše osobní údaje pouze v případě, že má dobré důvody, že přístup, použití, uchování nebo zveřejnění takových informací je odůvodnitelně nezbytné, pro to aby (a) splňovala platné zákony, nařízení, zákonné procesy či vládní požadavky, (b ) prosazovala podmínky použití, včetně vyšetřování možného porušení této smlouvy, (c) zjištění, zabránění nebo jinému způsobu podvodu, bezpečnostních nebo technických problémů, nebo (d) ochraně proti hrozící újmě práv na majetku nebo bezpečnosti LifeChurch.tv , jejich uživatelů nebo veřejnosti, jak je požadováno nebo povoleno zákonem. LifeChurch.tv přijímá příslušná bezpečnostní opatření na ochranu před neoprávněným přístupem nebo neoprávněným úpravám, vyzrazení nebo zničení dat. včetně interní kontroly naší sbírky dat, skladování a zpracování postupů a bezpečnostních opatření, jakož i fyzických bezpečnostních opatření na ochranu proti neoprávněnému přístupu k systémům, které slouží k ukládání osobních údajů. Není-li výslovně získáno povolení od vás, LifeChurch.tv omezuje přístup k osobním informacím svým zaměstnancům, dodavatelům a agentům, kteří potřebují znát tyto informace k provozu, vývoji nebo zlepšování našich služeb. Tito jednotlivci jsou vázáni povinností mlčenlivosti a můžou být předmětem disciplinárního řízení, včetně ukončení spolupráce a trestního stíhání, pokud se jim nebudou plnit tyto závazky."
       data integrity title: "do not translate"
       data integrity text: "do not translate"
       information access title: "do not translate"
@@ -723,3 +730,24 @@ cs:
   reader help:
     title: "Vybrat verš..."
     line 1: "Klikněte nebo se dotkněte jakéhokoli verše nebo souboru veršů a vytvořte záložku, zvýraznění, poznámku nebo to sdílejte s vašimi přáteli!"
+  campaigns:
+    100m:
+      logo: "YouVersion: Aplikace Bible"
+      tagline: "Začíná to se <em>100 milióny</em>"
+      intro: "Dokáže aplikace Bible dosáhnout 100 miliónů aplikací před naším 5. výročím, které je 10. července? Pouze s tvou pomocí!"
+      share:
+        with friends: "Sdílej se svými přáteli"
+        fb:
+          dialog name: "Máš už aplikaci Bible?"
+          dialog desc: "Mám moc rád aplikaci Bible! Pomohla mi k tomu, aby se Bible stala každodenní součástí mého života. Můžu tam zvýraznit verše, poslechnout si audio Bible, udělat si poznámky, číst podle plánu... dokonce sledovat videa! Určitě si ji můžeš hned stáhnout (je zdarma): http://www.bible.com/app"
+        em:
+          subject: "Máš aplikaci Bible?"
+          body: " Velice se mi líbí aplikace Bible od YouVersion a myslím si, že by se líbila i Tobě. Otevírám teď Bibli mnohem častěji, protože číst si ji, dívat se na videa, poslouchat ji a sdílet ji je velice jednoduché. Obsahuje dokonce i Plány, které mají vybrané pasáže Bible a čekají na přečtení každý den.\n\nMůžeš si ji také stáhnout (zdarma!) do téměř jakéhokoliv mobilního zařízení:\n http://www.bible.com/app"
+      body:
+        p1: "10. červen bude velkým dnem. Ne jenom, že je to 5. výročím spuštění aplikace Bible, ale taky je to už 5 let od té doby, co se aplikace Bible objevila na iTunes Store."
+        p2: "Dokonce ještě větší? S Tvojí pomocí dosáhne aplikace Bible 100 miliónů stažení."
+        p3: "Naučili jsme se, že Bůh rád používá milníky, aby podnítil ještě větší růst."
+        p4: "Staňme se těmi, kteří budou psát dějiny."
+      ad:
+        title: "Aplikace Bible je zcela zdarma a je skvělým způsobem, jak prozkoumávat Bibli. "
+        copy: "Čtěte, poslouchejte, sledujte a sdílejte. Stáhněte si aplikaci Bible do smartphonu nebo tabletu: <a href='http://bible.com/app'>Ihned stáhnout</a>"

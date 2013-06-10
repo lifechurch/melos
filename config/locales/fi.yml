@@ -276,7 +276,6 @@ fi:
       information use title: "Kuinka käytämme tietojasi?"
       information use text: "Kun rekisteröidyt johonkin tiettyyn palveluun, niin pyydämme sinulta henkilökohtaisia tietoja. Jos LifeChurch.tv haluaisi käyttää näitä tietoja jollakin muulla tavalla kuin mitä varten ne on kerätty, siinä tapauksessa pyydämme sinulta ensin suostumuksen. Voit kieltäytyä antamasta henkilötietojasi mihinkään palveluumme, mutta siinä tapauksessa emme voi tarjota sinulle palvelujamme."
       information security title: "Miten suojaamme tietosi?"
-      information security text: "LifeChurch.tv ei jaa henkilökohtaisia tietojasi LifeChurch.tv:n ulkopuolisille tahoille ilman erillistä suostumustasi. LifeChuch.tv voi jakaa henkilökohtaisia tietojasi ainoastaan uskoessaan pääsyn tietoihin, niiden käytön, säilytyksen tai tiedonannon olevan ehdottoman välttämätöntä \n(a) lain, säädöksen, oikeustoimenpiteiden tai pakottavan hallinnollisen pyynnön vuoksi, (b) sovellettavien käyttöehtojen rikkomusten selvittämiseksi, (c) havaitakseen, estääkseen, tai muuten osoittaakseen vilpin, turvallisuuteen tai tekniikkaan liittyvien asioiden vuoksi tai (d) suojellakseen LifeChurch.tv:n oikeuksia, omaisuutta tai turvallisuutta, käyttäjiä tai yleisöä lain vaatimusten mukaan. LifeChurch.tv käyttää soveliaita turvatoimenpiteitä datan suojaamiseksi luvattomalta pääsyltä, muuttamiselta, paljastamiselta tai tuhoamiselta. Toimenpiteisiin sisältyvät datakokoelman, -varaston ja prosessointikäytäntöjen sekä turvatoimenpiteiden sisäiset katselmoinnit, kuten myös fyysiset turvatoimenpiteet, joilla suojellaan luvattomalta pääsyltä järjestelmiin joissa säilytämme henkilökohtaisia tietoja. Rajaamme yksityisiin tietoihin pääsyn LifeChurch.tv:n työntekijöihin, alihankkijoihin ja henkilöihin jotka tarvitsevat näitä tietoja palveluidemme tuottamiseen, kehittämiseen tai parantamiseen. Salassapitovelvoitteet sitovat näitä henkilöitä ja heidät  voidaan irtisanoa ja saattaa rikosoikeudelliseen vastuuseen, mikäli he rikkovat velvoitteensa."
       data integrity title: "Tietosuoja"
       data integrity text: "LifeChurch.tv tarkastaa henkilökohtaisten tietojen keräämistä, säilytystä ja käsittelyä koskevat käytännöt taatakseen, että keräämme, säilytämme ja käsittelemme ainoastaan palvelujen tuottamisen tai parantamisen kannalta oleellisia tietoja. Pyrimme takaamaan, että kerätyt tiedot ovat paikkansapitäviä, täydellisiä ja ajantasaisia, mutta on käyttäjän omalla vastuulla huolehtia omien tietojensa päivittämisestä tarpeen mukaan."
       information access title: "Henkilökohtaisten tietojen saatavuus ja päivitys"
@@ -723,3 +722,11 @@ fi:
   reader help:
     title: "Valitse jae..."
     line 1: "Klikkaa tai napauta mitä tahansa jaetta tai jakeita tehdäksesi kirjanmerkin, korostaaksesi, luodaksesi muistiinpanon tai jakaaksesi ystävillesi!"
+  campaigns:
+    100m:
+      intro: "Saavuttaako Raamattusovellus 100 miljoonan asennuksen rajan ennen viisivuotispäiväämme 10. heinäkuuta? Vain sinun avullasi!"
+      share:
+        fb:
+          dialog name: "Onko sinulla Raamattusovellus?"
+        em:
+          subject: "Onko sinulla Raamattusovellus?"

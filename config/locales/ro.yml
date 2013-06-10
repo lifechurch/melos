@@ -15,6 +15,13 @@ ro:
     users username not available: "Numele de utilizator introdus nu este disponibil."
     users username or password invalid: "Numele de utilizator sau parola nu sunt furnizate corect."
     users username required: "Trebuie să introduci un nume de utilizator."
+  meta:
+    100million:
+      title: "Începe cu 100 de milioane"
+      description: "Aplicația Biblia a fost instalată de aproape 100 milioane de ori - un adevărat moment de referință! Dar acesta e doar începutul. Descarcă azi Aplicația Biblia gratuită și apoi împărtășește-o cu prietenii. Să facem istorie împreună."
+    mobile:
+      title: "Aplicația Biblia"
+      description: "Zeci de miloane de oameni folosesc Aplicația Biblia pentru a citi, a asculta, a viziona și a împărtăși Cuvântul lui Dumnezeu care acum este parte din viața lor de zi cu zi. Descarcă aplicația gratuită și accesează-ți marcajele, notițele și planurile de citire de oriunde te-ai afla. Bucură-te de sute de versiuni, inclusiv în format audio, totul pe dispozitivul tău mobil."
   now: "Acum"
   celebrating 50MM: "Sărbătorind 50 de milioane de instalări ale aplicației!"
   link: "Legătură"
@@ -276,7 +283,7 @@ ro:
       information use title: "Cum utilizăm informațiile tale personale?"
       information use text: "Când te înscrii pentru un anumit serviciu care necesită înregistrare, îți solicităm să ne furnizezi informații personale. Dacă LifeChurch.tv intenționează să folosească această informație într-o manieră diferită de scopul pentru care au fost colectate, atunci îți vom cere consimțământul înainte de a face acest lucru. Poți refuza să trimiți informații personale către oricare din serviciile noastre, caz în care este posibil să nu-ți putem furniza respectivele servicii."
       information security title: "Cum îți protejăm datele? "
-      information security text: "LifeChurch.tv nu partajează informațiile tale personale cu alte instituții din afara LifeChurch.tv fără acordul tău explicit. LifeChurch.tv poate partaja informațiile tale personale doar dacă consideră de bună credință că accesul, utilizarea, păstrarea sau divulgarea unor asemenea informații este rezonabil necesară pentru (a) respectarea legislației în vigoare, procese legale sau executări silite, (b) impunerea termenilor de utilizare, inclusiv investigarea potențialelor încălcări ale acestora, (c) depistarea, prevenirea sau raportarea prin alte mijloace a fraudelor, problemelor de securitate sau tehnice, sau (d) protejarea împotriva prejudicierii iminente a drepturilor, proprietății sau siguranței LifeChurch.tv,  a utilizatorilor săi sau publicului larg, în conformitate cu legea. LifeChurch.tv își ia măsuri corespunzătoare de protecție împotriva accesului neautorizat sau a modificării, divulgării sau distrugerii abuzive de date, inclusiv revizuiri interne ale colectării de date, ale stocării și metodelor de procesare și a măsurilor de securitate, precum și măsuri fizice de protecție împotriva accesului neautorizat la sistemele unde colectăm date personale. Cu excepția cazului când se obține acordul tău, LifeChurch.tv limitează accesul la date personale angajaților săi, prestatorilor de servicii și intermediarilor care au nevoie de aceste informații ca să opereze, să dezvolte sau să îmbunătățească serviciile noastre. Aceste persoane sunt supuse obligațiilor de confidențialitate și sunt pasibili de pedeapsă, inclusiv rezilierea contractului sau urmărire penală, dacă încalcă aceste obligații."
+      information security text: "LifeChurch.tv nu partajează datele tale personale altor instituții din afara LifeChurch.tv. Totuși, LifeChurch.tv poate partaja date personale dacă consideră cu bună credință că accesarea, utilizarea, păstrarea sau divulgarea acestor informații este necesară pentru (a) a îndeplini legi în vigoare, reglementări, procese legale sau solicitări guvernamentale executorii, (b) a impune termeni de utilizare în vigoare, inclusiv investigarea potențialelor încălcări ale celor sus-menționate, (c) a detecta, preveni sau reclama în vreun fel fraude, probleme de securitate și tehnice, sau (d) a proteja împotriva lezării drepturilor, proprietății sau securității LifeChurch.tv, a utilizatorilor sau publicului nostru după cum o cere sau permite legea. LifeChurch.tv își ia măsuri corespunzătoare de protecție împotriva accesului neautorizat sau a modificării, divulgării sau distrugerii abuzive de date. Acestea includ revizuiri interne ale colectării de date, ale stocării și metodelor de procesare și a măsurilor de securitate, precum și măsuri fizice de protecție împotriva accesului neautorizat la sistemele unde colectăm date personale. Cu excepția cazului când avem acordul tău explicit, limităm accesul la datele personale la angajații LifeChurch.tv, prestatorii de servicii și intermediarii care au nevoie de aceste informații ca să opereze, să dezvolte sau să îmbunătățească serviciile noastre. Aceste persoane sunt supuse obligațiilor de confidențialitate și sunt pasibili de pedeapsă, inclusiv rezilierea contractului sau urmărire penală, dacă încalcă aceste obligații."
       data integrity title: "Integritatea datelor"
       data integrity text: "LifeChurch.tv revizuiește colectarea de date, stocarea și metodele de procesare pentru a ne asigura că procesăm doar acele date personale care sunt necesare furnizării sau îmbunătățirii serviciilor noastre. Urmăm pași rezonabili să ne asigurăm că datele personale care le procesăm sunt exacte, complete și la zi, dar depindem de utilizatorii noștri în actualizarea datelor lor personale oricând e necesar."
       information access title: "Accesare și actualizare a datelor personale."
@@ -723,3 +730,26 @@ ro:
   reader help:
     title: "Selectează un verset..."
     line 1: "Fă clic sau atinge orice verset sau colecție de versete pentru a marca, a evidenția, a crea o notiță sau a partaja cu prietenii!"
+  campaigns:
+    100m:
+      logo: "YouVersion: Aplicația Biblia"
+      tagline: "Începe cu <em>100 milioane</em>"
+      intro: "Poate Aplicația Biblia să ajungă la 100 milioane de instalări înainte de 10 Iulie, când avem aniversarea de 5 ani? Doar cu ajutorul tău!"
+      share:
+        with friends: "Împărtășește cu prietenii tăi"
+        fb:
+          dialog name: "Ai Aplicația Biblia?"
+          dialog desc: "Iubesc Aplicația Biblia! M-a ajutat mult să fac Biblia parte din viața de fiecare zi. Îmi permite să evidențiez versete, să ascult Biblii audio, să fac notițe, să urmez planuri devoționale... și chiar să vizionez videoclipuri! Descărc-o chiar acum (gratuit) de aici: http://www.bible.com/app"
+        tw:
+          tweet: "Aplicația Biblia de la @YouVersion are un loc permanent pe ecranul meu de pornire. Citesc, vizionez, ascult și împărtășesc... toate acestea într-o aplicație gratuită: bible.com/app"
+        em:
+          subject: "Ai Aplicația Biblia?"
+          body: "Mă bucur de Aplicația Biblia și mă gândeam că ți-ar place și ție. Acum deschid Biblia mai des pentru că e foarte ușor de citit, de vizionat, de ascultat și de împărtășit. Are și Planuri de citire selectate din Biblie care mă așteaptă în fiecare zi.\n\nO poți obține (gratuit!) pentru aproape orice dispozitiv mobil, aici: http://www.bible.com/app"
+      body:
+        p1: "10 Iulie va fi o zi mare. Nu doar că Aplicația Biblia aniversează 5 ani dar în aceeași zi se împlinesc 5 ani de la lansarea Apple’s iTunes Store."
+        p2: "Chiar mai mult de atât? Cu ajutorul tău, este ziua când Aplicația Biblia va ajunge la 100 milioane de instalări."
+        p3: "Am învățat că Dumnezeu folosește asemenea momente importante pentru a încuraja o creștere și mai mare."
+        p4: "Să facem istorie împreună."
+      ad:
+        title: "Aplicația Biblia este complet gratuită și un mod minunat de a explora Biblia."
+        copy: "Citește, vizionează, ascultă, împărtășește. Obține Aplicația Biblia pentru smartphone sau tabletă: <a href='http://bible.com/app'>Descarcă acum</a>"

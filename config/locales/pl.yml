@@ -276,7 +276,6 @@ pl:
       information use title: "Jak używamy twoje informacje?"
       information use text: "do not translate"
       information security title: "Bezpieczeństwo informacji"
-      information security text: "do not translate"
       data integrity title: "Integralność danych"
       data integrity text: "do not translate"
       information access title: "Dostęp do danych osobowych i ich aktualizacja"
@@ -723,3 +722,11 @@ pl:
   reader help:
     title: "Wybierz werset..."
     line 1: "Kliknij lub naciśnij na dowolny werset lub ich zbiór, aby dodać zakładkę, podkreślenie, utworzyć notatkę lub podzielić się ze znajomymi!"
+  campaigns:
+    100m:
+      intro: "Czy Aplikacja Biblii może osiągnąć 100 milionów instalacji przed naszą 5 rocznicą 10 lipca? Tylko z twoją pomocą!"
+      share:
+        fb:
+          dialog name: "Masz już Aplikację Biblii?"
+        em:
+          subject: "Masz już Aplikację Biblii?"

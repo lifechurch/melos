@@ -258,10 +258,10 @@ it:
     resend confirmation button: "Invia Nuovamente la Conferma"
     privacy:
       policy: "%{youversion} Norme sulla Privacy"
-      intro: "YouVersion, un Sito Web e Applicazione gestiti e di proprietà di LifeChurch.tv, è consapevole che ci tieni a come vengono trattati e condivisi i tuoi dati personali. Ci auguriamo che le seguenti informative ti consentano di comprendere come YouVersion raccoglie, utilizza e protegge le informazioni forniteci tramite il nostro sito o la nostra applicazione."
+      intro: "YouVersion, un Sito Web e Applicazione gestiti e di proprietà di LifeChurch.tv, è consapevole che ti preoccupi di come vengono trattati e condivisi i tuoi dati personali. Ci auguriamo che le seguenti informative ti consentano di comprendere come YouVersion raccoglie, utilizza e protegge le informazioni forniteci tramite il nostro sito o la nostra applicazione."
       translation disclaimer: "La politica sulla privacy è stata tradotta per vostra comodità; tuttavia, LifeChurch.tv non offre nessuna garanzia o dichiarazione rispetto all'esattezza della traduzione. Se ci fossero delle discrepanze tra la versione in inglese e la traduzione, fa fede la versione in inglese."
-      what we collect: "Che cosa raccogliamo e come lo usiamo"
-      your information title: "Informazioni fornite da te"
+      what we collect: "Cosa raccogliamo e come lo utilizziamo"
+      your information title: "Informazioni da te fornite"
       your information text: "Quando effettui la registrazione di un account YouVersion, o di un altro servizio o promozione LifeChurch.tv che richiede la registrazione, ti chiediamo i tuoi dati personali (ad esempio nome, indirizzo e-mail e password dell'account). Potremmo combinare i dati che invii tramite il tuo account con informazioni di altri servizi LifeChurch.tv o di terze parti per offrirti una migliore esperienza e migliorare la qualità dei nostri servizi. Alcuni servizi ti consentono di rifiutare la combinazione di tali informazioni."
       device id title: "Identificatore Univoco del Dispositivo e posizione GPS"
       device id text: "Quando accedi all'App Bibbia YouVersion, potremmo raccogliere il tuo Identificatore Univoco del Dispositivo ('UDID') e/o indirizzo IP e/o posizione GPS. Utilizziamo questi dati per offrirti un'esperienza personalizzata. Le informazioni vengono raccolte per determinare il numero complessivo di singoli dispositivi che utilizzano tutti o parte dei nostri servizi, monitorare l'utilizzo totale, analizzare dati e comunicare con te con maggiore efficacia. Potremmo combinare questi dati con informazioni di terze parti per offrirti una migliore esperienza e migliorare la qualità del nostro servizio. Non condividiamo alcun dato identificativo della persona con terze parti associate con il tuo UDID o posizione GPS senza la tua esplicita autorizzazione."
@@ -315,7 +315,7 @@ it:
       modifications title: "Modifiche al Servizio"
       modifications text: "LifeChurch.tv si riserva in ogni momento il diritto di modificare o disattivare, temporaneamente o permanentemente, YouVersion (o una qualunque sua parte) con o senza preavviso. Convieni e concordi che LifeChurch.tv non potrà in alcun modo essere ritenuta responsabile nei tuoi confronti o nei confronti di terzi soggetti per la modifica, la sospensione o la disattivazione di YouVersion."
       termination title: "Cancellazione"
-      termination text: "Convieni e concordi che LifeChurch.tv si riserva il diritto discrezionale, per qualsivoglia o per nessun motivo e senza preavviso, di cancellare immediatamente il tuo account LifeChurch.tv e il tuo accesso a YouVersion in ogni momento e per qualsivoglia motivo, e non potrà in alcun modo essere ritenuta responsabile nei tuoi confronti o nei confronti di terzi soggetti per la cancellazione del tuo account o del tuo accesso a YouVersion."
+      termination text: "Convieni e concordi che LifeChurch.tv si riserva il diritto discrezionale, per qualsivoglia o per nessun motivo e senza preavviso, di chiudere immediatamente il tuo account LifeChurch.tv e il tuo accesso a YouVersion in ogni momento e per qualsivoglia motivo, e non potrà in alcun modo essere ritenuta responsabile nei tuoi confronti o nei confronti di terzi soggetti per la cancellazione del tuo account o del tuo accesso a YouVersion."
       dealings title: "Rapporti con Terzi"
       dealings text: "Riconosci che i tuoi rapporti con terzi conosciuti o reperiti sul o tramite YouVersion avvengono esclusivamente tra te e tali terzi. Convieni e concordi che LifeChurch.tv non potrà in alcun modo essere ritenuta responsabile per eventuali perdite o danni di alcun tipo occorsi in conseguenza di tali rapporti."
       links title: "Link"
@@ -330,10 +330,10 @@ it:
       notice text: "LifeChurch.tv potrà inviarti comunicazioni riguardo, ad esempio, eventuali modifiche alle presenti CONDIZIONI DI UTILIZZO tramite vari mezzi, tra cui e-mail, posta ordinaria, SMS, MMS, messaggi di testo, pubblicazioni su YouVersion o tramite altri ragionevoli mezzi ora noti o di futura invenzione."
       trademark title: "Informazioni sui Marchi Registrati"
       trademark text: "I marchi registrati, i loghi, i marchi di servizio e i nomi dei prodotti e dei servizi relativi a LifeChurch.tv e ai suoi ministeri sono marchi registrati di LifeChurch.tv (i 'Marchi LifeChurch.tv'). Senza previa autorizzazione scritta da parte di LifeChurch.tv, ti impegni a non divulgare o utilizzare in alcun modo i Marchi LifeChurch.tv."
-      copyright title: "do not translate"
-      copyright text: "do not translate"
+      copyright title: "Note Legali e Procedura per la Segnalazione di Violazioni dei Diritti d'Autore o dei Diritti di Proprietà Intellettuale"
+      copyright text: "LifeChurch.tv rispetta i diritti di proprietà intellettuale di terzi e richiede ai propri utenti di fare altrettanto, in modo particolare in relazione all'utilizzo di YouVersion. LifeChurch.tv si riserva il diritto, in determinate circostanze e a sua discrezione, di disattivare e/o chiudere l'account degli utenti che risultino aver commesso infrazioni reiterate. Se ritieni che la tua opera sia stata copiata in violazione della normativa sul diritto d'autore, oppure che i tuoi diritti di proprietà intellettuale siano stati in altro modo violati, ti preghiamo di inviare le seguenti informazioni a legal@youversion.com:<ul type='none'><li>Firma elettronica o fisica della persona autorizzata ad agire per conto del proprietario dei diritti d'autore o di altro diritto di proprietà intellettuale;</li><br><li>Descrizione dell'opera tutelata da diritti d'autore o da altra proprietà intellettuale presumibilmente violata;</li><br><li>Descrizione dell'area di YouVersion in cui si trova il materiale che ritieni sia oggetto di violazione;</li><br><li>Il tuo indirizzo, numero di telefono e indirizzo e-mail (tutte le voci applicabili);</li><br><li>Dichiarazione da te rilasciata in cui dichiari di ritenere in buona fede che l'utilizzo in questione non è autorizzato dal proprietario dei diritti d'autore, dal suo agente o dalla normativa in vigore;</li><br><li>Dichiarazione da te rilasciata, a pena di falsa dichiarazione, in cui dichiari che le informazioni di cui sopra fornite nella tua Comunicazione sono corrette e che sei il proprietario dei diritti d'autore o della proprietà intellettuale o che sei autorizzato ad agire per conto del proprietario dei diritti d'autore o della proprietà intellettuale. LifeChurch.tv</li></ul>"
       general title: "Informazioni Generali"
-      general text: "do not translate"
+      general text: "Totalità dell'Accordo. le presenti CONDIZIONI DI UTILIZZO costituiscono la totalità dell'accordo esistente tra te e LifeChurch.tv e regolano il tuo utilizzo di YouVersion, prevalendo su qualsiasi accordo precedente tra te e LifeChurch.tv per quanto riguarda YouVersion. Potresti inoltre essere soggetto a termini e condizioni aggiuntive.<br><br>Legge Applicabile e Foro Competente. Le CONDIZIONI DI UTILIZZO e il rapporto tra te e LifeChurch.tv saranno regolamentati dalle leggi dello Stato dell'Oklahoma senza tenere conto dei conflitti delle disposizioni di legge. Tu e LifeChurch.tv accettate di sottostare all'esercizio della giurisdizione personale ed esclusiva dei tribunali ubicati nella contea di Oklahoma County, Oklahoma.<br><br>Rinuncia ed Esclusione dei Termini. Il mancato esercizio o applicazione da parte di LifeChurch.tv di qualsiasi diritto o clausola delle presenti CONDIZIONI DI UTILIZZO non costituirà una rinuncia a tale diritto o clausola. Se una qualsiasi clausola delle presenti CONDIZIONI DI UTILIZZO viene giudicata non valida da un tribunale di una giurisdizione competente, le parti concordano comunque che tale tribunale debba tentare di dare seguito alle intenzioni delle parti, come previsto nella clausola, e che le altre clausole delle presenti CONDIZIONI DI UTILIZZO rimangano pienamente valide e in vigore.<br><br>Nessun Diritto di Successione e Non Trasferibilità. Convieni e concordi che il tuo account LifeChurch.tv non è trasferibile e che qualsiasi diritto verso il tuo ID LifeChurch.tv o contenuto nel tuo account si estingue con la tua morte. Su ricezione di una copia del certificato di morte, LifeChurch.tv può chiudere il tuo account ed eliminare permanentemente tutti questi contenuti.<br><br>Statuto delle Limitazioni. Comprendi e accetti che, indipendentemente da qualsiasi statuto o legge che specifichi il contrario, qualsiasi rivendicazione o causa di azione derivante o correlata all'utilizzo di YouVersion o alle presenti CONDIZIONI DI UTILIZZO deve essere presentata entro un (1) anno dal verificarsi di tale rivendicazione o causa di azione o cadrà in prescrizione.<br><br>I titoli delle sezioni delle presenti CONDIZIONI DI UTILIZZO servono unicamente come riferimento e non hanno alcuna efficacia legale o contrattuale."
     profile:
       first name: "Nome"
       last name: "Cognome"
@@ -723,3 +723,24 @@ it:
   reader help:
     title: "Scegli un versetto..."
     line 1: "Clicca o tocca un versetto o insieme di versetti per creare un segnalibro, per evidenziare, creare una nota o condividere con i tuoi amici!"
+  campaigns:
+    100m:
+      logo: "YouVersion: l'App Bibbia"
+      tagline: "Inzia con <em>100 milioni</em>"
+      intro: "Può l'App Bibbia arrivare a 100 milioni di installazioni prima del nostro 5° anniversario il 10 luglio? Solo con il tuo aiuto!"
+      share:
+        with friends: "Condividi con i tuoi amici"
+        fb:
+          dialog name: "Hai l'App Bibbia?"
+          dialog desc: "Mi piace tanto l'App Bibbia! Mi ha davvero aiutato a rendere la Bibbia parte della mia vita quotidiana. Mi permette di evidenziare, ascoltare le Bibbia audio, prendere appunti, segue dei piani di lettura devozionali ... perfino guardare dei video! Scaricala adesso (è gratis): http://www.bible.com/app"
+        em:
+          subject: "Hai l'App Bibbia?"
+          body: "Sto godendo l'App Bibbia di YouVersion e pensavo che anche a te piacerebbe. Apro la Bibbia molto più spesso questo giorni perché è così facile leggere, guardare, ascoltare e condividere. Ha perfino dei Piani con una selezione dalla Bibbia già scelta che mi aspetta ogni giorno.\n\nPuoi trovarla (gratis!) per quasi ogni dispositivo mobile qui:\nhttp://www.bible.com/app"
+      body:
+        p1: "Il 10 luglio sarà un grande giorno. Non solo è il 5° anniversario dell'App Bibbia, ma segna anche 5 anni dal varo della iTunes Store della Apple."
+        p2: "Ma ancora più grande? Con il tuo aiuto, sarà il giorno in cui l'App Bibbia raggiungerà 100 milioni di download."
+        p3: "Abbiamo imparato che Dio usa delle pietre miliari come questa per stimolare una crescita ancora maggiore."
+        p4: "Facciamo la storia assieme."
+      ad:
+        title: "L'App Bibbia è completamente gratuita ed è un ottimo modo per esplorare la Bibbia."
+        copy: "Leggi, Ascolta, Guarda, Condividi. Scarica l'App Bibbia per il tuo smartphone o tablet: <a href='http://bible.com/app'>Scarica adesso</a>"

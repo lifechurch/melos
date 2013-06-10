@@ -276,7 +276,6 @@ sv:
       information use title: "Hur använder vi din information?"
       information use text: "När du registrerar dig för en viss tjänst som kräver registrering ber vi dig att lämna personlig information. Om LifeChurch.tv skulle vilja använda denna information på ett sätt som skiljer sig från anledningen till att den samlades in kommer vi att be om ditt samtycke innan vi använder den. Du kan vägra att lämna personlig information till någon av våra tjänster, men då kan vi inte tillhandahålla dessa tjänster till dig."
       information security title: "Hur skyddar vi din information?"
-      information security text: "LifeChurch.tv delar inte med sig av din personliga information till andra institutioner utanför LifeChurch.tv utan ditt uttryckliga godkännande. LifeChurch.tv delar enbart med sig av din personliga information om de är övertygade att tillgång, användning, bearbetning eller avslöjande av sådan information är nödvändig för att (a)  tillmötesgå tillämplig lag, bestämmelser, juridiska processer eller tvingande begäran av myndighet, (b) upprätthålla gällande Användarvillkor, inklusive undersökning av möjliga brott mot dem, (c) upptäcka, förhindra eller på annat sätt ta itu med bedrägeri, säkerhetsproblem eller tekniska problem eller (d) skydda mot överhängande skador mot rättigheter, egendom eller säkerhet för LifeChurch.tv, dess användare eller allmänheten som krävs eller tillåts enligt lag. LifeChurch.tv vidtar lämpliga säkerhetsåtgärder för att skydda mot obehörig åtkomst till eller obehörigt ändrande, avslöjande eller förstörande av data. Inklusive interna granskningar av våra insamlade data, lagring och bearbetningsrutiner och säkerhetsåtgärder samt fysiska säkerhetsåtgärder för att skydda mot obehörig åtkomst till system där vi lagrar personuppgifter. Om inte uttryckligt tillstånd ges av dig, begränsar LifeChurch.tv åtkomsten till personlig information till dess anställda, leverantörer och agenter som behöver känna till informationen för att driva, utveckla eller förbättra våra tjänster. Dessa personer har tystnadsplikt och kan bli föremål för bland annat avsked och åtal, om de inte uppfyller dessa skyldigheter."
       data integrity title: "Dataintegritet"
       data integrity text: "LifeChurch.tv granskar våra datainsamling, lagring och bearbetningspraxis för att säkerställa att vi endast samla in, lagra och bearbeta den personliga information som behövs för att tillhandahålla eller förbättra våra tjänster. Vi vidtar rimliga åtgärder för att säkerställa att den personliga information vi behandlar är korrekt, fullständig och aktuell, men vi är beroende av våra användare att uppdatera eller korrigera sin personliga information när det behövs."
       information access title: "Komma åt och uppdatera personlig information"
@@ -723,3 +722,18 @@ sv:
   reader help:
     title: "Välj en vers..."
     line 1: "Klicka eller tryck på en vers eller samling av verser för att bokmärka, markera, skapa en anteckning eller dela med dina vänner!"
+  campaigns:
+    100m:
+      logo: "YouVersion: Bibelappen"
+      intro: "Kan Bibelappen nå 100 miljoner installationer före vår 5-årsdag den 10 juli? Bara med din hjälp!"
+      share:
+        with friends: "Dela med dina vänner"
+        fb:
+          dialog name: "Har du Bibelappen?"
+        em:
+          subject: "Har du Bibelappen?"
+      body:
+        p4: "Låt oss skapa historia tillsammans."
+      ad:
+        title: "Bibelappen är helt gratis och ett suveränt sätt att utforska Bibeln."
+        copy: "Läs, lyssna, titta, dela. Hämta Bibelappen till din smartphone eller läsplatta: <a href='http://www.bible.com/sv/app'>Ladda ner nu</a>"

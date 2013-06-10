@@ -276,7 +276,7 @@
       information use title: "Hvordan bruker vi informasjonen din?"
       information use text: "Når du registrerer deg for en særskilt tjeneste som krever registrering, ber vi deg oppgi personlig informasjon. Hvis LifeChurch.tv ønsker å bruke denne informasjonen på en annen måte enn det som var den opprinnelige hensikten, vil vi be om din tillatelse i forkant. Du kan alltid velge å avslå å oppgi personlig informasjon til våre tjenester, med den følge at LifeChurch.tv ikke vil være i stand til å tilby deg disse tjenestene."
       information security title: "Hvordan beskytter vi din informasjon?"
-      information security text: "LifeChurch.tv deler ikke din personlige informasjon med andre instanser utenfor LifeChurch.tv uten å innhente din tillatelse. LifeChurch.tv kan kun dele din personlige informasjon dersom man i god tro mener at å dele denne informasjonen er nødvendig for å (a) tilfredsstille enhver gjeldende lov, bestemmelse, juridisk prosess eller krav fra politiske styresmakter, (b) håndheve de gjeldende bruksvilkår, inkludert det å undersøke eventuelle brudd på disse, (c) oppdage, unngå, eller på annen måte sette søkelyset på svindel, sikkerhet eller tekniske spørsmål, eller (d) beskytte mot umiddelbar skade på LifeChurch.tvs, LifeChurch.tvs brukeres eller offentlighetens  rettigheter, eiendom eller sikkerhet i henhold til lovens krav eller tillatelser.LifeChurch.tv gjennomfører egnede sikkerhetstiltak for å beskytte mot uautorisert tilgang til systemer der vi lagrer personlige data. Med mindre du har gitt oss spesifikk tillatelse til det, begrenser LifeChurch.tv tilgang til personlig informasjon til sine ansatte, leverandører eller agenter som trenger å kjenne til denne informasjonen for å drive, utvikle og forbedre våre tjenester. Disse individene har taushetsplikt, og vil kunne bli utsatt for disiplinære tiltak, inkludert det å miste jobben og å bli rettslig forfulgt, dersom de unngår å innfri disse forpliktelsene."
+      information security text: "LifeChurch.tv deler ikke din personlige informasjon med andre instanser utenfor LifeChurch.tv uten ditt spesifikke samtykke. LifeChurch.tv kan dele din personlige informasjon kun dersom det er et godt grunnlag for å tro at tilgang, bruk, bevaring eller avsløring av slik informasjon er nødvendig for (a) tilfredsstille enhver gjeldende lov, regulativ, rettslig gjennomgang eller direkte krav fra myndighetene, (b) håndheving av nødvendige Brukerbestemmelser, herunder undersøkelser om mulige brudd på disse, (c) avsløre, forhindre eller på annet vis påvise svindel, sikkerhets- eller tekniske forhold, eller (d) beskytte mot truende skade mot LifeChurch.tv, brukerne eller publikum sine rettigheter, eiendom eller sikkerhet som er påkrevd eller tillatt ved gjeldende lover. LifeChurch.tv tar nødvendige sikkerhetstiltak for å hindre ulovlig tilgang, eller ulovlig endring, avsløring eller ødeleggelse av data. Dette inkluderer interne gjennomganger av datainnhold, lagring og handlingsmønstre og sikkerhetstiltak, så vel som fysiske sikkerhetstiltak for å hindre ulovlig tilgang til systemer hvor vi lagrer personlig profildata. Uten spesifikk tillatelse gitt av deg, begrenser LiveChurch tilgang til personopplysninger for våre ansatte og samarbeidspartnere som trenger denne informasjonen for å drive, utvikle og forbedre våre tjenester. Disse personene er bundet av taushetsplikt og kan bli utsatt for straffetiltak, både som oppsigelse og rettslig påklage, dersom de bryter sin taushetsplikt."
       data integrity title: "Dataintegritet"
       data integrity text: "LifeChurch.tv gjennomgår våre datainnsamlings-, lagrings- og behandlingsrutiner for å forsikre oss om at vi kun samler inn, lagrer og behandler den personlige informasjonen som er nødvendig for å tilby eller forbedre våre tjenester. Vi gjør de tiltak som er nødvendige for å forsikre oss om at den personlige informasjonen vi behandler er nøyaktig, fullstendig og oppdatert, men vi er avhengig av at våre brukere oppdaterer eller endrer sin personlige informasjon når det er nødvendig."
       information access title: "Tilgang til og oppdatering av personlig informasjon"
@@ -723,3 +723,24 @@
   reader help:
     title: "Velg et vers..."
     line 1: "Klikk på ett eller flere vers for å opprette bokmerke, utheve tekst, lage et notat eller dele med dine venner!"
+  campaigns:
+    100m:
+      logo: "YouVersion: Bibel-appen"
+      tagline: "Det begynner med <em>100 millioner</em>"
+      intro: "Kan Bibel-appen nå 100 millioner installeringer før vårt 5-års jubileum 10. juli? Bare med din hjelp!"
+      share:
+        with friends: "Del med dine venner"
+        fb:
+          dialog name: "Har du Bibel-appen?"
+          dialog desc: "Jeg elsker Bibel-appen! Den har virkelig hjulpet meg å gjøre Bibelen til en daglig del av livet mitt. Den lar meg markere tekstavsnitt, høre lydklipp fra Bibelen, lage notater, følge andaktsplaner...til og med se videoer! Last den ned nå (det er gratis): http://www.bible.com/app"
+        em:
+          subject: "Har du Bibel-appen?"
+          body: "Jeg har brukt Bibel-appen fra YouVersion flittig, og tenkte du også kunne nyte godt av den. Jeg åpner Bibelen mye oftere nå, for det er så lett å lese, se, lytte og dele. Den har til og med leseplaner med egne deler av Bibelen som er lagt klar for meg hver dag.\n\nDu kan få den (gratis!) på stort sett hvilkens om helst mobil enhet her:\nhttp://www.bible.com/app"
+      body:
+        p1: "10. juli blir en stor dag Ikke bare feierer Bibel-appen 5-års jubileum, men det er også 5 år siden Apple lanserte sin iTunes-butikk."
+        p2: "Og enda større? Med din hjelp kan dette bli dagen Bibel-appen vil nå 100 millioner nedlastinger."
+        p3: "Vi har lært at Gud bruker milepæler som dette for å sette igang enda større vekst."
+        p4: "La oss skape historie sammen."
+      ad:
+        title: "Bibel-appen er helt gratis, og en glimrende måte for å utforske bibelen."
+        copy: "Les, Lytt, Se, Del. Få Bibel-appen på din smart-telefon eller nettbrett: <a href='http://bible.com/app'>Last ned</a>"

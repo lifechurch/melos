@@ -276,7 +276,7 @@ pt-BR:
       information use title: "Como usamos a sua informação?"
       information use text: "Quando você se inscrever para um determinado serviço que requer um registro, nós solicitamos que você nos forneça informações pessoais. Se a LifeChurch.tv quiser utilizar esta informação de uma maneira diferente do propósito para o qual ela foi coletada, nós solicitaremos o seu consentimento antes de tal uso. Você poderá optar por não enviar informações pessoais para qualquer um de nossos serviços, neste caso, talvez não possamos fornecer estes serviços a você."
       information security title: "Como protegemos os seus dados?"
-      information security text: "LifeChurch.tv não compartilha seus dados pessoais com outras instituições qye não pertencem `a LifeChurch.tv. sem o seu explícito consentimento. Há possibilidade que a LifeChruch.tv venha a compartilhar os seus dados somente se ela tiver boa fé de que o acesso, uso. preservação ou divulgação desses dados seja razoavelmente necessárias para (a) satisfazer qualquer aplicação de lei, regulamento, processo legal ou requerimento governamental, (b) fazer cumprir os Termos de Uso, incluindo investigações de prováveis violações, assim como (c) detectar, prevenir, ou no caso, tratar de fraudes, segurança ou problemas técnicos, ou ainda (d) proteger contra perigos iminentes aos direitos, propriedades ou segurança da LifeChurch.tv, seus usuários ou o público como é requerido ou permitido por lei. LifeChurch.tv toma medidas de segurança apropriadas para proteger contra acesso, mudanças, revelação ou destruição não autorizada de dados, incluindo revisões internas de nossa coleta de dados, de nossas práticas de armazenamento e processamento, e de nossas medidas de segurança, bem como de nossas medidas de segurança física para proteger contra acesso não autorizado aos sistemas onde os dados pessoais são armazenados. Nós limitamos o acesso a informações pessoais aos empregados da LifeChurch, contratados e profissionais que precisam saber tal informações para operar, desenvolver ou melhorar nossos serviços a menos que obtenhamos uma permissão explícita sua para tal. Esses indivíduos são limitados a obrigações de confidencialidade e estão sujeitos a disciplina, incluindo o cancelamento de seu contrato e processo criminal se falharem em cumprir suas obrigações."
+      information security text: "A LifeChurc.tv não compartilha suas informações pessoais com outras instituições além da LifeChurch.tv sem seu consentimento explícito. A LifeChurch.tv pode compartilhar suas informações pessoais só se tem boa fé que o acesso, utilização, preservação ou divulgação dessas informações é razoavelmente necessário para (a) satisfazer qualquer lei aplicável, regulamentação, processo legal ou solicitação governamental, (b ) fazer cumprir os Termos de Uso aplicáveis​​, incluindo a investigação de possíveis violações do mesmo, (c) detectar, impedir ou lidar com questões de fraude, segurança ou técnicas, ou (d) proteger contra danos iminentes aos direitos, propriedade ou segurança da LifeChurch.tv , seus usuários ou o público, como exigido ou permitido por lei. A LifeChurch.tv toma medidas de segurança adequadas para protege-se contra acesso não autorizado ou alteração não autorizada, revelação ou destruição de dados. Incluindo revisões internas de nossa coleta de dados, armazenagem e práticas de processamento e medidas de segurança, bem como medidas de segurança física para protege-se contra o acesso não autorizado aos sistemas onde armazenamos dados pessoais. A menos que a permissão explícita seja obtida de você, a LifeChurch.tv restringe o acesso às informações pessoais aos seus empregados, contratados e agentes que precisam ter conhecimento dessas informações para operar, desenvolver ou melhorar os nossos serviços. Estes indivíduos estão vinculados por obrigações de confidencialidade e podem estar sujeitos a medidas disciplinares, inclusive demissão e processo criminal, caso não cumpram essas obrigações."
       data integrity title: "Integridade dos Dados"
       data integrity text: "LifeChurch.tv revisa nosso processo de coleção de dados, armazenação e práticas de processamento para garantir que somente coletamos, armazenamos e processamos dados pessoais que precisamos para providenciar e melhorar nossos serviços. Nós tomamos medidas razoáveis para assegurar que as infromações pessoais que coletamos sejam corretas, completas e atuais, mas nós dependemos de nossos usuários para atualizar ou corrigir suas informações pessoais sempre que necessário."
       information access title: "Acesso e atualização das informações pessoais"
@@ -723,3 +723,24 @@ pt-BR:
   reader help:
     title: "Selecione um versículo..."
     line 1: "Clique em qualquer versículo ou conjunto de versículos para marcar, destacar, criar uma anotação ou compartilhar com amigos! "
+  campaigns:
+    100m:
+      logo: "YouVersion: O app da Bíblia"
+      tagline: "Começa em <em>100 milhões</em>"
+      intro: "O App da Bíblia alcançará 100 milhões de instalações antes de nosso 5º aniversário em 10 de Julho? Apenas com a sua ajuda!"
+      share:
+        with friends: "Compartilhe com seus amigos"
+        fb:
+          dialog name: "Você tem o App da Bíblia?"
+          dialog desc: "Eu amo o App da Bíblia! Ele realmente me ajudou a fazer a Bíblia parte da minha vida diária. Ele me permite destacar, ouvir Bíblias em áudio, criar notas, seguir planos devocionais... até assistir vídeos! Faça o download agora (é grátis): http://www.bible.com/app"
+        em:
+          subject: "Você tem o App da Bíblia?"
+          body: "Eu curti o App da Bíblia do Youversion e achei que você fosse curtir também. Estou abrindo a Bíblia muito mais esses dias porque é fácil de ler, assistir, ouvir e compartilhar. Tem até mesmo planos de leitura, que me traz uma seleção de versículos todos os dias. \n\nVocê pode baixar (grátis) para quase todo dispositivo móvel aqui:\nhttp://www.bible.com/app"
+      body:
+        p1: "10 de Julho será um grande dia. Não é apenas o 5º aniversário do App da Bíblia, mas também serão 5 anos desde o lançamento da iTunes Store da Apple."
+        p2: "Mas, ainda maior? Com a sua ajuda, este será o dia em que o App da Bíblia alcançará 100 milhões de downloads."
+        p3: "Nós aprendemos que Deus usa marcos como este para impulsionar um crescimento ainda maior."
+        p4: "Vamos fazer história juntos."
+      ad:
+        title: "O App da Bíblia é completamente grátis e um ótimo jeito de explorar a Bíblia."
+        copy: "Leia, Ouça, Assista, Compartilhe. Tenha o App da Bíblia no seu smartphone ou tablet: <a href='http://bible.com/app'>Baixe agora</a>"

@@ -276,7 +276,6 @@ tr:
       information use title: "Bilgilerinizi nasıl kullanıyoruz? "
       information use text: "Kayıt gerektiren herhangi bir hizmete abone olmak üzere talepte bulunduğunuzda, sizden kişisel bilgi isteyeceğiz. Eğer LifeChurch.tv sizden aldığı bilgileri alınıldığı maksatlardan farklı bir şekilde kullanmak isterse, o zaman böyle bir kullanımdan önce izniniz istenilecek. Kişisel verilerinizi herhangi bir hizmetimizle paylaşmayı reddedebilirsiniz. Ancak bu taktirde size bu hizmetleri sunamayabiliriz."
       information security title: "Verilerinizi nasıl korunur?"
-      information security text: "LifeChurch.tv kişisel bilgilerinizi açık ve net izniniz olmadan LifeChurch.tv dışındaki herhangi bir kuruluş ile paylaşmaz. LifeChurch.tv bilgilerinizi sadece aşağıdaki durumlarda erişim, kullanım, saklama veya ifşanın gerektiğinin itimatı olursa paylaşır: (a) geçerli yasa, nizam, yasal işlem veya hükümetin haklarını tatmin etmek için; (b) potansyel ihlalleri araştırmak dahil olmak üzere Kullanım Koşullarını icra etmek için; (c) güvenlik veya teknik sorunları algılamak, onlara engel olmak ve dolandırıcılığa hitap etmek için; veya (d) yasanın gerktirdiği ve izin verdiği gibi LifeChurch.tv'yi, kullanıcılarını ve kamu oyunu, LifeChurch.tv'nin hakları, mülkiyetini ve güvenini nihai tehlikelerden korumak için. LifeChurch.tv verilerin izinsiz erişim, değişim, açıklama ve silinmesini engellemek için münasip güvenlik tedbirlerini almıştır. Bunların arasında veri toplama, depolama ve işleme yöntemlerimizin iç denetlemesi ve kişisel verilerin depolandığı sistemlerin fiziksel koruması için güvenlik tedbirleri vardır. Sizden açık ve net bir şekilde izin almadıkça, LifeChurch.tv yalnızca hizmetlerimizi işletmek ve geliştirmek için bu verilere ihtiyacı olan elemanları, üstencileri ve vekillerine erişim izni verir. Bu şahıslar gizlilik sözleşmeye bağlanmış olup bunları ihlâl ettiklerinde işten kovulma ve yasal takibat dahil olan cezalandırmaya tabi tutulur."
       data integrity title: "Veri bütünlüğü"
       data integrity text: "Yalnızca hizmetlerimizi sunup geliştirmeki için ihtiyacımız olduğu verileri toplayıp, saklayıp işlediğimize emin olabilmek için, LifeChurch.tv veri toplama, saklama ve işleme uygulamalarını sık sık denetler. Elimizdeki kişisel verilerin doğru, eksiksiz ve güncel olduğunu sağlamak için makul adımları atarız. Ancak, kullanıcılarımızdan ihtiyacı olduğunda kişisel verilerini güncellemelerini veya düzeltmelerini bekleriz."
       information access title: "Kişisel bilgilere erişim ve bunların güncellenmesi"
@@ -723,3 +722,11 @@ tr:
   reader help:
     title: "Bir ayet seçiniz..."
     line 1: "Bir veya birkaç ayeti yer imlerinize eklemek, vurgulamak, not yazmak veya dostlarınızla paylaşmak için tıklayın veya basınız."
+  campaigns:
+    100m:
+      intro: "10 Haziranda 5. yılımız bitmeden uygulamamız 100 milyon kere yüklenebilir mi? Yardımcı olursanız, evet!"
+      share:
+        fb:
+          dialog name: "Kutsal Kitap Uygulaması sende var mı?"
+        em:
+          subject: "Kutsal Kitap Uygulaması sende var mı?"

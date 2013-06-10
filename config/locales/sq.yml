@@ -15,6 +15,13 @@ sq:
     users username not available: "Emri i përdoruesit që dhatë nuk është i disponueshëm."
     users username or password invalid: "Emri i përdoruesit ose fjalëkalimi që dhatë është i pavlefshëm."
     users username required: "Ju duhet të shkruani një emër përdoruesi."
+  meta:
+    100million:
+      title: "Fillon me 100 milionë"
+      description: "Programi i Biblës është instaluar pothuaj 100 milionë herë - një gur kilometrik i pabesueshëm! Por ne vetëm sapo fillojmë. Shkarko falas Programin e Biblës sot - dhe pastaj ndaje programin me miqtë e tu. Le të bëjmë histori së bashku."
+    mobile:
+      title: "Programi i Biblës"
+      description: "Dhjetëra miliona njerëz janë duke përdorur Programin e Biblës për të lexuar, dëgjuar, shikuar dhe ndarë Fjalën e Perëndisë, duke e bërë atë pjesë të jetës së përditshme. Shkarko programin falas dhe hap shenjuesit, shënimet dhe planet e tua të leximit nga kudo. Gëzo qindra versione, duke përfshirë edhe audio, të gjitha në pajisjen tënde të lëvizshme."
   now: "Tani"
   celebrating 50MM: "Duke festuar 50 milion instalime të programit!"
   link: "Lidhje"
@@ -276,7 +283,7 @@ sq:
       information use title: "Si e përdorim ne informacion tuaj?"
       information use text: "do not translate"
       information security title: "Si e mbrojmë informacionin tuaj?"
-      information security text: "do not translate"
+      information security text: "LifeChurch.tv nuk i ndan të dhënat tuaja personale me institucione të tjera jashë LifeChurch.tv pa miratimin tuaj të qartë. LifeChurch.tv mund të ndajë të dhënat tuaja personale vetëm nëse ka një besim të mirë që hyrja, përdorimi, ruajtja dhe zbulimi i këtyre të dhënave është mjaft i nevojshëm për (a) të plotësuar një ligj apo normë të zbatueshme, proces ligjor ose kërkesë të detyrueshme qeveritare, (b) të detyruar zbatimin e Kushteve të Përdorimit, duke përfshirë hetimin e shkeljeve të mundshme të tyre, (c) të zbuluar, shmangur ose në të kundërt për t'u përballur me mashtrimin, sigurinë apo çështje teknike, ose (d) të mbrojtur kundër dëmit të pashmangshëm për të drejtat, pronën ose sigurinë e LifeChurch.tv, përdoruesit e saj ose publikun siç kërkohet ose lejohet nga ligji. LifeChurch.tv merr masat e duhura të sigurisë për të mbrojtur kundër hyrjeve të paautorizuara ose modifikimit, zbulimit ose shkatërrimit të paautorizuar të të dhënave, duke përfshirë inspektimet e brendshme të grumbullimit të të dhënave tona, ruajtjes dhe praktikave përpunuese si dhe të masave të sigurisë, si edhe masat e ruajtjes fizike kundër hyrjes së paautorizuar në sistemet ku ne i ruajmë të dhënat personale. Derisa të jetë marrë leje e qartë nga ana tuaj, LifeChurch.tv e kufizon hyrjen te të dhënat personale vetëm për punëdhënësit e saj, kontraktuesit dhe agjentët të cilëve u duhet të dinë këtë informacion për të vepruar, zhvilluar ose përmirësuar shërbimet tona. Këta individë janë të lidhur nga detyrimet e mirëbesimit dhe mund t'i nënshtrohen disiplinës, që përfshin pushimin nga puna dhe ndjekjen penale, nëse dështojnë të plotësojnë këto detyrime."
       data integrity title: "Integriteti i të dhënave"
       data integrity text: "do not translate"
       information access title: "Mundësia e përdorimit dhe përditësimit të informacionit personal"
@@ -723,3 +730,24 @@ sq:
   reader help:
     title: "Zgjidh një varg..."
     line 1: "Klikoni ose prekni mbi një varg ose disa vargje për t'i shënuar, theksuar, për të krijuar një shënim ose për t'i ndarë me miqtë tuaj!"
+  campaigns:
+    100m:
+      logo: "YouVersion: Programi i Biblës"
+      tagline: "Fillon me <em>100 milionë</em>"
+      intro: "A mund të arrijë Programi i Biblës 100 milionë instalime përpara përvjetorit të 5-të në 10 korrik? Vetëm me ndihmën tuaj!"
+      share:
+        with friends: "Ndaje me miqtë tuaj"
+        fb:
+          dialog name: "A e ke Programin e Biblës?"
+          dialog desc: "Mua më pëlqen shumë Programi i Biblës! Vërtet më ka ndihmuar ta bëj Biblën pjesë të jetës së përditshme. Më mundëson të theksoj vargje, ta dëgjoj Biblën në audio, të mbaj shënime, të ndjek plane devocionale...madje të shikoj video! Shkarkoje tani (është falas): http://www.bible.com/app"
+        em:
+          subject: "A e ke Programin e Biblës?"
+          body: "Kam qenë duke gëzuar Programin e Biblës nga YouVersion dhe mendova që do ta pëlqesh edhe ti. E kam hapur Biblën më shumë këto ditë duke qenë se është aq e lehtë për t'u lexar, shikuar, dëgjuar dhe ndarë. Madje ka Plane, që kanë një përzgjedhje të vargjeve biblike dhe që më presin çdo ditë.\n\nTi mund ta kesh këtë (falas!) për pothuaj çdo pajisje të lëvizshme këtu: http://www.bible.com/app"
+      body:
+        p1: "10 korriku do të bëhet një ditë e shënuar. Jo vetëm që është përvjetori i 5-të i Programit të Biblës, por shënon edhe 5 vjet që prej lëshimit të Dyqanit iTunes nga Apple."
+        p2: "Por edhe më shumë? Me ndihmën tënde, kjo është dita që Programi i Biblës do të arrijë 100 milionë instalime."
+        p3: "Ne kemi mësuar që Perëndia përdor gur kilometrik si ky për të nxitur një rritje akoma më të madhe."
+        p4: "Le të bëjmë histori së bashku."
+      ad:
+        title: "Programi i Biblës është krejt falas dhe një mënyrë e shkëlqyer për të eksploruar Biblën."
+        copy: "Lexo, Dëgjo, Shiko, Ndaj. Zotëroje Programin e Biblës për telefonin ose tabletin tuaj: <a href='http://bible.com/app'>Shkarko Tani</a>"

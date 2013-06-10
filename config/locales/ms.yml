@@ -266,7 +266,6 @@ ms:
       information use title: "Bagaimanakah kami menggunakan informasi anda?"
       information use text: "Ketika anda menyertai perkhidmatan tertentu yang memerlukan pendaftaran, kami meminta informasi peribadi anda. Sekiranya LifeChurch.tv ingin menggunakan informasi ini secara lain daripada tujuannya semasa informasi dikumpul, kami akan meminta kebenaran anda sebelum penggunaan tersebut. Anda boleh enggan mengemukakan informasi peribadi kepada sebarang perkhidmatan kami. Sekiranya demikian kami mungkin tidak dapat menyediakan perkhidmatan itu untuk anda."
       information security title: "Bagaimanakah kami melindungi informasi anda?"
-      information security text: "LifeChurch.tv tidak memberitakan informasi peribadi anda kepada institusi lain di luar LifeChurch.tv tanpa kebenaran eksplisit anda. LifeChurch.tv hanya boleh memberitakan informasi peribadi anda sekiranya ia mempercayai secara bona fide bahawa akses, penggunaan, penyimpanan atau pendedahan informasi ini diperlukan secara munasabah untuk (a) memuaskan undang-undang, peraturan, proses perundangan atau permintaan kerajaan yang boleh dikuatkuasakan, yang berkaitan, (b) menguatkuasakan Terma Penggunaan yang berkaitan, termasuk penyiasatan kemungkinan pelanggaran terma tersebut, (c) mengesan, mencegah, atau mengendalikan isu penipuan, sekuriti, atau teknikal, atau (d) melindungi dari bahaya yang pasti, terhadap hak, harta atau keselamatan LifeChurch.tv, penggunanya atau pihak awam, seperti diperlukan atau dibenarkan oleh undang-undang. LifeChurch.tv mengambil tindakan sekuriti yang sesuai untuk melindungi dari akses tak sah ataupun pengubahan, pendedahan, atau penghapusan data yang tak sah. Ini termasuk semakan internal tentang pengumpulan data, amalan penyimpanan dan memproses data, dan langkah sekuriti, serta langkah sekuriti fizikal untuk melindungi daripada akses tak sah kepada sistem simpanan data kami. Kecuali anda memberi kebenaran eksplisit, LifeChurch.tv menghadkan akses kepada informasi peribadi kepada pekerja, kontraktor atau ejen yang memerlukan informasi itu untuk mengendalikan, membangunkan atau meningkatkan perkhidmatan kami. Individu-individu ini tertakluk kepada kewajipan kerahsiaan dan tertakluk kepada disiplin, termasuk pemecatan dan pendakwaan jenayah, sekiranya gagal menepati kewajipan ini."
       data integrity title: "Integriti Data"
       data integrity text: "LifeChurch.tv menyemak amalan pengumpulan, simpanan dan memproses data kami demi memastikan bahawa kami hanya mengumpul, menyimpan dan memproses informasi peribadi yang diperlukan untuk menyediakan atau meningkatkan perkhidmatan kami. Kami mengambil langkah yang munasabah untuk memastikan bahawa informasi peribadi yang diproses adalah tepat, lengkap, dan terbaru, namun kami bergantung kepada pengguna kami untuk mengupdate atau membetulkan informasi peribadi mereka "
       information access title: "Mengakses dan mengupdate informasi peribadi"
@@ -676,3 +675,11 @@ ms:
     public domain: "Domain Awam"
     loading: "Memuat Versi Lain..."
     load error: "Maaf, memuat versi lain mempunyai masalah. Tutup menu ini dan buka semula untuk mencuba kembali."
+  campaigns:
+    100m:
+      intro: "Bolehkah App Alkitab mencapai 100 juta muat turun sebelum ulangtahun kami yang ke 5 pada 10 Julai? Hanya dengan bantuan anda!"
+      share:
+        fb:
+          dialog name: "Adakah anda mempunyai App Alkitab?"
+        em:
+          subject: "Adakah anda mempunyai App Alkitab?"

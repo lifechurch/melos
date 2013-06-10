@@ -276,7 +276,6 @@ tl:
       information use title: "Paano namin gagamitin ang iyong mga impormasyon?"
       information use text: "Pag nagsign-up ka sa isang partikular na serbisyo at nangangailangan ng pagrehistro, hihingi kami mula sa iyo ng mga impormasyong pangpersonal. Pag nais ng LifeChurch.tv na gamitin ang mga impormasyong ito sa ibang paraan maliban sa aming pagkalap, hihingin namin ang iyong pahintulot bago namin ito gamitin. Hindi kami nangangalap o gumagamit ng mga sensitibong impormasyon sa ibang dahilan maliban lamang sa mga napapaloob sa Patakarang Pangpribado at/o sa mga spesipikong serbisyo na iyong pinapahintulutan. Maaari mong hindi isumite ang iyong mga personal na impormasyon sa anuman sa aming mga serbisyo, at gayundin maaaring hindi ka mabibigyan ng mga serbisyong ito mula sa LifeChurch.tv."
       information security title: "Paano namin pino-protektahan ang iyong impormasyon?"
-      information security text: "Ang LifeChurch.tv ay hindi nagbabahagi ng iyong personal na impormasyon sa mga institusyong hindi kabilang sa LifeChurch.tv ng walang pahintulot mula sa iyo. Maaari lamang ibahagi ng LifeChurch.tv ang mga impormasyon tungkol sa iyo sa paniniwalang ang pagkuha, paggamit, pagtago o paghayag ng mga nasabing impormasyon ay lubhang kinakailangan upang (a) sumunod sa anumang batas, regulasyon, legal na proseso o hiling ng gobyerno, (b) isakatuparan ang kinakailangang Terms of Use, kasama ang pagiimbestiga ng posibleng pagsuway dito, (c) pag-suri, pagpigil, o kaya ay aksyunan ang palsipikasyon, security o technical issues, o (d) pangalagaan ang napipintong pinsala sa mga karapatan, ari-arian o kaligtasan ng LifeChurch.tv, mga gumagamit nito o ang publiko gaya ng sinasaad ng batas. Ang LifeChurch.tv ay gumagawa ng kaukulang aksyon upang maiwasan ang hindi awtorisadong pagkuha o pagbago, paghayag o pagsira ng impormasyon. Kasama ang aming pagsusuri ng aming nakalap na mga impormasyon, pagtatago at pamamaraan, gayun din ang pisikal na pag-iingat upang maiwasan ang hindi awtorisadong pagkuha sa mga sistema kung saan naroon ang mga personal na impormasyon. Maliban kung may maliwanag na pahintulot mula sa iyo, ang LifeChurch.tv ay may mahigpit na polisiya tungkol sa pagkuha ng mga personal na impormasyon ng mga empleyado nito, kontratista at mga ahente na kinakailangan ang mga detalye na ito upang paganahin, gawin o ayusin ang mga serbisyo ng LifeChurch.tv. Ang mag tauhang ito ay nasasakop ng confidentiality obligations at maaaring sakop din ng pagdidisiplina, kasama ang pagtanggal sa trabaho at paglilitis, kung hindi masunod ang mga pananagutang ito."
       data integrity title: "Data Integrity"
       data integrity text: "Ang LifeChurch.tv ay sinisigurong ang mga nakolektang impormasyon, pagtago at paggamit ng mga ito ay para lamang makalap, maitago at magamit ang mga personal na impormasyong kinakailangan upang makapagbigay o maiayos pa ang aming serbisyo. Isinasakatuparan namin ito sa pamamagitan ng mga makatuwirang pamamaraan upang ang mga nakalap na impormasyon ng aming mga tagasunod ay tama, kumpleto, at napapanahon, subalit kami ay umaasa sa aming mga tagasunod sa baguhin o itama ang mga personal na impormasyon na ito kung kinakailangan."
       information access title: "Kinukuha at ina-update ang personal ng detalye"
@@ -723,3 +722,11 @@ tl:
   reader help:
     title: "Pumili ng talata..."
     line 1: "Pindutin ang anumang talata o koleksyon ng taludtod upang markahan, tandaan, gumawa ng tala, o magbahagi sa iyong mga kaibigan!"
+  campaigns:
+    100m:
+      intro: "Maari kayang maabot ng Bible App ang 100 milyong pag-install bago ang aming ika-5 anibersaryo sa ika-10 ng Hulyo? Oo, sa tulong mo!"
+      share:
+        fb:
+          dialog name: "May Bible App ka ba?"
+        em:
+          subject: "May Bible App ka ba?"
