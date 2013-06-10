@@ -23,7 +23,6 @@
   %body
 
     %article
-
       -# BA headline and logo
       .intro
         .intro-logo
@@ -45,16 +44,16 @@
           - fb_desc     = t("campaigns.100m.share.fb.dialog desc")
           - fb_link     = "http://www.bible.com/app"
           - fb_redirect = "http://www.bible.com/100million"
-          %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{u(fb_name)}&description=#{u(fb_desc)}&link=#{u(fb_link)}&redirect_uri=#{u(fb_redirect)}"}
+          %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
             Facebook
 
           - twitter     = t("campaigns.100m.share.tw.tweet")
-          %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{u(twitter)}#"}
+          %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
             Twitter
 
           - subject     = t("campaigns.100m.share.em.subject")
           - body        = t("campaigns.100m.share.em.body")
-          %a.share-em{href: "mailto:?subject=#{u(subject)}&body=#{u(body)}"}
+          %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
             Email
 
       -# App ticker
