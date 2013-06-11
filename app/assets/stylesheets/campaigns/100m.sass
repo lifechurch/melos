@@ -279,16 +279,19 @@ footer
 
   .intro-copy
     font-size: 20px
-    width: auto
-    margin: 30% auto 0
+    width: 80%
+
 
   // ---- Share buttons
 
   .share-copy
     font-size: 21px
-    letter-spacing: .7em
     margin-top: 3%
     padding-left: .7em
+    letter-spacing: .1em
+
+  .share-btns
+    padding-top: 2em
 
   .share-fb, .share-tw, .share-em
     float: none
@@ -300,17 +303,28 @@ footer
   .share-fb
     background: #3A5998 image-url("campaigns/100m/fb.png") no-repeat 70px 10px
     padding-left: 10%
-    width: 20%
+    width: 50%
 
   .share-tw
     background: #00ACED image-url("campaigns/100m/twitter.png") no-repeat 85px 12px
     padding-left: 10%
-    width: 20%
+    width: 50%
 
   .share-em
     background: #AAAAAA image-url("campaigns/100m/email.png") no-repeat 84px 12px
     padding-left: 10%
-    width: 20%
+    width: 50%
+
+
+  .share-fb,
+  .share-tw,
+  .share-em
+    width: 53%
+    margin: 0 auto 20px
+    padding: 8px 0px 8px 34%
+    background-position: 32% center !important
+    text-align: left
+
 
   // ---- Ticker
 
@@ -342,6 +356,29 @@ footer
     margin-top: -10%
 
   // ---- Counter
+
+  #counter
+    background-position: 0px 30px
+    background-size: 100%
+    width: 75%
+    margin: 0 auto
+    margin-top: 20px
+
+    .part
+      margin-left: 4%
+      width: 30%
+
+    .part0
+      margin-left: 1%
+
+    .digit
+      font-size: 58px
+      width: auto !important
+      margin-left: 4%
+      padding: 0 4%
+      background-position: center 2px
+      border-radius: 7px
+
 
   #counter-divider
     display: none
