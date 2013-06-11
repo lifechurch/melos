@@ -15,6 +15,12 @@ af:
     users username not available: "Die gebruikersnaam wat jy gekies het is nie beskikbaar nie."
     users username or password invalid: "Die gebruiksnaam of wagwoord wat jy voorsien het is ongeldig."
     users username required: "Jy moet 'n gebruikernaam insleutel."
+  meta:
+    100million:
+      title: "Dit begin met 100 Miljoen"
+      description: "Die Bybel App is amper 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel App vandag af - en deel die app met jou vriende.  Help on om geskiedenis te maak."
+    mobile:
+      title: "Die Bybel App"
   now: "Nou"
   celebrating 50MM: "Vier 50 Miljoen App Installasies!"
   link: "Skakel"
@@ -724,9 +730,18 @@ af:
     line 1: "Kliek of druk op enige vers of versameling van verse om die verse te boekmerk, uitlig, nota skryf of met jou vriende te deel!"
   campaigns:
     100m:
+      logo: "YouVersion: Die Bybel app"
       intro: "Kan die Bible App 100 miljoen inskrywings bereik voor ons 5de herdenking die 10de Julie? Slegs met julle hulp!"
       share:
         fb:
           dialog name: "Het jy die Bybel App?"
         em:
           subject: "Het jy die Bybel App?"
+      body:
+        p1: "10de Julie gaan 'n groot dag wees.  Nie net is dit die Bybel App se 5de verjaarsdag nie, dit merk ook did 5de herdenking van die bekendstelling van Apple iTunes se winkel."
+        p2: "Self groter? Met jou hulp, is vandag die dag wat ons 100 miljoen installasies gaan bereik"
+        p3: "Ons het geleer dat God mylpale soos die gebruik om om groter groei te stimuleer."
+        p4: "Kom ons maak saam geskiedenis."
+      ad:
+        title: "Die Bybel App is heeltemal gratis en fantastiese wyse om die Bybel te ontdek."
+        copy: "Lees, Luister, Kyk of Deel.  Kry die Bybel App vir jou slim telefoon of tablet: <a href='http://bible.com/app'>Laai hom nou af</a>"

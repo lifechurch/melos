@@ -15,6 +15,13 @@ fi:
     users username not available: "Syöttämäsi käyttäjänimi ei ole vapaana."
     users username or password invalid: "Syöttämäsi käyttäjänimi tai salasana on virheellinen."
     users username required: "Käytäjänimi täytyy syöttää."
+  meta:
+    100million:
+      title: "Se alkaa 100 miljoonalla"
+      description: "Raamattusovellus on asennettu lähes 100 miljoonaa kertaa - hieno merkkipaalu! Mutta me olemme vasta pääsemässä alkuun. Lataa ilmainen Raamattusovellus tänään - ja jaa se kavereidesi kanssa. Tehdään historiaa yhdessä."
+    mobile:
+      title: "Raamattusovellus"
+      description: "Kymmenet miljoonat ihmiset käyttävät Raamattusovellusta lukeakseen, kuunnellakseen, katsoakseen ja jakaakseen Jumalan sanaa, tehden sen osaksi jokapäiväistä elämäänsä. Lataa ilmainen sovellus ja näet kirjanmerkkisi, muistiinpanosi ja lukusuunnitelmasi missä tahansa. Nauti sadoista raamatunkäännöksistä sekä ääniraamatuista – kaikki tämä mobiililaitteessasi."
   now: "Nyt"
   celebrating 50MM: "Juhlimme 50 miljoonatta asennettua sovellusta!"
   link: "Linkki"
@@ -276,6 +283,7 @@ fi:
       information use title: "Kuinka käytämme tietojasi?"
       information use text: "Kun rekisteröidyt johonkin tiettyyn palveluun, niin pyydämme sinulta henkilökohtaisia tietoja. Jos LifeChurch.tv haluaisi käyttää näitä tietoja jollakin muulla tavalla kuin mitä varten ne on kerätty, siinä tapauksessa pyydämme sinulta ensin suostumuksen. Voit kieltäytyä antamasta henkilötietojasi mihinkään palveluumme, mutta siinä tapauksessa emme voi tarjota sinulle palvelujamme."
       information security title: "Miten suojaamme tietosi?"
+      information security text: "LifeChurch.tv ei jaa henkilökohtaisia tietojasi LifeChurch.tv:n ulkopuolisille tahoilla ilman erillistä suostumustasi. LifeChuch.tv voi jakaa henkilökohtaisia tietojasi ainoastaan uskoessaan pääsyn tietoihin, niiden käytön, säilytyksen tai tiedonannon olevan ehdottoman välttämätöntä \n(a) lain, säädöksen, oikeustoimenpiteiden tai pakottavan hallinnollisen pyynnön vuoksi, (b) sovellettavien käyttöehtojen rikkomusten selvittämiseksi, (c) havaitakseen, estääkseen, tai muuten osoittaakseen vilpin, turvallisuuteen tai tekniikkaan liittyvien asioiden vuoksi tai (d) suojellakseen LifeChurch.tv:n oikeuksia, omaisuutta tai turvallisuutta, käyttäjiä tai yleisöä lain vaatimusten mukaan. LifeChurch.tv käyttää soveliaita turvatoimenpiteitä datan suojaamiseksi luvattomalta pääsyltä, muuttamiselta, paljastamiselta tai tuhoamiselta. Toimenpiteisiin sisältyvät datakokoelman, varaston ja prosessointikäytäntöjen sekä turvatoimenpiteiden sisäiset katselmoinnit, kuten myös fyysiset turvatoimenpiteet, joilla suojellaan luvattomalta pääsyltä järjestelmiin joissa säilytämme henkilökohtaisia tietoja. Rajaamme yksityisiin tietoihin pääsyn LifeChurch.tv:n työntekijöihin, alihankkijoihin ja henkilöihin jotka tarvitsevat näitä tietoja palveluidemme tuottamiseen, kehittämiseen tai parantamiseen. Salassapitovelvoitteet sitovat näitä henkilöitä ja heidät  voidaan irtisanoa ja saattaa rikosoikeudelliseen vastuuseen, mikäli he rikkovat velvoitteensa."
       data integrity title: "Tietosuoja"
       data integrity text: "LifeChurch.tv tarkastaa henkilökohtaisten tietojen keräämistä, säilytystä ja käsittelyä koskevat käytännöt taatakseen, että keräämme, säilytämme ja käsittelemme ainoastaan palvelujen tuottamisen tai parantamisen kannalta oleellisia tietoja. Pyrimme takaamaan, että kerätyt tiedot ovat paikkansapitäviä, täydellisiä ja ajantasaisia, mutta on käyttäjän omalla vastuulla huolehtia omien tietojensa päivittämisestä tarpeen mukaan."
       information access title: "Henkilökohtaisten tietojen saatavuus ja päivitys"
@@ -724,9 +732,24 @@ fi:
     line 1: "Klikkaa tai napauta mitä tahansa jaetta tai jakeita tehdäksesi kirjanmerkin, korostaaksesi, luodaksesi muistiinpanon tai jakaaksesi ystävillesi!"
   campaigns:
     100m:
+      logo: "YouVersion: Raamattusovellus"
+      tagline: "Se alkaa <em>100 miljoonalla</em>"
       intro: "Saavuttaako Raamattusovellus 100 miljoonan asennuksen rajan ennen viisivuotispäiväämme 10. heinäkuuta? Vain sinun avullasi!"
       share:
+        with friends: "Jaa ystäviesi kanssa"
         fb:
           dialog name: "Onko sinulla Raamattusovellus?"
+          dialog desc: "Rakastan Raamattusovellusta! Se on todella auttanut minua ottamaan Raamatun osaksi jokapäiväistä elämääni. Sen avulla voin merkitä kohtia, kuunnella ääniraamattuja, tehdä muistiinpanoja ja seurata hartaussuunnitelmia.. ja jopa katsoa videoita! Lataa sovellus nyt (se on ilmainen): http://www.bible.com/app"
+        tw:
+          tweet: "@YouVersion:in Raamattusovellus on pysyvästi kotivalikossani. Lue, katso, kuuntele ja jaa... ilmaisessa sovelluksessa: bible.com/app"
         em:
           subject: "Onko sinulla Raamattusovellus?"
+          body: "Olen iloinnut YouVersionin Raamattusovelluksesta ja ajattelin, että sinäkin voisit pitää siitä. Avaan Raamatun nykyään paljon useammin, koska sitä on niin helppo lukea, katsoa, kuunnella ja jakaa. Siinä on jopa lukusuunnitelmat: joka päivä valikoidut raamatunkohdat odottavat minua.\n\nSaat sen (ilmaiseksi!) hyvin pitkälti mille tahansa mobiililaitteelle täältä:\nhttp://www.bible.com/app"
+      body:
+        p1: "Heinäkuun 10. tulee olemaan suuri päivä. Se ei ainoastaan ole Raamattusovelluksen 5-vuotispäivä, Applen iTunes Store täyttää myös viisi vuotta."
+        p2: "Jopa suurempi? Sinun avullasi se on päivä, jolloin Raamattusovellusta on ladattu 100 miljoonaa kertaa."
+        p3: "Olemme oppineet Jumalan käyttävän tämän kaltaisia merkkipaaluja vauhdittaakseen jopa suurempaan kasvuun."
+        p4: "Tehdään historiaa yhdessä."
+      ad:
+        title: "Raamattusovellus on täysin ilmainen ja loistava tapa tutkia Raamattua."
+        copy: "Lue, kuuntele, katso, jaa. Hanki Raamattusovellus älypuhelimeesi tai tablettiisi: <a href='http://bible.com/app'>Lataa nyt</a>"

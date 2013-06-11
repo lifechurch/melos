@@ -15,6 +15,13 @@ en-GB:
     users username not available: "The username you supplied is not available."
     users username or password invalid: "The username or password you supplied is invalid."
     users username required: "You must enter a username."
+  meta:
+    100million:
+      title: "It Starts with 100 million"
+      description: "The Bible App has been installed almost 100 million times - an incredible milestone! But we are just getting started. Download the free Bible App today - and then share the app with your friends. Let’s make history together."
+    mobile:
+      title: "The Bible App"
+      description: "Tens of millions of people are using the Bible App to read, listen to, watch and share God's Word, making it a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
   now: "Now"
   celebrating 50MM: "Celebrating 50 Million App Installations!"
   link: "Link"
@@ -733,6 +740,8 @@ en-GB:
         fb:
           dialog name: "Do you have the Bible App?"
           dialog desc: "I love the Bible App! It’s really helped me make the Bible part of my everyday life. It lets me highlight, listen to audio Bibles, make notes, follow devotional plans…even watch videos! Go download it now (it’s free): http://www.bible.com/app"
+        tw:
+          tweet: "The @YouVersion Bible App has a permanent spot on my home screen. Read, watch, listen, and share...all in a free app: bible.com/app"
         em:
           subject: "Do you have the Bible App?"
           body: "I've been enjoying the Bible App from YouVersion and thought you might like it too. I’m opening the Bible a lot more these days because it’s so easy to read, watch, listen, and share. It even has plans, which have a selection of the Bible all picked out and waiting for me every day. \n\n You can get it (free!) for pretty much any mobile device here: \n http://www.bible.com/app"

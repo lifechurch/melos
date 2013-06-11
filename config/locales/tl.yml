@@ -15,6 +15,13 @@ tl:
     users username not available: "May gumagamit na nang binigay mong username."
     users username or password invalid: "May mali sa username o password na naibigay."
     users username required: "Kinakailangang magbigay ng username."
+  meta:
+    100million:
+      title: "Ito ay Nagsisimula sa <em>100 milyon</em>"
+      description: "Ang Bible App ay na-download mahigit 100 milyong beses - kahanga-hangang tagumpay! Subalit ito ay simula pa lamang. I-download ang libreng Bible App ngayon - at ibahagi ang app sa iyong mga kaibigan. Tayo na't gumawa ng kasaysayan."
+    mobile:
+      title: "App ng Bibliya"
+      description: "Milyun-milyong tao na ang gumagamit ng App ng Bibliya upang magbasa, makinig, manuod at magbahagi ng Salita ng Diyos, gawin itong bahagi ng kanilang pang-araw-araw na buhay.  I-download ang libreng app at subukan ang bookmark, notes, at plano ng pagbasa kahit saan. Mag-enjoy sa daan-daang bersyon, kasama ang audio, sa lahat ng mobile na kagamitan."
   now: "Ngayon"
   celebrating 50MM: "Ipinagdiriwang 50 Million App Installs! "
   link: "Link"
@@ -276,6 +283,7 @@ tl:
       information use title: "Paano namin gagamitin ang iyong mga impormasyon?"
       information use text: "Pag nagsign-up ka sa isang partikular na serbisyo at nangangailangan ng pagrehistro, hihingi kami mula sa iyo ng mga impormasyong pangpersonal. Pag nais ng LifeChurch.tv na gamitin ang mga impormasyong ito sa ibang paraan maliban sa aming pagkalap, hihingin namin ang iyong pahintulot bago namin ito gamitin. Hindi kami nangangalap o gumagamit ng mga sensitibong impormasyon sa ibang dahilan maliban lamang sa mga napapaloob sa Patakarang Pangpribado at/o sa mga spesipikong serbisyo na iyong pinapahintulutan. Maaari mong hindi isumite ang iyong mga personal na impormasyon sa anuman sa aming mga serbisyo, at gayundin maaaring hindi ka mabibigyan ng mga serbisyong ito mula sa LifeChurch.tv."
       information security title: "Paano namin pino-protektahan ang iyong impormasyon?"
+      information security text: "Ang LifeChurch.tv ay hindi nagbabahagi ng iyong personal na impormasyon sa mga institusyong hindi kabilang sa LifeChurch.tv ng walang pahintulot mula sa iyo. Maaari lamang ibahagi ng LifeChurch.tv ang mga impormasyon tungkol sa iyo sa paniniwalang ang pagkuha, paggamit, pagtago o paghayag ng mga nasabing impormasyon ay lubhang kinakailangan upang (a) sumunod sa anumang batas, regulasyon, legal na proseso o hiling ng gobyerno, (b) isakatuparan ang kinakailangang Terms of Use, kasama ang pagiimbestiga ng posibleng pagsuway dito, (c) pag-suri, pagpigil, o kaya ay aksyunan ang palsipikasyon, security o technical issues, o (d) pangalagaan ang napipintong pinsala sa mga karapatan, ari-arian o kaligtasan ng LifeChurch.tv, mga gumagamit nito o ang publiko gaya ng sinasaad ng batas. Ang LifeChurch.tv ay gumagawa ng kaukulang aksyon upang maiwasan ang hindi awtorisadong pagkuha o pagbago, paghayag o pagsira ng impormasyon. Kasama ang aming pagsusuri ng aming nakalap na mga impormasyon, pagtatago at pamamaraan, gayun din ang pisikal na pag-iingat upang maiwasan ang hindi awtorisadong pagkuha sa mga sistema kung saan naroon ang mga personal na impormasyon. Maliban kung may maliwanag na pahintulot mula sa iyo, ang LifeChurch.tv ay may mahigpit na polisiya tungkol sa pagkuha ng mga personal na impormasyon ng mga empleyado nito, kontratista at mga ahente na kinakailangan ang mga detalye na ito upang paganahin, gawin o ayusin ang mga serbisyo ng LifeChurch.tv. Ang mag tauhang ito ay nasasakop ng confidentiality obligations at maaaring sakop din ng pagdidisiplina, kasama ang pagtanggal sa trabaho at paglilitis, kung hindi masunod ang mga pananagutang ito."
       data integrity title: "Data Integrity"
       data integrity text: "Ang LifeChurch.tv ay sinisigurong ang mga nakolektang impormasyon, pagtago at paggamit ng mga ito ay para lamang makalap, maitago at magamit ang mga personal na impormasyong kinakailangan upang makapagbigay o maiayos pa ang aming serbisyo. Isinasakatuparan namin ito sa pamamagitan ng mga makatuwirang pamamaraan upang ang mga nakalap na impormasyon ng aming mga tagasunod ay tama, kumpleto, at napapanahon, subalit kami ay umaasa sa aming mga tagasunod sa baguhin o itama ang mga personal na impormasyon na ito kung kinakailangan."
       information access title: "Kinukuha at ina-update ang personal ng detalye"
@@ -724,9 +732,24 @@ tl:
     line 1: "Pindutin ang anumang talata o koleksyon ng taludtod upang markahan, tandaan, gumawa ng tala, o magbahagi sa iyong mga kaibigan!"
   campaigns:
     100m:
+      logo: "YouVersion: Ang Bible app"
+      tagline: "Ito ay nagsisimula sa <em>100 milyon</em>"
       intro: "Maari kayang maabot ng Bible App ang 100 milyong pag-install bago ang aming ika-5 anibersaryo sa ika-10 ng Hulyo? Oo, sa tulong mo!"
       share:
+        with friends: "Ibahagi sa iyong mga kaibigan"
         fb:
           dialog name: "May Bible App ka ba?"
+          dialog desc: "Gustung-gusto ko ang App ng Bibliya! Natulungan ako nitong maging bahagi ng aking araw-araw ang Bibliya. Maaari akong mag-marka, makinig sa mga awdyo na Bibliya, sumulat ng tala, sumunod sa babasahing gabay...kahit manuod ng mga palabas! Sige na, i-download mo na (libre ito): http://www.bible.com/app"
+        tw:
+          tweet: "Ang App ng Bibliya ng @YouVersion ay may permanenteng lugar sa aparato ko. Magbasa, manuod, makinig, at magbahagi... lahat sa isang libreng app: bible.com/app"
         em:
           subject: "May Bible App ka ba?"
+          body: "Nagugustuhan ko ang Bible App ng YouVersion at sa tingin ko, magugustuhan mo din ito. Madalas kong binabasa ang Bibliya dahil madali itong basahin, panuorin, pakinggan, at ibahagi. May mga Babasahing gabay na pumipili ng talata ng Bibliya para basahin ko araw-araw.\n\nMaaari mo ring makuha ito (ng libre!) sa kahit na anong aparato: http://www.bible.com/app"
+      body:
+        p1: "May malaking magaganap sa Hulyo 10. Hindi lamang ito ang ika-5 anibersayo ng Bible App, ito rin ang ika-5 taon mula nang masimulan ang iTunes Store ng Apple."
+        p2: "Ngunit mas higit pa? Sa tulong mo, ito ang araw na ang Bible App ay maaabot ang 100 milyong download."
+        p3: "Natutunan naming ginagamit ng Diyos ang mga pagdiriwang na ito upang pag-igtingin pa ang Kanyang gawain."
+        p4: "Tayo na't gumawa ng kasaysayan."
+      ad:
+        title: "Ang Bible App ay libre at isang kaaya-ayang paraan ng pagbasa ng Bibliya."
+        copy: "Magbasa, Makinig, Manuod, Magbahagi. Kunin ang Bible App para sa iyong smartphone o tablet na aparato: <a href='http://bible.com/app'>I-download Na</a>"

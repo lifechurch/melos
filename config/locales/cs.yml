@@ -734,12 +734,14 @@ cs:
     100m:
       logo: "YouVersion: Aplikace Bible"
       tagline: "Začíná to se <em>100 milióny</em>"
-      intro: "Dokáže aplikace Bible dosáhnout 100 miliónů aplikací před naším 5. výročím, které je 10. července? Pouze s tvou pomocí!"
+      intro: "Dokáže aplikace Bible dosáhnout 100 miliónů instalací před naším 5. výročím, které je 10. července? Pouze s tvou pomocí!"
       share:
         with friends: "Sdílej se svými přáteli"
         fb:
           dialog name: "Máš už aplikaci Bible?"
           dialog desc: "Mám moc rád aplikaci Bible! Pomohla mi k tomu, aby se Bible stala každodenní součástí mého života. Můžu tam zvýraznit verše, poslechnout si audio Bible, udělat si poznámky, číst podle plánu... dokonce sledovat videa! Určitě si ji můžeš hned stáhnout (je zdarma): http://www.bible.com/app"
+        tw:
+          tweet: "Aplikace Bible od @YouVersion má trvalé místo na mé hlavní obrazovce. Čtení, sledování, poslech a sdílení... vše v aplikaci, která je zdarma: bible.com/app"
         em:
           subject: "Máš aplikaci Bible?"
           body: " Velice se mi líbí aplikace Bible od YouVersion a myslím si, že by se líbila i Tobě. Otevírám teď Bibli mnohem častěji, protože číst si ji, dívat se na videa, poslouchat ji a sdílet ji je velice jednoduché. Obsahuje dokonce i Plány, které mají vybrané pasáže Bible a čekají na přečtení každý den.\n\nMůžeš si ji také stáhnout (zdarma!) do téměř jakéhokoliv mobilního zařízení:\n http://www.bible.com/app"

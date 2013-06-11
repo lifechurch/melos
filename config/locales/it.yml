@@ -15,6 +15,13 @@ it:
     users username not available: "Il nome utente scelto non é disponibile."
     users username or password invalid: "Il nome utente o password che hai inserito non è valido."
     users username required: "Devi scrivere un username."
+  meta:
+    100million:
+      title: "Inzia con 100 Milioni"
+      description: "L'App Bibbia è stata installata quasi 100 milioni di volte - una pietra miliare incredibile! Ma siamo solo agli inizi. Scarica oggi l'App Bibbia gratuita - e poi condividi l'app con i tuoi amici. Facciamo la storia insieme."
+    mobile:
+      title: "L'App Bibbia"
+      description: "Decine di milioni di persone usano l'App Bibbia per leggere, ascoltare, guardare e condividere la Parola di Dio, rendendola parte della loro vita quotidiana. Scarica l'app gratuita e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile."
   now: "Ora"
   celebrating 50MM: "Celebrando 50 milioni di installazioni!"
   link: "Collegamento"
@@ -733,6 +740,8 @@ it:
         fb:
           dialog name: "Hai l'App Bibbia?"
           dialog desc: "Mi piace tanto l'App Bibbia! Mi ha davvero aiutato a rendere la Bibbia parte della mia vita quotidiana. Mi permette di evidenziare, ascoltare le Bibbia audio, prendere appunti, segue dei piani di lettura devozionali ... perfino guardare dei video! Scaricala adesso (è gratis): http://www.bible.com/app"
+        tw:
+          tweet: "L'App Bibbia da @YouVersion ha un posto permanente sulla mia schermata d'avvia. Leggi, guarda, ascolta e condividi ... il tutto con un'app gratuita: bible.com/app"
         em:
           subject: "Hai l'App Bibbia?"
           body: "Sto godendo l'App Bibbia di YouVersion e pensavo che anche a te piacerebbe. Apro la Bibbia molto più spesso questo giorni perché è così facile leggere, guardare, ascoltare e condividere. Ha perfino dei Piani con una selezione dalla Bibbia già scelta che mi aspetta ogni giorno.\n\nPuoi trovarla (gratis!) per quasi ogni dispositivo mobile qui:\nhttp://www.bible.com/app"

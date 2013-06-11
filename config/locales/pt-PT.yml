@@ -15,6 +15,13 @@ pt-PT:
     users username not available: "O nome de utilizador que forneceu não está disponível."
     users username or password invalid: "Forneceu um utilizador ou palavra-passe inválidos."
     users username required: "Deverá inserir um nome de utilizador."
+  meta:
+    100million:
+      title: "Tem Início nos 100 Milhões"
+      description: "A app da Bíblia já foi instalada quase 100 milhões de vezes - um marco incrível! Mas estamos apenas a começar. Descarregue a App da Bíblia grátis - e depois partilhe-a com os seus amigos. Vamos fazer história juntos."
+    mobile:
+      title: "A App da Bíblia"
+      description: "Dezenas de milhões de pessoas estão a usar a App da Bóblia para ler, escutar, ver e partilhar a Palavra de Deus, fazendo dessas atividades uma parte integrante do seu dia a dia. Descarregue esta app grátis e aceda aos seus marcadores, notas e planos de leitura em qualquer lugar. Desfrute de centenas de versões, áudio incluído, tudo no seu dispositivo móvel."
   now: "Agora"
   celebrating 50MM: "A celebrar 50 milhões de instalações da App!"
   link: "Link"
@@ -276,6 +283,7 @@ pt-PT:
       information use title: "do not translate"
       information use text: "do not translate"
       information security title: "do not translate"
+      information security text: "LifeChurch.tv não compartilha suas informações pessoais com outras instituições fora da LifeChurch.tv sem seu consentimento explícito. LifeChurch.tv pode compartilhar as suas informações pessoais se considerar que o acesso, utilização, preservação ou divulgação dessas informações é razoavelmente necessário para (a) cumprir qualquer lei, regulamentação, processo legal ou solicitação governamental, (b ) fazer cumprir os Termos de utilização aplicáveis​​, incluindo a investigação de possíveis violações do mesmo, (c) detectar, impedir ou lidar com questões de fraude, segurança ou técnicas, ou (d) proteger contra danos iminentes dos direitos, propriedade ou segurança da LifeChurch.tv , seus usuários ou o público como exigido ou permitido por law.LifeChurch.tv toma medidas de segurança adequadas para proteger contra acesso não autorizado ou alteração não autorizada, revelação ou destruição de dados. incluindo revisões internas de nossa coleta de dados, armazenagem e práticas de processamento e medidas de segurança, bem como medidas de segurança física para proteger contra o acesso não autorizado aos sistemas onde armazenamos dados pessoais. A menos que a permissão explícita é concedida por si, LifeChurch.tv restringe o acesso às informações pessoais aos seus empregados, contratados e agentes que precisam ter conhecimento dessas informações para operar, desenvolver ou melhorar os nossos serviços. Estes colaboradores estão vinculados por obrigações de confidencialidade e podem estar sujeitos a medidas disciplinares, inclusive demissão e processo criminal, caso não cumpram essas obrigações."
       data integrity title: "do not translate"
       data integrity text: "do not translate"
       information access title: "do not translate"
@@ -731,12 +739,15 @@ pt-PT:
         with friends: "Partilhe com os seus amigos"
         fb:
           dialog name: "Já tem a App da Bíblia?"
-          dialog desc: "Gosto bastante da App da Bíblia! Ajudou-me realmente a fazer da Bíblia uma parte da minha vida diária. Permite-me destacar versículos, ouvir a Bíblia em áudio, criar notas, subscrever planos devocionais... até ver vídeos! Descarregue agora (é grátis): http://www.bible.com/app"
+          dialog desc: "Gosto bastante da App da Bíblia! Ajudou-me realmente a fazer da Bíblia uma parte integrante da minha vida diária. Permite-me destacar versículos, ouvir a Bíblia em áudio, criar notas, subscrever planos devocionais... até ver vídeos! Descarregue-a agora (é grátis): http://www.bible.com/app"
+        tw:
+          tweet: "A App da Bíblia do @YouVersion tem lugar permanente no meu ecrã inicial. Leia, veja, escute e partilhe...tudo numa app grátis: bible.com/app"
         em:
           subject: "Já instalou a App da Bíblia?"
+          body: "Tenho desfrutado da App da Bíblia do YouVersion e acho que também irá gostar. Consulto a Bíblia muitas mais vezes estes últimos dias e isso deve-se à facilidade de a ler, ver, escutar e partilhar. Dispõe inclusive de Planos de leitura, com uma seleção de trechos bíblicos preparados para as minhas leituras diárias.\n\nPode descarregá-la (grátis!) para quase todos os dispositivos móveis aqui: \nhttp://www.bible.com/app"
       body:
-        p1: "10 de Julho vai ser um grande dia. Não só é o dia em que a App da Bíblia cumpre o seu 5º aniversário, mas também a loja iTunes da Apple celebra 5 anos desde o seu lançamento."
-        p2: "Mas quer um dia ainda melhor? Com a sua ajuda, é o dia em que a App da Bíblia irá atingir os 100 milhões de downloads."
+        p1: "10 de Julho vai ser um grande dia. Não só é o dia em que a App da Bíblia cumpre o seu 5º aniversário, mas também o dia em que a loja iTunes da Apple celebra 5 anos desde o seu lançamento."
+        p2: "Quer um dia ainda melhor? Com a sua ajuda, é o dia em que a App da Bíblia irá atingir os 100 milhões de downloads."
         p3: "Sabemos que Deus usa este tipo de acontecimentos para causar um crescimento ainda maior."
         p4: "Vamos fazer história juntos."
       ad:

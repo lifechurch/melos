@@ -45,16 +45,16 @@
           - fb_link     = "http://www.bible.com/app"
           - fb_redirect = "http://www.bible.com/100million"
           %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
-            Facebook
+            = t("social.facebook")
 
           - twitter     = t("campaigns.100m.share.tw.tweet")
           %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
-            Twitter
+            = t("social.twitter")
 
           - subject     = t("campaigns.100m.share.em.subject")
           - body        = t("campaigns.100m.share.em.body")
           %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
-            Email
+            = t("social.email")
 
       -# App ticker
       #counter
@@ -117,7 +117,7 @@
           %p= t("campaigns.100m.body.p4")
 
       %footer
-        = image_tag "campaigns/100m/app-icon.png", class: "ad-img"
+        = image_tag localized_bible_icon, class: "ad-img"
 
         %p.ad-title
           = t("campaigns.100m.ad.title")
