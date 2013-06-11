@@ -15,6 +15,13 @@ pl:
     users username not available: "Podana nazwa użytkownika nie jest dostępna."
     users username or password invalid: "Podana nazwa użytkownika lub hasło jest nieprawidłowe."
     users username required: "Musisz wprowadzić login."
+  meta:
+    100million:
+      title: "Zaczyna się od 100 milionów"
+      description: "Aplikacja Biblii została zainstalowana prawie 100 milionów razy - niesamowity moment! Ale dopiero zaczynamy! Pobierz dzisiaj darmową Aplikację Biblii - a potem podziel się aplikacją ze znajomymi. Twórzmy razem historię!"
+    mobile:
+      title: "Aplikacja Biblii"
+      description: "Dziesiątki milionów ludzi używają Aplikacji Biblii do czytania, słuchania, oglądania i udostępniania Słowa Bożego, czyniąc je częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania z dowolnego miejsca. Ciesz się setkami przekładów i wersjami audio - dostępnymi na twoim urządzeniu."
   now: "Teraz"
   celebrating 50MM: "Świętujemy 50 milionów instalacji aplikacji!"
   link: "Odnośnik"
@@ -276,6 +283,7 @@ pl:
       information use title: "Jak używamy twoje informacje?"
       information use text: "do not translate"
       information security title: "Bezpieczeństwo informacji"
+      information security text: "LifeChurch.tv nie udostępnia twoich prywatnych informacji z innymi instytucjami poza LifeChurch.tv bez twojej wyraźnej zgody. LifeChurch.tv może udostępnić twoje prywatne informacje jedynie w dobrej wierze, gdy dostęp, użycie, ochrona lub ujawnienie takiej informacji jest zasadnie niezbędne dla (a) wypełnienia stosownych przepisów prawa, regulacji, postępowania prawnego lub w wyniku urzędowego postanowienia, (b) egzekwowania stosownych zapisów Regulaminu [Terms Of Use], włączając w to dochodzenie dotyczące jego potencjalnego naruszenia, (c) wykrycja, zapobiegania, lub w innym wypadku wyłudzenia, bezpieczeństwa lub problemów technicznych, lub (d) zabezpieczenia przeciw zbliżającej się szkodzie praw, własności lub bezpieczeństwa LifeChurch.tv, jego użytkowników lub społeczeństwa względem wymogów lub pozwoleń prawnych. LifeChurch.tv podejmuje odpowiednie środki bezpieczeństwa dla zabezpieczenia przeciwko nieupoważnionemu dostępowi do lub nieupoważnionej zmianie, ujawnieniu lub destrukcji danych, włączając w to wewnętrzne inspekcje naszych zbiorów danych, przechowywania i praktych przetwarzania oraz środków bezpieczeństwa, jak również fizycznych środków bezpieczeństwa dla ochrony przeciw nieuprawnionemu dostępowu do systemów gdzie przechowujemy prywatne dane. Bez wyraźnej zgody otrzymanej od ciebie, LifeChurch.tv ogranicza dostęp do prywatnych informacji do swoich pracowników, podwykonawców i agentów, którzy muszą poznać te informacje dla działania, rozwoju i ulepszania naszych usług. Osoby te są związane zobowiązaniami poufności i mogą być dyscyplinowane, włączając w to zakończenie pracy i postępowanie karne, jeśli nie dotrzymają wspomnianych zobowiązań."
       data integrity title: "Integralność danych"
       data integrity text: "do not translate"
       information access title: "Dostęp do danych osobowych i ich aktualizacja"
@@ -724,9 +732,24 @@ pl:
     line 1: "Kliknij lub naciśnij na dowolny werset lub ich zbiór, aby dodać zakładkę, podkreślenie, utworzyć notatkę lub podzielić się ze znajomymi!"
   campaigns:
     100m:
+      logo: "YouVersion: Aplikacja Biblii"
+      tagline: "Zaczyna się od <em>100 milionów</em>"
       intro: "Czy Aplikacja Biblii może osiągnąć 100 milionów instalacji przed naszą 5 rocznicą 10 lipca? Tylko z twoją pomocą!"
       share:
+        with friends: "Udostępnij znajomym"
         fb:
           dialog name: "Masz już Aplikację Biblii?"
+          dialog desc: "Kocham tę Aplikację Biblii! Naprawdę pomogła mi uczynić Biblię częścią mojego życia. Mogę zakreślać, słuchać wersji audio, robić notatki, rozważać z planem czytania... a nawet oglądać materiały wideo! Pobierz już teraz (jest za darmo): http://www.bible.com/app"
+        tw:
+          tweet: "Aplikacja Biblii YouVersion ma stałe miejsce na moim ekranie. Czytaj, oglądaj, słuchaj i udostępniaj...wszystko za darmo: bible.com/app"
         em:
           subject: "Masz już Aplikację Biblii?"
+          body: "Bardzo lubię Aplikację Biblii YouVersion i myślę, że Tobie też może się spodobać. Używam tej Biblii coraz częściej - jest łatwa do czytania, oglądania, słuchania i dzielenia się z innymi. Możesz tam znaleźć plany czytania, dzięki którym każdego dnia będziesz miał przygotowany odpowiedni dla siebie fragment. \n\n Aplikację Biblii możesz mieć (za darmo!) na prawie każdym urządzeniu, zobacz: \n http://www.bible.com/app"
+      body:
+        p1: "10 lipca będzie uroczystym dniem! To nie tylko 5 rocznica Aplikacji Biblii, to również 5 lat od publikacji aplikacji w Apple iTunes Store."
+        p2: "A co więcej? Dzięki waszej pomocy, to również dzień w którym Aplikacja Biblii osiągnęła 100 milionów pobrań."
+        p3: "Nauczyliśmy się, że Bóg wykorzystuje takie momenty, aby zasilić jeszcze większy wzrost."
+        p4: "Twórzmy razem historię!"
+      ad:
+        title: "Aplikacja Biblii jest darmowym świetnym sposobem na odkywanie Biblii."
+        copy: "Czytaj, słuchaj, oglądaj, udostępniaj. Pobierz Aplikację Biblii na telefon lub tablet: <a href='http://bible.com/app'>Pobierz teraz</a>"

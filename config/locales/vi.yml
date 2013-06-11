@@ -15,6 +15,13 @@ vi:
     users username not available: "Tên này không sử dụng được."
     users username or password invalid: "Tên sử dụng hoặc mật khẩu không hợp lệ."
     users username required: "Bạn cần nhập tên sử dụng."
+  meta:
+    100million:
+      title: "Ứng dụng bắt đầu với 100 triệu lượt tải về."
+      description: "Ứng dụng Kinh Thánh đã được 100 triệu lần tải về -  một mốc giới không thể tin được! Nhưng với chúng tôi mới chỉ là bắt đầu. Hôm nay, bạn hãy tải ứng dụng Kinh Thánh về - và sau đó chia sẻ với bạn bè. Chúng tay hãy cùng nhau làm nên lịch sử."
+    mobile:
+      title: "Ứng dụng Kinh Thánh."
+      description: "Hàng chục triệu người đang sử dụng Ứng dụng Kinh Thánh để đọc, nghe, xem và chia sẻ  Lời Chúa, những điều đó trở thành một phần trong cuộc sống hằng ngày của họ. Hãy tải ứng dụng miễn phí và truy cập các đánh dấu, ghi chú, và kế hoạch đọc Kinh Thánh của bạn từ bất cứ nơi đâu. Hãy vui thích với hàng trăm bản dịch, bao gồm cả Kinh Thánh phát thanh, tất cả chỉ trong thiết bị di động của bạn!"
   now: "Bây giờ"
   celebrating 50MM: "Chúc mừng 50 triệu lượt cài đặt ứng dụng!"
   link: "Đường dẫn"
@@ -732,6 +739,8 @@ vi:
         fb:
           dialog name: "Bạn đã tải Ứng dụng Kinh Thánh?"
           dialog desc: "Tôi yêu Ứng dụng Kinh Thánh! Nó thực sự mang Kinh Thánh đến như là một phần trong mỗi ngày sống của tôi. Tôi có thể tô màu, nghe, ghi chú, theo dõi kế hoạch đọc... thậm chí xem videos! Hãy tải về ngay bây giờ (hoàn toàn miễn phí): http://www.bible.com/app"
+        tw:
+          tweet: "Ứng dụng Kinh Thánh của @YouVersion sẽ tạo một biểu tượng cố định trên màn hình chính. Đọc, xem, nghe và chia sẻ ... toàn bộ đều có trong ứng dụng tại: bible.com/app"
         em:
           subject: "Bạn đã có Ứng dụng Kinh Thánh chưa?"
           body: "Tôi yêu thích Ứng dụng Kinh Thánh từ YouVersion và có thể bạn giống tôi. Tôi đọc Kinh Thánh ngày một nhiều hơn, vì thật dễ dàng để đọc, xem, nghe và chia sẻ với mọi người. Ứng dụng này thậm chí còn có nhiều kế hoạch đọc, giúp tự động trích dẫn một đoạn Kinh Thánh mỗi ngày.\n\nBạn có thể tải ứng dụng miễn phí, cho hầu hết các thiết bị di động tại đây:\nhttp://www.bible.com/app"

@@ -740,9 +740,11 @@ sk:
         fb:
           dialog name: "Máš aplikáciu Biblia?"
           dialog desc: "Veľmi rád používam aplikáciu Biblia! Naozaj mi pomohla spraviť Bibliu každodennou súčasťou môjho života. Môžem si v nej zvýrazniť verše, počúvať audio nahrávky Biblie, robiť si poznámky, čítať podľa pripravených plánov...dokonca aj pozerať videá! Stiahni si ju aj ty (je to zadarmo): http://www.bible.com/app"
+        tw:
+          tweet: "Aplikáciu Biblia od @YouVersion mám na domovskej obrazovke. Čítaj, sleduj, počúvaj a zdieľaj...zadarmo v aplikácii: bible.com/app"
         em:
           subject: "Máš aplikáciu Biblia?"
-          body: "Používam aplikáciu Biblia od YouVersion a myslím si, že by sa ti tiež mohla páčiť. Odkedy ju mám, otváram Bibliu oveľa častejšie, pretože je veľmi jednoduché ju čítať, sledovať, počúvať a zdieľať. Dokonca má aj plány čítania, kde každý deň na mňa čaká vybraná pasáž Biblie.<br/>\n<br/>\nZ tohto odkazu si ju môžeš nainštalovať (zadarmo!) na takmer akékoľvek mobilné zariadenie:\nhttp://www.bible.com/app"
+          body: "Používam aplikáciu Biblia od YouVersion a myslím si, že by sa ti tiež mohla páčiť. Odkedy ju mám, otváram Bibliu oveľa častejšie, pretože je veľmi jednoduché ju čítať, sledovať, počúvať a zdieľať. Dokonca má aj plány čítania, kde každý deň na mňa čaká vybraná pasáž Biblie.\n\nZ tohto odkazu si ju môžeš nainštalovať (zadarmo!) na takmer akékoľvek mobilné zariadenie: \nhttp://www.bible.com/app"
       body:
         p1: "10.júl bude veľký deň. Nie je to iba piate výročie aplikácie Biblia, v ten deň je aj 5 rokov od spustenia iTunes Store spoločnosti Apple."
         p2: "No ešte väčšia udalosť? S vašou pomocou dosiahne aplikácia Biblia 100 miliónov stiahnutí."

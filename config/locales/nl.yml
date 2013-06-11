@@ -740,6 +740,8 @@ nl:
         fb:
           dialog name: "Heb jij de Bijbel App?"
           dialog desc: "Ik hou van de Bijbel App! Het heeft me echt geholpen om van de Bijbel een deel van mijn dagelijkse leven te maken. Het geef me de mogelijkheid om tekst te markeren, te luisteren naar audio Bijbels, het maken van notities, het volgen van toewijdings-leesplannen... zelfs het bekijken van video's! Ga en download het nu (het is gratis): http://www.bible.com/app"
+        tw:
+          tweet: "De Bijbel App heeft een permanente plaats op mijn startscherm! Lees,luister,kijk en deel... helemaal gratis via: bible.com/app"
         em:
           subject: "Heb jij de Bijbel App?"
           body: "Ik ben aan het genieten van de Bijbel App van YouVersion en dacht dat jij dat misschien ook zou doen. Ik sla de Bijbel veel vaker open de laatste tijd omdat het makkelijk is om te lezen, kijken, luisteren en delen. Het heeft zelfs leesplannen, die selecties hebben van de Bijbel allemaal geselecteerd die me dagelijks opwachten.\n\nJe kan het (gratis!) voor bijna iedere mobiele toestel krijgen via:\nhttp://www.bible.com/app"

@@ -15,6 +15,13 @@ pt-BR:
     users username not available: "O nome de usuário informado não está disponível."
     users username or password invalid: "O nome de usuário ou senha que você forneceu é inválido. "
     users username required: "Você deve inserir um usuário."
+  meta:
+    100million:
+      title: "Começa com 100 Milhões"
+      description: "O App da Bíblia foi instalado quase 100 milhões de vezes - um marco incrível! Mas estamos apenas começando. Faça o download do aplicativo gratuito da Bíblia hoje - e, em seguida, compartilhe o aplicativo com seus amigos. Juntos vamos fazer história."
+    mobile:
+      title: "O App da Bíblia"
+      description: "Milhões de pessoas estão usando o App da Bíblia para ler, ouvir, assistir e compartilhar a Palavra de Deus, tornando-a uma parte de suas vidas diárias. Faça o download do aplicativo gratuito e acesse seus marcadores, anotações e Planos de Leitura de qualquer lugar. Desfrute de centenas de versões, incluindo áudio, tudo isso em seu dispositivo móvel."
   now: "Agora"
   celebrating 50MM: "Comemorando 50 milhões de instalações!"
   link: "Link"
@@ -727,20 +734,22 @@ pt-BR:
     100m:
       logo: "YouVersion: O app da Bíblia"
       tagline: "Começa em <em>100 milhões</em>"
-      intro: "O App da Bíblia alcançará 100 milhões de instalações antes de nosso 5º aniversário em 10 de Julho? Apenas com a sua ajuda!"
+      intro: "O App da Bíblia alcançará 100 milhões de instalações antes de nosso 5º aniversário em 10 de Julho? Somente com a sua ajuda!"
       share:
         with friends: "Compartilhe com seus amigos"
         fb:
           dialog name: "Você tem o App da Bíblia?"
           dialog desc: "Eu amo o App da Bíblia! Ele realmente me ajudou a fazer a Bíblia parte da minha vida diária. Ele me permite destacar, ouvir Bíblias em áudio, criar notas, seguir planos devocionais... até assistir vídeos! Faça o download agora (é grátis): http://www.bible.com/app"
+        tw:
+          tweet: "O App da Bíblia @YouVersion é um ícone fixo na minha tela inicial. Leia, assista, ouça e compartilhe...tudo num app gratuito: bible.com/app"
         em:
           subject: "Você tem o App da Bíblia?"
-          body: "Eu curti o App da Bíblia do Youversion e achei que você fosse curtir também. Estou abrindo a Bíblia muito mais esses dias porque é fácil de ler, assistir, ouvir e compartilhar. Tem até mesmo planos de leitura, que me traz uma seleção de versículos todos os dias. \n\nVocê pode baixar (grátis) para quase todo dispositivo móvel aqui:\nhttp://www.bible.com/app"
+          body: "Eu curti o App da Bíblia do Youversion e achei que você pudesse curtir também. Estou abrindo a Bíblia muito mais esses dias porque é fácil de ler, assistir, ouvir e compartilhar. Tem até planos de leitura, que trazem uma seleção de versículos todos os dias. \n\nVocê pode baixar (grátis!) para praticamente qualquer dispositivo móvel aqui:\nhttp://www.bible.com/app"
       body:
         p1: "10 de Julho será um grande dia. Não é apenas o 5º aniversário do App da Bíblia, mas também serão 5 anos desde o lançamento da iTunes Store da Apple."
-        p2: "Mas, ainda maior? Com a sua ajuda, este será o dia em que o App da Bíblia alcançará 100 milhões de downloads."
+        p2: "Pode ser ainda maior? Com a sua ajuda, este será o dia em que o App da Bíblia alcançará 100 milhões de downloads."
         p3: "Nós aprendemos que Deus usa marcos como este para impulsionar um crescimento ainda maior."
-        p4: "Vamos fazer história juntos."
+        p4: "Juntos vamos fazer história."
       ad:
         title: "O App da Bíblia é completamente grátis e um ótimo jeito de explorar a Bíblia."
         copy: "Leia, Ouça, Assista, Compartilhe. Tenha o App da Bíblia no seu smartphone ou tablet: <a href='http://bible.com/app'>Baixe agora</a>"
