@@ -1,5 +1,9 @@
 ---
 en:
+  social:
+    email:                                      "Email"
+    twitter:                                    "Twitter"
+    facebook:                                   "Facebook"
   api:
     users agree bool:                           "You must agree to the terms and conditions to create an account."
     users confirm password matches:             "The new passwords do not match."
