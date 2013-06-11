@@ -66,7 +66,9 @@ module YouversionWeb
         !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] =~ /^\/download|^\/mobile/
       end
 
-      r301 %r{\/webcast}, 'http://webcast.youversion.com'
+      tstamp = Time.now.to_i
+
+      r301 %r{\/webcast}, "http://webcast.youversion.com/live.html?#{tstamp}"
 
       r307 %r{^\/download|^\/mobile}, store_redirect, if: should_redirect_store
 
