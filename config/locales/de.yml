@@ -1,4 +1,8 @@
 de:
+  social:
+    email: "E-Mail"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Du musst den Allgemeinen Geschäftsbedingungen zustimmen, um ein Konto anzulegen. "
     users confirm password matches: "Die neuen Passwörter stimmen nicht überein."

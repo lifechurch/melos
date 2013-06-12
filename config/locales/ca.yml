@@ -1,4 +1,8 @@
 ca:
+  social:
+    email: "Correu electrònic"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Has d'estar d'acord amb les condicions per crear un compte."
     users confirm password matches: "Les noves contrassenyes no coincideixen."

@@ -1,4 +1,8 @@
 bg:
+  social:
+    email: "Ел.поща"
+    twitter: "Туитър"
+    facebook: "Фейсбук"
   api:
     users agree bool: "Трябва да се съгласите с условията за създаване на акаунт"
     users confirm password matches: "Новата парола не съвпада."
@@ -18,6 +22,8 @@ bg:
   meta:
     100million:
       title: "Започва със 100 милиона"
+    mobile:
+      title: "Библията"
   now: "Сега"
   celebrating 50MM: "С над 50 милиона инсталирани приложения"
   link: "Връзка"

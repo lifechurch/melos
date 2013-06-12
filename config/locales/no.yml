@@ -1,4 +1,8 @@
 "no":
+  social:
+    email: "E-post"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Du må godta brukervilkårene før du registrerer deg."
     users confirm password matches: "Passordene samsvarer ikke"
@@ -21,7 +25,7 @@
       description: "Bibel-appen har blitt installert nesten 100 millioner ganger - en utrolig milepæl! Men vi er bare så vidt kommet igang. Last ned Bibel-appen gratis idag - og del den så med vennene dine. Bli med å skape historie."
     mobile:
       title: "Bibel-appen"
-      description: "Flere titalls millioner mennesker bruker Bibel-appen til å lese, lytte til, se og dele Guds ord. Den er en del av deres hverdagsliv. Last ned appen gratis og få tilgang til dine bokmerker, notater og leseplater uansett hvor du befinner deg. Få tilgang til hundrevis av versjoner, inkludert lyd, på din mobile enhet."
+      description: "Flere titalls millioner mennesker bruker Bibel-appen til å lese, lytte til, se på og dele Guds ord, slik at Bibelen blir en del av deres hverdagsliv. Last ned appen gratis og få tilgang til dine bokmerker, notater og leseplater uansett hvor du befinner deg. Få tilgang til hundrevis av bibeloversettelser, inkludert lydbibler, på din mobile enhet."
   now: "Nå"
   celebrating 50MM: "Vi feirer 50 millioner Bibel-app-installasjoner!"
   link: "Lenke"
@@ -90,7 +94,7 @@
   lifechurch short url: "LifeChurch.tv"
   about: "Om"
   jobs: "Jobber"
-  privacy policy: "Personverninstillinger"
+  privacy policy: "Personvernserklæring"
   terms: "Vilkår"
   press: "Presse"
   get support: "Support"
@@ -283,7 +287,7 @@
       information use title: "Hvordan bruker vi informasjonen din?"
       information use text: "Når du registrerer deg for en særskilt tjeneste som krever registrering, ber vi deg oppgi personlig informasjon. Hvis LifeChurch.tv ønsker å bruke denne informasjonen på en annen måte enn det som var den opprinnelige hensikten, vil vi be om din tillatelse i forkant. Du kan alltid velge å avslå å oppgi personlig informasjon til våre tjenester, med den følge at LifeChurch.tv ikke vil være i stand til å tilby deg disse tjenestene."
       information security title: "Hvordan beskytter vi din informasjon?"
-      information security text: "LifeChurch.tv deler ikke din personlige informasjon med andre instanser utenfor LifeChurch.tv uten ditt spesifikke samtykke. LifeChurch.tv kan dele din personlige informasjon kun dersom det er et godt grunnlag for å tro at tilgang, bruk, bevaring eller avsløring av slik informasjon er nødvendig for (a) tilfredsstille enhver gjeldende lov, regulativ, rettslig gjennomgang eller direkte krav fra myndighetene, (b) håndheving av nødvendige Brukerbestemmelser, herunder undersøkelser om mulige brudd på disse, (c) avsløre, forhindre eller på annet vis påvise svindel, sikkerhets- eller tekniske forhold, eller (d) beskytte mot truende skade mot LifeChurch.tv, brukerne eller publikum sine rettigheter, eiendom eller sikkerhet som er påkrevd eller tillatt ved gjeldende lover. LifeChurch.tv tar nødvendige sikkerhetstiltak for å hindre ulovlig tilgang, eller ulovlig endring, avsløring eller ødeleggelse av data. Dette inkluderer interne gjennomganger av datainnhold, lagring og handlingsmønstre og sikkerhetstiltak, så vel som fysiske sikkerhetstiltak for å hindre ulovlig tilgang til systemer hvor vi lagrer personlig profildata. Uten spesifikk tillatelse gitt av deg, begrenser LiveChurch.tv tilgang til personopplysninger for våre ansatte og samarbeidspartnere som trenger denne informasjonen for å drive, utvikle og forbedre våre tjenester. Disse personene er bundet av taushetsplikt og kan bli utsatt for straffetiltak, både som oppsigelse og rettslig påklage, dersom de bryter sin taushetsplikt."
+      information security text: "LifeChurch.tv deler ikke din personlige informasjon med andre instanser utenfor LifeChurch.tv uten ditt spesifikke samtykke. LifeChurch.tv kan dele din personlige informasjon kun dersom det er et godt grunnlag for å tro at tilgang, bruk, bevaring eller avsløring av slik informasjon er nødvendig for å (a) tilfredsstille gjeldende lover, regulativ, rettslige gjennomganger eller direkte krav fra myndighetene, (b) håndheve nødvendige Bruksvilkår, herunder undersøkelser om mulige brudd på disse, (c) avsløre, forhindre eller på annet vis påvise svindel, sikkerhetsproblemer eller tekniske problemer, eller (d) beskytte mot truende skade mot LifeChurch.tvs, våre brukeres eller offentlighetens rettigheter, eiendom eller sikkerhet, som er påkrevd eller tillatt i henhold til gjeldende lover. LifeChurch.tv gjør nødvendige sikkerhetstiltak for å hindre ulovlig tilgang til, eller ulovlig endring, avsløring eller ødeleggelse av data. Dette inkluderer interne gjennomganger av rutiner og sikkerhetstiltak for datainnsamling, lagring og prosessering av data, så vel som fysiske sikkerhetstiltak for å hindre ulovlig tilgang til systemer hvor vi lagrer personlig informasjon. Med mindre du gir eksplisitt tillatelse til det, begrenser LiveChurch.tv tilgang til personopplysninger, slik at bare våre ansatte og samarbeidspartnere som trenger denne informasjonen for å drive, utvikle og forbedre våre tjenester, har tilgang til den. Disse personene er bundet av taushetsplikt og kan bli utsatt for straffetiltak, inkludert oppsigelse og rettslig påklage, dersom de bryter sin taushetsplikt."
       data integrity title: "Dataintegritet"
       data integrity text: "LifeChurch.tv gjennomgår våre datainnsamlings-, lagrings- og behandlingsrutiner for å forsikre oss om at vi kun samler inn, lagrer og behandler den personlige informasjonen som er nødvendig for å tilby eller forbedre våre tjenester. Vi gjør de tiltak som er nødvendige for å forsikre oss om at den personlige informasjonen vi behandler er nøyaktig, fullstendig og oppdatert, men vi er avhengig av at våre brukere oppdaterer eller endrer sin personlige informasjon når det er nødvendig."
       information access title: "Tilgang til og oppdatering av personlig informasjon"
@@ -741,15 +745,15 @@
           dialog name: "Har du Bibel-appen?"
           dialog desc: "Jeg elsker Bibel-appen! Den har virkelig hjulpet meg til å gjøre Bibelen til endel av hverdagen min. Den lar meg markere tekstavsnitt, høre lydklipp fra Bibelen, lage notater, følge leseplaner...til og med se videoer! Last den ned nå (det er gratis): http://www.bible.com/app"
         tw:
-          tweet: "Bibel-appen til @YouVersion har en fast plass på min hjemmeskjerm. Les, se, lytt og del...alt i en gratis app: bibel.com/app"
+          tweet: "Bibel-appen til @YouVersion har fast plass på min startskjerm. Les, se på, lytt og del...alt i en gratis app: bibel.com/app"
         em:
           subject: "Har du Bibel-appen?"
-          body: "Jeg har brukt Bibel-appen fra YouVersion flittig, og tenkte du også kunne nyte godt av den. Jeg åpner Bibelen mye oftere nå, for det er så lett å lese, se, lytte og dele. Den har til og med leseplaner med bibeltekster som er ligger klar til meg hver dag.\n\nDu kan få den (gratis!) på stort sett hvilken som helst mobilenhet her:\nhttp://www.bible.com/app"
+          body: "Jeg har hatt stor glede av Bibel-appen fra YouVersion, og tenkte kanskje du også ville like den. Nå åpner jeg Bibelen oftere enn før, for det er så lett å lese, se på, lytte og dele. Den har til og med leseplaner med bibeltekster som ligger og venter på meg hver dag.\n\nDu kan få den (gratis!) på stort sett hvilken som helst mobile enhet her:\nhttp://www.bible.com/app"
       body:
-        p1: "10. juli blir en stor dag. Ikke bare feirer Bibel-appen 5-års jubileum, men det er også 5 år siden Apple lanserte sin iTunes-butikk."
-        p2: "Kan dagen bli enda større? Med din hjelp kan dette bli dagen Bibel-appen vil nå 100 millioner nedlastninger."
+        p1: "10. juli blir den store dagen. Ikke bare feirer Bibel-appen 5-års jubileum, men det er også 5 år siden Apple lanserte iTunes Store."
+        p2: "Men enda større? Med din hjelp kan dette bli dagen Bibel-appen når 100 millioner nedlastninger."
         p3: "Vi har lært at Gud bruker milepæler som dette for å nå enda lenger."
         p4: "La oss skape historie sammen."
       ad:
         title: "Bibel-appen er helt gratis, og en glimrende måte å utforske Bibelen på."
-        copy: "Les, lytt, se, del! Få Bibel-appen på din smarttelefon eller nettbrett: <a href='http://bible.com/app'>Last ned</a>"
+        copy: "Les, lytt, se på, del! Få Bibel-appen på din smarttelefon eller nettbrett: <a href='http://bible.com/app'>Last ned</a>"

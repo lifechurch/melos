@@ -1,4 +1,8 @@
 es:
+  social:
+    email: "Correo electrónico"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Para crear una cuenta debe estar de acuerdo con los terminos y condiciones."
     users confirm password matches: "Las nuevas contrasenas no coinciden."

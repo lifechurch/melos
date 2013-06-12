@@ -1,4 +1,8 @@
 mn:
+  social:
+    email: "Э-мэйл"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Данс бүртгүүлэхээр журамтай зѳвшѳѳрѳх шаардлагатай."
     users confirm password matches: "Шинэ нууц үгүүд таахгүй байна."

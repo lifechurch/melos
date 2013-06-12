@@ -1,4 +1,8 @@
 fi:
+  social:
+    email: "sähköposti"
+    twitter: "twitter"
+    facebook: "facebook"
   api:
     users agree bool: "Sinun täytyy hyväksyä käyttöehdot rekisteröityäksesi."
     users confirm password matches: "Salasanat eivät täsmää."

@@ -1,4 +1,8 @@
 pl:
+  social:
+    email: "Email"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Musisz zaakceptować warunki regulaminu, aby utworzyć konto."
     users confirm password matches: "Nowe hasło nie jest zgodne."

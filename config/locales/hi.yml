@@ -1,4 +1,8 @@
 hi:
+  social:
+    email: "इमेल"
+    twitter: "ट्विट्टर "
+    facebook: "फेसबुक "
   api:
     users agree bool: "अकाउंट निर्माण हेतु उपयोग के नियमों और शर्तों से सहमत होना अनिवार्य हैं।"
     users confirm password matches: "नए पासवर्ड एक दूसरे से मेल नहीं खातें हैं ।"
@@ -210,6 +214,7 @@ hi:
     other user profile: "%{username}'s प्रोफाइल "
     my password: "मेरा पासवर्ड बदलिए"
     edit password: "पासवर्ड बदलिए"
+    edit password errors: "निम्नलिखित त्रुटियों(s) के कारण आपका पासवर्ड बदलने में असमर्थ । "
     picture: "तस्वीर"
     edit picture: "कृपया तस्वीर बदलिए"
     edit notifications: "सूचनाओ का प्रबंधन"
@@ -499,9 +504,19 @@ hi:
     must start to complete: "पूर्ण रीडिंग को save करने के लिए यह योजना शुरू करे!"
     invalid reference: "कृपया क्षमा कीजिए,आपके द्वारा चयनित संस्करण में इस पाठक योजना से सम्बंधित पद्य टिपण्णीयाँ नहीं हैं।दूसरा संस्करण चुनिए,यदि आप दोबारा यह सन्देश पाते हैं, संपर्क करे <a href='%{support_url}'>support team</a> और इसकी जानकारी दे।"
     sidebar notice: "आप एक पाठक योजना का दर्शन कर रहे हैं "
+    completed notice: "मुबारकबाद! अपनी पाठक योजना सफलता पूर्वक सम्पूर्ण करने हेतु। "
     exit: "एक्सिट "
+    loading sidebar content: "साइड बार विषय सूची लोड किया जा रहा हैं............."
   licenses:
+    authorized:
+      heading: "आपका विषय सूची अधीकृत हुआ"
+    has errors: "आपके अनुरोध में कई त्रुटियाँ पाया गया हैं। "
+    request:
+      invalid_vendor_signature: "लाइसेंस प्रमाणीकरण असफल:अमान्य विक्रयी हस्ताक्षर "
+      invalid_vendor_id: "लाइसेंस प्रमाणीकरण असफल:अमान्य विक्रयी आई डी"
+      invalid_item_ids: "लाइसेंस प्रमाणीकरण असफल:अमान्य विक्रयी आइटम "
     auth:
+      signup link text: "नि:शुल्क अकाउंट हेतु साईन अप करे "
       login link text: "साइन इन "
   registration:
     placeholder:
@@ -698,10 +713,15 @@ hi:
     public domain: "सार्वजनिक कार्यक्षेत्र "
     loading: "और अधिक संस्करण लोड किया जा रहा हैं......"
     load error: "कृपया क्षमा कीजिये और अधिक संस्करण लोड करने में कठिनाई हैं।इस मेनू को निरस्त कर दोबारा कोशिश करे।"
+  reader help:
+    title: "कोई अनुवाक्य चुने.......... "
   campaigns:
     100m:
       share:
+        with friends: "मित्रों के साथ शेयर करे "
         fb:
           dialog name: "क्या आपके पास बाइबिल App है?"
         em:
           subject: "क्या आपके पास बाइबिल App है?"
+      body:
+        p4: "आइये हम साथ मिलकर इतिहास की रचना करे।"

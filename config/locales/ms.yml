@@ -1,4 +1,8 @@
 ms:
+  social:
+    email: "E-mel"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users email email: "Alamat e-mel ini tidak sah."
     users email email rfc: "Alamat e-mel yang dibekalkan tidak sah."

@@ -1,4 +1,8 @@
 ja:
+  social:
+    email: "メール"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "アカウント作成には、利用規約に同意いただく必要があります。"
     users confirm password matches: "新しいパスワードが一致しません。"

@@ -1,4 +1,8 @@
 pt-BR:
+  social:
+    email: "E-mail"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Você deve concordar com os termos e condições para criar uma conta."
     users confirm password matches: "As novas senhas não são iguais."

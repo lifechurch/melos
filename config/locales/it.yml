@@ -1,4 +1,8 @@
 it:
+  social:
+    email: "E-mail"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Devi accettare le condizioni d'uso per iscriverti."
     users confirm password matches: "I nuovi password non sono identici."

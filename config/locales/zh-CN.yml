@@ -1,4 +1,8 @@
 zh-CN:
+  social:
+    email: "电子邮件"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "您必须同意使用协议和条款才能注册账户。"
     users confirm password matches: "新密码不匹配。"
@@ -17,7 +21,7 @@ zh-CN:
     users username required: "请务必输入用户名。"
   meta:
     100million:
-      title: "从<em>1 亿</em>开始"
+      title: "从1 亿开始"
       description: "圣经软件的安装量几乎达到1亿次，这真是一个不可思议的里程碑！但是我们才刚刚开始。下载免费的圣经软件，然后与朋友们分享这个软件，让我们一起开创历史。"
     mobile:
       title: "圣经软件"
