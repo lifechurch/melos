@@ -1,4 +1,8 @@
 ko:
+  social:
+    email: "이메일"
+    twitter: "트위터"
+    facebook: "페이스북"
   api:
     users agree bool: "등록하려면 사용 규정과 개인정보약관에 동의하셔야 합니다."
     users confirm password matches: "새 비밀번호가 일치하지 않습니다."

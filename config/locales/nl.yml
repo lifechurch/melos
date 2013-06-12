@@ -1,4 +1,8 @@
 nl:
+  social:
+    email: "E-mail"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Je dient akkoord te gaan met de Gebruiksvoorwaarden en het Privacy Beleid om te registreren voor een account."
     users confirm password matches: "De nieuwe wachtwoorden zijn niet aan elkaar gelijk."

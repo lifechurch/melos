@@ -1,4 +1,8 @@
 pt-PT:
+  social:
+    email: "Email"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Deve concordar com os Termos de Utilização para se registar."
     users confirm password matches: "As novas palavras-passe não coincidem."

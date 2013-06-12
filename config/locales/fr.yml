@@ -1,4 +1,8 @@
 fr:
+  social:
+    email: "Email"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Vous devez accepter les conditions pour créer un compte."
     users confirm password matches: "Les mots de passe ne correspondent pas."
@@ -15,6 +19,13 @@ fr:
     users username not available: "Le nom d'utilisateur saisi n'est pas disponible."
     users username or password invalid: "Le nom d'utilisateur ou le mot de passe est invalide."
     users username required: "Vous devez saisir un identifiant."
+  meta:
+    100million:
+      title: "Ça démarre avec 100 Millions "
+      description: "La Bible App a été installée pratiquement 100 millions de fois - une étape incroyable! Cela dit, ce n'est que le début. Aujourd'hui téléchargez gratuitement la Bible App et partagez-la avec vos amis. Ensemble, réécrivons l'histoire."
+    mobile:
+      title: "La Bible App"
+      description: "Des dizaines de millions de personnes utilisent la Bible App pour lire, écouter, regarder et partager la Parole de Dieu, l'incluant ainsi dans leur quotidien. Téléchargez l'application gratuite et accédez à vos favoris, notes et plans de lecture où que vous soyez. Profitez des centaines de versions disponibles, y compris des versions audio, le tout à partir de votre appareil mobile."
   now: "Maintenant"
   celebrating 50MM: "Célébration des 50 millions d'installations de cette app!"
   link: "Lien"
@@ -733,6 +744,8 @@ fr:
         fb:
           dialog name: "Avez-vous la Bible App ?"
           dialog desc: "J'adore la Bible App ! Elle m'a vraiment aidé à faire de la Bible une partie essentielle de ma journée. Elle me permet de surligner, écouter des Bibles audios, prendre des notes, suivre des plans de lecture... et même regarder des vidéos ! Télécharge-là maintenant (c'est gratuit) : http://www.bible.com/app"
+        tw:
+          tweet: "La Bible App de @YouVersion a un raccourci permanent sur mon écran d'accueil. Lire, regarder, écouter et partager... le tout dans une app gratuite : bible.com/app"
         em:
           subject: "Avez-vous la Bible App ?"
           body: "J'apprécie vraiment la Bible App de YouVersion et je pensais que tu pourrais l'apprécier aussi. J'ouvre beaucoup plus ma Bible ces temps-ci parce que c'est si simple de lire, regarder, écouter et partager. Il y a même des plans, avec une sélection de passages bibliques à lire qui m'attendent chaque jour. \n\nTu peux la trouver (gratuitement !) pour pratiquement tout type d'appareil mobile ici :\nhttp://www.bible.com/app"

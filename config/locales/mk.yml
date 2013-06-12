@@ -1,4 +1,8 @@
 mk:
+  social:
+    email: "Е-пошта"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Мора да се согласите со Условите за користење за да се претплатите."
     users confirm password matches: "Лозинките не се совпаѓаат."

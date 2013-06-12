@@ -1,4 +1,8 @@
 ru:
+  social:
+    email: "Email"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Чтобы создать аккаунт, вы должны согласиться с Условиями обслуживания."
     users confirm password matches: "Новые пароли не совпадают."

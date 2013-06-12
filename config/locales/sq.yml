@@ -1,4 +1,8 @@
 sq:
+  social:
+    email: "E-postë"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Ju duhet të pajtoheni me rregullat dhe kushtet për të krijuar një llogari."
     users confirm password matches: "Fjalëkalimet e reja nuk përputhen."

@@ -1,4 +1,8 @@
 uk:
+  social:
+    email: "Ел.пошта"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Вам необхідно погодитися з умовами та правилами для створення облікового запису."
     users confirm password matches: "Нові паролі не збігаються."

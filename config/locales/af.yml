@@ -1,4 +1,8 @@
 af:
+  social:
+    email: "E-pos"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Jy moet instem tot die terme en voorwaardes, sodat  jou rekening oopgemaak kan word."
     users confirm password matches: "Die nuwe wagwoord pas nie."
@@ -21,6 +25,7 @@ af:
       description: "Die Bybel App is amper 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel App vandag af - en deel die app met jou vriende.  Help on om geskiedenis te maak."
     mobile:
       title: "Die Bybel App"
+      description: "Miljoene mense gebruik die Bybel App om God se Woord te lees, te luister, te kyk en te deel van hulle daaglikse lewe.  Laai die gratis app af en verkry toegang tot jou boekmerke, notas en leesplanne ol enige plek. Grniet honderde weergawes, insluitend oudio, alles op jou mobiele toerusting."
   now: "Nou"
   celebrating 50MM: "Vier 50 Miljoen App Installasies!"
   link: "Skakel"
@@ -282,6 +287,7 @@ af:
       information use title: "Hoe gebruik ons jou inligting?"
       information use text: "Wanneer jy inteken op 'n spesifieke diens wat registrasie benodig, vra ons dat jy persoonlike inligting verstrek. As LifeChurch.tv die inligting anders wil aanwend as gestipuleer tydens registrasie, sal ons voor die tyd jou goedkeuring vra vir die gebruik daarvan. Ons sal nie sensitiewe inligting bymekaarmaak of gebruik vir enige ander doel as wat in ons Privaatheidsbeleid en/of spesifieke diens kennisgewings gestipuleer is nie, tensy ons vooraf jou goedkeuring verkry het. Jy mag ons versoek afkeur om persoonlike inligting aan enige van ons dienste te verskaf, in welke geval LifeChurch.tv nie die gekose dienste aan jou kan verskaf nie."
       information security title: "Hoe ons jou persoonlike inligting beskerm?"
+      information security text: "LiveChurch.tv sal nie jou persoonlike inligting met enige ander instansies nie of buite LifeChurch.tv sonder jou duidelike toestemming nie,  LiveChurch.tv mag slegs jou informasie deel as dit in giedere trou glo dat die toegang, gebruik, voorkeur of bekendmaking van sulke inligting (a) alle toepaskike wetgewing, regulasies, wetlike prosesse of afdwingbare wetgewende navraag nakom (b) toepaslike Terme van Gebruik , insluitend die ondersoek van verbreking daarvan, nakom (c) identifiseer, voorkom of enige soort bedrog, sekuriteit of tegniese kwessies bespeur, of (d) beskerm teen groot skade van regte, besittings of veiligheid van LifeChurch.tv, sy gebruikers of publiek soos of toegelaat as wetgewing.  LifeChurch.tv neem gepastelike sekuritei maatreels om enige ongemagtige toegang, bekendmaking of vernietiging van data te voorkom.  Insluitend interne hersiening van ons interne data insamelaars, storing en prosessering praktyk en sekuriteit maatstawe, so wel as fisiese sekuriteit word beskerm teen ongemagtige toegang tot die sisteem waar persoonlike data gestoor word.  Tensy duidelike toestemming verkry is van uself, beperk LiveChurch sy personeel, kontrakteurs en agente waar die inligting benodig om te kan funksioneer, vir beter dienslewering, toegang tot die persoonlike inligtingd. Die individue is gebind tot konfidensiele kontrakte en is onderworpe aan dissiplinering, insluitend die terminering en kriminele vervolging, indien hul faal om die verantwoordelikhede na te kom."
       data integrity title: "Data Integriteit"
       data integrity text: "LifeChurch.tv hersien ons data-insameling, stoor en verwerkings praktyke om te verseker dat ons net die persoonlike informasie insamel, stoor en verwerk wat nodig is om ons dienste te voorsien of verbeter. Ons neem redelike stappe om te verseker dat die persoonlike inligting wat ons verwerk akkuraat, volledig en huidig is, maar ons is afhanklik van ons gebruikers om hul persoonlike inligting op te dateer of te korrigeer wanneer dit nodig is."
       information access title: "Toegang tot en opdatering van persoonlike inligting"
@@ -731,12 +737,18 @@ af:
   campaigns:
     100m:
       logo: "YouVersion: Die Bybel app"
+      tagline: "Dit begin met<em>100 miljoen</em>"
       intro: "Kan die Bible App 100 miljoen inskrywings bereik voor ons 5de herdenking die 10de Julie? Slegs met julle hulp!"
       share:
+        with friends: "Deel met jou vriende"
         fb:
           dialog name: "Het jy die Bybel App?"
+          dialog desc: "Ek is mal oor die Bybel App!  Dit help my werklik om die Bybel groter deel van my lewe te maak.  Dit laat my toe om gedagtes uit te lig, luister na oudio Bybels, notas te maak, volg oordenking programme...selfs om videos te kyk!  Gaan laai dit nou af (dit is gratis): http://www.bible.com/app"
+        tw:
+          tweet: "Die @YouVersion Bybel App is permanent op my tuis skerm. Lees, kyk, luistet en deel...alles in 'n gratis app: bible.com/app"
         em:
           subject: "Het jy die Bybel App?"
+          body: "Ek geniet vreeslik baie die Bybel App van YouVersion en gedink jy sal ook.  Ek maak deesdae die Bybel baie gereeld oop, want dit is so maklik om te lees, kyk, luister en te deel.  Dit het selfs planne, wat 'n gedeelte van die Bybel uitgesoek het en wag vir my elke dag.\n\nJy kan dit ook kry (Gratis) vir enige mobiele toerusting by: http://www.bible.com/app"
       body:
         p1: "10de Julie gaan 'n groot dag wees.  Nie net is dit die Bybel App se 5de verjaarsdag nie, dit merk ook did 5de herdenking van die bekendstelling van Apple iTunes se winkel."
         p2: "Self groter? Met jou hulp, is vandag die dag wat ons 100 miljoen installasies gaan bereik"

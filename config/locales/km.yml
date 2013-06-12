@@ -1,4 +1,8 @@
 km:
+  social:
+    email: "អ៊ីម៉ែល"
+    twitter: "Twitter"
+    facebook: "ហ្វេសប៊ុក"
   api:
     users agree bool: "លោក​អ្នក​ត្រូវ​យល់​ព្រម​ជាមួយនិតិវិធី និង​​លក្ខខ័ណ្ឌ​​​ដើម្បីបង្កើតគណនី។"
     users confirm password matches: "អក្សរសម្ងាត់មិនត្រឹមត្រូវទេ ។"

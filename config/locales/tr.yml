@@ -1,4 +1,8 @@
 tr:
+  social:
+    email: "e-Posta"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Hesabı oluşturmak için şartlar ve koşulları kabul etmeliysiniz."
     users confirm password matches: "Yeni parolalar eşlemıyorlar."

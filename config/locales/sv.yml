@@ -1,4 +1,8 @@
 sv:
+  social:
+    email: "E-post"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Du måste acceptera bestämmelser och villkor för att skapa ett konto."
     users confirm password matches: "Det nya lösenordet matchar inte."

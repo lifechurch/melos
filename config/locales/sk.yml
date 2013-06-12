@@ -1,4 +1,8 @@
 sk:
+  social:
+    email: "E-mail"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Na vytvorenie účtu musíte súhlasiť s podmienkami používania."
     users confirm password matches: "Zadané nové heslá sa nezhodujú."

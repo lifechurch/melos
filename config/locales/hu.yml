@@ -1,4 +1,8 @@
 hu:
+  social:
+    email: "E-mail"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "El kell fogadnod a feltételeket, hogy létrehozhass egy fiókot,"
     users confirm password matches: "Az új jelszavak nem találnak."
@@ -15,6 +19,13 @@ hu:
     users username not available: "A megadott felhasználónév már foglalt."
     users username or password invalid: "A felhasználó név vagy jelszó érvénytelen."
     users username required: "Meg kell adnod egy felhasználónevet."
+  meta:
+    100million:
+      title: "100 millióval kezdődik"
+      description: "A Biblia alkalmazást már csaknem 100 millió felhasználó töltötte le - hihetetlen mérföldkő! De még egészen az elején vagyunk. Töltsd le ma az ingyenes Biblia alkalmazást - azután oszd meg az alkalmazást a barátaiddal. Írjunk együtt történelmet!"
+    mobile:
+      title: "A Biblia alkalmazás"
+      description: "Emberek tízmilliói használják a Biblia alkalmazást, hogy olvassák, hallgassák, nézzék és megosszák Isten Igéjét, amit személyes életük részévé tesznek. Töltsd le az ingyenes alkalmazást és bárhonnan hozzáférsz a könyvjelzőkhöz, jegyzetekhez és olvasási tervekhez. Élvezd a több száz fordítást, beleérve az audio verziót is, mindezt a mobil készülékedről."
   now: "Most"
   celebrating 50MM: "50 Millió App Feltelepítés Ünneplése"
   link: "Link"

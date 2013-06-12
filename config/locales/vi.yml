@@ -1,4 +1,8 @@
 vi:
+  social:
+    email: "Email"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Bạn cần đồng ý với điều khoản sử dụng để tạo tài khoản."
     users confirm password matches: "Mật khẩu mới không khớp."

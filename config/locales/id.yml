@@ -1,4 +1,8 @@
 id:
+  social:
+    email: "Email"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Anda harus menyetujui persyaratan dan ketentuan untuk membuat akun."
     users confirm password matches: "Kata sandi yang baru tak sesuai."
@@ -283,6 +287,7 @@ id:
       information use title: "Bagaimana kami menggunakan informasi Anda?"
       information use text: "Saat Anda mendaftar untuk layanan tertentu yang membutuhkan pendaftaran, kami meminta Anda menyediakan informasi pribadi. Jika LifeChurch.tv ingin menggunakan informasi ini untuk tujuan yang berbeda dari tujuan dikumpulkannya informasi ini, maka kami akan meminta persetujuan Anda terlebih dahulu sebelum menggunakannya. Anda dapat menolak memberikan informasi pribadi Anda ke layanan kami manapun, dalam hal ini, kami tidak dapat menyediakan layanan tersebut bagi Anda."
       information security title: "Bagaimana kami melindungi informasi tentang Anda?"
+      information security text: "LifeChurch.tv tidak membagikan data pribadi anda dengan institusi lain di luar LifeChurch.tv tanpa persetujuan anda. LifeChurch.tv mungkin membagikan data pribadi anda hanya bila ada kepercayaan yang baik bahwa akses, penggunaan, pemeliharaan atau penyingkapan dari informasi tersebut diperlukan untuk (a) memenuhi hukum, peraturan, proses hukum atau permintaan pemerintah yang berlaku, (b) menegakkan Ketentuan Penggunaan yang berlaku, termasuk investigasi penyalah-gunaan, (c) mendeteksi, mencegah, dan sebagainya berkaitan dengan pemalsuan alamat, keamanan, atau masalah teknis, atau (d) perlidungan terhadap bahaya yang menimpa hak, milik atau keamanan LifeChurch.tv, penggunanya atau masyarakat umum yang diharuskan atau diijinkan oleh law.LifeChurch.tv mengambil kebijakan yang sesuai untuk melindungi dari akses tidak sah atau perubahan hak akses, penyingkapan atau perusakan data, termasuk pemeriksaan internal dari koleksi data kami, praktek penyimpanan dan pemrosesan dan kebijakan keamanan, juga kebijakan keamanan fisik untuk menjaga dari akses tidak sah ke sistem di mana kami menyimpan data pribadi. Kecuali dengan persetujuan anda, LifeChurch.tv membatasi akses ke data pribadi kepada karyawan, kontraktor dan agen kami yang memerlukan informasi tersebut untuk beroperasi membangun atau meningkatkan pelayanan kami. Orang-orang tersebut dijamin dengan kewajiban merahasiakan dan akan dikenai sanksi, termasuk pemberhentian dan tuntutan kriminal, bila mereka gagal memenuhi kewajiban tersebut."
       data integrity title: "Integritas Data"
       data integrity text: "LifeChurch.tv meninjau pengumpulan, penyimpanan dan pengolahan data kami untuk memastikan bahwa kami hanya mengumpulkan, menyimpan dan mengolah informasi pribadi yang dibutuhkan untuk menyediakan atau meningkatkan pelayanan kami. Kami mengambil langkah-langkah beralasan untuk memastikan bahwa informasi pribadi yang kami olah adalah akurat, lengkap, dan terkini, tapi kami bergantung pada para pengguna kami untuk memperbaharui atau memperbaiki informasi pribadi mereka kapanpun perlu."
       information access title: "Mengakses and memperbarui informasi pribadi"

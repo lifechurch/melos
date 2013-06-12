@@ -1,4 +1,8 @@
 ro:
+  social:
+    email: "e-mail"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Pentru a-ți crea cont trebuie să fii de acord cu termenii și condițiile de utilizare."
     users confirm password matches: "Parola nouă și confirmarea acesteia nu coincid."

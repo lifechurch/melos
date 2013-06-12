@@ -1,4 +1,8 @@
 tl:
+  social:
+    email: "Email"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Kinakailangan ang iyong pagsang-ayon sa mga tuntunin at kundisyon upang makalikha ng account."
     users confirm password matches: "Ang bagong password ay hindi nagtutugma."
