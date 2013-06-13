@@ -38,12 +38,21 @@ a
   margin: 0
 
 .intro-logo
-  background: image-url("campaigns/100m/logo.png") no-repeat center top
   overflow: hidden
   white-space: nowrap
-  text-indent: 100%
-  height: 48px
+  height: 50px
   margin-top: 20px
+
+  .wrap
+    display: block
+    background: image-url("campaigns/100m/logo.png") no-repeat center top
+    width: 304px
+    height: 48px
+    margin: 0 auto
+
+    span
+      display: block
+      text-indent: -9999px
 
 .intro-starts
   color: #FECC0E
@@ -456,8 +465,13 @@ footer
 
 @media only screen and (max-width : 320px)
 
-  .intro-logo
-    background-size: 75%
+  .intro-logo .wrap
+    width: 228px
+    background-size: 100%
+
+  .intro-logo .wrap img
+    width: 38px
+    height: 38px
 
   .intro-starts
     letter-spacing: 0

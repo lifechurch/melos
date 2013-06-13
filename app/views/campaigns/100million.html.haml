@@ -30,7 +30,10 @@
       -# BA headline and logo
       .intro
         .intro-logo
-          = t("campaigns.100m.logo")
+          .wrap
+            = image_tag localized_bible_icon
+            %span
+              = t("campaigns.100m.logo")
         %h1.intro-starts
           = t("campaigns.100m.tagline").html_safe
         %img.world-map{ src: "/assets/campaigns/100m/bg.jpg", alt: "Map of the world"}
