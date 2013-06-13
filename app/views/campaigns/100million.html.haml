@@ -2,6 +2,9 @@
   meta_title        = t("meta.100million.title")
   meta_description  = t("meta.100million.description")
   meta_url          = "http://bible.com/100million"
+  available_locales = I18n.available_locales
+  current_locale    = I18n.locale
+
 !!! 5
 %html
   %head
@@ -16,6 +19,7 @@
     %meta{name: "og:url",         content: meta_url }
     %meta{name: "og:description", content: meta_description }
     = stylesheet_link_tag "campaigns/100m"
+    = javascript_include_tag "application"
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     = javascript_include_tag "campaigns/100m/jquery.counter.js"
     = javascript_include_tag "campaigns/100m/jquery.countdown.min.js"
@@ -124,4 +128,21 @@
 
         %p.ad-copy
           = t("campaigns.100m.ad.copy").html_safe
+
+
+
+      #languages
+        %div
+          %label{for: 'choose_language'}= t("choose language field")
+          %div.select_wrap
+            %span
+              %select{ id: 'choose_language', name: 'choose_language'}
+                - available_locales.each do |loc|
+                  %option{value: loc, selected: loc == current_locale}= t("language name", locale: loc)
+
+      :javascript
+        var choose_language  = "#choose_language";
+        if($(choose_language).length) {
+          var language_menu   = new LanguageMenu(choose_language);
+        }
 
