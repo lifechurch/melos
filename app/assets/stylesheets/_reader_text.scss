@@ -176,9 +176,10 @@
 
 // Font size should be set in the parent element: (for example .s)
 .heading {
-  font-size: 1em;
+  font-size: 1.03em;
   font-weight: bold;
-  line-height: 1em;
+  line-height: 1.2em;
+  display: block;
   margin: 0 0 1em 0;
   -webkit-font-smoothing: subpixel-antialiased;
 }
