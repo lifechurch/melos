@@ -57,13 +57,6 @@
                     %a.tooltip{href: plan_href, style:"display: none;"}
                       %span=t("plans.title")
 
-                  - if Video.available_locales.include? I18n.locale
-                    %li#nav_primary_videos{class: highlight.call(is_videos_url)}
-                      %a.icon{href:"/videos"}
-                        %span &nbsp;
-                      %a.tooltip{href:"/videos", style:"display: none;"}
-                        %span=t("videos")
-
                   %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
                     - bookmark_href = is_authed ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark")
                     %a.icon{href: bookmark_href}
