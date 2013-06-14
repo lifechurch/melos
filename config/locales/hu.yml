@@ -71,7 +71,7 @@ hu:
   my notifications: "Értesítések Kezelése"
   my connections: "Csatlakoztatott fiókok"
   my devices: "Csatlakoztatott készülékek"
-  language name: "Angol"
+  language name: "Magyar"
   sign up: "Regisztráció"
   have an account: "Már van Fiókod?"
   no account: "Nincs Fiókod?"
@@ -743,6 +743,8 @@ hu:
         fb:
           dialog name: "Megvan a Biblia App?"
           dialog desc: "Szeretem a Biblia alkalmazást! Sokat segített abban, hogy a Bibliát a mindennapjaim részévé tegyem. Lehetőséget ad a kiemelésre, a hangzó Biblia hallgatására, jegyzetek készítésére, napi áhitatok olvasására...még videót is nézhetek! Töltsd le most (ingyen): http://www.bible.com/app                                       "
+        tw:
+          tweet: "A  @YouVersion Bible App mindig megjelenik otthon a képernyőmön. Olvasd, nézd, hallgasd és oszd meg... minden ingyen letölthető: bible.com/app"
         em:
           subject: "Van Biblia alkalmazásod?"
           body: "Szeretem a Biblia App-ot a YouVersion-tól és szerintem neked is tetszene. Mostanában sokkal többször nyitom ki a Bibliát, mert nagyon könnyű olvasni, nézni, hallgatni és megosztani. Olvasási terveket is tartalmaz, amelyeket a Bibliából választottak ki, és mindennap rám várnak.\n\nItt szerezheted meg (ingyen!) lényegében bármilyen mobil eszközre:\nhttp://www.bible.com/app"

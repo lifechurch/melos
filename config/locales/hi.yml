@@ -19,6 +19,9 @@ hi:
     users username not available: "प्रस्तुत username उपलब्ध नहीं हैं।"
     users username or password invalid: "आपके द्वारा उपलब्धित उपयोगकर्ता नाम या पासवर्ड अमान्य हैं।"
     users username required: "username इंटर करना अनिवार्य हैं। "
+  meta:
+    mobile:
+      title: "बाइबिल App"
   now: "अभी "
   celebrating 50MM: "50 मिलियन app स्थापना उत्सव!"
   link: "लिंक"
@@ -511,6 +514,8 @@ hi:
     authorized:
       heading: "आपका विषय सूची अधीकृत हुआ"
     has errors: "आपके अनुरोध में कई त्रुटियाँ पाया गया हैं। "
+    confirm:
+      email: "आपके द्वारा क्रय किया गया विडियो सामग्री अधिकृत करने हेतु YouVersion से भेजा गया इमेल अपना इनबॉक्स में जाँचे तथा लिंक क्लिक कर रजिस्ट्रेशन की पुष्टि करे। "
     request:
       invalid_vendor_signature: "लाइसेंस प्रमाणीकरण असफल:अमान्य विक्रयी हस्ताक्षर "
       invalid_vendor_id: "लाइसेंस प्रमाणीकरण असफल:अमान्य विक्रयी आई डी"
@@ -692,6 +697,8 @@ hi:
       translation notes: "फुटनोट्स "
       cross references: "प्रति संदर्भ"
   app errors:
+    404 plans explanation: "क्या आप%{ शीर्षक}</a> <a href='%{plan_path}'> पाठक योजना ढूँढ रहे हैं?"
+    404 contact support: "क्या आपको शिकायत हैं?संपर्क करे <a href='%{support_url}'>सहायता टीम </a>"
     404 explanation: "शुरुआत करने का पुन:कोशिश करे <a href='%{reader_path}'>home page</a>. अभी परेशानी हो रही ? संपर्क करिए <a href='%{support_url}'>support team</a>."
     404 message: "कृपया क्षमा कीजिए,आपके द्वारा अन्वेषित पेज नहीं मिल सका।"
     408 message: "हमारे सर्वर द्वारा प्रतिक्रिया नहीं जताने के क्षमा चाहते हैं।"

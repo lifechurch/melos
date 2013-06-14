@@ -19,6 +19,13 @@ sv:
     users username not available: "Användarnamnet du valt är tyvärr inte ledigt."
     users username or password invalid: "Användarnamnet eller lösenordet är felaktigt."
     users username required: "Du måste ange ett användarnamn."
+  meta:
+    100million:
+      title: "Det närmar sig 100 miljoner"
+      description: "Bibelappen har installerats nästan 100 miljoner gånger - en otrolig milstolpe! Men vi har precis kommit igång. Ladda ner den fria Bibelappen idag - och dela sedan appen med dina vänner. Låt oss skapa historia tillsammans."
+    mobile:
+      title: "Bibelappen"
+      description: "Tiotals miljoner använder Bibelappen för att läsa, lyssna, titta och dela Guds Ord och för att göra den till en del av deras liv. Ladda ner den fria appen och komma åt dina bokmärken, anteckningar och läsa planer var än du befinner dig. Njut av hundratals översättningar, inklusive ljud, allt på din mobila enhet."
   now: "Nu"
   celebrating 50MM: "Firar 50 miljoner installationer!"
   link: "Länk"
@@ -280,6 +287,7 @@ sv:
       information use title: "Hur använder vi din information?"
       information use text: "När du registrerar dig för en viss tjänst som kräver registrering ber vi dig att lämna personlig information. Om LifeChurch.tv skulle vilja använda denna information på ett sätt som skiljer sig från anledningen till att den samlades in kommer vi att be om ditt samtycke innan vi använder den. Du kan vägra att lämna personlig information till någon av våra tjänster, men då kan vi inte tillhandahålla dessa tjänster till dig."
       information security title: "Hur skyddar vi din information?"
+      information security text: "LifeChurch.tv delar inte din personliga information med andra institutioner utanför LifeChurch.tv utan ditt uttryckliga medgivande. LifeChurch.tv kan dela din personliga information endast om de har god tro att åtkomst, användning, bevarande eller yppande av informationen är skäligen nödvändig för att (a) tillmötesgå tillämplig lag, föreskrift, juridisk process eller tvingande begäran av myndighet, (b) tillämpa gällande användarvillkor, inklusive undersökning av möjliga brott mot dem, (c) upptäcka, förhindra eller på annat sätt åtgärda bedrägeri, säkerhetsproblem eller tekniska problem eller (d) skydda mot skador för rättigheter, egendom eller säkerhet  för LifeChurch.tv, dess användare eller allmänheten som krävs eller tillåts enligt lag. LifeChurch.tv tar lämpliga säkerhetsåtgärder för att skydda mot obehörig åtkomst, ändringar, läsning eller förstörande av data. Inklusive interna granskningar av våra datainsamling, lagring, behandling och säkerhetsåtgärder, samt fysiska säkerhetsåtgärder för att skydda mot obehörig åtkomst till system där vi lagrar personliga data. Såvida tillstånd erhålls från dig, begränsar LifeChurch.tv tillgång till personlig information till sina anställda, leverantörer och agenter som behöver känna till informationen för att driva, utveckla eller förbättra våra tjänster. Dessa individer är bundna av sekretess och kan bli föremål för disciplinära åtgärder, inklusive uppsägning och åtal, om de misslyckas med att uppfylla dessa skyldigheter."
       data integrity title: "Dataintegritet"
       data integrity text: "LifeChurch.tv granskar våra datainsamling, lagring och bearbetningspraxis för att säkerställa att vi endast samla in, lagra och bearbeta den personliga information som behövs för att tillhandahålla eller förbättra våra tjänster. Vi vidtar rimliga åtgärder för att säkerställa att den personliga information vi behandlar är korrekt, fullständig och aktuell, men vi är beroende av våra användare att uppdatera eller korrigera sin personliga information när det behövs."
       information access title: "Komma åt och uppdatera personlig information"
@@ -729,14 +737,22 @@ sv:
   campaigns:
     100m:
       logo: "YouVersion: Bibelappen"
+      tagline: "Det närmar sig <em>100 miljoner</em>"
       intro: "Kan Bibelappen nå 100 miljoner installationer före vår 5-årsdag den 10 juli? Bara med din hjälp!"
       share:
         with friends: "Dela med dina vänner"
         fb:
           dialog name: "Har du Bibelappen?"
+          dialog desc: "Jag älskar Bibelappen! Den hjälper mig verkligen att Bibeln till en del av mitt vardagliga liv. Den låter mig markera, lyssna på ljudbiblar, göra markeringar, följa planer för andakt...t.o.m. titta på film! Gå och ladda ner den nu (det är gratis): http://www.bible.com/sv/app"
+        tw:
+          tweet: "Bibelappen från @YouVersion har en fast plats på min startskärm. Läs, titta, lyssna och dela...allt i en fri app: bible.com/sv/app"
         em:
           subject: "Har du Bibelappen?"
+          body: "Jag har njutit av Bibelappen från YouVersion och tror att du kanske också kommer göra det. Jag öppnar Bibeln betydligt oftare idag bara för att det är så enkelt att läsa, titta, lyssna och dela. Den har t.o.m. planer som har ett urval av Bibeln som ligger och väntar på mig varje dag.\n\nDu kan hämta den (gratis!) för nästan alla mobila enheter här:\nhttp://www.bible.com/sv/app"
       body:
+        p1: "10 juli kommer bli en stor dag. Det är inte bara Bibelappens 5:e födelsedag, det är också 5 år sedan Apple lanserade iTunes Store."
+        p2: "Men ännu större? Med din hjälp är det dagen Bibelappen kommer att nå 100 miljoner nerladdningar."
+        p3: "Vi har lärt oss att Gud använder milstolpar som denna för att växa ännu större."
         p4: "Låt oss skapa historia tillsammans."
       ad:
         title: "Bibelappen är helt gratis och ett suveränt sätt att utforska Bibeln."

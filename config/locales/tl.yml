@@ -745,7 +745,7 @@ tl:
           dialog name: "May Bible App ka ba?"
           dialog desc: "Gustung-gusto ko ang App ng Bibliya! Natulungan ako nitong maging bahagi ng aking araw-araw ang Bibliya. Maaari akong mag-marka, makinig sa mga awdyo na Bibliya, sumulat ng tala, sumunod sa babasahing gabay...kahit manuod ng mga palabas! Sige na, i-download mo na (libre ito): http://www.bible.com/app"
         tw:
-          tweet: "Ang App ng Bibliya ng @YouVersion ay may permanenteng lugar sa aparato ko. Magbasa, manuod, makinig, at magbahagi... lahat sa isang libreng app: bible.com/app"
+          tweet: "May Bible App ng @YouVersion ako. Magbasa, manuod, makinig, at magbahagi... libre ‘to!: bible.com/app"
         em:
           subject: "May Bible App ka ba?"
           body: "Nagugustuhan ko ang Bible App ng YouVersion at sa tingin ko, magugustuhan mo din ito. Madalas kong binabasa ang Bibliya dahil madali itong basahin, panuorin, pakinggan, at ibahagi. May mga Babasahing gabay na pumipili ng talata ng Bibliya para basahin ko araw-araw.\n\nMaaari mo ring makuha ito (ng libre!) sa kahit na anong aparato: http://www.bible.com/app"

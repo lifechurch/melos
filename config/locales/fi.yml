@@ -1,8 +1,8 @@
 fi:
   social:
-    email: "sähköposti"
-    twitter: "twitter"
-    facebook: "facebook"
+    email: "Sähköposti"
+    twitter: "Twitter"
+    facebook: "Facebook"
   api:
     users agree bool: "Sinun täytyy hyväksyä käyttöehdot rekisteröityäksesi."
     users confirm password matches: "Salasanat eivät täsmää."
@@ -745,7 +745,7 @@ fi:
           dialog name: "Onko sinulla Raamattusovellus?"
           dialog desc: "Rakastan Raamattusovellusta! Se on todella auttanut minua ottamaan Raamatun osaksi jokapäiväistä elämääni. Sen avulla voin merkitä kohtia, kuunnella ääniraamattuja, tehdä muistiinpanoja ja seurata hartaussuunnitelmia.. ja jopa katsoa videoita! Lataa sovellus nyt (se on ilmainen): http://www.bible.com/app"
         tw:
-          tweet: "@YouVersion:in Raamattusovellus on pysyvästi kotivalikossani. Lue, katso, kuuntele ja jaa... ilmaisessa sovelluksessa: bible.com/app"
+          tweet: "@YouVersion: in Raamattusovellus on aina kotivalikossani. Lue, katso, kuuntele ja jaa - ilmainen sovellus: bible.com/app"
         em:
           subject: "Onko sinulla Raamattusovellus?"
           body: "Olen iloinnut YouVersionin Raamattusovelluksesta ja ajattelin, että sinäkin voisit pitää siitä. Avaan Raamatun nykyään paljon useammin, koska sitä on niin helppo lukea, katsoa, kuunnella ja jakaa. Siinä on jopa lukusuunnitelmat: joka päivä valikoidut raamatunkohdat odottavat minua.\n\nSaat sen (ilmaiseksi!) hyvin pitkälti mille tahansa mobiililaitteelle täältä:\nhttp://www.bible.com/app"
