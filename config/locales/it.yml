@@ -745,7 +745,7 @@ it:
           dialog name: "Hai l'App Bibbia?"
           dialog desc: "Mi piace tanto l'App Bibbia! Mi ha davvero aiutato a rendere la Bibbia parte della mia vita quotidiana. Mi permette di evidenziare, ascoltare le Bibbia audio, prendere appunti, segue dei piani di lettura devozionali ... perfino guardare dei video! Scaricala adesso (è gratis): http://www.bible.com/app"
         tw:
-          tweet: "L'App Bibbia da @YouVersion è sempre sul mio home screen. Leggi, guarda, ascolta e condividi ... con un'app gratuita: bible.com/app"
+          tweet: "Leggi, guarda, ascolta, condividi - l'App gratuita Bibbia @YouVersion è in primo piano sul mio display!"
         em:
           subject: "Hai l'App Bibbia?"
           body: "Sto godendo l'App Bibbia di YouVersion e pensavo che anche a te piacerebbe. Apro la Bibbia molto più spesso questo giorni perché è così facile leggere, guardare, ascoltare e condividere. Ha perfino dei Piani con una selezione dalla Bibbia già scelta che mi aspetta ogni giorno.\n\nPuoi trovarla (gratis!) per quasi ogni dispositivo mobile qui:\nhttp://www.bible.com/app"
@@ -757,3 +757,6 @@ it:
       ad:
         title: "L'App Bibbia è completamente gratuita ed è un ottimo modo per esplorare la Bibbia."
         copy: "Leggi, Ascolta, Guarda, Condividi. Scarica l'App Bibbia per il tuo smartphone o tablet: <a href='http://bible.com/app'>Scarica adesso</a>"
+      sidebar:
+        tagline: "Facciamo la storia insieme!"
+        button: "Condividi l'App  Bibbia"

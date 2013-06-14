@@ -757,3 +757,6 @@ pl:
       ad:
         title: "Aplikacja Biblii jest darmowym świetnym sposobem na odkywanie Biblii."
         copy: "Czytaj, słuchaj, oglądaj, udostępniaj. Pobierz Aplikację Biblii na telefon lub tablet: <a href='http://bible.com/app'>Pobierz teraz</a>"
+      sidebar:
+        tagline: "Twórzmy razem historię"
+        button: "Udostępnij Aplikację Biblii"

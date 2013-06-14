@@ -737,14 +737,14 @@ hu:
     100m:
       logo: "YouVersion: A Biblia alkalmazás"
       tagline: "100 millióval <em>kezdődik</em>"
-      intro: "Vajon a letöltött  Biblia alkalmazások száma elérheti a 100 milliót az ötödik születésnapunk, június 10-dike előtt? Csak a ti segítségetekkel! "
+      intro: "Vajon a letöltött Biblia alkalmazások száma elérheti a 100 milliót az 5. születésnapunk, július 10-e előtt? Csak a ti segítségetekkel!"
       share:
         with friends: "Oszd meg a barátaiddal"
         fb:
           dialog name: "Megvan a Biblia App?"
           dialog desc: "Szeretem a Biblia alkalmazást! Sokat segített abban, hogy a Bibliát a mindennapjaim részévé tegyem. Lehetőséget ad a kiemelésre, a hangzó Biblia hallgatására, jegyzetek készítésére, napi áhitatok olvasására...még videót is nézhetek! Töltsd le most (ingyen): http://www.bible.com/app                                       "
         tw:
-          tweet: "A  @YouVersion Bible App mindig megjelenik otthon a képernyőmön. Olvasd, nézd, hallgasd és oszd meg... minden ingyen letölthető: bible.com/app"
+          tweet: "@YouVersion BibleApp mindig megjelenik otthon a képernyőmön.Olvasd, nézd, hallgasd, oszd meg...ingyen letölthető:bible.com/app"
         em:
           subject: "Van Biblia alkalmazásod?"
           body: "Szeretem a Biblia App-ot a YouVersion-tól és szerintem neked is tetszene. Mostanában sokkal többször nyitom ki a Bibliát, mert nagyon könnyű olvasni, nézni, hallgatni és megosztani. Olvasási terveket is tartalmaz, amelyeket a Bibliából választottak ki, és mindennap rám várnak.\n\nItt szerezheted meg (ingyen!) lényegében bármilyen mobil eszközre:\nhttp://www.bible.com/app"
@@ -756,3 +756,6 @@ hu:
       ad:
         title: "A Biblia App teljesen ingyenes és egy nagyszerű eszköz a Biblia felfedezéséhez."
         copy: "Olvasd, hallgasd, nézd, oszd meg. Szerezd meg a Biblia App-ot az okostelefonodra vagy tabletedre: <a href='http://bible.com/app'>Letöltés most</a>"
+      sidebar:
+        tagline: "Írjunk együtt történelmet."
+        button: "Biblia App megosztása"

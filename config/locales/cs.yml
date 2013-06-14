@@ -757,3 +757,6 @@ cs:
       ad:
         title: "Aplikace Bible je zcela zdarma a je skvělým způsobem, jak prozkoumávat Bibli. "
         copy: "Čtěte, poslouchejte, sledujte a sdílejte. Stáhněte si aplikaci Bible do smartphonu nebo tabletu: <a href='http://bible.com/app'>Ihned stáhnout</a>"
+      sidebar:
+        tagline: "Buďme těmi, kteří tvoří dějiny."
+        button: "Sdílej aplikaci Bible"

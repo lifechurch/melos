@@ -757,3 +757,6 @@ nl:
       ad:
         title: "De Bijbel App is volledig gratis en een geweldige manier om de Bijbel te verkennen."
         copy: "Lees, Luister, Kijk, Deel. Neem de Bijbel App voor je smartphone of tablet:<a href='http://bible.com/app'>Download Nu</a>"
+      sidebar:
+        tagline: "Laten we samen geschiedenis maken."
+        button: "Deel de Bijbel App"

@@ -757,3 +757,6 @@ sq:
       ad:
         title: "Programi i Biblës është krejt falas dhe një mënyrë e shkëlqyer për të eksploruar Biblën."
         copy: "Lexo, Dëgjo, Shiko, Ndaj. Zotëroje Programin e Biblës për telefonin ose tabletin tuaj: <a href='http://bible.com/app'>Shkarko Tani</a>"
+      sidebar:
+        tagline: "Le të bëjmë histori së bashku."
+        button: "Ndaje Programin e Biblës"

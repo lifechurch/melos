@@ -757,3 +757,6 @@ fi:
       ad:
         title: "Raamattusovellus on täysin ilmainen ja loistava tapa tutkia Raamattua."
         copy: "Lue, kuuntele, katso, jaa. Hanki Raamattusovellus älypuhelimeesi tai tablettiisi: <a href='http://bible.com/app'>Lataa nyt</a>"
+      sidebar:
+        tagline: "Tehdään historiaa yhdessä."
+        button: "Jaa Raamattu"

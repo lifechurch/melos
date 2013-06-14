@@ -757,3 +757,6 @@
       ad:
         title: "Bibel-appen er helt gratis, og en glimrende måte å utforske Bibelen på."
         copy: "Les, lytt, se på, del! Få Bibel-appen på din smarttelefon eller nettbrett: <a href='http://bible.com/app'>Last ned</a>"
+      sidebar:
+        tagline: "La oss gjøre noe historisk."
+        button: "Del Bibel-appen"
