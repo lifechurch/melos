@@ -10,4 +10,5 @@ trans.pt_BR = config/locales/pt-BR.yml
 trans.pt_PT = config/locales/pt-PT.yml
 trans.zh_CN = config/locales/zh-CN.yml
 trans.zh_TW = config/locales/zh-TW.yml
+trans.es_ES = config/locales/es-ES.yml
 
