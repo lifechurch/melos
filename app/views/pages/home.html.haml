@@ -21,20 +21,6 @@
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
             =t(".hero.skip in future")
-
-        -#hero_links
-          %div{style: "height: 40px;"}
-            %script{:src => "https://connect.facebook.net/en_US/all.js#xfbml=1"}
-            %fb:like{:layout => "button_count", :show_faces => "false", :width => "450", font: "arial"}
-          %div{style: "height: 40px;"}
-            %g:plusone{size: "medium", href: "http://www.bible.com"}
-            :javascript
-              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-              po.src = 'https://apis.google.com/js/plusone.js';
-              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    .bs-promo
-      %p
-        Jesus is coming to The Bible series this week. Tune in to The History Channel, 8/7c.
     .hero_pics
       &nbsp;
     %ul

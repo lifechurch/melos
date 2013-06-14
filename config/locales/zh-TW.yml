@@ -757,3 +757,6 @@ zh-TW:
       ad:
         title: "聖經軟體完全免費，是一款非常棒的幫助探索聖言的工具。"
         copy: "閱讀、看視訊、聽音訊或分享經文。下載聖經軟體到你的智能電話或平板電腦：<a href='http://bible.com/app'>即時下載</a>"
+      sidebar:
+        tagline: "讓我們一同創造歷史"
+        button: "分享聖經軟體"

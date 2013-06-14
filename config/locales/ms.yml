@@ -681,9 +681,10 @@ ms:
     load error: "Maaf, memuat versi lain mempunyai masalah. Tutup menu ini dan buka semula untuk mencuba kembali."
   campaigns:
     100m:
-      intro: "Bolehkah App Alkitab mencapai 100 juta muat turun sebelum ulangtahun kami yang ke 5 pada 10 Julai? Hanya dengan bantuan anda!"
       share:
         fb:
           dialog name: "Adakah anda mempunyai App Alkitab?"
         em:
           subject: "Adakah anda mempunyai App Alkitab?"
+      sidebar:
+        button: "Kongsi App Injil"

@@ -757,3 +757,6 @@ es:
       ad:
         title: "La Biblia App es completamente gratis y una excelente herramienta para explorar la Biblia."
         copy: "Lea, Escuche, Vea, Comparta.  Instale la Biblia App en su teléfono o tablet: <a href='http://www.bible.com/descargar'>Descargar Ahora</a>"
+      sidebar:
+        tagline: "¡Hagamos historia juntos!"
+        button: "Comparte la Biblia App"

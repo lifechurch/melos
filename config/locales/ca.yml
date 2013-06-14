@@ -733,3 +733,7 @@ ca:
           dialog name: "Tens l'aplicació de la Bíblia?"
         em:
           subject: "Tens l'aplicació de la Bíblia?"
+      body:
+        p4: "Fem història plegats."
+      sidebar:
+        button: "Comparteix l'aplicació de la Bíblia"

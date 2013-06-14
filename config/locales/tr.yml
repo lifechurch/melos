@@ -734,3 +734,6 @@ tr:
           dialog name: "Kutsal Kitap Uygulaması sende var mı?"
         em:
           subject: "Kutsal Kitap Uygulaması sende var mı?"
+      sidebar:
+        tagline: "Birlikte tarih yazalım."
+        button: "Kutsal Kitap uygulamasını paylaş"

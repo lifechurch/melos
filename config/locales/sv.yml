@@ -757,3 +757,6 @@ sv:
       ad:
         title: "Bibelappen är helt gratis och ett suveränt sätt att utforska Bibeln."
         copy: "Läs, lyssna, titta, dela. Hämta Bibelappen till din smartphone eller läsplatta: <a href='http://www.bible.com/sv/app'>Ladda ner nu</a>"
+      sidebar:
+        tagline: "Låt oss skapa historia tillsammans"
+        button: "Dela Bibelappen"

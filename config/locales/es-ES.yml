@@ -1,6 +1,6 @@
 es-ES:
   social:
-    email: "Correo electrónico"
+    email: "Correo"
     twitter: "Twitter"
     facebook: "Facebook"
   api:
@@ -614,7 +614,7 @@ es-ES:
     contact header: "Información de contacto"
     contact header 2: "YouVersion en Internet"
     phone: "Teléfono"
-    email: "Correo electrónico"
+    email: "Correo"
     blog: "Blog de YouVersion"
     facebook: "YouVersion en Facebook"
     twitter: "YouVersion en Twitter"
@@ -757,3 +757,6 @@ es-ES:
       ad:
         title: "La Biblia App es completamente gratuita y una gran manera de explorar la Biblia."
         copy: "Lee, escucha, visualiza, comparte. Obtén Bible App para tu smartphone o tablet: <a href='http://bible.com/app'>Descargar ahora</a>"
+      sidebar:
+        tagline: "Hagamos historia juntos"
+        button: "Compartamos la aplicación \"La Biblia\""

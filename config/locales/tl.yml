@@ -757,3 +757,6 @@ tl:
       ad:
         title: "Ang Bible App ay libre at isang kaaya-ayang paraan ng pagbasa ng Bibliya."
         copy: "Magbasa, Makinig, Manuod, Magbahagi. Kunin ang Bible App para sa iyong smartphone o tablet na aparato: <a href='http://bible.com/app'>I-download Na</a>"
+      sidebar:
+        tagline: "Tayo na't gumawa ng kasaysayan."
+        button: "Ibahagi an Bible App"

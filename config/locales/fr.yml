@@ -757,3 +757,6 @@ fr:
       ad:
         title: "La Bible App est absolument gratuite et c'est un moyen formidable d'explorer la Bible."
         copy: "Lisez, écoutez, regardez, partagez. Téléchargez la Bible App pour votre smartphone ou tablette : <a href='http://bible.com/app'>Télécharger maintenant</a>"
+      sidebar:
+        tagline: "Ensemble, réécrivons l'histoire."
+        button: "Partager la Bible App"
