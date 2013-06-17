@@ -5,8 +5,8 @@
   modal_verse    = @presenter.modal_verse
   @title = "#{reference.human} #{version.title}"
 
-- if modal_verse.present?
-  - content_for :additional_meta do
+- content_for :additional_meta do
+  - if modal_verse.present?
     - deep_link = "youversion://#{@presenter.modal_verse.deep_link_path}"
     %meta{name: "apple-itunes-app",         content: "app-id=282935706, app-argument=#{deep_link}"}
     %meta{name: "twitter:card",             content: "summary"}
@@ -24,5 +24,9 @@
     %meta{name: "twitter:app:id:googleplay",    content:"com.sirma.mobile.bible.android"}
     %meta{name: "twitter:app:url:googleplay",   content: deep_link }
     %link{rel:  "canonical", href: bible_url(reference)}
+
+  %link{href: "http://fonts.googleapis.com/css?family=Fjalla+One&subset=latin,cyrillic-ext,cyrillic,greek-ext,vietnamese,latin-ext", rel: "stylesheet", type: "text/css"}
+
+
 
 = render partial: 'reader', locals: {presenter: @presenter}

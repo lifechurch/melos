@@ -520,7 +520,10 @@ hi:
       invalid_vendor_signature: "लाइसेंस प्रमाणीकरण असफल:अमान्य विक्रयी हस्ताक्षर "
       invalid_vendor_id: "लाइसेंस प्रमाणीकरण असफल:अमान्य विक्रयी आई डी"
       invalid_item_ids: "लाइसेंस प्रमाणीकरण असफल:अमान्य विक्रयी आइटम "
+    vendor_transaction_id:
+      duplicate: "ट्रैन्ज़ैक्शन आइ डी:यह ट्रैन्ज़ैक्शन आइ डी पहले से रजिस्ट्रीकृत हैं।"
     auth:
+      login notice: "YouVersion से क्रय किये गए सामग्री की पुष्टि हेतु अपने अकाउंट में लोग इन कीजिये या <a href='/sign-up?source=licenses'>%{साइनअप}</a>"
       signup link text: "नि:शुल्क अकाउंट हेतु साईन अप करे "
       login link text: "साइन इन "
   registration:
@@ -724,6 +727,7 @@ hi:
     title: "कोई अनुवाक्य चुने.......... "
   campaigns:
     100m:
+      logo: "YouVersion: बाइबिल app"
       share:
         with friends: "मित्रों के साथ शेयर करे "
         fb:
