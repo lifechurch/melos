@@ -10,6 +10,8 @@ module ApplicationHelper
         :"en-GB", :"es-ES", :hi, :id, :it, :ja, :mk, :mn,
         :sq, :tr, :vi, :cs].include? I18n.locale
       "Bible-app-icon-#{I18n.locale}-small.png"
+    else
+      "Bible-app-icon-en-small.png"
     end
   end
 
