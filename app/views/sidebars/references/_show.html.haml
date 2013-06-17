@@ -6,10 +6,7 @@
   locale = I18n.locale.to_s
   ajax_url = (locale == "en") ? "/bible/widgets/bookmarks" : "/#{locale}/bible/widgets/bookmarks"
 
-- if locale == "en"
-  = render '/campaigns/ad_100m' #render '/widgets/reader_help'
-- else
-  = render '/widgets/reader_help'
+= render '/campaigns/ad_100m' #render '/widgets/reader_help'
 
 - if current_auth #only show bookmarks widget if authed
   #widget-bookmarks.widget.ajax_bookmarks{"data-ajax" => ajax_url}
