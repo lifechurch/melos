@@ -23,6 +23,19 @@
             =t(".hero.skip in future")
     .hero_pics
       &nbsp;
+
+    .bottom_cta
+      %div
+        %div
+          - style = "background-image: url(#{image_path(localized_bible_icon)})" if localized_bible_icon
+          %h2{style: style}= t(".word with you")
+          %p{style: style}= t(".download description")
+          %span.counter#download-counter
+            %p &nbsp;
+            %p= t(".world installs")
+        %div.mobile_platforms
+          = link_to(t(".download action"), 'http://bible.com/app')
+
     %ul
       %li.read_bible.first#scroll-point
         %div.pod_content
@@ -74,17 +87,7 @@
             %li
               = f.submit t("users.register"), {tabindex:"5", class:"cta"}
 
-    .bottom_cta
-      %div
-        %div
-          - style = "background-image: url(#{image_path(localized_bible_icon)})" if localized_bible_icon
-          %h2{style: style}= t(".word with you")
-          %p{style: style}= t(".download description")
-          %span.counter#download-counter
-            %p &nbsp;
-            %p= t(".world installs")
-        %div.mobile_platforms
-          = link_to(t(".download action"), 'http://bible.com/app')
+
 
 - content_for :javascripts do
   :javascript
