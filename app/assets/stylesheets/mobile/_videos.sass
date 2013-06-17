@@ -1,0 +1,128 @@
+// ----------------- Video pages
+#videos-index
+
+ul.videos
+
+  li
+    width: auto !important
+    padding: 1% !important
+    margin: 0px 0px 30px !important
+    background: none !important
+
+    img
+      display:block
+      width: 100%
+
+    .info
+      overflow: auto
+      position: relative
+      color: #666
+      padding: 4px 10px 0
+
+    .publisher
+      padding-left: 22px
+      background: image-url("icon_small_about.png") no-repeat 0px center
+      color: #777
+      display: block
+
+#video-series
+  article
+    background: none !important
+
+    #title-bar
+      display: none !important
+
+    .publisher
+      a
+        text-decoration: none
+        color: #aaa
+        margin-bottom: 10px
+        display: block
+
+      a:hover
+        color: $blue
+
+  ul#episodes
+    margin-left: 0px
+
+    li
+      background: none !important
+      padding-left: 0px !important
+
+      a
+        img
+          display: block
+          width: 100%
+
+          .info
+            h3
+              margin-bottom: 10px
+
+#video-show
+  #title-bar
+    h1
+      display: none !important
+
+    .share
+      top: -5px
+
+    .share_panel
+      top: 50px
+
+  #player_wrapper
+    width: 100% !important
+    height: 200px !important
+    margin-bottom: 20px
+
+  .inner
+    padding: 0px !important
+    width: auto
+
+    #details
+      width: auto
+
+    #other
+      width: auto
+      padding: 0px
+      float: none
+
+      a
+        margin-bottom: 30px
+        clear: both
+        padding: 10px 0px !important
+
+      .pub-banner
+        width: 100%
+
+.about_content
+  padding-right: 0px
+  background: none
+
+#beta-banner
+  overflow: hidden
+  height: 20px
+  padding: 2px 10px 7px
+  background: #81a951
+  background: -moz-linear-gradient(top,  #81a951 0%, #679037 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#81a951), color-stop(100%,#679037))
+  background: -webkit-linear-gradient(top,  #81a951 0%,#679037 100%)
+  background: -o-linear-gradient(top,  #81a951 0%,#679037 100%)
+  background: -ms-linear-gradient(top,  #81a951 0%,#679037 100%)
+  background: linear-gradient(top,  #81a951 0%,#679037 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81a951', endColorstr='#679037',GradientType=0 )
+
+  span
+    display: block
+    float: left
+    color: #fff !important
+    font-weight: bold
+
+  a
+    display: block
+    float: right
+    color: #fff !important
+    font-weight: bold
+    text-decoration: none
+
+  a:hover
+    text-decoration: underline
