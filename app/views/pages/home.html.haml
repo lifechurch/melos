@@ -95,30 +95,7 @@
 - content_for :javascripts do
   :javascript
 
-    // Utility to format
-    function commas(nStr)
-    {
-        nStr += '';
-        x = nStr.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
-        var rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1)) {
-            x1 = x1.replace(rgx, '$1' + ',' + '$2');
-        }
-        return x1 + x2;
-    }
-
-    var infographic = {};
-
-    function tickInfographic() {
-        var now = new Date();
-        currentRatio = (now - new Date((now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear())) / 86400000;
-        var figure = Math.ceil((infographic.installs.total - infographic.installs.daily) + (infographic.installs.daily * currentRatio));
-        $("#download-counter p:first").html(commas(figure))
-    }
-
-    function colonize(nStr) {
+    function commas(nStr) {
       nStr += '';
       var rgx = /(\d+)(\d{3})/;
       while (rgx.test(nStr)) { nStr = nStr.replace(rgx, '$1' + ',' + '$2');}
@@ -142,30 +119,15 @@
         direction: "up",
         format: "99,999,999",
         stop: "100,000,000",
-        initial: colonize(corrected_total_downloads)
+        initial: commas(corrected_total_downloads)
       });
 
-    }
-
-
-    // Jsonp callback for https://s3.amazonaws.com/now.youversion.com/flurry.js
-    function flurryData(data, last_modified_str) {
-      if (data['installs']) {
-        //$("#download-counter p:first").html(commas(data['installs'][0]))
-        for (var i in data) {
-          var item = data[i];
-          infographic[i] = { total: item[0], daily: item[1] };
-        }
-      }
-      setInterval(tickInfographic, 500);
-      tickInfographic();
     }
 
     // Fire off request for download stats jsonp
     $(window).load(function() {
 
-      $.getScript('//installs.youversion.com/stats_jsonp.js');
-      //$.getScript('https://s3.amazonaws.com/now.youversion.com/flurry.js');
+      $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
 
       // Display signup form.
       var fade = 200;
