@@ -4,6 +4,9 @@
 - content_for :stylesheets do
   = stylesheet_link_tag "bdc_home"
 
+- content_for :javascripts do
+  = javascript_include_tag "campaigns/100m/jquery.counter.js"
+
 = cache "bdc_welcome_#{I18n.locale}", expires_in: a_short_time do
   %article
     #hero
@@ -31,7 +34,7 @@
           %h2{style: style}= t(".word with you")
           %p{style: style}= t(".download description")
           %span.counter#download-counter
-            %p &nbsp;
+            %p#counter &nbsp;
             %p= t(".world installs")
         %div.mobile_platforms
           = link_to(t(".download action"), 'http://bible.com/app')
@@ -115,6 +118,35 @@
         $("#download-counter p:first").html(commas(figure))
     }
 
+    function colonize(nStr) {
+      nStr += '';
+      var rgx = /(\d+)(\d{3})/;
+      while (rgx.test(nStr)) { nStr = nStr.replace(rgx, '$1' + ',' + '$2');}
+      return nStr;
+    }
+
+
+    function installs_data(data) {
+      STATS = data;
+
+      var start_count = STATS.start_count;
+      var start_date = STATS.start_date;
+      var average_per_day = STATS.average_per_day;
+
+      var today_date = Math.round((new Date()).getTime() / 1000);
+      var date_difference_seconds = Math.abs(today_date - start_date);
+      var date_difference_days = Math.round(date_difference_seconds / 86400);
+      var corrected_total_downloads = Math.round(start_count + (average_per_day*date_difference_days));
+
+      $("#counter").counter({
+        direction: "up",
+        format: "99,999,999",
+        stop: "100,000,000",
+        initial: colonize(corrected_total_downloads)
+      });
+
+    }
+
 
     // Jsonp callback for https://s3.amazonaws.com/now.youversion.com/flurry.js
     function flurryData(data, last_modified_str) {
@@ -132,7 +164,8 @@
     // Fire off request for download stats jsonp
     $(window).load(function() {
 
-      $.getScript('https://s3.amazonaws.com/now.youversion.com/flurry.js');
+      $.getScript('http://installs.youversion.com/stats_jsonp.js');
+      //$.getScript('https://s3.amazonaws.com/now.youversion.com/flurry.js');
 
       // Display signup form.
       var fade = 200;
