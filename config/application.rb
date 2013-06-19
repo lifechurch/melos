@@ -143,7 +143,7 @@ module YouversionWeb
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
 
       #force HTTPS traffic
-      exclude_from_force = /^\/app|^\/download|^\/mobile|\/100million/
+      exclude_from_force = /^\/app|^\/download|^\/mobile|\/100million|^\/$/
       r301 /.*/, Proc.new{ |path, rack_env| "https://#{rack_env["SERVER_NAME"]}#{path}" }, if: Proc.new{ |rack_env| ENV['SECURE_TRAFFIC'] && rack_env["rack.url_scheme"] != 'https' && rack_env["PATH_INFO"] !~ exclude_from_force }
     end
 
