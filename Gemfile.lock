@@ -166,7 +166,6 @@ GEM
       rake
     highline (1.6.18)
     hike (1.2.2)
-    hodel_3000_compliant_logger (0.1.1)
     hooves (0.7)
       unicorn (> 0)
     http_accept_language (1.0.2)
@@ -230,9 +229,6 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
-    oink (0.10.1)
-      activerecord
-      hodel_3000_compliant_logger
     oj (2.0.12)
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
@@ -423,7 +419,6 @@ DEPENDENCIES
   minitest
   newrelic_rpm (~> 3.5.7.59)
   nokogiri (~> 1.5.2)
-  oink
   oj
   omniauth-facebook (~> 1.4.1)
   omniauth-google-oauth2 (~> 0.1.9)

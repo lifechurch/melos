@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   before_filter :check_facebook_cookie
   before_filter :tend_caches
   before_filter :set_default_sidebar
-  before_filter :log_syms
 
   original_locales = nil
 
@@ -148,10 +147,6 @@ class ApplicationController < ActionController::Base
     end
 
   private
-
-  def log_syms
-    Rails.logger.apc "----- SYMS: #{Symbol.all_symbols.size} PATH: #{request.path}", :info
-  end
 
   def sign_in(user, password = nil)
     cookies.permanent.signed[:a] = user.id

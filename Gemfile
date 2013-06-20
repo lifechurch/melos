@@ -18,7 +18,7 @@ gem 'heroku',                 '~> 2.32.4'
 gem 'oj'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
-gem 'oink'
+#gem 'oink'
 gem 'gabba'
 gem 'memcachier'
 

@@ -57,6 +57,12 @@ YouversionWeb::Application.configure do
   # Set to false to debug asset compilation/inclusion issues with rake assets:precompile
   # config.assets.compile = false
 
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get(
+    ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG'
+  )
+
+
 end
 
 silence_warnings do
