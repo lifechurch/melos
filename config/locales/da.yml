@@ -72,7 +72,7 @@ da:
   my connections: "Forbundne konti"
   my devices: "Forbundne apparater"
   language name: "Dansk"
-  sign up: "Log ind"
+  sign up: "Registrer dig"
   have an account: "Har allerede en konto?"
   no account: "Har ikke en konto?"
   successful sign-in: "Logget ind som %{user}!"
@@ -668,7 +668,7 @@ da:
     home:
       hero:
         heading: "En gratis bibel på din telefon, tablet og computer."
-        description: "YouVersion er en enkel, reklamefri Bibelen, som bringer Guds ord ind i dit daglige liv."
+        description: "YouVersion er en enkel, reklamefri Bibel, som bringer Guds ord ind i dit daglige liv."
         learn more: "lær mere herunder"
         start reading: "Start læsning"
         skip in future: "Spring denne side over i fremtiden"
@@ -678,7 +678,7 @@ da:
         read description: "Tag dit valg fra <strong>hundredvis af bibel versioner og sprog</strong>. Sammenlign to versioner side om side. Du kan endda vælge din skrifttype og skærmstørrelse. Gør din online Bibel oplevelse, lige som du kan lide det."
         study heading: "Studer Bibelen"
         study description: "<strong>Highlight</strong> i din yndlingsfarve, <strong>bogmærke</strong> dine foretrukne bibelvers, og gøre notater om, hvad du lærer. Ikke alene er du tilbringe tid i Guds Ord, du bygger en historie af din interaktion med Bibelen."
-        subscribe heading: "Abonner på BIbel læse planer"
+        subscribe heading: "Abonner på læse planer"
         subscribe description: "Dæk hele Bibelen, fokus på et emne, eller læse en andagt fra en begavet lærer. Vælg din plan, og hver dag vil du finde et Bibel udvalg der venter på dig."
         download heading: "Tag Bibelen med dig"
         download description: "<a href='http://youversion.com/download'>Hent</a> Bible App gratis på enhver mobil enhed. Når du bruger den mobile app, vil dine noter, bogmærker, højdepunkter, planer og meget mere automatisk blive synkroniseret på tværs af alle dine enheder."

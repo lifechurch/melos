@@ -22,7 +22,7 @@ es-ES:
   meta:
     100million:
       title: "Arranca con 100 millones"
-      description: "La Biblia App se ha instalado casi de 100 millones de veces - ¡un hito increíble! Pero apenas estamos empezando. Descargua la Biblia App gratis hoy mismo - y comparte la aplicación con tus amigos. Vamos a hacer historia juntos."
+      description: "La Biblia App se ha instalado unas 100 millones de veces - ¡un hito increíble! Pero apenas estamos empezando. Descarga la Biblia App gratis hoy mismo - y comparte la aplicación con tus amigos. Vamos a hacer historia juntos."
     mobile:
       title: "La Biblia App"
       description: "Diez millones de personas están usado la Biblia App para leer, escuchar, visualizar y compartir la Palabra de Dios, haciéndola parte de su vida cotidiana. Descarga gratuitamente la aplicación y accede a tus destacados, notas, y planes de lectura desde cualquier parte. Disfruta de cientos de versiones, incluyendo audio, todo en tu dispositivo móvil."
@@ -53,7 +53,7 @@ es-ES:
   deleted connection error: "Lo sentimos, un error ha ocurrido al intentar eliminar tu conexión a %{connection}."
   remove connection: "Eliminar"
   connection users: "Aquí hay algunos usuarios de YouVersion a los que estás conectado en %{connection}:"
-  connection marketing: "YouVersion se disfruta más con los amigos! Vincula tu cuenta de YouVersion a tus otras redes sociales y encuentra al instante a tus amigos en YouVersion. Al vincular tus cuentas también te permite compartir contenido con apenas unos pocos clics. Nunca vamos a publicar nada sin tu aprobación."
+  connection marketing: "¡YouVersion se disfruta más con los amigos! Vincula tu cuenta de YouVersion a tus otras redes sociales y encuentra al instante a tus amigos en YouVersion. Al vincular tus cuentas también te permite compartir contenido con apenas unos pocos clics. Nunca vamos a publicar nada sin tu aprobación."
   next step connections: "Siguiente: Vincula tus cuentas y encuentra a tus amigos."
   no notes found: "%{username} no tiene ninguna nota."
   no recent activity: "%{username} no ha tenido actividad reciente."
@@ -753,10 +753,10 @@ es-ES:
         p1: "El 10 de Julio será un gran día. No sólo porque es el 5to aniversario de la Biblia App, sino también porque se cumplen 5 años desde el lanzamiento de la tienda Apple’s iTunes Store."
         p2: "¿Pero aún más grande? Con tu ayuda, será el día en que la Biblia App alcanzará las 100 millones de descargas."
         p3: "Hemos aprendido que Dios usa hitos como éste para impulsar un crecimiento aún mayor."
-        p4: "Hagamos la historiya juntos."
+        p4: "Hagamos historia juntos."
       ad:
         title: "La Biblia App es completamente gratuita y una gran manera de explorar la Biblia."
         copy: "Lee, escucha, visualiza, comparte. Obtén Bible App para tu smartphone o tablet: <a href='http://bible.com/app'>Descargar ahora</a>"
       sidebar:
         tagline: "Hagamos historia juntos"
-        button: "Compartamos la aplicación \"La Biblia\""
+        button: "Comparte la aplicación"
