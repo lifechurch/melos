@@ -1,6 +1,6 @@
 sk:
   social:
-    email: "E-mail"
+    email: "Email"
     twitter: "Twitter"
     facebook: "Facebook"
   api:
@@ -758,5 +758,5 @@ sk:
         title: "Aplikácia Biblia je úplne bezplatná a skvelá cesta ako preskúmať Bibliu."
         copy: "Čítajte, počúvajte, pozerajte, zdieľajte. Stiahnite si aplikáciu Biblia pre váš smartfón alebo tablet: <a href='http://bible.com/app'>Stiahnuť teraz</a>"
       sidebar:
-        tagline: "Poďme spolu tvoriť dejiny."
+        tagline: "Poďme spolu tvoriť dejiny"
         button: "Zdieľajte aplikáciu Biblia"
