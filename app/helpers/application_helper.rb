@@ -1,5 +1,14 @@
 module ApplicationHelper
 
+  def available_locales
+    @available_locales ||= I18n.available_locales
+  end
+
+  def current_locale
+    @current_locale ||= I18n.locale
+  end
+
+
   def localized_bible_icon
     # the following localizations have a 50x50 or slightly larger
     # asset localized. Add a new code here if you have

@@ -1,7 +1,3 @@
-:ruby
-  available_locales = I18n.available_locales
-  current_locale    = I18n.locale
-
 = cache "#{@site}_footer_#{current_locale}", expires_in: a_long_time do
   %footer#footer{role: "contentinfo", class: footer_classes}
     %p.links
@@ -17,20 +13,11 @@
         - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt-BR", :tr].include?(current_locale)
           = link_to( t("donate title"), (@site.donate_path || donate_path))
 
-    - if available_locales.length > 1
+    = render partial: "shared/language_selector"
 
-      #languages
-        %div
-          %label{for: 'choose_language'}= t("choose language field")
-          %div.select_wrap
-            %span
-              %select{ id: 'choose_language', name: 'choose_language'}
-                - available_locales.each do |loc|
-                  %option{value: loc, selected: loc == current_locale}= t("language name", locale: loc)
-
-      .copyright
-        %span= "&copy; #{Date.today.year}".html_safe
-        = link_to( t("lifechurch short url"),'http://www.lifechurch.tv')
+    .copyright
+      %span= "&copy; #{Date.today.year}".html_safe
+      = link_to( t("lifechurch short url"),'http://www.lifechurch.tv')
 
   -unless ENV['RACK_ENV'] =~ /production/i
     %p.small.mute.float_right= "Non-production deployment, pointing at: #{Cfg.try :api_root}"

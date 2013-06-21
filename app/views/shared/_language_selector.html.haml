@@ -1,0 +1,9 @@
+- if available_locales.length > 1
+  #languages
+    %div
+      %label{for: 'choose_language'}= t("choose language field")
+      %div.select_wrap
+        %span
+          %select{ id: 'choose_language', name: 'choose_language'}
+            - available_locales.each do |loc|
+              %option{value: loc, selected: loc == current_locale}= t("language name", locale: loc)

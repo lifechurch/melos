@@ -2,8 +2,6 @@
   meta_title        = t("meta.100million.title")
   meta_description  = t("meta.100million.description")
   meta_url          = "http://bible.com/100million"
-  available_locales = I18n.available_locales
-  current_locale    = I18n.locale
 
 !!! 5
 %html
@@ -140,15 +138,7 @@
           = t("campaigns.100m.ad.copy").html_safe
 
 
-
-      #languages
-        %div
-          %label{for: 'choose_language'}= t("choose language field")
-          %div.select_wrap
-            %span
-              %select{ id: 'choose_language', name: 'choose_language'}
-                - available_locales.each do |loc|
-                  %option{value: loc, selected: loc == current_locale}= t("language name", locale: loc)
+      = render partial: "shared/language_selector"
 
       :javascript
         var choose_language  = "#choose_language";
