@@ -19,6 +19,11 @@ ca:
     users username not available: "El nom d'usuari/ària que has demanat no està disponible."
     users username or password invalid: "El nom d'usuari/ària o contrasenya que has introduït és invàlid/a."
     users username required: "Has d'introduir un nom d'usuari."
+  meta:
+    100million:
+      title: "Comença amb 100 milions"
+    mobile:
+      title: "L'aplicació de la Bíblia"
   now: "Ara"
   celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
   link: "Enllaç"
@@ -735,5 +740,8 @@ ca:
           subject: "Tens l'aplicació de la Bíblia?"
       body:
         p4: "Fem història plegats."
+      ad:
+        title: "L'aplicació de la Bíblia és completament gratuïta i una bona manera d'explorar la Bíblia.."
       sidebar:
+        tagline: "Fem història plegats"
         button: "Comparteix l'aplicació de la Bíblia"
