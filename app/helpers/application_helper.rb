@@ -17,7 +17,7 @@ module ApplicationHelper
         :ko, :ms, :no, :pl, :"pt-BR", :"pt-PT", :ro, :ru,
         :"zh-CN", :sk, :es, :sv, :"zh-TW", :uk, :bg, :ca,
         :"en-GB", :"es-ES", :hi, :id, :it, :ja, :mk, :mn,
-        :sq, :tr, :vi, :cs].include? I18n.locale
+        :sq, :tr, :vi, :cs, :da].include? I18n.locale
       "Bible-app-icon-#{I18n.locale}-small.png"
     else
       "Bible-app-icon-en-small.png"
