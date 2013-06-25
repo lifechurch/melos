@@ -15,7 +15,7 @@ class ReferencesController < ApplicationController
     #API Constraint to be put in model eventually
     @ref = ref_from_params rescue not_found
     #@ref = @ref.merge(verses: "1-10") if @ref.is_chapter?
-    @notes = Note.for_reference(@ref, language_iso: I18n.locale, cache_for: a_short_time)
+    @notes = Note.for_reference(@ref, language_tag: I18n.locale, cache_for: a_short_time)
     @notes = Note.for_reference(@ref, cache_for: a_short_time) if @notes.empty?
     render layout: false
   end

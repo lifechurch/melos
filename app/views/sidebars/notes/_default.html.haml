@@ -3,7 +3,7 @@
     %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source:"note")}
       %span.icon_plus= t('new note')
 
-  = render_cell :notes_list_widget, :display, notes: Note.all(language_iso: I18n.locale, cache_for: a_very_short_time), title: t("notes.community notes")
+  = render_cell :notes_list_widget, :display, notes: Note.all(language_tag: I18n.locale, cache_for: a_very_short_time), title: t("notes.community notes")
 
   = render "widgets/download_app"
 

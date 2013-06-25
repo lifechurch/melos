@@ -22,7 +22,7 @@ class YvApi
 
   def self.get(path, opts={}, &block)
     auth_from_opts!(opts)
-    resource_url = get_resource_url!(path, opts)
+    resource_url = get_resource_url(path, opts)
     opts = clean_up_opts(opts)
 
     request_opts = {}
@@ -34,8 +34,7 @@ class YvApi
     # so we don't pull from the cache when we shouldn't
     opts.delete :cache_for if opts[:cache_for].try(:<= , 0)
 
-    Rails.logger.apc "** YvApi.get: Calling #{resource_url} with query:", :info
-    Rails.logger.apc request_opts[:query], :info
+    Rails.logger.apc("** YvApi.get: Calling #{resource_url} with query: #{request_opts[:query]}", :info)
 
     # If we should cache, try pulling from cache first
     if cache_length = opts[:cache_for]
@@ -60,8 +59,6 @@ class YvApi
           raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
         end
       end
-
-      Rails.logger.apc "** YvApi.get #{path}: Response time= #{((Time.now.to_f - get_start) * 1000).to_i}ms", :info
     else
       # no caching, just ask the API directly
       Rails.logger.apc "*** no cache length specified, direct query made", :debug
@@ -79,22 +76,17 @@ class YvApi
         Rails.logger.apc "*** HTTPary Unknown ERR: #{e.class} : #{e.to_s}", :error
         raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
       end
-
-      Rails.logger.apc "** YvApi.get #{path}: Response time= #{((Time.now.to_f - get_start) * 1000).to_i}ms", :info
     end
 
-    if log_response?
-      Rails.logger.apc "** YvApi response: ", :info
-      Rails.logger.apc response, :info
-    end
+    Rails.logger.apc("** YvApi.get #{path}: Response time= #{((Time.now.to_f - get_start) * 1000).to_i}ms", :info)
+    Rails.logger.apc("** YvApi.get response: \n #{response} ", :info) if log_response?
 
-    # Check the API response for error code
     return api_response_or_rescue(response, block, resource_url: resource_url)
   end
 
   def self.post(path, opts={}, &block)
     auth_from_opts!(opts)
-    resource_url = get_resource_url!(path, opts)
+    resource_url = get_resource_url(path, opts)
     opts = clean_up_opts(opts)
 
     request_opts = {}
@@ -122,14 +114,9 @@ class YvApi
       raise APIError, "Non-timeout API Error for #{resource_url}: #{e.class} : #{e.to_s}"
     end
 
-    Rails.logger.apc "** YvApi.post #{path}: Response time= #{((Time.now.to_f - post_start) * 1000).to_i}ms", :info
+    Rails.logger.apc("** YvApi.post #{path}: Response time= #{((Time.now.to_f - post_start) * 1000).to_i}ms", :info)
+    Rails.logger.apc("** YvApi.post response: \n #{response} ", :info) if log_response?
 
-    if log_response?
-      Rails.logger.apc "** YvApi.post: Response: ", :info
-      Rails.logger.apc response, :info
-    end
-
-    # Check the API response for error code
     return api_response_or_rescue(response, block)
   end
 
@@ -189,36 +176,23 @@ class YvApi
   end
 
   private
-  def self.log_response?
-    return false if Rails.env.production?
-    return true if ENV["LOG_API_RESPONSES"]
-    return false # <=Comment out this line to enable response logging in developent
-    return true
-  end
+
   def self.auth_from_opts!(opts)
-    # Clear the auth state or it'll keep it around between requests
-    default_options.delete(:basic_auth)
+    default_options.delete(:basic_auth) # Clear the auth state or it'll keep it around between requests
 
-    # For login
-    basic_auth opts.delete(:auth_username), opts.delete(:auth_password) if (opts[:auth_username] && opts[:auth_password])
-
-    # TODO: Clean up the call around this so it's unnecessary
-    a = Hashie::Mash.new(opts.delete(:auth)) if opts[:auth]
-
-    # For auth'ed API calls with :user => current_user
-    basic_auth a.username, a.password if a
+    if auth = opts.delete(:auth)
+      basic_auth(auth[:username], auth[:password])
+    end
   end
 
   def self.clean_up_opts(opts)
-    opts[:language_tag] = to_api_lang_code(opts[:language_tag]) if opts[:language_tag]
-    opts[:language_iso] = to_api_lang_code(opts[:language_iso]) if opts[:language_iso]
-
+    if opts[:language_tag] then opts[:language_tag] = to_api_lang_code(opts[:language_tag]) end
     return opts
   end
 
-  def self.get_resource_url!(path, opts)
+  def self.get_resource_url(path, opts)
     #/likes.youversionapi.com/3.0/view.json
-    get_protocol(path) + '://' + get_host!(opts, path) + get_path!(path)
+    get_protocol(path) + '://' + get_host(opts, path) + get_path(path)
   end
 
   def self.get_protocol(path)
@@ -231,10 +205,18 @@ class YvApi
     end
   end
 
-  def self.get_host!(opts, path)
+  def self.get_host(opts, path)
     #/likes.youversionapi.com/3.0
     path.match(/(.+)\/.*/).try(:[], 1) + "." + Cfg.api_root + "/" + (opts.delete(:api_version) || Cfg.api_version)
   end
+
+  def self.get_path(path)
+    _path = path.match(/.+\/(.*)/)[1]
+    _path = "/" + _path unless _path.match(/^\//)
+    _path += ".json" unless _path.match(/\.json$/)
+    _path
+  end
+
 
   def self.bible_api_custom_languages
     {
@@ -247,12 +229,7 @@ class YvApi
     }
   end
 
-  def self.get_path!(path)
-    _path = path.match(/.+\/(.*)/)[1]
-    _path = "/" + _path unless _path.match(/^\//)
-    _path += ".json" unless _path.match(/\.json$/)
-    _path
-  end
+
 
   def self.api_response_or_rescue(response, block, opts = {})
     if response["response"]["code"].to_i >= 400
@@ -313,5 +290,12 @@ class YvApi
         # only for users/user_id
         Hashie::Mash.new({user_id: response["response"]["data"] })
     end
+  end
+
+  def self.log_response?
+    return false if Rails.env.production?
+    return true if ENV["LOG_API_RESPONSES"]
+    return false # <=Comment out this line to enable response logging in developent
+    return true
   end
 end

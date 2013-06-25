@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_filter :set_sidebar, :only => [:index]
 
   def index
-      @notes = Note.all(language_iso: I18n.locale, cache_for: a_very_short_time)
+      @notes = Note.all(language_tag: I18n.locale, cache_for: a_very_short_time)
       # drop language tag filter if no notes found
       @notes = Note.all(cache_for: a_very_short_time) if @notes.empty?
       self.sidebar_presenter = Presenter::Sidebar::Notes.new
@@ -13,7 +13,7 @@ class NotesController < ApplicationController
     #API Constraint to be put in model eventually
     page = params[:page] || 1
     ref = ref_from_params rescue not_found
-    @notes = Note.for_reference(ref, language_iso: I18n.locale, page: page, cache_for: a_short_time)
+    @notes = Note.for_reference(ref, language_tag: I18n.locale, page: page, cache_for: a_short_time)
     @notes = Note.for_reference(ref, page:page, cache_for:a_short_time) if @notes.empty?
     @reference_title = ref.human
     render template:"notes/index"
