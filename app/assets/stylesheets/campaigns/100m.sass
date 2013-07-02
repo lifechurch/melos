@@ -1,14 +1,3 @@
-@font-face
-  font-family: 'bebas_neueregular'
-  src: url('../fonts/bebasneue-webfont-webfont.eot')
-  src: url('../fonts/bebasneue-webfont-webfont.eot?#iefix') format('embedded-opentype')
-  src: url('../fonts/bebasneue-webfont-webfont.woff') format('woff')
-  src: url('../fonts/bebasneue-webfont-webfont.ttf') format('truetype')
-  src: url('../fonts/bebasneue-webfont-webfont.svg#bebas_neueregular') format('svg')
-  font-weight: normal
-  font-style: normal
-
-
 // ------------------------ Desktop styles
 
 body
@@ -63,6 +52,8 @@ a
   font-weight: normal
   text-align: center
   margin-top: 35px
+  position: relative
+  z-index: 9999
 
 .intro-starts em
   letter-spacing: normal
@@ -71,11 +62,9 @@ a
   text-align: center
   font:
     size: 140px
+    family: "gnuolane",sans-serif
     style: normal
-    weight: normal
-    family: 'Fjalla One', Helvetica, sans-serif
   line-height: 1em
-  margin-top: 10px
 
 .intro-title
   width: 90%
@@ -90,6 +79,9 @@ a
 
 .world-map
   width: 100%
+  position: relative
+  z-index: 1
+  margin-top: -50px
 
 // ---- Share buttons
 
@@ -172,14 +164,14 @@ a
     margin-left: 0
 
 #counter-divider
-  margin-top: -82px
+  margin: -132px 0 100px 0
 
 
 // ---- Counter
 
 #date_countdown
   clear: both
-  margin: 50px auto 0
+  margin: 100px auto 80px auto
   overflow: hidden
   width: 663px
   color: #96999D
@@ -203,7 +195,7 @@ a
 // ---- Video
 
 .video
-  margin-top: 70px
+  margin-top: 10px
   clear: both
   overflow: hidden
 
@@ -259,6 +251,9 @@ footer
 #languages
   float: right
   margin-bottom: 20px
+
+.select_wrap
+  margin-top: 5px
 
 // ------------------------- Mobile styles
 
@@ -475,13 +470,12 @@ footer
 
   .intro-starts
     letter-spacing: 0
-    font-size: 22px
-    margin-top: 10px
+    font-size: 16px
     padding-left: 0px
     line-height: 14px
 
     em
-      font-size: 45px
+      font-size: 55px
       margin-bottom: 20px
 
     span
@@ -490,6 +484,9 @@ footer
       text-align: center
       margin: 0 auto
       padding-left: 5%
+
+  .world-map
+    margin-top: -30px
 
   .intro-copy
     padding: 0px 20px
@@ -536,6 +533,11 @@ footer
   #counter-divider
     display: none
 
+  #date_countdown
+    font-size: 11px
+
+  // ---- Video
+
   .video-box
     iframe
       height: 280px
@@ -547,6 +549,12 @@ footer
     font-size: 14px
     float: none
     padding: 5% 5%
+
+    p
+      line-height: 1.5em
+      margin-bottom: 5%
+
+  // ---- Footer
 
   footer
     width: 80%
