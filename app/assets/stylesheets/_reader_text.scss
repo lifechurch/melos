@@ -134,7 +134,7 @@
 }
 
 .ms + .mr {
-  margin-top: -1em;
+  margin-top: -0.5em;
 }
 
 .iot, .imt, .imt1 {
@@ -451,18 +451,13 @@ span.fqa {
   margin-bottom: 0;
 }
 
-// Temp fix to Portugese NVI version to give spacing around "SENHOR" (or "LORD" in English)
-// .nd refers to "name of deity"
-.vid129 .nd {
-  padding: 0 5px;
-}
-
 
 //Certain headlines should be centered in NABRE
 .vid463 div.s2 {
   text-align:center;
 }
 
-.vid483 {
+/* Increased word-spacing for Moose Cree version and Eastern Arctic Inuktitut Bible  */
+.vid483, .vid455 {
 	word-spacing: .4em;
 }
