@@ -39,30 +39,9 @@
           = t("campaigns.100m.tagline").html_safe
         %img.world-map{ src: "/assets/campaigns/100m/bg.jpg", alt: "Map of the world"}
         %p.intro-copy
-          = t("campaigns.100m.intro")
+          = t("campaigns.100m.after")
 
-      -# Share buttons
-      .share
-        %p.share-copy
-          = t("campaigns.100m.share.with friends")
 
-        .share-btns
-          - fb_app_id   = Cfg.facebook_app_id
-          - fb_name     = t("campaigns.100m.share.fb.dialog name")
-          - fb_desc     = t("campaigns.100m.share.fb.dialog desc")
-          - fb_link     = "http://www.bible.com/app"
-          - fb_redirect = "http://www.bible.com/100million"
-          %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
-            = t("social.facebook")
-
-          - twitter     = t("campaigns.100m.share.tw.tweet")
-          %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
-            = t("social.twitter")
-
-          - subject     = t("campaigns.100m.share.em.subject")
-          - body        = t("campaigns.100m.share.em.body")
-          %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
-            = t("social.email")
 
       -# App ticker
       #counter
@@ -104,20 +83,30 @@
           $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
         })();
 
-      - if current_locale.to_s == "en"
 
-        #date_countdown
+      -# Share buttons
+      .share
+        %p.share-copy
+          = t("campaigns.100m.share.with friends")
 
-        -# Day counter
-        :javascript
+        .share-btns
+          - fb_app_id   = Cfg.facebook_app_id
+          - fb_name     = t("campaigns.100m.share.fb.dialog name")
+          - fb_desc     = t("campaigns.100m.share.fb.dialog desc")
+          - fb_link     = "http://www.bible.com/app"
+          - fb_redirect = "http://www.bible.com/100million"
+          %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
+            = t("social.facebook")
 
-          (function() {
+          - twitter     = t("campaigns.100m.share.tw.tweet")
+          %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
+            = t("social.twitter")
 
-            var timestamp = 1373529600;
-            var deadline  = new Date( timestamp * 1000);
-            $('#date_countdown').countdown({until: deadline});
+          - subject     = t("campaigns.100m.share.em.subject")
+          - body        = t("campaigns.100m.share.em.body")
+          %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
+            = t("social.email")
 
-          })();
 
 
       -# Video
@@ -125,10 +114,8 @@
         .video-box
           %iframe{width:"640",height:"360",src:"http://www.youtube.com/embed/gGclEW8E7GU?list=PL0429142BE6C7A21B", frameborder:"0", allowfullscreen:"true"}
         .video-copy
-          %p= t("campaigns.100m.body.p1")
-          %p= t("campaigns.100m.body.p2")
-          %p= t("campaigns.100m.body.p3")
-          %p= t("campaigns.100m.body.p4")
+          %p= t("campaigns.100m.body.after p1").html_safe
+          %p= t("campaigns.100m.body.after p2").html_safe
 
       %footer
         = image_tag localized_bible_icon, class: "ad-img"
