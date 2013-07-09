@@ -77,7 +77,6 @@ function Page() {
   this.initAjaxReplace();
   this.initFlash();
   this.initAutoFocus();
-  this.initRadiosAndChecks();
   this.initProgressBars();
   this.initInplaceConfirms();
 }
@@ -171,9 +170,7 @@ Page.prototype = {
 
     function determine_checked() {
       input.each(function() {
-        var el    = $(this);
-        var label = el.closest("label");
-
+        var label = $(this).closest("label");
         (this.checked)  ? label.addClass('is_checked') : label.removeClass('is_checked');
         (this.disabled) ? label.addClass('is_disabled') : label.removeClass('is_disabled');
       });
@@ -187,7 +184,8 @@ Page.prototype = {
         el.unwrap();
       }
 
-      el.wrap('<label class="' + label_class + '" for="' + el.attr('id') + '"></label>');
+      el.wrap('<label class="faux_input ' + label_class + '"></label>');
+
     }).off('click.faux_input').on('click.faux_input', function() {
       determine_checked();
     }).off('focus.faux_input').on('focus.faux_input', function() {
@@ -478,10 +476,6 @@ Page.prototype = {
 
   initAutoFocus : function() {
     $(".autofocus").focus();
-  },
-
-  initRadiosAndChecks : function() {
-    var input = $('input[type="radio"], input[type="checkbox"]');
   },
 
   initFlash : function() {
