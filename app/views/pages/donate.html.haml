@@ -15,7 +15,6 @@
     %form{action: "https://www.paypal.com/cgi-bin/webscr", class: "paypal-button", target: "_top", style: "opacity: 1;" }
       %input{type:"hidden", name: "business", value: "giving@lifechurch.tv"}
       %input{type:"hidden", name: "item_name", value: "YouVersion"}
-      %input{type:"hidden", name: "quantity", value: ""}
       %input{type:"hidden", name: "currency_code", value: "USD"}
       %input{type:"hidden", name: "notify_url", value: "http://bible.com"}
       %input{type:"hidden", name: "env", value: "www"}
@@ -23,12 +22,12 @@
       %input{type:"hidden", name: "p3", value: "24", class: "interval"}
       %input{type:"hidden", name: "t3", value: "M", class: "monthly"}
 
-      %input{type:"hidden", name: "a3", value: "0.00", id: "a3"}
+      %input{type:"hidden", name: "a3", value: "20.00", id: "a3"}
       %input{type:"hidden", name: "cmd", value: "_xclick", id: "cmd"}
 
       %div.donate_amount
         %label{for: "amount"}= t('donate.amount')
-        %input#donate_amount{type:"text", name: "amount", value: "0.00"}
+        %input#donate_amount{type:"text", name: "amount", value: "20.00"}
 
       %div.donate_radios
         %div.radio
