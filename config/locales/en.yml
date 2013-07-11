@@ -572,7 +572,7 @@ en:
     suggestion html:                            "Did you mean %{suggestion_link}?"
     all versions:                               "All %{language_name} Versions"
   donate:
-    donate now:                                 "Donate Now (US)"
+    donate now:                                 "Donate Now"
     donate now intl:                            "or donate internationally"
     promo 1:                                    "For every $1 you give, 10 more people get access to the Bible on their mobile phone."
     promo 2:                                    "With YouVersion, the Bible is always nearby. Watch our video."
