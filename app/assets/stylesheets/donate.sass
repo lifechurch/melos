@@ -37,6 +37,17 @@
     button
       width: 100%
 
+    #field_amount
+      padding-left: 24px
+      margin-left: -12px
+
+    #field_currency_sign
+      position: relative
+      display: inline-block
+      top: 2px
+      left: 10px
+      font-size: 16px
+
     .donate_amount
       padding: 10px
       background: #eee
@@ -68,6 +79,9 @@
 
 @media only screen and (max-width: 768px)
 
+  .mobile #page_title #yv-logo
+    margin-top: -4px
+
   #main article
     height: auto
 
@@ -94,7 +108,7 @@
       top: none
       right: none
 
-      img
-        width: 100%
+@media only screen and (max-width: 320px)
 
-
+  .donate_paypal_logo img
+    width: 100%

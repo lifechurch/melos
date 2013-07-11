@@ -6,6 +6,9 @@
 - content_for :stylesheets do
   = stylesheet_link_tag "donate"
 
+- content_for :title do
+  = image_tag(@site.logo_image, id: "yv-logo")
+
 %article.donate
   %h1= t('donate.headline')
 
@@ -22,12 +25,15 @@
       %input{type:"hidden", name: "p3", value: "24", class: "interval"}
       %input{type:"hidden", name: "t3", value: "M", class: "monthly"}
 
-      %input{type:"hidden", name: "a3", value: "20.00", id: "a3"}
+      %input{type:"hidden", name: "a3", value: "", id: "a3"}
       %input{type:"hidden", name: "cmd", value: "_xclick", id: "cmd"}
 
       %div.donate_amount
         %label{for: "amount"}= t('donate.amount')
-        %input#donate_amount{type:"text", name: "amount", value: "20.00"}
+        %span#field_currency_sign $
+        %input#field_amount{type:"text", name: "amount", value: "", class: "autofocus", placeholder: "Enter an amount"}
+        %span
+          %strong USD
 
       %div.donate_radios
         %div.radio
@@ -37,7 +43,7 @@
           %input.radio_button{type:"radio", name: "button", value: "subscribe", id: "radio_subscribe"}
           %label#label_recurring{for: "radio_subscribe"} Monthly
 
-      %button{type:"submit", class: "paypal-button action_button_green", } Give Now
+      %button{type:"submit", class: "paypal-button action_button_green", } Donate Now
 
     :javascript
 
@@ -49,7 +55,7 @@
         $("#cmd").val("_xclick-subscriptions");
       }
 
-      $("#donate_amount").change(function() { $("#a3").val($(this).val()); })
+      $("#field_amount").change(function() { $("#a3").val($(this).val()); })
       $("#radio_buynow").change(function() {enable_onetime(); });
       $("#label_onetime").click(function() { enable_onetime(); });
       $("#radio_subscribe").change(function() {enable_recurring(); });
