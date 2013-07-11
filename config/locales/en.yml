@@ -583,6 +583,7 @@ en:
     amount:                                     "Donation amount"
     option once:                                "One time"
     option monthly:                             "Monthly"
+    alert empty amount:                         "Please enter a donation amount."
     name:                                       "Your name"
     card number:                                "Credit card number"
     card exp date:                              "Expiration date (MMYY)"

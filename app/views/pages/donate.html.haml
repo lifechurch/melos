@@ -48,6 +48,7 @@
       %button{type:"submit", class: "paypal-button action_button_green", id: "submit-donate"}
         = t("donate.donate now button")
 
+    - alert_text = t("donate.alert empty amount")
     :javascript
 
       function enable_onetime() {
@@ -65,9 +66,11 @@
       $("#label_recurring").click(function() { enable_recurring(); });
 
       $("#submit-donate").click(function(event) {
-        if($("#field_amount").val() == "") {
+        var amt_field = $("#field_amount");
+        if(amt_field.val() == "") {
           event.preventDefault();
-          alert("Please enter a donation amount.");
+          alert("#{alert_text}");
+          amt_field.focus();
           return false;
         }
       });
