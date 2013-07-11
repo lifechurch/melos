@@ -45,7 +45,7 @@
           %label#label_recurring{for: "radio_subscribe"}
             = t("donate.option monthly")
 
-      %button{type:"submit", class: "paypal-button action_button_green"}
+      %button{type:"submit", class: "paypal-button action_button_green", id: "submit-donate"}
         = t("donate.donate now button")
 
     :javascript
@@ -63,6 +63,14 @@
       $("#label_onetime").click(function() { enable_onetime(); });
       $("#radio_subscribe").change(function() {enable_recurring(); });
       $("#label_recurring").click(function() { enable_recurring(); });
+
+      $("#submit-donate").click(function(event) {
+        if($("#field_amount").val() == "") {
+          event.preventDefault();
+          alert("Please enter a donation amount.");
+          return false;
+        }
+      });
 
   %div.donate_paypal_logo
     %img{src: "https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg", alt: "PayPal Acceptance Mark"}
