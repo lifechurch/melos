@@ -581,6 +581,8 @@ en:
     subhead:                                    "Help people around the world have the Bible at their fingertips."
     copy:                                       "Imagine if you could give everyone in the world a free Bible. When you give to YouVersion, you can do just that. We're alive during a time that others have only dreamed of &ndash; when anyone with a phone can access the Bible and experience the story of God's love for us. With your support, we can continue to help more people spend more time in Scripture."
     amount:                                     "Donation amount"
+    option once:                                "One time"
+    option monthly:                             "Monthly"
     name:                                       "Your name"
     card number:                                "Credit card number"
     card exp date:                              "Expiration date (MMYY)"

@@ -19,7 +19,7 @@
       %input{type:"hidden", name: "business", value: "giving@lifechurch.tv"}
       %input{type:"hidden", name: "item_name", value: "YouVersion"}
       %input{type:"hidden", name: "currency_code", value: "USD"}
-      %input{type:"hidden", name: "notify_url", value: "http://bible.com"}
+      %input{type:"hidden", name: "notify_url", value: "https://bible.com/donate"}
       %input{type:"hidden", name: "env", value: "www"}
 
       %input{type:"hidden", name: "p3", value: "24", class: "interval"}
@@ -38,12 +38,15 @@
       %div.donate_radios
         %div.radio
           %input.radio_button{type:"radio", name: "button", value: "buynow", checked: "checked", id: "radio_buynow" }
-          %label#label_onetime{for: "radio_buynow"} One time
+          %label#label_onetime{for: "radio_buynow"}
+            = t("donate.option once")
         %div.radio
           %input.radio_button{type:"radio", name: "button", value: "subscribe", id: "radio_subscribe"}
-          %label#label_recurring{for: "radio_subscribe"} Monthly
+          %label#label_recurring{for: "radio_subscribe"}
+            = t("donate.option monthly")
 
-      %button{type:"submit", class: "paypal-button action_button_green", } Donate Now
+      %button{type:"submit", class: "paypal-button action_button_green"}
+        = t("donate.donate now button")
 
     :javascript
 
