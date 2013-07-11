@@ -6,15 +6,78 @@
 - content_for :stylesheets do
   = stylesheet_link_tag "donate"
 
+- content_for :title do
+  = image_tag(@site.logo_image, id: "yv-logo")
+
 %article.donate
-  %h1.float_left= t('donate.headline')
-  #donate_now_wrap
-    #donate_us_wrap
-      %a.action_button_green{:href => @us_donate_link}
-        %span.icon_arrow= t('donate.donate now')
-    %a.intl{:href => @intl_donate_link}
-      %span.icon_arrow= t('donate.donate now intl')
-    - # %a{:href => '#'}= image_tag '/images/donate_with_paypal.png'
+  %h1= t('donate.headline')
+
   %hr
-  %p.narrow.callout.gutter_bottom_half= t('donate.subhead')
-  %p.narrow.gutter_bottom_half= t('donate.copy').html_safe
+
+  %div.donate_action
+    %form{action: "https://www.paypal.com/cgi-bin/webscr", class: "paypal-button", target: "_top", style: "opacity: 1;" }
+      %input{type:"hidden", name: "business", value: "giving@lifechurch.tv"}
+      %input{type:"hidden", name: "item_name", value: "YouVersion"}
+      %input{type:"hidden", name: "currency_code", value: "USD"}
+      %input{type:"hidden", name: "notify_url", value: "https://bible.com/donate"}
+      %input{type:"hidden", name: "env", value: "www"}
+
+      %input{type:"hidden", name: "p3", value: "24", class: "interval"}
+      %input{type:"hidden", name: "t3", value: "M", class: "monthly"}
+
+      %input{type:"hidden", name: "a3", value: "", id: "a3"}
+      %input{type:"hidden", name: "cmd", value: "_xclick", id: "cmd"}
+
+      %div.donate_amount
+        %label{for: "amount"}= t('donate.amount')
+        %span#field_currency_sign $
+        %input#field_amount{type:"text", name: "amount", value: "", class: "autofocus", placeholder: "Enter an amount"}
+        %span
+          %strong USD
+
+      %div.donate_radios
+        %div.radio
+          %input.radio_button{type:"radio", name: "button", value: "buynow", checked: "checked", id: "radio_buynow" }
+          %label#label_onetime{for: "radio_buynow"}
+            = t("donate.option once")
+        %div.radio
+          %input.radio_button{type:"radio", name: "button", value: "subscribe", id: "radio_subscribe"}
+          %label#label_recurring{for: "radio_subscribe"}
+            = t("donate.option monthly")
+
+      %button{type:"submit", class: "paypal-button action_button_green", id: "submit-donate"}
+        = t("donate.donate now button")
+
+    - alert_text = t("donate.alert empty amount")
+    :javascript
+
+      function enable_onetime() {
+        $("#cmd").val("_xclick");
+      }
+
+      function enable_recurring() {
+        $("#cmd").val("_xclick-subscriptions");
+      }
+
+      $("#field_amount").change(function() { $("#a3").val($(this).val()); })
+      $("#radio_buynow").change(function() {enable_onetime(); });
+      $("#label_onetime").click(function() { enable_onetime(); });
+      $("#radio_subscribe").change(function() {enable_recurring(); });
+      $("#label_recurring").click(function() { enable_recurring(); });
+
+      $("#submit-donate").click(function(event) {
+        var amt_field = $("#field_amount");
+        if(amt_field.val() == "") {
+          event.preventDefault();
+          alert("#{alert_text}");
+          amt_field.focus();
+          return false;
+        }
+      });
+
+  %div.donate_paypal_logo
+    %img{src: "https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg", alt: "PayPal Acceptance Mark"}
+
+  %div.donate_copy
+    %p.callout= t('donate.subhead')
+    %p= t('donate.copy').html_safe

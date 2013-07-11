@@ -20,17 +20,95 @@
 #main article
   background:
     image: image-url("phone_and_hands.jpg")
-    position: right bottom
+    position: 130% bottom
     repeat: no-repeat
   overflow: hidden
   padding-bottom: 0
-  height: 550px
+  height: 600px
+  position: relative
+
+  .donate_copy
+    width: 390px
+    margin-top: 50px
+
+  .donate_action
+    width: 390px
+
+    button
+      width: 100%
+
+    #field_amount
+      padding-left: 24px
+      margin-left: -12px
+
+    #field_currency_sign
+      position: relative
+      display: inline-block
+      top: 2px
+      left: 10px
+      font-size: 16px
+
+    .donate_amount
+      padding: 10px
+      background: #eee
+      border: 1px solid #ccc
+      border-radius: 4px
+
+      label
+        display: block
+
+    .donate_radios
+      margin: 18px 0
+      overflow: auto
+      clear: both
+
+      .radio
+        width: 40%
+        float: left
+
+  .donate_paypal_logo
+    position: absolute
+    top: 125px
+    right: 80px
 
 #main article h1
   font:
     size: 42px
   line-height: 1.3
-  width: 550px
 
-p.narrow
-  width: 340px
+
+@media only screen and (max-width: 768px)
+
+  .mobile #page_title #yv-logo
+    margin-top: -4px
+
+  #main article
+    height: auto
+
+
+    h1, hr
+      display: none
+
+    .donate_action, .donate_copy, .donate_paypal_logo
+      width: auto
+
+    .donate_action .donate_radios .radio
+      display: block
+      float: none
+      padding: 5px
+
+    .donate_copy
+      margin-top: 15px
+
+    .donate_paypal_logo
+      width: auto
+      text-align: center
+      position: static !important
+      margin: 15px
+      top: none
+      right: none
+
+@media only screen and (max-width: 320px)
+
+  .donate_paypal_logo img
+    width: 100%
