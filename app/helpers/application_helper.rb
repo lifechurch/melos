@@ -9,19 +9,8 @@ module ApplicationHelper
   end
 
 
-  def localized_bible_icon
-    # the following localizations have a 50x50 or slightly larger
-    # asset localized. Add a new code here if you have
-    # added the image asset as named below
-    if [:km, :af, :ar, :nl, :en, :tl, :fi, :fr, :de, :hu,
-        :ko, :ms, :no, :pl, :"pt-BR", :"pt-PT", :ro, :ru,
-        :"zh-CN", :sk, :es, :sv, :"zh-TW", :uk, :bg, :ca,
-        :"en-GB", :"es-ES", :hi, :id, :it, :ja, :mk, :mn,
-        :sq, :tr, :vi, :cs, :da].include? I18n.locale
-      "Bible-app-icon-#{I18n.locale}-small.png"
-    else
-      "Bible-app-icon-en-small.png"
-    end
+  def localized_bible_icon( size = 48 )
+    "icons/bible/#{size.to_s}/#{I18n.locale}.png"
   end
 
   def overwrite_content_for(name, content = nil, &block)
