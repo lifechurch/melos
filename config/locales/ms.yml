@@ -681,6 +681,7 @@ ms:
     load error: "Maaf, memuat versi lain mempunyai masalah. Tutup menu ini dan buka semula untuk mencuba kembali."
   campaigns:
     100m:
+      after: "Oleh kerana anda, App Alkitab mencapai 100 juta pemuat turun di ulang tahun yang ke 5 pada 10 July. Terima kasih! "
       share:
         fb:
           dialog name: "Adakah anda mempunyai App Alkitab?"

@@ -739,6 +739,7 @@ vi:
       logo: "YouVersion: Ứng dụng Kinh Thánh"
       tagline: "Bắt đầu với <em>100 triệu</em>"
       intro: "Ứng dụng Kinh Thánh có thể đạt mốc 100 triệu lượt tải về trước sinh nhật lần thứ 5, ngày 10 tháng 7 không? Chúng tôi cần sự trợ giúp của bạn!"
+      after: "Cảm ơn bạn! Nhờ bạn mà App Kinh Thánh đã đạt 100 triệu lượt cài đặt nhân sinh nhật 5 tuổi vào ngày 10 tháng 7 này."
       share:
         with friends: "Chia sẻ với bạn bè"
         fb:
@@ -754,6 +755,8 @@ vi:
         p2: "Đó là ngày Ứng dụng Kinh Thánh đạt mốc 100 triệu lượt tải về, nhờ sự trợ giúp của bạn."
         p3: "Chúng ta biết rằng Thiên Chúa dùng những sự kiện này để giúp con người được thăng tiến."
         p4: "Chúng ta hãy cùng tạo nên lịch sử."
+        after p1: "YouVersion thể hiện mối liên hiệp toàn cầu của những ai cùng chung niềm mong ước giúp mọi người tiếp cận với Lời Chúa. Cảm ơn tấm lòng của tất cả các Hội Kinh Thánh, nhà xuất bản, hội thánh, mục sư, và tình nguyện viên!"
+        after p2: "Điều đáng mừng nhất trong cột mốc này chính là ý nghĩa của nó: con người ngày nay đang tiếp xúc với Kinh Thánh nhiều hơn bao giờ hết. Điều Chúa đang làm thật đáng kinh ngạc! Và chúng ta tin rằng đây chỉ là sự khởi đầu! <em>Khởi đầu với 100 triệu</em>."
       ad:
         title: "Ứng dụng Kinh Thánh hoàn toàn miễn phí và là cách tuyệt vời để khám phá Kinh Thánh"
         copy: "Đọc, Nghe, Xem và Chia sẻ. Tải Ứng dụng Kinh Thánh về điện thoại hoặc máy tính bảng của bạn: <a href='http://bible.com/app'>Tải về</a>"

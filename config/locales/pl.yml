@@ -739,6 +739,7 @@ pl:
       logo: "YouVersion: Aplikacja Biblii"
       tagline: "Zaczyna się od <em>100 milionów</em>"
       intro: "Czy Aplikacja Biblii może osiągnąć 100 milionów instalacji przed naszą 5 rocznicą 10 lipca? Tylko z twoją pomocą!"
+      after: "Dzięki tobie, Aplikacja Biblii osiągnęła poziom 100 milionów instalacji w naszą 5 rocznicę 10 lipca. Dziękujemy!"
       share:
         with friends: "Udostępnij znajomym"
         fb:
@@ -754,6 +755,8 @@ pl:
         p2: "A co więcej? Dzięki waszej pomocy, to również dzień w którym Aplikacja Biblii osiągnęła 100 milionów pobrań."
         p3: "Nauczyliśmy się, że Bóg wykorzystuje takie momenty, aby zasilić jeszcze większy wzrost."
         p4: "Twórzmy razem historię!"
+        after p1: "YouVersion reprezentuje globalną koalicję ludzi pełnych pasji dla angażowania innych w Słowo Boże. Do wszystkich towarzystw biblijnych i wydawców, kościołów, pastorów i wolontariuszy: dziękujęmy za waszą hojność!"
+        after p2: "Do co czyni ten moment tak ekscytującym to to co sobą reprezentuje: ludzie dzisiaj wchodzą w interakcję z Biblią na skalę jakiej jeszcze nie doświadczyliśmy. Niesamowitym jest widzieć działanie Boga. Wierzymy, że to dopiero początek. <em>Zaczynamy od 100 milionów</em>."
       ad:
         title: "Aplikacja Biblii jest darmowym świetnym sposobem na odkywanie Biblii."
         copy: "Czytaj, słuchaj, oglądaj, udostępniaj. Pobierz Aplikację Biblii na telefon lub tablet: <a href='http://bible.com/app'>Pobierz teraz</a>"

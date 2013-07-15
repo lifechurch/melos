@@ -739,6 +739,7 @@ nl:
       logo: "YouVersion: De Bijbel app"
       tagline: "Het begint met <em>100 miljoen</em>"
       intro: "Kan de Bijbel App 100 miljoen installaties bereiken voor onze 5de verjaardag op 10 Juli? Alleen maar met jou hulp!"
+      after: "Dankzij jou, heeft de Bijbel App 100 miljoen installaties gehaald voor onze 5de verjaardag op 10 Juli. Dank je wel!"
       share:
         with friends: "Deel met jouw vrienden"
         fb:
@@ -754,6 +755,8 @@ nl:
         p2: "Maar groter zelfs! Met jou hulp, wordt het de dag dat de Bijbel App 100 miljoen downloads zal hebben."
         p3: "We hebben geleerd dat God mijlpalen als deze gebruikt om nog meer groei te veroorzaken."
         p4: "Laten we samen geschiedenis maken."
+        after p1: "YouVersion vertegenwoordigt een coalitie van mensen met een passie om anderen te helpen in aanraking te komen met Gods Woord. Voor alle Bijbelgenootschappen en Bijbel uitgevers, kerken, pastoren, en vrijwilligers: bedankt voor jullie vrijgevigheid! "
+        after p2: "Wat zo opwindend is aan deze mijlpaal is wat het werkelijk betekent: Vandaag hebben mensen interactie met de Bijbel op een schaal als nooit tevoren. Het is ontzagwekkend wat God aan het doen is. En wij geloven dat dit maar pas een begin is. <em>Het begint met 100 miljoen</em>."
       ad:
         title: "De Bijbel App is volledig gratis en een geweldige manier om de Bijbel te verkennen."
         copy: "Lees, Luister, Kijk, Deel. Neem de Bijbel App voor je smartphone of tablet:<a href='http://bible.com/app'>Download Nu</a>"

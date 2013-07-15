@@ -22,8 +22,10 @@ ca:
   meta:
     100million:
       title: "Comença amb 100 milions"
+      description: "L'App de la Bíblia ha estat instal·lada gaire bé 100 milions de vegades - una fita increïble! Però tot just estem començant. Descarrega gratuïtament l'App de la Bíblia - i comparteix-la amb els teus amics. Fem història plegats."
     mobile:
       title: "L'aplicació de la Bíblia"
+      description: "Desenes de milions de persones estan utilitzant l'App de la Bíblia per llegir, escoltar, mirar i compartir la Paraula de Déu, fent que sigui part de les seves vides diàries. Descarrega gratuïtament l'App i accedeix als teus marcadors, notes i plans de lectura des de qualsevol lloc. Gaudeix de centenars de versions, també en àudio, totes en el teu dispositiu mòbil."
   now: "Ara"
   celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
   link: "Enllaç"
@@ -737,6 +739,7 @@ ca:
       logo: "YouVersion: l'aplicació de la Bíblia"
       tagline: "Es comença amb <em>100 milions</em>"
       intro: "Podem fer que l'aplicació de la Bíblia arribi als 100 milions d'instal·lacions abans del nostre 5è aniversari el 10 de juliol? Amb la teva ajuda sí!"
+      after: "Gràcies a tu, l'App Bíblia ha assolit 100 milions d'instal·lacions abans del nostre 5è aniversari el 10 de Juliol. Moltes gràcies!"
       share:
         with friends: "Comparteix amb els teus amics"
         fb:
@@ -748,9 +751,15 @@ ca:
           subject: "Tens l'aplicació de la Bíblia?"
           body: "Estic gaudint de l'aplicació de la Bíblia de YouVersion i crec que a tu segurament també t'agradaria. Darrerament estic obrint molt més la Bíblia perquè és molt fàcil de llegir, mirar, escoltar i compartir. Fins i tot té Plans, que tenen una selecció de la Bíblia ben escollida i que m'espera cada dia.\n\nLa pots aconseguir (de franc!) per gairebé qualsevol dispositiu mòbil aquí:\nhttp://www.bible.com/app"
       body:
+        p1: "El 10 de juliol serà un gran dia. No només és el 5è aniversari de l'App de la Bíblia, sinó que també fa 5 anys que es va posar en marxa l'iTunes Store d'Apple."
+        p2: "Encara més gran? Amb la teva ajuda, és el dia en què l'App de la Bíblia arribarà als 100 milions de descàrregues."
+        p3: "Hem après que Déu fa servir fites com aquesta per engegar un creixement encara més gran."
         p4: "Fem història plegats."
+        after p1: "YouVersion representa una coalició global de persones apassionades per ajudar a altres a comprometre's amb la Paraula de Déu. A totes les societats bíbliques, editors de la Bíblia, esglésies, pastors i voluntaris: gràcies per la vostra generositat!"
+        after p2: "El més increïble d'aquesta fita és el que representa: avui hi ha gent interactuant amb la Bíblia a una escala que mai no havíem vist abans. Inspira admiració veure el que Déu està fent. I creiem que això és només el principi. <em>Comença amb 100 milions</em>"
       ad:
         title: "L'aplicació de la Bíblia és completament gratuïta i una bona manera d'explorar la Bíblia.."
+        copy: "Llegeix, Escolta, Mira, Comparteix. Aconsegueix l'App de la Bíblia pel teu smartphone o tauleta a: <a href='http://bible.com/app'>Descàrrega</a>"
       sidebar:
         tagline: "Fem història plegats"
         button: "Comparteix l'aplicació de la Bíblia"

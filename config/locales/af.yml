@@ -739,6 +739,7 @@ af:
       logo: "YouVersion: Die Bybel app"
       tagline: "Dit begin met<em>100 miljoen</em>"
       intro: "Kan die Bible App 100 miljoen inskrywings bereik voor ons 5de herdenking die 10de Julie? Slegs met julle hulp!"
+      after: "As gevolg van jou het die Bible App 100 miljoen installerings gekry by ons 5de herdenking op die 10de Julie.  Dankie!"
       share:
         with friends: "Deel met jou vriende"
         fb:
@@ -754,9 +755,11 @@ af:
         p2: "Self groter? Met jou hulp, is vandag die dag wat ons 100 miljoen installasies gaan bereik"
         p3: "Ons het geleer dat God mylpale soos die gebruik om om groter groei te stimuleer."
         p4: "Kom ons maak saam geskiedenis."
+        after p1: "YouVersion verteenwoordig `n globale samewerking van mense wat `n passie het om ander te help om by God se Woord betrokke te raak.  Aan al die Bybel gemeenskappe, publiseerders, kerke, pastore en vrywilligers: Baie dankie vir bydraes!"
+        after p2: "Wat die mylpaal so besonders maak, is wat dit verteenwoordig: vandag is daar `n ongelooflike groot hoeveelheid mense wat in interaksie is met die Bybel. Dit is inspirerend om te sien hoe God werk en ons glo dit is net die begin. <em>Dit begin met 100 miljoen</em>."
       ad:
         title: "Die Bybel App is heeltemal gratis en fantastiese wyse om die Bybel te ontdek."
         copy: "Lees, Luister, Kyk of Deel.  Kry die Bybel App vir jou slim telefoon of tablet: <a href='http://bible.com/app'>Laai hom nou af</a>"
       sidebar:
         tagline: "Kom ons maak Geskiedenis. "
-        button: "Deel die Bible App. "
+        button: "Deel die Bybel App. "

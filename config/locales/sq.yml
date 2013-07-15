@@ -739,6 +739,7 @@ sq:
       logo: "YouVersion: Programi i Biblës"
       tagline: "Fillon me <em>100 milionë</em>"
       intro: "A mund të arrijë Programi i Biblës 100 milionë instalime përpara përvjetorit të 5-të në 10 korrik? Vetëm me ndihmën tuaj!"
+      after: "Falë jush, Programi i Biblës ka arritur 100 milionë instalime me rastin e përvjetorit të 5-të në 10 korrik. Faleminderit!"
       share:
         with friends: "Ndaje me miqtë tuaj"
         fb:
@@ -754,6 +755,8 @@ sq:
         p2: "Por edhe më shumë? Me ndihmën tënde, kjo është dita që Programi i Biblës do të arrijë 100 milionë instalime."
         p3: "Ne kemi mësuar që Perëndia përdor gur kilometrik si ky për të nxitur një rritje akoma më të madhe."
         p4: "Le të bëjmë histori së bashku."
+        after p1: "YouVersion përfaqëson një koalicion global të njerëzve të pasionuar që t'i ndihmojnë të tjerët të lidhen me Fjalën e Perëndisë. Të gjithë shoqërive biblike dhe botuesve të Biblës, kishave, pastorëve dhe vullnetarëve: faleminderit për bujarinë tuaj!"
+        after p2: "Ajo që është më emocionuese për këtë gur kilometrik është çfarë ai përfaqëson: sot njerëz janë duke bashkëvepruar me Biblën në një nivel që nuk e kemi dëshmuar kurrë më parë. Është frymëzuese të shohësh atë që po bën Perëndia. Dhe ne besojmë se ky është vetëm fillimi. <em>Fillon me 100 milionë</em>."
       ad:
         title: "Programi i Biblës është krejt falas dhe një mënyrë e shkëlqyer për të eksploruar Biblën."
         copy: "Lexo, Dëgjo, Shiko, Ndaj. Zotëroje Programin e Biblës për telefonin ose tabletin tuaj: <a href='http://bible.com/app'>Shkarko Tani</a>"

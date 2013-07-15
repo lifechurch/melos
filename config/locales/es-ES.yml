@@ -739,6 +739,7 @@ es-ES:
       logo: "YouVersion: La aplicación de la Biblia"
       tagline: "Arranca con <em>100 milliones</em>"
       intro: "¿Alcanzará la Biblia App las 100 millones de instalaciones antes de su 5to aniversario el 10 de julio? ¡Sólo con tu ayuda!"
+      after: "Gracias a ti, la Biblia App alcanzará las 100 millones de instalaciones en nuestro 5to  aniversario el 10 de julio. Gracias!"
       share:
         with friends: "Comparte con tus amigos"
         fb:
@@ -754,6 +755,8 @@ es-ES:
         p2: "¿Pero aún más grande? Con tu ayuda, será el día en que la Biblia App alcanzará las 100 millones de descargas."
         p3: "Hemos aprendido que Dios usa hitos como éste para impulsar un crecimiento aún mayor."
         p4: "Hagamos historia juntos."
+        after p1: "YouVersion representa una coalición mundial de personas con pasión por ayudar a los demás a comprometerse con la Palabra de Dios. A todas las Sociedades Bíblicas y Editores, iglesias, pastores y voluntarios: gracias por vuestra generosidad!"
+        after p2: "Lo más emocionante de este hito es lo que representa: hoy en día la gente está interactuando con la Biblia a una escala sin precedentes.  Es impresionante lo que Dios está haciendo. Y creemos que es sólo el principio <em>Comenzamos con 100 millones</em>."
       ad:
         title: "La Biblia App es completamente gratuita y una gran manera de explorar la Biblia."
         copy: "Lee, escucha, visualiza, comparte. Obtén Bible App para tu smartphone o tablet: <a href='http://bible.com/app'>Descargar ahora</a>"

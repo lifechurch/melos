@@ -739,6 +739,7 @@ tr:
       logo: "YouVersion: Kutsal Kitap Uygulaması"
       tagline: "Hedefimizi <em>100 milyon</em>"
       intro: "10 Haziranda 5. yılımız bitmeden uygulamamız 100 milyon kere yüklenebilir mi? Yardımcı olursanız, evet!"
+      after: "Sizin sayenizde Kutsal Kitap Uygulaması 10 Hazirandaki 5. yıl dönümümüzde 100 milyon defa yüklenmiş bulunuyor. Teşekkür ederiz!"
       share:
         with friends: "Arkadaşlarınızla paylaşın"
         fb:
@@ -754,6 +755,8 @@ tr:
         p2: "Bu gün daha önemli olabilir mi? Sizin katkınızla bu tarihte Kutsal Kitap Uygulaması 100 milyon kere indirilmiş olacak."
         p3: "Tanrı'nın böyle önemli olayları hizmetimizi daha çok büyütmek için kullandığını öğrendik."
         p4: "Birlikte tarih yazalım."
+        after p1: "YouVersion dünya çapında insanları Tanrı'nın Sözüyle etkileşim haline geçirmek için ateşli bir şekilde çalışan insanların birliğini temsil eder. Tüm Kutsal Kitap topluluklarına, yayınevlerine, kiliselere, önderlere ve gönüllülere cömertlikleri için teşekkür ederiz! "
+        after p2: "Bu dönüm noktasının en heyecan verici yanı temsil ettikleri: Günümüzde insanlar Kutsal Kitap'la daha önce hiç görmediğimiz bir etkileşim halinde. Tanrı'nın yaptıklarını görmek büyüleyici ve biz bunun sadece bir başlangıç olduğuna inanıyoruz.  <em>100 milyonla başlar</em>."
       ad:
         title: "Kutsal Kitap Uygulaması tamamen ücretsizdir ve Kutsal Kitap'ı keşfetmek için harika bir yöntemdir."
         copy: "Okuyun, Dinleyin, İzleyin, Paylaşın. Akıllı cep telefonunuz veya tabletiniz için Kutsal Kitap Uygulamasını edinin: <a href='http://bible.com/app'>Hemen İndir</a>"

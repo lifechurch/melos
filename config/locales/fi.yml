@@ -739,6 +739,7 @@ fi:
       logo: "YouVersion: Raamattusovellus"
       tagline: "Se alkaa <em>100 miljoonalla</em>"
       intro: "Saavuttaako Raamattusovellus 100 miljoonan asennuksen rajan ennen viisivuotispäiväämme 10. heinäkuuta? Vain sinun avullasi!"
+      after: "Kiitos sinun, Raamattusovellus saavutti 100 miljoonan asennuksen rajan viisivuotispäiväämme 10. heinäkuuta mennessä. Kiitos!"
       share:
         with friends: "Jaa ystäviesi kanssa"
         fb:
@@ -754,9 +755,11 @@ fi:
         p2: "Jopa suurempi? Sinun avullasi se on päivä, jolloin Raamattusovellusta on ladattu 100 miljoonaa kertaa."
         p3: "Olemme oppineet Jumalan käyttävän tämän kaltaisia merkkipaaluja vauhdittaakseen jopa suurempaan kasvuun."
         p4: "Tehdään historiaa yhdessä."
+        after p1: "YouVersion on maailmanlaajuinen yhteisö, johon kuuluvia yhdistää halu auttaa ihmisiä syventymään Jumalan Sanaan. Raamattuyhteisöt ja -kustantajat, kirkot, pastorit sekä vapaaehtoiset: kiitos anteliaisuudestanne!"
+        after p2: "Innostavinta tässä virstanpylväässä on se, mitä se edustaa: nykyään ihmiset ovat Raamatun kanssa vuorovaikutuksessa sellaisessa mittakaavassa, jota ei ole ennen nähty. On valtavan inspiroivaa nähdä Jumalan tekoja. Uskomme tämän olevan vasta alkua. <em>Se alkaa 100 miljoonalla</em>."
       ad:
         title: "Raamattusovellus on täysin ilmainen ja loistava tapa tutkia Raamattua."
         copy: "Lue, kuuntele, katso, jaa. Hanki Raamattusovellus älypuhelimeesi tai tablettiisi: <a href='http://bible.com/app'>Lataa nyt</a>"
       sidebar:
-        tagline: "Tehdään historiaa yhdessä."
-        button: "Jaa Raamattu"
+        tagline: "Tehdään historiaa yhdessä"
+        button: "Jaa Raamattusovellus"
