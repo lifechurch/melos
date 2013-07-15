@@ -739,6 +739,7 @@ ro:
       logo: "YouVersion: Aplicația Biblia"
       tagline: "Începe cu <em>100 milioane</em>"
       intro: "Poate Aplicația Biblia să ajungă la 100 milioane de instalări înainte de 10 Iulie, când avem aniversarea de 5 ani? Doar cu ajutorul tău!"
+      after: "Datorită ție, Aplicația Biblia a ajuns la 100 de milioane de instalări la aniversarea noastră de 5 ani, în 10 Iulie. Îți mulțumim!"
       share:
         with friends: "Împărtășește cu prietenii tăi"
         fb:
@@ -754,6 +755,8 @@ ro:
         p2: "Chiar mai mult de atât? Cu ajutorul tău, este ziua când Aplicația Biblia va ajunge la 100 milioane de instalări."
         p3: "Am învățat că Dumnezeu folosește asemenea momente importante pentru a încuraja o creștere și mai mare."
         p4: "Să facem istorie împreună."
+        after p1: "YouVersion reprezintă o alianţă globală de oameni pasionaţi pentru a-i ajuta pe toţi să înteracţioneze cu Cuvântul lui Dumnezeu. Pentru toate organizaţiile şi editurile Biblice, bisericile, pastorii şi voluntarii: vă mulţumim pentru generozitatea voastră! "
+        after p2: "Lucrul cel mai captivant despre acest eveniment este semnificația acestuia: oamenii de astăzi interacţionează cu Biblia la un nivel nemaivăzut de noi până acum. Este copleşitor de inspiraţional să vezi ceea ce Dumnezeu face. Şi noi credem că acesta este doar începutul. <em>Începe cu 100 de milioane</em>."
       ad:
         title: "Aplicația Biblia este complet gratuită și un mod minunat de a explora Biblia."
         copy: "Citește, vizionează, ascultă, împărtășește. Obține Aplicația Biblia pentru smartphone sau tabletă: <a href='http://bible.com/app'>Descarcă acum</a>"

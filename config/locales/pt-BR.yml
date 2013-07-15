@@ -739,6 +739,7 @@ pt-BR:
       logo: "YouVersion: O app da Bíblia"
       tagline: "Começa com <em>100 milhões</em>"
       intro: "O App da Bíblia alcançará 100 milhões de instalações antes de nosso 5º aniversário em 10 de Julho? Somente com a sua ajuda!"
+      after: "Por sua causa, o App da Bíblia alcançou 100 milhões de instalações no seu 5º aniversário em 10 de Julho. Obrigado! "
       share:
         with friends: "Compartilhe com seus amigos"
         fb:
@@ -754,6 +755,8 @@ pt-BR:
         p2: "Pode ser ainda maior? Com a sua ajuda, este será o dia em que o App da Bíblia alcançará 100 milhões de downloads."
         p3: "Nós aprendemos que Deus usa marcos como este para impulsionar um crescimento ainda maior."
         p4: "Juntos vamos fazer história."
+        after p1: "O YouVersion representa uma coalisão global de pessoas apaixonadas por ajudar os outros a se envolverem com a Palavra de Deus. A todas as Sociedades Bíblicas e Editores da Bíblia, igrejas, pastores, e voluntários: obrigado por sua generosidade!"
+        after p2: "O mais extraordinário sobre esta meta alcançada é o que ela representa: hoje as pessoas estão interagindo com a Bíblia em uma escala nunca antes vista. É inspirador ver o que Deus está fazendo. E nós acreditamos que este é apenas o começo. <em>Começa com 100 milhões</em>. "
       ad:
         title: "O App da Bíblia é completamente grátis e um ótimo jeito de explorar a Bíblia."
         copy: "Leia, Ouça, Assista, Compartilhe. Tenha o App da Bíblia no seu smartphone ou tablet: <a href='http://bible.com/app'>Baixe agora</a>"

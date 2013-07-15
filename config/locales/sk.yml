@@ -739,6 +739,7 @@ sk:
       logo: "YouVersion: Aplikácia Biblia"
       tagline: "Začína to <em>100 miliónmi</em>"
       intro: "Stihne aplikácia Biblia dosiahnuť 100 miliónov inštalácií do svojich 5.narodenín 10.júla? Iba s vašou pomocou!"
+      after: "Vďaka Vám stihla dosiahnuť aplikácia Biblia 100 miliónov inštalácií do svojich 5.narodenín 10.júla. Ďakujeme!"
       share:
         with friends: "Zdieľajte s priateľmi"
         fb:
@@ -754,6 +755,8 @@ sk:
         p2: "No ešte väčšia udalosť? S vašou pomocou dosiahne aplikácia Biblia 100 miliónov stiahnutí."
         p3: "Zistili sme, že Boh si používa takéto významné udalosti na podporenie ešte väčšieho rastu."
         p4: "Poďme spolu tvoriť dejiny."
+        after p1: "YouVersion predstavuje globálne spoločenstvo ľudí, ktorí si so zápalom vzájomne pomáhajú objavovať Božie Slovo. Všetkým biblickým skupinám, vydavateľom, cirkvám, kňazom, kazateľom a dobrovoľníkom vyslovujeme: vďaka za vašu štedrosť!"
+        after p2: "Najzaujímavejšie na tomto míľniku je fakt, na ktorý poukazuje: ľudia dnes prichádzajú do styku s Bibliou tak intenzívne, ako ešte nikdy pred tým. Je inšpirujúce vidieť, čo Boh robí. A my veríme, že to je iba začiatok. <em>Začína to 100 miliónmi</em>."
       ad:
         title: "Aplikácia Biblia je úplne bezplatná a skvelá cesta ako preskúmať Bibliu."
         copy: "Čítajte, počúvajte, pozerajte, zdieľajte. Stiahnite si aplikáciu Biblia pre váš smartfón alebo tablet: <a href='http://bible.com/app'>Stiahnuť teraz</a>"

@@ -739,6 +739,7 @@ id:
       logo: "YouVersion: Ap Alkitab"
       tagline: "Dimulai dengan <em>100 juta</em>"
       intro: "Dapatkah Ap Alkitab menjangkau 100 juta instalasi sebelum ulang tahun ke 5 kami pada tanggal 10 Juli? Hanya dengan bantuan anda saja!"
+      after: "Karena anda, App Alkitab telah menjangkau 100 juta instalasi mendekati perayaan kami yang ke lima pada tanggal 10 Juli.  Terima kasih!"
       share:
         with friends: "Berbagi dengan teman-teman anda"
         fb:
@@ -754,6 +755,8 @@ id:
         p2: "Namun yang lebih besar lagi? Dengan bantuan anda, itulah hari di mana Ap Alkitab akan mencapai 100 juta unduhan."
         p3: "Kami telah belajar bahwa Tuhan memakai pencapaian seperti ini untuk menunjang pertumbuhan yang lebih lagi."
         p4: "Ayo bersama-sama membuat sejarah."
+        after p1: "YouVersion mewakili sebuah persekutuan global yang rindu menolong orang lain untuk terlibat dengan Firman Tuhan. Kepada setiap lembaga Alkitab, penerbit Alkitan, gereja-gereja, para gembala dan para relawan: terima kasih atas kemurahan hati anda!"
+        after p2: "Yang paling menarik tentang tonggak sejarah ini adalah apa yang diwakilinya: hari ini orang sedang berinteraksi dengan Alkitab pada skala yang belum pernah kita saksikan sebelumnya. Sungguh mengagumkan melihat apa yang sedang Tuhan kerjakan. Dan kami percaya ini hanya permulaan! <em>Dimulai dengan 100 juta</em>."
       ad:
         title: "Aplikasi Alkitab sepenuhnya gratis dan merupakan cara terhebat untuk menjelajahi Alkitab."
         copy: "Baca, Dengarkan, Tonton, Bagikan. Dapatkan Ap Alkitab untuk ponsel atau tablet anda: <a href='http://bible.com/app'>Unduh Sekarang</a>"

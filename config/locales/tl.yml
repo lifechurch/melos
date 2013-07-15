@@ -739,6 +739,7 @@ tl:
       logo: "YouVersion: Ang Bible app"
       tagline: "Ito ay nagsisimula sa <em>100 milyon</em>"
       intro: "Maari kayang maabot ng Bible App ang 100 milyong pag-install bago ang aming ika-5 anibersaryo sa ika-10 ng Hulyo? Oo, sa tulong mo!"
+      after: "Dahil sa iyo, ang Bible App ay umabot sa 100 milyong pag-install sa aming ika-5 anibersaryo sa Hulyo 10. Maraming salamat!"
       share:
         with friends: "Ibahagi sa iyong mga kaibigan"
         fb:
@@ -754,6 +755,8 @@ tl:
         p2: "Ngunit mas higit pa? Sa tulong mo, ito ang araw na ang Bible App ay maaabot ang 100 milyong download."
         p3: "Natutunan naming ginagamit ng Diyos ang mga pagdiriwang na ito upang pag-igtingin pa ang Kanyang gawain."
         p4: "Tayo na't gumawa ng kasaysayan."
+        after p1: "Ang YouVersion ay isang pandaigdigang samahan ng mga taong nagnanais tumulong upang maipalaganap ang Salita ng Diyos. Sa lahat ng mga komunidad, tagapaglathala ng Bibliya, mga simbahan, pastor at boluntaryo: maraming salamat po!"
+        after p2: "Ang pinaka-nakakatuwa tungkol sa gawaing ito ay ang ikinakatawan nito: ngayon, nakikipag-ugnayan sa Bibliya ang mga tao sa bilang na ngayon lamang naabot. Isang malaking pagpapala ang masaksihan ang gawain ng Diyos. Naniniwala kaming ito ay panimula lamang. <em>Nagsisimula ito sa 100 milyon</em>."
       ad:
         title: "Ang Bible App ay libre at isang kaaya-ayang paraan ng pagbasa ng Bibliya."
         copy: "Magbasa, Makinig, Manuod, Magbahagi. Kunin ang Bible App para sa iyong smartphone o tablet na aparato: <a href='http://bible.com/app'>I-download Na</a>"

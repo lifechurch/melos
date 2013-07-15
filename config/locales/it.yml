@@ -739,6 +739,7 @@ it:
       logo: "YouVersion: l'App Bibbia"
       tagline: "Inzia con <em>100 milioni</em>"
       intro: "Può l'App Bibbia arrivare a 100 milioni di installazioni prima del nostro 5° anniversario il 10 luglio? Solo con il tuo aiuto!"
+      after: "Grazie a te, l'App Bibbia ha raggiunto 100 milioni di installazioni prima del nostro 5° anniversario il 10 luglio. Grazie!"
       share:
         with friends: "Condividi con i tuoi amici"
         fb:
@@ -754,6 +755,8 @@ it:
         p2: "Ma ancora più grande? Con il tuo aiuto, sarà il giorno in cui l'App Bibbia raggiungerà 100 milioni di download."
         p3: "Abbiamo imparato che Dio usa delle pietre miliari come questa per stimolare una crescita ancora maggiore."
         p4: "Facciamo la storia assieme."
+        after p1: "YouVersion rappresenta una coalizione globale di persone che si appassionano ad aiutare gli altri a interagire con la Parola di Dio. A tutte le società ed editori biblici, alle chiese, ai pastori e ai volontari: grazie della vostra generosità!"
+        after p2: "Quello che entusiasma di più di questa pietra miliare è quello che rappresenta: oggi le persone interagiscono con la Bibbia su una scala mai vista prima. Vedere quello che Dio sta facendo è meraviglioso. E noi crediamo che questo è solo l'inizio <em>Inizia con 100 milioni</em>"
       ad:
         title: "L'App Bibbia è completamente gratuita ed è un ottimo modo per esplorare la Bibbia."
         copy: "Leggi, Ascolta, Guarda, Condividi. Scarica l'App Bibbia per il tuo smartphone o tablet: <a href='http://bible.com/app'>Scarica adesso</a>"

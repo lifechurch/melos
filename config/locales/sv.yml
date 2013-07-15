@@ -739,6 +739,7 @@ sv:
       logo: "YouVersion: Bibelappen"
       tagline: "Det närmar sig <em>100 miljoner</em>"
       intro: "Kan Bibelappen nå 100 miljoner installationer före vår 5-årsdag den 10 juli? Bara med din hjälp!"
+      after: "Tack vare dig når Bibelappen 100 miljoner installationer vid vår 5-årsdag den 10 juli. Tack!"
       share:
         with friends: "Dela med dina vänner"
         fb:
@@ -754,6 +755,8 @@ sv:
         p2: "Men ännu större? Med din hjälp är det dagen Bibelappen kommer att nå 100 miljoner nerladdningar."
         p3: "Vi har lärt oss att Gud använder milstolpar som denna för att växa ännu större."
         p4: "Låt oss skapa historia tillsammans."
+        after p1: "YouVersion är en global gemenskap med människor som brinner för att hjälpa andra att komma i kontakt med Guds Ord. Till alla bibelsällskap och -utgivare, kyrkor, pastorer och volontärer: tack för din generositet!"
+        after p2: "Vad som är mest spännande med denna milstolpe är vad den representerar: Människor kommer idag i kontakt med Bibeln i en skala som aldrig har förut skådats. Det är fantastiskt att se vad Gud gör. Och vi tror att detta bara är början. <em>Det börjar med 100 miljoner</em>."
       ad:
         title: "Bibelappen är helt gratis och ett suveränt sätt att utforska Bibeln."
         copy: "Läs, lyssna, titta, dela. Hämta Bibelappen till din smartphone eller läsplatta: <a href='http://www.bible.com/sv/app'>Ladda ner nu</a>"

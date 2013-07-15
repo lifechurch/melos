@@ -739,6 +739,7 @@ da:
       logo: "Youversion:  Bible App´en"
       tagline: "Det starter med <em>100 millioner</em>"
       intro: "Kan The Bible App nå 100 millioner installationer før vores 5. års fødselsdag d. 10. juli? Kun med din hjælp!"
+      after: "På grund af dig, når Bibel App 100 millioner installationer på vores 5 års dag d. 10. juli. Tak!"
       share:
         with friends: "Del med dine venner"
         fb:
@@ -754,6 +755,8 @@ da:
         p2: "Men endnu større? Med din hjælp, er det den dag i Bibelen App vil nå 100 millioner downloads."
         p3: "Vi har lært Gud bruger milepæle som denne til brændstof for endnu større vækst."
         p4: "Lad os lave historie sammen."
+        after p1: "YouVersion repræsenterer en global koalition af mennesker som er passionerede omkring at hjælpe andre med at få glæde af Guds ord. Til alle Bibelselskaber og Bibel udgivere, kirker, præster og frivillige: tak for din generøsitet!"
+        after p2: "Hvad der er mest spændende ved denne milepæl er hvad den repræsenterer: I dag interagerer folk med Bibelen i en størrelsesorden vi aldrig har set før. Det er inspirerende at se hvad Gud gør. Vi tror at det kun er begyndelsen. <em>Det starter med 100 millioner</em>."
       ad:
         title: "Bible App er helt gratis og en fantastisk måde at udforske Bibelen."
         copy: "Læs, Lyt, Se, Del. Få Bible App til din smartphone eller tablet: <a href='http://bible.com/app'>Download nu</a>"
