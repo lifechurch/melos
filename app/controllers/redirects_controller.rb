@@ -1,6 +1,6 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except:[:settings_notifications]
+  before_filter :force_login, except: [:settings_notifications, :legacy_references]
 
   def legacy_references
     base_url = "https://www.bible.com"
