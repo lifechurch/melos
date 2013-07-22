@@ -127,7 +127,7 @@ GEM
       multi_json
     gherkin (2.12.0)
       multi_json (~> 1.3)
-    grackle (0.1.10)
+    grackle (0.3.0)
       json
       mime-types
       oauth
@@ -397,7 +397,7 @@ DEPENDENCIES
   descriptive_statistics (~> 1.1.0)
   gabba
   geokit (~> 1.6.5)
-  grackle (~> 0.1.10)
+  grackle (~> 0.3.0)
   guard
   guard-bundler
   guard-cucumber
