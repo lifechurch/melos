@@ -49,6 +49,9 @@ class RedirectsController < ApplicationController
       version = $2.downcase
       book    = $1.downcase
       redirect_to("#{base_url}/bible/#{version}/#{book}.1.1.#{version}") and return
+
+    else
+      render 'pages/error_404', status: 404
     end
   end
 
