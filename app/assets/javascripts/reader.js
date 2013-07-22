@@ -619,7 +619,7 @@ Reader.prototype = {
     };
 
     this.audio_player.mediaelementplayer({
-      pluginPath: "/assets/",
+      pluginPath: "https://web-production.s3.amazonaws.com/assets/",
       features: ['playpause', 'current', 'progress', 'duration'],
       audioWidth: '100%',
       success: function(mediaElement, domObject) {
