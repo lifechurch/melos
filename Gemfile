@@ -11,7 +11,7 @@ gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.6.3'
 gem 'descriptive_statistics', '~> 1.1.0', require: false
 gem 'geokit',                 '~> 1.6.5'
-gem 'grackle',                '~> 0.1.10'
+gem 'grackle',                '~> 0.3.0'
 gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'heroku',                 '~> 2.32.4'
