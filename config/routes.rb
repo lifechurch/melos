@@ -167,15 +167,14 @@ YouversionWeb::Application.routes.draw do
   match 'settings/delete_account' => 'redirects#delete_account'
 
 
-
-
   root to: 'pages#home'
 
-  mount_sextant if Rails.env.development?
+  # Bible.us short url's are being handed to Web to manage.
+  match "*path", to: "redirects#legacy_references", format: false
 
   # Rails 3.1 hack to catch any remaining routes (404's)
   # with globbing setting params[:path] to the bad path
-  match '*path', :to => 'pages#routing_error'
+  #match '*path', :to => 'pages#routing_error'
 
 
 end
