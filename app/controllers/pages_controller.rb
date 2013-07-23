@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
 
-
   def about;        end
   def press;        end
   def mobile;       end
@@ -8,6 +7,7 @@ class PagesController < ApplicationController
   def status;       end
   def api_timeout;  end
   def generic_error;end
+
 
   def feed
 
