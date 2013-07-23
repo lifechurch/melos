@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   def api_timeout;  end
   def generic_error;end
 
-
   def feed
 
   end
