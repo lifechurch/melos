@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 
+
   def about;        end
   def press;        end
   def mobile;       end
@@ -19,7 +20,6 @@ class PagesController < ApplicationController
   def requests
 
   end
-
 
   # /app url - redirects to an store for mobile device if found
   # tracks requests to /app to GA custom event.

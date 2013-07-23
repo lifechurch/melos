@@ -161,6 +161,12 @@ YouversionWeb::Application.routes.draw do
 # Redirect to a.youversion.com/groups/lifechurchtv
   get "/lifechurchtv",  to: "redirects#lifechurchtv"
 
+  get "pages/feed", to: "pages#feed"
+  get "pages/detail", to: "pages#detail"
+  get "pages/requests", to: "pages#requests"
+  get "pages/notifications", to: "pages#notifications"
+
+
   root to: 'pages#home'
 
 
