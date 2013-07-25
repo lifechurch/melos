@@ -14,7 +14,6 @@ gem 'geokit',                 '~> 1.6.5'
 gem 'grackle',                '~> 0.3.0'
 gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
-gem 'heroku',                 '~> 2.32.4'
 gem 'oj'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
@@ -64,7 +63,6 @@ group :test, :development do
   gem "capybara-webkit", "~> 0.12.1"
   gem "capybara-screenshot", "~> 0.3.4"
   gem 'cucumber-rails', '~> 1.3.0', require: false
-  gem 'heroku_san'
   gem 'rspec-cells'
   gem 'rspec-rails'
   gem 'minitest'

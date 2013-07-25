@@ -153,17 +153,6 @@ GEM
       haml (~> 3.1)
       railties (>= 3.1, < 4.1)
     hashie (1.2.0)
-    heroku (2.32.14)
-      heroku-api (~> 0.3.5)
-      launchy (>= 0.3.2)
-      netrc (~> 0.7.7)
-      rest-client (~> 1.6.1)
-      rubyzip
-    heroku-api (0.3.9)
-      excon (~> 0.20.1)
-    heroku_san (4.2.5)
-      heroku-api (>= 0.1.2)
-      rake
     highline (1.6.18)
     hike (1.2.2)
     hooves (0.7)
@@ -218,7 +207,6 @@ GEM
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)
-    netrc (0.7.7)
     newrelic_rpm (3.5.7.59)
     nokogiri (1.5.9)
     ntlm-http (0.1.1)
@@ -294,8 +282,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     routing-filter (0.3.1)
       actionpack
     rspec (2.13.0)
@@ -404,8 +390,6 @@ DEPENDENCIES
   guard-rspec
   haml-rails (~> 0.3.4)
   hashie (~> 1.2.0)
-  heroku (~> 2.32.4)
-  heroku_san
   hooves
   http_accept_language (~> 1.0.2)
   httparty (= 0.8.2)
