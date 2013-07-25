@@ -12,7 +12,7 @@
       %dd{class: ('highlighted' unless @me)}
         = link_to t("notes.community notes"), all_notes_path
       %dd{class: ('highlighted' if @me)}
-        = link_to t("notes.my notes"), user_notes_path(current_user)
+        = link_to t("users.my notes"), user_notes_path(current_user)
   - else
     %h1= "#{@reference_title} #{t('notes.list title')}"
 
