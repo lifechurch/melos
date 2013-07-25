@@ -2,7 +2,7 @@
 
 function LanguageMenu( el , opts ) {
   this.el = $(el);
-  this.locales = ["af","bg","ca","cs","cy","de","da","en-GB","en","es-ES","es","fi","fr","hi","hu","id","it","ja","km","ko","mk","mn","ms","nl","no","pl","pt-BR","pt-PT","ro","ru","sk","sq","sv","ta","tl","tr","uk","vi","zh-CN","zh-TW"];
+  this.locales = ["af","bg","ca","cs","cy","de","da","en-GB","en","es-ES","es","fi","fr","hi","hu","id","it","ja","km","ko","lv","mk","mn","ms","nl","no","pl","pt-BR","pt-PT","ro","ru","sk","sq","sv","sw","ta","tl","tr","uk","vi","zh-CN","zh-TW"];
 
   var path = window.location.pathname;
   var new_path = "";
