@@ -2,34 +2,84 @@
 
 #main article.social-feed,
 #main article.social-detail
-  background-color: #444
+  background-color: transparent
+  border: 0
   padding: 0
-  overflow: visible
+  box-shadow: none
+  overflow: hidden
+  padding-left: 5px
 
 // !-------------------- Feed -------------------------
 
 // !Moment containers
 
 .moment
-  margin: 0 0 15px 0
-  width: auto
-  float: none
+  margin: 0 15px 15px 0
+  width: 445px
+  float: left
+
+.moment:nth-child(2n)
+  margin-right: 0
 
 .moment-top
-  margin-bottom: 0
-  border-bottom: 1px solid #DEDDDB
+  margin-bottom: 1px
+
+.moment-btm
 
 // !Share comment like etc.
 
 .moment-actions
-  width: auto
-  margin-bottom: 0
-  border-bottom: 1px solid #DEDDDB
+  overflow: hidden
+  width: 445px
+  background: #fff
+  +border-radius(0 0 4px 4px)
+  margin-bottom: 1px
 
 // !Stuff each moment action has in common
 
+.moment-actions-share,
+.moment-actions-comment,
+.moment-actions-like,
+.moment-actions-time
+  float: left
+  display: block
+  vertical-align: middle
+  font-size: 13px
+  line-height: 0
+  width: 40px
+
+.moment-actions-share a:hover,
+.moment-actions-comment a:hover,
+.moment-actions-like a:hover
+  opacity: 0.6
+
+
+.moment-actions-share a,
+.moment-actions-comment a,
+.moment-actions-like a
+  background: image-url("social-actions-sprite.png") no-repeat
+  display: block
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  height: 36px
 
 // !Specific stuff for each action
+
+.moment-actions-share
+  width: 47px
+
+.moment-actions-share a
+  background-position: 20px 10px
+
+.moment-actions-comment a
+  background-position: center -129px
+
+.moment-actions-like a
+  background-position: center -36px
+
+.moment-actions-like a.liked
+  background-position: center -82px
 
 .moment-actions-time
   width: 48%
@@ -51,7 +101,6 @@
 
 .moment-comments-input-text
   width: 80%
-
 
 // !Moment badge positioning
 
