@@ -1,0 +1,358 @@
+// Adjusting the article tag on the social pages
+
+#main article.social-feed,
+#main article.social-detail
+  background-color: transparent
+  border: 0
+  padding: 0
+  box-shadow: none
+  overflow: hidden
+  padding-left: 5px
+
+// -------------------- Feed -------------------------
+
+// Moment containers
+
+.moment
+  margin: 0 15px 15px 0
+  width: 445px
+  float: left
+
+.moment:nth-child(2n)
+  margin-right: 0
+
+.moment-top
+  margin-bottom: 1px
+
+.moment-btm
+
+// Share comment like etc.
+
+.moment-actions
+  overflow: hidden
+  width: 445px
+  background: #fff
+  +border-radius(0 0 4px 4px)
+  margin-bottom: 1px
+
+// Stuff each moment action has in common
+
+.moment-actions-share,
+.moment-actions-comment,
+.moment-actions-like,
+.moment-actions-time
+  float: left
+  display: block
+  vertical-align: middle
+  font-size: 13px
+  line-height: 0
+  width: 40px
+
+.moment-actions-share a:hover,
+.moment-actions-comment a:hover,
+.moment-actions-like a:hover
+  opacity: 0.6
+
+
+.moment-actions-share a,
+.moment-actions-comment a,
+.moment-actions-like a
+  background: image-url("social-actions-sprite.png") no-repeat
+  display: block
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  height: 36px
+
+// Specific stuff for each action
+
+.moment-actions-share
+  width: 47px
+
+.moment-actions-share a
+  background-position: 20px 10px
+
+.moment-actions-comment a
+  background-position: center -129px
+
+.moment-actions-like a
+  background-position: center -36px
+
+.moment-actions-like a.liked
+  background-position: center -82px
+
+.moment-actions-time
+  padding: 0 0 0 35px
+  font-size: 11px
+  width: 250px
+  height: 36px
+  line-height: 34px
+  background: image-url("social-actions-sprite.png") no-repeat 15px -313px
+
+// .moment-actions-other
+
+// Comments attached to a moment
+
+.moment-comments
+  width: 385px
+  margin: 0 auto
+  background-color: #fff
+  padding: 8px 10px 8px
+  clear: both
+
+// Common comments code
+
+.moment-comments-likes,
+.moment-comments-more,
+.moment-comments-list-comment,
+.moment-comments-input
+  display: block
+  background-color: #EEEDEB
+  margin-bottom: 2px
+
+.moment-comments-list-avatar,
+.moment-comments-input-avatar
+  +border-radius(32px)
+  height: 32px
+  width: 32px
+  border: 3px solid #fff
+  box-shadow: 0 1px 2px #bbb
+  float: left
+
+// Specific comments code
+
+.moment-comments-likes
+  padding-left: 35px
+  background: image-url("") no-repeat 10px center
+
+.moment-comments-more
+  padding-left: 35px
+  background: image-url("") no-repeat 10px center
+
+.moment-comments-list
+  margin-bottom: 0
+
+.moment-comments-list-comment
+  overflow: hidden
+  clear: both
+  margin-bottom: 2px
+  padding: 10px
+
+.moment-comments-list-text
+  font-size: 13px
+  line-height: 1.3em
+  float: left
+  padding-left: 10px
+  width: 315px
+  margin-bottom: 0
+
+.moment-comments-input
+  overflow: hidden
+  padding: 10px
+
+.moment-comments-input-text
+  float: left
+  width: 315px
+  margin-left: 10px
+  padding: 7px 10px
+  +box-shadow(none)
+
+
+// Moment badge positioning
+
+.moment-img,
+  position: absolute
+  top: 0
+  right: 0
+
+// Moment common code
+
+.moment-avatar
+  height: 48px
+  width: 48px
+  +border-radius(48px)
+  border: 3px solid #fff
+  box-shadow: 0 1px 2px #bbb
+  float: left
+
+.moment-bm,
+.moment-rp,
+.moment-grp,
+.moment-dl,
+.moment-bdg,
+.moment-vid,
+.moment-no,
+.moment-vod
+  position: relative
+  padding: 15px
+  overflow: hidden
+  background: #fff
+  +border-radius(4px 4px 0 0)
+
+// Verse of the day moment
+
+.moment-vod-verse
+  font: italic 24px "times new roman", times, serif
+  letter-spacing: -.05em
+  width: 360px
+  margin-bottom: 10px
+
+.moment-vod-links,
+.moment-vod-list
+  float: left
+
+.moment-vod-links
+  padding: 1px 7px
+  background-color: #0084C8
+  text-decoration: none
+  font-weight: bold
+  color: #fff
+  font-size: 12px
+  display: block
+  margin: 0 20px 0 0
+  +border-radius(4px)
+
+.moment-vod-list
+  overflow: hidden
+  margin-bottom: 0
+
+  li
+    float: left
+    background-color: #bbb
+    display: block
+    padding: 1px 7px
+    margin-left: 5px
+    color: #fff
+    font:
+      weight: bold
+      size: 12px
+    +border-radius(4px)
+
+  li:first-child
+    margin-left: 0
+
+  li.moment-vod-list-on
+    background-color: #555
+
+
+// Bookmark, reading plan, download, and group moments -- they share the same layout
+
+.moment-bm-text,
+.moment-rp-text,
+.moment-grp-text,
+.moment-dl-text,
+.moment-no-text,
+.moment-bdg-text,
+.moment-vid-text
+  font-size: 16px
+  float: left
+  width: 300px
+  padding: 5px 0 0 10px
+  line-height: 1.4em
+  margin-bottom: 0
+
+
+// Note moment
+
+.moment-no
+  padding-bottom: 0
+
+.moment-no-note
+  clear: both
+  display: block
+  margin-left: 65px
+  background: #FEF7DC
+  border: 1px solid #F5E5B0
+  border-bottom: 0
+  font-size: 13px
+
+.moment-no-note-title
+  background: image-url("moment-no-note-title-bg.png") repeat-y left top
+  font:
+    weight: bold
+  padding: 7px 15px 8px 40px
+  margin-bottom: 0
+
+.moment-no-note-text
+  background: image-url("moment-no-note-text-bg.png") repeat-y left top
+  line-height: 1.36em
+  padding: 1px 15px 10px 40px
+  margin-bottom: 0
+
+
+// Video moment
+
+.moment-vid-info
+  display: block
+  overflow: hidden
+  clear: both
+  margin-left: 65px
+
+.moment-vid-info-img
+  float: left
+  width: 160px
+
+.moment-vid-info-text
+  border: 1px solid #e1e1e1
+  +border-radius(0 4px 4px 0)
+  float: left
+  height: 83px
+  padding: 5px 15px 0 15px
+  width: 155px
+
+.moment-vid-info-text-title
+  font-size: 16px
+  margin-bottom: 0
+  line-height: 1.3em
+
+.moment-vid-info-text-credit
+  margin: 10px 0 0 0
+
+// Badge moment
+
+.moment-bdg-info
+  display: block
+  overflow: hidden
+  clear: both
+  margin-left: 65px
+  border: 1px solid #e1e1e1
+  +border-radius(4px)
+  padding: 10px
+
+.moment-bdg-info-img
+  float: left
+
+.moment-bdg-info-text
+  float: left
+  padding: 11px 15px 0 15px
+  margin-bottom: 0
+  font-weight: bold
+
+
+// Retina image
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi)
+
+  // Retina-specific stuff here
+
+  .moment-actions-share a,
+  .moment-actions-comment a,
+  .moment-actions-like a
+    background: image-url("social-actions-sprite@2x.png") no-repeat
+
+  .moment-actions-time
+    background: image-url("social-actions-sprite@2x.png") no-repeat 15px -313px
+
+  .moment-no-note-title,
+  .moment-no-note-text
+    background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top
+
+  .moment-actions-share a,
+  .moment-actions-comment a,
+  .moment-actions-like a,
+  .moment-actions-time,
+  .moment-no-note-title,
+  .moment-no-note-text
+    background-size: 50%
