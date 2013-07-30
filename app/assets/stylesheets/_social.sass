@@ -121,13 +121,18 @@
 
 // Specific comments code
 
+.moment-comments-likes,
+.moment-comments-more
+  background: #EEEDEB image-url("social-actions-sprite.png") no-repeat
+  font-size: 13px
+
 .moment-comments-likes
   padding-left: 35px
-  background: image-url("") no-repeat 10px center
+  background-position: 10px -41px
 
 .moment-comments-more
   padding-left: 35px
-  background: image-url("") no-repeat 10px center
+  background-position: 10px -134px
 
 .moment-comments-list
   margin-bottom: 0
@@ -189,6 +194,22 @@
   background: #fff
   +border-radius(4px 4px 0 0)
 
+// Bookmark, reading plan, download, and group moments -- they share the same layout
+
+.moment-bm-text,
+.moment-rp-text,
+.moment-grp-text,
+.moment-dl-text,
+.moment-no-text,
+.moment-bdg-text,
+.moment-vid-text
+  font-size: 16px
+  float: left
+  width: 300px
+  padding: 5px 0 0 10px
+  line-height: 1.4em
+  margin-bottom: 0
+
 // Verse of the day moment
 
 .moment-vod-verse
@@ -233,23 +254,6 @@
 
   li.moment-vod-list-on
     background-color: #555
-
-
-// Bookmark, reading plan, download, and group moments -- they share the same layout
-
-.moment-bm-text,
-.moment-rp-text,
-.moment-grp-text,
-.moment-dl-text,
-.moment-no-text,
-.moment-bdg-text,
-.moment-vid-text
-  font-size: 16px
-  float: left
-  width: 300px
-  padding: 5px 0 0 10px
-  line-height: 1.4em
-  margin-bottom: 0
 
 
 // Note moment
@@ -327,3 +331,55 @@
   padding: 11px 15px 0 15px
   margin-bottom: 0
   font-weight: bold
+
+
+// ------------------------ Detail page -------------------------
+
+#main article.social-detail
+
+  // Striping out the width constraints, killing floats
+
+  // Moment containers
+
+  .moment
+    margin: 0
+    width: auto
+    float: none
+
+  // Share comment like etc.
+
+  .moment-actions
+    width: auto
+
+  // Comments attached to a moment
+
+  .moment-comments
+    width: 90%
+
+  .moment-comments-list-text,
+  .moment-comments-input-text
+    width: 465px
+
+  // Bookmark, reading plan, download, and group moments -- they share the same layout
+
+  .moment-bm-text,
+  .moment-rp-text,
+  .moment-grp-text,
+  .moment-dl-text,
+  .moment-no-text,
+  .moment-bdg-text,
+  .moment-vid-text
+    width: 465px
+
+// Sidebar comment input
+
+.social-sidebar
+  position: fixed
+  width: 299px
+
+.social-sidebar-input
+  padding: 10px
+
+  textarea
+    margin-bottom: 10px
+    height: 200px
