@@ -3,7 +3,6 @@ class ConnectionsController < ApplicationController
   before_filter :force_login
   before_filter :authorize, only: [:index]
 
-
   # GET Display users connections
   # bible.com/users/:id/connections => connections#index
   # TODO: proper refactor
