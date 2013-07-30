@@ -26,8 +26,7 @@ class FacebookConnection < YouVersion::Connection::Base
 
   def find_friends(opts = {})
     opts = {connection_type: "fb"}.merge(opts)
-    face = Koala::Facebook::API.new(self.data[:oauth_token] || self.data[:access_token])
-    response = face.get_connections("me", "friends")
+    response = api_client.get_connections("me", "friends")
 
     if response.empty?
       []
@@ -56,9 +55,10 @@ class FacebookConnection < YouVersion::Connection::Base
   end
 
   def update_token
-    oauth = Koala::Facebook::OAuth.new(self.data[:appid], self.data[:secret])
-    new_token = oauth.exchange_access_token_info(self.data[:access_token])["access_token"]
+    new_access_info = oauth_client.exchange_access_token_info(self.data[:access_token])
+    new_token       = new_access_info["access_token"]
     if new_token
+
       # Delete the existing connection in the API
       self.delete
       # Recreate some stuff for saving the connection with the new token
@@ -71,5 +71,16 @@ class FacebookConnection < YouVersion::Connection::Base
       self.save
     end
   end
+
+  private
+
+  def oauth_client
+    @oauth_client ||= Koala::Facebook::OAuth.new(self.data[:appid], self.data[:secret])
+  end
+
+  def api_client
+    @api_client ||= Koala::Facebook::API.new(self.data[:oauth_token] || self.data[:access_token])
+  end
+
 end
 
