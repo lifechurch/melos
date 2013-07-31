@@ -53,9 +53,9 @@ class ConnectionsController < ApplicationController
     cookies.signed[:f] = nil if connection.is_a? FacebookConnection
     result = connection.delete
     if connection.delete
-      redirect_to :back, notice: t('deleted connection', connection: t(provider_param.to_s))
+      redirect_to :back, notice: t('deleted connection', connection: t("social.#{provider_param}.name"))
     else
-      redirect_to :back, error: t('deleted connection error', connection: t(provider_param.to_s))
+      redirect_to :back, error: t('deleted connection error', connection: t("social.#{provider_param}.name"))
     end
 
   end
