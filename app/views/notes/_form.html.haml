@@ -16,7 +16,7 @@
   %div
     = f.label :content, t("notes.content field")
     %div{style: "margin: 20px 0;"}
-      = f.text_area :content
+      = f.text_area :content, size: "30x10"
 
   - # if reference_list is empty, no need to show these fields.  
   - # Causes an error otherwise when sending empty note[references]/note[version_id] params

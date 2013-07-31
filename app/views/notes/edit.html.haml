@@ -1,12 +1,8 @@
 - content_for :mobile_left_nav do
-  %a.cancel_btn{:href => '/bookmarks'}= t('cancel')
+  = render partial: 'shared/back_button'
 
 - content_for :title do
-  = t('bookmarks.edit bookmark')
-
-- content_for :mobile_right_nav do
-  %a.save_btn{:href => 'javascript:void(0);', onclick: "$('*[type=\"submit\"]').click();"}
-    = t('save')
+  = t('bookmarks.edit note')
 
 %article
   %h1= t("notes.edit note")
