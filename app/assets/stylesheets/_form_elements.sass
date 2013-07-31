@@ -7,6 +7,22 @@ br + textarea
 // `Flash Messages
 //----------------------------------------------------------------------------------------------------
 
+.error
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  padding: 10px 20px
+  border: 1px solid #e89494
+  background:
+    color: #f4cccc
+
+.notice
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  padding: 10px 20px
+  border: 1px solid #91b164
+  background:
+    color: #d9e4c9
+
 #flash_error,
 #flash_notice
   @extend .clearfix

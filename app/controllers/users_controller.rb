@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   layout "application", :only => [ :confirm ]
 
-  before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :connections, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form]
+  before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
   before_filter :find_user, except: [:destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :confirm, :confirmed,  :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :confirm_update_email, :sign_up_success, :share]
   before_filter :set_redirect, only: [:new, :create]
-  before_filter :authorize, only: [:edit,:update, :connections, :email, :update_email, :password, :update_password, :picture, :update_picture, :devices, :destroy_device, :delete_account,:destroy]
+  before_filter :authorize, only: [:edit,:update, :email, :update_email, :password, :update_password, :picture, :update_picture, :devices, :destroy_device, :delete_account,:destroy]
 
   rescue_from APIError, with: :api_error
 
@@ -86,7 +86,7 @@ class UsersController < ApplicationController
 
     if user
       sign_in user
-      redirect_to sign_up_success_path(show: "facebook")
+      redirect_to sign_up_success_path
     else
       flash.now[:error] = t("invalid password")
       render action: "confirm", layout: "application"
@@ -257,22 +257,6 @@ class UsersController < ApplicationController
       end
     end
     render action: "resend_confirmation", layout: "application"
-  end
-
-  def connections
-    params[:page] ||= 1
-    @selected = :connections
-    @show = params[:show] ||= "twitter"
-    @empty_message = t('users.no connection friends', connection: t(@show))
-    if @user.connections[@show]
-      begin
-        @users = @user.connections[@show].find_friends(page: params[:page])
-      rescue
-        @users = []
-        @users_error = true
-        flash.now[:error] = t('users.reset connection')
-      end
-    end
   end
 
   def devices

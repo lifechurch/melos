@@ -1,8 +1,20 @@
 ko:
   social:
-    email: "이메일"
-    twitter: "트위터"
-    facebook: "페이스북"
+    my connections: "접속 계정"
+    connected as: "%{connection} 에 %{username} 사용자명으로 접속되었습니다."
+    remove connection: "제거"
+    connection friends: "%{connection} 에 접속된 YouVersion 사용자들입니다."
+    errors:
+      no friends: "%{connection} 친구들 중 YouVersion에 가입하시 분이 없습니다."
+      reset connection: "죄송합니다.  오류가 발생했습니다.  다시 연결을 시도해주세요."
+    email:
+      name: "이메일"
+    twitter:
+      name: "트위터"
+    facebook:
+      name: "페이스북"
+      errors:
+        expired access: "회원님의 페이스북 접근 토큰 사용기간이 만료되었습니다.  페이스북 연결을 제거하신 후 다시 연결해 보십시오."
   api:
     users agree bool: "등록하려면 사용 규정과 개인정보약관에 동의하셔야 합니다."
     users confirm password matches: "새 비밀번호가 일치하지 않습니다."
@@ -26,6 +38,9 @@ ko:
     mobile:
       title: "성경 앱"
       description: "수천 만명의 사람들이 성경 앱을 통해서 하나님의 말씀을 읽고, 듣고, 보고, 공유하고 있고 말씀을 일상 생활화 하고 있습니다. 무료 성경 앱을 다운로드 하셔서 책갈피, 노트, 묵상 등의 기능을 어디에서 든지 사용하세요. 수백가지의 번역본, 오디오 성경 등이 여러분의 이동기기 안으로 들어옵니다. "
+    connections:
+      index:
+        title: "접속 계정"
   now: "실시간 현황"
   celebrating 50MM: "축 5천만째 설치!"
   link: "링크"
@@ -42,8 +57,6 @@ ko:
   copy: "복사"
   copy confirmed: "복사 완료!"
   new note: "새 노트"
-  twitter: "트위터"
-  facebook: "페이스북"
   share success: "메시지가 공유되었습니다."
   share error: "메시지 공유 진행 중 오류가 발생했습니다. 다시 시도를 해주세요."
   google plus: "구글 플러스"
@@ -566,7 +579,7 @@ ko:
     suggestion html: "%{suggestion_link}을 원하셨나요?"
     all versions: "%{language_name} 전체 번역본"
   donate:
-    donate now: "지금 후원하기 (미국)"
+    donate now: "지금 후원하기"
     donate now intl: "해외에서 후원하기"
     promo 1: "여러분의 $1이 10명의 사람들이 자신의 휴대전화에서 성경을 볼 수 있게 합니다."
     promo 2: "YouVersion으로 성경은 항상 곁에 있습니다. 동영상을 보세요."
@@ -574,7 +587,10 @@ ko:
     headline: "우리 모두 하나님의 말씀이 필요합니다."
     subhead: "지구촌 모든 분들이 손안의 성경을 가질 수있도록 도와주세요."
     copy: "전 세계의 모든 이들에게 무료로 성경을 줄 수 있다는 상상을 해보세요. YouVersion을 후원하는 것으로 가능해집니다. 상상을 현실로 이루고 있습니다. &ndash; 휴대폰을 가진 사람이면 누구든지 성경을 접할 수 있고 우리를 향한 하나님의 사랑에 대한 이야기를 경험할 수 있기 때문입니다. 여러분의 후원을 통해, 더 많은 사람들이 보다 많은 시간을 성경과 함께 할 수 있도록 도울 수 있습니다."
-    amount: "후원금(미화 달러)"
+    amount: "후원금액"
+    option once: "일회성 후원"
+    option monthly: "매월 후원"
+    alert empty amount: "후원 금액을 입력해 주세요."
     name: "후원자 이름"
     card number: "크레딧 카드 번호"
     card exp date: "유효기간 (MMYY)"

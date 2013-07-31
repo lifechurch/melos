@@ -1,8 +1,18 @@
 vi:
   social:
-    email: "Email"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Tài khoản đã kết nối"
+    connected as: "Bạn đã kết nối %{connection} với tên %{username}."
+    remove connection: "Tháo bỏ"
+    connection friends: "Vài người sử dụng YouVersion mà bạn kết nối trên %{connection}:"
+    errors:
+      no friends: "Chưa có bạn bè nào của bạn trên %{connection} sử dụng YouVersion."
+      reset connection: "Có lỗi kỹ thuật, xin hãy tháo bỏ và kết nối lại."
+    email:
+      name: "Email"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Bạn cần đồng ý với điều khoản sử dụng để tạo tài khoản."
     users confirm password matches: "Mật khẩu mới không khớp."
@@ -26,6 +36,9 @@ vi:
     mobile:
       title: "Ứng dụng Kinh Thánh."
       description: "Hàng chục triệu người đang sử dụng Ứng dụng Kinh Thánh để đọc, nghe, xem và chia sẻ  Lời Chúa, những điều đó trở thành một phần trong cuộc sống hằng ngày của họ. Hãy tải ứng dụng miễn phí và truy cập các đánh dấu, ghi chú, và kế hoạch đọc Kinh Thánh của bạn từ bất cứ nơi đâu. Hãy vui thích với hàng trăm bản dịch, bao gồm cả Kinh Thánh phát thanh, tất cả chỉ trong thiết bị di động của bạn!"
+    connections:
+      index:
+        title: "Tài khoản đã kết nối"
   now: "Bây giờ"
   celebrating 50MM: "Chúc mừng 50 triệu lượt cài đặt ứng dụng!"
   link: "Đường dẫn"
@@ -42,8 +55,6 @@ vi:
   copy: "Sao chép"
   copy confirmed: "Đã copy!"
   new note: "Ghi chú mới"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Thông điệp của bạn đã được chia sẻ."
   share error: "Xin lỗi bạn, có lỗi kỹ thuật khi chia sẻ thông điệp. Xin hãy thử lại."
   google plus: "Google +"
@@ -566,7 +577,7 @@ vi:
     suggestion html: "Ý bạn là %{suggestion_link}?"
     all versions: "Tất cả bản dịch %{language_name}"
   donate:
-    donate now: "Dâng hiến (U.S.)"
+    donate now: "Dâng hiến bây giờ"
     donate now intl: "hoặc quyên góp quốc tế"
     promo 1: "Với mỗi $1 bạn trao tặng, thêm 10 người sẽ được truy cập Kinh Thánh trên di động của họ."
     promo 2: "Có YouVersion, Kinh Thánh sẽ luôn bên bạn! Hãy xem các video của chúng tôi!"
@@ -574,7 +585,10 @@ vi:
     headline: "Mọi người đều cần có Lời Chúa"
     subhead: "Hãy giúp mang Kinh Thánh đến với nhiều người hơn trên toàn thế giới!"
     copy: "Hãy tưởng tượng bạn có thể trao tặng Kinh Thánh cho tất cả mọi người trên thế giới. Khi bạn dâng hiến cho YouVersion, bạn đang thực hiện chính điều đó. Ngày nay, ai cũng có thể dùng di động để truy cập Kinh Thánh và kinh nghiệm tình yêu thương của Chúa. Với sự ủng hộ của bạn, chúng tôi có thể giúp nhiều người hơn nữa dành nhiều thời gian hơn cho Lời Chúa."
-    amount: "Số tiền quyên góp (USD)"
+    amount: "Số tiền quyên góp"
+    option once: "Một lần"
+    option monthly: "Hàng tháng"
+    alert empty amount: "Xin nhập số tiền quyên góp."
     name: "Tên của bạn"
     card number: "Số thẻ tín dụng"
     card exp date: "Ngày hết hạn (TTNN)"

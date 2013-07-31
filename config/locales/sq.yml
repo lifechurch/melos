@@ -1,8 +1,20 @@
 sq:
   social:
-    email: "E-postë"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Llogaritë e lidhura"
+    connected as: "Ju jeni lidhur me %{connection} si %{username}."
+    remove connection: "Fshij"
+    connection friends: "Këtu janë disa përdorues të YouVersion me të cilët jeni të lidhur në %{connection}:"
+    errors:
+      no friends: "Asnjë nga miqtë e tu në %{connection} nuk duket se është akoma në YouVersion."
+      reset connection: "Ju kërkojmë ndjesë, ka ndodhur një gabim. Ju lutemi hiqeni dhe lidheni sërish këtë lidhje."
+    email:
+      name: "E-postë"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Vula e hyrjes tënde ka skaduar nga Facebook. Ju lutemi hiqeni lidhjen dhe lidhuni sërish me rrjetin social Facebook."
   api:
     users agree bool: "Ju duhet të pajtoheni me rregullat dhe kushtet për të krijuar një llogari."
     users confirm password matches: "Fjalëkalimet e reja nuk përputhen."
@@ -26,6 +38,9 @@ sq:
     mobile:
       title: "Programi i Biblës"
       description: "Dhjetëra miliona njerëz janë duke përdorur Programin e Biblës për të lexuar, dëgjuar, shikuar dhe ndarë Fjalën e Perëndisë, duke e bërë atë pjesë të jetës së përditshme. Shkarko programin falas dhe hap shenjuesit, shënimet dhe planet e tua të leximit nga kudo. Gëzo qindra versione, duke përfshirë edhe audio, të gjitha në pajisjen tënde të lëvizshme."
+    connections:
+      index:
+        title: "Llogaritë e lidhura"
   now: "Tani"
   celebrating 50MM: "Duke festuar 50 milion instalime të programit!"
   link: "Lidhje"
@@ -42,8 +57,6 @@ sq:
   copy: "Kopjo"
   copy confirmed: "U kopjua!"
   new note: "Shënim i ri"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Mesazhi juaj u shpërnda."
   share error: "Më vjen keq, pati një gabim në ndarjen e mesazhit tuaj. Ju lutem provojeni sërish."
   google plus: "Google +"
@@ -566,7 +579,7 @@ sq:
     suggestion html: "Doni të thoni %{suggestion_link}?"
     all versions: "Të gjitha versionet në %{language_name}"
   donate:
-    donate now: "Dhuro tani (US)"
+    donate now: "Dhuro tani"
     donate now intl: "ose dhuroni ndërkombëtarisht"
     promo 1: "Për çdo 1$ që ju jepni, 10 njerëz më shumë mund të përdorin Biblën në telefonat e tyre celularë. "
     promo 2: "Me YouVersion, Bibla është gjithmonë pranë. Shikoni videon tonë."
@@ -574,7 +587,10 @@ sq:
     headline: "Gjithësecili ka nevojë për Fjalën e Perëndisë."
     subhead: "Ndihmoni njerëzit rreth e rrotull botës për ta patur Biblën në majat e gishtave."
     copy: "Imagjinoni nëse mund t'u jepnit të gjithëve në botë një Bibël falas. Kur ju jepni te YouVersion, ju mund të bëni pikërisht këtë. Ne jetojmë në një kohë për të cilën të tjerët endërruan &ndash; kur çdonjëri me një telefon mund të përdorë Biblën dhe të përjetojë historinë e dashurisë së Perëndisë për ne. Me mbështetjen tuaj, ne mund të vazhdojmë të ndihmojmë më shumë njerëz që të kalojnë më shumë kohë në Shkrimin."
-    amount: "Shuma e dhurimit (USD)"
+    amount: "Shuma e dhurimit"
+    option once: "Një herë"
+    option monthly: "Mujore"
+    alert empty amount: "Ju lutemi futni shumën e dhurimit"
     name: "Emri juaj"
     card number: "Numri i kartës së kreditit"
     card exp date: "Data e skadimit (MMVV)"

@@ -1,9 +1,21 @@
 ---
 en:
   social:
-    email:                                      "Email"
-    twitter:                                    "Twitter"
-    facebook:                                   "Facebook"
+    my connections:                             "Connected Accounts"
+    connected as:                               "You are connected to %{connection} as %{username}."
+    remove connection:                          "Remove this connection"
+    connection friends:                         "Here are some YouVersion users you're connected to on %{connection}:"
+    errors:
+      no friends:                               "None of your %{connection} friends appear to be on YouVersion yet."
+      reset connection:                         "Sorry, an error has occurred. Please remove and then reconnect this connection."
+    email:
+      name:                                     "Email"
+    twitter:
+      name:                                     "Twitter"
+    facebook:
+      name:                                     "Facebook"
+      errors:
+        expired access:                         "Your access token has been expired by Facebook.  Please remove your connection and reconnect to Facebook."
   api:
     users agree bool:                           "You must agree to the terms and conditions to create an account."
     users confirm password matches:             "The new passwords do not match."
@@ -27,6 +39,9 @@ en:
     mobile:
       title:                                    "The Bible App"
       description:                              "Tens of millions of people are using the Bible App to read, listen to, watch and share God's Word, making it a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
+    connections:
+      index:
+        title:                                  "Connected Accounts"
   now:                                          "Now"
   celebrating 50MM:                             "Celebrating 50 Million App Installs!"
   link:                                         "Link"
@@ -43,17 +58,12 @@ en:
   copy:                                         "Copy"
   copy confirmed:                               "Copied!"
   new note:                                     "Create a Note"
-  twitter:                                      "Twitter"
-  facebook:                                     "Facebook"
   share success:                                "Your message has been shared."
   share error:                                  "Sorry, there was an error sharing your message. Please try again."
   google plus:                                  "Google +"
   connect to:                                   "Connect to your %{connection} account"
-  connected as user:                            "You are connected to %{connection} as %{username}."
   deleted connection:                           "Successfully removed your connection to %{connection}."
   deleted connection error:                     "Sorry, there was an error removing your connection to %{connection}."
-  remove connection:                            "Remove"
-  connection users:                             "Here are some YouVersion users you're connected to on %{connection}:"
   connection marketing:                         "YouVersion is more fun with friends! Link your YouVersion account to your other social networks and instantly find your friends on YouVersion. Linking your accounts also enables you to share content with just a few clicks. We will never post anything without your approval."
   next step connections:                        "Next: Link your accounts and find your friends"
   no notes found:                               "%{username} doesn't have any notes."
@@ -71,7 +81,6 @@ en:
   link will be added:                           "Will Be Added"
   my picture:                                   "Update My Picture"
   my notifications:                             "Manage Notifications"
-  my connections:                               "Connected Accounts"
   my devices:                                   "Connected Devices"
   language name:                                "English"
   sign in:                                      "Sign in"
@@ -200,9 +209,7 @@ en:
   users:
     unverified heading:                         "Almost Done!"
     unverified message:                         "It looks like you're trying to sign in to an account that hasn't been set up completely. You only have one more step: simply click on the verification link in the confirmation email you received from YouVersion. Can't find it? Check your spam folder or <a href='%{resend_path}'>resend the confirmation email</a>."
-    reset connection:                           "Sorry, an error has occurred. Please remove and then reconnect this connection."
     settings:                                   "Settings"
-    no connection friends:                      "None of your %{connection} friends appear to be on YouVersion yet."
     creation form errors:                       "The following error(s) prevented creation of your account:"
     profile form errors:                        "The following error(s) prevented updating your profile:"
     email address:                              "Email Address"

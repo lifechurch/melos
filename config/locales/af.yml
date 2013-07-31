@@ -1,8 +1,18 @@
 af:
   social:
-    email: "E-pos"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Gekoppelde Rekeninge"
+    connected as: "Jy is gekoppel met %{connection} as %{username}."
+    remove connection: "Verwyder"
+    connection friends: "Hier is van die YouVersion gebruikers waarmee jy skakel op %{connection}:"
+    errors:
+      no friends: "Dit lyk nie of enige van jou %{connection} vriende tans op YouVersion is nie."
+      reset connection: "Jammer, 'n fout het voorgekom. Verwyder asseblief en herskep hierdie verbinding."
+    email:
+      name: "E-pos"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Jy moet instem tot die terme en voorwaardes, sodat  jou rekening oopgemaak kan word."
     users confirm password matches: "Die nuwe wagwoord pas nie."
@@ -26,6 +36,9 @@ af:
     mobile:
       title: "Die Bybel App"
       description: "Miljoene mense gebruik die Bybel App om God se Woord te lees, te luister, te kyk en te deel van hulle daaglikse lewe.  Laai die gratis app af en verkry toegang tot jou boekmerke, notas en leesplanne ol enige plek. Grniet honderde weergawes, insluitend oudio, alles op jou mobiele toerusting."
+    connections:
+      index:
+        title: "Gekoppelde Rekeninge"
   now: "Nou"
   celebrating 50MM: "Vier 50 Miljoen App Installasies!"
   link: "Skakel"
@@ -42,8 +55,6 @@ af:
   copy: "Kopieer"
   copy confirmed: "Gekopieer!"
   new note: "Nuwe Nota"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Jou boodskap is gedeel."
   share error: "Jammer, daar was 'n fout met die deel van jou boodskap. Probeer asb. weer."
   google plus: "Google +"
@@ -566,7 +577,7 @@ af:
     suggestion html: "Het jy bedoel %{suggestion_link}?"
     all versions: "Alle %{language_name} Weergawes"
   donate:
-    donate now: "Skenk Nou (VSA)"
+    donate now: "Skenk Nou"
     donate now intl: "of skenk internasionaal"
     promo 1: "Vir elke $1 wat jy skenk, kan 'n addisionele 10 mense toegang verkry tot die Bybel op hul selfoon."
     promo 2: "Met YouVersion is die Bybel altyd byderhand. Kyk na ons video."
@@ -574,7 +585,10 @@ af:
     headline: "Almal het God se Woord nodig."
     subhead: "Help mense reg oor die wêreld om die Bybel byderhand te hê."
     copy: "Verbeel jou dat jy aan elkeen in die wêreld 'n gratis Bybel kon gee. Wanneer jy aan YouVersion gee, doen jy presies dit. Ons leef in 'n tyd waarvan ander net kon droom; waar elkeen met 'n foon toegang het tot die Bybel en die storie van God se liefde vir ons kan ervaar. Met jou ondersteuning, kan ons meer mense help om meer tyd in die Woord te spandeer."
-    amount: "Skenking bedrag (USD)"
+    amount: "Donasie bedrag"
+    option once: "eenkeer"
+    option monthly: "Maandeliks"
+    alert empty amount: "Gee asseblief die donasie bedrag"
     name: "Jou naam"
     card number: "Krediet kaart nommer"
     card exp date: "Verval datum (MMYY)"

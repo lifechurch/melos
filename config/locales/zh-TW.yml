@@ -1,8 +1,18 @@
 zh-TW:
   social:
-    email: "電子郵件"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "已連接的帳號"
+    connected as: "您已與 %{connection} 上的 %{username} 帳號連接。"
+    remove connection: "移除"
+    connection friends: "這是一些在 %{connection} 服務上與您有連接的 YouVersion 用戶："
+    errors:
+      no friends: "看來您在%{connection}的朋友還沒有 YouVersion。"
+      reset connection: "抱歉，出錯了！請移除這個連接然後重新連接。"
+    email:
+      name: "電子郵件"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "您必須同意使用條款與條件才能建立帳號。"
     users confirm password matches: "新密碼不匹配。"
@@ -26,6 +36,9 @@ zh-TW:
     mobile:
       title: "聖經軟體"
       description: "數以千萬的人們透過聖經軟體來閱讀、看視訊、聽音訊或分享經文上帝的話語。請下載這個免費軟體然後隨時隨地存取您的書籤、筆記和讀經計劃。享受使用上百個聖經譯本，包括語音版，全部都在您的行動設備裡。"
+    connections:
+      index:
+        title: "已連接的帳號"
   now: "現在"
   celebrating 50MM: "慶祝5000萬次的安裝！"
   link: "鏈結"
@@ -42,8 +55,6 @@ zh-TW:
   copy: "複製"
   copy confirmed: "已複製！"
   new note: "創建新筆記"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "您的信息已經成功分享了。"
   share error: "抱歉，信息分享出錯。請重試。"
   google plus: "Google +"
@@ -566,7 +577,7 @@ zh-TW:
     suggestion html: "您是指%{suggestion_link}嗎？"
     all versions: "所有%{language_name} 版本"
   donate:
-    donate now: "現在就捐獻 (美國）"
+    donate now: "現在就捐獻"
     donate now intl: "或者國際捐贈"
     promo 1: "您每捐獻 $1，就有多10 個人能夠在他們的手機上閱讀聖經。"
     promo 2: "有了 YouVersion，聖經時常隨身相伴。請觀看我們的影片。"
@@ -574,7 +585,6 @@ zh-TW:
     headline: "每個人都需要上帝的話語。"
     subhead: "幫助世界各地的人在彈指之間就能得到聖經。"
     copy: "試想如果您可以送給世上的每個人一本聖經。當您捐獻給 YouVersion 的時候，您就做到了。我們活在一個別人只能想像的時代 —— 每一個有手機的人都能夠讀到聖經並經歷到上帝對我們的愛。有您的支持，我們就能繼續幫助更多的人花更多時間讀聖經。"
-    amount: "捐贈金額（美元）"
     name: "您的名字"
     card number: "信用卡號碼"
     card exp date: "過期日期（MM/YY)"

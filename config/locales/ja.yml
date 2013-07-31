@@ -1,8 +1,20 @@
 ja:
   social:
-    email: "メール"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "連携済みアカウント"
+    connected as: "%{username} として %{connection} に連携されました。"
+    remove connection: "削除"
+    connection friends: "%{connection} であなたとコネクトしているYouVersionユーザ:"
+    errors:
+      no friends: "あなたの %{connection} 友達は、まだ YouVersion 上にはいないようです。"
+      reset connection: "申し訳ありませんが、エラーが発生しました。一旦この連携を解除した後で、改めて提携させてください。"
+    email:
+      name: "メール"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Facebookによるアクセス・トークンの期限が切れました。一旦接続を解除して、Facebookに改めて接続してください。"
   api:
     users agree bool: "アカウント作成には、利用規約に同意いただく必要があります。"
     users confirm password matches: "新しいパスワードが一致しません。"
@@ -26,6 +38,9 @@ ja:
     mobile:
       title: "聖書アプリ"
       description: "何千万というユーザーが聖書を読んだり、聞いたり、観たり、神様の御言葉をシェアして、生活の一環として聖書アプリを利用しています。ダウンロードして、ブックマーク、ノート、読書プランに、どこからでもアクセスできるように、無料の聖書アプリをダウンロードしましょう。様々な聖書訳や、音読聖書を携帯機器からご利用いただけます。"
+    connections:
+      index:
+        title: "連携済みアカウント"
   now: "現在…"
   celebrating 50MM: "アプリのインストール数が5000万に達しました!"
   link: "リンク"
@@ -42,8 +57,6 @@ ja:
   copy: "コピー"
   copy confirmed: "コピー完了!"
   new note: "新規ノート"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "メッセージがシェアされました"
   share error: "メッセージのシェアに失敗しました。もう一度、実行してください。"
   google plus: "Google +"
@@ -566,7 +579,7 @@ ja:
     suggestion html: "もしかして %{suggestion_link} ですか?"
     all versions: "%{language_name}語版全て"
   donate:
-    donate now: "寄付する(米国内)"
+    donate now: "寄付する"
     donate now intl: "PayPalで寄付する（米国外）"
     promo 1: "あなたからの1ドルの寄付で、モバイル機器からの聖書へのアクセスが10人に可能となります"
     promo 2: "YouVersion によって、聖書がいつでも身近に。ビデオをご覧ください。"
@@ -574,7 +587,10 @@ ja:
     headline: "すべての人に神様の御言葉が必要です。"
     subhead: "世界中の人が聖書に簡単にアクセスできますように・・・"
     copy: "もしも世界中の全ての人に聖書を無料であげることができたら・・・と想像してみてください。YouVersion に寄付するとは、まさにそのことです。私たちは、携帯電話を持っていれば誰でも聖書にアクセスして、神様の愛に満ちた物語を読むことができるという、今までは夢のようであった時代に生きています。より多くの人に、もっと聖句を読んでもらうために、皆様からのご協力を必要としています。"
-    amount: "寄付額（USドル建て）"
+    amount: "寄付額"
+    option once: "1回"
+    option monthly: "毎月1回"
+    alert empty amount: "寄付額を入力してください。"
     name: "お名前"
     card number: "クレジットカード番号"
     card exp date: "有効期限（月／年）"

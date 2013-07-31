@@ -52,7 +52,8 @@ YouversionWeb::Application.routes.draw do
   # Users
   resources 'users', :except => [:new, :create] do
 
-    get :connections, on: :member
+    # bible.com/users/:id/connections => connections#index
+    get :connections, on: :member, to: "connections#index"
 
     get :email, on: :member
     put :update_email, on: :member
@@ -137,7 +138,7 @@ YouversionWeb::Application.routes.draw do
   get   'settings/forgot_password', to: 'users#forgot_password_form', as: 'forgot_password'
   post  'settings/forgot_password', to: 'users#forgot_password', as: 'forgot_password'
 
-  # connetions
+  # connections
   match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'
   match 'auth/:provider/connect'  => 'auth#connect', :as => 'auth_connect'
   match 'connections/:provider/new' => 'connections#new', :as => 'new_connection'

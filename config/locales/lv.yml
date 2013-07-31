@@ -1,8 +1,15 @@
 lv:
   social:
-    email: "e-pasts"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Saistītie konti"
+    connected as: "Jūs esat pieslēdzies %{connection} kā %{username}"
+    remove connection: "Izdzēst"
+    connection friends: "Lūk, daži YouVersion lietotāji, ar kuriem jūs kontaktējaties %{connection}"
+    email:
+      name: "e-pasts"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Jums jāpiekrīt noteikumiem, lai varētu izveidot kontu."
     users confirm password matches: "Jaunās paroles nesakrīt."
@@ -26,10 +33,13 @@ lv:
     mobile:
       title: "Bībeles aplikācija"
       description: "Desmitiem miljoniem cilvēku lieto Bībeles aplikāciju Dieva vārda lasīšanai, klausīšanai, skatīšanai un lai dalītos tajā, padarot to par daļu no viņu ikdienas dzīves, Lejupielādē bezmaksas aplikāciju un piekļūsti savām grāmatzīmēm, piezīmēm un lasīšanas plāniem no jebkuras vietas. Izbaudi simtiem tulkojumu, tai skaitā audio versijas un tas viss uz savas mobilās ierīce."
+    connections:
+      index:
+        title: "Saistītie konti"
   now: "Tagad"
   celebrating 50MM: "Svinam 50 miljonu aplikāciju instalējumus!"
   link: "Saite"
-  site search: "YouVersion meklēšana"
+  site search: "YouVersion"
   auth error: "Piedodiet, radās kļūme ar jūsu lietotājvārdu vai paroli. Lūdzu pierakstieties YouVersion lai turpinātu."
   download: "Lejuplādēt"
   visit link: "Atvērt saiti"
@@ -42,8 +52,6 @@ lv:
   copy: "Kopēt"
   copy confirmed: "Nokopēts!"
   new note: "Izveidot piezīmi"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Jūs esat dalījušies ar savu ziņu."
   share error: "Piedodiet, daloties ar jūsu ziņu radās kļūme. Lūdzu mēģiniet vēlreiz."
   google plus: "Google +"
@@ -566,7 +574,7 @@ lv:
     suggestion html: "Vai jūs domājāt %{suggestion_link}?"
     all versions: "Visi tulkojumi %{language_name}"
   donate:
-    donate now: "Ziedot tagad (US)"
+    donate now: "Ziedo tagad"
     donate now intl: "vai ziedojiet starptautiski"
     promo 1: "Par katru ziedoto $1, vēl 10 cilvēki iegūst pieeju Bībelei uz viņu mobilajiem tālruņiem."
     promo 2: "Ar YouVersion, Bībele vienmēr ir tuvumā. Noskaties mūsu video."
@@ -574,7 +582,10 @@ lv:
     headline: "Dieva vārds ir nepieciešams visiem."
     subhead: "Palīdzi cilvēkiem visā pasaulē iegūt Bībeli pa rokai."
     copy: "Iedomājaties, ja vien jūs spētu iedot bezmaksas Bībeli katram cilvēkam visā pasaulē. Kad jūs ziedojat YouVersion, tieši to jūs izdariet. Mēs dzīvojam laikā, par kuru citi ir tikai sapņojuši &ndash; kad ikviens var piekļūt Bībelei ar savu telefonu un piedzīvot uz mums vērsto Dieva mīlestības stāstu. Ar jūsu atbalstu, mēs varam turpināt palīdzēt cilvēkiem pavadīt Rakstos aizvien vairāk laika."
-    amount: "ziedojuma apjoms (USD)"
+    amount: "Ziedojuma apjoms"
+    option once: "Viena reize"
+    option monthly: "Ikmēneša"
+    alert empty amount: "Lūdzu ievadiet ziedojuma apjomu"
     name: "Jūsu vārds"
     card number: "Kredīt kartes numurs"
     card exp date: "Derīguma termiņš (MMYY)"

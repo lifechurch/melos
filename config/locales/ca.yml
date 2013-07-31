@@ -1,8 +1,18 @@
 ca:
   social:
-    email: "Correu electrònic"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Comptes connectats"
+    connected as: "Estàs connectat/ada a %{connection} com %{username}."
+    remove connection: "Elimina"
+    connection friends: "Aquí hi ha varis usuaris amb qui tens relació a %{connection}:"
+    errors:
+      no friends: "Encara no apareix cap dels teus amics de %{connection} a YouVersion."
+      reset connection: "Ens sap greu, però hi ha hagut un error. Si us plau, retira i torna a connectar aquesta connexió."
+    email:
+      name: "Correu electrònic"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Has d'estar d'acord amb les condicions per crear un compte."
     users confirm password matches: "Les noves contrassenyes no coincideixen."
@@ -26,6 +36,9 @@ ca:
     mobile:
       title: "L'aplicació de la Bíblia"
       description: "Desenes de milions de persones estan utilitzant l'App de la Bíblia per llegir, escoltar, mirar i compartir la Paraula de Déu, fent que sigui part de les seves vides diàries. Descarrega gratuïtament l'App i accedeix als teus marcadors, notes i plans de lectura des de qualsevol lloc. Gaudeix de centenars de versions, també en àudio, totes en el teu dispositiu mòbil."
+    connections:
+      index:
+        title: "Comptes connectats"
   now: "Ara"
   celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
   link: "Enllaç"
@@ -42,8 +55,6 @@ ca:
   copy: "Copia"
   copy confirmed: "S'ha copiat!"
   new note: "Nova nota"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "S'ha compartit el teu missatge."
   share error: "Ens sap greu, però hi ha hagut un error en compartir el teu missatge. Si us plau, prova-ho una altra vegada."
   google plus: "Google +"
@@ -566,7 +577,7 @@ ca:
     suggestion html: "Volies dir %{suggestion_link}?"
     all versions: "Totes les versions en %{language_name}"
   donate:
-    donate now: "Fes una donació ara (US)"
+    donate now: "Dóna ara"
     donate now intl: "o fes un donatiu internacional"
     promo 1: "Per cada dòlar que dónes, 10 persones més tenen accés a la Bíblia al seu mòbil."
     promo 2: "Amb YouVersion, la Bíblia sempre és propera. Mira el nostre vídeo."
@@ -574,7 +585,6 @@ ca:
     headline: "Tothom necessita la Paraula de Déu."
     subhead: "Ajuda la gent arreu del món a tenir la Bíblia a la punta dels dits."
     copy: "Imagina si poguessis donar a tothom una Bíblia gratis. Quan dónes a YouVersion, pots fer precisament això. Estem vius durant un temps que altres només han somiat &ndash; quan qualsevol persona amb un telèfon pot tenir accés a la Bíblia i l'experiència de la història de l'amor de Déu per nosaltres. Amb el teu suport, podem seguir ajudant a més persones a passar més temps a les Escriptures."
-    amount: "Import del donatiu (en dòlars americans)"
     name: "El teu nom"
     card number: "Número de targeta de crèdit"
     card exp date: "Data de caducitat (mm/yy)"

@@ -49,7 +49,7 @@ class TwitterConnection < YouVersion::Connection::Base
   private
 
   def client
-    Grackle::Client.new(
+    @client ||= Grackle::Client.new(
       auth: {
         type:             :oauth,
         consumer_key:     data[:key],

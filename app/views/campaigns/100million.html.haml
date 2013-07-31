@@ -96,16 +96,16 @@
           - fb_link     = "http://www.bible.com/app"
           - fb_redirect = "http://www.bible.com/100million"
           %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
-            = t("social.facebook")
+            = t("social.facebook.name")
 
           - twitter     = t("campaigns.100m.share.tw.tweet")
           %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
-            = t("social.twitter")
+            = t("social.twitter.name")
 
           - subject     = t("campaigns.100m.share.em.subject")
           - body        = t("campaigns.100m.share.em.body")
           %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
-            = t("social.email")
+            = t("social.email.name")
 
 
 

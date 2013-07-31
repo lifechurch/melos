@@ -1,8 +1,20 @@
 zh-CN:
   social:
-    email: "电子邮件"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "已绑定的账户"
+    connected as: "您已经与 %{connection} 上的 %{username}账户关联。"
+    remove connection: "删除"
+    connection friends: "这是一些在 %{connection} 上与您有连接的YouVersion 用户："
+    errors:
+      no friends: "您在 %{connection}上 的朋友现在不在 YouVersion 上。"
+      reset connection: "很抱歉，出错了！请移除这个连接然后重新连接！"
+    email:
+      name: "电子邮件"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "您接入Facebook的授权已到期，请先解除关联，然后重新关联到Facebook。"
   api:
     users agree bool: "您必须同意使用协议和条款才能注册账户。"
     users confirm password matches: "新密码不匹配。"
@@ -26,6 +38,9 @@ zh-CN:
     mobile:
       title: "圣经软件"
       description: "数千万的人正在通过圣经软件阅读、收听、观看并分享神的话语，让神的话语成为成为他们日常生活的一部分。下载免费圣经软件，无论在哪里都可以访问您的书签、笔记和读经计划。享用数百种圣经译本，包括有声圣经，这一切都在您的移动设备上实现。"
+    connections:
+      index:
+        title: "已绑定的账户"
   now: "今日社区"
   celebrating 50MM: "庆祝5000万的安装！"
   link: "链接"
@@ -42,8 +57,6 @@ zh-CN:
   copy: "复制"
   copy confirmed: "复制成功！"
   new note: "新建笔记"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "您的信息已经成功分享了。"
   share error: "抱歉！分享信息时出错！请重试！"
   google plus: "Google +"
@@ -566,7 +579,7 @@ zh-CN:
     suggestion html: "您是指%{suggestion_link}吗？"
     all versions: "所有 %{language_name} 版本"
   donate:
-    donate now: "现在就捐赠(美国)"
+    donate now: "现在就捐赠"
     donate now intl: "或者国际捐赠"
     promo 1: "您每捐出一美元，就能多十个人在他/她们的手机上阅读圣经。"
     promo 2: "有了YouVersion，圣经始终在您身边。观看我们的录像。"
@@ -574,7 +587,10 @@ zh-CN:
     headline: "所有人都需要上帝的话语。"
     subhead: "帮助世界各地的人，让他们可以随时获得圣经。"
     copy: "想象一下如果您能够给世界上的每一个人一本免费的圣经。当您捐献给YouVersion 的时候，您就做到了。我们活在一个别人只能想象的时代 &ndash; 每个有手机的人都能够读到圣经并且经历上帝对我们的爱。有您的支持，我们将继续帮助更多的人花更多时间读经。"
-    amount: "捐赠金额(美元)"
+    amount: "捐赠金额"
+    option once: "一次性"
+    option monthly: "每月"
+    alert empty amount: "请输入捐赠金额。"
     name: "您的名字"
     card number: "信用卡号"
     card exp date: "过期日期(MM/YY)"

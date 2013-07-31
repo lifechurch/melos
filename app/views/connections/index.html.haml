@@ -1,0 +1,7 @@
+- @title = "#{t('meta.connections.index.title')} | #{@user.name || @user.username}"
+
+- content_for :sidebar do
+  = render partial: "widgets/settings"
+
+%article.profile
+  = render partial: "connections/tabs"

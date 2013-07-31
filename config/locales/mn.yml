@@ -1,8 +1,18 @@
 mn:
   social:
-    email: "Э-мэйл"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Холбогдсон Дансууд"
+    connected as: "%{username} хэрэглэгчийн нэрээр %{connection} тэй холбогдсон байна."
+    remove connection: "Устгах "
+    connection friends: "YouVersion хэрэглэчтэй %{connection} ээр холбогтой"
+    errors:
+      no friends: "Одоогоор таны %{connection} найзууд YouVersion-д бүртгэгдээгүй байна."
+      reset connection: "Уучлаарай, алдаа заалаа. Дахин шинээр холболт хийнэ үү. "
+    email:
+      name: "Э-мэйл"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Данс бүртгүүлэхээр журамтай зѳвшѳѳрѳх шаардлагатай."
     users confirm password matches: "Шинэ нууц үгүүд таахгүй байна."
@@ -16,6 +26,10 @@ mn:
     users password length: "Таны шинэ нууц үгийг хуучин нууц үгээсээ ѳѳр байх шаардлагатай."
     users password required: "Нууц үгээ бичээрэй"
     users username required: "И-мэйл хаягаа оруулах шаардлагатай."
+  meta:
+    connections:
+      index:
+        title: "Холбогдсон Дансууд"
   now: "Одоо"
   celebrating 50MM: "50 Сая Апп суулгагдсан баяраа тэмдэглэж байна!"
   link: "Холбоос"
@@ -32,8 +46,6 @@ mn:
   copy: "Хувилах"
   copy confirmed: "Хувилсан!"
   new note: "Шинэ Тэмдэглэл"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Таны зурвас бусадтай хуваалцагдлаа."
   share error: "Уучлаарай, Таны зурвасыг бусадтай хуваалцах үед алдаа гарлаа. Та дахин оролдоно уу."
   google plus: "Google +"
@@ -540,7 +552,7 @@ mn:
     suggestion html: "%{suggestion_link} гэж үү?"
     all versions: "Бүх %{language_name} Орчуулга"
   donate:
-    donate now: "Одоо Хандивлах (АНУ)"
+    donate now: "Одоо Хандивлах"
     donate now intl: "эсвэл олон улсаас хандивлах"
     promo 1: "Таны өргөх 1$ тутамд, 10-н хүн гар утсан дээрээ Библитэй болох боломжтой. "
     promo 2: "YouVersion-той байхад Библи бидэнд үргэлж ойр. Бидний бичлэгийг үзээрэй."
@@ -548,7 +560,6 @@ mn:
     headline: "Хүн бүрд Бурханы Үг хэрэгтэй."
     subhead: "Дэлхий даяар байгаа хүмүүст гартаа Библитэй болход нь  туслаарай."
     copy: "Та дэлхий дээрх бүх хүнд үнэгүй Библи өгч байна гээд төсөөлдөө. YouVersion-д өргөсөн таны хандив, яг л үүнийг та бодиттой болгож байгаа юм. Өнөөдөр бид бусдын зөвхөн мөрөөдөж л байсан тэр цаг үед амьдарч байна &ndash; юу гэвэл, Библийг гар утастай хүн бүр уншиж Бурханы бидэнд хандсан тэрхүү хайрыг мэдрэх боломж. Таны дэмжлэгээр, бид илүү олон хүмүүст үргэлжлүүлэн Бурханы Үгэнд цаг зарцуулхад нь туслаж чадна."
-    amount: "Хандивлах дүн (USD)"
     name: "Таны нэр"
     card number: "Kpедит картны дугаар"
     card exp date: "Дуусах хугацаа (САРЖИЛ)"

@@ -1,8 +1,18 @@
 ms:
   social:
-    email: "E-mel"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Akaun yang Berkaitan"
+    connected as: "Anda tersambung ke %{connection} sebagai %{username}."
+    remove connection: "Batalkan"
+    connection friends: "Ini beberapa pengguna YouVersion yang tersambung kepada anda di %{connection}:"
+    errors:
+      no friends: "Rupanya sahabat %{connection} anda belum menggunakan YouVersion."
+      reset connection: "Maaf, kesilapan berlaku. Sila putuskan hubungan, kemudian sambung kembali."
+    email:
+      name: "E-mel"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users email email: "Alamat e-mel ini tidak sah."
     users email email rfc: "Alamat e-mel yang dibekalkan tidak sah."
@@ -13,6 +23,10 @@ ms:
     users username alpha numeric extra: "Nama pengguna harus menggunakan huruf, nombor atau sengkang."
     users username not available: "Nama pengguna yang dibekalkan tidak tersedia."
     users username or password invalid: "Nama pengguna atau kata laluan tidak sah."
+  meta:
+    connections:
+      index:
+        title: "Akaun yang Berkaitan"
   now: "Sekarang"
   celebrating 50MM: "Merayakan 50 Juta Pemasangan App!"
   link: "Link"
@@ -29,8 +43,6 @@ ms:
   copy: "Salin"
   copy confirmed: "Tersalin!"
   new note: "Nota Baru"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Mesej anda sudah diberitakan."
   share error: "Maaf, ada kesilapan semasa memberitakan mesej anda. Sila cuba lagi."
   google plus: "Google +"
@@ -521,7 +533,7 @@ ms:
     suggestion html: "Apakah maksud anda %{suggestion_link}?"
     all versions: "Segala Versi %{language_name}"
   donate:
-    donate now: "Buatkan Sumbangan (US)"
+    donate now: "Buat Sumbangan Sekarang"
     donate now intl: "atau memberi sumbangan antarabangsa"
     promo 1: "Setiap $1 yang disumbang membantu 10 orang lain mendapati akses kepada Alkitab di handphone."
     promo 2: "Dengan YouVersion, Alkitab sentiasa berhampiran. Tontonlah video kami."
@@ -529,7 +541,6 @@ ms:
     headline: "Setiap orang memerlukan Firman Allah."
     subhead: "Bantulah orang ramai di seluruh dunia mendapat akses kepada Alkitab."
     copy: "Bayangkan jika anda dapat menghadiahkan Alkitab kepada setiap orang. Sumbangan anda kepada YouVersion membantu anda melakukan ini. Zaman kita cuma diimpikan dahulu; sesiapa yang memiliki handphone dapat mengakses Alkitab dan mengalami kisah cinta Allah. Sumbangan anda akan membantu lebih orang membaca Alkitab."
-    amount: "Jumlah sumbangan (USD)"
     name: "Nama anda"
     card number: "Nombor kad kredit"
     card exp date: "Tarikh tamat tempoh (MMYY)"
