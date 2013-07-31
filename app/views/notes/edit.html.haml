@@ -10,4 +10,4 @@
 
 %article
   %h1= t("notes.edit note")
-  = render 'form'
+  = render partial: 'form', locals: {note: @note}

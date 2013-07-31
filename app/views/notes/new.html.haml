@@ -4,9 +4,6 @@
 - content_for :title do
   = t("notes.new note")
 
-- content_for :mobile_right_nav do
-  = render partial: 'shared/save_button'
-
 %article
   %h1= t("notes.new note")
-  = render 'form'
+  = render partial: 'form', locals: {note: @note}

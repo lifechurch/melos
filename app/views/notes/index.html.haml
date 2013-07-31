@@ -17,6 +17,11 @@
     %h1= "#{@reference_title} #{t('notes.list title')}"
 
   - unless @notes.empty?
+
+    - # this link responsively displays only for mobile devices
+    %a.mobile.action_button_green{href: new_note_path, style: "margin-top: 45px;"}
+      %span.icon_plus= t('new note')
+
     %ul.resource_list
       = render partial: "notes/list_item", collection: @notes, locals: ({display: :avatar} unless @me)
     = render "shared/pagination", resource_list: @notes
