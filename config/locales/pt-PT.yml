@@ -1,8 +1,20 @@
 pt-PT:
   social:
-    email: "Email"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Contas Associadas"
+    connected as: "Você está associado a %{connection} como %{username}."
+    remove connection: "Eliminar"
+    connection friends: "Aqui estão alguns utilizadores do YouVersion aos quais está ligado em %{connection}:"
+    errors:
+      no friends: "Ainda nenhum dos seus amigos %{connection} aparenta estar a usar o YouVersion."
+      reset connection: "Desculpe, ocorreu um erro. Por favor remova e volte a efetuar esta associação."
+    email:
+      name: "Email"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "O seu acesso através do Facebook caducou. Por favor remova a ligação e reconecte ao Facebook."
   api:
     users agree bool: "Deve concordar com os Termos de Utilização para se registar."
     users confirm password matches: "As novas palavras-passe não coincidem."
@@ -26,6 +38,9 @@ pt-PT:
     mobile:
       title: "A App da Bíblia"
       description: "Dezenas de milhões de pessoas estão a usar a App da Bóblia para ler, escutar, ver e partilhar a Palavra de Deus, fazendo dessas atividades uma parte integrante do seu dia a dia. Descarregue esta app grátis e aceda aos seus marcadores, notas e planos de leitura em qualquer lugar. Desfrute de centenas de versões, áudio incluído, tudo no seu dispositivo móvel."
+    connections:
+      index:
+        title: "Contas Associadas"
   now: "Agora"
   celebrating 50MM: "A celebrar 50 milhões de instalações da App!"
   link: "Link"
@@ -42,8 +57,6 @@ pt-PT:
   copy: "Copiar"
   copy confirmed: "Copiado!"
   new note: "Criar Nota"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "A sua mensagem foi partilhada."
   share error: "Desculpe, aconteceu um erro a partilhar a sua mensagem. Por favor tente novamente."
   google plus: "Google +"
@@ -566,7 +579,7 @@ pt-PT:
     suggestion html: "Pretendeu dizer %{suggestion_link}?"
     all versions: "Todas as Versões em %{language_name}"
   donate:
-    donate now: "Contribua Agora"
+    donate now: "Contribua Agora."
     donate now intl: "ou doe internacionalmente"
     promo 1: "Por cada contribuição de $1, mais 10 pessoas acedem à Bíblia nos seus telemóveis."
     promo 2: "Com a YouVersion, a Bíblia está sempre perto. Veja o nosso vídeo."
@@ -574,7 +587,10 @@ pt-PT:
     headline: "Todos precisam da Palavra de Deus."
     subhead: "Ajude a colocar a Bíblia na ponta dos dedos das pessoas por todo o mundo."
     copy: "Imagine que poderia oferecer a todas as pessoas no mundo uma Bíblia gratuita. Quando oferta para YoouVersion, pode fazer exatamente isso. Nós vivemos um momento em que outros apenas sonharam — quando qualquer pessoa com um telefone pode aceder à Bíblia e conhecer a história do amor de Deus por nós. Com o seu apoio, nós poderemos continuar a ajudar mais pessoas a investir mais tempo a ler as Escrituras."
-    amount: "Montante da doação (USD)"
+    amount: "Valor da oferta"
+    option once: "Única"
+    option monthly: "Mensal"
+    alert empty amount: "Por favor introduza o valor da oferta"
     name: "O seu nome"
     card number: "Número do cartão de crédito"
     card exp date: "Data de expiração (MMAA)"

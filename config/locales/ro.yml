@@ -1,8 +1,20 @@
 ro:
   social:
-    email: "e-mail"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Conturi conectate"
+    connected as: "Ești conectat la %{connection} ca și %{username}."
+    remove connection: "Șterge"
+    connection friends: "Utilizatori YouVersion cu care ești conectat pe %{connection}:"
+    errors:
+      no friends: "Nici unul din prietenii %{connection} tăi nu s-a conectat încă pe YouVersion."
+      reset connection: "Ne pare rău, s-a produs o eroare. Trebuie să ștergi și să refaci conexiunea."
+    email:
+      name: "e-mail"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Jetonul (codul) de acces a expirat. Deconectează-te și apoi reconectează-te la Facebook."
   api:
     users agree bool: "Pentru a-ți crea cont trebuie să fii de acord cu termenii și condițiile de utilizare."
     users confirm password matches: "Parola nouă și confirmarea acesteia nu coincid."
@@ -26,6 +38,9 @@ ro:
     mobile:
       title: "Aplicația Biblia"
       description: "Zeci de miloane de oameni folosesc Aplicația Biblia pentru a citi, a asculta, a viziona și a împărtăși Cuvântul lui Dumnezeu care acum este parte din viața lor de zi cu zi. Descarcă aplicația gratuită și accesează-ți marcajele, notițele și planurile de citire de oriunde te-ai afla. Bucură-te de sute de versiuni, inclusiv în format audio, totul pe dispozitivul tău mobil."
+    connections:
+      index:
+        title: "Conturi conectate"
   now: "Acum"
   celebrating 50MM: "Sărbătorind 50 de milioane de instalări ale aplicației!"
   link: "Legătură"
@@ -42,8 +57,6 @@ ro:
   copy: "Copiază"
   copy confirmed: "Copiat!"
   new note: "Notiță nouă"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Mesajul tău a fost partajat."
   share error: "Ne pare rău, s-a produs o eroare la partajarea mesajului tău. Încearcă din nou."
   google plus: "Google +"
@@ -369,7 +382,7 @@ ro:
       picture_creation form errors: "Actualizarea fotografiei tale a fost împiedicată de următoarea eroare (următoarele erori):"
       updated picture: "Am actualizat cu succes fotografia ta."
       updated notifications: "Am actualizat cu succes setările tale pentru notificări."
-      notifications token error: "Jetonul nu este valid; autentifică-te pentru a modifica setările de notificare."
+      notifications token error: "Jetonul (codul) nu este valid; autentifică-te pentru a modifica setările de notificare."
       notification errors: "Actualizarea notificărilor tale a fost împiedicată de următoarea eroare (următoarele erori):"
       edit: "Modifică"
       bio: "Biografie"
@@ -566,7 +579,7 @@ ro:
     suggestion html: "Ai vrut să spui %{suggestion_link}?"
     all versions: "Toate versiunile %{language_name}"
   donate:
-    donate now: "Donează acum (SUA)"
+    donate now: "Donează acum"
     donate now intl: "sau donează din afara Statelor Unite"
     promo 1: "Pentru fiecare 1$ donat, încă 10 persoane capătă acces la Biblie pe dispozitivul lor mobil."
     promo 2: "Cu YouVersion, Biblia este întotdeauna aproape. Urmărește un video despre noi."
@@ -574,7 +587,10 @@ ro:
     headline: "Fiecare are nevoie de Cuvântul lui Dumnezeu."
     subhead: "Ajută oamenii de pretutindeni să aibă Biblia la îndemână."
     copy: "Imaginează-ți că ai putea da fiecărei persoane din lume o Biblie gratuită. Când donezi către YouVersion, poți face chiar asta. Noi trăim într-un timp la care alții doar au visat &ndash; și anume când orice deținător de telefon mobil să poată accesa Biblia și să poată experimenta istorisirea dragostei lui Dumnezeu pentru noi.. Cu susținerea ta putem continua să ajutăm mai mulți oameni să petreacă mai mult timp cu Scriptura."
-    amount: "Suma donată (USD)"
+    amount: "Suma donată"
+    option once: "O dată"
+    option monthly: "Lunar"
+    alert empty amount: "Introdu suma donată."
     name: "Numele tău"
     card number: "Numărul cardului de credit"
     card exp date: "Data expirării (luna, anul)"
@@ -667,8 +683,8 @@ ro:
       our action: "Am fost înștiințați; vom rezolva cât mai curând."
     home:
       hero:
-        heading: "Biblia gratuit pe telefon, tabletă și computer."
-        description: "Biblia YouVersion este o aplicație simplă, fără reclame, care îți aduce Cuvântul lui Dumnezeu în viața de zi cu zi."
+        heading: "Biblia – gratuit pe telefon, tabletă și computer."
+        description: "Biblia de la YouVersion este o aplicație simplă, fără reclame, care îți aduce Cuvântul lui Dumnezeu în viața de zi cu zi."
         learn more: "află mai multe"
         start reading: "Începe să citești"
         skip in future: "Pe viitor, sari peste această pagină."

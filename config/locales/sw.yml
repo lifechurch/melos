@@ -1,8 +1,17 @@
 sw:
   social:
-    email: "Barua pepe"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "akaunti zilizounganishwa"
+    connected as: "Umeunganishwa na %{uhusiano} kama%{jina la mtumiaji}"
+    remove connection: "ondoa"
+    connection friends: "hapa kuna baadhi ya watumiaji wa YouVersion ambao mmeshikamana nao kwa %{uhusiano}"
+    errors:
+      no friends: "Hakuna %{uhusiano} marafiki zako waliopo katika YouVersion."
+    email:
+      name: "Barua pepe"
+    twitter:
+      name: "twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Lazima ukubali sheria na masharti ili utengeneze akaunti "
     users confirm password matches: "Neno la siri mpya haijalingana"
@@ -26,6 +35,9 @@ sw:
     mobile:
       title: "App ya Biblia"
       description: "Makumi ya mamilioni ya watu ni kutumia App ya Bibilia &trade; kufanya Neno la Mungu iwe sehemu ya maisha yao ya kila siku. Pakua programu ya bure na upate maelezo ya maalamisho yako, na mipango ya kusoma kutoka mahali popote. Kufurahia mamia ya matoleo, ikiwa ni pamoja na audio yote kwa rununu yako."
+    connections:
+      index:
+        title: "akaunti zilizounganishwa"
   now: "saa hii"
   celebrating 50MM: "Tunasherehekea ufunguaji wa App milioni 50!"
   link: "Liungo"
@@ -42,8 +54,6 @@ sw:
   copy: "Nakili"
   copy confirmed: "Imenakiliwa"
   new note: "noti mpya"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Ujumbe wako umesambazwa."
   share error: "Samahani, kulikuwa na hitilafu katika usambazaji wa ujumbe wako. Tafadhali jaribu tena."
   google plus: "Google +"
@@ -71,7 +81,7 @@ sw:
   my notifications: "simamia taarifa"
   my connections: "Akaunti zilizounganishwa"
   my devices: "Vifaa vilivyounganishwa"
-  language name: "Kiingereza"
+  language name: "Kiswahili"
   sign up: "jiunge"
   have an account: "unayo akaunti tayari?/unaakaunti tayari?"
   no account: "Huna akaunti?"
@@ -566,7 +576,7 @@ sw:
     suggestion html: "Ulimaanisha %{suggestion_link}?"
     all versions: "Yote %{language_name} matoleo"
   donate:
-    donate now: "Toa mchango wako sasa(Marekani)"
+    donate now: "Changia Sasa"
     donate now intl: "au saidia/kuchangia kimataifa"
     promo 1: "Kwa $1 yote utakayotoa unawapa zaidi ya watu 10 uwezo wa kupata Bibilia kwa simu ya rununu yao "
     promo 2: "Na YouVersion, Bibila iko karibu kila wakati. Tazama video yetu."
@@ -574,7 +584,6 @@ sw:
     headline: "Kila mtu anahitaji neno la Mungu"
     subhead: "Unaweza saidia kuweka Bibilia kwenye ncha za vidole za mamilioni"
     copy: "Hebu fikiria kama unaweza kumpa kila mtu katika ulimwengu Biblia bure. Unapotoa kwa YouVersion, unaweza kufanya hivyo tu. Sisi tuko hai wakati ambapo  wengine waliotea tu  - wakati mtu yeyote na simu wanaweza kupata Biblia na kuhisi hadithi za upendo wa Mungu kwetu. Na msaada wako, tunaweza kuendelea kusaidia watu zaidi kutumia muda zaidi katika Maandiko"
-    amount: "Mchango (USD)"
     name: "Jina lako"
     card number: "Namba ya credit kadi"
     card exp date: "Tarehe ya muda kumalizika (MMYY)"

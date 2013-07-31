@@ -1,8 +1,20 @@
 sv:
   social:
-    email: "E-post"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Anslutna konton"
+    connected as: "Du är ansluten till %{connection} som %{username}."
+    remove connection: "Ta bort"
+    connection friends: "Här är några YouVersion-användare du är ansluten till på %{connection}:"
+    errors:
+      no friends: "Ingen av dina vänner på %{connection} finns ännu på YouVerson."
+      reset connection: "Ett fel har tyvärr inträffat. Stäng ner och försök sedan att återansluta."
+    email:
+      name: "E-post"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Din åtkomsttoken har löpt ut för Facebook. Ta bort din anslutning och anslut till Facebook igen."
   api:
     users agree bool: "Du måste acceptera bestämmelser och villkor för att skapa ett konto."
     users confirm password matches: "Det nya lösenordet matchar inte."
@@ -26,6 +38,9 @@ sv:
     mobile:
       title: "Bibelappen"
       description: "Tiotals miljoner använder Bibelappen för att läsa, lyssna, titta och dela Guds Ord och för att göra den till en del av deras liv. Ladda ner den fria appen och komma åt dina bokmärken, anteckningar och läsa planer var än du befinner dig. Njut av hundratals översättningar, inklusive ljud, allt på din mobila enhet."
+    connections:
+      index:
+        title: "Anslutna konton"
   now: "Nu"
   celebrating 50MM: "Firar 50 miljoner installationer!"
   link: "Länk"
@@ -42,8 +57,6 @@ sv:
   copy: "Kopiera"
   copy confirmed: "Kopierad!"
   new note: "Ny anteckning"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Ditt meddelande har delats"
   share error: "Ett fel uppstod när du försökte dela ditt meddelande. Försök igen."
   google plus: "Google+"
@@ -566,7 +579,7 @@ sv:
     suggestion html: "Menar du %{suggestion_link}?"
     all versions: "Alla %{language_name} översättningar"
   donate:
-    donate now: "Donera nu (USA)"
+    donate now: "Donera nu"
     donate now intl: "eller donera internationellt"
     promo 1: "För varje $1 du ger kommer ytterligare 10 personer få tillgång till Bibeln på sina mobiltelefoner."
     promo 2: "Med YouVersion är Bibeln alltid nära. Titta på vår video."
@@ -574,7 +587,10 @@ sv:
     headline: "Alla behöver Guds Ord."
     subhead: "Hjälp människor runt hela värden att komma i kontakt med Bibeln."
     copy: "Tänk om du kunde ge alla i världen en gratis bibel. När du ger till YouVersion kan du göra just det. Vi lever i en tid som andra bara kunnat drömma om &ndash; när någon med en telefon kan komma åt Bibeln och uppleva berättelsen om Guds kärlek till oss. Med ditt stöd kan vi fortsätta att hjälpa fler människor tillbringa mer tid i Skriften."
-    amount: "donationssumma (USD)"
+    amount: "donationssumma"
+    option once: "En gång"
+    option monthly: "Månadsvis"
+    alert empty amount: "Var snäll och uppge donationssumma."
     name: "Ditt namn"
     card number: "Kreditkortsnummer"
     card exp date: "Utgångsdatum (MMÅÅ)"

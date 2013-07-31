@@ -1,8 +1,20 @@
 en-GB:
   social:
-    email: "E-mail"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Connected Accounts"
+    connected as: "You are connected to %{connection} as %{username}."
+    remove connection: "Remove"
+    connection friends: "Here are some YouVersion users you're connected to on %{connection}:"
+    errors:
+      no friends: "None of your %{connection} friends appear to be on YouVersion yet."
+      reset connection: "Sorry, an error has occurred. Please remove and then reconnect this connection."
+    email:
+      name: "E-mail"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Your access token has been expired by Facebook.  Please remove your connection and reconnect to Facebook."
   api:
     users agree bool: "You must agree to the terms and conditions to create an account."
     users confirm password matches: "The new passwords do not match."
@@ -26,6 +38,9 @@ en-GB:
     mobile:
       title: "The Bible App"
       description: "Tens of millions of people are using the Bible App to read, listen to, watch and share God's Word, making it a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
+    connections:
+      index:
+        title: "Connected Accounts"
   now: "Now"
   celebrating 50MM: "Celebrating 50 Million App Installations!"
   link: "Link"
@@ -42,8 +57,6 @@ en-GB:
   copy: "Copy"
   copy confirmed: "Copied!"
   new note: "Create a note"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Your message has been shared."
   share error: "Sorry, there was an error sharing your message. Please try again."
   google plus: "Google +"
@@ -566,7 +579,7 @@ en-GB:
     suggestion html: "Did you mean %{suggestion_link}?"
     all versions: "All %{language_name} versions"
   donate:
-    donate now: "Donate now (USA)"
+    donate now: "Donate Now"
     donate now intl: "or donate internationally"
     promo 1: "For every $1 you give, 10 more people get access to the Bible on their mobile phone."
     promo 2: "With YouVersion, the Bible is always nearby. Watch our video."
@@ -574,7 +587,6 @@ en-GB:
     headline: "Everyone needs God's Word."
     subhead: "Help people around the world have the Bible at their fingertips."
     copy: "Imagine if you could give everyone in the world a free Bible. When you give to YouVersion, you can do just that. We're alive during a time that others have only dreamed of &ndash; when anyone with a phone can access the Bible and experience the story of God's love for us. With your support, we can continue to help more people spend more time in Scripture."
-    amount: "Donation amount (US Dollars)"
     name: "Your name"
     card number: "Credit card number"
     card exp date: "Expiration date (MMYY)"

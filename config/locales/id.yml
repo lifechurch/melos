@@ -1,8 +1,18 @@
 id:
   social:
-    email: "Email"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Akun terkait"
+    connected as: "Anda terhubung dengan %{connection} sebagai %{username}."
+    remove connection: "Hapus"
+    connection friends: "Beberapa pengguna YouVersion yang terhubung dengan anda di %{connection}:"
+    errors:
+      no friends: "Tidak ada teman %{connection} anda yang menggunakan YouVersion."
+      reset connection: "Maaf, terjadi sebuah kesalahan. Silakan tutup dan kemudian hubungkan kembali sambungan ini."
+    email:
+      name: "Email"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Anda harus menyetujui persyaratan dan ketentuan untuk membuat akun."
     users confirm password matches: "Kata sandi yang baru tak sesuai."
@@ -26,6 +36,9 @@ id:
     mobile:
       title: "Aplikasi Alkitab"
       description: "Puluhan juta orang menggunakan Aplikasi Alkitab untuk membaca, mendengarkan, melihat dan berbagi Firman Tuhan, membuat Firman Tuhan bagian kehidupan mereka sehari-hari. Unduh aplikasi gratis ini dan akses penanda buku, catatan, dan rencana bacaan Anda dari manapun. Nikmati ratusan versi, termasuk audio, semua di perangkat seluler Anda."
+    connections:
+      index:
+        title: "Akun terkait"
   now: "Sekarang"
   celebrating 50MM: "Merayakan 50 Juta Instalasi Aplikasi"
   link: "Tautan"
@@ -42,8 +55,6 @@ id:
   copy: "Salin"
   copy confirmed: "Tersalin!"
   new note: "Buat Catatan"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Pesan Anda telah dibagikan."
   share error: "Maaf, terjadi kesalahan saat membagikan pesan Anda. Cobalah kembali."
   google plus: "Google +"
@@ -566,7 +577,7 @@ id:
     suggestion html: "Apakah maksud Anda %{suggestion_link}?"
     all versions: "Semua Versi %{language_name}"
   donate:
-    donate now: "Sumbang Sekarang (US)"
+    donate now: "Sumbang Sekarang"
     donate now intl: "atau menyumbang secara internasional"
     promo 1: "Untuk setiap $1 anda, 10 orang lagi mendapatkan akses ke  Alkitab di ponsel mereka."
     promo 2: "Dengan YouVersion, Alkitab selalu dekat. Tonton video kami."
@@ -574,7 +585,6 @@ id:
     headline: "Setiap orang butuh Firman Tuhan."
     subhead: "Bantulah orang di seluruh dunia memiliki Alkitab dalam genggaman mereka."
     copy: "Bayangkan jika Anda dapat memberikan Alkitab gratis ke semua orang. Saat Anda memberi kepada YouVersion, Anda dapat melakukan hal itu. Kami hidup di saat yang lain hanya bermimpi &ndash; saat setiap orang yang punya ponsel dapat mengakses Alkitab dan mengalami kisah kasih Tuhan bagi kita. Dengan dukungan Anda, kami dapat terus membantu lebih banyak orang meluangkan waktu dalam Firman Tuhan"
-    amount: "Nilai donasi (USD)"
     name: "Nama Anda"
     card number: "Nomor Kartu Kredit"
     card exp date: "Tanggal berakhir (MMYY)"

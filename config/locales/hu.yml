@@ -1,8 +1,18 @@
 hu:
   social:
-    email: "E-mail"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Csatlakoztatott Fiókok"
+    connected as: "Kapcsolódott a / (kapcsolódás) mint / (felhasználónév)."
+    remove connection: "Eltávolítás"
+    connection friends: "Néhány YouVersion felhasználó akihez kapcsolódsz a / (kapcsolódás):"
+    errors:
+      no friends: "A %{connection} barátaid közül még senki sincs jelen a YouVersion-on."
+      reset connection: "Sajnáljuk, hiba történt. Szakítsd meg, majd csatlakozz újra ehhez a kapcsolathoz."
+    email:
+      name: "E-mail"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "El kell fogadnod a feltételeket, hogy létrehozhass egy fiókot,"
     users confirm password matches: "Az új jelszavak nem találnak."
@@ -26,6 +36,9 @@ hu:
     mobile:
       title: "A Biblia alkalmazás"
       description: "Emberek tízmilliói használják a Biblia alkalmazást, hogy olvassák, hallgassák, nézzék és megosszák Isten Igéjét, amit személyes életük részévé tesznek. Töltsd le az ingyenes alkalmazást és bárhonnan hozzáférsz a könyvjelzőkhöz, jegyzetekhez és olvasási tervekhez. Élvezd a több száz fordítást, beleérve az audio verziót is, mindezt a mobil készülékedről."
+    connections:
+      index:
+        title: "Csatlakoztatott Fiókok"
   now: "Most"
   celebrating 50MM: "50 Millió App Feltelepítés Ünneplése"
   link: "Link"
@@ -42,15 +55,13 @@ hu:
   copy: "Másolás"
   copy confirmed: "Másolva!"
   new note: "Új Jegyzet"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Az üzenetedet megosztottuk."
   share error: "Sajnáljuk, egy hiba miatt az üzeneted megosztása nem sikerült. Próbálkozz újra."
   google plus: "Google +"
   connect to: "Kapcsolódj a %{connection} fiókodhoz"
-  connected as user: "You are connected to %{connection} as %{username}."
+  connected as user: "Kapcsolódva %{connection} mint %{username}."
   deleted connection: "Sikeresen megszakítottad a kapcsolatot a / (kapcsolódás)."
-  deleted connection error: "Sajnáljuk hiba történt a megszakított a kapcsolat közben a / (kapcsolódás)."
+  deleted connection error: "Sajnáljuk kapcsolódási hiba történt a %{connection} kapcsolat megszakítása közben. "
   remove connection: "Megszakítás"
   connection users: "Néhány YouVersion felhasználó akihez kapcsolódsz a / (kapcsolódás):"
   connection marketing: "A YouVersion sokkal élvezetesebb együtt a barátokkal.  Linkeld a YouVersion fiókodat a többi  közösségi oldaladhoz és azonnal megtalálod a barátaidat a YouVersion-on. Ha linkeled a fiókjaidat, néhány kattintással meg tudod osztani a tartalmakat. Mi soha semmit nem fogunk postolni a tudomásod nélkül."
@@ -90,7 +101,7 @@ hu:
   registered ago: "%{time_ago} óta regisztrált."
   version header: "Verzió: %{version}"
   bible versions: "Biblia verziók"
-  reader: "Olvasás"
+  reader: "Olvasó"
   lifechurch short url: "LifeChurch.tv"
   about: "Rólunk"
   jobs: "Álláslehetőség"
@@ -395,7 +406,7 @@ hu:
     all: "Mindegyik"
     labels label: "Címkék:"
     title: "Könyvjelzők"
-    not found: "A könyvjelzők gyors referenciát jelentenek a kedvenc verseidhez vagy egy bizonyos könyv utoljára olvasott fejezetéhez. Könyvjelző hozzáadásához válaszd ki s verset a Bibliaolvasóban és kattints a Kiválasztott gombra az olvasó felső részén."
+    not found: "A könyvjelzők gyors hozzáférést jelentenek a kedvenc verseidhez vagy egy bizonyos könyv utoljára olvasott fejezetéhez. Könyvjelző hozzáadásához válaszd ki a verset a Bibliaolvasóban és kattints a Kiválasztott gombra az olvasó felső részén."
     other user not found: "%{username} egy könyvjelzőt se mentett még el."
     creation form errors: "A következő hiba(k) akadályozta(k) meg a könyvjelződ létrehozását:"
     successfully created: "Könyvjelző hozzáadva"
@@ -438,7 +449,7 @@ hu:
     month: "Naptár"
     publisher: "Kiadó"
     success widget title: "Hajtsd végre az olvasási terved nagy részét."
-    success blurb: "Az Olvasási tervek a legjobb eszközei annak, hogy Isten Szava a mindennapjaid részei legyen. De majdnem mindenki "
+    success blurb: "Az Olvasási tervek a legjobb eszközei annak, hogy Isten Szava a mindennapjaid részévé váljon. Ennek ellenére sokan megfeledkeztek erről régen és ma is. Mindennap meghallani azt, amit Isten akar mondani nekünk, a legfontosabb dolog a világon. Éppen ezért összegyűjtöttük nehány tanácsot, ami segíthet lépést tartani. "
     success blog link title: "Olvasd a Blogbejegyzést"
     a users plans: "%{username} tervei"
     you have no plans: "Jelenleg egy olvasási tervre se vagy feliratkozva."
@@ -566,7 +577,7 @@ hu:
     suggestion html: "Így értetted: %{suggestion_link}?"
     all versions: "Összes %{language_name} verzió"
   donate:
-    donate now: "Adományozz Most (US)"
+    donate now: "Adományozz Most"
     donate now intl: "vagy adományozz nemzetközileg"
     promo 1: "Minden adott 1 dollárod után 10 újabb ember fér hozzá a Bibliához mobiltelefonon."
     promo 2: "A YouVersion-nal a Biblia mindig közel van. Nézd meg a videónk."
@@ -574,7 +585,6 @@ hu:
     headline: "Mindenkinek szüksége van Isten Igéjére."
     subhead: "Segíts az embereknek szerte a világon, hogy a Biblia az ujjhegyeiknél lehessen."
     copy: "Képzeld el, milyen lenne, ha a világon mindenkinek tudnál adni egy Bibliát. Pontosan ezt teheted, ha a  YouVersion-nak adsz. Olyan időben élünk, amiről mások csak álmodtak  &ndash; amikor egy telefonnal bárki elérheti a Bibliát és megtapasztalhatja Isten irántunk való szeretetének történetét. Támogatásoddal továbbra is egyre több embernek tudunk segíteni, hogy több időt töltsenek a Szentírással."
-    amount: "Adományozott összeg (USD)"
     name: "Neved"
     card number: "Bankkártya száma"
     card exp date: "Lejárati dátum (HHÉÉ)"

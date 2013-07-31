@@ -1,8 +1,20 @@
 nl:
   social:
-    email: "E-mail"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Verbonden Accounts"
+    connected as: "Je bent verbonden met %{connection} als %{username}."
+    remove connection: "Verwijderen"
+    connection friends: "Dit zijn enkele YouVersion gebruikers waarmee je verbonden bent op %{connection}:"
+    errors:
+      no friends: "Geen van je %{connection} vrienden lijken YouVersion te gebruiken."
+      reset connection: "Sorry, er is een fout opgetreden. Gelieve de verbinding verbreken en te herstellen."
+    email:
+      name: "E-mail"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Jouw toegang token voor Facebook is verlopen. Gelieve jouw connectie te verbreken en de verbinding met Facebook te herstellen."
   api:
     users agree bool: "Je dient akkoord te gaan met de Gebruiksvoorwaarden en het Privacy Beleid om te registreren voor een account."
     users confirm password matches: "De nieuwe wachtwoorden zijn niet aan elkaar gelijk."
@@ -26,6 +38,9 @@ nl:
     mobile:
       title: "De Bijbel App"
       description: "Tientallen millioenen mensen gebruiken de Bible App om Gods Woord een deel van hun leven te maken door te lezen, luisteren, bekijken en het delen ervan. Download de gratis app en krijg toegang op je bladwijzers, notitities en leesplannen vanaf elke plek. Geniet van honderden vertalingen, inclusief audio, alles op je mobiele apparaat."
+    connections:
+      index:
+        title: "Verbonden Accounts"
   now: "Nu"
   celebrating 50MM: "We vieren de 50 miljoenste installatie!"
   link: "Link"
@@ -42,8 +57,6 @@ nl:
   copy: "Kopiëren"
   copy confirmed: "Gekopieerd!"
   new note: "Notitie aanmaken"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Je bericht is gedeeld."
   share error: "Sorry, er ging iets verkeerd tijdens het delen van je bericht. Probeer het nog eens."
   google plus: "Google+"
@@ -566,7 +579,7 @@ nl:
     suggestion html: "Bedoelde je %{suggestion_link}?"
     all versions: "Alle vertalingen in het %{language_name}"
   donate:
-    donate now: "Nu bijdragen (VS)"
+    donate now: "Doneer Nu"
     donate now intl: "of een internationale bijdrage geven"
     promo 1: "Voor elke $1 die je geeft krijgen nog eens 10 mensen toegang tot de Bijbel op hun mobiele telefoon."
     promo 2: "Met YouVersion is de Bijbel altijd in de buurt. Bekijk onze video."
@@ -574,7 +587,10 @@ nl:
     headline: "Iedereen heeft Gods Woord nodig."
     subhead: "Jij kan helpen om miljoenen mensen snelle toegang te geven tot de Bijbel."
     copy: "Stel je voor dat je iedereen in de wereld een gratis bijbel kon geven. Met een donatie aan YouVersion kan je dat doen. We leven in een tijd waar anderen alleen van konden dromen - dat iedereen toegang kan krijgen tot de Bijbel en het verhaal van Gods liefde voor ons kan ervaren. Met jouw steun kunnen we doorgaan om meer mensen te helpen om meer tijd door te brengen in de Schrift."
-    amount: "Te geven bedrag (USD)"
+    amount: "Gift hoeveelheid"
+    option once: "Eenmalig"
+    option monthly: "Maandelijks"
+    alert empty amount: "Gelieve een donatie hoeveelheid in te voeren."
     name: "Je naam"
     card number: "Creditkaartnummer"
     card exp date: "Expiratiedatum (MMJJ)"

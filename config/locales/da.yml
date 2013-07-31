@@ -1,8 +1,20 @@
 da:
   social:
-    email: "Email"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Forbundne konti"
+    connected as: "Du er forbundet til  %{connection} som %{username}."
+    remove connection: "Fjern"
+    connection friends: "Her er nogle YouVersion brugere som du er forbundet til på %{connection}:"
+    errors:
+      no friends: "Ingen af dine %{connection} venner ser ud til at være på YouVersion endnu."
+      reset connection: "Beklager, der skete en fejl. Fjern venligst og så gendan denne forbindelse."
+    email:
+      name: "Email"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Din adgangskode er udløbet fra Facebook. Fjern venligst din forbindelse og gendan forbindelsen til Facebook."
   api:
     users agree bool: "Du må være i vilkår for anvendelse for at oprette en konto."
     users confirm password matches: "Det nye password passer ikke."
@@ -26,6 +38,9 @@ da:
     mobile:
       title: "Bibel App´en"
       description: "Millioner af mennesker bruger Bible App til at læse, lytte til, se og dele Guds Ord, hvilket gør det til en del af deres dagligdag. Hent den gratis app og få adgang til dine bogmærker, noter og læsning planer fra hvor som helst. Nyd hundredvis af versioner, herunder lyd, alle på din mobile enhed."
+    connections:
+      index:
+        title: "Forbundne konti"
   now: "Nu"
   celebrating 50MM: "Fejrer 50 millioner App installationer"
   link: "Link"
@@ -42,8 +57,6 @@ da:
   copy: "Kopi"
   copy confirmed: "Kopieret!"
   new note: "Skriv en note"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Din besked er blevet delt"
   share error: "Beklager, der var en fejl i delingen af din besked. Prøv venligst igen."
   google plus: "Google +"
@@ -566,7 +579,7 @@ da:
     suggestion html: "Mente du %{suggestion_link}?"
     all versions: "Alle %{language_name} versioner"
   donate:
-    donate now: "Doner nu (US)"
+    donate now: "Doner nu"
     donate now intl: "eller doner internationalt"
     promo 1: "For hver $1 du giver, så er der 10 mennesker der får adgang til Bibelen på deres mobil telefon."
     promo 2: "Med YouVersion, er BIbelen altid tæt på. Se vores video."
@@ -574,7 +587,10 @@ da:
     headline: "Alle behøver Gud´s ord."
     subhead: "Hjælp folk i hele verden med at have Bibelen i deres hænder."
     copy: "Forestil dig, hvis du kunne give alle i verden en gratis bibel. Når du giver YouVersion, kan du gøre netop det. Vi er i live i en tid, som andre kun har drømt om - når alle med en telefon kan få adgang til Bibelen og opleve historien om Guds kærlighed til os. Med din støtte kan vi fortsætte med at hjælpe flere mennesker bruger mere tid i Skriften."
-    amount: "Donation´s beløb (USD)"
+    amount: "Donations beløb"
+    option once: "Engangs"
+    option monthly: "Månedlig"
+    alert empty amount: "Indtast venligst en donations beløb"
     name: "Dit navn"
     card number: "Kredit kort nummer"
     card exp date: "Udløbs dato (MMÅÅ)"

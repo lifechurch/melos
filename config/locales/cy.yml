@@ -1,8 +1,21 @@
 cy:
   social:
-    email: "Ebost "
-    twitter: "Trydar"
-    facebook: "Gweplyfr"
+    my connections: "Cyfrifon a Gysylltwyd "
+    connected as: "Ry'ch wedi cysylltu â %{connection} fel %{username}.  "
+    remove connection: "Dileu  "
+    connection friends: "Dyma ddefnyddwyr YouVersion sydd mewn cyswllt â chi %{connection}:"
+    errors:
+      no friends: "Does dim %{connection}gyda’ch ffrindiau ar YouVersion eto."
+    email:
+      name: "Ebost "
+    twitter:
+      name: "Trydar"
+    facebook:
+      name: "Gweplyfr"
+  meta:
+    connections:
+      index:
+        title: "Cyfrifon a Gysylltwyd "
   now: "Nawr "
   celebrating 50MM: "Yn dathlu Gosod yr App 50 Miliwn o weithiau ! "
   link: "Dolen"
@@ -19,8 +32,6 @@ cy:
   copy: "Copi"
   copy confirmed: "Copïwyd!  "
   new note: "Nodyn newydd "
-  twitter: "Trydar"
-  facebook: "Gweplyfr"
   share success: "Mae’ch neges wedi ei rannu.  "
   share error: "Mae’n flin gennym, digwyddodd gwall wrth rannu’ch neges. Rhowch gynnig  arni eto. "
   google plus: "Google +"
@@ -489,7 +500,7 @@ cy:
     suggestion html: "Ai %{suggestion_link} y’ch chi’n olygu?"
     all versions: "Pob%{language_name}Fersiynau "
   donate:
-    donate now: "Cyfrannwch nawr (UDA)"
+    donate now: "Cyfrannwch Nawr "
     donate now intl: "neu cyfrannwch  yn rhyngwladol "
     promo 1: "Am bob cyfraniad o $1, caiff 10 person dderbyn Beibl ar eu ffôn symudol. "
     promo 2: "Gyda YouVersion, mae’r Beibl yn eich ymyl bob amser. Gwyliwch ein fideo."
@@ -497,7 +508,6 @@ cy:
     headline: "Mae angen Gair Duw ar bawb ."
     subhead: "Galluogwch eraill ar draws y byd i dderbyn Beibl ar flaen eu bysedd."
     copy: "Dychmygwch pe bae modd i bawb yn y byd dderbyn Beibl am ddim. Wrth gyfrannu i YouVersion dyna byddwch yn ei wneud. R’yn ni’n byw mewn cyfnod y mae eraill ond wedi ei ddychmygu &ndash; gall pob un sydd â ffôn symudol weld Beibl a phrofi stori cariad Duw. Gyda’ch cefnogaeth, parhawn i helpu mwy o bobl i dreulio mwy o amser yn yr Ysgrythur. "
-    amount: "Cyfanswm y cyfraniad(DUD) "
     name: "Eich enw "
     card number: "Rhif cerdyn credyd "
     card exp date: "Dyddiad terfynu(MMYY)"

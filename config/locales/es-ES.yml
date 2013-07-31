@@ -1,8 +1,20 @@
 es-ES:
   social:
-    email: "Correo"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Cuentas conectadas"
+    connected as: "Te has conectado a %{connection} como %{username}."
+    remove connection: "Eliminar"
+    connection friends: "Aquí están algunos usuarios de YouVersion a los que estás conectado %{connection}:"
+    errors:
+      no friends: "Ninguno de tus amigos %{connection} conectados parece que estén en YouVersion todavía."
+      reset connection: "Perdón, ha ocurrido un error. Por favor desconecta y vuelve a conectar de nuevo."
+    email:
+      name: "Correo electrónico"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Tu sesión de acceso a Facebook ha expirado. Por favor resetea tu conexión a Facebook."
   api:
     users agree bool: "Debes estar de acuerdo con los términos y condiciones para crear una cuenta."
     users confirm password matches: "Las contraseñas nuevas no coinciden."
@@ -26,6 +38,9 @@ es-ES:
     mobile:
       title: "La Biblia App"
       description: "Diez millones de personas están usado la Biblia App para leer, escuchar, visualizar y compartir la Palabra de Dios, haciéndola parte de su vida cotidiana. Descarga gratuitamente la aplicación y accede a tus destacados, notas, y planes de lectura desde cualquier parte. Disfruta de cientos de versiones, incluyendo audio, todo en tu dispositivo móvil."
+    connections:
+      index:
+        title: "Cuentas conectadas"
   now: "Ahora"
   celebrating 50MM: "¡Celebrando 50 millones de instalaciones!"
   link: "Enlace"
@@ -42,8 +57,6 @@ es-ES:
   copy: "Copiar"
   copy confirmed: "¡Copiado!"
   new note: "Nueva Nota"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Tu mensaje ha sido compartido."
   share error: "Lo sentimos, ha habido un error al compartir tu mensaje. Por favor, inténtalo de nuevo."
   google plus: "Google +"
@@ -243,7 +256,7 @@ es-ES:
     my bookmarks: "Mis Marcadores"
     user bookmarks: "Marcadores de %{user}"
     my badges: "Mis insignias"
-    revised date: "Revidado por última vez el %{date}"
+    revised date: "Revisado por última vez el %{date}"
     update email copy: "Introduce una nueva dirección de correo electrónico y haz clic en Actualizar Email. Te enviaremos un enlace para confirmar tu nueva dirección de correo electrónico."
     edit email: "Actualizar dirección de correo electrónico"
     update email check: "Por favor, revisa tu bandeja de entrada y haz clic en el enlace para confirmar tu nueva dirección."
@@ -566,7 +579,7 @@ es-ES:
     suggestion html: "¿Quisiste decir %{suggestion_link}?"
     all versions: "Todas las versiones en %{language_name} "
   donate:
-    donate now: "Donar ahora (EEUU)"
+    donate now: "Haz una donación"
     donate now intl: "o donar internacional"
     promo 1: "Pro cada $1 que das, 10 personas tiene acceso a la Biblia en su teléfono móvil."
     promo 2: "Con YouVersion, la Biblia está siempre cerca. Mira nuestro video."
@@ -574,7 +587,10 @@ es-ES:
     headline: "Todos necesitan la Palabra de Dios."
     subhead: "Ayuda a las personas de todo el mundo a tener la Biblia en sus manos."
     copy: "Imagina si pudieras dar a cada persona en el mundo una Biblia gratis. Cuando donas a YouVersion, puedes hacer exactamente eso. Estamos viviendo en un tiempo que otros tan sólo han soñado; cuando todos con un teléfono móvil pueden acceder a la Biblia y experimentar la historia del amor de Dios por nosotros. Con tu ayuda, podremos continuar ayudando a más personas a pasar más tiempo leyendo la Palabra de Dios."
-    amount: "Cantidad de donación (USD)"
+    amount: "Total de la donación"
+    option once: "Una vez"
+    option monthly: "Mensual"
+    alert empty amount: "Por favor introduzca la cantidad de la donación"
     name: "Tu nombre"
     card number: "Número tarjeta de crédito"
     card exp date: "Fecha de caducidad (MMAA)"
@@ -640,7 +656,7 @@ es-ES:
     h2: "La Palabra de Dios está contigo."
     h3: "YouVersion es Global"
     h3 sub: "Disponible en más de 100 idiomas alrededor del mundo."
-    main: "Decenas de millones de personas están usando la Biblia App&trade para hacer que la Palabra de Dios sea parte de sus vidas diarias. Descarga la aplicación gratuita y accede a tus marcadores, notas, y planes de lectura en cualquier lugar. Disfruta de cientos de versiones, incluyendo audio Biblia, todo en tu dispositivo móvil."
+    main: "Decenas de millones de personas están usando la Biblia App&trade; para hacer que la Palabra de Dios sea parte de sus vidas diarias. Descarga la aplicación gratuita y accede a tus marcadores, notas, y planes de lectura en cualquier lugar. Disfruta de cientos de versiones, incluyendo audio Biblia, todo en tu dispositivo móvil."
     button h4: "Ir a youversion.com/download"
     button h4 sub: "En tu dispositivo móvil"
     download now: "Descarga la Biblia App ahora"
@@ -739,7 +755,7 @@ es-ES:
       logo: "YouVersion: La aplicación de la Biblia"
       tagline: "Arranca con <em>100 milliones</em>"
       intro: "¿Alcanzará la Biblia App las 100 millones de instalaciones antes de su 5to aniversario el 10 de julio? ¡Sólo con tu ayuda!"
-      after: "Gracias a ti, la Biblia App alcanzará las 100 millones de instalaciones en nuestro 5to  aniversario el 10 de julio. Gracias!"
+      after: "Gracias a ti, la Biblia App alcanzará las 100 millones de instalaciones en nuestro 5º  aniversario el 10 de julio. ¡Gracias!"
       share:
         with friends: "Comparte con tus amigos"
         fb:
@@ -755,8 +771,8 @@ es-ES:
         p2: "¿Pero aún más grande? Con tu ayuda, será el día en que la Biblia App alcanzará las 100 millones de descargas."
         p3: "Hemos aprendido que Dios usa hitos como éste para impulsar un crecimiento aún mayor."
         p4: "Hagamos historia juntos."
-        after p1: "YouVersion representa una coalición mundial de personas con pasión por ayudar a los demás a comprometerse con la Palabra de Dios. A todas las Sociedades Bíblicas y Editores, iglesias, pastores y voluntarios: gracias por vuestra generosidad!"
-        after p2: "Lo más emocionante de este hito es lo que representa: hoy en día la gente está interactuando con la Biblia a una escala sin precedentes.  Es impresionante lo que Dios está haciendo. Y creemos que es sólo el principio <em>Comenzamos con 100 millones</em>."
+        after p1: "YouVersion representa una agrupación mundial de personas con pasión por ayudar a los demás a comprometerse con la Palabra de Dios. A todas las Sociedades Bíblicas y Editores, iglesias, pastores y voluntarios: ¡gracias por vuestra generosidad!"
+        after p2: "Lo más emocionante de este hito es lo que representa: hoy en día la gente está interactuando con la Biblia a una escala sin precedentes. Es impresionante lo que Dios está haciendo. Y creemos que es sólo el principio <em>Comenzamos con 100 millones</em>."
       ad:
         title: "La Biblia App es completamente gratuita y una gran manera de explorar la Biblia."
         copy: "Lee, escucha, visualiza, comparte. Obtén Bible App para tu smartphone o tablet: <a href='http://bible.com/app'>Descargar ahora</a>"

@@ -1,8 +1,18 @@
 es:
   social:
-    email: "Email"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Cuentas Conectadas"
+    connected as: "Está conectado a %{connection} como %{username}."
+    remove connection: "Eliminar"
+    connection friends: " Estos son algunos usuarios de YouVersion a los que está conectado en %{connection}:"
+    errors:
+      no friends: "Aparentemente ninguno de sus amigos de %{connection} está conectado a YouVersion aún."
+      reset connection: "Lo sentimos, ha ocurrido un error. Por favor, retire y vuelva a conectar esta conexión."
+    email:
+      name: "Email"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Para crear una cuenta debe estar de acuerdo con los terminos y condiciones."
     users confirm password matches: "Las nuevas contrasenas no coinciden."
@@ -26,6 +36,9 @@ es:
     mobile:
       title: "La Biblia App"
       description: "Decenas de millones de personas utilizan la Biblia App para leer, escuchar, ver y compartir la Palabra de Dios, haciéndola parte de sus vidas diarias.  Descargue la App gratuita y acceda a sus marcadores, notas, y planes de lectura desde cualquier lugar.  Disfrute cientos de versiones, incluyendo audio, todo desde su dispositivo móvil."
+    connections:
+      index:
+        title: "Cuentas Conectadas"
   now: "Ahora"
   celebrating 50MM: "¡Celebrando 50 millones de instalaciones!"
   link: "Enlace"
@@ -42,8 +55,6 @@ es:
   copy: "Copiar"
   copy confirmed: "¡Copiado!"
   new note: "Crear Nueva Nota"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Su mensaje ha sido compartido."
   share error: "Lo sentimos, hubo un error al compartir su mensaje. Por favor, inténtelo de nuevo."
   google plus: "Google +"
@@ -566,7 +577,7 @@ es:
     suggestion html: "Quiso usted decir %{suggestion_link}?"
     all versions: "Todas las Versiones en %{language_name}"
   donate:
-    donate now: "Done ahora (EEUU)"
+    donate now: "Donar ahora  (EEUU)"
     donate now intl: "o donar internacionalmente"
     promo 1: "Por cada $1 que usted done, 10 personas más tendrán acceso a la Biblia en sus teléfonos móviles."
     promo 2: "Con YouVersion, la Biblia siempre está cerca. Mire nuestro video."
@@ -574,7 +585,7 @@ es:
     headline: "Todos necesitan la Palabra de Dios."
     subhead: "Ayude a personas de todo el mundo a tener la Biblia en sus manos."
     copy: "Imagínese poder darle una Biblia gratis a cada persona en el mundo. Cuando usted da YouVersion, hace precisamente eso. Vivimos en un tiempo con el que otros soñaron &andash; cuando cualquiera que tenga un teléfono puede tener acceso a la Biblia y experimentar la historia del amor de Dios por nosotros. Con su apoyo podemos continuar ayudando a más gente a pasar más tiempo en las Escrituras."
-    amount: "Monto de la donación (USD)"
+    option monthly: "Mensual"
     name: "Su Nombre"
     card number: "Número de tarjeta de crédito"
     card exp date: "Fecha de Expiración (MMYY)"

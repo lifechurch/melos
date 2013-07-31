@@ -1,8 +1,20 @@
 fi:
   social:
-    email: "Sähköposti"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Yhdistetyt tilit"
+    connected as: "Sinut on yhdistetty kohteeseen %{connection} käyttäjänimellä %{username}."
+    remove connection: "Poista"
+    connection friends: "Tässä muutama YouVersion-käyttäjä, joihin olet yhteydessä kohteen %{connection} kautta:"
+    errors:
+      no friends: "Kukaan %{connection}-kavereistasi ei ole vielä YouVersionissa."
+      reset connection: "Tapahtui virhe. Ole hyvä ja poista tämä yhteys ja luo se sitten uudelleen."
+    email:
+      name: "Sähköposti"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Pääsytunnuksesi Facebookiin on vanhentunut. Poista yhteys Facebookiin ja luo yhteys uudelleen."
   api:
     users agree bool: "Sinun täytyy hyväksyä käyttöehdot rekisteröityäksesi."
     users confirm password matches: "Salasanat eivät täsmää."
@@ -26,6 +38,9 @@ fi:
     mobile:
       title: "Raamattusovellus"
       description: "Kymmenet miljoonat ihmiset käyttävät Raamattusovellusta lukeakseen, kuunnellakseen, katsoakseen ja jakaakseen Jumalan sanaa, tehden sen osaksi jokapäiväistä elämäänsä. Lataa ilmainen sovellus ja näet kirjanmerkkisi, muistiinpanosi ja lukusuunnitelmasi missä tahansa. Nauti sadoista raamatunkäännöksistä sekä ääniraamatuista – kaikki tämä mobiililaitteessasi."
+    connections:
+      index:
+        title: "Yhdistetyt tilit"
   now: "Nyt"
   celebrating 50MM: "Juhlimme 50 miljoonatta asennettua sovellusta!"
   link: "Linkki"
@@ -42,8 +57,6 @@ fi:
   copy: "Kopio"
   copy confirmed: "Kopioitu!"
   new note: "Luo uusi muistiinpano"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Viestisi on jaettu."
   share error: "Viestisi jakamisessa on tapahtunut virhe. Ole hyvä ja yritä uudelleen."
   google plus: "Google +"
@@ -566,7 +579,7 @@ fi:
     suggestion html: "Tarkoititko %{suggestion_link}?"
     all versions: "Kaikki käännökset kielellä %{language_name}"
   donate:
-    donate now: "Lahjoita nyt (Yhdysvallat)"
+    donate now: "Tee lahjoitus"
     donate now intl: "tai lahjoita kansainvälisesti"
     promo 1: "Jokaista antamaasi dollaria kohden 10 ihmistä saa matkapuhelimeensa pääsyn Raamattuun."
     promo 2: "YouVersionin avulla Raamattu on aina lähettyvillä. Katso video."
@@ -574,7 +587,10 @@ fi:
     headline: "Jokainen tarvitsee Jumalan sanaa."
     subhead: "Auta ihmisiä ympäri maailman saamaan Raamattu kättensä ulottuville."
     copy: "Kuvittele, että voisit antaa jokaiselle ihmiselle ilmaisen Raamatun. Lahjoittamalla YouVersionille se on mahdollista. Elämme ajassa, josta muut ovat voineet vain unelmoida &ndash; jokaisella matkapuhelimen käyttäjällä on mahdollisuus lukea Raamattua ja kokea sanoma Jumalan rakkaudesta meitä kohtaan. Tukesi avulla voimme jatkaa työtä auttaaksemme yhä useampia ihmisiä viettämään enemmän aikaa Sanan äärellä."
-    amount: "Lahjoitussumma (USD)"
+    amount: "Lahjoitussumma"
+    option once: "Ei toistoa"
+    option monthly: "Kuukausittain"
+    alert empty amount: "Ole hyvä ja syötä lahjoitussumma."
     name: "Nimesi"
     card number: "Luottokortin numero"
     card exp date: "Voimassaoloaika (KKVV)"

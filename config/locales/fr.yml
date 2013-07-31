@@ -1,8 +1,20 @@
 fr:
   social:
-    email: "Email"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Comptes liés"
+    connected as: "Vous êtes connectés à %{connection} en tant que %{username}."
+    remove connection: "Supprimer"
+    connection friends: "Les utilisateurs de YouVersion auxquels vous êtes connectés sur %{connection}:"
+    errors:
+      no friends: "aucun de vos %{relations} amis ne semblent encore être sur YouVersion."
+      reset connection: "Désolé, une erreur est survenue! Merci de vous déconnecter et vous reconnecter à nouveau."
+    email:
+      name: "Email"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Votre lien d'accès par Facebook a expiré. Déconnectez-vous avant de vous reconnecter à Facebook."
   api:
     users agree bool: "Vous devez accepter les conditions pour créer un compte."
     users confirm password matches: "Les mots de passe ne correspondent pas."
@@ -26,6 +38,9 @@ fr:
     mobile:
       title: "La Bible App"
       description: "Des dizaines de millions de personnes utilisent la Bible App pour lire, écouter, regarder et partager la Parole de Dieu, l'incluant ainsi dans leur quotidien. Téléchargez l'application gratuite et accédez à vos favoris, notes et plans de lecture où que vous soyez. Profitez des centaines de versions disponibles, y compris des versions audio, le tout à partir de votre appareil mobile."
+    connections:
+      index:
+        title: "Comptes liés"
   now: "Maintenant"
   celebrating 50MM: "Célébration des 50 millions d'installations de cette app!"
   link: "Lien"
@@ -42,8 +57,6 @@ fr:
   copy: "Copier"
   copy confirmed: "Copié!"
   new note: "Nouvelle note"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Votre message a été partagé."
   share error: "Désolé, une erreur s'est produite lors du partage de votre message. Veuillez réessayer."
   google plus: "Google +"
@@ -540,13 +553,13 @@ fr:
       username: "Saisissez votre nom d'utilisateur"
       password: "Saisissez votre mot de passe"
     with email: "S'inscrire en utilisant votre adresse email"
-    with facebook: "Se connecter avec Facebook"
+    with facebook: "Se connecter via Facebook"
     benefits title: "Vivez Pleinement l'Expérience"
     benefits blurb: "Créer un compte YouVersion vous donne accès à une panoplie d'options telles que les favoris et les notes. Elles s'afficheront sur tout appareil sur lequel vous êtes connecté(e). Un compte vous permet également de partager la Bible avec vos amis. Prenez une minute et pour vous inscrire!"
     plan blurb: "Disposé à entamer un plan de lecture? Astucieux!  Les plans vous aident à intégrer la Bible dans votre quotidien. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous, puis laissez-vous conduire!"
     bookmark blurb: "Besoin d'utiliser la fonction \"favoris\"? Excellente idée! Elle permet de noter les versets que vous voulez mémoriser, partager ou les marquer. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous, puis commencez!"
     friends blurb: "Envie d'échanger avec des amis? Excellent! Vous pourrez partager vos expériences et vous entraider pour atteindre vos objectifs de lecture. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous, et jetez-vous à l'eau!"
-    share blurb: "Il semble que vous vouliez partager des versets. Formidable ! Vous allez pouvoir partager des versets via Facebook ou Twitter. Connectez-vous ou créez un compte ci-dessous pour démarrer !"
+    share blurb: "Il semble que vous vouliez partager des versets. Formidable ! Vous allez pouvoir le faire via Facebook ou Twitter. Connectez-vous ou créez un compte ci-dessous pour démarrer !"
     highlight blurb: "Vous voulez suligner ce passage? Bonne idée! Surligner peut vous aider à organiser et garder le fil des vos passages préférés. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous, puis commencez!"
     note blurb: "Vous voulez prendre des notes sur ce passage? Bonne idée! Les notes vous aident à organiser et vous remémorer les révélations que vous avez dans la Parole. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous et lancez-vous!"
   audio:
@@ -566,7 +579,7 @@ fr:
     suggestion html: "Vous vouliez %{suggestion_link}?"
     all versions: "Toutes les traductions en %{language_name}"
   donate:
-    donate now: "Faire un don maintenant (USA)"
+    donate now: "Faire un don maintenant"
     donate now intl: "ou faire un don au niveau international"
     promo 1: "Pour chaque dollar donné,10 personnes supplémentaires auront accès à la Bible sur leur téléphone portable."
     promo 2: "Avec YouVersion, la Bible est toujours à portée de main. Regardez notre vidéo."
@@ -574,7 +587,10 @@ fr:
     headline: "Tout le monde a besoin de la Parole de Dieu."
     subhead: "Permettez à des millions de personnes sur la planète de manipuler la Bible du bout des doigts."
     copy: "Imaginez-vous en train d'offrir une Bible à chaque personne sur terre. Eh bien, faire un don à YouVersion équivaut à ça. Nous vivons à une époque dont d'autres n'ont fait que rêver; où quiconque avec un téléphone a accès à la Bible pour expérimenter l'histoire d'amour de Dieu pour nous. Grâce à votre soutien, nous permettrons à beaucoup plus de personnes de passer plus de temps dans les Écritures."
-    amount: "Montant du don (US Dollars)"
+    amount: "Montant du don "
+    option once: "Une fois"
+    option monthly: "Mensuel"
+    alert empty amount: "Entrer le montant du don"
     name: "Votre nom"
     card number: "Numéro de carte de crédit"
     card exp date: "Date d'expiration (MMAA)"
@@ -619,7 +635,7 @@ fr:
     facebook: "YouVersion sur Facebook"
     twitter: "YouVersion sur Twitter"
     support: "Besoin d'aide avec YouVersion?"
-    lead copy: "Basée sur la Bibe en ligne, YouVersion.com, la Bible App est une Bible nomade et gratuite qui peut s'installer quasiment sur tout téléphone. La Bible App permet aux utilisateurs de lire la Bible de partager des versets avec leurs réseaux sociaux, marquer leurs passages favoris, et bien plus encore! Le tout dans un format en phase avec leur mode de vie toujours en mouvement."
+    lead copy: "Basée sur la Bibe en ligne, YouVersion.com, la Bible App est une Bible nomade et gratuite qui peut s'installer quasiment sur tout téléphone. La Bible App permet aux utilisateurs de lire la Bible de partager des versets sur leurs réseaux sociaux, marquer leurs passages favoris, et bien plus encore! Le tout dans un format en phase avec leur mode de vie toujours en mouvement."
     resources title: "Revue de presse"
     now title: "Actuel dans la communauté YouVersion"
     resources:

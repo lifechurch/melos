@@ -1,8 +1,18 @@
 sk:
   social:
-    email: "Email"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Prepojené účty"
+    connected as: "Ste pripojený k službe %{connection} ako %{username}."
+    remove connection: "Odstrániť"
+    connection friends: "Tu sú niektorí používatelia YouVersion, ktorých máte pridaných v službe %{connection}:"
+    errors:
+      no friends: "Žiadny z vašich %{connection} priateľov ešte nie je zaregistrovaný na YouVersion."
+      reset connection: "Prepáčte, vyskytla sa chyba. Prosím odstráňte toto pripojenie a znova ho pridajte."
+    email:
+      name: "E-mail"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Na vytvorenie účtu musíte súhlasiť s podmienkami používania."
     users confirm password matches: "Zadané nové heslá sa nezhodujú."
@@ -26,6 +36,9 @@ sk:
     mobile:
       title: "Aplikácia Biblia"
       description: "Desiatky miliónov ľudí používajú aplikáciu Biblia na čítanie, počúvanie, sledovanie a zdieľanie Božieho Slova, čím sa stáva súčasťou ich každodenného života. Stiahnite si túto bezplatnú aplikáciu a získajte prístup k vašim záložkám a plánom čítania odvšadiaľ. Využite stovky prekladov vrátane audio nahrávok priamo na vašom mobilnom zariadení."
+    connections:
+      index:
+        title: "Prepojené účty"
   now: "Teraz"
   celebrating 50MM: "Oslavujeme 50 miliónov inštalacií našej aplikácie!"
   link: "Odkaz"
@@ -42,8 +55,6 @@ sk:
   copy: "Kopírovať"
   copy confirmed: "Skopírované!"
   new note: "Vytvoriť poznámku"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Vaša správa bola zdieľaná."
   share error: "Prepáčte, nepodarilo sa zdieľať vašu správu. Prosím, skúste znova."
   google plus: "Google+"
@@ -566,7 +577,7 @@ sk:
     suggestion html: "Mysleli ste %{suggestion_link}?"
     all versions: "Všetky preklady v jazyku %{language_name}"
   donate:
-    donate now: "Prispejte teraz (len z USA)"
+    donate now: "Prispejte teraz"
     donate now intl: "Prispejte z ostatných krajín"
     promo 1: "Za každý dolár, ktorý venujete, získa 10 ľudí prístup k Biblii na ich mobile."
     promo 2: "S YouVersion je Biblia vždy nablízku. Pozrite si naše video."
@@ -574,7 +585,7 @@ sk:
     headline: "Každý potrebuje Božie Slovo."
     subhead: "Pomôžte ľuďom z celého sveta, aby mohli mať Bibliu na dosah."
     copy: "Predstavte si, že by ste mohli darovať každému človeku na svete Bibliu. Keď venujete príspevok YouVersion, urobíte presne to. Žijeme v čase, o ktorom iní iba snívali &ndash; keď každý, kto má telefón, môže mať prístup k Biblii a zažiť príbeh Božej lásky pre nás. S vašou podporou môžeme pokračovať pomáhať viac ľuďom tráviť viac času s Písmom."
-    amount: "Suma príspevku (USD)"
+    option monthly: "Mesačne"
     name: "Vaše meno"
     card number: "Číslo kreditnej karty"
     card exp date: "Dátum expirácie (MMRR)"

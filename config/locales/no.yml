@@ -1,8 +1,18 @@
 "no":
   social:
-    email: "E-post"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Tilknyttede kontoer"
+    connected as: "Du er koblet til %{connection} som %{username}."
+    remove connection: "Fjern"
+    connection friends: "Her er noen YouVersion-brukere du er koblet til på %{connection}:"
+    errors:
+      no friends: "Ingen av dine %{connection} venner ser ut til å være på YouVersion enda."
+      reset connection: "Noe gikk galt. Kople fra for så å kople til igjen."
+    email:
+      name: "E-post"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
   api:
     users agree bool: "Du må godta brukervilkårene før du registrerer deg."
     users confirm password matches: "Passordene samsvarer ikke"
@@ -26,6 +36,9 @@
     mobile:
       title: "Bibel-appen"
       description: "Flere titalls millioner mennesker bruker Bibel-appen til å lese, lytte til, se på og dele Guds ord, slik at Bibelen blir en del av deres hverdagsliv. Last ned appen gratis og få tilgang til dine bokmerker, notater og leseplater uansett hvor du befinner deg. Få tilgang til hundrevis av bibeloversettelser, inkludert lydbibler, på din mobile enhet."
+    connections:
+      index:
+        title: "Tilknyttede kontoer"
   now: "Nå"
   celebrating 50MM: "Vi feirer 50 millioner Bibel-app-installasjoner!"
   link: "Lenke"
@@ -42,8 +55,6 @@
   copy: "Kopier"
   copy confirmed: "Kopiert!"
   new note: "Nytt notat"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Meldingen din har blitt delt."
   share error: "Det skjedde en feil ved deling av meldingen din. Vennligst prøv igjen."
   google plus: "Google +"
@@ -566,7 +577,7 @@
     suggestion html: "Mente du %{suggestion_link}?"
     all versions: "Alle %{language_name} oversettelser"
   donate:
-    donate now: "Gi nå (USA)"
+    donate now: "Gi nå"
     donate now intl: "eller gi internasjonalt"
     promo 1: "For hver 1$ du gir vil 10 personer få tilgang til Bibelen på sin mobiltelefon."
     promo 2: "Med YouVersion er Bibelen alltid i nærheten. Se vår video."
@@ -574,7 +585,6 @@
     headline: "Alle trenger Guds ord."
     subhead: "Hjelp mennesker i hele verden å komme i kontakt med Bibelen."
     copy: "Tenk deg at du kunne gi alle i hele verden en gratis bibel. Når du gir til YouVersion, kan du akkurat det. Vi lever i en tid som folk tidligere bare kunne drømme om &ndash; en tid når alle som har en telefon kan få tilgang til Bibelen  og oppleve fortellingen om Guds kjærlighet til oss. Med din støtte kan vi fortsette å hjelpe flere mennesker til å bruke mer tid på Skriften."
-    amount: "Gavebeløp (USD)"
     name: "Ditt navn"
     card number: "Kredittkortnummer"
     card exp date: "Utløpsdato (MMÅÅ)"

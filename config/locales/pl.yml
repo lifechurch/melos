@@ -1,8 +1,20 @@
 pl:
   social:
-    email: "Email"
-    twitter: "Twitter"
-    facebook: "Facebook"
+    my connections: "Połączone konta"
+    connected as: "Jesteś podłączony do serwisu %{connection} jako %{username}."
+    remove connection: "Usuń"
+    connection friends: "Użytkownicy YouVersion, z którymi jesteś połączony w serwisie %{connection}:"
+    errors:
+      no friends: "Wydaje się, że żaden z Twoich %{connection} znajomych nie zarejestrował się jeszcze w YouVersion."
+      reset connection: "Niestety, wystąpił błąd. Prosimy usuń i podłącz ponownie to połączenie."
+    email:
+      name: "Email"
+    twitter:
+      name: "Twitter"
+    facebook:
+      name: "Facebook"
+      errors:
+        expired access: "Twój token dostępu Facebooka utracił ważność. Usuń swoje połączenie z Facebookiem i połącz konto ponownie."
   api:
     users agree bool: "Musisz zaakceptować warunki regulaminu, aby utworzyć konto."
     users confirm password matches: "Nowe hasło nie jest zgodne."
@@ -26,6 +38,9 @@ pl:
     mobile:
       title: "Aplikacja Biblii"
       description: "Dziesiątki milionów ludzi używają Aplikacji Biblii do czytania, słuchania, oglądania i udostępniania Słowa Bożego, czyniąc je częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania z dowolnego miejsca. Ciesz się setkami przekładów i wersjami audio - dostępnymi na twoim urządzeniu."
+    connections:
+      index:
+        title: "Połączone konta"
   now: "Teraz"
   celebrating 50MM: "Świętujemy 50 milionów instalacji aplikacji!"
   link: "Odnośnik"
@@ -42,8 +57,6 @@ pl:
   copy: "Kopiuj"
   copy confirmed: "Skopiowane!"
   new note: "Nowa notatka"
-  twitter: "Twitter"
-  facebook: "Facebook"
   share success: "Twoja wiadomość została udostępniona."
   share error: "Wystąpił błąd podczas udostępniania twojej wiadomości. Prosimy spróbuj ponownie."
   google plus: "Google +"
@@ -566,7 +579,7 @@ pl:
     suggestion html: "Czy chodziło ci o %{suggestion_link}?"
     all versions: "Wszystkie przekłady języka: %{language_name}"
   donate:
-    donate now: "Przekaż dotację (USA)"
+    donate now: "Przekaż dotację teraz"
     donate now intl: "lub dotuj z zagranicy"
     promo 1: "Każdy ofiarowany dolar umożliwia dziesięciu kolejnym osobom uzyskanie dostępu do Biblii na ich telefonach."
     promo 2: "Dzięki YouVersion Biblia jest zawsze blisko. Obejrzyj nasz filmik."
@@ -574,7 +587,10 @@ pl:
     headline: "Każdy potrzebuje Bożego Słowa."
     subhead: "Pomóż włożyć Biblię w ręce ludzi na całym świecie."
     copy: "Wyobraź sobie, że mógłbyś dać każdemu człowiekowi na świecie bezpłatną Biblię. Przekazując dotację dla YouVersion możesz zrobić właśnie coś takiego. Żyjemy w czasach, o jakich inni jedynie marzyli &ndash; gdy każdy użytkownik telefonu może mieć dostęp do Biblii i doświadczać miłości Boga. Dzięki twojemu wsparciu, możemy pomóc większej liczbie ludzi spędzić więcej czasu z Pismem."
-    amount: "Wysokość dotacji (USD)"
+    amount: "Wysokość dotacji"
+    option once: "Jednorazowo"
+    option monthly: "Miesięcznie"
+    alert empty amount: "Proszę wprowadzić wysokość dotacji."
     name: "Twoje imię i nazwisko"
     card number: "Numer karty kredytowej"
     card exp date: "Data ważności (MMRR)"
