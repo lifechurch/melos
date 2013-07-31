@@ -1,10 +1,11 @@
 cs:
   social:
+
     share: "Sdílet"
     my connections: "Připojené účty"
     connected as: "Jste připojen/a ke službě %{connection} jako %{username}"
-    remove connection: "Odstranit toto propojení"
-    connection friends: "Zde jsou někteří YouVersion uživatelé, se kterými jste ve spojení přes %{connection}:"
+    remove connection: "Odstranit"
+    connection friends: "Zde jsou někteří YouVersion uživatelé, s kterými jste spojen/a na %{connection}u:"
     errors:
       no friends: "Žádný z vašich %{connection} přátel ještě není zaregistrovaný na YouVersion."
       reset connection: "Promiňte, vyskytla se chyba. Prosím deaktivujte toto připojení a znovu ho připojte."
@@ -14,6 +15,7 @@ cs:
       name: "Twitter"
     facebook:
       name: "Facebook"
+
       errors:
         expired access: "Vaše přihlášení přes Facebook vypršelo. Prosím odstraňte připojení a připojte se znovu na Facebook."
   api:

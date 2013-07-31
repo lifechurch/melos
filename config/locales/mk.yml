@@ -3,6 +3,7 @@ mk:
     share: "Сподели"
     my connections: "Поврзани профили"
     connected as: "Поврзани сте со %{connection} како %{username}."
+    remove connection: "Отстрани"
     connection friends: "Еве неколку YouVersion корисници со кои си поврзан на %{connection}."
     errors:
       no friends: "Никој од твоите %{connection} пријатели не е на YouVersion."

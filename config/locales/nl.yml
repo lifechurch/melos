@@ -3,7 +3,7 @@ nl:
     share: "Deel"
     my connections: "Verbonden Accounts"
     connected as: "Je bent verbonden met %{connection} als %{username}."
-    remove connection: "Verwijder deze connectie"
+    remove connection: "Verwijderen"
     connection friends: "Dit zijn enkele YouVersion gebruikers waarmee je verbonden bent op %{connection}:"
     errors:
       no friends: "Geen van je %{connection} vrienden lijken YouVersion te gebruiken."

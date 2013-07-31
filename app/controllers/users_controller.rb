@@ -67,37 +67,6 @@ class UsersController < ApplicationController
     render layout: "application"
   end
 
-<<<<<<< HEAD
-=======
-  def confirm
-    @selected = :email
-    @user = User.confirm(params[:hash])
-
-    if @user.errors.blank?
-      sign_in @user
-      flash.now[:notice] = t("users.account confirmed")
-    end
-    self.sidebar_presenter = Presenter::Sidebar::Default.new
-  end
-
-  def confirmed
-    begin
-      user = User.authenticate(params[:username], params[:password])
-    rescue AuthError
-      user = false
-    end
-
-    if user
-      sign_in user
-      redirect_to sign_up_success_path
-    else
-      flash.now[:error] = t("invalid password")
-      render action: "confirm", layout: "application"
-    end
-  end
-
-
->>>>>>> Catch and handle FB auth error for expired keys and present to the user, connections refactoring and optimization.
 
   def new_facebook
     facebook_auth = JSON.parse cookies.signed[:facebook_auth]
@@ -237,7 +206,6 @@ class UsersController < ApplicationController
     render action: "resend_confirmation", layout: "application"
   end
 
-<<<<<<< HEAD
   # Email address management
   # TODO: move to its own controller and resource
 
@@ -262,12 +230,10 @@ class UsersController < ApplicationController
       end
     end
 
-=======
   def devices
     @devices = @user.devices
     @selected = :devices
   end
->>>>>>> Catch and handle FB auth error for expired keys and present to the user, connections refactoring and optimization.
 
   # Change password
   # TODO: move to own controller / resource

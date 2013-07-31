@@ -3,6 +3,7 @@ mn:
     share: "Share"
     my connections: "Холбогдсон Дансууд"
     connected as: "%{username} хэрэглэгчийн нэрээр %{connection} тэй холбогдсон байна."
+    remove connection: "Устгах "
     connection friends: "YouVersion хэрэглэчтэй %{connection} ээр холбогтой"
     errors:
       no friends: "Одоогоор таны %{connection} найзууд YouVersion-д бүртгэгдээгүй байна."
