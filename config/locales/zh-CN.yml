@@ -7,7 +7,7 @@ zh-CN:
     connection friends: "这是一些在 %{connection} 上与您有连接的YouVersion 用户："
     errors:
       no friends: "您在 %{connection}上 的朋友现在不在 YouVersion 上。"
-      reset connection: "很抱歉，出错了！请解除并重新连接！"
+      reset connection: "很抱歉，出错了！请移除这个连接然后重新连接！"
     email:
       name: "电子邮件"
     twitter:

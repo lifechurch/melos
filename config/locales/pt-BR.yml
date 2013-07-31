@@ -7,7 +7,7 @@ pt-BR:
     connection friends: "Aqui estão alguns usuários YouVersion aos quais você está conectado %{connection}:"
     errors:
       no friends: "Nenhum dos seus amigos do %{connection} parecem fazer parte do YouVersion ainda."
-      reset connection: "Desculpe, ocorreu um erro. Por favor remova e então refaça esta conexão. "
+      reset connection: "Desculpe, ocorreu um erro. Por favor desconecte a conexão e tente novamente. "
     email:
       name: "E-mail"
     twitter:
