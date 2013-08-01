@@ -25,9 +25,9 @@
           %input.references{name: "highlight[references]", type: "hidden"}
           %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
           %div.color_picker_list
-            %a.color_picker{href:"#"}
-            %a.color_picker_holder{href:"#"}
             %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
+            %button.color.color_picker
+            %div.color_picker_holder
             %span.ajax_me{"data-ajax" => colors_highlights_path, "data-dup" => "#dup_mobile_highlights"}
           %div.clear
 

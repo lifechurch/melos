@@ -40,9 +40,9 @@ class Highlight < YouVersion::Resource
   end
 
   def before_save
-    self.reference = Reference.new(self.reference) unless self.reference.is_a? Reference
+    ref = self.reference.is_a?(Reference) ? self.reference : Reference.new(self.reference) # self.reference could be a string
     self.attributes.version_id = self.reference.version
-    self.reference = self.reference.to_usfm
+    self.reference = ref.to_usfm
   end
 
   def self.for_reference(reference, params = {})
