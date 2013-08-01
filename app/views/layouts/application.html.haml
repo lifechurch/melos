@@ -114,6 +114,9 @@
         #nav_mobile.mobile{role:"navigation"}
           %nav
             %ul
+              %li#nav_mobile_home{class: highlight.call(is_bible_url)}
+                %a.icon{href:'/bible'}
+                  %span= t('bible')
               %li#nav_mobile_bible{class: highlight.call(is_bible_url)}
                 %a.icon{href:'/bible'}
                   %span= t('bible')
