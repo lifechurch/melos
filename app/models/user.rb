@@ -75,7 +75,6 @@ class User < YouVersion::Resource
   class << self
     def register(opts = {})
       opts = {email: "", username: "", password: "", verified: false, agree: false}.merge!(opts.symbolize_keys)
-      opts[:token] = YouVersion::Resource.persist_token(opts[:username],opts[:password])
       opts[:agree] = true if opts[:agree]
       opts[:secure] = true
       opts["notification_settings[newsletter][email]"] = true
@@ -159,7 +158,7 @@ class User < YouVersion::Resource
     end
 
     def destroy(auth, &block)
-      response = post(delete_path, {token: persist_token(auth.username, auth.password), auth: auth}, &block)
+      response = post(delete_path, {auth: auth}, &block)
     end
 
   end
@@ -172,13 +171,8 @@ class User < YouVersion::Resource
     after_build
   end
 
-  def persist_token
-    self.class.persist_token(self.username, self.password)
-  end
-
   def before_save
     # opts = {"email" => "", "username" =>  "", "password" =>  "", "verified" => false, "agree" => false}.merge!(opts)
-    # opts["token"] = Digest::MD5.hexdigest "#{self.username}.Yv6-#{self.password}"
     # opts["agree"] = true if opts["agree"]
     # opts[:secure] = true
     self.attributes[:secure] = true
