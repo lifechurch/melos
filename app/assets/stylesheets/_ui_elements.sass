@@ -235,19 +235,11 @@
   float: left
   width: 100%
 
-.color_picker_list a
-  float: left
-  margin:
-    right: 7px
+
 
 .color_picker
-  height: 23px
-  width: 23px
-  margin-top: 3px
-  display: block
-  border-radius: 4px
-  box-shadow: inset 0px 1px 0px #ddd
-  background: image-url("menu_color_picker.png") center center no-repeat
+  +border-radius(4px)
+  background: image-url("menu_color_picker.png") center center no-repeat !important
 
 .color
   background: image-url("menu_color_gradient.png") center center no-repeat

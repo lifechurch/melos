@@ -294,10 +294,6 @@ module YouVersion
           associations[association_name] ||= association_class.all(params.merge(self.class.foreign_key => self.id))
         end
       end
-
-      def persist_token(username, password)
-        Digest::MD5.hexdigest "#{username}.Yv6-#{password}"
-      end
     end
     def self.a_very_long_time
       Cfg.very_long_cache_expiration.to_f.minutes
@@ -331,7 +327,7 @@ module YouVersion
     def after_build; end
 
     def initialize(data = {})
-      @attributes = data || {}
+      @attributes = Hashie::Mash.new(data || {})
       @associations = {}
       yield self if block_given?
 
@@ -370,10 +366,6 @@ module YouVersion
       return !id.blank?
     end
 
-    def persist_token
-      self.class.persist_token(self.auth[:username], self.auth[:password])
-    end
-
     def to_param
       id
     end
@@ -381,8 +373,7 @@ module YouVersion
     def persist(resource_path)
       response = true
       response_data = nil
-      token = self.persist_token
-      response_data = self.class.post(resource_path, attributes.merge(token: token, auth: self.auth)) do |errors|
+      response_data = self.class.post(resource_path, attributes.merge(auth: self.auth)) do |errors|
         new_errors = errors.map { |e| YvApi.api_error_i18n(e) }
         new_errors.each { |e| self.errors[:base] << e }
 
