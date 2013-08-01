@@ -103,7 +103,6 @@
   border: 0
   float: none
   height: auto
-  padding: 5px 15px 0 15px
   width: auto
   display: block
   margin-top: -53px
@@ -132,22 +131,7 @@
 // Badge moment
 
 .moment-bdg-info
-  display: block
-  overflow: hidden
-  clear: both
-  margin-left: 65px
-  border: 1px solid #e1e1e1
-  +border-radius(4px)
-  padding: 10px
-
-.moment-bdg-info-img
-  float: left
-
-.moment-bdg-info-text
-  float: left
-  padding: 11px 15px 0 15px
-  margin-bottom: 0
-  font-weight: bold
+  margin: 65px 0 0 0
 
 
 // ------------------------ Detail page -------------------------
@@ -159,23 +143,19 @@
   // Moment containers
 
   .moment
-    margin: 0
-    width: auto
-    float: none
+    margin: 0 0 15px 0
 
   // Share comment like etc.
 
-  .moment-actions
-    width: auto
 
   // Comments attached to a moment
 
   .moment-comments
-    width: 90%
+    width: 87%
 
   .moment-comments-list-text,
   .moment-comments-input-text
-    width: 465px
+    width: 80%
 
   // Bookmark, reading plan, download, and group moments -- they share the same layout
 
@@ -186,44 +166,17 @@
   .moment-no-text,
   .moment-bdg-text,
   .moment-vid-text
-    width: 465px
+    width: 78%
 
 // Sidebar comment input
 
 .social-sidebar
-  position: fixed
-  width: 299px
+  position: static
+  width: auto
 
 .social-sidebar-input
   padding: 10px
 
   textarea
     margin-bottom: 10px
-    height: 200px
-
-
-// Retina images
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-
-  // Retina-specific stuff here
-
-  .moment-actions-share a,
-  .moment-actions-comment a,
-  .moment-actions-like a
-    background: image-url("social-actions-sprite@2x.png") no-repeat
-
-  .moment-actions-time
-    background: image-url("social-actions-sprite@2x.png") no-repeat 15px -313px
-
-  .moment-no-note-title,
-  .moment-no-note-text
-    background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top
-
-  .moment-actions-share a,
-  .moment-actions-comment a,
-  .moment-actions-like a,
-  .moment-actions-time,
-  .moment-no-note-title,
-  .moment-no-note-text
-    background-size: 50%
+    height: auto
