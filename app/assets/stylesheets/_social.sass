@@ -276,6 +276,7 @@
     weight: bold
   padding: 7px 15px 8px 40px
   margin-bottom: 0
+  line-height: 1.3em
 
 .moment-no-note-text
   background: image-url("moment-no-note-text-bg.png") repeat-y left top
@@ -383,3 +384,30 @@
   textarea
     margin-bottom: 10px
     height: 200px
+
+
+// Retina images
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+
+  // Retina-specific stuff here
+
+  .moment-actions-share a,
+  .moment-actions-comment a,
+  .moment-actions-like a
+    background: image-url("social-actions-sprite@2x.png") no-repeat
+
+  .moment-actions-time
+    background: image-url("social-actions-sprite@2x.png") no-repeat 15px -313px
+
+  .moment-no-note-title,
+  .moment-no-note-text
+    background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top
+
+  .moment-actions-share a,
+  .moment-actions-comment a,
+  .moment-actions-like a,
+  .moment-actions-time,
+  .moment-no-note-title,
+  .moment-no-note-text
+    background-size: 50%

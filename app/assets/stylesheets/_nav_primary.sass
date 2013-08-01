@@ -14,7 +14,7 @@
     padding-bottom: 11px
 
   ul
-    background: #333 image-url("nav_primary_ul.png") repeat-y
+    background-color: #232324
     margin: 0
 
   li
@@ -23,10 +23,7 @@
     position: relative
 
   .highlighted
-    background: image-url("nav_primary_highlighted.png") no-repeat left center
-    -webkit-background-size: 100% 100%
-    margin-right: -5px
-    padding-right: 5px
+    background-color: #111
 
   a.icon span
     background:
@@ -50,16 +47,15 @@
       position: -60px 10px
 
   a.icon
-    background: image-url("nav_primary_a.png") no-repeat -99999px -99999px
-    -webkit-background-size: 100% 100%
-    color: #bbb
     display: block
     text-decoration: none
 
   a.icon:hover
-    background:
-      position: center center
     color: #fff
+
+#nav_primary_home a.icon span
+  background:
+    image: image-url("nav_home.png")
 
 #nav_primary_bible a.icon span
   background:
