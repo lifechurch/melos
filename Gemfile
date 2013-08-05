@@ -58,6 +58,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'debugger'
   gem 'capybara',       '~> 1.1.2'
   gem 'capybara-mechanize', '~> 0.3.0'
   gem "capybara-webkit", "~> 0.12.1"
