@@ -31,9 +31,13 @@ common:
   very_long_cache_expiration: 720
   rate_limit: 120
 
+test:
+  api_root: youversionapistaging.com
+  api_referer: web-dev-tests.youversionapistaging.com
+  api_default_timeout: 5
+  rack_execution_timeout: 15
+
 staging:
-  #api_root: youversionapi.com
-  #api_referer: web-staging.youversionapi.com
   api_root: youversionapistaging.com
   api_referer: web-dev-staging.youversionapistaging.com
   api_default_timeout: 5
