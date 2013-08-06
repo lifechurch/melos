@@ -7,4 +7,13 @@ if Rails.env.development? || Rails.env.test?
     rescue LoadError
     end
   end
+
+  if defined?(Zeus)
+    class Zeus::Rails
+      def console
+        Pry.start
+      end 
+    end
+  end
+
 end
