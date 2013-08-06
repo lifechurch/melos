@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe "Reading Plans" do
 
-  before do
-    @base_url = "http://www.example.com"
-  end
-
   it "should show me a list of reading plans" do
     visit "/reading-plans"
     page.should have_content("Browse All Plans")
