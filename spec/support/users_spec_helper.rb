@@ -39,7 +39,7 @@ module UsersSpecHelper
 		visit sign_in_path
 		page.fill_in "username", with: user.username # or whoever
 		page.fill_in "password", with: user.auth.password
-		page.find("input[name='commit']").click
+		page.find("button[type='submit']").click
 	end
 end
 
