@@ -58,9 +58,7 @@ YouversionWeb::Application.configure do
   # config.assets.compile = false
 
   # Set the log level from the environment variable.  (ex. info, debug, warn)
-  config.log_level = Logger.const_get( 
-    ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG'
-  )
+  config.log_level = ENV['LOG_LEVEL'].nil? ? :debug : ENV['LOG_LEVEL'].to_sym
 
 
 end
