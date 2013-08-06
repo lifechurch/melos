@@ -69,6 +69,8 @@ group :test, :development do
   gem 'minitest'
   gem 'tddium',         '~> 1.4.6'
   gem 'simplecov', require: false
+  gem "parallel_tests"
+  gem "zeus-parallel_tests"
 end
 
 group :development, :tddium_ignore do
