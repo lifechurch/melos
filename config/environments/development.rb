@@ -62,13 +62,4 @@ YouversionWeb::Application.configure do
     ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG'
   )
 
-
-end
-
-silence_warnings do
-  begin
-    require 'pry'
-    IRB = Pry
-  rescue LoadError
-  end
 end
