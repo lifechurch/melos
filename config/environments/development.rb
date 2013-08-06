@@ -60,13 +60,4 @@ YouversionWeb::Application.configure do
   # Set the log level from the environment variable.  (ex. info, debug, warn)
   config.log_level = ENV['LOG_LEVEL'].nil? ? :debug : ENV['LOG_LEVEL'].to_sym
 
-
-end
-
-silence_warnings do
-  begin
-    require 'pry'
-    IRB = Pry
-  rescue LoadError
-  end
 end
