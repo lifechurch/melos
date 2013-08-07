@@ -13,6 +13,8 @@ af:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Jou toegang op Facebook het verval.  Ontkoppel asseblief jou konneksie en probeer weer om konneksie te bewerkstellig."
   api:
     users agree bool: "Jy moet instem tot die terme en voorwaardes, sodat  jou rekening oopgemaak kan word."
     users confirm password matches: "Die nuwe wagwoord pas nie."

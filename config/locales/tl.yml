@@ -13,6 +13,8 @@ tl:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Ang iyong access sa Facebook ay lumipas na. Maaring tanggalin ang koneksyon at kumunok muli sa Facebook."
   api:
     users agree bool: "Kinakailangan ang iyong pagsang-ayon sa mga tuntunin at kundisyon upang makalikha ng account."
     users confirm password matches: "Ang bagong password ay hindi nagtutugma."
@@ -585,6 +587,10 @@ tl:
     headline: "Kailangan ng lahat ng Salita ng Diyos."
     subhead: "Tulungan ang mga tao sa buong mundo na magkaroon ng Bibliya."
     copy: "Isipin mong maaaring bigyan ang lahat ng tao sa mundo ng libreng Bibliya.  Ito ay magagawa mo kung magbibigay ka sa YouVersion. Tayo ay nasa panahon na napapanaginipan lamang ng iba &ndash; ang sinomang may telepono ay makaka-access ng Bibliya at makakaranas ng istorya ng pagmamahal ng Diyos sa atin. Dahil sa inyong suporta, tuluyan nating matutulungan ang mga taong mag-ukol ng panahon sa Kasulatan."
+    amount: "Halaga ng donasyon"
+    option once: "Isang beses"
+    option monthly: "Buwanan"
+    alert empty amount: "Maaring maglagay ng halaga ng donasyon."
     name: "Pangalan"
     card number: "Credit card number"
     card exp date: "Petsa ng Expiration (MMYY)"

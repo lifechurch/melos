@@ -3,7 +3,7 @@ cs:
     my connections: "Připojené účty"
     connected as: "Jste připojen/a ke službě %{connection} jako %{username}"
     remove connection: "Odstranit"
-    connection friends: "Zde jsou někteří YouVersion uživatelé, s kterými jste spojen/a na %{connection}u:"
+    connection friends: "Zde jsou někteří YouVersion uživatelé, se kterými jste ve spojení přes %{connection}:"
     errors:
       no friends: "Žádný z vašich %{connection} přátel ještě není zaregistrovaný na YouVersion."
       reset connection: "Promiňte, vyskytla se chyba. Prosím deaktivujte toto připojení a znovu ho připojte."
@@ -13,6 +13,8 @@ cs:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Vaše přihlášení přes Facebook vypršelo. Prosím odstraňte připojení a připojte se znovu na Facebook."
   api:
     users agree bool: "Pro vytvoření účtu musíte souhlasit se všeobecnými podmínkami."
     users confirm password matches: "Zadaná nová hesla nesouhlasí."
@@ -585,6 +587,10 @@ cs:
     headline: "Každý potřebuje Boží Slovo."
     subhead: "Pomozte lidem z celého světa, aby mohli mít Bibli na dosah prstů."
     copy: "Představte si, že byste mohli dát každému na světě Bibli zdarma. Můžete to udělat, pokud podpoříte svým příspěvkem Youversion. Žijeme v době, o které se ostatním jenom zdálo &ndash; kdy kdokoli s telefonem má přístup k Bibli a může zažít příběh Boží lásky k nám. S vaší podporou můžeme dále pomáhat více lidem trávit více času v Písmu."
+    amount: "Výše daru"
+    option once: "Jednorázově"
+    option monthly: "Měsíčně"
+    alert empty amount: "Prosím zadejte částku daru."
     name: "Vaše jméno"
     card number: "Číslo bankovní karty"
     card exp date: "Datum expirace (MMRR)"

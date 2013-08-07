@@ -13,6 +13,8 @@ hu:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "A Facebook bejelentkezésed időkorlátja lejárt. Kérünk, kapcsolódj le a Facebook fiókodról, majd kapcsolódj vissza újra. "
   api:
     users agree bool: "El kell fogadnod a feltételeket, hogy létrehozhass egy fiókot,"
     users confirm password matches: "Az új jelszavak nem találnak."
@@ -585,6 +587,10 @@ hu:
     headline: "Mindenkinek szüksége van Isten Igéjére."
     subhead: "Segíts az embereknek szerte a világon, hogy a Biblia az ujjhegyeiknél lehessen."
     copy: "Képzeld el, milyen lenne, ha a világon mindenkinek tudnál adni egy Bibliát. Pontosan ezt teheted, ha a  YouVersion-nak adsz. Olyan időben élünk, amiről mások csak álmodtak  &ndash; amikor egy telefonnal bárki elérheti a Bibliát és megtapasztalhatja Isten irántunk való szeretetének történetét. Támogatásoddal továbbra is egyre több embernek tudunk segíteni, hogy több időt töltsenek a Szentírással."
+    amount: "Támogatás összege"
+    option once: "Egyszeri"
+    option monthly: "Havi"
+    alert empty amount: "Kérünk adj meg egy összeget"
     name: "Neved"
     card number: "Bankkártya száma"
     card exp date: "Lejárati dátum (HHÉÉ)"

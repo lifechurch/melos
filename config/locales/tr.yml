@@ -13,6 +13,8 @@ tr:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Bağlantı göstergenizin kullanım süresine Facebook tarafından son verildi. Lütfen bağlantınızı iptal edip Facebook'a tekrar bağlanın."
   api:
     users agree bool: "Hesabı oluşturmak için şartlar ve koşulları kabul etmeliysiniz."
     users confirm password matches: "Yeni parolalar eşlemıyorlar."
@@ -585,6 +587,10 @@ tr:
     headline: "Herkesin Tanrı’nın Sözüne ihtiyacı var!"
     subhead: "Dünya çapındaki insanların Kutsal Kitap’ı ellerin altında bulundurabilmelerine yardımcı olun."
     copy: "Dünyadaki her insana bir Kutsal Kitap vermek ister misiniz? YouVersion’a bağış verdiğinizde işte bunu yapmış olursunuz. Biz geçmiş çağların Hristiyanların hayal ettiği bir dönemde yaşıyoruz. Elinde cep telefonu olan herkes Kutsal Kitap’a erişip Tanrı’nın bize olan sevgisinin büyük destanını okuyabilir. Sizin desteğinizle daha çok insana Kutsal Kitap’ta daha çok vakit geçirmek için yardımcı olabiliriz."
+    amount: "Bağış miktarı"
+    option once: "Bir kerelik"
+    option monthly: "Aylık"
+    alert empty amount: "Lütfen bağış miktarını girin."
     name: "Adınız"
     card number: "Kredi kartı numarası"
     card exp date: "Son kullanım tarihi (AAYY)"

@@ -1,7 +1,7 @@
 id:
   social:
     my connections: "Akun terkait"
-    connected as: "Anda terhubung dengan %{connection} sebagai %{username}."
+    connected as: "Anda tersambung dengan %{koneksi} sebagai %{nama pengguna}"
     remove connection: "Hapus"
     connection friends: "Beberapa pengguna YouVersion yang terhubung dengan anda di %{connection}:"
     errors:
@@ -13,6 +13,8 @@ id:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Tanda masuk melalui akun Facebook telah habis masa berlakunya. Silakan putuskan koneksi tersebut dan sambung-kan kembali ke Facebook."
   api:
     users agree bool: "Anda harus menyetujui persyaratan dan ketentuan untuk membuat akun."
     users confirm password matches: "Kata sandi yang baru tak sesuai."
@@ -585,6 +587,10 @@ id:
     headline: "Setiap orang butuh Firman Tuhan."
     subhead: "Bantulah orang di seluruh dunia memiliki Alkitab dalam genggaman mereka."
     copy: "Bayangkan jika Anda dapat memberikan Alkitab gratis ke semua orang. Saat Anda memberi kepada YouVersion, Anda dapat melakukan hal itu. Kami hidup di saat yang lain hanya bermimpi &ndash; saat setiap orang yang punya ponsel dapat mengakses Alkitab dan mengalami kisah kasih Tuhan bagi kita. Dengan dukungan Anda, kami dapat terus membantu lebih banyak orang meluangkan waktu dalam Firman Tuhan"
+    amount: "Nilai sumbangan "
+    option once: "Satu kali"
+    option monthly: "Bulanan"
+    alert empty amount: "Mohon isi besar nilai donasi."
     name: "Nama Anda"
     card number: "Nomor Kartu Kredit"
     card exp date: "Tanggal berakhir (MMYY)"

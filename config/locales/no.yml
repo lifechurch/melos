@@ -13,6 +13,8 @@
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Ditt tilgangsbevis hos Facebook er utgått. Vennligst ta bort din kobling og koble til Facebook på nytt."
   api:
     users agree bool: "Du må godta brukervilkårene før du registrerer deg."
     users confirm password matches: "Passordene samsvarer ikke"
@@ -585,6 +587,10 @@
     headline: "Alle trenger Guds ord."
     subhead: "Hjelp mennesker i hele verden å komme i kontakt med Bibelen."
     copy: "Tenk deg at du kunne gi alle i hele verden en gratis bibel. Når du gir til YouVersion, kan du akkurat det. Vi lever i en tid som folk tidligere bare kunne drømme om &ndash; en tid når alle som har en telefon kan få tilgang til Bibelen  og oppleve fortellingen om Guds kjærlighet til oss. Med din støtte kan vi fortsette å hjelpe flere mennesker til å bruke mer tid på Skriften."
+    amount: "Gavebeløp"
+    option once: "En gang"
+    option monthly: "Månedlig"
+    alert empty amount: "Vennligst skriv gavebeløp."
     name: "Ditt navn"
     card number: "Kredittkortnummer"
     card exp date: "Utløpsdato (MMÅÅ)"
