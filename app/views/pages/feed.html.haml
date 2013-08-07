@@ -13,7 +13,8 @@
     .moment-top
       .moment-bm
         = image_tag "social-cap-bm.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-bm-text
           <a href="#">Peter Badonkadonkavich</a> bookmarked <a href="#">Ephesians 4:13 NKJV</a>
 
@@ -39,20 +40,24 @@
           <a href="#" title="View all comments">View 3 more comments</a>
         %ul.moment-comments-list
           %li.moment-comments-list-comment
-            = image_tag "andy_avatar.png", class: "moment-comments-list-avatar"
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
             %p.moment-comments-list-text
               <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be. Every stop I make, I make a new friend. Can?t stay for long, just turn around and I?m gone again.
           %li.moment-comments-list-comment
-            = image_tag "andy_avatar.png", class: "moment-comments-list-avatar"
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
             %p.moment-comments-list-text
               <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be.
           %li.moment-comments-list-comment
-            = image_tag "andy_avatar.png", class: "moment-comments-list-avatar"
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
             %p.moment-comments-list-text
               <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be. Every stop I make, I make a new friend. Can?t stay for long, just turn around and I?m gone again.
 
         %span.moment-comments-input
-          = image_tag "andy_avatar.png", class: "moment-comments-input-avatar"
+          %span.moment-comments-input-avatar
+            = image_tag "andy_avatar.png"
           %textarea.moment-comments-input-text
             Leave a comment...
 
@@ -64,14 +69,17 @@
       .moment-vod
         -# corner cap image
         = image_tag "social-cap-vod.png", class: "moment-img"
-        - #verse text
+        -# Icon and title
+        %h4.moment-vod-title
+          Verse of the day
+        -# verse text
         %p.moment-vod-verse
           “I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.
         -# verse link text
         <a href="#" title="Go to this verse in the reader" class="moment-vod-links">John 1:5</a>
         -# verse versions list
         %ul.moment-vod-list
-          -#verse version
+          -# verse version
           %li
             NIV
           %li.moment-vod-list-on
@@ -83,7 +91,8 @@
     .moment-top
       .moment-bm
         = image_tag "social-cap-bm.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-bm-text
           <a href="#" title="Visit this user's profile page">Peter Badonkadonkavich</a> bookmarked <a href="#" title="Go to this verse in the reader">Ephesians 4:13 NKJV</a>
 
@@ -93,9 +102,10 @@
     .moment-top
       .moment-rp
         = image_tag "social-cap-rp.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-rp-text
-          <a href="#" title="Visit this user's profile page">Name</a> started a new reading plan:<br /> <a href="#" title="View this reading plan">Reading plan</a>
+          <a href="#" title="Visit this user's profile page">Name</a> started a new reading plan: <a href="#" title="View this reading plan">Reading plan</a>
 
   -# Group moment
 
@@ -103,7 +113,8 @@
     .moment-top
       .moment-grp
         = image_tag "social-cap-grp.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-grp-text
           <a href="#" title="Visit this user's profile page">Name</a> joined a new group: <a href="#" title="View this group">group</a>
 
@@ -113,7 +124,8 @@
     .moment-top
       .moment-dl
         = image_tag "social-cap-dl.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-dl-text
           <a href="#" title="Visit this user's profile page">Name</a> downloaded a new version: <a href="#" title="Learn more about this version">version</a>
 
@@ -123,7 +135,8 @@
     .moment-top
       .moment-no
         = image_tag "social-cap-no.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-no-text
           <a href="#" title="Visit this user's profile page">Name</a> created a new note about: <a href="#" title="Go to this verse in the reader">verse</a>
         %span.moment-no-note
@@ -138,7 +151,8 @@
     .moment-top
       .moment-bdg
         = image_tag "social-cap-bdg.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-bdg-text
           <a href="#" title="Visit this user's profile page">Name</a> earned a new badge:
         %span.moment-bdg-info
@@ -152,7 +166,8 @@
     .moment-top
       .moment-vid
         = image_tag "social-cap-vid.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-vid-text
           <a href="#">Name</a> watched a video:
         %span.moment-vid-info

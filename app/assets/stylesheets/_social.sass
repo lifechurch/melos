@@ -1,4 +1,4 @@
-// Adjusting the article tag on the social pages
+// !Adjusting the article tag on the social pages
 
 #main article.social-feed,
 #main article.social-detail
@@ -9,9 +9,9 @@
   overflow: hidden
   padding-left: 5px
 
-// -------------------- Feed -------------------------
+// !-------------------- Feed -------------------------
 
-// Moment containers
+// !Moment containers
 
 .moment
   margin: 0 15px 15px 0
@@ -26,7 +26,7 @@
 
 .moment-btm
 
-// Share comment like etc.
+// !Share comment like etc.
 
 .moment-actions
   overflow: hidden
@@ -35,7 +35,7 @@
   +border-radius(0 0 4px 4px)
   margin-bottom: 1px
 
-// Stuff each moment action has in common
+// !Stuff each moment action has in common
 
 .moment-actions-share,
 .moment-actions-comment,
@@ -64,7 +64,7 @@
   overflow: hidden
   height: 36px
 
-// Specific stuff for each action
+// !Specific stuff for each action
 
 .moment-actions-share
   width: 47px
@@ -89,9 +89,7 @@
   line-height: 34px
   background: image-url("social-actions-sprite.png") no-repeat 15px -313px
 
-// .moment-actions-other
-
-// Comments attached to a moment
+// !Comments attached to a moment
 
 .moment-comments
   width: 385px
@@ -100,7 +98,7 @@
   padding: 8px 10px 8px
   clear: both
 
-// Common comments code
+// !Common comments code
 
 .moment-comments-likes,
 .moment-comments-more,
@@ -112,14 +110,18 @@
 
 .moment-comments-list-avatar,
 .moment-comments-input-avatar
-  +border-radius(32px)
-  height: 32px
-  width: 32px
-  border: 3px solid #fff
+  +border-radius(38px)
+  padding: 3px
   box-shadow: 0 1px 2px #bbb
   float: left
+  background-color: #fff
 
-// Specific comments code
+  img
+    +border-radius(32px)
+    width: 32px
+    height: 32px
+
+// !Specific comments code
 
 .moment-comments-likes,
 .moment-comments-more
@@ -163,22 +165,26 @@
   +box-shadow(none)
 
 
-// Moment badge positioning
+// !Moment badge positioning
 
 .moment-img,
   position: absolute
   top: 0
   right: 0
 
-// Moment common code
+// !Moment common code
 
 .moment-avatar
-  height: 48px
-  width: 48px
-  +border-radius(48px)
-  border: 3px solid #fff
+  +border-radius(54px)
+  padding: 3px
   box-shadow: 0 1px 2px #bbb
   float: left
+  background-color: #fff
+
+  img
+    height: 48px
+    width: 48px
+    +border-radius(48px)
 
 .moment-bm,
 .moment-rp,
@@ -194,7 +200,7 @@
   background: #fff
   +border-radius(4px 4px 0 0)
 
-// Bookmark, reading plan, download, and group moments -- they share the same layout
+// !Bookmark, reading plan, download, and group moments -- they share the same layout
 
 .moment-bm-text,
 .moment-rp-text,
@@ -210,7 +216,10 @@
   line-height: 1.4em
   margin-bottom: 0
 
-// Verse of the day moment
+// !Verse of the day moment
+
+.moment-vod-title
+  color: #666
 
 .moment-vod-verse
   font: italic 24px "times new roman", times, serif
@@ -256,7 +265,7 @@
     background-color: #555
 
 
-// Note moment
+// !Note moment
 
 .moment-no
   padding-bottom: 0
@@ -285,7 +294,7 @@
   margin-bottom: 0
 
 
-// Video moment
+// !Video moment
 
 .moment-vid-info
   display: block
@@ -313,7 +322,7 @@
 .moment-vid-info-text-credit
   margin: 10px 0 0 0
 
-// Badge moment
+// !Badge moment
 
 .moment-bdg-info
   display: block
@@ -334,25 +343,25 @@
   font-weight: bold
 
 
-// ------------------------ Detail page -------------------------
+// !------------------------ Detail page -------------------------
 
 #main article.social-detail
 
-  // Striping out the width constraints, killing floats
+  // !Striping out the width constraints, killing floats
 
-  // Moment containers
+  // !Moment containers
 
   .moment
     margin: 0
     width: auto
     float: none
 
-  // Share comment like etc.
+  // !Share comment like etc.
 
   .moment-actions
     width: auto
 
-  // Comments attached to a moment
+  // !Comments attached to a moment
 
   .moment-comments
     width: 90%
@@ -361,7 +370,7 @@
   .moment-comments-input-text
     width: 465px
 
-  // Bookmark, reading plan, download, and group moments -- they share the same layout
+  // !Bookmark, reading plan, download, and group moments -- they share the same layout
 
   .moment-bm-text,
   .moment-rp-text,
@@ -372,7 +381,7 @@
   .moment-vid-text
     width: 465px
 
-// Sidebar comment input
+// !Sidebar comment input
 
 .social-sidebar
   position: fixed
@@ -386,28 +395,37 @@
     height: 200px
 
 
-// Retina images
+// !Retina images
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-
-  // Retina-specific stuff here
 
   .moment-actions-share a,
   .moment-actions-comment a,
   .moment-actions-like a
     background: image-url("social-actions-sprite@2x.png") no-repeat
+    background-size: 16px 400px
+
+  .moment-actions-share a
+    background-position: 20px 10px
+
+  .moment-actions-comment a
+    background-position: center -129px
+
+  .moment-actions-like a
+    background-position: center -36px
+
+  .moment-actions-like a.liked
+    background-position: center -82px
 
   .moment-actions-time
     background: image-url("social-actions-sprite@2x.png") no-repeat 15px -313px
+    background-size: 16px 400px
 
-  .moment-no-note-title,
+  .moment-no-note-title
+    background: image-url("moment-no-note-title-bg@2x.png") repeat-y left top
+    background-size: 23px 1px
+
   .moment-no-note-text
     background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top
+    background-size: 600px 17px
 
-  .moment-actions-share a,
-  .moment-actions-comment a,
-  .moment-actions-like a,
-  .moment-actions-time,
-  .moment-no-note-title,
-  .moment-no-note-text
-    background-size: 50%

@@ -9,7 +9,8 @@
     .moment-top
       .moment-bm
         = image_tag "social-cap-bm.png", class: "moment-img"
-        = image_tag "andy_avatar.png", class: "moment-avatar"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
         %p.moment-bm-text
           <a href="#">Peter Badonkadonkavich</a> bookmarked <a href="#">Ephesians 4:13 NKJV</a>
 
@@ -30,14 +31,17 @@
           <a href="#" title="Visit this user's profile page">Andy Knight</a> and <a href="#">12 others</a> like this.
         %ul.moment-comments-list
           %li.moment-comments-list-comment
-            = image_tag "andy_avatar.png", class: "moment-comments-list-avatar"
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
             %p.moment-comments-list-text
               <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be. Every stop I make, I make a new friend. Can?t stay for long, just turn around and I?m gone again.
           %li.moment-comments-list-comment
-            = image_tag "andy_avatar.png", class: "moment-comments-list-avatar"
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
             %p.moment-comments-list-text
               <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be.
           %li.moment-comments-list-comment
-            = image_tag "andy_avatar.png", class: "moment-comments-list-avatar"
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
             %p.moment-comments-list-text
               <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be. Every stop I make, I make a new friend. Can?t stay for long, just turn around and I?m gone again.
