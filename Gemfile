@@ -83,7 +83,6 @@ group :development, :tddium_ignore do
   gem 'hooves'
   gem 'pry', require: false
   gem 'quiet_assets'
-  gem 'spork-rails'
 end
 
 #gem 'rack-mini-profiler'
