@@ -71,6 +71,7 @@ group :test, :development do
   gem 'simplecov', require: false
   gem "parallel_tests"
   gem "zeus-parallel_tests"
+  gem "terminal-notifier-guard"
 end
 
 group :development, :tddium_ignore do
