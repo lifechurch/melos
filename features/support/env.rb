@@ -4,23 +4,23 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
-require 'spork'
 require 'capybara'
 
-# Capybara.server do |app, port|
-#   require 'hooves/unicorn'
-#   Rack::Handler::Hooves::Unicorn.run(app, :Port => port, worker_processes: 1)
-# end
+prefork = lambda {
 
-# working around TDDium issue with capybara-webkit
-# where using Thin causes invalid responses and EPIPE errors
-# https://github.com/thoughtbot/capybara-webkit/issues/331
-Capybara.server do |app, port|
-  require 'rack/handler/webrick'
-  Rack::Handler::WEBrick.run(app, :Port => port, :AccessLog => [], :Logger => WEBrick::Log::new(nil, 0))
-end
+  # Capybara.server do |app, port|
+  #   require 'hooves/unicorn'
+  #   Rack::Handler::Hooves::Unicorn.run(app, :Port => port, worker_processes: 1)
+  # end
 
-Spork.prefork do
+  # working around TDDium issue with capybara-webkit
+  # where using Thin causes invalid responses and EPIPE errors
+  # https://github.com/thoughtbot/capybara-webkit/issues/331
+  Capybara.server do |app, port|
+    require 'rack/handler/webrick'
+    Rack::Handler::WEBrick.run(app, :Port => port, :AccessLog => [], :Logger => WEBrick::Log::new(nil, 0))
+  end
+
   unless ENV['DRB'] || ENV['TDDIUM']
     # TDDium doesn't support simplecov
     # this configuration is required to get simplecov
@@ -55,34 +55,48 @@ Spork.prefork do
   # 2) Set the value below to true. Beware that doing this globally is not
   # recommended as it will mask a lot of errors for you!
   ActionController::Base.allow_rescue = false
-end
 
-Spork.each_run do
-  if ENV['DRB'] && !ENV['TDDIUM']
+  # Remove/comment out the lines below if your app doesn't have a database.
+  # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
+  # begin
+  #   DatabaseCleaner.strategy = :transaction
+  # rescue NameError
+  #   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+  # end
+
+  # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
+  # See the DatabaseCleaner documentation for details. Example:
+  #
+  #   Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
+  #     DatabaseCleaner.strategy = :truncation, {:except => %w[widgets]}
+  #   end
+  #
+  #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
+  #     DatabaseCleaner.strategy = :transaction
+  #   end
+  #
+
+}
+
+each_run = lambda {
+  if !ENV['TDDIUM']
     # TDDium doesn't support simplecov
-    # this configuration is required to get simplecov
-    # to execute correctly with DRB servers like Spork
     require 'simplecov'
     SimpleCov.start 'rails'
   end
+}
+
+if defined?(Zeus)
+  prefork.call
+  $each_run = each_run
+  class << Zeus.plan
+    def after_fork_with_test
+      after_fork_without_test
+      $each_run.call
+    end
+    alias_method_chain :after_fork, :test
+  end
+else
+  prefork.call
+  each_run.call
 end
-
-# Remove/comment out the lines below if your app doesn't have a database.
-# For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
-# begin
-#   DatabaseCleaner.strategy = :transaction
-# rescue NameError
-#   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
-# end
-
-# You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
-# See the DatabaseCleaner documentation for details. Example:
-#
-#   Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
-#     DatabaseCleaner.strategy = :truncation, {:except => %w[widgets]}
-#   end
-#
-#   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
-#     DatabaseCleaner.strategy = :transaction
-#   end
-#
