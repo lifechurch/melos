@@ -2,9 +2,13 @@ require 'spec_helper'
 
 describe "Reading Plans" do
 
-  it "should show me a list of reading plans" do
-    visit "/reading-plans"
-    page.should have_content("Browse All Plans")
+  let(:available_locales) {[:af,:ca,:cs,:cy,:de,:en,:es,:fi,:fr,:id,:it,:ja,:ko,:mn,:ms,:nl,:no,:pl,:pt,:ro,:ru,:sk,:sq,:sv,:tl,:tr,:uk,:vi,:"zh-CN",:"zh-TW"]}
+
+  it "should show me a list of reading plans in all locales" do
+    available_locales.each do |locale|
+      visit "/#{locale.to_s}/reading-plans"
+      page.should have_css("#plan-index")
+    end
   end
 
   it "should show me an individual reading plan" do

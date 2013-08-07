@@ -18,6 +18,19 @@ class Plan < YouVersion::Resource
     "reading-plans"
   end
 
+  
+  # Overriding the key used to lookup localized data returned via the API
+  # in this case we support pt-BR as locale, but the API returns localized data with a key of "pt"
+  # we need to make sure the data is looked up with the proper key, rather than the key web platform supports :(
+  def self.i18n_key_override(key)
+    case key
+    when /pt-BR|pt_BR/
+      "pt"
+    else
+      key
+    end
+  end
+
   def self.find(param, opts ={}, &block)
     id, slug = id_and_slug_from_param param
     raise YouVersion::API::RecordNotFound unless id.present?
