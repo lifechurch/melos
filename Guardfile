@@ -1,6 +1,6 @@
 # More info at https://github.com/guard/guard#readme
 
-guard 'rspec', :cli=> "--color --format documentation", all_on_start: false, all_after_pass: false, zeus: true, parallel: true, bundler: false do
+guard 'rspec', :cli=> "--no-drb --color --format documentation", all_on_start: false, all_after_pass: false, zeus: true, parallel: true, bundler: false do
   watch(%r{^spec/.+_spec\.rb$})
   watch('spec/spec_helper.rb')                        { "spec" }
   watch(%r{^spec/support/(.+)\.rb$})                  { "spec/" }
