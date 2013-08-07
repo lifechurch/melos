@@ -75,10 +75,22 @@ module YouVersion
         val.present?
       end
 
-      def i18nize(mash)
-        lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
-        return nil if mash.nil?
+      # Class configuration method - dynamically defines a method with the name(s) provided as atts
+      # defined method will call i18nize on its class
+      def attr_i18n_reader(*atts)
+        atts.each { |att| define_method(att) { self.class.i18nize(attributes[att.to_s]) } }
+      end
 
+      # Lookup and return API data attribute values by current locale
+
+      # API returns data that has been localized at times - ex:
+      # "name"=>{"default"=>"Wisdom", "en"=>"Wisdom", "es"=>"..."}
+
+      def i18nize(mash)
+        return nil if mash.nil?
+        lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
+        lang_key = i18n_key_override(lang_key)  # provide ability to override i18n key used for data returned from API
+        
         return mash[lang_key] unless mash[lang_key].nil?
 
         # try to get localized html
@@ -101,8 +113,15 @@ module YouVersion
         val
       end
 
-      def attr_i18n_reader(*args)
-        args.each { |a| define_method(a) { YouVersion::Resource.i18nize(attributes[a.to_s]) } }
+      # Default implementation of i18n key override template method
+      # Override in any class that needs to change the locale key used to lookup data attributes returned via the API.
+
+        # sadly - we support pt-BR and pt-PT only on the website, however
+        # the API likes to return "pt" as localized data attributes.  We need to provide
+        # a way to map any discrepancies like this until it's fixed API side :( :( :(
+      
+      def i18n_key_override(key) # returns String
+        return key
       end
 
       def retry_with_auth?(errors)
@@ -295,6 +314,7 @@ module YouVersion
         end
       end
     end
+
     def self.a_very_long_time
       Cfg.very_long_cache_expiration.to_f.minutes
     end

@@ -4,6 +4,8 @@ class PlansController < ApplicationController
   rescue_from YouVersion::API::RecordNotFound, with: :handle_404
 
   # TODO ALL/APPROPRIATE: respond_to / respond_with where at all possible
+
+  # TODO - this needs serious refactoring controller, model, service object and template - A MESS.
   def index
     @plan_lang      = available_plan_language()
     @plans = Plan.all( query: params[:query], page: params[:page] || 1, category: params[:category], language_tag: @plan_lang) rescue []
@@ -65,9 +67,17 @@ class PlansController < ApplicationController
   private
 
   def available_plan_language
-    langs = [params[:lang],params[:locale],"en"].compact
-    available_locales = Plan.available_locales.map {|loc| loc.to_s}           # get available locales in array of strings
-    langs.each {|lang| return lang.to_sym if available_locales.include?(lang)}  # so we can compare lang to string rather than symbol
+    # Locale HAX because API returns only "pt" for Reading Plan available locales
+    # If we're pt-BR locale, then we map that to pt for the time being until further progress
+    # has been made on backend API decisions, locales and reading plans
+    # pt-PT shouldn't be mapped at the moment.
+
+    locale = (params[:locale] == "pt-BR") ? "pt" : params[:locale]
+    lang   = (params[:lang] == "pt-BR") ? "pt" : params[:lang]
+
+    langs = [lang,locale,"en"].compact    #order here is important - we start with override lang, then locale as param, then default to "en"
+    available_locales = Plan.available_locales.map {|loc| loc.to_s}    # get available locales in array of strings
+    langs.each {|l| return l.to_sym if available_locales.include?(l)}  # so we can compare lang to string rather than symbol
   end
 
 end

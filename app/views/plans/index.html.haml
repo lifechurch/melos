@@ -65,6 +65,7 @@
 
       - I18n.locale = orig_locale
       - if I18n.locale.to_s != @plan_lang.to_s
+
         #filter-message
           = t('plans.showing language filtered', lang_name: t('language name', locale: @plan_lang))
           %span.mute{style: "font-weight: normal; font-size: 12px"}

@@ -34,7 +34,7 @@ common:
 test:
   api_root: youversionapistaging.com
   api_referer: web-dev-tests.youversionapistaging.com
-  api_default_timeout: 5
+  api_default_timeout: 15
   rack_execution_timeout: 15
 
 staging:
