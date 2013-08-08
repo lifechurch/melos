@@ -4,10 +4,85 @@
       %div#beta-banner
         %span
           Mobile Beta
-        = link_to("Feedback", "mailto:mobilewebfeedback@youversion.zendesk.com?Subject=Mobile%20Beta%20Feedback")
+        =link_to("Feedback", "mailto:mobilewebfeedback@youversion.zendesk.com?Subject=Mobile%20Beta%20Feedback")
 
   %header#header{role:"banner"}
-    = link_to(@site.title, "/" , style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})", id:"logo")
+    =link_to(@site.title, "/" , style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})", id:"logo")
+
+    %a{href: "#", class: "friend-requests-btn popover-link"}
+      =t("requests")
+
+    %div.header-popover
+      %span.arrow
+      %h4
+        =t("Friend requests")
+      =link_to("Find Friends", "#", class: "find-friends text-link")
+      %span.clear
+
+      %ul
+        %li
+          %div.list-item
+            %div.item-content
+              %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
+              = link_to("Peter Smith", "#", class: "text-link")
+              %p
+                =t("wants to be your friend")
+              %span.timestamp
+                =t("12 days ago")
+            %div.item-actions
+              =link_to("Add", "#", class: "action_button_green")
+              =link_to("Ignore", "#", class: "action_button_grey")
+
+        %li
+          %div.list-item
+            %div.item-content
+              %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
+              = link_to("Peter Smith", "#", class: "text-link")
+              %p
+                =t("wants to be your friend")
+              %span.timestamp
+                =t("12 days ago")
+            %div.item-actions
+              =link_to("Add", "#", class: "action_button_green")
+              =link_to("Ignore", "#", class: "action_button_grey")
+
+        %li
+          %div.list-item
+            %div.item-content
+              %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
+              = link_to("Peter Smith", "#", class: "text-link")
+              %p
+                =t("wants to be your friend")
+              %span.timestamp
+                =t("12 days ago")
+            %div.item-actions
+              =link_to("Add", "#", class: "action_button_green")
+              =link_to("Ignore", "#", class: "action_button_grey")
+
+
+      %div.view-all
+        =link_to("View all requests", "#", class: "text-link wide")
+
+
+
+    %a{href: "#", class: "notifications-btn popover-link"}
+      =t("notifications")
+
+    %div.header-popover.notifications
+      %span.arrow
+      %h4
+        =t("Notifications")
+      %span.clear
+
+      %ul
+        %li
+          %div.list-item
+            %p
+              = link_to("Peter Smith", "#", class: "text-link")
+              =t("wants to be your friend")
+
+      %div.view-all
+        =link_to("View all Notifications", "#", class: "text-link wide")
 
     %nav.sign_in
       %ul
