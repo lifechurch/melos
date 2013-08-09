@@ -62,7 +62,7 @@
                       %a.icon{href:"/videos"}
                         %span &nbsp;
                       %a.tooltip{href:"/videos", style:"display: none;"}
-                        %span=t("videos")
+                        %span=t("videos.title")
 
                   %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
                     - bookmark_href = is_authed ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark")
@@ -116,7 +116,7 @@
                   %span=t("plans.title")
               %li#nav_mobile_videos{class: highlight.call(is_videos_url)}
                 %a.icon{href: '/videos'}
-                  %span=t("videos")
+                  %span=t("videos.title")
               %li#nav_mobile_bookmarks{class: highlight.call(is_bookmarks_url)}
                 %a.icon{href: bookmark_href}
                   %span= t('bookmarks.title')

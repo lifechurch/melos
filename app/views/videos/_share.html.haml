@@ -1,7 +1,7 @@
 %div.share
   %span.share_wrapper
-    =link_to("Share","#")
+    =link_to(t("social.share"),"#")
 %div.share_panel
   %ul
     %li
-      =link_to("Twitter", 'http://twitter.com/intent/tweet?text=' + u("I'm watching #{strip_tags(video.title)} on @YouVersion. #{video.short_url}"),{:class => "twitter_share_btn"})
+      =link_to(t("social.twitter.name"), 'http://twitter.com/intent/tweet?text=' + u("I'm watching #{strip_tags(video.title)} on @YouVersion. #{video.short_url}"),{:class => "twitter_share_btn"})

@@ -3,12 +3,11 @@
 - @title = "Watch videos"
 
 - content_for :title do
-  = "Videos" #TODO: Needs localization.
+  = t("videos.title")
 
 %article
   .inner
-    %h1
-      Videos
+    %h1= t("videos.title")
 
     %ul.resource_list
       - @videos.each do |v|
