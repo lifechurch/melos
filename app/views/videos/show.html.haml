@@ -22,8 +22,7 @@
     #details
       %div.refs
         - if @video.references
-          %span
-            Related Scripture
+          %span= t("videos.related scripture")
 
           %ul
             - @video.references.each do |ref|
@@ -32,7 +31,7 @@
 
     #other
       - video_series = client_settings.video_series
-      = link_to("All videos", video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
+      = link_to( t("videos.all", video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
       = render partial: "videos/publisher_banner", locals: {publisher: publisher}
 
 

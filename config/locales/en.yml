@@ -1,6 +1,7 @@
 ---
 en:
   social:
+    share:                                      "Share"
     my connections:                             "Connected Accounts"
     connected as:                               "You are connected to %{connection} as %{username}."
     remove connection:                          "Remove this connection"
@@ -132,7 +133,6 @@ en:
   chapter:                                      "Chapter"
   bible:                                        "Bible"
   notes title:                                  "Notes"
-  videos:                                       "Videos"
   friends:                                      "Friends"
   groups:                                       "Groups"
   mobile:                                       "Mobile"
@@ -529,6 +529,11 @@ en:
     completed notice:                           "Congratulations! You have completed your reading plan."
     exit:                                       "Exit"
     loading sidebar content:                    "Loading sidebar content..."
+  videos:
+    title:                                      "Videos"
+    all:                                        "All videos"
+    related scripture:                          "Related Scripture"
+
   licenses:
     authorized:
       heading:                                  "Your content has been authorized"
