@@ -27,6 +27,34 @@ function deleteCookie(name) {
 jQuery(document).ready(function() {
   window.app = new App();
   window.app.setPage( new Page() );
+
+  $('.popover-link').click(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    var $headerPopover = $this.next('.header-popover');
+    var popoverVisible = $this.siblings('.popover-link').next('.header-popover').hasClass('open');
+
+    // if the popover is visible, close it
+    if($headerPopover.hasClass('open')){
+      $headerPopover.animate({'opacity' : '0'}, 300);
+      $headerPopover.removeClass('open');
+    }
+
+    else if(popoverVisible){
+      $('.header-popover').animate({'opacity' : '0'}, 300);
+      $('.header-popover').removeClass('open');
+      $headerPopover.animate({'opacity' : '1'}, 300);
+      $headerPopover.addClass('open');
+    }
+
+    // otherwise, open it
+    else {
+      $headerPopover.animate({'opacity' : '1'}, 300);
+      $headerPopover.addClass('open');
+    }
+    
+
+  });  
 });
 
 jQuery(window).load(function() { });
