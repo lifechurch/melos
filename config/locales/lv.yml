@@ -4,12 +4,17 @@ lv:
     connected as: "Jūs esat pieslēdzies %{connection} kā %{username}"
     remove connection: "Izdzēst"
     connection friends: "Lūk, daži YouVersion lietotāji, ar kuriem jūs kontaktējaties %{connection}"
+    errors:
+      no friends: "Neviens no taviem %{connection} draugiem nav pievienojies YouVersion pagaidām."
+      reset connection: "Atvainojamies, radās kļūme. Lūdzu atslēdziet šo savienojumu un tad pievienojieties pa jaunam."
     email:
       name: "e-pasts"
     twitter:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Tavai pieejai Facebook ir beidzies termiņš. Lūdzu pievienojies Facebook no jauna."
   api:
     users agree bool: "Jums jāpiekrīt noteikumiem, lai varētu izveidot kontu."
     users confirm password matches: "Jaunās paroles nesakrīt."

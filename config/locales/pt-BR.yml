@@ -6,13 +6,15 @@ pt-BR:
     connection friends: "Aqui estão alguns usuários YouVersion aos quais você está conectado %{connection}:"
     errors:
       no friends: "Nenhum dos seus amigos do %{connection} parecem fazer parte do YouVersion ainda."
-      reset connection: "Desculpe, ocorreu um erro. Por favor desconecte a conexão e tente novamente. "
+      reset connection: "Desculpe, ocorreu um erro. Por favor remova e então refaça esta conexão. "
     email:
       name: "E-mail"
     twitter:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Seu acesso pelo Facebook venceu. Por favor, remova a sua conexão e reconecte-se ao Facebook."
   api:
     users agree bool: "Você deve concordar com os termos e condições para criar uma conta."
     users confirm password matches: "As novas senhas não são iguais."

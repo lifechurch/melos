@@ -1,9 +1,9 @@
 pt-PT:
   social:
     my connections: "Contas Associadas"
-    connected as: "Você está associado a %{connection} como %{username}."
+    connected as: "Você está associado ao %{connection} como %{username}."
     remove connection: "Eliminar"
-    connection friends: "Aqui estão alguns utilizadores do YouVersion aos quais está ligado em %{connection}:"
+    connection friends: "Aqui estão alguns utilizadores do YouVersion aos quais está ligado no %{connection}:"
     errors:
       no friends: "Ainda nenhum dos seus amigos %{connection} aparenta estar a usar o YouVersion."
       reset connection: "Desculpe, ocorreu um erro. Por favor remova e volte a efetuar esta associação."

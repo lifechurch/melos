@@ -13,6 +13,8 @@ ca:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "El teu senyal d'accés ha vençut per Facebook. Siusplau desconnecti i torni a connectar-se a Facebook."
   api:
     users agree bool: "Has d'estar d'acord amb les condicions per crear un compte."
     users confirm password matches: "Les noves contrassenyes no coincideixen."
@@ -585,6 +587,10 @@ ca:
     headline: "Tothom necessita la Paraula de Déu."
     subhead: "Ajuda la gent arreu del món a tenir la Bíblia a la punta dels dits."
     copy: "Imagina si poguessis donar a tothom una Bíblia gratis. Quan dónes a YouVersion, pots fer precisament això. Estem vius durant un temps que altres només han somiat &ndash; quan qualsevol persona amb un telèfon pot tenir accés a la Bíblia i l'experiència de la història de l'amor de Déu per nosaltres. Amb el teu suport, podem seguir ajudant a més persones a passar més temps a les Escriptures."
+    amount: "Quantitat de la donació"
+    option once: "Una vegada"
+    option monthly: "Mensual"
+    alert empty amount: "Siusplau introdueixi la quantitat de la donació"
     name: "El teu nom"
     card number: "Número de targeta de crèdit"
     card exp date: "Data de caducitat (mm/yy)"

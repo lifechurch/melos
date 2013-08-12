@@ -6,7 +6,7 @@ zh-CN:
     connection friends: "这是一些在 %{connection} 上与您有连接的YouVersion 用户："
     errors:
       no friends: "您在 %{connection}上 的朋友现在不在 YouVersion 上。"
-      reset connection: "很抱歉，出错了！请移除这个连接然后重新连接！"
+      reset connection: "很抱歉，出错了！请解除并重新连接！"
     email:
       name: "电子邮件"
     twitter:
@@ -754,7 +754,7 @@ zh-CN:
     100m:
       logo: "YouVersion: 圣经软件"
       tagline: "从<em>一亿</em>开始"
-      intro: "在7月10日，我们的五周年庆之前，圣经软件可以达到一亿次的安装量吗？全靠您的支持了！"
+      intro: "在7月10日，我们的五周年庆之前，圣经软件可以达到一亿次的安装量吗？需要您的支持！"
       after: "因为您的参与，圣经软件在7月10日（也就是五周年纪念日）的时候达到了一亿的安装量，谢谢您！"
       share:
         with friends: "与您的朋友分享"

@@ -13,17 +13,31 @@ ms:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Token akses anda telah tamat dari Facebook. Sila hapuskan sambungan anda dan sambungkan kembali ke Facebook."
   api:
+    users agree bool: "Anda mesti bersetuju dengan terma dan syarat untuk membuat akaun."
+    users confirm password matches: "Kata laluan baru tidak sama."
     users email email: "Alamat e-mel ini tidak sah."
     users email email rfc: "Alamat e-mel yang dibekalkan tidak sah."
     users email not available: "Alamat e-mel ini sudah terdaftar akaun lain."
     users email not found: "Tiada akaun yang berdasarkan alamat e-mel tersebut."
+    users email required: "Anda mesti masukkan alamat e-mel."
     users hash verified: "Akaun ini sudah di sahkan."
+    users password change: "Kata laluan baru anda mesti berbeza daripada kata laluan lama anda."
     users password length: "Kata laluan mesti mengandungi sekurangnya 6 karakter."
+    users password required: "Anda mesti masukkan kata laluan."
     users username alpha numeric extra: "Nama pengguna harus menggunakan huruf, nombor atau sengkang."
     users username not available: "Nama pengguna yang dibekalkan tidak tersedia."
     users username or password invalid: "Nama pengguna atau kata laluan tidak sah."
+    users username required: "Anda mesti masukkan nama pengguna."
   meta:
+    100million:
+      title: "Ia Bermula dengan 100 Juta"
+      description: "App Alkitab telah di instalasi hampir 100 juta kali - pencapaian yang menakjubkan! Tetapi kita baru sahaja bermula. Muat turun App Alkitab percuma hari ini - dan kongsikan app ini dengan sahabat anda. Ayuh mencipta sejarah bersama."
+    mobile:
+      title: "App Alkitab"
+      description: "Berpuluh juta orang kini mengguna App Alkitab untuk membaca, mendengar, menonton dan berkongsi Firman Allah, menjadikannya sebahagian daripada kehidupan mereka setiap hari. Download app percuma dan akses bookmark, nota, dan pelan bacaan anda dari mana pun. Nikmati beratus versi Alkitab, termasuk audio, pada peranti mobil anda."
     connections:
       index:
         title: "Akaun yang Berkaitan"
@@ -52,6 +66,7 @@ ms:
   deleted connection error: "Maaf, kesilapan berlaku semasa memutuskan sambungan ke %{connection}."
   remove connection: "Batalkan"
   connection users: "Ini beberapa pengguna YouVersion yang tersambung kepada anda di %{connection}:"
+  connection marketing: "YouVersion lebih seronok digunakan bersama sahabat! Link akaun YouVersion anda kepada jaringan sosial anda yang lain dan terus mencari sahabat anda di YouVersion. Akaun yang di-link juga membolehkan anda untuk berkongsi kandungan dengan hanya beberapa klik. Kami tidak akan pos apa-apa tanpa kebenaran anda."
   next step connections: "Seterusnya: Link akaun-akaun anda serta mencari sahabat anda"
   no notes found: "%{username} tiada sebarang nota."
   no recent activity: "%{username} tiada aktiviti baru-baru ini."
@@ -111,6 +126,7 @@ ms:
   try the beta: "Cubailah versi Beta"
   welcome to the beta: "Selamat datang ke YouVersion.com!"
   highlight: "Highlight"
+  comment: "Komen Baru"
   note: "Nota Baru"
   selected: "Terpilih"
   chapter: "Bab"
@@ -211,13 +227,15 @@ ms:
     my recent_activity: "Aktiviti Saya Kebelakangan Ini"
     subscribed to plan: "Pengguna yang Berdaftar di %{plan}"
     reading: "Pengguna yang Mengikuti Pelan Ini"
-    subscribed previously: "Bermula %{time_ago} ago"
+    subscribed previously: "Bermula %{time_ago} yang lalu"
     sign in for settings: "Sila log masuk untuk mengakses profil anda."
     my profile: "Profil Saya"
     edit profile: "Mengedit Profil"
     update profile: "Update Profil"
+    other user profile: "Profil %{username}"
     my password: "Tukar Kata Laluan Saya"
     edit password: "Tukar Kata Laluan"
+    edit password errors: "Kesilapan berikut menghalang untuk mengubah kata laluan anda:"
     picture: "Foto"
     edit picture: "Tukar Foto"
     edit notifications: "Uruskan Notifikasi"
@@ -282,6 +300,7 @@ ms:
       information use title: "Bagaimanakah kami menggunakan informasi anda?"
       information use text: "Ketika anda menyertai perkhidmatan tertentu yang memerlukan pendaftaran, kami meminta informasi peribadi anda. Sekiranya LifeChurch.tv ingin menggunakan informasi ini secara lain daripada tujuannya semasa informasi dikumpul, kami akan meminta kebenaran anda sebelum penggunaan tersebut. Anda boleh enggan mengemukakan informasi peribadi kepada sebarang perkhidmatan kami. Sekiranya demikian kami mungkin tidak dapat menyediakan perkhidmatan itu untuk anda."
       information security title: "Bagaimanakah kami melindungi informasi anda?"
+      information security text: "LifeChurch.tv tidak berkongsi maklumat peribadi anda dengan institusi lain di luar LifeChurch.tv tanpa kebenaran anda yang jelas. LifeChurch.tv mungkin berkongsi maklumat peribadi anda hanya jika ia mempunyai kepercayaan bahawa akses, penggunaan, pemeliharaan atau pendedahan maklumat tersebut adalah secara munasabah perlu untuk (a) memenuhi mana-mana undang-undang, peraturan, proses menurut undang-undang atau permintaan kerajaan yang boleh dikuatkuasakan, (b) menguatkuasakan Terma Penggunaan yang sesuai, termasuk penyiasatan tentang potensi pelanggaran terma tersebut, (c) mengesan, mencegah, atau sebaliknya tentang isu-isu penipuan alamat, keselamatan atau teknikal, atau (d) melindungi daripada bahaya yang akan berlaku kepada hak, harta atau keselamatan LifeChurch.tv, para penggunanya atau orang awam sebagaimana yang dikehendaki atau dibenarkan oleh undang-undang. LifeChurch.tv mengambil langkah-langkah keselamatan yang sesuai untuk perlindungan terhadap akses yang tidak dibenarkan atau perubahan, pendedahan atau pemusnahan data yang tidak dibenarkan. termasuk ulasan dalaman koleksi data, penyimpanan dan pelaksanaan proses dan langkah keselamatan, termasuklah langkah keselamatan fizikal untuk kawalan terhadap akses yang tidak dibenarkan kepada sistem tempat kami menyimpan data peribadi. Kecuali kebenaran yang jelas diperoleh daripada anda, LifeChurch.tv membatasi akses maklumat peribadi kepada para pekerja, kontraktor dan ejen yang perlu mengetahui maklumat tersebut untuk beroperasi, membangunkan atau memperbaiki perkhidmatan kami. Mereka terikat dengan kewajipan sulit dan mungkin dikenakan tindakan disiplin, termasuk pemecatan dan pendakwaan jenayah, jika mereka gagal untuk memenuhi kewajipan tersebut."
       data integrity title: "Integriti Data"
       data integrity text: "LifeChurch.tv menyemak amalan pengumpulan, simpanan dan memproses data kami demi memastikan bahawa kami hanya mengumpul, menyimpan dan memproses informasi peribadi yang diperlukan untuk menyediakan atau meningkatkan perkhidmatan kami. Kami mengambil langkah yang munasabah untuk memastikan bahawa informasi peribadi yang diproses adalah tepat, lengkap, dan terbaru, namun kami bergantung kepada pengguna kami untuk mengupdate atau membetulkan informasi peribadi mereka "
       information access title: "Mengakses dan mengupdate informasi peribadi"
@@ -380,6 +399,7 @@ ms:
       publishing partners: "Beritahu saya berita terbaru dari rakan kongsi kandungan YouVersion."
       update: "Update Notifikasi"
   bookmarks:
+    new: "Bookmark Baru"
     edit: "Mengedit"
     delete: "Hapuskan Bookmark ini"
     title field: "Tajuk"
@@ -447,8 +467,10 @@ ms:
     reading completed _ mark and show next: "Selanjutnya: %{next_reference}"
     which reading: "%{current} dari %{total}"
     done reading: "Selesai"
+    no verses: "Hari ini tiada ayat pembacaan"
     no content: "Pelan anda ditandai lengkap untuk hari ini kerana tiada kandungan yang dijadualkan untuk hari ini."
     read today: "Lihat Bacaan Hari Ini"
+    devotional: "Meditasi Agama"
     completion status _ below percentage: "Terlengkap"
     current progress html: "Hari <b>%{day}</b> dari <b>%{total_days}</b>"
     start date _ before date string: "Tarikh Bermula:"
@@ -499,10 +521,32 @@ ms:
     catch up successful: "Syabas! Bacaan anda tidak lagi tertinggal ke belakang."
     restart successful: "Pelan anda sudah dimulakan sekali lagi."
     subscribe successful: "Bagus! Anda kini mengikuti pelan ini."
+    day number: "Hari %{day}"
     which day in plan: "Hari %{day} dari %{total}"
     must start to complete: "Mulailah pelan ini dan selamatkan bacaan yang dilengkapi!"
     invalid reference: "Maaf, satu daripada rujukan Alkitab untuk bacaan ini mungkin tidak terjumpa dalam versi tersebut. Cuba pilih versi yang berbeza di atas. Sekiranya anda terus menerima mesej ini, sila hubungi <a href='%{support_url}'>pihak sokongan</a> kami tentang masalah ini."
+    sidebar notice: "Anda sedang melihat pelan bacaan."
+    completed notice: "Tahniah! Anda sudah melengkapi pelan bacaan anda."
     exit: "Keluar"
+    loading sidebar content: "Memuat isi kandungan sidebar..."
+  licenses:
+    authorized:
+      heading: "Isi kandungan anda telah disahkan"
+      description: "Anda sekarang boleh <a href='%{content_link}'>melihat isi kandungan yang telah anda beli</a> daripada %{vendor} dalam YouVersion!"
+    has errors: "Terdapat kesilapan dengan permintaan anda:"
+    confirm:
+      email: "Untuk membenarkan isi kandungan video yang telah anda beli, sila lihat inbox e-mel anda untuk e-mel pengesahan daripada YouVersion dan klik link di dalam untuk mengesahkan pendaftaran anda."
+    request:
+      invalid_vendor_signature: "Pengesahan lesen gagal: Tandatangan penjual tidak sah"
+      invalid_vendor_id: "Pengesahan lesen gagal: ID penjual tidak sah"
+      invalid_item_ids: "Pengesahan lesen gagal: Item tidak sah"
+    vendor_transaction_id:
+      duplicate: "Id transaksi: Id transaksi ini telah berdaftar"
+    auth:
+      login notice: "Untuk mengesahkan kandungan pembelian anda, sila log masuk ke akaun YouVersion anda di bawah atau <a href='/sign-up?source=licenses'>%{signup}</a>."
+      signup notice: "Untuk mengesahkan kandungan pembelian anda, sila mendaftar untuk akaun YouVersion percuma di bawah atau <a href='/sign-in?source=licenses'>%{login}</a> jika anda sudah mempunyai akaun."
+      signup link text: "Daftar untuk akaun percuma"
+      login link text: "Log masuk"
   registration:
     placeholder:
       email: "Masukkan alamat e-mel anda"
@@ -515,6 +559,7 @@ ms:
     plan blurb: "Rupanya anda ingin memulai Pelan Bacaan. Ini bijak! Pelan bacaan boleh membantu Alkitab menjadi sebahagian daripada kehidupan harian anda. Log masuk ataupun daftarkan akaun baru dan bermula!"
     bookmark blurb: "Rupanya anda ingin mengguna bookmark. Bagus! Bookmark membantu anda mengingati ayat-ayat yang ingin dihafal, diberita, atau ditandai sebagai ayat kegemaran. Log masuk ataupun daftarkan akaun baru dan bermula!"
     friends blurb: "Rupanya anda ingin berinteraksi dengan Sahabat. Bagus! Secara ini anda dapat memberitakan apa yang dipelajari dan membantu sahabat berterusan dengan bacaan mereka. Log masuk ataupun daftarkan akaun dan bermula!"
+    share blurb: "Nampaknya anda ingin berkongsi Ayat Alkitab. Indahnya! Anda boleh berkongsi ayat alkitab via Facebook atau Twitter. Log masuk atau daftarkan akaun di bawah dan bermulalah!"
     highlight blurb: "Rupanya anda ingin highlight ayat kitab. Bagus! Highlight membantu anda mengaturkan ayat-ayat kegemaran anda. Log masuk atau daftarkan akaun  di bawah dan bermulalah! "
     note blurb: "Rupanya anda ingin mencatat nota tentang alkitab. Bagus! Nota-nota membantu anda mengingati dan mengaturkan pelajaran dari Firman Allah. Log masuk atau daftarkan akaun di bawah dan bermulalah!"
   audio:
@@ -522,6 +567,7 @@ ms:
     chapter only: "Maaf, audio tidak tersedia untuk ayat-ayat. Audio bab boleh dikunjungi di pembaca."
     close player menu: "Tutup"
   highlights:
+    choose color: "Pilih Warna"
     creation error: "Maaf, tidak dapat highlight."
     delete error: "Maaf, highlight tidak dapat dibatalkan."
   searching:
@@ -541,6 +587,10 @@ ms:
     headline: "Setiap orang memerlukan Firman Allah."
     subhead: "Bantulah orang ramai di seluruh dunia mendapat akses kepada Alkitab."
     copy: "Bayangkan jika anda dapat menghadiahkan Alkitab kepada setiap orang. Sumbangan anda kepada YouVersion membantu anda melakukan ini. Zaman kita cuma diimpikan dahulu; sesiapa yang memiliki handphone dapat mengakses Alkitab dan mengalami kisah cinta Allah. Sumbangan anda akan membantu lebih orang membaca Alkitab."
+    amount: "Jumlah sumbangan"
+    option once: "Satu kali"
+    option monthly: "Setiap bulan"
+    alert empty amount: "Sila masukkan jumlah sumbangan."
     name: "Nama anda"
     card number: "Nombor kad kredit"
     card exp date: "Tarikh tamat tempoh (MMYY)"
@@ -634,6 +684,7 @@ ms:
     home:
       hero:
         heading: "Alkitab yang percuma dalam telefon, tablet, dan komputer anda."
+        description: "YouVersion ialah Alkitab yang mudah dan ad-free yang membawa Firman Allah ke dalam kehidupan anda setiap hari."
         learn more: "Ketahui lebih lanjut di bawah"
         start reading: "Mula membaca"
         skip in future: "Skip halaman ini pada masa akan datang"
@@ -642,10 +693,13 @@ ms:
         read heading: "Baca Alkitab."
         read description: "Ambil pilihan anda daripada <strong>ratusan versi Alkitab dan bahasa</strong>. Bandingkan dua versi sebelah menyebelah. Anda juga boleh memilih font dan saiz display anda. Jadikan pengalaman Alkitab online anda sepertimana yang anda suka."
         study heading: "Pelajari Alkitab."
+        study description: "<strong> Highlight </strong> dalam warna kegemaran anda, <strong> bookmark </strong> ayat Alkitab kegemaran anda, dan buat nota tentang apa yang anda pelajari. Anda bukan sahaja meluangkan masa di dalam Firman Allah, anda juga sedang membangun sejarah interaksi anda dengan Alkitab."
         subscribe heading: "Subscribe Pelan Alkitab."
+        subscribe description: "Pusatkan pada keseluruhan Alkitab, fokus pada topik, atau baca devosi daripada guru yang berkebolehan. Pilih pelan anda dan anda akan mendapati pilihan Alkitab menanti anda setiap hari."
         download heading: "Bawa Alkitab bersama anda."
         download description: "<a href='http://youversion.com/download'>Muat turun</a> Bible App secara percuma dalam mana-mana peranti mudah alih. Apabila anda menggunakan app mudah alih, nota anda, bookmark, highlight, pelan dan sebagainya akan di sync secara automatik di seluruh peranti anda."
       get started: "Mulakan dengan akaun percuma anda."
+      word with you: "Firman Allah ada bersama anda."
       download action: "Muat turun Bible App"
       download description: "Muat turun YouVersion Bible App secara percuma dalam alat peranti mudah alih anda dan anda akan ada bersama Alkitab anda di mana sahaja anda pergi."
       world installs: "Install di seluruh dunia"
@@ -670,6 +724,8 @@ ms:
       translation notes: "Footnotes"
       cross references: "Rujuk Silang"
   app errors:
+    404 plans explanation: "Adakah anda sedang mencari pelan <a href='%{plan_path}'>%{title}</a> ?"
+    404 contact support: "Anda mempunyai masalah? Anda boleh menghubungi  <a href='%{support_url}'>pihak sokongan</a>kami."
     404 explanation: "Anda boleh bermula kembali dari <a href='%{reader_path}'>halaman utama</a>. Sekiranya masih ada kesulitan, sila hubungi <a href='%{support_url}'>pihak sokongan</a> kami."
     404 message: "Maaf, halaman yang diminta tidak tercari."
     408 message: "Maaf, server kami terlewat respons."
@@ -677,6 +733,7 @@ ms:
     try again: "Cuba lagi"
   versions:
     filter: "Pilih Versi..."
+    see all: "Lihat Semua Versi..."
     courtesy of: "%{singkatan} dibawakan untuk anda daripada %{penerbit}"
     learn more: "Ketahui Lebih Lanjut"
     index title: "Versi yang Tersedia"
@@ -690,13 +747,35 @@ ms:
     public domain: "Domain Awam"
     loading: "Memuat Versi Lain..."
     load error: "Maaf, memuat versi lain mempunyai masalah. Tutup menu ini dan buka semula untuk mencuba kembali."
+  reader help:
+    title: "Pilih ayat..."
+    line 1: "Klik atau tap apa-apa ayat atau koleksi ayat untuk bookmark, highlight, menghasilkan nota, atau berkongsi dengan sahabat anda!"
   campaigns:
     100m:
+      logo: "YouVersion: App Alkitab"
+      tagline: "Ia bermula dengan <em>100 juta</em>"
+      intro: "Bolehkah App Alkitab mencapai 100 juta instalasi sebelum ulangtahun kami yang ke 5 pada 10 Julai? Hanya dengan bantuan anda!"
       after: "Oleh kerana anda, App Alkitab mencapai 100 juta pemuat turun di ulang tahun yang ke 5 pada 10 July. Terima kasih! "
       share:
+        with friends: "Kongsikan dengan sahabat anda"
         fb:
           dialog name: "Adakah anda mempunyai App Alkitab?"
+          dialog desc: "Saya amat menyukai App Alkitab! Ia amat membantu saya untuk menjadikan Alkitab sebahagian dari hidup saya sehari-hari. Ia membolehkan saya untuk highlight, mendengarkan audio Alkitab, membuat nota, mengikuti pelan devosi...dan menonton video! Muat turun sekarang (ia adalah percuma): http://www.bible.com/app"
+        tw:
+          tweet: "App Alkitab @YouVersion ditempatkan di sudut kekal dalam home screen saya. Baca, tonton, dengar, dan kongsi...semuanya dalam app yang percuma:"
         em:
           subject: "Adakah anda mempunyai App Alkitab?"
+          body: "Saya amat gembira dengan App Alkitab dari YouVersion dan berharap anda juga akan menyukainyai. Saya membuka Alkitab lebih kerap kebelakangan ini kerana ianya mudah untuk dibaca, ditonton, didengar dan dikongsi. Ia juga mempunyai Pelan, yang mana mempunyai pilihan Alkitab yang terpilih dan menunggu saya setiap hari. \n\nAnda boleh mendapatinya (percuma!) untuk kebanyakan telefon mudah alih di sini:\nhttp://www.bible.com/app"
+      body:
+        p1: "10 Julai akan menjadi hari yang besar. Ia bukan sahaja ulangtahun ke-5 App Alkitab, tetapi juga menandakan 5 tahun sejak pelancaran Apple's iTunes Store."
+        p2: "Tetapi lebih besar? Dengan bantuan anda, inilah harinya App Alkitab akan mencapai 100 juta muat turun."
+        p3: "Kita telah mempelajari bahawa Allah menggunakan pencapaian seperti ini untuk menjana perkembangan yang lebih besar."
+        p4: "Ayuh mencipta sejarah bersama."
+        after p1: "YouVersion mewakili kesatuan global masyarakat yang bersemangat untuk membantu orang lain terlibat dengan Firman Allah. Kepada semua kumpulan Alkitab dan para penerbit, gereja-gereja, pastor-pastor, dan para sukarelawan Alkitab: terima kasih atas kemurahan hati anda!"
+        after p2: "Apa yang sangat menarik tentang pencapaian ini adalah apa yang ia wakili: hari ini masyarakat berhubung dengan Alkitab dalam skala yang tidak pernah kita lihat sebelum ini. Ini sangat manakjubkan untuk melihat apa yang Allah sedang lakukan. Dan kita percaya ini baru permulaan. <em>Ia bermula dengan 100 juta</em>."
+      ad:
+        title: "App Alkitab secara keseluruhannya adalah percuma dan merupakan cara yang hebat untuk meneroka Alkitab."
+        copy: "Baca, Dengar, Tonton, Kongsi. Dapatkan App Bible untuk smartphone dan tablet anda: <a href='http://bible.com/app'>Muat Turun Sekarang</a>"
       sidebar:
+        tagline: "Ayuh mencipta sejarah bersama"
         button: "Kongsi App Injil"

@@ -6,12 +6,15 @@ sw:
     connection friends: "hapa kuna baadhi ya watumiaji wa YouVersion ambao mmeshikamana nao kwa %{uhusiano}"
     errors:
       no friends: "Hakuna %{uhusiano} marafiki zako waliopo katika YouVersion."
+      reset connection: "Samahani, hitilafu imetokea. Tafadhali funga na kisha unganisha tena uhusiano huu."
     email:
       name: "Barua pepe"
     twitter:
       name: "twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Muda wa ishara yako na Facebook umekwisha. Tafadhali funga uhusiano wako na kisha unganisha tena kwa Facebook."
   api:
     users agree bool: "Lazima ukubali sheria na masharti ili utengeneze akaunti "
     users confirm password matches: "Neno la siri mpya haijalingana"
@@ -584,6 +587,10 @@ sw:
     headline: "Kila mtu anahitaji neno la Mungu"
     subhead: "Unaweza saidia kuweka Bibilia kwenye ncha za vidole za mamilioni"
     copy: "Hebu fikiria kama unaweza kumpa kila mtu katika ulimwengu Biblia bure. Unapotoa kwa YouVersion, unaweza kufanya hivyo tu. Sisi tuko hai wakati ambapo  wengine waliotea tu  - wakati mtu yeyote na simu wanaweza kupata Biblia na kuhisi hadithi za upendo wa Mungu kwetu. Na msaada wako, tunaweza kuendelea kusaidia watu zaidi kutumia muda zaidi katika Maandiko"
+    amount: "Kiasi cha mchango"
+    option once: "Mara moja"
+    option monthly: "Kwa mwezi"
+    alert empty amount: "Tafadhali ingiza kiasi cha mchango"
     name: "Jina lako"
     card number: "Namba ya credit kadi"
     card exp date: "Tarehe ya muda kumalizika (MMYY)"

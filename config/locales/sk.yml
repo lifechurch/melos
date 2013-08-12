@@ -13,6 +13,8 @@ sk:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Zapamätané prihlásenie k Facebooku vypršalo. Odstráňte prosím prepojenie a prihláste sa k Facebooku znova."
   api:
     users agree bool: "Na vytvorenie účtu musíte súhlasiť s podmienkami používania."
     users confirm password matches: "Zadané nové heslá sa nezhodujú."
@@ -585,7 +587,10 @@ sk:
     headline: "Každý potrebuje Božie Slovo."
     subhead: "Pomôžte ľuďom z celého sveta, aby mohli mať Bibliu na dosah."
     copy: "Predstavte si, že by ste mohli darovať každému človeku na svete Bibliu. Keď venujete príspevok YouVersion, urobíte presne to. Žijeme v čase, o ktorom iní iba snívali &ndash; keď každý, kto má telefón, môže mať prístup k Biblii a zažiť príbeh Božej lásky pre nás. S vašou podporou môžeme pokračovať pomáhať viac ľuďom tráviť viac času s Písmom."
+    amount: "Suma príspevku"
+    option once: "Jednorazovo"
     option monthly: "Mesačne"
+    alert empty amount: "Prosím zadajte sumu príspevku."
     name: "Vaše meno"
     card number: "Číslo kreditnej karty"
     card exp date: "Dátum expirácie (MMRR)"

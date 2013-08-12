@@ -13,6 +13,8 @@ zh-TW:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "您接入 Facebook 的授權已經失效。請先移除關聯，然後重新連接去 Facebook。"
   api:
     users agree bool: "您必須同意使用條款與條件才能建立帳號。"
     users confirm password matches: "新密碼不匹配。"
@@ -585,6 +587,10 @@ zh-TW:
     headline: "每個人都需要上帝的話語。"
     subhead: "幫助世界各地的人在彈指之間就能得到聖經。"
     copy: "試想如果您可以送給世上的每個人一本聖經。當您捐獻給 YouVersion 的時候，您就做到了。我們活在一個別人只能想像的時代 —— 每一個有手機的人都能夠讀到聖經並經歷到上帝對我們的愛。有您的支持，我們就能繼續幫助更多的人花更多時間讀聖經。"
+    amount: "捐贈金額"
+    option once: "一次"
+    option monthly: "每月"
+    alert empty amount: "請鍵入捐贈金額。"
     name: "您的名字"
     card number: "信用卡號碼"
     card exp date: "過期日期（MM/YY)"
