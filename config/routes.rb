@@ -1,25 +1,24 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
-  get "/100million", to: "campaigns#hundred_million"
+  get "/app",           to: "pages#app"
+  get "/donate",        to: "pages#donate"
+  get "/terms",         to: "pages#terms"
+  get "/privacy",       to: "pages#privacy"
 
-  # Route for tracking requests to /app url.  Specifically desired for BibleSeries analytics
-  get "/app", to: "pages#app"
-  get '/confirm-email', to: 'users#confirm_email', as: "confirm_email"
+  get "/search",        to: "search#show",                as: "search"
+  get "/100million",    to: "campaigns#hundred_million"
+  get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
 
-  get 'donate/us', to: 'donations#us', as: 'us_donation'
-  post 'donate/us', to: 'donations#confirm', as: 'confirm_donation'
-  match 'donate/relay_response', to: 'donations#relay_response', as: 'donations_relay_response'
-  match 'donate/receipt', to: 'donations#receipt', as: 'donations_receipt', via: [:get]
-  match 'open' => 'pages#open'
 
   # Bible
   match 'bible/widgets/bookmarks' => 'references#bookmarks'
   match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'references#notes', :as => 'reference_notes', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
 
-  resources 'versions',   :only => [:index, :show]
-  resources 'bookmarks',  :except => [:index]
+  resources "bookmarks",  except: [:index]
+  resources "versions",   only:   [:index, :show]
+  
 
   resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do
     get :authorize, on: :collection
@@ -28,14 +27,6 @@ YouversionWeb::Application.routes.draw do
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
   match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
   resources 'notes', :except => [:index]
-
-  match 'search' => 'search#show'
-  match 'privacy' => 'pages#privacy'
-  match 'terms' => 'pages#terms'
-  #catch non-supported languages and still render them
-  match '/:locale/terms', :to => 'pages#terms'
-  match '/:locale/privacy', :to => 'pages#privacy'
-
 
   resources 'highlights', only: [:create] do
     get :colors, on: :collection
@@ -146,7 +137,7 @@ YouversionWeb::Application.routes.draw do
   delete 'connections/:provider/delete' => 'connections#destroy', as: 'delete_connection'
 
 
-  match 'donate' => 'pages#donate', constraints: lambda { |request| request.params[:locale] != "tr" }
+  
   match 'about' => 'pages#about'
   match 'press' => 'pages#press'
   match 'status' => 'pages#status'
