@@ -4,7 +4,7 @@ YouversionWeb::Application.routes.draw do
   get "/100million", to: "campaigns#hundred_million"
 
   # Route for tracking requests to /app url.  Specifically desired for BibleSeries analytics
-  get "/app", to: "trackings#app"
+  get "/app", to: "pages#app"
   get '/confirm-email', to: 'users#confirm_email', as: "confirm_email"
 
   get 'donate/us', to: 'donations#us', as: 'us_donation'
@@ -145,7 +145,7 @@ YouversionWeb::Application.routes.draw do
   match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
   delete 'connections/:provider/delete' => 'connections#destroy', as: 'delete_connection'
 
-  match 'mobile' => 'pages#mobile'
+
   match 'donate' => 'pages#donate', constraints: lambda { |request| request.params[:locale] != "tr" }
   match 'about' => 'pages#about'
   match 'press' => 'pages#press'
