@@ -30,56 +30,12 @@ module YouversionWeb
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 
-      store_redirect = lambda do |path,rack_env|
-        case rack_env["X_MOBILE_DEVICE"]
+      r301 %r{\/webcast}, "http://webcast.youversion.com/index.html"
 
-        when /iphone|iPhone|ipad|iPad|ipod|iPod/
-          'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=282935706&mt=8'
-
-        when /android|Android/
-          'market://details?id=com.sirma.mobile.bible.android'
-
-        when /silk|Silk/
-          'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
-
-        when /blackberry|BlackBerry/
-          'http://appworld.blackberry.com/webstore/content/1222'
-
-        when /SymbianOS/
-          'http://store.ovi.mobi/content/47384'
-
-        when /J2ME/
-          'http://getjar.com/bible-app'
-
-        when /Windows Phone OS/
-          'zune://navigate/?phoneappid=57f524fa-93e3-df11-a844-00237de2db9e'
-
-        when /webOS|hpwOS/
-          'http://developer.palm.com/webChannel/index.php?packageid=com.youversion.palm'
-
-        else
-          'https://www.bible.com'
-        end
-      end
-
-      should_redirect_store = lambda do |rack_env|
-        !rack_env["X_MOBILE_DEVICE"].nil? && rack_env["PATH_INFO"] =~ /^\/download|^\/mobile/
-      end
-
-      tstamp = Time.now.to_i.to_s
-
-      r301 %r{\/webcast}, "http://webcast.youversion.com/index.html?#{tstamp}"
-
-      r307 %r{^\/download|^\/mobile}, store_redirect, if: should_redirect_store
-
-
-
-      # re-route /download redirects before the legacy mobile redirects so the mobile redirects to app stores work
-      r301 '/descargar', '/es/download'
-      r301 %r{^(/.{2,5})?(/iphone$|/bb$|/android$)}, '$1/download' #without $ or {2,5} application.css gets 301'd to a black hole on dev
-
-      # engagement site (pre mobile redirect)
-      r301 %r{^(/.{2,5})?(/now$)}, 'http://now.youversion.com'
+      # /app redirects
+      r301 %r{\/download$|\/mobile$}, '/app'
+      r301 %r{\/iphone$|\/bb$|\/android$}, '/app' #without $ or {2,5} application.css gets 301'd to a black hole on dev
+      r301 %r{\/descargar},         "/es/app"
 
       # lifekids redirect
       r301 %r{^(/.{2,5})?(/lifekids$)}, '$1/reading-plans?category=family'
@@ -135,9 +91,6 @@ module YouversionWeb
 
       ### USER
       r301 '/forgot', '/settings/forgot_password'
-
-      ### Mobile Downloads
-      r301 %r{^(/.{2,5})?(/download$)}, '$1/mobile'
 
       #jmm
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
