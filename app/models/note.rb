@@ -22,8 +22,16 @@ class Note < YouVersion::Resource
   belongs_to_remote :user
 
   def self.for_reference(ref, params = {})
-    params.merge!({references: ref.to_usfm, query: '*'})
-    #TODO: constrain this to only work for <= 10 verses or chapter
+    # Constrained to only work for <= 10 verses or a chapter
+    # API doesn't want more than 10 verses or returns the following error:
+    # YouVersion::ResourceError: search.references.exceeded_10_verse_references
+    
+    # reference.to_usfm 
+    # => "GEN.2.5+GEN.2.6+GEN.2.7+GEN.2.8+GEN.2.9+GEN.2.10+GEN.2.11+GEN.2.12+GEN.2.13+GEN.2.14+GEN.2.15"
+    # lets take the output and truncate it to 10 or less.
+
+    only_10_refs = ref.to_usfm.split("+")[0...10].join("+")
+    params.merge!({references: only_10_refs, query: '*'})
     all(params)
   end
 
