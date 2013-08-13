@@ -65,7 +65,7 @@ class ReferencesController < ApplicationController
       end
     end
 
-    # we allow .s in our reference constraint, so we pull
+    # we allow . (dots) in our reference constraint, so we pull
     # the format manually in this case
     def strip_format
       if params[:reference].try(:"end_with?", '.json')
@@ -80,7 +80,8 @@ class ReferencesController < ApplicationController
       client_settings.reader_full_screen = client_settings.reader_parallel_mode = nil
 
       if exception.is_a? BadSecondaryVersionError
-        self.presenter = Presenter::Reference.new(params,self, {
+        ref_string  = YouVersion::ReferenceString.new(params[:reference])
+        self.presenter = Presenter::Reference.new(ref_string, params, self, {
           alt_version: Version.find(cookies[:alt_version]),
           alt_reference: Hashie::Mash.new({content: "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"})
         })
@@ -88,7 +89,8 @@ class ReferencesController < ApplicationController
       end
 
       if exception.is_a? NoSecondaryVersionError
-        pres = Presenter::Reference.new(params,self, {
+        ref_string  = YouVersion::ReferenceString.new(params[:reference])
+        pres = Presenter::Reference.new(ref_string, params, self, {
           alt_version: Version.find(1),
           alt_reference: Hashie::Mash.new({content: "<h1>#{t('ref.no secondary version title')}</h1> <p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"})
         })
