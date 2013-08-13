@@ -2,10 +2,12 @@ YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
   get "/app",           to: "pages#app"
-  get "/donate",        to: "pages#donate"
   get "/terms",         to: "pages#terms"
   get "/privacy",       to: "pages#privacy"
-
+  get "/donate",        to: "pages#donate"
+  get "/about",         to: "pages#about"
+  get "/press",         to: "pages#press"
+  get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
   get "/100million",    to: "campaigns#hundred_million"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
@@ -91,73 +93,53 @@ YouversionWeb::Application.routes.draw do
 
   # Community emails send this link
   # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
-  match "/reading-plans/:id/settings(/email)" => "plans#settings", via: :get
+  get "/reading-plans/:id/settings(/email)", to: "plans#settings"
 
   # Community emails send this link
   # /reading-plans/199-promises-for-your-everyday-life/calendar
-  match "/reading-plans/:id/calendar" => "plans#calendar", via: :get
+  get "/reading-plans/:id/calendar",       to: "plans#calendar"
 
-  post 'share' => 'users#share', as: 'share'
-  get 'share/new' => 'users#new_share', as: 'new_share'
-
-
-
-  match 'sign-up' => 'users#new',    :as => 'sign_up', :via => :get
-  match 'sign-up' => 'users#create', :as => 'sign_up', :via => :post
-  match 'sign-up/facebook' => 'users#create_facebook', :as => 'facebook_sign_up', :via => :post
-  match 'sign-up/facebook' => 'users#new_facebook', as: 'facebook_sign_up', :via => :get
-  match 'sign-up/success' => 'users#sign_up_success', as: 'sign_up_success'
-
-  get   'confirm/resend',to: 'users#resend_confirmation', :as => "resend_confirmation"
-  post  'confirm/resend',to: 'users#resend_confirmation', :as => "resend_confirmation"
-
-  get   'confirm/:hash', to: 'users#confirm',    :as => "confirm"
-  post  'confirm/:hash', to: 'users#confirmed',  :as => "confirm"
-
-
-
+  get   "/sign-up",                        to: "users#new",                  as: "sign_up"
+  post  "/sign-up",                        to: "users#create",               as: "sign_up"
+  get   "/sign-up/facebook",               to: "users#new_facebook",         as: "facebook_sign_up"
+  post  "/sign-up/facebook",               to: "users#create_facebook",      as: "facbook_sign_up"
+  get   "/sign-up/success",                to: "users#sign_up_success",      as: "sign_up_success"
+  get   "/confirm/resend",                 to: "users#resend_confirmation",  as: "resend_confirmation"
+  post  "/confirm/resend",                 to: "users#resend_confirmation",  as: "resend_confirmation"
+  get   "/confirm/:hash",                  to: "users#confirm",              as: "confirm"
+  post  "/confirm/:hash",                  to: "users#confirmed",            as: "confirm"
+  get   "/confirm-update-email/:token",    to: "users#confirm_update_email", as: "confirm_update_email"
+  get   "/settings/forgot_password",       to: "users#forgot_password_form", as: "forgot_password"
+  post  "/settings/forgot_password",       to: "users#forgot_password",      as: "forgot_password"
+  delete "/devices/:device_id",            to: "users#destroy_device",       as: "device"
+  get   "share/new",                       to: "users#new_share",            as: "new_share"
+  post  "share",                           to: "users#share",                as: "share"
 
   # Sessions
-  match 'sign-in'  => 'sessions#new',     :as => 'sign_in', :via => :get
-  match 'sign-in'  => 'sessions#create',  :as => 'sign_in', :via => :post
-  match 'sign-out' => 'sessions#destroy', :as => 'sign_out'
-  match 'api-test' => 'api_test#index'
-
-  # profile stuff
-  match 'devices/:device_id'     => 'users#destroy_device', :as => 'device', :via => :delete
-  get   'confirm-update-email/:token', to: 'users#confirm_update_email', as: 'confirm_update_email'
-  get   'settings/forgot_password', to: 'users#forgot_password_form', as: 'forgot_password'
-  post  'settings/forgot_password', to: 'users#forgot_password', as: 'forgot_password'
-
-  # connections
-  match 'auth/:provider/callback' => 'auth#callback', :as => 'auth_callback'
-  match 'auth/:provider/connect'  => 'auth#connect', :as => 'auth_connect'
-  match 'connections/:provider/new' => 'connections#new', :as => 'new_connection'
-  match 'connections/:provider/create' => 'connections#create', as: 'create_connection'
-  delete 'connections/:provider/delete' => 'connections#destroy', as: 'delete_connection'
-
-
+  get  "/sign-in",                         to: "sessions#new",               as: "sign_in"
+  post "/sign-in",                         to: "sessions#create",            as: "sign_in"
+  get  "/sign-out",                        to: "sessions#destroy",           as: "sign_out"
+  get  "/api-test",                        to: "api_test#index"  
   
-  match 'about' => 'pages#about'
-  match 'press' => 'pages#press'
-  match 'status' => 'pages#status'
-  match 'generic_error' => 'pages#generic_error'
-  match 'donate/us' => 'pages#donate_form', :as => 'donate_form'
-
-
-  # Current redirects to support previous urls.
-  match 'friends'   => 'redirects#settings' # friends is going away temporarily
-  match 'bookmarks' => 'redirects#bookmarks'
-  match 'settings'  => 'redirects#settings'
-  match 'settings/profile'        => 'redirects#settings'
-  match 'settings/connections'    => 'redirects#settings_connections'
-  match 'settings/update_email'   => 'redirects#settings_email'
-  match 'settings/password'       => 'redirects#settings_password'
-  match 'settings/picture'        => 'redirects#settings_picture'
-  match 'settings/notifications'  => 'redirects#settings_notifications', as: "notification_settings"
-  match 'settings/devices'        => 'redirects#settings_devices'
-  match 'settings/delete_account' => 'redirects#delete_account'
-
+  # connections 
+  get "/auth/:provider/callback",          to: "auth#callback",              as: "auth_callback"
+  get "/auth/:provider/connect",           to: "auth#connect",               as: "auth_connect"
+  get "/connections/:provider/new",        to: "connections#new",            as: "new_connection"
+  get "/connections/:provider/create",     to: "connections#create",         as: "create_connection"
+  delete "/connections/:provider/delete",  to: "connections#destroy",        as: "delete_connection"
+   
+  # Legacy routes, many used in transactio nal emails
+  get "/friends",                          to: "redirects#settings"
+  get "/bookmarks",                        to: "redirects#bookmarks"
+  get "/settings",                         to: "redirects#settings"
+  get "/settings/profile",                 to: "redirects#settings"
+  get "/settings/connections",             to: "redirects#settings_connections"
+  get "/settings/update_email",            to: "redirects#settings_email"
+  get "/settings/password",                to: "redirects#settings_password"
+  get "/settings/picture",                 to: "redirects#settings_picture"
+  get "/settings/devices",                 to: "redirects#settings_devices"
+  get "/settings/notifications",           to: "redirects#settings_notifications", as: "notification_settings"
+  get "/settings/delete_account",          to: "redirects#delete_account"
 
   root to: 'pages#home'
 

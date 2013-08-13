@@ -30,6 +30,11 @@ module YouversionWeb
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 
+      r301 %r{.*}, 'http://staging.bible.com$&', if: Proc.new {|rack_env|
+        rack_env['SERVER_NAME'] == 'staging.youversion.com'
+      }
+
+
       r301 %r{\/webcast}, "http://webcast.youversion.com/index.html"
 
       # /app redirects
