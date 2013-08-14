@@ -734,7 +734,7 @@ ms:
   versions:
     filter: "Pilih Versi..."
     see all: "Lihat Semua Versi..."
-    courtesy of: "%{singkatan} dibawakan untuk anda daripada %{penerbit}"
+    courtesy of: "%{abbreviation} dibawakan untuk anda daripada %{publisher}"
     learn more: "Ketahui Lebih Lanjut"
     index title: "Versi yang Tersedia"
     publisher widget title: "Penerbit"
