@@ -10,8 +10,8 @@ worker_processes Integer(ENV["UNICORN_WORKERS"] || 2)
 #
 # We want something shorter than the heroku 30 sec so that we know
 # when a worker has been restarted, but longer than the rack-timeout
-# of 15 seconds, since unicorn timeout as last-resort is preferred
-timeout Integer(ENV['UNICORN_TIMEOUT'] || 17)
+# of 22 seconds, since unicorn timeout as last-resort is preferred
+timeout Integer(ENV['UNICORN_TIMEOUT'] || 25)
 
 # Load rails + app code into the master before forking workers
 # for super-fast worker spawn times
