@@ -1,0 +1,123 @@
+:ruby
+  meta_title        = t("meta.kids_app.title")
+  meta_description  = t("meta.kids_app.description")
+  meta_url          = "http://bible.com/kids"
+
+!!! 5
+%html
+  %head
+    %title= strip_tags(meta_title)
+    %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %meta{charset:"utf-8"}
+    %meta{name: "viewport",       content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
+    %meta{name: "description",    content: meta_description}
+    %meta{name: "url",            content: meta_url}
+    %meta{name: "og:title",       content: meta_title }
+    %meta{name: "og:url",         content: meta_url }
+    %meta{name: "og:description", content: meta_description }
+    = stylesheet_link_tag "campaigns/kids"
+    = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
+    :javascript
+      try{Typekit.load();}catch(e){}
+    = render '/shared/google_analytics'
+  %body
+
+    .kids
+
+      -# !Logo and intro copy
+
+      %h1.intro-bible
+        The Bible App&trade;
+      .intro-forkids
+        %h2.intro-for
+          for
+        %h2.intro-kids
+          kids
+      %h3.intro-yv
+        by YouVersion
+
+      %p.intro-help
+        Help your kids fall in love with God's Word.
+
+      %img.intro-img{ src: "/assets/campaigns/kids/hdr-jesus.png", alt: "Jesus and friends"}
+
+      %p.intro-coming
+        Coming late 2013!
+
+
+
+      /Content goes here
+      = yield
+
+
+
+      -# !iPad hero screenshot
+      .hero
+        = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: "Jesus heals the paralytic"
+        %p.hero-copy
+          Interact with the Bible and see it come to life.
+
+      -# !Smaller screenshots
+
+      .screens
+        = image_tag "campaigns/kids/screens-1.jpg", alt: "The garden of Eden"
+        = image_tag "campaigns/kids/screens-2.jpg", alt: "Joseph, Mary, and the baby Jesus in the manger"
+        = image_tag "campaigns/kids/screens-3.jpg", alt: "Angels appear to the sheperds to tell them about the birth of Christ"
+        = image_tag "campaigns/kids/screens-4.jpg", alt: "Jesus heals the paralytic"
+
+      -# !Features list
+
+      .features
+        %p.features-1
+          A free Bible experience for your kids
+        %p.features-2
+          Animated storybook app for smartphones and tablets
+        %p.features-3
+          Colorful illustrations with touch-activated animations
+        %p.features-4
+          Games and activities help kids remember what they learn
+        %p.features-5
+          Kid-friendly navigation
+
+      -# !Share chunk
+
+      .share
+        %p.share-copy
+          Tell your friends about The Bible App for Kids...coming soon!
+
+        - fb_app_id   = Cfg.facebook_app_id
+        - fb_name     = "The Bible App for Kids"
+        - fb_desc     = "Meet the Bible App for Kids from YouVersion: animated Bible stories in a free app for smartphones and tablets. Learn, play, and grow in God's Word. Coming late 2013: bible.com/kids"
+        - fb_link     = "http://www.bible.com/kids"
+        - fb_redirect = "http://www.bible.com/kids"
+
+        %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
+          Facebook
+
+
+        - twitter     = "Meet the Bible App for Kids from @YouVersion. Learn, play, and grow in God's Word. Coming late 2013: bible.com/kids"
+        %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
+          Twitter
+
+
+        - subject     = "Meet the Bible App for Kids from YouVersion"
+        - body        = "YouVersion is making a Bible App for Kids! I’m excited for them to have their very own Bible App so they can learn, play, and grow in God’s Word. They’ll be able to explore a growing collection of Bible stories with touch-activated animations and learning activities. And it’s free, so our whole family can install it on our iOS or Android devices. I just signed up to be notified when it’s available later this year and thought you might be interested too. Sign up here: bible.com/kids"
+        %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
+          Email
+
+
+
+    -# !Brought to you by
+
+    .logos
+      .logos-box
+        %a{href: "http://bible.com"}
+          = image_tag "campaigns/kids/logos-yv.png", class: "logos-yv", alt: "YouVersion: The world’s most popular Bible App"
+        %p.logos-copy
+          in partnership with
+        %a{href: "http://onehope.net"}
+          = image_tag "campaigns/kids/logos-oh.png", class: "logos-oh", alt: "One Hope: Extraordinary Bible content for Kids"
+
+    -# !Retina JS
+
+    = javascript_include_tag "retina.js"

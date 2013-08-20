@@ -16,6 +16,7 @@ gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+gem 'pg', :group => :production
 
 #gem 'oink'
 gem 'gabba'
@@ -58,6 +59,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'debugger'
   gem 'capybara',       '~> 1.1.2'
   gem 'capybara-mechanize', '~> 0.3.0'

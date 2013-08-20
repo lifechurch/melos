@@ -21,6 +21,7 @@ prefork = lambda {
     c.run_all_when_everything_filtered = true
     c.mock_with :rspec
     c.filter_run_excluding :slow unless ENV["SLOW_SPECS"]
+    c.use_transactional_fixtures = true
   end
 
   # Capybara.server do |app, port|

@@ -9,9 +9,14 @@ YouversionWeb::Application.routes.draw do
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
-  get "/100million",    to: "campaigns#hundred_million"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
 
+
+  # Custom campaign pages
+  scope module: 'campaigns' do
+    get "/100million",    to: "pages#hundred_million"
+    resources 'kids',     only: [:index, :create]
+  end
 
   # Bible
   match 'bible/widgets/bookmarks' => 'references#bookmarks'

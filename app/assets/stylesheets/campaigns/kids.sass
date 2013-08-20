@@ -1,0 +1,484 @@
+@import compass/css3
+@import reset
+
+// !Body and other global stuff
+
+body
+  background: #EAE7DA image-url("campaigns/kids/body-bg.png") no-repeat center top
+
+p
+  font-family: "english", georgia, serif
+  color: #5A4133
+
+
+.kids
+  width: 980px
+  margin: 0 auto
+  padding-top: 70px
+  background: image-url("campaigns/kids/yv-logo-sm.png") no-repeat 46% 44px
+
+// !Logo and intro copy
+
+.intro-bible
+  font:
+    family: "proxima-nova", "Helvetica Neue light", Arial, sans-serif
+    size: 56px
+    weight: normal
+  letter-spacing: -.05em
+  color: #525261
+  margin: 0 0 0 290px
+
+.intro-forkids
+  margin: -5px 0 0 425px
+
+.intro-for,
+.intro-kids
+  font:
+    family: "chauncy-pro", sans-serif
+    size: 30px
+  text-transform: uppercase
+  display: inline
+
+.intro-for
+  color: #66AE2B
+  text-align: right
+
+.intro-kids
+  color: #3A8AC6
+  text-align: left
+  font-size: 32px
+
+.intro-yv
+  display: none
+
+.intro-help
+  margin: 20px 0 0 260px
+  font-size: 26px
+  width: 260px
+
+.intro-img
+  margin: -238px auto 0
+
+.intro-coming
+  background: image-url("campaigns/kids/coming-bg.png") no-repeat center top
+  width: 300px
+  font-size: 26px
+  padding: 10px 0 30px
+  text-align: center
+  margin: -190px 0 170px 355px
+
+
+// !Notify chunk
+
+.notify
+  text-align: center
+
+.notify-copy
+  font-size: 32px
+
+.notify-note
+  margin-top: 10px
+  margin-bottom: 10px
+
+.notify-box
+  display: table
+  width: 400px
+  margin: 30px auto 0
+
+.notify-box-btn,
+.notify-box-input
+  display: table-cell
+  vertical-align: middle
+
+.notify-box-input
+  width: 300px
+  background: #fff
+  +border-radius(4px 0 0 4px)
+
+.notify-box-btn
+  width: 100px
+  +border-radius(0 4px 4px 0)
+  background-color: #59B200
+
+.notify-input
+  height: 50px
+  font-size: 32px
+  padding: 0 10px
+  border: 0
+
+.notify-button
+  height: 50px
+  padding: 0 15px
+  font-size: 21px
+  background-color: #59B200
+  color: #fff
+  border: 0
+
+.kids-errors p
+  font-size: 22px
+
+
+// !iPad hero screenshot
+
+.hero
+  background: image-url("campaigns/kids/hero-ipad.png") no-repeat center top
+  width: 980px
+  height: 755px
+  margin-top: 40px
+
+.hero-screen
+  margin: 73px 0 0 88px
+
+.hero-copy
+  padding: 10px
+  background-color: #6D4F3D
+  width: 600px
+  text-align: center
+  margin: 50px auto 0
+  color: #fff
+  font-size: 22px
+
+
+// !Screens
+
+.screens
+  margin-top: 50px
+  width: 980px
+
+  img
+    margin: 0 0 16px 16px
+    border: 2px solid #fff
+    +box-shadow(rgba(0,0,0,.15) 0 1px 0)
+    width: 460px
+
+
+// !Features list
+
+.features
+  position: relative
+  width: 947px
+  height: 480px
+  margin: 20px auto 0
+  background: image-url("campaigns/kids/features-bg.png") no-repeat center top
+
+.features-1,
+.features-2,
+.features-3,
+.features-4,
+.features-5
+  font-size: 22px
+  text-align: center
+
+.features-1
+  position: absolute
+  left: 405px
+  top: 30px
+  width: 160px
+
+.features-2
+  position: absolute
+  left: 665px
+  top: 40px
+  width: 220px
+
+.features-3
+  position: absolute
+  left: 373px
+  top: 173px
+  width: 260px
+
+.features-4
+  position: absolute
+  left: 700px
+  top: 235px
+  width: 215px
+
+.features-5
+  position: absolute
+  left: 478px
+  top: 375px
+  width: 300px
+
+
+// !Share chunk
+
+.share
+  text-align: center
+
+.share-fb,
+.share-tw,
+.share-em
+  margin-left: 20px
+  width: 256px
+  height: 50px
+  line-height: 49px
+  display: inline-block
+  +border-radius(4px)
+  font-size: 21px
+  color: #fff
+  text-decoration: none
+  padding-left: 44px
+
+.share-copy
+  font-size: 32px
+  margin: 30px 0
+
+.share-fb
+  margin-left: 0
+  background: #3A5998 image-url("campaigns/kids/share-sprite.png") no-repeat 88px 10px
+
+.share-tw
+  background: #00ACED image-url("campaigns/kids/share-sprite.png") no-repeat 96px -63px
+
+.share-em
+  background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 98px -137px
+
+
+// !Logos
+
+.logos
+  background-color: #333
+  margin-top: 60px
+  padding: 30px 10%
+
+.logos-box
+  width: 940px
+  margin: 0 auto
+  text-align: center
+
+.logos-copy
+  color: #fff
+  font-size: 22px
+  display: inline-block
+  padding: 0 20px
+
+
+// !Retina stuff for hi-res dee-vices
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+
+  .kids
+    background: image-url("campaigns/kids/yv-logo-sm@2x.png") no-repeat 46% 44px
+    background-size: 142px 20px
+
+  .intro-coming
+    background: image-url("campaigns/kids/coming-bg@2x.png") no-repeat center top
+    background-size: 299px 57px
+
+  .features
+    background: image-url("campaigns/kids/features-bg@2x.png") no-repeat center top
+    background-size: 947px 479px
+
+  .share-fb
+    background: #3A5998 image-url("campaigns/kids/share-sprite.png") no-repeat 88px 10px
+    background-size: 34px 200px
+
+  .share-tw
+    background: #00ACED image-url("campaigns/kids/share-sprite.png") no-repeat 96px -63px
+    background-size: 34px 200px
+
+  .share-em
+    background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 98px -137px
+    background-size: 34px 200px
+
+// !------- Mobile --------
+
+
+// !Media queries for mobile dee-vices
+
+@media only screen and (max-width : 480px)
+
+  body
+    background-image: none
+
+  .kids
+    width: auto
+    margin: 0
+    padding: 15px
+    background-position: center 10px
+
+  // !Logo and intro copy
+
+  .intro-bible
+    font:
+      size: 44px
+    letter-spacing: -.05em
+    margin: 5% 0 0
+    text-align: center
+
+  .intro-forkids
+    margin: -2% 0 0 21%
+
+  .intro-for,
+  .intro-kids
+    font-size: 30px
+
+  .intro-help
+    margin: 0
+    font-size: 24px
+    width: auto
+    text-align: center
+    padding: 200px 0 0
+    background: image-url("campaigns/kids/jesus.png") no-repeat center top
+
+  .intro-img
+    display: none
+
+  .intro-coming
+    width: auto
+    font-size: 24px
+    margin: 10px 0 30px
+    height: 60px
+    line-height: 55px
+    padding: 0
+
+
+  // !Notify chunk
+
+  .notify-copy
+    font-size: 24px
+    width: 90%
+    margin: 0 auto
+
+  .notify-note
+    margin: 10px auto 0
+    width: 90%
+
+  .notify-box
+    width: 90%
+    margin: 15px auto 0
+
+  .notify-box-input
+    width: 75%
+
+  .notify-box-btn
+    width: 25%
+
+  .notify-input
+    font-size: 22px
+    padding: 0 5px
+    width: 100%
+
+  // !iPad hero screenshot
+
+  .hero
+    background: none
+    width: auto
+    height: auto
+    margin-top: 20px
+
+  .hero-screen
+    display: none
+
+  .hero-copy
+    width: auto
+    margin: 0 auto
+    font-size: 15px
+
+
+  // !Screens
+
+  .screens
+    margin-top: 0
+    width: auto
+
+    img
+      margin: 0 0 10px
+      border: 0
+      +box-shadow(none)
+      width: 100%
+
+
+  // !Features list
+
+  .features
+    position: static
+    width: auto
+    margin: 20px auto 0
+    background: none
+    height: auto
+
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    margin: 0 auto 10px
+    padding-bottom: 10px
+    border-bottom: 1px dotted #D7B880
+
+  .features-1
+    position: static
+    width: 90%
+
+  .features-2
+    position: static
+    width: 90%
+
+  .features-3
+    position: static
+    width: 90%
+
+  .features-4
+    position: static
+    width: 90%
+
+  .features-5
+    position: static
+    width: 90%
+
+
+  // !Share chunk
+
+  .share-fb,
+  .share-tw,
+  .share-em
+    margin: 0 auto 5px
+    width: 90%
+    display: block
+    font-size: 21px
+    color: #fff
+    padding-left: 0
+    line-height: 52px
+
+  .share-copy
+    font-size: 24px
+    margin: 30px auto 14px
+    width: 90%
+
+  .share-fb
+    background-image: none
+
+  .share-tw
+    background-image: none
+
+  .share-em
+    background-image: none
+
+
+  // !Logos
+
+  .logos
+    margin-top: 30px
+    padding: 20px 0
+    overflow: hidden
+
+  .logos-box
+    margin: 0
+    text-align: center
+    width: auto
+
+  .logos-copy
+    font-size: 18px
+    display: block
+    margin: 20px 0
+
+
+// !Retina stuff for hi-res dee-vices (Had to repeat this cuz desktop image would load in mobile)
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+
+  .intro-help
+    background: image-url("campaigns/kids/jesus@2x.png") no-repeat center top
+    background-size: 480px 190px
