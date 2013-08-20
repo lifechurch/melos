@@ -15,7 +15,7 @@ timeout Integer(ENV['UNICORN_TIMEOUT'] || 25)
 
 # Load rails + app code into the master before forking workers
 # for super-fast worker spawn times
-# preload_app true
+preload_app true
 
 # Listen on the TCP port Heroku has dynamically
 # set as $PORT, and will send traffic to as soon as Unicorn
