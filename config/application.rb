@@ -30,8 +30,9 @@ module YouversionWeb
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 
-      r301 %r{.*}, 'http://staging.bible.com$&', if: Proc.new {|rack_env|
-        rack_env['SERVER_NAME'] == 'staging.youversion.com'
+      # Blanket redirect all youversion traffic to www.bible.com
+      r301 %r{.*}, 'https://www.bible.com$&', if: Proc.new {|rack_env|
+        rack_env['SERVER_NAME'].match("youversion")
       }
 
 
