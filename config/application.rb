@@ -30,6 +30,12 @@ module YouversionWeb
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 
+      # Blanket redirect all youversion traffic to www.bible.com
+      r301 %r{.*}, 'https://www.bible.com$&', if: Proc.new {|rack_env|
+        rack_env['SERVER_NAME'].match("youversion")
+      }
+
+
       r301 %r{\/webcast}, "http://webcast.youversion.com/index.html"
 
       # /app redirects
