@@ -1,8 +1,9 @@
 cs:
   social:
+    share: "Sdílet"
     my connections: "Připojené účty"
     connected as: "Jste připojen/a ke službě %{connection} jako %{username}"
-    remove connection: "Odstranit"
+    remove connection: "Odstranit toto propojení"
     connection friends: "Zde jsou někteří YouVersion uživatelé, se kterými jste ve spojení přes %{connection}:"
     errors:
       no friends: "Žádný z vašich %{connection} přátel ještě není zaregistrovaný na YouVersion."
@@ -61,11 +62,8 @@ cs:
   share error: "Omlouváme, ve vaší zprávě se vyskytla chyba. Prosíme zkuste to znovu."
   google plus: "Google +"
   connect to: "Připojte se k vašemu %{connection} účtu"
-  connected as user: "Jste připojeni ke službě %{connection} jako %{username}"
   deleted connection: "Úspěšně odstraněno vaše spojení se službou %{connection}"
   deleted connection error: "Omlouváme se, vyskytla se chyba při odstraňování spojení se službou %{connection}."
-  remove connection: "Odstranit"
-  connection users: "Zde jsou někteří YouVersion uživatelé, s kterými jste spojeni na %{connection}u:"
   connection marketing: "Budete se více bavit, když budete sdílet YouVersion s přáteli! Propojte váš YouVersion účet s ostatními sociálními sítěmi a ihned najděte přátelé na YouVersion. Propojení vašich účtů vám také umožní sdílet obsah několika málo kliknutími. Nikdy neodešleme nic bez vašeho potvrzení. "
   next step connections: "Další: Propojte vaše účty a najděte své přátele"
   no notes found: "Uživatel %{username} zatím nemá žádné poznámky."
@@ -82,7 +80,6 @@ cs:
   link will be added: "Bude přidáno"
   my picture: "Aktualizovat moji fotku"
   my notifications: "Spravovat upozornění"
-  my connections: "Připojené účty"
   my devices: "Připojená zařízení"
   language name: "Čeština"
   sign up: "Zaregistrovat se"
@@ -132,7 +129,6 @@ cs:
   chapter: "Kapitola"
   bible: "Bible"
   notes title: "Poznámky"
-  videos: "Videa"
   friends: "Přátelé"
   groups: "Skupiny"
   mobile: "Mobil"
@@ -208,9 +204,7 @@ cs:
   users:
     unverified heading: "Jste téměř u konce!"
     unverified message: "Vypadá to, že se snažíte přihlásit do účtu, u kterého ještě nebylo provedeno úplné nastavení. Máte před sebou už jen jeden krok: Jednoduše klikněte na ověřovací odkaz, který Vám byl zaslán v potvrzovacím e-mailu z YouVersion. Nemůžete jej najít? Podívejte se do Vaší nevyžádané pošty (spamu) a nebo si nechte znovu poslat <a href='%{resend_path}'>potvrzovací e-mail</a>."
-    reset connection: "Promiňte, vyskytla se chyba. Prosím deaktivujte toto připojení a znovu ho připojte."
     settings: "Nastavení"
-    no connection friends: "Žádný z vašich %{connection} přátel ještě není zaregistrovaný na YouVersion."
     creation form errors: "Následující chyba zabránila vytvoření vašeho účtu:"
     profile form errors: "Následující chyba zabránila aktualizaci vašeho profilu:"
     email address: "E-mailová adresa"
@@ -529,6 +523,10 @@ cs:
     completed notice: "Gratulujeme! Dokončili jste váš plán čtení."
     exit: "Konec"
     loading sidebar content: "Načítání obsahu postranní lišty..."
+  videos:
+    title: "Videa"
+    all: "Všechna videa"
+    related scripture: "Související verše"
   licenses:
     authorized:
       heading: "Váš obsah byl autorizován"
@@ -657,7 +655,7 @@ cs:
     h3: "YouVersion funguje globálně"
     h3 sub: "Dostupné ve více než 100 jazycích po celém světě."
     main: "Desítky milionů lidí používají aplikaci Bible&trade;, aby z Bible udělali součást svého každodenního života. Stáhněte si bezplatnou aplikaci a získejte přístup k vašim záložkám, poznámkám a plánům čtení odkudkoli. Užívejte si stovky překladů včetně audio verzí, a to vše na vašem mobilním zařízení. "
-    button h4: "Běžte na youversion.com/download"
+    button h4: "Přejít na Bible.com/app"
     button h4 sub: "Na vašem mobilním zařízení"
     download now: "Stáhněte si aplikaci Bible ihned"
     what people: "Co lidé říkají o bezplatné aplikaci Bible..."

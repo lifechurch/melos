@@ -1,8 +1,9 @@
 da:
   social:
+    share: "Del"
     my connections: "Forbundne konti"
     connected as: "Du er forbundet til  %{connection} som %{username}."
-    remove connection: "Fjern"
+    remove connection: "Fjern denne forbindelse"
     connection friends: "Her er nogle YouVersion brugere som du er forbundet til på %{connection}:"
     errors:
       no friends: "Ingen af dine %{connection} venner ser ud til at være på YouVersion endnu."
@@ -61,11 +62,8 @@ da:
   share error: "Beklager, der var en fejl i delingen af din besked. Prøv venligst igen."
   google plus: "Google +"
   connect to: "Forbind til din %{connection} konto"
-  connected as user: "Du er forbundet  til %{connection} som %{username}."
   deleted connection: "Fjernede med succes din forbindelse til %{connection}."
   deleted connection error: "Beklager, der var en fejl i sletningen af din forbindelse til %{connection}."
-  remove connection: "Fjern"
-  connection users: "Her er nogle YouVersion brugere som du er forbundet til på %{connection}:"
   connection marketing: "YouVersion er sjovere med venner! Link din YouVersion konto til dine andre sociale netværk og øjeblikkeligt finde dine venner på YouVersion. Sammenkædning dine konti giver dig også mulighed for at dele indhold med blot et par klik. Vi vil aldrig sende noget uden din godkendelse."
   next step connections: "Næste: Forbind din konto og find dine venner"
   no notes found: "%{username} har ingen noter."
@@ -82,7 +80,6 @@ da:
   link will be added: "Vil blive tilføjet"
   my picture: "Opdater mit billede"
   my notifications: "Notifikations styring"
-  my connections: "Forbundne konti"
   my devices: "Forbundne apparater"
   language name: "Dansk"
   sign up: "Registrer dig"
@@ -132,7 +129,6 @@ da:
   chapter: "Kapitel"
   bible: "Bibel"
   notes title: "Noter"
-  videos: "Videoer"
   friends: "Venner"
   groups: "Grupper"
   mobile: "Mobil"
@@ -208,9 +204,7 @@ da:
   users:
     unverified heading: "Næsten færdig"
     unverified message: "Det ser ud som du forsøger at logge ind på en konto, som ikke er sat helt op. Du har kun et trin tilbage: skal du blot klikke på bekræftelses linket i bekræftelses e-mail du modtog fra YouVersion. Kan du ikke finde det? Tjek din spam folder eller <a href='%{resend_path}'>send bekræftelses email</a>."
-    reset connection: "Beklager, der skete en fejl. Fjern venligst og så gendan denne forbindelse."
     settings: "Indstillinger"
-    no connection friends: "Ingen af dine %{connection} venner ser ud til at være på YouVersion endnu."
     creation form errors: "Følgende fejl forhindrede dannelse af din konto:"
     profile form errors: "Følgende fejl forhindrede opdateringen af din profil:"
     email address: "Email adresse"
@@ -529,6 +523,10 @@ da:
     completed notice: "Tillykke! Du har fuldført en læse plan."
     exit: "Ud"
     loading sidebar content: "Indlæser sidemenu indhold..."
+  videos:
+    title: "Videoer"
+    all: "Alle videoer"
+    related scripture: "Forbundne skriftsteder"
   licenses:
     authorized:
       heading: "Dit indhold er blevet autorisereret!"
@@ -657,7 +655,7 @@ da:
     h3: "YouVersion er global"
     h3 sub: "Tilgængelig på mere end 100 sprog i verden."
     main: "Millioner af mennesker bruger Bible App ™ til at gøre Guds Ord en del af deres dagligdag. Hent den gratis app og få adgang til dine bogmærker, noter og læsning planer fra hvor som helst. Nyd hundredvis af versioner, herunder lyd, alle på din mobile enhed."
-    button h4: "Gå til YouVersion.com/download"
+    button h4: "Gå til Bible.com/app"
     button h4 sub: "På dit mobile apparat"
     download now: "Hent Bible App´en nu"
     what people: "Hvad folk siger om den gratis Bible App..."

@@ -1,8 +1,9 @@
 tl:
   social:
+    share: "Ibahagi"
     my connections: "Mga Kaugnay na Accounts"
     connected as: "Ikaw ay nakakonek sa %{connection} bilang %{username}."
-    remove connection: "Alisin"
+    remove connection: "Tanggalin ang koneksyon na ito."
     connection friends: "Sila ang mga YouVersion users na naka-connect sa iyo sa pamamagitan nang %{connection}:"
     errors:
       no friends: "Mukhang wala pa sa iyong %{connection} mga kaibigan ay nasa YouVersion sa kasalukuyan."
@@ -61,11 +62,8 @@ tl:
   share error: "Paumanhin, may pagkakamali sa pagshare ng iyong mensahe. Pakiulit po."
   google plus: "Google +"
   connect to: "Magkonek sa iyong account %{connection}"
-  connected as user: "Ikaw ay nakakonek sa %{connection} bilang %{username}."
   deleted connection: "Matagumpay na inalis ang koneksyon sa %{connection}."
   deleted connection error: "Paumanhin, may pagkakamali sa pag-alis ng iyong koneksyon sa %{connection}."
-  remove connection: "Alisin"
-  connection users: "Sila ang mga YouVersion users na naka-connect sa iyo sa pamamagitan nang %{connection}:"
   connection marketing: "Ang YouVersion ay mas masaya kasama ang mga kaibigan! Iugnay ang iyong YouVersion account sa iyong mga  social networks para madaling malita ang mga kaibigan sa YouVersion. Madali mo ring maibabahagi ang mga nilalaman ng YouVersion sa ilang clicks lang. Hindi kami magpa-paskil na anumang walang pahintulot mula sa iyo."
   next step connections: "Susunod: I-link ang iyong account at hanapin ang iyong mga kaibigan"
   no notes found: "Si %{user's_name} ay walang tala."
@@ -82,7 +80,6 @@ tl:
   link will be added: "Maidaragdag"
   my picture: "I-update Ang Aking Larawan"
   my notifications: "Pamahalaan ang mga Abiso"
-  my connections: "Mga Kaugnay na Accounts"
   my devices: "Mga Nakaugnay na Devices"
   language name: "Filipino"
   sign up: "Mag-sign up"
@@ -132,7 +129,6 @@ tl:
   chapter: "Kabanata"
   bible: "Bibliya"
   notes title: "Mga tala"
-  videos: "Mga Palabas"
   friends: "Mga Kaibigan"
   groups: "Mga Grupo"
   mobile: "Mobile"
@@ -208,9 +204,7 @@ tl:
   users:
     unverified heading: "Halos Tapos Na!"
     unverified message: "Mukhang nais mong mag-sign in sa isang account na hindi pa lubusang nalilikha. Isang hakbang na lamang: pindutin ang link sa naipadalang email ng YouVersion para makumpirma ito. Hindi mo ba makita ang email? Tingnan ang spam folder o <a href='%{resend_path}'>humiling na maipadala muli ang email</a>."
-    reset connection: "Paumanhin, nagkaroon ng pagkakamali. Paki-tanggal at muling i-konekta itong koneksyon. "
     settings: "Mga Setting"
-    no connection friends: "Mukhang wala pa sa iyong %{connection} mga kaibigan ay nasa YouVersion sa kasalukuyan."
     creation form errors: "Ang mga sumusunod na (mga) pagkakamali ay kailangang ayusin bago makalikha ng account:"
     profile form errors: "Ang mga sumusunod na (mga) pagkakamali ay kailangang ayusin bago ma-update ang iyong profile:"
     email address: "Email Address"
@@ -335,7 +329,7 @@ tl:
       resale title: "Walang Muling Pagbebenta ng Serbisyo"
       resale text: "Sumasang-ayon kang hindi paramihin, ulitin, kopyahin, ibenta, ipalit, ibenta muli o kasangkapanin para sa anumang komersyal na gamit, ang kahit na anumang bahagi ng YouVersion (kasama ang iyong LifeChurch.tv ID), paggamit ng YouVersion, o pagkuha sa YouVersion."
       storage title: "Pangkalahatang Kagawian Tungkol sa Paggamit at Pagtatago"
-      storage text: "Kinikilala mo na ang LifeChurch.tv ay maaaring magtaguyod, at magbago paminsan-minsan ng mga pangkalahatang pamamaraanat limitasyon tungkol sa pag-gamit ng YouVersion, kasama ngunit hindi limitado sa pinakamaraming bilang ng araw na ang Nilalaman ay mananatili sa YouVersion. Sumasang-ayon ka sa LifeChurch.tv ay walang pananagutan o sagutin sa pagbura o hindi pagtago ng mga Nilalaman na nasasaloob o pinananatili ng YouVersion. Kinikilala mo na ang LifeChurch.tv ay may karapatan, sa sarili nitong paghuhusga, na i-log off at ganap na alisin ang mga account na nanatiling inaktibo sa mahabang panahon."
+      storage text: "Kinikilala mo na ang LifeChurch.tv ay maaaring magtaguyod, at magbago paminsan-minsan ng mga pangkalahatang pamamaraan at hangganan tungkol sa pag-gamit ng YouVersion, kasama ngunit hindi limitado sa pinakamaraming bilang ng araw na ang Nilalaman ay mananatili sa YouVersion. Sumasang-ayon ka na ang LifeChurch.tv ay walang pananagutan o sagutin sa pagbura o hindi pagtago ng mga Nilalaman na nasasaloob o pinananatili ng YouVersion. Kinikilala mo na ang LifeChurch.tv ay may karapatan, sa sarili nitong paghuhusga, na i-log off at ganap na alisin ang mga account na nanatiling hindi aktibo sa loob ng mahabang panahon."
       modifications title: "Pagbabago sa Serbisyo"
       modifications text: "Ang LifeChurch.tv ay may karapatan, sa sarili nitong paghuhusga, sa anumang panahon at sa iba't-ibang panahon na baguhin o itigil, pansamantala o permanente ang YouVersion (o anumang bahagi nito) na may o walang pasabi. Sumasang-ayon ka na ang LifeChurch.tv ay hindi mananagot sa iyo o sa kahit anong ikatlong partido para sa pagbabago, pagtitigil o pagpipigil ng YouVersion."
       termination title: "Pagpuputol"
@@ -529,6 +523,10 @@ tl:
     completed notice: "Pagbati sa iyo! Natapos mo na ang iyong babasahing gabay."
     exit: "Lumabas"
     loading sidebar content: "Kinakarga ang nilalaman ng mga gilid na bahagi ng website..."
+  videos:
+    title: "Mga Palabas"
+    all: "Mga Palabas"
+    related scripture: "Kaugnay na Talata sa Bibliya"
   licenses:
     authorized:
       heading: "Ang iyong nilalaman ay nabigyan ng bisa."
@@ -657,7 +655,6 @@ tl:
     h3: "Ang YouVersion ay Pang-Buong Mundo"
     h3 sub: "Magagamit sa mahigit 100 wika sa buong mundo.  "
     main: "Milyun-milyong tao na ang gumagamit ng  Bible App&trade; upang ang Salita ng Diyos ay maging bahagi ng kanilang pang-araw-araw na buhay.  I-download ang libreng app at i-access ang iyong bookmark, notes, at plano ng pagbasa kahit saan. Mag-enjoy sa daan-daang bersyon, kasama ang audio, sa lahat ng mobile na kagamitan."
-    button h4: "Pumunta sa youversion.com/download"
     button h4 sub: "Sa Iyong Mobile na Kagamitan"
     download now: "I-download ang The Bible App Ngayon"
     what people: "Mula sa mga taong gumagamit na ng libreng Bible app..."

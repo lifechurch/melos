@@ -1,8 +1,9 @@
 pt-PT:
   social:
+    share: "Partilhar"
     my connections: "Contas Associadas"
-    connected as: "Você está associado ao %{connection} como %{username}."
-    remove connection: "Eliminar"
+    connected as: "Está associado ao %{connection} como %{username}."
+    remove connection: "Remova esta conexão "
     connection friends: "Aqui estão alguns utilizadores do YouVersion aos quais está ligado no %{connection}:"
     errors:
       no friends: "Ainda nenhum dos seus amigos %{connection} aparenta estar a usar o YouVersion."
@@ -61,11 +62,8 @@ pt-PT:
   share error: "Desculpe, aconteceu um erro a partilhar a sua mensagem. Por favor tente novamente."
   google plus: "Google +"
   connect to: "A associar à sua conta %{connection} "
-  connected as user: "Você está associado a %{connection} como %{username}."
   deleted connection: "Associação removida com sucesso a %{connection}"
   deleted connection error: "Desculpe, houve um erro ao remover a sua associação a %{connection}."
-  remove connection: "Remover"
-  connection users: "Aqui estão alguns utilizadores do YouVersion aos quais está ligado em %{connection}:"
   connection marketing: "O YouVersion é mais divertido com amigos! Ligue a sua conta YouVersion às suas outras redes sociais e encontre instantaneamente os seus amigos no YouVersion. Ligar as suas contas também permite partilhar conteúdo em apenas alguns cliques. Nunca iremos publicar nada sem a sua aprovação."
   next step connections: "Seguinte: Ligue as suas contas e encontre os seus amigos"
   no notes found: "%{username} não tem notas criadas."
@@ -82,7 +80,6 @@ pt-PT:
   link will be added: "Será Adicionado"
   my picture: "Atualizar a Minha Imagem"
   my notifications: "Gerir Notificações"
-  my connections: "Contas Associadas"
   my devices: "Dispositivos Associados"
   language name: "Português (Portugal)"
   sign up: "Registar-se"
@@ -132,7 +129,6 @@ pt-PT:
   chapter: "Capítulo"
   bible: "Bíblia"
   notes title: "Notas"
-  videos: "Vídeos"
   friends: "Amigos"
   groups: "Grupos"
   mobile: "Telemóvel"
@@ -208,9 +204,7 @@ pt-PT:
   users:
     unverified heading: "Quase Terminado!"
     unverified message: "Parece que está a tentar autenticar-se com uma conta cujo processo de configuração não foi terminado. Precisa de cumprir mais um passo: clique simplesmente no link de verificação presente no email de confirmação enviado pelo YouVersion. Não o consegue localizar? Verifique a sua pasta de spam ou <a href='%{resend_path}'>reenvie o email de confirmação</a>."
-    reset connection: "Desculpe, ocorreu um erro. Por favor remova e volte a efetuar esta associação."
     settings: "Definições"
-    no connection friends: "Ainda nenhum dos seus amigos %{connection} aparenta estar a usar o YouVersion."
     creation form errors: "O(s) seguinte(s) erro(s) impede(m) a criação da sua conta:"
     profile form errors: "O(s) seguinte(s) erro(s) impede(m) a actualização do seu perfil:"
     email address: "Endereço de email"
@@ -529,6 +523,10 @@ pt-PT:
     completed notice: "Parabéns! Completou o seu plano de leitura."
     exit: "Sair"
     loading sidebar content: "A carregar os conteúdos da barra lateral..."
+  videos:
+    title: "Vídeos"
+    all: "Todos os vídeos"
+    related scripture: "Escrituras Relacionadas"
   licenses:
     authorized:
       heading: "O seu conteúdo foi autorizado"
@@ -657,7 +655,7 @@ pt-PT:
     h3: "YouVersion é Global"
     h3 sub: "Disponível em mais de 100 idiomas em todo o mundo."
     main: "Dezenas de milhões de pessoas estão a usar a App da Bíblia&trade; para fazerem da Palavra de Deus uma parte da sua vida. Transfira a app gratuita e aceda aos seus marcadores, notas, e planos de leitura em qualquer lugar. Desfrute de centenas de versões, incluindo áudio, tudo no seu dispositivo móvel."
-    button h4: "Aceda a youversion.com/download"
+    button h4: "Ir para Bible.com/app"
     button h4 sub: "No Seu Dispositivo Móvel"
     download now: "Descarregue a App da Bíblia Agora"
     what people: "O que as pessoas dizem sobre a App gratuita da Bíblia..."

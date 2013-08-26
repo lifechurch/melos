@@ -1,8 +1,8 @@
 mk:
   social:
+    share: "Сподели"
     my connections: "Поврзани профили"
     connected as: "Поврзани сте со %{connection} како %{username}."
-    remove connection: "Отстрани"
     connection friends: "Еве неколку YouVersion корисници со кои си поврзан на %{connection}."
     errors:
       no friends: "Никој од твоите %{connection} пријатели не е на YouVersion."
@@ -61,11 +61,8 @@ mk:
   share error: "Имаше проблем при споделување на твојата порака. Обиди се повторно."
   google plus: "Google +"
   connect to: "Поврзување со твојот %{connection} профил"
-  connected as user: "Поврзани сте со %{connection} како %{username}."
   deleted connection: "Успешно ја отстрани конекцијата со %{connection}."
   deleted connection error: "Има грешка при прекинувањето на конекцијата со %{connection}."
-  remove connection: "Отстрани"
-  connection users: "Еве неколку YouVersion корисници со кои си поврзан на %{connection}."
   connection marketing: "YouVersion е позабавен со пријателите! Поврзете ја вашата YouVersion сметка со други социјални мрежи и веднаш најдете ги вашите пријатели на YouVersion. Тоа ќе ви овозможи да споделувате содржини само со два-три клика. Ние никогаш нема да објавиме било што без ваша согласност."
   next step connections: "Следно: поврзи ги профилите и најди ги твоите пријатели"
   no notes found: "Корисникот %{username} нема никакви белешки."
@@ -82,7 +79,6 @@ mk:
   link will be added: "Ќе биде додадено"
   my picture: "Ажурирај ја мојата слика"
   my notifications: "Управувај со известувањата"
-  my connections: "Поврзани профили"
   my devices: "Поврзани уреди"
   language name: "Македонски"
   sign up: "Пријави се"
@@ -132,7 +128,6 @@ mk:
   chapter: "Глава"
   bible: "Библија"
   notes title: "Белешки"
-  videos: "Видеа"
   friends: "Пријатели"
   groups: "Групи"
   mobile: "Мобилен"
@@ -208,9 +203,7 @@ mk:
   users:
     unverified heading: "Скоро готово!"
     unverified message: "Изгледа се обидуваш да се логираш на сметка која не е креирана целосно.  Треба уште еден чекор: едноставно кликни на линкот за конфирмација во имејлот за потврда кој го прими од YouVersion. Не можеш да го најдеш? Провери во спам или\n<a href='%{resend_path}'>прати повторно мејл за потврда</a>."
-    reset connection: "Грешка при конекцијата. Ве молиме отстранете и реконектирајте ја конекцијата."
     settings: "Уредувања"
-    no connection friends: "Никој од твоите %{connection} пријатели не е на YouVersion."
     creation form errors: "Следните грешки оневозможуваат да креираш профил:"
     profile form errors: "Следните грешки оневозможуваат да го ажурираш профилот:"
     email address: "E-адреса"
@@ -529,6 +522,9 @@ mk:
     completed notice: "Честитки! Вие го завршивте вашиот План за читање."
     exit: "Излез"
     loading sidebar content: "Ја вчитувам страничната лента..."
+  videos:
+    title: "Видеа"
+    related scripture: "Поврзани стихови"
   licenses:
     authorized:
       heading: "Вашата содржина е одобрена"
@@ -657,7 +653,6 @@ mk:
     h3: "YouVersion е глобално"
     h3 sub: "Достапен во повеќе од 100 јазици."
     main: "Десетици милиони луѓе ја користат Библиската Апликација&trade; за да го користат Божјиот збор како дел од нивниот секојдневен живот. Симни ја бесплатната апликација и имај пристап до твоите обележувачи, белешки, планови за читање, каде и да си. Уживај во стотици верзии, вклучувајќи и аудио, сето тоа на твојот мобилен телефон."
-    button h4: "Оди до youversion.com/download"
     button h4 sub: "На твојот мобилен уред"
     download now: "Симни ја Библиската апликација сега"
     what people: "Што велат за Библиската апликација"

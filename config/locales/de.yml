@@ -1,8 +1,9 @@
 de:
   social:
+    share: "Teilen"
     my connections: "Verbundene Benutzerkonten"
     connected as: "Du bist mit %{connection} als %{username} verbunden."
-    remove connection: "Entfernen"
+    remove connection: "Diese Verbindung entfernen"
     connection friends: "Hier sind einige YouVersion-Nutzer, mit denen du bei %{connection} verbunden bist:"
     errors:
       no friends: "Scheinbar sind noch keine %{connection}-Freunde von dir bei YouVersion."
@@ -61,11 +62,8 @@ de:
   share error: "Entschuldigung, es gab ein Problem mit der Weiterleitung deiner Nachricht. Bitte versuche es noch einmal."
   google plus: "Google+"
   connect to: "Verbinde dich mit deinem %{connection} Konto."
-  connected as user: "Du bist mit %{connection} als %{username} verbunden."
   deleted connection: "Du wurdest erfolgreich von %{connection} abgemeldet."
   deleted connection error: "Entschuldigung, es ist ein Fehler bei der Abmeldung von %{connection} aufgetreten."
-  remove connection: "Entfernen"
-  connection users: "Hier sind einige YouVersion-Nutzer, mit denen du bei %{connection} verbunden bist:"
   connection marketing: "YouVersion macht mehr Spaß mit Freunden! Verknüpfe dein YouVersion Konto mit deinen anderen sozialen Netzwerken und finde sofort deine Freunde auf YouVersion. Über die verknüpften Konten kannst du Inhalte mit nur wenigen Klicks teilen. Wir werden nie etwas ohne deine Zustimmung posten."
   next step connections: "Als nächstes: Verbinde deine Konten und finde deine Freunde."
   no notes found: "%{username} hat keine Notizen."
@@ -82,7 +80,6 @@ de:
   link will be added: "wird hinzugefügt"
   my picture: "Mein Bild aktualisieren"
   my notifications: "Benachrichtigungen verwalten"
-  my connections: "Verbundene Konten"
   my devices: "Verbundene Geräte"
   language name: "Deutsch"
   sign up: "Registrieren"
@@ -132,7 +129,6 @@ de:
   chapter: "Kapitel"
   bible: "Bibel"
   notes title: "Notizen"
-  videos: "Videos"
   friends: "Freunde"
   groups: "Gruppen"
   mobile: "Mobil"
@@ -208,9 +204,7 @@ de:
   users:
     unverified heading: "Fast fertig!"
     unverified message: "Es sieht so aus, al ob du dich mit einem Konto anmelden möchtest, dass noch nicht vollständig eingerichtet wurde. Du brauchst nur noch Folgendes zu tun: Klicke einfach auf den Bestätigungs-Link in der E-Mail, die du von YouVersion erhalten hast. Du kannst die E-Mail nicht finden? Überprüfe deinen Spam-Ordner oder <a href='%{resend_path}'>lasse sie dir erneut zuschicken</a>."
-    reset connection: "Leider ist ein Fehler aufgetreten. Bitte trenne diese Verbindung und erstelle sie erneut. "
     settings: "Einstellungen"
-    no connection friends: "Scheinbar sind noch keine %{connection}-Freunde von dir bei YouVersion."
     creation form errors: "Aufgrund des folgenden Fehlers konnte dein Konto nicht angelegt werden:"
     profile form errors: "Aufgrund des folgenden Fehlers konnte dein Profil nicht aktualisiert werden:"
     email address: "E-Mail-Adresse"
@@ -526,13 +520,17 @@ de:
     must start to complete: "Abonniere diesen Leseplan. Dann kannst deine Lesungen als erledigt abhaken!"
     invalid reference: "Sorry, eine der Schriftstellen für diesen Leseplan ist nicht in der ausgewählten Übersetzung vorhanden. Wähle oben eine andere aus. Wird diese Meldung weiterhin angezeigt, meldendieses Problem bitte unserem <a href='%{support_url}'> Support-Team</a>."
     sidebar notice: "Du schaust dir einen Leseplan an. "
-    completed notice: "Herzlichen Glückwunsch! Du hast einen Leseplan beendet.  "
+    completed notice: "Herzlichen Glückwunsch! Du hast einen Leseplan abgeschlossen.  "
     exit: "Beenden"
     loading sidebar content: "Seitenleiste wird geladen..."
+  videos:
+    title: "Videos"
+    all: "Alle Videos"
+    related scripture: "Ähnliche Schriftstelle"
   licenses:
     authorized:
       heading: "Dein Inhalt ist nun bestätigt."
-      description: "Du kannst jetzt <a href='%{content_link}'>view the content you purchased</a> von %{vendor} auf YouVersion anschauen!"
+      description: "Du kannst jetzt <a href='%{content_link}'>den gekauften Inhalt</a> von %{vendor} auf YouVersion anschauen!"
     has errors: "In deiner Anfrage waren Fehler."
     confirm:
       email: "Um den Videoinhalt, den du gekauft hast, zu bestätigen, schau bitte in deinem Posteingang nach einer E-Mail von YouVersion und klicke auf den Link, um deine Anmeldung zu bestätigen."
@@ -657,7 +655,7 @@ de:
     h3: "YouVersion global"
     h3 sub: "In über 100 Sprachen weltweit verfügbar."
     main: "Zig Millionen Menschen nutzen die Bibel App™, um Gottes Wort zu einem Teil ihres täglichen Lebens zu machen. Lade die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Leseplänen zu. Genieße hunderte Bibelübersetzungen, darunter auch Hörbibeln, auf deinem mobilen Gerät."
-    button h4: "Gehe zu youversion.com/download"
+    button h4: "Gehe zu Bible.com/app"
     button h4 sub: "Auf deinem mobilen Gerät"
     download now: "Lade die Bibel App jetzt herunter."
     what people: "Was sagt man über die kostenlose Bibel App... "

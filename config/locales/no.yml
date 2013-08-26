@@ -1,8 +1,9 @@
 "no":
   social:
+    share: "Del"
     my connections: "Tilknyttede kontoer"
     connected as: "Du er koblet til %{connection} som %{username}."
-    remove connection: "Fjern"
+    remove connection: "Fjern denne koblingen"
     connection friends: "Her er noen YouVersion-brukere du er koblet til på %{connection}:"
     errors:
       no friends: "Ingen av dine %{connection} venner ser ut til å være på YouVersion enda."
@@ -14,7 +15,7 @@
     facebook:
       name: "Facebook"
       errors:
-        expired access: "Ditt tilgangsbevis hos Facebook er utgått. Vennligst ta bort din kobling og koble til Facebook på nytt."
+        expired access: "Tilgangsbeviset ditt hos Facebook er utgått. Vennligst fjern koblingen din og koble til Facebook på nytt."
   api:
     users agree bool: "Du må godta brukervilkårene før du registrerer deg."
     users confirm password matches: "Passordene samsvarer ikke"
@@ -61,11 +62,8 @@
   share error: "Det skjedde en feil ved deling av meldingen din. Vennligst prøv igjen."
   google plus: "Google +"
   connect to: "Koble til din %{connection} konto"
-  connected as user: "Du er koblet til %{connection} som %{username}."
   deleted connection: "Din kobling til %{connection} er nå fjernet."
   deleted connection error: "En feil oppstod da du forsøkte å ta bort koblingen til %{connection}."
-  remove connection: "Fjern"
-  connection users: "Her er noen YouVersion-brukere du er koblet til på %{connection}:"
   connection marketing: "YouVersion er mer underholdende sammen med venner. Kople sammen din YouVersion-konto med sosiale nettverk og finn umiddelbart dine venner på YouVersion. Å kople sammen kontoene dine, gjor det enkelt å dele innhold med noen få klikk. Vi vil aldri poste noe uten din godkjenning."
   next step connections: "Neste: Lenk dine kontoer og finn vennene dine"
   no notes found: "%{username} har ingen notater."
@@ -82,7 +80,6 @@
   link will be added: "Vil bli lagt til"
   my picture: "Oppdater mitt bilde"
   my notifications: "Håndter varslinger"
-  my connections: "Tilkoblede kontoer"
   my devices: "Tilkoblede enheter"
   language name: "Norsk"
   sign up: "Registrer deg"
@@ -132,7 +129,6 @@
   chapter: "Kapittel"
   bible: "Bibel"
   notes title: "Notater"
-  videos: "Videoer"
   friends: "Venner"
   groups: "Grupper"
   mobile: "Mobil"
@@ -208,9 +204,7 @@
   users:
     unverified heading: "Nesten fullført!"
     unverified message: "Det ser ut til at du prøver å logge inn med en brukerkonto som ikke har fullført registreringen. Du har kun ett steg igjen: Trykk på lenken i e-post fra YouVersion for å bekrefte kontoen. Kan du ikke finne den? Se i mappe for søppelpost eller <a href='%{resend_path}'>send e-post på nytt</a>."
-    reset connection: "Noe gikk galt. Kople fra for så å kople til igjen."
     settings: "Innstillinger"
-    no connection friends: "Ingen av dine %{connection} venner ser ut til å være på YouVersion enda."
     creation form errors: "De følgende feil(ene) forhindret opprettelsen av kontoen din:"
     profile form errors: "De følgende feil(ene) forhindret oppdatering av kontoen din:"
     email address: "E-postadresse"
@@ -487,7 +481,7 @@
     make public: "Offentliggjør"
     privacy title: "Personvern"
     stop reading: "Avslutt lesing av denne planen"
-    accountability: "Ansvar"
+    accountability: "Ansvarliggjøring"
     email reminder to me: "Send meg en daglig påminnelse per email (%{email_address})"
     email weekly report to a friend: "Send en ukentlig rapport per email til en eller flere YouVersion-medlemmer"
     calendar: "Kalender"
@@ -529,6 +523,10 @@
     completed notice: "Gratulerer! Du har fullført din leseplan."
     exit: "Avslutt"
     loading sidebar content: "Laster innhold fra sidemenyen..."
+  videos:
+    title: "Videoer"
+    all: "Alle videoer"
+    related scripture: "Relaterte skriftsteder"
   licenses:
     authorized:
       heading: "Innholdet er godkjent"
@@ -657,7 +655,7 @@
     h3: "YouVersion er verdensomspennende"
     h3 sub: "Tilgjengelig på over 100 språk verden rundt"
     main: "Et titalls millioner mennesker bruker 'the Bible App™' for å gjøre Guds ord til en del av sine daglige liv. Last ned denne gratis appen og få tilgang til dine bokmerker, notater og leseplaner overalt. Du tilbys hundrevis av ulike bibelutgaver, inkludert lydbibler - alt på din mobiltelefon eller ipad."
-    button h4: "Gå til youversion.com/download"
+    button h4: "Gå til Bible.com/app"
     button h4 sub: "På din mobile enhet"
     download now: "Last ned Bibel-appen nå"
     what people: "Dette sier folk om den gratis Bibel-appen..."

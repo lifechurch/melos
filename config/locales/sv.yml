@@ -1,8 +1,9 @@
 sv:
   social:
+    share: "Dela"
     my connections: "Anslutna konton"
     connected as: "Du är ansluten till %{connection} som %{username}."
-    remove connection: "Ta bort"
+    remove connection: "Ta bort denna anslutning"
     connection friends: "Här är några YouVersion-användare du är ansluten till på %{connection}:"
     errors:
       no friends: "Ingen av dina vänner på %{connection} finns ännu på YouVerson."
@@ -61,11 +62,8 @@ sv:
   share error: "Ett fel uppstod när du försökte dela ditt meddelande. Försök igen."
   google plus: "Google+"
   connect to: "Anslut till ditt %{connection}-konto"
-  connected as user: "Du är ansluten till %{connection} som %{username}."
   deleted connection: "Anslutningen till %{connection} borttagen."
   deleted connection error: "Ett fel uppstod när du försökte ta bort anslutningen till %{connection}."
-  remove connection: "Ta bort"
-  connection users: "Här är några YouVersion-användare du är ansluten till på %{connection}:"
   connection marketing: "YouVersion är roligare med vänner! Länka ditt YouVersion-konto till dina andra sociala nätverk och hitta direkt dina vänner på YouVersion. Genom att länka dina konton kan du också dela innehåll med bara några klick. Vi kommer aldrig att publicera något utan ditt godkännande."
   next step connections: "Nästa: Länka ditt konto och hitta dina vänner."
   no notes found: "%{username} har inga anteckningar."
@@ -82,7 +80,6 @@ sv:
   link will be added: "Kommer att läggas till"
   my picture: "Uppdatera min bild"
   my notifications: "Hantera meddelanden"
-  my connections: "Anslutna konton"
   my devices: "Anslutna enheter"
   language name: "Svenska"
   sign up: "Registrera dig"
@@ -132,7 +129,6 @@ sv:
   chapter: "Kapitel"
   bible: "Bibeln"
   notes title: "Anteckningar"
-  videos: "Videor"
   friends: "Vänner"
   groups: "Grupper"
   mobile: "Mobil"
@@ -208,9 +204,7 @@ sv:
   users:
     unverified heading: "Nästan klar!"
     unverified message: "Det ser ut som att du försöker logga in med ett konto som inte färdigkonfigurerat än.  Du har bara ett steg kvar: klicka helt enkelt på verifieringslänken i e-brevet med bekräftelse som du har fått från YouVersion. Kan du inte hitta det? Kolla bland skräppost eller <a href='%{resend_path}'>Skicka om e-brevet med bekräftelse</a>."
-    reset connection: "Ett fel har tyvärr inträffat. Stäng ner och försök sedan att återansluta."
     settings: "Inställningar"
-    no connection friends: "Ingen av dina vänner på %{connection} finns ännu på YouVerson."
     creation form errors: "Följande fel förhindrade skapandet av ditt konto:"
     profile form errors: "Följande fel förhindrade uppdateringen av din profil:"
     email address: "E-postadress"
@@ -529,6 +523,10 @@ sv:
     completed notice: "Grattis! Du har fullföljt din läsplan."
     exit: "Avsluta"
     loading sidebar content: "Laddar innehåll i sidofällt..."
+  videos:
+    title: "Videor"
+    all: "Alla videor"
+    related scripture: "Relaterad text"
   licenses:
     authorized:
       heading: "Ditt innehåll har godkänts"
@@ -657,7 +655,7 @@ sv:
     h3: "YouVersion är global"
     h3 sub: "Tillgänglig på mer än 100 språk över hela världen."
     main: "Tiotals miljoner människor använder Bibelappen™ för att göra Guds Ord till en del av sin vardag. Ladda ner den fria appen för att komma åt dina bokmärken, anteckningar och läsplaner överallt. Få glädje av hundratals översättningar, inklusive ljuduppläsningar, på alla dina mobila enheter."
-    button h4: "Gå till youversion.com/download"
+    button h4: "Gå till Bible.com/sv/app"
     button h4 sub: "På din mobila enhet"
     download now: "Ladda ner Bibelappen nu"
     what people: "Vad folk säger om den fria Bibelappen..."

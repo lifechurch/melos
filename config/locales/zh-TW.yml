@@ -1,8 +1,9 @@
 zh-TW:
   social:
+    share: "分享"
     my connections: "已連接的帳號"
     connected as: "您已與 %{connection} 上的 %{username} 帳號連接。"
-    remove connection: "移除"
+    remove connection: "移除這個連接"
     connection friends: "這是一些在 %{connection} 服務上與您有連接的 YouVersion 用戶："
     errors:
       no friends: "看來您在%{connection}的朋友還沒有 YouVersion。"
@@ -61,11 +62,8 @@ zh-TW:
   share error: "抱歉，信息分享出錯。請重試。"
   google plus: "Google +"
   connect to: "連接至您的 %{connection} 帳號"
-  connected as user: "您已與 %{connection} 上的 %{username} 帳號連接。"
   deleted connection: "已成功地移除與 %{connection} 服務的連接。"
   deleted connection error: "抱歉，在移除與 %{connection} 服務的連接時發生錯誤。"
-  remove connection: "移除"
-  connection users: "這是一些在 %{connection} 服務上與您有連接的 YouVersion 用戶："
   connection marketing: "和朋友一起使用 YouVersion 會有更多樂趣！將您的 YouVersion 帳號與其他社交網站連結，就能立即在 YouVersion 上面尋找和關注您的朋友。將您多個帳號作連結也讓您輕鬆點擊就能分享讀經內容。我們絕不會未經您的同意就張貼任何內容。"
   next step connections: "下一步：連接您的帳號並找到您的朋友們"
   no notes found: "%{username}沒有任何筆記。"
@@ -82,7 +80,6 @@ zh-TW:
   link will be added: "將被加入"
   my picture: "更新我的圖片"
   my notifications: "管理訊息通知"
-  my connections: "已連接的帳號"
   my devices: "已連接的設備"
   language name: "繁體中文"
   sign up: "註冊"
@@ -132,7 +129,6 @@ zh-TW:
   chapter: "章節"
   bible: "聖經"
   notes title: "筆記"
-  videos: "視訊"
   friends: "朋友"
   groups: "群組"
   mobile: "行動設備"
@@ -208,9 +204,7 @@ zh-TW:
   users:
     unverified heading: "幾乎完成了！"
     unverified message: "看起來您要登錄的賬戶還未完全設置好。不過只差一步了：您只要點擊從YouVersion 發來的確認郵件裡的賬戶驗證連接就行了。若是找不到那份郵件，請查看一下您的垃圾郵件箱，或點擊<a href='%{resend_path}'>重發確認郵件</a>。"
-    reset connection: "抱歉，出錯了！請移除這個連接然後重新連接。"
     settings: "設定"
-    no connection friends: "看來您在%{connection}的朋友還沒有 YouVersion。"
     creation form errors: "以下錯誤阻止您創建帳號："
     profile form errors: "以下錯誤阻止您更新個人資料:"
     email address: "電子郵件地址"
@@ -529,6 +523,10 @@ zh-TW:
     completed notice: "恭喜！您已完成了讀經計劃。"
     exit: "退出"
     loading sidebar content: "載入提要欄位內容..."
+  videos:
+    title: "視訊"
+    all: "所有錄像"
+    related scripture: "相關經文"
   licenses:
     authorized:
       heading: "您的內容已被授權。"
@@ -657,7 +655,7 @@ zh-TW:
     h3: "YouVersion 是全球性的"
     h3 sub: "提供給全世界超過100種語言的版本。"
     main: "數以千萬的人們透過聖經軟體來讓上帝的話語成為他們日常生活的一部份。請下載這個免費軟體然後隨時隨地存取您的書籤、筆記和讀經計劃。享受使用上百個聖經譯本，包括語音版，全部都在您的行動設備裡。"
-    button h4: "請到 youversion.com/download"
+    button h4: "前往 Bible.com/app"
     button h4 sub: "在您的行動設備上"
     download now: "現在就下載聖經軟體"
     what people: "人們對於免費聖經軟體的看法..."
@@ -684,24 +682,24 @@ zh-TW:
     home:
       hero:
         heading: "可用於手機、平板電腦和個人電腦的免費聖經。"
-        description: "YouVersion 是一款簡單易用，且無廣告的聖經軟體，能將神的話語帶入您的日常生活。"
+        description: "YouVersion 是一款簡單易用、沒有廣告的聖經軟體，能將神的話語帶入您的日常生活。"
         learn more: "若想了解詳情，請繼續往下閱讀"
         start reading: "開始閱讀"
         skip in future: "日後請自動跳過這一頁"
         now skipped: "從現在起，將被自動跳過此頁。"
       features:
         read heading: "閱讀聖經"
-        read description: "您可以於<strong>數以百計的聖經版本和語言</strong>中任意選擇，並排比較兩個版本，甚至可以選擇字體和顯示尺寸，用您自己喜歡的方式來線上閱讀聖經。"
+        read description: "從<strong>數以百計的聖經版本和語言</strong>中任意選擇。並排比較兩個版本。甚至可以選擇字體和顯示大小。用您自己喜歡的方式來閱讀線上聖經。"
         study heading: "研讀聖經"
-        study description: "用您喜愛的顏色來設定<strong>醒目標記</strong>，為您喜歡的聖經經節設定<strong>標籤</strong>，邊閱讀邊做筆記。當您花時間在神的話語上時，其實也在同時建立您與聖經之間的親密關係。"
+        study description: "用您喜愛的顏色來設定<strong>醒目標記</strong>、為您喜歡的聖經經節設定<strong>標籤</strong>、還有將您的學習心得寫在筆記裡。您其實不只是花時間閱讀神的話語，您也同時在記錄親身體驗聖經的過程。"
         subscribe heading: "訂閱讀經計畫"
-        subscribe description: "或研讀整本聖經，或專注於一個主題，或跟隨一個有恩賜的老師來靈修。選擇一份讀經計畫，每一天就會有一段聖經等候您來閱讀。"
+        subscribe description: "或閱讀整本聖經、或專注於一個主題、或閱讀一位良師寫的靈修。選擇一份讀經計劃，每一天就會有一段特選經文等候您來閱讀。"
         download heading: "隨身攜帶聖經"
-        download description: "<a href='http://youversion.com/download'>下載</a>免費的<strong>聖經軟體</strong>到任何行動設備。當您在一個行動設備上使用聖經軟體時，您的筆記、書籤、醒目標記和讀經計畫等都將自動同步到您的其他行動設備上。"
+        download description: "<a href='http://youversion.com/download'>下載</a>免費的<strong>聖經軟體</strong>到任何行動設備。當您在行動設備上使用聖經軟體時，您的筆記、書籤、醒目標記和讀經計劃等都將自動同步到您的其他設備上。"
       get started: "註冊免費帳號，開始體驗吧！"
       word with you: "上帝的話語與您同在！"
       download action: "下載聖經軟體"
-      download description: "下載免費的 YouVersion 聖經軟體道您的行動設備上吧！無論何時何地，神的話語都將伴您左右！"
+      download description: "下載免費的 YouVersion 聖經軟體到您的行動設備上吧！無論何時何地、神的話語都將伴您左右！"
       world installs: "全球軟體安裝次數"
   shared:
     menu_settings:

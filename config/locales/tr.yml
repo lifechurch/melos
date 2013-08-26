@@ -1,8 +1,9 @@
 tr:
   social:
+    share: "Paylaş"
     my connections: "Bağlı Hesaplar"
     connected as: "Siz %{username} olarak ${connection} ile bağlandınız."
-    remove connection: "Sil"
+    remove connection: "Bu bağlantıyı sil"
     connection friends: "Sizinle aynı zamanda %{connection} servisinde ve YouVersion'da kayıtılı olan bazı kullanıcılar:"
     errors:
       no friends: "%{connection} sosyal ağındaki arkadaşlarınızın hiçbiri YouVersion'e kayıtlı değil."
@@ -61,11 +62,8 @@ tr:
   share error: "İletinizi paylaşmaya çalışırken bir hata oluştu. Lütfen tekrar deneyiniz."
   google plus: "Google +"
   connect to: "%{connection} hesabınıza bağlanın"
-  connected as user: "Siz %{username} olarak ${connection} ile bağlandınız."
   deleted connection: "Evet, parolamı sıfırla"
   deleted connection error: "Evet, beni sistemden çıkar ve parolamı sıfırla"
-  remove connection: "Kaldır"
-  connection users: "Sizinle aynı zamanda %{connection} servisinde ve YouVersion'da kayıtılı olan bazı kullanıcılar:"
   connection marketing: "YouVersion'ı arkadaşlarınızla kullanmak daha eğlencelidir! YouVersion'u diğer sosyal ağlarınıza bağlayın ve YouVersion'a kayıtlı olan dostlarınızı anında bulup takip edin. Hesaplarınızı bağlamak ayrıca bir-iki tıklama ile içerik paylaşmanızı sağlar. Sizin izniniz olmadan bu hesaplara hiç bir şey yayınlamayız."
   next step connections: "Sonraki Adım: Sosyal ağ hesaplarınıza bağlantı kurun ve arkadaşlarınızı bulun"
   no notes found: "%{username} adlı kullanıcının notları yok"
@@ -82,7 +80,6 @@ tr:
   link will be added: "Eklenecek"
   my picture: "Resmimi Güncelle"
   my notifications: "Bildirimleri Yönet"
-  my connections: "Bağlı Hesaplar"
   my devices: "Bağlı Mobil Cihazlar"
   language name: "Türkçe"
   sign up: "Kaydol"
@@ -132,7 +129,6 @@ tr:
   chapter: "Bölüm"
   bible: "Kutsal Kitap"
   notes title: "Notlar"
-  videos: "Videolar"
   friends: "Arkadaşlar"
   groups: "Gruplar"
   mobile: "Mobil Sürümler"
@@ -208,9 +204,7 @@ tr:
   users:
     unverified heading: "Az Daha Bitti"
     unverified message: "Kurulumu tamamen bitmemiş olan bir hesap ile giriş yapıyorsunuz gibi görünüyor. Hesabınızı kullanabilmeniz için yapmanız gereken bir şey var: YouVersion’dan aldığınız doğrulama e-Postasındaki linki tıklayın. e-Postayı bulamıyor musunuz? İstenmeyen Posta kutunuzu kontrol edin veya <a href='%{resend_path}'>doğrulama e-Postasını yeniden isteyin</a>."
-    reset connection: "Bir hata oluştu, özür dileriz. Lütfen bu bağlantıyı kesip yeniden bağlanın."
     settings: "Ayarlar"
-    no connection friends: "%{connection} sosyal ağındaki arkadaşlarınızın hiçbiri YouVersion'e kayıtlı değil."
     creation form errors: "Hesabınız şu hata(lar)dan dolayı oluşturulamadı:"
     profile form errors: "Profiliniz şu hata(lar)dan dolayı güncellenemedi:"
     email address: "e-Posta Adresi"
@@ -529,6 +523,10 @@ tr:
     completed notice: "Tebrikler! Okuma planınızı bitirdiniz."
     exit: "Çıkış"
     loading sidebar content: "Kenar çubuğunun içeriği yükleniyor..."
+  videos:
+    title: "Videolar"
+    all: "Tüm videolar "
+    related scripture: "İlgili Ayetler"
   licenses:
     authorized:
       heading: "İçeriğiniz onaylandı."
@@ -657,7 +655,7 @@ tr:
     h3: "YouVersion Globaldir"
     h3 sub: "Dünya çapında yüzden fazla dilde mevcut."
     main: "On milyonlarca insan Kutsal Kitap Uygulaması'nı kullanıyor ve Tanrı'nın Sözü'nü hayatlarının bir parçası haline getiriyor. Uygulamayı bedavaya indirip her yerden yer imlerinize, notlarınıza ve okuma planlarınıza ulaşın. Mobil cihazınızı kullanarak Kutsal Kitap'ın yüzlerce çevirisini okuyun ve dinleyin."
-    button h4: "youversion.com/download"
+    button h4: "Bible.com/app adresine gidiniz"
     button h4 sub: "Mobil Cihazınızda yukarıdaki adresi ziyaret edin"
     download now: "Kutsal Kitap Uygulamasını Hemen İndirin"
     what people: "Kutsal Kitap Uygulaması hakkında ne diyorlar?"

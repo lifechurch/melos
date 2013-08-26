@@ -1,8 +1,9 @@
 es:
   social:
+    share: "Compartir"
     my connections: "Cuentas Conectadas"
     connected as: "Está conectado a %{connection} como %{username}."
-    remove connection: "Eliminar"
+    remove connection: "Eliminar esta conexión."
     connection friends: " Estos son algunos usuarios de YouVersion a los que está conectado en %{connection}:"
     errors:
       no friends: "Aparentemente ninguno de sus amigos de %{connection} está conectado a YouVersion aún."
@@ -13,6 +14,8 @@ es:
       name: "Twitter"
     facebook:
       name: "Facebook"
+      errors:
+        expired access: "Su sesión ha sido expirada por Facebook.  Por favor elimine su conexión y vuelva a conectarse a Facebook."
   api:
     users agree bool: "Para crear una cuenta debe estar de acuerdo con los terminos y condiciones."
     users confirm password matches: "Las nuevas contrasenas no coinciden."
@@ -59,11 +62,8 @@ es:
   share error: "Lo sentimos, hubo un error al compartir su mensaje. Por favor, inténtelo de nuevo."
   google plus: "Google +"
   connect to: "Conectarse a su %{connection} cuenta"
-  connected as user: "Está conectado a %{connection} como %{username}."
   deleted connection: "Eliminado con éxito su conexión a %{connection}."
   deleted connection error: "Lo sentimos, hubo un error con la eliminación de su conexión a %{connection}."
-  remove connection: "Eliminar"
-  connection users: " Estos son algunos usuarios de YouVersion a los que está conectado en %{connection}:"
   connection marketing: "YouVersion es mas divertido con amigos! Conecta su cuenta de YouVersion con sus otras redes sociales y instantemente encuentra sus amigos en YouVersion. Conectando sus cuentas tambien te permite que compartas contenido con solo unos pocos clics. Nunca publicaremos nada sin su aprobacion."
   next step connections: "Siguiente: Vincule sus cuentas, y encuentre a sus amigos."
   no notes found: "%{username} no tiene ninguna nota."
@@ -80,7 +80,6 @@ es:
   link will be added: "Será Agredado"
   my picture: "Actualizar Mi Foto"
   my notifications: "Gestionar Notificaciones"
-  my connections: "Cuentas Conectadas"
   my devices: "Dispositivos Conectados"
   language name: "Español (Latinoamérica) "
   sign up: "Registrarse"
@@ -130,7 +129,6 @@ es:
   chapter: "Capítulo"
   bible: "Biblia"
   notes title: "Notas"
-  videos: "Videos"
   friends: "Amigos"
   groups: "Grupos"
   mobile: "Móvil"
@@ -206,9 +204,7 @@ es:
   users:
     unverified heading: "¡Casi Termina!"
     unverified message: "Parece que esta intentando ingresar con una cuenta que aún no ha sido configurada completamente.  Solamente le hace falta un paso: Sencillamente haga clic sobre el vinculo de verificación que se encuentra en el email de confirmación que le fue enviado de YouVersion.  ¿No lo encuentra? Revise la carpeta de “spam” o “correo basura” ó bien <a href='%{resend_path}'>renvíe el correo de confirmación de la cuenta</a>."
-    reset connection: "Lo sentimos, ha ocurrido un error. Por favor, retire y vuelva a conectar esta conexión."
     settings: "Configuración"
-    no connection friends: "Aparentemente ninguno de sus amigos de %{connection} está conectado a YouVersion aún."
     creation form errors: "El(los) siguiente(s) error(es) no permitieron la creación de su cuenta:"
     profile form errors: "El(los) siguiente(s) error(es) no permitieron actualizar su perfil:"
     email address: "Correo Electrónico:"
@@ -527,6 +523,10 @@ es:
     completed notice: "Felicidades! Has completado su plan de lectura."
     exit: "Salir"
     loading sidebar content: "Cargando contenido de barra lateral..."
+  videos:
+    title: "Videos"
+    all: "Todos los videos"
+    related scripture: "Versículos Relacionados"
   licenses:
     authorized:
       heading: "Su contenido ha sido autorizado."
@@ -585,7 +585,10 @@ es:
     headline: "Todos necesitan la Palabra de Dios."
     subhead: "Ayude a personas de todo el mundo a tener la Biblia en sus manos."
     copy: "Imagínese poder darle una Biblia gratis a cada persona en el mundo. Cuando usted da YouVersion, hace precisamente eso. Vivimos en un tiempo con el que otros soñaron &andash; cuando cualquiera que tenga un teléfono puede tener acceso a la Biblia y experimentar la historia del amor de Dios por nosotros. Con su apoyo podemos continuar ayudando a más gente a pasar más tiempo en las Escrituras."
+    amount: "Cantidad a donar"
+    option once: "Una sola vez"
     option monthly: "Mensual"
+    alert empty amount: "Por favor ingrese la cantidad a donar."
     name: "Su Nombre"
     card number: "Número de tarjeta de crédito"
     card exp date: "Fecha de Expiración (MMYY)"
@@ -652,7 +655,7 @@ es:
     h3: "YouVersion es Global"
     h3 sub: "Disponible en más de 100 idiomas alrededor del mundo."
     main: "Decenas de millones de personas están usando la Biblia App ™ para hacer que la Palabra de Dios sea una parte de sus vidas diarias. Descargue la aplicación gratuita y acceda a sus marcadores, notas, y planes de lectura desde cualquier lugar. Disfrute de cientos de versiones, incluyendo audio Biblia, todo en su dispositivo móvil."
-    button h4: "Visite youversion.com/descargar"
+    button h4: "Ir a Bible.com/es/app"
     button h4 sub: "En su dispositivo móvil"
     download now: "Descargue La Biblia App ahora"
     what people: "Lo que dice la gente acerca de la aplicación gratuita de la Biblia."

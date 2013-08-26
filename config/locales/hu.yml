@@ -1,8 +1,9 @@
 hu:
   social:
+    share: "Megosztás"
     my connections: "Csatlakoztatott Fiókok"
     connected as: "Kapcsolódott a / (kapcsolódás) mint / (felhasználónév)."
-    remove connection: "Eltávolítás"
+    remove connection: "Távolítsd el ezt a kapcsolatot"
     connection friends: "Néhány YouVersion felhasználó akihez kapcsolódsz a / (kapcsolódás):"
     errors:
       no friends: "A %{connection} barátaid közül még senki sincs jelen a YouVersion-on."
@@ -61,11 +62,8 @@ hu:
   share error: "Sajnáljuk, egy hiba miatt az üzeneted megosztása nem sikerült. Próbálkozz újra."
   google plus: "Google +"
   connect to: "Kapcsolódj a %{connection} fiókodhoz"
-  connected as user: "Kapcsolódva %{connection} mint %{username}."
   deleted connection: "Sikeresen megszakítottad a kapcsolatot a / (kapcsolódás)."
   deleted connection error: "Sajnáljuk kapcsolódási hiba történt a %{connection} kapcsolat megszakítása közben. "
-  remove connection: "Megszakítás"
-  connection users: "Néhány YouVersion felhasználó akihez kapcsolódsz a / (kapcsolódás):"
   connection marketing: "A YouVersion sokkal élvezetesebb együtt a barátokkal.  Linkeld a YouVersion fiókodat a többi  közösségi oldaladhoz és azonnal megtalálod a barátaidat a YouVersion-on. Ha linkeled a fiókjaidat, néhány kattintással meg tudod osztani a tartalmakat. Mi soha semmit nem fogunk postolni a tudomásod nélkül."
   next step connections: "Következő: Kapcsold össze a fiókjaid, és találj rá barátaidra"
   no notes found: "%{username} nem rendelkezik jegyzettel."
@@ -82,7 +80,6 @@ hu:
   link will be added: "Hozzá lesz adva"
   my picture: "Fényképem Frissítése"
   my notifications: "Értesítések kezelése"
-  my connections: "Csatlakoztatott fiókok"
   my devices: "Csatlakoztatott készülékek"
   language name: "Magyar"
   sign up: "Regisztráció"
@@ -132,7 +129,6 @@ hu:
   chapter: "Fejezet"
   bible: "Biblia"
   notes title: "Jegyzetek"
-  videos: "Videók"
   friends: "Barátok"
   groups: "Csoportok"
   mobile: "Mobil"
@@ -208,9 +204,7 @@ hu:
   users:
     unverified heading: "Majdnem kész!"
     unverified message: "Úgy néz ki egy olyan fiókba próbálsz bejelentkezni, amely még nem készült el teljesen. Már csak egy lépésed van hátra: egyszerűen kattints a megerősítő linkre az e-mailben, amit a YouVersion-tól kaptál. Nem találod? Nézd meg a spam mappádat vagy <a href='%{resend_path}'>megerősítő email újraküldése</a>."
-    reset connection: "Sajnáljuk, hiba történt. Szakítsd meg, majd csatlakozz újra ehhez a kapcsolathoz."
     settings: "Beállítások"
-    no connection friends: "A %{connection} barátaid közül még senki sincs jelen a YouVersion-on."
     creation form errors: "A következő hiba(k) akadályozta(k) meg a fiókod létrehozását:"
     profile form errors: "A következő hiba(k) akadályozta(k) meg a profilod frissítését:"
     email address: "Email cím"
@@ -529,6 +523,10 @@ hu:
     completed notice: "Gratulálunk! Befejezted az olvasási terved!"
     exit: "Kilépés"
     loading sidebar content: "Oldalsáv tartalmának betöltése..."
+  videos:
+    title: "Videók"
+    all: "Összes videó"
+    related scripture: "Utalás"
   licenses:
     authorized:
       heading: "A tartalmad engedélyezve lett."
@@ -657,7 +655,7 @@ hu:
     h3: "A YouVersion globális"
     h3 sub: "Világszerte több mint 100 nyelven elérhető."
     main: "Emberek tízezrei használják a Bible App-t, hogy Isten Igéjét életük részévé tegyék. Töltsd le az ingyenes applikációt és bárhol hozzáférsz a könyvjelzőidhez, jegyzeteidhez és olvasó terveidhez. Élvezd a több száz fordítást, beleértve a hangzó/hangos verziót, mindezt a mobil eszközödön."
-    button h4: "Menj ide: youversion.com/download"
+    button h4: "Menj a Bible.com/app"
     button h4 sub: "A mobil készülékeden"
     download now: "A Biblia App letöltése most"
     what people: "Amit az emberek mondanak az ingyenes Biblia alkalmazásról..."

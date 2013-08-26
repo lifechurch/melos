@@ -1,8 +1,9 @@
 sw:
   social:
+    share: "husisha wengine/jumuisha"
     my connections: "akaunti zilizounganishwa"
     connected as: "Umeunganishwa na %{uhusiano} kama%{jina la mtumiaji}"
-    remove connection: "ondoa"
+    remove connection: "Toa uhusiano huu"
     connection friends: "hapa kuna baadhi ya watumiaji wa YouVersion ambao mmeshikamana nao kwa %{uhusiano}"
     errors:
       no friends: "Hakuna %{uhusiano} marafiki zako waliopo katika YouVersion."
@@ -43,7 +44,7 @@ sw:
         title: "akaunti zilizounganishwa"
   now: "saa hii"
   celebrating 50MM: "Tunasherehekea ufunguaji wa App milioni 50!"
-  link: "Liungo"
+  link: "Kiungo"
   site search: "Tafuta YouVersion"
   auth error: "Samahani, kulikuwa na tatizo na jina la mtumiaji au kitambulisho chako cha siri. Tafadhali ingia kwa YouVersion kuendelea ...."
   download: "Download"
@@ -61,11 +62,8 @@ sw:
   share error: "Samahani, kulikuwa na hitilafu katika usambazaji wa ujumbe wako. Tafadhali jaribu tena."
   google plus: "Google +"
   connect to: "Ungana na akaunti yako ya %{connection}"
-  connected as user: "Umeunganishwa na %{connection} kama %{username}. "
   deleted connection: "Umefanikiwa kuondoa uhusiano wako na %{connection}."
   deleted connection error: "Samahani, kulikuwa na hitilafu kuondoa uhusiano wako na %{connection}."
-  remove connection: "ondoa"
-  connection users: "Hapa kuna baadhi ya watumiaji wa YouVersion ambao mmeshikamana nao kwa %{connection}: "
   connection marketing: "YouVersion inafurahisha zaidi ukiwa na marafiki! Unganisha akunti yako ya YouVersion na mitandao mingine na upate marafiki wako mara moja. Kuunganish akaunti yako pia inakuwezesha kushiriki maudhui yako kwa kubonyeza. Hatuta chapisha maudhui kamwe bila idhini yako."
   next step connections: "Kisha: Unganisha akaunti zako na upate marafiki zako."
   no notes found: "%{username} hana maelezo yoyote."
@@ -82,7 +80,6 @@ sw:
   link will be added: "itaongezewa/itaongezwa"
   my picture: "weka picha yangu"
   my notifications: "simamia taarifa"
-  my connections: "Akaunti zilizounganishwa"
   my devices: "Vifaa vilivyounganishwa"
   language name: "Kiswahili"
   sign up: "jiunge"
@@ -132,7 +129,6 @@ sw:
   chapter: "Sura"
   bible: "Bibilia"
   notes title: "maelezo"
-  videos: "Video "
   friends: "marafiki"
   groups: "makundi"
   mobile: "rununu"
@@ -208,9 +204,7 @@ sw:
   users:
     unverified heading: "Karibu kumaliza"
     unverified message: "Inaonekana unajaribu kuingia katika akaunti ambayo haijasajilishwa kikamilifu. Tafadhali bonyeza kiungo cha ukaguzi kilicho katika barua pepe iliyotumwa kutoka YouVersion. Kama huwezi kuipata angalia ndani ya spam folder ama <a href='%{resend_path}'>tuma barua pepe ya kuthibitisha tena</a>."
-    reset connection: "Samahani kuna kosa. Tafadhali toa halafu rudisha uhusiano wa internet katika mtandao wako."
     settings: "mipangilio"
-    no connection friends: "Hakuna %{connection} marafiki zako waliopo katika YouVersion."
     creation form errors: "kosa/makosa yafuatayo yamezuia utengenezaji wa akaunti yako:"
     profile form errors: "kosa/makosa yafuatayo yamezuia uwezeshaji wa utambulisho wako:"
     email address: "barua pepe"
@@ -529,6 +523,10 @@ sw:
     completed notice: "Hongera! Umekamilisha mpango wako wa kusoma "
     exit: "Kutoka"
     loading sidebar content: "Inapakia maudhui ya upau wa kando.."
+  videos:
+    title: "Video "
+    all: "Video zote "
+    related scripture: "Neno linalohusiana"
   licenses:
     authorized:
       heading: "Maudhui yako imeidhinishwa"
@@ -657,7 +655,7 @@ sw:
     h3: "YouVersion ni ya kimataifa"
     h3 sub: "Inapatikana katika lugha zaidi ya 100 dunia nzima"
     main: "Mamilioni ya watu wanatumia App ya Bibilia &trade; kufanya Neno la Mungu iwe sehemu ya maisha yao ya kila siku. Pakua programu ya bure na upate maelezo ya maalamisho yako, na mipango ya kusoma kutoka mahali popote. Furahia mamia ya matoleo, ikiwa pamoja na audio yote kwa rununu yako."
-    button h4: "enda kwa youversion.com/dowload"
+    button h4: "Enda kwa. Bible.com/app"
     button h4 sub: "kwenye rununu yako"
     download now: "Pata programu ya bure ya Bibilia sasa hivi."
     what people: "Watu wanavyo ongelea kuhusu App ya bure ya Biblia..."
