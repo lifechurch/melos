@@ -107,7 +107,8 @@ class UsersController < ApplicationController
     facebook_auth = JSON.parse cookies.signed[:facebook_auth]
     @user = User.new(params[:user])
     @user.email = facebook_auth["info"]["email"]
-    @user.verified = true
+    @user.verified = @user.agree = true
+    
     if @user.save
       # Get the real thing
       user = User.authenticate(params[:user][:username], params[:user][:password])
