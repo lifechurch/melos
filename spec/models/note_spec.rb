@@ -37,13 +37,13 @@ describe Note do
       @note.title.should == 'My New Note'
       @note.content.should == 'Some Content'
       @note.version.should be_a(Version)
-      @note.version.id.should == YvApi::get_usfm_version("kjv")
+      @note.version.id.should == YV::Conversions.get_usfm_version("kjv")
       @note.reference_list.first.should == Reference.new('gen.2.1.kjv')
       @note.user_status.should == 'public'
     end
 
     it 'returns false if Note was not found' do
-      lambda { Note.find('0', @auth) }.should  raise_error(YouVersion::ResourceError)
+      lambda { Note.find('0', @auth) }.should  raise_error(YV::ResourceError)
     end
   end
 

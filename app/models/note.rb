@@ -1,8 +1,9 @@
-class Note < YouVersion::Resource
+class Note < YV::Resource
 
   attr_accessor :reference_list
 
   attribute :id
+  attribute :user_id
   attribute :reference
   attribute :references
   attribute :title
@@ -19,12 +20,14 @@ class Note < YouVersion::Resource
   attribute :username
   attribute :highlight_color
 
-  belongs_to_remote :user
+  def user
+    User.find( self.user_id )
+  end
 
   def self.for_reference(ref, params = {})
     # Constrained to only work for <= 10 verses or a chapter
     # API doesn't want more than 10 verses or returns the following error:
-    # YouVersion::ResourceError: search.references.exceeded_10_verse_references
+    # YV::ResourceError: search.references.exceeded_10_verse_references
     
     # reference.to_usfm 
     # => "GEN.2.5+GEN.2.6+GEN.2.7+GEN.2.8+GEN.2.9+GEN.2.10+GEN.2.11+GEN.2.12+GEN.2.13+GEN.2.14+GEN.2.15"
@@ -39,11 +42,11 @@ class Note < YouVersion::Resource
     params[:query] ||= '*'
 
     _auth = params[:auth]
-    response = YvApi.get('search/notes', params) do |errors|
+    response = YV::API::Client.get('search/notes', params) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
         Hashie::Mash.new(notes: [])
       else
-        raise YouVersion::ResourceError.new(errors)
+        raise YV::ResourceError.new(errors)
       end
     end
 
@@ -55,11 +58,11 @@ class Note < YouVersion::Resource
 
   def self.for_user(user_id, params = {})
     params.merge!({user_id: user_id})
-    response = YvApi.get('notes/items', params) do |errors|
+    response = YV::API::Client.get('notes/items', params) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
         Hashie::Mash.new(notes: [])
       else
-        raise YouVersion::ResourceError.new(errors)
+        raise YV::ResourceError.new(errors)
       end
     end
 
@@ -71,12 +74,6 @@ class Note < YouVersion::Resource
 
   def self.destroy_id_param
     :ids
-  end
-
-  # Override Resource's base method here, because Note API
-  # returns a different error key for non-auth requests.
-  def self.retry_with_auth?(errors)
-    errors.find {|t| t['key'] =~ /notes.note.private/}
   end
 
   def content_as_xml
@@ -94,7 +91,7 @@ class Note < YouVersion::Resource
     end
     self.version_id = Version.id_from_param self.version
 
-    # self.version_id = self.version.class == Version ? self.version.id : YvApi::get_usfm_version(self.version).id
+    # self.version_id = self.version.class == Version ? self.version.id : YV::Conversions::usfm_version(self.version).id
     self.references = self.reference_list.to_flat_usfm unless self.reference_list.empty?
   end
 

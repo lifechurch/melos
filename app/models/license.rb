@@ -1,4 +1,4 @@
-class License < YouVersion::Resource
+class License < YV::Resource
 
   INTERNAL_SECRET_KEY = ENV['LICENSES_INTERNAL_SECRET']
 
@@ -17,12 +17,12 @@ class License < YouVersion::Resource
       vendor_signature: vendor_signature
     }
 
-    internal_signature = Licenses::Request.sign( params , INTERNAL_SECRET_KEY )
     errors  = nil
     success = false
+    internal_signature = Licenses::Request.sign( params , INTERNAL_SECRET_KEY )
 
-    response = YvApi.post("licenses/authorize", params.merge(internal_signature: internal_signature)) do |errs|
-      YouVersion::ResourceError.new(errs)
+    response = YV::API::Client.post("licenses/authorize", params.merge(internal_signature: internal_signature)) do |errs|
+      YV::ResourceError.new(errs)
     end
 
     success = (response == true)

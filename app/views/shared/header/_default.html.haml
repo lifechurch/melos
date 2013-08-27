@@ -12,7 +12,7 @@
     %nav.sign_in
       %ul
         - if current_auth
-          = cache "header_#{current_auth.username}_#{I18n.locale}", expires_in: a_short_time do
+          = cache "header_#{current_auth.username}_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
             %li
               %a#header_profile_trigger{:href => '#'}
                 %span
@@ -34,7 +34,7 @@
                   =t("find friends")
 
         - else
-          = cache "header_anon_#{I18n.locale}", expires_in: a_short_time do
+          = cache "header_anon_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
             %li
               %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
             %li

@@ -7,7 +7,7 @@
 - content_for :javascripts do
   = javascript_include_tag "campaigns/100m/jquery.counter.js"
 
-= cache "bdc_welcome_#{I18n.locale}", expires_in: a_short_time do
+= cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
   %article
     #hero
       #hero_content

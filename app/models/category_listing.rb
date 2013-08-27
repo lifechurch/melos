@@ -1,4 +1,4 @@
-class CategoryListing < YouVersion::Resource
+class CategoryListing < YV::Resource
   attr_reader :current, :breadcrumbs, :items
 
   def self.find(category_slug=nil, opts={})
@@ -6,14 +6,14 @@ class CategoryListing < YouVersion::Resource
     #the params[:category] param will filter the query to only children of that category
     opts[:page] ||= 1
     opts[:category] ||= category_slug
-    opts[:cache_for] ||= a_long_time
+    opts[:cache_for] ||= YV::Caching.a_long_time
     opts[:query] = '*'
 
-    response = YvApi.get("search/reading_plans", opts) do |errors|
+    response = YV::API::Client.get("search/reading_plans", opts) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
         raise "No Plans in this category!"
       else
-        raise YouVersion::ResourceError.new(errors)
+        raise YV::ResourceError.new(errors)
       end
     end
 

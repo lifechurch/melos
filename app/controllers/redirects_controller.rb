@@ -91,7 +91,7 @@ class RedirectsController < ApplicationController
       else
         force_login
       end
-    rescue APIError, YouVersion::ResourceError
+    rescue APIError, YV::ResourceError
       force_login
     end
   end

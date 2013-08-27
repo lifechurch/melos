@@ -1,4 +1,4 @@
-class Bookmark < YouVersion::Resource
+class Bookmark < YV::Resource
 
   attribute :highlight_color
   attribute :labels
@@ -52,7 +52,7 @@ class Bookmark < YouVersion::Resource
   # We have to override the default Resource version of this, because
   # the Bookmark API delete_path wants :ids instead of :id
   def self.destroy(id, auth = nil, &block)
-    post(delete_path, {ids: id, auth: auth}, &block)
+    YV::API::Client.post(delete_path, {ids: id, auth: auth}, &block)
   end
 
   def self.all(params = {})
@@ -127,7 +127,7 @@ class Bookmark < YouVersion::Resource
 
   def self.labels_for_user(user_id, params = {})
     params[:page] ||= 1
-    response = get("bookmarks/labels", user_id: user_id, page: params[:page]) do |errors|
+    response = YV::API::Client.get("bookmarks/labels", user_id: user_id, page: params[:page]) do |errors|
       Rails.logger.apc "API Error: Bookmark.labels_for_user(#{user_id}) got these errors: ", :error
       Rails.logger.apc errors.inspect, :error
       if errors.find{|g| g['error'] =~ /Labels not found/}
@@ -135,7 +135,7 @@ class Bookmark < YouVersion::Resource
         Hashie::Mash.new(labels: [], total:0)
       else
         errors = errors.map { |ee| ee["error"] }
-        raise YouVersion::ResourceError.new(errors)
+        raise YV::ResourceError.new(errors)
       end
     end
     if response.labels

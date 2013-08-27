@@ -1,4 +1,7 @@
-class Vendor < YouVersion::Resource
+# Vendor class related to Licenses.
+# API Currently undocumented.
+
+class Vendor < YV::Resource
 
   attribute :id
   attribute :name

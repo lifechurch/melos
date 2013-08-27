@@ -31,7 +31,7 @@ end
 
 Then /^an unverified user named "([^"]*)" with password "([^"]*)" should exist$/ do |arg1, arg2|
   lambda do
-    YvApi.get("users/authenticate", auth_username: arg1, auth_password: arg2)
+    YV::API::Client.get("users/authenticate", auth_username: arg1, auth_password: arg2)
   end.should raise_error("API Error: This account has not been verified.")
 end
 

@@ -1,4 +1,4 @@
-module YouVersion
+module YV
   class ResourceError < StandardError
     attr_accessor :errors
 
@@ -21,58 +21,60 @@ module YouVersion
     include ActiveModel::Conversion
     include ActiveModel::Validations
 
-    class <<self
+    class << self
+
       # This allows child class to easily override the prefix
       # of its API path, if it happens not to be name.tableize.
       def api_path_prefix
         name.tableize
       end
 
-      def foreign_key
-        "#{model_name.singular}_id"
-      end
+      # Class methods to define common api path strings based on the configured
+      # api_path_prefix class method.  These api strings are passed to YV::API::Client
+      # as path string to make proper request.
 
+      # API path to retrieve a collection of resources
       def list_path
         "#{api_path_prefix}/items"
       end
 
+      # API Path to retrieve an individual resource
       def resource_path
         "#{api_path_prefix}/view"
       end
 
+      # API path to update a resource
       def update_path
         "#{api_path_prefix}/update"
       end
 
+      # Create a resource
       def create_path
         "#{api_path_prefix}/create"
       end
 
+      # Delete a resource
       def delete_path
         "#{api_path_prefix}/delete"
       end
 
+      # Common path for configuration calls
+      def configuration_path
+        "#{api_path_prefix}/configuration"
+      end
+
+      # Makes a call to configuration API endpoint for Resource subclass
       def configuration(opts = {})
-        opts = opts.merge({cache_for: a_very_long_time}) if opts[:auth] == nil
-        response = YvApi.get("#{api_path_prefix}/configuration", opts) do |errors|
-          raise YouVersion::ResourceError.new(errors)
+        opts = opts.merge({cache_for: YV::Caching.a_very_long_time}) if opts[:auth] == nil
+        response = YV::API::Client.get(configuration_path, opts) do |errors|
+          raise YV::ResourceError.new(errors)
         end
         return response
       end
 
+      # Return a list of available locales from a subclass configuration call
       def available_locales
-        configuration.available_language_tags.map{|tag| YvApi::to_app_lang_code(tag).to_sym}
-      end
-
-      def html_present?(mash)
-        lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
-        return false if mash.nil?
-
-        return false unless mash[lang_key].nil?
-
-        val = mash.html.try(:[], lang_key)
-        val ||= mash.html.try(:[], :default)
-        val.present?
+        configuration.available_language_tags.map{|tag| YV::Conversions.to_app_lang_code(tag).to_sym}
       end
 
       # Class configuration method - dynamically defines a method with the name(s) provided as atts
@@ -82,13 +84,11 @@ module YouVersion
       end
 
       # Lookup and return API data attribute values by current locale
-
       # API returns data that has been localized at times - ex:
       # "name"=>{"default"=>"Wisdom", "en"=>"Wisdom", "es"=>"..."}
-
       def i18nize(mash)
         return nil if mash.nil?
-        lang_key = YvApi::to_api_lang_code(I18n.locale.to_s)
+        lang_key = YV::Conversions.to_api_lang_code(I18n.locale.to_s)
         lang_key = i18n_key_override(lang_key)  # provide ability to override i18n key used for data returned from API
         
         return mash[lang_key] unless mash[lang_key].nil?
@@ -124,63 +124,53 @@ module YouVersion
         return key
       end
 
-      def retry_with_auth?(errors)
-        errors.find {|t| t['key'] =~ /(?:username_and_password.required)|(?:users.auth_user_id.or_isset)/}
+      # Set class wide timeout for API calls
+      # TODO - understand implications of class wide timeout var.
+      def timeout(timeout_sec)
+        @api_timeout = timeout_sec
       end
 
-      def find(id, params = {}, &block)
-        api_errors = nil
-        auth = params.delete(:auth) unless (params[:force_auth] == true)
+      # Ability to prefilter options prior to API calls in this class
+      def prepare_opts!( opts = {} )
+        opts[:timeout] = @api_timeout if @api_timeout
+        opts
+      end
 
-        opts = {}
+      # Class method to find a resource subclass via API call
+      def find(id, params = {}, &block)
+        opts = prepare_opts!
         opts[:id] = id if id
         opts.merge! params  # Let params override if it already has an :id
+
         # First try request as an anonymous request
-        response = get(resource_path, opts) do |errors|
-          if retry_with_auth?(errors)
-            # If API said it wants authorization, try again with auth
-            #TODO: be smarter about trying to auth first if auth passed (common case),
-            #      we're probably wasting a lot of calls here
-            inner_response = get(resource_path, opts.merge(auth: auth)) do |errors|
-              # Capture errors for handling below
-              api_errors = errors
-            end
+        response = YV::API::Client.get(resource_path, opts) do |errors|
+          if block_given?
+            block.call(errors)
           else
-            Rails.logger.apc "** Resource.find: got non-auth error: ", :error
-            Rails.logger.apc errors, :error
-            api_errors = errors
+            raise ResourceError.new(errors)
           end
-
-          if api_errors
-            # Sadly, all our attempts failed.
-            @errors = api_errors.map { |e| e["error"] }
-
-            if block_given?
-              block.call(errors)
-            else
-              raise ResourceError.new(errors)
-            end
-          end
-
-          # Propagate the response from the get-with-auth call as the return
-          # value for the outer block.
-          inner_response
         end
-        new(response.merge(auth: auth))
+        new(response.merge(auth: params.delete(:auth)))
       end
 
+
+      # Class method to find a list of resources
       def all(params = {})
-        _auth = params[:auth]
-        response = YvApi.get(list_path, params) do |errors|
+        auth = params[:auth]
+
+        opts = prepare_opts!(params)
+
+        not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
+
+        response = YV::API::Client.get(list_path, opts) do |errors|
           if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
             # Then it's the notes thing where you're auth'ed as a different user
-            _auth
-            YvApi.get(list_path, params.merge!(auth: nil)) do |errors|
-              if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
+            YV::API::Client.get(list_path, opts.merge!(auth: nil)) do |errors|
+              if errors.length == 1 && not_found_responses.detect { |r| r.match( errors.first["error"] ) }
                 []
               end
             end
-          elsif errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
+          elsif errors.length == 1 && not_found_responses.detect { |r| r.match(errors.first["error"]) }
             []
           else
             raise ResourceError.new(errors)
@@ -198,9 +188,9 @@ module YouVersion
         # sometimes the array of items encapsulated with api_prefix
         # if there is other data that comes back with the response
         if response.respond_to? api_path_prefix.gsub('-','_').to_sym
-          response.send(api_path_prefix.gsub('-','_')).each {|data| items << new(data.merge(auth:_auth))}
+          response.send(api_path_prefix.gsub('-','_')).each {|data| items << new(data.merge(auth:auth))}
         else
-          response.each {|data| items << new(data.merge(auth: _auth))}
+          response.each {|data| items << new(data.merge(auth: auth))}
         end
         items
       end
@@ -209,8 +199,10 @@ module YouVersion
       # TODO: As soon as we've finished migrating all the resources,
       # check to see that both all() and all_raw() are really needed.
       # Likely they can be combined or one of them can be eliminated.
+
+      # Currently only used in Bookmark resource.  Find out why and remove or update implementation in bookmark if necessary.
       def all_raw(params = {}, &block)
-        response = YvApi.get(list_path, params) do |errors|
+        response = YV::API::Client.get(list_path, params) do |errors|
           if block_given?
             block.call(errors)
           else
@@ -219,22 +211,26 @@ module YouVersion
         end
       end
 
+      # Create a resource.  Creates an instance and calls save on it.
       def create(data, &block)
         new(data).save(&block)
       end
 
-      def self.destroy_id_param
+      # Destroy a resource. TODO - make this similar to create -> create instance via id, call destroy. allows for callbacks etc.
+      def destroy(id, auth = nil, &block)
+        opts = prepare_opts!({auth: auth})
+        opts[self.destroy_id_param] = id
+        YV::API::Client.post(delete_path, opts, &block)
+      end
+
+      def destroy_id_param
         :ids
       end
 
-      def destroy(id, auth = nil, &block)
-        opts = {auth: auth}
-        opts[self.destroy_id_param] = id
-        post(delete_path, opts, &block)
-      end
 
+      # Class method to define getter/setter attributes on a model
+      # dynamically defines get/set methods for passed in attr_name
       attr_accessor :resource_attributes
-
       def attribute(attr_name, serialization_class = nil)
         @resource_attributes ||= []
         @resource_attributes << attr_name
@@ -256,89 +252,32 @@ module YouVersion
         end
       end
 
-      def api_version(version)
-        @api_version = version
-      end
-
-      def timeout(timeout_sec)
-        @timeout = timeout_sec
-      end
-
-      def secure(*secure_method_names)
-        @secure_methods ||= []
-        @secure_methods += secure_method_names.map(:to_sym)
-      end
-
-      def secure_caller?(caller)
-        # TODO: Is this slow?  Nasty?  Probably. :(
-        calling_method = caller.first.match(/`(.*)'$/)[1]
-        @secure_methods.present? && @secure_methods.include?(calling_method.to_sym)
-      end
-
-      # If the calling method is one of those for which
-      # we need to use https, add secure: true to params
-      def securify(params, caller)
-        params.merge!(secure: true) if secure_caller?(caller)
-        params
-      end
-
-      def post(path, params, &block)
-        params[:api_version] = @api_version if @api_version
-        params[:timeout] = @timeout if @timeout
-        YvApi.post(path, securify(params, caller), &block)
-      end
-
-      def get(path, params, &block)
-        params[:api_version] = @api_version if @api_version
-        params[:timeout] = @timeout if @timeout
-        YvApi.get(path, securify(params, caller), &block)
-      end
-
-      def belongs_to_remote(association_name)
-        association_class = association_name.to_s.classify.constantize
-        attribute association_class.foreign_key.to_sym
-
-        define_method(association_name.to_s.singularize) do |params = {}|
-          associations.delete(association_name) if params[:refresh]
-
-          associations[association_name] ||= association_class.find(self.attributes[association_class.foreign_key].to_i, params)
+      # Clear memoization at class level
+      # instance variables that persist across requests
+      def clear_memoization
+        instance_variables.each do |var|
+          unless [:@inheritable_attributes, :@resource_attributes, :@parent_name].include?(var)
+            remove_instance_variable(var.to_sym)
+          end
         end
+        true
       end
 
-      def has_many_remote(association_name)
-        define_method(association_name.to_s.pluralize) do |params = {}|
-          # associations.delete(association_name) if params[:refresh]
+      # Not exactly sure what the need/use case is for this at the moment. Britt (8/23/2013)
+      def html_present?(mash)
+        return false if mash.nil?
 
-          association_class = association_name.to_s.classify.constantize
-          associations[association_name] ||= association_class.all(params.merge(self.class.foreign_key => self.id))
-        end
+        lang_key = YV::Conversions.to_api_lang_code(I18n.locale.to_s)
+        return false unless mash[lang_key].nil?
+
+        val = mash.html.try(:[], lang_key)
+        val ||= mash.html.try(:[], :default)
+        val.present?
       end
     end
 
-    def self.a_very_long_time
-      Cfg.very_long_cache_expiration.to_f.minutes
-    end
-    def self.a_long_time
-      Cfg.long_cache_expiration.to_f.minutes
-    end
-    def self.a_short_time
-      Cfg.short_cache_expiration.to_f.minutes
-    end
-    def self.a_very_short_time
-      Cfg.very_short_cache_expiration.to_f.minutes
-    end
-    def a_very_long_time
-      self.class.a_very_long_time
-    end
-    def a_long_time
-      self.class.a_long_time
-    end
-    def a_short_time
-      self.class.a_short_time
-    end
-    def a_very_short_time
-      self.class.a_very_short_time
-    end
+    # Begin main instance methods ------------------------------------------------------------------------------------
+
     attr_accessor :attributes, :associations
 
     attribute :id
@@ -347,19 +286,14 @@ module YouVersion
     def after_build; end
 
     def initialize(data = {})
-      @attributes = Hashie::Mash.new(data || {})
+      @attributes = Hashie::Mash.new(data)
       @associations = {}
       yield self if block_given?
-
       after_build
     end
 
     def api_path_prefix
       self.class.api_path_prefix
-    end
-
-    def foreign_key
-      self.class.foreign_key
     end
 
     def list_path
@@ -382,64 +316,59 @@ module YouVersion
       self.class.delete_path
     end
 
-    def persisted?
-      return !id.blank?
-    end
-
     def to_param
       id
     end
 
-    def persist(resource_path)
-      response = true
-      response_data = nil
-      response_data = self.class.post(resource_path, attributes.merge(auth: self.auth)) do |errors|
-        new_errors = errors.map { |e| YvApi.api_error_i18n(e) }
-        new_errors.each { |e| self.errors[:base] << e }
+    def persisted?
+      return !id.blank?
+    end
 
-        if block_given?
-          yield errors
-        end
-
-        response = false
+    def persist(path)
+      success = true
+      response = nil
+      response = YV::API::Client.post(path, attributes.merge(auth: self.auth)) do |errors|
+        success = false
+        errors.map {|err| self.errors[:base] << YV::API::Error.i18nize(e)}
+        (yield errors) if block_given?
       end
-
-      [response, response_data]
+      [success, response]
     end
 
     def before_save; end;
     def after_save(response); end;
-
+    
     def save
       unless (self.persisted? == false && self.class == User)
-        return false unless authorized?
+        return false unless auth_present?
       end
 
-      response = true
-      response_data = nil
+      success = true
+      response = nil
 
       self.persisted? ? before_update : before_save
 
       begin
-        # return false unless valid?
-
         resource_path = self.persisted? ? self.class.update_path : self.class.create_path
-        response, response_data = persist(resource_path)
+        success, response = persist(resource_path)
 
-        if response && ! self.persisted?
-          self.id = response_data.id if response_data.id
+        if success && !self.persisted? && response.id
+          assign_id(response.id)
         end
       ensure
-        self.persisted? ? after_update(response_data) : after_save(response_data)
+        self.persisted? ? after_update(response) : after_save(response)
       end
-      response
+      success
     end
 
+    def assign_id(id)
+      self.id = id
+    end
+
+    
     def before_update; before_save; end;
     def after_update(response); after_save(response); end;
-
     def update(updated_attributes)
-      # self.attributes = self.attributes.merge(updated_attributes)
       updated_attributes.each { |k, v| self.send("#{k}=".to_sym, v) }
       save
     end
@@ -447,30 +376,25 @@ module YouVersion
     def before_destroy; end;
     def after_destroy; end;
     def destroy
-      response = true
+      return false unless auth_present?
 
-      return false unless authorized?
+      success = true
 
       before_destroy
 
       begin
         response = self.class.destroy(self.id, self.auth) do |errors|
-          new_errors = errors.map { |e| e["error"] }
-          self.errors[:base] << new_errors
-
-          if block_given?
-            yield errors
-          end
-
-          response = false
+          success = false
+          errors.map {|err| self.errors[:base] << YV::API::Error.i18nize(e)}
+          (yield errors) if block_given?
         end
       ensure
         after_destroy
       end
-      response
+      success
     end
 
-    def authorized?
+    def auth_present?
       if self.auth
         true
       else
@@ -495,24 +419,12 @@ module YouVersion
       Date.parse(attributes['updated_dt'] || attributes['created_dt'])
     end
 
-    def self.clear_memoization
-      #class instance variables that persist across requests
-      self.instance_variables.each do |var|
-        unless [:@inheritable_attributes, :@resource_attributes, :@parent_name].include?(var)
-          self.instance_variable_set(var, nil)
-          Rails.logger.apc "Memoization cleared: #{self.name}.#{var.to_s}", :info rescue nil
-        end
-      end
-      true
-    end
-
     # Instance method to add errors to a given resource
     def add_errors( api_errors_array )
       api_errors_array.each do |error|
-        self.errors.add(:base, error["error"])
+        self.errors.add(:base, YV::API::Error.i18nize(error))
       end
     end
-
 
   end
 end

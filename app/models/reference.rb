@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-class Reference < YouVersion::Resource
+class Reference < YV::Resource
 
   attr_reader :book
   attr_reader :chapter
@@ -40,7 +40,7 @@ class Reference < YouVersion::Resource
     #attempt to convert book and version from legacy OSIS to USFM
     #opts hash acts as overriding value to ref parameter
     _book = opts.has_key?(:book) ? opts[:book] : ref_hash[:book]
-    @book = YvApi::get_usfm_book(_book) || _book
+    @book = YV::Conversions.usfm_book(_book) || _book
     @book = @book.try :upcase
 
     @chapter = opts.has_key?(:chapter) ? opts[:chapter] : ref_hash[:chapter]
@@ -125,7 +125,7 @@ class Reference < YouVersion::Resource
 
   def to_usfm
       return "#{chapter_usfm}" if is_chapter?
-      return verses.map {|v| "#{chapter_usfm}.#{v}"}.join(YvApi::usfm_delimeter) if verses
+      return verses.map {|v| "#{chapter_usfm}.#{v}"}.join(YV::Conversions.usfm_delimeter) if verses
   end
 
   def usfm
@@ -193,11 +193,11 @@ class Reference < YouVersion::Resource
     return @audio unless @audio.nil?
     return nil if attributes.audio.nil?
 
-    opts = {id: attributes.audio[0].id, cache_for: a_very_long_time}
+    opts = {id: attributes.audio[0].id, cache_for: YV::Caching.a_very_long_time}
 
     #we have to make this additional call to get the audio bible copyright info
-    response = YvApi.get("audio-bible/view", opts) do |errors|
-        raise YouVersion::ResourceError.new(errors)
+    response = YV::API::Client.get("audio-bible/view", opts) do |errors|
+        raise YV::ResourceError.new(errors)
     end
     @audio = attributes.audio[0].merge(response)
     @audio.url = attributes.audio[0].download_urls.format_mp3_32k
@@ -287,7 +287,7 @@ class Reference < YouVersion::Resource
 
     validate
 
-    opts = {cache_for: a_very_long_time}
+    opts = {cache_for: YV::Caching.a_very_long_time}
     # sometimes we just need generic info about a verse, like the human spelling of a chapter
     # in this rare case, we will just use the YouVersion default Version
     opts[:id] =  version || Version.default
@@ -296,7 +296,7 @@ class Reference < YouVersion::Resource
     # as the alternative (for multiple verses) is multiple bible/verse calls
     opts[:reference] = chapter_usfm
 
-      @attributes = YvApi.get("bible/chapter", opts) do |errors|
+      @attributes = YV::API::Client.get("bible/chapter", opts) do |errors|
         if errors.length == 1 && [/^bible.reference.not_found$/].detect { |r| r.match(errors.first["key"]) }
           raise NotAChapterError
         elsif errors.length == 1 && [/^bible.id.not_found$/].detect { |r| r.match(errors.first["key"]) }

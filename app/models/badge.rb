@@ -1,4 +1,4 @@
-class Badge < YouVersion::Resource
+class Badge < YV::Resource
   attr_i18n_reader :name
   attr_i18n_reader :description
   attribute :type

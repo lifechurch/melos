@@ -1,5 +1,5 @@
 module Videos
-  class Variant < YouVersion::Resource
+  class Variant < YV::Resource
 
     attribute :kbit_rate
     attribute :audio

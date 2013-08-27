@@ -1,5 +1,5 @@
 module Videos
-  class Publisher < YouVersion::Resource
+  class Publisher < YV::Resource
     attribute :id
     attribute :name
     attribute :description

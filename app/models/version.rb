@@ -1,4 +1,4 @@
-class Version < YouVersion::Resource
+class Version < YV::Resource
 
   attribute :id
   attribute :title
@@ -17,7 +17,7 @@ class Version < YouVersion::Resource
     when Hash, Hashie::Mash
       app_lang_tag.id.to_s
     else
-      YvApi::to_bible_api_lang_code(app_lang_tag).to_s
+      YV::Conversions.to_bible_api_lang_code(app_lang_tag).to_s
     end
 
     versions.select { |k, v| v.language.id.to_s == bible_langauge_id }.values
@@ -44,7 +44,7 @@ class Version < YouVersion::Resource
     when Hash, Hashie::Mash
       app_lang_tag.id.to_s
     else
-      YvApi::to_bible_api_lang_code(app_lang_tag).to_s
+      YV::Conversions.to_bible_api_lang_code(app_lang_tag).to_s
     end
 
     defaults[bible_langauge_id]
@@ -86,7 +86,7 @@ class Version < YouVersion::Resource
     when /^(\d+)\-.*/   #  "1-KJV"
       $1.to_i
     when String
-      YvApi::get_usfm_version(ver) || ver
+      YV::Conversions.usfm_version(ver) || ver
     when Version
       ver.id
     else
@@ -105,7 +105,7 @@ class Version < YouVersion::Resource
     self == compare
   end
   def language
-    @language ||= Hashie::Mash.new({tag: YvApi::bible_to_app_lang_code(@attributes.language.language_tag),
+    @language ||= Hashie::Mash.new({tag: YV::Conversions.bible_to_app_lang_code(@attributes.language.language_tag),
                                     id: @attributes.language.language_tag,
                                     human: @attributes.language.local_name,
                                     direction: @attributes.language.text_direction})
@@ -186,8 +186,7 @@ class Version < YouVersion::Resource
     publisher_id.present?
   end
   def self.cache_length
-    #Cfg.version_data_cache_expiration.to_f.minutes || a_long_time
-    a_very_long_time
+    YV::Caching.a_very_long_time
   end
   def cache_length
     self.class.cache_length
@@ -199,7 +198,7 @@ class Version < YouVersion::Resource
     return @versions if @versions.present?
     # note: all caches in this model could be a_very_long_time, but during release, we want caches to be short
     # to allow for quick discovery of changes/additions
-    response = YvApi.get("bible/versions", type: "all", cache_for: cache_length)
+    response = YV::API::Client.get("bible/versions", type: "all", cache_for: cache_length)
 
     #versions hash of form [<version numerical uid> => <Version object instance>]
     @versions = Hash[ response.versions.map {|ver| [ver.id, Version.new(ver)]} ]
@@ -207,7 +206,7 @@ class Version < YouVersion::Resource
 
   def self.defaults
     return @defaults if @defaults.present?
-    response = YvApi.get("bible/configuration", cache_for: cache_length)
+    response = YV::API::Client.get("bible/configuration", cache_for: cache_length)
     @defaults = Hash[response.default_versions.map {|d| [d.language_tag, d.id]}]
   end
 
@@ -215,7 +214,7 @@ class Version < YouVersion::Resource
     #attributers that can only be found with a specific /version call
     return @detailed_attributes unless @detailed_attributes.nil?
 
-    @detailed_attributes = YvApi.get("bible/version", cache_for: cache_length, id: id)
+    @detailed_attributes = YV::API::Client.get("bible/version", cache_for: cache_length, id: id)
     # uncommenting to show API issue, leavning here in case we need it in a pinch
     # @detailed_attributes.publisher.name = nil if @detailed_attributes.publisher.name == 'null'
     @detailed_attributes

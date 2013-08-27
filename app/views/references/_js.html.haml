@@ -51,7 +51,7 @@
 
 // Dump a json representation of our @version into the markup for use by reader menus.
 // Would like to move this at some point to an API call if at all possible.
-= cache "reader_version_json_#{version.to_param}", expires_in: a_long_time do
+= cache "reader_version_json_#{version.to_param}", expires_in: YV::Caching.a_long_time do
   - version_json = {abbreviation: version.abbreviation.downcase, id: version.to_param }
   - version_json[:books] = {}
   - books = version.books

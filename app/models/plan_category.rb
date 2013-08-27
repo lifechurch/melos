@@ -3,7 +3,7 @@ class PlanCategory
   attr_reader :slug
 
   def name
-      YouVersion::Resource.i18nize(@json.labels)
+      YV::Resource.i18nize(@json.labels)
   end
 
   def initialize(json_category_mash)

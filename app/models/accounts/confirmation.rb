@@ -8,7 +8,7 @@ module Accounts
 
     def resend!
       success = true
-      YvApi.post("users/resend_confirmation", email: email) do |errors|
+      YV::API::Client.post("users/resend_confirmation", email: email) do |errors|
         errors.each {|err| self.errors.add :base, err["error"]}
         success = false
       end

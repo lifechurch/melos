@@ -3,9 +3,9 @@ class NotesController < ApplicationController
   before_filter :set_sidebar, :only => [:index]
 
   def index
-      @notes = Note.all(language_tag: I18n.locale, cache_for: a_very_short_time)
+      @notes = Note.all(language_tag: I18n.locale, cache_for: YV::Caching.a_very_short_time)
       # drop language tag filter if no notes found
-      @notes = Note.all(cache_for: a_very_short_time) if @notes.empty?
+      @notes = Note.all(cache_for: YV::Caching.a_very_short_time) if @notes.empty?
       self.sidebar_presenter = Presenter::Sidebar::Notes.new
   end
 
@@ -13,27 +13,28 @@ class NotesController < ApplicationController
     #API Constraint to be put in model eventually
     page = params[:page] || 1
     ref = ref_from_params rescue not_found
-    @notes = Note.for_reference(ref, language_tag: I18n.locale, page: page, cache_for: a_short_time)
-    @notes = Note.for_reference(ref, page:page, cache_for:a_short_time) if @notes.empty?
+    @notes = Note.for_reference(ref, language_tag: I18n.locale, page: page, cache_for: YV::Caching.a_short_time)
+    @notes = Note.for_reference(ref, page:page, cache_for: YV::Caching.a_short_time) if @notes.empty?
     @reference_title = ref.human
     render template:"notes/index"
   end
 
   def show
     begin
-      @note = Note.find(params[:id], :auth => current_auth)
-    rescue YouVersion::ResourceError => e
+      @note = current_auth ? Note.find(params[:id], auth: current_auth) : Note.find(params[:id])
+      
+    rescue YV::ResourceError => e
       if e.has_error?("Note is private")
         redirect_to(notes_path, notice: t("notes.is private")) and return
       elsif e.has_error?("Note not found")
-        render_404 #render here, don't trigger an exception notification.  404's are not exceptions.
+        render_404 unless current_auth # render 404 unless logged in
+        @note = Note.find(params[:id]) # logged in, attempt to find the note without auth
       elsif e.has_error?("Note has been reported and is in review")
         @note = Note.find(params[:id], :auth => current_auth, :force_auth => true)
       else
         raise(e)
       end
     end
-
   end
 
   def new

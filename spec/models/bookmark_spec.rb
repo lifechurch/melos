@@ -34,7 +34,7 @@ describe Bookmark do
     end
 
     it 'should raise an exception if a bookmark is not found by ID' do
-      lambda { Bookmark.find('99999999999999') }.should raise_error(YouVersion::ResourceError, 'not_found')
+      lambda { Bookmark.find('99999999999999') }.should raise_error(YV::ResourceError, 'not_found')
     end
   end
 

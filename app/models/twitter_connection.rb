@@ -1,4 +1,4 @@
-class TwitterConnection < YouVersion::Connection::Base
+class TwitterConnection < YV::Connection::Base
   attribute :credentials
   attribute :uid
   attribute :info
@@ -29,7 +29,7 @@ class TwitterConnection < YouVersion::Connection::Base
     responses = response.ids.each_slice(25).to_a
     responses.each do |s|
       opts[:connection_user_ids] = s
-      response = YvApi.post('users/find_connection_friends', opts) do |errors|
+      response = YV::API::Client.post('users/find_connection_friends', opts) do |errors|
         []
       end
       response.each { |u| users << User.new(u) }
@@ -38,7 +38,7 @@ class TwitterConnection < YouVersion::Connection::Base
   end
 
   def delete
-    result = YvApi.post("users/delete_connection", connection_type: TYPE, auth: auth)
+    result = YV::API::Client.post("users/delete_connection", connection_type: TYPE, auth: auth)
     return result.twitter.nil?
   end
 

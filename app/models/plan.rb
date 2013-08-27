@@ -1,4 +1,4 @@
-class Plan < YouVersion::Resource
+class Plan < YV::Resource
 
   attribute :errors
   attribute :publisher_url
@@ -35,12 +35,12 @@ class Plan < YouVersion::Resource
     id, slug = id_and_slug_from_param param
     raise YouVersion::API::RecordNotFound unless id.present?
 
-    opts[:cache_for] ||= a_long_time
+    opts[:cache_for] ||= YV::Caching.a_long_time
     plan = super(id, opts) do |errors|
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
         raise YouVersion::API::RecordNotFound
       else
-        raise YouVersion::ResourceError.new(errors)
+        raise YV::ResourceError.new(errors)
       end
     end
     raise YouVersion::API::RecordNotFound.new(plan) unless plan.slug == slug
@@ -49,7 +49,7 @@ class Plan < YouVersion::Resource
 
   def self.all(opts = {})
     opts[:query] = '*' if opts[:query].blank?
-    opts[:cache_for] ||= a_long_time
+    opts[:cache_for] ||= YV::Caching.a_long_time
     opts[:cache_for] = 0 if opts[:user_id].present?
     super(opts)
   end
@@ -59,7 +59,7 @@ class Plan < YouVersion::Resource
     opts = {auth: user_auth}
     opts[:id] = id_from_param plan
 
-    response = YouVersion::Resource.post("#{api_path_prefix}/subscribe_user", opts)
+    response = YV::API::Client.post("#{api_path_prefix}/subscribe_user", opts)
 
     Subscription.new(response.merge(auth: _auth))
 
@@ -107,11 +107,11 @@ class Plan < YouVersion::Resource
       params[:id] = id
       @users_page = params[:page] ||= 1
 
-      response = YvApi.get("#{api_path_prefix}/users", params) do |errors|
+      response = YV::API::Client.get("#{api_path_prefix}/users", params) do |errors|
         if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
           return []
         else
-          raise YouVersion::ResourceError.new(errors)
+          raise YV::ResourceError.new(errors)
         end
       end
 
@@ -126,13 +126,13 @@ class Plan < YouVersion::Resource
     unless(@reading && @reading_day == day && @reading_version == version_id)
       opts[:day] ||= day
       opts[:id] ||= id
-      opts[:cache_for] ||= a_very_long_time
+      opts[:cache_for] ||= YV::Caching.a_very_long_time
       opts.delete :cache_for if opts[:cache_for] == 0
       # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
       # to be overriden by Subscription model to send auth and user_id
       # we can cache the non-authed response
-      response = YvApi.get("#{api_path_prefix}/references", opts) do |errors|
-        raise YouVersion::ResourceError.new(errors)
+      response = YV::API::Client.get("#{api_path_prefix}/references", opts) do |errors|
+        raise YV::ResourceError.new(errors)
       end
 
       process_references_response(response)
@@ -150,10 +150,10 @@ class Plan < YouVersion::Resource
       @reading = Hashie::Mash.new()
 
       #get localized html || text via i18nize method and massage a bit
-      if @reading.devotional = YouVersion::Resource.i18nize(response.additional_content)
+      if @reading.devotional = YV::Resource.i18nize(response.additional_content)
         # if ascii spacing is in the html, just remove it, instead of adding p's
         # to avoid adding unecessarry spacing
-        spacer = YouVersion::Resource.html_present?(response.additional_content) ? '' : '</p><p>'
+        spacer = YV::Resource.html_present?(response.additional_content) ? '' : '</p><p>'
         @reading.devotional = @reading.devotional.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer)
         @reading.devotional = "<p>" << @reading.devotional << "</p>" if spacer.present?
       end
@@ -204,7 +204,7 @@ class Plan < YouVersion::Resource
   end
 
   def available_in?(lang_code)
-    lang_key = YvApi::to_api_lang_code(lang_code)
+    lang_key = YV::Conversions.to_api_lang_code(lang_code)
 
     @attributes["about"].has_key?(lang_key) || @attributes["about"].html.has_key?(lang_key) || @attributes["about"].text.has_key?(lang_key)
   end
@@ -220,13 +220,13 @@ class Plan < YouVersion::Resource
     #     sort  the ordering of the results, defaults to 'score' (relevance), also accepts 'total_days'
     #     page  number of results to return
     query = '*' if query.blank?
-    params = {query: query, cache_for: a_long_time}.merge!(params.except("query", :query))
+    params = {query: query, cache_for: YV::Caching.a_long_time}.merge!(params.except("query", :query))
 
-    response = YvApi.get(list_path, params) do |errors|
+    response = YV::API::Client.get(list_path, params) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
         return []
       else
-        raise YouVersion::ResourceError.new(errors)
+        raise YV::ResourceError.new(errors)
       end
     end
 

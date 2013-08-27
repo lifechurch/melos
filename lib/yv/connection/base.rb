@@ -1,6 +1,6 @@
-module YouVersion
+module YV
   module Connection
-    class Base < Resource
+    class Base < YV::Resource
       def get(path, params = {})
         HTTParty.get(path, query: self.default_params.merge(params))
       end
@@ -17,7 +17,6 @@ module YouVersion
       def self.delete_path
         "users/delete_connection"
       end
-
 
       # these should return URLs for respective actions
       def share_path; end

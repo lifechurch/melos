@@ -1,4 +1,4 @@
-class Device < YouVersion::Resource
+class Device < YV::Resource
   attribute :vendor
   attribute :model
   attribute :os

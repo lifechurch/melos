@@ -1,4 +1,4 @@
-class NotificationSettings < YouVersion::Resource
+class NotificationSettings < YV::Resource
 
   attribute :notification_settings
   attribute :token
@@ -26,7 +26,7 @@ class NotificationSettings < YouVersion::Resource
     super(nil, opts)
   end
   
-  def authorized?
+  def auth_present?
     !(auth || token).nil?
   end
   
@@ -36,7 +36,7 @@ class NotificationSettings < YouVersion::Resource
     
     opts = auth ? {auth: auth} : {token: token}
     
-    response_data = YvApi.post(resource_path, attributes.except(:auth, :token).merge(opts)) do |errors|
+    response_data = YV::API::Client.post(resource_path, attributes.except(:auth, :token).merge(opts)) do |errors|
       new_errors = errors.map { |e| e["error"] }
       new_errors.each { |e| self.errors[:base] << e }
 
@@ -61,7 +61,6 @@ class NotificationSettings < YouVersion::Resource
 
   def after_build
     notification_settings.each { |k, v| self.send("#{k}=".to_sym, v["email"]) if self.respond_to? "#{k}=".to_sym}
-    #@attributes[:token] = nil
   end
   
   def user
