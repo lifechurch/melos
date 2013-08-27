@@ -329,7 +329,7 @@ module YV
       response = nil
       response = YV::API::Client.post(path, attributes.merge(auth: self.auth)) do |errors|
         success = false
-        errors.map {|err| self.errors[:base] << YV::API::Error.i18nize(e)}
+        errors.map {|err| self.errors[:base] << YV::API::Error.i18nize(err)}
         (yield errors) if block_given?
       end
       [success, response]
