@@ -2,7 +2,7 @@
 require 'spec_helper'
 include YouVersion
 
-describe YouVersion::Resource do
+describe YV::Resource do
   describe "#Resource.i18nize" do
     before(:each) do
       I18n.locale = I18n.default_locale

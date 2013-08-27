@@ -21,14 +21,14 @@ namespace :cache do
 
     start = Time.now.to_f
     ap "* warming bible/versions, type=all"
-    test = YvApi.get("bible/versions", type: "all", cache_for: Version.cache_length, timeout: 30)
+    test = YV::API::Client.get("bible/versions", type: "all", cache_for: Version.cache_length, timeout: 30)
 
     start = Time.now.to_f
     ap "* warming bible/version, id=1 (KJV)"
-    test = YvApi.get("bible/version", cache_for: Version.cache_length, id: 1, timeout: 30)
+    test = YV::API::Client.get("bible/version", cache_for: Version.cache_length, id: 1, timeout: 30)
 
     start = Time.now.to_f
     ap "* warming bible/configuration"
-    test = YvApi.get("bible/configuration", cache_for: Version.cache_length, timeout: 30)
+    test = YV::API::Client.get("bible/configuration", cache_for: Version.cache_length, timeout: 30)
   end
 end

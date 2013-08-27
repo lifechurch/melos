@@ -1,4 +1,4 @@
-class FacebookConnection < YouVersion::Connection::Base
+class FacebookConnection < YV::Connection::Base
   attribute :access_token
   attribute :credentials
   attribute :uid
@@ -36,7 +36,7 @@ class FacebookConnection < YouVersion::Connection::Base
       responses = ids.each_slice(25).to_a
       responses.each do |s|
         opts[:connection_user_ids] = s
-        response = YvApi.post('users/find_connection_friends', opts) do |errors|
+        response = YV::API::Client.post('users/find_connection_friends', opts) do |errors|
           []
         end
         response.each { |u| users << User.new(u) }
@@ -46,7 +46,7 @@ class FacebookConnection < YouVersion::Connection::Base
   end
 
   def delete
-    result = YvApi.post("users/delete_connection", connection_type: "fb", auth: auth)
+    result = YV::API::Client.post("users/delete_connection", connection_type: "fb", auth: auth)
     return result.facebook.nil?
   end
 

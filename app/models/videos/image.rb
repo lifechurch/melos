@@ -1,5 +1,5 @@
 module Videos
-  class Image < YouVersion::Resource
+  class Image < YV::Resource
     attribute :url
     attribute :width
     attribute :height

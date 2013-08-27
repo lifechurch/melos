@@ -55,7 +55,7 @@ describe Reference do
         subject = Reference.new(ref)
 
         it "should hit the API to validate a reference" do
-          YvApi.should_receive(:get)
+          YV::API::Client.should_receive(:get)
           subject.valid?
         end
 
@@ -83,7 +83,7 @@ describe Reference do
         end
 
         specify "#{ref} should not hit the Bible API" do
-          YvApi.should_receive(:get).exactly(0).times
+          YV::API::Client.should_receive(:get).exactly(0).times
           Reference.new(ref).valid?
         end
       end
@@ -378,12 +378,12 @@ describe Reference do
   describe "#timing" do
 
       it "should initialize without hitting the API" do
-        YvApi.should_receive(:get).exactly(0).times
+        YV::API::Client.should_receive(:get).exactly(0).times
         Reference.new('gen.1.1.kjv')
         #TODO: add more cases (ranges, creation from References, etc to flesh out the supported 'lazy-load' cases)
       end
       it "should give basic properties without hitting the API" do
-        YvApi.should_receive(:get).exactly(0).times
+        YV::API::Client.should_receive(:get).exactly(0).times
 
         ref = Reference.new('gen.1.1.kjv')
         ref.book

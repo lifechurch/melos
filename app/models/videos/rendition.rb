@@ -1,5 +1,5 @@
 module Videos
-  class Rendition < YouVersion::Resource
+  class Rendition < YV::Resource
 
     attribute :url
     attribute :format

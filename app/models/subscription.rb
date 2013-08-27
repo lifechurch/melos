@@ -45,11 +45,11 @@ class Subscription < Plan
 
     #We can't use Plan.find because it gets an unexpected response from
     #API when trying un-authed call so it never tries the authed call
-    response = YvApi.get("#{api_path_prefix}/view", opts) do |errors|
+    response = YV::API::Client.get("#{api_path_prefix}/view", opts) do |errors|
       if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
         return nil
       else
-        raise YouVersion::ResourceError.new(errors)
+        raise YV::ResourceError.new(errors)
       end
     end
 
@@ -84,12 +84,12 @@ class Subscription < Plan
       completed_refs.uniq!
 
       opts[:references] = completed_refs.to_usfm
-      response = YouVersion::Resource.post("#{api_path_prefix}/update_completion", opts) do |errors|
-          raise YouVersion::ResourceError.new(errors)
+      response = YV::API::Client.post("#{api_path_prefix}/update_completion", opts) do |errors|
+          raise YV::ResourceError.new(errors)
       end
 
       # API returns a 205 when plan is completed.
-      # Look at YvApi#post for specific implementation details.
+      # Look at YV::API::Client#post for specific implementation details.
       # return here and don't process the response as this isn't a typical response object.
       @completed = true and return if (response.code == 205 && response.complete)
 
@@ -107,8 +107,8 @@ class Subscription < Plan
 
   def catch_up
     if auth
-      response = YouVersion::Resource.post("#{api_path_prefix}/reset_subscription", {auth: auth, id: id}) do |errors|
-          raise YouVersion::ResourceError.new(errors)
+      response = YV::API::Client.post("#{api_path_prefix}/reset_subscription", {auth: auth, id: id}) do |errors|
+          raise YV::ResourceError.new(errors)
       end
       @attributes.merge!(response)
     else
@@ -118,8 +118,8 @@ class Subscription < Plan
 
   def restart
     if auth
-      response = YouVersion::Resource.post("#{api_path_prefix}/restart_subscription", {auth: auth, id: id}) do |errors|
-          raise YouVersion::ResourceError.new(errors)
+      response = YV::API::Client.post("#{api_path_prefix}/restart_subscription", {auth: auth, id: id}) do |errors|
+          raise YV::ResourceError.new(errors)
       end
       @attributes.merge!(response)
     else
@@ -222,8 +222,8 @@ class Subscription < Plan
 
   def day_statuses
     if auth
-      response = YvApi.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id}) do |errors|
-          raise YouVersion::ResourceError.new(errors)
+      response = YV::API::Client.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id}) do |errors|
+          raise YV::ResourceError.new(errors)
       end
     else
       raise "Authentication required to view calendar of a reading plan"
@@ -295,11 +295,11 @@ class Subscription < Plan
       opts[:id] = id
       opts[:user_id] = user_id
 
-      response = YvApi.get("#{api_path_prefix}/accountability", opts) do |errors|
+      response = YV::API::Client.get("#{api_path_prefix}/accountability", opts) do |errors|
         if errors.length == 1 && [/^Accountability not found$/, /^API Error: Accountability not found$/].detect {|r| r.match(errors.first["error"])}
           false #returning false stops get from raising errors (will if nil returned) but still allows ternary operation below
         else
-          raise YouVersion::ResourceError.new(errors)
+          raise YV::ResourceError.new(errors)
         end
       end
 
@@ -325,8 +325,8 @@ class Subscription < Plan
       # email_delivery  00:00:00 FORMAT for time to deliver email
       # best if random to spread load (re: convo with CV)
 
-      response = YouVersion::Resource.post("#{api_path_prefix}/update_subscribe_user", opts) do |errors|
-          raise YouVersion::ResourceError.new(errors)
+      response = YV::API::Client.post("#{api_path_prefix}/update_subscribe_user", opts) do |errors|
+          raise YV::ResourceError.new(errors)
       end
       @attributes.merge!(response)
     else
@@ -352,8 +352,8 @@ class Subscription < Plan
 
       raise "user id couldn't be parsed" if opts[:user_id].nil?
 
-      response = YouVersion::Resource.post("#{api_path_prefix}/#{mode}_accountability", opts) do |errors|
-          raise YouVersion::ResourceError.new(errors)
+      response = YV::API::Client.post("#{api_path_prefix}/#{mode}_accountability", opts) do |errors|
+          raise YV::ResourceError.new(errors)
       end
 
       #PERF: could probably just remove from the mash and be safe if we need to save this API call

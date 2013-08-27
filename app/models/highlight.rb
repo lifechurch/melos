@@ -1,4 +1,4 @@
-class Highlight < YouVersion::Resource
+class Highlight < YV::Resource
   attribute :color
   attribute :reference
   attribute :version
@@ -49,7 +49,7 @@ class Highlight < YouVersion::Resource
     reference = Reference.new(reference) unless reference.is_a? Reference
     params[:page] ||= 1
     opts = params.merge(reference: reference.chapter_usfm, version_id: reference.version)
-    response = YvApi.get("highlights/chapter", opts) do |errors|
+    response = YV::API::Client.get("highlights/chapter", opts) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)not_found$/].detect { |r| r.match(errors.first["error"]) }
         return []
       end

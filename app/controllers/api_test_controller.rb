@@ -18,7 +18,7 @@ class ApiTestController < ApplicationController
     (params[:i] || 3).to_i.times.map do
       get_start = Time.now.to_f
       # cache for 1 min: don't just **allow** a DDOS attack :D
-      YvApi.get(path, opts) do
+      YV::API::Client.get(path, opts) do
         -1 #error
       end
       ((Time.now.to_f - get_start) * 1000).to_i

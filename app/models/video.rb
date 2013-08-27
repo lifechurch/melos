@@ -1,4 +1,4 @@
-class Video < YouVersion::Resource
+class Video < YV::Resource
 
   attribute :id
   attribute :type
@@ -81,7 +81,7 @@ class Video < YouVersion::Resource
   def self.licensed?(video_id, auth)
     begin
       find(video_id,{auth: auth, force_auth: true})
-    rescue YouVersion::ResourceError => e
+    rescue YV::ResourceError => e
       if e.message.include?("not_found")
          return false
       else
@@ -98,11 +98,11 @@ class Video < YouVersion::Resource
     language_tag = params[:language_tag] || "en"
     params = {query: query, page: page, language_tag: language_tag}
 
-    response = YvApi.get(list_path, params) do |errors|
+    response = YV::API::Client.get(list_path, params) do |errors|
       if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
         return []
       else
-        raise YouVersion::ResourceError.new(errors)
+        raise YV::ResourceError.new(errors)
       end
     end
 

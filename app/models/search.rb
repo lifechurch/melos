@@ -20,7 +20,7 @@ class Search
     params[:version_id] = @version_id = Version.id_from_param(opts[:version_id]) if opts[:version_id].present?
     # API says pass only version_id OR language_tag
     params[:language_tag] = opts[:locale].to_s if @version_id.blank?
-    params[:cache_for] = YouVersion::Resource::a_very_short_time
+    params[:cache_for] = YV::Caching.a_very_short_time
 
     @responses = Hashie::Mash.new()
 
@@ -32,13 +32,13 @@ class Search
 
       # Set language tag for bible search if @version_id wasn't set above.
       if(c == :bible && params[:language_tag].present?)
-        parameters[:language_tag] = YvApi::to_bible_api_lang_code(parameters[:language_tag])
+        parameters[:language_tag] = YV::Conversions::to_bible_api_lang_code(parameters[:language_tag])
       end
 
       # Set language tag for search if it's for videos.
       parameters[:language_tag] = opts[:locale].to_s if(c == :videos)
 
-      @responses[c] = YvApi.get("search/#{resource}", parameters) do |errors, response|
+      @responses[c] = YV::API::Client.get("search/#{resource}", parameters) do |errors, response|
         #treat any error as empty results for now, but return suggestions if there were any
         Hashie::Mash.new(suggestions: response.try(:[], 'response').try(:[], 'data').try(:[], 'suggestions'))
       end

@@ -3,7 +3,7 @@ class VideosController < ApplicationController
   respond_to :html
   before_filter :check_locale
 
-  rescue_from YouVersion::ResourceError, with: :resource_error
+  rescue_from YV::ResourceError, with: :resource_error
 
   def index
     @videos = Video.search("*",language_tag: I18n.locale.to_s)

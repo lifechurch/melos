@@ -1,6 +1,6 @@
 require 'digest/md5'
 
-class User < YouVersion::Resource
+class User < YV::Resource
   # include Model
 
   attribute :id
@@ -34,7 +34,9 @@ class User < YouVersion::Resource
 
   validate :valid_picture_size?, if: "uploaded_file?"
 
-  has_many_remote :badges
+  def badges
+    Badge.all(user_id: self.id)
+  end
 
   def self.update_path
     "users/update"
@@ -80,7 +82,7 @@ class User < YouVersion::Resource
       opts["notification_settings[newsletter][email]"] = true
 
       errors   = nil
-      response = YvApi.post('users/create', opts) {|e| errors = e}
+      response = YV::API::Client.post('users/create', opts) {|e| errors = e}
 
       user = if errors
         u = self.new(opts)
@@ -110,10 +112,10 @@ class User < YouVersion::Resource
 
     def authenticate(username, password)
       id_opts = {}
-      id_response = YvApi.post("users/authenticate", auth: {username: username, password: password})
+      id_response = YV::API::Client.post("users/authenticate", auth: {username: username, password: password})
 
       auth = Hashie::Mash.new(username: username, password: password, user_id: id_response.id)
-      response = YvApi.get("users/view", id_key_for_version => id_response.id, auth: auth)
+      response = YV::API::Client.get("users/view", id_key_for_version => id_response.id, auth: auth)
       response[:auth] = auth
       User.new(response)
     end
@@ -123,20 +125,20 @@ class User < YouVersion::Resource
         case user
         when Fixnum
           if opts[:auth] && user == opts[:auth].user_id
-            response = YvApi.get("users/view", id_key_for_version => user, auth: opts[:auth])
+            response = YV::API::Client.get("users/view", id_key_for_version => user, auth: opts[:auth])
           else
-            response = YvApi.get("users/view", id_key_for_version => user)
+            response = YV::API::Client.get("users/view", id_key_for_version => user)
           end
           response[:auth] = opts[:auth] ||= nil
         when Hashie::Mash
-          response = YvApi.get("users/view", id: user.user_id, auth: user)
+          response = YV::API::Client.get("users/view", id: user.user_id, auth: user)
           response[:auth] = user
         when String
           if user.match(/^[0-9]+$/)
             if opts[:auth] && user == opts[:auth].user_id
-              response = YvApi.get("users/view", id_key_for_version => user, auth: opts[:auth])
+              response = YV::API::Client.get("users/view", id_key_for_version => user, auth: opts[:auth])
             else
-              response = YvApi.get("users/view", id_key_for_version => user)
+              response = YV::API::Client.get("users/view", id_key_for_version => user)
             end
           else
             id_opts = {}
@@ -145,11 +147,11 @@ class User < YouVersion::Resource
             else
               id_opts[:username] = user
             end
-            id_response = YvApi.get("users/user_id", id_opts)
+            id_response = YV::API::Client.get("users/user_id", id_opts)
             if opts[:auth] && user == opts[:auth].username
-              response = YvApi.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
+              response = YV::API::Client.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
             else
-              response = YvApi.get("users/view", id_key_for_version => id_response.user_id)
+              response = YV::API::Client.get("users/view", id_key_for_version => id_response.user_id)
             end
             response[:auth] = opts[:auth] ||= nil
           end
@@ -158,7 +160,7 @@ class User < YouVersion::Resource
     end
 
     def destroy(auth, &block)
-      response = post(delete_path, {auth: auth}, &block)
+      response = YV::API::Client.post(delete_path, {auth: auth}, &block)
     end
 
   end
@@ -172,17 +174,8 @@ class User < YouVersion::Resource
   end
 
   def before_save
-    # opts = {"email" => "", "username" =>  "", "password" =>  "", "verified" => false, "agree" => false}.merge!(opts)
-    # opts["agree"] = true if opts["agree"]
-    # opts[:secure] = true
     self.attributes[:secure] = true
     self.attributes["notification_settings[newsletter][email]"] = true
-    # errors = nil
-    # response = YvApi.post('users/create', opts) do |ee|
-    #   errors = ee
-    #   return false
-    # end
-    # return errors || true
   end
 
   def confirm(hash)
@@ -190,7 +183,7 @@ class User < YouVersion::Resource
   end
 
   def update_email(email)
-    response = YvApi.post("users/update_email", email: email, auth: self.auth) do |errors|
+    response = YV::API::Client.post("users/update_email", email: email, auth: self.auth) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
@@ -198,7 +191,7 @@ class User < YouVersion::Resource
   end
 
   def confirm_update_email(token)
-    response = YvApi.post("users/confirm_update_email", token: token) do |errors|
+    response = YV::API::Client.post("users/confirm_update_email", token: token) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
@@ -206,7 +199,7 @@ class User < YouVersion::Resource
   end
 
   def self.forgot_password(email)
-    YvApi.post("users/forgot_password", email: email) do |errors|
+    YV::API::Client.post("users/forgot_password", email: email) do |errors|
       return false
     end
   end
@@ -214,7 +207,7 @@ class User < YouVersion::Resource
   def self.confirm(hash)
     user = nil
 
-    response = YvApi.post("users/confirm", token: hash, timeout: 10) do |errors|
+    response = YV::API::Client.post("users/confirm", token: hash, timeout: 10) do |errors|
       user = User.new
 
       if i = errors.find_index{|e| e["key"] == "users.hash.verified"}
@@ -239,17 +232,16 @@ class User < YouVersion::Resource
 
   def update_password(opts)
     opts[:auth] = self.auth
-    result = YvApi.post("users/update_password", opts) do |errors|
-      errors.each { |e| self.errors.add :base, YvApi.api_error_i18n(e) }
+    result = YV::API::Client.post("users/update_password", opts) do |errors|
+      errors.each { |e| self.errors.add :base, YV::API::Error.i18nize(e) }
       false
     end
   end
 
   def destroy
+    return false unless auth_present?
+    
     response = true
-
-    return false unless authorized?
-
     before_destroy
 
     begin
@@ -269,24 +261,13 @@ class User < YouVersion::Resource
     response
   end
 
-  # def self.find(id)
-  #   response = YvApi.get('users/view', {user_id: id, auth_user_id: :id} ) do |errors|
-  #     @errors = errors.map { |e| e["error"] }
-  #     return false
-  #   end
-  #   User.new(response)
-  # end
 
-  #   def self.notes(id, auth)
-  #     Note.for_user(id, auth: auth)
-  #   end
-  #
   def share(opts = {})
     # validate that a connection was specified.  TODO: populate errors object + I18n
     return false unless opts[:connections]
 
     opts[:connections] = opts[:connections].keys.join("+")
-    result = YvApi.post("users/share", opts.merge({auth: self.auth})) do |errors|
+    result = YV::API::Client.post("users/share", opts.merge({auth: self.auth})) do |errors|
       new_errors = errors.map { |e| e["error"] }
       self.errors[:base] << new_errors
       false
@@ -334,7 +315,7 @@ class User < YouVersion::Resource
 
   def recent_activity
     unless @recent_activity
-      response = YvApi.get("community/items", user_id: self.id) do |errors|
+      response = YV::API::Client.get("community/items", user_id: self.id) do |errors|
         if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
           []
         end
