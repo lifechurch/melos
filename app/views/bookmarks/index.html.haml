@@ -5,8 +5,9 @@
   = t('bookmarks.title')
 
 %article.bookmarks
-  %h1= t('users.my bookmarks')
-  - unless @bookmarks.blank?
+  %h1
+    = t('users.my bookmarks')
+  - unless @bookmarks.empty?
     .split_pane
       .sidebar
         %dl.labels_menu
@@ -20,7 +21,7 @@
             %dd{class: params[:label] == l.label ? "highlighted" : ""}
               = link_to "#{l.label} (#{l.total})", user_bookmarks_path(@user, label: l.label)
       .content
-        %ul.resource_list
+        .profile-resource-list
           = render partial: "bookmarks/list_item", collection: @bookmarks, locals: {display: :icon}
         = render "shared/pagination", resource_list: @bookmarks
   - else

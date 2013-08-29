@@ -1,8 +1,8 @@
 - content_for :title do
   = @me ? t('users.my profile') : t('users.other user profile', username: @user.name || @user.username)
 
-%ul.resource_list
-  - if @user.recent_activity.blank?
+.recent-activity
+  - if @user.recent_activity.empty?
     %p= t('no recent activity', username: @user.username)
   - else
     - @user.recent_activity.each do |a|
