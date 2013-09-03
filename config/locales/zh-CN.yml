@@ -1,8 +1,9 @@
 zh-CN:
   social:
+    share: "分享"
     my connections: "已绑定的账户"
     connected as: "您已经与 %{connection} 上的 %{username}账户关联。"
-    remove connection: "删除"
+    remove connection: "移除这个连接"
     connection friends: "这是一些在 %{connection} 上与您有连接的YouVersion 用户："
     errors:
       no friends: "您在 %{connection}上 的朋友现在不在 YouVersion 上。"
@@ -61,11 +62,8 @@ zh-CN:
   share error: "抱歉！分享信息时出错！请重试！"
   google plus: "Google +"
   connect to: "连接到您的 %{connection} 账户"
-  connected as user: "您已经与 %{connection} 上的 %{username}账户关联。"
   deleted connection: "已成功移除与 %{connection} 的关联"
   deleted connection error: "抱歉，在移除您与 %{connection} 的关联时发生错误。"
-  remove connection: "移除"
-  connection users: "这是一些在 %{connection} 上与您有连接的YouVersion 用户："
   connection marketing: "与朋友分享YouVersion将非常精彩！将您的YouVersion账户与其它社交网络绑定，以便在YouVersion即时寻找和关注您的朋友们。绑定账户后，仅需轻轻一触，便可分享内容。没有您的许可，我们将绝不发布任何信息。"
   next step connections: "下一步：绑定您的账户，并查找好友。"
   no notes found: "%{username} 没有任何笔记。"
@@ -82,7 +80,6 @@ zh-CN:
   link will be added: "将被添加"
   my picture: "更新我的图片"
   my notifications: "管理通知"
-  my connections: "已绑定的账户"
   my devices: "已绑定的设备"
   language name: "简体中文"
   sign up: "注册"
@@ -132,7 +129,6 @@ zh-CN:
   chapter: "章节"
   bible: "圣经"
   notes title: "笔记"
-  videos: "视频"
   friends: "朋友"
   groups: "群组"
   mobile: "移动设备"
@@ -208,9 +204,7 @@ zh-CN:
   users:
     unverified heading: "几乎完成了！"
     unverified message: "看起来您要登录的账户还未完全设置好。不过只差一步了：您只要点击从 YouVersion 发来的确认邮件里的账户验证连接就行了。若是找不到那份邮件，请查看一下您的垃圾邮件箱，或点击<a href='%{resend_path}'>重发确认邮件</a>。"
-    reset connection: "很抱歉，出错了！请移除这个连接然后重新连接！"
     settings: "设置"
-    no connection friends: "您在 %{connection}上 的朋友现在不在 YouVersion 上。"
     creation form errors: "以下错误阻止您创建账户："
     profile form errors: "以下错误阻止您更新个人资料："
     email address: "电子邮件地址"
@@ -529,6 +523,10 @@ zh-CN:
     completed notice: "恭喜您完成了读经计划。"
     exit: "退出"
     loading sidebar content: "载入侧栏内容..."
+  videos:
+    title: "视频"
+    all: "所有录像"
+    related scripture: "相关经文"
   licenses:
     authorized:
       heading: "您的信息已经获得授权。"
@@ -657,7 +655,7 @@ zh-CN:
     h3: "YouVersion 是全球性的"
     h3 sub: "提供给全世界上百种不同语言的服务。 "
     main: "全世界上千万的用户都在每天使用这款圣经应用软件。下载这款免费的程序，它可以让你随时随地地使用您的书签，笔记以及读经计划等。有几百种不同版本圣经，包括语音版本的，供您在移动设备中选择。好好享用吧！"
-    button h4: "访问 youversion.com/download"
+    button h4: "浏览 Bible.com/app"
     button h4 sub: "在您的移动设备上"
     download now: "现在就下载圣经软件"
     what people: "人们是如何评说这款免费的圣经软件..."

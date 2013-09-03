@@ -1,8 +1,9 @@
 sq:
   social:
+    share: "Ndaje"
     my connections: "Llogaritë e lidhura"
     connected as: "Ju jeni lidhur me %{connection} si %{username}."
-    remove connection: "Fshij"
+    remove connection: "Hiqe këtë lidhje"
     connection friends: "Këtu janë disa përdorues të YouVersion me të cilët jeni të lidhur në %{connection}:"
     errors:
       no friends: "Asnjë nga miqtë e tu në %{connection} nuk duket se është akoma në YouVersion."
@@ -61,11 +62,8 @@ sq:
   share error: "Më vjen keq, pati një gabim në ndarjen e mesazhit tuaj. Ju lutem provojeni sërish."
   google plus: "Google +"
   connect to: "Lidhuni me llogarinë tuaj në %{connection}"
-  connected as user: "Ju jeni lidhur te %{connection} si %{username}."
   deleted connection: "Lidhja juaj te %{connection} u shkëput suksesshëm."
   deleted connection error: "Më vjen keq, pati një gabim në shkëputjen e lidhjes tuaj te %{connection}."
-  remove connection: "Fshij"
-  connection users: "Këtu janë disa përdorues të YouVersion me të cilët jeni të lidhur në %{connection}:"
   connection marketing: "YouVersion gëzohet më shumë me miqtë! Lidheni llogarinë tuaj YouVersion me rrjetet sociale që keni dhe gjeni menjëherë miqtë tuaj në YouVersion. Lidhja e llogarive tuaja ju aftëson edhe të shpërndani përmbajtje me vetëm pak klikime. Ne nuk do të postojmë asgjë pa miratimin tuaj."
   next step connections: "Më pas: Lidhni llogaritë tuaja dhe gjeni miqtë tuaj"
   no notes found: "Përdoruesi %{username} nuk ka ndonjë shënim."
@@ -82,7 +80,6 @@ sq:
   link will be added: "do të shtohet"
   my picture: "Përditëso foton time"
   my notifications: "Menaxho njoftimet"
-  my connections: "Llogaritë e lidhura"
   my devices: "Pajisjet e lidhura"
   language name: "Shqip"
   sign up: "Regjistrohu"
@@ -132,7 +129,6 @@ sq:
   chapter: "Kapitulli"
   bible: "Bibla"
   notes title: "Shënimet"
-  videos: "Video"
   friends: "Miqtë"
   groups: "Grupet"
   mobile: "Celular"
@@ -208,9 +204,7 @@ sq:
   users:
     unverified heading: "Pothuaj mbaroi!"
     unverified message: "Me sa duket po përpiqeni të kyçeni në një llogari që nuk është regjistruar plotësisht. Ju ka ngelur edhe një hap më shumë: thjesht klikoni në hallkën lidhëse në e-postën e verifikimit që morët nga YouVersion. Nuk mund ta gjeni? Kontrolloni dosjen \"Spam\" ose <a href='%{resend_path}'>dërgoni sërish e-postën e konfirmimit</a>."
-    reset connection: "Ju kërkojmë ndjesë, ka ndodhur një gabim. Ju lutemi hiqeni dhe lidheni sërish këtë lidhje."
     settings: "Cilësimet"
-    no connection friends: "Asjnë nga miqtë e tu në %{connection} nuk duket se është akoma në YouVersion."
     creation form errors: "Gabimi(et) më poshtë ndaloi(uan) krijimin e llogarisë suaj:"
     profile form errors: "Gabimi(et) më poshtë ndaloi(uan) përditësimin e profilit tuaj:"
     email address: "Adresa elektronike"
@@ -529,6 +523,10 @@ sq:
     completed notice: "Përgëzime! Ju e përfunduat planin tuaj të leximit."
     exit: "Dil"
     loading sidebar content: "Duke vendosur përmbajtjen e kolonës anësore..."
+  videos:
+    title: "Video"
+    all: "Të gjitha videot"
+    related scripture: "Vargje të përafërta"
   licenses:
     authorized:
       heading: "Përmbajtja tuaj u autorizua"
@@ -657,7 +655,7 @@ sq:
     h3: "YouVersion është Global"
     h3 sub: "E disponueshme në më shumë se 100 gjuhë në mbarë botën."
     main: "Dhjetëra miliona njerëz po përdorin Programin e Biblës&trade; për ta bërë Fjalën e Perëndisë pjesë të jetës së tyre të përditshme. Shkarko programin falas dhe përdor shenjuesit e tu, shënimet dhe planet e leximit kudo. Shijo qindra versione, duke përfshirë ato audio, në aparatin tuaj celular."
-    button h4: "Shkoni te youversion.com/download"
+    button h4: "Shko te Bible.com/app"
     button h4 sub: "Në telefonin tuaj celular"
     download now: "Shkarko Programin e Biblës tani"
     what people: "Çfarë njerëzit janë duke thënë rreth programit falas të Biblës..."

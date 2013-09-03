@@ -1,8 +1,9 @@
 ru:
   social:
+    share: "Поделиться"
     my connections: "Подключенные аккаунты"
     connected as: "Вы подключены к %{connection} как %{username}."
-    remove connection: "Удалить"
+    remove connection: "Удалить это подключение"
     connection friends: "Вот несколько пользователей YouVersion, с кем вы общаетесь в %{connection}:"
     errors:
       no friends: "Ваших друзей по %{connection} пока нет на YouVersion."
@@ -61,11 +62,8 @@ ru:
   share error: "Извините, при публикации Вашего сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз."
   google plus: "Google+"
   connect to: "Подключить Ваш аккаунт %{connection}"
-  connected as user: "Вы подключены к %{connection} как %{username}."
   deleted connection: "Вы успешно отключили аккаунт от %{connection}."
   deleted connection error: "Извините, возникла ошибка при отключении аккаунта %{connection}."
-  remove connection: "Отключить"
-  connection users: "Вот несколько пользователей YouVersion, с кем Вы общаетесь в %{connection}:"
   connection marketing: "Использовать YouVersion веселее с друзьями! Привяжите аккаунт YouVersion к социальным сетям и моментально находите своих друзей на YouVersion. Привязанные аккаунты также позволят делиться Писанием всего за несколько кликов! Мы никогда ничего не опубликуем без вашего согласия."
   next step connections: "Далее: подключите свои аккаунты и найдите друзей"
   no notes found: "У %{username} нет заметок."
@@ -82,7 +80,6 @@ ru:
   link will be added: "будет добавлена"
   my picture: "Обновить фото"
   my notifications: "Управление уведомлениями"
-  my connections: "Связанные аккаунты"
   my devices: "Связанные устройства"
   language name: "Русский"
   sign up: "Регистрация"
@@ -132,7 +129,6 @@ ru:
   chapter: "Глава"
   bible: "Библия"
   notes title: "Заметки"
-  videos: "Видео"
   friends: "Друзья"
   groups: "Группы"
   mobile: "Приложения"
@@ -208,9 +204,7 @@ ru:
   users:
     unverified heading: "Почти!"
     unverified message: "Похоже, вы пытаетесь войти в учётную запись, которые не прошла верификацию. Остался один последний шаг: просто нажмите на ссылку для подтверждения аккаунта в письме, которое вы получили от YouVersion. Не можете найти письмо? Проверьте папку со спамом или <a href='%{resend_path}'>вышлите повторное подтверждение на электронную почту</ a>."
-    reset connection: "Извините, произошла ошибка. Пожалуйста, удалите подключение и подключите его снова."
     settings: "Настройки"
-    no connection friends: "Ваших друзей по %{connection} пока нет на YouVersion."
     creation form errors: "Ваш аккаунт не был создан по следующим причинам:"
     profile form errors: "Ваш профиль не был обновлён по следующим причинам:"
     email address: "Адрес эл. почты"
@@ -529,6 +523,10 @@ ru:
     completed notice: "Поздравляем! Вы завершили план чтения. "
     exit: "Выход"
     loading sidebar content: "Загрузка боковой панели..."
+  videos:
+    title: "Видео"
+    all: "Все видео"
+    related scripture: "Параллельные места Писания"
   licenses:
     authorized:
       heading: "Контент был одобрен"
@@ -657,7 +655,7 @@ ru:
     h3: "YouVersion глобален"
     h3 sub: "На более чем 100 языках по всему миру."
     main: "Десятки миллионов людей используют Приложение Библия, чтобы сделать Слово Божие частью своей повседневной жизни. Скачайте бесплатное приложение и получите доступ к закладкам, заметкам и планам чтения из любой точки мира. Наслаждайтесь сотнями переводов, в том числе аудиобиблиями, — и всё с помощью своего мобильного устройства."
-    button h4: "Перейдите на youversion.com/download"
+    button h4: "Перейти на Bible.com/app"
     button h4 sub: "с Вашего мобильного устройства"
     download now: "Загрузите Приложение Библия уже сейчас"
     what people: "Что говорят люди о бесплатном приложении Библия..."

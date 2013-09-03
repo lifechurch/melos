@@ -1,8 +1,9 @@
 hi:
   social:
+    share: "शेयर"
     my connections: "कनेक्टेड अकाउंट"
     connected as: "आप %{connection} से %{username}द्वारा कनेक्टड हैं| "
-    remove connection: "हटाइए "
+    remove connection: "यह कनेक्शन हटाइए "
     connection friends: "कुछ और YouVersion लाभ करता से संपर्क सादे %{connection}"
     errors:
       no friends: "आपके मित्र%{connection }YouVersion में प्रत्यक्ष नहीं हुए हैं |"
@@ -61,11 +62,8 @@ hi:
   share error: "आपके संदेश को शेयर करने में कठिनाई हैं। पुन: कोशिश कीजिए।"
   google plus: "google+"
   connect to: "अपने %{connection} अकाउंट से कनेक्ट कीजिए।"
-  connected as user: "आप %{connection} से %{username}द्वारा कनेक्टड हैं।"
   deleted connection: "आपका कनेक्शन हटाने में सफलता हासिल %{connection}।"
   deleted connection error: "कृपया क्षमा कीजिए,%{connection} आपके कनेक्शन से हटाने में त्रुटी हैं। "
-  remove connection: "हटाइए "
-  connection users: "कुछ और YouVersion लाभ करता से संपर्क सादे %{connection}:"
   connection marketing: "YouVersion मित्रों के साथ अध्ययन करने में आनंदायक हैं। अपने YouVersion अकाउंट को अन्य सामाजिक नेटवर्क के साथ लिंक करे और YouVersion पर अपने मित्रों को पाए। अकाउंट लिंक करने से आप सुसमाचार तुरंत क्लिक के साथ शेयर कर सकते हैं । आपके अनुमति के बगैर हम कुछ भी पोस्ट नहीं करेंगे। "
   next step connections: "अगला कदम: अपना कनेक्टेड अकाउंट लिंक करे और YouVersion मित्र खोजे।"
   no notes found: "%{username} के द्वारा कोई टिपण्णी उपलब्ध नहीं  हैं।"
@@ -82,7 +80,6 @@ hi:
   link will be added: "जोड़ा जायेगा "
   my picture: "मेरी तस्वीर अपडेट कीजिए"
   my notifications: "सूचनाओं का प्रबंध"
-  my connections: "कनेक्टेड अकाउंट"
   my devices: "कनेक्टेड डिवैसिस"
   language name: "हिन्दी "
   sign up: "साइन अप"
@@ -132,7 +129,6 @@ hi:
   chapter: "अध्याय"
   bible: "बाइबिल"
   notes title: "टिप्पणियाँ"
-  videos: "वीडियो "
   friends: "मित्रों "
   groups: "समूह"
   mobile: "मोबाइल"
@@ -208,9 +204,7 @@ hi:
   users:
     unverified heading: "लग-भग सम्पूर्ण !"
     unverified message: "ऐसा लगता है आप अधूरे सेट अप अकाउंट में साइन इन की कोशिश कर रहे हैं ।आप की तरफ से एक आखरी स्टेप बाकी हैं:कृपया YouVersion द्वारा भेजा गया  कन्फर्मेशन इमेल में वेरीफिकेशन लिंक पर क्लिक करे।इमेल प्राप्त नहीं हुआ?अपना स्पैम फोल्डर जाँचे या <a href='%{resend_path}'> कन्फर्मेशन इमेल पुन:भेजे </a>"
-    reset connection: "कृपया त्रुटी के लिए क्षमा कीजिए।इस कनेक्शन को हटाकर पुन: कंनेक्ट करे।"
     settings: "सेटिंग्स"
-    no connection friends: "आपके मित्र%{connection }YouVersion में प्रत्यक्ष नहीं हुए हैं।"
     creation form errors: "निम्नलिखित error(s) आपके अकाउंट निर्माण में रूकावट हैं:"
     profile form errors: "निम्नलिखित error(s) ने आपके प्रोफाइल अपडेट करने में बाधा डाली:"
     email address: "इमेल अड्रेस "
@@ -528,6 +522,10 @@ hi:
     completed notice: "मुबारकबाद! अपनी पाठक योजना सफलता पूर्वक सम्पूर्ण करने हेतु। "
     exit: "एक्सिट "
     loading sidebar content: "साइड बार विषय सूची लोड किया जा रहा हैं............."
+  videos:
+    title: "वीडियो "
+    all: "समस्त विडियो "
+    related scripture: "संबधित लेख "
   licenses:
     authorized:
       heading: "आपका विषय सूची अधीकृत हुआ"
@@ -656,7 +654,7 @@ hi:
     h3: "YouVersion दुनिया भर में उपलब्ध "
     h3 sub: "दुनिया भर में 100 से अधिक भाषाओँ में उपलब्ध "
     main: "100 से  अधिक संस्करणों का ऑडियो के साथ बाइबिल अपने मोबाइल पर पाइये। कई लाखों लोग इस बाइबिल App का उपयोग कर रहें हैं और प्रभु के वचन को उनके नित्य जीवन का अंग बना रहे हैं। मुफ्त App डाउनलोड करें और बुकमार्क्स, टिप्पणी, पाठक योजना दुनिया भर में कहीं से भी ऐक्सेस करे।"
-    button h4: "Go to youversion.com/download"
+    button h4: "Bible.com/app आजमा कर देखे "
     button h4 sub: "आपके मोबाइल पर "
     download now: "बाइबिल App डाउनलोड करें"
     what people: "लोगो की राय इस मुफ्त बाइबिल App के बारें में..."

@@ -1,12 +1,13 @@
 en-GB:
   social:
-    my connections: "Connected Accounts"
+    share: "Share"
+    my connections: "Connected accounts"
     connected as: "You are connected to %{connection} as %{username}."
-    remove connection: "Remove"
+    remove connection: "Remove this connection"
     connection friends: "Here are some YouVersion users you're connected to on %{connection}:"
     errors:
       no friends: "None of your %{connection} friends appear to be on YouVersion yet."
-      reset connection: "Sorry, an error has occurred. Please remove and then reconnect this connection."
+      reset connection: "Sorry, an error has occurred.  Please disconnect and reconnect."
     email:
       name: "E-mail"
     twitter:
@@ -14,7 +15,7 @@ en-GB:
     facebook:
       name: "Facebook"
       errors:
-        expired access: "Your access token has been expired by Facebook.  Please remove your connection and reconnect to Facebook."
+        expired access: "Your Facebook authentication has expired.  Please disconnect and reconnect to Facebook."
   api:
     users agree bool: "You must agree to the terms and conditions to create an account."
     users confirm password matches: "The new passwords do not match."
@@ -61,11 +62,8 @@ en-GB:
   share error: "Sorry, there was an error sharing your message. Please try again."
   google plus: "Google +"
   connect to: "Connect to your %{connection} account"
-  connected as user: "You are connected to %{connection} as %{username}."
   deleted connection: "Successfully removed your connection to %{connection}."
   deleted connection error: "Sorry, there was an error removing your connection to %{connection}."
-  remove connection: "Remove"
-  connection users: "Here are some YouVersion users you're connected to on %{connection}:"
   connection marketing: "YouVersion is more fun with friends! Link your YouVersion account to your other social networks and instantly find your friends on YouVersion. Linking your accounts also enables you to share content with just a few clicks. We will never post anything without your approval."
   next step connections: "Next: Link your accounts and find your friends"
   no notes found: "%{username} doesn't have any notes."
@@ -82,7 +80,6 @@ en-GB:
   link will be added: "Will be added"
   my picture: "Update my picture"
   my notifications: "Manage notifications"
-  my connections: "Connected accounts"
   my devices: "Connected devices"
   language name: "British English"
   sign up: "Sign up"
@@ -132,7 +129,6 @@ en-GB:
   chapter: "Chapter"
   bible: "Bible"
   notes title: "Notes"
-  videos: "Videos"
   friends: "Friends"
   groups: "Groups"
   mobile: "Mobile"
@@ -208,9 +204,7 @@ en-GB:
   users:
     unverified heading: "Almost done!"
     unverified message: "It looks like you're trying to sign in to an account that hasn't been set up completely. You only have one more step: simply click on the verification link in the confirmation email you received from YouVersion. Can't find it? Check your spam folder or <a href='%{resend_path}'>resend the confirmation email</a>."
-    reset connection: "Sorry, an error has occurred. Please remove and then reconnect this connection."
     settings: "Settings"
-    no connection friends: "None of your %{connection} friends appear to be on YouVersion yet."
     creation form errors: "The following error(s) prevented creation of your account:"
     profile form errors: "The following error(s) prevented updating your profile:"
     email address: "E-mail address"
@@ -529,6 +523,10 @@ en-GB:
     completed notice: "Congratulations! You have completed your reading plan."
     exit: "Exit"
     loading sidebar content: "Loading sidebar content..."
+  videos:
+    title: "Videos"
+    all: "Alle Videos"
+    related scripture: "Related scripture"
   licenses:
     authorized:
       heading: "Your content has been authorized"
@@ -579,7 +577,7 @@ en-GB:
     suggestion html: "Did you mean %{suggestion_link}?"
     all versions: "All %{language_name} versions"
   donate:
-    donate now: "Donate Now"
+    donate now: "Donate now"
     donate now intl: "or donate internationally"
     promo 1: "For every $1 you give, 10 more people get access to the Bible on their mobile phone."
     promo 2: "With YouVersion, the Bible is always nearby. Watch our video."
@@ -657,7 +655,7 @@ en-GB:
     h3: "YouVersion is global"
     h3 sub: "Available in hundreds of languages worldwide."
     main: "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
-    button h4: "Go to youversion.com/download"
+    button h4: "Go to Bible.com/app"
     button h4 sub: "On your mobile device"
     download now: "Download the Bible App now"
     what people: "What people are saying about the free Bible app..."

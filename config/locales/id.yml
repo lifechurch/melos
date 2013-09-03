@@ -1,8 +1,9 @@
 id:
   social:
+    share: "Bagikan"
     my connections: "Akun terkait"
     connected as: "Anda tersambung dengan %{koneksi} sebagai %{nama pengguna}"
-    remove connection: "Hapus"
+    remove connection: "Hapus koneksi ini"
     connection friends: "Beberapa pengguna YouVersion yang terhubung dengan anda di %{connection}:"
     errors:
       no friends: "Tidak ada teman %{connection} anda yang menggunakan YouVersion."
@@ -61,11 +62,8 @@ id:
   share error: "Maaf, terjadi kesalahan saat membagikan pesan Anda. Cobalah kembali."
   google plus: "Google +"
   connect to: "Hubungkan dengan akun %{connection} Anda"
-  connected as user: "Anda terhubung dengan %{connection} sebagai %{username}."
   deleted connection: "Koneksi Anda ke %{connection} telah berhasil diputus."
   deleted connection error: "Maaf, terjadi kesalahan saat memutus sambungan Anda ke %{connection}."
-  remove connection: "Hapus"
-  connection users: "Beberapa pengguna YouVersion yang terhubung dengan Anda di %{connection}:"
   connection marketing: "YouVersion lebih seru bersama teman! Sambungkan akun YouVersion anda dengan jaringan sosial yang lain untuk menemukan teman anda di YouVersion dengan instan. Penyambungan akun anda juga memungkinkan pembagian konten dengan hanya beberapa klik saja. Kami tidak akan pernah kirim sesuatu tanpa sepengetahuan anda."
   next step connections: "Berikut: Tautkan akun-akun Anda dan temukan teman-teman Anda"
   no notes found: "%{username} tidak memiliki catatan apapun."
@@ -82,7 +80,6 @@ id:
   link will be added: "Akan Ditambah"
   my picture: "Perbarui Gambar saya"
   my notifications: "Atur Notifikasi"
-  my connections: "Akun terkait"
   my devices: "Piranti Terhubung"
   language name: "Bahasa Indonesia"
   sign up: "Daftar"
@@ -132,7 +129,6 @@ id:
   chapter: "Pasal"
   bible: "Alkitab"
   notes title: "Catatan"
-  videos: "Video-video"
   friends: "Teman"
   groups: "Grup"
   mobile: "Piranti bergerak"
@@ -208,9 +204,7 @@ id:
   users:
     unverified heading: "Hampir Selesai!"
     unverified message: "Tampaknya Anda mencoba untuk masuk dengan menggunakan akun yang belum sepenuhnya siap. Anda hanya perlu satu langkah lagi: cukup dengan mengklik tautan verifikasi yang terdapat dalam e-mail konfirmasi yang anda terima dari YouVersion. Tidak dapat menemukannya? Cek kotak spam Anda atau <a href='%{resend_path}'>kirim ulang e-mail konfirmasi</a>."
-    reset connection: "Maaf, terjadi sebuah kesalahan. Silakan tutup dan kemudian hubungkan kembali sambungan ini."
     settings: "Pengaturan"
-    no connection friends: "Tidak ada teman %{connection} anda yang menggunakan YouVersion."
     creation form errors: "Kesalahan berikut menghambat pembuatan akun Anda:"
     profile form errors: "Kesalahan berikut menghambat pembaharuan profil Anda:"
     email address: "Alamat email"
@@ -529,6 +523,10 @@ id:
     completed notice: "Selamat! Anda telah menyelesaikan program bacaan Anda"
     exit: "Keluar"
     loading sidebar content: "Memuat konten  bilah samping..."
+  videos:
+    title: "Video-video"
+    all: "Semua video"
+    related scripture: "Firman Tuhan Terkait"
   licenses:
     authorized:
       heading: "Konten Anda telah disahkan"
@@ -657,7 +655,7 @@ id:
     h3: "YouVersion Mendunia"
     h3 sub: "Tersedia lebih dari 100 bahasa di seluruh dunia."
     main: "Puluhan juta orang menggunakan Aplikasi Alkitab&trade; untuk menjadikan Firman Tuhan bagian keseharian hidup mereka. Unduh aplikasi gratis ini dan buka markah, catatan, dan program bacaan Anda dari manapun. Nikmati ratusan versi, termasuk suara, semua di piranti seluler Anda."
-    button h4: "Kunjungi youversion.com/download"
+    button h4: "Kunjungi Bible.com/app"
     button h4 sub: "Di Piranti Selular Anda"
     download now: "Unduh Aplikasi Alkitab Sekarang"
     what people: "Apa kata orang tentang Aplikasi Alkitab gratis..."

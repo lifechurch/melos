@@ -1,8 +1,8 @@
 mn:
   social:
+    share: "Share"
     my connections: "Холбогдсон Дансууд"
     connected as: "%{username} хэрэглэгчийн нэрээр %{connection} тэй холбогдсон байна."
-    remove connection: "Устгах "
     connection friends: "YouVersion хэрэглэчтэй %{connection} ээр холбогтой"
     errors:
       no friends: "Одоогоор таны %{connection} найзууд YouVersion-д бүртгэгдээгүй байна."
@@ -50,11 +50,8 @@ mn:
   share error: "Уучлаарай, Таны зурвасыг бусадтай хуваалцах үед алдаа гарлаа. Та дахин оролдоно уу."
   google plus: "Google +"
   connect to: " Бүртгэлээ %{connection} тэй холбох "
-  connected as user: "%{username} хэрэглэгчийн нэрээр %{connection} тэй холбогдсон байна."
   deleted connection: "%{connection} -с амжилттай салгагдлаа."
   deleted connection error: "Уучлаарай, таны холболтыг %{connection} -с салгах үед алдаа гарлаа."
-  remove connection: "Устгах "
-  connection users: "YouVersion хэрэглэчтэй %{connection} ээр холбогтой"
   next step connections: "Дараа нь: Данснуудаа холбоод найзуудаа олох"
   no notes found: "%{username} -д тэмдэглэл байхгүй."
   no recent activity: "%{username} -д сүүлийн үеийн үйл явдал байхгүй."
@@ -70,7 +67,6 @@ mn:
   link will be added: "Нэмэгдэх Болно"
   my picture: "Зургаа Шинэчлэх"
   my notifications: "Мэдэгдэлүүд Засах"
-  my connections: "Холбогдсон Дансууд"
   my devices: "Холбогдсон Хэрэгсэл"
   language name: "Монгол  "
   sign up: "Бүртгүүлэх"
@@ -120,7 +116,6 @@ mn:
   chapter: "Бүлэг"
   bible: "Библи"
   notes title: "Тэмдэглэлүүд"
-  videos: "Видеонууд"
   friends: "Найзууд "
   groups: "Группүүд"
   mobile: "Мобайл"
@@ -196,9 +191,7 @@ mn:
   users:
     unverified heading: "Бараг Дуслаа!"
     unverified message: "Та бүтэн бүс данснд нэвтрэж байгаа юм шиг. Танд нэг л шат илүү байгаа: YouVersion-ээс авсан баталгаажуулах и-мэйлд байгаа хяналт линкнд дараарай. Олдсонгүй юу? Та спам и-мэйл шалгах уу эсвэл <a href='%{resend_path}'>баталгаахуулах и-мэйл дахин илгээх</a>."
-    reset connection: "Уучлаарай, алдаа заалаа. Дахин шинээр холболт хийнэ үү. "
     settings: "Тохиргоо "
-    no connection friends: "Одоогоор таны %{connection} найзууд YouVersion-д бүртгэгдээгүй байна."
     creation form errors: "Таны бүртгэл үүсгэх явцад дараах алдаа(нууд) гарлаа:"
     profile form errors: "Хувийн мэдээлэл шинэчлэх үед алдаа(нууд) гарлаа:"
     email address: "И-мэйл хаяг"
@@ -515,6 +508,9 @@ mn:
     sidebar notice: "Та унших тѳлѳвлѳгѳѳг харагдаж байна."
     completed notice: "Баяр Хүргье! Уншлагын Тѳлѳвлѳгѳѳгѳѳ дууссан."
     exit: "Гарах"
+  videos:
+    title: "Видеонууд"
+    related scripture: "Холбоолтой Ишлэл"
   licenses:
     authorized:
       heading: "Таны мэдээлэл зѳвшѳѳрѳгдсѳн"
@@ -626,7 +622,6 @@ mn:
     h3: "YouVersion Дэлхий Нийтийнх"
     h3 sub: "100 гаруй төрлийн хэлний сонголт бий."
     main: "Олон арван сая хүмүүс Бурханы Үгийг өдөр тутмын амьдралынхаа нэг хэсэг болгохын тулд Библи Апп&trade; ашиглаж байна. Энэхүү үнэгүй апп татан авч хаанаас ч өөрийн хавчуурга, тэмдэглэл болон уншлагын хуваариа үзээрэй. Библийн зуу зуун хувилбарыг аудио хувилбартай нь хамт зөөврийн хэрэгсэл дээрээ таалан соёрхоорой."
-    button h4: "Та youversion.com/download холбоосоор"
     button h4 sub: "Зөөврийн Хэрэгсэлээ Ашиглан Зочлоорой"
     download now: "Библийн Апп Одоо Татах"
     what people: "Үнэгүй Библи Апп-н талаарх хүмүүсийн санал бодол..."

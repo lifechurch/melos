@@ -1,8 +1,9 @@
 ms:
   social:
+    share: "Beritakan"
     my connections: "Akaun yang Berkaitan"
     connected as: "Anda tersambung ke %{connection} sebagai %{username}."
-    remove connection: "Batalkan"
+    remove connection: "Batalkan sambungan ini"
     connection friends: "Ini beberapa pengguna YouVersion yang tersambung kepada anda di %{connection}:"
     errors:
       no friends: "Rupanya sahabat %{connection} anda belum menggunakan YouVersion."
@@ -61,11 +62,8 @@ ms:
   share error: "Maaf, ada kesilapan semasa memberitakan mesej anda. Sila cuba lagi."
   google plus: "Google +"
   connect to: "Bersambung ke akaun %{connection} anda"
-  connected as user: "Anda tersambung ke %{connection} sebagai %{username}."
   deleted connection: "Sambungan anda ke %{connection} berjaya diputuskan."
   deleted connection error: "Maaf, kesilapan berlaku semasa memutuskan sambungan ke %{connection}."
-  remove connection: "Batalkan"
-  connection users: "Ini beberapa pengguna YouVersion yang tersambung kepada anda di %{connection}:"
   connection marketing: "YouVersion lebih seronok digunakan bersama sahabat! Link akaun YouVersion anda kepada jaringan sosial anda yang lain dan terus mencari sahabat anda di YouVersion. Akaun yang di-link juga membolehkan anda untuk berkongsi kandungan dengan hanya beberapa klik. Kami tidak akan pos apa-apa tanpa kebenaran anda."
   next step connections: "Seterusnya: Link akaun-akaun anda serta mencari sahabat anda"
   no notes found: "%{username} tiada sebarang nota."
@@ -82,7 +80,6 @@ ms:
   link will be added: "Akan diTambah"
   my picture: "Update Foto Saya"
   my notifications: "Uruskan Notifikasi"
-  my connections: "Akaun yang Berkaitan"
   my devices: "Peranti yang Tersambung"
   language name: "Bahasa Melayu"
   sign up: "Mendaftar"
@@ -132,7 +129,6 @@ ms:
   chapter: "Bab"
   bible: "Alkitab"
   notes title: "Nota"
-  videos: "Video"
   friends: "Sahabat"
   groups: "Group"
   mobile: "Mobil"
@@ -208,9 +204,7 @@ ms:
   users:
     unverified heading: "Hampir Selesai!"
     unverified message: "Rupanya anda cuba log masuk akaun yang belum selesai didaftarkan. Hanya ada satu langkah terakhir: sila klik link pengesahan dalam e-mel pengesahan yang anda terima daripada YouVersion. Tidak terjumpakah? Sila periksa folder spam anda ataupun <a href='%{resend_path}'>kirim lagi e-mel pengesahan</a>."
-    reset connection: "Maaf, kesilapan berlaku. Sila putuskan hubungan, kemudian sambung kembali."
     settings: "Setting"
-    no connection friends: "Rupanya sahabat %{connection} anda belum menggunakan YouVersion."
     creation form errors: "Kesilapan yang berikut menghalang penciptaan akaun anda:"
     profile form errors: "Kesilapan berikut menghalang profil anda di-update:"
     email address: "Alamat E-mel"
@@ -529,6 +523,10 @@ ms:
     completed notice: "Tahniah! Anda sudah melengkapi pelan bacaan anda."
     exit: "Keluar"
     loading sidebar content: "Memuat isi kandungan sidebar..."
+  videos:
+    title: "Video"
+    all: "Semua video"
+    related scripture: "Kitab Berkaitan"
   licenses:
     authorized:
       heading: "Isi kandungan anda telah disahkan"
@@ -657,7 +655,7 @@ ms:
     h3: "YouVersion kini Global"
     h3 sub: "Tersedia dalam lebih daripada 100 bahasa di seluruh dunia."
     main: "Berpuluh juta orang kini mengguna App Injil&trade; dan menjadikan Firman Allah sebahagian daripada kehidupan setiap hari. Download app percuma dan akses bookmark, nota, dan pelan bacaan dari mana pun. Nikmati beratus versi Alkitab, termasuk audio, pada peranti mobil anda."
-    button h4: "Terus ke youversion.com/download"
+    button h4: "Terus ke Bible.com/app"
     button h4 sub: "Pada Peranti Mobil Anda"
     download now: "Download App Injil Sekarang"
     what people: "Pendapat orang lain tentang app Alkitab percuma ini..."

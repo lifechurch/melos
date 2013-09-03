@@ -1,8 +1,9 @@
 af:
   social:
+    share: "Deel"
     my connections: "Gekoppelde Rekeninge"
     connected as: "Jy is gekoppel met %{connection} as %{username}."
-    remove connection: "Verwyder"
+    remove connection: "Verwyder die konneksie"
     connection friends: "Hier is van die YouVersion gebruikers waarmee jy skakel op %{connection}:"
     errors:
       no friends: "Dit lyk nie of enige van jou %{connection} vriende tans op YouVersion is nie."
@@ -61,11 +62,8 @@ af:
   share error: "Jammer, daar was 'n fout met die deel van jou boodskap. Probeer asb. weer."
   google plus: "Google +"
   connect to: "Koppel met jou %{connection} rekening"
-  connected as user: "Jy is gekoppel met %{connection} as %{username}."
   deleted connection: "Koppeling met %{connection} suksesvol verwyder."
   deleted connection error: "Jammer, daar was 'n fout met die ontkoppeling van jou konneksie met %{connection}."
-  remove connection: "Verwyder"
-  connection users: "Hier is van die YouVersion gebruikers waarmee jy skakel op %{connection}:"
   connection marketing: "YouVersion is baie meer pret saam met vriende! Verbind jou YouVersion rekening met jou ander sosiale netwerk rekeninge en kry jou vriende onmiddelik op YouVersion .  Deur jou rekeninge met mekaar te verbind, maak dit moontlik om inhoud te deel deur net 'n oaar knoppies te druk.  Ons sal nooit iets van jou plaas sonder jou toestemming nie."
   next step connections: "Volgende: Koppel jou rekeninge en vind jou vriende"
   no notes found: "%{username} het geen notas nie."
@@ -82,7 +80,6 @@ af:
   link will be added: "Sal Bygevoeg Word"
   my picture: "Verander My Foto"
   my notifications: "Bestuur Kennisgewings"
-  my connections: "Gekoppelde Rekeninge"
   my devices: "Gekoppelde Toestelle"
   language name: "Afrikaans"
   sign up: "Registreer"
@@ -132,7 +129,6 @@ af:
   chapter: "Hoofstuk"
   bible: "Bybel"
   notes title: "Notas"
-  videos: "Videos"
   friends: "Vriende"
   groups: "Groepe"
   mobile: "Selfoon"
@@ -208,9 +204,7 @@ af:
   users:
     unverified heading: "Amper klaar!"
     unverified message: "Dit lyk asof jy probeer inteken op 'n rekening wat nie volledig opgestel is nie. Jy het nog net een stap oor: Klik op die verifikasie link in die epos wat YouVersion vir jou gestuur het. Indien jy dit nie kry nie, kyk in jou spam leêr of  <a href='%{resend_path}'>herstuur die verifikasie epos</a>."
-    reset connection: "Jammer, 'n fout het voorgekom. Verwyder asseblief en herskep hierdie verbinding."
     settings: "Stellings"
-    no connection friends: "Dit lyk nie of enige van jou %{connection} vriende tans op YouVersion is nie."
     creation form errors: "Die volgende probleem/probleme het die skepping van jou rekening verhoed:"
     profile form errors: "Die volgende probleem/probleme het die opdatering van jou profiel verhoed:"
     email address: "E-pos adres"
@@ -529,6 +523,10 @@ af:
     completed notice: "Veels geluk! Jy het jou leesplan voltooi."
     exit: "Verlaat"
     loading sidebar content: "Laai die kant  paal inligting..."
+  videos:
+    title: "Videos"
+    all: "Alle videos"
+    related scripture: "Verwante Skrif"
   licenses:
     authorized:
       heading: "Jou inhoud is bemagtig."
@@ -657,7 +655,7 @@ af:
     h3: "YouVersion is Globaal"
     h3 sub: "Beskikbaar in meer as 'n 100 tale wêreldwyd.\n"
     main: "Mense by die miljoene gebruik die Bible App™ om God se Woord deel van hul daaglikse lewens te maak. Laai die gratis app af om toegang tot jou boekmerke, notas en leesplanne van enige plek af te verkry. Geniet honderde weergawes, insluitende klank, alles op jou mobiele toestel."
-    button h4: "Gaan na youversion.com/download"
+    button h4: "Gaan na Bybel.com/app"
     button h4 sub: "Op Jou Mobiele Toestel"
     download now: "Laai Die Bybel App Nou Af"
     what people: "Wat mense te sê het oor die gratis Bybel app..."

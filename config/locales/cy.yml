@@ -1,8 +1,8 @@
 cy:
   social:
+    share: "Rhannwch "
     my connections: "Cyfrifon a Gysylltwyd "
     connected as: "Ry'ch wedi cysylltu â %{connection} fel %{username}.  "
-    remove connection: "Dileu  "
     connection friends: "Dyma ddefnyddwyr YouVersion sydd mewn cyswllt â chi %{connection}:"
     errors:
       no friends: "Does dim %{connection}gyda’ch ffrindiau ar YouVersion eto."
@@ -36,11 +36,8 @@ cy:
   share error: "Mae’n flin gennym, digwyddodd gwall wrth rannu’ch neges. Rhowch gynnig  arni eto. "
   google plus: "Google +"
   connect to: "Cysylltwch â’ch %{connection} cyfrif"
-  connected as user: "Ry'ch wedi cysylltu â %{connection} fel %{username}.  "
   deleted connection: "Dilëwyd y cysylltiad â  %{connection}  yn llwyddiannus. "
   deleted connection error: "Mae'n flin gennym digwyddodd gwall wrth ddileu eich cyswllt â %{connection}.   "
-  remove connection: "Dileu "
-  connection users: "Dyma ddefnyddwyr YouVersion sydd mewn cyswllt â chi %{connection}:"
   next step connections: "Nesaf: Cysylltwch eich cyfrifon i ddarganfod  ffrindiau "
   no notes found: " Does gan %{username}ddim nodyn. "
   no recent activity: "Does dim gweithgarwch diweddar gan %{username}."
@@ -56,7 +53,6 @@ cy:
   link will be added: "Caiff Ei Ychwanegu "
   my picture: "Diweddaru Fy Llun "
   my notifications: "Delio â Hysbysiadau  "
-  my connections: "Cyfrifon a Gysylltwyd "
   my devices: "Dyfeisiadau a Gysylltwyd "
   language name: "Cymraeg"
   sign up: "Cofrestrwch "
@@ -172,7 +168,6 @@ cy:
     view in reader: "Edrychwch ar %{reference} yn y Darllenydd"
   users:
     settings: "Gosodiadau "
-    no connection friends: "Does dim %{connection}gyda’ch ffrindiau ar YouVersion eto."
     creation form errors: "Mae’r gwall(au) canlynol yn eich rhwystro rhag creu cyfrif ar eich cyfer: "
     profile form errors: "Mae’r gwall(au) canlynol yn eich rhwystro i ddiweddaru’ch proffil: "
     email address: "Cyfeiriad Ebost "
@@ -570,7 +565,6 @@ cy:
     h3: "Mae YouVersion yn Fyd Eang"
     h3 sub: "Mae YouVersion ar gael mewn mwy na 100 o ieithoedd yn fydeang. "
     main: "Mae degau ar filoedd o bobl yn defnyddio  y App y Beibl&trade er mwyn i Air Duw fod yn rhan o’u bywydau bob dydd. Llawrlwythwch yr app rhad ac am ddim i gael gafael ar eich nod llyfr, nodiadau a’ch cynlluniau darllen. Mwynhewch y cannoedd o fersiynau'n cynnwys fersiwn sain ar eich ffôn lôn.   "
-    button h4: "Ewch i youversion.com/download "
     button h4 sub: "Ar eich Dyfais Symudol "
     download now: "Llawrlwythwch App y Beibl  "
     what people: "Beth mae pobl yn ei ddweud am  yr App  Beibl rhad ac am ddim… "

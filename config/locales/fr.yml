@@ -1,12 +1,13 @@
 fr:
   social:
+    share: "Partager"
     my connections: "Comptes liés"
     connected as: "Vous êtes connectés à %{connection} en tant que %{username}."
-    remove connection: "Supprimer"
-    connection friends: "Les utilisateurs de YouVersion auxquels vous êtes connectés sur %{connection}:"
+    remove connection: "Supprimer cette connexion"
+    connection friends: "Voici les utilisateurs de YouVersion auxquels vous êtes connectés sur %{connection}:"
     errors:
-      no friends: "aucun de vos %{relations} amis ne semblent encore être sur YouVersion."
-      reset connection: "Désolé, une erreur est survenue! Merci de vous déconnecter et vous reconnecter à nouveau."
+      no friends: "Aucun de vos %{connection} amis ne semblent encore être sur YouVersion."
+      reset connection: "Désolé, une erreur est survenue ! Merci de vous déconnecter et vous reconnecter à nouveau."
     email:
       name: "Email"
     twitter:
@@ -61,11 +62,8 @@ fr:
   share error: "Désolé, une erreur s'est produite lors du partage de votre message. Veuillez réessayer."
   google plus: "Google +"
   connect to: "Vous connecter à votre compte %{connection}"
-  connected as user: "Vous êtes connectés à %{connection} en tant que %{username}."
   deleted connection: "Votre connexion à %{connection} a bien été supprimée."
   deleted connection error: "Désolé, suite à une erreur, votre connexion à %{connection} n'a pu être supprimée."
-  remove connection: "Supprimer"
-  connection users: "Les utilisateurs de YouVersion auxquels vous êtes connectés sur %{connection}:"
   connection marketing: "YouVersion est plus amusant entre amis ! Connectez votre compte YouVersion à vos autres réseaux sociaux et trouvez immédiatement vos amis sur YouVersion. Connecter vos comptes vous permet aussi de partager du contenu en quelques clics. Nous ne posterons jamais rien sans votre accord."
   next step connections: "Ensuite: Reliez votre compte et retrouvez vos amis"
   no notes found: "%{username} n'a pas de notes."
@@ -82,7 +80,6 @@ fr:
   link will be added: "Sera ajouté"
   my picture: "Mettre à jour ma photo"
   my notifications: "Gérer mes notifications"
-  my connections: "Comptes liés"
   my devices: "Appareils connectés"
   language name: "Français"
   sign up: "S'inscrire"
@@ -132,7 +129,6 @@ fr:
   chapter: "Chapitre"
   bible: "Bible"
   notes title: "Notes"
-  videos: "Vidéos"
   friends: "Amis"
   groups: "Groupes"
   mobile: "Mobile"
@@ -208,9 +204,7 @@ fr:
   users:
     unverified heading: "C'est presque fini!"
     unverified message: "Il semblerait que vous essayez de vous connecter à un compte qui n'a pas été complètement paramétré. Il ne reste plus qu'une seule étape : il suffit de cliquer sur le lien contenu dans l'email de confirmation que vous avez reçu de YouVersion. Vous ne le trouvez pas ? Vérifiez dans vos courriers indésirables ou <a href='%{resend_path}'>demandez le renvoi de l'email de confirmation</a>."
-    reset connection: "Désolé, une erreur est survenue! Merci de vous déconnecter et vous reconnecter à nouveau."
     settings: "Paramètres"
-    no connection friends: "Aucun de vos amis %{connection} ne semblent encore être sur YouVersion."
     creation form errors: "L'erreur (les erreurs) suivante(s) empêche(nt) la création de votre compte:"
     profile form errors: "L'erreur (les erreurs) suivante(s) empêche(nt) la mise à jour de votre profil:"
     email address: "Adresse Email :"
@@ -529,6 +523,9 @@ fr:
     completed notice: "Félicitations ! Vous avez terminé votre plan de lecture."
     exit: "Quitter"
     loading sidebar content: "Chargement de la barre de menu..."
+  videos:
+    title: "Vidéos"
+    related scripture: "Notes relatives"
   licenses:
     authorized:
       heading: "Votre contenu a été autorisé."
@@ -590,7 +587,7 @@ fr:
     amount: "Montant du don "
     option once: "Une fois"
     option monthly: "Mensuel"
-    alert empty amount: "Entrer le montant du don"
+    alert empty amount: "Entrer le montant du don."
     name: "Votre nom"
     card number: "Numéro de carte de crédit"
     card exp date: "Date d'expiration (MMAA)"
@@ -657,7 +654,6 @@ fr:
     h3: "YouVersion est Planétaire"
     h3 sub: "Disponible dans plus de 100 langues de par le monde."
     main: "Des dizaines de millions de personnes utilisent l'application Bible App™ pour appliquer la Parole de Dieu dans leur quotidien. Téléchargez l'application gratuite et accédez à vos favoris, notes et plans de lecture où que vous vous trouviez. Profitez des centaines de versions disponibles, y compris des versions audio, tout cela à partir de votre appareil mobile."
-    button h4: "Aller sur youversion.com/download"
     button h4 sub: "Sur votre appareil mobile"
     download now: "Télécharger la Bible App maintenant"
     what people: "Ce que les gens disent à propos de la Bible App..."

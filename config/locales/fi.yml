@@ -1,8 +1,9 @@
 fi:
   social:
+    share: "Jaa"
     my connections: "Yhdistetyt tilit"
     connected as: "Sinut on yhdistetty kohteeseen %{connection} käyttäjänimellä %{username}."
-    remove connection: "Poista"
+    remove connection: "Poista yhteys"
     connection friends: "Tässä muutama YouVersion-käyttäjä, joihin olet yhteydessä kohteen %{connection} kautta:"
     errors:
       no friends: "Kukaan %{connection}-kavereistasi ei ole vielä YouVersionissa."
@@ -61,11 +62,8 @@ fi:
   share error: "Viestisi jakamisessa on tapahtunut virhe. Ole hyvä ja yritä uudelleen."
   google plus: "Google +"
   connect to: "Yhdistä %{connection} -tiliisi"
-  connected as user: "Sinut on yhdistetty kohteeseen %{connection} käyttäjänimellä %{username}."
   deleted connection: "Yhteytesi on poistettu onnistuneesti kohteesta %{connection}."
   deleted connection error: "Valitettavasti %{connection}  -yhteytesi poistaminen epäonnistui."
-  remove connection: "Poista"
-  connection users: "Tässä muutama YouVersion-käyttäjä, joihin olet yhteydessä kohteen %{connection} kautta:"
   connection marketing: "YouVersion on hauskempi ystävien kanssa! Linkitä YouVersion-tilisi muiden sosiaalisen median palveluiden kanssa ja löydä ystäväsi, jotka ovat myös YouVersionissa. Tilien linkitys mahdollistaa myös sisällön jakamisen vain muutamalla klikkauksella. Emme koskaan julkaise mitään ilman sinun hyväksyntääsi."
   next step connections: "Seuraavaksi: Linkitä tilisi ja löydä ystäväsi"
   no notes found: "Käyttäjällä %{username} ei ole muistiinpanoja."
@@ -82,7 +80,6 @@ fi:
   link will be added: "Lisätään"
   my picture: "Päivitä profiilikuvani"
   my notifications: "Hallitse ilmoituksia"
-  my connections: "Yhdistetyt tilit"
   my devices: "Yhdistetyt laitteet"
   language name: "Suomi"
   sign up: "Rekisteröidy"
@@ -132,7 +129,6 @@ fi:
   chapter: "Luku"
   bible: "Raamattu"
   notes title: "Muistiinpanot"
-  videos: "Videot"
   friends: "Ystävät"
   groups: "Ryhmät"
   mobile: "Mobiili"
@@ -208,9 +204,7 @@ fi:
   users:
     unverified heading: "Melkein valmista!"
     unverified message: "Yritit kirjautua tilille, jota ei ole vielä vahvistettu. Jäljellä on vielä yksi vaihe: klikkaa vahvistusviestissä YouVersionilta saamaasi linkkiä. Etkö löydä sitä? Tarkista roskaposti-kansiosi tai <a href='%{resend_path}'>lähetä vahvistusviesti uudelleen</a>."
-    reset connection: "Tapahtui virhe. Ole hyvä ja poista yhteys ja muodosta se sitten uudelleen."
     settings: "Asetukset"
-    no connection friends: "Kukaan %{connection}-kavereistasi ei ole vielä YouVersionissa."
     creation form errors: "Tilin luomisessa tapahtui virhe/virheitä:"
     profile form errors: "Profiilin päivityksessä tapahtui virhe/virheitä:"
     email address: "Sähköpostiosoite"
@@ -529,6 +523,10 @@ fi:
     completed notice: "Onneksi olkoon, olet suorittanut lukusuunnitelman!"
     exit: "Poistu"
     loading sidebar content: "Ladataan sisältöä..."
+  videos:
+    title: "Videot"
+    all: "Kaikki videot"
+    related scripture: "Aiheeseen liittyvät kohdat"
   licenses:
     authorized:
       heading: "Sisältösi on auktorisoitu"
@@ -657,7 +655,7 @@ fi:
     h3: "YouVersion on globaali"
     h3 sub: "Saatavana yli 100:lla kielellä maailmanlaajuisesti."
     main: "Kymmenet miljoonat ihmiset käyttävät Raamattusovellusta&trade; tehdäkseen Jumalan sanasta osan jokapäiväistä elämäänsä. Lataa ilmainen sovellus ja pääset kirjanmerkkeihin, muistiinpanoihin ja lukusuunnitelmiin missä tahansa. Voit nauttia sadoista versioista, äänen kera, kaikilla mobiililaitteillasi."
-    button h4: "Siirry osoitteeseen youversion.com/download"
+    button h4: "Mene sivulle Bible.com/app"
     button h4 sub: "Mobiililaitteessasi"
     download now: "Lataa Raamattusovellus nyt"
     what people: "Mitä ihmiset sanovat Raamattusovelluksesta..."

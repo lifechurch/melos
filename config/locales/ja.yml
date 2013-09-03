@@ -1,8 +1,9 @@
 ja:
   social:
+    share: "シェア"
     my connections: "連携済みアカウント"
     connected as: "%{username} として %{connection} に連携されました。"
-    remove connection: "削除"
+    remove connection: "この連携を削除する"
     connection friends: "%{connection} であなたとコネクトしているYouVersionユーザ:"
     errors:
       no friends: "あなたの %{connection} 友達は、まだ YouVersion 上にはいないようです。"
@@ -61,11 +62,8 @@ ja:
   share error: "メッセージのシェアに失敗しました。もう一度、実行してください。"
   google plus: "Google +"
   connect to: "%{connection} アカウントに連携"
-  connected as user: "%{username} として %{connection} に連携されました。"
   deleted connection: "%{connection} への連携設定が問題なく解除されました。"
   deleted connection error: "申し訳ございません。%{connection} への連携設定の解除でエラーが発生しました。"
-  remove connection: "解除"
-  connection users: "%{connection} であなたとコネクトしているYouVersionユーザ:"
   connection marketing: "お友達と一緒なら、YouVersionをより楽しくご利用いただけます！YouVersionのアカウントを、ご利用のその他ソーシャルネットワークとリンクすることで、YouVersionを利用しているお友達を直ちに見つけることができます。また、アカウントをリンクすることで、コンテンツを簡単にシェアできるようになります。YouVersionが無断で投稿することはないのでご安心ください。"
   next step connections: "次: アカウントをリンクして友だちを探す"
   no notes found: "%{username} さんのノートはありません"
@@ -82,7 +80,6 @@ ja:
   link will be added: "追加予定"
   my picture: "写真を更新"
   my notifications: "通知方法を設定"
-  my connections: "接続しているアカウント"
   my devices: "接続されているデバイス"
   language name: "日本語"
   sign up: "アカウント登録"
@@ -132,7 +129,6 @@ ja:
   chapter: "章"
   bible: "聖書"
   notes title: "ノート"
-  videos: "ビデオ"
   friends: "友だち"
   groups: "グループ"
   mobile: "モバイル"
@@ -208,9 +204,7 @@ ja:
   users:
     unverified heading: "あと少しで完了です!"
     unverified message: "登録が完了していないアカウントにサインインしようとされているようです。登録を完了させるための最後のステップは簡単！YouVersionから送られた確認メール内にあった照合用リンクをクリックするだけです。確認メールが見つからない場合は、スパム・フォルダをチェックしていただくか、または<a href='%{resend_path}'>確認メールを再送できますl</a>。"
-    reset connection: "申し訳ありませんが、エラーが発生しました。一旦この連携を解除した後で、改めて提携させてください。"
     settings: "設定"
-    no connection friends: "あなたの %{connection} 友達は、まだ YouVersion 上にはいないようです。"
     creation form errors: "以下のエラーが原因でアカウントを作成ができませんでした:"
     profile form errors: "以下のエラーが原因でプロフィールの更新ができませんでした:"
     email address: "メールアドレス:"
@@ -529,6 +523,10 @@ ja:
     completed notice: "おめでとうございます！読書プランを完了しました。"
     exit: "終了"
     loading sidebar content: "サイドバーの内容を読み込み中…"
+  videos:
+    title: "ビデオ"
+    all: "全てのビデオ"
+    related scripture: "関連聖句"
   licenses:
     authorized:
       heading: "内容が認証されました。"
@@ -657,7 +655,7 @@ ja:
     h3: "YouVersion はグローバルです"
     h3 sub: "世界中の100ヶ国語以上でご利用いただけます"
     main: "何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。"
-    button h4: "youversion.com/download へ行く"
+    button h4: "Bible.com/appに行く"
     button h4 sub: "モバイル機器で利用"
     download now: "聖書アプリを今すぐダウンロード"
     what people: "聖書アプリについて、どんなことが言われているのでしょう・・・"

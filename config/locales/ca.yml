@@ -1,8 +1,9 @@
 ca:
   social:
+    share: "Comparteix"
     my connections: "Comptes connectats"
     connected as: "Estàs connectat/ada a %{connection} com %{username}."
-    remove connection: "Elimina"
+    remove connection: "Elimina aquesta connexió"
     connection friends: "Aquí hi ha varis usuaris amb qui tens relació a %{connection}:"
     errors:
       no friends: "Encara no apareix cap dels teus amics de %{connection} a YouVersion."
@@ -61,11 +62,8 @@ ca:
   share error: "Ens sap greu, però hi ha hagut un error en compartir el teu missatge. Si us plau, prova-ho una altra vegada."
   google plus: "Google +"
   connect to: "Connecta amb el teu compte de %{connection}"
-  connected as user: "Estàs connectat/ada a %{connection} com %{username}."
   deleted connection: "T'has desconnectat correctament de %{connection}."
   deleted connection error: "Ho sentim, però hi ha hagut un error en desconnectar-te de %{connection}."
-  remove connection: "Elimina"
-  connection users: "Aquí hi ha varis usuaris amb qui tens relació a %{connection}:"
   connection marketing: "YouVersion és més divertit amb amics! Enllaça el teu compte de YouVersion amb altres xarxes socials i troba immediatament els teus amics a YouVersion. Enllaçant els teus comptes també actives el compartiment de contingut amb un sol clic. Mai no publicarem res sense el teu permís."
   next step connections: "Següent: Enllaça els teus comptes i troba els teus amics."
   no notes found: "El/la %{username} no té cap nota."
@@ -82,7 +80,6 @@ ca:
   link will be added: "Serà afegit/da"
   my picture: "Actualitza la meva foto"
   my notifications: "Configura els avisos"
-  my connections: "Comptes connectats"
   my devices: "Dispositius connectats"
   language name: "Català"
   sign up: "Registra't"
@@ -132,7 +129,6 @@ ca:
   chapter: "Capítol"
   bible: "La Bíblia"
   notes title: "Notes"
-  videos: "Vídeos"
   friends: "Amics"
   groups: "Grups"
   mobile: "Mòbil"
@@ -208,9 +204,7 @@ ca:
   users:
     unverified heading: "Gaire bé acabat!"
     unverified message: "Sembla que estàs intentant entrar a un compte que no està completament donat d'alta. Només et queda fer un pas: simplement fes clic a l'enllaç de verificació que trobaràs al correu electrònic de confirmació que has rebut de YouVersion. No el trobes? Mira la teva carpeta de correu brossa o <a href='%{resend_path}'>reenvia el correu electrònic de confirmació</a>"
-    reset connection: "Ens sap greu, però hi ha hagut un error. Si us plau, retira i torna a connectar aquesta connexió."
     settings: "Configuració"
-    no connection friends: "Encara no apareix cap dels teus amics de %{connection} a YouVersion."
     creation form errors: "L'error o errors següents no et permeten crear un compte:"
     profile form errors: "L'error o errors següents no et permeten actualitzar el teu perfil:"
     email address: "Adreça de correu electrònic"
@@ -529,6 +523,10 @@ ca:
     completed notice: "Enhorabona! Has completat el teu pla de lectura."
     exit: "Sortida"
     loading sidebar content: "Carregant el contingut de la barra lateral..."
+  videos:
+    title: "Vídeos"
+    all: "Tots els vídeos"
+    related scripture: "Passatge bíblic relacionat"
   licenses:
     authorized:
       heading: "El teu contingut ha estat autoritzat."
@@ -657,7 +655,7 @@ ca:
     h3: "YouVersion és global"
     h3 sub: "Disponible en més de 100 idiomes a tot el món."
     main: "Desenes de milions de persones estan fent servir l'aplicació de la Bíblia&trade; per fer que la Paraula de Déu una part de les seves vides diàries. Descarrega l'aplicació gratuïta i accedeix als seus marcadors, notes, i els plans de lectura des de qualsevol lloc. Gaudeix de centenars de versions, incloent àudio, tot en el seu dispositiu mòbil."
-    button h4: "Vés a youversion.com/download"
+    button h4: "Vés a Bible.com/app"
     button h4 sub: "Al teu dispositiu mòbil"
     download now: "Descarrega l'aplicació de la Bíblia ara"
     what people: "El que diu la gent sobre l'aplicació de la Bíblia..."

@@ -1,8 +1,9 @@
 ro:
   social:
+    share: "Partajează"
     my connections: "Conturi conectate"
     connected as: "Ești conectat la %{connection} ca și %{username}."
-    remove connection: "Șterge"
+    remove connection: "Șterge conexiunea"
     connection friends: "Utilizatori YouVersion cu care ești conectat pe %{connection}:"
     errors:
       no friends: "Nici unul din prietenii %{connection} tăi nu s-a conectat încă pe YouVersion."
@@ -61,11 +62,8 @@ ro:
   share error: "Ne pare rău, s-a produs o eroare la partajarea mesajului tău. Încearcă din nou."
   google plus: "Google +"
   connect to: "Conectează-te la contul tău de %{connection}."
-  connected as user: "Ești conectat la %{connection} ca și %{username}."
   deleted connection: "Conexiunea ta cu %{connection} a fost eliminată cu succes."
   deleted connection error: "Ne pare rău, s-a produs o eroare la deconectarea de la %{connection}."
-  remove connection: "Elimină"
-  connection users: "Utilizatori YouVersion cu care ești conectat pe %{connection}:"
   connection marketing: "YouVersion este și mai distractiv în compania prietenilor! Conectează-ți contul YouVersion cu alte rețele sociale și îți găsești imediat prietenii pe YouVersion. Conectarea conturilor îți permite de asemenea să partajezi conținut cu doar câteva clic-uri. Nu postăm nimic fără aprobarea ta."
   next step connections: "Următorul pas: Conectează-ți conturile și găsește-ți prietenii"
   no notes found: "%{username} nu are notițe."
@@ -82,7 +80,6 @@ ro:
   link will be added: "Va fi adăugat"
   my picture: "Actualizează fotografia"
   my notifications: "Gestionează notificările"
-  my connections: "Conturi conectate"
   my devices: "Dispozitive conectate"
   language name: "Română"
   sign up: "Înregistrează-te"
@@ -132,7 +129,6 @@ ro:
   chapter: "Capitolul"
   bible: "Biblia"
   notes title: "Notițe"
-  videos: "Videoclipuri"
   friends: "Prieteni"
   groups: "Grupuri"
   mobile: "Mobil"
@@ -208,9 +204,7 @@ ro:
   users:
     unverified heading: "Aproape gata!"
     unverified message: "Se pare că încerci să te autentifici pe un cont setat incomplet. Mai ai doar un pas: faci click pe legătura de verificare primită prin e-mail de la YouVersion. În caz că nu ai e-mail-ul în „Inbox”, verifică în „Spam” sau <a href='%{resend_path}'>retrimite e-mail de confirmare</a>."
-    reset connection: "Ne pare rău, s-a produs o eroare. Trebuie să ștergi și să refaci conexiunea."
     settings: "Setări"
-    no connection friends: "Nici unul din prietenii %{connection} tăi nu s-a conectat încă pe YouVersion."
     creation form errors: "Următoarele erori au împiedicat crearea contului tău:"
     profile form errors: "Următoarele erori au împiedicat actualizarea profilului tău:"
     email address: "Adresă e-mail"
@@ -529,6 +523,10 @@ ro:
     completed notice: "Felicitări! Ai finalizat planul de citire."
     exit: "Ieșire"
     loading sidebar content: "Se încarcă conținutul barei laterale..."
+  videos:
+    title: "Videoclipuri"
+    all: "Toate videoclipurile"
+    related scripture: "Scriptura înrudită"
   licenses:
     authorized:
       heading: "Conținutul tău a fost autorizat"
@@ -657,7 +655,7 @@ ro:
     h3: "YouVersion este global"
     h3 sub: "Disponibil în peste 100 de limbi din toată lumea."
     main: "Zeci de milioane de oameni folosesc Aplicația Biblia&trade; pentru a petrece timp cu Cuvântul Lui Dumnezeu. Descarcă aplicațiile gratuite și accesează-ți marcajele, notițele și planurile de citire oriunde te afli. Bucură-te de sute de versiuni, inclusiv audio, pe toate dispozitivele tale mobile."
-    button h4: "Navighează la youversion.com/download"
+    button h4: "Accesează Bible.com/app"
     button h4 sub: "Pe dispozitivul tău mobil"
     download now: "Descarcă Aplicația Biblia acum"
     what people: "Ce spun oamenii despre Aplicația Biblia gratuită..."

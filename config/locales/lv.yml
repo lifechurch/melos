@@ -1,8 +1,9 @@
 lv:
   social:
-    my connections: "Saistītie konti"
+    share: "Dalīties"
+    my connections: "Pievienotie konti"
     connected as: "Jūs esat pieslēdzies %{connection} kā %{username}"
-    remove connection: "Izdzēst"
+    remove connection: "Atslēgt savienojumu"
     connection friends: "Lūk, daži YouVersion lietotāji, ar kuriem jūs kontaktējaties %{connection}"
     errors:
       no friends: "Neviens no taviem %{connection} draugiem nav pievienojies YouVersion pagaidām."
@@ -40,7 +41,7 @@ lv:
       description: "Desmitiem miljoniem cilvēku lieto Bībeles aplikāciju Dieva vārda lasīšanai, klausīšanai, skatīšanai un lai dalītos tajā, padarot to par daļu no viņu ikdienas dzīves, Lejupielādē bezmaksas aplikāciju un piekļūsti savām grāmatzīmēm, piezīmēm un lasīšanas plāniem no jebkuras vietas. Izbaudi simtiem tulkojumu, tai skaitā audio versijas un tas viss uz savas mobilās ierīce."
     connections:
       index:
-        title: "Saistītie konti"
+        title: "Pievienotie konti"
   now: "Tagad"
   celebrating 50MM: "Svinam 50 miljonu aplikāciju instalējumus!"
   link: "Saite"
@@ -61,11 +62,8 @@ lv:
   share error: "Piedodiet, daloties ar jūsu ziņu radās kļūme. Lūdzu mēģiniet vēlreiz."
   google plus: "Google +"
   connect to: "Pieslēgties jūsu %{connection} kontam."
-  connected as user: "Jūs esat pieslēdzies %{connection} kā %{username}"
   deleted connection: "Jūs veiksmīgi atslēdzāties no %{connection}"
   deleted connection error: "Piedodiet, radās kļūda mēģinot atslēgties no jūsu konta %{connection}"
-  remove connection: "Izdzēst"
-  connection users: "Šeit ir daži YouVersion lietotāji, ar kuriem Jūs esat savienoti %{connection}: "
   connection marketing: "Ar draugiem YouVersion ir daudz jautrāks! Piesaisti savu YouVersion kontu pie citiem sociālajiem tīkliem un atrodi savus draugus, kas arī lieto YouVersion. Sasaistot savus kontus arī ļauj dalīties ar jebkuru saturu tikai ar dažiem klikšķiem. Bez Jūsu atļaujas mēs nekad neko nepublicēsim."
   next step connections: "Tālāk: sasaistiet savu kontu un atrodiet savus draugus"
   no notes found: "%{username} nav piezīmes."
@@ -82,7 +80,6 @@ lv:
   link will be added: "Tiks pievienots"
   my picture: "Mainīt attēlu"
   my notifications: "Pārvaldīt Paziņojumus"
-  my connections: "Pievienotie Konti"
   my devices: "Pievienotās ierīces"
   language name: "Latviešu"
   sign up: "Reģistrēties"
@@ -132,7 +129,6 @@ lv:
   chapter: "Nodaļa"
   bible: "Bībele"
   notes title: "Piezīmes"
-  videos: "Video "
   friends: "Draugi"
   groups: "Grupas"
   mobile: "mobilais"
@@ -208,9 +204,7 @@ lv:
   users:
     unverified heading: "Gandrīz pabeigts!"
     unverified message: "Izskatās ka jūs cenšaties pierakstīties kontā, kura reģistrācija nav pilnībā pabeigta. Jums ir palicis tikai viens solis: vienkārši uzspiediet uz apstiprinājuma adreses no YouVersion nosūtītajā apstiprinājuma -pastā. Nearat atrast? Pārbaudiet savu surogātpastu vai <a href='%{resend_path}'>atkārtoti nosūtiet sev apstiprinājuma e-pastu</a>."
-    reset connection: "Atvainojamies, radās kļūme. Lūdzu atslēdziet šo savienojumu un tad pievienojiet pa jaunam."
     settings: "Uzstādījumi"
-    no connection friends: "neviens no jūsu %{connection} draugiem nav vēl YouVersion ."
     creation form errors: "Jūs konts nav izveidots, jo: "
     profile form errors: "Sekojošas kļūdas(u) dēļ jūsu profila atjaunošana ir atcelta:"
     email address: "E-pasts"
@@ -529,6 +523,10 @@ lv:
     completed notice: "Apsveicam! Jūs esat pabeidzis savu lasīšanas plānu."
     exit: "Iziet"
     loading sidebar content: "Ielādē sānu joslas saturu..."
+  videos:
+    title: "Video "
+    all: "Visi Video"
+    related scripture: "Saistīta rakstu vieta"
   licenses:
     authorized:
       heading: "Jūsu saturs ir autorizēts"
@@ -657,7 +655,6 @@ lv:
     h3: "YouVersion ir globāla"
     h3 sub: "Pieejama vairāk kā 100 valodās visā pasaulē"
     main: "Desmitiem miljonu cilvēku lieto Bībeles aplikāciju&trade; lai padarītu Dieva Vārdu par daļu no viņu ikdienas dzīves. Lejupielādē bezmaksas aplikāciju un piekļūsti savām grāmatzīmēm, piezīmēm un lasīšanas plāniem no jebkuras vietas. Izbaudi simtiem tulkojumu, ieskaitot audio, viss uz tavas mobilās ierīces."
-    button h4: "Dodies uz youversion.com/download"
     button h4 sub: "Uz jūsu ierīces"
     download now: "Lejuplādējiet Bībeles aplikāciju tagad"
     what people: "Ko cilvēki saka par bezmaksas Bībeles aplikāciju..."

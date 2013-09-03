@@ -1,8 +1,9 @@
 pl:
   social:
+    share: "Podziel się"
     my connections: "Połączone konta"
     connected as: "Jesteś podłączony do serwisu %{connection} jako %{username}."
-    remove connection: "Usuń"
+    remove connection: "Usuń to połączenie"
     connection friends: "Użytkownicy YouVersion, z którymi jesteś połączony w serwisie %{connection}:"
     errors:
       no friends: "Wydaje się, że żaden z Twoich %{connection} znajomych nie zarejestrował się jeszcze w YouVersion."
@@ -61,11 +62,8 @@ pl:
   share error: "Wystąpił błąd podczas udostępniania twojej wiadomości. Prosimy spróbuj ponownie."
   google plus: "Google +"
   connect to: "Podłącz się do swojego konta w serwisie %{connection}"
-  connected as user: "Jesteś podłączony do serwisu %{connection} jako %{username}."
   deleted connection: "Twoje podłączenie z serwisem %{connection} zostało usunięte."
   deleted connection error: "Wystąpił błąd przy próbie usunięcia twojego podłączenia z serwisem %{connection}."
-  remove connection: "Usuń"
-  connection users: "Użytkownicy YouVersion, z którymi jesteś połączony w serwisie %{connection}:"
   connection marketing: "YouVersion jest ciekawsze z przyjaciółmi! Połącz swoje konto YouVersion z innymi portalami społecznościowymi i znajdź swoich znajomych w YouVersion. Połączenie twoich kont pozwoli ci również na łatwe udostępnianie treści. Nie opublikujemy niczego bez twojej zgody."
   next step connections: "Następny krok: Powiąż swoje konta i znajdź swoich przyjaciół."
   no notes found: "%{username} nie ma jeszcze notatek."
@@ -82,7 +80,6 @@ pl:
   link will be added: "zostanie dodane"
   my picture: "Uaktualnij moje zdjęcie"
   my notifications: "Zarządzaj powiadomieniami"
-  my connections: "Połączone konta"
   my devices: "Połączone urządzenia"
   language name: "Polski"
   sign up: "Zarejestruj się"
@@ -132,7 +129,6 @@ pl:
   chapter: "Rozdział"
   bible: "Biblia"
   notes title: "Notatki"
-  videos: "Nagrania wideo"
   friends: "Przyjaciele"
   groups: "Grupy"
   mobile: "Mobilne"
@@ -208,9 +204,7 @@ pl:
   users:
     unverified heading: "Prawie gotowe!"
     unverified message: "Wygląda na to, że próbujesz zalogować się do konta, które nie zostało całkowicie ustawione. Pozostał tylko jeden krok: po prostu kliknij na odnośnik weryfikacji w mailu potwierdzającym, który otrzymałeś od YouVersion. Nie możesz do znaleźć? Sprawdź w folderze spamu lub <a href='%{resend_path}'>wyślij e-mail ponownie</a>."
-    reset connection: "Niestety, wystąpił błąd. Prosimy usuń i podłącz ponownie to połączenie."
     settings: "Ustawienia"
-    no connection friends: "Wydaje się, że żaden z Twoich %{connection} znajomych nie zarejestrował się jeszcze w YouVersion."
     creation form errors: "Poniższe błędy uniemożliwiły utworzenie twojego konta:"
     profile form errors: "Poniższe błędy uniemożliwiły aktualizację twojego profilu:"
     email address: "Adres e-mail"
@@ -529,6 +523,9 @@ pl:
     completed notice: "Gratulacje! Ukończyłeś swój plan czytania."
     exit: "Wyjście"
     loading sidebar content: "Ładowanie treści bocznego paska..."
+  videos:
+    title: "Nagrania wideo"
+    related scripture: "Powiązane Pismo Święte"
   licenses:
     authorized:
       heading: "Twoja treść została potwierdzona"
@@ -657,7 +654,6 @@ pl:
     h3: "YouVersion jest globalne"
     h3 sub: "Dostępne w ponad 100 językach świata."
     main: "Dziesiątki milionów ludzi używają Aplikacji Biblii, aby uczynić Słowo Boże częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania z dowolnego miejsca. Ciesz się setkami przekładów i wersjami audio - dostępne na twoim mobilnym urządzeniu."
-    button h4: "Przejdź do youversion.com/download"
     button h4 sub: "Na twoim urządzeniu mobilnym"
     download now: "Pobierz teraz Aplikację Biblii"
     what people: "Co ludzie mówią o darmowej Aplikacji Biblii..."

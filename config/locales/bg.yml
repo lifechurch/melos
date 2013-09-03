@@ -1,8 +1,8 @@
 bg:
   social:
+    share: "Сподели"
     my connections: "Свързани профили"
     connected as: "Свързани сте през %{connection} като %{username}."
-    remove connection: "Премахни"
     connection friends: "Ето няколко потребителя от YouVersion с които сте свръзани през %{connection}:"
     errors:
       no friends: "Никой от твоите %{connection} приятели не е на YouVersion."
@@ -57,11 +57,8 @@ bg:
   share error: "Грешка в съобщението. Опитайте отново."
   google plus: "Google +"
   connect to: "Свържи се с твоя профил в %{connection}"
-  connected as user: "Свързани сте през %{connection} като %{username}."
   deleted connection: "Успешно премахване на връзката ви през %{connection}."
   deleted connection error: "Имаше проблем при премаяхване на връзката ви през %{connection}."
-  remove connection: "Премахни"
-  connection users: "Ето няколко потребителя от YouVersion с които сте свръзани през %{connection}:"
   connection marketing: "YouVersion е по-забавна с приятели! Свържете вашия YouVersion акаунт с вашите социални мрежи и моментално намерете вашите приятели, които ползват YouVersion. Свързвайки вашите акаунти също позволява да споделяте съдържание само с няколко натискания. Ние никога няма да публикуваме неща без ваште удобрение."
   next step connections: "Следваща стъпка: Свържи профилите си и открий приятели"
   no notes found: "%{username} няма бележки."
@@ -78,7 +75,6 @@ bg:
   link will be added: "Ще бъде добавено"
   my picture: "Обнови снимката ми"
   my notifications: "Съобщения"
-  my connections: "Свързани профили"
   my devices: "Свързани устройства"
   language name: "Български"
   sign up: "Регистрация"
@@ -128,7 +124,6 @@ bg:
   chapter: "Глава"
   bible: "Библия"
   notes title: "Бележки"
-  videos: "Видеа"
   friends: "Приятели"
   groups: "Групи"
   mobile: "Мобилен"
@@ -204,9 +199,7 @@ bg:
   users:
     unverified heading: "Почти сме готови!"
     unverified message: "Опитвате да влезете в профил който не е напълно регистриран. Потвърдете ел.поща като кликнете на изправената ви връзка от YouVersion. Ако не можете да я откриете ще я <a href='%{resend_path}'>изпратим отново</a>."
-    reset connection: "Грешка. Свържи връзката отново."
     settings: "Настройки"
-    no connection friends: "Никой от твоите %{connection} приятели не е на YouVersion."
     creation form errors: "Следните грешки не позволяват създаването на профила:"
     profile form errors: "Следните грешки не позволяват обновяването на профила:"
     email address: "Ел.поща"
@@ -524,6 +517,9 @@ bg:
     completed notice: "Поздравления! Вие завършихте вашия план за прочит."
     exit: "Изход"
     loading sidebar content: "Зареждане на съдържанието..."
+  videos:
+    title: "Видеа"
+    related scripture: "Подобни стихове"
   licenses:
     authorized:
       heading: "Вашето съдържание беше удобрено"
@@ -648,7 +644,6 @@ bg:
     h3: "YouVersion е глобална"
     h3 sub: "Вече на над 100 езика по целия свят"
     main: "Десетки милиони хора изпозлват Библията&trade; като приложение правейки Божието слово част от тяхното ежедневие. Изтегли безплатното приложение и използвай своите бележки, маркировки и план от всяко място. Използвай стотици версии на Библията, както и аудио записи директно на мобилното си устроийство."
-    button h4: "Иди на youversion.com/download"
     button h4 sub: "На мобилно устройство"
     download now: "Изтегли БИБЛИЯТА сега"
     what people: "Какво казват другите за Библията"
