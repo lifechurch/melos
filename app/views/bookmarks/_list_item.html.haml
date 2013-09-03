@@ -23,8 +23,10 @@
 
       - if list_item.labels.present?
         %p.moment-bm-labels
-          %strong.moment-bm-labels-text
-            = t('bookmarks.labels label')
+          /
+            -# Hiding the label text
+            %strong.moment-bm-labels-text
+              = t('bookmarks.labels label')
           - list_item.labels.split(", ").each do |l|
             %a{href: user_bookmarks_path(@user, label: l.chomp), class: "moment-bm-labels-link"}= l
 
@@ -37,46 +39,6 @@
           %span.moment-bm-controls-confirm.hidden
             = link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
 
-  /
     -# share controls, dates, and comments
-    .moment-btm
-      .moment-actions
-        %span.moment-actions-share
-          <a href="#" title="Share this with friends or family">Share</a>
 
-        %span.moment-actions-like
-          <a href="#" title="Like this">Like</a>
-
-        %span.moment-actions-comment
-          <a href="#" title="Leave a comment about this">Comment</a>
-
-        %span.moment-actions-time
-          12 days ago
-
-      .moment-comments
-        %span.moment-comments-likes
-          <a href="#" title="Visit this user's profile page">Andy Knight</a> and <a href="#">12 others</a> like this.
-        %span.moment-comments-more
-          <a href="#" title="View all comments">View 3 more comments</a>
-        %ul.moment-comments-list
-          %li.moment-comments-list-comment
-            %span.moment-comments-list-avatar
-              = image_tag "andy_avatar.png"
-            %p.moment-comments-list-text
-              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There's a voice that keeps on calling me. Down the road, that's where I'll always be. Every stop I make, I make a new friend. Can't stay for long, just turn around and I'm gone again.
-          %li.moment-comments-list-comment
-            %span.moment-comments-list-avatar
-              = image_tag "andy_avatar.png"
-            %p.moment-comments-list-text
-              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There's a voice that keeps on calling me. Down the road, that's where I'll always be.
-          %li.moment-comments-list-comment
-            %span.moment-comments-list-avatar
-              = image_tag "andy_avatar.png"
-            %p.moment-comments-list-text
-              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There's a voice that keeps on calling me. Down the road, that's where I'll always be. Every stop I make, I make a new friend. Can't stay for long, just turn around and I'm gone again.
-
-        %span.moment-comments-input
-          %span.moment-comments-input-avatar
-            = image_tag "andy_avatar.png"
-          %textarea.moment-comments-input-text
-            Leave a comment...
+    -# Britt will add the right code here...

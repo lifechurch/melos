@@ -70,19 +70,20 @@
                       %a.tooltip{href:"/videos", style:"display: none;"}
                         %span=t("videos.title")
 
-                  %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
-                    - bookmark_href = is_authed ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark")
-                    %a.icon{href: bookmark_href}
-                      %span &nbsp;
-                    %a.tooltip{href: bookmark_href, style:"display: none;"}
-                      %span= t('bookmarks.title')
+                  /
+                    %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
+                      - bookmark_href = is_authed ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark")
+                      %a.icon{href: bookmark_href}
+                        %span &nbsp;
+                      %a.tooltip{href: bookmark_href, style:"display: none;"}
+                        %span= t('bookmarks.title')
 
-                  %li#nav_primary_notes{class: highlight.call(is_notes_url)}
-                    - notes_href = is_authed ? user_notes_path(current_auth.username) : notes_path
-                    %a.icon{href: notes_href}
-                      %span &nbsp;
-                    %a.tooltip{href: notes_href, style: "display: none;"}
-                      %span=t("notes title")
+                    %li#nav_primary_notes{class: highlight.call(is_notes_url)}
+                      - notes_href = is_authed ? user_notes_path(current_auth.username) : notes_path
+                      %a.icon{href: notes_href}
+                        %span &nbsp;
+                      %a.tooltip{href: notes_href, style: "display: none;"}
+                        %span=t("notes title")
 
                   %li#nav_primary_live
                     - live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"

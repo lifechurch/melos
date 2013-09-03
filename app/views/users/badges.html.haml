@@ -1,7 +1,8 @@
 - content_for :user_main do
   - if @badges.empty?
-    %p= t('no badges found yourself')
+    %p.profile-badges-none
+      = t('no badges found yourself')
   - else
-    %ul.resource_list
+    .profile-badges-list
       = render partial: "badges/list_item", collection: @badges, locals: {display: :icon}
     = render partial: 'shared/pagination', locals: {resource_list: @badges}

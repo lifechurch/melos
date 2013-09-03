@@ -45,23 +45,17 @@
           %span= t('badges title')
 
   %article.profile
-    - if @me
-      - if @selected == :recent_activity || @selected == :notes || @selected == :badges
-        %h1{class: @selected == :notes ? "float_left" : ""}= t("users.my #{@selected.to_s}")
-      - else
-        - title = t("users.edit #{@selected}")
-        %h1
-          = title
-        .mobile
-          %dl.tabs
-            %dd{class: ('highlighted' if @selected == :profile)}
-              = link_to t("users.edit profile"), settings_profile_path
-            %dd{class: ('highlighted' if @selected == :password)}
-              = link_to t("users.edit password"), settings_password_path
-            %dd{class: ('highlighted' if @selected == :notifications)}
-              = link_to t("users.edit notifications"), notification_settings_path
-            %dd{class: ('highlighted' if @selected == :connections)}
-              = link_to t("users.edit connections"), settings_connections_path
+    - title = t("users.edit #{@selected}")
+    .mobile
+      %dl.tabs
+        %dd{class: ('highlighted' if @selected == :profile)}
+          = link_to t("users.edit profile"), settings_profile_path
+        %dd{class: ('highlighted' if @selected == :password)}
+          = link_to t("users.edit password"), settings_password_path
+        %dd{class: ('highlighted' if @selected == :notifications)}
+          = link_to t("users.edit notifications"), notification_settings_path
+        %dd{class: ('highlighted' if @selected == :connections)}
+          = link_to t("users.edit connections"), settings_connections_path
 
       -unless content_for? :title
         - content_for :title do
