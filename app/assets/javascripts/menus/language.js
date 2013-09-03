@@ -16,15 +16,16 @@ function LanguageMenu( el , opts ) {
 
     for(var i=0; i < _this.locales.length; i++) {
       var locale = _this.locales[i];
-      var rstr = "^\\/" + locale;
-      var regex = new RegExp(rstr);     // build dynamic regex to check locale: /:locale
+      var rstr = "^(\\/" + locale + "\\/+)";    // (\/es\/+)
+      var regex = new RegExp(rstr);             // build dynamic regex to check locale: /:locale
       var match = path.match(regex);
       if( match && match.length > 0 ) {
         // match found, replace the match with our new locale
-        new_path = path.replace(regex, replacement_locale_str);
+        new_path = path.replace(regex, replacement_locale_str + "/");
         break
       }
     }
+
     // match wasn't found, add the locale extension to our current path
     if(new_path == "")
        new_path = replacement_locale_str + path;
