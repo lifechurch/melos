@@ -36,20 +36,20 @@ jQuery(document).ready(function() {
 
     // if the popover is visible, close it
     if($headerPopover.hasClass('open')){
-      $headerPopover.animate({'opacity' : '0'}, 300);
+      $headerPopover.animate({'opacity' : '0'}, 200);
       $headerPopover.removeClass('open');
     }
 
     else if(popoverVisible){
-      $('.header-popover').animate({'opacity' : '0'}, 300);
+      $('.header-popover').animate({'opacity' : '0'}, 200);
       $('.header-popover').removeClass('open');
-      $headerPopover.animate({'opacity' : '1'}, 300);
+      $headerPopover.animate({'opacity' : '1'}, 200);
       $headerPopover.addClass('open');
     }
 
     // otherwise, open it
     else {
-      $headerPopover.animate({'opacity' : '1'}, 300);
+      $headerPopover.animate({'opacity' : '1'}, 200);
       $headerPopover.addClass('open');
     }
     

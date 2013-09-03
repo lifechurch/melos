@@ -47,18 +47,20 @@
 
 #header .friend-requests-btn,
 #header .notifications-btn
+  background: image-url("header-sprite.png") no-repeat
   display: block
   float: left
   width: 40px
   height: 40px
-  margin: 5px 0px 5px 15px
+  margin: 5px 0px 5px 25px
   text-indent: -9999px
 
 #header .friend-requests-btn
-  background: image-url("requests-FPO.png") no-repeat
+  background-position: 0px 9px
 
 #header .notifications-btn
-  background: image-url("notifications-FPO.png") no-repeat
+  background-position: 0px -55px
+  margin-left: 10px
 
 
 #header 
@@ -109,7 +111,7 @@
       background: image-url("popover-arrow.png") no-repeat
       position: relative
       top: -8px
-      left: 155px
+      left: 160px
       display: block
       width: 19px
       height: 9px
@@ -168,7 +170,7 @@
     left: 80px
 
     .arrow
-      left: 170px
+      left: 169px
 
     .list-item
       height: 30px
