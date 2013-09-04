@@ -12,6 +12,7 @@
     %a{href: "#", class: "friend-requests-btn popover-link"}
       =t("requests")
 
+    -# Friends and notification popovers
     %div.header-popover
       %span.arrow
       %h4
@@ -84,6 +85,7 @@
       %div.view-all
         =link_to("View all Notifications", "#", class: "text-link wide")
 
+    -# Sign in and user id
     %nav.sign_in
       %ul
         - if current_auth
@@ -92,7 +94,6 @@
               %a#header_profile_trigger{:href => '#'}
                 %span
                   %img{src: current_avatar}
-                  =current_auth.username
               %ol#header_profile_menu
                 %li
                   %a{href: "/settings"}
@@ -103,10 +104,6 @@
                 %li
                   %a{href: sign_out_path}
                     =t("sign out")
-            %li
-              %a{href: "/settings/connections"}
-                %span
-                  =t("find friends")
 
         - else
           = cache "header_anon_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
