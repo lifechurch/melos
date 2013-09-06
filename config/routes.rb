@@ -73,6 +73,7 @@ YouversionWeb::Application.routes.draw do
 
     resources :bookmarks, only: [:index] #, shallow: true  <-- TODO - update bookmarks implementation to properly POST for users/:user_id/bookmarks generated route
 
+
     match 'notes' => 'users#notes', as: 'notes'
     match 'badges' => 'users#badges', as: 'badges'
     match 'badge/:id' => 'badges#show', as: 'badge'
