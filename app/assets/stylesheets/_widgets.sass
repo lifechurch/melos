@@ -17,9 +17,8 @@
   padding: 0
   margin: 0 0 10px
   position: relative
-  border: 1px solid #cbc9cf
-  background: $gray_light image-url("shadow.png") repeat-x
-  +box-shadow(#fff 0 1px 0 0)
+  border: 0
+  background: #EEEDEB
   +round
 
   h3
@@ -32,14 +31,13 @@
 
   ul
     margin-bottom: 0
-    background: $gray_light image-url("shadow.png") repeat-x
 
   li
     margin: 0
     padding: 10px 20px
-    border-top: 1px solid #fff
-    border-bottom: 1px solid #cbc9cf
+    border-bottom: 1px solid #DEDDDB
     list-style: none
+    background: #fff
 
   li:first-child
     border-top: 0
@@ -66,11 +64,10 @@
     line-height: 24px
     padding: 5px 15px
     position: relative
-    border-bottom: 1px solid #cbc9cf
-    background-color: #dddcda
+    border-bottom: 1px solid #DEDDDB
+    background-color: #EEEDEB
     +round_top
     +box-shadow(inset #fff 0 1px 0 0)
-    +background-image(linear-gradient(#eeedeb, #dddcda))
 
     a, a:link
       color: #444
@@ -90,8 +87,6 @@
       line-height: 1
       padding: 2px 10px 3px
       text-decoration: none
-      +background-image(linear-gradient(#fff, #dddcda))
-      +box-shadow(rgba(#fff, 0.7) 0 1px 0 0)
       +border-radius(9px)
 
     a.count:hover
@@ -107,7 +102,7 @@
   .bd
     padding: 20px
     font-weight: normal
-    background: $gray_light image-url("shadow.png") repeat-x
+    +border-radius(3px)
 
     p
       margin: 0
@@ -131,7 +126,7 @@
 
   .ft
     padding: 10px 15px
-    border-top: 1px solid #cbc9cf
+    border-top: 1px solid #DEDDDB
 
   .ft.link
     padding: 0

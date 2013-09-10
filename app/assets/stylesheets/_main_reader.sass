@@ -48,10 +48,9 @@
 .top_section
   @extend .clearfix
   +box-shadow(inset #fff 0 1px 0 0)
-  +background-image(linear-gradient(#eeedeb, #dddcda))
-  background-color: #dddcda
-  border: 1px solid #cbc9cf
-  text-shadow: #fff 0 1px 0
+  background-color: #EEEDEB
+  border: 0
+
 
 
 #main header
@@ -103,8 +102,7 @@
 //----------------------------------------------------------------------------------------------------
 
 #reader_header
-  background: #f2f1ef image-url("body.png")
-  border-bottom: 1px solid #cbc9cf
+  border-bottom: 1px solid #dedede
   padding-top: 10px
   width: 600px
   position: fixed
@@ -112,7 +110,6 @@
   z-index: 2
 
 #reader_header:after
-  background: image-url("shadow.png") repeat-x
   content: ''
   font-size: 0
   line-height: 0
@@ -126,6 +123,22 @@
 #reader_header + article
   background-image: none
   margin-top: 34px
+
+.book .p
+  display: inline
+  margin-left: 5px
+
+.header-options-settings,
+.header-options-audio,
+.header-options-full,
+.header-options-parallel,
+.header-options-version,
+.header-options-settings:hover,
+.header-options-audio:hover,
+.header-options-full:hover,
+.header-options-parallel:hover,
+.header-options-version:hover
+  background: none
 
 // `Article Top Section
 //----------------------------------------------------------------------------------------------------
@@ -172,7 +185,6 @@
 
 #main footer
   +round_bottom
-  +box-shadow(#fff 0 1px 0 0)
   font-size: 11px
   padding: 10px 20px 15px
 

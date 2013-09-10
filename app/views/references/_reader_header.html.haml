@@ -74,28 +74,28 @@
           %span
             =t("ref.choose version")
     - unless invalid_ref
-      %ul.float_right
+      %ul.float_right.header-options
         - if alt_version.present?
           %li.show_in_parallel_mode
-            %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_alt_version_trigger", title: t("ref.choose second version")}
+            %a.dynamic_menu_trigger.drop_down_select.header-options-version{href:"#menu_version", id:"menu_alt_version_trigger", title: t("ref.choose second version")}
               %b
                 = alt_version.human
               %span
                 =t("ref.choose version")
         %li.hide_in_parallel_mode
-          %a.button.dynamic_menu_trigger{href:"#menu_settings", id:"menu_settings_trigger", title:t("ref.settings")}
+          %a.button.dynamic_menu_trigger.header-options-settings{href:"#menu_settings", id:"menu_settings_trigger", title:t("ref.settings")}
             %span.icon_settings
               =t("ref.settings")
         %li.hide_in_parallel_mode
-          %a.button{:href => reference.audio ? '#menu_audio_player' : nil, :title => reference.audio ? t("ref.listen"): t('audio.none'), class: reference.audio ? "dynamic_menu_trigger" : "disabled"}
+          %a.button.header-options-audio{:href => reference.audio ? '#menu_audio_player' : nil, :title => reference.audio ? t("ref.listen"): t('audio.none'), class: reference.audio ? "dynamic_menu_trigger" : "disabled"}
             %span.icon_listen{class: reference.audio ? nil : "disabled"}
               =t("ref.listen")
         %li.hide_in_parallel_mode
-          %a.button#button_full_screen{:href => '#', :title => t("ref.full screen")}
+          %a.button.header-options-full#button_full_screen{:href => '#', :title => t("ref.full screen")}
             %span.icon_full_screen
               =t("ref.full screen")
         %li.float_right_in_parallel_mode
-          %a#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
+          %a.header-options-parallel#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
             %span.icon_parallel
               =t("ref.parallel")
   = render partial: 'shared/menu_verse_actions', locals: {presenter: presenter}
