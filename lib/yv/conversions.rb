@@ -54,6 +54,7 @@ module YV
 
 		  # Get a USFM book from a osis_book string passed as param
 		  def usfm_book(osis_book)
+		  	puts "\n\n\n ------ #{osis_book} ------"
 		    raise "OSIS book must be a string" unless osis_book.is_a? String
 	      return osis_book.upcase if Cfg.osis_usfm_hash[:books].key(osis_book.upcase)
 	      return Cfg.osis_usfm_hash[:books][osis_book.downcase]

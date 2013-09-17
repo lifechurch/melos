@@ -5,7 +5,6 @@ gem 'rails', '3.2.13'
 
 gem 'asset_sync',             '~> 0.5.3'
 gem 'awesome_print',          '~> 1.0.2'
-gem 'authorize-net',          '~> 1.5.2'
 gem 'cells',                  '~> 3.8.3'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.6.3'

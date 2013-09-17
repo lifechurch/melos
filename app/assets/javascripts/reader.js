@@ -444,7 +444,7 @@ Reader.prototype = {
 
   generateLinks : function( ) {
     var joined        = this.selected.verse_number_ranges.join(",");
-    var short_link    = "http://bible.us/" + this.version + "/" + this.book + "." + this.chapter + "." + joined + "." + this.abbrev;
+    var short_link    = "http://bible.com/" + this.version + "/" + this.book + "." + this.chapter + "." + joined + "." + this.abbrev;
     var partial_path  = "." + joined;
     var relative_link = "/bible/" + this.version + "/" + this.book + "." + this.chapter + partial_path;
 
@@ -715,14 +715,11 @@ Reader.prototype = {
         },//end success function
         error: function(xhr, status, err) {
           // set HTML to error HTML
-          if(xhr.status == '404'){
-            var ref = jQuery.parseJSON(xhr.responseText);
-            version_elem.html(ref.content);
-          }else{version_elem.html("<h1>Error Loading Secondary Version</h1>\
+          version_elem.html("<h1>Error Loading Secondary Version</h1>\
                             <p>You might try <a href=''>reloading</a>. \
                             Still having trouble? Contact our \
                             <a href='http://support.youversion.com' \
-                            target='_blank'>support team</a>.</p>");}
+                            target='_blank'>support team</a>.</p>");
         }//end error function
       });//end ajax delegate
   },

@@ -12,12 +12,48 @@ class Video < YV::Resource
   attribute :language_tag
   attribute :short_url
 
-  def self.list_path
-    "search/videos"
-  end
 
-  def self.api_path_prefix
-    "videos"
+  class << self
+
+    def licensed?(video_id, auth)
+      results = find(video_id,{auth: auth, force_auth: true})
+      return results.valid? ? results.data : false
+    end
+
+    # Parameters:
+    # query of what you're wanting to search for
+    # page  number of results to return
+    def search(query = "*", params = {})
+      page   = params[:page] || 1
+      language_tag = params[:language_tag] || "en"
+      params = {query: query, page: page, language_tag: language_tag}
+
+      data, errs = get(list_path, params)
+      results = YV::API::Results.new(data,errs)
+
+      unless results.valid?
+        if results.has_error?("not found")
+           data = []
+        else
+           raise_errors(results.errors, "Video#search")
+        end
+      end
+
+      list = ResourceList.new
+        list.total = data.total
+        data.videos.each do |d|
+          list << Video.new(d)
+        end
+      return list
+    end
+
+    def list_path
+      "search/videos"
+    end
+
+    def api_path_prefix
+      "videos"
+    end
   end
 
   def series?
@@ -76,43 +112,6 @@ class Video < YV::Resource
   def series?
     return false if videos.nil?
     videos.count > 0
-  end
-
-  def self.licensed?(video_id, auth)
-    begin
-      find(video_id,{auth: auth, force_auth: true})
-    rescue YV::ResourceError => e
-      if e.message.include?("not_found")
-         return false
-      else
-         raise e
-      end
-    end
-  end
-
-  # Parameters:
-  # query of what you're wanting to search for
-  # page  number of results to return
-  def self.search(query = "*", params = {})
-    page   = params[:page] || 1
-    language_tag = params[:language_tag] || "en"
-    params = {query: query, page: page, language_tag: language_tag}
-
-    response = YV::API::Client.get(list_path, params) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
-        return []
-      else
-        raise YV::ResourceError.new(errors)
-      end
-    end
-
-    list = ResourceList.new do |l|
-      l.total = response.total
-      response.videos.each do |data|
-        l << Video.new(data)
-      end
-    end
-    return list
   end
 
 

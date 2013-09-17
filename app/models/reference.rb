@@ -21,27 +21,35 @@ class Reference < YV::Resource
     #API attributes
 
     ref_hash = case ref
-    when YouVersion::ReferenceString
-      ref.to_hash
-    when /(.{3}\.[^\+]+\.[^\+]+)\+(?:.*)(?:.{3}\..+\.(.+))/ # + separated API string
-      # to be a valid reference, these have to be verses
-      # regex selected first usfm and last verse
-      YouVersion::ReferenceString.new "#{$1}-#{$2}"
-    when String
-      YouVersion::ReferenceString.new ref
-    when Hash#, Hashie::Mash (is mash creation even used/necessary?)
-      ref
-    when Reference
-      ref.to_hash
-    else
-      {}
+      
+      when /(.{3}\.[^\+]+\.[^\+]+)\+(?:.*)(?:.{3}\..+\.(.+))/ # + separated API string - Reference.new("GEN.15.1+GEN.15.2+GEN.15.3+GEN.15.4+GEN.15.5+GEN.15.6")
+        # to be a valid reference, these have to be verses
+        # regex selected first usfm and last verse
+        YV::ReferenceString.new("#{$1}-#{$2}").to_hash
+
+      when YV::ReferenceString
+        ref.to_hash
+
+      when String
+        YV::ReferenceString.new(ref).to_hash
+      
+      when Reference
+        ref.to_hash
+
+      when Hash#, Hashie::Mash (is mash creation even used/necessary?)
+        ref
+          
+      else
+        {}
     end
 
     #attempt to convert book and version from legacy OSIS to USFM
     #opts hash acts as overriding value to ref parameter
     _book = opts.has_key?(:book) ? opts[:book] : ref_hash[:book]
+      raise InvalidReferenceError, "No book specified." if _book.nil?
+
     @book = YV::Conversions.usfm_book(_book) || _book
-    @book = @book.try :upcase
+    @book = @book.to_s.upcase
 
     @chapter = opts.has_key?(:chapter) ? opts[:chapter] : ref_hash[:chapter]
     @chapter = @chapter.to_s.upcase
@@ -49,9 +57,8 @@ class Reference < YV::Resource
     _version = opts.has_key?(:version) ? opts[:version] : ref_hash[:version]
     @version = Version.id_from_param(_version)
 
-    #we evaluate verses last, as it may hit the API
-    @verses = opts.has_key?(:verses) ? opts[:verses] : ref_hash[:verses]
-    @verses = parse_verses(@verses)
+    _verses = opts.has_key?(:verses) ? opts[:verses] : ref_hash[:verses]
+    @verses = parse_verses(_verses)
 
     unless @book && @chapter
       raise InvalidReferenceError, "Tried to create an invalid reference. (#{ref}, #{opts})
@@ -60,11 +67,38 @@ class Reference < YV::Resource
     end
   end
 
-  def to_s(opts={})
-    return human if opts[:version] == false
-    return "#{human} (#{version_string})" if version
-    return human
+  # Bible text in HTML or plaintext for the current reference instance.
+  # This will return entire chapter content for a chapter reference or will return
+  # smaller verse content if verses are present
+
+  # Returns a string
+
+  # valid options:
+  # - chapter: true
+  #   returns bible text for entire chapter
+
+  # - as: (:plaintext)
+  #   returns bible text in plain text
+
+  def content(opts={})
+    for_chapter = opts[:chapter]
+    return attributes.content if for_chapter || is_chapter?
+
+    case opts[:as]
+      when :plaintext
+        selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
+        content_document.css(selector).inner_html.strip
+      else #:html
+        selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
+        content_document.css(selector).to_html
+    end
   end
+
+
+  # Human readable version of the reference
+  # Ex: 
+  #   Genesis 1:2 for GEN.1.2 reference
+  #   Genesis 1:2-4 for GEN.1 with verses 2-4
 
   def human
       return attributes.reference.human.to_s + ":#{verses.first}" if single_verse?
@@ -93,16 +127,11 @@ class Reference < YV::Resource
     end
   end
 
+  # returns a String for a relative deep link path to be used for app urls.
+  # ex: youversion://reference=REF&version_id=VER
   def deep_link_path
     return "bible?reference=#{chapter_usfm}&version_id=#{version}" if version
     return "bible?reference=#{chapter_usfm}"
-  end
-
-  def to_param
-    _ref = "#{to_usfm}" if is_chapter? || single_verse?
-    _ref ||= "#{chapter_usfm}.#{verses.first}-#{verses.last}"
-    _ver = ".#{Version.find(version).abbreviation}" if version
-    "#{_ref}#{_ver}".downcase
   end
 
   # Get a chapter reference (all verses) from current reference
@@ -118,29 +147,53 @@ class Reference < YV::Resource
     self.class.new(self, verses: nil)
   end
 
-
-  def version_string
-    Version.find(version).human if version
-  end
+  # Return proper usfm format for reference instance
+  # Ex: GEN.3.4 for Genesis 3:4
 
   def to_usfm
-      return "#{chapter_usfm}" if is_chapter?
-      return verses.map {|v| "#{chapter_usfm}.#{v}"}.join(YV::Conversions.usfm_delimeter) if verses
+    return "#{chapter_usfm}" if is_chapter?
+    return verses.map {|v| "#{chapter_usfm}.#{v}"}.join(YV::Conversions.usfm_delimeter)
   end
 
   def usfm
     to_usfm
   end
 
+  # String representation of a reference, human readable
+  def to_s(opts={})
+    return human                          if opts[:version] == false
+    return "#{human} (#{version_string})" if version
+    return human
+  end
+
+  # A usfm representation scoped to just book / chapter for a reference
+  # Ex: GEN.3 for Genesis 3 | Genesis 3:1
+  # returns a string
   def chapter_usfm
     #memoizing because of chapter_list indexing
     @chapter_usfm ||= "#{book}.#{chapter}"
+  end
+
+  # A string format for the reference Version
+  # Ex: "KJV" if version id = 1
+  # returns a string
+  def version_string
+    Version.find(version).human if version
+  end
+
+  def to_param
+    _ref = "#{to_usfm}" if is_chapter? || single_verse?
+    _ref ||= "#{chapter_usfm}.#{verses.first}-#{verses.last}"
+    _ver = ".#{Version.find(version).abbreviation}" if version
+    "#{_ref}#{_ver}".downcase
   end
 
   def [](arg)
     return self.try(arg.to_sym)
   end
 
+  # A hash of usfm+version string
+  # Used for comparison purposes
   def hash
     #not using to_param so we don't have to hit the API to compare References
     "#{to_usfm}+#{version}".hash
@@ -156,7 +209,7 @@ class Reference < YV::Resource
   end
 
   def notes
-    Note.for_reference(self)
+    @notes ||= Note.for_reference(self)
   end
 
   def merge(hash)
@@ -168,26 +221,51 @@ class Reference < YV::Resource
   end
 
   def short_link
-    "http://bible.us/#{version}/#{self.to_param.sub(/\./, "")}"
-  end
-
-  def content(opts={})
-    for_chapter = opts[:chapter]
-    return attributes.content if for_chapter || is_chapter?
-
-    case opts[:as]
-      when :plaintext
-        selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
-        content_document.css(selector).inner_html.strip
-      else #:html
-        selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
-        content_document.css(selector).to_html
-    end
+    "http://bible.com/#{version}/#{self.to_param.sub(/\./, "")}"
   end
 
   def copyright
     self.class.i18nize(attributes.copyright) if version
   end
+
+
+  # API Method
+  # returns extra audio information for a refernce
+  # we have to make this additional call to get the audio bible copyright info
+
+  # TODO: make sure on front end we are ajaxing this information if at all possible
+  #       really shouldn't need to make another api call here, but its necessary given data limitations
+
+  # example data prior calling method:
+  # {"id"=>8,
+  #  "version_id"=>1,
+  #  "title"=>"KJV Listener's Bible",
+  #  "download_urls"=>
+  #  {"format_mp3_32k"=>
+  #    "//static-youversionapi-com.commondatastorage.googleapis.com/bible/audio/8/32k/GEN/1-b5969203ff27ab059b850b2210ae90b7.mp3?version_id=1"}}
+
+
+  # Example data following method call:
+  # {"id"=>8,
+  #  "version_id"=>1,
+  #  "title"=>"KJV Listener's Bible",
+  #  "download_urls"=>
+  #   {"format_mp3_32k"=>
+  #     "//static-youversionapi-com.commondatastorage.googleapis.com/bible/audio/8/32k/GEN/1-b5969203ff27ab059b850b2210ae90b7.mp3?version_id=1"},
+  #  "copyright_short"=>
+  #   {"text"=>"Copyright 2007 Fellowship for the Performing Arts",
+  #    "html"=>"Copyright 2007 Fellowship for the Performing Arts"},
+  #  "copyright_long"=>
+  #   {"text"=>
+  #     "Experience the majestic language of the King James Bible skillfully narrated Through the powerful voice of Max McLean. The King James Bible (KJV) was written with oral interpretation in mind, making the grandeur of its phrasing and the rich musicality of its rhythms resonate in the ear and mind of the listener.\\r\\n\\r\\nThis audio Bible is provided by The Listener's Audio Bible (c) 2007 All rights reserved. A Ministry of Fellowship for the Performing Arts The Holy Bible, King James Version. Recorded under licensing agreement. (http://www.listenersbible.com)",
+  #    "html"=>
+  #     "Experience the majestic language of the King James Bible skillfully narrated Through the powerful voice of Max McLean. The King James Bible (KJV) was written with oral interpretation in mind, making the grandeur of its phrasing and the rich musicality of its rhythms resonate in the ear and mind of the listener.\\r\\n\\r\\nThis audio Bible is provided by The Listener's Audio Bible (c) 2007 All rights reserved. A Ministry of Fellowship for the Performing Arts The Holy Bible, King James Version. Recorded under licensing agreement. (<a href=\"http://www.listenersbible.com\">http://www.listenersbible.com</a>)"},
+  #  "publisher_link"=>"http://www.listenersbible.com/free-download",
+  #  "url"=>
+  #   "//static-youversionapi-com.commondatastorage.googleapis.com/bible/audio/8/32k/GEN/1-b5969203ff27ab059b850b2210ae90b7.mp3?version_id=1"}
+
+  # TODO: Move this to it's own Object/Model
+
 
   def audio
     return @audio unless @audio.nil?
@@ -195,13 +273,16 @@ class Reference < YV::Resource
 
     opts = {id: attributes.audio[0].id, cache_for: YV::Caching.a_very_long_time}
 
-    #we have to make this additional call to get the audio bible copyright info
-    response = YV::API::Client.get("audio-bible/view", opts) do |errors|
-        raise YV::ResourceError.new(errors)
+    
+    data, errs = self.class.get("audio-bible/view", opts)
+    results = YV::API::Results.new(data,errs)
+    unless results.valid?
+      raise_errors(results.errors, "reference#audio")
     end
-    @audio = attributes.audio[0].merge(response)
+
+    @audio     = attributes.audio[0].merge(data)
     @audio.url = attributes.audio[0].download_urls.format_mp3_32k
-    @audio
+    return @audio
   end
 
   def previous_chapter
@@ -218,18 +299,6 @@ class Reference < YV::Resource
     self.class.new(attributes.next.usfm, version: version)
   end
 
-  def verses_in_chapter
-    return @verses_in_chapter unless @verses_in_chapter.nil?
-    @verses_in_chapter = content_document.css(".verse > .label").map{|node| node.inner_html}
-    @verses_in_chapter
-  end
-
-  def implicit_verses
-    # we need this as separate from #verses, so #verses can stay cheap
-    # giving us lazy-loading capability
-    is_chapter? ? verses_in_chapter : verses
-  end
-
   def is_chapter?
     @is_chapter ||= (verses.empty? || false)
   end
@@ -244,31 +313,8 @@ class Reference < YV::Resource
     return content != ""
   end
 
-  def notes_api_string
-      return implicit_verses.map {|verse| "#{chapter_usfm}.#{verse}" }.join("+")
-  end
-
-  def plan_api_string
-    notes_api_string.capitalize
-  end
-
   def osis
     Rails.logger.apc "#{self.class}##{__method__} is deprecated,use the 'to_param' or 'to_usfm' methods instead", :debug
-    to_param
-  end
-
-  def osis_noversion
-    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
-    to_usfm
-  end
-
-  def osis_book_chapter
-    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
-    chapter_usfm
-  end
-
-  def to_osis_string
-    Rails.logger.apc "#{self.class}##{__method__} is deprecated, use the 'to_param' or 'to_usfm' methods instead", :debug
     to_param
   end
 
@@ -278,32 +324,42 @@ class Reference < YV::Resource
 
 
 
-
-
  private
 
+  def content_document
+    @content_document ||= Nokogiri::HTML(attributes.content)
+    #TODO: #PERF: cache this with memcache if we keep and use it
+  end
+
+  # API Method
+  # retrieve api details for a reference.  attributes are lazy loaded
   def attributes
     return @attributes unless @attributes.nil?
 
     validate
 
-    opts = {cache_for: YV::Caching.a_very_long_time}
     # sometimes we just need generic info about a verse, like the human spelling of a chapter
     # in this rare case, we will just use the YouVersion default Version
-    opts[:id] =  version || Version.default
+
     # we will always just get the chapter, and parse down to verses if needed
     # this will utilize server side cache more effectively
     # as the alternative (for multiple verses) is multiple bible/verse calls
-    opts[:reference] = chapter_usfm
 
-      @attributes = YV::API::Client.get("bible/chapter", opts) do |errors|
-        if errors.length == 1 && [/^bible.reference.not_found$/].detect { |r| r.match(errors.first["key"]) }
-          raise NotAChapterError
-        elsif errors.length == 1 && [/^bible.id.not_found$/].detect { |r| r.match(errors.first["key"]) }
-          raise NotAVersionError
-        end
-      end
+    opts = {
+      id: version || Version.default,
+      reference: chapter_usfm,
+      cache_for: YV::Caching.a_very_long_time,
+    }
+
+    data, errs = self.class.get("bible/chapter", opts)
+    results = YV::API::Results.new(data,errs)
+
+    unless results.valid?
+      raise_errors(results.errors, "reference#attributes")
+    end
+    @attributes = data
   end
+
 
   def validate
     # check book, chapter and version against data we have in Version object
@@ -318,11 +374,7 @@ class Reference < YV::Resource
     # This method should not hit the API
     # for lazy-loading to work
     if verses.nil? then @is_chapter = true and return [] end
-    return YouVersion::ReferenceString.parse_verses(verses).map(&:to_s)
+    return YV::ReferenceString.parse_verses(verses).map(&:to_s)
   end
 
-  def content_document
-    @content_document ||= Nokogiri::HTML(attributes.content)
-    #TODO: #PERF: cache this with memcache if we keep and use it
-  end
 end

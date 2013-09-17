@@ -41,21 +41,6 @@ Given /^these notes exist:$/ do |table|
     result = note.save
     result.should_not be_false
   end
-#     if @notes
-#       @notes.each do |note|
-#         if note.title == row['Title'] && note.username == row['Author'] && note.content == row['Content'] && note.reference.osis == row['References'] && note.user_status.upcase == row['Status'].upcase
-#           @rowsfound << true
-#         end
-#       end
-#     end
-#   end
-#
-#   if @rowsfound.count >= @rows.count
-#     assert true
-#   else
-#     assert false, 'Not all rows found'
-#   end
-
 end
 
 Given /^a user named "([^"]*)" with password "([^"]*)" does not exist$/ do |arg1, arg2|

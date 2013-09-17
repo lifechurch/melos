@@ -3,16 +3,23 @@ class Search
   attr_accessor :query
   attr_reader :version_id
 
-  def self.categories
-    [:bible, :plans, :notes, :users] #:videos
-  end
+  class << self
 
-  def self.category_resource_paths
-    {bible: "bible", plans: "reading_plans", notes: "notes", users: "users"} #, videos: "videos"
+    def categories
+      [:bible, :plans, :notes, :users] #:videos
+    end
+
+    def category_resource_paths
+      {bible: "bible", plans: "reading_plans", notes: "notes", users: "users"} #, videos: "videos"
+    end
+  
+    def category_item_names
+      {bible: "verses", plans: "reading_plans", notes: "notes", users: "users"} #,videos: "videos"
+    end
+
   end
-  def self.category_item_names
-    {bible: "verses", plans: "reading_plans", notes: "notes", users: "users"} #,videos: "videos"
-  end
+  # END Class methods ------------------------------------------------------------------------
+
 
   def initialize (query, opts = {})
     params = {query: (@query = query.to_s)}
@@ -38,9 +45,13 @@ class Search
       # Set language tag for search if it's for videos.
       parameters[:language_tag] = opts[:locale].to_s if(c == :videos)
 
-      @responses[c] = YV::API::Client.get("search/#{resource}", parameters) do |errors, response|
-        #treat any error as empty results for now, but return suggestions if there were any
-        Hashie::Mash.new(suggestions: response.try(:[], 'response').try(:[], 'data').try(:[], 'suggestions'))
+      data, errors = YV::Resource.get("search/#{resource}", parameters)
+      results = YV::API::Results.new(data,errors)
+
+      @responses[c] = if results.valid?
+         results.data
+      else
+         Hashie::Mash.new(suggestions: nil)
       end
 
       @responses[c].items ||= @responses[c][items]

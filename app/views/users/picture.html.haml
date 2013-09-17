@@ -1,11 +1,7 @@
 - @title = "#{t('users.picture')} | #{@user.name || @user.username}"
 
--if @user.errors.any?
-  .form_errors
-    =t("picture_creation form errors")
-    %ul
-      - @user.errors.each do |e|
-        %li= t("users.profile.#{e}")
+- if @results
+  = render partial: "shared/form_errors", locals: {errors: @results.errors}
 
 - cache_bust = '?' + rand(1000000).to_s
 %img{src: @user_avatar_urls['px_128x128'] + cache_bust}

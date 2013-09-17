@@ -53,7 +53,6 @@ class SubscriptionsController < ApplicationController
 
     if (params[:make_public] == "true" || params[:make_private] == "true")
       params[:make_public] == "true" ? (@subscription.make_public and action = 'make public') : (@subscription.make_private and action = 'make private')
-      anchor = 'privacy'
     end
 
     if(params[:email_delivery])
@@ -68,21 +67,18 @@ class SubscriptionsController < ApplicationController
 
     if(params[:send_report])
       params[:send_report] == "true" ? (@subscription.add_accountability_user(current_user) and action = 'report on') : (@subscription.remove_all_accountability and action = 'report off')
-      anchor = 'accountability'
     end
 
     if(params[:add_accountability_partner])
       @subscription.add_accountability_user(params[:add_accountability_partner])
       action = 'partner added'
       t_opts = {username: params[:add_accountability_partner]}
-      anchor = 'accountability'
     end
 
     if(params[:remove_accountability_partner])
       @subscription.remove_accountability_user(params[:remove_accountability_partner])
       action = 'partner removed'
       t_opts = {username: params[:remove_accountability_partner]}
-      anchor = 'accountability'
     end
 
     # Completing a day of reading
@@ -96,7 +92,7 @@ class SubscriptionsController < ApplicationController
     end
 
     flash[:notice] = t("plans.#{action} successful", t_opts)
-    redirect_to edit_user_subscription_path(current_user,@subscription,anchor: anchor)
+    redirect_to edit_user_subscription_path(current_user,@subscription)
   end
 
   def edit

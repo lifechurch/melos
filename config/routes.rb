@@ -18,7 +18,7 @@ YouversionWeb::Application.routes.draw do
   match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'references#notes', :as => 'reference_notes', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
 
-  resources "bookmarks",  except: [:index]
+  resources "bookmarks",  except: [:index, :new]
   resources "versions",   only:   [:index, :show]
   
 
@@ -106,8 +106,6 @@ YouversionWeb::Application.routes.draw do
   get   "/sign-up/success",                to: "users#sign_up_success",      as: "sign_up_success"
   get   "/confirm/resend",                 to: "users#resend_confirmation",  as: "resend_confirmation"
   post  "/confirm/resend",                 to: "users#resend_confirmation",  as: "resend_confirmation"
-  get   "/confirm/:hash",                  to: "users#confirm",              as: "confirm"
-  post  "/confirm/:hash",                  to: "users#confirmed",            as: "confirm"
   get   "/confirm-update-email/:token",    to: "users#confirm_update_email", as: "confirm_update_email"
   get   "/settings/forgot_password",       to: "users#forgot_password_form", as: "forgot_password"
   post  "/settings/forgot_password",       to: "users#forgot_password",      as: "forgot_password"

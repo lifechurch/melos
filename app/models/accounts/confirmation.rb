@@ -8,9 +8,12 @@ module Accounts
 
     def resend!
       success = true
-      YV::API::Client.post("users/resend_confirmation", email: email) do |errors|
-        errors.each {|err| self.errors.add :base, err["error"]}
-        success = false
+      data, errs = YV::Resource.post("users/resend_confirmation", email: email)
+      results = YV::API::Results.new(data,errs)
+
+      if results.invalid?
+         success = false
+         self.errors = results.errors
       end
       return success
     end

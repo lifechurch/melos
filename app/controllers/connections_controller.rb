@@ -1,11 +1,14 @@
 class ConnectionsController < ApplicationController
 
   before_filter :force_login
-  before_filter :authorize
+  before_filter :authorize, only: [:index]
 
 
   # GET Display users connections
   # bible.com/users/:id/connections => connections#index
+  # TODO: proper refactor
+  # get friends in an asynchronous front end call because these calls can take an amt of time depending
+  # on how many connections/friends a user has.
   def index
     @selected = :connections
     @show     = params[:show] || "facebook"
@@ -52,7 +55,7 @@ class ConnectionsController < ApplicationController
     connection = current_user.connections[provider_param.to_s]
     cookies.signed[:f] = nil if connection.is_a? FacebookConnection
     result = connection.delete
-    if connection.delete
+    if result.valid?
       redirect_to :back, notice: t('deleted connection', connection: t("social.#{provider_param}.name"))
     else
       redirect_to :back, error: t('deleted connection error', connection: t("social.#{provider_param}.name"))
@@ -70,7 +73,8 @@ class ConnectionsController < ApplicationController
   end
 
   def authorize
-    unless @user.id == current_user.id
+    id_param = params[:user_id] || params[:id]
+    unless id_param == current_user.username
       redirect_to(edit_user_path(current_user))
     end
   end

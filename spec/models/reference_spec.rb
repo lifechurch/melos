@@ -224,20 +224,6 @@ describe Reference do
 
   end
 
-  describe "#to_api_string" do
-
-    it "should give a /notes API-frendly string" do
-      @gen_1_1_kjv_ref.notes_api_string.should == "GEN.1.1"
-      Reference.new("gen.1.1-3.kjv").notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3"
-      @gen_1_kjv_ref.notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3+GEN.1.4+GEN.1.5+GEN.1.6+GEN.1.7+GEN.1.8+GEN.1.9+GEN.1.10+GEN.1.11+GEN.1.12+GEN.1.13+GEN.1.14+GEN.1.15+GEN.1.16+GEN.1.17+GEN.1.18+GEN.1.19+GEN.1.20+GEN.1.21+GEN.1.22+GEN.1.23+GEN.1.24+GEN.1.25+GEN.1.26+GEN.1.27+GEN.1.28+GEN.1.29+GEN.1.30+GEN.1.31"
-    end
-    it "should work with an invalid reference" do
-      pending "us needing to support this style of reference creation (not actually a valid reference)"
-      Reference.new("gen.1.1-3,6.kjv").notes_api_string.should == "GEN.1.1+GEN.1.2+GEN.1.3+GEN.1.6"
-    end
-
-  end
-
   describe "[]" do
 
     it "should index the reference like a hash" do
@@ -308,14 +294,10 @@ describe Reference do
 
   end
 
-  describe "#verses_in_chapter" do
-
-  end
-
   describe "#short_link" do
 
-    it "should be a link to bible.us" do
-      @gen_1_kjv_ref.short_link.should =~ %r(^http://bible.us/)
+    it "should be a link to bible.com" do
+      @gen_1_kjv_ref.short_link.should =~ %r(^http://bible.com/)
     end
     it "should have the format that our old facebook and g+ counts use"
 

@@ -20,11 +20,13 @@ class Note < YV::Resource
   attribute :username
   attribute :highlight_color
 
-  def user
-    User.find( self.user_id )
-  end
 
-  def self.for_reference(ref, params = {})
+  class << self
+
+
+    # API Method
+    # Returns ResourceList of Note instances
+
     # Constrained to only work for <= 10 verses or a chapter
     # API doesn't want more than 10 verses or returns the following error:
     # YV::ResourceError: search.references.exceeded_10_verse_references
@@ -33,47 +35,57 @@ class Note < YV::Resource
     # => "GEN.2.5+GEN.2.6+GEN.2.7+GEN.2.8+GEN.2.9+GEN.2.10+GEN.2.11+GEN.2.12+GEN.2.13+GEN.2.14+GEN.2.15"
     # lets take the output and truncate it to 10 or less.
 
-    only_10_refs = ref.to_usfm.split("+")[0...10].join("+")
-    params.merge!({references: only_10_refs, query: '*'})
-    all(params)
-  end
-
-  def self.all(params = {})
-    params[:query] ||= '*'
-
-    _auth = params[:auth]
-    response = YV::API::Client.get('search/notes', params) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
-        Hashie::Mash.new(notes: [])
-      else
-        raise YV::ResourceError.new(errors)
-      end
+    def for_reference(ref, params = {})
+      only_10_refs = ref.to_usfm.split("+")[0...10].join("+")
+      params.merge!({references: only_10_refs, query: '*'})
+      return search(params)
     end
 
-    notes = ResourceList.new
-    notes.total = response.total || 0
-    response.notes.each {|data| (notes << new(data.merge(auth:_auth))) rescue nil}
-    notes
-  end
 
-  def self.for_user(user_id, params = {})
-    params.merge!({user_id: user_id})
-    response = YV::API::Client.get('notes/items', params) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/].detect { |r| r.match(errors.first["error"]) }
-        Hashie::Mash.new(notes: [])
+
+    # API Method
+    # return all notes for a given search via query: param
+    # ex: Note.search(query: "love")
+    # returns ResourceList of Note instances
+
+    def search(params = {})
+      _auth = params[:auth]
+      params[:query] ||= '*'
+
+      data, errs = get("search/notes", params)
+      results = YV::API::Results.new(data,errs)
+
+      unless results.valid?
+        if results.has_error?("not found")
+           data = Hashie::Mash.new(notes: [])
+        else raise_errors(results.errors,"Note#search") end
       else
-        raise YV::ResourceError.new(errors)
+        #
       end
+
+      notes = ResourceList.new
+      data.notes.each do |d|
+        notes << new(d)
+      end
+      notes.total = data.total || 0
+      return notes
     end
 
-    notes = ResourceList.new
-    notes.total = response.total || 0
-    response.notes.each {|data| (notes << new(data.merge(auth:params[:auth]))) rescue nil}
-    notes
-  end
+    def for_user(user_id, params = {})
+      params.merge!({user_id: user_id})
+      return all(params)
+    end
 
-  def self.destroy_id_param
-    :ids
+    def destroy_id_param
+      :ids
+    end
+
+  end
+  # END Class method definitions ------------------------------------------------------------------------
+
+
+  def user
+    User.find( self.user_id )
   end
 
   def content_as_xml
@@ -98,6 +110,7 @@ class Note < YV::Resource
   def after_save(response)
 
     if response
+      # TODO: this needed?
       # To map to API 2.x style to minimize changes
       self.content_html = response.content.try :html
       self.content = response.content.try :text
@@ -127,9 +140,4 @@ class Note < YV::Resource
   def can_share?
     return (self.system_status == "new" || self.system_status == "approved") && self.user_status == "public"
   end
-
-#   def update(fields)
-#     self.version = Version.find(fields[:version]) if fields[:version]
-#     self.reference = ReferenceList.new(fields[:reference], self.version) if fields[:reference]
-#   end
 end

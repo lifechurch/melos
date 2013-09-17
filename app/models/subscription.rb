@@ -6,141 +6,136 @@ class Subscription < Plan
   attribute :email_delivery
   attribute :email_delivery_version_id
 
+  class << self
+
+    def list_path
+      "#{api_path_prefix}/items"
+    end
+
+    def delete_path
+      "#{api_path_prefix}/unsubscribe_user"
+    end
+
+    def destroy_id_param
+      :id
+    end
+
+    def id_from_param(param)
+      case param
+        when Subscription
+          param.id.to_i
+        else
+          super
+      end
+    end
+
+    def find(plan, user, opts = {})
+      # We can't use Plan.find because it gets an unexpected response from
+      # API when trying un-authed call so it never tries the authed call
+      #
+      # if auth is nil, the API will attempt to search for public subscription
+
+      opts[:user_id] = case user
+        when User
+          user.id.to_i
+        when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
+          user.to_i
+        else                                        #hope the user find can handle it
+          User.find(user).id
+      end
+
+      opts[:id] = id_from_param plan
+      _auth = opts[:auth]
+
+      #We can't use Plan.find because it gets an unexpected response from
+      #API when trying un-authed call so it never tries the authed call
+
+      data, errs = get( resource_path , opts)
+      results = YV::API::Results.new(data,errs)
+      unless results.valid?
+        return nil if (errs.size == 1) and ([/^Reading plan not found$/].detect { |r| r.match(errs.first.error) })
+        raise_errors(results.errors, "Subscription errors")
+      end
+
+      return Subscription.new(data.merge(auth: _auth), user: user) #set user on subscription to avoid api lookup
+    end
+  end
+  # END Class method definitions --------------------------------------------------------------------------------
+
+
+
   def initialize( data , opts = {})
     super(data)
     @user = opts[:user] || nil # keep @user around to avoid further api calls
   end
 
-
-  def self.list_path
-    "#{api_path_prefix}/items"
-  end
-
-  def self.delete_path
-    "#{api_path_prefix}/unsubscribe_user"
-  end
-
-  def self.destroy_id_param
-    :id
-  end
-
-  def self.find(plan, u, opts = {})
-    # We can't use Plan.find because it gets an unexpected response from
-    # API when trying un-authed call so it never tries the authed call
-    #
-    # if auth is nil, the API will attempt to search for public subscription
-
-    case u
-      when User
-        opts[:user] = u
-        opts[:user_id] = u.id
-      when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
-        opts[:user_id] = u.to_i
-      else                                        #hope the user find can handle it
-        opts[:user_id] = User.find(u).id
-    end
-
-    opts[:id] = id_from_param plan
-    _auth = opts[:auth]
-
-    #We can't use Plan.find because it gets an unexpected response from
-    #API when trying un-authed call so it never tries the authed call
-    response = YV::API::Client.get("#{api_path_prefix}/view", opts) do |errors|
-      if errors.length == 1 && [/^Reading plan not found$/].detect { |r| r.match(errors.first["error"]) }
-        return nil
-      else
-        raise YV::ResourceError.new(errors)
-      end
-    end
-
-    Subscription.new(response.merge(auth: _auth),opts)
-  end
-
-  def self.id_from_param(param)
-    case param
-      when Subscription
-        param.id.to_i
-      else
-        super
-    end
-  end
+  # Auth required
 
   def set_ref_completion(day, ref, completed)
     #TODO: possibly handle if day is Date object
-    if auth
-      opts = {auth: auth}
-      opts[:id] = id
-      opts[:day] = day
-      #using no version ref to use native #delete and #uniq methods below
-      no_version_ref = Reference.new(ref, version: nil)
+    raise "Authentication required to update plan progress" unless auth
 
-      # Get the list of completed references to send back to the API
-      # (all others will be marked as not-complete)
-      completed_refs = ReferenceList.new
-      reading(day).references.each {|r_mash| completed_refs << Reference.new(r_mash.ref, version: nil) if r_mash.completed?}
+    opts = {auth: auth, id: id, day: day}
+    #using no version ref to use native #delete and #uniq methods below
+    no_version_ref = Reference.new(ref, version: nil)
 
-      #adjust the ref_list based on the new completion state for the ref
-      completed ? completed_refs << no_version_ref : completed_refs.delete(no_version_ref)
-      completed_refs.uniq!
-
-      opts[:references] = completed_refs.to_usfm
-      response = YV::API::Client.post("#{api_path_prefix}/update_completion", opts) do |errors|
-          raise YV::ResourceError.new(errors)
-      end
-
-      # API returns a 205 when plan is completed.
-      # Look at YV::API::Client#post for specific implementation details.
-      # return here and don't process the response as this isn't a typical response object.
-      @completed = true and return if (response.code == 205 && response.complete)
-
-      #update object to reflect state change since we only get parital response
-      process_references_response response
-    else
-      raise "Authentication required to update plan progress"
+    # Get the list of completed references to send back to the API
+    # (all others will be marked as not-complete)
+    completed_refs = ReferenceList.new
+    reading(day).references.each do |r_mash| 
+      completed_refs << Reference.new(r_mash.ref, version: nil) if r_mash.completed?
     end
+
+    #adjust the ref_list based on the new completion state for the ref
+    completed ? completed_refs << no_version_ref : completed_refs.delete(no_version_ref)
+    completed_refs.uniq!
+
+    opts[:references] = completed_refs.to_usfm
+    
+    data, errs = self.class.post("#{api_path_prefix}/update_completion", opts)
+    results = YV::API::Results.new(data,errs)
+    unless results.valid?
+      raise_errors( results.errors, "subscription#set_ref_completion")
+    end
+
+    # API returns a 205 when plan is completed.
+    # Look at YV::API::Client#post for specific implementation details.
+    # return here and don't process the response as this isn't a typical response object.
+    @completed = true and return if (data.code == 205 && data.completed?)
+
+    #update object to reflect state change since we only get partial response
+    process_references_response data
     return true
   end
 
-  def completed?
-    @completed || false
+  def disable_email_delivery
+    update_subscription(email_delivery: nil)
   end
+
+  def add_accountability_user(user)
+    update_accountability(user, action: "add")
+  end
+
+  def remove_accountability_user(user)
+    update_accountability(user, action: "delete")
+  end  
 
   def catch_up
-    if auth
-      response = YV::API::Client.post("#{api_path_prefix}/reset_subscription", {auth: auth, id: id}) do |errors|
-          raise YV::ResourceError.new(errors)
-      end
-      @attributes.merge!(response)
-    else
-      raise "Authentication required to catch up on a plan"
-    end
+    raise "Authentication required to catch up on a plan" unless auth
+    data, errs = self.class.post("#{api_path_prefix}/reset_subscription", {auth: auth, id: id})
+    results = YV::API::Results.new(data,errs)
+      raise_errors( results.errors, "subscription#catch_up") unless results.valid?
+      
+    return @attributes.merge!(data)
   end
-
+ 
   def restart
-    if auth
-      response = YV::API::Client.post("#{api_path_prefix}/restart_subscription", {auth: auth, id: id}) do |errors|
-          raise YV::ResourceError.new(errors)
-      end
-      @attributes.merge!(response)
-    else
-      raise "Authentication required to restart a reading plan"
-    end
-  end
-
-  def make_public
-    update_subscription(private: false)
-  end
-
-  def make_private
-    update_subscription(private: true)
-  end
-
-  def public?
-    !(private?)
-  end
-
-  def private?
-    private
+    raise "Authentication required to restart a reading plan" unless auth
+    data, errs = self.class.post("#{api_path_prefix}/restart_subscription", {auth: auth, id: id})
+    results = YV::API::Results.new(data,errs)
+      raise_errors( results.errors, "subscription#catch_up") unless results.valid?
+    
+    return @attributes.merge!(data)
   end
 
   def enable_email_delivery(opts={})
@@ -154,6 +149,26 @@ class Subscription < Plan
     params[:email_delivery] = delivery_time(opts[:time])
 
     update_subscription(params)
+  end
+
+  def make_public
+    update_subscription(private: false)
+  end
+
+  def make_private
+    update_subscription(private: true)
+  end
+
+  def completed?
+    @completed || false
+  end
+
+  def public?
+    !(private?)
+  end
+
+  def private?
+    private
   end
 
   def delivered_by_email?
@@ -173,22 +188,9 @@ class Subscription < Plan
     end
   end
 
-  def disable_email_delivery
-    update_subscription(email_delivery: nil)
-  end
-
-  def add_accountability_user(user)
-    update_accountability(user, action: "add")
-  end
-
-  def remove_accountability_user(user)
-    update_accountability(user, action: "delete")
-  end
-
   def accountability_partners
-    update_accountability_partners if @partners.nil?  #cached so we allow iteration on this array
-
-    @partners
+    @partners = update_accountability_partners if @partners.nil?  #cached so we allow iteration on this array
+    return @partners
   end
 
   def remove_all_accountability
@@ -201,11 +203,8 @@ class Subscription < Plan
   end
 
   def unsubscribe
-    if auth
-      destroy
-    else
-      raise "Can't unsubscribe from a plan without authorization"
-    end
+    raise raise "Can't unsubscribe from a plan without authorization" unless auth
+    destroy
   end
 
   def user=(u)
@@ -221,14 +220,11 @@ class Subscription < Plan
   end
 
   def day_statuses
-    if auth
-      response = YV::API::Client.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id}) do |errors|
-          raise YV::ResourceError.new(errors)
-      end
-    else
-      raise "Authentication required to view calendar of a reading plan"
-    end
-    response    #In this case, response is an array of mashes...
+    data, errs = self.class.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id})
+    results = YV::API::Results.new(data,errs)
+      raise_errors( results.errors, "subscription#day_statuses") unless results.valid?
+
+    return data
   end
 
   def last_completed_date
@@ -289,91 +285,93 @@ class Subscription < Plan
   private
 
   def update_accountability_partners
-    if auth
-      opts = {auth: auth}
-      opts[:page] = 1 #We only support 25 users (max in use is 19) until more are needed (then we can just get them all below)
-      opts[:id] = id
-      opts[:user_id] = user_id
+    opts = {auth: auth}
+    opts[:page] = 1 #We only support 25 users (max in use is 19) until more are needed (then we can just get them all below)
+    opts[:id] = id
+    opts[:user_id] = user_id
 
-      response = YV::API::Client.get("#{api_path_prefix}/accountability", opts) do |errors|
-        if errors.length == 1 && [/^Accountability not found$/, /^API Error: Accountability not found$/].detect {|r| r.match(errors.first["error"])}
-          false #returning false stops get from raising errors (will if nil returned) but still allows ternary operation below
-        else
-          raise YV::ResourceError.new(errors)
-        end
+    # Sample API response
+    #  [{"total"=>1,
+    #  "users"=>
+    # [{"user_id"=>7541650,
+    #   "username"=>"BrittTheIsh",
+    #   "created_dt"=>"2013-09-11 17:36:10.613644+00"}],
+    #  "next_page"=>nil},
+    # nil]
+
+    data, errs = self.class.get("#{api_path_prefix}/accountability", opts)
+    results = YV::API::Results.new(data,errs)
+
+    unless results.valid?
+      if errs.size == 1 and [/not found/].detect {|reg| reg.match(errs.first.error)}
+        return []
+      else
+        raise_errors( results.errors, "subscription#update_accountability_partners")
       end
+    end
 
-      @partners = response ? response.users.map {|user_mash| Hashie::Mash.new({username: user_mash.username, id: user_mash.user_id.to_i})} : []
-
-    else
-      raise "Authentication required to view accountability for a reading plan"
+    @partners = data.users.map do |user_mash|
+      Hashie::Mash.new({username: user_mash.username, id: user_mash.user_id.to_i})
     end
   end
 
   def update_subscription (opts = {})
-    if auth
-      opts[:auth] = auth
-      opts[:id] = id
-      opts[:private] = private if opts[:private].nil?
+    raise "Authentication required to update a reading plan" unless auth
 
-      if opts[:email_delivery].blank?
-        opts[:email_delivery] = opts[:email_delivery_version_id] = nil
-      else
-        opts[:email_delivery] ||= email_delivery
-        opts[:email_delivery_version_id] ||= email_delivery_version_id
-      end
-      # email_delivery  00:00:00 FORMAT for time to deliver email
-      # best if random to spread load (re: convo with CV)
+    opts[:auth] = auth
+    opts[:id] = id
+    opts[:private] = self.private if opts[:private].nil?
 
-      response = YV::API::Client.post("#{api_path_prefix}/update_subscribe_user", opts) do |errors|
-          raise YV::ResourceError.new(errors)
-      end
-      @attributes.merge!(response)
+    if opts[:email_delivery].blank?
+      opts[:email_delivery] = opts[:email_delivery_version_id] = nil
     else
-      raise "Authentication required to unsubscribe from a reading plan"
+      opts[:email_delivery] ||= email_delivery
+      opts[:email_delivery_version_id] ||= email_delivery_version_id
     end
+    # email_delivery  00:00:00 FORMAT for time to deliver email
+    # best if random to spread load (re: convo with CV)
+
+    data, errs  = self.class.post("#{api_path_prefix}/update_subscribe_user", opts)
+    results = YV::API::Results.new(data,errs)
+      raise_errors(results.errors, "subscription#update_subscription") unless results.valid?
+    
+    @attributes.merge!(data)
   end
 
   def update_accountability(user, params={})
-    mode = params[:action] ||= "add"
+    raise "Authentication required to add accountability to a reading plan" unless auth
+    raise "Provide an action for update: add or delete.  action: 'add'" unless params[:action]
 
-    if auth
-      opts = {auth: auth}
-      opts[:id] = id
+    opts = {auth: auth, id: id}
+    mode = params[:action]
 
-      case user
-      when User
-        opts[:user_id] = user.id
-      when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
-        opts[:user_id] = user.to_i
-      else                                        #hope the user find can handle it
-        opts[:user_id] = User.find(user).id
-      end
-
-      raise "user id couldn't be parsed" if opts[:user_id].nil?
-
-      response = YV::API::Client.post("#{api_path_prefix}/#{mode}_accountability", opts) do |errors|
-          raise YV::ResourceError.new(errors)
-      end
-
-      #PERF: could probably just remove from the mash and be safe if we need to save this API call
-      update_accountability_partners
-
-    else
-      raise "Authentication required to add accountability to a reading plan"
+    case user
+    when User
+      opts[:user_id] = user.id
+    when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
+      opts[:user_id] = user.to_i
+    else                                        #hope the user find can handle it
+      opts[:user_id] = User.find(user).id
     end
+
+    data, errs = self.class.post("#{api_path_prefix}/#{mode}_accountability", opts)
+    results = YV::API::Results.new(data,errs)
+      raise_errors(results.errors, "subscription#update_accountability") unless results.valid?
+      
+    #TODO PERF: could probably just remove from the mash and be safe if we need to save this API call
+    update_accountability_partners
   end
 
   def delivery_time(time_range)
-    case time_range
+    hours = case time_range
     when "morning"
-      hours = (4..6)#4-6:59:59
+      (4..6)        #4-6:59:59
     when "afternoon"
-      hours = (12..14)#12-2:59:59
+      (12..14)      #12-2:59:59
     when "evening"
-      hours = (16..18)#4-6:59:59
+      (16..18)      #4-6:59:59
     else
-      return delivery_time("morning") #Morning seems preferred default #delivery_time(["morning","afternoon","evening"].sample)
+      (4..6)        #4-6:59:59 Morning seems preferred default #delivery_time(["morning","afternoon","evening"].sample)
     end
 
     "%02d:%02d:%02d" % [hours.to_a.sample, (0..59).to_a.sample, (0..59).to_a.sample]

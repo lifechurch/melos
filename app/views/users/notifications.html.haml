@@ -1,18 +1,11 @@
 - @title = "#{t('my notifications')} | #{@user.name || @user.username}"
 
-/ attach bdc stylesheet for better mobile styling for now (kill me)
-/ pull this code the second mobile web is live
-- if @mobile
-  - content_for :stylesheets do
-    = stylesheet_link_tag "bdc_home"
-  - @sidebar = @main_nav = false
-
-= form_for @notification_settings, url: update_notifications_user_path(@user,token: params[:token]) do |n|
-  - unless @notification_settings.errors.blank?
+= form_for @settings, url: update_notifications_user_path( current_user ,token: params[:token]), method: :put do |n|
+  - unless @settings.errors.blank?
     .form_errors
       =t("users.profile.notification errors")
     %ul
-      - @notification_settings.errors.full_messages.each do |err|
+      - @settings.errors.full_messages.each do |err|
         %li= err
   %p
     = n.check_box :badges

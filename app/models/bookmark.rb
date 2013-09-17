@@ -1,15 +1,111 @@
 class Bookmark < YV::Resource
 
-  attribute :highlight_color
-  attribute :labels
-  attribute :reference
-  attribute :references
   attribute :title
+  attribute :labels
+  attribute :user_id
   attribute :version
   attribute :version_id
-  attribute :user_id
+  attribute :reference
+  attribute :references
+  attribute :highlight_color
 
   attr_accessor :reference_list
+
+  class << self
+    
+    # API Method
+    # We have to override the default Resource version of this, because
+    # the Bookmark API delete_path wants :ids instead of :id
+    def destroy(id, auth = nil)
+      data, errs = post(delete_path, {ids: id, auth: auth})
+      return YV::API::Results.new(data,errs)
+    end
+
+
+    # API Method
+    # Lookup all bookmarks with given params
+    # Returns a ResourceList of bookmark instances
+    def all(params = {})
+      params[:page] ||= 1
+      opts = params
+
+      results = all_raw(opts)
+      if results.has_error?("Bookmarks not found")
+        return nil
+      else
+        return build_resource_list(results.data)
+      end
+    end
+
+
+    # API Method
+    # Lookup all bookmarks with a given label and params
+    # Returns a ResourceList of bookmark instances
+    def for_label(label, params = {})
+      page = params[:page] || 1
+      opts = params.merge({label: label, page: page})
+      return all(opts)
+    end
+
+
+    # API Method
+    # Lookup all bookmarks for a given user_id and params
+    # Returns a ResourceList of bookmark instances
+    def for_user(user_id = nil, params = {})
+      page = params[:page] || 1
+      opts = params.merge({user_id: user_id, page: page})
+      return all(opts)
+    end
+
+
+    # API Method
+    # Lookup bookmark labels (tags) for a given user_id
+    # Returns a ResourceList of label Hashie::Mashs
+    # TODO: create class for labels
+
+    def labels_for_user(user_id, params = {})
+      params[:page] ||= 1
+
+      data, errs = get("bookmarks/labels", user_id: user_id, page: params[:page])
+      results = YV::API::Results.new(data,errs)
+
+      unless results.valid?
+        if results.has_error?("Labels not found")
+           data = Hashie::Mash.new(labels: [], total:0)
+        else
+           raise_errors(results.errors, "Bookmark#labels_for_user")
+        end
+      end
+
+      if data.labels
+         labels = ResourceList.new(data.labels)
+         labels.total = data.total
+      else
+         labels = ResourceList.new([])
+         labels.total = 0
+      end
+      return labels
+    end
+
+    private
+
+    # Private class method to build up a resource list for all_raw data returned via the API
+    # used for all, for_user, for_label API methods
+    def build_resource_list(data, opts = {})
+      bookmarks = ResourceList.new
+      if data['bookmarks']
+        data.bookmarks.each do |b|
+          bookmarks << Bookmark.new(b)
+        end
+        bookmarks.page = opts[:page].to_i
+        bookmarks.total = data['total'].to_i if data['total']
+      end
+      return bookmarks
+    end
+
+  end
+  # END class methods ----------------------------------------------------------------------------------------------
+
 
   def user_id
     self.attributes['user_id']
@@ -42,110 +138,10 @@ class Bookmark < YV::Resource
 
 
   def update(fields)
-    # In API version 2.3, only title, labels, and highlight_color can be updated
+    # API allows only title, labels, and highlight_color to be updated
     allowed_keys = [:title, :labels, :highlight_color, "title", "labels", "highlight_color"]
-    # Clear out the ones we can't update.
     fields.delete_if {|k, v| ! allowed_keys.include? k}
     super
-  end
-
-  # We have to override the default Resource version of this, because
-  # the Bookmark API delete_path wants :ids instead of :id
-  def self.destroy(id, auth = nil, &block)
-    YV::API::Client.post(delete_path, {ids: id, auth: auth}, &block)
-  end
-
-  def self.all(params = {})
-    params[:page] ||= 1
-
-    data = all_raw(params) do |errors|
-      if errors.find{|g| g['error'] =~ /Bookmarks not found/}
-        # return empty hash to avoid raising exception
-        { }
-      end
-    end
-
-    bookmarks = ResourceList.new
-    if data['bookmarks']
-      data.bookmarks.each do |b|
-        bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash
-      end
-    end
-    bookmarks.page = params[:page]
-    bookmarks.total = data['total'].to_i if data['total']
-    bookmarks
-  end
-
-  def self.for_label(label, params = {})
-    page = params[:page] || 1
-    opts = params.merge({label: label, page: page})
-
-    data = all_raw(opts) do |errors|
-      Rails.logger.apc "API Error: Bookmark.for_label(#{label}) got these errors: ", :error
-      Rails.logger.apc errors.inspect, :error
-      if errors.find{|g| g['error'] =~ /Bookmarks not found/}
-        # return empty hash to avoid raising exception
-        { }
-      end
-    end
-
-    bookmarks = ResourceList.new
-    if data['bookmarks']
-      data.bookmarks.each do |b|
-        (bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash) rescue nil
-      end
-    end
-    bookmarks.page = opts[:page].to_i
-    bookmarks.total = data['total'].to_i if data['total']
-    bookmarks
-  end
-
-  def self.for_user(user_id = nil, params = {})
-    page = params[:page] || 1
-    opts = params.merge({user_id: user_id, page: page})
-
-    data = all_raw(opts) do |errors|
-      Rails.logger.apc "API Error: Bookmark.for_user(#{user_id}) got these errors: ", :error
-      Rails.logger.apc errors.inspect, :error
-      if errors.find{|g| g['error'] =~ /Bookmarks not found/}
-        # return empty hash to avoid raising exception
-        { }
-      end
-    end
-
-    bookmarks = ResourceList.new
-    if data['bookmarks']
-      data.bookmarks.each do |b|
-        #TODO: capture errors and report to API team (error in data)
-        (bookmarks << Bookmark.new(b) if b.is_a? Hashie::Mash) rescue nil
-      end
-    end
-    bookmarks.page = opts[:page].to_i
-    bookmarks.total = data['total'].to_i if data['total']
-    bookmarks
-  end
-
-  def self.labels_for_user(user_id, params = {})
-    params[:page] ||= 1
-    response = YV::API::Client.get("bookmarks/labels", user_id: user_id, page: params[:page]) do |errors|
-      Rails.logger.apc "API Error: Bookmark.labels_for_user(#{user_id}) got these errors: ", :error
-      Rails.logger.apc errors.inspect, :error
-      if errors.find{|g| g['error'] =~ /Labels not found/}
-        # return empty hash to avoid raising exception
-        Hashie::Mash.new(labels: [], total:0)
-      else
-        errors = errors.map { |ee| ee["error"] }
-        raise YV::ResourceError.new(errors)
-      end
-    end
-    if response.labels
-      @labels = ResourceList.new(response.labels)
-      @labels.total = response.total
-    else
-      @labels = ResourceList.new([])
-      @labels.total = 0
-    end
-    @labels
   end
 
 end

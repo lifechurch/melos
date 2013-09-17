@@ -6,7 +6,7 @@
 
 %article.bookmarks
   %h1= t('users.my bookmarks')
-  - unless @bookmarks.empty?
+  - unless @bookmarks.blank?
     .split_pane
       .sidebar
         %dl.labels_menu

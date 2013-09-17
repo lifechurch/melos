@@ -16,7 +16,7 @@ class ReferencesController < ApplicationController
     @ref = ref_from_params rescue not_found
     #@ref = @ref.merge(verses: "1-10") if @ref.is_chapter?
     @notes = Note.for_reference(@ref, language_tag: I18n.locale, cache_for: YV::Caching.a_short_time)
-    @notes = Note.for_reference(@ref, cache_for: YV::Caching.a_short_time) if @notes.empty?
+    @notes = Note.for_reference(@ref, cache_for: YV::Caching.a_short_time) if @notes.blank?
     render layout: false
   end
 
@@ -32,7 +32,7 @@ class ReferencesController < ApplicationController
       ref = params[:reference] || last_read.try(:to_param) || default_reference.try(:to_param)
 
       # override the version in the reference param with the explicit version in the URL this is a temporary hack until Version/Reference class clean-up
-      ref_string  = YouVersion::ReferenceString.new(ref, overrides: {version: params[:version]})
+      ref_string  = YV::ReferenceString.new(ref, overrides: {version: params[:version]})
       ref_hash    = ref_string.to_hash
 
       # If somebody visits just /bible
@@ -80,7 +80,7 @@ class ReferencesController < ApplicationController
       client_settings.reader_full_screen = client_settings.reader_parallel_mode = nil
 
       if exception.is_a? BadSecondaryVersionError
-        ref_string  = YouVersion::ReferenceString.new(params[:reference])
+        ref_string  = YV::ReferenceString.new(params[:reference])
         self.presenter = Presenter::Reference.new(ref_string, params, self, {
           alt_version: Version.find(cookies[:alt_version]),
           alt_reference: Hashie::Mash.new({content: "<h1>#{t('ref.invalid chapter title')}</h1> <p>#{t('ref.invalid chapter text')}</p>"})
@@ -89,7 +89,7 @@ class ReferencesController < ApplicationController
       end
 
       if exception.is_a? NoSecondaryVersionError
-        ref_string  = YouVersion::ReferenceString.new(params[:reference])
+        ref_string  = YV::ReferenceString.new(params[:reference])
         pres = Presenter::Reference.new(ref_string, params, self, {
           alt_version: Version.find(1),
           alt_reference: Hashie::Mash.new({content: "<h1>#{t('ref.no secondary version title')}</h1> <p>#{t('ref.no secondary version text', language_name: t('language name'))}</p>"})
@@ -114,7 +114,7 @@ class ReferencesController < ApplicationController
         pres.version        = Version.find(params[:version]) rescue Version.find(Version.default_for(I18n.locale) || Version.default)
         pres.alt_version    = cookies[:alt_version].present? ? Version.find(cookies[:alt_version]) : pres.version
         pres.reference      = reference
-        pres.reference_string = YouVersion::ReferenceString.new(reference.to_param)
+        pres.reference_string = YV::ReferenceString.new(reference.to_param)
         pres.alt_reference  = alt_reference
 
       self.presenter = pres

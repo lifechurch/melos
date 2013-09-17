@@ -1,5 +1,8 @@
 - @title = "#{t('users.connected devices')} | #{@user.name || @user.username}"
 
+- if @results
+  = render partial: "shared/form_errors", locals: {errors: @results.errors }
+
 %ul.resource_list
   - if @devices.present?
     - @devices.each do |d|

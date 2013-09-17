@@ -32,12 +32,6 @@ class User < YV::Resource
   attribute :last_login_dt
   attribute :start_dt
 
-  validate :valid_picture_size?, if: "uploaded_file?"
-
-  def badges
-    Badge.all(user_id: self.id)
-  end
-
   def self.update_path
     "users/update"
   end
@@ -45,6 +39,200 @@ class User < YV::Resource
   def self.create_path
     "users/create"
   end
+
+  class << self
+
+    # Registration method, takes a hash of params to pass to API
+    # returns a YV::API::Result decorator for a User instance if create succeeds
+    # returns a YV::API::Result with errors if create fails
+    def register(opts = {})
+      opts = {email: "", username: "", password: "", secure: true, verified: false, agree: false}.merge!(opts.symbolize_keys)
+      opts[:agree] = true if opts[:agree]
+      opts["notification_settings[newsletter][email]"] = true
+
+      data, errs = post("users/create", opts)
+      results = if errs.blank?
+         YV::API::Results.new(new(data),errs) # data = User
+      else
+         YV::API::Results.new(data,errs)      # data = Hash API response
+      end
+      return results
+    end
+
+    # API Method
+    # Authenticate a user with (username, password)
+    # returns a YV::API::Result decorator for a User instance if user is properly authenticated
+    # returns a YV::API::Result with errors if authentication is invalid
+    def authenticate(username, password)
+      auth = {username: username, password: password}
+
+      # First make sure we have a user
+      initial_results = find_by_username(username)
+      return initial_results unless initial_results.valid?  #return here with invalid results if we didn't find a user
+
+      data, errs = post("users/authenticate", auth: auth  ) # Data returned: {"id"=>7541650, "username"=>"BrittTheIsh"}
+      results = YV::API::Results.new( data , errs ) 
+      
+      if results.valid?
+         # we've successfully authenticated
+         # we now need to make another API view call with auth info to retrieve entire detailed user info.
+         results = find(data.id, auth: auth)
+         return results.data # our user
+      else
+         return results #return the results from the users/authenticate API call if not valid so we have errors
+      end
+    end
+
+
+    # Lookup a system id for a user by username or email address
+    # Returns YV::API::Results with custom data or errors
+    # custom data: {"user_id"=>7541650}
+    def find_id( username_or_email )
+      opts_key = (username_or_email.include? '@') ? :email : :username
+      lookup_opts = {opts_key => username_or_email}
+      data, errs = get("users/user_id", lookup_opts)
+      return YV::API::Results.new(data,errs)  # data --> {"user_id"=>7541650}
+    end
+
+    # Find a user by name
+    # Returns YV::API::Results decorator for User instance
+    def find_by_username( name , opts = {})
+      if name.match(/^[0-9]+$/) # Numeric string user id
+        user_id = name.to_i
+      else                      # email or username
+        results = find_id(name)
+        return results unless results.valid? #if results are invalid, return this as the response
+
+        user_id = results.user_id.to_i
+      end
+
+      return find_by_id(user_id,opts)
+    end
+
+    # Find a user by their system id
+    # Returns YV::API::Results decorator for User instance
+    def find_by_id( id , opts = {})
+      data, errs = get("users/view", opts.merge(id: id))
+      return YV::API::Results.new(new(data.merge!(auth: opts[:auth])), errs)
+    end
+
+    # Find a user by id, username or email address
+    # Returns YV::API::Results decorator for User instance
+    def find(username_or_id, opts = {})
+      case username_or_id
+        when String
+          return find_by_username( username_or_id , opts )
+        when Fixnum
+          return find_by_id(username_or_id, opts )
+      end
+    end
+
+    # Destroy user
+    # Returns YV::API::Results with custom data or errors
+    def destroy(auth)
+      data, errs = post(delete_path, auth: auth)
+      return YV::API::Results.new(data,errs)
+    end
+
+    # Confirm an email change from a given API token
+    # Returns YV::API::Results decorator for a User instance or errors
+    def confirm_update_email(token)
+      data, errs = post("users/confirm_update_email", token: token)
+      result = (errs.blank?) ? new(data) : data #if no errors, create User instance w/ data, otherwise just data.
+      return YV::API::Results.new(result,errs)
+    end
+
+    # Submit email to retrieve a new password if forgotten
+    # returns YV::API::Results instance for api data or errors
+    def forgot_password(email)
+      data, errs = post("users/forgot_password", email: email)
+      return YV::API::Results.new(data,errs)
+    end
+
+
+  end
+
+  def initialize(data = {})
+    data["agree"] = (data["agree"] == "1") unless data.blank?
+    @attributes = data.merge({
+      "notification_settings[newsletter][email]" => true,
+      secure: true})
+    @associations = {}
+
+    after_build
+  end
+
+  # instance method for updating email address
+  def update_email(email)
+    data, errs = self.class.post("users/update_email", email: email, auth: self.auth)
+    return YV::API::Results.new(data,errs)
+  end
+
+  # Instance method to update password
+  def update_password(opts)
+    opts[:auth] = self.auth
+    data, errs = self.class.post("users/update_password", opts)
+    return YV::API::Results.new(data,errs)
+  end
+
+  # Instance method
+  # Updates profile picture
+  # TODO: localize for error key: users.image_decoded.not_valid_image
+  def update_picture(uploaded_file)
+    error = {}
+    if uploaded_file.nil?
+      error["key"]   = "picture_empty"
+      error["error"] = "Please select a picture to upload"
+    elsif uploaded_file.size > 1.megabyte
+      error["key"]   = "picture_too_large"
+      error["error"] = "Picture should be less than 1 megabyte"
+    end    
+
+    unless error.has_key?("error")
+      begin
+        image = Base64.strict_encode64(File.read(uploaded_file.path))
+        data, errs = self.class.post("users/update_avatar", image: image, auth: self.auth, timeout: 15)
+        return YV::API::Results.new(data,errs)
+      rescue APITimeoutError
+        error["key"]   = "transfer_too_slow"
+        error["error"] = "Choose a smaller picture or find a faster connection"
+      end
+    end
+
+    return YV::API::Results.new(nil, [YV::API::Error.new(error)])
+  end
+
+
+  def before_update
+    self.attributes.delete "im_type"
+    self.attributes.delete "im_username"
+  end
+
+
+
+  def destroy
+    return false unless auth_present?
+    
+    response = true
+    before_destroy
+
+    begin
+      response = self.class.destroy(self.auth) do |errors|
+        new_errors = errors.map { |e| e["error"] }
+        self.errors[:base] << new_errors
+
+        if block_given?
+          yield errors
+        end
+
+        response = false
+      end
+    ensure
+      after_destroy
+    end
+    response
+  end
+
 
   def name
     return nil unless first_name && last_name
@@ -74,213 +262,31 @@ class User < YV::Resource
     self.username
   end
 
-  class << self
-    def register(opts = {})
-      opts = {email: "", username: "", password: "", verified: false, agree: false}.merge!(opts.symbolize_keys)
-      opts[:agree] = true if opts[:agree]
-      opts[:secure] = true
-      opts["notification_settings[newsletter][email]"] = true
-
-      errors   = nil
-      response = YV::API::Client.post('users/create', opts) {|e| errors = e}
-
-      user = if errors
-        u = self.new(opts)
-        u.add_errors(errors)
-        u
-      else
-        self.new(response)
-      end
-
-      return user
-    end
-
-    def id_key_for_version
-      case Cfg.api_version
-      when "2.3"
-        :user_id
-      when "2.4"
-        :id
-      when "2.5"
-        :id
-      when "3.0"
-        :id
-      else
-        :user_id
-      end
-    end
-
-    def authenticate(username, password)
-      id_opts = {}
-      id_response = YV::API::Client.post("users/authenticate", auth: {username: username, password: password})
-
-      auth = Hashie::Mash.new(username: username, password: password, user_id: id_response.id)
-      response = YV::API::Client.get("users/view", id_key_for_version => id_response.id, auth: auth)
-      response[:auth] = auth
-      User.new(response)
-    end
-
-    def find(user, opts = {})
-        # Pass in a user_id, username, or just an auth mash with a username and id.
-        case user
-        when Fixnum
-          if opts[:auth] && user == opts[:auth].user_id
-            response = YV::API::Client.get("users/view", id_key_for_version => user, auth: opts[:auth])
-          else
-            response = YV::API::Client.get("users/view", id_key_for_version => user)
-          end
-          response[:auth] = opts[:auth] ||= nil
-        when Hashie::Mash
-          response = YV::API::Client.get("users/view", id: user.user_id, auth: user)
-          response[:auth] = user
-        when String
-          if user.match(/^[0-9]+$/)
-            if opts[:auth] && user == opts[:auth].user_id
-              response = YV::API::Client.get("users/view", id_key_for_version => user, auth: opts[:auth])
-            else
-              response = YV::API::Client.get("users/view", id_key_for_version => user)
-            end
-          else
-            id_opts = {}
-            if user.include? '@'
-              id_opts[:email] = user
-            else
-              id_opts[:username] = user
-            end
-            id_response = YV::API::Client.get("users/user_id", id_opts)
-            if opts[:auth] && user == opts[:auth].username
-              response = YV::API::Client.get("users/view", id_key_for_version => id_response.user_id, auth: opts[:auth])
-            else
-              response = YV::API::Client.get("users/view", id_key_for_version => id_response.user_id)
-            end
-            response[:auth] = opts[:auth] ||= nil
-          end
-        end
-      User.new(response)
-    end
-
-    def destroy(auth, &block)
-      response = YV::API::Client.post(delete_path, {auth: auth}, &block)
-    end
-
-  end
-
-  def initialize(data = {})
-    data["agree"] = (data["agree"] == "1") unless data.blank?
-    @attributes = data
-    @associations = {}
-
-    after_build
-  end
-
-  def before_save
-    self.attributes[:secure] = true
-    self.attributes["notification_settings[newsletter][email]"] = true
-  end
-
-  def confirm(hash)
-    self.class.confirm(hash)
-  end
-
-  def update_email(email)
-    response = YV::API::Client.post("users/update_email", email: email, auth: self.auth) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      self.errors[:base] << new_errors
-      false
-    end
-  end
-
-  def confirm_update_email(token)
-    response = YV::API::Client.post("users/confirm_update_email", token: token) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      self.errors[:base] << new_errors
-      false
-    end
-  end
-
-  def self.forgot_password(email)
-    YV::API::Client.post("users/forgot_password", email: email) do |errors|
-      return false
-    end
-  end
-
-  def self.confirm(hash)
-    user = nil
-
-    response = YV::API::Client.post("users/confirm", token: hash, timeout: 10) do |errors|
-      user = User.new
-
-      if i = errors.find_index{|e| e["key"] == "users.hash.verified"}
-        user.errors.add :already_confirmed, errors.delete_at(i)["error"]
-      end
-
-      if i = errors.find_index{|e| e["key"] == "users.hash.invalid"}
-        user.errors.add :invalid_hash, errors.delete_at(i)["error"]
-      end
-
-      errors.each { |e| user.errors.add :base, e["error"] }
-      true #avoid accidentally raising error
-    end
-
-    user || User.new(response)
-  end
-
-  def before_update
-    self.attributes.delete "im_type"
-    self.attributes.delete "im_username"
-  end
-
-  def update_password(opts)
-    opts[:auth] = self.auth
-    result = YV::API::Client.post("users/update_password", opts) do |errors|
-      errors.each { |e| self.errors.add :base, YV::API::Error.i18nize(e) }
-      false
-    end
-  end
-
-  def destroy
-    return false unless auth_present?
-    
-    response = true
-    before_destroy
-
-    begin
-      response = self.class.destroy(self.auth) do |errors|
-        new_errors = errors.map { |e| e["error"] }
-        self.errors[:base] << new_errors
-
-        if block_given?
-          yield errors
-        end
-
-        response = false
-      end
-    ensure
-      after_destroy
-    end
-    response
-  end
-
 
   def share(opts = {})
     # validate that a connection was specified.  TODO: populate errors object + I18n
     return false unless opts[:connections]
+    successful = true
 
     opts[:connections] = opts[:connections].keys.join("+")
-    result = YV::API::Client.post("users/share", opts.merge({auth: self.auth})) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      self.errors[:base] << new_errors
-      false
+    data,errs = self.class.post("users/share", opts.merge({auth: self.auth}))
+    results = YV::API::Results.new(data,errs)
+    if results.invalid?
+       self.errors = results.errors
+       successful = false
     end
+    return successful
   end
 
   def notes(opts = {})
     Note.for_user(self.id, opts.merge({auth: self.auth}))
   end
-  #
-  #   def self.bookmarks(id, auth)
-  #     Bookmark.for_user(id, auth: auth)
-  #   end
+
+  def badges
+    results = Badge.all(user_id: self.id)
+    results.data if results.valid?
+  end
+
 
   def bookmarks(opts = {})
     Bookmark.for_user(self.id, opts)
@@ -313,16 +319,23 @@ class User < YV::Resource
     end
   end
 
+
+
+  # API Method
+  # Returns an array of objects / model instances of a users recent activity
+
   def recent_activity
     unless @recent_activity
-      response = YV::API::Client.get("community/items", user_id: self.id) do |errors|
-        if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-          []
-        end
+
+      data, errs = self.class.get("community/items", user_id: self.id)
+      results = YV::API::Results.new(data,errs)
+
+      if results.invalid?
+        results.has_error?("not found") ? @recent_activity = [] : self.class.raise_errors(results.errors, "user#recent_activity")
       end
 
-      unless response.empty?
-        activities = response.community.map do |a|
+      if results.valid?
+        activities = data.community.map do |a|
           a.type = "object" if a.type == "reading_plan_completed"
           a.type = "object" if a.type == "reading_plan_subscription"
           if a.type != "like" && a.type != "object"
@@ -333,39 +346,10 @@ class User < YV::Resource
         @recent_activity = activities.flatten
       end
     end
-    return @recent_activity || []
+    return @recent_activity
   end
 
-  def update_picture(uploaded_file)
-    unless uploaded_file
-      self.errors.add :picture_empty, "Please select a picture to upload"
-      return false
-    end
 
-    if uploaded_file.size > 1.megabyte
-      self.errors.add :picture_too_large, "Picture should be less than 1 megabyte"
-      return false
-    end
-
-    image = Base64.strict_encode64(File.read(uploaded_file.path))
-    begin
-      response = self.class.post("users/update_avatar", image: image, auth: self.auth, timeout: 12) do |errors|
-        if i = errors.find_index{ |e| e["key"] == "users.image_decoded.not_valid_image" }
-          self.errors.add :picture_invalid_type, errors.delete_at(i)["error"]
-        end
-
-        errors.each { |e| self.errors.add :base, e["error"] }
-        return false
-      end
-    rescue APITimeoutError
-      self.errors.add :transfer_too_slow, "Choose a smaller picture or find a faster connection"
-      return false
-    end
-    true
-  end
-
-  def valid_picture_size?
-  end
 
   def devices
     Device.for_user(self.auth.user_id, auth: self.auth)
