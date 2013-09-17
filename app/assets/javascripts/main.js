@@ -37,19 +37,19 @@ jQuery(document).ready(function() {
     // if the popover is visible, close it
     if($headerPopover.hasClass('open')){
       $headerPopover.animate({'opacity' : '0'}, 200);
-      $headerPopover.removeClass('open');
+      $headerPopover.removeClass('open').hide();
     }
 
     else if(popoverVisible){
       $('.header-popover').animate({'opacity' : '0'}, 200);
-      $('.header-popover').removeClass('open');
-      $headerPopover.animate({'opacity' : '1'}, 200);
+      $('.header-popover').removeClass('open').hide();
+      $headerPopover.show().animate({'opacity' : '1'}, 200);
       $headerPopover.addClass('open');
     }
 
     // otherwise, open it
     else {
-      $headerPopover.animate({'opacity' : '1'}, 200);
+      $headerPopover.show().animate({'opacity' : '1'}, 200);
       $headerPopover.addClass('open');
     }
     
