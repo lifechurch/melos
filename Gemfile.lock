@@ -43,8 +43,6 @@ GEM
     asset_sync (0.5.4)
       activemodel
       fog
-    authorize-net (1.5.2)
-      nokogiri (~> 1.4)
     awesome_print (1.0.2)
     builder (3.0.4)
     capybara (1.1.4)
@@ -379,7 +377,6 @@ PLATFORMS
 
 DEPENDENCIES
   asset_sync (~> 0.5.3)
-  authorize-net (~> 1.5.2)
   awesome_print (~> 1.0.2)
   capybara (~> 1.1.2)
   capybara-mechanize (~> 0.3.0)

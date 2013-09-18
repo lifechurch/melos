@@ -7,10 +7,12 @@ class TwitterConnection < YV::Connection::Base
   attribute :connection_user_id
   attribute :data
 
-  TYPE = "tw"
+  def connection_type
+    "tw"
+  end
 
   def before_save
-    self.connection_type = TYPE
+    self.connection_type = connection_type
     self.connection_user_id = self.uid
     self.data = {
             oauth_token:        self.credentials["token"],
@@ -23,28 +25,16 @@ class TwitterConnection < YV::Connection::Base
   end
 
   def find_friends(opts = {})
-    opts = {connection_type: TYPE }.merge(opts)
-    response = friends.ids.json? user_id: self.data[:user_id], cursor: -1
-    users = []
-    responses = response.ids.each_slice(25).to_a
-    responses.each do |s|
-      opts[:connection_user_ids] = s
-      response = YV::API::Client.post('users/find_connection_friends', opts) do |errors|
-        []
-      end
-      response.each { |u| users << User.new(u) }
-    end
-    users
-  end
-
-  def delete
-    result = YV::API::Client.post("users/delete_connection", connection_type: TYPE, auth: auth)
-    return result.twitter.nil?
+    opts = {connection_type: connection_type }.merge(opts)
+    response = friends.ids.json?(user_id: self.data[:user_id], cursor: -1)
+    return fetch_friends(response.ids, opts)
   end
 
   def nickname
     '@' + data.screen_name
   end
+
+
 
   private
 

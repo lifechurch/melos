@@ -26,7 +26,7 @@ module YouversionWeb
     # lots of unexpected 300/404s for assets we don't host. Blackberry/Appworld?
     halt_for = /^\/webstore/
 
-    config.middleware.insert_before(Rack::Lock, "YouVersion::Halt", routes: halt_for )
+    config.middleware.insert_before(Rack::Lock, "YV::Middleware::Halt", routes: halt_for )
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 

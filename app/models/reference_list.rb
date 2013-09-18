@@ -15,7 +15,7 @@ class ReferenceList
 
   def <<(*args)
     args.map do |r|
-      raise "Reference Lists can only consist of Reference Objects" if r.class != Reference
+      raise "Reference Lists can only consist of Reference Objects" unless r.is_a? Reference
 
       @references << Reference.new(r.to_param)
     end
@@ -38,7 +38,7 @@ class ReferenceList
           Reference.new(ref, force_ref_opts)
         when Hashie::Mash
           if ref.respond_to? :osis
-            @references = split_multi_ref_string(ref.osis).map{|ref| Reference.new(ref, force_ref_opts)}
+            @references = split_multi_ref_string(ref.to_param).map{|ref| Reference.new(ref, force_ref_opts)}
           elsif ref.respond_to? :usfm
             @references = split_multi_ref_string(ref.usfm).map{|ref| Reference.new(ref, force_ref_opts)}
           end
@@ -47,9 +47,7 @@ class ReferenceList
     when String
       @references = split_multi_ref_string(refs).map{|ref| Reference.new(ref, force_ref_opts)}
     when Hashie::Mash
-      if refs.respond_to? :osis
-        @references = split_multi_ref_string(refs.osis).map{|ref| Reference.new(ref, force_ref_opts)}
-      elsif refs.respond_to? :usfm
+      if refs.respond_to? :usfm
         @references = split_multi_ref_string(refs.usfm).map{|ref| Reference.new(ref, force_ref_opts)}
       end
     end
@@ -70,7 +68,7 @@ class ReferenceList
     @references.select {|r| r.valid?}.length == length
   end
 
-  #TODO: why aren't the remaining methods private (or non existent for smash_verses)?
+  private
 
   def split_multi_ref_string(ref_string)
     ref_array = case ref_string
@@ -81,7 +79,4 @@ class ReferenceList
     end
   end
 
-	def smash_verses(refs)
-		refs = refs.sort_by { |i| i.to_usfm }
-	end
 end

@@ -4,7 +4,7 @@
   - content_for :sidebar do
     - if @me
       = render partial: "widgets/settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
-    = render partial: "widgets/badges" unless @user.badges.empty?
+    = render partial: "widgets/badges" unless @user.badges.blank?
 
 - if @me
   - content_for :mobile_right_nav do
@@ -16,7 +16,8 @@
 
     %section.top_section.clearfix
       .profile_header
-        %img.avatar_huge{src: @user.user_avatar_url["px_128x128"]}
+        - if @user.user_avatar_url
+          %img.avatar_huge{src: @user.user_avatar_url["px_128x128"]}
 
         - if @me
           %form{action: edit_user_path(@user)}

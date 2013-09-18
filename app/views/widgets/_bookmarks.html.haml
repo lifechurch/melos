@@ -1,9 +1,9 @@
 #widget-bookmarks.widget
   %div.hd
     %span= t('recent bookmarks')
-    %a.count{href: user_bookmarks_path(current_auth.username)}= @bookmarks.total || 0
+    %a.count{href: user_bookmarks_path(current_auth.username)}= @bookmarks.try(:total) || 0
 
-  - unless @bookmarks.empty?
+  - unless @bookmarks.blank?
     %ul
       - @bookmarks.first(5).each do |mark|
         %li

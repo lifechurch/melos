@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
-  helper_method :current_user_is?, :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :verses_in_chapter, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
+  helper_method :current_user_is?, :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_site
   before_filter :set_locale
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def client_settings
-    @client_settings ||= YouVersion::ClientSettings.new(cookies)
+    @client_settings ||= YV::ClientSettings.new(cookies)
   end
 
   def set_page
@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
 
   # Whitelabel sites are configured in /lib/site_configs
   def set_site
-    site_class = SiteConfigs.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
+    site_class = YV::Sites::Config.sites[request.domain(2)] #allow tld length of two (e.g. '.co.za')
     @site = site_class.new
   end
 
@@ -149,11 +149,69 @@ class ApplicationController < ActionController::Base
   private
 
   def sign_in(user, password = nil)
+    set_auth(user, password || params[:password])
+    set_current_avatar(user.user_avatar_url["px_24x24"])
+  end
+
+  def sign_out
+    cookies.delete :a
+    cookies.delete :b
+    cookies.delete :c
+    cookies.delete :f
+    set_current_avatar(nil)
+  end
+
+
+  def set_auth(user, password)
     cookies.permanent.signed[:a] = user.id
     cookies.permanent.signed[:b] = user.username
-    cookies.permanent.signed[:c] = password || params[:password]
-    set_current_avatar(user.user_avatar_url["px_24x24"])
-    check_facebook_cookie
+    cookies.permanent.signed[:c] = password
+    @current_auth = Hashie::Mash.new( {'user_id' => user.id, 'username' => user.username, 'password' => password} )
+  end
+
+  def current_auth
+    return @current_auth if @current_auth
+    if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
+      @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
+    end
+  end
+
+  def current_user
+    return @current_user if @current_user
+    return nil unless current_auth
+    
+    @api_results = User.find(current_auth.user_id, auth: current_auth)
+    if @api_results.valid?
+       @current_user = @api_results.data
+    else
+       sign_out
+    end
+  end
+
+
+  def current_avatar
+    # If we're asking for avatar, users has to be signed in
+    # which would have populated avatar cookie
+    # if they're not, we can't get avatar anyway
+    if ((avatar_path = cookies[:avatar]).present?)
+      # we may bust browser cache if user just changed avatar
+      cache_bust = @bust_avatar_cache ? "#{'?' + rand(1000000).to_s}" : ""
+
+      # cookie may hold old path that can't be secure
+      # use CDN path instead if so (API2 to API3 switch)
+      if avatar_path.include? 'http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/'
+        avatar_path.gsub!('http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/','https://d5xlnxqvcdji7.cloudfront.net/users/images/')
+        set_current_avatar(avatar_path)
+      end
+
+      avatar_path +  cache_bust
+    end
+  end
+
+  def set_current_avatar(avatar_url)
+    cookies.permanent[:avatar] = avatar_url
+    # expire header that contains avatar
+    expire_fragment "header_#{current_auth.username}_#{I18n.locale}" if current_auth
   end
 
   def set_facebook_cookie(user)
@@ -195,15 +253,6 @@ class ApplicationController < ActionController::Base
         set_facebook_cookie current_user
       end
     end
-  end
-
-  def sign_out
-    cookies.permanent.signed[:a] = nil
-    cookies.permanent.signed[:b] = nil
-    cookies.permanent.signed[:c] = nil
-    cookies.permanent.signed[:f] = nil
-    cookies.signed[:a]           = nil
-    set_current_avatar(nil)
   end
 
   def blacklist
@@ -284,52 +333,6 @@ class ApplicationController < ActionController::Base
       redirect_to sign_up_path(opts) and return
       #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
     end
-    @user = current_user
-  end
-
-  def current_auth
-    if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
-      @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
-    end
-  end
-
-  def current_user
-    begin
-      @current_user ||= User.find(current_auth) if current_auth
-    rescue
-      sign_out
-      force_login
-    end
-  end
-
-  def current_username
-    User.find(cookies.signed[:a]).username if cookies.signed[:a]
-    #TODO: fix this, it's borked
-  end
-
-  def current_avatar
-    # If we're asking for avatar, users has to be signed in
-    # which would have populated avatar cookie
-    # if they're not, we can't get avatar anyway
-    if ((avatar_path = cookies[:avatar]).present?)
-      # we may bust browser cache if user just changed avatar
-      cache_bust = @bust_avatar_cache ? "#{'?' + rand(1000000).to_s}" : ""
-
-      # cookie may hold old path that can't be secure
-      # use CDN path instead if so (API2 to API3 switch)
-      if avatar_path.include? 'http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/'
-        avatar_path.gsub!('http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/','https://d5xlnxqvcdji7.cloudfront.net/users/images/')
-        set_current_avatar(avatar_path)
-      end
-
-      avatar_path +  cache_bust
-    end
-  end
-
-  def set_current_avatar(avatar_url)
-    cookies.permanent[:avatar] = avatar_url
-    # expire header that contains avatar
-    expire_fragment "header_#{current_auth.username}_#{I18n.locale}" if current_auth
   end
 
   def recent_versions
@@ -391,10 +394,6 @@ class ApplicationController < ActionController::Base
     raise NoSecondaryVersionError if cookies[:alt_version].blank?
 
     cookies[:alt_version]
-  end
-
-  def verses_in_chapter (ref_hash)
-    Version.find(ref_hash[:version]).books[ref_hash[:book].downcase].chapter[ref_hash[:chapter].to_s].verses
   end
 
   def tend_caches

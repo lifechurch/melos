@@ -30,24 +30,11 @@ class NotificationSettings < YV::Resource
     !(auth || token).nil?
   end
   
-  def persist(resource_path)
-    response = true
-    response_data = nil
-    
+  # TODO: private?
+  def persist(path)
     opts = auth ? {auth: auth} : {token: token}
-    
-    response_data = YV::API::Client.post(resource_path, attributes.except(:auth, :token).merge(opts)) do |errors|
-      new_errors = errors.map { |e| e["error"] }
-      new_errors.each { |e| self.errors[:base] << e }
-
-      if block_given?
-        yield errors
-      end
-
-      response = false
-    end
-
-    [response, response_data]
+    data, errs = self.class.post(path,attributes.except(:auth, :token).merge(opts))
+    return YV::API::Results.new( data , errs )
   end
 
   def persist_token
@@ -64,7 +51,8 @@ class NotificationSettings < YV::Resource
   end
   
   def user
-    User.find(@attributes.id)
+    results = User.find(self.id)
+    return results.data if results.valid?
   end
 
 

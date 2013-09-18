@@ -113,7 +113,7 @@ module ApplicationHelper
   end
 
   def bdc_user?
-    @site.class == SiteConfigs::Bible rescue false
+    @site.class == YV::Sites::Bible rescue false
   end
 
   def is_dark?(hex_color)

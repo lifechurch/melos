@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
-  layout "application", :only => [ :confirm ]
 
-  before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :devices, :destroy_device, :update_email_form, :update_email, :confirm_update_email, :delete_account, :delete_account_form]
+  before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :devices, :destroy_device, :update_email, :delete_account, :delete_account_form]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :confirm, :confirmed,  :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :confirm_update_email, :sign_up_success, :share]
+  before_filter :find_user, except: [:confirm_update_email, :update_email, :destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :sign_up_success, :share]
   before_filter :set_redirect, only: [:new, :create]
-  before_filter :authorize, only: [:edit,:update, :email, :update_email, :password, :update_password, :picture, :update_picture, :devices, :destroy_device, :delete_account,:destroy]
+  before_filter :authorize, only: [:edit,:update, :email, :password, :update_password, :picture, :update_picture, :devices, :delete_account,:destroy]
 
   rescue_from APIError, with: :api_error
 
@@ -61,38 +60,12 @@ class UsersController < ApplicationController
     end
   end
 
+
+  # Template displayed after successful create
   def confirm_email
     @selected = :email
     render layout: "application"
   end
-
-  def confirm
-    @selected = :email
-    @user = User.confirm(params[:hash])
-
-    if @user.errors.blank?
-      sign_in @user
-      flash.now[:notice] = t("users.account confirmed")
-    end
-    self.sidebar_presenter = Presenter::Sidebar::Default.new
-  end
-
-  def confirmed
-    begin
-      user = User.authenticate(params[:username], params[:password])
-    rescue AuthError
-      user = false
-    end
-
-    if user
-      sign_in user
-      redirect_to sign_up_success_path
-    else
-      flash.now[:error] = t("invalid password")
-      render action: "confirm", layout: "application"
-    end
-  end
-
 
 
   def new_facebook
@@ -112,17 +85,16 @@ class UsersController < ApplicationController
     if @user.save
       # Get the real thing
       user = User.authenticate(params[:user][:username], params[:user][:password])
-      cookies.permanent.signed[:a] = user.id
-      cookies.permanent.signed[:b] = user.username
-      cookies.permanent.signed[:c] = params[:user][:password]
-      set_current_avatar(user.user_avatar_url["px_24x24"])
-
       # Create facebook connection
-      #
       info = facebook_auth.symbolize_keys
       info[:auth] = Hashie::Mash.new(user_id: user.id, username: user.username, password: params[:user][:password])
       connection = FacebookConnection.new(info)
       result = connection.save
+
+      cookies.permanent.signed[:a] = user.id
+      cookies.permanent.signed[:b] = user.username
+      cookies.permanent.signed[:c] = params[:user][:password]
+      set_current_avatar(user.user_avatar_url["px_24x24"]) if user.user_avatar_url
 
       redirect_to sign_up_success_path(show: "facebook")
     else
@@ -166,87 +138,50 @@ class UsersController < ApplicationController
     render "share", layout: "application"
   end
 
-  #
-  # Profile actions
-  #
 
   def edit
     @selected = :profile
   end
 
   def update
-    result = @user.update(params[:user]) ? flash[:notice]=(t('users.profile.updated')) : flash[:error]=(t('users.profile.error'))
-    redirect_to edit_user_path(@user)
-  end
-
-  #
-  # Profile actions
-  #
-
-  # Remove routes for #profile and #update_profile
-
-  def picture
-    @selected = :picture
-    # we don't know if user has an avatar or not
-    @user_avatar_urls = @user.user_avatar_url
-  end
-
-  def update_picture
-    @user_avatar_urls = @user.user_avatar_url
-    if @user.update_picture(params[:user].try(:[], :image))
-      flash[:notice] = t('users.profile.updated picture')
-      @user_avatar_urls = @user.direct_user_avatar_url
-      @bust_avatar_cache = true
-      # set cookie so header menu will show new avatar
-      set_current_avatar(@user.direct_user_avatar_url["px_24x24"])
+    @user.auth = current_auth # setup auth prior to update
+    @user = @user.update(params[:user])
+    if @user.valid?
+      flash[:notice]= t('users.profile.updated')
+      redirect_to edit_user_path(@user.to_param)
+    else
+      flash[:error]= t('users.profile.error')
+      render :edit
     end
-    redirect_to(picture_user_path(@user))
   end
 
-  def notifications
-    @mobile = env["X_MOBILE_DEVICE"].present?
+  def delete_account
+    @selected = :account_existence
+  end
+
+  def destroy
+    @selected = :account_existence
+
     begin
-      @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
-      @user = @notification_settings.user
-      @me = true
-      @selected = :notifications
-      self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
-    rescue => ex
-      track_exception(ex)
-      sign_out
-      return redirect_to(sign_in_path(redirect: notification_settings_path), flash: {error: t('users.profile.notifications token error')})
+      #auth first to give the validate user is at keyboard, and doesn't just have valid cookies
+      user = @user = User.authenticate(current_user.username, params[:password])
+    rescue AuthError
+      user = false
     end
-  end
 
-  def update_notifications
-    @mobile = env["X_MOBILE_DEVICE"].present?
-    @notification_settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
-    @user = @notification_settings.user
-    @me = true
-    result = @notification_settings.update(params[:notification_settings])
-    result ? flash[:notice] = t('users.profile.updated notifications') : flash[:error] = t('users.profile.notification errors')
-
-    redirect_to(notifications_user_path(@user,token: params[:token]))
-  end
-
-  def password
-    @selected = :password
-  end
-
-  # TODO: move this to its own resourceful controller
-  def update_password
-    @selected = :password
-    if params[:user][:old_password] == current_auth.password
-      if @user.update_password(params[:user].except(:old_password))
-        flash[:notice]=t('users.password.updated')
-        cookies.signed.permanent[:c] = params[:user][:password]
+    if user
+      @results = @user.destroy
+      if @results.valid?
+         sign_out
+        return render "delete_account_success", layout: "application"
       end
     else
-      @user.errors.add :base, t('users.password.old was invalid')
+      flash.now[:error] = t("invalid password")
+      render "delete_account"
     end
-    #redirect_to(password_user_path(@user))
-    render action: "password"
+    
   end
+
 
   # TODO: move this to its own resourceful controller
   def resend_confirmation
@@ -260,101 +195,172 @@ class UsersController < ApplicationController
     render action: "resend_confirmation", layout: "application"
   end
 
-  def devices
-    @devices = @user.devices
-    @selected = :devices
-  end
+  # Email address management
+  # TODO: move to its own controller and resource
 
-  def destroy_device
-    @device = Device.find(params[:device_id], auth: current_auth)
-    @device.destroy ? flash[:notice] = "Device removed." : flash[:error] = "Could not delete device."
-    redirect_to devices_user_path(current_user)
-  end
-
-  def email
-    @selected = :email
-    render template: "users/update_email"
-  end
-
-  def update_email_form
-    @selected = :email
-    render "update_email"
-  end
-
-  def update_email
-    @selected = :email
-    response = @user.update_email(params[:user][:email])
-    if response
-      render "update_email_success"
-    else
-      redirect_to( email_user_path(current_user))
+    def email
+      @selected = :email
+      @user = current_user
     end
-  end
 
-  def confirm_update_email
-    @user = current_user
-    @selected = :email
-    response = @user.confirm_update_email(params[:token])
-    if response
-      redirect_to email_user_path(current_user), notice: t('users.confirm update email success')
+    def update_email
+      @selected = :email
+      @user = @me = current_user
+      @results = @user.update_email(params[:user][:email])
+      @results.valid? ? render(:update_email_success) : render(:email)
     end
-  end
 
-  def forgot_password_form
-    @selected = :password
-    self.sidebar_presenter = Presenter::Sidebar::Default.new
-    render "forgot_password", layout: "application"
-  end
+    # TODO: handle users.token.not_found api error when requesting more than once.
+    def confirm_update_email
+      @user = User.confirm_update_email(params[:token])
+      if @user.valid?
+         location = current_user ? edit_user_path(current_user) : sign_in_path
+         redirect_to( location , notice: t('users.confirm update email success'))
+      end
+    end
 
-  def forgot_password
-    @selected = :password
-    self.sidebar_presenter = Presenter::Sidebar::Default.new
-    begin
-      result = User.forgot_password(params[:email])
-      if result
-        sign_out
-        render "forgot_password_success", layout: "application"
+
+  # Change password
+  # TODO: move to own controller / resource
+    def password
+      @selected = :password
+    end
+
+    # TODO: move this to its own resourceful controller
+    def update_password
+      @selected = :password
+      @user = current_user
+      if params[:user][:old_password] == current_auth.password
+        @user = @user.update_password(params[:user].except(:old_password))
+
+        if @user.valid?
+          flash[:notice]=t('users.password.updated')
+          cookies.signed.permanent[:c] = params[:user][:password]
+        end
       else
-        flash.now[:error] = t('users.invalid email forgot')
-        render "forgot_password", layout: "application"
+        @user.errors.add :base, t('users.password.old was invalid')
       end
-    rescue UnverifiedAccountError => e
-      render "sessions/unverified", layout: "application"
+      render action: "password"
     end
 
-  end
+  # Change profile picture
+  # TODO: move to own controller / resource
 
-  def delete_account
-    @selected = :account_existence
-  end
-
-  def destroy
-    @selected = :account_existence
-
-    begin
-      #auth first to give the validate user is at keyboard, and doesn't just have valid cookies
-      user = User.authenticate(current_user.username, params[:password])
-    rescue AuthError
-      user = false
+    def picture
+      @selected = :picture
+      @user = current_user
+      @user_avatar_urls = @user.user_avatar_url
     end
 
-    if user
-      if @user.destroy
+    def update_picture
+      @selected = :picture
+      @user = current_user
+
+      @user_avatar_urls = @user.user_avatar_url
+      @results = @user.update_picture(params[:user].try(:[], :image))
+      if @results.valid?
+         flash[:notice] = t('users.profile.updated picture')
+         @user_avatar_urls = @user.direct_user_avatar_url
+         @bust_avatar_cache = true
+         # set cookie so header menu will show new avatar
+         set_current_avatar(@user.direct_user_avatar_url["px_24x24"])
+         redirect_to(picture_user_path(@user))
+      else
+         render :picture
+      end
+    end
+
+  # Update user notification settings
+  # TODO: move to own controller / resource
+
+    def notifications
+      begin
+        @results = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
+        @settings = @results.data
+        @user = @settings.user
+        @me = true
+        @selected = :notifications
+        self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+      rescue => ex
+        track_exception(ex)
         sign_out
-        return render "delete_account_success", layout: "application"
+        return redirect_to(sign_in_path(redirect: notification_settings_path), flash: {error: t('users.profile.notifications token error')})
       end
-    else
-      flash.now[:error] = t("invalid password")
     end
-    render "delete_account"
-  end
+
+    def update_notifications
+      @settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
+      @user = @settings.user
+      @me = true
+      @results = @settings.update(params[:notification_settings])
+      if @results.valid?
+         flash[:notice] = t('users.profile.updated notifications')
+         redirect_to(notifications_user_path(@user,token: params[:token]))
+      else
+         flash[:error] = t('users.profile.notification errors')
+         render :notifications
+      end
+    end  
+
+  # Manage devices
+  # TODO: move to own controller / resource
+
+    def devices
+      @user = current_user
+      @devices = @user.devices
+      @selected = :devices
+    end
+
+    def destroy_device
+      @user = current_user
+
+      @device = Device.find(params[:device_id], auth: current_auth)
+      @results = @device.destroy
+      if @results.valid?
+         flash[:notice] = "Device removed."           # TODO: localize
+         redirect_to devices_user_path(current_user)
+      else
+         @devices = @user.devices
+         @selected = :devices
+         flash[:error] = "Could not delete device."   # TODO: localize
+         render :devices
+      end
+    end
+
+
+  # Manage forgotten password
+  # TODO: Move to own controller + possible resource
+
+    def forgot_password_form
+      @selected = :password
+      self.sidebar_presenter = Presenter::Sidebar::Default.new
+      render "forgot_password", layout: "application"
+    end
+
+    def forgot_password
+      @selected = :password
+      self.sidebar_presenter = Presenter::Sidebar::Default.new
+      begin
+        @results = User.forgot_password(params[:email])
+        if @results.valid?
+          sign_out
+          render "forgot_password_success", layout: "application"
+        else
+          render "forgot_password", layout: "application"
+        end
+      rescue UnverifiedAccountError => e
+        render "sessions/unverified", layout: "application"
+      end
+
+    end
+
 
 
 private
   # Find requested user and setup appropriate sidebar presenter
   def find_user
     user_id   = params[:user_id] || params[:id]
-    @user     = (user_id.to_s.downcase == current_user.try(:username).to_s.downcase) ? current_user : User.find(user_id)
+    @user     = (user_id.to_s.downcase == current_user.try(:username).to_s.downcase) ? current_user : User.find(user_id).data
     @me       = true if (@user.id == current_user.try(:id))
     self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
   end
@@ -370,7 +376,8 @@ private
   end
 
   def authorize
-    unless @user.id == current_user.id
+    id_param = params[:user_id] || params[:id]
+    unless id_param == current_user.username
       redirect_to(edit_user_path(current_user))
     end
   end

@@ -1,4 +1,8 @@
 module YV
+  
+  class AuthRequired < StandardError
+  end
+
   class ResourceError < StandardError
     attr_accessor :errors
 
@@ -17,17 +21,43 @@ module YV
 
 
   class Resource
-    extend ActiveModel::Naming
+    extend  ActiveModel::Naming
     include ActiveModel::Conversion
     include ActiveModel::Validations
 
     class << self
 
-      # This allows child class to easily override the prefix
-      # of its API path, if it happens not to be name.tableize.
+      # Class method to make a GET request to a provided API path
+      # optional opts are passed along to the underlying request
+      #
+      # returns an array [api_data, api_errors]
+      # api_data   = Hashie::Mash
+      # api_errors = Array of YV::API::Error instances
+      def get( path , opts = {} )
+        response = YV::API::Client.get(path, opts)
+        YV::API::ResponseHandler.new(response).process
+      end
+
+
+      # Class method to make a POST request to a provided API path
+      # optional opts are passed along to the underlying request
+      #
+      # returns an array [api_data, api_errors]
+      # api_data   = Hashie::Mash
+      # api_errors = Array of YV::API::Error instances
+      def post( path, opts = {})
+        response = YV::API::Client.post(path, opts)
+        YV::API::ResponseHandler.new(response).process
+      end
+
+
+      # API path prefix used to generate many API calls
+      # Ex: users in users/view
+      # Override in subclass if name.tableize is not an appropriate prefix
       def api_path_prefix
         name.tableize
       end
+
 
       # Class methods to define common api path strings based on the configured
       # api_path_prefix class method.  These api strings are passed to YV::API::Client
@@ -58,24 +88,100 @@ module YV
         "#{api_path_prefix}/delete"
       end
 
+      # TODO: doc!
+      def api_response_all_key
+        name.tableize
+      end
+
       # Common path for configuration calls
       def configuration_path
         "#{api_path_prefix}/configuration"
       end
 
-      # Makes a call to configuration API endpoint for Resource subclass
+      # Configuration API endpoint call for a Resource subclass
+      # Returns an instance of YV::API::Results
       def configuration(opts = {})
         opts = opts.merge({cache_for: YV::Caching.a_very_long_time}) if opts[:auth] == nil
-        response = YV::API::Client.get(configuration_path, opts) do |errors|
-          raise YV::ResourceError.new(errors)
-        end
-        return response
+        data, errs = get(configuration_path,opts)
+        return YV::API::Results.new( data , errs )
       end
 
       # Return a list of available locales from a subclass configuration call
       def available_locales
-        configuration.available_language_tags.map{|tag| YV::Conversions.to_app_lang_code(tag).to_sym}
+        results = configuration()
+        results.data.available_language_tags.map{|tag| YV::Conversions.to_app_lang_code(tag).to_sym}
       end
+
+      # Find a resource by id and optional parameters
+      # Returns an instance of YV::API::Results
+      def find(id, params = {})
+        opts = prepare_opts!
+        opts[:id] = id if id
+        opts.merge! params  # Let params override if it already has an :id
+
+        data, errs = get(resource_path, opts)
+        unless errs.blank?
+          return YV::API::Results.new( data , errs )
+        else
+          return YV::API::Results.new( new(data.merge!(auth: params.delete(:auth))) , errs )
+        end
+      end
+
+
+      # Find a list of resources given optional parameters
+      # Returns an instance of YV::API::Results
+      def all(params = {})
+        auth = params[:auth]
+        opts = prepare_opts!(params)
+
+        data, errs = get(list_path,opts)
+
+        if errs.blank?
+          items = ResourceList.new
+          items.total = (data.respond_to? :total) ? data.total : data.length
+          items.next_page = data.next_page
+          data[api_response_all_key].each do |item|
+            items << new(item.merge(auth: auth))
+          end
+        else
+          not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
+          if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
+            items = []
+            errs = nil
+          end
+        end
+
+        return YV::API::Results.new(items,errs)
+      end
+
+      # Resource list, but just return whatever the API gives us.
+      # TODO: As soon as we've finished migrating all the resources,
+      # check to see that both all() and all_raw() are really needed.
+      # Likely they can be combined or one of them can be eliminated.
+
+      # Currently only used in Bookmark resource.  Find out why and remove or update implementation in bookmark if necessary.
+      def all_raw(params = {})
+        data, errs = get(list_path,params)
+        return YV::API::Results.new(data,errs)
+      end
+
+      # Create a resource.  Creates an instance and calls save on it.
+      def create(data, &block)
+        new(data).save(&block)
+      end
+
+      # Destroy a resource. TODO - make this similar to create -> find instance via id, call destroy. allows for callbacks etc.
+      def destroy(id, auth = nil, &block)
+        opts = prepare_opts!({auth: auth})
+        opts[self.destroy_id_param] = id
+        data, errs = post(delete_path, opts)
+        return YV::API::Results.new(data,errs)
+      end
+
+      def destroy_id_param
+        :ids
+      end
+
 
       # Class configuration method - dynamically defines a method with the name(s) provided as atts
       # defined method will call i18nize on its class
@@ -136,98 +242,6 @@ module YV
         opts
       end
 
-      # Class method to find a resource subclass via API call
-      def find(id, params = {}, &block)
-        opts = prepare_opts!
-        opts[:id] = id if id
-        opts.merge! params  # Let params override if it already has an :id
-
-        # First try request as an anonymous request
-        response = YV::API::Client.get(resource_path, opts) do |errors|
-          if block_given?
-            block.call(errors)
-          else
-            raise ResourceError.new(errors)
-          end
-        end
-        new(response.merge(auth: params.delete(:auth)))
-      end
-
-
-      # Class method to find a list of resources
-      def all(params = {})
-        auth = params[:auth]
-
-        opts = prepare_opts!(params)
-
-        not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
-
-        response = YV::API::Client.get(list_path, opts) do |errors|
-          if errors.detect {|t| t['key'] =~ /auth_user_id.matches/}
-            # Then it's the notes thing where you're auth'ed as a different user
-            YV::API::Client.get(list_path, opts.merge!(auth: nil)) do |errors|
-              if errors.length == 1 && not_found_responses.detect { |r| r.match( errors.first["error"] ) }
-                []
-              end
-            end
-          elsif errors.length == 1 && not_found_responses.detect { |r| r.match(errors.first["error"]) }
-            []
-          else
-            raise ResourceError.new(errors)
-          end
-        end
-
-        items = ResourceList.new
-        # sometimes it has an explicit total attribute
-        # else we just use implicit length of array returned
-        if response.respond_to? :total
-          items.total = response.total
-        else
-          items.total = response.length
-        end
-        # sometimes the array of items encapsulated with api_prefix
-        # if there is other data that comes back with the response
-        if response.respond_to? api_path_prefix.gsub('-','_').to_sym
-          response.send(api_path_prefix.gsub('-','_')).each {|data| items << new(data.merge(auth:auth))}
-        else
-          response.each {|data| items << new(data.merge(auth: auth))}
-        end
-        items
-      end
-
-      # Resource list, but just return whatever the API gives us.
-      # TODO: As soon as we've finished migrating all the resources,
-      # check to see that both all() and all_raw() are really needed.
-      # Likely they can be combined or one of them can be eliminated.
-
-      # Currently only used in Bookmark resource.  Find out why and remove or update implementation in bookmark if necessary.
-      def all_raw(params = {}, &block)
-        response = YV::API::Client.get(list_path, params) do |errors|
-          if block_given?
-            block.call(errors)
-          else
-            raise ResourceError.new(errors)
-          end
-        end
-      end
-
-      # Create a resource.  Creates an instance and calls save on it.
-      def create(data, &block)
-        new(data).save(&block)
-      end
-
-      # Destroy a resource. TODO - make this similar to create -> create instance via id, call destroy. allows for callbacks etc.
-      def destroy(id, auth = nil, &block)
-        opts = prepare_opts!({auth: auth})
-        opts[self.destroy_id_param] = id
-        YV::API::Client.post(delete_path, opts, &block)
-      end
-
-      def destroy_id_param
-        :ids
-      end
-
-
       # Class method to define getter/setter attributes on a model
       # dynamically defines get/set methods for passed in attr_name
       attr_accessor :resource_attributes
@@ -274,7 +288,16 @@ module YV
         val ||= mash.html.try(:[], :default)
         val.present?
       end
+
+
+      # Abstracted method for raising errors from an array of YV::API::Error instances
+      # should be called from within Resource subclass
+
+      def raise_errors( active_model_errs, msg = nil)
+        raise "#{msg}: #{active_model_errs.full_messages.join(",")}"
+      end
     end
+    # End class methods ----------------------------------------------------------------------------------------------
 
     # Begin main instance methods ------------------------------------------------------------------------------------
 
@@ -324,45 +347,32 @@ module YV
       return !id.blank?
     end
 
+    # TODO: private?
     def persist(path)
-      success = true
-      response = nil
-      response = YV::API::Client.post(path, attributes.merge(auth: self.auth)) do |errors|
-        success = false
-        errors.map {|err| self.errors[:base] << YV::API::Error.i18nize(err)}
-        (yield errors) if block_given?
-      end
-      [success, response]
+      data, errs = self.class.post(path,attributes.merge(auth: self.auth))
+      return YV::API::Results.new( data , errs )
     end
+
 
     def before_save; end;
     def after_save(response); end;
     
     def save
       unless (self.persisted? == false && self.class == User)
-        return false unless auth_present?
+        raise YV::AuthRequired unless auth_present?
       end
-
-      success = true
-      response = nil
 
       self.persisted? ? before_update : before_save
 
       begin
         resource_path = self.persisted? ? self.class.update_path : self.class.create_path
-        success, response = persist(resource_path)
-
-        if success && !self.persisted? && response.id
-          assign_id(response.id)
-        end
+        results = persist(resource_path)
+        new_id = results.data.id
+        self.id = new_id if (results.valid? && !self.persisted? && new_id) #assign id to model
       ensure
-        self.persisted? ? after_update(response) : after_save(response)
+        self.persisted? ? after_update(results) : after_save(results)
       end
-      success
-    end
-
-    def assign_id(id)
-      self.id = id
+      return results
     end
 
     
@@ -376,23 +386,19 @@ module YV
     def before_destroy; end;
     def after_destroy; end;
     def destroy
-      return false unless auth_present?
-
-      success = true
-
+      raise YV::AuthRequired unless auth_present?
       before_destroy
 
+      results = nil
       begin
-        response = self.class.destroy(self.id, self.auth) do |errors|
-          success = false
-          errors.map {|err| self.errors[:base] << YV::API::Error.i18nize(e)}
-          (yield errors) if block_given?
-        end
+        results = self.class.destroy(self.id, self.auth)
       ensure
         after_destroy
       end
-      success
+
+      return results
     end
+
 
     def auth_present?
       if self.auth
@@ -422,8 +428,21 @@ module YV
     # Instance method to add errors to a given resource
     def add_errors( api_errors_array )
       api_errors_array.each do |error|
-        self.errors.add(:base, YV::API::Error.i18nize(error))
+        self.errors.add(:base, error.i18nize)
       end
+    end
+
+
+    private
+
+    # Allows us to call class level raise_errors method at the instance level
+    # Reasoning is because we have instance level methods that hit the API
+    # and need a way to raise/report errors.
+    # This in turn keeps us from having to write: self.class.raise_errors
+    # in the instance method ... a little bit cleaner.
+
+    def raise_errors(errs,msg = nil)
+      self.class.raise_errors(errs,msg)
     end
 
   end

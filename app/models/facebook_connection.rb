@@ -8,9 +8,12 @@ class FacebookConnection < YV::Connection::Base
   attribute :connection_user_id
   attribute :data
 
+  def connection_type
+    "fb"
+  end
 
   def before_save
-    self.connection_type = "fb"
+    self.connection_type = connection_type
     self.connection_user_id = self.uid
     self.data = {
             platform:     "web3",
@@ -25,29 +28,11 @@ class FacebookConnection < YV::Connection::Base
   end
 
   def find_friends(opts = {})
-    opts = {connection_type: "fb"}.merge(opts)
+    opts = {connection_type: connection_type}.merge(opts)
     response = api_client.get_connections("me", "friends")
 
-    if response.empty?
-      []
-    else
-      ids = response.map { |e| e["id"] }
-      users = []
-      responses = ids.each_slice(25).to_a
-      responses.each do |s|
-        opts[:connection_user_ids] = s
-        response = YV::API::Client.post('users/find_connection_friends', opts) do |errors|
-          []
-        end
-        response.each { |u| users << User.new(u) }
-      end
-    end
-    users
-  end
-
-  def delete
-    result = YV::API::Client.post("users/delete_connection", connection_type: "fb", auth: auth)
-    return result.facebook.nil?
+    ids = response.map { |e| e["id"] }
+    return fetch_friends(ids,opts)
   end
 
   def nickname

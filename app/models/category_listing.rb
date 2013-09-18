@@ -1,24 +1,40 @@
 class CategoryListing < YV::Resource
+  
   attr_reader :current, :breadcrumbs, :items
 
-  def self.find(category_slug=nil, opts={})
-    #we only need 1st page to get all categories in the response
-    #the params[:category] param will filter the query to only children of that category
-    opts[:page] ||= 1
-    opts[:category] ||= category_slug
-    opts[:cache_for] ||= YV::Caching.a_long_time
-    opts[:query] = '*'
+  class << self
 
-    response = YV::API::Client.get("search/reading_plans", opts) do |errors|
-      if errors.length == 1 && [/^No(.*)found$/, /^(.*)s not found$/].detect { |r| r.match(errors.first["error"]) }
-        raise "No Plans in this category!"
-      else
-        raise YV::ResourceError.new(errors)
-      end
+    def find(category_slug=nil, opts={})
+      #we only need 1st page to get all categories in the response
+      #the params[:category] param will filter the query to only children of that category
+      opts[:page]       ||= 1
+      opts[:category]   ||= category_slug
+      opts[:cache_for]  ||= YV::Caching.a_long_time
+      opts[:query]        = '*'
+
+      # Example API response data
+      # 
+
+       # {"categories"=>
+       #   {"parent"=>nil,
+       #    "current"=>nil,
+       #    "children"=>
+       #     [{"category"=>"new_plans",
+       #       "labels"=>
+       #        {"default"=>"New",
+       #         "en"=>"New"}},
+       #      {"category"=>"featured_plans",
+       #       "labels"=> ...
+
+
+      data, errs = get("search/reading_plans", opts)
+      return CategoryListing.new(data.categories) if errs.blank?
+      # TODO: Track error, raise error, ??
     end
-
-    CategoryListing.new(response.categories)
   end
+  # END class methods ----------------------------------------------------------------------------------------------
+
+
 
   def current_name
     @current ? @current.name : nil

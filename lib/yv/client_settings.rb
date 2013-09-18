@@ -1,5 +1,5 @@
 # Class meant to abstract away cookie related browser(client) settings
-module YouVersion
+module YV
   class ClientSettings
 
     def initialize( cookies )

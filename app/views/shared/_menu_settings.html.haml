@@ -30,6 +30,7 @@
         %input.radio_user_setting{'data-setting-font' => 'user_setting_font_verdana', :type => 'radio', :name => 'user_setting_font', :id => 'radio_verdana', value: 'Verdana', checked: ('checked' if client_settings.reader_font == "user_setting_font_verdana")}
         %label.user_setting_font_verdana{for: 'radio_verdana'}
           = t('.font4')
+
     %fieldset.clearfix.hide_list#size_settings
       %p.gutter_bottom_half
         %b
@@ -39,13 +40,14 @@
         %label{for: 'user_setting_size_small'}
           = t('.small')
       %span.float_left.width_33
-        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_medium', type: 'radio', name: 'user_setting_size', id: 'user_setting_size_medium', checked: 'checked'}
+        %input.radio_user_setting{'data-setting-size' => 'user_setting_size_medium', type: 'radio', name: 'user_setting_size', id: 'user_setting_size_medium', checked: ('checked' if client_settings.reader_font_size.empty? or client_settings.reader_font_size == "user_setting_size_medium")}
         %label{for: 'user_setting_size_medium'}
           = t('.medium')
       %span.float_left.width_33
         %input.radio_user_setting{'data-setting-size' => 'user_setting_size_large', type: 'radio', name: 'user_setting_size', id: 'user_setting_size_large', checked: ('checked' if client_settings.reader_font_size=="user_setting_size_large")}
         %label{for: 'user_setting_size_large'}
           = t('.large')
+
     %fieldset.clearfix.hide_list#extra_settings
       %p.gutter_bottom_half
         %b

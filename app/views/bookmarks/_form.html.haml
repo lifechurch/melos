@@ -10,7 +10,6 @@
     = f.text_field :title
   %p
     = f.label :version, t("bookmarks.version field")
-    -# f.select :version, options_for_select(versions_dropdown, (@bookmark.version || nil)), {:prompt => '--Select--'}
     = Version.find(@bookmark.version).to_s if @bookmark.version.present?
     = f.hidden_field :version_id
   %p

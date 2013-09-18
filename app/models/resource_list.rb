@@ -2,7 +2,7 @@
 # instead of hijacking Array. But simplest thing that works, yeah?
 
 class ResourceList < Array
-  attr_accessor :page, :total, :page_length
+  attr_accessor :page, :total, :page_length, :next_page
   def initialize(*args)
     super(*args)
     # Get a default page value

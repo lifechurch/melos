@@ -1,10 +1,12 @@
 class Badge < YV::Resource
+  
+  attribute :slug
+  attribute :type
+  attribute :username
+  attribute :image_url
+
   attr_i18n_reader :name
   attr_i18n_reader :description
-  attribute :type
-  attribute :image_url
-  attribute :slug
-  attribute :username
 
   def earned
     Date.parse(attributes["earned_dt"])

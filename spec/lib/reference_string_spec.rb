@@ -2,29 +2,29 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 require 'benchmark'
 
-describe YouVersion::ReferenceString do
+describe YV::ReferenceString do
   before(:each) do
-    @str = YouVersion::ReferenceString.new("jhn.1.kjv")
+    @str = YV::ReferenceString.new("jhn.1.kjv")
   end
 
   describe "instantiation" do
     it "should be instantiable" do
-      str = YouVersion::ReferenceString.new("jhn.1.kjv")
-      str.is_a?(YouVersion::ReferenceString).should be_true
+      str = YV::ReferenceString.new("jhn.1.kjv")
+      str.is_a?(YV::ReferenceString).should be_true
     end
   end
 
   describe ".raw and .to_s" do
     it "should return the raw initial reference string" do
       ref = "jhn.1.kjv"
-      str = YouVersion::ReferenceString.new("jhn.1.kjv")
+      str = YV::ReferenceString.new("jhn.1.kjv")
       str.raw.should == ref
       str.to_s.should == ref
     end
   end
 
   describe ".[] (hash access)" do
-    subject {YouVersion::ReferenceString.new("jhn.1.2-3.kjv")}
+    subject {YV::ReferenceString.new("jhn.1.2-3.kjv")}
     it "should return the hash elements" do
       subject[:book].should == "jhn"
       subject[:chapter].should == "1"
@@ -55,7 +55,7 @@ describe YouVersion::ReferenceString do
       }
       @valid_strings.each do |ref_str, expect|
         specify "should split to hash for '#{ref_str}' (a #{expect[:def]})" do
-          string  = YouVersion::ReferenceString.new(ref_str)
+          string  = YV::ReferenceString.new(ref_str)
           subject = string.hash
 
           subject[:book].should == expect[:book]
@@ -80,15 +80,15 @@ describe YouVersion::ReferenceString do
 
       @valid.each do |ref_str, expect|
         specify "should validate for '#{ref_str}'" do
-          YouVersion::ReferenceString.new(ref_str).validate!.should_not be_nil
+          YV::ReferenceString.new(ref_str).validate!.should_not be_nil
         end
         specify "should yield a valid Reference after '#{ref_str}' is validated" do
-          Reference.new(YouVersion::ReferenceString.new(ref_str).validate!).should be_valid
+          Reference.new(YV::ReferenceString.new(ref_str).validate!).should be_valid
         end
       end
       @invalid.each do |ref_str, expect|
         specify "should not validate for '#{ref_str}'" do
-          YouVersion::ReferenceString.new(ref_str).validate!.should be_nil
+          YV::ReferenceString.new(ref_str).validate!.should be_nil
         end
       end
     end
@@ -102,7 +102,7 @@ describe YouVersion::ReferenceString do
         'esg.intro1.69-gntd' => {def: 'API3 version with verse range'}
       }.each do |ref_str, expect|
         specify "should return an empty verse array for '#{ref_str}' (a #{expect[:def]})" do
-          string  = YouVersion::ReferenceString.new(ref_str)
+          string  = YV::ReferenceString.new(ref_str)
           verses = string.verses
 
           verses.is_a?(Array).should be_true
@@ -125,7 +125,7 @@ describe YouVersion::ReferenceString do
         'Gen.1.15,1,8,22.1-kjv' => {def: 'API3 ref with  comma separated verses', verses: [15,1,8,22]}
       }.each do |ref_str, expect|
         specify "should return correct verses in an array for '#{ref_str}' (a #{expect[:def]})" do
-          string  = YouVersion::ReferenceString.new(ref_str)
+          string  = YV::ReferenceString.new(ref_str)
           verses = string.verses
           verses.should == expect[:verses]
         end

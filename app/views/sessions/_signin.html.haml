@@ -1,3 +1,7 @@
+
+- if @user and @user.invalid?
+  = render partial: "shared/form_errors", locals: {errors: @user.errors}
+
 = form_tag sign_in_path(source: params[:source]) do
   %p
     = label_tag :username, t("username or email prompt")

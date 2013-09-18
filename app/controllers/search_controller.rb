@@ -9,7 +9,7 @@ class SearchController < ApplicationController
     # If user searches for a known reference, just load it for them in reader
     # unless the user is searching from search page itself
     unless request.referer =~ %r{\A#{search_url}}
-      ref_str = YouVersion::ReferenceString.new(params[:q], defaults: {version: current_version})
+      ref_str = YV::ReferenceString.new(params[:q], defaults: {version: current_version})
 
       if ref_str.validate!
         return redirect_to bible_path(Reference.new(ref_str)) if ref_str.chapter !~ /\D/

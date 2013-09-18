@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   before_filter :set_redirect, except: [:destroy]
 
   def new
@@ -6,31 +7,25 @@ class SessionsController < ApplicationController
 
   def create
     begin
-      user = User.authenticate(params[:username], params[:password])
+      @user = User.authenticate(params[:username], params[:password])
     rescue UnverifiedAccountError
-      user = false
       params[:email] = params[:username] if params[:username].include? "@"
-      render "unverified" and return
-    rescue AuthError
-      user = false
+      return render "unverified"
     end
 
-    if user
-      sign_in(user)
+    if @user.valid?
+      sign_in(@user, params[:password])
       location = redirect_path
       clear_redirect
-      redirect_to(location || bible_path)
+      redirect_to(location || bible_path) and return
     else
-      flash.now[:error] = t("invalid login")
-      render "new"
+      render "new" and return
     end
   end
 
   def destroy
     sign_out
-    clear_redirect # user has signed out, if they sign in, new referer should apply
-    #redirect_to (request.referer ? URI(request.referer).path : params[:redirect] || bible_path)
-    # Lets always send them back to a specific redirect or else the bible.
+    clear_redirect
     redirect_to (params[:redirect] || bible_path)
   end
 end

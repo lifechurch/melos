@@ -8,6 +8,8 @@ module YV
       headers 'User-Agent' => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}"
       default_timeout Cfg.api_default_timeout.to_f
 
+      JSON_500 = JSON.parse('{"response": {"buildtime": "", "code": 500, "data": {"errors": []}}}')
+
       class << self
         
         alias_method :httparty_get, :get
@@ -15,7 +17,7 @@ module YV
 
         # Perform a GET request to YouVersion API
         # requires an appropriate API formatted path string: "search/notes", "reading-plans/view", etc
-        def get(path, opts={}, &block)
+        def get(path, opts={})
           started_at = Time.now.to_f
           
           opts = prepare_auth!(opts)
@@ -29,19 +31,20 @@ module YV
           lets_party = lambda do
             begin
               response = httparty_get(resource_url, request_opts)
+              #response = YV::API::Response.new(httparty_get(resource_url, request_opts))
               # Raise an error here if response code is 400 or greater and the API hasn't sent back a response object.
               # IMPORTANTLY - This avoids us potentially caching a bad API request
               # #{response["response"]["data"]["errors"]}
-              if response.code >= 400 && response["response"].nil?
+              if response.code >= 400 && response.body.nil?
                 raise APIError, "API Error: Bad API Response (code: #{response.code}) "
               end
               return response
 
+            rescue MultiJson::DecodeError => e
+              response = YV::API::Response.new(JSON_500)
+
             rescue Timeout::Error => e
               raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - started_at)*1000).to_i} ms)"
-            
-            rescue MultiJson::DecodeError => e
-              response = JSON_500
             
             rescue Exception => e
               raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
@@ -49,23 +52,24 @@ module YV
           end
 
           # If we're caching this request, try pulling from cache first
-          if cache_length = opts[:cache_for]
-            response = Rails.cache.fetch( cache_key(path, request_opts) , expires_in: cache_length) do
+          api_data = if opts[:cache_for]
+            cached = Rails.cache.fetch( cache_key(path, request_opts) , expires_in: opts[:cache_for]) do
               lets_party.call # cache miss - call to API
             end
+            cached #comes back as a hash
           else
-            response = lets_party.call
+            lets_party.call #comes back as a Httparty response
           end
 
-          return process_api_response(response, block, resource_url: resource_url)
+          return YV::API::Response.new(api_data)
         end
 
 
         # Perform a POST request to YouVersion API
         # requires an appropriate API formatted path string: "users/create", "notes/update", etc
-        def post(path, opts={}, &block)
+        def post(path, opts={})
           started_at = Time.now.to_f
-
+          
           opts = prepare_auth!(opts)
           opts = clean_request_opts!(opts)
           resource_url = get_resource_url(path, opts)
@@ -75,84 +79,28 @@ module YV
           request_opts[:body] = opts
 
           begin
-            response = httparty_post(resource_url, request_opts)
+            response = YV::API::Response.new(httparty_post(resource_url, request_opts))
             
-            # Pretty sure this is custom for Reading Plan completion API response :(
             if response.code == 205
-               response = Hash.new
-               response["response"] = {"code" => 205,"complete" => true}
+               response = YV::API::Response.new(JSON.parse('{"response": {"buildtime": "", "code": 205, "complete": true}}'))
+               # Pretty sure this is custom for Reading Plan completion API response :(
             end
           
+          rescue MultiJson::DecodeError => e
+            response = YV::API::Response.new(JSON_500)
+
           rescue Timeout::Error => e
             raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - started_at)*1000).to_i} ms)"
-          
-          rescue MultiJson::DecodeError => e
-            response = JSON_500
           
           rescue Exception => e
             raise APIError, "Non-timeout API Error for #{resource_url}: #{e.class} : #{e.to_s}"
           end
 
-          return process_api_response(response, block)
+          return response
         end
 
 
         private # ------------------------------------------------------------------------------------------------
-
-        # Processes a valid response from the API
-        # Handle error condition or build an api object as a response
-
-        def process_api_response(response, block, opts = {})
-
-          response_code = response["response"]["code"]
-          response_data = response["response"]["data"]
-
-          if response_code.nil? || response_code.to_i >= 400
-            response_errors = response_data["errors"]
-            process_api_errors( response_errors )
-            secondary_response = block.call(response_errors, response) if block
-            raise(APIError, response_errors.map { |e| e["error"] }.join("; ")) if secondary_response.nil?
-            return secondary_response
-          end
-
-          response_code = response_code.to_i
-
-          return true if (response_code == 201) && (response_data == "Created")
-          return true if (response_code == 200) && (response_data == "OK")
-          return build_data_object( response_data )
-        end
-
-
-        # Build a Mash object with data returned from the API
-        def build_data_object( response_data )
-          case response_data
-            when Array
-              if response_data.first.respond_to?(:each_pair)
-                 response_data.map {|data| Hashie::Mash.new(data)}
-              else
-                 response_data
-              end
-            
-            when Hash
-              Hashie::Mash.new(response_data)
-            
-            when Fixnum # only for users/user_id
-              Hashie::Mash.new({user_id: response_data }) 
-          end
-        end
-
-
-        # Processes errors returned by the API.
-        def process_api_errors( errors_array )
-          # Check if it's bad/expired auth and raise an exception
-          if errors_array.detect { |e| e["key"] =~ /users.hash.not_verified/ }
-            raise UnverifiedAccountError
-          end
-
-          if errors_array.detect { |e| e["key"] =~ /users.username_or_password.invalid/ }
-            raise AuthError
-          end
-        end
 
 
         # Filter request options to formalize, sanitize, whatever of opts

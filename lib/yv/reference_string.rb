@@ -1,11 +1,22 @@
 # Class to encapsulate the ever expanding task of parsing reference strings
 # and pulling out the needed bits of information.
 
-module YouVersion
+module YV
   class ReferenceString
 
     attr_accessor :hash, :verses
     attr_reader :raw, :defaults
+
+    # Create an instance of ReferenceString
+    # takes a reference string
+    # ex: Gen.1.kjv, Gen.1.4.kjv, etc
+
+    # valid options:
+    # - defaults
+    # - defaults[:version] to provide a fallback version of the version if no version os found via ref str.
+
+    # - overrides
+    # - overrides[:version] to override the version of the reference string
 
     def initialize( ref_str, opts={})
       @raw        = ref_str
@@ -21,7 +32,7 @@ module YouVersion
     end
 
     def to_s
-      @raw
+      "#{book}.#{chapter}.#{version}"
     end
 
     def book
@@ -32,14 +43,14 @@ module YouVersion
       @hash[:chapter]
     end
 
+    def version
+      @hash[:version]
+    end
+
     #verses is attr_accessor
     def hash=(value)
       @validated = false
       @hash = value
-    end
-
-    def version
-      @hash[:version]
     end
 
     def validated?
@@ -86,20 +97,31 @@ module YouVersion
 
     private
 
+
+    # Parse @raw reference string into parts
+    # book, chapter, verses, version
+    
     def parse
       re =  /^
             \s*
-            ([1-3]? \s* [A-Za-z0-9]+)                         #book
+            ([1-3]? \s* [A-Za-z0-9]+)                           #book
             \s*
             (?:(?:[\s:\.])([\w]*))?                             #optional chapter
             \s*
             (?:(?:[\s:\.]) ([\d\-,\s]*))?                       #optional verse(s)
             \s*
-            (?: (?:[\s\.]) ((?: \d*\-?)? (?: [\S]*)) )? #optional version
+            (?: (?:[\s\.]) ((?: \d*\-?)? (?: [\S]*)) )?         #optional version
           $/x
 
       matches = @raw.match(re)
-      @hash = {book: matches.try(:[], 1), chapter: matches.try(:[], 2), verses: matches.try(:[], 3), version: @overrides[:version] || matches.try(:[], 4) || defaults[:version]}
+      
+      @hash = {
+        book:     matches.try(:[], 1),
+        chapter:  matches.try(:[], 2),
+        verses:   matches.try(:[], 3),
+        version:  @overrides[:version] || matches.try(:[], 4) || defaults[:version]
+      }
+
       parse_verses
     end
 
@@ -141,10 +163,9 @@ module YouVersion
 
 
     def parse_verses
-
       @verses = []
       return unless @hash[:verses]
-      @verses = YouVersion::ReferenceString.parse_verses(@hash[:verses])
+      @verses = self.class.parse_verses(@hash[:verses])
     end
   end
 end

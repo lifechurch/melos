@@ -10,8 +10,6 @@ common:
   #note: this direct path will not work for users without avatars (404's)
   #workaround should be coming by EOY 2012
   avatar_path_direct: https://static-youversionapi-com.s3.amazonaws.com/users/images/
-  bloodhound_username: lifechurchtv
-  bloodhound_password: password
   api_root: youversionapi.com
   api_referer: web-dev.youversionapi.com
   #api_root: youversionapistaging.com

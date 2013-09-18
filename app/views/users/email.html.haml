@@ -1,10 +1,6 @@
 %p= t('users.update email copy')
-- unless @user.errors.blank?
-  .form_errors
-    =t("users.profile form errors")
-    %ul
-      - @user.errors.full_messages.each do |e|
-        %li= e.first
+= render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
+
 = form_for @user, url: update_email_user_path(@user) do |u|
   %p
     = u.text_field :email

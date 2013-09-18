@@ -69,7 +69,7 @@ module Presenter
     end
 
     def reference_string
-      YouVersion::ReferenceString.new(reference.to_param)
+      YV::ReferenceString.new(reference.to_param)
     end
 
     # implementation for Presenter::ReaderInterface method
