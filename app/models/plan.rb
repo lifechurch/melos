@@ -20,10 +20,6 @@ class Plan < YV::Resource
       "reading-plans"
     end
 
-    def api_response_all_key
-      "reading_plans"
-    end
-
     def find(param, opts ={}, &block)
       id, slug = id_and_slug_from_param param
       raise YouVersion::API::RecordNotFound unless id.present?
@@ -119,6 +115,11 @@ class Plan < YV::Resource
         list.total = data.total
         data.reading_plans.each {|data| list << Plan.new(data)}
       return list
+    end
+
+    # Overrides Resource base method
+    def api_resource_collection_key
+      "reading_plans"
     end
 
 

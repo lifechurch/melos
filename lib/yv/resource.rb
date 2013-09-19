@@ -88,11 +88,6 @@ module YV
         "#{api_path_prefix}/delete"
       end
 
-      # TODO: doc!
-      def api_response_all_key
-        name.tableize
-      end
-
       # Common path for configuration calls
       def configuration_path
         "#{api_path_prefix}/configuration"
@@ -131,27 +126,20 @@ module YV
       # Find a list of resources given optional parameters
       # Returns an instance of YV::API::Results
       def all(params = {})
-        auth = params[:auth]
         opts = prepare_opts!(params)
-
         data, errs = get(list_path,opts)
 
         if errs.blank?
-          items = ResourceList.new
-          items.total = (data.respond_to? :total) ? data.total : data.length
-          items.next_page = data.next_page
-          data[api_response_all_key].each do |item|
-            items << new(item.merge(auth: auth))
-          end
+          collection_data = process_collection_response(data)
         else
           not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
           if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
-            items = []
+            collection_data = []
             errs = nil
           end
         end
 
-        return YV::API::Results.new(items,errs)
+        return YV::API::Results.new(collection_data,errs)
       end
 
       # Resource list, but just return whatever the API gives us.
@@ -296,6 +284,40 @@ module YV
       def raise_errors( active_model_errs, msg = nil)
         raise "#{msg}: #{active_model_errs.full_messages.join(",")}"
       end
+
+      private
+
+      # Hook to process a response after an API call that returns 'collection' data - any #all call
+      # Allows the opportunity to override in subclasses to handle the collection data differently
+      # as collection like responses aren't all made the same.
+
+      # By default, we'll create a ResourceList and fill it with items from the API response
+
+      def process_collection_response( data )
+        items = ResourceList.new
+        items.total = (data.respond_to? :total) ? data.total : data.length
+        items.next_page = data.next_page
+        data[api_resource_collection_key].each do |item|
+          items << new(item)
+        end
+        return items
+      end
+
+
+      # The key API sends to denote a collection of objects in a data response
+      # ex: "data": {
+      #       "users":
+      #         [{user},{user},{user}]
+      #     }
+      # in the example above the key is "users"
+
+      # see #process_collection_response
+
+      def api_resource_collection_key
+        name.tableize
+      end
+
+
     end
     # End class methods ----------------------------------------------------------------------------------------------
 
