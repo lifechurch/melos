@@ -1,4 +1,5 @@
 object false
+cache "json-versions-bylang-rabl", expires_in: YV::Caching.a_very_long_time
 
 node :by_language do |m|
   @versions_by_lang.map do |lang, versions|
