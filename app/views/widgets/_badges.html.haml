@@ -1,7 +1,7 @@
 #widget-user-badges.widget
   %h3.hd
     %span
-      = @me ? t('users.my badges') : t('badges.user badges', user: (@user.first_name || @user.username))
+      = current_user_is?(@user) ? t('users.my badges') : t('badges.user badges', user: (@user.first_name || @user.username))
   %table
     %tbody
       - @user.badges.first(4).each do |b|

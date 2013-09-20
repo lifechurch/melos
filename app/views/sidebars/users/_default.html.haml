@@ -5,4 +5,6 @@
 
 - if presenter.for_me?
   = render "widgets/settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
-= render "widgets/badges" unless user.badges.blank?
+
+= cache "widgets_badges_#{user.username}", expires_in: YV::Caching.a_very_long_time do
+  = render "widgets/badges" unless user.badges.blank?
