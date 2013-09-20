@@ -1,10 +1,7 @@
 module Accounts
   class Confirmation
 
-    extend  ActiveModel::Naming
-    include ActiveModel::Validations
-
-    attr_accessor :email
+    attr_accessor :email, :errors
 
     def resend!
       success = true
