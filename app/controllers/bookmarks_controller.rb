@@ -4,13 +4,9 @@ class BookmarksController < ApplicationController
   # action to display a users bookmarks /users/:user_id/bookmarks
   def index
     @user = User.find(params[:user_id])
+    @bookmarks = params[:label] ? Bookmark.for_label(params[:label], {page: @page, user_id: @user.id}) : @user.bookmarks(page: @page)
+    @labels = Bookmark.labels_for_user(@user.id, page: @labels_page)
 
-    if params[:label]
-      @bookmarks = Bookmark.for_label(params[:label], {page: @page, user_id: @user.id})
-    else
-      @bookmarks = @user.bookmarks(page: @page)
-    end
-    @labels = Bookmark.labels_for_user(@user.id, page: @labels_page)if Bookmark.labels_for_user(@user.id)
     unless current_user_is?(@user)
       @selected = :bookmarks
       self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
