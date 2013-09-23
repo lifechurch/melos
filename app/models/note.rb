@@ -56,7 +56,9 @@ class Note < YV::Resource
       results = YV::API::Results.new(data,errs)
 
       unless results.valid?
-        if results.has_error?("not found")
+        if results.has_error?("not found") or 
+           results.has_error?("Search did not match any documents")
+           
            data = Hashie::Mash.new(notes: [])
         else raise_errors(results.errors,"Note#search") end
       else
