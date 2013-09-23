@@ -1,6 +1,9 @@
 - @title = "#{t('my notifications')} | #{@user.name || @user.username}"
 
-= form_for @settings, url: update_notifications_user_path( current_user ,token: params[:token]), method: :put do |n|
+- # because page can be accessed while logged in or logged out (with token) we use
+- # current_user or fallback to params[:id]
+
+= form_for @settings, url: update_notifications_user_path( current_user || params[:id] ,token: params[:token]), method: :put do |n|
   - unless @settings.errors.blank?
     .form_errors
       =t("users.profile.notification errors")
