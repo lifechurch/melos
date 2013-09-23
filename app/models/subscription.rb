@@ -94,14 +94,14 @@ class Subscription < Plan
     
     data, errs = self.class.post("#{api_path_prefix}/update_completion", opts)
     results = YV::API::Results.new(data,errs)
-    unless results.valid?
+    if results.valid?
+      # API returns a 205 when plan is completed.
+      # Look at YV::API::Client#post for specific implementation details.
+      # return here and don't process the response as this isn't a typical response object.
+      return @completed = true if (data.code == 205 && data.completed?)
+    else
       raise_errors( results.errors, "subscription#set_ref_completion")
     end
-
-    # API returns a 205 when plan is completed.
-    # Look at YV::API::Client#post for specific implementation details.
-    # return here and don't process the response as this isn't a typical response object.
-    @completed = true and return if (data.code == 205 && data.completed?)
 
     #update object to reflect state change since we only get partial response
     process_references_response data
