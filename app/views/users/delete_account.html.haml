@@ -3,12 +3,8 @@
 %p= t('users.delete account description')
 
 = form_tag user_path(@user), method: :delete do
-  - if @user.errors.any?
-    .form_errors
-      = t('users.error deleting account')
-      %ul
-        - @user.errors[:base].each do |e|
-          %li= e
+  = render partial: "shared/form_errors", locals: {errors: @user.errors}
+  
   %p
     = label_tag :password, t("password prompt")
     %br

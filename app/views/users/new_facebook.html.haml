@@ -2,12 +2,8 @@
   %h1= t('register')
   %p= t('users.facebook sign up success')
   = form_for :user, url: facebook_sign_up_path do |f|
-    - if @user.errors.any?
-      .form_errors
-        =t("users.creation form errors")
-        %ul
-          - @user.errors[:base].each do |e|
-            %li= e
+    = render partial: "shared/form_errors", locals: {errors: @user.errors}
+    
     %p= "#{t('users.email address')}: #{@user.email}"
     %p
       = f.label :username, t("users.user name")
