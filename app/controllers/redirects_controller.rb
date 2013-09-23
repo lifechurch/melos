@@ -2,6 +2,15 @@ class RedirectsController < ApplicationController
 
   before_filter :force_login, except: [:settings_notifications, :legacy_references]
 
+  skip_filter :set_page,
+              :set_site,
+              :set_locale,
+              :skip_home,
+              :check_facebook_cookie,
+              :tend_caches,
+              :set_default_sidebar,
+              only: [:legacy_references]
+
   def legacy_references
     base_url = "https://www.bible.com"
 
