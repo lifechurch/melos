@@ -239,7 +239,7 @@ class UsersController < ApplicationController
           cookies.signed.permanent[:c] = params[:user][:password]
         end
       else
-        @user.errors.add :base, t('users.password.old was invalid')
+        @user.add_error(t('users.password.old was invalid'))
       end
       render action: "password"
     end

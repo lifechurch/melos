@@ -23,7 +23,8 @@ module YV
   class Resource
     extend  ActiveModel::Naming
     include ActiveModel::Conversion
-    include ActiveModel::Validations
+
+    attr_accessor :errors
 
     class << self
 
@@ -423,12 +424,8 @@ module YV
 
 
     def auth_present?
-      if self.auth
-        true
-      else
-        self.errors.add(:base, "auth is required, but it's not set.")
-        false
-      end
+      raise YV::AuthRequired unless self.auth
+      true
     end
 
     def created_as_date
@@ -445,13 +442,6 @@ module YV
 
     def most_recent_date
       Date.parse(attributes['updated_dt'] || attributes['created_dt'])
-    end
-
-    # Instance method to add errors to a given resource
-    def add_errors( api_errors_array )
-      api_errors_array.each do |error|
-        self.errors.add(:base, error.i18nize)
-      end
     end
 
 
