@@ -35,13 +35,10 @@ class Subscription < Plan
       #
       # if auth is nil, the API will attempt to search for public subscription
 
-      opts[:user_id] = case user
-        when User
-          user.id.to_i
-        when Fixnum, /\A[\d]+\z/                    #id (possibly in string form)
-          user.to_i
-        else                                        #hope the user find can handle it
-          User.find(user).id
+      opts[:user_id] = if user.is_a? User
+        user.id.to_i
+      else  #/\A[\d]+\z/ id (possibly in string form)
+        user.to_i
       end
 
       opts[:id] = id_from_param plan
