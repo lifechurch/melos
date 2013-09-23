@@ -76,11 +76,10 @@ class User < YV::Resource
       if results.valid?
          # we've successfully authenticated
          # we now need to make another API view call with auth info to retrieve entire detailed user info.
-         results = find(data.id, auth: auth)
-         return results.data # our user
-      else
-         return results #return the results from the users/authenticate API call if not valid so we have errors
+         results = find(data.id, auth: auth) # our user     
       end
+
+      return results
     end
 
 
