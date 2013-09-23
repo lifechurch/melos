@@ -4,12 +4,8 @@
   # - note : an instance of Note
 
 = form_for note, as: :note, url: note.id ? note_path(note.id) : notes_path, :html => {class: "full_page_form"} do |f|
-  - if note.errors.any?
-    .form_errors
-      =t("notes.creation form errors")
-      %ul
-        - note.errors.each do |e|
-          %li= e
+  = render partial: "shared/form_errors", locals: {errors: note.errors}
+
   %p
     = f.label :title, t("notes.title field")
     = f.text_field :title, {style: "width: 100%;"}
