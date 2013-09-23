@@ -362,8 +362,12 @@ private
   def find_user
     user_id   = params[:user_id] || params[:id]
     @user     = (user_id.to_s.downcase == current_user.try(:username).to_s.downcase) ? current_user : User.find(user_id)
-    @me       = true if (@user.try(:id) == current_user.try(:id))
-    self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+    if @user.valid?
+      @me       = true if (@user.try(:id) == current_user.try(:id))
+      self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+    else
+      return render_404
+    end
   end
 
   def force_notification_token_or_login

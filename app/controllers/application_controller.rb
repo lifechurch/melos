@@ -180,9 +180,9 @@ class ApplicationController < ActionController::Base
     return @current_user if @current_user
     return nil unless current_auth
     
-    @api_results = User.find(current_auth.user_id, auth: current_auth)
-    if @api_results.valid?
-       @current_user = @api_results.data
+    results = User.find(current_auth.user_id, auth: current_auth)
+    if results.valid?
+       @current_user = results
     else
        sign_out
     end
