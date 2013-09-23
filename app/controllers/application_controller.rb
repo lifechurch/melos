@@ -186,6 +186,7 @@ class ApplicationController < ActionController::Base
     else
        sign_out
     end
+    return @current_user
   end
 
 
