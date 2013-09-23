@@ -3,7 +3,6 @@ class RedirectsController < ApplicationController
   before_filter :force_login, except: [:settings_notifications, :legacy_references]
 
   skip_filter :set_page,
-              :set_site,
               :set_locale,
               :skip_home,
               :check_facebook_cookie,
