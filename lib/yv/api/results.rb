@@ -50,6 +50,10 @@ module YV
         errors.full_messages.join(" ").include?(msg)
       end
 
+      def add_error(message)
+        errors.add(:base, message)
+      end
+
       private
 
       def capture_errors( api_errors_array )
