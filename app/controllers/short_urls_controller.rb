@@ -58,4 +58,7 @@ class ShortUrlsController < ActionController::Metal
     end
   end
 
+
+  include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+  add_transaction_tracer :index
 end
