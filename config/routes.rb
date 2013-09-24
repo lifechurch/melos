@@ -33,8 +33,11 @@ YouversionWeb::Application.routes.draw do
   resources 'highlights', only: [:create] do
     get :colors, on: :collection
   end
-  get "/highlights/:version/:reference", to: "highlights#for_reference", constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
 
+
+  # Metal controller
+  # This is our second highest throughput action
+  get "/highlights/:version/:reference", to: JsonController.action(:reference_highlights), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
 
 
   resources :videos do
