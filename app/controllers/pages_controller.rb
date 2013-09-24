@@ -30,6 +30,10 @@ class PagesController < ApplicationController
     render page, status: 404
   end
 
+  def error_404
+    render "pages/error_404", status: 404 and return
+  end
+
   private
 
   def i18n_terms_whitelist
