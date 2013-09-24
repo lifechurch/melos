@@ -1,4 +1,12 @@
-- @sidebar = false
+- @sidebar = true
 
-%article
-  %h1 Notifications
+%article.notifications
+  %h1= t('notifications')
+  %h5.activity-date
+    Sent Today
+  %ul
+    %li
+      =link_to t('Shane Bernard')
+      commented on your status.
+      %span.activity-timestamp
+        #{'-'} 11:39am
