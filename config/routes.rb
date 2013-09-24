@@ -141,8 +141,11 @@ YouversionWeb::Application.routes.draw do
 
   root to: 'pages#home'
 
+
+  get "404", to: "pages#error_404"
+
   # Bible.us short url's are being handed to Web to manage.
-  match "*path", to: "redirects#legacy_references", format: false
+  match "*path", to: ShortUrlsController.action(:index), format: false
 
   # Rails 3.1 hack to catch any remaining routes (404's)
   # with globbing setting params[:path] to the bad path

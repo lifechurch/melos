@@ -6,4 +6,4 @@
   %h2= t('app errors.404 message').html_safe
   %hr
   / sending requested path until tr8n teams update string, delete param once completed
-  %p= t('app errors.404 explanation', requested_path: params[:path], support_url: external_url(:support), reader_path: bible_path).html_safe
+  %p= t('app errors.404 explanation', requested_path: params[:path], support_url: 'http://support.youversion.com', reader_path: "http://bible.com/bible").html_safe
