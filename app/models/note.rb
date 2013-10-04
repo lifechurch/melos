@@ -1,4 +1,20 @@
+# TODO: 3.1
+# - #update API call (when implemented)
+# - map attributes to new API response
+# - rework all create calls to send new references format
+# - write any appropriate tests
+# - ensure search#notes properly works
+# - implement code for translated moment title
+ 
+
+
 class Note < YV::Resource
+
+  include YV::Concerns::Icons
+  include YV::Concerns::Avatars
+  include YV::Concerns::Actionable
+  include YV::Concerns::Commentable
+  include YV::Concerns::Identifiable
 
   attr_accessor :reference_list
 
@@ -22,6 +38,27 @@ class Note < YV::Resource
 
 
   class << self
+
+
+    # Override paths to make calls to 3.1 API for Moments
+      def list_path
+        "moments/items"
+      end
+
+      def resource_path
+        "moments/view"
+      end
+
+      def delete_path
+        "moments/delete"
+      end
+
+    # Override all method to add note kind to options
+    def all(opts={})
+      raise "Page parameter is required" unless opts[:page]
+      opts[:kind] = "note"
+      super(opts)
+    end
 
 
     # API Method
@@ -78,38 +115,108 @@ class Note < YV::Resource
       return all(params)
     end
 
-    def destroy_id_param
-      :ids
-    end
-
   end
   # END Class method definitions ------------------------------------------------------------------------
 
+
+  # Custom persistence using Moments#create API.
+  # Example response data:
+
+  #  {"commenting"=>{"enabled"=>true, "comments"=>nil},
+  #     "kind_id"=>"note.v1",
+  #     "base"=>
+  #      {"body"=>nil,
+  #       "images"=>
+  #        {"body"=>nil,
+  #         "avatar"=>
+  #          {"renditions"=>
+  #            [{"url"=>
+  #               "//d34xairzvf2fpg.cloudfront.net/users/images/7c5a1ca1111caa91093aa101783eaedd_24x24.png",
+  #              "width"=>24,
+  #              "height"=>24},
+  #             {"url"=>
+  #               "//d34xairzvf2fpg.cloudfront.net/users/images/7c5a1ca1111caa91093aa101783eaedd_48x48.png",
+  #              "width"=>48,
+  #              "height"=>48},
+  #             {"url"=>
+  #               "//d34xairzvf2fpg.cloudfront.net/users/images/7c5a1ca1111caa91093aa101783eaedd_128x128.png",
+  #              "width"=>128,
+  #              "height"=>128},
+  #             {"url"=>
+  #               "//d34xairzvf2fpg.cloudfront.net/users/images/7c5a1ca1111caa91093aa101783eaedd_512x512.png",
+  #              "width"=>512,
+  #              "height"=>512}],
+  #           "action_url"=>"//www.bible.com/users/BrittTheStager",
+  #           "style"=>"circle"},
+  #         "icon"=>
+  #          {"renditions"=>
+  #            [{"url"=>
+  #               "//commondatastorage.googleapis.com/static-youversionapi-com/moments/icons/note-white-24.png",
+  #              "width"=>24,
+  #              "height"=>24},
+  #             {"url"=>
+  #               "//commondatastorage.googleapis.com/static-youversionapi-com/moments/icons/note-white-48.png",
+  #              "width"=>48,
+  #              "height"=>48}],
+  #           "action_url"=>nil}},
+  #       "action_url"=>nil,
+  #       "title"=>
+  #        {"l_str"=>"moment.note.title",
+  #         "l_args"=>{"name"=>"Britt Miles", "title"=>"A SUB YO!"}}},
+  #     "created_dt"=>"2013-10-03T11:14:23+00:00",
+  #     "kind_color"=>"824f2b",
+  #     "id"=>5699636350156800,
+  #     "extras"=>
+  #      {"user_status"=>"private",
+  #       "title"=>"A SUB YO!",
+  #       "color"=>"000000",
+  #       "content"=>"My new note!",
+  #       "system_status"=>"approved",
+  #       "references"=>[{"human"=>nil, "version_id"=>1, "usfm"=>"GEN.1.1"}],
+  #       "user"=>{"username"=>"BrittTheStager", "id"=>7440, "name"=>"Britt Miles"}}}
+
+  # TODO: API should not REQUIRE color, references.
+
+  # Custom persistence for Moments API 3.1
+  def persist(path)
+    return persist_moment(attributes.merge(kind: "note"))
+  end
+
+  # See included YV::Concerns
+  def build(results)
+    process_icons(results)
+    process_avatars(results)
+    process_comments(results)
+    process_actionable(results)
+    process_identifiable(results)
+  end
 
   def user
     User.find( self.user_id )
   end
 
-  def content_as_xml
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE yv-note SYSTEM \"http://#{Cfg.api_root}/pub/yvml_1_0.dtd\"><yv-note>#{self.content.gsub(/\n/, " ")}</yv-note>"
-  end
 
   def before_save
-    @original_content = self.content
-    self.content = self.content_as_xml
+
     if self.reference.nil? || self.reference.try(:empty?)
       self.reference_list = ReferenceList.new(nil)
     else
       self.reference_list = self.reference.class == ReferenceList ? self.reference : ReferenceList.new(self.reference)
       self.version = self.reference_list.first[:version] if self.reference_list.first[:version]
     end
-    self.version_id = Version.id_from_param self.version
+    
+    self.version_id = Version.id_from_param self.version if self.version
 
     # self.version_id = self.version.class == Version ? self.version.id : YV::Conversions::usfm_version(self.version).id
     self.references = self.reference_list.to_flat_usfm unless self.reference_list.empty?
   end
 
+  def after_update(results)
+    build(results)
+  end
+
   def after_save(response)
+    build(response)
 
     if response
       # TODO: this needed?

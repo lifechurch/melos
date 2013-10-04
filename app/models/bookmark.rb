@@ -1,4 +1,20 @@
+# TODO: 3.1
+# - #update API call (when implemented)
+# - #labels API call (when implemented)
+# - map attributes to new API response
+# - rework all create calls to send new references format
+# - write any appropriate tests
+# - ensure search#notes properly works
+# - implement code for translated moment title
+
+
 class Bookmark < YV::Resource
+
+  include YV::Concerns::Icons
+  include YV::Concerns::Avatars
+  include YV::Concerns::Actionable
+  include YV::Concerns::Commentable
+  include YV::Concerns::Identifiable
 
   attribute :title
   attribute :labels
@@ -12,29 +28,26 @@ class Bookmark < YV::Resource
   attr_accessor :reference_list
 
   class << self
-    
-    # API Method
-    # We have to override the default Resource version of this, because
-    # the Bookmark API delete_path wants :ids instead of :id
-    def destroy(id, auth = nil)
-      data, errs = post(delete_path, {ids: id, auth: auth})
-      return YV::API::Results.new(data,errs)
-    end
 
-
-    # API Method
-    # Lookup all bookmarks with given params
-    # Returns a ResourceList of bookmark instances
-    def all(params = {})
-      params[:page] ||= 1
-      opts = params
-
-      results = all_raw(opts)
-      if results.has_error?("Bookmarks not found")
-        return nil
-      else
-        return build_resource_list(results.data)
+    # Override paths to make calls to 3.1 API for Moments
+      def list_path
+        "moments/items"
       end
+
+      def resource_path
+        "moments/view"
+      end
+
+      def delete_path
+        "moments/delete"
+      end
+
+
+    # Override all method to add bookmark kind to options
+    def all(opts={})
+      raise "Page parameter is required" unless opts[:page]
+      opts[:kind] = "bookmark"
+      super(opts)
     end
 
 
@@ -87,31 +100,33 @@ class Bookmark < YV::Resource
       return labels
     end
 
-    private
-
-    # Private class method to build up a resource list for all_raw data returned via the API
-    # used for all, for_user, for_label API methods
-    def build_resource_list(data, opts = {})
-      bookmarks = ResourceList.new
-      if data['bookmarks']
-        data.bookmarks.each do |b|
-          bookmarks << Bookmark.new(b)
-        end
-        bookmarks.page = opts[:page].to_i
-        bookmarks.total = data['total'].to_i if data['total']
-      end
-      return bookmarks
-    end
-
   end
   # END class methods ----------------------------------------------------------------------------------------------
 
+
+
+
+  # Custom persistence for new Moments API
+  def persist(path)
+    return persist_moment(attributes.merge(kind: "bookmark"))
+  end
+
+  # See included YV::Concerns
+  def build(results)
+    process_icons(results)
+    process_avatars(results)
+    process_comments(results)
+    process_actionable(results)
+    process_identifiable(results)
+  end
 
   def user_id
     self.attributes['user_id']
   end
 
+  # Called after initialization
   def after_build
+    build(self.attributes)
     # self.reference does multiple duty here for the moment. When creating a new object,
     # self.reference may contain whatever the user passed in (usually a String) with the
     # :reference key.  When creating an object from an API call, it will bear whatever
@@ -123,18 +138,25 @@ class Bookmark < YV::Resource
   end
 
   def before_save
-    self.references = self.reference_list.to_flat_usfm
-    self.version_id = self.version
+    #self.references = self.reference_list.to_flat_usfm
+    #self.version_id = self.version
   end
 
-  def after_save(response)
-    return unless response
-    self.version = Version.find(response.version_id)
+  def after_save(results)
+    return unless results
+    build(results)
+    
+    self.version = Version.find(results.version_id)
     # Sometimes references come back as an array, sometimes just one, Hashie::Mash
-    if response.references
+    if results.references
       self.reference_list = ReferenceList.new(self.references, self.version)
     end
   end
+
+  def after_update(results)
+    build(results)
+  end
+
 
 
   def update(fields)

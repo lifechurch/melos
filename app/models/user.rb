@@ -32,13 +32,7 @@ class User < YV::Resource
   attribute :last_login_dt
   attribute :start_dt
 
-  def self.update_path
-    "users/update"
-  end
 
-  def self.create_path
-    "users/create"
-  end
 
   class << self
 

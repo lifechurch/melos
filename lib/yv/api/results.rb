@@ -23,7 +23,7 @@ module YV
       include ActiveModel::Validations
 
       # Read data initially stored for this instance
-      attr_reader :data
+      attr_accessor :data
 
       def initialize( data , errors )
         @data = data

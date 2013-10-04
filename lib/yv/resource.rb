@@ -131,7 +131,8 @@ module YV
         data, errs = get(list_path,opts)
 
         if errs.blank?
-          collection_data = process_collection_response(data)
+          is_moment_api   = ["Note","Bookmark","Highlight"].include?(self.name)
+          collection_data = (is_moment_api) ? process_moment_collection_response(data) : process_collection_response(data)
         else
           not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
           if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
@@ -168,7 +169,8 @@ module YV
       end
 
       def destroy_id_param
-        :ids
+        :id
+        #:ids
       end
 
 
@@ -286,6 +288,7 @@ module YV
         raise "#{msg}: #{active_model_errs.full_messages.join(",")}"
       end
 
+
       private
 
       # Hook to process a response after an API call that returns 'collection' data - any #all call
@@ -304,6 +307,17 @@ module YV
         return items
       end
 
+      def process_moment_collection_response( data )
+        items = ResourceList.new
+        moment_data = data.moments
+        items.total = (data.respond_to? :total) ? data.total : moment_data.length
+        items.next_page = data.next_page
+        moment_data.each do |data|
+          items << new(data)
+        end
+        return items
+      end
+
 
       # The key API sends to denote a collection of objects in a data response
       # ex: "data": {
@@ -317,7 +331,6 @@ module YV
       def api_resource_collection_key
         name.tableize
       end
-
 
     end
     # End class methods ----------------------------------------------------------------------------------------------
@@ -376,9 +389,15 @@ module YV
       return YV::API::Results.new( data , errs )
     end
 
+    def persist_moment(opts={})
+      raise "Moment kind required." unless opts[:kind]
+      data, errs = self.class.post("moments/create",opts.merge(auth: self.auth))
+      return YV::API::Results.new( data , errs )
+    end
+
 
     def before_save; end;
-    def after_save(response); end;
+    def after_save(api_results); end;
     
     def save
       unless (self.persisted? == false && self.class == User)
@@ -390,8 +409,10 @@ module YV
       begin
         resource_path = self.persisted? ? self.class.update_path : self.class.create_path
         results = persist(resource_path)
-        new_id = results.data.id
-        self.id = new_id if (results.valid? && !self.persisted? && new_id) #assign id to model
+
+        if results.data
+          self.id = results.data.id if (results.data.id.present? && results.valid? && !persisted?)
+        end
       ensure
         self.persisted? ? after_update(results) : after_save(results)
       end
@@ -400,8 +421,9 @@ module YV
 
     
     def before_update; before_save; end;
-    def after_update(response); after_save(response); end;
-    def update(updated_attributes)
+    def after_update(api_results); after_save(api_results); end;
+
+    def update(updated_attributes = {})
       updated_attributes.each { |k, v| self.send("#{k}=".to_sym, v) }
       save
     end

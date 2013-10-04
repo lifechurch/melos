@@ -3,12 +3,20 @@ module YV
     class Client
       
       include HTTParty
-      format :json
-      headers 'Referer' => "http://" + Cfg.api_referer
-      headers 'User-Agent' => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}"
-      default_timeout Cfg.api_default_timeout.to_f
+      # HTTParty stuff
+        format :json
+        
+        DEFAULT_HEADERS = { 
+            'Referer'      => "http://" + Cfg.api_referer,
+            'User-Agent'   => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}"  # API 3.1 requires a user agent to be set
+        }
+        #headers 'Referer'       => "http://" + Cfg.api_referer
+        #headers 'User-Agent'    => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}"  # API 3.1 requires a user agent to be set
+        default_timeout Cfg.api_default_timeout.to_f
 
-      JSON_500 = JSON.parse('{"response": {"buildtime": "", "code": 500, "data": {"errors": []}}}')
+      # 500 Json response
+        JSON_500 = JSON.parse('{"response": {"buildtime": "", "code": 500, "data": {"errors": []}}}')
+
 
       class << self
         
@@ -24,9 +32,11 @@ module YV
           opts = clean_request_opts!(opts)
           resource_url = get_resource_url(path, opts)
           
-          request_opts = {}
-          request_opts[:timeout]  = opts.delete(:timeout) if opts[:timeout] # don't allow timeout to be nil, as this will override the default timeout set in HTTParty
-          request_opts[:query]    = opts.except(:cache_for)
+          request_opts = {
+            headers: DEFAULT_HEADERS,
+            timeout: (opts.delete(:timeout) if opts[:timeout]),
+            query:   opts.except(:cache_for)
+          }
           
           lets_party = lambda do
             begin
@@ -41,7 +51,7 @@ module YV
               return response
 
             rescue MultiJson::DecodeError => e
-              response = YV::API::Response.new(JSON_500)
+              JSON_500
 
             rescue Timeout::Error => e
               raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - started_at)*1000).to_i} ms)"
@@ -61,6 +71,11 @@ module YV
             lets_party.call #comes back as a Httparty response
           end
 
+          puts "---"
+          puts api_data
+          puts resource_url
+          puts "----"
+          
           return YV::API::Response.new(api_data)
         end
 
@@ -74,20 +89,26 @@ module YV
           opts = clean_request_opts!(opts)
           resource_url = get_resource_url(path, opts)
 
-          request_opts = {}
-          request_opts[:timeout] = opts.delete(:timeout) if opts[:timeout] # override timeout only if its not nil
-          request_opts[:body] = opts
+          request_opts = {
+            headers: DEFAULT_HEADERS.merge('Content-Type' => 'application/json'),
+            timeout: (opts.delete(:timeout) if opts[:timeout]),
+            body:    opts.to_json
+          }
+
+          puts "\n\n BODY -----"
+          puts request_opts[:body]
+          puts "END -----"
 
           begin
-            response = YV::API::Response.new(httparty_post(resource_url, request_opts))
+            response = httparty_post(resource_url, request_opts)
             
             if response.code == 205
-               response = YV::API::Response.new(JSON.parse('{"response": {"buildtime": "", "code": 205, "complete": true}}'))
+               response = JSON.parse('{"response": {"buildtime": "", "code": 205, "complete": true}}')
                # Pretty sure this is custom for Reading Plan completion API response :(
             end
           
           rescue MultiJson::DecodeError => e
-            response = YV::API::Response.new(JSON_500)
+            response = JSON_500
 
           rescue Timeout::Error => e
             raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - started_at)*1000).to_i} ms)"
@@ -96,7 +117,12 @@ module YV
             raise APIError, "Non-timeout API Error for #{resource_url}: #{e.class} : #{e.to_s}"
           end
 
-          return response
+          puts "---"
+          puts response
+          puts resource_url
+          puts "----"
+
+          return YV::API::Response.new(response)
         end
 
 

@@ -10,11 +10,12 @@ common:
   #note: this direct path will not work for users without avatars (404's)
   #workaround should be coming by EOY 2012
   avatar_path_direct: https://static-youversionapi-com.s3.amazonaws.com/users/images/
-  api_root: youversionapi.com
-  api_referer: web-dev.youversionapi.com
-  #api_root: youversionapistaging.com
-  #api_referer: web-dev.youversionapistaging.com
-  api_version: "3.0"
+  #api_root: youversionapi.com
+  #api_referer: web-dev.youversionapi.com
+  #api_version: "3.0"
+  api_root: youversionapistaging.com
+  api_referer: web-dev.youversionapistaging.com
+  api_version: "3.1"
   memcache_server: localhost
   #
   # Timeouts: all times are in seconds
