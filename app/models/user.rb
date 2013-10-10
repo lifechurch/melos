@@ -330,7 +330,7 @@ class User < YV::Resource
       results = YV::API::Results.new(data,errs)
 
       if results.invalid?
-        results.has_error?("not found") ? @recent_activity = [] : self.class.raise_errors(results.errors, "user#recent_activity")
+        (results.has_error?("not found") || results.has_error?("deprecated"))  ? @recent_activity = [] : self.class.raise_errors(results.errors, "user#recent_activity")
       end
 
       if results.valid?

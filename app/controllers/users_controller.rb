@@ -111,7 +111,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @selected = :recent_activity
+    @nav = :notes if @me
+    @selected = :notes
+    @notes = @user.notes(page: params[:page])
+    if @me
+      render 'notes/index', layout: "application" 
+    else
+      render 'notes'
+    end
   end
 
   def notes

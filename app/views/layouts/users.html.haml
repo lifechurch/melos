@@ -36,9 +36,6 @@
             %li.icon_small_about= @user.bio
 
     %ul.header_tabs
-      %li.activity{class: ("highlighted" if @selected == :recent_activity)}
-        %a{href: user_path(@user)}
-          %span= t('users.recent activity')
       %li.notes{class: ("highlighted" if @selected == :notes)}
         %a{href: user_notes_path(@user)}
           %span= t('notes title')
