@@ -1,3 +1,4 @@
+
 # YouVersion Web
 
 Welcome to the YouVersion Web source repository! Here are instructions to get your Ruby/Rails development environment set up to contribute to the application. See the [wiki](https://github.com/lifechurch/youversion-web/wiki) for architecture information, best practices, etc.
