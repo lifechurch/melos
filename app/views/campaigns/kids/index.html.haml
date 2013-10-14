@@ -1,0 +1,17 @@
+.notify
+  %p.notify-copy
+    Be the first to know when the Bible App for Kids is ready to download
+  %p.notify-note
+    Enter your phone number to receive a text (U.S. and Canada only). We won't use your number for other purposes.
+    .kids-errors
+      - if defined?(@registration.errors)
+        - @registration.errors.full_messages.each do |msg|
+          %p
+            = msg
+  = form_tag(kids_path) do
+    .notify-box
+      %span.notify-box-input
+        %input{type: "tel", class: "notify-input", name: "phone_number", tabindex: "1", placeholder: '(XXX) XXX-XXXX'}
+      %span.notify-box-btn
+        %button{class: "notify-button", type: "submit", value: "text"}
+          Send

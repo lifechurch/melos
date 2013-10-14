@@ -7,7 +7,10 @@ common: &common
   database: yv_web_production
 
 development:
-  <<: *common
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 test:
   <<: *common

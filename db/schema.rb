@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120050540) do
+ActiveRecord::Schema.define(:version => 20130904204124) do
 
-  create_table "beta_registrations", :force => true do |t|
-    t.string   "username"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "kids_registrations", :force => true do |t|
+    t.string   "phone_number", :limit => 15
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
 end
