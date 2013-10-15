@@ -55,205 +55,8 @@
     display: block !important
 
   // ----------Style adjustments for viewports 768px and under go here
-  #main article p
-    font-size: 15px
-  body
-    background: #efefef
-  h3
-    font-size: 18px
-  h4
-    font-size: 17px
 
-  article > h1, article .inner > h1
-    display: none
-
-  article h1.keep
-    font-size: 24px
-    display: block
-    margin-top: .75em
-
-  #container
-    padding: 0px
-
-  body
-    min-width: 0px
-
-  #main article
-    min-height: 0px !important
-
-  #sidebar,
-  .split_pane .sidebar,
-  #nav_primary,
-  header nav.sign_in,
-  #logo
-    display: none !important
-
-  #reader_header
-    display: none !important
-
-  article .nav_items,
-  .search
-    display: none
-
-  #header
-    height: 45px !important
-    border-radius: 0px !important
-    padding: 0px !important
-
-  .publisher.as_table
-    a
-      min-width: 84px !important
-
-  #menu_book_chapter
-    background-image: none
-    background: #202020
-    border: 0px
-    width: 100%
-    padding: 0px
-    position: fixed
-    top: 0px
-    z-index: 1005
-
-  #menu_book_chapter .browse
-    background: none
-    padding: 0px
-
-  #menu_book_chapter .menu_arrow,
-  .version_select .menu_arrow
-    display: none
-
-  .version_select
-    position: fixed
-    top: 0px
-    border-radius: 0px
-    border: 0px
-    padding: 0px
-    background: #202020
-    width: 100% !important
-
-
-  .version_select .browse
-    padding: 0px
-
-  .version_select .scroll,
-  #menu_book_chapter .scroll
-    border: 0px
-    background: none
-    overflow-y: scroll
-
-  .version_select th div,
-  .version_select td div
-    word-wrap: normal
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-    width: 40%
-
-  .version_select td div
-    width: 70%    
-    padding-right: 20px
-
-  .version_select tr
-    width: 100%
-
-  .version_select th
-    float: left
-    width: 33%
-
-    a
-      padding: 10px
-  .version_select td
-    float: left
-    width: 67%
-
-    a
-      display: block
-      width: 100%
-      padding: 10px
-
-  .version_select tr.other_lang,
-  .version_select tr.other_lang ~ tr
-    display: none
-
-  .version_select #see_all
-    display: table-row
-
-  .version_select #see_all a
-    color: $blue
-    font-size: 18px
-    border: 0px
-    background-color: #0C0C0C !important
-    margin-left: 20px
-
-  .version_select #see_all a:hover
-    background-color: #0C0C0C !important
-
-  .dynamic_menu .scroll::-webkit-scrollbar-thumb
-    background: none
-
-  article > form.share .character_count
-    float: left
-    background: #fff
-    color: #a20000
-    +round
-    box-shadow: 0px 1px 0px rgba(#CCC, .5)
-    padding: 2px 5px
-    margin-top: 5px
-    font-size: 11px
-
-  .dynamic_menu tr:hover a,
-  #menu_book li:hover,
-  #menu_chapter li:hover
-    background-color: #1f1f1f !important
-    background-image: none !important
-    text-shadow: none !important
-
-  .dynamic_menu tr:hover th a
-    color: #A6C2CC
-
-  .hide_list
-    display: none
-
-  #sidebar
-    background-image: none
-    background: #EEEDEB
-    border: 0px
-    width: 100%
-    height: 100%
-    padding: 0px
-    position: absolute
-    top: -46px
-    z-index: 1005
-    margin: 0px
-
-  #sidebar.open
-    display: block !important
-
-  .mobile#nav_mobile nav + nav
-    margin-top: -20px
-
-  .mobile #nav_mobile_sign_in a,
-  .mobile #nav_mobile_sign_out a,
-  .mobile #nav_mobile_sign_up a
-    padding-left: 20px
-
-  .mobile #nav_mobile_sign_up
-    background-color: #0077b4
-    border: 0
-
-  .mobile #nav_mobile_sign_out
-    background-color: #993300
-    border: 0
-
-  .mobile #nav_mobile_sign_in
-    background-color: #555
-    border: 0
-
-  #invalid_chapter button
-    display: none
-
-  // input[type="submit"].action_button_green
-    // display: none
+  // -------------Button stuff
 
   input[type="submit"].action_button_green,
   input[type="submit"].action_button_blue,
@@ -268,45 +71,6 @@
     text-shadow: rgba(#000, 0.5) 0 -1px 0
     width: 100%
 
-  .version_select .scroll .loading
-    display: none
-
-  #menu_book_chapter .scroll::-webkit-scrollbar,
-  .version_select .scroll::-webkit-scrollbar,
-  .full_page_form .color,
-  .full_page_form .color_picker_list,
-  #bookmark_update_btn
-    display: none
-
-  article#plan-index .plan_filters,
-  article#plan-index .plan_search
-    display: none
-
-  article#plan-index .split_pane .sidebar
-    display: block !important
-    width: 100%
-    background: transparent
-
-  article#plan-index .split_pane .sidebar dl
-    border: 0
-
-  article#plan-index dd.highlighted a,
-  .split_pane .sidebar dd a:hover
-    background: transparent
-
-  .reading_plan_index h1
-    display: block !important
-    font-size: 32px
-    margin-top: 20px
-
-  .reading_plan_index .action_button_green,
-  .reading_plan_index .action_button_blue
-    width: 90%
-
-  .dynamic_menu.version_select th a
-    min-width: 4em
-
-  // -------------Button stuff
   input[type="submit"]
     background-color: #81a950
     +background-image(none)
@@ -328,11 +92,12 @@
 
   // TODO: delete as many as possible, moving only
   // necessarry SASS into better organized folders/files
+  @import mobile/global_html
   @import mobile/avatars
   @import mobile/ui_elements
   @import mobile/pagination
   @import mobile/tabs
-  //@import mobile/dynamic_menus
+  @import mobile/dynamic_menus
   @import mobile/wrapper_container
   @import mobile/header
   @import mobile/nav_primary

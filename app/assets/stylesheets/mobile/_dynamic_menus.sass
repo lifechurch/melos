@@ -1,76 +1,109 @@
-@media only screen and (max-width: 990px)
-  /* Style adjustments for viewports 990px and under go here
-  // `Dynamic Menus
-  //----------------------------------------------------------------------------------------------------
+#menu_book_chapter
+  background-image: none
+  background: #202020
+  border: 0px
+  width: 100%
+  padding: 0px
+  position: fixed
+  top: 0px
+  z-index: 1005
 
-  .dynamic_menu
-    position: absolute
-    top: 98px
-    font-size: 13px
+#menu_book_chapter .browse
+  background: none
+  padding: 0px
 
-    .scroll
-      background: image-url("menu_scroll.png")
-      border: 1px solid #555
-      border-right: 0
-      overflow-x: hidden
-      overflow-y: scroll
+#menu_book_chapter .menu_arrow,
+.version_select .menu_arrow
+  display: none
 
-    .scroll::-webkit-scrollbar
-      background: #222
-      width: 15px
-
-    .scroll::-webkit-scrollbar-thumb
-      background: #999
-      border: 5px solid #222
-
-    .scroll::-webkit-scrollbar-thumb:hover
-      background: #ccc
-
-
-  .menu_arrow
-    left: 48%
-
-  .dynamic_menu tr:hover a,
-  #menu_book li:hover,
-  #menu_chapter li:hover
-    background-color: #1f1f1f !important
-    background-image: none !important
-    text-shadow: none !important
+.version_select
+  position: fixed
+  top: 0px
+  border-radius: 0px
+  border: 0px
+  padding: 0px
+  background: #202020
+  width: 100% !important
 
 
-  // `Accordion.
-  //----------------------------------------------------------------------------------------------------
+.version_select .browse
+  padding: 0px
 
-  .dynamic_menu .accordion dt
-    cursor: pointer
+.version_select .scroll,
+#menu_book_chapter .scroll
+  border: 0px
+  background: none
+  overflow-y: scroll
 
-  .dynamic_menu .accordion dt:hover
-    background: #2f2f2f
+.version_select th div,
+.version_select td div
+  word-wrap: normal
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  width: 40%
 
-  .dynamic_menu .open_modal dt
-    background: image-url("icon_open_modal.png") no-repeat 95% center #1f1f1f
+.version_select tr
+  width 100%
 
-  .dynamic_menu .open_modal dt:hover
-    background: image-url("icon_open_modal.png") no-repeat 95% center #2e2e2e
+.version_select th
+  min-width: 6em
 
-  #menu_bookmark header ul.reference_tokens
-    background: none
+  a
+    padding: 10px
+.version_select td
+  width: 80%
 
-  #menu_bookmark header ul.reference_tokens > a
-    border: none !important
-
-  #menu_bookmark header span
-    font-weight: bold
-    margin: 0 0 5px 0
+  a
     display: block
-  #menu_bookmark header .close
-    top: 15px
+    width: 100%
+    padding: 10px
 
-  .dynamic_menu.version_select
-    width: 415px
+.version_select tr.other_lang,
+.version_select tr.other_lang ~ tr
+  display: none
 
-  #menu_version td.audio a div
-    background:
-      image: image-url("icon_listen.png")
-      repeat: no-repeat
-      position: 100% -46px
+.version_select #see_all
+  display: table-row
+
+.version_select #see_all a
+  color: $blue
+  font-size: 18px
+  border: 0px
+  background-color: #0C0C0C !important
+  margin-left: 20px
+
+.version_select #see_all a:hover
+  background-color: #0C0C0C !important
+
+.dynamic_menu .scroll::-webkit-scrollbar-thumb
+  background: none
+
+.dynamic_menu tr:hover a,
+#menu_book li:hover,
+#menu_chapter li:hover
+  background-color: #1f1f1f !important
+  background-image: none !important
+  text-shadow: none !important
+
+.dynamic_menu tr:hover th a
+  color: #A6C2CC
+
+.hide_list
+  display: none
+
+#invalid_chapter button
+  display: none
+
+.version_select .scroll .loading
+  display: none
+
+#menu_book_chapter .scroll::-webkit-scrollbar,
+.version_select .scroll::-webkit-scrollbar,
+.full_page_form .color,
+.full_page_form .color_picker_list,
+#bookmark_update_btn
+  display: none
+
+.dynamic_menu.version_select th a
+  min-width: 4em
