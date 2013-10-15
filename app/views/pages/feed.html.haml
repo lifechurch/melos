@@ -177,3 +177,38 @@
               <a href="#" title="Watch this video">The baptism of Jesus Christ</a>
             %p.moment-vid-info-text-credit
               By <a href="#" title="Learn more about this publisher">sumguy</a>
+
+  -# !Friends moment
+
+  .moment
+    .moment-top
+      .moment-dl
+        = image_tag "social-cap-fr.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-dl-text
+          <a href="#" title="Visit this user's profile page">Name</a> is now friends with:
+
+        .moment-friend-container
+          .moment-friend-box
+            %a(href="#")
+              = image_tag "andy_avatar.png", class: "moment-friend-avatar"
+              %span.moment-friend-name
+                Andy Knight
+          .moment-friend-box
+            %a(href="#")
+              = image_tag "andy_avatar.png", class: "moment-friend-avatar"
+              %span.moment-friend-name
+                Gladys Knight
+          .moment-friend-box
+            %a(href="#")
+              = image_tag "andy_avatar.png", class: "moment-friend-avatar"
+              %span.moment-friend-name
+                Once a Knight's enough
+          .moment-friend-box
+            %a(href="#")
+              = image_tag "andy_avatar.png", class: "moment-friend-avatar"
+              %span.moment-friend-name
+                Dark Knight
+        %a.moment-friend-seemore(href="#")
+          +999 more friends
