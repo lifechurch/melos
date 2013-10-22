@@ -17,9 +17,6 @@
           %dd{class: params[:label] == nil ? "highlighted" : ""}
             %b
               %a{href: user_bookmarks_path(@user)}= t('bookmarks.all')
-          - @labels.each do |l|
-            %dd{class: params[:label] == l.label ? "highlighted" : ""}
-              = link_to "#{l.label} (#{l.total})", user_bookmarks_path(@user, label: l.label)
       .content
         .profile-resource-list
           = render partial: "bookmarks/list_item", collection: @bookmarks, locals: {display: :icon}

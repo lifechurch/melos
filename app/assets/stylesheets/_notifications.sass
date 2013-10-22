@@ -1,0 +1,157 @@
+// ----------Notifications page
+
+.notifications
+
+  .activity-date
+    font-size: 1em !important
+    font-weight: bold
+    margin-bottom: 5px
+    padding-bottom: 5px
+
+  .activity-timestamp
+    display: block
+    float: right
+    color: #ccc
+
+.notifications-list
+  border-top: 1px solid #ccc
+
+.notifications-item
+  p
+    margin-bottom: 0
+    line-height: 28px
+    border-bottom: 1px solid #ccc
+    padding: 5px 10px
+
+
+
+// `Header > Friend Requests & Notifications
+//----------------------------------------------------------------------------------------------------
+
+#header .friend-requests-btn,
+#header .notifications-btn
+  background: image-url("header-sprite.png") no-repeat
+  display: block
+  float: left
+  width: 40px
+  height: 40px
+  margin: 5px 0px 5px 25px
+  text-indent: -9999px
+
+#header .friend-requests-btn
+  background-position: 0px 9px
+
+#header .notifications-btn
+  background-position: 0px -55px
+  margin-left: 10px
+
+#header
+  .header-popover
+    position: absolute
+    top: 48px
+    left: 40px
+    min-width: 330px
+    max-width: 600px
+    border: 1px solid #d4d4d4
+    +border-radius(5px)
+    background: #fff
+    display: none
+    opacity: 0
+
+    ul
+      margin-bottom: 0px
+
+    .text-link
+      color: #0084c8
+      font-weight: bold
+      font-size: 12px
+      margin: 0px
+      padding: 0px
+      display: inline
+      line-height: 12px
+
+    .text-link.wide
+      width: 100%
+      border-top: 1px solid #ceced0
+      background: #eeedeb
+      text-align: center
+      display: block
+      padding: 12px 0px
+
+    h4
+      font-size: 12px
+      color: #505050
+      float: left
+      padding-left: 10px
+      line-height: 12px
+      margin-bottom: 5px
+
+    .find-friends
+      float: right
+      padding-right: 10px
+
+    .arrow
+      background: image-url("popover-arrow.png") no-repeat
+      position: relative
+      top: -8px
+      left: 160px
+      display: block
+      width: 19px
+      height: 9px
+
+    .list-item
+      height: 80px
+      border-top: 1px solid #d4d4d4
+      padding: 5px 10px 10px
+
+      .item-content
+        float: left
+        min-width: 280px
+
+        img
+          height: 48px
+          width: 48px
+          float: left
+          display: block
+          margin: 10px 10px 10px 0px
+          border-radius: 28px
+          border: 3px solid #ddd
+
+        p
+          line-height: 0px
+          margin: -8px 0px 0px
+
+        .timestamp
+          color: #d4d4d4
+          padding: 5px 10px 5px 22px
+          background: image-url("timestamp-icon.png") no-repeat left center
+          display: block
+          float: left
+          line-height: 20px
+          margin-top: 10px
+
+      .item-actions
+        float: right
+        min-width: 50px
+        margin-left: 20px
+
+        .action_button_green
+          color: #fff
+
+        .action_button_green,
+        .action_button_grey
+          padding: 4px 0px
+          text-align: center
+          font-size: 13px
+          margin: 0px
+          float: left
+          margin-top: 10px
+          width: 100%
+
+
+  .header-popover.notifications
+    left: 80px
+
+    .arrow
+      left: 169px
+      

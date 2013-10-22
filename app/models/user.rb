@@ -4,14 +4,17 @@ class User < YV::Resource
   # include Model
 
   attribute :id
+  attribute :name
   attribute :username
+  attribute :first_name
+  attribute :last_name
+
   attribute :password
   attribute :password_confirm
   attribute :email
   attribute :agree
   attribute :verified
-  attribute :first_name
-  attribute :last_name
+  
   attribute :location
   attribute :im_type
   attribute :im_username
@@ -32,6 +35,8 @@ class User < YV::Resource
   attribute :last_login_dt
   attribute :start_dt
 
+  attribute :avatars
+
 
 
   class << self
@@ -42,7 +47,10 @@ class User < YV::Resource
     def register(opts = {})
       opts = {email: "", username: "", password: "", secure: true, verified: false, agree: false}.merge!(opts.symbolize_keys)
       opts[:agree] = true if opts[:agree]
-      opts["notification_settings[newsletter][email]"] = true
+      opts[:token] = Digest::MD5.hexdigest "#{opts[:username]}.Yv6-#{opts[:password]}"
+      opts[:notification_settings] = {
+        newsletter: {email: true}
+      }
 
       data, errs = post("users/create", opts)
       results = if errs.blank?
@@ -146,13 +154,13 @@ class User < YV::Resource
   end
 
   def initialize(data = {})
-    data["agree"] = (data["agree"] == "1") unless data.blank?
-    @attributes = data.merge({
-      "notification_settings[newsletter][email]" => true,
-      secure: true})
-    @associations = {}
-
-    after_build
+    super(
+      data.merge(
+        notification_settings:{ newsletter:{ email: true }},
+        secure: true,
+        agree:  true
+      )
+    )
   end
 
   # instance method for updating email address
@@ -224,12 +232,6 @@ class User < YV::Resource
       after_destroy
     end
     response
-  end
-
-
-  def name
-    return nil unless first_name && last_name
-    "#{first_name} #{last_name}"
   end
 
   def zip_code
@@ -343,10 +345,12 @@ class User < YV::Resource
   end
 
 
-
   def devices
     Device.for_user(self.auth.user_id, auth: self.auth)
   end
+
+
+
 
   def connections
     connections = {}

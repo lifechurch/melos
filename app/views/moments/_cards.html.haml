@@ -1,0 +1,14 @@
+- unless moments.blank?
+  - moments.each do |moment|
+    = render partial: moment.moment_partial_path, locals: {moment: moment}
+
+- if moments.count > 1
+
+  :javascript
+    $(document).ready(function() {
+      $(".social-feed .moment").wookmark({
+        autoResize:   true,
+        offset:       15,
+        container:    $(".social-feed")
+      });
+    });

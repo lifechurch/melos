@@ -1,22 +1,37 @@
-class PlanCategory
+class PlanCategory < YV::Resource
+  
+  api_response_mapper YV::API::Mapper::PlanCategory
 
-  attr_reader :slug
+  attribute :slug
+  attribute :label #TODO localize
+  attribute :parent
+  attribute :children
+  attribute :breadcrumbs
 
-  def name
-      YV::Resource.i18nize(@json.labels)
+  class << self
+
+    def resource_path
+      "search/reading_plans"
+    end
+
+    def find(category_slug=nil, opts={})
+      #we only need 1st page to get all categories in the response
+      #the params[:category] param will filter the query to only children of that category
+      opts[:page]       = 1
+      opts[:category]   = category_slug
+      opts[:cache_for]  = YV::Caching.a_long_time
+      opts[:query]      = '*'
+      super(nil,opts)
+    end
+
+  end # class methods ----------------------------------------------------------------------------------------------
+
+  def count
+    children.nil? ? 0 : children.count
   end
 
-    # {"category"=>"devotional",
-    #   "labels"=>
-    #    {"default"=>"Devotional",
-    #     "en"=>"Devotional",
-    #     "cs"=>"Rozjímání",
-    #     "de"=>"Andacht",
-    #     "es"=>"Devocional",
-    #     "fr"=>"Méditation quotidienne" ...
-  def initialize(json_category_mash)
-    @json = json_category_mash
-    @slug = json_category_mash.try(:category) || ""
+  def length
+    count
   end
 
 end

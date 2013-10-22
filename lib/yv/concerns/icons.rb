@@ -58,6 +58,7 @@ module YV
       end
 
       def process_icons(data)
+        return if data.base.nil? || data.base.images.nil? || data.base.images.icon.nil?
         ic_data = data.base.images.icon
         self.icons = {}
         self.icons[:action_url] = ic_data.action_url

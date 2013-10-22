@@ -3,10 +3,14 @@
 
 class NotificationSettings < YV::Resource
 
+
+  api_response_mapper YV::API::Mapper::NotificationSettings
+
   attribute :token
   attribute :user_id
-  attribute :language_tag
   attribute :notification_settings
+  attribute :language_tag
+  
 
   attr_accessor :badges
   attr_accessor :follower
@@ -27,7 +31,7 @@ class NotificationSettings < YV::Resource
     end
 
     def create_path
-      "notifications/update_settings"
+      update_path
     end
 
     # NotificationSettings#find
@@ -35,7 +39,7 @@ class NotificationSettings < YV::Resource
 
     # API Method
     # Retrieve notification settings for a user
-    # returns a YV::API::Results decorator forr NotificationSettings instance
+    # returns a YV::API::Results decorator for NotificationSettings instance
 
     # valid options
     # - auth: user.auth to scope call to authed user
@@ -81,22 +85,12 @@ class NotificationSettings < YV::Resource
     true
   end
 
-  def after_build
-    notification_settings.each { |k, v| self.send("#{k}=".to_sym, v["email"]) if self.respond_to? "#{k}=".to_sym}
-  end
-  
-  def user
-    results = User.find(self.user_id)
-    return results.data if results.valid?
-  end
-
-
-  def before_save
-    nts = ["badges", "follower", "newsletter", "note_like", "reading_plans", "partners"]
-    hash = {}
-
-    nts.each { |a| hash[a] = {"email" => self.send(a.to_sym).to_i == 1} }
-    @attributes['notification_settings'] = hash
-  end
+  # def before_save
+  #   nts = ["badges", "follower", "newsletter", "note_like", "reading_plans", "partners"]
+  #   hash = {}
+# 
+  #   nts.each { |a| hash[a] = {"email" => self.send(a.to_sym).to_i == 1} }
+  #   @attributes['notification_settings'] = hash
+  # end
 
 end

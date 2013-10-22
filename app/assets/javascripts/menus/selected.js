@@ -2,9 +2,8 @@
 function SelectedMenu( opts ) {
 
   this.menu                = $(opts.menu);
-  this.mobile_menu           = $(opts.mobile_menu);
-  this.trigger               = $(opts.trigger);
-  this.counter             = $('#verses_selected_count');
+  this.mobile_menu         = $(opts.mobile_menu);
+  this.trigger             = $(opts.trigger);
   this.paneList            = this.menu.find('dl');
   this.accountPane         = this.paneList.find('#need-account');
   this.selected_count      = 0;
@@ -37,8 +36,6 @@ SelectedMenu.prototype = {
 
   setTotal : function(total) {
     this.selected_count = total;
-    this.counter.html(total);
-
     (total > 0) ? this.open() : this.close()
   },
 
@@ -63,13 +60,10 @@ SelectedMenu.prototype = {
 
   setSelectedRefs : function( refs ) {
     this.selected_references = refs;
+    this.highlight_pane.updateForm({references: this.selected_references});
+    this.mobile_highlight_pane.updateForm({references: this.selected_references});
     this.bookmark_pane.updateForm({references: this.selected_references});
     this.note_pane.updateForm({references: reader.getSelectedData().verse_usfms});
-  },
-
-  updateHighlights : function( selected_verses ) {
-    this.highlight_pane.updateForm({ selected_verses : selected_verses });
-    this.mobile_highlight_pane.updateForm({ selected_verses : selected_verses });
   },
 
   updateLink : function( link ) {

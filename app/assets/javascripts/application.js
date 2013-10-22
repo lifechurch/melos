@@ -1,6 +1,13 @@
 //= require jquery
 //= require jquery_ujs
+//= require ./moments/verse
+//= require ./moments/comment_form
+//= require ./menus/base
+//= require ./menus/notifications
+//= require ./menus/friend_requests
+//= require ./menus/menu_group
 //= require_self
+//= require popper
 //= require_tree ./lib/
 //= require_tree ./menus/
 //= require_tree ./modals/

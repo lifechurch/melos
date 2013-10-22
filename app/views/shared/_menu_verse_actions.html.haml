@@ -5,10 +5,7 @@
 #menu_verse_actions.clearfix
   .references
     %ul.reference_tokens
-      %li
-        %a{href:"#"}= 'Luke 2:15'
-      %li
-        %a{href:"#"}= 'John 4:25'
+
   %dl.verses_selected
 
     %dt.highlight
@@ -17,13 +14,14 @@
     %dd#highlight-pane.auth
       .pane
         %form{action: (is_authed ? highlights_path : sign_up_path), method: authed_form_method }
-          %input{type: "hidden", name:"authenticity_token", value: form_authenticity_token }
-
           - unless is_authed
             %input{type: 'hidden', name: 'redirect', value: "/bible"}
             %input{type: 'hidden', name: 'source', value: "highlight"}
-          %input.references{name: "highlight[references]", type: "hidden"}
-          %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
+
+          %input{type: "hidden", name:"authenticity_token", value: form_authenticity_token }
+          %input{type: "hidden", name: "highlight[version_id]", value: presenter.version.id }
+          %input.references{type: "hidden", name: "highlight[usfm_references]"}          
+          %input.existing_ids{type: "hidden", name: "highlight[existing_ids]"}
           %div.color_picker_list
             %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
             %button.color.color_picker
@@ -51,11 +49,12 @@
               = t("bookmarks.labels")
             %br
             %input{type:'text',id: 'bookmark_labels',name:'bookmark[labels]',placeholder: t("bookmarks.labels placeholder")}
-            %input.verses_selected_input{name: "bookmark[references]", type: "hidden"}
             %input{type: "hidden", name: "bookmark[version_id]", value: presenter.version.id }
+            %input.verses_selected_input{name: "bookmark[usfm_references]", type: "hidden"}
           %div.clear
           %p
-            %button{type:"submit",name:"bookmark[submit]",value:"submit"}= t('bookmarks.save')
+            %button{type:"submit",name:"bookmark[submit]",value:"submit"}
+              = t('bookmarks.save')
           %div.clear{style:"padding: 0 0 15px 0"}
 
     %dt.share
@@ -102,7 +101,7 @@
         - note = presenter.note
         = form_for note, url: (is_authed ? notes_path : sign_up_path), method: authed_form_method do |f|
           = f.hidden_field :version_id
-          = f.hidden_field :references, class: "verses_selected_input"
+          = f.hidden_field :usfm_references, class: "verses_selected_input"
           - unless is_authed
             %input{type: 'hidden', name: 'redirect', value: "/bible"}
             %input{type: 'hidden', name: 'source', value: "note"}
@@ -121,8 +120,7 @@
 
     %dt.clear-selected
       = t('ref.clear verses')
-      %sup#verses_selected_count
-        0
+
     - unless current_auth
       %dt.account.hide
       %dd#need-account

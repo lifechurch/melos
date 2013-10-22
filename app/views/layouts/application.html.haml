@@ -8,7 +8,9 @@
   container_class_str = container_classes.join(" ")
 
   # Used for primary / mobile navs
+
   is_authed         = current_auth ? true : false
+  is_home_url       = current_page?("/home")
   is_bible_url      = controller.controller_name == "references" && controller.action_name == "show"
   is_videos_url     = controller_name == "videos"
   is_bookmarks_url  = controller_name == "bookmarks"
@@ -44,11 +46,11 @@
             #nav_primary{:role => "navigation"}
               %nav
                 %ul
-                  %li#nav_primary_home{class: highlight.call(is_bible_url) }
-                    %a.icon{href: '/bible'}
+                  %li#nav_primary_home{class: highlight.call(is_home_url) }
+                    %a.icon{href: '/home'}
                       %span &nbsp;
-                    %a.tooltip{href: "/bible", style:"display: none;"}
-                      %span= t('bible')
+                    %a.tooltip{href: "/home", style:"display: none;"}
+                      %span Home
 
                   %li#nav_primary_bible{class: highlight.call(is_bible_url) }
                     %a.icon{href: '/bible'}
@@ -72,14 +74,14 @@
 
                   /
                     %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
-                      - bookmark_href = is_authed ? user_bookmarks_path(current_auth.username) : sign_up_path(source: "bookmark")
+                      - bookmark_href = is_authed ? bookmarks_user_path(current_auth.username) : sign_up_path(source: "bookmark")
                       %a.icon{href: bookmark_href}
                         %span &nbsp;
                       %a.tooltip{href: bookmark_href, style:"display: none;"}
                         %span= t('bookmarks.title')
 
                     %li#nav_primary_notes{class: highlight.call(is_notes_url)}
-                      - notes_href = is_authed ? user_notes_path(current_auth.username) : notes_path
+                      - notes_href = is_authed ? notes_user_path(current_auth.username) : notes_path
                       %a.icon{href: notes_href}
                         %span &nbsp;
                       %a.tooltip{href: notes_href, style: "display: none;"}

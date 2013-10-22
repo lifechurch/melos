@@ -1,0 +1,6 @@
+- @sidebar = false
+
+%article.social-feed
+  = render partial: "moments/daily_verse"
+
+  = render partial: "moments/cards", locals: {moments: @moments}

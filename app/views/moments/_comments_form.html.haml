@@ -1,0 +1,8 @@
+= form_tag(comments_url, method: "post") do
+  = hidden_field_tag "comment[moment_id]", moment.id
+  
+  %span.moment-comments-input
+    %span.moment-comments-input-avatar
+      = image_tag current_avatar
+    
+    = text_area_tag "comment[content]", nil, class: "moment-comments-textarea"

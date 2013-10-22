@@ -1,13 +1,20 @@
 // !Adjusting the article tag on the social pages
+// !TODO refactor article.social-feed <-> div.social-feed
+// !we need a container that can contain moment cards that aren't tied to article.social-feed
+// !as user profile already defines an article where we can't easily get to it.
 
 #main article.social-feed,
+#main div.social-feed,
 #main article.social-detail
   background-color: transparent
   border: 0
   padding: 0
   box-shadow: none
-  overflow: hidden
   padding-left: 5px
+
+#main article.social-feed,
+#main div.social-feed
+  width: 905px
 
 // !-------------------- Feed -------------------------
 
@@ -16,7 +23,6 @@
 .moment
   margin: 0 15px 15px 0
   width: 445px
-  float: left
 
 .moment:nth-child(2n)
   margin-right: 0
@@ -26,11 +32,20 @@
 
 .moment-btm
 
+
+
+.moment-title-link
+
+  b
+    display: block
+    color: #333
+
+
 // !Share comment like etc.
 
 .moment-actions
   overflow: hidden
-  width: 445px
+  
   background: #fff
   +border-radius(0 0 4px 4px)
   margin-bottom: 1px
@@ -64,6 +79,17 @@
   overflow: hidden
   height: 36px
 
+
+.moment-actions-authed
+  display: block
+  float: right
+  padding-right: 20px
+  font-size: 12px
+  line-height: 34px
+
+.moment-actions-authed a
+  color: #777
+
 // !Specific stuff for each action
 
 .moment-actions-share
@@ -84,7 +110,6 @@
 .moment-actions-time
   padding: 0 0 0 35px
   font-size: 11px
-  width: 250px
   height: 36px
   line-height: 34px
   background: image-url("social-actions-sprite.png") no-repeat 15px -313px
@@ -110,16 +135,16 @@
 
 .moment-comments-list-avatar,
 .moment-comments-input-avatar
-  +border-radius(38px)
+  +border-radius(24px)
   padding: 3px
   box-shadow: 0 1px 2px #bbb
   float: left
   background-color: #fff
 
   img
-    +border-radius(32px)
-    width: 32px
-    height: 32px
+    +border-radius(24px)
+    width: 24px
+    height: 24px
 
 // !Specific comments code
 
@@ -162,7 +187,7 @@
   overflow: hidden
   padding: 10px
 
-.moment-comments-input-text
+.moment-comments-textarea
   float: left
   width: 315px
   margin-left: 10px
@@ -220,6 +245,22 @@
   padding: 5px 0 0 10px
   line-height: 1.4em
   margin-bottom: 0
+
+.moment-dl-text
+  b
+    display: block
+
+
+// Moments that have verses (currently bookmark and highlight)
+
+.moment-verse
+  font: 18px "times new roman", times, serif
+  margin: 4px 0
+  padding: 10px 15px
+  clear: both
+
+  .verse > .label
+    display: none !important
 
 // !Verse of the day moment
 
@@ -286,6 +327,7 @@
   clear: both
   display: block
   margin-left: 65px
+  margin-top: 70px
   background: #FEF7DC
   border: 1px solid #F5E5B0
   border-bottom: 0
@@ -357,6 +399,7 @@
 // !Friends moment
 
 .moment-friend-container
+  position: relative
   overflow: hidden
   clear: both
 
@@ -364,9 +407,10 @@
   width: 50%
   text-align: center
   float: left
-  margin-bottom: 30px
+  margin-bottom: 10px
 
 .moment-friend-avatar
+  box-shadow: 0 1px 2px #bbb
   +border-radius(128px)
   position: relative
   z-index: 1
@@ -410,7 +454,7 @@
     width: 90%
 
   .moment-comments-list-text,
-  .moment-comments-input-text
+  .moment-comments-textarea
     width: 465px
 
   // !Bookmark, reading plan, download, and group moments -- they share the same layout
@@ -427,7 +471,6 @@
 // !Sidebar comment input
 
 .social-sidebar
-  position: fixed
   width: 299px
 
 .social-sidebar-input

@@ -252,11 +252,15 @@ Reader.prototype = {
       var thiss = this;
       var selected = this.selected;
 
+      var usfms = [];
+
       this.selected.verses.each(function() {
         var verse   = $(this);
         var _usfms  = thiss.parseVerseUsfms(verse);
         var _vid    = verse.closest('.version').data('vid');
         var _nums   = thiss.parseVerseNums(verse);
+
+        usfms.push(_usfms)
 
         // aggregate all selected verse usfms and params
         $(_usfms).each( function(i, usfm) {
@@ -433,13 +437,11 @@ Reader.prototype = {
   updateMenus : function() {
     // Set total selected verse count
       var total = this.selected.verse_usfms.length;
+      
       this.selected_menu.setTotal(total);
 
-    // After parsing, update the highlights pane.
-      this.selected_menu.updateHighlights( this.selected.verse_params );
-
     // Set selected references
-      this.selected_menu.setSelectedRefs( this.selected.verse_usfm_ranges );
+      this.selected_menu.setSelectedRefs( this.selected.verse_usfms );
   },
 
   generateLinks : function( ) {

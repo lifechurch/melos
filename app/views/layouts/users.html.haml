@@ -11,7 +11,7 @@
 
   %section.top_section
     .profile-hdr
-      %img.avatar_huge{src: @user.user_avatar_url["px_128x128"]}
+      %img.avatar_huge{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
 
       - if @me
         %form{action: edit_user_path(@user)}
@@ -34,14 +34,20 @@
           = @user.bio
 
     %ul.header_tabs
-      %li.notes{class: ("highlighted" if @selected == :notes)}
-        %a{href: user_notes_path(@user)}
+      %li.profile
+        %a{href: user_path(@user)}
+          %span Profile
+      %li.notes
+        %a{href: notes_user_path(@user)}
           %span= t('notes title')
-      %li.bookmarks{class: ("highlighted" if @selected == :bookmarks)}
-        %a{href: user_bookmarks_path(@user)}
+      %li.bookmarks
+        %a{href: bookmarks_user_path(@user)}
           %span= t('bookmarks.title')
-      %li.badges{class: ("highlighted" if @selected == :badges)}
-        %a{href: user_badges_path(@user)}
+      %li.highlights
+        %a{href: highlights_user_path(@user)}
+          %span Highlights
+      %li.badges
+        %a{href: badges_user_path(@user)}
           %span= t('badges title')
 
   %article.profile

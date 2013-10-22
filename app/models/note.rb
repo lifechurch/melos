@@ -10,6 +10,8 @@
 
 class Note < YV::Resource
 
+  api_response_mapper YV::API::Mapper::Note
+
   include YV::Concerns::Icons
   include YV::Concerns::Avatars
   include YV::Concerns::Actionable
@@ -18,27 +20,46 @@ class Note < YV::Resource
 
   attr_accessor :reference_list
 
+  attribute :moment_title
+
   attribute :id
   attribute :user_id
-  attribute :reference
-  attribute :references
+  attribute :kind_id
+  attribute :kind_color
+  attribute :color
   attribute :title
   attribute :content
+  attribute :user_status
+  attribute :references
+  attribute :avatars
+  attribute :icons
+  attribute :created_dt
+  attribute :updated_dt
+
+
+  attribute :comments
+  attribute :commenting
+  attribute :comments_count
+  
   attribute :content_text
   attribute :content_html
   attribute :published
-  attribute :user_status
+  
   attribute :system_status
   attribute :share_connections
-  attribute :version
-  attribute :version_id
+  
   attribute :user_avatar_url
   attribute :username
   attribute :highlight_color
+  
+  attribute :reference_list
+
+  # Virtual attributes used for form submissions
+  attribute :version_id
+  attribute :usfm_references
 
 
   class << self
-
 
     # Override paths to make calls to 3.1 API for Moments
       def list_path
@@ -51,6 +72,14 @@ class Note < YV::Resource
 
       def delete_path
         "moments/delete"
+      end
+
+      def create_path
+        "moments/create"
+      end
+
+      def update_path
+        "moments/update"
       end
 
     # Override all method to add note kind to options
@@ -179,66 +208,27 @@ class Note < YV::Resource
 
   # Custom persistence for Moments API 3.1
   def persist(path)
-    return persist_moment(attributes.merge(kind: "note"))
+    return persist_moment(path, attributes.merge(kind: "note").slice(:id,:auth,:kind,:title,:content,:references,:user_status,:created_dt))
   end
-
-  # See included YV::Concerns
-  def build(results)
-    process_icons(results)
-    process_avatars(results)
-    process_comments(results)
-    process_actionable(results)
-    process_identifiable(results)
-  end
-
-  def user
-    User.find( self.user_id )
-  end
-
 
   def before_save
+    set_created_dt
+  end
 
-    if self.reference.nil? || self.reference.try(:empty?)
-      self.reference_list = ReferenceList.new(nil)
-    else
-      self.reference_list = self.reference.class == ReferenceList ? self.reference : ReferenceList.new(self.reference)
-      self.version = self.reference_list.first[:version] if self.reference_list.first[:version]
-    end
+  def build_references
+    return unless usfm_references and version_id
+    usfms = usfm_references.split("+")
+    self.references = usfms.collect {|usfm| {usfm: [usfm], version_id: version_id } }
     
-    self.version_id = Version.id_from_param self.version if self.version
-
-    # self.version_id = self.version.class == Version ? self.version.id : YV::Conversions::usfm_version(self.version).id
-    self.references = self.reference_list.to_flat_usfm unless self.reference_list.empty?
+    #refererences = [
+    #  {usfm:["GEN.1.1","GEN.1.2"], version_id: 1}
+    #]
   end
 
-  def after_update(results)
-    build(results)
-  end
-
-  def after_save(response)
-    build(response)
-
-    if response
-      # TODO: this needed?
-      # To map to API 2.x style to minimize changes
-      self.content_html = response.content.try :html
-      self.content = response.content.try :text
-
-      self.reference = ReferenceList.new(response.references, Version.find(response.version_id)) if response.references
-      self.reference_list = self.reference
-      self.version = Version.find(response.version_id) if response.version_id
-    end
-  end
-
-  def after_build
+  def build_content
     # self.content = self.content_text unless self.content_text.blank?
     self.content = self.content_html if self.content_html
-    unless self.references.blank?
-      self.reference_list = ReferenceList.new(self.references, self.version_id)
-    else
-      self.reference_list = ReferenceList.new(nil)
-    end
-    self.version = Version.find(self.version_id) if self.version_id
+
     # To map to API 2.x style to minimize changes
     unless self.content.is_a? String
       self.content_html = self.content.try :html
@@ -246,7 +236,25 @@ class Note < YV::Resource
     end
   end
 
+  def user
+    User.find( self.user_id )
+  end
+
+  def after_build
+    build_content
+    build_references
+  end
+
   def can_share?
     return (self.system_status == "new" || self.system_status == "approved") && self.user_status == "public"
+  end
+
+
+  def moment_partial_path
+    "moments/note"
+  end
+
+  def to_path
+    "/notes/#{id}"
   end
 end

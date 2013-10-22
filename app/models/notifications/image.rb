@@ -15,9 +15,4 @@ module Notifications
     end
   end
 
-  class Avatar < Image
-  end
-
-  class Icon < Image
-  end
 end

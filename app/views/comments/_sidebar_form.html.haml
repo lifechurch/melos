@@ -1,0 +1,12 @@
+.widget.social-sidebar
+  %h3.hd
+    Post a comment
+
+  = form_tag(comments_url, method: "post") do
+    = hidden_field_tag "comment[moment_id]", moment.id
+
+    .social-sidebar-input
+      = text_area_tag "comment[content]", nil
+      %button.action_button_green
+        Post
+          

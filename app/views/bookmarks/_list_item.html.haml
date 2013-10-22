@@ -7,38 +7,43 @@
       - if has_title
         %h3.moment-bm-title
           = list_item.title
-        -# %span{class: (is_dark?(list_item.highlight_color) ? "dark_bg highlighted" : "highlighted" if list_item.highlight_color), style: ("background-color: ##{list_item.highlight_color}" if list_item.highlight_color)}=
+          
       %ul.moment-bm-references
-        - list_item.reference_list.each do |r|
-          %li
-            - link = link_to(r,bible_path(r), class: "moment-bm-references-link")
-            - if has_title # display the link as an h4 if we've displayed an h3 title, otherwise display verse as h3
-              %h4.moment-bm-references-h4title
-                = link
-            - else
-              %h3.moment-bm-references-h3title
-                = link
-            .moment-bm-references-reader.moment-vod-verse{"data-setting-font" => @font, 'data-setting-size' => @size}
-              = r.content.html_safe
 
+      
       - if list_item.labels.present?
         %p.moment-bm-labels
-          /
-            -# Hiding the label text
-            %strong.moment-bm-labels-text
-              = t('bookmarks.labels label')
-          - list_item.labels.split(", ").each do |l|
-            %a{href: user_bookmarks_path(@user, label: l.chomp), class: "moment-bm-labels-link"}= l
+          - list_item.labels.each do |l|
+            %a{href: user_bookmarks_path(@user, label: l.chomp), class: "moment-bm-labels-link"}
+              = l
+            
 
-      - if current_user_is?(@user)
-        .moment-bm-controls
-          %span.moment-bm-controls-date
-            = t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
-          %span.moment-bm-controls-hidden
-            = link_to(t('bookmarks.edit'), edit_bookmark_path(list_item.id))
-          %span.moment-bm-controls-confirm.hidden
-            = link_to(t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
+  -# share controls, dates, and comments
+  .moment-btm
+    .moment-actions
+      %span.moment-actions-share
+        <a href="#" title="Share this with friends or family">Share</a>
 
-    -# share controls, dates, and comments
+      %span.moment-actions-like
+        <a href="#" title="Like this">Like</a>
+
+      %span.moment-actions-time
+        = t('created ago', time_ago: time_ago_in_words(list_item.created_dt))
+
+      %span.moment-actions-authed
+        %span.moment-actions-edit
+          = link_to("Edit" || t('bookmarks.edit'), edit_bookmark_path(list_item.id))
+        %span.moment-actions-delete.confirm
+          = link_to("Delete" || t('bookmarks.delete'), bookmark_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), method: :delete)
+
+    .moment-comments
+      %span.moment-comments-likes
+        <a href="#" title="Visit this user's profile page">Andy Knight</a> and <a href="#">12 others</a> like this.
+      %ul.moment-comments-list
+        %li.moment-comments-list-comment
+          %span.moment-comments-list-avatar
+            = image_tag "andy_avatar.png"
+          %p.moment-comments-list-text
+            <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be. Every stop I make, I make a new friend. Can?t stay for long, just turn around and I?m gone again.
 
     -# Britt will add the right code here...

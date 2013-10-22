@@ -45,7 +45,7 @@ module ApplicationHelper
 
   def bible_path(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
-    ver = opts[:version_id] || opts[:version] || ref.version
+    ver = opts.delete(:version)
     reference_path(ver, ref, opts)
   end
 

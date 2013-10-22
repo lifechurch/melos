@@ -1,8 +1,9 @@
 // Highlight Pane found in Selected Verses dynamic menu
 
 function HighlightPane( el ) {
-  this.el     = $(el);
-  this.form   = this.el.find("form");
+  this.el               = $(el);
+  this.form             = this.el.find("form");
+  this.references_field = this.form.find('input[name="highlight[usfm_references]"]');
   this.init();
 }
 
@@ -37,14 +38,10 @@ HighlightPane.prototype = {
 
   updateForm : function( params ) {
 
-    var selected_verses = params.selected_verses;
+    var refs = params.references || [];
+    this.references_field.val(refs.join("+")); // populate hidden field
+
     var highlights = this.getHighlightedVerses();
-
-    // Populate references field
-    if(selected_verses.length) {
-      this.form.find('input[name="highlight[references]"]').val(selected_verses.join(','));
-    }
-
     // Populate existing_ids field
     if(highlights.length) {
       existing_ids = $.makeArray( this.getHighlightedVerses().map( function(){ return $(this).data('highlight-ids'); }));

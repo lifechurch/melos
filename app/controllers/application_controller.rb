@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
+  
   helper_method :current_user_is?, :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_site
@@ -9,8 +10,6 @@ class ApplicationController < ActionController::Base
   before_filter :check_facebook_cookie
   before_filter :tend_caches
   before_filter :set_default_sidebar
-
-  original_locales = nil
 
   unless Rails.application.config.consider_all_requests_local
     rescue_from StandardError, with: :generic_error
@@ -32,7 +31,6 @@ class ApplicationController < ActionController::Base
 
   # Set locale
   def set_locale
-
     # grab available locales as array of strings and compare against strings.
     available_locales = I18n.available_locales.map {|l| l.to_s}
 
@@ -61,16 +59,10 @@ class ApplicationController < ActionController::Base
     return redirect_to params.merge!(locale: "") if from_param && visitor_locale == I18n.default_locale
     return redirect_to params.merge!(locale: visitor_locale) if !from_param && visitor_locale != I18n.default_locale
 
-    I18n.locale = visitor_locale
+    final_locales = @site.available_locales.nil? ? I18n.available_locales : @site.available_locales
 
-    if !@site.available_locales.nil?
-        if @original_locales.nil?
-            @original_locales = I18n.available_locales
-        end
-        I18n.available_locales = @site.available_locales
-    else
-        I18n.available_locales = @original_locales
-    end
+    FastGettext.available_locales = I18n.available_locales  = final_locales
+    FastGettext.locale = I18n.locale                        = visitor_locale
   end
 
 

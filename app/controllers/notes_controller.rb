@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
-  before_filter :set_nav
+
+
   before_filter :set_sidebar, :only => [:index]
 
   def index
@@ -38,63 +39,55 @@ class NotesController < ApplicationController
 
 
   def new
-    if current_auth
-      @note = Note.new(params[:note])
-    else
-      redirect_to notes_path
-    end
+    redirect_to(notes_path) unless current_auth
+    @note = Note.new(params[:note])
   end
 
+
   def edit
-    if current_auth
-      @note = Note.find(params[:id], auth: current_auth)
-    else
-      redirect_to notes_path
-    end
+    redirect_to(notes_path) unless current_auth
+    @note = Note.find(params[:id], auth: current_auth)
   end
+
 
   def create
     @note = Note.new(params[:note])
     @note.auth = current_auth
 
-    if @note.save
-      redirect_to note_path(@note.id)
-    else
-      render action: "new"
-    end
+    result = @note.save
+    result.valid? ? redirect_to(note_path(@note.id)) : render(action: "new")
   end
+
+
 
   def update
-    @note = Note.find(params[:id], :auth => current_auth)
-    @note.update(params[:note]) ? redirect_to(note_path(@note)) : render(action: "edit")
+    @note = Note.find(params[:id], auth: current_auth)
+    @note.auth = current_auth
+    result = @note.update(params[:note])
+    result.valid? ? redirect_to(note_path(@note.id)) : render(action: "edit")
   end
 
-  def destroy
-    @note = Note.find(params[:id], :auth => current_auth)
 
-    if @note.destroy
-      redirect_to user_notes_path(current_auth.username), notice: t("notes.successfully deleted")
+
+  def destroy
+    @note = Note.find(params[:id], auth: current_auth)
+    @note.auth = current_auth
+
+    results = @note.destroy
+    if results.valid?
+       redirect_to user_notes_path(current_auth.username), notice: t("notes.successfully deleted")
     else
-      render action: "index"
+       render action: "index"
     end
   end
 
-  private
 
-  def set_nav
-    @nav = :notes
-  end
+
+  private
 
   # Set sidebar values for the Likes cell
   def set_sidebar
     @user_id = current_user.id if current_user
-  end
-
-  # Setup required in order to show update since form will post
-  # strings instead of the reference / version objects (better way?)
-  def set_for_form(note)
-    note.reference = Model::hash_to_osis_noversion(note.references)
-    note.version = note.version.id
   end
 
 end

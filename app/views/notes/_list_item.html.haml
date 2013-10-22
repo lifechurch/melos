@@ -24,11 +24,30 @@
             %p.references
               = link_to_references(list_item.reference_list)
 
-          .edit_controls
-            - if @me
-              %span.date
-                = t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
-              %span.hidden
-                = link_to(t('notes.edit'), edit_note_path(list_item.id))
-              %span.confirm.hidden
-                = link_to(t('notes.delete'), note_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
+  -# share controls, dates, and comments
+  .moment-btm
+    .moment-actions
+      %span.moment-actions-share
+        <a href="#" title="Share this with friends or family">Share</a>
+
+      %span.moment-actions-like
+        <a href="#" title="Like this">Like</a>
+
+      %span.moment-actions-time
+        = t('created ago', time_ago: time_ago_in_words(list_item.created_as_date))
+
+      %span.moment-actions-authed
+        %span.moment-actions-edit
+          = link_to(t('notes.edit'), edit_note_path(list_item.id))
+        %span.moment-actions-delete.confirm
+          = link_to(t('notes.delete'), note_path(list_item.id), "data-confirm-text" => t("bookmarks.confirm delete"), method: :delete)
+
+    .moment-comments
+      %span.moment-comments-likes
+        <a href="#" title="Visit this user's profile page">Andy Knight</a> and <a href="#">12 others</a> like this.
+      %ul.moment-comments-list
+        %li.moment-comments-list-comment
+          %span.moment-comments-list-avatar
+            = image_tag "andy_avatar.png"
+          %p.moment-comments-list-text
+            <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be. Every stop I make, I make a new friend. Can?t stay for long, just turn around and I?m gone again.       

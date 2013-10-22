@@ -1,14 +1,27 @@
 class Plan < YV::Resource
 
-  attribute :errors
-  attribute :publisher_url
+  api_response_mapper YV::API::Mapper::Plan
+
   attribute :id
+  attribute :type
   attribute :slug
+  attribute :name         # TODO: localize
+  attribute :about        # TODO: localize
+  attribute :short_url
+  attribute :copyright    # TODO: localize
+  attribute :total_days
   attribute :version_id
-  attr_i18n_reader :about
-  attr_i18n_reader :name
-  attr_i18n_reader :formatted_length
-  attr_i18n_reader :copyright
+  attribute :created_dt
+  attribute :default_start_dt
+  attribute :formatted_length # TODO: localize
+  attribute :publisher_url
+
+  attribute :errors
+  
+  #attr_i18n_reader :about
+  #attr_i18n_reader :name
+  #attr_i18n_reader :formatted_length
+  #attr_i18n_reader :copyright
 
   class << self
 
@@ -20,13 +33,7 @@ class Plan < YV::Resource
       "reading-plans"
     end
 
-    def find(param, opts ={}, &block)
-      id, slug = id_and_slug_from_param param
-      raise YouVersion::API::RecordNotFound unless id.present?
-
-      opts[:cache_for] ||= YV::Caching.a_long_time
-      return super(id, opts)
-    end
+    # TODO pagination + facets
 
     def all(opts = {})
       opts[:query] = '*' if opts[:query].blank?
@@ -35,14 +42,22 @@ class Plan < YV::Resource
       super(opts)
     end
 
-    def subscribe (plan, user_auth)
-      _auth = user_auth
-      opts = {auth: user_auth}
-      opts[:id] = id_from_param plan
 
-      data, errs = post("#{api_path_prefix}/subscribe_user", opts)
-      results = YV::API::Results.new(data,errs)
-      (results.valid?) ? Subscription.new(results.data.merge(auth: _auth)) : raise_errors(results.errors, "Plan#subscribe errors")
+    def find(param, opts ={})
+      id, slug = id_and_slug_from_param param
+      raise YouVersion::API::RecordNotFound unless id.present?
+      super(id, opts.merge(cache_for: YV::Caching.a_long_time))
+    end
+
+
+    def id_and_slug_from_param(param)
+      case param
+        when /\A(\d+)-(.+)/    # format 1234-plan-slug
+          return param.match(/\A(\d+)-(.+)/)[1].to_i, param.match(/\A(\d+)-(.+)/)[2]
+        when Plan
+          return param.id, param.slug
+        else return nil
+      end
     end
 
     # Overriding the key used to lookup localized data returned via the API
@@ -58,74 +73,14 @@ class Plan < YV::Resource
     end
 
 
-    # TODO: can these be private?
-    # TODO: can id_from_param be removed?
-    def id_from_param(param)
-      case param
-        when /^(\d+)[-](.+)/    # format 1234-plan-slug
-          param.match(/^(\d+)[-](.+)/)[1].to_i
-        when Fixnum, /\A[\d]+\z/
-          param.to_i
-        when String             #slug was passed
-          #try to get id from slug with search, since API doesn't give a better way
-          lib_plan = Plan.search(param).find{|plan| plan.slug.downcase == param.downcase}
-          return nil if lib_plan.blank?
-          lib_plan.id
-        when Plan
-          param.id.to_i
-      end
-    end
-
-    def id_and_slug_from_param(param)
-      case param
-        when /\A(\d+)-(.+)/    # format 1234-plan-slug
-          return param.match(/\A(\d+)-(.+)/)[1].to_i, param.match(/\A(\d+)-(.+)/)[2]
-        when Plan
-          return param.id, param.slug
-        else return nil
-      end
-    end
-
-
-    private 
-
-    def search(query, params = {})
-      #     Parameters:
-      #     query of what you're wanting to search for
-      #     category  to filter reading plans to (optional)
-      #     total_days  will accept one of the predefined ranges to limit results to '1_day_to_7_days', '1_week_to_1_month', '1_month_to_3_months', '3_months_to_6_months', '6_months_to_1_year', '1_year_to_infinity', it's optional
-      #     language_tag  to filter reading plans to (optional, but highly recommended for best search results)
-      #     sort  the ordering of the results, defaults to 'score' (relevance), also accepts 'total_days'
-      #     page  number of results to return
-      query = '*' if query.blank?
-      params = {query: query, cache_for: YV::Caching.a_long_time}.merge!(params.except("query", :query))
-
-      data,errs = get(list_path,params)
-      results = YV::API::Results.new(data,errs)
-
-      unless results.valid?
-        if errs.size == 1 and [/not found/].detect {|reg| reg.match(errs.first.error)}
-          return []
-        else
-          raise_errors(results.errors, "Plan#search")
-        end
-      end
-
-      list = ResourceList.new
-        list.total = data.total
-        data.reading_plans.each {|data| list << Plan.new(data)}
-      return list
-    end
-
-    # Overrides Resource base method
-    def api_resource_collection_key
-      "reading_plans"
-    end
-
-
   end
   # END Class method definitions ------------------------------------------------------------------------
 
+
+  def initialize(data={})
+    super(data)
+    @readings = {}
+  end
 
 
   def current_day
@@ -139,22 +94,24 @@ class Plan < YV::Resource
   # to be overriden by Subscription model to send auth and user_id
   # we can cache the non-authed response
   def reading(day, opts = {})
-    unless(@reading && @reading_day == day && @reading_version == version_id)
-      opts[:day] ||= day
-      opts[:id] ||= id
-      opts[:cache_for] ||= YV::Caching.a_very_long_time
-      opts.delete :cache_for if opts[:cache_for] == 0
-      
-      data, errs = self.class.get("#{api_path_prefix}/references", opts)
-      results = YV::API::Results.new(data,errs)
-      results.valid? ? process_references_response(results.data) : raise_errors(results.errors, "Plan#reading errors")
-    end
-    return @reading
+    key = day.to_s.to_sym
+    return @readings.fetch(key) if @readings.has_key?(key)
+    reading = Plans::Reading.find({id: self.id, day: day})
+    @readings.store(key, reading)
+    return reading
   end
 
   def day(day, opts = {})
     reading(day, opts)
   end
+
+  def days
+    total_days
+  end
+
+  def readings
+    total_days
+  end  
 
   def title
     name
@@ -168,18 +125,6 @@ class Plan < YV::Resource
     formatted_length
   end
 
-  def total_days
-    @total_days ||= @attributes.total_days.to_i
-  end
-
-  def days
-    total_days
-  end
-
-  def readings
-    total_days
-  end
-
   def to_param
     "#{id}-#{slug}"
   end
@@ -191,28 +136,4 @@ class Plan < YV::Resource
     correct_class && self.id == compare.id
   end
 
-  private
-
-  def process_references_response(response)
-      @reading_day = response.day.to_i
-      @reading_version = version_id     #version_id can be nil
-
-      #TODO: it probably makes sense for a reading to be it's own class within Plan
-      #      so this should all be done resourcefully in a after_create class, etc
-      @reading = Hashie::Mash.new()
-
-      #get localized html || text via i18nize method and massage a bit
-      if @reading.devotional = YV::Resource.i18nize(response.additional_content)
-        # if ascii spacing is in the html, just remove it, instead of adding p's
-        # to avoid adding unecessarry spacing
-        spacer = YV::Resource.html_present?(response.additional_content) ? '' : '</p><p>'
-        @reading.devotional = @reading.devotional.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer)
-        @reading.devotional = "<p>" << @reading.devotional << "</p>" if spacer.present?
-      end
-
-      @reading.references = response.references.map do |data|
-        Hashie::Mash.new(ref: Reference.new(data.reference, version: @reading_version || Version.default), completed?: (data.completed || data.completed == "true"))
-      end
-      return @reading.references
-  end
 end

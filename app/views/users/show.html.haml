@@ -1,20 +1,5 @@
 - content_for :title do
   = @me ? t('users.my profile') : t('users.other user profile', username: @user.name || @user.username)
 
-.recent-activity
-  - if @user.recent_activity.empty?
-    %p= t('no recent activity', username: @user.username)
-  - else
-    - @user.recent_activity.each do |a|
-      - case a
-      - when Bookmark
-        = render partial: "bookmarks/list_item", locals: {display: :icon, list_item: a}
-      - when Note
-        = render partial: "notes/list_item", locals: {display: :icon, list_item: a}
-      - when Badge
-        %li.li_badge
-          %h5
-            =t('badges.earned a badge')
-            &mdash;
-            = a.name
-          %p.mute= a.earned
+.social-feed
+  = render partial: "moments/cards", locals: {moments: @moments}

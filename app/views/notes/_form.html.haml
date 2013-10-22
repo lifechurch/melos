@@ -16,7 +16,7 @@
 
   - # if reference_list is empty, no need to show these fields.  
   - # Causes an error otherwise when sending empty note[references]/note[version_id] params
-  - unless note.reference_list.empty?
+  - unless note.reference_list.blank?
     %p
       = f.label :reference, t("notes.reference field")
       = note.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe

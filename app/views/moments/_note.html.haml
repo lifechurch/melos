@@ -1,0 +1,32 @@
+- avatars = moment.avatars
+- md_avatar = avatars.md_avatar
+
+.moment
+  .moment-top
+    .moment-no
+      = image_tag "social-cap-no.png", class: "moment-img"
+      %span.moment-avatar
+        = image_tag md_avatar.url
+      %p.moment-no-text
+        = link_to(moment.moment_title.html_safe, moment.to_path, class: "moment-title-link")
+      %span.moment-no-note
+        %p.moment-no-note-title
+          = moment.title
+        %p.moment-no-note-text
+          = moment.content
+
+  .moment-btm
+    .moment-actions
+      %span.moment-actions-share
+        <a href="#" title="Share this with friends or family">Share</a>
+
+      %span.moment-actions-like
+        <a href="#" title="Like this">Like</a>
+
+      %span.moment-actions-comment
+        <a href="#" title="Leave a comment about this">Comment</a>
+
+      %span.moment-actions-time
+        = moment.created_dt
+
+    = render partial: "moments/comments", locals: {moment: moment}

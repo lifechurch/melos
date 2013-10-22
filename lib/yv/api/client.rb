@@ -3,15 +3,18 @@ module YV
     class Client
       
       include HTTParty
+      
       # HTTParty stuff
         format :json
         
         DEFAULT_HEADERS = { 
-            'Referer'      => "http://" + Cfg.api_referer,
-            'User-Agent'   => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}"  # API 3.1 requires a user agent to be set
+            "Referer"      => "http://" + Cfg.api_referer,
+            "User-Agent"   => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}",  # API 3.1 requires a user agent to be set
+            "X-YouVersion-Client" => "youversion",                                    # API 3.1 requires a youversion client header to be set: http://developers.youversion.com/api/docs/3.1/intro.html#headers
+            "X-YouVersion-App-Platform" => "web",
+            "X-YouVersion-App-Version"  => "0"
         }
-        #headers 'Referer'       => "http://" + Cfg.api_referer
-        #headers 'User-Agent'    => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}"  # API 3.1 requires a user agent to be set
+
         default_timeout Cfg.api_default_timeout.to_f
 
       # 500 Json response
@@ -191,8 +194,8 @@ module YV
         # Matches and returns the resource path name of a given API path string
         # users/view    -> users is the resource name that would be returned
         # search/notes  -> notes is the resource name
-        def get_resource(_path)
-          _path.match(/(.+)\/.*/).try(:[], 1)
+        def get_resource(path)
+          path.match(/(.+)\/.*/).try(:[], 1)
         end
 
         # Matches and returns the endpoint path of a given API path string

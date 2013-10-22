@@ -5,6 +5,8 @@
 
 class Localization < YV::Resource
 
+  api_response_mapper YV::API::Mapper::Localization
+
   class << self
 
     def api_path_prefix

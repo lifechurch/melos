@@ -1,6 +1,9 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
+
+  get "/home",          to: "users#home"
+  get "/app",           to: "pages#app"
   get "/terms",         to: "pages#terms"
   get "/privacy",       to: "pages#privacy"
   get "/donate",        to: "pages#donate"
@@ -10,7 +13,11 @@ YouversionWeb::Application.routes.draw do
   get "/search",        to: "search#show",                as: "search"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
 
+
   match "/app(/:store)", to: AppStoreController.action(:index)
+  
+  resources :notifications, only: [:index]
+  resources :comments,  only: [:create]
 
   # Custom campaign pages
   scope module: 'campaigns' do
@@ -35,7 +42,7 @@ YouversionWeb::Application.routes.draw do
   match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
   resources 'notes', :except => [:index]
 
-  resources 'highlights', only: [:create] do
+  resources 'highlights', only: [:create,:show] do
     get :colors, on: :collection
   end
 
@@ -70,14 +77,16 @@ YouversionWeb::Application.routes.draw do
 
     get :devices, on: :member
     get :delete_account, on: :member
-
-    resources :bookmarks, only: [:index] #, shallow: true  <-- TODO - update bookmarks implementation to properly POST for users/:user_id/bookmarks generated route
-
-
-    match 'notes' => 'users#notes', as: 'notes'
-    match 'badges' => 'users#badges', as: 'badges'
+    
+    get :notes,       on: :member, as: 'notes'
+    get :bookmarks,   on: :member, as: 'bookmarks'
+    get :highlights,  on: :member, as: 'highlights'
+    get :badges,      on: :member, as: 'badges'
     match 'badge/:id' => 'badges#show', as: 'badge'
 
+    
+    #resources :bookmarks, only: [:index] #, shallow: true  <-- TODO - update bookmarks implementation to properly POST for users/:user_id/bookmarks generated route
+    
     resources 'subscriptions', :path => '/reading-plans' do
       get   :calendar,    on: :member
       post  :shelf,       on: :member

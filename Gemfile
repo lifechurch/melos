@@ -20,6 +20,7 @@ gem 'pg', :group => :production
 #gem 'oink'
 gem 'gabba'
 gem 'memcachier'
+gem 'fast_gettext'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
@@ -45,7 +46,8 @@ gem 'viximo-rack-throttle',   '~> 0.5.0'
 # gem 'rails-i18n',           '~> 0.6.3'
 
 gem 'routing-filter',         '~> 0.3.1'
-gem 'unicorn',               '~> 4.3.1'
+#gem "unicorn",               '~> 4.3.1'
+gem 'puma'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do

@@ -9,7 +9,7 @@ class SubscriptionsController < ApplicationController
     return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
 
     @user = current_user
-    @subscriptions = @user.subscriptions
+    @subscriptions = Subscription.all(@user, auth: @user.auth)
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
   end

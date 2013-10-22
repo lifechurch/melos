@@ -9,16 +9,34 @@
 
 class Highlight < YV::Resource
 
+  api_response_mapper YV::API::Mapper::Highlight
+
   include YV::Concerns::Icons
   include YV::Concerns::Avatars
   include YV::Concerns::Actionable
   include YV::Concerns::Commentable
   include YV::Concerns::Identifiable
 
+  attribute :moment_title
+  
   attribute :color
-  attribute :reference
+  attribute :labels
   attribute :references
-  attribute :version
+  attribute :user_id
+  attribute :kind_id
+  attribute :kind_color
+  attribute :avatars
+  attribute :icons
+  attribute :created_dt
+  attribute :updated_dt
+
+  attribute :comments
+  attribute :commenting
+  attribute :comments_count
+
+  attribute :version_id
+  attribute :usfm_references
+
 
   class << self
 
@@ -33,6 +51,10 @@ class Highlight < YV::Resource
 
       def delete_path
         "moments/delete"
+      end
+
+      def create_path
+        "moments/create"
       end
 
       def colors_path
@@ -98,62 +120,63 @@ class Highlight < YV::Resource
 
   # Custom persistence for new Moments API
   def persist(path)
-    return persist_moment(attributes.merge(kind: "highlight"))
-  end
-
-  # See included YV::Concerns
-  def build(results)
-    process_icons(results)
-    process_avatars(results)
-    process_comments(results)
-    process_actionable(results)
-    process_identifiable(results)
-  end
-
-  def after_update(results)
-    build(results)
-  end
-
-  def after_save(results)
-    build(results)
-  end
-  
-
-  def after_build
-      usfm_ref = case reference
-      when String       #usfm style string coming from user creation
-        attributes.reference
-      when Hashie::Mash #Mash coming back from existing highlight in API
-        attributes.reference.usfm
-      end
-
-      # if the versid_id isn't passed, then the reference
-      # string will (should) have it
-      self.version = attributes.try :version_id
-
-      # if a version ID is specified, use it as the overriding version
-      forced_opts = self.version.nil? ? {} : {version: self.version}
-
-      # note: it is possible we're creating a highlight from an id alone
-      # so it's not necessarrily an error if we don't have a usfm_ref
-      self.reference = Reference.new(usfm_ref, forced_opts) if usfm_ref
-
-      # in case the version_id wasn't available above
-      # and was passed in the ref string
-      self.version ||= self.reference.try :version
+    return persist_moment(path,attributes.merge(kind: "highlight").slice(:kind, :color, :references, :auth, :created_dt))
   end
 
   def before_save
-    #ref = self.reference.is_a?(Reference) ? self.reference : Reference.new(self.reference) # self.reference could be a string
-    #self.attributes.version_id = self.reference.version
-    #self.reference = ref.to_usfm
+    set_created_dt
   end
 
+  def build_references
+    return unless usfm_references and version_id
+    usfms = usfm_references.split("+")
+    self.references = usfms.collect {|usfm| {usfm: [usfm], version_id: version_id } }
+    
+    #refererences = [
+    #  {usfm:["GEN.1.1","GEN.1.2"], version_id: 1}
+    #]
+  end
+
+
+
+  def after_build
+    build_references
+
+      # usfm_ref = case reference
+      # when String       #usfm style string coming from user creation
+      #   attributes.reference
+      # when Hashie::Mash #Mash coming back from existing highlight in API
+      #   attributes.reference.usfm
+      # end
+# 
+      # # if the versid_id isn't passed, then the reference
+      # # string will (should) have it
+      # self.version = attributes.try :version_id
+# 
+      # # if a version ID is specified, use it as the overriding version
+      # forced_opts = self.version.nil? ? {} : {version: self.version}
+# 
+      # # note: it is possible we're creating a highlight from an id alone
+      # # so it's not necessarrily an error if we don't have a usfm_ref
+      # self.reference = Reference.new(usfm_ref, forced_opts) if usfm_ref
+# 
+      # # in case the version_id wasn't available above
+      # # and was passed in the ref string
+      # self.version ||= self.reference.try :version
+  end
 
   def as_json(options = {})
     #API/apps shouldn't support ranged highlights, but some exist, so use only the first verse if range.
     #EVENTUALLY: make this pervasive/complete so anyone using this object only sees the 1st verse and we can just pass raw_hash[:verses]
     {verse: self.reference.verses.first, color: self.color, id: id, version: version}
+  end
+
+  def moment_partial_path
+    "moments/highlight"
+  end  
+
+  def to_path
+    "/highlights/#{id}"
   end
 
 end

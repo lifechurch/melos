@@ -1,30 +1,8 @@
-= render "/sidebars/notes/default"
-
 - @title = @note.title
 
-%article
+- content_for :sidebar do
+  = render partial: "/comments/sidebar_form", locals: {moment: @note}
 
-  - if @note.invalid?
-    = render partial: "shared/form_errors", locals: {errors: @note.errors}
+%article.social-detail
 
-  - else
-    #note
-      %h3{class: @note.user_status}= @note.title
-      - if !@note.reference_list.empty?
-        %ul.reference_tokens.read_only
-          - @note.reference_list.each do |r|
-            %li
-              = link_to r, bible_path(r)
-      %hr
-      %p= raw(@note.content_html)
-      %hr
-      - if @note.can_share?
-        = render partial: "shared/share_buttons"
-      .float_right
-        %p.small
-          - if current_auth && (current_auth.user_id.to_i == @note.user_id.to_i)
-            %span= link_to('Edit', edit_note_path(@note.id))
-            &mdash;
-            %span.confirm= link_to('Delete', note_path(@note.id), "data-confirm-text" => t("bookmarks.confirm delete"), :method => :delete)
-            &mdash;
-          %span.created_as_date= t('created ago', time_ago: time_ago_in_words(@note.created_as_date))
+  = render partial: "moments/note", locals: {moment: @note}

@@ -28,33 +28,27 @@ jQuery(document).ready(function() {
   window.app = new App();
   window.app.setPage( new Page() );
 
-  $('.popover-link').click(function(e){
-    e.preventDefault();
-    var $this = $(this);
-    var $headerPopover = $this.next('.header-popover');
-    var popoverVisible = $this.siblings('.popover-link').next('.header-popover').hasClass('open');
 
-    // if the popover is visible, close it
-    if($headerPopover.hasClass('open')){
-      $headerPopover.animate({'opacity' : '0'}, 200);
-      $headerPopover.removeClass('open').hide();
-    }
+  var n = new Menus.Notifications("#header .notifications-btn",".header-popover.notifications");
+  var f = new Menus.FriendRequests("#header .friend-requests-btn",".header-popover.friend-requests"); 
+  var mg = new Menus.MenuGroup("#header")
+      mg.addMenu(n)
+      mg.addMenu(f)
 
-    else if(popoverVisible){
-      $('.header-popover').animate({'opacity' : '0'}, 200);
-      $('.header-popover').removeClass('open').hide();
-      $headerPopover.show().animate({'opacity' : '1'}, 200);
-      $headerPopover.addClass('open');
-    }
+  $(".moment-verse").each(function() {
+    el = $(this);
+    new Moments.Verse({
+      el:         el,
+      usfm:       el.data("usfm"),
+      version_id: el.data("version-id")
+    });
+  });
 
-    // otherwise, open it
-    else {
-      $headerPopover.show().animate({'opacity' : '1'}, 200);
-      $headerPopover.addClass('open');
-    }
-    
+  $(".moment-comments-textarea").each(function() {
+    new Moments.CommentForm({textarea: $(this)})
+  });
 
-  });  
+
 });
 
 jQuery(window).load(function() { });

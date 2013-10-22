@@ -10,20 +10,37 @@
 
 class Bookmark < YV::Resource
 
-  include YV::Concerns::Icons
-  include YV::Concerns::Avatars
-  include YV::Concerns::Actionable
-  include YV::Concerns::Commentable
-  include YV::Concerns::Identifiable
+  api_response_mapper YV::API::Mapper::Bookmark
+
+  attribute :moment_title
 
   attribute :title
   attribute :labels
+  attribute :created_dt
+  attribute :avatars
+  attribute :icons  
+  attribute :created_dt
+  attribute :updated_dt
+  
   attribute :user_id
-  attribute :version
-  attribute :version_id
-  attribute :reference
+  attribute :kind_id
+  attribute :kind_color
+
+  attribute :comments
+  attribute :commenting
+  attribute :comments_count
+
   attribute :references
-  attribute :highlight_color
+  attribute :color
+
+
+
+  # The following fields are utilized for form submits. 
+  # A plus separated list of usfm refs GEN.1.1+GEN.1.2
+    attribute :usfm_references
+
+  # A numeric version id submitted to associate references with a version id for bookmarking.
+    attribute :version_id
 
   attr_accessor :reference_list
 
@@ -42,12 +59,19 @@ class Bookmark < YV::Resource
         "moments/delete"
       end
 
+      def update_path
+        "moments/update"
+      end
+
+      def create_path
+        "moments/create"
+      end
+
 
     # Override all method to add bookmark kind to options
     def all(opts={})
       raise "Page parameter is required" unless opts[:page]
-      opts[:kind] = "bookmark"
-      super(opts)
+      super(opts.merge(kind: "bookmark"))
     end
 
 
@@ -55,18 +79,15 @@ class Bookmark < YV::Resource
     # Lookup all bookmarks with a given label and params
     # Returns a ResourceList of bookmark instances
     def for_label(label, params = {})
-      page = params[:page] || 1
-      opts = params.merge({label: label, page: page})
+      opts = params.merge({label: label, page: params[:page] || 1})
       return all(opts)
     end
 
 
     # API Method
     # Lookup all bookmarks for a given user_id and params
-    # Returns a ResourceList of bookmark instances
     def for_user(user_id = nil, params = {})
-      page = params[:page] || 1
-      opts = params.merge({user_id: user_id, page: page})
+      opts = params.merge({user_id: user_id, page: params[:page] || 1})
       return all(opts)
     end
 
@@ -76,49 +97,43 @@ class Bookmark < YV::Resource
     # Returns a ResourceList of label Hashie::Mashs
     # TODO: create class for labels
 
-    def labels_for_user(user_id, params = {})
-      params[:page] ||= 1
+    def labels_for_user(user_id, opts={})
+      data, errs = get( labels_path , opts.merge(user_id: user_id).slice(:auth,:user_id))
+      return results = YV::API::Results.new(data,errs)
+      # [["wild", 1],
+      #  ["wildernessy", 1],
+      #  ["things", 1],
+      #  ["crying", 1],
+      #  ["seven", 2],
+      #  ["days", 2],
+      #  ["rest", 2]]
+    end
 
-      data, errs = get("bookmarks/labels", user_id: user_id, page: params[:page])
-      results = YV::API::Results.new(data,errs)
-
-      unless results.valid?
-        if results.has_error?("Labels not found")
-           data = Hashie::Mash.new(labels: [], total:0)
-        else
-           raise_errors(results.errors, "Bookmark#labels_for_user")
-        end
-      end
-
-      if data.labels
-         labels = ResourceList.new(data.labels)
-         labels.total = data.total
-      else
-         labels = ResourceList.new([])
-         labels.total = 0
-      end
-      return labels
+    def labels_path
+      "moments/labels"
     end
 
   end
   # END class methods ----------------------------------------------------------------------------------------------
 
 
+  def labels=(labes)
+    build_labels(labes)
+  end
 
 
   # Custom persistence for new Moments API
+  # Takes care of #create and #update requirements by passing 'kind' option.c
   def persist(path)
-    return persist_moment(attributes.merge(kind: "bookmark"))
+    return persist_moment(path,attributes.merge(kind: "bookmark").slice(:id,:auth,:kind,:title,:references,:labels, :created_dt))
   end
 
-  # See included YV::Concerns
-  def build(results)
-    process_icons(results)
-    process_avatars(results)
-    process_comments(results)
-    process_actionable(results)
-    process_identifiable(results)
+  def before_save
+    set_created_dt
   end
+
+
+  # See included YV::Concerns
 
   def user_id
     self.attributes['user_id']
@@ -126,35 +141,52 @@ class Bookmark < YV::Resource
 
   # Called after initialization
   def after_build
-    build(self.attributes)
+
+    build_references
+    build_labels(self.labels)
+
     # self.reference does multiple duty here for the moment. When creating a new object,
     # self.reference may contain whatever the user passed in (usually a String) with the
     # :reference key.  When creating an object from an API call, it will bear whatever
     # string the API returned for the 'reference' key in the response->data section.
     # And it could probably be some other things before we're done.
-    self.version = attributes.try :[], :version_id
-    self.reference_list = ReferenceList.new(self.references, self.version)
-    self.version = self.reference_list.first.try :version
+    # self.version = attributes.try :[], :version_id
+    # self.reference_list = ReferenceList.new(self.references, self.version)
+    # self.version = self.reference_list.first.try :version
   end
 
-  def before_save
-    #self.references = self.reference_list.to_flat_usfm
-    #self.version_id = self.version
-  end
-
-  def after_save(results)
-    return unless results
-    build(results)
+  def build_references
+    return unless usfm_references and version_id
+    usfms = usfm_references.split("+")
+    self.references = usfms.collect {|usfm| {usfm: [usfm], version_id: version_id } }
     
-    self.version = Version.find(results.version_id)
-    # Sometimes references come back as an array, sometimes just one, Hashie::Mash
-    if results.references
-      self.reference_list = ReferenceList.new(self.references, self.version)
+    #refererences = [
+    #  {usfm:["GEN.1.1","GEN.1.2"], version_id: 1}
+    #]
+  end
+
+  def build_labels(labes)
+    self.attributes["labels"] = case labes
+      when nil    then []
+      when Array  then labes
+      when String then labes.split(",")
     end
   end
 
+
+
+  def after_save(results)
+    return unless results
+    
+    #self.version = Version.find(results.version_id)
+    # Sometimes references come back as an array, sometimes just one, Hashie::Mash
+    #if results.references
+    #  self.reference_list = ReferenceList.new(self.references, self.version)
+    #end
+  end
+
   def after_update(results)
-    build(results)
+    #build(results)
   end
 
 
@@ -164,6 +196,15 @@ class Bookmark < YV::Resource
     allowed_keys = [:title, :labels, :highlight_color, "title", "labels", "highlight_color"]
     fields.delete_if {|k, v| ! allowed_keys.include? k}
     super
+  end
+
+
+  def moment_partial_path
+    "moments/bookmark"
+  end
+
+  def to_path
+    "/bookmarks/#{id}"
   end
 
 end

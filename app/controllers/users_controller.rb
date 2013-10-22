@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :devices, :destroy_device, :update_email, :delete_account, :delete_account_form]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:sign_up_success, :confirm_update_email, :update_email, :destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
+  before_filter :find_user, except: [:home,:sign_up_success, :confirm_update_email, :update_email, :destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
   before_filter :authorize, only: [:edit,:update, :email, :password, :update_password, :picture, :update_picture, :devices, :delete_account,:destroy]
 
@@ -34,6 +34,42 @@ class UsersController < ApplicationController
   #        +--------------------+
   #        |
   #   /sign-up/success (or sign_up_redirect)
+
+  def home
+    @user    = current_user
+    @moments = Moment.all(auth: current_auth, page: @page)
+    render layout: "application"
+  end
+
+  def show
+    @user    = User.find(params[:id])
+    @moments = Moment.all(user_id: @user.id, page: @page, auth: current_auth)
+  end
+
+  def notes
+    @user  = User.find(params[:id])
+    @notes = Note.all(user_id: @user.id , auth: current_auth, page: params[:page] || 1)
+  end
+
+  def highlights
+    @user  = User.find(params[:id])
+    @highlights = Highlight.all(user_id: @user.id , auth: current_auth, page: params[:page] || 1)
+  end
+
+  def bookmarks
+    @user  = User.find(params[:id])
+    @bookmarks = Bookmark.all(user_id: @user.id , auth: current_auth, page: params[:page] || 1)
+  end
+
+  def badges
+    @selected = :badges
+    @badges = @user.badges
+    self.sidebar_presenter = Presenter::Sidebar::Default.new
+  end
+
+
+
+
 
   def new
     @user = User.new
@@ -110,30 +146,7 @@ class UsersController < ApplicationController
     render action: "sign_up_success", layout: "application"
   end
 
-  def show
-    return redirect_to( edit_user_path(@user)) if @me
-    @nav = :notes if @me
-    @selected = :notes
-    @notes = @user.notes(page: params[:page])
-    render 'notes'
-    if @me
-      render 'notes/index', layout: "application" 
-    else
-      
-    end
-  end
 
-  def notes
-    @nav = :notes if @me
-    @selected = :notes
-    @notes = @user.notes(page: params[:page])
-  end
-
-  def badges
-    @selected = :badges
-    @badges = @user.badges
-    self.sidebar_presenter = Presenter::Sidebar::Default.new
-  end
 
   def share
     if current_user.share(params[:share])

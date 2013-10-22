@@ -1,0 +1,54 @@
+-# Friends and notification popovers
+%div.header-popover.friend-requests
+
+
+
+%script#friend-requests-tmpl{type:"text/x-handlebars-template"}
+  %span.arrow
+  %h4
+    =t("Friend requests")
+  =link_to("Find Friends", "#", class: "find-friends text-link")
+  %span.clear
+
+  %ul
+    %li
+      %div.list-item
+        %div.item-content
+          %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
+          = link_to("Peter Smith", "#", class: "text-link")
+          %p
+            =t("wants to be your friend")
+          %span.timestamp
+            =t("12 days ago")
+        %div.item-actions
+          =link_to("Add", "#", class: "action_button_green")
+          =link_to("Ignore", "#", class: "action_button_grey")
+
+    %li
+      %div.list-item
+        %div.item-content
+          %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
+          = link_to("Peter Smith", "#", class: "text-link")
+          %p
+            =t("wants to be your friend")
+          %span.timestamp
+            =t("12 days ago")
+        %div.item-actions
+          =link_to("Add", "#", class: "action_button_green")
+          =link_to("Ignore", "#", class: "action_button_grey")
+
+    %li
+      %div.list-item
+        %div.item-content
+          %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
+          = link_to("Peter Smith", "#", class: "text-link")
+          %p
+            =t("wants to be your friend")
+          %span.timestamp
+            =t("12 days ago")
+        %div.item-actions
+          =link_to("Add", "#", class: "action_button_green")
+          =link_to("Ignore", "#", class: "action_button_grey")
+
+  %div.view-all
+    =link_to("View all requests", "#", class: "text-link wide")

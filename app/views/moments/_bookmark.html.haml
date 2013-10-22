@@ -1,0 +1,38 @@
+- avatars = moment.avatars
+- md_avatar = avatars.md_avatar
+
+.moment
+  -# !the content of the moment
+  .moment-top
+    .moment-bm
+      = image_tag "social-cap-bm.png", class: "moment-img"
+      %span.moment-avatar
+        = image_tag md_avatar.url
+      %p.moment-bm-text
+        = link_to(moment.moment_title.html_safe, moment.to_path, class: "moment-title-link")
+      %br 
+      - moment.references.each do |ref|
+        %p.moment-verse{"data-usfm" => ref.usfm, "data-version-id" => ref.version_id }
+          = "#{ref.human}(#{ref.usfm})"
+
+      - if moment.labels.present?
+        %p.moment-bm-labels
+          - moment.labels.each do |label|
+            = link_to(label, bookmarks_user_path(@user, label: label.chomp),class: "moment-bm-labels-link")
+
+  -# !share controls, dates, and comments
+  .moment-btm
+    .moment-actions
+      %span.moment-actions-share
+        <a href="#" title="Share this with friends or family">Share</a>
+
+      %span.moment-actions-like
+        <a href="#" title="Like this">Like</a>
+
+      %span.moment-actions-comment
+        <a href="#" title="Leave a comment about this">Comment</a>
+
+      %span.moment-actions-time
+        = moment.created_dt
+
+    = render partial: "moments/comments", locals: {moment: moment}

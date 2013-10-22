@@ -109,63 +109,53 @@ module YV
       end
 
       # Find a resource by id and optional parameters
-      # Returns an instance of YV::API::Results
+      # Returns a YV::API::Results decorator for a single instance
+      # requires subclasss to define the #map class method to appropriately
+      # map a #view API response
+
       def find(id, params = {})
         opts = prepare_opts!
         opts[:id] = id if id
         opts.merge! params  # Let params override if it already has an :id
 
         data, errs = get(resource_path, opts)
-        unless errs.blank?
-          return YV::API::Results.new( data , errs )
-        else
-          return YV::API::Results.new( new(data.merge!(auth: params.delete(:auth))) , errs )
-        end
+
+        map(YV::API::Results.new(data.merge!(auth: params.delete(:auth)),errs), new() , :find)
       end
 
 
       # Find a list of resources given optional parameters
-      # Returns an instance of YV::API::Results
+      # Returns a YV::API::Results decorator for an array of instances
+      # requires subclass to define the #map_all class method to appropriately
+      # map API responses
+
       def all(params = {})
         opts = prepare_opts!(params)
         data, errs = get(list_path,opts)
 
-        if errs.blank?
-          is_moment_api   = ["Note","Bookmark","Highlight"].include?(self.name)
-          collection_data = (is_moment_api) ? process_moment_collection_response(data) : process_collection_response(data)
-        else
+        unless errs.blank?
           not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
           if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
-            collection_data = []
+            data = []
             errs = nil
           end
         end
 
-        return YV::API::Results.new(collection_data,errs)
-      end
-
-      # Resource list, but just return whatever the API gives us.
-      # TODO: As soon as we've finished migrating all the resources,
-      # check to see that both all() and all_raw() are really needed.
-      # Likely they can be combined or one of them can be eliminated.
-
-      # Currently only used in Bookmark resource.  Find out why and remove or update implementation in bookmark if necessary.
-      def all_raw(params = {})
-        data, errs = get(list_path,params)
-        return YV::API::Results.new(data,errs)
+        map_all(YV::API::Results.new(data,errs))        
       end
 
       # Create a resource.  Creates an instance and calls save on it.
-      def create(data, &block)
-        new(data).save(&block)
+      def create(data)
+        new(data).save
       end
 
       # Destroy a resource. TODO - make this similar to create -> find instance via id, call destroy. allows for callbacks etc.
-      def destroy(id, auth = nil, &block)
+      def destroy(id, auth = nil)
         opts = prepare_opts!({auth: auth})
         opts[self.destroy_id_param] = id
         data, errs = post(delete_path, opts)
-        return YV::API::Results.new(data,errs)
+
+        map_delete(YV::API::Results.new(data,errs))
       end
 
       def destroy_id_param
@@ -289,7 +279,38 @@ module YV
       end
 
 
-      private
+      def api_response_mapper(klass)
+        @api_response_mapper = klass
+      end
+
+
+      def map_all(results)
+        raise "Declare an API Response Mapper" unless @api_response_mapper.present?
+        results.data = @api_response_mapper.map_all(results.data)
+        results
+      end
+
+      def map_delete(results)
+        raise "Declare an API Response Mapper" unless @api_response_mapper.present?
+        results.data = @api_response_mapper.map_delete(results.data)
+        results
+      end
+
+      # Map results to an instance for a given action
+      def map(results,instance,action)
+        raise "Declare an API Response Mapper" unless @api_response_mapper.present?
+        if results.valid?
+          results.data = case action
+            when :find
+              @api_response_mapper.map(results.data, new(), :find)
+            when :create, :update
+              @api_response_mapper.map(results.data, instance, action)
+          end
+        end
+        return results
+      end
+
+      private      
 
       # Hook to process a response after an API call that returns 'collection' data - any #all call
       # Allows the opportunity to override in subclasses to handle the collection data differently
@@ -346,7 +367,6 @@ module YV
 
     def initialize(data = {})
       @attributes = Hashie::Mash.new(data)
-      @associations = {}
       yield self if block_given?
       after_build
     end
@@ -389,9 +409,9 @@ module YV
       return YV::API::Results.new( data , errs )
     end
 
-    def persist_moment(opts={})
+    def persist_moment(path,opts={})
       raise "Moment kind required." unless opts[:kind]
-      data, errs = self.class.post("moments/create",opts.merge(auth: self.auth))
+      data, errs = self.class.post( path ,opts.merge(auth: self.auth))
       return YV::API::Results.new( data , errs )
     end
 
@@ -410,12 +430,18 @@ module YV
         resource_path = self.persisted? ? self.class.update_path : self.class.create_path
         results = persist(resource_path)
 
-        if results.data
-          self.id = results.data.id if (results.data.id.present? && results.valid? && !persisted?)
-        end
+        #if results.data
+        #  self.id = results.data.id if (results.data.id.present? && results.valid? && !persisted?)
+        #end
       ensure
         self.persisted? ? after_update(results) : after_save(results)
       end
+
+      if results.valid?
+         action = persisted? ? :update : :create
+         self.class.map(results,self,action)
+      end
+
       return results
     end
 
@@ -477,6 +503,10 @@ module YV
 
     def raise_errors(errs,msg = nil)
       self.class.raise_errors(errs,msg)
+    end
+
+    def set_created_dt
+      self.created_dt = Time.now.iso8601
     end
 
   end

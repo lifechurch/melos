@@ -3,107 +3,89 @@
 
 class Friend < YV::Resource
 
-    class << self
+  api_response_mapper YV::API::Mapper::Friend
 
-      def ids_path
-        "#{api_path_prefix}/all_items"
-      end
+  class << self
 
-      def delete_path
-        "#{api_path_prefix}/delete"
-      end
+    def delete_path
+      "#{api_path_prefix}/delete"
+    end
 
-      # Friendship.all(opts)
-      # http://developers.youversion.com/api/docs/3.1/sections/friends/items.html
-      # ------------------------------------------------------------------------------------------------------------
-      # returns a YV::API::Results decorator for an array of paginated user objects
-      
-      # options
-      # * auth: required {auth: auth_hash}
-      # * page: required, defaults to 1 {page: 2}
+    # Friendship.all(opts)
+    # http://developers.youversion.com/api/docs/3.1/sections/friends/items.html
+    # ------------------------------------------------------------------------------------------------------------
+    # returns a YV::API::Results decorator for an array of paginated user objects
+    
+    # options
+    # * auth: required {auth: auth_hash}
+    # * page: required, defaults to 1 {page: 2}
 
-      # example API data
-      # {"response": 
-      #   {"code": 200,
-      #     "data":
-      #       {"users": [{user object},{user object}],
-      #        "next_page": null},
-      #    "buildtime": "2013-06-21T19:07:42+00:00"}}
+    # example API data
+    # {"response": 
+    #   {"code": 200,
+    #     "data":
+    #       {"users": [{user object},{user object}],
+    #        "next_page": null},
+    #    "buildtime": "2013-06-21T19:07:42+00:00"}}
 
-      def all(opts={})
-        raise YV::AuthRequired unless opts[:auth]
-        opts.merge!(page: opts[:page] || 1) # page required, defaults to 1
-        super(opts.slice(:auth,:page))
-      end
+    def all(opts={})
+      raise YV::AuthRequired unless opts[:auth]
+      opts.merge!(page: opts[:page] || 1) # page required, defaults to 1
+      super(opts.slice(:auth,:page))
+    end
 
 
-      # Friendship.ids(opts)
-      # http://developers.youversion.com/api/docs/3.1/sections/friends/all_items.html
-      # ------------------------------------------------------------------------------------------------------------
-      # returns a YV::API::Results decorator for an array of user ids
-      # [1,2,3,4,5,777]
-      
-      # options
-      # * auth: required {auth: auth_hash}
+    # Friendship.ids(opts)
+    # http://developers.youversion.com/api/docs/3.1/sections/friends/all_items.html
+    # ------------------------------------------------------------------------------------------------------------
+    # returns a YV::API::Results decorator for an array of user ids
+    # [1,2,3,4,5,777]
+    
+    # options
+    # * auth: required {auth: auth_hash}
 
-      # example API data
-      # {"response": 
-      #   {"code": 200,
-      #     "data":
-      #       {"friends": [242,251,2394290342] ...
+    # example API data
+    # {"response": 
+    #   {"code": 200,
+    #     "data":
+    #       {"friends": [242,251,2394290342] ...
+
+    def ids_path
+      "#{api_path_prefix}/all_items"
+    end
 
 
-      def ids(opts={})
-        raise YV::AuthRequired unless opts[:auth]
+    def ids(opts={})
+      raise YV::AuthRequired unless opts[:auth]
         data, errs = get(ids_path, opts.slice(:auth))
-
         result_data = (errs.blank?) ? data.friends : data
         return YV::API::Results.new(result_data,errs)
-      end
-
-
-
-      # Friendship.delete(opts)
-      # http://developers.youversion.com/api/docs/3.1/sections/friends/all_items.html
-      # ------------------------------------------------------------------------------------------------------------
-      # returns a YV::API::Results decorator for an array of user ids
-      
-      # options
-      # * auth: required {auth: auth_hash}
-      # * user_id: required {user_id: 12345}
-
-      # example API data
-      # {"response": 
-      #   {"code": 200,
-      #     "data":
-      #       {"friends": [] ...
-
-      def delete(opts={})
-        raise YV::AuthRequired unless opts[:auth]
-        data, errs = post(delete_path,opts.slice(:auth,:user_id))
-
-        result_data = (errs.blank?) ? data.friends : data
-        return YV::API::Results.new(result_data,errs)
-      end
-
-
-
-      private
-
-      # Overridden method from Resource class to handle #all api calls
-      def process_collection_response(data)
-        list = ResourceList.new
-        data.users.each do |user_data|
-          list << User.new(user_data)
-        end
-        return list
-      end
-
     end
 
 
 
+    # Friendship.delete(opts)
+    # http://developers.youversion.com/api/docs/3.1/sections/friends/all_items.html
+    # ------------------------------------------------------------------------------------------------------------
+    # returns a YV::API::Results decorator for an array of user ids
+    
+    # options
+    # * auth: required {auth: auth_hash}
+    # * user_id: required {user_id: 12345}
 
+    # example API data
+    # {"response": 
+    #   {"code": 200,
+    #     "data":
+    #       {"friends": [] ...
 
+    def delete(opts={})
+      raise YV::AuthRequired unless opts[:auth]
+        data, errs = post(delete_path,opts.slice(:auth,:user_id))
+        result_data = (errs.blank?) ? data.friends : data
+        return YV::API::Results.new(result_data,errs)
+    end
+
+  end
 end
 

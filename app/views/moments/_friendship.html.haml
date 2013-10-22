@@ -1,0 +1,21 @@
+- avatars = moment.avatars
+- md_avatar = avatars.md_avatar
+- friend = moment.friend
+- friend_avatar = friend.avatars.lg_avatar
+
+
+.moment
+  .moment-top
+    .moment-dl
+      = image_tag "social-cap-fr.png", class: "moment-img"
+      %span.moment-avatar
+        = image_tag md_avatar.url
+      %p.moment-dl-text
+        = moment.moment_title.html_safe
+
+      .moment-friend-container
+        .moment-friend-box
+          %a{href: user_path(friend.user_name) }
+            = image_tag friend_avatar.url, class: "moment-friend-avatar", size: "128x128"
+            %span.moment-friend-name
+              = friend.name

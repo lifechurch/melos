@@ -56,12 +56,12 @@ module YV
         base.attribute :avatars
       end
 
-      def process_avatars(data)
-         av_data = data.base.images.avatar
+      def process_avatars(avatar_hash)
          self.avatars = {}
-         self.avatars[:style]      = av_data.style
-         self.avatars[:action_url] = av_data.action_url
-         self.avatars[:all]        = av_data.renditions
+         self.avatars[:style]      = avatar_hash.style
+         self.avatars[:action_url] = avatar_hash.action_url
+         # TODO build out rendition objects
+         self.avatars[:all]        = avatar_hash.renditions
       end
 
     end

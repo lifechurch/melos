@@ -1,28 +1,39 @@
 class HighlightsController < ApplicationController
 
 
+  def show
+    @highlight = Highlight.find(params[:id], auth: current_auth)
+  end
+
 
   def create
+
+    @highlight = Highlight.new(params[:highlight])
+    @highlight.auth = current_auth
+
+    result = @highlight.save
+    result.valid? ? redirect_to(:back, notice: "Saved!") : redirect_to(:back, error: "Didn't save")
+
     #Parameters: {"highlight"=>{"references"=>"gen.1.1.asv,gen.1.6.asv,gen.1.7.asv", "existing_ids"=>"79,98,-1", "color"=>"861eba"}}
-    references    = params[:highlight].delete(:references)
-    existing_ids  = params[:highlight].delete(:existing_ids)
-
-    existing_highlights = existing_ids.split(",").uniq.map {|id| Highlight.new(auth: current_auth, id: id) if id.to_i >= 0} # only need id and auth to destroy
-    highlights          = references.split(",").uniq.map   {|rf| Highlight.new(auth: current_auth, reference: rf, color: params[:highlight][:color]) }
-
-    if params[:remove]
-      if existing_highlights.all?(&:destroy)
-        redirect_to :back
-      else
-        redirect_to :back, error: t("highlights.delete error")
-      end
-    else #user is creating highlights
-      if existing_highlights.all?(&:destroy) && highlights.all?(&:save)
-        redirect_to :back
-      else
-        redirect_to :back, error: t("highlights.creation error")
-      end
-    end
+    #references    = params[:highlight].delete(:references)
+    #existing_ids  = params[:highlight].delete(:existing_ids)
+#
+    #existing_highlights = existing_ids.split(",").uniq.map {|id| Highlight.new(auth: current_auth, id: id) if id.to_i >= 0} # only need id and auth to destroy
+    #highlights          = references.split(",").uniq.map   {|rf| Highlight.new(auth: current_auth, reference: rf, color: params[:highlight][:color]) }
+#
+    #if params[:remove]
+    #  if existing_highlights.all?(&:destroy)
+    #    redirect_to :back
+    #  else
+    #    redirect_to :back, error: t("highlights.delete error")
+    #  end
+    #else #user is creating highlights
+    #  if existing_highlights.all?(&:destroy) && highlights.all?(&:save)
+    #    redirect_to :back
+    #  else
+    #    redirect_to :back, error: t("highlights.creation error")
+    #  end
+    #end
   end
 
   #TODO make the sending form submit a different 'delete' form on clicking the clear icon

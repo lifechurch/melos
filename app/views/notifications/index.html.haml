@@ -1,0 +1,8 @@
+- @sidebar = true
+
+%article.notifications
+  %h1= t('notifications')
+  / %h2.activity-date
+  /  Sent Today
+
+  = render partial: "notifications/list", locals: {notifications: @notifications}

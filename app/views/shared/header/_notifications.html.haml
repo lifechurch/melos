@@ -1,0 +1,20 @@
+%div.header-popover.notifications
+
+%script#notifications-tmpl{type:"text/x-handlebars-template"}
+  %span.arrow
+  %h4
+    =t("Notifications")
+  %span.clear
+
+  :plain
+    <ul class="notifications-list">
+      {{#each notifications}}
+      <li class="notifications-item">  
+        <p>{{attributes.moment_title}}</p>
+      </li>
+      {{/each}}
+    </ul>
+
+  %div.view-all
+    %a.text-link.wide{href:"/notifications"}
+      View all Notifications

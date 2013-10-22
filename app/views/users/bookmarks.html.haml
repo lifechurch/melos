@@ -1,10 +1,5 @@
-- content_for :user_main do
-  - if @bookmarks.empty?
-    -# User has no bookmarks
-    %p.profile-bookmarks-none
-      = t('bookmarks.other user not found', username: @user.username)
+- @sidebar = false
 
-  -# User has bookmarks
-  .profile-bookmarks-list
-    = render partial: 'bookmarks/list_item', collection: @bookmarks, locals: {display: :icon}
-  = render partial: 'shared/pagination', locals: {resource_list: @bookmarks}
+
+.social-feed
+  = render partial: "moments/cards", locals: {moments: @bookmarks}

@@ -2,7 +2,7 @@
 function NotePane( el ) {
   this.el = $(el);
   this.note_content_field = this.el.find('textarea[name="note[content]"]');
-  this.references_field = this.el.find("input[name='note[references]']");
+  this.references_field = this.el.find("input[name='note[usfm_references]']");
   this.references_field.val("");
 
   this.initWYSIWYG();
