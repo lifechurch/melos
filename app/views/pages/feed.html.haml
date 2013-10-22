@@ -1,12 +1,32 @@
 - @sidebar = false
 
 %article.social-feed
-  %h1 Feed
-  %p= link_to("Detail", "/pages/detail")
 
-  -# !!Individual moments
+  -# !Moment container link_to("Detail", "/pages/detail")
 
-  -# !Moment container
+  -# !Verse of the day moment
+
+  .moment
+    -# !the content of the moment
+    .moment-top
+      .moment-vod
+        -# !corner cap image
+        = image_tag "social-cap-vod.png", class: "moment-img"
+        -# !Icon and title
+        %h4.moment-vod-title
+          Verse of the day
+        -# !verse text
+        %p.moment-vod-verse
+          “I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.
+        -# !verse link text
+        <a href="#" title="Go to this verse in the reader" class="moment-vod-links">John 1:5</a>
+        -# !verse versions list
+        %ul.moment-vod-list
+          -# !verse version
+          %li
+            NIV
+          %li.moment-vod-list-on
+            NKJVAS
 
   .moment
     -# !the content of the moment
@@ -60,30 +80,6 @@
             = image_tag "andy_avatar.png"
           %textarea.moment-comments-input-text
             Leave a comment...
-
-  -# !Verse of the day moment
-
-  .moment
-    -# !the content of the moment
-    .moment-top
-      .moment-vod
-        -# !corner cap image
-        = image_tag "social-cap-vod.png", class: "moment-img"
-        -# !Icon and title
-        %h4.moment-vod-title
-          Verse of the day
-        -# !verse text
-        %p.moment-vod-verse
-          “I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.
-        -# !verse link text
-        <a href="#" title="Go to this verse in the reader" class="moment-vod-links">John 1:5</a>
-        -# !verse versions list
-        %ul.moment-vod-list
-          -# !verse version
-          %li
-            NIV
-          %li.moment-vod-list-on
-            NKJVAS
 
   -# !Bookmark moment
 
