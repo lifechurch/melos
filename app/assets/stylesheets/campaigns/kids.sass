@@ -121,6 +121,7 @@ p
 // !iPad hero screenshot
 
 .hero
+  position: relative
   background: image-url("campaigns/kids/hero-ipad.png") no-repeat center top
   width: 980px
   height: 755px
@@ -138,6 +139,13 @@ p
   color: #fff
   font-size: 22px
 
+.youtube-embed
+  position: absolute
+  left: 88px
+  top: 73px
+
+.youtube-mobile
+  display: none
 
 // !Screens
 
@@ -376,6 +384,27 @@ p
     margin: 0 auto
     font-size: 15px
 
+  .youtube-embed
+    display: none!important
+    
+  .youtube-mobile
+    display: block!important
+    width: auto
+    position: relative
+    padding-bottom: 56.25%
+    padding-top: 30px
+    height: 0
+    margin: 20px 0
+    overflow: hidden
+
+  .youtube-mobile iframe,
+  .youtube-mobile object,
+  .youtube-mobile embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100% 
 
   // !Screens
 
