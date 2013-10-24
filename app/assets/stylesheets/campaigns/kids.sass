@@ -240,6 +240,7 @@ p
   background-color: #333
   margin-top: 60px
   padding: 30px 10%
+  min-width: 940px
 
 .logos-box
   width: 940px
@@ -463,6 +464,7 @@ p
     margin-top: 30px
     padding: 20px 0
     overflow: hidden
+    min-width: 0
 
   .logos-box
     margin: 0
@@ -477,8 +479,7 @@ p
 
 // !Retina stuff for hi-res dee-vices (Had to repeat this cuz desktop image would load in mobile)
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-
+@media only screen and (max-width : 480px) and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
   .intro-help
     background: image-url("campaigns/kids/jesus@2x.png") no-repeat center top
     background-size: 480px 190px
