@@ -182,7 +182,7 @@ MobileMenus.prototype = {
     $('#m_version_btn').click(function(e){
         e.preventDefault();
 
-        thiss.versionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass(this.openFlag);
+        thiss.versionMenu.css({'z-index':'1000','left':0}).fadeIn('fast').addClass(this.openFlag);
     });
     // Version menu close trigger
     $(document).on('click', '.version_close_btn', function(e){
