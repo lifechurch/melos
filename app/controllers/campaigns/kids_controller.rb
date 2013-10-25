@@ -1,5 +1,6 @@
 class Campaigns::KidsController < ApplicationController
   layout 'kids'
+  caches_action :index
 
   def index
   end
