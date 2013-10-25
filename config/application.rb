@@ -115,7 +115,7 @@ module YouversionWeb
 
     # rate limit clients to 2 req/sec sustained
     # (only on production or staging where we have external assets)
-    if ENV['FOG_DIRECTORY']
+    if ENV['FOG_DIRECTORY'] && ENV['THROTTLE_REQUESTS']
       config.middleware.use  Rack::Throttle::Minute, :max => (Cfg.rate_limit).to_i, cache: Dalli::Client.new, :key_prefix => :throttle
     end
 
