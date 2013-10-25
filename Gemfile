@@ -57,8 +57,7 @@ group :assets do
   gem 'jquery-rails',  '~> 2.1.4'
 end
 
-group :test, :development do
-  gem 'sqlite3'
+group :test do
   gem 'debugger'
   gem 'capybara',       '~> 1.1.2'
   gem 'capybara-mechanize', '~> 0.3.0'
@@ -84,6 +83,10 @@ group :development, :tddium_ignore do
   gem 'hooves'
   gem 'pry', require: false
   gem 'quiet_assets'
+end
+
+group :test, :development do
+  gem 'sqlite3'
 end
 
 #gem 'rack-mini-profiler'
