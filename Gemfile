@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 ruby '1.9.3'
 gem 'rails', '3.2.13'
@@ -14,7 +14,7 @@ gem 'grackle',                '~> 0.3.0'
 gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
-gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+gem 'sentry-raven', :git => 'https://github.com/getsentry/raven-ruby.git'
 gem 'pg', :group => :production
 
 #gem 'oink'
@@ -26,7 +26,7 @@ gem 'httparty',               '0.8.2'
 
 gem 'http_accept_language',   '~> 1.0.2'
 gem 'koala',                  '~> 1.6.0'
-gem "language_list",          '~> 0.0.3'
+gem 'language_list',          '~> 0.0.3'
 gem 'newrelic_rpm',           '~> 3.5.7.59'
 gem 'nokogiri',               '~> 1.5.2'
 gem 'omniauth-facebook',      '~> 1.4.1'
@@ -45,7 +45,7 @@ gem 'viximo-rack-throttle',   '~> 0.5.0'
 # gem 'rails-i18n',           '~> 0.6.3'
 
 gem 'routing-filter',         '~> 0.3.1'
-gem "unicorn",               '~> 4.3.1'
+gem 'unicorn',               '~> 4.3.1'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
@@ -57,22 +57,21 @@ group :assets do
   gem 'jquery-rails',  '~> 2.1.4'
 end
 
-group :test, :development do
-  gem 'sqlite3'
+group :test do
   gem 'debugger'
   gem 'capybara',       '~> 1.1.2'
   gem 'capybara-mechanize', '~> 0.3.0'
-  gem "capybara-webkit", "~> 0.12.1"
-  gem "capybara-screenshot", "~> 0.3.4"
+  gem 'capybara-webkit', '~> 0.12.1'
+  gem 'capybara-screenshot', '~> 0.3.4'
   gem 'cucumber-rails', '~> 1.3.0', require: false
   gem 'rspec-cells'
   gem 'rspec-rails'
   gem 'minitest'
   gem 'tddium',         '~> 1.4.6'
   gem 'simplecov', require: false
-  gem "parallel_tests"
-  gem "zeus-parallel_tests"
-  gem "terminal-notifier-guard"
+  gem 'parallel_tests'
+  gem 'zeus-parallel_tests'
+  gem 'terminal-notifier-guard'
 end
 
 group :development, :tddium_ignore do
@@ -84,6 +83,10 @@ group :development, :tddium_ignore do
   gem 'hooves'
   gem 'pry', require: false
   gem 'quiet_assets'
+end
+
+group :test, :development do
+  gem 'sqlite3'
 end
 
 #gem 'rack-mini-profiler'
