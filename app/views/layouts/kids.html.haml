@@ -1,7 +1,7 @@
 :ruby
   meta_title        = t("meta.kids_app.title")
   meta_description  = t("meta.kids_app.description")
-  meta_url          = "http://bible.com/kids"
+  meta_url          = "https://bible.com/kids"
 
 !!! 5
 %html
@@ -17,9 +17,21 @@
     %meta{name: "og:description", content: meta_description }
     = stylesheet_link_tag "campaigns/kids"
     = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
+
     :javascript
       try{Typekit.load();}catch(e){}
-    = render '/shared/google_analytics'
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3571547-76']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_setDomainName', 'bible.com']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
   %body
 
     .kids
