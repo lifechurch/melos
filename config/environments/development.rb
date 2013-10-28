@@ -13,7 +13,7 @@ YouversionWeb::Application.configure do
   config.consider_all_requests_local       = true
 
   # Caching defaults to off in development, uncomment to enable
-  config.action_controller.perform_caching = true
+  # config.action_controller.perform_caching = true
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
