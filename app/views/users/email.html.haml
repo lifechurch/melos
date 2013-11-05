@@ -1,7 +1,12 @@
-%p= t('users.update email copy')
-= render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
+- content_for :sidebar do
+  = render partial: "widgets/settings"
 
-= form_for @user, url: update_email_user_path(@user) do |u|
-  %p
-    = u.text_field :email
-    = button_tag t('users.edit email'), class: "action_button_green"
+
+%article
+  %p= t('users.update email copy')
+  = render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
+
+  = form_for @user, url: update_email_user_path(@user) do |u|
+    %p
+      = u.text_field :email
+      = button_tag t('users.edit email'), class: "action_button_green"

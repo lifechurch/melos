@@ -68,7 +68,9 @@ class UsersController < ApplicationController
   end
 
 
-
+  def edit
+    render layout: "application"
+  end
 
 
   def new
@@ -161,9 +163,7 @@ class UsersController < ApplicationController
   end
 
 
-  def edit
-    @selected = :profile
-  end
+
 
   def update
     id = @user.id
@@ -174,12 +174,12 @@ class UsersController < ApplicationController
       redirect_to edit_user_path(id)
     else
       flash[:error]= t('users.profile.error')
-      render :edit
+      render action: "edit", layout: "application"
     end
   end
 
   def delete_account
-    @selected = :account_existence
+    render layout: "application"
   end
 
   def destroy
@@ -200,7 +200,7 @@ class UsersController < ApplicationController
       end
     else
       flash.now[:error] = t("invalid password")
-      render "delete_account"
+      render action: "delete_account", layout: "application"
     end
     
   end
@@ -222,15 +222,19 @@ class UsersController < ApplicationController
   # TODO: move to its own controller and resource
 
     def email
-      @selected = :email
       @user = current_user
+      render layout: "application"
     end
 
     def update_email
       @selected = :email
       @user = @me = current_user
       @results = @user.update_email(params[:user][:email])
-      @results.valid? ? render(:update_email_success) : render(:email)
+      if @results.valid?
+        render action: "update_email_success", layout: "application"
+      else
+        render action: "email", layout: "application"
+      end
     end
 
     # TODO: handle users.token.not_found api error when requesting more than once.
@@ -242,15 +246,11 @@ class UsersController < ApplicationController
       end
     end
 
-  def devices
-    @devices = @user.devices
-    @selected = :devices
-  end
-
   # Change password
   # TODO: move to own controller / resource
     def password
       @selected = :password
+      render layout: "application"
     end
 
     # TODO: move this to its own resourceful controller
@@ -267,7 +267,7 @@ class UsersController < ApplicationController
       else
         @user.add_error(t('users.password.old was invalid'))
       end
-      render action: "password"
+      render action: "password", layout: "application"
     end
 
   # Change profile picture
@@ -277,6 +277,7 @@ class UsersController < ApplicationController
       @selected = :picture
       @user = current_user
       @user_avatar_urls = @user.user_avatar_url
+      render layout: "application"
     end
 
     def update_picture
@@ -293,7 +294,7 @@ class UsersController < ApplicationController
          set_current_avatar(@user.direct_user_avatar_url["px_24x24"])
          redirect_to(picture_user_path(@user))
       else
-         render :picture
+         render action: "picture", layout: "application"
       end
     end
 
@@ -333,10 +334,11 @@ class UsersController < ApplicationController
   # TODO: move to own controller / resource
 
     def devices
-      @user = current_user
-      @devices = @user.devices
-      @selected = :devices
+      @devices = Device.all(id: current_user.id, auth: current_auth)
+      render layout: "application"
     end
+
+
 
     def destroy_device
       @user = current_user

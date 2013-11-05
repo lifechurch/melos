@@ -1,19 +1,24 @@
 - @title = "#{t('users.connected devices')} | #{@user.name || @user.username}"
 
-- if @results
-  = render partial: "shared/form_errors", locals: {errors: @results.errors }
+- content_for :sidebar do
+  = render partial: "widgets/settings"
 
-%ul.resource_list
-  - if @devices.present?
-    - @devices.each do |d|
+
+%article
+  - if @results
+    = render partial: "shared/form_errors", locals: {errors: @results.errors }
+
+  %ul.resource_list
+    - if @devices.present?
+      - @devices.each do |d|
+        %li
+          %div.float_right.confirm= link_to t('remove'), device_path(d.id), method: :delete, "data-confirm-text" => t('confirm danger')
+          %h4= "#{d.vendor} #{d.model}"
+          %p.mute
+            = d.os
+            %br
+            = t('registered ago', time_ago: time_ago_in_words(d.created_dt))
+    - else
       %li
-        %div.float_right.confirm= link_to t('remove'), device_path(d.id), method: :delete, "data-confirm-text" => t('confirm danger')
-        %h4= "#{d.vendor} #{d.model}"
-        %p.mute
-          = d.os
-          %br
-          = t('registered ago', time_ago: time_ago_in_words(d.created_dt))
-  - else
-    %li
-      %h4= t('users.no devices')
-      %p= t('users.no devices download copy').html_safe
+        %h4= t('users.no devices')
+        %p= t('users.no devices download copy').html_safe

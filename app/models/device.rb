@@ -58,7 +58,7 @@ class Device < YV::Resource
     # Returns a YV::API::Results decorator for an array of Device instances.
 
     def for_user(user_id, params = {})
-      raise YV::AuthRequired unless opts[:auth]
+      raise YV::AuthRequired unless params[:auth]
       all(params.merge(id: user_id))
     end
 
