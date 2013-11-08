@@ -16,6 +16,16 @@
 #main div.social-feed
   width: 905px
 
+#toggle_comments
+  padding: 10px 15px  
+  cursor: pointer
+
+#toggle_comments:after  
+  content: 'hide comments'
+
+#toggle_comments.closed:after
+  content: 'show comments'
+
 // !-------------------- Feed -------------------------
 
 // !Moment containers
@@ -23,6 +33,10 @@
 .moment
   margin: 0 15px 15px 0
   width: 445px
+  -webkit-transition: all 0.3s ease-out
+  -moz-transition: all 0.3s ease-out
+  -o-transition: all 0.3s ease-out
+  transition: all 0.3s ease-out
 
 .moment:nth-child(2n)
   margin-right: 0

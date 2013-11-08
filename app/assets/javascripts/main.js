@@ -48,6 +48,23 @@ jQuery(document).ready(function() {
     new Moments.CommentForm({textarea: $(this)})
   });
 
+  $(".moment-actions-comment a").click(function(e) {
+    e.preventDefault();
+    $(this).parents(".moment").find(".moment-comments").toggleClass("hide");
+    if ($('.social-feed').length) {
+      $('.social-feed').trigger('refreshWookmark');  
+    }
+  });  
+
+  $("#toggle_comments").click(function() {
+    $(this).toggleClass("closed");
+    if ($(this).hasClass("closed")) {
+      $('.social-feed .moment-comments').addClass("hide");
+    } else {
+      $('.social-feed .moment-comments').removeClass("hide");
+    }
+    $('.social-feed').trigger('refreshWookmark');
+  });
 
 });
 
