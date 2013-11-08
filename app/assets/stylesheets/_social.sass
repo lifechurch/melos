@@ -29,14 +29,15 @@
 // !-------------------- Feed -------------------------
 
 // !Moment containers
+body.transition .moment
+  -webkit-transition: all 0.3s ease-out
+  -moz-transition: all 0.3s ease-out
+  -o-transition: all 0.3s ease-out
+  transition: all 0.3s ease-out 
 
 .moment
   margin: 0 15px 15px 0
   width: 445px
-  -webkit-transition: all 0.3s ease-out
-  -moz-transition: all 0.3s ease-out
-  -o-transition: all 0.3s ease-out
-  transition: all 0.3s ease-out
 
 .moment:nth-child(2n)
   margin-right: 0
@@ -273,6 +274,9 @@
 
 
 // Moments that have verses (currently bookmark and highlight)
+.moment-bm
+  max-height: 250px
+  overflow: hidden
 
 .moment-verse
   font: 18px "times new roman", times, serif
