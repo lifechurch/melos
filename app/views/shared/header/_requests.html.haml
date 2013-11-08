@@ -4,51 +4,29 @@
 
 
 %script#friend-requests-tmpl{type:"text/x-handlebars-template"}
-  %span.arrow
-  %h4
-    =t("Friend requests")
-  =link_to("Find Friends", "#", class: "find-friends text-link")
-  %span.clear
+  :plain
+    <span class="arrow"></span>
+    <h4>Friend Requests</h4>
+    <a href="#" class="find-friends text-link">Find Friends</a>
+    <span class="clear"></span>
 
-  %ul
-    %li
-      %div.list-item
-        %div.item-content
-          %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
-          = link_to("Peter Smith", "#", class: "text-link")
-          %p
-            =t("wants to be your friend")
-          %span.timestamp
-            =t("12 days ago")
-        %div.item-actions
-          =link_to("Add", "#", class: "action_button_green")
-          =link_to("Ignore", "#", class: "action_button_grey")
-
-    %li
-      %div.list-item
-        %div.item-content
-          %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
-          = link_to("Peter Smith", "#", class: "text-link")
-          %p
-            =t("wants to be your friend")
-          %span.timestamp
-            =t("12 days ago")
-        %div.item-actions
-          =link_to("Add", "#", class: "action_button_green")
-          =link_to("Ignore", "#", class: "action_button_grey")
-
-    %li
-      %div.list-item
-        %div.item-content
-          %img.round-avatar{src: "/assets/round-avatar-FPO.png"}
-          = link_to("Peter Smith", "#", class: "text-link")
-          %p
-            =t("wants to be your friend")
-          %span.timestamp
-            =t("12 days ago")
-        %div.item-actions
-          =link_to("Add", "#", class: "action_button_green")
-          =link_to("Ignore", "#", class: "action_button_grey")
-
-  %div.view-all
-    =link_to("View all requests", "#", class: "text-link wide")
+    <ul>
+      {{#each incoming}}
+      <li>  
+        <div class="list-item">
+          <div class="item-content">
+            <img class="round-avatar" src="{{avatars.collection.1.url}}" height="48" width="48" />
+            <a href="/users/{{username}}" class="text-link">{{name}}</a>
+            <p>wants to be your friend</p>
+          </div>
+          <div class="item-actions">
+            <a href="#" class="action_button_green action-add" data-user-id="{{id}}" >Add</a>
+            <a href="#" class="action_button_grey action-ignore" data-user-id="{{id}}" >Ignore</a>
+          </div>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+    <div class="view-all">
+      <a href="/friendships/incoming" class="text-link wide">View all requests</a>
+    </div>

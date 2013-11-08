@@ -21,6 +21,7 @@ module YV
               when "bookmark.v1"    then to_bookmark(::Bookmark.new,data)
               when "highlight.v1"   then to_highlight(::Highlight.new,data)
               when "friendship.v1"  then to_friendship(::Friendship.new,data)
+              when "system.v1"      then to_system(::SystemMoment.new,data)
               #else map_instance_to_generic()
             end
           end
@@ -36,6 +37,23 @@ module YV
           def to_highlight(instance,data)
             YV::API::Mapper::Highlight.map_to_instance(instance,data)
           end
+
+
+          def to_system(instance,data)
+            instance.created_dt = data.created_dt
+            instance.updated_dt = data.updated_dt
+            instance.extras     = data.extras
+            instance.kind_id    = data.kind_id
+            instance.kind_color = data.kind_color
+            instance.commenting = data.commenting.enabled
+            instance.comments = map_to_comments(data.commenting.comments)
+            instance.comments_count = data.commenting.total
+            instance.icons = map_to_icons(data.base.images.icon)
+            instance.title = t(data.base.title["l_str"],data.base.title["l_args"])
+            instance.body  = t(data.base.body["l_str"], data.base.body["l_args"])
+            instance
+          end
+
 
           def to_friendship(instance,data)
             extras  = data.extras

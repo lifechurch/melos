@@ -13,9 +13,11 @@ YouversionWeb::Application.routes.draw do
   get "/search",        to: "search#show",                as: "search"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
 
-
   match "/app(/:store)", to: AppStoreController.action(:index)
-  
+
+  resources :friendships do
+    get :incoming, on: :collection
+  end
   resources :notifications, only: [:index]
   resources :comments,  only: [:create]
 

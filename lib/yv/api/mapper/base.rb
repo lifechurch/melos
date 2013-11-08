@@ -87,8 +87,8 @@ module YV
             def t( identifier , api_args )
               str = _(identifier).dup
               api_args.each do |key,val|
-                str.sub!("\{#{key}\}",val)
-              end
+                str.sub!("\{#{key}\}",val) unless val.nil?
+              end unless api_args.nil? || str.nil?
               return str
             end
 

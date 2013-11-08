@@ -5,7 +5,7 @@ class window.Menus.MenuGroup
   constructor: (@el)->
     @menus = []
     @current_menu = undefined
-    this.listener().bind "mousedown", $.proxy(this.handleDocumentMousedown,this)
+    #this.listener().bind "mousedown", $.proxy(this.handleDocumentMousedown,this)
 
   element: ->
     $(@el)
@@ -26,13 +26,6 @@ class window.Menus.MenuGroup
 
   handleDocumentMousedown: (event)->
     el = $(event.target)
-    console.log(@menus)
-    console.log(@current_menu)
-    console.log(el.attr("class"))
-    #unless el.hasClass("visible")
-    #  if @current_menu?
-    #    @current_menu.close() 
-    #    delete @current_menu
     return
 
 

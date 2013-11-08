@@ -16,6 +16,12 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bible Series</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Watch the <i>Bible Series</i> tonight!"
+
 msgid "moment.bookmark.title"
 msgstr "{name} bookmarked <b>{reference_human}</b>"
 
@@ -82,17 +88,20 @@ msgstr "{name} wants to be your friend"
 msgid "notifications.friendships.accept"
 msgstr "{name} accepted your friend request"
 
+msgid "notifications.friendships.nowfriends"
+msgstr "You and {name} are now friends"
+
 msgid "notifications.friendships.suggestion"
 msgstr "Do you want to be friends with {name}?"
 
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name} commented on your Bookmark"
+msgstr "{name} commented on your bookmark: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "{name} commented on your Highlight"
+msgstr "{name} commented on your highlight: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
-msgstr "{name} commented on your Note"
+msgstr "{name} commented on your note: “{comment}”"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
@@ -102,9 +111,6 @@ msgstr[1] "You have %d friendship requests"
 
 msgid "notifications.liked"
 msgstr "{name} liked your {kind}"
-
-msgid "notifications.commented"
-msgstr "{name} commented on your {kind}"
 
 msgid "notifications.system.test"
 msgstr "Download our Kids Bible App now!!!"

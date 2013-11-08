@@ -74,10 +74,9 @@ module YV
             lets_party.call #comes back as a Httparty response
           end
 
-          puts "---"
+          puts "GET DATA: (#{resource_url}) -----"
           puts api_data
-          puts resource_url
-          puts "----"
+          puts "END GET DATA -----"
           
           return YV::API::Response.new(api_data)
         end
@@ -98,9 +97,9 @@ module YV
             body:    opts.to_json
           }
 
-          puts "\n\n BODY -----"
+          puts "POST BODY: (#{resource_url}) -----"
           puts request_opts[:body]
-          puts "END -----"
+          puts "POST END -----"
 
           begin
             response = httparty_post(resource_url, request_opts)
