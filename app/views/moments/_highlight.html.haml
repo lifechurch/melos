@@ -10,9 +10,10 @@
         = image_tag md_avatar.url
       %p.moment-bm-text
         = link_to(moment.moment_title.html_safe, moment.to_path, class: "moment-title-link")
-      - moment.references.each do |ref|
-        %p.moment-verse{"data-usfm" => ref.usfm, "data-version-id" => ref.version_id }
-          = "#{ref.human}(#{ref.usfm})"
+      - if moment.references.present?
+        - moment.references.each do |ref|
+          %p.moment-verse{"data-usfm" => ref.usfm, "data-version-id" => ref.version_id }
+            = "#{ref.human}(#{ref.usfm})"
 
   -# !share controls, dates, and comments
   .moment-btm
