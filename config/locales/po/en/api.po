@@ -103,14 +103,26 @@ msgstr "{name} commented on your highlight: “{comment}”"
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} commented on your note: “{comment}”"
 
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} bookmarked {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} highlighted {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} created a note on {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} created a note, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} created a note"
+
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
 msgid_plural "You have %d friendship requests"
 msgstr[0] "You have a friendship request"
 msgstr[1] "You have %d friendship requests"
-
-msgid "notifications.liked"
-msgstr "{name} liked your {kind}"
 
 msgid "notifications.system.test"
 msgstr "Download our Kids Bible App now!!!"
