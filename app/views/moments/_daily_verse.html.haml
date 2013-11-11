@@ -5,11 +5,18 @@
       %h4.moment-vod-title
         Verse of the day
       %p.moment-vod-verse
-        “I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.
+        - verse_of_today = VOD.today
+        = verse_of_today.content
 
-      <a href="#" title="Go to this verse in the reader" class="moment-vod-links">John 1:5</a>
+      %a.moment-vod-links{href:"#"}
+        = verse_of_today.human
+
       %ul.moment-vod-list
-        %li
-          NIV
         %li.moment-vod-list-on
-          NKJVAS
+          = verse_of_today.version.abbreviation.upcase
+        %li
+          OTHER
+        %li
+          VERSIONS
+        %li
+          HERE
