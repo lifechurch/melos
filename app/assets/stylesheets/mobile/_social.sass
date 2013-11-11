@@ -3,23 +3,22 @@
 #main article.social-feed,
 #main div.social-feed,
 #main article.social-detail
-  background-color: transparent
+  background-color: #dedddb
   border: 0
   padding: 0
   box-shadow: none
   overflow: hidden
-  padding-left: 5px
 
 #main article.social-feed,
 #main div.social-feed
-  width: auto 
+  width: auto
 
 // !-------------------- Feed -------------------------
 
 // !Moment containers
 
 .moment
-  margin: 0 15px 15px 0 
+  margin: 0 15px 15px 0
   width: 100%
   float: none
 
@@ -128,7 +127,12 @@
 .moment-sys-text
   width: 70%
   line-height: 1.3em
+  min-height: 56px
 
+// !Bookmark moment
+
+.moment-bm
+  max-height: none
 
 // !Verse of the day moment
 
@@ -212,7 +216,7 @@
     width: 87%
 
   .moment-comments form
-    display: block  
+    display: block
 
   .moment-comments-list-text,
   .moment-comments-textarea
@@ -228,7 +232,7 @@
   .moment-bdg-text,
   .moment-vid-text,
   .moment-sys-text
-    width: 78%
+    width: 70%
 
 // !Sidebar comment input
 
@@ -238,7 +242,7 @@
 
 .social-sidebar-input
   padding: 10px
-  
+
   textarea
     margin-bottom: 10px
     height: auto
