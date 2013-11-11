@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.create(params[:comment].merge(auth: current_auth))
+    @comment  = Comment.create({
+      moment_id:  params[:comment][:moment_id].to_i,
+      content:    params[:comment][:content],
+      auth:       current_auth})
     
     if @comment.valid?
        redirect_to(:back, notice: "Saved")
