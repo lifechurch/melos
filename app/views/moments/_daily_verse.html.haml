@@ -2,13 +2,18 @@
   .moment-top
     .moment-vod
       = image_tag "social-cap-vod.png", class: "moment-img"
-      %h4.moment-vod-title
+      .moment-vod-calendar
+        .moment-vod-calendar-date
+          22
+        .moment-vod-calendar-img
+          = image_tag "moment-vod-calendar-img.png"
+      .moment-vod-title
         Verse of the day
       %p.moment-vod-verse
         - verse_of_today = VOD.today
         = verse_of_today.content
 
-      %a.moment-vod-links{href:"#"}
+      %a.moment-verse-links{href:"#"}
         = verse_of_today.human
 
       %ul.moment-vod-list

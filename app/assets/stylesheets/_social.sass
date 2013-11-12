@@ -289,29 +289,7 @@ body.transition .moment
   .verse > .label
     display: none !important
 
-// !Verse of the day moment
-
-.moment-vod-title
-  color: #666
-  background: image-url("social-vod-icon.png") no-repeat left center
-  height: 48px
-  line-height: 46px
-  padding-left: 58px
-  margin-bottom: 0
-
-.moment-vod-verse
-  font: 24px "times new roman", times, serif
-  letter-spacing: -.05em
-  margin: 10px 0 15px
-  background-color: #F5F4F3
-  +border-radius(5px)
-  padding: 15px
-
-.moment-vod-links,
-.moment-vod-list
-  float: left
-
-.moment-vod-links
+.moment-verse-links
   padding: 1px 7px
   background-color: #0084C8
   text-decoration: none
@@ -321,10 +299,52 @@ body.transition .moment
   display: block
   margin: 0 20px 0 0
   +border-radius(4px)
+  float: left
+
+// !Verse of the day moment
+
+.moment-vod
+  overflow: hidden
+
+.moment-vod-calendar
+  float: left
+  height: 48px
+  width: 48px
+  background: image-url("social-vod-icon.png") no-repeat left center
+  margin-bottom: 12px
+
+.moment-vod-calendar-date
+  font-size: 24px
+  font-weight: bold
+  text-align: center
+
+.moment-vod-calendar-img
+  margin-top: -34px
+
+.moment-vod-title
+  float: left
+  color: #666
+  height: 48px
+  line-height: 46px
+  padding-left: 10px
+  margin-bottom: 0
+  font-size: 24px
+  font-weight: bold
+  letter-spacing: -.02em
+
+.moment-vod-verse
+  font: 24px "times new roman", times, serif
+  letter-spacing: -.05em
+  margin: 0 0 15px
+  background-color: #F5F4F3
+  +border-radius(5px)
+  padding: 15px
+  clear: both
 
 .moment-vod-list
   overflow: hidden
   margin-bottom: 0
+  float: left
 
   li
     float: left
@@ -545,6 +565,6 @@ body.transition .moment
     background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top
     background-size: 600px 17px
 
-  .moment-vod-title
+  .moment-vod-calendar
     background: image-url("social-vod-icon@2x.png") no-repeat left center
     background-size: 48px 48px
