@@ -6,16 +6,15 @@
 
 .moment
   .moment-top
-    .moment-dl
+    .moment-fr
       = image_tag "social-cap-fr.png", class: "moment-img"
       %span.moment-avatar
         = image_tag md_avatar.url
-      %p.moment-dl-text
+      %p.moment-fr-text
         = moment.moment_title.html_safe
 
-      .moment-friend-container
-        .moment-friend-box
-          %a{href: user_path(friend.user_name) }
-            = image_tag friend_avatar.url, class: "moment-friend-avatar", size: "128x128"
-            %span.moment-friend-name
-              = friend.name
+      .moment-fr-box
+        %a{href: user_path(friend.user_name) }
+          = image_tag friend_avatar.url, class: "moment-fr-avatar", size: "128x128"
+          %span.moment-fr-name
+            = friend.name
