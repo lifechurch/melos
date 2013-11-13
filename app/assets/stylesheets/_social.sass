@@ -64,6 +64,7 @@ body.transition .moment
   background: #fff
   +border-radius(0 0 4px 4px)
   margin-bottom: 1px
+  padding-left: 7px
 
 // !Stuff each moment action has in common
 
@@ -108,10 +109,10 @@ body.transition .moment
 // !Specific stuff for each action
 
 .moment-actions-share
-  width: 47px
+  display: none !important
 
 .moment-actions-share a
-  background-position: 20px 10px
+  background-position: center 10px
 
 .moment-actions-comment a
   background-position: center -129px
@@ -127,11 +128,11 @@ body.transition .moment
   background-position: center -82px
 
 .moment-actions-time
-  padding: 0 0 0 35px
+  padding: 0 0 0 40px
   font-size: 11px
   height: 36px
   line-height: 34px
-  background: image-url("social-actions-sprite.png") no-repeat 15px -313px
+  background: image-url("social-actions-sprite.png") no-repeat 12px -313px
   width: auto
 
 // !Comments attached to a moment
