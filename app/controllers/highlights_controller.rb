@@ -36,18 +36,6 @@ class HighlightsController < ApplicationController
     #end
   end
 
-  #TODO make the sending form submit a different 'delete' form on clicking the clear icon
-
-  # Non standard Rails actions.
-  # ------------------------------------------------------------
-
-  def for_reference
-    highlights = Highlight.for_reference(ref_from_params, auth: current_auth) if current_auth
-    highlights ||= []
-    render json: highlights
-  end
-
-
   # TODO: turn this into a json action and render the html client side.
   # Endpoint returns a list of default colors *or* colors scoped to the current_user
   def colors

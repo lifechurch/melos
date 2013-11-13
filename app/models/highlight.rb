@@ -88,6 +88,38 @@ class Highlight < YV::Resource
       return YV::API::Results.new(data,errs)
     end
     
+    def by_reference(params={})
+      all_moments = Moment.all(params.slice(:auth,:user_id,:usfm,:version_id))
+      all_moments.collect {|moment| moment if moment.class == self }
+    end
+
+    # We want this returned:
+    # [{"verse":"7","color":"83f52c","id":443295817,"version":1},{"verse":"1","color":"83f52c","id":443295815,"version":1},{"verse":"3","color":"67c8ff","id":266668516,"version":1}]
+
+    def for_reader(params={})
+      highlights  = by_reference(params)
+      return highlights if highlights.blank?
+      
+      version_id  = highlights.first.references.first.version_id
+      pieces      = highlights.collect {|h| Hashie::Mash.new({id: h.id, color: h.color, references: h.references})}
+
+      results = pieces.collect do |piece|
+        usfms = piece.references.collect {|ref| ref.usfm}.flatten  # should be ["GEN.1.1","MORE.2.1","REV.10.10"]
+        nums  = usfms.collect {|usfm| usfm.split(".").last}        # should be ["1","1","10"]
+        nums.collect do |num| 
+          {
+            id: piece.id, 
+            verse: num.to_s,
+            color: piece.color,
+            version: version_id.to_s
+          }
+        end
+      end
+
+      return results.flatten
+    end
+
+
 
     # API Method
     # Returns a ResourceList of Highlight instances with a given reference

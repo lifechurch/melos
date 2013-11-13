@@ -19,12 +19,14 @@ class Moment < YV::Resource
     # * page: required, defaults to 1 {page: 2}
     # * kind: optional, string identifier {kind: "bookmark"|"highlight"|"note"}
     # * user_id: optional, {user_id: 12345}
+    # * usfm: optional, "GEN.1"
+    # * version_id: optional, required with usfm  123987
 
     # example API data
     # TODO
 
     def all(opts={})
-      super(opts.slice(:auth, :user_id, :page, :kind))
+      super(opts.slice(:auth, :page, :kind, :user_id, :usfm, :version_id))
     end
 
   end

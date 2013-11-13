@@ -9,15 +9,14 @@ class JsonController < ActionController::Metal
   # Routes
   # get "/highlights/:version/:reference"
   def reference_highlights
-    highlights = Highlight.for_reference(ref_from_params, auth: current_auth) if current_auth
-    highlights ||= []
+    highlights = current_auth ? Highlight.for_reader(auth: current_auth, user_id: current_auth.user_id, version_id: params[:version], usfm: usfm_param) : []
     render json: highlights.to_json
   end
 
-
-
   include NewRelic::Agent::Instrumentation::ControllerInstrumentation
   add_transaction_tracer :reference_highlights
+
+
 
   private
 
@@ -31,13 +30,11 @@ class JsonController < ActionController::Metal
     end
   end
 
-  def ref_from_params
-    case
-    when params.has_key?(:version)
-      Reference.new(params[:reference], version: params[:version])
-    else
-      Reference.new(params[:reference])
-    end
+
+
+  def usfm_param
+    pieces = params[:reference].split(".")
+    "#{pieces.first.upcase}.#{pieces.second}" # JHN.1 from jhn.1.kjv
   end
 
 end
