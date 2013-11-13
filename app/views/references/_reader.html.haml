@@ -18,11 +18,9 @@
 
 - content_for :mobile_right_nav do
   = link_to(version.abbreviation, 'javascript:void(0);', id: "m_version_btn" )
-  %span.right_btn_slice
 
 - content_for :title_link do
   = link_to(reference.human, 'javascript:void(0);', id:"m_book_chap_btn")
-  %span.right_btn_slice
 
 
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
