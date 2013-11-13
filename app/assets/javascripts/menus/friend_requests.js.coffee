@@ -6,7 +6,7 @@ class window.Menus.FriendRequests extends window.Menus.Base
 
   constructor: (@trigger_el, @base_element) ->
     
-    @api_url    = "/friendships/incoming.json"
+    @api_url    = "/friendships/requests.json"
     @template   = $("#friend-requests-tmpl")
     
     @popover    = $(@trigger_el).next('.header-popover')

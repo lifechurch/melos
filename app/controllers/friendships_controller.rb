@@ -2,7 +2,7 @@ class FriendshipsController < ApplicationController
 
   respond_to :html, :json
 
-  def incoming
+  def requests
     @friendships = Friendships.incoming(auth: current_auth, page: @page)
     respond_with(@friendships)
   end

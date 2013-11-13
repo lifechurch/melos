@@ -22,6 +22,7 @@ module YV
               when "highlight.v1"   then to_highlight(::Highlight.new,data)
               when "friendship.v1"  then to_friendship(::Friendship.new,data)
               when "system.v1"      then to_system(::SystemMoment.new,data)
+              else  to_generic(::GenericMoment.new,data)
               #else map_instance_to_generic()
             end
           end
@@ -38,6 +39,10 @@ module YV
             YV::API::Mapper::Highlight.map_to_instance(instance,data)
           end
 
+          def to_generic(instance,data)
+            instance
+          end
+
 
           def to_system(instance,data)
             instance.created_dt = data.created_dt
@@ -49,8 +54,8 @@ module YV
             instance.comments = map_to_comments(data.commenting.comments)
             instance.comments_count = data.commenting.total
             instance.icons = map_to_icons(data.base.images.icon)
-            instance.title = t(data.base.title["l_str"],data.base.title["l_args"])
-            instance.body  = t(data.base.body["l_str"], data.base.body["l_args"])
+            instance.title = t(data.base.title["l_str"],data.base.title["l_args"]) if data.base.title
+            instance.body  = t(data.base.body["l_str"], data.base.body["l_args"]) if data.base.body
             instance
           end
 

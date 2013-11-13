@@ -16,7 +16,7 @@ YouversionWeb::Application.routes.draw do
   match "/app(/:store)", to: AppStoreController.action(:index)
 
   resources :friendships do
-    get :incoming, on: :collection
+    get :requests, on: :collection
   end
   resources :notifications, only: [:index]
   resources :comments,  only: [:create]
