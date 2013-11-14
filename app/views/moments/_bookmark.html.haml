@@ -21,6 +21,10 @@
           - moment.labels.each do |label|
             = link_to(label, bookmarks_user_path(@user, label: label.chomp),class: "moment-bm-labels-link")
 
+      .moment-content-actions
+        <a href="#" class="moment-content-actions-edit" title="Edit this bookmark">Edit this bookmark</a>
+        <a href="#" class="moment-content-actions-delete" title="Delete this bookmark">Delete this bookmark</a>
+
   -# !share controls, dates, and comments
   .moment-btm
     .moment-actions

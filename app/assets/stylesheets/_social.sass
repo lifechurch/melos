@@ -48,12 +48,47 @@ body.transition .moment
 .moment-btm
 
 
+// !Edit and delete controls
 
-.moment-title-link
+.moment-content-actions
+  margin-top: 10px
 
-  b
-    display: block
-    color: #333
+.moment-content-actions-edit,
+.moment-content-actions-delete
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  display: inline-block
+  width: 27px
+  padding: 0 0 1px
+
+.moment-content-actions-edit
+  background: #DEDDDB image-url("edit-delete-sprite.png") no-repeat 7px 5px
+  +border-radius(5px 0 0 5px)
+
+.moment-content-actions-delete
+  background: #DEDDDB image-url("edit-delete-sprite.png") no-repeat -58px 5px
+  +border-radius(0 5px 5px 0)
+
+.moment-content-actions-edit:hover
+  background-position: 7px -30px
+
+.moment-content-actions-delete:hover
+  background-position: -58px -30px
+
+// !Edit / delete in a note
+
+.moment-no
+  .moment-content-actions
+    position: absolute
+    top: 88px
+    left: 22px
+
+  .moment-content-actions-edit
+    +border-radius(5px 0 0 5px)
+
+  .moment-content-actions-delete
+    +border-radius(0)
 
 
 // !Share comment like etc.

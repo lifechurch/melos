@@ -15,6 +15,11 @@
           %p.moment-verse{"data-usfm" => ref.usfm, "data-version-id" => ref.version_id }
             = "#{ref.human}(#{ref.usfm})"
 
+      .moment-content-actions
+        <a href="#" class="moment-content-actions-edit" title="Edit this highlight">Edit this highlight</a>
+        <a href="#" class="moment-content-actions-delete" title="Delete this highlight">Delete this highlight</a>
+
+
   -# !share controls, dates, and comments
   .moment-btm
     .moment-actions
