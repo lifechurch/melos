@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       sign_in(@user, params[:password])
       location = redirect_path
       clear_redirect
-      redirect_to(location || bible_path) and return
+      redirect_to("/home") and return
     else
       render "new" and return
     end

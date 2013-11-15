@@ -45,12 +45,19 @@ class User < YV::Resource
     # returns a YV::API::Result decorator for a User instance if create succeeds
     # returns a YV::API::Result with errors if create fails
     def register(opts = {})
-      opts = {email: "", username: "", password: "", secure: true, verified: false, agree: false}.merge!(opts.symbolize_keys)
+      opts = {
+        email: "",
+        first_name: "",
+        last_name: "",
+        username: "",
+        password: "",
+        verified: true,
+        agree: false
+      }.merge!(opts.symbolize_keys)
+
       opts[:agree] = true if opts[:agree]
       opts[:token] = Digest::MD5.hexdigest "#{opts[:username]}.Yv6-#{opts[:password]}"
-      opts[:notification_settings] = {
-        newsletter: {email: true}
-      }
+      opts[:notification_settings] = { newsletter: {email: true}}
 
       data, errs = post("users/create", opts)
       results = if errs.blank?

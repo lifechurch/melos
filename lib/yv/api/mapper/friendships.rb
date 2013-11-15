@@ -7,8 +7,12 @@ module YV
 
           def map_incoming(results)
             friendships = ::Friendships.new
-            users = results.users.collect do |user_data|
-              map_to_user(User.new,user_data)
+            users = if results.users
+              results.users.collect do |user_data|
+                map_to_user(User.new,user_data)
+              end
+            else
+              []
             end
             friendships.incoming = users
             friendships

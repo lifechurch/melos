@@ -33,6 +33,8 @@ en:
     users username not available:               "The username you supplied is not available."
     users username or password invalid:         "The username or password you supplied is invalid."
     users username required:                    "You must enter a username."
+    users first name required:                  "You must enter a first name."
+    users last name required:                   "You must enter a last name."
   meta:
     kids_app:
       title:                                    "The Bible App for Kids"
@@ -218,6 +220,8 @@ en:
     profile form errors:                        "The following error(s) prevented updating your profile:"
     email address:                              "Email Address"
     user name:                                  "Username"
+    first name:                                 "First name"
+    last name:                                  "Last name"
     agreement:                                  "I agree to the YouVersion %{terms_link}."
     terms and conditions:                       "terms and conditions"
     facebook sign up success:                   "Great! You've authorized with Facebook. Pick a YouVersion username and password to continue."
