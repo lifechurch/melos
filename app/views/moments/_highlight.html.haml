@@ -12,7 +12,7 @@
         = link_to(moment.moment_title.html_safe, moment.to_path, class: "moment-title-link")
       - if moment.references.present?
         - moment.references.each do |ref|
-          %p.moment-verse{"data-usfm" => ref.usfm, "data-version-id" => ref.version_id }
+          %p.moment-verse{"data-usfm" => usfm_from_moment(ref), "data-version-id" => ref.version_id }
             = "#{ref.human}(#{ref.usfm})"
 
       .moment-content-actions

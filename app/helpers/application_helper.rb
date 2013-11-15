@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+
+  def usfm_from_moment(references)
+    references.usfm.join("+")
+  end
+
   def available_locales
     @available_locales ||= I18n.available_locales
   end

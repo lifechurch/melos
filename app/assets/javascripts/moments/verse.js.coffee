@@ -16,7 +16,7 @@ class window.Moments.Verse
       dataType: "json"
 
     request.done (data) =>
-      @el.html(data.content)
+      @el.html(data.content_plain)
       $('.social-feed').trigger('refreshWookmark');
       return
 

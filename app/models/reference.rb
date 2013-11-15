@@ -119,6 +119,10 @@ class Reference < YV::Resource
     end
   end
 
+  def content_plain
+    content(as: :plaintext)
+  end
+
   # Human readable version of the reference
   # Ex: 
   #   Genesis 1:2 for GEN.1.2 reference

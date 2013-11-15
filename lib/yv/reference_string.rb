@@ -19,7 +19,11 @@ module YV
     # - overrides[:version] to override the version of the reference string
 
     def initialize( ref_str, opts={})
-      @raw        = ref_str
+
+      @raw = case ref_str
+        when /(.{3}\.[^\+]+\.[^\+]+)\+(?:.*)(?:.{3}\..+\.(.+))/ then "#{$1}-#{$2}"
+        else ref_str
+      end
       @validated  = false
       @defaults   = opts[:defaults]   || {}
       @overrides  = opts[:overrides]  || {}
