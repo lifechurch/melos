@@ -25,7 +25,7 @@
 
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
-%article#reader{"data-setting-font" => client_settings.reader_font,
+%article#reader.reader{"data-setting-font" => client_settings.reader_font,
          'data-setting-size' => client_settings.reader_font_size,
          "data-fullscreen"   => client_settings.reader_full_screen,
          "data-selected-verses" => (focus_verses ? nil : verses.try(:join,",")),
