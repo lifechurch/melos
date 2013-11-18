@@ -118,8 +118,8 @@
           %nav
             %ul
               %li#nav_mobile_home{class: highlight.call(is_bible_url)}
-                %a.icon{href:'/bible'}
-                  %span= t('bible')
+                %a.icon{href:'/home'}
+                  %span= t('home')
               %li#nav_mobile_bible{class: highlight.call(is_bible_url)}
                 %a.icon{href:'/bible'}
                   %span= t('bible')
@@ -129,19 +129,14 @@
               %li#nav_mobile_videos{class: highlight.call(is_videos_url)}
                 %a.icon{href: '/videos'}
                   %span=t("videos.title")
-              %li#nav_mobile_bookmarks{class: highlight.call(is_bookmarks_url)}
-                %a.icon{href: bookmark_href}
-                  %span= t('bookmarks.title')
-              %li#nav_mobile_notes{class: highlight.call(is_notes_url)}
-                %a.icon{href: notes_href}
-                  %span=t("notes title")
               - if current_auth
                 %li#nav_mobile_profile
                   %a.icon{href: user_path(current_auth.username)}
                     %span=t("Profile")
-              %li#nav_mobile_live
-                %a.icon{href: live_href}
-                  %span=t("live")
+              /
+                %li#nav_mobile_live
+                  %a.icon{href: live_href}
+                    %span=t("live")
               %li#nav_mobile_mobile
                 %a.icon{href:'/mobile'}
                   %span=t("mobile apps")
