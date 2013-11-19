@@ -103,6 +103,24 @@ msgstr "{name} commented on your highlight: “{comment}”"
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} commented on your note: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} also commented on their bookmark: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s bookmark: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} also commented on their highlight: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s highlight: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} also commented on their note: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s note: “{comment}”"
+
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} bookmarked {reference_human}"
 
