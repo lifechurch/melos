@@ -38,6 +38,9 @@
       %li.profile
         %a{href: user_path(@user)}
           %span Profile
+      %li.friends
+        %a{href: friends_user_path(@user)}
+          %span Friends    
       %li.notes
         %a{href: notes_user_path(@user)}
           %span= t('notes title')
@@ -50,6 +53,7 @@
       %li.badges
         %a{href: badges_user_path(@user)}
           %span= t('badges title')
+      
 
   %article.profile
     - title = t("users.edit #{@selected}")

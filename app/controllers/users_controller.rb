@@ -67,6 +67,10 @@ class UsersController < ApplicationController
     self.sidebar_presenter = Presenter::Sidebar::Default.new
   end
 
+  def friends
+
+  end
+
 
   def edit
     render layout: "application"
