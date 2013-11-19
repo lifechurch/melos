@@ -15,7 +15,7 @@ YouversionWeb::Application.routes.draw do
 
   match "/app(/:store)", to: AppStoreController.action(:index)
 
-  resources :friendships do
+  resources :friendships, only: [:create, :destroy] do
     get :requests, on: :collection
   end
   resources :notifications, only: [:index]
@@ -54,7 +54,7 @@ YouversionWeb::Application.routes.draw do
   get "/highlights/:version/:reference", to: JsonController.action(:reference_highlights), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
 
 
-  resources :videos do
+  resources :videos, only: [:index,:show] do
     get :series,    on: :member
     get :publisher, on: :member
   end

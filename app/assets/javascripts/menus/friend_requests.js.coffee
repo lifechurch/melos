@@ -38,7 +38,6 @@ class window.Menus.FriendRequests extends window.Menus.Base
     request.done (data) =>
       template = Handlebars.compile(@template.html())
       $(@base_element).html(template(data))
-      this.addClickHandlers()
       return
 
     request.fail (jqXHR,status) =>
@@ -65,37 +64,4 @@ class window.Menus.FriendRequests extends window.Menus.Base
     @popover.animate({'opacity' : '0'}, 200);
     $(@trigger_el).removeClass("active")
     this.trigger("yv:menu:close",{target: this})
-    return
-
-
-  addClickHandlers: ->
-
-    @add_btns    = @popover.find(".action-add")
-    @ignore_btns = @popover.find(".action-ignore")
-
-    console.log(@add_btns)
-    console.log(@remove_btns)
-
-    @add_btns.on "click", (e)=>
-      e.preventDefault()
-      this.add($(e.currentTarget).data("user-id"))
-      return
-
-    @ignore_btns.on "click", (e)=>
-      e.preventDefault()
-      this.ignore($(e.currentTarget).data("user-id"))
-      return
-
-  # Add friend
-  # ------------------------------------------------------------
-
-  add: (user_id)->
-    console.log("adding: " + user_id)
-    return
-
-  # Remove friend
-  # ------------------------------------------------------------
-
-  ignore: (user_id)->
-    console.log("removing: " + user_id)
     return

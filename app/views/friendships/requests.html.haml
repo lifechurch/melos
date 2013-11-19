@@ -1,1 +1,20 @@
-%h1 Stuff
+- @sidebar = false
+
+- if @friendships.incoming.present?
+  - @friendships.incoming.each do |user|
+    .notify-item
+      .item-content
+        - avatar = user.avatars.lg_avatar # large for retina display
+        %img.round-avatar{src: avatar.url }
+        
+        %p 
+          =link_to user.name, user_path(user.username) , class: 'text-link'
+          wants to be your friend
+
+      .item-actions
+
+        = form_tag friendships_url(user_id: user.id) do
+          = button_tag "Add", class: 'action_button_green action-add' 
+
+        = form_tag friendship_url(user.id), method: "DELETE" do
+          = button_tag "Ignore", class: 'action_button_grey action-ignore' 

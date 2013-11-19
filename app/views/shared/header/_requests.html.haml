@@ -7,7 +7,7 @@
   :plain
     <span class="arrow"></span>
     <h4>Friend Requests</h4>
-    <a href="#" class="find-friends text-link">Find Friends</a>
+    <!--<a href="/connections" class="find-friends text-link">Find Friends</a> -->
     <span class="clear"></span>
 
     <ul>
@@ -20,13 +20,25 @@
             <p>wants to be your friend</p>
           </div>
           <div class="item-actions">
-            <a href="#" class="action_button_green action-add" data-user-id="{{id}}" >Add</a>
-            <a href="#" class="action_button_grey action-ignore" data-user-id="{{id}}" >Ignore</a>
+            
+            <form accept-charset="UTF-8" action="/friendships?user_id={{id}}" method="post">
+              <input name="utf8" type="hidden" value="✓" />
+              <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
+              <button type="submit" class="action_button_green action-add">Add</button>
+            </form>
+
+            <form accept-charset="UTF-8" action="/friendships/{{id}}" method="post">
+              <input name="utf8" type="hidden" value="✓" />
+              <input name="_method" type="hidden" value="DELETE" />
+              <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
+              <button type="submit" class="action_button_grey action-add">Ignore</button>
+            </form>
+
           </div>
         </div>
       </li>
       {{/each}}
     </ul>
     <div class="view-all">
-      <a href="/friendships/incoming" class="text-link wide">View all requests</a>
+      <a href="/friendships/requests" class="text-link wide">View all requests</a>
     </div>

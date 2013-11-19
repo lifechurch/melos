@@ -25,7 +25,7 @@ module YV
       # Read data initially stored for this instance
       attr_accessor :data
 
-      def initialize( data , errors )
+      def initialize( data , errors = nil )
         @data = data
         capture_errors(errors) unless errors.blank?
         return self

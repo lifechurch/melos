@@ -6,16 +6,27 @@ module YV
         class << self
 
           def map_incoming(results)
+            return results unless results.valid? # return original result object if it contains errors
+
             friendships = ::Friendships.new
-            users = if results.users
+            friendships.incoming = if results.users
               results.users.collect do |user_data|
                 map_to_user(User.new,user_data)
               end
             else
               []
             end
-            friendships.incoming = users
-            friendships
+
+            YV::API::Results.new(friendships)
+          end
+
+          def from_default(results)
+            return results unless results.valid? # return original result object if it contains errors
+            friendships = ::Friendships.new
+            friendships.outgoing_ids = results.outgoing
+            friendships.incoming_ids = results.incoming
+            
+            YV::API::Results.new(friendships)
           end
 
           def map_decline(results)
@@ -32,13 +43,6 @@ module YV
 
           def from_all(results)
             from_default(results)
-          end
-
-          def from_default(results)
-            friendships = ::Friendships.new
-            friendships.outgoing_ids = results.outgoing
-            friendships.incoming_ids = results.incoming
-            friendships
           end
 
         end

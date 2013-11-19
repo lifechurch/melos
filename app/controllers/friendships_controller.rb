@@ -10,20 +10,18 @@ class FriendshipsController < ApplicationController
 
   # Accept
   def create
-    id = params[:user_id]
-    @friendship = Friendships.accept(user_id: id, auth: current_auth)
-    if @friendship.valid?
-       redirect_to(:back, notice: "You're now friends")
-    else
-       redirect_to(:back, notice: "Error creating friendship")
-    end
+    @friendship = Friendships.accept(user_id: params[:user_id].to_i, auth: current_auth)
+    notice = @friendship.valid? ? "You're now friends" : "Error creating friendship"
+    redirect_to(:back, notice: notice)
     # eventually support json/ajax submission.
     #respond_with(@friendship)
   end
 
   # Decline
   def destroy
-
+    @friendship = Friendships.decline(user_id: params[:id].to_i, auth: current_auth)
+    notice = @friendship.valid? ? "Declined" : "Error"
+    redirect_to(:back, notice: notice)
   end
 
 end
