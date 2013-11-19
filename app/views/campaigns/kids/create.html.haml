@@ -4,26 +4,4 @@
     Thanks for signing up!
   %p.notify-note
     You'll be the first to know when the Bible App for Kids is ready to download.
-  .share
-    %p.share-copy
-      Tell your friends about The Bible App for Kids!
-
-    - fb_app_id   = Cfg.facebook_app_id
-    - fb_name     = "The Bible App for Kids"
-    - fb_desc     = "Meet the Bible App for Kids from YouVersion: animated Bible stories in a free app for smartphones and tablets. Learn, play, and grow in God's Word. Coming late 2013: bible.com/kids"
-    - fb_link     = "http://www.bible.com/kids"
-    - fb_redirect = "http://www.bible.com/kids"
-
-    %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
-      Facebook
-
-
-    - twitter     = "Meet the Bible App for Kids from @YouVersion. Learn, play, and grow in God's Word. Coming late 2013: bible.com/kids"
-    %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
-      Twitter
-
-
-    - subject     = "Meet the Bible App for Kids from YouVersion"
-    - body        = "YouVersion is making a Bible App for Kids! I’m excited for them to have their very own Bible App so they can learn, play, and grow in God’s Word. They’ll be able to explore a growing collection of Bible stories with touch-activated animations and learning activities. And it’s free, so our whole family can install it on our iOS or Android devices. I just signed up to be notified when it’s available later this year and thought you might be interested too. Sign up here: bible.com/kids"
-    %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
-      Email
+  = render "campaigns/kids/share"

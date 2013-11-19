@@ -97,33 +97,7 @@
         %p.features-5
           Kid-friendly navigation
 
-      -# !Share chunk
-
-      .share
-        %p.share-copy
-          Tell your friends about The Bible App for Kids...coming soon!
-
-        - fb_app_id   = Cfg.facebook_app_id
-        - fb_name     = "The Bible App for Kids"
-        - fb_desc     = "It’s almost here! The Bible App for Kids is launching on November 28, Thanksgiving Day. Interactive Bible stories in a free app for iOS and Android. See a preview at bible.com/kids"
-        - fb_link     = "http://www.bible.com/kids"
-        - fb_redirect = "http://www.bible.com/kids"
-
-        %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
-          Facebook
-
-
-        - twitter     = "The Bible App for Kids from @YouVersion is launching on Thanksgiving Day! See a preview: bible.com/kids"
-        %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}#"}
-          Twitter
-
-
-        - subject     = "Meet the Bible App for Kids from YouVersion"
-        - body        = "The Bible App for Kids will launch on November 28, Thanksgiving Day!  I’m excited for kids to have their very own Bible App so they can learn, play, and grow in God’s Word. They’ll be able to explore a growing collection of Bible stories with touch-activated animations and learning activities. And it’s free, so our whole family can install it on our iOS or Android devices. Set an alarm on your phone to download the app on Thanksgiving morning."
-        %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
-          Email
-
-
+      = render "campaigns/kids/share"
 
     -# !Brought to you by
 
