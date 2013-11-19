@@ -13,11 +13,15 @@ class FriendshipsController < ApplicationController
     @friendship = Friendships.accept(user_id: params[:user_id].to_i, auth: current_auth)
     notice = @friendship.valid? ? "You're now friends" : "Error creating friendship"
     redirect_to(:back, notice: notice)
-    # eventually support json/ajax submission.
+    # eventually support json/ajax submission for javascript menus, etc.
     #respond_with(@friendship)
   end
 
   # Decline
+  # This is a bit hackish with regards to Rails REST best practices
+  # DELETE /friendships/:id
+  # params[:id] is not the id(pk) of a server side Friendship
+  # params[:id] is being used as a user_id in this particular scenario
   def destroy
     @friendship = Friendships.decline(user_id: params[:id].to_i, auth: current_auth)
     notice = @friendship.valid? ? "Declined" : "Error"
