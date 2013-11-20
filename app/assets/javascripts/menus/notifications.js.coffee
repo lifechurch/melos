@@ -7,6 +7,7 @@ class window.Menus.Notifications extends window.Menus.Base
 
   constructor: (@trigger_el, @base_element) ->
     
+    @container = $(@base_element).find(".popover-data-container")
     @template = $("#notifications-tmpl")
     @api_url  = "/notifications.json?length=5"
     @popover  = $(@trigger_el).next('.header-popover')
@@ -32,7 +33,7 @@ class window.Menus.Notifications extends window.Menus.Base
 
     request.done (data) =>
       template = Handlebars.compile(@template.html())
-      $(@base_element).html(template({notifications: data}))
+      $(@container).html(template({notifications: data}))
       return
 
     request.fail (jqXHR,status) =>

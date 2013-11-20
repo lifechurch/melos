@@ -1,15 +1,18 @@
 -# Friends and notification popovers
 %div.header-popover.friend-requests
-
-
+  %span.arrow
+  %h4 Friend Requests
+  %span.clear
+  .popover-data-container
+    %ul
+      %li
+        %p.loading-indicator Loading ...
+    .view-all
+      %a.text-link.wide{href:"/notifications"}
+        View all Notifications
 
 %script#friend-requests-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <span class="arrow"></span>
-    <h4>Friend Requests</h4>
-    <!--<a href="/connections" class="find-friends text-link">Find Friends</a> -->
-    <span class="clear"></span>
-
     <ul>
       {{#each incoming}}
       <li>  

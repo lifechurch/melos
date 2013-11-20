@@ -1,10 +1,17 @@
 %div.header-popover.notifications
+  %span.arrow
+  %h4 Notifications
+  %span.clear
+  .popover-data-container
+    %ul.notifications-list
+      %li.notifications-item
+        %p.loading-indicator Loading ...
+  .view-all
+    %a.text-link.wide{href:"/notifications"}
+      View all Notifications
 
 %script#notifications-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <span class="arrow"></span>
-    <h4>Notifications</h4>
-    <span class="clear"></span>
     <ul class="notifications-list">
       {{#each notifications}}
       <li class="notifications-item">  
@@ -12,6 +19,3 @@
       </li>
       {{/each}}
     </ul>
-    <div class="view-all">
-      <a href="/notifications" class="text-link wide">View all Notifications</a>
-    </div>

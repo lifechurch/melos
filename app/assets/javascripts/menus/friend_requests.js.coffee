@@ -6,9 +6,9 @@ class window.Menus.FriendRequests extends window.Menus.Base
 
   constructor: (@trigger_el, @base_element) ->
     
+    @container = $(@base_element).find(".popover-data-container")
     @api_url    = "/friendships/requests.json"
     @template   = $("#friend-requests-tmpl")
-    
     @popover    = $(@trigger_el).next('.header-popover')
 
 
@@ -37,7 +37,7 @@ class window.Menus.FriendRequests extends window.Menus.Base
 
     request.done (data) =>
       template = Handlebars.compile(@template.html())
-      $(@base_element).html(template(data))
+      $(@container).html(template(data))
       return
 
     request.fail (jqXHR,status) =>
