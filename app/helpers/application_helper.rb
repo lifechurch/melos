@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def moment_creation_string(api_created_dt)
+  def api_dt_time_ago(api_created_dt)
     # TODO - localize 'ago'
     time_ago_in_words(DateTime.parse(api_created_dt).in_time_zone) + " ago"
   end

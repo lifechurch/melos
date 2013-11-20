@@ -2,7 +2,8 @@
   - notifications.each do |notification|
     %li.notifications-item
       %p
-        %span.activity-timestamp
-          = DateTime.parse(notification.created_dt).to_s :short
         %span.activity-title
           = notification.moment_title
+        %span.activity-timestamp
+          = api_dt_time_ago(notification.created_dt)
+        
