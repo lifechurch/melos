@@ -15,9 +15,7 @@
         %p.moment-no-note-text
           = moment.content
 
-      .moment-content-actions
-        <a href="#" class="moment-content-actions-edit" title="Edit this note">Edit this note</a>
-        <a href="#" class="moment-content-actions-delete" title="Delete this note">Delete this note</a>
+      = render partial: "moments/owner_actions", locals: {moment: moment}
 
   .moment-btm
     = render partial: "moments/actions_bar", locals: {moment: moment}

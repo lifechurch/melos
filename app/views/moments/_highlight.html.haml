@@ -16,10 +16,7 @@
             %p.moment-verse{"data-usfm" => usfm_from_moment(ref), "data-version-id" => ref.version_id }
               = "#{ref.human}(#{ref.usfm})"
 
-      .moment-content-actions
-        <a href="#" class="moment-content-actions-edit" title="Edit this highlight">Edit this highlight</a>
-        <a href="#" class="moment-content-actions-delete" title="Delete this highlight">Delete this highlight</a>
-
+      = render partial: "moments/owner_actions", locals: {moment: moment}
 
   -# !share controls, dates, and comments
   .moment-btm
