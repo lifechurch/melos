@@ -8,6 +8,7 @@ module YV
           private
 
           def from_all(results)
+            #return results
             return results if results.empty?
             results.moments.collect do |moment_data|
               map_from_kind(moment_data)
@@ -40,7 +41,10 @@ module YV
           end
 
           def to_generic(instance,data)
+            instance.body_text   = data.base.body.str if data.base.body
+            instance.body_images = map_to_body_images(data.base.images.body)
             instance.created_dt = data.created_dt
+            instance.moment_title = data.base.title["str"]
             instance
           end
 

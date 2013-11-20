@@ -10,7 +10,9 @@ class GenericMoment
                 :body,
                 :icons,
                 :avatars,
-                :title,
+                :body_images,
+                :body_text,
+                :moment_title,
                 :extras
 
 

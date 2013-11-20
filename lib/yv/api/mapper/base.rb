@@ -66,6 +66,10 @@ module YV
               return Images::IconCollection.init_from_api(data) unless data.nil?
             end
 
+            def map_to_body_images(data)
+              return Images::BodyCollection.init_from_api(data) unless data.nil?
+            end
+
             # Map data to comment instance
             def map_to_comment(comment_instance, comment_data)
               comment_instance.content = comment_data.content

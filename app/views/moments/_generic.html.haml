@@ -4,7 +4,14 @@
     .moment-sys
       = image_tag "social-cap-bm.png", class: "moment-img"
       %p.moment-sys-text
-        This is a generic moment
+        = moment.moment_title.html_safe
+
+      - if moment.body_images.present?
+        = link_to(moment.body_images.action_url || "#") do
+          = image_tag(moment.body_images.select_optimized_width(400).url, width: "414")
+
+      - if moment.body_text.present?
+        %p{style: "clear: both;"}= moment.body_text
 
   -# !share controls, dates, and comments
   .moment-btm
