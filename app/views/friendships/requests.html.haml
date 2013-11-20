@@ -5,7 +5,7 @@
     %ul
       - @friendships.incoming.each do |user|
         %li
-          .list-item
+          .notify-item
             .item-content
               - avatar = user.avatars.lg_avatar # large for retina display
               %img.round-avatar{src: avatar.url }
