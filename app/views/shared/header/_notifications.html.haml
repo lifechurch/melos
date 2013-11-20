@@ -14,8 +14,10 @@
   :plain
     <ul class="notifications-list">
       {{#each notifications}}
-      <li class="notifications-item">  
-        <p>{{attributes.moment_title}}</p>
+      <li class="notifications-item">
+        <a href="{{attributes.action_url}}">
+          <p>{{attributes.moment_title}}</p>
+        </a>
       </li>
       {{/each}}
     </ul>
