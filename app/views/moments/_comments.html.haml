@@ -12,7 +12,7 @@
           %span.moment-comments-list-avatar
             = image_tag avatar.url
           %p.moment-comments-list-text
-            = link_to(user.name, user_url(user.username))
+            = link_to(user.name, user_path(user.username))
             = comment.content
 
   = render partial: "moments/comments_form", locals: {moment: moment}
