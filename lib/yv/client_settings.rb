@@ -6,6 +6,10 @@ module YV
       @cookies = cookies
     end
 
+    def time_zone
+      @cookies['cs-time-zone']
+    end
+
     def reader_font
       @cookies['data-setting-font']
     end

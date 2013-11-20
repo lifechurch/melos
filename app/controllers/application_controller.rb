@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_is?, :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_site
-  before_filter :set_locale
+  before_filter :set_locale_and_timezone
   before_filter :skip_home
   before_filter :check_facebook_cookie
   before_filter :tend_caches
@@ -30,7 +30,8 @@ class ApplicationController < ActionController::Base
   end
 
   # Set locale
-  def set_locale
+  def set_locale_and_timezone
+    Time.zone = client_settings.time_zone || "GMT"
     # grab available locales as array of strings and compare against strings.
     available_locales = I18n.available_locales.map {|l| l.to_s}
 

@@ -20,17 +20,5 @@
         <a href="#" class="moment-content-actions-delete" title="Delete this note">Delete this note</a>
 
   .moment-btm
-    .moment-actions
-      %span.moment-actions-share
-        <a href="#" title="Share this with friends or family">Share</a>
-
-      %span.moment-actions-like
-        <a href="#" title="Like this">Like</a>
-
-      %span.moment-actions-comment
-        <a href="#" title="Leave a comment about this">Comment</a>
-
-      %span.moment-actions-time
-        = moment.created_dt
-
+    = render partial: "moments/actions_bar", locals: {moment: moment}
     = render partial: "moments/comments", locals: {moment: moment}

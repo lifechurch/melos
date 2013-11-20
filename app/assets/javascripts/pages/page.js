@@ -512,6 +512,7 @@ Page.prototype = {
   },
 
   initSocial : function() {
+
     // expand comments on comment icon
     $(".moment-actions-comment a").click(function(e) {
       e.preventDefault();
@@ -535,6 +536,8 @@ Page.prototype = {
       $('.social-feed').trigger('refreshWookmark');
       Page.prototype.disableTransitionCSS();
     });
+
+
 
   },
 

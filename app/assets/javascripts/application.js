@@ -7,7 +7,8 @@
 //= require ./menus/friend_requests
 //= require ./menus/menu_group
 //= require_self
-//= require popper
+
+//= require jstz-1.0.4
 //= require_tree ./lib/
 //= require_tree ./menus/
 //= require_tree ./modals/

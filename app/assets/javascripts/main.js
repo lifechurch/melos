@@ -28,7 +28,6 @@ jQuery(document).ready(function() {
   window.app = new App();
   window.app.setPage( new Page() );
 
-
   var n = new Menus.Notifications("#header .notifications-btn",".header-popover.notifications");
   var f = new Menus.FriendRequests("#header .friend-requests-btn",".header-popover.friend-requests"); 
   var mg = new Menus.MenuGroup("#header")
@@ -48,6 +47,9 @@ jQuery(document).ready(function() {
     new Moments.CommentForm({textarea: $(this)})
   });
 
+  var timezone = jstz.determine();
+  setCookie('cs-time-zone',timezone.name());
+  
 });
 
 jQuery(window).load(function() { });

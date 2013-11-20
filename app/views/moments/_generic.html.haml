@@ -8,11 +8,4 @@
 
   -# !share controls, dates, and comments
   .moment-btm
-    .moment-actions
-      %span.moment-actions-share
-        <a href="#" title="Share this with friends or family">Share</a>
-
-      %span.moment-actions-like
-        <a href="#" title="Like this">Like</a>
-
-      %span.moment-actions-time
+    = render partial: "moments/actions_bar", locals: {moment: moment}

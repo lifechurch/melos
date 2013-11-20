@@ -40,6 +40,7 @@ module YV
           end
 
           def to_generic(instance,data)
+            instance.created_dt = data.created_dt
             instance
           end
 
