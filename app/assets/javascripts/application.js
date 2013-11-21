@@ -5,6 +5,7 @@
 //= require ./menus/base
 //= require ./menus/notifications
 //= require ./menus/friend_requests
+//= require ./menus/nav_mobile
 //= require ./menus/menu_group
 //= require_self
 

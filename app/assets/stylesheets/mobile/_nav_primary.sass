@@ -34,7 +34,17 @@
   border: 0
 
 #nav_mobile
-  margin-bottom: -20px
+  position: fixed
+  top: 47px
+  left: 0
+  width: 100%
+  z-index: 200
+  overflow-y: auto
+  max-height: 352px
+
+  nav 
+    display: none
+
   li
     list-style-type: none
     background: #2a2a2a
@@ -50,6 +60,17 @@
       height: 42px
       line-height: 42px
       font-weight: bold
+
+article .nav_items
+  z-index: 0
+
+#m-navitems
+  position: fixed
+  width: 100%
+  height: 46px
+  top: 47px
+  left: 0
+  z-index: 100
 
 #nav_mobile a.icon span
   margin-left: 56px

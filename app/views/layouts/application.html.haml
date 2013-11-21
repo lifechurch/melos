@@ -33,6 +33,52 @@
   %body
     #wrapper
       = content_for?(:header) ? yield(:header) : render("/shared/header/default")
+      - plan_href = is_authed ? user_subscriptions_path(current_auth.username) : plans_path
+      - live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"         
+
+      - #--------- Begin Mobile Navigation
+      - unless @main_nav == false
+        #nav_mobile.mobile{role:"navigation"}
+          %nav
+            %ul
+              %li#nav_mobile_home{class: highlight.call(is_bible_url)}
+                %a.icon{href:'/home'}
+                  %span= t('home')
+              %li#nav_mobile_bible{class: highlight.call(is_bible_url)}
+                %a.icon{href:'/bible'}
+                  %span= t('bible')
+              %li#nav_mobile_plans{class: highlight.call(is_plans_url)}
+                %a.icon{href: plan_href}
+                  %span=t("plans.title")
+              %li#nav_mobile_videos{class: highlight.call(is_videos_url)}
+                %a.icon{href: '/videos'}
+                  %span=t("videos.title")
+              - if current_auth
+                %li#nav_mobile_profile
+                  %a.icon{href: user_path(current_auth.username)}
+                    %span=t("Profile")   
+              /
+                %li#nav_mobile_live
+                  %a.icon{href: live_href}
+                    %span=t("live")
+              %li#nav_mobile_mobile
+                %a.icon{href:'/mobile'}
+                  %span=t("mobile apps")
+          %nav
+            %ul
+              - if is_authed
+                %li#nav_mobile_sign_out
+                  %a{href: sign_out_path}
+                    =t("sign out")
+              - else
+                %li#nav_mobile_sign_in
+                  %a{href: sign_in_path(redirect: params[:redirect])}
+                    =t("sign in")
+                %li#nav_mobile_sign_up
+                  %a{href: sign_up_path(redirect: params[:redirect])}
+                    =t("sign up")
+
+      - #--------- End Mobile Navigation      
 
       - flash.each do |key, msg|
         %div{class: container_class_str, id: "flash_#{key}"}= msg
@@ -59,7 +105,6 @@
                       %span= t('bible')
 
                   %li#nav_primary_plans{class: highlight.call(is_plans_url)}
-                    - plan_href = is_authed ? user_subscriptions_path(current_auth.username) : plans_path
                     %a.icon{href: plan_href }
                       %span &nbsp;
                     %a.tooltip{href: plan_href, style:"display: none;"}
@@ -88,7 +133,6 @@
                         %span=t("notes title")
 
                   %li#nav_primary_live
-                    - live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"
                     %a.icon{href: live_href}
                       %span &nbsp;
                     %a.tooltip{href: live_href, style: "display: none;"}
@@ -111,49 +155,5 @@
             - unless (@sidebar == false || sidebar_presenter.blank?)
               = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
 
-
-      - #--------- Begin Mobile Navigation
-      - unless @main_nav == false
-        #nav_mobile.mobile{role:"navigation"}
-          %nav
-            %ul
-              %li#nav_mobile_home{class: highlight.call(is_bible_url)}
-                %a.icon{href:'/home'}
-                  %span= t('home')
-              %li#nav_mobile_bible{class: highlight.call(is_bible_url)}
-                %a.icon{href:'/bible'}
-                  %span= t('bible')
-              %li#nav_mobile_plans{class: highlight.call(is_plans_url)}
-                %a.icon{href: plan_href}
-                  %span=t("plans.title")
-              %li#nav_mobile_videos{class: highlight.call(is_videos_url)}
-                %a.icon{href: '/videos'}
-                  %span=t("videos.title")
-              - if current_auth
-                %li#nav_mobile_profile
-                  %a.icon{href: user_path(current_auth.username)}
-                    %span=t("Profile")
-              /
-                %li#nav_mobile_live
-                  %a.icon{href: live_href}
-                    %span=t("live")
-              %li#nav_mobile_mobile
-                %a.icon{href:'/mobile'}
-                  %span=t("mobile apps")
-          %nav
-            %ul
-              - if is_authed
-                %li#nav_mobile_sign_out
-                  %a{href: sign_out_path}
-                    =t("sign out")
-              - else
-                %li#nav_mobile_sign_in
-                  %a{href: sign_in_path(redirect: params[:redirect])}
-                    =t("sign in")
-                %li#nav_mobile_sign_up
-                  %a{href: sign_up_path(redirect: params[:redirect])}
-                    =t("sign up")
-
-      - #--------- End Mobile Navigation
 
       = render partial: '/shared/footer', locals: {footer_classes: container_class_str}

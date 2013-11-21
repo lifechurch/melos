@@ -2,7 +2,7 @@
 //----------------------------------------------------------------------------------------------------
 
 #main
-  margin: 0
+  margin: 48px 0 0 0
 
 #reader_header
   display: none !important
@@ -19,7 +19,7 @@
   -webkit-border-radius: 0
 
 #main.main_reader article
-  padding: 18px 24px 16px
+  padding: 90px 24px 16px
 
 // `Main > Headers
 //----------------------------------------------------------------------------------------------------
@@ -110,30 +110,33 @@ div.close_tab
 
 .verse_toolbar
   height: 86px
-  position: absolute
+  position: fixed
   top: -86px
   left: 0px
   width: 100%
   background: url("mobile/verse_toolbar_bg.jpg") repeat-x
   z-index: 193
+  margin-top: 47px
 
 .share_toolbar
   height: 46px
-  position: absolute
+  position: fixed
   top: 0px
   left: 0px
   width: 100%
   display: none
   background: url("mobile/verse_toolbar_bg.jpg") repeat-x
   z-index: 192
+  margin-top: 47px
 
 .color_toolbar
   height: auto
-  position: absolute
+  position: fixed
   top: -329px
   left: 0px
   width: 100%
   z-index: 192
+  margin-top: 47px
 
 .color_toolbar nav
   background: #2b2b2c
@@ -156,9 +159,10 @@ div.close_tab
   background: transparent
   border: 0px
   border-radius: 0px
+  -webkit-box-shadow: none !important
   box-shadow: none !important
   width: 100%
-  position: absolute
+  position: fixed
   z-index: 191
   padding: 0px
   overflow: hidden
@@ -457,8 +461,8 @@ article .nav_items,
 //----------------------------------------------------------------------------------------------------
 
 #main footer
-  padding: 5px 20px 5px
-  margin: 0 auto
+  padding: 5px 20px 25px
+  margin: 0 auto -20px
   border-radius: 0
   border:
     left: 0
@@ -584,7 +588,7 @@ article .nav_items,
   border: 0px
   width: 100%
   padding: 0px
-  position: absolute
+  position: fixed
   top: -208px
   box-shadow: none
   z-index: 291

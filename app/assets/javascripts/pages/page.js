@@ -70,6 +70,7 @@ function Page() {
 
   this.initConstants();
   this.initHTML();
+  this.initOrientationResize();
   this.initNav();
   this.initInputs();
   this.initMenus();
@@ -96,6 +97,23 @@ Page.prototype = {
     this.MODERN_BROWSER = !((this.IE && this.VERSION < 9) || this.BROWSER.opera);
 
   },
+
+  initOrientationResize : function() {
+    $(window).bind("orientationchange", function(event){
+      $(window).resize();
+    });
+    $(window).bind("resize", function(event){
+      Page.prototype.orientAndResize();
+    });
+  },
+
+  orientAndResize : function() {
+    //ensure correct max-height for mobile header scroll
+    $("#nav_mobile").css("max-height", $("body").height() - $("#header").height() + "px");
+    if ($('.social-feed').length) {
+      try {$('.social-feed').trigger('refreshWookmark')} catch(e) {};
+    }
+  },  
 
   // Ability to set the reader on the page publicly.
   setReader : function( rdr ) {
@@ -263,11 +281,6 @@ Page.prototype = {
         $(this).find(".tooltip").fadeIn(100);
       }, function() {
         $(this).find(".tooltip").fadeOut(100);
-    });
-
-    // Slide to mobile nav
-    $('#slideToNav').click(function(){
-      $(window).scrollTop($('#nav_mobile').offset().top);
     });
 
     // Hide address bar on smartphones, unless there is smart banner

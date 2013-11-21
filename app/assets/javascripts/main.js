@@ -28,9 +28,11 @@ jQuery(document).ready(function() {
   window.app = new App();
   window.app.setPage( new Page() );
 
+  var nm = new Menus.NavMobile("#slideToNav","#nav_mobile");
   var n = new Menus.Notifications("#header .notifications-btn",".header-popover.notifications");
   var f = new Menus.FriendRequests("#header .friend-requests-btn",".header-popover.friend-requests"); 
   var mg = new Menus.MenuGroup("#header")
+      mg.addMenu(nm)
       mg.addMenu(n)
       mg.addMenu(f)
 
