@@ -63,9 +63,7 @@
                     %span=t("live")
               %li#nav_mobile_mobile
                 %a.icon{href:'/mobile'}
-                  %span=t("mobile apps")
-          %nav
-            %ul
+                  %span=t("mobile apps") 
               - if is_authed
                 %li#nav_mobile_sign_out
                   %a{href: sign_out_path}
