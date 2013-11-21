@@ -35,23 +35,24 @@
 
       #toggle_comments
 
+    - # find the highlight method in /app/helpers/users_helper.rb
     %ul.profile-tabs
-      %li.profile-tabs-activity.highlight
+      %li.profile-tabs-activity{class: highlight(user_path)}
         %a{href: user_path(@user)}
           %span Profile
-      %li.profile-tabs-friends
+      %li.profile-tabs-friends{class: highlight(friends_user_path)}
         %a{href: friends_user_path(@user)}
           %span Friends
-      %li.profile-tabs-notes
+      %li.profile-tabs-notes{class: highlight(notes_user_path)}
         %a{href: notes_user_path(@user)}
           %span= t('notes title')
-      %li.profile-tabs-bookmarks
+      %li.profile-tabs-bookmarks{class: highlight(bookmarks_user_path)}
         %a{href: bookmarks_user_path(@user)}
           %span= t('bookmarks.title')
-      %li.profile-tabs-highlights
+      %li.profile-tabs-highlights{class: highlight(highlights_user_path)}
         %a{href: highlights_user_path(@user)}
           %span Highlights
-      %li.profile-tabs-badges
+      %li.profile-tabs-badges{class: highlight(badges_user_path)}
         %a{href: badges_user_path(@user)}
           %span= t('badges title')
       %li.profile-tabs-settings
