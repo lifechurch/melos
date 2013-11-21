@@ -33,7 +33,8 @@
         %p.profile-hdr-info-about
           = @user.bio
 
-    #toggle_comments
+      #toggle_comments
+
     %ul.profile-tabs
       %li.profile-tabs-activity.highlight
         %a{href: user_path(@user)}
@@ -53,7 +54,9 @@
       %li.profile-tabs-badges
         %a{href: badges_user_path(@user)}
           %span= t('badges title')
-
+      %li.profile-tabs-settings
+        %a{href: badges_user_path(@user)}
+          %span= t('badges title')
 
   %article.profile
     - title = t("users.edit #{@selected}")
