@@ -15,6 +15,10 @@ YouversionWeb::Application.routes.draw do
 
   match "/app(/:store)", to: AppStoreController.action(:index)
 
+  resources :moments, only: [:index] do
+    get :cards, on: :collection
+  end
+
   resources :friendships, only: [:create, :destroy] do
     get :requests, on: :collection
   end

@@ -14,7 +14,7 @@
       - if moment.references.present?
         .moment-verse-wrap
           - moment.references.each do |ref|
-            %p.moment-verse{"data-usfm" => usfm_from_moment(ref), "data-version-id" => ref.version_id }
+            %p.moment-verse.empty{"data-usfm" => usfm_from_moment(ref), "data-version-id" => ref.version_id }
               = "#{ref.human}(#{ref.usfm})"
 
       - if moment.labels.present?

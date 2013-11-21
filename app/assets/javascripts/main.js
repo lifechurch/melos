@@ -36,17 +36,18 @@ jQuery(document).ready(function() {
       mg.addMenu(n)
       mg.addMenu(f)
 
-  $(".moment-verse").each(function() {
-    el = $(this);
-    new Moments.Verse({
-      el:         el,
-      usfm:       el.data("usfm"),
-      version_id: el.data("version-id")
-    });
+  $(".moment-verse.empty").each(function() {
+    new Moments.Verse({el: $(this)});
   });
 
   $(".moment-comments-textarea").each(function() {
     new Moments.CommentForm({textarea: $(this)})
+  });
+
+  $(".social-feed .moment").wookmark({
+    autoResize:   true,
+    offset:       15,
+    container:    $(".social-feed")
   });
 
   var timezone = jstz.determine();

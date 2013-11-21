@@ -3,8 +3,8 @@ window.Moments ?= {}
 class window.Moments.Verse
   constructor: (@params)->
     @el         = @params.el
-    @usfm       = @params.usfm
-    @version_id = @params.version_id
+    @usfm       = @el.data("usfm")
+    @version_id = @el.data("version-id")
     @el.html("Loading")
     this.fetch()
 
@@ -17,7 +17,8 @@ class window.Moments.Verse
 
     request.done (data) =>
       @el.html(data.content_plain)
-      $('.social-feed').trigger('refreshWookmark');
+      @el.removeClass("empty").addClass("loaded")
+      $('.social-feed').trigger('refreshWookmark')
       return
 
     request.fail (jqXHR,status) =>

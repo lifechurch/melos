@@ -7,3 +7,34 @@
   = render partial: "moments/cta/sharing"
 
   = render partial: "moments/cards", locals: {moments: @moments}
+
+
+= link_to("Load more","#", id: "load-more", "data-page" => @page, style: "display: block; text-align: center; border: 1px solid #ccc; padding: 4px 10px; background:#aaa;")
+
+:javascript
+  $('#load-more').click(function (ev) {
+      ev.preventDefault();
+      var pagination_link = $(ev.target);
+      var next_page = pagination_link.data("page") + 1;
+      $.ajax({
+        type: "GET",
+        url: "/moments/cards?page=" + next_page,
+        dataType: "html",
+        success: function (data) {
+            $('.social-feed').append(data);
+            $(".social-feed .moment").wookmark({
+              autoResize:   true,
+              offset:       15,
+              container:    $(".social-feed")
+            });
+            $(".moment-verse.empty").each(function(){
+              new Moments.Verse({el: $(this)});
+            });
+        
+            pagination_link.data("page", next_page);
+        },
+        error: function (xhr, status) {
+            console.log("Sorry, there was a problem!");
+        }
+    });
+  });
