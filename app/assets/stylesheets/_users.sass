@@ -25,6 +25,7 @@
 .profile-hdr
   padding: 45px 0 0 45px
   position: relative
+  height: 125px
 
   .avatar_huge
     position: absolute
@@ -82,50 +83,72 @@
     position: absolute
     top: 15px
     left: 45px
-
+    background-color: #fff
+    +box-shadow(#bbb 0 1px 0 0)
 
 // !Tab navigation
 
-.profile-tabs
-  overflow: hidden
-  margin: 0 0 15px 0
+.top_section
 
-.profile-tabs-activity,
-.profile-tabs-friends,
-.profile-tabs-notes,
-.profile-tabs-bookmarks,
-.profile-tabs-badges
-  display: block
-  width: 181px
-  margin-left: 1px
-  background-color: #fff
-  text-align: center
-  float: left
+  .profile-tabs
+    overflow: hidden
 
-.profile-tabs-activity
-  margin-left: 0
+  .profile-tabs-activity,
+  .profile-tabs-friends,
+  .profile-tabs-notes,
+  .profile-tabs-bookmarks,
+  .profile-tabs-highlights,
+  .profile-tabs-badges
+    display: block
+    width: 109px
+    padding-left: 40px
+    margin-left: 2px
+    float: left
+    background: #EEEDEB image-url("profile-sprite.png") no-repeat 15px top
 
-.profile-tabs-activity
-  +border-radius(4px 0 0 4px)
+  .profile-tabs-activity
+    margin-left: 0
 
-.profile-tabs-badges
-  +border-radius(0 4px 4px 0)
+  .profile-tabs-activity a,
+  .profile-tabs-friends a,
+  .profile-tabs-notes a,
+  .profile-tabs-bookmarks a,
+  .profile-tabs-badges a,
+  .profile-tabs-highlights a
+    height: 42px
+    line-height: 41px
+    display: block
+    color: #444
+    text-decoration: none
+    font-weight: bold
+    font-size: 15px
 
-.profile-tabs-activity a,
-.profile-tabs-friends a,
-.profile-tabs-notes a,
-.profile-tabs-bookmarks a,
-.profile-tabs-badges a
-  height: 40px
-  line-height: 39px
-  display: block
-  color: #999
-  text-decoration: none
-  font-weight: bold
+  .profile-tabs
+    .highlight
+      background-color: #fff
+      border-top: 3px solid #222
 
-.profile-tabs
-  .highlighted a
-    color: #59B200
+      a
+        height: 39px
+        line-height: 37px
+
+  .profile-tabs-activity
+    background-position: 15px 10px
+
+  .profile-tabs-friends
+    background-position: 15px -52px
+
+  .profile-tabs-notes
+    background-position: 15px -116px
+
+  .profile-tabs-bookmarks
+    background-position: 15px -179px
+
+  .profile-tabs-highlights
+    background-position: 15px -243px
+
+  .profile-tabs-badges
+    background-position: 15px -307px
 
 
 // !Content area with feed etc.

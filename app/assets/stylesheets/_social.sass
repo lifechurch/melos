@@ -17,15 +17,20 @@
 #main div.social-feed
   width: 905px
 
+
+// !Toggle comments
+
 #toggle_comments
   padding: 10px 15px
   cursor: pointer
+  display: none
 
 #toggle_comments:after
   content: 'hide comments'
 
 #toggle_comments.closed:after
   content: 'show comments'
+
 
 // !-------------------- Feed -------------------------
 
@@ -596,42 +601,3 @@ body.transition .moment
 
 .moment-title-link b
   color: #222
-
-
-// !Retina images
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-
-  .moment-actions-share a,
-  .moment-actions-comment a,
-  .moment-actions-like a
-    background: image-url("social-actions-sprite@2x.png") no-repeat
-    background-size: 16px 400px
-
-  .moment-actions-share a
-    background-position: 20px 10px
-
-  .moment-actions-comment a
-    background-position: center -129px
-
-  .moment-actions-like a
-    background-position: center -36px
-
-  .moment-actions-like a.liked
-    background-position: center -82px
-
-  .moment-actions-time
-    background: image-url("social-actions-sprite@2x.png") no-repeat 15px -313px
-    background-size: 16px 400px
-
-  .moment-no-note-title
-    background: image-url("moment-no-note-title-bg@2x.png") repeat-y left top
-    background-size: 23px 1px
-
-  .moment-no-note-text
-    background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top
-    background-size: 600px 17px
-
-  .moment-vod-calendar
-    background: image-url("social-vod-icon@2x.png") no-repeat left center
-    background-size: 48px 48px

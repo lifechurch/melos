@@ -33,27 +33,27 @@
         %p.profile-hdr-info-about
           = @user.bio
 
-    #toggle_comments.float_right
-    %ul.header_tabs
-      %li.profile
+    #toggle_comments
+    %ul.profile-tabs
+      %li.profile-tabs-activity.highlight
         %a{href: user_path(@user)}
           %span Profile
-      %li.friends
+      %li.profile-tabs-friends
         %a{href: friends_user_path(@user)}
-          %span Friends    
-      %li.notes
+          %span Friends
+      %li.profile-tabs-notes
         %a{href: notes_user_path(@user)}
           %span= t('notes title')
-      %li.bookmarks
+      %li.profile-tabs-bookmarks
         %a{href: bookmarks_user_path(@user)}
           %span= t('bookmarks.title')
-      %li.highlights
+      %li.profile-tabs-highlights
         %a{href: highlights_user_path(@user)}
           %span Highlights
-      %li.badges
+      %li.profile-tabs-badges
         %a{href: badges_user_path(@user)}
           %span= t('badges title')
-      
+
 
   %article.profile
     - title = t("users.edit #{@selected}")
