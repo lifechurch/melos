@@ -8,7 +8,7 @@ class Badge < YV::Resource
   attribute :slug
   attribute :type
   attribute :user_id
-  attribute :user_name
+  attribute :username
   attribute :image_url
   attribute :description
   attribute :earned_dt

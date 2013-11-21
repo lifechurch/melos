@@ -8,10 +8,16 @@ module YV
           private
 
           def from_all(results)
-            collection = results.badges.collect do |badge|
-              b = ::Badge.new
-              map_to_instance(b,badge)
+            badges = unless results.empty?
+              results.badges.collect do |badge|
+                b = ::Badge.new
+                map_to_instance(b,badge)
+              end
+            else
+              []
             end
+
+            YV::API::Results.new(badges)
           end
 
           def from_find(instance,results)
@@ -27,9 +33,9 @@ module YV
             instance.image_url = results.image_url
             instance.type = results.type
             instance.user_id = results.user_id
-            instance.user_name = results.username
+            instance.username = results.username
             instance.earned_dt = results.earned_dt
-            instance
+            YV::API::Results.new(instance)
           end
 
         end
