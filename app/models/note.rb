@@ -206,6 +206,11 @@ class Note < YV::Resource
 
   # TODO: API should not REQUIRE color, references.
 
+
+  def path
+    "/notes/#{id}"
+  end
+
   # Custom persistence for Moments API 3.1
   def persist(path)
     return persist_moment(path, attributes.merge(kind: "note").slice(:id,:auth,:kind,:title,:content,:references,:user_status,:created_dt))

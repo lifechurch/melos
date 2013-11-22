@@ -7,6 +7,11 @@ module YV
 
           private
 
+          def from_find(instance,results)
+            # we don't need the instance arg in this case
+            map_from_kind(results)
+          end
+
           def from_all(results)
             #return results
             return results if results.empty?
@@ -16,7 +21,6 @@ module YV
           end
 
           def map_from_kind(data)
-
             case data.kind_id
               when "note.v1"        then to_note(::Note.new,data)
               when "bookmark.v1"    then to_bookmark(::Bookmark.new,data)
@@ -24,7 +28,6 @@ module YV
               when "friendship.v1"  then to_friendship(::Friendship.new,data)
               when "system.v1"      then to_system(::SystemMoment.new,data)
               else  to_generic(::GenericMoment.new,data)
-              #else map_instance_to_generic()
             end
           end
 

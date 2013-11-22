@@ -150,6 +150,11 @@ class Highlight < YV::Resource
   end
   # End class methods ----------------------------------------------------------------------------------------------
 
+  def path
+    "/highlights/#{id}"
+  end
+
+
   # Custom persistence for new Moments API
   def persist(path)
     return persist_moment(path,attributes.merge(kind: "highlight").slice(:kind, :color, :references, :auth, :created_dt))

@@ -13,7 +13,7 @@ YouversionWeb::Application.routes.draw do
 
   match "/app(/:store)", to: AppStoreController.action(:index)
 
-  resources :moments, only: [:index] do
+  resources :moments, only: [:index,:show] do
     get "_cards", on: :collection
   end
 

@@ -117,6 +117,11 @@ class Bookmark < YV::Resource
   # END class methods ----------------------------------------------------------------------------------------------
 
 
+  def path
+    "/bookmarks/#{id}"
+  end
+
+
   def labels=(labes)
     build_labels(labes)
   end
