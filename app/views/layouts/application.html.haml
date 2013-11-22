@@ -10,7 +10,7 @@
   # Used for primary / mobile navs
 
   is_authed         = current_auth ? true : false
-  is_home_url       = current_page?("/home")
+  is_home_url       = current_page?(moments_path)
   is_bible_url      = controller.controller_name == "references" && controller.action_name == "show"
   is_videos_url     = controller_name == "videos"
   is_bookmarks_url  = controller_name == "bookmarks"
@@ -42,7 +42,7 @@
           %nav
             %ul
               %li#nav_mobile_home{class: highlight.call(is_bible_url)}
-                %a.icon{href:'/home'}
+                %a.icon{href: moments_path}
                   %span= t('home')
               %li#nav_mobile_bible{class: highlight.call(is_bible_url)}
                 %a.icon{href:'/bible'}
@@ -91,9 +91,9 @@
               %nav
                 %ul
                   %li#nav_primary_home{class: highlight.call(is_home_url) }
-                    %a.icon{href: '/home'}
+                    %a.icon{href: moments_path}
                       %span &nbsp;
-                    %a.tooltip{href: "/home", style:"display: none;"}
+                    %a.tooltip{href: moments_path, style:"display: none;"}
                       %span Home
 
                   %li#nav_primary_bible{class: highlight.call(is_bible_url) }

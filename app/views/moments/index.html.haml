@@ -18,7 +18,7 @@
       var next_page = pagination_link.data("page") + 1;
       $.ajax({
         type: "GET",
-        url: "/moments/cards?page=" + next_page,
+        url: "/moments/_cards?page=" + next_page,
         dataType: "html",
         success: function (data) {
             $('.social-feed').append(data);

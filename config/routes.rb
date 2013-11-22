@@ -1,8 +1,6 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
-
-  get "/home",          to: "users#home"
   get "/app",           to: "pages#app"
   get "/terms",         to: "pages#terms"
   get "/privacy",       to: "pages#privacy"
@@ -16,7 +14,7 @@ YouversionWeb::Application.routes.draw do
   match "/app(/:store)", to: AppStoreController.action(:index)
 
   resources :moments, only: [:index] do
-    get :cards, on: :collection
+    get "_cards", on: :collection
   end
 
   resources :friendships, only: [:create, :destroy] do

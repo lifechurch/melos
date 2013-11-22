@@ -35,11 +35,7 @@ class UsersController < ApplicationController
   #        |
   #   /sign-up/success (or sign_up_redirect)
 
-  def home
-    @user    = current_user
-    @moments = Moment.all(auth: current_auth, page: @page)
-    render layout: "application"
-  end
+
 
   def show
     @user    = User.find(params[:id])
