@@ -20,10 +20,13 @@
       %input{type:"hidden", name: "currency_code", value: "USD"}
       %input{type:"hidden", name: "env", value: "www"}
 
-      %input{type:"hidden", name: "p3", value: "24", class: "interval"}
+      %input{type:"hidden", name: "p3", value: "1", class: "interval"}
       %input{type:"hidden", name: "t3", value: "M", class: "monthly"}
-
       %input{type:"hidden", name: "a3", value: "", id: "a3"}
+
+      %input{type:"hidden", name: "src", value: "1", class: "recurring", disabled: "disabled"}
+      %input{type:"hidden", name: "srt", value: "52", class: "recurring", disabled: "disabled"}
+
       %input{type:"hidden", name: "cmd", value: "_xclick", id: "cmd"}
 
       %div.donate_amount
@@ -51,10 +54,12 @@
 
       function enable_onetime() {
         $("#cmd").val("_xclick");
+        $(".recurring").prop('disabled', true);
       }
 
       function enable_recurring() {
         $("#cmd").val("_xclick-subscriptions");
+        $(".recurring").prop('disabled', false);
       }
 
       $("#field_amount").change(function() { $("#a3").val($(this).val()); })
