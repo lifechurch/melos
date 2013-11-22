@@ -324,7 +324,7 @@ class ApplicationController < ActionController::Base
   def force_login(opts = {})
     if current_auth.nil?
       opts[:redirect] = request.path
-      redirect_to sign_up_path(opts) and return
+      redirect_to sign_in_path(opts) and return
       #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
     end
   end

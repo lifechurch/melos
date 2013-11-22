@@ -1,5 +1,8 @@
 class MomentsController < ApplicationController
 
+
+  before_filter :force_login
+
   # TODO - optimize before filterage, especially for the #show redirect
 
   # A logged in users Moments/Home feed
