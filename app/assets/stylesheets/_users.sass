@@ -136,6 +136,7 @@
 
   .profile-tabs-activity
     background-position: 15px 10px
+    width: 92px
 
   .profile-tabs-friends
     background-position: 15px -52px
@@ -210,3 +211,139 @@
 .moment-bm-labels-link:hover
   background-color: #aaa
   color: #fff
+
+
+// !Friends tab
+
+.profile-friends
+  margin: -15px 0 0
+  background-color: #fff
+  border-radius: 0 0 5px 5px
+  padding: 30px 30px 20px
+
+.friends-count
+  position: relative
+  border-bottom: 1px dotted #e1e1e1
+  padding: 0 0 20px 0
+
+.friends-count-have
+  font: 200 34px "Helvetica Neue", Arial, sans-serif
+  margin-bottom: 0
+
+.friends-count-canhave
+  margin: -2px 0 0
+
+.friends-count-help
+  font-size: 12px
+  color: #888
+  font-style: italic
+  padding: 0 0 0 21px
+  background: image-url("icon_help.png") no-repeat 0 2px
+  margin: 4px 0 0
+
+.friends-count-find
+  position: absolute
+  right: 0
+  top: 2px
+
+.friend-requests
+  margin: 20px 0 0
+  overflow: hidden
+
+.friend-requests-title
+  margin: 0
+
+.friend-requests-info
+  position: relative
+  border-bottom: 1px dotted #e1e1e1
+  width: 49%
+  float: left
+  height: 90px
+  margin: 0 1% 0 0
+
+.friend-requests-info:nth-of-type(even)
+  margin: 0 0 0 1%
+
+.friend-requestor-avatar
+  width: 70px
+  height: 70px
+  +border-radius(70px)
+  +box-shadow(rgba(0, 0, 0, 0.15) 0 1px 1px)
+  position: absolute
+  left: 0
+  top: 10px
+
+.friend-requestor-name
+  margin: 20px 0 -5px 85px
+  display: block
+
+.friend-requestor-wants
+  display: block
+  margin: 0 0 0 85px
+
+  span
+    color: #444
+    font-weight: normal
+
+.friend-requestor-accept,
+.friend-requestor-deny
+  position: absolute
+  height: 36px
+  width: 36px
+  +border-radius(36px)
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+  top: 27px
+
+.friend-requestor-accept
+  right: 44px
+  background: #00B400 image-url("friend-request-sprite.png") no-repeat center 4px
+
+.friend-requestor-deny
+  right: 0
+  background: #D30000 image-url("friend-request-sprite.png") no-repeat center -128px
+
+.friend-directory
+  margin: 30px 0 0
+  overflow: hidden
+  clear: both
+
+.friend-directory-title
+  margin: 0
+
+.friend-details
+  position: relative
+  border-bottom: 1px dotted #e1e1e1
+  width: 49%
+  float: left
+  height: 90px
+  margin: 0 1% 0 0
+
+.friend-details:nth-of-type(even)
+  margin: 0 0 0 1%
+
+.friend-details-avatar
+  width: 70px
+  height: 70px
+  +border-radius(70px)
+  +box-shadow(rgba(0, 0, 0, 0.15) 0 1px 1px)
+  position: absolute
+  left: 0
+  top: 10px
+
+.friend-details-name
+  margin: 32px 0 -5px 85px
+  display: block
+
+.friend-details-delete
+  position: absolute
+  height: 36px
+  width: 36px
+  +border-radius(36px)
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+  top: 27px
+  right: 0
+  background: #D30000 image-url("friend-request-sprite.png") no-repeat center -128px
