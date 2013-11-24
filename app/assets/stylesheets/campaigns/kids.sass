@@ -4,7 +4,7 @@
 // !Body and other global stuff
 
 body
-  background: #EAE7DA image-url("campaigns/kids/body-bg.png") no-repeat center top
+  background: #EAE7DA image-url("campaigns/kids/body-bg.png") no-repeat center -123px
 
 p
   font-family: "english", georgia, serif
@@ -14,10 +14,16 @@ p
 .kids
   width: 980px
   margin: 0 auto
-  padding-top: 70px
+  padding: 70px 0 0
   background: image-url("campaigns/kids/yv-logo-sm.png") no-repeat 46% 44px
 
 // !Logo and intro copy
+
+.intro-icon
+  //height: 152px
+  //width: 152px
+  //margin: -90px 0 15px 39.5%
+  display: none
 
 .intro-bible
   font:
@@ -26,7 +32,7 @@ p
     weight: normal
   letter-spacing: -.05em
   color: #525261
-  margin: 0 0 0 290px
+  margin: 0 0 0 307px
 
 .intro-forkids
   margin: -5px 0 0 435px
@@ -52,9 +58,10 @@ p
   display: none
 
 .intro-help
-  margin: 20px 0 0 335px
+  margin: 20px 0 0 333px
   font-size: 26px
   width: 260px
+  text-align: center
 
 .intro-img
   margin: -238px auto 0
@@ -65,7 +72,7 @@ p
   font-size: 26px
   padding: 10px 0 30px
   text-align: center
-  margin: -190px 0 170px 355px
+  margin: -190px 0 170px 313px
 
 
 // !Notify chunk
@@ -228,7 +235,7 @@ p
   padding-left: 44px
 
 .share-copy
-  font-size: 32px
+  font-size: 30px
   margin: 30px 0
 
 .share-fb
@@ -248,10 +255,8 @@ p
   background-color: #333
   margin-top: 60px
   padding: 30px 10%
-  min-width: 940px
 
 .logos-box
-  width: 940px
   margin: 0 auto
   text-align: center
 
@@ -323,12 +328,10 @@ p
     font-size: 30px
 
   .intro-help
-    margin: 0
+    margin: 20px 0 0
     font-size: 24px
     width: auto
     text-align: center
-    padding: 200px 0 0
-    background: image-url("campaigns/kids/jesus.png") no-repeat center top
 
   .intro-img
     display: none
@@ -340,6 +343,10 @@ p
     height: 60px
     line-height: 55px
     padding: 0
+
+  .intro-icon
+    margin: 0 auto 25px
+    display: block
 
 
   // !Notify chunk
@@ -507,11 +514,8 @@ p
 
   // !Retina stuff for hi-res dee-vices (Had to repeat this cuz desktop image would load in mobile)
 
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+  // @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
 
-    .intro-help
-      background: image-url("campaigns/kids/jesus@2x.png") no-repeat center top
-      background-size: 480px 190px
 
 @media only screen and (max-width: 568px) and (min-width: 400px)
   .intro-forkids

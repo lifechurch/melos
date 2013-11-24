@@ -15,3 +15,4 @@
       %span.notify-box-btn
         %button{class: "notify-button", type: "submit", value: "text"}
           Send
+  = render "campaigns/kids/share" if defined?(@registration.errors)
