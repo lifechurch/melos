@@ -1,5 +1,4 @@
 - @sidebar = false
 
-
 .social-feed
-  = render partial: "moments/cards", locals: {moments: @notes}
+  = render partial: "moments/cards", locals: {moments: @notes,comments_displayed: false}
