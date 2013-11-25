@@ -1,4 +1,4 @@
-.moment-comments
+.moment-comments{class: comments_displayed ? "" : "hide"}
   - if moment.commenting and moment.comments
     - if moment.comments_count.to_i > 3
       %span.moment-comments-more

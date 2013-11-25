@@ -19,4 +19,4 @@
 
   .moment-btm
     = render partial: "moments/actions_bar", locals: {moment: moment}
-    = render partial: "moments/comments", locals: {moment: moment}
+    = render partial: "moments/comments", locals: {moment: moment, comments_displayed: comments_displayed}

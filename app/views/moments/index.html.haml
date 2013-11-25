@@ -6,7 +6,7 @@
   = render partial: "moments/cta/profile"
   = render partial: "moments/cta/sharing"
 
-  = render partial: "moments/cards", locals: {moments: @moments}
+  = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
 
 
 = link_to("Load more","#", id: "load-more", "data-page" => @page, style: "display: block; text-align: center; border: 1px solid #ccc; padding: 4px 10px; background:#aaa;")
