@@ -8,14 +8,13 @@
     %a#logo{href: "/", style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})"}
       = @site.title
 
-    - if is_home_url
-      %a.friend-requests-btn.popover-link{href: "#"}
-        =t("requests")
-      = render partial: "shared/header/requests"
+    %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
+      =t("requests")
+    = render partial: "shared/header/requests"
 
-      %a.notifications-btn.popover-link{href: "#"}
-        =t("notifications")
-      = render partial: "shared/header/notifications"
+    %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
+      =t("notifications")
+    = render partial: "shared/header/notifications"
 
     -# Sign in and user id
     %nav.sign_in

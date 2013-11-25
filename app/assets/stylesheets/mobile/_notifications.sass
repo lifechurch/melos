@@ -1,13 +1,17 @@
 #header .friend-requests-btn,
 #header .notifications-btn
   background: image-url("header-sprite.png") no-repeat
-  display: block
+  display: none
   float: left
   width: 40px
   height: 40px
   margin: 3px 0 0 15px
   text-indent: -9999px
   position: absolute
+
+#header .friend-requests-btn.home-url,
+#header .notifications-btn.home-url
+  display: block
 
 #header .friend-requests-btn
   background-position: 0px 9px
