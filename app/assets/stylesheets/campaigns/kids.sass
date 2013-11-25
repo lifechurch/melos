@@ -214,6 +214,44 @@ p
   top: 375px
   width: 300px
 
+// !Download chunk
+
+.download
+  text-align: center
+  margin: 40px 0 60px
+
+.download-ios,
+.download-play,
+.download-amazon
+  margin-left: 20px
+  width: 256px
+  height: 50px
+  line-height: 49px
+  display: inline-block
+  +border-radius(4px)
+  font-size: 21px
+  color: #fff
+  text-decoration: none
+  padding-left: 44px
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+
+.download-copy
+  font-size: 32px
+  margin: 30px 0
+
+.download-ios
+  margin-left: 0
+  background: #111 image-url("campaigns/kids/ios-appstore-badge.png") no-repeat center center
+
+.download-play
+  background: #111 image-url("campaigns/kids/play-appstore-badge.png") no-repeat center center
+
+.download-amazon
+  background: #111 image-url("campaigns/kids/amazon-appstore-badge.png") no-repeat center center
+
+
 
 // !Share chunk
 
@@ -303,7 +341,7 @@ p
 @media only screen and (max-width : 568px)
 
   body
-    background-image: none
+    background: image-url("campaigns/kids/jesus.png") no-repeat center 105px #EAE7DA
 
   .kids
     width: auto
@@ -328,10 +366,11 @@ p
     font-size: 30px
 
   .intro-help
-    margin: 20px 0 0
     font-size: 24px
-    width: auto
+    margin: 0
+    padding: 200px 0 0
     text-align: center
+    width: auto
 
   .intro-img
     display: none
@@ -345,35 +384,37 @@ p
     padding: 0
 
   .intro-icon
-    margin: 0 auto 25px
+    display: none
+
+
+  // !Download chunk
+
+  .download
+    text-align: center
+    margin: 40px 0 40px
+
+  .download-ios,
+  .download-play,
+  .download-amazon
+    margin: 0 0 5px
+    width: auto
     display: block
+    padding-left: 44px
 
+  .download-copy
+    font-size: 32px
+    margin: 0
 
-  // !Notify chunk
+  .download-ios
+    margin-left: 0
+    background: #111 image-url("campaigns/kids/ios-appstore-badge.png") no-repeat center center
 
-  .notify-copy
-    font-size: 24px
-    width: 90%
-    margin: 0 auto
+  .download-play
+    background: #111 image-url("campaigns/kids/play-appstore-badge.png") no-repeat center center
 
-  .notify-note
-    margin: 10px auto 0
-    width: 90%
+  .download-amazon
+    background: #111 image-url("campaigns/kids/amazon-appstore-badge.png") no-repeat center center
 
-  .notify-box
-    width: 90%
-    margin: 15px auto 0
-
-  .notify-box-input
-    width: 75%
-
-  .notify-box-btn
-    width: 25%
-
-  .notify-input
-    font-size: 22px
-    padding: 0 5px
-    width: 100%
 
   // !iPad hero screenshot
 
@@ -472,7 +513,7 @@ p
   .share-tw,
   .share-em
     margin: 0 auto 5px
-    width: 90%
+    width: 100%
     display: block
     font-size: 21px
     color: #fff
@@ -512,11 +553,29 @@ p
     display: block
     margin: 20px 0
 
-  // !Retina stuff for hi-res dee-vices (Had to repeat this cuz desktop image would load in mobile)
+  // !Retina stuff for hi-res dee-vices
 
-  // @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+
+    body
+      background: image-url("campaigns/kids/jesus@2x.png") no-repeat center 105px #EAE7DA
+      background-size: 480px 190px
+
+    .download-ios
+      background: #111 image-url("campaigns/kids/ios-appstore-badge@2x.png") no-repeat center center
+      background-size: 127px 35px
+
+    .download-play
+      background: #111 image-url("campaigns/kids/play-appstore-badge@2x.png") no-repeat center center
+      background-size: 219px 29px
+
+    .download-amazon
+      background: #111 image-url("campaigns/kids/amazon-appstore-badge@2x.png") no-repeat center center
+      background-size: 176px 32px
+
 
 
 @media only screen and (max-width: 568px) and (min-width: 400px)
+
   .intro-forkids
     margin: -2% 0 0 45%
