@@ -11,7 +11,7 @@ class Campaigns::KidsController < ApplicationController
   skip_before_filter :tend_caches
   skip_before_filter :set_default_sidebar
 
-  caches_action :index
+  # caches_action :index
 
   def index
     # /kids
