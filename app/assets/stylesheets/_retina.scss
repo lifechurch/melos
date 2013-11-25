@@ -1,0 +1,126 @@
+// Switching this to .scss because .sass won't allow the formatting needed to target devices other than Apple's
+
+// !Retina images
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+  // !Profile
+
+  .top_section {
+    .profile-tabs-activity,
+    .profile-tabs-friends,
+    .profile-tabs-notes,
+    .profile-tabs-bookmarks,
+    .profile-tabs-highlights,
+    .profile-tabs-badges {
+      background: #EEEDEB image-url("profile-sprite@2x.png") no-repeat 15px top;
+      background-size: 16px 400px;
+    }
+
+    .profile-tabs-activity {
+      background-position: 15px 13px;
+    }
+
+    .profile-tabs-friends {
+      background-position: 15px -51px;
+    }
+
+    .profile-tabs-notes {
+      background-position: 15px -115px;
+    }
+
+    .profile-tabs-bookmarks {
+      background-position: 15px -179px;
+    }
+
+    .profile-tabs-highlights {
+      background-position: 15px -243px;
+    }
+
+    .profile-tabs-badges {
+      background-position: 15px -307px;
+    }
+
+    .profile-tabs-activity.highlight {
+      background-position: 15px 10px;
+      width: 92px;
+    }
+
+    .profile-tabs-friends.highlight {
+      background-position: 15px -55px;
+    }
+
+    .profile-tabs-notes.highlight {
+      background-position: 15px -119px;
+    }
+
+    .profile-tabs-bookmarks.highlight {
+      background-position: 15px -182px;
+    }
+
+    .profile-tabs-highlights.highlight {
+      background-position: 15px -246px;
+    }
+
+    .profile-tabs-badges.highlight {
+      background-position: 15px -310px;
+    }
+
+    .profile-tabs-settings.highlight {
+      background-position: 15px -374px;
+    }
+  }
+
+
+  // !Home
+
+  .moment-actions-share a,
+  .moment-actions-comment a,
+  .moment-actions-like a {
+    background: image-url("social-actions-sprite@2x.png") no-repeat;
+    background-size: 16px 400px;
+  }
+
+  .moment-actions-share a {
+    background-position: 20px 10px;
+  }
+
+  .moment-actions-comment a {
+    background-position: center -129px;
+  }
+
+  .moment-actions-like a {
+    background-position: center -36px;
+  }
+
+  .moment-actions-like a.liked {
+    background-position: center -82px;
+  }
+
+  .moment-actions-time {
+    background: image-url("social-actions-sprite@2x.png") no-repeat 15px -313px;
+    background-size: 16px 400px;
+  }
+
+  .moment-no-note-title {
+    background: image-url("moment-no-note-title-bg@2x.png") repeat-y left top;
+    background-size: 23px 1px;
+  }
+
+  .moment-no-note-text {
+    background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top;
+    background-size: 600px 17px;
+  }
+
+  .moment-vod-calendar {
+    background: image-url("social-vod-icon@2x.png") no-repeat left center;
+    background-size: 48px 48px;
+  }
+
+}

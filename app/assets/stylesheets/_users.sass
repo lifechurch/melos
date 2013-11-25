@@ -41,7 +41,6 @@
     text-shadow: none
 
   .profile-hdr-btn
-    float: left
     +border-radius(4px)
     padding: 4px 20px
 
@@ -125,17 +124,8 @@
     font-weight: bold
     font-size: 13px
 
-  .profile-tabs
-    .highlight
-      background-color: #fff
-      border-top: 3px solid #222
-
-      a
-        height: 39px
-        line-height: 37px
-
   .profile-tabs-activity
-    background-position: 15px 10px
+    background-position: 15px 12px
     width: 92px
 
   .profile-tabs-friends
@@ -155,6 +145,37 @@
 
   .profile-tabs-settings
     background-position: 15px -371px
+
+  .profile-tabs
+    .highlight
+      background-color: #fff
+      border-top: 3px solid #222
+
+      a
+        height: 39px
+        line-height: 37px
+
+  .profile-tabs-activity.highlight
+    background-position: 15px 10px
+    width: 92px
+
+  .profile-tabs-friends.highlight
+    background-position: 15px -55px
+
+  .profile-tabs-notes.highlight
+    background-position: 15px -119px
+
+  .profile-tabs-bookmarks.highlight
+    background-position: 15px -182px
+
+  .profile-tabs-highlights.highlight
+    background-position: 15px -246px
+
+  .profile-tabs-badges.highlight
+    background-position: 15px -310px
+
+  .profile-tabs-settings.highlight
+    background-position: 15px -374px
 
 
 // !Content area with feed etc.
