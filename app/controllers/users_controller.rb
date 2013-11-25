@@ -70,6 +70,7 @@ class UsersController < ApplicationController
 
 
   def edit
+    @selected = :profile
     render layout: "application"
   end
 

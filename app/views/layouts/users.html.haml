@@ -60,22 +60,6 @@
           %span= t('badges title')
 
   %article.profile
-    - title = t("users.edit #{@selected}")
-    .mobile
-      %dl.tabs
-        %dd{class: ('highlighted' if @selected == :profile)}
-          = link_to t("users.edit profile"), settings_profile_path
-        %dd{class: ('highlighted' if @selected == :password)}
-          = link_to t("users.edit password"), settings_password_path
-        %dd{class: ('highlighted' if @selected == :notifications)}
-          = link_to t("users.edit notifications"), notification_settings_path
-        %dd{class: ('highlighted' if @selected == :connections)}
-          = link_to t("users.edit connections"), settings_connections_path
-
-      -unless content_for? :title
-        - content_for :title do
-          = title
-
     = content_for?(:user_main) ? yield(:user_main) : yield
 
 = render template: 'layouts/application'

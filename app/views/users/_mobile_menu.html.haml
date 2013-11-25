@@ -1,0 +1,9 @@
+.mobile
+  %dl.tabs
+    %dd{class: ('highlighted' if @selected == :profile)}
+      = link_to t("users.edit profile"), settings_profile_path
+    %dd{class: ('highlighted' if @selected == :password)}
+      = link_to t("users.edit password"), settings_password_path
+    %dd{class: ('highlighted' if @selected == :notifications)}
+      = link_to t("users.edit notifications"), notification_settings_path
+
