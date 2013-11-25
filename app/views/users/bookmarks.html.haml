@@ -1,5 +1,19 @@
 - @sidebar = false
 
+- if current_user_is?(@user)
+  - labels = Bookmark.labels(auth: current_auth)
+
+  .bookmarks-labels-wrap
+    
+    %h3.labels-heading
+      My Labels
+    
+    - unless labels.blank?
+      %ul.bookmarks-labels  
+        - labels.each do |label_and_count|
+          - label_name = label_and_count["label"]
+          %li.label
+            = link_to label_name, bookmarks_user_path(@user, label: label_name)
 
 .social-feed
-  = render partial: "moments/cards", locals: {moments: @bookmarks}
+  = render partial: "moments/cards", locals: {moments: @bookmarks, comments_displayed: false}

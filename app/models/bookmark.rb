@@ -93,20 +93,24 @@ class Bookmark < YV::Resource
 
 
     # API Method
-    # Lookup bookmark labels (tags) for a given user_id
+    # Lookup bookmark labels (tags) for user passed via auth option
     # Returns a ResourceList of label Hashie::Mashs
     # TODO: create class for labels
 
-    def labels_for_user(user_id, opts={})
-      data, errs = get( labels_path , opts.merge(user_id: user_id).slice(:auth,:user_id))
+    def labels(opts={})
+      data, errs = get( labels_path , opts.slice(:auth))
       return results = YV::API::Results.new(data,errs)
-      # [["wild", 1],
-      #  ["wildernessy", 1],
-      #  ["things", 1],
-      #  ["crying", 1],
-      #  ["seven", 2],
-      #  ["days", 2],
-      #  ["rest", 2]]
+      # [{"count"=>1, "label"=>"hugh"},
+      #  {"count"=>1, "label"=>"rocks"},
+      #  {"count"=>1, "label"=>"socks"},
+      #  {"count"=>1, "label"=>"off"},
+      #  {"count"=>1, "label"=>"wild"},
+      #  {"count"=>1, "label"=>" wildernessy"},
+      #  {"count"=>1, "label"=>" things"},
+      #  {"count"=>1, "label"=>" crying"},
+      #  {"count"=>2, "label"=>"seven"},
+      #  {"count"=>2, "label"=>" days"},
+      #  {"count"=>2, "label"=>" rest"}]
     end
 
     def labels_path
