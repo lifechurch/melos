@@ -19,6 +19,7 @@ class Friend < YV::Resource
     # options
     # * auth: required {auth: auth_hash}
     # * page: required, defaults to 1 {page: 2}
+    # * user_id: required
 
     # example API data
     # {"response": 
@@ -31,7 +32,7 @@ class Friend < YV::Resource
     def all(opts={})
       raise YV::AuthRequired unless opts[:auth]
       opts.merge!(page: opts[:page] || 1) # page required, defaults to 1
-      super(opts.slice(:auth,:page))
+      super(opts.slice(:auth,:user_id,:page))
     end
 
 

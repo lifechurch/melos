@@ -39,22 +39,22 @@ class UsersController < ApplicationController
 
   def show
     @user    = User.find(params[:id])
-    @moments = Moment.all(user_id: @user.id, page: @page, auth: current_auth)
+    @moments = Moment.all(user_id: @user.id.to_i, page: @page, auth: current_auth)
   end
 
   def notes
     @user  = User.find(params[:id])
-    @notes = Note.all(user_id: @user.id , auth: current_auth, page: params[:page] || 1)
+    @notes = Note.all(user_id: @user.id.to_i , auth: current_auth, page: params[:page] || 1)
   end
 
   def highlights
     @user  = User.find(params[:id])
-    @highlights = Highlight.all(user_id: @user.id , auth: current_auth, page: params[:page] || 1)
+    @highlights = Highlight.all(user_id: @user.id.to_i , auth: current_auth, page: params[:page] || 1)
   end
 
   def bookmarks
     @user  = User.find(params[:id])
-    @bookmarks = Bookmark.all(user_id: @user.id , auth: current_auth, page: params[:page] || 1)
+    @bookmarks = Bookmark.all(user_id: @user.id.to_i , auth: current_auth, page: params[:page] || 1)
   end
 
   def badges
@@ -64,7 +64,8 @@ class UsersController < ApplicationController
   end
 
   def friends
-
+    @user  = User.find(params[:id])
+    @friends = Friend.all(page: @page, user_id: @user.id.to_i, auth: current_auth)
   end
 
 

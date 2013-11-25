@@ -2,96 +2,32 @@
 
 .profile-friends
 
-  -# Where we tell them how many friends they have
+  - if current_user_is? @user
 
-  .friends-count
-    %p.friends-count-have
-      You have 42 friends
-    %p.friends-count-canhave
-      You can have as many as 150
-    %p.friends-count-help
-      Too many friends is bad for your health. Show some restraint, man!
-    %a{href: "#", class: "friends-count-find action_button_blue"}
-      Find friends
-
-  -# Friend requests
-
-  .friend-requests
-    %h2.friend-requests-title
-      Friend Requests
-
-    -# Friend info
-    .friend-requests-info
-      = image_tag "andy_avatar.png", class: "friend-requestor-avatar"
-      %a{href: "#", class: "friend-requestor-name", title: "Visit this person's profile"}
-        Terry Storch
-      %span.friend-requestor-wants
-        wants to be your friend
-      %a{href: "#", class: "friend-requestor-accept", title: "Accept this friend request"}
-        Accept
-      %a{href: "#", class: "friend-requestor-deny", title: "Deny this friend request"}
-        Deny
-    -# Friend info
-    .friend-requests-info
-      = image_tag "andy_avatar.png", class: "friend-requestor-avatar"
-      %a{href: "#", class: "friend-requestor-name", title: "Visit this person's profile"}
-        Terry Storch
-      %span.friend-requestor-wants
-        wants to be your friend
-      %a{href: "#", class: "friend-requestor-accept", title: "Accept this friend request"}
-        Accept
-      %a{href: "#", class: "friend-requestor-deny", title: "Deny this friend request"}
-        Deny
-    -# Friend info
-    .friend-requests-info
-      = image_tag "andy_avatar.png", class: "friend-requestor-avatar"
-      %a{href: "#", class: "friend-requestor-name", title: "Visit this person's profile"}
-        Terry Storch
-      %span.friend-requestor-wants
-        wants to be your friend
-      %a{href: "#", class: "friend-requestor-accept", title: "Accept this friend request"}
-        Accept
-      %a{href: "#", class: "friend-requestor-deny", title: "Deny this friend request"}
-        Deny
+    .friends-count
+      %p.friends-count-have
+        You have 42 friends
+      %p.friends-count-canhave
+        You can have as many as 150
+      %p.friends-count-help
+        Too many friends is bad for your health. Show some restraint, man!
+      %a{href: "#", class: "friends-count-find action_button_blue"}
+        Find friends
+      %a{href: "/friendships/requests", class: "friends-view-requests action_button_grey"}
+        Friend Requests
 
   -# Friend list
 
-  .friend-directory
-    %h2.friend-directory-title
-      Friends
+  - unless @friends.blank?
 
-    -# Friend info
-    .friend-details
-      = image_tag "andy_avatar.png", class: "friend-details-avatar"
-      %a{href: "#", class: "friend-details-name", title: "Visit this person's profile"}
-        Terry Storch
-      %a{href: "#", class: "friend-details-delete", title: "Remove this person from your friend list"}
-        Remove this person
-    -# Friend info
-    .friend-details
-      = image_tag "andy_avatar.png", class: "friend-details-avatar"
-      %a{href: "#", class: "friend-details-name", title: "Visit this person's profile"}
-        Terry Storch
-      %a{href: "#", class: "friend-details-delete", title: "Remove this person from your friend list"}
-        Remove this person
-    -# Friend info
-    .friend-details
-      = image_tag "andy_avatar.png", class: "friend-details-avatar"
-      %a{href: "#", class: "friend-details-name", title: "Visit this person's profile"}
-        Terry Storch
-      %a{href: "#", class: "friend-details-delete", title: "Remove this person from your friend list"}
-        Remove this person
-    -# Friend info
-    .friend-details
-      = image_tag "andy_avatar.png", class: "friend-details-avatar"
-      %a{href: "#", class: "friend-details-name", title: "Visit this person's profile"}
-        Terry Storch
-      %a{href: "#", class: "friend-details-delete", title: "Remove this person from your friend list"}
-        Remove this person
-    -# Friend info
-    .friend-details
-      = image_tag "andy_avatar.png", class: "friend-details-avatar"
-      %a{href: "#", class: "friend-details-name", title: "Visit this person's profile"}
-        Terry Storch
-      %a{href: "#", class: "friend-details-delete", title: "Remove this person from your friend list"}
-        Remove this person
+    %ul.friend-directory
+
+      - @friends.each do |friend|
+        - avatar = friend.avatars.lg_avatar
+        %li.friend-details
+          = image_tag avatar.url, class: "friend-details-avatar"
+          %a{href: user_path(friend.to_param), class: "friend-details-name", title: "Visit this person's profile"}
+            = friend.name
+          - if current_user_is? @user
+            %a{href: "#", class: "friend-details-delete", title: "Remove this person from your friend list"}
+              Remove this person
