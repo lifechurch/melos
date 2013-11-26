@@ -1,5 +1,6 @@
 - @sidebar = false
-
+-# needs i18n keys added
+- @title = @me ? "My Highlights" : (@user.name || @user.username) << "'s Highlights"
 
 .social-feed
   = render partial: "moments/cards", locals: {moments: @highlights, comments_displayed: false}

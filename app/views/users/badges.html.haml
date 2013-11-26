@@ -1,3 +1,5 @@
+- @title = @me ? t('users.my badges') : t('badges.user badges', user: @user.name || @user.username)
+
 - content_for :user_main do
   - if @badges.empty?
     %p.profile-badges-none
