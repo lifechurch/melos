@@ -55,9 +55,6 @@
       %li.profile-tabs-badges{class: highlight(badges_user_path)}
         %a{href: badges_user_path(@user)}
           %span= t('badges title')
-      %li.profile-tabs-settings
-        %a{href: badges_user_path(@user)}
-          %span= t('badges title')
 
   %article.profile
     = content_for?(:user_main) ? yield(:user_main) : yield
