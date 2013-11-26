@@ -15,9 +15,7 @@
         :javascript
           $('#js-friends-count-help').click(function (event) {
               event.preventDefault();
-              if ($('html').hasClass("mobile-client")) {
-                $(this).next().toggleClass("show");
-              }
+              $(this).next().toggleClass("show");
           });     
           $('#js-friends-count-help').hover(function () {
               $(this).next().addClass("show");
