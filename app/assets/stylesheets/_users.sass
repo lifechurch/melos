@@ -256,6 +256,7 @@
   position: relative
   border-bottom: 1px dotted #e1e1e1
   padding: 0 0 20px 0
+  min-height: 90px
 
 .friends-count-have
   font: 200 34px "Helvetica Neue", Arial, sans-serif
@@ -265,12 +266,25 @@
   margin: -2px 0 0
 
 .friends-count-help
-  font-size: 12px
-  color: #888
-  font-style: italic
   padding: 0 0 0 21px
-  background: image-url("icon_help.png") no-repeat 0 2px
-  margin: 4px 0 0
+  background: image-url("icon_help.png") no-repeat 0 center
+  margin: 0 0 0 8px
+  position: relative
+  display: inline-block
+  cursor: pointer
+  min-height: 16px
+
+.friends-count .tooltip
+  display: none
+  font-size: 12px
+  color: #888 !important
+  font-style: italic
+
+.friends-count .show.tooltip
+  display: inline-block
+  position: absolute
+  width: 250px
+  font-weight: bold
 
 .friends-count-find
   width: 150px
@@ -282,7 +296,7 @@
   width: 150px
   position: absolute
   right: 0px
-  bottom: 25px
+  top: 50px
 
 .friend-directory
   overflow: hidden
@@ -323,4 +337,9 @@
   white-space: nowrap
   top: 27px
   right: 0
+  background: #ddd image-url("friend-request-sprite.png") no-repeat center -128px
+
+.friend-details-delete:hover
   background: #D30000 image-url("friend-request-sprite.png") no-repeat center -128px
+
+

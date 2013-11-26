@@ -7,10 +7,25 @@
     .friends-count
       %p.friends-count-have
         You have 42 friends
-      %p.friends-count-canhave
+      %span.friends-count-canhave
         You can have as many as 150
-      %p.friends-count-help
+      #js-friends-count-help.friends-count-help
+      %span.tooltip 
         Too many friends is bad for your health. Show some restraint, man!
+        :javascript
+          $('#js-friends-count-help').click(function (event) {
+              event.preventDefault();
+              if ($('html').hasClass("mobile-client")) {
+                $(this).next().toggleClass("show");
+              }
+          });     
+          $('#js-friends-count-help').hover(function () {
+              $(this).next().addClass("show");
+          }, function() {
+              $(this).next().removeClass("show");
+          });        
+
+
       %a{href: "#", class: "friends-count-find action_button_blue"}
         Find friends
       %a{href: "/friendships/requests", class: "friends-view-requests action_button_grey"}
