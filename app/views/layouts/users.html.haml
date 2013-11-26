@@ -13,9 +13,6 @@
     .profile-hdr
       %img.avatar_huge{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
 
-      - if @me
-        %form{action: edit_user_path(@user)}
-          %button.profile-hdr-btn= t("users.profile.edit")
       %h1.profile-hdr-name= @user.name || @user.username
 
       %ul.profile-hdr-info
@@ -32,6 +29,17 @@
       - if @user.bio
         %p.profile-hdr-info-about
           = @user.bio
+
+      -# Edit profile button
+      - if @me
+        %form{action: edit_user_path(@user)}
+          %button.profile-hdr-btn.action_button_blue= t("users.profile.edit")
+      -# Tells if person is friend
+      %span.profile-hdr-friend
+        Friends
+      -# Add friend button
+      %a{href: "#", class: "profile-hdr-addfriend action_button_green", title: "Send this person a friend request"}
+        Add friend
 
       - #toggle_comments
 

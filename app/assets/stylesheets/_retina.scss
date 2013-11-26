@@ -23,6 +23,11 @@ only screen and (                min-resolution: 2dppx) {
       background-size: 16px 400px;
     }
 
+    .profile-hdr-friend {
+      background: image-url("icon-check-white@2x.png") no-repeat 10px 8px #51652f;
+      background-size: 15px 14px;
+    }
+
     .profile-tabs-activity {
       background-position: 15px 13px;
     }
