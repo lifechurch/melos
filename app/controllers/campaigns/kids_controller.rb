@@ -18,7 +18,9 @@ class Campaigns::KidsController < ApplicationController
     # tracks requests to /app to GA custom event.
     # then redirects to an store for mobile device if found
     track_event
-    redirect_to kids_store_url if request.env["X_MOBILE_DEVICE"].present?
+    if request.env["X_MOBILE_DEVICE"].present?
+      redirect_to kids_store_url unless kids_store_url.nil?
+    end
   end
 
   def create
@@ -44,33 +46,15 @@ class Campaigns::KidsController < ApplicationController
     case request.env["X_MOBILE_DEVICE"] #rack_env["X_MOBILE_DEVICE"]
     
     when /iphone|iPhone|ipad|iPad|ipod|iPod/
-      'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=282935706&mt=8'
+      'https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8'
 
     when /android|Android/
-      'market://details?id=com.sirma.mobile.bible.android'
+      'market://details?id=com.bible.kids'
 
     when /silk|Silk/
-      'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
-
-    when /blackberry|BlackBerry/
-      'http://appworld.blackberry.com/webstore/content/1222'
-
-    when /SymbianOS/
-      'http://store.ovi.mobi/content/47384'
-
-    when /J2ME/
-      'http://getjar.com/bible-app'
-
-    when /Windows Phone OS/
-      'zune://navigate/?phoneappid=57f524fa-93e3-df11-a844-00237de2db9e'
-
-    when /webOS|hpwOS/
-      'http://developer.palm.com/webChannel/index.php?packageid=com.youversion.palm'
-
-    else
-      'https://www.bible.com/kids'
+      'http://www.amazon.com/gp/mas/dl/android?p=com.bible.kids'
+    
     end
-
   end
 
 end
