@@ -63,6 +63,11 @@ class Friend < YV::Resource
         return YV::API::Results.new(result_data,errs)
     end
 
+    def with?( user_or_id, opts={} )
+      id = user_or_id.is_a?(User) ? user_or_id.id : user_or_id
+      return ids(opts).include? id.to_i
+    end
+
 
 
     # Friendship.delete(opts)

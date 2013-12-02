@@ -8,13 +8,20 @@ class FriendshipsController < ApplicationController
   end
 
 
-  # Accept
+  # Accept a friendship
   def create
     @friendship = Friendships.accept(user_id: params[:user_id].to_i, auth: current_auth)
     notice = @friendship.valid? ? "You're now friends" : "Error creating friendship"
     redirect_to(:back, notice: notice)
     # eventually support json/ajax submission for javascript menus, etc.
     #respond_with(@friendship)
+  end
+
+
+  def offer
+    @friendship = Friendships.offer(user_id: params[:user_id].to_i, auth: current_auth)
+    notice = @friendship.valid? ? "Request sent" : "Error sending request"
+    redirect_to(:back, notice: notice)
   end
 
   # Decline

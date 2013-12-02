@@ -19,6 +19,7 @@ YouversionWeb::Application.routes.draw do
 
   resources :friendships, only: [:create, :destroy] do
     get :requests, on: :collection
+    post :offer, on: :collection
   end
   resources :notifications, only: [:index]
   resources :comments,  only: [:create]
