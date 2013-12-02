@@ -1,5 +1,7 @@
 - @sidebar = false
 - @title = @me ? t('users.my bookmarks') : t('users.user bookmarks', user: @user.name || @user.username)
+- content_for :title do 
+  = @title
 
 - if current_user_is?(@user)
   - labels = Bookmark.labels(auth: current_auth)

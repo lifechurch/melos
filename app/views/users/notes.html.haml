@@ -1,5 +1,7 @@
 - @sidebar = false
 - @title = @me ? t('users.my notes') : t('users.user notes', user: @user.name || @user.username)
+- content_for :title do 
+  = @title
 
 .social-feed
   = render partial: "moments/cards", locals: {moments: @notes,comments_displayed: false}

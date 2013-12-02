@@ -1,4 +1,6 @@
 - @title = @me ? t('users.my profile') : t('users.other user profile', username: @user.name || @user.username)
+- content_for :title do 
+  = @title
 
 .social-feed
   = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}
