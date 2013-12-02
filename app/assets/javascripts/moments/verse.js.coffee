@@ -22,4 +22,4 @@ class window.Moments.Verse
       return
 
     request.fail (jqXHR,status) =>
-      alert "Failed verse request" + status
+      @el.html("Could not load verse.")
