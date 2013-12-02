@@ -2,6 +2,7 @@
 //----------------------------------------------------------------------------------------------------
 
 .top_section
+  background: #dedddb
 
   .profile-hdr
     padding: 0 5%
@@ -72,7 +73,7 @@ article.profile
 .top_section
 
   .profile-tabs
-    margin: 20px 0 0
+    margin: 20px 0 3px
 
   .profile-tabs-activity,
   .profile-tabs-friends,
@@ -82,11 +83,11 @@ article.profile
   .profile-tabs-badges,
   .profile-tabs-settings
     display: block
-    width: 13.5%
+    width: 15.5%
     padding-left: 0
     margin-left: 1%
     float: left
-    background: #EEEDEB image-url("profile-sprite.png") no-repeat center center
+    background: #EEEDEB image-url("mobile/profile-tabs-sprite.png") no-repeat center center
     overflow: hidden
     text-indent: 100%
     white-space: nowrap
@@ -101,7 +102,7 @@ article.profile
   .profile-tabs-badges a,
   .profile-tabs-highlights a,
   .profile-tabs-settings a
-    height: 42px
+    height: 52px
     line-height: 41px
     display: block
     color: #444
@@ -111,25 +112,22 @@ article.profile
 
   .profile-tabs-activity
     background-position: center 12px
-    width: 13%
+    width: 17.5%
 
   .profile-tabs-friends
-    background-position: center -52px
-
-  .profile-tabs-notes
     background-position: center -116px
 
-  .profile-tabs-bookmarks
-    background-position: center -179px
-
-  .profile-tabs-highlights
+  .profile-tabs-notes
     background-position: center -243px
 
-  .profile-tabs-badges
-    background-position: center -307px
-
-  .profile-tabs-settings
+  .profile-tabs-bookmarks
     background-position: center -371px
+
+  .profile-tabs-highlights
+    background-position: center -498px
+
+  .profile-tabs-badges
+    background-position: center -626px
 
   .profile-tabs
     .highlight
@@ -137,30 +135,27 @@ article.profile
       border-top: 3px solid #222
 
       a
-        height: 39px
+        height: 49px
         line-height: 37px
 
   .profile-tabs-activity.highlight
-    background-position: 15px 10px
-    width: 13%
+    background-position: center 10px
+    width: 17.5%
 
   .profile-tabs-friends.highlight
-    background-position: 15px -55px
+    background-position: center -118px
 
   .profile-tabs-notes.highlight
-    background-position: 15px -119px
+    background-position: center -245px
 
   .profile-tabs-bookmarks.highlight
-    background-position: 15px -182px
+    background-position: center -373px
 
   .profile-tabs-highlights.highlight
-    background-position: 15px -246px
+    background-position: center -500px
 
   .profile-tabs-badges.highlight
-    background-position: 15px -310px
-
-  .profile-tabs-settings.highlight
-    background-position: 15px -374px
+    background-position: center -628px
 
 
 
@@ -288,10 +283,10 @@ article.profile
     white-space: nowrap
     top: 27px
     right: 0
-    background: #ddd image-url("friend-request-sprite.png") no-repeat center -128px  
+    background: #ddd image-url("friend-request-sprite.png") no-repeat center -128px
 
-  .friend-details-delete:hover  
-    background: #D30000 image-url("friend-request-sprite.png") no-repeat center -128px    
+  .friend-details-delete:hover
+    background: #D30000 image-url("friend-request-sprite.png") no-repeat center -128px
 
 
 // !Notifications
