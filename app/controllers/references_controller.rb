@@ -36,11 +36,12 @@ class ReferencesController < ApplicationController
       ref_hash    = ref_string.to_hash
 
       # If somebody visits just /bible
-      unless params[:version] && ref_hash[:chapter]
+      if params[:version].blank? && ref_hash[:chapter].present? # url
         ref_hash[:version] ||= current_version
         ref_hash[:chapter] ||= "1"
         flash.keep
-        return redirect_to bible_path(Reference.new(ref_hash))
+        reference = Reference.new(ref_hash)
+        return redirect_to reference_path(version: reference.version, reference: reference.to_param)
       end
 
       self.presenter = Presenter::Reference.new(ref_string, params, self)
