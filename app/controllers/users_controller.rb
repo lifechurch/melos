@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def bookmarks
     @user  = User.find(params[:id])
-    @bookmarks = Bookmark.all(user_id: @user.id.to_i , auth: current_auth, page: params[:page] || 1)
+    @bookmarks = params[:label] ? Bookmark.for_label(params[:label], {page: @page, user_id: @user.id.to_i, auth: current_auth}) : Bookmark.all(auth: current_auth, user_id: @user.id.to_i, page: @page)
   end
 
   def badges

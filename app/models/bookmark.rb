@@ -78,9 +78,10 @@ class Bookmark < YV::Resource
     # API Method
     # Lookup all bookmarks with a given label and params
     # Returns a ResourceList of bookmark instances
-    def for_label(label, params = {})
-      opts = params.merge({label: label, page: params[:page] || 1})
-      return all(opts)
+    def for_label(labels, params = {})
+      opts = params.merge({kind: "bookmark", labels: labels, page: params[:page] || 1, auth: params[:auth], user_id: params[:user_id]})
+      data, errs = get("search/moments", opts)
+      map_all(YV::API::Results.new(data,errs))
     end
 
 
@@ -102,15 +103,7 @@ class Bookmark < YV::Resource
       return results = YV::API::Results.new(data,errs)
       # [{"count"=>1, "label"=>"hugh"},
       #  {"count"=>1, "label"=>"rocks"},
-      #  {"count"=>1, "label"=>"socks"},
-      #  {"count"=>1, "label"=>"off"},
-      #  {"count"=>1, "label"=>"wild"},
-      #  {"count"=>1, "label"=>" wildernessy"},
-      #  {"count"=>1, "label"=>" things"},
-      #  {"count"=>1, "label"=>" crying"},
-      #  {"count"=>2, "label"=>"seven"},
-      #  {"count"=>2, "label"=>" days"},
-      #  {"count"=>2, "label"=>" rest"}]
+      #  {"count"=>1, "label"=>"socks"}]
     end
 
     def labels_path

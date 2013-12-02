@@ -14,7 +14,7 @@
     - unless labels.blank?
       %ul.bookmarks-labels  
         - labels.each do |label_and_count|
-          - label_name = label_and_count["label"]
+          - label_name = label_and_count["label"].strip
           %li.label
             = link_to label_name, bookmarks_user_path(@user, label: label_name)
 

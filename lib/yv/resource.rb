@@ -141,7 +141,7 @@ module YV
           end
         end
 
-        map_all(YV::API::Results.new(data,errs))        
+        map_all(YV::API::Results.new(data,errs)) 
       end
 
       # Create a resource.  Creates an instance and calls save on it.

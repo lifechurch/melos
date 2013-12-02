@@ -88,9 +88,6 @@ YouversionWeb::Application.routes.draw do
     get :badges,      on: :member, as: 'badges'
     get :friends,     on: :member, as: 'friends'
     match 'badge/:id' => 'badges#show', as: 'badge'
-
-    
-    #resources :bookmarks, only: [:index] #, shallow: true  <-- TODO - update bookmarks implementation to properly POST for users/:user_id/bookmarks generated route
     
     resources 'subscriptions', :path => '/reading-plans' do
       get   :calendar,    on: :member
