@@ -1,0 +1,8 @@
+%div
+  %p= info
+  
+  = check_box_tag "settings[#{type.to_s}][email]", "1", @settings.notification_settings.send(type.to_sym).email
+  = label_tag "settings[#{type.to_s}][email]", "Email"
+
+  = check_box_tag "settings[#{type.to_s}][push]", "1", @settings.notification_settings.send(type.to_sym).push
+  = label_tag "settings[#{type.to_s}][push]", "Push"
