@@ -8,6 +8,8 @@ class Comment < YV::Resource
 
   attribute :user
   attribute :content
+  attribute :created_dt
+  attribute :updated_dt
 
 
   class << self

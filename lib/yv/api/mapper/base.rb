@@ -74,6 +74,8 @@ module YV
             def map_to_comment(comment_instance, comment_data)
               comment_instance.content = comment_data.content
               comment_instance.user    = map_to_user(::User.new,comment_data.user)
+              comment_instance.created_dt = comment_data.created_dt
+              comment_instance.updated_dt = comment_data.updated_dt
               comment_instance
             end
 

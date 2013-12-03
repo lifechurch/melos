@@ -14,5 +14,7 @@
           %p.moment-comments-list-text
             = link_to(user.name, user_path(user.username))
             = comment.content
+            %span.moment-comment-dt
+              = api_dt_time_ago(comment.updated_dt)
 
   = render partial: "moments/comments_form", locals: {moment: moment}
