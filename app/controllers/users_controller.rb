@@ -304,6 +304,7 @@ class UsersController < ApplicationController
   # TODO: move to own controller / resource
 
     def notifications
+      @selected = :notifications
       @user = current_user
       @results = NotificationSettings.find(params[:token].present? ? {token: params[:token]} : {auth: current_auth})
       @settings = @results.data

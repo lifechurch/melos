@@ -2,9 +2,9 @@
 
 - # because page can be accessed while logged in or logged out (with token) we use
 - # current_user or fallback to params[:id]
-= render partial: "users/mobile_menu"
 
 %article
+  = render partial: "users/mobile_menu"
   = form_tag update_notifications_user_path( current_user || params[:id] ,token: params[:token]), method: :put do |n|
     - unless @settings.errors.blank?
       .form_errors
