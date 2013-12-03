@@ -304,18 +304,11 @@ class UsersController < ApplicationController
   # TODO: move to own controller / resource
 
     def notifications
-      begin
-        @results = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
-        @settings = @results.data
-        @user = @settings.user
-        @me = true
-        @selected = :notifications
-        self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
-      rescue => ex
-        track_exception(ex)
-        sign_out
-        return redirect_to(sign_in_path(redirect: notification_settings_path), flash: {error: t('users.profile.notifications token error')})
-      end
+      @user = current_user
+      @results = NotificationSettings.find(params[:token].present? ? {token: params[:token]} : {auth: current_auth})
+      @settings = @results.data
+      self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+      render layout: "application"
     end
 
     def update_notifications
@@ -328,7 +321,7 @@ class UsersController < ApplicationController
          redirect_to(notifications_user_path(@user,token: params[:token]))
       else
          flash[:error] = t('users.profile.notification errors')
-         render :notifications
+         render :notifications, layout: "application"
       end
     end  
 
