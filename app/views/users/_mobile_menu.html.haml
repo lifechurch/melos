@@ -1,8 +1,22 @@
 .mobile
-  %dl.tabs
-    %dd{class: ('highlighted' if @selected == :profile)}
-      = link_to t("users.edit profile"), settings_profile_path
-    %dd{class: ('highlighted' if @selected == :notifications)}
-      = link_to t("users.edit notifications"), notification_settings_path
-    %dd{class: ('highlighted' if @selected == :password)}
-      = link_to t("users.edit password"), settings_password_path
+  %h3.hd       
+    = t('users.settings')
+  .mobile-menu-wrap    
+    %dl.tabs
+      %dd{class: ('highlighted' if @selected == :profile)}
+        = link_to t("users.edit profile"), settings_profile_path
+      %dd{class: ('highlighted' if @selected == :notifications)}
+        = link_to t("users.edit notifications"), notification_settings_path
+      %dd{class: ('highlighted' if @selected == :password)}
+        = link_to t("users.edit password"), settings_password_path
+
+  :javascript 
+    $('h3.hd').click(function () {
+      $('.mobile-menu-wrap').toggleClass("show");
+      if ($('.mobile-menu-wrap').hasClass("show")) {
+        $('.mobile-menu-wrap').slideDown("slow");
+      } else {
+        $('.mobile-menu-wrap').slideUp("slow");
+      }
+    });  
+
