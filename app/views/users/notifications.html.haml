@@ -13,35 +13,23 @@
         - @settings.errors.full_messages.each do |err|
           %li= err
 
-    %p
-      = check_box_tag "settings[moments][email]", "1", @settings.notification_settings.moments.email
-      = label_tag "settings[moments][email]", "Moments text"
-      
-    %p
-      = check_box_tag "settings[comments][email]", "1", @settings.notification_settings.comments.email
-      = label_tag "settings[comments][email]", "Comments text"
-      
-    %p
-      = check_box_tag "settings[friendships][email]", "1", @settings.notification_settings.friendships.email
-      = label_tag "settings[friendships][email]", "Friendships text"   
+    :ruby
+      settings = {
+        "moments"       => "Moments info text (to be localized)",
+        "comments"      => "Comments info text (to be localized)",
+        "friendships"   => "Friendships info text (to be localized)",
+        "reading_plans" => t('users.notifications.reading_plans'),
+        "badges"        => t('users.notifications.badges'),
+        "newsletter"    => t('users.notifications.newsletter'),
+        "partners"      => t('users.notifications.publishing partners')
+      }
 
-    %p
-      = check_box_tag "settings[reading_plans][email]", "1", @settings.notification_settings.reading_plans.email
-      = label_tag "settings[reading_plans][email]", t('users.notifications.reading_plans')      
+    %ul.notification-settings-group
+      - settings.each do |type,info|
+        %li.settings-group-item
+          = render partial: "notification_settings_group", locals: {type: type, info: info}
 
-    %p
-      = check_box_tag "settings[badges][email]", "1", @settings.notification_settings.badges.email
-      = label_tag "settings[badges][email]", t('users.notifications.badges')
-
-    %p
-      = check_box_tag "settings[newsletter][email]", "1", @settings.notification_settings.newsletter.email
-      = label_tag "settings[newsletter][email]", t('users.notifications.newsletter')
-    
-    %p
-      = check_box_tag "settings[partners][email]", "1", @settings.notification_settings.partners.email
-      = label_tag "settings[partners][email]", t('users.notifications.publishing partners')
-
-    %p
+    %div
       %button{class: "action_button_green", action: "submit"}= t('users.notifications.update')
     - if params[:token]
       = hidden_field_tag :token, params[:token]
