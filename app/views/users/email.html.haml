@@ -3,6 +3,11 @@
 
 
 %article
+
+  - if @results and @results.valid?
+    %p.confirmation-message
+      = t('users.update email check')
+
   %p= t('users.update email copy')
   = render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
 

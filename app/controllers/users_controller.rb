@@ -229,14 +229,9 @@ class UsersController < ApplicationController
     end
 
     def update_email
-      @selected = :email
-      @user = @me = current_user
+      @user = current_user
       @results = @user.update_email(params[:user][:email])
-      if @results.valid?
-        render action: "update_email_success", layout: "application"
-      else
-        render action: "email", layout: "application"
-      end
+      render action: "email", layout: "application"
     end
 
     # TODO: handle users.token.not_found api error when requesting more than once.
