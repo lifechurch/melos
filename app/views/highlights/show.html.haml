@@ -4,4 +4,4 @@
   = render partial: "/comments/sidebar_form", locals: {moment: @highlight}
   
 %article.social-detail
-  = render partial: "moments/highlight", locals: {moment: @highlight}
+  = render partial: "moments/highlight", locals: {moment: @highlight, comments_displayed: true}
