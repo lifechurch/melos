@@ -72,9 +72,10 @@ class RedirectsController < ApplicationController
     redirect_to(edit_user_url(current_user))
   end
 
-  def settings_connections
-    redirect_to(connections_user_url(current_user))
-  end
+  # Removing for 3.1 Social launch - will make a comeback when API implements Facebook/Twitter connections
+  #def settings_connections
+  #  redirect_to(connections_user_url(current_user))
+  #end
 
   def settings_email
     redirect_to(email_user_url(current_user))

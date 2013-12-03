@@ -66,7 +66,9 @@ YouversionWeb::Application.routes.draw do
   resources 'users', :except => [:new, :create] do
 
     # bible.com/users/:id/connections => connections#index
-    get :connections, on: :member, to: "connections#index"
+    
+    # removing for 3.1 social launch until we have proper API to add twitter/facebook credentials again.
+    # get :connections, on: :member, to: "connections#index"
 
     get :email, on: :member
     put :update_email, on: :member
@@ -152,13 +154,16 @@ YouversionWeb::Application.routes.draw do
   get "/bookmarks",                        to: "redirects#bookmarks"
   get "/settings",                         to: "redirects#settings"
   get "/settings/profile",                 to: "redirects#settings"
-  get "/settings/connections",             to: "redirects#settings_connections"
   get "/settings/update_email",            to: "redirects#settings_email"
   get "/settings/password",                to: "redirects#settings_password"
   get "/settings/picture",                 to: "redirects#settings_picture"
   get "/settings/devices",                 to: "redirects#settings_devices"
   get "/settings/notifications",           to: "redirects#settings_notifications", as: "notification_settings"
   get "/settings/delete_account",          to: "redirects#delete_account"
+  
+  # Removed for 3.1 social - will be making a comeback
+  #get "/settings/connections",             to: "redirects#settings_connections"
+
 
   get "pages/feed", to: "pages#feed"
   get "pages/detail", to: "pages#detail"
