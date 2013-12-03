@@ -13,12 +13,12 @@ class NotificationSettings < YV::Resource
   
 
   attr_accessor :badges
-  attr_accessor :follower
   attr_accessor :newsletter
-  attr_accessor :note_like
   attr_accessor :reading_plans
   attr_accessor :partners
-
+  attr_accessor :moments
+  attr_accessor :comments
+  attr_accessor :friendships
 
   class << self
 
@@ -33,6 +33,8 @@ class NotificationSettings < YV::Resource
     def create_path
       update_path
     end
+
+
 
     # NotificationSettings#find
     # --------------------------------------------------------------------
@@ -67,6 +69,7 @@ class NotificationSettings < YV::Resource
 
   end
 
+
   def auth_present?
     !(auth || token).nil?
   end
@@ -85,12 +88,21 @@ class NotificationSettings < YV::Resource
     true
   end
 
-  # def before_save
-  #   nts = ["badges", "follower", "newsletter", "note_like", "reading_plans", "partners"]
-  #   hash = {}
-# 
-  #   nts.each { |a| hash[a] = {"email" => self.send(a.to_sym).to_i == 1} }
-  #   @attributes['notification_settings'] = hash
-  # end
+  def before_save
+    hash = {}
+    settings = ["badges","newsletter","reading_plans","partners","moments","comments","friendships"]
+
+    settings.each do |n|
+      setting = self.send(n.to_sym)
+
+      hash[n] = if setting.present?
+        {"email" => setting["email"] || false,"push" => setting["push"] || false }
+      else
+        {"email" => false,"push" => false }
+      end
+    end
+
+    @attributes['notification_settings'] = hash
+  end
 
 end

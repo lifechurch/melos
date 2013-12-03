@@ -5,31 +5,42 @@
 = render partial: "users/mobile_menu"
 
 %article
-  = form_for @settings, url: update_notifications_user_path( current_user || params[:id] ,token: params[:token]), method: :put do |n|
+  = form_tag update_notifications_user_path( current_user || params[:id] ,token: params[:token]), method: :put do |n|
     - unless @settings.errors.blank?
       .form_errors
         =t("users.profile.notification errors")
       %ul
         - @settings.errors.full_messages.each do |err|
           %li= err
+
     %p
-      = n.check_box :badges
-      = n.label :badges, t('users.notifications.badges')
+      = check_box_tag "settings[moments][email]", "1", @settings.notification_settings.moments.email
+      = label_tag "settings[moments][email]", "Moments text"
+      
     %p
-      = n.check_box :follower
-      = n.label :follower, t('users.notifications.follower')
+      = check_box_tag "settings[comments][email]", "1", @settings.notification_settings.comments.email
+      = label_tag "settings[comments][email]", "Comments text"
+      
     %p
-      = n.check_box :newsletter
-      = n.label :newsletter, t('users.notifications.newsletter')
+      = check_box_tag "settings[friendships][email]", "1", @settings.notification_settings.friendships.email
+      = label_tag "settings[friendships][email]", "Friendships text"   
+
     %p
-      = n.check_box :note_like
-      = n.label :note_like, t('users.notifications.note_like')
+      = check_box_tag "settings[reading_plans][email]", "1", @settings.notification_settings.reading_plans.email
+      = label_tag "settings[reading_plans][email]", t('users.notifications.reading_plans')      
+
     %p
-      = n.check_box :reading_plans
-      = n.label :reading_plans, t('users.notifications.reading_plans')
+      = check_box_tag "settings[badges][email]", "1", @settings.notification_settings.badges.email
+      = label_tag "settings[badges][email]", t('users.notifications.badges')
+
     %p
-      = n.check_box :partners
-      = n.label :partners, t('users.notifications.publishing partners')
+      = check_box_tag "settings[newsletter][email]", "1", @settings.notification_settings.newsletter.email
+      = label_tag "settings[newsletter][email]", t('users.notifications.newsletter')
+    
+    %p
+      = check_box_tag "settings[partners][email]", "1", @settings.notification_settings.partners.email
+      = label_tag "settings[partners][email]", t('users.notifications.publishing partners')
+
     %p
       %button{class: "action_button_green", action: "submit"}= t('users.notifications.update')
     - if params[:token]

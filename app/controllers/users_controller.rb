@@ -313,15 +313,14 @@ class UsersController < ApplicationController
 
     def update_notifications
       @settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
-      @user = @settings.user
-      @me = true
-      @results = @settings.update(params[:notification_settings])
+      @results = @settings.update(params[:settings] || {})
       if @results.valid?
          flash[:notice] = t('users.profile.updated notifications')
-         redirect_to(notifications_user_path(@user,token: params[:token]))
+         redirect_to(notifications_user_path(current_auth.username,token: params[:token]))
       else
-         flash[:error] = t('users.profile.notification errors')
-         render :notifications, layout: "application"
+        @user = current_user
+        flash[:error] = t('users.profile.notification errors')
+        render :notifications, layout: "application"
       end
     end  
 
