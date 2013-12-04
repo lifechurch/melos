@@ -54,6 +54,30 @@ class Friendships < YV::Resource
 
 
 
+    # def outgoing_ids(opts={})
+    #   all(opts.slice(:auth)).outgoing
+    # end
+
+    # def incoming_ids(opts={})
+    #   all(opts.slice(:auth)).incoming
+    # end
+
+
+
+    # Determine pending status and type of a possible friendship with a user
+    # returns :outgoing if given user is in pending outgoing list
+    # returns :incoming if given user is in pending incoming list
+    # returns nil if given user is not in either list
+
+    def pending_type_for(user_or_id, opts={})
+      in_and_out = all(opts.slice(:auth))
+      id = user_or_id.is_a?(User) ? user_or_id.id : user_or_id
+
+      return :incoming if in_and_out.incoming.include?(id)
+      return :outgoing if in_and_out.outgoing.include?(id)
+      return nil
+    end
+
 
 
 

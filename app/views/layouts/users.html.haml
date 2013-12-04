@@ -28,18 +28,31 @@
         %p.profile-hdr-info-about
           = @user.bio
 
+      - # This is me, show the edit button
       - if current_user_is? @user
         = link_to "Edit Profile", edit_user_path(@user), class: "profile-hdr-btn action_button_blue"
 
-      - else
-        - if Friend.with? @user, auth: current_auth
+      - else # Check to see if this person is in my pending lists
+
+        -     friendship_pending_type = Friendships.pending_type_for(@user, auth: current_auth)
+        - if  friendship_pending_type.present?
+
+          - if friendship_pending_type == :incoming # this person has requested friendship with me
+            %span.profile-hdr-pending
+              Show Accept button
+          
+          - elsif friendship_pending_type == :outgoing  # I have requested friendship with this person
+            %span.profile-hdr-pending
+              Request pending
+
+        - elsif Friend.with? @user, auth: current_auth # I am friends with this user
           %span.profile-hdr-friend
             Friends
-        - else
+
+        - else # This user isn't me, they aren't in my pending lists, and I'm not friends with them show the Request friendship button
           = form_tag offer_friendships_path(user_id: @user.id) , method: :post do
             = submit_tag "Add Friend", class: "profile-hdr-addfriend action_button_green", title: "Send this person a friend request"
-      %span.profile-hdr-pending
-        Request pending
+
 
       - #toggle_comments
 
