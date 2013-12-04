@@ -1,5 +1,7 @@
 class HighlightsController < ApplicationController
 
+  before_filter :force_login, except: [:colors]
+
 
   def show
     @highlight = Highlight.find(params[:id], auth: current_auth)
@@ -12,15 +14,16 @@ class HighlightsController < ApplicationController
     @highlight.auth = current_auth
 
     result = @highlight.save
-    result.valid? ? redirect_to(:back, notice: "Saved!") : redirect_to(:back, error: "Didn't save")
+    notice = result.valid? ? "Saved!" : "Error"
+    redirect_to(:back, notice: notice)
 
     #Parameters: {"highlight"=>{"references"=>"gen.1.1.asv,gen.1.6.asv,gen.1.7.asv", "existing_ids"=>"79,98,-1", "color"=>"861eba"}}
     #references    = params[:highlight].delete(:references)
     #existing_ids  = params[:highlight].delete(:existing_ids)
-#
+
     #existing_highlights = existing_ids.split(",").uniq.map {|id| Highlight.new(auth: current_auth, id: id) if id.to_i >= 0} # only need id and auth to destroy
     #highlights          = references.split(",").uniq.map   {|rf| Highlight.new(auth: current_auth, reference: rf, color: params[:highlight][:color]) }
-#
+
     #if params[:remove]
     #  if existing_highlights.all?(&:destroy)
     #    redirect_to :back
