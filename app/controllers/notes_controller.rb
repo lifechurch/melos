@@ -1,13 +1,14 @@
 class NotesController < ApplicationController
 
-
-  before_filter :set_sidebar, :only => [:index]
-
+  before_filter :set_sidebar, only: [:index]
+  before_filter :force_login, only: [:show,:new,:edit,:create,:update,:destroy]
+  
+  # TODO: are #index or #related neccesary anymore?
   def index
-      @notes = Note.search(language_tag: I18n.locale, cache_for: YV::Caching.a_very_short_time)
-      # drop language tag filter if no notes found
-      @notes = Note.search(cache_for: YV::Caching.a_very_short_time) if @notes.empty?
-      self.sidebar_presenter = Presenter::Sidebar::Notes.new
+    @notes = Note.search(language_tag: I18n.locale, cache_for: YV::Caching.a_very_short_time)
+    # drop language tag filter if no notes found
+    @notes = Note.search(cache_for: YV::Caching.a_very_short_time) if @notes.empty?
+    self.sidebar_presenter = Presenter::Sidebar::Notes.new
   end
 
   def related
@@ -21,6 +22,7 @@ class NotesController < ApplicationController
   end
 
 
+  # TODO: figure out public/friends/private/draft display and authorization
   def show
     @note = current_auth ? Note.find(params[:id], auth: current_auth) : Note.find(params[:id])
     if @note.invalid?
@@ -39,14 +41,13 @@ class NotesController < ApplicationController
 
 
   def new
-    redirect_to(notes_path) unless current_auth
     @note = Note.new(params[:note])
   end
 
 
   def edit
-    redirect_to(notes_path) unless current_auth
     @note = Note.find(params[:id], auth: current_auth)
+    redirect_to(moments_path) and return unless @note.user_id == current_auth.user_id
   end
 
 
@@ -62,6 +63,8 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id], auth: current_auth)
+    redirect_to(moments_path) and return unless @note.user_id == current_auth.user_id
+    
     @note.auth = current_auth
     result = @note.update(params[:note])
     result.valid? ? redirect_to(note_path(@note.id)) : render(action: "edit")
@@ -71,6 +74,8 @@ class NotesController < ApplicationController
 
   def destroy
     @note = Note.find(params[:id], auth: current_auth)
+    redirect_to(moments_path) and return unless @note.user_id == current_auth.user_id
+    
     @note.auth = current_auth
 
     results = @note.destroy
