@@ -38,9 +38,11 @@
         - if  friendship_pending_type.present?
 
           - if friendship_pending_type == :incoming # this person has requested friendship with me
-            %span.profile-hdr-pending
-              Show Accept button
-          
+            %a{href: "#", class: "profile-hdr-accept action_button_green"}
+              Accept request
+            %a{href: "#", class: "profile-hdr-deny action_button_red"}
+              Deny request
+
           - elsif friendship_pending_type == :outgoing  # I have requested friendship with this person
             %span.profile-hdr-pending
               Request pending
