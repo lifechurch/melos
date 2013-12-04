@@ -13,6 +13,7 @@ class MomentsController < ApplicationController
 
   # This is solely to support API action_urls that are formatted /moments/123thisID
   # Lookup the moment and redirect to the appropriate page.
+  # TODO - skip any before filters that arent necessary
   def show
     moment = Moment.find(params[:id], auth: current_auth)
     redirect_to moment.path
