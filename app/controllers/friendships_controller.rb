@@ -2,11 +2,12 @@ class FriendshipsController < ApplicationController
 
   respond_to :html, :json
 
+  before_filter :force_login
+
   def requests
-    @friendships = Friendships.incoming(auth: current_auth, page: @page)
+    @friendships = Friendships.incoming(page: @page, auth: current_auth)
     respond_with(@friendships)
   end
-
 
   # Accept a friendship
   def create
@@ -16,7 +17,6 @@ class FriendshipsController < ApplicationController
     # eventually support json/ajax submission for javascript menus, etc.
     #respond_with(@friendship)
   end
-
 
   def offer
     @friendship = Friendships.offer(user_id: params[:user_id].to_i, auth: current_auth)
