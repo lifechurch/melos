@@ -2,6 +2,7 @@ class NotificationsController < ApplicationController
 
   respond_to :html, :json
 
+  before_filter :force_login
 
   def index
     @notifications = get_notifications
