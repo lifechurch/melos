@@ -3,6 +3,14 @@ class HighlightsController < ApplicationController
   before_filter :force_login, except: [:colors]
 
 
+  # Action meant to render moment cards partial to html for ajax delivery client side
+  # Currently being used for next page calls on moments feed.
+  def _cards
+    @user = User.find(params[:user_id])
+    @moments = Highlight.all(auth: current_auth, page: @page)
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
+  end
+
   def show
     @highlight = Highlight.find(params[:id], auth: current_auth)
   end

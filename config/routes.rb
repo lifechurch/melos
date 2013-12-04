@@ -13,9 +13,7 @@ YouversionWeb::Application.routes.draw do
 
   match "/app(/:store)", to: AppStoreController.action(:index)
 
-  resources :moments, only: [:index,:show] do
-    get "_cards", on: :collection
-  end
+  
 
   resources :friendships, only: [:create, :destroy] do
     get :requests, on: :collection
@@ -35,7 +33,7 @@ YouversionWeb::Application.routes.draw do
   match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'references#notes', :as => 'reference_notes', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
 
-  resources "bookmarks",  except: [:index, :new]
+  
   resources "versions",   only:   [:index, :show]
   
 
@@ -45,11 +43,9 @@ YouversionWeb::Application.routes.draw do
 
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
   match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
-  resources 'notes', :except => [:index]
+  
 
-  resources 'highlights', only: [:create,:show] do
-    get :colors, on: :collection
-  end
+  
 
 
   # Metal controller
@@ -64,6 +60,7 @@ YouversionWeb::Application.routes.draw do
 
   # Users
   resources 'users', :except => [:new, :create] do
+    get "_cards", on: :collection
 
     # bible.com/users/:id/connections => connections#index
     
@@ -97,6 +94,26 @@ YouversionWeb::Application.routes.draw do
       post  :shelf,       on: :member
     end
   end
+
+  resources :moments, only: [:index,:show] do
+    get "_cards", on: :collection
+  end
+
+  resources :notes, :except => [:index] do
+    get "_cards", on: :collection
+  end
+
+  resources "bookmarks",  except: [:index, :new] do
+    get "_cards", on: :collection
+  end
+
+  resources :highlights, only: [:create,:show] do
+    get "_cards", on: :collection
+    get :colors,  on: :collection
+  end
+
+
+
 
   match "subscriptions/:id/sidebar" => "subscriptions#sidebar"
 

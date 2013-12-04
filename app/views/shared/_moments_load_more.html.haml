@@ -1,0 +1,39 @@
+- url_params = [] if local_assigns[:url_params].nil?
+
+= link_to("Load more","#", id: "load-more", "data-page" => @page, style: "display: block; text-align: center; border: 1px solid #ccc; padding: 4px 10px; background:#aaa;")
+
+:javascript
+  $('#load-more').click(function (ev) {
+
+      ev.preventDefault();
+      var pagination_link = $(ev.target);
+      var next_page = pagination_link.data("page") + 1;
+      var request_url = "/#{resource}/_cards?page=" + next_page + "&#{url_params.join('&')}";
+      
+      $.ajax({
+        type: "GET",
+        url: request_url,
+        dataType: "html",
+        success: function (data) {
+            
+            var next_feed_container = $( "<div/>", {"class": "social-feed"} )
+            $('.social-feed-wrap').append(next_feed_container);
+            next_feed_container.append(data);
+
+            next_feed_container.find(".moment").wookmark({
+              autoResize:   true,
+              offset:       15,
+              container:    next_feed_container
+            });
+
+            next_feed_container.find(".moment-verse.empty").each(function(){
+              new Moments.Verse({el: $(this)});
+            });
+        
+            pagination_link.data("page", next_page);
+        },
+        error: function (xhr, status) {
+            console.log("Sorry, there was a problem!");
+        }
+    });
+  });

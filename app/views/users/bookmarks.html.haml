@@ -17,6 +17,8 @@
           - label_name = label_and_count["label"].strip
           %li.label
             = link_to label_name, bookmarks_user_path(@user, label: label_name)
+.social-feed-wrap
+  .social-feed
+    = render partial: "moments/cards", locals: {moments: @bookmarks, comments_displayed: false}
 
-.social-feed
-  = render partial: "moments/cards", locals: {moments: @bookmarks, comments_displayed: false}
+= render partial: "shared/moments_load_more", locals: {resource: "bookmarks", url_params: ["user_id=#{@user.username}"]}

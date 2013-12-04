@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :friends, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :devices, :destroy_device, :update_email, :delete_account, :delete_account_form]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:home,:sign_up_success, :confirm_update_email, :update_email, :destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
+  before_filter :find_user, except: [:_cards,:home,:sign_up_success, :confirm_update_email, :update_email, :destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
   before_filter :authorize, only: [:edit,:update, :email, :password, :update_password, :picture, :update_picture, :devices, :delete_account,:destroy]
 
@@ -36,6 +36,13 @@ class UsersController < ApplicationController
   #   /sign-up/success (or sign_up_redirect)
 
 
+  # Action meant to render moment cards partial to html for ajax delivery client side
+  # Currently being used for next page calls on moments feed.
+  def _cards
+    @user = User.find(params[:user_id])
+    @moments = Moment.all(user_id: @user.id.to_i, page: @page, auth: current_auth)
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
+  end
 
   def show
     @user    = User.find(params[:id])

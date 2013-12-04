@@ -4,12 +4,12 @@ class NotesController < ApplicationController
   before_filter :force_login, only: [:show,:new,:edit,:create,:update,:destroy]
   
   # TODO: are #index or #related neccesary anymore?
-  def index
-    @notes = Note.search(language_tag: I18n.locale, cache_for: YV::Caching.a_very_short_time)
-    # drop language tag filter if no notes found
-    @notes = Note.search(cache_for: YV::Caching.a_very_short_time) if @notes.empty?
-    self.sidebar_presenter = Presenter::Sidebar::Notes.new
-  end
+  #def index
+  #  @notes = Note.search(language_tag: I18n.locale, cache_for: YV::Caching.a_very_short_time)
+  #  # drop language tag filter if no notes found
+  #  @notes = Note.search(cache_for: YV::Caching.a_very_short_time) if @notes.empty?
+  #  self.sidebar_presenter = Presenter::Sidebar::Notes.new
+  #end
 
   def related
     #API Constraint to be put in model eventually
@@ -37,6 +37,15 @@ class NotesController < ApplicationController
          @note = Note.find(params[:id], auth: current_auth, force_auth: true)
       end
     end
+  end
+
+
+  # Action meant to render moment cards partial to html for ajax delivery client side
+  # Currently being used for next page calls on moments feed.
+  def _cards
+    @user = User.find(params[:user_id])
+    @moments = Note.all(auth: current_auth, page: @page)
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
 
 

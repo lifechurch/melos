@@ -3,5 +3,8 @@
 - content_for :title do 
   = @title
 
-.social-feed
-  = render partial: "moments/cards", locals: {moments: @notes,comments_displayed: false}
+.social-feed-wrap
+  .social-feed
+    = render partial: "moments/cards", locals: {moments: @notes,comments_displayed: false}
+
+= render partial: "shared/moments_load_more", locals: {resource: "notes", url_params: ["user_id=#{@user.username}"]}
