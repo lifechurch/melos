@@ -25,7 +25,7 @@ class MomentsController < ApplicationController
   def _cards
     @user = current_user
     @moments = Moment.all(auth: current_auth, page: @page)
-    render partial: "moments/cards", locals: {moments: @moments}, layout: false
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}, layout: false
   end
 
 
