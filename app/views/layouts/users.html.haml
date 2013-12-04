@@ -27,10 +27,10 @@
       - if @user.bio
         %p.profile-hdr-info-about
           = @user.bio
-      
+
       - if current_user_is? @user
         = link_to "Edit Profile", edit_user_path(@user), class: "profile-hdr-btn action_button_blue"
-      
+
       - else
         - if Friend.with? @user, auth: current_auth
           %span.profile-hdr-friend
@@ -38,6 +38,8 @@
         - else
           = form_tag offer_friendships_path(user_id: @user.id) , method: :post do
             = submit_tag "Add Friend", class: "profile-hdr-addfriend action_button_green", title: "Send this person a friend request"
+      %span.profile-hdr-pending
+        Request pending
 
       - #toggle_comments
 
