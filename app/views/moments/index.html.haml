@@ -1,12 +1,11 @@
 - @sidebar = false
-
-%article.social-feed
-  = render partial: "moments/daily_verse"
-  = render partial: "moments/cta/find_friends"
-  = render partial: "moments/cta/profile"
-  = render partial: "moments/cta/sharing"
-
-  = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
+.social-feed-wrap
+  .social-feed
+    = render partial: "moments/daily_verse"
+    = render partial: "moments/cta/find_friends"
+    = render partial: "moments/cta/profile"
+    = render partial: "moments/cta/sharing"
+    = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
 
 
 = link_to("Load more","#", id: "load-more", "data-page" => @page, style: "display: block; text-align: center; border: 1px solid #ccc; padding: 4px 10px; background:#aaa;")
@@ -21,13 +20,18 @@
         url: "/moments/_cards?page=" + next_page,
         dataType: "html",
         success: function (data) {
-            $('.social-feed').append(data);
-            $(".social-feed .moment").wookmark({
+            
+            var next_feed_container = $( "<div/>", {"class": "social-feed"} )
+            $('.social-feed-wrap').append(next_feed_container);
+            next_feed_container.append(data);
+
+            next_feed_container.find(".moment").wookmark({
               autoResize:   true,
               offset:       15,
-              container:    $(".social-feed")
+              container:    next_feed_container
             });
-            $(".moment-verse.empty").each(function(){
+
+            next_feed_container.find(".moment-verse.empty").each(function(){
               new Moments.Verse({el: $(this)});
             });
         
