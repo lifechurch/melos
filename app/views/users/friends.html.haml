@@ -1,6 +1,6 @@
 - @sidebar = false
 - @title = @me ? t('users.my friends') : t('users.user friends', user: @user.name || @user.username)
-- content_for :title do 
+- content_for :title do
   = @title
 
 .profile-friends
@@ -12,25 +12,11 @@
         You have 42 friends
       %span.friends-count-canhave
         You can have as many as 150
-      #js-friends-count-help.friends-count-help
-      %span.tooltip 
+      %span.friends-count-help
         Too many friends is bad for your health. Show some restraint, man!
-        :javascript
-          $('#js-friends-count-help').click(function (event) {
-              event.preventDefault();
-              $(this).next().toggleClass("show");
-          });     
-          $('#js-friends-count-help').hover(function () {
-              $(this).next().addClass("show");
-          }, function() {
-              $(this).next().removeClass("show");
-          });        
-
 
       %a{href: "#", class: "friends-count-find action_button_blue"}
         Find friends
-      %a{href: "/friendships/requests", class: "friends-view-requests action_button_grey"}
-        Friend Requests
 
   -# Friend list
 
