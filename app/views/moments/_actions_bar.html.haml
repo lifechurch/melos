@@ -6,7 +6,7 @@
     <a href="#" title="Like this">Like</a>
 
   %span.moment-actions-comment
-    <a href="#" title="Leave a comment about this">Comment</a>
+    = link_to "Comment", moment.to_path, title: "See all comments"
 
   %span.moment-actions-time
     = api_dt_time_ago(moment.created_dt)
