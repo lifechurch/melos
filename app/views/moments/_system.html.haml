@@ -8,4 +8,9 @@
 
   -# !share controls, dates, and comments
   .moment-btm
-    = render partial: "moments/actions_bar", locals: {moment: moment}
+    .moment-actions
+      %span.moment-actions-share
+        <a href="#" title="Share this with friends or family">Share</a>
+
+      %span.moment-actions-time
+        = api_dt_time_ago(moment.created_dt)
