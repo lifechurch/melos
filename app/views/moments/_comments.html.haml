@@ -7,7 +7,7 @@
     %ul.moment-comments-list
       - moment.comments.each do |comment|
         - user = comment.user
-        - avatar = user.avatars.sm_avatar
+        - avatar = user.avatars.md_avatar
         %li.moment-comments-list-comment
           %span.moment-comments-list-avatar
             = image_tag avatar.url

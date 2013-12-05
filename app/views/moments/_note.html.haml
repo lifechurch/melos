@@ -1,12 +1,12 @@
 - avatars = moment.avatars
-- md_avatar = avatars.md_avatar
+- avatar = avatars.lg_avatar
 
 .moment
   .moment-top
     .moment-no
       = image_tag "social-cap-no.png", class: "moment-img"
       %span.moment-avatar
-        = image_tag md_avatar.url
+        = image_tag avatar.url
       %p.moment-no-text
         = link_to(moment.moment_title.html_safe, moment.to_path, class: "moment-title-link")
       %span.moment-no-note

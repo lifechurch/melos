@@ -1,5 +1,5 @@
 - avatars = moment.avatars
-- md_avatar = avatars.md_avatar
+- avatar = avatars.lg_avatar
 - friend = moment.friend
 - friend_avatar = friend.avatars.lg_avatar
 
@@ -9,7 +9,7 @@
     .moment-fr
       = image_tag "social-cap-fr.png", class: "moment-img"
       %span.moment-avatar
-        = image_tag md_avatar.url
+        = image_tag avatar.url
       %p.moment-fr-text
         = moment.moment_title.html_safe
 
