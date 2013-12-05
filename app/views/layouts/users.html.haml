@@ -55,9 +55,6 @@
           = form_tag offer_friendships_path(user_id: @user.id) , method: :post do
             = submit_tag "Add Friend", class: "profile-hdr-addfriend action_button_green", title: "Send this person a friend request"
 
-
-      - #toggle_comments
-
     - # find the highlight method in /app/helpers/users_helper.rb
     %ul.profile-tabs
       %li.profile-tabs-activity{class: highlight(user_path)}

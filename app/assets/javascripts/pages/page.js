@@ -80,7 +80,6 @@ function Page() {
   this.initAutoFocus();
   this.initProgressBars();
   this.initInplaceConfirms();
-  this.initSocial();
 }
 
 Page.prototype = {
@@ -522,44 +521,6 @@ Page.prototype = {
 
       });
     });
-  },
-
-  initSocial : function() {
-
-    // expand comments on comment icon
-    $(".moment-actions-comment a").click(function(e) {
-      e.preventDefault();
-      Page.prototype.enableTransitionCSS();
-      $(this).parents(".moment").find(".moment-comments").toggleClass("hide");
-      if ($('.social-feed').length) {
-        $('.social-feed').trigger('refreshWookmark');  
-      }
-      Page.prototype.disableTransitionCSS();
-    });  
-
-    // toggle hide/show all comments social feed pages    
-    $("#toggle_comments").click(function() {
-      Page.prototype.enableTransitionCSS();
-      $(this).toggleClass("closed");
-      if ($(this).hasClass("closed")) {
-        $('.social-feed .moment-comments').addClass("hide");
-      } else {
-        $('.social-feed .moment-comments').removeClass("hide");
-      }
-      $('.social-feed').trigger('refreshWookmark');
-      Page.prototype.disableTransitionCSS();
-    });
-
-
-
-  },
-
-  enableTransitionCSS : function() {
-    $('body').addClass("transition");
-  },
-
-  disableTransitionCSS: function() {
-    setTimeout(function(){$('body').removeClass("transition");},600);
   }
 
 }
