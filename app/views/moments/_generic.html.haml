@@ -3,6 +3,8 @@
   .moment-top
     .moment-sys
       = image_tag "social-cap-bm.png", class: "moment-img"
+      %span.moment-actions-time
+        = api_dt_time_ago(moment.created_dt)
       %p.moment-sys-text
         = moment.moment_title.html_safe
 

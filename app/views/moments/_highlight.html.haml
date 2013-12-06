@@ -7,6 +7,8 @@
       = image_tag "social-cap-hi.png", class: "moment-img"
       %span.moment-avatar
         = image_tag avatar.url
+      %span.moment-actions-time
+        = api_dt_time_ago(moment.created_dt)
       %p.moment-hi-text
         = link_to(moment.moment_title.html_safe, moment.to_path, class: "moment-title-link")
       - if moment.references.present?
@@ -14,8 +16,6 @@
           - moment.references.each do |ref|
             %p.moment-verse.empty{"data-usfm" => usfm_from_moment(ref), "data-version-id" => ref.version_id }
               = "#{ref.human}(#{ref.usfm})"
-
-      = render partial: "moments/owner_actions", locals: {moment: moment}
 
   -# !share controls, dates, and comments
   .moment-btm

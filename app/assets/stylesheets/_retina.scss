@@ -89,7 +89,7 @@ only screen and (                min-resolution: 2dppx) {
   .moment-actions-comment a,
   .moment-actions-like a {
     background: image-url("social-actions-sprite@2x.png") no-repeat;
-    background-size: 16px 400px;
+    background-size: 20px 400px;
   }
 
   .moment-actions-share a {
@@ -97,7 +97,7 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   .moment-actions-comment a {
-    background-position: center -129px;
+    background-position: 9px -129px;
   }
 
   .moment-actions-like a {
@@ -106,11 +106,6 @@ only screen and (                min-resolution: 2dppx) {
 
   .moment-actions-like a.liked {
     background-position: center -82px;
-  }
-
-  .moment-actions-time {
-    background: image-url("social-actions-sprite@2x.png") no-repeat 15px -313px;
-    background-size: 16px 400px;
   }
 
   .moment-no-note-title {
@@ -126,6 +121,29 @@ only screen and (                min-resolution: 2dppx) {
   .moment-vod-calendar {
     background: image-url("social-vod-icon@2x.png") no-repeat left center;
     background-size: 48px 48px;
+  }
+
+  // !Edit and delete controls
+
+  .moment-content-actions-edit {
+    background: image-url("edit-delete-sprite@2x.png") no-repeat 1px 0;
+  }
+
+  .moment-content-actions-delete {
+    background: image-url("edit-delete-sprite@2x.png") no-repeat -65px 0;
+  }
+
+  .moment-content-actions-edit,
+  .moment-content-actions-delete {
+    background-size: 78px 51px;
+  }
+
+  .moment-content-actions-edit:hover {
+    background-position: 1px -35px;
+  }
+
+  .moment-content-actions-delete:hover {
+    background-position: -65px -35px;
   }
 
 }

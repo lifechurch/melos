@@ -8,5 +8,4 @@
   %span.moment-actions-comment
     = link_to "Comment", moment.to_path, title: "See all comments"
 
-  %span.moment-actions-time
-    = api_dt_time_ago(moment.created_dt)
+  = render partial: "moments/owner_actions", locals: {moment: moment}

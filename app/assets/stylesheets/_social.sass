@@ -18,7 +18,6 @@
 #main div.social-feed
   width: 905px
   margin: 0
-  
 
 // !-------------------- Feed -------------------------
 
@@ -33,9 +32,6 @@ body.transition .moment
   margin: 0 15px 15px 0
   width: 445px
 
-.moment:nth-child(2n)
-  margin-right: 0
-
 .moment-top
   margin-bottom: 1px
 
@@ -45,44 +41,26 @@ body.transition .moment
 // !Edit and delete controls
 
 .moment-content-actions
-  margin-top: 10px
+  margin: 4px 15px 0 0
+  float: right
 
 .moment-content-actions-edit,
 .moment-content-actions-delete
-  text-indent: 100%
-  white-space: nowrap
-  overflow: hidden
-  display: inline-block
-  width: 27px
-  padding: 0 0 1px
+  padding: 0 0 1px 20px
+  font-size: 13px
 
 .moment-content-actions-edit
-  background: #DEDDDB image-url("edit-delete-sprite.png") no-repeat 7px 5px
-  +border-radius(5px 0 0 5px)
+  background: image-url("edit-delete-sprite.png") no-repeat 1px 0
+  margin: 0 15px 0 0
 
 .moment-content-actions-delete
-  background: #DEDDDB image-url("edit-delete-sprite.png") no-repeat -58px 5px
-  +border-radius(0 5px 5px 0)
+  background: image-url("edit-delete-sprite.png") no-repeat -65px 0
 
 .moment-content-actions-edit:hover
-  background-position: 7px -30px
+  background-position: 1px -35px
 
 .moment-content-actions-delete:hover
-  background-position: -58px -30px
-
-// !Edit / delete in a note
-
-.moment-no
-  .moment-content-actions
-    position: absolute
-    top: 88px
-    left: 22px
-
-  .moment-content-actions-edit
-    +border-radius(5px 0 0 5px)
-
-  .moment-content-actions-delete
-    +border-radius(0)
+  background-position: -65px -35px
 
 
 // !Share comment like etc.
@@ -99,14 +77,17 @@ body.transition .moment
 
 .moment-actions-share,
 .moment-actions-comment,
-.moment-actions-like,
+.moment-actions-like
+  float: left
+  display: block
+  font-size: 13px
+
 .moment-actions-time
   float: left
   display: block
   vertical-align: middle
   font-size: 13px
   line-height: 0
-  width: 40px
 
 .moment-actions-share a:hover,
 .moment-actions-comment a:hover,
@@ -119,11 +100,8 @@ body.transition .moment
 .moment-actions-like a
   background: image-url("social-actions-sprite.png") no-repeat
   display: block
-  text-indent: 100%
-  white-space: nowrap
-  overflow: hidden
-  height: 36px
-
+  height: 28px
+  padding: 5px 0 0 35px
 
 .moment-actions-authed
   display: block
@@ -144,7 +122,7 @@ body.transition .moment
   background-position: center 10px
 
 .moment-actions-comment a
-  background-position: center -129px
+  background-position: 10px -129px
 
 // !hide like action for now
 .moment-actions-like
@@ -157,11 +135,8 @@ body.transition .moment
   background-position: center -82px
 
 .moment-actions-time
-  padding: 0 0 0 40px
+  padding: 17px 0 5px 11px
   font-size: 11px
-  height: 36px
-  line-height: 34px
-  background: image-url("social-actions-sprite.png") no-repeat 12px -313px
   width: auto
 
 // !Comments attached to a moment
@@ -305,7 +280,7 @@ body.transition .moment
   float: left
   width: 300px
   padding: 5px 0 0 10px
-  line-height: 1.4em
+  line-height: 1.1em
   margin-bottom: 15px
 
 .moment-dl-text
