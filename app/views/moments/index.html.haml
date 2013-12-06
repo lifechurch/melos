@@ -3,9 +3,9 @@
 .social-feed-wrap
   .social-feed
     = render partial: "moments/daily_verse"
-    = render partial: "moments/cta/find_friends"
+    = #render partial: "moments/cta/find_friends"
     = render partial: "moments/cta/profile"
-    = render partial: "moments/cta/sharing"
+    = #render partial: "moments/cta/sharing"
     = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
 
 
