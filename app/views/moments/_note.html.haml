@@ -9,9 +9,12 @@
         = image_tag avatar.url
       %span.moment-actions-time
         = api_dt_time_ago(moment.created_dt)
-      %p.moment-no-text
-        = link_to(moment.moment_title.html_safe, moment.to_path, class: "moment-title-link")
-      %span.moment-no-note
+      
+      %h2.moment-no-text
+        - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title : moment.moment_title.html_safe
+        = link_to(anchor_text, moment.to_path, class: "moment-title-link")
+      
+      .moment-no-note
         %p.moment-no-note-title
           = moment.title
         %p.moment-no-note-text

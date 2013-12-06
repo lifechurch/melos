@@ -10,8 +10,10 @@
         = image_tag avatar.url
       %span.moment-actions-time
         = api_dt_time_ago(moment.created_dt)
-      %p.moment-bm-text
-        = link_to(moment.moment_title.html_safe, moment.to_path, class: "moment-title-link")
+      
+      %h2.moment-bm-text
+        - anchor_text = (moment.user_id == current_auth.user_id) ? moment.references.collect {|r| r.human}.join(", ") : moment.moment_title.html_safe
+        = link_to(anchor_text, moment.to_path, class: "moment-title-link")
 
       - if moment.references.present?
         .moment-verse-wrap

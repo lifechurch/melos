@@ -12,8 +12,9 @@
         = image_tag avatar.url
       %span.moment-actions-time
         = api_dt_time_ago(moment.created_dt)
-      %p.moment-fr-text
-        = moment.moment_title.html_safe
+      
+      %h2.moment-fr-text
+        = (moment.user.id == current_auth.user_id) ? "You are now friends with" : moment.moment_title.html_safe
 
       .moment-fr-box
         %a{href: user_path(friend.user_name) }

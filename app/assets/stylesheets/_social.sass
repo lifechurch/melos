@@ -279,16 +279,27 @@ body.transition .moment
 .moment-vid-text,
 .moment-sys-text,
 .moment-fr-text
-  font-size: 16px
+  font-size: 16px !important
+  line-height: 1.1em  !important
   float: left
   width: 300px
   padding: 5px 0 0 10px
-  line-height: 1.1em
   margin-bottom: 15px
 
 .moment-dl-text
   b
     display: block
+
+
+// System moment overrides
+
+.moment-sys
+  .moment-actions-time
+    float: none
+    padding: 5px
+
+.moment-sys-text
+  flot: none
 
 
 // Moments that have verses (currently bookmark and highlight)

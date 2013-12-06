@@ -3,7 +3,11 @@
   .moment-top
     .moment-sys
       = image_tag "social-cap-sys.png", class: "moment-img"
-      %p.moment-sys-text
+      
+      %span.moment-actions-time
+        = api_dt_time_ago(moment.created_dt)
+
+      %h2.moment-sys-text
         = moment.title.html_safe if moment.title
 
   -# !share controls, dates, and comments
@@ -11,6 +15,3 @@
     .moment-actions
       %span.moment-actions-share
         <a href="#" title="Share this with friends or family">Share</a>
-
-      %span.moment-actions-time
-        = api_dt_time_ago(moment.created_dt)
