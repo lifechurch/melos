@@ -88,11 +88,8 @@ class NotesController < ApplicationController
     @note.auth = current_auth
 
     results = @note.destroy
-    if results.valid?
-       redirect_to user_notes_path(current_auth.username), notice: t("notes.successfully deleted")
-    else
-       render action: "index"
-    end
+    notice = results.valid? ? t("notes.successfully deleted") : "Error"
+    redirect_to(:back, notice: notice)
   end
 
 

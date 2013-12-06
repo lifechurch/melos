@@ -107,7 +107,7 @@ YouversionWeb::Application.routes.draw do
     get "_cards", on: :collection
   end
 
-  resources :highlights, only: [:create,:show] do
+  resources :highlights, only: [:create,:show,:destroy] do
     get "_cards", on: :collection
     get :colors,  on: :collection
   end

@@ -44,7 +44,8 @@ class BookmarksController < ApplicationController
     
     @bookmark.auth = current_auth
     results = @bookmark.destroy
-    results.valid? ? redirect_to(user_bookmarks_path(current_user), notice: t("bookmarks.successfully deleted")) : render(action: "index")
+    notice = results.valid? ? t("bookmarks.successfully deleted") : "Error"
+    redirect_to(:back, notice: notice)
   end
 
 end

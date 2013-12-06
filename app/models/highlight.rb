@@ -61,10 +61,14 @@ class Highlight < YV::Resource
         "moments/colors"
       end
 
+      def kind
+        "highlight"
+      end
+
     # Override all method to add highlight kind to options
     def all(opts={})
       raise "Page parameter is required" unless opts[:page]
-      opts[:kind] = "highlight"
+      opts[:kind] = kind
       super(opts)
     end
 
@@ -149,6 +153,11 @@ class Highlight < YV::Resource
 
   end
   # End class methods ----------------------------------------------------------------------------------------------
+
+
+  def kind
+    self.class.kind
+  end
 
   def path
     "/highlights/#{id}"

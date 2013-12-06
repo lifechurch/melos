@@ -47,6 +47,16 @@ class HighlightsController < ApplicationController
     #end
   end
 
+  def destroy
+    @highlight = Highlight.find(params[:id], auth: current_auth)
+    redirect_to(moments_path) and return unless @highlight.user_id == current_auth.user_id
+    
+    @highlight.auth = current_auth
+    results = @highlight.destroy
+    notice = results.valid? ? "Highlight deleted" : "Error"
+    redirect_to(:back, notice: notice)
+  end
+
   # TODO: turn this into a json action and render the html client side.
   # Endpoint returns a list of default colors *or* colors scoped to the current_user
   def colors

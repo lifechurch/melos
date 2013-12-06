@@ -82,10 +82,14 @@ class Note < YV::Resource
         "moments/update"
       end
 
+      def kind
+        "note"
+      end
+
     # Override all method to add note kind to options
     def all(opts={})
       raise "Page parameter is required" unless opts[:page]
-      opts[:kind] = "note"
+      opts[:kind] = kind
       super(opts)
     end
 
@@ -206,6 +210,9 @@ class Note < YV::Resource
 
   # TODO: API should not REQUIRE color, references.
 
+  def kind
+    self.class.kind
+  end
 
   def path
     "/notes/#{id}"

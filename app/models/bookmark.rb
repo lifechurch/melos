@@ -67,11 +67,15 @@ class Bookmark < YV::Resource
         "moments/create"
       end
 
+      def kind
+        "bookmark"
+      end
+
 
     # Override all method to add bookmark kind to options
     def all(opts={})
       raise "Page parameter is required" unless opts[:page]
-      super(opts.merge(kind: "bookmark"))
+      super(opts.merge(kind: kind))
     end
 
 
@@ -113,6 +117,9 @@ class Bookmark < YV::Resource
   end
   # END class methods ----------------------------------------------------------------------------------------------
 
+  def kind
+    self.class.kind
+  end
 
   def path
     "/bookmarks/#{id}"

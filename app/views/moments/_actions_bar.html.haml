@@ -8,4 +8,8 @@
   %span.moment-actions-comment
     = link_to "Comment", moment.to_path, title: "See all comments"
 
-  = render partial: "moments/owner_actions", locals: {moment: moment}
+  - if moment.user_id == current_auth.user_id
+
+    .moment-content-actions
+      = link_to("Edit", "#{moment.to_path}/edit", class: "moment-content-actions-edit", title: "Edit this #{moment.kind}" )
+      = link_to("Delete", moment.to_path, method: :delete, confirm: "Are you sure?", title: "Delete this #{moment.kind}")
