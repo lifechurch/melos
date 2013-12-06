@@ -85,7 +85,7 @@ body.transition .moment
   display: block
   font-size: 13px
 
-.moment-actions-time
+.moment-time
   float: left
   display: block
   vertical-align: middle
@@ -137,7 +137,7 @@ body.transition .moment
 .moment-actions-like a.liked
   background-position: center -82px
 
-.moment-actions-time
+.moment-time
   padding: 17px 0 5px 11px
   font-size: 11px
   width: auto
@@ -294,7 +294,7 @@ body.transition .moment
 // System moment overrides
 
 .moment-sys
-  .moment-actions-time
+  .moment-time
     float: none
     padding: 5px
 
@@ -336,6 +336,9 @@ body.transition .moment
 .moment-vod
   overflow: hidden
 
+.moment-vod .moment-time
+  padding-top: 8px
+
 .moment-vod-calendar
   float: left
   height: 48px
@@ -355,12 +358,13 @@ body.transition .moment
   float: left
   color: #666
   height: 48px
-  line-height: 46px
+  line-height: 36px
   padding-left: 10px
   margin-bottom: 0
   font-size: 24px
   font-weight: bold
   letter-spacing: -.02em
+  width: 300px
 
 .moment-vod-verse
   font: 24px "times new roman", times, serif

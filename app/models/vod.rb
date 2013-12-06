@@ -15,8 +15,9 @@ class VOD < YV::Resource
     # - will always be in same chapter
     # - will always have continuous verses if there is more than one verse
     def today(version_id = 1)
-      today = Date.today.yday
-      item = all.detect {|d| d.day == today} # {"references"=>["PHP.3.13+PHP.3.14"], "day"=>315}
+      today = Date.today
+      yday  = today.yday
+      item = all.detect {|d| d.day == yday} # {"references"=>["PHP.3.13+PHP.3.14"], "day"=>315}
       
       # join multiple items in array, then split on our + to get all reference pieces
       references    = item.references.join("+").split("+")  # ["PHP.3.13","PHP.3.14"]
@@ -34,14 +35,14 @@ class VOD < YV::Resource
       verse_text = document.css(selector).inner_html.strip
 
       data = {
-        version: Version.find(version_id),
-        human: results.reference.human + ":" + verse_nums.join(", "),
-        usfm: results.reference.usfm,
-        verses: verse_nums,
-        content: verse_text,
-        week_day: Date.today.day,
-        day: item.day
-
+        version:  Version.find(version_id),
+        human:    results.reference.human + ":" + verse_nums.join(", "),
+        usfm:     results.reference.usfm,
+        verses:   verse_nums,
+        content:  verse_text,
+        week_day: today.day,
+        day:      item.day,
+        date:     Date.strptime("#{today.year}-#{today.yday}","%Y-%j")
       }
       Hashie::Mash.new(data)
     end

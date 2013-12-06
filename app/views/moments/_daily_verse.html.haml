@@ -9,6 +9,8 @@
           = verse_of_today.week_day
         .moment-vod-calendar-img
           = image_tag "moment-vod-calendar-img.png"
+      %span.moment-time
+        = verse_of_today.date.to_s(:long)
       .moment-vod-title
         Verse of the day
       %p.moment-vod-verse
