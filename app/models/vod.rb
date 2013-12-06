@@ -38,7 +38,10 @@ class VOD < YV::Resource
         human: results.reference.human + ":" + verse_nums.join(", "),
         usfm: results.reference.usfm,
         verses: verse_nums,
-        content: verse_text
+        content: verse_text,
+        week_day: Date.today.day,
+        day: item.day
+
       }
       Hashie::Mash.new(data)
     end

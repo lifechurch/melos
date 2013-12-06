@@ -1,27 +1,21 @@
+- verse_of_today = VOD.today
+
 .moment
   .moment-top
     .moment-vod
       = image_tag "social-cap-vod.png", class: "moment-img"
       .moment-vod-calendar
         .moment-vod-calendar-date
-          22
+          = verse_of_today.week_day
         .moment-vod-calendar-img
           = image_tag "moment-vod-calendar-img.png"
       .moment-vod-title
         Verse of the day
       %p.moment-vod-verse
-        - verse_of_today = VOD.today
         = verse_of_today.content
 
-      %a.moment-verse-links{href:"#"}
-        = verse_of_today.human
+      = link_to(verse_of_today.human, reference_path(version: verse_of_today.version, reference: verse_of_today.usfm), class: "moment-verse-links")
 
       %ul.moment-vod-list
         %li.moment-vod-list-on
           = verse_of_today.version.abbreviation.upcase
-        %li
-          OTHER
-        %li
-          VERSIONS
-        %li
-          HERE
