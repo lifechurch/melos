@@ -1,7 +1,8 @@
 require 'digest/md5'
 
 class User < YV::Resource
-  # include Model
+
+  api_response_mapper YV::API::Mapper::Base  
 
   attribute :id
   attribute :name
@@ -160,6 +161,11 @@ class User < YV::Resource
 
   end
 
+
+
+
+
+
   def initialize(data = {})
     super(
       data.merge(
@@ -168,6 +174,14 @@ class User < YV::Resource
         agree:  true
       )
     )
+  end
+
+
+  def profile_incomplete?
+    first_name.blank? or
+    last_name.blank? or
+    location.blank? or
+    bio.blank?
   end
 
   # instance method for updating email address
