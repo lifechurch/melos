@@ -1,8 +1,9 @@
 class SubscriptionsController < ApplicationController
 
+  respond_to :html
+  
   before_filter :force_login
   before_filter :find_subscription, only: [:show,:destroy,:edit,:update,:calendar]
-  respond_to :html
   rescue_from NotAChapterError, with: :ref_not_found
 
   def index
@@ -26,7 +27,7 @@ class SubscriptionsController < ApplicationController
     if @subscription = subscription_for(params[:plan_id])
       redirect_to user_subscription_path(current_user,params[:plan_id]), notice: t("plans.already subscribed") and return
     end
-    @subscription = Plan.subscribe(params[:plan_id], current_auth)
+    @subscription = Subscription.subscribe(params[:plan_id], current_auth)
     flash[:notice] = t("plans.subscribe successful")
     respond_with([@subscription], location: user_subscription_path(current_user,params[:plan_id]))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
@@ -134,8 +135,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def subscription_for( plan_id )
-    # find with current_user to avoid extra api calls
-    Subscription.find(plan_id, current_user, auth: current_auth)
+    Subscription.find(plan_id, auth: current_auth)
   end
 
   def ref_not_found

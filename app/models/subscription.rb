@@ -32,16 +32,10 @@ class Subscription < Plan
     end
 
 
-    def find(plan, user, opts = {})
-      raise YV::AuthRequired unless user.auth
+    def find(plan, opts = {})
+      raise YV::AuthRequired unless opts[:auth]
 
-      opts[:auth]    = user.auth
-      opts[:user_id] = case user
-        when User         then user.id.to_i
-        when Fixnum       then user.to_i
-        when /\A[\d]+\z/  then user.to_i
-        else User.find(user).id
-      end
+      opts[:user_id] = opts[:auth].user_id
       super(plan, opts)
     end
 
@@ -58,18 +52,19 @@ class Subscription < Plan
     end
 
 
-    def subscribe_path
-      "reading-plans/subscribe_user"
+    def subscribe(plan, opts={})
+      raise YV::AuthRequired unless opts[:auth]
+      opts.merge!(
+        user_id:  opts[:auth].user_id,
+        id:       id_from_param(plan)
+      )
+
+      data, errs = post( subscribe_path, opts)
+      return map_subscribe(YV::API::Results.new(data,errs))
     end
 
-    def subscribe(plan, user, opts={})
-      raise YV::AuthRequired unless user.auth
-        opts[:auth]     = user.auth
-        opts[:id]       = id_from_param(plan)
-        opts[:private]  ||= true
-
-        data, errs = post( subscribe_path, opts)
-        return map_subscribe(YV::API::Results.new(data,errs))
+    def subscribe_path
+      "reading-plans/subscribe_user"
     end
 
     def map_subscribe(results)
@@ -78,17 +73,17 @@ class Subscription < Plan
 
 
     def unsubscribe(plan,user,opts={})
-      raise YV::AuthRequired unless user.auth
-        opts[:auth]     = user.auth
-        opts[:id]       = id_from_param(plan)
+      raise YV::AuthRequired unless opts[:auth]
 
-        data, errs = post( unsubscribe_path, opts)
-        YV::API::Results.new(data,errs)
+      opts[:id]  = id_from_param(plan)
+      data, errs = post( unsubscribe_path, opts)
+      YV::API::Results.new(data,errs)
     end
 
     def unsubscribe_path
       "reading-plans/unsubscribe_user"
     end    
+
 
 
     private

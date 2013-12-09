@@ -32,6 +32,6 @@
                 .progress_percent_complete{style: "left:#{sub.progress}%"}
                   %b= t("percentage display", number: sub.progress)
                   .small= t("plans.completion status _ below percentage")
-    = render "shared/pagination", resource_list: @user.subscriptions
+    = render "shared/pagination", resource_list: @subscriptions
   - else
     %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
