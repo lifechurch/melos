@@ -7,12 +7,11 @@
 .moment
   .moment-top
     .moment-fr
-      = image_tag "social-cap-fr.png", class: "moment-img"
       %span.moment-avatar
         = image_tag avatar.url
       %span.moment-time
         = api_dt_time_ago(moment.created_dt)
-      
+
       %h2.moment-fr-text
         = (moment.user.id == current_auth.user_id) ? "You are now friends with" : moment.moment_title.html_safe
 

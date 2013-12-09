@@ -123,6 +123,68 @@ only screen and (                min-resolution: 2dppx) {
     background-size: 48px 48px;
   }
 
+
+ // !Moments
+
+  .moment-hi {
+    background: #fff image-url("social-cap-hi@2x.png") no-repeat top right;
+  }
+
+  .moment-bm {
+    background: #fff image-url("social-cap-bm@2x.png") no-repeat top right;
+  }
+
+  .moment-rp {
+    background: #fff image-url("social-cap-rp@2x.png") no-repeat top right;
+  }
+
+  .moment-grp {
+    background: #fff image-url("social-cap-grp@2x.png") no-repeat top right;
+  }
+
+  .moment-dl {
+    background: #fff image-url("social-cap-dl@2x.png") no-repeat top right;
+  }
+
+  .moment-bdg {
+    background: #fff image-url("social-cap-bdg@2x.png") no-repeat top right;
+  }
+
+  .moment-vid {
+    background: #fff image-url("social-cap-vid@2x.png") no-repeat top right;
+  }
+
+  .moment-no {
+    background: #fff image-url("social-cap-no@2x.png") no-repeat top right;
+  }
+
+  .moment-vod {
+    background: #fff image-url("social-cap-vod@2x.png") no-repeat top right;
+  }
+
+  .moment-sys {
+    background: #fff image-url("social-cap-sys@2x.png") no-repeat top right;
+  }
+
+  .moment-fr {
+    background: #fff image-url("social-cap-fr@2x.png") no-repeat top right;
+  }
+
+  .moment-hi,
+  .moment-bm,
+  .moment-rp,
+  .moment-grp,
+  .moment-dl,
+  .moment-bdg,
+  .moment-vid,
+  .moment-no,
+  .moment-vod,
+  .moment-sys,
+  .moment-fr {
+    background-size: 52px 52px;
+  }
+
+
   // !Edit and delete controls
 
   .moment-content-actions-edit {

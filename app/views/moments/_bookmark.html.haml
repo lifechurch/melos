@@ -5,12 +5,11 @@
   -# !the content of the moment
   .moment-top
     .moment-bm
-      = image_tag "social-cap-bm.png", class: "moment-img"
       %span.moment-avatar
         = image_tag avatar.url
       %span.moment-time
         = api_dt_time_ago(moment.created_dt)
-      
+
       %h2.moment-bm-text
         - anchor_text = (moment.user_id == current_auth.user_id) ? moment.references.collect {|r| r.human}.join(", ") : moment.moment_title.html_safe
         = link_to(anchor_text, moment.to_path, class: "moment-title-link")
