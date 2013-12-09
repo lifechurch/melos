@@ -12,4 +12,4 @@
 
     .moment-content-actions
       = link_to("Edit", "#{moment.to_path}/edit", class: "moment-content-actions-edit", title: "Edit this #{moment.kind}" )
-      = link_to("Delete", moment.to_path, method: :delete, confirm: "Are you sure?", title: "Delete this #{moment.kind}")
+      = link_to("Delete", moment.to_path, method: :delete, confirm: "Are you sure?", class: "moment-content-actions-delete", title: "Delete this #{moment.kind}")
