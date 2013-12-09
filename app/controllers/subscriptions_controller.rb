@@ -27,7 +27,7 @@ class SubscriptionsController < ApplicationController
     if @subscription = subscription_for(params[:plan_id])
       redirect_to user_subscription_path(current_user,params[:plan_id]), notice: t("plans.already subscribed") and return
     end
-    @subscription = Subscription.subscribe(params[:plan_id], current_auth)
+    @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth)
     flash[:notice] = t("plans.subscribe successful")
     respond_with([@subscription], location: user_subscription_path(current_user,params[:plan_id]))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model

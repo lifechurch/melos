@@ -46,7 +46,9 @@ class Plan < YV::Resource
     def find(param, opts ={})
       id, slug = id_and_slug_from_param param
       raise YouVersion::API::RecordNotFound unless id.present?
-      super(id, opts.merge(cache_for: YV::Caching.a_long_time))
+      # Dont cache if we tell cache_for to be zero (coming from subscription)
+      opts[:cache_for] = (opts[:cache_for] == 0) ? nil : YV::Caching.a_long_time
+      super(id, opts)
     end
 
 

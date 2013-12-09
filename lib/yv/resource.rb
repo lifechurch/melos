@@ -119,7 +119,6 @@ module YV
         opts.merge! params  # Let params override if it already has an :id
 
         data, errs = get(resource_path, opts)
-
         map(YV::API::Results.new(data.merge!(auth: params.delete(:auth)),errs), new() , :find)
       end
 

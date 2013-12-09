@@ -9,8 +9,6 @@ module YV
               map_to_instance(::Subscription.new,results)
             end
 
-            private
-
             def from_find(instance,results)
               map_to_instance(instance,results)
             end
