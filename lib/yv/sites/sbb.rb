@@ -2,7 +2,7 @@ module YV
   module Sites
     class Sbb < Site
       def logo_style
-        "background: no-repeat 0 3px; width: 133px"
+        "background: no-repeat 0 3px; width: 180px"
       end
 
       def logo_image
