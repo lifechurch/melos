@@ -104,6 +104,8 @@ class Bookmark < YV::Resource
 
     def labels(opts={})
       data, errs = get( labels_path , opts.slice(:auth))
+
+      data = [] if not_found?(errs)
       return results = YV::API::Results.new(data,errs)
       # [{"count"=>1, "label"=>"hugh"},
       #  {"count"=>1, "label"=>"rocks"},

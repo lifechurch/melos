@@ -5,20 +5,25 @@
 
 - if current_user_is?(@user)
   - labels = Bookmark.labels(auth: current_auth)
+  - unless labels.blank?
+    .bookmarks-labels-wrap
+      %h3.labels-heading
+        My Labels
+      
+      - unless labels.blank?
+        %ul.bookmarks-labels  
+          - labels.each do |label_and_count|
+            - label_name = label_and_count["label"].strip
+            %li.label
+              = link_to label_name, bookmarks_user_path(@user, label: label_name)
 
-  .bookmarks-labels-wrap
-    
-    %h3.labels-heading
-      My Labels
-    
-    - unless labels.blank?
-      %ul.bookmarks-labels  
-        - labels.each do |label_and_count|
-          - label_name = label_and_count["label"].strip
-          %li.label
-            = link_to label_name, bookmarks_user_path(@user, label: label_name)
-.social-feed-wrap
-  .social-feed
-    = render partial: "moments/cards", locals: {moments: @bookmarks, comments_displayed: false}
+- if @bookmarks.present?
+  .social-feed-wrap
+    .social-feed
+      = render partial: "moments/cards", locals: {moments: @bookmarks, comments_displayed: false}
+  
 
-= render partial: "shared/moments_load_more", locals: {resource: "bookmarks", url_params: ["user_id=#{@user.username}"]}
+  = render partial: "shared/moments_load_more", locals: {resource: "bookmarks", url_params: ["user_id=#{@user.username}"]}
+- else
+  .profile-blank-slate.slate-bookmarks
+    %p No bookmarks created

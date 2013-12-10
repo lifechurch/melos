@@ -2,8 +2,13 @@
 - content_for :title do 
   = @title
 
-.social-feed-wrap
-  .social-feed
-    = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}
+- if @moments.present?
+  .social-feed-wrap
+    .social-feed
+      = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}
 
-= render partial: "shared/moments_load_more", locals: {resource: "users", url_params: ["user_id=#{@user.username}"]}
+  = render partial: "shared/moments_load_more", locals: {resource: "users", url_params: ["user_id=#{@user.username}"]}
+
+- else
+  .profile-blank-slate.slate-activity
+    %p You haven't done anything

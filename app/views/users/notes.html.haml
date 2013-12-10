@@ -3,8 +3,13 @@
 - content_for :title do 
   = @title
 
-.social-feed-wrap
-  .social-feed
-    = render partial: "moments/cards", locals: {moments: @notes,comments_displayed: false}
 
-= render partial: "shared/moments_load_more", locals: {resource: "notes", url_params: ["user_id=#{@user.username}"]}
+- if @notes.present?
+  .social-feed-wrap
+    .social-feed
+      = render partial: "moments/cards", locals: {moments: @notes,comments_displayed: false}
+
+  = render partial: "shared/moments_load_more", locals: {resource: "notes", url_params: ["user_id=#{@user.username}"]}
+- else
+  .profile-blank-slate.slate-notes
+    %p No notes created

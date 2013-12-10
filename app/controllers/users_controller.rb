@@ -67,7 +67,6 @@ class UsersController < ApplicationController
   def badges
     @selected = :badges
     @badges = @user.badges
-    self.sidebar_presenter = Presenter::Sidebar::Default.new
   end
 
   def friends

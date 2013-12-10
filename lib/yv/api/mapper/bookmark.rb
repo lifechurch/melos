@@ -6,13 +6,16 @@ module YV
         class << self
 
           def from_all(results)
-            return results if results.empty?
+            from_collection(results)
+          end
+
+          def from_collection(results)
+            # If the data is a blank/empty array, return it
+            return results if results.blank?
             
             collection = results.moments.collect do |moment|
-              b = ::Bookmark.new
-              map_to_instance(b, moment)
+              map_to_instance(::Bookmark.new, moment)
             end
-            collection
           end
 
           def from_delete(results)

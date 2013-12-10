@@ -4,8 +4,12 @@
 - content_for :title do 
   = @title
 
-.social-feed-wrap
-  .social-feed
-    = render partial: "moments/cards", locals: {moments: @highlights, comments_displayed: false}
+- if @highlights.present?
+  .social-feed-wrap
+    .social-feed
+      = render partial: "moments/cards", locals: {moments: @highlights, comments_displayed: false}
 
-= render partial: "shared/moments_load_more", locals: {resource: "highlights", url_params: ["user_id=#{@user.username}"]}
+  = render partial: "shared/moments_load_more", locals: {resource: "highlights", url_params: ["user_id=#{@user.username}"]}
+- else
+  .profile-blank-slate.slate-highlights
+    %p No highlights created

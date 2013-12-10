@@ -8,11 +8,12 @@ module YV
           private
 
           def from_all(results)
-            return results if results.blank?
             from_collection(results)
           end
 
           def from_collection(results)
+            # If the data is a blank/empty array, return it
+            return results if results.blank?
             results.items.collect do |item|
               map_to_instance(::Notification.new,item.merge(last_viewed_dt: results.last_viewed_dt))
             end
