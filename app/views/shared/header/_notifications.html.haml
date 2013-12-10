@@ -19,5 +19,9 @@
           <p>{{attributes.moment_title}}</p>
         </a>
       </li>
+      {{else}}
+      <li class="notifications-item notifications-empty">
+        <p>You don't have any notifications</p>
+      </li>
       {{/each}}
     </ul>

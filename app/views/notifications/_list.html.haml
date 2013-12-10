@@ -1,9 +1,12 @@
-%ul.notifications-list
-  - notifications.each do |notification|
-    %li.notifications-item
-      %p
-        %span.activity-title
-          = notification.moment_title
-        %span.activity-timestamp
-          = api_dt_time_ago(notification.created_dt)
-        
+- if notifications.blank?
+  %p You don't have any notifications
+
+- else
+  %ul.notifications-list
+    - notifications.each do |notification|
+      %li.notifications-item
+        %p
+          %span.activity-title
+            = notification.moment_title
+          %span.activity-timestamp
+            = api_dt_time_ago(notification.created_dt)

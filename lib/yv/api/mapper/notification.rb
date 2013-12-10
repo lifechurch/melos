@@ -8,6 +8,7 @@ module YV
           private
 
           def from_all(results)
+            return results if results.blank?
             from_collection(results)
           end
 
