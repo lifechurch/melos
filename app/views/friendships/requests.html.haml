@@ -19,6 +19,9 @@
                 = button_tag "Add", class: 'action_button_green action-add' 
 
               = form_tag friendship_url(user.id), method: "DELETE" do
-                = button_tag "Ignore", class: 'action_button_grey action-ignore' 
+                = button_tag "Ignore", class: 'action_button_grey action-ignore'
+  - else
+    .blank-slate-friend-requests
+      %p You don't have any friend requests
 
 
