@@ -40,9 +40,6 @@ class window.Menus.FriendRequests extends window.Menus.Base
       $(@container).html(template(data))
       return
 
-    request.fail (jqXHR,status) =>
-      alert "Failed friend request" + status
-
     return
     
 

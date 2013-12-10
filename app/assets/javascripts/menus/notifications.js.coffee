@@ -36,9 +36,6 @@ class window.Menus.Notifications extends window.Menus.Base
       $(@container).html(template({notifications: data}))
       return
 
-    request.fail (jqXHR,status) =>
-      alert "Failed friend request" + status
-
     return
 
 
