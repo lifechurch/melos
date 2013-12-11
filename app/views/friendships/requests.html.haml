@@ -12,7 +12,7 @@
               
               %p
                 - user_link = link_to user.name, user_path(user.username) , class: 'text-link' 
-                = t("friendships.user wants friendship", user: user_link)
+                = t("friendships.user wants friendship", user: user_link).html_safe
                 
             .item-actions
               = form_tag friendships_url(user_id: user.id) do
