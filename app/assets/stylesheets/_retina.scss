@@ -234,4 +234,21 @@ only screen and (                min-resolution: 2dppx) {
     background-position: -65px -35px;
   }
 
+
+  // !Header
+
+  #header .friend-requests-btn,
+  #header .notifications-btn {
+    background: image-url("header-sprite@2x.png") no-repeat;
+    background-size: 28px 100px;
+  }
+
+  #header .friend-requests-btn {
+    background-position: 0px 9px;
+  }
+
+  #header .notifications-btn {
+    background-position: 0px -55px;
+  }
+
 }
