@@ -1,15 +1,17 @@
 .moment-actions
   %span.moment-actions-share
-    <a href="#" title="Share this with friends or family">Share</a>
+    %a{href:"#", title: t("moments.action.share title")}
+      = t("moments.action.share")
 
   %span.moment-actions-like
-    <a href="#" title="Like this">Like</a>
+    %a{href:"#", title: t("moments.action.like title")}
+      = t("moments.action.like")
 
   %span.moment-actions-comment
-    = link_to "Comment", moment.to_path, title: "See all comments"
+    = link_to t("moments.action.comment"), moment.to_path, title: t("moments.action.comment title")
 
   - if moment.user_id == current_auth.user_id
 
     .moment-content-actions
-      = link_to("Edit", "#{moment.to_path}/edit", class: "moment-content-actions-edit", title: "Edit this #{moment.kind}" )
-      = link_to("Delete", moment.to_path, method: :delete, confirm: "Are you sure?", class: "moment-content-actions-delete", title: "Delete this #{moment.kind}")
+      = link_to( t("moments.action.edit"), "#{moment.to_path}/edit", class: "moment-content-actions-edit", title: t("moments.action.edit title", kind: moment.kind ) )
+      = link_to( t("moments.action.delete"), moment.to_path, method: :delete, confirm: t("moments.action.delete confirm"), class: "moment-content-actions-delete", title: t("moments.action.delete title", kind: moment.kind))

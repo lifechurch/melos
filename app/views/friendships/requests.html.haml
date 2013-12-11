@@ -10,18 +10,16 @@
               - avatar = user.avatars.lg_avatar # large for retina display
               %img.round-avatar{src: avatar.url }
               
-              %p 
-                =link_to user.name, user_path(user.username) , class: 'text-link'
-                wants to be your friend
+              %p
+                - user_link = link_to user.name, user_path(user.username) , class: 'text-link' 
+                = t("friendships.user wants friendship", user: user_link)
                 
             .item-actions
               = form_tag friendships_url(user_id: user.id) do
-                = button_tag "Add", class: 'action_button_green action-add' 
+                = button_tag t("friendships.form.accept button"), class: 'action_button_green action-add' 
 
               = form_tag friendship_url(user.id), method: "DELETE" do
-                = button_tag "Ignore", class: 'action_button_grey action-ignore'
+                = button_tag t("friendships.form.ignore button"), class: 'action_button_grey action-ignore'
   - else
     .blank-slate-friend-requests
-      %p You don't have any friend requests
-
-
+      %p = t("friendships.requests none")

@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
       content:    params[:comment][:content],
       auth:       current_auth})
     
-    notice = @comment.valid? ? "Saved" : "Error"
+    notice = @comment.valid? ? t("comments.create success") : t("comments.create failure")
     redirect_to(:back, notice: notice)
   end
 

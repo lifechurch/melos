@@ -48,6 +48,8 @@ en:
     connections:
       index:
         title:                                  "Connected Accounts"
+  ui:
+    loading indicator text:                     "Loading ..."
   now:                                          "Now"
   celebrating 50MM:                             "Celebrating 50 Million App Installs!"
   link:                                         "Link"
@@ -160,7 +162,75 @@ en:
   or:
     lower:                                      "or"
     upper:                                      "OR"
+  moments:
+    vod:
+      title:                                    "Verse of the day"
+    friendship:
+      now friends:                              "You are now friends with"
+    cta:
+      profile update text:                      "Help your friends find you."
+      profile update button:                    "Update your profile"
+      sharing text:                             "Share verses with social networks"
+      sharing button:                           "Enable sharing"
+      friends text:                             "See your friends’ moments in the Bible."
+      friends button:                           "Find friends"
+    action:
+      load more:                                "Load more"
+      like:                                     "Like"
+      like title:                               "Like this"
+      share:                                    "Share"
+      share title:                              "Share this with friends or family"
+      comment:                                  "Comment"
+      comment title:                            "See all comments"
+      edit:                                     "Edit"
+      edit title:                               "Edit this #{kind}"
+      delete:                                   "Delete"
+      delete confirm:                           "Are you sure?"
+      delete title:                             "Delete this #{kind}"
+  notifications:
+    title:                                      "Notifications"
+    none:                                       "You don't have any notifications"
+    view all:                                   "View all Notifications"
+  comments:
+    post comment:                               "Post a comment"
+    create success:                               "Comment posted"
+    create failure:                               "Comment could not be posted"
+    form:
+      save button:                              "Post"
+  friends:
+    limit notice:                               "You can have as many as 150 friends"
+    limit description:                          "Too many friends is bad for your health. Show some restraint, man!"
+  friendships:
+    offer success:                              "Friendship request sent"
+    offer failure:                              "Error sending friendship request"
+    create success:                             "You're now friends"
+    create failure:                             "Error creating friendship"
+    destroy success:                            "Request declined"
+    destroy failure:                            "Error declining request"
+    requests title:                             "Friend requests"
+    requests view all:                          "View all friend requests"
+    requests none:                              "You don't have any friend requests"
+    status:
+      pending:                                  "Request pending"
+      friends:                                  "Friends"
+    user wants friendship:                      "%{user} wants to be your friend"
+    user wants friendship partial:              "wants to be your friend"
+    form:
+      remove friend button:                     "Remove friend"
+      remove friend button title:               "Remove this person from your friend list"
+      add friend button:                        "Add friend"
+      add friend button title:                  "Send #{user} a friend request"
+      accept button:                            "Accept"
+      accept request button:                    "Accept request"
+      ignore button:                            "Ignore"
+      ignore request button:                    "Ignore request"
   notes:
+    form:
+      title field:                              "Title:"
+      content field:                            "Content:"
+      reference field:                          "Reference(s):"
+      status field:                             "Status:"
+      save button:                              "Save"
     list title:                                 "Notes"
     loading community:                          "Loading community notes..."
     no community notes:                         "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
@@ -189,7 +259,8 @@ en:
     cancel:                                     "Cancel"
     pop out:                                    "Pop out"
     none found:                                 "No notes found..."
-    successfully deleted:                       "Note Removed"
+    destroy success:                            "Note deleted"
+    destroy failure:                            "Error deleting note"
   ref:
     loading secondary:                          "Loading Reference in Secondary Version..."
     clear verses:                               "Clear Selected Verses"
@@ -367,6 +438,13 @@ en:
       general title:                            "General Information"
       general text:                             "Entire Agreement. This TERMS OF USE constitutes the entire agreement between you and LifeChurch.tv and governs your use of YouVersion, superseding any prior agreements between you and LifeChurch.tv with respect to YouVersion. You also may be subject to additional terms and conditions.<br><br>Choice of Law and Forum. The TERMS OF USE and the relationship between you and LifeChurch.tv shall be governed by the laws of the State of Oklahoma without regard to conflict of law provisions. You and LifeChurch.tv agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Oklahoma County, Oklahoma.<br><br>Waiver and Severability of Terms. The failure of LifeChurch.tv to exercise or enforce any right or provision of these TERMS OF USE shall not constitute a waiver of such right or provision. If any provision of these TERMS OF USE is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of these TERMS OF USE remain in full force and effect.<br><br>No Right of Survivorship and Non-Transferability. You agree that your LifeChurch.tv account is non-transferable, and any rights to your LifeChurch.tv ID or contents within your account terminate upon your death. Upon receipt of a copy of a death certificate, LifeChurch.tv may terminate your account and permanently delete all contents therein.<br><br>Statute of Limitations. You understand and agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of YouVersion or these TERMS OF USE must be filed within one (1) year after such claim or cause of action arose or be forever barred.<br><br>The section titles within these TERMS OF USE are for convenience only and have no legal or contractual effect."
     profile:
+      visit friend:                             "Visit #{friend} profile"
+      tab activity:                             "Activity"
+      tab friends:                              "Friends"
+      tab notes:                                "Notes"
+      tab bookmarks:                            "Bookmarks"
+      tab highlights:                           "Highlights"
+      tab badges:                               "Badges"
       first name:                               "First Name"
       last name:                                "Last Name"
       email:                                    "Email Address"
@@ -406,6 +484,9 @@ en:
       reading_plans:                            "Notify me about information for reading plans I've started."
       publishing partners:                      "Keep me updated on news from YouVersion's content partners."
       update:                                   "Update Notifications"
+      friendships:                              "Notify me about friend requests"
+      moments:                                  "Notify me about friends' activity"
+      comments:                                 "Notify me about comments on my activity"
   bookmarks:
     new:                                        "New Bookmark"
     edit:                                       "Edit"
@@ -419,9 +500,10 @@ en:
     not found:                                  "Bookmarks give you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. To add a bookmark, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     other user not found:                       "%{username} hasn't saved any bookmarks yet."
     creation form errors:                       "The following error(s) prevented creation of your bookmark:"
-    successfully created:                       "Bookmark Added"
-    successfully deleted:                       "Bookmark Removed"
-    successfully updated:                       "Bookmark Updated"
+    create success:                             "Bookmark saved"
+    destroy success:                            "Bookmark removed"
+    destroy failure:                            "Error deleting bookmark"
+    update success:                             "Bookmark updated"
     labels placeholder:                         "Separate multiple labels with commas."
     save:                                       "Save Bookmark"
     confirm delete:                             "Yes, I'm sure"
@@ -432,9 +514,17 @@ en:
     update:                                     "Update"
     color:                                      "Color:"
     version field:                              "Version:"
+    form:
+      title field:                              "Title:"
+      reference field:                          "Reference:"
+      labels field:                             "Labels (comma-separated):"
+      colors field:                             "Color:"
+      update button:                            "Update Bookmark"
+      save button:                              "Save Bookmark"
   badges:
     earned a badge:                             "Earned a Badge"
     user badges:                                "%{user}'s Badges"
+    earned date:                            "Earned by %{username} %{ago} ago"
   plans:
     title:                                      "Reading Plans"
     browse by category:                         "Browse by Category"
@@ -581,6 +671,10 @@ en:
     close player menu:                          "Close"
   highlights:
     choose color:                               "Choose Color"
+    create success:                             "Highlight saved"
+    create failure:                             "Error saving highlight"
+    destroy success:                            "Highlight deleted"
+    destroy failure:                            "Error deleting highlight"
     creation error:                             "Sorry, couldn't highlight."
     delete error:                               "Sorry, couldn't remove highlighting."
   searching:

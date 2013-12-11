@@ -22,7 +22,7 @@ class HighlightsController < ApplicationController
     @highlight.auth = current_auth
 
     result = @highlight.save
-    notice = result.valid? ? "Saved!" : "Error"
+    notice = result.valid? ? t("highlights.create success") : t("highlights.create failure")
     redirect_to(:back, notice: notice)
 
     #Parameters: {"highlight"=>{"references"=>"gen.1.1.asv,gen.1.6.asv,gen.1.7.asv", "existing_ids"=>"79,98,-1", "color"=>"861eba"}}
@@ -53,7 +53,7 @@ class HighlightsController < ApplicationController
     
     @highlight.auth = current_auth
     results = @highlight.destroy
-    notice = results.valid? ? "Highlight deleted" : "Error"
+    notice = results.valid? ? t("highlights.destroy success") : t("highlights.destroy failure")
     redirect_to(:back, notice: notice)
   end
 

@@ -7,24 +7,24 @@
           %li= e
   
   %p
-    = f.label :title, t("bookmarks.title field field")
+    = f.label :title, t("bookmarks.form.title field")
     = f.text_field :title
 
   %p
-    = f.label :references, t("bookmarks.reference")
+    = f.label :references, t("bookmarks.form.reference field")
     - usfms = @bookmark.references.map {|refhash| refhash["usfm"]}
     = joined_usfms = usfms.join(",")
     = f.hidden_field :usfm_references, value: joined_usfms
   
   %p
-    = f.label :labels, t("bookmarks.labels comma separated")
+    = f.label :labels, t("bookmarks.form.labels field")
     = f.text_field :labels, value: @bookmark.labels.join(",")
 
   %p.color
-    = f.label :color, t("bookmarks.color")
+    = f.label :color, t("bookmarks.form.color field")
     = f.text_field :color, class: 'float_left'
     %div{:class => "color_picker_list", style: "width:auto; margin-top:-10px; margin-left:10px; margin-bottom: 20px"}
       %a{:class => "color_picker", :href =>"#"}
       %a{:class => "color_picker_holder", :href =>"#"}
   %p#bookmark_update_btn{style: "clear: left"}
-    = f.submit(@bookmark.persisted? ? t("bookmarks.update") : t("bookmarks.save"))
+    = f.submit(@bookmark.persisted? ? t("bookmarks.form.update button") : t("bookmarks.form.save button"))

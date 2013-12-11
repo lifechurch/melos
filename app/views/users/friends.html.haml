@@ -11,27 +11,22 @@
       %p.friends-count-have
         = "You have #{@friends.count} friends"
       %span.friends-count-canhave
-        You can have as many as 150
+        = t("friends.limit notice")
       %span.friends-count-help
-        Too many friends is bad for your health. Show some restraint, man!
+        = t("friends.limit description")
 
       - # Web doesn't have a way to find friends at the moment
       - # apps only support uploading contact lists.
       - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
-        
-
+      
   -# Friend list
-
   - unless @friends.blank?
 
     %ul.friend-directory
-
       - @friends.each do |friend|
         - avatar = friend.avatars.lg_avatar
         %li.friend-details
           = image_tag avatar.url, class: "friend-details-avatar"
-          %a{href: user_path(friend.to_param), class: "friend-details-name", title: "Visit this person's profile"}
-            = friend.name
+          = link_to(friend.name, user_path(friend.to_param), class: "friend-details-name", title: t("user.profile.visit friend", friend: friend.name) )
           - if current_user_is? @user
-            %a{href: "#", class: "friend-details-delete", title: "Remove this person from your friend list"}
-              Remove this person
+            = link_to(t("friendships.form.remove friend button"),"#", class: "friend-details-delete", title: t("friendships.form.remove friend button title"))

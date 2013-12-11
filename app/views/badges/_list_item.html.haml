@@ -11,4 +11,4 @@
             %a{href: user_badge_path(list_item.username, list_item.slug)}= list_item.name
           %p= list_item.description
           %p.small.mute
-            = t('earned badge date', username: list_item.username, ago: time_ago_in_words(list_item.earned_as_date))
+            = t('badges.earned date', username: list_item.username, ago: time_ago_in_words(list_item.earned_as_date))

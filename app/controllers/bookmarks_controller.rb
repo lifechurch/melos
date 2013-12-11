@@ -20,7 +20,7 @@ class BookmarksController < ApplicationController
     @bookmark.auth = current_auth
 
     results = @bookmark.save
-    results.valid? ? redirect_to(:back, notice: t('bookmarks.successfully created')) : render(action: "new")
+    results.valid? ? redirect_to(:back, notice: t('bookmarks.create success')) : render(action: "new")
   end
 
   def edit
@@ -35,7 +35,7 @@ class BookmarksController < ApplicationController
     @bookmark.auth = current_auth
     params[:bookmark][:color] = params[:highlight][:color] if params[:highlight]
     results = @bookmark.update(params[:bookmark])
-    results.valid? ? redirect_to(:back, notice: t("bookmarks.successfully updated")) : render(action: "edit")
+    results.valid? ? redirect_to(:back, notice: t("bookmarks.update success")) : render(action: "edit")
   end
 
   def destroy
@@ -44,7 +44,7 @@ class BookmarksController < ApplicationController
     
     @bookmark.auth = current_auth
     results = @bookmark.destroy
-    notice = results.valid? ? t("bookmarks.successfully deleted") : "Error"
+    notice = results.valid? ? t("bookmarks.destroy success") : t("bookmarks.destroy failure")
     redirect_to(:back, notice: notice)
   end
 

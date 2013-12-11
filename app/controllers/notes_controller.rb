@@ -88,7 +88,7 @@ class NotesController < ApplicationController
     @note.auth = current_auth
 
     results = @note.destroy
-    notice = results.valid? ? t("notes.successfully deleted") : "Error"
+    notice = results.valid? ? t("notes.destroy success") : t("notes.destroy failure")
     redirect_to(:back, notice: notice)
   end
 

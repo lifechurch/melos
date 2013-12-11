@@ -14,12 +14,12 @@
       %h1.profile-hdr-name= @user.name || @user.username
 
       %ul.profile-hdr-info
-        - if @user.name
+        - if user_name = @user.name
           %li.profile-hdr-info-user
-            = @user.username
-        - if @user.location
+            = user_name
+        - if user_location = @user.location
           %li.profile-hdr-info-location
-            = @user.location
+            = user_location
         - if @user.website
           %li.profile-hdr-info-link
             = link_to @user.website_human, @user.website_url
@@ -30,7 +30,7 @@
 
       - # This is me, show the edit button
       - if current_user_is? @user
-        = link_to "Edit Profile", edit_user_path(@user), class: "profile-hdr-btn action_button_blue"
+        = link_to t("users.edit profile"), edit_user_path(@user), class: "profile-hdr-btn action_button_blue", title: t("users.edit profile")
 
       - else # Check to see if this person is in my pending lists
 
@@ -38,43 +38,49 @@
         - if  friendship_pending_type.present?
 
           - if friendship_pending_type == :incoming # this person has requested friendship with me
-            %a{href: "#", class: "profile-hdr-accept action_button_green"}
-              Accept request
-            %a{href: "#", class: "profile-hdr-deny action_button_red"}
-              Deny request
+            = form_tag friendships_url(user_id: @user.id) do
+              = button_tag t("friendships.form.accept request button"), class: 'profile-hdr-accept action_button_green action-add' 
+
+            = form_tag friendship_url(@user.id), method: "DELETE" do
+              = button_tag t("friendships.form.ignore request button"), class: 'profile-hdr-deny action_button_grey action-ignore'
 
           - elsif friendship_pending_type == :outgoing  # I have requested friendship with this person
             %span.profile-hdr-pending
-              Request pending
+              = t("friendships.status.pending")
 
         - elsif Friend.with? @user, auth: current_auth # I am friends with this user
           %span.profile-hdr-friend
-            Friends
+            = t("friendships.status.friends")
 
         - else # This user isn't me, they aren't in my pending lists, and I'm not friends with them show the Request friendship button
           = form_tag offer_friendships_path(user_id: @user.id) , method: :post do
-            = submit_tag "Add Friend", class: "profile-hdr-addfriend action_button_green", title: "Send this person a friend request"
+            = submit_tag t("friendships.form.add friend button"), class: "profile-hdr-addfriend action_button_green", title: t("friendships.form.add friend button title", user: @user.name)
 
     - # find the highlight method in /app/helpers/users_helper.rb
     %ul.profile-tabs
       %li.profile-tabs-activity{class: highlight(user_path)}
         %a{href: user_path(@user)}
-          %span Activity
+          %span= t("users.profile.tab activity")
+
       %li.profile-tabs-friends{class: highlight(friends_user_path)}
         %a{href: friends_user_path(@user)}
-          %span Friends
+          %span= t("users.profile.tab friends")
+
       %li.profile-tabs-notes{class: highlight(notes_user_path)}
         %a{href: notes_user_path(@user)}
-          %span= t('notes title')
+          %span= t("users.profile.tab notes")
+
       %li.profile-tabs-bookmarks{class: highlight(bookmarks_user_path)}
         %a{href: bookmarks_user_path(@user)}
-          %span= t('bookmarks.title')
+          %span= t("users.profile.tab bookmarks")
+
       %li.profile-tabs-highlights{class: highlight(highlights_user_path)}
         %a{href: highlights_user_path(@user)}
-          %span Highlights
+          %span= t("users.profile.tab highlights")
+
       %li.profile-tabs-badges{class: highlight(badges_user_path)}
         %a{href: badges_user_path(@user)}
-          %span= t('badges title')
+          %span= t("users.profile.tab badges")
 
   %article.profile
     = content_for?(:user_main) ? yield(:user_main) : yield

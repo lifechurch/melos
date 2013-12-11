@@ -41,12 +41,12 @@
             %input{type: 'hidden', name: 'source', value: "bookmark"}
           %p
             %label{for:'bookmark_title'}
-              = t("bookmarks.title field")
+              = t("bookmarks.form.title field")
             %br
             %input{type:'text',id:'bookmark_title',name:'bookmark[title]'}
           %p
             %label{for:'bookmark_tags'}
-              = t("bookmarks.labels")
+              = t("bookmarks.form.labels field")
             %br
             %input{type:'text',id: 'bookmark_labels',name:'bookmark[labels]',placeholder: t("bookmarks.labels placeholder")}
             %input{type: "hidden", name: "bookmark[version_id]", value: presenter.version.id }
@@ -54,7 +54,7 @@
           %div.clear
           %p
             %button{type:"submit",name:"bookmark[submit]",value:"submit"}
-              = t('bookmarks.save')
+              = t('bookmarks.form.save button')
           %div.clear{style:"padding: 0 0 15px 0"}
 
     %dt.share
@@ -106,16 +106,16 @@
             %input{type: 'hidden', name: 'redirect', value: "/bible"}
             %input{type: 'hidden', name: 'source', value: "note"}
           %div.title
-            = f.label :title, t("notes.title field")
+            = f.label :title, t("notes.form.title field")
             = f.text_field :title
           %div.status
-            = f.label :user_status, t("notes.status field")
+            = f.label :user_status, t("notes.form.status field")
             = f.select :user_status, options_for_select(object_status, note.user_status)
           %div
             = f.text_area :content, rows: 4, cols: 68
           %div.save
             %button
-              = t('notes.save')
+              = t('notes.form.save button')
 
 
     %dt.clear-selected

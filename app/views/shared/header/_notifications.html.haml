@@ -1,14 +1,16 @@
 %div.header-popover.notifications
   %span.arrow
-  %h4 Notifications
+  %h4
+    = t("notifications.title")
   %span.clear
   .popover-data-container
     %ul.notifications-list
       %li.notifications-item
-        %p.loading-indicator Loading ...
+        %p.loading-indicator
+          = t("ui.loading indicator text")
   .view-all
     %a.text-link.wide{href:"/notifications"}
-      View all Notifications
+      = t("notifications.view all")
 
 %script#notifications-tmpl{type:"text/x-handlebars-template"}
   :plain
@@ -21,7 +23,7 @@
       </li>
       {{else}}
       <li class="notifications-item notifications-empty">
-        <p>You don't have any notifications</p>
+        <p>#{t("notifications.none")}</p>
       </li>
       {{/each}}
     </ul>

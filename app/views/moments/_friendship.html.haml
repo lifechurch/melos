@@ -13,7 +13,7 @@
         = api_dt_time_ago(moment.created_dt)
 
       %h2.moment-fr-text
-        = (moment.user.id == current_auth.user_id) ? "You are now friends with" : moment.moment_title.html_safe
+        = (moment.user.id == current_auth.user_id) ? t("moments.friendship.now friends") : moment.moment_title.html_safe
 
       .moment-fr-box
         %a{href: user_path(friend.user_name) }

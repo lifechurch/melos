@@ -1,6 +1,6 @@
 - url_params = [] if local_assigns[:url_params].nil?
 
-= link_to("Load more","#", id: "load-more", "data-page" => @page)
+= link_to(t("moments.action.load more"),"#", id: "load-more", "data-page" => @page)
 
 :javascript
   $('#load-more').click(function (ev) {
@@ -31,9 +31,6 @@
             });
 
             pagination_link.data("page", next_page);
-        },
-        error: function (xhr, status) {
-            console.log("Sorry, there was a problem!");
         }
     });
   });

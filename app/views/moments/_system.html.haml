@@ -13,4 +13,5 @@
   .moment-btm
     .moment-actions
       %span.moment-actions-share
-        <a href="#" title="Share this with friends or family">Share</a>
+        %a{href:"#", title: t("moments.action.share title")}
+          = t("moments.action.share")

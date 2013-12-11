@@ -12,7 +12,7 @@ class FriendshipsController < ApplicationController
   # Accept a friendship
   def create
     @friendship = Friendships.accept(user_id: params[:user_id].to_i, auth: current_auth)
-    notice = @friendship.valid? ? "You're now friends" : "Error creating friendship"
+    notice = @friendship.valid? ? t("friendships.create success") : t("friendships.create failure")
     redirect_to(:back, notice: notice)
     # eventually support json/ajax submission for javascript menus, etc.
     #respond_with(@friendship)
@@ -20,7 +20,7 @@ class FriendshipsController < ApplicationController
 
   def offer
     @friendship = Friendships.offer(user_id: params[:user_id].to_i, auth: current_auth)
-    notice = @friendship.valid? ? "Request sent" : "Error sending request"
+    notice = @friendship.valid? ? t("friendships.offer success") : t("friendships.offer failure")
     redirect_to(:back, notice: notice)
   end
 
@@ -31,7 +31,7 @@ class FriendshipsController < ApplicationController
   # params[:id] is being used as a user_id in this particular scenario
   def destroy
     @friendship = Friendships.decline(user_id: params[:id].to_i, auth: current_auth)
-    notice = @friendship.valid? ? "Declined" : "Error"
+    notice = @friendship.valid? ? t("friendships.destroy success") : t("friendships.destroy failure")
     redirect_to(:back, notice: notice)
   end
 

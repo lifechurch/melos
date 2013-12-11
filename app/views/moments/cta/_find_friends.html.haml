@@ -1,7 +1,7 @@
 .moment
   .moment-psa
     %p.moment-psa-text
-      See your friends’ moments in the Bible.
+      = t("moments.cta.friends text")
     = image_tag "social-psa-profiles.png", class: "psa-friends-img"
     %br
-    <a href="#" class="moment-psa-btn action_button_blue">Find friends</a>
+    = link_to(t("moments.cta.friends button"), "#", class: "moment-psa-btn action_button_blue")

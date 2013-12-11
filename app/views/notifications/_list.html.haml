@@ -1,5 +1,6 @@
 - if notifications.blank?
-  %p You don't have any notifications
+  %p
+    = t("notifications.none")
 
 - else
   %ul.notifications-list

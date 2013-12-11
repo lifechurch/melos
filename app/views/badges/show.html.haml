@@ -7,4 +7,4 @@
     %h3= @badge.description
     %p.mute
       %img{src: @user.user_avatar_url.px_24x24} 
-      = t('earned badge date', username: @user.username, ago: time_ago_in_words(@badge.earned_as_date))
+      = t('badges.earned date', username: @user.username, ago: time_ago_in_words(@badge.earned_as_date))

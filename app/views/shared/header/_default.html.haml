@@ -9,11 +9,11 @@
       = @site.title
 
     %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
-      =t("requests")
+      =t("friendships.requests title")
     = render partial: "shared/header/requests"
 
     %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
-      =t("notifications")
+      =t("notifications.title")
     = render partial: "shared/header/notifications"
 
     -# Sign in and user id

@@ -1,15 +1,17 @@
 -# Friends and notification popovers
 %div.header-popover.friend-requests
   %span.arrow
-  %h4 Friend Requests
+  %h4
+    = t("friendships.requests title")
   %span.clear
   .popover-data-container
     %ul
       %li
-        %p.loading-indicator Loading ...
+        %p.loading-indicator
+          = t("ui.loading indicator text")
     .view-all
       %a.text-link.wide{href:"/notifications"}
-        View all Notifications
+        = t("friendships.requests view all")
 
 %script#friend-requests-tmpl{type:"text/x-handlebars-template"}
   :plain
@@ -19,22 +21,28 @@
         <div class="list-item">
           <div class="item-content">
             <img class="round-avatar" src="{{avatars.collection.1.url}}" height="48" width="48" />
-            <a href="/users/{{username}}" class="text-link">{{name}}</a>
-            <p>wants to be your friend</p>
+            <p>
+              <a href="/users/{{username}}" class="text-link">{{name}}</a>
+              #{t("friendships.user wants friendship partial")}
+            </p>
           </div>
           <div class="item-actions">
             
             <form accept-charset="UTF-8" action="/friendships?user_id={{id}}" method="post">
               <input name="utf8" type="hidden" value="✓" />
               <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
-              <button type="submit" class="action_button_green action-add">Add</button>
+              <button type="submit" class="action_button_green action-add">
+                #{t("friendships.form.accept button")}
+              </button>
             </form>
 
             <form accept-charset="UTF-8" action="/friendships/{{id}}" method="post">
               <input name="utf8" type="hidden" value="✓" />
               <input name="_method" type="hidden" value="DELETE" />
               <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
-              <button type="submit" class="action_button_grey action-add">Ignore</button>
+              <button type="submit" class="action_button_grey action-add">
+                #{t("friendships.form.ignore button")}
+              </button>
             </form>
 
           </div>
@@ -42,10 +50,12 @@
       </li>
       {{else}}
       <li class="list-item">
-        <p>You don't have any friend requests</p>
+        <p>
+          #{t("friendships.requests none")}
+        </p>
       </li>
       {{/each}}
     </ul>
     <div class="view-all">
-      <a href="/friendships/requests" class="text-link wide">View all requests</a>
+      #{link_to(t("friendships.requests view all"),"/friendships/requests", class:"text-link wide" )}
     </div>
