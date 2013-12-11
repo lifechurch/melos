@@ -14,9 +14,9 @@
   .profile-blank-slate.slate-notes
     - if current_user_is? @user
       %h2
-        You don’t have any notes yet
+        = t("notes.blank slate.heading")
       %p
-        As you’re reading the Bible, when you feel God’s small, still voice speaking you can quickly add those thoughts here. Your notes will be marked as <em>private</em> by default. If you’d like to share a note with your friends, simply open it and change it to <em>public</em>.
+        = t("notes.blank slate.description")
     - else
       %h2
-        This person doesn’t have any notes yet
+        = t("notes.none user", username: @user.name)

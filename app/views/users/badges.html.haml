@@ -11,9 +11,7 @@
   .profile-blank-slate.slate-badges
     - if current_user_is? @user
       %h2
-        You haven’t earned any badges yet
+        = t("badges.none me")
     - else
       %h2
-        This person hasn’t earned any badges yet
-
-    = #t('no badges found yourself')
+        = t("badges.none user", username: @user.name)

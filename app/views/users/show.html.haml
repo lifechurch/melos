@@ -13,9 +13,9 @@
   .profile-blank-slate.slate-activity
     - if current_user_is? @user
       %h2
-        Move along, nothing to see here (yet)
+        = t("users.profile.blank slate.heading")
       %p
-        Start engaging with the Bible, or your friends, and this page will display a history of what you’ve been up to.
+        = t("users.profile.blank slate.description")
     - else
       %h2
-        Move along, nothing to see here (yet)
+        = t("users.profile.blank slate.heading")

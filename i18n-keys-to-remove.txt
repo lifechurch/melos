@@ -11,3 +11,5 @@ notes.reference field
 notes.status field
 notes.save
 notifications
+no badges found yourself
+no badges found other

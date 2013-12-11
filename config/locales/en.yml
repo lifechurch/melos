@@ -183,10 +183,10 @@ en:
       comment:                                  "Comment"
       comment title:                            "See all comments"
       edit:                                     "Edit"
-      edit title:                               "Edit this #{kind}"
+      edit title:                               "Edit this %{kind}"
       delete:                                   "Delete"
       delete confirm:                           "Are you sure?"
-      delete title:                             "Delete this #{kind}"
+      delete title:                             "Delete this %{kind}"
   notifications:
     title:                                      "Notifications"
     none:                                       "You don't have any notifications"
@@ -219,12 +219,16 @@ en:
       remove friend button:                     "Remove friend"
       remove friend button title:               "Remove this person from your friend list"
       add friend button:                        "Add friend"
-      add friend button title:                  "Send #{user} a friend request"
+      add friend button title:                  "Send %{user} a friend request"
       accept button:                            "Accept"
       accept request button:                    "Accept request"
       ignore button:                            "Ignore"
       ignore request button:                    "Ignore request"
   notes:
+    none user:                                  "%{username} hasn't taken any notes yet."
+    blank slate:
+      heading:                                  "You don’t have any notes yet"
+      description:                              "As you’re reading the Bible, when you feel God’s small, still voice speaking you can quickly add those thoughts here. Your notes will be marked as <em>private</em> by default. If you’d like to share a note with your friends, simply open it and change it to <em>public</em>."
     form:
       title field:                              "Title:"
       content field:                            "Content:"
@@ -283,7 +287,7 @@ en:
     no secondary version text:                  "%{language_name} only has one version available, so we couldn't pick a secondary version for you. Please select your secondary version for parallel comparison."
     select another chapter:                     "Pick a Different Chapter"
     view in reader:                             "View %{reference} in Reader"
-  users:
+  users:    
     unverified heading:                         "Almost Done!"
     unverified message:                         "It looks like you're trying to sign in to an account that hasn't been set up completely. You only have one more step: simply click on the verification link in the confirmation email you received from YouVersion. Can't find it? Check your spam folder or <a href='%{resend_path}'>resend the confirmation email</a>."
     settings:                                   "Settings"
@@ -438,7 +442,10 @@ en:
       general title:                            "General Information"
       general text:                             "Entire Agreement. This TERMS OF USE constitutes the entire agreement between you and LifeChurch.tv and governs your use of YouVersion, superseding any prior agreements between you and LifeChurch.tv with respect to YouVersion. You also may be subject to additional terms and conditions.<br><br>Choice of Law and Forum. The TERMS OF USE and the relationship between you and LifeChurch.tv shall be governed by the laws of the State of Oklahoma without regard to conflict of law provisions. You and LifeChurch.tv agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Oklahoma County, Oklahoma.<br><br>Waiver and Severability of Terms. The failure of LifeChurch.tv to exercise or enforce any right or provision of these TERMS OF USE shall not constitute a waiver of such right or provision. If any provision of these TERMS OF USE is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of these TERMS OF USE remain in full force and effect.<br><br>No Right of Survivorship and Non-Transferability. You agree that your LifeChurch.tv account is non-transferable, and any rights to your LifeChurch.tv ID or contents within your account terminate upon your death. Upon receipt of a copy of a death certificate, LifeChurch.tv may terminate your account and permanently delete all contents therein.<br><br>Statute of Limitations. You understand and agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of YouVersion or these TERMS OF USE must be filed within one (1) year after such claim or cause of action arose or be forever barred.<br><br>The section titles within these TERMS OF USE are for convenience only and have no legal or contractual effect."
     profile:
-      visit friend:                             "Visit #{friend} profile"
+      blank slate:
+        heading:                                  "Move along, nothing to see here (yet)"
+        description:                              "Start engaging with the Bible, or your friends, and this page will display a history of what you’ve been up to."
+      visit friend:                             "Visit %{friend} profile"
       tab activity:                             "Activity"
       tab friends:                              "Friends"
       tab notes:                                "Notes"
@@ -514,6 +521,10 @@ en:
     update:                                     "Update"
     color:                                      "Color:"
     version field:                              "Version:"
+    none user:                                  "%{username} has no bookmarks"
+    blank slate:
+      heading:                                  "Bookmark meaningful verses"
+      description:                              "While reading the Bible, select a verse and bookmark it. Return here to view, edit, or delete your bookmark."
     form:
       title field:                              "Title:"
       reference field:                          "Reference:"
@@ -524,7 +535,9 @@ en:
   badges:
     earned a badge:                             "Earned a Badge"
     user badges:                                "%{user}'s Badges"
-    earned date:                            "Earned by %{username} %{ago} ago"
+    earned date:                                "Earned by %{username} %{ago} ago"
+    none me:                                    "You haven't earned any badges yet."
+    none user:                                  "%{username} hasn't earned any badges yet."
   plans:
     title:                                      "Reading Plans"
     browse by category:                         "Browse by Category"
@@ -670,6 +683,10 @@ en:
     chapter only:                               "Sorry, audio isn't available for verses. View in the reader for chapter audio."
     close player menu:                          "Close"
   highlights:
+    blank slate:
+      heading:                                  "Highlight meaningful verses"
+      description:                              "While reading the Bible, select a verse and highlight it. Return here to view, edit, or delete your highlight."
+    none user:                                  "%{username} has no highlights"
     choose color:                               "Choose Color"
     create success:                             "Highlight saved"
     create failure:                             "Error saving highlight"

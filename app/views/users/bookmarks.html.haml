@@ -28,9 +28,9 @@
   .profile-blank-slate.slate-bookmarks
     - if current_user_is? @user
       %h2
-        Bookmark meaningful verses
+        = t("bookmarks.blank slate.heading")
       %p
-        While reading the Bible, select a verse and bookmark it. Return here to view, edit, or delete your bookmark.
+        = t("bookmarks.blank slate.description")
     - else
       %h2
-        This person has no bookmarks
+        = t("bookmarks.none user", username: @user.name)
