@@ -1,5 +1,5 @@
 - @title = @me ? t('users.my badges') : t('badges.user badges', user: @user.name || @user.username)
-- content_for :title do 
+- content_for :title do
   = @title
 
 - if @badges.present?
@@ -10,7 +10,10 @@
 - else
   .profile-blank-slate.slate-badges
     - if current_user_is? @user
-      %p You haven't earned any badges
+      %h2
+        You haven’t earned any badges yet
     - else
-      %p They haven't earned any badges
-    = #t('no badges found yourself') #keep this around for now
+      %h2
+        This person hasn’t earned any badges yet
+
+    = #t('no badges found yourself')

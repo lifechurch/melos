@@ -1,5 +1,5 @@
 - @title = @me ? t('users.my profile') : t('users.other user profile', username: @user.name || @user.username)
-- content_for :title do 
+- content_for :title do
   = @title
 
 - if @moments.present?
@@ -12,6 +12,10 @@
 - else
   .profile-blank-slate.slate-activity
     - if current_user_is? @user
-      %p You haven't done anything
+      %h2
+        Move along, nothing to see here (yet)
+      %p
+        Start engaging with the Bible, or your friends, and this page will display a history of what you’ve been up to.
     - else
-      %p They haven't done anything
+      %h2
+        Move along, nothing to see here (yet)

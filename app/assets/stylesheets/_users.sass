@@ -25,7 +25,7 @@
 .profile-hdr
   padding: 45px 0 0 45px
   position: relative
-  height: 125px
+  min-height: 125px
 
   .avatar_huge
     position: absolute
@@ -65,6 +65,7 @@
     font-size: 13px
     width: 550px
     margin-bottom: 40px
+    line-height: 1.4em
 
   .profile-hdr-info-user
     background:
@@ -340,3 +341,39 @@
   background: #D30000 image-url("friend-request-sprite.png") no-repeat center -128px
 
 
+// !Blank slate pages
+
+#main
+
+  .slate-activity,
+  .slate-bookmarks,
+  .slate-highlights,
+  .slate-notes,
+  .slate-badges
+    padding: 120px 90px 20px 90px
+    border-radius: 0 0 5px 5px
+    margin: -15px 0 0 0
+    background: #fff
+
+    h2
+      font-weight: 100
+      font-size: 3em
+      line-height: 1.2em
+      text-align: center
+      color: #888
+      margin: 0 0 20px 0
+    p
+      text-align: center
+      padding: 0 90px
+
+  .slate-bookmarks
+    background: #fff image-url("icon-bookmark-64.png") no-repeat center 40px
+
+  .slate-highlights
+    background: #fff image-url("icon-highlight-64.png") no-repeat center 40px
+
+  .slate-notes
+    background: #fff image-url("icon-notes-64.png") no-repeat center 40px
+
+  .slate-badges
+    background: #fff image-url("icon-badge-64.png") no-repeat center 40px

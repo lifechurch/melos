@@ -1,7 +1,7 @@
 - @sidebar = false
 -# needs i18n keys added
 - @title = @me ? "My Highlights" : (@user.name || @user.username) << "'s Highlights"
-- content_for :title do 
+- content_for :title do
   = @title
 
 - if @highlights.present?
@@ -13,6 +13,10 @@
 - else
   .profile-blank-slate.slate-highlights
     - if current_user_is? @user
-      %p You haven't created any highlights
+      %h2
+        Highlight meaningful verses
+      %p
+        While reading the Bible, select a verse and highlight it. Return here to view, edit, or delete your highlight.
     - else
-      %p They haven't created any highlights
+      %h2
+        This person has no highlights

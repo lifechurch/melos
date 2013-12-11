@@ -6,19 +6,22 @@
 .profile-friends
 
   - if current_user_is? @user
+    - if @friends.present?
+      .friends-count
+        %p.friends-count-have
+          = "You have #{@friends.count} friends"
+        %span.friends-count-canhave
+          You can have as many as 150
+        %span.friends-count-help
+          Too many friends is bad for your health. Show some restraint, man!
 
-    .friends-count
-      %p.friends-count-have
-        = "You have #{@friends.count} friends"
-      %span.friends-count-canhave
-        = t("friends.limit notice")
-      %span.friends-count-help
-        = t("friends.limit description")
+        - # Web doesn't have a way to find friends at the moment
+        - # apps only support uploading contact lists.
+        - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
+    - else
+      %h2
+        No friends here!
 
-      - # Web doesn't have a way to find friends at the moment
-      - # apps only support uploading contact lists.
-      - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
-      
   -# Friend list
   - unless @friends.blank?
 

@@ -83,6 +83,32 @@ only screen and (                min-resolution: 2dppx) {
   }
 
 
+  // !Blank slate pages
+
+  #main {
+
+    .slate-bookmarks {
+      background: #fff image-url("icon-bookmark-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-highlights {
+      background: #fff image-url("icon-highlight-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-notes {
+      background: #fff image-url("icon-notes-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-badges {
+      background: #fff image-url("icon-badge-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+  }
+
   // !Home
 
   .moment-actions-share a,

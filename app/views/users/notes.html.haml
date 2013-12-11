@@ -1,6 +1,6 @@
 - @sidebar = false
 - @title = @me ? t('users.my notes') : t('users.user notes', user: @user.name || @user.username)
-- content_for :title do 
+- content_for :title do
   = @title
 
 
@@ -13,6 +13,10 @@
 - else
   .profile-blank-slate.slate-notes
     - if current_user_is? @user
-      %p You haven't created any notes
+      %h2
+        You don’t have any notes yet
+      %p
+        As you’re reading the Bible, when you feel God’s small, still voice speaking you can quickly add those thoughts here. Your notes will be marked as <em>private</em> by default. If you’d like to share a note with your friends, simply open it and change it to <em>public</em>.
     - else
-      %p They don't have any public notes
+      %h2
+        This person doesn’t have any notes yet

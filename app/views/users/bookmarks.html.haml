@@ -1,6 +1,6 @@
 - @sidebar = false
 - @title = @me ? t('users.my bookmarks') : t('users.user bookmarks', user: @user.name || @user.username)
-- content_for :title do 
+- content_for :title do
   = @title
 
 - if current_user_is?(@user)
@@ -9,9 +9,9 @@
     .bookmarks-labels-wrap
       %h3.labels-heading
         My Labels
-      
+
       - unless labels.blank?
-        %ul.bookmarks-labels  
+        %ul.bookmarks-labels
           - labels.each do |label_and_count|
             - label_name = label_and_count["label"].strip
             %li.label
@@ -21,12 +21,16 @@
   .social-feed-wrap
     .social-feed
       = render partial: "moments/cards", locals: {moments: @bookmarks, comments_displayed: false}
-  
+
 
   = render partial: "shared/moments_load_more", locals: {resource: "bookmarks", url_params: ["user_id=#{@user.username}"]}
 - else
   .profile-blank-slate.slate-bookmarks
     - if current_user_is? @user
-      %p You haven't created any bookmarks
+      %h2
+        Bookmark meaningful verses
+      %p
+        While reading the Bible, select a verse and bookmark it. Return here to view, edit, or delete your bookmark.
     - else
-      %p They haven't created any bookmarks
+      %h2
+        This person has no bookmarks
