@@ -10,6 +10,114 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 
+  // !Primary nav
+
+  #nav_primary_home a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -87px;
+  }
+
+  #nav_primary_bible a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -278px;
+  }
+
+  #nav_primary_plans a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -470px;
+  }
+
+  #nav_primary_friends a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -1819px;
+  }
+
+  #nav_primary_live a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -1238px;
+  }
+
+  #nav_primary_mobile a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -1622px;
+  }
+
+  #nav_primary_videos a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -565px;
+  }
+
+  #nav_primary_home a.icon span,
+  #nav_primary_bible a.icon span,
+  #nav_primary_plans a.icon span,
+  #nav_primary_friends a.icon span,
+  #nav_primary_live a.icon span,
+  #nav_primary_mobile a.icon span,
+  #nav_primary_videos a.icon span {
+    background-size: 32px 1900px;
+  }
+
+
+  // !Hover
+
+  #nav_primary_home a.icon span:hover {
+    background-position: center 9px;
+  }
+
+  #nav_primary_bible a.icon span:hover {
+    background-position: center -182px;
+  }
+
+  #nav_primary_plans a.icon span:hover {
+    background-position: center -374px;
+  }
+
+  #nav_primary_friends a.icon span:hover {
+    background-position: center -1723px;
+  }
+
+  #nav_primary_live a.icon span:hover {
+    background-position: center -1142px;
+  }
+
+  #nav_primary_mobile a.icon span:hover {
+    background-position: center -1526px;
+  }
+
+  #nav_primary_videos a.icon span:hover {
+    background-position: center -661px;
+  }
+
+  // !Highlighted
+
+  .highlighted#nav_primary_home a.icon span {
+    background-position: center 9px;
+  }
+
+  .highlighted#nav_primary_bible a.icon span {
+    background-position: center -182px;
+  }
+
+  .highlighted#nav_primary_plans a.icon span {
+    background-position: center -374px;
+  }
+
+  .highlighted#nav_primary_friends a.icon span {
+    background-position: center -1723px;
+  }
+
+  .highlighted#nav_primary_live a.icon span {
+    background-position: center -1142px;
+  }
+
+  .highlighted#nav_primary_mobile a.icon span {
+    background-position: center -1526px;
+  }
+
+  .highlighted#nav_primary_videos a.icon span {
+    background-position: center -661px;
+  }
+
   // !Profile
 
   .top_section {

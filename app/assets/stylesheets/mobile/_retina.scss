@@ -10,6 +10,59 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 
+  // !Primary nav
+
+  #nav_mobile_home a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px 5px;
+  }
+
+  #nav_mobile_bible a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -186px;
+  }
+
+  #nav_mobile_plans a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -378px;
+  }
+
+  #nav_mobile_friends a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1727px;
+  }
+
+  #nav_mobile_live a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1242px;
+  }
+
+  #nav_mobile_mobile a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1530px;
+  }
+
+  #nav_mobile_profile a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1339px;
+  }
+
+  #nav_mobile_videos a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -666px;
+  }
+
+  #nav_mobile_home a.icon,
+  #nav_mobile_bible a.icon,
+  #nav_mobile_plans a.icon,
+  #nav_mobile_friends a.icon,
+  #nav_mobile_live a.icon,
+  #nav_mobile_mobile a.icon,
+  #nav_mobile_profile a.icon,
+  #nav_mobile_videos a.icon {
+    background-size: 32px 1900px;
+  }
+
   // !Profile
 
   .top_section {
