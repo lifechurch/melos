@@ -14,7 +14,7 @@
       %h1.profile-hdr-name= @user.name || @user.username
 
       %ul.profile-hdr-info
-        - if user_name = @user.name
+        - if user_name = @user.username
           %li.profile-hdr-info-user
             = user_name
         - if user_location = @user.location

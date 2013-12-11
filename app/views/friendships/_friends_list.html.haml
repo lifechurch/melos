@@ -1,0 +1,8 @@
+%ul.friend-directory
+  - friends.each do |friend|
+    - avatar = friend.avatars.lg_avatar
+    %li.friend-details
+      = image_tag avatar.url, class: "friend-details-avatar"
+      = link_to(friend.name, user_path(friend.to_param), class: "friend-details-name", title: t("users.profile.visit friend", friend: friend.name) )
+      - if current_user_is? user
+        = link_to(t("friendships.form.remove friend button"),"#", class: "friend-details-delete", title: t("friendships.form.remove friend button title"))

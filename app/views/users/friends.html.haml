@@ -6,7 +6,8 @@
 .profile-friends
 
   - if current_user_is? @user
-    - if @friends.present?
+    
+    - if @friends.present? 
       .friends-count
         %p.friends-count-have
           = "You have #{@friends.count} friends"
@@ -18,18 +19,16 @@
         - # Web doesn't have a way to find friends at the moment
         - # apps only support uploading contact lists.
         - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
-    - else
+
+    - if @friends.present? # show my friends
+      = render partial: "friendships/friends_list", locals: {friends: @friends, user: @user}
+
+    - else # I don't have friends
       %h2
-        No friends here!
+        I don't have friends!!
 
-  -# Friend list
-  - unless @friends.blank?
+  - elsif Friend.with? @user, auth: current_auth # We can only 
+    = render partial: "friendships/friends_list", locals: {friends: @friends, user: @user}
 
-    %ul.friend-directory
-      - @friends.each do |friend|
-        - avatar = friend.avatars.lg_avatar
-        %li.friend-details
-          = image_tag avatar.url, class: "friend-details-avatar"
-          = link_to(friend.name, user_path(friend.to_param), class: "friend-details-name", title: t("user.profile.visit friend", friend: friend.name) )
-          - if current_user_is? @user
-            = link_to(t("friendships.form.remove friend button"),"#", class: "friend-details-delete", title: t("friendships.form.remove friend button title"))
+  - else
+    - # Not frineds - We don't show a users friends publicly
