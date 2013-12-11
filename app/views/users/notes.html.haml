@@ -12,4 +12,7 @@
   = render partial: "shared/moments_load_more", locals: {resource: "notes", url_params: ["user_id=#{@user.username}"]}
 - else
   .profile-blank-slate.slate-notes
-    %p No notes created
+    - if current_user_is? @user
+      %p You haven't created any notes
+    - else
+      %p They don't have any public notes

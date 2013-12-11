@@ -9,5 +9,8 @@
 
 - else
   .profile-blank-slate.slate-badges
-    %p No badges earned
-    = #t('no badges found yourself')
+    - if current_user_is? @user
+      %p You haven't earned any badges
+    - else
+      %p They haven't earned any badges
+    = #t('no badges found yourself') #keep this around for now

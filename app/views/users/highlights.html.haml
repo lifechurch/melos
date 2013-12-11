@@ -12,4 +12,7 @@
   = render partial: "shared/moments_load_more", locals: {resource: "highlights", url_params: ["user_id=#{@user.username}"]}
 - else
   .profile-blank-slate.slate-highlights
-    %p No highlights created
+    - if current_user_is? @user
+      %p You haven't created any highlights
+    - else
+      %p They haven't created any highlights

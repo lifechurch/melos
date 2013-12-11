@@ -26,4 +26,7 @@
   = render partial: "shared/moments_load_more", locals: {resource: "bookmarks", url_params: ["user_id=#{@user.username}"]}
 - else
   .profile-blank-slate.slate-bookmarks
-    %p No bookmarks created
+    - if current_user_is? @user
+      %p You haven't created any bookmarks
+    - else
+      %p They haven't created any bookmarks

@@ -1,7 +1,7 @@
 - @sidebar = false
 
 
-- if @me
+- if current_user_is? @user
   - content_for :mobile_right_nav do
     %a.settings_btn{:href => settings_profile_path}
 

@@ -11,4 +11,7 @@
 
 - else
   .profile-blank-slate.slate-activity
-    %p You haven't done anything
+    - if current_user_is? @user
+      %p You haven't done anything
+    - else
+      %p They haven't done anything
