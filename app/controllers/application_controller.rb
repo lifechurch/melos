@@ -97,8 +97,8 @@ class ApplicationController < ActionController::Base
     end
 
     # For client, set the currently reading (and therefore last read) reference to the provided ref.
-    def now_reading(ref)
-      client_settings.last_read = ref
+    def now_reading(reference)
+      client_settings.last_read = reference
     end
 
     # Presenter helpers

@@ -106,22 +106,6 @@ class SubscriptionsController < ApplicationController
     self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
   end
 
-  # Verb: the act of shelving your reading plan. Putting a book on the shelf.
-  # This is a controller/action server side end point to pull a visitor out of 'reading plan mode'
-  # Might also be a nice metric to capture, this provides an appropriate hook for capture.
-  # POST
-  def shelf
-    redirect_to(bible_path(last_read))
-  end
-
-  # action/endpoint for rendering subscription sidebar controls when not on subscription#show
-  def sidebar
-    subscription = subscription_for(params[:id])
-    render partial: "/sidebars/subscriptions/show",
-           locals: {presenter: Presenter::Sidebar::Subscription.new( subscription , params, self )},
-           layout: false
-  end
-
   private
 
   def find_subscription

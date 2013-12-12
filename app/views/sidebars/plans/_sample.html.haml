@@ -4,7 +4,7 @@
 - day           = (params[:day] || 1).to_i
 - content_page  = (params[:content] || 0).to_i
 - reading       = plan.day(day)
-- references    = reading.references
+- references    = reading.references(version_id: @presenter.version)
 
 
 .mobile#mobile-sb-subscription
@@ -49,13 +49,14 @@
 
   %ul.menu.basic
     - unless references.empty?
-      - reading.references.each_with_index do |ref,index|
+      - references.each_with_index do |ref,index|
         %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
+          - ref_text = ref.reference.safe_human
           - if content_page == index
-            %span= ref.ref.safe_human
+            %span= ref_text
           - else
             %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
-              = ref.ref.safe_human
+              = ref_text
 
 - if reading.devotional
   #widget-devotional.widget

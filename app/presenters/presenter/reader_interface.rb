@@ -58,6 +58,8 @@ module Presenter
     end
 
     # Array of verse numbers.
+    # - [1]
+    # - [1,2,5,10]
     # If you desire to pre-select one or more verses with auto scroll, return the desired verses in an array.
     # If you do not desire any selection or scrolling, return nil.
     def verses

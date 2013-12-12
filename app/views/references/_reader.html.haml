@@ -1,20 +1,19 @@
 // Reader partial to encapsulate all reader functionality
 // Local Parameters
 // presenter: (required) Presenter::Reference or Presenter::Subscription
-
-- @is_reader    = true
-- @html_classes = []
-- @html_classes << "full_screen" if client_settings.reader_full_screen
-- @html_classes << "full_screen" << "parallel_mode" if client_settings.reader_parallel_mode
-- reader_menus  = true
-- version       = presenter.version
-- reference     = presenter.reference
-- alt_version   = presenter.respond_to?(:alt_version)   ? presenter.alt_version : nil
-- alt_reference = presenter.respond_to?(:alt_reference) ? presenter.alt_reference : nil
-- verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
-- focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
-- modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
-- a_chapter = presenter.try(:is_chapter?)
+:ruby
+  @is_reader    = true
+  @html_classes = []
+  @html_classes << "full_screen" if client_settings.reader_full_screen
+  @html_classes << "full_screen" << "parallel_mode" if client_settings.reader_parallel_mode
+  version       = presenter.version
+  reference     = presenter.reference
+  alt_version   = presenter.respond_to?(:alt_version)   ? presenter.alt_version : nil
+  alt_reference = presenter.respond_to?(:alt_reference) ? presenter.alt_reference : nil
+  verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
+  focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
+  modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
+  a_chapter     = presenter.try(:is_chapter?)
 
 - content_for :mobile_right_nav do
   = link_to(version.abbreviation, 'javascript:void(0);', id: "m_version_btn" )
@@ -25,21 +24,22 @@
 
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
-%article#reader.reader{"data-setting-font" => client_settings.reader_font,
-         'data-setting-size' => client_settings.reader_font_size,
-         "data-fullscreen"   => client_settings.reader_full_screen,
-         "data-selected-verses" => (focus_verses ? nil : verses.try(:join,",")),
-         "data-focused-verses" => (focus_verses ? verses.try(:join,",") : nil),
-         "data-verse-modal-enabled" => "#{!modal_verse.nil?}",
-         "data-book"       => reference[:book].to_s.downcase,
-         "data-book-api"   => reference[:book].sub(/[A-Z]+/) {|m| m.downcase},
-         "data-book-human" => truncate(version.books[reference[:book]].human, length: 40, separator: " "),
-         "data-chapter"    => reference[:chapter].to_s,
-         "data-version"    => reference[:version].to_s,
-         "data-setting-trans-notes" => client_settings.reader_trans_notes,
-         "data-setting-cross-refs" => client_settings.reader_cross_refs,
-         "data-setting-show-highlights" => client_settings.reader_highlights,
-         "class" => (focus_verses && (not a_chapter)) ? "mute" : nil}
+%article#reader.reader{"class" => (focus_verses && (not a_chapter)) ? "mute" : nil,
+  "data-setting-font" => client_settings.reader_font,
+  "data-setting-size" => client_settings.reader_font_size,
+  "data-fullscreen"   => client_settings.reader_full_screen,
+  "data-selected-verses" => (focus_verses ? nil : verses.try(:join,",")),
+  "data-focused-verses" => (focus_verses ? verses.try(:join,",") : nil),
+  "data-verse-modal-enabled" => "#{!modal_verse.nil?}",
+  "data-book"       => reference[:book].to_s.downcase,
+  "data-book-api"   => reference[:book].sub(/[A-Z]+/) {|m| m.downcase},
+  "data-book-human" => truncate(version.books[reference[:book]].human, length: 40, separator: " "),
+  "data-chapter"    => reference[:chapter].to_s,
+  "data-version"    => reference[:version].to_s,
+  "data-setting-trans-notes" => client_settings.reader_trans_notes,
+  "data-setting-cross-refs" => client_settings.reader_cross_refs,
+  "data-setting-show-highlights" => client_settings.reader_highlights}
+
   .wrap
     %div.nav_items
       - direction = 'rtl' if version.try(:rtl?)
@@ -47,17 +47,19 @@
       = link_to("next", bible_path(reference.next_chapter), class: "nav_next #{direction}") if reference.next_chapter
 
     // Primary version content
-    #version_primary{"data-reference"     => reference.to_param,
-                     "data-abbreviation"  => version.try(:abbreviation).downcase,
-                     "data-usfm"          => reference.chapter_usfm,
-                     class:               version.try(:text_direction)}
+    #version_primary{class: version.try(:text_direction),
+      "data-reference"     => reference.to_param,
+      "data-abbreviation"  => version.try(:abbreviation).downcase,
+      "data-usfm"          => reference.chapter_usfm}
+      
       = presenter.content.html_safe if presenter.content
 
     // Secondary version content
-    #version_secondary{"data-reference"     => alt_reference.to_param,
-                       "data-abbreviation"  => alt_version.try(:abbreviation).try(:downcase),
-                       "data-usfm"          => reference.chapter_usfm,
-                       class:               alt_version.try(:text_direction)}
+    #version_secondary{class: alt_version.try(:text_direction),
+      "data-reference"     => alt_reference.to_param,
+      "data-abbreviation"  => alt_version.try(:abbreviation).try(:downcase),
+      "data-usfm"          => reference.chapter_usfm}
+      
       = t('ref.loading secondary')
 
 

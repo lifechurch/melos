@@ -7,7 +7,7 @@ module Plans
     attribute :day
     attribute :next_day
     attribute :prev_day
-    attribute :references
+    attribute :api_references
     attribute :additional_content_text
     attribute :additional_content_html
     attribute :plan_id
@@ -29,14 +29,27 @@ module Plans
         super(nil,opts)
       end
 
-
-      def complete!()
-
-      end
-
-
-
     end
+
+    # Raw references from API
+    # "api_references"=>[{"reference"=>"JHN.15.9", "completed"=>false}]
+    def references(opts={})
+      raise "Requires :version_id in opts" unless opts[:version_id]
+      if attributes.api_references
+        refs = attributes.api_references.collect do |r|
+          ref = Plans::Reference.new
+          ref.reference = ::Reference.new(r.reference, version: opts[:version_id])
+          ref.completed = r.completed
+          ref
+        end
+      end
+    end
+
+
+    def devotional
+      @devotial ||= additional_content_html || additional_content_text
+    end
+
   end
 end
 

@@ -91,7 +91,6 @@ YouversionWeb::Application.routes.draw do
     
     resources 'subscriptions', :path => '/reading-plans' do
       get   :calendar,    on: :member
-      post  :shelf,       on: :member
     end
   end
 
@@ -111,11 +110,6 @@ YouversionWeb::Application.routes.draw do
     get "_cards", on: :collection
     get :colors,  on: :collection
   end
-
-
-
-
-  match "subscriptions/:id/sidebar" => "subscriptions#sidebar"
 
   # /reading-plans
   # /reading-plans/:id
