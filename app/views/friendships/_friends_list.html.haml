@@ -6,3 +6,6 @@
       = link_to(friend.name, user_path(friend.to_param), class: "friend-details-name", title: t("users.profile.visit friend", friend: friend.name) )
       - if current_user_is? user
         = link_to(t("friendships.form.remove friend button"),"#", class: "friend-details-delete", title: t("friendships.form.remove friend button title"))
+      - else
+        %a{href: "#", class: "friend-details-add", title: "Send this person a friend request"}
+          &#43; Add friend

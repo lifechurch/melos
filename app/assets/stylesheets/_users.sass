@@ -262,7 +262,7 @@
 // !Friends tab
 
 .profile-friends
-  margin: 0
+  margin: -15px 0 0
   background-color: #fff
   border-radius: 0 0 5px 5px
   padding: 30px 30px 20px
@@ -340,6 +340,17 @@
 .friend-details-delete:hover
   background: #D30000 image-url("friend-request-sprite.png") no-repeat center -128px
 
+.friend-details-add
+  margin: 0 0 0 86px
+  color: #777
+  font-size: 11px
+  font-weight: normal
+
+.friends-none
+  background: image-url("social-psa-profiles.png") no-repeat center 40px
+  text-align: center
+  padding: 70px 180px 0
+
 
 // !Blank slate pages
 
@@ -349,13 +360,15 @@
   .slate-bookmarks,
   .slate-highlights,
   .slate-notes,
-  .slate-badges
+  .slate-badges,
+  .slate-friends
     padding: 120px 90px 20px 90px
     border-radius: 0 0 5px 5px
     margin: -15px 0 0 0
     background: #fff
 
-    h2
+    h2,
+    .friends-private
       font-weight: 100
       font-size: 3em
       line-height: 1.2em
@@ -377,3 +390,9 @@
 
   .slate-badges
     background: #fff image-url("icon-badge-64.png") no-repeat center 40px
+
+  .slate-friends
+    background: #fff image-url("icon-group-64.png") no-repeat center 40px
+
+  .slate-activity
+    background: #fff image-url("icon-activity-64.png") no-repeat center 40px

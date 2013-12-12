@@ -63,6 +63,22 @@ only screen and (                min-resolution: 2dppx) {
     background-size: 32px 1900px;
   }
 
+  // !Header
+
+  #header .friend-requests-btn,
+  #header .notifications-btn {
+    background: image-url("header-sprite@2x.png") no-repeat;
+    background-size: 28px 100px;
+  }
+
+  #header .friend-requests-btn {
+    background-position: 0px 9px;
+  }
+
+  #header .notifications-btn {
+    background-position: 0px -55px;
+  }
+
   // !Profile
 
   .top_section {
@@ -126,20 +142,10 @@ only screen and (                min-resolution: 2dppx) {
   }
 
 
-  // !Header
-
-  #header .friend-requests-btn,
-  #header .notifications-btn {
-    background: image-url("header-sprite@2x.png") no-repeat;
-    background-size: 28px 100px;
-  }
-
-  #header .friend-requests-btn {
-    background-position: 0px 9px;
-  }
-
-  #header .notifications-btn {
-    background-position: 0px -55px;
+  // !Friends tab
+  .friends-none {
+    background: image-url("social-psa-profiles@2x.png") no-repeat center 40px;
+    background-size: 280px 48px;
   }
 
 }

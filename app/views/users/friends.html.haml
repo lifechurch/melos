@@ -3,11 +3,12 @@
 - content_for :title do
   = @title
 
-.profile-friends
 
-  - if current_user_is? @user
-    
-    - if @friends.present? 
+- if current_user_is? @user
+
+  .profile-friends
+
+    - if @friends.present?
       .friends-count
         %p.friends-count-have
           = "You have #{@friends.count} friends"
@@ -24,11 +25,20 @@
       = render partial: "friendships/friends_list", locals: {friends: @friends, user: @user}
 
     - else # I don't have friends
-      %h2
-        I don't have friends!!
+      %p.friends-none
+        Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family.
+        - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
 
-  - elsif Friend.with? @user, auth: current_auth # We can only 
+- elsif Friend.with? @user, auth: current_auth # We can only
+  .profile-friends
+
     = render partial: "friendships/friends_list", locals: {friends: @friends, user: @user}
 
-  - else
-    - # Not frineds - We don't show a users friends publicly
+- else
+  .profile-friends.slate-friends
+
+    - # Not friends - We don't show a users friends publicly
+    %h2.friends-private
+      Hold up there, cowboy!
+    %p
+      You must be friends with this person in order to view their friends.

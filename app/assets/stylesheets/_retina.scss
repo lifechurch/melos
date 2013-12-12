@@ -215,6 +215,16 @@ only screen and (                min-resolution: 2dppx) {
       background-size: 64px 64px;
     }
 
+    .slate-activity {
+      background: #fff image-url("icon-activity-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-friends {
+      background: #fff image-url("icon-group-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
   }
 
   // !Home
