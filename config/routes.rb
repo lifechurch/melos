@@ -1,19 +1,18 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
-  get "/app",           to: "pages#app"
-  get "/terms",         to: "pages#terms"
-  get "/privacy",       to: "pages#privacy"
-  get "/donate",        to: "pages#donate"
-  get "/about",         to: "pages#about"
-  get "/press",         to: "pages#press"
-  get "/generic_error", to: "pages#generic_error"
-  get "/search",        to: "search#show",                as: "search"
-  get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
+  get "/app",               to: "pages#app"
+  get "/terms",             to: "pages#terms"
+  get "/privacy",           to: "pages#privacy"
+  get "/donate",            to: "pages#donate"
+  get "/about",             to: "pages#about"
+  get "/press",             to: "pages#press"
+  get "/generic_error",     to: "pages#generic_error"
+  get "/confirm-email",     to: "users#confirm_email",        as: "confirm_email"
 
   match "/app(/:store)", to: AppStoreController.action(:index)
+  get "/search(/:category)",to: "search#show",                as: "search"
 
-  
 
   resources :friendships, only: [:create, :destroy] do
     get :requests, on: :collection
