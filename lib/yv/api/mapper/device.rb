@@ -5,9 +5,6 @@ module YV
 
         class << self
 
-
-        private
-
           def from_find(instance,results)
             map_to_instance(instance,results)
           end
@@ -17,6 +14,7 @@ module YV
           end
 
           def from_collection(results)
+            return results if results.blank? #return results if results is an empty array
             collection = results.devices.collect do |device|
               d = ::Device.new
               map_to_instance(d,device)

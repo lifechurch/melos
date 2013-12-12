@@ -338,8 +338,8 @@ class UsersController < ApplicationController
 
     def destroy_device
       @user = current_user
-
       @device = Device.find(params[:device_id], auth: current_auth)
+      @device.auth = current_auth
       @results = @device.destroy
       if @results.valid?
          flash[:notice] = "Device removed."           # TODO: localize

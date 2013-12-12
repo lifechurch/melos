@@ -8,17 +8,20 @@
   - if @results
     = render partial: "shared/form_errors", locals: {errors: @results.errors }
 
-  %ul.resource_list
-    - if @devices.present?
+  - if @devices.present?
+    %ul.resource_list
       - @devices.each do |d|
         %li
-          %div.float_right.confirm= link_to t('remove'), device_path(d.id), method: :delete, "data-confirm-text" => t('confirm danger')
           %h4= "#{d.vendor} #{d.model}"
-          %p.mute
+          
+          = link_to t('remove'), device_path(d.id), method: :delete, class: "action_button_blue float_right"  
+          
+          %p.mute{style: "float: left; width: 70%;"}
             = d.os
             %br
             = t('registered ago', time_ago: time_ago_in_words(d.created_dt))
-    - else
-      %li
-        %h4= t('users.no devices')
-        %p= t('users.no devices download copy').html_safe
+
+          
+  - else
+    %h2= t('users.no devices')
+    %p= t('users.no devices download copy').html_safe
