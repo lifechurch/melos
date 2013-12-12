@@ -8,7 +8,6 @@
 //= require ./menus/nav_mobile
 //= require ./menus/menu_group
 //= require_self
-
 //= require jstz-1.0.4
 //= require_tree ./lib/
 //= require_tree ./menus/
@@ -21,5 +20,4 @@
 //= require main
 //= require analytics
 //= require videos
-//= require_tree ./i18n/
 //= require_tree ./jw/
