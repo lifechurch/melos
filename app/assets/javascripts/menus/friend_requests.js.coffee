@@ -59,7 +59,7 @@ class window.Menus.FriendRequests extends window.Menus.Base
   # ------------------------------------------------------------
 
   close: ->
-    @popover.animate({'opacity' : '0'}, 200);
+    @popover.animate({'opacity' : '0'}, 200, "swing", @popover.hide());
     $(@trigger_el).removeClass("active")
     this.trigger("yv:menu:close",{target: this})
     return
