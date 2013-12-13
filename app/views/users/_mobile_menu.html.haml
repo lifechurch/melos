@@ -1,14 +1,23 @@
+:ruby
+  links = [{path: "/settings/profile", string: t('users.edit profile')},
+           {path: "/settings/notifications", string: t('users.edit notifications')},
+           {path: "/settings/update_email", string: t('users.edit email')},
+           {path: "/settings/password", string: t('users.edit password')},
+           # removed for now until we're comfortable turning on image uploads for mobile web.
+           # {path: "/settings/picture", string: t('users.edit picture')},
+           # removed for 3.1 Social launch - will make a comeback
+           # {path: "/settings/connections", string: t('users.edit connections')},
+           {path: "/settings/devices", string: t('users.edit devices')},
+           {path: "/settings/delete_account", string: t('users.edit account_existence')}]
+
 .mobile
   %h3.hd       
     = t('users.settings')
   .mobile-menu-wrap    
     %dl.tabs
-      %dd{class: ('highlighted' if @selected == :profile)}
-        = link_to t("users.edit profile"), settings_profile_path
-      %dd{class: ('highlighted' if @selected == :notifications)}
-        = link_to t("users.edit notifications"), notification_settings_path
-      %dd{class: ('highlighted' if @selected == :password)}
-        = link_to t("users.edit password"), settings_password_path
+      - links.each do |l|
+        %dd
+          = link_to l[:string], l[:path]
 
   :javascript 
     $('h3.hd').click(function () {
@@ -18,5 +27,4 @@
       } else {
         $('.mobile-menu-wrap').slideUp("slow");
       }
-    });  
-
+    });

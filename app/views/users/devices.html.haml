@@ -5,6 +5,8 @@
 
 
 %article
+  = render partial: "users/mobile_menu"
+
   - if @results
     = render partial: "shared/form_errors", locals: {errors: @results.errors }
 

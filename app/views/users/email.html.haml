@@ -3,7 +3,8 @@
 
 
 %article
-
+  = render partial: "users/mobile_menu"
+  
   - if @results and @results.valid?
     %p.confirmation-message
       = t('users.update email check')
