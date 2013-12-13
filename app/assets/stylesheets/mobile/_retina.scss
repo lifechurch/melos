@@ -148,4 +148,12 @@ only screen and (                min-resolution: 2dppx) {
     background-size: 280px 48px;
   }
 
+
+  // !Profile settings
+
+  h3.hd {
+    background: #E1E1E1 image-url("mobile/dropdown-arrow@2x.png") no-repeat 96% center;
+    background-size: 10px 17px;
+  }
+
 }
