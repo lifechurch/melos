@@ -38,6 +38,7 @@ class window.Menus.FriendRequests extends window.Menus.Base
     request.done (data) =>
       template = Handlebars.compile(@template.html())
       $(@container).html(template(data))
+      Page.prototype.orientAndResize()
       return
 
     return

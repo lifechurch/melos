@@ -190,6 +190,7 @@ en:
   notifications:
     title:                                      "Notifications"
     none:                                       "You don't have any notifications"
+    no new:                                     "No new nofifications"
     view all:                                   "View all Notifications"
   comments:
     post comment:                               "Post a comment"
@@ -210,6 +211,7 @@ en:
     requests title:                             "Friend requests"
     requests view all:                          "View all friend requests"
     requests none:                              "You don't have any friend requests"
+    requests no new:                            "No new requests"
     status:
       pending:                                  "Request pending"
       friends:                                  "Friends"

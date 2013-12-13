@@ -34,6 +34,7 @@ class window.Menus.Notifications extends window.Menus.Base
     request.done (data) =>
       template = Handlebars.compile(@template.html())
       $(@container).html(template({notifications: data}))
+      Page.prototype.orientAndResize()
       return
 
     return

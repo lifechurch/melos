@@ -9,9 +9,6 @@
       %li
         %p.loading-indicator
           = t("ui.loading indicator text")
-    .view-all
-      %a.text-link.wide{href:"/notifications"}
-        = t("friendships.requests view all")
 
 %script#friend-requests-tmpl{type:"text/x-handlebars-template"}
   :plain
@@ -49,13 +46,17 @@
         </div>
       </li>
       {{else}}
-      <li class="list-item">
+      <li class="list-item none">
         <p>
           #{t("friendships.requests none")}
         </p>
       </li>
       {{/each}}
-    </ul>
+    </ul>    
     <div class="view-all">
-      #{link_to(t("friendships.requests view all"),"/friendships/requests", class:"text-link wide" )}
+      {{#if incoming}}
+        #{link_to(t("friendships.requests view all"),"/friendships/requests", class:"text-link wide" )}
+      {{else}}
+        #{link_to(t("friendships.requests no new"),"javascript:void(0);", class:"text-link wide")}
+      {{/if}}
     </div>

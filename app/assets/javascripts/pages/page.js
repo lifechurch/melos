@@ -109,6 +109,10 @@ Page.prototype = {
   orientAndResize : function() {
     //ensure correct max-height for mobile header scroll
     $("#nav_mobile").css("max-height", $("body").height() - $("#header").height() + "px");
+    //ensure mobile social layers are scrollable with correct height
+    if ($('html.mobile-client').length) {
+      $('.header-popover ul').css("max-height", $("body").height() - $("#header").height() - 64 + "px");
+    }
     if ($('.social-feed').length) {
       try {$('.social-feed').trigger('refreshWookmark')} catch(e) {};
     }

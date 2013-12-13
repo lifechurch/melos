@@ -8,9 +8,6 @@
       %li.notifications-item
         %p.loading-indicator
           = t("ui.loading indicator text")
-  .view-all
-    %a.text-link.wide{href:"/notifications"}
-      = t("notifications.view all")
 
 %script#notifications-tmpl{type:"text/x-handlebars-template"}
   :plain
@@ -27,3 +24,10 @@
       </li>
       {{/each}}
     </ul>
+    <div class="view-all">
+      {{#if notifications}}
+        #{link_to(t("notifications.view all"),"/notifications", class:"text-link wide" )}
+      {{else}}
+        #{link_to(t("notifications.no new"),"javascript:void(0)", class:"text-link wide" )}
+      {{/if}}
+    </div>    
