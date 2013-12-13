@@ -28,6 +28,6 @@
       {{#if notifications}}
         #{link_to(t("notifications.view all"),"/notifications", class:"text-link wide" )}
       {{else}}
-        #{link_to(t("notifications.no new"),"javascript:void(0)", class:"text-link wide" )}
+        <span class="text-wide">#{t("notifications.no new")}</span>
       {{/if}}
     </div>    

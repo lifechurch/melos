@@ -190,7 +190,7 @@ en:
   notifications:
     title:                                      "Notifications"
     none:                                       "You don't have any notifications"
-    no new:                                     "No new nofifications"
+    no new:                                     "No new notifications"
     view all:                                   "View all Notifications"
   comments:
     post comment:                               "Post a comment"

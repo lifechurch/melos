@@ -57,6 +57,6 @@
       {{#if incoming}}
         #{link_to(t("friendships.requests view all"),"/friendships/requests", class:"text-link wide" )}
       {{else}}
-        #{link_to(t("friendships.requests no new"),"javascript:void(0);", class:"text-link wide")}
+        <span class="text-wide">#{t("friendships.requests no new")}</span>
       {{/if}}
     </div>
