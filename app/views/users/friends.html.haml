@@ -1,5 +1,6 @@
 - @sidebar = false
 - @title = @me ? t('users.my friends') : t('users.user friends', user: @user.name || @user.username)
+
 - content_for :title do
   = @title
 

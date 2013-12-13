@@ -1,4 +1,7 @@
-- @title = "#{t('users.connected devices')} | #{@user.name || @user.username}"
+- @title = t('users.edit devices')
+
+- content_for :title do
+  = @title
 
 - content_for :sidebar do
   = render partial: "widgets/settings"
@@ -14,13 +17,11 @@
     %ul.resource_list
       - @devices.each do |d|
         %li
-          %h4= "#{d.vendor} #{d.model}"
-          
-          = link_to t('remove'), device_path(d.id), method: :delete, class: "action_button_blue float_right"  
-          
+          %h4{style:"margin-bottom:0;"}= "#{d.vendor} #{d.model}"
           %p.mute{style: "float: left; width: 70%;"}
             = d.os
-            %br
+          = link_to t('remove'), device_path(d.id), method: :delete, class: "action_button_blue float_right"  
+          %p.mute{style: "float: left; width: 70%;"}
             = t('registered ago', time_ago: time_ago_in_words(d.created_dt))
 
           

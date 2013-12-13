@@ -1,4 +1,7 @@
-- @title = "#{t('users.edit account_existence')} | #{@user.name || @user.username}"
+- @title = t('users.edit account_existence')
+
+- content_for :title do
+  = @title
 
 - content_for :sidebar do
   = render partial: "widgets/settings"

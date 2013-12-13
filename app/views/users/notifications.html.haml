@@ -1,4 +1,7 @@
-- @title = "#{t('my notifications')} | #{@user.name || @user.username}"
+- @title = t('users.edit notifications')
+
+- content_for :title do
+  = @title
 
 - # because page can be accessed while logged in or logged out (with token) we use
 - # current_user or fallback to params[:id]
