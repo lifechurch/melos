@@ -6,15 +6,6 @@ module YV
       
       # HTTParty stuff
         format :json
-        
-        DEFAULT_HEADERS = { 
-            "Referer"      => "http://" + Cfg.api_referer,
-            "User-Agent"   => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}",  # API 3.1 requires a user agent to be set
-            "X-YouVersion-Client" => "youversion",                                    # API 3.1 requires a youversion client header to be set: http://developers.youversion.com/api/docs/3.1/intro.html#headers
-            "X-YouVersion-App-Platform" => "web",
-            "X-YouVersion-App-Version"  => "0"
-        }
-
         default_timeout Cfg.api_default_timeout.to_f
 
       # 500 Json response
@@ -23,31 +14,22 @@ module YV
 
       class << self
         
-        alias_method :httparty_get, :get
+        alias_method :httparty_get,  :get
         alias_method :httparty_post, :post
 
         # Perform a GET request to YouVersion API
         # requires an appropriate API formatted path string: "search/notes", "reading-plans/view", etc
         def get(path, opts={})
-          started_at = Time.now.to_f
-          
-          opts = prepare_auth!(opts)
-          opts = clean_request_opts!(opts)
-          resource_url = get_resource_url(path, opts)
-          
-          request_opts = {
-            headers: DEFAULT_HEADERS,
-            timeout: (opts.delete(:timeout) if opts[:timeout]),
-            query:   opts.except(:cache_for)
-          }
-          
+          started_at    = Time.now.to_f
+          opts          = options_for_get(prepare_opts!(opts))
+          resource_url  = get_resource_url(path, opts)
+
           lets_party = lambda do
             begin
-              response = httparty_get(resource_url, request_opts)
-              #response = YV::API::Response.new(httparty_get(resource_url, request_opts))
+              response = httparty_get( resource_url , opts)
+
               # Raise an error here if response code is 400 or greater and the API hasn't sent back a response object.
               # IMPORTANTLY - This avoids us potentially caching a bad API request
-              # #{response["response"]["data"]["errors"]}
               if response.code >= 400 && response.body.nil?
                 raise APIError, "API Error: Bad API Response (code: #{response.code}) "
               end
@@ -57,52 +39,31 @@ module YV
               JSON_500
 
             rescue Timeout::Error => e
-              raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - started_at)*1000).to_i} ms)"
+              raise APITimeoutError, log_api_timeout(resource_url,started_at)
             
             rescue Exception => e
-              raise APIError, "Non-timeout API Error for #{resource_url}:\n\n #{e.class} : #{e.to_s}"
+              raise APIError, log_api_error(resource_url,e)
             end
           end
 
-          # If we're caching this request, try pulling from cache first
-          api_data = if opts[:cache_for]
-            cached = Rails.cache.fetch( cache_key(path, request_opts) , expires_in: opts[:cache_for]) do
-              lets_party.call # cache miss - call to API
-            end
-            cached #comes back as a hash
-          else
-            lets_party.call #comes back as a Httparty response
-          end
-
-          puts "GET DATA: (#{resource_url}) -----"
-          puts api_data
-          puts "END GET DATA -----"
-          
-          return YV::API::Response.new(api_data)
+          #return YV::API::Response.new(api_data)
+          return YV::API::Response.new(data_from_cache_or_api(cache_key(path, opts), lets_party, opts))
         end
 
 
         # Perform a POST request to YouVersion API
         # requires an appropriate API formatted path string: "users/create", "notes/update", etc
         def post(path, opts={})
-          started_at = Time.now.to_f
-          
-          opts = prepare_auth!(opts)
-          opts = clean_request_opts!(opts)
-          resource_url = get_resource_url(path, opts)
+          started_at    = Time.now.to_f
+          opts          = options_for_post(prepare_opts!(opts))
+          resource_url  = get_resource_url(path, opts)
 
-          request_opts = {
-            headers: DEFAULT_HEADERS.merge('Content-Type' => 'application/json'),
-            timeout: (opts.delete(:timeout) if opts[:timeout]),
-            body:    opts.to_json
-          }
-
-          puts "POST BODY: (#{resource_url}) -----"
-          puts request_opts[:body]
-          puts "POST END -----"
+          # puts "\nPOST BODY: (#{resource_url}) -----"
+          # puts request_opts[:body]
+          # puts "-----"
 
           begin
-            response = httparty_post(resource_url, request_opts)
+            response = httparty_post( resource_url , opts)
             
             if response.code == 205
                response = JSON.parse('{"response": {"buildtime": "", "code": 205, "complete": true}}')
@@ -113,16 +74,16 @@ module YV
             response = JSON_500
 
           rescue Timeout::Error => e
-            raise APITimeoutError, "API Timeout for #{resource_url} (waited #{((Time.now.to_f - started_at)*1000).to_i} ms)"
+            raise APITimeoutError, log_api_timeout(resource_url,started_at)
           
           rescue Exception => e
-            raise APIError, "Non-timeout API Error for #{resource_url}: #{e.class} : #{e.to_s}"
+            raise APIError, log_api_error(resource_url,e)
           end
 
-          puts "---"
-          puts response
-          puts resource_url
-          puts "----"
+          # puts "---"
+          # puts response
+          # puts resource_url
+          # puts "POST END  ---- \n"
 
           return YV::API::Response.new(response)
         end
@@ -130,11 +91,51 @@ module YV
 
         private # ------------------------------------------------------------------------------------------------
 
+        def data_from_cache_or_api(key,httparty_lambda,opts)
+          return httparty_lambda.call unless opts[:cache_for]
+          
+          # try pulling from cache 
+          Rails.cache.fetch( cache_key(path, opts) , expires_in: opts[:cache_for]) do
+            httparty_lambda.call # cache miss - we need to call to API
+          end
+        end
+
+
+        def default_headers
+          { 
+            "Referer"                   => "http://" + Cfg.api_referer,
+            "User-Agent"                => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}",  # API 3.1 requires a user agent to be set
+            "X-YouVersion-Client"       => "youversion",                                           # API 3.1 requires a youversion client header to be set: http://developers.youversion.com/api/docs/3.1/intro.html#headers
+            "X-YouVersion-App-Platform" => "web",
+            "X-YouVersion-App-Version"  => "0"
+          }
+        end
+
+        def options_for_get(opts)
+          {
+            headers: default_headers,
+            timeout: opts.delete(:timeout),
+            query:   opts.except(:cache_for)
+          }
+        end
+
+        def options_for_post(opts)
+          {
+            headers: default_headers.merge('Content-Type' => 'application/json'),
+            timeout: opts.delete(:timeout),
+            body:    opts.to_json
+          }
+        end
+
+        def prepare_opts!(opts)
+          opts = prepare_auth!(opts)
+          opts = clean_request_opts!(opts)
+        end
 
         # Filter request options to formalize, sanitize, whatever of opts
+        # we don't use the cache expiration in the cache key so we need to remove the cache_for if invalid
+        # so we don't pull from the cache when we shouldn't
         def clean_request_opts!(opts)
-          # we don't use the cache expiration in the cache key so we need to remove the cache_for if invalid
-          # so we don't pull from the cache when we shouldn't
           opts.delete :cache_for if opts[:cache_for].try(:<= , 0)
           opts[:language_tag] = YV::Conversions.to_api_lang_code(opts[:language_tag]) if opts[:language_tag]
           opts
@@ -143,12 +144,11 @@ module YV
         # prepare basic auth for HTTParty
         # expects an opts hash with username and password key/values
         def prepare_auth!(opts)
-          default_options.delete(:basic_auth) # Clear the auth state or it'll keep it around between requests
-
+          # Clear the auth state or it'll keep it around between requests
+          default_options.delete(:basic_auth)
           if auth = opts.delete(:auth)
             basic_auth(auth[:username], auth[:password])
           end
-
           opts
         end
 
@@ -206,6 +206,16 @@ module YV
           path += format unless path.match(/#{format}$/)
           return path
         end
+
+        def log_api_error(path,ex)
+          "Non-timeout API Error for #{path}: #{ex.class} : #{ex.to_s}"
+        end
+
+        def log_api_timeout(path,start)
+          "API Timeout for #{path} (waited #{((Time.now.to_f - start)*1000).to_i} ms)"
+        end
+
+
       end
 
     end
