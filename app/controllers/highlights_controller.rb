@@ -42,7 +42,7 @@ class HighlightsController < ApplicationController
   def colors
     render partial: "colors",
            layout: false,
-           locals: {colors: Highlight.colors(auth: (current_auth rescue nil)).slice(0,10)}
+           locals: {colors: Highlight.colors(auth: (current_auth rescue nil))}
   end
 
 end
