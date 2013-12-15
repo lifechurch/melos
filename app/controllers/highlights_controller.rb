@@ -1,29 +1,27 @@
-class HighlightsController < ApplicationController
+class HighlightsController < BaseMomentsController
 
-  before_filter :force_login, except: [:colors]
+  # Base moment controller abstractions
+    moment_resource "Highlight"
+    moment_comments_display false
 
-
-  # Action meant to render moment cards partial to html for ajax delivery client side
-  # Currently being used for next page calls on moments feed.
-  def _cards
-    @user = User.find(params[:user_id])
-    @moments = Highlight.all(auth: current_auth, page: @page)
-    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
-  end
+  # Filters
+    before_filter :force_login, except: [:colors]
 
   def show
     @highlight = Highlight.find(params[:id], auth: current_auth)
   end
 
+  # TODO: turn this into a json action and render the html client side.
+  # Endpoint returns a list of default colors *or* colors scoped to the current_user
+  def colors
+    render partial: "colors",
+           layout: false,
+           locals: {colors: Highlight.colors(auth: (current_auth rescue nil)).slice(0,10)}
+  end
 
-  def create
 
-    @highlight = Highlight.new(params[:highlight])
-    @highlight.auth = current_auth
-
-    result = @highlight.save
-    notice = result.valid? ? t("highlights.create success") : t("highlights.create failure")
-    redirect_to(:back, notice: notice)
+  # Kept temporarily for historical reference
+  #def create
 
     #Parameters: {"highlight"=>{"references"=>"gen.1.1.asv,gen.1.6.asv,gen.1.7.asv", "existing_ids"=>"79,98,-1", "color"=>"861eba"}}
     #references    = params[:highlight].delete(:references)
@@ -45,24 +43,6 @@ class HighlightsController < ApplicationController
     #    redirect_to :back, error: t("highlights.creation error")
     #  end
     #end
-  end
-
-  def destroy
-    @highlight = Highlight.find(params[:id], auth: current_auth)
-    redirect_to(moments_path) and return unless @highlight.user_id == current_auth.user_id
-    
-    @highlight.auth = current_auth
-    results = @highlight.destroy
-    notice = results.valid? ? t("highlights.destroy success") : t("highlights.destroy failure")
-    redirect_to(:back, notice: notice)
-  end
-
-  # TODO: turn this into a json action and render the html client side.
-  # Endpoint returns a list of default colors *or* colors scoped to the current_user
-  def colors
-    render partial: "colors",
-           layout: false,
-           locals: {colors: Highlight.colors(auth: (current_auth rescue nil))}
-  end
+  #end
 
 end

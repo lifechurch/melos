@@ -1,4 +1,9 @@
-class MomentsController < ApplicationController
+class MomentsController < BaseMomentsController
+
+  # Base moment controller abstractions
+    moment_resource "Moment"
+    moment_comments_display true
+
 
 
   before_filter :force_login
@@ -18,15 +23,5 @@ class MomentsController < ApplicationController
     moment = Moment.find(params[:id], auth: current_auth)
     redirect_to moment.path
   end
-
-
-  # Action meant to render moment cards partial to html for ajax delivery client side
-  # Currently being used for next page calls on moments feed.
-  def _cards
-    @user = current_user
-    @moments = Moment.all(auth: current_auth, page: @page)
-    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}, layout: false
-  end
-
 
 end

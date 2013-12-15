@@ -312,6 +312,7 @@ module YV
 
 
       def not_found?(errs)
+        return false if errs.nil?
         not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
         return true if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
         return false
