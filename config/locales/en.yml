@@ -454,7 +454,7 @@ en:
       blank slate:
         heading:                                  "Move along, nothing to see here (yet)"
         description:                              "Start engaging with the Bible, or your friends, and this page will display a history of what you’ve been up to."
-      visit friend:                             "Visit %{friend} profile"
+      visit friend:                             "Visit %{friend}'s profile"
       tab activity:                             "Activity"
       tab friends:                              "Friends"
       tab notes:                                "Notes"
