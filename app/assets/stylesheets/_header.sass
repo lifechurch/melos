@@ -30,7 +30,7 @@
   background-color: #232324
   border: 1px solid #232324
   font-size: 11px
-  padding: 0 10px 0 20px
+  padding: 0 20px 0 20px
   position: relative
   line-height: 50px
   height: 50px
@@ -97,9 +97,8 @@
 #header nav
   float: right
   height: 50px
-  width: 290px
+  width: 100px
   font-size: 13px
-
 
 #header nav ul,
 #header nav ol,
@@ -156,21 +155,20 @@
   height: 25px
 
 #header_profile_trigger
-  background: image-url("header_profile_arrow.png") no-repeat right center
+  //background: image-url("header_profile_arrow.png") no-repeat right center
   padding-right: 28px
 
 // `Drop-down Menu
 //----------------------------------------------------------------------------------------------------
 
 #header_profile_menu
+  width: 140px
   +border-radius(5px)
   background: #fff
   display: none
   line-height: 1
-  padding-bottom: 5px
   position: relative
   z-index: 1
-  border: 1px solid #d4d4d4
   -moz-box-shadow: 0px 0px 8px #222
   -webkit-box-shadow: 0px 0px 8px #222
   box-shadow: 0px 0px 8px #222  
@@ -184,9 +182,7 @@
   position: relative
 
 #header_profile_menu a
-  background:
-    image: image-url("header_nav_ol_a.png")
-    repeat: no-repeat
-    position: 33px center
   display: block
-  padding: 5px 0 5px 42px
+  text-align: center
+  padding: 8px
+  border-bottom: 1px solid #ddd

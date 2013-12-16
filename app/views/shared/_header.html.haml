@@ -11,16 +11,17 @@
               %span
                 %img{src: current_avatar}
                 =current_auth.username
-            %ol#header_profile_menu
-              %li
-                %a{:href => "/settings"}
-                  =t("settings")
-              %li
-                %a{:href => user_path(current_auth.username)}
-                  =t("profile")
-              %li
-                %a{:href => sign_out_path}
-                  =t("sign out")
+            #header_profile_menu
+              %ol
+                %li
+                  %a{:href => "/settings"}
+                    =t("settings")
+                %li
+                  %a{:href => user_path(current_auth.username)}
+                    =t("profile")
+                %li
+                  %a{:href => sign_out_path}
+                    =t("sign out")
 
       - else
         = cache "header_anon_#{I18n.locale}", expires_in: YV::Caching.a_short_time do

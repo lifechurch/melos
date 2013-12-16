@@ -25,17 +25,18 @@
               %a#header_profile_trigger{:href => '#'}
                 %span
                   %img{src: current_avatar}
-              %ol#header_profile_menu
-                %li
-                  %span.arrow
-                  %a{href: "/settings"}
-                    =t("settings")
-                %li
-                  %a{href: user_path(current_auth.username)}
-                    =t("profile")
-                %li
-                  %a{href: sign_out_path}
-                    =t("sign out")
+              #header_profile_menu
+                %span.arrow
+                %ol
+                  %li
+                    %a{href: "/settings"}
+                      =t("settings")
+                  %li
+                    %a{href: user_path(current_auth.username)}
+                      =t("profile")
+                  %li
+                    %a{href: sign_out_path}
+                      =t("sign out")
 
         - else
           = cache "header_anon_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
