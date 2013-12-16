@@ -12,11 +12,11 @@
     - if @friends.present?
       .friends-count
         %p.friends-count-have
-          = "You have #{@friends.count} friends"
+          = t("friends.you have N friends", count: @friends.count)
         %span.friends-count-canhave
-          You can have as many as 150
+          = t("friends.limit notice")
         %span.friends-count-help
-          Why only 150 friends? Unlike social networks, reading the Bible should lead to honest discussions with God and with friends and family who you trust the most.
+          = t("friends.limit description")
 
         - # Web doesn't have a way to find friends at the moment
         - # apps only support uploading contact lists.
@@ -27,7 +27,7 @@
 
     - else # I don't have friends
       %p.friends-none
-        Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family.
+        = t("friends.none me")
         - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
 
 - elsif Friend.with? @user, auth: current_auth # We can only
@@ -40,6 +40,7 @@
 
     - # Not friends - We don't show a users friends publicly
     %h2.friends-private
-      Hold up there, cowboy!
+      = t("friends.blank slate.heading")
     %p
-      You must be friends with this person in order to view their friends.
+      = t("friends.blank slate.description")
+      
