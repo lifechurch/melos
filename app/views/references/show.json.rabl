@@ -1,3 +1,3 @@
 object @presenter.reference
 
-attributes :human, :version_string, :content_plain
+attributes :human, :version_string, :content_plain, :to_path

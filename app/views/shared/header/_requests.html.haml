@@ -1,4 +1,4 @@
--# Friends and notification popovers
+- # handlebars templates are in /shared/js_templates
 %div.header-popover.friend-requests
   %span.arrow
   %h4
@@ -9,54 +9,3 @@
       %li
         %p.loading-indicator
           = t("ui.loading indicator text")
-
-%script#friend-requests-tmpl{type:"text/x-handlebars-template"}
-  :plain
-    <ul>
-      {{#each incoming}}
-      <li>  
-        <div class="list-item">
-          <div class="item-content">
-            <img class="round-avatar" src="{{avatars.collection.1.url}}" height="48" width="48" />
-            <p>
-              <a href="/users/{{username}}" class="text-link">{{name}}</a>
-              #{t("friendships.user wants friendship partial")}
-            </p>
-          </div>
-          <div class="item-actions">
-            
-            <form accept-charset="UTF-8" action="/friendships?user_id={{id}}" method="post">
-              <input name="utf8" type="hidden" value="✓" />
-              <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
-              <button type="submit" class="action_button_green action-add">
-                #{t("friendships.form.accept button")}
-              </button>
-            </form>
-
-            <form accept-charset="UTF-8" action="/friendships/{{id}}" method="post">
-              <input name="utf8" type="hidden" value="✓" />
-              <input name="_method" type="hidden" value="DELETE" />
-              <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
-              <button type="submit" class="action_button_grey action-add">
-                #{t("friendships.form.ignore button")}
-              </button>
-            </form>
-
-          </div>
-        </div>
-      </li>
-      {{else}}
-      <li class="list-item none">
-        <p>
-          #{t("friendships.requests none")}
-        </p>
-      </li>
-      {{/each}}
-    </ul>    
-    <div class="view-all">
-      {{#if incoming}}
-        #{link_to(t("friendships.requests view all"),"/friendships/requests", class:"text-link wide" )}
-      {{else}}
-        <span class="text-wide">#{t("friendships.requests no new")}</span>
-      {{/if}}
-    </div>

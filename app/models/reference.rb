@@ -250,6 +250,10 @@ class Reference < YV::Resource
     "#{_ref}.#{_ver}".downcase
   end
 
+  def to_path
+    "/bible/#{version}/#{usfm.downcase}.#{version_string.downcase}"
+  end
+
 
   def [](arg)
     return self.try(arg.to_sym)

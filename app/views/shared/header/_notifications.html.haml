@@ -1,3 +1,4 @@
+- # handlebars templates are in /shared/js_templates
 %div.header-popover.notifications
   %span.arrow
   %h4
@@ -8,26 +9,3 @@
       %li.notifications-item
         %p.loading-indicator
           = t("ui.loading indicator text")
-
-%script#notifications-tmpl{type:"text/x-handlebars-template"}
-  :plain
-    <ul class="notifications-list">
-      {{#each notifications}}
-      <li class="notifications-item">
-        <a href="{{attributes.action_url}}">
-          <p>{{attributes.moment_title}}</p>
-        </a>
-      </li>
-      {{else}}
-      <li class="notifications-item notifications-empty">
-        <p>#{t("notifications.none")}</p>
-      </li>
-      {{/each}}
-    </ul>
-    <div class="view-all">
-      {{#if notifications}}
-        #{link_to(t("notifications.view all"),"/notifications", class:"text-link wide" )}
-      {{else}}
-        <span class="text-wide">#{t("notifications.no new")}</span>
-      {{/if}}
-    </div>    

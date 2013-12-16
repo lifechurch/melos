@@ -316,7 +316,8 @@ body.transition .moment
   overflow: hidden
 
 .moment-verse
-  font: 18px "times new roman", times, serif
+  font: 20px "times new roman", times, serif
+  letter-spacing: -.035em
   margin: 4px 0
   padding: 10px 15px
   clear: both
@@ -326,7 +327,17 @@ body.transition .moment
   .verse > .label
     display: none !important
 
-.moment-verse-links
+// To match App styling of verse links on Home feed embedded in cards
+.moment-verse-link
+  color: #999
+  font-size: 12px
+  font-family: "helvetica neue", sans-serif
+  text-decoration: underline
+  text-transform: uppercase
+  display: block
+  margin-top: .5em
+
+.moment-vod-links
   padding: 1px 7px
   background-color: #0084C8
   text-decoration: none
@@ -374,8 +385,8 @@ body.transition .moment
   width: 300px
 
 .moment-vod-verse
-  font: 24px "times new roman", times, serif
-  letter-spacing: -.05em
+  font: 20px "times new roman", times, serif
+  letter-spacing: -.035em
   margin: 0 0 15px
   background-color: #F5F4F3
   +border-radius(5px)

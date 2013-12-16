@@ -175,6 +175,7 @@ en:
       friends text:                             "See your friends’ moments in the Bible."
       friends button:                           "Find friends"
     action:
+      go to scripture:                          "Go to scripture"
       load more:                                "Load more"
       like:                                     "Like"
       like title:                               "Like this"
