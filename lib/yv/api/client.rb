@@ -59,7 +59,7 @@ module YV
           resource_url  = get_resource_url(path, opts)
 
           # puts "\nPOST BODY: (#{resource_url}) -----"
-          # puts request_opts[:body]
+          # puts opts[:body]
           # puts "-----"
 
           begin

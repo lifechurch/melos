@@ -232,8 +232,8 @@ class Subscription < Plan
     # Get the list of completed references to send back to the API
     # (all others will be marked as not-complete)
     completed_refs = ReferenceList.new
-    reading(day).references.each do |r_mash| 
-      completed_refs << Reference.new(r_mash.ref, version: nil) if r_mash.completed?
+    reading(day).api_references.each do |r_mash| 
+      completed_refs << Reference.new(r_mash.reference, version: nil) if r_mash.completed?
     end
 
     #adjust the ref_list based on the new completion state for the ref
@@ -325,7 +325,7 @@ class Subscription < Plan
 
   def reading(day, opts = {})
     # Important: don't allow caching for this authed responses since completion needs to change
-    super(day, opts.merge!({cache_for: 0, auth: auth, user_id: user_id}))
+    super(day, opts.merge!({cache_for: 0, auth: auth, user_id: user_id})) # TODO: can we use auth.user_id instead of getting it from @user (that means we don't have to set @user on subscription)
   end
 
   def day(day, opts = {})
@@ -358,28 +358,28 @@ class Subscription < Plan
   end
 
 
-  def update_accountability_partners
-    @partners = Subscriptions::Partner.all(
-      id: id,
-      page: 1,
-      auth: auth,
-      user_id: user_id
-    )
-  end
+  # def update_accountability_partners
+  #   @partners = Subscriptions::Partner.all(
+  #     id: id,
+  #     page: 1,
+  #     auth: auth,
+  #     user_id: user_id
+  #   )
+  # end
 
 
-  def update_accountability(user, params={})
-    opts = {auth: auth, id: id, user_id: user.id}
+  # def update_accountability(user, params={})
+  #   opts = {auth: auth, id: id, user_id: user.id}
 
-    results = case params[:action]
-      when "add"    then Subscriptions::Partner.add(opts)
-      when "delete" then Subscriptions::Partner.delete(opts)
-    end
+  #   results = case params[:action]
+  #     when "add"    then Subscriptions::Partner.add(opts)
+  #     when "delete" then Subscriptions::Partner.delete(opts)
+  #   end
 
-    @partners = nil if results.valid? # flush cached @partners now that we've made changes
+  #   @partners = nil if results.valid? # flush cached @partners now that we've made changes
 
-    return results
-  end
+  #   return results
+  # end
 
 
 

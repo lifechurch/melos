@@ -202,7 +202,7 @@ en:
     you have N friends:                         "You have %{count} friends"
     none me:                                    "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
     blank slate:
-      heading:                                  "Hold up there, cowboy!"
+      heading:                                  "Not currently friends"
       description:                              "You must be friends with this person in order to view their friends."
     limit notice:                               "You can have as many as 150 friends"
     limit description:                          "Limiting your Bible App friendships to people you know well creates an environment for honest conversations and shared discoveries with trusted friends."

@@ -98,7 +98,7 @@ class Plan < YV::Resource
   def reading(day, opts = {})
     key = day.to_s.to_sym
     return @readings.fetch(key) if @readings.has_key?(key)
-    reading = Plans::Reading.find({id: self.id, day: day})
+    reading = Plans::Reading.find({id: self.id, day: day}.merge(opts))
     @readings.store(key, reading)
     return reading
   end
