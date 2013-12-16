@@ -8,6 +8,8 @@ module YV
           private
 
           def from_all(results)
+            return results
+            return results if results.blank? # return if results are empty array
             results.users.collect do |user_data|
               map_to_instance(::Subscriptions::Partner.new,user_data)
             end

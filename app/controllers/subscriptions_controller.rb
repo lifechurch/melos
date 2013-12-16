@@ -116,6 +116,10 @@ class SubscriptionsController < ApplicationController
     # render 404 if day param is present and is not a valid day for the subscription
     day_param = params[:day]
     return render "pages/error_404" if day_param && !(1..@subscription.total_days).include?(day_param.to_i)
+
+    # Set appropriate auth/user on subscription - TODO handle this in a cleaner way
+    @subscription.auth = current_auth
+    @subscription.user = current_user
   end
 
   def subscription_for( plan_id )

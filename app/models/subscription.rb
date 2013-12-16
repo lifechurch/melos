@@ -4,6 +4,7 @@ class Subscription < Plan
 
 
   # Inherits all plan attributes
+  attribute :auth
   attribute :user_id
   attribute :user_name
   attribute :user_avatar_url

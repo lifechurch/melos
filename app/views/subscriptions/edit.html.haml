@@ -76,32 +76,6 @@
         %h3= t("plans.privacy title")
         %p= t("plans.privacy description")
 
-    %li#accountability-settings
-      %a{name: "accountability"}
-      %div.wrapper
-        %div.controls
-          = form_tag(user_subscription_path(current_user, subscription), method: :put) do
-            %input{type: "hidden", name: "send_report", value: (subscription.accountability_partners.empty?).to_s}
-            %input{type: "checkbox", onChange: "this.form.submit()", id: "report_box",  checked: subscription.accountability_partners.empty? ? nil : "checked"}
-            %label{for: "report_box"}= t("plans.email weekly report to a friend", email_address: subscription.user.email)
-        %div.info
-          %h3= t("plans.accountability")
-
-      - if !subscription.accountability_partners.empty?
-        %div.partners
-          = form_tag(user_subscription_path(current_user, subscription), method: :put) do
-            %input{name: "add_accountability_partner",id: "add_accountability_partner", type: 'search', placeholder: t("plans.add members placeholder")}
-            %input{type: 'submit', value: t("plans.add member")}
-
-          %ul
-            -subscription.accountability_partners.each do|user_mash|
-              %li.user
-                - user = User.find(user_mash.id)
-                %img.avatar_large{src: user.user_avatar_url["px_48x48"]}
-                %span
-                  =link_to(user.username == current_user.username ? t("myself") : user.username, @user)
-                  =link_to("x", user_subscription_path(current_user, subscription,remove_accountability_partner: user.username),method: :put) if subscription.accountability_partners.count > 1
-
     %li#unsubscribe
       = button_to(t('plans.stop reading'),user_subscription_path(current_user,subscription), method: :delete, id: "subscription-destroy", class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"))
 
