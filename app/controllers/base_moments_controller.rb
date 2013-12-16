@@ -6,18 +6,34 @@ class BaseMomentsController < ApplicationController
 
   before_filter :find_resource, only: [:edit,:update,:destroy]
 
+  # Abstractions for moments related controllers.  Simplifies much of the controllers
+  # Subclasses: BookmarksController, HighlightsController, NotesController
+  
+  class << self
+
+    attr_reader :moment_resource_class
+    attr_reader :moment_comments_displayed
+
+    def moment_resource(klass)
+      @moment_resource_class = klass.constantize
+    end
+
+    def moment_comments_display(bool)
+      @moment_comments_displayed = bool
+    end
+  end
 
   # Action renders cards partial for the returned moments
   def _cards
     # If our user_id param is present, use that to find user, otherwise assume current user
     @user = params[:user_id].present? ? User.find(params[:user_id]) : current_user
-    @moments = @@moment_resource_class.all(auth: current_auth, page: @page)
-    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: @@moment_comments_display}, layout: false
+    @moments = moment_resource.all(auth: current_auth, page: @page)
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: self.class.moment_comments_displayed}, layout: false
   end
 
 
   def create
-    @resource = @@moment_resource_class.new(params[lower_resource_name.to_sym])
+    @resource = moment_resource.new(params[lower_resource_name.to_sym])
     @resource.auth = current_auth
 
     result = @resource.save
@@ -44,21 +60,17 @@ class BaseMomentsController < ApplicationController
   private
 
   def find_resource
-    @resource = @@moment_resource_class.find(params[:id], auth: current_auth)
+    @resource = moment_resource.find(params[:id], auth: current_auth)
     redirect_to(moments_path) and return unless @resource.user_id == current_auth.user_id
     @resource.auth = current_auth
   end
 
+  def moment_resource
+    self.class.moment_resource_class
+  end
+
   def lower_resource_name
-    @@moment_resource_class.to_s.downcase # Highight -> highlight, Bookmark -> bookmark
-  end
-
-  def self.moment_resource(klass)
-    @@moment_resource_class = klass.constantize
-  end
-
-  def self.moment_comments_display(bool)
-    @@moment_comments_display = bool
+    self.class.moment_resource_class.to_s.downcase # Highight -> highlight, Bookmark -> bookmark
   end
 
 end

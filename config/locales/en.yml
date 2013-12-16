@@ -270,6 +270,8 @@ en:
     cancel:                                     "Cancel"
     pop out:                                    "Pop out"
     none found:                                 "No notes found..."
+    create success:                             "Note saved"
+    create failure:                             "Error saving note"
     destroy success:                            "Note deleted"
     destroy failure:                            "Error deleting note"
   ref:
