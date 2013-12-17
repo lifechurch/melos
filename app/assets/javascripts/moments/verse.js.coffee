@@ -18,7 +18,7 @@ class window.Moments.Verse
 
     request.done (data) =>
       template = Handlebars.compile(@template.html())
-      @el.html(template(data))
+      @el.parent().html(template(data))
       @el.removeClass("empty").addClass("loaded")
       $('.social-feed').trigger('refreshWookmark')
       return
