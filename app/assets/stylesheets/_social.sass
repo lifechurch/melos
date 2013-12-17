@@ -271,8 +271,17 @@ body.transition .moment
   position: relative
   padding: 15px
   overflow: hidden
-  background: #fff
   +border-radius(4px 4px 0 0)
+  background-color: #fff
+
+.moment-icon
+  display: block
+  position: absolute
+  top: 0
+  right: 0
+  height: 52px
+  width: 52px
+  background: image-url("moment-icon-sprite.png") no-repeat
 
 // !Bookmark, reading plan, download, and group moments -- they share the same layout
 
@@ -352,7 +361,9 @@ body.transition .moment
 // !Verse of the day moment
 
 .moment-vod
-  background: #fff image-url("social-cap-vod.png") no-repeat top right
+
+  .moment-icon
+    background-position: 0 0
 
 .moment-vod .moment-time
   padding-top: 8px
@@ -421,7 +432,9 @@ body.transition .moment
 
 .moment-no
   padding-bottom: 0
-  background: #fff image-url("social-cap-no.png") no-repeat top right
+
+  .moment-icon
+    background-position: -312px 0
 
 .moment-no-note
   clear: both
@@ -434,7 +447,7 @@ body.transition .moment
   font-size: 13px
 
 .moment-no-note-title
-  background: image-url("moment-no-note-title-bg.png") repeat-y left top
+  background-position: 0 0
   font:
     weight: bold
   padding: 7px 15px 8px 40px
@@ -451,7 +464,9 @@ body.transition .moment
 // !Video moment
 
 .moment-vid
-  background: #fff image-url("social-cap-vid.png") no-repeat top right
+
+  .moment-icon
+    background-position: -468px 0
 
 .moment-vid-info
   display: block
@@ -482,7 +497,9 @@ body.transition .moment
 // !Badge moment
 
 .moment-bdg
-  background: #fff image-url("social-cap-bdg.png") no-repeat top right
+
+  .moment-icon
+    background-position: -52px 0
 
 .moment-bdg-info
   display: block
@@ -505,7 +522,9 @@ body.transition .moment
 // !Friends moment
 
 .moment-fr
-  background: #fff image-url("social-cap-fr.png") no-repeat top right
+
+  .moment-icon
+    background-position: -208px 0
 
 .moment-fr-container
   position: relative
@@ -543,37 +562,49 @@ body.transition .moment
 // !Bookmark moment
 
 .moment-bm
-  background: #fff image-url("social-cap-bm.png") no-repeat top right
+
+  .moment-icon
+    background-position: -104px 0
 
 
 // !Highlight moment
 
 .moment-hi
-  background: #fff image-url("social-cap-hi.png") no-repeat top right
+
+  .moment-icon
+    background-position: -260px 0
 
 
 // !Reading plan moment
 
 .moment-rp
-  background: #fff image-url("social-cap-rp.png") no-repeat top right
+
+  .moment-icon
+    background-position: -364px 0
 
 
 // !Group moment
 
 .moment-grp
-  background: #fff image-url("social-cap-grp.png") no-repeat top right
+
+  .moment-icon
+    background-position: -208px 0
 
 
 // !Download moment
 
 .moment-dl
-  background: #fff image-url("social-cap-dl.png") no-repeat top right
+
+  .moment-icon
+    background-position: -156px 0
 
 
 // !System moment
 
 .moment-sys
-  background: #fff image-url("social-cap-sys.png") no-repeat top right
+
+  .moment-icon
+    background-position: -416px 0
 
 
 // !PSA moment

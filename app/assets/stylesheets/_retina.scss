@@ -267,65 +267,66 @@ only screen and (                min-resolution: 2dppx) {
     background-size: 48px 48px;
   }
 
+  .moment-hi .moment-icon,
+  .moment-bm .moment-icon,
+  .moment-rp .moment-icon,
+  .moment-grp .moment-icon,
+  .moment-dl .moment-icon,
+  .moment-bdg .moment-icon,
+  .moment-vid .moment-icon,
+  .moment-no .moment-icon,
+  .moment-vod .moment-icon,
+  .moment-sys .moment-icon,
+  .moment-fr .moment-icon {
+    background: image-url("moment-icon-sprite@2x.png") no-repeat;
+    background-size: 520px 52px;
+  }
+
 
  // !Moments
 
-  .moment-hi {
-    background: #fff image-url("social-cap-hi@2x.png") no-repeat top right;
+  .moment-hi .moment-icon {
+    background-position: -259px 0;
   }
 
-  .moment-bm {
-    background: #fff image-url("social-cap-bm@2x.png") no-repeat top right;
+  .moment-bm .moment-icon {
+    background-position: -102px 0;
   }
 
-  .moment-rp {
-    background: #fff image-url("social-cap-rp@2x.png") no-repeat top right;
+  .moment-rp .moment-icon {
+    background-position: -363px 0;
   }
 
-  .moment-grp {
-    background: #fff image-url("social-cap-grp@2x.png") no-repeat top right;
+  .moment-grp .moment-icon {
+    background-position: -207px 0;
   }
 
-  .moment-dl {
-    background: #fff image-url("social-cap-dl@2x.png") no-repeat top right;
+  .moment-dl .moment-icon {
+    background-position: -155px 0;
   }
 
-  .moment-bdg {
-    background: #fff image-url("social-cap-bdg@2x.png") no-repeat top right;
+  .moment-bdg .moment-icon {
+    background-position: 51px 0;
   }
 
-  .moment-vid {
-    background: #fff image-url("social-cap-vid@2x.png") no-repeat top right;
+  .moment-vid .moment-icon {
+    background-position: -467px 0;
   }
 
-  .moment-no {
-    background: #fff image-url("social-cap-no@2x.png") no-repeat top right;
+  .moment-no .moment-icon {
+    background-position: -311px 0;
   }
 
-  .moment-vod {
-    background: #fff image-url("social-cap-vod@2x.png") no-repeat top right;
+  .moment-vod .moment-icon {
+    background-position: 3px 0;
   }
 
-  .moment-sys {
-    background: #fff image-url("social-cap-sys@2x.png") no-repeat top right;
+  .moment-sys .moment-icon {
+    background-position: -415px 0;
   }
 
-  .moment-fr {
-    background: #fff image-url("social-cap-fr@2x.png") no-repeat top right;
-  }
-
-  .moment-hi,
-  .moment-bm,
-  .moment-rp,
-  .moment-grp,
-  .moment-dl,
-  .moment-bdg,
-  .moment-vid,
-  .moment-no,
-  .moment-vod,
-  .moment-sys,
-  .moment-fr {
-    background-size: 52px 52px;
+  .moment-fr .moment-icon {
+    background-position: -207px 0;
   }
 
 
