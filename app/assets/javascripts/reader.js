@@ -682,42 +682,47 @@ Reader.prototype = {
   },
 
   ajaxSecondaryVersion : function() {
+
     if (this.secondary_loaded) { return; }
 
-    var version_elem = $('#version_secondary');
-    var v_id = getCookie('alt_version') || 1;
-    var usfm = version_elem.attr('data-usfm');
-    var thiss = this;
+    var target  = $('#version_secondary');
+    var v_id    = getCookie('alt_version') || 1;
+    var usfm    = target.attr('data-usfm');
+    var _this   = this;
 
     // Apply locale to our ajax urls to avoid 302 to correct locale'd url.
     var locale = "";
     var html_locale = $('html').data("locale");
     if(html_locale != "en") { locale = "/" + html_locale; }
-
+    var request_url = locale + "/bible/" + v_id + "/" + usfm + ".json";
 
     $.ajax({
-        url: locale + "/bible/" + v_id + "/" + usfm + ".json",
         method: "get",
         dataType: "json",
+        url: request_url,
+        
         success: function(ref) {
-          if (thiss.isParallel() == 'true'){
+          var content = ref.content_plain;
+
+          if (_this.isParallel() == 'true'){
             //fade in/out adds in-line style that will bork our css styling
-            var origStyle = version_elem.attr('style') || '';
-            version_elem.fadeOut(100, function() {
-              version_elem.html(ref.content);
-              version_elem.fadeIn(200);
-              version_elem.attr('style', origStyle);
-              thiss.loadHighlights("#version_secondary");
+            var orig_style = target.attr('style') || '';
+            target.fadeOut(100, function() {
+              target.html(content);
+              target.fadeIn(200);
+              target.attr('style', orig_style);
+              _this.loadHighlights("#version_secondary");
             });
-          }else{
-            version_elem.html(ref.content);
-            thiss.loadHighlights("#version_secondary");
           }
-          thiss.secondary_loaded = true;
+          else{
+            target.html(content);
+            _this.loadHighlights("#version_secondary");
+          }
+          _this.secondary_loaded = true;
         },//end success function
         error: function(xhr, status, err) {
           // set HTML to error HTML
-          version_elem.html("<h1>Error Loading Secondary Version</h1>\
+          target.html("<h1>Error Loading Secondary Version</h1>\
                             <p>You might try <a href=''>reloading</a>. \
                             Still having trouble? Contact our \
                             <a href='http://support.youversion.com' \
