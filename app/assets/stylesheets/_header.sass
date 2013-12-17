@@ -43,7 +43,7 @@
   height: 50px
   position: absolute
   top: 0
-  right: 128px
+  right: 300px
 
 #header_search_input,
 #header_search_button
@@ -97,7 +97,6 @@
 #header nav
   float: right
   height: 50px
-  width: 100px
   font-size: 13px
 
 #header nav ul,
@@ -115,7 +114,6 @@
   margin-top: 9px
   padding-top: 1px
   height: 31px
-  width: 120px
 
 #header nav ul > li:first-child
   margin-left: 20px
@@ -141,12 +139,15 @@
 #header nav ul > li > a
   display: block
   overflow: hidden
-  max-width: 120px
+  max-width: 230px
   text-overflow: ellipsis
   white-space: nowrap
+  color: #d4d4d4
+  text-decoration: none
+  font-weight: normal
 
 #header nav .sign_in
-  padding: 10px
+  padding: 0 10px
 
 #header_profile_trigger img
   +border-radius(25px)
@@ -156,7 +157,7 @@
 
 #header_profile_trigger
   //background: image-url("header_profile_arrow.png") no-repeat right center
-  padding-right: 28px
+  text-align: right
 
 // `Drop-down Menu
 //----------------------------------------------------------------------------------------------------
@@ -186,3 +187,6 @@
   text-align: center
   padding: 8px
   border-bottom: 1px solid #ddd
+
+#header_profile_menu li:last-child a
+  border-bottom: none  

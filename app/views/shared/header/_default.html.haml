@@ -18,32 +18,32 @@
 
     -# Sign in and user id
     %nav.sign_in
-      %ul
-        - if current_auth
-          = cache "header_#{current_auth.username}_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
-            %li
-              %a#header_profile_trigger{:href => '#'}
-                %span
-                  %img{src: current_avatar}
-              #header_profile_menu
-                %span.arrow
-                %ol
-                  %li
-                    %a{href: "/settings"}
-                      =t("settings")
-                  %li
-                    %a{href: user_path(current_auth.username)}
-                      =t("profile")
-                  %li
-                    %a{href: sign_out_path}
-                      =t("sign out")
+      - if current_auth
+        %ul
+          %li
+            %a#header_profile_trigger{:href => '#'}
+              %span
+                %img{src: current_avatar}
+                =current_auth.username
+            #header_profile_menu
+              %span.arrow
+              %ol
+                %li
+                  %a{href: "/settings"}
+                    =t("settings")
+                %li
+                  %a{href: user_path(current_auth.username)}
+                    =t("profile")
+                %li
+                  %a{href: sign_out_path}
+                    =t("sign out")
 
-        - else
-          = cache "header_anon_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
-            %li
-              %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
-            %li
-              %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign_in"
+      - else
+        %ul
+          %li
+            = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
+          %li
+            = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign_in"
 
     .mobile
       - if content_for? :mobile_left_nav
