@@ -9,10 +9,13 @@
 %article
   = render partial: "users/mobile_menu", locals: {selected: :account}
 
+  %h1
+    Delete account
+
   %p= t('users.delete account description')
   = form_tag user_path(@user), method: :delete do
     = render partial: "shared/form_errors", locals: {errors: @user.errors}
-    
+
     %p
       = label_tag :password, t("password prompt")
       %br

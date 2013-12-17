@@ -9,6 +9,9 @@
 %article
   = render partial: "users/mobile_menu", locals: {selected: :notifications}
 
+  %h1
+    Manage notifications
+
   = form_tag update_notifications_user_path( current_user || params[:id] ,token: params[:token]), method: :put do |n|
     - unless @settings.errors.blank?
       .form_errors
@@ -28,9 +31,9 @@
         "partners"      => t('users.notifications.publishing partners')
       }
 
-    %ul.notification-settings-group
+    .notification-settings-group
       - settings.each do |type,info|
-        %li.settings-group-item
+        .settings-group-item
           = render partial: "notification_settings_group", locals: {type: type, info: info}
 
     %div

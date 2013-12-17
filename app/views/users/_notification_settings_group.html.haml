@@ -1,8 +1,9 @@
-%div
-  %p= info
-  
+%p= info
+
+%span.settings-group-email
   = check_box_tag "settings[#{type.to_s}][email]", "1", @settings.notification_settings.send(type.to_sym).email
   = label_tag "settings[#{type.to_s}][email]", "Email"
 
+%span.settings-group-mobile
   = check_box_tag "settings[#{type.to_s}][push]", "1", @settings.notification_settings.send(type.to_sym).push
   = label_tag "settings[#{type.to_s}][push]", "Mobile"
