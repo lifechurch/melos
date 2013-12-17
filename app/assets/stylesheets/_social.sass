@@ -147,7 +147,7 @@ body.transition .moment
 .moment-time
   padding: 17px 0 5px 11px
   font-size: 11px
-  width: auto
+  width: 300px
 
 // !Comments attached to a moment
 
@@ -296,15 +296,16 @@ body.transition .moment
   .moment-vid-text,
   .moment-sys-text,
   .moment-fr-text
+    float: left
+    width: 300px
+    margin-bottom: 15px
+
     a
       font:
         size: 16px
         weight: normal
       line-height: 1.1em
-      float: left
-      width: 300px
       padding: 5px 0 0 10px
-      margin-bottom: 15px
       color: #444
 
       b
@@ -451,8 +452,8 @@ body.transition .moment
   .moment-icon
     background-position: -312px 0
 
-#main .moment-no-text a
-  font-weight: bold
+#main .moment-no-text b
+  display: none
 
 .moment-no-note
   clear: both
@@ -464,12 +465,13 @@ body.transition .moment
   font-size: 13px
 
 .moment-no-note-title
-  background-position: 0 0
+  background: image-url("moment-no-note-title-bg.png") repeat-y left top
   font:
     weight: bold
   padding: 7px 15px 8px 40px
   margin-bottom: 0
-  line-height: 1.3em
+  line-height: 1.15em
+  font-size: 1.3em
 
 .moment-no-note-text
   background: image-url("moment-no-note-text-bg.png") repeat-y left top
@@ -729,6 +731,12 @@ body.transition .moment
 
   .moment-no
     padding: 10px 0 20px 25px
+
+    .moment-time
+      padding: 17px 0 5px 0
+
+    .moment-no-refs
+      margin: 40px 0 0
 
     .moment-avatar,
     .moment-no-text
