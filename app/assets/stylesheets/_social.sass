@@ -285,26 +285,34 @@ body.transition .moment
 
 // !Bookmark, reading plan, download, and group moments -- they share the same layout
 
-.moment-hi-text,
-.moment-bm-text,
-.moment-rp-text,
-.moment-grp-text,
-.moment-dl-text,
-.moment-no-text,
-.moment-bdg-text,
-.moment-vid-text,
-.moment-sys-text,
-.moment-fr-text
-  font-size: 16px !important
-  line-height: 1.1em  !important
-  float: left
-  width: 300px
-  padding: 5px 0 0 10px
-  margin-bottom: 15px
+#main
+  .moment-hi-text,
+  .moment-bm-text,
+  .moment-rp-text,
+  .moment-grp-text,
+  .moment-dl-text,
+  .moment-no-text,
+  .moment-bdg-text,
+  .moment-vid-text,
+  .moment-sys-text,
+  .moment-fr-text
+    a
+      font:
+        size: 16px
+        weight: normal
+      line-height: 1.1em
+      float: left
+      width: 300px
+      padding: 5px 0 0 10px
+      margin-bottom: 15px
+      color: #444
 
-.moment-dl-text
-  b
-    display: block
+      b
+        color: #0084c8
+
+  .moment-dl-text
+    b
+      display: block
 
 
 // System moment overrides
@@ -336,7 +344,9 @@ body.transition .moment
   .verse > .label
     display: none !important
 
+
 // To match App styling of verse links on Home feed embedded in cards
+
 .moment-verse-link
   color: #999
   font-size: 12px
@@ -357,6 +367,11 @@ body.transition .moment
   margin: 0 20px 0 0
   +border-radius(4px)
   float: left
+
+.moment-vod-links:hover
+  color: #fff
+  background-color: #16b0ff
+
 
 // !Verse of the day moment
 
@@ -436,11 +451,13 @@ body.transition .moment
   .moment-icon
     background-position: -312px 0
 
+#main .moment-no-text a
+  font-weight: bold
+
 .moment-no-note
   clear: both
   display: block
-  margin-left: 65px
-  margin-top: 70px
+  margin: 20px 0 0 65px
   background: #FEF7DC
   border: 1px solid #F5E5B0
   border-bottom: 0
@@ -459,6 +476,27 @@ body.transition .moment
   line-height: 1.36em
   padding: 1px 15px 10px 40px
   margin-bottom: 0
+
+.moment-no-refs
+  overflow: hidden
+  clear: both
+  margin: 0 0 0 65px
+
+.moment-no-refs-link
+  padding: 1px 7px 3px
+  background-color: #bbb
+  text-decoration: none
+  font-weight: bold
+  color: #fff
+  font-size: 11px
+  display: block
+  margin: 0 4px 4px 0
+  +border-radius(4px)
+  float: left
+
+.moment-no-refs-link:hover
+  color: #fff
+  background-color: #aaa
 
 
 // !Video moment
@@ -530,6 +568,17 @@ body.transition .moment
   position: relative
   overflow: hidden
   clear: both
+
+#main .moment-fr-text
+  font:
+    size: 16px
+    weight: normal
+  line-height: 1.1em
+  float: left
+  width: 300px
+  padding: 5px 0 0 10px
+  margin-bottom: 15px
+  color: #444
 
 .moment-fr-text b
   display: none
@@ -731,7 +780,3 @@ body.transition .moment
   textarea
     margin-bottom: 10px
     height: 200px
-
-
-.moment-title-link b
-  color: #222

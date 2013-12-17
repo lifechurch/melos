@@ -97,18 +97,21 @@
 
 
 // !Bookmark, reading plan, download, and group moments -- they share the same layout
-.moment-hi-text,
-.moment-bm-text,
-.moment-rp-text,
-.moment-grp-text,
-.moment-dl-text,
-.moment-no-text,
-.moment-bdg-text,
-.moment-vid-text,
-.moment-sys-text,
-.moment-fr-text
-  width: 70%
-  line-height: 1.3em
+
+#main
+  .moment-hi-text,
+  .moment-bm-text,
+  .moment-rp-text,
+  .moment-grp-text,
+  .moment-dl-text,
+  .moment-no-text,
+  .moment-bdg-text,
+  .moment-vid-text,
+  .moment-sys-text,
+  .moment-fr-text
+    a
+      width: 70%
+      line-height: 1.3em
 
 // !Bookmark moment
 
@@ -134,9 +137,13 @@
 
 // !Note moment
 
+#main article .moment-no-refs,
+.moment-no-refs
+  margin: 70px 0 0
+
 #main article .moment-no-note,
 .moment-no-note
-  margin: 65px 0 0 0
+  margin: 15px 0 0
 
 #main article .moment-no-note-title,
 #main article .moment-no-note-text
@@ -191,6 +198,9 @@
 
 .moment-fr-avatar
   margin: 0 0 0 20px
+
+#main .moment-fr-text
+  width: 70%
 
 
 // !------------------------ Detail page -------------------------

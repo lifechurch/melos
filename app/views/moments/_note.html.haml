@@ -15,6 +15,18 @@
         - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title : moment.moment_title.html_safe
         = link_to(anchor_text, moment.to_path, class: "moment-title-link")
 
+      .moment-no-refs
+        %a{href: "#", class: "moment-no-refs-link"}
+          John 3:16
+        %a{href: "#", class: "moment-no-refs-link"}
+          John 3:23
+        %a{href: "#", class: "moment-no-refs-link"}
+          Song of Solomon 3:16
+        %a{href: "#", class: "moment-no-refs-link"}
+          Acts 1:1
+        %a{href: "#", class: "moment-no-refs-link"}
+          John 2:16
+
       .moment-no-note
         %p.moment-no-note-title
           = moment.title
