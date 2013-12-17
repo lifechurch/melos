@@ -1,3 +1,7 @@
+:ruby
+  # Locals Parameters
+  # moment - a single Moment to display  (Bookmark, Highlight, Note)
+
 = form_tag(comments_url, method: "post") do
   = hidden_field_tag "comment[moment_id]", moment.id
   
