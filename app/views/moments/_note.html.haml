@@ -3,6 +3,8 @@
   # moment - a single Moment to display  (Bookmark, Highlight, Note)
   # comments_displayed - boolean, true or false (whether or not to display comments when rendering html)
 
+  detail_view = false unless local_assigns.has_key? :detail_view
+
   avatars = moment.avatars
   avatar = avatars.lg_avatar
 
@@ -20,7 +22,7 @@
         - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title : moment.moment_title.html_safe
         = link_to(anchor_text, moment.to_path, class: "moment-title-link")
 
-      - unless moment.references.blank?
+      - if detail_view and moment.references.present?
         .moment-no-refs
           - moment.references.each do |ref_hash|  #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
             = link_to(ref_hash.human, reference_path(version: ref_hash.version_id, reference: ref_hash.usfm.sort.join("+")), class: "moment-no-refs-link")
