@@ -7,7 +7,7 @@ module ApplicationHelper
 
 
   def usfm_from_moment(references)
-    references.usfm.join("+")
+    references.usfm.sort.join("+")
   end
 
   def available_locales

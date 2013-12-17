@@ -46,8 +46,15 @@ module YV
             end
           end
 
-          #return YV::API::Response.new(api_data)
-          return YV::API::Response.new(data_from_cache_or_api(cache_key(path, opts), lets_party, opts))
+          
+          response = data_from_cache_or_api(cache_key(path, opts), lets_party, opts)
+
+          # puts "---"
+          # puts response
+          # puts resource_url
+          # puts "GET END  ---- \n"
+
+          return YV::API::Response.new(response)
         end
 
 
