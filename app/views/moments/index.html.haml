@@ -9,4 +9,5 @@
     = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
 
 
-= render partial: "shared/moments_load_more", locals: {resource: "moments"}
+- if @moments.next_page
+  = render partial: "shared/moments_load_more", locals: {resource: "moments"}

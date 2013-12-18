@@ -7,7 +7,8 @@
     .social-feed
       = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}
 
-  = render partial: "shared/moments_load_more", locals: {resource: "users", url_params: ["user_id=#{@user.username}"]}
+  - if @moments.next_page
+    = render partial: "shared/moments_load_more", locals: {resource: "users", url_params: ["user_id=#{@user.username}"]}
 
 - else
   .profile-blank-slate.slate-activity

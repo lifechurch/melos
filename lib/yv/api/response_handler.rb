@@ -18,7 +18,8 @@ module YV
 
         if code.nil? || code.to_i >= 400
            errors = process_errors(response.errors)
-           error_check( errors )
+           # Processes errors returned by the API.
+           raise UnverifiedAccountError if errors.detect { |e| e.key =~ /users.hash.not_verified/ }
         end
 
         code = code.to_i
@@ -41,17 +42,9 @@ module YV
         response_errors.map {|err| YV::API::Error.new(err)}
       end
 
-      # Processes errors returned by the API.
-      def error_check( errors_array )
-        # Check if it's bad/expired auth and raise an exception
-        if errors_array.detect { |e| e.key =~ /users.hash.not_verified/ }
-          raise UnverifiedAccountError
-        end
-      end
-
-
       # Build a Mash object with data returned from the API
       def build_data_object( response_data )
+
         case response_data
           when Array
             if response_data.first.respond_to?(:each_pair)

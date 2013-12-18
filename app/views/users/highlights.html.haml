@@ -8,8 +8,9 @@
   .social-feed-wrap
     .social-feed
       = render partial: "moments/cards", locals: {moments: @highlights, comments_displayed: false}
-
-  = render partial: "shared/moments_load_more", locals: {resource: "highlights", url_params: ["user_id=#{@user.username}"]}
+  - if @highlights.next_page
+    = render partial: "shared/moments_load_more", locals: {resource: "highlights", url_params: ["user_id=#{@user.username}"]}
+    
 - else
   .profile-blank-slate.slate-highlights
     - if current_user_is? @user
