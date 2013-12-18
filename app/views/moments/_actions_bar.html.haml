@@ -17,5 +17,7 @@
   - if moment.user_id == current_auth.user_id
 
     .moment-content-actions
-      = link_to( t("moments.action.edit"), "#{moment.to_path}/edit", class: "moment-content-actions-edit", title: t("moments.action.edit #{moment.kind} title" ) )
-      = link_to( t("moments.action.delete"), moment.to_path, method: :delete, confirm: t("moments.action.delete confirm"), class: "moment-content-actions-delete", title: t("moments.action.delete #{moment.kind} title"))
+      - if moment.editable?
+        = link_to( t("moments.action.edit"), "#{moment.to_path}/edit", class: "moment-content-actions-edit", title: t("moments.action.edit #{moment.kind} title" ) )
+      - if moment.deletable?
+        = link_to( t("moments.action.delete"), moment.to_path, method: :delete, confirm: t("moments.action.delete confirm"), class: "moment-content-actions-delete", title: t("moments.action.delete #{moment.kind} title"))

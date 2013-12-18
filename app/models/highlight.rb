@@ -9,16 +9,11 @@
 
 class Highlight < YV::Resource
 
+  include YV::Concerns::Moments
+
   api_response_mapper YV::API::Mapper::Highlight
 
-  include YV::Concerns::Icons
-  include YV::Concerns::Avatars
-  include YV::Concerns::Actionable
-  include YV::Concerns::Commentable
-  include YV::Concerns::Identifiable
-
-  attribute :moment_title
-  
+  attribute :moment_title  
   attribute :color
   attribute :labels
   attribute :references
@@ -154,6 +149,11 @@ class Highlight < YV::Resource
   end
   # End class methods ----------------------------------------------------------------------------------------------
 
+
+  # Override method in Concerns::Moments
+  def editable?
+    false
+  end
 
   def kind
     self.class.kind

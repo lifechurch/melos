@@ -10,13 +10,9 @@
 
 class Note < YV::Resource
 
-  api_response_mapper YV::API::Mapper::Note
+  include YV::Concerns::Moments
 
-  include YV::Concerns::Icons
-  include YV::Concerns::Avatars
-  include YV::Concerns::Actionable
-  include YV::Concerns::Commentable
-  include YV::Concerns::Identifiable
+  api_response_mapper YV::API::Mapper::Note
 
   attr_accessor :reference_list
 

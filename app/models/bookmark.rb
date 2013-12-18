@@ -10,6 +10,8 @@
 
 class Bookmark < YV::Resource
 
+  include YV::Concerns::Moments
+
   api_response_mapper YV::API::Mapper::Bookmark
 
   attribute :moment_title
@@ -143,8 +145,6 @@ class Bookmark < YV::Resource
     set_created_dt
   end
 
-
-  # See included YV::Concerns
 
   def user_id
     self.attributes['user_id']
