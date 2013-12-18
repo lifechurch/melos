@@ -56,31 +56,24 @@
           = form_tag offer_friendships_path(user_id: @user.id) , method: :post do
             = submit_tag t("friendships.form.add friend button"), class: "profile-hdr-addfriend action_button_green", title: t("friendships.form.add friend button title", user: @user.name)
 
-    - # find the highlight method in /app/helpers/users_helper.rb
+    :ruby
+      tabs = [
+        {href: user_path(@user),                            type: "activity"},
+        {href: user_friends_path(user_id: @user.to_param),  type: "friends"},
+        {href: notes_user_path(@user),                      type: "notes"},
+        {href: bookmarks_user_path(@user),                  type: "bookmarks"},
+        {href: highlights_user_path(@user),                 type: "highlights"},
+        {href: badges_user_path(@user),                     type: "badges"}
+      ]
+
+      # find the highlight method in /app/helpers/users_helper.rb
+
     %ul.profile-tabs
-      %li.profile-tabs-activity{class: highlight(user_path)}
-        %a{href: user_path(@user)}
-          %span= t("users.profile.tab activity")
+      - tabs.each do |tab|
+        - type, href = tab[:type], tab[:href]
+        %li{class: "profile-tabs-#{type} #{highlight(href)}"}
+          = link_to(t("users.profile.tab #{type}"), href)
 
-      %li.profile-tabs-friends{class: highlight(friends_user_path)}
-        %a{href: friends_user_path(@user)}
-          %span= t("users.profile.tab friends")
-
-      %li.profile-tabs-notes{class: highlight(notes_user_path)}
-        %a{href: notes_user_path(@user)}
-          %span= t("users.profile.tab notes")
-
-      %li.profile-tabs-bookmarks{class: highlight(bookmarks_user_path)}
-        %a{href: bookmarks_user_path(@user)}
-          %span= t("users.profile.tab bookmarks")
-
-      %li.profile-tabs-highlights{class: highlight(highlights_user_path)}
-        %a{href: highlights_user_path(@user)}
-          %span= t("users.profile.tab highlights")
-
-      %li.profile-tabs-badges{class: highlight(badges_user_path)}
-        %a{href: badges_user_path(@user)}
-          %span= t("users.profile.tab badges")
 
   %article.profile
     = content_for?(:user_main) ? yield(:user_main) : yield

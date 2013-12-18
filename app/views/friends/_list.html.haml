@@ -1,0 +1,11 @@
+%ul.friend-directory
+  - friends.each do |friend|
+    - avatar = friend.avatars.lg_avatar
+    %li.friend-details
+      = image_tag avatar.url, class: "friend-details-avatar"
+      = link_to(friend.name, user_path(friend.to_param), class: "friend-details-name", title: t("users.profile.visit friend", friend: friend.name) )
+      
+      - if current_user_is? user
+        = link_to(t("friendships.form.remove friend button"), friend_path(friend.id), method: :delete, confirm: "Are you sure?", class: "friend-details-delete", title: t("friendships.form.remove friend button title"))
+      - else
+        = link_to(t("friendships.form.add friend button"), offer_friendships_path(user_id: friend.id) , method: :post, class: "friend-details-add", title: "Send this person a friend request" )

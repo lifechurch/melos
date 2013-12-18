@@ -23,7 +23,7 @@
         - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
 
     - if @friends.present? # show my friends
-      = render partial: "friendships/friends_list", locals: {friends: @friends, user: @user}
+      = render partial: "friends/list", locals: {friends: @friends, user: @user}
 
     - else # I don't have friends
       %p.friends-none
@@ -33,7 +33,7 @@
 - elsif Friend.with? @user, auth: current_auth # We can only
   .profile-friends
 
-    = render partial: "friendships/friends_list", locals: {friends: @friends, user: @user}
+    = render partial: "friends/list", locals: {friends: @friends, user: @user}
 
 - else
   .profile-friends.slate-friends

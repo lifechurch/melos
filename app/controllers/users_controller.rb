@@ -69,12 +69,6 @@ class UsersController < ApplicationController
     @badges = @user.badges
   end
 
-  def friends
-    @user  = User.find(params[:id])
-    @friends = Friend.all(page: @page, user_id: @user.id.to_i, auth: current_auth)
-  end
-
-
   def edit
     @selected = :profile
     render layout: "application"

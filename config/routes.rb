@@ -44,9 +44,6 @@ YouversionWeb::Application.routes.draw do
   match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
   
 
-  
-
-
   # Metal controller
   # This is our second highest throughput action
   get "/highlights/:version/:reference", to: JsonController.action(:reference_highlights), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
@@ -58,7 +55,10 @@ YouversionWeb::Application.routes.draw do
   end
 
   # Users
-  resources 'users', :except => [:new, :create] do
+  resources :users, shallow: true, except: [:new, :create] do
+
+    resources :friends, only: [:index,:destroy]
+
     get "_cards", on: :collection
 
     # bible.com/users/:id/connections => connections#index
@@ -85,7 +85,7 @@ YouversionWeb::Application.routes.draw do
     get :bookmarks,   on: :member, as: 'bookmarks'
     get :highlights,  on: :member, as: 'highlights'
     get :badges,      on: :member, as: 'badges'
-    get :friends,     on: :member, as: 'friends'
+
     match 'badge/:id' => 'badges#show', as: 'badge'
     
     resources 'subscriptions', :path => '/reading-plans' do

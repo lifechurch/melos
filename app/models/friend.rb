@@ -71,7 +71,7 @@ class Friend < YV::Resource
 
 
     # Friendship.delete(opts)
-    # http://developers.youversion.com/api/docs/3.1/sections/friends/all_items.html
+    # http://developers.youversion.com/api/docs/3.1/sections/friends/delete.html
     # ------------------------------------------------------------------------------------------------------------
     # returns a YV::API::Results decorator for an array of user ids
     
