@@ -27,7 +27,7 @@
           - moment.references.each do |ref_hash|  #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
             = link_to(ref_hash.human, reference_path(version: ref_hash.version_id, reference: ref_hash.usfm.join("+")), class: "moment-no-refs-link")
 
-      .moment-no-note
+      .moment-no-note{:class => detail_view ? "detail-view" : ""}
         %p.moment-no-note-title
           = moment.title
         %p.moment-no-note-text
