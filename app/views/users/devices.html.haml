@@ -11,7 +11,7 @@
   = render partial: "users/mobile_menu", locals: {selected: :devices}
 
   %h1
-    Connect devices
+    = t('users.edit devices')
 
   - if @results
     = render partial: "shared/form_errors", locals: {errors: @results.errors }

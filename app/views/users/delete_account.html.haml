@@ -10,7 +10,7 @@
   = render partial: "users/mobile_menu", locals: {selected: :account}
 
   %h1
-    Delete account
+    = t('users.edit account_existence')
 
   %p= t('users.delete account description')
   = form_tag user_path(@user), method: :delete do

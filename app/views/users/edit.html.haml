@@ -10,7 +10,7 @@
   = render partial: "users/mobile_menu", locals: {selected: :edit}
 
   %h1
-    Edit profile
+    = t('users.edit profile')
 
   = form_for @user do |f|
     - unless @user.errors.blank?

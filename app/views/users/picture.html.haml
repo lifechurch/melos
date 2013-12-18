@@ -6,7 +6,7 @@
 %article
 
   %h1
-    Change picture
+    = t('users.edit picture')
 
   - if @results
     = render partial: "shared/form_errors", locals: {errors: @results.errors}

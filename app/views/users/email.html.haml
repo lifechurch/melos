@@ -10,7 +10,7 @@
   = render partial: "users/mobile_menu", locals: {selected: :email}
 
   %h1
-    Update email address
+    = t('users.edit email')
 
   - if @results and @results.valid?
     %p.confirmation-message

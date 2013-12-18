@@ -1,17 +1,27 @@
-- @title = t('users.edit notifications')
+:ruby
+  settings = {
+    "moments"       => t('users.notifications.moments'),
+    "comments"      => t('users.notifications.comments'),
+    "friendships"   => t('users.notifications.friendships'),
+    "reading_plans" => t('users.notifications.reading_plans'),
+    "badges"        => t('users.notifications.badges'),
+    "newsletter"    => t('users.notifications.newsletter'),
+    "partners"      => t('users.notifications.publishing partners')
+  }
+
+  @title = t('users.edit notifications')
 
 - content_for :title do
   = t('users.settings')
-
-- # because page can be accessed while logged in or logged out (with token) we use
-- # current_user or fallback to params[:id]
 
 %article
   = render partial: "users/mobile_menu", locals: {selected: :notifications}
 
   %h1
-    Manage notifications
+    = t('users.edit notifications')
 
+  - # because page can be accessed while logged in or logged out (with token) we use
+  - # current_user or fallback to params[:id]
   = form_tag update_notifications_user_path( current_user || params[:id] ,token: params[:token]), method: :put do |n|
     - unless @settings.errors.blank?
       .form_errors
@@ -19,17 +29,6 @@
       %ul
         - @settings.errors.full_messages.each do |err|
           %li= err
-
-    :ruby
-      settings = {
-        "moments"       => t('users.notifications.moments'),
-        "comments"      => t('users.notifications.comments'),
-        "friendships"   => t('users.notifications.friendships'),
-        "reading_plans" => t('users.notifications.reading_plans'),
-        "badges"        => t('users.notifications.badges'),
-        "newsletter"    => t('users.notifications.newsletter'),
-        "partners"      => t('users.notifications.publishing partners')
-      }
 
     .notification-settings-group
       - settings.each do |type,info|
