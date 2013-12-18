@@ -9,7 +9,7 @@
     .social-feed
       = render partial: "moments/cards", locals: {moments: @notes,comments_displayed: false}
   - if @notes.next_page
-    = render partial: "shared/moments_load_more", locals: {resource: "notes", url_params: ["user_id=#{@user.username}"]}
+    = render partial: "shared/moments_load_more", locals: {resource: "notes", url_params: ["uid=#{@user.id}"]}
     
 - else
   .profile-blank-slate.slate-notes

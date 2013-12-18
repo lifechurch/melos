@@ -22,7 +22,7 @@
     .social-feed
       = render partial: "moments/cards", locals: {moments: @bookmarks, comments_displayed: false}
   - if @bookmarks.next_page
-    = render partial: "shared/moments_load_more", locals: {resource: "bookmarks", url_params: ["user_id=#{@user.username}"]}
+    = render partial: "shared/moments_load_more", locals: {resource: "bookmarks", url_params: ["uid=#{@user.id}"]}
 
 - else
   .profile-blank-slate.slate-bookmarks

@@ -27,7 +27,9 @@ class BaseMomentsController < ApplicationController
   def _cards
     # If our user_id param is present, use that to find user, otherwise assume current user
     @user = params[:user_id].present? ? User.find(params[:user_id]) : current_user
-    @moments = moment_resource.all(auth: current_auth, page: @page)
+    opts = {auth: current_auth, page: @page}
+    opts.merge!(user_id: params[:uid].to_i) if params[:uid]
+    @moments = moment_resource.all(opts)
     render partial: "moments/cards", locals: {moments: @moments, comments_displayed: self.class.moment_comments_displayed}, layout: false
   end
 

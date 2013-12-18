@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   # Action meant to render moment cards partial to html for ajax delivery client side
   # Currently being used for next page calls on moments feed.
   def _cards
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:uid])
     @moments = Moment.all(user_id: @user.id.to_i, page: @page, auth: current_auth)
     render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
