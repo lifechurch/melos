@@ -11,17 +11,15 @@ class FriendshipsController < ApplicationController
 
   # Accept a friendship
   def create
-    @friendship = Friendships.accept(user_id: params[:user_id].to_i, auth: current_auth)
-    notice = @friendship.valid? ? t("friendships.create success") : t("friendships.create failure")
-    redirect_to(:back, notice: notice)
+    @friendship = Friendships.accept(request_opts(params[:user_id]))
+    redirect_to(:back, notice: select_notice(@friendship, :create))
     # eventually support json/ajax submission for javascript menus, etc.
     #respond_with(@friendship)
   end
 
   def offer
-    @friendship = Friendships.offer(user_id: params[:user_id].to_i, auth: current_auth)
-    notice = @friendship.valid? ? t("friendships.offer success") : t("friendships.offer failure")
-    redirect_to(:back, notice: notice)
+    @friendship = Friendships.offer(request_opts(params[:user_id]))
+    redirect_to(:back, notice: select_notice(@friendship,:offer))
   end
 
   # Decline
@@ -30,9 +28,19 @@ class FriendshipsController < ApplicationController
   # params[:id] is not the id(pk) of a server side Friendship
   # params[:id] is being used as a user_id in this particular scenario
   def destroy
-    @friendship = Friendships.decline(user_id: params[:id].to_i, auth: current_auth)
-    notice = @friendship.valid? ? t("friendships.destroy success") : t("friendships.destroy failure")
-    redirect_to(:back, notice: notice)
+    @friendship = Friendships.decline(request_opts(params[:id]))
+    redirect_to(:back, notice: select_notice(@friendship,:destroy))
+  end
+
+  private
+
+  def request_opts(id)
+    {user_id: id.to_i, auth: current_auth}
+  end
+
+  def select_notice( friendship , api_method )
+    raise "Invalid i18n key" unless [:create,:offer,:destroy].include? api_method
+    friendship.valid? ? t("friendships.#{api_method.to_s} success") : t("friendships.#{api_method.to_s} failure")
   end
 
 end
