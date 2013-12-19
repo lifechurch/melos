@@ -1,0 +1,45 @@
+-# Book Selector Partial
+-# Used in references/reader/js partial
+
+-# Local Variables
+-# presenter(required) - Presenter::Reference or Presenter::Subscription
+
+- cache "#{presenter.version.id}_#{I18n.locale}", :expires_in => YV::Caching.a_long_time do
+  #menu_book_chapter.dynamic_menu
+    .mobile
+      .reader_modal_header
+        %nav
+          %a.close_btn.reference_close_btn
+      .tab_navigation.ref
+        .inner_wrapper
+          %a.book{href: '#book', class: 'selected'}
+            = t('Book')
+          %a.chapter{href:'#chapter'}
+            = t('Chapter')
+    %br.clear
+    .spinner_wrapper{style: "display: none;"}
+      #book_chapter_spinner.dynamic_menu_spinner
+    .search
+      %input{type: "text", placeholder: t('filter book')}
+    .browse
+      %span.menu_arrow
+        &nbsp;
+      #menu_book
+        %header
+          =t("book")
+        .scroll
+          %ul
+            - ref_str = presenter.reference_string
+            - chapter, version = "1", ref_str.version
+            - version_id = presenter.version.id
+            - presenter.version.books.each do |book_usfm, book_info|
+              %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
+                - book = book_usfm.downcase
+                - url = "/bible/#{version_id}/#{book}.#{chapter}.#{version}"
+                %a{href: url, "data-book" => book_usfm.downcase}
+                  = truncate(book_info.human, length: 40, separator: " ")
+      #menu_chapter
+        %header
+          =t("chapter")
+        .scroll
+          %ol#chapter_selector

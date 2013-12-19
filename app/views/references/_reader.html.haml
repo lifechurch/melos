@@ -1,6 +1,6 @@
-// Reader partial to encapsulate all reader functionality
-// Local Parameters
-// presenter: (required) Presenter::Reference or Presenter::Subscription
+-# Reader partial to encapsulate all reader functionality
+-# Local Parameters
+-# presenter: (required) Presenter::Reference or Presenter::Subscription
 :ruby
   @is_reader    = true
   @html_classes = []
@@ -21,7 +21,8 @@
 - content_for :title_link do
   = link_to(reference.human, 'javascript:void(0);', id:"m_book_chap_btn")
 
-= render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
+
+= render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
 %article#reader.reader{"class" => (focus_verses && (not a_chapter)) ? "mute" : nil,
   "data-setting-font" => client_settings.reader_font,
@@ -77,4 +78,4 @@
         =link_to t('versions.learn more'), version.url || version_path(version), class: 'button'
 
 
-= render partial: "/references/js", locals: {presenter: @presenter}
+= render partial: "references/js", locals: {presenter: presenter}
