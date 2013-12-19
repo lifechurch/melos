@@ -511,7 +511,10 @@ Reader.prototype = {
       var initviewport = $(window).height();
       var main_reader_height = $('.main_reader article').height() + 35
       var offset_height = $('.main_reader article').offset().top;
-      $('.nav_next, .nav_prev').height(initviewport-initoffset-40);
+      var prev_next_selector  = '.reader-prev, .reader-next';
+      var reader_nav_selector = '.reader-nav, .reader-prev, .reader-next'
+
+      $(prev_next_selector).height(initviewport-initoffset-40);
 
       if( main_reader_height + offset_height > initviewport ) {
         //recalculate the nav button height and change the height.
@@ -521,24 +524,24 @@ Reader.prototype = {
           window.doc_height = $(document).height();
           window.main_height = $('.main_reader article').height();
           window.bottom_offset =  doc_height - offset - main_height;
-          $('.nav_next, .nav_prev').height(viewport - offset - 40);
+          $(prev_next_selector).height(viewport - offset-40);
         })
 
         if (!$('html').hasClass("full_screen")) {
           $('.main_reader footer').waypoint(function(event, direction) {
               // Yeah bro, what do I do?
               if (direction === 'down') {
-                $('.nav_items, .nav_prev, .nav_next').addClass('snap');
+                $(reader_nav_selector).addClass('snap');
               }
               else {
-                $('.nav_items, .nav_prev, .nav_next').removeClass('snap');
+                $(reader_nav_selector).removeClass('snap');
               }
             }, { offset: '100%'  // middle of the page
           });
         }
       }
       else {
-        $('.nav_prev, .nav_next').height(main_reader_height);
+        $(prev_next_selector).height(main_reader_height);
       }
     }
   },

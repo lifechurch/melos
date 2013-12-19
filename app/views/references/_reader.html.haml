@@ -21,7 +21,6 @@
 - content_for :title_link do
   = link_to(reference.human, 'javascript:void(0);', id:"m_book_chap_btn")
 
-
 = render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
 %article#reader.reader{"class" => (focus_verses && (not a_chapter)) ? "mute" : nil,
@@ -41,10 +40,14 @@
   "data-setting-show-highlights" => client_settings.reader_highlights}
 
   .wrap
-    %div.nav_items
-      - direction = 'rtl' if version.try(:rtl?)
-      = link_to("previous", bible_path(reference.previous_chapter), class: "nav_prev #{direction}") if reference.previous_chapter
-      = link_to("next", bible_path(reference.next_chapter), class: "nav_next #{direction}") if reference.next_chapter
+    %div.reader-nav
+      :ruby
+        direction = 'rtl' if version.try(:rtl?)
+        prev_chapter  = reference.previous_chapter
+        next_chapter  = reference.next_chapter
+
+      = link_to( prev_chapter.to_s, prev_chapter.to_path, class: "reader-prev #{direction}") if prev_chapter
+      = link_to( next_chapter.to_s, next_chapter.to_path, class: "reader-next #{direction}") if next_chapter
 
     // Primary version content
     #version_primary{class: version.try(:text_direction),

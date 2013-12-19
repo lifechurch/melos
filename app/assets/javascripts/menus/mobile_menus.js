@@ -18,7 +18,7 @@ function MobileMenus() {
   this.versionH           = this.versionMenu.height();
   this.documentH          = $(document).height();
   this.colorMenu          = $('.color_toolbar');
-  this.navItems           = $('.nav_items');
+  this.navItems           = $('.reader-nav');
   this.openFlag           = "open";
 
   this.init();
@@ -75,7 +75,7 @@ MobileMenus.prototype = {
               // share toolbar animation complete
               thiss.verseToolbar.stop().animate({ top : '-86px'}, 400, function(){
                   // verse toolbar animation complete, show nav_items
-                  $('.nav_items').stop().animate({ top : '0px'}, 400);
+                  $('.reader-nav').stop().animate({ top : '0px'}, 400);
               });
               thiss.verseToolbar.removeClass('open');
               thiss.shareToolbar.removeClass('open');

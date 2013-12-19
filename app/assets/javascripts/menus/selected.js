@@ -181,7 +181,7 @@ SelectedMenu.prototype = {
 
   open_mobile : function() {
     thiss = this;
-    $('.nav_items').stop().animate({ 'top' : '-46px'}, 200, function(){
+      $('.reader-nav').stop().animate({ 'top' : '-46px'}, 200, function(){
         // nav_items animation complete, show verse toolbar
         thiss.mobile_menu.stop().animate({ 'top' : '0px'}, 200, function(){
             $(this).addClass('open');
@@ -196,7 +196,7 @@ SelectedMenu.prototype = {
     this.mobile_menu.stop().animate({ 'top' : '-86px'}, 200, function(){
         // verse toolbar animation complete, show nav_items
         $(this).removeClass('open');
-        $('.nav_items').stop().animate({ 'top' : '0px'}, 200);
+        $('.reader-nav').stop().animate({ 'top' : '0px'}, 200);
     });
   },
 

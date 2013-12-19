@@ -151,7 +151,13 @@ class Reference < YV::Resource
     Reference.new(self, verses: nil)
   end
 
+  
+  
+
+
   # Reference for a previous chapter for a Reference instance
+  # Example api response
+  # "previous"=>{"toc"=>true, "canonical"=>true, "version_id"=>1, "human"=>"Luke 24", "usfm"=>["LUK.24"]}, 
   def previous_chapter
     return nil unless version
     return nil unless attributes.previous.present?
@@ -159,6 +165,8 @@ class Reference < YV::Resource
   end
 
   # Reference for the next chapter for a Reference instance
+  # Example api response
+  # "next"=>{"toc"=>true, "canonical"=>true, "version_id"=>1, "human"=>"John 2", "usfm"=>["JHN.2"]}
   def next_chapter
     return nil unless version
     return nil unless attributes.next.present?
