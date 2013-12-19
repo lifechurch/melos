@@ -12,14 +12,14 @@
     %dd
       = link_to t("plans.all plans"), plans_path
     %dd.highlighted
-      = link_to t("plans.my plans"), user_subscriptions_path(current_user)
+      = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param)
 
   - unless @subscriptions.empty?
     %ul.resource_list
       - @subscriptions.each do |sub|
         %li.subscription
           %div
-            %h3= link_to(sub.name, user_subscription_path(@user, sub, initial: 'true'))
+            %h3= link_to(sub.name, subscription_path(user_id: @user.to_param, id: sub, initial: 'true'))
             .progress_wrap
               .progress_counter
                 =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe

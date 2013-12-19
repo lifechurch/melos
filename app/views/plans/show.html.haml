@@ -16,7 +16,7 @@
         = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_blue'}
       %p
         - if current_auth
-          = link_to(t('plans.subscribe to plan'), user_subscriptions_path(current_user, plan_id: @plan.to_param), class: "action_button_green", method: :post)
+          = link_to(t('plans.subscribe to plan'), subscriptions_path(user_id: current_user.to_param, plan_id: @plan.to_param), class: "action_button_green", method: :post)
         - else
           = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: '#TODO'), class: "action_button_green"
 

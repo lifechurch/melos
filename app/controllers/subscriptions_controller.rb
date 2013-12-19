@@ -25,18 +25,18 @@ class SubscriptionsController < ApplicationController
 
   def create
     if @subscription = subscription_for(params[:plan_id])
-      redirect_to user_subscription_path(current_user,params[:plan_id]), notice: t("plans.already subscribed") and return
+      redirect_to(subscription_path(user_id: current_user.to_param, id: params[:plan_id]), notice: t("plans.already subscribed")) and return
     end
     @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth)
     flash[:notice] = t("plans.subscribe successful")
-    respond_with([@subscription], location: user_subscription_path(current_user,params[:plan_id]))
+    respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id]))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
   def destroy
     @subscription.destroy
     flash[:notice] = t("plans.unsubscribe successful")
-    respond_with([@subscription], location: user_subscriptions_path(current_user))
+    respond_with([@subscription], location: subscriptions_path(user_id: current_user.to_param))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
@@ -86,14 +86,14 @@ class SubscriptionsController < ApplicationController
     if(params[:completed])
       @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
       if @subscription.completed?
-        redirect_to(user_subscriptions_path(current_auth.username), notice: t("plans.completed notice")) and return
+        redirect_to(subscriptions_path(user_id: current_auth.username), notice: t("plans.completed notice")) and return
       else
-        redirect_to user_subscription_path(current_user, @subscription, content: params[:content_target], day: params[:day_target], version: params[:version]) and return
+        redirect_to subscription_path(user_id: current_user.to_param, id: @subscription, content: params[:content_target], day: params[:day_target], version: params[:version]) and return
       end
     end
 
     flash[:notice] = t("plans.#{action} successful", t_opts)
-    redirect_to edit_user_subscription_path(current_user,@subscription)
+    redirect_to edit_subscription_path(user_id: current_user.to_param, id: @subscription)
   end
 
   def edit
@@ -110,7 +110,7 @@ class SubscriptionsController < ApplicationController
 
   def find_subscription
     unless @subscription = subscription_for(params[:id])
-      redirect_to user_subscriptions_path(current_user)
+      redirect_to subscriptions_path(user_id: current_user.to_param)
     end
 
     # render 404 if day param is present and is not a valid day for the subscription

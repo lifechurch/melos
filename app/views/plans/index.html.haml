@@ -13,7 +13,7 @@
       %dd.highlighted
         = link_to t("plans.all plans"), plans_path
       %dd
-        = link_to t("plans.my plans"), user_subscriptions_path(current_user)
+        = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param)
   - else
     %h1
       = t("plans.browse plans", category: @category.label || t("plans.all"))

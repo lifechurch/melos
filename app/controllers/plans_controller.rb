@@ -21,7 +21,7 @@ class PlansController < ApplicationController
 
     @plan = Plan.find(params[:id])
     if current_auth && current_user.subscribed_to?(@plan)
-       redirect_to user_subscription_path(current_user,id: @plan.to_param,day: params[:day], content: params[:content]) and return
+       redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param,day: params[:day], content: params[:content]) and return
     else
       self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
     end
@@ -34,7 +34,7 @@ class PlansController < ApplicationController
     return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
 
     if current_auth && current_user.subscribed_to?(@plan)
-       redirect_to user_subscription_path(current_user,id: @plan.to_param) and return
+       redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param) and return
     end
 
     @presenter = Presenter::Subscription.new( @plan , params, self)
@@ -58,11 +58,11 @@ class PlansController < ApplicationController
   # See routes.rb: "Community emails send this link"
   # TODO: get API team to update the link sent via email.
   def settings
-    redirect_to edit_user_subscription_path( current_user, params[:id])
+    redirect_to edit_subscription_path( user_id: current_user.to_param, id: params[:id])
   end
 
   def calendar
-    redirect_to calendar_user_subscription_path( current_user, params[:id])
+    redirect_to calendar_subscription_path( user_id: current_user.to_param, id: params[:id])
   end
 
   private

@@ -87,8 +87,11 @@ YouversionWeb::Application.routes.draw do
     get :badges,      on: :member, as: 'badges'
 
     match 'badge/:id' => 'badges#show', as: 'badge'
-    
-    resources 'subscriptions', :path => '/reading-plans' do
+  end
+
+  # Necessary as we don't want subscriptions routes to be shallow
+  scope "/users/:user_id" do
+    resources :subscriptions, path: '/reading-plans' do
       get   :calendar,    on: :member
     end
   end

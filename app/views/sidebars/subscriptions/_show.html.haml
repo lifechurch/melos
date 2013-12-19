@@ -13,21 +13,21 @@
     %nav
       %a.close_btn.subscription_close_btn
     %nav.nav_right
-      = link_to t("plan settings"), edit_user_subscription_path(current_user, plan_id: @plan.to_param), class: "settings_btn"
+      = link_to t("plan settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn"
 
 #widget-plan-controls.widget
 
   - settings_text = t("settings")
   %div.hd
     = link_to subscription.name, plan_path(subscription)
-    = link_to(edit_user_subscription_path(current_user,subscription),{class: "settings", title: settings_text}) do
+    = link_to(edit_subscription_path(user_id: current_user.to_param, id: subscription),{class: "settings", title: settings_text}) do
       %span= settings_text
 
   #calendar.bd.nopad.calendar
     - cal_text = t("plans.calendar")
 
     %div.icon
-      =link_to(calendar_user_subscription_path(current_user,subscription), {title: cal_text }) do
+      =link_to(calendar_subscription_path(user_id: current_user.to_param, id: subscription), {title: cal_text }) do
         %span= cal_text
 
     %div.day
@@ -37,7 +37,7 @@
       // Next / Prev navigation
       - prev_text = t("plans.previous day") # used in 3 places below
       - if day > 1
-        = link_to(user_subscription_path(current_user,subscription, day: ((day - 1) == subscription.current_day) ? nil : (day - 1), version: params[:version]), {class: "prev", title: prev_text }) do
+        = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day - 1) == subscription.current_day) ? nil : (day - 1), version: params[:version]), {class: "prev", title: prev_text }) do
           %span= prev_text
       - else
         = link_to("#", class: "disabled prev") do
@@ -45,7 +45,7 @@
 
       - next_text = t("plans.next day") # used in 3 places below
       - if day <= subscription.total_days - 1
-        = link_to(user_subscription_path(current_user, subscription, day: ((day + 1) == subscription.current_day) ? nil : (day + 1), version: params[:version]), {class: "next", title: next_text}) do
+        = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day + 1) == subscription.current_day) ? nil : (day + 1), version: params[:version]), {class: "next", title: next_text}) do
           %span= next_text
       - else
         = link_to("#", class: "disabled next") do
@@ -55,7 +55,7 @@
     - unless references.empty?
       - references.each_with_index do |ref,index|
         %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
-          = form_tag(user_subscription_path(current_user, subscription), method: :put) do
+          = form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
             = hidden_field_tag(:ref,            ref.reference)
             = hidden_field_tag(:completed,      (!ref.completed))
             = hidden_field_tag(:version,        subscription.version_id)
@@ -68,7 +68,7 @@
               %b.mobile= t("plans.read today").capitalize
               = ref.reference.safe_human
           - else
-            %a{href: (content_page == index) ? nil : user_subscription_path(current_user, subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
+            %a{href: (content_page == index) ? nil : subscription_path(user_id: current_user.to_param, id: subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
               = ref.reference.safe_human
 
 - if reading.devotional

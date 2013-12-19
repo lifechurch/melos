@@ -3,7 +3,7 @@
 - subscription = presenter.subscription
 
 .widget-button
-  = link_to(t('plans.read today'), user_subscription_path(current_user,subscription), class: 'action_button_green', style: "margin-bottom: 10px")
+  = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param, id: subscription), class: 'action_button_green', style: "margin-bottom: 10px")
 
 .widget
   %h3.hd
@@ -12,9 +12,9 @@
     %li
       =render partial: "progress", locals: {subscription: subscription}
     %li
-      =link_to( t("plans.calendar"), calendar_user_subscription_path(current_user,subscription))
+      =link_to( t("plans.calendar"), calendar_subscription_path(user_id: current_user.to_param, id: subscription))
     %li
-      =link_to( t("plans.settings"), edit_user_subscription_path(current_user,subscription))
+      =link_to( t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription))
     %li
       =link_to( t("plans.about this plan"), plan_path(subscription))
 

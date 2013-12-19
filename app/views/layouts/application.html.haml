@@ -33,7 +33,7 @@
   %body
     #wrapper
       = content_for?(:header) ? yield(:header) : render("/shared/header/default")
-      - plan_href = is_authed ? user_subscriptions_path(current_auth.username) : plans_path
+      - plan_href = is_authed ? subscriptions_path(user_id: current_auth.username) : plans_path
       - live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"         
 
       - #--------- Begin Mobile Navigation
