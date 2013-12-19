@@ -44,6 +44,11 @@ GEM
       activemodel
       fog
     awesome_print (1.0.2)
+    better_errors (1.0.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     capybara (1.1.4)
       mime-types (>= 1.16)
@@ -98,6 +103,7 @@ GEM
       rails (~> 3.0)
     currencies (0.4.0)
     dalli (2.6.3)
+    debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -383,6 +389,8 @@ PLATFORMS
 DEPENDENCIES
   asset_sync (~> 0.5.3)
   awesome_print (~> 1.0.2)
+  better_errors
+  binding_of_caller
   capybara (~> 1.1.2)
   capybara-mechanize (~> 0.3.0)
   capybara-screenshot (~> 0.3.4)
