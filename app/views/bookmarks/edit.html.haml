@@ -6,10 +6,6 @@
 - content_for :title do
   = t('bookmarks.edit bookmark')
 
-- content_for :mobile_right_nav do
-  %a.save_btn{:href => 'javascript:void(0);', onclick: "$('*[type=\"submit\"]').click();"}
-    = t('save')
-
 %article
   %h1= t("bookmarks.edit bookmark")
   = render 'form'
