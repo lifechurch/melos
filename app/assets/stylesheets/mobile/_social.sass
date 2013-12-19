@@ -56,7 +56,11 @@
   background-position: center 10px
 
 .moment-actions-comment a
-  background-position: 9px -129px
+  background-position: 9px -124px
+  line-height: 42px
+  height: 44px
+  font-size: 15px
+  padding: 0 0 0 35px
 
 // !hide like action for now
 .moment-actions-like
@@ -82,13 +86,22 @@
 
 // !Specific comments code
 
-#main article .moment-comments-list-text,
-.moment-comments-list-text
+.moment-comments-more
   font-size: 13px
+  margin-bottom: 4px
+
+.moment-comments-list-text
+  font-size: 14px
+  line-height: 1.4em
   width: 80%
 
 .moment-comments-textarea
   width: 80% !important
+
+.moment-comments-list-comment
+  margin-bottom: 4px
+
+
 
 // !Moment badge positioning
 
@@ -109,8 +122,9 @@
   .moment-vid-text,
   .moment-sys-text,
   .moment-fr-text
+    width: 70%
+
     a
-      width: 70%
       line-height: 1.3em
 
 // !Bookmark moment
@@ -129,25 +143,34 @@
 
 .moment-vod-title
   font-size: 20px
+  width: 80%
 
 .moment-vod-list
   clear: both
   margin: 5px 0 0
 
+#main article
+  .moment-verse
+    font: 20px "times new roman", times, serif
+    letter-spacing: -.035em
+    margin: 4px 0
+    padding: 10px 15px
+    clear: both
+    background-color: #F5F4F3
+    +border-radius(5px)
+
 
 // !Note moment
 
-#main article .moment-no-refs,
 .moment-no-refs
   margin: 70px 0 0
 
-#main article .moment-no-note,
 .moment-no-note
   margin: 15px 0 0
 
-#main article .moment-no-note-title,
-#main article .moment-no-note-text
-  font-size: 13px
+.moment-no-note-text
+  font-size: 14px
+  line-height: 1.28em
 
 // !Video moment
 
@@ -240,6 +263,13 @@
   .moment-vid-text,
   .moment-sys-text
     width: 70%
+
+
+  // !Anywhere a verse appears
+
+  .moment-verse-wrap
+    max-height: none
+    overflow: visible
 
   // !Note
 

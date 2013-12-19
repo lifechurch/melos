@@ -356,9 +356,14 @@ only screen and (                min-resolution: 2dppx) {
 
   // !Header
 
+  #logo {
+    background: image-url("yv_logo@2x.png") no-repeat 0 14px;
+    background-size: 150px 21px;
+  }
+
   #header .friend-requests-btn,
   #header .notifications-btn {
-    background: image-url("header-sprite@2x.png") no-repeat;
+    background: image-url("header-sprite@2x.png") no-repeat 0px -54px;
     background-size: 28px 100px;
   }
 
