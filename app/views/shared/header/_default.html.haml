@@ -32,19 +32,19 @@
                   %a{href: user_path(current_auth.username)}
                     =t("users.profile.tab activity")
                 %li
-                  %a{href: user_friends_path(user_id: @user.to_param)}
+                  %a{href: user_friends_path(user_id: current_auth.username)}
                     =t("users.profile.tab friends")
                 %li
-                  %a{href: notes_user_path(@user)}
+                  %a{href: notes_user_path(current_auth.username)}
                     =t("users.profile.tab notes")
                 %li
-                  %a{href: bookmarks_user_path(@user)}
+                  %a{href: bookmarks_user_path(current_auth.username)}
                     =t("users.profile.tab bookmarks") 
                 %li
-                  %a{href: highlights_user_path(@user)}
+                  %a{href: highlights_user_path(current_auth.username)}
                     =t("users.profile.tab highlights")   
                 %li
-                  %a{href: badges_user_path(@user)}
+                  %a{href: badges_user_path(current_auth.username)}
                     =t("users.profile.tab badges")
                 %li
                   %a{href: "/settings"}
