@@ -414,4 +414,24 @@ class User < YV::Resource
     mash
   end
 
+
+  # Determine if this user is friends with another user given their user id.
+  # Params:
+  # - id: required (id of User)
+  # returns: boolean
+  
+  def friends_with?(id)
+    friend_ids.include? id.to_i
+  end
+
+  private
+
+  def friend_ids
+    @friend_ids ||= Friend.ids(auth: self.auth)
+  end
+
+
+
+
+
 end

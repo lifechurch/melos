@@ -306,7 +306,7 @@
   clear: both
 
 
-.friend-details
+.friend-detail
   position: relative
   border-bottom: 1px dotted #e1e1e1
   width: 32%
@@ -314,11 +314,11 @@
   height: 90px
   margin: 0 1% 0 0
 
-.friend-details:nth-child(3n)
+.friend-detail:nth-child(3n)
   margin: 0
   width: 34%
 
-.friend-details-avatar
+.friend-detail-avatar
   width: 70px
   height: 70px
   +border-radius(70px)
@@ -327,17 +327,14 @@
   left: 0
   top: 10px
 
-.friend-details-name
+.friend-detail-name
   margin: 24px 0 -5px 85px
   display: block
+  font-size: 15px
 
-.friend-details-delete
-  margin: 0 0 0 86px
-  color: #777
-  font-size: 11px
-  font-weight: normal
-
-.friend-details-add
+.friend-detail-delete,
+.friend-detail-add,
+.friend-detail-status
   margin: 0 0 0 86px
   color: #777
   font-size: 11px
