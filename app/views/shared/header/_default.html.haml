@@ -29,14 +29,29 @@
               %span.arrow
               %ol
                 %li
-                  %a{href: "/settings"}
-                    =t("settings")
-                %li
                   %a{href: user_path(current_auth.username)}
-                    =t("profile")
+                    =t("users.profile.tab activity")
+                %li
+                  %a{href: user_friends_path(user_id: @user.to_param)}
+                    =t("users.profile.tab friends")
+                %li
+                  %a{href: notes_user_path(@user)}
+                    =t("users.profile.tab notes")
+                %li
+                  %a{href: bookmarks_user_path(@user)}
+                    =t("users.profile.tab bookmarks") 
+                %li
+                  %a{href: highlights_user_path(@user)}
+                    =t("users.profile.tab highlights")   
+                %li
+                  %a{href: badges_user_path(@user)}
+                    =t("users.profile.tab badges")
+                %li
+                  %a{href: "/settings"}
+                    =t("settings") 
                 %li
                   %a{href: sign_out_path}
-                    =t("sign out")
+                    =t("sign out")  
 
       - else
         %ul

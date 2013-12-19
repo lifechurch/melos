@@ -107,6 +107,8 @@
 
 #header nav ul
   line-height: 30px
+  min-width: 280px
+  position: relative
 
 #header nav ul > li
   +round
@@ -114,6 +116,7 @@
   margin-top: 9px
   padding-top: 1px
   height: 31px
+  min-width: 280px
 
 #header nav ul > li:first-child
   margin-left: 20px
@@ -139,7 +142,7 @@
 #header nav ul > li > a
   display: block
   overflow: hidden
-  max-width: 230px
+  max-width: 280px
   text-overflow: ellipsis
   white-space: nowrap
   color: #d4d4d4
@@ -163,7 +166,6 @@
 //----------------------------------------------------------------------------------------------------
 
 #header_profile_menu
-  width: 140px
   +border-radius(5px)
   background: #fff
   display: none
@@ -174,8 +176,24 @@
   -webkit-box-shadow: 0px 0px 8px #222
   box-shadow: 0px 0px 8px #222  
 
+  ol
+    width: 280px
+
+    li
+      width: 139px
+      display: inline-block
+      float: left
+      border-bottom: 1px solid #ddd
+
+    li:nth-child(odd)
+      border-right: 1px solid #ddd  
+
+    li:nth-child(n+7)
+      border-bottom: none  
+
 #header #header_profile_menu .arrow
-  left: 63px
+  left: 220px
+  position: absolute
 
 .li_active #header_profile_menu
   display: block
@@ -186,7 +204,3 @@
   display: block
   text-align: center
   padding: 8px
-  border-bottom: 1px solid #ddd
-
-#header_profile_menu li:last-child a
-  border-bottom: none  
