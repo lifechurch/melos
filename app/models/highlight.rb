@@ -89,7 +89,9 @@ class Highlight < YV::Resource
     
     def by_reference(params={})
       all_moments = Moment.all(params.slice(:auth,:user_id,:usfm,:version_id))
-      all_moments.collect {|moment| moment if moment.class == self }
+      all_moments.reject {|moment| moment.class != self } 
+      # TODO: Get API to implement filtering while passing a kind
+      # would allow Highlight.all(params.slice(:auth,:user_id,:usfm,:version_id)) without the second 'reject' line of code.
     end
 
     # We want this returned:
@@ -98,7 +100,7 @@ class Highlight < YV::Resource
     def for_reader(params={})
       highlights  = by_reference(params)
       return highlights if highlights.blank?
-      
+    
       version_id  = highlights.first.references.first.version_id
       pieces      = highlights.collect {|h| Hashie::Mash.new({id: h.id, color: h.color, references: h.references})}
 
@@ -211,11 +213,11 @@ class Highlight < YV::Resource
       # self.version ||= self.reference.try :version
   end
 
-  def as_json(options = {})
+  #def as_json(options = {})
     #API/apps shouldn't support ranged highlights, but some exist, so use only the first verse if range.
     #EVENTUALLY: make this pervasive/complete so anyone using this object only sees the 1st verse and we can just pass raw_hash[:verses]
-    {verse: self.reference.verses.first, color: self.color, id: id, version: version}
-  end
+  #  {verse: self.reference.verses.first, color: self.color, id: id, version: version}
+  #end
 
   def moment_partial_path
     "moments/highlight"
