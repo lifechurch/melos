@@ -117,7 +117,6 @@ describe User do
   describe "profile" do
     # Test:
     # user_avatar_url
-    # direct_user_avatar_url
     # to_param
     # website_url
     # website_human
@@ -143,7 +142,6 @@ describe User do
 
     it "should return info about itself" do
       @lotsa_info.user_avatar_url.should be_a Hashie::Mash
-      @lotsa_info.direct_user_avatar_url.should be_a Hashie::Mash
       @lotsa_info.to_param.should == "testuser-lotsainfo"
       @lotsa_info.website_url.should == "http://www.youversion.com"
       @lotsa_info.website_human.should == "youversion.com"

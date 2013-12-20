@@ -7,6 +7,6 @@
   
   %span.moment-comments-input
     %span.moment-comments-input-avatar
-      = image_tag current_avatar
+      = image_tag current_user.user_avatar_url["px_24x24"]
     
     = text_area_tag "comment[content]", nil, class: "moment-comments-textarea"

@@ -57,11 +57,13 @@ YouversionWeb::Application.routes.draw do
   # Users
   resources :users, shallow: true, except: [:new, :create] do
 
+    get "_cards", on: :collection
+
     resources :friends, only: [:index,:destroy] do
       get "_list", on: :collection
     end
 
-    get "_cards", on: :collection
+    resource :avatar, path: "picture", only: [:show,:update]
 
     # bible.com/users/:id/connections => connections#index
     
@@ -73,9 +75,6 @@ YouversionWeb::Application.routes.draw do
 
     get :password, on: :member
     put :update_password, on: :member
-
-    get :picture, on: :member
-    put :update_picture, on: :member
 
     get :notifications, on: :member
     put :update_notifications, on: :member

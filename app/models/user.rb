@@ -268,12 +268,6 @@ class User < YV::Resource
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
   end
 
-  def direct_user_avatar_url
-    # some calls returning user info don't have avatar URLS
-    # we need the direct path to avoid CDN cache in certain cases
-    attributes["direct_user_avatar_url"] ||= self.generate_user_avatar_urls(direct: true)
-  end
-
   def to_param
     self.username
   end

@@ -86,7 +86,7 @@ class RedirectsController < ApplicationController
   end
 
   def settings_picture
-    redirect_to(picture_user_url(current_user))
+    redirect_to(user_avatar_url(current_user))
   end
 
   def settings_notifications

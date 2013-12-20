@@ -108,7 +108,6 @@ class UsersController < ApplicationController
       cookies.permanent.signed[:a] = user.id
       cookies.permanent.signed[:b] = user.username
       cookies.permanent.signed[:c] = params[:user][:password]
-      set_current_avatar(user.user_avatar_url["px_24x24"]) if user.user_avatar_url
 
       redirect_to sign_up_success_path(show: "facebook")
     else
@@ -239,34 +238,6 @@ class UsersController < ApplicationController
         @user.add_error(t('users.password.old was invalid'))
       end
       render action: "password", layout: "application"
-    end
-
-  # Change profile picture
-  # TODO: move to own controller / resource
-
-    def picture
-      @selected = :picture
-      @user = current_user
-      @user_avatar_urls = @user.user_avatar_url
-      render layout: "application"
-    end
-
-    def update_picture
-      @selected = :picture
-      @user = current_user
-
-      @user_avatar_urls = @user.user_avatar_url
-      @results = @user.update_picture(params[:user].try(:[], :image))
-      if @results.valid?
-         flash[:notice] = t('users.profile.updated picture')
-         @user_avatar_urls = @user.direct_user_avatar_url
-         @bust_avatar_cache = true
-         # set cookie so header menu will show new avatar
-         set_current_avatar(@user.direct_user_avatar_url["px_24x24"])
-         redirect_to(picture_user_path(@user))
-      else
-         render action: "picture", layout: "application"
-      end
     end
 
   # Update user notification settings

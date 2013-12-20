@@ -1,4 +1,6 @@
-- @title = "#{t('users.picture')} | #{@user.name || @user.username}"
+:ruby
+  @title = "#{t('users.picture')} | #{@user.name || @user.username}"
+  cache_bust = '?' + rand(1000000).to_s
 
 - content_for :sidebar do
   = render partial: "widgets/settings"
@@ -11,12 +13,12 @@
   - if @results
     = render partial: "shared/form_errors", locals: {errors: @results.errors}
 
-  - cache_bust = '?' + rand(1000000).to_s
+  
   %img{src: @user_avatar_urls['px_128x128'] + cache_bust}
   - ['24x24', '48x48', '128x128', '512x512'].each do |s|
     %img{src: @user_avatar_urls["px_#{s}"] + cache_bust, style: 'display: none'}
 
-  = form_for @user, url: update_picture_user_path(@user) do |f|
+  = form_for @user, url: user_avatar_path(@user) do |f|
     %p
       = f.label :image, t('users.profile.avatar file')
       %br
@@ -25,5 +27,3 @@
       = t('users.profile.avatar help')
     %p
       = button_tag t('my picture'), class: "action_button_green"
-
-

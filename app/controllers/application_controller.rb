@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   protect_from_forgery
   
-  helper_method :current_user_is?, :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :current_avatar, :set_current_avatar, :sign_in, :sign_out, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
+  helper_method :current_user_is?, :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :sign_in, :sign_out, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_site
   before_filter :set_locale_and_timezone
@@ -144,7 +144,6 @@ class ApplicationController < ActionController::Base
 
   def sign_in(user, password = nil)
     set_auth(user, password || params[:password])
-    set_current_avatar(user.user_avatar_url["px_24x24"])
   end
 
   def sign_out
@@ -152,7 +151,6 @@ class ApplicationController < ActionController::Base
     cookies.delete :b
     cookies.delete :c
     cookies.delete :f
-    set_current_avatar(nil)
   end
 
 
@@ -181,32 +179,6 @@ class ApplicationController < ActionController::Base
        sign_out
     end
     return @current_user
-  end
-
-
-  def current_avatar
-    # If we're asking for avatar, users has to be signed in
-    # which would have populated avatar cookie
-    # if they're not, we can't get avatar anyway
-    if ((avatar_path = cookies[:avatar]).present?)
-      # we may bust browser cache if user just changed avatar
-      cache_bust = @bust_avatar_cache ? "#{'?' + rand(1000000).to_s}" : ""
-
-      # cookie may hold old path that can't be secure
-      # use CDN path instead if so (API2 to API3 switch)
-      if avatar_path.include? 'http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/'
-        avatar_path.gsub!('http://static-youversionapi-com.s3-website-us-east-1.amazonaws.com/users/images/','https://d5xlnxqvcdji7.cloudfront.net/users/images/')
-        set_current_avatar(avatar_path)
-      end
-
-      avatar_path +  cache_bust
-    end
-  end
-
-  def set_current_avatar(avatar_url)
-    cookies.permanent[:avatar] = avatar_url
-    # expire header that contains avatar
-    expire_fragment "header_#{current_auth.username}_#{I18n.locale}" if current_auth
   end
 
   def set_facebook_cookie(user)
