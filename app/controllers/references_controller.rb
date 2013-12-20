@@ -121,6 +121,6 @@ class ReferencesController < ApplicationController
 
       self.presenter = pres
 
-      render :invalid_ref, status: 404, locals: {presenter: pres, this_language: this_language}
+      render :invalid_ref, status: 404, locals: {presenter: pres}
     end
 end
