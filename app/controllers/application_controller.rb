@@ -97,8 +97,9 @@ class ApplicationController < ActionController::Base
     end
 
     # For client, set the currently reading (and therefore last read) reference to the provided ref.
+    # Unless this is a ajax request (coming from moments verse request)
     def now_reading(reference)
-      client_settings.last_read = reference
+      client_settings.last_read = reference unless request.xhr?
     end
 
     # Presenter helpers
