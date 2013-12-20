@@ -39,7 +39,17 @@
         %div.mobile_platforms
           = link_to(t(".download action"), 'http://bible.com/app')
 
-    %ul
+    .explore_cta
+      %h2= t(".get started")
+      #get-started-buttons
+        %span.fb
+          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
+        %span.or
+          = t("or.upper")
+        %span.email
+          = link_to(t("registration.with email"), sign_up_path)          
+
+    %ul.home-features
       %li.read_bible.first#scroll-point
         %div.pod_content
           %h2= t(".features.read heading")
@@ -62,35 +72,6 @@
           %h2= t(".features.download heading")
           %p
             %span.narrow= t(".features.download description").html_safe
-
-    .explore_cta
-      %h2= t(".get started")
-      #get-started-buttons
-        %span.fb
-          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
-        %span.or
-          = t("or.upper")
-        %span.email
-          = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email"})
-
-      #signup.explore_cta.form{style: "display:none;"}
-        = form_for :user, url: sign_up_path do |f|
-          %ul
-            %li
-              = f.text_field :email, {class:"autofocus", type:"email", tabindex:"1", placeholder: t("registration.placeholder.email") }
-            %li
-              = f.text_field :username, {tabindex:"2", placeholder: t("registration.placeholder.username")}
-            %li
-              = f.password_field :password, {tabindex:"3", placeholder: t("registration.placeholder.password")}
-            %li.terms
-              %span
-                = f.check_box :agree, {tabindex:"4"}
-              %span
-                = f.label :agree, t("users.agreement", terms_link: link_to(t("users.terms and conditions"), terms_url())).html_safe
-            %li
-              = f.submit t("users.register"), {tabindex:"5", class:"cta"}
-
-
 
 - content_for :javascripts do
   :javascript
@@ -128,16 +109,6 @@
     $(window).load(function() {
 
       $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
-
-      // Display signup form.
-      var fade = 200;
-      $("#signup-via-email").on("click", function(e) {
-        e.preventDefault();
-        $("#get-started-buttons").fadeOut(fade, function() {
-          $("#signup").fadeIn(fade);
-          $("#user_email").focus();
-        });
-      });
 
       // Settings for skipping home page
       $("#setting-skip-home").on("click",function(e) {

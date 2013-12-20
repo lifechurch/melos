@@ -8,34 +8,6 @@ class UsersController < ApplicationController
 
   rescue_from APIError, with: :api_error
 
-
-  # User signup flow:
-  #
-  #  +>  /sign-up (users#new)  <-err--------+
-  #  |     |             |                  |
-  #  |   form submit   facebook btn         |
-  # err    |                 \              |
-  #  |  success?           facebook auth (/auth/facebook/sign-up)
-  #  |   /   \                  \           |
-  #  +-no     yes              success?     |
-  #            |                /    \      |
-  #      /confirm-email      yes     no ----+
-  #          (...)            |
-  #       clicks link      /sign-up/facebook   <----+
-  #           |               |                     |
-  #       /confirm        fill out form & submit    |
-  #           |                     |               |
-  #       valid code?           success?           err
-  #         /     \              /    \             |
-  #       yes     no           yes     no ----------+
-  #        |       \            |
-  #     redirect   /confirm     |
-  #        |       (with error) |
-  #        +--------------------+
-  #        |
-  #   /sign-up/success (or sign_up_redirect)
-
-
   # Action meant to render moment cards partial to html for ajax delivery client side
   # Currently being used for next page calls on moments feed.
   def _cards
@@ -69,20 +41,17 @@ class UsersController < ApplicationController
     @badges = @user.badges
   end
 
-  def edit
-    @selected = :profile
-    render layout: "application"
-  end
-
-
   def new
+    redirect_to moments_path and return if current_auth
+
     @user = User.new
     self.sidebar_presenter = Presenter::Sidebar::UsersNew.new(@user,params,self)
     render action: "new", layout: "application" #neccessary to use app layout instead of users layout.
   end
 
   def create
-    return render_404 unless params[:user].present?
+    redirect_to moments_path and return   if current_auth
+    render_404 and return                 unless params[:user].present?
 
     @user = User.register(params[:user].merge(language_tag: I18n.locale))
     if @user.persisted?
@@ -98,6 +67,11 @@ class UsersController < ApplicationController
     else
       render action: "new", layout: "application"
     end
+  end
+
+  def edit
+    @selected = :profile
+    render layout: "application"
   end
 
 
