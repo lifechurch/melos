@@ -4,7 +4,8 @@ class SubscriptionsController < ApplicationController
   
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
-  before_filter :find_subscription, only: [:show,:destroy,:edit,:update,:calendar]
+  before_filter :find_subscription,     only: [:show,:destroy,:edit,:update,:calendar]
+  
   rescue_from NotAChapterError, with: :ref_not_found
 
   def index
@@ -20,6 +21,7 @@ class SubscriptionsController < ApplicationController
   def show
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    this_language # for version selector
     now_reading(presenter.reference)
     respond_with(presenter.subscription)
   end

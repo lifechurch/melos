@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
   before_filter :force_login, only: [:start, :update, :settings, :calendar, :mail_settings, :calendar]
+  before_filter :this_language, only: [:show]
   rescue_from InvalidReferenceError, with: :ref_not_found
   rescue_from YouVersion::API::RecordNotFound, with: :handle_404
 

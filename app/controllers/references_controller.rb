@@ -4,6 +4,7 @@ class ReferencesController < ApplicationController
   before_filter :fix_invalid_reference,         only: [:show]
   before_filter :strip_format,                  only: [:show]
   before_filter :setup_presenters,              only: [:show]
+  before_filter :this_language,                 only: [:show]
 
   rescue_from InvalidReferenceError, with: :ref_not_found
 
@@ -120,6 +121,6 @@ class ReferencesController < ApplicationController
 
       self.presenter = pres
 
-      render :invalid_ref, status: 404, locals: {presenter: pres}
+      render :invalid_ref, status: 404, locals: {presenter: pres, this_language: this_language}
     end
 end

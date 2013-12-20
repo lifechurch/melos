@@ -1,0 +1,52 @@
+-# Version Selector
+-# Used in
+-# references/reader/js
+-# plans/invalid_ref
+
+-# Local Variables
+-# link_params
+-# force_style
+-# recent_versions
+-# presenter
+-# version
+-# recent_versions
+-# site
+-# ref
+-# link_params
+-# add_version_param (should default to false)
+-# this_language: set by controller, passed down to all_versions
+
+-# version and recent_versions expected as version and array of versions
+-# opts[:force_style] is temporary parameter until we have new reading plan design
+-# opts[:link_params] is temporary parameter until we have new reading plan design
+
+
+- plan_url = url_for(link_params) if defined?(link_params)
+- add_version_param = add_version_param || false
+- recent_versions = recent_versions || []
+- force_style = force_style || []
+
+.dynamic_menu.version_select{class: force_style.present? ? 'static dynamic_menu_reverse' : '',style: force_style, id: "menu_version", "data-plan-url" => plan_url, "data-link-needs-param" => add_version_param.to_s}
+  .mobile
+    .reader_modal_header
+      %nav
+        %a.close_btn.version_close_btn
+  .spinner_wrapper{style: "display: none;"}
+    #version_spinner.dynamic_menu_spinner
+  .search
+    %input{type: "text", placeholder: t('versions.filter')}
+  .browse
+    %span.menu_arrow
+      &nbsp;
+    .scroll
+      %table
+        - if recent_versions.present?
+          %tr.cat.recent
+            %th{:colspan => '2'}= t('recent versions')
+          = render partial: 'shared/version_selector/items', locals: {versions: recent_versions, presenter: presenter}
+        = render partial: 'shared/version_selector/all_versions', locals: {version: version, site: site, presenter: presenter, this_language: this_language}
+        %tr.mobile#see_all
+          %th{:colspan => '2'}
+            = link_to t('versions.see all'), versions_path
+      .loading{'data-error-text' => t('versions.load error')}
+        = t('versions.loading')

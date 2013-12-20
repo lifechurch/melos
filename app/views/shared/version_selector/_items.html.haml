@@ -1,4 +1,12 @@
-- ref_str = @presenter.reference_string
+-# Used in 
+-# shared/version_selector/display
+-# shared/version_selector/all_versions
+
+-# Local variables
+-# presenter
+-# versions
+
+- ref_str = presenter.reference_string
 - book, chapter = ref_str.book, ref_str.chapter
 - versions.each do |v|
   - version = v.abbreviation.downcase

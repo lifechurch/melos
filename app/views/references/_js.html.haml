@@ -1,6 +1,8 @@
 -# js partial shared amongs reader and invalid_ref partials.
 -# Local Parameters
 -# presenter: (required) Presenter::Reference or Presenter::Subscription
+-# @this_language (required) Array of versions
+
 - reader_menus  = true
 - version       = presenter.version
 - reference     = presenter.reference
@@ -10,7 +12,6 @@
 - focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
 - modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
 - a_subscription_chapter = presenter.is_a?(Presenter::Subscription) && presenter.is_chapter?
-
 
 - content_for   :javascripts do
   - fullscreen  = (client_settings.reader_full_screen && client_settings.reader_full_screen == 1) ? true : false;
@@ -43,9 +44,9 @@
 // Render all necessary menus
 - if reader_menus == true
   = render partial: 'shared/book_selector', locals: {presenter: presenter}
-  = render_cell :version_selector, :display, {presenter: presenter, version: version, recent_versions: recent_versions, reference: reference, site: @site}
+  = render partial: 'shared/version_selector/display', locals: {presenter: presenter, version: version, recent_versions: recent_versions, reference: reference, site: @site, this_language: @this_language}
   - if modal_verse.present?
-    = render partial:'shared/modal_single_verse',locals: {modal_verse: modal_verse, reference: reference, version: version}  unless @verse_modals == false || modal_verse == nil
+    = render partial: 'shared/modal_single_verse', locals: {modal_verse: modal_verse, reference: reference, version: version}  unless @verse_modals == false || modal_verse == nil
   = render partial: 'shared/menu_settings'
   = render partial: 'shared/menu_audio_player', locals: {reference: reference}
 
