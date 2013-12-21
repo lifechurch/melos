@@ -2,44 +2,45 @@ class UsersController < ApplicationController
 
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :delete_account, :delete_account_form]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:_cards,:home,:sign_up_success, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
+  before_filter :find_user, except: [:_cards,:sign_up_success, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
   before_filter :authorize, only: [:edit,:update, :password, :update_password, :delete_account,:destroy]
 
+  # New find user method - transitioning to this over time and getting rid of prev 'find_user' filter
+  before_filter :find_user_for_moments, only: [:show,:notes,:highlights,:bookmarks,:badges]
+
   rescue_from APIError, with: :api_error
 
+  
   # Action meant to render moment cards partial to html for ajax delivery client side
   # Currently being used for next page calls on moments feed.
   def _cards
     @user = User.find(params[:uid])
-    @moments = Moment.all(user_id: @user.id.to_i, page: @page, auth: current_auth)
+    @moments = Moment.all(moment_all_params)
     render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
 
   def show
-    @user    = User.find(params[:id])
-    @moments = Moment.all(user_id: @user.id.to_i, page: @page, auth: current_auth)
+    @moments = Moment.all(moment_all_params)
   end
 
   def notes
-    @user  = User.find(params[:id])
-    @notes = Note.all(user_id: @user.id.to_i , auth: current_auth, page: params[:page] || 1)
+    @notes = Note.all(moment_all_params)
   end
 
   def highlights
-    @user  = User.find(params[:id])
-    @highlights = Highlight.all(user_id: @user.id.to_i , auth: current_auth, page: params[:page] || 1)
+    @highlights = Highlight.all(moment_all_params)
   end
 
   def bookmarks
-    @user  = User.find(params[:id])
-    @bookmarks = params[:label] ? Bookmark.for_label(params[:label], {page: @page, user_id: @user.id.to_i, auth: current_auth}) : Bookmark.all(auth: current_auth, user_id: @user.id.to_i, page: @page)
+    @bookmarks = params[:label] ? Bookmark.for_label(params[:label], {page: @page, user_id: @user.id.to_i, auth: current_auth}) : Bookmark.all(moment_all_params)
   end
 
   def badges
-    @selected = :badges
     @badges = @user.badges
   end
+
+
 
   def new
     redirect_to moments_path and return if current_auth
@@ -269,6 +270,15 @@ class UsersController < ApplicationController
 
 
 private
+
+  def moment_all_params
+    {user_id: @user.id.to_i, page: @page, auth: current_auth}
+  end
+
+  def find_user_for_moments
+    @user = User.find(params[:id])
+  end
+
   # Find requested user and setup appropriate sidebar presenter
   def find_user
     user_id   = params[:user_id] || params[:id]
