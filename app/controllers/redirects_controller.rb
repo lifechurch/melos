@@ -78,7 +78,7 @@ class RedirectsController < ApplicationController
   #end
 
   def settings_email
-    redirect_to(email_user_url(current_user))
+    redirect_to(user_email_url(current_user))
   end
 
   def settings_password

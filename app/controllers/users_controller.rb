@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-  before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :update_email, :delete_account, :delete_account_form]
+  before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :delete_account, :delete_account_form]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:_cards,:home,:sign_up_success, :confirm_update_email, :update_email, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
+  before_filter :find_user, except: [:_cards,:home,:sign_up_success, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
-  before_filter :authorize, only: [:edit,:update, :email, :password, :update_password, :delete_account,:destroy]
+  before_filter :authorize, only: [:edit,:update, :password, :update_password, :delete_account,:destroy]
 
   rescue_from APIError, with: :api_error
 
@@ -190,28 +190,6 @@ class UsersController < ApplicationController
     render action: "resend_confirmation", layout: "application"
   end
 
-  # Email address management
-  # TODO: move to its own controller and resource
-
-    def email
-      @user = current_user
-      render layout: "application"
-    end
-
-    def update_email
-      @user = current_user
-      @results = @user.update_email(params[:user][:email])
-      render action: "email", layout: "application"
-    end
-
-    # TODO: handle users.token.not_found api error when requesting more than once.
-    def confirm_update_email
-      @user = User.confirm_update_email(params[:token])
-      if @user.valid?
-         location = current_user ? edit_user_path(current_user) : sign_in_path
-         redirect_to( location , notice: t('users.confirm update email success'))
-      end
-    end
 
   # Change password
   # TODO: move to own controller / resource

@@ -63,6 +63,7 @@ YouversionWeb::Application.routes.draw do
       get "_list", on: :collection
     end
 
+    resource :email,    only: [:show,:update]
     resource :avatar,   only: [:show,:update],  path: "picture"
     resources :devices, only: [:index,:destroy]
 
@@ -71,9 +72,6 @@ YouversionWeb::Application.routes.draw do
     
     # removing for 3.1 social launch until we have proper API to add twitter/facebook credentials again.
     # get :connections, on: :member, to: "connections#index"
-
-    get :email, on: :member
-    put :update_email, on: :member
 
     get :password, on: :member
     put :update_password, on: :member
@@ -90,6 +88,11 @@ YouversionWeb::Application.routes.draw do
 
     match 'badge/:id' => 'badges#show', as: 'badge'
   end
+
+  get "/confirm-update-email/:token",    to: "emails#confirm_update"
+
+
+
 
   # Necessary as we don't want subscriptions routes to be shallow
   scope "/users/:user_id" do
@@ -144,7 +147,6 @@ YouversionWeb::Application.routes.draw do
   get   "/sign-up/success",                to: "users#sign_up_success",      as: "sign_up_success"
   get   "/confirm/resend",                 to: "users#resend_confirmation",  as: "resend_confirmation"
   post  "/confirm/resend",                 to: "users#resend_confirmation",  as: "resend_confirmation"
-  get   "/confirm-update-email/:token",    to: "users#confirm_update_email", as: "confirm_update_email"
   get   "/settings/forgot_password",       to: "users#forgot_password_form", as: "forgot_password"
   post  "/settings/forgot_password",       to: "users#forgot_password",      as: "forgot_password"
   get   "share/new",                       to: "users#new_share",            as: "new_share"
