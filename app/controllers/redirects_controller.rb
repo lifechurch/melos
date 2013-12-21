@@ -106,7 +106,7 @@ class RedirectsController < ApplicationController
   end
 
   def settings_devices
-    redirect_to(devices_user_url(current_user))
+    redirect_to(user_devices_url(current_user))
   end
 
   def delete_account

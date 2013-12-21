@@ -63,7 +63,9 @@ YouversionWeb::Application.routes.draw do
       get "_list", on: :collection
     end
 
-    resource :avatar, path: "picture", only: [:show,:update]
+    resource :avatar,   only: [:show,:update],  path: "picture"
+    resources :devices, only: [:index,:destroy]
+
 
     # bible.com/users/:id/connections => connections#index
     
@@ -79,7 +81,6 @@ YouversionWeb::Application.routes.draw do
     get :notifications, on: :member
     put :update_notifications, on: :member
 
-    get :devices, on: :member
     get :delete_account, on: :member
     
     get :notes,       on: :member, as: 'notes'
@@ -146,7 +147,6 @@ YouversionWeb::Application.routes.draw do
   get   "/confirm-update-email/:token",    to: "users#confirm_update_email", as: "confirm_update_email"
   get   "/settings/forgot_password",       to: "users#forgot_password_form", as: "forgot_password"
   post  "/settings/forgot_password",       to: "users#forgot_password",      as: "forgot_password"
-  delete "/devices/:device_id",            to: "users#destroy_device",       as: "device"
   get   "share/new",                       to: "users#new_share",            as: "new_share"
   post  "share",                           to: "users#share",                as: "share"
 

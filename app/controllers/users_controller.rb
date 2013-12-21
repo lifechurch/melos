@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-  before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :devices, :destroy_device, :update_email, :delete_account, :delete_account_form]
+  before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :update_email, :delete_account, :delete_account_form]
   before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:_cards,:home,:sign_up_success, :confirm_update_email, :update_email, :destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
+  before_filter :find_user, except: [:_cards,:home,:sign_up_success, :confirm_update_email, :update_email, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
-  before_filter :authorize, only: [:edit,:update, :email, :password, :update_password, :picture, :update_picture, :devices, :delete_account,:destroy]
+  before_filter :authorize, only: [:edit,:update, :email, :password, :update_password, :delete_account,:destroy]
 
   rescue_from APIError, with: :api_error
 
@@ -74,6 +74,18 @@ class UsersController < ApplicationController
     render layout: "application"
   end
 
+  def update
+    @user.auth = current_auth # setup auth prior to update
+    @user = @user.update(params[:user])
+    if @user.valid?
+      flash[:notice]= t('users.profile.updated')
+      redirect_to edit_user_path(@user.to_param)
+    else
+      flash[:error]= t('users.profile.error')
+      render action: "edit", layout: "application"
+    end
+  end
+
 
   # Template displayed after successful create
   def confirm_email
@@ -137,21 +149,6 @@ class UsersController < ApplicationController
     render "share", layout: "application"
   end
 
-
-
-
-  def update
-    id = @user.id
-    @user.auth = current_auth # setup auth prior to update
-    @user = @user.update(params[:user])
-    if @user.valid?
-      flash[:notice]= t('users.profile.updated')
-      redirect_to edit_user_path(id)
-    else
-      flash[:error]= t('users.profile.error')
-      render action: "edit", layout: "application"
-    end
-  end
 
   def delete_account
     render layout: "application"
@@ -263,34 +260,7 @@ class UsersController < ApplicationController
         flash[:error] = t('users.profile.notification errors')
         render :notifications, layout: "application"
       end
-    end  
-
-  # Manage devices
-  # TODO: move to own controller / resource
-
-    def devices
-      @devices = Device.all(id: current_user.id, auth: current_auth)
-      render layout: "application"
     end
-
-
-
-    def destroy_device
-      @user = current_user
-      @device = Device.find(params[:device_id], auth: current_auth)
-      @device.auth = current_auth
-      @results = @device.destroy
-      if @results.valid?
-         flash[:notice] = "Device removed."           # TODO: localize
-         redirect_to devices_user_path(current_user)
-      else
-         @devices = @user.devices
-         @selected = :devices
-         flash[:error] = "Could not delete device."   # TODO: localize
-         render :devices
-      end
-    end
-
 
   # Manage forgotten password
   # TODO: Move to own controller + possible resource
