@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
+  
+  include YV::Concerns::UserAuth
   include ApplicationHelper
   protect_from_forgery
   
-  helper_method :current_user_is?, :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :force_login, :find_user, :current_auth, :current_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :sign_in, :sign_out, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
+  helper_method :sidebar_presenter, :presenter, :client_settings, :follow_redirect, :redirect_path, :clear_redirect, :recent_versions, :set_cookie, :find_user, :current_date, :last_read, :current_version, :alt_version, :bible_path, :a_very_short_time, :a_short_time, :a_long_time, :a_very_long_time, :bdc_user?
   before_filter :set_page
   before_filter :set_site
   before_filter :set_locale_and_timezone
@@ -134,60 +136,9 @@ class ApplicationController < ActionController::Base
       Raven::Rack.capture_exception(exception, request.env)
     end
 
-    # Appropriate method to use to check if current_user is the passed in user
-    # Using current_auth avoids an extra API call to users#view for current user information
-    def current_user_is?( user )
-      current_auth && current_auth.username == user.username
-    end
+
 
   private
-
-  def authorize
-    id_param = params[:user_id] || params[:id]
-    unless id_param == current_user.username
-      redirect_to(edit_user_path(current_user))
-    end
-  end
-
-
-  def sign_in(user, password = nil)
-    set_auth(user, password || params[:password])
-  end
-
-  def sign_out
-    cookies.delete :a
-    cookies.delete :b
-    cookies.delete :c
-    cookies.delete :f
-  end
-
-
-  def set_auth(user, password)
-    cookies.permanent.signed[:a] = user.id
-    cookies.permanent.signed[:b] = user.username
-    cookies.permanent.signed[:c] = password
-    @current_auth = Hashie::Mash.new( {'user_id' => user.id, 'username' => user.username, 'password' => password} )
-  end
-
-  def current_auth
-    return @current_auth if @current_auth
-    if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
-      @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
-    end
-  end
-
-  def current_user
-    return @current_user if @current_user
-    return nil unless current_auth
-    
-    results = User.find(current_auth.user_id, auth: current_auth)
-    if results.valid?
-       @current_user = results
-    else
-       sign_out
-    end
-    return @current_user
-  end
 
   def set_facebook_cookie(user)
     begin
@@ -228,10 +179,6 @@ class ApplicationController < ActionController::Base
         set_facebook_cookie current_user
       end
     end
-  end
-
-  def blacklist
-    @blacklist ||= (ENV['BLACKLIST'] || '59.57.166.184, 59.57.165.125, 27.154.193.127, 27.154.194.119').split(', ')
   end
 
   def auth_error(ex)
@@ -300,14 +247,6 @@ class ApplicationController < ActionController::Base
     return true  if request.referer.blank?
     return false if request.host == request.referer.split('/')[2].split(':')[0]
     return true
-  end
-
-  def force_login(opts = {})
-    if current_auth.nil?
-      opts[:redirect] = request.path
-      redirect_to sign_in_path(opts) and return
-      #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
-    end
   end
 
   def recent_versions

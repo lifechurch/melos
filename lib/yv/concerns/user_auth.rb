@@ -1,0 +1,73 @@
+module YV
+  module Concerns
+    module UserAuth
+
+      def self.included(base)
+        base.helper_method :force_login, :current_auth, :sign_in, :sign_out, :current_user, :current_user_is?
+      end
+
+      private
+
+      def force_login(opts = {})
+        if current_auth.nil?
+          opts[:redirect] = request.path
+          redirect_to sign_in_path(opts) and return
+          #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
+        end
+      end
+
+      def current_user
+        return @current_user if @current_user
+        return nil unless current_auth
+        
+        results = User.find(current_auth.user_id, auth: current_auth)
+        if results.valid?
+           @current_user = results
+        else
+           sign_out
+        end
+        return @current_user
+      end
+
+      # Appropriate method to use to check if current_user is the passed in user
+      # Using current_auth avoids an extra API call to users#view for current user information
+      def current_user_is?( user )
+        current_auth && current_auth.username == user.username
+      end
+
+      def current_auth
+        return @current_auth if @current_auth
+        if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
+          @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
+        end
+      end
+
+      def set_auth(user, password)
+        cookies.permanent.signed[:a] = user.id
+        cookies.permanent.signed[:b] = user.username
+        cookies.permanent.signed[:c] = password
+        @current_auth = Hashie::Mash.new( {'user_id' => user.id, 'username' => user.username, 'password' => password} )
+      end
+
+      def sign_in(user, password = nil)
+        set_auth(user, password || params[:password])
+      end
+
+      def sign_out
+        cookies.delete :a
+        cookies.delete :b
+        cookies.delete :c
+        cookies.delete :f
+      end
+
+      def authorize
+        id_param = params[:user_id] || params[:id]
+        unless id_param == current_user.username
+          redirect_to(edit_user_path(current_user))
+        end
+      end
+
+
+    end
+  end
+end

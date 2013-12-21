@@ -1,9 +1,12 @@
 class JsonController < ActionController::Metal
   
+  include AbstractController::Helpers
   include ActionController::Helpers
   include ActionController::Rendering
   include ActionController::Renderers::All
   include ActionController::Cookies
+
+  include YV::Concerns::UserAuth
 
 
   # Routes
@@ -19,18 +22,6 @@ class JsonController < ActionController::Metal
 
 
   private
-
-  # current_auth, ref_from_params - Ripped these from AppController - we need to move these into lib Modules 
-  # and include them where needed.
-
-  def current_auth
-    return @current_auth if @current_auth
-    if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
-      @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
-    end
-  end
-
-
 
   def usfm_param
     pieces = params[:reference].split(".")
