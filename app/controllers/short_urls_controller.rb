@@ -27,7 +27,7 @@ class ShortUrlsController < ActionController::Metal
       book    = $1.downcase
       chapter = $2
       verse   = $3
-      redirect_to("#{base_url}/bible/kjv/#{book}.#{chapter}.#{verse}.kjv") and return
+      redirect_to("#{base_url}/bible/#{book}.#{chapter}.#{verse}") and return
 
     # Gen1 - Book and chapter
     when /^([0-9]?[a-zA-Z]+)([0-9]+)$/
