@@ -12,10 +12,7 @@ module Subscriptions
 
 
       def all(opts={})
-        raise "Auth required."                      unless opts[:auth]
-        raise "User id required."                   unless opts[:user_id]
-        raise "Id option required for subscription" unless opts[:id]
-
+        validate_opts(opts)
         super(opts)
       end
 
@@ -23,18 +20,9 @@ module Subscriptions
         "reading-plans/accountability"
       end
 
-
-
       def add(opts={})
-        raise "Auth required."                      unless opts[:auth]
-        raise "User id required."                   unless opts[:user_id]
-        raise "Id option required for subscription" unless opts[:id]
-
-        data, errs = post( add_accountability_path , opts)
-        results = YV::API::Results.new(data,errs)
-          raise_errors(results.errors, "subscription#update_accountability") unless results.valid?
-
-        results
+        validate_opts(opts)
+        post_request(add_accountability_path,opts)
       end
       
       def add_accountability_path
@@ -44,19 +32,29 @@ module Subscriptions
 
 
       def delete(opts={})
-        raise "Auth required."                      unless opts[:auth]
-        raise "User id required."                   unless opts[:user_id]
-        raise "Id option required for subscription" unless opts[:id]
+        validate_opts(opts)
+        post_request(delete_accountability_path,opts)
+      end
 
-        data, errs = post( delete_accountability_path , opts)
+      def delete_accountability_path
+        "reading-plans/delete_accountability"
+      end
+
+
+      private
+
+      def post_request(api_path, opts)
+        data, errs = post( api_path , opts)
         results = YV::API::Results.new(data,errs)
           raise_errors(results.errors, "subscription#update_accountability") unless results.valid?
 
         results
       end
 
-      def delete_accountability_path
-        "reading-plans/delete_accountability"
+      def validate_opts(opts)
+        raise "Auth required."                      unless opts[:auth]
+        raise "User id required."                   unless opts[:user_id]
+        raise "Id option required for subscription" unless opts[:id]
       end
 
 
