@@ -142,6 +142,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def authorize
+    id_param = params[:user_id] || params[:id]
+    unless id_param == current_user.username
+      redirect_to(edit_user_path(current_user))
+    end
+  end
+
+
   def sign_in(user, password = nil)
     set_auth(user, password || params[:password])
   end

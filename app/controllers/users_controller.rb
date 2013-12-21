@@ -79,7 +79,7 @@ class UsersController < ApplicationController
     @user = @user.update(params[:user])
     if @user.valid?
       flash[:notice]= t('users.profile.updated')
-      redirect_to edit_user_path(@user.to_param)
+      redirect_to edit_user_path(current_auth.username)
     else
       flash[:error]= t('users.profile.error')
       render action: "edit", layout: "application"
@@ -288,13 +288,6 @@ private
       end
     else
       force_login
-    end
-  end
-
-  def authorize
-    id_param = params[:user_id] || params[:id]
-    unless id_param == current_user.username
-      redirect_to(edit_user_path(current_user))
     end
   end
 
