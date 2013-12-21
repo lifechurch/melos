@@ -18,7 +18,8 @@ class VOD < YV::Resource
       today = Date.today
       yday  = today.yday
       item = all.detect {|d| d.day == yday} # {"references"=>["PHP.3.13+PHP.3.14"], "day"=>315}
-      
+      item = all.detect {|d| d.day == yday-1} if item.nil? # fallback if there is no day, there HAS to be a yesterday...right??
+
       # join multiple items in array, then split on our + to get all reference pieces
       references    = item.references.join("+").split("+")  # ["PHP.3.13","PHP.3.14"]
       verse_nums    = references.collect {|ref| ref.split(".").last} # get 13 from PHP.3.13 for each ref occurence
