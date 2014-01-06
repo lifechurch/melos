@@ -25,7 +25,6 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    clear_redirect
     redirect_to (params[:redirect] || bible_path)
   end
 end

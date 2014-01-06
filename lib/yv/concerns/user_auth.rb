@@ -11,22 +11,17 @@ module YV
       def force_login(opts = {})
         if current_auth.nil?
           opts[:redirect] = request.path
-          redirect_to sign_in_path(opts) and return
-          #EVENTUALLY: handle getting the :source string based on the referrer dynamically in the sign-in controller
+          return redirect_to sign_in_path(opts)
+        end
+        if current_user.invalid?
+          sign_out
+          return redirect_to (params[:redirect] || bible_path)
         end
       end
 
       def current_user
-        return @current_user if @current_user
         return nil unless current_auth
-        
-        results = User.find(current_auth.user_id, auth: current_auth)
-        if results.valid?
-           @current_user = results
-        else
-           sign_out
-        end
-        return @current_user
+        @current_user ||= User.find(current_auth.user_id, auth: current_auth)
       end
 
       # Appropriate method to use to check if current_user is the passed in user
@@ -58,6 +53,7 @@ module YV
         cookies.delete :b
         cookies.delete :c
         cookies.delete :f
+        clear_redirect
       end
 
       def authorize
