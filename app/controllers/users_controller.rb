@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-  before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :delete_account, :delete_account_form]
+  before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture,:delete_account, :delete_account_form]
   before_filter :find_user, except: [:_cards,:sign_up_success, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
-  before_filter :authorize, only: [:edit,:update, :password, :update_password, :delete_account,:destroy]
+  before_filter :authorize, only: [:edit,:update,:delete_account,:destroy]
 
   # New find user method - transitioning to this over time and getting rid of prev 'find_user' filter
   before_filter :find_user_for_moments, only: [:show,:notes,:highlights,:bookmarks,:badges]
@@ -189,31 +189,6 @@ class UsersController < ApplicationController
     end
     render action: "resend_confirmation", layout: "application"
   end
-
-
-  # Change password
-  # TODO: move to own controller / resource
-    def password
-      @selected = :password
-      render layout: "application"
-    end
-
-    # TODO: move this to its own resourceful controller
-    def update_password
-      @selected = :password
-      @user = current_user
-      if params[:user][:old_password] == current_auth.password
-        @user = @user.update_password(params[:user].except(:old_password))
-
-        if @user.valid?
-          flash[:notice]=t('users.password.updated')
-          cookies.signed.permanent[:c] = params[:user][:password]
-        end
-      else
-        @user.add_error(t('users.password.old was invalid'))
-      end
-      render action: "password", layout: "application"
-    end
 
   # Manage forgotten password
   # TODO: Move to own controller + possible resource

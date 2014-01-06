@@ -65,6 +65,7 @@ YouversionWeb::Application.routes.draw do
     end
 
     resource :email,    only: [:show,:update]
+    resource :password, only: [:show,:update]
     resource :avatar,   only: [:show,:update],  path: "picture"
     resources :devices, only: [:index,:destroy]
 
@@ -74,8 +75,6 @@ YouversionWeb::Application.routes.draw do
     # removing for 3.1 social launch until we have proper API to add twitter/facebook credentials again.
     # get :connections, on: :member, to: "connections#index"
 
-    get :password, on: :member
-    put :update_password, on: :member
     get :delete_account, on: :member
     get :notes,       on: :member, as: 'notes'
     get :bookmarks,   on: :member, as: 'bookmarks'
