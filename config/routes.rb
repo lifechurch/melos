@@ -142,10 +142,11 @@ YouversionWeb::Application.routes.draw do
   get   "/sign-up/success",                to: "users#sign_up_success",      as: "sign_up_success"
   get   "/confirm/resend",                 to: "users#resend_confirmation",  as: "resend_confirmation"
   post  "/confirm/resend",                 to: "users#resend_confirmation",  as: "resend_confirmation"
-  get   "/settings/forgot_password",       to: "users#forgot_password_form", as: "forgot_password"
-  post  "/settings/forgot_password",       to: "users#forgot_password",      as: "forgot_password"
   get   "share/new",                       to: "users#new_share",            as: "new_share"
   post  "share",                           to: "users#share",                as: "share"
+
+  get   "/settings/forgot_password",       to: "password_resets#new",        as: "forgot_password"
+  post  "/settings/forgot_password",       to: "password_resets#create",     as: "forgot_password"
 
   # Sessions
   get  "/sign-in",                         to: "sessions#new",               as: "sign_in"

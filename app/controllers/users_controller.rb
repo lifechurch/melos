@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture,:delete_account, :delete_account_form]
-  before_filter :find_user, except: [:_cards,:sign_up_success, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
+  before_filter :find_user, except: [:_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
   before_filter :authorize, only: [:edit,:update,:delete_account,:destroy]
 
@@ -189,33 +189,6 @@ class UsersController < ApplicationController
     end
     render action: "resend_confirmation", layout: "application"
   end
-
-  # Manage forgotten password
-  # TODO: Move to own controller + possible resource
-
-    def forgot_password_form
-      @selected = :password
-      self.sidebar_presenter = Presenter::Sidebar::Default.new
-      render "forgot_password", layout: "application"
-    end
-
-    def forgot_password
-      @selected = :password
-      self.sidebar_presenter = Presenter::Sidebar::Default.new
-      begin
-        @results = User.forgot_password(params[:email])
-        if @results.valid?
-          sign_out
-          render "forgot_password_success", layout: "application"
-        else
-          render "forgot_password", layout: "application"
-        end
-      rescue UnverifiedAccountError => e
-        render "sessions/unverified", layout: "application"
-      end
-
-    end
-
 
 
 private
