@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  def client_settings
+    @client_settings ||= YV::ClientSettings.new(cookies)
+  end
+
+  def current_date
+    current_user ? (DateTime.now.utc + current_user.utc_date_offset).to_date : Date.today
+  end
+
   def api_dt_time_ago(api_created_dt)
     # TODO - localize 'ago'
     time_ago_in_words(DateTime.parse(api_created_dt).in_time_zone) + " ago"
