@@ -3,10 +3,14 @@ module YV
     module UserAuth
 
       def self.included(base)
-        base.helper_method :force_login, :current_auth, :sign_in, :sign_out, :current_user, :current_user_is?
+        base.helper_method :logged_in?, :force_login, :current_auth, :sign_in, :sign_out, :current_user, :current_user_is?
       end
 
       private
+
+      def logged_in?
+        current_auth.present?
+      end
 
       def force_login(opts = {})
         if current_auth.nil?

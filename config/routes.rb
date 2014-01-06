@@ -13,14 +13,15 @@ YouversionWeb::Application.routes.draw do
   match "/app(/:store)", to: AppStoreController.action(:index)
   get "/search(/:category)",to: "search#show",                as: "search"
 
+  resources :comments,  only: [:create]
 
   resources :friendships, only: [:create, :destroy] do
     get :requests, on: :collection
     post :offer, on: :collection
   end
-  resources :notifications, only: [:index]
-  resources :comments,  only: [:create]
-
+  
+  resource :notifications, only: [:show, :edit, :update]
+  
   # Custom campaign pages
   scope module: 'campaigns' do
     get "/100million",    to: "pages#hundred_million"
@@ -75,12 +76,7 @@ YouversionWeb::Application.routes.draw do
 
     get :password, on: :member
     put :update_password, on: :member
-
-    get :notifications, on: :member
-    put :update_notifications, on: :member
-
     get :delete_account, on: :member
-    
     get :notes,       on: :member, as: 'notes'
     get :bookmarks,   on: :member, as: 'bookmarks'
     get :highlights,  on: :member, as: 'highlights'
@@ -180,18 +176,6 @@ YouversionWeb::Application.routes.draw do
   # Removed for 3.1 social - will be making a comeback
   #get "/settings/connections",             to: "redirects#settings_connections"
 
-
-  get "pages/feed", to: "pages#feed"
-  get "pages/detail", to: "pages#detail"
-  get "pages/requests", to: "pages#requests"
-  get "pages/notifications", to: "pages#notifications"
-
-
-  get "pages/feed", to: "pages#feed"
-  get "pages/detail", to: "pages#detail"
-  get "pages/requests", to: "pages#requests"
-  get "pages/notifications", to: "pages#notifications"
-  
 # Redirect to a.youversion.com/groups/lifechurchtv
   get "/lifechurchtv",  to: "redirects#lifechurchtv"
 

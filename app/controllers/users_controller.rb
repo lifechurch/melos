@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :delete_account, :delete_account_form]
-  before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:_cards,:sign_up_success, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
+  before_filter :find_user, except: [:_cards,:sign_up_success, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
   before_filter :authorize, only: [:edit,:update, :password, :update_password, :delete_account,:destroy]
 
@@ -216,31 +215,6 @@ class UsersController < ApplicationController
       render action: "password", layout: "application"
     end
 
-  # Update user notification settings
-  # TODO: move to own controller / resource
-
-    def notifications
-      @selected = :notifications
-      @user = current_user
-      @results = NotificationSettings.find(params[:token].present? ? {token: params[:token]} : {auth: current_auth})
-      @settings = @results.data
-      self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
-      render layout: "application"
-    end
-
-    def update_notifications
-      @settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
-      @results = @settings.update(params[:settings] || {})
-      if @results.valid?
-         flash[:notice] = t('users.profile.updated notifications')
-         redirect_to(notifications_user_path(current_auth.username,token: params[:token]))
-      else
-        @user = current_user
-        flash[:error] = t('users.profile.notification errors')
-        render :notifications, layout: "application"
-      end
-    end
-
   # Manage forgotten password
   # TODO: Move to own controller + possible resource
 
@@ -288,16 +262,6 @@ private
       self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
     else
       return render_404
-    end
-  end
-
-  def force_notification_token_or_login
-    if params[:token]
-      if current_user && current_user.notifications_token != params[:token]
-        redirect_to sign_out_path(redirect: notification_settings_path) and return
-      end
-    else
-      force_login
     end
   end
 
