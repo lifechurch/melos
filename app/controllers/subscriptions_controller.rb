@@ -2,6 +2,7 @@ class SubscriptionsController < ApplicationController
 
   respond_to :html
   
+  before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
   before_filter :find_subscription, only: [:show,:destroy,:edit,:update,:calendar]
   rescue_from NotAChapterError, with: :ref_not_found
@@ -24,9 +25,6 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    if @subscription = subscription_for(params[:plan_id])
-      redirect_to(subscription_path(user_id: current_user.to_param, id: params[:plan_id]), notice: t("plans.already subscribed")) and return
-    end
     @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth)
     flash[:notice] = t("plans.subscribe successful")
     respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id]))
@@ -70,18 +68,6 @@ class SubscriptionsController < ApplicationController
       params[:send_report] == "true" ? (@subscription.add_accountability_user(current_user) and action = 'report on') : (@subscription.remove_all_accountability and action = 'report off')
     end
 
-    if(params[:add_accountability_partner])
-      @subscription.add_accountability_user(params[:add_accountability_partner])
-      action = 'partner added'
-      t_opts = {username: params[:add_accountability_partner]}
-    end
-
-    if(params[:remove_accountability_partner])
-      @subscription.remove_accountability_user(params[:remove_accountability_partner])
-      action = 'partner removed'
-      t_opts = {username: params[:remove_accountability_partner]}
-    end
-
     # Completing a day of reading
     if(params[:completed])
       @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
@@ -97,16 +83,26 @@ class SubscriptionsController < ApplicationController
   end
 
   def edit
-    self.presenter          = Presenter::Subscription.new(@subscription,params,self)
-    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
+    default_presenters
   end
 
   def calendar
-    self.presenter          = Presenter::Subscription.new(@subscription,params, self)
-    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
+    default_presenters
   end
 
   private
+
+  def check_existing_subscription
+    plan_id = params[:plan_id]
+    if subscription_for(plan_id)
+      redirect_to(subscription_path(user_id: current_user.to_param, id: plan_id), notice: t("plans.already subscribed")) and return
+    end
+  end
+
+  def default_presenters
+    self.presenter          = Presenter::Subscription.new(@subscription,params,self)
+    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
+  end
 
   def find_subscription
     unless @subscription = subscription_for(params[:id])
