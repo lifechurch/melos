@@ -71,7 +71,7 @@ class UsersController < ApplicationController
 
   def edit
     @selected = :profile
-    render layout: "application"
+    render layout: "settings"
   end
 
   def update
@@ -151,7 +151,7 @@ class UsersController < ApplicationController
 
 
   def delete_account
-    render layout: "application"
+    render layout: "settings"
   end
 
   def destroy

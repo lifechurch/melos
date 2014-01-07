@@ -12,11 +12,11 @@ class NotificationsController < ApplicationController
 
 
   def edit
-    @selected = :notifications
     @user = get_user
     @results = NotificationSettings.find(params[:token].present? ? {token: params[:token]} : {auth: current_auth})
     @settings = @results.data
     self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
+    render layout: "settings"
   end
 
 

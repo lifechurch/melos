@@ -1,31 +1,24 @@
-- @title = t('users.edit password')
+:ruby
+  @title = t('users.edit password')
+  @setting_selected = :password
 
-- content_for :title do
-  = t('users.settings')
+%h1
+  = @title
 
-- content_for :sidebar do
-  = render partial: "widgets/settings"
-
-%article
-  = render partial: "users/mobile_menu", locals: {selected: :password}
-
-  %h1
-    = t('users.edit password')
-
-  = form_for :user, url: user_password_path(@user), method: :put do |f|
-    = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.edit password errors")}
-    %p
-      = f.label :old_password, t('users.profile.current password')
-      %br
-      = f.password_field :old_password
-    %hr
-    %p
-      = f.label :password, t('users.profile.new password')
-      %br
-      = f.password_field :password
-    %p
-      = f.label :confirm_password, t('users.profile.confirm password')
-      %br
-      = f.password_field :confirm_password
-    %p
-      = button_tag t('users.my password'), class: "action_button_green"
+= form_for :user, url: user_password_path(@user), method: :put do |f|
+  = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.edit password errors")}
+  %p
+    = f.label :old_password, t('users.profile.current password')
+    %br
+    = f.password_field :old_password
+  %hr
+  %p
+    = f.label :password, t('users.profile.new password')
+    %br
+    = f.password_field :password
+  %p
+    = f.label :confirm_password, t('users.profile.confirm password')
+    %br
+    = f.password_field :confirm_password
+  %p
+    = button_tag t('users.my password'), class: "action_button_green"

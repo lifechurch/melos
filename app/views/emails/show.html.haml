@@ -1,25 +1,18 @@
-- @title = t('users.edit email')
+:ruby
+  @title = t('users.edit email')
+  @setting_selected = :email #for settings layout
 
-- content_for :title do
-  = t('users.settings')
+%h1
+  = @title
 
-- content_for :sidebar do
-  = render partial: "widgets/settings"
+- if @results and @results.valid?
+  %p.confirmation-message
+    = t('users.update email check')
 
-%article
-  = render partial: "users/mobile_menu", locals: {selected: :email}
+%p= t('users.update email copy')
+= render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
 
-  %h1
-    = t('users.edit email')
-
-  - if @results and @results.valid?
-    %p.confirmation-message
-      = t('users.update email check')
-
-  %p= t('users.update email copy')
-  = render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
-
-  = form_for @user, url: user_email_path(@user), method: :put do |u|
-    %p
-      = u.text_field :email
-      = button_tag t('users.edit email'), class: "action_button_green"
+= form_for @user, url: user_email_path(@user), method: :put do |u|
+  %p
+    = u.text_field :email
+    = button_tag t('users.edit email'), class: "action_button_green"

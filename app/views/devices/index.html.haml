@@ -1,34 +1,26 @@
-- @title = t('users.edit devices')
+:ruby
+  @title = t('users.edit devices')
+  @setting_selected = :devices
 
-- content_for :title do
-  = t('users.settings')
+%h1
+  = @title
 
-- content_for :sidebar do
-  = render partial: "widgets/settings"
+- if @results
+  = render partial: "shared/form_errors", locals: {errors: @results.errors }
 
-
-%article
-  = render partial: "users/mobile_menu", locals: {selected: :devices}
-
-  %h1
-    = t('users.edit devices')
-
-  - if @results
-    = render partial: "shared/form_errors", locals: {errors: @results.errors }
-
-  - if @devices.present?
-    %ul.resource_list
-      - @devices.each do |d|
-        %li
-          %h4{style:"margin-bottom:0;"}
-            = "#{d.vendor} #{d.model}"
-          %p.mute{style: "float: left; width: 70%;"}
-            = d.os
-          = link_to t('remove'), device_path(d.id), method: :delete, class: "action_button_blue float_right"
-          %p.mute{style: "float: left; width: 70%;"}
-            = t('registered ago', time_ago: time_ago_in_words(d.created_dt))
+- if @devices.present?
+  %ul.resource_list
+    - @devices.each do |d|
+      %li
+        %h4{style:"margin-bottom:0;"}
+          = "#{d.vendor} #{d.model}"
+        %p.mute{style: "float: left; width: 70%;"}
+          = d.os
+        = link_to t('remove'), device_path(d.id), method: :delete, class: "action_button_blue float_right"
+        %p.mute{style: "float: left; width: 70%;"}
+          = t('registered ago', time_ago: time_ago_in_words(d.created_dt))
 
 
-  - else
-    %h2= t('users.no devices')
-    %p= t('users.no devices download copy').html_safe
+- else
+  %h2= t('users.no devices')
+  %p= t('users.no devices download copy').html_safe

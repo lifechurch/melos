@@ -1,60 +1,53 @@
-- @title = t('users.edit profile')
+:ruby
+  @title = t('users.edit profile')
+  @setting_selected = :edit #for settings layout
 
-- content_for :title do
-  = t('users.settings')
+%h1
+  = @title
 
-- content_for :sidebar do
-  = render partial: "widgets/settings"
-
-%article
-  = render partial: "users/mobile_menu", locals: {selected: :edit}
-
-  %h1
-    = t('users.edit profile')
-
-  = form_for @user do |f|
-    - unless @user.errors.blank?
-      .form_errors
-        =t("users.profile form errors")
-      %ul
-        - @user.errors.full_messages.each do |e|
-          %li= e
-    %p
-      = f.label :first_name, t('users.profile.first name')
+= form_for @user do |f|
+  - unless @user.errors.blank?
+    .form_errors
+      =t("users.profile form errors")
+    %ul
+      - @user.errors.full_messages.each do |e|
+        %li= e
+  %p
+    = f.label :first_name, t('users.profile.first name')
+    %br
+    = f.text_field :first_name
+  %p
+    = f.label :last_name, t('users.profile.last name')
+    %br
+    = f.text_field :last_name
+  %p
+    = f.label :bio, t('users.profile.bio')
+    %br
+    = f.text_area :bio, rows: 5, style: "width: 223px", :maxlength => 160, placeholder: t("160 character limit")
+  %p
+    = f.label :location, t('users.profile.location')
+    %br
+    = f.text_field :location
+  %p
+    = f.label :postal_code, t('users.profile.postal code')
+    %br
+    = f.text_field :postal_code
+  %p
+    = f.label :website, t('users.profile.website')
+    %br
+    = f.text_field :website
+  %p
+    .country_select
+      = f.label :country, t('users.profile.country')
       %br
-      = f.text_field :first_name
-    %p
-      = f.label :last_name, t('users.profile.last name')
-      %br
-      = f.text_field :last_name
-    %p
-      = f.label :bio, t('users.profile.bio')
-      %br
-      = f.text_area :bio, rows: 5, style: "width: 223px", :maxlength => 160, placeholder: t("160 character limit")
-    %p
-      = f.label :location, t('users.profile.location')
-      %br
-      = f.text_field :location
-    %p
-      = f.label :postal_code, t('users.profile.postal code')
-      %br
-      = f.text_field :postal_code
-    %p
-      = f.label :website, t('users.profile.website')
-      %br
-      = f.text_field :website
-    %p
-      .country_select
-        = f.label :country, t('users.profile.country')
-        %br
-        = (f.country_select :country).gsub('Taiwan, Province Of China', 'Taiwan').html_safe #quick hack to make the Taiwanese happy
-    %p
-      = f.label :timezone, t('users.profile.timezone')
-      %br
-      = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px"}
-    %p
-      = f.label :language_tag, t('users.profile.language')
-      %br
-      = f.select(:language_tag, Cfg.languages.map { |k, v| [v, k] }, {}, {style: "min-width: 395px"})
-    %p
-      = button_tag t('users.update profile') , {class: "action_button_green"}
+      = (f.country_select :country).gsub('Taiwan, Province Of China', 'Taiwan').html_safe #quick hack to make the Taiwanese happy
+  %p
+    = f.label :timezone, t('users.profile.timezone')
+    %br
+    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px"}
+  %p
+    = f.label :language_tag, t('users.profile.language')
+    %br
+    = f.select(:language_tag, Cfg.languages.map { |k, v| [v, k] }, {}, {style: "min-width: 395px"})
+  %p
+    = button_tag t('users.update profile') , {class: "action_button_green"}

@@ -1,26 +1,19 @@
-- @title = t('users.edit account_existence')
+:ruby
+  @title = t('users.edit account_existence')
+  @setting_selected = :account
 
-- content_for :title do
-  = t('users.settings')
+%h1
+  = @title
 
-- content_for :sidebar do
-  = render partial: "widgets/settings"
+%p= t('users.delete account description')
+= form_tag user_path(@user), method: :delete do
+  = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
-%article
-  = render partial: "users/mobile_menu", locals: {selected: :account}
-
-  %h1
-    = t('users.edit account_existence')
-
-  %p= t('users.delete account description')
-  = form_tag user_path(@user), method: :delete do
-    = render partial: "shared/form_errors", locals: {errors: @user.errors}
-
-    %p
-      = label_tag :password, t("password prompt")
-      %br
-      = password_field_tag :password, params[:password], class: "autofocus"
-      %br
-      %span.small= link_to t('users.forgot password'), forgot_password_path
-    %p
-      = submit_tag t("users.delete account button"), class: "confirm action_button_red", "data-confirm-text" => t('users.yes delete')
+  %p
+    = label_tag :password, t("password prompt")
+    %br
+    = password_field_tag :password, params[:password], class: "autofocus"
+    %br
+    %span.small= link_to t('users.forgot password'), forgot_password_path
+  %p
+    = submit_tag t("users.delete account button"), class: "confirm action_button_red", "data-confirm-text" => t('users.yes delete')

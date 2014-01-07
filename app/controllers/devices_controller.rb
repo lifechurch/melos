@@ -1,5 +1,7 @@
 class DevicesController < ApplicationController
 
+  layout "settings"
+
   before_filter :force_login
 
   def index

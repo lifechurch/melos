@@ -1,0 +1,19 @@
+- # sub template should define a @setting_selected variable with allowed values of:
+- # :edit, :notifications, :email, :password, :devices, :account
+- # found in users/_mobile_menu partial
+
+- content_for :title do
+  = t('users.settings')
+
+- content_for :sidebar do
+  = render partial: "widgets/settings"
+
+= render layout: "layouts/base" do
+  
+  %div.settings-header{style: "height: 60px; margin-bottom: 10px; background: #fff;"}
+    %img.settings-header-avatar{src: (@user.user_avatar_url["px_48x48"] if @user.user_avatar_url)}
+    %a{href: user_path(current_user)} Go to Your Profile
+
+  %article
+    = render partial: "users/mobile_menu", locals: {selected: @setting_selected}
+    = yield
