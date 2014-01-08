@@ -74,15 +74,6 @@ describe User do
     end
   end
 
-  describe "#recent_activity" do
-    it "returns objects created by the user" do
-      Bookmark.new(references: "gen.1.1.kjv", title: "community bookmark", auth: @auth).save.should be_true
-      Note.new(reference: "gen.1.1.kjv", title: "community note", content: "note", auth: @auth).save.should be_true
-      re_act = @testuser.recent_activity
-      re_act.each { |a| a.class.should be_in [Note, User, Bookmark, Badge]  }
-    end
-  end
-
   describe "#update_avatar" do
     # TODO: Seems wonky; am I breaking the API?
   end
@@ -182,12 +173,6 @@ describe User do
       dev.save
       @busy_user = connect_facebook(@busy_user)
 
-    end
-
-    it "should list recent activity" do
-      @busy_user.recent_activity.should be_an Array
-      @busy_user.recent_activity.first.class.should be_in [Note, Bookmark, Badge]
-      @boring_user.recent_activity.should == []
     end
 
     it "should list notes" do

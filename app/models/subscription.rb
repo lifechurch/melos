@@ -171,23 +171,18 @@ class Subscription < Plan
 
 
   def catch_up
-    raise "Auth required." unless auth
-    path = "reading-plans/reset_subscription"
-
-    data, errs = self.class.post( path, {auth: auth, id: id})
-    results = YV::API::Results.new(data,errs)
-      raise_errors( results.errors, "subscription#catch_up") unless results.valid?
-     
-    return self.class.map(results, self, :update) 
+    modify_subscription("reading-plans/reset_subscription","catch_up")
   end
  
   def restart
-    raise "Auth required." unless auth
-    path = "reading-plans/restart_subscription"
+    modify_subscription("reading-plans/restart_subscription","restart")
+  end
 
+  def modify_subscription(path,action)
+    raise "Auth required." unless auth
     data, errs = self.class.post(path, {auth: auth, id: id})
     results = YV::API::Results.new(data,errs)
-      raise_errors( results.errors, "subscription#restart") unless results.valid?
+      raise_errors( results.errors, "subscription##{action}") unless results.valid?
     
     return self.class.map(results, self, :update)
   end

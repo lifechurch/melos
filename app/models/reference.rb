@@ -152,25 +152,25 @@ class Reference < YV::Resource
   end
 
   
-  
-
-
   # Reference for a previous chapter for a Reference instance
   # Example api response
   # "previous"=>{"toc"=>true, "canonical"=>true, "version_id"=>1, "human"=>"Luke 24", "usfm"=>["LUK.24"]}, 
   def previous_chapter
-    return nil unless version
-    return nil unless attributes.previous.present?
-    Reference.new(attributes.previous.usfm.first, version: version)
+    select_chapter(:previous)
   end
 
   # Reference for the next chapter for a Reference instance
   # Example api response
   # "next"=>{"toc"=>true, "canonical"=>true, "version_id"=>1, "human"=>"John 2", "usfm"=>["JHN.2"]}
   def next_chapter
+    select_chapter(:next)
+  end
+
+  def select_chapter(which)
+    raise "Argument for selection can only be :next or :previous" unless [:next,:previous].include? which
     return nil unless version
-    return nil unless attributes.next.present?
-    Reference.new(attributes.next.usfm.first, version: version)
+    return nil unless ref = attributes.send(which)
+    Reference.new(ref.usfm.first, version: version)
   end
 
   # Determine if reference instance is a chapter reference

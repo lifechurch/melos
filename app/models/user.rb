@@ -329,49 +329,16 @@ class User < YV::Resource
     end
   end
 
-
-
-  # API Method
-  # Returns an array of objects / model instances of a users recent activity
-
-  def recent_activity
-    unless @recent_activity
-
-      data, errs = self.class.get("community/items", user_id: self.id)
-      results = YV::API::Results.new(data,errs)
-
-      if results.invalid?
-        (results.has_error?("not found") || results.has_error?("deprecated"))  ? @recent_activity = [] : self.class.raise_errors(results.errors, "user#recent_activity")
-      end
-
-      if results.valid?
-        activities = data.community.map do |a|
-          a.type = "object" if a.type == "reading_plan_completed"
-          a.type = "object" if a.type == "reading_plan_subscription"
-          if a.type != "like" && a.type != "object"
-            class_name = a.type.camelize.constantize
-            a.data.map { |b| class_name.new(b) }
-          end
-        end
-        @recent_activity = activities.flatten
-      end
-    end
-    return @recent_activity
-  end
-
-
   def devices
     Device.for_user(self.auth.user_id, auth: self.auth)
   end
 
 
-
-
   def connections
-    connections = {}
-    connections["twitter"] = TwitterConnection.new(data: self.apps.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.twitter
-    connections["facebook"] = FacebookConnection.new(data: self.apps.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.facebook
-    connections
+    @connections ||= {
+      "twitter" => build_connection(:twitter),
+      "facebook" => build_connection(:facebook)
+    }
   end
 
   def subscriptions(opts = {})
@@ -419,6 +386,12 @@ class User < YV::Resource
   end
 
   private
+
+  def build_connection(type)
+    raise "Type argument must be :twitter or :facebook" unless [:twitter,:facebook].include? type
+    klass = "#{type.to_s.capitalize}Connection".constantize
+    klass.new(data: self.apps.send(type).symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.send(type)
+  end
 
   def friend_ids
     @friend_ids ||= Friend.ids(auth: self.auth)

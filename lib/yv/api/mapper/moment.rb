@@ -73,19 +73,8 @@ module YV
             user    = extras.user
             friend  = extras.friend
 
-            instance.user = SimpleUser.new(
-              name: user.name,
-              user_name: user.username,
-              id: user.id,
-              avatars: map_to_avatars(user.avatar)
-            )
-
-            instance.friend = SimpleUser.new(
-              name: friend.name,
-              user_name: friend.username,
-              id: friend.id,
-              avatars: map_to_avatars(friend.avatar)
-            )
+            instance.user = to_simple_user(user)
+            instance.friend = to_simple_user(friend)
 
             instance.kind_id          = data.kind_id
             instance.kind_color       = data.kind_color
@@ -103,7 +92,14 @@ module YV
             instance
           end
 
-
+          def to_simple_user(user)
+            SimpleUser.new(
+              name:       user.name,
+              user_name:  user.username,
+              id:         user.id,
+              avatars:    map_to_avatars(user.avatar)
+            )
+          end
 
         end
       end
