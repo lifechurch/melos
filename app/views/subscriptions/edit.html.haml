@@ -16,6 +16,17 @@
   %h2.mobile= subscription.title
 
   %ul.settings
+    %li#privacy-settings
+      %a{name: "privacy"}
+      %div.controls
+        -if subscription.public?
+          = button_to(t('plans.make private'), subscription_path(user_id: current_user.to_param, id: subscription,make_private: "true"), method: :put, class: 'action_button_green')
+        -else
+          = button_to(t('plans.make public'), subscription_path(user_id: current_user.to_param, id: subscription,make_public: "true"), method: :put, class: 'action_button_green')
+      %div.info
+        %h3= t("plans.privacy title")
+        %p= t("plans.privacy description")
+
     %li#delivery-settings
       %div.wrapper
         %div.controls
@@ -65,16 +76,6 @@
         %h3= t("plans.do you want to reset")
         %p= t("plans.restart description")
 
-    %li#privacy-settings
-      %a{name: "privacy"}
-      %div.controls
-        -if subscription.public?
-          = button_to(t('plans.make private'), subscription_path(user_id: current_user.to_param, id: subscription,make_private: "true"), method: :put, class: 'action_button_green')
-        -else
-          = button_to(t('plans.make public'), subscription_path(user_id: current_user.to_param, id: subscription,make_public: "true"), method: :put, class: 'action_button_green')
-      %div.info
-        %h3= t("plans.privacy title")
-        %p= t("plans.privacy description")
 
     %li#unsubscribe
       = button_to(t('plans.stop reading'),subscription_path(user_id: current_user.to_param,id: subscription), method: :delete, id: "subscription-destroy", class: 'action_button_blue confirm', "data-confirm-text" => t("confirm danger"))

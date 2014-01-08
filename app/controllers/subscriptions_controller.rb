@@ -78,7 +78,7 @@ class SubscriptionsController < ApplicationController
       end
     end
 
-    flash[:notice] = t("plans.#{action} successful", t_opts)
+    flash[:notice] = t("plans.#{action} successful")
     redirect_to edit_subscription_path(user_id: current_user.to_param, id: @subscription)
   end
 
