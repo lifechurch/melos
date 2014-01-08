@@ -1,16 +1,8 @@
 class Device < YV::Resource
 
+  attributes [:vendor,:model,:os,:device_id,:notes,:carrier,:created_dt]
   api_response_mapper YV::API::Mapper::Device
-
-
-  attribute :vendor
-  attribute :model
-  attribute :os
-  attribute :device_id
-  attribute :notes
-  attribute :carrier
-
-  attribute :created_dt
+  
 
   class << self
 

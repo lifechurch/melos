@@ -3,15 +3,8 @@
 
 class Friendships < YV::Resource
 
+  attributes [:auth,:user_id,:friend_ids,:outgoing_ids,:incoming,:incoming_ids]
   api_response_mapper YV::API::Mapper::Friendships
-
-
-  attribute :auth
-  attribute :user_id
-  attribute :friend_ids
-  attribute :outgoing_ids
-  attribute :incoming         # array of user objects
-  attribute :incoming_ids
 
 
   class << self

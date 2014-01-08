@@ -12,29 +12,8 @@ class Bookmark < YV::Resource
 
   include YV::Concerns::Moments
 
+  attributes [:moment_title,:title,:labels,:created_dt,:avatars,:icons,:created_dt,:updated_dt,:user_id,:kind_id,:kind_color,:comments,:commenting,:comments_count,:references,:color]
   api_response_mapper YV::API::Mapper::Bookmark
-
-  attribute :moment_title
-
-  attribute :title
-  attribute :labels
-  attribute :created_dt
-  attribute :avatars
-  attribute :icons  
-  attribute :created_dt
-  attribute :updated_dt
-  
-  attribute :user_id
-  attribute :kind_id
-  attribute :kind_color
-
-  attribute :comments
-  attribute :commenting
-  attribute :comments_count
-
-  attribute :references
-  attribute :color
-
 
 
   # The following fields are utilized for form submits. 

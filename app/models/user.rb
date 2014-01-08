@@ -4,40 +4,36 @@ class User < YV::Resource
 
   api_response_mapper YV::API::Mapper::Base  
 
-  attribute :id
-  attribute :name
-  attribute :username
-  attribute :first_name
-  attribute :last_name
-
-  attribute :password
-  attribute :password_confirm
-  attribute :email
-  attribute :agree
-  attribute :verified
-  
-  attribute :location
-  attribute :im_type
-  attribute :im_username
-  attribute :phone_mobile
-  attribute :language_tag
-  attribute :country
-  attribute :timezone
-  attribute :postal_code
-  attribute :bio
-  attribute :birthdate
-  attribute :gender
-  attribute :website
-  attribute :twitter
-  attribute :facebook
-  attribute :apps
-  attribute :google
-  attribute :created_dt
-  attribute :last_login_dt
-  attribute :start_dt
-
-  attribute :avatars
-
+  attributes([ :id,
+               :name,
+               :username,
+               :first_name,
+               :last_name,
+               :password,
+               :password_confirmation,
+               :email,
+               :agree,
+               :verified,
+               :location,
+               :im_type,
+               :im_username,
+               :phone_mobile,
+               :language_tag,
+               :country,
+               :timezone,
+               :postal_code,
+               :bio,
+               :birthdate,
+               :gender,
+               :website,
+               :twitter,
+               :facebook,
+               :apps,
+               :google,
+               :created_dt,
+               :last_login_dt,
+               :start_dt,
+               :avatars])
 
 
   class << self

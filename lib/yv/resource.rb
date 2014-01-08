@@ -246,6 +246,10 @@ module YV
         end
       end
 
+      def attributes(atts)
+        atts.each {|att| attribute(att)}
+      end
+
       # Clear memoization at class level
       # instance variables that persist across requests
       def clear_memoization

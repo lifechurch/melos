@@ -4,13 +4,8 @@
 
 class Comment < YV::Resource
 
+  attributes [:user,:content,:created_dt,:updated_dt]
   api_response_mapper YV::API::Mapper::Comment
-
-  attribute :user
-  attribute :content
-  attribute :created_dt
-  attribute :updated_dt
-
 
   class << self
 

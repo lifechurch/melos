@@ -1,21 +1,10 @@
 class Badge < YV::Resource
 
+  attributes [:name,:slug,:type,:user_id,:username,:image_url,:description,:earned_dt]
   # Only need mapper for #all, #find
   api_response_mapper YV::API::Mapper::Badge
 
-  
-  attribute :name
-  attribute :slug
-  attribute :type
-  attribute :user_id
-  attribute :username
-  attribute :image_url
-  attribute :description
-  attribute :earned_dt
-
-
   class << self
-
 
     # Badge.all(opts)
     # http://developers.youversion.com/api/docs/3.1/sections/badges/items.html

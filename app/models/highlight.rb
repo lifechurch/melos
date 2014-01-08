@@ -11,27 +11,8 @@ class Highlight < YV::Resource
 
   include YV::Concerns::Moments
 
+  attributes [:moment_title,:color,:labels,:references,:user_id,:kind_id,:kind_color,:avatars,:icons,:created_dt,:updated_dt,:comments,:commenting,:comments_count,:version_id,:usfm_references]
   api_response_mapper YV::API::Mapper::Highlight
-
-  attribute :moment_title  
-  attribute :color
-  attribute :labels
-  attribute :references
-  attribute :user_id
-  attribute :kind_id
-  attribute :kind_color
-  attribute :avatars
-  attribute :icons
-  attribute :created_dt
-  attribute :updated_dt
-
-  attribute :comments
-  attribute :commenting
-  attribute :comments_count
-
-  attribute :version_id
-  attribute :usfm_references
-
 
   class << self
 
