@@ -19,8 +19,7 @@
         = api_dt_time_ago(moment.created_dt)
 
       %h2.moment-bm-text
-        - anchor_text = (moment.user_id == current_auth.user_id) ? moment.references.collect {|r| r.human}.join(", ") : moment.moment_title.html_safe
-        = link_to(anchor_text, moment.to_path, class: "moment-title-link")
+        = link_to(bookmark_title(moment), moment.to_path, class: "moment-title-link")
 
       - if moment.references.present?
         .moment-verse-wrap
@@ -28,10 +27,10 @@
             %p.moment-verse.empty{"data-usfm" => usfm_from_moment(ref), "data-version-id" => ref.version_id }
               = "#{ref.human}(#{ref.usfm})"
 
-      - if moment.labels.present?
+      - if moment.labels.present? and logged_in? and current_user_moment? moment
         %p.moment-bm-labels
           - moment.labels.each do |label|
-            = link_to(label, bookmarks_user_path(@user, label: label.chomp),class: "moment-bm-labels-link")
+            = link_to(label, bookmarks_user_path(current_user, label: label.chomp),class: "moment-bm-labels-link")
 
   -# !share controls, dates, and comments
   .moment-btm

@@ -7,9 +7,6 @@ class BookmarksController < BaseMomentsController
   # Filters
     before_filter :force_login
 
-
-
-
   def show
     @bookmark = Bookmark.find(params[:id], auth: current_auth)
     raise ActionController::RoutingError.new('Not Found') unless @bookmark
