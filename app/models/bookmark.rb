@@ -12,16 +12,12 @@ class Bookmark < YV::Resource
 
   include YV::Concerns::Moments
 
-  attributes [:moment_title,:title,:labels,:created_dt,:avatars,:icons,:created_dt,:updated_dt,:user_id,:kind_id,:kind_color,:comments,:commenting,:comments_count,:references,:color]
+  # :usfm_references
+  # Are utilized for form submits. A plus separated list of usfm refs GEN.1.1+GEN.1.2
+  attributes [:title,:labels,:references,:color,:version_id,:usfm_references]
+
   api_response_mapper YV::API::Mapper::Bookmark
 
-
-  # The following fields are utilized for form submits. 
-  # A plus separated list of usfm refs GEN.1.1+GEN.1.2
-    attribute :usfm_references
-
-  # A numeric version id submitted to associate references with a version id for bookmarking.
-    attribute :version_id
 
   attr_accessor :reference_list
 
@@ -100,14 +96,6 @@ class Bookmark < YV::Resource
   end
   # END class methods ----------------------------------------------------------------------------------------------
 
-  def kind
-    self.class.kind
-  end
-
-  def path
-    "/bookmarks/#{id}"
-  end
-
 
   def labels=(labes)
     build_labels(labes)
@@ -124,11 +112,6 @@ class Bookmark < YV::Resource
     set_created_dt
   end
 
-
-  def user_id
-    self.attributes['user_id']
-  end
-
   # Called after initialization
   def after_build
 
@@ -143,16 +126,6 @@ class Bookmark < YV::Resource
     # self.version = attributes.try :[], :version_id
     # self.reference_list = ReferenceList.new(self.references, self.version)
     # self.version = self.reference_list.first.try :version
-  end
-
-  def build_references
-    return unless usfm_references and version_id
-    usfms = usfm_references.split("+")
-    self.references = usfms.collect {|usfm| {usfm: [usfm], version_id: version_id } }
-    
-    #refererences = [
-    #  {usfm:["GEN.1.1","GEN.1.2"], version_id: 1}
-    #]
   end
 
   def build_labels(labes)
@@ -191,10 +164,6 @@ class Bookmark < YV::Resource
 
   def moment_partial_path
     "moments/bookmark"
-  end
-
-  def to_path
-    "/bookmarks/#{id}"
   end
 
 end

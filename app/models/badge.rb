@@ -45,13 +45,8 @@ class Badge < YV::Resource
     # a complete array of Badge ids that the user has earned
 
 
-    def ids_path
-      "badges/all_items"
-    end
-
     def ids(opts={})
-      data,errs = get(ids_path, opts.slice(:user_id))
-      return YV::API::Results.new(data,errs)
+      get_results("badges/all_items",opts.slice(:user_id))
     end
 
   end

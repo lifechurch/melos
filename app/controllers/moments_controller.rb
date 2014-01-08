@@ -21,7 +21,7 @@ class MomentsController < BaseMomentsController
   # TODO - skip any before filters that arent necessary
   def show
     moment = Moment.find(params[:id], auth: current_auth)
-    redirect_to moment.path
+    redirect_to moment.to_path
   end
 
 end

@@ -11,49 +11,12 @@
 class Note < YV::Resource
 
   include YV::Concerns::Moments
+  
+  attr_accessor :reference_list  
+  attributes [:version_id,:usfm_references] # Virtual attributes used for form submissions
+  attributes [:color,:title,:content,:user_status,:references,:content_text,:content_html,:published,:system_status,:share_connections,:user_avatar_url,:username,:highlight_color,:reference_list]
 
   api_response_mapper YV::API::Mapper::Note
-
-  attr_accessor :reference_list
-
-  attribute :moment_title
-
-  attribute :id
-  attribute :user_id
-  attribute :kind_id
-  attribute :kind_color
-  attribute :color
-  attribute :title
-  attribute :content
-  attribute :user_status
-  attribute :references
-  attribute :avatars
-  attribute :icons
-  attribute :created_dt
-  attribute :updated_dt
-
-
-  attribute :comments
-  attribute :commenting
-  attribute :comments_count
-  
-  attribute :content_text
-  attribute :content_html
-  attribute :published
-  
-  attribute :system_status
-  attribute :share_connections
-  
-  attribute :user_avatar_url
-  attribute :username
-  attribute :highlight_color
-  
-  attribute :reference_list
-
-  # Virtual attributes used for form submissions
-  attribute :version_id
-  attribute :usfm_references
-
 
   class << self
 
@@ -206,14 +169,6 @@ class Note < YV::Resource
 
   # TODO: API should not REQUIRE color, references.
 
-  def kind
-    self.class.kind
-  end
-
-  def path
-    "/notes/#{id}"
-  end
-
   # Custom persistence for Moments API 3.1
   def persist(path)
     return persist_moment(path, attributes.merge(kind: "note").slice(:id,:auth,:kind,:title,:content,:references,:user_status,:created_dt))
@@ -221,16 +176,6 @@ class Note < YV::Resource
 
   def before_save
     set_created_dt
-  end
-
-  def build_references
-    return unless usfm_references and version_id
-    usfms = usfm_references.split("+")
-    self.references = usfms.collect {|usfm| {usfm: [usfm], version_id: version_id } }
-    
-    #refererences = [
-    #  {usfm:["GEN.1.1","GEN.1.2"], version_id: 1}
-    #]
   end
 
   def build_content
@@ -257,12 +202,4 @@ class Note < YV::Resource
     return (self.system_status == "new" || self.system_status == "approved") && self.user_status == "public"
   end
 
-
-  def moment_partial_path
-    "moments/note"
-  end
-
-  def to_path
-    "/notes/#{id}"
-  end
 end

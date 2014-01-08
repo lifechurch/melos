@@ -11,7 +11,7 @@ class Highlight < YV::Resource
 
   include YV::Concerns::Moments
 
-  attributes [:moment_title,:color,:labels,:references,:user_id,:kind_id,:kind_color,:avatars,:icons,:created_dt,:updated_dt,:comments,:commenting,:comments_count,:version_id,:usfm_references]
+  attributes [:color,:labels,:references,:version_id,:usfm_references]
   api_response_mapper YV::API::Mapper::Highlight
 
   class << self
@@ -64,8 +64,7 @@ class Highlight < YV::Resource
 
 
     def colors(opts={})
-      data, errs = get(colors_path, opts.slice(:auth))
-      return YV::API::Results.new(data,errs)
+      get_results("moments/colors",opts.slice(:auth))
     end
     
     def by_reference(params={})
@@ -100,35 +99,6 @@ class Highlight < YV::Resource
 
       return results.flatten
     end
-
-
-
-    # API Method
-    # Returns a ResourceList of Highlight instances with a given reference
-    # Returns nil if no :auth option is given
-    # valid options
-    # - auth            scopes API call to find hilights for auth user & reference
-    def for_reference(reference, params = {})
-      reference = Reference.new(reference) unless reference.is_a? Reference
-      params[:page] ||= 1
-      opts = params.merge(reference: reference.chapter_usfm, version_id: reference.version)
-
-      data, errs = get("highlights/chapter", opts)
-      results = YV::API::Results.new(data,errs)
-      
-      unless results.valid?
-        data = [] if results.has_error?("note found")
-      else
-        list = ResourceList.new
-        list.total = data.total
-          data.highlights.each do |h|
-            list << new(h)
-          end
-        return list
-      end
-
-    end
-
   end
   # End class methods ----------------------------------------------------------------------------------------------
 
@@ -138,15 +108,6 @@ class Highlight < YV::Resource
     false
   end
 
-  def kind
-    self.class.kind
-  end
-
-  def path
-    "/highlights/#{id}"
-  end
-
-
   # Custom persistence for new Moments API
   def persist(path)
     return persist_moment(path,attributes.merge(kind: "highlight").slice(:kind, :color, :references, :auth, :created_dt))
@@ -155,18 +116,6 @@ class Highlight < YV::Resource
   def before_save
     set_created_dt
   end
-
-  def build_references
-    return unless usfm_references and version_id
-    usfms = usfm_references.split("+")
-    self.references = usfms.collect {|usfm| {usfm: [usfm], version_id: version_id } }
-    
-    #refererences = [
-    #  {usfm:["GEN.1.1","GEN.1.2"], version_id: 1}
-    #]
-  end
-
-
 
   def after_build
     build_references
@@ -199,13 +148,5 @@ class Highlight < YV::Resource
     #EVENTUALLY: make this pervasive/complete so anyone using this object only sees the 1st verse and we can just pass raw_hash[:verses]
   #  {verse: self.reference.verses.first, color: self.color, id: id, version: version}
   #end
-
-  def moment_partial_path
-    "moments/highlight"
-  end  
-
-  def to_path
-    "/highlights/#{id}"
-  end
 
 end

@@ -39,6 +39,12 @@ module YV
         YV::API::ResponseHandler.new(response).process
       end
 
+      # Is this necessary?  Can we rollup API::Results into main #get method?
+      def get_results(path,opts={})
+        data,errs = get(path, opts)
+        return YV::API::Results.new(data,errs)
+      end
+
 
       # Class method to make a POST request to a provided API path
       # optional opts are passed along to the underlying request
