@@ -2,7 +2,7 @@
   @title = t('users.edit password')
   @setting_selected = :password
 
-%h1
+%h2
   = @title
 
 = form_for :user, url: user_password_path(@user), method: :put do |f|

@@ -2,7 +2,7 @@
   @title = t('users.edit email')
   @setting_selected = :email #for settings layout
 
-%h1
+%h2
   = @title
 
 - if @results and @results.valid?
@@ -13,6 +13,6 @@
 = render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
 
 = form_for @user, url: user_email_path(@user), method: :put do |u|
-  %p
+  %p.email-update
     = u.text_field :email
     = button_tag t('users.edit email'), class: "action_button_green"

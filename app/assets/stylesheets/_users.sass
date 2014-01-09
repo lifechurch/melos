@@ -390,3 +390,52 @@
 
   .slate-activity
     background: #fff image-url("icon-activity-64.png") no-repeat center 40px
+
+
+// !Profile settings pages
+
+.settings-header
+  padding: 45px 0 10px 45px
+  position: relative
+
+  .settings-header-avatar
+    position: absolute
+    top: 10px
+    right: 60px
+    width: 128px
+    height: 128px
+    +border-radius(128px)
+    +box-shadow(rgba(0,0,0,.15) 0 1px 1px)
+
+  .settings-header-name
+    font-size: 48px
+    text-shadow: none
+    margin: 0
+
+  .settings-header-btn
+    +border-radius(4px)
+    padding: 4px 20px
+
+#main article.settings-page
+  background: none
+  padding: 30px 0
+  overflow: hidden
+
+  .settings-page-content
+    width: 540px
+    margin: 0 10px 0 0
+    float: left
+    background-color: #fff
+    padding: 30px
+    +border-radius(5px)
+
+    .email-update
+      input
+        width: 400px
+
+      button
+        margin: 10px 0 0
+
+  .settings-page-menu
+    width: 300px
+    float: left

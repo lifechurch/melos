@@ -2,28 +2,38 @@
   @title = "#{t('users.picture')} | #{@user.name || @user.username}"
   cache_bust = '?' + rand(1000000).to_s
 
-- content_for :sidebar do
-  = render partial: "widgets/settings"
+- @sidebar = false
 
-%article
+%div.settings-header
+  %img.settings-header-avatar{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
+  %h1.settings-header-name
+    = @user.name
+  %a{href: user_path(current_user)} Go to Your Profile
 
-  %h1
-    = t('users.edit picture')
+%article.settings-page
+  .settings-page-content
 
-  - if @results
-    = render partial: "shared/form_errors", locals: {errors: @results.errors}
+    %h2
+      = t('users.edit picture')
 
-  
-  %img{src: @user_avatar_urls['px_128x128'] + cache_bust}
-  - ['24x24', '48x48', '128x128', '512x512'].each do |s|
-    %img{src: @user_avatar_urls["px_#{s}"] + cache_bust, style: 'display: none'}
+    - if @results
+      = render partial: "shared/form_errors", locals: {errors: @results.errors}
 
-  = form_for @user, url: user_avatar_path(@user) do |f|
-    %p
-      = f.label :image, t('users.profile.avatar file')
-      %br
-      = f.file_field :image
-      %br
-      = t('users.profile.avatar help')
-    %p
-      = button_tag t('my picture'), class: "action_button_green"
+
+    %img{src: @user_avatar_urls['px_128x128'] + cache_bust}
+    - ['24x24', '48x48', '128x128', '512x512'].each do |s|
+      %img{src: @user_avatar_urls["px_#{s}"] + cache_bust, style: 'display: none'}
+
+    = form_for @user, url: user_avatar_path(@user) do |f|
+      %p{style: "margin: 20px 0"}
+        = f.label :image, t('users.profile.avatar file')
+        %br
+        = f.file_field :image
+        %br
+        %br
+        = t('users.profile.avatar help')
+      %p
+        = button_tag t('my picture'), class: "action_button_green"
+
+  .settings-page-menu
+    = render partial: "widgets/settings"
