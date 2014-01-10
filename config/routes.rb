@@ -147,6 +147,9 @@ YouversionWeb::Application.routes.draw do
   get "/settings/notifications",           to: "redirects#settings_notifications", as: "notification_settings"
   get "/settings/delete_account",          to: "redirects#delete_account"
 
+  # Redirect to a.youversion.com/groups/lifechurchtv
+  get "/lifechurchtv",  to: "redirects#lifechurchtv"
+
   root to: 'pages#home'
 
 
