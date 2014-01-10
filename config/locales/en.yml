@@ -254,6 +254,7 @@ en:
     private:                                    "Private"
     is private:                                 "The requested note is private."
     draft:                                      "Draft"
+    friends:                                    "Friends"
     creation form errors:                       "The following error(s) prevented creation of your note:"
     status field:                               "Status:"
     reference field:                            "Reference(s):"

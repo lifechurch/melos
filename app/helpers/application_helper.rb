@@ -46,9 +46,10 @@ module ApplicationHelper
     @html_classes = classes if classes
   end
 
-  def object_status   #TODO: More useful name?
+  def object_status   #TODO: More useful name? WTF is up with this method.
     status = {}
     status[t('notes.public')] = 'public'
+    status[t('notes.friends')] = 'friends'
     status[t('notes.private')] = 'private'
     status[t('notes.draft')] = 'draft'
     status
