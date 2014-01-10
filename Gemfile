@@ -85,7 +85,6 @@ group :development, :tddium_ignore do
   gem 'hooves'
   gem 'pry', require: false
   gem 'quiet_assets'
-  gem 'debugger'
 end
 
 group :test, :development do
