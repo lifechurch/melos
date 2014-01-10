@@ -40,13 +40,14 @@ module YV
             instance.kind_id          = results.kind_id
             instance.kind_color       = results.kind_color
             instance.color            = results.extras.color
-            instance.user_id          = results.extras.user.id
+            
             instance.references       = results.extras.references
             instance.created_dt       = results.created_dt
             instance.updated_dt       = results.updated_dt
             instance.moment_title     = t(results.base.title["l_str"],results.base.title["l_args"])
 
             # Common moment elements
+            instance                  = map_to_user_fields(instance,results.extras.user)
             instance.icons            = map_to_icons(results.base.images.icon)
             instance.avatars          = map_to_avatars(results.base.images.avatar)
             instance.comments         = map_to_comments(results.commenting.comments)

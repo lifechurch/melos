@@ -14,7 +14,8 @@
       %span.moment-icon
         &nbsp;
       %span.moment-avatar
-        = image_tag avatar.url
+        = link_to(user_path(moment.user_name)) do
+          = image_tag avatar.url
       %span.moment-time
         = api_dt_time_ago(moment.created_dt)
 

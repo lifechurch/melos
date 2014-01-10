@@ -46,10 +46,10 @@ module YV
             instance.labels           = results.extras.labels.nil? ? [] : results.extras.labels
             instance.title            = results.extras.title
             instance.moment_title     = t(results.base.title["l_str"],results.base.title["l_args"])
-            instance.user_id          = results.extras.user.id
             instance.references       = results.extras.references
 
             # Common moment elements
+            instance                  = map_to_user_fields(instance,results.extras.user)
             instance.icons            = map_to_icons(results.base.images.icon)
             instance.avatars          = map_to_avatars(results.base.images.avatar)
             instance.comments         = map_to_comments(results.commenting.comments)

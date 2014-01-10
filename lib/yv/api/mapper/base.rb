@@ -87,6 +87,12 @@ module YV
               comment_instance
             end
 
+            def map_to_user_fields(instance,user_data)
+              instance.user_id = user_data.id
+              instance.user_name = user_data.username
+              instance
+            end
+
             # Map data to user instance
             def map_to_user(user_instance, user_data)
               user_instance.id          = user_data.id

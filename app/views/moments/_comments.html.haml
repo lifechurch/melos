@@ -15,7 +15,8 @@
         - avatar = user.avatars.md_avatar
         %li.moment-comments-list-comment
           %span.moment-comments-list-avatar
-            = image_tag avatar.url
+            = link_to(user) do
+              = image_tag avatar.url
           %p.moment-comments-list-text
             = link_to(user.name, user_path(user.username))
             = comment.content
