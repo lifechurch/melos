@@ -2,22 +2,20 @@
 - # :edit, :notifications, :email, :password, :devices, :account
 - # found in users/_mobile_menu partial
 
-- @sidebar = false
-
 - content_for :title do
   = t('users.settings')
 
-= render layout: "layouts/base" do
+- content_for :sidebar do
+  = render partial: "widgets/settings"
 
+= render layout: "layouts/base" do
+  
   %div.settings-header
     %img.settings-header-avatar{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
     %h1.settings-header-name
       = @user.name
     %a{href: user_path(current_user)} Go to Your Profile
 
-  %article.settings-page
+  %article
     = render partial: "users/mobile_menu", locals: {selected: @setting_selected}
-    .settings-page-content
-      = yield
-    .settings-page-menu
-      = render partial: "widgets/settings"
+    = yield
