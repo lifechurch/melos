@@ -1,4 +1,4 @@
-class Search
+class Searchs
 
   attr_accessor :query
   attr_reader :version_id

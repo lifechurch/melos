@@ -710,12 +710,13 @@ en:
     delete error:                               "Sorry, couldn't remove highlighting."
   searching:
     bible:                                      "Bible"
-    plans:                                      "Reading Plans"
+    plans:                                      "Plans"
     users:                                      "Users"
     notes:                                      "Notes"
     total results:                              "About %{total} Results"
     suggestion html:                            "Did you mean %{suggestion_link}?"
     all versions:                               "All %{language_name} Versions"
+    results for:                                "Search results for: "
   donate:
     donate now:                                 "Donate Now"
     donate now intl:                            "or donate internationally"

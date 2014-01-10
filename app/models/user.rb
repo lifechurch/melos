@@ -2,7 +2,9 @@ require 'digest/md5'
 
 class User < YV::Resource
 
-  api_response_mapper YV::API::Mapper::Base  
+  include YV::Concerns::Searchable
+
+  api_response_mapper YV::API::Mapper::User
 
   attributes([ :id,
                :name,
@@ -154,9 +156,8 @@ class User < YV::Resource
       return YV::API::Results.new(data,errs)
     end
 
-
   end
-
+  # END Class methods ------------------------------------------------------
 
 
 

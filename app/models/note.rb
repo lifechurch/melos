@@ -11,6 +11,7 @@
 class Note < YV::Resource
 
   include YV::Concerns::Moments
+  include YV::Concerns::Searchable
   
   attr_accessor :reference_list  
   attributes [:version_id,:usfm_references] # Virtual attributes used for form submissions
@@ -68,38 +69,6 @@ class Note < YV::Resource
       only_10_refs = ref.to_usfm.split("+")[0...10].join("+")
       params.merge!({references: only_10_refs, query: '*'})
       return search(params)
-    end
-
-
-
-    # API Method
-    # return all notes for a given search via query: param
-    # ex: Note.search(query: "love")
-    # returns ResourceList of Note instances
-
-    def search(params = {})
-      _auth = params[:auth]
-      params[:query] ||= '*'
-
-      data, errs = get("search/notes", params)
-      results = YV::API::Results.new(data,errs)
-
-      unless results.valid?
-        if results.has_error?("not found") or 
-           results.has_error?("Search did not match any documents")
-           
-           data = Hashie::Mash.new(notes: [])
-        else raise_errors(results.errors,"Note#search") end
-      else
-        #
-      end
-
-      notes = ResourceList.new
-      data.notes.each do |d|
-        notes << new(d)
-      end
-      notes.total = data.total || 0
-      return notes
     end
 
     def for_user(user_id, params = {})

@@ -137,15 +137,7 @@ module YV
       def all(params = {})
         opts = prepare_opts!(params)
         data, errs = get(list_path,opts)
-
-        unless errs.blank?
-          not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
-          if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
-            data = []
-            errs = nil
-          end
-        end
-
+        data = [] if not_found?(errs)
         map_all(YV::API::Results.new(data,errs)) 
       end
 
@@ -319,56 +311,13 @@ module YV
         return results
       end
 
-
+      private
 
       def not_found?(errs)
         return false if errs.nil?
         not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
         return true if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
         return false
-      end
-
-      private      
-
-      # Hook to process a response after an API call that returns 'collection' data - any #all call
-      # Allows the opportunity to override in subclasses to handle the collection data differently
-      # as collection like responses aren't all made the same.
-
-      # By default, we'll create a ResourceList and fill it with items from the API response
-
-      def process_collection_response( data )
-        items = ResourceList.new
-        items.total = (data.respond_to? :total) ? data.total : data.length
-        items.next_page = data.next_page
-        data[api_resource_collection_key].each do |item|
-          items << new(item)
-        end
-        return items
-      end
-
-      def process_moment_collection_response( data )
-        items = ResourceList.new
-        moment_data = data.moments
-        items.total = (data.respond_to? :total) ? data.total : moment_data.length
-        items.next_page = data.next_page
-        moment_data.each do |data|
-          items << new(data)
-        end
-        return items
-      end
-
-
-      # The key API sends to denote a collection of objects in a data response
-      # ex: "data": {
-      #       "users":
-      #         [{user},{user},{user}]
-      #     }
-      # in the example above the key is "users"
-
-      # see #process_collection_response
-
-      def api_resource_collection_key
-        name.tableize
       end
 
     end

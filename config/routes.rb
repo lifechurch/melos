@@ -11,7 +11,7 @@ YouversionWeb::Application.routes.draw do
   get "/confirm-email",     to: "users#confirm_email",        as: "confirm_email"
 
   match "/app(/:store)", to: AppStoreController.action(:index)
-  get "/search(/:category)",to: "search#show",                as: "search"
+  get "/search(/:category)",to: "search#category", as: "search"
 
   resources :comments,  only: [:create]
 

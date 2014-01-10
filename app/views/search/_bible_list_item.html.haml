@@ -1,9 +1,9 @@
 - item = bible_list_item
 
 %li.reference
-  - if item.reference.usfm.present?
+  - if item.usfm.present?
     %h3
-      = link_to "#{item.reference.human} (#{item.version.local_abbreviation.upcase || item.version.abbreviation.upcase})", bible_path(Reference.new(item.reference.usfm.first, version: item.version.id))
+      = link_to "#{item.human} (#{item.version_abbreviation.upcase})", reference_path(reference: item.usfm.first.downcase, version: item.version_id)
 
   - if item.highlight.present? || item.content.present?
     %p

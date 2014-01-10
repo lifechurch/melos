@@ -19,9 +19,17 @@ module YV
             from_delete(results)
           end
 
+          def map_search(results)
+            from_search(results)
+          end
+
           private
 
             def from_all(results)
+              return results
+            end
+
+            def from_search(results)
               return results
             end
 

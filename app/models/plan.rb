@@ -1,5 +1,6 @@
 class Plan < YV::Resource
 
+  include YV::Concerns::Searchable
   api_response_mapper YV::API::Mapper::Plan
 
   attribute :id
@@ -24,6 +25,19 @@ class Plan < YV::Resource
   #attr_i18n_reader :copyright
 
   class << self
+
+    # Path used by YV::Concerns::Searchable and defined class.search method
+    def search_path
+      "search/reading_plans"
+    end
+
+    # self.search(query,opts)
+    # available options:
+    # - page: page number to return
+    # - category:   (optional) category for filtering
+    # - total_days: (optional) will accept one of the predefined ranges to limit results to '1_day_to_7_days', '1_week_to_1_month', '1_month_to_3_months', '3_months_to_6_months', '6_months_to_1_year', '1_year_to_infinity', it's optional
+    # - language_tag: (optional) language for filtering
+    # - sort: (optional) ordering results. defaults to score, accepts total_days
 
     def list_path
       "search/reading_plans"

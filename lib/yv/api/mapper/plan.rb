@@ -18,19 +18,19 @@ module YV
           end
 
           def map_to_instance(instance,data)
-            instance.id = data.id
-            instance.name = data.name["default"] #TODO localize
-            instance.total_days = data.total_days
-            instance.copyright = data.copyright.text["default"] #TODO: localize + html data
-            instance.about = data.about.text["default"] #TODO: localize + html data
-            instance.version_id = data.version_id
-            instance.created_dt = data.created_dt
-            instance.slug = data.slug
+            instance.id               = data.id
+            instance.name             = data.name["default"] #TODO localize
+            instance.total_days       = data.total_days
+            instance.copyright        = data.copyright.text["default"] #TODO: localize + html data
+            instance.about            = data.about.text["default"] #TODO: localize + html data
+            instance.version_id       = data.version_id
+            instance.created_dt       = data.created_dt
+            instance.slug             = data.slug
             instance.formatted_length = data.formatted_length["default"] #TODO: localize
             instance.default_start_dt = data.default_start_dt
-            instance.type = data.type
-            instance.publisher_url = data.publisher_url
-            instance.short_url = data.short_url
+            instance.type             = data.type
+            instance.publisher_url    = data.publisher_url
+            instance.short_url        = data.short_url
             return instance
           end
         end

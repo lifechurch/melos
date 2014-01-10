@@ -1,0 +1,43 @@
+:ruby
+  @title    = @search.query
+  @subtitle = t("site search")
+  @sidebar  = false
+  @category   = params[:category].downcase.to_sym
+  @categories = [:bible,:users,:plans]
+  html_attributes(id:"search-show")
+
+%article
+  %h1
+    = t('searching.results for')
+    %em= @title
+
+  .split_pane
+
+    .sidebar
+      %dl
+        - @categories.each do |category|
+          %dd{class: @category == category ? "highlighted" : ""}
+            = link_to( search_path(category: category, q: params[:q])) do
+              = t("searching.#{category}")
+
+    .content
+      - if @category == :bible
+        = render partial: "bible_version_form", locals: {search: @search}
+
+      - if @results.count > 0
+        %ul.resource_list
+          = render partial: "#{@category}_list_item", collection: @results
+        
+        :ruby
+          url_locale = (params[:locale] == "en") ? nil : params[:locale]
+
+        %ul.pagination
+          - if @results.prev_page || @results.prev_cursor || @page > 1
+            %li.pagination_previous
+              =link_to t("previous page"), url_for({q: @search.query, category: params[:category],page: @results.prev_page || @page - 1, cursor: @results.prev_cursor, locale: url_locale})
+          - if @results.next_page || @results.next_cursor
+            %li.pagination_next
+              =link_to t("next page"), url_for({q: @search.query, category: params[:category], page: @results.next_page, cursor: @results.next_cursor, locale: url_locale})
+
+      - else
+        #noresults= t("none found")

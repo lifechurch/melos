@@ -32,6 +32,10 @@ class Reference < YV::Resource
   attr_reader :verses
   attr_reader :version
 
+  include YV::Concerns::Searchable
+
+  api_response_mapper YV::API::Mapper::Base
+
   # We lazy load API attributes for performance
   # see attributes method and attributes.<attr name> for use.
   # The following lines are just for documentation
