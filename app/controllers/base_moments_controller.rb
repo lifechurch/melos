@@ -57,8 +57,12 @@ class BaseMomentsController < ApplicationController
   end
 
   def update
-    results = @moment.update(params[lower_resource_name.to_sym])
-    results.valid? ? redirect_to(:back, notice: t("#{lower_resource_name.pluralize}.update success")) : render(action: "edit")
+    @results = @moment.update(params[lower_resource_name.to_sym])
+    if @results.valid?
+      redirect_to(@moment.to_path,notice: t("#{lower_resource_name.pluralize}.update success"))
+    else
+      render(action: "edit")
+    end
   end
 
   def destroy

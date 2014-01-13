@@ -6,7 +6,7 @@
 
 
 = form_for note, as: :note, url: note.id ? note_path(note.id) : notes_path, html: {class: "full_page_form"} do |f|
-  = render partial: "shared/form_errors", locals: {errors: results.errors}
+  = render(partial: "shared/form_errors", locals: {errors: results.errors}) unless results.nil?
 
   %p
     = f.label :title, t("notes.form.title field")

@@ -17,22 +17,25 @@
         = link_to(user_path(moment.user_name)) do
           = image_tag avatar.url
       %span.moment-time
+        = t("notes.status.#{moment.user_status}")
+        •
         = api_dt_time_ago(moment.created_dt)
 
       %h2.moment-no-text
         - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title : moment.moment_title.html_safe
         = link_to(anchor_text, moment.to_path, class: "moment-title-link")
 
-      - if detail_view and moment.references.present?
-        .moment-no-refs
-          - moment.references.each do |ref_hash|  #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
-            = link_to(ref_hash.human, reference_path(version: ref_hash.version_id, reference: ref_hash.usfm.join("+")), class: "moment-no-refs-link")
-
       .moment-no-note{:class => detail_view ? "detail-view" : ""}
         %p.moment-no-note-title
           = moment.title
+
         %p.moment-no-note-text
           = moment.content
+
+        - if detail_view and moment.references.present?
+          .moment-no-refs
+            - moment.references.each do |ref_hash|  #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
+              = link_to(ref_hash.human, reference_path(version: ref_hash.version_id, reference: ref_hash.usfm.join("+")), class: "moment-no-refs-link")
 
   .moment-btm
     = render partial: "moments/actions_bar", locals: {moment: moment}
