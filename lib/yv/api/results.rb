@@ -13,14 +13,13 @@ module YV
   module API
     class Results
 
-      attr_reader :next_page, :prev_page, :next_cursor, :prev_cursor, :total
-
-
       # Undefine all methods, except for the ones we define on this class
       # All method calls are proxied to @data via method missing.
       instance_methods.each do |m|
         undef_method(m) unless (m.match(/^__|^object_id|^next_page|^prev_page|^next_cursor|^prev_cursor|^total/))
       end
+
+      attr_reader :next_page, :prev_page, :next_cursor, :prev_cursor, :total
 
       # For error tracking
       include ActiveModel::Validations

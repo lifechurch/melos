@@ -5,5 +5,5 @@
       %h4=heading
 
     %ul
-      - errors[:base].each do |e|
+      - errors.full_messages.each do |e|
         %li= e

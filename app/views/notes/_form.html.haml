@@ -2,24 +2,27 @@
   # Partial locals params
   # Required
   # - note : an instance of Note
+  # - results: the results of attempting to save a note
+
 
 = form_for note, as: :note, url: note.id ? note_path(note.id) : notes_path, html: {class: "full_page_form"} do |f|
-  = render partial: "shared/form_errors", locals: {errors: note.errors}
+  = render partial: "shared/form_errors", locals: {errors: results.errors}
 
   %p
     = f.label :title, t("notes.form.title field")
     = f.text_field :title, {style: "width: 100%;"}
-  %div
+  
+  %p
     = f.label :content, t("notes.form.content field")
     = f.text_area :content, size: "30x10"
 
   - # if reference_list is empty, no need to show these fields.  
   - # Causes an error otherwise when sending empty note[references]/note[version_id] params
-  - unless note.reference_list.blank?
+  - unless note.usfm_references.blank?
     %p
       = f.label :reference, t("notes.form.reference field")
-      = note.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe
-      = hidden_field_tag "note[references]", note.reference_list.to_flat_usfm
+      = note.references.map{|r| r.usfm.join(", ")}.join(", ").html_safe
+      = hidden_field_tag "note[usfm_references]", note.usfm_references
       = hidden_field_tag "note[version_id]", note.version_id
   %p
     = f.label :user_status, t("notes.form.status field")

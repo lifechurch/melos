@@ -34,13 +34,21 @@ class BaseMomentsController < ApplicationController
   end
 
 
-  def create
-    @resource = moment_resource.new(params[lower_resource_name.to_sym])
-    @resource.auth = current_auth
+  def new
+    @moment = moment_resource.new(params[lower_resource_name.to_sym])
+  end
 
-    result = @resource.save
-    notice = result.valid? ? t("#{lower_resource_name.pluralize}.create success") : t("#{lower_resource_name.pluralize}.create failure")
-    redirect_to(:back, notice: notice)
+  def create
+    @moment = moment_resource.new(params[lower_resource_name.to_sym])
+    @moment.auth = current_auth
+
+    @results = @moment.save
+    if @results.valid?
+      redirect_to(@moment.to_path, notice: t("#{lower_resource_name.pluralize}.create success"))
+    else
+      flash[:error] = t("#{lower_resource_name.pluralize}.create failure")
+      render :new
+    end
   end
 
 
@@ -49,22 +57,22 @@ class BaseMomentsController < ApplicationController
   end
 
   def update
-    results = @resource.update(params[lower_resource_name.to_sym])
+    results = @moment.update(params[lower_resource_name.to_sym])
     results.valid? ? redirect_to(:back, notice: t("#{lower_resource_name.pluralize}.update success")) : render(action: "edit")
   end
 
   def destroy
-    results = @resource.destroy
+    results = @moment.destroy
     notice = results.valid? ? t("#{lower_resource_name.pluralize}.destroy success") : t("{lower_resource_name.pluralize}.destroy failure")
-    redirect_to(:back, notice: notice)
+    redirect_to(user_path(current_user), notice: notice)
   end
 
   private
 
   def find_resource
-    @resource = moment_resource.find(params[:id], auth: current_auth)
-    redirect_to(moments_path) and return unless @resource.user_id == current_auth.user_id
-    @resource.auth = current_auth
+    @moment = moment_resource.find(params[:id], auth: current_auth)
+    redirect_to(moments_path) and return unless @moment.user_id == current_auth.user_id
+    @moment.auth = current_auth
   end
 
   def moment_resource

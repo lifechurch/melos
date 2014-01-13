@@ -10,6 +10,8 @@ module YV
       # Processes a valid response from the API
       # Handle error condition or build an api object as a response
       # returns an array [results,errors] - either can be nil.
+
+      # If errors are returned, they are an array of YV::API::Error instances.
       def process
         results = errors = nil
 

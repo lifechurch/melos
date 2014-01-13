@@ -33,7 +33,7 @@ module YV
         usfms = usfm_references.split("+")
         self.references = usfms.collect {|usfm| {usfm: [usfm], version_id: version_id } }
         
-        #refererences = [
+        #references = [
         #  {usfm:["GEN.1.1","GEN.1.2"], version_id: 1}
         #]
       end

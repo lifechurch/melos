@@ -35,6 +35,7 @@ en:
     users username required:                    "You must enter a username."
     users first name required:                  "You must enter a first name."
     users last name required:                   "You must enter a last name."
+    moments content required:                   "Content cannot be blank."
   meta:
     kids_app:
       title:                                    "The Bible App for Kids"

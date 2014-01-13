@@ -8,12 +8,6 @@ class NotesController < BaseMomentsController
     before_filter :set_sidebar, only: [:index]
     before_filter :force_login, only: [:show,:new,:edit,:create,:update,:destroy]
 
-
-
-  def new
-    @note = Note.new(params[:note])
-  end
-
   # TODO: figure out public/friends/private/draft display and authorization
   def show
     @note = current_auth ? Note.find(params[:id], auth: current_auth) : Note.find(params[:id])

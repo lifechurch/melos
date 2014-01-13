@@ -6,4 +6,4 @@
 
 %article
   %h1= t("notes.new note")
-  = render partial: 'form', locals: {note: @note}
+  = render partial: 'form', locals: {note: @moment, results: @results}
