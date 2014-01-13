@@ -19,12 +19,14 @@ module YV
         @recent_versions
       end
 
+      # TODO: Make this return a version instance, not just the id (#to_param).
+      # Will require looking at all code that calls #current_version and adjusting accordingly
       def current_version
         return @current_version if @current_version.present?
 
-        @current_version = client_settings.version || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s) || Version.default
+        lookup_id = client_settings.version || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s)
         # check to make sure it's a valid version (handling version deprecation)
-        @current_version = Version.find(@current_version).to_param rescue Version.default
+        @current_version = Version.find(lookup_id).to_param rescue Version.default
       end
 
       # TODO: Refactor alt version functionality
