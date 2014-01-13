@@ -3,7 +3,7 @@ module Presenter
 
     include Presenter::ReaderInterface
 
-    attr_accessor :reference, :alt_reference, :version, :alt_version, :versions_for_current_lang
+    attr_accessor :reference, :alt_reference, :version, :alt_version, :versions_for_current_lang, :recent_versions
     
     def initialize( ref_string, params = {}, controller = nil, opts = {})
       super(params,controller)
@@ -13,6 +13,7 @@ module Presenter
       @alt_version      = opts[:alt_version]   || Version.find(controller.send(:alt_version,reference))
       @alt_reference    = opts[:alt_reference] || ::Reference.new(reference, version: alt_version)
       @versions_for_current_lang = Version.all_by_language(only: controller.send(:site).versions)[version.language.tag] || []
+      @recent_versions  = controller.send(:recent_versions)
     end
 
     def content

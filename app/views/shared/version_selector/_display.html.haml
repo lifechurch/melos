@@ -6,7 +6,6 @@
 -# Local Variables
 -# presenter          (required)
 -# force_style        (optional)
--# recent_versions    (optional)
 -# link_params        (optional)
 -# add_version_param  (optional, defaults to false)
 
@@ -17,7 +16,6 @@
 
 - plan_url = url_for(link_params) if defined?(link_params)
 - add_version_param = add_version_param || false
-- recent_versions = recent_versions || []
 - force_style = force_style || []
 
 .dynamic_menu.version_select{class: force_style.present? ? 'static dynamic_menu_reverse' : '',style: force_style, id: "menu_version", "data-plan-url" => plan_url, "data-link-needs-param" => add_version_param.to_s}
@@ -34,10 +32,10 @@
       &nbsp;
     .scroll
       %table
-        - if recent_versions.present?
+        - if presenter.recent_versions.present?
           %tr.cat.recent
             %th{:colspan => '2'}= t('recent versions')
-          = render partial: 'shared/version_selector/items', locals: {presenter: presenter, versions: recent_versions}
+          = render partial: 'shared/version_selector/items', locals: {presenter: presenter, versions: presenter.recent_versions}
         = render partial: 'shared/version_selector/all_versions', locals: {presenter: presenter}
         %tr.mobile#see_all
           %th{:colspan => '2'}

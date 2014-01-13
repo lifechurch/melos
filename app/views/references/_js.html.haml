@@ -43,7 +43,7 @@
 // Render all necessary menus
 - if reader_menus == true
   = render partial: 'shared/book_selector', locals: {presenter: presenter}
-  = render partial: 'shared/version_selector/display', locals: {presenter: presenter, recent_versions: recent_versions}
+  = render partial: 'shared/version_selector/display', locals: {presenter: presenter}
   - if modal_verse.present?
     = render partial: 'shared/modal_single_verse', locals: {modal_verse: modal_verse, reference: reference, version: version}  unless @verse_modals == false || modal_verse == nil
   = render partial: 'shared/menu_settings'
