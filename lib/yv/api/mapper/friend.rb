@@ -8,7 +8,7 @@ module YV
           def from_all(results)
             return results if results.empty?
             results.users.collect do |user_data|
-              map_to_user(User.new,user_data)
+              map_to_user(::User.new,user_data)
             end
           end
 
