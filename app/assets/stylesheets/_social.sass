@@ -546,9 +546,20 @@ body.transition .moment
 // !Badge moment
 
 .moment-bdg
+  min-height: 150px
 
   .moment-icon
     background-position: -52px 0
+
+  .moment-time
+    padding: 10px 0 5px 0
+
+.moment-bdg-desc
+  padding-right: 20px
+
+.moment-bdg-title
+  font-weight: normal !important
+
 
 .moment-bdg-info
   display: block
@@ -692,6 +703,9 @@ body.transition .moment
 
 .profile-badges-list .moment
   float: left
+
+.profile-badges-list .moment:nth-child(even)
+  margin-right: 0
 
 
 

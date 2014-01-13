@@ -1,14 +1,16 @@
 .moment
   .moment-top
-    .moment-bm
-      = image_tag "social-cap-bdg.png", class: "moment-img"
+    .moment-bdg
+      %span.moment-icon
+        &nbsp;
       %div{id: list_item.id}
         .float_left
-          %a{href: user_badge_path(list_item.username, list_item.slug)}
-            %img.avatar_large{src: list_item.image_url.px_48x48}
+          %a{href: "#"}
+            %img{src: list_item.image_url.px_48x48, width: 48, height: 48}
         %div{style: ("margin-left: 60px;")}
-          %h5
-            %a{href: user_badge_path(list_item.username, list_item.slug)}= list_item.name
-          %p= list_item.description
-          %p.small.mute
-            = t('badges.earned date', username: list_item.username, ago: time_ago_in_words(list_item.earned_as_date))
+          %span.moment-time
+            = api_dt_time_ago(list_item.earned_dt)
+          %h2.moment-bdg-title
+            = list_item.name
+          %p.moment-bdg-desc
+            = list_item.description
