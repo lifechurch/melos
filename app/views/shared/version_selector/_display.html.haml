@@ -4,19 +4,13 @@
 -# plans/invalid_ref
 
 -# Local Variables
--# link_params
--# force_style
--# recent_versions
--# presenter
--# version
--# recent_versions
--# site
--# ref
--# link_params
--# add_version_param (should default to false)
--# this_language: set by controller, passed down to all_versions
+-# presenter          (required)
+-# force_style        (optional)
+-# recent_versions    (optional)
+-# link_params        (optional)
+-# add_version_param  (optional, defaults to false)
 
--# version and recent_versions expected as version and array of versions
+-# version and recent_versions expected as version and array of versions respectively
 -# opts[:force_style] is temporary parameter until we have new reading plan design
 -# opts[:link_params] is temporary parameter until we have new reading plan design
 
@@ -43,8 +37,8 @@
         - if recent_versions.present?
           %tr.cat.recent
             %th{:colspan => '2'}= t('recent versions')
-          = render partial: 'shared/version_selector/items', locals: {versions: recent_versions, presenter: presenter}
-        = render partial: 'shared/version_selector/all_versions', locals: {version: version, site: site, presenter: presenter, this_language: this_language}
+          = render partial: 'shared/version_selector/items', locals: {presenter: presenter, versions: recent_versions}
+        = render partial: 'shared/version_selector/all_versions', locals: {presenter: presenter}
         %tr.mobile#see_all
           %th{:colspan => '2'}
             = link_to t('versions.see all'), versions_path

@@ -78,4 +78,4 @@
         =link_to t('versions.learn more'), version.url || version_path(version), class: 'button'
 
 
-= render partial: "references/js", locals: {presenter: presenter}
+= render partial: "references/js", locals: {presenter: @presenter, recent_versions: recent_versions}

@@ -21,7 +21,6 @@ class SubscriptionsController < ApplicationController
   def show
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
-    this_language # for version selector
     now_reading(presenter.reference)
     respond_with(presenter.subscription)
   end

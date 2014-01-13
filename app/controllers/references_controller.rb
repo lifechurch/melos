@@ -4,7 +4,6 @@ class ReferencesController < ApplicationController
   before_filter :fix_invalid_reference,         only: [:show]
   before_filter :strip_format,                  only: [:show]
   before_filter :setup_presenters,              only: [:show]
-  before_filter :this_language,                 only: [:show]
 
   rescue_from InvalidReferenceError, with: :ref_not_found
 

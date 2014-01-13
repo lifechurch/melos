@@ -7,7 +7,7 @@
             = @presenter.version.human
           %span
             =t("ref.choose version")
-  = render :partial 'shared/version_selector/display', {version: @presenter.version, recent_versions: recent_versions, reference: nil, site: @site, this_language: @this_language}
+  = render :partial 'shared/version_selector/display', {presenter: @presenter, recent_versions: recent_versions}
 %article
   .wrap
     .align_center= t('plans.invalid reference', support_url: external_url(:support)).html_safe
