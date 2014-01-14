@@ -36,7 +36,7 @@
               %p
               = subscription.user.email
               %span
-                = link_to(t("plans.email edit"), email_user_path(current_user))
+                = link_to(t("plans.email edit"), user_email_path(current_user))
 
         %div.info
           %h3= t("plans.email delivery")
