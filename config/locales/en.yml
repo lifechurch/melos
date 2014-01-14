@@ -703,6 +703,7 @@ en:
     chapter only:                               "Sorry, audio isn't available for verses. View in the reader for chapter audio."
     close player menu:                          "Close"
   highlights:
+    title:                                      "Highlights"
     blank slate:
       heading:                                  "Highlight meaningful verses"
       description:                              "While reading the Bible, select a verse and highlight it. Return here to view, edit, or delete your highlight."

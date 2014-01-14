@@ -10,7 +10,6 @@ class window.Menus.NavMobile extends window.Menus.Base
 
     $(@trigger_el).click (e)=>
       e.preventDefault()
-
       if this.isVisible()
          this.close()
       else
@@ -28,7 +27,7 @@ class window.Menus.NavMobile extends window.Menus.Base
   # ------------------------------------------------------------
 
   open: ->
-    $(@container).slideDown();
+    @container.slideDown();
     $(@base_element).css("max-height", $("body").height() - $("#header").height() + "px");
     $(@trigger_el).addClass("active")
     this.trigger("yv:menu:open", {target: this})
@@ -39,7 +38,7 @@ class window.Menus.NavMobile extends window.Menus.Base
   # ------------------------------------------------------------
 
   close: ->
-    $(@container).slideUp();
+    @container.slideUp();
     $(@trigger_el).removeClass("active")
     this.trigger("yv:menu:close",{target: this})
     return
