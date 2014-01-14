@@ -27,24 +27,21 @@
         %li#nav_mobile_profile
           %a.icon{href: user_path(current_auth.username)}
             %span=t("Profile")
-          /
-            %ul#nav_mobile_profile_menu
-              %li#nav_primary_bookmarks
-                - bookmark_href = logged_in? ? bookmarks_user_path(current_auth.username) : sign_up_path(source: "bookmark")
-                %a.icon{href: bookmark_href}
-                  %span=t("bookmarks")
-              %li#nav_primary_notes
-                - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
-                %a.icon{href: notes_href}
-                  %span=t("notes")
-              %li#nav_primary_highlights
-                - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
-                %a.icon{href: notes_href}
-                  %span=t("highlights")
-              %li#nav_primary_friends
-                - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
-                %a.icon{href: notes_href}
-                  %span=t("highlights")
+          
+        %ul#nav_mobile_profile_menu
+          %li#nav_primary_bookmarks
+            %a{href: bookmarks_user_path(current_auth.username)}
+              %span=t("users.profile.tab bookmarks") 
+          %li#nav_primary_notes
+            - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
+            %a{href: notes_user_path(current_auth.username)}
+              %span=t("users.profile.tab notes")
+          %li#nav_primary_highlights
+            %a{href: highlights_user_path(current_auth.username)}
+              %span=t("users.profile.tab highlights") 
+          %li#nav_primary_friends
+            %a{href: user_friends_path(user_id: current_auth.username)}
+              %span=t("users.profile.tab friends")
 
       - if logged_in?
         %li#nav_mobile_sign_out
