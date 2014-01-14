@@ -1,11 +1,12 @@
-// PARAMETERS
-// presenter: Reference Presenter (Presenter::Reference)
 :ruby
+  # PARAMETERS
+  # presenter: Reference Presenter (Presenter::Reference)
+  
   reference = presenter.reference
   locale = I18n.locale.to_s
   ajax_url = (locale == "en") ? "/bible/widgets/bookmarks" : "/#{locale}/bible/widgets/bookmarks"
 
-= render '/widgets/reader_help'
+= render partial: 'widgets/reader_help'
 
 - if current_auth #only show bookmarks widget if authed
   #widget-bookmarks.widget.ajax_bookmarks{"data-ajax" => ajax_url}
@@ -14,6 +15,6 @@
     %div.bd
       %p= t('bookmarks.loading')
 
-= render_cell :notes_list_widget, :stub, title: t("notes.community notes"), reference: reference
+= render partial: 'sidebars/notes/stub', locals: {title: t("notes.community notes"), reference: reference}
 
-= render 'widgets/download_app'
+= render partial: 'widgets/download_app'
