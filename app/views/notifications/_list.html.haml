@@ -7,7 +7,7 @@
     - notifications.each do |notification|
       %li.notifications-item
         %p
-          %span.activity-title
+          %a.activity-title{href: notification.action_url}
             = notification.moment_title
           %span.activity-timestamp
             = api_dt_time_ago(notification.created_dt)
