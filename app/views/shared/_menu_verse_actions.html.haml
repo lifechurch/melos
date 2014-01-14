@@ -13,7 +13,7 @@
       .arrow
     %dd#highlight-pane.auth
       .pane
-        %form{action: (is_authed ? highlights_path : sign_up_path), method: authed_form_method }
+        %form{action: (is_authed ? highlights_path : sign_up_path), method: authed_form_method, id:"highlight-form" }
           - unless is_authed
             %input{type: 'hidden', name: 'redirect', value: "/bible"}
             %input{type: 'hidden', name: 'source', value: "highlight"}

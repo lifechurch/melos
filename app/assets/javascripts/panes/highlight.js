@@ -22,10 +22,14 @@ HighlightPane.prototype = {
       },
 
       onSubmit: function(hsb, hex, rgb, el) {
-        $(".color_picker_list").append("<button type='submit' name='highlight[color]' class='color' id='highlight_" + hex +"' value='"+ hex +"' style='display: none; background-color: #'" + hex + "'></button>");
-        $("#highlight_" + hex).css('background-color', '#' + hex);
-        $("#highlight_" + hex).click();
+        var id        = "highlight_" + hex;
+        var selector  = "#" + id;
+        // Get only the closest color_picker_ilst and append to
+        // There are multiple on a given page due to desktop/mobile.
+        $(el).closest(".color_picker_list").append("<button type='submit' name='highlight[color]' class='color' id='" + id +"' value='"+ hex +"'></button>");
+        $(selector).css('background-color', '#' + hex);
         $(el).ColorPickerHide();
+        $(selector).click();
       }
     });
 
