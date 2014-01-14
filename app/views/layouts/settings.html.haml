@@ -11,9 +11,9 @@
 = render layout: "layouts/base" do
   
   %div.settings-header
-    %img.settings-header-avatar{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
+    %img.settings-header-avatar{src: current_user.user_avatar_url["px_128x128"]}
     %h1.settings-header-name
-      = @user.name
+      = current_user.name
     %a{href: user_path(current_user)} Go to Your Profile
 
   %article
