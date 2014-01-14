@@ -243,10 +243,7 @@ class Subscription < Plan
       raise_errors( results.errors, "subscription#set_ref_completion")
     end
 
-    # API returns a 205 when plan is completed.
-    # Look at YV::API::Client#post for specific implementation details.
-    # return here and don't process the response as this isn't a typical response object.
-    @completed = true and return if (data.code == 205 && data.completed?)
+    @completed = true and return if (data.id.present? && data.total_days.blank?)
 
     @readings.delete(day.to_s.to_sym)
     return true

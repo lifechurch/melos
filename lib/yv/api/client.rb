@@ -70,13 +70,7 @@ module YV
           # puts "-----"
 
           begin
-            response = httparty_post( resource_url , opts)
-            
-            if response.code == 205
-               response = JSON.parse('{"response": {"buildtime": "", "code": 205, "complete": true}}')
-               # Pretty sure this is custom for Reading Plan completion API response :(
-            end
-          
+            response = httparty_post( resource_url , opts)          
           rescue MultiJson::DecodeError => e
             response = JSON_500
 
