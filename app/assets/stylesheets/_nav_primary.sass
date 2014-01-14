@@ -1,6 +1,6 @@
 #nav_primary
   -webkit-font-smoothing: subpixel-antialiased
-  background: image-url("nav_primary.png") no-repeat
+  background-color: #232324
   padding-top: 12px
   white-space: nowrap
   width: 60px
@@ -8,13 +8,12 @@
   top: 82px
   margin-left: -70px
   z-index: 5
+  +border-radius(4px)
 
   nav
-    background: image-url("nav_primary.png") no-repeat right bottom
     padding-bottom: 11px
 
   ul
-    background-color: #232324
     margin: 0
 
   li
@@ -81,6 +80,23 @@
     image: image-url("nav-sprite.png")
     position: center -565px
 
+#nav_primary_bookmarks a.icon span
+  border-top: 3px solid #dedddb
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -852px
+
+#nav_primary_notes a.icon span
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -1045px
+
+#nav_primary_highlights a.icon span
+  border-bottom: 1px solid rgba(#fff, 0.15)
+  background:
+    image: image-url("nav-sprite.png")
+    position: center -2004px
+
 // !Hover
 
 #nav_primary_home a.icon span:hover
@@ -110,6 +126,19 @@
 #nav_primary_videos a.icon span:hover
   background:
     position: center -661px
+
+#nav_primary_bookmarks a.icon span:hover
+  background:
+    position: center -756px
+
+#nav_primary_notes a.icon span:hover
+  background:
+    position: center -949px
+
+#nav_primary_highlights a.icon span:hover
+  background:
+    position: center -1908px
+
 
 // !Highlighted
 
@@ -141,6 +170,20 @@
   background:
     position: center -661px
 
+.highlighted#nav_primary_bookmarks a.icon span
+  background:
+    position: center -757px
+
+.highlighted#nav_primary_notes a.icon span
+  background:
+    position: center -950px
+
+.highlighted#nav_primary_highlights a.icon span
+  background:
+    position: center -1908px
+
+
+// !Tooltips
 
 #nav_primary
 

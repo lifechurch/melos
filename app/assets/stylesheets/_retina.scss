@@ -47,14 +47,32 @@ only screen and (                min-resolution: 2dppx) {
     background-position: center -565px;
   }
 
+  #nav_primary_bookmarks a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -852px;
+  }
+
+  #nav_primary_notes a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -1045px;
+  }
+
+  #nav_primary_highlights a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -2004px;
+  }
+
   #nav_primary_home a.icon span,
   #nav_primary_bible a.icon span,
   #nav_primary_plans a.icon span,
   #nav_primary_friends a.icon span,
   #nav_primary_live a.icon span,
   #nav_primary_mobile a.icon span,
-  #nav_primary_videos a.icon span {
-    background-size: 32px 1900px;
+  #nav_primary_videos a.icon span,
+  #nav_primary_bookmarks a.icon span,
+  #nav_primary_notes a.icon span,
+  #nav_primary_highlights a.icon span, {
+    background-size: 32px 2100px;
   }
 
 
@@ -88,6 +106,18 @@ only screen and (                min-resolution: 2dppx) {
     background-position: center -661px;
   }
 
+  #nav_primary_bookmarks a.icon span:hover {
+    background-position: center -756px;
+  }
+
+  #nav_primary_notes a.icon span:hover {
+    background-position: center -949px;
+  }
+
+  #nav_primary_highlights a.icon span:hover {
+    background-position: center -1908px;
+  }
+
   // !Highlighted
 
   .highlighted#nav_primary_home a.icon span {
@@ -116,6 +146,18 @@ only screen and (                min-resolution: 2dppx) {
 
   .highlighted#nav_primary_videos a.icon span {
     background-position: center -661px;
+  }
+
+  .highlighted#nav_primary_bookmarks a.icon span {
+    background-position: center -756px;
+  }
+
+  .highlighted#nav_primary_notes a.icon span {
+    background-position: center -949px;
+  }
+
+  .highlighted#nav_primary_highlights a.icon span {
+    background-position: center -1908px;
   }
 
   // !Profile

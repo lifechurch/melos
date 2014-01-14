@@ -34,7 +34,7 @@
     #wrapper
       = content_for?(:header) ? yield(:header) : render("/shared/header/default")
       - plan_href = is_authed ? subscriptions_path(user_id: current_auth.username) : plans_path
-      - live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"         
+      - live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"
 
       - #--------- Begin Mobile Navigation
       - unless @main_nav == false
@@ -53,17 +53,36 @@
               %li#nav_mobile_videos{class: highlight.call(is_videos_url)}
                 %a.icon{href: '/videos'}
                   %span=t("videos.title")
-              - if current_auth
-                %li#nav_mobile_profile
-                  %a.icon{href: user_path(current_auth.username)}
-                    %span=t("Profile")   
               /
                 %li#nav_mobile_live
                   %a.icon{href: live_href}
                     %span=t("live")
               %li#nav_mobile_mobile
                 %a.icon{href:'/mobile'}
-                  %span=t("mobile apps") 
+                  %span=t("mobile apps")
+              - if current_auth
+                %li#nav_mobile_profile
+                  %a.icon{href: user_path(current_auth.username)}
+                    %span=t("Profile")
+                  /
+                    %ul#nav_mobile_profile_menu
+                      %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
+                        - bookmark_href = is_authed ? bookmarks_user_path(current_auth.username) : sign_up_path(source: "bookmark")
+                        %a.icon{href: bookmark_href}
+                          %span=t("bookmarks")
+                      %li#nav_primary_notes{class: highlight.call(is_notes_url)}
+                        - notes_href = is_authed ? notes_user_path(current_auth.username) : notes_path
+                        %a.icon{href: notes_href}
+                          %span=t("notes")
+                      %li#nav_primary_highlights{class: highlight.call(is_notes_url)}
+                        - notes_href = is_authed ? notes_user_path(current_auth.username) : notes_path
+                        %a.icon{href: notes_href}
+                          %span=t("highlights")
+                      %li#nav_primary_friends{class: highlight.call(is_notes_url)}
+                        - notes_href = is_authed ? notes_user_path(current_auth.username) : notes_path
+                        %a.icon{href: notes_href}
+                          %span=t("highlights")
+
               - if is_authed
                 %li#nav_mobile_sign_out
                   %a{href: sign_out_path}
@@ -76,7 +95,7 @@
                   %a{href: sign_up_path(redirect: params[:redirect])}
                     =t("sign up")
 
-      - #--------- End Mobile Navigation      
+      - #--------- End Mobile Navigation
 
       - flash.each do |key, msg|
         %div{class: container_class_str, id: "flash_#{key}"}= msg
@@ -115,7 +134,19 @@
                       %a.tooltip{href:"/videos", style:"display: none;"}
                         %span=t("videos.title")
 
-                  /
+                  %li#nav_primary_live
+                    %a.icon{href: live_href}
+                      %span &nbsp;
+                    %a.tooltip{href: live_href, style: "display: none;"}
+                      %span=t("live")
+
+                  %li#nav_primary_mobile
+                    %a.icon{href: '/mobile'}
+                      %span &nbsp;
+                    %a.tooltip{href: '/mobile', style: "display: none;"}
+                      %span=t("mobile")
+
+                  - if current_auth
                     %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
                       - bookmark_href = is_authed ? bookmarks_user_path(current_auth.username) : sign_up_path(source: "bookmark")
                       %a.icon{href: bookmark_href}
@@ -130,17 +161,12 @@
                       %a.tooltip{href: notes_href, style: "display: none;"}
                         %span=t("notes title")
 
-                  %li#nav_primary_live
-                    %a.icon{href: live_href}
-                      %span &nbsp;
-                    %a.tooltip{href: live_href, style: "display: none;"}
-                      %span=t("live")
-
-                  %li#nav_primary_mobile
-                    %a.icon{href: '/mobile'}
-                      %span &nbsp;
-                    %a.tooltip{href: '/mobile', style: "display: none;"}
-                      %span=t("mobile")
+                    %li#nav_primary_highlights{class: highlight.call(is_notes_url)}
+                      - notes_href = is_authed ? notes_user_path(current_auth.username) : notes_path
+                      %a.icon{href: notes_href}
+                        %span &nbsp;
+                      %a.tooltip{href: notes_href, style: "display: none;"}
+                        %span=t("notes title")
 
           - #--------- End Primary Navigation
 
