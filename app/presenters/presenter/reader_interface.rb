@@ -39,12 +39,6 @@ module Presenter
       raise Presenter::InterfaceNotImplementedError.new("version method not implemented for interface ReaderInterface!")
     end
 
-    # array of versions, for use in Reader partials.
-    # Required.
-    def versions_for_current_lang
-      raise Presenter::InterfaceNotImplementedError.new("versions_for_current_lang method not implemented for interface ReaderInterface!")
-    end
-
     def reference_string
       raise Presenter::InterfaceNotImplementedError.new("reference_string method not implemented for interface ReaderInterface!")
     end
