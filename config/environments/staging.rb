@@ -1,3 +1,5 @@
+require 'rack-cache'
+
 YouversionWeb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   unless ENV['NO_AUTH']
@@ -40,6 +42,9 @@ YouversionWeb::Application.configure do
 
   #memcache
   config.cache_store = :dalli_store
+
+  # Enable Rack::Cache
+  config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/body"
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
