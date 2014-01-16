@@ -8,17 +8,10 @@ class PagesController < ApplicationController
   def api_timeout;  end
   def generic_error;end
 
-  def feed
-
-  end
-
-  def notifications
-
-  end
-
-  def requests
-
-  end
+  def feed;end
+  def notifications;end
+  def requests;end
+  def intro;end
 
   # /app url - redirects to an store for mobile device if found
   # tracks requests to /app to GA custom event.

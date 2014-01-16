@@ -183,6 +183,7 @@ YouversionWeb::Application.routes.draw do
   get "pages/detail", to: "pages#detail"
   get "pages/requests", to: "pages#requests"
   get "pages/notifications", to: "pages#notifications"
+  get "pages/intro", to: "pages#intro"
 
 
   root to: 'pages#home'
