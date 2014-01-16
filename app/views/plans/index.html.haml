@@ -79,7 +79,15 @@
       - unless @plans.empty?
         %ul.resource_list
           = render partial: "plans/list_item", collection: @plans, locals: {original_locale: orig_locale}
-        = render partial: "shared/pagination", locals: {resource_list: @plans}
+
+        %ul.pagination
+          - if @plans.prev_page || @page > 1
+            %li.pagination_previous
+              =link_to t("previous page"), url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]})
+          - if @plans.next_page
+            %li.pagination_next
+              =link_to t("next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]})
+
       -else
         .none{align: "center"}= t("plans.none found")
 

@@ -34,10 +34,10 @@
         %ul.pagination
           - if @results.prev_page || @results.prev_cursor || @page > 1
             %li.pagination_previous
-              =link_to t("previous page"), url_for({q: @search.query, category: params[:category],page: @results.prev_page || @page - 1, cursor: @results.prev_cursor, locale: url_locale})
+              =link_to t("previous page"), url_for({q: @search.query, category: params[:category],page: @results.prev_page || @page - 1, cursor: @results.prev_cursor, locale: params[:locale]})
           - if @results.next_page || @results.next_cursor
             %li.pagination_next
-              =link_to t("next page"), url_for({q: @search.query, category: params[:category], page: @results.next_page, cursor: @results.next_cursor, locale: url_locale})
+              =link_to t("next page"), url_for({q: @search.query, category: params[:category], page: @results.next_page, cursor: @results.next_cursor, locale: params[:locale]})
 
       - else
         #noresults= t("none found")
