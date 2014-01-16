@@ -41,7 +41,7 @@
 .bookmarks-labels
   overflow: auto
   margin: 0
-  
+
   .label
     margin-left: 1em
     float: left
@@ -94,3 +94,26 @@
       li
         .content
           line-height: 1.25em !important
+
+  .bookmarks-labels-wrap
+    +border-radius(0)
+    margin: 0
+    border-bottom: 5px solid #dedddb
+
+    .labels-heading
+      float: none
+      font-size: 15px
+      margin: 0 10px 5px 4px
+
+    .label
+      margin: 2px 2px 0
+
+      a
+        color: #fff
+        padding: 0 7px
+        background-color: #0084c8
+        +border-radius(3px)
+        font-size: 15px
+        height: 30px
+        line-height: 28px
+        display: block
