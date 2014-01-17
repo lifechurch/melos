@@ -395,7 +395,6 @@ DEPENDENCIES
   capybara-mechanize (~> 0.3.0)
   capybara-screenshot (~> 0.3.4)
   capybara-webkit (~> 0.12.1)
-  cells (~> 3.8.3)
   coffee-rails (~> 3.2.2)
   compass-rails (~> 1.0.3)
   countries (~> 0.8.2)
