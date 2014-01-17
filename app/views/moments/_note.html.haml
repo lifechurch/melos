@@ -22,7 +22,7 @@
         = api_dt_time_ago(moment.created_dt)
 
       %h2.moment-no-text
-        - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title : moment.moment_title.html_safe
+        - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title || truncate(moment.content) : moment.moment_title.html_safe
         = link_to(anchor_text, moment.to_path, class: "moment-title-link")
 
       .moment-no-note{:class => detail_view ? "detail-view" : ""}
