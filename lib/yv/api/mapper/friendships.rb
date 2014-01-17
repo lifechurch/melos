@@ -11,7 +11,7 @@ module YV
             friendships = ::Friendships.new
             friendships.incoming = if results.users
               results.users.collect do |user_data|
-                map_to_user(User.new,user_data)
+                map_to_user(::User.new,user_data)
               end
             else
               []
