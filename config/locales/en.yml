@@ -147,8 +147,6 @@ en:
   live:                                         "Live/Groups"
   first page:                                   "First Page"
   last page:                                    "Last Page"
-  next page:                                    "Next Page"
-  previous page:                                "Previous Page"
   invalid username or password:                 "Invalid username or password."
   show all bookmarks:                           "View all %{total} bookmarks"
   show all notes:                               "View all %{total} notes"
@@ -559,6 +557,8 @@ en:
     none me:                                    "You haven't earned any badges yet."
     none user:                                  "%{username} hasn't earned any badges yet."
   plans:
+    privacy:
+      visible to friends?:                       "Would you like your activity with this plan to be visible to your friends?"
     title:                                      "Reading Plans"
     browse by category:                         "Browse by Category"
     browse plans:                               "Browse %{category} Plans"
@@ -925,6 +925,9 @@ en:
       sidebar:
         tagline:                                "Let's make history together"
         button:                                 "Share the Bible App"
-  features:
+  ui:
+    pagination:
+      next page:                                "Next Page"
+      previous page:                            "Previous Page"
     datetime:
       just now:                                 "just now"

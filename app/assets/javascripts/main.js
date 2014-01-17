@@ -50,6 +50,25 @@ jQuery(document).ready(function() {
     })
   });
 
+  // Toggle feature
+  // Add  the attribute data-toggle-trigger="true" to any link
+  // and data-toggle-target="#id-of-element"
+  // This will turn the trigger element into a clickable element
+  // to toggle the id of the target element with a SlideDown animation
+
+  $('a[data-toggle-trigger="true"]').each(function() {
+    var link = $(this);
+    var target = $(link.data("toggle-target"));
+    var toggle_class = "toggle-active"
+    link.click(function(ev) {
+      ev.preventDefault()
+      if(target.hasClass(toggle_class)) { target.slideUp().removeClass(toggle_class); }
+      else                              { target.slideDown().addClass(toggle_class); }
+    });
+  });
+
+
+
   $(".social-feed .moment").wookmark({
     autoResize:   true,
     offset:       15,

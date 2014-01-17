@@ -2,7 +2,7 @@
 // presenter: Presenter::Sidebar::Plan
 - plan = presenter.plan
 
-= render partial: "/sidebars/plans/button", locals: {plan: plan}
+= render partial: "/plans/button", locals: {plan: plan}
 
 .widget
   %h3.hd
@@ -15,7 +15,7 @@
       %b=t("plans.length field")
       = plan.length
 
-  - if !current_user || !current_user.subscribed_to?(plan)
+  - if not logged_in? || !current_user.subscribed_to?(plan)
     %div.ft.link
       = link_to(t("plans.view sample"), day: 1.to_s, initial: 'true')
 

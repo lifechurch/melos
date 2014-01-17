@@ -82,11 +82,11 @@
 
         %ul.pagination
           - if @plans.prev_page || @page > 1
-            %li.pagination_previous
-              =link_to t("previous page"), url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]})
+            %li.prev
+              =link_to t("ui.pagination.previous page"), url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]}) , class: "action_button_grey action_button"
           - if @plans.next_page
-            %li.pagination_next
-              =link_to t("next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]})
+            %li.next
+              =link_to t("ui.pagination.next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), class: "action_button_grey action_button"
 
       -else
         .none{align: "center"}= t("plans.none found")
