@@ -40,8 +40,14 @@ jQuery(document).ready(function() {
     new Moments.Verse({el: $(this)});
   });
 
-  $(".moment-comments-textarea").each(function() {
-    new Moments.CommentForm({textarea: $(this)})
+  $(".comment-field").each(function() {
+    var field = $(this);
+    var list  = field.closest("form").siblings(".moment-comments-list")
+    new Moments.CommentForm({
+      textarea: field,
+      update: list,
+      template: $("#comment-list-item-tmpl")
+    })
   });
 
   $(".social-feed .moment").wookmark({

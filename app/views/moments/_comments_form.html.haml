@@ -9,4 +9,6 @@
     %span.moment-comments-input-avatar
       = image_tag current_user.user_avatar_url["px_24x24"]
     
-    = text_area_tag "comment[content]", nil, class: "moment-comments-textarea"
+    - # Do not remove the comment-field class as this is specific to javascript
+    - # functionality.  See main.js and comments_form.js class.
+    = text_area_tag "comment[content]", nil, class: "moment-comments-textarea comment-field", "data-moment-id" => moment.id

@@ -925,3 +925,6 @@ en:
       sidebar:
         tagline:                                "Let's make history together"
         button:                                 "Share the Bible App"
+  features:
+    datetime:
+      just now:                                 "just now"

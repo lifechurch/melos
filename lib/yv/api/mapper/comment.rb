@@ -6,7 +6,11 @@ module YV
         class << self
 
           def map_create(results)
-            from_collection(results)
+            # API returns a list of all comments, not just the one being created
+            # lets just map to a single instance of comment for the one being
+            # created (last in the array of results)
+            map_to_instance(::Comment.new, results.comments.last)
+            #from_collection(results)
           end
 
           private
@@ -53,8 +57,9 @@ module YV
           end
 
           def map_to_instance(instance,results)
-            instance.content = results.content
-            instance.user    = map_to_user(::User.new,results.user)
+            instance.id         = results.id
+            instance.content    = results.content
+            instance.user       = map_to_user(::User.new,results.user)
             instance.created_dt = results.created_dt
             instance.updated_dt = results.updated_dt
             instance
