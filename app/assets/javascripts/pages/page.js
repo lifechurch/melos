@@ -71,7 +71,6 @@ function Page() {
   this.initConstants();
   this.initHTML();
   this.initOrientationResize();
-  this.initNav();
   this.initInputs();
   this.initMenus();
   this.initEditControls();
@@ -274,28 +273,6 @@ Page.prototype = {
         );
       }
     });
-  },
-
-
-  initNav : function() {
-
-    // Primary navigation tooltips
-    $("#nav_primary ul li").hover(function(){
-        $(this).find(".tooltip").fadeIn(100);
-      }, function() {
-        $(this).find(".tooltip").fadeOut(100);
-    });
-
-    // Hide address bar on smartphones, unless there is smart banner
-    //if ($('head meta[name="apple-itunes-app"]').length == 0){
-      //window.addEventListener("load",function() {
-        //setTimeout(function(){
-          //// console.log('Hide the address bar!');
-          //window.scrollTo(0, 1);
-      //}, 0);
-      //});
-    //}
-
   },
 
   menuClick : function( clicked ) {

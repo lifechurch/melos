@@ -68,6 +68,42 @@ jQuery(document).ready(function() {
   });
 
 
+  // Setup tooltips on hovering over primary nav
+
+  $("#nav_primary a.icon").each(function(){
+    var link = $(this);
+    var link_parent = link.parent();
+    var link_text = link.data("title");
+    var link_href = link.attr("href");
+    
+    // Build base tooltip element
+    var tooltip_el = $('<a/>', {
+      href: link_href,
+      style: "display: none;",
+      class: "tooltip"
+    });
+
+    // Build inner span for tooltip_el
+    var tooltip_span = $('<span/>',{
+      text: link_text
+    });
+
+    tooltip_el.append(tooltip_span);
+
+    // Append the tooltip element to the hovered links parent.
+    link_parent.append(tooltip_el);
+
+    // Create a hover listener for the link to show the tooltip
+    link_parent.hover(function(){
+        $(this).find(".tooltip").fadeIn(100);
+      }, function() {
+        $(this).find(".tooltip").fadeOut(100);
+    });
+  });
+
+    
+
+
 
   $(".social-feed .moment").wookmark({
     autoResize:   true,

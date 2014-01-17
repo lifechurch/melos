@@ -17,64 +17,37 @@
   
   live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"  
 
-#nav_primary{:role => "navigation"}
+#nav_primary{role: "navigation"}
   %nav
     %ul
       %li#nav_primary_home{class: highlight.call(is_home_url) }
-        %a.icon{href: moments_path}
-          %span &nbsp;
-        %a.tooltip{href: moments_path, style:"display: none;"}
-          %span Home
+        %a.icon{href: moments_path, "data-title" => "Home"}
 
       %li#nav_primary_bible{class: highlight.call(is_bible_url) }
-        %a.icon{href: '/bible'}
-          %span &nbsp;
-        %a.tooltip{href: "/bible", style:"display: none;"}
-          %span= t('bible')
+        %a.icon{href: '/bible', "data-title" => t("bible")}
 
       %li#nav_primary_plans{class: highlight.call(is_plans_url)}
-        %a.icon{href: plan_href }
-          %span &nbsp;
-        %a.tooltip{href: plan_href, style:"display: none;"}
-          %span=t("plans.title")
+        %a.icon{href: plan_href, "data-title" => t("plans.title")  }
 
       - if Video.available_locales.include? I18n.locale
         %li#nav_primary_videos{class: highlight.call(is_videos_url)}
-          %a.icon{href:"/videos"}
-            %span &nbsp;
-          %a.tooltip{href:"/videos", style:"display: none;"}
-            %span=t("videos.title")
+          %a.icon{href:"/videos", "data-title" => t("videos.title")}
 
       %li#nav_primary_live
-        %a.icon{href: live_href}
-          %span &nbsp;
-        %a.tooltip{href: live_href, style: "display: none;"}
-          %span=t("live")
+        %a.icon{href: live_href, "data-title" => t("live")}
 
       %li#nav_primary_mobile
-        %a.icon{href: '/mobile'}
-          %span &nbsp;
-        %a.tooltip{href: '/mobile', style: "display: none;"}
-          %span=t("mobile")
+        %a.icon{href: '/mobile', "data-title" => t("mobile")}
 
       - if current_auth
         %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
           - bookmark_href = logged_in? ? bookmarks_user_path(current_auth.username) : sign_up_path(source: "bookmark")
-          %a.icon{href: bookmark_href}
-            %span &nbsp;
-          %a.tooltip{href: bookmark_href, style:"display: none;"}
-            %span= t('bookmarks.title')
+          %a.icon{href: bookmark_href, "data-title" => t('bookmarks.title') }
 
         %li#nav_primary_notes{class: highlight.call(is_notes_url)}
           - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
-          %a.icon{href: notes_href}
-            %span &nbsp;
-          %a.tooltip{href: notes_href, style: "display: none;"}
-            %span=t("notes title")
+          %a.icon{href: notes_href, "data-title" => t("notes title")}
 
         %li#nav_primary_highlights{class: highlight.call(is_highlights_url)}
           - highlights_href = logged_in? ? highlights_user_path(current_auth.username) : notes_path
-          %a.icon{href: highlights_href}
-            %span &nbsp;
-          %a.tooltip{href: highlights_href, style: "display: none;"}
-            %span=t("highlights.title")
+          %a.icon{href: highlights_href, "data-title" => t("highlights.title")}
