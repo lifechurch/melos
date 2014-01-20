@@ -196,6 +196,7 @@ MobileMenus.prototype = {
   openSubscriptionMenu : function(){
     if(this.isMobileClient()) {
       this.subscriptionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass('open');
+      $(document).scrollTop(0);
     }
   },
 
