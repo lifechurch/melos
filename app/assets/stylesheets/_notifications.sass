@@ -41,11 +41,23 @@
   border-top: 1px solid #ccc
 
 .notifications-item
+  clear: both
+  overflow: auto
+  border-bottom: 1px solid #ddd
+
   p
     padding: 8px
     margin-bottom: 0
     line-height: 1.4em
-    border-bottom: 1px solid #ddd
+
+  img
+    height: 24px
+    width: 24px
+    float: left
+    display: block
+    margin: 10px
+    border-radius: 20px
+    border: 1px solid #ddd
 
     .activity-timestamp
       display: block
@@ -109,7 +121,7 @@ article.social-requests ul
     top: 48px
     left: 40px
     min-width: 330px
-    max-width: 600px
+    max-width: 450px
     border: 1px solid #d4d4d4
     +border-radius(5px)
     background: #fff
