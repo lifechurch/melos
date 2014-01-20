@@ -22,9 +22,30 @@
 .resource_list
   .subscription
     overflow: hidden
+    
     h3
       margin-left: 10px
       margin-bottom: .5em
+      overflow: auto
+      position: relative
+
+      .subscription-title
+        display: block
+        float: left
+        width: 75%
+
+      .subscription-privacy
+        font-size: 12px
+        font-weight: normal
+        position: absolute
+        bottom: 0px
+        right: 10px
+        width: 20%
+        
+        a
+          color: #aaa
+          text-decoration: underline
+
     .progress_wrap
       margin-bottom: 0
 

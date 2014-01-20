@@ -557,8 +557,11 @@ en:
     none me:                                    "You haven't earned any badges yet."
     none user:                                  "%{username} hasn't earned any badges yet."
   plans:
+    settings:                                   "Settings"
     privacy:
-      visible to friends?:                       "Would you like your activity with this plan to be visible to your friends?"
+      visible to friends?:                      "Would you like your activity with this plan to be visible to your friends?"
+      private:                                  "Private"
+      public:                                   "Public"
     title:                                      "Reading Plans"
     browse by category:                         "Browse by Category"
     browse plans:                               "Browse %{category} Plans"
@@ -589,7 +592,6 @@ en:
     no public plans:                            "No reading plans are visible for %{username}."
     filter by lang:                             "Filter Plans by Language"
     plan settings:                              "Plan Settings"
-    settings:                                   "Settings"
     search:                                     "Search"
     search placeholder:                         "Search %{category} Plans"
     subscribe to plan:                          "Start This Plan"
