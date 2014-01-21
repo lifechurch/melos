@@ -4,7 +4,7 @@
 
 class Comment < YV::Resource
 
-  attributes [:user,:content,:created_dt,:updated_dt]
+  attributes [:id,:user,:content,:created_dt,:updated_dt]
   api_response_mapper YV::API::Mapper::Comment
 
   class << self
@@ -75,23 +75,17 @@ class Comment < YV::Resource
 
     def create(opts={})
       raise YV::AuthRequired unless opts[:auth]
-      data, errs = post("comments/create", opts.slice(:auth, :moment_id, :content))
-      map_from_create(YV::API::Results.new(data,errs))
+      super(opts.slice(:auth, :moment_id, :content))
     end
 
-    def map_from_create(results)
-      results.data = @api_response_mapper.map_create(results.data)
-      results
+
+    def delete(id,opts={})
+      raise YV::AuthRequired unless opts[:auth]
+      data,errs = post("comments/delete",opts.merge(id: id))
+      map_delete(YV::API::Results.new(data,errs))
     end
 
-  end
 
-  # End Class methods
-
-  # TODO - build proper User object here.
-  def after_build
-    content = attributes.content
-    user = attributes.user
   end
 
 end

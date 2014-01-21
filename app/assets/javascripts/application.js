@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require ./moments/verse
-//= require ./moments/comment_form
+//= require ./moments/comments
 //= require ./menus/base
 //= require ./menus/notifications
 //= require ./menus/friend_requests

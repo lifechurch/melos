@@ -13,7 +13,7 @@ YouversionWeb::Application.routes.draw do
   match "/app(/:store)", to: AppStoreController.action(:index)
   get "/search(/:category)",to: "search#category", as: "search"
 
-  resources :comments,  only: [:create]
+  resources :comments,  only: [:create,:destroy]
 
   resources :friendships, only: [:create, :destroy] do
     get :requests, on: :collection

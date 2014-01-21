@@ -3,7 +3,7 @@ module YV
     module UserAuth
 
       def self.included(base)
-        base.helper_method :logged_in?, :force_login, :current_auth, :sign_in, :sign_out, :current_user, :current_user_is?
+        base.helper_method :logged_in?, :force_login, :current_auth, :sign_in, :sign_out, :current_user
       end
 
       private
@@ -26,12 +26,6 @@ module YV
       def current_user
         return nil unless current_auth
         @current_user ||= User.find(current_auth.user_id, auth: current_auth)
-      end
-
-      # Appropriate method to use to check if current_user is the passed in user
-      # Using current_auth avoids an extra API call to users#view for current user information
-      def current_user_is?( user )
-        current_auth && current_auth.username == user.username
       end
 
       def current_auth

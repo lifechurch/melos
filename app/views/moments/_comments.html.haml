@@ -26,5 +26,8 @@
               = comment.content
               %span.moment-comment-dt
                 = api_dt_time_ago(comment.updated_dt)
+            - if current_user_moment?(moment) or current_user_is?(user)
+              %a.moment-comment-delete{href:"#", "data-comment-id" => comment.id}
+                x
 
     = render partial: "moments/comments_form", locals: {moment: moment}

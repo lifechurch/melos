@@ -1,5 +1,11 @@
 module ApplicationHelper
 
+  # Appropriate method to use to check if current_user is the passed in user
+  # Using current_auth avoids an extra API call to users#view for current user information
+  def current_user_is?( user )
+    current_auth && current_auth.username == user.username
+  end
+
   def current_user_moment?(moment)
     moment.user_id == current_auth.user_id
   end

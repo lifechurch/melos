@@ -13,11 +13,25 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html {
         notice = @comment.valid? ? t("comments.create success") : t("comments.create failure")
-        redirect_to(:back, notice: notice)    
+        redirect_to(:back, notice: notice)
       }
       format.js {} #renders create.js.rabl
     end
     
   end
+
+  def destroy
+    results = Comment.delete(params[:id].to_i, auth: current_auth)
+    respond_to do |format|
+      format.html {
+        notice = results.valid? ? t("comments.destroy success") : t("comments.destroy failure")
+        redirect_to(:back, notice: notice)
+      }
+      format.js { 
+        render text: "", status: results.valid? ? 200 : 400
+      }
+    end
+  end
+
 
 end

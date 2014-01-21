@@ -197,8 +197,10 @@ en:
     view all:                                   "View all Notifications"
   comments:
     post comment:                               "Post a comment"
-    create success:                               "Comment posted"
-    create failure:                               "Comment could not be posted"
+    create success:                             "Comment posted"
+    create failure:                             "Comment could not be posted"
+    destroy success:                            "Comment deleted"
+    destroy failure:                            "Comment could not be deleted"
     form:
       save button:                              "Post"
   friends:

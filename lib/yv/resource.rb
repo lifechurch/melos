@@ -396,10 +396,6 @@ module YV
       begin
         resource_path = self.persisted? ? self.class.update_path : self.class.create_path
         results = persist(resource_path)
-
-        #if results.data
-        #  self.id = results.data.id if (results.data.id.present? && results.valid? && !persisted?)
-        #end
       ensure
         self.persisted? ? after_update(results) : after_save(results)
       end
@@ -407,9 +403,9 @@ module YV
       if results.valid?
          action = persisted? ? :update : :create
          self.class.map(results,self,action)
+      else
+         results
       end
-
-      return results
     end
 
     

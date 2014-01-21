@@ -40,14 +40,9 @@ jQuery(document).ready(function() {
     new Moments.Verse({el: $(this)});
   });
 
-  $(".comment-field").each(function() {
-    var field = $(this);
-    var list  = field.closest("form").siblings(".moment-comments-list")
-    new Moments.CommentForm({
-      textarea: field,
-      update: list,
-      template: $("#comment-list-item-tmpl")
-    })
+
+  $(".moment-comments").each(function(){
+    new Moments.Comments({base: $(this)});
   });
 
   // Toggle feature
