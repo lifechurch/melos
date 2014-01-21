@@ -56,7 +56,7 @@ module YV
           end
 
           def map_to_instance(instance,results)
-            instance.id         = results.id
+            instance.id         = results.id.to_s
             instance.content    = results.content
             instance.user       = map_to_user(::User.new,results.user)
             instance.created_dt = results.created_dt

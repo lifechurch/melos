@@ -13,28 +13,7 @@ class window.Moments.Comments
 
     # For every .moment-comment-delete link, setup a click event listener
     @base_el.find(".moment-comment-delete").click (event)=>
-      event.preventDefault();
-      
-      # The clicked link
-      el = $(event.currentTarget)
-      el.removeAttr("href")
-      
-      comment_li = el.closest("li")
-      comment_li.addClass("pending-delete")
-      
-      post_data = {
-        authenticity_token: @auth_token
-      }
-
-      $.ajax 
-        url: "/comments/" + el.data("comment-id"), 
-        type: "DELETE",
-        data: post_data,
-        dataType:"json",
-        success: (data)=>
-          comment_li.fadeOut 200, =>
-            @refreshWookmark()
-
+      @deleteHandler(event)
 
     @textfield_el.keypress (event)=>
       if event.which == 13
@@ -56,6 +35,10 @@ class window.Moments.Comments
           success: (data)=>
             template = Handlebars.compile @update_tmpl.html()
             @update_el.append template(data)
+            # Find the item we just appended, get the delete link and bind a handler to it.
+            @update_el.find("li").last().find(".moment-comment-delete").click (event)=>
+              @deleteHandler(event)
+
             @textfield_el.val("").removeAttr("disabled").blur() # blur to dismiss device keyboards
             @refreshWookmark()
 
@@ -65,3 +48,25 @@ class window.Moments.Comments
       offset:       15,
       container:    $(".social-feed")
     }
+
+  deleteHandler: (event) ->
+    event.preventDefault()
+    # The clicked link
+    el = $(event.currentTarget)
+    el.removeAttr("href")
+    
+    comment_li = el.closest("li")
+    comment_li.addClass("pending-delete")
+    
+    post_data = {
+      authenticity_token: @auth_token
+    }
+
+    $.ajax 
+      url: "/comments/" + el.data("comment-id"), 
+      type: "DELETE",
+      data: post_data,
+      dataType:"json",
+      success: (data)=>
+        comment_li.fadeOut 200, =>
+          @refreshWookmark()

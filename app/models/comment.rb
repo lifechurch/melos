@@ -84,8 +84,6 @@ class Comment < YV::Resource
       data,errs = post("comments/delete",opts.merge(id: id))
       map_delete(YV::API::Results.new(data,errs))
     end
-
-
   end
 
 end
