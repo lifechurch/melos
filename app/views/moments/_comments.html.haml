@@ -8,7 +8,7 @@
     - if moment.comments_count.to_i > 3
       %span.moment-comments-more
         = link_to("View all comments", "/#{moment.class.name.downcase.pluralize}/#{moment.id}")
-    
+
     - # We need to render an empty ul if there are no comments so that
     - # our front end javascript can insert a new comment via ajax as needed
     - # Don't adjust the conditional to not render a ul if there are no comments
@@ -27,7 +27,7 @@
               %span.moment-comment-dt
                 = api_dt_time_ago(comment.updated_dt)
             - if current_user_moment?(moment) or current_user_is?(user)
-              %a.moment-comment-delete{href:"#", "data-comment-id" => comment.id}
-                x
+              %a.moment-comment-delete{href:"#", "data-comment-id" => comment.id, title: "Delete this comment"}
+                Delete this comment
 
     = render partial: "moments/comments_form", locals: {moment: moment}

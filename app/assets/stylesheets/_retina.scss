@@ -275,7 +275,7 @@ only screen and (                min-resolution: 2dppx) {
   .moment-actions-comment a,
   .moment-actions-like a {
     background: image-url("social-actions-sprite@2x.png") no-repeat;
-    background-size: 20px 400px;
+    background-size: 20px 500px;
   }
 
   .moment-actions-share a {
@@ -369,6 +369,11 @@ only screen and (                min-resolution: 2dppx) {
 
   .moment-fr .moment-icon {
     background-position: -207px 0;
+  }
+
+  .moment-comment-delete {
+    background: image-url("social-actions-sprite@2x.png") no-repeat center -417px;
+    background-size: 20px 500px;
   }
 
 
