@@ -63,6 +63,29 @@ only screen and (                min-resolution: 2dppx) {
     background-size: 32px 1900px;
   }
 
+  // !verse action menu
+
+  .verse_toolbar nav a.submenu_btn {
+    background: #0084c8 image-url("mobile/verse_action_sprite_2x.png") no-repeat;
+    background-size: 16px 250px;
+  }
+
+  .verse_toolbar nav a.bookmark_btn {
+    background-position: center -50px;
+  }
+
+  .verse_toolbar nav a.highlight_btn {
+    background-position: center -6px;
+  }
+
+  .verse_toolbar nav a.note_btn {
+    background-position: center -94px;
+  }  
+
+  .verse_toolbar nav a.share_btn {
+    background-position: center -138px;
+  }
+    
   // !Header
 
   #header .friend-requests-btn,

@@ -111,7 +111,7 @@ div.close_tab
 .verse_toolbar
   height: 86px
   position: fixed
-  top: -86px
+  top: -88px
   left: 0px
   width: 100%
   background: url("mobile/verse_toolbar_bg.gif") repeat-x
@@ -264,14 +264,28 @@ div.close_tab
   text-align: center
 
 
+// .verse_toolbar nav
+//  margin-left: 10px
 .verse_toolbar nav
-  padding-left: 8px
+  text-align: center
+  height: 44px
 
 .verse_toolbar nav, .share_toolbar nav, .settings_toolbar nav
   overflow: hidden
 
-.verse_toolbar nav a, .share_toolbar nav a, .settings_toolbar nav a
-  float: left
+.verse_toolbar nav a, .share_toolbar nav a
+  margin: 5px 2% 0
+  text-indent: -99999px
+  overflow: hidden
+  display: inline-block
+  height: 30px
+  width: 28%
+  padding: 0px
+  +border-radius(4px)
+  border-bottom: 2px solid #000
+
+.settings_toolbar nav a
+  float: right
   margin-right: 10px
   text-indent: -99999px
   overflow: hidden
@@ -288,22 +302,22 @@ div.close_tab
   margin-right: 0px
 
 .verse_toolbar nav a.submenu_btn
-  background: image-url("mobile/verse_task_sprite.png") no-repeat
+  background: #0084c8 image-url("mobile/verse_action_sprite.png") no-repeat
 
 .verse_toolbar nav a.bookmark_btn
-  background-position: 10px -34px
+  background-position: center -50px
 
 .verse_toolbar nav a.comment_btn
-  background-position: -45px -34px
+  background-position: -45px -40px
 
 .verse_toolbar nav a.highlight_btn
-  background-position: -91px -34px
+  background-position: center -6px
 
 .verse_toolbar nav a.note_btn
-  background-position: -139px -34px
+  background-position: center -94px
 
 .verse_toolbar nav a.share_btn
-  background-position: -191px -34px
+  background-position: center -138px
 
 .share_toolbar nav a.tertiary_btn
   //background: image-url("mobile/share_sprite.png") no-repeat

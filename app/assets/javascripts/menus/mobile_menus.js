@@ -73,7 +73,7 @@ MobileMenus.prototype = {
       else if(thiss.shareBtn.hasClass('selected')){
           thiss.shareToolbar.stop().animate({ top : '-46px'}, 400, function(){
               // share toolbar animation complete
-              thiss.verseToolbar.stop().animate({ top : '-86px'}, 400, function(){
+              thiss.verseToolbar.stop().animate({ top : '-88px'}, 400, function(){
                   // verse toolbar animation complete, show nav_items
                   $('.reader-nav').stop().animate({ top : '0px'}, 400);
               });
@@ -87,7 +87,7 @@ MobileMenus.prototype = {
 
       else {
           thiss.shareToolbar.hide();
-          thiss.verseToolbar.stop().animate({ top : '-86px'}, 400, function(){
+          thiss.verseToolbar.stop().animate({ top : '-88px'}, 400, function(){
               // verse toolbar animation complete, show nav_items
               thiss.navItems.stop().animate({ top : '0px'}, 200);
               thiss.verse.removeClass('selected');
@@ -351,7 +351,7 @@ MobileMenus.prototype = {
     this.closeNavMenu();
     this.closeSettingsMenu();
     this.shareToolbar.hide();
-    thiss.verseToolbar.stop().animate({ top: '-86px'}, 400, function(){
+    thiss.verseToolbar.stop().animate({ top: '-88px'}, 400, function(){
       thiss.colorMenu.stop().animate({ top: '0px'}, 400).addClass(this.openFlag);
     });
   },
@@ -375,7 +375,7 @@ MobileMenus.prototype = {
         // share toolbar animation complete
         this.shareToolbar.removeClass('open');
         this.shareBtn.toggleClass('selected');
-        this.verseToolbar.stop().animate({ top : '-86px'}, 400);
+        this.verseToolbar.stop().animate({ top : '-88px'}, 400);
 
       });
     }
@@ -385,7 +385,7 @@ MobileMenus.prototype = {
     if(this.verseToolbar.hasClass('open')){
       this.shareToolbar.hide();
       var thiss = this;
-      this.verseToolbar.stop().animate({ top : '-86px'}, 400);
+      this.verseToolbar.stop().animate({ top : '-88px'}, 400);
     }
   },
 
