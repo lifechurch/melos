@@ -348,12 +348,6 @@ Page.prototype = {
         var language_menu   = new LanguageMenu("#choose_language");
       }
 
-      var share_form = "article > form.share";
-      if($(share_form).length){
-        var share_form = new SharePane(share_form);
-        share_form.initForm();
-      }
-
 
     var thiss = this;
     var all_menu_triggers = $('.dynamic_menu_trigger');

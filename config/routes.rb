@@ -49,6 +49,7 @@ YouversionWeb::Application.routes.draw do
   # This is our second highest throughput action
   get "/highlights/:version/:reference", to: JsonController.action(:reference_highlights), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
 
+  get "/highlights/colors", to: JsonController.action(:highlight_colors)
 
   resources :videos, only: [:index,:show] do
     get :series,    on: :member
@@ -110,7 +111,6 @@ YouversionWeb::Application.routes.draw do
 
   resources :highlights, only: [:create,:show,:destroy] do
     get "_cards", on: :collection
-    get :colors,  on: :collection
   end
 
   # /reading-plans

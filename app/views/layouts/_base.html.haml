@@ -7,7 +7,7 @@
   container_classes << "no_primary_nav" if @main_nav == false
   container_class_str = container_classes.join(" ")
 
-%html{class: (@html_classes.join(' ') if @html_classes), "data-locale" => I18n.locale, id: @html_id}
+%html{class: (@html_classes.join(' ') if @html_classes), "data-locale" => I18n.locale, id: @html_id, "data-logged-in" => logged_in?.to_s }
 
   %head{lang: 'en-us'}
     = csrf_meta_tags

@@ -105,7 +105,7 @@ class Bookmark < YV::Resource
   # Custom persistence for new Moments API
   # Takes care of #create and #update requirements by passing 'kind' option.c
   def persist(path)
-    return persist_moment(path,attributes.merge(kind: "bookmark").slice(:id,:auth,:kind,:title,:references,:labels, :created_dt))
+    return persist_moment(path,attributes.merge(kind: "bookmark").slice(:id,:auth,:kind,:title,:references,:labels, :created_dt, :color))
   end
 
   def before_save

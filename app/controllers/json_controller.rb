@@ -20,6 +20,13 @@ class JsonController < ActionController::Metal
   add_transaction_tracer :reference_highlights
 
 
+  def highlight_colors
+    render json: Highlight.colors(auth: (current_auth rescue nil)).slice(0,10).to_json
+  end
+
+  include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+  add_transaction_tracer :highlight_colors
+
 
   private
 

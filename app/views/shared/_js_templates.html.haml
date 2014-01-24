@@ -1,3 +1,190 @@
+- if is_reader_page?
+  :ruby
+    authed_form_method = logged_in? ? "post" : "get"
+    authed_highlight_form_action = logged_in? ? highlights_path : sign_up_path
+    authed_bookmark_form_action = logged_in? ? bookmarks_path : sign_up_path
+
+  %script#pane-highlight-tmpl{type:"text/x-handlebars-template"}
+    :plain
+      <dt class="highlight" data-pane-type="highlight">
+        #{t("highlight")}
+        <div class="arrow"></div>
+      </dt>
+      <dd class="highlight-pane" id="highlight-pane">
+        <div class="pane">
+          <form action="#{authed_highlight_form_action}" method="#{authed_form_method}" id="highlight-form">
+            <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
+            <input type="hidden" name="highlight[version_id]" value="#{presenter.version.id}" />
+            <input type="hidden" name="highlight[usfm_references]" class="references verses_selected_input" />
+            <input type="hidden" name="highlight[color]" class="selected-color" />
+            <div class="color_picker_list">
+              <div class="color_picker"></div>
+            </div>
+            <button type="submit" name="bookmark[submit]" value="submit">
+              #{t('highlights.form.save button')}
+            </button>
+          </form>
+        </div>
+      </dd>
+
+  %script#pane-bookmark-tmpl{type:"text/x-handlebars-template"}
+    :plain
+      <dt class="bookmark" data-pane-type="bookmark">
+        #{t("bookmark")}
+        <div class="arrow"></div>
+      </dt>
+      <dd class="bookmark-pane" id="bookmark-pane">
+        <div class="pane">
+          <form action="#{authed_bookmark_form_action}" method="#{authed_form_method}">
+            <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
+            <input type="hidden" name="bookmark[version_id]" value="#{presenter.version.id}" />
+            <input type="hidden" name="bookmark[usfm_references]" class="references verses_selected_input" />
+            <input type="hidden" name="bookmark[color]" class="selected-color" />
+            <p>
+              <label for="bookmark_title">
+                #{t("bookmarks.form.title field")}
+              </label>
+              <br />
+              <input type="text" id="bookmark_title" name="bookmark[title]" />
+            </p>
+            <p>
+              <label for="bookmark_labels">
+                #{t("bookmarks.form.labels field")}
+              </label>
+              <br />
+              <input type="text" id="bookmark_labels" name="bookmark[labels]" placeholder="#{t("bookmarks.labels placeholder")}" />
+            </p>
+            
+            <label>Highlight: (optional)</label>
+            <div class="color_picker_list">
+              <div class="color_picker"></div>
+            </div>
+            <p>
+              <button type="submit" name="bookmark[submit]" value="submit">
+                #{t('bookmarks.form.save button')}
+              </button>
+            </p>
+            <div class="clear"></div>
+          </form>
+        </div>
+      </dd>
+
+  %script#pane-note-tmpl{type:"text/x-handlebars-template"}
+    %dt.note{"data-pane-type" => "note"}
+      = t("new note")
+      .arrow
+    %dd#note-pane
+      .pane
+        - note = presenter.note
+        = form_for note, url: (logged_in? ? notes_path : sign_up_path), method: authed_form_method do |f|
+          = f.hidden_field :version_id
+          = f.hidden_field :usfm_references, class: "verses_selected_input"
+          = f.hidden_field :color, class:"selected-color"
+          %div.title
+            = f.label :title, t("notes.form.title field")
+            = f.text_field :title
+          %div.status
+            = f.label :user_status, t("notes.form.status field")
+            = f.select :user_status, options_for_select(object_status, note.user_status)
+          %div
+            = f.text_area :content, rows: 4, cols: 68
+
+          %div
+            %label Highlight: (optional)
+            .color_picker_list
+              .color_picker
+          
+          %div.save
+            %button
+              = t('notes.form.save button')
+
+  %script#pane-close-tmpl{type:"text/x-handlebars-template"}
+    %dt.clear-selected
+      = t('ref.clear verses')
+
+
+  %script#pane-share-tmpl{type:"text/x-handlebars-template"}
+    :plain
+      <dt class="share" data-pane-type="share">
+        #{t("ref.share")}
+        <div class="arrow"></div>
+      </dt>
+      <dd id="share-pane">
+        <div class="pane">
+          <form action="#{share_path}" method="post">
+            <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
+            <input type="hidden" name="share[link]" id="share_link" value="" />
+
+            <div class="share_message">
+              <textarea name="share[message]"></textarea>
+              <div>
+                <b id="short_link"></b>
+                #{t("link will be added")}
+              </div>
+
+              <div class="share_services">
+                <span>
+                  <input id="checkbox_share_twitter" type="checkbox" name="share[connections][twitter]" />
+                  <label class="share_verse_twitter" for="checkbox_share_twitter">
+                    #{t("twitter")}
+                  </label>
+                </span>
+                <span>
+                  <input id="checkbox_share_facebook" type="checkbox" name="share[connections][facebook]" />
+                  <label class="share_verse_facebook" for="checkbox_share_facebook">
+                    #{t("Facebook")}
+                  </label>
+                </span>
+              </div>
+              <div class="share_action">
+                <button type="submit" name="share[submit]" value="submit">
+                  #{t('ref.share now')}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </dd>
+
+  %script#pane-link-tmpl{type:"text/x-handlebars-template"}
+    :plain
+      <dt class="link">
+        #{t("link")}
+        <div class="arrow"></div>
+      </dt>
+      <dd id="link-pane">
+        <div class="pane">
+          <span class="text_field_embed">
+            <input id="copy_link_input" value="" type="text" />
+            <div id="copy_link_container">
+              <button id="copy_link" data-confirm-text="#{t("copy confirmed")}">
+                #{t("copy")}
+              </button>
+            </div>
+          </span>
+        </div>
+      </dd>
+
+  %script#pane-register-tmpl{type:"text/x-handlebars-template"}
+    %dt.account.hide
+      = t("registration.with email")
+    %dd#need-account
+      .pane
+        .blurbs
+          %p.highlight= t('registration.highlight blurb');
+          %p.bookmark= t('registration.bookmark blurb');
+          %p.share= t('registration.share blurb');
+          %p.note= t('registration.note blurb');
+        %h4= t("pages.home.get started")
+        #get-started-buttons
+          %span.fb
+            = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: 'action_button_blue')
+          %span.or
+            = t("or.upper")
+          %span.email
+            = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})
+
+
 %script#moment-verse-tmpl{type:"text/x-handlebars-template"}
   :plain
     <p class="moment-verse">{{content_plain}}</p>

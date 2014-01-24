@@ -75,7 +75,7 @@ function Reader(opts) {
   this.initSidebar();
 
   this.book_chapter_menu  = new BookChapterMenu({trigger: "#menu_book_chapter_trigger", menu: "#menu_book_chapter"});
-  this.selected_menu      = new SelectedMenu({menu:"#menu_verse_actions", trigger:"#menu_selected_trigger", mobile_menu:".verse_toolbar"});
+  this.selected_menu      = new Panes.VerseActions();//new SelectedMenu({menu:"#menu_verse_actions", trigger:"#menu_selected_trigger", mobile_menu:".verse_toolbar"});
 
   $(this.selected_menu).bind("verses:clear", $.proxy(function(e){
     this.clearSelectedVerses();
@@ -441,7 +441,7 @@ Reader.prototype = {
       this.selected_menu.setTotal(total);
 
     // Set selected references
-      this.selected_menu.setSelectedRefs( this.selected.verse_usfms );
+      this.selected_menu.setSelectedReferences( this.selected.verse_usfms );
   },
 
   generateLinks : function( ) {

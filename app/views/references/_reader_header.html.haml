@@ -25,8 +25,7 @@
           %input{type: 'hidden', name: 'redirect', value: "/bible"}
           %input{type: 'hidden', name: 'source', value: "highlight"}
 
-        %input.references{name: "highlight[references]", type: "hidden"}
-        %input.existing_ids{name: "highlight[existing_ids]", type: "hidden"}
+        %input.references.verses_selected_input{name: "highlight[references]", type: "hidden"}
 
         %div.color_picker_list
           %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
@@ -102,4 +101,9 @@
           %a.header-options-parallel#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
             %span.icon_parallel
               =t("ref.parallel")
-  = render partial: 'shared/menu_verse_actions', locals: {presenter: presenter}
+
+
+  #menu_verse_actions.clearfix
+    .references
+      %ul.reference_tokens
+    %dl.verses_selected

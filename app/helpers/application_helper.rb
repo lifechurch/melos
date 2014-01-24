@@ -10,6 +10,12 @@ module ApplicationHelper
     moment.user_id == current_auth.user_id
   end
 
+  def is_reader_page?
+    controller_name == "references" && action_name == "show" ||
+    controller_name == "subscriptions" && action_name == "show" ||
+    controller_name == "plans" && action_name == "sample"
+  end
+
   def client_settings
     @client_settings ||= YV::ClientSettings.new(cookies)
   end

@@ -719,6 +719,8 @@ en:
     destroy failure:                            "Error deleting highlight"
     creation error:                             "Sorry, couldn't highlight."
     delete error:                               "Sorry, couldn't remove highlighting."
+    form:
+      save button:                              "Save Highlight"
   searching:
     bible:                                      "Bible"
     plans:                                      "Plans"

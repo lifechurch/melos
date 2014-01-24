@@ -234,12 +234,18 @@
 .color_picker_list
   float: left
   width: 100%
-
+  margin-bottom: 15px
 
 
 .color_picker
   +border-radius(4px)
   background: image-url("menu_color_picker.png") center center no-repeat !important
+  height: 23px
+  width: 23px
+  display: block
+  float: left
+  margin-right: 5px
+  cursor: pointer
 
 .color
   background: image-url("menu_color_gradient.png") center center no-repeat
@@ -248,6 +254,18 @@
   height: 23px
   width: 23px
   display: block
+  float: left
+  margin-right: 5px
+  cursor: pointer
+
+  span
+    display: block
+    text-align: center
+    width: 23px
+    line-height: 23px
+    color: #FFF
+    text-shadow: 0px 0px 3px #000
+
 
 .color_picker_clear
   background: image-url("menu_color_none.png") center center no-repeat
