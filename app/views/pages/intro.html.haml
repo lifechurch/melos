@@ -1,4 +1,8 @@
 - @sidebar = false
+- content_for :javascripts do
+  = javascript_include_tag '//use.typekit.net/mgk8ovf.js'
+  :javascript
+    try{Typekit.load();}catch(e){}
 
 %article.social-intro
   %h1.intro-title
