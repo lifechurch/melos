@@ -48,8 +48,9 @@ YouversionWeb::Application.routes.draw do
   # Metal controller
   # This is our second highest throughput action
   get "/highlights/:version/:reference", to: JsonController.action(:reference_highlights), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
-
   get "/highlights/colors", to: JsonController.action(:highlight_colors)
+  get "/bookmarks/labels", to: JsonController.action(:bookmarks_labels)
+
 
   resources :videos, only: [:index,:show] do
     get :series,    on: :member

@@ -151,7 +151,6 @@ class window.Panes.VerseActions
 
 
   initMobile: ()->
-    console.log("INIT MOBILE")
     jRes.addFunc {
       breakpoint: 'mobile',
       enter: ()=>

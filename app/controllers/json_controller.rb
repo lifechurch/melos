@@ -28,6 +28,14 @@ class JsonController < ActionController::Metal
   add_transaction_tracer :highlight_colors
 
 
+  def bookmarks_labels
+    labels = logged_in? ? Bookmark.labels(auth: current_auth) : []
+    render json: labels.to_json
+  end
+
+  include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+  add_transaction_tracer :bookmarks_labels
+
   private
 
   def usfm_param
