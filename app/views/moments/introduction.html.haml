@@ -1,0 +1,90 @@
+- @sidebar = false
+- content_for :javascripts do
+  = javascript_include_tag '//use.typekit.net/mgk8ovf.js'
+  :javascript
+    try{Typekit.load();}catch(e){}
+
+%article.social-intro
+  %h1.intro-title
+    Conversation &amp; Discovery
+  %p.intro-copy
+    A new way to explore the Bible with trusted friends
+
+  .intro-moment
+    .intro-moment-box
+      .moment
+        -# !the content of the moment
+        .moment-top
+          .moment-bm
+            %span.moment-icon
+              &nbsp;
+            %span.moment-avatar
+              = image_tag "josh_avatar.png"
+            %span.moment-time
+              5 days ago
+
+            %h2.moment-bm-text
+              <a href="#" class="moment-title-link">Aaron Steele bookmarked <b>Matthew 6:25</b></a>
+
+            %p.moment-verse
+              “Therefore I tell you, do not worry about your life, what you will eat or drink; or about your body, what you will wear. Is not life more than food, and the body more than clothes?
+
+        -# !share controls, dates, and comments
+        .moment-actions
+          %span.moment-actions-comment
+            %a{href: "#"}
+              Comment
+
+          %span.moment-actions-like
+            %a{href:"#", title: t("moments.action.like title")}
+              = t("moments.action.like")
+
+  .intro-discover-copy
+    %p
+      Discover and learn with your friends as they add highlights, bookmarks, and notes.
+    %span
+      &nbsp;
+
+  .intro-comments
+    .moment-comments
+      %span.moment-comments-more
+        %a{href: "#"}
+          Andy Knight
+        likes this
+
+      %ul.moment-comments-list
+        %li.moment-comments-list-comment
+          %span.moment-comments-list-avatar
+            = image_tag "andy_avatar.png"
+          %p.moment-comments-list-text
+            <a href="#">Andy Knight</a> That verse has always encouraged me.
+            %span.moment-comment-dt
+              about 3 hours ago
+        %li.moment-comments-list-comment
+          %span.moment-comments-list-avatar
+            = image_tag "josh_avatar.png"
+          %p.moment-comments-list-text
+            <a href="#">Aaron Steele</a> Indeed!
+            %span.moment-comment-dt
+              about 27 minutes ago
+
+      = form_tag(comments_url, method: "post") do
+        %span.moment-comments-input
+          %span.moment-comments-input-avatar
+            = image_tag "josh_avatar.png"
+          %textarea{class: "moment-comments-textarea comment-field"}
+            Write a comment...
+
+  .intro-share-copy
+    %span
+      &nbsp;
+    %p
+      Share honest conversations about Scripture.
+
+  .intro-discover-copy-btn
+    %a{href: "#", class: "action_button_green"}
+      Where can I start?
+
+  .intro-share-copy-btn
+    %a{href: "#", class: "action_button_blue"}
+      Get started by finding some friends.

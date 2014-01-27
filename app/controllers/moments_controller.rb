@@ -24,4 +24,8 @@ class MomentsController < BaseMomentsController
     redirect_to moment.to_path
   end
 
+  def introduction
+
+  end
+
 end
