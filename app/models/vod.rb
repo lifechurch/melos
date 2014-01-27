@@ -14,7 +14,7 @@ class VOD < YV::Resource
     # - will always be in same book
     # - will always be in same chapter
     # - will always have continuous verses if there is more than one verse
-    def today(version_id = 1)
+    def today(version_id = 1, opts= {})
       today = Date.today
       yday  = today.yday
       item = all.detect {|d| d.day == yday} # {"references"=>["PHP.3.13+PHP.3.14"], "day"=>315}
@@ -27,8 +27,8 @@ class VOD < YV::Resource
       usfm_chapter  = pieces.first + "." + pieces.second # "PHP.3"
 
 
-      opts = { id: version_id, reference: usfm_chapter }
-      data, errs = get("bible/chapter", opts)
+      request_opts = { id: version_id, reference: usfm_chapter }
+      data, errs = get("bible/chapter", request_opts)
       results = YV::API::Results.new(data,errs)
 
       selector = verse_nums.map{|v_num|".v#{v_num} .content"}.join(', ')
@@ -38,16 +38,24 @@ class VOD < YV::Resource
       data = {
         version:  Version.find(version_id),
         human:    results.reference.human + ":" + verse_nums.join(", "),
-        usfm:     results.reference.usfm,
+        usfm:     results.reference.usfm.first,
         verses:   verse_nums,
         content:  verse_text,
         week_day: today.day,
         day:      item.day,
-        date:     Date.strptime("#{today.year}-#{today.yday}","%Y-%j")
+        date:     Date.strptime("#{today.year}-#{today.yday}","%Y-%j"),
+        recent_versions: recent_versions(opts[:recent_versions] || [])
       }
       Hashie::Mash.new(data)
     end
 
+
+
+    private
+
+    def recent_versions(vids)
+      vids.map {|id| Version.find(id)}
+    end
 
   end
 

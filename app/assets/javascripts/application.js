@@ -6,6 +6,7 @@
 //= require jquery.ui.position
 //= require jquery.ui.autocomplete
 //= require ./moments/verse
+//= require ./moments/votd
 //= require ./moments/comments
 //= require ./menus/base
 //= require ./menus/notifications

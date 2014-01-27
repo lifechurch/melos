@@ -46,6 +46,10 @@ module YV
       @cookies['data-setting-show-highlights'] || "true"
     end
 
+    def recent_versions
+      @cookies['recent_versions']
+    end
+
     def version
       @cookies[:version]
     end

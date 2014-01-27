@@ -36,6 +36,12 @@ jQuery(document).ready(function() {
       mg.addMenu(n)
       mg.addMenu(f)
 
+
+  $(".moment-vod").each(function() {
+    new Moments.VOTD({el: $(this)})
+  });
+
+
   $(".moment-verse.empty").each(function() {
     new Moments.Verse({el: $(this)});
   });

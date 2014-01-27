@@ -452,7 +452,7 @@ body.transition .moment
 .moment-vod-list
   overflow: hidden
   margin-bottom: 0
-  float: left
+  float: right
 
   li
     float: left
@@ -465,11 +465,12 @@ body.transition .moment
       weight: bold
       size: 12px
     +border-radius(4px)
+    cursor: pointer
 
   li:first-child
     margin-left: 0
 
-  li.moment-vod-list-on
+  li.active
     background-color: #555
 
 
