@@ -1,9 +1,9 @@
-= form_for @bookmark, as: :bookmark, url: @bookmark.id ? bookmark_path(@bookmark.id) : bookmarks_path, :html => {class: 'full_page_form'} do |f|
-  - if @bookmark.errors.any?
+= form_for bookmark, as: :bookmark, url: bookmark.id ? bookmark_path(bookmark.id) : bookmarks_path, :html => {class: 'full_page_form'} do |f|
+  - if bookmark.errors.any?
     .form_errors
       =t("bookmarks.creation form errors")
       %ul
-        - @bookmark.errors.each do |e|
+        - bookmark.errors.each do |e|
           %li= e
   
   %p
@@ -12,7 +12,7 @@
   
   %p
     = f.label :labels, t("bookmarks.form.labels field")
-    = f.text_field :labels, value: @bookmark.labels.join(",")
+    = f.text_field :labels, value: bookmark.labels.join(",")
 
   - # PULLING color for now until we can add it back in properly.
   - #%p.color
@@ -22,7 +22,7 @@
   - #    %a{:class => "color_picker", :href =>"#"}
 
   :ruby    
-    raw_refs = @bookmark.references
+    raw_refs = bookmark.references
     usfms    = raw_refs.collect {|refhash| refhash["usfm"]} #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
     human    = raw_refs.collect {|refhash| refhash["human"]}.join(", ")
   %p  
@@ -32,4 +32,4 @@
       = human
 
   %p
-    = f.submit(@bookmark.persisted? ? t("bookmarks.form.update button") : t("bookmarks.form.save button"), class: "action_button_green")
+    = f.submit(bookmark.persisted? ? t("bookmarks.form.update button") : t("bookmarks.form.save button"), class: "action_button_green")

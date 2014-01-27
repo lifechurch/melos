@@ -8,4 +8,4 @@
 
 %article
   %h1= t("bookmarks.edit bookmark")
-  = render 'form'
+  = render partial: 'form', locals: {bookmark: @moment}
