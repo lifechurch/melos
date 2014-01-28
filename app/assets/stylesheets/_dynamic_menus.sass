@@ -450,6 +450,9 @@
 
 #menu_verse_actions #share-pane .pane
   padding: 20px 20px 0
+  .share_errors
+    color: red
+    font-weight: bold
 
 #menu_verse_actions #share-pane .share_message textarea
   margin-bottom: 8px
@@ -466,28 +469,65 @@
 #menu_verse_actions #share-pane .share_action
   float: none
   margin-bottom: 20px
+  & button
+    font-size: 15px
+    font-weight: 500
+    letter-spacing: 0.30px
+    &:active
+      color: white
+    &:focus
+      color: white
+      position: relative
+      top: 1px
 
-#menu_verse_actions #share-pane .share_services span
+#menu_verse_actions #share-pane .share_services .share_button
   display: block
   float: left
   margin-left: 5px
   border-radius: 4px
   border: 1px solid #e1e1e1
-  padding: 4px 6px 0 1px
+  padding: 4px 6px 0 6px
+  height: 32px
+  &:hover
+    background-color: #efefef
+  &::selection
+    background: transparent
+    cursor: default
+  &::-moz-selection
+    background: transparent
+    cursor: default
+  & span::selection
+    background: transparent
+    cursor: default
+  & span::-moz-selection
+    background: transparent
+    cursor: default
+  &.share_highlight
+    background-color: #e5e5e5
+    &:hover
+      background-color: #cdcdcd
+
 
 #menu_verse_actions #share-pane .share_services span:first-child
   margin-left: 0
 
-#menu_verse_actions #share-pane .share_services span .character_count
-  background-color: #CDCDCD
+#menu_verse_actions #share-pane .character_count
+  background-color: #efefef
   border: 0
-  color: white
+  color: black
   font-size: 12px
   font-weight: bold
   margin-top: 2px
   padding: 1px 4px 0
+  height: 22px
+  display: inline-block
+  border-radius: 4px
+  &.exceeded
+    background-color: red
+  &.warning
+    background-color: yellow
 
-#menu_verse_actions #share-pane .share_services span .translation_missing
+#menu_verse_actions #share-pane .share_services .share_button .translation_missing
   border: 0
 
 #menu_verse_actions #link-pane .pane

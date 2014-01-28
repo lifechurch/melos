@@ -117,30 +117,45 @@
 
             <div class="share_message">
               <textarea name="share[message]"></textarea>
-              <div>
+              <span>
                 <b id="short_link"></b>
                 #{t("link will be added")}
-              </div>
+              </span>
+              <span class='share_total_characters'>
+              </span>
+            </div>
+            <div class="share_character_count">
+              <span class="tw"></span>
+              <span class="tw-text">
+                Twitter characters remaining (140 Maximum)
+              </span>
 
-              <div class="share_services">
-                <span>
-                  <input id="checkbox_share_twitter" type="checkbox" name="share[connections][twitter]" />
-                  <label class="share_verse_twitter" for="checkbox_share_twitter">
-                    #{t("twitter")}
-                  </label>
+              <br/>
+              <span class="fb"></span>
+              <span class="fb-text">
+                Facebook characters remaining (420 Maximum)
+              </span>
+            </div>
+            <div class="share_services">
+              <span id="share_twitter" class="share_button share_highlight">
+                <input id="checkbox_share_twitter" type="checkbox" name="share[connections][twitter]" checked="true"/>
+                <span class="share_verse_twitter">
+                  #{t("twitter")}
                 </span>
-                <span>
-                  <input id="checkbox_share_facebook" type="checkbox" name="share[connections][facebook]" />
-                  <label class="share_verse_facebook" for="checkbox_share_facebook">
-                    #{t("Facebook")}
-                  </label>
+              </span>
+              <span id="share_facebook" class="share_button share_highlight">
+                <input id="checkbox_share_facebook" type="checkbox" name="share[connections][facebook]" checked="true"/>
+                <span class="share_verse_facebook">
+                  #{t("Facebook")}
                 </span>
-              </div>
-              <div class="share_action">
-                <button type="submit" name="share[submit]" value="submit">
-                  #{t('ref.share now')}
-                </button>
-              </div>
+              </span>
+            </div>
+            <div class="share_errors">
+            </div>
+            <div class="share_action">
+              <button id="share_action_submit" type="submit" name="share[submit]" value="submit" class="action_button_green">
+                #{t('ref.share now')}
+              </button>
             </div>
           </form>
         </div>
