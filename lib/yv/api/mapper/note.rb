@@ -1,67 +1,3 @@
-# {"commenting"=>{"enabled"=>true, "comments"=>nil},
-#  "kind_id"=>"note.v1",
-#  "base"=>
-#   {"body"=>nil,
-#    "images"=>
-#     {"body"=>nil,
-#      "avatar"=>
-#       {"renditions"=>
-#         [{"url"=>
-#            "//d34xairzvf2fpg.cloudfront.net/users/images/7c5a1ca1111caa91093aa101783eaedd_24x24.png",
-#           "width"=>24,
-#           "height"=>24},
-#          {"url"=>
-#            "//d34xairzvf2fpg.cloudfront.net/users/images/7c5a1ca1111caa91093aa101783eaedd_48x48.png",
-#           "width"=>48,
-#           "height"=>48},
-#          {"url"=>
-#            "//d34xairzvf2fpg.cloudfront.net/users/images/7c5a1ca1111caa91093aa101783eaedd_128x128.png",
-#           "width"=>128,
-#           "height"=>128},
-#          {"url"=>
-#            "//d34xairzvf2fpg.cloudfront.net/users/images/7c5a1ca1111caa91093aa101783eaedd_512x512.png",
-#           "width"=>512,
-#           "height"=>512}],
-#        "action_url"=>"//www.bible.com/users/BrittTheStager",
-#        "style"=>"circle"},
-#      "icon"=>
-#       {"renditions"=>
-#         [{"url"=>
-#            "//commondatastorage.googleapis.com/static-youversionapi-com/moments/icons/note-white-24.png",
-#           "width"=>24,
-#           "height"=>24},
-#          {"url"=>
-#            "//commondatastorage.googleapis.com/static-youversionapi-com/moments/icons/note-white-36.png",
-#           "width"=>36,
-#           "height"=>36},
-#          {"url"=>
-#            "//commondatastorage.googleapis.com/static-youversionapi-com/moments/icons/note-white-48.png",
-#           "width"=>48,
-#           "height"=>48},
-#          {"url"=>
-#            "//commondatastorage.googleapis.com/static-youversionapi-com/moments/icons/note-white-72.png",
-#           "width"=>72,
-#           "height"=>72}],
-#        "action_url"=>nil}},
-#    "action_url"=>nil,
-#    "title"=>
-#     {"l_str"=>"moment.note.title",
-#      "l_args"=>{"name"=>"BrittTheStager", "title"=>"ONE FINE TITLE"}}},
-#  "created_dt"=>"2013-10-10T15:39:18+00:00",
-#  "kind_color"=>"824f2b",
-#  "id"=>5812572515205120,
-#  "extras"=>
-#   {"user_status"=>"private",
-#    "title"=>"ONE FINE TITLE",
-#    "color"=>nil,
-#    "content"=>"SOME LOUSY CONTENT",
-#    "system_status"=>"approved",
-#    "references"=>nil,
-#    "user"=>
-#     {"username"=>"BrittTheStager", "id"=>7440, "name"=>"BrittTheStager"}},
-#  "auth"=>{"username"=>"BrittTheStager", "password"=>"password"}}
-
-
 module YV
   module API
     module Mapper
@@ -121,6 +57,10 @@ module YV
             instance.comments         = map_to_comments(results.commenting.comments)
             instance.commenting       = results.commenting.enabled
             instance.comments_count   = results.commenting.total
+
+            instance.likes            = map_to_likes(results.liking.likes)
+            instance.liking           = results.liking.enabled
+            instance.likes_count      = results.liking.total
                 
             instance
           end

@@ -79,7 +79,6 @@ body.transition .moment
 
 .moment-actions
   overflow: hidden
-
   background: #fff
   +border-radius(0 0 4px 4px)
   margin-bottom: 1px
@@ -104,7 +103,8 @@ body.transition .moment
 
 .moment-actions-share a:hover,
 .moment-actions-comment a:hover,
-.moment-actions-like a:hover
+.moment-actions-like a:hover,
+.moment-actions a.pending
   opacity: 0.6
 
 
@@ -137,15 +137,12 @@ body.transition .moment
 .moment-actions-comment a
   background-position: 10px -129px
 
-// !hide like action for now
-.moment-actions-like
-  display: none !important
-
 .moment-actions-like a
-  background-position: center -36px
+  background-position: 10px -36px
 
 .moment-actions-like a.liked
-  background-position: center -82px
+  background-position: 10px -82px
+
 
 .moment-time
   padding: 17px 0 5px 11px

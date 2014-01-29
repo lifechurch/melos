@@ -51,6 +51,10 @@ jQuery(document).ready(function() {
     new Moments.Comments({base: $(this)});
   });
 
+  $(".moment").each(function(){
+    new Moments.Moment({el: $(this)})
+  })
+
   // Toggle feature
   // Add  the attribute data-toggle-trigger="true" to any link
   // and data-toggle-target="#id-of-element"

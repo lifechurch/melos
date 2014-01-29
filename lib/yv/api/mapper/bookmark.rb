@@ -52,9 +52,14 @@ module YV
             instance                  = map_to_user_fields(instance,results.extras.user)
             instance.icons            = map_to_icons(results.base.images.icon)
             instance.avatars          = map_to_avatars(results.base.images.avatar)
+            
             instance.comments         = map_to_comments(results.commenting.comments)
             instance.commenting       = results.commenting.enabled
             instance.comments_count   = results.commenting.total
+
+            instance.likes            = map_to_likes(results.liking.likes)
+            instance.liking           = results.liking.enabled
+            instance.likes_count      = results.liking.total
             
             instance.created_dt       = results.created_dt
             instance

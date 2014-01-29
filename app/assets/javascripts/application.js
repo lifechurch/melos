@@ -8,6 +8,7 @@
 //= require ./moments/verse
 //= require ./moments/votd
 //= require ./moments/comments
+//= require ./moments/moment
 //= require ./menus/base
 //= require ./menus/notifications
 //= require ./menus/friend_requests

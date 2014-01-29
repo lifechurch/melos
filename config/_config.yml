@@ -35,8 +35,11 @@ development:
   rack_execution_timeout: 15
 
 staging:
-  api_root: youversionapi.com
-  api_referer: web-dev-staging.youversionapistaging.com
+  #api_root: youversionapi.com
+  #api_referer: web-dev-staging.youversionapistaging.com
+  #api_version: "3.1"
+  api_root: youversionapistaging.com
+  api_referer: web-dev-local.youversionapistaging.com
   api_version: "3.1"
   api_default_timeout: 15
   rack_execution_timeout: 15

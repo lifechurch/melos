@@ -3,7 +3,7 @@ module YV
     module Moments
 
       def self.included(base)
-        base.attributes [:id,:user_id,:user_name,:kind_id,:kind_color,:moment_title,:created_dt,:updated_dt,:comments,:commenting,:comments_count,:avatars,:icons]
+        base.attributes [:id,:user_id,:user_name,:kind_id,:kind_color,:moment_title,:created_dt,:updated_dt,:comments,:commenting,:comments_count,:likes,:liking,:likes_count,:avatars,:icons]
       end      
 
       def kind
@@ -24,6 +24,11 @@ module YV
 
       def deletable?
         true
+      end
+
+      def liked_by?(user_id)
+        return false if likes.blank?
+        likes.any? {|like| like.user.id == user_id}
       end
 
       private

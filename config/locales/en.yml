@@ -195,6 +195,11 @@ en:
     none:                                       "You don't have any notifications"
     no new:                                     "No new notifications"
     view all:                                   "View all Notifications"
+  likes:
+    create success:                             "Your like has been saved"
+    create failure:                             "Your like could not be saved"
+    destroy success:                            "Like deleted"
+    destroy failure:                            "Your like could not be deleted"
   comments:
     post comment:                               "Post a comment"
     create success:                             "Comment posted"
