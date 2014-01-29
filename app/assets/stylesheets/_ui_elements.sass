@@ -248,8 +248,6 @@
   cursor: pointer
 
 .color
-  background: image-url("menu_color_gradient.png") center center no-repeat
-  box-shadow: inset 0px 1px 0px #ddd
   border-radius: 4px
   height: 23px
   width: 23px
@@ -262,9 +260,11 @@
     display: block
     text-align: center
     width: 23px
-    line-height: 23px
     color: #FFF
-    text-shadow: 0px 0px 3px #000
+    overflow: hidden
+    text-indent: 100%
+    white-space: nowrap
+    background: image-url("menu_color_selected.png") no-repeat center 3px
 
 
 .color_picker_clear

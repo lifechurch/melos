@@ -422,4 +422,12 @@ only screen and (                min-resolution: 2dppx) {
     background-position: 0px -55px;
   }
 
+
+  // Verse task bar
+
+  .color span {
+    background: image-url("menu_color_selected@2x.png") no-repeat center 3px;
+    background-size: 17px 41px;
+  }
+
 }
