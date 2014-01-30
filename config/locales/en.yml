@@ -201,6 +201,7 @@ en:
     destroy success:                            "Like deleted"
     destroy failure:                            "Your like could not be deleted"
   comments:
+    view all N:                                 "View all %{count} comments"
     post comment:                               "Post a comment"
     create success:                             "Comment posted"
     create failure:                             "Comment could not be posted"

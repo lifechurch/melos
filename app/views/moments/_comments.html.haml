@@ -2,12 +2,20 @@
   # Locals Parameters
   # moment - a single Moment object  (Bookmark, Highlight, Note)
   # comments_displayed - boolean, true or false (whether or not to display comments when rendering html)
+  # detail_view - boolean, true or false (whether this is a detail card or a regular feed card)
+
 
 .moment-comments{class: comments_displayed ? "" : "hide"}
+  
+  - if moment.liking and not detail_view
+    - if moment.likes_count.to_i > 0
+      %span.moment-comments-likes
+        = moment_whos_liked_string(moment) # App helper
+
   - if moment.commenting
-    - if moment.comments_count.to_i > 3
+    - if moment.comments_count.to_i > 3  and not detail_view
       %span.moment-comments-more
-        = link_to("View all comments", "/#{moment.class.name.downcase.pluralize}/#{moment.id}")
+        = link_to( t("comments.view all N", count: moment.comments_count), moment.to_path)
 
     - # We need to render an empty ul if there are no comments so that
     - # our front end javascript can insert a new comment via ajax as needed

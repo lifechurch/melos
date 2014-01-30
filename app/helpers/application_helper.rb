@@ -1,5 +1,21 @@
 module ApplicationHelper
 
+  def moment_whos_liked_string(moment)
+    
+    last_liker = moment.likes.first.user
+    last_liker_link = content_tag(:a,last_liker.name, href:"/users/#{last_liker.username}")
+
+
+    if moment.likes_count == 1
+      "#{last_liker_link} likes this".html_safe
+    else
+      more_link = link_to("#{moment.likes_count - 1} more", moment.to_path)
+
+      "#{last_liker_link} and #{more_link} like this".html_safe
+    end
+  end
+
+
   # Appropriate method to use to check if current_user is the passed in user
   # Using current_auth avoids an extra API call to users#view for current user information
   def current_user_is?( user )
