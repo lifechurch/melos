@@ -311,6 +311,10 @@ module YV
         return results
       end
 
+      def api_debug(bool)
+        @api_response_mapper = YV::API::Mapper::Base if bool
+      end
+
       private
 
       def not_found?(errs)

@@ -66,14 +66,7 @@ module YV
               end
             end
 
-            # Likes are just an array of users
-            def map_to_likes(likes_data)
-              unless likes_data.nil?
-                likes_data.collect do |like_data|
-                  map_to_like(::Like.new,like_data)
-                end
-              end
-            end
+
 
             def map_to_avatars(data)
               return Images::AvatarCollection.init_from_api(data) unless data.nil?
@@ -112,6 +105,24 @@ module YV
               user_instance.last_name   = user_data.last_name
               user_instance.avatars     = map_to_avatars(user_data.avatar)
               user_instance
+            end
+
+
+            def map_to_like_fields(instance,like_data)
+              instance.likes            = map_to_likes(like_data.likes)
+              instance.liking           = like_data.enabled
+              instance.likes_user_ids   = like_data.all_users
+              instance.likes_count      = like_data.total
+              instance
+            end
+
+            # Likes are just an array of users
+            def map_to_likes(likes_data)
+              unless likes_data.nil?
+                likes_data.collect do |like_data|
+                  map_to_like(::Like.new,like_data)
+                end
+              end
             end
 
             def map_to_like(like_instance,like_data)

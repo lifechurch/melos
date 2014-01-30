@@ -55,9 +55,7 @@ module YV
             instance.commenting       = results.commenting.enabled
             instance.comments_count   = results.commenting.total
 
-            instance.likes            = map_to_likes(results.liking.likes)
-            instance.liking           = results.liking.enabled
-            instance.likes_count      = results.liking.total
+            instance                  = map_to_like_fields(instance,results.liking)
             
             instance
           end
