@@ -1,9 +1,20 @@
 - @sidebar = false
 
+.related-filter
+  %button#return.action_button_blue Return to the Bible
+  %ul
+    %li
+      %strong Showing related moments:
+    %li 
+      %a{:class => "active", :href =>"#"}Mine
+    %li
+      %a{:href =>"#"}My friends
+    %li
+      %a{:href =>"#"}Public
+
 .social-feed-wrap
   .social-feed
     = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
-
 
 - if @moments.next_page
   = render partial: "shared/moments_load_more", locals: {resource: "moments"}

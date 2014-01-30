@@ -160,6 +160,12 @@ only screen and (                min-resolution: 2dppx) {
     background-position: center -1908px;
   }
 
+  // !Menu verse actions
+  #menu_verse_actions dt {
+    background: image-url("verse_task_sprite_2x.png") no-repeat;
+    background-size: 650px 104px;
+  }
+
   // !Profile
 
   .top_section {

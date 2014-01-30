@@ -98,6 +98,10 @@
             %button
               = t('notes.form.save button')
 
+  %script#pane-related-tmpl{type:"text/x-handlebars-template"}
+    %dt.related.disabled
+      %span.count
+
   %script#pane-close-tmpl{type:"text/x-handlebars-template"}
     %dt.clear-selected
       = t('ref.clear verses')

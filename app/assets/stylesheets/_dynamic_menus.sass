@@ -368,42 +368,61 @@
 #menu_verse_actions dt
   cursor: pointer
   float: left
-  width: 98px
-  height: 44px
+  width: 83px
+  height: 49px
   background-color: #323232
   border-left: 1px solid #444
   border-top: 1px solid #444
   border-right: 1px solid #000
   background:
-    image: image-url("verse_action_sprite.png")
+    image: image-url("verse_task_sprite.png")
     repeat: no-repeat
-  text-indent: 100%
+  text-indent: -2000px
   overflow: hidden
   white-space: no-wrap
 
-#menu_verse_actions dt.highlight
-  background-position: 37px 10px
+#menu_verse_actions dt.clear-selected
+  width: 88px
 
-#menu_verse_actions dt.comment
-  background-position: -47px 10px
+#menu_verse_actions dt.highlight
+  background-position: 30px 10px
 
 #menu_verse_actions dt.comment
   background-position: -47px 10px
 
 #menu_verse_actions dt.bookmark
-  background-position: -131px 10px
+  background-position: -138px 10px
 
 #menu_verse_actions dt.note
-  background-position: -215px 10px
+  background-position: -223px 10px
 
 #menu_verse_actions dt.share
-  background-position: -299px 10px
+  background-position: -304px 10px
 
 #menu_verse_actions dt.clear-selected
-  background-position: -383px 10px
+  background-position: -387px 10px
 
 #menu_verse_actions dt.link
-  background-position: -467px 10px
+  background-position: -473px 10px
+
+#menu_verse_actions dt.related
+  background-position: -557px 10px 
+  position: relative
+  +opacity(1)
+
+#menu_verse_actions dt.related.disabled
+  background-position-y: 10px !important
+  +opacity(0.3)
+  cursor: default
+
+#menu_verse_actions dt.related .count 
+  text-align: center
+  text-indent: 0
+  position: absolute
+  left: 0
+  top: 13px
+  width: 83px
+  font-size: 11px
 
 #menu_verse_actions dt.active,
 #menu_verse_actions dt:hover

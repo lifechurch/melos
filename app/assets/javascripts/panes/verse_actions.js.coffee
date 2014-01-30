@@ -85,6 +85,7 @@ class window.Panes.VerseActions
     @bookmark_pane          = new Panes.Bookmark {el:"#bookmark-pane"}
     @share_pane             = new Panes.Share {el:"#share-pane"}
     @link_pane              = new Panes.Link {el:"#link-pane"}
+    @related_pane           = new Panes.Related({})
     @note_pane              = new Panes.Note {el:"#note-pane"}
     @close_pane             = new Panes.Close({})
     $(@close_pane).bind("panes:cleared", $.proxy(@panesClearedHandler,@))
@@ -96,8 +97,9 @@ class window.Panes.VerseActions
     dl = @el.find("dl.verses_selected")
     dl.prepend @register_pane.render()
     dl.prepend @close_pane.render()
-    dl.prepend @link_pane.render()
+    dl.prepend @related_pane.render()
     dl.prepend @share_pane.render()
+    dl.prepend @link_pane.render()
     dl.prepend @note_pane.render()
     dl.prepend @bookmark_pane.render()
     dl.prepend @highlight_pane.render()
@@ -110,6 +112,7 @@ class window.Panes.VerseActions
   adjustPanesForRegistration: ()->
     register = @register_pane.pane()
     @link_pane.setPane(register)
+    @related_pane.setPane(register)
     @share_pane.setPane(register)
     @note_pane.setPane(register)
     @bookmark_pane.setPane(register)
@@ -154,13 +157,13 @@ class window.Panes.VerseActions
     jRes.addFunc {
       breakpoint: 'mobile',
       enter: ()=>
-        console.log("ENTER BREAK")
+        # console.log("ENTER BREAK")
         $('#version_primary').bind("verses:first_selected", $.proxy(@open_mobile,@))
         $('#version_primary').bind("verses:all_deselected", $.proxy(@close_mobile,@))
         $('html').removeClass('full_screen')
       ,
       exit: ()=>
-        console.log("EXIT BREAK")
+        # console.log("EXIT BREAK")
         $('#version_primary').unbind("verses:first_selected", $.proxy(@open_mobile,@));
         $('#version_primary').unbind("verses:all_deselected", $.proxy(@close_mobile,@));
     }

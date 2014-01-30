@@ -918,3 +918,29 @@ body.transition .moment
     top: 560px
     right: 200px
     width: 200px
+
+// !Related moments
+
+.related-filter
+  padding: 5px 10px
+  +border-radius(4px)
+  background-color: #ccc
+  margin-bottom: 10px
+
+  button
+    float: right
+
+  ul
+    display: inline
+    @extend .clearfix
+
+  li
+    float: left
+    display: inline
+    line-height: 33px
+    margin-right: 20px
+
+    a.active
+      text-decoration: underline
+      cursor: default
+      color: #0084c8 !important
