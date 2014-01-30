@@ -1,0 +1,9 @@
+- @sidebar = false
+
+.social-feed-wrap
+  .social-feed
+    = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
+
+
+- if @moments.next_page
+  = render partial: "shared/moments_load_more", locals: {resource: "moments"}

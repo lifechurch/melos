@@ -102,6 +102,7 @@ YouversionWeb::Application.routes.draw do
 
   resources :moments, only: [:index,:show] do
     get "_cards", on: :collection
+    get "related", on: :collection
     get "introduction", on: :collection
   end
 

@@ -16,6 +16,11 @@ class MomentsController < BaseMomentsController
     @moments = Moment.all(auth: current_auth, page: @page)
   end
 
+  def related
+    @user    = current_user
+    @moments = Moment.all(auth: current_auth, page: @page)
+  end
+
   # This is solely to support API action_urls that are formatted /moments/123thisID
   # Lookup the moment and redirect to the appropriate page.
   # TODO - skip any before filters that arent necessary
