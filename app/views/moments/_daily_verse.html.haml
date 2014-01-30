@@ -28,3 +28,17 @@
           - verse_of_today.recent_versions.each do |version|
             %li.btn{"data-version-id" => version.id, class: (verse_of_today.version.id == version.id) ? "active" : nil}
               = version.abbreviation.upcase
+
+  .moment-btm
+    .moment-actions
+      %span.moment-actions-share
+        %a{href:"#", title: t("moments.action.share title")}
+          = t("moments.action.share")
+      .moment-actions-share-box
+        %span.moment-actions-share-arrow
+          &nbsp;
+        %div
+          %a{href:"#", title: "Share this on Facebook", class: "moment-actions-share-facebook"}
+            Facebook
+          %a{href:"#", title: "Share this on Twitter", class: "moment-actions-share-twitter"}
+            Twitter

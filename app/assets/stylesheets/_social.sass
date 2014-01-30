@@ -132,7 +132,43 @@ body.transition .moment
   display: none !important
 
 .moment-actions-share a
-  background-position: center 10px
+  background-position: 11px 9px
+
+.moment-actions-share-arrow
+  display: block
+  background: image-url("social-actions-sprite.png") no-repeat 30px -736px
+  height: 6px
+
+.moment-actions-share-box
+  margin: 0 7px 7px 0
+  clear: both
+
+  div
+    +border-radius(4px)
+    background-color: #DEDDDB
+
+.moment-actions-share-facebook,
+.moment-actions-share-twitter
+  display: inline-block
+  height: 36px
+  line-height: 35px
+  padding: 0 0 0 35px
+  margin: 0 0 0 10px
+  background: image-url("social-actions-sprite.png") no-repeat
+  font-size: 13px
+
+.moment-actions-share-facebook
+  margin: 0
+  background-position: 10px -518px
+
+.moment-actions-share-twitter
+  background-position: 10px -614px
+
+.moment-actions-share-facebook:hover
+  background-position: 10px -566px
+
+.moment-actions-share-twitter:hover
+  background-position: 10px -662px
 
 .moment-actions-comment a
   background-position: 10px -129px
