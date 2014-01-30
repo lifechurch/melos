@@ -7,7 +7,7 @@
 
 .moment-comments{class: comments_displayed ? "" : "hide"}
   
-  - if moment.liking and not detail_view
+  - if moment.liking
     - if moment.likes_count.to_i > 0
       %span.moment-comments-likes
         = moment_whos_liked_string(moment) # App helper
