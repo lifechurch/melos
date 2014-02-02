@@ -7,12 +7,13 @@
     %a{href:"#", title: t("moments.action.share title")}
       = t("moments.action.share")
 
-  %span.moment-actions-comment
-    = link_to t("moments.action.comment"), moment.to_path, title: t("moments.action.comment title")
-
   %span.moment-actions-like
     - is_liked = moment.liked_by?(current_auth.user_id)
     = link_to t("moments.action.like"), moment.to_path, title: t("moments.action.like"), class: is_liked ? "liked" : nil
+
+  %span.moment-actions-comment
+    = link_to t("moments.action.comment"), moment.to_path, title: t("moments.action.comment title")
+
 
   - if moment.user_id == current_auth.user_id
 
