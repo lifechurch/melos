@@ -1,5 +1,8 @@
 // !Adjusting the article tag on the social pages
 
+#main .social-feed-wrap.related
+  padding-top: 78px
+
 #main article.social-requests,
 #main article.social-feed,
 #main div.social-feed,
@@ -366,3 +369,41 @@
     right: auto
     width: auto
     margin: 0 10% 20px 5%
+
+// !Related moments
+
+.related-filter-header
+  padding: 10px 10px 0
+  +border-radius(0px)
+  background-color: #ccc
+  margin-bottom: 10px
+  position: fixed
+  width: 100%
+  height: 78px
+  z-index: 1
+  text-align: center
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box    
+
+  .return-to-reader
+    position: static
+    right: auto
+    top: auto
+    width: 100%
+    padding: 10px 0 !important
+
+  ul
+    display: inline
+    @extend .clearfix
+
+  li
+    float: left
+    display: inline
+    line-height: 33px
+    margin-right: 20px
+
+    a.active
+      text-decoration: underline
+      cursor: default
+      color: #0084c8 !important

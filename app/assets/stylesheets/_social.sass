@@ -3,6 +3,9 @@
 // !we need a container that can contain moment cards that aren't tied to article.social-feed
 // !as user profile already defines an article where we can't easily get to it.
 
+#main .social-feed-wrap.related
+  padding-top: 56px
+
 #main article.social-requests,
 #main article.social-feed,
 #main div.social-feed,
@@ -959,13 +962,19 @@ body.transition .moment
   +border-radius(4px)
   background-color: #ccc
   margin-bottom: 10px
+  position: fixed
+  width: 894px
+  height: 36px
+  z-index: 1
 
   .return-to-reader
-    float: right
+    position: absolute
+    right: 10px
+    top: 8px
 
   ul
     display: inline
-    @extend .clearfix
+    //@extend .clearfix
 
   li
     float: left

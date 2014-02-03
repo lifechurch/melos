@@ -67,7 +67,7 @@ only screen and (                min-resolution: 2dppx) {
 
   .verse_toolbar nav a.submenu_btn {
     background: #0084c8 image-url("mobile/verse_action_sprite_2x.png") no-repeat;
-    background-size: 16px 250px;
+    background-size: 16px 300px;
   }
 
   .verse_toolbar nav a.bookmark_btn {
@@ -85,7 +85,11 @@ only screen and (                min-resolution: 2dppx) {
   .verse_toolbar nav a.share_btn {
     background-position: center -138px;
   }
-    
+
+  .verse_toolbar nav a.related_btn {
+    background-position: center -227px;
+  }
+
   // !Header
 
   #header .friend-requests-btn,
