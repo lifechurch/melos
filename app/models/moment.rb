@@ -18,9 +18,9 @@ class Moment < YV::Resource
     # * auth: required {auth: auth_hash}
     # * page: required, defaults to 1 {page: 2}
     # * kind: optional, string identifier {kind: "bookmark"|"highlight"|"note"}
-    # * user_id: optional, {user_id: 12345}
     # * usfm: optional, "GEN.1"
     # * version_id: optional, required with usfm  123987
+    # * user_id: optional, required with usfm/version {user_id: 12345}
 
     # example API data
     # TODO

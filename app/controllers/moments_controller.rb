@@ -18,7 +18,8 @@ class MomentsController < BaseMomentsController
 
   def related
     @user    = current_user
-    @moments = Moment.all(auth: current_auth, page: @page)
+    @moments = Moment.all(auth: current_auth, user_id: id_param(current_auth.user_id), usfm: params[:usfm].upcase, version_id: id_param(params[:v]))
+    @reference = Reference.new(params[:usfm], version: params[:v].to_i)
   end
 
   # This is solely to support API action_urls that are formatted /moments/123thisID

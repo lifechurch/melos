@@ -38,6 +38,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+    def id_param(val)
+      val.to_i
+    end
+
     def tend_caches
       @@last_clear_time ||= Time.zone.now
 

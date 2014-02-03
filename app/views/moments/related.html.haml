@@ -1,16 +1,12 @@
 - @sidebar = false
 
-.related-filter
-  %button#return.action_button_blue Return to the Bible
+.related-filter-header
+  = link_to("Return to #{@reference.human}",reference_path(version: params[:v], reference: params[:usfm].upcase), class:"action_button_blue return-to-reader")
   %ul
     %li
-      %strong Showing related moments:
-    %li 
-      %a{:class => "active", :href =>"#"}Mine
-    %li
-      %a{:href =>"#"}My friends
-    %li
-      %a{:href =>"#"}Public
+      %strong Showing related moments
+    - #%li 
+    - #  %a{:class => "active", :href =>"#"}Mine
 
 .social-feed-wrap
   .social-feed

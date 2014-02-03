@@ -50,6 +50,8 @@ module YV
           response = data_from_cache_or_api(cache_key(path, opts), lets_party, opts)
 
           # puts "---"
+          # puts "GET OPTIONS:"
+          # puts opts
           # puts response
           # puts resource_url
           # puts "GET END  ---- \n"
