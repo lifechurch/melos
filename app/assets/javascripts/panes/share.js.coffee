@@ -55,42 +55,42 @@ class window.Panes.Share extends window.Panes.Base
         @share_errors.append(@share_errors.data("error-character-limit"))
         e.preventDefault()
 
-  getSelectedVersesContent: ()->
-    return $('#version_primary .verse.selected .content')
-
   toggleShareButton: (btn)=>
     @share_errors.html("")
 
     if btn.attr('id') == 'share_twitter'
       if @tw_char_count.next().hasClass("exceeded")
         @share_errors.append(@share_errors.data("error-character-limit"))
-        btn.removeClass('network_active')
-        checkBox = btn.find("[type=checkbox]")
-        checkBox.prop("checked", false)
+        @disableNetworkButton(btn)
       else
-        # update css and toggle the checkbox
-        btn.toggleClass('network_active')
-        checkBox = btn.find("[type=checkbox]")
-        checkBox.prop("checked", !checkBox.prop("checked"))
+        @toggleNetworkButton(btn)
     else if btn.attr('id') == 'share_facebook'
       if @fb_char_count.next().hasClass("exceeded")
         @share_errors.append(@share_errors.data("error-character-limit"))
-        btn.removeClass('network_active')
-        checkBox = btn.find("[type=checkbox]")
-        checkBox.prop("checked", false)
+        @disableNetworkButton(btn)
       else
-        # update css and toggle the checkbox
-        btn.toggleClass('network_active')
-        checkBox = btn.find("[type=checkbox]")
-        checkBox.prop("checked", !checkBox.prop("checked"))
+        @toggleNetworkButton(btn)
 
-    # enable the submit button when we have a valid, selected network
+    # enable the submit button when we have at least one selected valid network
     if ( @tw_checkbox.prop("checked") && !@tw_char_count.next().hasClass("exceeded")) || ( @fb_checkbox.prop("checked") && !@fb_char_count.next().hasClass("exceeded"))
-      # @submit.prop("disabled", false)
       @submit.addClass("action_button_green")
     else
-      # @submit.prop("disabled", true)
       @submit.removeClass("action_button_green")
+
+  disableNetworkButton: (btn) ->
+    btn.removeClass('network_active')
+    checkBox = btn.find("[type=checkbox]")
+    checkBox.prop("checked", false)
+
+  toggleNetworkButton: (btn) ->
+    # update css and toggle the checkbox
+    btn.toggleClass('network_active')
+    checkBox = btn.find("[type=checkbox]")
+    checkBox.prop("checked", !checkBox.prop("checked"))
+
+
+  getSelectedVersesContent: ()->
+    return $('#version_primary .verse.selected .content')
 
   updateForm: (params)->
     super(params)
