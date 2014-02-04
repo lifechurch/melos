@@ -29,37 +29,68 @@ class window.Panes.Share extends window.Panes.Base
     @fb_char_count      = @el.find(".share_character_count .fb")
     @char_count         = @el.find(".share_character_count")
     @share_errors       = @el.find(".share_errors")
+    @submit             = @el.find("#share_action_submit")
+    @tw_checkbox        = @el.find("#checkbox_share_twitter")
+    @fb_checkbox        = @el.find("#checkbox_share_facebook")
 
-    @tw_btn.click(@toggleShareButton)
-    @fb_btn.click(@toggleShareButton)
+    @share_errors.html("")
+
+    @tw_btn.click ()=>
+      @toggleShareButton(@tw_btn)
+    @fb_btn.click ()=> 
+      @toggleShareButton(@fb_btn)
 
     @form_el.submit (e)=>
-      tw = $("#checkbox_share_twitter")
-      fb = $("#checkbox_share_facebook")
 
       # validations
       @share_errors.html("")
 
       # none checked
-      if !tw.is(":checked") && !fb.is(":checked")
-        # Eventually make this more user friendly / I18n'd. Quick fix to mitigate the issue.
-        @share_errors.append("Please select at least one social network")
+      if !@tw_checkbox.is(":checked") && !@fb_checkbox.is(":checked")
+        @share_errors.append(@share_errors.data("error-none-checked"))
         e.preventDefault()
 
       # too many characters
-      if (tw.prop("checked") && @tw_char_count.next().hasClass("exceeded")) || (fb.prop("checked") && @fb_char_count.next().hasClass("exceeded"))
-        console.log(tw.prop("checked"))
-        @share_errors.append("Please delete some characters or choose a different social network")
+      if (@tw_checkbox.prop("checked") && @tw_char_count.next().hasClass("exceeded")) || (@fb_checkbox.prop("checked") && @fb_char_count.next().hasClass("exceeded"))
+        @share_errors.append(@share_errors.data("error-character-limit"))
         e.preventDefault()
 
   getSelectedVersesContent: ()->
     return $('#version_primary .verse.selected .content')
 
-  toggleShareButton: ()->
-    console.log("clicked")
-    $(this).toggleClass('share_highlight')
-    checkBox = $(this).find("[type=checkbox]")
-    checkBox.prop("checked", !checkBox.prop("checked"))
+  toggleShareButton: (btn)=>
+    @share_errors.html("")
+
+    if btn.attr('id') == 'share_twitter'
+      if @tw_char_count.next().hasClass("exceeded")
+        @share_errors.append(@share_errors.data("error-character-limit"))
+        btn.removeClass('network_active')
+        checkBox = btn.find("[type=checkbox]")
+        checkBox.prop("checked", false)
+      else
+        # update css and toggle the checkbox
+        btn.toggleClass('network_active')
+        checkBox = btn.find("[type=checkbox]")
+        checkBox.prop("checked", !checkBox.prop("checked"))
+    else if btn.attr('id') == 'share_facebook'
+      if @fb_char_count.next().hasClass("exceeded")
+        @share_errors.append(@share_errors.data("error-character-limit"))
+        btn.removeClass('network_active')
+        checkBox = btn.find("[type=checkbox]")
+        checkBox.prop("checked", false)
+      else
+        # update css and toggle the checkbox
+        btn.toggleClass('network_active')
+        checkBox = btn.find("[type=checkbox]")
+        checkBox.prop("checked", !checkBox.prop("checked"))
+
+    # enable the submit button when we have a valid, selected network
+    if ( @tw_checkbox.prop("checked") && !@tw_char_count.next().hasClass("exceeded")) || ( @fb_checkbox.prop("checked") && !@fb_char_count.next().hasClass("exceeded"))
+      # @submit.prop("disabled", false)
+      @submit.addClass("action_button_green")
+    else
+      # @submit.prop("disabled", true)
+      @submit.removeClass("action_button_green")
 
   updateForm: (params)->
     super(params)
