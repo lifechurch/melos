@@ -31,6 +31,11 @@ module YV
         likes_user_ids.include?(user_id.to_i)
       end
 
+      def activity
+        return nil if self.likes.blank? and self.comments.blank?
+        @activity ||= ::Moments::Activity.new(self)
+      end
+
       private
 
       def build_references

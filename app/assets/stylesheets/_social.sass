@@ -849,17 +849,27 @@ body.transition .moment
     .moment-content-actions-delete
       +border-radius(0 5px 5px 0)
 
-// !Sidebar comment input
+
+// Moment-detail sidebar
 
 .social-sidebar
   width: 299px
 
-.social-sidebar-input
-  padding: 10px
+.moment-activity-users
+  list-style-position: inside !important
+  .user
+    list-style-position: inside
 
-  textarea
-    margin-bottom: 10px
-    height: 200px
+.moment-activity
+  .bd
+    padding: 10px
+
+  .moment-activity-actions
+    padding-left: 1.5em
+    border-left: 2px solid #ddd
+
+    .action
+      list-style-position: inside
 
 
 // !Intro to social page

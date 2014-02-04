@@ -41,8 +41,13 @@ module ApplicationHelper
   end
 
   def api_dt_time_ago(api_created_dt)
+    time = if api_created_dt.is_a?(Fixnum)
+      Time.at(api_created_dt)
+    else
+      DateTime.parse(api_created_dt)
+    end
     # TODO - localize 'ago'
-    time_ago_in_words(DateTime.parse(api_created_dt).in_time_zone) + " ago"
+    time_ago_in_words(time.in_time_zone) + " ago"
   end
 
 

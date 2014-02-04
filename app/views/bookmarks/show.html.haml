@@ -1,7 +1,8 @@
 - @title = bookmark_title(@bookmark)
 
 - content_for :sidebar do
-  = render partial: "/comments/sidebar_form", locals: {moment: @bookmark}
+  = render partial: "moments/activity_sidebar", locals: {moment: @bookmark}
+  
 
 %article.social-detail
   = render partial: "moments/bookmark", locals: {moment: @bookmark, comments_displayed: true, detail_view: true}

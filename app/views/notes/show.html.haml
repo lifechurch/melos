@@ -1,7 +1,7 @@
 - @title = @note.title
 
 - content_for :sidebar do
-  = render partial: "/comments/sidebar_form", locals: {moment: @note}
+  = render partial: "moments/activity_sidebar", locals: {moment: @note}
 
 %article.social-detail
   = render partial: "moments/note", locals: {moment: @note, comments_displayed: true, detail_view: true}
