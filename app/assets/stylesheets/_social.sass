@@ -81,12 +81,19 @@ body.transition .moment
 // !Share comment like etc.
 
 .moment-actions
-  overflow: hidden
+  @extend .clearfix
   background: #fff
   +border-radius(0 0 4px 4px)
   margin-bottom: 1px
   padding-left: 7px
+  position: relative
 
+.moment-actions .moment-actions-share-box
+  position: absolute
+  width: 97%
+  top: 27px
+  left: 6px
+  z-index: 1
 
 // !Stuff each moment action has in common
 
@@ -134,6 +141,10 @@ body.transition .moment
 .moment-actions-share
   display: none !important
 
+// !currently only share on vod is visible
+.moment-actions.vod .moment-actions-share
+  display: block !important
+
 .moment-actions-share a
   background-position: 11px 9px
 
@@ -148,7 +159,9 @@ body.transition .moment
 
   div
     +border-radius(4px)
-    background-color: #DEDDDB
+    background-color: #fff
+    border: 1px solid #DEDDDB
+    +box-shadow(rgba(#605c53, 0.4) 0 10px 10px 0)
 
 .moment-actions-share-facebook,
 .moment-actions-share-twitter

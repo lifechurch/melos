@@ -10,6 +10,10 @@ class window.Moments.Moment
     @liked_link     = @action_bar_el.find(".moment-actions-like a")
     @setupLiking() if @liked_link?
 
+    @share_button = @moment_el.find(".moment-actions-share")
+    @share_button.on "click", $.proxy(@shareClickHandler,@)
+    @template = $("#moment-share-layer-tmpl")
+
   authToken: ()->
     $('meta[name=csrf-token]').attr('content')
 
@@ -30,7 +34,7 @@ class window.Moments.Moment
       dataType: "json"
 
     request.done (data)=>
-      console.log(data)
+      #console.log(data)
       @liked_link.addClass("liked")
       @likeActionPending(false)
 
@@ -53,9 +57,12 @@ class window.Moments.Moment
     request.fail (jqXHR,status) =>
 
 
-
   likeActionPending: (bool)->
     class_name = "pending"
     if bool then @liked_link.addClass( class_name ) else @liked_link.removeClass( class_name )
 
-    
+
+  shareClickHandler: (event)->  
+    event.preventDefault()
+    @share_layer = @moment_el.find(".moment-actions-share-box")
+    if @share_layer.length == 0 then @share_button.after(@template.html()) else @share_layer.toggle() 

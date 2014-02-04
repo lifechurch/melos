@@ -304,3 +304,13 @@
       </p>
       <a href="#" class="moment-comment-delete" data-comment-id="{{id}}">x</a>
     </li>   
+
+%script#moment-share-layer-tmpl{type:"text/x-handlebars-template"}
+  %div.moment-actions-share-box
+    %span.moment-actions-share-arrow
+      &nbsp;
+    %div
+      %a{href:"#", title: "Share this on Facebook", class: "moment-actions-share-facebook"}
+        Facebook
+      %a{href:"#", title: "Share this on Twitter", class: "moment-actions-share-twitter"}
+        Twitter
