@@ -8,15 +8,7 @@ class LikesController < ApplicationController
 
   def create
     @like = Like.create({moment_id: params[:moment_id].to_i, auth: current_auth})
-
-    respond_to do |format|
-      format.html {
-        notice = @comment.valid? ? t("likes.create success") : t("likes.create failure")
-        redirect_to(:back, notice: notice)
-      }
-      format.js {} #renders create.js.rabl
-    end
-    
+    respond_with @like
   end
 
 
@@ -30,16 +22,6 @@ class LikesController < ApplicationController
       user_id: current_auth.user_id,
       auth: current_auth
     })
-    respond_to do |format|
-      format.html {
-        notice = results.valid? ? t("likes.destroy success") : t("likes.destroy failure")
-        redirect_to(:back, notice: notice)
-      }
-      format.js { 
-        render text: "", status: results.valid? ? 200 : 400
-      }
-    end
+    render text: "", status: results.valid? ? 200 : 400
   end
-
-
 end
