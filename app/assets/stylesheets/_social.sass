@@ -318,6 +318,18 @@ body.transition .moment
     width: 48px
     +border-radius(48px)
 
+.timeline-avatar 
+  +border-radius(30px)
+  padding: 3px
+  box-shadow: 0 1px 2px #bbb
+  float: left
+  background-color: #fff
+
+  img   
+    height: 24px
+    width: 24px
+    +border-radius(24px)
+
 .moment-hi,
 .moment-bm,
 .moment-rp,
@@ -870,21 +882,37 @@ body.transition .moment
   width: 299px
 
 .moment-activity-users
-  list-style-position: inside !important
+  margin-left: 10px !important
+
   .user
-    list-style-position: inside
+    list-style: none !important
+
+    li
+      list-style: none
+
+    a.user
+      margin-left: 10px
+      line-height: 26px
 
 .moment-activity
   .bd
     padding: 10px
 
   .moment-activity-actions
-    padding-left: 1.5em
-    border-left: 2px solid #ddd
+    padding-left: 30px
 
-    .action
-      list-style-position: inside
+    li
+      display: block
+      height: 28px
+      padding: 0 0 0 35px      
+      line-height: 34px    
+      background: image-url("social-actions-sprite.png") no-repeat  
 
+    li.action-like
+      background-position: 10px -82px
+
+    li.action-comment
+      background-position: 10px -129px
 
 // !Intro to social page
 

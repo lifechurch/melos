@@ -10,8 +10,13 @@
       %ul.moment-activity-users
         - activity.each do |user_activity|
           - user = user_activity.user
+          - avatars = user.avatars
+          - avatar = avatars.sm_avatar 
           %li.user
-            = link_to(user.name, user_path(user.username))
+            %span.timeline-avatar
+              = link_to(user_path(user)) do
+                = image_tag avatar.url
+            = link_to(user.name, user_path(user.username), class: "user")
             - like = user_activity.recent_like
             - comm = user_activity.recent_comment
             
