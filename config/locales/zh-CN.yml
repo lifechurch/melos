@@ -7,7 +7,7 @@ zh-CN:
     connection friends: "这是一些在 %{connection} 上与您有连接的YouVersion 用户："
     errors:
       no friends: "您在 %{connection}上 的朋友现在不在 YouVersion 上。"
-      reset connection: "很抱歉，出错了！请移除这个连接然后重新连接！"
+      reset connection: "很抱歉，出错了！请解除并重新连接！"
     email:
       name: "电子邮件"
     twitter:
@@ -32,7 +32,12 @@ zh-CN:
     users username not available: "您选择的用户名不可用。"
     users username or password invalid: "您提供的用户名或密码无效。"
     users username required: "请务必输入用户名。"
+    users first name required: "您必须键入一个名字"
+    users last name required: "您必须键入一个姓氏"
   meta:
+    kids_app:
+      title: "儿童圣经软件"
+      description: "..."
     100million:
       title: "从一亿开始"
       description: "圣经软件的安装量几乎达到1亿次，这真是一个不可思议的里程碑！但是我们才刚刚开始。下载免费的圣经软件，然后与朋友们分享这个软件，让我们一起开创历史。"
@@ -42,6 +47,8 @@ zh-CN:
     connections:
       index:
         title: "已绑定的账户"
+  ui:
+    loading indicator text: "加载中..."
   now: "今日社区"
   celebrating 50MM: "庆祝5000万的安装！"
   link: "链接"
@@ -129,7 +136,6 @@ zh-CN:
   chapter: "章节"
   bible: "圣经"
   notes title: "笔记"
-  friends: "朋友"
   groups: "群组"
   mobile: "移动设备"
   live: "现场活动/群组"
@@ -150,7 +156,91 @@ zh-CN:
   or:
     lower: "或"
     upper: "或"
+  moments:
+    vod:
+      title: "今日经文"
+    friendship:
+      now friends: "现在已成为您朋友的"
+    cta:
+      profile update text: "帮助您的朋友找到您。"
+      profile update button: "更新您的档案"
+      sharing text: "通过社交网络分享经节"
+      sharing button: "启动分享功能"
+      friends text: "看看您的朋友在圣经软件里的动态。"
+      friends button: "寻找朋友"
+    action:
+      go to scripture: "进入经文"
+      load more: "载入更多"
+      like: "赞"
+      like title: "赞一个"
+      share: "分享"
+      share title: "与朋友或家人分享这个"
+      comment: "评论"
+      comment title: "查看所有评语"
+      edit: "编辑"
+      edit highlight title: "编辑此高亮显示"
+      edit bookmark title: "编辑此书签"
+      edit note title: "编辑此笔记"
+      delete: "删除"
+      delete confirm: "您确定吗？"
+      delete highlight title: "删除此高亮显示"
+      delete bookmark title: "删除这个书签"
+      delete note title: "删除此笔记"
+  notifications:
+    title: "通知"
+    none: "您没有任何通知"
+    no new: "没有新的通知"
+    view all: "查看所有通知"
+  comments:
+    post comment: "张贴评语"
+    create success: "评语已张贴"
+    create failure: "不能张贴评语"
+    form:
+      save button: "发布"
+  friends:
+    you have N friends: "您有%{count} 个朋友"
+    none me: "和您亲近的朋友和家人分享您的书签，高亮显示和笔记等动态时刻。"
+    blank slate:
+      heading: "现在不是朋友"
+      description: "您必须和这个人成为朋友才能看到他的朋友。"
+    limit notice: "您可以有多至 150 位朋友"
+    limit description: "将圣经软件上的朋友关系限定在熟悉的人之间，这有助于创造一个坦诚对话和彼此信任的氛围。"
+  friendships:
+    offer success: "朋友请求以发送"
+    offer failure: "发送朋友请求时出错误"
+    create success: "你们现在是朋友了"
+    create failure: "建立友情连接时出错误"
+    destroy success: "邀请被拒绝"
+    destroy failure: "推拒请求时出错误"
+    requests title: "朋友请求"
+    requests view all: "查看所有朋友请求"
+    requests none: "您没有任何朋友请求"
+    requests no new: "没有新的朋友请求"
+    status:
+      pending: "请求待决"
+      friends: "朋友"
+    user wants friendship: "%{user} 要与您为友"
+    user wants friendship partial: "要成为您的朋友"
+    form:
+      remove friend button: "删除朋友"
+      remove friend button title: "从您的朋友列表中删除这个人"
+      add friend button: "添加朋友"
+      add friend button title: "给 %{user} 发出朋友请求"
+      accept button: "接受"
+      accept request button: "接受请求"
+      ignore button: "忽略"
+      ignore request button: "忽略请求"
   notes:
+    none user: "%{username} 还未建立任何笔记。"
+    blank slate:
+      heading: "您还未有任何笔记"
+      description: "在读经时，如果您感受到神在用细微的声音对您内心讲话，您可赶快记下您的所思所想。在预设情况下，您的笔记会被标为<em>不公开</em>的私人状态。如果您希望和您的朋友共享，只需将笔记打开再改为<em>公开</em>状态即可。"
+    form:
+      title field: "标题："
+      content field: "内容："
+      reference field: "经节："
+      status field: "状态："
+      save button: "保存"
     list title: "笔记"
     loading community: "载入社区评论"
     no community notes: "未找到任何有参考经文的社区笔记。要创建笔记，请在圣经阅读器中选择一个经节，然后在顶部点击【选中的】按钮。"
@@ -178,7 +268,10 @@ zh-CN:
     cancel: "取消"
     pop out: "弹出"
     none found: "没有找到笔记"
-    successfully deleted: "笔记已删除"
+    create success: "已保存的笔记"
+    create failure: "保存笔记错误"
+    destroy success: "笔记已删除"
+    destroy failure: "删除笔记是出错误"
   ref:
     loading secondary: "载入第二圣经版本中的经节..."
     clear verses: "清除选中的经节"
@@ -209,6 +302,8 @@ zh-CN:
     profile form errors: "以下错误阻止您更新个人资料："
     email address: "电子邮件地址"
     user name: "用户名"
+    first name: "名"
+    last name: "姓"
     agreement: "我同意 YouVersion 的规定和条例 %{terms_link}.。"
     terms and conditions: "规定和条款"
     facebook sign up success: "恭喜！您已通过 Facebook 授权。请输入您的用户名和密码并继续。"
@@ -238,7 +333,7 @@ zh-CN:
     edit account_existence: "删除账户"
     delete account button: "删除我的 YouVersion 账户"
     no devices: "没有设备连接到您的YouVersion 账户。"
-    no devices download copy: "基于 YouVersion 的在线圣经，YouVersion 圣经软件是一个几乎可以安装在任何移动设备上的免费圣经。YouVersion 圣经软件允许用户阅读圣经、在社交网络上分享经文、给自己喜欢的经文添加书签，还有更多功能——全部都以一种更符合用户日益增长的移动生活的方式进行。请通过您的移动设备访问 <a href='https://www.bible.com/download'>bible.com/download</a> 以便下载 YouVersion 圣经软件并连接到您的账户。"
+    no devices download copy: "基于 YouVersion 的在线圣经，YouVersion 圣经软件是一个几乎可以安装在任何移动设备上。YouVersion 圣经软件允许用户阅读圣经、在社交网络上分享经文、给自己喜欢的经文添加书签，还有更多功能——全部都以一种更符合用户日益增长的移动生活的方式进行。请通过您的移动设备访问 <a href='https://www.bible.com/app'>bible.com/app</a> 以便下载 YouVersion 圣经软件并连接到您的账户。"
     yes delete: "是的，删除我的账户"
     account delete success: "您的 YouVersion 账户已经成功删除。我们希望您能继续寻找更有意义的与圣经互动的方式。这些软件或许对您有帮助，请前往：<a href= 'https://www.bible.com/free-bible-apps'> http://www.bible.com/free-bible-apps </a>"
     delete account description: "如果您删除账户，您将彻底删除您在 YouVersion 网站和圣经软件上的个人信息、历史记录和专属信息（比如笔记、书签、高亮显示的内容等）。这个行为一旦实施，您或者我们都不能恢复。如果您确定想删除账户，请根据下面提示继续。"
@@ -353,6 +448,16 @@ zh-CN:
       general title: "其他条款"
       general text: "完整协议。本使用条款构成您和 LifeChurch.tv 之间的完整协议，管辖您对YouVersion 的使用，取代您和 LifeChurch.tv 之间先前关于 YouVersion 的任何协议。您也会受补充条款的约束。<br><br> 法律与诉讼的选择 使用条款以及您和 LifeChurch.tv 之间的关系受美国俄克拉荷马州法律的管辖，但冲突法不适用。您和 LifeChurch.tv 同意服从位于俄克拉荷马州，俄克拉荷马县的法院的属人管辖和专属管辖权。<br><br> 放弃和条款可分割性  LifeChurch.tv 未能行使或履行使用条款的任何权利或条款并不构成对该等权利或条款的弃权。如果有管辖权的法院发现使用条款的任何规定是无效的，各方同意法院应该尽力使该条款中所体现的各方的意图生效，并且使用条款中的其他条款仍然有效。<br><br> 不含生存者取得权，不得转让 您同意您的 LifeChurch.tv 账户是不可以转让的，您 LifeChurch.tv 账户 ID 或您账户里的内容在您死亡后终止。一接到死亡通知，LifeChurch.tv 可以终止您的账户并永久删除其中任何内容。<br><br> 诉讼时效 您理解并同意，无论是否法律或法规有相反的规定，与 YouVersion 有关或产生于 YouVersion 的任何诉讼主张或请求必须在该诉讼主张或请求产生之日起一(1)年内。<br><br> 使用条款中的标题为方便的目的所设，没有法律效力或者合同效力。"
     profile:
+      blank slate:
+        heading: "请到别处浏览，这里还没有东西看 (暂时)"
+        description: "开始投入圣经、或与您的朋友交流，这页面将显示您的活动日志。"
+      visit friend: "查看%{friend}的个人档案"
+      tab activity: "活动"
+      tab friends: "朋友"
+      tab notes: "笔记"
+      tab bookmarks: "书签"
+      tab highlights: "高亮显示"
+      tab badges: "徽章"
       first name: "名字"
       last name: "姓氏"
       email: "电邮地址"
@@ -392,6 +497,9 @@ zh-CN:
       reading_plans: "如果有关于我已开始的读经计划的信息，请通知我。"
       publishing partners: "YouVersion 的内容提供商有新的信息时及时通知我。"
       update: "更新通知"
+      friendships: "有朋友请求时通知我"
+      moments: "通知我朋友的活动"
+      comments: "我的活动有评语时通知我"
   bookmarks:
     new: "新书签"
     edit: "编辑"
@@ -405,9 +513,10 @@ zh-CN:
     not found: "书签能使您快速查询到某一特定书卷中您喜欢的章节或您上次阅读的章节。添加书签的方法是在圣经阅读器中选择一节经文，然后点击阅读器顶部的【选中的】按钮即可。"
     other user not found: "%{username}还没有保存任何书签。"
     creation form errors: "下列错误妨碍了您创建书签："
-    successfully created: "书签添加成功"
-    successfully deleted: "书签已经移除"
-    successfully updated: "书签已更新"
+    create success: "添加经文书签"
+    destroy success: "书签已删除"
+    destroy failure: "删除书签时出错误"
+    update success: "书签已更新"
     labels placeholder: "用逗号分开多个标签"
     save: "保存书签"
     confirm delete: "是的，我确定。"
@@ -418,9 +527,23 @@ zh-CN:
     update: "更新"
     color: "颜色："
     version field: "版本："
+    none user: "%{username} 没有书签"
+    blank slate:
+      heading: "标记有意义的经文"
+      description: "当阅读圣经时，选择一段经节并以书签标记。回到这里来阅读，编辑或删除您的书签。"
+    form:
+      title field: "标题："
+      reference field: "参考经文："
+      labels field: "标签（用逗号分隔）："
+      colors field: "颜色："
+      update button: "更新书签"
+      save button: "保存书签"
   badges:
     earned a badge: "赢得了一个徽章"
     user badges: "%{user}的徽章"
+    earned date: "%{username} 在 %{ago} 之前获得了徽章"
+    none me: "您还没有获得任何徽章。"
+    none user: "%{username} 还没有获得任何徽章。"
   plans:
     title: "读经计划"
     browse by category: "分目录浏览"
@@ -565,7 +688,15 @@ zh-CN:
     chapter only: "抱歉，经句不支持语音功能。请在阅读器里查看整章圣经的语音功能。"
     close player menu: "关闭"
   highlights:
+    blank slate:
+      heading: "高亮显示有意义的经节"
+      description: "当阅读圣经时，选择一段经节并加以醒目显示。回到这里来阅读，编辑或删除您的高亮显示。"
+    none user: "%{username} 没有高亮显示"
     choose color: "选择颜色"
+    create success: "高亮显示已保存"
+    create failure: "保存高亮显示时出错误"
+    destroy success: "高亮显示已删除"
+    destroy failure: "删除高亮显示时出错误"
     creation error: "抱歉，不能高亮显示。"
     delete error: "抱歉，无法取消高亮显示。"
   searching:

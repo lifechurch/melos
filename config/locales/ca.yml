@@ -3,7 +3,7 @@ ca:
     share: "Comparteix"
     my connections: "Comptes connectats"
     connected as: "Estàs connectat/ada a %{connection} com %{username}."
-    remove connection: "Elimina"
+    remove connection: "Elimina aquesta connexió"
     connection friends: "Aquí hi ha varis usuaris amb qui tens relació a %{connection}:"
     errors:
       no friends: "Encara no apareix cap dels teus amics de %{connection} a YouVersion."
@@ -32,7 +32,12 @@ ca:
     users username not available: "El nom d'usuari/ària que has demanat no està disponible."
     users username or password invalid: "El nom d'usuari/ària o contrasenya que has introduït és invàlid/a."
     users username required: "Has d'introduir un nom d'usuari."
+    users first name required: "Escriu el teu nom"
+    users last name required: "Escriu el teu cognom"
   meta:
+    kids_app:
+      title: "L'Aplicació de la Bíblia per a nens"
+      description: "..."
     100million:
       title: "Comença amb 100 milions"
       description: "L'App de la Bíblia ha estat instal·lada gaire bé 100 milions de vegades - una fita increïble! Però tot just estem començant. Descarrega gratuïtament l'App de la Bíblia - i comparteix-la amb els teus amics. Fem història plegats."
@@ -42,6 +47,8 @@ ca:
     connections:
       index:
         title: "Comptes connectats"
+  ui:
+    loading indicator text: "Carregant..."
   now: "Ara"
   celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
   link: "Enllaç"
@@ -129,7 +136,6 @@ ca:
   chapter: "Capítol"
   bible: "La Bíblia"
   notes title: "Notes"
-  friends: "Amics"
   groups: "Grups"
   mobile: "Mòbil"
   live: "En directe/Grups"
@@ -150,7 +156,91 @@ ca:
   or:
     lower: "o"
     upper: "O"
+  moments:
+    vod:
+      title: "Verset del dia"
+    friendship:
+      now friends: "Ja ets amic de "
+    cta:
+      profile update text: "Ajuda els teus amics que et trobin"
+      profile update button: "Actualitza el teu perfil"
+      sharing text: "Comparteix versets a les xarxes socials"
+      sharing button: "Activa compartir"
+      friends text: "Mira els moments a la Bíblia dels teus amics"
+      friends button: "Troba amics"
+    action:
+      go to scripture: "Vés a la Bíblia"
+      load more: "Carrega més"
+      like: "M'agrada"
+      like title: "M'agrada això"
+      share: "Comparteix"
+      share title: "Comparteix-lo amb amics o familiars"
+      comment: "Comenta"
+      comment title: "Mira tots els comentaris"
+      edit: "Edita"
+      edit highlight title: "Edita aquest ressaltat"
+      edit bookmark title: "Edita aquest marcador"
+      edit note title: "Edita aquesta nota"
+      delete: "Elimina"
+      delete confirm: "N'estàs segur?"
+      delete highlight title: "Suprimeix aquest ressaltat"
+      delete bookmark title: "Suprimeix aquest marcador"
+      delete note title: "Suprimeix aquesta nota"
+  notifications:
+    title: "Avisos"
+    none: "No tens cap avís"
+    no new: "No hi ha avisos nous."
+    view all: "Mira tots els avisos"
+  comments:
+    post comment: "Publica un comentari"
+    create success: "Comentari publicat"
+    create failure: "El comentari no s'ha pogut publicar"
+    form:
+      save button: "Envia"
+  friends:
+    you have N friends: "Tens %{count} amics"
+    none me: "Comparteix els teus moments amb la Bíblia mitjançant els marcadors, els subratllats i les notes amb els teus amics més propers."
+    blank slate:
+      heading: "Actualment no sou amics"
+      description: "Has de ser amic d'aquesta personas per poder veure el seus amics."
+    limit notice: "Pots tenir fins a 150 amics"
+    limit description: "Si limites les teves amistats de l'App de la Bíblia a gent que coneixes bé, crearàs un entorn apropiat per converses sinceres i experiències compartides amb amics de confiança."
+  friendships:
+    offer success: "Sol·licitud d'amistat enviada"
+    offer failure: "Error en enviar la sol·licitud d'amistat"
+    create success: "Ara ja sou amics"
+    create failure: "Error en crear l'amistat"
+    destroy success: "Sol·licitud rebutjada"
+    destroy failure: "Error en rebutjar l'amistat"
+    requests title: "Sol·licituds d'amistat"
+    requests view all: "Mira totes les sol·licituds d'amistat"
+    requests none: "No tens cap sol·licitud d'amistat"
+    requests no new: "No hi ha noves sol·licituds"
+    status:
+      pending: "Sol·licitud pendent"
+      friends: "Amics"
+    user wants friendship: "%{user} vol ser el teu amic"
+    user wants friendship partial: "vol ser el teu amic"
+    form:
+      remove friend button: "Eliminar amic"
+      remove friend button title: "Elimina aquesta persona de la llista d'amistats"
+      add friend button: "Afegeix un amic"
+      add friend button title: "Enviar-li a %{user} una sol·licitud d'amistat"
+      accept button: "Accepta"
+      accept request button: "Sol·licitud acceptada"
+      ignore button: "Ignora"
+      ignore request button: "Ignora la sol·licitud"
   notes:
+    none user: "%{username} encara no ha pres notes."
+    blank slate:
+      heading: "Encara no has pres notes"
+      description: "Mentre estiguis llegint la Bíblia, i sentis que la veu de Déu et parla, pots escriure ràpidament aquests pensaments aquí. Les teves notes seran marcades com <em>privades</em> per defecte. Si volguessis compartir una nota amb els teus amics, simplement obre-la i canvia-la a <em>pública</em>."
+    form:
+      title field: "Títol:"
+      content field: "Contingut:"
+      reference field: "Referència/es:"
+      status field: "Estat:"
+      save button: "Desa"
     list title: "Notes"
     loading community: "Carregant les notes de la comunitat"
     no community notes: "No hi ha notes de la comunitat que facin referència als versets seleccionats. Per crear una nota, selecciona un verset al lector de la Bíblia i després fes clic al botó \"Seleccionat\" situat a la part superior del lector."
@@ -178,7 +268,10 @@ ca:
     cancel: "Cancel·la"
     pop out: "Finestra externa"
     none found: "No s'han trobat notes..."
-    successfully deleted: "Nota eliminada"
+    create success: "Nota desada"
+    create failure: "Error en guardar la nota"
+    destroy success: "Nota suprimida"
+    destroy failure: "Error en suprimir la nota"
   ref:
     loading secondary: "Carregant la referència d'una segona versió"
     clear verses: "Desmarca els versets"
@@ -209,6 +302,8 @@ ca:
     profile form errors: "L'error o errors següents no et permeten actualitzar el teu perfil:"
     email address: "Adreça de correu electrònic"
     user name: "Nom d'usuari"
+    first name: "Nom"
+    last name: "Cognom"
     agreement: "Estic d'acord amb els termes d'ús de YouVersion: %{terms_link}."
     terms and conditions: "Termes i condicions"
     facebook sign up success: "Molt bé! T'has registrat amb Facebook. Escull un nom d'usuari/ària de YouVersion i una contrasenya per continuar."
@@ -238,7 +333,7 @@ ca:
     edit account_existence: "Elimina el compte"
     delete account button: "Elimina el meu compte de YouVersion"
     no devices: "No hi ha dispositius connectats al teu compte de YouVersion"
-    no devices download copy: "Amb base en la Bíblia en línia, YouVersion.com, l'aplicació de la Bíblia és una Bíblia mòbil lliure que es pot instal · lar en gairebé qualsevol dispositiu mòbil. La aplicació de la Bíblia permet als usuaris llegir els versets de la Bíblia, compartir amb les seves xarxes socials, marcar els seus passatges preferits i molt més, tot això en un format que es manté al dia amb el seu estil de vida cada vegada més mòbil. Visita <a href='http://www.youversion.com/download'>youversion.com/download</a> des del teu dispositiu mòbil per descarregar l'aplicació de la Bíblia i connectar el seu compte!"
+    no devices download copy: "Amb base en la Bíblia en línia, YouVersion.com, l'aplicació de la Bíblia és una Bíblia mòbil i gratuïta que es pot instal · lar en gairebé qualsevol dispositiu mòbil. La aplicació de la Bíblia permet als usuaris llegir la Bíblia, compartir versets en les seves xarxes socials, marcar els seus passatges preferits i molt més; tot això en un format que s'adiu amb el seu estil de vida, cada vegada més mòbil. Visita <a href='https://www.bible.com/app'>Bible.com/app</a> des del teu dispositiu mòbil per descarregar l'aplicació de la Bíblia i connectar el teu compte!"
     yes delete: "Sí, elimina el meu compte"
     account delete success: "La teu compte de YouVersion s'ha eliminat correctament. Esperem que continuïs trobant maneres significatives per interactuar amb la Bíblia. Algunes d'aquestes aplicacions poden ser útils a mesura que avances:<a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps</a>"
     delete account description: "Si elimines el teu compte, s'eliminarà permanentment tota la teva informació, l'historial i la personalització (com notes, marcadors, ressaltats, etc) dins YouVersion.com i l'aplicació de la Bíblia. Aquesta acció no pot ser revertida per tu ni pel nostre equip. Si estàs segur que t'agradaria continuar endavant, continua endavant."
@@ -353,6 +448,16 @@ ca:
       general title: "Informació general"
       general text: "Acord complet. Aquestes Condicions d'ús constitueixen l'acord complet entre tu i LifeChurch.tv, que regeix l'ús de YouVersion i substitueix qualsevol acord anterior entre vostè i LifeChurch.tv pel que fa a YouVersion. També pots estar subjecte a termes i condicions addicionals.<br><br>Elecció de jurisdicció i tall. Les condicions d'ús i la relació entre tu i LifeChurch.tv es regirà per les lleis de l'Estat d'Oklahoma, sense tenir en compte conflictes de disposicions legals. Tu i LifeChurch.tv acordeu sotmetre a la jurisdicció personal i exclusiva dels tribunals ubicats dins del comtat d'Oklahoma County, Oklahoma.<br><br>Renúncia i separació de termes. El fracàs de LifeChurch.tv per exercir o fer valer qualsevol dret o disposició d'aquestes condicions d'ús no constituirà una renúncia a aquest dret o disposició. Si alguna disposició d'aquestes condicions d'ús és considerada per un tribunal de jurisdicció competent com no vàlida, les parts acorden que aquest tribunal ha de procurar interpretar les intencions de les parts tal i com es reflecteix en la disposició, i les altres disposicions de les presents condicions d'ús romandran en ple vigor i efecte.<br><br>Dret de supervivència i transferibilitat. Tu acceptes que el teu compte de LifeChurch.tv és intransferible i que qualsevol dret a identificar LifeChurch.tv o continguts dins del seu compte s'extingeixen a la seva mort. Després de la recepció d'una còpia d'un certificat de defunció, LifeChurch.tv pot cancel·lar el seu compte i eliminar permanentment tots els continguts del compte.<br><br>Estatut de Limitacions. Entens i acceptes que independentment de qualsevol estatut o llei que disposi el contrari, qualsevol reclamació o motiu d'acció que sorgeixi de o estigui relacionada amb l'ús de YouVersion o aquestes condicions d'ús s'ha de presentar dins d'un (1) any després d'aquest reclam o causa d'acció o prescriurà per sempre.<br><br>Els títols de les seccions en les presents condicions d'ús són per conveniència només i no tenen cap efecte legal o contractual."
     profile:
+      blank slate:
+        heading: "Moguin-se, senyors; no hi ha res a veure (de moment)"
+        description: "Comença a involucrar-te amb la Bíblia o els seus amics i aquesta pàgina mostrarà un historial del que has estat fent."
+      visit friend: "Visita el perfil de %{friend}"
+      tab activity: "Activitat"
+      tab friends: "Amics"
+      tab notes: "Notes"
+      tab bookmarks: "Marcadors"
+      tab highlights: "Subratllats"
+      tab badges: "Insígnies"
       first name: "Nom"
       last name: "Cognom"
       email: "Adreça de correu electrònic"
@@ -392,6 +497,9 @@ ca:
       reading_plans: "Envia'm informació relativa als plans de lectura que he començat."
       publishing partners: "Vull ser informat de notícies dels socis de contingut de YouVersion."
       update: "Actualitza els avisos"
+      friendships: "Avisa'm sobre les sol·licituds d'amistat"
+      moments: "Avisa'm sobre l'activitat dels meus amics"
+      comments: "Avisa'm quan hi hagi comentaris a la meva activitat"
   bookmarks:
     new: "Nou Marcador"
     edit: "Edita"
@@ -405,9 +513,10 @@ ca:
     not found: "Els marcadors et donen una ràpida referència cap als teus passatges preferits o a l'últim capítol que has llegit en un llibre en particular. Per afegir un marcador, selecciona un verset al lector de la Bíblia i després clica al botó Seleccionat a dalt del lector."
     other user not found: "El/la %{username} encara no ha desat cap marcador."
     creation form errors: "Els errors següents no permeten que creïs el marcador"
-    successfully created: "Marcador afegit"
-    successfully deleted: "Marcador eliminat"
-    successfully updated: "Marcador actualitzat"
+    create success: "Marcador desat"
+    destroy success: "Marcador eliminat"
+    destroy failure: "Error en eliminar el marcador"
+    update success: "Marcador actualitzat"
     labels placeholder: "Separa les diferents etiquetes amb comes."
     save: "Desar marcador"
     confirm delete: "Sí, n'estic segur"
@@ -418,9 +527,23 @@ ca:
     update: "Actualitza"
     color: "Color:"
     version field: "Versió:"
+    none user: "%{username} no té marcadors"
+    blank slate:
+      heading: "Fes un marcador amb versets significatius"
+      description: "Mestre estiguis llegint la Bíblia, selecciona un verset i fes-ne un marcador. Torna aquí per veure, editar o esborrar els teus marcadors."
+    form:
+      title field: "Títol:"
+      reference field: "Referència:"
+      labels field: "Etiquetes (separades per comes):"
+      colors field: "Color:"
+      update button: "Actualitza marcador"
+      save button: "Desar marcador"
   badges:
     earned a badge: "Has aconseguit una insígnia"
     user badges: "Insígnies de %{user}"
+    earned date: "Obtinguda per %{username} fa %{ago}"
+    none me: "Encara no tens cap insígnia."
+    none user: "El/la %{username} encara no té cap insígnia."
   plans:
     title: "Plans de lectura"
     browse by category: "Explora per categories"
@@ -565,7 +688,15 @@ ca:
     chapter only: "Ens sap greu, però l'àudio no està disponible només per als versets. Pots veure i escoltar el capítol sencer al lector."
     close player menu: "Tanca"
   highlights:
+    blank slate:
+      heading: "Subratlla versets significatius"
+      description: "Metre llegeixes la bíblia pots seleccionar un verset i subratllar-lo. Torna aquí per veure, editar o esborrar els teus subratllats."
+    none user: "%{username} no té subratllats"
     choose color: "Tria el color"
+    create success: "Subratllat desat"
+    create failure: "Error en desar subratllat"
+    destroy success: "Subratllat eliminat"
+    destroy failure: "Error en suprimir subratllat"
     creation error: "Ho sentim, però no s'ha pogut subratllar."
     delete error: "Ho sentim, però no s'ha pogut eliminar el subratllat."
   searching:

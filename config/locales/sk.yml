@@ -32,7 +32,12 @@ sk:
     users username not available: "Vami zvolené prihlasovacie meno nie je dostupné."
     users username or password invalid: "Zadané prihlasovacie meno alebo heslo je neplatné."
     users username required: "Musíte zadať prihlasovacie meno."
+    users first name required: "Musíte zadať meno."
+    users last name required: "Musíte zadať priezvisko."
   meta:
+    kids_app:
+      title: "Aplikácia Biblia pre deti"
+      description: "..."
     100million:
       title: "Začína to 100 miliónmi"
       description: "Aplikácia Biblia bola nainštalovaná už takmer 100 miliónov krát, čo je významná udalosť! Ale my iba začíname. Stiahnite si bezplatnú aplikáciu Biblia ešte dnes - a potom ju zdieľajte s priateľmi. Poďme spolu tvoriť dejiny."
@@ -42,6 +47,8 @@ sk:
     connections:
       index:
         title: "Prepojené účty"
+  ui:
+    loading indicator text: "Načítavanie..."
   now: "Teraz"
   celebrating 50MM: "Oslavujeme 50 miliónov inštalacií našej aplikácie!"
   link: "Odkaz"
@@ -129,7 +136,6 @@ sk:
   chapter: "Kapitola"
   bible: "Biblia"
   notes title: "Poznámky"
-  friends: "Priatelia"
   groups: "Skupiny"
   mobile: "Mobil"
   live: "Live/Skupiny"
@@ -150,7 +156,91 @@ sk:
   or:
     lower: "alebo"
     upper: "ALEBO"
+  moments:
+    vod:
+      title: "Verš dňa"
+    friendship:
+      now friends: "Odteraz ste priateľom s používateľom"
+    cta:
+      profile update text: "Pomôžte vašim priateľom nájsť vás."
+      profile update button: "Aktualizujte svoj profil"
+      sharing text: "Zdieľajte verše na sociálne siete"
+      sharing button: "Umožniť zdieľanie"
+      friends text: "Pozrite si momenty vašich priateľov s Bibliou"
+      friends button: "Nájsť priateľov"
+    action:
+      go to scripture: "Prejsť na Písmo"
+      load more: "Načítať viac"
+      like: "Páči sa mi to"
+      like title: "Páči sa mi to"
+      share: "Zdieľať"
+      share title: "Zdieľať s priateľmi alebo rodinou"
+      comment: "Pridať komentár"
+      comment title: "Zobraziť všetky komentáre"
+      edit: "Upraviť"
+      edit highlight title: "Upraviť toto zvýraznenie"
+      edit bookmark title: "Upraviť túto záložku"
+      edit note title: "Upraviť túto poznámku"
+      delete: "Odstrániť"
+      delete confirm: "Ste si istý?"
+      delete highlight title: "Odstrániť toto zvýraznenie"
+      delete bookmark title: "Odstrániť túto záložku"
+      delete note title: "Odstrániť túto poznámku"
+  notifications:
+    title: "Notifikácie"
+    none: "Nemáte žiadne notifikácie"
+    no new: "Žiadne nové notifikácie"
+    view all: "Zobraziť všetky notifikácie"
+  comments:
+    post comment: "Pridať komentár"
+    create success: "Komentár pridaný"
+    create failure: "Komentár sa nepodarilo pridať"
+    form:
+      save button: "Odoslať"
+  friends:
+    you have N friends: "Máte %{count} priateľov"
+    none me: "Zdieľajte vaše momenty s Bibliou, ako napr. záložky, zvýraznenia, či poznámky s vašimi najbližšími priateľmi a rodinou."
+    blank slate:
+      heading: "Momentálne nie ste priatelia"
+      description: "Ak si chcete zobraziť priateľov tejto osoby, musíte s ňou byť priateľom."
+    limit notice: "Môžete mať až 150 priateľov"
+    limit description: "Obmedzenie priateľov v aplikácii Biblia na ľudí, ktorých poznáte, pomáha vytvoriť prostredie pre úprimné rozhovory a zdieľanie objavov s dôvernými priateľmi."
+  friendships:
+    offer success: "Žiadosť o priateľstvo odoslaná"
+    offer failure: "Nepodarilo sa odoslať žiadosť o priateľstvo"
+    create success: "Odteraz ste priatelia"
+    create failure: "Nepodarilo sa vytvoriť priateľstvo"
+    destroy success: "Žiadosť zamietnutá"
+    destroy failure: "Nepodarilo sa zamietnuť žiadosť"
+    requests title: "Žiadosti o priateľstvo"
+    requests view all: "Zobraziť všetky žiadosti o priateľstvo"
+    requests none: "Nemáte žiadne žiadosti o priateľstvo"
+    requests no new: "Žiadne nové žiadosti"
+    status:
+      pending: "Čaká sa na potvrdenie žiadosti"
+      friends: "Priatelia"
+    user wants friendship: "%{user} chce byť vašim priateľom"
+    user wants friendship partial: "chce byť vašim priateľom"
+    form:
+      remove friend button: "Odstrániť priateľa"
+      remove friend button title: "Odstrániť túto osobu zo zoznamu vašich priateľov"
+      add friend button: "Pridať priateľa"
+      add friend button title: "Poslať používateľovi %{user} žiadosť o priateľstvo"
+      accept button: "Prijať"
+      accept request button: "Prijať žiadosť"
+      ignore button: "Ignorovať"
+      ignore request button: "Ignorovať žiadosť"
   notes:
+    none user: "Používateľ %{username} zatiaľ nemá žiadne poznámky."
+    blank slate:
+      heading: "Zatiaľ nemáte žiadne poznámky"
+      description: "Keď počas čítania Biblie cítite ako k vám prehovára Boží pokojný hlas, možete si sem rýchlo zapísať svoje myšlienky. Na začiatku sú vaše poznámky označené ako <em>súkromné</em>. Ak ich chcete zdieľať s priateľmi, jednoducho ich otvorte a zmeňte ich na <em>verejné</em>."
+    form:
+      title field: "Nadpis:"
+      content field: "Obsah:"
+      reference field: "Súradnice:"
+      status field: "Stav:"
+      save button: "Uložiť"
     list title: "Poznámky"
     loading community: "Načítavajú sa komunitné poznámky..."
     no community notes: "Nenašli sa žiadne komunitné poznámky odkazujúce na označené verše. Ak chcete vytvoriť poznámku, označte verš v Biblii a kliknite na tlačítko Označené na vrchu stránky."
@@ -178,7 +268,10 @@ sk:
     cancel: "Zrušiť"
     pop out: "Otvoriť samostatne"
     none found: "Nenašli sa žiadne poznámky..."
-    successfully deleted: "Poznámka odstránená"
+    create success: "Poznámka uložená"
+    create failure: "Nepodarilo sa uložiť poznámku"
+    destroy success: "Poznámka odstránená"
+    destroy failure: "Poznámku sa nepodarilo odstrániť"
   ref:
     loading secondary: "Načítavajú sa súradnice v sekundárnom preklade..."
     clear verses: "Zrušiť označenie veršov"
@@ -209,6 +302,8 @@ sk:
     profile form errors: "Nasledujúce chyby zabránili aktualizovaniu vášho profilu:"
     email address: "Emailová adresa"
     user name: "Prihlasovacie meno"
+    first name: "Meno"
+    last name: "Priezvisko"
     agreement: "Súhlasím s %{terms_link} YouVersion."
     terms and conditions: "podmienkami používania"
     facebook sign up success: "Výborne! Autorizovali ste prístup Facebookom. Teraz si zvoľte prihlasovacie meno a heslo na YouVersion."
@@ -238,7 +333,7 @@ sk:
     edit account_existence: "Zmazať účet"
     delete account button: "Zmazať môj YouVersion účet"
     no devices: "K vášmu YouVersion účtu nie sú pripojené žiadne zariadenia"
-    no devices download copy: "Aplikácia Biblia je bezplatná mobilná Biblia, založená na online Biblii YouVersion.com, ktorá môže byť nainštalovaná na takmer všetky mobilné zariadenia. Aplikácia Biblia používateľom umožňuje čítať Bibliu, zdieľať verše na sociálne siete, označiť si obľúbené pasáže a oveľa viac&mdash;to všetko spôsobom, ktorý drží krok so vzrastajúcim mobilným životným štýlom. Navštívte <a href='https://www.bible.com/download'>bible.com/download</a> z vášho mobilného zariadenia, stiahnite si aplikáciu Biblia a pripojte sa so svojim účtom!"
+    no devices download copy: "Aplikácia Biblia je bezplatná mobilná Biblia, založená na online Biblii YouVersion, ktorá môže byť nainštalovaná na takmer všetky mobilné zariadenia. Aplikácia Biblia používateľom umožňuje čítať Bibliu, zdieľať verše na sociálne siete, označiť si obľúbené pasáže a oveľa viac&mdash;to všetko spôsobom, ktorý drží krok so vzrastajúcim mobilným životným štýlom. Navštívte <a href='https://www.bible.com/app'>bible.com/app</a> z vášho mobilného zariadenia, stiahnite si aplikáciu Biblia a pripojte sa so svojim účtom!"
     yes delete: "Áno, zmazať môj účet"
     account delete success: "Váš YouVersion účet bol úspešne zmazaný. Dúfame, že si aj naďalej nájdete spôsob, ako čerpať z Biblie. Môžu vám k tomu napomôcť niektoré z týchto aplikácií: <a href=' https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
     delete account description: "Ak zmažete váš účet, tak navždy stratíte všetky vaše údaje (poznámky, históriu, záložky, zvýraznenia atď.) na YouVersion.com a v aplikácii Biblia. Táto akcia sa nedá vrátiť späť. Ak ste si istý, že chcete pokračovať, urobte tak nižšie."
@@ -353,6 +448,16 @@ sk:
       general title: "do not translate"
       general text: "do not translate"
     profile:
+      blank slate:
+        heading: "Môžete ísť ďalej, nič tu (zatiaľ) nie je"
+        description: "Začnite používať Bibliu a komunikovať s priateľmi a táto stránka sa zaplní históriou toho, čo ste robili."
+      visit friend: "Navštívte profil používateľa %{friend}"
+      tab activity: "Aktivita"
+      tab friends: "Priatelia"
+      tab notes: "Poznámky"
+      tab bookmarks: "Záložky"
+      tab highlights: "Zvýraznenia"
+      tab badges: "Odznaky"
       first name: "Meno"
       last name: "Priezvisko"
       email: "Emailová adresa"
@@ -392,6 +497,9 @@ sk:
       reading_plans: "Upozorniť ma na informácie o plánch čítania, ktoré začnem."
       publishing partners: "Informujte ma o novinkách od partnerov YouVersion."
       update: "Aktualizovať notifikácie"
+      friendships: "Upozorniť ma o žiadostiach o priateľstvo"
+      moments: "Upozorniť ma o aktivite mojich priateľov"
+      comments: "Upozorniť ma o komentároch pri mojej aktivite"
   bookmarks:
     new: "Nová záložka"
     edit: "Upraviť"
@@ -405,9 +513,10 @@ sk:
     not found: "Záložky vám poskytujú prehľad o vašich obľúbených pasážach, alebo o poslednej kapitole, ktorú ste z danej knihy prečítali. Záložku môžete pridať tak, že označíte verš v Biblii a kliknete na tlačítko Označené na vrchu stránky."
     other user not found: "Používateľ %{username} zatiaľ nevytvoril žiadne záložky."
     creation form errors: "Nasledujúce chyby zabránili vytvoreniu záložky:"
-    successfully created: "Záložka pridaná"
-    successfully deleted: "Záložka odstránená"
-    successfully updated: "Záložka aktualizovaná"
+    create success: "Záložka uložená"
+    destroy success: "Záložka odstránená"
+    destroy failure: "Nepodarilo sa odstrániť záložku"
+    update success: "Záložka aktualizovaná"
     labels placeholder: "Jednotlivé menovky oddeľte čiarkou."
     save: "Uložiť záložku"
     confirm delete: "Áno, naozaj"
@@ -418,9 +527,23 @@ sk:
     update: "Aktualizovať"
     color: "Farba:"
     version field: "Preklad:"
+    none user: "Používateľ %{username} nemá žiadne záložky"
+    blank slate:
+      heading: "Pridať významné verše medzi záložky"
+      description: "Pri čítaní Biblie môžete označiť verš a pridať ho medzi záložky. Na tomto mieste môžete potom záložku zobraziť, upraviť, alebo odstrániť."
+    form:
+      title field: "Nadpis:"
+      reference field: "Súradnice:"
+      labels field: "Menovky (oddelené čiarkou):"
+      colors field: "Farba:"
+      update button: "Aktualizovať záložku"
+      save button: "Uložiť záložku"
   badges:
     earned a badge: "Získaný odznak"
     user badges: "Odznaky používateľa %{user}"
+    earned date: "Získal používateľ %{username} pred %{ago}"
+    none me: "Zatiaľ ste nezískali žiadne odznaky."
+    none user: "Používateľ %{username} zatiaľ nezískal žiadne odznaky."
   plans:
     title: "Plány čítania"
     browse by category: "Prehľadávať podľa kategórie"
@@ -565,7 +688,15 @@ sk:
     chapter only: "Prepáčte, audio funkcia nie je dostupná pre jednotlivé verše. Začnite čítať kapitolu, kde vám bude následne ponúknutá audio ikona."
     close player menu: "Zatvoriť"
   highlights:
+    blank slate:
+      heading: "Zvýrazniť významné verše"
+      description: "Pri čítaní Biblie môžete označiť verš a zvýrazniť si ho. Na tomto mieste môžete potom zvýraznenie zobraziť, upraviť, alebo odstrániť."
+    none user: "Používateľ %{username} nemá žiadne zvýraznenia"
     choose color: "Vyberte farbu"
+    create success: "Zvýraznenie uložené"
+    create failure: "Nepodarilo sa uložiť zvýraznenie"
+    destroy success: "Zvýraznenie odstránené"
+    destroy failure: "Nepodarilo sa odstrániť zvýraznenie"
     creation error: "Prepáčte, nepodarilo sa zvýrazniť."
     delete error: "Prepáčte, nepodarilo sa odstrániť zvýraznenie."
   searching:

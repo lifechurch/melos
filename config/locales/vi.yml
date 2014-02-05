@@ -32,7 +32,12 @@ vi:
     users username not available: "Tên này không sử dụng được."
     users username or password invalid: "Tên sử dụng hoặc mật khẩu không hợp lệ."
     users username required: "Bạn cần nhập tên sử dụng."
+    users first name required: "Xin điền tên của bạn."
+    users last name required: "Xin điền họ của bạn."
   meta:
+    kids_app:
+      title: "Ứng Dụng Kinh Thánh Cho Trẻ Em"
+      description: "..."
     100million:
       title: "Khởi đầu với 100 triệu"
       description: "Ứng dụng Kinh Thánh đã đạt 100 triệu lượt cài đặt -  một cột mốc tuyệt vời! Nhưng chúng ta chỉ mới khởi đầu. Hãy tải Ứng dụng Kinh Thánh và chia sẻ với bạn bè hôm nay! Hãy cùng nhau làm nên lịch sử!"
@@ -42,6 +47,8 @@ vi:
     connections:
       index:
         title: "Tài khoản đã kết nối"
+  ui:
+    loading indicator text: "Đang tải..."
   now: "Bây giờ"
   celebrating 50MM: "Chúc mừng 50 triệu lượt cài đặt ứng dụng!"
   link: "Đường dẫn"
@@ -117,7 +124,7 @@ vi:
   search placeholder: "Tìm kiếm..."
   search: "Tìm kiếm"
   book: "Sách"
-  filter book: "Lựa sách..."
+  filter book: "Chọn sách..."
   save: "Lưu"
   cancel: "Hủy"
   try the beta: "Thử phiên bản Beta"
@@ -129,7 +136,6 @@ vi:
   chapter: "Đoạn"
   bible: "Kinh Thánh"
   notes title: "Ghi chú"
-  friends: "Bạn bè"
   groups: "Nhóm"
   mobile: "Di động"
   live: "Nhóm trực tuyến"
@@ -144,13 +150,97 @@ vi:
   percentage display: "%{number}%"
   myself: "Chính tôi"
   none found: "Không tìm thấy gì phù hợp với tiêu chí của bạn. Hãy thử mở rộng tìm kiếm."
-  paginated items shown: "%{first_shown} %{last_shown} trong số %{total_available}"
+  paginated items shown: "%{first_shown} %{last_shown} trong %{total_available}"
   160 character limit: "Dưới 160 ký tự"
   recent versions: "Sử dụng gần đây"
   or:
     lower: "hoặc"
     upper: "HOẶC"
+  moments:
+    vod:
+      title: "Câu Kinh Thánh trong ngày"
+    friendship:
+      now friends: "Bạn vừa kết bạn với"
+    cta:
+      profile update text: "Giúp mọi người tìm thấy bạn!"
+      profile update button: "Cập nhật hồ sơ"
+      sharing text: "Chia sẻ các câu Kinh Thánh trên mạng xã hội"
+      sharing button: "Cho phép chia sẻ"
+      friends text: "Xem những trải nghiệm Kinh Thánh của bạn bè"
+      friends button: "Tìm bạn bè"
+    action:
+      go to scripture: "Xem đoạn Kinh Thánh"
+      load more: "Tải thêm"
+      like: "Thích"
+      like title: "Thích điều này"
+      share: "Chia sẻ"
+      share title: "Chia sẻ với gia đình và bạn bè"
+      comment: "Bình luận"
+      comment title: "Xem tất cả bình luận"
+      edit: "Sửa"
+      edit highlight title: "Sửa tô màu này"
+      edit bookmark title: "Sửa đánh dấu này"
+      edit note title: "Sửa ghi chú này"
+      delete: "Xóa"
+      delete confirm: "Bạn có chắc không?"
+      delete highlight title: "Xóa tô màu này"
+      delete bookmark title: "Xóa đánh dấu này"
+      delete note title: "Xóa ghi chú này"
+  notifications:
+    title: "Thông báo"
+    none: "Bạn không có thông báo nào"
+    no new: "Không có thông báo mới"
+    view all: "Xem tất cả thông báo"
+  comments:
+    post comment: "Đăng bình luận"
+    create success: "Đã bình luận"
+    create failure: "Bình luận không đăng được"
+    form:
+      save button: "Đăng tải"
+  friends:
+    you have N friends: "Bạn có %{count} bạn"
+    none me: "Chia sẻ cùng gia đình và bạn bè những trải nghiệm Kinh Thánh như các đánh dấu, tô màu và ghi chú."
+    blank slate:
+      heading: "Chưa kết bạn"
+      description: "Bạn phải kết bạn với người này để xem danh sách bạn bè."
+    limit notice: "Bạn có thể kết bạn tối đa 150 người"
+    limit description: "Trên Ứng dụng Kinh Thánh, việc kết bạn với những người mà bạn biết rõ và tin cậy sẽ tạo môi trường thuận lợi cho những chia sẻ chân thành hơn."
+  friendships:
+    offer success: "Gởi yêu cầu kết bạn"
+    offer failure: "Lỗi gởi yêu cầu kết bạn"
+    create success: "Đã kết bạn"
+    create failure: "Lỗi khi kết bạn"
+    destroy success: "Đã từ chối yêu cầu"
+    destroy failure: "Lỗi khi từ chối yêu cầu"
+    requests title: "Yêu cầu kết bạn"
+    requests view all: "Xem tất cả yêu cầu kết bạn"
+    requests none: "Bạn chưa có yêu cầu kết bạn nào"
+    requests no new: "Không có yêu cầu mới"
+    status:
+      pending: "Yêu cầu chờ trả lời"
+      friends: "Bạn bè"
+    user wants friendship: "%{user} muốn kết bạn với bạn"
+    user wants friendship partial: "muốn kết bạn với bạn"
+    form:
+      remove friend button: "Ngừng kết bạn"
+      remove friend button title: "Chuyển người này khỏi danh sách bạn bè"
+      add friend button: "Kết bạn"
+      add friend button title: "Gởi %{user} yêu cầu kết bạn"
+      accept button: "Chấp nhận"
+      accept request button: "Chấp nhận yêu cầu"
+      ignore button: "Bỏ qua"
+      ignore request button: "Bỏ qua yêu cầu"
   notes:
+    none user: "%{username} chưa có ghi chú nào."
+    blank slate:
+      heading: "Bạn chưa tạo ghi chú nào"
+      description: "Khi suy ngẫm lời Chúa và nghe được tiếng Ngài phán với chính mình, bạn có thể ghi lại những tư tưởng ấy ở đây. Ghi chú của bạn sẽ được tự động cài chế độ <em>riêng tư</em>. Nếu muốn chia sẻ với bạn bè, bạn chỉ cần đổi sang chế độ <em>công cộng</em>."
+    form:
+      title field: "Tựa đề:"
+      content field: "Nội dung:"
+      reference field: "Tham khảo:"
+      status field: "Tình trạng:"
+      save button: "Lưu"
     list title: "Ghi chú"
     loading community: "Đang tải các ghi chú cộng đồng..."
     no community notes: "Không có ghi chú cộng đồng nào để tham khảo cho các câu được chọn. Để tạo ghi chú, hãy chọn một câu Kinh Thánh và nhấp \"Đã chọn\" ở phía trên bài đọc."
@@ -178,7 +268,10 @@ vi:
     cancel: "Hủy"
     pop out: "Hiện lên"
     none found: "Không tìm thấy ghi chú nào..."
-    successfully deleted: "Ghi chú đã tháo bỏ"
+    create success: "Đã lưu ghi chú"
+    create failure: "Lỗi lưu ghi chú"
+    destroy success: "Đã xóa ghi chú"
+    destroy failure: "Lỗi xóa ghi chú"
   ref:
     loading secondary: "Đang tải các tham khảo trong bản song hành..."
     clear verses: "Bỏ các câu được chọn"
@@ -209,6 +302,8 @@ vi:
     profile form errors: "Các lỗi sau không cho phép bạn cập nhập hồ sơ cá nhân:"
     email address: "Địa chỉ email"
     user name: "Tên sử dụng"
+    first name: "Tên"
+    last name: "Họ"
     agreement: "Tôi đồng ý với %{terms_link} của YouVersion."
     terms and conditions: "các điều khoản và quy định"
     facebook sign up success: "Bạn đã được Facebook cho phép! Hãy chọn tên sử dụng và mật khẩu cho YouVersion để tiếp tục."
@@ -238,7 +333,7 @@ vi:
     edit account_existence: "Xóa tài khoản"
     delete account button: "Xóa tài khoản YouVersion của tôi"
     no devices: "Không có thiết bị nào kết nối với tài khoản YouVersion của bạn"
-    no devices download copy: "Dựa trên Kinh Thánh trực tuyến tại YouVersion.com, Ứng dụng Kinh Thánh là Kinh Thánh di động miễn phí mà bạn có thể cài đặt hầu như trên mọi thiết bị. Ứng dụng Kinh Thánh cho phép người sử dụng đọc và chia sẻ Kinh Thánh trên các mạng xã hội, đánh dấu phân đoạn yêu thích, và hơn thế nữa; tất cả được thiết kế để bắt kịp nhu cầu sử dụng di động đang tăng cao hiện nay. Hãy vào trang <a href='https://www.bible.com/download'>bible.com/download</a> trên thiết bị di động của bạn để tải Ứng dụng Kinh Thánh và kết nối tài khoản!"
+    no devices download copy: "Dựa trên Kinh Thánh trực tuyến YouVersion, Bible App là Ứng dụng Kinh Thánh di động miễn phí mà bạn có thể cài đặt hầu như trên mọi thiết bị. Ứng dụng Kinh Thánh giúp bạn đọc và chia sẻ Kinh Thánh trên các mạng xã hội, đánh dấu phân đoạn yêu thích, và còn hơn thế nữa&mdash;tất cả được thiết kế để bắt kịp nhu cầu sử dụng di động đang tăng cao hiện nay. Hãy vào trang <a href='https://www.bible.com/app'>bible.com/app</a> trên thiết bị di động của bạn để tải Ứng dụng Kinh Thánh và kết nối tài khoản!"
     yes delete: "Vâng, hãy xóa tài khoản của tôi."
     account delete success: "Tài khoản YouVersion của bạn đã được xóa thành công. Chúng tôi hi vọng bạn sẽ tiếp tục tìm được những phương thức hiệu quả để tương giao với Lời Chúa. Có thể một vài ứng dụng sau sẽ hữu ích cho bạn: <a href='https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
     delete account description: "Nếu bạn xóa tài khoản của mình, bạn sẽ vĩnh viễn mất toàn bộ thông tin, lịch sử, và điều chỉnh cá nhân (như ghi chú, đánh dấu, tô màu, v.v...) trong YouVersion.com cũng như trong Ứng dụng Kinh Thánh. Chính bạn hoặc đội ngũ kỹ thuật cũng không thể đảo ngược hành động này. Nếu bạn khẳng định mình muốn xóa tài khoản, hãy tiếp tục dưới đây."
@@ -353,6 +448,16 @@ vi:
       general title: "Thông tin chung"
       general text: "Toàn bộ thỏa thuận: ĐIỀU KHOẢN SỬ DỤNG này bao gồm toàn bộ thỏa thuận giữa bạn và LifeChurch.tv và sẽ chi phối việc bạn sử dụng YouVersion, thay thế cho mọi thỏa thuận trước đây giữa bạn và LifeChurch.tv về YouVersion. Có thể bạn cũng phải tuân theo các điều khoản bổ sung sau này.<br><br>Lựa chọn của pháp luật và diễn đàn: ĐIỀU KHOẢN SỬ DỤNG và quan hệ giữa bạn và LifeChurch.tv do luật của tiểu bang Oklahoma áp đặt mà không có mâu thuẫn pháp lý nào. Bạn và LifeChurch.tv đồng ý sẽ khai trình lên các tòa án thuộc quyền hạn Quận Oklahoma, bang Oklahoma.<br><br>Tính hiệu lực của hợp đồng và từ bỏ pháp lý: Nếu LifeChurch.tv thất bại trong việc thi hành bất cứ điều khoản nào, thì cũng không khước từ pháp lý đối với các điều khoản đó. Nếu một tòa án thuộc đúng quyền hạn xác định bất cứ điều khoản nào là không có giá trị, các bên vẫn phải đồng ý rằng tòa án nên nỗ lực để hiệu lực hóa ý định của các bên theo như điều khoản, và mọi phần khác thuộc ĐIỀU KHOẢN SỬ DỤNG vẫn giữ nguyên hiệu lực.<br><br>Quyền kiêm hưởng và không chuyển nhượng: Bạn đồng ý rằng tài khoản LifeChurch.tv của bạn là không sang chuyển được, và bất cứ quyền nào về tên sử dụng và nội dung trong tài khoản của bạn sẽ chấm dứt khi bạn qua đời. Khi nhận được bản sao giấy báo tử của bạn, LifeChurch.tv sẽ đóng tài khoản của bạn và xóa vĩnh viễn toàn bộ nội dung trong đó.<br><br>Đạo luật giới hạn: Bạn nhận biết và đồng ý rằng, bất kể sự khác biệt trong luật định nào, mọi tuyên bố hay hành động liên quan hoặc phát sinh từ việc sử dụng YouVersion hoặc các ĐIỀU KHOẢN SỬ DỤNG này phải được lập biên bản trong vòng một (1) năm kể từ khi tuyên bố hoặc hành động đó xảy ra, nếu không sẽ bị khép lại vĩnh viễn.<br><br>Các tiêu đề của ĐIỀU KHOẢN SỬ DỤNG này chỉ vì mục đích thuận tiện chứ không có giá trị hợp đồng hoặc pháp lý."
     profile:
+      blank slate:
+        heading: "Đi tiếp, tại đây chưa có gì để xem"
+        description: "Hãy bắt đầu tìm hiểu Kinh Thánh cùng bạn bè, và trang này sẽ hiển thị các hoạt động của bạn từ trước đến nay."
+      visit friend: "Xem hồ sơ của %{friend}"
+      tab activity: "Hoạt động"
+      tab friends: "Bạn bè"
+      tab notes: "Ghi chú"
+      tab bookmarks: "Đánh dấu"
+      tab highlights: "Tô màu"
+      tab badges: "Huy hiệu"
       first name: "Tên"
       last name: "Họ"
       email: "Địa chỉ email"
@@ -392,6 +497,9 @@ vi:
       reading_plans: "Báo cho tôi các thông tin về kế hoạch mà tôi bắt đầu."
       publishing partners: "Hãy cập nhật cho tôi tin tức từ các đối tác nội dung của YouVersion."
       update: "Cập nhật các thông báo"
+      friendships: "Báo cho tôi khi có yêu cầu kết bạn"
+      moments: "Báo cho tôi biết hoạt động của bạn bè"
+      comments: "Báo cho tôi khi có bình luận về hoạt động của tôi"
   bookmarks:
     new: "Đánh dấu mới"
     edit: "Chỉnh sửa"
@@ -405,9 +513,10 @@ vi:
     not found: "Chức năng Đánh dấu giúp bạn nhanh chóng tìm lại các phân đoạn yêu thích hoặc phần bạn vừa đọc trong một sách nào đó. Để đánh dấu, hãy chọn một hoặc nhiều câu và gõ vào \"Đã chọn\" ở đầu bài đọc."
     other user not found: "%{username} chưa lưu đánh dấu nào."
     creation form errors: "Các lỗi sau khiến bạn không tạo đánh dấu được:"
-    successfully created: "Đã thêm đánh dấu"
-    successfully deleted: "Đã gỡ bỏ đánh dấu"
-    successfully updated: "Đánh dấu đã cập nhật"
+    create success: "Đã lưu đánh dấu"
+    destroy success: "Đã gỡ bỏ đánh dấu"
+    destroy failure: "Lỗi xóa đánh dấu"
+    update success: "Đã cập nhật đánh dấu"
     labels placeholder: "Tách các nhãn tên bằng dấu phẩy."
     save: "Lưu đánh dấu"
     confirm delete: "Vâng, tôi chắc!"
@@ -418,9 +527,23 @@ vi:
     update: "Cập nhật"
     color: "Màu sắc:"
     version field: "Bản dịch:"
+    none user: "%{username} chưa có đánh dấu nào"
+    blank slate:
+      heading: "Đánh dấu các câu gốc ý nghĩa"
+      description: "Trong khi đọc hãy đánh dấu câu Kinh Thánh bạn thích, và bạn có thể trở lại đây để xem, chỉnh sửa hoặc xóa các đánh dấu này."
+    form:
+      title field: "Tựa đề:"
+      reference field: "Tham khảo:"
+      labels field: "Nhãn tên (tách bằng dấy phẩy):"
+      colors field: "Màu sắc:"
+      update button: "Cập nhật đánh dấu"
+      save button: "Lưu đánh dấu"
   badges:
     earned a badge: "Đã nhận một huy hiệu"
     user badges: "Huy hiệu của %{user}"
+    earned date: "%{username} nhận được vào %{ago} trước"
+    none me: "Bạn chưa có huy hiệu nào."
+    none user: "%{username} chưa có huy hiệu nào."
   plans:
     title: "Kế hoạch"
     browse by category: "Tra tìm theo thể loại"
@@ -565,7 +688,15 @@ vi:
     chapter only: "Xin lỗi bạn, không có phát thanh cho đoạn này. Hãy xem mục lục để biết đoạn nào có."
     close player menu: "Đóng"
   highlights:
+    blank slate:
+      heading: "Tô màu các câu gốc ý nghĩa"
+      description: "Trong khi đọc hãy tô màu câu Kinh Thánh bạn thích, và bạn có thể trở lại đây để xem, chỉnh sửa hoặc xóa các tô màu này."
+    none user: "%{username} chưa có tô màu nào"
     choose color: "Chọn màu"
+    create success: "Đã lưu tô màu"
+    create failure: "Lỗi lưu tô màu"
+    destroy success: "Đã xóa tô màu"
+    destroy failure: "Lỗi khi xóa đánh dấu"
     creation error: "Xin lỗi bạn, không tô màu được."
     delete error: "Xin lỗi bạn, không gỡ bỏ tô màu được."
   searching:
@@ -607,7 +738,7 @@ vi:
   download ad:
     title: "Tải Ứng dụng Kinh Thánh miễn phí"
     line 1: "Hàng trăm bản dịch Kinh Thánh"
-    line 2: "từ hơn 100 ngôn ngữ khác nhau"
+    line 2: "các ngôn ngữ khác nhau - Kinh Thánh"
     line 3: "đồng hành cùng bạn ở mọi nơi."
     download: "Tải bây giờ"
   about page:
@@ -653,7 +784,7 @@ vi:
   mobile page:
     h2: "Lời Chúa đồng hành cùng bạn"
     h3: "YouVersion được phổ biến toàn cầu"
-    h3 sub: "Với hơn 100 ngôn ngữ trên toàn thế giới"
+    h3 sub: "Với hơn 300 ngôn ngữ trên toàn thế giới."
     main: "Hàng chục triệu người đang sử dụng Ứng dụng Kinh Thánh để Lời Chúa trở thành một phần trong cuộc sống hằng ngày của họ. Hãy tải ứng dụng miễn phí và truy cập các đánh dấu, ghi chú, và kế hoạch đọc Kinh Thánh của bạn từ bất cứ nơi đâu. Chọn lựa từ hàng trăm bản dịch, bao gồm Kinh Thánh phát thanh, tất cả chỉ trong thiết bị di động của bạn!"
     button h4: "Vào Bible.com/vi/app"
     button h4 sub: "Trên thiết bị di động của bạn"
@@ -730,7 +861,7 @@ vi:
     408 explanation: "Chúng tôi đã nghe đến và sẽ cố gắng giải quyết nhanh chóng bất cứ vấn đề dai dẳng nào. Bây giờ chúng ta hãy thử trở lại bài đọc Kinh Thánh!"
     try again: "Thử lại"
   versions:
-    filter: "Lựa bản dịch..."
+    filter: "Chọn bản dịch..."
     see all: "Xem toàn bộ bản dịch..."
     courtesy of: "%{abbreviation} được cung cấp bởi %{publisher}"
     learn more: "Tìm hiểu thêm"
@@ -776,4 +907,4 @@ vi:
         copy: "Đọc, Nghe, Xem và Chia sẻ. Hãy tải Ứng dụng Kinh Thánh về điện thoại hoặc máy tính bảng của bạn: <a href='http://bible.com/app'>Tải về</a>"
       sidebar:
         tagline: "Hãy cùng làm nên lịch sử!"
-        button: "Chia sẻ Ứng dụng Kinh Thánh"
+        button: "Chia sẻ App Kinh Thánh"

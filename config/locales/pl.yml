@@ -32,7 +32,12 @@ pl:
     users username not available: "Podana nazwa użytkownika nie jest dostępna."
     users username or password invalid: "Podana nazwa użytkownika lub hasło jest nieprawidłowe."
     users username required: "Musisz wprowadzić login."
+    users first name required: "Musisz wpisać swoje imię."
+    users last name required: "Musisz wpisać nazwisko."
   meta:
+    kids_app:
+      title: "Aplikacja Biblii dla dzieci"
+      description: "..."
     100million:
       title: "Zaczyna się od 100 milionów"
       description: "Aplikacja Biblii została zainstalowana prawie 100 milionów razy - niesamowity moment! Ale dopiero zaczynamy! Pobierz dzisiaj darmową Aplikację Biblii - a potem podziel się aplikacją ze znajomymi. Twórzmy razem historię!"
@@ -42,6 +47,8 @@ pl:
     connections:
       index:
         title: "Połączone konta"
+  ui:
+    loading indicator text: "Ładowanie..."
   now: "Teraz"
   celebrating 50MM: "Świętujemy 50 milionów instalacji aplikacji!"
   link: "Odnośnik"
@@ -57,7 +64,7 @@ pl:
   created ago: "Stworzono %{time_ago} temu"
   copy: "Kopiuj"
   copy confirmed: "Skopiowane!"
-  new note: "Nowa notatka"
+  new note: "Utwórz notatkę"
   share success: "Twoja wiadomość została udostępniona."
   share error: "Wystąpił błąd podczas udostępniania twojej wiadomości. Prosimy spróbuj ponownie."
   google plus: "Google +"
@@ -129,7 +136,6 @@ pl:
   chapter: "Rozdział"
   bible: "Biblia"
   notes title: "Notatki"
-  friends: "Przyjaciele"
   groups: "Grupy"
   mobile: "Mobilne"
   live: "Na żywo/Grupy"
@@ -150,7 +156,91 @@ pl:
   or:
     lower: "lub"
     upper: "LUB"
+  moments:
+    vod:
+      title: "Werset dnia"
+    friendship:
+      now friends: "Jesteś teraz znajomym"
+    cta:
+      profile update text: "Pomóż znajomym cię odnaleźć."
+      profile update button: "Uaktualnij swój profil"
+      sharing text: "Udostępnij wersety w portalach"
+      sharing button: "Włącz udostępnianie"
+      friends text: "Zobacz momenty swoich znajomych w Biblii."
+      friends button: "Znajdź znajomych"
+    action:
+      go to scripture: "Przejdź do Pisma"
+      load more: "Załaduj więcej"
+      like: "Lubię to"
+      like title: "Lubię to"
+      share: "Podziel się"
+      share title: "Podziel się wersetem ze znajomymi lub rodziną"
+      comment: "Komentarz"
+      comment title: "Zobacz wszystkie komentarze"
+      edit: "Edytuj"
+      edit highlight title: "Edytuj to zakreślenie"
+      edit bookmark title: "Edytuj tę zakładkę"
+      edit note title: "Edytuj tę notatkę"
+      delete: "Usuń"
+      delete confirm: "Czy jesteś pewien?"
+      delete highlight title: "Usuń to zakreślenie"
+      delete bookmark title: "Usuń tą zakładkę"
+      delete note title: "Usuń tę notatkę"
+  notifications:
+    title: "Powiadomienia"
+    none: "Nie masz żadnych powiadomień"
+    no new: "Brak nowych powiadomień"
+    view all: "Zobacz wszystkie powiadomienia"
+  comments:
+    post comment: "Opublikuj komentarz"
+    create success: "Skomentuj wpis"
+    create failure: "Komentarz nie mógł być opublikowany"
+    form:
+      save button: "Opublikuj"
+  friends:
+    you have N friends: "Masz %{count} znajomych"
+    none me: "Podziel się swoimi ważnymi chwilami w Biblii, takimi jak zakładki, zakreślenia i notatki, ze znajomymi i rodziną."
+    blank slate:
+      heading: "Jeszcze nie znajomi"
+      description: "Musisz być znajomym tej osoby, aby widzieć jej znajomych."
+    limit notice: "Możesz mieć nawet 150 znajomych"
+    limit description: "Ograniczając swoją znajomość w Aplikacji Biblii do osób, które dobrze znasz, tworzysz w ten sposób warunki do uczciwej rozmowy i dzielenia się swoimi odkryciami."
+  friendships:
+    offer success: "Wysłano zaproszenie"
+    offer failure: "Błąd, nie wysłano zaproszenia"
+    create success: "Jesteście teraz znajomymi"
+    create failure: "Błąd, nie utworzono znajomości"
+    destroy success: "Zaproszenie odrzucone"
+    destroy failure: "Błąd, nie odrzucono zaproszenia"
+    requests title: "Zaproszenia znajomych"
+    requests view all: "Zobacz wszystkie zaproszenia"
+    requests none: "Nie masz żadnych zaproszeń"
+    requests no new: "Brak nowych zaproszeń"
+    status:
+      pending: "Zaproszenie oczekuje"
+      friends: "Przyjaciele"
+    user wants friendship: "%{user} chce być twoim znajomym"
+    user wants friendship partial: "chce być twoim znajomym"
+    form:
+      remove friend button: "Usuń znajomego"
+      remove friend button title: "Usuń tę osobę ze swojej listy znajomych"
+      add friend button: "Dodaj znajomego"
+      add friend button title: "Wyślij %{user} zaproszenie do znajomych"
+      accept button: "Zaakceptuj"
+      accept request button: "Zaakceptuj zaproszenie"
+      ignore button: "Ignoruj"
+      ignore request button: "Ignoruj zaproszenie"
   notes:
+    none user: "%{username} nie ma jeszcze żadnych notatek."
+    blank slate:
+      heading: "Nie masz jeszcze notatek."
+      description: "Podczas czytania Biblii, gdy poczujesz, że Bóg przemawia do Ciebie cichym, delikatnym głosem, możesz szybko dodać te myśli tutaj. Twoje notatki będą oznaczone jako <em>prywatne</em>. Jeżeli chciałbyś się nimi podzielić z przyjaciółmi, wystarczy, że otworzysz je i ustawisz jako <em>publiczne</em>."
+    form:
+      title field: "Tytuł:"
+      content field: "Treść:"
+      reference field: "Odniesienia:"
+      status field: "Stan:"
+      save button: "Zapisz"
     list title: "Notatki"
     loading community: "Ładowanie notatek społeczności..."
     no community notes: "Nie znaleziono notatek odnoszących się do wybranych wersetów. Aby utworzyć notatkę, wybierz werset w czytniku Biblii i kliknij przycisk Wybrane u góry czytnika."
@@ -178,7 +268,10 @@ pl:
     cancel: "Zrezygnuj"
     pop out: "Wydziel"
     none found: "Nie znaleziono notatek..."
-    successfully deleted: "Notatka usunięta"
+    create success: "Notatka zapisana"
+    create failure: "Błąd, nie zapisano notatki"
+    destroy success: "Notatka usunięta."
+    destroy failure: "Błąd, nie usunięto notatki"
   ref:
     loading secondary: "Ładowanie odniesienia w drugim przekładzie..."
     clear verses: "Wyczyść zaznaczenie wersetów"
@@ -209,6 +302,8 @@ pl:
     profile form errors: "Poniższe błędy uniemożliwiły aktualizację twojego profilu:"
     email address: "Adres e-mail"
     user name: "Nazwa użytkownika"
+    first name: "Imię"
+    last name: "Nazwisko"
     agreement: "Zgadzam się z %{terms_link} YouVersion."
     terms and conditions: "Warunki użytkowania"
     facebook sign up success: "Doskonale! Dokonałeś autoryzacji przez Facebooka. By kontynuować, wybierz nazwę użytkownika YouVersion i hasło."
@@ -238,7 +333,7 @@ pl:
     edit account_existence: "Usuń Konto"
     delete account button: "Usuń moje Konto YouVersion"
     no devices: "Nie masz urządzeń podłączonych do konta YouVersion"
-    no devices download copy: "Aplikacja Biblii jest darmową mobilną Biblią, bazującą na Biblii on-line YouVersion.com, którą można zainstalować na niemal każdym urządzeniu. Aplikacja Biblii pozwala użytkownikom na czytanie Biblii, dzielenie się wersetami, zaznaczanie ulubionych fragmentów i korzystanie z innych funkcji&mdash;wszystko to w formie przyjaznej dla mobilnego trybu życia. Odwiedź <a href='http://www.youversion.com/download'>youversion.com/download</a> ze swojego urządzenia, aby pobrać Aplikację Biblii i połączyć urządzenie ze swoim kontem!"
+    no devices download copy: "Aplikacja Biblii jest darmową mobilną Biblią, bazującą na Biblii on-line YouVersion, którą można zainstalować na niemal każdym urządzeniu. Aplikacja Biblii pozwala użytkownikom na czytanie Biblii, dzielenie się wersetami, zaznaczanie ulubionych fragmentów i korzystanie z innych funkcji&mdash;wszystko to w formie przyjaznej dla mobilnego trybu życia. Odwiedź <a href='https://www.bible.com/app'>bible.com/app</a> ze swojego urządzenia, aby pobrać Aplikację Biblii i połączyć swoje konto!"
     yes delete: "Tak, usuń Moje Konto"
     account delete success: "Twoje konto YouVersion zostało usunięte. Mamy nadzieję, że będzie nadal znajdował sposoby, aby studiować Biblię. Niektóre z tych aplikacji mogą być Ci pomocne:  <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Jeżeli usuniesz swoje konto, utracisz bezpowrotnie wszystkie swoje informacje , historię i personalizację (notatki, zakładki, zakreślenia itp.) na YouVersion.com i w Aplikacji Biblii. Czynność ta nie może zostać cofnięta ani przez Ciebie, ani przez nasz zespół. Jeżeli jesteś pewny, że chcesz kontynuować, postępuj wg instrukcji niżej."
@@ -281,7 +376,7 @@ pl:
       what we collect: "Co gromadzimy i jak to używamy"
       your information title: "Informacje, które przekazujesz"
       your information text: "do not translate"
-      device id title: "Unikalny identyfikator urządzenia"
+      device id title: "Unikalny identyfikator urządzenia i lokalizacja GPS"
       device id text: "do not translate"
       cookies title: "Ciasteczka LifeChurch.tv"
       cookies text: "do not translate"
@@ -353,6 +448,16 @@ pl:
       general title: "Informacje ogólne"
       general text: "do not translate"
     profile:
+      blank slate:
+        heading: "Idź dalej, nie ma tu (jeszcze) nic do zobaczenia"
+        description: "Rozpocznij czytanie Biblii lub zaangażuj znajomego a ta strona będzie pokazywać historię waszej aktywności. "
+      visit friend: "Odwiedź profil %{friend}"
+      tab activity: "Aktywność"
+      tab friends: "Przyjaciele"
+      tab notes: "Notatki"
+      tab bookmarks: "Zakładki"
+      tab highlights: "Podkreślenia"
+      tab badges: "Odznaczenia"
       first name: "Imię"
       last name: "Nazwisko"
       email: "Adres e-mail"
@@ -392,6 +497,9 @@ pl:
       reading_plans: "Powiadamiaj mnie o informacjach dotyczących planów czytania, które rozpocząłem."
       publishing partners: "Informuj mnie o nowościach na stronach partnerów YouVersion."
       update: "Powiadomienia o akutalizacji"
+      friendships: "Powiadamiaj mnie o zaproszeniach"
+      moments: "Powiadamiaj mnie o aktywności znajomych"
+      comments: "Powiadamiaj mnie o komentzarzach do mojej aktywności"
   bookmarks:
     new: "Nowa zakładka"
     edit: "Edytuj"
@@ -405,9 +513,10 @@ pl:
     not found: "Korzystanie z zakładek ułatwi ci znalezienie ulubionych fragmentów, lub wersetu, który ostatnio czytałeś w określonej księdze. Aby dodać zakładkę, wybierz werset w czytniku Biblii, a następnie kliknij przycisk Wybrane na górze czytnika."
     other user not found: "%{username} nie zachował jeszcze żadnych zakładek."
     creation form errors: "Poniższe błędy nie pozwoliły na utworzenie zakładki:"
-    successfully created: "Zakładka dodana"
-    successfully deleted: "Zakładka usunięta"
-    successfully updated: "Zakładka zaktualizowana"
+    create success: "Zapisano zakładki"
+    destroy success: "Usunięto zakładkę"
+    destroy failure: "Błąd, nie usunięto zakładki"
+    update success: "Uaktualniono zakładkę"
     labels placeholder: "Oddziel kolejne etykiety przecinkami."
     save: "Zapisz zakładkę"
     confirm delete: "Tak, na pewno."
@@ -418,9 +527,23 @@ pl:
     update: "Uaktualnij"
     color: "Kolor:"
     version field: "Przekład:"
+    none user: "%{username} nie ma zakładek"
+    blank slate:
+      heading: "Zaznacz ważne wersety"
+      description: "Podczas czytania Biblii, wybierz werset i zaznacz go. Powróć tu, aby przeglądać, edytować lub usunąć swoją zakładkę."
+    form:
+      title field: "Tytuł:"
+      reference field: "Odniesienia:"
+      labels field: "Etykiety (oddzielone przecinkami):"
+      colors field: "Kolor:"
+      update button: "Uaktualnij zakładkę"
+      save button: "Zapisz zakładkę"
   badges:
     earned a badge: "Otrzymałeś odznaczenie"
     user badges: "Odznaczenia użytkownika %{user}"
+    earned date: "Zdobyte przez %{username} %{ago} temu"
+    none me: "Nie zdobyłeś jeszcze żadnych odznaczeń."
+    none user: "%{username} nie zdobył jeszcze żadnych odznaczeń."
   plans:
     title: "Plany czytania"
     browse by category: "Przeglądaj według kategorii"
@@ -525,6 +648,7 @@ pl:
     loading sidebar content: "Ładowanie treści bocznego paska..."
   videos:
     title: "Nagrania wideo"
+    all: "Wszystkie wideo"
     related scripture: "Powiązane Pismo Święte"
   licenses:
     authorized:
@@ -564,7 +688,15 @@ pl:
     chapter only: "Wersja audio nie jest dostępna dla tych wersetów. Sprawdź rozdziały audio w czytniku."
     close player menu: "Zamknij"
   highlights:
+    blank slate:
+      heading: "Zakreśl ważne wersety"
+      description: "Podczas czytania Biblii, wybierz werset i zakreśl go. Powróć tu, aby przeglądać, edytować lub usunąć swoje zakreślenie."
+    none user: "%{username} nie ma zakreśleń"
     choose color: "Wybierz kolor"
+    create success: "Zakreślenie zapisane"
+    create failure: "Błąd, nie zapisano zakreślenia"
+    destroy success: "Zakreślenie usunięte"
+    destroy failure: "Błąd, nie usunięto zakreślenia"
     creation error: "Niestety, nie można było zakreślić."
     delete error: "Niestety, nie można było usunąć zakreślenia."
   searching:
@@ -654,6 +786,7 @@ pl:
     h3: "YouVersion jest globalne"
     h3 sub: "Dostępne w ponad 100 językach świata."
     main: "Dziesiątki milionów ludzi używają Aplikacji Biblii, aby uczynić Słowo Boże częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania z dowolnego miejsca. Ciesz się setkami przekładów i wersjami audio - dostępne na twoim mobilnym urządzeniu."
+    button h4: "Przejdź do Bible.com/app"
     button h4 sub: "Na twoim urządzeniu mobilnym"
     download now: "Pobierz teraz Aplikację Biblii"
     what people: "Co ludzie mówią o darmowej Aplikacji Biblii..."

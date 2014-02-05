@@ -32,7 +32,12 @@ fr:
     users username not available: "Le nom d'utilisateur saisi n'est pas disponible."
     users username or password invalid: "Le nom d'utilisateur ou le mot de passe est invalide."
     users username required: "Vous devez saisir un identifiant."
+    users first name required: "Vous devez saisir un prénom."
+    users last name required: "Vous devez saisir un nom."
   meta:
+    kids_app:
+      title: "La Bible App pour Enfants"
+      description: "..."
     100million:
       title: "Ça démarre avec 100 Millions "
       description: "La Bible App a été installée pratiquement 100 millions de fois - une étape incroyable! Cela dit, ce n'est que le début. Aujourd'hui téléchargez gratuitement la Bible App et partagez-la avec vos amis. Ensemble, réécrivons l'histoire."
@@ -42,6 +47,8 @@ fr:
     connections:
       index:
         title: "Comptes liés"
+  ui:
+    loading indicator text: "Chargement..."
   now: "Maintenant"
   celebrating 50MM: "Célébration des 50 millions d'installations de cette app!"
   link: "Lien"
@@ -129,7 +136,6 @@ fr:
   chapter: "Chapitre"
   bible: "Bible"
   notes title: "Notes"
-  friends: "Amis"
   groups: "Groupes"
   mobile: "Mobile"
   live: "Live/Groupes"
@@ -150,7 +156,91 @@ fr:
   or:
     lower: "ou"
     upper: "OU"
+  moments:
+    vod:
+      title: "Verset du jour"
+    friendship:
+      now friends: "Vous êtes désormais amis avec"
+    cta:
+      profile update text: "Aidez vos amis à vous trouver"
+      profile update button: "Mettre à jour votre profil"
+      sharing text: "Partager les versets sur les réseaux sociaux"
+      sharing button: "Activer le partage"
+      friends text: "Voir les moments de vos amis avec la Bible."
+      friends button: "Trouver des amis"
+    action:
+      go to scripture: "Aller au verset"
+      load more: "Charger davantage"
+      like: "Aimer"
+      like title: "Aimer ça"
+      share: "Partager"
+      share title: "Partager ça avec vos amis ou votre famille"
+      comment: "Commenter"
+      comment title: "Voir tous les commentaires"
+      edit: "Modifier"
+      edit highlight title: "Editer cette surbrillance"
+      edit bookmark title: "Editer ce favori"
+      edit note title: "Editer cette note"
+      delete: "Supprimer"
+      delete confirm: "Etes-vous sûr ?"
+      delete highlight title: "Supprimer cette surbrillance"
+      delete bookmark title: "Supprimer ce favori"
+      delete note title: "Supprimer cette note"
+  notifications:
+    title: "Notifications"
+    none: "Vous n'avez pas de notifications"
+    no new: "Aucune nouvelle notification"
+    view all: "Voir toutes les Notifications"
+  comments:
+    post comment: "Poster un commentaire"
+    create success: "Commentaire enregistré"
+    create failure: "Le commentaire n'a pas pu être enregistré"
+    form:
+      save button: "Poster"
+  friends:
+    you have N friends: "Vous avez %{count} amis"
+    none me: "Partagez vos moments avec la Bible tels que les favoris, les surbrillances et les notes avec votre famille et vos amis les plus proches."
+    blank slate:
+      heading: "Pas encore amis"
+      description: "Vous devez être ami avec cette personne pour pouvoir voir ses amis."
+    limit notice: "Vous pour avoir jusqu'à 150 amis"
+    limit description: "Limiter vos relations dans la Bible App aux personnes que vous connaissez bien favorise un environnement propice aux conversations honnêtes et au partage des découvertes entre amis de confiance."
+  friendships:
+    offer success: "Demande de contact envoyée"
+    offer failure: "Erreur lors de l'envoi de la demande"
+    create success: "Vous êtes désormais amis"
+    create failure: "Erreur à l'ajout de la relation"
+    destroy success: "Demande déclinée"
+    destroy failure: "Erreur en refusant la requête"
+    requests title: "Demandes de contact"
+    requests view all: "Voir toutes les demandes d'amité"
+    requests none: "Vous n'avez aucune demande d'amitié"
+    requests no new: "Aucune nouvelle requête"
+    status:
+      pending: "Requête en attente"
+      friends: "Amis"
+    user wants friendship: "%{user} veut être ton ami"
+    user wants friendship partial: "veut être ton ami"
+    form:
+      remove friend button: "Supprimer un ami"
+      remove friend button title: "Supprimer cette personne de votre liste d'amis"
+      add friend button: "Ajouter un ami"
+      add friend button title: "Envoyer une demande d'amitié à %{user}"
+      accept button: "Accepter"
+      accept request button: "Accepter la demande"
+      ignore button: "Ignorer"
+      ignore request button: "Ignorer la demande"
   notes:
+    none user: "%{username} n'a pas encore pris de notes."
+    blank slate:
+      heading: "Vous n'avez pas encore de notes"
+      description: "Lorsque vous lisez la Bible, quand vous sentez le murmure de Dieu vous parlant, vous pouvez ajouter rapidement ces pensées ici. Vos notes seront enregistrées comme étant <em>privées</em> par défaut. Pour en partager une avec des amis, ouvrez-la et marquez-la comme <em>publique</em>."
+    form:
+      title field: "Titre :"
+      content field: "Contenu :"
+      reference field: "Référence(s) :"
+      status field: "Statut :"
+      save button: "Enregistrer"
     list title: "Notes"
     loading community: "Chargement des notes de la communauté ..."
     no community notes: "Aucune note de la communauté référençant l'un des versets sélectionnés n'a été trouvée. Pour créer une note, vous devez sélectionner le verset dans le Lecteur de Bible et puis cliquer le bouton sélectionné au dessus du lecteur."
@@ -178,7 +268,10 @@ fr:
     cancel: "Annuler"
     pop out: "Nouvelle fenêtre"
     none found: "Pas de notes trouvées."
-    successfully deleted: "Note supprimée"
+    create success: "Note enregistrée"
+    create failure: "Erreur de d'enregistrement de la  note"
+    destroy success: "Note supprimée"
+    destroy failure: "Erreur de suppression de la  note"
   ref:
     loading secondary: "Charge les références dans la version secondaire..."
     clear verses: "Effacer les versets selectionnés"
@@ -209,6 +302,8 @@ fr:
     profile form errors: "L'erreur (les erreurs) suivante(s) empêche(nt) la mise à jour de votre profil:"
     email address: "Adresse Email :"
     user name: "Nom d'utilisateur :"
+    first name: "Prénom"
+    last name: "Nom"
     agreement: "J'accepte les termes et les conditions de YouVersion %{terms_link}."
     terms and conditions: "Les Termes et Conditions d'utilisation"
     facebook sign up success: "Super! Accès autorisé via Facebook. Choisissez un nom d'utilisateur et un mot de passe YouVersion pour continuer."
@@ -238,7 +333,7 @@ fr:
     edit account_existence: "Supprimer mon compte"
     delete account button: "Supprimer mon compte YouVersion"
     no devices: "Aucun appareil n'est relié à votre compte YouVersion"
-    no devices download copy: "Basée sur la bible en ligne, YouVersion.com, la Bible App est une application mobile qui peut être installée sur n'importe quel appareil mobile. La Bible App permet aux utilisateurs de lire la Bible, partager des versets sur leurs réseaux sociaux, enregistrer leurs passages préférés et plus &mdash; le tout dans un format compatible avec leur mode de vie de plus en plus mobile. Consultez <a href='https://www.bible.com/download'>bible.com/download</a> depuis votre appareil mobile pour télécharger la Bible App et connecter votre compte !"
+    no devices download copy: "Basée sur la bible en ligne, YouVersion, la Bible App est une application biblique gratuite qui peut être installée sur n'importe quel appareil mobile. La Bible App permet aux utilisateurs de lire la Bible, partager des versets sur leurs réseaux sociaux, enregistrer leurs passages préférés et plus &mdash; le tout dans un format compatible avec leur mode de vie de plus en plus mobile. Consultez <a href='https://www.bible.com/fr/app'>bible.com/fr/app</a> depuis votre appareil mobile pour télécharger la Bible App et connecter votre compte !"
     yes delete: "Oui, supprimer mon compte."
     account delete success: "Votre compte YouVersion a été supprimé avec succès . Nous espérons que vous continuerez à trouver des moyens de méditer la Bible. Certaines de ces applications pourraient vous être utiles pour la suite : <a href='https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
     delete account description: "Si vous supprimez votre compte, vous éliminez définitivement toutes vos informations, l'histoire, et la personnalisation (comme les notes, signets, surlignages, etc) au sein de YouVersion.com et de l 'App Bible. Cette action ne peut pas être inversée par vous ou par notre équipe. Si vous êtes certain de vouloir continuer, poursuivez ci-dessous."
@@ -353,6 +448,16 @@ fr:
       general title: "Informations générales"
       general text: "Intégralité de l'accord. Ces Conditions d'utilisation constituent l'accord entier entre vous et LifeChurch.tv et régit votre utilisation de YouVersion, annule et remplace tous les accords antérieurs entre vous et LifeChurch.tv à l'égard de YouVersion. Vous pouvez également être soumis à des conditions supplémentaires.%{line_break} Le choix de la loi et du Forum. Les CONDITIONS D'UTILISATION et la relation entre vous et LifeChurch.tv doivent être régie par les lois de l'État de l'Oklahoma, sans égard à son conflit de dispositions légales. Vous et LifeChurch.tv conviennent de soumettre à la juridiction personnelle et exclusive des tribunaux situés dans le comté de l'Oklahoma. %{line_break} Renonciation et divisibilité des conditions. L'échec de LifeChurch.tv à exercer ou à appliquer tout droit ou disposition des présentes Conditions d'utilisation ne doivent pas constituer une renonciation à ce droit ou à cette disposition. Si une quelconque disposition de ces Conditions d'utilisation est jugée par un tribunal de juridiction compétente comme étant invalide, les parties conviennent néanmoins que le tribunal devrait s'efforcer de donner effet aux intentions des parties telles que reflétées dans la mise à disposition, et les autres dispositions des présentes conditions d'utilisation restent en vigueur et de plein effet.,%{line_break} Le droit de survie et non transférable. Vous acceptez que votre compte LifeChurch.tv soit non-transférable, et que tous les droits sur votre identifiant LifeChurch.tv ou le contenu de votre compte prennent fin à votre décès. Dès réception d'une copie d'un certificat de décès, LifeChurch.tv peut résilier votre compte et supprimer définitivement tous les contenus qui y sont. %{line_break} Délai de prescription. Vous comprenez et acceptez que, indépendamment de tout statut ou loi contraire, toute réclamation ou cause d'action découlant de ou liée à l'utilisation de YouVersion ou des CONDITIONS D'UTILISATION doit être déposée dans les (1) an après une telle revendication ou la cause de action a pris naissance ou être à jamais interdit.%{line_break} Les titres de section au sein de ces CONDITIONS D'UTILISATION sont par commodité seulement et n'ont aucun effet légal ou contractuel."
     profile:
+      blank slate:
+        heading: "Circulez, il n'y a rien à voir ici (pour l'instant)"
+        description: "Commencez à étudier la Bible ou à partager avec vos amis, et cette page affichera l'historique de votre activité."
+      visit friend: "Consulter le profil de %{friend}"
+      tab activity: "Activité"
+      tab friends: "Amis"
+      tab notes: "Notes"
+      tab bookmarks: "Favoris"
+      tab highlights: "Surbrillances"
+      tab badges: "Badges"
       first name: "Prénom"
       last name: "Nom"
       email: "Adresse email"
@@ -392,6 +497,9 @@ fr:
       reading_plans: "M'informer au sujet des plans de lecture que j'ai commencés"
       publishing partners: "Tenez-moi informés au sujet des nouvelles concernant les partenaires de contenu de YouVersion."
       update: "Mettre à jour mes alertes"
+      friendships: "M'informer des demandes d'amitiés"
+      moments: "M'informer de l'activité de mes amis"
+      comments: "M'informer des commentaires sur mon activité"
   bookmarks:
     new: "Nouveau signet"
     edit: "Modifier"
@@ -405,9 +513,10 @@ fr:
     not found: "Les signets vous permettent de vous souvenir de ce que vous avez lu en dernier, vous servant ainsi de guide de référence rapide vers vos passages préférés ou encore vers le dernier chapitre que vous avez lu dans un livre en particulier. Afin de créer un signet, sélectionnez un verset dans le lecteur de la Bible, puis cliquez le bouton Signet."
     other user not found: "%{username} n'a pas encore de favoris."
     creation form errors: "L'erreur suivante a empêché la création de votre signet:"
-    successfully created: "Favori ajouté"
-    successfully deleted: "Favori supprimé"
-    successfully updated: "Signet mis à jour"
+    create success: "Favori enregistré"
+    destroy success: "Favori supprimé"
+    destroy failure: "Erreur de suppression du favori"
+    update success: "Favori mis à jour"
     labels placeholder: "Séparer les différentes étiquettes avec une virgule."
     save: "Enregistrer favori"
     confirm delete: "Oui, j'en suis sûre"
@@ -418,9 +527,23 @@ fr:
     update: "Mettre à jour"
     color: "Couleur:"
     version field: "Version:"
+    none user: "%{username} n'a pas de favoris"
+    blank slate:
+      heading: "Ajoutez les versets importants aux favoris"
+      description: "Pendant la lecture de la Bible, sélectionnez un verset et mettez-le en favori. Retournez ici pour voir, modifier, ou supprimer votre favori."
+    form:
+      title field: "Titre :"
+      reference field: "Référence :"
+      labels field: "Étiquettes (séparées par des virgules) :"
+      colors field: "Couleur :"
+      update button: "Mettre à jour le Favori"
+      save button: "Enregistrer favori"
   badges:
     earned a badge: "Gagné un badge"
     user badges: "Les badges de %{user}"
+    earned date: "Gagné par %{username} il y a %{ago}"
+    none me: "Vous n'avez gagné aucun badge pour l'instant."
+    none user: "%{username} n'a gagné aucun badge pour l'instant."
   plans:
     title: "Plans de lecture"
     browse by category: "Parcourir par catégorie"
@@ -525,7 +648,8 @@ fr:
     loading sidebar content: "Chargement de la barre de menu..."
   videos:
     title: "Vidéos"
-    related scripture: "Notes relatives"
+    all: "Toutes les vidéos"
+    related scripture: "Versets associés"
   licenses:
     authorized:
       heading: "Votre contenu a été autorisé."
@@ -564,7 +688,15 @@ fr:
     chapter only: "Désolé, l'audio n'est pas disponible pour les versets. Veuillez accéder au lecteur pour les chapitres audio."
     close player menu: "Fermer"
   highlights:
+    blank slate:
+      heading: "Surlignez des versets importants"
+      description: "Pendant que vous lisez la Bible, sélectionnez un verset et surlignez-le. Retournez ici pour le voir, le modifier, ou le supprimer."
+    none user: "%{username} n'a rien surligné"
     choose color: "Choisir la couleur"
+    create success: "Surbrillance enregistrée"
+    create failure: "Erreur d'enregistrement de la surbrillance"
+    destroy success: "Surbrillance supprimée"
+    destroy failure: "Erreur de suppression de la surbrillance"
     creation error: "Désolé, nous n'avons pu surligner"
     delete error: "Désolé, échec dans la suppression de surlignement."
   searching:
@@ -654,6 +786,7 @@ fr:
     h3: "YouVersion est Planétaire"
     h3 sub: "Disponible dans plus de 100 langues de par le monde."
     main: "Des dizaines de millions de personnes utilisent l'application Bible App™ pour appliquer la Parole de Dieu dans leur quotidien. Téléchargez l'application gratuite et accédez à vos favoris, notes et plans de lecture où que vous vous trouviez. Profitez des centaines de versions disponibles, y compris des versions audio, tout cela à partir de votre appareil mobile."
+    button h4: "Aller sur Bible.com/fr/app"
     button h4 sub: "Sur votre appareil mobile"
     download now: "Télécharger la Bible App maintenant"
     what people: "Ce que les gens disent à propos de la Bible App..."
@@ -691,9 +824,9 @@ fr:
         study heading: "Etudier la Bible"
         study description: "<strong>Surlignez</strong>avec votre couleur préférée, <strong>sauvegardez</strong> vos versets bibliques préférés, et prenez des notes à propos de ce que vous apprenez. Non seulement vous passez le temps dans la Parole de Dieu, mais vous bâtissez aussi une histoire de votre interaction avec la Bible."
         subscribe heading: "S'abonner aux Plans biblques."
-        subscribe description: "Parcourez la Bible en entier, concentrez-vous sur un sujet, ou lisez une pensée d'un enseignant qualifié. Choisissez votre plan et chaque jour vous trouverez une sélection de la Bible rien que pour vous."
+        subscribe description: "Parcourez la Bible en entier, concentrez-vous sur un sujet, ou lisez une pensée d'un enseignant qualifié. Choisissez votre plan et chaque jour vous trouverez une sélection rien que pour vous."
         download heading: "Prenez la Bible avec vous."
-        download description: "<a href='http://youversion.com/download'>Téléchargez</a> gratuitement la Bible App sur tous les appareils mobiles. Quand vous utilisez l'application mobile, vos notes, favoris, surlignages, et plus seront automatiquement synchronisés sur tous vos appareils"
+        download description: "<a href='http://youversion.com/download'>Téléchargez</a> gratuitement la Bible App sur tous les appareils mobiles. Quand vous utilisez l'application mobile, vos notes, favoris, surbrillances, et plus seront automatiquement synchronisés sur tous vos appareils"
       get started: "Débutez avec votre compte gratuit."
       word with you: "La Parole de Dieu est avec vous."
       download action: "Téléchargez la Bible App"
