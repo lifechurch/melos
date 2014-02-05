@@ -390,12 +390,12 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   .moment-content-actions-delete {
-    background: image-url("edit-delete-sprite@2x.png") no-repeat -65px 0;
+    background: image-url("edit-delete-sprite@2x.png") no-repeat 0px -69px;
   }
 
   .moment-content-actions-edit,
   .moment-content-actions-delete {
-    background-size: 78px 51px;
+    background-size: 15px 120px;
   }
 
   .moment-content-actions-edit:hover {
@@ -403,7 +403,7 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   .moment-content-actions-delete:hover {
-    background-position: -65px -35px;
+    background-position: 0px -104px;
   }
 
 
