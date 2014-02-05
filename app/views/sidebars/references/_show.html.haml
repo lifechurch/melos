@@ -3,18 +3,11 @@
   # presenter: Reference Presenter (Presenter::Reference)
   
   reference = presenter.reference
-  locale = I18n.locale.to_s
-  ajax_url = (locale == "en") ? "/bible/widgets/bookmarks" : "/#{locale}/bible/widgets/bookmarks"
 
-= render partial: 'widgets/reader_help'
 
-- if current_auth #only show bookmarks widget if authed
-  #widget-bookmarks.widget.ajax_bookmarks{"data-ajax" => ajax_url}
-    %h3.hd
-      %span= t('recent bookmarks')
-    %div.bd
-      %p= t('bookmarks.loading')
-
-= render partial: 'sidebars/notes/stub', locals: {title: t("notes.community notes"), reference: reference}
+= render partial: 'widgets/find_friends'
+= render partial: 'widgets/my_plans'
+= render partial: 'widgets/plans_promo'
+= render partial: 'sidebars/notes/stub', locals: {reference: reference}
 
 = render partial: 'widgets/download_app'

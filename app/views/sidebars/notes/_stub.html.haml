@@ -3,12 +3,10 @@
 
   # Local Variables
   # reference  (required)
-  # title      (optional)
 
-   title = title || "Notes"
-
-#widget-notes.widget.ajax_notes{"data-ajax" => "#{bible_path(reference)}/notes"}
+- #widget-notes.widget.ajax_notes{"data-ajax" => "#{bible_path(reference)}/notes"}
+#widget-notes.widget
   %div.hd
-    %span= title
+    %span= t("notes.community notes")
   %div.bd
-    %p= t('notes.loading community')
+    Coming soon ...
