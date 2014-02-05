@@ -339,6 +339,9 @@
 .dynamic_menu #new_note_modal:hover
   background: image-url("icon_open_modal.png") no-repeat 95% center #2e2e2e
 
+
+// !Reader verse actions
+
 #menu_verse_actions
   display: none
   position: relative
@@ -406,7 +409,7 @@
   background-position: -473px 10px
 
 #menu_verse_actions dt.related
-  background-position: -557px 10px 
+  background-position: -557px 10px
   position: relative
   +opacity(1)
 
@@ -415,7 +418,7 @@
   +opacity(0.3)
   cursor: default
 
-#menu_verse_actions dt.related .count 
+#menu_verse_actions dt.related .count
   text-align: center
   text-indent: 0
   position: absolute
@@ -463,72 +466,108 @@
     repeat: no-repeat
     position: 100% -46px
 
+
+// !Reader verse actions: bookmark
+
 #menu_verse_actions #bookmark-pane .pane
   padding-bottom: 0
 
 #menu_verse_actions #bookmark-pane .pane input[type="text"]
   width: 300px
 
-#menu_verse_actions #share-pane .pane
-  padding: 20px 20px 0
-  .share_errors
-    color: red
-    font-weight: bold
 
-#menu_verse_actions #share-pane .share_message textarea
-  margin-bottom: 8px
-  line-height: 18px
+// !Reader verse actions: share
+
+#menu_verse_actions #share-pane
+
+  .pane
+    padding: 20px 20px 0
+    .share_errors
+      color: red
+      font-weight: bold
+
+  .share_message textarea
+    margin-bottom: 8px
+    line-height: 18px
+
+  .share_services
+    overflow: hidden
+    margin-top: 10px
+    display: table
+    width: 558px
+
+  .share_logo,
+  .share_checkbox,
+  .share_character_count
+    display: table-cell
+    height: 32px
+    vertical-align: center
+
+  .share_logo
+    width: 42px
+
+  .share_logo_fb,
+  .share_logo_twitter
+    display: block
+    height: 32px
+    width: 32px
+
+  .share_logo_fb
+    background: image-url("reader-share-sprite.png") no-repeat 0 0
+
+  .share_logo_twitter
+    background: image-url("reader-share-sprite.png") no-repeat 0 -43px
+
+  .share_checkbox
+    width: 46px
+
+  .share_character_count
+    width: 455px
+    overflow: hidden
+    padding: 0 0 0 15px
+
+  .share_action
+    clear: both
+    margin-top: 8px
+    float: none
+    margin-bottom: 20px
+    & button
+      color: #ffffff
+      font-size: 15px
+      font-weight: 500
+      letter-spacing: 0.30px
+      &:active
+        color: white
+      &:focus
+        color: white
+        position: relative
+        top: 1px
 
 #menu_verse_actions #share-pane .share_services
-  overflow: hidden
-  margin-top: 10px
 
-#menu_verse_actions #share-pane .share_action
-  clear: both
-  margin-top: 8px
-  float: none
-  margin-bottom: 20px
-  & button
-    color: #ffffff
-    font-size: 15px
-    font-weight: 500
-    letter-spacing: 0.30px
-    &:active
-      color: white
-    &:focus
-      color: white
-      position: relative
-      top: 1px
-
-#menu_verse_actions #share-pane .share_services .share_button
-  display: block
-  float: left
-  margin-left: 5px
-  border-radius: 4px
-  border: 1px solid #e1e1e1
-  padding: 4px 6px 0 6px
-  height: 32px
-  &:hover
-    background-color: #efefef
-  &::selection
-    background: transparent
-    cursor: default
-  &::-moz-selection
-    background: transparent
-    cursor: default
-  & span::selection
-    background: transparent
-    cursor: default
-  & span::-moz-selection
-    background: transparent
-    cursor: default
-  &.network_active
-    background-color: #e5e5e5
+  .share_button
+    display: block
     &:hover
-      background-color: #cdcdcd
+      background-color: #efefef
+    &::selection
+      background: transparent
+      cursor: default
+    &::-moz-selection
+      background: transparent
+      cursor: default
+    & span::selection
+      background: transparent
+      cursor: default
+    & span::-moz-selection
+      background: transparent
+      cursor: default
+    &.network_active
+      background-color: #e5e5e5
+      &:hover
+        background-color: #cdcdcd
 
-#menu_verse_actions #share-pane .share_services span:first-child
-  margin-left: 0
+  span:first-child
+    margin-left: 0
 
 #menu_verse_actions #share-pane .character_count
   background-color: #efefef
@@ -549,8 +588,14 @@
 #menu_verse_actions #share-pane .share_services .share_button .translation_missing
   border: 0
 
+
+// !Reader verse actions: link
+
 #menu_verse_actions #link-pane .pane
   padding: 20px
+
+
+// !Reader verse actions: note
 
 #menu_verse_actions #note-pane .pane
   padding: 20px

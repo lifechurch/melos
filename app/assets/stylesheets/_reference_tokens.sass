@@ -19,23 +19,16 @@
     display: block
     padding: 2px 29px 2px 10px
     font-weight: bold
-    text-shadow: 0px 1px 0px rgba(#000, .6)
     font-size: 11px
     color: white
-    +background-image(image-url("close_reference_token.png"), linear-gradient(#0093d0, #0072bc))
+    background: #0093d0 image-url("close_reference_token.png") no-repeat right 5px
     background:
-      repeat: no-repeat
-      position: right 5px, center center
       size: auto
     border-radius: 15px
     text-decoration: none
 
 .reference_tokens > li a:hover
-  +background-image(image-url("close_reference_token.png"), linear-gradient(#007cad, #00588f))
-  background:
-    repeat: no-repeat
-    position: right -23px, center center
-    size: auto
+  background-color: #007cad
 
 .reference_tokens.read_only > li a
   padding: 2px 10px 2px 10px
@@ -67,3 +60,4 @@
 .dynamic_menu header ul a
   border-top: 0px
   border-bottom: 0px
+

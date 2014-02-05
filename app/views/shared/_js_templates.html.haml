@@ -20,7 +20,7 @@
             <div class="color_picker_list">
               <div class="color_picker"></div>
             </div>
-            <button type="submit" name="bookmark[submit]" value="submit">
+            <button type="submit" name="bookmark[submit]" value="submit" class="action_button_green">
               #{t('highlights.form.save button')}
             </button>
           </form>
@@ -54,13 +54,13 @@
               <br />
               <input type="text" id="bookmark_labels" name="bookmark[labels]" placeholder="#{t("bookmarks.labels placeholder")}" />
             </p>
-            
+
             <label>Highlight: (optional)</label>
             <div class="color_picker_list">
               <div class="color_picker"></div>
             </div>
             <p>
-              <button type="submit" name="bookmark[submit]" value="submit">
+              <button type="submit" name="bookmark[submit]" value="submit" class="action_button_green">
                 #{t('bookmarks.form.save button')}
               </button>
             </p>
@@ -93,9 +93,9 @@
             %label Highlight: (optional)
             .color_picker_list
               .color_picker
-          
+
           %div.save
-            %button
+            %button.action_button_green
               = t('notes.form.save button')
 
   %script#pane-related-tmpl{type:"text/x-handlebars-template"}
@@ -128,36 +128,51 @@
               <span class='share_total_characters'>
               </span>
             </div>
-            <div class="share_character_count">
-              <span class="tw"></span>
-              <span class="tw-text">
-                Twitter characters remaining (140 Maximum)
-              </span>
 
-              <br/>
-              <span class="fb"></span>
-              <span class="fb-text">
-                Facebook characters remaining (420 Maximum)
-              </span>
-            </div>
             <div class="share_services">
-              <span id="share_twitter" class="share_button">
-                <input id="checkbox_share_twitter" type="checkbox" name="share[connections][twitter]" />
-                <span class="share_verse_twitter">
-                  #{t("twitter")}
+              <span class="share_logo">
+                <span class="share_logo_fb">&nbsp;</span>
+              </span>
+              <span class="share_checkbox">
+                <span class="share_button">
+                  <input id="checkbox_share_facebook" type="checkbox" name="share[connections][facebook]" />
+                  <span class="share_verse_facebook">
+                    #{t("Facebook")}
+                  </span>
                 </span>
               </span>
-              <span id="share_facebook" class="share_button">
-                <input id="checkbox_share_facebook" type="checkbox" name="share[connections][facebook]" />
-                <span class="share_verse_facebook">
-                  #{t("Facebook")}
+              <span class="share_character_count">
+                <span class="fb"></span>
+                <span class="fb-text">
+                  Facebook characters remaining (420 Maximum)
                 </span>
               </span>
             </div>
+
+           <div class="share_services">
+              <span class="share_logo">
+                <span class="share_logo_twitter">&nbsp;</span>
+              </span>
+              <span class="share_checkbox">
+                <span class="share_button">
+                  <input id="checkbox_share_twitter" type="checkbox" name="share[connections][twitter]" />
+                  <span class="share_verse_twitter">
+                    #{t("twitter")}
+                  </span>
+                </span>
+              </span>
+              <span class="share_character_count">
+                <span class="tw"></span>
+                <span class="tw-text">
+                  Twitter characters remaining (140 Maximum)
+                </span>
+              </span>
+            </div>
+
             <div class="share_errors" data-error-none-checked="Please select at least one social network" data-error-character-limit="Please delete some characters or choose a different social network">
             </div>
             <div class="share_action">
-              <button id="share_action_submit" type="submit" name="share[submit]" value="submit" class="">
+              <button id="share_action_submit" type="submit" name="share[submit]" value="submit" class="action_button_blue">
                 #{t('ref.share now')}
               </button>
             </div>
@@ -246,7 +261,7 @@
   :plain
     <ul>
       {{#each incoming}}
-      <li>  
+      <li>
         <div class="list-item">
           <div class="item-content">
             <img class="round-avatar" src="{{avatars.collection.1.url}}" height="48" width="48" />
@@ -256,7 +271,7 @@
             </p>
           </div>
           <div class="item-actions">
-            
+
             <form accept-charset="UTF-8" action="/friendships?user_id={{id}}" method="post">
               <input name="utf8" type="hidden" value="✓" />
               <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
@@ -284,7 +299,7 @@
         </p>
       </li>
       {{/each}}
-    </ul>    
+    </ul>
     <div class="view-all">
       {{#if incoming}}
         #{link_to(t("friendships.requests view all"),"/friendships/requests", class:"text-link wide" )}
@@ -311,7 +326,7 @@
         </span>
       </p>
       <a href="#" class="moment-comment-delete" data-comment-id="{{id}}">x</a>
-    </li>   
+    </li>
 
 %script#moment-share-layer-tmpl{type:"text/x-handlebars-template"}
   %div.moment-actions-share-box
@@ -323,4 +338,3 @@
           Facebook
       %span    
         %a{href:"#", target: "_blank", title: "Share this on Twitter", class: "twitter moment-actions-share-twitter"}
-          Twitter

@@ -429,7 +429,7 @@ only screen and (                min-resolution: 2dppx) {
   }
 
 
-  // !Verse task bar
+  // Reader
 
   .color span {
     background: image-url("menu_color_selected@2x.png") no-repeat center 3px;
@@ -453,6 +453,21 @@ only screen and (                min-resolution: 2dppx) {
   #widget-notes .hd span {
     background: image-url("widgets-sprite@2x.png") no-repeat 0 1px;
     background-size: 16px 120px;
+  }
+
+  .reference_tokens > li a {
+    background: #0093d0 image-url("close_reference_token@2x.png") no-repeat right 5px;
+    background-size: 24px 41px;
+  }
+
+  #menu_verse_actions #share-pane .share_logo_fb {
+    background: image-url("reader-share-sprite.png") no-repeat 0 0;
+    background-size: 32px 150px;
+  }
+
+  #menu_verse_actions #share-pane .share_logo_twitter {
+    background: image-url("reader-share-sprite.png") no-repeat 0 -43px;
+    background-size: 32px 150px;
   }
 
 }
