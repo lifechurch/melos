@@ -14,6 +14,8 @@ class MomentsController < BaseMomentsController
   def index
     @user    = current_user
     @moments = Moment.all(auth: current_auth, page: @page)
+    recent_versions = client_settings.recent_versions.present? ? client_settings.recent_versions.split("/") : [client_settings.version || Version.default]
+    @moments.unshift(VOD.day(Date.today.yday,version_id: client_settings.version, recent_versions: recent_versions))
   end
 
   def related

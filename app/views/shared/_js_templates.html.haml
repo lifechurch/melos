@@ -209,6 +209,12 @@
     <p class="moment-verse">{{content_plain}}</p>
     <a href="{{to_path}}" title="#{t('moments.action.go to scripture')}" class="moment-verse-link">{{human}} {{version_string}}</a>
 
+%script#moment-votd-verse-tmpl{type:"text/x-handlebars-template"}
+  :plain
+    <div class="moment-votd-verse-wrap">
+      <p class="moment-votd-verse">{{content_plain}}</p>
+    </div>
+    <a href="{{to_path}}" class="moment-vod-links">{{human}}</a>
 
 %script#notifications-tmpl{type:"text/x-handlebars-template"}
   :plain
