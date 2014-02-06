@@ -6,8 +6,8 @@
 
 
 = render partial: 'widgets/find_friends'
-= render partial: 'widgets/my_plans'
-= render partial: 'widgets/plans_promo'
+= render partial: 'widgets/my_plans' #if logged_in?
+= render partial: 'widgets/featured_plans' #unless logged_in?
 = render partial: 'sidebars/notes/stub', locals: {reference: reference}
 
 = render partial: 'widgets/download_app'

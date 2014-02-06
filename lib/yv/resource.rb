@@ -28,6 +28,10 @@ module YV
 
     class << self
 
+      def cache_for(length,opts)
+        opts.merge!(cache_for: length)
+      end
+
       # Class method to make a GET request to a provided API path
       # optional opts are passed along to the underlying request
       #
@@ -457,6 +461,12 @@ module YV
 
     def most_recent_date
       Date.parse(attributes['updated_dt'] || attributes['created_dt'])
+    end
+
+
+    def cache_for(length,opts)
+      self.class.cache_for(length,opts)
+      opts.merge!(cache_for: length)
     end
 
 

@@ -1,0 +1,14 @@
+- plans = Plan.featured(page: 1, language_tag: I18n.locale).shuffle[0..2]
+
+.widget
+  %h3.hd
+    %span
+      Featured Plans
+  .bd
+    %ul
+      - plans.each do |plan|
+        %li
+          %h3= link_to plan.name, plan_path(plan)
+          %p= truncate(plan.about, length: 75, separator: ' ')
+  .ft
+    = link_to("View All Plans", plans_path)

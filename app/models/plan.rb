@@ -50,10 +50,14 @@ class Plan < YV::Resource
     # TODO pagination + facets
 
     def all(opts = {})
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_long_time
+      cache_for(cache_time, opts)
       opts[:query] = '*' if opts[:query].blank?
-      opts[:cache_for] ||= YV::Caching.a_long_time
-      opts[:cache_for] = 0 if opts[:user_id].present?
       super(opts)
+    end
+
+    def featured(opts={})
+      all opts.merge(category: "featured_plans")
     end
 
 
@@ -87,6 +91,13 @@ class Plan < YV::Resource
         key
       end
     end
+
+
+    # Check if an API call is for a specific user (user_id is present in options)
+    def request_for_user?(opts)
+      opts[:user_id].present?
+    end
+
 
 
   end
