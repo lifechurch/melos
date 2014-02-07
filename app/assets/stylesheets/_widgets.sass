@@ -322,7 +322,7 @@
 
 #widget-notes
   .hd span
-    background: image-url("header_icon_note.png") no-repeat left center
+    background: image-url("widgets-sprite.png") no-repeat 0 1px
     padding-left: 25px
 
 #widget-download
@@ -570,34 +570,44 @@ html.mobile-client
 
 // !Featured/My plans widget
 
-.widget .featured-plans,
-.widget .my-plans
-  background-color: #fff
+.featured-plans,
+.my-plans
 
-  li
-    padding: 15px
-    border-top: 1px solid #cdcdcd
-    border-bottom: none
+  h3.hd
+    background: image-url("widgets-sprite.png") no-repeat 15px -69px
+    padding: 10px 10px 10px 40px
 
-    h3
-      line-height: 1.2em
-      margin: 0 0 5px
+  .plans-list
+    background-color: #fff
 
-    p
-      line-height: 1.4em
-      margin: 0
+    li
+      padding: 15px
+      border-top: 1px solid #cdcdcd
+      border-bottom: none
 
-    span
-      display: inline-block
-      margin: 0 0 0 10px
-      color: #777
+      h3
+        line-height: 1.2em
+        margin: 0 0 5px
 
-  li:first-child
-    border: none
+      p
+        line-height: 1.4em
+        margin: 0
+
+      span
+        display: inline-block
+        margin: 0 0 0 10px
+        color: #777
+
+    li:first-child
+      border: none
 
 // !Find friends widget
 
 .widget-find-friends
+
+  h3.hd
+    background: image-url("widgets-sprite.png") no-repeat 15px -27px
+    padding: 10px 10px 10px 40px
 
   .bd
     padding: 10px

@@ -1,10 +1,9 @@
 - plans = Plan.featured(page: 1, language_tag: I18n.locale).shuffle[0..2]
 
-.widget
+.widget.featured-plans
   %h3.hd
-    %span
-      Featured Plans
-  .featured-plans
+    Featured Plans
+  .plans-list
     %ul
       - plans.each do |plan|
         %li

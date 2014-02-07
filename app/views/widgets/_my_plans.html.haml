@@ -1,10 +1,9 @@
 - subscriptions = Subscription.all(current_user)
 
-.widget
+.widget.my-plans
   %h3.hd
-    %span
-      My Plans
-  .my-plans
+    My Plans
+  .plans-list
     %ul
       - subscriptions.each do |sub|
         %li

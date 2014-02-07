@@ -429,11 +429,30 @@ only screen and (                min-resolution: 2dppx) {
   }
 
 
-  // Verse task bar
+  // !Verse task bar
 
   .color span {
     background: image-url("menu_color_selected@2x.png") no-repeat center 3px;
     background-size: 17px 41px;
+  }
+
+
+  // !Widgets
+
+  .featured-plans h3.hd,
+  .my-plans h3.hd {
+    background: image-url("widgets-sprite@2x.png") no-repeat 15px -69px;
+    background-size: 16px 120px;
+  }
+
+  .widget-find-friends h3.hd {
+    background: image-url("widgets-sprite@2x.png") no-repeat 15px -27px;
+    background-size: 16px 120px;
+  }
+
+  #widget-notes .hd span {
+    background: image-url("widgets-sprite@2x.png") no-repeat 0 1px;
+    background-size: 16px 120px;
   }
 
 }
