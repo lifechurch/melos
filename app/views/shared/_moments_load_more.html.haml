@@ -30,6 +30,19 @@
               new Moments.Verse({el: $(this)});
             });
 
+            next_feed_container.find(".moment-vod").each(function() {
+              new Moments.VOTD({el: $(this)})
+            });
+
+
+            next_feed_container.find(".moment-comments").each(function(){
+              new Moments.Comments({base: $(this)});
+            });
+
+            next_feed_container.find(".moment").each(function(){
+              new Moments.Moment({el: $(this)})
+            })
+
             pagination_link.data("page", next_page);
         }
     });

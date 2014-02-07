@@ -12,11 +12,33 @@ class MomentsController < BaseMomentsController
 
   # A logged in users Moments/Home feed
   def index
+    recent_versions = client_settings.recent_versions
     @user    = current_user
-    @moments = Moment.all(auth: current_auth, page: @page)
-    recent_versions = client_settings.recent_versions.present? ? client_settings.recent_versions.split("/") : [client_settings.version || Version.default]
-    @moments.unshift(VOD.day(Date.today.yday,version_id: client_settings.version, recent_versions: recent_versions))
+    @feed    = YV::Moments::Feed.new(
+      auth: current_auth,
+      page: @page,
+      version: client_settings.version || 1,
+      recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default]
+    )
+    @moments = @feed.moments
   end
+
+
+  # Action renders cards partial for the returned moments
+  def _cards
+    recent_versions = client_settings.recent_versions
+    # If our user_id param is present, use that to find user, otherwise assume current user
+    @user = current_user
+    @feed    = YV::Moments::Feed.new(
+      auth: current_auth,
+      page: @page,
+      version: client_settings.version || 1,
+      recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default]
+    )
+    @moments = @feed.moments
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: self.class.moment_comments_displayed}, layout: false
+  end
+
 
   def related
     @user    = current_user
