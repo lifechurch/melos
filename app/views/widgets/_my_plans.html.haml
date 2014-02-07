@@ -1,15 +1,18 @@
 - subscriptions = Subscription.all(current_user)
 
-.widget.my-plans
-  %h3.hd
-    My Plans
-  .plans-list
-    %ul
-      - subscriptions.each do |sub|
-        %li
-          %h3= sub.name
-          %p
-            = link_to("Start reading", subscription_path(user_id: current_user, id: sub))\
-            %span= t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
-  .ft
-    = link_to("View My Plans", subscriptions_path(user_id: current_user))
+- if subscriptions.blank?
+  = render partial: 'widgets/featured_plans'
+- else
+  .widget.my-plans
+    %h3.hd
+      My Plans
+    .plans-list
+      %ul
+        - subscriptions.each do |sub|
+          %li
+            %h3= sub.name
+            %p
+              = link_to("Start reading", subscription_path(user_id: current_user, id: sub))\
+              %span= t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
+    .ft
+      = link_to("View My Plans", subscriptions_path(user_id: current_user))
