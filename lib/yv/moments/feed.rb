@@ -8,6 +8,7 @@ module YV
         @primary_version = opts[:version]
         @recent_versions = opts[:recent_versions]
         @merged_moments  = []
+        @tracked_days    = []
       end
 
 
@@ -15,6 +16,7 @@ module YV
         return @merged_moments if @merged_moments.present?
         
         @merged_moments << votd_today if first_page?
+
 
         @moments ||= Moment.all(auth: @auth, page: @page)
 
@@ -46,13 +48,19 @@ module YV
         vods = []
 
         current_day.downto(next_day).each do |day|
-          vods << VOD.day(day,version_id: @primary_version.to_i, recent_versions: @recent_versions)
+          unless @tracked_days.include?(day)
+            vods << VOD.day(day,version_id: @primary_version.to_i, recent_versions: @recent_versions)
+            track_day(day)
+          end
         end
         vods
       end
 
       def votd_today
-        @vod_today ||= VOD.day(Date.today.yday,version_id: @primary_version.to_i, recent_versions: @recent_versions)
+        return @vod_today if @vod_today.present?
+        day = Date.today.yday
+        track_day(day)
+        @vod_today ||= VOD.day(day,version_id: @primary_version.to_i, recent_versions: @recent_versions)
       end
 
       def moment_yday(moment)
@@ -61,6 +69,10 @@ module YV
 
       def first_page?
         @page == 1
+      end
+
+      def track_day(day)
+        @tracked_days.unshift(day)
       end
 
     end
