@@ -40,10 +40,9 @@ class BaseMomentsController < ApplicationController
   end
 
   def create
-    @moment = moment_resource.new(params[lower_resource_name.to_sym])
-    @moment.auth = current_auth
-
-    @results = @moment.save
+    @moment       = moment_resource.new(params[lower_resource_name.to_sym])
+    @moment.auth  = current_auth
+    @results      = @moment.save
 
     respond_to do |format|
       format.html {
@@ -56,12 +55,9 @@ class BaseMomentsController < ApplicationController
       }
       format.js {
         render text: "", status: 400 and return unless @results.valid?
-        #renders create.js.rabl on success
+        #renders resource-dir/create.js.rabl on success
       } 
     end
-
-
-    
   end
 
 

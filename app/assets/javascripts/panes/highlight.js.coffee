@@ -33,20 +33,23 @@ class window.Panes.Highlight extends window.Panes.Base
     form.on "submit", (event)=>
       event.preventDefault()
 
-      action = form.attr("action")
+      # Named helper function to get form field values by name
+      field_val = (name)->
+        return form.find("[name='" + name + "']").val()
+
       post_data = {
-        authenticity_token: form.find("input[name='authenticity_token']").val()
+        authenticity_token: field_val("authenticity_token"),
         highlight: {
-          version_id: form.find("input[name='highlight[version_id]']").val(),
-          usfm_references: form.find("input[name='highlight[usfm_references]']").val(),
-          color: form.find("input[name='highlight[color]']").val()
+          version_id:       field_val("highlight[version_id]"),
+          usfm_references:  field_val("highlight[usfm_references]"),
+          color:            field_val("highlight[color]")
         }
       }
 
       request = $.ajax {
+        url: form.attr("action"),
         dataType: 'json',
         data: post_data,
-        url: action,
         type: "POST"
       }
 

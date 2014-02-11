@@ -15,8 +15,40 @@ class window.Panes.Bookmark extends window.Panes.Base
   afterRender: (html)->
     super(html)
     @setupColorpicker()
+    @setupFormAjax(html)
     @setupBookmarkLabels() if @isLoggedIn()
     
+
+  setupFormAjax: (html)->
+    form = html.find("form")
+    form.on "submit", (event)=>
+      event.preventDefault()
+
+      # Named helper function to get form field values by name
+      field_val = (name)->
+        return form.find("[name='" + name + "']").val()
+
+      post_data = {
+        authenticity_token: field_val("authenticity_token"),
+        bookmark: {
+          version_id:       field_val("bookmark[version_id]"),
+          usfm_references:  field_val("bookmark[usfm_references]"),
+          color:            field_val("bookmark[color]"),
+          title:            field_val("bookmark[title]"),
+          labels:           field_val("bookmark[labels]")
+        }
+      }
+
+      request = $.ajax {
+        url: form.attr("action"),
+        dataType: 'json',
+        data: post_data,
+        type: "POST"
+      }
+
+      request.done (data)=>
+        @triggerFormSuccess()
+
 
   setupBookmarkLabels: ()->
     field = $("#bookmark_labels")

@@ -14,4 +14,35 @@ class window.Panes.Note extends window.Panes.Base
   afterRender: (html)->
     super(html)
     @setupColorpicker()
-    @note_content_field = @el.find('textarea[name="note[content]"]')
+    @setupFormAjax(html)
+
+  setupFormAjax: (html)->
+    form = html.find("form")
+    form.on "submit", (event)=>
+      event.preventDefault()
+
+      # Named helper function to get form field values by name
+      field_val = (name)->
+        return form.find("[name='" + name + "']").val()
+
+      post_data = {
+        authenticity_token: field_val("authenticity_token"),
+        note: {
+          version_id:       field_val("note[version_id]"),
+          usfm_references:  field_val("note[usfm_references]"),
+          color:            field_val("note[color]"),
+          title:            field_val("note[title]"),
+          user_status:      field_val("note[user_status]"),
+          content:          field_val("note[content]")
+        }
+      }
+
+      request = $.ajax {
+        url: form.attr("action"),
+        dataType: 'json',
+        data: post_data,
+        type: "POST"
+      }
+
+      request.done (data)=>
+        @triggerFormSuccess()

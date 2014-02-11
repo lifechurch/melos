@@ -90,6 +90,8 @@ class window.Panes.VerseActions
     @mobile_highlight_pane  = new Panes.Highlight {el:"div.color_toolbar"}
 
     # Upon successful form submit or the X button is clicked, we should reset all panes
+    $(@note_pane).bind "form:submit:success", $.proxy(@resetPanes,@)
+    $(@bookmark_pane).bind "form:submit:success", $.proxy(@resetPanes,@)
     $(@highlight_pane).bind "form:submit:success", $.proxy(@resetPanes,@)
     $(@close_pane).bind("panes:cleared", $.proxy(@resetPanes,@))
 
