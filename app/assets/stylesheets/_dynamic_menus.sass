@@ -522,7 +522,7 @@
     width: 46px
 
   .share_character_count
-    width: 455px
+    width: 465px
     overflow: hidden
     padding: 0 0 0 15px
 
@@ -544,7 +544,9 @@
         top: 1px
 
 #menu_verse_actions #share-pane .share_services
-
+  &::selection
+    background: transparent
+    cursor: default
   .share_slider
     display: block
     cursor: default
@@ -556,13 +558,17 @@
       cursor: default
     .slider
       display: block
-      background: image-url("reader-share-sprite.png") no-repeat 0 -82px
-      &:hover
-        background: image-url("reader-share-sprite.png") no-repeat 5 -82px
+      width: 32px
+      border-radius: 12px
+      border: 1px solid #c7c7c7
+      height: 22px
+      background: image-url("reader-share-sprite.png") no-repeat 0 -84px
+      background-color: #c7c7c7
+      transition: background-color 200ms, border 200ms
       &.network_active
-        background: image-url("reader-share-sprite.png") no-repeat 0 -125px
-        &:hover
-          background: image-url("reader-share-sprite.png") no-repeat 5 -125px
+        border: 1px solid #59b200
+        background: image-url("reader-share-sprite.png") no-repeat 0 -126px
+        background-color: #59b200
 
 
   span:first-child
