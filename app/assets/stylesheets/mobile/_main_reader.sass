@@ -194,6 +194,9 @@ div.close_tab
   height: 100%
   border: 0px
 
+  #chapter_selector
+    background: #fff
+
 #menu_book header,
 #menu_chapter header,
 #menu_settings header
@@ -203,9 +206,16 @@ div.close_tab
 #menu_chapter .scroll ul
   width: 100% !important
 
-#menu_book .scroll ul li a,
-#menu_chapter .scroll ul li a
-  padding: 10px
+#menu_book .scroll,
+#menu_chapter .scroll
+  ul li a
+    padding: 10px 15px
+    color: #444
+    text-shadow: none
+    border-top: 1px solid #e1e1e1
+    border-bottom: 0
+    background: #fff image-url("mobile/menu-arrow.png") no-repeat 95% center
+    background-size: 22px 22px
 
 #menu_book .scroll ol,
 #menu_chapter .scroll ol
@@ -217,16 +227,16 @@ div.close_tab
   width: auto
   height: auto
 
-#menu_book .scroll ol li a,
-#menu_chapter .scroll ol li a
-  background: none
-  padding: 10px
-  width: 24px
-  text-align: center
-  border-top: 1px solid #282828
-  border-right: 1px solid #282828
-  border-bottom: 1px solid #101010
-  border-left: 1px solid #101010
+#menu_book .scroll,
+#menu_chapter .scroll
+  ol li a
+    background: #eee
+    padding: 10px
+    width: 31px
+    text-align: center
+    border: 1px solid #fff
+    color: #444
+    text-shadow: none
 
 .audio_toolbar .inner_content
   background: #2c2b2b !important
@@ -350,14 +360,12 @@ div.close_tab
       font-weight: bold
       font-size: 15px
       text-decoration: none
-      background: #2C2B2B
-      +box-shadow(inset #111 0 1px 2px 2px)
-      border-bottom: 1px solid #1f1f1f
-    a:first-child
-      border-left: 0
+      text-shadow: none
+      background: #aaa
+
     a.selected
-      background: #666
-      +box-shadow(inset #666 0 0 0 0)
+      background: #fff
+      color: #444
 
 .tab_navigation.plan_settings,
 .tab_navigation.ref
