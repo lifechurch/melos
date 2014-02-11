@@ -68,7 +68,7 @@ en:
   new note:                                     "Create a Note"
   share success:                                "Your message has been shared."
   share error:                                  "Sorry, there was an error sharing your message. Please try again."
-  google plus:                                  "Google +"
+  google plus:                                  "Google+"
   connect to:                                   "Connect to your %{connection} account"
   deleted connection:                           "Successfully removed your connection to %{connection}."
   deleted connection error:                     "Sorry, there was an error removing your connection to %{connection}."
