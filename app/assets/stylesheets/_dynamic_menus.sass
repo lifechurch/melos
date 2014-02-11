@@ -545,29 +545,30 @@
 
 #menu_verse_actions #share-pane .share_services
 
-  .share_button
+  .share_slider
     display: block
-    &:hover
-      background-color: #efefef
+    cursor: default
     &::selection
       background: transparent
       cursor: default
     &::-moz-selection
       background: transparent
       cursor: default
-    & span::selection
-      background: transparent
-      cursor: default
-    & span::-moz-selection
-      background: transparent
-      cursor: default
-    &.network_active
-      background-color: #e5e5e5
+    .slider
+      display: block
+      background: image-url("reader-share-sprite.png") no-repeat 0 -82px
       &:hover
-        background-color: #cdcdcd
+        background: image-url("reader-share-sprite.png") no-repeat 5 -82px
+      &.network_active
+        background: image-url("reader-share-sprite.png") no-repeat 0 -125px
+        &:hover
+          background: image-url("reader-share-sprite.png") no-repeat 5 -125px
+
 
   span:first-child
     margin-left: 0
+
+
 
 #menu_verse_actions #share-pane .character_count
   background-color: #efefef
@@ -585,7 +586,7 @@
   &.warning
     background-color: yellow
 
-#menu_verse_actions #share-pane .share_services .share_button .translation_missing
+#menu_verse_actions #share-pane .share_services .share_slider .translation_missing
   border: 0
 
 

@@ -20,11 +20,9 @@ class window.Panes.Share extends window.Panes.Base
   setupPane: ()->
     @short_link         = @el.find("#short_link")
     @share_link_field   = @el.find("#share_link")
-    @tw_share_msg_field = @el.find(".share_verse_twitter")
-    @fb_share_msg_field = @el.find(".share_verse_facebook")
     @textarea_el        = @el.find("textarea")
-    @tw_btn             = @el.find("#share_twitter")
-    @fb_btn             = @el.find("#share_facebook")
+    @tw_btn             = @el.find(".twitter")
+    @fb_btn             = @el.find(".facebook")
     @tw_char_count      = @el.find(".share_character_count .tw")
     @fb_char_count      = @el.find(".share_character_count .fb")
     @char_count         = @el.find(".share_character_count")
@@ -56,15 +54,17 @@ class window.Panes.Share extends window.Panes.Base
         e.preventDefault()
 
   toggleShareButton: (btn)=>
+
     @share_errors.html("")
 
-    if btn.attr('id') == 'share_twitter'
+    if btn.hasClass('twitter')
+      console.log(btn)
       if @tw_char_count.next().hasClass("exceeded")
         @share_errors.append(@share_errors.data("error-character-limit"))
         @disableNetworkButton(btn)
       else
         @toggleNetworkButton(btn)
-    else if btn.attr('id') == 'share_facebook'
+    else if btn.hasClass('facebook')
       if @fb_char_count.next().hasClass("exceeded")
         @share_errors.append(@share_errors.data("error-character-limit"))
         @disableNetworkButton(btn)
