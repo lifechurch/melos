@@ -80,24 +80,14 @@ class Highlight < YV::Resource
     def for_reader(params={})
       highlights  = by_reference(params)
       return highlights if highlights.blank?
-    
-      version_id  = highlights.first.references.first.version_id
-      pieces      = highlights.collect {|h| Hashie::Mash.new({id: h.id, color: h.color, references: h.references})}
 
-      results = pieces.collect do |piece|
-        usfms = piece.references.collect {|ref| ref.usfm}.flatten  # should be ["GEN.1.1","MORE.2.1","REV.10.10"]
-        nums  = usfms.collect {|usfm| usfm.split(".").last}        # should be ["1","1","10"]
-        nums.collect do |num| 
-          {
-            id: piece.id, 
-            verse: num.to_s,
-            color: piece.color,
-            version: version_id.to_s
-          }
-        end
+      hs = highlights.collect do |h|
+        {
+          id: h.id,
+          references: h.references,
+          color: h.color
+        }
       end
-
-      return results.flatten
     end
   end
   # End class methods ----------------------------------------------------------------------------------------------

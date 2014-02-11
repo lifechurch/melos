@@ -72,14 +72,12 @@ class window.Panes.VerseActions
     if total > 0 then @open() else @close()
 
 
-  panesClearedHandler: ()->
+  resetPanes: ()->
     @setTotal(0)
     $(@).trigger("verses:clear")
 
-
   initPanes: ()->
     return unless @pane_list = @el.find('dl')
-
 
     @highlight_pane         = new Panes.Highlight {el:"#highlight-pane"}
     @bookmark_pane          = new Panes.Bookmark {el:"#bookmark-pane"}
@@ -88,10 +86,12 @@ class window.Panes.VerseActions
     @related_pane           = new Panes.Related({})
     @note_pane              = new Panes.Note {el:"#note-pane"}
     @close_pane             = new Panes.Close({})
-    $(@close_pane).bind("panes:cleared", $.proxy(@panesClearedHandler,@))
-
     @register_pane          = new Panes.Register({el:"#need-account"})
     @mobile_highlight_pane  = new Panes.Highlight {el:"div.color_toolbar"}
+
+    # Upon successful form submit or the X button is clicked, we should reset all panes
+    $(@highlight_pane).bind "form:submit:success", $.proxy(@resetPanes,@)
+    $(@close_pane).bind("panes:cleared", $.proxy(@resetPanes,@))
 
 
     dl = @el.find("dl.verses_selected")
@@ -127,12 +127,6 @@ class window.Panes.VerseActions
     pane = args.pane
     pane.close()
     delete current_pane
-    
-    # $(document).off "keydown", (event)=>
-    #   if event.keyCode == 27 #escape key
-    #     event.preventDefault()
-    #     @closePanes    
-
     return
 
   openPane: (event, args)->
@@ -144,12 +138,6 @@ class window.Panes.VerseActions
     else
       pane.open()
       @current_pane = pane
-    
-    #     $(document).on "keydown", (event)=>
-    #       if event.keyCode == 27  #27 === Escape key
-    #         event.preventDefault()
-    #         @closePanes()
-
     return
 
 
@@ -157,13 +145,11 @@ class window.Panes.VerseActions
     jRes.addFunc {
       breakpoint: 'mobile',
       enter: ()=>
-        # console.log("ENTER BREAK")
         $('#version_primary').bind("verses:first_selected", $.proxy(@open_mobile,@))
         $('#version_primary').bind("verses:all_deselected", $.proxy(@close_mobile,@))
         $('html').removeClass('full_screen')
       ,
       exit: ()=>
-        # console.log("EXIT BREAK")
         $('#version_primary').unbind("verses:first_selected", $.proxy(@open_mobile,@));
         $('#version_primary').unbind("verses:all_deselected", $.proxy(@close_mobile,@));
     }

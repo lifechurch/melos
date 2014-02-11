@@ -79,6 +79,10 @@ class window.Panes.Base
     $.event.trigger(event, args)
     return
 
+
+  triggerFormSuccess: ()->
+    $(@).trigger("form:submit:success")
+
   setupColorpicker: ()->
 
     # Grab our colors via ajax

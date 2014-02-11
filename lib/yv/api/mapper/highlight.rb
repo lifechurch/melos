@@ -36,7 +36,7 @@ module YV
           end
  
           def map_to_instance(instance,results)
-            instance.id               = results.id
+            instance.id               = results.id.to_s
             instance.kind_id          = results.kind_id
             instance.kind_color       = results.kind_color
             instance.color            = results.extras.color

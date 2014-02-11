@@ -1,8 +1,9 @@
 # Base controller for any controllers that deal with moments
 # currently that is HighlightsController, BookmarksController, NotesController
 
-
 class BaseMomentsController < ApplicationController
+
+  respond_to :html, :js
 
   before_filter :find_resource, only: [:edit,:update,:destroy]
 
@@ -43,12 +44,24 @@ class BaseMomentsController < ApplicationController
     @moment.auth = current_auth
 
     @results = @moment.save
-    if @results.valid?
-      redirect_to(@moment.to_path, notice: t("#{lower_resource_name.pluralize}.create success"))
-    else
-      flash[:error] = t("#{lower_resource_name.pluralize}.create failure")
-      render :new
+
+    respond_to do |format|
+      format.html {
+        if @results.valid?
+          redirect_to(@moment.to_path, notice: t("#{lower_resource_name.pluralize}.create success"))
+        else
+          flash[:error] = t("#{lower_resource_name.pluralize}.create failure")
+          render :new
+        end
+      }
+      format.js {
+        render text: "", status: 400 and return unless @results.valid?
+        #renders create.js.rabl on success
+      } 
     end
+
+
+    
   end
 
 

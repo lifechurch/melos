@@ -5,6 +5,7 @@
 //= require jquery.ui.mouse
 //= require jquery.ui.position
 //= require jquery.ui.autocomplete
+//= require ./reader/highliter
 //= require ./moments/verse
 //= require ./moments/votd
 //= require ./moments/comments

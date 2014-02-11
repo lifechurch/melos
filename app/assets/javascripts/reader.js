@@ -380,13 +380,11 @@ Reader.prototype = {
   },
 
   loadHighlights : function(article_id) {
+    var _this   = this;
     var ref     = $(article_id).data("reference");
     var version = $(article_id).find('.version').data("vid");
     var chapter = $(article_id).find('.chapter');
-    var verse = null;
     var userShowsHighlights = $('#main article').attr('data-setting-show-highlights') || 'true';
-
-    var _this = this;
 
     // Apply locale to our ajax urls to avoid 302 to correct locale'd url.
     var locale = "";
@@ -401,37 +399,22 @@ Reader.prototype = {
       url: locale + "/highlights/" + version + "/" + ref,
       method: "get",
       dataType: "json",
-      success: function(jsonHighlights) {
+      success: function(highlights) {
 
-        //reset any old highlights in the current chapter
         _this.clearHighlights(article_id);
 
-        //apply the new highlights
-        $.each(jsonHighlights, function(i, highlight) {
-            verse = chapter.find(".verse.v" + highlight.verse);
-            verse.addClass("highlighted");
-
-            verse.attr("data-highlight-color", "#" + highlight.color);
-            if (isColorDark(highlight.color)) { verse.addClass("dark_bg"); }
-
-            //add the highlight ids (so if user clears they can clear them all)
-            highlight_ids = verse.attr('data-highlight-ids');
-            if (highlight_ids){
-              highlight_ids = highlight_ids.split(',');
-            }else{highlight_ids = [];}
-            highlight_ids.push(highlight.id);
-            verse.attr('data-highlight-ids', highlight_ids.join(','));
-        });//end highlights each
-
-        if (userShowsHighlights == 'true') { _this.showHighlights(article_id); }
+        $.each(highlights, function(i, highlight) {
+          $.each(highlight.references, function(i,ref_hash) {
+            window.Highliter.highlight(ref_hash.usfm,highlight.color)    
+          });
+        });
 
         // have to reparse the verses again due to adding new attribute values
         _this.parseVerses();
 
       },//end success function
       error: function(req, status, err) { }
-
-    });//end ajax delegate
+    });
   },
 
   updateMenus : function() {
