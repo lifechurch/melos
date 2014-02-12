@@ -74,18 +74,21 @@ class window.Panes.Share extends window.Panes.Base
     # enable the submit button when we have at least one selected valid network
     if ( @tw_checkbox.prop("checked") && !@tw_char_count.next().hasClass("exceeded")) || ( @fb_checkbox.prop("checked") && !@fb_char_count.next().hasClass("exceeded"))
       @submit.addClass("action_button_green")
+      @submit.removeClass("action_button_blue")
     else
       @submit.removeClass("action_button_green")
+      @submit.addClass("action_button_blue")
+
 
   disableNetworkButton: (btn) ->
     btn.removeClass('network_active')
-    checkBox = btn.find("[type=checkbox]")
+    checkBox = btn.parent().find("[type=checkbox]")
     checkBox.prop("checked", false)
 
   toggleNetworkButton: (btn) ->
     # update css and toggle the checkbox
     btn.toggleClass('network_active')
-    checkBox = btn.find("[type=checkbox]")
+    checkBox = btn.parent().find("[type=checkbox]")
     checkBox.prop("checked", !checkBox.prop("checked"))
 
 
