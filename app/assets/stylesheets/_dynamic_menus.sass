@@ -564,7 +564,11 @@
       height: 22px
       background: image-url("reader-share-sprite.png") no-repeat 0 -84px
       background-color: #c7c7c7
-      transition: background-color 200ms, border 200ms
+      -webkit-transition: background-color 200ms, border-color 200ms
+      -moz-transition: background-color 200ms, border-color 200ms
+      -o-transition: background-color 200ms, border-color 200ms
+      transition: background-color 200ms, border-color 200ms
+
       &.network_active
         border: 1px solid #59b200
         background: image-url("reader-share-sprite.png") no-repeat 0 -126px
