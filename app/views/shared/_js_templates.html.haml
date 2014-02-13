@@ -212,7 +212,9 @@
 %script#moment-votd-verse-tmpl{type:"text/x-handlebars-template"}
   :plain
     <div class="moment-votd-verse-wrap">
-      <p class="moment-votd-verse" data-reference-human="{{human}}" data-reference-path="{{to_path}}">{{content_plain}}</p>
+      <p class="moment-votd-verse" data-reference-human="{{human}}" data-reference-path="{{to_path}}">{{content_plain}}
+      <span class="content-action"><a href="#" class="more" title="Show More">Show More</a><a href="#" class="less" title="Show Less">Show Less</a></span>
+      </p>
     </div>
     <a href="{{to_path}}" class="moment-vod-links">{{human}}</a>
 

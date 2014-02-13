@@ -32,11 +32,34 @@ class window.Moments.VOTD
       wrap.replaceWith(template(data))
       wrap.addClass("loaded")
       $('.social-feed').trigger('refreshWookmark')
+      @setupScroll()
       return
 
     request.fail (jqXHR,status) =>
       @votd_verse.html("Could not load verse.")
 
+  setupScroll: (event)->
+    @verseScroll = @votd_el.find(".moment-votd-verse")
+    @content_action = @votd_el.find(".content-action")
+    if (@verseScroll.innerHeight() + 15) < @verseScroll[0].scrollHeight
+      # has overflow content
+      @votd_verse.addClass("scrollable")
+      @content_action.show()
+      @content_action.on "click", $.proxy(@toggleContentClickHandler,@)
+    else
+      @votd_verse.removeClass("scrollable")
+      @content_action.hide()
+
+  toggleContentClickHandler: (event)->
+    event.preventDefault()
+    span = $(event.currentTarget)
+    span.toggleClass("expanded")
+    @verseScroll = @votd_el.find(".moment-votd-verse")
+    if span.hasClass("expanded")
+      @verseScroll.css("max-height", "none").toggleClass("expanded")
+    else
+      @verseScroll.css("max-height", "125px").toggleClass("expanded")
+    @refreshWookmark()
 
   versionClickHandler: (event)->
     li        = $(event.currentTarget)
@@ -61,6 +84,7 @@ class window.Moments.VOTD
       wrap.replaceWith(template(data))
       wrap.addClass("loaded")
       @refreshWookmark()
+      @setupScroll()
       return
 
     @votd_version_buttons.removeClass("active")
