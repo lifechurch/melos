@@ -43,9 +43,9 @@
                 %li
                   %a{href: user_friends_path(user_id: current_auth.username)}
                     =t("users.profile.tab friends") 
-                %li
-                  %a{href: badges_user_path(current_auth.username)}
-                    =t("users.profile.tab badges")
+                - #%li
+                - #  %a{href: badges_user_path(current_auth.username)}
+                - #    =t("users.profile.tab badges")
                 %li
                   %a{href: "/settings"}
                     =t("settings") 
