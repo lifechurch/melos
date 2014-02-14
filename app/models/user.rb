@@ -382,6 +382,14 @@ class User < YV::Resource
     friend_ids.include? id.to_i
   end
 
+
+  # Returns a boolean if this user can interact with a moment. (comment, like, view comments and likes)
+  def interact_with?(moment)
+    user_id = moment.user.id
+    id == user_id or friends_with?(user_id)
+  end
+
+
   private
 
   def build_connection(type)
@@ -393,9 +401,5 @@ class User < YV::Resource
   def friend_ids
     @friend_ids ||= Friend.ids(auth: self.auth)
   end
-
-
-
-
 
 end

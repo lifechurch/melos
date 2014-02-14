@@ -37,6 +37,7 @@
             - moment.references.each do |ref_hash|  #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
               = link_to(ref_hash.human, reference_path(version: ref_hash.version_id, reference: ref_hash.usfm.join("+")), class: "moment-no-refs-link")
 
-  .moment-btm
-    = render partial: "moments/actions_bar", locals: {moment: moment}
-    = render partial: "moments/comments", locals: {moment: moment, comments_displayed: comments_displayed, detail_view: detail_view}
+  - if current_user.interact_with? moment
+    .moment-btm
+      = render partial: "moments/actions_bar", locals: {moment: moment}
+      = render partial: "moments/comments", locals: {moment: moment, comments_displayed: comments_displayed, detail_view: detail_view}
