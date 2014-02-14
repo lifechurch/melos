@@ -39,15 +39,15 @@
       %li#nav_primary_mobile
         %a.icon{href: '/mobile', "data-title" => t("mobile")}
 
-      - if current_auth
-        %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
-          - bookmark_href = logged_in? ? bookmarks_user_path(current_auth.username) : sign_up_path(source: "bookmark")
-          %a.icon{href: bookmark_href, "data-title" => t('bookmarks.title') }
+      / - if current_auth
+      /   %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}
+      /     - bookmark_href = logged_in? ? bookmarks_user_path(current_auth.username) : sign_up_path(source: "bookmark")
+      /     %a.icon{href: bookmark_href, "data-title" => t('bookmarks.title') }
 
-        %li#nav_primary_notes{class: highlight.call(is_notes_url)}
-          - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
-          %a.icon{href: notes_href, "data-title" => t("notes title")}
+      /   %li#nav_primary_notes{class: highlight.call(is_notes_url)}
+      /     - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
+      /     %a.icon{href: notes_href, "data-title" => t("notes title")}
 
-        %li#nav_primary_highlights{class: highlight.call(is_highlights_url)}
-          - highlights_href = logged_in? ? highlights_user_path(current_auth.username) : notes_path
-          %a.icon{href: highlights_href, "data-title" => t("highlights.title")}
+      /   %li#nav_primary_highlights{class: highlight.call(is_highlights_url)}
+      /     - highlights_href = logged_in? ? highlights_user_path(current_auth.username) : notes_path
+      /     %a.icon{href: highlights_href, "data-title" => t("highlights.title")}

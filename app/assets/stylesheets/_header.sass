@@ -157,7 +157,7 @@
   font-weight: normal
 
 #header .user_options
-  float: left
+  float: right
   width: 129px
   position: relative
   background: #444 image-url("header-sprite.png") no-repeat -10px -441px
@@ -180,6 +180,7 @@
 
 #header ul.nav_user
   margin-bottom: 0
+  float: right
 
   li.highlights 
     a
@@ -206,7 +207,8 @@
     background: none
     
 #header ul.nav_user li.auth
-  width: 76px  
+  width: auto  
+  margin-right: 20px
 
   > a
     background-color: #808080
@@ -217,7 +219,7 @@
     width: auto
     height: auto
     display: inline
-    margin-left: 3px
+    margin: 0 5px
     font-weight: bold
 
 .sign_in span 
@@ -225,7 +227,7 @@
   line-height: 50px
 
   .user_name
-    max-width: 110px
+    max-width: 160px
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
@@ -273,15 +275,15 @@
       border-bottom: none  
 
 #header #header_profile_menu .arrow
-  left: 220px
+  left: 240px
   position: absolute
 
 .li_active #header_profile_menu
   display: block
   margin-top: -2px
-  position: relative
+  position: absolute
   width: 280px
-  margin-left: -210px
+  margin-left: -230px
 
 #header_profile_menu a
   display: block
