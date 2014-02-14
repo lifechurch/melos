@@ -22,29 +22,33 @@ class Note < YV::Resource
   class << self
 
     # Override paths to make calls to 3.1 API for Moments
-      def list_path
-        "moments/items"
-      end
+    def list_path
+      "moments/items"
+    end
 
-      def resource_path
-        "moments/view"
-      end
+    def resource_path
+      "moments/view"
+    end
 
-      def delete_path
-        "moments/delete"
-      end
+    def delete_path
+      "moments/delete"
+    end
 
-      def create_path
-        "moments/create"
-      end
+    def create_path
+      "moments/create"
+    end
 
-      def update_path
-        "moments/update"
-      end
+    def update_path
+      "moments/update"
+    end
 
-      def kind
-        "note"
-      end
+    def search_path
+      "search/moments"
+    end
+
+    def kind
+      "note"
+    end
 
     # Override all method to add note kind to options
     def all(opts={})
@@ -53,6 +57,15 @@ class Note < YV::Resource
       super(opts)
     end
 
+    # YV::Concerns::Searchable
+    # usfm, version_id
+    def community(opts={})
+      search(nil,opts.merge(
+          cache_for: YV::Caching.a_short_time,
+          kind: kind
+        ).slice(:usfm,:version_id,:kind,:cache_for)
+      )
+    end
 
     # API Method
     # Returns ResourceList of Note instances
@@ -156,10 +169,6 @@ class Note < YV::Resource
       self.content_html = self.content.try :html
       self.content = self.content.try :text
     end
-  end
-
-  def user
-    User.find( self.user_id )
   end
 
   def after_build

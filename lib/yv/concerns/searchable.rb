@@ -12,8 +12,7 @@ module YV
           raise "Must specify a search path in your model: 'search/users' for example"
         end
 
-        def search(query, opts={})
-          raise "Must specify :page option" unless opts[:page]
+        def search(query="*", opts={})
           data,errs = get(search_path, opts.merge(query: query))
           data = [] if not_found?(errs)
           map_search(YV::API::Results.new(data,errs))

@@ -111,7 +111,7 @@ class Reference < YV::Resource
 
   def content(opts={})
     for_chapter = opts[:chapter]
-    return attributes.content if for_chapter || is_chapter?
+    return attributes.content if for_chapter || chapter?
 
     case opts[:as]
       when :plaintext
@@ -135,7 +135,7 @@ class Reference < YV::Resource
   def human
     human = attributes.reference.human
     return "#{human}:#{verses.first}" if single_verse?
-    return human if is_chapter?
+    return human if chapter?
     # we only support references being consecutive ranges
     # so at this point we can assume it is
     return "#{human}:#{verses.first.to_s}-#{verses.last.to_s}"
@@ -178,7 +178,7 @@ class Reference < YV::Resource
   end
 
   # Determine if reference instance is a chapter reference
-  def is_chapter?
+  def chapter?
     @is_chapter ||= (verses.empty? || false)
   end
 
@@ -229,7 +229,7 @@ class Reference < YV::Resource
   #     GEN.1.1+GEN.1.2+GEN.1.3   for Genesis 1:1-3
 
   def to_usfm
-    return "#{chapter_usfm}" if is_chapter?
+    return "#{chapter_usfm}" if chapter?
     return verses.map {|v| "#{chapter_usfm}.#{v}"}.join(YV::Conversions.usfm_delimeter)
   end
 
@@ -256,7 +256,7 @@ class Reference < YV::Resource
 
 
   def to_param
-    _ref = "#{to_usfm}" if is_chapter? || single_verse?
+    _ref = "#{to_usfm}" if chapter? || single_verse?
     _ref ||= "#{chapter_usfm}.#{verses.first}-#{verses.last}"
     _ver = "#{Version.find(version).abbreviation}" if version
     "#{_ref}.#{_ver}".downcase

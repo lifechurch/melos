@@ -48,7 +48,7 @@ module Presenter
     end
 
     def is_chapter?
-      raw_reference.is_chapter?
+      raw_reference.chapter?
     end
 
     def focus?

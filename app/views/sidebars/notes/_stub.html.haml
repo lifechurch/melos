@@ -4,9 +4,8 @@
   # Local Variables
   # reference  (required)
 
-- #widget-notes.widget.ajax_notes{"data-ajax" => "#{bible_path(reference)}/notes"}
-#widget-notes.widget
+#widget-notes.widget.ajax_notes{"data-ajax" => "#{reference_path(version: reference.version, reference: reference.to_usfm)}/notes"}
   %div.hd
     %span= t("notes.community notes")
   %div.bd
-    Coming soon ...
+    %p= t('notes.loading community')

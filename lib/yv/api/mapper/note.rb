@@ -6,12 +6,15 @@ module YV
         class << self
           
           def from_all(results)
-            return results if results.empty?
+            return results if results.blank? or results.moments.nil?
             collection = results.moments.collect do |moment|
-              b = ::Note.new
-              map_to_instance(b, moment)
+              map_to_instance(::Note.new, moment)
             end
             collection
+          end
+
+          def from_search(results)
+            from_all(results)
           end
 
           def from_delete(results)
@@ -51,7 +54,7 @@ module YV
             instance.references       = results.extras.references
 
             # Common moment elements
-            instance                  = map_to_user_fields(instance,results.extras.user)
+            instance.user             = map_to_user(::User.new,results.extras.user)
             instance.icons            = map_to_icons(results.base.images.icon)
             instance.avatars          = map_to_avatars(results.base.images.avatar)
             instance.comments         = map_to_comments(results.commenting.comments)

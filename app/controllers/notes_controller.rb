@@ -37,7 +37,25 @@ class NotesController < BaseMomentsController
   end
 
 
+  # Rendered as sidebar for Community Notes in Reader
+  # See routes.rb: match 'bible/:version/:reference/notes' => 'notes#sidebar', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
+  def sidebar
+    ref     = ref_from_params rescue not_found
+    usfm    = ref.chapter? ? ref_to_verses(ref) : ref.to_usfm
+    @notes  = Note.community(usfm: usfm, version_id: params[:version])
+    render partial: 'sidebars/notes/list', locals: { notes: @notes, link: related_notes_url(reference: ref.to_usfm.downcase)}, layout: false
+  end
+
+
   private
+
+  # API only allows references with verses (JHN.1.1) not just a single chapter (JHN.1)
+  # Used to add verses to a chapter reference so we can display results on a chapter reader page.
+  def ref_to_verses(ref)
+    usfm = ref.usfm
+    usfms = (1..5).collect {|num| "#{ref.to_usfm}.#{num}" }
+    usfms.join(" ")
+  end
 
   # Set sidebar values for the Likes cell
   def set_sidebar

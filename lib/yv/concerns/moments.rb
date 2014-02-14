@@ -3,7 +3,7 @@ module YV
     module Moments
 
       def self.included(base)
-        base.attributes [:id,:user_id,:user_name,:kind_id,:kind_color,:moment_title,:created_dt,:updated_dt,:comments,:commenting,:comments_count,:likes,:liking,:likes_count,:likes_user_ids,:avatars,:icons]
+        base.attributes [:id,:user,:user_id,:user_name,:kind_id,:kind_color,:moment_title,:created_dt,:updated_dt,:comments,:commenting,:comments_count,:likes,:liking,:likes_count,:likes_user_ids,:avatars,:icons]
       end      
 
       def kind

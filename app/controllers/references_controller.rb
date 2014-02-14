@@ -11,15 +11,6 @@ class ReferencesController < ApplicationController
     now_reading(self.presenter.reference)
   end
 
-  # def notes
-  #   #API Constraint to be put in model eventually
-  #   @ref = ref_from_params rescue not_found
-  #   #@ref = @ref.merge(verses: "1-10") if @ref.is_chapter?
-  #   @notes = Note.for_reference(@ref, language_tag: I18n.locale, cache_for: YV::Caching.a_short_time)
-  #   @notes = Note.for_reference(@ref, cache_for: YV::Caching.a_short_time) if @notes.blank?
-  #   render layout: false
-  # end
-
   protected
 
     def setup_presenters
