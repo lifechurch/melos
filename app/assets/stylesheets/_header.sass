@@ -28,9 +28,8 @@
   +round
   -webkit-font-smoothing: subpixel-antialiased
   background-color: #232324
-  border: 1px solid #232324
   font-size: 11px
-  padding: 0 20px 0 20px
+  padding: 0 0 0 20px
   position: relative
   line-height: 50px
   height: 50px
@@ -39,11 +38,11 @@
 //----------------------------------------------------------------------------------------------------
 
 #header_search_form
-  width: 287px
+  width: 222px
   height: 50px
   position: absolute
   top: 0
-  right: 300px
+  left: 210px
 
 #header_search_input,
 #header_search_button
@@ -63,11 +62,12 @@
   +box-shadow(none)
   background-position: 0 0
   color: #cbc9cf
-  padding-left: 12px
-  padding-right: 1px
+  padding-left: 8px
+  padding-right: 2px
   text-shadow: rgba(#000, 0.5) 0 -1px 0
-  width: 240px
+  width: 184px
   left: 0
+  z-index: 1
 
 #header_search_button
   +box-shadow(none)
@@ -93,11 +93,23 @@
 
 // `Header > Profile Nav
 //----------------------------------------------------------------------------------------------------
+.header-user
+  width: 536px
+  float: right
+  border-left: 2px solid #dedddb
 
-#header nav
+#header nav.sign_in
+  float: left
+  height: 50px
+  font-size: 13px
+  width: 167px
+
+#header nav.no_auth
   float: right
   height: 50px
   font-size: 13px
+  width: 167px
+  margin-right: 20px
 
 #header nav ul,
 #header nav ol,
@@ -107,7 +119,6 @@
 
 #header nav ul
   line-height: 30px
-  min-width: 280px
   position: relative
 
 #header nav ul > li
@@ -132,12 +143,6 @@
   top: 50%
   left: -12px
 
-#header nav ul > li.auth:first-child:after
-  background: none
-  
-#header nav ul > .li_active
-  +border-bottom-radius(0)
-
 #header nav ul > li > a > span
   padding: 10px
 
@@ -151,18 +156,91 @@
   text-decoration: none
   font-weight: normal
 
+#header .user_options
+  float: left
+  width: 129px
+  position: relative
+  background: #444 image-url("header-sprite.png") no-repeat -10px -441px
+  border-right: 1px solid #4e4e4e
+
 #header nav .sign_in
   padding: 0 10px
 
-#header_profile_trigger img
-  +border-radius(25px)
-  margin: -4px 5px 0 50px
-  width: 25px
-  height: 25px
+#header ul.nav_user > li
+  float: left
+  width: 48px
+  height: 50px
+  display: inline-block
+
+  > a
+    background: image-url("header-sprite.png") no-repeat center 0px
+    width: 48px
+    height: 50px
+    display: block
+
+#header ul.nav_user
+  margin-bottom: 0
+
+  li.highlights 
+    a
+      background-position: center -96px
+
+    a:hover
+      background-position: center -151px
+
+  li.bookmarks 
+    a
+      background-position: center -206px
+
+    a:hover
+      background-position: center -261px
+
+  li.notes 
+    a
+      background-position: center -316px
+
+    a:hover
+      background-position: center -371px
+
+  li.auth a
+    background: none
+    
+#header ul.nav_user li.auth
+  width: 76px  
+
+  > a
+    background-color: #808080
+    color: #232324
+    font-size: 10px
+    padding: 2px
+    +border-radius(3px)
+    width: auto
+    height: auto
+    display: inline
+    margin-left: 3px
+    font-weight: bold
+
+.sign_in span 
+  color: #d4d4d4
+  line-height: 50px
+
+  .user_name
+    max-width: 110px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    height: 50px
+    position: absolute
+
+  img
+    +border-radius(24px)
+    margin: -1px 7px 0 17px
+    width: 24px
+    height: 24px
 
 #header_profile_trigger
-  //background: image-url("header_profile_arrow.png") no-repeat right center
-  text-align: right
+  background: image-url("header_profile_arrow.png") no-repeat right center
+  //text-align: right
 
 // `Drop-down Menu
 //----------------------------------------------------------------------------------------------------
@@ -171,6 +249,7 @@
   +border-radius(5px)
   background: #fff
   display: none
+  font-size: 13px
   line-height: 1
   position: relative
   z-index: 1
@@ -199,8 +278,10 @@
 
 .li_active #header_profile_menu
   display: block
-  margin-top: 8px
+  margin-top: -2px
   position: relative
+  width: 280px
+  margin-left: -210px
 
 #header_profile_menu a
   display: block

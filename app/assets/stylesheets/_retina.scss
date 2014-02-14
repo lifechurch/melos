@@ -281,7 +281,7 @@ only screen and (                min-resolution: 2dppx) {
   .moment-actions-comment a,
   .moment-actions-like a {
     background: image-url("social-actions-sprite@2x.png") no-repeat;
-    background-size: 20px 500px;
+    background-size: 20px 800px;
   }
 
   .moment-actions-share a {
@@ -404,8 +404,7 @@ only screen and (                min-resolution: 2dppx) {
 
   .moment-content-actions-delete:hover {
     background-position: 0px -104px;
-  }
-
+  }        
 
   // !Header
 
@@ -416,8 +415,8 @@ only screen and (                min-resolution: 2dppx) {
 
   #header .friend-requests-btn,
   #header .notifications-btn {
-    background: image-url("header-sprite@2x.png") no-repeat 0px -54px;
-    background-size: 28px 100px;
+    background: image-url("header-sprite@2x.png") no-repeat 0px -50px;
+    background-size: 28px 550px;
   }
 
   #header .friend-requests-btn {
@@ -425,8 +424,37 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   #header .notifications-btn {
-    background-position: 0px -55px;
+    background-position: 0px -45px;
   }
+
+  #header ul.nav_user > li > a {
+    background: image-url("header-sprite@2x.png") no-repeat center 0px;
+    background-size: 28px 550px;
+  }
+
+  #header ul.nav_user li.highlights a {
+    background-position: center -86px
+  }
+
+  #header ul.nav_user li.highlights a:hover {
+    background-position: center -141px
+  }   
+
+  #header ul.nav_user li.bookmarks a {
+    background-position: center -196px
+  }
+
+  #header ul.nav_user li.bookmarks a:hover {
+    background-position: center -251px
+  }   
+
+  #header ul.nav_user li.notes a {
+    background-position: center -306px
+  }
+
+  #header ul.nav_user li.notes a:hover {
+    background-position: center -361px
+  }   
 
 
   // Reader
