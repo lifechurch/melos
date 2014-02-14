@@ -285,7 +285,7 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   .moment-actions-share a {
-    background-position: 20px 10px;
+    background-position: 10px 10px;
   }
 
   .moment-actions-comment a {
@@ -370,7 +370,7 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   .moment-sys .moment-icon {
-    background-position: -415px 0;
+    background-position: -416px 0;
   }
 
   .moment-fr .moment-icon {
@@ -379,7 +379,12 @@ only screen and (                min-resolution: 2dppx) {
 
   .moment-comment-delete {
     background: image-url("social-actions-sprite@2x.png") no-repeat center -417px;
-    background-size: 20px 500px;
+    background-size: 20px 800px;
+  }
+
+  .moment-comment-delete:hover {
+    background: image-url("social-actions-sprite.png") no-repeat center -471px;
+    background-size: 20px 800px;
   }
 
 
