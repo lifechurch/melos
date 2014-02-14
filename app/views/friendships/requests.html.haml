@@ -1,4 +1,5 @@
-- @sidebar = false
+= content_for :sidebar do
+  = render partial: 'widgets/find_friends'
 
 %article.social-requests
   - if @friendships.incoming.present?
