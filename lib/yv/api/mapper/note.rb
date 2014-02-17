@@ -54,6 +54,7 @@ module YV
             instance.references       = results.extras.references
 
             # Common moment elements
+            instance                  = map_to_user_fields(instance,results.extras.user)
             instance.user             = map_to_user(::User.new,results.extras.user)
             instance.icons            = map_to_icons(results.base.images.icon)
             instance.avatars          = map_to_avatars(results.base.images.avatar)

@@ -148,20 +148,6 @@ class Bookmark < YV::Resource
     #end
   end
 
-  def after_update(results)
-    #build(results)
-  end
-
-
-
-  def update(fields)
-    # API allows only title, labels, and highlight_color to be updated
-    allowed_keys = [:title, :labels, :highlight_color, "title", "labels", "highlight_color"]
-    fields.delete_if {|k, v| ! allowed_keys.include? k}
-    super
-  end
-
-
   def moment_partial_path
     "moments/bookmark"
   end

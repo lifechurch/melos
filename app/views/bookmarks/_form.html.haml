@@ -1,4 +1,4 @@
-= form_for bookmark, as: :bookmark, url: bookmark.id ? bookmark_path(bookmark.id) : bookmarks_path, :html => {class: 'full_page_form'} do |f|
+= form_for bookmark, as: :bookmark, url: bookmark.id ? bookmark_path(bookmark.id) : bookmarks_path, :html => {class: 'full_page_form',"data-color-form" => true} do |f|
   - if bookmark.errors.any?
     .form_errors
       =t("bookmarks.creation form errors")
@@ -14,12 +14,11 @@
     = f.label :labels, t("bookmarks.form.labels field")
     = f.text_field :labels, value: bookmark.labels.join(",")
 
-  - # PULLING color for now until we can add it back in properly.
-  - #%p.color
-  - #  = f.label :color, t("bookmarks.form.color field")
-  - #  = f.text_field :color, class: 'float_left'
-  - #  %div{:class => "color_picker_list", style: "width:auto; margin-top:-10px; margin-left:10px; margin-bottom: 20px; clear: both"}
-  - #    %a{:class => "color_picker", :href =>"#"}
+  %p
+    = f.hidden_field :color, class:"selected-color"
+    %label Highlight: (optional)
+    .color_picker_list{"data-current-color" => bookmark.color}
+      .color_picker
 
   :ruby    
     raw_refs = bookmark.references

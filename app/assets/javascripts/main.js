@@ -55,6 +55,11 @@ jQuery(document).ready(function() {
     new Moments.Moment({el: $(this)})
   })
 
+
+  $("form[data-color-form=true]").each( function() {
+    new Forms.ColorPicker($(this));
+  });
+
   // Toggle feature
   // Add  the attribute data-toggle-trigger="true" to any link
   // and data-toggle-target="#id-of-element"

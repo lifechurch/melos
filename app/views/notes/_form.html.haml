@@ -5,7 +5,7 @@
   # - results: the results of attempting to save a note
 
 
-= form_for note, as: :note, url: note.id ? note_path(note.id) : notes_path, html: {class: "full_page_form"} do |f|
+= form_for note, as: :note, url: note.id ? note_path(note.id) : notes_path, html: {class: "full_page_form", "data-color-form" => true } do |f|
   = render(partial: "shared/form_errors", locals: {errors: results.errors}) unless results.nil?
 
   %p
@@ -15,6 +15,13 @@
   %p
     = f.label :content, t("notes.form.content field")
     = f.text_area :content, size: "30x10"
+
+
+  %p
+    = f.hidden_field :color, class:"selected-color"
+    %label Highlight: (optional)
+    .color_picker_list{"data-current-color" => note.color}
+      .color_picker
 
   - # if reference_list is empty, no need to show these fields.  
   - # Causes an error otherwise when sending empty note[references]/note[version_id] params
