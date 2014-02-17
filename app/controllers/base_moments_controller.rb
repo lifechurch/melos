@@ -77,7 +77,9 @@ class BaseMomentsController < ApplicationController
   def destroy
     results = @moment.destroy
     notice = results.valid? ? t("#{lower_resource_name.pluralize}.destroy success") : t("{lower_resource_name.pluralize}.destroy failure")
-    redirect_to(user_path(current_user), notice: notice)
+    
+    destination = "#{lower_resource_name.pluralize}_user_url" # bookmarks_user_url
+    redirect_to( self.send(destination.to_sym, id: current_auth.username) , notice: notice)
   end
 
   private

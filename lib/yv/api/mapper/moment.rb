@@ -13,7 +13,7 @@ module YV
           end
 
           def from_all(results)
-            return results if results.empty?
+            return results if results.empty? or results.moments.nil?
             results.moments.collect do |moment_data|
               map_from_kind(moment_data)
             end 

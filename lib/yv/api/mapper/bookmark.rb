@@ -11,7 +11,7 @@ module YV
 
           def from_collection(results)
             # If the data is a blank/empty array, return it
-            return results if results.blank?
+            return results if results.blank? or results.moments.nil?
             
             collection = results.moments.collect do |moment|
               map_to_instance(::Bookmark.new, moment)

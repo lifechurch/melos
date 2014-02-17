@@ -52,7 +52,10 @@ module YV
           # puts "---"
           # puts "GET OPTIONS:"
           # puts opts
+          # puts
+          # puts "ACTUAL Response"
           # puts response
+          # puts 
           # puts resource_url
           # puts "GET END  ---- \n"
 
