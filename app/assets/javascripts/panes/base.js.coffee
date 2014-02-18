@@ -56,7 +56,7 @@ class window.Panes.Base
 
   # Show the pane <dd>
   open: (complete)->
-    @showRegistrationInfo() unless @isLoggedIn()
+    @showRegistrationInfo() unless Session.User.isLoggedIn()
     @trigger_el.addClass("active")
     @pane().slideDown 250, complete
 
@@ -69,10 +69,6 @@ class window.Panes.Base
   showRegistrationInfo: ()->
     @pane().find(".blurbs p").hide()
     @pane().find('.blurbs p.' + @trigger_el.data("pane-type")).show()
-
-  # Utility / convenience method for checking a users logged in status
-  isLoggedIn: ()->
-    return $("html").data("logged-in")
 
   # Utility method to trigger a jQuery event.
   trigger: (event, args)->

@@ -16,7 +16,7 @@ class window.Panes.Bookmark extends window.Panes.Base
     super(html)
     @setupColorpicker()
     @setupFormAjax(html)
-    @setupBookmarkLabels() if @isLoggedIn()
+    @setupBookmarkLabels() if Session.User.isLoggedIn()
     
 
   setupFormAjax: (html)->

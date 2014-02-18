@@ -76,10 +76,18 @@ class BaseMomentsController < ApplicationController
 
   def destroy
     results = @moment.destroy
-    notice = results.valid? ? t("#{lower_resource_name.pluralize}.destroy success") : t("{lower_resource_name.pluralize}.destroy failure")
-    
-    destination = "#{lower_resource_name.pluralize}_user_url" # bookmarks_user_url
-    redirect_to( self.send(destination.to_sym, id: current_auth.username) , notice: notice)
+
+    respond_to do |format|
+      format.html {
+        notice      = results.valid? ? t("#{lower_resource_name.pluralize}.destroy success") : t("{lower_resource_name.pluralize}.destroy failure")
+        destination = "#{lower_resource_name.pluralize}_user_url" # bookmarks_user_url
+        redirect_to( self.send(destination.to_sym, id: current_auth.username) , notice: notice)
+      }
+      format.js {
+        status = results.valid? ? 200 : 400
+        render text: "", status: status and return
+      }
+    end
   end
 
   private

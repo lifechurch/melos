@@ -106,7 +106,7 @@ class window.Panes.VerseActions
     dl.prepend @bookmark_pane.render()
     dl.prepend @highlight_pane.render()
 
-    unless @isLoggedIn()
+    unless Session.User.isLoggedIn()
       @adjustPanesForRegistration()
 
     return
@@ -155,9 +155,6 @@ class window.Panes.VerseActions
         $('#version_primary').unbind("verses:first_selected", $.proxy(@open_mobile,@));
         $('#version_primary').unbind("verses:all_deselected", $.proxy(@close_mobile,@));
     }
-
-  isLoggedIn: ()->
-    $("html").data("logged-in")
 
 
 
