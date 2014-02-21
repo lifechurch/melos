@@ -11,8 +11,9 @@ class PagesController < ApplicationController
   # /app url - redirects to an store for mobile device if found
   # tracks requests to /app to GA custom event.
   def app
-    return redirect_store! unless request.env["X_MOBILE_DEVICE"].nil?
     track_app_download
+    return redirect_to store_path(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
+  end
   end
 
   def privacy
@@ -50,9 +51,9 @@ class PagesController < ApplicationController
 
   # Rules for redirecting to App Store(s) given the mobile device user agent string
 
-  def redirect_store!
+  def store_path(device=nil)
 
-    store_url = case request.env["X_MOBILE_DEVICE"] #rack_env["X_MOBILE_DEVICE"]
+    case device #rack_env["X_MOBILE_DEVICE"]
 
       when /iphone|iPhone|ipad|iPad|ipod|iPod/
         'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=282935706&mt=8'
@@ -77,12 +78,14 @@ class PagesController < ApplicationController
 
       when /webOS|hpwOS/
         'http://developer.palm.com/webChannel/index.php?packageid=com.youversion.palm'
+        
+      when /Windows 8/
+        'http://apps.microsoft.com/webpdp/app/bible/af5f6405-7860-49a9-a6b4-a47381974e1d'
 
       else
         'https://www.bible.com'
     end
 
-    redirect_to( store_url )
   end
 
 
