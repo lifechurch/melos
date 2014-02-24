@@ -127,7 +127,7 @@
   margin-top: 9px
   padding-top: 1px
   height: 31px
-  
+
 #header nav ul > li:first-child
   margin-left: 20px
   position: relative
@@ -160,7 +160,7 @@
   float: right
   width: 129px
   position: relative
-  background: #444 image-url("header-sprite.png") no-repeat -10px -441px
+  background: #393939 image-url("header-sprite.png") no-repeat -10px -441px
   border-right: 1px solid #4e4e4e
 
 #header nav .sign_in
@@ -181,22 +181,24 @@
 #header ul.nav_user
   margin-bottom: 0
   float: right
+  background-color: #393939
+  +border-radius(0 5px 5px 0)
 
-  li.highlights 
+  li.highlights
     a
       background-position: center -96px
 
     a:hover
       background-position: center -151px
 
-  li.bookmarks 
+  li.bookmarks
     a
       background-position: center -206px
 
     a:hover
       background-position: center -261px
 
-  li.notes 
+  li.notes
     a
       background-position: center -316px
 
@@ -205,9 +207,9 @@
 
   li.auth a
     background: none
-    
+
 #header ul.nav_user li.auth
-  width: auto  
+  width: auto
   margin-right: 20px
 
   > a
@@ -222,7 +224,10 @@
     margin: 0 5px
     font-weight: bold
 
-.sign_in span 
+  > a:hover
+    background-color: #ddd
+
+.sign_in span
   color: #d4d4d4
   line-height: 50px
 
@@ -257,7 +262,7 @@
   z-index: 1
   -moz-box-shadow: 0px 0px 8px #222
   -webkit-box-shadow: 0px 0px 8px #222
-  box-shadow: 0px 0px 8px #222  
+  box-shadow: 0px 0px 8px #222
 
   ol
     width: 280px
@@ -269,10 +274,10 @@
       border-bottom: 1px solid #ddd
 
     li:nth-child(odd)
-      border-right: 1px solid #ddd  
+      border-right: 1px solid #ddd
 
     li:nth-child(n+7)
-      border-bottom: none  
+      border-bottom: none
 
 #header #header_profile_menu .arrow
   left: 240px

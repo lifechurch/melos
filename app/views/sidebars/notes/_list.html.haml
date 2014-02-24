@@ -7,29 +7,25 @@
   # notes  (required)
   # link   (optional)
   # title  (optional)
-  
+
    title = t("notes.community notes")
    link = link || notes_path
 
-#widget-notes.widget
+#widget-notes.widget.comm-notes
   %div.hd
     %span
       = title
 
   - unless notes.empty?
-    %table
-      %tbody
-      - notes.first(8).each do |note|
-        %tr
-          %th
-            %a
-              - user = note.user
-              - md_avatar = user.avatars.md_avatar
-              %img.avatar_small{src: md_avatar.url}
-              
-          %td
-            %a= link_to note.title, note_path(note.id)
-            %p.mute.small= user.name
+    %ul
+    - notes.first(8).each do |note|
+      %li
+        - user = note.user
+        - md_avatar = user.avatars.md_avatar
+        %img{src: md_avatar.url}
+
+        %a= link_to note.title, note_path(note.id)
+        %p.mute.small= user.name
 
     %div.ft
       %a{href: link}= t('show all notes')
