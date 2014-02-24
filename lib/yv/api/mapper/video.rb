@@ -10,6 +10,7 @@ module YV
 
           def map_to_instance(instance,data)
             instance.id = data.id
+            instance.credits = data.credits
             instance.title = data.title
             instance.description = data.description
             instance.runtime = data.runtime
