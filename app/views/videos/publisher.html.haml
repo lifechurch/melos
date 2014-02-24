@@ -5,6 +5,6 @@
   = render partial: "sidebars/videos/publisher", locals: {video: @video, publisher: @publisher}
 
 %article.videos-publisher
-  %h1= @publisher.name
+  %h1= @publisher.name.html_safe
 
   %p.video-info= @publisher.description.html_safe
