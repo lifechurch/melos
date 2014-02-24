@@ -4,7 +4,7 @@
   # Local Variables
   # reference  (required)
 
-#widget-notes.widget.ajax_notes{"data-ajax" => "#{reference_path(version: reference.version, reference: reference.to_usfm)}/notes"}
+#widget-notes.widget{"data-reference" => "#{reference_path(version: reference.version, reference: reference.to_usfm)}"}
   %div.hd
     %span= t("notes.community notes")
   %div.bd

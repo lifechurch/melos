@@ -72,7 +72,6 @@ function Reader(opts) {
   this.initAudioPlayer();
   this.initTranslationNotes();
   this.initNextPrev();
-  this.initSidebar();
 
   this.book_chapter_menu  = new BookChapterMenu({trigger: "#menu_book_chapter_trigger", menu: "#menu_book_chapter"});
   this.selected_menu      = new Panes.VerseActions();//new SelectedMenu({menu:"#menu_verse_actions", trigger:"#menu_selected_trigger", mobile_menu:".verse_toolbar"});
@@ -146,13 +145,15 @@ Reader.prototype = {
     } else {
         this.selectVerse(v);
     }
-    this.parseVerses();
   },
 
   deselectVerse : function( v ) {
     $(this.parseVerseClasses(v)).each( function(i,val) {
       $(".verse." + val ).removeClass("selected");
     });
+    
+    this.parseVerses();
+
     $(this.primary).trigger("verses:deselected");
     if (this.numSelectedVerses() === 0){ $(this.primary).trigger("verses:all_deselected"); }
   },
@@ -161,8 +162,12 @@ Reader.prototype = {
     $(this.parseVerseClasses(v)).each( function(i,val) {
       $(".verse." + val ).addClass("selected");
     });
-    if (this.numSelectedVerses() === 1){ $(this.primary).trigger("verses:first_selected"); }
-    if (this.numSelectedVerses()){ $(this.primary).trigger("verses:selected"); }
+
+    this.parseVerses();
+    var verses_selected = this.numSelectedVerses();
+
+    if (verses_selected === 1)  { $(this.primary).trigger("verses:first_selected"); }
+    if (verses_selected)        { $(this.primary).trigger("verses:selected"); }
   },
 
   isSelected : function( v ) {
@@ -176,8 +181,8 @@ Reader.prototype = {
     // Public: clear all selected verses.
   clearSelectedVerses : function() {
     this.allSelectedVerses().removeClass('selected');
-    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected"); }
     this.parseVerses();
+    if (this.numSelectedVerses() == 0){ $(this.primary).trigger("verses:all_deselected"); }
   },
 
   scrollToVerse : function(verse) {
@@ -238,7 +243,7 @@ Reader.prototype = {
   parseVerses : function() {
 
     // Zero out values
-    $("article").attr('data-selected-verses-rel-link', false);
+    $("article").data('selected-verses-rel-link', false);
     $('.verses_selected_input').val('');
 
     this.selected.verses = this.fetchSelectedVerses();
@@ -436,7 +441,7 @@ Reader.prototype = {
     this.selected_menu.updateLink( short_link );
     this.selected_menu.updateSharing({ link: short_link });
 
-    $("article").attr('data-selected-verses-rel-link', relative_link.toLowerCase());
+    $("article").data('selected-verses-rel-link', relative_link.toLowerCase());
     $("article").attr('data-selected-verses-path-partial', partial_path);
   },
 
@@ -779,19 +784,6 @@ Reader.prototype = {
 
   },
 
-  initSidebar : function() {
-    var thiss = this;
-    jRes.addFunc({
-      breakpoint: 'widescreen',
-      enter: function() {
-        thiss.ajaxNotesWidget();
-        thiss.ajaxBookmarksWidget();
-      },
-      exit: function() {
-        // already loaded, no worries
-      }
-    });
-  },
 
   initSecondaryVersion : function() {
     var thiss = this;

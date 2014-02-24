@@ -149,7 +149,7 @@ en:
   last page:                                    "Last Page"
   invalid username or password:                 "Invalid username or password."
   show all bookmarks:                           "View all %{total} bookmarks"
-  show all notes:                               "View all %{total} notes"
+  show all notes:                               "View all notes"
   recent bookmarks:                             "Recent Bookmarks"
   percentage display:                           "%{number}%"
   myself:                                       "Me"

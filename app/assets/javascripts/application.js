@@ -6,6 +6,7 @@
 //= require jquery.ui.position
 //= require jquery.ui.autocomplete
 //= require ./session/user
+//= require ./sidebars/community_notes
 //= require ./reader/highliter
 //= require ./forms/color_picker
 //= require ./moments/verse
