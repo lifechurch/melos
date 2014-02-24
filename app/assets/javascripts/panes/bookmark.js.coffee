@@ -15,13 +15,12 @@ class window.Panes.Bookmark extends window.Panes.Base
   afterRender: (html)->
     super(html)
     @setupColorpicker()
-    @setupFormAjax(html)
+    @setupForm(html.find("form"))
     @setupBookmarkLabels() if Session.User.isLoggedIn()
     
 
-  setupFormAjax: (html)->
-    form = html.find("form")
-    form.on "submit", (event)=>
+  setupForm: (form)->
+    $(form).on "submit", (event)=>
       event.preventDefault()
 
       # Named helper function to get form field values by name
@@ -47,7 +46,19 @@ class window.Panes.Bookmark extends window.Panes.Base
       }
 
       request.done (data)=>
-        @triggerFormSuccess()
+        @showFormSuccess()
+
+
+  resetForm: (form)->
+
+    reset = (name)->
+      form.find("[name='" + name + "']").val("")
+
+    reset("bookmark[usfm_references]")
+    reset("bookmark[color]")
+    reset("bookmark[title]")
+    reset("bookmark[labels]")
+
 
 
   setupBookmarkLabels: ()->

@@ -12,6 +12,9 @@
       </dt>
       <dd class="highlight-pane" id="highlight-pane">
         <div class="pane">
+          <p class="verse-actions-success-message success" style="display:none;">
+            #{t("highlights.create success")}
+          </p>
           <form action="#{authed_highlight_form_action}" method="#{authed_form_method}" id="highlight-form">
             <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
             <input type="hidden" name="highlight[version_id]" value="#{presenter.version.id}" />
@@ -35,6 +38,9 @@
       </dt>
       <dd class="bookmark-pane" id="bookmark-pane">
         <div class="pane">
+          <p class="verse-actions-success-message success" style="display:none;">
+            #{t("bookmarks.create success")}
+          </p>
           <form action="#{authed_bookmark_form_action}" method="#{authed_form_method}">
             <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
             <input type="hidden" name="bookmark[version_id]" value="#{presenter.version.id}" />
@@ -59,12 +65,11 @@
             <div class="color_picker_list">
               <div class="color_picker"></div>
             </div>
-            <p>
+            <div>
               <button type="submit" name="bookmark[submit]" value="submit" class="action_button_green">
                 #{t('bookmarks.form.save button')}
               </button>
-            </p>
-            <div class="clear"></div>
+            </div>
           </form>
         </div>
       </dd>
@@ -75,6 +80,9 @@
       .arrow
     %dd#note-pane
       .pane
+        %p.verse-actions-success-message.success{style: "display: none;"}
+          = t("notes.create success")
+          
         - note = presenter.note
         = form_for note, url: (logged_in? ? notes_path : sign_up_path), method: authed_form_method do |f|
           = f.hidden_field :version_id

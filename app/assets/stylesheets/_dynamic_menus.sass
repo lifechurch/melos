@@ -347,6 +347,15 @@
   position: relative
   background-color: #323232
 
+  .verse-actions-success-message
+    background:
+      color: #d9e4c9
+    border-color: #91b164
+    color: #4b7518
+    margin: 0
+    padding: 8px
+
+
 #menu_verse_actions .references
   padding: 0px 5px
 
@@ -446,12 +455,15 @@
   left: 41px
   z-index: 1
 
-#menu_verse_actions dl .pane
-  width: 558px
+#menu_verse_actions .pane
+  width: 568px
   background-color: #fff
   border: 1px solid #cbc9cf
   border-top: none
-  padding: 10px 20px
+  padding: 15px
+
+#menu_verse_actions .pane form
+  padding: 10px
 
 .dynamic_menu.version_select
   width: 415px
@@ -469,9 +481,6 @@
 
 // !Reader verse actions: bookmark
 
-#menu_verse_actions #bookmark-pane .pane
-  padding-bottom: 0
-
 #menu_verse_actions #bookmark-pane .pane input[type="text"]
   width: 300px
 
@@ -481,7 +490,6 @@
 #menu_verse_actions #share-pane
 
   .pane
-    padding: 20px 20px 0
     .share_errors
       color: red
       font-weight: bold
@@ -600,16 +608,7 @@
   border: 0
 
 
-// !Reader verse actions: link
-
-#menu_verse_actions #link-pane .pane
-  padding: 20px
-
-
 // !Reader verse actions: note
-
-#menu_verse_actions #note-pane .pane
-  padding: 20px
 
 #menu_verse_actions #note-pane .pane label
   display: block

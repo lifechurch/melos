@@ -25,12 +25,11 @@ class window.Panes.Highlight extends window.Panes.Base
   afterRender: (html)->
     super(html)
     @setupColorpicker()
-    @setupFormAjax(html)
+    @setupForm(html.find("form"))
     return
 
-  setupFormAjax: (html)->
-    form = html.find("form")
-    form.on "submit", (event)=>
+  setupForm: (form)->
+    $(form).on "submit", (event)=>
       event.preventDefault()
 
       # Named helper function to get form field values by name
@@ -56,4 +55,13 @@ class window.Panes.Highlight extends window.Panes.Base
       request.done (data)=>
         $(data.references).each (index,ref_hash)->
           window.Highliter.highlight(ref_hash.usfm,data.color)
-        @triggerFormSuccess()
+        @showFormSuccess()
+
+
+  resetForm: (form)->
+
+    reset = (name)->
+      form.find("[name='" + name + "']").val("")
+
+    reset("highlight[usfm_references]")
+    reset("highlight[color]")      

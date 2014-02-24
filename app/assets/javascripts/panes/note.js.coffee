@@ -14,11 +14,10 @@ class window.Panes.Note extends window.Panes.Base
   afterRender: (html)->
     super(html)
     @setupColorpicker()
-    @setupFormAjax(html)
+    @setupForm(html.find("form"))
 
-  setupFormAjax: (html)->
-    form = html.find("form")
-    form.on "submit", (event)=>
+  setupForm: (form)->
+    $(form).on "submit", (event)=>
       event.preventDefault()
 
       # Named helper function to get form field values by name
@@ -45,4 +44,16 @@ class window.Panes.Note extends window.Panes.Base
       }
 
       request.done (data)=>
-        @triggerFormSuccess()
+        @showFormSuccess()
+
+
+  resetForm: (form)->
+
+    reset = (name)->
+      form.find("[name='" + name + "']").val("")
+
+    reset("note[usfm_references]")
+    reset("note[color]")
+    reset("note[title]")
+    reset("note[user_status]")
+    reset("note[content]")

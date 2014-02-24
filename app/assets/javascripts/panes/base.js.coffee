@@ -70,14 +70,36 @@ class window.Panes.Base
     @pane().find(".blurbs p").hide()
     @pane().find('.blurbs p.' + @trigger_el.data("pane-type")).show()
 
+
   # Utility method to trigger a jQuery event.
   trigger: (event, args)->
     $.event.trigger(event, args)
     return
 
+  resetForm: (form)->
+    # override this in subclasses to reset/clear forms properly
 
   triggerFormSuccess: ()->
     $(@).trigger("form:submit:success")
+
+
+  showFormSuccess: ()->
+    pane = @el.find(".pane")
+    form = pane.find("form")
+    mssg = pane.find(".success")
+    
+    mssg.show()
+    form.hide()
+    
+    finishedWithSuccess = ()=>
+      @triggerFormSuccess()
+      @resetForm(form)
+      form.show()
+      mssg.hide()
+    
+    setTimeout(finishedWithSuccess, 3000)
+    return
+
 
   setupColorpicker: ()->
     new Forms.ColorPicker(@form_el)
