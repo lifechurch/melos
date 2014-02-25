@@ -481,8 +481,24 @@
 
 // !Reader verse actions: bookmark
 
-#menu_verse_actions #bookmark-pane .pane input[type="text"]
-  width: 300px
+#menu_verse_actions #bookmark-pane
+
+  .pane input[type="text"]
+    width: 300px
+
+.ui-menu .ui-menu-item
+  font:
+    family: arial, sans-serif
+    size: 15px
+
+  a
+    color: #444
+  a:hover
+    background: none
+    background-color: #e6e6e6
+    border: 1px solid #e6e6e6
+    +border-radius(0)
+
 
 
 // !Reader verse actions: share
