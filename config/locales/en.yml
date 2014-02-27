@@ -520,6 +520,7 @@ en:
       friendships:                              "Notify me about friend requests"
       moments:                                  "Notify me about friends' activity"
       comments:                                 "Notify me about comments on my activity"
+      likes:                                    "Notify me about likes on my activity"
   bookmarks:
     new:                                        "New Bookmark"
     edit:                                       "Edit"

@@ -11,7 +11,6 @@ class NotificationSettings < YV::Resource
   attribute :notification_settings
   attribute :language_tag
   
-
   attr_accessor :badges
   attr_accessor :newsletter
   attr_accessor :reading_plans
@@ -19,6 +18,7 @@ class NotificationSettings < YV::Resource
   attr_accessor :moments
   attr_accessor :comments
   attr_accessor :friendships
+  attr_accessor :likes
 
   class << self
 
@@ -90,13 +90,15 @@ class NotificationSettings < YV::Resource
 
   def before_save
     hash = {}
-    settings = ["badges","newsletter","reading_plans","partners","moments","comments","friendships"]
+    settings = ["badges","newsletter","reading_plans","partners","moments","comments","likes","friendships"]
 
     settings.each do |n|
       setting = self.send(n.to_sym)
 
       hash[n] = if setting.present?
-        {"email" => setting["email"] || false,"push" => setting["push"] || false }
+        email = (setting["email"]) ? setting["email"].to_bool : false
+        push  = (setting["push"])  ? setting["push"].to_bool : false
+        {"email" => email,"push" => push }
       else
         {"email" => false,"push" => false }
       end
