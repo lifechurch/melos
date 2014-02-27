@@ -3,11 +3,11 @@ window.Panes ?= {}
 class window.Panes.VerseActions
 
   constructor: ()->
-    @el                     = $("#menu_verse_actions")
-    @mobile_menu            = $(".verse_toolbar")
-    @speed                  = 250;
-    @activeClass            = 'active';
-    @selected_verse_count   = 0;
+    @el             = $("#menu_verse_actions")
+    @mobile_menu    = $(".verse_toolbar")
+    @speed          = 250
+    @is_open        = false
+    @activeClass    = 'active'
     @initPanes()
     @initMobile()
 
@@ -17,6 +17,10 @@ class window.Panes.VerseActions
     return @el
 
   setSelectedReferences: (refs) ->
+
+    if refs.length == 0 && @is_open then @close()
+    if refs.length > 0 && !@is_open then @open()
+
     @highlight_pane.updateForm({references: refs})
     @mobile_highlight_pane.updateForm({references: refs})
     @bookmark_pane.updateForm({references: refs})
@@ -38,10 +42,13 @@ class window.Panes.VerseActions
 
 
   open: ()->
+    return if @is_open
+
     @adjustArticleMargin(@el.height())
     @el.slideDown @speed, ()=>
       @listener().on "pane:open", $.proxy(@openPane,@)
       @listener().on "pane:close", $.proxy(@closePane,@)
+    @is_open = true
 
 
   open_mobile: ()->
@@ -52,12 +59,18 @@ class window.Panes.VerseActions
 
 
   close: ()->
+    return unless @is_open
+
     @adjustArticleMargin()
     @el.slideUp @speed, ()=>
       @pane_list.find("dd").hide()
       @pane_list.find("dt").removeClass(@activeClass)
       @listener().off "pane:open"
       @listener().off "pane:close"
+      $(@).trigger("verses:clear") #If we're closing the panel, then no verses should be selected.  Fire off this event now.
+
+    @is_open = false
+
 
 
   close_mobile: ()->
@@ -65,16 +78,7 @@ class window.Panes.VerseActions
     @mobile_menu.stop().animate { 'top' : '-86px'}, 200, ()=>
       @mobile_menu.removeClass("open")
       $('.reader-nav').stop().animate({ 'top' : '0px'}, 200)
-
-
-  setTotal: (total)->
-    @selected_verse_count = total
-    if total > 0 then @open() else @close()
-
-
-  resetPanes: ()->
-    @setTotal(0)
-    $(@).trigger("verses:clear")
+  
 
   initPanes: ()->
     return unless @pane_list = @el.find('dl')
@@ -90,10 +94,10 @@ class window.Panes.VerseActions
     @mobile_highlight_pane  = new Panes.Highlight {el:"div.color_toolbar"}
 
     # Upon successful form submit or the X button is clicked, we should reset all panes
-    $(@note_pane).bind "form:submit:success", $.proxy(@resetPanes,@)
-    $(@bookmark_pane).bind "form:submit:success", $.proxy(@resetPanes,@)
-    $(@highlight_pane).bind "form:submit:success", $.proxy(@resetPanes,@)
-    $(@close_pane).bind("panes:cleared", $.proxy(@resetPanes,@))
+    $(@note_pane).bind "form:submit:success", $.proxy(@close,@)
+    $(@bookmark_pane).bind "form:submit:success", $.proxy(@close,@)
+    $(@highlight_pane).bind "form:submit:success", $.proxy(@close,@)
+    $(@close_pane).bind("panes:cleared", $.proxy(@close,@))
 
 
     dl = @el.find("dl.verses_selected")

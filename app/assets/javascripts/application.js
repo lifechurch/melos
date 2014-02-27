@@ -7,7 +7,12 @@
 //= require jquery.ui.autocomplete
 //= require ./session/user
 //= require ./sidebars/community_notes
+
+//= require ./reader/audio_player
+//= require ./reader/scroll
 //= require ./reader/highliter
+//= require ./reader/reader
+
 //= require ./forms/color_picker
 //= require ./moments/verse
 //= require ./moments/votd
@@ -26,7 +31,6 @@
 //= require_tree ./widgets/
 //= require_tree ./panes/
 //= require_tree ./pages/
-//= require reader
 //= require app
 //= require main
 //= require analytics
