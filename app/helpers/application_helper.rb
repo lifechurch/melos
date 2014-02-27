@@ -3,7 +3,8 @@ module ApplicationHelper
   def moment_whos_liked_string(moment)
     
     last_liker = moment.likes.last.user
-    last_liker_link = content_tag(:a,last_liker.name, href:"/users/#{last_liker.username}")
+    liker_name = (last_liker.id == current_auth.user_id) ? t("moments.user.you") : last_liker.name
+    last_liker_link = content_tag(:a,liker_name, href:"/users/#{last_liker.username}")
 
 
     if moment.likes_count == 1
