@@ -161,8 +161,6 @@ en:
     lower:                                      "or"
     upper:                                      "OR"
   moments:
-    user:
-      you:                                      "You"
     vod:
       title:                                    "Verse of the day"
     friendship:

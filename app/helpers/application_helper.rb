@@ -1,11 +1,15 @@
 module ApplicationHelper
 
   def moment_whos_liked_string(moment)
-    
-    last_liker = moment.likes.last.user
-    liker_name = (last_liker.id == current_auth.user_id) ? t("moments.user.you") : last_liker.name
-    last_liker_link = content_tag(:a,liker_name, href:"/users/#{last_liker.username}")
+    total_likes = moment.likes.count
+    last_liker  = moment.likes.last.user
 
+    # Last liker is me and there are more than 2 likes
+    if last_liker.id == current_auth.user_id and total_likes >= 2
+      last_liker = moment.likes[total_likes-2].user
+    end
+
+    last_liker_link = content_tag(:a,last_liker.name, href:"/users/#{last_liker.username}")
 
     if moment.likes_count == 1
       "#{last_liker_link} likes this".html_safe

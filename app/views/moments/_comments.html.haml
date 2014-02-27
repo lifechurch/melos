@@ -9,8 +9,9 @@
   
   - if moment.liking
     - if moment.likes_count.to_i > 0
-      %span.moment-comments-likes
-        = moment_whos_liked_string(moment) # App helper
+      - unless moment.likes_count.to_i == 1 and moment.likes.last.user.id == current_auth.user_id # Don't show if I'm the only one to have liked the moment.
+        %span.moment-comments-likes
+          = moment_whos_liked_string(moment) # App helper
 
   - if moment.commenting
     - if moment.comments_count.to_i > 3  and not detail_view
