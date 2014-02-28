@@ -5,7 +5,7 @@ YouversionWeb::Application.routes.draw do
   get "/terms",         to: "pages#terms"
   get "/privacy",       to: "pages#privacy"
   get "/donate",        to: "pages#donate"
-  get "/about",         to: redirect("http://youversion.com/about")
+  get "/about",         to: "pages#about"
   get "/press",         to: redirect("http://youversion.com/press")
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
