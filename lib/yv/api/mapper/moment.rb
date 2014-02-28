@@ -46,7 +46,7 @@ module YV
             instance.body_text   = data.base.body.str if data.base.body
             instance.body_images = map_to_body_images(data.base.images.body)
             instance.created_dt = data.created_dt
-            instance.moment_title = data.base.title["str"]
+            instance.moment_title = t(data.base.title["l_str"],data.base.title["l_args"]) if data.base.title
             instance
           end
 

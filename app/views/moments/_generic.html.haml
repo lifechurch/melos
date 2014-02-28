@@ -18,9 +18,6 @@
         = link_to(moment.body_images.action_url || "#") do
           = image_tag(moment.body_images.select_optimized_width(400).url, width: "414")
 
+      %div{style:"clear:both"}
       - if moment.body_text.present?
-        %p{style: "clear: both;"}= moment.body_text
-
-  -# !share controls, dates, and comments
-  .moment-btm
-    = render partial: "moments/actions_bar", locals: {moment: moment}
+        = simple_format(moment.body_text.html_safe)

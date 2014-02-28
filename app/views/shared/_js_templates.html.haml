@@ -219,6 +219,22 @@
             = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})
 
 
+
+%script#moment-bookmark-tmpl{type:"text/x-handlebars-template"}
+  :plain
+    <div class="moment" data-moment-id="{{id}}">
+      <div class="moment-top">
+        <div class="moment-bm">
+          <span class="moment-icon"></span>
+          <span class="moment-avatar">
+            <a href="#">User Link</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+
 %script#moment-verse-tmpl{type:"text/x-handlebars-template"}
   :plain
     <p class="moment-verse">{{content_plain}}</p>

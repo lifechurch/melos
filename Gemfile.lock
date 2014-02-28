@@ -175,6 +175,9 @@ GEM
       multi_xml
     httpauth (0.2.0)
     i18n (0.6.1)
+    jbuilder (2.0.3)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     journey (1.0.4)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
@@ -418,6 +421,7 @@ DEPENDENCIES
   hooves
   http_accept_language (~> 1.0.2)
   httparty (= 0.8.2)
+  jbuilder (~> 2.0.3)
   jquery-rails (~> 2.1.4)
   jquery-ui-rails (~> 4.1.1)
   koala (~> 1.6.0)

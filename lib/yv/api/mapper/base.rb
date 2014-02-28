@@ -61,12 +61,10 @@ module YV
             def map_to_comments(comments_data)
               unless comments_data.nil?
                 comments_data.collect do |comment_data|
-                  map_to_comment(::Comment.new,comment_data)
+                  YV::API::Mapper::Comment.map_to_instance(::Comment.new, comment_data)
                 end
               end
             end
-
-
 
             def map_to_avatars(data)
               return Images::AvatarCollection.init_from_api(data) unless data.nil?
@@ -80,15 +78,6 @@ module YV
               return Images::BodyCollection.init_from_api(data) unless data.nil?
             end
 
-            # Map data to comment instance
-            def map_to_comment(comment_instance, comment_data)
-              comment_instance.id         = comment_data.id
-              comment_instance.content    = comment_data.content
-              comment_instance.user       = map_to_user(::User.new,comment_data.user)
-              comment_instance.created_dt = comment_data.created_dt
-              comment_instance.updated_dt = comment_data.updated_dt
-              comment_instance
-            end
 
             def map_to_user_fields(instance,user_data)
               instance.user_id = user_data.id

@@ -2,7 +2,7 @@ class VOD < YV::Resource
 
   include YV::Concerns::Moments
 
-  attributes [:references,:version,:recent_versions,:day,:week_day,:date,:created_dt]
+  attributes [:references,:version,:recent_versions,:day,:week_day,:date,:created_at]
   api_response_mapper YV::API::Mapper::VerseOfTheDay
 
   class << self
@@ -25,6 +25,7 @@ class VOD < YV::Resource
 
       the_one = every_votd.detect {|votd| votd.day == day}
       the_one.date            = Date.strptime("#{Date.today.year}-#{day}","%Y-%j")
+      the_one.created_at      = DateTime.strptime("#{Date.today.year}-#{day}","%Y-%j")
       the_one.week_day        = the_one.date.day
       the_one.version         = Version.find(opts[:version_id])
       the_one.recent_versions = recent_versions(opts[:recent_versions] || [])

@@ -10,11 +10,14 @@ class MomentsController < BaseMomentsController
 
   # TODO - optimize before filterage, especially for the #show redirect
 
+  respond_to :html, :js
+
   # A logged in users Moments/Home feed
   def index
     recent_versions = client_settings.recent_versions
     @user    = current_user
     @feed    = YV::Moments::Feed.new(
+      prev_end_day: params[:paginated_end_day] || 0,
       auth: current_auth,
       page: @page,
       version: client_settings.version || 1,
@@ -36,7 +39,13 @@ class MomentsController < BaseMomentsController
       recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default]
     )
     @moments = @feed.moments
-    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: self.class.moment_comments_displayed}, layout: false
+
+    respond_to do |format|
+      format.html do
+        render partial: "moments/cards", locals: {moments: @moments, comments_displayed: self.class.moment_comments_displayed}, layout: false
+      end
+      format.json
+    end
   end
 
 

@@ -18,6 +18,10 @@ module YV
         "moments/#{kind}"
       end
 
+      def created_at
+        DateTime.parse(self.created_dt)
+      end
+
       def editable?
         true
       end

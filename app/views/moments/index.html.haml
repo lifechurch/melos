@@ -5,8 +5,8 @@
     = #render partial: "moments/cta/find_friends"
     = render partial: "moments/cta/profile" if current_user.profile_incomplete?
     = #render partial: "moments/cta/sharing"
-    = render partial: "moments/cards", locals: {moments: @feed.moments, comments_displayed: true}
+    = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
 
 
 - if @feed.next_page
-  = render partial: "shared/moments_load_more", locals: {resource: "moments"}
+  = render partial: "shared/moments_load_more", locals: {resource: "moments", paginated_end_day: @feed.paginated_end_day}

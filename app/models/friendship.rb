@@ -16,8 +16,16 @@ class Friendship
   attr_accessor :moment_title
 
 
+  def kind
+    "friendship"
+  end
+
   def moment_partial_path
-    "moments/friendship"
+    "moments/#{kind}"
+  end
+
+  def created_at
+    DateTime.parse(self.created_dt)
   end
 
 end

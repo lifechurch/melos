@@ -12,8 +12,6 @@ module YV
             map_to_instance(instance, results.comments.last)
           end
 
-          private
-
           # example API response
 
           # {"next_page"=>nil,
