@@ -120,7 +120,7 @@ module YV
         def options_for_get(opts)
           {
             headers: default_headers,
-            timeout: opts.delete(:timeout),
+            timeout: opts.delete(:timeout) || Cfg.api_default_timeout,
             query:   opts.except(:cache_for)
           }
         end
@@ -128,7 +128,7 @@ module YV
         def options_for_post(opts)
           {
             headers: default_headers.merge('Content-Type' => 'application/json'),
-            timeout: opts.delete(:timeout),
+            timeout: opts.delete(:timeout) || Cfg.api_default_timeout,
             body:    opts.to_json
           }
         end
