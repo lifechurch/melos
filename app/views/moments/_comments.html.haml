@@ -31,7 +31,7 @@
               = link_to(user) do
                 = image_tag avatar.url
             %p.moment-comments-list-text
-              = link_to(user.name, user_path(user.username))
+              = link_to(user.name, user_path(user.username)) if user.id.present?
               = comment.content
               %span.moment-comment-dt
                 = api_dt_time_ago(comment.updated_dt)

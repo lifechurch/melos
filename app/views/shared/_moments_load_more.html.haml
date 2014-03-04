@@ -4,48 +4,8 @@
 = link_to(t("moments.action.load more"),"#", id: "load-more", "data-page" => @page, "data-paginated-end-day" => paginated_end_day)
 
 :javascript
-  $('#load-more').click(function (ev) {
-
-      ev.preventDefault();
-      var pagination_link = $(ev.target);
-      var next_page = pagination_link.data("page") + 1;
-      var paginated_end_day = pagination_link.data("paginated-end-day");
-      var request_url = "/#{resource}/_cards?paginated_end_day=" + paginated_end_day + "&page=" + next_page + "&#{url_params.join('&')}";
-
-      $.ajax({
-        type: "GET",
-        url: request_url,
-        dataType: "html",
-        success: function (data) {
-
-            var next_feed_container = $( "<div/>", {"class": "social-feed"} )
-            $('.social-feed-wrap').append(next_feed_container);
-            next_feed_container.append(data);
-
-            next_feed_container.find(".moment").wookmark({
-              autoResize:   true,
-              offset:       15,
-              container:    next_feed_container
-            });
-
-            next_feed_container.find(".moment-verse.empty").each(function(){
-              new Moments.Verse({el: $(this)});
-            });
-
-            next_feed_container.find(".moment-vod").each(function() {
-              new Moments.VOTD({el: $(this)})
-            });
 
 
-            next_feed_container.find(".moment-comments").each(function(){
-              new Moments.Comments({base: $(this)});
-            });
+  var feed = new Moments.Feed();
 
-            next_feed_container.find(".moment").each(function(){
-              new Moments.Moment({el: $(this)})
-            })
 
-            pagination_link.data("page", next_page);
-        }
-    });
-  });

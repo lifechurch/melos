@@ -269,6 +269,10 @@ class User < YV::Resource
     self.username
   end
 
+  def to_path
+    "/users/#{to_param}"
+  end
+
 
   def share(opts = {})
     # validate that a connection was specified.  TODO: populate errors object + I18n

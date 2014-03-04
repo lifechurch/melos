@@ -3,10 +3,13 @@ json.created_dt     moment.created_dt
 json.updated_dt     moment.updated_dt
 json.moment_title   moment.moment_title
 json.references     moment.references
+json.path           moment.to_path
+json.avatar         moment.avatars.lg_avatar.url
 
 json.user do
   json.id           moment.user_id
   json.user_name    moment.user_name
+  json.set!         :path, "/users/#{moment.user_name}"         
 end
 
 json.comments do
@@ -27,6 +30,7 @@ json.comments do
       json.avatar       avatar
       json.name         user.name
       json.user_name    user.username
+      json.path         user.to_path
     end
     
   end
@@ -49,6 +53,7 @@ json.likes do
       json.avatar       avatar
       json.name         user.name
       json.user_name    user.username
+      json.path         user.to_path
     end
 
   end

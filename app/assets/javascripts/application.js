@@ -15,9 +15,18 @@
 
 //= require ./forms/color_picker
 //= require ./moments/verse
-//= require ./moments/votd
+
 //= require ./moments/comments
 //= require ./moments/moment
+
+//= require ./moments/votd
+//= require ./moments/vod
+
+//= require ./moments/note
+//= require ./moments/bookmark
+//= require ./moments/highlight
+//= require ./moments/feed
+
 //= require ./menus/base
 //= require ./menus/notifications
 //= require ./menus/friend_requests

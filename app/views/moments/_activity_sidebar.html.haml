@@ -24,11 +24,11 @@
               %ol.moment-activity-actions
                 - if like
                   %li.action-like
-                    Liked
+                    t("moments.action.liked")
                     =  api_dt_time_ago(like.created_dt)
                 - if comm
                   %li.action-comment
-                    Last comment
+                    t("moments.action.last comment")
                     =  api_dt_time_ago(comm.created_dt)
     - else
       %p There hasn't been any activity yet.
