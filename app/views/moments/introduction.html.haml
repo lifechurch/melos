@@ -24,20 +24,22 @@
               5 days ago
 
             %h2.moment-bm-text
-              <a href="#" class="moment-title-link">Aaron Steele bookmarked <b>Matthew 6:25</b></a>
+              <a href="#" class="moment-title-link">Aaron Steele bookmarked <b>Psalm 31:7</b></a>
+            .moment-verse-wrap
+              %p.moment-verse
+                I will be glad and rejoice in your unfailing love, for you have seen my troubles, and you care about the anguish of my soul.
 
-            %p.moment-verse
-              “Therefore I tell you, do not worry about your life, what you will eat or drink; or about your body, what you will wear. Is not life more than food, and the body more than clothes?
+              %a{href: "#", class: "moment-verse-link"}
+                Psalm 31:7
 
         -# !share controls, dates, and comments
         .moment-actions
-          %span.moment-actions-comment
-            %a{href: "#"}
-              Comment
-
           %span.moment-actions-like
             %a{href:"#", title: t("moments.action.like title")}
               = t("moments.action.like")
+          %span.moment-actions-comment
+            %a{href: "#"}
+              Comment
 
   .intro-discover-copy
     %p
@@ -50,21 +52,21 @@
       %span.moment-comments-more
         %a{href: "#"}
           Andy Knight
-        likes this
+        and <a href="#">4 more</a> like this
 
       %ul.moment-comments-list
         %li.moment-comments-list-comment
           %span.moment-comments-list-avatar
             = image_tag "andy_avatar.png"
           %p.moment-comments-list-text
-            <a href="#">Andy Knight</a> That verse has always encouraged me.
+            <a href="#">Andy Knight</a> Really needed to hear that today, thanks. Let‘s catch up soon!
             %span.moment-comment-dt
               about 3 hours ago
         %li.moment-comments-list-comment
           %span.moment-comments-list-avatar
             = image_tag "josh_avatar.png"
           %p.moment-comments-list-text
-            <a href="#">Aaron Steele</a> Indeed!
+            <a href="#">Aaron Steele</a> Amen, me too. Sending you an email now.
             %span.moment-comment-dt
               about 27 minutes ago
 
