@@ -16,8 +16,11 @@ class VOD < YV::Resource
     end
 
     def all(opts={})
+      return @cached_votds if @cached_votds.present?
       cache_for(YV::Caching.a_very_long_time, opts)
-      super(opts)
+      puts "GETTING ALL VOTDS"
+      puts "-------------------\n\n\n\n\n"
+      @cached_votds = super(opts)
     end
 
     def day(day,opts={})
