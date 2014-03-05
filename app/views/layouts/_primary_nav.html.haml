@@ -14,14 +14,15 @@
   highlight = Proc.new {|test| test ? "highlighted" : ""}
 
   plan_href = logged_in? ? subscriptions_path(user_id: current_auth.username) : plans_path
-  
-  live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"  
+
+  live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"
 
 #nav_primary{role: "navigation"}
   %nav
     %ul
-      %li#nav_primary_home{class: highlight.call(is_home_url) }
-        %a.icon{href: moments_path, "data-title" => "Home"}
+      - if current_auth
+        %li#nav_primary_home{class: highlight.call(is_home_url) }
+          %a.icon{href: moments_path, "data-title" => "Home"}
 
       %li#nav_primary_bible{class: highlight.call(is_bible_url) }
         %a.icon{href: '/bible', "data-title" => t("bible")}

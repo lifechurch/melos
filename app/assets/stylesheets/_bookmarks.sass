@@ -24,30 +24,36 @@
     color: #999
 
 .bookmarks-labels-wrap
-  padding: 6px
-  margin-bottom: 15px
+  margin: 0 0 15px
   clear: both
   background: #fff
   +round
   font-size: 12px
   line-height: 24px
+  overflow: hidden
 
   .labels-heading
     font-size: inherit
     line-height: inherit
     float: left
     margin: 0 10px 0 4px
+    padding: 5px 10px
+    border-right: 2px solid #ddd
 
 .bookmarks-labels
   overflow: auto
   margin: 0
 
   .label
-    margin-left: 1em
+    margin: 0 0 0 1em
     float: left
+    padding: 5px 0
 
     .moment-bm-labels-link
       background-color: #ccc
+
+  .label:first-child
+    margin-left: 0
 
 
 

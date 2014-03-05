@@ -46,7 +46,7 @@
   border-bottom: 1px solid #ddd
 
   p
-    padding: 8px
+    padding: 8px 8px 8px 0
     margin-bottom: 0
     line-height: 1.4em
     float: left
@@ -64,6 +64,9 @@
   .activity-timestamp
     display: block
     font-size: 12px
+
+.notifications-item:hover
+  background-color: #fefefe
 
 .notifications-empty
   p
@@ -86,27 +89,33 @@ article.social-requests ul
     width: 260px
 
   .requests-field-submit
+    margin-left: 5px
+    padding: 10px
+
+
+#header
+  .friend-requests-btn,
+  .notifications-btn
+    background: image-url("header-sprite.png") no-repeat
+    display: block
+    float: left
+    width: 40px
+    height: 40px
+    margin: 5px 0px 5px 23px
+    text-indent: 100%
+    overflow: hidden
+    position: relative
+
+  .friend-requests-btn:hover,
+  .notifications-btn:hover
+    opacity: .5
+
+  .friend-requests-btn
+    background-position: 0px 9px
+
+  .notifications-btn
+    background-position: 0px -50px
     margin-left: 10px
-
-
-#header .friend-requests-btn,
-#header .notifications-btn
-  background: image-url("header-sprite.png") no-repeat
-  display: block
-  float: left
-  width: 40px
-  height: 40px
-  margin: 5px 0px 5px 23px
-  text-indent: 100%
-  overflow: hidden
-  position: relative
-
-#header .friend-requests-btn
-  background-position: 0px 9px
-
-#header .notifications-btn
-  background-position: 0px -50px
-  margin-left: 10px
 
 #header
   .arrow
@@ -155,7 +164,6 @@ article.social-requests ul
     .text-link.wide,
     .text-wide
       width: 100%
-      border-top: 1px solid #ceced0
       background: #eeedeb
       text-align: center
       display: block
@@ -170,11 +178,10 @@ article.social-requests ul
       background: #f3f3f3
 
     h4
-      font-size: 12px
       color: #505050
-      padding-left: 10px
+      padding-left: 15px
       line-height: 12px
-      margin-bottom: 5px
+      margin-bottom: 10px
 
     .find-friends
       float: right
@@ -203,9 +210,8 @@ article.social-requests ul
 
         p
           line-height: 0px
-          margin: -8px 0px 0px
+          margin: 20px 0px 0px
           float: left
-          margin-top: 20px
 
           a
             display: block
