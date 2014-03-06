@@ -1,0 +1,215 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# pisit <pisit@nlfcambodia.org>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# pisit <pisit@nlfcambodia.org>, 2013
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Raksmey Chamreun <raksmeychamreun@gmail.com>, 2013
+# Raksmey Chamreun <raksmeychamreun@gmail.com>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-12-05 07:40+0000\n"
+"Last-Translator: pisit <pisit@nlfcambodia.org>\n"
+"Language-Team: Khmer (http://www.transifex.com/projects/p/yv-backend/language/km/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: km\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-21 21:47+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Khmer (http://www.transifex.com/projects/p/yv-backend/language/km/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: km\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Khmer (http://www.transifex.com/projects/p/yv-backend/language/km/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: km\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>ភាគ​ព្រះ​គម្ពីរ​</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "មើល​<i>ភាគ​ព្រះ​គម្ពីរ</i> យប់​នេះ!"
+
+msgid "moment.bookmark.title"
+msgstr "{name}បាន​កត់​ចំណាំ <b>{reference_human}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "អ្នក​បាន​កត់​ចំណាំ <b>{reference_human}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} បាន​ធ្វើ​ជា​មិត្ត​ជាមួយ <b>{friend_name}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "ឥឡូវ​នេះអ្នក​ជា​មិត្ត​ជាមួយ <b>{friend_name}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} បាន​គួស​ពណ៌​ <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "អ្នក​បាន​គួស​ពណ៌ <b>{reference_human}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា​មួយ, <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "អ្នក​បាន​បន្ថែម​កំណត់​ត្រា​មួយ, <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} បាន​ទាញ​យក version, <b>{version}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "អ្នក​បាន​ដោន​ឡូដ​ version, <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} ចាប់​ផ្ដើម​គំរោង​អាន, <b>{title}</b>"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "អ្នក​បាន​ចាប់​ផ្ដើម​គំរោង​អាន, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} បាន​បញ្ចប់​នៅ​ថ្ងៃ <b>{day}</b> នៃ​គំរោង​អាន, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "អ្នក​បាន​បញ្ចប់​នៅ​ថ្ងៃ <b>{day}</b> នៃ​គំរោង​អាន, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} បាន​បញ្ចប់​គំរោង​អាន, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "បាន​បញ្ចប់​គំរោង​អាន, <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} ទទួល​បាន <b>{title}</b> ផ្លាក"
+
+msgid "moment.badge.earned.self.title"
+msgstr "អ្នក​ទទួល​បាន <b>{title}</b> ផ្លាក"
+
+msgid "moment.video.watched.title"
+msgstr "{name} បាន​មើល <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "អ្នក​បាន​មើល <b>{title}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} ចង់​ធ្វើ​ជា​មិត្ត​របស់​អ្នក​លើ YouVersion"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} បាន​ទទួល​សំណើរ​ជា​មិត្ត​របស់​អ្នក"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} បាន​ក្លាយ​ជា​មិត្ត​អ្នក​ហើយ"
+
+msgid "notifications.friendships.suggestion"
+msgstr "តើ​អ្នក​ចង់​ធ្វើ​ជា​មិត្ត​ជាមួយ {name} លើ YouVersionទេ?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} បញ្ចេញ​មតិលើ​កំណត់​ចំណាំ​របស់​អ្នក: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} បាន​បញ្ចេញ​មតិ​លើ​គំនូសពណ៌របស់​អ្នក: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} បាន​បញ្ចេញ​មតិលើកំណត់​ត្រា​របស់​អ្នក: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} ក៏បាន​បញ្ចេញ​មតិលើកំណត់​ចំណាំរបស់​គាត់ដែរ: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} ក៏​បាន​បញ្ចេញ​មតិលើកំណត់​ចំណាំ​របស់ {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} ក៏បាន​បញ្ចេញ​មតិលើគំនូស​ពណ៌របស់​គាត់ដែរ: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} ក៏បាន​បញ្ចេញ​មតិលើគំនូស​ពណ៌​របស់ {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} ក៏បាន​បញ្ចេញ​មតិលើកំណត់​ត្រារបស់​គាត់ដែរ: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} ក៏បាន​បញ្ចេញ​មតិលើកំណត់​ត្រារបស់  {moment_owner_name} : “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} បាន​កត់​ចំណាំ {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} បាន​គួស​ពណ៌ចំណាំ {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា​លើ {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "អ្នក​មាន​អ្នក​ស្នើរ​សុំ​ធ្វើ​ជា​មិត្ត​ចំនួន %d នាក់"
+
+msgid "notifications.system.test"
+msgstr "ទាញ​យក​កម្ម​វិធី​ព្រះ​គម្ពីរ​សំរាប់​ក្មេង ឥឡូវ​នេះ!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "មកពី {name}:"
+
+msgid "share.invite_sms"
+msgstr "តើអ្នកមានប្រើកម្មវិធីព្រះគម្ពីរពី YouVersion ឬទេ? យើងចូលចិត្តវា ហើយយើងគិតថា​អ្នកក៏នឹងចូលចិត្តវាដែរ ។ នេះជាតំណរភ្ជាប់ប្រសិនបើអ្នកមិនចូលចិត្តទេ ៖"
+
+msgid "share.invite_email_subject"
+msgstr "តើអ្នកមានកម្មវិធីព្រះគម្ពីរដែរឬទេ?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"ខ្ញុំចូលចិត្តកម្មវិធីព្រះគម្ពីរពី YouVersion ហើយគិតថាអ្នកក៏ប្រហែលជាចូលចិត្តដែរ ។ ​ខ្ញុំឧស្សាហ៍បើក​ព្រះគម្ពីរអានច្រើនជាងមុន នៅប៉ុន្មានថ្ងៃនេះ ដោយព្រោះវាងាយស្រួលអាន មើល ស្ដាប់ និង​ចែកចាយ​ណាស់ ។ វាក៏ថែមទាំងមានគម្រោងអាន ដែលមានជម្រើសអាចឱ្យ​យើងអាន​បានទាំងអស់ ហើយរង់ចាំអ្នកជ្រើសរើសអាន​រាល់ថ្ងៃ ។​\n"
+"\n"
+"អ្នកអាច​ជាវវាបាន (ឥតគិតថ្លៃ!) នៅលើឧបករណ៍ចល័តភាគច្រើននៅទីនេះ ៖"
+
+msgid "share.invite_twitter"
+msgstr "កម្មវិធីព្រះគម្ពីរ ពី @YouVersion មានចំណុចអចិន្ត្រៃយ៍នៅលើគេហអេក្រង់របស់ខ្ញុំ ។ សូមអាន មើល ស្ដាប់ និង ចែកចាយ...ទាំងនេះមាននៅក្នុងកម្មវិធីមួយដែលឥតគិតថ្លៃ ៖"
+
+msgid "share.invite_twitter_direct"
+msgstr "តើអ្នកមានកម្មវិធីព្រះគម្ពីរពី YouVersion ឬទេ? ខ្ញុំចូលចិត្តវា ហើយ​គិតថា​អ្នកក៏នឹងចូលចិត្តវាដែរ ។ នេះជាតំណរភ្ជាប់ប្រសិនបើអ្នកមិនចូលចិត្តទេ ៖"
+
+msgid "share.invite_facebook"
+msgstr "ខ្ញុំចូលចិត្តកម្មវិធីព្រះគម្ពីរ! វាពិតជាបានជួយខ្ញុំឱ្យប្រើប្រាស់ព្រះគម្ពីរ ក្លាយជាបំណែកមួយនៃជីវិតប្រចាំថ្ងៃរបស់ខ្ញុំ ។ វាអាចឱ្យខ្ញុំបន្លិច ស្ដាប់ព្រះគម្ពីរជាអូឌីយ៉ូ ធ្វើកំណត់ត្រា អនុវត្តគម្រោងចំណាយពេលផ្ទាលខ្លួនជាមួយព្រះជាម្ចាស់…ថែមទាំងមើលវីដេអូទៀត! សូមដោនឡូដវាឥឡូវនេះតែម្ដង (ឥតគិតថ្លៃទេ):"
+
+msgid "share.invite_facebook_direct"
+msgstr "តើមានកម្មវិធីព្រះគម្ពីរឬទេ? ខ្ញុំចូលចិត្តវា ហើយគិតថា​អ្នកក៏នឹងចូលចិត្តវាដែរ ។ នេះជាតំណរភ្ជាប់ប្រសិនបើអ្នកមិនចូលចិត្តទេ ៖"

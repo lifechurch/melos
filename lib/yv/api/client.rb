@@ -94,6 +94,16 @@ module YV
           return YV::API::Response.new(response)
         end
 
+        def default_headers
+          { 
+            "Referer"                   => "http://" + Cfg.api_referer,
+            "User-Agent"                => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}",  # API 3.1 requires a user agent to be set
+            "X-YouVersion-Client"       => "youversion",                                           # API 3.1 requires a youversion client header to be set: http://developers.youversion.com/api/docs/3.1/intro.html#headers
+            "X-YouVersion-App-Platform" => "web",
+            "X-YouVersion-App-Version"  => "0"
+          }
+        end
+
 
         private # ------------------------------------------------------------------------------------------------
 
@@ -107,15 +117,7 @@ module YV
         end
 
 
-        def default_headers
-          { 
-            "Referer"                   => "http://" + Cfg.api_referer,
-            "User-Agent"                => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}",  # API 3.1 requires a user agent to be set
-            "X-YouVersion-Client"       => "youversion",                                           # API 3.1 requires a youversion client header to be set: http://developers.youversion.com/api/docs/3.1/intro.html#headers
-            "X-YouVersion-App-Platform" => "web",
-            "X-YouVersion-App-Version"  => "0"
-          }
-        end
+
 
         def options_for_get(opts)
           {
@@ -175,7 +177,7 @@ module YV
         # proper format is: word/word
         # examples: search/notes, users/view, notes/create, audio-bible/chapter, reading-plans/view
         def valid_resource_path?(path)
-          path.match(/^[\w-]+\/[\w-]+$/) #
+          path.match(/^[\w-]+\/[\w-]+(.\w+)?$/) #
         end
 
         # Returns the correct protocol given an API path string
@@ -209,8 +211,7 @@ module YV
         def get_endpoint(_path)
           format = ".json"
           path = _path.match(/.+\/(.*)/)[1]  # given users/view this will match 'view'
-          path += format unless path.match(/#{format}$/)
-          return path
+          return path.include?(".") ? path : path += format # if path includes a .format then return string with format, otherwise add json.
         end
 
         def log_api_error(path,ex)

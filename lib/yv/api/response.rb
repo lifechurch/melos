@@ -21,12 +21,12 @@ module YV
 
       # Response code as provided specifically via the API response
       def api_code
-        body["code"]
+        body["code"] unless body.nil?
       end
 
       # Data object as returned via API response
       def data
-        body["data"]
+        body["data"] unless body.nil?
       end
 
       # Errors as returned via API response

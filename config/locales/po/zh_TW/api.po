@@ -1,0 +1,231 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Gladys Liew <gladysliew@gmail.com>, 2013
+# sandyhtyu <sandyuhiutung@gmail.com>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# Gladys Liew <gladysliew@gmail.com>, 2013-2014
+# sandyhtyu <sandyuhiutung@gmail.com>, 2013
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Gladys Liew <gladysliew@gmail.com>, 2013
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-12-28 13:55+0000\n"
+"Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/yv-backend/language/zh_TW/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-22 04:20+0000\n"
+"Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/yv-backend/language/zh_TW/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/yv-backend/language/zh_TW/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>聖經系列</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "請在今晚觀看<i>聖經系列</i>!"
+
+msgid "moment.bookmark.title"
+msgstr "{name} 已把 <b>{reference_human}</b>加入書籤"
+
+msgid "moment.bookmark.self.title"
+msgstr "您已把 <b>{reference_human}</b>加入書籤"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} 現在已成為 <b>{friend_name}</b> 的好友"
+
+msgid "moment.friendship.self.title"
+msgstr "您現在已成為 <b>{friend_name}</b> 的好友"
+
+msgid "moment.highlight.title"
+msgstr "{name} 已把 <b>{reference_human}</b> 加入重點"
+
+msgid "moment.highlight.self.title"
+msgstr "您已把 <b>{reference_human}</b> 加入重點"
+
+msgid "moment.note.title"
+msgstr "{name} 已新增筆記, <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "您已新增筆記, <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} 已下載這個譯本, <b>{version}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "您已下載這個譯本, <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} 已開始了這個讀經計劃, <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "您已開始了這個讀經計劃, <b>{version}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} 完成了第 <b>{day}</b>天的讀經計劃, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "您完成了第 <b>{day}</b>天的讀經計劃, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} 完成了這個讀經計劃, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "您完成了這個讀經計劃, <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} 已獲得了 <b>{title}</b> 徽章"
+
+msgid "moment.badge.earned.self.title"
+msgstr "您已獲得了 <b>{title}</b> 徽章"
+
+msgid "moment.video.watched.title"
+msgstr "{name} 已觀看了 <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "您已觀看了 <b>{title}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} 希望在 YouVersion 上成為您的好友"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} 已經接受您的好友邀請"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} 現在已是您的好友"
+
+msgid "notifications.friendships.suggestion"
+msgstr "您是否接受 {name} 在 YouVersion 上的好友邀請？"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} 在您的書籤上留言: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} 在您的重點上留言: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} 在您的筆記上留言: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} 喜歡您的書籤，{reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} 喜歡您的醒目標示，{reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} 喜歡您在 {reference_human} 的筆記"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} 喜歡您的筆記， “{title}”"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} 喜歡您的筆記"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} 也在他/她的書籤上留言: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} 也在 {moment_owner_name} 的書籤上留言: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} 也在他/她的重點上留言: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} 也在 {moment_owner_name} 的重點上留言: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} 也在他/她的筆記上留言: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} 也在 {moment_owner_name} 的筆記上留言: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} 已把 {reference_human} 加入書籤"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} 已把 {reference_human} 加入重點"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} 已在 {reference_human} 新增筆記"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} 已新增筆記, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} 已新增筆記"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "您有 %d 好友請求"
+
+msgid "notifications.system.test"
+msgstr "馬上下載我們的兒童聖經軟體!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "來自 {name}:"
+
+msgid "share.invite_sms"
+msgstr "您有 YouVersion 的聖經軟體嗎？我很喜歡它，我想您也會喜歡。如果您還沒有安裝的話，請用下面的鏈結:"
+
+msgid "share.invite_email_subject"
+msgstr "您有使用聖經軟體嗎？"
+
+msgid "share.invite_email_body"
+msgstr ""
+"我很喜歡使用 YouVersion 的聖經軟體，我想您也會喜歡的。不管是閱讀、看視訊、聽音訊或分享經文，聖經軟體都很容易使用，因此我現在接觸聖經的次數也更多了。聖經軟體也備有讀經計劃，提供一系列的精選經文給我每天閱讀。\n"
+"\n"
+"您可以從這裡把軟體下載和安裝 (免費的！) 到幾乎任何款式的行動設備上:"
+
+msgid "share.invite_twitter"
+msgstr "我將 @YouVersion 的聖經軟體長駐在我的主熒幕上。無論是閱讀、觀看視訊、聆聽音訊或分享經文... 全都在一個免費的程序裡:"
+
+msgid "share.invite_twitter_direct"
+msgstr "您有 @YouVersion 的聖經軟體嗎？我很喜歡它，我想您也會喜歡。如果您還沒有安裝的話，請用下面的鏈結:"
+
+msgid "share.invite_facebook"
+msgstr "我喜歡聖經軟體！它真的使聖經成為我日常生活的一部分。聖經軟體能讓我醒目顯示經文、聆聽語音聖經、創建筆記、跟進靈修計劃... 甚至觀賞視訊！請現在就去下載 (免費的):"
+
+msgid "share.invite_facebook_direct"
+msgstr "您有使用聖經軟體嗎？我很喜歡它，我想您也會喜歡。如果您還沒有安裝的話，請用下面的鏈結:"

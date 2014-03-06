@@ -1,0 +1,230 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Vitaliy Kolesov <vitaliy.kolesov@gmail.com>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# Vitaliy Kolesov <vitaliy.kolesov@gmail.com>, 2013-2014
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Vitaliy Kolesov <vitaliy.kolesov@gmail.com>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-11-19 11:50+0000\n"
+"Last-Translator: Vitaliy Kolesov <vitaliy.kolesov@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/yv-backend/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-25 19:50+0000\n"
+"Last-Translator: Vitaliy Kolesov <vitaliy.kolesov@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/yv-backend/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/yv-backend/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Сериал Bible</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Смотрите <i>Сериал Bible</i> сегодня вечером!"
+
+msgid "moment.bookmark.title"
+msgstr "{name} добавил в закладки <b>{reference_human}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Вы добавили <b>{reference_human}</b> в закладки"
+
+msgid "moment.friendship.title"
+msgstr "<b>{friend_name}</b> подружился с {user_name}"
+
+msgid "moment.friendship.self.title"
+msgstr "Вы теперь друзья с <b>{friend_name}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} выделил маркером <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Вы выделили маркером <b>{reference_human}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} добавил заметку <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Вы добавили заметку <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} загрузил перевод <b>{version}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Вы загрузили перевод <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} начал план чтения <b>{title}</b>"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "Вы начали план чтения <b>{title}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} прочитал день <b>{day}</b> плана <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "Вы прочитали день <b>{day}</b> плана <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} завершил план чтения <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "Вы завершили план чтения <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} заработал значок <b>{title}</b>"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Вы заработали значок <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} смотрел <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "Вы смотрели <b>{title}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} хочет стать вашим другом на YouVersion"
+
+msgid "notifications.friendships.accept"
+msgstr "Вы и {name} теперь друзья"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} теперь ваш друг"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Вы хотите стать друзьями с {name} на YouVersion?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} оставил комментарий к вашей закладке: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} оставил комментарий к вашему выделению маркером: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} оставил комментарий к вашей заметке: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} нравится ваша закладка, {reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} нравится ваше выделение маркером, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} нравится ваша заметка, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} нравится ваша заметка, “{title}”"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} нравится ваша заметка"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} ответил на ваш комментарий к закладке: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} оставил комментарий к закладке вашего друга {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} оставил комментарий к своему выделению маркером: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} оставил комментарий к выделению маркером {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} оставил комментарий к своей заметке: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} оставил комментарий к заметке {moment_owner_name}: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} добавил в закладки {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} выделил маркером {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} добавил заметку к {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} добавил заметку “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} добавил заметку"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "Кто-то хочет с вами подружиться"
+msgstr[1] "Несколько человек хотят дружить с вами"
+msgstr[2] "%d человек хотят дружить с вами"
+
+msgid "notifications.system.test"
+msgstr "Загрузите наше приложение для детей Kids Bible App!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "От {name}:"
+
+msgid "share.invite_sms"
+msgstr "У вас есть приложение Библия от YouVersion? Мне оно очень нравится, должно понравиться и вам! Если у тебя его ещё нет, вот ссылка для загрузки:"
+
+msgid "share.invite_email_subject"
+msgstr "У тебя есть приложение Библия?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Мне очень нравится приложение Библия от YouVersion, думаю, оно понравится и тебе! С этим приложением я открываю Библию намного чаще: читаю, смотрю, слушаю и делюсь избранными отрывками с друзьями. В приложении есть даже планы чтения, помогающие читать Библию каждый день!\n"
+"\n"
+"Приложение работает почти на любом мобильном устройстве, и главное — оно бесплатно!"
+
+msgid "share.invite_twitter"
+msgstr "Приложение Библия от @YouVersion постоянный гость на экране моего телефона. Читай, смотри, слушай, делись с помощью бесплатного приложения:"
+
+msgid "share.invite_twitter_direct"
+msgstr "У вас есть приложение Библия от @YouVersion? Мне оно очень нравится, думаю, понравится и вам. Вот ссылка:"
+
+msgid "share.invite_facebook"
+msgstr "Мне очень нравится приложение Библия! Оно действительно помогло мне сделать Библию частью моей ежедневной жизни. С его помощью можно выделять маркером стихи, слушать аудиоверсии Писания, делать заметки, наслаждаться назидательными планами, даже смотреть видео! Загрузить бесплатное приложение можно здесь:"
+
+msgid "share.invite_facebook_direct"
+msgstr "У вас есть приложение Библия? Мне оно очень нравится, думаю, понравится и вам. Вот ссылка:"

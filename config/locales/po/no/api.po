@@ -1,0 +1,235 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Per Byrknes <pbyrknes@norea.no>, 2013
+# Terje Bøe <terje.boee@lyse.net>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# Per Byrknes <pbyrknes@norea.no>, 2013
+# Terje Bøe <terje.boee@lyse.net>, 2013-2014
+# Toralf Liene <liene@pvv.org>, 2014
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Terje Bøe <terje.boee@lyse.net>, 2013
+# Terje Bøe <terje.boee@lyse.net>, 2013
+# Toralf Liene <liene@pvv.org>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-11-26 14:32+0000\n"
+"Last-Translator: Terje Bøe <terje.boee@lyse.net>\n"
+"Language-Team: Norwegian (http://www.transifex.com/projects/p/yv-backend/language/no/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: no\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-25 14:15+0000\n"
+"Last-Translator: Terje Bøe <terje.boee@lyse.net>\n"
+"Language-Team: Norwegian (http://www.transifex.com/projects/p/yv-backend/language/no/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: no\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Norwegian (http://www.transifex.com/projects/p/yv-backend/language/no/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: no\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bibel Series</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Se <i>Bibel Series</i> i kveld!"
+
+msgid "moment.bookmark.title"
+msgstr "{name} bokmerket <b>{reference_human}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Du bokmerket <b>{reference_human}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} er nå venn med <b>{friend_name}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Du er nå venn med <b>{friend_name}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} markerte <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Du markerte <b>{reference_human}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} la til et notat, <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Du la til et notat, <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} lastet ned versjonen <b>{version}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Du lastet ned versjonen, <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} begynte på leseplanen <b>{title}</b>"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "Du begynte på leseplanen <b>{title}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} fullførte dag <b>{day}</b> av leseplanen <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "Du fullførte dag <b>{day}</b> av leseplanen <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} fullførte leseplanen <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "Du fullførte leseplanen <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} oppnådde <b>{title}</b> merket"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Du oppnådde <b>{title}</b> merket"
+
+msgid "moment.video.watched.title"
+msgstr "{name} så på <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "Du så på <b>{title}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} ønsker å være din venn på YouVersion"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} godtok venneforespørselen din"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} er nå din venn"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Vil du være venner med {name} på YouVersion?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} kommenterte bokmerket: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} kommenterte din markering: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} kommenterte notatet: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} liker bokmerket ditt, {reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} liker markeringen din, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} liker ditt notat på {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} liker ditt notat, “{title}”"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} liker ditt notat"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} kommenterte også bokmerket: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} kommenterte også {moment_owner_name} sitt bokmerke: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} kommenterte også deres utheving: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} kommenterte også {moment_owner_name} sin utheving: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} kommenterte også notatet deres: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} kommenterte også {moment_owner_name} sitt notat: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} bokmerket {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} markerte {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} la til et notat til {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} la til et notat, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} la til et notat"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "Du har en venneforespørsel"
+msgstr[1] "Du har %d venneforespørsler"
+
+msgid "notifications.system.test"
+msgstr "Last ned vår Kids Bible App nå!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "Fra {name}:"
+
+msgid "share.invite_sms"
+msgstr "Har du Bibel-appen fra YouVersion? Jeg liker den, og tenkte at du også ville like den. Her er lenke om du ikke har den:"
+
+msgid "share.invite_email_subject"
+msgstr "Har du Bibel-appen?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Jeg har glede av Bibel-appen fra YouVersion, og tror at du også vil like den. Jeg åpner Bibelen mer nå fordi det er så lett å lese, se, lytte og dele. Den har også leseplaner, der utvalgte deler av Bibelen venter på meg hver dag. \n"
+"\n"
+"Du kan få den (gratis!) for så godt som alle mobile enheter her:"
+
+msgid "share.invite_twitter"
+msgstr "Bibel-appen fra @YouVersion er plassert på førstesiden på skjermen min. Les, se, lytt og del - alt i en gratis app:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Har du Bibel-appen fra @YouVersion? Jeg liker den, og tenkte at du også ville like den. Her er lenke om du ikke har den:"
+
+msgid "share.invite_facebook"
+msgstr "Jeg liker Bibel-appen! Den hjelper meg til å gjøre Bibelen til en del av mitt dagligliv. Den lar meg markere, lytte til lydbibler, ta notater, følge andaktsplaner og til og med se video! Last ned nå (det er gratis):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Har du Bibel-appen? Jeg liker den, og tenkte at du også ville like den. Her er lenke om du ikke har den:"

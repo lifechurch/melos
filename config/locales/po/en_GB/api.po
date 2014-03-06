@@ -3,20 +3,21 @@
 #
 # Translators:
 # Translators:
-# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
+# Susan <susan.howe84@gmail.com>, 2013
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
 # Translators:
 # Translators:
-# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
-# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
-# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
+# Translators:
+# Susan <susan.howe84@gmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
 # Translators:
-# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
+# Translators:
+# Susan <susan.howe84@gmail.com>, 2013
+# Susan <susan.howe84@gmail.com>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
@@ -24,44 +25,44 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-15 20:32+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2013-11-18 15:10+0000\n"
+"Last-Translator: Susan <susan.howe84@gmail.com>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/yv-backend/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
+"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-15 20:31+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-02-22 16:10+0000\n"
+"Last-Translator: Susan <susan.howe84@gmail.com>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/yv-backend/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
+"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2013-04-30 16:35+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-03-02 20:18+0000\n"
+"Last-Translator: Susan <susan.howe84@gmail.com>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/yv-backend/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
+"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Bible Series</i>"
+msgstr "<i>Bible series</i>"
 
 msgid "moment.system.bible_series_promo.body"
-msgstr "Watch the <i>Bible Series</i> tonight!"
+msgstr "Watch the <i>Bible series</i> tonight!"
 
 msgid "moment.bookmark.title"
 msgstr "{name} bookmarked <b>{reference_human}</b>"
@@ -93,26 +94,23 @@ msgstr "{name} downloaded the version, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "You downloaded the version, <b>{version}</b>"
 
-msgid "moment.plan_subscription.title"
-msgstr "{name} started a plan"
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} started the plan, <b>{title}</b>"
 
-msgid "moment.plan_subscription.self.title"
-msgstr "Started a plan"
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "You started the plan, <b>{title}</b>"
 
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} completed day <b>{segment}</b> of the plan, <b>{title}</b>"
+msgid "moment.reading_plan.day.title"
+msgstr "{name} completed day <b>{day}</b> of the plan, <b>{title}</b>"
 
-msgid "moment.plan_segment_completion.self.title"
-msgstr "You completed day <b>{segment}</b> of the plan, <b>{title}</b>"
+msgid "moment.reading_plan.day.self.title"
+msgstr "You completed day <b>{day}</b> of the plan, <b>{title}</b>"
 
-msgid "moment.plan_segment_completion.body"
-msgstr "Day {segment} of {total_segments} ({percent_complete}%)"
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} completed the plan, <b>{title}</b>"
 
-msgid "moment.plan_completion.title"
-msgstr "{name} completed a plan"
-
-msgid "moment.plan_completion.self.title"
-msgstr "Completed a plan"
+msgid "moment.reading_plan.completion.self.title"
+msgstr "You completed the plan, <b>{title}</b>"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} earned the <b>{title}</b> badge"
@@ -198,11 +196,11 @@ msgstr "{name} added a note"
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
 msgid_plural "You have %d friend requests"
-msgstr[0] "You have a friend request"
+msgstr[0] "You have %d friend requests"
 msgstr[1] "You have %d friend requests"
 
 msgid "notifications.system.test"
-msgstr "Download our Kids Bible App now!!!"
+msgstr "Download our kids Bible App now!!!"
 
 msgid "share.invite_sms_prefix"
 msgstr "From {name}:"
@@ -215,12 +213,12 @@ msgstr "Do you have the Bible App?"
 
 msgid "share.invite_email_body"
 msgstr ""
-"I've been enjoying the Bible App from YouVersion and thought you might like it too. I'm opening the Bible a lot more these days because it's so easy to read, watch, listen, and share. It even has Plans, which have a selection of the Bible all picked out and waiting for me every day.\n"
+"I've been enjoying the Bible App from YouVersion and thought you might like it too. I'm opening the Bible a lot more these days because it's so easy to read, watch, listen, and share. It even has plans, which have a selection of the Bible all picked out and waiting for me every day.\n"
 "\n"
 "You can get it (free!) for pretty much any mobile device here:"
 
 msgid "share.invite_twitter"
-msgstr "The @YouVersion Bible App has a permanent spot on my home screen. Read, watch, listen, and share…all in a free app:"
+msgstr "The Bible App from @YouVersion has a permanent spot on my home screen. Read, watch, listen, and share...all in a free app:"
 
 msgid "share.invite_twitter_direct"
 msgstr "Do you have the Bible App from @YouVersion? I love it, and I think you would too. Here's the link:"

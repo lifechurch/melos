@@ -1,0 +1,230 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Tomomi Galeano <tomomi.galeano@gmail.com>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# Shin Shirahata <shin@sohgoh.net>, 2014
+# Tomomi Galeano <tomomi.galeano@gmail.com>, 2013
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Tomomi Galeano <tomomi.galeano@gmail.com>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-11-21 00:51+0000\n"
+"Last-Translator: Tomomi Galeano <tomomi.galeano@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/yv-backend/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-25 18:07+0000\n"
+"Last-Translator: Tomomi Galeano <tomomi.galeano@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/yv-backend/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/yv-backend/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>聖書シリーズ</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "今夜、<i>聖書シリーズ</i>を観る"
+
+msgid "moment.bookmark.title"
+msgstr "{name}さんが<b>{reference_human}</b>にブックマークしました"
+
+msgid "moment.bookmark.self.title"
+msgstr "<b>{reference_human}</b>にブックマークしました"
+
+msgid "moment.friendship.title"
+msgstr "{user_name}さんと<b>{friend_name}</b>さんが友達になりました"
+
+msgid "moment.friendship.self.title"
+msgstr "<b>{friend_name}</b>さんと友達になりました"
+
+msgid "moment.highlight.title"
+msgstr "{name}さんが<b>{reference_human}</b>にハイライトしました"
+
+msgid "moment.highlight.self.title"
+msgstr "<b>{reference_human}</b>にハイライトしました"
+
+msgid "moment.note.title"
+msgstr "{name}さんが「<b>{title}</b>」というノートを追加しました"
+
+msgid "moment.note.self.title"
+msgstr "「<b>{title}</b>」というノートを追加しました"
+
+msgid "moment.bible.download.title"
+msgstr "{name}さんが<b>{version}</b>をダウンロードしました"
+
+msgid "moment.bible.download.self.title"
+msgstr "<b>{version}</b>をダウンロードしました"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name}さんが「<b>{title}</b>」の読書プランを始めました"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "「<b>{title}</b>」の読書プランを始めました"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name}さんが「<b>{title}</b>」読書プランの<b>{day}</b>を完了しました"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "「<b>{title}</b>」読書プランの<b>{day}</b>を完了しました"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name}さんが「<b>{title}</b>」の読書プランを完了しました"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "「<b>{title}</b>」の読書プランを完了しました"
+
+msgid "moment.badge.earned.title"
+msgstr "{name}さんが「<b>{title}</b>」バッジを獲得しました"
+
+msgid "moment.badge.earned.self.title"
+msgstr "「<b>{title}</b>」バッジを獲得しました"
+
+msgid "moment.video.watched.title"
+msgstr "{name}さんが「<b>{title}</b>」を観ました"
+
+msgid "moment.video.watched.self.title"
+msgstr "「<b>{title}</b>」を観ました"
+
+msgid "notifications.friendships.offer"
+msgstr "{name}さんがYouVersionで友達申請しています。"
+
+msgid "notifications.friendships.accept"
+msgstr "{name}さんが友達として承認しました。"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name}さんと友達になりました。"
+
+msgid "notifications.friendships.suggestion"
+msgstr "{name}さんとYouVersionで友達になりますか？"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name}さんがあなたのブックマークにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name}さんがあなたのハイライトにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name}さんがあなたのノートにコメントしました： “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name}さんがあなたのブックマーク、{reference_human}をいいねといっています"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name}さんがあなたのハイライト、{reference_human}をいいねといっています"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name}さんがあなたのノート、{reference_human}をいいねといっています"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name}さんがあなたのノート、“{title}”をいいねといっています"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} があなたのノートをいいねといっています"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name}さんがブックマークにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name}さんが{moment_owner_name}さんのブックマークにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name}さんがハイライトにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name}さんが{moment_owner_name}さんのハイライトにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name}さんがノートにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name}さんが{moment_owner_name}さんのノートにコメントしました： “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name}さんが{reference_human}にブックマークしました"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name}さんが{reference_human}にハイライトしました"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name}さんが{reference_human}にノートを追加しました"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name}さんが“{title}”というノートを追加しました"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name}さんがノートを追加しました"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "%d件の友達申請が届いています"
+
+msgid "notifications.system.test"
+msgstr "キッズ聖書アプリを今すぐダウンロード!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "{name}より："
+
+msgid "share.invite_sms"
+msgstr "YouVersionの聖書アプリをお持ちですか？私のお気に入りのアプリなので、きっと気に入っていただけるかなと思います。お持ちでなければ、このリンクからどうぞ："
+
+msgid "share.invite_email_subject"
+msgstr "聖書アプリをお持ちですか？"
+
+msgid "share.invite_email_body"
+msgstr ""
+"私もYouVersionの聖書アプリを大活用しているので、あなたにも気に入っていただけるかなと思っています。コンテンツを読んだり、見たり、聞いたり、シェアするのが簡単なので、最近はより頻繁に聖書を開くようになりました。読書プランというものもあって、プランに沿った聖句が毎日、用意されています。\n"
+"\n"
+"様々な携帯用のアプリ ( 無料！) をこちらからダウンロードできます："
+
+msgid "share.invite_twitter"
+msgstr "@YouVersionの聖書アプリは、いつでもホームスクリーンから使えるようにしています。読んだり、見たり、聞いたり、シェアしたり…全てが可能な無料のアプリです："
+
+msgid "share.invite_twitter_direct"
+msgstr "@YouVersionの聖書アプリをお持ちですか？私のお気に入りのアプリなので、きっと気に入っていただけるかなと思います。お持ちでなければ、このリンクからどうぞ："
+
+msgid "share.invite_facebook"
+msgstr "聖書アプリをとても気に入っています！このアプリのお陰で聖書を日々の生活の一環に取り入れることが可能になりました。聖句にハイライトを入れたり、音読聖書を聞いたり、ノートをとったり、読書プランを利用したり…なんとビデオを見ることまでできるのです！今すぐダウンロードしてみましょう (無料です)："
+
+msgid "share.invite_facebook_direct"
+msgstr "聖書アプリをお持ちですか？私のお気に入りのアプリなので、きっと気に入っていただけるかなと思います。お持ちでなければ、このリンクからどうぞ："

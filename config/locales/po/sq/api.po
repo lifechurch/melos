@@ -1,0 +1,230 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Lorenc Tona <lorenc_tona@yahoo.com>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Lorenc Tona <lorenc_tona@yahoo.com>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-11-16 07:37+0000\n"
+"Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
+"Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sq\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-22 18:30+0000\n"
+"Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
+"Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sq\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 18:22+0000\n"
+"Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
+"Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sq\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Seria e Biblës</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Shikoni sonte <i>Serinë e Biblës</i>!"
+
+msgid "moment.bookmark.title"
+msgstr "{name} shënoi <b>{reference_human}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Ju shënuat <b>{reference_human}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} është tani mik me <b>{friend_name}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Ju jeni tani mik me <b>{friend_name}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} theksoi <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Ju theksuat <b>{reference_human}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} shtoi një shënim, <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Ju shtuat një shënim, <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} shkarkoi versionin, <b>{version}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Ju shkarkuat versionin, <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} filloi planin, <b>{title}</b>"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "Ju filluat planin, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} përfundoi ditën <b>{day}</b> të planit, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "Ju përfunduat ditën <b>{day}</b> të planit, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} përfundoi planin, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "Ju përfunduat planin, <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} fitoi emblemën <b>{title}</b>"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Ju fituat emblemën <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} shikoi <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "Ju shikuat <b>{title}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} dëshiron të jetë miku juaj në YouVersion"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} e pranoi kërkesën tuaj të miqësisë"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} është tani miku juaj"
+
+msgid "notifications.friendships.suggestion"
+msgstr "A dëshironi të jeni mik me {name} në YouVersion?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} komentoi te shenjuesi juaj: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} komentoi te theksimi juaj: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} komentoi te shënimi juaj: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} e pëlqen shenjuesin tuaj, {reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} e pëlqen theksimin tuaj, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} e pëlqen shënimin tuaj për {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} e pëlqen shënimin tuaj, “{title}”"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} e pëlqen shënimin tuaj"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} komentoi gjithashtu te shenjuesi i tij/saj: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} komentoi gjithashtu te shenjuesi i {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} komentoi gjithashtu te theksimi i tij/saj: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} komentoi gjithashtu te theksimi i {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} komentoi gjithashtu te shënimi i tij/saj: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} komentoi gjithashtu te shënimi i {moment_owner_name}: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} shënoi {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} theksoi {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} shtoi një shënim për {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} shtoi një shënim, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} shtoi një shënim"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "Ju keni %d kërkesë miqësie"
+msgstr[1] "Ju keni %d kërkesa miqësie"
+
+msgid "notifications.system.test"
+msgstr "Shkarko Programin e Biblës për Fëmijë tani!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "Nga {name}:"
+
+msgid "share.invite_sms"
+msgstr "A e ke Programin e Biblës nga YouVersion? Mua më pëlqen shumë dhe mendoj se do të të pëlqejë dhe ty. Ja ku është lidhja nëse nuk e ke:"
+
+msgid "share.invite_email_subject"
+msgstr "A e ke Programin e Biblës?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Kam qenë duke gëzuar Programin e Biblës nga YouVersion dhe mendova se do të të pëlqejë dhe ty. E kam hapur Biblën më shumë këto ditë, se është e lehtë për ta lexuar, shikuar, dëgjuar dhe ndarë. Madje ka Plane, që kanë një zgjedhje të Biblës gati dhe që më pret çdo ditë.\n"
+"\n"
+"Edhe ti mund ta kesh (falas!) për pothuaj çdo pajisje të lëvizshme këtu:"
+
+msgid "share.invite_twitter"
+msgstr "Programi i Biblës nga @YouVersion ka një vend të përhershëm në ekranin tim kryesor. Lexo, shiko, dëgjo dhe ndaj...të gjitha në një program falas:"
+
+msgid "share.invite_twitter_direct"
+msgstr "A e ke Programin e Biblës nga @YouVersion? Mua më pëlqen dhe mendoj se dhe ty do të të pëlqejë. Ja ku është lidhja nëse nuk e ke:"
+
+msgid "share.invite_facebook"
+msgstr "Më pëlqen shumë Programi i Biblës! Më ka ndihmuar vërtet ta bëj Biblën pjesë të jetës sime të përditshme. Më mundëson të theksoj vargjet, të dëgjoj Biblën, të mbaj shënime, të ndjek plane devocionale...madje të shikoj video! Shkarkoje atë tani (është falas):"
+
+msgid "share.invite_facebook_direct"
+msgstr "A e ke Programin e Biblës? Mua më pëlqen shumë dhe mendoj se do të të pëlqejë dhe ty. Ja ku është lidhja nëse nuk e ke:"

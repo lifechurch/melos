@@ -15,7 +15,7 @@ module YV
       def process
         results = errors = nil
 
-        code = response.api_code
+        code = response.code
         data = response.data
 
         if code.nil? || code.to_i >= 400

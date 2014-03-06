@@ -1,0 +1,235 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Joukeschaafsma <Jwcschaafsma@gmail.com>, 2013
+# Yanick Goossens <yanickgoossens@hotmail.com>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# FranciscaN <franciscanoordzij@gmail.com>, 2013
+# Joukeschaafsma <Jwcschaafsma@gmail.com>, 2013
+# PetraSnoek <lievepetra@gmail.com>, 2014
+# Yanick Goossens <yanickgoossens@hotmail.com>, 2013-2014
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# PetraSnoek <lievepetra@gmail.com>, 2014
+# Yanick Goossens <yanickgoossens@hotmail.com>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-11-19 17:00+0000\n"
+"Last-Translator: Yanick Goossens <yanickgoossens@hotmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/yv-backend/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-24 19:30+0000\n"
+"Last-Translator: PetraSnoek <lievepetra@gmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/yv-backend/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 21:20+0000\n"
+"Last-Translator: PetraSnoek <lievepetra@gmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/yv-backend/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bijbel Serie</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Kijk vanavond naar de <i>Bijbel Serie</i>!"
+
+msgid "moment.bookmark.title"
+msgstr "{name} heeft <b>{reference_human}</b> een bladwijzer aangemaakt"
+
+msgid "moment.bookmark.self.title"
+msgstr "Je hebt <b>{reference_human}</b> bladwijzers"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} is nu bevriend met <b>{friend_name}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Je bent nu bevriend met <b>{friend_name}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} markeerde <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Je hebt <b>{reference_human}</b> gemarkeerd"
+
+msgid "moment.note.title"
+msgstr "{name} heeft een notitie toegevoegd, <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Je hebt een notitie toegevoegd, <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} heeft de  <b>{version}</b> versie gedownload."
+
+msgid "moment.bible.download.self.title"
+msgstr "Je hebt de <b>{version}</b> versie gedownload."
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} heeft <b>{title}</b> als leesplan gestart."
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "Je hebt het leesplan gestart, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} heeft dag <b>{day}</b> van het leesplan afgerond, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "Je hebt dag <b>{day}</b> van het leesplan afgerond, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} heeft het leesplan afgerond, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "Je hebt het leesplan afgerond, <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} heeft de medaille <b>{title}</b> verdiend"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Je hebt de medaille <b>{title}</b> verdiend"
+
+msgid "moment.video.watched.title"
+msgstr "{name} heeft <b>{title}</b> bekeken"
+
+msgid "moment.video.watched.self.title"
+msgstr "Je hebt <b>{title}</b> bekeken"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} wil je vriend worden op YouVersion"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} aanvaard jouw vriendschapsverzoek"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} is nu jouw vriend"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Wil je vrienden zijn met {name} op YouVersion?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} heeft gereageerd op jouw bladwijzer: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} heeft gereageerd op jouw markering: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} heeft gereageerd op jouw notitie: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} vindt jouw bladwijzer leuk, {reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} vindt jouw markering leuk, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} vindt jouw notitie leuk op, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} vindt jouw  “{title}” notitie leuk"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} vindt jouw notitie leuk"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} heeft ook gereageerd op hun bladwijzer: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} heeft ook gereageerd op de bladwijzer van {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} heeft ook gereageerd op hun markering: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} heeft ook gereageerd op de markering van {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} heeft ook gereageerd op hun notitie: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} heeft ook gereageerd op de notitie van {moment_owner_name}: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} heeft een bladwijzer aangemaakt {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} heeft een markering aangemaakt {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} heeft een notitie toegevoegd over {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} heeft een notitie toegevoegd, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} heeft een notitie toegevoegd"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "Je hebt een %d vriendschapsverzoek"
+msgstr[1] "Je hebt %d vriendschapsverzoeken"
+
+msgid "notifications.system.test"
+msgstr "Download nu onze Kinder Bijbel App!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "Van {name}:"
+
+msgid "share.invite_sms"
+msgstr "Heb jij de Bijbel App van YouVersion? Ik hou ervan, en ik denk dat jij dat ook zal doen. Hier heb je de link:"
+
+msgid "share.invite_email_subject"
+msgstr "Heb jij de Bijbel App al?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Ik ben aan het genieten van de YouVersion Bijbel App en ik dacht dat je die ook leuk zou vinden. Ik sla mijn Bijbel nu veel vaker open omdat het zo gemakkelijk is om te lezen, kijken, luisteren en delen. Het heeft zelfs leesplannen, met een selectie van de Bijbel die iedere dag klaar staat voor je.\n"
+"\n"
+"\n"
+"Je kan het zo krijgen (gratis!) op iedere mobiele toestel:"
+
+msgid "share.invite_twitter"
+msgstr "De Bijbel App van @YouVersion heeft een speciale plaats op mijn startscherm. Lees, bekijk, luister, en deel...allemaal in een gratis app:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Heb jij de Bijbel App van @YouVersion? Ik hou ervan, en ik denk dat jij dat ook zal doen. Hier heb je een link:"
+
+msgid "share.invite_facebook"
+msgstr "Ik hou van de Bijbel App! Het heeft me echt geholpen om de Bijbel een deel te maken van mijn dagelijkse routine. Het laat me markeren, luisteren naar audio Bijbels, notities maken, leesplannen volgen... en zelfs video's bekijken! Ga het nu downloaden (het is gratis):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Heb jij de Bijbel App? Ik hou ervan, en ik denk dat jij dat ook zal doen. Hier heb je een link:"

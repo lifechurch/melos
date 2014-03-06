@@ -1,0 +1,239 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Joe Jiang <lamp.purl@gmail.com>, 2013
+# Nianlan Yang <Nianlan@hotmail.com>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# Gladys Liew <gladysliew@gmail.com>, 2014
+# jerry cheng <jerrych@gmail.com>, 2014
+# Joe Jiang <lamp.purl@gmail.com>, 2013
+# Nianlan Yang <Nianlan@hotmail.com>, 2013
+# yushengyan2004 <yushengyan2004@gmail.com>, 2014
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Gladys Liew <gladysliew@gmail.com>, 2013
+# Hang Sun <sunh11373@yahoo.com>, 2013
+# Joe Jiang <lamp.purl@gmail.com>, 2013
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Michael HUO <huo@live.cn>, 2013
+# yushengyan2004 <yushengyan2004@gmail.com>, 2013
+# yushengyan2004 <yushengyan2004@gmail.com>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-12-26 04:50+0000\n"
+"Last-Translator: Joe Jiang <lamp.purl@gmail.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/yv-backend/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-24 11:23+0000\n"
+"Last-Translator: yushengyan2004 <yushengyan2004@gmail.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/yv-backend/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/yv-backend/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>圣经系列</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "今晚观看<i>圣经系列</i> ！"
+
+msgid "moment.bookmark.title"
+msgstr "{name} 标记了书签 <b>{reference_human}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "你加书签标记了 <b>{reference_human}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} 现在和 <b>{friend_name}</b> 已成为朋友"
+
+msgid "moment.friendship.self.title"
+msgstr "你现在和 <b>{friend_name}</b> 已成为朋友"
+
+msgid "moment.highlight.title"
+msgstr "{name} 高亮标记了 <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "你高亮标记了 <b>{reference_human}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} 加了一条笔记，<b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "你加了一条笔记，<b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} 下载了 <b>{version}</b> 译本"
+
+msgid "moment.bible.download.self.title"
+msgstr "你下载了 <b>{version}</b> 译本"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} 开始了<b>{title}</b> 计划"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "你开始了<b>{title}</b> 计划"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} 完成了 <b>{title}</b> 读经计划的第 <b>{day}</b> 天"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "你完成了 <b>{title}</b> 读经计划的第 <b>{day}</b> 天"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} 完成了 <b>{title}</b> 读经计划"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "你完成了 <b>{title}</b> 读经计划"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} 获得了 <b>{title}</b> 勋章"
+
+msgid "moment.badge.earned.self.title"
+msgstr "你获得了 <b>{title}</b> 勋章"
+
+msgid "moment.video.watched.title"
+msgstr "{name} 看了 <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "你观看了 <b>{title}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} 希望成为你在 YouVersion 的好友"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} 接受了你加好友的邀请"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} 现已成为你的好友"
+
+msgid "notifications.friendships.suggestion"
+msgstr "你希望和 {name} 成为在 YouVersion 上的好友吗?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} 评论了你的书签: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} 评论了你的高亮经文: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} 评论了笔记: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} 喜欢您的书签 {reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} 喜欢您高亮显示的经文 {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} 喜欢您的关于 {reference_human}的笔记"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} 喜欢您的笔记, “{title}”"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} 喜欢您的笔记"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} 也评论了他们的书签标记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的书签标记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} 也评论了他们的高亮标记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的高亮标记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} 也评论了他们的笔记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的笔记: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} 标记了书签 {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} 高亮标记了 {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} 在 {reference_human} 上加了一条笔记"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} 加了一条笔记, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} 添加了一条笔记"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "你有 %d 个好友请求"
+
+msgid "notifications.system.test"
+msgstr "现在就下载我们的儿童圣经软件!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "来自 {name}："
+
+msgid "share.invite_sms"
+msgstr "您有 YouVersion 的圣经软件吗？我很喜欢它，我想你也会喜欢，这是圣经软件的链接："
+
+msgid "share.invite_email_subject"
+msgstr "您有使用圣经软件吗？"
+
+msgid "share.invite_email_body"
+msgstr ""
+"我很喜欢使用 YouVersion 的圣经软件，我想您也会喜欢的。不管是阅读，看视频，听录音或分享经文，这个圣经软件都很好用，所以现在我接触圣经的次数也更多了。圣经软件甚至还包括了读经计划，提供一系列的精选经文，供我每天阅读。\n"
+"\n"
+"您可以从这里把圣经软件 (免费的！) 安装到几乎任何移动设备上："
+
+msgid "share.invite_twitter"
+msgstr "我将 @YouVersion 的圣经软件常驻在主屏幕上。无论阅读圣经，观看视频，收听录音或分享经文... 都可在这个免费软件中完成："
+
+msgid "share.invite_twitter_direct"
+msgstr "您有 @YouVersion 的圣经软件吗？我很喜欢它，我想您也会喜欢，这是圣经软件的链接："
+
+msgid "share.invite_facebook"
+msgstr "我喜爱圣经软件！它真的帮助我使圣经成为我日常生活的一部分。圣经软件能帮我做经文高亮记号，听音频圣经，记录笔记，跟踪灵修计划... 甚至观看视频！快去下载吧（还是免费的）："
+
+msgid "share.invite_facebook_direct"
+msgstr "您有 YouVersion 的圣经软件吗？我很喜欢它，我想您也会喜欢，这是圣经软件的链接："
