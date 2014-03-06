@@ -34,6 +34,7 @@ es:
     users username required: "Usted debe ingresar un nombre de usuario."
     users first name required: "Debe introducir su nombre"
     users last name required: "Debe introducir un apellido"
+    moments content required: "El contenido no puede estar en blanco"
   meta:
     kids_app:
       title: "La Biblia App para Niños"
@@ -47,8 +48,6 @@ es:
     connections:
       index:
         title: "Cuentas Conectadas"
-  ui:
-    loading indicator text: "Cargando..."
   now: "Ahora"
   celebrating 50MM: "¡Celebrando 50 millones de instalaciones!"
   link: "Enlace"
@@ -141,11 +140,8 @@ es:
   live: "En vivo/Grupos"
   first page: "Primera Página"
   last page: "Ultima Página"
-  next page: "Siguiente Página"
-  previous page: "Página Anterior"
   invalid username or password: "Usuario o Contraseña Incorrecto"
   show all bookmarks: "Visualizar todos los %{total} marcadores"
-  show all notes: "Visualizar todas las %{total} notas"
   recent bookmarks: "Marcadores Recientes"
   percentage display: "%{number}%"
   myself: "Yo"
@@ -172,6 +168,7 @@ es:
       go to scripture: "Ir a las Escrituras"
       load more: "Cargar más"
       like: "Me gusta"
+      liked: "Marcada como Me Gusta"
       like title: "Me gusta "
       share: "Compartir"
       share title: "Compartir esto con amigos o familia"
@@ -191,10 +188,16 @@ es:
     none: "No tiene ninguna notificación"
     no new: "No hay nuevas notificaciones"
     view all: "Ver todas las notificaciones"
+  likes:
+    create failure: "Su me gusta no pudo ser salvado"
+    destroy success: "Me gusta eliminado"
+    destroy failure: "Su me gusta no pudo ser eliminado"
   comments:
+    view all N: "Ver los %{count} comentarios"
     post comment: "Publicar un comentario"
-    create success: "Comentario publicado"
     create failure: "El comentario no pudo ser publicado"
+    destroy success: "Comentario eliminado"
+    destroy failure: "El comentario no pudo ser guardado"
     form:
       save button: "Publicar"
   friends:
@@ -208,7 +211,6 @@ es:
   friendships:
     offer success: "Solicitud de amistad enviada"
     offer failure: "Error al enviar solicitud de amistad"
-    create success: "Ahora son amigos"
     create failure: "Error al crear amistad"
     destroy success: "Petición rechazada"
     destroy failure: "Error al declinar solicitud"
@@ -241,6 +243,11 @@ es:
       reference field: "Referencia(s):"
       status field: "Estado:"
       save button: "Guardar"
+    status:
+      private: "Privado"
+      public: "Público"
+      friends: "Sólo amigos"
+      draft: "Borrador"
     list title: "Notas"
     loading community: "Cargando las notas de la comunidad..."
     no community notes: "No hay notas de la comunidad que hagan referencia a los versículos seleccionados.  Para crear una nota, seleccione un versículo en el Lector de la Biblia y luego haga clic en el botón Seleccionado ubicado en la parte superior del lector."
@@ -248,6 +255,7 @@ es:
     private: "Privado"
     is private: "La nota que solicita es privada. "
     draft: "Borrador"
+    friends: "Amigos"
     creation form errors: "El (los) siguiente(s) error(es) no permitieron la creación de su nota:"
     reference field: "Referencia(s):"
     version field: "Versión:"
@@ -268,7 +276,6 @@ es:
     cancel: "Cancelar"
     pop out: "Saltará"
     none found: "No se han encontrado notas..."
-    create success: "Nota guardada"
     create failure: "Error al guardar nota"
     destroy success: "Nota eliminada"
     destroy failure: "Error al eliminar nota"
@@ -347,7 +354,7 @@ es:
     my badges: "Mis Insignias"
     revised date: "Revisionó ultima vez el %{date}"
     update email copy: "Introduzca una nueva dirección de correo electrónico y haga clic en Actualizar Correo Electrónico. Nosotros le enviaremos un enlace para confirmar su nueva dirección de correo electrónico."
-    edit email: "Actualizar Correo Electrónico"
+    edit email: "Cambiar correo electrónico"
     update email check: "Por favor, revise su correo electrónico y haga clic en el enlace para confirmar su nueva dirección de correo electrónico."
     confirm update email success: "¡Gracias! Usted ha actualizado su dirección de correo electrónico."
     confirm update email error: "Lo sentimos, hubo un problema al completar su cambio de dirección de correo electrónico."
@@ -513,7 +520,6 @@ es:
     not found: "Los Marcadores le brindan una guía  de referencia rápida  a sus pasajes favoritos o al último capítulo que leyó de un libro en particular.  Para agregar un marcador, seleccione el versículo en el lector de la Biblia y luego presione el botón de marcadores en la parte superior del lector."
     other user not found: "%{username} no ha guardado ningún marcador todavía."
     creation form errors: "El siguiente error (es) impidió la creación de su marcador:"
-    create success: "Marcador guardado"
     destroy success: "Marcador eliminado"
     destroy failure: "Error al eliminar marcador"
     update success: "Marcador actualizado"
@@ -545,6 +551,11 @@ es:
     none me: "Usted no ha obtenido ninguna insignia aún."
     none user: "%{username} no ha obtenido ninguna insignia aún."
   plans:
+    settings: "Configuración"
+    privacy:
+      visible to friends?: "¿Le gustaría que su actividad en este plan sea visible a sus amigos?"
+      private: "Privado"
+      public: "Público"
     title: "Planes de Lectura"
     browse by category: "Buscar por Categoría"
     browse plans: "Explorar '%{category}' Planes"
@@ -575,7 +586,6 @@ es:
     no public plans: "No hay planes de lectura visibles para %{username}."
     filter by lang: "Filtrar Planes por Idioma"
     plan settings: "Configuración del Plan"
-    settings: "Configuración"
     search: "Buscar"
     search placeholder: "Buscar Planes de %{category} "
     subscribe to plan: "Comenzar Este Plan"
@@ -688,25 +698,28 @@ es:
     chapter only: "Lo sentimos, el audio no está disponible para versículos. Vea en el lector para el audio del capitulo."
     close player menu: "Cerrar"
   highlights:
+    title: "Resaltados"
     blank slate:
       heading: "Resaltar versículos significativos"
       description: "Al leer la Biblia, seleccione un versículo y resáltelo. Regrese aquí para verlo, editarlo o eliminarlo."
     none user: "%{username} no tiene resaltados"
     choose color: "Elija un color"
-    create success: "Resaltado guardado"
     create failure: "Error al guardar resaltado"
     destroy success: "Resaltado eliminado"
     destroy failure: "Error al eliminar resaltado"
     creation error: "Si alguna vez se queda atrás en su lectura, ¡no se preocupe! Usted  siempre puede cambiar la lectura actual volviéndose a su última lectura completada."
     delete error: "Lo sentimos, no se pudo eliminar el resaltado."
+    form:
+      save button: "Guardar Resaltado"
   searching:
     bible: "Biblia"
-    plans: "Planes de Lectura"
+    plans: "Planes"
     users: "Usuarios"
     notes: "Notas"
     total results: "Aproximadamente %{total} Resultados "
     suggestion html: "Quiso usted decir %{suggestion_link}?"
     all versions: "Todas las Versiones en %{language_name}"
+    results for: "Resultados de búsqueda para:"
   donate:
     donate now: "Donar ahora"
     donate now intl: "o donar internacionalmente"
@@ -876,9 +889,6 @@ es:
     public domain: "Dominio público"
     loading: "Cargando Más versiones..."
     load error: "Lo sentimos, hubo un problema técnico cargando más versiones. Cierre este menú e inicie nuevamente."
-  reader help:
-    title: "Seleccione un versículo..."
-    line 1: "Haga clic o toque cualquier versículo o colección de versículos,  ya sea para marcar, destacar, crear una nota, o compartir con sus amigos!"
   campaigns:
     100m:
       logo: "YouVersion: La Biblia App"
@@ -908,3 +918,9 @@ es:
       sidebar:
         tagline: "¡Hagamos historia juntos!"
         button: "Comparta la Biblia App"
+  ui:
+    pagination:
+      next page: "Siguiente Página"
+      previous page: "Página Anterior"
+    datetime:
+      just now: "Justo ahora"

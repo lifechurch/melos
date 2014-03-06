@@ -34,6 +34,7 @@ tr:
     users username required: "Kullancı adı girmelisiniz."
     users first name required: "Adınızı girmelisiniz"
     users last name required: "Soyadınızı girlmelisiniz."
+    moments content required: "İçerik boş olamaz."
   meta:
     kids_app:
       title: "Çocuklar İçin Kutsal Kitap Uygulaması"
@@ -47,8 +48,6 @@ tr:
     connections:
       index:
         title: "Bağlı Hesaplar"
-  ui:
-    loading indicator text: "Yükleniyor..."
   now: "Şu Anki Durum"
   celebrating 50MM: "50 Milyon Uygulama İndirildi!"
   link: "Link"
@@ -67,7 +66,7 @@ tr:
   new note: "Not Oluştur"
   share success: "İletiniz paylaşıldı."
   share error: "İletinizi paylaşmaya çalışırken bir hata oluştu. Lütfen tekrar deneyiniz."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "%{connection} hesabınıza bağlanın"
   deleted connection: "Evet, parolamı sıfırla"
   deleted connection error: "Evet, beni sistemden çıkar ve parolamı sıfırla"
@@ -95,7 +94,7 @@ tr:
   successful sign-in: "%{user} olarak giriş yapıldı!"
   successful sign-out: "Çıkış yapıldı!"
   invalid login: "Geçersiz Kullanıcı Adı veya Parola"
-  invalid password: "Parola yanlış."
+  invalid password: "Parola yanlış"
   sign back in: "Güvenliğiniz için, oturumların süresi iki hafta içinde bitiyor. Lütfen yeniden giriş yapın."
   youversion: "YouVersion"
   username or email prompt: "Kullanıcı Adı (veya e-Posta)"
@@ -141,11 +140,8 @@ tr:
   live: "Live/Gruplar"
   first page: "İlk Sayfa"
   last page: "Son Sayfa"
-  next page: "Sonraki Sayfa"
-  previous page: "Önceki Sayfa"
   invalid username or password: "Kullancı adı veya parola geçersiz."
   show all bookmarks: " %{total} yer imlerinin tümünü görüntüle"
-  show all notes: "%{total} notların tümünü görüntüle"
   recent bookmarks: "En Yeni Yer İmleri"
   percentage display: "%{number}%"
   myself: "Benim"
@@ -172,6 +168,7 @@ tr:
       go to scripture: "Kısmı görüntüle"
       load more: "Daha fazla göster"
       like: "Beğen"
+      liked: "Beğendiniz"
       like title: "Beğen"
       share: "Paylaş"
       share title: "Bunu aileniz veya arkadaşlarınız ile paylaşın"
@@ -191,10 +188,16 @@ tr:
     none: "Bildirim yok"
     no new: "Yeni bildirim yok"
     view all: "Tüm bildirimleri görüntüle"
+  likes:
+    create failure: "Beğeniniz kaydedilemedi"
+    destroy success: "Beğenme silindi"
+    destroy failure: "Beğenmeniz silinemedi"
   comments:
+    view all N: "%{count} yorumların tümünü görüntüle"
     post comment: "Yorum yaz"
-    create success: "Yorum postalandı"
     create failure: "Yorum postalanamadı"
+    destroy success: "Yorum silindi"
+    destroy failure: "Yorum silinemedi"
     form:
       save button: "Postala"
   friends:
@@ -208,7 +211,6 @@ tr:
   friendships:
     offer success: "Arkadaşlık talep edildi"
     offer failure: "Arkadaşlık talebi gönderilirken hata oluştu"
-    create success: "Artık arkadaş oldunuz"
     create failure: "Arkadaşlığı yaratırken hata oluştu"
     destroy success: "İstek reddedildi"
     destroy failure: "Talebi reddederken hata oluştu"
@@ -241,6 +243,11 @@ tr:
       reference field: "Ayet(ler):"
       status field: "Durum:"
       save button: "Kaydet"
+    status:
+      private: "Özel"
+      public: "Topluma Açık"
+      friends: "Sırf Arkadaşlar"
+      draft: "Taslak"
     list title: "Notlar"
     loading community: "Toplumdaki notlar yükleniyor..."
     no community notes: "Seçili ayetleri kasteden toplum notları bulunmadı. Bir notu yaratmak için, Kutsal Kitap okuyucusundan bir not seçin. Ondan sonra okuyucunun tepesindeki Seçili düğmesini tıklayın."
@@ -248,6 +255,7 @@ tr:
     private: "Özel"
     is private: "Talep ettiğiniz not topluma açık değildir."
     draft: "Taslak"
+    friends: "Arkadaşlar"
     creation form errors: "Notunuz şu hatalardan dolayı yaratılamadı:"
     reference field: "Ayet(ler):"
     version field: "Çeviri:"
@@ -268,7 +276,6 @@ tr:
     cancel: "İptal"
     pop out: "Yeni Pencerede Aç"
     none found: "Not bulunamadı..."
-    create success: "Not kaydedildi"
     create failure: "Notu kaydederken hata oluştu"
     destroy success: "Not silindi"
     destroy failure: "Notu silerken hata oluştu"
@@ -330,7 +337,7 @@ tr:
     edit notifications: "Bildirimleri Yönet"
     edit connections: "Bağlı Hesaplar"
     edit devices: "Bağlı Mobil Cihazlar"
-    edit account_existence: "Hesabı sil."
+    edit account_existence: "Hesabı sil"
     delete account button: "YouVersion Hesabımı Sil"
     no devices: "YouVersion hesabınıza bağlı olan herhangi bir mobil cihaz bulamadı."
     no devices download copy: "Kutsak Kitap Uygulaması YouVersion on-line Kutsal Kitap yazılımını baz alan bedavaya indirebileceğiniz bir uygulamadır. Az daha tüm mobil cihazlarda çalışır. Kutsal Kitap Uygulamasını kullanarak, kullanıcılar Kutsal Kitap'ı okuyup, sosyal ağlarında ayet paylaşabilir, sevdikleri bölümlerin yer imlerini kaydedebilir, ve daha neler neler yapabilir! Ve bunların hepsi giderek daha gezgin olan hayat tarzımıza uygun bir şekilde yapılabilir. Uygulamayı indirmek ve hesabınıza bağlamak için mobil cihazınızdan  <a href='https://www.bible.com/app'>bible.com/app</a> web adresini ziyaret edin."
@@ -347,7 +354,7 @@ tr:
     my badges: "Rozetlerim"
     revised date: "En son %{date} tarihinde güncellenmiştir"
     update email copy: "Yeni bir e-Posta adresini girdikten sonra e-Posta Adresini Güncelle düğmesini tıklayınız. Yeni e-Posta adresinizi doğrulayabilmeniz için size bir link yollayacağız."
-    edit email: "e-Posta Adresini Güncelle"
+    edit email: "e-Post Adresini Değiştir"
     update email check: "e-Posta'nıza, yeni adresiniz doğrulamak için bir mesaj yollanmıştır. O mesajdaki linki tıklayarak e-Posta adresinizi doğrulayın."
     confirm update email success: "e-Posta adresiniz güncellenmiştir. Teşekkür ederiz!"
     confirm update email error: "e-Posta adres değişikliğiniz yapılırken bir hata oluştu. Özür dileriz."
@@ -513,7 +520,6 @@ tr:
     not found: "Yer imleri en sevdiğiniz ayetleri veya herhangi bir kitapta son okuduğunuz bölümü çabukça bulmanızı sağlar. Yer imi nasıl eklenir: Kutsal Kitap Okuyucusunda bir ayet seçin. Ondan sonra okuyucunun araç çubuğundaki Seçim düğmesini tıklayın."
     other user not found: "%{username} henüz yer imi kaydetmedi."
     creation form errors: "Şu hata(lar) yer iminizin kaydedilmesini engelledi:"
-    create success: "Yer imi kaydedildi"
     destroy success: "Yer İmi Silindi"
     destroy failure: "Yer imini silerken hata oluştu"
     update success: "Yer İmi Güncellendi"
@@ -545,6 +551,11 @@ tr:
     none me: "Daha hiç rozet kazanmadınız."
     none user: "%{username} adlı kullanıcın rozeti yok."
   plans:
+    settings: "Ayarlar"
+    privacy:
+      visible to friends?: "Bu okuma planındaki hareketlerinin arkadaşlarınıza görünür olmasını ister misiniz?"
+      private: "Özel"
+      public: "Topluma Açık"
     title: "Okuma Planları"
     browse by category: "Türüne Göre Gözat"
     browse plans: "%{category} Okuma Planlarına Gözat"
@@ -575,7 +586,6 @@ tr:
     no public plans: "%{username} adlı kullanıcının görüntülemeye izin verdiği herhangi bir Okuma Planı yok."
     filter by lang: "Planları Diline Göre Filtrele"
     plan settings: "Okuma planı ayarları"
-    settings: "Ayarlar"
     search: "Ara"
     search placeholder: "%{category} Konulu Planlarda Ara"
     subscribe to plan: "Okuma Planına Başla"
@@ -688,17 +698,19 @@ tr:
     chapter only: "Ayetler için ses kayıtları bulunmamaktadır. Bölümün ses kaydını dinleyebilmek için ayetleri okuyucuda görüntüleyin."
     close player menu: "Kapat"
   highlights:
+    title: "Vurgular"
     blank slate:
       heading: "Anlamlı ayetleri vurgulayın"
       description: "Kutsal Kitap'ı okurken, bir ayeti seçip vurgulayabilirsiniz. Vurguladığınız ayetleri görüntülemek, düzenlemek veya silmek için bu ekrana dönünüz."
     none user: "%{username} adlı kullanıcının vurguları yok"
     choose color: "Renk seçiniz"
-    create success: "Vurgu kaydedildi"
     create failure: "Vurguyu kaydederken hata oluştu"
     destroy success: "Vurgu silindi"
     destroy failure: "Vurguyu silerken hata oluştu"
     creation error: "Vurgu eklenilemedi. Özür dileriz."
     delete error: "Vurgu silinemedi. Özür dileriz"
+    form:
+      save button: "Vurguyu Kaydet"
   searching:
     bible: "Kutsal Kitap"
     plans: "Okuma Planları"
@@ -707,6 +719,7 @@ tr:
     total results: "Yaklaşık %{total} Sonuç Bulundu"
     suggestion html: "Şunu mu kastettiniz? %{suggestion_link}"
     all versions: "%{language_name} Dilinde Tüm Çeviriler"
+    results for: "Arama sonuçları:"
   donate:
     donate now: "Bağışta Bulun"
     donate now intl: "uluslararası bağış"
@@ -876,9 +889,6 @@ tr:
     public domain: "Genel Alan"
     loading: "Daha fazla Çeviri yükleniyor..."
     load error: "Daha fazla çeviri yüklerken bir hata oluştu. Özür dileriz. Bu menüyü kapatıp yeniden açmaya deneyin."
-  reader help:
-    title: "Bir ayet seçiniz..."
-    line 1: "Bir veya birkaç ayeti yer imlerinize eklemek, vurgulamak, not yazmak veya dostlarınızla paylaşmak için tıklayın veya basınız."
   campaigns:
     100m:
       logo: "YouVersion: Kutsal Kitap Uygulaması"
@@ -908,3 +918,9 @@ tr:
       sidebar:
         tagline: "Birlikte tarih yazalım."
         button: "Kutsal Kitap Uygulaması'nı paylaş"
+  ui:
+    pagination:
+      next page: "Sonraki Sayfa"
+      previous page: "Önceki Sayfa"
+    datetime:
+      just now: "biraz önce"

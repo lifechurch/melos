@@ -34,6 +34,7 @@ sw:
     users username required: "Lazima uweke jina la matumizi "
     users first name required: "Lazima uingize jina la kwanza."
     users last name required: "Lazima uingize jina la mwisho."
+    moments content required: "Maudhui haiwezi kuachwa tupu"
   meta:
     kids_app:
       title: "Apu ya Biblia kwa ajili ya watoto"
@@ -47,8 +48,6 @@ sw:
     connections:
       index:
         title: "akaunti zilizounganishwa"
-  ui:
-    loading indicator text: "inatafuta.."
   now: "saa hii"
   celebrating 50MM: "Tunasherehekea ufunguaji wa App milioni 50!"
   link: "Kiungo"
@@ -67,7 +66,6 @@ sw:
   new note: "noti mpya"
   share success: "Ujumbe wako umesambazwa."
   share error: "Samahani, kulikuwa na hitilafu katika usambazaji wa ujumbe wako. Tafadhali jaribu tena."
-  google plus: "Google +"
   connect to: "Ungana na akaunti yako ya %{connection}"
   deleted connection: "Umefanikiwa kuondoa uhusiano wako na %{connection}."
   deleted connection error: "Samahani, kulikuwa na hitilafu kuondoa uhusiano wako na %{connection}."
@@ -141,11 +139,8 @@ sw:
   live: "Maisha/Makundi"
   first page: "Kurasa ya kwanza"
   last page: "Kurasa ya mwisho"
-  next page: "kurasa inayofuata"
-  previous page: "kurasa iliyopita"
   invalid username or password: "jina la mtumiaji au kitambulisho cha siri ni batili"
   show all bookmarks: "Onyesha zote %{total} alamishwa"
-  show all notes: "Onyesha zote %{total} maelezo"
   recent bookmarks: "maalamisho ya hivi karibuni"
   percentage display: "%{number}%"
   myself: "mimi"
@@ -172,6 +167,7 @@ sw:
       go to scripture: "Nenda kwenye maandiko"
       load more: "ongeza zaidi"
       like: "penda"
+      liked: "Imependwa"
       like title: "penda hii"
       share: "husisha wengine/jumuisha"
       share title: "shirikisha hiki kwa marafiki au familia"
@@ -191,10 +187,16 @@ sw:
     none: "Huna taarifa yoyote"
     no new: "Hakuna taarifa mpya"
     view all: "Onyesha taarifa zote"
+  likes:
+    create failure: "kupenda kwako haikuweza kuhifadhiwa "
+    destroy success: "kupenda kwako kumefutwa"
+    destroy failure: "kupenda kwako hakukuweza kufutwa"
   comments:
+    view all N: "Ona zote%{count} maoni"
     post comment: "Andika maoni"
-    create success: "Maoni yametumwa"
     create failure: "Maoni haya kuweza kutumwa"
+    destroy success: "Oni lako limefutwa"
+    destroy failure: "Oni lako halikuweza kufutwa"
     form:
       save button: "Tuma"
   friends:
@@ -208,7 +210,6 @@ sw:
   friendships:
     offer success: "Ombi la urafiki limetumwa"
     offer failure: "Hitilafu wakati wa kutuma ombi la urafiki"
-    create success: "Sasa ni marafiki"
     create failure: "Hitilafu kujenga urafiki"
     destroy success: "Ombi limekataliwa"
     destroy failure: "Hitilafu kukanusha urafiki"
@@ -241,6 +242,11 @@ sw:
       reference field: "kumbukumbu"
       status field: "Hali:"
       save button: "hifadhi/okoa"
+    status:
+      private: "Binafsi"
+      public: "Umma"
+      friends: "Marafiki pekee"
+      draft: "Rasimu"
     list title: "maelezo"
     loading community: "Inafungua dondoo zako za jumuia"
     no community notes: "Hakuna vidokezo vya jamii zilizorejea mistari ulizochagua. Kutengeneza dokezo , chagua mstari katika Biblia  na kisha bonyeza kitufe kilicho juu."
@@ -248,6 +254,7 @@ sw:
     private: "Binafsi"
     is private: "Dondoo iliyoombwa ni ya kibinafsi."
     draft: "Rasimu"
+    friends: "Marafiki"
     creation form errors: "kosa/makosa yafuatayo yamezuia utengenezaji wa maelezo:"
     reference field: "kumbukumbu"
     version field: "toleo:"
@@ -268,7 +275,6 @@ sw:
     cancel: "Ondoa"
     pop out: "toa nje"
     none found: "Hakuna dondoo zilizopatikana"
-    create success: "Elezo limetunzwa"
     create failure: "Hitilafu katika utunzaji wa elezo"
     destroy success: "Elezo limeondolewa"
     destroy failure: "Hitilafu kuondoa elezo"
@@ -347,7 +353,7 @@ sw:
     my badges: "Beji zangu"
     revised date: "Ilirekebishwa mwisho %{date}"
     update email copy: "Adika barua pepe mpya kisha ubonyeze sahihisha barua pepe. Tutakutumia tuvuti ili udhibitishe barua pepe yako mpya."
-    edit email: "Wezesha anuani ya barua pepe"
+    edit email: "Badilisha barua pepe"
     update email check: "Tafadhali angalia batua pepe yako kisha ufuate tuvuti ili uthibitishe barua pepe yako mpya"
     confirm update email success: "Asante! Umebadilisha barua pepe yako"
     confirm update email error: "Samahani, kosa lilitokea tulipojaribu kumaliza kubadilisha barua pepe yako."
@@ -513,7 +519,6 @@ sw:
     not found: "Alama kukupa mwongonzo wa haraka wa kurejea kwa vifungu vyako unavyopenda au sura ya mwisho uliyosoma katika kitabu maalum. Kuongeza alama, chagua mstari katika Biblia na kisha bofya batani iliyochaguliwa juu ya kifaa cha kusomea."
     other user not found: "%{username} bado hajahifadhi alama zozote."
     creation form errors: "Makosa  yafuatayo(s) yalikuzuia kutengeneza alama"
-    create success: "Alama ya kumbukumbu imehifadhiwa"
     destroy success: "Alama imetolewa"
     destroy failure: "Hitilafu katika kuondoa alama"
     update success: "Alamamisho limekuwa updated"
@@ -545,6 +550,11 @@ sw:
     none me: "Haujapata beji zozote."
     none user: "%{username} hajapata beji zozote."
   plans:
+    settings: "mipangilio"
+    privacy:
+      visible to friends?: "Ungependa shughuli yako wa  mpango huu wa kuonekana na marafiki wako?"
+      private: "Binafsi"
+      public: "Umma"
     title: "Mipango ya usomaji"
     browse by category: "Tafuta kwa Jamii"
     browse plans: "Vingari %{category} mipango"
@@ -575,7 +585,6 @@ sw:
     no public plans: "Hakuna mipango ya kusoma ya %{username}  yanayoweza kuonekana"
     filter by lang: "Chagua mipango kulingana na lugha"
     plan settings: "mazingira ya mipangilio"
-    settings: "mipangilio"
     search: "tafuta"
     search placeholder: "Tafuta %{category} mipango"
     subscribe to plan: "anza mpango huu"
@@ -688,25 +697,28 @@ sw:
     chapter only: "Samahani, sauti haipo kwenye mistari hii. Soma kwa msomo ili upate sauti ya mlango."
     close player menu: "funga"
   highlights:
+    title: "Mambo muhimu:"
     blank slate:
       heading: "Onyesha mafungu yenye maana"
       description: "Wakati wa kusoma Biblia, kuchagua fungu na lionyeshe kwa rangi. Rudi hapa kuona, hariri, au kufuta onyesha lako."
     none user: "%{username} hana maonyesho"
     choose color: "Chagua rangi"
-    create success: "Onyesho limetunzwa"
     create failure: "Hitilafu katika kutunza onyesho"
     destroy success: "Onyesho limefutwa"
     destroy failure: "Hitilafu katika kufuta onyesho"
     creation error: "Samahani, haikuwezekana kubainisha maandishi hayo."
     delete error: "Samahani, haikuwezekana kuondoa ubainisho huo"
+    form:
+      save button: "Hifadhi mambo muhimu"
   searching:
     bible: "biblia"
-    plans: "Mipango ya usomaji"
+    plans: "Mipango"
     users: "watumiaji"
     notes: "maelezo"
     total results: "Kuhusu %{total} matokeo"
     suggestion html: "Ulimaanisha %{suggestion_link}?"
     all versions: "Yote %{language_name} matoleo"
+    results for: "Tafuta matokeo ya:"
   donate:
     donate now: "Changia Sasa"
     donate now intl: "au saidia/kuchangia kimataifa"
@@ -876,9 +888,6 @@ sw:
     public domain: "Uwanja wa Umma"
     loading: "Inatafuta toleo zingine"
     load error: "Samahani, kulikuwa na tatizo kutafuta matoleo zaidi. Funga menyu hii kisha jaribu tena."
-  reader help:
-    title: "Chagua mstari "
-    line 1: "Bonyeza au bomba kwenye mstari wowote au ukusanyaji wa\nmistari ili kuweka alama, kuonyesha, kutengeneza kumbukumbu,\nau kushiriki kwa marafiki wako!"
   campaigns:
     100m:
       logo: "YouVersion: App ya Biblia"
@@ -908,3 +917,9 @@ sw:
       sidebar:
         tagline: "Tutengeneze ukumbusho pamoja."
         button: "Shirikisha App ya Biblia"
+  ui:
+    pagination:
+      next page: "Kurasa inayofuata"
+      previous page: "Kurasa iliyopita"
+    datetime:
+      just now: "sasa hivi"

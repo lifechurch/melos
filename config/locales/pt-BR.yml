@@ -34,6 +34,7 @@ pt-BR:
     users username required: "Você deve inserir um usuário."
     users first name required: "Você deve digitar um primeiro nome."
     users last name required: "Você deve digitar um sobrenome."
+    moments content required: "Conteúdo não pode estar em branco."
   meta:
     kids_app:
       title: "O App da Bíblia para Crianças"
@@ -47,8 +48,6 @@ pt-BR:
     connections:
       index:
         title: "Contas Conectadas"
-  ui:
-    loading indicator text: "Carregando..."
   now: "Agora"
   celebrating 50MM: "Comemorando 50 milhões de instalações!"
   link: "Link"
@@ -67,7 +66,6 @@ pt-BR:
   new note: "Nova Anotação"
   share success: "Sua mensagem foi compartilhada."
   share error: "Desculpe, houve um erro ao compartilhar a sua mensagem. Por favor, tente novamente."
-  google plus: "Google +"
   connect to: "Conectar à sua %{connection} conta"
   deleted connection: "Sua conexão foi removida com sucesso %{connection}."
   deleted connection error: "Desculpe, houve um erro ao remover a sua conexão %{connection}."
@@ -141,11 +139,8 @@ pt-BR:
   live: "Ao Vivo/Grupos"
   first page: "Primeira Página"
   last page: "Última Página"
-  next page: "Próxima Página"
-  previous page: "Página Anterior"
   invalid username or password: "Nome de usuário ou senha o inválido"
   show all bookmarks: "Visualizar todos os %{total} marcadores"
-  show all notes: "Visualizar todas as %{total} anotações"
   recent bookmarks: "Marcadores Recentes"
   percentage display: "%{number}%"
   myself: "Eu"
@@ -172,6 +167,7 @@ pt-BR:
       go to scripture: "Vá para a Bíblia"
       load more: "Carregar mais"
       like: "Curtir"
+      liked: "Curtiu"
       like title: "Curta isso"
       share: "Compartilhar"
       share title: "Compartilhe isso com a família ou amigos"
@@ -191,10 +187,16 @@ pt-BR:
     none: "Você não possui notificações"
     no new: "Sem novas notificações"
     view all: "Visualizar todas a Notificações"
+  likes:
+    create failure: "Sua curtida não pode ser salva"
+    destroy success: "Curtida apagada"
+    destroy failure: "Sua curtida não pode ser apagada"
   comments:
+    view all N: "Ver todos %{count} comentários"
     post comment: "Publicar um comentário"
-    create success: "Comentário publicado"
     create failure: "O comentário não pode ser publicado"
+    destroy success: "Comentário apagado."
+    destroy failure: "Comentário não pode ser apagado  "
     form:
       save button: "Publicação"
   friends:
@@ -208,7 +210,6 @@ pt-BR:
   friendships:
     offer success: "Pedido de amizade enviado"
     offer failure: "Erro ao enviar o pedido de amizade"
-    create success: "Vocês agora são amigos"
     create failure: "Erro ao começar amizade"
     destroy success: "Pedido rejeitado"
     destroy failure: "Erro ao rejeitar o pedido"
@@ -241,6 +242,11 @@ pt-BR:
       reference field: "Referência(s):"
       status field: "Status:"
       save button: "Salvar"
+    status:
+      private: "Privado"
+      public: "Público"
+      friends: "Amigos apenas"
+      draft: "Rascunho"
     list title: "Anotações"
     loading community: "Carregando anotações da comunidade..."
     no community notes: "Não foram encontradas anotações comunitárias com referência aos versículos selecionados. Para criar uma anotação, selecione um versículo no leitor da Bíblia e então clique no botão selecionado no topo do leitor. "
@@ -248,6 +254,7 @@ pt-BR:
     private: "Privado"
     is private: "A anotação solicitada é privada. "
     draft: "Rascunho"
+    friends: "Amigos"
     creation form errors: "O(s) seguinte(s) erro(s) impediu(ram) a criação de sua anotação"
     reference field: "Referência(s):"
     version field: "Versão:"
@@ -268,7 +275,6 @@ pt-BR:
     cancel: "Cancelar"
     pop out: "Relocar"
     none found: "Nenhuma anotação encontrada..."
-    create success: "Anotação salva"
     create failure: "Erro em salvar a anotação"
     destroy success: "Anotação apagada."
     destroy failure: "Erro na exclusão da anotação"
@@ -347,7 +353,7 @@ pt-BR:
     my badges: "Minhas Medalhas"
     revised date: "Revisado em %{date}"
     update email copy: "Insira um novo endereço de e-mail e clique em Atualizar E-mail. Enviaremos um link para que você confirme o seu novo endereço de e-mail."
-    edit email: "Atualizar E-mail"
+    edit email: "Mudar endereço de e-mail"
     update email check: "Por favor, verifique o seu e-mail e clique no link para confirmar o seu novo endereço de e-mail."
     confirm update email success: "Obrigado! Você atualizou o seu endereço de e-mail."
     confirm update email error: "Desculpe, houve um problema ao completar a mudança do endereço de e-mail."
@@ -513,7 +519,6 @@ pt-BR:
     not found: "Os marcadores são um guia de referência rápido para suas passagens favoritas ou para o último capítulo que você leu em determinado livro. Para adicionar um marcador, selecione um versículo no leitor da Bíblia e selecione o botão Selecionado na parte superior do leitor."
     other user not found: "%{username} não salvou nenhum marcador ainda."
     creation form errors: "O(s) seguinte(s) erro(s) impediu(ram) a criação de seu marcador: "
-    create success: "Marcador salvo"
     destroy success: "Marcador excluído"
     destroy failure: "Erro ao apagar marcador"
     update success: "Marcador atualizado"
@@ -545,6 +550,11 @@ pt-BR:
     none me: "Você ainda não ganhou nenhuma medalha."
     none user: "%{username} ainda não ganhou nenhuma medalha."
   plans:
+    settings: "Configurações"
+    privacy:
+      visible to friends?: "Você gostaria que sua atividade com este plano esteja visível para seus amigos?"
+      private: "Privado"
+      public: "Público"
     title: "Planos de Leitura"
     browse by category: "Buscar por Categoria"
     browse plans: "Procurar %{category} Planos"
@@ -575,7 +585,6 @@ pt-BR:
     no public plans: "Não há planos de leitura visíveis para %{username}"
     filter by lang: "Filtrar Planos por Idioma"
     plan settings: "Configurações do Plano"
-    settings: "Configurações"
     search: "Procurar"
     search placeholder: "Procurar Planos de %{category}"
     subscribe to plan: "Começar esse plano"
@@ -688,25 +697,28 @@ pt-BR:
     chapter only: "Desculpe, o áudio não está disponível para versículos. Ver no leitor o áudio do capítulo."
     close player menu: "Fechar"
   highlights:
+    title: "Destaques"
     blank slate:
       heading: "Destaque versículos significativos"
       description: "Enquanto estiver lendo a Bíblia, selecione um versículo e destaque-o. Volte aqui para ver, editar ou apagar seu destaque."
     none user: "%{username} não tem destaques"
     choose color: "Escolha a cor "
-    create success: "Destaque salvo"
     create failure: "Erro ao salvar destaque"
     destroy success: "Destaque apagado"
     destroy failure: "Erro ao apagar destaque"
     creation error: "Desculpe, não foi possível destacar."
     delete error: "Desculpe, não foi possível remover o destaque."
+    form:
+      save button: "Salvar Destaque"
   searching:
     bible: "Bíblia"
-    plans: "Planos de Leitura"
+    plans: "Planos"
     users: "Usuários"
     notes: "Anotações"
     total results: "Aproximadamente %{total} Resultados"
     suggestion html: "Você quis dizer %{suggestion_link}?"
     all versions: "Todas as Versões em %{language_name}"
+    results for: "Procurar resultados para:"
   donate:
     donate now: "Doar Agora"
     donate now intl: "ou realizar doação internacional"
@@ -876,9 +888,6 @@ pt-BR:
     public domain: "Domínio Público"
     loading: "Carregando Mais Versões..."
     load error: "Desculpe, houve um problema ao carregar mais versões. Feche este menu e reabra para tentar novamente. "
-  reader help:
-    title: "Selecione um versículo..."
-    line 1: "Clique em qualquer versículo ou conjunto de versículos para marcar, destacar, criar uma anotação ou compartilhar com amigos! "
   campaigns:
     100m:
       logo: "YouVersion: O app da Bíblia"
@@ -908,3 +917,9 @@ pt-BR:
       sidebar:
         tagline: "Juntos vamos fazer história."
         button: "Compartilhe o App da Bíblia"
+  ui:
+    pagination:
+      next page: "Próxima Página"
+      previous page: "Página Anterior"
+    datetime:
+      just now: "agora mesmo"

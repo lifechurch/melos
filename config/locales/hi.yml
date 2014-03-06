@@ -34,6 +34,7 @@ hi:
     users username required: "username इंटर करना अनिवार्य हैं। "
     users first name required: "पहला नाम इंटर करना अनिवार्य हैं। "
     users last name required: "आखरी नाम इंटर करना अनिवार्य हैं। "
+    moments content required: "सारांश रिक्त अस्वीकार्य "
   meta:
     kids_app:
       title: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App "
@@ -47,8 +48,6 @@ hi:
     connections:
       index:
         title: "कनेक्टेड अकाउंट"
-  ui:
-    loading indicator text: "लोडिंग......"
   now: "अभी "
   celebrating 50MM: "50 मिलियन app स्थापना उत्सव!"
   link: "लिंक"
@@ -67,7 +66,7 @@ hi:
   new note: "नई टिप्पणी "
   share success: "आपके संदेश को शेयर किया गया हैं।"
   share error: "आपके संदेश को शेयर करने में कठिनाई हैं। पुन: कोशिश कीजिए।"
-  google plus: "google+"
+  google plus: "Google+"
   connect to: "अपने %{connection} अकाउंट से कनेक्ट कीजिए।"
   deleted connection: "आपका कनेक्शन हटाने में सफलता हासिल %{connection}।"
   deleted connection error: "कृपया क्षमा कीजिए,%{connection} आपके कनेक्शन से हटाने में त्रुटी हैं। "
@@ -141,11 +140,8 @@ hi:
   live: "लाइव/समूह"
   first page: "प्रथम पृष्ट"
   last page: "आखरी पृष्ट "
-  next page: "अगला पृष्ट "
-  previous page: "पिछला पृष्ट \n"
   invalid username or password: "अनधिकृत username या पासवर्ड"
   show all bookmarks: "समूचे %{total} बुकमार्क्स "
-  show all notes: "समूचे %{total} टिप्पणियाँ"
   recent bookmarks: "ताज़ा बुकमार्क्स"
   percentage display: "%{number}%"
   myself: "में"
@@ -172,6 +168,7 @@ hi:
       go to scripture: "सीधा वचनों पर जाइए "
       load more: "अधिक लोड करे "
       like: "पसंद करे "
+      liked: "पसंदित"
       like title: "इसे पसंद करे "
       share: "शेयर"
       share title: "इसे अपने मित्रों और परिवार के साथ शेयर करे "
@@ -191,10 +188,16 @@ hi:
     none: "आप के लिए कोई अधिसूचनाएँ नहीं हैं"
     no new: "नई अधिसूचनाएँ नहीं हैं "
     view all: "समस्त अधिसूचनाऍ देखे "
+  likes:
+    create failure: "आपकी पसंद सेव नहीं किया गया हैं "
+    destroy success: "पसंद डिलीट हुआ "
+    destroy failure: "आपकी पसंद डिलीट नहीं हो सका "
   comments:
+    view all N: "समूचे %{count} कमेंट्स "
     post comment: "कमेंट पोस्ट करे "
-    create success: "कमेंट पोस्ट हुआ "
     create failure: "कमेंट पोस्ट नहीं हो सका "
+    destroy success: "टिपण्णी डिलीट हुआ "
+    destroy failure: "टिपण्णी डिलीट नहीं हो सका "
     form:
       save button: "पोस्ट "
   friends:
@@ -208,7 +211,6 @@ hi:
   friendships:
     offer success: "मित्रता अनुरोध भेजा गया "
     offer failure: "मित्रता अनुरोध भेजने में त्रुटि पाया गया "
-    create success: "अभी आप मित्र हुए "
     create failure: "मित्रता बनाने में त्रुटि "
     destroy success: "अनुरोध अस्वीकार "
     destroy failure: "अनुरोध अस्वीकार करने में त्रुटि "
@@ -241,6 +243,11 @@ hi:
       reference field: "Reference(s):"
       status field: "स्टेटस:"
       save button: "Save"
+    status:
+      private: "निजी "
+      public: "सार्वजनिक "
+      friends: "केवल मित्र "
+      draft: "प्रारूप"
     list title: "टिप्पणियां "
     loading community: "सामाजिक टिप्पणीयां.............. लोड किया जा रहा हैं।"
     no community notes: "आपके द्वारा सेलेक्टेड पध्य से संदर्भित समुदाय नोट्स नहीं पाया गया हैं। टिप्पणी बनाने हेतु बाइबिल से एक पध्य को बाइबिल रीडर में सेलेक्ट करे तथा रीडर के ऊपर दर्शाए गए सेलेक्ट बटन को क्लिक करिए। "
@@ -248,6 +255,7 @@ hi:
     private: "नीजी "
     is private: "अनुरोध की गई टिप्पणी नीजी हैं।"
     draft: "ड्राफ्ट "
+    friends: "मित्र"
     creation form errors: "निम्नलिखित error(s) के कारण आपके टिपण्णी निर्माण में असमर्थ हैं:"
     reference field: "Reference(s):"
     version field: "संस्करण:"
@@ -268,7 +276,6 @@ hi:
     cancel: "कैंसिल "
     pop out: "पाप आउट  "
     none found: "कोई टिप्पणीयाँ नहीं पाया गया हैं..."
-    create success: "नोट सेव हुआ "
     create failure: "नोट सेविंग में त्रुटि "
     destroy success: "नोट डिलीट हुआ"
     destroy failure: "नोट डिलीट करने में त्रुटि "
@@ -347,7 +354,7 @@ hi:
     my badges: "मेरे द्वारा अर्जित Badges"
     revised date: "अंतिम संशोधन तारीख %{date}"
     update email copy: "नया इमेल अड्रेस इंटर कर अपडेट इमेल क्लिक करे। आपके नयी इमेल अड्रेस  कन्फर्मेशन के लिए लिंक भेजेंगे।"
-    edit email: "ईमेल अड्रेस अपडेट करें  "
+    edit email: "ईमेल एड्रेस बदले "
     update email check: "अपना इमेल जांचे और लिंक क्लिक कर नए इमेल अड्रेस की पुष्टि करे।"
     confirm update email success: "धन्यवाद! आपका इमेल अड्रेस अपडेट हुआ।"
     confirm update email error: "आपका इमेल अड्रेस बदलने में समस्या हैं। कृपया क्षमा कीजिए।"
@@ -513,7 +520,6 @@ hi:
     not found: "बुकमार्क्स आपको तुरंत आपके पसंदीदा पद्य या आपके द्वारा पढ़ा हुआ विशेष किताब के आखरी अध्याय पर ले जायेगा । बुकमार्क से जुड़ने के लिए बाइबिल रीडर से पध्यों सेलेक्ट करे और रीडर के ऊपर दर्शाए गए सेलेक्टेड बटन क्लिक कीजिए।"
     other user not found: "%{username} के द्वारा कोई बुकमार्क्स save नहीं किया गया हैं।"
     creation form errors: "निम्नलिखित error(s) के कारण बुकमार्क निर्माण विफल हुआ:"
-    create success: "बुकमार्क सेव हुआ "
     destroy success: "बुकमार्क हटा दिया गया हैं"
     destroy failure: "बुकमार्क डिलीट करने में त्रुटि पाया गया "
     update success: "बुकमार्क अपडेट हुआ "
@@ -545,6 +551,11 @@ hi:
     none me: "आपके द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
     none user: "%{username} के द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
   plans:
+    settings: "सेटिंग्स"
+    privacy:
+      visible to friends?: "इस पाठक योजना के साथ अपनी गतिविधि मित्रों के बीच प्रत्य्क्ष करना चाहते हैं?"
+      private: "निजी "
+      public: "सार्वजनिक "
     title: "पाठक योजनाएँ  "
     browse by category: "श्रेणी के अनुसार ब्राउस कीजिए"
     browse plans: "%{category} योजनाएँ ब्राउस कीजिए"
@@ -575,7 +586,6 @@ hi:
     no public plans: "कोई भी YouVersion पाठक योजना %{username}उपलब्ध नहीं हैं।"
     filter by lang: "YouVersion पाठक योजना अपनी पसंदित भाषा में चुनिए"
     plan settings: "योजना सेटिंग्स "
-    settings: "सेटिंग्स"
     search: "अन्वेषण"
     search placeholder: "सर्च %{category} योजनाऍ "
     subscribe to plan: "इस पाठक योजना को शुरू करें"
@@ -688,25 +698,28 @@ hi:
     chapter only: "इन वचनों के लिए ऑडियो उपलब्ध नहीं हैं। कृपया इस के लिए क्षमा कीजिए। ऑडियो के लिए अध्याय को रीडर में देखे।"
     close player menu: "क्लोज "
   highlights:
+    title: "हाइलाइट"
     blank slate:
       heading: "अर्थपूर्ण अंशों को हाईलाइट करे "
       description: "बाइबिल अध्ययन के दौरान अंश सेलेक्ट कर उसे हाईलाइट करे।हाईलाइट डिलीट,संपादन,अवलोकन के लिए यहाँ वापिस आये। "
     none user: "%{username} के द्वारा कोई हाईलाइट नहीं हैं "
     choose color: "रंग चुने "
-    create success: "हाईलाइट सेव हुआ "
     create failure: "हाईलाइट सेविंग में त्रुटि "
     destroy success: "हाइलाइट डिलीट हुआ "
     destroy failure: "हाईलाइट डिलीट करने में त्रुटि "
     creation error: "कृपया क्षमा कीजिए,हाइलाइट करने में असमर्थ।"
     delete error: "कृपया क्षमा कीजिए,हाइलाइट हटाने में असमर्थ हैं।"
+    form:
+      save button: "हाईलाइट सेव करे "
   searching:
     bible: "बाइबिल"
-    plans: "पाठक के लिए योजना योजनाऍ "
+    plans: "योजनाएँ "
     users: "users"
     notes: "टिप्पणियाँ"
     total results: "कुल%{total} परिणाम "
     suggestion html: "क्या आप यह लिंक चाहते हैं %{suggestion_link}?"
     all versions: "पूरा%{language_name} संस्करण"
+    results for: "परिणाम अनुसंधान करे "
   donate:
     donate now: "अभी योगदान कीजिए"
     donate now intl: "अथवा अन्तराष्ट्रीय योगदान कीजिए"
@@ -876,9 +889,6 @@ hi:
     public domain: "सार्वजनिक कार्यक्षेत्र "
     loading: "और अधिक संस्करण लोड किया जा रहा हैं......"
     load error: "कृपया क्षमा कीजिये और अधिक संस्करण लोड करने में कठिनाई हैं।इस मेनू को निरस्त कर दोबारा कोशिश करे।"
-  reader help:
-    title: "कोई अनुवाक्य चुने.......... "
-    line 1: "पद्य , पद्यों के समूह को अपने मित्रों में शेयर करने तथा बुकमार्क ,हाईलाइट एवं टिप्पणी निर्माण हेतु उनपर टेप या क्लिक करे। "
   campaigns:
     100m:
       logo: "YouVersion: बाइबिल app"
@@ -908,3 +918,9 @@ hi:
       sidebar:
         tagline: "आइये एक साथ इतिहास बनाए।"
         button: "बाइबिल app को शेयर करें "
+  ui:
+    pagination:
+      next page: "अगला पृष्ट "
+      previous page: "पिछला पृष्ट \n"
+    datetime:
+      just now: "अभी अभी "

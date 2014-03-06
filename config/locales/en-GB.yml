@@ -34,6 +34,7 @@ en-GB:
     users username required: "You must enter a username."
     users first name required: "You must enter a first name."
     users last name required: "You must enter a last name."
+    moments content required: "Content cannot be blank."
   meta:
     kids_app:
       title: "The Bible App for Kids"
@@ -47,8 +48,6 @@ en-GB:
     connections:
       index:
         title: "Connected Accounts"
-  ui:
-    loading indicator text: "Loading ..."
   now: "Now"
   celebrating 50MM: "Celebrating 50 Million App Installations!"
   link: "Link"
@@ -67,7 +66,7 @@ en-GB:
   new note: "Create a note"
   share success: "Your message has been shared."
   share error: "Sorry, there was an error sharing your message. Please try again."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Connect to your %{connection} account"
   deleted connection: "Successfully removed your connection to %{connection}."
   deleted connection error: "Sorry, there was an error removing your connection to %{connection}."
@@ -141,11 +140,9 @@ en-GB:
   live: "Live/groups"
   first page: "First page"
   last page: "Last page"
-  next page: "Next page"
-  previous page: "Previous page"
   invalid username or password: "Invalid username or password."
   show all bookmarks: "View all %{total} bookmarks"
-  show all notes: "View all %{total} notes"
+  show all notes: "View all notes"
   recent bookmarks: "Recent bookmarks"
   percentage display: "%{number}%"
   myself: "Me"
@@ -172,7 +169,9 @@ en-GB:
       go to scripture: "Go to scripture"
       load more: "Load more"
       like: "Like"
+      liked: "Liked"
       like title: "Like this"
+      last comment: "Last comment"
       share: "Share"
       share title: "Share this with friends or family"
       comment: "Comment"
@@ -191,10 +190,18 @@ en-GB:
     none: "You don't have any notifications"
     no new: "No new notifications"
     view all: "View all notifications"
+  likes:
+    create success: "Success! Your like has been saved"
+    create failure: "Your like could not be saved"
+    destroy success: "Like deleted"
+    destroy failure: "Your like could not be deleted"
   comments:
+    view all N: "View all %{count} comments"
     post comment: "Post a comment"
-    create success: "Comment posted"
+    create success: "Success! Your comment was posted."
     create failure: "Comment could not be posted"
+    destroy success: "Comment deleted"
+    destroy failure: "Comment could not be deleted"
     form:
       save button: "Post"
   friends:
@@ -208,7 +215,7 @@ en-GB:
   friendships:
     offer success: "Friendship request sent"
     offer failure: "Error sending friendship request"
-    create success: "You're now friends"
+    create success: "Success! You're now friends."
     create failure: "Error creating friendship"
     destroy success: "Request declined"
     destroy failure: "Error declining request"
@@ -241,6 +248,11 @@ en-GB:
       reference field: "Reference(s):"
       status field: "Status:"
       save button: "Save"
+    status:
+      private: "Private"
+      public: "Public"
+      friends: "Friends only"
+      draft: "Draft"
     list title: "Notes"
     loading community: "Loading community notes..."
     no community notes: "No community notes referencing any selected verses were found. To create a note, select a verse in the Bible reader and then click the Selected button at the top of the reader."
@@ -248,6 +260,7 @@ en-GB:
     private: "Private"
     is private: "The requested note is private."
     draft: "Draft"
+    friends: "Friends"
     creation form errors: "The following error(s) prevented creation of your note:"
     reference field: "Reference(s):"
     version field: "Version:"
@@ -268,7 +281,7 @@ en-GB:
     cancel: "Cancel"
     pop out: "Pop out"
     none found: "No notes found..."
-    create success: "Note saved"
+    create success: "Success! Your note was saved."
     create failure: "Error saving note"
     destroy success: "Note deleted"
     destroy failure: "Error deleting note"
@@ -347,7 +360,7 @@ en-GB:
     my badges: "My badges"
     revised date: "Last revised on %{date}"
     update email copy: "Enter a new e-mail address and click Update E-mail. We'll send you a link to confirm your new e-mail address."
-    edit email: "Update E-mail address"
+    edit email: "Change e-mail address"
     update email check: "Please check your e-mail and click the link to confirm your new email address.-"
     confirm update email success: "Thanks! You've updated your e-mail address."
     confirm update email error: "Sorry, there was a problem completing your e-mail address change."
@@ -500,6 +513,7 @@ en-GB:
       friendships: "Notify me about friend requests"
       moments: "Notify me about friends' activity"
       comments: "Notify me about comments on my activity"
+      likes: "Notify me about likes on my activity"
   bookmarks:
     new: "New bookmark"
     edit: "Edit"
@@ -513,7 +527,7 @@ en-GB:
     not found: "Bookmarks give you a quick reference guide to your favourite passages or to the last chapter you read in a particular book. To add a bookmark, select a verse in the Bible reader and then click the selected button at the top of the reader."
     other user not found: "%{username} hasn't saved any bookmarks yet."
     creation form errors: "The following error(s) prevented creation of your bookmark:"
-    create success: "Bookmark saved"
+    create success: "Success! Your bookmark was saved."
     destroy success: "Bookmark removed"
     destroy failure: "Error deleting bookmark"
     update success: "Bookmark updated"
@@ -545,6 +559,11 @@ en-GB:
     none me: "You haven't earnt any badges yet."
     none user: "%{username} hasn't earnt any badges yet."
   plans:
+    settings: "Settings"
+    privacy:
+      visible to friends?: "Would you like your activity with this plan to be visible to your friends?"
+      private: "Private"
+      public: "Public"
     title: "Reading plans"
     browse by category: "Browse by category"
     browse plans: "Browse %{category} plans"
@@ -575,7 +594,6 @@ en-GB:
     no public plans: "No reading plans are visible for %{username}."
     filter by lang: "Filter plans by language"
     plan settings: "Plan settings"
-    settings: "Settings"
     search: "Search"
     search placeholder: "Search %{category} plans"
     subscribe to plan: "Start this plan"
@@ -688,25 +706,29 @@ en-GB:
     chapter only: "Sorry, audio isn't available for verses. View in the reader for chapter audio."
     close player menu: "Close"
   highlights:
+    title: "Highlights"
     blank slate:
       heading: "Highlight meaningful verses"
       description: "While reading the Bible, select a verse and highlight it. Return here to view, edit, or delete your highlight."
     none user: "%{username} has no highlights"
     choose color: "Choose colour"
-    create success: "Highlight saved"
+    create success: "Success! Your highlight was saved"
     create failure: "Error saving highlight"
     destroy success: "Highlight deleted"
     destroy failure: "Error deleting highlight"
     creation error: "Sorry, couldn't highlight."
     delete error: "Sorry, couldn't remove highlighting."
+    form:
+      save button: "Save highlight"
   searching:
     bible: "Bible"
-    plans: "Reading plans"
+    plans: "Plans"
     users: "Users"
     notes: "Notes"
     total results: "About %{total} results"
     suggestion html: "Did you mean %{suggestion_link}?"
     all versions: "All %{language_name} versions"
+    results for: "Search results for: "
   donate:
     donate now: "Donate now"
     donate now intl: "or donate internationally"
@@ -764,7 +786,7 @@ en-GB:
     facebook: "YouVersion on Facebook"
     twitter: "YouVersion on Twitter"
     support: "Need help with YouVersion?"
-    lead copy: "Based on the on-line Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle."
+    lead copy: "Based on the on-line Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favourite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle."
     resources title: "Press resources"
     now title: "Today in the YouVersion community"
     resources:
@@ -822,7 +844,7 @@ en-GB:
         read heading: "Read the Bible."
         read description: "Take your choice from <strong>hundreds of Bible versions and languages</strong>. Compare two versions side by side. You can even choose your font and display size. Make your on-line Bible experience just the way you like it."
         study heading: "Study the Bible."
-        study description: "<strong>Highlight</strong> in your favorite colour, <strong>bookmark</strong> your favorite Bible verses, and make notes about what you're learning. Not only are you spending time in God's Word, you're building a history of your interaction with the Bible."
+        study description: "<strong>Highlight</strong> in your favourite colour, <strong>bookmark</strong> your favourite Bible verses, and make notes about what you're learning. Not only are you spending time in God's Word, you're building a history of your interaction with the Bible."
         subscribe heading: "Subscribe to Bible plans."
         subscribe description: "Cover the whole Bible, focus on a topic, or read a devotional from a gifted teacher. Choose your plan and each day you'll find a Bible selection waiting for you."
         download heading: "Take the Bible with you."
@@ -876,9 +898,6 @@ en-GB:
     public domain: "Public domain"
     loading: "Loading more versions..."
     load error: "Sorry, there was a problem loading more versions. Close this menu and reopen to try again."
-  reader help:
-    title: "Select a verse…"
-    line 1: "Click or tap on any verse or collection of verses to bookmark, highlight, create a note, or share with your friends!"
   campaigns:
     100m:
       logo: "YouVersion: The Bible app"
@@ -908,3 +927,9 @@ en-GB:
       sidebar:
         tagline: "Let's make history together"
         button: "Share the Bible App"
+  ui:
+    pagination:
+      next page: "Next page"
+      previous page: "Previous page"
+    datetime:
+      just now: "just now"

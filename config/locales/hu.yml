@@ -34,6 +34,7 @@ hu:
     users username required: "Meg kell adnod egy felhasználónevet."
     users first name required: "Meg kell adnod egy keresztnevet."
     users last name required: "Meg kell adnod egy vezetéknevet."
+    moments content required: "A tartalom nem lehet üres."
   meta:
     kids_app:
       title: "Biblia alkalmazás gyermekeknek"
@@ -47,8 +48,6 @@ hu:
     connections:
       index:
         title: "Csatlakoztatott Fiókok"
-  ui:
-    loading indicator text: "Betöltés ..."
   now: "Most"
   celebrating 50MM: "50 Millió App Feltelepítés Ünneplése"
   link: "Link"
@@ -67,7 +66,7 @@ hu:
   new note: "Új Jegyzet"
   share success: "Az üzenetedet megosztottuk."
   share error: "Sajnáljuk, egy hiba miatt az üzeneted megosztása nem sikerült. Próbálkozz újra."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Kapcsolódj a %{connection} fiókodhoz"
   deleted connection: "Sikeresen megszakítottad a kapcsolatot a(z) %{connection}-val/-vel."
   deleted connection error: "Sajnáljuk kapcsolódási hiba történt a %{connection} kapcsolat megszakítása közben. "
@@ -141,11 +140,8 @@ hu:
   live: "Élő/Csoportok"
   first page: "Első oldal"
   last page: "Utolsó oldal"
-  next page: "Következő oldal"
-  previous page: "Előző oldal"
   invalid username or password: "Érvénytelen felhasználónév vagy jelszó."
   show all bookmarks: "Összes %{total} könyvjelző megtekintése"
-  show all notes: "Összes %{total} jegyzet megtekintése"
   recent bookmarks: "Új könyvjelzők"
   percentage display: "%{number}%"
   myself: "Én"
@@ -172,6 +168,7 @@ hu:
       go to scripture: "Menj a Szentíráshoz"
       load more: "Több betöltése"
       like: "Tetszik"
+      liked: "Tetszett"
       like title: "Tetszik"
       share: "Megosztás"
       share title: "Oszd meg ezt a barátaiddal vagy a családoddal"
@@ -191,10 +188,16 @@ hu:
     none: "Nincsenek bejelentéseid"
     no new: "Nincsenek új bejelentések"
     view all: "Nézz meg minden bejelentést"
+  likes:
+    create failure: "Nem tudtuk elmenteni, hogy tetszik neked."
+    destroy success: "Töröltük, hogy tetszett."
+    destroy failure: "Nem tudtuk törölni, hogy tetszett."
   comments:
+    view all N: "Nézd meg mind a %{count} megjegyzést"
     post comment: "Postolj egy észrevételt"
-    create success: "Hozzáfűzés postolva"
     create failure: "Az észrevételt nem tudtuk postolni"
+    destroy success: "Megjegyzés törölve"
+    destroy failure: "A megjegyzést nem lehetett törölni"
     form:
       save button: "Küldés"
   friends:
@@ -208,7 +211,6 @@ hu:
   friendships:
     offer success: "Barátkérés elküldve"
     offer failure: "Hiba történt a barátkérés elküldésekor"
-    create success: "Most már barátok vagytok"
     create failure: "Hib törtét a barátság létrehozásában"
     destroy success: "Kérés visszautasítva"
     destroy failure: "Hiba történt a barátság visszautasításakor"
@@ -241,6 +243,11 @@ hu:
       reference field: "Hivatkozás(ok):"
       status field: "Állapot:"
       save button: "Mentés"
+    status:
+      private: "Saját"
+      public: "Nyilvános"
+      friends: "Csak barátok"
+      draft: "Piszkozat"
     list title: "Jegyzetek"
     loading community: "Közösségi jegyzetek töltése..."
     no community notes: "Nem található a közösség által írt megjelölt versre vonatkozó megjegyzés. Jegyzet létrehozásához válassz verset a Biblia olvasóban és kattints a Kiválasztás gombra az olvasó tetején."
@@ -248,6 +255,7 @@ hu:
     private: "Saját"
     is private: "A kért megjegyzés bizalmas."
     draft: "Piszkozat"
+    friends: "Barátok"
     creation form errors: "A következő hiba(k) akadályozta(k) meg a jegyzeted létrehozását:"
     reference field: "Hivatkozás(ok):"
     version field: "Verzió:"
@@ -268,7 +276,6 @@ hu:
     cancel: "Mégsem"
     pop out: "Új ablakban"
     none found: "Nem találtunk jegyzeteket..."
-    create success: "Jegyzet mentve."
     create failure: "Hiba történt a jegyzet mentésekor"
     destroy success: "jegyzet törölve"
     destroy failure: "Hiba történt a jegyzet törlésekor"
@@ -347,7 +354,7 @@ hu:
     my badges: "Jelvényeim"
     revised date: "Utoljára átvizsgálva %{date}-én/-án"
     update email copy: "Add meg az új e-mail címed és kattints az \"e-mail cím frissítésére\". Ezután elküldünk egy linket amin keresztül jóváhagyhatod az új e-mail címedet."
-    edit email: "E-mail cím frissítése"
+    edit email: "e-mail cím megváltoztatás"
     update email check: "Ellenőrizd az e-mail fiókodat és kattints a linkre, hogy jóváhagyhasd az új e-mail címedet."
     confirm update email success: "Köszönjük! Frissítetted az email címedet."
     confirm update email error: "Sajnáljuk, egy hiba lépett fel email címed megváltoztatásának befejezése közben."
@@ -513,7 +520,6 @@ hu:
     not found: "A könyvjelzők gyors hozzáférést jelentenek a kedvenc verseidhez vagy egy bizonyos könyv utoljára olvasott fejezetéhez. Könyvjelző hozzáadásához válaszd ki a verset a Bibliaolvasóban és kattints a Kiválasztott gombra az olvasó felső részén."
     other user not found: "%{username} egy könyvjelzőt sem mentett még el."
     creation form errors: "A következő hiba(k) akadályozta(k) meg a könyvjelződ létrehozását:"
-    create success: "Könyvjelző mentve "
     destroy success: "Könyvjelző eltávolítva"
     destroy failure: "Hiba történt a könyvjelző eltávolításakoz"
     update success: "Könyvjelző frissítve"
@@ -545,6 +551,11 @@ hu:
     none me: "Még nem szereztél jelvényt."
     none user: "%{username} még nem szerzett jelvényt."
   plans:
+    settings: "Beállítások"
+    privacy:
+      visible to friends?: "Szeretnéd, ha az ezzel a tervvel kapcsolatos aktivitásodat láthatnák a barátaid?"
+      private: "Saját"
+      public: "Nyilvános"
     title: "Olvasási tervek"
     browse by category: "Tallózás kategória szerint"
     browse plans: "%{category} tervek tallózása"
@@ -575,7 +586,6 @@ hu:
     no public plans: "%{username} nem rendelkezik látható olvasási tervekkel."
     filter by lang: "Tervek szűrése nyelv szerint"
     plan settings: "Terv beállítások"
-    settings: "Beállítások"
     search: "Keresés"
     search placeholder: "%{category} tervek keresése"
     subscribe to plan: "Kezdd el ezt a tervet"
@@ -688,25 +698,28 @@ hu:
     chapter only: "Sajnáljuk, ezekhez a versekhez nem elérhető hangos funkció. A fejezet hangos funkcióját tekintsd meg az olvasóban."
     close player menu: "Bezárás"
   highlights:
+    title: "Kiemelések"
     blank slate:
       heading: "Emeld ki a jelentős igeverseket"
       description: "Biblia olvasás közben válassz ki egy igét és emeld ki. Térj vissza ide, hogy megnézd, szerkeszd vagy kitöröld a kiemelést."
     none user: "%{username} nak/nek nincsenek kiemelései"
     choose color: "Válassz színt."
-    create success: "Kiemelés elmentve"
     create failure: "Hiba történt a kiemelés mentésekor"
     destroy success: "Kiemelés törölve"
     destroy failure: "Hiba történt a kiemelés eltávolításakor"
     creation error: "Sajnáljuk, nem sikerült kiemelni."
     delete error: "Sajnáljuk, a kiemelést nem sikerült eltávolítani."
+    form:
+      save button: "Kiemelés mentése"
   searching:
     bible: "Biblia"
-    plans: "Olvasási tervek"
+    plans: "Tervek"
     users: "Felhasználók"
     notes: "Jegyzetek"
     total results: "Körülbelül %{total} eredmény"
     suggestion html: "Így értetted: %{suggestion_link}?"
     all versions: "Összes %{language_name} verzió"
+    results for: "Keresés:"
   donate:
     donate now: "Adományozz Most"
     donate now intl: "vagy adományozz nemzetközileg"
@@ -876,9 +889,6 @@ hu:
     public domain: "Nyilvános domén"
     loading: "További verzió betöltése..."
     load error: "Sajnos probléma lépett fel a további verziók betöltése során. Zárd be ezt a menüt és próbáld újra megnyitni."
-  reader help:
-    title: "Válassz egy verset..."
-    line 1: "Kattints vagy érintsd meg bármelyik verset vagy versgyűjteményt, hogy hozzáadhasd a kedvencekhez, kiemeld, megjegyzést fűzz hozzá vagy megoszd a barátaiddal!"
   campaigns:
     100m:
       logo: "YouVersion: A Biblia alkalmazás"
@@ -908,3 +918,9 @@ hu:
       sidebar:
         tagline: "Írjunk együtt történelmet."
         button: "Biblia App megosztása"
+  ui:
+    pagination:
+      next page: "Következő oldal"
+      previous page: "Előző oldal"
+    datetime:
+      just now: "épp most"

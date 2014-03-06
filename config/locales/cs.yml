@@ -34,6 +34,7 @@ cs:
     users username required: "Zde musíte zadat uživatelské jméno. "
     users first name required: "Musíte zadat křestní jméno.\x04\x04"
     users last name required: "Musíte zadat příjmení."
+    moments content required: "Obsah nemůže být prázdný."
   meta:
     kids_app:
       title: "Aplikace Bible pro děti"
@@ -47,8 +48,6 @@ cs:
     connections:
       index:
         title: "Připojené účty"
-  ui:
-    loading indicator text: "Načítání..."
   now: "Aktuálně"
   celebrating 50MM: "Oslavujeme 50 milionů instalací aplikace!"
   link: "Odkaz"
@@ -141,11 +140,9 @@ cs:
   live: "Živě/Skupiny"
   first page: "První strana"
   last page: "Poslední strana"
-  next page: "Následující strana"
-  previous page: "Předchozí strana"
   invalid username or password: "Neplatné uživatelské jméno nebo heslo."
   show all bookmarks: "Zobrazit všech %{total} záložek"
-  show all notes: "Zobrazit všech %{total} poznámek"
+  show all notes: "Zobrazit všechny poznámky"
   recent bookmarks: "Nedávné záložky"
   percentage display: "%{number}%"
   myself: "Já"
@@ -172,7 +169,9 @@ cs:
       go to scripture: "Přejít k Písmu"
       load more: "Načíst více"
       like: "Líbí se"
+      liked: "To se mi líbí"
       like title: "Líbí se mi"
+      last comment: "Poslední komentář"
       share: "Sdílet"
       share title: "Sdílet s přáteli nebo rodinou"
       comment: "Komentovat"
@@ -191,10 +190,18 @@ cs:
     none: "Nemáte žádná oznámení"
     no new: "Žádná nová oznámení"
     view all: "Vidět všechna oznámení"
+  likes:
+    create success: "Povedlo se! Vaše akce byla uložena"
+    create failure: "Váš like nemohl být uložen"
+    destroy success: "Like byl smazán"
+    destroy failure: "Váš like nemohl být smazán"
   comments:
+    view all N: "Zobrazit %{count} komentáře/ů"
     post comment: "Zveřejnit komentář"
-    create success: "Komentář zveřejněn"
+    create success: "Povedlo se! Přidali jste komentář."
     create failure: "Komentář nelze zveřejnit"
+    destroy success: "Komentář smazán"
+    destroy failure: "Komentář nemohl být smazán"
     form:
       save button: "Příspěvek"
   friends:
@@ -208,7 +215,7 @@ cs:
   friendships:
     offer success: "Odeslána žádost o přátelství"
     offer failure: "Nepodařilo se odeslat žádost o přátelství"
-    create success: "Nyní jste přátelé"
+    create success: "Povedlo se! Nyní jste přátelé."
     create failure: "Chyba při vytváření přátelství"
     destroy success: "Žádost byla odmítnuta"
     destroy failure: "Chyba při rušení žádosti"
@@ -241,6 +248,11 @@ cs:
       reference field: "Odkaz(y):"
       status field: "Status:"
       save button: "Uložit"
+    status:
+      private: "Soukromé"
+      public: "Veřejné"
+      friends: "Pouze přátelé"
+      draft: "Koncept"
     list title: "Poznámky"
     loading community: "Načítání poznámek komunity..."
     no community notes: "Nenašly se žádné poznámky odkazující na vybrané verše. Abyste mohli vytvořit poznámku, tak vyberte verš v Bibli a pak zmáčkněte tlačítko \"Vybrané\", které je nahoře nad textem."
@@ -248,6 +260,7 @@ cs:
     private: "Soukromé"
     is private: "Požadovaná poznámka je soukromá."
     draft: "Koncept/y"
+    friends: "Přátelé"
     creation form errors: "Následující chyba zabránila vytvoření vaší poznámky:"
     reference field: "Odkaz(y):"
     version field: "Překlad:"
@@ -268,7 +281,7 @@ cs:
     cancel: "Zrušit"
     pop out: "Vyskočit"
     none found: "Žádné poznámky nenalezeny..."
-    create success: "Poznámka byla uložena"
+    create success: "Povedlo se! Poznámka byla uložena."
     create failure: "Chyba při ukládání poznámky"
     destroy success: "Poznámka smazána"
     destroy failure: "Chyba během mazání poznámky"
@@ -500,6 +513,7 @@ cs:
       friendships: "Chci oznámit žádosti přátel"
       moments: "Chci oznámení o aktivitě přátel"
       comments: "Chci oznámení komentářů mých aktivit"
+      likes: "Upozorňovat, když si někdo oblíbí moji aktivitu"
   bookmarks:
     new: "Nová záložka"
     edit: "Upravit"
@@ -513,7 +527,7 @@ cs:
     not found: "Záložky vám dají rychlý přehled vašich oblíbených pasáží nebo poslední kapitolu, kterou jste četli v dané knize. Pro přidání záložky zvolte verš v prohlížení Bible a klikněte na tlačítko v horní části prohlížeče."
     other user not found: "Uživatel %{username} zatím neuložil žádné záložky."
     creation form errors: "Následující chyby neumožnily vytvořit záložku:"
-    create success: "Záložka byla uložena"
+    create success: "Povedlo se! Záložka byla uložena."
     destroy success: "Záložka odstraněna"
     destroy failure: "Chyba při odstraňování záložky"
     update success: "Záložka aktualizována"
@@ -545,6 +559,11 @@ cs:
     none me: "Zatím jste nezískali žádné odznaky."
     none user: "%{username} zatím nezískal žádné odznaky."
   plans:
+    settings: "Nastavení"
+    privacy:
+      visible to friends?: "Chcete, aby se vaše aktivita tohoto plánu zobrazovala vašim přátelům?"
+      private: "Soukromé"
+      public: "Veřejné"
     title: "Plány čtení"
     browse by category: "Prohlížet podle kategorie"
     browse plans: "Procházet plány v kategorii %{category}"
@@ -575,7 +594,6 @@ cs:
     no public plans: "Žádné viditelné plány uživatele %{username}."
     filter by lang: "Filtrovat plány čtení podle jazyků"
     plan settings: "Nastavení plánu"
-    settings: "Nastavení"
     search: "Hledat"
     search placeholder: "Vyhledat plány kategorie %{category}"
     subscribe to plan: "Začít tento plán čtení"
@@ -688,25 +706,29 @@ cs:
     chapter only: "Omlouváme se, ale audio funkce není dostupná pro jednotlivé verše. Začněte číst kapitolu od začátku a tato funkce vám bude nabídnuta. "
     close player menu: "Zavřít"
   highlights:
+    title: "Zvýraznění"
     blank slate:
       heading: "Zvýraznit významné verše"
       description: "Během čtení Bible si můžete vybrané verše zvýraznit. Zde můžete svá zvýraznění kdykoliv prohlížet, editovat nebo mazat."
     none user: "%{username} nemá žádné zvýraznění"
     choose color: "Vyberte barvu"
-    create success: "Zvýraznění uloženo"
+    create success: "Povedlo se! Zvýraznění bylo uloženo."
     create failure: "Chyba při ukládání zvýraznění"
     destroy success: "Zvýraznění smazáno"
     destroy failure: "Chyba při odstraňování zvýraznění"
     creation error: "Omlouváme se, nepodařilo se zvýraznění."
     delete error: "Omlouváme se, nepodařilo se odstranit zvýraznění."
+    form:
+      save button: "Uložit zvýraznění"
   searching:
     bible: "Bible"
-    plans: "Plány čtení"
+    plans: "Plány"
     users: "Uživatelé"
     notes: "Poznámky"
     total results: "Přibližně %{total} výsledků"
     suggestion html: "Mysleli jste %{suggestion_link}?"
     all versions: "Všechny překlady v jazyce: %{language_name}"
+    results for: "Výsledky vyhledávání:"
   donate:
     donate now: "Darovat nyní"
     donate now intl: "nebo darujte mezinárodně"
@@ -876,9 +898,6 @@ cs:
     public domain: "Veřejná doména"
     loading: "Načítání více překladů..."
     load error: "Omlouváme se, nepodařilo se načíst více překladů. Zavřete toto menu a otevřte jej znovu."
-  reader help:
-    title: "Vybrat verš..."
-    line 1: "Klikněte nebo se dotkněte jakéhokoli verše nebo souboru veršů a vytvořte záložku, zvýraznění, poznámku nebo to sdílejte s vašimi přáteli!"
   campaigns:
     100m:
       logo: "YouVersion: Aplikace Bible"
@@ -908,3 +927,9 @@ cs:
       sidebar:
         tagline: "Buďme těmi, kteří tvoří dějiny."
         button: "Sdílej aplikaci Bible"
+  ui:
+    pagination:
+      next page: "Další stránka"
+      previous page: "Předchozí stránka"
+    datetime:
+      just now: "právě teď"

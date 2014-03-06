@@ -34,6 +34,7 @@ ca:
     users username required: "Has d'introduir un nom d'usuari."
     users first name required: "Escriu el teu nom"
     users last name required: "Escriu el teu cognom"
+    moments content required: "El contingut no pot estar buit"
   meta:
     kids_app:
       title: "L'Aplicació de la Bíblia per a nens"
@@ -47,8 +48,6 @@ ca:
     connections:
       index:
         title: "Comptes connectats"
-  ui:
-    loading indicator text: "Carregant..."
   now: "Ara"
   celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
   link: "Enllaç"
@@ -67,7 +66,7 @@ ca:
   new note: "Nova nota"
   share success: "S'ha compartit el teu missatge."
   share error: "Ens sap greu, però hi ha hagut un error en compartir el teu missatge. Si us plau, prova-ho una altra vegada."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Connecta amb el teu compte de %{connection}"
   deleted connection: "T'has desconnectat correctament de %{connection}."
   deleted connection error: "Ho sentim, però hi ha hagut un error en desconnectar-te de %{connection}."
@@ -141,11 +140,8 @@ ca:
   live: "En directe/Grups"
   first page: "Primera pàgina"
   last page: "Última pàgina"
-  next page: "Pàgina següent"
-  previous page: "Pàgina anterior"
   invalid username or password: "Nom d'usuari/ària o contrasenya invàlids"
   show all bookmarks: "Veure els %{total} marcadors"
-  show all notes: "Veure les %{total} notes"
   recent bookmarks: "Marcadors recents"
   percentage display: "%{number}%"
   myself: "Jo"
@@ -172,6 +168,7 @@ ca:
       go to scripture: "Vés a la Bíblia"
       load more: "Carrega més"
       like: "M'agrada"
+      liked: "T'ha agradat"
       like title: "M'agrada això"
       share: "Comparteix"
       share title: "Comparteix-lo amb amics o familiars"
@@ -191,10 +188,16 @@ ca:
     none: "No tens cap avís"
     no new: "No hi ha avisos nous."
     view all: "Mira tots els avisos"
+  likes:
+    create failure: "El teu \"m'agrada\" no s'ha pogut guardar"
+    destroy success: "\"m'agrada\" esborrat"
+    destroy failure: "El teu \"m'agrada\" no s'ha pogut esborrar"
   comments:
+    view all N: "Visualitza tots els %{count} comentaris"
     post comment: "Publica un comentari"
-    create success: "Comentari publicat"
     create failure: "El comentari no s'ha pogut publicar"
+    destroy success: "Comentari esborrat"
+    destroy failure: "El comentari no s'ha pogut esborrar"
     form:
       save button: "Envia"
   friends:
@@ -208,7 +211,6 @@ ca:
   friendships:
     offer success: "Sol·licitud d'amistat enviada"
     offer failure: "Error en enviar la sol·licitud d'amistat"
-    create success: "Ara ja sou amics"
     create failure: "Error en crear l'amistat"
     destroy success: "Sol·licitud rebutjada"
     destroy failure: "Error en rebutjar l'amistat"
@@ -241,6 +243,11 @@ ca:
       reference field: "Referència/es:"
       status field: "Estat:"
       save button: "Desa"
+    status:
+      private: "Privat"
+      public: "Públic"
+      friends: "Només amics"
+      draft: "Esborrany"
     list title: "Notes"
     loading community: "Carregant les notes de la comunitat"
     no community notes: "No hi ha notes de la comunitat que facin referència als versets seleccionats. Per crear una nota, selecciona un verset al lector de la Bíblia i després fes clic al botó \"Seleccionat\" situat a la part superior del lector."
@@ -248,6 +255,7 @@ ca:
     private: "Privat"
     is private: "La nota que has demanat és privada"
     draft: "Esborrany"
+    friends: "Amics"
     creation form errors: "L'error o erros següents no permeten que creïs la nota:"
     reference field: "Referència/es:"
     version field: "Versió"
@@ -268,7 +276,6 @@ ca:
     cancel: "Cancel·la"
     pop out: "Finestra externa"
     none found: "No s'han trobat notes..."
-    create success: "Nota desada"
     create failure: "Error en guardar la nota"
     destroy success: "Nota suprimida"
     destroy failure: "Error en suprimir la nota"
@@ -347,7 +354,7 @@ ca:
     my badges: "Les meves insígnies"
     revised date: "Revisat per última vegada el %{date}"
     update email copy: "Introdueix una nova adreça de correu electrònic i clica a \"Actualitza\". Nosaltres t'enviarem un enllaç per confirmar la teva nova direcció de correu electrònic."
-    edit email: "Actualitza l'adreça de correu electrònic"
+    edit email: "Canvia l'adreça de correu electrònic"
     update email check: "Si us plau, revisa el teu correu electrònic i clica a l'enllaç per confirmar la teva nova adreça de correu electrònic."
     confirm update email success: "Gràcies! Has actualitzat la teva adreça de correu electrònic."
     confirm update email error: "Ens sap greu, però hi ha hagut un problema fent el canvi de l'adreça de correu electrònic."
@@ -513,7 +520,6 @@ ca:
     not found: "Els marcadors et donen una ràpida referència cap als teus passatges preferits o a l'últim capítol que has llegit en un llibre en particular. Per afegir un marcador, selecciona un verset al lector de la Bíblia i després clica al botó Seleccionat a dalt del lector."
     other user not found: "El/la %{username} encara no ha desat cap marcador."
     creation form errors: "Els errors següents no permeten que creïs el marcador"
-    create success: "Marcador desat"
     destroy success: "Marcador eliminat"
     destroy failure: "Error en eliminar el marcador"
     update success: "Marcador actualitzat"
@@ -545,6 +551,11 @@ ca:
     none me: "Encara no tens cap insígnia."
     none user: "El/la %{username} encara no té cap insígnia."
   plans:
+    settings: "Configuració"
+    privacy:
+      visible to friends?: "Vols que la teva activitat en aquest pla sigui visible per als teus amics?"
+      private: "Privat"
+      public: "Públic"
     title: "Plans de lectura"
     browse by category: "Explora per categories"
     browse plans: "Explorar plans de %{category}"
@@ -575,7 +586,6 @@ ca:
     no public plans: "No hi ha plans de lectura visibles per %{username}"
     filter by lang: "Filtra els plans per idioma"
     plan settings: "Configuració del pla"
-    settings: "Configuració"
     search: "Cerca"
     search placeholder: "Cerca plans de %{category}"
     subscribe to plan: "Comença aquest pla"
@@ -688,25 +698,28 @@ ca:
     chapter only: "Ens sap greu, però l'àudio no està disponible només per als versets. Pots veure i escoltar el capítol sencer al lector."
     close player menu: "Tanca"
   highlights:
+    title: "Subratllats"
     blank slate:
       heading: "Subratlla versets significatius"
       description: "Metre llegeixes la bíblia pots seleccionar un verset i subratllar-lo. Torna aquí per veure, editar o esborrar els teus subratllats."
     none user: "%{username} no té subratllats"
     choose color: "Tria el color"
-    create success: "Subratllat desat"
     create failure: "Error en desar subratllat"
     destroy success: "Subratllat eliminat"
     destroy failure: "Error en suprimir subratllat"
     creation error: "Ho sentim, però no s'ha pogut subratllar."
     delete error: "Ho sentim, però no s'ha pogut eliminar el subratllat."
+    form:
+      save button: "Guarda el Subratllat"
   searching:
     bible: "La Bíblia"
-    plans: "Plans de lectura"
+    plans: "Plans"
     users: " Usuaris"
     notes: "Notes"
     total results: "Aproximadament %{total} resultats"
     suggestion html: "Volies dir %{suggestion_link}?"
     all versions: "Totes les versions en %{language_name}"
+    results for: "Resultats de la cerca de:"
   donate:
     donate now: "Dóna ara"
     donate now intl: "o fes un donatiu internacional"
@@ -876,9 +889,6 @@ ca:
     public domain: "Domini públic"
     loading: "Carregant més versions..."
     load error: "Ho sentim, hi ha hagut un problema carregant més versions. Tanca aquest menú i intenta tornar-lo a obrir."
-  reader help:
-    title: "Selecciona una verset..."
-    line 1: "Clica a quasevol verset o grup de versets per marcar, ressaltar, crear una nota o compartir amb els teus amics!"
   campaigns:
     100m:
       logo: "YouVersion: l'aplicació de la Bíblia"
@@ -908,3 +918,9 @@ ca:
       sidebar:
         tagline: "Fem història plegats"
         button: "Comparteix l'aplicació de la Bíblia"
+  ui:
+    pagination:
+      next page: "Pàgina següent"
+      previous page: "Pàgina anterior"
+    datetime:
+      just now: "ara mateix"

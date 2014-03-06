@@ -34,6 +34,7 @@ mn:
     users username required: "Хэрэглэгчийн нэр оруулах шаардлагатай."
     users first name required: "Нэрээ оруулах шаардлагатай."
     users last name required: "Овогоо оруулах шаардлагатай."
+    moments content required: "Энэ хэсэг хоосон байж болохгүй."
   meta:
     kids_app:
       title: "Хүүхдэд зориулсан Библи Апп"
@@ -47,8 +48,6 @@ mn:
     connections:
       index:
         title: "Холбогдсон Дансууд"
-  ui:
-    loading indicator text: "Ачаалаж байна..."
   now: "Одоо"
   celebrating 50MM: "50 Сая Апп суулгагдсан баяраа тэмдэглэж байна!"
   link: "Холбоос"
@@ -67,7 +66,7 @@ mn:
   new note: "Шинэ Тэмдэглэл"
   share success: "Таны зурвас бусадтай хуваалцагдлаа."
   share error: "Уучлаарай, Таны зурвасыг бусадтай хуваалцах үед алдаа гарлаа. Та дахин оролдоно уу."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: " Бүртгэлээ %{connection} тэй холбох "
   deleted connection: "%{connection} -с амжилттай салгагдлаа."
   deleted connection error: "Уучлаарай, таны холболтыг %{connection} -с салгах үед алдаа гарлаа."
@@ -141,11 +140,8 @@ mn:
   live: "Шууд/Групп"
   first page: "Эхний Хуудас"
   last page: "Сүүлийн Хуудас"
-  next page: "Дараагийн хуудас"
-  previous page: "Өмнөх хуудас"
   invalid username or password: "Хэрэглэгчийн нэр, нууц үг буруу байна."
   show all bookmarks: "Бүх %{total} хавчуургыг харах"
-  show all notes: "Бүх %{total}  тэмдэглэлийг харах"
   recent bookmarks: "Сүүлийн Хавчуургууд"
   percentage display: "%{number}%"
   myself: "Би"
@@ -172,6 +168,7 @@ mn:
       go to scripture: "Бичээс рүү оч"
       load more: "Илүү ачаалах"
       like: "Таалагдсан"
+      liked: "таалагдсан нь"
       like title: "Үүнийг лайк хийх"
       share: "Хуваалцах"
       share title: "Үүнийг найзууд эсвэл гэр бүлийнхэнтэй хуваалцах"
@@ -191,10 +188,16 @@ mn:
     none: "Ямар ч санамж байхгүй"
     no new: "Шинэ санамж байхгүй"
     view all: "Бүх санамжуудыг харах"
+  likes:
+    create failure: "Таалагдах боломжгүй"
+    destroy success: "Таалагдсангүй"
+    destroy failure: "Таалагдахгүй боломжгүй"
   comments:
+    view all N: "Бүх %{count} сэтгэгдэлүүд харах"
     post comment: "Санал оруулах"
-    create success: "Санал орлоо"
     create failure: "Сэтгэгдлийг оруулах боломжгүй"
+    destroy success: "Сэтгэгдэл устсан"
+    destroy failure: "Сэтгэгдлийг устгах боломжгүй"
     form:
       save button: "Оруулах"
   friends:
@@ -208,7 +211,6 @@ mn:
   friendships:
     offer success: "Найз болох хүсэлт илгээгдсэн"
     offer failure: "Найзын хүсэлт илгээхэд алдаа гарсан"
-    create success: "Найзууд боллоо"
     create failure: "Найзуудын хүрээ үүсгэхэд алдаа гарсан"
     destroy success: "Хүсэлт татгалзагдсан"
     destroy failure: "Хүсэлтээс татгалзахад алдаа гарсан"
@@ -241,6 +243,11 @@ mn:
       reference field: "Ишлэлийн тэмдэглэл (үүд):"
       status field: "Статус:"
       save button: "Хадгалах "
+    status:
+      private: "Хувийн"
+      public: "Нийтийн "
+      friends: "Зѳвхѳн найзууд"
+      draft: "Ноорог "
     list title: "Тэмдэглэлүүд"
     loading community: "Гишүүдийн тэмдэглэл ачааллаж байна..."
     no community notes: "Сонгосон ишлэлүүдэд гишүүдийн тэмдэглэл олдсонгүй. Тэмдэглэл үүсгэхийн тулд Библи уншигч дотроос ишлэл сонгоод дараа Библи уншигч дээр байрлах Сонгогдсон товчлуур дээр дарна."
@@ -248,6 +255,7 @@ mn:
     private: "Хувийн"
     is private: "Энэ тэмдэглэлийг хувийн байна."
     draft: "Ноорог"
+    friends: "Найзууд"
     creation form errors: "Таны тэмдэглэлийг үүсгэх явцад дараах алдаа(нууд) гарлаа:"
     reference field: "Ишлэлийн тэмдэглэл (үүд):"
     version field: "Орчуулга:"
@@ -268,7 +276,6 @@ mn:
     cancel: "Цуцлах"
     pop out: "Тэмдэглэл гаргах"
     none found: "Тэмдэглэл олдсонгүй..."
-    create success: "Тэмдэглэл хадгалагдсан"
     create failure: "Тэмдэглэл хадгалахад алдаа гарсан"
     destroy success: "Тэмдэглэл устсан"
     destroy failure: "Тэмдэглэл устгахад алдаа гарсан"
@@ -347,7 +354,7 @@ mn:
     my badges: "Миний Тэмдэгтүүд"
     revised date: "Сүүлд %{date} хянасан"
     update email copy: "Шинэ и-мэйл хаягаа оруулаад шинэчлэх товчлуурыг дарна уу. Шинэ и-мэйл хаягаар баталгаажуулах холбоосыг танд илгээх болно. "
-    edit email: "И-мэйл Шинэчлэх"
+    edit email: "И-Мэйл Хаягаа Шинэчлэх"
     update email check: "Та и-мэйлээ шалгаад, холбоосон дээр дарж шинэ и-мэйл хаягаа баталгаажуулна уу. "
     confirm update email success: "Баярлалаа! Та и-мэйл хаягаа шинэчиллээ."
     confirm update email error: "Уучлаарай, и-мэйл шинэчлэх үед алдаа гарлаа. "
@@ -513,7 +520,6 @@ mn:
     not found: "Номны хавчуурга нь таны сүүлд уншиж байсан газраа санах, тодорхой нэг номны сүүлд уншссан бүлэг эсвэл дуртай догол мөрийн тайлбарыг шууд өгөх боломжийг өгдөг. Номын хавчуурга нэмэхийн тулд доторх ишлэлээ сонгоно, дараа нь өөрийнхөө Миний хуудас хадгалахын тулд номын хавчуурга гэсэн товчлуурыг дарна. "
     other user not found: "%{username}  ямарч номын хавуурга хадгалаагүй байна."
     creation form errors: "Дараах алдаа(ууд) хавчуурга шинээр хийхэд саад болж байна:"
-    create success: "Хавчуурга хадгалсан"
     destroy success: "Хавчуурга устгагдлаа"
     destroy failure: "Энэ хавчуургыг устгахад алдаа гарлаа"
     update success: "Хавчуурга Шинэчлэгдлээ"
@@ -545,6 +551,11 @@ mn:
     none me: "Та одоогоор ямар ч тэмдэгт цуглуулаагүй байна."
     none user: "%{username}  одоогоор ямар ч тэмдэгт аваагүй байна."
   plans:
+    settings: "Тохиргоо "
+    privacy:
+      visible to friends?: "Та найзууддаа өөрийн Уншлагын төлөвлөгөөний үйл ажиллагааг харуулмаар байна уу?"
+      private: "Хувийн"
+      public: "Нийтийн "
     title: "Унших Төлөвлөгөөнүүд"
     browse by category: "Тѳрѳл Үзэх"
     browse plans: "Тѳлѳвлөгѳѳнүүд %{category} Үзэх"
@@ -575,7 +586,6 @@ mn:
     no public plans: "%{username} -нд нийтийн уншлагын тѳлѳвлѳгѳѳг баихгүй."
     filter by lang: "Унших төлөвлөгөөнүүдийг Щэлээр Шүүх"
     plan settings: "Тѳлѳвлѳгѳѳний Тохиргоо"
-    settings: "Тохиргоо "
     search: "Хайх"
     search placeholder: "Тѳлѳвлѳгѳѳнүүд %{category} Хайх"
     subscribe to plan: "Энэ Төлөвлөгөөг Эхлэх"
@@ -688,25 +698,28 @@ mn:
     chapter only: "Уучлаарай, ишлэлүүдийг аудиогоор сонсох боломжгүй. Уншигчийн бүлэг сонгох хэсгээс аудио боломжтой эсэхийг хараарай."
     close player menu: "Хаах"
   highlights:
+    title: "Тодруулгууд"
     blank slate:
       heading: "Онцгой ишлэлүүдээ тодруул"
       description: "Библи унших явцдаа ишлэл сонгон түүнийгээ тодруул. Тодруулгуудаа харах, засах, эсвэл устгахын тулд буцах"
     none user: "%{username} тодруулгагүй"
     choose color: "Ѳнгѳ Сонгох"
-    create success: "Тодруулга хадгалсан"
     create failure: "Тодруулгыг хадгалахад алдаа гарсан"
     destroy success: "Тодруулга устсан"
     destroy failure: "Тодруулгыг устгахад алдаа гарсан"
     creation error: "Уучлаарай, тодруулах боломжгүй байна."
     delete error: "Уучлаарай, тодруулга устгах боломжгүй байна."
+    form:
+      save button: "Тодруулга Хадгалах"
   searching:
     bible: "Библи"
-    plans: "Уншлагын Тѳлѳвлѳгѳѳнүүд"
+    plans: "Тѳлѳвлѳгѳѳнүүд"
     users: "Хэрэглэгчид "
     notes: "Тэмдэглэлүүд"
     total results: "Ойролцоогоор %{total}  Үр Дүн"
     suggestion html: "%{suggestion_link} гэж үү?"
     all versions: "Бүх %{language_name} Орчуулга"
+    results for: "Хайлтийн үр дүн:"
   donate:
     donate now: "Одоо Хандивлах"
     donate now intl: "эсвэл олон улсаас хандивлах"
@@ -876,9 +889,6 @@ mn:
     public domain: "Нийтийн Хүртээл "
     loading: "Илүү Орчуулга Ачаалаж байна..."
     load error: "Уучлаарай, илүү орчуулга ачааллахад алдаа гарлаа. Энэ цэсийг хаагаад дахин нэвтрэх үү."
-  reader help:
-    title: "Ишлэл сонгоорой..."
-    line 1: "Хавчуурга хийх, тодруулах, тэмдэглэл үүсгэхээр эсвэл найзуудтайгаа хуваалцахаар ямар нэгэн эсвэл хэсэг бүлэг ишлэлүүд дээр дар!"
   campaigns:
     100m:
       logo: "YouVersion: Библи Апп"
@@ -908,3 +918,9 @@ mn:
       sidebar:
         tagline: "Хамтдаа түүхийг өнөөдөр бичье"
         button: "Библийн Апп Дамжуулах"
+  ui:
+    pagination:
+      next page: "Дараагийн хуудас"
+      previous page: "Өмнөх хуудас"
+    datetime:
+      just now: "дѳнгѳж сая"

@@ -34,6 +34,7 @@
     users username required: "Du må skrive inn et brukernavn"
     users first name required: "Du må skrive inn et fornavn."
     users last name required: "Du må skrive inn et etternavn."
+    moments content required: "Innhold kan ikke være tomt."
   meta:
     kids_app:
       title: "Bibel-appen for barn"
@@ -47,8 +48,6 @@
     connections:
       index:
         title: "Tilknyttede kontoer"
-  ui:
-    loading indicator text: "Laster..."
   now: "Nå"
   celebrating 50MM: "Vi feirer 50 millioner Bibel-app-installasjoner!"
   link: "Lenke"
@@ -67,7 +66,7 @@
   new note: "Nytt notat"
   share success: "Meldingen din har blitt delt."
   share error: "Det skjedde en feil ved deling av meldingen din. Vennligst prøv igjen."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Koble til din %{connection} konto"
   deleted connection: "Din kobling til %{connection} er nå fjernet."
   deleted connection error: "En feil oppstod da du forsøkte å ta bort koblingen til %{connection}."
@@ -75,7 +74,7 @@
   next step connections: "Neste: Lenk dine kontoer og finn vennene dine"
   no notes found: "%{username} har ingen notater."
   no recent activity: "%{username} har ingen nylig aktivitet."
-  no badges found yourself: "Du har ikke fått noen merker ennå."
+  no badges found yourself: "Du har ikke fått noen merker ennå"
   no badges found other: "%{username} har ikke fått noen merker ennå."
   see users badges: "Se alle merkene til %{username}"
   bookmark: "Bokmerke"
@@ -141,11 +140,8 @@
   live: "Live/Grupper"
   first page: "Første side"
   last page: "Siste side"
-  next page: "Neste side"
-  previous page: "Forrige side"
   invalid username or password: "Ugyldig brukernavn eller passord."
   show all bookmarks: "Vis alle %{total} bokmerker"
-  show all notes: "Vis alle %{total} notater"
   recent bookmarks: "Nyeste bokmerker"
   percentage display: "%{number}%"
   myself: "Meg"
@@ -172,6 +168,7 @@
       go to scripture: "Gå til skriftsted"
       load more: "Last inn flere"
       like: "Liker"
+      liked: "Liker"
       like title: "Lik dette"
       share: "Del"
       share title: "Del dette med venner eller familie"
@@ -191,10 +188,16 @@
     none: "Du har ingen varslinger"
     no new: "Ingen nye varsler"
     view all: "Se alle varslinger"
+  likes:
+    create failure: "Ditt \"liker\" kunne ikke bli lagret"
+    destroy success: "\"Liker\" er slettet"
+    destroy failure: "Ditt \"liker\" kunne ikke slettes"
   comments:
+    view all N: "Se alle %{count} kommentarer"
     post comment: "Legg til en kommentar"
-    create success: "Kommentaren er lagret"
     create failure: "Kommentaren kunne ikke lagres"
+    destroy success: "Kommentar slettet"
+    destroy failure: "Kommentaren kunne ikke slettes"
     form:
       save button: "Post"
   friends:
@@ -208,7 +211,6 @@
   friendships:
     offer success: "Venneforespørsel sendt"
     offer failure: "Det oppsto en feil under sending av venneforespørselen"
-    create success: "Dere er nå venner"
     create failure: "Det oppstod en feil under oppretting av vennskap"
     destroy success: "Forespørsel avvist"
     destroy failure: "Det oppsto en feil under avslaget"
@@ -241,6 +243,11 @@
       reference field: "Referanse(r):"
       status field: "Status:"
       save button: "Lagre"
+    status:
+      private: "Privat"
+      public: "Offentlig"
+      friends: "Bare venner"
+      draft: "Utkast"
     list title: "Notater"
     loading community: "Laster fellesnotater..."
     no community notes: "Ingen fellesnotater med henvisning til valgte vers ble funnet. For å lage et notat, kan du velge et bibelvers og så klikke på 'Valgt' øverst i lesemodus."
@@ -248,6 +255,7 @@
     private: "Privat"
     is private: "Notatet du ba om er privat."
     draft: "Utkast"
+    friends: "Venner"
     creation form errors: "Følgende feil forhindret opprettelsen av ditt notat:"
     reference field: "Referanse(r):"
     version field: "Oversettelse:"
@@ -268,7 +276,6 @@
     cancel: "Avbryt"
     pop out: "Åpne i eget vindu"
     none found: "Ingen notater funnet..."
-    create success: "Lagret notat"
     create failure: "Det oppstod en feil under lagring av notat"
     destroy success: "Notat slettet"
     destroy failure: "Det oppstod en feil ved sletting av notat"
@@ -336,7 +343,7 @@
     no devices download copy: "Basert på Bibelen Online, YouVersion, er Bibel-appen en gratis mobil Bibel som kan installeres på nær sagt alle mobile enheter. Bibel-appen gir brukerne mulighet til å lese Bibelen, dele vers i sine nettverk, lage bokmerker av sine favoritt-avsnitt, og mer&mdash;alt i et format som tilpasser seg deres stadig økende mobile hverdag. Besøk <a href:'https://www.bible.com/app'>bible.com/app</a> fra din mobile enhet for å laste ned Bibel-appen og få kontakt med din konto!"
     yes delete: "Ja, slett min brukerkonto"
     account delete success: "Din YouVersion-konto har blitt slettet. Vi håper du fortsatt vil finne meningsfulle måter å benytte Bibelen på. Noen av disse appene kan være nyttige for deg videre: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-    delete account description: "Hvis du sletter kontoen din vil du fjerne for godt all din informasjon, historikk og tilpasninger (som notater, bokmerker, markert tekst osv) både på YouVersion.com og i Bibel-appen. Dette kan ikke gjenopprettes av deg eller vårt team. Hvis du er sikker på at du ønsker å gå videre, fortsett nedenfor."
+    delete account description: "Hvis du sletter kontoen din vil du fjerne all din informasjon, historikk og tilpasninger (som notater, bokmerker, markert tekst osv) både på YouVersion.com og i Bibel-appen for godt. Dette kan ikke gjenopprettes av deg eller vårt team. Hvis du er sikker på at du ønsker å gå videre, fortsett nedenfor."
     user recent activity: "%{user}s nylige aktivitet"
     user notes: "%{user}s notater"
     my friends: "Venner"
@@ -347,7 +354,7 @@
     my badges: "Mine merker"
     revised date: "Sist endret den %{date}"
     update email copy: "Skriv inn en ny epost-adresse og klikk på Oppdater epost. Vi sender deg så en lenke for å bekrefte din nye epost-adresse."
-    edit email: "Oppdater e-postadresse"
+    edit email: "Endre E-postadresse"
     update email check: "Sjekk eposten din og klikk på lenken for å bekrefte din nye epost-adresse."
     confirm update email success: "Takk! Vi har oppdatert epost-adressen din."
     confirm update email error: "Beklager, det oppsto et problem og epost-adressen din ble ikke endret."
@@ -513,7 +520,6 @@
     not found: "Bokmerker gir deg en rask tilgang på dine favoritt-tekster eller det siste kapittelet du leste i en spesiell bok. For å legge til et bokmerke velger du vers når du leser og trykker på ikonet øverst for bokmerke."
     other user not found: "%{username} har ikke lagret noen bokmerker ennå."
     creation form errors: "Følgende feil gjorde at bokmerke ikke kunne opprettes:"
-    create success: "Lagret bokmerke"
     destroy success: "Bokmerke fjernet"
     destroy failure: "Det oppstod en feil under fjerning av bokmerke"
     update success: "Bokmerke oppdatert"
@@ -542,9 +548,14 @@
     earned a badge: "Fått et merke"
     user badges: "%{user}s merker"
     earned date: "Oppnådd av %{username} for %{ago} siden"
-    none me: "Du har ikke fått noen merker ennå."
+    none me: "Du har ikke fått noen merker ennå"
     none user: "%{username} har ikke fått noen merker ennå."
   plans:
+    settings: "Innstillinger"
+    privacy:
+      visible to friends?: "Ønsker du at dine venner skal kunne se din aktivitet i denne leseplanen? "
+      private: "Privat"
+      public: "Offentlig"
     title: "Leseplaner"
     browse by category: "Utforsk etter kategori"
     browse plans: "Utforsk planer for %{category}"
@@ -575,7 +586,6 @@
     no public plans: "Ingen leseplaner er synlige for %{username}."
     filter by lang: "Filtrer planer etter språk"
     plan settings: "Innstillinger for leseplan"
-    settings: "Innstillinger"
     search: "Søk"
     search placeholder: "Søk planer for %{category}"
     subscribe to plan: "Start denne planen"
@@ -688,17 +698,19 @@
     chapter only: "Lyd er ikke tilgjengelig for vers. Vis som kapittel for tilgang på lyd."
     close player menu: "Lukk"
   highlights:
+    title: "Markeringer"
     blank slate:
       heading: "Marker meningsfulle vers"
       description: "Mens du leser i Bibelen, velg et vers og marker det. Kom tilbake hit for å se, redigere eller slette dine markeringer."
     none user: "%{username} har ingen markeringer"
     choose color: "Velg farge"
-    create success: "Markering lagret"
     create failure: "Det oppstod en feil under lagring av markering"
     destroy success: "Markering slettet"
     destroy failure: "Det oppstod en feil under sletting av markering"
     creation error: "Kunne ikke utheve."
     delete error: "Kunne ikke fjerne uthevelse."
+    form:
+      save button: "Lagre markering"
   searching:
     bible: "Bibel"
     plans: "Leseplaner"
@@ -707,6 +719,7 @@
     total results: "Om %{total} resultater."
     suggestion html: "Mente du %{suggestion_link}?"
     all versions: "Alle %{language_name} oversettelser"
+    results for: "Søkeresultat for:"
   donate:
     donate now: "Gi nå"
     donate now intl: "eller gi internasjonalt"
@@ -876,9 +889,6 @@
     public domain: "Offentlig område"
     loading: "Laster inn flere oversettelser..."
     load error: "Et problem oppstod i forbindelse med nedlastning av flere oversettelser. Lukk denne menyen og åpne på nytt for å prøve igjen."
-  reader help:
-    title: "Velg et vers..."
-    line 1: "Klikk på ett eller flere vers for å opprette bokmerke, utheve tekst, lage et notat eller dele med dine venner!"
   campaigns:
     100m:
       logo: "YouVersion: Bibel-appen"
@@ -908,3 +918,9 @@
       sidebar:
         tagline: "La oss gjøre noe historisk."
         button: "Del Bibel-appen"
+  ui:
+    pagination:
+      next page: "Neste side"
+      previous page: "Forrige side"
+    datetime:
+      just now: "akkurat nå"

@@ -34,6 +34,7 @@ lv:
     users username required: "Jums jāievada lietotājvārds."
     users first name required: "Jums jāievada vārds."
     users last name required: "Jums jāievada uzvārds."
+    moments content required: "Saturs nevar būt tukš."
   meta:
     kids_app:
       title: "Bībeles aplikācija bērniem"
@@ -47,8 +48,6 @@ lv:
     connections:
       index:
         title: "Pievienotie konti"
-  ui:
-    loading indicator text: "Ielādē..."
   now: "Tagad"
   celebrating 50MM: "Svinam 50 miljonu aplikāciju instalējumus!"
   link: "Saite"
@@ -67,7 +66,6 @@ lv:
   new note: "Izveidot piezīmi"
   share success: "Jūs esat dalījušies ar savu ziņu."
   share error: "Piedodiet, daloties ar jūsu ziņu radās kļūme. Lūdzu mēģiniet vēlreiz."
-  google plus: "Google +"
   connect to: "Pieslēgties jūsu %{connection} kontam."
   deleted connection: "Jūs veiksmīgi atslēdzāties no %{connection}"
   deleted connection error: "Piedodiet, radās kļūda mēģinot atslēgties no jūsu konta %{connection}"
@@ -141,11 +139,8 @@ lv:
   live: "Tīešsaiste/Grupas"
   first page: "Pirmā lapa"
   last page: "Pēdējā lapa"
-  next page: "Nākamā lapa"
-  previous page: "Iepriekšējā lapa"
   invalid username or password: "Nederīgs lietotājvārds vai parole"
   show all bookmarks: "Parādīt visas %{total} grāmatzīmes"
-  show all notes: "Parādīt visas %{total} piezīmes"
   recent bookmarks: "Pēdējās grāmatzīmes"
   percentage display: "%{number}%"
   myself: "Es"
@@ -172,6 +167,7 @@ lv:
       go to scripture: "Doties uz rakstu vietu"
       load more: "Ielādēt vēl"
       like: "Patīk"
+      liked: "Patīk"
       like title: "Atzīmēt ka patīk"
       share: "Dalīties"
       share title: "Dalies ar saviem draugiem vai ģimeni"
@@ -191,10 +187,16 @@ lv:
     none: "Tev nav paziņojumu"
     no new: "Nekādu paziņojumu"
     view all: "Skatīt visus paziņojumus"
+  likes:
+    create failure: "Nevarēja saglabāt tavu \"Patīk\""
+    destroy success: "\"Patīk\" izdzēsts"
+    destroy failure: "Tavs \"Patīk\" netika izdzēsts"
   comments:
+    view all N: "Apskatīt visus %{count} komentārus"
     post comment: "Ieraksti komentāru"
-    create success: "Komentārs ierakstīts"
     create failure: "Komentārs nevarēja tikt ierakstīts"
+    destroy success: "Komentārs izdzēsts"
+    destroy failure: "Komentāru nevarēja izdzēst"
     form:
       save button: "Ieraksti"
   friends:
@@ -208,7 +210,6 @@ lv:
   friendships:
     offer success: "Draudzības uzaicinājums nosūtīts"
     offer failure: "Kļūme nosūtot draudzības uzaicinājumu"
-    create success: "Tagad jūs esat draugi"
     create failure: "Notika kļūme veidojot draudzību"
     destroy success: "Uzaicinājums noraidīts"
     destroy failure: "Notika kļūme uzaicinājuma noraidīšanā"
@@ -241,6 +242,11 @@ lv:
       reference field: "Atsauce(s):"
       status field: "Statuss:"
       save button: "Saglabāt"
+    status:
+      private: "Privāts"
+      public: "Publisks"
+      friends: "Tikai draugi"
+      draft: "Melnraksts"
     list title: "Piezīmes"
     loading community: "Ielādējam kopienas piezīmes..."
     no community notes: "Nekādas kopienes piezīmes atbilstošas šai rakstu vietai netika atrastas. Lai izveidotu piezīmi, izvēlēties rakstu vietu Bībeles lasīšans logā un tad piespiediet izvēlēto pogu lasīšanas ekrāna augšdaļā."
@@ -248,6 +254,7 @@ lv:
     private: "Privāts"
     is private: "Pieprasītā piezīme ir privāta"
     draft: "Melnraksts"
+    friends: "Draugi"
     creation form errors: "Sekojošu iemesla(-u) dēļ, nevarējām izveidot piezīmi:"
     reference field: "Atsauce(s):"
     version field: "Versija:"
@@ -268,7 +275,6 @@ lv:
     cancel: "Atcelt"
     pop out: "Jaunā logā"
     none found: "Nav atrastas piezīmes"
-    create success: "Piezīme saglabāta"
     create failure: "Kļūme saglabājot piezīmi"
     destroy success: "Piezīme dzēsta."
     destroy failure: "Kļūme dzēšot piezīmi"
@@ -347,7 +353,7 @@ lv:
     my badges: "Manas nozīmītes"
     revised date: "Pēdējo reizi pārbaudīts %{date}"
     update email copy: "Ievadiet jaunu e-pasta adresi un nospiediet \"Atjunot e-pastu\". Mēs jums nosūtīsim saiti lai apstiprinātu jauno e-pasta adresi."
-    edit email: "Atjaunot e-pasta adresi"
+    edit email: "Nomainīt e-pasta adresi"
     update email check: "Lūdzu pārbaudiet savu e-pastu un uzspiediet uz saites lai apstiprinātu jūsu jauno e-pastu."
     confirm update email success: "Paldies. Jūs esat atjaunojis savu e-pasta adresi."
     confirm update email error: "Piedodiet, radās kļūme atjaunojot jūsu e-pasta adresi."
@@ -513,7 +519,6 @@ lv:
     not found: "Grāmatzīmes palīdzēs ātrāk atrast jūsu mīļākās rakstu vietas, vai arī pēdējo nodaļu, kuru lasījāt. Lai pievienotu grāmatzīmi, izvēlieties Bībeles pantu un nospiediet izvēlēto pogu ekrāna aukšdaļā.."
     other user not found: "%{username} nav saglabājis nevienu grāmatzīmi."
     creation form errors: "Sekojoša kļūme(s) novērsa grāmatzīmes izveidošanu:"
-    create success: "Grāmatzīme saglabāta"
     destroy success: "Grāmatīme izdzēsta"
     destroy failure: "Kļūme dzēšot grāmatzīmi"
     update success: "Grāmatzīme atjaunota"
@@ -545,6 +550,11 @@ lv:
     none me: "Jūs vēl neesat nopelnījis nevienu nozīmīti."
     none user: "%{username} nav nopelnījis nevienu nozīmīti vēl."
   plans:
+    settings: "Uzstādījumi"
+    privacy:
+      visible to friends?: "Vai tu vēlētos, lai tava aktivitāte šajā lasīšanas plānā būtu redzama taviem draugiem?"
+      private: "Privāts"
+      public: "Publisks"
     title: "Lasīšanas plāni"
     browse by category: "Izvēlēties pēc kategorijas"
     browse plans: "Apskatīt %{category} plānus. "
@@ -575,7 +585,6 @@ lv:
     no public plans: "%{username} nav redzami nekādi lasīšanas plāni."
     filter by lang: "Atlasīt plānus pēc valodas"
     plan settings: "Lasīšanas plāna uzstādījumi"
-    settings: "Uzstādījumi"
     search: "Meklēšana"
     search placeholder: "Meklēt %{category} plānu"
     subscribe to plan: "Sākt šo plānu"
@@ -688,25 +697,28 @@ lv:
     chapter only: "Piedodiet, audio nav pieejams pantiem. Skatieties \"Lasīšanas logā\" nodaļas audio ierakstu."
     close player menu: "Aizvērt"
   highlights:
+    title: "Izceltais"
     blank slate:
       heading: "Izcel jēgpilnas rakstu vietas"
       description: "Kamēr lasi Bībeli, izvēlies pantu un izcel to. Atgriezies šeit lai pārskatītu, rediģētu vai dzēstu izcelto."
     none user: "%{username} neko nav izcēlis"
     choose color: "Izvēlies krāsu"
-    create success: "Izceltais saglabāts"
     create failure: "Kļūme saglabājot izcelto"
     destroy success: "Izceltais izdzēsts"
     destroy failure: "Kļūme dzēšot izcelto"
     creation error: "Piedodiet, nav iespējams izcelt"
     delete error: "Piedodiet, nespējām notīrīt izcelto."
+    form:
+      save button: "Saglabāt izcelto"
   searching:
     bible: "Bībele"
-    plans: "Lasīšanas plāni"
+    plans: "Plāni"
     users: "Lietotāji"
     notes: "Piezīmes"
     total results: "Par %{total} rezultātiem"
     suggestion html: "Vai jūs domājāt %{suggestion_link}?"
     all versions: "Visi tulkojumi %{language_name}"
+    results for: "Meklēt rezultātu:"
   donate:
     donate now: "Ziedo tagad"
     donate now intl: "vai ziedojiet starptautiski"
@@ -876,9 +888,6 @@ lv:
     public domain: "Publiskais domēns"
     loading: "Ielādē vairāk tulkojumus..."
     load error: "Atvainojamies, radās kļūme ielādējot citus tulkojumus. Mēģiniet vēlreiz, aiztaisot šo izvēlni un attaisot to no jauna."
-  reader help:
-    title: "Izvēlēties rakstu vietu..."
-    line 1: "Uzklikšķini vai piespied uz jebkuras rakstu vietas vai rakstu vietu kopuma, lai izveidotu grāmatzīmi, iezīmēt, izveidot piezīmi vai lai dalītos ar saviem draugiem!"
   campaigns:
     100m:
       logo: "YouVersion: Bībeles aplikācija"
@@ -908,3 +917,9 @@ lv:
       sidebar:
         tagline: "Veidosim vēsturi kopīgi"
         button: "Dalies caur Bībeles aplikāciju"
+  ui:
+    pagination:
+      next page: "Nākamā lapa"
+      previous page: "Iepriekšējā lapa"
+    datetime:
+      just now: "tikai tagad"

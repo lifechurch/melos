@@ -34,6 +34,7 @@ fr:
     users username required: "Vous devez saisir un identifiant."
     users first name required: "Vous devez saisir un prénom."
     users last name required: "Vous devez saisir un nom."
+    moments content required: "Le contenu ne peut pas être vide."
   meta:
     kids_app:
       title: "La Bible App pour Enfants"
@@ -47,8 +48,6 @@ fr:
     connections:
       index:
         title: "Comptes liés"
-  ui:
-    loading indicator text: "Chargement..."
   now: "Maintenant"
   celebrating 50MM: "Célébration des 50 millions d'installations de cette app!"
   link: "Lien"
@@ -67,7 +66,7 @@ fr:
   new note: "Nouvelle note"
   share success: "Votre message a été partagé."
   share error: "Désolé, une erreur s'est produite lors du partage de votre message. Veuillez réessayer."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Vous connecter à votre compte %{connection}"
   deleted connection: "Votre connexion à %{connection} a bien été supprimée."
   deleted connection error: "Désolé, suite à une erreur, votre connexion à %{connection} n'a pu être supprimée."
@@ -141,11 +140,9 @@ fr:
   live: "Live/Groupes"
   first page: "Première page"
   last page: "Dernière page"
-  next page: "Page suivante"
-  previous page: "Page précédente"
   invalid username or password: "Nom d'utilisateur ou mot de passe invalide"
   show all bookmarks: "Montrer les %{total} signets"
-  show all notes: "Voir les %{total} notes"
+  show all notes: "Voir toutes les notes"
   recent bookmarks: "Signets récents"
   percentage display: "%{number}%"
   myself: "Moi"
@@ -172,7 +169,9 @@ fr:
       go to scripture: "Aller au verset"
       load more: "Charger davantage"
       like: "Aimer"
+      liked: "Aimé "
       like title: "Aimer ça"
+      last comment: "Dernier commentaire"
       share: "Partager"
       share title: "Partager ça avec vos amis ou votre famille"
       comment: "Commenter"
@@ -191,10 +190,18 @@ fr:
     none: "Vous n'avez pas de notifications"
     no new: "Aucune nouvelle notification"
     view all: "Voir toutes les Notifications"
+  likes:
+    create success: "Succès ! Votre J'aime a été enregistré"
+    create failure: "Votre J'aime n'a pas pu être enregistré"
+    destroy success: "J'aime supprimé"
+    destroy failure: "Votre J'aime n'a pas pu être supprimé"
   comments:
+    view all N: "Voir tous les %{count} commentaires"
     post comment: "Poster un commentaire"
-    create success: "Commentaire enregistré"
+    create success: "Succès ! Votre commentaire a été enregistré."
     create failure: "Le commentaire n'a pas pu être enregistré"
+    destroy success: "Commentaire supprimé"
+    destroy failure: "Le commentaire n'a pas pu être supprimé"
     form:
       save button: "Poster"
   friends:
@@ -208,7 +215,7 @@ fr:
   friendships:
     offer success: "Demande de contact envoyée"
     offer failure: "Erreur lors de l'envoi de la demande"
-    create success: "Vous êtes désormais amis"
+    create success: "Succès ! Vous êtes maintenant amis."
     create failure: "Erreur à l'ajout de la relation"
     destroy success: "Demande déclinée"
     destroy failure: "Erreur en refusant la requête"
@@ -241,6 +248,11 @@ fr:
       reference field: "Référence(s) :"
       status field: "Statut :"
       save button: "Enregistrer"
+    status:
+      private: "Privé"
+      public: "Public"
+      friends: "Seulement les amis"
+      draft: "Brouillon"
     list title: "Notes"
     loading community: "Chargement des notes de la communauté ..."
     no community notes: "Aucune note de la communauté référençant l'un des versets sélectionnés n'a été trouvée. Pour créer une note, vous devez sélectionner le verset dans le Lecteur de Bible et puis cliquer le bouton sélectionné au dessus du lecteur."
@@ -248,6 +260,7 @@ fr:
     private: "Privé"
     is private: "La note demandée est privé."
     draft: "Brouillon"
+    friends: "Amis"
     creation form errors: "La/les erreur(s) suivantes empêchent la création de votre note :"
     reference field: "Référence(s) :"
     version field: "Traduction :"
@@ -268,7 +281,7 @@ fr:
     cancel: "Annuler"
     pop out: "Nouvelle fenêtre"
     none found: "Pas de notes trouvées."
-    create success: "Note enregistrée"
+    create success: "Succès ! Votre note a été sauvée."
     create failure: "Erreur de d'enregistrement de la  note"
     destroy success: "Note supprimée"
     destroy failure: "Erreur de suppression de la  note"
@@ -347,7 +360,7 @@ fr:
     my badges: "Mes badges"
     revised date: "Dernière révision faite le %{date}"
     update email copy: "Entrez un nouvel email et cliquez sur Mettre à jour l'adresse Email. Vous recevrez un lien pour confirmer votre nouvelle adresse."
-    edit email: "Mettre à jour l'adresse Email"
+    edit email: "Changer l'Adresse Email"
     update email check: "Veuillez consulter votre Email et cliquer sur le lien pour confirmer votre nouvelle adresse mail"
     confirm update email success: "Merci! Vous avez mis à jour votre adresse Email."
     confirm update email error: "Désolé, un problème est survenu lors du changement de votre adresse Email."
@@ -500,6 +513,7 @@ fr:
       friendships: "M'informer des demandes d'amitiés"
       moments: "M'informer de l'activité de mes amis"
       comments: "M'informer des commentaires sur mon activité"
+      likes: "M'informer des J'aime sur mon activité"
   bookmarks:
     new: "Nouveau signet"
     edit: "Modifier"
@@ -513,7 +527,7 @@ fr:
     not found: "Les signets vous permettent de vous souvenir de ce que vous avez lu en dernier, vous servant ainsi de guide de référence rapide vers vos passages préférés ou encore vers le dernier chapitre que vous avez lu dans un livre en particulier. Afin de créer un signet, sélectionnez un verset dans le lecteur de la Bible, puis cliquez le bouton Signet."
     other user not found: "%{username} n'a pas encore de favoris."
     creation form errors: "L'erreur suivante a empêché la création de votre signet:"
-    create success: "Favori enregistré"
+    create success: "Succès ! Votre favori a été enregistré."
     destroy success: "Favori supprimé"
     destroy failure: "Erreur de suppression du favori"
     update success: "Favori mis à jour"
@@ -545,6 +559,11 @@ fr:
     none me: "Vous n'avez gagné aucun badge pour l'instant."
     none user: "%{username} n'a gagné aucun badge pour l'instant."
   plans:
+    settings: "Paramètres"
+    privacy:
+      visible to friends?: "Voulez-vous que votre activité relative à ce plan soit visible de vos amis ?"
+      private: "Privé"
+      public: "Public"
     title: "Plans de lecture"
     browse by category: "Parcourir par catégorie"
     browse plans: "Parcourir la catégorie %{category}"
@@ -575,7 +594,6 @@ fr:
     no public plans: "Aucun plan n'est visible pour %{username}."
     filter by lang: "Filtrer les plans par langue"
     plan settings: "Paramètres du Plan"
-    settings: "Paramètres"
     search: "Rechercher"
     search placeholder: "Chercher les plans %{category}"
     subscribe to plan: "Commencer ce plan"
@@ -688,25 +706,29 @@ fr:
     chapter only: "Désolé, l'audio n'est pas disponible pour les versets. Veuillez accéder au lecteur pour les chapitres audio."
     close player menu: "Fermer"
   highlights:
+    title: "Surbrillances"
     blank slate:
       heading: "Surlignez des versets importants"
       description: "Pendant que vous lisez la Bible, sélectionnez un verset et surlignez-le. Retournez ici pour le voir, le modifier, ou le supprimer."
     none user: "%{username} n'a rien surligné"
     choose color: "Choisir la couleur"
-    create success: "Surbrillance enregistrée"
+    create success: "Succès ! Votre surbrillance a été enregistrée."
     create failure: "Erreur d'enregistrement de la surbrillance"
     destroy success: "Surbrillance supprimée"
     destroy failure: "Erreur de suppression de la surbrillance"
     creation error: "Désolé, nous n'avons pu surligner"
     delete error: "Désolé, échec dans la suppression de surlignement."
+    form:
+      save button: "Enregistrer la Surbrillance"
   searching:
     bible: "Bible"
-    plans: "Plans de lecture"
+    plans: "Plans"
     users: "Utilisateurs"
     notes: "Notes"
     total results: "Environ %{total} résultats"
     suggestion html: "Vous vouliez %{suggestion_link}?"
     all versions: "Toutes les traductions en %{language_name}"
+    results for: "Résultat de recherche pour :"
   donate:
     donate now: "Faire un don maintenant"
     donate now intl: "ou faire un don au niveau international"
@@ -876,9 +898,6 @@ fr:
     public domain: "Domaine public"
     loading: "Chargement d'autres versions..."
     load error: "Désolé, il y a eu un problème de chargement d'autres versions. Fermez ce menu et rouvrez-le pour réessayer."
-  reader help:
-    title: "Sélectionnez un verset."
-    line 1: "Cliquez sur n'importe quel verset ou groupe de versets pour les marquer, surligner, créer une note ou les partager avec vos amis !"
   campaigns:
     100m:
       logo: "YouVersion : La Bible App"
@@ -908,3 +927,9 @@ fr:
       sidebar:
         tagline: "Ensemble, réécrivons l'histoire."
         button: "Partager la Bible App"
+  ui:
+    pagination:
+      next page: "Page suivante"
+      previous page: "Page précédente"
+    datetime:
+      just now: "à l'instant"

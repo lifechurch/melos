@@ -34,6 +34,7 @@ ja:
     users username required: "ユーザ名の入力が必要です。"
     users first name required: "名前（名）の入力が必要です。"
     users last name required: "苗字（姓）の入力が必要です。"
+    moments content required: "空欄のままでは残せません。"
   meta:
     kids_app:
       title: "子ども用聖書アプリ"
@@ -47,8 +48,6 @@ ja:
     connections:
       index:
         title: "連携済みアカウント"
-  ui:
-    loading indicator text: "読み込み中…"
   now: "現在…"
   celebrating 50MM: "アプリのインストール数が5000万に達しました!"
   link: "リンク"
@@ -67,7 +66,7 @@ ja:
   new note: "新規ノート"
   share success: "メッセージがシェアされました"
   share error: "メッセージのシェアに失敗しました。もう一度、実行してください。"
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "%{connection} アカウントに連携"
   deleted connection: "%{connection} への連携設定が問題なく解除されました。"
   deleted connection error: "申し訳ございません。%{connection} への連携設定の解除でエラーが発生しました。"
@@ -141,11 +140,8 @@ ja:
   live: "ライブ/グループ"
   first page: "最初のページ"
   last page: "最後のページ"
-  next page: "次のページ"
-  previous page: "前のページ"
   invalid username or password: "ユーザー名、もしくは、パスワードに誤りがあります。"
   show all bookmarks: "%{total} 箇所のブックマークを全て表示"
-  show all notes: "%{total} 件のノートを全て表示"
   recent bookmarks: "最近登録したブックマーク"
   percentage display: "%{number}%"
   myself: "わたし"
@@ -172,6 +168,7 @@ ja:
       go to scripture: "聖句を見る"
       load more: "さらに読み込む"
       like: "いいね！"
+      liked: "お気に入り"
       like title: "「いいね！」に入れる"
       share: "シェア"
       share title: "友達または家族とシェアする"
@@ -191,10 +188,16 @@ ja:
     none: "通知はありません"
     no new: "新しい通知はありません"
     view all: "全ての通知を見る"
+  likes:
+    create failure: "「いいね」が保存できませんでした。"
+    destroy success: "「いいね」が削除されました。"
+    destroy failure: "「いいね」が削除できませんでした。"
   comments:
+    view all N: "全ての%{count}コメントを見る。"
     post comment: "コメントを投稿する"
-    create success: "コメントが投稿されました"
     create failure: "コメントを投稿することができませんでした"
+    destroy success: "コメントが削除されました。"
+    destroy failure: "コメントが削除できませんでした。"
     form:
       save button: "投稿"
   friends:
@@ -208,7 +211,6 @@ ja:
   friendships:
     offer success: "友達申請が送信されました"
     offer failure: "友達申請の送信中にエラーが発生しました"
-    create success: "友達になりました"
     create failure: "友達登録中にエラーが発生しました"
     destroy success: "申請が断られました"
     destroy failure: "申請却下中にエラーが発生しました"
@@ -241,6 +243,11 @@ ja:
       reference field: "参照聖句:"
       status field: "ステータス:"
       save button: "保存"
+    status:
+      private: "非公開"
+      public: "公開"
+      friends: "友達のみ"
+      draft: "草稿"
     list title: "ノート"
     loading community: "コミュニティーのノートを読み込み中・・・"
     no community notes: "選択された聖句に関するコミュニティーノートはありません。ノートを作成するには、聖書リーダー内で聖句を選択し、リーダー上部の「選択箇所」というボタンをクリックしてください。"
@@ -248,6 +255,7 @@ ja:
     private: "非公開"
     is private: "ご希望のノートは非公開となっています。"
     draft: "草稿"
+    friends: "友達"
     creation form errors: "以下のエラーのためノートの作成ができませんでした:"
     reference field: "参照聖句:"
     version field: "訳："
@@ -268,7 +276,6 @@ ja:
     cancel: "キャンセル"
     pop out: "別ウィンドウで表示"
     none found: "ノートが見つかりません..."
-    create success: "ノートが保存されました"
     create failure: "ノートの保存にエラーが発生しました"
     destroy success: "ノートが削除されました"
     destroy failure: "ノートの削除中にエラーが発生しました"
@@ -347,7 +354,7 @@ ja:
     my badges: "マイ・バッジ"
     revised date: "最終更新日: %{date}"
     update email copy: "新しいメールアドレスを入力して、「メールアドレスを更新」をクリックしてください。新しいメールアドレスの確認リンクをメールで送信します。"
-    edit email: "メールアドレスの更新"
+    edit email: "メールアドレスを変更する"
     update email check: "メールをご覧の上、リンクをクリックして新規メールアドレスの確認を行ってください。"
     confirm update email success: "メールアドレスの更新を受け付けました！"
     confirm update email error: "申し訳ございませんが、メールアドレスの変更ができませんでした。"
@@ -513,7 +520,6 @@ ja:
     not found: "ブックマークを付けることにより、最後に読んだ箇所を思い出すことができたり、好きな聖句が書かれた箇所を見つけやすくなったり、あるいは、ある書物の中でどの章まで読んだかを思い出しやすくなります。ブックマークを付けるためには聖書リーダーの中で特定の箇所を選択し、ブックマークボタンをクリックします。"
     other user not found: "まだ %{username} さんのブックマークはありません"
     creation form errors: "以下のエラーが発生したために、ブックマークをつけることができませんでした。"
-    create success: "ブックマークが保存されました"
     destroy success: "ブックマークが削除されました"
     destroy failure: "ブックマークを削除する際にエラーが発生しました"
     update success: "ブックマークが更新されました"
@@ -545,6 +551,11 @@ ja:
     none me: "まだバッジを獲得していません"
     none user: "%{username} さんはまだバッジを獲得していません"
   plans:
+    settings: "設定"
+    privacy:
+      visible to friends?: "このプランでのあなたのアクティビティを友達に公開しますか？"
+      private: "非公開"
+      public: "公開"
     title: "読書プラン"
     browse by category: "カテゴリー別に閲覧する"
     browse plans: "%{category}プランを閲覧"
@@ -575,7 +586,6 @@ ja:
     no public plans: "%{username} さんには公開中のプランはありません"
     filter by lang: "言語でプランを絞り込む"
     plan settings: "プラン設定"
-    settings: "設定"
     search: "検索"
     search placeholder: "%{category}プラン内を検索"
     subscribe to plan: "このプランを開始"
@@ -688,17 +698,19 @@ ja:
     chapter only: "申し訳ありませんが、音読は節単位では利用できません。章単位で音読をリーダーで表示してください。"
     close player menu: "閉じる"
   highlights:
+    title: "ハイライト"
     blank slate:
       heading: "意味深い聖句をハイライトする"
       description: "聖書を読みながら、聖句を選んでハイライトできます。ここであなたのハイライトを閲覧・編集・削除できます。"
     none user: "%{username} さんはハイライトがありません"
     choose color: "色の選択"
-    create success: "ハイライトが保存されました"
     create failure: "ハイライトを保存する際にエラーが発生しました"
     destroy success: "ハイライトが削除されました"
     destroy failure: "ハイライトを削除する際にエラーが発生しました"
     creation error: "申し訳ありませんが、ハイライトできません"
     delete error: "申し訳ありませんが、ハイライトを削除できません"
+    form:
+      save button: "ハイライトを保存する"
   searching:
     bible: "聖書"
     plans: "読書プラン"
@@ -707,6 +719,7 @@ ja:
     total results: "約 %{total} 件の検索結果"
     suggestion html: "もしかして %{suggestion_link} ですか?"
     all versions: "%{language_name}語版全て"
+    results for: "検索結果："
   donate:
     donate now: "寄付する"
     donate now intl: "PayPalで寄付する（米国外）"
@@ -876,9 +889,6 @@ ja:
     public domain: "パブリックドメイン"
     loading: "さらに聖書訳を読み込み中・・・"
     load error: "申し訳ございませんが、聖書訳の読み込み中に問題が発生しました。このメニューを一旦閉じて、改めて開いてみてください。"
-  reader help:
-    title: "聖句を選択…"
-    line 1: "聖句にブックマークしたり、ノートを記録したり、お友達とシェアするには、ご希望の聖句（複数可）をクリックまたはタップしてください。"
   campaigns:
     100m:
       logo: "YouVersion: 聖書アプリ"
@@ -908,3 +918,9 @@ ja:
       sidebar:
         tagline: "共に歴史を塗り替えましょう。"
         button: "聖書アプリをシェア"
+  ui:
+    pagination:
+      next page: "次のページ"
+      previous page: "前のページ"
+    datetime:
+      just now: "たった今"

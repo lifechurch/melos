@@ -34,6 +34,7 @@ uk:
     users username required: "Вам необхідно ввести своє ім'я користувача."
     users first name required: "Вам необхідно ввести своє ім'я."
     users last name required: "Вам необхідно ввести своє прізвище."
+    moments content required: "Вміст не може бути порожнім."
   meta:
     kids_app:
       title: "Програма Біблія для діточок"
@@ -47,8 +48,6 @@ uk:
     connections:
       index:
         title: "Приєднані профілі"
-  ui:
-    loading indicator text: "Завантажується..."
   now: "Зараз"
   celebrating 50MM: "Святкуємо 50 мільйонів встановлень!"
   link: "Посилання"
@@ -67,7 +66,7 @@ uk:
   new note: "Нова нотатка"
   share success: "Повідомлення розіслано іншим."
   share error: "Вибачте, сталась помилка в розсиланні вашого повідомлення. Будь-ласка спробуйте знову."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Приєднати до Вашого облікового запису %{connection}"
   deleted connection: "Зв'язок з %{connection} успішно скасований."
   deleted connection error: "На жаль, під час скасування Вашого зв'язку з %{connection} виникла помилка."
@@ -141,11 +140,9 @@ uk:
   live: "Наживо/групи"
   first page: "Перша сторінка"
   last page: "Остання сторінка"
-  next page: "Наступна сторінка"
-  previous page: "Попередня сторінка"
   invalid username or password: "Хибні ім'я корисувача або пароль."
   show all bookmarks: "Переглянути усі %{total} закладки"
-  show all notes: "Переглянути усі %{total} нотатки"
+  show all notes: "Переглянути усі нотатки"
   recent bookmarks: "Останні Закладки"
   percentage display: "%{number}%"
   myself: "Я"
@@ -172,7 +169,9 @@ uk:
       go to scripture: "Перейти до Письма"
       load more: "Завантажити ще"
       like: "Подобається"
+      liked: "Сподобалось"
       like title: "На кшталт цього"
+      last comment: "Останній коментар"
       share: "Поділитись"
       share title: "Поділитися цим з друзями або сім'єю"
       comment: "Коментар"
@@ -191,10 +190,18 @@ uk:
     none: "У вас немає сповіщень"
     no new: "Немає нових сповіщень"
     view all: "Переглянути усі сповіщення"
+  likes:
+    create success: "Успіх! Ваше вподобання вже збережено"
+    create failure: "Ваше вподобання не можливо зберегти"
+    destroy success: "Вподобання вилучено"
+    destroy failure: "Ваше вподобання неможливо вилучити"
   comments:
+    view all N: "Переглянути усі %{count} коментарів"
     post comment: "Опублікувати коментар"
-    create success: "Коментар опубліковано"
+    create success: "Успіх! Ваш коментар вже опубліковано."
     create failure: "Неможливо опублікувати коментар"
+    destroy success: "Коментар вилучено"
+    destroy failure: "Коментар неможливо вилучити"
     form:
       save button: "Допис"
   friends:
@@ -208,7 +215,7 @@ uk:
   friendships:
     offer success: "Надіслано запит дружби"
     offer failure: "Помилка надсилання запиту дружби"
-    create success: "Ви вже друзі"
+    create success: "Успіх! Ви - вже друзі!"
     create failure: "Помилка створення дружби"
     destroy success: "Запит відхилено"
     destroy failure: "Помилка відхилення запиту"
@@ -241,6 +248,11 @@ uk:
       reference field: "Посилання:"
       status field: "Стан:"
       save button: "Зберегти"
+    status:
+      private: "Приватне"
+      public: "Публічне"
+      friends: "Лише друзі"
+      draft: "Чернетка"
     list title: "Нотатки"
     loading community: "Завантажуються нотатки спільноти…"
     no community notes: "До обраних віршів спільнота не написала ще жодної замітки. Для створення замітки виберіть вірш у вікні читання Біблії, а потім натисніть кнопку \"Обране\" у верхній частині вікна читання."
@@ -248,6 +260,7 @@ uk:
     private: "Особисте"
     is private: "Необхідна замітка є особистою."
     draft: "Чернетка"
+    friends: "Друзі"
     creation form errors: "Дана помилка(и)  унеможливили створення вашої нотатки:"
     reference field: "Посилання:"
     version field: "Версія:"
@@ -268,7 +281,7 @@ uk:
     cancel: "Відмінити"
     pop out: "Підказки"
     none found: "Нотатки не знайдено"
-    create success: "Нотатку збережено"
+    create success: "Успіх! Ваша нотатка вже збережена."
     create failure: "Помилка збереження нотатки"
     destroy success: "Нотатку видалено"
     destroy failure: "Помилка вилучення нотатки"
@@ -347,7 +360,7 @@ uk:
     my badges: "Значки"
     revised date: "Останнє редагування %{date}"
     update email copy: "Вкажіть свою електронну адресу і натисніть Оновити адресу. Ми надішлемо вам посилання для підтвердження нової адреси."
-    edit email: "Оновити адресу електронної пошти"
+    edit email: "Змінити адресу ел. пошти"
     update email check: "Будь-ласка перевірте свою електронну пошту і перейдіть за посиланням на свою нову адресу."
     confirm update email success: "Дякуємо! Ви оновили свою електронну адресу."
     confirm update email error: "Вибачте, з завершенням зміни вашої нової адреси виникли проблеми."
@@ -500,6 +513,7 @@ uk:
       friendships: "Сповіщати мене про запити дружби"
       moments: "Сповіщати мене про діяльність друзів"
       comments: "Сповіщати мене про коментарі про мою діяльність"
+      likes: "Сповіщати мене про вподобання моєї діяльності"
   bookmarks:
     new: "Нова закладка"
     edit: "Редагувати"
@@ -513,7 +527,7 @@ uk:
     not found: "Закладки допомагають швидко знайти улюблені уривки або останній розділ, який ви читаєте в конкретній книзі. Щоб створити закладку виділіть вірш у програмі читання Біблії і натисніть обрану кнопку вгорі. "
     other user not found: "%{username} поки що не зберіг жодної закладки."
     creation form errors: "При створенні закладки виникла така помилка(и):"
-    create success: "Закладку збережено"
+    create success: "Успіх! Ваша нотатка вже збережена."
     destroy success: "Закладку вилучено"
     destroy failure: "Помилка вилучення закладки"
     update success: "Закладку оновлено"
@@ -545,6 +559,11 @@ uk:
     none me: "Ви поки що не заробили жодного значка."
     none user: "%{username} ще не заробив жодного значка."
   plans:
+    settings: "Налаштування"
+    privacy:
+      visible to friends?: "Ви б хотіли, аби ваша праця з цим планом була видима вашим друзям?"
+      private: "Приватне"
+      public: "Публічне"
     title: "Плани читання"
     browse by category: "Пошук по категорії"
     browse plans: "Дослідити %{category} Плани"
@@ -575,7 +594,6 @@ uk:
     no public plans: "Жодного плану читання для %{username} не видно."
     filter by lang: "Сортування Планів за Мовами"
     plan settings: "Налаштування плану"
-    settings: "Налаштування"
     search: "Шукати"
     search placeholder: "Шукати %{category} Плани"
     subscribe to plan: "Розпочати цей план"
@@ -688,25 +706,29 @@ uk:
     chapter only: "На жаль, звук не доступний для віршів. Подивитися в читанці звуковий супровід до глави ."
     close player menu: "Закрити"
   highlights:
+    title: "Позначення"
     blank slate:
       heading: "Підсвітити важливі вірші"
       description: "Під час читання Біблії обирайте вірші для їхнього підсвічування. Повертайтеся сюди для перегляду, редагування або видалення підсвітки."
     none user: "%{username} немає підсвіток"
     choose color: "Вибрати колір"
-    create success: "Підсвітку збережено"
+    create success: "Успіх! Ваше виділення вже збережено."
     create failure: "Помилка збереження підсвітки"
     destroy success: "Підсвітку вилучено"
     destroy failure: "Помилка вилучення підсвітки"
     creation error: "Вибачте, неможливо виділити."
     delete error: "Вибачте, неможливо видалити виділення."
+    form:
+      save button: "Зберегти виділення"
   searching:
     bible: "Біблія"
-    plans: "Плани читання"
+    plans: "Плани"
     users: "Користувачі"
     notes: "Нотатки"
     total results: "Про %{total} Результати"
     suggestion html: "Чи мали ви на увазі %{suggestion_link}?"
     all versions: "Всі %{language_name} Версії"
+    results for: "Результати пошуку для:"
   donate:
     donate now: "Пожертвувати"
     donate now intl: "або через PayPal (інші країни)"
@@ -876,9 +898,6 @@ uk:
     public domain: "Загальнодоступний домен"
     loading: "Завантажуються інші версії…"
     load error: "На жаль, виникла проблема при завантаженні інших версій. Закрийте це меню і спробуйте відкрити знову."
-  reader help:
-    title: "Вибрати вірш…"
-    line 1: "Клацайте або натискайте на будь-який вірш чи збірку віршів, щоб закласти, виділити, створити нотатку або поділитися з друзями!"
   campaigns:
     100m:
       logo: "YouVersion: програма Біблія"
@@ -908,3 +927,9 @@ uk:
       sidebar:
         tagline: "Створюймо історію разом."
         button: "Поділитися Біблією"
+  ui:
+    pagination:
+      next page: "Наступна сторінка"
+      previous page: "Попередня сторінка"
+    datetime:
+      just now: "щойно"

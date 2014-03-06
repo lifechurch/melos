@@ -34,6 +34,7 @@ it:
     users username required: "Devi scrivere un username."
     users first name required: "Devi scrivere un nome."
     users last name required: "Devi scrivere un cognome."
+    moments content required: "Il campo non può essere vuoto."
   meta:
     kids_app:
       title: "L'App Bibbia per Ragazzi"
@@ -47,8 +48,6 @@ it:
     connections:
       index:
         title: "Account Collegati"
-  ui:
-    loading indicator text: "Caricando ..."
   now: "Ora"
   celebrating 50MM: "Celebrando 50 milioni di installazioni!"
   link: "Collegamento"
@@ -67,7 +66,7 @@ it:
   new note: "Nuova Nota"
   share success: "Il tuo messaggio è stato condiviso."
   share error: "Scusa, c'è stato un errore nel condividere il tuo messaggio. Riprova per favore."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Collegati al tuo account %{connection}"
   deleted connection: "Il collegamento con %{connection} è stato rimosso con successo."
   deleted connection error: "Scusa, c'è stato un problema nel rimuovere il tuo collegamento con  %{connection}"
@@ -141,11 +140,9 @@ it:
   live: "Live/Gruppi"
   first page: "Prima Pagina"
   last page: "Ultima Pagina"
-  next page: "Prossima Pagina"
-  previous page: "Pagina Precedente"
   invalid username or password: "Username o password invalido."
   show all bookmarks: "Visualizza tutti i %{total} segnalibri"
-  show all notes: "Visualizza tutte le %{total} note"
+  show all notes: "Vedi tutte le note"
   recent bookmarks: "Segnalibri Recenti"
   percentage display: "%{number}%"
   myself: "Me"
@@ -172,7 +169,9 @@ it:
       go to scripture: "Vai alla Bibbia"
       load more: "Carica ancora"
       like: "Mi Piace"
+      liked: "Mi Piace"
       like title: "Mi piace"
+      last comment: "Ultimo commento"
       share: "Condividi"
       share title: "Condividi questo con gli amici o la famiglia"
       comment: "Commento"
@@ -191,10 +190,18 @@ it:
     none: "Non hai notifiche"
     no new: "Nessuna notifica nuova"
     view all: "Vedi tutti le Notifiche"
+  likes:
+    create success: "Successo! Il tuo \"mi piace\" è stato salvato"
+    create failure: "Non è stato possibile salvare il tuo \"mi piace\""
+    destroy success: "\"Mi piace\" cancellato"
+    destroy failure: "Non è stato possibile cancellare il tuo \"mi piace\""
   comments:
+    view all N: "Vedi tutti i %{count} commenti"
     post comment: "Pubblica un commento"
-    create success: "Commento pubblicato"
+    create success: "Successo! Il tuo commento è stato pubblicato"
     create failure: "Commento non poteva essere pubblicato"
+    destroy success: "Commento cancellato"
+    destroy failure: "Non è stato possibile cancellare il commento"
     form:
       save button: "Pubblicare"
   friends:
@@ -208,7 +215,7 @@ it:
   friendships:
     offer success: "Richiesta di amicizia inoltrata"
     offer failure: "Errore nell'inoltro della richiesta di amicizia"
-    create success: "Ora siete amici"
+    create success: "Successo! Adesso avete stretto amicizia."
     create failure: "Errore nella creazione dell'amicizia"
     destroy success: "Richiesta rifiutata"
     destroy failure: "Errore nel rifiuto della richiesta"
@@ -241,6 +248,11 @@ it:
       reference field: "Riferimento(i):"
       status field: "Status:"
       save button: "Salva"
+    status:
+      private: "Privato"
+      public: "Pubblico"
+      friends: "Solo amici"
+      draft: "Bozze"
     list title: "Note"
     loading community: "Sto caricando le note della comunità..."
     no community notes: "Non sono state trovate note condivise relative ai versetti selezionati. Per creare una nota, seleziona un versetto nel lettore della Bibbia a poi clicca sul pulsante Selezionato nella parte superiore del lettore."
@@ -248,6 +260,7 @@ it:
     private: "Privato"
     is private: "La nota richiesta è privata."
     draft: "Bozza"
+    friends: "Amici"
     creation form errors: "I seguenti errori hanno impedito la creazione della tua nota:"
     reference field: "Riferimento(i):"
     version field: "Versione:"
@@ -268,7 +281,7 @@ it:
     cancel: "Annulla"
     pop out: "Pop out"
     none found: "Nessuna nota trovata..."
-    create success: "Nota salvata"
+    create success: "Successo! La tua nota è stata salvata."
     create failure: "Errore nel salvare la nota"
     destroy success: "Nota eliminata"
     destroy failure: "Errore nell'eliminazione della nota"
@@ -347,7 +360,7 @@ it:
     my badges: "I Miei Distintivi"
     revised date: "L'ultima revisione in %{date}"
     update email copy: "Inserisci un nuovo indirizzo e-mail e clicca Aggiorna Email. Ti manderemo un link per confermare il tuo nuovo indirizzo e-mail."
-    edit email: "Aggiorna Indirizzo E-mail"
+    edit email: "Cambiare Indirizzo E-mail"
     update email check: "Per favore, controlla la tua e-mail e clicca il link per confermare il tuo nuovo indirizzo e-mail."
     confirm update email success: "Grazie! Hai aggiornato il tuo indirizzo e-mail."
     confirm update email error: "Scusa, c'è stato un problema ad aggiornare il tuo indirizzo e-mail."
@@ -500,6 +513,7 @@ it:
       friendships: "Notificami riguardo alle richieste di amicizia"
       moments: "Notificami circa l'attività degli amici"
       comments: "Notificami circa i commenti sulle mie attività"
+      likes: "Notificami circa i \"mi piace\" sulla mia attività"
   bookmarks:
     new: "Nuovo Segnalibro"
     edit: "Modifica"
@@ -513,7 +527,7 @@ it:
     not found: "I segnalibri ti danno una rapida guida di riferimento ai tuoi brani preferiti o all'ultimo capitolo che hai letto nel libro specifico. Per aggiungere un segnalibro, seleziona un versetto nel lettore Bibbia e poi clicca il bottone Selezionati in alto nel lettore."
     other user not found: "%{username} non ha ancora salvato dei segnalibri."
     creation form errors: "I(l) seguenti/e errori hanno impedito la creazione del tuo segnalibro:"
-    create success: "Segnalibro salvato"
+    create success: "Successo! Il tuo segnalibro è stato salvato."
     destroy success: "Segnalibro eliminato"
     destroy failure: "Errore nell'eliminazione del segnalibro"
     update success: "Segnalibro aggiornato"
@@ -545,6 +559,11 @@ it:
     none me: "Non hai ancora guadagnato nessun distintivo."
     none user: "%{username} non ha ancora guadagnato nessun distintivo."
   plans:
+    settings: "Opzioni"
+    privacy:
+      visible to friends?: "Vuoi che la tua attività con questo piano sia visibile per i tuoi amici?"
+      private: "Privato"
+      public: "Pubblico"
     title: "Piani di Lettura"
     browse by category: "Sfoglia per Categoria"
     browse plans: "Sfoglia i Piani di %{category}"
@@ -575,7 +594,6 @@ it:
     no public plans: "Nessun piano di lettura è visibile per %{username}."
     filter by lang: "Filtra i Piani per Lingua"
     plan settings: "Configurazione Piano"
-    settings: "Opzioni"
     search: "Cerca"
     search placeholder: "Cerca Piani di %{category}"
     subscribe to plan: "Comincia Questo Piano"
@@ -688,25 +706,29 @@ it:
     chapter only: "Ci dispiace, l'audio non è disponibile per i versetti. Utilizza il lettore per l'audio del capitolo."
     close player menu: "Chiudi"
   highlights:
+    title: "Evidenziazioni"
     blank slate:
-      heading: "Crea un segnalibro per i versetti significativi"
+      heading: "Evidenzia i versetti significativi"
       description: "Mentre leggi la Bibbia, seleziona un versetto e crea un segnalibro. Ritorna qui per visualizzare, modificare o cancellare i tuoi segnalibri."
     none user: "%{username} non ha evidenziazioni"
     choose color: "Scegli Colore"
-    create success: "Evidenziazione salvata"
+    create success: "Successo! La tua evidenziazione è stata salvata"
     create failure: "Errore nel salvare evidenziazione"
     destroy success: "Evidenziazione eliminata"
     destroy failure: "Errore nell'eliminazione dell'evidenziazione"
     creation error: "Ci dispiace, non si può evidenziare."
     delete error: "Ci dispiace, non si può togliere l'evidenziazione."
+    form:
+      save button: "Salva Evidenziazione"
   searching:
     bible: "Bibbia"
-    plans: "Piani di Lettura"
+    plans: "Piani"
     users: "Utenti"
     notes: "Note"
     total results: "Circa %{total} Risultati"
     suggestion html: "Intendevi %{suggestion_link}?"
     all versions: "Tutte le Versioni di %{language_name}"
+    results for: "Cerca risultati per:"
   donate:
     donate now: "Dona Ora"
     donate now intl: "o fare una donazione internazionale"
@@ -715,7 +737,7 @@ it:
     promo 3: "Quest'anno, più di 5 miliardi di persone utilizzeranno un telefono cellulare. Dona ora."
     headline: "Tutti hanno bisogno della Parola di Dio."
     subhead: "Aiuta le persone in tutto il mondo ad avere la Bibbia a portata di mano."
-    copy: "Immagina di poter dare gratuitamente una Bibbia a ogni persona nel mondo. Quando doni a YouVersione, puoi fare proprio questo. Viviamo in tempi di cui altri hanno solo sognato &ndash; quando chiunque con un telefono cellulare può accedere alla Bibbia e sperimentare la storia dell'amore di Dio per noi. Con il tuo sostegno, possiamo continuare ad aiutare più persone a passare più tempo nella Scrittura."
+    copy: "Immagina di poter dare gratuitamente una Bibbia a ogni persona nel mondo. Quando doni a YouVersion, puoi fare proprio questo. Viviamo in tempi di cui altri hanno solo sognato &ndash; quando chiunque con un telefono cellulare può accedere alla Bibbia e sperimentare la storia dell'amore di Dio per noi. Con il tuo sostegno, possiamo continuare ad aiutare più persone a passare più tempo nella Scrittura."
     amount: "Ammontare della donazione"
     option once: "Una volta"
     option monthly: "Mensilmente"
@@ -876,9 +898,6 @@ it:
     public domain: "Dominio Pubblico"
     loading: "Caricando Altre Versioni..."
     load error: "Ci dispiace, c'è stato un problema nel caricare ulteriori versioni. Chiudi questo menu e riprova."
-  reader help:
-    title: "Scegli un versetto..."
-    line 1: "Clicca o tocca un versetto o insieme di versetti per creare un segnalibro, per evidenziare, creare una nota o condividere con i tuoi amici!"
   campaigns:
     100m:
       logo: "YouVersion: l'App Bibbia"
@@ -908,3 +927,9 @@ it:
       sidebar:
         tagline: "Facciamo la storia insieme!"
         button: "Condividi l'App  Bibbia"
+  ui:
+    pagination:
+      next page: "Prossima Pagina"
+      previous page: "Pagina Precedente"
+    datetime:
+      just now: "proprio adesso"

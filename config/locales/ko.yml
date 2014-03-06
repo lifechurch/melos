@@ -34,6 +34,7 @@ ko:
     users username required: "사용자명을 입력해주세요,"
     users first name required: "이름을 입력해주세요."
     users last name required: "성을 입력해 주세요."
+    moments content required: "내용이 있어야 합니다."
   meta:
     kids_app:
       title: "어린이들을 위한 성경 앱"
@@ -47,8 +48,6 @@ ko:
     connections:
       index:
         title: "접속 계정"
-  ui:
-    loading indicator text: "로딩 중 ..."
   now: "실시간 현황"
   celebrating 50MM: "축 5천만째 설치!"
   link: "링크"
@@ -141,11 +140,8 @@ ko:
   live: "라이브/그룹"
   first page: "첫 페이지"
   last page: "마지막 페이지"
-  next page: "다음 페이지"
-  previous page: "이전 페이지"
   invalid username or password: "사용자명 혹은 비밀번호 오류."
   show all bookmarks: "전체 %{total} 책갈피 보기"
-  show all notes: "전체 %{total} 노트 보기"
   recent bookmarks: "최근 책갈피"
   percentage display: "%{number}%"
   myself: "나"
@@ -172,6 +168,7 @@ ko:
       go to scripture: "말씀으로 가기"
       load more: "추가 로드"
       like: "좋아요"
+      liked: "좋아함"
       like title: "좋아요"
       share: "공유"
       share title: "친구들이나 가족과 공유하기"
@@ -191,10 +188,16 @@ ko:
     none: "알림 공지가 없습니다"
     no new: "새로운 알림"
     view all: "모든 알림 공지 보기"
+  likes:
+    create failure: "좋아요가 저장되지 않았습니다."
+    destroy success: "좋아요가 삭제되었습니다."
+    destroy failure: "좋아요가 삭제되지 않았습니다."
   comments:
+    view all N: "%{count} 댓글 모두 보기"
     post comment: "댓글 달기"
-    create success: "댓글이 달렸습니다"
     create failure: "댓글을 달 수가 없습니다"
+    destroy success: "댓글 삭제됨"
+    destroy failure: "댓글이 삭제되지 않았습니다."
     form:
       save button: "올리기"
   friends:
@@ -208,7 +211,6 @@ ko:
   friendships:
     offer success: "친구 신청 보냄"
     offer failure: "친구신청 오류"
-    create success: "회원님은 이제 친구입니다"
     create failure: "친구맺기 오류"
     destroy success: "요청이 거절되었습니다"
     destroy failure: "친구거절 오류"
@@ -241,6 +243,11 @@ ko:
       reference field: "참조구절:"
       status field: "상태:"
       save button: "저장"
+    status:
+      private: "비공개"
+      public: "공개"
+      friends: "친구들만"
+      draft: "임시저장"
     list title: "노트"
     loading community: "공동체 노트 로딩중 ..."
     no community notes: "선택하신 구절에 관한 공동체 노트가 없습니다. 노트 작성을 원하시면 성경 리더에서 원하는 구절을 선택한 후 리더 상단에 있는  '선택' 버튼을 클릭하면 됩니다."
@@ -248,6 +255,7 @@ ko:
     private: "비공개"
     is private: "요청하신 노트는 비공개입니다."
     draft: "임시저장"
+    friends: "내 친구"
     creation form errors: "다음의 오류로인해서 노트가 생성되지 않았습니다:"
     reference field: "참조구절:"
     version field: "구절:"
@@ -268,7 +276,6 @@ ko:
     cancel: "취소"
     pop out: "다른 창에서 보기"
     none found: "노트가 없습니다..."
-    create success: "노트 저장됨"
     create failure: "노트 저장 오류"
     destroy success: "노트 삭제됨"
     destroy failure: "노트삭제 오류"
@@ -514,7 +521,6 @@ ko:
     not found: "책갈피는 좋아하는 구절이나 마지막으로 읽은 부분으로 즉시 이동할 수 있도록 도와드립니다. 책갈피를 해두기 위해서는, 먼저 성경 리더에서 원하는 구절을 선택한 후 리더 상단의 '선택' 버튼을 클릭하면 됩니다."
     other user not found: "%{username}님이 등록한 책갈피는 아직 없습니다."
     creation form errors: "아래의 이유로 인해서 책갈피가 만들어지지 않았습니다."
-    create success: "책갈피 저장됨"
     destroy success: "책갈피 제거"
     destroy failure: "책갈피 삭제 오류"
     update success: "책갈피가 업데이트 되었습니다."
@@ -546,6 +552,11 @@ ko:
     none me: "아직 획득한 배지가 없습니다."
     none user: "%{username}님은 아직 받은 배지가 없습니다."
   plans:
+    settings: "설정"
+    privacy:
+      visible to friends?: "이 묵상 계획과 관련된 회원님의 활동이 친구들에게 보여지길 원하십니까?"
+      private: "비공개"
+      public: "공개"
     title: "묵상"
     browse by category: "카테고리별 보기"
     browse plans: "%{category} 항목의 계획 보기"
@@ -576,7 +587,6 @@ ko:
     no public plans: "%{username}님의 공개된 읽기계획이 없습니다."
     filter by lang: "언어별 계획 보기"
     plan settings: "계획 설정"
-    settings: "설정"
     search: "검색"
     search placeholder: "%{category} 항목 계획 검색"
     subscribe to plan: "계획 시작"
@@ -689,25 +699,28 @@ ko:
     chapter only: "죄송합니다. 오디오는 구절별로 제공되지 않습니다. 리더에서 해당 장으로 가서 오디오를 이용하세요."
     close player menu: "닫기"
   highlights:
+    title: "하이라이트"
     blank slate:
       heading: "의미있는 구절 하이라이트하기 "
       description: "성경을 읽으는 중 원하시는 말씀을 선택하여 하이라이트 하세요. 다시 이곳으로 돌아와서 다시 보거나, 수정 혹은 삭제 하실 수 있습니다."
     none user: "%{username}님은 하이라이트하신 말씀이 없습니다"
     choose color: "색깔을 선택하세요."
-    create success: "하이라이트 저장"
     create failure: "하이라이트 저장오류"
     destroy success: "하이라이트 삭제"
     destroy failure: "하이라이트 삭제 오류"
     creation error: "죄송합니다. 하이라이트를 할 수 없습니다."
     delete error: "죄송합니다. 하이라이트를 제거 할 수 없습니다."
+    form:
+      save button: "하일라이트 저장"
   searching:
     bible: "성경"
-    plans: "읽기 계획"
+    plans: "묵상"
     users: "사용자"
     notes: "노트"
     total results: "약 %{total}건의 검색 결과"
     suggestion html: "%{suggestion_link}을 원하셨나요?"
     all versions: "%{language_name} 전체 번역본"
+    results for: "검색 결과: "
   donate:
     donate now: "지금 후원하기"
     donate now intl: "해외에서 후원하기"
@@ -877,9 +890,6 @@ ko:
     public domain: "공개판"
     loading: "번역본 추가 로딩중 ..."
     load error: "번역본을 추가로 로딩하는 중 오류가 발생했습니다.  메뉴를 닫으신 후에 다시 시도를 해주세요."
-  reader help:
-    title: "구절 선택하기 ..."
-    line 1: "원하시는 구절을 클릭하거나 탭하시면 책갈피, 하이라이트, 노트작성, 또는 다른 친구들과 공유하실 수있습니다."
   campaigns:
     100m:
       logo: "YouVersion: 성경 앱"
@@ -909,3 +919,9 @@ ko:
       sidebar:
         tagline: "역사를 함께 만들어 나가요."
         button: "성경 앱을 공유해 주세요."
+  ui:
+    pagination:
+      next page: "다음 페이지"
+      previous page: "이전 페이지"
+    datetime:
+      just now: "지금"

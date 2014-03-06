@@ -34,6 +34,7 @@ ro:
     users username required: "Trebuie să introduci un nume de utilizator."
     users first name required: "Trebuie să introduci un prenume."
     users last name required: "Trebuie să introduci un nume."
+    moments content required: "Conținutul nu poate fi necompletat."
   meta:
     kids_app:
       title: "Aplicația Biblia pentru copii"
@@ -47,8 +48,6 @@ ro:
     connections:
       index:
         title: "Conturi conectate"
-  ui:
-    loading indicator text: "Se încarcă ..."
   now: "Acum"
   celebrating 50MM: "Sărbătorind 50 de milioane de instalări ale aplicației!"
   link: "Legătură"
@@ -67,7 +66,7 @@ ro:
   new note: "Notiță nouă"
   share success: "Mesajul tău a fost partajat."
   share error: "Ne pare rău, s-a produs o eroare la partajarea mesajului tău. Încearcă din nou."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Conectează-te la contul tău de %{connection}."
   deleted connection: "Conexiunea ta cu %{connection} a fost eliminată cu succes."
   deleted connection error: "Ne pare rău, s-a produs o eroare la deconectarea de la %{connection}."
@@ -141,11 +140,9 @@ ro:
   live: "Live/Grupuri"
   first page: "Prima pagină"
   last page: "Ultima pagină"
-  next page: "Pagina următoare"
-  previous page: "Pagina anterioară"
   invalid username or password: "Nume de utilizator sau parolă invalide."
   show all bookmarks: "Arată toate cele %{total} marcaje"
-  show all notes: "Vezi toate cele %{total} notițe"
+  show all notes: "Vezi toate notițele"
   recent bookmarks: "Marcaje recente"
   percentage display: "%{number}%"
   myself: "Eu"
@@ -172,7 +169,9 @@ ro:
       go to scripture: "Du-te la scriptură"
       load more: "Încarcă mai mult"
       like: "Apreciez"
+      liked: "Îmi place"
       like title: "Apreciază"
+      last comment: "Ultimul comentariu"
       share: "Partajează"
       share title: "Împărtășește cu prietenii ori familia"
       comment: "Comentariu"
@@ -191,10 +190,18 @@ ro:
     none: "Nu ai notificări"
     no new: "Nici o notificare nouă."
     view all: "Vizualizează toate notificările"
+  likes:
+    create success: "Succes! Aprecierea ta a fost salvată"
+    create failure: "Aprecierea ta nu a putut fi salvată"
+    destroy success: "Apreciere ștearsă"
+    destroy failure: "Aprecierea ta nu a putut fi ștearsă"
   comments:
+    view all N: "Vezi toate cele %{count} comentarii"
     post comment: "Postează un comentariu"
-    create success: "Comentariu postat"
+    create success: "Succes! Comentariul tău a fost postat."
     create failure: "Comentariul nu a putut fi postat"
+    destroy success: "Comentariu șters"
+    destroy failure: "Comentariul nu a putut fi șters"
     form:
       save button: "Postează"
   friends:
@@ -208,7 +215,7 @@ ro:
   friendships:
     offer success: "Cerere de prietenie trimisă"
     offer failure: "S-a produs o eroare la trimiterea cererii de prietenie"
-    create success: "Acum sunteți prieteni"
+    create success: "Succes! Acum sunteți prieteni."
     create failure: "S-a produs o eroare la crearea prieteniei"
     destroy success: "Cerere refuzată"
     destroy failure: "S-a produs o eroare la refuzarea prieteniei"
@@ -241,6 +248,11 @@ ro:
       reference field: "Referințe:"
       status field: "Status:"
       save button: "Salvează"
+    status:
+      private: "Privat"
+      public: "Public"
+      friends: "Doar prieteni"
+      draft: "Ciornă"
     list title: "Notițe"
     loading community: "Se încarcă notițele comunității..."
     no community notes: "Nu a fost găsită nicio notiță a comunității cu privire la versetele selectate. Pentru a crea o notiță, alege un verset în cititorul de Biblie, apoi fă click pe butonul Selectează aflat în partea de sus a cititorului."
@@ -248,6 +260,7 @@ ro:
     private: "Privat"
     is private: "Notița solicitată este privată."
     draft: "Ciornă"
+    friends: "Prieteni"
     creation form errors: "Următoarele erori au împiedicat crearea notiței tale:"
     reference field: "Referința(e):"
     version field: "Versiunea:"
@@ -268,7 +281,7 @@ ro:
     cancel: "Anulează"
     pop out: "Mărește"
     none found: "Nu au fost găsite notițe"
-    create success: "Notiță salvată"
+    create success: "Succes! Notița ta a fost salvată."
     create failure: "Eroare la salvarea notiței"
     destroy success: "Notița a fost ștearsă"
     destroy failure: "S-a produs o eroare la ștergerea notiței"
@@ -347,7 +360,7 @@ ro:
     my badges: "Insignele mele"
     revised date: "Revizuit ultima oară pe %{date}"
     update email copy: "Introdu o adresă nouă de e-mail și apasă Actualizează E-mail. Îți vom trimite o legătură pentru a confirma noua adresă."
-    edit email: "Actualizează adresa de e-mail"
+    edit email: "Schimbă adresa de e-mail"
     update email check: "Verifică-ți e-mailul și fă click pe legătură pentru a confirma noua adresă."
     confirm update email success: "Mulțumim. Ți-ai actualizat adresa de e-mail."
     confirm update email error: "Ne pare rău, a apărut o problemă în schimbarea adresei de e-mail."
@@ -500,6 +513,7 @@ ro:
       friendships: "Anunță-mă despre cererile de prietenie"
       moments: "Anunță-mă despre activitatea prietenilor"
       comments: "Anunță-mă despre comentarii asupra activității mele"
+      likes: "Anunță-mă despre aprecierile la activitatea mea"
   bookmarks:
     new: "Marcaj nou"
     edit: "Modifică"
@@ -513,7 +527,7 @@ ro:
     not found: "Marcajele sunt un bun îndrumător către pasajele tale favorite sau către ultimul capitol pe care l-ai citit dintr-o carte. Pentru a adăuga un marcaj, selectează versetul și apoi apasă butonul de adăugare marcaj."
     other user not found: "%{username} nu a salvat încă niciun marcaj."
     creation form errors: "Următoarele erori au împiedicat crearea unui marcaj:"
-    create success: "Marcaj salvat"
+    create success: "Succes! Marcajul tău a fost salvat."
     destroy success: "Marcaj șters"
     destroy failure: "S-a produs o eroare la ștergerea marcajului"
     update success: "Marcaj actualizat"
@@ -545,6 +559,11 @@ ro:
     none me: "Încă nu ai primit nici o insignă."
     none user: "%{username} nu a primit nici o insignă încă."
   plans:
+    settings: "Setări"
+    privacy:
+      visible to friends?: "Dorești ca activitatea ta legată de acest plan să fie vizibilă prietenilor tăi?"
+      private: "Privat"
+      public: "Public"
     title: "Planuri de citire"
     browse by category: "Răsfoiește după categorie"
     browse plans: "Răfoieşte planurile din %{category}"
@@ -575,7 +594,6 @@ ro:
     no public plans: "Nu există niciun plan de citire vizibil pentru %{username}."
     filter by lang: "Filtrează planurile după limbă"
     plan settings: "Setările Planului"
-    settings: "Setări"
     search: "Caută"
     search placeholder: "Caută %{category}"
     subscribe to plan: "Începe acest plan"
@@ -688,17 +706,20 @@ ro:
     chapter only: "Ne pare rău, nu există material audio pentru versete. Accesează partea audio pentru întregul capitol în cititor."
     close player menu: "Închide"
   highlights:
+    title: "Evidențieri"
     blank slate:
       heading: "Evidențiază versetele semnificative"
       description: "În timpul citirii Bibliei, selectează un verset și evidențiază-l. Revino aici pentru a vizualiza, pentru a edita sau pentru a șterge evidențierile."
     none user: "%{username} nu are evidențieri"
     choose color: "Alege culoare"
-    create success: "Evidențiere salvată"
+    create success: "Succes! Evidențierea ta a fost salvată"
     create failure: "S-a produs o eroare la salvarea evidențierii"
     destroy success: "Evidențiere ștearsă"
     destroy failure: "S-a produs o eroare la ștergerea evidențierii"
     creation error: "Ne pare rău, nu se poate evidenția."
     delete error: "Ne pare rău, evidențierea nu poate fi eliminată."
+    form:
+      save button: "Salvează evidențiere"
   searching:
     bible: "Biblia"
     plans: "Planuri de citire"
@@ -707,6 +728,7 @@ ro:
     total results: "Aproximativ %{total} rezultate"
     suggestion html: "Ai vrut să spui %{suggestion_link}?"
     all versions: "Toate versiunile %{language_name}"
+    results for: "Rezultatele căutării pentru:"
   donate:
     donate now: "Donează acum"
     donate now intl: "sau donează din afara Statelor Unite"
@@ -876,9 +898,6 @@ ro:
     public domain: "Domeniu public"
     loading: "Se încarcă mai multe versiuni..."
     load error: "S-a produs o eroare la încărcarea mai multor versiuni. Pentru a încerca din nou, închide și apoi redeschide acest meniu."
-  reader help:
-    title: "Selectează un verset..."
-    line 1: "Fă clic sau atinge orice verset sau colecție de versete pentru a marca, a evidenția, a crea o notiță sau a partaja cu prietenii!"
   campaigns:
     100m:
       logo: "YouVersion: Aplicația Biblia"
@@ -908,3 +927,9 @@ ro:
       sidebar:
         tagline: "Să facem istorie împreună."
         button: "Împărtășește Aplicația Biblia"
+  ui:
+    pagination:
+      next page: "Pagina următoare"
+      previous page: "Pagina anterioară"
+    datetime:
+      just now: "chiar acum"

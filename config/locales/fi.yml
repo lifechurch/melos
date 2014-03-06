@@ -34,6 +34,7 @@ fi:
     users username required: "Käytäjänimi täytyy syöttää."
     users first name required: "Etunimi täytyy syöttää."
     users last name required: "Sukunimi täytyy syöttää."
+    moments content required: "Sisältö puuttuu."
   meta:
     kids_app:
       title: "Raamattusovellus lapsille"
@@ -47,8 +48,6 @@ fi:
     connections:
       index:
         title: "Yhdistetyt tilit"
-  ui:
-    loading indicator text: "Ladataan ..."
   now: "Nyt"
   celebrating 50MM: "Juhlimme 50 miljoonatta asennettua sovellusta!"
   link: "Linkki"
@@ -67,7 +66,7 @@ fi:
   new note: "Luo uusi muistiinpano"
   share success: "Viestisi on jaettu."
   share error: "Viestisi jakamisessa on tapahtunut virhe. Ole hyvä ja yritä uudelleen."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Yhdistä %{connection} -tiliisi"
   deleted connection: "Yhteytesi on poistettu onnistuneesti kohteesta %{connection}."
   deleted connection error: "Valitettavasti %{connection}  -yhteytesi poistaminen epäonnistui."
@@ -141,11 +140,9 @@ fi:
   live: "Live/Ryhmät"
   first page: "Ensimmäinen sivu"
   last page: "Viimeinen sivu"
-  next page: "Seuraava sivu"
-  previous page: "Edellinen sivu"
   invalid username or password: "Virheellinen käyttäjänimi tai salasana."
   show all bookmarks: "Näytä kaikki %{total} kirjanmerkkiä"
-  show all notes: "Katso kaikki %{total} muistiinpanoa"
+  show all notes: "Näytä kaikki muistiinpanot"
   recent bookmarks: "Viimeisimmät kirjanmerkit"
   percentage display: "%{number}%"
   myself: "Minä"
@@ -172,7 +169,9 @@ fi:
       go to scripture: "Mene raamatunkohtaan"
       load more: "Lataa lisää"
       like: "Tykkää"
+      liked: "Tykätty"
       like title: "Tykkää tästä"
+      last comment: "Viimeinen kommentti"
       share: "Jaa"
       share title: "Jaa ystävien tai perheen kanssa"
       comment: "Kommentoi"
@@ -191,10 +190,18 @@ fi:
     none: "Ei ilmoituksia"
     no new: "Ei uusia ilmoituksia"
     view all: "Näytä kaikki ilmoitukset"
+  likes:
+    create success: "OK! Tykkäyksesi on tallennettu"
+    create failure: "Tykkäystäsi ei voitu tallentaa"
+    destroy success: "Tykkäys poistettu"
+    destroy failure: "Tykkäystäsi ei voitu poistaa"
   comments:
+    view all N: "Näytä kaikki %{count} kommenttia"
     post comment: "Lähetä kommentti"
-    create success: "Kommentti lähetetty"
+    create success: "OK! Kommenttisi lähetettiin."
     create failure: "Kommenttia ei voitu lähettää"
+    destroy success: "Kommentti poistettu"
+    destroy failure: "Kommenttia ei voitu poistaa"
     form:
       save button: "Lähetä"
   friends:
@@ -208,7 +215,7 @@ fi:
   friendships:
     offer success: "Kaveripyyntö lähetetty"
     offer failure: "Kaveripyynnön lähetys epäonnistui"
-    create success: "Olette nyt ystäviä"
+    create success: "OK! Olette nyt ystäviä."
     create failure: "Ystävyyden muodostaminen epäonnistui"
     destroy success: "Pyyntö hylätty"
     destroy failure: "Pyynnön hylkäys epäonnistui"
@@ -241,6 +248,11 @@ fi:
       reference field: "Viitteet:"
       status field: "Tila:"
       save button: "Tallenna"
+    status:
+      private: "Yksityinen"
+      public: "Julkinen"
+      friends: "Vain ystävät"
+      draft: "Luonnos"
     list title: "Muistiinpanot"
     loading community: "Yhteisön tekemiä muistiinpanoja ladataan..."
     no community notes: "Yksikään yhteisön tekemä muistiinpano ei viittaa löytämiimme versioihin. Luodaksesi muistiinpanon, valitse Raamatun jae lukijassa ja klikkaa Valittu-painiketta lukijan yläosassa."
@@ -248,6 +260,7 @@ fi:
     private: "Yksityinen"
     is private: "Valittu muistiinpano on yksityinen."
     draft: "Luonnos"
+    friends: "Ystävät"
     creation form errors: "Seuraava virhe (seuraavat virheet) estivät muistiinpanon luomisen:"
     reference field: "Viitteet"
     version field: "Käännös:"
@@ -268,7 +281,7 @@ fi:
     cancel: "Peruuta"
     pop out: "Näytä"
     none found: "Muistiinpanoja ei löytynyt..."
-    create success: "Muistiinpano tallennettu"
+    create success: "OK! Muistiinpanosi tallennettiin."
     create failure: "Muistiinpanon tallennus epäonnistui"
     destroy success: "Muistiinpano poistettu"
     destroy failure: "Muistiinpanon poistaminen epäonnistui"
@@ -347,7 +360,7 @@ fi:
     my badges: "Omat ansiomerkkini"
     revised date: "Viimeksi tarkistettu %{date}"
     update email copy: "Syötä uusi sähköpostiosoite ja klikkaa Päivitä sähköpostiosoite. Lähetämme sinulle linkin, jota klikkaamalla vahvistat uuden sähköpostiosoitteesi."
-    edit email: "Päivitä sähköpostiosoite"
+    edit email: "Vaihda sähköpostiosoite"
     update email check: "Ole hyvä ja tarkista sähköpostisi, klikkaa linkkiä vahvistaaksesi uuden sähköpostiosoitteesi."
     confirm update email success: "Kiitos! Olet päivittänyt sähköpostiosoitteesi."
     confirm update email error: "Valitettavasti sähköpostiosoitteen vaihtamisessa tapahtui virhe."
@@ -500,6 +513,7 @@ fi:
       friendships: "Ilmoita minulle ystäväpyynnöistä"
       moments: "Ilmoita minulle ystävien toiminnasta"
       comments: "Ilmoita kommenteista toiminnalleni"
+      likes: "Ilmoita minulle, kun joku tykkää toiminnastani"
   bookmarks:
     new: "Uusi kirjanmerkki"
     edit: "Muokkaa"
@@ -513,7 +527,7 @@ fi:
     not found: "Kirjanmerkit toimivat pikaoppaana suosikkikappaleisiisi tai viimeisimpään lukemaasi lukuun jossakin tietyssä kirjassa. Lisätäksesi kirjanmerkin, valitse jae lukijassa ja klikkaa Valittu-nappia lukijan yläosassa."
     other user not found: "%{username} ei ole vielä tallentanut kirjanmerkkejä."
     creation form errors: "Kirjanmerkin luominen estyi seuraavien virheiden takia:"
-    create success: "Kirjanmerkki tallennettu"
+    create success: "OK! Kirjanmerkkisi tallennettiin."
     destroy success: "Kirjanmerkki poistettu"
     destroy failure: "Kirjanmerkin poisto epäonnistui"
     update success: "Kirjanmerkki päivitetty"
@@ -545,6 +559,11 @@ fi:
     none me: "Et ole vielä ansainnut yhtään ansiomerkkiä."
     none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
   plans:
+    settings: "Asetukset"
+    privacy:
+      visible to friends?: "Haluatko tähän suunnitelmaan liittyvän toimintasi näkyvän ystävillesi?"
+      private: "Yksityinen"
+      public: "Julkinen"
     title: "Lukusuunnitelmat"
     browse by category: "Selaa aiheittain"
     browse plans: "Selaa kategorian %{category} suunnitelmia"
@@ -575,7 +594,6 @@ fi:
     no public plans: "Käyttäjän %{username} lukusuunnitelmat eivät ole nähtävissä."
     filter by lang: "Suodata suunnitelmat kielen perusteella"
     plan settings: "Suunnitelman asetukset"
-    settings: "Asetukset"
     search: "Hae"
     search placeholder: "Hae kategorian %{category} suunnitelmat"
     subscribe to plan: "Aloita tämä suunnitelma"
@@ -688,25 +706,29 @@ fi:
     chapter only: "Valitettavasti ääntä ei ole saatavissa jaekohtaisesti. Luku on kuunneltavissa lukijan kautta."
     close player menu: "Sulje"
   highlights:
+    title: "Korostukset"
     blank slate:
       heading: "Korosta tärkeitä jakeita"
       description: "Lukiessasi Raamattua, valitse jae ja lisää siihen korostus. Palaa tänne kun haluat katsoa, muokata tai poistaa korostuksia."
     none user: "%{username}:lla ei ole korostuksia"
     choose color: "Valitse väri"
-    create success: "Korostus tallennettu"
+    create success: "OK! Korostuksesi tallennettiin"
     create failure: "Korostuksen tallennus epäonnistui"
     destroy success: "Korostus poistettu"
     destroy failure: "Korostuksen poisto epäonnistui"
     creation error: "Valitettavasti korostaminen ei onnistunut."
     delete error: "Valitettavasti korostuksen poistaminen ei onnistunut."
+    form:
+      save button: "Tallenna korostus"
   searching:
     bible: "Raamattu"
-    plans: "Lukusuunnitelmat"
+    plans: "Suunnitelmat"
     users: "Käyttäjät"
     notes: "Muistiinpanot"
     total results: "%{total} tulosta"
     suggestion html: "Tarkoititko %{suggestion_link}?"
     all versions: "Kaikki käännökset kielellä %{language_name}"
+    results for: "Tulokset haulle:"
   donate:
     donate now: "Tee lahjoitus"
     donate now intl: "tai lahjoita kansainvälisesti"
@@ -876,9 +898,6 @@ fi:
     public domain: "Tekijänoikeusvapaa"
     loading: "Ladataan enemmän käännöksiä..."
     load error: "Käännöksien latauksessa tapahtui valitettavasti virhe. Sulje tämä valikko ja avaa uudestaan."
-  reader help:
-    title: "Valitse jae..."
-    line 1: "Klikkaa tai napauta mitä tahansa jaetta tai jakeita tehdäksesi kirjanmerkin, korostaaksesi, luodaksesi muistiinpanon tai jakaaksesi ystävillesi!"
   campaigns:
     100m:
       logo: "YouVersion: Raamattusovellus"
@@ -908,3 +927,9 @@ fi:
       sidebar:
         tagline: "Tehdään historiaa yhdessä"
         button: "Jaa Raamattusovellus"
+  ui:
+    pagination:
+      next page: "Seuraava sivu"
+      previous page: "Edellinen sivu"
+    datetime:
+      just now: "juuri nyt"

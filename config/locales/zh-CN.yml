@@ -34,6 +34,7 @@ zh-CN:
     users username required: "请务必输入用户名。"
     users first name required: "您必须键入一个名字"
     users last name required: "您必须键入一个姓氏"
+    moments content required: "内容不能留白。"
   meta:
     kids_app:
       title: "儿童圣经软件"
@@ -47,8 +48,6 @@ zh-CN:
     connections:
       index:
         title: "已绑定的账户"
-  ui:
-    loading indicator text: "加载中..."
   now: "今日社区"
   celebrating 50MM: "庆祝5000万的安装！"
   link: "链接"
@@ -67,7 +66,7 @@ zh-CN:
   new note: "新建笔记"
   share success: "您的信息已经成功分享了。"
   share error: "抱歉！分享信息时出错！请重试！"
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "连接到您的 %{connection} 账户"
   deleted connection: "已成功移除与 %{connection} 的关联"
   deleted connection error: "抱歉，在移除您与 %{connection} 的关联时发生错误。"
@@ -141,11 +140,9 @@ zh-CN:
   live: "现场活动/群组"
   first page: "第一页"
   last page: "最后一页"
-  next page: "后一页"
-  previous page: "前一页"
   invalid username or password: "无效的用户名或密码。"
   show all bookmarks: "显示所有的 %{total} 个书签"
-  show all notes: "显示全部 %{total} 笔记"
+  show all notes: "查看所有笔记"
   recent bookmarks: "最近的书签"
   percentage display: "%{number}%"
   myself: "本人"
@@ -172,7 +169,9 @@ zh-CN:
       go to scripture: "进入经文"
       load more: "载入更多"
       like: "赞"
+      liked: "喜欢的"
       like title: "赞一个"
+      last comment: "最近的评论"
       share: "分享"
       share title: "与朋友或家人分享这个"
       comment: "评论"
@@ -191,10 +190,18 @@ zh-CN:
     none: "您没有任何通知"
     no new: "没有新的通知"
     view all: "查看所有通知"
+  likes:
+    create success: "成了！您的点赞已经保存"
+    create failure: "您的赞不能被保存"
+    destroy success: "赞已被删除"
+    destroy failure: "您的赞不能被删除"
   comments:
+    view all N: "查看所有 %{count} 评语"
     post comment: "张贴评语"
-    create success: "评语已张贴"
+    create success: "成了！您的评论已经保存。"
     create failure: "不能张贴评语"
+    destroy success: "评语已被删除"
+    destroy failure: "评语不能被删除"
     form:
       save button: "发布"
   friends:
@@ -208,7 +215,7 @@ zh-CN:
   friendships:
     offer success: "朋友请求以发送"
     offer failure: "发送朋友请求时出错误"
-    create success: "你们现在是朋友了"
+    create success: "成了！你们现在是朋友了。"
     create failure: "建立友情连接时出错误"
     destroy success: "邀请被拒绝"
     destroy failure: "推拒请求时出错误"
@@ -241,6 +248,11 @@ zh-CN:
       reference field: "经节："
       status field: "状态："
       save button: "保存"
+    status:
+      private: "不公开"
+      public: "公开"
+      friends: "朋友而已"
+      draft: "草稿"
     list title: "笔记"
     loading community: "载入社区评论"
     no community notes: "未找到任何有参考经文的社区笔记。要创建笔记，请在圣经阅读器中选择一个经节，然后在顶部点击【选中的】按钮。"
@@ -248,6 +260,7 @@ zh-CN:
     private: "不公开"
     is private: "您想要访问的笔记是保密的。"
     draft: "草稿"
+    friends: "朋友"
     creation form errors: "以下错误使您不能创建笔记："
     reference field: "经节："
     version field: "版本："
@@ -268,7 +281,7 @@ zh-CN:
     cancel: "取消"
     pop out: "弹出"
     none found: "没有找到笔记"
-    create success: "已保存的笔记"
+    create success: "成了！您的笔记已经保存。"
     create failure: "保存笔记错误"
     destroy success: "笔记已删除"
     destroy failure: "删除笔记是出错误"
@@ -347,7 +360,7 @@ zh-CN:
     my badges: "我的徽章"
     revised date: "最后一次修改是在 %{date}"
     update email copy: "输入一个新的电邮地址再点击 【更新电邮】键。我们将发送一个链接给您来确认您的新电邮地址。"
-    edit email: "更新电邮地址"
+    edit email: "更改电子邮箱"
     update email check: "请查看您的电邮并点击链接来确认您的新电邮地址。"
     confirm update email success: "谢谢！您已经成功更新了电邮地址。"
     confirm update email error: "很抱歉，无法更改您的电邮地址！"
@@ -500,6 +513,7 @@ zh-CN:
       friendships: "有朋友请求时通知我"
       moments: "通知我朋友的活动"
       comments: "我的活动有评语时通知我"
+      likes: "我的活动有点赞时通知我。"
   bookmarks:
     new: "新书签"
     edit: "编辑"
@@ -513,7 +527,7 @@ zh-CN:
     not found: "书签能使您快速查询到某一特定书卷中您喜欢的章节或您上次阅读的章节。添加书签的方法是在圣经阅读器中选择一节经文，然后点击阅读器顶部的【选中的】按钮即可。"
     other user not found: "%{username}还没有保存任何书签。"
     creation form errors: "下列错误妨碍了您创建书签："
-    create success: "添加经文书签"
+    create success: "成了！您的书签已经保存。"
     destroy success: "书签已删除"
     destroy failure: "删除书签时出错误"
     update success: "书签已更新"
@@ -545,6 +559,11 @@ zh-CN:
     none me: "您还没有获得任何徽章。"
     none user: "%{username} 还没有获得任何徽章。"
   plans:
+    settings: "设置"
+    privacy:
+      visible to friends?: "您是否愿意让朋友看到您的读经计划的活动？"
+      private: "不公开"
+      public: "公开"
     title: "读经计划"
     browse by category: "分目录浏览"
     browse plans: "浏览 %{category} 类读经计划"
@@ -575,7 +594,6 @@ zh-CN:
     no public plans: "用户 %{username} 还没有公开的读经计划。"
     filter by lang: "按语言筛选读经计划"
     plan settings: "读经计划设置"
-    settings: "设置"
     search: "搜索"
     search placeholder: "搜索%{category}类的读经计划"
     subscribe to plan: "开始此计划"
@@ -688,17 +706,20 @@ zh-CN:
     chapter only: "抱歉，经句不支持语音功能。请在阅读器里查看整章圣经的语音功能。"
     close player menu: "关闭"
   highlights:
+    title: "高亮显示"
     blank slate:
       heading: "高亮显示有意义的经节"
       description: "当阅读圣经时，选择一段经节并加以醒目显示。回到这里来阅读，编辑或删除您的高亮显示。"
     none user: "%{username} 没有高亮显示"
     choose color: "选择颜色"
-    create success: "高亮显示已保存"
+    create success: "成了！您的高亮显示已经保存"
     create failure: "保存高亮显示时出错误"
     destroy success: "高亮显示已删除"
     destroy failure: "删除高亮显示时出错误"
     creation error: "抱歉，不能高亮显示。"
     delete error: "抱歉，无法取消高亮显示。"
+    form:
+      save button: "保存高亮显示"
   searching:
     bible: "圣经"
     plans: "读经计划"
@@ -707,6 +728,7 @@ zh-CN:
     total results: "大约有 %{total} 个结果"
     suggestion html: "您是指%{suggestion_link}吗？"
     all versions: "所有 %{language_name} 版本"
+    results for: "搜索结果："
   donate:
     donate now: "现在就捐赠"
     donate now intl: "或者国际捐赠"
@@ -876,9 +898,6 @@ zh-CN:
     public domain: "公共领域"
     loading: "载入更多译本 ..."
     load error: "抱歉，载入更多译本时出错。关掉这个菜单，再重新打开试试。"
-  reader help:
-    title: "选择一节经文…"
-    line 1: "点击一节或数节经文可标书签、高亮显示、创建笔记或与朋友分享！"
   campaigns:
     100m:
       logo: "YouVersion: 圣经软件"
@@ -908,3 +927,9 @@ zh-CN:
       sidebar:
         tagline: "让我们一起创造历史"
         button: "分享圣经软件"
+  ui:
+    pagination:
+      next page: "后一页"
+      previous page: "前一页"
+    datetime:
+      just now: "刚才"

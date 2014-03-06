@@ -34,6 +34,7 @@ sq:
     users username required: "Ju duhet të shkruani një emër përdoruesi."
     users first name required: "Ju duhet të futni emrin tuaj"
     users last name required: "Ju duhet të futni mbiemrin tuaj"
+    moments content required: "Përmbajtja nuk mund të jetë bosh."
   meta:
     kids_app:
       title: "Programi i Biblës për Fëmijët"
@@ -47,8 +48,6 @@ sq:
     connections:
       index:
         title: "Llogaritë e lidhura"
-  ui:
-    loading indicator text: "Duke vendosur..."
   now: "Tani"
   celebrating 50MM: "Duke festuar 50 milion instalime të programit!"
   link: "Lidhje"
@@ -67,7 +66,7 @@ sq:
   new note: "Shënim i ri"
   share success: "Mesazhi juaj u shpërnda."
   share error: "Më vjen keq, pati një gabim në ndarjen e mesazhit tuaj. Ju lutem provojeni sërish."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Lidhuni me llogarinë tuaj në %{connection}"
   deleted connection: "Lidhja juaj te %{connection} u shkëput suksesshëm."
   deleted connection error: "Më vjen keq, pati një gabim në shkëputjen e lidhjes tuaj te %{connection}."
@@ -101,7 +100,7 @@ sq:
   username or email prompt: "Emri i përdoruesit (ose E-posta)"
   password prompt: "Fjalëkalimi"
   sign in: "Hyr"
-  sign in to youversion: "Hyr te YouVersion"
+  sign in to youversion: "Hyr në YouVersion"
   remove: "Fshij"
   confirm danger: "Po, jam i/e sigurt"
   registered ago: "Regjistruar %{time_ago} më parë"
@@ -141,11 +140,9 @@ sq:
   live: "Live/Grupet"
   first page: "Faqja e parë"
   last page: "Faqja e fundit"
-  next page: "Faqja tjetër"
-  previous page: "Faqja e mëparshme"
   invalid username or password: "Emër përdoruesi ose fjalëkalim i pasaktë."
   show all bookmarks: "Shiko të %{total} shenjuesit"
-  show all notes: "Shiko të %{total} shënimet"
+  show all notes: "Shiko të gjitha shënimet"
   recent bookmarks: "Shenjuesit e fundit"
   percentage display: "%{number}%"
   myself: "Unë"
@@ -172,7 +169,9 @@ sq:
       go to scripture: "Shko te shkrimi"
       load more: "Vendos më shumë"
       like: "Pëlqej"
+      liked: "Të pëlqyer"
       like title: "Pëlqeje"
+      last comment: "Komenti i fundit"
       share: "Ndaje"
       share title: "Ndaje këtë me miqtë ose familjen"
       comment: "Komento"
@@ -191,10 +190,18 @@ sq:
     none: "Ju nuk keni asnjë njoftim"
     no new: "Asnjë njoftim i ri"
     view all: "Shiko të gjitha njoftimet"
+  likes:
+    create success: "Sukses! Pëlqimi juaj u ruajt."
+    create failure: "Pëlqimi juaj nuk mund të ruhej"
+    destroy success: "Pëlqimi u fshi"
+    destroy failure: "Pëlqimi juaj nuk mund të fshihej"
   comments:
+    view all N: "Shiko të %{count} komentet"
     post comment: "Posto një koment"
-    create success: "Komenti u postua"
+    create success: "Sukses! Komenti juaj u postua."
     create failure: "Komenti nuk mund të postohej"
+    destroy success: "Komenti u fshi"
+    destroy failure: "Komenti nuk mund të fshihej"
     form:
       save button: "Posto"
   friends:
@@ -208,7 +215,7 @@ sq:
   friendships:
     offer success: "Kërkesa për miqësi u dërgua"
     offer failure: "Gabim në dërgimin e kërkesës për miqësi"
-    create success: "Ju jeni tani miq"
+    create success: "Sukses! Ju jeni miq tani."
     create failure: "Gabim në krijimin e miqësisë"
     destroy success: "Kërkesa u refuzua"
     destroy failure: "Gabim në refuzimin e kërkesës"
@@ -241,6 +248,11 @@ sq:
       reference field: "Referenca(t):"
       status field: "Statusi:"
       save button: "Ruaje"
+    status:
+      private: "Private"
+      public: "Publike"
+      friends: "Vetëm miqtë"
+      draft: "Draft"
     list title: "Shënime"
     loading community: "Duke hapur shënimet e komunitetit..."
     no community notes: "Nuk u gjet asnjë shënim komuniteti referuar vargjeve të përzgjedhuara. Për të krijuar një shënim, përzgjidh një varg në lexuesin e Biblës dhe më pas kliko butonin Përzgjedhës në krye të lexuesit."
@@ -248,6 +260,7 @@ sq:
     private: "Privat"
     is private: "Shënimi i kërkuar është privat."
     draft: "Draft"
+    friends: "Miqtë"
     creation form errors: "Gabimi(et) më poshtë ndaluan krijimin e shënimit tuaj:"
     reference field: "Referenca(t):"
     version field: "Versioni:"
@@ -268,7 +281,7 @@ sq:
     cancel: "Anulo"
     pop out: "Shfaqet befas"
     none found: "Nuk u gjet asnjë shënim..."
-    create success: "Shënimi u ruajt"
+    create success: "Sukses! Shënimi juaj u ruajt."
     create failure: "Gabim në ruajtjen e shënimit"
     destroy success: "Shënimi u fshi"
     destroy failure: "Gabim me fshirjen e shënimit"
@@ -333,7 +346,7 @@ sq:
     edit account_existence: "Fshij llogarinë"
     delete account button: "Fshije llogarinë time YouVersion"
     no devices: "Asnjë pajisje nuk është e lidhur me llogarinë tuaj YouVersion"
-    no devices download copy: "Bazuar në Biblën online, YouVersion, Programi i Biblës ëhstë një Bibël falas e lëvizshme që mund të instalohet në pothuaj çdo pajisje të lëvizshme. Programi i Biblës u mundëson përdoruesve të lexojnë Biblën, të ndajnë vargje në rrjetet e tyre sociale, të shënojnë pjesët e preferuara dhe shumë më tepër&mdash;të gjitha në një format që ruan mënyrën e tyre në rritje lëvizëve. Vizitoni <a href='https://www.bible.com/app'>bible.com/app</a> nga pajisja juaj e lëvizshme për të shkarkuar Programin e Biblën dhe për të lidhur llogarinë tuaj!"
+    no devices download copy: "Bazuar në Biblën online, YouVersion, Programi i Biblës është një Bibël falas e lëvizshme që mund të instalohet në pothuaj çdo pajisje të lëvizshme. Programi i Biblës u mundëson përdoruesve të lexojnë Biblën, të ndajnë vargje në rrjetet e tyre sociale, të shënojnë pjesët e preferuara dhe shumë më tepër&mdash;të gjitha në një format që ruan mënyrën e tyre në rritje lëvizëve. Vizitoni <a href='https://www.bible.com/app'>bible.com/app</a> nga pajisja juaj e lëvizshme për të shkarkuar Programin e Biblën dhe për të lidhur llogarinë tuaj!"
     yes delete: "Po, fshije llogarinë time"
     account delete success: "Llogaria juaj YouVersion është fshirë në mënyrë të suksesshme. Ne shpresojmë që ju do të vazhdoni të gjeni mënyra domethënëse për të ndërvepruar me Biblën. Disa nga këto programe mund të jenë ndihmuese ndërsa ecni përpara: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Nëse e fshini llogarinë tuaj, ju do të eleminoni përgjithmonë të gjithë informacionin tuaj, historinë dhe personalizimet (si p.sh, shënimet, shenjuesit, theksimet etj.) brenda YouVersion.com dhe Programit të Biblës. Ky veprim nuk mund të kthehet mbrapsht nga ju apo ekipi ynë. Nëse jeni të sigurtë të ecni përpara, vazhdoni më poshtë."
@@ -347,7 +360,7 @@ sq:
     my badges: "Emblemat e mia"
     revised date: "Rishikuar së fundmi më %{date}"
     update email copy: "Vendosni një adresë postare elektronike të re dhe klikoni te Përditëso adresën elektronike. Ne do t'ju dërgojmë një hallkë lidhëse për të konfirmuar adresën tuaj të re elektronike."
-    edit email: "Përditëso adresën elektronike"
+    edit email: "Ndrysho e-postën"
     update email check: "Ju lutem kontrolloni e-postën tuaj dhe klikoni hallkën lidhëse për të konfirmuar adresën tuaj të re elektronike."
     confirm update email success: "Faleminderit! Ju e keni përditësuar adresën tuaj elektronike."
     confirm update email error: "Më vjen keq, pati një problem në plotësimin e ndryshimit të adresës suaj elektronike."
@@ -500,6 +513,7 @@ sq:
       friendships: "Më njofto rreth kërkesave të miqësisë"
       moments: "Më njofto rreth aktivitetit të miqve"
       comments: "Më njofto rreth komenteve për aktivitetin tim"
+      likes: "Më njofto rreth pëlqimeve mbi aktivitetin tim"
   bookmarks:
     new: "Shenjues i ri"
     edit: "Redakto"
@@ -513,7 +527,7 @@ sq:
     not found: "Shenjuesit ju japin ju një referencë udhërrëfyese të shpejtë për pasazhet tuaja të preferuara apo për kapitullin e fundit që lexoni në një libër të caktuar. Për të shtuar një shenjues, përzgjidhni një varg në lexuesin e Biblës dhe më pas klikoni butonin Përzgjedhës në krye të lexuesit."
     other user not found: "Përdoruesi %{username} nuk ka ruajtur ende asnjë shenjues."
     creation form errors: "Gabimi(et) më poshtë e kanë penguar krijimin e shenjuesit tuaj:"
-    create success: "Shënjuesi u ruajt"
+    create success: "Sukses! Shenjuesi juaj u ruajt."
     destroy success: "Shenjuesi u hoq"
     destroy failure: "Gabim me fshirjen e shenjuesit"
     update success: "Shenjuesi u përditësua"
@@ -545,6 +559,11 @@ sq:
     none me: "Ju nuk keni fituar akoma ndonjë emblemë."
     none user: "Përdoruesi %{username} nuk ka fituar akoma ndonjë emblemë."
   plans:
+    settings: "Cilësimet"
+    privacy:
+      visible to friends?: "A dëshironi që aktiviteti juaj për këtë plan të jetë i dukshëm për miqtë e tu?"
+      private: "Private"
+      public: "Publike"
     title: "Planet e leximit"
     browse by category: "Shfletoni sipas kategorisë"
     browse plans: "Shfleto planet %{category}"
@@ -575,7 +594,6 @@ sq:
     no public plans: "Asnjë plan leximi nuk është i dukshëm për përdoruesin %{username}."
     filter by lang: "Filtro planet sipas gjuhës"
     plan settings: "Cilësimet e planit"
-    settings: "Cilësimet"
     search: "Kërko"
     search placeholder: "Kërko planet %{category}"
     subscribe to plan: "Fillo këtë plan"
@@ -688,25 +706,29 @@ sq:
     chapter only: "Më vjen keq, audio nuk është e disponueshme për vargjet. Shihni te lexuesi për kapitujt me audio."
     close player menu: "Mbyll"
   highlights:
+    title: "Theksime"
     blank slate:
       heading: "Thekso vargje domethënëse"
       description: "Ndërsa e lexoni Biblën, zgjidhni një varg dhe theksoheni atë. Kthehuni këtu për të parë, ndryshuar apo fshirë theksimet tuaja."
     none user: "%{username} nuk ka asnjë theksim"
     choose color: "Zgjidhni ngjyrën"
-    create success: "Theksimi u ruajt"
+    create success: "Sukses! Theksimi juaj u ruajt."
     create failure: "Gabim me ruajtjen e theksimit"
     destroy success: "Theksimi u fshi"
     destroy failure: "Gabim me fshirjen e theksimit"
     creation error: "Na falni, theksimi nuk mund të kryhet."
     delete error: "Më vjen keq, nuk mund të heq theksimin."
+    form:
+      save button: "Ruaj theksimin"
   searching:
     bible: "Bibla"
-    plans: "Planet e leximit"
+    plans: "Plane"
     users: "Përdoruesit"
     notes: "Shënime"
     total results: "Rreth %{total} rezultate"
     suggestion html: "Doni të thoni %{suggestion_link}?"
     all versions: "Të gjitha versionet në %{language_name}"
+    results for: "Rezultate kërkimi për:"
   donate:
     donate now: "Dhuro tani"
     donate now intl: "ose dhuroni ndërkombëtarisht"
@@ -876,9 +898,6 @@ sq:
     public domain: "Domen publik"
     loading: "Duke vendosur më shumë versione..."
     load error: "Na falni, pati një problem me vendosjen e më shumë versioneve. Mbylle këtë menu dhe rihape për të provuar sërish."
-  reader help:
-    title: "Zgjidh një varg..."
-    line 1: "Klikoni ose prekni mbi një varg ose disa vargje për t'i shënuar, theksuar, për të krijuar një shënim ose për t'i ndarë me miqtë tuaj!"
   campaigns:
     100m:
       logo: "YouVersion: Programi i Biblës"
@@ -908,3 +927,9 @@ sq:
       sidebar:
         tagline: "Le të bëjmë histori së bashku."
         button: "Ndaje Programin e Biblës"
+  ui:
+    pagination:
+      next page: "Faqja tjetër"
+      previous page: "Faqja e mëparshme"
+    datetime:
+      just now: "pikërisht tani"

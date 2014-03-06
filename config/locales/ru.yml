@@ -34,6 +34,7 @@ ru:
     users username required: "Необходимо ввести имя пользователя."
     users first name required: "Необходимо ввести имя."
     users last name required: "Необходимо ввести фамилию."
+    moments content required: "Введите текст"
   meta:
     kids_app:
       title: "Приложение Библия для детей"
@@ -47,8 +48,6 @@ ru:
     connections:
       index:
         title: "Подключенные аккаунты"
-  ui:
-    loading indicator text: "Загрузка..."
   now: "Сейчас"
   celebrating 50MM: "Отмечаем 50 миллионов установок!"
   link: "Ссылка"
@@ -141,11 +140,8 @@ ru:
   live: "Live / Группы"
   first page: "Первая страница"
   last page: "Последняя страница"
-  next page: "След. страница"
-  previous page: "Пред. страница"
   invalid username or password: "Неверное имя пользователя или пароль."
   show all bookmarks: "Показать все закладки: %{total}"
-  show all notes: "Показать все заметки: (%{total})"
   recent bookmarks: "Последние закладки"
   percentage display: "%{number}%"
   myself: "Я"
@@ -172,6 +168,7 @@ ru:
       go to scripture: "Перейти к месту Писания"
       load more: "Показать ещё"
       like: "Мне нравится"
+      liked: "Добавлено в избранное:"
       like title: "Нравится"
       share: "Поделиться"
       share title: "Поделиться с друзьями и семьёй"
@@ -191,10 +188,16 @@ ru:
     none: "Уведомлений нет"
     no new: "Новых уведомлений нет"
     view all: "Все уведомления"
+  likes:
+    create failure: "Нельзя поставить лайк"
+    destroy success: "Лайк удалён"
+    destroy failure: "Нельзя удалить лайк"
   comments:
+    view all N: "Все комменатрии: %{count}"
     post comment: "Комментировать"
-    create success: "Комментарий отправлен"
     create failure: "Комментарий не может быть отправлен"
+    destroy success: "Комментарий удалён"
+    destroy failure: "Комментарий не может быть удалён"
     form:
       save button: "Отправить"
   friends:
@@ -208,7 +211,6 @@ ru:
   friendships:
     offer success: "Запрос в друзья отправлен"
     offer failure: "Ошибка при отправлении запроса дружбы"
-    create success: "Вы теперь друзья"
     create failure: "Ошибка дружбы"
     destroy success: "Запрос отклонён"
     destroy failure: "Ошибка отклонения дружбы"
@@ -241,6 +243,11 @@ ru:
       reference field: "Ссылки:"
       status field: "Статус:"
       save button: "Сохранить"
+    status:
+      private: "Личная"
+      public: "Публичная"
+      friends: "Только для друзей"
+      draft: "Черновик"
     list title: "Заметки"
     loading community: "Загружаю заметки сообщества..."
     no community notes: "К выбранным стихам сообщество не написало ещё ни одной заметки. Для создания заметки выберите стих в окне чтения Библии, а затем нажмите кнопку \"Выбранное\" в верхней части окна чтения."
@@ -248,6 +255,7 @@ ru:
     private: "Личная"
     is private: "Заметка закрыта для просмотра."
     draft: "Черновик"
+    friends: "Друзья"
     creation form errors: "Вы не смогли создать заметку, по следующим причинам:"
     reference field: "Ссылки:"
     version field: "Перевод:"
@@ -268,7 +276,6 @@ ru:
     cancel: "Отменить"
     pop out: "В новом окне"
     none found: "Заметок не найдено..."
-    create success: "Заметка сохранена"
     create failure: "Ошибка сохранения закладки"
     destroy success: "Заметка удалена"
     destroy failure: "Ошибка удаления"
@@ -347,7 +354,7 @@ ru:
     my badges: "Мои значки"
     revised date: "Последний раз редактировалось %{date}"
     update email copy: "Введите новый адрес электронной почты и нажмите \"Изменить email\". Мы вышлем Вам письмо со ссылкой для подтверждения нового адреса электронной почты."
-    edit email: "Изменить email"
+    edit email: "Изменить адрес email"
     update email check: "Пожалуйста, проверьте email и перейдите по ссылке, чтобы подтвердить Ваш новый адрес."
     confirm update email success: "Спасибо! Вы обновили свой адрес email."
     confirm update email error: "Извините, при обновлении адреса email возникла ошибка."
@@ -513,7 +520,6 @@ ru:
     not found: "Закладки позволят Вам быстро переходить к понравившимся отрывкам или к последней прочитанной главе в отдельно взятой книге. Чтобы добавить закладку, выберите стих в Окне чтения и нажмите на кнопку \"Выбранное\"."
     other user not found: "%{username} ещё не создавал закладок."
     creation form errors: "При создании закладки возникли следующие ошибки:"
-    create success: "Сохранена закладка "
     destroy success: "Закладка удалена"
     destroy failure: "Не удалось удалить закладку"
     update success: "Закладка обновлена"
@@ -545,6 +551,11 @@ ru:
     none me: "Вы ещё не заработали значков."
     none user: "%{username} ещё не заработал значков."
   plans:
+    settings: "Настройки"
+    privacy:
+      visible to friends?: "Хотите ли вы, чтобы друзья видели вашу активность по этому плану?"
+      private: "Личная"
+      public: "Публичные"
     title: "Планы чтения"
     browse by category: "Поиск по категориям"
     browse plans: "Просмотреть планы: %{category}"
@@ -575,7 +586,6 @@ ru:
     no public plans: "У %{username} нет публичных планов чтения."
     filter by lang: "Фильтровать планы по языку"
     plan settings: "Настройки плана"
-    settings: "Настройки"
     search: "Поиск"
     search placeholder: "Искать в планах: %{category}"
     subscribe to plan: "Начать этот план"
@@ -688,25 +698,28 @@ ru:
     chapter only: "Извините, для отдельных стихов прослушивание аудио недоступно. Откройте главу в окне чтения, чтобы прослушать аудио."
     close player menu: "Закрыть"
   highlights:
+    title: "Маркеры"
     blank slate:
       heading: "Выделить маркером значимые для вас стихи"
       description: "Во время чтения Библии вы можете выбрать стихи и пометить их маркером. Просмотреть, изменить или удалить маркеры можно на этой странице."
     none user: "У %{username} нет выделений маркером"
     choose color: "Выберите цвет"
-    create success: "Маркер сохранён"
     create failure: "Ошибка сохранения маркера"
     destroy success: "Маркер удалён"
     destroy failure: "Ошибка удаления маркера"
     creation error: "Извините, выделить цветом не удалось."
     delete error: "Извините, удалить выделение цветом не удалось."
+    form:
+      save button: "Сохранить маркер"
   searching:
     bible: "Библия"
-    plans: "Планы чтения"
+    plans: "Планы"
     users: "Пользователи"
     notes: "Заметки"
     total results: "Примерно %{total} совпадений"
     suggestion html: "Вы имели в виду %{suggestion_link}?"
     all versions: "Все переводы на %{language_name}"
+    results for: "Результаты поиска для:"
   donate:
     donate now: "Отправить пожертвование"
     donate now intl: "или через PayPal (др. страны)"
@@ -876,9 +889,6 @@ ru:
     public domain: "Всеобщее достояние"
     loading: "Загружаю список переводов..."
     load error: "Извините, нам не удалось загрузить список переводов. Закройте это меню и откройте его снова."
-  reader help:
-    title: "Выберите стих..."
-    line 1: "Нажмите на любой стих или набор стихов, чтобы добавить закладку, выделить маркером, написать заметку или поделиться с друзьями."
   campaigns:
     100m:
       logo: "YouVersion: Приложение Библия"
@@ -908,3 +918,9 @@ ru:
       sidebar:
         tagline: "Давайте творить историю вместе!"
         button: "Поделиться приложением"
+  ui:
+    pagination:
+      next page: "След. страница"
+      previous page: "Пред. страница"
+    datetime:
+      just now: "только что"

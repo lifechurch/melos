@@ -34,6 +34,7 @@ mk:
     users username required: "Мора да внесете корисничко име."
     users first name required: "Внеси го името"
     users last name required: "Внеси го презимето"
+    moments content required: "Содржината не може да биде празна."
   meta:
     kids_app:
       title: "Апликација \"Библија\" за деца"
@@ -47,8 +48,6 @@ mk:
     connections:
       index:
         title: "Поврзани профили"
-  ui:
-    loading indicator text: "Се вчитува ..."
   now: "Сега"
   celebrating 50MM: "Славиме 50 Милиони инсталирани апликации!"
   link: "Врска"
@@ -67,7 +66,7 @@ mk:
   new note: "Нова белешка"
   share success: "Ја сподели пораката."
   share error: "Имаше проблем при споделување на твојата порака. Обиди се повторно."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Поврзување со твојот %{connection} профил"
   deleted connection: "Успешно ја отстрани конекцијата со %{connection}."
   deleted connection error: "Има грешка при прекинувањето на конекцијата со %{connection}."
@@ -141,11 +140,8 @@ mk:
   live: "Во живо/групи"
   first page: "Прва страница"
   last page: "Последна страница"
-  next page: "Следна страница"
-  previous page: "Претходна страница"
   invalid username or password: "Погрешно корисничко име или лозинка"
   show all bookmarks: "Види ги сите %{total} обележувања"
-  show all notes: "Види ги сите %{total} белешки"
   recent bookmarks: "Неодамнешни обележувања"
   percentage display: "%{number}%"
   myself: "Јас"
@@ -172,6 +168,7 @@ mk:
       go to scripture: "Оди до Свето Писмо"
       load more: "Вчитај повеќе"
       like: "Ми се допаѓа"
+      liked: "Му/Ѝ се допадна"
       like title: "Ми се допаѓа"
       share: "Сподели"
       share title: "Сподели го ова со твоите пријатели и семејство"
@@ -191,10 +188,16 @@ mk:
     none: "Немаш никакви известувања"
     no new: "Нема нови известувања"
     view all: "Види ги сите известувања"
+  likes:
+    create failure: "Твоето ми се допаѓа не може да биде зачувано"
+    destroy success: "Ми се допаѓа е избришано"
+    destroy failure: "Твоето ми се допаѓа не може да биде избришано"
   comments:
+    view all N: "Види ги сите %{count} коментари"
     post comment: "Напиши коментар"
-    create success: "Коментарот е објавен"
     create failure: "Коментарот неможе да се објави"
+    destroy success: "Коментарот е избришан"
+    destroy failure: "Коментарот не може да биде избришан"
     form:
       save button: "Објави"
   friends:
@@ -208,7 +211,6 @@ mk:
   friendships:
     offer success: "Барањето за пријателство е испратено"
     offer failure: "Грешка во испраќањето на барање за пријателство"
-    create success: "Сега сте пријатели"
     create failure: "Грешка во креирањето пријателство"
     destroy success: "Барањето е одбиено"
     destroy failure: "Грешка во одбивањето барање"
@@ -241,6 +243,11 @@ mk:
       reference field: "Референци:"
       status field: "Статус:"
       save button: "Зачувај"
+    status:
+      private: "Лични"
+      public: "Јавни"
+      friends: "Само пријатели"
+      draft: "Нацрт"
     list title: "Белешки"
     loading community: "Вчитување на белешките од заедницата..."
     no community notes: "Не постојат никакви белешки на заедницата за кои биле селектирани стихови. За да создадеш белешка, селектирај стих во читачот на Библијата а потоа притисни го копчето селектирано на врвот од читачот. "
@@ -248,6 +255,7 @@ mk:
     private: "Приватно"
     is private: "Бараната белешка е приватна"
     draft: "Проба"
+    friends: "Пријатели"
     creation form errors: "Следните грешки оневозможија да ја креираш белешката:"
     reference field: "Референци:"
     version field: "Верзија:"
@@ -268,7 +276,6 @@ mk:
     cancel: "Откажи"
     pop out: "Истави"
     none found: "Не најдовме белешки..."
-    create success: "Белешката е зачувана"
     create failure: "Грешка во зачувување на белешката"
     destroy success: "Белешката е избришана"
     destroy failure: "Грешка во бришење на белешката"
@@ -347,7 +354,7 @@ mk:
     my badges: "Моите беџеви"
     revised date: "Последно ажурирање на %{date}"
     update email copy: "Внеси нова е-адреса и кликни \"Ажурирај\". Ќе ти пратиме линк за да ја потврдиш новата е-адреса."
-    edit email: "Ажурирај ја Е-адресата"
+    edit email: "Промени ја адресата на е-пошта"
     update email check: "Провери е-пошта и кликни на линкот за да ја потврдиш новата е-адреса."
     confirm update email success: "Успешно ја смени е-адресата."
     confirm update email error: "Има проблем со корисничкото име или лозинка. Најави се на YouVersion за да продолжиш."
@@ -513,7 +520,6 @@ mk:
     not found: "Обележувачите овозможуваат брз пристап до омилените пасуси или до последното поглавје што го читаш во некоја книга од Библијата. За да создадеш обележувач, избери стих во читачот на Библијата што го користиш и кликни на копчето \"Селектирано\" на врвот од читачот."
     other user not found: "%{username} се уште нема зачувано обележувачи."
     creation form errors: "Следниве грешки го спречија создавањето обележувач:"
-    create success: "Обележувачот е зачуван"
     destroy success: "Обележувачот е отстранет"
     destroy failure: "Грешка при бришење на обележувач"
     update success: "Обележувачот е ажуриран"
@@ -545,6 +551,11 @@ mk:
     none me: "Немаш добиено ниту еден беџ."
     none user: "Корисникот %{username} нема добиено ниту еден беџ."
   plans:
+    settings: "Уредувања"
+    privacy:
+      visible to friends?: "Дали би сакал твојата активност со овој план да биде видлива за твоите пријатели?"
+      private: "Лични"
+      public: "Јавни"
     title: "Планови за читање"
     browse by category: "Преглед по категории"
     browse plans: "Разгледај ги плановите од %{category}"
@@ -575,7 +586,6 @@ mk:
     no public plans: "Корисникот %{username} нема објавено ниту еден план за читање."
     filter by lang: "Селектирај ги плановите според јазикот"
     plan settings: "Подесување на планот"
-    settings: "Уредувања"
     search: "Барај"
     search placeholder: "Пребарај ги плановите од %{category}"
     subscribe to plan: "Почни со овој план"
@@ -688,25 +698,28 @@ mk:
     chapter only: "Аудио не е достапно за стиховите. Погледни во читачот за аудио за глави."
     close player menu: "Затвори"
   highlights:
+    title: "Нагласувања"
     blank slate:
       heading: "Нагласи значајни стихови"
       description: "Додека ја читаш Библијата, избери стих и нагласи го. Врати се овде да погледнеш, редактираш или избришеш нагласување."
     none user: "%{username} нема нагласувања"
     choose color: "Избери боја"
-    create success: "Нагласувањето е снимено"
     create failure: "Грешка при снимање на нагласувањето"
     destroy success: "Нагласувањето е избришано"
     destroy failure: "Грешка при бришење на нагласување"
     creation error: "Не може да означиш."
     delete error: "Не може да го отстраниш означеното."
+    form:
+      save button: "Зачувај го нагласувачот"
   searching:
     bible: "Библија"
-    plans: "Планови за читање."
+    plans: "Планови"
     users: "Корисници"
     notes: "Белешки"
     total results: "Околу %{total} од резултатите"
     suggestion html: "Дали мислиш на %{suggestion_link}?"
     all versions: "Сите %{language_name} верзии"
+    results for: "Резултати од пребарувањето за:"
   donate:
     donate now: "Донирај сега"
     donate now intl: "или донирај меѓунардно"
@@ -876,9 +889,6 @@ mk:
     public domain: "Јавен Domain"
     loading: "Се вчитуваат повеќе верзии..."
     load error: "Се извинуваме, има проблем со вчитување на повеќе верзии. Затворете го менито и обидете се повторно со отварање на истото."
-  reader help:
-    title: "Избери стих..."
-    line 1: "Кликни или допри на било кој стих или збир на стихови за да ги обележиш или нагласиш, да запишеш белешка, или да ја споделиш со твоите пријатели! "
   campaigns:
     100m:
       logo: "YouVersion: апликација „Библија“"
@@ -908,3 +918,9 @@ mk:
       sidebar:
         tagline: "Ајде да ја создаваме историјата заедно"
         button: "Сподели ја апликацијата „Библија“"
+  ui:
+    pagination:
+      next page: "Следна Страница"
+      previous page: "Претходна Страница"
+    datetime:
+      just now: "Токму сега"

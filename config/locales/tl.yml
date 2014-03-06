@@ -34,6 +34,7 @@ tl:
     users username required: "Kinakailangang magbigay ng username."
     users first name required: "Kinakailangang magbigay ng pangunahing pangalan."
     users last name required: "Kinakailangang magbigay ng apelyido."
+    moments content required: "Hindi maaring blangko ang nilalaman."
   meta:
     kids_app:
       title: "Ang Pambatang App ng Bibliya"
@@ -47,8 +48,6 @@ tl:
     connections:
       index:
         title: "Mga Kaugnay na Accounts"
-  ui:
-    loading indicator text: "Nagkakarga ..."
   now: "Ngayon"
   celebrating 50MM: "Ipinagdiriwang 50 Million App Installs! "
   link: "Link"
@@ -67,7 +66,7 @@ tl:
   new note: "Lumikha ng Tala"
   share success: "Ang iyong mensahe ay nai-share na."
   share error: "Paumanhin, may pagkakamali sa pagshare ng iyong mensahe. Pakiulit po."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Magkonek sa iyong account %{connection}"
   deleted connection: "Matagumpay na inalis ang koneksyon sa %{connection}."
   deleted connection error: "Paumanhin, may pagkakamali sa pag-alis ng iyong koneksyon sa %{connection}."
@@ -141,11 +140,8 @@ tl:
   live: "Live/Mga Grupo"
   first page: "Unang Pahina"
   last page: "Huling Pahina"
-  next page: "Susunod na Pahina"
-  previous page: "Nakaraang Pahina"
   invalid username or password: "Username o password ay invalid."
   show all bookmarks: "Tingnan lahat ang %{total} na bookmarks"
-  show all notes: "Tingnan lahat ang %{total} na tala"
   recent bookmarks: "Pinakahuling Mga Bookmarks"
   percentage display: "%{number}%"
   myself: "Ako"
@@ -172,6 +168,7 @@ tl:
       go to scripture: "Magpunta sa banal na kasulatan"
       load more: "Mag-karga ng higit na impormasyon"
       like: "Gustuhin"
+      liked: "Sumang-ayon"
       like title: "Gustuhin ito"
       share: "Ibahagi"
       share title: "Ibahagi sa iyong mga kaibigan o pamilya"
@@ -191,10 +188,16 @@ tl:
     none: "Wala ka pang kahit anong mga abiso"
     no new: "Walang mga bagong abiso"
     view all: "Tingnan lahat ng mga abiso"
+  likes:
+    create failure: "Hindi maisave ang page-like"
+    destroy success: "Ang page-like ay tinanggal"
+    destroy failure: "Any page-like ay hindi maaaring tanggalin"
   comments:
+    view all N: "Tingnan %{count} mga komento"
     post comment: "Magpaskil ng komento"
-    create success: "Ang komento ay naipaskil na"
     create failure: "Ang komento ay hindi maipaskil"
+    destroy success: "Any moments ay tinanggal"
+    destroy failure: "Hindi matanggal ang komento"
     form:
       save button: "Ipaskil"
   friends:
@@ -208,7 +211,6 @@ tl:
   friendships:
     offer success: "Naipadala ang hiling na maging magkaibigan"
     offer failure: "May naging pagkakamali sa pagpapadala ng hiling na maging magkaibigan"
-    create success: "Kayo ay magkaibigan na"
     create failure: "May naging pagkakamali sa paggiging magkaibigan"
     destroy success: "Tinanggihan ang kahilingan"
     destroy failure: "May naging pagkakamali sa pagtanggi sa kahilingan"
@@ -241,6 +243,11 @@ tl:
       reference field: "Mga sanggunian"
       status field: "Istado:"
       save button: "I-save"
+    status:
+      private: "Pribado"
+      public: "Pampubliko"
+      friends: "Mga kaibigan lamang"
+      draft: "Burador"
     list title: "Mga tala"
     loading community: "Ang iyong mga talang pangkomunidad ay nagloload..."
     no community notes: "Walang nakitang tala sa komunidad na tumutukoy sa mga napiling berso.  Para gumawa ng tala, pumili ng berso sa Bibliya at i-click ang Napiling butones sa taas ng reader. "
@@ -248,6 +255,7 @@ tl:
     private: "Pang-pribado"
     is private: "Ang hinihiling na tala ay pribado."
     draft: "Draft"
+    friends: "Mga Kaibigan"
     creation form errors: "Ang mga sumusunod ay (mga) pagkakamali kaya hindi ka makalikha ng tala:"
     reference field: "(Mga) Reference:"
     version field: "Salin:"
@@ -268,7 +276,6 @@ tl:
     cancel: "I-cancel"
     pop out: "Pop out"
     none found: "Walang makitang mga tala..."
-    create success: "Ang talang ito ay nai-save."
     create failure: "May pagkakamali sa pag-save ng tala"
     destroy success: "Ang tala ay nabura na"
     destroy failure: "May pagkakamali sa pagbura ng tala"
@@ -347,7 +354,7 @@ tl:
     my badges: "Aking mga Tsapa"
     revised date: "Huling na-revise noong %{date}"
     update email copy: "Maglagay ng bagong email address at pindutin ang Update Email. Ipadadala namin sa iyo ang link para kumpirmahin ang iyong email address."
-    edit email: "I-update ang Email Address"
+    edit email: "Baguhin ang Email Address"
     update email check: "Pakitingnan ang iyong email address at pindutin ang link para kumpirmahin ang iyong bagong email address."
     confirm update email success: "Salamat! Na-update mo na ang iyong email address."
     confirm update email error: "Paumanhin, may mga problema sa  planong pagbabago sa email address."
@@ -513,7 +520,6 @@ tl:
     not found: "Ang mga bookmark ay nagbibigay sa iyo ng madaliang reference guide sa mga paborito mong talata o sa huling kabanata ng Bibliya na binasa mo. Upang magdagdag ng bookmark, pumili ng talata sa Bible reader at piliin ang Selected button sa ibabaw ng reader."
     other user not found: "%{username} ay hindi pa naka-save ng bookmark."
     creation form errors: "Ang sumusunod na (mga) pagkakamali ay balakid sa paggawa ng iyong bookmark: "
-    create success: "Na-save na Bookmark"
     destroy success: "Tinanggal na Bookmark"
     destroy failure: "May pagkakamali sa pagtanggal ng bookmark"
     update success: "Nabagong Bookmark"
@@ -545,6 +551,11 @@ tl:
     none me: "Wala ka pang mga sagisag na nakukuha."
     none user: "Si %{username} ay hindi pa nakakakuha ng anumang sagisag."
   plans:
+    settings: "Mga Setting"
+    privacy:
+      visible to friends?: "Gusto mo bang ipakita sa mga kaibigan ang mga gawain mo patungkol sa planong ito?"
+      private: "Pribado"
+      public: "Pampubliko"
     title: "Mga Babasahing Gabay"
     browse by category: "Tumingin ayon sa Kategorya"
     browse plans: "Tingnan ang mga Babasahing Gabay para sa %{category}"
@@ -575,7 +586,6 @@ tl:
     no public plans: "Walang nakikitang reading plans para kay %{username}."
     filter by lang: "I-Filter ang mga Plan ayon sa Wika"
     plan settings: "Mga Setting ng Plano"
-    settings: "Mga Setting"
     search: "Maghanap"
     search placeholder: "Maghanap ng Plans sa %{category} "
     subscribe to plan: "Umpisahan ang Plan na Ito"
@@ -688,25 +698,28 @@ tl:
     chapter only: "Paumanhin, di available ang audio sa berso. Tumingin sa reader para sa audio sa kapitulo."
     close player menu: "Isara"
   highlights:
+    title: "Mga Haylayt"
     blank slate:
       heading: "I-haylayt ang mga makahulugang talata"
       description: "Habang nagbabasa ng Bibliya, pumili ng talata at lagyan ito ng haylayt. Bumalik dito para tingnan, baguhin, o alisin ang haylayt."
     none user: "Walang mga haylayt si %{username}"
     choose color: "Pumili ng Kulay"
-    create success: "Na-save ang mga haylayt"
     create failure: "May mali sa pag-save ng haylayt"
     destroy success: "Nabura ang haylayt"
     destroy failure: "May mali sa pagbura ng haylayt"
     creation error: "Paumanhin, hindi pwedeng ma-highlight."
     delete error: "Paumanhin, hindi maalis ang highlight."
+    form:
+      save button: "I-save ang haylayt"
   searching:
     bible: "Bibliya"
-    plans: "Mga Babasahing Gabay"
+    plans: "Mga Plano"
     users: "Mga Users"
     notes: "Mga tala"
     total results: "Mga %{total} Resulta"
     suggestion html: "Ibig mo bang sabihin ay %{suggestion_link}?"
     all versions: "Lahat ng %{language_name} Bersyon"
+    results for: "Resulta ng paghahanap sa:"
   donate:
     donate now: "Magbigay Donasyon Ngayon "
     donate now intl: "o magbigay ng international na donasyon "
@@ -876,9 +889,6 @@ tl:
     public domain: "Pampublikong Domain"
     loading: "Nag-lo-load ng Mas Marami pang Sipi..."
     load error: "Paumanhin, nagkaroon ng suliranin sa pagkuha ng iba pang sipi. Isara ang talang ito at subukang buksan muli."
-  reader help:
-    title: "Pumili ng berso..."
-    line 1: "Pindutin o piliin ang anumang talata o koleksyon ng mga taludtod upang markahan, tandaan, gumawa ng tala, o magbahagi sa iyong mga kaibigan!"
   campaigns:
     100m:
       logo: "YouVersion: Ang Bible app"
@@ -908,3 +918,9 @@ tl:
       sidebar:
         tagline: "Tayo na't gumawa ng kasaysayan."
         button: "Ibahagi an Bible App"
+  ui:
+    pagination:
+      next page: "Susunod na Pahina"
+      previous page: "Nakaraang Pahina"
+    datetime:
+      just now: "ngayon lamang"

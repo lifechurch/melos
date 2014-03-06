@@ -34,6 +34,7 @@ vi:
     users username required: "Bạn cần nhập tên sử dụng."
     users first name required: "Xin điền tên của bạn."
     users last name required: "Xin điền họ của bạn."
+    moments content required: "Không thể bỏ trống nội dung."
   meta:
     kids_app:
       title: "Ứng Dụng Kinh Thánh Cho Trẻ Em"
@@ -47,8 +48,6 @@ vi:
     connections:
       index:
         title: "Tài khoản đã kết nối"
-  ui:
-    loading indicator text: "Đang tải..."
   now: "Bây giờ"
   celebrating 50MM: "Chúc mừng 50 triệu lượt cài đặt ứng dụng!"
   link: "Đường dẫn"
@@ -67,7 +66,7 @@ vi:
   new note: "Tạo ghi chú mới"
   share success: "Thông điệp của bạn đã được chia sẻ."
   share error: "Xin lỗi bạn, có lỗi kỹ thuật khi chia sẻ thông điệp. Xin hãy thử lại."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Kết nối với tài khoản %{connection} của bạn"
   deleted connection: "Hủy bỏ thành công kết nối với %{connection}."
   deleted connection error: "Báo lỗi khi hủy bỏ kết nối với %{connection}!"
@@ -141,11 +140,9 @@ vi:
   live: "Nhóm trực tuyến"
   first page: "Trang đầu"
   last page: "Trang cuối"
-  next page: "Trang kế"
-  previous page: "Trang trước"
   invalid username or password: "Tên hoặc mật khẩu không hợp lệ!"
   show all bookmarks: "Xem tất cả %{total} đánh dấu"
-  show all notes: "Xem tất cả %{total} ghi chú"
+  show all notes: "Xem tất cả ghi chú"
   recent bookmarks: "Các đánh dấu gần đây"
   percentage display: "%{number}%"
   myself: "Chính tôi"
@@ -172,7 +169,9 @@ vi:
       go to scripture: "Xem đoạn Kinh Thánh"
       load more: "Tải thêm"
       like: "Thích"
+      liked: "Đã thích"
       like title: "Thích điều này"
+      last comment: "Bình luận mới nhất"
       share: "Chia sẻ"
       share title: "Chia sẻ với gia đình và bạn bè"
       comment: "Bình luận"
@@ -191,10 +190,18 @@ vi:
     none: "Bạn không có thông báo nào"
     no new: "Không có thông báo mới"
     view all: "Xem tất cả thông báo"
+  likes:
+    create success: "Đã lưu yêu thích của bạn!"
+    create failure: "Không lưu ý thích của bạn được"
+    destroy success: "Đã xóa ý thích"
+    destroy failure: "Không xóa ý thích của bạn được"
   comments:
+    view all N: "Xem tất cả %{count} bình luận"
     post comment: "Đăng bình luận"
-    create success: "Đã bình luận"
+    create success: "Đã đăng bình luận của bạn!"
     create failure: "Bình luận không đăng được"
+    destroy success: "Đã xóa bình luận"
+    destroy failure: "Không xóa bình luận được"
     form:
       save button: "Đăng tải"
   friends:
@@ -208,7 +215,7 @@ vi:
   friendships:
     offer success: "Gởi yêu cầu kết bạn"
     offer failure: "Lỗi gởi yêu cầu kết bạn"
-    create success: "Đã kết bạn"
+    create success: "Các bạn đã kết bạn!"
     create failure: "Lỗi khi kết bạn"
     destroy success: "Đã từ chối yêu cầu"
     destroy failure: "Lỗi khi từ chối yêu cầu"
@@ -241,6 +248,11 @@ vi:
       reference field: "Tham khảo:"
       status field: "Tình trạng:"
       save button: "Lưu"
+    status:
+      private: "Riêng tư"
+      public: "Công khai"
+      friends: "Chỉ là bạn"
+      draft: "Nháp"
     list title: "Ghi chú"
     loading community: "Đang tải các ghi chú cộng đồng..."
     no community notes: "Không có ghi chú cộng đồng nào để tham khảo cho các câu được chọn. Để tạo ghi chú, hãy chọn một câu Kinh Thánh và nhấp \"Đã chọn\" ở phía trên bài đọc."
@@ -248,6 +260,7 @@ vi:
     private: "Riêng tư"
     is private: "Ghi chú này là riêng tư."
     draft: "Nháp"
+    friends: "Bạn bè"
     creation form errors: "Các lỗi sau không cho phép bạn tạo ghi chú:"
     reference field: "Tham khảo:"
     version field: "Bản dịch:"
@@ -268,7 +281,7 @@ vi:
     cancel: "Hủy"
     pop out: "Hiện lên"
     none found: "Không tìm thấy ghi chú nào..."
-    create success: "Đã lưu ghi chú"
+    create success: "Đã lưu ghi chú của bạn!"
     create failure: "Lỗi lưu ghi chú"
     destroy success: "Đã xóa ghi chú"
     destroy failure: "Lỗi xóa ghi chú"
@@ -347,7 +360,7 @@ vi:
     my badges: "Huy hiệu của tôi"
     revised date: "Chỉnh sửa lần cuối vào %{date}"
     update email copy: "Hãy nhập email mới và bấm \"Cập nhật địa chỉ email\". Chúng tôi sẽ gởi đường dẫn để bạn xác nhận địa chỉ này."
-    edit email: "Cập nhật địa chỉ email"
+    edit email: "Đổi địa chỉ email"
     update email check: "Xin hãy kiểm tra email và bấm vào đường dẫn xác nhận địa chỉ email mới."
     confirm update email success: "Cảm ơn bạn đã cập nhật địa chỉ email!"
     confirm update email error: "Xin lỗi, có vấn đề khi thay đổi địa chỉ email của bạn!"
@@ -500,6 +513,7 @@ vi:
       friendships: "Báo cho tôi khi có yêu cầu kết bạn"
       moments: "Báo cho tôi biết hoạt động của bạn bè"
       comments: "Báo cho tôi khi có bình luận về hoạt động của tôi"
+      likes: "Thông báo khi hoạt động của tôi được yêu thích"
   bookmarks:
     new: "Đánh dấu mới"
     edit: "Chỉnh sửa"
@@ -513,7 +527,7 @@ vi:
     not found: "Chức năng Đánh dấu giúp bạn nhanh chóng tìm lại các phân đoạn yêu thích hoặc phần bạn vừa đọc trong một sách nào đó. Để đánh dấu, hãy chọn một hoặc nhiều câu và gõ vào \"Đã chọn\" ở đầu bài đọc."
     other user not found: "%{username} chưa lưu đánh dấu nào."
     creation form errors: "Các lỗi sau khiến bạn không tạo đánh dấu được:"
-    create success: "Đã lưu đánh dấu"
+    create success: "Đã lưu đánh dấu của bạn!"
     destroy success: "Đã gỡ bỏ đánh dấu"
     destroy failure: "Lỗi xóa đánh dấu"
     update success: "Đã cập nhật đánh dấu"
@@ -545,6 +559,11 @@ vi:
     none me: "Bạn chưa có huy hiệu nào."
     none user: "%{username} chưa có huy hiệu nào."
   plans:
+    settings: "Cài đặt"
+    privacy:
+      visible to friends?: "Bạn muốn bạn bè thấy được hoạt động này trong kế hoạch của bạn?"
+      private: "Riêng tư"
+      public: "Công khai"
     title: "Kế hoạch"
     browse by category: "Tra tìm theo thể loại"
     browse plans: "Tra tìm các kế hoạch %{category}"
@@ -575,7 +594,6 @@ vi:
     no public plans: "%{username} không có kế hoạch công khai nào."
     filter by lang: "Chọn lọc kế hoạch bằng ngôn ngữ"
     plan settings: "Điều chỉnh kế hoạch"
-    settings: "Cài đặt"
     search: "Tìm kiếm"
     search placeholder: "Tìm kiếm kế hoạch %{category}"
     subscribe to plan: "Bắt đầu kế hoạch này"
@@ -688,25 +706,29 @@ vi:
     chapter only: "Xin lỗi bạn, không có phát thanh cho đoạn này. Hãy xem mục lục để biết đoạn nào có."
     close player menu: "Đóng"
   highlights:
+    title: "Tô màu"
     blank slate:
       heading: "Tô màu các câu gốc ý nghĩa"
       description: "Trong khi đọc hãy tô màu câu Kinh Thánh bạn thích, và bạn có thể trở lại đây để xem, chỉnh sửa hoặc xóa các tô màu này."
     none user: "%{username} chưa có tô màu nào"
     choose color: "Chọn màu"
-    create success: "Đã lưu tô màu"
+    create success: "Đã lưu tô màu của bạn!"
     create failure: "Lỗi lưu tô màu"
     destroy success: "Đã xóa tô màu"
     destroy failure: "Lỗi khi xóa đánh dấu"
     creation error: "Xin lỗi bạn, không tô màu được."
     delete error: "Xin lỗi bạn, không gỡ bỏ tô màu được."
+    form:
+      save button: "Lưu tô màu"
   searching:
     bible: "Kinh Thánh"
-    plans: "Kế hoạch đọc"
+    plans: "Kế hoạch"
     users: "Người sử dụng"
     notes: "Ghi chú"
     total results: "Khoảng %{total} kết quả"
     suggestion html: "Ý bạn là %{suggestion_link}?"
     all versions: "Tất cả bản dịch %{language_name}"
+    results for: "Kết quả tìm kiếm cho:"
   donate:
     donate now: "Dâng hiến bây giờ"
     donate now intl: "hoặc quyên góp quốc tế"
@@ -876,9 +898,6 @@ vi:
     public domain: "Miền công cộng"
     loading: "Đang tải thêm bản dịch..."
     load error: "Xin lỗi bạn, có vấn đề khi tải thêm bản dịch. Hãy đóng trình đơn này rồi mở ra thử lại."
-  reader help:
-    title: "Chọn câu Kinh Thánh..."
-    line 1: "Gõ vào một hoặc nhiều câu Kinh Thánh bất kỳ để đánh dấu, tô màu, tạo ghi chú, hoặc chia sẻ cùng bạn bè!"
   campaigns:
     100m:
       logo: "YouVersion: Ứng dụng Kinh Thánh"
@@ -908,3 +927,9 @@ vi:
       sidebar:
         tagline: "Hãy cùng làm nên lịch sử!"
         button: "Chia sẻ App Kinh Thánh"
+  ui:
+    pagination:
+      next page: "Trang kế"
+      previous page: "Trang trước"
+    datetime:
+      just now: "vừa xong"

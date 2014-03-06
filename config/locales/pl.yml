@@ -34,6 +34,7 @@ pl:
     users username required: "Musisz wprowadzić login."
     users first name required: "Musisz wpisać swoje imię."
     users last name required: "Musisz wpisać nazwisko."
+    moments content required: "Treść nie może być pusta."
   meta:
     kids_app:
       title: "Aplikacja Biblii dla dzieci"
@@ -47,8 +48,6 @@ pl:
     connections:
       index:
         title: "Połączone konta"
-  ui:
-    loading indicator text: "Ładowanie..."
   now: "Teraz"
   celebrating 50MM: "Świętujemy 50 milionów instalacji aplikacji!"
   link: "Odnośnik"
@@ -67,7 +66,7 @@ pl:
   new note: "Utwórz notatkę"
   share success: "Twoja wiadomość została udostępniona."
   share error: "Wystąpił błąd podczas udostępniania twojej wiadomości. Prosimy spróbuj ponownie."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Podłącz się do swojego konta w serwisie %{connection}"
   deleted connection: "Twoje podłączenie z serwisem %{connection} zostało usunięte."
   deleted connection error: "Wystąpił błąd przy próbie usunięcia twojego podłączenia z serwisem %{connection}."
@@ -141,11 +140,8 @@ pl:
   live: "Na żywo/Grupy"
   first page: "Pierwsza strona"
   last page: "Ostatnia strona"
-  next page: "Następna strona"
-  previous page: "Poprzednia strona"
   invalid username or password: "Nieprawidłowa nazwa lub hasło."
   show all bookmarks: "Pokaż wszystkie %{total} zakładki"
-  show all notes: "Pokaż wszystkie %{total} notatki"
   recent bookmarks: "Ostatnie zakładki"
   percentage display: "%{number}%"
   myself: "Ja"
@@ -172,6 +168,7 @@ pl:
       go to scripture: "Przejdź do Pisma"
       load more: "Załaduj więcej"
       like: "Lubię to"
+      liked: "Lubisz"
       like title: "Lubię to"
       share: "Podziel się"
       share title: "Podziel się wersetem ze znajomymi lub rodziną"
@@ -191,10 +188,16 @@ pl:
     none: "Nie masz żadnych powiadomień"
     no new: "Brak nowych powiadomień"
     view all: "Zobacz wszystkie powiadomienia"
+  likes:
+    create failure: "Polubienie nie zostało zapisane"
+    destroy success: "Usunięto polubienie"
+    destroy failure: "Polubienie nie zostało usunięte"
   comments:
+    view all N: "Zobacz wszystkie %{count} komentarze"
     post comment: "Opublikuj komentarz"
-    create success: "Skomentuj wpis"
     create failure: "Komentarz nie mógł być opublikowany"
+    destroy success: "Usunięto komentarz"
+    destroy failure: "Nie usunięto komentarza"
     form:
       save button: "Opublikuj"
   friends:
@@ -208,7 +211,6 @@ pl:
   friendships:
     offer success: "Wysłano zaproszenie"
     offer failure: "Błąd, nie wysłano zaproszenia"
-    create success: "Jesteście teraz znajomymi"
     create failure: "Błąd, nie utworzono znajomości"
     destroy success: "Zaproszenie odrzucone"
     destroy failure: "Błąd, nie odrzucono zaproszenia"
@@ -241,6 +243,11 @@ pl:
       reference field: "Odniesienia:"
       status field: "Stan:"
       save button: "Zapisz"
+    status:
+      private: "Prywatne"
+      public: "Publiczne"
+      friends: "Tylko znajomi"
+      draft: "Szkic"
     list title: "Notatki"
     loading community: "Ładowanie notatek społeczności..."
     no community notes: "Nie znaleziono notatek odnoszących się do wybranych wersetów. Aby utworzyć notatkę, wybierz werset w czytniku Biblii i kliknij przycisk Wybrane u góry czytnika."
@@ -248,6 +255,7 @@ pl:
     private: "Prywatne"
     is private: "Wybrana notatka jest prywatna."
     draft: "Szkic"
+    friends: "Przyjaciele"
     creation form errors: "Poniższe błędy uniemożliwiły utworzenie twojej notatki:"
     reference field: "Odniesienia:"
     version field: "Wersja:"
@@ -268,7 +276,6 @@ pl:
     cancel: "Zrezygnuj"
     pop out: "Wydziel"
     none found: "Nie znaleziono notatek..."
-    create success: "Notatka zapisana"
     create failure: "Błąd, nie zapisano notatki"
     destroy success: "Notatka usunięta."
     destroy failure: "Błąd, nie usunięto notatki"
@@ -347,7 +354,7 @@ pl:
     my badges: "Moje odznaczenia"
     revised date: "Ostatnia wersja %{date}"
     update email copy: "Wprowadź nowy adres e-mail i kliknij Uaktualnij e-mail. Wyślemy ci odnośnik do potwierdzenia nowego adresu e-mail."
-    edit email: "Uaktualnij e-mail"
+    edit email: "Zmień adres e-mail"
     update email check: "Prosimy sprawdź swoją skrzynkę i kliknij odnośnik potwierdzenia twojego nowego adresu."
     confirm update email success: "Dziękujemy! Uaktualniłeś swój adres e-mail."
     confirm update email error: "Niestety, pojawił się problem przy zmianie twojego adresu e-mail."
@@ -513,7 +520,6 @@ pl:
     not found: "Korzystanie z zakładek ułatwi ci znalezienie ulubionych fragmentów, lub wersetu, który ostatnio czytałeś w określonej księdze. Aby dodać zakładkę, wybierz werset w czytniku Biblii, a następnie kliknij przycisk Wybrane na górze czytnika."
     other user not found: "%{username} nie zachował jeszcze żadnych zakładek."
     creation form errors: "Poniższe błędy nie pozwoliły na utworzenie zakładki:"
-    create success: "Zapisano zakładki"
     destroy success: "Usunięto zakładkę"
     destroy failure: "Błąd, nie usunięto zakładki"
     update success: "Uaktualniono zakładkę"
@@ -545,6 +551,11 @@ pl:
     none me: "Nie zdobyłeś jeszcze żadnych odznaczeń."
     none user: "%{username} nie zdobył jeszcze żadnych odznaczeń."
   plans:
+    settings: "Ustawienia"
+    privacy:
+      visible to friends?: "Czy chcesz, aby twoja aktywność w tym planie była widoczna dla znajomych?"
+      private: "Prywatne"
+      public: "Publiczne"
     title: "Plany czytania"
     browse by category: "Przeglądaj według kategorii"
     browse plans: "Przeglądaj plany w kategorii %{category}"
@@ -575,7 +586,6 @@ pl:
     no public plans: "Brak widocznych planów dla użytkownika %{username}."
     filter by lang: "Filtruj plany wg języka"
     plan settings: "Ustawienia planu"
-    settings: "Ustawienia"
     search: "Szukaj"
     search placeholder: "Przeszukaj plany w kategorii %{category}"
     subscribe to plan: "Rozpocznij ten plan"
@@ -688,25 +698,28 @@ pl:
     chapter only: "Wersja audio nie jest dostępna dla tych wersetów. Sprawdź rozdziały audio w czytniku."
     close player menu: "Zamknij"
   highlights:
+    title: "Podkreślenia"
     blank slate:
       heading: "Zakreśl ważne wersety"
       description: "Podczas czytania Biblii, wybierz werset i zakreśl go. Powróć tu, aby przeglądać, edytować lub usunąć swoje zakreślenie."
     none user: "%{username} nie ma zakreśleń"
     choose color: "Wybierz kolor"
-    create success: "Zakreślenie zapisane"
     create failure: "Błąd, nie zapisano zakreślenia"
     destroy success: "Zakreślenie usunięte"
     destroy failure: "Błąd, nie usunięto zakreślenia"
     creation error: "Niestety, nie można było zakreślić."
     delete error: "Niestety, nie można było usunąć zakreślenia."
+    form:
+      save button: "Zapisz zakreślenie"
   searching:
     bible: "Biblia"
-    plans: "Plany czytania"
+    plans: "Plany"
     users: "Użytkownicy"
     notes: "Notatki"
     total results: "Około %{total} wyników"
     suggestion html: "Czy chodziło ci o %{suggestion_link}?"
     all versions: "Wszystkie przekłady języka: %{language_name}"
+    results for: "Wyniki wyszukiwania dla:"
   donate:
     donate now: "Przekaż dotację teraz"
     donate now intl: "lub dotuj z zagranicy"
@@ -876,9 +889,6 @@ pl:
     public domain: "Domena publiczna"
     loading: "Ładowanie dodatkowych przekładów..."
     load error: "Pojawił się problem z ładowaniem przekładów. Zamknij to menu i otwórz ponownie, aby spróbować jeszcze raz."
-  reader help:
-    title: "Wybierz werset..."
-    line 1: "Kliknij lub naciśnij na dowolny werset lub ich zbiór, aby dodać zakładkę, podkreślenie, utworzyć notatkę lub podzielić się ze znajomymi!"
   campaigns:
     100m:
       logo: "YouVersion: Aplikacja Biblii"
@@ -908,3 +918,9 @@ pl:
       sidebar:
         tagline: "Twórzmy razem historię"
         button: "Udostępnij Aplikację Biblii"
+  ui:
+    pagination:
+      next page: "Następna strona"
+      previous page: "Poprzednia strona"
+    datetime:
+      just now: "właśnie teraz"

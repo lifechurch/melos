@@ -34,6 +34,7 @@ nl:
     users username required: "Je moet een gebruikersnaam invoeren."
     users first name required: "Je moet een voornaam invoeren."
     users last name required: "Je moet een achternaam invoeren."
+    moments content required: "Mag niet leeg zijn"
   meta:
     kids_app:
       title: "De Bijbel App voor kinderen"
@@ -47,8 +48,6 @@ nl:
     connections:
       index:
         title: "Verbonden Accounts"
-  ui:
-    loading indicator text: "Laden..."
   now: "Nu"
   celebrating 50MM: "We vieren de 50 miljoenste installatie!"
   link: "Link"
@@ -141,11 +140,9 @@ nl:
   live: "Live/Groepen"
   first page: "Eerste pagina"
   last page: "Laatste pagina"
-  next page: "Volgende pagina"
-  previous page: "Vorige pagina"
   invalid username or password: "Ongeldige gebruikersnaam of wachtwoord"
   show all bookmarks: "Alle %{total} bladwijzers weergeven"
-  show all notes: "Alle %{total} notities weergeven"
+  show all notes: "Bekijk alle notities"
   recent bookmarks: "Recente bladwijzers"
   percentage display: "%{number}%"
   myself: "Ik"
@@ -172,7 +169,9 @@ nl:
       go to scripture: "Ga naar tekst"
       load more: "Meer laden"
       like: "Vind ik leuk"
+      liked: "Vond leuk"
       like title: "Vind ik leuk"
+      last comment: "Laatste reactie"
       share: "Deel"
       share title: "Deel dit met vrienden of familie"
       comment: "Reactie"
@@ -191,10 +190,18 @@ nl:
     none: "Je hebt geen meldingen"
     no new: "Geen nieuwe meldingen"
     view all: "Bekijk alle meldingen"
+  likes:
+    create success: "Gelukt! Jouw 'vind ik leuk' is opgeslagen"
+    create failure: "Jouw 'vind ik leuk' kan niet worden opgeslaan"
+    destroy success: "'Vind ik leuk' verwijderd "
+    destroy failure: "Jouw 'vind ik leuk' kon niet worden verwijderd "
   comments:
+    view all N: "Bekijk alle %{count} reacties "
     post comment: "Plaats een reactie"
-    create success: "Reactie geplaatst"
+    create success: "Gelukt! Jouw reactie is geplaatst."
     create failure: "Reactie kon niet worden geplaatst"
+    destroy success: "Commentaar verwijderd "
+    destroy failure: "Reactie kon niet worden verwijderd"
     form:
       save button: "Plaatsen"
   friends:
@@ -208,7 +215,7 @@ nl:
   friendships:
     offer success: "Vriendschapsverzoek verstuurd"
     offer failure: "Fout bij het versturen van vriendschapsverzoek"
-    create success: "Jullie zijn nu vrienden"
+    create success: "Gelukt! Jullie zijn nu vrienden."
     create failure: "Fout bij het maken van een vriendschap"
     destroy success: "Verzoek afgewezen"
     destroy failure: "Fout bij het afwijzen van het verzoek"
@@ -241,6 +248,11 @@ nl:
       reference field: "Verwijzing(en):"
       status field: "Status:"
       save button: "Opslaan"
+    status:
+      private: "Privé"
+      public: "Openbaar"
+      friends: "Enkel vrienden"
+      draft: "Concept"
     list title: "Notities"
     loading community: "Notities uit de gemeenschap worden geladen…"
     no community notes: "Er zijn geen notities uit de gemeenschap gevonden die gekoppeld zijn aan deze verzen. Om een notitie aan te maken selecteer je een vers in het Bijbelleesvenster en klik je op de knop Geselecteerd bovenin het leesvenster."
@@ -248,6 +260,7 @@ nl:
     private: "Privé"
     is private: "De aangevraagde notitie is privaat."
     draft: "Concept"
+    friends: "Vrienden"
     creation form errors: "De volgende fout(en) zorgden ervoor dat je geen notitie kon aanmaken:"
     reference field: "Verwijzing(en):"
     version field: "Vertaling:"
@@ -268,7 +281,7 @@ nl:
     cancel: "Annuleren"
     pop out: "Uitklappen"
     none found: "Er zijn geen notities gevonden…"
-    create success: "Notitie opgeslagen"
+    create success: "Gelukt! Jouw notitie is opgeslagen."
     create failure: "Fout bij het opslaan van de notitie"
     destroy success: "Notitie verwijderd"
     destroy failure: "Fout bij het verwijderen van notitie"
@@ -347,7 +360,7 @@ nl:
     my badges: "Mijn medailles"
     revised date: "Voor het laatst herzien op %{date}"
     update email copy: "Voer een nieuw e-mailadres in en klik op E-mailadres bijwerken. We sturen je een link om je nieuwe e-mailadres te bevestigen."
-    edit email: "E-mailadres bijwerken"
+    edit email: "Wijzig e-mailadres"
     update email check: "Controleer je e-mail en klik op de link om je nieuwe e-mailadres te bevestigen."
     confirm update email success: "Bedankt! Je e-mailadres is bijgewerkt."
     confirm update email error: "Sorry, er ging iets verkeerd tijdens het afronden van de verandering van je e-mailadres."
@@ -500,6 +513,7 @@ nl:
       friendships: "Breng me op de hoogte van vriendschapsverzoeken"
       moments: "Breng me op de hoogte van activiteit van vrienden"
       comments: "Breng mij op de hoogte van reacties op mijn activiteiten"
+      likes: "Breng mij op de hoogte van likes op mijn activiteiten."
   bookmarks:
     new: "Nieuwe bladwijzer"
     edit: "Bewerken"
@@ -513,7 +527,7 @@ nl:
     not found: "Bladwijzers geven je een snelle verwijzing naar je favoriete passages of naar het laatste hoofdstuk dat je gelezen hebt in een bepaald boek. Om een bladwijzer toe te voegen, selecteer je een vers in het Bijbelleesvenster en klik je vervolgens op de Geselecteerd-knop aan de bovenkant van het leesvenster."
     other user not found: "%{username} heeft nog geen bladwijzers geplaatst."
     creation form errors: "De volgende fout(en) zorgden ervoor dat je bladwijzer niet werd aangemaakt:"
-    create success: "Bladwijzer opgeslagen"
+    create success: "Gelukt! Jouw bladwijzer is opgeslagen."
     destroy success: "Bladwijzer verwijderd"
     destroy failure: "Fout bij het verwijderen van bladwijzer"
     update success: "Bladwijzer bijgewerkt"
@@ -545,6 +559,11 @@ nl:
     none me: "Je hebt nog geen medaille verdiend."
     none user: "%{username} heeft nog geen medaille verdiend."
   plans:
+    settings: "Instellingen"
+    privacy:
+      visible to friends?: "Wil jij jouw activiteiten in dit Leesplan zichtbaar maken voor jouw vrienden?"
+      private: "Privé"
+      public: "Openbaar"
     title: "Leesplannen"
     browse by category: "Per categorie bladeren"
     browse plans: "Door %{category} leesplannen bladeren"
@@ -575,7 +594,6 @@ nl:
     no public plans: "Er zijn geen leesplannen zichtbaar voor %{username}."
     filter by lang: "Leesplannen per taal filteren"
     plan settings: "Leesplaninstellingen"
-    settings: "Instellingen"
     search: "Zoeken"
     search placeholder: "%{category} leesplannen doorzoeken"
     subscribe to plan: "Aan dit leesplan beginnen"
@@ -688,17 +706,20 @@ nl:
     chapter only: "Sorry, de audiofunctie is niet beschikbaar voor verzen. Kijk in het leesvenster voor audio per hoofdstuk."
     close player menu: "Sluiten"
   highlights:
+    title: "Markeringen"
     blank slate:
       heading: "Markeer waardevolle verzen"
       description: "Terwijl jij in de Bijbel leest, kun je een vers selecteren en het markeren. Kom hier terug om jouw markering te bekijken, bewerken, of verwijderen."
     none user: "%{username} heeft geen markeringen"
     choose color: "Kleur kiezen"
-    create success: "Markering opgeslagen"
+    create success: "Gelukt! Jouw markering is opgeslagen."
     create failure: "Fout bij het opslaan van markering"
     destroy success: "Markering verwijderd"
     destroy failure: "Fout bij het verwijderen van markering"
     creation error: "Sorry, er kon geen markering gemaakt worden."
     delete error: "Sorry, de markering kon niet verwijderd worden."
+    form:
+      save button: "Sla Markering op"
   searching:
     bible: "Bijbel"
     plans: "Leesplannen"
@@ -707,6 +728,7 @@ nl:
     total results: "Ongeveer %{total} resultaten"
     suggestion html: "Bedoelde je %{suggestion_link}?"
     all versions: "Alle vertalingen in het %{language_name}"
+    results for: "Zoek resultaten voor:"
   donate:
     donate now: "Doneer Nu"
     donate now intl: "of een internationale bijdrage geven"
@@ -876,9 +898,6 @@ nl:
     public domain: "Publiek domein"
     loading: "Meer Versies aan het laden..."
     load error: "Sorry, er ontstond een probleem bij het laden van meer versies. Sluit dit menu en heropen het om het opnieuw te proberen."
-  reader help:
-    title: "Selecteer een vers..."
-    line 1: "Klik of raak een vers of verzen aan om een bladwijzer, makering, een notitie aan te maken, of deel ze met je vrienden!"
   campaigns:
     100m:
       logo: "YouVersion: De Bijbel app"
@@ -908,3 +927,9 @@ nl:
       sidebar:
         tagline: "Laten we samen geschiedenis maken."
         button: "Deel de Bijbel App"
+  ui:
+    pagination:
+      next page: "Volgende pagina"
+      previous page: "Vorige pagina"
+    datetime:
+      just now: "Zojuist"

@@ -47,8 +47,6 @@ bg:
     connections:
       index:
         title: "Свързани профили"
-  ui:
-    loading indicator text: "Зареждане..."
   now: "Сега"
   celebrating 50MM: "С над 50 милиона инсталирани приложения"
   link: "Връзка"
@@ -67,7 +65,7 @@ bg:
   new note: "Нова бележка"
   share success: "Съобщението е споделено"
   share error: "Грешка в съобщението. Опитайте отново."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Свържи се с твоя профил в %{connection}"
   deleted connection: "Успешно премахване на връзката ви през %{connection}."
   deleted connection error: "Имаше проблем при премаяхване на връзката ви през %{connection}."
@@ -141,11 +139,8 @@ bg:
   live: "На живо/групи"
   first page: "Първа страница"
   last page: "Последна страница"
-  next page: "Следваща страница"
-  previous page: "Предишна страница"
   invalid username or password: "Невалидно потребителско име или парола"
   show all bookmarks: "Виж всички %{total} отбелязани"
-  show all notes: "Виж всички %{total} бележки"
   recent bookmarks: "Последни отбелязвания"
   percentage display: "%{number}%"
   myself: "Мен"
@@ -172,6 +167,7 @@ bg:
       go to scripture: "Подобни стихове"
       load more: "Зареди още"
       like: "Харесай"
+      liked: "Харесани"
       like title: "Харесайте това"
       share: "Сподели"
       share title: "Сподели с приятели"
@@ -193,7 +189,6 @@ bg:
     view all: "Виж всички Съобщения"
   comments:
     post comment: "Публикувай коментар"
-    create success: "Коментарът беше публикуван"
     create failure: "Коментарът не може да бъде публикуван"
     form:
       save button: "Публикувай на"
@@ -208,7 +203,6 @@ bg:
   friendships:
     offer success: "Искането за приятелство е изпратено"
     offer failure: "Грешка при изпращането на искането за приятелство"
-    create success: "Вече сте приятели"
     create failure: "Грешка при създаване на приятелство"
     destroy success: "Искането беше отказано"
     destroy failure: "Грешка при отказването на искане"
@@ -241,6 +235,10 @@ bg:
       reference field: "Препратка:"
       status field: "Статут:"
       save button: "Запази"
+    status:
+      private: "Личен"
+      public: "Публичен"
+      draft: "Чернова"
     list title: "Бележки"
     loading community: "Зареждане на общите бележки..."
     no community notes: "Няма бележки към ибзраните стихове. За да създадеш бележка, избери стих в Библията и натисни бутона Избран в горната част на екрана."
@@ -248,6 +246,7 @@ bg:
     private: "Поверително"
     is private: "Посочената бележка е лична."
     draft: "Чернова"
+    friends: "Моите приятели"
     creation form errors: "Следните грешки не позволяват да се създаде бележката ви:"
     reference field: "Препратка:"
     version field: "Версия:"
@@ -268,7 +267,6 @@ bg:
     cancel: "Откажи"
     pop out: "Нов прозорец"
     none found: "Не са открити бележки..."
-    create success: "Бележката е записана."
     create failure: "Грешка при запис на бележка"
     destroy success: "Бележката е изтрита"
     destroy failure: "Грешка при изтриване на бележка"
@@ -347,7 +345,6 @@ bg:
     my badges: "Моите значки"
     revised date: "Последна ревизия на %{date}"
     update email copy: "Въведи нова ел.поща и натисни Обнови ел.поща. Ще получиш линк за потвърждение на новата си ел.поща."
-    edit email: "Обнови ел.поща"
     update email check: "Провери си ел.поща и кликни връзката за да потвърдиш новата си ел.поща."
     confirm update email success: "Адресът е актуализиран."
     confirm update email error: "Възникна проблем с промяната на ел.поща."
@@ -512,7 +509,6 @@ bg:
     not found: "Отбелязването дава бърза препратка към любимите ти пасажи или последната прочетена глава в дадена книга. За да отбележиш, избери стих в Библията и натисни Избран в горната част на екрана."
     other user not found: "%{username} няма запазени отбелязвания"
     creation form errors: "Маркерът не може да бъде създаден заради следните грешки:"
-    create success: "Създаден маркер"
     destroy success: "Отбелязването е премахнато"
     destroy failure: "Грешка при изтриване на отметка"
     update success: "Отбелязването е добавено"
@@ -544,6 +540,10 @@ bg:
     none me: "Нямате значки."
     none user: "%{username} не е получил значки."
   plans:
+    settings: "Настройки"
+    privacy:
+      private: "Личен"
+      public: "Публичен"
     title: "План за четене"
     browse by category: "Разгледай по категории"
     browse plans: "Преглед на плановете по %{category}"
@@ -574,7 +574,6 @@ bg:
     no public plans: "Няма избран план за четене за %{username}."
     filter by lang: "Филтрирай плановете по език"
     plan settings: "Настройки на плана"
-    settings: "Настройки"
     search: "Търси"
     search placeholder: "Търси планове в %{category}"
     subscribe to plan: "Започни този план"
@@ -687,12 +686,12 @@ bg:
     chapter only: "Все още няма аудио към тези стихове."
     close player menu: "Затвори"
   highlights:
+    title: "Маркирани"
     blank slate:
       heading: "Маркирай стих"
       description: "Отметките ви помагат да следите стиховете, които искате да запомните, да споделите или да маркирате като предпочитани. Върнете се тук, за да видите, редактирате или изтриете отметки."
     none user: "%{username} няма акценти"
     choose color: "Избери цвят"
-    create success: "Акцентът е записан"
     create failure: "Грешка при запазване на акцент"
     destroy success: "Акцентът е изтрит"
     destroy failure: "Грешка при изтриване на акцент"
@@ -700,7 +699,7 @@ bg:
     delete error: "Подчертаването не може да се премахне."
   searching:
     bible: "Библия"
-    plans: "План за четене"
+    plans: "Планове"
     users: "Потребители"
     notes: "Бележки"
     total results: "Около %{total} резултата"
@@ -875,9 +874,6 @@ bg:
     public domain: "Публичен домейн"
     loading: "Зареждане на още версии"
     load error: "Проблем с зареждането на повече версии. Затвори това меню и опитай отново!"
-  reader help:
-    title: "Изберете стих..."
-    line 1: "Натиснете на който и да било стих или сбор от стихове за да ги запазите, маркирате, да напишете бележка за тях или да ги споделите с приятели!"
   campaigns:
     100m:
       logo: "YouVersion: приложение Библията"
@@ -907,3 +903,7 @@ bg:
       sidebar:
         tagline: "Нека създадем история!"
         button: "Сподели Библията"
+  ui:
+    pagination:
+      next page: "Следваща страница"
+      previous page: "Предишна страница"

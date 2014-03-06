@@ -34,6 +34,7 @@ da:
     users username required: "Du skal  indtaste et brugernavn."
     users first name required: "Indtast et fornavn"
     users last name required: "Du skal indtaste efternavnet"
+    moments content required: "Indhold må ikke være tomt."
   meta:
     kids_app:
       title: "Bibel App for Børn"
@@ -47,8 +48,6 @@ da:
     connections:
       index:
         title: "Forbundne konti"
-  ui:
-    loading indicator text: "Indlæser ..."
   now: "Nu"
   celebrating 50MM: "Fejrer 50 millioner App installationer"
   link: "Link"
@@ -67,7 +66,7 @@ da:
   new note: "Skriv en note"
   share success: "Din besked er blevet delt"
   share error: "Beklager, der var en fejl i delingen af din besked. Prøv venligst igen."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Forbind til din %{connection} konto"
   deleted connection: "Fjernede med succes din forbindelse til %{connection}."
   deleted connection error: "Beklager, der var en fejl i sletningen af din forbindelse til %{connection}."
@@ -141,11 +140,9 @@ da:
   live: "Live/Grupper"
   first page: "Første side"
   last page: "Sidste side"
-  next page: "Næste side"
-  previous page: "Foregående side"
   invalid username or password: "Ugyldigt brugernavn eller password."
   show all bookmarks: "Se alle %{total} bogmærker"
-  show all notes: "Se alle %{total} noter"
+  show all notes: "Se alle noter"
   recent bookmarks: "Nyelige bogmærker"
   percentage display: "%{number}%"
   myself: "Mig"
@@ -172,7 +169,9 @@ da:
       go to scripture: "Gå til skriftstedet"
       load more: "Load mere"
       like: "Synes om"
+      liked: "Synes om"
       like title: "Synes om "
+      last comment: "Sidste kommentar"
       share: "Del"
       share title: "Del dette med venner eller familie"
       comment: "Kommentar"
@@ -191,10 +190,18 @@ da:
     none: "Du har ingen notifikationer"
     no new: "Ingen nye notifikationer"
     view all: "Se alle notifikationer"
+  likes:
+    create success: "Succes! Din synes om er gemt"
+    create failure: "Din synes om kunne ikke gemmes"
+    destroy success: "Synes om slettet"
+    destroy failure: "Din synes om kunne ikke slettes"
   comments:
+    view all N: "Se alle %{count} kommentarer"
     post comment: "Send en kommentat"
-    create success: "Kommentar sendt"
+    create success: "Succes! Din kommentar blev sendt."
     create failure: "Kommentar kunne ikke sendes"
+    destroy success: "Kommentar slettet"
+    destroy failure: "Kommentar kunne ikke slettes"
     form:
       save button: "Send"
   friends:
@@ -208,7 +215,7 @@ da:
   friendships:
     offer success: "Venneforespørgsel sendt"
     offer failure: "Fejl i afsendelse af venneforespørgsel"
-    create success: "Du er venner"
+    create success: "Succes! I er nu venner."
     create failure: "Fejl i dannelse af venskab"
     destroy success: "Forespørgsel afvist"
     destroy failure: "Fejl ved afvisning af forespørgsel"
@@ -241,6 +248,11 @@ da:
       reference field: "Reference(r):"
       status field: "Status:"
       save button: "Gem"
+    status:
+      private: "Privat"
+      public: "Offentlig"
+      friends: "Kun for venner"
+      draft: "Udkast"
     list title: "Noter"
     loading community: "Indlæser gruppe noter..."
     no community notes: "Ingen gruppe noter der refererer til eventuelle udvalgte vers blev fundet. Hvis du vil oprette en note, skal du vælge et vers i Bibel læseren og derefter klikke på Vælg knappen i toppen af ​​læseren."
@@ -248,6 +260,7 @@ da:
     private: "Privat"
     is private: "Den ønskede note er privat."
     draft: "Udkast"
+    friends: "Venner"
     creation form errors: "Følgende fejl forhindrede dannelse af din note:"
     reference field: "Reference(r):"
     version field: "Version:"
@@ -268,7 +281,7 @@ da:
     cancel: "Fortryd"
     pop out: "Hop ud"
     none found: "Ingen noter fundet..."
-    create success: "Note gemt"
+    create success: "Succes! Din note blev gemt."
     create failure: "Fejl da note skulle gemmes"
     destroy success: "Note slettet "
     destroy failure: "Error ved sletning af note"
@@ -347,7 +360,7 @@ da:
     my badges: "Mine mærker"
     revised date: "Sidst revideret den %{date}"
     update email copy: "Indtast en email adresse og klik Opdater email. Vi sender et link for at bekræftige din nye email adresse."
-    edit email: "Opdater email adresse"
+    edit email: "Ret email adresse"
     update email check: "Check venligst din email og klik for at bekræftige din nye email adresse."
     confirm update email success: "Tak! Du har opdateret din email adresse."
     confirm update email error: "Belager, der var et problem med at færdiggøre ændringen af din email adresse."
@@ -500,6 +513,7 @@ da:
       friendships: "Notificer mig om venneforespørgsler"
       moments: "Notificer mig om venners aktiviteter"
       comments: "Notificer mig om kommentarer til mine aktiviteter"
+      likes: "Notificer mig om synes om til mine aktiviteter"
   bookmarks:
     new: "Nyt bogmærke"
     edit: "Rediger"
@@ -513,7 +527,7 @@ da:
     not found: "Bogmærker giver dig en hurtig reference guide til dine foretrukne passager eller til den sidste kapitel du læser i en bestemt bog. Hvis du vil tilføje et bogmærke, skal du vælge et vers i Bibel læseren og derefter klikke på Vælg knappen i toppen af ​​læseren."
     other user not found: "%{username} har ikke gemt nogen bogmærker endnu."
     creation form errors: "Følgende fejl forhindrede dannelse af dit bogmærke:"
-    create success: "Bogmærke gemt"
+    create success: "Succes! Dit bogmærke blev gemt."
     destroy success: "Bogmærke fjernet"
     destroy failure: "Fejl ved sletning af bogmærke"
     update success: "Bogmærke opdateret"
@@ -545,6 +559,11 @@ da:
     none me: "Du har ikke optjent nogen mærker endnu."
     none user: "%{username} har ikke optjent nogen mærker endnu."
   plans:
+    settings: "Indstillinger"
+    privacy:
+      visible to friends?: "Vil du have at dine aktiviteter på denne plan er synlig for dine venner?"
+      private: "Privat"
+      public: "Offentlig"
     title: "Læse planer"
     browse by category: "Kig via kategori"
     browse plans: "Kig %{category} planer"
@@ -575,7 +594,6 @@ da:
     no public plans: "Ingen læse planer er synlige for %{username}."
     filter by lang: "Filtrer planer på sprog"
     plan settings: "Plan indstillinger"
-    settings: "Indstillinger"
     search: "Søg"
     search placeholder: "Søg %{category} planer"
     subscribe to plan: "Start denne plan"
@@ -688,25 +706,29 @@ da:
     chapter only: "Beklager, lyd er ikke tilgængelig for vers. Se i læseren for lyd til kapitelet."
     close player menu: "Luk"
   highlights:
+    title: "Markeringer"
     blank slate:
       heading: "Marker vigtige vers"
       description: "Mens du læser Bibelen kan du vælge vers og markere dem. Vend tilbage her for at  se, redigere eller slette dine bogmærker."
     none user: "%{username} har ingen markeringer"
     choose color: "Vælg farve"
-    create success: "Markering gemt"
+    create success: "Succes! Din markering blev gemt."
     create failure: "Fejl da markering gemmes"
     destroy success: "Markering slettet"
     destroy failure: "Fejl ved sletning af markering"
     creation error: "Beklager, kunne ikke markere"
     delete error: "Beklager, kunne ikke fjerne markering"
+    form:
+      save button: "Gem markering"
   searching:
     bible: "Bibel"
-    plans: "Læse planer"
+    plans: "Planer"
     users: "Brugere"
     notes: "Noter"
     total results: "Om %{total} resultater"
     suggestion html: "Mente du %{suggestion_link}?"
     all versions: "Alle %{language_name} versioner"
+    results for: "Søge resultater fra:"
   donate:
     donate now: "Doner nu"
     donate now intl: "eller doner internationalt"
@@ -876,9 +898,6 @@ da:
     public domain: "Offentligt område"
     loading: "Indlæser flere versioner"
     load error: "Beklager, der var et problem med at indlæse versioner. Luk menuen og prøv igen."
-  reader help:
-    title: "Vælg et vers..."
-    line 1: "Klik eller tryk på nogen vers eller en samling af vers til bogmærke, fremhæve, oprette en note, eller dele med dine venner!"
   campaigns:
     100m:
       logo: "Youversion:  Bible App´en"
@@ -908,3 +927,9 @@ da:
       sidebar:
         tagline: "Lad os lave histore sammen."
         button: "Del Bible App´en"
+  ui:
+    pagination:
+      next page: "Næste side"
+      previous page: "Foregående side"
+    datetime:
+      just now: "lige nu"

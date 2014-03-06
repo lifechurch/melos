@@ -34,6 +34,7 @@ sv:
     users username required: "Du måste ange ett användarnamn."
     users first name required: "Du måste ange ett förnamn."
     users last name required: "Du måste ange ett efternamn."
+    moments content required: "Innehåll kan inte vara tomt."
   meta:
     kids_app:
       title: "Bibelappen för barn"
@@ -47,8 +48,6 @@ sv:
     connections:
       index:
         title: "Anslutna konton"
-  ui:
-    loading indicator text: "Laddar..."
   now: "Nu"
   celebrating 50MM: "Firar 50 miljoner installationer!"
   link: "Länk"
@@ -141,11 +140,9 @@ sv:
   live: "Live/Grupper"
   first page: "Första sidan"
   last page: "Sista sidan"
-  next page: "Nästa sida"
-  previous page: "Föregående sida"
   invalid username or password: "Felaktigt användarnamn eller lösenord"
   show all bookmarks: "Visa alla %{total} bokmärken"
-  show all notes: "Visa alla %{total} anteckningar"
+  show all notes: "Visa alla anteckningarna"
   recent bookmarks: "Senaste bokmärkena"
   percentage display: "%{number}%"
   myself: "Mig"
@@ -172,7 +169,9 @@ sv:
       go to scripture: "Gå till skriften"
       load more: "Ladda mer"
       like: "Gilla"
+      liked: "Gillar"
       like title: "Gilla detta"
+      last comment: "Senaste kommentar"
       share: "Dela"
       share title: "Dela med vänner eller familj"
       comment: "Kommentera"
@@ -191,10 +190,18 @@ sv:
     none: "Du har inga meddelanden"
     no new: "Inga nya meddelanden"
     view all: "Visa alla meddelanden"
+  likes:
+    create success: "Din \"gilla\" har sparats"
+    create failure: "Din \"gilla\" kunde inte sparas"
+    destroy success: "\"gilla\" borttagen"
+    destroy failure: "Din \"gilla\" kunde inte tas bort"
   comments:
+    view all N: "Se alla %{count} kommentarer"
     post comment: "Skriv en kommentar"
-    create success: "Kommentar skickad"
+    create success: "Din kommentar har skickats."
     create failure: "Kommentar kunde inte skickas"
+    destroy success: "Kommentar borttagen"
+    destroy failure: "Kommentar kunde inte tas bort"
     form:
       save button: "Skicka"
   friends:
@@ -208,7 +215,7 @@ sv:
   friendships:
     offer success: "Vänförfrågan skickad"
     offer failure: "Kunde inte skicka vänskapsförfrågan"
-    create success: "Ni är nu vänner"
+    create success: "Ni är nu vänner."
     create failure: "Kunde inte skapa vänskap"
     destroy success: "Förfrågan nekad"
     destroy failure: "Kunde inte neka förfrågan"
@@ -241,6 +248,11 @@ sv:
       reference field: "Referens(er):"
       status field: "status:"
       save button: "Spara"
+    status:
+      private: "Privata"
+      public: "Offentliga"
+      friends: "Enbart vänner"
+      draft: "Utkast"
     list title: "Anteckningar"
     loading community: "Laddar delade anteckningar..."
     no community notes: "De valda verserna finns inte med i någon delad anteckning. För att skapa en ny anteckning, välj en vers i bibelläsaren och klicka på knappen Markerat högst upp i läsaren."
@@ -248,6 +260,7 @@ sv:
     private: "Egen"
     is private: "Den valda anteckningen är privat."
     draft: "Utkast"
+    friends: "Vänner"
     creation form errors: "Följande fel hindrade dig att skapa din anteckning:"
     reference field: "Referens(er):"
     version field: "Översättning:"
@@ -268,7 +281,7 @@ sv:
     cancel: "Avbryt"
     pop out: "Visa i eget fönster"
     none found: "Inga anteckningar hittades..."
-    create success: "Anteckning sparad"
+    create success: "Din anteckning har sparats."
     create failure: "Kunde inte spara anteckning"
     destroy success: "Anteckning borttagen"
     destroy failure: "Kunde inte ta bort anteckning"
@@ -347,7 +360,7 @@ sv:
     my badges: "Mina medaljer"
     revised date: "Senast ändrad den %{date}"
     update email copy: "Ange en ny e-postadress och klicka Uppdatera e-post. Vi kommer att skicka dig en länk för att bekräfta din nya e-postadress."
-    edit email: "Uppdatera e-postadress"
+    edit email: "Ändra e-postadress"
     update email check: "Kontrollera din e-post och klicka på länken för att bekräfta din nya e-postadress."
     confirm update email success: "Tack! Du har uppdaterat din e-postadress."
     confirm update email error: "Det uppstod ett problem vid försök att fullfölja din ändring av e-postadress."
@@ -500,6 +513,7 @@ sv:
       friendships: "Meddela mig om vänskapsförfrågningar"
       moments: "Meddela mig om vänners aktivitet"
       comments: "Meddela mig om kommentarer på min aktivitet"
+      likes: "Meddela mig om någon gillar min aktivitet"
   bookmarks:
     new: "Nytt bokmärke"
     edit: "Ändra"
@@ -513,7 +527,7 @@ sv:
     not found: "Bokmärken ger dig en snabb referens till dina favoritpassager eller till det senaste kapitlet du läste i en viss bok. För att lägga till ett bokmärke väljer du versen i Bibelläsaren och klickar sedan på knappen Markerat högst upp i läsaren."
     other user not found: "%{username} har inte sparat några bokmärken än."
     creation form errors: "Följande fel gjorde att du inte kunde skapa ditt bokmärke:"
-    create success: "Bokmärke sparad"
+    create success: "Ditt bokmärke har sparats."
     destroy success: "Bokmärke borttaget"
     destroy failure: "Kunde inte ta bort bokmärke"
     update success: "Bokmärke uppdaterad"
@@ -545,6 +559,11 @@ sv:
     none me: "Du har inte fått några medaljer än."
     none user: "%{username} har inte fått några medaljer än."
   plans:
+    settings: "Inställningar"
+    privacy:
+      visible to friends?: "Vill du att dina aktiviteter i denna plan ska vara synliga för dina vänner?"
+      private: "Privata"
+      public: "Offentliga"
     title: "Läsplaner"
     browse by category: "Bläddra efter katergori"
     browse plans: "Bläddra planer i %{category}"
@@ -575,7 +594,6 @@ sv:
     no public plans: "Inga läsplaner är synliga för %{username}."
     filter by lang: "Filtrera planer efter språk"
     plan settings: "Inställningar för läsplan"
-    settings: "Inställningar"
     search: "Sök"
     search placeholder: "Sök planer i %{category}"
     subscribe to plan: "Starta planen"
@@ -688,25 +706,29 @@ sv:
     chapter only: "Ljud är inte tillgänglig för verser. Visa i läsaren för kapitelljud."
     close player menu: "Stäng"
   highlights:
+    title: "Markeringar"
     blank slate:
       heading: "Markera meningsfulla verser"
       description: "När du läser Bibeln, välj en vers och markera den. Kom tillbaka hit för att se, redigera eller radera dina markeringar."
     none user: "%{username} har inga markeringar"
     choose color: "Välj färg"
-    create success: "Markering sparad"
+    create success: "Din markering har sparats"
     create failure: "Kunde inte spara markering"
     destroy success: "Markering borttagen"
     destroy failure: "Kunde inte ta bort markering"
     creation error: "Kunde inte markera."
     delete error: "Kunde inte ta bort markering."
+    form:
+      save button: "Spara markering"
   searching:
     bible: "Bibeln"
-    plans: "Läsplaner"
+    plans: "Planer"
     users: "Användare"
     notes: "Anteckningar"
     total results: "Om %{total} resultat"
     suggestion html: "Menar du %{suggestion_link}?"
     all versions: "Alla %{language_name} översättningar"
+    results for: "Sökresultat för:"
   donate:
     donate now: "Donera nu"
     donate now intl: "eller donera internationellt"
@@ -876,9 +898,6 @@ sv:
     public domain: "Allmän egendom"
     loading: "Laddar fler översättningar..."
     load error: "Beklagar, ett problem uppstod och det gick inte att ladda ner fler översättningar. Stäng denna meny och starta om för att försöka igen."
-  reader help:
-    title: "Välj en vers..."
-    line 1: "Klicka eller tryck på en vers eller samling av verser för att bokmärka, markera, skapa en anteckning eller dela med dina vänner!"
   campaigns:
     100m:
       logo: "YouVersion: Bibelappen"
@@ -908,3 +927,9 @@ sv:
       sidebar:
         tagline: "Låt oss skapa historia tillsammans"
         button: "Dela Bibelappen"
+  ui:
+    pagination:
+      next page: "Nästa sida"
+      previous page: "Föregående sida"
+    datetime:
+      just now: "Precis nu"

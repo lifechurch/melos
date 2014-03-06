@@ -34,6 +34,7 @@ de:
     users username required: "Du musst einen Benutzernamen eingeben."
     users first name required: "Du musst deinen Vornamen eingeben."
     users last name required: "Du musst deinen Nachnamen eingeben. "
+    moments content required: "Feld darf nicht leer sein."
   meta:
     kids_app:
       title: "Die Bible App for Kids"
@@ -43,12 +44,10 @@ de:
       description: "Die Bibel App ist schon fast 100 Mio. Mal installiert worden - ein unbeschreiblicher Meilenstein! Aber jetzt fangen wir erst richtig. Lade dir die kostenlose Bibel App heute herunter - und dann teile sie mit deinen Freunden. Lass uns zusammen Geschichte schreiben."
     mobile:
       title: "Die Bibel App "
-      description: "Zig Millionen Menschen nutzen die Bibel App, um Gottes Wort zu lesen, anzuhören, Videos dazu anzuschauen, es zu teilen und zum Teil ihres täglichen Lebens zu machen. Lade dir die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Lesepläne zu. Auf deinem mobilen Gerät kannst du hunderte von Übersetzungen sowie Hörbibeln genießen. "
+      description: "Zig Millionen Menschen nutzen die Bibel App, um Gottes Wort zu lesen, anzuhören, Videos dazu anzuschauen, es zu teilen und zu einem Teil ihres täglichen Lebens zu machen. Lade dir die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Lesepläne zu. Auf deinem mobilen Gerät kannst du hunderte von Übersetzungen sowie Hörbibeln genießen. "
     connections:
       index:
         title: "Verbundene Benutzerkonten"
-  ui:
-    loading indicator text: "Lädt..."
   now: "Jetzt  "
   celebrating 50MM: "Zur Feier der 50 Mio. Downloads!"
   link: "Link"
@@ -141,11 +140,9 @@ de:
   live: "Live/Gruppen"
   first page: "erste Seite"
   last page: "letzte Seite"
-  next page: "nächste Seite"
-  previous page: "vorherige Seite"
   invalid username or password: "Benutzername oder Passwort ungültig"
   show all bookmarks: "Alle %{total} Lesezeichen anzeigen"
-  show all notes: "Alle %{total} Notizen anzeigen"
+  show all notes: "Alle Notizen anzeigen"
   recent bookmarks: "Neueste Lesezeichen"
   percentage display: "%{number}%"
   myself: "Ich"
@@ -172,7 +169,9 @@ de:
       go to scripture: "Zur Schriftstelle wechseln"
       load more: "Mehr laden"
       like: "Gefällt mir"
+      liked: "Gefällt"
       like title: "Tippe auf \"Gefällt mir\""
+      last comment: "Jüngster Kommentar"
       share: "Teilen"
       share title: "Teile das mit deinen Freunden oder deiner Familie "
       comment: "Kommentar"
@@ -191,10 +190,18 @@ de:
     none: "Du hast keine Benachrichtigungen"
     no new: "Keine neuen Benachrichtigungen"
     view all: "Alle Benachrichtigungen anschauen"
+  likes:
+    create success: "Super! Dein \"Gefällt mir\" wurde gespeichert."
+    create failure: "Dein \"Gefällt mir\" konnte nicht gespeichert werden"
+    destroy success: "\"Gefällt mir\" entfernt"
+    destroy failure: "Dein \"Gefällt mir\" konnte nicht gelöscht werden"
   comments:
+    view all N: "Alle %{count} Kommentare zeigen"
     post comment: "Einen Kommentar posten"
-    create success: "Komment gepostet "
+    create success: "Super! Dein Kommentar wurde gepostet."
     create failure: "Der Kommentar konnte nicht gepostet werden"
+    destroy success: "Kommentar gelöscht"
+    destroy failure: "Kommentar konnte nicht gelöscht werden"
     form:
       save button: "Posten"
   friends:
@@ -208,7 +215,7 @@ de:
   friendships:
     offer success: "Freundschaftsanfrage versendet"
     offer failure: "Fehler beim Versenden der Freundschaftsanfrage"
-    create success: "Ihr seid jetzt befreundet"
+    create success: "Super! Ihr seid jetzt befreundet."
     create failure: "Fehler bei Freundschaftsanfrage"
     destroy success: "Anfrage abgelehnt"
     destroy failure: "Fehler beim Ablehnen der Freundschaftsanfrage"
@@ -241,6 +248,11 @@ de:
       reference field: "Bibelstelle(n):"
       status field: "Status:"
       save button: "Speichern"
+    status:
+      private: "Privat"
+      public: "Öffentlichkeit"
+      friends: "Nur Freunde"
+      draft: "Entwurf"
     list title: "Notizen"
     loading community: "Lade Gemeinschaftsnotizen... "
     no community notes: "Es wurden keine Gemeinschaftsnotizen zu diesen Versen gefunden. Um eine Notiz anzulegen, wähle einen Vers in der Leseansicht und dann klicke oben in der Leseansicht auf \"Auswählen\"."
@@ -248,6 +260,7 @@ de:
     private: "Privat"
     is private: "Die angeforderte Notiz ist privat."
     draft: "Entwurf"
+    friends: "Freunde"
     creation form errors: "Wegen dem/der folgende(n) Fehler konntest du keine Notiz anlegen. "
     reference field: "Bibelstelle(n):"
     version field: "Übersetzung:"
@@ -268,7 +281,7 @@ de:
     cancel: "Abbrechen"
     pop out: "In neuem Fenster anzeigen."
     none found: "Keine Notizen vorhanden"
-    create success: "Notiz gespeichert"
+    create success: "Super! Deine Notiz wurde gespeichert."
     create failure: "Fehler beim Speichern der Notiz "
     destroy success: "Notiz gelöscht"
     destroy failure: "Fehler beim Löschen der Notiz"
@@ -347,7 +360,7 @@ de:
     my badges: "Meine Auszeichnungen"
     revised date: "Zuletzt überarbeitet am %{date}"
     update email copy: "Gib eine neue E-Mail-Ad­res­se ein und klicke auf E-Mail aktualisieren. Wir senden dir einen Link, damit du deine neue E-Mail-Ad­res­se bestätigen kannst."
-    edit email: "E-Mail aktualisieren"
+    edit email: "E-Mail-Adresse ändern"
     update email check: "Bitte rufe deine E-Mails ab und klicke auf den Link, um deine neue E-Mail-Ad­res­se zu bestätigen."
     confirm update email success: "Okay! Du hast deine E-Mail-Ad­res­se aktualisiert."
     confirm update email error: "Sorry, es gab ein Problem beim Ändern deiner E-Mail-Ad­res­se."
@@ -500,6 +513,7 @@ de:
       friendships: "Benachrichtige mich über Freundschaftsanfragen"
       moments: "Benachrichtige mich über die Aktivitäten von Freunden"
       comments: "Benachrichtige mich über Kommentare zu meinen Aktivitäten"
+      likes: "Benachrichtige mich, wenn jemandem meine Aktivitäten gefallen."
   bookmarks:
     new: "Neues Lesezeichen"
     edit: "Bearbeiten"
@@ -513,7 +527,7 @@ de:
     not found: "Lesezeichen geben dir eine Übersicht über deine Lieblingsstellen oder bringen dich wieder zu dem Kapitel, das du zuletzt gelesen hast. Um ein Lesezeichen hinzuzufügen, wähle den gewünschten Vers in der Leseansicht und klicke oben auf \"Ausgewählt\"."
     other user not found: "%{username} hat bisher keine Lesezeichen gespeichert."
     creation form errors: "Folgende(r) Fehler verhindern die Erstellung deines Lesezeichens:"
-    create success: "Lesezeichen gespeichert"
+    create success: "Super! Dein Lesezeichen wurde gespeichert."
     destroy success: "Lesezeichen entfernt"
     destroy failure: "Fehler beim Löschen des Lesezeichens "
     update success: "Lesezeichen aktualisiert"
@@ -545,6 +559,11 @@ de:
     none me: "Du hast bisher keine Abzeichen bekommen."
     none user: "%{username} hat bisher keine Abzeichen bekommen."
   plans:
+    settings: "Einstellungen"
+    privacy:
+      visible to friends?: "Soll das, was du in deinem Leseplan machst, für deine Freunde sichtbar sein?"
+      private: "Privat"
+      public: "Öffentlich"
     title: "Lesepläne"
     browse by category: "Kategorien anschauen"
     browse plans: "%{category} Lesepläne anschauen"
@@ -575,7 +594,6 @@ de:
     no public plans: "Von %{username} ist kein Leseplan sichtbar."
     filter by lang: "Lesepläne nach Sprachen filtern"
     plan settings: "Leseplaneinstellungen"
-    settings: "Einstellungen"
     search: "Suche"
     search placeholder: "Durchsuche %{category} Lesepläne"
     subscribe to plan: "Diesen Leseplan beginnen"
@@ -688,17 +706,20 @@ de:
     chapter only: "Sorry, Audiodateien gibt es nur pro Kapitel. Gehe zur Leseansicht, um das Kapitel anzuhören. "
     close player menu: "Schließen"
   highlights:
+    title: "Markierungen"
     blank slate:
       heading: "Markierte Verse, die dir wichtig sind"
       description: "Wähle beim Lesen der Bibel einen Vers aus und markiere ihn. Hier kannst du deine Markierungen später ansehen, ändern oder löschen."
     none user: "%{username} hat noch nichts markiert"
     choose color: "Wähle eine Farbe. "
-    create success: "Markierung gespeichert"
+    create success: "Super! Deine Markierung wurde gespeichert."
     create failure: "Fehler beim Speichern der Markierung"
     destroy success: "Markierung gelöscht"
     destroy failure: "Fehler beim Löschen der Markierung"
     creation error: "Entschuldigung, das Markieren hat nicht geklappt. "
     delete error: "Sorry, die Markierung konnte nicht entfernt werden."
+    form:
+      save button: "Markierungen speichern"
   searching:
     bible: "Bibel"
     plans: "Lesepläne"
@@ -707,6 +728,7 @@ de:
     total results: "Ungefähr %{total} Ergebnisse"
     suggestion html: "Meintest du %{suggestion_link}?"
     all versions: "Alle %{language_name}en Übersetzungen"
+    results for: "Suche Ergebnisse für:"
   donate:
     donate now: "Jetzt spenden"
     donate now intl: "oder von außerhalb der USA spenden"
@@ -876,9 +898,6 @@ de:
     public domain: "Gemeinfrei"
     loading: "Lade weitere Übersetzungen..."
     load error: "Leider gab es ein Problem beim Laden weiterer Übersetzungen. Schließe dieses Menü und öffne es erneut, um es noch einmal zu versuchen."
-  reader help:
-    title: "Wähle einen Vers..."
-    line 1: "Klicke oder tippe auf einen Vers oder eine Sammlung von Versen, um Lesezeichen zu erstellen, zum Markieren, um eine Notiz zu erstellen oder mit deinen Freunden zu teilen!"
   campaigns:
     100m:
       logo: "YouVersion: Die Bibel App"
@@ -908,3 +927,9 @@ de:
       sidebar:
         tagline: "Lass uns Geschichte schreiben."
         button: "Teile die Bibel App."
+  ui:
+    pagination:
+      next page: "nächste Seite"
+      previous page: "vorherige Seite"
+    datetime:
+      just now: "gerade eben"
