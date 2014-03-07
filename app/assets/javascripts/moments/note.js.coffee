@@ -41,12 +41,6 @@ class window.Moments.Note
   user: ()->
     @data.user
 
-  comments: ()->
-    @data.comments
-
-  likes: ()->
-    @data.likes
-
   constructor: (@data, @feed)->
     @template = $("#moment-note-tmpl")
     @feed.ready(@)
@@ -65,6 +59,9 @@ class window.Moments.Note
         created_dt:   @data.created_dt
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
+        comments:     @data.comments
+        likes:        @data.likes
+        actions:      @data.actions
         user:
           path:       @data.user.path
 

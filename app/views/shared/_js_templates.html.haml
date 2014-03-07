@@ -275,11 +275,16 @@
             </a>
           </h2>
 
-          {{{verse_html}}}
+          <div class="moment-verse-wrap">
+            {{{verse_html}}}
+          </div>
 
         </div>
       </div>
-      <div class="moment-btm"></div>
+      <div class="moment-btm">
+        {{> moment-actions-bar}}
+        {{> moment-comments}}
+      </div>
     </div>
 
 
@@ -304,17 +309,107 @@
             </a>
           </h2>
 
-          {{{verse_html}}}
+          <div class="moment-verse-wrap">
+            {{{verse_html}}}
+          </div>
 
           <p class="moment-bm-labels">
-            <a href="#">Label</a>
-            <a href="#">Label</a>
-            <a href="#">Label</a>
+            {{#each labels}}
+              <a href="#" class="moment-bm-labels-link">{{lookup ../labels @index}}</a>
+            {{/each}}
           </p>
 
         </div>
       </div>
-      <div class="moment-btm"></div>
+      <div class="moment-btm">
+        {{> moment-actions-bar}}
+        {{> moment-comments}}
+      </div>
+    </div>
+
+
+%script#moment-actions-bar-tmpl{type:"text/x-handlebars-template"}
+  :plain
+    <div class="moment-actions">
+      <span class="moment-actions-like">
+        <a href="#">#{t("moments.action.like")}</a>
+      </span>
+      <span class="moment-actions-comment">
+        <a href="#">#{t("moments.action.comment")}</a>
+      </span>
+    </div>
+
+%script#moment-comments-tmpl{type:"text/x-handlebars-template"}
+  :plain
+    <div class="moment-comments">
+    {{#if actions.show}}
+      {{#if likes.strings.whos_liked}}
+      <span class="moment-comments-likes">
+        {{{likes.strings.whos_liked}}}
+      </span>
+      {{/if}}
+      {{#if comments.strings.view_all_comments}}
+      <span class="moment-comments-more">
+        <a href="{{path}}">{{comments.strings.view_all_comments}}</a>
+      </span>
+      {{/if}}
+      <ul class="moment-comments-list">
+        {{#each comments.all}}
+          {{> moment-comment}}
+        {{/each}}
+      </ul>
+    {{/if}}
+      <form action="/comments" method="post">
+        <input type="hidden" name="comment[moment_id]" value="{{id}}" />
+        <span class="moment-comments-input">
+          <span class="moment-comments-input-avatar">
+            <img src="{{user.avatar}}" />
+          </span>
+          <textarea name="comment[content]" class="moment-comments-textarea comment-field" data-moment-id="{{id}}" />
+        </span>
+      </form>
+    </div>
+    
+
+%script#moment-comment-tmpl{type:"text/x-handlebars-template"}
+  :plain
+    <li class="moment-comments-list-comment">
+      <span class="moment-comments-list-avatar">
+        <a href="{{user.path}}">
+          <img src="{{user.avatar}}" />
+        </a>
+      </span>
+      <p class="moment-comments-list-text">
+        <a href="{{user.path}}">{{user.name}}</a>
+        {{content}}
+        <span class="moment-comment-dt">{{created_dt}}</span>
+      </p>
+    </li>
+
+
+%script#moment-friendship-tmpl{type:"text/x-handlebars-template"}
+  :plain
+    <div class="moment">
+      <div class="moment-top">
+        <div class="moment-fr">
+          <span class="moment-icon"></span>
+          <span class="moment-avatar">
+            <img src="{{avatar}}" />
+          </span>
+          <span class="moment-time">
+            {{created_dt}}
+          </span>
+          <h2 class="moment-fr-text">{{{moment_title}}}</h2>
+          <div class="moment-fr-box">
+            <a href="{{friend_path}}">
+              <img src="{{friend_avatar}}" class="moment-fr-avatar" />
+              <span class="moment-fr-name">
+                {{friend_name}}
+              </span>
+            </a>
+          </div> 
+        </div>
+      </div>
     </div>
 
 
@@ -354,7 +449,10 @@
 
         </div>
       </div>
-      <div class="moment-btm"></div>
+      <div class="moment-btm">
+        {{> moment-actions-bar}}
+        {{> moment-comments}}
+      </div>
     </div>
 
 %script#moment-verse-tmpl{type:"text/x-handlebars-template"}
@@ -477,3 +575,12 @@
       %span    
         %a{href:"#", target: "_blank", title: "Share this on Twitter", class: "twitter moment-actions-share-twitter"}
           Twitter
+
+%script
+  :plain
+    Handlebars.registerPartial("moment-actions-bar", $("#moment-actions-bar-tmpl").html())
+    Handlebars.registerPartial("moment-comments", $("#moment-comments-tmpl").html())
+    Handlebars.registerPartial("moment-comment", $("#moment-comment-tmpl").html())
+    Handlebars.registerHelper('lookup', function(obj, field) {
+      return obj[field];
+    });

@@ -10,7 +10,6 @@ class window.Moments.Feed
 
     $("#load-more").on "click", (event)=>
       event.preventDefault()
-      console.log("FROM FEED")
       pagination_link   = $(event.target)
       next_page         = pagination_link.data("page") + 1
       paginated_end_day = pagination_link.data("paginated-end-day")
@@ -21,29 +20,55 @@ class window.Moments.Feed
         url: request_url,
         dataType: "json",
         success: (data)=>
-
-          @buildAll(data)
+          @beginRendering(data)
           return
 
   currentFeed: ()->
     @current_feed
 
 
-  buildAll: (moments_json_array)->
+  renderNext: ()->
+    next_moment = @moments_json.shift()
+    return if next_moment == undefined
+    
+    @renderMoment(next_moment)
+    return
+
+
+  renderMoment: (moment)->
+    data = moment.object
+    switch moment.kind
+      when "votd"
+        new Moments.VOD(data,@)
+      when "highlight"
+        new Moments.Highlight(data,@)
+      when "bookmark"
+        new Moments.Bookmark(data,@)
+      when "note"
+        new Moments.Note(data,@)
+      when "friendship"
+        new Moments.Friendship(data,@)
+      else
+        @renderNext()
+
+
+  beginRendering: (moments_json_array)->
+    @moments_json = moments_json_array
     @current_feed = $("<div />",{class:"social-feed"})
     @wrap.append(@current_feed)
+    
+    @renderNext()
+    return
 
-    $.each moments_json_array , (index,moment)=>
-
-      switch moment.kind
-        when "votd"
-          new Moments.VOD(moment.object,@)
-        when "highlight"
-          new Moments.Highlight(moment.object,@)
-        when "bookmark"
-          new Moments.Bookmark(moment.object,@)
-        when "note"
-          new Moments.Note(moment.object,@)
 
   ready: (moment)->
     @currentFeed().append(moment.render())
+    @refereshWookmark()
+    @renderNext()
+    return
+
+  refereshWookmark: ()->
+    @current_feed.find(".moment").wookmark
+      autoResize:   true,
+      offset:       15,
+      container:    @current_feed

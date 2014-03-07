@@ -12,11 +12,11 @@ module Images
 
 
     def md
-      select_item(400)
+      select_optimized_width(400)
     end
 
     def lg
-      select_item(800)
+      select_optimized_width(800)
     end
 
     

@@ -41,12 +41,6 @@ class window.Moments.Highlight
   user: ()->
     @data.user
 
-  comments: ()->
-    @data.comments
-
-  likes: ()->
-    @data.likes
-
   verseHTML: ()->
     @verse_html
 
@@ -67,6 +61,9 @@ class window.Moments.Highlight
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
         avatar:       @data.avatar
+        comments:     @data.comments
+        likes:        @data.likes
+        actions:      @data.actions        
         user:
           path:       @data.user.path
 

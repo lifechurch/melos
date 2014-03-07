@@ -9,9 +9,11 @@
     .moment-sys
       %span.moment-icon
         &nbsp;
+      %span.moment-avatar
+        = image_tag moment.avatars.lg_avatar.url
       %span.moment-time
         = api_dt_time_ago(moment.created_dt)
-      %p.moment-sys-text
+      %h2.moment-sys-text
         = moment.moment_title.html_safe
 
       - if moment.body_images.present?

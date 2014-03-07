@@ -15,9 +15,7 @@
       %h2.moment-sys-text
         = moment.title.html_safe if moment.title
 
-  -# !share controls, dates, and comments
-  .moment-btm
-    .moment-actions
-      %span.moment-actions-share
-        %a{href:"#", title: t("moments.action.share title")}
-          = t("moments.action.share")
+      - if moment.body_images.present?
+        - image = moment.body_images.lg
+        .moment-sys-image
+          = image_tag image.url

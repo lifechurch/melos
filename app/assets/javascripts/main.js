@@ -38,12 +38,12 @@ jQuery(document).ready(function() {
 
 
   $(".moment-vod").each(function() {
-    new Moments.VOTD({el: $(this)})
+    //new Moments.VOTD({el: $(this)})
   });
 
 
   $(".moment-verse.empty").each(function() {
-    new Moments.Verse({el: $(this)});
+    //new Moments.Verse({el: $(this)});
   });
 
 

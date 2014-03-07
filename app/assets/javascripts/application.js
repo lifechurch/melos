@@ -22,6 +22,7 @@
 //= require ./moments/votd
 //= require ./moments/vod
 
+//= require ./moments/friendship
 //= require ./moments/note
 //= require ./moments/bookmark
 //= require ./moments/highlight

@@ -1,21 +1,11 @@
-class SystemMoment
+class SystemMoment < YV::Resource
   
-  attr_accessor :updated_dt,
-                :created_dt,
-                :comments,
-                :commenting,
-                :comments_count,
-                :kind_id,
-                :kind_color,
-                :body,
-                :icons,
-                :avatars,
-                :title,
-                :extras
+  include YV::Concerns::Moments
 
+  attributes [:body, :title, :body_images]
 
-  def moment_partial_path
-    "moments/system"
+  def kind
+    "system"
   end
 
 end

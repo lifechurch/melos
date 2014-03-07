@@ -8,6 +8,9 @@ class window.Session.User
   @userName: ()->
     return $("html").data("user-name")
 
+  @avatar: ()->
+    return $("html").data("user-avatar")
+
   @toPath: ()->
     return undefined unless Session.User.isLoggedIn()
     return "/users/" + Session.User.userName()

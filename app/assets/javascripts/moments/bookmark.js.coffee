@@ -34,12 +34,6 @@ class window.Moments.Bookmark
   references: ()->
     @data.references
 
-  comments: ()->
-    @data.comments
-
-  likes: ()->
-    @data.likes
-
   verseHTML: ()->
     @verse_html
 
@@ -60,8 +54,13 @@ class window.Moments.Bookmark
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
         avatar:       @data.avatar
+        comments:     @data.comments
+        likes:        @data.likes
+        actions:      @data.actions
+        labels:       @data.labels
         user:
           path:       @data.user.path
+          avatar:     Session.User.avatar()
 
       return html
 
