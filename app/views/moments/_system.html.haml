@@ -13,7 +13,7 @@
         = api_dt_time_ago(moment.created_dt)
 
       %h2.moment-sys-text
-        = moment.title.html_safe if moment.title
+        = moment.moment_title.html_safe if moment.moment_title
 
       - if moment.body_images.present?
         - image = moment.body_images.lg

@@ -71,8 +71,8 @@ module YV
             instance.extras           = data.extras
             instance.kind_id          = data.kind_id
             instance.kind_color       = data.kind_color
-            instance.title            = t(data.base.title["l_str"],data.base.title["l_args"]) if data.base.title
-            instance.body             = t(data.base.body["l_str"], data.base.body["l_args"]) if data.base.body
+            instance.moment_title     = t(data.base.title["l_str"],data.base.title["l_args"]) if data.base.title
+            instance.body_text        = t(data.base.body["l_str"], data.base.body["l_args"]) if data.base.body
 
             instance.body_images      = map_to_body_images(data.base.images.body)
             instance.avatars          = map_to_avatars(data.base.images.avatar)
@@ -83,7 +83,6 @@ module YV
             instance.comments_count   = data.commenting.total
 
             instance                  = map_to_like_fields(instance,data.liking)
-
             instance
           end
 

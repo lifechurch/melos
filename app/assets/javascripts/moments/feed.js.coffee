@@ -49,7 +49,9 @@ class window.Moments.Feed
       when "friendship"
         new Moments.Friendship(data,@)
       when "generic"
-        new Moments.Generic(data,@)  
+        new Moments.Generic(data,@)
+      when "system"
+        new Moments.System(data,@)  
       else
         @renderNext()
 
