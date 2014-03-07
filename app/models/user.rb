@@ -353,7 +353,7 @@ class User < YV::Resource
 
   def subscribed_to? (plan, opts = {})
     #if auth is nil, it will attempt to search for public subscription
-    return Subscription.find(plan, id, auth: auth).present? rescue false
+    return Subscription.find(plan, auth: auth).present? rescue false
   end
 
   def ==(compare)

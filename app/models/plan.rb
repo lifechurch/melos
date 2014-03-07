@@ -71,12 +71,13 @@ class Plan < YV::Resource
 
 
     def id_and_slug_from_param(param)
-      case param
-        when /\A(\d+)-(.+)/    # format 1234-plan-slug
-          return param.match(/\A(\d+)-(.+)/)[1].to_i, param.match(/\A(\d+)-(.+)/)[2]
-        when Plan
-          return param.id, param.slug
-        else return nil
+      if param.class == Plan
+        return param.id, param.slug
+      elsif param.class == String
+        # format 1234-plan-slug
+        return param.match(/\A(\d+)-(.+)/)[1].to_i, param.match(/\A(\d+)-(.+)/)[2]
+      else 
+        return nil
       end
     end
 
