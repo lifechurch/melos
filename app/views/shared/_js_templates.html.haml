@@ -413,6 +413,34 @@
     </div>
 
 
+%script#moment-generic-tmpl{type:"text/x-handlebars-template"}
+  :plain
+    <div class="moment">
+      <div class="moment-top">
+        <div class="moment-sys">
+          
+          <span class="moment-icon"></span>
+          <span class="moment-avatar">
+            <img src="{{avatar}}" />
+          </span>
+          
+          <span class="moment-time">
+            {{created_dt}}
+          </span>
+          
+          <h2 class="moment-sys-text">{{{moment_title}}}</h2>
+          
+          {{#if body_text}}
+          <div style="clear:both;">
+            {{{body_text}}}
+          </div>
+          {{/if}}
+
+        </div>
+      </div>
+    </div>    
+
+
 %script#moment-note-tmpl{type:"text/x-handlebars-template"}
   :plain
     <div class="moment" data-moment-id="{{id}}" data-moment-path="{{to_path}}" data-str-delete-confirm="Are you sure you want to delete this?">

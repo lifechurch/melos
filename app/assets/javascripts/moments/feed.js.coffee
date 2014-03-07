@@ -48,6 +48,8 @@ class window.Moments.Feed
         new Moments.Note(data,@)
       when "friendship"
         new Moments.Friendship(data,@)
+      when "generic"
+        new Moments.Generic(data,@)  
       else
         @renderNext()
 
