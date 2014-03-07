@@ -19,11 +19,7 @@ class PlansController < ApplicationController
     if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
 
     @plan = Plan.find(params[:id])
-    if current_auth && current_user.subscribed_to?(@plan)
-       redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param,day: params[:day], content: params[:content]) and return
-    else
-      self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
-    end
+    self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
   end
 
   def sample
