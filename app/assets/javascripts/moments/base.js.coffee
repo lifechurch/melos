@@ -61,7 +61,7 @@ class window.Moments.Base
       dataType:"json",
       success: (data)=>
         comment_li.fadeOut 200, =>
-          @feed.refreshWookmark()
+          @feed.refreshWookmark(@moment_el.closest(".social-feed"))
 
 
   commentCreateHandler: (event)->
@@ -89,7 +89,7 @@ class window.Moments.Base
             @commentDeleteHandler(event)
 
           @comment_field_el.val("").removeAttr("disabled").blur() # blur to dismiss device keyboards
-          @feed.refreshWookmark()
+          @feed.refreshWookmark(@moment_el.closest(".social-feed"))
 
 
 
@@ -104,10 +104,12 @@ class window.Moments.Base
           data: {authenticity_token: @authToken()},
           dataType: "json"
 
+        feed = @moment_el.closest(".social-feed")
+
         request.done (data)=>
           @moment_el.fadeTo 250, 0.0, ()=>
             @moment_el.remove()
-            @feed.refreshWookmark()
+            @feed.refreshWookmark(feed)
           # if @isDetailView()
           #   window.location.href = Session.User.toPath()
           # else

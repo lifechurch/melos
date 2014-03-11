@@ -4,14 +4,13 @@ class window.Moments.Feed
 
   constructor: (@params)->
     @wrap = if @params? and @params.el? then $(@params.el) else $(".social-feed-wrap")
+    @pagination = $("<a />", {href: "#", id: "load-more"}).text("Load More").hide()
     @page             = 0
     @paginate_end_day = undefined
     @current_page     = undefined
 
     @loadMoments()
     return
-
-    #$("#load-more").on "click", $.proxy(@loadMoreHandler,@)
 
 
   currentPage: ()->
@@ -20,10 +19,20 @@ class window.Moments.Feed
 
   renderNext: ()->
     next_moment = @moments_json.shift()
-    return if next_moment == undefined
-    
-    @renderMoment(next_moment)
+    if next_moment == undefined
+      @showPagination()
+    else
+      @renderMoment(next_moment)
     return
+
+
+  showPagination: ()->
+    unless @pagination.hasClass("loaded")
+      @wrap.after(@pagination)
+      @pagination.addClass("loaded")
+      @pagination.on "click", $.proxy(@loadMoreHandler,@)
+    
+    @pagination.show()
 
 
   loadMoreHandler: (event)->
@@ -32,6 +41,7 @@ class window.Moments.Feed
     return
 
   loadMoments: ()->
+    @pagination.hide()
     @page        = @page + 1
     request_url  = "/moments/_cards?"
     request_url  += "page=" + @page
@@ -89,8 +99,9 @@ class window.Moments.Feed
     moment.initInteractions()
     return
 
-  refreshWookmark: ()->
-    @current_page.find(".moment").wookmark
+  refreshWookmark: (page)->
+    page_scope = if page? then page else @current_page
+    page_scope.find(".moment").wookmark
       autoResize:   true,
       offset:       15,
-      container:    @current_page
+      container:    page_scope
