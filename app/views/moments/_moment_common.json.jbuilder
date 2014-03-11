@@ -1,13 +1,14 @@
 json.id             moment.id
 json.created_dt     moment.created_dt
 json.updated_dt     moment.updated_dt
-json.moment_title   moment.moment_title
 json.references     moment.references
 json.path           moment.to_path
 json.avatar         moment.avatars.lg_avatar.url
-
+json.set! :owned_by_me, current_user_moment?(moment)
 json.actions do
   json.set! :show, moment.comments_count > 3 || moment.likes_count > 0
+  json.set! :editable, (current_user_moment?(moment) and moment.editable?)
+  json.set! :deletable, (current_user_moment?(moment) and moment.deletable?)
 end
 
 json.user do
@@ -31,6 +32,7 @@ json.comments do
       json.id          comment.id
       json.content     comment.content
       json.created_dt  comment.created_dt
+      json.set! :owned_by_me, comment.user.id == current_auth.user_id  #necessary for js templates.
 
       json.user do
         user    = comment.user

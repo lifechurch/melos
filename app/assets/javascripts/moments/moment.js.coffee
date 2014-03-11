@@ -53,41 +53,7 @@ class window.Moments.Moment
 
 
 
-  createLike: ()-> 
-    @likeActionPending(true)
-    @liked_link.addClass("liked")
-    post_data = { authenticity_token: @authToken(), moment_id: @moment_id }
 
-    request = $.ajax "/likes",
-      type: "POST",
-      data: post_data,
-      dataType: "json"
-
-    request.done (data)=>
-      @likeActionPending(false)
-
-    # if the request fails, set the class back to it's original unliked status.
-    request.fail (jqXHR,status) =>
-      @liked_link.removeClass("liked")
-      @likeActionPending(false)
-
-  destroyLike: ()->
-    @likeActionPending(true)
-    @liked_link.removeClass("liked")
-    post_data = { authenticity_token: @authToken() }
-
-    request = $.ajax "/likes/" + @moment_id,
-      type: "DELETE",
-      data: post_data,
-      dataType: "json"
-
-    request.done (data)=>
-      @likeActionPending(false)
-
-    # if the request fails, set the class back to it's original liked status.
-    request.fail (jqXHR,status) =>
-      @liked_link.addClass("liked")
-      @likeActionPending(false)
 
 
   likeActionPending: (bool)->

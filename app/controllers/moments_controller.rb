@@ -14,16 +14,16 @@ class MomentsController < BaseMomentsController
 
   # A logged in users Moments/Home feed
   def index
-    recent_versions = client_settings.recent_versions
-    @user    = current_user
-    @feed    = YV::Moments::Feed.new(
-      prev_end_day: params[:paginated_end_day] || 0,
-      auth: current_auth,
-      page: @page,
-      version: client_settings.version || 1,
-      recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default]
-    )
-    @moments = @feed.moments
+    # recent_versions = client_settings.recent_versions
+    # @user    = current_user
+    # @feed    = YV::Moments::Feed.new(
+    #   prev_end_day: params[:paginated_end_day] || 0,
+    #   auth: current_auth,
+    #   page: @page,
+    #   version: client_settings.version || 1,
+    #   recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default]
+    # )
+    # @moments = @feed.moments
   end
 
 

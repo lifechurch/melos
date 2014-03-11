@@ -37,19 +37,10 @@ jQuery(document).ready(function() {
       mg.addMenu(f)
 
 
-  $(".moment-vod").each(function() {
-    //new Moments.VOTD({el: $(this)})
-  });
-
-
   $(".moment-verse.empty").each(function() {
     //new Moments.Verse({el: $(this)});
   });
 
-
-  $(".moment-comments").each(function(){
-    new Moments.Comments({base: $(this)});
-  });
 
   $(".moment").each(function(){
     new Moments.Moment({el: $(this)})

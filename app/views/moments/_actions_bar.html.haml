@@ -15,7 +15,7 @@
     = link_to t("moments.action.comment"), moment.to_path, title: t("moments.action.comment title")
 
 
-  - if moment.user_id == current_auth.user_id
+  - if current_user_moment?(moment)
 
     .moment-content-actions
       - if moment.editable?

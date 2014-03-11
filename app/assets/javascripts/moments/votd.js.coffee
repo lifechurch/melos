@@ -1,142 +1,109 @@
 window.Moments ?= {}
 
-class window.Moments.VOTD
+class window.Moments.VOTD extends Moments.Base
 
-  constructor: (@params)->
-    @votd_el = @params.el
-    @votd_verse = @votd_el.find(".moment-votd-verse")
-    @usfm       = @votd_verse.data("usfm")
-    @version_id = @votd_verse.data("version-id")
-    @template   = $("#moment-votd-verse-tmpl")
-    
-    @votd_version_buttons = @votd_el.find(".moment-vod-list .btn")
-    @votd_version_buttons.on "click", $.proxy(@versionClickHandler,@)
-
-
-    parent          = @votd_el.closest(".moment")
-    @share_button   = parent.find(".moment-actions-share")
-    @share_button.on "click", $.proxy(@shareClickHandler,@)
-    @share_template = $("#moment-share-layer-tmpl")
+  constructor: (@data, @feed)->
+    @template = $("#moment-votd-tmpl")
     @fetch()
 
+
+  render: ()->
+    if @template
+      template = Handlebars.compile @template.html()
+      
+      html = template
+        uuid:             @generateID()
+        week_day:         @weekDay()
+        created_dt:       moment(@data.created_dt).format('LL') 
+        version:          @version()
+        verse_html:       @verseHTML()
+        references:       @references()
+        usfm_references:  @references().join("+")
+        recent_versions:  @recentVersions()
+
+      return html
+
+
+  finalizeSetup: ()->
+
+    @version_buttons = @moment_el.find(".moment-vod-list .btn")
+    @version_buttons.on "click", $.proxy(@versionClickHandler,@)
+
+    # Activate the currently selected version button
+    @version_buttons.each (index,button)=>
+      btn = $(button)
+      if btn.data("version-id") == @version() then btn.addClass("active")
+        
+
+
   fetch: ->
-    verse_url = "/bible/" + @version_id + "/" + @usfm + ".json"
+    verse_url = "/bible/#{@version()}/#{@usfm()}.json"
     
     request = $.ajax verse_url,
       type: "GET"
       dataType: "json"
 
     request.done (data) =>
-      template = Handlebars.compile(@template.html())
-      wrap = @votd_el.find(".moment-votd-verse-wrap")
-      wrap.replaceWith(template(data))
-      wrap.addClass("loaded")
-      $('.social-feed').trigger('refreshWookmark')
-      @setupScroll()
+      template = Handlebars.compile $("#moment-votd-verse-tmpl").html()
+      @verse_html = template(data)
+      @feed.ready(@)
       return
 
     request.fail (jqXHR,status) =>
-      @votd_verse.html("Could not load verse.")
 
-  setupScroll: (event)->
-    @verseScroll = @votd_el.find(".moment-votd-verse")
-    @content_action = @votd_el.find(".content-action")
-    if (@verseScroll.innerHeight() + 15) < @verseScroll[0].scrollHeight
-      # has overflow content
-      @votd_verse.addClass("scrollable")
-      @content_action.show()
-      @content_action.on "click", $.proxy(@toggleContentClickHandler,@)
-    else
-      @votd_verse.removeClass("scrollable")
-      @content_action.hide()
-
-  toggleContentClickHandler: (event)->
-    event.preventDefault()
-    span = $(event.currentTarget)
-    span.toggleClass("expanded")
-    @verseScroll = @votd_el.find(".moment-votd-verse")
-    if span.hasClass("expanded")
-      @verseScroll.css("max-height", "none").toggleClass("expanded")
-    else
-      @verseScroll.css("max-height", "125px").toggleClass("expanded")
-    @refreshWookmark()
 
   versionClickHandler: (event)->
-    li        = $(event.currentTarget)
+    li = $(event.currentTarget)
     return if li.hasClass("active")
 
-    vid       = li.data("version-id")
+    version_id = li.data("version-id")
     
-    ref_link = @votd_el.find(".moment-vod-links")
+    ref_link = @moment_el.find(".moment-vod-links")
     ref_link.text("Loading")
     ref_link.attr("href","#")
 
-    @refreshWookmark()
+    @feed.refreshWookmark()
 
-    request = $.ajax @path_for_version(vid),
+    request = $.ajax @pathForVersion(version_id),
       type: "GET"
       dataType: "json"
 
     request.done (data) =>
-      @votd_el.find(".moment-vod-links").remove()    
-      template = Handlebars.compile(@template.html())
-      wrap = @votd_el.find(".moment-votd-verse-wrap")
+      @moment_el.find(".moment-vod-links").remove()    
+      template = Handlebars.compile($("#moment-votd-verse-tmpl").html())
+      wrap = @moment_el.find(".moment-votd-verse-wrap")
       wrap.replaceWith(template(data))
       wrap.addClass("loaded")
-      @refreshWookmark()
-      @setupScroll()
+      @feed.refreshWookmark()
+      #@setupScroll()
       return
 
-    @votd_version_buttons.removeClass("active")
+    @version_buttons.removeClass("active")
     li.addClass("active")
 
+  pathForVersion: (vid)->
+    "/bible/" + vid + "/" + @usfm() + ".json"
 
-  path_for_version: (vid)->
-    "/bible/" + vid + "/" + @references_string() + ".json"
+  references: ()->
+    @data.references
 
+  usfm: ()->
+    @references().join("+")
 
-  references_string: ()->
-    @votd_el.data("references")
+  day: ()->
+    @data.day
 
+  weekDay: ()->
+    @data.week_day
 
-  refreshWookmark: ()->
-    $('.social-feed').trigger('refreshWookmark')
+  date: ()->
+    @data.date
 
+  version: ()->
+    @data.version
 
-  prepareShareLinks: (html)->
-    parent      = @votd_el.closest(".moment")
-    verse_el    = parent.find(".moment-votd-verse")
-    verse_text  = verse_el.text()
-    verse_human = verse_el.data("reference-human")
-    verse_path  = "http://www.bible.com" + verse_el.data("reference-path")
+  recentVersions: ()->
+    @data.recent_versions
 
-    # Facebook link sharing setup
-    share_facebook = html.find("a.facebook")
-    
-    fb_app_id       = "105030176203924"
-    fb_name         = verse_human
-    fb_description  = verse_text
-    fb_link         = verse_path
-    fb_redirect     = "https://www.bible.com/moments"
-    fb_destination  = "https://www.facebook.com/dialog/feed?name=" + fb_name + "&app_id=" + fb_app_id + "&description=" + fb_description + "&link=" + fb_link + "&redirect_uri=" + fb_redirect
-    share_facebook.attr("href",fb_destination)
-
-    # Twitter link sharing setup
-    share_twitter   = html.find("a.twitter")
-    tw_destination  = "https://twitter.com/intent/tweet?text=" + verse_text
-    share_twitter.attr("href",tw_destination)
-
-
-
-  shareClickHandler: (event)->  
-    event.preventDefault()
-    @share_layer    = @votd_el.closest(".moment").find(".moment-actions-share-box")
-
-    if @share_layer.length == 0
-      html = $(@share_template.html())
-      @share_button.after(html)
-      @prepareShareLinks(html)
-    else
-      @share_layer.toggle()
-
-
+  verseHTML: ()->
+    @verse_html

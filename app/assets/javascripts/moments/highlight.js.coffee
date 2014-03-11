@@ -1,6 +1,6 @@
 window.Moments ?= {}
 
-class window.Moments.Highlight
+class window.Moments.Highlight extends window.Moments.Base
 
 
   # {
@@ -55,9 +55,10 @@ class window.Moments.Highlight
       
       html = template
         verse_html:   @verseHTML()
+        uuid:         @generateID()
         id:           @data.id
         path:         @data.path
-        created_dt:   @data.created_dt
+        created_dt:   @timeAgo(@data.created_dt)
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
         avatar:       @data.avatar

@@ -221,8 +221,8 @@
 
 %script#moment-votd-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <div class="moment">
-      <div class="moment-vod" data-references="votd.references.join('+')">
+    <div class="moment" data-uuid="{{uuid}}">
+      <div class="moment-vod" data-references="{{usfm_references}}">
         
         <span class="moment-icon">&nbsp;</span>
         
@@ -257,7 +257,7 @@
 
 %script#moment-highlight-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <div class="moment" data-moment-id="{{id}}" data-moment-path="{{to_path}}" data-str-delete-confirm="Are you sure you want to delete this?">
+    <div class="moment" data-uuid="{{uuid}}" data-moment-id="{{id}}" data-moment-path="{{path}}" data-str-delete-confirm="Are you sure you want to delete this?">
       <div class="moment-top">
         <div class="moment-hi">
           <span class="moment-icon"></span>
@@ -291,7 +291,7 @@
 
 %script#moment-bookmark-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <div class="moment" data-moment-id="{{id}}" data-moment-path="{{to_path}}" data-str-delete-confirm="Are you sure you want to delete this?">
+    <div class="moment" data-uuid="{{uuid}}" data-moment-id="{{id}}" data-moment-path="{{path}}" data-str-delete-confirm="Are you sure you want to delete this?">
       <div class="moment-top">
         <div class="moment-bm">
           <span class="moment-icon"></span>
@@ -335,9 +335,24 @@
         <a href="#">#{t("moments.action.like")}</a>
       </span>
       <span class="moment-actions-comment">
-        <a href="#">#{t("moments.action.comment")}</a>
+        <a href="{{path}}">#{t("moments.action.comment")}</a>
       </span>
+
+      <div class="moment-content-actions">
+      {{#if actions.editable}}
+        <a href="{{path}}/edit" class="moment-content-actions-edit">
+          #{t("moments.action.edit")}
+        </a>
+      {{/if}}
+
+      {{#if actions.deletable}}
+        <a href="#" class="moment-action-delete">
+          #{t("moments.action.delete")}
+        </a>
+      {{/if}}
+      </div>
     </div>
+
 
 %script#moment-comments-tmpl{type:"text/x-handlebars-template"}
   :plain
@@ -382,14 +397,17 @@
       <p class="moment-comments-list-text">
         <a href="{{user.path}}">{{user.name}}</a>
         {{content}}
-        <span class="moment-comment-dt">{{created_dt}}</span>
+        <span class="moment-comment-dt">{{fromNow created_dt}}</span>
       </p>
+      {{#if owned_by_me }}
+      <a href="#" class="moment-comment-delete" data-comment-id="{{id}}">x</a>
+      {{/if}}
     </li>
 
 
 %script#moment-friendship-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <div class="moment">
+    <div class="moment" data-uuid="{{uuid}}">
       <div class="moment-top">
         <div class="moment-fr">
           <span class="moment-icon"></span>
@@ -415,7 +433,7 @@
 
 %script#moment-generic-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <div class="moment">
+    <div class="moment" data-uuid="{{uuid}}">
       <div class="moment-top">
         <div class="moment-sys">
           
@@ -443,7 +461,7 @@
 
 %script#moment-system-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <div class="moment">
+    <div class="moment" data-uuid="{{uuid}}">
       <div class="moment-top">
         <div class="moment-sys">
           
@@ -473,7 +491,7 @@
 
 %script#moment-note-tmpl{type:"text/x-handlebars-template"}
   :plain
-    <div class="moment" data-moment-id="{{id}}" data-moment-path="{{to_path}}" data-str-delete-confirm="Are you sure you want to delete this?">
+    <div class="moment" data-uuid="{{uuid}}" data-moment-id="{{id}}" data-moment-path="{{path}}" data-str-delete-confirm="Are you sure you want to delete this?">
       <div class="moment-top">
         <div class="moment-no">
           <span class="moment-icon"></span>
@@ -497,12 +515,6 @@
           <div class="moment-no-note">
             <p class="moment-no-note-title">{{title}}</p>
             <p class="moment-no-note-text">{{content}}</p>
-          </div>
-          
-          <div class="moment-no-refs">
-            <a href="#">John 1:1</a>
-            <a href="#">John 1:1</a>
-            <a href="#">John 1:1</a>
           </div>
 
         </div>
@@ -641,4 +653,11 @@
     Handlebars.registerPartial("moment-comment", $("#moment-comment-tmpl").html())
     Handlebars.registerHelper('lookup', function(obj, field) {
       return obj[field];
+    });
+    Handlebars.registerHelper('fromNow', function(context, block) {
+      if (window.moment) {
+        return moment(context).fromNow();
+      }else{
+        return context;   //  moment plugin not available. return data as is.
+      };
     });

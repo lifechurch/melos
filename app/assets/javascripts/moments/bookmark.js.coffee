@@ -1,32 +1,6 @@
 window.Moments ?= {}
 
-class window.Moments.Bookmark
-
-
-  # {
-  #   "kind": "bookmark",
-  #   "object": {
-  #     "id": "5099398195314688",
-  #     "created_dt": "2014-02-25T20:27:36+00:00",
-  #     "updated_dt": null,
-  #     "moment_title": "Chris Vaughn bookmarked <b>Genesis 1:5</b>",
-  #     "references": [
-  #       {
-  #         "human": "Genesis 1:5",
-  #         "version_id": 1,
-  #         "usfm": [
-  #           "GEN.1.5"
-  #         ]
-  #       }
-  #     ],
-  #     "user": {
-  #       "id": 7477,
-  #       "user_name": "chrisvaughn"
-  #     },
-  #     "comments": [],
-  #     "likes": []
-  #   }
-  # }
+class window.Moments.Bookmark extends window.Moments.Base
 
   usfm: ()->
     @references()[0].usfm.join("+")
@@ -46,11 +20,12 @@ class window.Moments.Bookmark
     if @template
       template = Handlebars.compile @template.html()
       
-      html = template
+      @html = template
         verse_html:   @verseHTML()
+        uuid:         @generateID()
         id:           @data.id
         path:         @data.path
-        created_dt:   @data.created_dt
+        created_dt:   @timeAgo(@data.created_dt)
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
         avatar:       @data.avatar
@@ -59,11 +34,11 @@ class window.Moments.Bookmark
         actions:      @data.actions
         labels:       @data.labels
         user:
+          id:         @data.user.id
           path:       @data.user.path
           avatar:     Session.User.avatar()
 
-      return html
-
+      return @html
 
   fetch: ->
     if @references() != null

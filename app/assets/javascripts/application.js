@@ -14,13 +14,12 @@
 //= require ./reader/reader
 
 //= require ./forms/color_picker
+//= require ./moments/base
 //= require ./moments/verse
 
-//= require ./moments/comments
 //= require ./moments/moment
 
 //= require ./moments/votd
-//= require ./moments/vod
 
 //= require ./moments/system
 //= require ./moments/generic

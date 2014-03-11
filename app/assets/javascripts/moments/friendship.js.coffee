@@ -1,6 +1,6 @@
 window.Moments ?= {}
 
-class window.Moments.Friendship
+class window.Moments.Friendship extends window.Moments.Base
 
   constructor: (@data, @feed)->
     @template = $("#moment-friendship-tmpl")
@@ -11,7 +11,8 @@ class window.Moments.Friendship
       template = Handlebars.compile @template.html()
       
       html = template
-        created_dt:     @data.created_dt
+        uuid:           @generateID()
+        created_dt:     @timeAgo(@data.created_dt)
         moment_title:   @data.moment_title
         avatar:         @data.avatar
         friend_path:    @data.friend_path
