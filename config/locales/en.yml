@@ -1,5 +1,29 @@
 en:
   social:
+    intro page:
+      main heading:                             "Conversation & Discovery"
+      main description:                         "A new way to explore the Bible with trusted friends"
+      moment:
+        timestamp:                              "5 days ago"
+        title:                                  "bookmarked Psalm 31:7"
+        verse:                                  "I will be glad and rejoice in your unfailing love, for you have seen my troubles, and you care about the anguish of my soul."
+        reference:                              "Psalm 31:7"
+        discover:
+          copy:                                 "Discover and learn with your friends as they add highlights, bookmarks, and notes."
+          button:                               "Where can I start?"
+        share:
+          copy:                                 "Share honest conversations about Scripture."
+          button:                               "Get started by finding some friends."
+        likes:
+          info:                                 "and 4 more like this"
+        comments:
+          first:
+            text:                               "Really needed to hear that today, thanks. Let‘s catch up soon!"
+            time:                               "about 3 hours ago"
+          second:
+            text:                               "Amen, me too. Sending you an email now."
+            time:                               "about 27 minutes ago"
+          field placeholder:                    "Write a comment..."
     share:                                      "Share"
     my connections:                             "Connected Accounts"
     connected as:                               "You are connected to %{connection} as %{username}."

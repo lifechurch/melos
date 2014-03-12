@@ -6,9 +6,9 @@
 
 %article.social-intro
   %h1.intro-title
-    Conversation &amp; Discovery
+    = t("social.intro page.main heading")
   %p.intro-copy
-    A new way to explore the Bible with trusted friends
+    = t("social.intro page.main description")
 
   .intro-moment
     .intro-moment-box
@@ -21,16 +21,19 @@
             %span.moment-avatar
               = image_tag "josh_avatar.png"
             %span.moment-time
-              5 days ago
+              = t("social.intro page.moment.timestamp")
 
             %h2.moment-bm-text
-              <a href="#" class="moment-title-link">Aaron Steele bookmarked <b>Psalm 31:7</b></a>
+              %a.moment-title-link{href:"#"}
+                Aaron Steele
+                = t("social.intro page.moment.title")
+
             .moment-verse-wrap
               %p.moment-verse
-                I will be glad and rejoice in your unfailing love, for you have seen my troubles, and you care about the anguish of my soul.
+                = t("social.intro page.moment.verse")
 
               %a{href: "#", class: "moment-verse-link"}
-                Psalm 31:7
+                = t("social.intro page.moment.reference")
 
         -# !share controls, dates, and comments
         .moment-actions
@@ -39,54 +42,57 @@
               = t("moments.action.like")
           %span.moment-actions-comment
             %a{href: "#"}
-              Comment
+              = t("moments.action.comment")
 
   .intro-discover-copy
     %p
-      Discover and learn with your friends as they add highlights, bookmarks, and notes.
+      = t("social.intro page.moment.discover.copy")
     %span
       &nbsp;
 
   .intro-comments
     .moment-comments
       %span.moment-comments-more
-        %a{href: "#"}
-          Andy Knight
-        and <a href="#">4 more</a> like this
+        %a{href: "#"} Andy Knight
+        = t("social.intro page.moment.likes.info")
 
       %ul.moment-comments-list
+        
         %li.moment-comments-list-comment
           %span.moment-comments-list-avatar
             = image_tag "andy_avatar.png"
           %p.moment-comments-list-text
-            <a href="#">Andy Knight</a> Really needed to hear that today, thanks. Let‘s catch up soon!
+            %a{href: "#"} Andy Knight
+            = t("social.intro page.moment.comments.first.text")
             %span.moment-comment-dt
-              about 3 hours ago
+              = t("social.intro page.moment.comments.first.time")
+        
         %li.moment-comments-list-comment
           %span.moment-comments-list-avatar
             = image_tag "josh_avatar.png"
           %p.moment-comments-list-text
-            <a href="#">Aaron Steele</a> Amen, me too. Sending you an email now.
+            %a{href: "#"} Aaron Steele
+            = t("social.intro page.moment.comments.second.text")
             %span.moment-comment-dt
-              about 27 minutes ago
+              = t("social.intro page.moment.comments.second.time")
 
       = form_tag(comments_url, method: "post") do
         %span.moment-comments-input
           %span.moment-comments-input-avatar
             = image_tag "josh_avatar.png"
           %textarea{class: "moment-comments-textarea comment-field"}
-            Write a comment...
+            = t("social.intro page.moment.comments.field placeholder")
 
   .intro-share-copy
     %span
       &nbsp;
     %p
-      Share honest conversations about Scripture.
+      = t("social.intro page.moment.share.copy")
 
   .intro-discover-copy-btn
-    %a{href: "#", class: "action_button_green"}
-      Where can I start?
+    %a{href: moments_path, class: "action_button_green"}
+      = t("social.intro page.moment.discover.button")
 
   .intro-share-copy-btn
     %a{href: "#", class: "action_button_blue"}
-      Get started by finding some friends.
+      = t("social.intro page.moment.share.button")

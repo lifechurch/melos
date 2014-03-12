@@ -14,6 +14,7 @@ class MomentsController < BaseMomentsController
 
   # A logged in users Moments/Home feed
   def index
+    return redirect_to("/moments/introduction") unless client_settings.viewed_social_intro
     # recent_versions = client_settings.recent_versions
     # @user    = current_user
     # @feed    = YV::Moments::Feed.new(
@@ -64,7 +65,7 @@ class MomentsController < BaseMomentsController
   end
 
   def introduction
-
+    client_settings.viewed_social_intro!
   end
 
 end

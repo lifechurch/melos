@@ -6,6 +6,14 @@ module YV
       @cookies = cookies
     end
 
+    def viewed_social_intro
+      @cookies["viewed-social-intro"]
+    end
+
+    def viewed_social_intro!
+      @cookies["viewed-social-intro"] = true
+    end
+
     def time_zone
       @cookies['cs-time-zone']
     end
