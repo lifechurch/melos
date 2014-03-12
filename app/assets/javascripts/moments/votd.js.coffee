@@ -50,6 +50,8 @@ class window.Moments.VOTD extends Moments.Base
       return
 
     request.fail (jqXHR,status) =>
+      @verse_html = "<p class='moment-votd-verse'>Could not load verse</p>"
+      @feed.ready(@)
 
 
   versionClickHandler: (event)->
