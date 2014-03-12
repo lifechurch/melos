@@ -31,7 +31,15 @@ class ReferencesController < ApplicationController
 
       self.presenter = Presenter::Reference.new(ref_string, params, self)
       self.sidebar_presenter = Presenter::Sidebar::Reference.new(ref_string, params ,self)
-      return render_404 unless presenter.valid_reference?
+      
+      unless presenter.valid_reference?
+        if request.xhr?
+          return render json: "error", status: 400
+        else
+          return render_404
+        end
+      end
+      
     end
 
     # HACK (km): sometimes the url can have invalid utf-8 characters
@@ -105,6 +113,11 @@ class ReferencesController < ApplicationController
 
       self.presenter = pres
 
-      render :invalid_ref, status: 404, locals: {presenter: pres}
+      if request.xhr?
+        return render json: "error", status: 400
+      else
+        return render :invalid_ref, status: 404, locals: {presenter: pres}
+      end
+      
     end
 end

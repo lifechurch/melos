@@ -58,13 +58,11 @@ class window.Moments.VOTD extends Moments.Base
     li = $(event.currentTarget)
     return if li.hasClass("active")
 
-    version_id = li.data("version-id")
+    version_id  = li.data("version-id")
+    ref_link    = @moment_el.find(".moment-vod-links")
     
-    ref_link = @moment_el.find(".moment-vod-links")
     ref_link.text("Loading")
     ref_link.attr("href","#")
-
-    @feed.refreshWookmark()
 
     request = $.ajax @pathForVersion(version_id),
       type: "GET"
@@ -78,10 +76,16 @@ class window.Moments.VOTD extends Moments.Base
       wrap.addClass("loaded")
       @feed.refreshWookmark()
       #@setupScroll()
-      return
+
+    request.fail (jqXHR,status)=>
+      wrap = @moment_el.find(".moment-votd-verse-wrap")
+      wrap.html("<p class='moment-votd-verse'>Scripture unavailable.</p>")
+      ref_link.text("Could not load")
+      @feed.refreshWookmark()
 
     @version_buttons.removeClass("active")
     li.addClass("active")
+
 
   pathForVersion: (vid)->
     "/bible/" + vid + "/" + @usfm() + ".json"
