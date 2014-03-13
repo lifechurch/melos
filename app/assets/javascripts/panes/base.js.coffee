@@ -50,9 +50,9 @@ class window.Panes.Base
     if @trigger_el.length
       @trigger_el.click (event)=>
         if @trigger_el.hasClass("active")
-          @trigger("pane:close", {pane: @})
+          Events.Emitter.emit "pane:close", [{pane: @}]
         else
-          @trigger("pane:open", {pane: @})
+          Events.Emitter.emit "pane:open", [{pane: @}]
 
   # Show the pane <dd>
   open: (complete)->
@@ -70,17 +70,11 @@ class window.Panes.Base
     @pane().find(".blurbs p").hide()
     @pane().find('.blurbs p.' + @trigger_el.data("pane-type")).show()
 
-
-  # Utility method to trigger a jQuery event.
-  trigger: (event, args)->
-    $.event.trigger(event, args)
-    return
-
   resetForm: (form)->
     # override this in subclasses to reset/clear forms properly
 
   triggerFormSuccess: ()->
-    $(@).trigger("form:submit:success")
+    Events.Emitter.emit("form:submit:success")
 
 
   showFormSuccess: ()->

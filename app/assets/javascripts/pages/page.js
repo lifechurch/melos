@@ -120,20 +120,9 @@ Page.prototype = {
   // Ability to set the reader on the page publicly.
   setReader : function( rdr ) {
     this.reader = rdr;
-    $(this.reader).on("verses:parsed", $.proxy(this.onVersesParsed, this) );
   },
 
-  onVersesParsed : function() {
-    var note_widget = this.new_note_widget;
-    var reader      = this.reader;
-
-    if(reader && note_widget) {
-      var selected_data = reader.getSelectedData();
-      var usfms = selected_data.verse_usfms;
-          note_widget.updateForm({references: usfms});
-    }
-  },
-
+  
   // Setup miscellaneous html needs.
   initHTML : function() {
 
@@ -314,11 +303,6 @@ Page.prototype = {
       var modal_el = "#modal_single_verse";
       if($(modal_el).length) {
         var single_verse_modal = new VerseModal();
-      }
-
-      var widget_note = "#widget_new_note";
-      if($(widget_note).length) {
-        this.new_note_widget = new NoteWidget( widget_note );
       }
 
       var settings_trigger  = "#menu_settings_trigger";

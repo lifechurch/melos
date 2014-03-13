@@ -5,6 +5,7 @@
 //= require jquery.ui.mouse
 //= require jquery.ui.position
 //= require jquery.ui.autocomplete
+//= require ./events/emitter
 //= require ./session/user
 //= require ./sidebars/community_notes
 

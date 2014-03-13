@@ -30,7 +30,7 @@ class window.Menus.NavMobile extends window.Menus.Base
     @container.slideDown();
     $(@base_element).css("max-height", $("body").height() - $("#header").height() + "px");
     $(@trigger_el).addClass("active")
-    this.trigger("yv:menu:open", {target: this})
+    Events.Emitter.emit "yv:menu:open", [{target: this}]
     return
 
 
@@ -40,5 +40,6 @@ class window.Menus.NavMobile extends window.Menus.Base
   close: ->
     @container.slideUp();
     $(@trigger_el).removeClass("active")
-    this.trigger("yv:menu:close",{target: this})
+    Events.Emitter.emit "yv:menu:close", [{target: this}]
+
     return

@@ -54,7 +54,7 @@ class window.Menus.Notifications extends window.Menus.Base
     @popover.show().animate({'opacity' : '1'}, 200);
     this.load()
     $(@trigger_el).addClass("active")
-    this.trigger("yv:menu:open", {target: this})
+    Events.Emitter.emit "yv:menu:open", [{target: this}]
     return
 
 
@@ -64,5 +64,5 @@ class window.Menus.Notifications extends window.Menus.Base
   close: ->
     @popover.animate({'opacity' : '0'}, 200, "swing", @popover.hide());
     $(@trigger_el).removeClass("active")
-    this.trigger("yv:menu:close",{target: this})
+    Events.Emitter.emit "yv:menu:close", [{target: this}]
     return

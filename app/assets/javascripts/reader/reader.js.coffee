@@ -13,8 +13,8 @@ class window.Reader
     @primary   = $('#version_primary')
     @secondary = $('#version_secondary')
     @header    = $('#reader_header header')
-    @audio_player = new AudioPlayer()  
-    
+    @audio_player = new AudioPlayer()
+
     @selected =
       verses              : [],
       verse_usfms         : [],
@@ -30,9 +30,8 @@ class window.Reader
 
     # fire initial events
     if @numSelectedVerses() >= 1
-      @primary.trigger("verses:first_selected")
-      @primary.trigger("verses:selected")
-
+      Events.Emitter.emit("verses:first_selected")
+      Events.Emitter.emit("verses:selected")
 
     @verse_els = $('#version_primary .verse')
     @verse_els.on "click", (event)=>
@@ -41,7 +40,7 @@ class window.Reader
 
 
     @verse_actions = new Panes.VerseActions()
-    $(@verse_actions).bind "verses:clear", (e)=>
+    Events.Emitter.addListener "verses:clear", (e)=>
       @clearSelectedVerses()
 
     @setupFullscreenMode()
@@ -67,7 +66,7 @@ class window.Reader
 
     @allSelectedVerses().removeClass("selected")
     @processSelectedVerses()
-    if @numSelectedVerses() == 0 then @primary.trigger("verses:all_deselected")
+    if @numSelectedVerses() == 0 then Events.Emitter.emit("verses:all_deselected")
 
 
   # TODO: don't reparse all verses, just add to current set of verses being tracked
@@ -85,8 +84,8 @@ class window.Reader
 
     # Trigger events
     num_selected = @numSelectedVerses()
-    if num_selected == 1 then @primary.trigger("verses:first_selected")
-    if num_selected      then @primary.trigger("verses:selected")
+    if num_selected == 1 then Events.Emitter.emit("verses:first_selected")
+    if num_selected      then Events.Emitter.emit("verses:selected")
 
 
 
@@ -104,9 +103,8 @@ class window.Reader
     @processSelectedVerses()
 
     # Trigger events
-    @primary.trigger("verses:deselected")
-    if @numSelectedVerses() == 0 then @primary.trigger("verses:all_deselected")
-
+    Events.Emitter.emit "verses:deselected"
+    Events.Emitter.emit "verses:all_deselected" if @numSelectedVerses() == 0
 
 
   fetchSelectedVerses: ()->
@@ -172,8 +170,7 @@ class window.Reader
     # Update any menus and widgets now that we have parsed our selected verses
     @updateMenus()
 
-    $(@).trigger("verses:parsed")
-
+    Events.Emitter.emit("verses:parsed")
 
   # 
   parseRanges: ()->

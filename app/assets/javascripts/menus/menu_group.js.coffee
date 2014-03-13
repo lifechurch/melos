@@ -5,6 +5,9 @@ class window.Menus.MenuGroup
   constructor: (@el)->
     @menus = []
     @current_menu = undefined
+    Events.Emitter.addListener "yv:menu:open", $.proxy(@handleOpen,@)
+    Events.Emitter.addListener "yv:menu:close", $.proxy(@handleClose,@)
+
     #this.listener().bind "mousedown", $.proxy(this.handleDocumentMousedown,this)
 
   element: ->
@@ -13,14 +16,13 @@ class window.Menus.MenuGroup
   listener: ->
     this.element()
 
-
-  handleOpen: (event,data)->
+  handleOpen: (data)->
     @current_menu.close() unless @current_menu == undefined
     @current_menu = data.target
     return
 
 
-  handleClose: (event,data)->
+  handleClose: (data)->
     delete @current_menu
     return
 
@@ -28,13 +30,6 @@ class window.Menus.MenuGroup
     el = $(event.target)
     return
 
-
   addMenu: (menu)->
-    this.listener().unbind "yv:menu:open"
-    this.listener().bind "yv:menu:open", this.handleOpen
-
-    this.listener().unbind "yv:menu:close"
-    this.listener().bind "yv:menu:close", this.handleClose
-
     @menus.push(menu)
     return

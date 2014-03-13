@@ -8,9 +8,13 @@ class window.Panes.VerseActions
     @speed          = 250
     @is_open        = false
     @activeClass    = 'active'
-    @initPanes()
-    @initMobile()
 
+    @f_open_pane    = $.proxy(@openPane,@)
+    @f_close_pane   = $.proxy(@closePane,@)
+
+
+    @initMobile()
+    @initPanes()
     return
 
   listener: ()->
@@ -42,12 +46,13 @@ class window.Panes.VerseActions
 
 
   open: ()->
+    #@initPanes() unless @isPanesLoaded()
     return if @is_open
 
     @adjustArticleMargin(@el.height())
     @el.slideDown @speed, ()=>
-      @listener().on "pane:open", $.proxy(@openPane,@)
-      @listener().on "pane:close", $.proxy(@closePane,@)
+      Events.Emitter.addListener "pane:open", @f_open_pane
+      Events.Emitter.addListener "pane:close", @f_close_pane
     @is_open = true
 
 
@@ -65,9 +70,9 @@ class window.Panes.VerseActions
     @el.slideUp @speed, ()=>
       @pane_list.find("dd").hide()
       @pane_list.find("dt").removeClass(@activeClass)
-      @listener().off "pane:open"
-      @listener().off "pane:close"
-      $(@).trigger("verses:clear") #If we're closing the panel, then no verses should be selected.  Fire off this event now.
+      Events.Emitter.removeListener "pane:open", @f_open_pane
+      Events.Emitter.removeListener "pane:close", @f_close_pane
+      Events.Emitter.emit("verses:clear") #If we're closing the panel, then no verses should be selected.  Fire off this event now.
 
     @is_open = false
 
@@ -79,6 +84,8 @@ class window.Panes.VerseActions
       @mobile_menu.removeClass("open")
       $('.reader-nav').stop().animate({ 'top' : '0px'}, 200)
   
+  isPanesLoaded: ()->
+    @el.find("dl.verses_selected").children().length == 0
 
   initPanes: ()->
     return unless @pane_list = @el.find('dl')
@@ -94,13 +101,14 @@ class window.Panes.VerseActions
     @mobile_highlight_pane  = new Panes.Highlight {el:"div.color_toolbar"}
 
     # Upon successful form submit or the X button is clicked, we should reset all panes
-    $(@note_pane).bind "form:submit:success", $.proxy(@close,@)
-    $(@bookmark_pane).bind "form:submit:success", $.proxy(@close,@)
-    $(@highlight_pane).bind "form:submit:success", $.proxy(@close,@)
-    $(@close_pane).bind("panes:cleared", $.proxy(@close,@))
+    f_close = $.proxy(@close,@)
+
+    Events.Emitter.addListener "form:submit:success", f_close
+    Events.Emitter.addListener "panes:cleared", f_close
 
 
     dl = @el.find("dl.verses_selected")
+
     dl.prepend @register_pane.render()
     dl.prepend @close_pane.render()
     dl.prepend @related_pane.render()
@@ -129,13 +137,13 @@ class window.Panes.VerseActions
     new_margin = reader.header.outerHeight() + extra || 0
     $('article').stop().animate({marginTop: new_margin}, @speed)
 
-  closePane: (event, args)->
+  closePane: (args)->
     pane = args.pane
     pane.close()
     delete current_pane
     return
 
-  openPane: (event, args)->
+  openPane: (args)->
     pane = args.pane
     if @current_pane?
       @current_pane.close ()=>
@@ -148,16 +156,19 @@ class window.Panes.VerseActions
 
 
   initMobile: ()->
+    f_open  = $.proxy(@open_mobile,@)
+    f_close = $.proxy(@close_mobile,@)
+
     jRes.addFunc {
       breakpoint: 'mobile',
       enter: ()=>
-        $('#version_primary').bind("verses:first_selected", $.proxy(@open_mobile,@))
-        $('#version_primary').bind("verses:all_deselected", $.proxy(@close_mobile,@))
+        Events.Emitter.addListener "verses:first_selected", f_open
+        Events.Emitter.addListener "verses:all_deselected", f_close
         $('html').removeClass('full_screen')
       ,
       exit: ()=>
-        $('#version_primary').unbind("verses:first_selected", $.proxy(@open_mobile,@));
-        $('#version_primary').unbind("verses:all_deselected", $.proxy(@close_mobile,@));
+        Events.Emitter.removeListener "verses:first_selected", f_open
+        Events.Emitter.removeListener "verses:all_deselected", f_close
     }
 
 

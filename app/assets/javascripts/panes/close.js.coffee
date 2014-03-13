@@ -14,7 +14,7 @@ class window.Panes.Close extends window.Panes.Base
 
   afterRender: (html)->
     html.on "click", (event)=>
-      event.preventDefault();
-      $(@).trigger("panes:cleared")
+      event.preventDefault()
+      Events.Emitter.emit("panes:cleared")
 
     return

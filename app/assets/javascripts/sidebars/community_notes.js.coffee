@@ -5,8 +5,12 @@ class window.Sidebars.CommunityNotes
   constructor: (@params)->
     @el_id = @params.el
     @load($(@el_id).data("reference") + "/notes")
-    $(document).on "verses:selected verses:deselected verses:all_deselected", ()=>
+
+    f_load = ()=>
       @load(@articleNotesUrl())
+
+    Events.Emitter.addListener "verses:selected", f_load
+    Events.Emitter.addListener "verses:deselected", f_load
 
 
   load: (url)->
