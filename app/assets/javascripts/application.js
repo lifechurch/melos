@@ -40,7 +40,6 @@
 //= require_tree ./lib/
 //= require_tree ./menus/
 //= require_tree ./modals/
-//= require_tree ./widgets/
 //= require_tree ./panes/
 //= require_tree ./pages/
 //= require app
