@@ -17,7 +17,7 @@
       %h2
         = t("notes.blank slate.heading")
       %p
-        = t("notes.blank slate.description")
+        = raw t("notes.blank slate.description")
     - else
       %h2
         = t("notes.none user", username: @user.name)

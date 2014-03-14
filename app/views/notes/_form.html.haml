@@ -19,9 +19,10 @@
 
   %p
     = f.hidden_field :color, class:"selected-color"
-    %label Highlight: (optional)
-    .color_picker_list{"data-current-color" => note.color}
-      .color_picker
+    %label 
+      = t("notes.form.highlight field")
+      .color_picker_list{"data-current-color" => note.color}
+        .color_picker
 
   - # if reference_list is empty, no need to show these fields.  
   - # Causes an error otherwise when sending empty note[references]/note[version_id] params

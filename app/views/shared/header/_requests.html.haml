@@ -1,10 +1,11 @@
 - # handlebars templates are in /shared/js_templates
 %div.header-popover.friend-requests#requests-menu
   %span.arrow
-  %h4 Find Friends
+  %h4
+    = t("friendships.find friends title")
   %form.requests-user-search{action: search_path(category: :users), method: "GET"}
-    %input.requests-field-query{type: "text", name: "q", placeholder: "Search by name"}
-    %input.requests-field-submit{type: "submit", value: "Go"}
+    %input.requests-field-query{type: "text", name: "q", placeholder: t("friendships.search by name")}
+    %input.requests-field-submit{type: "submit", value: t("friendships.search button")}
 
   %h4
     = t("friendships.requests title")

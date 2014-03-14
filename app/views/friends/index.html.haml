@@ -20,7 +20,8 @@
 
         - # Web doesn't have a way to find friends at the moment
         - # apps only support uploading contact lists.
-        - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
+        - #%a{href: "#", class: "friends-count-find action_button_blue"}
+        - #  = t("friends.find friends")
 
     - if @friends.present? # show my friends
       = render partial: "friends/list", locals: {friends: @friends, user: @user}
@@ -28,7 +29,8 @@
     - else # I don't have friends
       %p.friends-none
         = t("friends.none me")
-        - #%a{href: "#", class: "friends-count-find action_button_blue"} Find friends
+        - #%a{href: "#", class: "friends-count-find action_button_blue"}
+        - #  = t("friends.find friends")
 
 - elsif Friend.with? @user, auth: current_auth # We can only
   .profile-friends

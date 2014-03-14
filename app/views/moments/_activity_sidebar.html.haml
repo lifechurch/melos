@@ -4,7 +4,7 @@
 
 .widget.social-sidebar.moment-activity
   %h3.hd
-    Timeline
+    = t("social.widget.timeline")
   .bd
     - if activity = moment.activity
       %ul.moment-activity-users
@@ -31,4 +31,5 @@
                     t("moments.action.last comment")
                     =  api_dt_time_ago(comm.created_dt)
     - else
-      %p There hasn't been any activity yet.
+      %p 
+      = t("social.widget.no activity yet")

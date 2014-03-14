@@ -16,9 +16,10 @@
 
   %p
     = f.hidden_field :color, class:"selected-color"
-    %label Highlight: (optional)
-    .color_picker_list{"data-current-color" => bookmark.color}
-      .color_picker
+    %label
+      = t("notes.form.highlight field")
+      .color_picker_list{"data-current-color" => bookmark.color}
+        .color_picker
 
   :ruby    
     raw_refs = bookmark.references

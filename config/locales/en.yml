@@ -24,6 +24,12 @@ en:
             text:                               "Amen, me too. Sending you an email now."
             time:                               "about 27 minutes ago"
           field placeholder:                    "Write a comment..."
+    widget:
+      timeline:                                 "Timeline"
+      no activity yet:                          "There hasn't been any activity yet."
+    moment:
+      read all:                                 "Read all"
+      read less:                                "Read less"
     share:                                      "Share"
     my connections:                             "Connected Accounts"
     connected as:                               "You are connected to %{connection} as %{username}."
@@ -152,6 +158,7 @@ en:
   find friends:                                 "Find Friends"
   search placeholder:                           "Search..."
   search:                                       "Search"
+  more:                                         "More"
   book:                                         "Book"
   filter book:                                  "Filter Books..."
   save:                                         "Save"
@@ -238,12 +245,20 @@ en:
   friends:
     you have N friends:                         "You have %{count} friends"
     none me:                                    "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
+    find friends:                               "Find friends"
     blank slate:
       heading:                                  "Not currently friends"
       description:                              "You must be friends with this person in order to view their friends."
     limit notice:                               "You can have as many as 150 friends"
     limit description:                          "Limiting your Bible App friendships to people you know well creates an environment for honest conversations and shared discoveries with trusted friends."
   friendships:
+    find friends title:                         "Find friends"
+    search by name:                             "Search by name"
+    search button:                              "Go"
+    widget:
+      find friends title:                         "Find friends"
+      search by name:                             "Search by name"
+      search button:                              "Go"
     offer success:                              "Friendship request sent"
     offer failure:                              "Error sending friendship request"
     create success:                             "Success! You're now friends."
@@ -276,6 +291,7 @@ en:
     form:
       title field:                              "Title:"
       content field:                            "Content:"
+      highlight field:                          "Highlight: (optional)"
       reference field:                          "Reference(s):"
       status field:                             "Status:"
       save button:                              "Save"
@@ -366,6 +382,7 @@ en:
     my profile:                                 "My Profile"
     edit profile:                               "Edit Profile"
     update profile:                             "Update Profile"
+    go to your profile:                         "Go to Your Profile"
     other user profile:                         "%{username}'s Profile"
     my password:                                "Change My Password"
     edit password:                              "Change Password"
@@ -557,6 +574,7 @@ en:
     all:                                        "All"
     labels label:                               "Labels:"
     title:                                      "Bookmarks"
+    my labels:                                  "My Labels"
     not found:                                  "Bookmarks give you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. To add a bookmark, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     other user not found:                       "%{username} hasn't saved any bookmarks yet."
     creation form errors:                       "The following error(s) prevented creation of your bookmark:"
@@ -582,6 +600,7 @@ en:
       title field:                              "Title:"
       reference field:                          "Reference:"
       labels field:                             "Labels (comma-separated):"
+      highlight field:                          "Highlight: (optional)"
       colors field:                             "Color:"
       update button:                            "Update Bookmark"
       save button:                              "Save Bookmark"
@@ -592,6 +611,12 @@ en:
     none me:                                    "You haven't earned any badges yet."
     none user:                                  "%{username} hasn't earned any badges yet."
   plans:
+    widget:
+      my plans:                                 "My Plans"
+      start reading:                            "Start reading"
+      view my plans:                            "View My Plans"
+      featured plans:                           "Featured Plans"
+      view all plans:                           "View All Plans"
     settings:                                   "Settings"
     privacy:
       visible to friends?:                      "Would you like your activity with this plan to be visible to your friends?"

@@ -2,7 +2,7 @@
 
 .widget.featured-plans
   %h3.hd
-    Featured Plans
+    = t("plans.widget.featured plans")
   .plans-list
     %ul
       - plans.each do |plan|
@@ -10,4 +10,4 @@
           %h3= link_to plan.name, plan_path(plan)
           %p= truncate(plan.about, length: 90, separator: ' ')
   .ft
-    = link_to("View All Plans", plans_path)
+    = link_to(t("plans.widget.view all plans"), plans_path)

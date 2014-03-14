@@ -5,14 +5,14 @@
 - else
   .widget.my-plans
     %h3.hd
-      My Plans
+      = t("plans.widget.my plans")
     .plans-list
       %ul
         - subscriptions.each do |sub|
           %li
             %h3= sub.name
             %p
-              = link_to("Start reading", subscription_path(user_id: current_user, id: sub))\
+              = link_to(t("plans.widget.start reading"), subscription_path(user_id: current_user, id: sub))\
               %span= t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
     .ft
-      = link_to("View My Plans", subscriptions_path(user_id: current_user))
+      = link_to(t("plans.widget.view my plans"), subscriptions_path(user_id: current_user))
