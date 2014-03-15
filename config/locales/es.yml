@@ -1,5 +1,7 @@
 es:
   social:
+    intro page:
+      main heading: "Conversación y Descubrimientos"
     share: "Compartir"
     my connections: "Cuentas Conectadas"
     connected as: "Está conectado a %{connection} como %{username}."

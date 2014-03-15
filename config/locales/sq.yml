@@ -1,5 +1,29 @@
 sq:
   social:
+    intro page:
+      main heading: "Bashkëbisedim & Zbulim"
+      main description: "Një mënyrë e re për të eksploruar Biblën me miq të besueshëm"
+      moment:
+        timestamp: "5 ditë më parë"
+        title: "shënoi Psalmin 31:7"
+        verse: "Unë do të ngazëlloj dhe do të kënaqem me mirësinë tënde, sepse ti ke parë pikëllimin tim dhe i ke kuptuar ankthet e shpirtit tim."
+        reference: "Psalmi 31:7"
+        discover:
+          copy: "Zbulo dhe mëso me miqtë e tu ndërsa ata shtojnë theksime, shenjues dhe shënime."
+          button: "Ku mund të filloj?"
+        share:
+          copy: "Ndaj bashkëbisedime të sinqerta rreth Shkrimit."
+          button: "Fillo duke gjetur disa miq."
+        likes:
+          info: "dhe 4 më shumë e pëlqejnë këtë"
+        comments:
+          first:
+            text: "Vërtet kisha nevojë ta dëgjoja këtë sot, faleminderit. Mirë u dëgjofshim!"
+            time: "rreth 3 orë më parë"
+          second:
+            text: "Amen, edhe mua. Po të dërgoj një e-postë tani."
+            time: "rreth 27 minuta më parë"
+          field placeholder: "Shkruaj një koment..."
     share: "Ndaje"
     my connections: "Llogaritë e lidhura"
     connected as: "Ju jeni lidhur me %{connection} si %{username}."

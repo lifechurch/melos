@@ -1,5 +1,29 @@
 es-ES:
   social:
+    intro page:
+      main heading: "Conversación y descubrimiento"
+      main description: "Una nueva forma de explorar la Biblia con amigos de confianza"
+      moment:
+        timestamp: "hace 5 días"
+        title: "Salmo 31:7 destacado"
+        verse: "Estaré contento y me regocijaré en tu amor sin falla, porque has visto mis problemas, y tienes cuidado de la angustia de mi alma."
+        reference: "Salmo 31:7"
+        discover:
+          copy: "Descubre y aprende con tus amigos según añaden destacados, marcadores y notas."
+          button: "¿Dónde comienzo?"
+        share:
+          copy: "Comparte conversaciones sinceras sobre la Escritura."
+          button: "Empieza a encontrar a algunos amigos."
+        likes:
+          info: "y 4 más como este"
+        comments:
+          first:
+            text: "Realmente necesitaba escuchar estoy hoy, gracias. Pronto estaré a tu ritmo."
+            time: "hace 3 horas"
+          second:
+            text: "Amén, yo también. Ahora te mando un correo electrónico."
+            time: "hace 27 minutos"
+          field placeholder: "Escribe un comentario..."
     share: "Compartir"
     my connections: "Cuentas conectadas"
     connected as: "Te has conectado a %{connection} como %{username}."

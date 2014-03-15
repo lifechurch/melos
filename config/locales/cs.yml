@@ -1,5 +1,29 @@
 cs:
   social:
+    intro page:
+      main heading: "Konverzace & Objevování"
+      main description: "Nový způsob jak poznat Bibli s blízkými přáteli"
+      moment:
+        timestamp: "Před 5ti dny"
+        title: "záložka Žalm 31:7"
+        verse: "Budu se radovat z tvé neutuchající lásky, neboť ty jsi viděl má soužení, a ty se staráš o trápení mé duše."
+        reference: "Žalm 31:7"
+        discover:
+          copy: "Objevuj a uč se s přáteli, když přidávají označení, záložky  a poznámky."
+          button: "Kde mohu začít?"
+        share:
+          copy: "Sdílejte upřímné rozhovory o Písmu,"
+          button: "Začněte nalezením přátel."
+        likes:
+          info: "a 4 další"
+        comments:
+          first:
+            text: "Opravdu jsem toto potřeboval dnes slyšet, děkuji. Pojďme to brzy zopakovat!"
+            time: "před 3 hodinami"
+          second:
+            text: "Amen, já také. Posílám ti nyní email."
+            time: "před 27 minutami"
+          field placeholder: "Napsat komentář..."
     share: "Sdílet"
     my connections: "Připojené účty"
     connected as: "Jste připojen/a ke službě %{connection} jako %{username}"

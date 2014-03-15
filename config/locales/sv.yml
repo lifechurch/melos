@@ -1,5 +1,29 @@
 sv:
   social:
+    intro page:
+      main heading: "Samtal & Utforskning"
+      main description: "Ett nytt sätt att utforska Bibeln tillsammans med nära vänner"
+      moment:
+        timestamp: "5 dagar sedan"
+        title: "har bokmärkt Psaltaren 31:8"
+        verse: "Jag vill jubla av glädje över din godhet, du som såg mitt elände och tog dig an mig när jag led."
+        reference: "Psaltaren 31:8"
+        discover:
+          copy: "Utforska och lär dig tillsammans med dina vänner när de lägger till markeringar, bokmärken och anteckningar."
+          button: "Var kan jag börja?"
+        share:
+          copy: "Delta i ärliga samtal om Skriften."
+          button: "Kom igång genom att hitta några vänner."
+        likes:
+          info: "och ytterligare 4 gillar detta"
+        comments:
+          first:
+            text: "Tack, behövde verkligen höra det idag. Låt oss höras snart igen!"
+            time: "nästan 3 timmar sedan"
+          second:
+            text: "Amen till mig. Skickar dig ett e-brev nu."
+            time: "nästan 27 minuter sedan"
+          field placeholder: "Skriv en kommentar..."
     share: "Dela"
     my connections: "Anslutna konton"
     connected as: "Du är ansluten till %{connection} som %{username}."

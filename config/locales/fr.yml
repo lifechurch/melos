@@ -1,5 +1,29 @@
 fr:
   social:
+    intro page:
+      main heading: "Conversation et Découverte"
+      main description: "Une nouvelle façon d'explorer la Bible avec des amis de confiance"
+      moment:
+        timestamp: "il y a 5 jours"
+        title: "mis Psaume 31:8 en favori"
+        verse: "Je danse de joie à cause de ton amour, car tu as vu mon malheur, tu as compris ma grande souffrance."
+        reference: "Psaume 31:8"
+        discover:
+          copy: "Découvrez et apprenez avec vos amis quand ils surlignent, mettent en favori ou ajoutent des notes."
+          button: "Où commencer ?"
+        share:
+          copy: "Partagez des conversations sincères à propos des Ecritures."
+          button: "Commencez en trouvant quelques amis."
+        likes:
+          info: "et 4 autres similaires"
+        comments:
+          first:
+            text: "J'avais vraiment besoin d'entendre ça aujourd'hui. Il faut qu'on discute !"
+            time: "il y a 3 heures"
+          second:
+            text: "Amen, moi aussi. Je t'envoie un email."
+            time: "il y a 27 minutes"
+          field placeholder: "Ecrire un commentaire..."
     share: "Partager"
     my connections: "Comptes liés"
     connected as: "Vous êtes connectés à %{connection} en tant que %{username}."

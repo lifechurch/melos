@@ -1,5 +1,29 @@
 de:
   social:
+    intro page:
+      main heading: "Unterhaltung & Entdeckung"
+      main description: "Ein neuer Weg, die Bibel mit guten Freunden zu entdecken"
+      moment:
+        timestamp: "vor 5 Tagen"
+        title: "hat ein Lesezeichen für Psalm 31,8 angelegt."
+        verse: "Ich juble vor Freude, weil du mich liebst. Dir ist meine Not nicht entgangen; du hast erkannt, wie niedergeschlagen ich bin."
+        reference: "Psalm 31,8"
+        discover:
+          copy: "Entdecke und lerne mit deinen Freunden, wenn sie Markierungen, Lesezeichen und Notizen hinzufügen."
+          button: "Wo soll ich beginnen?"
+        share:
+          copy: "Teile aufrichtige Unterhaltungen über die Heilige Schrift."
+          button: "Suche dir erst einmal ein paar Freunde."
+        likes:
+          info: "und 4 weiteren gefällt das"
+        comments:
+          first:
+            text: "Das habe ich heute gebracht! Danke dir. Lass uns bald mal telefonieren!"
+            time: "vor etwa 3 Stunden"
+          second:
+            text: "Amen, ich auch! Habe dir gerade eine Mail geschickt!"
+            time: "vor etwa 27 Minuten"
+          field placeholder: "Schreibe einen Kommentar..."
     share: "Teilen"
     my connections: "Verbundene Benutzerkonten"
     connected as: "Du bist mit %{connection} als %{username} verbunden."
@@ -250,7 +274,7 @@ de:
       save button: "Speichern"
     status:
       private: "Privat"
-      public: "Öffentlichkeit"
+      public: "Öffentlich"
       friends: "Nur Freunde"
       draft: "Entwurf"
     list title: "Notizen"
@@ -465,7 +489,7 @@ de:
         heading: "Geh weiter, hier gibt's (noch) nichts zu sehen."
         description: "Wenn du anfängst, dich mit der Bibel zu beschäftigen oder mit deinen Freunden zu interagieren, wirst du auf dieser Seite die Historie dessen sehen, was du so gemachst hast."
       visit friend: "Besuche das Profil von %{friend} "
-      tab activity: "Aktivität"
+      tab activity: "Aktivitäten"
       tab friends: "Freunde"
       tab notes: "Notizen"
       tab bookmarks: "Lesezeichen"
@@ -543,7 +567,7 @@ de:
     version field: "Übersetzung:"
     none user: "%{username} hat noch keine Lesezeichen"
     blank slate:
-      heading: "Lesezeichen bei bedeutsamen Versen setzen"
+      heading: "Setze Lesezeichen bei Versen, die dich ansprechen"
       description: "Während du die Bibel liest, wähle einen Vers und markiere ihn. Kehre hierher zurück, um deine Lesezeichen anzusehen, zu bearbeiten oder zu löschen."
     form:
       title field: "Titel:"
@@ -587,7 +611,7 @@ de:
     month: "Kalender"
     publisher: "Autor"
     success widget title: "Hole das Beste aus deinem Leseplan heraus."
-    success blurb: "Lesepläne eignen sich bestens dafür, Gottes Wort zu einem Teil deines täglichen Lebens zu machen. Fast jeder hinkt ab und an einmal hinterher. Zu hören, was Gott uns jeden Tag zu sagen hat, ist wichtig. Deshalb haben wir einige Tipps zusammengestellt, die dir helfen sollen, beim Lesen auf dem Laufenden zu bleiben."
+    success blurb: "Lesepläne eignen sich bestens dafür, Gottes Wort zu einem Teil deines täglichen Lebens zu machen. Fast jeder hinkt ab und an einmal hinterher, doch zu hören, was Gott uns jeden Tag zu sagen hat, ist sehr wichtig. Deshalb haben wir einige Tipps zusammengestellt, die dir helfen sollen, beim Lesen auf dem Laufenden zu bleiben."
     success blog link title: "Lies den Blog."
     a users plans: "Lesepläne von %{username}"
     you have no plans: "Im Moment hast du keinen Leseplan abonniert."
@@ -708,7 +732,7 @@ de:
   highlights:
     title: "Markierungen"
     blank slate:
-      heading: "Markierte Verse, die dir wichtig sind"
+      heading: "Markiere Verse, die dir wichtig sind"
       description: "Wähle beim Lesen der Bibel einen Vers aus und markiere ihn. Hier kannst du deine Markierungen später ansehen, ändern oder löschen."
     none user: "%{username} hat noch nichts markiert"
     choose color: "Wähle eine Farbe. "

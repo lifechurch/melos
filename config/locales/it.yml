@@ -1,5 +1,29 @@
 it:
   social:
+    intro page:
+      main heading: "Conversazione & Scoperta"
+      main description: "Un nuovo modo per esplorare la Bibbia con degli amici fidati."
+      moment:
+        timestamp: "5 giorni fa"
+        title: "Salmo 31:7 contrassegnato"
+        verse: "Esulterò e mi rallegrerà per la tua benevolenza; poiché tu hai visto la mia afflizione, hai conosciuto le angosce dell'anima mia."
+        reference: "Salmo 31:7"
+        discover:
+          copy: "Scopri e impara con i tuoi amici mentre aggiungono evidenzi azioni, segnalibri e note."
+          button: "Dove posso cominciare?"
+        share:
+          copy: "Intrattiene delle conversazioni sincere a proposito delle Scritture."
+          button: "Inizia cercando degli amici."
+        likes:
+          info: "e altri 4 come questi"
+        comments:
+          first:
+            text: "Avevo proprio bisogno di sentire questo oggi - grazie! Risentiamoci presto."
+            time: "circa 3 ore fa"
+          second:
+            text: "Amen - anch'io! Ti sto mandando un e-mail adesso."
+            time: "circa 27 minuti fa"
+          field placeholder: "Scrivi un commento..."
     share: "Condividi"
     my connections: "Account Collegati"
     connected as: "Sei collegato al tuo account %{connection} come %{username}."
@@ -233,7 +257,7 @@ it:
       remove friend button title: "Rimuovi questa persona dalla liste dei tuoi amici"
       add friend button: "Aggiungi amicizia"
       add friend button title: "Invia a %{user} una richiesta di amicizia"
-      accept button: "Accettare"
+      accept button: "Accetta"
       accept request button: "Accetta richiesta"
       ignore button: "Ignora"
       ignore request button: "Ignora richiesta"
@@ -462,7 +486,7 @@ it:
       general text: "Totalità dell'Accordo. le presenti CONDIZIONI DI UTILIZZO costituiscono la totalità dell'accordo esistente tra te e LifeChurch.tv e regolano il tuo utilizzo di YouVersion, prevalendo su qualsiasi accordo precedente tra te e LifeChurch.tv per quanto riguarda YouVersion. Potresti inoltre essere soggetto a termini e condizioni aggiuntive.<br><br>Legge Applicabile e Foro Competente. Le CONDIZIONI DI UTILIZZO e il rapporto tra te e LifeChurch.tv saranno regolamentati dalle leggi dello Stato dell'Oklahoma senza tenere conto dei conflitti delle disposizioni di legge. Tu e LifeChurch.tv accettate di sottostare all'esercizio della giurisdizione personale ed esclusiva dei tribunali ubicati nella contea di Oklahoma County, Oklahoma.<br><br>Rinuncia ed Esclusione dei Termini. Il mancato esercizio o applicazione da parte di LifeChurch.tv di qualsiasi diritto o clausola delle presenti CONDIZIONI DI UTILIZZO non costituirà una rinuncia a tale diritto o clausola. Se una qualsiasi clausola delle presenti CONDIZIONI DI UTILIZZO viene giudicata non valida da un tribunale di una giurisdizione competente, le parti concordano comunque che tale tribunale debba tentare di dare seguito alle intenzioni delle parti, come previsto nella clausola, e che le altre clausole delle presenti CONDIZIONI DI UTILIZZO rimangano pienamente valide e in vigore.<br><br>Nessun Diritto di Successione e Non Trasferibilità. Convieni e concordi che il tuo account LifeChurch.tv non è trasferibile e che qualsiasi diritto verso il tuo ID LifeChurch.tv o contenuto nel tuo account si estingue con la tua morte. Su ricezione di una copia del certificato di morte, LifeChurch.tv può chiudere il tuo account ed eliminare permanentemente tutti questi contenuti.<br><br>Statuto delle Limitazioni. Comprendi e accetti che, indipendentemente da qualsiasi statuto o legge che specifichi il contrario, qualsiasi rivendicazione o causa di azione derivante o correlata all'utilizzo di YouVersion o alle presenti CONDIZIONI DI UTILIZZO deve essere presentata entro un (1) anno dal verificarsi di tale rivendicazione o causa di azione o cadrà in prescrizione.<br><br>I titoli delle sezioni delle presenti CONDIZIONI DI UTILIZZO servono unicamente come riferimento e non hanno alcuna efficacia legale o contrattuale."
     profile:
       blank slate:
-        heading: "Circolare! - niente da vedere qui (ancora)"
+        heading: "Circolare! - niente da vedere qui (per ora)"
         description: "Se cominci a impegnarti con la Bibbia, o con i tuoi amici, questa pagina riporterà la cronaca di quello che hai fatto."
       visit friend: "Visita il profilo di %{friend}"
       tab activity: "Attività"
@@ -510,7 +534,7 @@ it:
       reading_plans: "Avvisami sulle informazioni dei piani di lettura che ho cominciato."
       publishing partners: "Tienimi al corrente delle notizie dai partner di contenuto YouVersion."
       update: "Aggiorna Notifiche"
-      friendships: "Notificami riguardo alle richieste di amicizia"
+      friendships: "Notificami le richieste di amicizia"
       moments: "Notificami circa l'attività degli amici"
       comments: "Notificami circa i commenti sulle mie attività"
       likes: "Notificami circa i \"mi piace\" sulla mia attività"
@@ -709,7 +733,7 @@ it:
     title: "Evidenziazioni"
     blank slate:
       heading: "Evidenzia i versetti significativi"
-      description: "Mentre leggi la Bibbia, seleziona un versetto e crea un segnalibro. Ritorna qui per visualizzare, modificare o cancellare i tuoi segnalibri."
+      description: "Mentre leggi la Bibbia, seleziona un versetto ed evidenzialo. Ritorna qui per visualizzare, modificare o cancellare le tue evidenziazioni."
     none user: "%{username} non ha evidenziazioni"
     choose color: "Scegli Colore"
     create success: "Successo! La tua evidenziazione è stata salvata"
@@ -758,7 +782,7 @@ it:
     zip: "CAP"
     creation form errors: "I(l) seguenti/e errori hanno impedito di fare un'offerta:"
   download ad:
-    title: "Scarica l'App Bibbia gratuito."
+    title: "Scarica l'App Bibbia gratuita."
     line 1: "Centinaia di versioni in 100+"
     line 2: "lingue diverse - la Bibbia"
     line 3: "che ti segue ovunque."
@@ -807,11 +831,11 @@ it:
     h2: "La Parola di Dio è con te."
     h3: "YouVersion è Globale"
     h3 sub: "Disponibile in più di 100 lingue in tutto il mondo."
-    main: "Decine di milioni di persone stanno usando l'App Bibbia&trade; per rendere la Parola di Dio parte della loro vita quotidiana. Scarica l'app gratuito e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile."
+    main: "Decine di milioni di persone stanno usando l'App Bibbia&trade; per rendere la Parola di Dio parte della loro vita quotidiana. Scarica l'app gratuita e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile."
     button h4: "Vai alla applicazione Bible.com/app"
     button h4 sub: "Sul Tuo Dispositivo Mobile"
     download now: "Scarica l'App Bibbia Adesso"
-    what people: "Quello che dice la gente a proposito dell'App Bibbia gratuito..."
+    what people: "Quello che dice la gente a proposito dell'App Bibbia gratuita..."
     t1: "Ho sempre la Parola con me."
     t1 copy: "Ho segnato dei passi che sono importanti per me. Ho perfino letto tutta la Bibbia in un anno grazie ai piani di lettura."
     t2: "Bel programma!"
@@ -852,7 +876,7 @@ it:
       get started: "Comincia con il tuo account gratuito."
       word with you: "La Parola di Dio è con te."
       download action: "Scarica l'App Bibbia"
-      download description: "Scarica l'App Bibbia YouVersion gratuito sul tuo dispositivo mobile e potrai avere la tua Bibbia con te ovunque andrai."
+      download description: "Scarica l'App Bibbia YouVersion gratuita sul tuo dispositivo mobile e potrai avere la tua Bibbia con te ovunque andrai."
       world installs: "Può essere installato in tutto il mondo"
   shared:
     menu_settings:

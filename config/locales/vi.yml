@@ -1,5 +1,29 @@
 vi:
   social:
+    intro page:
+      main heading: "Chia sẻ & khám phá"
+      main description: "Cách mới để khám phá Kinh Thánh cùng bạn bè"
+      moment:
+        timestamp: "5 ngày trước"
+        title: "đánh dấu Thi Thiên 31:7"
+        verse: "Con sẽ vui mừng và hoan hỉ trong sự nhân từ của Chúa\nVì Chúa đã đoái thương cảnh hoạn nạn của con,\nVà biết nỗi sầu khổ của linh hồn con."
+        reference: "Thi Thiên 31:7"
+        discover:
+          copy: "Học hỏi và chia sẻ cùng bạn bè khi họ tạo các đánh dấu, tô màu và ghi chú."
+          button: "Tôi bắt đầu từ đâu?"
+        share:
+          copy: "Tâm tình về Thánh Kinh."
+          button: "Bắt đầu bằng cách tìm vài người bạn."
+        likes:
+          info: "và thêm 4 người nữa thích"
+        comments:
+          first:
+            text: "Tôi cần được nghe điều đó hôm nay, thật cảm ơn bạn! Ta cùng chia sẻ nhé!"
+            time: "khoảng 3 giờ trước"
+          second:
+            text: "Amen, tôi cũng vậy. Đang email cho bạn đây."
+            time: "khoảng 27 phút trước"
+          field placeholder: "Viết bình luận..."
     share: "Chia sẻ"
     my connections: "Tài khoản đã kết nối"
     connected as: "Bạn đã kết nối %{connection} với tên %{username}."

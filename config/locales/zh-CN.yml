@@ -1,5 +1,7 @@
 zh-CN:
   social:
+    intro page:
+      main heading: "对话 & 发现"
     share: "分享"
     my connections: "已绑定的账户"
     connected as: "您已经与 %{connection} 上的 %{username}账户关联。"

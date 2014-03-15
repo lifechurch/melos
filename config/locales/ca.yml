@@ -1,5 +1,29 @@
 ca:
   social:
+    intro page:
+      main heading: "Convesra & Descoberta"
+      main description: "Una nova manera d'explorar la Bíblia amb amistats de confiança"
+      moment:
+        timestamp: "Fa 5 dies"
+        title: "Has marcat el Salm 31:8"
+        verse: "Amb quin goig celebraré el teu amor! T’has adonat del meu sofriment, has vist en perill la meva vida,"
+        reference: "Salm 31:8"
+        discover:
+          copy: "Descobreix i aprèn amb els teus amics a través dels ressaltats, marcadors i notes que afegeixen."
+          button: "Per on començo?"
+        share:
+          copy: "Comparteix converses sinceres sobre l'Escriptura."
+          button: "Comença trobant algunes amistats."
+        likes:
+          info: "i a 4 persones més els agrada això"
+        comments:
+          first:
+            text: "Realment necessitava sentir això avui, gràcies. A veure si ens posem al dia aviat!"
+            time: "fa unes 3 hores"
+          second:
+            text: "Amén, jo també. Ara t'envio un correu electrònic."
+            time: "fa uns 27 minuts"
+          field placeholder: "Escriu un comentari..."
     share: "Comparteix"
     my connections: "Comptes connectats"
     connected as: "Estàs connectat/ada a %{connection} com %{username}."
@@ -142,6 +166,7 @@ ca:
   last page: "Última pàgina"
   invalid username or password: "Nom d'usuari/ària o contrasenya invàlids"
   show all bookmarks: "Veure els %{total} marcadors"
+  show all notes: "Visualitza totes les notes"
   recent bookmarks: "Marcadors recents"
   percentage display: "%{number}%"
   myself: "Jo"
@@ -170,6 +195,7 @@ ca:
       like: "M'agrada"
       liked: "T'ha agradat"
       like title: "M'agrada això"
+      last comment: "Darrer comentari"
       share: "Comparteix"
       share title: "Comparteix-lo amb amics o familiars"
       comment: "Comenta"
@@ -189,17 +215,19 @@ ca:
     no new: "No hi ha avisos nous."
     view all: "Mira tots els avisos"
   likes:
+    create success: "Perfecte! El teu \"m'agrada\" ha estat guardat"
     create failure: "El teu \"m'agrada\" no s'ha pogut guardar"
     destroy success: "\"m'agrada\" esborrat"
     destroy failure: "El teu \"m'agrada\" no s'ha pogut esborrar"
   comments:
     view all N: "Visualitza tots els %{count} comentaris"
     post comment: "Publica un comentari"
+    create success: "Perfecte! El teu comentari s'ha publicat."
     create failure: "El comentari no s'ha pogut publicar"
     destroy success: "Comentari esborrat"
     destroy failure: "El comentari no s'ha pogut esborrar"
     form:
-      save button: "Envia"
+      save button: "Publica"
   friends:
     you have N friends: "Tens %{count} amics"
     none me: "Comparteix els teus moments amb la Bíblia mitjançant els marcadors, els subratllats i les notes amb els teus amics més propers."
@@ -211,6 +239,7 @@ ca:
   friendships:
     offer success: "Sol·licitud d'amistat enviada"
     offer failure: "Error en enviar la sol·licitud d'amistat"
+    create success: "Perfecte! Ara sou amics."
     create failure: "Error en crear l'amistat"
     destroy success: "Sol·licitud rebutjada"
     destroy failure: "Error en rebutjar l'amistat"
@@ -229,7 +258,7 @@ ca:
       add friend button: "Afegeix un amic"
       add friend button title: "Enviar-li a %{user} una sol·licitud d'amistat"
       accept button: "Accepta"
-      accept request button: "Sol·licitud acceptada"
+      accept request button: "Accepta la sol·licitud"
       ignore button: "Ignora"
       ignore request button: "Ignora la sol·licitud"
   notes:
@@ -276,6 +305,7 @@ ca:
     cancel: "Cancel·la"
     pop out: "Finestra externa"
     none found: "No s'han trobat notes..."
+    create success: "Perfecte! La teva nota ha estat guardada."
     create failure: "Error en guardar la nota"
     destroy success: "Nota suprimida"
     destroy failure: "Error en suprimir la nota"
@@ -507,6 +537,7 @@ ca:
       friendships: "Avisa'm sobre les sol·licituds d'amistat"
       moments: "Avisa'm sobre l'activitat dels meus amics"
       comments: "Avisa'm quan hi hagi comentaris a la meva activitat"
+      likes: "Notifica'm quan algú faci \"m'agrada\" a la meva activitat"
   bookmarks:
     new: "Nou Marcador"
     edit: "Edita"
@@ -520,6 +551,7 @@ ca:
     not found: "Els marcadors et donen una ràpida referència cap als teus passatges preferits o a l'últim capítol que has llegit en un llibre en particular. Per afegir un marcador, selecciona un verset al lector de la Bíblia i després clica al botó Seleccionat a dalt del lector."
     other user not found: "El/la %{username} encara no ha desat cap marcador."
     creation form errors: "Els errors següents no permeten que creïs el marcador"
+    create success: "Perfecte! El teu marcador ha estat guardat."
     destroy success: "Marcador eliminat"
     destroy failure: "Error en eliminar el marcador"
     update success: "Marcador actualitzat"
@@ -704,6 +736,7 @@ ca:
       description: "Metre llegeixes la bíblia pots seleccionar un verset i subratllar-lo. Torna aquí per veure, editar o esborrar els teus subratllats."
     none user: "%{username} no té subratllats"
     choose color: "Tria el color"
+    create success: "Perfecte! El teu ressaltat ha estat guardat"
     create failure: "Error en desar subratllat"
     destroy success: "Subratllat eliminat"
     destroy failure: "Error en suprimir subratllat"

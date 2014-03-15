@@ -1,5 +1,29 @@
 af:
   social:
+    intro page:
+      main heading: "Gesprekke & Verkennings"
+      main description: "'n Nuwe manier om die Bybel te verken met betroubare vriende"
+      moment:
+        timestamp: "5 dae gelede"
+        title: "Psalm 31:7 geboekmerk"
+        verse: "Ek sal bly wees en juig in u troue liefde, want jy het my ellende aangesien, en jy gee om vir die benoudheid van my siel."
+        reference: "Psalm 31:7"
+        discover:
+          copy: "Verken en leer saam met jou vriende soos wat hulle kleurmerke, boekmerke en notas skep."
+          button: "Waar moet ek begin?"
+        share:
+          copy: "Deel eerlike gesprekke oor die Woord."
+          button: "Begin deur vriende op te spoor."
+        likes:
+          info: "en 4 ander 'Hou Van' dit"
+        comments:
+          first:
+            text: "Dankie, het vandag regtig nodig gehad om dit te hoor.  Ons moet gou weer praat!"
+            time: "omtrent 3 ure gelede"
+          second:
+            text: "Amen, ek ook.  Ek stuur nou vir jou 'n e-pos."
+            time: "omtrent 27 minute gelede"
+          field placeholder: "Plaas 'n opmerking..."
     share: "Deel"
     my connections: "Gekoppelde Rekeninge"
     connected as: "Jy is gekoppel met %{connection} as %{username}."
@@ -28,23 +52,23 @@ af:
     users password change: "Jou nuwe wagwoord moet verskil van jou vorige wagwoord."
     users password length: "Jou wagwoord moet ten minste 6 karakters lank wees."
     users password required: "Jy moet jou wagwoord insleutel."
-    users username alpha numeric extra: "Die gebruikersnaam mag uit letters, nommers of strepies bestaan."
+    users username alpha numeric extra: "Die gebruikersnaam moet uit letters, nommers of strepies bestaan."
     users username not available: "Die gebruikersnaam wat jy gekies het is nie beskikbaar nie."
     users username or password invalid: "Die gebruiksnaam of wagwoord wat jy voorsien het is ongeldig."
     users username required: "Jy moet 'n gebruikernaam insleutel."
     users first name required: "Jy moet jou noemnaam verskaf."
     users last name required: "Jy moet jou van verskaf."
-    moments content required: "Content cannot be blank.\nInhoud kan nie leeg wees nie."
+    moments content required: "Inhoud kan nie leeg wees nie."
   meta:
     kids_app:
       title: "Die Bybel Toep vir Kinders"
       description: "..."
     100million:
       title: "Dit begin met 100 Miljoen"
-      description: "Die Bybel App is amper 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel App vandag af - en deel die app met jou vriende.  Help on om geskiedenis te maak."
+      description: "Die Bybel Toep is amper 'n 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel Toep vandag af - en deel dan die toep met jou vriende.  Help ons om saam geskiedenis te maak."
     mobile:
-      title: "Die Bybel App"
-      description: "Miljoene mense gebruik die Bybel App om God se Woord te lees, te luister, te kyk en te deel van hulle daaglikse lewe.  Laai die gratis app af en verkry toegang tot jou boekmerke, notas en leesplanne ol enige plek. Grniet honderde weergawes, insluitend oudio, alles op jou mobiele toerusting."
+      title: "Die Bybel Toep"
+      description: "Miljoene mense gebruik die Bybel Toep om God se Woord te lees, te luister, te kyk en deel te maak van hulle daaglikse lewe.  Laai die gratis toep af en verkry toegang tot jou boekmerke, notas en leesplanne op enige plek. Geniet honderde weergawes, insluitend audio, alles op jou mobiele toerusting."
     connections:
       index:
         title: "Gekoppelde Rekeninge"
@@ -70,7 +94,7 @@ af:
   connect to: "Koppel met jou %{connection} rekening"
   deleted connection: "Koppeling met %{connection} suksesvol verwyder."
   deleted connection error: "Jammer, daar was 'n fout met die ontkoppeling van jou konneksie met %{connection}."
-  connection marketing: "YouVersion is baie meer pret saam met vriende! Verbind jou YouVersion rekening met jou ander sosiale netwerk rekeninge en kry jou vriende onmiddelik op YouVersion .  Deur jou rekeninge met mekaar te verbind, maak dit moontlik om inhoud te deel deur net 'n paar knoppies te druk.  Ons sal nooit iets van jou plaas sonder jou toestemming nie."
+  connection marketing: "YouVersion is baie meer pret saam met vriende! Verbind jou YouVersion rekening met jou ander sosiale netwerk rekeninge en kry jou vriende onmiddelik op YouVersion .  Deur jou rekeninge met mekaar te verbind, maak jy dit moontlik om inhoud te deel deur net 'n paar knoppies te druk.  Ons sal nooit iets van jou plaas sonder jou toestemming nie."
   next step connections: "Volgende: Koppel jou rekeninge en vind jou vriende"
   no notes found: "%{username} het geen notas nie."
   no recent activity: "%{username} het geen onlangse aktiwiteit nie."
@@ -142,6 +166,7 @@ af:
   last page: "Laaste Bladsy"
   invalid username or password: "Ongeldige gebruikersnaam of wagwoord."
   show all bookmarks: "Wys al %{total} boekmerke"
+  show all notes: "Wys alle notas"
   recent bookmarks: "Onlangse Boekmerke"
   percentage display: "%{number}%"
   myself: "Ek"
@@ -170,6 +195,7 @@ af:
       like: "Hou Van"
       liked: "Gehou Van"
       like title: "Hou van dit"
+      last comment: "Laaste opmerking"
       share: "Deel"
       share title: "Deel hierdie met vriende en familie."
       comment: "Lewer kommentaar"
@@ -189,15 +215,17 @@ af:
     no new: "Geen nuwe kennisgewings"
     view all: "Wys alle Kennisgewings"
   likes:
+    create success: "Sukses! Jou 'Hou Van' is gestoor"
     create failure: "Jou 'Hou Van' kon nie gestoor word nie"
     destroy success: "'Hou Van' verwyder"
     destroy failure: "Jou 'Hou Van' kon nie verwyder word nie"
   comments:
     view all N: "Wys al %{count} opmerkings"
-    post comment: "Plaas 'n opmerkings"
+    post comment: "Plaas 'n opmerking"
+    create success: "Sukses! Jou opmerking is gepos"
     create failure: "Opmerking kon nie geplaas word nie"
-    destroy success: "Comment deleted\nKommentaar verwyder"
-    destroy failure: "Comment could not be deleted\nKommentaar kon nie verwyder word nie"
+    destroy success: "Kommentaar verwyder"
+    destroy failure: "Kommentaar kon nie verwyder word nie"
     form:
       save button: "Plaas"
   friends:
@@ -211,6 +239,7 @@ af:
   friendships:
     offer success: "Vriendskap uitnodiging gestuur"
     offer failure: "Daar was 'n fout met die stuur van die vriendskap versoek"
+    create success: "Sukses!  Julle is nou vriende."
     create failure: "Daar was 'n fout met die vriendskap skep aksie"
     destroy success: "Versoek afgekeur"
     destroy failure: "Daar was 'n fout met die afkeur versoek"
@@ -235,7 +264,7 @@ af:
   notes:
     none user: "%{username} het nog nie enige notas gemaak nie."
     blank slate:
-      heading: "Jy hetnog nie enige notas nie"
+      heading: "Jy het nog nie enige notas nie"
       description: "Terwyl jy die Bybel lees jy, wanneer jy God se klein, sagte stem hoor  praat, kan jy vinnig daardie gedagtes hier vas pen. Jou aantekeninge sal as <em> privaat </ em> gemerk word by verstek.  As jy jou aantekeninge met jou vriende wil deel, kan jy dit eenvoudig net oop maak en dit verander na </ em> openbaar <em>."
     form:
       title field: "Titel:"
@@ -246,7 +275,7 @@ af:
     status:
       private: "Privaat"
       public: "Publiek"
-      friends: "Friends only\nSlegs vriende"
+      friends: "Slegs vriende"
       draft: "Konsep"
     list title: "Notas"
     loading community: "Gemeenskapsnotas besig om te laai..."
@@ -276,6 +305,7 @@ af:
     cancel: "Kanseleer"
     pop out: "Spring uit"
     none found: "Geen notas gevind..."
+    create success: "Sukses!  Jou nota is gestoor."
     create failure: "Daar was 'n fout met die stoor van die nota"
     destroy success: "Nota verwyder"
     destroy failure: "Daar was 'n fout met die verwyder van die nota"
@@ -340,7 +370,7 @@ af:
     edit account_existence: "Sluit Rekening"
     delete account button: "Sluit My YouVersion Rekening"
     no devices: "Geen toestelle gekoppel aan jou YouVersion Rekening nie"
-    no devices download copy: "Gebaseer op die aanlyn Bybel, YouVersion.com, is die Bybel App 'n gratis mobiele Bybel wat op bykans enige toestel geinstalleer kan word. Die Bybel App laat gebruikers toe om die Bybel te lees, verse te deel met sosiale netwerke, gunsteling gedeeltes te boekmerk en vele meer&mdash:alles in 'n formaat wat tred hou met jou snelgroeiende mobiele leefstyl. Besoek <a href='https://www.bible.com/app'>bible.com/app</a>  van jou mobiele toestel om die Bybel App af te laai en koppel jou rekening!"
+    no devices download copy: "Gebaseer op die aanlyn Bybel, YouVersion.com, is die Bybel Toep 'n gratis mobiele Bybel wat op bykans enige toestel geinstalleer kan word. Die Bybel Toep laat gebruikers toe om die Bybel te lees, verse te deel met sosiale netwerke, gunsteling gedeeltes te boekmerk en vele meer&mdash:alles in 'n formaat wat tred hou met jou snelgroeiende mobiele leefstyl. Besoek <a href='https://www.bible.com/app'>bible.com/app</a>  van jou mobiele toestel om die Bybel Toep af te laai en koppel jou rekening!"
     yes delete: "Ja, Sluit My Rekening"
     account delete success: "Jou YouVersion rekening is suksesvol gesluit. Ons hoop dat jy sal voortgaan om betekenisvolle maniere te vind om interaktief met die Bybel te verkeer. Van hierdie apps mag dalk handig te pas kom soos jy aanbeweeg:  <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "As jy jou rekening sluit, sal jy permanent van al jou informasie, geskiedenis, en verpersoonliking (soos notas, boekmerke, kleurmerke, ens.) binne YouVersion.com en die Bible App geillimineer word. Hierdie aksie kan nie deur jou of ons span omgekeer word nie. Indien jy seker is dat jy wil aangaan, gaan voort hieronder."
@@ -507,6 +537,7 @@ af:
       friendships: "Stel my in kennis van vriend versoeke"
       moments: "Stel my in kennis van vriende se aktiwiteite"
       comments: "Stel my in kennis van opmerking op my aktiwiteite"
+      likes: "Stel my in kennis van 'Hou Van' aksies op my aktiwiteite"
   bookmarks:
     new: "Nuwe Boekmerk"
     edit: "Verander"
@@ -520,6 +551,7 @@ af:
     not found: "Boekmerke gee jou 'n vinnige terugverwysingsgids na jou gunsteling gedeeltes of na die laaste hoofstuk wat jy in 'n spesifieke boek gelees het. Om 'n boekmerk by te voeg, kies 'n vers in die Bybel leser en kliek dan die seleksie knoppie bo aan die leser."
     other user not found: "%{username} het nog nie enige boekmerke gestoor nie."
     creation form errors: "Die volgende fout(e) het verhoed dat jy 'n boekmerk kon skep:"
+    create success: "Sukses!  Jou boekmerk is gestoor."
     destroy success: "Boekmerk verwyder"
     destroy failure: "Daar was 'n fout met die boekmerk verwydering"
     update success: "Boekmerk aangepas"
@@ -536,7 +568,7 @@ af:
     none user: "%{username} het geen boekmerke nie"
     blank slate:
       heading: "Boekmerk betekenisvolle verse"
-      description: "Terwyl jy Bybel lees, kies 'n vers en boekmerk dit. Keer dan terug hierheen om die boekmerk te sien, te wysig of te verwyder."
+      description: "Terwyl jy Bybel lees, kies 'n vers en boekmerk dit. Keer dan terug om die boekmerk te sien, te wysig of te verwyder."
     form:
       title field: "Titel:"
       reference field: "Verwysing:"
@@ -553,7 +585,7 @@ af:
   plans:
     settings: "Verstellings"
     privacy:
-      visible to friends?: "Would you like your activity with this plan to be visible to your friends?\nWil jy hê jou aktiwiteit met hierdie plan moet vir jou vriende sigbaar wees?"
+      visible to friends?: "Wil jy hê jou aktiwiteit met hierdie plan moet vir jou vriende sigbaar wees?"
       private: "Privaat"
       public: "Publiek"
     title: "Lees Planne"
@@ -666,11 +698,11 @@ af:
       description: "Jy kan nou die  <a href='%{content_link}'> se inhoud wat jy gekoop het lees </a> van  %{vendor} op YouVersion!"
     has errors: "Daar was foute met jou versoek:"
     confirm:
-      email: "Om die video inhoud wat jy aangekoop het, te bemagtig, moet jy asseblief jou epos nagaan vir 'n bevestigings epos van YouVersion.  Kliek op die adres binne die epos om jou registrasie te bevestig."
+      email: "Om die video inhoud wat jy aangekoop het, te bemagtig, moet jy asseblief jou epos nagaan vir 'n bevestigings e-pos van YouVersion.  Kliek op die adres binne die e-pos om jou registrasie te bevestig."
     request:
-      invalid_vendor_signature: "Lisensie verifiëring was onsuksesvol: Die verskaffer se handtekening kon nie verifieer word nie."
+      invalid_vendor_signature: "Lisensie verifiëring was onsuksesvol:  Die verskaffer se handtekening kon nie verifieer word nie."
       invalid_vendor_id: "Lisensiering varifiëring was onsuksesvol: Die verskaffer se ID is verkeerd."
-      invalid_item_ids: "Lisensue verifiëring was onsuksesvol:ongemagtife item."
+      invalid_item_ids: "Lisensue verifiëring was onsuksesvol: Ongemagtife items"
     vendor_transaction_id:
       duplicate: "Transaksie id: Die transaksie id is alreeds geregistreer."
     auth:
@@ -698,19 +730,20 @@ af:
     chapter only: "Jammer, klank is nie beskikbaar vir verse nie. Besigtig in die leser vir hoofstuk klank."
     close player menu: "Maak Toe"
   highlights:
-    title: "Gemerkte werk"
+    title: "Kleurmerke"
     blank slate:
       heading: "Kleurmerk betekenisvolle verse"
       description: "Terwyl jy Bybel lees, kies 'n vers en kleurmerk dit. Keer dan terug hierheen om die kleurmerker te sien, te wysig of te verwyder."
     none user: "%{username} het geen kleurmerkers"
     choose color: "Kies Kleur"
+    create success: "Sukses!  Jou kleurmerk is gestoor"
     create failure: "Daar was 'n fout met die stoor van die kleurmerk"
     destroy success: "Kleurmerk verwyder"
     destroy failure: "Daar was 'n fout met die kleurmerk verwydering"
     creation error: "Jammer, kon nie kleurmerk nie."
     delete error: "Jammer, kon nie kleurmerk verwyder nie."
     form:
-      save button: "Save Highlight\nStoor Hoogtepunt"
+      save button: "Stoor Kleurmerk"
   searching:
     bible: "Bybel"
     plans: "Planne"
@@ -893,31 +926,31 @@ af:
     100m:
       logo: "YouVersion: Die Bybel app"
       tagline: "Dit begin met<em>100 miljoen</em>"
-      intro: "Kan die Bible App 100 miljoen inskrywings bereik voor ons 5de herdenking die 10de Julie? Slegs met julle hulp!"
-      after: "As gevolg van jou het die Bible App 100 miljoen installerings gekry by ons 5de herdenking op die 10de Julie.  Dankie!"
+      intro: "Kan die Bible Toep 100 miljoen inskrywings bereik voor ons 5de herdenking die 10de Julie? Slegs met julle hulp!"
+      after: "As gevolg van jou het die Bible Toep 100 miljoen installerings gekry by ons 5de herdenking op die 10de Julie.  Dankie!"
       share:
         with friends: "Deel met jou vriende"
         fb:
           dialog name: "Het jy die Bybel App?"
-          dialog desc: "Ek is mal oor die Bybel App!  Dit help my werklik om die Bybel groter deel van my lewe te maak.  Dit laat my toe om gedagtes uit te lig, luister na oudio Bybels, notas te maak, volg oordenking programme...selfs om videos te kyk!  Gaan laai dit nou af (dit is gratis): http://www.bible.com/app"
+          dialog desc: "Ek is mal oor die Bybel Toep!  Dit help my werklik om die Bybel meer deel van my lewe te maak.  Dit laat my toe om gedagtes uit te lig, te luister na oudio Bybels, om notas te maak, oordenking programme te volg...en selfs om videos te kyk!  Gaan laai dit nou af (dit is gratis): http://www.bible.com/app"
         tw:
-          tweet: "Die @YouVersion Bybel App is permanent op my tuis skerm. Lees, kyk, luistet en deel...alles in 'n gratis app: bible.com/app"
+          tweet: "Die @YouVersion Bybel Toep is permanent op my tuis skerm. Lees, kyk, luister en deel...alles in 'n gratis toep: bible.com/app"
         em:
-          subject: "Het jy die Bybel App?"
+          subject: "Het jy die Bybel Toep?"
           body: "Ek geniet vreeslik baie die Bybel App van YouVersion en gedink jy sal ook.  Ek maak deesdae die Bybel baie gereeld oop, want dit is so maklik om te lees, kyk, luister en te deel.  Dit het selfs planne, wat 'n gedeelte van die Bybel uitgesoek het en wag vir my elke dag.  \n\nJy kan dit ook kry (Gratis) vir enige mobiele toerusting by:  \nhttp://www.bible.com/app"
       body:
-        p1: "10de Julie gaan 'n groot dag wees.  Nie net is dit die Bybel App se 5de verjaarsdag nie, dit merk ook die 5de herdenking van die bekendstelling van Apple iTunes se winkel."
+        p1: "Die 10de Julie gaan 'n groot dag wees.  Dit is nie net die Bybel Toep se 5de verjaarsdag nie, dit merk ook die 5de herdenking van die bekendstelling van Apple iTunes se winkel."
         p2: "Self groter? Met jou hulp, is vandag die dag wat ons 100 miljoen installasies gaan bereik"
         p3: "Ons het geleer dat God mylpale soos die gebruik om om groter groei te stimuleer."
         p4: "Kom ons maak saam geskiedenis."
         after p1: "YouVersion verteenwoordig `n globale samewerking van mense wat `n passie het om ander te help om by God se Woord betrokke te raak.  Aan al die Bybel gemeenskappe, publiseerders, kerke, pastore en vrywilligers: Baie dankie vir bydraes!"
         after p2: "Wat die mylpaal so besonders maak, is wat dit verteenwoordig: vandag is daar `n ongelooflike groot hoeveelheid mense wat in interaksie is met die Bybel. Dit is inspirerend om te sien hoe God werk en ons glo dit is net die begin. <em>Dit begin met 100 miljoen</em>."
       ad:
-        title: "Die Bybel App is heeltemal gratis en fantastiese wyse om die Bybel te ontdek."
-        copy: "Lees, Luister, Kyk of Deel.  Kry die Bybel App vir jou slim telefoon of tablet: <a href='http://bible.com/app'>Laai hom nou af</a>"
+        title: "Die Bybel Toep is heeltemal gratis en 'n fantastiese wyse om die Bybel te ontdek."
+        copy: "Lees, Luister, Kyk of Deel.  Kry die Bybel Toep vir jou slimfoon of tablet: <a href='http://bible.com/app'>Laai hom nou af</a>"
       sidebar:
-        tagline: "Kom ons maak Geskiedenis. "
-        button: "Deel die Bybel App. "
+        tagline: "Kom ons maak saam Geskiedenis. "
+        button: "Deel die Bybel Toep. "
   ui:
     pagination:
       next page: "Volgende Bladsy"

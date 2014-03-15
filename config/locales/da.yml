@@ -1,5 +1,29 @@
 da:
   social:
+    intro page:
+      main heading: "Konversation & Opdagelse"
+      main description: "En ny måde at opdage Bibelen med gode venner"
+      moment:
+        timestamp: "5 dage siden"
+        title: "lavede bogmærke til Salme 31:7"
+        verse: "Jeg vil være glad og glæde mig over din ufejlbarlige kærlighed, for du har set mine problemer og vil hjælpe med ængstelsen for min sjæl."
+        reference: "Salme 31:7"
+        discover:
+          copy: "Opdag og lær med dine venner når de tilføjer markeringer, bogmærker og noter."
+          button: "Hvor kan jeg starte?"
+        share:
+          copy: "Del ærlig snak om Skrifterne."
+          button: "Kom i gang med at finde nogle venner."
+        likes:
+          info: "og 4 mere synes om dette"
+        comments:
+          first:
+            text: "Det var nødvendigt at høre det i dag, tak. Lad os indhente det snart!"
+            time: "for 3 timer siden"
+          second:
+            text: "Amen, også fra mig. Sender en ene-mail nu."
+            time: "for 27 minutter siden"
+          field placeholder: "Skriv en kommentar..."
     share: "Del"
     my connections: "Forbundne konti"
     connected as: "Du er forbundet til  %{connection} som %{username}."

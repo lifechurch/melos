@@ -1,5 +1,7 @@
 zh-TW:
   social:
+    intro page:
+      main heading: "對話與發現"
     share: "分享"
     my connections: "已連接的帳戶"
     connected as: "您已與 %{connection} 上的 %{username} 帳戶連接。"

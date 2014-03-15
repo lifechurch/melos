@@ -1,5 +1,29 @@
 ja:
   social:
+    intro page:
+      main heading: "会話と発見"
+      main description: "信頼できる友だちと一緒に、今までにない方法で聖書アプリを楽しめます。"
+      moment:
+        timestamp: "5日前"
+        title: "詩編31章7節をブックマークしました"
+        verse: "あなたのいつくしみを喜び楽しみます。あなたがわたしの苦しみをかえりみ、わたしの悩みにみこころをとめ"
+        reference: "詩編31章7節"
+        discover:
+          copy: "お友達のハイライト、ブックマーク、ノートから一緒に学びましょう"
+          button: "どこから始めれば？"
+        share:
+          copy: "聖句について本音で話し合いましょう"
+          button: "まずは、お友達を見つけましょう"
+        likes:
+          info: "類似の4件"
+        comments:
+          first:
+            text: "今日まさに聞きたかったことです。ありがとう。また後で！"
+            time: "約3時間前"
+          second:
+            text: "アーメン、その通りです。メールを送ります。"
+            time: "約27分前"
+          field placeholder: "コメントを書く…"
     share: "シェア"
     my connections: "連携済みアカウント"
     connected as: "%{username} として %{connection} に連携されました。"
@@ -142,6 +166,7 @@ ja:
   last page: "最後のページ"
   invalid username or password: "ユーザー名、もしくは、パスワードに誤りがあります。"
   show all bookmarks: "%{total} 箇所のブックマークを全て表示"
+  show all notes: "全てのノートを見る"
   recent bookmarks: "最近登録したブックマーク"
   percentage display: "%{number}%"
   myself: "わたし"
@@ -168,8 +193,9 @@ ja:
       go to scripture: "聖句を見る"
       load more: "さらに読み込む"
       like: "いいね！"
-      liked: "お気に入り"
+      liked: "いいね！済み"
       like title: "「いいね！」に入れる"
+      last comment: "前回のコメント"
       share: "シェア"
       share title: "友達または家族とシェアする"
       comment: "コメント"
@@ -189,12 +215,14 @@ ja:
     no new: "新しい通知はありません"
     view all: "全ての通知を見る"
   likes:
+    create success: "成功！「いいね」が保存されました。"
     create failure: "「いいね」が保存できませんでした。"
     destroy success: "「いいね」が削除されました。"
     destroy failure: "「いいね」が削除できませんでした。"
   comments:
     view all N: "全ての%{count}コメントを見る。"
     post comment: "コメントを投稿する"
+    create success: "成功！コメントが表示されました。"
     create failure: "コメントを投稿することができませんでした"
     destroy success: "コメントが削除されました。"
     destroy failure: "コメントが削除できませんでした。"
@@ -211,6 +239,7 @@ ja:
   friendships:
     offer success: "友達申請が送信されました"
     offer failure: "友達申請の送信中にエラーが発生しました"
+    create success: "成功！友達になりました。"
     create failure: "友達登録中にエラーが発生しました"
     destroy success: "申請が断られました"
     destroy failure: "申請却下中にエラーが発生しました"
@@ -276,6 +305,7 @@ ja:
     cancel: "キャンセル"
     pop out: "別ウィンドウで表示"
     none found: "ノートが見つかりません..."
+    create success: "成功！ノートが保存されました。"
     create failure: "ノートの保存にエラーが発生しました"
     destroy success: "ノートが削除されました"
     destroy failure: "ノートの削除中にエラーが発生しました"
@@ -507,6 +537,7 @@ ja:
       friendships: "友達申請があれば通知する"
       moments: "友達のアクティビティがあれば通知する"
       comments: "私のアクティビティへのコメントがあれば通知する"
+      likes: "アクティビティの「いいね」を通知する"
   bookmarks:
     new: "新しいブックマーク"
     edit: "編集"
@@ -520,6 +551,7 @@ ja:
     not found: "ブックマークを付けることにより、最後に読んだ箇所を思い出すことができたり、好きな聖句が書かれた箇所を見つけやすくなったり、あるいは、ある書物の中でどの章まで読んだかを思い出しやすくなります。ブックマークを付けるためには聖書リーダーの中で特定の箇所を選択し、ブックマークボタンをクリックします。"
     other user not found: "まだ %{username} さんのブックマークはありません"
     creation form errors: "以下のエラーが発生したために、ブックマークをつけることができませんでした。"
+    create success: "成功！ブックマークが保存されました。"
     destroy success: "ブックマークが削除されました"
     destroy failure: "ブックマークを削除する際にエラーが発生しました"
     update success: "ブックマークが更新されました"
@@ -704,6 +736,7 @@ ja:
       description: "聖書を読みながら、聖句を選んでハイライトできます。ここであなたのハイライトを閲覧・編集・削除できます。"
     none user: "%{username} さんはハイライトがありません"
     choose color: "色の選択"
+    create success: "成功！ハイライトが保存されました。"
     create failure: "ハイライトを保存する際にエラーが発生しました"
     destroy success: "ハイライトが削除されました"
     destroy failure: "ハイライトを削除する際にエラーが発生しました"

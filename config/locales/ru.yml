@@ -1,5 +1,7 @@
 ru:
   social:
+    intro page:
+      main heading: "Общение"
     share: "Поделиться"
     my connections: "Подключенные аккаунты"
     connected as: "Вы подключены к %{connection} как %{username}."

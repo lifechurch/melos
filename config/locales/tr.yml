@@ -1,5 +1,7 @@
 tr:
   social:
+    intro page:
+      main heading: "Sohbet & Keşif"
     share: "Paylaş"
     my connections: "Bağlı Hesaplar"
     connected as: "Siz %{username} olarak ${connection} ile bağlandınız."
@@ -142,6 +144,7 @@ tr:
   last page: "Son Sayfa"
   invalid username or password: "Kullancı adı veya parola geçersiz."
   show all bookmarks: " %{total} yer imlerinin tümünü görüntüle"
+  show all notes: "Tüm notları görüntüle"
   recent bookmarks: "En Yeni Yer İmleri"
   percentage display: "%{number}%"
   myself: "Benim"
@@ -170,6 +173,7 @@ tr:
       like: "Beğen"
       liked: "Beğendiniz"
       like title: "Beğen"
+      last comment: "Son yorum"
       share: "Paylaş"
       share title: "Bunu aileniz veya arkadaşlarınız ile paylaşın"
       comment: "Yorum Yap"
@@ -189,12 +193,14 @@ tr:
     no new: "Yeni bildirim yok"
     view all: "Tüm bildirimleri görüntüle"
   likes:
+    create success: "Beğeniniz kaydedildi!"
     create failure: "Beğeniniz kaydedilemedi"
     destroy success: "Beğenme silindi"
     destroy failure: "Beğenmeniz silinemedi"
   comments:
     view all N: "%{count} yorumların tümünü görüntüle"
     post comment: "Yorum yaz"
+    create success: "Yorumunuz yayımlandı!"
     create failure: "Yorum postalanamadı"
     destroy success: "Yorum silindi"
     destroy failure: "Yorum silinemedi"
@@ -211,6 +217,7 @@ tr:
   friendships:
     offer success: "Arkadaşlık talep edildi"
     offer failure: "Arkadaşlık talebi gönderilirken hata oluştu"
+    create success: "Artık arkadaş oldunuz!"
     create failure: "Arkadaşlığı yaratırken hata oluştu"
     destroy success: "İstek reddedildi"
     destroy failure: "Talebi reddederken hata oluştu"
@@ -276,6 +283,7 @@ tr:
     cancel: "İptal"
     pop out: "Yeni Pencerede Aç"
     none found: "Not bulunamadı..."
+    create success: "Notunuz kaydedildi!"
     create failure: "Notu kaydederken hata oluştu"
     destroy success: "Not silindi"
     destroy failure: "Notu silerken hata oluştu"
@@ -507,6 +515,7 @@ tr:
       friendships: "Arkadaşlık talepleri hakkında bildirim gönder"
       moments: "Arkadaşların eylemleri hakkında bildirim gönder"
       comments: "Arkadaşlarımın eylemlerim hakkında yaptıkları yorum hakkında bildirim gönder"
+      likes: "Hareketlerimin beğenileri hakkında beni bildir"
   bookmarks:
     new: "Yeni Yer Imi"
     edit: "Düzenle"
@@ -520,6 +529,7 @@ tr:
     not found: "Yer imleri en sevdiğiniz ayetleri veya herhangi bir kitapta son okuduğunuz bölümü çabukça bulmanızı sağlar. Yer imi nasıl eklenir: Kutsal Kitap Okuyucusunda bir ayet seçin. Ondan sonra okuyucunun araç çubuğundaki Seçim düğmesini tıklayın."
     other user not found: "%{username} henüz yer imi kaydetmedi."
     creation form errors: "Şu hata(lar) yer iminizin kaydedilmesini engelledi:"
+    create success: "Yer iminiz kaydedildi!"
     destroy success: "Yer İmi Silindi"
     destroy failure: "Yer imini silerken hata oluştu"
     update success: "Yer İmi Güncellendi"
@@ -704,6 +714,7 @@ tr:
       description: "Kutsal Kitap'ı okurken, bir ayeti seçip vurgulayabilirsiniz. Vurguladığınız ayetleri görüntülemek, düzenlemek veya silmek için bu ekrana dönünüz."
     none user: "%{username} adlı kullanıcının vurguları yok"
     choose color: "Renk seçiniz"
+    create success: "Vurgunuz kaydedildi!"
     create failure: "Vurguyu kaydederken hata oluştu"
     destroy success: "Vurgu silindi"
     destroy failure: "Vurguyu silerken hata oluştu"

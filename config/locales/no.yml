@@ -1,5 +1,29 @@
 "no":
   social:
+    intro page:
+      main heading: "Samtale og utforske"
+      main description: "Utforsk Bibelen på en ny  måte sammen ved venner du stoler på"
+      moment:
+        timestamp: "5 dager siden"
+        title: "bokmerke Salmene 31:8"
+        verse: "Jeg vil juble av glede over din godhet, for du har sett min nød, du kjenner min trengsel."
+        reference: "Salmene 31:8"
+        discover:
+          copy: "Utforsk og lær sammen med venner som markerer tekst, lager bokmerker og notater."
+          button: "Hvor kan jeg begynne?"
+        share:
+          copy: "Del ærlige samtaler om Bibelen."
+          button: "Begynn med å finne noen venner."
+        likes:
+          info: "og 4 til liker dette"
+        comments:
+          first:
+            text: "Trengte virkelig å høre dette i dag, takk. La oss fortsette snart."
+            time: "omtrent 3 timer siden"
+          second:
+            text: "Amen, jeg også. Sender deg e-post snart."
+            time: "omtrent 27 minutter siden"
+          field placeholder: "Skriv en kommentar..."
     share: "Del"
     my connections: "Tilknyttede kontoer"
     connected as: "Du er koblet til %{connection} som %{username}."
@@ -142,6 +166,7 @@
   last page: "Siste side"
   invalid username or password: "Ugyldig brukernavn eller passord."
   show all bookmarks: "Vis alle %{total} bokmerker"
+  show all notes: "Vis alle notater"
   recent bookmarks: "Nyeste bokmerker"
   percentage display: "%{number}%"
   myself: "Meg"
@@ -170,6 +195,7 @@
       like: "Liker"
       liked: "Liker"
       like title: "Lik dette"
+      last comment: "Siste kommentar"
       share: "Del"
       share title: "Del dette med venner eller familie"
       comment: "Kommentar"
@@ -189,12 +215,14 @@
     no new: "Ingen nye varsler"
     view all: "Se alle varslinger"
   likes:
+    create success: "Suksess! Ditt liker har blitt lagret"
     create failure: "Ditt \"liker\" kunne ikke bli lagret"
     destroy success: "\"Liker\" er slettet"
     destroy failure: "Ditt \"liker\" kunne ikke slettes"
   comments:
     view all N: "Se alle %{count} kommentarer"
     post comment: "Legg til en kommentar"
+    create success: "Suksess! Din kommentar ble lagt ut."
     create failure: "Kommentaren kunne ikke lagres"
     destroy success: "Kommentar slettet"
     destroy failure: "Kommentaren kunne ikke slettes"
@@ -211,6 +239,7 @@
   friendships:
     offer success: "Venneforespørsel sendt"
     offer failure: "Det oppsto en feil under sending av venneforespørselen"
+    create success: "Suksess! Dere er nå venner."
     create failure: "Det oppstod en feil under oppretting av vennskap"
     destroy success: "Forespørsel avvist"
     destroy failure: "Det oppsto en feil under avslaget"
@@ -276,6 +305,7 @@
     cancel: "Avbryt"
     pop out: "Åpne i eget vindu"
     none found: "Ingen notater funnet..."
+    create success: "Suksess! Ditt notat ble lagret."
     create failure: "Det oppstod en feil under lagring av notat"
     destroy success: "Notat slettet"
     destroy failure: "Det oppstod en feil ved sletting av notat"
@@ -507,6 +537,7 @@
       friendships: "Varsle meg om venneforespørsler"
       moments: "Varsle meg om mine venners aktiviteter"
       comments: "Varsle meg om kommentarer på mine aktiviteter"
+      likes: "Varsle meg om noen liker mine aktiviteter"
   bookmarks:
     new: "Nytt bokmerke"
     edit: "Rediger"
@@ -520,6 +551,7 @@
     not found: "Bokmerker gir deg en rask tilgang på dine favoritt-tekster eller det siste kapittelet du leste i en spesiell bok. For å legge til et bokmerke velger du vers når du leser og trykker på ikonet øverst for bokmerke."
     other user not found: "%{username} har ikke lagret noen bokmerker ennå."
     creation form errors: "Følgende feil gjorde at bokmerke ikke kunne opprettes:"
+    create success: "Suksess! Ditt bokmerke ble lagret."
     destroy success: "Bokmerke fjernet"
     destroy failure: "Det oppstod en feil under fjerning av bokmerke"
     update success: "Bokmerke oppdatert"
@@ -704,6 +736,7 @@
       description: "Mens du leser i Bibelen, velg et vers og marker det. Kom tilbake hit for å se, redigere eller slette dine markeringer."
     none user: "%{username} har ingen markeringer"
     choose color: "Velg farge"
+    create success: "Suksess! Din markering ble lagret."
     create failure: "Det oppstod en feil under lagring av markering"
     destroy success: "Markering slettet"
     destroy failure: "Det oppstod en feil under sletting av markering"

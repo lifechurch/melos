@@ -1,5 +1,29 @@
 sk:
   social:
+    intro page:
+      main heading: "Rozhovory a objavy"
+      main description: "Nový spôsob objavovania Biblie s dôvernými priateľmi"
+      moment:
+        timestamp: "pred 5 dňami"
+        title: "Žalm 31:8 pridaný medzi záložky"
+        verse: "Plesám a teším sa, že si milosrdný, lebo si zhliadol na moju poníženosť. Spoznal si tieseň mojej duše."
+        reference: "Žalm 31:8"
+        discover:
+          copy: "Objavujte a učte sa s vašimi priateľmi pridávaním zvyýraznení, záložiek, či poznámok."
+          button: "Kde môžem začať?"
+        share:
+          copy: "Zdieľajte úprimné rozhovory o Písme."
+          button: "Začnite tým, že si nájdete zopár priateľov."
+        likes:
+          info: "a 4 ďalší označili, že sa im to páči"
+        comments:
+          first:
+            text: "To som dnes naozaj potreboval počuť, vďaka. Stretnime sa niekedy!"
+            time: "asi pred 3 hodinami"
+          second:
+            text: "Amen, ja tiež. Posielam ti email."
+            time: "asi pred 27 minútami"
+          field placeholder: "Napísať komentár..."
     share: "Zdieľať"
     my connections: "Prepojené účty"
     connected as: "Ste pripojený k službe %{connection} ako %{username}."

@@ -1,5 +1,29 @@
 pt-PT:
   social:
+    intro page:
+      main heading: "Conversa & Descoberta"
+      main description: "Uma nova forma de explorar a Bíblia com amigos de confiança"
+      moment:
+        timestamp: "5 dias atrás"
+        title: "marcou Salmos 31:7"
+        verse: "Eu me alegrarei e regozijarei na tua benignidade, pois consideraste a minha aflição; conheceste a minha alma nas angústias."
+        reference: "Salmos 31:7"
+        discover:
+          copy: "Descubra e aprenda como os seus amigos à medida que eles destacam, marcam e adicionam notas."
+          button: "Por onde posso começar?"
+        share:
+          copy: "Partilhe conversas honestas a respeito das Escrituras."
+          button: "Comece por procurar alguns amigos."
+        likes:
+          info: "e mais 4 gostam disto"
+        comments:
+          first:
+            text: "Precisava mesmo de ouvir isso hoje, obrigado. Devíamos pôr a conversa em dia!"
+            time: "perto de 3 horas atrás"
+          second:
+            text: "Amém, eu também. Estou a enviar-te um email agora mesmo."
+            time: "perto de 27 minutos atrás"
+          field placeholder: "Escreva um comentário..."
     share: "Partilhar"
     my connections: "Contas Associadas"
     connected as: "Está associado ao %{connection} como %{username}."
@@ -191,13 +215,14 @@ pt-PT:
     no new: "Sem novas notificações"
     view all: "Ver todas as Notificações"
   likes:
-    create success: "O seu \"gosto\" foi gravado"
+    create success: "O seu \"Gosto\" foi gravado"
     create failure: "Não foi possível gravar o seu \"gosto\""
     destroy success: "\"Gosto\" eliminado"
     destroy failure: "Não foi possível eliminar o seu \"gosto\""
   comments:
     view all N: "Ver todos os %{count} comentários"
     post comment: "Adicionar comentário"
+    create success: "Sucesso! O seu comentário foi publicado."
     create failure: "O comentário não pôde ser publicado"
     destroy success: "Comentário eliminado"
     destroy failure: "Não foi possível eliminar o comentário"
@@ -214,6 +239,7 @@ pt-PT:
   friendships:
     offer success: "Pedidos de amizade enviados"
     offer failure: "Ocorreu um erro ao enviar o pedido de amizade"
+    create success: "Sucesso! Agora são amigos."
     create failure: "Ocorreu um erro ao criar amizade"
     destroy success: "Pedido recusado"
     destroy failure: "Erro ao recusar pedido"
@@ -279,6 +305,7 @@ pt-PT:
     cancel: "Cancelar"
     pop out: "Saltar fora"
     none found: "Nenhuma nota encontrada..."
+    create success: "Sucesso! A sua nota foi guardada."
     create failure: "Erro ao gravar a nota"
     destroy success: "Nota elminada"
     destroy failure: "Erro ao apagar nota"
@@ -524,6 +551,7 @@ pt-PT:
     not found: "Marcadores dão-lhe um guia de referência rápido para as suas passagens favoritas ou para o último capítulo lido num dos livros da Bíblia. Para adicionar um marcador, selecione um versículo no leitor da Bíblia e depois clique o botão Selecionado no topo do leitor."
     other user not found: "%{username} ainda não guardou nenhum marcador."
     creation form errors: "O(s) seguinte(s) erro(s) não permite(m) a criação do seu marcador:"
+    create success: "Sucesso! O seu marcador foi guardado."
     destroy success: "Marcador removido"
     destroy failure: "Erro ao remover marcador"
     update success: "Marcador atualizado"
@@ -708,6 +736,7 @@ pt-PT:
       description: "Enquanto lê a Bíblia, selecione um versículo e crie um destaque. Volte aqui para ver, editar, ou apagar o seu destaque."
     none user: "%{username} não tem destaques"
     choose color: "Escolha a Cor"
+    create success: "Sucesso! O seu destaque foi guardado."
     create failure: "Erro ao guardar destaque"
     destroy success: "Destaque apagado"
     destroy failure: "Erro ao apagar destaque"

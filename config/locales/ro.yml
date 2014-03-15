@@ -1,5 +1,29 @@
 ro:
   social:
+    intro page:
+      main heading: "Conversație și explorare"
+      main description: "Un nou mod de a explora Biblia cu prietenii tăi apropiați"
+      moment:
+        timestamp: "Cu 5 zile în urmă"
+        title: "s-a marcat Psalmul 31:7"
+        verse: "Fă-mă să mă înveselesc și să mă bucur de îndurarea Ta, căci vezi ticăloșia mea și știi neliniștea sufletului meu."
+        reference: "Psalmul 31:7"
+        discover:
+          copy: "Descoperă împreună cu prietenii în pe măsură ce aceștia adaugă evidențieri, marcaje și notițe."
+          button: "De unde pot să încep?"
+        share:
+          copy: "Poartă discuții sincere despre Scriptură."
+          button: "Începe prin a găsi câțiva prieteni."
+        likes:
+          info: "și alți 4 apreciază asta"
+        comments:
+          first:
+            text: "Chiar aveam nevoie să aud asta azi, mulțumesc. Ne-auzim în curând!"
+            time: "cu 3 ore în urmă"
+          second:
+            text: "Amin, deasemenea. Îți trimit un e-mail acum."
+            time: "cu 27 de minute în urmă"
+          field placeholder: "Scrie un comentariu..."
     share: "Partajează"
     my connections: "Conturi conectate"
     connected as: "Ești conectat la %{connection} ca și %{username}."
@@ -566,12 +590,12 @@ ro:
       public: "Public"
     title: "Planuri de citire"
     browse by category: "Răsfoiește după categorie"
-    browse plans: "Răfoieşte planurile din %{category}"
+    browse plans: "Răsfoiește %{category}"
     swap list localization: "(<a href='%{swap_link}'>Vezi în %{swap_locale}</a>)"
     showing language filtered: "Se afișează doar planurile disponibile în %{lang_name}"
     all: "în toate"
     all plans: "Toate planurile"
-    all category plans: "Toate planurile din %{category}"
+    all category plans: "Toate planurile din categoria %{category}"
     my plans: "Planurile mele"
     none found: "Nu a fost găsit niciun plan care să corespundă criteriilor tale."
     about publisher: "Despre editor"
@@ -614,7 +638,7 @@ ro:
     do you want to reset: "Vrei să începi de la început?"
     catch up text: "Mută citirea de astăzi înapoi către ultima zi terminată (ziua %{last_completed_day} din plan)."
     catch up description only: "Dacă rămâi vreodată în urmă cu cititul, nu te îngrijora! Poți întotdeauna să îți muți porțiunea de citire către ultima citire terminată."
-    catch me up: "Ajunge-mă din urmă"
+    catch me up: "Adu-mă la zi"
     restart description: "Poți să reîncepi planul. Toată istoria și progresul citirii tale vor fi resetate și o vei lua de la început."
     restart: "Reîncepe plan"
     privacy description: "Este alegerea ta. Vrei ca oamenii să vadă că citești acest plan?"

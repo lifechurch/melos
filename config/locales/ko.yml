@@ -1,5 +1,29 @@
 ko:
   social:
+    intro page:
+      main heading: "대화와 발견"
+      main description: "친한 친구들과 함께 성경을 읽는 새로운 방법"
+      moment:
+        timestamp: "5일 전"
+        title: "시편 31:7을 책갈피"
+        verse: "나의 고통을 아시고  내 영혼의 괴로움을 감싸주시는  멈추지 않는 사랑에 감사드리며 기뻐합니다."
+        reference: "시편 31:7"
+        discover:
+          copy: "친구들과 같이 하이라이트 또는 책갈피를 하거나 노트를 작성하면서 함께 찾고 배우세요."
+          button: "어디서 부터 시작 할까요?"
+        share:
+          copy: "성경에 대해서 진솔한 대화를 나눠보세요."
+          button: "친구를 찾는 것으로 시작해 보세요."
+        likes:
+          info: "이와 같은 것이 4 개더 "
+        comments:
+          first:
+            text: "참으로 오늘 들어야 했습니다. 감사합니다. 곧 따라갑시다!"
+            time: "약 3 시간 전"
+          second:
+            text: "저도 역시 아멘입니다. 지금 이메일을 보냅니다."
+            time: "약 27 분 전"
+          field placeholder: "댓글을 쓰세요..."
     share: "공유"
     my connections: "접속 계정"
     connected as: "%{connection} 에 %{username} 사용자명으로 접속되었습니다."
@@ -142,6 +166,7 @@ ko:
   last page: "마지막 페이지"
   invalid username or password: "사용자명 혹은 비밀번호 오류."
   show all bookmarks: "전체 %{total} 책갈피 보기"
+  show all notes: "전체 노트 보기"
   recent bookmarks: "최근 책갈피"
   percentage display: "%{number}%"
   myself: "나"
@@ -168,8 +193,9 @@ ko:
       go to scripture: "말씀으로 가기"
       load more: "추가 로드"
       like: "좋아요"
-      liked: "좋아함"
+      liked: "좋아요"
       like title: "좋아요"
+      last comment: "마지막 댓글"
       share: "공유"
       share title: "친구들이나 가족과 공유하기"
       comment: "댓글"
@@ -189,12 +215,14 @@ ko:
     no new: "새로운 알림"
     view all: "모든 알림 공지 보기"
   likes:
+    create success: "좋아요가 저장되었습니다."
     create failure: "좋아요가 저장되지 않았습니다."
     destroy success: "좋아요가 삭제되었습니다."
     destroy failure: "좋아요가 삭제되지 않았습니다."
   comments:
     view all N: "%{count} 댓글 모두 보기"
     post comment: "댓글 달기"
+    create success: "댓글이 저장되었습니다."
     create failure: "댓글을 달 수가 없습니다"
     destroy success: "댓글 삭제됨"
     destroy failure: "댓글이 삭제되지 않았습니다."
@@ -211,6 +239,7 @@ ko:
   friendships:
     offer success: "친구 신청 보냄"
     offer failure: "친구신청 오류"
+    create success: "회원님은 이제 친구입니다"
     create failure: "친구맺기 오류"
     destroy success: "요청이 거절되었습니다"
     destroy failure: "친구거절 오류"
@@ -276,6 +305,7 @@ ko:
     cancel: "취소"
     pop out: "다른 창에서 보기"
     none found: "노트가 없습니다..."
+    create success: "노트가 저장되었습니다."
     create failure: "노트 저장 오류"
     destroy success: "노트 삭제됨"
     destroy failure: "노트삭제 오류"
@@ -508,6 +538,7 @@ ko:
       friendships: "친구요청에 대해 통보해주세요"
       moments: "친구의 활동에 대해 통보해주세요"
       comments: "내 활동에 관한 댓글에 대해 통보해 주세요"
+      likes: "내 활동에 좋아요가 생겼을 때 알려 주세요."
   bookmarks:
     new: "새로운 책갈피"
     edit: "편집"
@@ -521,6 +552,7 @@ ko:
     not found: "책갈피는 좋아하는 구절이나 마지막으로 읽은 부분으로 즉시 이동할 수 있도록 도와드립니다. 책갈피를 해두기 위해서는, 먼저 성경 리더에서 원하는 구절을 선택한 후 리더 상단의 '선택' 버튼을 클릭하면 됩니다."
     other user not found: "%{username}님이 등록한 책갈피는 아직 없습니다."
     creation form errors: "아래의 이유로 인해서 책갈피가 만들어지지 않았습니다."
+    create success: "책갈피가 저장되었습니다."
     destroy success: "책갈피 제거"
     destroy failure: "책갈피 삭제 오류"
     update success: "책갈피가 업데이트 되었습니다."
@@ -705,6 +737,7 @@ ko:
       description: "성경을 읽으는 중 원하시는 말씀을 선택하여 하이라이트 하세요. 다시 이곳으로 돌아와서 다시 보거나, 수정 혹은 삭제 하실 수 있습니다."
     none user: "%{username}님은 하이라이트하신 말씀이 없습니다"
     choose color: "색깔을 선택하세요."
+    create success: "하일라이트가 저장되었습니다."
     create failure: "하이라이트 저장오류"
     destroy success: "하이라이트 삭제"
     destroy failure: "하이라이트 삭제 오류"

@@ -1,5 +1,29 @@
 fi:
   social:
+    intro page:
+      main heading: "Keskustelut ja oivallukset"
+      main description: "Uusi tapa tutkia Raamattua luotettujen ystävien kanssa"
+      moment:
+        timestamp: "5 päivää sitten"
+        title: "loi kirjanmerkin Psalmista 31:8"
+        verse: "Iloitsen ja riemuitsen sinun hyvyydestäsi. Sinä näet minun hätäni, tiedät kaiken tuskani."
+        reference: "Psalmi 31:8"
+        discover:
+          copy: "Löydä ja opi uutta ystäviesi kanssa, kun he lisäävät korostuksia, kirjanmerkkejä ja muistiinpanoja."
+          button: "Mistä voin aloittaa?"
+        share:
+          copy: "Jaa rehellisiä keskusteluja Sanasta."
+          button: "Aloita löytämällä muutamia ystäviä."
+        likes:
+          info: "ja 4 muuta tykkää tästä"
+        comments:
+          first:
+            text: "Minun piti todalla kuulla tämä tänään, kiitos. Pikaisiin kulumisiin!"
+            time: "noin 3 tuntia sitten"
+          second:
+            text: "Aamen, niin minäkin. Lähetän sinulle nyt sähköpostia."
+            time: "noin 27 minuuttia sitten"
+          field placeholder: "Kirjoita kommentti..."
     share: "Jaa"
     my connections: "Yhdistetyt tilit"
     connected as: "Sinut on yhdistetty kohteeseen %{connection} käyttäjänimellä %{username}."

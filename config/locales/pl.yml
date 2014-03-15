@@ -1,5 +1,29 @@
 pl:
   social:
+    intro page:
+      main heading: "Rozmowa i Odkrycia"
+      main description: "Nowy sposób na odkrycie Biblii z zaufanymi przyjaciółmi"
+      moment:
+        timestamp: "5 dni temu"
+        title: "zaznaczono Psalm 31:8"
+        verse: "Raduję się i cieszę Twoim miłosierdziem, Panie, który spojrzałeś na mą niedolę oraz poznałeś utrapienia mojej duszy."
+        reference: "Psalm 31:8"
+        discover:
+          copy: "Odkrywaj i ucz się ze znajomymi, kiedy dodają swoje zakreślenia, zakładki i notatki."
+          button: "Od czego mogę zacząć?"
+        share:
+          copy: "Prowadź uczciwe rozmowy o Piśmie Świętym."
+          button: "Zacznij od szukania znajomych."
+        likes:
+          info: "i 4 innych lubi to"
+        comments:
+          first:
+            text: "Poważnie muszę to dzisiaj usłyszeć, dzięki. Do usłyszenia wkrótce!"
+            time: "około 3 godzin temu"
+          second:
+            text: "Amen, ja też. Wysyłam ci właśnie e-mail."
+            time: "około 27 minut temu"
+          field placeholder: "Napisz komentarz..."
     share: "Podziel się"
     my connections: "Połączone konta"
     connected as: "Jesteś podłączony do serwisu %{connection} jako %{username}."
@@ -142,6 +166,7 @@ pl:
   last page: "Ostatnia strona"
   invalid username or password: "Nieprawidłowa nazwa lub hasło."
   show all bookmarks: "Pokaż wszystkie %{total} zakładki"
+  show all notes: "Wszystkie notatki"
   recent bookmarks: "Ostatnie zakładki"
   percentage display: "%{number}%"
   myself: "Ja"
@@ -170,6 +195,7 @@ pl:
       like: "Lubię to"
       liked: "Lubisz"
       like title: "Lubię to"
+      last comment: "Ostatni komentarz"
       share: "Podziel się"
       share title: "Podziel się wersetem ze znajomymi lub rodziną"
       comment: "Komentarz"
@@ -189,12 +215,14 @@ pl:
     no new: "Brak nowych powiadomień"
     view all: "Zobacz wszystkie powiadomienia"
   likes:
+    create success: "Twoje polubienie zostało zapisane!"
     create failure: "Polubienie nie zostało zapisane"
     destroy success: "Usunięto polubienie"
     destroy failure: "Polubienie nie zostało usunięte"
   comments:
     view all N: "Zobacz wszystkie %{count} komentarze"
     post comment: "Opublikuj komentarz"
+    create success: "Twój komentarz został opublikowany!"
     create failure: "Komentarz nie mógł być opublikowany"
     destroy success: "Usunięto komentarz"
     destroy failure: "Nie usunięto komentarza"
@@ -211,6 +239,7 @@ pl:
   friendships:
     offer success: "Wysłano zaproszenie"
     offer failure: "Błąd, nie wysłano zaproszenia"
+    create success: "Jesteście teraz znajomymi!"
     create failure: "Błąd, nie utworzono znajomości"
     destroy success: "Zaproszenie odrzucone"
     destroy failure: "Błąd, nie odrzucono zaproszenia"
@@ -276,6 +305,7 @@ pl:
     cancel: "Zrezygnuj"
     pop out: "Wydziel"
     none found: "Nie znaleziono notatek..."
+    create success: "Twoja notatka została zapisana!"
     create failure: "Błąd, nie zapisano notatki"
     destroy success: "Notatka usunięta."
     destroy failure: "Błąd, nie usunięto notatki"
@@ -507,6 +537,7 @@ pl:
       friendships: "Powiadamiaj mnie o zaproszeniach"
       moments: "Powiadamiaj mnie o aktywności znajomych"
       comments: "Powiadamiaj mnie o komentzarzach do mojej aktywności"
+      likes: "Powiadamiaj mnie o polubieniach mojej aktywności"
   bookmarks:
     new: "Nowa zakładka"
     edit: "Edytuj"
@@ -520,6 +551,7 @@ pl:
     not found: "Korzystanie z zakładek ułatwi ci znalezienie ulubionych fragmentów, lub wersetu, który ostatnio czytałeś w określonej księdze. Aby dodać zakładkę, wybierz werset w czytniku Biblii, a następnie kliknij przycisk Wybrane na górze czytnika."
     other user not found: "%{username} nie zachował jeszcze żadnych zakładek."
     creation form errors: "Poniższe błędy nie pozwoliły na utworzenie zakładki:"
+    create success: "Twoja zakładka została zapisana!"
     destroy success: "Usunięto zakładkę"
     destroy failure: "Błąd, nie usunięto zakładki"
     update success: "Uaktualniono zakładkę"
@@ -704,6 +736,7 @@ pl:
       description: "Podczas czytania Biblii, wybierz werset i zakreśl go. Powróć tu, aby przeglądać, edytować lub usunąć swoje zakreślenie."
     none user: "%{username} nie ma zakreśleń"
     choose color: "Wybierz kolor"
+    create success: "Twoje zakreślenie zostało zapisane!"
     create failure: "Błąd, nie zapisano zakreślenia"
     destroy success: "Zakreślenie usunięte"
     destroy failure: "Błąd, nie usunięto zakreślenia"

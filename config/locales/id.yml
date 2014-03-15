@@ -1,5 +1,7 @@
 id:
   social:
+    intro page:
+      main heading: "Perbincangan & Penemuan"
     share: "Bagikan"
     my connections: "Akun terkait"
     connected as: "Anda tersambung dengan %{connection} sebagai %{username}"

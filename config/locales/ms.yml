@@ -1,5 +1,7 @@
 ms:
   social:
+    intro page:
+      main heading: "Perbualan & Penemuan"
     share: "Beritakan"
     my connections: "Akaun yang Berkaitan"
     connected as: "Anda tersambung ke %{connection} sebagai %{username}."

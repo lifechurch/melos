@@ -1,5 +1,29 @@
 nl:
   social:
+    intro page:
+      main heading: "Gesprek & Ontdekking"
+      main description: "Een nieuwe manier om de Bijbel te ontdekken samen met betrouwbare vrienden."
+      moment:
+        timestamp: "5 dagen geleden"
+        title: "maakte een bladwijzer bij Psalm 31:8"
+        verse: "Ik zal mij verblijden, juichen over uw trouw, want u ziet mijn ellende, u kent de nood van mijn ziel,"
+        reference: "Psalm 31:8"
+        discover:
+          copy: "Ontdek en leer samen met jouw vrienden wanneer zij markeringen, bladwijzers en notities aanmaken."
+          button: "Waar kan ik beginnen?"
+        share:
+          copy: "Voer eerlijke gesprekken over de Bijbel."
+          button: "Begin door enkele vrienden te zoeken."
+        likes:
+          info: "4 anderen vinden dit ook leuk"
+        comments:
+          first:
+            text: "Ik had het echt nodig dit vandaag te horen, dankjewel. Laten we snel afspreken!"
+            time: "ongeveer 3 uur geleden"
+          second:
+            text: "Amen, ik ook. Ik stuur je een email"
+            time: "ongeveer 27 minuten geleden"
+          field placeholder: "Geef een reactie..."
     share: "Deel"
     my connections: "Verbonden Accounts"
     connected as: "Je bent verbonden met %{connection} als %{username}."
