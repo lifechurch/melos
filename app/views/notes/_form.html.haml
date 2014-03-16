@@ -26,12 +26,20 @@
 
   - # if reference_list is empty, no need to show these fields.  
   - # Causes an error otherwise when sending empty note[references]/note[version_id] params
-  - unless note.usfm_references.blank?
-    %p
-      = f.label :reference, t("notes.form.reference field")
-      = note.references.map{|r| r.usfm.join(", ")}.join(", ").html_safe
-      = hidden_field_tag "note[usfm_references]", note.usfm_references
-      = hidden_field_tag "note[version_id]", note.version_id
+  - unless note.references.blank?
+    :ruby    
+      raw_refs = note.references
+      usfms    = raw_refs.collect {|refhash| refhash["usfm"]}.join(",") #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
+      human    = raw_refs.collect {|refhash| refhash["human"]}.join(", ")
+    %p  
+      = f.label :references, t("notes.form.reference field")
+      = f.hidden_field :usfm_references, value: usfms
+      %span.refs
+        = human
+
+
+
+
   %p
     = f.label :user_status, t("notes.form.status field")
     = f.select :user_status, options_for_select(object_status, note.user_status)

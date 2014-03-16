@@ -23,11 +23,11 @@
 
   :ruby    
     raw_refs = bookmark.references
-    usfms    = raw_refs.collect {|refhash| refhash["usfm"]} #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
+    usfms    = raw_refs.collect {|refhash| refhash["usfm"]} #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}.join(",")
     human    = raw_refs.collect {|refhash| refhash["human"]}.join(", ")
   %p  
     = f.label :references, t("bookmarks.form.reference field")
-    = f.hidden_field :usfm_references, value: usfms.join(",")
+    = f.hidden_field :usfm_references, value: usfms
     %span.refs
       = human
 
