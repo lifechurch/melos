@@ -2,7 +2,11 @@
 
 function LanguageMenu( el , opts ) {
   this.el = $(el);
-  this.locales = ["af","bg","ca","cs","cy","de","da","en-GB","en","es-ES","es","fi","fr","hi","hu","id","it","ja","km","ko","lv","mk","mn","ms","nl","no","pl","pt","pt-PT","ro","ru","sk","sq","sv","sw","ta","tl","tr","uk","vi","zh-CN","zh-TW"];
+  // Sadly order here is important.
+  // make sure all xx-XX format locales come first before any 2 letter locales.
+  // has to do with matching /pt early when we're trying to match for /pt-PT
+  // this should be updated to work better.
+  this.locales = ["zh-CN","zh-TW","es-ES","en-GB","pt-PT","af","bg","ca","cs","cy","de","da","en","es","fi","fr","hi","hu","id","it","ja","km","ko","lv","mk","mn","ms","nl","no","pl","pt","ro","ru","sk","sq","sv","sw","ta","tl","tr","uk","vi"];
 
   var path = window.location.pathname;
   var new_path = "";
@@ -16,7 +20,7 @@ function LanguageMenu( el , opts ) {
 
     for(var i=0; i < _this.locales.length; i++) {
       var locale = _this.locales[i];
-      var rstr = "^(\\/" + locale + "\\/+)";    // (\/es\/+)
+      var rstr = "^(\\/" + locale + "\\/*)";    // (\/es\/+)
       var regex = new RegExp(rstr);             // build dynamic regex to check locale: /:locale
       var match = path.match(regex);
       if( match && match.length > 0 ) {

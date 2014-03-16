@@ -1,6 +1,8 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
+
+  get "/locale/set/:l",     to: "pages#locale"
   get "/app",               to: "pages#app"
   get "/terms",             to: "pages#terms"
   get "/privacy",           to: "pages#privacy"
