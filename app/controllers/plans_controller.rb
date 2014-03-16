@@ -8,7 +8,7 @@ class PlansController < ApplicationController
   # TODO - this needs serious refactoring controller, model, service object and template - A MESS.
   def index
     @plan_lang      = available_plan_language()
-    @plans = Plan.all( query: params[:query], page: params[:page] || 1, category: params[:category], language_tag: @plan_lang)
+    @plans = Plan.all( query: params[:query], page: @page, category: params[:category], language_tag: @plan_lang)
     @category = PlanCategory.find(params[:category], language_tag: @plan_lang)# rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
     @sidebar = false
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
@@ -72,8 +72,8 @@ class PlansController < ApplicationController
     lang   = (params[:lang] == "pt-BR") ? "pt" : params[:lang]
 
     langs = [lang,locale,"en"].compact    #order here is important - we start with override lang, then locale as param, then default to "en"
-    available_locales = Plan.available_locales.map {|loc| loc.to_s}    # get available locales in array of strings
-    langs.each {|l| return l.to_sym if available_locales.include?(l)}  # so we can compare lang to string rather than symbol
+    available_locales = Plan.available_locales.map {|loc| loc.to_s}   # get available locales in array of strings
+    langs.each {|l| return l if available_locales.include?(l)}        # so we can compare lang to string rather than symbol
   end
 
 end

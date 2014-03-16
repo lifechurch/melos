@@ -10,7 +10,7 @@
       = link_to( t("get support"), external_url(:support) )
 
       - if @site.allow_donate?
-        - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt-BR", :tr].include?(current_locale)
+        - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt", :tr].include?(current_locale)
           = link_to( t("donate title"), (@site.donate_path || donate_path))
 
     = render partial: "shared/language_selector"

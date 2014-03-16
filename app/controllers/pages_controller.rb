@@ -42,7 +42,7 @@ class PagesController < ApplicationController
   def i18n_terms_whitelist
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
-    [ :da, :en, :ja, :lv, :sv, :vi, :nl, :"pt-BR", :"no", :"zh-CN",
+    [ :da, :en, :ja, :lv, :sv, :vi, :nl, :"pt", :"no", :"zh-CN",
       :"zh-TW", :ms, :ru, :ro, :"es-ES", :uk, :ko ]
   end
 
