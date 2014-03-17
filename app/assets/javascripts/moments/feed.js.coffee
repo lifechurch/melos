@@ -17,15 +17,6 @@ class window.Moments.Feed
     @current_page
 
 
-  renderNext: ()->
-    next_moment = @moments_json.shift()
-    if next_moment == undefined
-      @showPagination()
-    else
-      @renderMoment(next_moment)
-    return
-
-
   showPagination: ()->
     unless @pagination.hasClass("loaded")
       @wrap.after(@pagination)
@@ -57,11 +48,20 @@ class window.Moments.Feed
         @beginRendering(data)
         return
 
+  renderNext: ()->
+    next_moment = @moments_json.shift()
+    if next_moment == undefined
+      @showPagination()
+    else
+      @renderMoment(next_moment)
+    return
+
   renderMoment: (moment)->
     data = moment.object
     switch moment.kind
       when "votd"
         new Moments.VOTD(data,@)
+        
       when "highlight"
         new Moments.Highlight(data,@)
       when "bookmark"

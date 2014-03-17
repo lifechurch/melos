@@ -68,7 +68,6 @@ class window.Moments.Highlight extends window.Moments.Base
         user:
           path:       @data.user.path
 
-
       return html
 
 

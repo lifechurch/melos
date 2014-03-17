@@ -19,6 +19,8 @@ module YV
         ms            = paged_moments
         first_moment  = ms.first
         last_moment   = ms.last
+
+        # TODO: account for @page parameter when determining first/last day.
         first_day     = first_moment.nil? ? Date.today.yday : moment_yday(first_moment)
         last_day      = last_moment.nil? ?  Date.today.yday - per_page : moment_yday(last_moment) #@paginated_end_day = moment_yday(last_moment)
         merged        = []
@@ -27,6 +29,7 @@ module YV
         # Zero moments, just generate VOTDs and return those.
         return only_votds() if ms.blank?
 
+        # Merge VOTDs between today and the first moment. 
         if first_page?
           today = Date.today.yday
           today.downto(first_day).each do |day|

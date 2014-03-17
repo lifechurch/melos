@@ -4,6 +4,8 @@ en:
       main heading:                             "Conversation & Discovery"
       main description:                         "A new way to explore the Bible with trusted friends"
       moment:
+        user aaron:                             "Aaron Steele"
+        user andy:                              "Andy Knight"
         timestamp:                              "5 days ago"
         title:                                  "bookmarked Psalm 31:7"
         verse:                                  "I will be glad and rejoice in your unfailing love, for you have seen my troubles, and you care about the anguish of my soul."

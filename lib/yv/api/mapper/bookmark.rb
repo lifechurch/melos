@@ -6,6 +6,7 @@ module YV
         class << self
 
           def from_all(results)
+            return results
             from_collection(results)
           end
 

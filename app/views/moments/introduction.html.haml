@@ -25,7 +25,7 @@
 
             %h2.moment-bm-text
               %a.moment-title-link{href:"#"}
-                Aaron Steele
+                = t("social.intro page.moment.user aaron")
                 = t("social.intro page.moment.title")
 
             .moment-verse-wrap
@@ -53,7 +53,7 @@
   .intro-comments
     .moment-comments
       %span.moment-comments-more
-        %a{href: "#"} Andy Knight
+        %a{href: "#"}= t("social.intro page.moment.user andy")
         = t("social.intro page.moment.likes.info")
 
       %ul.moment-comments-list
@@ -62,7 +62,7 @@
           %span.moment-comments-list-avatar
             = image_tag "andy_avatar.png"
           %p.moment-comments-list-text
-            %a{href: "#"} Andy Knight
+            %a{href: "#"}= t("social.intro page.moment.user andy")
             = t("social.intro page.moment.comments.first.text")
             %span.moment-comment-dt
               = t("social.intro page.moment.comments.first.time")
@@ -71,7 +71,7 @@
           %span.moment-comments-list-avatar
             = image_tag "josh_avatar.png"
           %p.moment-comments-list-text
-            %a{href: "#"} Aaron Steele
+            %a{href: "#"}= t("social.intro page.moment.user aaron")
             = t("social.intro page.moment.comments.second.text")
             %span.moment-comment-dt
               = t("social.intro page.moment.comments.second.time")
