@@ -41,7 +41,7 @@ module YV
             children.collect do |data|
               p = ::PlanCategory.new
               p.slug = data.category
-              p.label = data.labels["default"] #TODO localize
+              p.label = data.labels[I18n.locale.to_s]
               p
             end
           end
