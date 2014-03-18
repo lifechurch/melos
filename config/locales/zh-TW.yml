@@ -2,6 +2,8 @@ zh-TW:
   social:
     intro page:
       main heading: "對話與發現"
+    moment:
+      read less: "精簡閱讀"
     share: "分享"
     my connections: "已連接的帳戶"
     connected as: "您已與 %{connection} 上的 %{username} 帳戶連接。"
@@ -124,6 +126,7 @@ zh-TW:
   find friends: "尋找朋友"
   search placeholder: "搜尋..."
   search: "搜尋"
+  more: "更多"
   book: "書卷"
   filter book: "篩選書卷..."
   save: "儲存"
@@ -209,12 +212,16 @@ zh-TW:
   friends:
     you have N friends: "您有 %{count} 朋友"
     none me: "與您親近的朋友和家人分享您的書籤、醒目顯示和筆記等動態時刻。"
+    find friends: "尋找朋友"
     blank slate:
       heading: "目前不是朋友"
       description: "您必須先與此人為友才能查看他的朋友。"
     limit notice: "您可以有多至 150 位朋友"
     limit description: "將聖經軟體上的朋友關係限定在熟悉的人之間，這有助於和自己信任的朋友一起打造坦誠對話和分享觀點的環境。"
   friendships:
+    find friends title: "尋找朋友"
+    widget:
+      find friends title: "尋找朋友"
     offer success: "朋友請求已發送"
     offer failure: "發送朋友請求時出錯誤"
     create success: "成了！你們現在是朋友了。"
@@ -561,6 +568,9 @@ zh-TW:
     none me: "您還未獲得任何徽章。"
     none user: "%{username}還未獲得任何徽章。"
   plans:
+    widget:
+      my plans: "我的計劃"
+      start reading: "開始閱讀"
     settings: "設定"
     privacy:
       visible to friends?: "您是否願意讓朋友看到您的讀經計劃的活動？"

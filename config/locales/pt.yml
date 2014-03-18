@@ -4,6 +4,8 @@ pt:
       main heading: "Conversa & Descoberta"
       main description: "Um novo jeito de explorar a Bíblia com amigos confiáveis"
       moment:
+        user aaron: "Aaron Machado"
+        user andy: "André Rodrigues"
         timestamp: "Há 5 dias atrás"
         title: "Salmo 31:7 marcado"
         verse: "Ficarei contente e me alegrarei por causa do teu amor. Tu vês que estou sofrendo e conheces as minhas aflições."
@@ -24,6 +26,12 @@ pt:
             text: "Amém, eu também. Te enviando um e-mail agora."
             time: "há cerca de 27 minutos atrás"
           field placeholder: "Escreva um comentário..."
+    widget:
+      timeline: "Linha do Tempo"
+      no activity yet: "Não há nenhuma atividade ainda."
+    moment:
+      read all: "Ler tudo"
+      read less: "Ler menos"
     share: "Compartilhar"
     my connections: "Contas Conectadas"
     connected as: "Você está conectado a %{connection} como %{username}."
@@ -146,6 +154,7 @@ pt:
   find friends: "Encontrar Amigos"
   search placeholder: "Procurar..."
   search: "Procurar"
+  more: "Mais"
   book: "Livro"
   filter book: "Filtrar Livros..."
   save: "Salvar"
@@ -231,12 +240,20 @@ pt:
   friends:
     you have N friends: "Você tem %{count} amigos"
     none me: "Compartilhe seus momentos na Bíblia como marcadores, destaques e anotações com seus amigos mais próximos e familiares."
+    find friends: "Encontre Amigos"
     blank slate:
       heading: "Ainda não são amigos"
       description: "Você deve ser amigo dessa pessoa para visualizar os seus amigos."
     limit notice: "Você pode ter no máximo 150 amigos"
     limit description: "Limitar suas amizades no App da Bíblia às pessoas que você conhece bem cria um ambiente para conversas honestas e descobertas compartilhadas com amigos confiáveis."
   friendships:
+    find friends title: "Encontre Amigos"
+    search by name: "Procurar por nome"
+    search button: "Ir"
+    widget:
+      find friends title: "Encontre Amigos"
+      search by name: "Procurar por nome"
+      search button: "Ir"
     offer success: "Pedido de amizade enviado"
     offer failure: "Erro ao enviar o pedido de amizade"
     create success: "Sucesso! Vocês agora são amigos."
@@ -269,6 +286,7 @@ pt:
     form:
       title field: "Título:"
       content field: "Conteúdo:"
+      highlight field: "Destaque: (opcional)"
       reference field: "Referência(s):"
       status field: "Status:"
       save button: "Salvar"
@@ -358,6 +376,7 @@ pt:
     my profile: "Meu Perfil"
     edit profile: "Editar Perfil"
     update profile: "Atualizar Perfil"
+    go to your profile: "Ir para Seu Perfil"
     other user profile: "Perfil de %{username}"
     my password: "Mudar Minha Senha"
     edit password: "Alterar a Senha"
@@ -548,6 +567,7 @@ pt:
     all: "Tudo"
     labels label: "Etiquetas:"
     title: "Marcadores"
+    my labels: "Minhas Etiquetas"
     not found: "Os marcadores são um guia de referência rápido para suas passagens favoritas ou para o último capítulo que você leu em determinado livro. Para adicionar um marcador, selecione um versículo no leitor da Bíblia e selecione o botão Selecionado na parte superior do leitor."
     other user not found: "%{username} não salvou nenhum marcador ainda."
     creation form errors: "O(s) seguinte(s) erro(s) impediu(ram) a criação de seu marcador: "
@@ -573,6 +593,7 @@ pt:
       title field: "Título:"
       reference field: "Referência:"
       labels field: "Etiquetas (separadas por vírgulas):"
+      highlight field: "Destaque: (opcional)"
       colors field: "Cor:"
       update button: "Atualizar Marcador"
       save button: "Salvar Marcador"
@@ -583,6 +604,12 @@ pt:
     none me: "Você ainda não ganhou nenhuma medalha."
     none user: "%{username} ainda não ganhou nenhuma medalha."
   plans:
+    widget:
+      my plans: "Meus Planos"
+      start reading: "Iniciar leitura "
+      view my plans: "Ver Meus Planos"
+      featured plans: "Planos em destaque"
+      view all plans: "Ver Todos os Planos"
     settings: "Configurações"
     privacy:
       visible to friends?: "Você gostaria que sua atividade com este plano esteja visível para seus amigos?"

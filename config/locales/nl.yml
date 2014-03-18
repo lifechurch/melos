@@ -4,6 +4,8 @@ nl:
       main heading: "Gesprek & Ontdekking"
       main description: "Een nieuwe manier om de Bijbel te ontdekken samen met betrouwbare vrienden."
       moment:
+        user aaron: "Jan Jansen"
+        user andy: "Hendrik de Vries"
         timestamp: "5 dagen geleden"
         title: "maakte een bladwijzer bij Psalm 31:8"
         verse: "Ik zal mij verblijden, juichen over uw trouw, want u ziet mijn ellende, u kent de nood van mijn ziel,"
@@ -24,6 +26,12 @@ nl:
             text: "Amen, ik ook. Ik stuur je een email"
             time: "ongeveer 27 minuten geleden"
           field placeholder: "Geef een reactie..."
+    widget:
+      timeline: "Tijdlijn"
+      no activity yet: "Er is nog geen activiteit geweest."
+    moment:
+      read all: "Lees alles"
+      read less: "Lees minder"
     share: "Deel"
     my connections: "Verbonden Accounts"
     connected as: "Je bent verbonden met %{connection} als %{username}."
@@ -146,6 +154,7 @@ nl:
   find friends: "Vrienden vinden"
   search placeholder: "Zoek…"
   search: "Zoeken"
+  more: "Meer"
   book: "Boek"
   filter book: "Op boeken filteren…"
   save: "Opslaan"
@@ -231,12 +240,20 @@ nl:
   friends:
     you have N friends: "Je hebt %{count} vrienden"
     none me: "Deel van jouw Bijbelmomenten, bijvoorbeeld bladwijzers, markeringen en notities met goede vrienden en familie."
+    find friends: "Vrienden vinden"
     blank slate:
       heading: "Op dit moment geen vrienden"
       description: "Om de vrienden van deze persoon te kunnen zien moet je bevriend zijn."
     limit notice: "Je kunt maximaal 150 vrienden hebben"
     limit description: "Het beperken van jouw Bijbel App vriendschappen met mensen die jij goed kennen creëert een omgeving voor eerlijke gesprekken en geeft ruimte om ideeën uit te wisselen met trouwe vrienden."
   friendships:
+    find friends title: "Vrienden vinden"
+    search by name: "Zoek op naam"
+    search button: "Ga"
+    widget:
+      find friends title: "Vrienden vinden"
+      search by name: "Zoek op naam"
+      search button: "Ga"
     offer success: "Vriendschapsverzoek verstuurd"
     offer failure: "Fout bij het versturen van vriendschapsverzoek"
     create success: "Gelukt! Jullie zijn nu vrienden."
@@ -269,6 +286,7 @@ nl:
     form:
       title field: "Titel:"
       content field: "Inhoud:"
+      highlight field: "Markering: (optioneel)"
       reference field: "Verwijzing(en):"
       status field: "Status:"
       save button: "Opslaan"
@@ -358,6 +376,7 @@ nl:
     my profile: "Mijn profiel"
     edit profile: "Profiel bewerken"
     update profile: "Profiel bijwerken"
+    go to your profile: "Ga naar jouw Profiel"
     other user profile: "Profiel van %{username}"
     my password: "Mijn wachtwoorden veranderen"
     edit password: "Wachtwoord veranderen"
@@ -548,6 +567,7 @@ nl:
     all: "Alle"
     labels label: "Labels:"
     title: "Bladwijzers"
+    my labels: "Mijn Labels"
     not found: "Bladwijzers geven je een snelle verwijzing naar je favoriete passages of naar het laatste hoofdstuk dat je gelezen hebt in een bepaald boek. Om een bladwijzer toe te voegen, selecteer je een vers in het Bijbelleesvenster en klik je vervolgens op de Geselecteerd-knop aan de bovenkant van het leesvenster."
     other user not found: "%{username} heeft nog geen bladwijzers geplaatst."
     creation form errors: "De volgende fout(en) zorgden ervoor dat je bladwijzer niet werd aangemaakt:"
@@ -573,6 +593,7 @@ nl:
       title field: "Titel:"
       reference field: "Verwijzing:"
       labels field: "Labels (gescheiden door komma):"
+      highlight field: "Markering: (optioneel)"
       colors field: "Kleur:"
       update button: "Werk Bladwijzer bij"
       save button: "Bladwijzer opslaan"
@@ -583,6 +604,12 @@ nl:
     none me: "Je hebt nog geen medaille verdiend."
     none user: "%{username} heeft nog geen medaille verdiend."
   plans:
+    widget:
+      my plans: "Mijn Leesplannen"
+      start reading: "Begin met lezen"
+      view my plans: "Bekijk mijn leesplannen"
+      featured plans: "Aanbevolen Leesplannen"
+      view all plans: "Bekijk alle leesplannen"
     settings: "Instellingen"
     privacy:
       visible to friends?: "Wil jij jouw activiteiten in dit Leesplan zichtbaar maken voor jouw vrienden?"

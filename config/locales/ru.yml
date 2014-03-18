@@ -2,6 +2,8 @@ ru:
   social:
     intro page:
       main heading: "Общение"
+    moment:
+      read less: "Свернуть"
     share: "Поделиться"
     my connections: "Подключенные аккаунты"
     connected as: "Вы подключены к %{connection} как %{username}."
@@ -124,6 +126,7 @@ ru:
   find friends: "Найти друзей"
   search placeholder: "Поиск..."
   search: "Искать"
+  more: "Далее"
   book: "Книга"
   filter book: "Фильтр по книгам..."
   save: "Сохранить"
@@ -205,12 +208,16 @@ ru:
   friends:
     you have N friends: "Друзей: %{count}"
     none me: "Делитесь моментами из Библии, например, закладками, маркерами и заметками, со своими близкими и друзьями."
+    find friends: "Найти друзей"
     blank slate:
       heading: "Пока не друзья"
       description: "Просмотр друзей возможен только для тех, кто ваш друг."
     limit notice: "У вас может быть 150 друзей"
     limit description: "Ограничивая дружбу в приложении Библия теми, кого вы знаете и кому доверяете, вы создадите среду для честного общения и сможете открыто делиться своими мыслями."
   friendships:
+    find friends title: "Найти друзей"
+    widget:
+      find friends title: "Найти друзей"
     offer success: "Запрос в друзья отправлен"
     offer failure: "Ошибка при отправлении запроса дружбы"
     create failure: "Ошибка дружбы"
@@ -553,6 +560,9 @@ ru:
     none me: "Вы ещё не заработали значков."
     none user: "%{username} ещё не заработал значков."
   plans:
+    widget:
+      my plans: "Мои планы чтения"
+      start reading: "Начать чтение"
     settings: "Настройки"
     privacy:
       visible to friends?: "Хотите ли вы, чтобы друзья видели вашу активность по этому плану?"

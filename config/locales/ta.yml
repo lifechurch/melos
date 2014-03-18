@@ -442,6 +442,9 @@ ta:
     none me: "நீங்கள் இன்னும் எந்த badges-யும் பெற வில்லை."
     none user: "%{username} இன்னும் எந்த badges-யும் பெற வில்லை."
   plans:
+    widget:
+      my plans: "என்னுடைய திட்டங்கள்"
+      start reading: "வாசிப்பை ஆரம்பிக்கவும் "
     settings: "அமைப்புகள்"
     privacy:
       private: "தனிமறைவானது "

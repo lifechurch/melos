@@ -4,6 +4,8 @@ ca:
       main heading: "Convesra & Descoberta"
       main description: "Una nova manera d'explorar la Bíblia amb amistats de confiança"
       moment:
+        user aaron: "Jordi Grau"
+        user andy: "Enric Mas"
         timestamp: "Fa 5 dies"
         title: "Has marcat el Salm 31:8"
         verse: "Amb quin goig celebraré el teu amor! T’has adonat del meu sofriment, has vist en perill la meva vida,"
@@ -24,6 +26,12 @@ ca:
             text: "Amén, jo també. Ara t'envio un correu electrònic."
             time: "fa uns 27 minuts"
           field placeholder: "Escriu un comentari..."
+    widget:
+      timeline: "Cronologia"
+      no activity yet: "Encara no hi ha hagut activitat."
+    moment:
+      read all: "Llegir-ho tot"
+      read less: "Llegeix menys"
     share: "Comparteix"
     my connections: "Comptes connectats"
     connected as: "Estàs connectat/ada a %{connection} com %{username}."
@@ -146,6 +154,7 @@ ca:
   find friends: "Troba amistats"
   search placeholder: "Cerca..."
   search: "Cerca"
+  more: "Més"
   book: "Llibre"
   filter book: "Filtrar per llibres..."
   save: "Desa"
@@ -231,12 +240,20 @@ ca:
   friends:
     you have N friends: "Tens %{count} amics"
     none me: "Comparteix els teus moments amb la Bíblia mitjançant els marcadors, els subratllats i les notes amb els teus amics més propers."
+    find friends: "Troba amics"
     blank slate:
       heading: "Actualment no sou amics"
       description: "Has de ser amic d'aquesta personas per poder veure el seus amics."
     limit notice: "Pots tenir fins a 150 amics"
     limit description: "Si limites les teves amistats de l'App de la Bíblia a gent que coneixes bé, crearàs un entorn apropiat per converses sinceres i experiències compartides amb amics de confiança."
   friendships:
+    find friends title: "Troba amics"
+    search by name: "Cerca per nom"
+    search button: "Vés"
+    widget:
+      find friends title: "Troba amics"
+      search by name: "Cerca per nom"
+      search button: "Vés"
     offer success: "Sol·licitud d'amistat enviada"
     offer failure: "Error en enviar la sol·licitud d'amistat"
     create success: "Perfecte! Ara sou amics."
@@ -269,6 +286,7 @@ ca:
     form:
       title field: "Títol:"
       content field: "Contingut:"
+      highlight field: "Subratllat: (opcional)"
       reference field: "Referència/es:"
       status field: "Estat:"
       save button: "Desa"
@@ -358,6 +376,7 @@ ca:
     my profile: "El meu perfil"
     edit profile: "Edita el perfil"
     update profile: "Actualitza el perfil"
+    go to your profile: "Vés al teu perfil"
     other user profile: "El perfil de %{username}"
     my password: "Canvia la meva contrasenya"
     edit password: "Canvia la contrasenya"
@@ -548,6 +567,7 @@ ca:
     all: "Tots els marcadors"
     labels label: "Etiquetes:"
     title: "Marcadors"
+    my labels: "Les meves etiquetes"
     not found: "Els marcadors et donen una ràpida referència cap als teus passatges preferits o a l'últim capítol que has llegit en un llibre en particular. Per afegir un marcador, selecciona un verset al lector de la Bíblia i després clica al botó Seleccionat a dalt del lector."
     other user not found: "El/la %{username} encara no ha desat cap marcador."
     creation form errors: "Els errors següents no permeten que creïs el marcador"
@@ -573,6 +593,7 @@ ca:
       title field: "Títol:"
       reference field: "Referència:"
       labels field: "Etiquetes (separades per comes):"
+      highlight field: "Subratllat: (opcional)"
       colors field: "Color:"
       update button: "Actualitza marcador"
       save button: "Desar marcador"
@@ -583,6 +604,12 @@ ca:
     none me: "Encara no tens cap insígnia."
     none user: "El/la %{username} encara no té cap insígnia."
   plans:
+    widget:
+      my plans: "Els meus plans"
+      start reading: "Comença a llegir"
+      view my plans: "Consulta els meus plans"
+      featured plans: "Plans destacats"
+      view all plans: "Consulta tots els plans"
     settings: "Configuració"
     privacy:
       visible to friends?: "Vols que la teva activitat en aquest pla sigui visible per als teus amics?"

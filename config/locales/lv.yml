@@ -202,12 +202,16 @@ lv:
   friends:
     you have N friends: "Tev ir %{count} draugu"
     none me: "Koplieto kas tev svarīgs Bībelē kā piemēram grāmatzīmes, izcelto un piezīmes ar saviem draugiem un ģimeni."
+    find friends: "Atrodi draugus"
     blank slate:
       heading: "Pašlaik nav draugi"
       description: "Tev jābūt draugos ar šo personu lai redzētu viņa draugus."
     limit notice: "Tev var būt kaut vai 150 draugu"
     limit description: "Ierobežojot draudzību Bībeles aplikācijā ar draugiem, kas ir labi pazīstami rada vidi, kas ir atvērta godīgām sarunām un koplietotām atklāsmēm ar uzticamiem draugiem."
   friendships:
+    find friends title: "Atrodi draugus"
+    widget:
+      find friends title: "Atrodi draugus"
     offer success: "Draudzības uzaicinājums nosūtīts"
     offer failure: "Kļūme nosūtot draudzības uzaicinājumu"
     create failure: "Notika kļūme veidojot draudzību"
@@ -550,6 +554,9 @@ lv:
     none me: "Jūs vēl neesat nopelnījis nevienu nozīmīti."
     none user: "%{username} nav nopelnījis nevienu nozīmīti vēl."
   plans:
+    widget:
+      my plans: "Mans plāns"
+      start reading: "Sākt lasīt"
     settings: "Uzstādījumi"
     privacy:
       visible to friends?: "Vai tu vēlētos, lai tava aktivitāte šajā lasīšanas plānā būtu redzama taviem draugiem?"

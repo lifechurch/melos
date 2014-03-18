@@ -4,8 +4,10 @@ sk:
       main heading: "Rozhovory a objavy"
       main description: "Nový spôsob objavovania Biblie s dôvernými priateľmi"
       moment:
+        user aaron: "Adam Sekera"
+        user andy: "Andrej Riška"
         timestamp: "pred 5 dňami"
-        title: "Žalm 31:8 pridaný medzi záložky"
+        title: "si pridal Žalm 31:8 medzi záložky"
         verse: "Plesám a teším sa, že si milosrdný, lebo si zhliadol na moju poníženosť. Spoznal si tieseň mojej duše."
         reference: "Žalm 31:8"
         discover:
@@ -24,6 +26,12 @@ sk:
             text: "Amen, ja tiež. Posielam ti email."
             time: "asi pred 27 minútami"
           field placeholder: "Napísať komentár..."
+    widget:
+      timeline: "Časová os"
+      no activity yet: "Zatiaľ nebola žiadna aktivita."
+    moment:
+      read all: "Čítať všetko"
+      read less: "Skryť"
     share: "Zdieľať"
     my connections: "Prepojené účty"
     connected as: "Ste pripojený k službe %{connection} ako %{username}."
@@ -146,6 +154,7 @@ sk:
   find friends: "Nájsť priateľov"
   search placeholder: "Hľadať..."
   search: "Hľadať"
+  more: "Viac"
   book: "Kniha"
   filter book: "Filtrovať knihy..."
   save: "Uložiť"
@@ -231,12 +240,20 @@ sk:
   friends:
     you have N friends: "Máte %{count} priateľov"
     none me: "Zdieľajte vaše momenty s Bibliou, ako napr. záložky, zvýraznenia, či poznámky s vašimi najbližšími priateľmi a rodinou."
+    find friends: "Nájsť priateľov"
     blank slate:
       heading: "Momentálne nie ste priatelia"
       description: "Ak si chcete zobraziť priateľov tejto osoby, musíte s ňou byť priateľom."
     limit notice: "Môžete mať až 150 priateľov"
     limit description: "Obmedzenie priateľov v aplikácii Biblia na ľudí, ktorých poznáte, pomáha vytvoriť prostredie pre úprimné rozhovory a zdieľanie objavov s dôvernými priateľmi."
   friendships:
+    find friends title: "Nájsť priateľov"
+    search by name: "Hľadať podľa mena"
+    search button: "Hľadať"
+    widget:
+      find friends title: "Nájsť priateľov"
+      search by name: "Hľadať podľa mena"
+      search button: "Hľadať"
     offer success: "Žiadosť o priateľstvo odoslaná"
     offer failure: "Nepodarilo sa odoslať žiadosť o priateľstvo"
     create success: "Podarilo sa! Odteraz ste priatelia."
@@ -269,6 +286,7 @@ sk:
     form:
       title field: "Nadpis:"
       content field: "Obsah:"
+      highlight field: "Zvýraznenie: (nepovinné)"
       reference field: "Súradnice:"
       status field: "Stav:"
       save button: "Uložiť"
@@ -358,6 +376,7 @@ sk:
     my profile: "Môj profil"
     edit profile: "Upraviť profil"
     update profile: "Aktualizovať profil"
+    go to your profile: "Prejsť na váš profil"
     other user profile: "Profil používateľa %{username}"
     my password: "Zmeniť heslo"
     edit password: "Zmeniť heslo"
@@ -548,6 +567,7 @@ sk:
     all: "Všetky"
     labels label: "Menovky:"
     title: "Záložky"
+    my labels: "Moje menovky"
     not found: "Záložky vám poskytujú prehľad o vašich obľúbených pasážach, alebo o poslednej kapitole, ktorú ste z danej knihy prečítali. Záložku môžete pridať tak, že označíte verš v Biblii a kliknete na tlačítko Označené na vrchu stránky."
     other user not found: "Používateľ %{username} zatiaľ nevytvoril žiadne záložky."
     creation form errors: "Nasledujúce chyby zabránili vytvoreniu záložky:"
@@ -573,6 +593,7 @@ sk:
       title field: "Nadpis:"
       reference field: "Súradnice:"
       labels field: "Menovky (oddelené čiarkou):"
+      highlight field: "Zvýraznenie: (nepovinné)"
       colors field: "Farba:"
       update button: "Aktualizovať záložku"
       save button: "Uložiť záložku"
@@ -583,6 +604,12 @@ sk:
     none me: "Zatiaľ ste nezískali žiadne odznaky."
     none user: "Používateľ %{username} zatiaľ nezískal žiadne odznaky."
   plans:
+    widget:
+      my plans: "Moje plány"
+      start reading: "Začať čítať"
+      view my plans: "Zobraziť moje plány"
+      featured plans: "Odporúčané plány"
+      view all plans: "Zobraziť všetky plány"
     settings: "Nastavenia"
     privacy:
       visible to friends?: "Chcete, aby vaša aktivita vrámci tohto plánu bola viditeľná pre vašich priateľov?"

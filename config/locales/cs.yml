@@ -1,29 +1,37 @@
 cs:
   social:
     intro page:
-      main heading: "Konverzace & Objevování"
-      main description: "Nový způsob jak poznat Bibli s blízkými přáteli"
+      main heading: "Diskuze & Objevování"
+      main description: "Nový způsob poznávání Bible s blízkými přáteli"
       moment:
-        timestamp: "Před 5ti dny"
-        title: "záložka Žalm 31:7"
-        verse: "Budu se radovat z tvé neutuchající lásky, neboť ty jsi viděl má soužení, a ty se staráš o trápení mé duše."
-        reference: "Žalm 31:7"
+        user aaron: "Adam Novotný"
+        user andy: "Jiří Kovář"
+        timestamp: "Před 5 dny"
+        title: "přidal záložku - Žalmy 31,7"
+        verse: "Jásat a radovat se budu z tvé lásky, že jsi pohlédl na mé trápení, žes poznal mou duši uprostřed úzkosti."
+        reference: "Žalmy 31,7"
         discover:
-          copy: "Objevuj a uč se s přáteli, když přidávají označení, záložky  a poznámky."
-          button: "Kde mohu začít?"
+          copy: "Objevujte Bibli s přáteli, zvýrazňujte verše a přidávejte záložky nebo poznámky."
+          button: "Jak začít?"
         share:
-          copy: "Sdílejte upřímné rozhovory o Písmu,"
-          button: "Začněte nalezením přátel."
+          copy: "Diskutujte a přemýšlejte nad Písmem společně"
+          button: "Začněte vyhledáním svých přátel."
         likes:
           info: "a 4 další"
         comments:
           first:
-            text: "Opravdu jsem toto potřeboval dnes slyšet, děkuji. Pojďme to brzy zopakovat!"
+            text: "Přesně tohle jsem dnes potřeboval slyšet, díky. Ještě si napíšeme!"
             time: "před 3 hodinami"
           second:
-            text: "Amen, já také. Posílám ti nyní email."
+            text: "Amen, já taky. Právě ti posílám mail."
             time: "před 27 minutami"
-          field placeholder: "Napsat komentář..."
+          field placeholder: "Přidat komentář..."
+    widget:
+      timeline: "Timeline"
+      no activity yet: "Zatím zde nebyla žádná aktivita."
+    moment:
+      read all: "Zobrazit vše"
+      read less: "Zobrazit méně"
     share: "Sdílet"
     my connections: "Připojené účty"
     connected as: "Jste připojen/a ke službě %{connection} jako %{username}"
@@ -146,6 +154,7 @@ cs:
   find friends: "Najít přátele"
   search placeholder: "Vyhledat..."
   search: "Hledat"
+  more: "Více"
   book: "Kniha"
   filter book: "Filtrovat knihy..."
   save: "Uložit"
@@ -231,12 +240,20 @@ cs:
   friends:
     you have N friends: "Máte %{count} přátel"
     none me: "Sdílejte vaše chvíle nad Biblí prostřednictvím záložek, zvýraznění a poznámek s vašimi nejbližšími přáteli a rodinou."
+    find friends: "Najít přátele"
     blank slate:
       heading: "Zatím nejste přátelé"
       description: "Pro zobrazení přátel tohoto uživatele se musíte nejprve stát jeho přítelem."
     limit notice: "Můžete mít nanejvýš 150 přátel"
     limit description: "Omezení vašich přátelství v aplikaci Bible na lidi, které znáte, vytváří prostředí pro upřímné konverzace a společné objevování s blízkými přáteli."
   friendships:
+    find friends title: "Najít přátele"
+    search by name: "Hledat podle jména"
+    search button: "Přejít"
+    widget:
+      find friends title: "Najít přátele"
+      search by name: "Hledat podle jména"
+      search button: "Přejít"
     offer success: "Odeslána žádost o přátelství"
     offer failure: "Nepodařilo se odeslat žádost o přátelství"
     create success: "Povedlo se! Nyní jste přátelé."
@@ -269,6 +286,7 @@ cs:
     form:
       title field: "Nadpis:"
       content field: "Obsah:"
+      highlight field: "Zvýraznit: (volitelné)"
       reference field: "Odkaz(y):"
       status field: "Status:"
       save button: "Uložit"
@@ -358,6 +376,7 @@ cs:
     my profile: "Můj profil"
     edit profile: "Nastavit profil"
     update profile: "Aktualizovat profil"
+    go to your profile: "Přejít na váš profil"
     other user profile: "Profil uživatele %{username}"
     my password: "Změnit moje heslo"
     edit password: "Změnit heslo"
@@ -548,6 +567,7 @@ cs:
     all: "Vše"
     labels label: "Štítky:"
     title: "Záložky"
+    my labels: "Moje štítky"
     not found: "Záložky vám dají rychlý přehled vašich oblíbených pasáží nebo poslední kapitolu, kterou jste četli v dané knize. Pro přidání záložky zvolte verš v prohlížení Bible a klikněte na tlačítko v horní části prohlížeče."
     other user not found: "Uživatel %{username} zatím neuložil žádné záložky."
     creation form errors: "Následující chyby neumožnily vytvořit záložku:"
@@ -567,12 +587,13 @@ cs:
     version field: "Překlad:"
     none user: "%{username} nemá záložky"
     blank slate:
-      heading: "Založit významné verše"
-      description: "Během čtení Bible si zvolte verše do záložek. Zpět sem můžete kdykoliv prohlížet, měnit nebo mazat záložky."
+      heading: "Založte si své oblíbené verše"
+      description: "Během čtení Bible můžete označovat verše a vytvářet z nich záložky. Zde můžete záložky kdykoliv prohlížet, upravovat nebo mazat."
     form:
       title field: "Nadpis:"
       reference field: "Odkaz:"
       labels field: "Štítky (oddělené čárkou):"
+      highlight field: "Zvýraznit: (volitelné)"
       colors field: "Barva:"
       update button: "Aktualizovat záložku"
       save button: "Uložit záložku"
@@ -583,9 +604,15 @@ cs:
     none me: "Zatím jste nezískali žádné odznaky."
     none user: "%{username} zatím nezískal žádné odznaky."
   plans:
+    widget:
+      my plans: "Moje plány"
+      start reading: "Začít číst"
+      view my plans: "Zobrazit moje plány"
+      featured plans: "Doporučené plány"
+      view all plans: "Zobrazit všechny plány"
     settings: "Nastavení"
     privacy:
-      visible to friends?: "Chcete, aby se vaše aktivita tohoto plánu zobrazovala vašim přátelům?"
+      visible to friends?: "Chcete, aby se vaše aktivita v tomto plánu zobrazovala vašim přátelům?"
       private: "Soukromé"
       public: "Veřejné"
     title: "Plány čtení"
@@ -732,7 +759,7 @@ cs:
   highlights:
     title: "Zvýraznění"
     blank slate:
-      heading: "Zvýraznit významné verše"
+      heading: "Zvýrazňujte vaše oblíbené verše"
       description: "Během čtení Bible si můžete vybrané verše zvýraznit. Zde můžete svá zvýraznění kdykoliv prohlížet, editovat nebo mazat."
     none user: "%{username} nemá žádné zvýraznění"
     choose color: "Vyberte barvu"

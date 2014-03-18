@@ -398,6 +398,8 @@ cy:
     none me: "Dwyt ti{username} heb ennill yr un bathodyn eto."
     none user: "Dydy %{username}heb ennill yr un bathodyn eto."
   plans:
+    widget:
+      my plans: "Fy Nghynlluniau "
     settings: "Gosodiadau "
     privacy:
       private: "Prefat"

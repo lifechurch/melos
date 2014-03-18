@@ -2,6 +2,34 @@ tr:
   social:
     intro page:
       main heading: "Sohbet & Keşif"
+      main description: "Güvendiğiniz arkadaşlarla birlikte Kutsal Kitap'ı yeni bir şekilde keşfedin"
+      moment:
+        timestamp: "5 gün önce"
+        title: "Mezmur 31:7 ayetini yer imlerinize eklediniz"
+        verse: "Sadakatinden ötürü sevinip coşacağım, Çünkü düşkün halimi görüyor, Çektiğim sıkıntıları biliyorsun,"
+        reference: "Mezmur 31:7"
+        discover:
+          copy: "Arkadaşlarınız vurgular, yer imleri ve notları eklerken onlarla birlikte keşfe çıkın ve öğrenin."
+          button: "Nereden başlayayım?"
+        share:
+          copy: "Kutsal Kitap hakkında samimi sohbetler edin."
+          button: "Birkaç arkadaş bularak başlayabilirsiniz."
+        likes:
+          info: "ve bunun gibi daha 4 eylem"
+        comments:
+          first:
+            text: "Bunu bugün gerçekten duymam gerekiyordu. Sağol, canım. Seninle bir oturalım."
+            time: "yaklaşık 3 saat önce"
+          second:
+            text: "Amin. Sana demin bir mail attım."
+            time: "yaklaşık 27 dakika önce"
+          field placeholder: "Yorum yaz..."
+    widget:
+      timeline: "Zaman Tüneli"
+      no activity yet: "Henüz hareket görülmedi."
+    moment:
+      read all: "Tümünü Oku"
+      read less: "Daha az okuyun"
     share: "Paylaş"
     my connections: "Bağlı Hesaplar"
     connected as: "Siz %{username} olarak ${connection} ile bağlandınız."
@@ -124,6 +152,7 @@ tr:
   find friends: "Arkadaş Bul"
   search placeholder: "Ara..."
   search: "Ara"
+  more: "Daha fazla"
   book: "Kitap"
   filter book: "Kitapları Filtrele..."
   save: "Kaydet"
@@ -209,12 +238,20 @@ tr:
   friends:
     you have N friends: "%{count} arkadaşınız var"
     none me: "Kutsal Kitap'ta geçirdiğiniz zamanları, yer imlerini, vurguları ve notlarınızı yakın arkadaşlarınız ve ailenizle paylaşın."
+    find friends: "Arkadaş Bul"
     blank slate:
       heading: "Şu anda arkadaş değilsiniz"
       description: "Bu kişinin arkadaşlarını görebilmeniz için onunla arkadaş olmanız gerekmektedir."
     limit notice: "150 arkadaş edinebilirsiniz"
     limit description: "Kutsal Kitap Uygulaması arkadaşlıklarınızı gerçekten tanıdığınız ve güvendiğiniz kişilere kısıtlarsanız, hakiki sohbetleri ve buluşları açıkça paylaşabileceğiniz bir ortamı yaratırsınız."
   friendships:
+    find friends title: "Arkadaş Bul"
+    search by name: "İsime göre ara"
+    search button: "Bul"
+    widget:
+      find friends title: "Arkadaş Bul"
+      search by name: "İsime göre ara"
+      search button: "Bul"
     offer success: "Arkadaşlık talep edildi"
     offer failure: "Arkadaşlık talebi gönderilirken hata oluştu"
     create success: "Artık arkadaş oldunuz!"
@@ -247,6 +284,7 @@ tr:
     form:
       title field: "Başlık:"
       content field: "İçerik:"
+      highlight field: "Vurgu: (isteğe bağlı)"
       reference field: "Ayet(ler):"
       status field: "Durum:"
       save button: "Kaydet"
@@ -336,6 +374,7 @@ tr:
     my profile: "Profilim"
     edit profile: "Profili Düzenle"
     update profile: "Profili Güncelle"
+    go to your profile: "Profiline git"
     other user profile: "%{username} — Profil"
     my password: "Parolamı Değiştir"
     edit password: "Parolayı Değiştir"
@@ -526,6 +565,7 @@ tr:
     all: "Hepsi"
     labels label: "Etiketler:"
     title: "Yer İmleri"
+    my labels: "Etiketlerim"
     not found: "Yer imleri en sevdiğiniz ayetleri veya herhangi bir kitapta son okuduğunuz bölümü çabukça bulmanızı sağlar. Yer imi nasıl eklenir: Kutsal Kitap Okuyucusunda bir ayet seçin. Ondan sonra okuyucunun araç çubuğundaki Seçim düğmesini tıklayın."
     other user not found: "%{username} henüz yer imi kaydetmedi."
     creation form errors: "Şu hata(lar) yer iminizin kaydedilmesini engelledi:"
@@ -551,6 +591,7 @@ tr:
       title field: "Başlık:"
       reference field: "Ayetler:"
       labels field: "Etiketler (virgül ile ayırınız)"
+      highlight field: "Vurgu: (isteğe bağlı)"
       colors field: "Renk:"
       update button: "Yer imini güncelle"
       save button: "Yer İmini Kaydet"
@@ -561,6 +602,12 @@ tr:
     none me: "Daha hiç rozet kazanmadınız."
     none user: "%{username} adlı kullanıcın rozeti yok."
   plans:
+    widget:
+      my plans: "Planlarım"
+      start reading: "Okumaya başla"
+      view my plans: "Okuma Planlarımı Görüntüle"
+      featured plans: "Önerilen Okuma Planları"
+      view all plans: "Tüm Okuma Planları"
     settings: "Ayarlar"
     privacy:
       visible to friends?: "Bu okuma planındaki hareketlerinin arkadaşlarınıza görünür olmasını ister misiniz?"

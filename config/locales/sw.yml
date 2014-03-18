@@ -202,12 +202,16 @@ sw:
   friends:
     you have N friends: "unamarafiki %{count}"
     none me: "Shirikisha wakati wako katika Biblia kama vile maalamisho, mambo muhimu, na maelezo kwa marafiki zako wa karibu na familia."
+    find friends: "Tafuta marafiki"
     blank slate:
       heading: "Kwa sasa sio marafiki"
       description: "Lazima uwe rafiki na mtu huyu ili kuona marafiki zao."
     limit notice: "Unaweza kawa na marafiki wengi kama 150"
     limit description: "Kuwa na kiwango cha marafiki kwenye Apu ya Biblia kwa watu unaowajua vizuri inajenga mazingira yenye mazungumzo waaminifu na uvumbuzi pamoja na marafiki unaowaamini."
   friendships:
+    find friends title: "Tafuta marafiki"
+    widget:
+      find friends title: "Tafuta marafiki"
     offer success: "Ombi la urafiki limetumwa"
     offer failure: "Hitilafu wakati wa kutuma ombi la urafiki"
     create failure: "Hitilafu kujenga urafiki"
@@ -550,6 +554,9 @@ sw:
     none me: "Haujapata beji zozote."
     none user: "%{username} hajapata beji zozote."
   plans:
+    widget:
+      my plans: "mipango yangu"
+      start reading: "Anza kusoma"
     settings: "mipangilio"
     privacy:
       visible to friends?: "Ungependa shughuli yako wa  mpango huu wa kuonekana na marafiki wako?"

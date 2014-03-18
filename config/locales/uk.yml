@@ -4,6 +4,8 @@ uk:
       main heading: "Розмова і пізнання"
       main description: "Новий спосіб пізнання Біблії з найближчими друзями."
       moment:
+        user aaron: "Данило Стельмах"
+        user andy: "Андрій Шептицький"
         timestamp: "5 днів тому"
         title: "закладені Псалми 31:7"
         verse: "Я буду радіти та тішитися в Твоїй милості, що побачив Ти горе моє, що приглянувся Ти до скорботи моєї душі."
@@ -24,6 +26,12 @@ uk:
             text: "Амінь. Я також. Надсилайте мені вже листа."
             time: "близько 27 хвилин тому"
           field placeholder: "Пише коментар…"
+    widget:
+      timeline: "Часова шкала"
+      no activity yet: "Наразі відсутня яка-небудь активність."
+    moment:
+      read all: "Читати усе"
+      read less: "Згорнути"
     share: "Поділитись"
     my connections: "Приєднані профілі"
     connected as: "Ви приєднали %{connection} як %{username}."
@@ -146,6 +154,7 @@ uk:
   find friends: "Знайдіть друзів"
   search placeholder: "Пошук..."
   search: "Шукати"
+  more: "Більше"
   book: "Книга"
   filter book: "Фільтр книжок…"
   save: "Зберегти"
@@ -231,12 +240,20 @@ uk:
   friends:
     you have N friends: "У вас %{count} друзів"
     none me: "Поширюйте віхи вашого пізнання Біблії на кшталт закладок, виділень та нотаток серед найближчих друзів та сім'ї…"
+    find friends: "Знайти друзів"
     blank slate:
       heading: "Наразі немає друзів"
       description: "Ви мусите бути друзями з цією людиною, аби переглянути її друзів."
     limit notice: "Ви можете мати щонайбільше 150 друзів"
     limit description: "У програмі Біблія наявні обмеження  дружби з людьми, яких ви добре знаєте, створює умови для чесних розмов і спільного вивчення з близькими друзями."
   friendships:
+    find friends title: "Знайти друзів"
+    search by name: "Пошук за іменем"
+    search button: "Перейти"
+    widget:
+      find friends title: "Знайти друзів"
+      search by name: "Пошук за іменем"
+      search button: "Перейти"
     offer success: "Надіслано запит дружби"
     offer failure: "Помилка надсилання запиту дружби"
     create success: "Успіх! Ви - вже друзі!"
@@ -269,6 +286,7 @@ uk:
     form:
       title field: "Назва:"
       content field: "Зміст:"
+      highlight field: "Виділення: (необов'язково)"
       reference field: "Посилання:"
       status field: "Стан:"
       save button: "Зберегти"
@@ -358,6 +376,7 @@ uk:
     my profile: "Мій профіль"
     edit profile: "Редагувати профіль"
     update profile: "Оновити профіль"
+    go to your profile: "Перейти до вашого профілю"
     other user profile: "Профіль %{username}"
     my password: "Змінити пароль"
     edit password: "Змінити Пароль"
@@ -548,6 +567,7 @@ uk:
     all: "Усі"
     labels label: "Мітки:"
     title: "Закладки"
+    my labels: "Мої мітки"
     not found: "Закладки допомагають швидко знайти улюблені уривки або останній розділ, який ви читаєте в конкретній книзі. Щоб створити закладку виділіть вірш у програмі читання Біблії і натисніть обрану кнопку вгорі. "
     other user not found: "%{username} поки що не зберіг жодної закладки."
     creation form errors: "При створенні закладки виникла така помилка(и):"
@@ -573,6 +593,7 @@ uk:
       title field: "Назва:"
       reference field: "Посилання:"
       labels field: "Мітки (через кому):"
+      highlight field: "Виділення: (необов'язково)"
       colors field: "Колір"
       update button: "Оновити закладку"
       save button: "Зберегти закладку"
@@ -583,6 +604,12 @@ uk:
     none me: "Ви поки що не заробили жодного значка."
     none user: "%{username} ще не заробив жодного значка."
   plans:
+    widget:
+      my plans: "Мої плани"
+      start reading: "Почати читання"
+      view my plans: "Переглянути мої плани"
+      featured plans: "Популярні плани"
+      view all plans: "Переглянути усі плани"
     settings: "Налаштування"
     privacy:
       visible to friends?: "Ви б хотіли, аби ваша праця з цим планом була видима вашим друзям?"

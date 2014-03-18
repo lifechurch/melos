@@ -4,6 +4,8 @@ sq:
       main heading: "Bashkëbisedim & Zbulim"
       main description: "Një mënyrë e re për të eksploruar Biblën me miq të besueshëm"
       moment:
+        user aaron: "Aaron Steele"
+        user andy: "Andy Knight"
         timestamp: "5 ditë më parë"
         title: "shënoi Psalmin 31:7"
         verse: "Unë do të ngazëlloj dhe do të kënaqem me mirësinë tënde, sepse ti ke parë pikëllimin tim dhe i ke kuptuar ankthet e shpirtit tim."
@@ -24,6 +26,12 @@ sq:
             text: "Amen, edhe mua. Po të dërgoj një e-postë tani."
             time: "rreth 27 minuta më parë"
           field placeholder: "Shkruaj një koment..."
+    widget:
+      timeline: "Kohështrirja"
+      no activity yet: "Nuk ka patur asnjë aktivitet deri tani."
+    moment:
+      read all: "Lexo të gjitha"
+      read less: "Lexo më pak"
     share: "Ndaje"
     my connections: "Llogaritë e lidhura"
     connected as: "Ju jeni lidhur me %{connection} si %{username}."
@@ -146,6 +154,7 @@ sq:
   find friends: "Gjej miq"
   search placeholder: "Kërko..."
   search: "Kërko"
+  more: "Më shumë"
   book: "Libri"
   filter book: "Filtro librat..."
   save: "Ruaj"
@@ -231,12 +240,20 @@ sq:
   friends:
     you have N friends: "Ju keni %{count} miq"
     none me: "Ndani çastet tuaja me Biblën si shenjuesit, theksimet dhe shënimet me familjen dhe miqtë më të ngushtë."
+    find friends: "Gjej miq"
     blank slate:
       heading: "Aktualisht s'jeni miq"
       description: "Ju duhet të jeni miq me këtë njeri për të parë miqtë e tyre."
     limit notice: "Ju mund të keni deri në 150 miq"
     limit description: "Kufizimi i miqësisë në Programin e Biblës për ata njerëz që i njeh mirë krijon një mjedis për bashkëbisedime të sinqerta dhe zbulime të ndara me miq të besueshëm."
   friendships:
+    find friends title: "Gjej miq"
+    search by name: "Kërko me emër"
+    search button: "Shko"
+    widget:
+      find friends title: "Gjej miq"
+      search by name: "Kërko me emër"
+      search button: "Shko"
     offer success: "Kërkesa për miqësi u dërgua"
     offer failure: "Gabim në dërgimin e kërkesës për miqësi"
     create success: "Sukses! Ju jeni miq tani."
@@ -269,6 +286,7 @@ sq:
     form:
       title field: "Titulli:"
       content field: "Përmbajtja:"
+      highlight field: "Thekso: (opsionale)"
       reference field: "Referenca(t):"
       status field: "Statusi:"
       save button: "Ruaje"
@@ -358,6 +376,7 @@ sq:
     my profile: "Profili im"
     edit profile: "Redakto profilin"
     update profile: "Përditëso profilin"
+    go to your profile: "Shko te profili tënd"
     other user profile: "Profili për përdoruesin %{username}"
     my password: "Ndrysho fjalëkalimin tim"
     edit password: "Ndrysho fjalëkalimin"
@@ -548,6 +567,7 @@ sq:
     all: "Të gjitha"
     labels label: "Etiketat:"
     title: "Shenjuesit"
+    my labels: "Etiketat e mia"
     not found: "Shenjuesit ju japin ju një referencë udhërrëfyese të shpejtë për pasazhet tuaja të preferuara apo për kapitullin e fundit që lexoni në një libër të caktuar. Për të shtuar një shenjues, përzgjidhni një varg në lexuesin e Biblës dhe më pas klikoni butonin Përzgjedhës në krye të lexuesit."
     other user not found: "Përdoruesi %{username} nuk ka ruajtur ende asnjë shenjues."
     creation form errors: "Gabimi(et) më poshtë e kanë penguar krijimin e shenjuesit tuaj:"
@@ -573,6 +593,7 @@ sq:
       title field: "Titulli:"
       reference field: "Referenca:"
       labels field: "Etiketat (të ndara me presje):"
+      highlight field: "Thekso: (opsionale)"
       colors field: "Ngjyra:"
       update button: "Përditëso Shenjuesin"
       save button: "Ruaj shenjuesin"
@@ -583,6 +604,12 @@ sq:
     none me: "Ju nuk keni fituar akoma ndonjë emblemë."
     none user: "Përdoruesi %{username} nuk ka fituar akoma ndonjë emblemë."
   plans:
+    widget:
+      my plans: "Planet e mia"
+      start reading: "Fillo leximin"
+      view my plans: "Shiko planet e mia"
+      featured plans: "Planet e përzgjedhur"
+      view all plans: "Shiko të gjitha planet"
     settings: "Cilësimet"
     privacy:
       visible to friends?: "A dëshironi që aktiviteti juaj për këtë plan të jetë i dukshëm për miqtë e tu?"

@@ -4,6 +4,8 @@ vi:
       main heading: "Chia sẻ & khám phá"
       main description: "Cách mới để khám phá Kinh Thánh cùng bạn bè"
       moment:
+        user aaron: "Aaron Steele"
+        user andy: "Andy Knight"
         timestamp: "5 ngày trước"
         title: "đánh dấu Thi Thiên 31:7"
         verse: "Con sẽ vui mừng và hoan hỉ trong sự nhân từ của Chúa\nVì Chúa đã đoái thương cảnh hoạn nạn của con,\nVà biết nỗi sầu khổ của linh hồn con."
@@ -24,6 +26,12 @@ vi:
             text: "Amen, tôi cũng vậy. Đang email cho bạn đây."
             time: "khoảng 27 phút trước"
           field placeholder: "Viết bình luận..."
+    widget:
+      timeline: "Dòng thời gian"
+      no activity yet: "Chưa có hoạt động nào."
+    moment:
+      read all: "Đọc toàn bộ"
+      read less: "Đọc ít hơn"
     share: "Chia sẻ"
     my connections: "Tài khoản đã kết nối"
     connected as: "Bạn đã kết nối %{connection} với tên %{username}."
@@ -146,6 +154,7 @@ vi:
   find friends: "Tìm bạn bè"
   search placeholder: "Tìm kiếm..."
   search: "Tìm kiếm"
+  more: "Thêm"
   book: "Sách"
   filter book: "Chọn sách..."
   save: "Lưu"
@@ -231,12 +240,20 @@ vi:
   friends:
     you have N friends: "Bạn có %{count} bạn"
     none me: "Chia sẻ cùng gia đình và bạn bè những trải nghiệm Kinh Thánh như các đánh dấu, tô màu và ghi chú."
+    find friends: "Tìm bạn bè"
     blank slate:
       heading: "Chưa kết bạn"
       description: "Bạn phải kết bạn với người này để xem danh sách bạn bè."
     limit notice: "Bạn có thể kết bạn tối đa 150 người"
     limit description: "Trên Ứng dụng Kinh Thánh, việc kết bạn với những người mà bạn biết rõ và tin cậy sẽ tạo môi trường thuận lợi cho những chia sẻ chân thành hơn."
   friendships:
+    find friends title: "Tìm bạn bè"
+    search by name: "Tìm bằng họ tên"
+    search button: "Tìm"
+    widget:
+      find friends title: "Tìm bạn bè"
+      search by name: "Tìm bằng họ tên"
+      search button: "Tìm"
     offer success: "Gởi yêu cầu kết bạn"
     offer failure: "Lỗi gởi yêu cầu kết bạn"
     create success: "Các bạn đã kết bạn!"
@@ -269,6 +286,7 @@ vi:
     form:
       title field: "Tựa đề:"
       content field: "Nội dung:"
+      highlight field: "Tô màu: (không bắt buộc)"
       reference field: "Tham khảo:"
       status field: "Tình trạng:"
       save button: "Lưu"
@@ -358,6 +376,7 @@ vi:
     my profile: "Hồ sơ của tôi"
     edit profile: "Chỉnh sửa hồ sơ"
     update profile: "Cập nhật hồ sơ"
+    go to your profile: "Đến hồ sơ của bạn"
     other user profile: "Hồ sơ của %{username}"
     my password: "Đổi mật khẩu"
     edit password: "Đổi mật khẩu"
@@ -548,6 +567,7 @@ vi:
     all: "Toàn bộ"
     labels label: "Nhãn tên:"
     title: "Đánh dấu"
+    my labels: "Nhãn tên của tôi"
     not found: "Chức năng Đánh dấu giúp bạn nhanh chóng tìm lại các phân đoạn yêu thích hoặc phần bạn vừa đọc trong một sách nào đó. Để đánh dấu, hãy chọn một hoặc nhiều câu và gõ vào \"Đã chọn\" ở đầu bài đọc."
     other user not found: "%{username} chưa lưu đánh dấu nào."
     creation form errors: "Các lỗi sau khiến bạn không tạo đánh dấu được:"
@@ -573,6 +593,7 @@ vi:
       title field: "Tựa đề:"
       reference field: "Tham khảo:"
       labels field: "Nhãn tên (tách bằng dấy phẩy):"
+      highlight field: "Tô màu: (không bắt buộc)"
       colors field: "Màu sắc:"
       update button: "Cập nhật đánh dấu"
       save button: "Lưu đánh dấu"
@@ -583,6 +604,12 @@ vi:
     none me: "Bạn chưa có huy hiệu nào."
     none user: "%{username} chưa có huy hiệu nào."
   plans:
+    widget:
+      my plans: "Kế hoạch của tôi"
+      start reading: "Bắt đầu đọc"
+      view my plans: "Xem kế hoạch của tôi"
+      featured plans: "Kế hoạch nổi bật"
+      view all plans: "Xem tất cả kế hoạch"
     settings: "Cài đặt"
     privacy:
       visible to friends?: "Bạn muốn bạn bè thấy được hoạt động này trong kế hoạch của bạn?"

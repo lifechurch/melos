@@ -4,6 +4,8 @@ it:
       main heading: "Conversazione & Scoperta"
       main description: "Un nuovo modo per esplorare la Bibbia con degli amici fidati."
       moment:
+        user aaron: "Mario Rossi"
+        user andy: "Carlo Bianchi"
         timestamp: "5 giorni fa"
         title: "Salmo 31:7 contrassegnato"
         verse: "Esulterò e mi rallegrerà per la tua benevolenza; poiché tu hai visto la mia afflizione, hai conosciuto le angosce dell'anima mia."
@@ -24,6 +26,12 @@ it:
             text: "Amen - anch'io! Ti sto mandando un e-mail adesso."
             time: "circa 27 minuti fa"
           field placeholder: "Scrivi un commento..."
+    widget:
+      timeline: "Diario"
+      no activity yet: "Non c'è ancora stata alcuna attività."
+    moment:
+      read all: "Leggi tutto"
+      read less: "Leggi meno"
     share: "Condividi"
     my connections: "Account Collegati"
     connected as: "Sei collegato al tuo account %{connection} come %{username}."
@@ -146,6 +154,7 @@ it:
   find friends: "Trova Amici"
   search placeholder: "Ricerca..."
   search: "Cerca"
+  more: "Ancora"
   book: "Libro"
   filter book: "Filtro Libri..."
   save: "Salva"
@@ -231,12 +240,20 @@ it:
   friends:
     you have N friends: "Hai %{count} amici"
     none me: "Condividi i tuoi momenti nella Bibbia come segnalibri, evidenziazioni e note con i tuoi amici e famiglia più vicini."
+    find friends: "Trova amici"
     blank slate:
       heading: "Non amici al momento"
       description: "Devi avere l'amicizia di questa persona per vedere i suoi amici."
     limit notice: "Puoi avere fino a 150 amici"
     limit description: "Limitare le tue amicizie App Bibbia a persone che conosci bene crea un ambiente per delle conversazioni sincere e scoperte condivise con amici fidati."
   friendships:
+    find friends title: "Trova amici"
+    search by name: "Cerca per nome"
+    search button: "Vai"
+    widget:
+      find friends title: "Trova amici"
+      search by name: "Cerca per nome"
+      search button: "Vai"
     offer success: "Richiesta di amicizia inoltrata"
     offer failure: "Errore nell'inoltro della richiesta di amicizia"
     create success: "Successo! Adesso avete stretto amicizia."
@@ -269,6 +286,7 @@ it:
     form:
       title field: "Titolo:"
       content field: "Contenuto:"
+      highlight field: "Evidenzia:(facoltativo)"
       reference field: "Riferimento(i):"
       status field: "Status:"
       save button: "Salva"
@@ -358,6 +376,7 @@ it:
     my profile: "Il Mio Profilo"
     edit profile: "Modifica Profilo"
     update profile: "Aggiorna Profilo"
+    go to your profile: "Vai al tuo Profilo"
     other user profile: "Profilo di %{username}"
     my password: "Cambia la Mia Password"
     edit password: "Cambia Password"
@@ -548,6 +567,7 @@ it:
     all: "Tutte"
     labels label: "Etichette:"
     title: "Segnalibri"
+    my labels: "Le mie Etichette"
     not found: "I segnalibri ti danno una rapida guida di riferimento ai tuoi brani preferiti o all'ultimo capitolo che hai letto nel libro specifico. Per aggiungere un segnalibro, seleziona un versetto nel lettore Bibbia e poi clicca il bottone Selezionati in alto nel lettore."
     other user not found: "%{username} non ha ancora salvato dei segnalibri."
     creation form errors: "I(l) seguenti/e errori hanno impedito la creazione del tuo segnalibro:"
@@ -573,6 +593,7 @@ it:
       title field: "Titolo:"
       reference field: "Riferimento:"
       labels field: "Etichette (separate da virgole)"
+      highlight field: "Evidenzia:(facoltativo) "
       colors field: "Colore:"
       update button: "Aggiorna Segnalibro"
       save button: "Salva Segnalibro"
@@ -583,6 +604,12 @@ it:
     none me: "Non hai ancora guadagnato nessun distintivo."
     none user: "%{username} non ha ancora guadagnato nessun distintivo."
   plans:
+    widget:
+      my plans: "I Miei Piani"
+      start reading: "Inizia a leggere"
+      view my plans: "Vedi i Miei Piani"
+      featured plans: "Piani in Evidenza"
+      view all plans: "Vedi Tutti i Piani"
     settings: "Opzioni"
     privacy:
       visible to friends?: "Vuoi che la tua attività con questo piano sia visibile per i tuoi amici?"

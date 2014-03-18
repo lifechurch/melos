@@ -24,6 +24,8 @@ af:
             text: "Amen, ek ook.  Ek stuur nou vir jou 'n e-pos."
             time: "omtrent 27 minute gelede"
           field placeholder: "Plaas 'n opmerking..."
+    moment:
+      read less: "Lees minder"
     share: "Deel"
     my connections: "Gekoppelde Rekeninge"
     connected as: "Jy is gekoppel met %{connection} as %{username}."
@@ -146,6 +148,7 @@ af:
   find friends: "Soek Vriende"
   search placeholder: "Soek..."
   search: "Soek"
+  more: "Meer"
   book: "Boek"
   filter book: "Filtreer Boeke..."
   save: "Stoor"
@@ -231,12 +234,16 @@ af:
   friends:
     you have N friends: "Jy het %{count} vriende"
     none me: "Deel jou oomblikke in die Bybel soos boekmerke, hoogtepunte en notas met jou naaste vriende en familie."
+    find friends: "Soek vriende"
     blank slate:
       heading: "Nie huidiglik vriende nie"
       description: "Jy moet bevriend wees met hierdie persoon om sy vriende te kan sien."
     limit notice: "Jy het soveel as 150 vriende"
     limit description: "Die beperking van jou Bybeltoepassing vriendskappe tot slegs mense wat jy goed ken, skep 'n omgewing vir eerlike gesprekke en gedeelde ontdekkings met betroubare vriende."
   friendships:
+    find friends title: "Soek vriende"
+    widget:
+      find friends title: "Soek vriende"
     offer success: "Vriendskap uitnodiging gestuur"
     offer failure: "Daar was 'n fout met die stuur van die vriendskap versoek"
     create success: "Sukses!  Julle is nou vriende."
@@ -583,6 +590,9 @@ af:
     none me: "Jy het nog geen kentekens verwerf nie."
     none user: "%{username} het nog geen kentekens verwerf nie."
   plans:
+    widget:
+      my plans: "My Planne"
+      start reading: "Begin lees"
     settings: "Verstellings"
     privacy:
       visible to friends?: "Wil jy hê jou aktiwiteit met hierdie plan moet vir jou vriende sigbaar wees?"

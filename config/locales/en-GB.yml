@@ -4,6 +4,8 @@ en-GB:
       main heading: "Conversation & discovery"
       main description: "A new way to explore the Bible with trusted friends"
       moment:
+        user aaron: "Aaron Steele"
+        user andy: "Andy Knight"
         timestamp: "5 days ago"
         title: "bookmarked Psalm 31:7"
         verse: "I will be glad and rejoice in your unfailing love, for you have seen my troubles, and you care about the anguish of my soul."
@@ -24,6 +26,12 @@ en-GB:
             text: "Amen, me too. Sending you an e-mail now."
             time: "about 27 minutes ago"
           field placeholder: "Write a comment..."
+    widget:
+      timeline: "Timeline"
+      no activity yet: "There hasn't been any activity yet."
+    moment:
+      read all: "Read all"
+      read less: "Read less"
     share: "Share"
     my connections: "Connected accounts"
     connected as: "You are connected to %{connection} as %{username}."
@@ -146,6 +154,7 @@ en-GB:
   find friends: "Find friends"
   search placeholder: "Search..."
   search: "Search"
+  more: "More"
   book: "Book"
   filter book: "Filter books..."
   save: "Save"
@@ -231,12 +240,20 @@ en-GB:
   friends:
     you have N friends: "You have %{count} friends"
     none me: "Share your moments in the Bible such as bookmarks, highlights, and notes with your closest friends and family."
+    find friends: "Find friends"
     blank slate:
       heading: "Not currently friends"
       description: "You must be friends with this person in order to view their friends."
     limit notice: "You can have as many as 150 friends"
     limit description: "Limiting your Bible App friendships to people you know well creates an environment for honest conversations and shared discoveries with trusted friends."
   friendships:
+    find friends title: "Find friends"
+    search by name: "Search by name"
+    search button: "Go"
+    widget:
+      find friends title: "Find friends"
+      search by name: "Search by name"
+      search button: "Go"
     offer success: "Friendship request sent"
     offer failure: "Error sending friendship request"
     create success: "Success! You're now friends."
@@ -269,6 +286,7 @@ en-GB:
     form:
       title field: "Title:"
       content field: "Content:"
+      highlight field: "Highlight: (optional)"
       reference field: "Reference(s):"
       status field: "Status:"
       save button: "Save"
@@ -358,6 +376,7 @@ en-GB:
     my profile: "My profile"
     edit profile: "Edit profile"
     update profile: "Update profile"
+    go to your profile: "Go to your profile"
     other user profile: "%{username}'s profile"
     my password: "Change my password"
     edit password: "Change password"
@@ -548,6 +567,7 @@ en-GB:
     all: "All"
     labels label: "Labels:"
     title: "Bookmarks"
+    my labels: "My labels"
     not found: "Bookmarks give you a quick reference guide to your favourite passages or to the last chapter you read in a particular book. To add a bookmark, select a verse in the Bible reader and then click the selected button at the top of the reader."
     other user not found: "%{username} hasn't saved any bookmarks yet."
     creation form errors: "The following error(s) prevented creation of your bookmark:"
@@ -573,6 +593,7 @@ en-GB:
       title field: "Title:"
       reference field: "Reference:"
       labels field: "Labels (comma-separated):"
+      highlight field: "Highlight: (optional)"
       colors field: "Colour:"
       update button: "Update bookmark"
       save button: "Save bookmark"
@@ -583,6 +604,12 @@ en-GB:
     none me: "You haven't earnt any badges yet."
     none user: "%{username} hasn't earnt any badges yet."
   plans:
+    widget:
+      my plans: "My plans"
+      start reading: "Start reading"
+      view my plans: "View my plans"
+      featured plans: "Featured plans"
+      view all plans: "View all plans"
     settings: "Settings"
     privacy:
       visible to friends?: "Would you like your activity with this plan to be visible to your friends?"

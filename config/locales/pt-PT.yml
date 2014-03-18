@@ -4,6 +4,8 @@ pt-PT:
       main heading: "Conversa & Descoberta"
       main description: "Uma nova forma de explorar a Bíblia com amigos de confiança"
       moment:
+        user aaron: "Álvaro Ferro"
+        user andy: "André Guerreiro"
         timestamp: "5 dias atrás"
         title: "marcou Salmos 31:7"
         verse: "Eu me alegrarei e regozijarei na tua benignidade, pois consideraste a minha aflição; conheceste a minha alma nas angústias."
@@ -24,6 +26,12 @@ pt-PT:
             text: "Amém, eu também. Estou a enviar-te um email agora mesmo."
             time: "perto de 27 minutos atrás"
           field placeholder: "Escreva um comentário..."
+    widget:
+      timeline: "Cronologia"
+      no activity yet: "Ainda não houve qualquer atividade."
+    moment:
+      read all: "Ler tudo"
+      read less: "Ler menos"
     share: "Partilhar"
     my connections: "Contas Associadas"
     connected as: "Está associado ao %{connection} como %{username}."
@@ -146,6 +154,7 @@ pt-PT:
   find friends: "Encontre Amigos"
   search placeholder: "Procura..."
   search: "Procurar"
+  more: "Mais"
   book: "Livro"
   filter book: "Filtrar Livros..."
   save: "Guardar"
@@ -231,12 +240,20 @@ pt-PT:
   friends:
     you have N friends: "Você tem %{count} amigos(as)"
     none me: "Partilhe os seus momentos na Bíblia tais como os marcadores, os destaques e notas com os seus amigos mais próximos e a sua família."
+    find friends: "Encontre amigos"
     blank slate:
       heading: "Atualmente não são amigos"
       description: "Tem que ser amigo desta pessoa para poder ver os seus amigos."
     limit notice: "Podes ter no máximo 150 amizades"
     limit description: "Limitar as suas amizades na App da Bíblia às pessoas que conhece bem cria um ambiente para conversas honestas e partilha de descobertas com amigos de confiança."
   friendships:
+    find friends title: "Encontre amigos"
+    search by name: "Procurar por nome"
+    search button: "Ir"
+    widget:
+      find friends title: "Encontre amigos"
+      search by name: "Procurar por nome"
+      search button: "Ir"
     offer success: "Pedidos de amizade enviados"
     offer failure: "Ocorreu um erro ao enviar o pedido de amizade"
     create success: "Sucesso! Agora são amigos."
@@ -269,6 +286,7 @@ pt-PT:
     form:
       title field: "Título:"
       content field: "Conteúdo:"
+      highlight field: "Destaque: (opcional)"
       reference field: "Referência(s):"
       status field: "Estado:"
       save button: "Guardar"
@@ -358,6 +376,7 @@ pt-PT:
     my profile: "O Meu Perfil"
     edit profile: "Editar Perfil"
     update profile: "Atualizar Perfil"
+    go to your profile: "Ir para o Seu Perfil"
     other user profile: "Perfil de %{username}"
     my password: "Alterar a Minha Palavra-Passe"
     edit password: "Alterar Palavra-Passe"
@@ -548,6 +567,7 @@ pt-PT:
     all: "Todos"
     labels label: "Etiquetas:"
     title: "Marcadores"
+    my labels: "As Minhas Etiquetas"
     not found: "Marcadores dão-lhe um guia de referência rápido para as suas passagens favoritas ou para o último capítulo lido num dos livros da Bíblia. Para adicionar um marcador, selecione um versículo no leitor da Bíblia e depois clique o botão Selecionado no topo do leitor."
     other user not found: "%{username} ainda não guardou nenhum marcador."
     creation form errors: "O(s) seguinte(s) erro(s) não permite(m) a criação do seu marcador:"
@@ -573,6 +593,7 @@ pt-PT:
       title field: "Título:"
       reference field: "Referência: "
       labels field: "Etiquetas (separadas por vírgula):"
+      highlight field: "Destaque: (opcional)"
       colors field: "Cor:"
       update button: "Atualizar Marcador"
       save button: "Guardar Marcador"
@@ -583,6 +604,12 @@ pt-PT:
     none me: "Ainda não ganhou nenhuma medalha."
     none user: "%{username} ainda não ganhou qualquer medalha."
   plans:
+    widget:
+      my plans: "Os Meus Planos"
+      start reading: "Começar a ler"
+      view my plans: "Ver os Meus Planos"
+      featured plans: "Planos em Destaque"
+      view all plans: "Ver Todos os Planos"
     settings: "Definições"
     privacy:
       visible to friends?: "Gostaria que a sua atividade com este plano fosse visível para os seus amigos?"

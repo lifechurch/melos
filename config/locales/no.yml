@@ -24,6 +24,8 @@
             text: "Amen, jeg også. Sender deg e-post snart."
             time: "omtrent 27 minutter siden"
           field placeholder: "Skriv en kommentar..."
+    moment:
+      read less: "Les mindre"
     share: "Del"
     my connections: "Tilknyttede kontoer"
     connected as: "Du er koblet til %{connection} som %{username}."
@@ -146,6 +148,7 @@
   find friends: "Finn venner"
   search placeholder: "Søk..."
   search: "Søk"
+  more: "Mer"
   book: "Bok"
   filter book: "Filtrer bøker..."
   save: "Lagre"
@@ -231,12 +234,16 @@
   friends:
     you have N friends: "Du har %{count} venner"
     none me: "Del dine hendelser i Bibelen som bokmerker, markeringer og notater med dine nærmeste venner og familie."
+    find friends: "Finn venner"
     blank slate:
       heading: "Ikke venner"
       description: "Du må være venn med denne personen for å se vennelisten."
     limit notice: "Du kan ha inntil 150 venner"
     limit description: "Når du begrenser dine venner i Bibel-appen til kun de som du kjenner godt, gir det grobunn for ærlig samtale og oppdagelser sammen med venner du stoler på."
   friendships:
+    find friends title: "Finn venner"
+    widget:
+      find friends title: "Finn venner"
     offer success: "Venneforespørsel sendt"
     offer failure: "Det oppsto en feil under sending av venneforespørselen"
     create success: "Suksess! Dere er nå venner."
@@ -583,6 +590,9 @@
     none me: "Du har ikke fått noen merker ennå"
     none user: "%{username} har ikke fått noen merker ennå."
   plans:
+    widget:
+      my plans: "Mine leseplaner"
+      start reading: "Begynn å lese"
     settings: "Innstillinger"
     privacy:
       visible to friends?: "Ønsker du at dine venner skal kunne se din aktivitet i denne leseplanen? "

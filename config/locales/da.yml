@@ -4,6 +4,8 @@ da:
       main heading: "Konversation & Opdagelse"
       main description: "En ny måde at opdage Bibelen med gode venner"
       moment:
+        user aaron: "Jens Christensen"
+        user andy: "Poul Rasmussen"
         timestamp: "5 dage siden"
         title: "lavede bogmærke til Salme 31:7"
         verse: "Jeg vil være glad og glæde mig over din ufejlbarlige kærlighed, for du har set mine problemer og vil hjælpe med ængstelsen for min sjæl."
@@ -24,6 +26,12 @@ da:
             text: "Amen, også fra mig. Sender en ene-mail nu."
             time: "for 27 minutter siden"
           field placeholder: "Skriv en kommentar..."
+    widget:
+      timeline: "Tidslinje"
+      no activity yet: "Der har ikke været nogen aktivitet endnu."
+    moment:
+      read all: "Læs det hele"
+      read less: "Læs mindre"
     share: "Del"
     my connections: "Forbundne konti"
     connected as: "Du er forbundet til  %{connection} som %{username}."
@@ -146,6 +154,7 @@ da:
   find friends: "Find venner"
   search placeholder: "Søg..."
   search: "Søg"
+  more: "Mere"
   book: "Bog"
   filter book: "Filtrer bøger..."
   save: "Gem"
@@ -231,12 +240,20 @@ da:
   friends:
     you have N friends: "Du har %{count} venner"
     none me: "Del dine øjeblikke i Bibelen såsom bogmærker, markeringer og note med dine nærmeste venner og familie."
+    find friends: "Find venner"
     blank slate:
       heading: "Ikke venner lige ny"
       description: "Du skal være venner med denne person for at se deres venner."
     limit notice: "Du kan have op til 150 venner"
     limit description: "Begræns dine Bibel App venskaber til folk du kender og skab et miljø af ærlig snak og del opdagelser med betroede venner. "
   friendships:
+    find friends title: "Find venner"
+    search by name: "Søg på navn"
+    search button: "Start"
+    widget:
+      find friends title: "Find venner"
+      search by name: "Søg på navn"
+      search button: "Start"
     offer success: "Venneforespørgsel sendt"
     offer failure: "Fejl i afsendelse af venneforespørgsel"
     create success: "Succes! I er nu venner."
@@ -269,6 +286,7 @@ da:
     form:
       title field: "Titel:"
       content field: "Indhold:"
+      highlight field: "Markér: (kan vælges)"
       reference field: "Reference(r):"
       status field: "Status:"
       save button: "Gem"
@@ -358,6 +376,7 @@ da:
     my profile: "Min profil"
     edit profile: "Rediger profil"
     update profile: "Opdater profil"
+    go to your profile: "Gå til Din Profil"
     other user profile: "%{username}'s Profil"
     my password: "Ret mit password"
     edit password: "Ret pasword"
@@ -548,6 +567,7 @@ da:
     all: "Alle"
     labels label: "Etiket:"
     title: "Bogmærker"
+    my labels: "Mine etiketter"
     not found: "Bogmærker giver dig en hurtig reference guide til dine foretrukne passager eller til den sidste kapitel du læser i en bestemt bog. Hvis du vil tilføje et bogmærke, skal du vælge et vers i Bibel læseren og derefter klikke på Vælg knappen i toppen af ​​læseren."
     other user not found: "%{username} har ikke gemt nogen bogmærker endnu."
     creation form errors: "Følgende fejl forhindrede dannelse af dit bogmærke:"
@@ -573,6 +593,7 @@ da:
       title field: "Titel:"
       reference field: "Reference:"
       labels field: "Etiketter (adskilt af komma)"
+      highlight field: "Markér: (kan vælges)"
       colors field: "Farve:"
       update button: "Opdater bogmærke"
       save button: "Gem bogmærke"
@@ -583,6 +604,12 @@ da:
     none me: "Du har ikke optjent nogen mærker endnu."
     none user: "%{username} har ikke optjent nogen mærker endnu."
   plans:
+    widget:
+      my plans: "Mine Planer"
+      start reading: "Start læsning"
+      view my plans: "Se Mine Planer"
+      featured plans: "Fremhævede Planer"
+      view all plans: "Se alle Planer"
     settings: "Indstillinger"
     privacy:
       visible to friends?: "Vil du have at dine aktiviteter på denne plan er synlig for dine venner?"

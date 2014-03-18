@@ -2,17 +2,19 @@ de:
   social:
     intro page:
       main heading: "Unterhaltung & Entdeckung"
-      main description: "Ein neuer Weg, die Bibel mit guten Freunden zu entdecken"
+      main description: "Entdecke die Bibel auf eine neue Weise - mit guten Freunden"
       moment:
+        user aaron: "Aaron Stahl"
+        user andy: "Andreas Ritter"
         timestamp: "vor 5 Tagen"
         title: "hat ein Lesezeichen für Psalm 31,8 angelegt."
         verse: "Ich juble vor Freude, weil du mich liebst. Dir ist meine Not nicht entgangen; du hast erkannt, wie niedergeschlagen ich bin."
         reference: "Psalm 31,8"
         discover:
-          copy: "Entdecke und lerne mit deinen Freunden, wenn sie Markierungen, Lesezeichen und Notizen hinzufügen."
-          button: "Wo soll ich beginnen?"
+          copy: "Entdecke Neues und lerne mit deinen Freunden, wenn sie Verse markieren, Lesezeichen setzen und Notizen hinzufügen."
+          button: "Wo fange ich an?"
         share:
-          copy: "Teile aufrichtige Unterhaltungen über die Heilige Schrift."
+          copy: "Tauscht euch offen über die Bibel aus."
           button: "Suche dir erst einmal ein paar Freunde."
         likes:
           info: "und 4 weiteren gefällt das"
@@ -21,9 +23,15 @@ de:
             text: "Das habe ich heute gebracht! Danke dir. Lass uns bald mal telefonieren!"
             time: "vor etwa 3 Stunden"
           second:
-            text: "Amen, ich auch! Habe dir gerade eine Mail geschickt!"
+            text: "Amen, ich auch! Habe dir gerade eine E-Mail geschickt!"
             time: "vor etwa 27 Minuten"
           field placeholder: "Schreibe einen Kommentar..."
+    widget:
+      timeline: "Chronik"
+      no activity yet: "Bis jetzt gab es keine Aktivitäten."
+    moment:
+      read all: "Alle lesen"
+      read less: "Lies weniger"
     share: "Teilen"
     my connections: "Verbundene Benutzerkonten"
     connected as: "Du bist mit %{connection} als %{username} verbunden."
@@ -146,6 +154,7 @@ de:
   find friends: "Freunde finden"
   search placeholder: "Suche..."
   search: "Suche"
+  more: "Mehr "
   book: "Buch"
   filter book: "Bücher durchsuchen..."
   save: "Speichern"
@@ -231,12 +240,20 @@ de:
   friends:
     you have N friends: "Du hast %{count} Freunde"
     none me: "Teile deine Momente in der Bibel, zum Beispiel in Form von Lesezeichen, Markierungen und Notizen mit deinen engsten Freunden und deiner Familie. "
+    find friends: "Finde Freunde"
     blank slate:
       heading: "Derzeit nicht befreundet"
       description: "Du musst mit jemandem befreundet sein, um dessen Freunde sehen zu können."
     limit notice: "Du kannst bis zu 150 Freunde haben"
     limit description: "Wenn du deine Freundschaften in der Bibel App auf Menschen begrenzt, die du kennst, schafft das eine Umgebung für ehrliche Gespräche und zum Teilen von Erfahrungen mit guten Freunden."
   friendships:
+    find friends title: "Finde Freunde"
+    search by name: "Nach Namen suchen"
+    search button: "Los geht's"
+    widget:
+      find friends title: "Finde Freunde"
+      search by name: "Suche nach Namen"
+      search button: "Los geht's"
     offer success: "Freundschaftsanfrage versendet"
     offer failure: "Fehler beim Versenden der Freundschaftsanfrage"
     create success: "Super! Ihr seid jetzt befreundet."
@@ -269,6 +286,7 @@ de:
     form:
       title field: "Titel:"
       content field: "Inhalt:"
+      highlight field: "Hervorheben (optional)"
       reference field: "Bibelstelle(n):"
       status field: "Status:"
       save button: "Speichern"
@@ -358,6 +376,7 @@ de:
     my profile: "Mein Profil"
     edit profile: "Profil bearbeiten"
     update profile: "Profil aktualisieren"
+    go to your profile: "Zum eigenen Profil"
     other user profile: "%{username}s Profil"
     my password: "Mein Passwort ändern"
     edit password: "Passwort ändern"
@@ -548,6 +567,7 @@ de:
     all: "Alle"
     labels label: "Etiketten:"
     title: "Lesezeichen"
+    my labels: "Meine Etiketten"
     not found: "Lesezeichen geben dir eine Übersicht über deine Lieblingsstellen oder bringen dich wieder zu dem Kapitel, das du zuletzt gelesen hast. Um ein Lesezeichen hinzuzufügen, wähle den gewünschten Vers in der Leseansicht und klicke oben auf \"Ausgewählt\"."
     other user not found: "%{username} hat bisher keine Lesezeichen gespeichert."
     creation form errors: "Folgende(r) Fehler verhindern die Erstellung deines Lesezeichens:"
@@ -573,6 +593,7 @@ de:
       title field: "Titel:"
       reference field: "Bibelstelle:"
       labels field: "Stichwörter (durch Komma getrennt):"
+      highlight field: "Hervorheben: (optional)"
       colors field: "Farbe:"
       update button: "Lesezeichen aktualisieren"
       save button: "Lesezeichen speichern"
@@ -583,6 +604,12 @@ de:
     none me: "Du hast bisher keine Abzeichen bekommen."
     none user: "%{username} hat bisher keine Abzeichen bekommen."
   plans:
+    widget:
+      my plans: "Meine Lesepläne"
+      start reading: "Fang an zu lesen. "
+      view my plans: "Meine Lesepläne anschauen"
+      featured plans: "Empfohlene Lesepläne"
+      view all plans: "Alle Lesepläne anschauen"
     settings: "Einstellungen"
     privacy:
       visible to friends?: "Soll das, was du in deinem Leseplan machst, für deine Freunde sichtbar sein?"

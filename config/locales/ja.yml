@@ -4,6 +4,8 @@ ja:
       main heading: "会話と発見"
       main description: "信頼できる友だちと一緒に、今までにない方法で聖書アプリを楽しめます。"
       moment:
+        user aaron: "アロン・スティール"
+        user andy: "アンディ・ナイト"
         timestamp: "5日前"
         title: "詩編31章7節をブックマークしました"
         verse: "あなたのいつくしみを喜び楽しみます。あなたがわたしの苦しみをかえりみ、わたしの悩みにみこころをとめ"
@@ -24,6 +26,12 @@ ja:
             text: "アーメン、その通りです。メールを送ります。"
             time: "約27分前"
           field placeholder: "コメントを書く…"
+    widget:
+      timeline: "タイムライン"
+      no activity yet: "まだアクティビティがありません。"
+    moment:
+      read all: "全て読む"
+      read less: "閲覧範囲を縮小"
     share: "シェア"
     my connections: "連携済みアカウント"
     connected as: "%{username} として %{connection} に連携されました。"
@@ -146,6 +154,7 @@ ja:
   find friends: "友だちを探す"
   search placeholder: "検索..."
   search: "検索"
+  more: "さらに"
   book: "書物"
   filter book: "書の名前から検索・・・"
   save: "保存する"
@@ -231,12 +240,20 @@ ja:
   friends:
     you have N friends: "%{count}人の友達がいます"
     none me: "ブックマーク、ハイライト、ノートなど聖書から学んだことを親しい友達や家族にシェアしましょう"
+    find friends: "友だちを探す"
     blank slate:
       heading: "友達ではありません"
       description: "友達リストの閲覧は友達だけに限定されています"
     limit notice: "友達を最大150人まで登録できます"
     limit description: "聖書アプリでの友達をよく知っている相手に限定することで、本音で会話でき、新しく発見したことをシェアできる環境を作ることができます。"
   friendships:
+    find friends title: "友だちを探す"
+    search by name: "名前で検索"
+    search button: "検索"
+    widget:
+      find friends title: "友だちを探す"
+      search by name: "名前で検索"
+      search button: "検索"
     offer success: "友達申請が送信されました"
     offer failure: "友達申請の送信中にエラーが発生しました"
     create success: "成功！友達になりました。"
@@ -269,6 +286,7 @@ ja:
     form:
       title field: "タイトル:"
       content field: "内容:"
+      highlight field: "ハイライト：　（選択可）"
       reference field: "参照聖句:"
       status field: "ステータス:"
       save button: "保存"
@@ -358,6 +376,7 @@ ja:
     my profile: "わたしのプロフィール"
     edit profile: "プロフィールの編集"
     update profile: "プロフィールの更新"
+    go to your profile: "自分のプロフィールを見る"
     other user profile: "%{username}さんのプロフィール"
     my password: "パスワードを変更"
     edit password: "パスワードの変更"
@@ -548,6 +567,7 @@ ja:
     all: " ブックマーク一覧"
     labels label: "ラベル:"
     title: "ブックマーク"
+    my labels: "ラベル"
     not found: "ブックマークを付けることにより、最後に読んだ箇所を思い出すことができたり、好きな聖句が書かれた箇所を見つけやすくなったり、あるいは、ある書物の中でどの章まで読んだかを思い出しやすくなります。ブックマークを付けるためには聖書リーダーの中で特定の箇所を選択し、ブックマークボタンをクリックします。"
     other user not found: "まだ %{username} さんのブックマークはありません"
     creation form errors: "以下のエラーが発生したために、ブックマークをつけることができませんでした。"
@@ -573,6 +593,7 @@ ja:
       title field: "タイトル:"
       reference field: "参照聖句:"
       labels field: "ラベル(コンマで区切ってください):"
+      highlight field: "ハイライト：（選択可）"
       colors field: "色:"
       update button: "ブックマークを更新"
       save button: "ブックマークを保存"
@@ -583,6 +604,12 @@ ja:
     none me: "まだバッジを獲得していません"
     none user: "%{username} さんはまだバッジを獲得していません"
   plans:
+    widget:
+      my plans: "マイ・プラン"
+      start reading: "読書を開始"
+      view my plans: "読書プランを見る"
+      featured plans: "特集プラン"
+      view all plans: "全ての読書プランを見る"
     settings: "設定"
     privacy:
       visible to friends?: "このプランでのあなたのアクティビティを友達に公開しますか？"

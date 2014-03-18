@@ -24,6 +24,8 @@ pl:
             text: "Amen, ja też. Wysyłam ci właśnie e-mail."
             time: "około 27 minut temu"
           field placeholder: "Napisz komentarz..."
+    moment:
+      read less: "Widok skrócony"
     share: "Podziel się"
     my connections: "Połączone konta"
     connected as: "Jesteś podłączony do serwisu %{connection} jako %{username}."
@@ -146,6 +148,7 @@ pl:
   find friends: "Znajdź przyjaciół"
   search placeholder: "Wyszukaj..."
   search: "Szukaj"
+  more: "Więcej"
   book: "Księga"
   filter book: "Filtruj księgi..."
   save: "Zapisz"
@@ -231,12 +234,16 @@ pl:
   friends:
     you have N friends: "Masz %{count} znajomych"
     none me: "Podziel się swoimi ważnymi chwilami w Biblii, takimi jak zakładki, zakreślenia i notatki, ze znajomymi i rodziną."
+    find friends: "Znajdź znajomych"
     blank slate:
       heading: "Jeszcze nie znajomi"
       description: "Musisz być znajomym tej osoby, aby widzieć jej znajomych."
     limit notice: "Możesz mieć nawet 150 znajomych"
     limit description: "Ograniczając swoją znajomość w Aplikacji Biblii do osób, które dobrze znasz, tworzysz w ten sposób warunki do uczciwej rozmowy i dzielenia się swoimi odkryciami."
   friendships:
+    find friends title: "Znajdź znajomych"
+    widget:
+      find friends title: "Znajdź znajomych"
     offer success: "Wysłano zaproszenie"
     offer failure: "Błąd, nie wysłano zaproszenia"
     create success: "Jesteście teraz znajomymi!"
@@ -583,6 +590,9 @@ pl:
     none me: "Nie zdobyłeś jeszcze żadnych odznaczeń."
     none user: "%{username} nie zdobył jeszcze żadnych odznaczeń."
   plans:
+    widget:
+      my plans: "Moje plany"
+      start reading: "Rozpocznij czytanie"
     settings: "Ustawienia"
     privacy:
       visible to friends?: "Czy chcesz, aby twoja aktywność w tym planie była widoczna dla znajomych?"

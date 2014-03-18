@@ -4,6 +4,8 @@ fr:
       main heading: "Conversation et Découverte"
       main description: "Une nouvelle façon d'explorer la Bible avec des amis de confiance"
       moment:
+        user aaron: "Jean Dupont"
+        user andy: "André Martin"
         timestamp: "il y a 5 jours"
         title: "mis Psaume 31:8 en favori"
         verse: "Je danse de joie à cause de ton amour, car tu as vu mon malheur, tu as compris ma grande souffrance."
@@ -24,6 +26,12 @@ fr:
             text: "Amen, moi aussi. Je t'envoie un email."
             time: "il y a 27 minutes"
           field placeholder: "Ecrire un commentaire..."
+    widget:
+      timeline: "Journal"
+      no activity yet: "Il n'y a encore aucune activité."
+    moment:
+      read all: "Tout lire"
+      read less: "Lire moins"
     share: "Partager"
     my connections: "Comptes liés"
     connected as: "Vous êtes connectés à %{connection} en tant que %{username}."
@@ -146,6 +154,7 @@ fr:
   find friends: "Trouver des amis"
   search placeholder: "Recherche..."
   search: "Recherche"
+  more: "Plus"
   book: "Livre"
   filter book: "Filtre par Livre"
   save: "Sauver"
@@ -231,12 +240,20 @@ fr:
   friends:
     you have N friends: "Vous avez %{count} amis"
     none me: "Partagez vos moments avec la Bible tels que les favoris, les surbrillances et les notes avec votre famille et vos amis les plus proches."
+    find friends: "Trouver des amis"
     blank slate:
       heading: "Pas encore amis"
       description: "Vous devez être ami avec cette personne pour pouvoir voir ses amis."
     limit notice: "Vous pour avoir jusqu'à 150 amis"
     limit description: "Limiter vos relations dans la Bible App aux personnes que vous connaissez bien favorise un environnement propice aux conversations honnêtes et au partage des découvertes entre amis de confiance."
   friendships:
+    find friends title: "Trouver des amis"
+    search by name: "Chercher par nom"
+    search button: "Chercher"
+    widget:
+      find friends title: "Trouver des amis"
+      search by name: "Chercher par nom"
+      search button: "Chercher"
     offer success: "Demande de contact envoyée"
     offer failure: "Erreur lors de l'envoi de la demande"
     create success: "Succès ! Vous êtes maintenant amis."
@@ -269,6 +286,7 @@ fr:
     form:
       title field: "Titre :"
       content field: "Contenu :"
+      highlight field: "Surbrillance : (optionnel)"
       reference field: "Référence(s) :"
       status field: "Statut :"
       save button: "Enregistrer"
@@ -358,6 +376,7 @@ fr:
     my profile: "Mon profil"
     edit profile: "Modifier le profil"
     update profile: "Mettre à jour le profil"
+    go to your profile: "Aller sur Votre Profil"
     other user profile: "Profil de %{username}"
     my password: "Modifier mon mot de passe"
     edit password: "Modifier le mot de passe"
@@ -548,6 +567,7 @@ fr:
     all: "Tous"
     labels label: "Étiquettes:"
     title: "Favoris"
+    my labels: "Mes Etiquettes"
     not found: "Les signets vous permettent de vous souvenir de ce que vous avez lu en dernier, vous servant ainsi de guide de référence rapide vers vos passages préférés ou encore vers le dernier chapitre que vous avez lu dans un livre en particulier. Afin de créer un signet, sélectionnez un verset dans le lecteur de la Bible, puis cliquez le bouton Signet."
     other user not found: "%{username} n'a pas encore de favoris."
     creation form errors: "L'erreur suivante a empêché la création de votre signet:"
@@ -573,6 +593,7 @@ fr:
       title field: "Titre :"
       reference field: "Référence :"
       labels field: "Étiquettes (séparées par des virgules) :"
+      highlight field: "Surbrillance : (optionnel)"
       colors field: "Couleur :"
       update button: "Mettre à jour le Favori"
       save button: "Enregistrer favori"
@@ -583,6 +604,12 @@ fr:
     none me: "Vous n'avez gagné aucun badge pour l'instant."
     none user: "%{username} n'a gagné aucun badge pour l'instant."
   plans:
+    widget:
+      my plans: "Mes plans"
+      start reading: "Commencer à lire"
+      view my plans: "Voir Mes Plans"
+      featured plans: "Plans Suggérés"
+      view all plans: "Voir Tous les Plans"
     settings: "Paramètres"
     privacy:
       visible to friends?: "Voulez-vous que votre activité relative à ce plan soit visible de vos amis ?"

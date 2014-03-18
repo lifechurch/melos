@@ -2,6 +2,8 @@ ms:
   social:
     intro page:
       main heading: "Perbualan & Penemuan"
+    moment:
+      read less: "Baca Kurang"
     share: "Beritakan"
     my connections: "Akaun yang Berkaitan"
     connected as: "Anda tersambung ke %{connection} sebagai %{username}."
@@ -124,6 +126,7 @@ ms:
   find friends: "Cari Sahabat"
   search placeholder: "Kini Mencari..."
   search: "Cari"
+  more: "Lebih"
   book: "Kitab"
   filter book: "Pilih Kitab..."
   save: "Selamatkan"
@@ -205,12 +208,16 @@ ms:
   friends:
     you have N friends: "Anda mempunyai %{kira} sahabat"
     none me: "Beritakanlah saat Alkitab anda yang istimewa - bookmark, highlight, dan nota - kepada sahabat dan keluarga anda."
+    find friends: "Cari sahabat"
     blank slate:
       heading: "Ketika ini bukannya sahabat"
       description: "Anda perlu bersahabatkan seseorang ini sekiranya anda ingin melihat senarai sahabatnya."
     limit notice: "Anda boleh mempunyai sebanyak 150 sahabat"
     limit description: "Menghadkan sahabat App Alkitab anda kepada orang yang anda sangat kenal mewujudkan persekitaran untuk perbualan yang jujur dan penemuan yang dikongsi dengan sahabat yang dipercayai."
   friendships:
+    find friends title: "Cari sahabat"
+    widget:
+      find friends title: "Cari sahabat"
     offer success: "Permintaan persahabatan dihantar"
     offer failure: "Terdapat ralat dalam penghantaran permintaan persahabatan "
     create failure: "Terdapat ralat dalam mencipta persahabatan"
@@ -553,6 +560,9 @@ ms:
     none me: "Anda belum memperolehi sebarang lencana."
     none user: "%{username} belum memperolehi sebarang lencana."
   plans:
+    widget:
+      my plans: "Pelan Saya"
+      start reading: "Mula membaca"
     settings: "Setting"
     privacy:
       visible to friends?: "Adakah anda ingin aktiviti anda dengan pelan ini dapat dilihat oleh sahabat anda?"

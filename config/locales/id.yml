@@ -2,6 +2,36 @@ id:
   social:
     intro page:
       main heading: "Perbincangan & Penemuan"
+      main description: "Cara baru menjelajahi Alkitab dengan teman-teman terpercaya"
+      moment:
+        user aaron: "Aaron Steele"
+        user andy: "Andy Knight"
+        timestamp: "5 hari yang lalu"
+        title: "Tersorot Kitab Mazmur 31:8"
+        verse: "Aku akan bersorak-sorak dan bersukacita karena kasih setia-Mu, sebab Engkau telah menilik sengsaraku, telah memperhatikan kesesakan jiwaku."
+        reference: "Mazmur 31:8"
+        discover:
+          copy: "Telusuri dan belajar bersama teman-teman Anda sewaktu mereka menambahkan sorotan, tanda halaman dan catatan mereka."
+          button: "Dimana saya dapat mulain?"
+        share:
+          copy: "Bagikan percakapan terbuka tentang Firman Tuhan."
+          button: "Mari mulai dengan mencari beberapa teman-teman."
+        likes:
+          info: "dan 4 lagi seperti ini."
+        comments:
+          first:
+            text: "Sungguh perlu mendengar tetang ini hari ini, terima kasih. Mari kita coba lanjutan lagi ini."
+            time: "kira-kira 3 jam yang lalu."
+          second:
+            text: "Amin, saya juga. Mengirimkan Anda sebuah email sekarang."
+            time: "sekitar 27 menit yang lalu"
+          field placeholder: "Tulis Komentar..."
+    widget:
+      timeline: "Waktu"
+      no activity yet: "Belum ada aktivitas sama sekali."
+    moment:
+      read all: "Terbaca Semua"
+      read less: "Membaca lebih sedikit"
     share: "Bagikan"
     my connections: "Akun terkait"
     connected as: "Anda tersambung dengan %{connection} sebagai %{username}"
@@ -124,6 +154,7 @@ id:
   find friends: "Temukan Teman"
   search placeholder: "Cari..."
   search: "Cari"
+  more: "Lebih"
   book: "Kitab"
   filter book: "Saring Kitab"
   save: "Simpan"
@@ -200,6 +231,7 @@ id:
   comments:
     view all N: "Tampilkan semua %{count} komentar"
     post comment: "Kirim komentar"
+    create success: "Sukses! Komentar Anda telah ditampilkan."
     create failure: "Komentar tidak dapat dikirim"
     destroy success: "Komentar dihapus"
     destroy failure: "Komentar tidak dapat dihapus"
@@ -208,12 +240,20 @@ id:
   friends:
     you have N friends: "Anda memiliki %{count} teman"
     none me: "Bagikan saat-saat bersama Alkitab seperti penanda, sorotan, dan catatan dengan teman terdekat Anda dan keluarga."
+    find friends: "Cari teman"
     blank slate:
       heading: "Tidak sedang berteman"
       description: "Anda harus berteman dengan orang ini untuk dapat melihat teman-teman yang dimilikinya."
     limit notice: "Anda dapat memiliki teman sebanyak 150 teman"
     limit description: "Membatasi persahabatan anda pada aplikasi Alkitab kepada orang yang Anda kenal betul akan menciptakan lingkungan yang tepat untuk berbagi perbincangan jujur dan penemuan-penemuan Anda dengan teman kepercayaan Anda."
   friendships:
+    find friends title: "Cari teman"
+    search by name: "Mencari berdasarkan nama"
+    search button: "Ke"
+    widget:
+      find friends title: "Cari teman"
+      search by name: "Mencari berdasarkan nama"
+      search button: "Ke"
     offer success: "Permohonan berteman terkirim"
     offer failure: "Kesalahan dalam mengirim permohonan untuk berteman"
     create success: "Berhasil! Sekarang Anda berteman."
@@ -246,6 +286,7 @@ id:
     form:
       title field: "Judul:"
       content field: "Isi:"
+      highlight field: "Tandai: (pilihan)"
       reference field: "Referensi:"
       status field: "Status:"
       save button: "Simpan"
@@ -335,6 +376,7 @@ id:
     my profile: "Profil saya"
     edit profile: "Sunting Profil"
     update profile: "Perbarui Profil"
+    go to your profile: "Ke Profil Saya"
     other user profile: "Profil %{username}"
     my password: "Ubah kata sandi saya"
     edit password: "Ubah Kata Sandi"
@@ -525,9 +567,11 @@ id:
     all: "Semua"
     labels label: "Label:"
     title: "Markah"
+    my labels: "Label-label saya"
     not found: "Markah memberi Anda panduan referensi cepat ke perikop favorit Anda ataupun ke pasal terakhir yang Anda baca di kitab tertentu. Untuk menambahkan markah, pilih ayat di pembaca Alkitab dan kemudian klik tombol Dipilih yang ada di bagian teratas dari pembaca."
     other user not found: "%{username} belum menyimpan markah apapun."
     creation form errors: "Kesalahan(-kesalahan) berikut menghalangi pembuatan markah Anda:"
+    create success: "Sukses! Sorotan Anda telah tersimpan."
     destroy success: "Penanda dihapus"
     destroy failure: "Kesalahan dalam menghapus penanda"
     update success: "Penanda telah diperbarui"
@@ -549,6 +593,7 @@ id:
       title field: "Judul:"
       reference field: "Referensi:"
       labels field: "Label-label (dipisahkan koma):"
+      highlight field: "Tandai: (pilihan)"
       colors field: "Warna:"
       update button: "Perbarui penanda"
       save button: "Simpan Markah"
@@ -559,6 +604,12 @@ id:
     none me: "Anda belum memperoleh lencana apapun."
     none user: "%{username} belum memperoleh lencana apapun."
   plans:
+    widget:
+      my plans: "Programku"
+      start reading: "Mulai baca"
+      view my plans: "Tampilan Rencana Bacaan Saya"
+      featured plans: "Rencana Bacaan Pilihan"
+      view all plans: "Tampilkan semua Rencana Bacaan"
     settings: "Pengaturan"
     privacy:
       visible to friends?: "Apakah Anda ingin aktivitas rencana bacaan ini terlihat oleh teman-teman Anda?"

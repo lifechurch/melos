@@ -4,6 +4,8 @@ hu:
       main heading: "Beszélgetés és felfedezés"
       main description: "Egy új mód, hogy a Bibliát megbízható barátaiddal tanulmányozd"
       moment:
+        user aaron: "Aaron Steele"
+        user andy: "Andy Knight"
         timestamp: "5 nappal ezelőtt"
         title: "Könyvjelző került a Zsolt. 31:8-hoz"
         verse: "Hadd vigadjak és örüljek a te kegyelmednek, a miért meglátod nyomorúságomat és megismered a háborúságokban lelkemet"
@@ -24,6 +26,12 @@ hu:
             text: "Amen, én is. Küldök most egy e-mailt."
             time: "csaknem 27 perccel ezelőtt"
           field placeholder: "Írj egy megjegyzést..."
+    widget:
+      timeline: "Idővonal"
+      no activity yet: "Még nem történt aktívitás."
+    moment:
+      read all: "Olvasd el az egészet"
+      read less: "Olvass kevesebbet"
     share: "Megosztás"
     my connections: "Csatlakoztatott Fiókok"
     connected as: "Kapcsolódott a / (kapcsolódás) mint / (felhasználónév)."
@@ -146,6 +154,7 @@ hu:
   find friends: "Barátok keresése"
   search placeholder: "Keresés..."
   search: "Keresés"
+  more: "Több"
   book: "Könyv"
   filter book: "Könyvek szűrése..."
   save: "Mentés"
@@ -223,7 +232,7 @@ hu:
     view all N: "Nézd meg mind a %{count} megjegyzést"
     post comment: "Postolj egy észrevételt"
     create success: "Sikerült! A megjegyzésedet posztoltuk."
-    create failure: "Az észrevételt nem tudtuk postolni"
+    create failure: "Az észrevételt nem tudtuk posztolni"
     destroy success: "Megjegyzés törölve"
     destroy failure: "A megjegyzést nem lehetett törölni"
     form:
@@ -231,17 +240,25 @@ hu:
   friends:
     you have N friends: "Van %{count} barátod"
     none me: "Oszd meg az olyan pillanataidat a Bibliádban, mint a könyvjelzők, kiemelések és jegyzetek, a legközelebbi barátaiddal és a családoddal."
+    find friends: "Barátok keresése"
     blank slate:
       heading: "Jelenleg nincsenek barátaid"
       description: "Barátoknak kell lennetek ezzel a személlyel ahhoz, hogy láthasd a barátait."
     limit notice: "Akár 150 barátod is lehet"
-    limit description: "Ha korlátozod a Biblia App barátaidat olyan emberekre akiket jól ismersz, ez őszinte beszélgetésekre teremt lehetőséget és közös felfedezésekre megbízható barátokkal."
+    limit description: "Ha korlátozod a Biblia alkalmazáson a barátaidat olyan emberekre, akiket jól ismersz, ez  lehetőséget teremt őszinte beszélgetésekre és közös felfedezésekre a megbízható barátaiddal."
   friendships:
+    find friends title: "Barátok keresése"
+    search by name: "Keresés a név alapján"
+    search button: "Menj"
+    widget:
+      find friends title: "Barátok keresése"
+      search by name: "Keresés a név alapján"
+      search button: "Menj"
     offer success: "Barátkérés elküldve"
     offer failure: "Hiba történt a barátkérés elküldésekor"
     create success: "Sikerült! Most már barátok vagytok."
-    create failure: "Hib törtét a barátság létrehozásában"
-    destroy success: "Kérés visszautasítva"
+    create failure: "Hiba törtét a barátság létrehozásában"
+    destroy success: "Kérés elutasítva"
     destroy failure: "Hiba történt a barátság visszautasításakor"
     requests title: "Függő kapcsolatok"
     requests view all: "Nézd meg az összes barátkérést"
@@ -269,6 +286,7 @@ hu:
     form:
       title field: "Cím:"
       content field: "Tartalom:"
+      highlight field: "Kiemelés: (választható)"
       reference field: "Hivatkozás(ok):"
       status field: "Állapot:"
       save button: "Mentés"
@@ -358,6 +376,7 @@ hu:
     my profile: "Profilom"
     edit profile: "Profil javítása"
     update profile: "Profil frissítése"
+    go to your profile: "Lépj be a profilodba"
     other user profile: "%{username} profilja"
     my password: "Jelszavam megváltoztatása"
     edit password: "Jelszó változtatás"
@@ -548,6 +567,7 @@ hu:
     all: "Összes"
     labels label: "Címkék:"
     title: "Könyvjelzők"
+    my labels: "Címkéim"
     not found: "A könyvjelzők gyors hozzáférést jelentenek a kedvenc verseidhez vagy egy bizonyos könyv utoljára olvasott fejezetéhez. Könyvjelző hozzáadásához válaszd ki a verset a Bibliaolvasóban és kattints a Kiválasztott gombra az olvasó felső részén."
     other user not found: "%{username} egy könyvjelzőt sem mentett még el."
     creation form errors: "A következő hiba(k) akadályozta(k) meg a könyvjelződ létrehozását:"
@@ -573,6 +593,7 @@ hu:
       title field: "Cím:"
       reference field: "Hivatkozás:"
       labels field: "Címkék (vesszővel elválasztva):"
+      highlight field: "Kiemelés: (választható)"
       colors field: "Szín:"
       update button: "frissítsd a könyvjelzőt"
       save button: "Könyvjelző mentése"
@@ -583,6 +604,12 @@ hu:
     none me: "Még nem szereztél jelvényt."
     none user: "%{username} még nem szerzett jelvényt."
   plans:
+    widget:
+      my plans: "Terveim"
+      start reading: "Kezdj el olvasni"
+      view my plans: "Nézdd meg a terveimet!"
+      featured plans: "Sokat említett tervek"
+      view all plans: "Nézdd meg az összes tervet!"
     settings: "Beállítások"
     privacy:
       visible to friends?: "Szeretnéd, ha az ezzel a tervvel kapcsolatos aktivitásodat láthatnák a barátaid?"
@@ -934,23 +961,23 @@ hu:
           dialog name: "Megvan a Biblia App?"
           dialog desc: "Szeretem a Biblia alkalmazást! Sokat segített abban, hogy a Bibliát a mindennapjaim részévé tegyem. Lehetőséget ad a kiemelésre, a hangzó Biblia hallgatására, jegyzetek készítésére, napi áhitatok olvasására...még videót is nézhetek! Töltsd le most (ingyen): http://www.bible.com/app                                       "
         tw:
-          tweet: "@YouVersion BibleApp mindig megjelenik otthon a képernyőmön.Olvasd, nézd, hallgasd, oszd meg...ingyen letölthető:bible.com/app"
+          tweet: "@YouVersion BibleApp mindig megjelenik otthon a képernyőmön. Olvasd, nézd, hallgasd és oszd meg...ingyen letölthető: bible.com/app"
         em:
           subject: "Van Biblia alkalmazásod?"
-          body: "Szeretem a Biblia App-ot a YouVersion-tól és szerintem neked is tetszene. Mostanában sokkal többször nyitom ki a Bibliát, mert nagyon könnyű olvasni, nézni, hallgatni és megosztani. Olvasási terveket is tartalmaz, amelyeket a Bibliából választottak ki, és mindennap rám várnak.\n\nItt szerezheted meg (ingyen!) lényegében bármilyen mobil eszközre:\nhttp://www.bible.com/app"
+          body: "Szeretem  a YouVersion Biblia alkalmazását, és szerintem neked is tetszene. Mostanában sokkal többször nyitom ki a Bibliát, mert nagyon könnyű olvasni, nézni, hallgatni és megosztani. Olvasási terveket is tartalmaz, amelyeket a Bibliából választottak ki, és mindennap rám várnak.\n\nItt szerezheted meg (ingyen!) lényegében bármilyen mobil eszközre:\nhttp://www.bible.com/app"
       body:
-        p1: "Július 10. nagy nap lesz. Nem csupán a Biblia App 5. születésnapját, de az Apple iTunes Store 5 évvel ezelőtti indulását is jelöli."
-        p2: "Még nagyobb? A te segítségeddel ezen a napon éri el a Biblia App a 100 millió letöltést."
+        p1: "Július 10. nagy nap lesz. Nem csupán a Biblia alkalmazás 5. születésnapját, de az Apple iTunes Store 5 évvel ezelőtti indulását is jelöli."
+        p2: "Még nagyobb? A te segítségeddel ezen a napon éri el a Biblia alaklmazás a 100 millió letöltést."
         p3: "Megtanultuk, hogy Isten ilyen mérföldköveket használ a még nagyobb növekedés eléréséhez."
         p4: "Írjunk együtt történelmet."
-        after p1: "A YouVersion azoknak az embereknek a globális szervezetét képviseli, akik szenvedélyesen segítenek másoknak belemélyedni Isten Igéjébe. Minden Biblia egyesületnek és Biblia kiadónak, egyháznak, lelkipásztornak és önkéntesnek köszönjük a bőkezűségét! "
+        after p1: "A YouVersion azoknak az embereknek a globális szervezetét képviseli, akik szenvedélyesen segítenek másoknak belemélyedni Isten Igéjébe. Minden Biblia egyesületnek és Biblia kiadónak, egyháznak, lelkipásztornak és önkéntesnek köszönjük a nagyvonalúságát! "
         after p2: "Ami a legizgalmasabb ezzel a mérföldkővel kapcsolatban az maga amit jelképez: az emberek eddig soha nem tapasztalt módon olvassák a Bibliát. Csodálatos látni amit Isten tesz, és úgy gondoljuk, hogy ez még csak a kezdet. <em>100 millióval kezdődik</em>."
       ad:
-        title: "A Biblia App teljesen ingyenes és egy nagyszerű eszköz a Biblia felfedezéséhez."
+        title: "A Biblia alkalmazás teljesen ingyenes és egy nagyszerű eszköz a Biblia felfedezéséhez."
         copy: "Olvasd, hallgasd, nézd, oszd meg. Szerezd meg a Biblia App-ot az okostelefonodra vagy tabletedre: <a href='http://bible.com/app'>Letöltés most</a>"
       sidebar:
         tagline: "Írjunk együtt történelmet."
-        button: "Biblia App megosztása"
+        button: "Biblia alkalmazás megosztása"
   ui:
     pagination:
       next page: "Következő oldal"

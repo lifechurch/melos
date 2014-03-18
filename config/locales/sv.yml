@@ -4,6 +4,8 @@ sv:
       main heading: "Samtal & Utforskning"
       main description: "Ett nytt sätt att utforska Bibeln tillsammans med nära vänner"
       moment:
+        user aaron: "Pär Hansson"
+        user andy: "Jonas Söderberg"
         timestamp: "5 dagar sedan"
         title: "har bokmärkt Psaltaren 31:8"
         verse: "Jag vill jubla av glädje över din godhet, du som såg mitt elände och tog dig an mig när jag led."
@@ -18,12 +20,18 @@ sv:
           info: "och ytterligare 4 gillar detta"
         comments:
           first:
-            text: "Tack, behövde verkligen höra det idag. Låt oss höras snart igen!"
+            text: "Tack, behövde verkligen höra detta idag. Hoppas vi hörs snart igen!"
             time: "nästan 3 timmar sedan"
           second:
-            text: "Amen till mig. Skickar dig ett e-brev nu."
+            text: "Amen till det. Skickar ett mail till dig nu."
             time: "nästan 27 minuter sedan"
           field placeholder: "Skriv en kommentar..."
+    widget:
+      timeline: "Tidslinje"
+      no activity yet: "Det har inte varit någon aktivitet än."
+    moment:
+      read all: "Läs allt"
+      read less: "Läs mindre"
     share: "Dela"
     my connections: "Anslutna konton"
     connected as: "Du är ansluten till %{connection} som %{username}."
@@ -146,6 +154,7 @@ sv:
   find friends: "Hitta vänner"
   search placeholder: "Sök..."
   search: "Sök"
+  more: "Mer"
   book: "Bok"
   filter book: "Filtrera böcker..."
   save: "Spara"
@@ -231,12 +240,20 @@ sv:
   friends:
     you have N friends: "Du har %{count} vänner"
     none me: "Dela dina upplevelser i Bibeln så som bokmärken, markeringar och anteckningar med dina närmaste vänner och familj."
+    find friends: "Hitta vänner"
     blank slate:
       heading: "Inte vänner än"
       description: "Du måste vara vän med denna person för att kunna se dess vänner."
     limit notice: "Du kan ha så många som 150 vänner"
     limit description: "Begränsa vilka du bli vänner med i Bibelappen till folk du känner väl för att skapa en miljö av ärliga samtal och gemensam utforskning med nära vänner,"
   friendships:
+    find friends title: "Hitta vänner"
+    search by name: "Sök med namn"
+    search button: "Sök"
+    widget:
+      find friends title: "Hitta vänner"
+      search by name: "Sök med namn"
+      search button: "Sök"
     offer success: "Vänförfrågan skickad"
     offer failure: "Kunde inte skicka vänskapsförfrågan"
     create success: "Ni är nu vänner."
@@ -269,6 +286,7 @@ sv:
     form:
       title field: "Titel:"
       content field: "Innehåll:"
+      highlight field: "Markering: (valfritt)"
       reference field: "Referens(er):"
       status field: "status:"
       save button: "Spara"
@@ -358,6 +376,7 @@ sv:
     my profile: "Min profil"
     edit profile: "Redigera profil"
     update profile: "Uppdatera profil"
+    go to your profile: "Gå till din profil"
     other user profile: "%{username}s profil"
     my password: "Ändra mitt lösenord"
     edit password: "Ändra lösenord"
@@ -548,6 +567,7 @@ sv:
     all: "Alla"
     labels label: "Etiketter:"
     title: "Bokmärken"
+    my labels: "Mina etiketter "
     not found: "Bokmärken ger dig en snabb referens till dina favoritpassager eller till det senaste kapitlet du läste i en viss bok. För att lägga till ett bokmärke väljer du versen i Bibelläsaren och klickar sedan på knappen Markerat högst upp i läsaren."
     other user not found: "%{username} har inte sparat några bokmärken än."
     creation form errors: "Följande fel gjorde att du inte kunde skapa ditt bokmärke:"
@@ -573,6 +593,7 @@ sv:
       title field: "Titel:"
       reference field: "Referens:"
       labels field: "Etiketter (kommaseparerade)"
+      highlight field: "Markering: (valfritt)"
       colors field: "Färg:"
       update button: "Uppdatera bokmärke"
       save button: "Spara bokmärke"
@@ -583,6 +604,12 @@ sv:
     none me: "Du har inte fått några medaljer än."
     none user: "%{username} har inte fått några medaljer än."
   plans:
+    widget:
+      my plans: "Mina planer"
+      start reading: "Börja läsa"
+      view my plans: "Visa mina planer"
+      featured plans: "Föreslagna planer"
+      view all plans: "Visa alla planer"
     settings: "Inställningar"
     privacy:
       visible to friends?: "Vill du att dina aktiviteter i denna plan ska vara synliga för dina vänner?"

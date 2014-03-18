@@ -2,6 +2,8 @@ es:
   social:
     intro page:
       main heading: "Conversación y Descubrimientos"
+    moment:
+      read less: "Leer menos"
     share: "Compartir"
     my connections: "Cuentas Conectadas"
     connected as: "Está conectado a %{connection} como %{username}."
@@ -124,6 +126,7 @@ es:
   find friends: "Encontrar Amigos"
   search placeholder: "Buscar..."
   search: "Buscar"
+  more: "Más"
   book: "Libro"
   filter book: "Filtrar Libros…"
   save: "Guardar"
@@ -199,18 +202,22 @@ es:
     post comment: "Publicar un comentario"
     create failure: "El comentario no pudo ser publicado"
     destroy success: "Comentario eliminado"
-    destroy failure: "El comentario no pudo ser guardado"
+    destroy failure: "El comentario no pudo ser eliminado"
     form:
       save button: "Publicar"
   friends:
     you have N friends: "Tiene %{count} amigos"
     none me: "Comparta sus momentos en la Biblia, tales como marcadores, resaltados, y notas con sus amigos más cercanos y familia."
+    find friends: "Encontrar amigos"
     blank slate:
       heading: "Actualmente no hay amigos"
       description: "Debe tener amistad con esta persona para poder ver sus amigos"
     limit notice: "Puede tener hasta 150 amigos"
     limit description: "Limitar sus amistades de la Biblia App a personas que conoce bien, propicia un ambiente de conversaciones francas y para compartir descubrimientos con amigos de confianza."
   friendships:
+    find friends title: "Encontrar amigos"
+    widget:
+      find friends title: "Encontrar amigos"
     offer success: "Solicitud de amistad enviada"
     offer failure: "Error al enviar solicitud de amistad"
     create failure: "Error al crear amistad"
@@ -553,6 +560,9 @@ es:
     none me: "Usted no ha obtenido ninguna insignia aún."
     none user: "%{username} no ha obtenido ninguna insignia aún."
   plans:
+    widget:
+      my plans: "Mis Planes"
+      start reading: "Iniciar lectura"
     settings: "Configuración"
     privacy:
       visible to friends?: "¿Le gustaría que su actividad en este plan sea visible a sus amigos?"

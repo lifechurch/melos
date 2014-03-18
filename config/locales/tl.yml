@@ -231,12 +231,16 @@ tl:
   friends:
     you have N friends: "Mayroon kang %{count} na mga kaibigan"
     none me: "Ibahagi ang mga ugnayan sa Bibliya gaya ng mga bookmark, haylayt, at tala sa mga kaibigan at pamilya."
+    find friends: "Maghanap ng mga Kaibigan"
     blank slate:
       heading: "Hindi pa magkaibigan sa ngayon"
       description: "Kailangang maging magkaibigan kayo ng taong ito upang makita ang kaniyang mga kaibigan."
     limit notice: "Maaring magkaroon nang hanggang 150 na mga kaibigan"
     limit description: "Ang paglimita ng iyong mga pagkakaibigan sa Bible App sa mga taong iyong kakilala ay lumilikha ng isang kapaligiran ng tapat na mga pag-uusap at mga naibabahaging pagkatuklas kasama ang mga kaibigan."
   friendships:
+    find friends title: "Maghanap ng mga Kaibigan"
+    widget:
+      find friends title: "Maghanap ng mga Kaibigan"
     offer success: "Naipadala ang hiling na maging magkaibigan"
     offer failure: "May naging pagkakamali sa pagpapadala ng hiling na maging magkaibigan"
     create success: "Tagumpay! Kayo ay magkaibigan na."
@@ -583,6 +587,9 @@ tl:
     none me: "Wala ka pang mga sagisag na nakukuha."
     none user: "Si %{username} ay hindi pa nakakakuha ng anumang sagisag."
   plans:
+    widget:
+      my plans: "Mga Plano Ko"
+      start reading: "Simulan ang pagbabasa"
     settings: "Mga Setting"
     privacy:
       visible to friends?: "Gusto mo bang ipakita sa mga kaibigan ang mga gawain mo patungkol sa planong ito?"

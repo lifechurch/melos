@@ -24,6 +24,12 @@ mk:
             text: "Амин, и јас исто така. Ти праќам е-пошта сега."
             time: "пред 27 минути"
           field placeholder: "Напиши коментар..."
+    widget:
+      timeline: "Временска скала"
+      no activity yet: "Сеуште нема никаква активност."
+    moment:
+      read all: "Прочитај сѐ"
+      read less: "Прочитај помалку"
     share: "Сподели"
     my connections: "Поврзани профили"
     connected as: "Поврзан си со %{connection} како %{username}."
@@ -146,6 +152,7 @@ mk:
   find friends: "Најди пријатели"
   search placeholder: "Барај..."
   search: "Барај"
+  more: "Повеќе"
   book: "Книга"
   filter book: "Филтрирај книги.."
   save: "Зачувај"
@@ -231,12 +238,20 @@ mk:
   friends:
     you have N friends: "Имаш %{count} пријатели"
     none me: "Сподели твои моменти од Библијата како обележувачи, нагласувања и белешки со твоите најблиски пријатели и фамилија."
+    find friends: "Најди пријатели"
     blank slate:
       heading: "Во моментов не сте пријатели"
       description: "Мораш да бидеш пријател со оваа личност за да ги погледнеш нејзините пријатели."
     limit notice: "Можеш да имаш 150 пријатели"
     limit description: "Ограничувањето на пријателствата во Bible App со луѓе кои ги познавате добро, создаваат средина за искрени разговори и споделени искуства со доверливи пријатели."
   friendships:
+    find friends title: "Најди пријатели"
+    search by name: "Барај по име"
+    search button: "Оди"
+    widget:
+      find friends title: "Најди пријатели"
+      search by name: "Барај по име"
+      search button: "Оди"
     offer success: "Барањето за пријателство е испратено"
     offer failure: "Грешка во испраќањето на барање за пријателство"
     create success: "Успех! Сега сте пријатели."
@@ -269,6 +284,7 @@ mk:
     form:
       title field: "Наслов:"
       content field: "Содржина:"
+      highlight field: "Нагласи: (опционално)"
       reference field: "Референци:"
       status field: "Статус:"
       save button: "Зачувај"
@@ -358,6 +374,7 @@ mk:
     my profile: "Мојот профил"
     edit profile: "Уреди профил"
     update profile: "Ажурирај профил"
+    go to your profile: "Оди до твојот профил"
     other user profile: "профилот на %{username}"
     my password: "Промени ја мојата лозинка"
     edit password: "Смени ја лозинката"
@@ -548,6 +565,7 @@ mk:
     all: "Сите"
     labels label: "Етикети:"
     title: "Обележувачи"
+    my labels: "Мои обележувања"
     not found: "Обележувачите овозможуваат брз пристап до омилените пасуси или до последното поглавје што го читаш во некоја книга од Библијата. За да создадеш обележувач, избери стих во читачот на Библијата што го користиш и кликни на копчето \"Селектирано\" на врвот од читачот."
     other user not found: "%{username} се уште нема зачувано обележувачи."
     creation form errors: "Следниве грешки го спречија создавањето обележувач:"
@@ -573,6 +591,7 @@ mk:
       title field: "Наслов:"
       reference field: "Дел од Библијата:"
       labels field: "Етикети (одделени со запирка):"
+      highlight field: "Нагласи: (опционално)"
       colors field: "Боја:"
       update button: "Ажурирај обележувач"
       save button: "Зачувај го обележувачот"
@@ -583,6 +602,12 @@ mk:
     none me: "Немаш добиено ниту еден беџ."
     none user: "Корисникот %{username} нема добиено ниту еден беџ."
   plans:
+    widget:
+      my plans: "Мои планови"
+      start reading: "Започни со читање"
+      view my plans: "Види ги моите планови"
+      featured plans: "Дополнителни планови"
+      view all plans: "Види ги сите планови"
     settings: "Уредувања"
     privacy:
       visible to friends?: "Дали би сакал твојата активност со овој план да биде видлива за твоите пријатели?"

@@ -4,6 +4,8 @@ ko:
       main heading: "대화와 발견"
       main description: "친한 친구들과 함께 성경을 읽는 새로운 방법"
       moment:
+        user aaron: "애론 스틸"
+        user andy: "앤디 나이트"
         timestamp: "5일 전"
         title: "시편 31:7을 책갈피"
         verse: "나의 고통을 아시고  내 영혼의 괴로움을 감싸주시는  멈추지 않는 사랑에 감사드리며 기뻐합니다."
@@ -24,6 +26,12 @@ ko:
             text: "저도 역시 아멘입니다. 지금 이메일을 보냅니다."
             time: "약 27 분 전"
           field placeholder: "댓글을 쓰세요..."
+    widget:
+      timeline: "타임라인"
+      no activity yet: "아직 아무 활동도 없습니다."
+    moment:
+      read all: "모두 읽기"
+      read less: "일부 보기"
     share: "공유"
     my connections: "접속 계정"
     connected as: "%{connection} 에 %{username} 사용자명으로 접속되었습니다."
@@ -98,7 +106,7 @@ ko:
   next step connections: "다음: 여러분의 계정을 연동하셔서 다른 친구들을 찾아보세요."
   no notes found: "%{username}님은 작성하신 노트가 없습니다,."
   no recent activity: "%{username}님의 최근 활동이 없습니다."
-  no badges found yourself: "아직 획득한 뱃지가 없습니다."
+  no badges found yourself: "아직 받으신 뱃지가 없습니다."
   no badges found other: "%{username}님은 아직 받은 배지가 없습니다."
   see users badges: "%{username}님이 받은 배지 보기"
   bookmark: "책갈피"
@@ -146,6 +154,7 @@ ko:
   find friends: "친구찾기"
   search placeholder: "검색 ..."
   search: "검색"
+  more: "더 보기"
   book: "성경"
   filter book: "성경 필터..."
   save: "저장"
@@ -201,12 +210,12 @@ ko:
       comment: "댓글"
       comment title: "모든 댓글 보기"
       edit: "편집"
-      edit highlight title: "하일라이트 수정"
+      edit highlight title: "하이라이트 수정"
       edit bookmark title: "책갈피 수정"
       edit note title: "노트 수정"
       delete: "삭제"
       delete confirm: "확실합니까?"
-      delete highlight title: "하일라이트 삭제"
+      delete highlight title: "하이라이트 삭제"
       delete bookmark title: "책갈피 삭제"
       delete note title: "노트 삭제"
   notifications:
@@ -230,13 +239,21 @@ ko:
       save button: "올리기"
   friends:
     you have N friends: "%{count}명의 친구가 있습니다."
-    none me: "성경 속의 책갈피, 하일라이트 노트 등을 친구 가족들과 나누세요."
+    none me: "성경 속의 책갈피, 하이라이트 노트 등을 친구 가족들과 나누세요."
+    find friends: "친구찾기"
     blank slate:
       heading: "친구가 아닙니다."
       description: "친구들을 보기 위해서는 이 회원님과 먼저 친구가 되어야 합니다."
     limit notice: "최대 150명의 친구를 만드실 수 있습니다."
     limit description: "성경 앱 친구 관계를 잘 아는 사람들로 제한하는 것이 믿을 수 있는 친구들과의 진솔한 대화와 발견한 것들을  나눌 수 있는 환경을 조성합니다."
   friendships:
+    find friends title: "친구찾기"
+    search by name: "이름으로 검색"
+    search button: "가기"
+    widget:
+      find friends title: "친구찾기"
+      search by name: "이름으로 검색"
+      search button: "가기"
     offer success: "친구 신청 보냄"
     offer failure: "친구신청 오류"
     create success: "회원님은 이제 친구입니다"
@@ -269,6 +286,7 @@ ko:
     form:
       title field: "제목:"
       content field: "내용:"
+      highlight field: "하이라이트: (선택사항)"
       reference field: "참조구절:"
       status field: "상태:"
       save button: "저장"
@@ -358,6 +376,7 @@ ko:
     my profile: "내 프로필"
     edit profile: "프로필 수정"
     update profile: "프로필 업데이트"
+    go to your profile: "프로필로 가기"
     other user profile: "%{username}님의 프로필"
     my password: "비밀번호 변경"
     edit password: "비밀번호 변경"
@@ -487,8 +506,8 @@ ko:
       general text: "전면 동의: 이 이용약관은 사용자와 LifeChurch.tv 간의 전면 동의를 전제로 하며, YouVersion에 대해 사용자와 LifeChurch.tv 간의 사전 동의를 대체하여 사용자의 YouVersion 이용을 좌우합니다. 또한 사용자는 추가 조건의 대상이 됩니다.\n법률 조항 선택: 이 사용약관과 사용자와 LifeChurch.tv의 관계는 법률 규정의 충돌과 상관없이 오클라호마 주 법의 지배를 받습니다. 사용자와 LifeChurch.tv는 오클라호마 내의 오클라호마 카운티에 위치한 법정의 개인적이며 독점적인 관할에 따를 것에 동의합니다.\n권리 포기 및 분리가능 조항: LifeChurch.tv가 사용약관의 권리나 규정을 실행하거나 실시하지 못한 경우는 그러한 권리나 규정을 포기하는 것으로 여길 수 없습니다. 권한이 있는 관할 기관에서 그러한 사용약관 규정이 유효하지 않다고 판단하는 경우에라도, 당사자들은 법원이 당사자들의 목적에 대하여 그 조항에 반영된 대로 실행하도록 힘써야 하며, 이 사용조항의 다른 조항들은 완전히 유효하다는 점에 동의합니다.\n생존자권이나 양도권 없음: 사용자의 LifeChurch.tv 계정은 양도할 수 없으며 사용자의 계정에 있는 LifeChurch.tv ID나 컨텐츠에 대한 권리는 사용자가 사망한 후 종료된다는 점에 동의합니다. 사망진단서 사본을 수령하면 LifeChurch.tv는 해당 사용자의 계정을 종료시키고 그 계정에 속한 모든 컨텐츠를 영구 삭제할 수 있습니다.\n출소기한법: YouVersion이나 이 사용약관으로 인한, 또는 그 사용으로 인한 요청이나 조치는 그러한 요청이나 조치가 제기된 지 1년 내에 제출되어야 하며, 그렇지 않을 시 어떠한 법령이나 법규가 이를 반대한다 할지라도 영구 금지된다는 점을 이해하고 동의합니다.\n이 사용약관 내 조항 표제는 편의상 쓰여졌으며 법적, 계약적 효력이 없습니다."
     profile:
       blank slate:
-        heading: "(아직) 아무것도 볼것이 없어요, 그냥 지나가세요"
-        description: "성경이나 친구들의 활동에 참여해주세요, 이 페이지에서 당신의 활동목록을 보여줄 겁니다"
+        heading: "아직 보여드릴 것이 없습니다."
+        description: "성경이나 친구들의 활동에 참여해주세요, 여기에 회원님의 활동 기록을 표시해 줄 겁니다"
       visit friend: "%{friend}님 프로필 보기"
       tab activity: "활동"
       tab friends: "내 친구"
@@ -549,6 +568,7 @@ ko:
     all: "전체책갈피"
     labels label: "라벨:"
     title: "책갈피"
+    my labels: "나의 라벨"
     not found: "책갈피는 좋아하는 구절이나 마지막으로 읽은 부분으로 즉시 이동할 수 있도록 도와드립니다. 책갈피를 해두기 위해서는, 먼저 성경 리더에서 원하는 구절을 선택한 후 리더 상단의 '선택' 버튼을 클릭하면 됩니다."
     other user not found: "%{username}님이 등록한 책갈피는 아직 없습니다."
     creation form errors: "아래의 이유로 인해서 책갈피가 만들어지지 않았습니다."
@@ -574,6 +594,7 @@ ko:
       title field: "제목:"
       reference field: "참조:"
       labels field: "라벨 (컴마로 구분):"
+      highlight field: "하이라이트: (선택사항)"
       colors field: "색깔:"
       update button: "책갈피 업데이트"
       save button: "책갈피 저장"
@@ -581,9 +602,15 @@ ko:
     earned a badge: "배지 획득"
     user badges: "%{user}님의 배지"
     earned date: "%{username}님이 %{ago} 전에 받음"
-    none me: "아직 획득한 배지가 없습니다."
+    none me: "아직 받으신 배지가 없습니다."
     none user: "%{username}님은 아직 받은 배지가 없습니다."
   plans:
+    widget:
+      my plans: "나의 계획"
+      start reading: "읽기 시작"
+      view my plans: "나의 계획 보기"
+      featured plans: "특별 계획"
+      view all plans: "전체 계획 보기"
     settings: "설정"
     privacy:
       visible to friends?: "이 묵상 계획과 관련된 회원님의 활동이 친구들에게 보여지길 원하십니까?"
@@ -737,14 +764,14 @@ ko:
       description: "성경을 읽으는 중 원하시는 말씀을 선택하여 하이라이트 하세요. 다시 이곳으로 돌아와서 다시 보거나, 수정 혹은 삭제 하실 수 있습니다."
     none user: "%{username}님은 하이라이트하신 말씀이 없습니다"
     choose color: "색깔을 선택하세요."
-    create success: "하일라이트가 저장되었습니다."
+    create success: "하이라이트가 저장되었습니다."
     create failure: "하이라이트 저장오류"
     destroy success: "하이라이트 삭제"
     destroy failure: "하이라이트 삭제 오류"
     creation error: "죄송합니다. 하이라이트를 할 수 없습니다."
     delete error: "죄송합니다. 하이라이트를 제거 할 수 없습니다."
     form:
-      save button: "하일라이트 저장"
+      save button: "하이라이트 저장"
   searching:
     bible: "성경"
     plans: "묵상"
@@ -933,7 +960,7 @@ ko:
         with friends: "친구들에게 알려 주세요."
         fb:
           dialog name: "성경 앱을 갖고 계신가요?"
-          dialog desc: "성경 앱을 정말 사랑합니다! 성경 말씀이 제 삶을 일부가 되도록 해주고 있습니다.  말씀을 하일라이트하고, 오디오 성경을 듣고, 노트를 만들고, 묵상계획을 갖도록 해줄 뿐 아니라 동영상도 볼 수있습니다! 지금 다운로드 하세요.(무료입니다.):  http://www.bible.com/app"
+          dialog desc: "성경 앱을 정말 사랑합니다! 성경 말씀이 제 삶을 일부가 되도록 해주고 있습니다.  말씀을 하이라이트하고, 오디오 성경을 듣고, 노트를 만들고, 묵상계획을 갖도록 해줄 뿐 아니라 동영상도 볼 수있습니다! 지금 다운로드 하세요.(무료입니다.):  http://www.bible.com/app"
         tw:
           tweet: "The @YouVersion의 성경앱은 제 첫화면에 늘 자리하고 있습니다. 읽고, 보고, 듣고 그리고 공유하기. 무료 성경 앱 하나로 모두 가능합니다 : bible.com/app "
         em:

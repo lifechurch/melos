@@ -1,15 +1,17 @@
 ro:
   social:
     intro page:
-      main heading: "Conversație și explorare"
+      main heading: "Discută și Descoperă"
       main description: "Un nou mod de a explora Biblia cu prietenii tăi apropiați"
       moment:
+        user aaron: "Aron Oțel"
+        user andy: "Andrei Militaru"
         timestamp: "Cu 5 zile în urmă"
-        title: "s-a marcat Psalmul 31:7"
+        title: "a marcat Psalmul 31:7"
         verse: "Fă-mă să mă înveselesc și să mă bucur de îndurarea Ta, căci vezi ticăloșia mea și știi neliniștea sufletului meu."
         reference: "Psalmul 31:7"
         discover:
-          copy: "Descoperă împreună cu prietenii în pe măsură ce aceștia adaugă evidențieri, marcaje și notițe."
+          copy: "Descoperă împreună cu prietenii tăi pe măsură ce aceștia adaugă evidențieri, marcaje și notițe."
           button: "De unde pot să încep?"
         share:
           copy: "Poartă discuții sincere despre Scriptură."
@@ -24,6 +26,12 @@ ro:
             text: "Amin, deasemenea. Îți trimit un e-mail acum."
             time: "cu 27 de minute în urmă"
           field placeholder: "Scrie un comentariu..."
+    widget:
+      timeline: "Cronologie"
+      no activity yet: "Nu există încă activități."
+    moment:
+      read all: "Citește tot"
+      read less: "Vezi mai puțin"
     share: "Partajează"
     my connections: "Conturi conectate"
     connected as: "Ești conectat la %{connection} ca și %{username}."
@@ -146,6 +154,7 @@ ro:
   find friends: "Găsește prieteni"
   search placeholder: "Caută..."
   search: "Caută"
+  more: "Mai mult"
   book: "Cartea"
   filter book: "Filtrare cărți..."
   save: "Salvează"
@@ -231,12 +240,20 @@ ro:
   friends:
     you have N friends: "Ai %{count} prieteni."
     none me: "Împărtășește activitatea ta în Biblie precum semne de carte, evidențieri sau notițe, cu prietenii apropiați și cu familia ta."
+    find friends: "Găsește prieteni"
     blank slate:
       heading: "Momentan nu sunteți prieteni"
       description: "Trebuie să fii prieten cu această persoană pentru a-i vedea prietenii."
     limit notice: "Poți avea până la 150 de prieteni"
     limit description: "Limitarea prietenilor din Aplicația Biblia la persoane care le cunoști bine, creează un mediu favorabil pentru discuții sincere și împărtășirea lucrurilor descoperite cu prieteni de încredere."
   friendships:
+    find friends title: "Găsește prieteni"
+    search by name: "Caută după nume"
+    search button: "Caută"
+    widget:
+      find friends title: "Găsește prieteni"
+      search by name: "Caută după nume"
+      search button: "Caută"
     offer success: "Cerere de prietenie trimisă"
     offer failure: "S-a produs o eroare la trimiterea cererii de prietenie"
     create success: "Succes! Acum sunteți prieteni."
@@ -269,6 +286,7 @@ ro:
     form:
       title field: "Titlu:"
       content field: "Conținut:"
+      highlight field: "Evidențiază: (opțional)"
       reference field: "Referințe:"
       status field: "Status:"
       save button: "Salvează"
@@ -279,7 +297,7 @@ ro:
       draft: "Ciornă"
     list title: "Notițe"
     loading community: "Se încarcă notițele comunității..."
-    no community notes: "Nu a fost găsită nicio notiță a comunității cu privire la versetele selectate. Pentru a crea o notiță, alege un verset în cititorul de Biblie, apoi fă click pe butonul Selectează aflat în partea de sus a cititorului."
+    no community notes: "Nu a fost găsită nicio notiță a comunității cu privire la versetele selectate. Pentru a crea o notiță, alege un verset în pagina de citire a Bibliei, apoi fă click pe butonul Selectează aflat în partea de sus a cititorului."
     public: "Public"
     private: "Privat"
     is private: "Notița solicitată este privată."
@@ -358,6 +376,7 @@ ro:
     my profile: "Profilul meu"
     edit profile: "Modifică profilul"
     update profile: "Actualizează profilul"
+    go to your profile: "Du-te la Profilul Tău"
     other user profile: "Profilul lui %{username}"
     my password: "Schimbă parola"
     edit password: "Schimbă parola"
@@ -548,6 +567,7 @@ ro:
     all: "Toate"
     labels label: "Etichete:"
     title: "Marcaje"
+    my labels: "Etichetele mele"
     not found: "Marcajele sunt un bun îndrumător către pasajele tale favorite sau către ultimul capitol pe care l-ai citit dintr-o carte. Pentru a adăuga un marcaj, selectează versetul și apoi apasă butonul de adăugare marcaj."
     other user not found: "%{username} nu a salvat încă niciun marcaj."
     creation form errors: "Următoarele erori au împiedicat crearea unui marcaj:"
@@ -573,6 +593,7 @@ ro:
       title field: "Titlu:"
       reference field: "Referință:"
       labels field: "Etichete (separate de virgulă):"
+      highlight field: "Evidențiază: (opțional)"
       colors field: "Culoare:"
       update button: "Actualizează marcaj"
       save button: "Salvează marcaj"
@@ -583,6 +604,12 @@ ro:
     none me: "Încă nu ai primit nici o insignă."
     none user: "%{username} nu a primit nici o insignă încă."
   plans:
+    widget:
+      my plans: "Planurile mele"
+      start reading: "Începe să citești"
+      view my plans: "Vezi Planurile mele"
+      featured plans: "Planuri recomandate"
+      view all plans: "Vezi Toate Planurile"
     settings: "Setări"
     privacy:
       visible to friends?: "Dorești ca activitatea ta legată de acest plan să fie vizibilă prietenilor tăi?"
@@ -837,11 +864,11 @@ ro:
     download now: "Descarcă Aplicația Biblia acum"
     what people: "Ce spun oamenii despre Aplicația Biblia gratuită..."
     t1: "Am Cuvântul mereu cu mine."
-    t1 copy: "Am  marcat pasaje importante pentru mine. Mai mult, am citit tot într-un an datorită planurilor de citire."
+    t1 copy: "Am  marcat pasaje importante pentru mine. Mai mult, am citit toată Biblia într-un an datorită planurilor de citire."
     t2: "Un program excelent!"
     t2 copy: "Această aplicație mă ajută să mă organizez și să citesc Cuvântul Lui Dumnezeu în fiecare zi. Este ușor de folosit și oferă multe caracteristici... Îmi place!"
     t3: "Aplicație minunată."
-    t3 copy: "O aplicație grozavă cu o vastă arie de selecție a versiunilor de Biblie. ... Bibliile audio sunt de asemenea minunate și ușor de înțeles."
+    t3 copy: "O aplicație grozavă cu o vastă arie de selecție a versiunilor de Biblie... Bibliile audio sunt de asemenea minunate și ușor de înțeles."
     iphone ipad: "iPhone/iPad"
     android: "Android"
     blackberry: "BlackBerry"

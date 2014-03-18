@@ -4,6 +4,8 @@ fi:
       main heading: "Keskustelut ja oivallukset"
       main description: "Uusi tapa tutkia Raamattua luotettujen ystävien kanssa"
       moment:
+        user aaron: "Juhani Korhonen"
+        user andy: "Johannes Virtanen"
         timestamp: "5 päivää sitten"
         title: "loi kirjanmerkin Psalmista 31:8"
         verse: "Iloitsen ja riemuitsen sinun hyvyydestäsi. Sinä näet minun hätäni, tiedät kaiken tuskani."
@@ -24,6 +26,12 @@ fi:
             text: "Aamen, niin minäkin. Lähetän sinulle nyt sähköpostia."
             time: "noin 27 minuuttia sitten"
           field placeholder: "Kirjoita kommentti..."
+    widget:
+      timeline: "Aikajana"
+      no activity yet: "Toimintaa ei ole vielä ollut."
+    moment:
+      read all: "Lue kaikki"
+      read less: "Näytä vähemmän"
     share: "Jaa"
     my connections: "Yhdistetyt tilit"
     connected as: "Sinut on yhdistetty kohteeseen %{connection} käyttäjänimellä %{username}."
@@ -146,6 +154,7 @@ fi:
   find friends: "Etsi ystäviä"
   search placeholder: "Haku..."
   search: "Hae"
+  more: "Lisää"
   book: "Kirja"
   filter book: "Suodata kirjoja..."
   save: "Tallenna"
@@ -231,12 +240,20 @@ fi:
   friends:
     you have N friends: "Sinulla on %{count}  ystävää"
     none me: "Jaa merkintäsi Raamatussa, kuten kirjanmerkit, korostukset ja muistiinpanot lähimpien ystäviesi ja perheenjäsentesi kanssa."
+    find friends: "Etsi ystäviä"
     blank slate:
       heading: "Ei ystäviä tällä hetkellä"
       description: "Sinun täytyy olla tämän henkilön ystävä nähdäksesi hänen ystävänsä."
     limit notice: "Sinulla voi olla jopa 150 ystävää"
     limit description: "Voit rajata ystävyyssuhteet Raamattusovelluksessa ihmisiin jotka tunnet hyvin. Näin syntyy ympäristö jossa voi keskustella ja jakaa oivalluksia avoimesti luotettujen ystävien kanssa."
   friendships:
+    find friends title: "Etsi ystäviä"
+    search by name: "Etsi nimellä"
+    search button: "Hae"
+    widget:
+      find friends title: "Etsi ystäviä"
+      search by name: "Etsi nimellä"
+      search button: "Hae"
     offer success: "Kaveripyyntö lähetetty"
     offer failure: "Kaveripyynnön lähetys epäonnistui"
     create success: "OK! Olette nyt ystäviä."
@@ -269,6 +286,7 @@ fi:
     form:
       title field: "Otsikko:"
       content field: "Sisältö:"
+      highlight field: "Korostus: (vapaaehtoinen)"
       reference field: "Viitteet:"
       status field: "Tila:"
       save button: "Tallenna"
@@ -358,6 +376,7 @@ fi:
     my profile: "Profiilini"
     edit profile: "Muokkaa profiilia"
     update profile: "Päivitä profiili"
+    go to your profile: "Mene omaan profiiliin"
     other user profile: "%{username}:n profiili"
     my password: "Vaihda salasanani"
     edit password: "Vaihda salasana"
@@ -548,6 +567,7 @@ fi:
     all: "Kaikki"
     labels label: "Etiketit:"
     title: "Kirjanmerkit"
+    my labels: "Omat otsikot"
     not found: "Kirjanmerkit toimivat pikaoppaana suosikkikappaleisiisi tai viimeisimpään lukemaasi lukuun jossakin tietyssä kirjassa. Lisätäksesi kirjanmerkin, valitse jae lukijassa ja klikkaa Valittu-nappia lukijan yläosassa."
     other user not found: "%{username} ei ole vielä tallentanut kirjanmerkkejä."
     creation form errors: "Kirjanmerkin luominen estyi seuraavien virheiden takia:"
@@ -573,6 +593,7 @@ fi:
       title field: "Otsikko:"
       reference field: "Lähde:"
       labels field: "Nimikkeet (pilkulla erotettuna):"
+      highlight field: "Korostus: (vapaaehtoinen)"
       colors field: "Väri:"
       update button: "Päivitä kirjanmerkki"
       save button: "Tallenna kirjanmerkki"
@@ -583,6 +604,12 @@ fi:
     none me: "Et ole vielä ansainnut yhtään ansiomerkkiä."
     none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
   plans:
+    widget:
+      my plans: "Omat suunnitelmat"
+      start reading: "Aloita lukeminen"
+      view my plans: "Omat suunnitelmat"
+      featured plans: "Suunnitelmat esittelyssä"
+      view all plans: "Kaikki suunnitelmat"
     settings: "Asetukset"
     privacy:
       visible to friends?: "Haluatko tähän suunnitelmaan liittyvän toimintasi näkyvän ystävillesi?"
