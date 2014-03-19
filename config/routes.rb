@@ -1,7 +1,6 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
-  get "/app",           to: "pages#app"
   get "/terms",         to: "pages#terms"
   get "/privacy",       to: "pages#privacy"
   get "/donate",        to: "pages#donate"
@@ -11,6 +10,7 @@ YouversionWeb::Application.routes.draw do
   get "/search",        to: "search#show",                as: "search"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
 
+  match "/app(/:store)", to: AppStoreController.action(:index)
 
   # Custom campaign pages
   scope module: 'campaigns' do

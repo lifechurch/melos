@@ -41,12 +41,12 @@ module YouversionWeb
       }
 
 
-      r301 %r{\/webcast}, "http://webcast.youversion.com/index.html"
+      r301 %r{^\/webcast}, "http://webcast.youversion.com/index.html"
 
       # /app redirects
-      r301 %r{\/download$|\/mobile$}, '/app'
-      r301 %r{\/iphone$|\/bb$|\/android$}, '/app' #without $ or {2,5} application.css gets 301'd to a black hole on dev
-      r301 %r{\/descargar},         "/es/app"
+      r301 %r{^\/download$|^\/mobile$}, '/app'
+      r301 %r{^\/iphone$|^\/bb$|^\/android$}, '/app' #without $ or {2,5} application.css gets 301'd to a black hole on dev
+      r301 %r{^\/descargar},         "/es/app"
 
       # lifekids redirect
       r301 %r{^(/.{2,5})?(/lifekids$)}, '$1/reading-plans?category=family'
