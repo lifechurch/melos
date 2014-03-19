@@ -1,5 +1,7 @@
 class AppStoreController < ActionController::Base
 
+  include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+
   before_filter :set_site, only: [:index]
   before_filter :track_app_download, only: [:index]
   helper_method :current_auth, :ref_from_params, :current_avatar
@@ -10,6 +12,8 @@ class AppStoreController < ActionController::Base
     return redirect_to store_path(params[:store]) if params[:store].present?
     render "pages/app", layout: "layouts/application"
   end
+
+  add_transaction_tracer :index
 
   private
   # current_auth, ref_from_params, set_site - Ripped these from AppController - we need to move these into lib Modules 
