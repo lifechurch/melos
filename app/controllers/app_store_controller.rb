@@ -87,11 +87,11 @@ class AppStoreController < ActionController::Base
     when /iphone|iPhone|ipad|iPad|ipod|iPod/
       store_path('ios')
     when /android|Android/
-      store_path('')
+      store_path('android')
     when /silk|Silk/
-      store_path('')
+      store_path('amazon')
     when /blackberry|BlackBerry|bb/
-      store_path('')
+      store_path('bb')
     when /SymbianOS/
       store_path('symbian')
     when /J2ME/
