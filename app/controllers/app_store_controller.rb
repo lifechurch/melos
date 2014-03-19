@@ -61,7 +61,7 @@ class AppStoreController < ActionController::Base
     when /ios/
       'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=282935706&mt=8'
     when /android/
-      'market://details?id=com.sirma.mobile.bible.android'
+      'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
     when /bb/
@@ -87,7 +87,7 @@ class AppStoreController < ActionController::Base
     when /iphone|iPhone|ipad|iPad|ipod|iPod/
       store_path('ios')
     when /android|Android/
-      store_path('android')
+      'market://details?id=com.sirma.mobile.bible.android'
     when /silk|Silk/
       store_path('amazon')
     when /blackberry|BlackBerry|bb/
