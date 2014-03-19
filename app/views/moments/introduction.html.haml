@@ -94,5 +94,19 @@
       = t("social.intro page.moment.discover.button")
 
   .intro-share-copy-btn
-    %a{href: "#", class: "action_button_blue"}
+    %a{href: "#", class: "action_button_blue", id: "intro-find-friends-button"}
       = t("social.intro page.moment.share.button")
+
+  :javascript
+    $("#intro-find-friends-button").click(function(event){
+      event.preventDefault();
+      var link = $(event.currentTarget);
+          if (link.hasClass("active")) {
+            link.removeClass("active");
+            Events.Emitter.emit("menu:friend-requests:close");
+          }
+          else {
+            link.addClass("active");
+            Events.Emitter.emit("menu:friend-requests:open");
+          }
+    });

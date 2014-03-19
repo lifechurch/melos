@@ -11,6 +11,9 @@ class window.Menus.FriendRequests extends window.Menus.Base
     @template   = $("#friend-requests-tmpl")
     @popover    = $(@trigger_el).next('.header-popover')
 
+    # Listen for a specific event to open this menu (moment intro page)
+    Events.Emitter.addListener "menu:friend-requests:open", $.proxy(@open,@)
+    Events.Emitter.addListener "menu:friend-requests:close", $.proxy(@close,@)
 
     $(@trigger_el).click (e)=>
       e.preventDefault()
