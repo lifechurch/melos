@@ -30,7 +30,7 @@ jQuery(document).ready(function() {
 
   var nm = new Menus.NavMobile("#slideToNav","#nav_mobile");
   var n = new Menus.Notifications("#header .notifications-btn",".header-popover.notifications");
-  var f = new Menus.FriendRequests("#header .friend-requests-btn",".header-popover.friend-requests"); 
+  var f = new Menus.Friends("#header .friend-requests-btn",".header-popover.friend-requests"); 
   var mg = new Menus.MenuGroup("#header")
       mg.addMenu(nm)
       mg.addMenu(n)

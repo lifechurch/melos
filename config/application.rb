@@ -162,7 +162,7 @@ module YouversionWeb
     config.filter_parameters += [:password]
 
     # Don't load rails environment during asset precompilation
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
 
     # Enable the asset pipeline
     config.assets.enabled = true

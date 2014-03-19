@@ -6,7 +6,7 @@ json.path           moment.to_path
 json.avatar         moment.avatars.lg_avatar.url
 json.set! :owned_by_me, current_user_moment?(moment)
 json.actions do
-  json.set! :show, moment.comments_count > 3 || moment.likes_count > 0
+  json.set! :show, moment.comments_count > 0 || moment.likes_count > 0
   json.set! :editable, (current_user_moment?(moment) and moment.editable?)
   json.set! :deletable, (current_user_moment?(moment) and moment.deletable?)
 end

@@ -1,0 +1,17 @@
+<li class="moment-comments-list-comment">
+  <span class="moment-comments-list-avatar">
+    <a href="/users/{{user.username}}">
+      <img class="round-avatar" src="{{user.avatars.collection.1.url}}" height="48" width="48" />
+    </a>
+  </span>
+  <p class="moment-comments-list-text">
+    <a href="/users/{{user.username}}">
+      {{user.name}}
+    </a>
+    {{content}}
+    <span class="moment-comment-dt">
+      {{fromNow created_dt}}
+    </span>
+  </p>
+  <a href="#" class="moment-comment-delete" data-comment-id="{{id}}">x</a>
+</li>

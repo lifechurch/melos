@@ -29,7 +29,7 @@
 //= require ./moments/feed
 //= require ./menus/base
 //= require ./menus/notifications
-//= require ./menus/friend_requests
+//= require ./menus/friends
 //= require ./menus/nav_mobile
 //= require ./menus/menu_group
 //= require_self

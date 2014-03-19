@@ -82,7 +82,7 @@ class window.Moments.Base
         data: post_data,
         dataType:"json",
         success: (data)=>
-          template = Handlebars.compile $("#comment-list-item-tmpl").html()
+          template = JST["moments/comment_list_item"]
           @comment_update_el.append template(data)
           # Find the item we just appended, get the delete link and bind a handler to it.
           @comment_update_el.find("li").last().find(".moment-comment-delete").click (event)=>

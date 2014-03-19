@@ -1,0 +1,52 @@
+<ul>
+  {{#each requests.incoming}}
+  <li>
+    <div class="list-item">
+      <div class="item-content">
+        <img class="round-avatar" src="{{avatars.collection.1.url}}" height="48" width="48" />
+        <p>
+          <a href="/users/{{username}}" class="text-link">{{name}}</a>
+          {{../i18n.wants_friendship}}
+        </p>
+      </div>
+      <div class="item-actions">
+
+        <form accept-charset="UTF-8" action="/friendships?user_id={{id}}" method="post">
+          <input name="utf8" type="hidden" value="✓" />
+          <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
+          <button type="submit" class="action_button_green action-add">
+            {{../i18n.accept}}
+          </button>
+        </form>
+
+        <form accept-charset="UTF-8" action="/friendships/{{id}}" method="post">
+          <input name="utf8" type="hidden" value="✓" />
+          <input name="_method" type="hidden" value="DELETE" />
+          <input name="authenticity_token" type="hidden" value="#{form_authenticity_token}" />
+          <button type="submit" class="action_button_grey action-add">
+            {{../i18n.ignore}}
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </li>
+  {{else}}
+  <li class="list-item none">
+    <p>
+      {{../i18n.no_requests}}
+    </p>
+  </li>
+  {{/each}}
+</ul>
+<div class="view-all">
+  {{#if requests.incoming}}
+    <a href="/friendships/requests" class="text-link wide">
+      {{../i18n.view_all}}
+    </a>
+  {{else}}
+    <span class="text-wide">
+      {{../i18n.none}}
+    </span>
+  {{/if}}
+</div>
