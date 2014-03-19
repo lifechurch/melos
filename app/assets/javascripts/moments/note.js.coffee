@@ -13,14 +13,13 @@ class window.Moments.Note extends window.Moments.Base
     @data.user
 
   constructor: (@data, @feed)->
-    @template = $("#moment-note-tmpl")
+    @template = JST["moments/note"]
     @feed.ready(@)
 
   render: ()->
     if @template
-      template = Handlebars.compile @template.html()
       
-      html = template
+      html = @template
         uuid:         @generateID()
         id:           @data.id
         path:         @data.path

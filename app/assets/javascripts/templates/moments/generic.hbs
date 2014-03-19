@@ -1,0 +1,24 @@
+<div class="moment" data-uuid="{{uuid}}">
+  <div class="moment-top">
+    <div class="moment-sys">
+      
+      <span class="moment-icon"></span>
+      <span class="moment-avatar">
+        <img src="{{avatar}}" />
+      </span>
+      
+      <span class="moment-time">
+        {{created_dt}}
+      </span>
+      
+      <h2 class="moment-sys-text">{{{moment_title}}}</h2>
+      
+      {{#if body_text}}
+      <div style="clear:both;">
+        {{{body_text}}}
+      </div>
+      {{/if}}
+
+    </div>
+  </div>
+</div>

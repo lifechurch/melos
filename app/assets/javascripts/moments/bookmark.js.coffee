@@ -12,15 +12,14 @@ class window.Moments.Bookmark extends window.Moments.Base
     @verse_html
 
   constructor: (@data, @feed)->
-    @template = $("#moment-bookmark-tmpl")
+    @template = JST["moments/bookmark"]
     @fetch()
 
 
   render: ()->
     if @template
-      template = Handlebars.compile @template.html()
       
-      @html = template
+      @html = @template
         verse_html:   @verseHTML()
         uuid:         @generateID()
         id:           @data.id
@@ -52,7 +51,7 @@ class window.Moments.Bookmark extends window.Moments.Base
         dataType: "json"
 
       request.done (data) =>
-        template = Handlebars.compile $("#moment-verse-tmpl").html()
+        template = JST["moments/verse"]
         @verse_html = template(data)
         @feed.ready(@)
         return

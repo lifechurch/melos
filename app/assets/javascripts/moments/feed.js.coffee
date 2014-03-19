@@ -61,7 +61,6 @@ class window.Moments.Feed
     switch moment.kind
       when "votd"
         new Moments.VOTD(data,@)
-        
       when "highlight"
         new Moments.Highlight(data,@)
       when "bookmark"

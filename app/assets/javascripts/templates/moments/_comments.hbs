@@ -1,0 +1,28 @@
+<div class="moment-comments">
+{{#if actions.show}}
+  {{#if likes.strings.whos_liked}}
+  <span class="moment-comments-likes">
+    {{{likes.strings.whos_liked}}}
+  </span>
+  {{/if}}
+  {{#if comments.strings.view_all_comments}}
+  <span class="moment-comments-more">
+    <a href="{{path}}">{{comments.strings.view_all_comments}}</a>
+  </span>
+  {{/if}}
+  <ul class="moment-comments-list">
+    {{#each comments.all}}
+      {{> moments/_comment}}
+    {{/each}}
+  </ul>
+{{/if}}
+  <form action="/comments" method="post">
+    <input type="hidden" name="comment[moment_id]" value="{{id}}" />
+    <span class="moment-comments-input">
+      <span class="moment-comments-input-avatar">
+        <img src="{{user.avatar}}" />
+      </span>
+      <textarea name="comment[content]" class="moment-comments-textarea comment-field" data-moment-id="{{id}}" />
+    </span>
+  </form>
+</div>

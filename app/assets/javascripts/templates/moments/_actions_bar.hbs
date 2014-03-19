@@ -1,0 +1,22 @@
+<div class="moment-actions">
+  <span class="moment-actions-like">
+    <a href="#">Like</a>
+  </span>
+  <span class="moment-actions-comment">
+    <a href="{{path}}">Comment</a>
+  </span>
+
+  <div class="moment-content-actions">
+  {{#if actions.editable}}
+    <a href="{{path}}/edit" class="moment-content-actions-edit">
+      Edit
+    </a>
+  {{/if}}
+
+  {{#if actions.deletable}}
+    <a href="#" class="moment-action-delete">
+      Delete
+    </a>
+  {{/if}}
+  </div>
+</div>

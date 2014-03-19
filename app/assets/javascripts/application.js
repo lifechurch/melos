@@ -5,23 +5,21 @@
 //= require jquery.ui.mouse
 //= require jquery.ui.position
 //= require jquery.ui.autocomplete
+//= require handlebars.runtime
+//= require ./templates/handlebars_helpers
+//= require_tree ./templates
 //= require ./events/emitter
 //= require ./session/user
 //= require ./sidebars/community_notes
-
 //= require ./reader/audio_player
 //= require ./reader/scroll
 //= require ./reader/highliter
 //= require ./reader/reader
-
 //= require ./forms/color_picker
 //= require ./moments/base
 //= require ./moments/verse
-
 //= require ./moments/moment
-
 //= require ./moments/votd
-
 //= require ./moments/system
 //= require ./moments/generic
 //= require ./moments/friendship
@@ -29,7 +27,6 @@
 //= require ./moments/bookmark
 //= require ./moments/highlight
 //= require ./moments/feed
-
 //= require ./menus/base
 //= require ./menus/notifications
 //= require ./menus/friend_requests

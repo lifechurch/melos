@@ -1,0 +1,32 @@
+<div class="moment" data-uuid="{{uuid}}">
+  <div class="moment-vod" data-references="{{usfm_references}}">
+    
+    <span class="moment-icon">&nbsp;</span>
+    
+    <div class="moment-vod-calendar">
+      <div class="moment-vod-calendar-date">
+        {{week_day}}
+      </div>
+      <div class="moment-vod-calendar-img">
+        {{{calendar_img}}}
+      </div>
+    </div>
+
+    <span class="moment-time">
+      {{created_dt}}
+    </span>
+
+    <div class="moment-vod-title">
+      {{{title}}}
+    </div>
+
+    {{{verse_html}}}
+
+    <ul class="moment-vod-list">
+      {{#each recent_versions}}
+        <li class="btn" data-version-id="{{id}}" >{{abbrev}}</li>
+      {{/each}}
+    </ul>
+
+  </div>
+</div>

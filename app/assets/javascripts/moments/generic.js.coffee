@@ -3,14 +3,13 @@ window.Moments ?= {}
 class window.Moments.Generic extends window.Moments.Base
 
   constructor: (@data, @feed)->
-    @template = $("#moment-generic-tmpl")
+    @template = JST["moments/generic"]
     @feed.ready(@)
 
   render: ()->
     if @template
-      template = Handlebars.compile @template.html()
-      
-      html = template
+
+      html = @template
         uuid:           @generateID()
         created_dt:     @timeAgo(@data.created_dt)
         moment_title:   @data.moment_title

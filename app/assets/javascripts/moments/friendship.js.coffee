@@ -3,14 +3,12 @@ window.Moments ?= {}
 class window.Moments.Friendship extends window.Moments.Base
 
   constructor: (@data, @feed)->
-    @template = $("#moment-friendship-tmpl")
+    @template = JST['moments/friendship']
     @feed.ready(@)
 
   render: ()->
     if @template
-      template = Handlebars.compile @template.html()
-      
-      html = template
+      html = @template
         uuid:           @generateID()
         created_dt:     @timeAgo(@data.created_dt)
         moment_title:   @data.moment_title
@@ -20,4 +18,3 @@ class window.Moments.Friendship extends window.Moments.Base
         friend_avatar:  @data.friend_avatar
 
       return html
-

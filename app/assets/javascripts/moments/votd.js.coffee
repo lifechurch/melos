@@ -3,23 +3,23 @@ window.Moments ?= {}
 class window.Moments.VOTD extends Moments.Base
 
   constructor: (@data, @feed)->
-    @template = $("#moment-votd-tmpl")
+    @template = JST["moments/votd"]
     @fetch()
 
 
   render: ()->
-    if @template
-      template = Handlebars.compile @template.html()
-      
-      html = template
+    if @template      
+      html = @template
         uuid:             @generateID()
-        week_day:         @weekDay()
-        created_dt:       moment(@data.created_dt).format('LL') 
+        title:            @data.title
+        week_day:         @data.week_day
+        created_dt:       moment(@data.created_dt).format('LL')
         version:          @version()
         verse_html:       @verseHTML()
         references:       @references()
         usfm_references:  @references().join("+")
         recent_versions:  @recentVersions()
+        calendar_img:     @data.calendar_img
 
       return html
 
@@ -44,7 +44,7 @@ class window.Moments.VOTD extends Moments.Base
       dataType: "json"
 
     request.done (data) =>
-      template = Handlebars.compile $("#moment-votd-verse-tmpl").html()
+      template = JST["moments/votd_verse"]
       @verse_html = template(data)
       @feed.ready(@)
       return
@@ -70,7 +70,7 @@ class window.Moments.VOTD extends Moments.Base
 
     request.done (data) =>
       @moment_el.find(".moment-vod-links").remove()    
-      template = Handlebars.compile($("#moment-votd-verse-tmpl").html())
+      template = JST["moments/votd_verse"]
       wrap = @moment_el.find(".moment-votd-verse-wrap")
       wrap.replaceWith(template(data))
       wrap.addClass("loaded")
@@ -98,9 +98,6 @@ class window.Moments.VOTD extends Moments.Base
 
   day: ()->
     @data.day
-
-  weekDay: ()->
-    @data.week_day
 
   date: ()->
     @data.date

@@ -45,15 +45,15 @@ class window.Moments.Highlight extends window.Moments.Base
     @verse_html
 
   constructor: (@data, @feed)->
-    @template = $("#moment-highlight-tmpl")
+    @template = JST["moments/highlight"]#$("#moment-highlight-tmpl")
     @fetch()
 
 
   render: ()->
     if @template
-      template = Handlebars.compile @template.html()
+      #template = Handlebars.compile @template.html()
       
-      html = template
+      html = @template
         verse_html:   @verseHTML()
         uuid:         @generateID()
         id:           @data.id
@@ -82,7 +82,7 @@ class window.Moments.Highlight extends window.Moments.Base
       dataType: "json"
 
     request.done (data) =>
-      template = Handlebars.compile $("#moment-verse-tmpl").html()
+      template = JST["moments/verse"]
       @verse_html = template(data)
       @feed.ready(@)
       return

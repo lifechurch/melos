@@ -3,14 +3,13 @@ window.Moments ?= {}
 class window.Moments.System extends window.Moments.Base
 
   constructor: (@data, @feed)->
-    @template = $("#moment-system-tmpl")
+    @template = JST["moments/system"]
     @feed.ready(@)
 
   render: ()->
     if @template
-      template = Handlebars.compile @template.html()
-      
-      html = template
+
+      html = @template
         uuid:           @generateID()
         created_dt:     moment(@data.created_dt).format('LL')
         moment_title:   @data.moment_title
