@@ -1,10 +1,4 @@
-# Boilerplate for now. Will fill in when necessary.
 common: &common
-  adapter: postgresql
-  host: localhost
-  port: 5432
-  username: yv_web
-  database: yv_web_production
 
 development:
   adapter: sqlite3
@@ -23,8 +17,6 @@ staging:
 
 production:
   <<: *common
-  host: postgres-web.youversion.com
-  port: 6000
 
 cucumber:
   <<: *test
