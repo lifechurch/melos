@@ -20,3 +20,4 @@ dump.rdb
 custom_plan.rb
 zeus.json
 db/*.sqlite3
+*.orig
