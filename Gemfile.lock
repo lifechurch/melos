@@ -259,7 +259,6 @@ GEM
     parallel (0.7.1)
     parallel_tests (0.15.0)
       parallel
-    pg (0.15.1)
     polyglot (0.3.3)
     powder (0.2.0)
       thor (>= 0.11.5)
@@ -440,7 +439,6 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 0.1.9)
   omniauth-twitter (~> 0.0.16)
   parallel_tests
-  pg
   powder
   pry
   puma
