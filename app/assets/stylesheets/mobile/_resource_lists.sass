@@ -20,6 +20,70 @@
     p
       margin: 0
 
+  a
+    text-decoration: none
+    line-height: 1.3em
+
+  a.action_button_grey, a.action_button_green, a.action_button_red
+    line-height: 40px
+
+  h5
+    float: left
+
+  .li_social
+    background:
+      image: image-url("big_list_social.png")
+      position: 0 22px
+  .li_badge
+    background:
+      image: image-url("big_list_badge.png")
+      position: 0 19px
+  .user
+    overflow: hidden
+    img
+      float: left
+      margin-right: 10px
+    &>div
+      float: left
+  li[class^="li_"]
+    background:
+      repeat: no-repeat
+
+.mobile-client
+  #main article.profile
+    // Delete friends list stuff once we pull the implementation soon.
+    .friends_list
+      .resource_list
+        margin-top: 15px
+
+        .gutter_right_half
+          width: 15%
+          margin-right: 2% !important
+          padding: 5% 0 5% 5%
+
+        .gutter_right_half + div
+          width: 78%
+
+        .gutter_top_half
+          margin-top: -23px !important
+
+        .mute
+          font-size: 12px
+          margin-top: 6px
+    // END Delete friends list
+
+    .resource_list
+
+      .li_badge,
+      .li_social
+        background-position: 17px 15px
+
+      .bookmark
+        background-position: 17px 23px
+
+      .note
+        background-position: 17px 16px
+
 
 // For bookmarks
 .resource_list

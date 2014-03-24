@@ -1,21 +1,101 @@
 // `Global HTML
 //----------------------------------------------------------------------------------------------------
 
-#main article p
-  font-size: 15px
+*
+  +background-clip(padding-box)
 
-h3
-  font-size: 18px
-h4
-  font-size: 17px
+html
+  overflow-x: hidden
+  overflow-y: scroll
 
-article > h1, article .inner > h1
-  display: none
+body
+  background: #FFF
+  color: $body_text
+  min-width: 980px
 
-article h1.keep
-  font-size: 24px
+a
+  color: $blue
+  text-decoration: none
+  font-weight: bold
+
+a:hover
+  color: $blue_light
+
+ul,
+ol,
+header,
+footer
+  @extend .clearfix
+
+hr
+  border-top-color: rgba(#000, 0.2)
+
+// `Utility Classes
+//----------------------------------------------------------------------------------------------------
+
+small,
+.small
+  font-size: 11px
+
+.li_1,
+  margin-left: 30px !important
+
+// Muted styles for reader
+.mute,
+.mute a
+  color: $mute
+// mute coloring for bold verse labels.  Needs a paler grey due to the bold style
+// lighter than $mute at #888
+.mute .verse .label
+  color: #AAA
+
+// Mute words of jesus to a pale red
+.mute .wj .content
+  color: #C45E5E
+
+.mute a:hover
+  color: $body_text
+
+// Focused styles for reader
+.mute .focused,
+.mute .focused .label
+  color: $body_text
+
+// Focused style for words of jesus (back to proper red)
+.mute .focused .wj .content
+  color: #C00
+
+
+.callout
+  background:
+    image: image-url("callout.png")
+    repeat: repeat-y
+  color: #749c43
+  font-size: 24px !important
+  line-height: 1.3
+  padding-left: 20px
+
+.danger a
+  color: $red
+input.danger
+  border-color: $red !important
+  color: white !important
+  background-image: -webkit-linear-gradient($red,#A00) !important
+  text-shadow: #B00 0 1px 1px !important
+
+.rtl
+  direction: rtl
+
+.dark_highlight,
+.highlighted.dark_bg
+  color: $gray_light
+
+form.full_page_form label
   display: block
-  margin-top: .75em
+
+.search_results em
+  font-style: normal
+  font-weight: bold
 
 #container
   padding: 0px

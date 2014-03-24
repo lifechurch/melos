@@ -2,6 +2,8 @@
 //----------------------------------------------------------------------------------------------------
 
 #wrapper
+  @extend .clearfix
+  margin: 0 auto
   position: absolute
   z-index: 190
   left: 0
@@ -10,8 +12,26 @@
   padding: 0
 
 #container
+  @extend .clearfix
+  // Primary nav width.
+  padding: 0
   position: relative
   background: #fff
+
+#container.no_primary_nav
+  padding-left: 0
+
+#container.no_sidebar
+  padding-right: 0
+
+#container.no_sidebar #main
+  margin-right: 0
+
+.mobile-add
+  display: none
+
+.mobile-remove
+  display: inline-block
 
 #content
   position: relative

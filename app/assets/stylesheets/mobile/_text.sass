@@ -1,23 +1,27 @@
-// `Basic HTML
+// !Basic HTML
 //----------------------------------------------------------------------------------------------------
 
 body
   font: 15px/1.8 $body_font
 
+// !Headings
+//----------------------------------------------------------------------------------------------------
+
 h1,
 h2
+  -webkit-font-smoothing: subpixel-antialiased
   font:
-    weight: 200
+    weight: normal
+    weight: 100
+  letter-spacing: -.02em
 
 h1
   font:
     size: 30px
-  letter-spacing: -.04em
 
 h2
   font:
     size: 20px
-  letter-spacing: -.04em
 
 h3
   font-size: 18px
@@ -25,5 +29,21 @@ h3
 h4
   font-size: 17px
 
+
+// !Other
+//----------------------------------------------------------------------------------------------------
+
+
 .wordsofchrist
   color: #cc0000
+
+#main article p
+  font-size: 15px
+
+article > h1, article .inner > h1
+  display: none
+
+article h1.keep
+  font-size: 24px
+  display: block
+  margin-top: .75em

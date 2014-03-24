@@ -1,21 +1,45 @@
-html.mobile-client #footer p.links a:first-child,
-  border-left: 0
-  padding: 5px 5px 7px
-
 #footer
+  clear: both
+  color: #888
   font-size: 11px
   padding: 18px 18px 8px
+  position: relative
   border-top: 1px solid #CBC9CF
-  color: #888
+  height: 120px
 
   p.links
+    overflow: auto
+    line-height: 1em
+    float: left
+
     a
+      display: block
+      margin: 0 4px 4px 0
+      float: left
+      padding: 5px 5px 7px
       color: #fff
       background-color: #bbb
-      margin: 0 4px 4px 0
       +border-radius(4px)
       text-decoration: none
-      padding: 5px 5px 7px
+      font-weight: bold
+
+    a:hover
+      background-color: #ccc
+
+  #languages
+    float: right
+
+    label
+      padding-right: 5px
+
+  .copyright
+    float: right
+    clear: right
+
+#footer.no_primary_nav
+  padding-left: 0
+
+#footer
 
   .separator
     padding: 0 5px
@@ -28,4 +52,24 @@ html.mobile-client #footer p.links a:first-child,
 
   .copy
     margin-top: 5px
+
+  #languages
+    float: none
+    position: absolute
+    top: 20px
+
+  .copyright
+    float: none
+    position: absolute
+    bottom: 0
+
+  p.links
+    float: none
+    position: absolute
+    bottom: 15px
+
+  p.links a
+    font-size: 13px
+
+
 

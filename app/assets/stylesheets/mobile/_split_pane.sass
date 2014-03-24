@@ -1,24 +1,25 @@
 // Split Pane common styles
-// MOBILE styles located at bottom half of sheet
 
 .split_pane
-  border-top: 1px solid #ddd
+  border-top: 0px
 
-  div.sidebar,
-  div.content
+  .sidebar,
+  .content
     float: left
 
-  div.content
-    border-left: 1px solid #ddd
-    margin-left: -1px
-    margin-bottom: 20px
-    width: 70%
+  .content
+    margin: 0 0 20px -1px
+    border: 0px
+    width: 100%
+
+    a
+      text-decoration: none
 
     > ul
       margin-left: 40px
 
-  div.sidebar
-    min-height: 533px
+  .sidebar
+    min-height: 100px
     width: 30%
 
     dl
@@ -35,10 +36,18 @@
       font-weight: bold
       padding-bottom: 15px
       line-height: 25px
+      font-size: 22px
 
     dd
       font-size: 13px
       position: relative
+      font-size: 13px
+      border-left: 1px solid #ddd
+      border-right: 1px solid #ddd
+
+      a
+        font-size: 15px
+        padding-left: 20px
 
     dd a:not(.no_style)
       color: $body_text
@@ -54,9 +63,12 @@
     .highlighted
       background: #fff
       font-weight: bold
-      margin-right: -1px
+      margin-right: 0
       position: relative
       z-index: 1
+
+    .highlighted a
+      font-size: 16px
 
     .highlighted a:not(.no_style),
     .highlighted a:hover:not(.no_style)
@@ -70,4 +82,7 @@
 
   .pagination
     margin-left: 25px
+
+
+
 

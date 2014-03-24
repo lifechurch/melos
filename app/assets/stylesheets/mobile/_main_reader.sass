@@ -1,36 +1,140 @@
-// `Main
+// !Main
 //----------------------------------------------------------------------------------------------------
 
 #main
+  float: left
   margin: 47px 0 0 0
-
-#reader_header
-  display: none !important
-
-#reader_header + article
-  margin-top: 0px
+  width: 100%
 
 #main article
+  @extend .clearfix
+  background:
+    color: #fff
+    repeat: repeat-x
+  border: 0
+  position: relative
+  min-height: 368px
   padding: 16px 16px 16px
   overflow: hidden
-  border: none
-  border-radius: 0
-  -moz-border-radius: 0
-  -webkit-border-radius: 0
+  +border-radius(0)
+
+  .no_sidebar &:after
+    width: 908px
+    display: block
 
 #main.main_reader article
   padding: 90px 24px 16px
 
-// `Main > Headers
+#main header + article,
+#reader_header + article,
+#main .header_tabs + article,
+#main .top_section + article
+  +round_top_none
+
+  &:after
+    content: none
+
+#main .top_section + header
+  +round_top_none
+
+// !Main > Headers
 //----------------------------------------------------------------------------------------------------
+
+
+#main header,
+#main footer,
+.header_tabs,
+.top_section
+  @extend .clearfix
+  +box-shadow(inset #fff 0 1px 0 0)
+  background-color: #EEEDEB
+  border: 0
+
+
+
+#main header
+  font:
+    size: 14px
+    weight: bold
+  line-height: 23px
+  padding: 5px 20px
+
+#main header,
+.header_tabs
+  +round_top
+  border-bottom: 0
+
+#main header ul
+  margin: 0
+  list-style: none
+
+#main header li
+  float: left
+  margin-left: 5px
+  height: 23px
+
+#main header li:first-child
+  margin-left: 0
+
+#main header li.separator
+  background: image-url("separator.png") repeat-y
+  margin-left: 10px
+  padding-left: 11px
+
+#main .top_section + header
+  padding-left: 30px
+  position: relative
+
+.header_arrow
+  background: image-url("header_arrow.png") no-repeat
+  color: transparent
+  font-size: 0
+  overflow: hidden
+  text-indent: -99999px
+  width: 9px
+  height: 6px
+  position: absolute
+  left: 28px
+  bottom: -6px
 
 #main header,
 #main footer,
   border-top: 1px solid #cbc9cf
   border-bottom: 1px solid #cbc9cf
 
-// `Reader Header
+
+// !Reader Header
 //----------------------------------------------------------------------------------------------------
+
+#reader_header
+  display: none !important
+
+#reader_header:after
+  content: ''
+  font-size: 0
+  line-height: 0
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  height: 5px
+  pointer-events: none
+
+#reader_header + article
+  background-image: none
+  margin-top: 0px
+
+.header-options-settings,
+.header-options-audio,
+.header-options-full,
+.header-options-parallel,
+.header-options-version,
+.header-options-settings:hover,
+.header-options-audio:hover,
+.header-options-full:hover,
+.header-options-parallel:hover,
+.header-options-version:hover
+  background: none
 
 .audio_toolbar
   height: 91px
@@ -38,7 +142,6 @@
   background: #2c2b2b
   top: -190px
   left: 0px
-  //width: 100%
   z-index: 194
   color: #fff
   padding: 10px 0px 10px
@@ -473,8 +576,6 @@ article .reader-nav,
       background-color: transparent !important
       box-shadow: none !important
 
-
-
       span
         display: none
     a.prev
@@ -483,21 +584,51 @@ article .reader-nav,
       background: image-url("mobile/next_arrow.png") 22px 13px no-repeat
 
 
-// `Article Top Section
+// !Article Top Section
 //----------------------------------------------------------------------------------------------------
 
 .top_section
+  @extend .clearfix
+  background-color: #e9e9e9
+  font-size: 12px
+  padding: 0px
+  position: relative
+  min-height: 170px
   +border-radius(0)
   +background-image(none)
-  background-color: #e9e9e9
   border: 0
     bottom: 0
 
+.top_section + .header_tabs
+  +round_top_none
+  +background-image(linear-gradient(#e9e9e9, #d7d6da))
+  +box-shadow(none)
+  background-color: #e9e9e9
+  border-top: 0
 
-// `Main > Footers
+.top_section + .header_tabs .highlighted span
+  border-top: 1px solid #cbc9cf
+  margin-top: -1px
+
+.top_section h1
+  margin-bottom: 10px
+
+.top_section ul
+  margin-bottom: 15px
+
+.top_section ul,
+.top_section li
+  margin-top: 0
+  margin-left: 0
+  padding: 0
+  list-style: none
+
+
+// !Main > Footers
 //----------------------------------------------------------------------------------------------------
 
 #main footer
+  font-size: 11px
   padding: 5px 20px 25px
   margin: 0 auto -20px
   border-radius: 0
@@ -524,23 +655,283 @@ article .reader-nav,
     color: #0084c8
     height: auto
 
-// `Main > Verses
+#main article + footer
+  margin-top: -5px
+  position: relative
+
+#main footer p
+  margin: 0
+  padding-top: 5px
+
+#main header b,
+#main footer b
+  font-size: 13px
+
+#main footer input[type="submit"],
+#main footer a.button
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ededed))
+  background:
+    image: image-url('blue-arrow@2x.png')
+    position: right
+    size: 36px 36px
+    repeat: no-repeat
+  margin: 5px 0 0 20px
+  display: block
+  padding: 0 40px 0 15px
+  height: 36px
+  line-height: 36px
+  border-radius: 6px
+  text-align: left
+  text-decoration: none
+  font-weight: bold
+  font-size: 15px
+  font-family: "helvetica neue", sans-serif
+  color: #404040
+  border: #c7c5c5 solid 1px
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset
+  float: right
+  min-width: 170px
+
+#main footer input[type="submit"]:active,
+#main footer a.button:active
+  box-shadow : 0 3px 3px rgba(0, 0, 0, 0.1) inset
+
+footer .publisher > .courtesy
+  font-size: 13px
+
+// blurb/copyright with no courtesty heading
+footer .publisher .blurb
+  color: $mute
+
+// blurb with a courtesy of heading override
+footer .publisher .courtesy + .blurb
+  font-weight: normal
+
+// !Main > Verses
 //----------------------------------------------------------------------------------------------------
 
+#verses_selected_form
+  display: block
+  overflow: hidden
+  width: 0
+  height: 0
 
-// Book-chap-verse select table
+.verse.selected .content
+  border-bottom: 1px
+  border-bottom-style: dotted
+
+.verse:hover
+  cursor: pointer
+
+.verse + .verse
+  margin-left: 3px
+
+.verse > .label
+  color: $label_text
+  font:
+    family: $body_font
+    weight: bold
+  line-height: 1
+  margin:
+    top: 2px
+    right: 4px
+
+.rtl > .version .verse > .label
+  margin:
+    right: 0px
+    left: 4px
+
+article .verse > .label,
+article[data-setting-size="user_setting_size_small"] .verse > .label
+  margin-top: 0.5em
+
+article[data-setting-size="user_setting_size_medium"] .verse > .label
+  margin-top: 0.9em
+
+article[data-setting-size="user_setting_size_large"] .verse > .label
+  margin-top: 1.2em
+
+.note
+  cursor: default
+
+.note .body
+  display: none
+
+article[data-setting-trans-notes="true"] .note.f .outer_container .body,
+article[data-setting-trans-notes="true"] .note.f > .label,
+article[data-setting-cross-refs="true"] .note.x  .outer_container .body,
+article[data-setting-cross-refs="true"] .note.x > .label
+  display: inline-block !important
+
+.note > .label
+  text-indent: -99999px
+  display: none
+  background: image-url('trans-note-light@2x.png') no-repeat
+    size: 10px 10px
+  height: 10px
+  width: 10px
+  margin-right: 4px
+  margin-left: 2px
+
+.outer_container
+  position: absolute
+  opacity: 0
+  display: none
+
+.inner_container
+  left: 0
+  display: block
+  position: relative
+  // half the width of the reader
+  max-width: 229px
+
+.note > .outer_container > .inner_container >.body
+  +round
+  +background-image(linear-gradient(#f7f7f7, #e8e8e8))
+  background-color: #eee
+  border: 1px solid #ccc
+  font:
+    family: $body_font
+    size: inherit
+  text-indent: 0px
+  line-height: 1.3
+  margin:
+    top: 4px
+    right: 2px
+    bottom: 5px
+  padding: 4px 8px 6px
+
+article[data-setting-show-highlights="true"] .verse.highlighted
+  background:
+    image: image-url('bg-highlighted-text@2x.png')
+    repeat: repeat
+    position: left top
+
+article[data-setting-show-highlights="true"] .verse.highlighted.dark_bg,
+article[data-setting-show-highlights="true"] .verse.highlighted.dark_bg > .label
+  color: $gray_light
+
+article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg
+  color: $body_text
+
+article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .label
+  color: $label_text
+
+// !Main > headers and paragraphs
+//----------------------------------------------------------------------------------------------------
+
+.p
+  text-indent: 1em
+
+.chapter > .label
+  display: none
+
+// first paragraph after a chapter label
+.chapter > .label + .p
+  text-indent: 0
+
+// !Nav Arrows
+//----------------------------------------------------------------------------------------------------
+.reader-prev,
+.reader-next
+  background:
+    image: image-url("arrow_sprite_thin.png")
+    repeat: no-repeat
+  color: transparent
+  font-size: 0
+  margin-top: -20px
+  overflow: hidden
+  text-indent: -99999px
+  width: 44px
+  position: fixed
+  border-radius: 4px
+
+.reader-prev,
+.reader-next.rtl
+  background-position: 10px 48%
+  margin-left: -55px
+
+.reader-next,
+.reader-prev.rtl
+  margin-left: 473px
+  background-position: -58px 48%
+
+.reader-prev:hover,
+.reader-next:hover
+  background-color: #f1f1f1
+
+.snap
+  position: absolute
+  bottom: 30px
+
+// !Misc Classes
+//----------------------------------------------------------------------------------------------------
+
+.check_count
+  background: image-url("icon_check_green.png") no-repeat 0 7px
+  color: #72a32c
+  float: right
+  font-weight: bold
+  padding-left: 20px
+
+.icon_share_light
+  background: image-url("icon_share_light.png") no-repeat left center
+  padding: 5px 0 5px 22px
+
+#main article .separator
+  color: transparent
+  background: image-url("separator.png") repeat-y center bottom
+  display: inline-block
+  height: 14px
+  margin: 0 10px
+  overflow: hidden
+  text-indent: -99999px
+  vertical-align: middle
+  width: 1px
+  zoom: 1
+
+.callout_blue,
+.callout_green
+  color: $body_text
+  padding: 5px 10px
+  text-decoration: none
+
+.callout_blue:hover,
+.callout_green:hover
+  color: $body_text
+  text-decoration: underline
+
+.callout_blue
+  background: #d9edf8
+
+.callout_green
+  background: #ddfad5
+
+// !Type
+//---------------------------------------------------------------------------------------
+
+#main h2
+  font-weight: bold
+  font-size: 1.5em
+  line-height: 1.5em
+
+
+// !Book-chap-verse select table
 //---------------------------------------------------------------------------------------
 
 .book_select
   width: 100%
+
   th, td
     text-align: center
     vertical-align: middle
     height: 44px
     width: 50%
+
   th
     font-weight: bold
     border-bottom: 1px solid #e5e5e5
+
   tr
     th:first-child, td:first-child
       border-right: 1px solid #e5e5e5
