@@ -4,22 +4,9 @@ class window.Panes.Related extends window.Panes.Base
 
   constructor: (@params) ->
     super(@params)
-    @template = $("#pane-related-tmpl")
+    @trigger_el.on "click", ()=>
+      window.location.href = @relatedPath()
     return
-
-  render: ()->
-    html = $(super())
-    @afterRender(html)
-    return html
-
-  afterRender: (html)->
-    html.on "click", (event)=>
-      event.preventDefault();
-      if html.hasClass("disabled")
-        return
-      else window.location.href = @related_path()
-    return
-
 
   selected_version_id: ()->
     $("article.reader").data("version")
@@ -30,5 +17,5 @@ class window.Panes.Related extends window.Panes.Base
     chap   = reader.data("chapter")
     return book + "." + chap
 
-  related_path: ()->
+  relatedPath: ()->
     "/moments/related?" + "v=" + @selected_version_id() + "&usfm=" + @selected_usfm()

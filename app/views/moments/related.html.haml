@@ -5,12 +5,9 @@
   %ul
     %li
       %strong Showing related moments
-    - #%li 
-    - #  %a{:class => "active", :href =>"#"}Mine
 
-.social-feed-wrap.related
-  .social-feed
-    = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
-
-- if @moments.next_page
-  = render partial: "shared/moments_load_more", locals: {resource: "moments"}
+.social-feed-wrap.related{"data-str-load-more" => t("moments.action.load more")}
+  :javascript
+    $(document).ready(function(){
+      var feed = new Moments.RelatedFeed({usfm: "#{params[:usfm]}", version: "#{params[:v]}" })
+    });

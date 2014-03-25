@@ -103,7 +103,31 @@
             %span.icon_parallel
               =t("ref.parallel")
 
-  #menu_verse_actions.clearfix
-    .references
-      %ul.reference_tokens
-    %dl.verses_selected
+#menu_verse_actions.clearfix
+  .references
+    %ul.reference_tokens
+
+  .panel-tabs
+    .highlight.tab-trigger{"data-pane-type"=>"highlight"}
+      = t("highlight")
+      .arrow
+    .bookmark.tab-trigger{"data-pane-type"=>"bookmark"}
+      = t("bookmark")
+      .arrow
+    .note.tab-trigger{"data-pane-type" => "note"}
+      = t("new note")
+      .arrow
+    .link.tab-trigger
+      = t("link")
+      .arrow
+    .share.tab-trigger{"data-pane-type"=>"share"}
+      = t("ref.share")
+      .arrow
+    .related.tab-trigger
+      %span.count
+    .clear-selected.tab-trigger
+      = t('ref.clear verses')
+
+  .panels
+
+      

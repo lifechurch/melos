@@ -349,6 +349,7 @@
   display: none
   position: relative
   background-color: #323232
+  margin-top: 34px
 
   .verse-actions-success-message
     background:
@@ -371,16 +372,18 @@
 #menu_verse_actions .references ul
   margin: 0
 
-#menu_verse_actions dl
-  background-color: #323232
+#menu_verse_actions .panel-tabs
+  background-color: #333
   border-top: 1px solid #000
+  height: 49px
 
-#menu_verse_actions dd
+#menu_verse_actions dd,
+#menu_verse_actions .tab-panel
+  overflow: inherit !important
   display: none
-  position: absolute
-  top: 81px
 
-#menu_verse_actions dt
+#menu_verse_actions dt,
+#menu_verse_actions .tab-trigger
   cursor: pointer
   float: left
   width: 83px
@@ -396,42 +399,53 @@
   overflow: hidden
   white-space: no-wrap
 
-#menu_verse_actions dt.clear-selected
+#menu_verse_actions dt.clear-selected,
+#menu_verse_actions .tab-trigger.clear-selected
   width: 88px
 
-#menu_verse_actions dt.highlight
+#menu_verse_actions dt.highlight,
+#menu_verse_actions .tab-trigger.highlight
   background-position: 30px 10px
 
-#menu_verse_actions dt.comment
+#menu_verse_actions dt.comment,
+#menu_verse_actions .tab-trigger.comment
   background-position: -47px 10px
 
-#menu_verse_actions dt.bookmark
+#menu_verse_actions dt.bookmark,
+#menu_verse_actions .tab-trigger.bookmark
   background-position: -138px 10px
 
-#menu_verse_actions dt.note
+#menu_verse_actions dt.note,
+#menu_verse_actions .tab-trigger.note
   background-position: -223px 10px
 
-#menu_verse_actions dt.share
+#menu_verse_actions dt.share,
+#menu_verse_actions .tab-trigger.share
   background-position: -304px 10px
 
-#menu_verse_actions dt.clear-selected
+#menu_verse_actions dt.clear-selected,
+#menu_verse_actions .tab-trigger.clear-selected
   background-position: -387px 10px
 
-#menu_verse_actions dt.link
+#menu_verse_actions dt.link,
+#menu_verse_actions .tab-trigger.link
   background-position: -473px 10px
 
-#menu_verse_actions dt.related
+#menu_verse_actions dt.related,
+#menu_verse_actions .tab-trigger.related
   background-position: -557px 10px
   position: relative
   +opacity(1)
   height: 43px
 
-#menu_verse_actions dt.related.disabled
+#menu_verse_actions dt.related.disabled,
+#menu_verse_actions .tab-trigger.related.disabled
   background-position-y: 10px !important
   +opacity(0.3)
   cursor: default
 
-#menu_verse_actions dt.related .count
+#menu_verse_actions dt.related .count,
+#menu_verse_actions .tab-trigger.related .count
   text-align: center
   text-indent: 0
   position: absolute
@@ -441,13 +455,17 @@
   font-size: 11px
 
 #menu_verse_actions dt.active,
-#menu_verse_actions dt:hover
+#menu_verse_actions dt:hover,
+#menu_verse_actions .tab-trigger.active,
+#menu_verse_actions .tab-trigger.hover
   background-position-y: -70px
 
-#menu_verse_actions dt .arrow
+#menu_verse_actions dt .arrow,
+#menu_verse_actions .tab-trigger .arrow
   display: none
 
-#menu_verse_actions dt.active .arrow
+#menu_verse_actions dt.active .arrow,
+#menu_verse_actions .tab-trigger.active .arrow
   display: block
   height: 8px
   width: 16px

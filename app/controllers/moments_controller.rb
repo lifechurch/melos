@@ -45,15 +45,20 @@ class MomentsController < BaseMomentsController
       format.html do
         render partial: "moments/cards", locals: {moments: @moments, comments_displayed: self.class.moment_comments_displayed}, layout: false
       end
-      format.json
+      format.json # renders _cards.json.jbuilder
     end
   end
 
 
   def related
-    @user    = current_user
-    @moments = Moment.all(auth: current_auth, user_id: id_param(current_auth.user_id), usfm: params[:usfm].upcase, version_id: id_param(params[:v]))
-    @reference = Reference.new(params[:usfm], version: params[:v].to_i)
+    @user       = current_user
+    @moments    = Moment.all(auth: current_auth, page: @page, user_id: id_param(current_auth.user_id), usfm: params[:usfm].upcase, version_id: id_param(params[:v]))
+    @reference  = Reference.new(params[:usfm], version: params[:v].to_i)
+
+    respond_to do |format|
+      format.html
+      format.json # renders _cards.json.jbuilder
+    end
   end
 
   # This is solely to support API action_urls that are formatted /moments/123thisID

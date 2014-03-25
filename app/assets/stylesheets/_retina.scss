@@ -161,7 +161,8 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   // !Menu verse actions
-  #menu_verse_actions dt {
+  #menu_verse_actions dt,
+  #menu_verse_actions .tab-trigger {
     background: image-url("verse_task_sprite_2x.png") no-repeat;
     background-size: 650px 104px;
   }

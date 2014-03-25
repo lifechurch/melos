@@ -4,7 +4,7 @@ class window.Panes.VerseActions
 
   constructor: ()->
     @el             = $("#menu_verse_actions")
-    @mobile_menu    = $(".verse_toolbar")
+    @mobile_menu    = $("#m-toolbar .verse_toolbar")
     @speed          = 250
     @is_open        = false
     @activeClass    = 'active'
@@ -12,6 +12,7 @@ class window.Panes.VerseActions
     @f_open_pane    = $.proxy(@openPane,@)
     @f_close_pane   = $.proxy(@closePane,@)
 
+    @pane_list = @el.find('dl')
 
     @initMobile()
     @initPanes()
@@ -26,7 +27,6 @@ class window.Panes.VerseActions
     if refs.length > 0 && !@is_open then @open()
 
     @highlight_pane.updateForm({references: refs})
-    @mobile_highlight_pane.updateForm({references: refs})
     @bookmark_pane.updateForm({references: refs})
     @share_pane.updateForm({references: refs})
     @link_pane.updateForm({references: refs})
@@ -49,7 +49,6 @@ class window.Panes.VerseActions
     #@initPanes() unless @isPanesLoaded()
     return if @is_open
 
-    @adjustArticleMargin(@el.height())
     @el.slideDown @speed, ()=>
       Events.Emitter.addListener "pane:open", @f_open_pane
       Events.Emitter.addListener "pane:close", @f_close_pane
@@ -57,16 +56,16 @@ class window.Panes.VerseActions
 
 
   open_mobile: ()->
-    $('.reader-nav').stop().animate { 'top' : '-46px'}, 200, ()=>
-      @mobile_menu.stop().animate { 'top' : '0px'}, 200, ()=>
-        @mobile_menu.addClass("open")
-        $('.share_toolbar').show()
+    #$('.reader-nav').stop().animate { 'top' : '-46px'}, 200, ()=>
+    #  @mobile_menu.stop().animate { 'top' : '0px'}, 200, ()=>
+    #    @mobile_menu.addClass("open")
+    #    $('.share_toolbar').show()
 
 
   close: ()->
+    @current_pane.close() if @current_pane?
     return unless @is_open
 
-    @adjustArticleMargin()
     @el.slideUp @speed, ()=>
       @pane_list.find("dd").hide()
       @pane_list.find("dt").removeClass(@activeClass)
@@ -85,20 +84,10 @@ class window.Panes.VerseActions
       $('.reader-nav').stop().animate({ 'top' : '0px'}, 200)
   
   isPanesLoaded: ()->
-    @el.find("dl.verses_selected").children().length == 0
+    @el.find(".panels").children().length == 0
 
   initPanes: ()->
-    return unless @pane_list = @el.find('dl')
-
-    @highlight_pane         = new Panes.Highlight {el:"#highlight-pane"}
-    @bookmark_pane          = new Panes.Bookmark {el:"#bookmark-pane"}
-    @share_pane             = new Panes.Share {el:"#share-pane"}
-    @link_pane              = new Panes.Link {el:"#link-pane"}
-    @related_pane           = new Panes.Related({})
-    @note_pane              = new Panes.Note {el:"#note-pane"}
-    @close_pane             = new Panes.Close({})
-    @register_pane          = new Panes.Register({el:"#need-account"})
-    @mobile_highlight_pane  = new Panes.Highlight {el:"div.color_toolbar"}
+    return unless @pane_list?
 
     # Upon successful form submit or the X button is clicked, we should reset all panes
     f_close = $.proxy(@close,@)
@@ -106,17 +95,24 @@ class window.Panes.VerseActions
     Events.Emitter.addListener "form:submit:success", f_close
     Events.Emitter.addListener "panes:cleared", f_close
 
+    @highlight_pane    = new Panes.Highlight({trigger: ".highlight.tab-trigger"})
+    @bookmark_pane     = new Panes.Bookmark({trigger: ".bookmark.tab-trigger"})
+    @share_pane        = new Panes.Share({trigger: ".share.tab-trigger" })
+    @link_pane         = new Panes.Link({trigger: ".link.tab-trigger" })
+    @related_pane      = new Panes.Related({trigger: ".related.tab-trigger" })
+    @note_pane         = new Panes.Note({trigger: ".note.tab-trigger" })
+    @close_pane        = new Panes.Close({trigger: ".clear-selected.tab-trigger" })
+    @register_pane     = new Panes.Register({trigger: "" })
 
-    dl = @el.find("dl.verses_selected")
-
-    dl.prepend @register_pane.render()
-    dl.prepend @close_pane.render()
-    dl.prepend @related_pane.render()
-    dl.prepend @share_pane.render()
-    dl.prepend @link_pane.render()
-    dl.prepend @note_pane.render()
-    dl.prepend @bookmark_pane.render()
-    dl.prepend @highlight_pane.render()
+    wrap = @el.find(".panels")
+    wrap.prepend @register_pane.render()
+    wrap.prepend @close_pane.render()
+    wrap.prepend @related_pane.render()
+    wrap.prepend @share_pane.render()
+    wrap.prepend @link_pane.render()
+    wrap.prepend @note_pane.render()
+    wrap.prepend @bookmark_pane.render()
+    wrap.prepend @highlight_pane.render()
 
     unless Session.User.isLoggedIn()
       @adjustPanesForRegistration()
@@ -132,15 +128,10 @@ class window.Panes.VerseActions
     @bookmark_pane.setPane(register)
     @highlight_pane.setPane(register)
 
-
-  adjustArticleMargin: (extra)->
-    new_margin = reader.header.outerHeight() + extra || 0
-    $('article').stop().animate({marginTop: new_margin}, @speed)
-
   closePane: (args)->
     pane = args.pane
     pane.close()
-    delete current_pane
+    delete @current_pane
     return
 
   openPane: (args)->
@@ -170,6 +161,3 @@ class window.Panes.VerseActions
         Events.Emitter.removeListener "verses:first_selected", f_open
         Events.Emitter.removeListener "verses:all_deselected", f_close
     }
-
-
-

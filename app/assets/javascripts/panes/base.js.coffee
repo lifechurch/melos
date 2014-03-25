@@ -3,10 +3,8 @@ window.Panes ?= {}
 class window.Panes.Base
 
   constructor: (@params)->
-    @el               = $(@params.el)
-    @form_el          = @el.find("form")
-    @references_field = @el.find(".verses_selected_input")
-
+    @trigger_el = $(@params.trigger)
+    
   # Some panes have a form with references field that we need
   # to update whenever clicks happen in the reader
   updateForm: (data) ->
@@ -37,12 +35,9 @@ class window.Panes.Base
   # #render and #afterRender methods.
   afterRender: (html)->
     # siblings because html is a 2 node fragment, rather than a container
-    fragment          = $(html)
-    @el               = fragment.siblings(@params.el)
-    @trigger_el       = fragment.siblings("dt")
+    @el               = $(html)
     @form_el          = @el.find("form")
     @references_field = @el.find(".verses_selected_input")
-
     @setupClickHandlers()
     return
 

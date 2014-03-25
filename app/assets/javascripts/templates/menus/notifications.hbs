@@ -8,18 +8,18 @@
   </li>
   {{else}}
   <li class="notifications-item notifications-empty">
-    <p>#{t("notifications.none")}</p>
+    <p>{{../i18n.no_notifications}}</p>
   </li>
   {{/each}}
 </ul>
 <div class="view-all">
   {{#if notifications}}
     <a href="/notifications" class="text-link wide">
-      {{str_view_all}}
+      {{../i18n.view_all}}
     </a>
   {{else}}
     <span class="text-wide">
-      {{str_none}}
+      {{../i18n.none}}
     </span>
   {{/if}}
 </div>

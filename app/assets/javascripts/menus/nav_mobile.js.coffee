@@ -5,41 +5,21 @@ class window.Menus.NavMobile extends window.Menus.Base
   # ------------------------------------------------------------
 
   constructor: (@trigger_el, @base_element) ->
-    
+    super(@trigger_el,@base_element)
     @container = $(@base_element).find("nav")
-
-    $(@trigger_el).click (e)=>
-      e.preventDefault()
-      if this.isVisible()
-         this.close()
-      else
-         this.open()
-      return
-
-  # Visibility of menu
-  # ------------------------------------------------------------    
-
-  isVisible: ->
-    $(@trigger_el).hasClass("active")
-    
-
-  # Open menu
-  # ------------------------------------------------------------
-
-  open: ->
-    @container.slideDown();
-    $(@base_element).css("max-height", $("body").height() - $("#header").height() + "px");
-    $(@trigger_el).addClass("active")
-    Events.Emitter.emit "yv:menu:open", [{target: this}]
     return
 
 
-  # Close menu
-  # ------------------------------------------------------------
+  open: ->
+    super
+    @container.slideDown();
+    $(@base_element).css("max-height", $("body").height() - $("#header").height() + "px");
+    
+    return
+
 
   close: ->
+    super
     @container.slideUp();
-    $(@trigger_el).removeClass("active")
-    Events.Emitter.emit "yv:menu:close", [{target: this}]
-
+    
     return

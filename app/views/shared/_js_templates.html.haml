@@ -1,21 +1,12 @@
 - if is_reader_page?
-  :ruby
-    authed_form_method = logged_in? ? "post" : "get"
-    authed_highlight_form_action = logged_in? ? highlights_path : sign_up_path
-    authed_bookmark_form_action = logged_in? ? bookmarks_path : sign_up_path
-
   %script#pane-highlight-tmpl{type:"text/x-handlebars-template"}
     :plain
-      <dt class="highlight" data-pane-type="highlight">
-        #{t("highlight")}
-        <div class="arrow"></div>
-      </dt>
-      <dd class="highlight-pane" id="highlight-pane">
+      <div class="tab-panel highlight-pane" id="highlight-pane">
         <div class="pane">
           <p class="verse-actions-success-message success" style="display:none;">
             #{t("highlights.create success")}
           </p>
-          <form action="#{authed_highlight_form_action}" method="#{authed_form_method}" id="highlight-form">
+          <form action="/highlights" method="post" id="highlight-form">
             <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
             <input type="hidden" name="highlight[version_id]" value="#{presenter.version.id}" />
             <input type="hidden" name="highlight[usfm_references]" class="references verses_selected_input" />
@@ -28,20 +19,16 @@
             </button>
           </form>
         </div>
-      </dd>
+      </div>
 
   %script#pane-bookmark-tmpl{type:"text/x-handlebars-template"}
     :plain
-      <dt class="bookmark" data-pane-type="bookmark">
-        #{t("bookmark")}
-        <div class="arrow"></div>
-      </dt>
-      <dd class="bookmark-pane" id="bookmark-pane">
+      <div class="tab-panel bookmark-pane" id="bookmark-pane">
         <div class="pane">
           <p class="verse-actions-success-message success" style="display:none;">
             #{t("bookmarks.create success")}
           </p>
-          <form action="#{authed_bookmark_form_action}" method="#{authed_form_method}">
+          <form action="/bookmarks" method="post">
             <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
             <input type="hidden" name="bookmark[version_id]" value="#{presenter.version.id}" />
             <input type="hidden" name="bookmark[usfm_references]" class="references verses_selected_input" />
@@ -72,19 +59,16 @@
             </div>
           </form>
         </div>
-      </dd>
+      </div>
 
-  %script#pane-note-tmpl{type:"text/x-handlebars-template"}
-    %dt.note{"data-pane-type" => "note"}
-      = t("new note")
-      .arrow
-    %dd#note-pane
+  %script#pane-note-tmpl{type:"text/x-handlebars-template"}  
+    #note-pane.tab-panel
       .pane
         %p.verse-actions-success-message.success{style: "display: none;"}
           = t("notes.create success")
           
         - note = presenter.note
-        = form_for note, url: (logged_in? ? notes_path : sign_up_path), method: authed_form_method do |f|
+        = form_for note, url: (logged_in? ? notes_path : sign_up_path), method: "post" do |f|
           = f.hidden_field :version_id
           = f.hidden_field :usfm_references, class: "verses_selected_input"
           = f.hidden_field :color, class:"selected-color"
@@ -106,22 +90,12 @@
             %button.action_button_green
               = t('notes.form.save button')
 
-  %script#pane-related-tmpl{type:"text/x-handlebars-template"}
-    %dt.related
-      %span.count
 
-  %script#pane-close-tmpl{type:"text/x-handlebars-template"}
-    %dt.clear-selected
-      = t('ref.clear verses')
 
 
   %script#pane-share-tmpl{type:"text/x-handlebars-template"}
     :plain
-      <dt class="share" data-pane-type="share">
-        #{t("ref.share")}
-        <div class="arrow"></div>
-      </dt>
-      <dd id="share-pane">
+      <div class="tab-panel" id="share-pane">
         <div class="pane">
           <form action="#{share_path}" method="post">
             <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
@@ -178,15 +152,11 @@
             </div>
           </form>
         </div>
-      </dd>
+      </div>
 
   %script#pane-link-tmpl{type:"text/x-handlebars-template"}
     :plain
-      <dt class="link">
-        #{t("link")}
-        <div class="arrow"></div>
-      </dt>
-      <dd id="link-pane">
+      <div class="tab-panel" id="link-pane">
         <div class="pane">
           <span class="text_field_embed">
             <input id="copy_link_input" value="" type="text" />
@@ -197,12 +167,12 @@
             </div>
           </span>
         </div>
-      </dd>
+      </div>
 
   %script#pane-register-tmpl{type:"text/x-handlebars-template"}
-    %dt.account.hide
+    .account.hide.tab-trigger
       = t("registration.with email")
-    %dd#need-account
+    #need-account.tab-panel
       .pane
         .blurbs
           %p.highlight= t('registration.highlight blurb');
@@ -218,14 +188,14 @@
           %span.email
             = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})
 
-%script#moment-share-layer-tmpl{type:"text/x-handlebars-template"}
-  %div.moment-actions-share-box
-    %span.moment-actions-share-arrow
-      &nbsp;
-    %div
-      %span
-        %a{href:"#", target: "_blank", title: "Share this on Facebook", class: "facebook moment-actions-share-facebook"}
-          Facebook
-      %span    
-        %a{href:"#", target: "_blank", title: "Share this on Twitter", class: "twitter moment-actions-share-twitter"}
-          Twitter
+  %script#moment-share-layer-tmpl{type:"text/x-handlebars-template"}
+    %div.moment-actions-share-box
+      %span.moment-actions-share-arrow
+        &nbsp;
+      %div
+        %span
+          %a{href:"#", target: "_blank", title: "Share this on Facebook", class: "facebook moment-actions-share-facebook"}
+            Facebook
+        %span    
+          %a{href:"#", target: "_blank", title: "Share this on Twitter", class: "twitter moment-actions-share-twitter"}
+            Twitter

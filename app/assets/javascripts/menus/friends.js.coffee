@@ -5,7 +5,8 @@ class window.Menus.Friends extends window.Menus.Base
   # ------------------------------------------------------------
 
   constructor: (@trigger_el, @base_element) ->
-    @base_element = $(@base_element)
+    super(@trigger_el,@base_element)
+
     @i18n = {
       wants_friendship: @base_element.data("str-wants-friendship"),
       accept:           @base_element.data("str-accept"),
@@ -24,16 +25,7 @@ class window.Menus.Friends extends window.Menus.Base
     Events.Emitter.addListener "menu:friend-requests:open", $.proxy(@open,@)
     Events.Emitter.addListener "menu:friend-requests:close", $.proxy(@close,@)
 
-    $(@trigger_el).click (e)=>
-      e.preventDefault()
-      if @isVisible() then @close() else @open()      
-      return
-
-  # Visibility of menu
-  # ------------------------------------------------------------    
-
-  isVisible: ->
-    $(@trigger_el).hasClass("active")
+    return
 
 
   load: ->
@@ -57,22 +49,16 @@ class window.Menus.Friends extends window.Menus.Base
     Page.prototype.orientAndResize()
 
 
-  # Open menu & load notifications
-  # ------------------------------------------------------------
-
   open: ->
+    super
     @popover.show().animate({'opacity' : '1'}, 200);
     @load()
-    $(@trigger_el).addClass("active")
-    Events.Emitter.emit "yv:menu:open", [{target: this}]
+
     return
 
 
-  # Close menu
-  # ------------------------------------------------------------
-
   close: ->
+    super
     @popover.animate({'opacity' : '0'}, 200, "swing", @popover.hide());
-    $(@trigger_el).removeClass("active")
-    Events.Emitter.emit "yv:menu:close", [{target: this}]
+
     return

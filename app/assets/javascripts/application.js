@@ -26,6 +26,8 @@
 //= require ./moments/note
 //= require ./moments/bookmark
 //= require ./moments/highlight
+//= require ./moments/feed_base
+//= require ./moments/related_feed
 //= require ./moments/feed
 //= require ./menus/base
 //= require ./menus/notifications

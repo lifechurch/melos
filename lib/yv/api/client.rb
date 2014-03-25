@@ -9,7 +9,8 @@ module YV
         default_timeout Cfg.api_default_timeout.to_f
 
       # 500 Json response
-        JSON_500 = JSON.parse('{"response": {"buildtime": "", "code": 500, "data": {"errors": []}}}')
+
+        JSON_500 = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "MultiJson::DecodeError"}]}}}')
 
 
       class << self
