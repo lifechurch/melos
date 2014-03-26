@@ -20,7 +20,8 @@
   overflow: auto
   position: relative
   color: #666
-  padding: 4px 10px 0
+  padding: 4px 10px 5px
+  background-color: #e5e5e5
 
 =video_thumbnail_image
   display:block
@@ -77,24 +78,19 @@
       .share_wrapper
         display: block
         padding: 10px
-        width: 100%
         border-radius: 4px 4px 0px 0px
-        position: relative
-        z-index: 1999
 
         a
-          border: 1px solid #005A88
           font-weight: bold
           text-decoration: none
           color: #fff
           padding: 4px 11px
           display: block
           font-size: 15px
-          text-shadow: #000 0 -1px 0
           background-color: #0084c8
           +round_bottom
           +round_top
-          +box-shadow(inset rgba(0,0,0,0.18) 0 -1px 0, inset rgba(255,255,255,.3) 0 1px 0)
+          +box-shadow(inset rgba(0,0,0,0.18) 0 -1px 0)
 
         a:hover
           background-color: #008DD5
@@ -159,7 +155,7 @@
 
     li
       width: auto
-      margin: 0px 0px 30px
+      margin: 0px 0px 15px
       background: none
 
       img
@@ -188,6 +184,12 @@
   .inner
     margin-top: 0
     padding: 0
+
+#videos-index
+  ul.resource_list
+
+    li
+      padding: 0
 
 #search-show
   li.video:first-child
@@ -310,12 +312,13 @@
 
   #title-bar
     margin-bottom: 10px
+    padding: 10px
 
     h1
       display: none
 
     .share
-      top: -5px
+      top: 0
 
     .share_panel
       top: 50px
@@ -325,11 +328,8 @@
     margin-bottom: 20px
 
   .inner
-    padding: 20px
+    padding: 0 20px
     width: auto
-
-    #details
-      width: auto
 
     #other
       width: auto
@@ -355,9 +355,7 @@
     +round_bottom
 
   #details
-    width: 500px
-    float: left
-    padding: 15px 0
+    padding: 0 0 15px 0
     margin: 0
 
     .refs

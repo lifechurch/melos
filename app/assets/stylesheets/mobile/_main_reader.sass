@@ -638,7 +638,13 @@ article .reader-nav,
 
   .as_table,
   .vcenter
-    display: inline
+    display: block
+
+  .vcenter
+    a.button
+      float: none
+      width: auto
+      margin: 10px 0 0
 
   a
     text-decoration: none
@@ -656,8 +662,10 @@ article .reader-nav,
     height: auto
 
 #main article + footer
-  margin-top: -5px
+  margin: 0
   position: relative
+  padding: 10px 20px 15px
+  border-bottom: 0
 
 #main footer p
   margin: 0
