@@ -35,12 +35,6 @@ module YouversionWeb
       # TODO: remove when YouVersion.com site launches
       r301 %r{\/kids\/terms$|\/kids\/privacy$}, "http://blog.youversion.com/the-bible-app-for-kids-terms-privacy-policy/"
 
-      # Blanket redirect all youversion traffic to www.bible.com
-      r301 %r{.*}, 'https://www.bible.com$&', if: Proc.new {|rack_env|
-        rack_env['SERVER_NAME'].match("youversion")
-      }
-
-
       r301 %r{^\/webcast}, "http://webcast.youversion.com/index.html"
 
       # /app redirects
