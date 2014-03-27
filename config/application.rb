@@ -31,10 +31,6 @@ module YouversionWeb
 
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
 
-      # Temporary redirect for /kids/terms and /kids/privacy.
-      # TODO: remove when YouVersion.com site launches
-      r301 %r{\/kids\/terms$|\/kids\/privacy$}, "http://blog.youversion.com/the-bible-app-for-kids-terms-privacy-policy/"
-
       r301 %r{^\/webcast}, "http://webcast.youversion.com/index.html"
 
       # /app redirects
