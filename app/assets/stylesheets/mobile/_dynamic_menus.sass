@@ -110,3 +110,75 @@
 
 .dynamic_menu.version_select th a
   min-width: 4em
+
+#menu_verse_actions
+  width: 100%
+  top: 12px
+  z-index: 100
+
+  .tab-trigger.link
+    display: none
+
+  .tab-trigger.share
+    display: none
+
+  .references
+    display: none
+
+#menu_verse_actions 
+  .tab-trigger
+    cursor: pointer
+    width: 16%
+    background: #0084c8 image-url("mobile/verse_action_sprite.png") no-repeat
+    text-indent: -2000px
+    overflow: hidden
+    margin: 5px 1% 0
+    display: inline-block
+    height: 30px
+    padding: 0px
+    +border-radius(4px)
+    border-bottom: 2px solid #000  
+
+  .tab-trigger.bookmark
+    background-position: center -50px
+
+  .tab-trigger.comments
+    background-position: -45px -40px
+
+  .tab-trigger.highlight
+    background-position: center -6px
+
+  .tab-trigger.note
+    background-position: center -94px
+
+  .tab-trigger.related
+    background-position: center -225px
+
+  .tab-trigger.share
+    background-position: center -138px
+
+  .tab-trigger.clear-selected
+    background: #0084c8 image-url("nav_icons_mobile.png") center -353px no-repeat
+
+  .pane
+    margin-top: 30px
+    width: auto
+
+#menu_verse_actions .tab-trigger.clear-selected
+  width: 16%
+
+#menu_verse_actions .tab-trigger.related
+  height: 30px
+
+#menu_verse_actions .panel-tabs 
+  border-top: 1px solid black
+  height: 44px
+  width: 100%
+  position: fixed
+  text-align: center
+  padding: 0 3%
+
+#menu_verse_actions #note-pane .title
+  width: 100%
+
+
