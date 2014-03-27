@@ -196,15 +196,14 @@ class User < YV::Resource
 
   # Instance method
   # Updates profile picture
-  # TODO: localize for error key: users.image_decoded.not_valid_image
   def update_picture(uploaded_file)
     error = {}
     if uploaded_file.nil?
       error["key"]   = "picture_empty"
-      error["error"] = "Please select a picture to upload"
+      error["error"] = I18n.t("users.profile.picture_empty")
     elsif uploaded_file.size > 1.megabyte
       error["key"]   = "picture_too_large"
-      error["error"] = "Picture should be less than 1 megabyte"
+      error["error"] = I18n.t("users.profile.picture_too_large")
     end    
 
     unless error.has_key?("error")
@@ -214,7 +213,7 @@ class User < YV::Resource
         return YV::API::Results.new(data,errs)
       rescue APITimeoutError
         error["key"]   = "transfer_too_slow"
-        error["error"] = "Choose a smaller picture or find a faster connection"
+        error["error"] = I18n.t("users.profile.transfer_too_slow")
       end
     end
 

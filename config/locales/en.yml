@@ -542,6 +542,7 @@ en:
       picture error:                            "Sorry, there was an error updating your picture."
       picture_empty:                            "Please select a picture to upload"
       picture_too_large:                        "Picture should be less than 1 megabyte"
+      transfer_too_slow:                        "Choose a smaller picture or find a faster connection"
       picture_invalid_type:                     "Picture should be JPG, PNG, or GIF"
       picture_creation form errors:             "The following error(s) prevented updating your picture:"
       updated picture:                          "Success! You've updated your picture."
@@ -793,6 +794,7 @@ en:
   donate:
     donate now:                                 "Donate Now"
     donate now intl:                            "or donate internationally"
+    enter amount:                               "Enter an amount"
     promo 1:                                    "For every $1 you give, 10 more people get access to the Bible on their mobile phone."
     promo 2:                                    "With YouVersion, the Bible is always nearby. Watch our video."
     promo 3:                                    "This year over 5 billion people will use a mobile phone. Donate now."
