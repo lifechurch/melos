@@ -38,6 +38,7 @@ gem 'rack-rewrite',           '~> 1.3.3'
 gem 'rack-timeout',           '~> 0.0.3'
 gem 'viximo-rack-throttle',   '~> 0.5.0'
 gem 'handlebars_assets',      '~> 0.14.0'
+gem 'pg'
 
 # Using locale files directly in /config/locales/rails-i18n until gem supports
 # aliasing (or we come up with a way to resolve differences between gem lang
