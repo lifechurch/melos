@@ -357,7 +357,7 @@ en:
     no secondary version text:                  "%{language_name} only has one version available, so we couldn't pick a secondary version for you. Please select your secondary version for parallel comparison."
     select another chapter:                     "Pick a Different Chapter"
     view in reader:                             "View %{reference} in Reader"
-  users:    
+  users:
     unverified heading:                         "Almost Done!"
     unverified message:                         "It looks like you're trying to sign in to an account that hasn't been set up completely. You only have one more step: simply click on the verification link in the confirmation email you received from YouVersion. Can't find it? Check your spam folder or <a href='%{resend_path}'>resend the confirmation email</a>."
     settings:                                   "Settings"
@@ -767,6 +767,7 @@ en:
     none:                                       "Sorry, audio isn't available for this version."
     chapter only:                               "Sorry, audio isn't available for verses. View in the reader for chapter audio."
     close player menu:                          "Close"
+    publisher website:                          "Publisher Website"
   highlights:
     title:                                      "Highlights"
     blank slate:

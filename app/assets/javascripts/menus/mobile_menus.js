@@ -288,9 +288,14 @@ MobileMenus.prototype = {
     });
   },
 
+  audioMenuHeight: 0,
+  audioCloseAnimateHeight: function() {
+    return MobileMenus.prototype.audioMenuHeight + 'px'
+  },
   initAudioMenu : function(){
     // Audio menu trigger
     var thiss = this;
+    MobileMenus.prototype.audioMenuHeight = -thiss.audioToolbar.height();
 
     $('.audio_btn').click(function(e) {
         e.preventDefault();
@@ -304,7 +309,7 @@ MobileMenus.prototype = {
               }).removeClass('open');
           }
         } else {
-            thiss.audioToolbar.stop().animate({ top : '-208px'}, 400, function(){
+            thiss.audioToolbar.stop().animate({ top : MobileMenus.prototype.audioCloseAnimateHeight()}, 400, function(){
                 thiss.navItems.stop().animate({ top : '0px'}, 400).addClass(thiss.openFlag);
             }).hide().removeClass('open');
 
@@ -313,21 +318,23 @@ MobileMenus.prototype = {
 
     // Audio menu close trigger
     $('.audio_close_btn').click(function(e){
-        e.preventDefault();
-        var $this = $(this);
-        //if audio is playing, pause it.
-        $('.mejs-pause button').click();
-        thiss.audioToolbar.stop().animate({ top : '-208px'}, 400, function(){
-            thiss.navItems.stop().animate({ top : '0px'}, 400).addClass(thiss.openFlag);
-        }).removeClass('open');
-        $('.audio_btn').toggleClass('selected');
+        if (MobileMenus.prototype.isMobileClient()) {
+          e.preventDefault();
+          var $this = $(this);
+          //if audio is playing, pause it.
+          $('.mejs-pause button').click();
+          thiss.audioToolbar.stop().animate({ top : MobileMenus.prototype.audioCloseAnimateHeight()}, 400, function(){
+              thiss.navItems.stop().animate({ top : '0px'}, 400).addClass(thiss.openFlag);
+          }).removeClass('open');
+          $('.audio_btn').toggleClass('selected')
+        }
     });
   },
 
   closeAudioMenu : function(){
     if(this.audioToolbar.hasClass('open')){
       var thiss = this;
-      this.audioToolbar.stop().animate({ top : '-208px'}, 400).removeClass(this.openFlag);
+      this.audioToolbar.stop().animate({ top : MobileMenus.prototype.audioCloseAnimateHeight()}, 400).removeClass(this.openFlag);
     }
   },
 
