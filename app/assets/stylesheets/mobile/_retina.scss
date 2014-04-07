@@ -67,7 +67,7 @@ only screen and (                min-resolution: 2dppx) {
 
   #menu_verse_actions .tab-trigger {
     background: #0084c8 image-url("mobile/verse_action_sprite_2x.png") no-repeat;
-    background-size: 16px 300px; 
+    background-size: 16px 300px;
   }
 
   #menu_verse_actions .tab-trigger.bookmark {
@@ -80,26 +80,26 @@ only screen and (                min-resolution: 2dppx) {
 
   #menu_verse_actions .tab-trigger.highlight {
     background-position: center -6px;
-  }  
+  }
 
   #menu_verse_actions .tab-trigger.note {
     background-position: center -94px;
-  }  
+  }
 
   #menu_verse_actions .tab-trigger.related {
     background-position: center -227px;
-  }  
+  }
 
   #menu_verse_actions .tab-trigger.share {
     background-position: center -138px;
-  }  
+  }
 
   // !Header
 
   #header .friend-requests-btn,
   #header .notifications-btn {
     background: image-url("header-sprite@2x.png") no-repeat;
-    background-size: 28px 100px;
+    background-size: 28px 550px;
   }
 
   #header .friend-requests-btn {
@@ -107,7 +107,7 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   #header .notifications-btn {
-    background-position: 0px -55px;
+    background-position: 0px -45px;
   }
 
 
