@@ -14,10 +14,12 @@
       %dd
         %audio#audio_player{:src => reference.audio.url, :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
       %dt
-        %a.no_style.float_right.negative_gutter_top_quarter{:href => reference.audio.publisher_link, :target => "_blank"}
-          = image_tag "icon_info.png"
-        %small
-          = reference.audio.copyright
+        .copy
+          = reference.audio.copyright_short.html
+        .copy.audio_close_btn
+          = raw reference.audio.copyright_long.html
+        %a.action_button_blue{:href => reference.audio.publisher_link, :target => "_blank"}
+          = t("audio.publisher website")
   .mobile
     %div.close_tab
       %span.first
