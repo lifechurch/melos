@@ -50,7 +50,7 @@ class User < YV::Resource
         last_name: "",
         username: "",
         password: "",
-        verified: true,
+        verified: false,
         agree: false
       }.merge!(opts.symbolize_keys)
 
