@@ -1,9 +1,12 @@
 class AppStoreController < ActionController::Base
   include YV::Concerns::UserAuth
+  include YV::Concerns::Locale
+  include ApplicationHelper
 
   before_filter :set_site, only: [:index]
   before_filter :track_app_download, only: [:index]
   helper_method :current_auth, :ref_from_params, :current_avatar
+  before_filter :set_locale_and_timezone # from YV::Concerns::Locale
 
   # get /app/(:store)
   def index
