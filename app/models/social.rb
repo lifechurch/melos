@@ -16,4 +16,8 @@ class Social
     User.authenticate("MilesBrad","password")
   end
 
+  def self.matt
+    User.authenticate("manderson", "qwerasdf")
+  end
+  
 end

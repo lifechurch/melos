@@ -86,6 +86,7 @@ group :development, :tddium_ignore do
   gem 'guard-rspec'
   gem 'hooves'
   gem 'pry', require: false
+  gem 'pry-rails'
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
