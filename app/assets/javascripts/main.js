@@ -30,7 +30,7 @@ jQuery(document).ready(function() {
 
   var nm = new Menus.NavMobile("#slideToNav","#nav_mobile");
   var n = new Menus.Notifications("#header .notifications-btn",".header-popover.notifications");
-  var f = new Menus.Friends("#header .friend-requests-btn",".header-popover.friend-requests"); 
+  var f = new Menus.Friends("#header .friend-requests-btn",".header-popover.friend-requests");
   var mg = new Menus.MenuGroup("#header")
       mg.addMenu(nm)
       mg.addMenu(n)
@@ -38,7 +38,9 @@ jQuery(document).ready(function() {
 
 
   $(".moment-verse.empty").each(function() {
-    //new Moments.Verse({el: $(this)});
+    // this is used for moments not in the feed, temp fix here until it can be refactored
+    // to work the same as the feed moments
+    new Moments.Verse({el: $(this)});
   });
 
 
@@ -81,7 +83,7 @@ jQuery(document).ready(function() {
     var link_parent = link.parent();
     var link_text = link.data("title");
     var link_href = link.attr("href");
-    
+
     // Build base tooltip element
     var tooltip_el = $('<a/>', {
       href: link_href,
@@ -107,7 +109,7 @@ jQuery(document).ready(function() {
     });
   });
 
-    
+
 
 
 
@@ -119,7 +121,7 @@ jQuery(document).ready(function() {
 
   var timezone = jstz.determine();
   setCookie('cs-time-zone',timezone.name());
-  
+
 });
 
 jQuery(window).load(function() { });
