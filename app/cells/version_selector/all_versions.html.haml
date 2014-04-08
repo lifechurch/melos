@@ -1,6 +1,0 @@
-%tr.cat.cur_language
-  %th{:colspan => '2'}= @version.language.human
-= render partial: 'items', locals: {versions: @this_language}
--#
-  Note: the rest of versions are appended via AJAX when user
-  opens the menu, to not clutter the DOM on initial load

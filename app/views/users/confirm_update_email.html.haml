@@ -1,8 +1,0 @@
-- if @user.errors.blank?
-  %p= t('confirm update email success')
-- else
-  .form_errors
-    =t("users.profile form errors")
-    %ul
-      - @user.errors.full_messages.each do |e|
-        %li= e.first
