@@ -12,7 +12,7 @@ common:
   avatar_path_direct: https://static-youversionapi-com.s3.amazonaws.com/users/images/
   api_root: youversionapi.com
   api_referer: web-dev.youversionapi.com
-  api_version: "3.0"
+  api_version: "3.1"
   memcache_server: localhost
   #
   # Timeouts: all times are in seconds
@@ -54,7 +54,7 @@ test:
 production:
   api_root: youversionapi.com
   api_referer: web.youversionapi.com
-  api_version: "3.0"
+  api_version: "3.1"
   api_default_timeout: 5
   rack_execution_timeout: 22
   memcache_server: memcache.youversion.com
