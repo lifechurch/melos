@@ -34,6 +34,7 @@ cy:
   new note: "Nodyn newydd "
   share success: "Mae’ch neges wedi ei rannu.  "
   share error: "Mae’n flin gennym, digwyddodd gwall wrth rannu’ch neges. Rhowch gynnig  arni eto. "
+  google plus: "Google +"
   connect to: "Cysylltwch â’ch %{connection} cyfrif"
   deleted connection: "Dilëwyd y cysylltiad â  %{connection}  yn llwyddiannus. "
   deleted connection error: "Mae'n flin gennym digwyddodd gwall wrth ddileu eich cyswllt â %{connection}.   "
@@ -98,13 +99,17 @@ cy:
   chapter: "Pennod "
   bible: "Beibl"
   notes title: "Nodiadau "
+  friends: "Ffrindiau "
   groups: "Grwpiau "
   mobile: "Ffôn lôn "
   live: "Grwpiau / Byw "
   first page: "Y Dudalen Gyntaf"
   last page: "Y Dudalen Olaf "
+  next page: "Y Dudalen Nesaf"
+  previous page: "Y Dudalen Flaenorol "
   invalid username or password: "Cyfrinair enw defnyddiwr annilys. "
   show all bookmarks: "Gweld holl %{total}nodau tudalen  "
+  show all notes: "Gweld%{total} notes"
   recent bookmarks: "Nod tudalen diweddar"
   percentage display: "%{number}%"
   myself: "Fi "
@@ -112,31 +117,13 @@ cy:
   paginated items shown: "%{first_shown}&ndash;%{last_shown}o’r %{total_available}"
   160 character limit: "160 o lythrennau neu lai "
   recent versions: "Defnyddiwyd yn Ddiweddar "
-  moments:
-    action:
-      like: "Hoffi "
-      share: "Rhannwch "
-      edit: "Golygu"
-  friendships:
-    status:
-      friends: "Ffrindiau "
   notes:
-    form:
-      title field: "Teitl "
-      content field: "Cynnwys: "
-      reference field: "Cyfeiriad(au):"
-      save button: "Cadw "
-    status:
-      private: "Prefat"
-      public: "Cyhoeddus "
-      draft: "Drafft"
     list title: "Nodiadau "
     loading community: "Llwytho nodiadau cymunedol…"
     no community notes: "Doedd dim nodiadau cymunedol yn cyfeirio at adnodau dethol i’w gweld. Er mwyn creu nodyn, dewiswch adnod yn adran ddarllen y Beibl, cliciwch y botwm Dewiswyd ar dop y darllenydd.    "
     public: "Cyhoeddus "
     private: "Prefat"
     draft: "Drafft"
-    friends: "Ffrindiau "
     creation form errors: "Mae’r gwall(au) canlynol yn rhwystr i chi  greu nodyn:   "
     reference field: "Cyfeiriad(au):"
     version field: "Fersiwn:"
@@ -157,6 +144,7 @@ cy:
     cancel: "Canslo  "
     pop out: "Tudalen naid  "
     none found: "Heb ganfod nodiadau…. "
+    successfully deleted: "Dilëwyd Nodyn"
   ref:
     clear verses: "Dilëwch yr Adnodau Dethol"
     choose book and chapter: "Dewiswch Lyfr  + Pennod  "
@@ -224,6 +212,7 @@ cy:
     my badges: "Fy Mathodynnau "
     revised date: "Diweddarwyd ddiwethaf ar %{date}"
     update email copy: "Mewngofnodwch gyfeiriad ebost newydd a chliciwch Diweddaru Ebost . Danfonwn ddolen  i gadarnhau'ch cyfeiriad ebost newydd. "
+    edit email: "Diweddaru’r Cyfeiriad Ebost"
     update email check: "Ewch i’ch cyfrif ebost, cliciwch y ddolen i gadarnhau'ch cyfeiriad ebost newydd."
     confirm update email success: "Diolch! Diweddarwyd eich cyfeiriad ebost."
     confirm update email error: "Mae’n flin gennym, cawsom drafferth i gwblhau newid manylion  eich ebost."
@@ -321,10 +310,6 @@ cy:
       general title: "Gwybodaeth Gyffredinol "
       general text: "Y Cytundeb Cyfan. Mae’r TERMAU DEFNYDD yn cynnwys y cytundeb llawn rhyngoch â LifeChurch.tv ac yn amodi eich defnydd ar YouVersion. Mae'n cymryd lle unrhyw gytundeb blaenorol rhyngoch â LifeChurch.tv mewn perthynas â YouVersion. Byddwch yn atebol o bosib i dermau ac amodau ychwanegol.%{line_break}Fforwm a Dewis Cyfraith. Caiff  TERMAU DEFNYDD a’r berthynas rhyngoch â LifeChurch.tv ei amodi gan gyfreithiau Talaith Oklahoma heb ystyried gwrthdaro mewn darpariaeth cyfraith. Byddwch chi a LifeChurch.tv yn cytuno ufuddhau i gyfraith bersonol ac unigryw’r llysoedd leolir o fewn i Dalaith Oklahoma.%{line_break}Ildio Hawliau a Thorri Termau. Bydd methiant LifeChurch.tv i weithredu neu orfodi unrhyw ran o’r TERMAU DEFNYDD heb gynnwys ildio hawliau na darpariaeth. Os cenfydd unrhyw lys awdurdodedig ran o’r TERMAU DEFNYDD yn annilys, cytuna’r  partïon bod y llys yn ymdrechu i ddylanwadu ar fwriadau’r partïon yn ôl yr hyn  adlewyrchir yn y ddarpariaeth.Bydd y darpariaethau eraill yn y TERMAU DEFNYDD yn parhau’n rymus ac effeithiol.%{line_break}Dim Hawl Goroesi a Dim-Trosglwyddo. Cytunwch na fedrir trosglwyddo'ch cyfrif LifeChurch.tv nag unrhyw hawliau adnabod ID LifeChurch.tv na chynnwys o fewn eich cyfrif a’u bod yn terfynu gyda’ch marwolaeth. Wedi derbyn copi o’ch tystysgrif marwolaeth medr LifeChurch.tv derfynu’ch cyfrif a dileu’r holl gynnwys o’i mewn.%{line_break}Statud Cyfyngiadau. Byddwch yn deall a chytuno er gwaethaf unrhyw statud neu gyfraith i’r gwrthwyneb, bod yn rhaid ffeilio unrhyw hawliau neu achos a gwyd wrth ddefnyddio YouVersion neu’r TERMAU DEFNYDD o fewn(1)blwyddyn wedi i’r cais neu’r achos godi neu fod diwedd ar y cais.%{line_break}Mae teitlau’r adrannau o fewn y TERMAU DEFNYDD er hwylustod yn unig, nid oes ganddynt afael cyfreithiol na chytunebol.  \n"
     profile:
-      tab friends: "Ffrindiau "
-      tab notes: "Nodiadau "
-      tab bookmarks: "Nod tudalen "
-      tab badges: "Bathodynnau"
       first name: "Enw Cyntaf "
       last name: "Cyfenw "
       email: "Cyfeiriad Ebost "
@@ -375,6 +360,8 @@ cy:
     title: "Nod tudalen "
     not found: "Mae nod tudalen yn rhoi canllaw cyflym i chi fynd at eich hoff ddarn neu at y bennod olaf ddarllenwyd gennych mewn llyfr arbennig. I ychwanegu nod tudalen, dewiswch adnod yn narllenwr y Beibl a chliciwch ar y botwm Dewis  ar ddalen  y darllenydd."
     other user not found: "Nid yw%{username}wedi cadw nod tudalen eto.  "
+    successfully created: "Ychwanegwyd Nod Tudalen "
+    successfully deleted: "Dilewyd y nod dudalen "
     labels placeholder: "Gwahanwch labeli lluosog gydag atalnod.  "
     save: "Arbedwch y Nod Llyfr"
     confirm delete: "Ydw, Dw i’n siwr "
@@ -385,25 +372,10 @@ cy:
     update: "Diweddaru"
     color: "Lliw:"
     version field: "Fersiwn:"
-    form:
-      title field: "Teitl "
-      reference field: "Cyfeirnod:"
-      labels field: "Labeli (comma-separated"
-      colors field: "Lliw:"
-      save button: "Arbedwch y Nod Llyfr"
   badges:
     earned a badge: "Ennill bathodyn "
     user badges: "Bathodynnau %{user}"
-    earned date: "Enillwyd gan %{username} %{ago} yn ôl"
-    none me: "Dwyt ti{username} heb ennill yr un bathodyn eto."
-    none user: "Dydy %{username}heb ennill yr un bathodyn eto."
   plans:
-    widget:
-      my plans: "Fy Nghynlluniau "
-    settings: "Gosodiadau "
-    privacy:
-      private: "Prefat"
-      public: "Cyhoeddus "
     title: "Cynlluniau Darllen"
     browse by category: "Chwiliwch yn ôl Categori "
     browse plans: "Pori %{category}Cynlluniau "
@@ -433,6 +405,7 @@ cy:
     you have no plans: "Does dim tanysgrifiad gennych i gynlluniau darllen ar hyn o bryd. "
     no public plans: "Does dim cynlluniau darllen ar gyfer %{username}"
     filter by lang: "Hidlwch Gynlluniau Darllen yn ôl Iaith "
+    settings: "Gosodiadau "
     search: "Chwilio"
     search placeholder: "Chwiliwch Gynlluniau%{category}"
     subscribe to plan: "Dechreuwch y Cynllun"
@@ -514,6 +487,7 @@ cy:
     delete error: "Mae’n flin gennym, r’yn ni’n methu dileu’r uwcholeuo."
   searching:
     bible: "Beibl"
+    plans: "Cynlluniau Darllen"
     users: "Defnyddwyr"
     notes: "Nodiadau "
     total results: "Am %{total} Canlyniadau "
@@ -632,7 +606,3 @@ cy:
   versions:
     learn more: "Dysgwch Fwy "
     publisher widget title: "Cyhoeddwr "
-  ui:
-    pagination:
-      next page: "Y Dudalen Nesaf"
-      previous page: "Y Dudalen Flaenorol "

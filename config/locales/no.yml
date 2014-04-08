@@ -1,31 +1,5 @@
 "no":
   social:
-    intro page:
-      main heading: "Samtale og utforske"
-      main description: "Utforsk Bibelen på en ny  måte sammen ved venner du stoler på"
-      moment:
-        timestamp: "5 dager siden"
-        title: "bokmerke Salmene 31:8"
-        verse: "Jeg vil juble av glede over din godhet, for du har sett min nød, du kjenner min trengsel."
-        reference: "Salmene 31:8"
-        discover:
-          copy: "Utforsk og lær sammen med venner som markerer tekst, lager bokmerker og notater."
-          button: "Hvor kan jeg begynne?"
-        share:
-          copy: "Del ærlige samtaler om Bibelen."
-          button: "Begynn med å finne noen venner."
-        likes:
-          info: "og 4 til liker dette"
-        comments:
-          first:
-            text: "Trengte virkelig å høre dette i dag, takk. La oss fortsette snart."
-            time: "omtrent 3 timer siden"
-          second:
-            text: "Amen, jeg også. Sender deg e-post snart."
-            time: "omtrent 27 minutter siden"
-          field placeholder: "Skriv en kommentar..."
-    moment:
-      read less: "Les mindre"
     share: "Del"
     my connections: "Tilknyttede kontoer"
     connected as: "Du er koblet til %{connection} som %{username}."
@@ -58,13 +32,9 @@
     users username not available: "Brukernavnet du oppga er ikke tilgjengelig."
     users username or password invalid: "Brukernavnet eller passordet du oppgav er ikke gyldig."
     users username required: "Du må skrive inn et brukernavn"
-    users first name required: "Du må skrive inn et fornavn."
-    users last name required: "Du må skrive inn et etternavn."
-    moments content required: "Innhold kan ikke være tomt."
   meta:
     kids_app:
       title: "Bibel-appen for barn"
-      description: "..."
     100million:
       title: "Det begynner med 100 millioner"
       description: "Bibel-appen har blitt installert nesten 100 millioner ganger - en utrolig milepæl! Men vi er bare så vidt kommet igang. Last ned Bibel-appen gratis idag - og del den så med vennene dine. Bli med å skape historie."
@@ -92,7 +62,7 @@
   new note: "Nytt notat"
   share success: "Meldingen din har blitt delt."
   share error: "Det skjedde en feil ved deling av meldingen din. Vennligst prøv igjen."
-  google plus: "Google+"
+  google plus: "Google +"
   connect to: "Koble til din %{connection} konto"
   deleted connection: "Din kobling til %{connection} er nå fjernet."
   deleted connection error: "En feil oppstod da du forsøkte å ta bort koblingen til %{connection}."
@@ -148,7 +118,6 @@
   find friends: "Finn venner"
   search placeholder: "Søk..."
   search: "Søk"
-  more: "Mer"
   book: "Bok"
   filter book: "Filtrer bøker..."
   save: "Lagre"
@@ -162,14 +131,17 @@
   chapter: "Kapittel"
   bible: "Bibel"
   notes title: "Notater"
+  friends: "Venner"
   groups: "Grupper"
   mobile: "Mobil"
   live: "Live/Grupper"
   first page: "Første side"
   last page: "Siste side"
+  next page: "Neste side"
+  previous page: "Forrige side"
   invalid username or password: "Ugyldig brukernavn eller passord."
   show all bookmarks: "Vis alle %{total} bokmerker"
-  show all notes: "Vis alle notater"
+  show all notes: "Vis alle %{total} notater"
   recent bookmarks: "Nyeste bokmerker"
   percentage display: "%{number}%"
   myself: "Meg"
@@ -180,110 +152,7 @@
   or:
     lower: "eller"
     upper: "ELLER"
-  moments:
-    vod:
-      title: "Dagens vers"
-    friendship:
-      now friends: "Du er nå venn med"
-    cta:
-      profile update text: "Hjelp dine venner å finne deg."
-      profile update button: "Oppdater din profil"
-      sharing text: "Del vers med sosiale nettverk"
-      sharing button: "Aktiver deling"
-      friends text: "Se dine venners hendelser i Bibelen"
-      friends button: "Finn venner"
-    action:
-      go to scripture: "Gå til skriftsted"
-      load more: "Last inn flere"
-      like: "Liker"
-      liked: "Liker"
-      like title: "Lik dette"
-      last comment: "Siste kommentar"
-      share: "Del"
-      share title: "Del dette med venner eller familie"
-      comment: "Kommentar"
-      comment title: "Se alle kommentarer"
-      edit: "Rediger"
-      edit highlight title: "Rediger denne markeringen"
-      edit bookmark title: "Rediger dette bokmerket"
-      edit note title: "Rediger dette notatet"
-      delete: "Slett"
-      delete confirm: "Er du sikker?"
-      delete highlight title: "Slett denne markeringen"
-      delete bookmark title: "Slett dette bokmerket"
-      delete note title: "Slett dette notatet"
-  notifications:
-    title: "Varslinger"
-    none: "Du har ingen varslinger"
-    no new: "Ingen nye varsler"
-    view all: "Se alle varslinger"
-  likes:
-    create success: "Suksess! Ditt liker har blitt lagret"
-    create failure: "Ditt \"liker\" kunne ikke bli lagret"
-    destroy success: "\"Liker\" er slettet"
-    destroy failure: "Ditt \"liker\" kunne ikke slettes"
-  comments:
-    view all N: "Se alle %{count} kommentarer"
-    post comment: "Legg til en kommentar"
-    create success: "Suksess! Din kommentar ble lagt ut."
-    create failure: "Kommentaren kunne ikke lagres"
-    destroy success: "Kommentar slettet"
-    destroy failure: "Kommentaren kunne ikke slettes"
-    form:
-      save button: "Post"
-  friends:
-    you have N friends: "Du har %{count} venner"
-    none me: "Del dine hendelser i Bibelen som bokmerker, markeringer og notater med dine nærmeste venner og familie."
-    find friends: "Finn venner"
-    blank slate:
-      heading: "Ikke venner"
-      description: "Du må være venn med denne personen for å se vennelisten."
-    limit notice: "Du kan ha inntil 150 venner"
-    limit description: "Når du begrenser dine venner i Bibel-appen til kun de som du kjenner godt, gir det grobunn for ærlig samtale og oppdagelser sammen med venner du stoler på."
-  friendships:
-    find friends title: "Finn venner"
-    widget:
-      find friends title: "Finn venner"
-    offer success: "Venneforespørsel sendt"
-    offer failure: "Det oppsto en feil under sending av venneforespørselen"
-    create success: "Suksess! Dere er nå venner."
-    create failure: "Det oppstod en feil under oppretting av vennskap"
-    destroy success: "Forespørsel avvist"
-    destroy failure: "Det oppsto en feil under avslaget"
-    requests title: "Venneforespørsler"
-    requests view all: "Se alle venneforespørseler"
-    requests none: "Du har ingen venneforespørseler"
-    requests no new: "Ingen nye forespørsler"
-    status:
-      pending: "Forespørsel venter på svar"
-      friends: "Venner"
-    user wants friendship: "%{user} ønsker å bli din venn"
-    user wants friendship partial: "ønsker å bli din venn"
-    form:
-      remove friend button: "Fjern som venn"
-      remove friend button title: "Fjern denne personen fra vennelisten din"
-      add friend button: "Legg til venn"
-      add friend button title: "Send %{user} en venneforespørsel"
-      accept button: "Godta"
-      accept request button: "Godta forespørsel"
-      ignore button: "Ignorer"
-      ignore request button: "Ignorer forespørsel"
   notes:
-    none user: "%{username} har ikke laget noen notater ennå"
-    blank slate:
-      heading: "Du har ingen notater ennå"
-      description: "Når du leser i Bibelen, og du kjenner Guds lille svake stemme snakker til deg kan du raskt legge til disse tankene her. Notatene dine vil bli markert som <em>privat</em> som standard. Dersom du ønsker å dele et notat med dine venner endrer du bare markeringen ved å merke den og endre til <em>offentlig</em>."
-    form:
-      title field: "Tittel:"
-      content field: "Innhold:"
-      reference field: "Referanse(r):"
-      status field: "Status:"
-      save button: "Lagre"
-    status:
-      private: "Privat"
-      public: "Offentlig"
-      friends: "Bare venner"
-      draft: "Utkast"
     list title: "Notater"
     loading community: "Laster fellesnotater..."
     no community notes: "Ingen fellesnotater med henvisning til valgte vers ble funnet. For å lage et notat, kan du velge et bibelvers og så klikke på 'Valgt' øverst i lesemodus."
@@ -291,7 +160,6 @@
     private: "Privat"
     is private: "Notatet du ba om er privat."
     draft: "Utkast"
-    friends: "Venner"
     creation form errors: "Følgende feil forhindret opprettelsen av ditt notat:"
     reference field: "Referanse(r):"
     version field: "Oversettelse:"
@@ -312,10 +180,7 @@
     cancel: "Avbryt"
     pop out: "Åpne i eget vindu"
     none found: "Ingen notater funnet..."
-    create success: "Suksess! Ditt notat ble lagret."
-    create failure: "Det oppstod en feil under lagring av notat"
-    destroy success: "Notat slettet"
-    destroy failure: "Det oppstod en feil ved sletting av notat"
+    successfully deleted: "Notat slettet"
   ref:
     loading secondary: "Laster referanser i sekundær oversettelse..."
     clear verses: "Nullstill valgte vers"
@@ -346,8 +211,6 @@
     profile form errors: "De følgende feil(ene) forhindret oppdatering av kontoen din:"
     email address: "E-postadresse"
     user name: "Brukernavn"
-    first name: "Fornavn"
-    last name: "Etternavn"
     agreement: "Jeg godtar %{terms_link} til YouVersion."
     terms and conditions: "vilkår"
     facebook sign up success: "Flott! Du har godkjent kobling til med Facebook. Velg et YouVersion-brukernavn og -passord for å fortsette."
@@ -377,7 +240,7 @@
     edit account_existence: "Slett brukerkonto"
     delete account button: "Slett min YouVersion-konto"
     no devices: "Ingen enheter er knyttet til din YouVersion konto"
-    no devices download copy: "Basert på Bibelen Online, YouVersion, er Bibel-appen en gratis mobil Bibel som kan installeres på nær sagt alle mobile enheter. Bibel-appen gir brukerne mulighet til å lese Bibelen, dele vers i sine nettverk, lage bokmerker av sine favoritt-avsnitt, og mer&mdash;alt i et format som tilpasser seg deres stadig økende mobile hverdag. Besøk <a href:'https://www.bible.com/app'>bible.com/app</a> fra din mobile enhet for å laste ned Bibel-appen og få kontakt med din konto!"
+    no devices download copy: "Bibel-appen er en gratis mobil-bibel basert på nettbibelen YouVersion.com. Den kan installeres på nesten alle bærbare enheter. Bibel-appen lar brukere lese Bibelen, dele vers på sine sosiale nettverk, legge til bokmerker ved favorittavsnittene sine med mer&mdash;alt på en måte som passer til en stadig mer mobil livsstil. Besøk <a href='https://www.bible.com/download'>bible.com/download</a> med din mobile enhet for å laste ned Bibel-appen og koble deg opp mot din brukerkonto!"
     yes delete: "Ja, slett min brukerkonto"
     account delete success: "Din YouVersion-konto har blitt slettet. Vi håper du fortsatt vil finne meningsfulle måter å benytte Bibelen på. Noen av disse appene kan være nyttige for deg videre: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Hvis du sletter kontoen din vil du fjerne all din informasjon, historikk og tilpasninger (som notater, bokmerker, markert tekst osv) både på YouVersion.com og i Bibel-appen for godt. Dette kan ikke gjenopprettes av deg eller vårt team. Hvis du er sikker på at du ønsker å gå videre, fortsett nedenfor."
@@ -391,7 +254,7 @@
     my badges: "Mine merker"
     revised date: "Sist endret den %{date}"
     update email copy: "Skriv inn en ny epost-adresse og klikk på Oppdater epost. Vi sender deg så en lenke for å bekrefte din nye epost-adresse."
-    edit email: "Endre E-postadresse"
+    edit email: "Oppdater e-postadresse"
     update email check: "Sjekk eposten din og klikk på lenken for å bekrefte din nye epost-adresse."
     confirm update email success: "Takk! Vi har oppdatert epost-adressen din."
     confirm update email error: "Beklager, det oppsto et problem og epost-adressen din ble ikke endret."
@@ -492,16 +355,6 @@
       general title: "Generell informasjon"
       general text: "Hele avtalen. Disse BRUKSVILKÅRENE utgjør hele avtalen mellom deg og LifeChurch.tv og styrer din bruk av YouVersion, og erstatter alle tidligere avtaler mellom deg og LifeChurch.tv med hensyn til YouVersion. Du kan også være underlagt ytterligere vilkår og betingelser.<br><br>Valg av lov og domstol. BRUKSVILKÅRENE og forholdet mellom deg og LifeChurch.tv skal være underlagt lovene i delstaten Oklahoma i USA uten hensyn til konflikt mellom rettsprinsipper. Du og LifeChurch.tv samtykker i å underkaste seg den personlige og eksklusive lovgivningen til domstolene i fylket Oklahoma County i Oklahoma.<br><br>Frafall og ugyldighet av vilkår. Unnlatelse fra LifeChurch.tvs side i å utøve eller håndheve en rettighet eller bestemmelse i disse BRUKSVILKÅRENE skal ikke utgjøre en fraskrivelse av slike rettigheter eller bestemmelser. Hvis en bestemmelse i disse BRUKSVILKÅRENE er funnet av en kompetent domstol å være ugyldig, skal partene likevel være enige om at domstolen skal forsøke å ta hensyn til partenes intensjoner som reflektert i bestemmelsen, og de andre bestemmelsene i disse BRUKSVILKÅRENE skal forbli ved full styrke og effekt.<br><br>Ingen overlevelsesrett og ikke-overførbarhet. Du godtar at din LifeChurch.tv konto ikke er overførbar, og at alle rettighetene til din LifeChurch.tv ID eller innholdet i kontoen din opphører ved din død. Ved mottakelse av en kopi av en dødsattest, kan LifeChurch.tv avslutte din konto og permanent slette alt innholdet der.<br><br>Begrensingsvedtekt. Du er innforstått med og godtar at uavhengig av vedtekter eller lover som sier det motsatte, må eventuelle krav eller søksmål som oppstår fra eller relatert til bruk av YouVersion eller disse BRUKSVILKÅR sendes inn innen ett (1) år etter at kravet eller søksmålet oppstod, ellers vil de være sperret for alltid.<br><br>Deloverskriftene i disse BRUKSVILKÅRENE er bare i kontrakten av praktiske årsaker og har ingen rettslig eller kontraktsmessig virkning."
     profile:
-      blank slate:
-        heading: "Bare fortsett. Det er ikke noe å se her (enda)"
-        description: "Begynn aktiviteter i Bibelen, eller med venner, og denne siden vil vise en oversikt over hva du har drevet med."
-      visit friend: "Besøk %{friend} sin profil"
-      tab activity: "Aktivitet"
-      tab friends: "Venner"
-      tab notes: "Notater"
-      tab bookmarks: "Bokmerker"
-      tab highlights: "Markeringer"
-      tab badges: "Merker"
       first name: "Fornavn"
       last name: "Etternavn"
       email: "E-postadresse"
@@ -541,10 +394,6 @@
       reading_plans: "Varsle meg om informasjon for leseplaner jeg følger."
       publishing partners: "Hold meg oppdatert om nyheter fra YouVersions partnere."
       update: "Oppdater varslinger"
-      friendships: "Varsle meg om venneforespørsler"
-      moments: "Varsle meg om mine venners aktiviteter"
-      comments: "Varsle meg om kommentarer på mine aktiviteter"
-      likes: "Varsle meg om noen liker mine aktiviteter"
   bookmarks:
     new: "Nytt bokmerke"
     edit: "Rediger"
@@ -558,10 +407,9 @@
     not found: "Bokmerker gir deg en rask tilgang på dine favoritt-tekster eller det siste kapittelet du leste i en spesiell bok. For å legge til et bokmerke velger du vers når du leser og trykker på ikonet øverst for bokmerke."
     other user not found: "%{username} har ikke lagret noen bokmerker ennå."
     creation form errors: "Følgende feil gjorde at bokmerke ikke kunne opprettes:"
-    create success: "Suksess! Ditt bokmerke ble lagret."
-    destroy success: "Bokmerke fjernet"
-    destroy failure: "Det oppstod en feil under fjerning av bokmerke"
-    update success: "Bokmerke oppdatert"
+    successfully created: "Bokmerke opprettet"
+    successfully deleted: "Bokmerke fjernet"
+    successfully updated: "Bokmerker oppdatert"
     labels placeholder: "Skill ulike emneord med komma."
     save: "Lagre bokmerke"
     confirm delete: "Ja, jeg er sikker"
@@ -572,32 +420,10 @@
     update: "Oppdater"
     color: "Farge:"
     version field: "Utgave:"
-    none user: "%{username} har ingen bokmerker"
-    blank slate:
-      heading: "Lag bokmerker av meningsfulle vers"
-      description: "Mens du leser i Bibelen kan du velge et vers og lage bokmerke av det. Kom tilbake hit for å se, redigere eller slette bokmerkene dine."
-    form:
-      title field: "Tittel:"
-      reference field: "Henvisning:"
-      labels field: "Emneord (adskilt med komma):"
-      colors field: "Farge:"
-      update button: "Oppdater bokmerke"
-      save button: "Lagre bokmerke"
   badges:
     earned a badge: "Fått et merke"
     user badges: "%{user}s merker"
-    earned date: "Oppnådd av %{username} for %{ago} siden"
-    none me: "Du har ikke fått noen merker ennå"
-    none user: "%{username} har ikke fått noen merker ennå."
   plans:
-    widget:
-      my plans: "Mine leseplaner"
-      start reading: "Begynn å lese"
-    settings: "Innstillinger"
-    privacy:
-      visible to friends?: "Ønsker du at dine venner skal kunne se din aktivitet i denne leseplanen? "
-      private: "Privat"
-      public: "Offentlig"
     title: "Leseplaner"
     browse by category: "Utforsk etter kategori"
     browse plans: "Utforsk planer for %{category}"
@@ -628,6 +454,7 @@
     no public plans: "Ingen leseplaner er synlige for %{username}."
     filter by lang: "Filtrer planer etter språk"
     plan settings: "Innstillinger for leseplan"
+    settings: "Innstillinger"
     search: "Søk"
     search placeholder: "Søk planer for %{category}"
     subscribe to plan: "Start denne planen"
@@ -740,20 +567,9 @@
     chapter only: "Lyd er ikke tilgjengelig for vers. Vis som kapittel for tilgang på lyd."
     close player menu: "Lukk"
   highlights:
-    title: "Markeringer"
-    blank slate:
-      heading: "Marker meningsfulle vers"
-      description: "Mens du leser i Bibelen, velg et vers og marker det. Kom tilbake hit for å se, redigere eller slette dine markeringer."
-    none user: "%{username} har ingen markeringer"
     choose color: "Velg farge"
-    create success: "Suksess! Din markering ble lagret."
-    create failure: "Det oppstod en feil under lagring av markering"
-    destroy success: "Markering slettet"
-    destroy failure: "Det oppstod en feil under sletting av markering"
     creation error: "Kunne ikke utheve."
     delete error: "Kunne ikke fjerne uthevelse."
-    form:
-      save button: "Lagre markering"
   searching:
     bible: "Bibel"
     plans: "Leseplaner"
@@ -762,7 +578,6 @@
     total results: "Om %{total} resultater."
     suggestion html: "Mente du %{suggestion_link}?"
     all versions: "Alle %{language_name} oversettelser"
-    results for: "Søkeresultat for:"
   donate:
     donate now: "Gi nå"
     donate now intl: "eller gi internasjonalt"
@@ -932,6 +747,9 @@
     public domain: "Offentlig område"
     loading: "Laster inn flere oversettelser..."
     load error: "Et problem oppstod i forbindelse med nedlastning av flere oversettelser. Lukk denne menyen og åpne på nytt for å prøve igjen."
+  reader help:
+    title: "Velg et vers..."
+    line 1: "Klikk på ett eller flere vers for å opprette bokmerke, utheve tekst, lage et notat eller dele med dine venner!"
   campaigns:
     100m:
       logo: "YouVersion: Bibel-appen"
@@ -961,9 +779,3 @@
       sidebar:
         tagline: "La oss gjøre noe historisk."
         button: "Del Bibel-appen"
-  ui:
-    pagination:
-      next page: "Neste side"
-      previous page: "Forrige side"
-    datetime:
-      just now: "akkurat nå"

@@ -1,9 +1,5 @@
 es:
   social:
-    intro page:
-      main heading: "Conversación y Descubrimientos"
-    moment:
-      read less: "Leer menos"
     share: "Compartir"
     my connections: "Cuentas Conectadas"
     connected as: "Está conectado a %{connection} como %{username}."
@@ -36,13 +32,9 @@ es:
     users username not available: "El nombre de usuario proporcionado no está disponible."
     users username or password invalid: "El nombre de usuario o contraseña que usted proveyó es inválido."
     users username required: "Usted debe ingresar un nombre de usuario."
-    users first name required: "Debe introducir su nombre"
-    users last name required: "Debe introducir un apellido"
-    moments content required: "El contenido no puede estar en blanco"
   meta:
     kids_app:
       title: "La Biblia App para Niños"
-      description: "..."
     100million:
       title: "Inicia con 100 Millones"
       description: "La Biblia App ha sido instalada casi 100 millones de veces – ¡Un increíble logro!  Pero sólo estamos iniciando.  Descargue gratuitamente la Biblia App hoy – y luego comparta la App con sus amigos.  Hagamos historia juntos."
@@ -126,7 +118,6 @@ es:
   find friends: "Encontrar Amigos"
   search placeholder: "Buscar..."
   search: "Buscar"
-  more: "Más"
   book: "Libro"
   filter book: "Filtrar Libros…"
   save: "Guardar"
@@ -140,13 +131,17 @@ es:
   chapter: "Capítulo"
   bible: "Biblia"
   notes title: "Notas"
+  friends: "Amigos"
   groups: "Grupos"
   mobile: "Móvil"
   live: "En vivo/Grupos"
   first page: "Primera Página"
   last page: "Ultima Página"
+  next page: "Siguiente Página"
+  previous page: "Página Anterior"
   invalid username or password: "Usuario o Contraseña Incorrecto"
   show all bookmarks: "Visualizar todos los %{total} marcadores"
+  show all notes: "Visualizar todas las %{total} notas"
   recent bookmarks: "Marcadores Recientes"
   percentage display: "%{number}%"
   myself: "Yo"
@@ -157,106 +152,7 @@ es:
   or:
     lower: "o"
     upper: "O"
-  moments:
-    vod:
-      title: "Versículo del día"
-    friendship:
-      now friends: "Ahora es amigo de"
-    cta:
-      profile update text: "Ayude a sus amigos a encontrarle."
-      profile update button: "Actualice su perfil"
-      sharing text: "Comparta versículos con redes sociales"
-      sharing button: "Habilitar compartir"
-      friends text: "Vea los momentos de sus amigos en la Biblia"
-      friends button: "Encontrar amigos"
-    action:
-      go to scripture: "Ir a las Escrituras"
-      load more: "Cargar más"
-      like: "Me gusta"
-      liked: "Marcada como Me Gusta"
-      like title: "Me gusta "
-      share: "Compartir"
-      share title: "Compartir esto con amigos o familia"
-      comment: "Comentar"
-      comment title: "Ver todos los comentarios"
-      edit: "Editar"
-      edit highlight title: "Editar este resaltado"
-      edit bookmark title: "Editar este marcador"
-      edit note title: "Editar esta nota"
-      delete: "Borrar"
-      delete confirm: "¿Está usted seguro?"
-      delete highlight title: "Eliminar este resaltado"
-      delete bookmark title: "Borrar este marcador"
-      delete note title: "Eliminar esta nota"
-  notifications:
-    title: "Notificaciones"
-    none: "No tiene ninguna notificación"
-    no new: "No hay nuevas notificaciones"
-    view all: "Ver todas las notificaciones"
-  likes:
-    create failure: "Su me gusta no pudo ser salvado"
-    destroy success: "Me gusta eliminado"
-    destroy failure: "Su me gusta no pudo ser eliminado"
-  comments:
-    view all N: "Ver los %{count} comentarios"
-    post comment: "Publicar un comentario"
-    create failure: "El comentario no pudo ser publicado"
-    destroy success: "Comentario eliminado"
-    destroy failure: "El comentario no pudo ser eliminado"
-    form:
-      save button: "Publicar"
-  friends:
-    you have N friends: "Tiene %{count} amigos"
-    none me: "Comparta sus momentos en la Biblia, tales como marcadores, resaltados, y notas con sus amigos más cercanos y familia."
-    find friends: "Encontrar amigos"
-    blank slate:
-      heading: "Actualmente no hay amigos"
-      description: "Debe tener amistad con esta persona para poder ver sus amigos"
-    limit notice: "Puede tener hasta 150 amigos"
-    limit description: "Limitar sus amistades de la Biblia App a personas que conoce bien, propicia un ambiente de conversaciones francas y para compartir descubrimientos con amigos de confianza."
-  friendships:
-    find friends title: "Encontrar amigos"
-    widget:
-      find friends title: "Encontrar amigos"
-    offer success: "Solicitud de amistad enviada"
-    offer failure: "Error al enviar solicitud de amistad"
-    create failure: "Error al crear amistad"
-    destroy success: "Petición rechazada"
-    destroy failure: "Error al declinar solicitud"
-    requests title: "Solicitud de amistad"
-    requests view all: "Ver todas las solicitudes de amistad"
-    requests none: "No tiene ninguna solicitud de amistad"
-    requests no new: "No hay nuevas solicitudes"
-    status:
-      pending: "Solicitud pendiente"
-      friends: "Amigos"
-    user wants friendship: "%{user} quiere ser su amigo"
-    user wants friendship partial: "quiere ser su amigo"
-    form:
-      remove friend button: "Eliminar amigo"
-      remove friend button title: "Remover esta persona de su lista de amigos"
-      add friend button: "Agregar amigo"
-      add friend button title: "Enviar a %{user} solicitud de amistad"
-      accept button: "Aceptar"
-      accept request button: "Aceptar solicitud"
-      ignore button: "Ignorar"
-      ignore request button: "Ignorar solicitud"
   notes:
-    none user: "%{username} no ha tomado ninguna nota aún."
-    blank slate:
-      heading: "No tiene ninguna nota aún."
-      description: "Conforme lea la Biblia, cuando perciba la voz de Dios puede rápidamente agregar esos pensamientos aquí. Sus notas serán marcadas como  <em>privadas</em> de forma predeterminada. Si quisiera compartir una nota con sus amigos, simplemente ábrala y cámbiela a <em>público</em>."
-    form:
-      title field: "Título:"
-      content field: "Contenido:"
-      reference field: "Referencia(s):"
-      status field: "Estado:"
-      save button: "Guardar"
-    status:
-      private: "Privado"
-      public: "Público"
-      friends: "Sólo amigos"
-      draft: "Borrador"
     list title: "Notas"
     loading community: "Cargando las notas de la comunidad..."
     no community notes: "No hay notas de la comunidad que hagan referencia a los versículos seleccionados.  Para crear una nota, seleccione un versículo en el Lector de la Biblia y luego haga clic en el botón Seleccionado ubicado en la parte superior del lector."
@@ -264,7 +160,6 @@ es:
     private: "Privado"
     is private: "La nota que solicita es privada. "
     draft: "Borrador"
-    friends: "Amigos"
     creation form errors: "El (los) siguiente(s) error(es) no permitieron la creación de su nota:"
     reference field: "Referencia(s):"
     version field: "Versión:"
@@ -285,9 +180,7 @@ es:
     cancel: "Cancelar"
     pop out: "Saltará"
     none found: "No se han encontrado notas..."
-    create failure: "Error al guardar nota"
-    destroy success: "Nota eliminada"
-    destroy failure: "Error al eliminar nota"
+    successfully deleted: "Nota Eliminada"
   ref:
     loading secondary: "Cargando Referencias en Versión Secundaria..."
     clear verses: "Deseleccionar Versículos"
@@ -318,8 +211,6 @@ es:
     profile form errors: "El(los) siguiente(s) error(es) no permitieron actualizar su perfil:"
     email address: "Correo Electrónico:"
     user name: "Usuario:"
-    first name: "Nombre"
-    last name: "Apellido"
     agreement: "Estoy de acuerdo con los %{terms_link} de YouVersion."
     terms and conditions: "términos y condiciones"
     facebook sign up success: "¡Muy bien! Usted ha autorizado con Facebook. Escoja un nombre de usuario y contraseña en YouVersion para continuar."
@@ -349,7 +240,7 @@ es:
     edit account_existence: "Eliminar Cuenta"
     delete account button: "Eliminar Mi Cuenta de YouVersion"
     no devices: "No hay ningún dispositivo conectado a su cuenta de YouVersion"
-    no devices download copy: "Basada en la Biblia en línea, YouVersion, la Biblia App es una Biblia móvil gratuita que puede ser instalada en casi cualquier dispositivo móvil. La Biblia App le  permite a los usuarios leer la Biblia, compartir versículos con sus redes sociales, marcar sus pasajes favoritos, y más; todo en un formato que se mantiene al día con su estilo de vida cada vez más móvil. ¡Visite <a href='https://www.bible.com/app'>bible.com/app</a>  desde su dispositivo móvil para descargar la Biblia App y conectar su cuenta!"
+    no devices download copy: "Basada en la Biblia en línea, YouVersion, la Biblia App es una Biblia móvil gratuita que puede ser instalada en casi cualquier dispositivo móvil. La Biblia App le permite a los usuarios leer la Biblia, compartir versículos con sus redes sociales, marcar sus pasajes favoritos, y mas&mdash; todo en un formato que permite un estilo de vida cada vez más móvil. Visite <a href='https://www.bible.com/download'>bible.com/download</a> desde su dispositivo móvil para descargar la Biblia App y conectar su cuenta!"
     yes delete: "Si, Eliminar Mi Cuenta"
     account delete success: "Su cuenta de YouVersion ha sido exitosamente eliminada.  Anhelamos que continúe encontrando formas significativas a su vida para interactuar con la Biblia.  Algunas de las siguientes aplicaciones podrían serle de mucha ayuda en su crecimiento y relación con Dios: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Si elimina su cuenta, estará permanentemente eliminando toda su información, historial, y personalizaciones en YouVersion.com y la Biblia App, tales como, notas, marcadores, resaltados, etc.  Esta acción no puede ser revertida por usted o nuestro equipo.  Si está seguro de continuar, proceda como indicado a continuación. "
@@ -363,7 +254,7 @@ es:
     my badges: "Mis Insignias"
     revised date: "Revisionó ultima vez el %{date}"
     update email copy: "Introduzca una nueva dirección de correo electrónico y haga clic en Actualizar Correo Electrónico. Nosotros le enviaremos un enlace para confirmar su nueva dirección de correo electrónico."
-    edit email: "Cambiar correo electrónico"
+    edit email: "Actualizar Correo Electrónico"
     update email check: "Por favor, revise su correo electrónico y haga clic en el enlace para confirmar su nueva dirección de correo electrónico."
     confirm update email success: "¡Gracias! Usted ha actualizado su dirección de correo electrónico."
     confirm update email error: "Lo sentimos, hubo un problema al completar su cambio de dirección de correo electrónico."
@@ -464,16 +355,6 @@ es:
       general title: "Información General"
       general text: "Acuerdo completo. Estas Condiciones de Uso constituyen el acuerdo completo entre usted y LifeChurch.tv y regula el uso de YouVersion y reemplaza cualquier acuerdo anterior entre usted y LifeChurch.tv con respecto a YouVersion. Usted también puede estar sujeto a términos y condiciones adicionales.<br><br>  Elección de Ley y Foro. Las CONDICIONES DE USO y la relación entre usted y LifeChurch.tv se regirá por las leyes del Estado de Oklahoma sin tener en cuenta su conflicto de disposiciones legales. Usted y LifeChurch.tv acuerdan someterse a la jurisdicción personal y exclusiva de los tribunales ubicados dentro del  Condado de Oklahoma, Oklahoma.<br><br> Renuncia e independencia de las condiciones. El fracaso de LifeChurch.tv para ejercer o hacer valer cualquier derecho o disposición de estas Condiciones de Uso no constituirá una renuncia a tal derecho o disposición. Si cualquier disposición de estas CONDICIONES DE USO es considerada por un tribunal de jurisdicción competente como no válida, las partes no obstante  acuerdan que dicho tribunal debe procurar interpretar las intenciones de las partes reflejada en dicha disposición, y las demás disposiciones de estas CONDICIONES DE USO permanecerán en pleno vigor y efecto.<br><br> No Derecho de Supervivencia y No Transferibilidad. Usted acepta que su cuenta de LifeChurch.tv no es transferible, y ningún derecho sobre su identificación en LifeChurch.tv o el contenido de su cuenta se extinguen a su muerte. Tras la recepción de una copia de un certificado de defunción, LifeChurch.tv puede cancelar su cuenta y eliminar permanentemente los contenidos en ella.<br><br>Estatuto de Limitaciones. Usted entiende y acepta que, independientemente de cualquier estatuto o ley en contra, cualquier reclamo o causa de acción que surja de o este relacionado con el uso de YouVersion o  de estas CONDICIONES DE USO debe ser presentada dentro de un (1) año después que dicho reclamo o causa de la acción sea presentada o prescribirá para siempre.<br><br> Los títulos de las secciones dentro de las presentes CONDICIONES DE USO son sólo por conveniencia y no tienen ningún efecto legal o contractual."
     profile:
-      blank slate:
-        heading: "Continuar, nada que ver aquí (aún)"
-        description: "Comience a involucrarse con la Biblia, o sus amigos y esta página mostrará un historial de lo que ha hecho recientemente"
-      visit friend: "Visitar el perfil de  %{friend}"
-      tab activity: "Actividad Reciente"
-      tab friends: "Amigos"
-      tab notes: "Notas"
-      tab bookmarks: "Marcadores"
-      tab highlights: "Resaltados"
-      tab badges: "Insignias"
       first name: "Primer Nombre"
       last name: "Apellido"
       email: "Dirección de correo electrónico"
@@ -513,9 +394,6 @@ es:
       reading_plans: "Notificarme con información sobre los planes de lectura que haya iniciado."
       publishing partners: "Mantenerme informado enviándome noticias/información de los Socios de contenido de YouVersion."
       update: "Actualizar Notificaciones"
-      friendships: "Notificarme acerca de solicitudes de amistad"
-      moments: "Notificarme acerca de la actividad de amigos"
-      comments: "Notificarme acerca de comentarios en mi actividad"
   bookmarks:
     new: "Nuevo Marcador"
     edit: "Editar"
@@ -529,9 +407,9 @@ es:
     not found: "Los Marcadores le brindan una guía  de referencia rápida  a sus pasajes favoritos o al último capítulo que leyó de un libro en particular.  Para agregar un marcador, seleccione el versículo en el lector de la Biblia y luego presione el botón de marcadores en la parte superior del lector."
     other user not found: "%{username} no ha guardado ningún marcador todavía."
     creation form errors: "El siguiente error (es) impidió la creación de su marcador:"
-    destroy success: "Marcador eliminado"
-    destroy failure: "Error al eliminar marcador"
-    update success: "Marcador actualizado"
+    successfully created: "Marcador Añadido"
+    successfully deleted: "Marcador eliminado"
+    successfully updated: "Marcador Actualizado"
     labels placeholder: "Separe las  diferentes etiquetas con comas."
     save: "Guardar Marcador"
     confirm delete: "Si, estoy seguro."
@@ -542,32 +420,10 @@ es:
     update: "Actualizar"
     color: "Color:"
     version field: "Versión:"
-    none user: "%{username} no tiene marcadores"
-    blank slate:
-      heading: "Marcar versículos significativos"
-      description: "Mientras lea la Biblia seleccione un versículo y márquelo. Regrese aquí para verlo, editarlo o eliminarlo."
-    form:
-      title field: "Título:"
-      reference field: "Referencia"
-      labels field: "Etiquetas (separadas por comas):"
-      colors field: "Color:"
-      update button: "Actualizar Marcador"
-      save button: "Guardar Marcador"
   badges:
     earned a badge: "Ganó una insignia"
     user badges: "Insignias de %{user}"
-    earned date: "Obtenida por %{username} hace %{ago}."
-    none me: "Usted no ha obtenido ninguna insignia aún."
-    none user: "%{username} no ha obtenido ninguna insignia aún."
   plans:
-    widget:
-      my plans: "Mis Planes"
-      start reading: "Iniciar lectura"
-    settings: "Configuración"
-    privacy:
-      visible to friends?: "¿Le gustaría que su actividad en este plan sea visible a sus amigos?"
-      private: "Privado"
-      public: "Público"
     title: "Planes de Lectura"
     browse by category: "Buscar por Categoría"
     browse plans: "Explorar '%{category}' Planes"
@@ -598,6 +454,7 @@ es:
     no public plans: "No hay planes de lectura visibles para %{username}."
     filter by lang: "Filtrar Planes por Idioma"
     plan settings: "Configuración del Plan"
+    settings: "Configuración"
     search: "Buscar"
     search placeholder: "Buscar Planes de %{category} "
     subscribe to plan: "Comenzar Este Plan"
@@ -710,28 +567,17 @@ es:
     chapter only: "Lo sentimos, el audio no está disponible para versículos. Vea en el lector para el audio del capitulo."
     close player menu: "Cerrar"
   highlights:
-    title: "Resaltados"
-    blank slate:
-      heading: "Resaltar versículos significativos"
-      description: "Al leer la Biblia, seleccione un versículo y resáltelo. Regrese aquí para verlo, editarlo o eliminarlo."
-    none user: "%{username} no tiene resaltados"
     choose color: "Elija un color"
-    create failure: "Error al guardar resaltado"
-    destroy success: "Resaltado eliminado"
-    destroy failure: "Error al eliminar resaltado"
     creation error: "Si alguna vez se queda atrás en su lectura, ¡no se preocupe! Usted  siempre puede cambiar la lectura actual volviéndose a su última lectura completada."
     delete error: "Lo sentimos, no se pudo eliminar el resaltado."
-    form:
-      save button: "Guardar Resaltado"
   searching:
     bible: "Biblia"
-    plans: "Planes"
+    plans: "Planes de Lectura"
     users: "Usuarios"
     notes: "Notas"
     total results: "Aproximadamente %{total} Resultados "
     suggestion html: "Quiso usted decir %{suggestion_link}?"
     all versions: "Todas las Versiones en %{language_name}"
-    results for: "Resultados de búsqueda para:"
   donate:
     donate now: "Donar ahora"
     donate now intl: "o donar internacionalmente"
@@ -901,6 +747,9 @@ es:
     public domain: "Dominio público"
     loading: "Cargando Más versiones..."
     load error: "Lo sentimos, hubo un problema técnico cargando más versiones. Cierre este menú e inicie nuevamente."
+  reader help:
+    title: "Seleccione un versículo..."
+    line 1: "Haga clic o toque cualquier versículo o colección de versículos para marcar, destacar, crear una nota, o compartir con sus amigos!"
   campaigns:
     100m:
       logo: "YouVersion: La Biblia App"
@@ -930,9 +779,3 @@ es:
       sidebar:
         tagline: "¡Hagamos historia juntos!"
         button: "Comparta la Biblia App"
-  ui:
-    pagination:
-      next page: "Siguiente Página"
-      previous page: "Página Anterior"
-    datetime:
-      just now: "Justo ahora"

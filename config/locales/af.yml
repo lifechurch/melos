@@ -1,31 +1,5 @@
 af:
   social:
-    intro page:
-      main heading: "Gesprekke & Verkennings"
-      main description: "'n Nuwe manier om die Bybel te verken met betroubare vriende"
-      moment:
-        timestamp: "5 dae gelede"
-        title: "Psalm 31:7 geboekmerk"
-        verse: "Ek sal bly wees en juig in u troue liefde, want jy het my ellende aangesien, en jy gee om vir die benoudheid van my siel."
-        reference: "Psalm 31:7"
-        discover:
-          copy: "Verken en leer saam met jou vriende soos wat hulle kleurmerke, boekmerke en notas skep."
-          button: "Waar moet ek begin?"
-        share:
-          copy: "Deel eerlike gesprekke oor die Woord."
-          button: "Begin deur vriende op te spoor."
-        likes:
-          info: "en 4 ander 'Hou Van' dit"
-        comments:
-          first:
-            text: "Dankie, het vandag regtig nodig gehad om dit te hoor.  Ons moet gou weer praat!"
-            time: "omtrent 3 ure gelede"
-          second:
-            text: "Amen, ek ook.  Ek stuur nou vir jou 'n e-pos."
-            time: "omtrent 27 minute gelede"
-          field placeholder: "Plaas 'n opmerking..."
-    moment:
-      read less: "Lees minder"
     share: "Deel"
     my connections: "Gekoppelde Rekeninge"
     connected as: "Jy is gekoppel met %{connection} as %{username}."
@@ -58,13 +32,9 @@ af:
     users username not available: "Die gebruikersnaam wat jy gekies het is nie beskikbaar nie."
     users username or password invalid: "Die gebruiksnaam of wagwoord wat jy voorsien het is ongeldig."
     users username required: "Jy moet 'n gebruikernaam insleutel."
-    users first name required: "Jy moet jou noemnaam verskaf."
-    users last name required: "Jy moet jou van verskaf."
-    moments content required: "Inhoud kan nie leeg wees nie."
   meta:
     kids_app:
       title: "Die Bybel Toep vir Kinders"
-      description: "..."
     100million:
       title: "Dit begin met 100 Miljoen"
       description: "Die Bybel Toep is amper 'n 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel Toep vandag af - en deel dan die toep met jou vriende.  Help ons om saam geskiedenis te maak."
@@ -92,7 +62,7 @@ af:
   new note: "Nuwe Nota"
   share success: "Jou boodskap is gedeel."
   share error: "Jammer, daar was 'n fout met die deel van jou boodskap. Probeer asb. weer."
-  google plus: "Google+"
+  google plus: "Google +"
   connect to: "Koppel met jou %{connection} rekening"
   deleted connection: "Koppeling met %{connection} suksesvol verwyder."
   deleted connection error: "Jammer, daar was 'n fout met die ontkoppeling van jou konneksie met %{connection}."
@@ -148,7 +118,6 @@ af:
   find friends: "Soek Vriende"
   search placeholder: "Soek..."
   search: "Soek"
-  more: "Meer"
   book: "Boek"
   filter book: "Filtreer Boeke..."
   save: "Stoor"
@@ -162,14 +131,17 @@ af:
   chapter: "Hoofstuk"
   bible: "Bybel"
   notes title: "Notas"
+  friends: "Vriende"
   groups: "Groepe"
   mobile: "Selfoon"
   live: "Lewendig/Groepe"
   first page: "Eerste Bladsy"
   last page: "Laaste Bladsy"
+  next page: "Volgende Bladsy"
+  previous page: "Vorige Bladsy"
   invalid username or password: "Ongeldige gebruikersnaam of wagwoord."
   show all bookmarks: "Wys al %{total} boekmerke"
-  show all notes: "Wys alle notas"
+  show all notes: "Wys al %{total} notas"
   recent bookmarks: "Onlangse Boekmerke"
   percentage display: "%{number}%"
   myself: "Ek"
@@ -180,110 +152,7 @@ af:
   or:
     lower: "of"
     upper: "OF"
-  moments:
-    vod:
-      title: "Vers van die dag"
-    friendship:
-      now friends: "Jy is nou bevriend met"
-    cta:
-      profile update text: "Help jou vriende om jou op te spoor."
-      profile update button: "Wysig jou profiel"
-      sharing text: "Deel verse met sosiale netwerke"
-      sharing button: "Skakel deel funksie aan"
-      friends text: "Sien jou vriende se oomblikke in die Bybel."
-      friends button: "Soek vriende"
-    action:
-      go to scripture: "Gaan na skrifgedeelte"
-      load more: "Laai meer"
-      like: "Hou Van"
-      liked: "Gehou Van"
-      like title: "Hou van dit"
-      last comment: "Laaste opmerking"
-      share: "Deel"
-      share title: "Deel hierdie met vriende en familie."
-      comment: "Lewer kommentaar"
-      comment title: "Sien al die opmerkings"
-      edit: "Redigeer"
-      edit highlight title: "Verander hierdie kleurmerker"
-      edit bookmark title: "Verander hierdie boekmerk"
-      edit note title: "Wysig hierdie nota"
-      delete: "Vee uit"
-      delete confirm: "Is jy seker?"
-      delete highlight title: "Verwyder hierdie keurmerker"
-      delete bookmark title: "Vee hierdie boekmerk uit"
-      delete note title: "Verwyder Hierdie Nota"
-  notifications:
-    title: "Kennisgewings"
-    none: "Jy het geen kennisgewings nie"
-    no new: "Geen nuwe kennisgewings"
-    view all: "Wys alle Kennisgewings"
-  likes:
-    create success: "Sukses! Jou 'Hou Van' is gestoor"
-    create failure: "Jou 'Hou Van' kon nie gestoor word nie"
-    destroy success: "'Hou Van' verwyder"
-    destroy failure: "Jou 'Hou Van' kon nie verwyder word nie"
-  comments:
-    view all N: "Wys al %{count} opmerkings"
-    post comment: "Plaas 'n opmerking"
-    create success: "Sukses! Jou opmerking is gepos"
-    create failure: "Opmerking kon nie geplaas word nie"
-    destroy success: "Kommentaar verwyder"
-    destroy failure: "Kommentaar kon nie verwyder word nie"
-    form:
-      save button: "Plaas"
-  friends:
-    you have N friends: "Jy het %{count} vriende"
-    none me: "Deel jou oomblikke in die Bybel soos boekmerke, hoogtepunte en notas met jou naaste vriende en familie."
-    find friends: "Soek vriende"
-    blank slate:
-      heading: "Nie huidiglik vriende nie"
-      description: "Jy moet bevriend wees met hierdie persoon om sy vriende te kan sien."
-    limit notice: "Jy het soveel as 150 vriende"
-    limit description: "Die beperking van jou Bybeltoepassing vriendskappe tot slegs mense wat jy goed ken, skep 'n omgewing vir eerlike gesprekke en gedeelde ontdekkings met betroubare vriende."
-  friendships:
-    find friends title: "Soek vriende"
-    widget:
-      find friends title: "Soek vriende"
-    offer success: "Vriendskap uitnodiging gestuur"
-    offer failure: "Daar was 'n fout met die stuur van die vriendskap versoek"
-    create success: "Sukses!  Julle is nou vriende."
-    create failure: "Daar was 'n fout met die vriendskap skep aksie"
-    destroy success: "Versoek afgekeur"
-    destroy failure: "Daar was 'n fout met die afkeur versoek"
-    requests title: "Vriendskap versoeke"
-    requests view all: "Wys alle vriendskap versoeke"
-    requests none: "Jy het geen vriendskap versoeke"
-    requests no new: "Geen nuwe versoeke"
-    status:
-      pending: "Versoek hangend"
-      friends: "Vriende"
-    user wants friendship: "%{user} wil jou vriend wees"
-    user wants friendship partial: "wil jou vriend wees"
-    form:
-      remove friend button: "Verwyder vriend"
-      remove friend button title: "Verwyder hierdie persoon van jou vriend lys"
-      add friend button: "Voeg vriend by"
-      add friend button title: "Stuur 'n vriendskap versoek aan %{user}"
-      accept button: "Aanvaar"
-      accept request button: "Aanvaar versoek"
-      ignore button: "Ignoreer"
-      ignore request button: "Ignoreer versoek"
   notes:
-    none user: "%{username} het nog nie enige notas gemaak nie."
-    blank slate:
-      heading: "Jy het nog nie enige notas nie"
-      description: "Terwyl jy die Bybel lees jy, wanneer jy God se klein, sagte stem hoor  praat, kan jy vinnig daardie gedagtes hier vas pen. Jou aantekeninge sal as <em> privaat </ em> gemerk word by verstek.  As jy jou aantekeninge met jou vriende wil deel, kan jy dit eenvoudig net oop maak en dit verander na </ em> openbaar <em>."
-    form:
-      title field: "Titel:"
-      content field: "Inhoud:"
-      reference field: "Verwysing(s):"
-      status field: "Status:"
-      save button: "Stoor"
-    status:
-      private: "Privaat"
-      public: "Publiek"
-      friends: "Slegs vriende"
-      draft: "Konsep"
     list title: "Notas"
     loading community: "Gemeenskapsnotas besig om te laai..."
     no community notes: "Geen gemeenskap notas is gevind wat verwys na enige geselekteerde verse. Om 'n nota te maak, kies 'n vers in die Bybel leser en kliek dan op die Selekteer knoppie aan die bokant van die leser."
@@ -291,7 +160,6 @@ af:
     private: "Privaat"
     is private: "Die aangevraagde nota is privaat"
     draft: "Konsep"
-    friends: "Vriende"
     creation form errors: "Die volgende fout(e) het gemaak dat jou nota nie geskep kon word nie:"
     reference field: "Verwysing(s):"
     version field: "Weergawe:"
@@ -312,10 +180,7 @@ af:
     cancel: "Kanseleer"
     pop out: "Spring uit"
     none found: "Geen notas gevind..."
-    create success: "Sukses!  Jou nota is gestoor."
-    create failure: "Daar was 'n fout met die stoor van die nota"
-    destroy success: "Nota verwyder"
-    destroy failure: "Daar was 'n fout met die verwyder van die nota"
+    successfully deleted: "Nota Verwyder"
   ref:
     loading secondary: "Laai verwysing in alternatiewe weergawe..."
     clear verses: "Verwyder Geselekteerde Verse"
@@ -346,8 +211,6 @@ af:
     profile form errors: "Die volgende probleem/probleme het die opdatering van jou profiel verhoed:"
     email address: "E-pos adres"
     user name: "Gebruikersnaam"
-    first name: "Naam"
-    last name: "Van"
     agreement: "Ek is in ooreenstemming met die YouVersion %{terms_link}."
     terms and conditions: "termes en voorwaardes"
     facebook sign up success: "Welgedaan! Jy het magtiging verkry deur jou Facebook rekening. Kies 'n YouVersion gebruiker naam en wagwoord om voort te gaan."
@@ -377,7 +240,6 @@ af:
     edit account_existence: "Sluit Rekening"
     delete account button: "Sluit My YouVersion Rekening"
     no devices: "Geen toestelle gekoppel aan jou YouVersion Rekening nie"
-    no devices download copy: "Gebaseer op die aanlyn Bybel, YouVersion.com, is die Bybel Toep 'n gratis mobiele Bybel wat op bykans enige toestel geinstalleer kan word. Die Bybel Toep laat gebruikers toe om die Bybel te lees, verse te deel met sosiale netwerke, gunsteling gedeeltes te boekmerk en vele meer&mdash:alles in 'n formaat wat tred hou met jou snelgroeiende mobiele leefstyl. Besoek <a href='https://www.bible.com/app'>bible.com/app</a>  van jou mobiele toestel om die Bybel Toep af te laai en koppel jou rekening!"
     yes delete: "Ja, Sluit My Rekening"
     account delete success: "Jou YouVersion rekening is suksesvol gesluit. Ons hoop dat jy sal voortgaan om betekenisvolle maniere te vind om interaktief met die Bybel te verkeer. Van hierdie apps mag dalk handig te pas kom soos jy aanbeweeg:  <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "As jy jou rekening sluit, sal jy permanent van al jou informasie, geskiedenis, en verpersoonliking (soos notas, boekmerke, kleurmerke, ens.) binne YouVersion.com en die Bible App geillimineer word. Hierdie aksie kan nie deur jou of ons span omgekeer word nie. Indien jy seker is dat jy wil aangaan, gaan voort hieronder."
@@ -391,7 +253,6 @@ af:
     my badges: "My Kentekens"
     revised date: "Laas hersien op %{date}"
     update email copy: "Tik 'n nuwe e-pos adres in en kliek Verander E-Pos. Ons sal 'n skakel stuur waarby jy die nuwe e-pos adres moet bevestig."
-    edit email: "Change Email Address\nVerander Epos Adress"
     update email check: "Kyk asb. deur jou e-pos en kliek die skakel om jou nuwe e-pos adres te bevestig."
     confirm update email success: "Dankie! Jou e-pos adres is verander."
     confirm update email error: "Jammer, daar het 'n probleem ingesluip met die voltooiing van die e-pos adres verandering."
@@ -492,16 +353,6 @@ af:
       general title: "Algemene Informasie"
       general text: "Algehele Ooreenkoms. Hierdie TERME VAN GEBRUIK behels die algehele ooreenkoms tussen jou en LifeChurch.tv en bepaal jou gebruik van YouVersion en vervang enige vorige ooreenkomste tussen jou en LifeChurch.tv met betrekking tot YouVersion. Jy mag dalk nog onderhewig wees aan bykomstige terme en voorwaardes. <br><br>Keuse van Regte en Forum. Die TERME VAN GEBRUIK en die verhouding tussen jou en LifeChurch.tv  sal bepaal word deur die wette van die Staat van Oklahoma sonder inagneming van geskil van wetlike voorsiening. Jy en LifeChurch.tv stem ooreen om onderhewig te wees aan die persoonlike en uitsluitlike beslissing van die howe gebasseer in Oklahoma County, Oklahoma.<br><br>Afstanddoening en Verbreking van Terme. Die nalating van LifeChurch.tv om enige regte uit te oefen met betrekking tot die regte of voorsiening van hierdie TERME VAN GEBRUIK beteken nie afstanddoening van hierdie regte of voorsiening nie. Indien 'n bevoegde hof sou beslis dat enige voorsiening van hierdie TERME VAN GEBRUIK ongeldig sou wees, sal die partye nieteenstaande ooreenstem dat die hof in alle billikheid sou probeer om beide partye se voornemens voor te hou en dat enige ander voorsienings van die TERME VAN GEBRUIK steeds van krag sal wees.<br><br>Geen Oorlewingsregte of Oordraagbaarheid. Jy stem toe dat jou LifeChurch.tv-rekening nie oordraagbaar is nie en dat enige regte van jou LifeChurch.tv identiteit of inhoud van jou rekening opgeskort sal word met jou dood.Met ontvangs van 'n afskrif van jou doodsertifikaat, mag LifeChurch.tv jou rekening opskort en alle inligting daarin permanent uitwis.<br><br>Beperkingswet. Jy verstaan en stem toe dat enige wet of regspunt nieteenstaande, enige eis of aksieplan voortspruitend uit of verwant aan die gebruik van YouVersion of hierdie TERME VAN GEBRUIK, binne een (1) jaar ingedien moet word, waarby versuim van eis of aksieplan dit vir ewig verbied sal word.<br><br>Die afdelingtitels binne hierdie TERME VAN GEBRUIK word gerieflikheidshalwe gebruik en het geen wetlike of ooreenkomstige doel nie."
     profile:
-      blank slate:
-        heading: "Beweeg aan, hier is op die oomblik niks om te sien nie (nog nie)"
-        description: "Begin om met die Bybel betrokke te raak, of met jou vriende, en hierdie bladsy sal dan 'n geskiedenis vertoon van wat jy gedoen het."
-      visit friend: "Besoek %{friend} se profiel"
-      tab activity: "Aktiwiteit"
-      tab friends: "Vriende"
-      tab notes: "Notas"
-      tab bookmarks: "Boekmerke"
-      tab highlights: "Gemerkte werk"
-      tab badges: "Kentekens"
       first name: "Naam"
       last name: "Van"
       email: "E-Pos Adres"
@@ -541,10 +392,6 @@ af:
       reading_plans: "Stel my in kennis van informasie vir leesplanne wat ek begin het."
       publishing partners: "Hou my op hoogte met nuus van YouVersion se inhouds vennote."
       update: "Wysig Kennisgewings"
-      friendships: "Stel my in kennis van vriend versoeke"
-      moments: "Stel my in kennis van vriende se aktiwiteite"
-      comments: "Stel my in kennis van opmerking op my aktiwiteite"
-      likes: "Stel my in kennis van 'Hou Van' aksies op my aktiwiteite"
   bookmarks:
     new: "Nuwe Boekmerk"
     edit: "Verander"
@@ -558,10 +405,9 @@ af:
     not found: "Boekmerke gee jou 'n vinnige terugverwysingsgids na jou gunsteling gedeeltes of na die laaste hoofstuk wat jy in 'n spesifieke boek gelees het. Om 'n boekmerk by te voeg, kies 'n vers in die Bybel leser en kliek dan die seleksie knoppie bo aan die leser."
     other user not found: "%{username} het nog nie enige boekmerke gestoor nie."
     creation form errors: "Die volgende fout(e) het verhoed dat jy 'n boekmerk kon skep:"
-    create success: "Sukses!  Jou boekmerk is gestoor."
-    destroy success: "Boekmerk verwyder"
-    destroy failure: "Daar was 'n fout met die boekmerk verwydering"
-    update success: "Boekmerk aangepas"
+    successfully created: "Boekmerk Geskep"
+    successfully deleted: "Boekmerk Verwyder"
+    successfully updated: "Boekmerk Opgedateer"
     labels placeholder: "Skei meervoudige etikette met kommas."
     save: "Stoor Boekmerk"
     confirm delete: "Ja, ek is seker"
@@ -572,32 +418,10 @@ af:
     update: "Verander"
     color: "Kleur:"
     version field: "Weergawe:"
-    none user: "%{username} het geen boekmerke nie"
-    blank slate:
-      heading: "Boekmerk betekenisvolle verse"
-      description: "Terwyl jy Bybel lees, kies 'n vers en boekmerk dit. Keer dan terug om die boekmerk te sien, te wysig of te verwyder."
-    form:
-      title field: "Titel:"
-      reference field: "Verwysing:"
-      labels field: "Etikette (komma afgesonderd):"
-      colors field: "Kleur:"
-      update button: "Verander Boekmerk"
-      save button: "Stoor Boekmerk"
   badges:
     earned a badge: "Kenteken Verwerf"
     user badges: "%{user} se Kentekens"
-    earned date: "Verwerf deur %{username} %{ago} gelede"
-    none me: "Jy het nog geen kentekens verwerf nie."
-    none user: "%{username} het nog geen kentekens verwerf nie."
   plans:
-    widget:
-      my plans: "My Planne"
-      start reading: "Begin lees"
-    settings: "Verstellings"
-    privacy:
-      visible to friends?: "Wil jy hê jou aktiwiteit met hierdie plan moet vir jou vriende sigbaar wees?"
-      private: "Privaat"
-      public: "Publiek"
     title: "Lees Planne"
     browse by category: "Blaai per Kategorie"
     browse plans: "Kyk na %{category} Planne"
@@ -628,6 +452,7 @@ af:
     no public plans: "Geen lees planne is sigbaar vir %{username}."
     filter by lang: "Vernou Planne tot Taal Keuse"
     plan settings: "Plan Stellings"
+    settings: "Verstellings"
     search: "Soek"
     search placeholder: "Soek %{category} Planne"
     subscribe to plan: "Begin Hierdie Plan"
@@ -740,29 +565,17 @@ af:
     chapter only: "Jammer, klank is nie beskikbaar vir verse nie. Besigtig in die leser vir hoofstuk klank."
     close player menu: "Maak Toe"
   highlights:
-    title: "Kleurmerke"
-    blank slate:
-      heading: "Kleurmerk betekenisvolle verse"
-      description: "Terwyl jy Bybel lees, kies 'n vers en kleurmerk dit. Keer dan terug hierheen om die kleurmerker te sien, te wysig of te verwyder."
-    none user: "%{username} het geen kleurmerkers"
     choose color: "Kies Kleur"
-    create success: "Sukses!  Jou kleurmerk is gestoor"
-    create failure: "Daar was 'n fout met die stoor van die kleurmerk"
-    destroy success: "Kleurmerk verwyder"
-    destroy failure: "Daar was 'n fout met die kleurmerk verwydering"
     creation error: "Jammer, kon nie kleurmerk nie."
     delete error: "Jammer, kon nie kleurmerk verwyder nie."
-    form:
-      save button: "Stoor Kleurmerk"
   searching:
     bible: "Bybel"
-    plans: "Planne"
+    plans: "Leesplanne"
     users: "Gebruikers"
     notes: "Notas"
     total results: "Omtrent %{total} Uitslae"
     suggestion html: "Het jy bedoel %{suggestion_link}?"
     all versions: "Alle %{language_name} Weergawes"
-    results for: "Search results for: \nSoek resulte vir:"
   donate:
     donate now: "Skenk Nou"
     donate now intl: "of skenk internasionaal"
@@ -932,6 +745,9 @@ af:
     public domain: "Publieke Area"
     loading: "Besig om meer weergawes te laai..."
     load error: "Jammer, daar was 'n probleem met die laai van meer weergawes. Maak hierdie kieslys toe en heropen dit om weer te probeer."
+  reader help:
+    title: "Kies 'n vers..."
+    line 1: "Kliek of druk op enige vers of versameling van verse om die verse te boekmerk, uitlig, nota skryf of met jou vriende te deel!"
   campaigns:
     100m:
       logo: "YouVersion: Die Bybel app"
@@ -961,9 +777,3 @@ af:
       sidebar:
         tagline: "Kom ons maak saam Geskiedenis. "
         button: "Deel die Bybel Toep. "
-  ui:
-    pagination:
-      next page: "Volgende Bladsy"
-      previous page: "Vorige Bladsy"
-    datetime:
-      just now: "nou net"

@@ -1,29 +1,5 @@
 bg:
   social:
-    intro page:
-      main heading: "Разговор &amp; откриване"
-      main description: "Изследвайте Библията по нов начин с доверени приятели"
-      moment:
-        timestamp: "преди 5 дена"
-        title: "добави в показалеца Псалм 31:7"
-        verse: "Ще се радвам и ще се веселя в Твоята милост; Защото Ти си видял неволята ми, Познал си утесненията на душата ми."
-        reference: "Псалм 31:7"
-        discover:
-          copy: "Откривайте и учете с приятелите си, когато те добавят акценти, отметки и бележки."
-          button: "Откъде мога да започна?"
-        share:
-          copy: "Споделяйте честни разговори за Писанието."
-          button: "Започнете, като намерите приятели."
-        likes:
-          info: "и още 4 и като това"
-        comments:
-          first:
-            text: "Наистина имах нужда да чуя това днес, благодаря. До скоро!"
-            time: "преди 3 часа"
-          second:
-            text: "Амин, аз също. Сега ви изпращам имейл."
-            time: "преди 27 минути"
-          field placeholder: "Напиши коментар..."
     share: "Сподели"
     my connections: "Свързани профили"
     connected as: "Свързани сте през %{connection} като %{username}."
@@ -56,13 +32,9 @@ bg:
     users username not available: "Няма такъв потребител"
     users username or password invalid: "Името или паролата са невалидни"
     users username required: "Трябва да въведете потребителско име"
-    users first name required: "Трябва да въведете първото си име."
-    users last name required: "Трябва да въведете фамилия."
-    moments content required: "Съдържанието не може да бъде празно."
   meta:
     kids_app:
       title: "Приложението Bible за деца"
-      description: "..."
     100million:
       title: "Започва със 100 милиона"
       description: "Приложението Bible е инсталирано почти 100 милиона пъти - едно невероятно постижение! Но ние сме само в началото. Изтеглете безплатното приложение Bible сега и след това го споделете с приятелите си. Нека правим история заедно."
@@ -90,7 +62,7 @@ bg:
   new note: "Нова бележка"
   share success: "Съобщението е споделено"
   share error: "Грешка в съобщението. Опитайте отново."
-  google plus: "Google+"
+  google plus: "Google +"
   connect to: "Свържи се с твоя профил в %{connection}"
   deleted connection: "Успешно премахване на връзката ви през %{connection}."
   deleted connection error: "Имаше проблем при премаяхване на връзката ви през %{connection}."
@@ -159,14 +131,17 @@ bg:
   chapter: "Глава"
   bible: "Библия"
   notes title: "Бележки"
+  friends: "Моите приятели"
   groups: "Групи"
   mobile: "Мобилен"
   live: "На живо/групи"
   first page: "Първа страница"
   last page: "Последна страница"
+  next page: "Следваща страница"
+  previous page: "Предишна страница"
   invalid username or password: "Невалидно потребителско име или парола"
   show all bookmarks: "Виж всички %{total} отбелязани"
-  show all notes: "Виж всички бележки"
+  show all notes: "Виж всички %{total} бележки"
   recent bookmarks: "Последни отбелязвания"
   percentage display: "%{number}%"
   myself: "Мен"
@@ -177,110 +152,7 @@ bg:
   or:
     lower: "или"
     upper: "ИЛИ"
-  moments:
-    vod:
-      title: "Стих за деня"
-    friendship:
-      now friends: "Вече сте приятели с "
-    cta:
-      profile update text: "Помогнете на приятелите си да ви намерят"
-      profile update button: "Обнови профила"
-      sharing text: "Сподели стихове в социалните мрежи"
-      sharing button: "Активирай споделяне"
-      friends text: "Виж моменти на вашите приятели в Библията."
-      friends button: "Открии приятели"
-    action:
-      go to scripture: "Подобни стихове"
-      load more: "Зареди още"
-      like: "Харесай"
-      liked: "Харесани"
-      like title: "Харесайте това"
-      last comment: "Последен коментар"
-      share: "Сподели"
-      share title: "Сподели с приятели"
-      comment: "Kоментар"
-      comment title: "Виж всички коментари"
-      edit: "Редактирай"
-      edit highlight title: "Редактиране на този акцент"
-      edit bookmark title: "Редактирай отбелязаното"
-      edit note title: "Редактирай"
-      delete: "Изтрий"
-      delete confirm: "Сигурни ли сте?"
-      delete highlight title: "Изтриване на този акцент"
-      delete bookmark title: "Изтрий тези отбелязвания"
-      delete note title: "Изтрий тази бележка"
-  notifications:
-    title: "Съобщения"
-    none: "Все още нямате никакви бележки"
-    no new: "Няма нови уведомления"
-    view all: "Виж всички Съобщения"
-  likes:
-    create success: "Успех! Вашето харесване беше записано"
-    create failure: "Вашето харесване не можа да бъде записано"
-    destroy success: "Харесай изтритото"
-    destroy failure: "Вашето харесване не можа да бъде изтрито"
-  comments:
-    view all N: "Разгледай всички %{count} коментари"
-    post comment: "Публикувай коментар"
-    create success: "Успех! Вашият коментар беше публикуван."
-    create failure: "Коментарът не може да бъде публикуван"
-    destroy success: "Коментарът беше изтрит"
-    destroy failure: "Коментарът не можа да бъде изтрит"
-    form:
-      save button: "Публикувай на"
-  friends:
-    you have N friends: "Имате %{count} приятели"
-    none me: "Споделете вашите моменти в Библията като отметки, акценти и бележки с най-близките си приятели и семейството си."
-    find friends: "Открии приятели"
-    blank slate:
-      heading: "В момента не сте приятели"
-      description: "Вие трябва да сте приятели с този човек, за да видите неговите приятели."
-    limit notice: "Можете да имате най-много 150 приятели"
-    limit description: "Ограничаването на вашето приложение за Библията до приятелства с хора, които познавате добре, създава среда за честни разговори и споделени открития с доверени приятели."
-  friendships:
-    find friends title: "Открии приятели"
-    widget:
-      find friends title: "Открии приятели"
-    offer success: "Искането за приятелство е изпратено"
-    offer failure: "Грешка при изпращането на искането за приятелство"
-    create success: "Успех! Вече сте приятели."
-    create failure: "Грешка при създаване на приятелство"
-    destroy success: "Искането беше отказано"
-    destroy failure: "Грешка при отказването на искане"
-    requests title: "Покани за приятелство"
-    requests view all: "Виж всички Покани за приятелство"
-    requests none: "Вие нямате никакви молби за приятелство"
-    requests no new: "Няма нови искания"
-    status:
-      pending: "Искането е чакащо"
-      friends: "Моите приятели"
-    user wants friendship: "%{name} иска да ви бъде приятел"
-    user wants friendship partial: "иска да ви бъде приятел"
-    form:
-      remove friend button: "Премахнете приятел"
-      remove friend button title: "Премахнете този човек от списъка ви с приятели"
-      add friend button: "Добавяне на приятел"
-      add friend button title: "Изпрати на %{user} покана за приятелство"
-      accept button: "Приемете"
-      accept request button: "Приемете"
-      ignore button: "Игнориране"
-      ignore request button: "Игнориране"
   notes:
-    none user: "%{username} няма бележки."
-    blank slate:
-      heading: "Все още нямате никакви бележки"
-      description: "Като четете Библията, когато чувствате, че тихият и спокоен глас на Бог ви говори, можете бързо да добавите тези мисли тук. Вашите бележки ще бъдат маркирани като <em>лични</em> по подразбиране. Ако искате да споделите бележка с приятелите си, просто я отворете и я променете на <em>публична.</em>"
-    form:
-      title field: "Заглавие:"
-      content field: "Съдържание:"
-      reference field: "Препратка:"
-      status field: "Статут:"
-      save button: "Запази"
-    status:
-      private: "Личен"
-      public: "Публичен"
-      friends: "Само приятели"
-      draft: "Чернова"
     list title: "Бележки"
     loading community: "Зареждане на общите бележки..."
     no community notes: "Няма бележки към ибзраните стихове. За да създадеш бележка, избери стих в Библията и натисни бутона Избран в горната част на екрана."
@@ -288,7 +160,6 @@ bg:
     private: "Поверително"
     is private: "Посочената бележка е лична."
     draft: "Чернова"
-    friends: "Моите приятели"
     creation form errors: "Следните грешки не позволяват да се създаде бележката ви:"
     reference field: "Препратка:"
     version field: "Версия:"
@@ -309,10 +180,7 @@ bg:
     cancel: "Откажи"
     pop out: "Нов прозорец"
     none found: "Не са открити бележки..."
-    create success: "Успех! Вашата бележка беше записана."
-    create failure: "Грешка при запис на бележка"
-    destroy success: "Бележката е изтрита"
-    destroy failure: "Грешка при изтриване на бележка"
+    successfully deleted: "Премахнати бележки"
   ref:
     loading secondary: "Зареждане във вторичната версия"
     clear verses: "Изчисти избраните стихове"
@@ -343,8 +211,6 @@ bg:
     profile form errors: "Следните грешки не позволяват обновяването на профила:"
     email address: "Ел.поща"
     user name: "Поребителско име"
-    first name: "Име"
-    last name: "Фамилия"
     agreement: "Съгласявам се с %{terms_link} на YouVersion."
     terms and conditions: "условия за ползване"
     facebook sign up success: "Оторизирани сте чрез Facebook. Изберете име и парола за YouVersion за да продължите."
@@ -374,7 +240,6 @@ bg:
     edit account_existence: "Изтрий профила"
     delete account button: "Изтрий профила ми с YouVersion "
     no devices: "YouVersion профила ти няма свързано устройство "
-    no devices download copy: "Based on the online Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any mobile device. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle. Visit  <a href='https://www.bible.com/app'>bible.com/app</a> from your mobile device to download the Bible App and connect your account!"
     yes delete: "Да, изтрий профила ми"
     account delete success: "Твоят профил с YouVersion е изтрит. Надяваме се да продължиш да използваш Библията чрез следните приложения: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Ако изтриете профила си, губите всичката си информация, история и персонализиране (като бележки, отбелязвания, маркиране и т.н.) в YouVersion.com и Библията. Това действие е небратимо. Продължете само ако сте сигурни, че искате да направите това."
@@ -388,7 +253,6 @@ bg:
     my badges: "Моите значки"
     revised date: "Последна ревизия на %{date}"
     update email copy: "Въведи нова ел.поща и натисни Обнови ел.поща. Ще получиш линк за потвърждение на новата си ел.поща."
-    edit email: "Промяна на имейл адрес"
     update email check: "Провери си ел.поща и кликни връзката за да потвърдиш новата си ел.поща."
     confirm update email success: "Адресът е актуализиран."
     confirm update email error: "Възникна проблем с промяната на ел.поща."
@@ -488,16 +352,6 @@ bg:
       general title: "Обща информация"
       general text: "Entire Agreement. This TERMS OF USE constitutes the entire agreement between you and LifeChurch.tv and governs your use of YouVersion, superseding any prior agreements between you and LifeChurch.tv with respect to YouVersion. You also may be subject to additional terms and conditions.%{line_break}Choice of Law and Forum. The TERMS OF USE and the relationship between you and LifeChurch.tv shall be governed by the laws of the State of Oklahoma without regard to its conflict of law provisions. You and LifeChurch.tv agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Oklahoma County, Oklahoma.%{line_break}Waiver and Severability of Terms. The failure of LifeChurch.tv to exercise or enforce any right or provision of these TERMS OF USE shall not constitute a waiver of such right or provision. If any provision of these TERMS OF USE is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of these TERMS OF USE remain in full force and effect.%{line_break}No Right of Survivorship and Non-Transferability. You agree that your LifeChurch.tv account is non-transferable, and any rights to your LifeChurch.tv ID or contents within your account terminate upon your death. Upon receipt of a copy of a death certificate, LifeChurch.tv may terminate your account and permanently delete all contents therein.%{line_break}Statute of Limitations. You understand and agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of YouVersion or these TERMS OF USE must be filed within one (1) year after such claim or cause of action arose or be forever barred.%{line_break}The section titles within these TERMS OF USE are for convenience only and have no legal or contractual effect."
     profile:
-      blank slate:
-        heading: "Продължете, няма какво да се види тук (все още)"
-        description: "Започнете да четете Библията, или вашите приятели, и тази страница ще покаже историята на това, което сте правили."
-      visit friend: "Посетете профила на %{friend}"
-      tab activity: "Дейност"
-      tab friends: "Моите приятели"
-      tab notes: "Бележки"
-      tab bookmarks: "Отбелязвания"
-      tab highlights: "Маркирани"
-      tab badges: "Значки"
       first name: "Име"
       last name: "Фамилия"
       email: "Ел.поща"
@@ -537,10 +391,6 @@ bg:
       reading_plans: "Изпращай ми информация за започнатия план за четене."
       publishing partners: "Изпращай ми новини за партньорите на YouVersion"
       update: "Актуализация на известията"
-      friendships: "Уведомете ме за молби за приятелство"
-      moments: "Уведомете ме за дейността на приятели"
-      comments: "Коментари за моята дейност"
-      likes: "Уведоми ме за харесвания на моята дейност"
   bookmarks:
     new: "Ново отбелязване"
     edit: "Редактирай"
@@ -554,10 +404,9 @@ bg:
     not found: "Отбелязването дава бърза препратка към любимите ти пасажи или последната прочетена глава в дадена книга. За да отбележиш, избери стих в Библията и натисни Избран в горната част на екрана."
     other user not found: "%{username} няма запазени отбелязвания"
     creation form errors: "Маркерът не може да бъде създаден заради следните грешки:"
-    create success: "Успех! Вашият показалец беше записан."
-    destroy success: "Отбелязването е премахнато"
-    destroy failure: "Грешка при изтриване на отметка"
-    update success: "Отбелязването е добавено"
+    successfully created: "Bookmark добавяне"
+    successfully deleted: "Отбелязването е премахнато"
+    successfully updated: "Отбелязването е добавено"
     labels placeholder: "Раздели етикетите с запетая."
     save: "Запиши отбелязването"
     confirm delete: "Потвърждавам"
@@ -568,32 +417,10 @@ bg:
     update: "Обнови"
     color: "Цвят:"
     version field: "Версия:"
-    none user: "%{username} няма отметки"
-    blank slate:
-      heading: "Отбележете с отметка важни стихове"
-      description: "Отметките ви помагат да следите стиховете, които искате да запомните, да споделите или да маркирате като предпочитани. Върнете се тук, за да видите, редактирате или изтриете отметки."
-    form:
-      title field: "Заглавие:"
-      reference field: "Препратка:"
-      labels field: "Етикети (разделени със запетая):"
-      colors field: "Цвят:"
-      update button: "Актуализиране на отметка"
-      save button: "Запиши отбелязването"
   badges:
     earned a badge: "Полузи значка"
     user badges: "Значките на %{user}"
-    earned date: "Спечелени от %{username} преди %{ago}"
-    none me: "Нямате значки."
-    none user: "%{username} не е получил значки."
   plans:
-    widget:
-      my plans: "Моите планове"
-      start reading: "Започни четене"
-    settings: "Настройки"
-    privacy:
-      visible to friends?: "Искате ли вашата дейност с този план да бъде видима за приятелите ви?"
-      private: "Личен"
-      public: "Публичен"
     title: "План за четене"
     browse by category: "Разгледай по категории"
     browse plans: "Преглед на плановете по %{category}"
@@ -624,6 +451,7 @@ bg:
     no public plans: "Няма избран план за четене за %{username}."
     filter by lang: "Филтрирай плановете по език"
     plan settings: "Настройки на плана"
+    settings: "Настройки"
     search: "Търси"
     search placeholder: "Търси планове в %{category}"
     subscribe to plan: "Започни този план"
@@ -736,29 +564,17 @@ bg:
     chapter only: "Все още няма аудио към тези стихове."
     close player menu: "Затвори"
   highlights:
-    title: "Маркирани"
-    blank slate:
-      heading: "Маркирай стих"
-      description: "Отметките ви помагат да следите стиховете, които искате да запомните, да споделите или да маркирате като предпочитани. Върнете се тук, за да видите, редактирате или изтриете отметки."
-    none user: "%{username} няма акценти"
     choose color: "Избери цвят"
-    create success: "Успех! Вашият акцент беше записан"
-    create failure: "Грешка при запазване на акцент"
-    destroy success: "Акцентът е изтрит"
-    destroy failure: "Грешка при изтриване на акцент"
     creation error: "Не може да се подчертае."
     delete error: "Подчертаването не може да се премахне."
-    form:
-      save button: "Запиши акцент"
   searching:
     bible: "Библия"
-    plans: "Планове"
+    plans: "План за четене"
     users: "Потребители"
     notes: "Бележки"
     total results: "Около %{total} резултата"
     suggestion html: "Може би имахте предвид %{suggestion_link}?"
     all versions: "Всички %{language_name} версии"
-    results for: "Търси резултати за:"
   donate:
     donate now: "Направи дарение"
     donate now intl: "или направи международно дарение"
@@ -928,6 +744,9 @@ bg:
     public domain: "Публичен домейн"
     loading: "Зареждане на още версии"
     load error: "Проблем с зареждането на повече версии. Затвори това меню и опитай отново!"
+  reader help:
+    title: "Изберете стих..."
+    line 1: "Натиснете на който и да било стих или сбор от стихове за да ги запазите, маркирате, да напишете бележка за тях или да ги споделите с приятели!"
   campaigns:
     100m:
       logo: "YouVersion: приложение Библията"
@@ -957,9 +776,3 @@ bg:
       sidebar:
         tagline: "Нека създадем история!"
         button: "Сподели Библията"
-  ui:
-    pagination:
-      next page: "Следваща страница"
-      previous page: "Предишна страница"
-    datetime:
-      just now: "точно сега"

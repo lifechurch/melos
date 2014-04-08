@@ -1,9 +1,5 @@
 ms:
   social:
-    intro page:
-      main heading: "Perbualan & Penemuan"
-    moment:
-      read less: "Baca Kurang"
     share: "Beritakan"
     my connections: "Akaun yang Berkaitan"
     connected as: "Anda tersambung ke %{connection} sebagai %{username}."
@@ -36,13 +32,9 @@ ms:
     users username not available: "Nama pengguna yang dibekalkan tidak tersedia."
     users username or password invalid: "Nama pengguna atau kata laluan tidak sah."
     users username required: "Anda mesti masukkan nama pengguna."
-    users first name required: "Anda harus masukkan nama pertama."
-    users last name required: "Anda harus masukkan nama terakhir."
-    moments content required: "Ruangan tidak boleh kosong"
   meta:
     kids_app:
       title: "App Alkitab untuk Kanak-Kanak"
-      description: "..."
     100million:
       title: "Ia Bermula dengan 100 Juta"
       description: "App Alkitab telah di instalasi hampir 100 juta kali - pencapaian yang menakjubkan! Tetapi kita baru sahaja bermula. Muat turun App Alkitab percuma hari ini - dan kongsikan app ini dengan sahabat anda. Ayuh mencipta sejarah bersama."
@@ -70,7 +62,7 @@ ms:
   new note: "Nota Baru"
   share success: "Mesej anda sudah diberitakan."
   share error: "Maaf, ada kesilapan semasa memberitakan mesej anda. Sila cuba lagi."
-  google plus: "Google+"
+  google plus: "Google +"
   connect to: "Bersambung ke akaun %{connection} anda"
   deleted connection: "Sambungan anda ke %{connection} berjaya diputuskan."
   deleted connection error: "Maaf, kesilapan berlaku semasa memutuskan sambungan ke %{connection}."
@@ -126,7 +118,6 @@ ms:
   find friends: "Cari Sahabat"
   search placeholder: "Kini Mencari..."
   search: "Cari"
-  more: "Lebih"
   book: "Kitab"
   filter book: "Pilih Kitab..."
   save: "Selamatkan"
@@ -140,13 +131,17 @@ ms:
   chapter: "Bab"
   bible: "Alkitab"
   notes title: "Nota"
+  friends: "Sahabat"
   groups: "Group"
   mobile: "Mobil"
   live: "Acara Langsung/Group"
   first page: "Halaman Pertama"
   last page: "Halaman Terakhir"
+  next page: "Halaman Seterusnya"
+  previous page: "Halaman Sebelumnya"
   invalid username or password: "Nama Pengguna atau Kata Laluan tidak sah."
   show all bookmarks: "Lihat segala bookmark %{total}"
+  show all notes: "Lihat segala nota %{total}"
   recent bookmarks: "Bookmark Terkini"
   percentage display: "%{number}%"
   myself: "Saya"
@@ -157,106 +152,7 @@ ms:
   or:
     lower: "atau"
     upper: "ATAU"
-  moments:
-    vod:
-      title: "Ayat harian"
-    friendship:
-      now friends: "Anda sekarang bersahabat dengan"
-    cta:
-      profile update text: "Bantu sahabat anda untuk mencari anda"
-      profile update button: "Update profil anda"
-      sharing text: "Kongsikan ayat dengan rangkaian sosial"
-      sharing button: "Aktifkan perkongsian"
-      friends text: "Lihat moments sahabat anda di Alkitab."
-      friends button: "Cari sahabat"
-    action:
-      go to scripture: "Terus ke alkitab"
-      load more: "Load lebih lagi"
-      like: "Like"
-      liked: "Sudah \"Like\""
-      like title: "Like ini"
-      share: "Beritakan"
-      share title: "Kongsikan dengan sahabat atau keluarga"
-      comment: "Komen"
-      comment title: "Lihat semua komen"
-      edit: "Mengedit"
-      edit highlight title: "Edit highlight ini"
-      edit bookmark title: "Edit bookmark ini"
-      edit note title: "Edit nota ini"
-      delete: "Hapuskan"
-      delete confirm: "Adakah anda pasti?"
-      delete highlight title: "Batalkan highlight ini"
-      delete bookmark title: "Hapuskan bookmark ini"
-      delete note title: "Hapuskan nota ini"
-  notifications:
-    title: "Notifikasi"
-    none: "Anda tidak mempunyai sebarang notifikasi"
-    no new: "Tiada notifikasi baru"
-    view all: "Lihat semua Notifikasi"
-  likes:
-    create failure: "Tanda suka anda tidak boleh disimpan"
-    destroy success: "Tanda suka dipadam"
-    destroy failure: "Tanda suka anda tidak boleh dipadam"
-  comments:
-    view all N: "Lihat semua %{count} komen"
-    post comment: "Pos komen"
-    create failure: "Komen tidak dapat dipos"
-    destroy success: "Komen dipadam"
-    destroy failure: "Komen tidak boleh dipadam"
-    form:
-      save button: "Pos"
-  friends:
-    you have N friends: "Anda mempunyai %{kira} sahabat"
-    none me: "Beritakanlah saat Alkitab anda yang istimewa - bookmark, highlight, dan nota - kepada sahabat dan keluarga anda."
-    find friends: "Cari sahabat"
-    blank slate:
-      heading: "Ketika ini bukannya sahabat"
-      description: "Anda perlu bersahabatkan seseorang ini sekiranya anda ingin melihat senarai sahabatnya."
-    limit notice: "Anda boleh mempunyai sebanyak 150 sahabat"
-    limit description: "Menghadkan sahabat App Alkitab anda kepada orang yang anda sangat kenal mewujudkan persekitaran untuk perbualan yang jujur dan penemuan yang dikongsi dengan sahabat yang dipercayai."
-  friendships:
-    find friends title: "Cari sahabat"
-    widget:
-      find friends title: "Cari sahabat"
-    offer success: "Permintaan persahabatan dihantar"
-    offer failure: "Terdapat ralat dalam penghantaran permintaan persahabatan "
-    create failure: "Terdapat ralat dalam mencipta persahabatan"
-    destroy success: "Permintaan ditolak"
-    destroy failure: "Terdapat ralat dalam menolak permintaan"
-    requests title: "Permintaan sahabat"
-    requests view all: "Lihat semua permintaan sahabat"
-    requests none: "Anda tidak mempunyai sebarang permintaan sahabat"
-    requests no new: "Tiada permintaan baru"
-    status:
-      pending: "Permintaan tertunda"
-      friends: "Sahabat"
-    user wants friendship: "%{user} ingin menjadi sahabat anda"
-    user wants friendship partial: "ingin menjadi sahabat anda"
-    form:
-      remove friend button: "Keluarkan sahabat"
-      remove friend button title: "Keluarkan orang ini dari senarai sahabat anda"
-      add friend button: "Tambah sahabat"
-      add friend button title: "Hantarkan %{user} permintaan sahabat"
-      accept button: "Terima"
-      accept request button: "Terima permintaan"
-      ignore button: "Biarkan"
-      ignore request button: "Abaikan permintaan"
   notes:
-    none user: "%{username} belum lagi mengambil nota."
-    blank slate:
-      heading: "Anda belum lagi mempunyai nota"
-      description: "Semasa membaca Alkitab, ketika mendengar suara Allah yang senyap tenang, bolehlah mencatat fikiran di sini. Nota anda ditanda <em>private</em> secara default. Jika anda ingin berkongsi sama sahabat, cuma perlu dibukanya dan ditukar ke <em>awam</em>."
-    form:
-      title field: "Tajuk:"
-      content field: "Kandungan:"
-      reference field: "Rujukan:"
-      status field: "Status:"
-      save button: "Selamatkan"
-    status:
-      private: "Private"
-      public: "Awam"
-      friends: "Sahabat sahaja"
-      draft: "Draf"
     list title: "Nota"
     loading community: "Kini load nota komuniti..."
     no community notes: "Kami tidak terjumpa nota komuniti berkaitan ayat tersebut. Untuk mencatat nota, pilihlah suatu ayat dalam pembaca Alkitab dan klik butang Terpilih di bahagian atas pembaca."
@@ -264,7 +160,6 @@ ms:
     private: "Private"
     is private: "Catatan nota permohonan adalah private."
     draft: "Draf"
-    friends: "Sahabat"
     creation form errors: "Kesilapan berikut menghalang penciptaan nota anda:"
     reference field: "Rujukan:"
     version field: "Versi:"
@@ -285,9 +180,7 @@ ms:
     cancel: "Batalkan"
     pop out: "Pop out"
     none found: "Tiada nota yang tercari..."
-    create failure: "Terjadi kesilapan semasa menyelamatkan nota"
-    destroy success: "Nota dihapuskan"
-    destroy failure: "Terjadi kesilapan semasa menghapuskan nota"
+    successfully deleted: "Nota Dibatalkan"
   ref:
     loading secondary: "Memuatkan Rujukan dalam Versi Kedua..."
     clear verses: "Batalkan Ayat-ayat yang Terpilih"
@@ -318,8 +211,6 @@ ms:
     profile form errors: "Kesilapan berikut menghalang profil anda di-update:"
     email address: "Alamat E-mel"
     user name: "Nama Pengguna"
-    first name: "Nama pertama"
-    last name: "Nama keluarga"
     agreement: "Saya bersetuju dengan %{terms_link} YouVersion."
     terms and conditions: "terma dan syarat"
     facebook sign up success: "Bagus! Anda sudah mengesahkan Facebook. Seterusnya, pilih nama pengguna dan kata laluan YouVersion."
@@ -349,7 +240,7 @@ ms:
     edit account_existence: "Hapuskan Akaun"
     delete account button: "Hapuskan Akaun YouVersion Saya"
     no devices: "Tiada peranti yang terhubung ke Akaun YouVersion anda"
-    no devices download copy: "App Injil adalah Alkitab mobil percuma yang berdasarkan Alkitab online, YouVersion, yang boleh dipasang kepada hampir sebarang peranti mobil. App Injil ini membolehkan pengguna membaca Alkitab, memberitakan ayat kepada jaringan sosial mereka, bookmark petikan kegemaran, dan selainnya&mdash; segalanya dalam format yang sepadan dengan kehidupan yang semakin mobil. Kunjungilah <a href='https://www.bible.com/app'>bible.com/app</a> dari peranti mobil anda untuk download App Injil dan bersambung ke akaun anda!"
+    no devices download copy: "Berdasarkan Alkitab secara online, YouVersion.com, App Alkitab merupakan Alkitab mudah alih yang boleh dimuat turun dalam hampir semua peranti mudah alih. App Alkitab membolehkan pengguna untuk membaca Alkitab, berkongsi ayat dengan jaringan sosial mereka, bookmark petikan kegemaran mereka, dan banyak lagi&mdash;semua dalam format yang sejajar dengan perkembangan gaya hidup mudah alih mereka. Sila layari <a href='https://www.bible.com/download'>bible.com/download</a> daripada peranti mudah alih anda untuk memuat turun App Alkitab dan sambungkan ke akaun anda!"
     yes delete: "Ya, Hapuskan Akaun Saya"
     account delete success: "Akaun YouVersion anda sudah selesai dihapuskan. Kami harap anda terus berinteraksi dengan Alkitab. Anda mungkin mendapat bantuan dari beberapa app di sini: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Jika anda mneghapuskan akaun, informasi, sejarah, dan input peribadi (seperti nota, bookmark, highlight dan selainnya) dalam YouVersion dan App Injil akan kekal dihapuskan. Tindakan ini tidak boleh diterbalikkan oleh anda ataupun kami. Jika anda pasti, sila berterusan di bawah."
@@ -363,7 +254,7 @@ ms:
     my badges: "Lencana Saya"
     revised date: "Terakhir disemak pada %{date}"
     update email copy: "Masukkan alamat e-mel baru dan klik Update E-mel. Kami akan mengirimkan link untuk mengesahkan alamat e-mel baru anda."
-    edit email: "Tukar Alamat E-mel"
+    edit email: "Update Alamat E-mel"
     update email check: "Sila klik link dalam e-mel anda untuk mengesahkan alamat e-mel baru."
     confirm update email success: "Terima kasih! Alamat e-mel anda sudah di-update."
     confirm update email error: "Maaf, ada kesulitan semasa menyelesaikan penukaran alamat e-mel."
@@ -464,16 +355,6 @@ ms:
       general title: "Informasi Umum"
       general text: "Kesuluruhan Persetujuan. TERMA PENGGUNAAN ini merupakan keseluruhan persetujuan di antara anda dan LifeChurch.tv dan mengawal penggunaan YouVersion oleh anda, dan menggantikan sebarang persetujuan terdahulu di antara anda dan LifeChurch.tv berkenaan dengan YouVersion. Anda juga mungkin tertakluk kepada terma dan syarat tambahan.<br><br>Pilihan Undang-undang dan Forum. TERMA PENGGUNAAN dan perhubungan antara anda dan LifeChurch.tv dikawal oleh undang-undang Negeri Oklahoma tanpa mengambil kira konflik peruntukan undang-undang. Anda dan LifeChurch.tv bersetuju bertunduk kepada bidang kuasa peribadi dan eksklusif mahkamah yang dilokasi di dalam daerah Oklahoma County, Oklahoma.<br><br>Pengecualian dan Pemutusan Terma. Kegagalan LifeChurch.tv untuk menggunakan hak atau peruntukan dalam TERMA PENGGUNAAN ini tidak merupakan pengecualian hak atau peruntukan tersebut. Sekiranya sebarang peruntukan dalam TERMA PENGGUNAAN ini didapati tidak sah oleh mahkamah yang berbidang kuasa kompeten, pihak-pihak namun bersetuju bahawa mahkamah akan berusaha memberi kesan kepada niat pihak-pihak seperti dicerminkan dalam peruntukan tersebut, dan peruntukan lain dalam TERMA PENGGUNAAN ini terus berkuatkuasa.<br><br>Tiada Hak Survivorship dan Tiada Pindahmilikan. Anda bersetuju bahawa akaun LifeChurch.tv anda tidak boleh dipindah milik, dan segala hak terhadap ID LifeChurch.tv anda atau kandungan akaun anda tamat ketika anda meninggal dunia. Selepas menerima salinan sijil kematian, LifeChurch.tv boleh memberhentikan akaun anda dan menghapuskan secara kekal segala kandungannya.<br><br>Statut Batasan. Anda memahami dan bersetuju bahawa tidak kira sebarang statut atau undang-undang yang bertentangan, sebarang tuntutan atau kausa tindakan yang berbangkit dari atau berkaitan dengan penggunaan YouVersion atau TERMA PENGGUNAAN ini mesti difail dalam masa satu (1) tahun selepas tuntutan atau kausa tindakan demikian berlaku atau dihalang selama-lamanya.<br><br>Tajuk seksyen dalam TERMA PENGGUNAAN ini adalah untuk kemudahan sahaja dan tidak mempunyai kesan perundangan atau kontraktual."
     profile:
-      blank slate:
-        heading: "Site ini belum tersedia"
-        description: "Laman ini menunjukkan sejarah penglibatan anda bersama sahabat, ataupun pembacaan Alkitab anda."
-      visit friend: "Kunjungilah profil %{sahabat}"
-      tab activity: "Aktiviti"
-      tab friends: "Sahabat"
-      tab notes: "Nota"
-      tab bookmarks: "Bookmark"
-      tab highlights: "Highlight"
-      tab badges: "Lencana"
       first name: "Nama Pertama"
       last name: "Nama Keluarga"
       email: "Alamat E-mel"
@@ -513,9 +394,6 @@ ms:
       reading_plans: "Beritahu saya bila ada maklumat baru tentang pelan bacaan saya."
       publishing partners: "Beritahu saya berita terbaru dari rakan kongsi kandungan YouVersion."
       update: "Update Notifikasi"
-      friendships: "Beritahu saya tentang permintaan kesahabatan"
-      moments: "Beritahu saya tentang aktiviti sahabat"
-      comments: "Beritahu saya tentang komen terhadap aktiviti saya"
   bookmarks:
     new: "Bookmark Baru"
     edit: "Mengedit"
@@ -529,9 +407,9 @@ ms:
     not found: "Bookmark membenarkan anda merujuk pantas ke petikan kegemaran ataupun bab terakhir yang dibaca dalam kitab. Untuk menambah bookmark, pilihilah suatu ayat dalam pembaca Alkitab dan klik butang Terpilih di bahagian atas pembaca."
     other user not found: "%{username} belum menyelamatkan sebarang bookmark."
     creation form errors: "Kesilapan berikut menghalang penciptaan bookmark:"
-    destroy success: "Bookmark dibatalkan"
-    destroy failure: "Terjadi kesilapan semasa membatalkan bookmark"
-    update success: "Bookmark sudah diupdate"
+    successfully created: "Bookmark Tertambah"
+    successfully deleted: "Bookmark Dibatalkan"
+    successfully updated: "Bookmark Sudah Diupdate"
     labels placeholder: "Gunakan koma untuk mengasingkan pelbagai label."
     save: "Selamatkan Bookmark"
     confirm delete: "Ya, saya pasti"
@@ -542,32 +420,10 @@ ms:
     update: "Update"
     color: "Warna:"
     version field: "Versi:"
-    none user: "%{nama pengguna} tiada bookmark"
-    blank slate:
-      heading: "Bookmark ayat-ayat yang bermakna"
-      description: "Semasa membaca Alkitab, pilih sesuatu ayat dan tandai dengan bookmark. Kembali ke sini untuk membaca, mengedit, atau membatalkan bookmark anda."
-    form:
-      title field: "Tajuk:"
-      reference field: "Rujukan:"
-      labels field: "Label (dipisahkan oleh koma):"
-      colors field: "Warna:"
-      update button: "Update Bookmark"
-      save button: "Selamatkan Bookmark"
   badges:
     earned a badge: "Terperolehi Lencana"
     user badges: "Lencana %{user}"
-    earned date: "Diperolehi oleh %{username} %{ago} dahulu."
-    none me: "Anda belum memperolehi sebarang lencana."
-    none user: "%{username} belum memperolehi sebarang lencana."
   plans:
-    widget:
-      my plans: "Pelan Saya"
-      start reading: "Mula membaca"
-    settings: "Setting"
-    privacy:
-      visible to friends?: "Adakah anda ingin aktiviti anda dengan pelan ini dapat dilihat oleh sahabat anda?"
-      private: "Private"
-      public: "Awam"
     title: "Pelan Bacaan"
     browse by category: "Browse secara Kategori"
     browse plans: "Lihat Pelan %{category}"
@@ -598,6 +454,7 @@ ms:
     no public plans: "Tiada pelan bacaan %{username} yang kelihatan."
     filter by lang: "Pilih Pelan mengikut Bahasa"
     plan settings: "Setting Pelan"
+    settings: "Setting"
     search: "Cari"
     search placeholder: "Cari Pelan %{category}"
     subscribe to plan: "Mulakan Pelan Ini"
@@ -710,28 +567,17 @@ ms:
     chapter only: "Maaf, audio tidak tersedia untuk ayat-ayat. Audio bab boleh dikunjungi di pembaca."
     close player menu: "Tutup"
   highlights:
-    title: "Highlight"
-    blank slate:
-      heading: "Highlight ayat-ayat yang bererti"
-      description: "Semasa membaca Alkitab, pilih sesuatu ayat dan highlight. Kembali ke sini untuk membaca, mengedit, atau membatalkan highlight."
-    none user: "%{nama pengguna} tiada highlight"
     choose color: "Pilih Warna"
-    create failure: "Terjadi kesilapan semasa menyelamatkan highlight"
-    destroy success: "Highlight dibatalkan"
-    destroy failure: "Terjadi kesilapan semasa membatalkan highlight"
     creation error: "Maaf, tidak dapat highlight."
     delete error: "Maaf, highlight tidak dapat dibatalkan."
-    form:
-      save button: "Simpan Highlight"
   searching:
     bible: "Alkitab"
-    plans: "Pelan"
+    plans: "Pelan Bacaan"
     users: "Pengguna"
     notes: "Nota"
     total results: "Tentang Keputusan %{total}"
     suggestion html: "Apakah maksud anda %{suggestion_link}?"
     all versions: "Segala Versi %{language_name}"
-    results for: "Hasil carian untuk:"
   donate:
     donate now: "Buat Sumbangan Sekarang"
     donate now intl: "atau memberi sumbangan antarabangsa"
@@ -901,6 +747,9 @@ ms:
     public domain: "Domain Awam"
     loading: "Memuat Versi Lain..."
     load error: "Maaf, memuat versi lain mempunyai masalah. Tutup menu ini dan buka semula untuk mencuba kembali."
+  reader help:
+    title: "Pilih ayat..."
+    line 1: "Klik atau tap apa-apa ayat atau koleksi ayat untuk bookmark, highlight, menghasilkan nota, atau berkongsi dengan sahabat anda!"
   campaigns:
     100m:
       logo: "YouVersion: App Alkitab"
@@ -930,9 +779,3 @@ ms:
       sidebar:
         tagline: "Ayuh mencipta sejarah bersama"
         button: "Kongsi App Injil"
-  ui:
-    pagination:
-      next page: "Halaman Seterusnya"
-      previous page: "Halaman Sebelumnya"
-    datetime:
-      just now: "baru sahaja"
