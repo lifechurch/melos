@@ -96,7 +96,11 @@ module YouversionWeb
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
     end
 
-    config.middleware.insert_before(Rack::Rewrite, Rack::SslEnforcer, ignore: %r{/^\/app|^\/download|^\/mobile|\/100million/})
+    config.middleware.insert_before(Rack::Rewrite, 
+      Rack::SslEnforcer, 
+      ignore: [%r{/^\/app|^\/}, %r{/download|^\/}, %r{/mobile|\/}, %r{/100million/}],
+      except_environments: 'development'
+    )
 
     config.middleware.insert_before(
       Rack::Rewrite,
