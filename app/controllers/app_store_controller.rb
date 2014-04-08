@@ -1,4 +1,5 @@
 class AppStoreController < ActionController::Base
+  include YV::Concerns::UserAuth
 
   before_filter :set_site, only: [:index]
   before_filter :track_app_download, only: [:index]
@@ -12,7 +13,7 @@ class AppStoreController < ActionController::Base
   end
 
   private
-  # current_auth, ref_from_params, set_site - Ripped these from AppController - we need to move these into lib Modules 
+  # current_auth, ref_from_params, set_site - Ripped these from AppController - we need to move these into lib Modules
   # and include them where needed.
 
   def current_auth
