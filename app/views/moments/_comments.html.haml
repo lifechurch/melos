@@ -39,4 +39,4 @@
               %a.moment-comment-delete{href:"#", "data-comment-id" => comment.id, title: "Delete this comment"}
                 Delete this comment
 
-    = render partial: "moments/comments_form", locals: {moment: moment}
+    = render partial: "moments/comments_form", locals: {moment: moment, detail_view: detail_view}
