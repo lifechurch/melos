@@ -284,6 +284,7 @@ GEM
     rack-rewrite (1.3.3)
     rack-ssl (1.3.3)
       rack
+    rack-ssl-enforcer (0.2.6)
     rack-test (0.6.2)
       rack (>= 1.0)
     rack-timeout (0.0.4)
@@ -451,6 +452,7 @@ DEPENDENCIES
   rabl (~> 0.7.3)
   rack-mobile-detect (~> 0.3.0)
   rack-rewrite (~> 1.3.3)
+  rack-ssl-enforcer
   rack-timeout (~> 0.0.3)
   rails (= 3.2.13)
   routing-filter (~> 0.3.1)
