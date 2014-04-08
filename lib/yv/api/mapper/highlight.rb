@@ -5,8 +5,7 @@ module YV
 
         class << self
 
-          def from_all(results)
-            
+          def from_all(results)            
             from_collection(results)
           end
 
