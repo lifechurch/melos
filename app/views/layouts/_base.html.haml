@@ -1,0 +1,42 @@
+!!! 5
+
+:ruby
+  # TODO: Refactor these 'floating' @instance variables into something more concise/explicit
+  container_classes = []
+  container_classes << "no_sidebar" if @sidebar == false
+  container_classes << "no_primary_nav" if @main_nav == false
+  container_class_str = container_classes.join(" ")
+
+%html{class: (@html_classes.join(' ') if @html_classes), "data-locale" => I18n.locale, id: @html_id, "data-logged-in" => logged_in?.to_s, "data-user-id" => logged_in? ? current_auth.user_id : nil, "data-user-name" => logged_in? ? current_auth.username : nil, "data-user-avatar" => logged_in? ? current_user.user_avatar_url["px_48x48"] : nil }
+
+  %head{lang: 'en-us'}
+    = csrf_meta_tags
+    = render '/shared/head'
+    = render '/shared/javascripts'
+    = render '/shared/google_analytics'
+
+  %body
+    #wrapper
+      = content_for?(:header) ? yield(:header) : render("/shared/header/default")
+      = render(partial: "layouts/mobile_nav") unless @main_nav == false    
+
+      - flash.each do |key, msg|
+        %div{class: container_class_str, id: "flash_#{key}"}= msg
+
+      #container{class: container_class_str}
+        #main{role: "main", class: @is_reader == true ? 'main_reader' : ''}
+          
+          = render(partial: "layouts/primary_nav") unless @main_nav == false
+          = content_for?(:main) ? yield(:main) : yield
+
+        #sidebar
+          - if content_for? :sidebar
+            = yield :sidebar
+          - else
+            - unless (@sidebar == false || sidebar_presenter.blank?)
+              = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
+
+
+      = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
+
+    = render partial: "/shared/js_templates"

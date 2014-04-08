@@ -213,11 +213,11 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"]
-  border: 1px solid #aeaeae
-  color: #0084c8
+  border: 0
+  color: #444
   background-color: #E5E5E5
   padding: 8px 15px
-  +box-shadow(#ddd 0 1px 3px 0, inset rgba(255,255,255, 0.8) 0 2px 0 0, inset rgba(0,0,0, 0.10) 0 -2px 0 0)
+  +box-shadow(inset rgba(0,0,0, 0.10) 0 -1px 0 0)
   font-size: 13px
 
 button:hover,
@@ -233,9 +233,7 @@ input[type="button"]:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 button.hover
-  +background-image(linear-gradient(#fff, #e0e0e0 1px, #bebebe))
   background-color: #bebebe
-  border-color: #838383
 
 button:focus,
 input[type="button"]:focus,
@@ -282,8 +280,7 @@ input[type="time"],
 input[type="url"],
 input[type="week"]
   +round
-  +box-shadow(inset rgba(#000, 0.1) 0 1px 1px 0, #fff 0 1px 0 0, #eeedeb 0 0 0 5px)
-  +background-image(linear-gradient(#fff, #eee))
+  // +box-shadow(inset rgba(#000, 0.1) 0 1px 1px 0, #fff 0 1px 0 0, #eeedeb 0 0 0 5px)
   padding: 7px 0 7px 10px
   height: 35px
 
@@ -296,22 +293,15 @@ form p.emphasis
 input.address
   width: 465px
 
-div.color_picker_list button.color
-  display: inline
-  margin-left: 0
-  margin-right: 4px
-
 textarea
   display: block
   height: auto
 
 .alternate_select
-  +background(linear-gradient(#fefefe, #dbdbdb))
   height: 24px
   padding: 2px 10px
 .alternate_select_locked
   padding-left: 20px
-  +background(linear-gradient(#fefefe, #dbdbdb))
 
 @media (-webkit-min-device-pixel-ratio: 0)
   select
@@ -322,7 +312,7 @@ textarea
     padding-right: 41px
   // Alternate_select queues up the smaller select design used in things like parallel notes -jc
   .alternate_select
-    +background(image-url("select_wrap_span.png") no-repeat center right, linear-gradient(#fefefe, #dbdbdb))
+    +background(image-url("select_wrap_span.png") no-repeat center right)
     height: 24px
     padding: 2px 10px
   .alternate_select_locked
@@ -362,7 +352,8 @@ input[type="time"]:active,
 input[type="url"]:active,
 input[type="week"]:active
   border-color: $blue
-  +box-shadow(inset rgba(#000, 0.1) 0 1px 1px 0, #fff 0 1px 0 0, $blue_light 0 0 5px 0, #eeedeb 0 0 0 5px)
+  // +box-shadow(inset rgba(#000, 0.1) 0 1px 1px 0, #fff 0 1px 0 0, $blue_light 0 0 5px 0, #eeedeb 0 0 0 5px)
+  outline: 0 !important
 
 input[type="search"]
   padding-right: 1px
@@ -378,12 +369,15 @@ button.color
 input[type="submit"].action_button_green,
 input[type="submit"].action_button_blue,
 input[type="submit"].action_button_red,
+input[type="submit"].action_button_grey,
 button.action_button_blue,
 button.action_button_green,
 button.action_button_red,
+button.action_button_grey,
 .action_button_blue,
 .action_button_green,
-.action_button_green
+.action_button_red,
+.action_button_grey
   +border-radius(5px)
   display: inline-block
   font:
@@ -391,21 +385,23 @@ button.action_button_red,
     weight: bold
   line-height: 1.3
   text-align: center
-  text-shadow: rgba(#000, 0.5) 0 -1px 0
   padding: 7px 20px
-  +box-shadow(#ccc 0 1px 3px 0, inset rgba(255,255,255, 0.3) 0 2px 0 0, inset rgba(0,0,0, 0.15) 0 -2px 0 0)
+  +box-shadow(inset rgba(0,0,0, 0.20) 0 -2px 0 0)
   background-image: none
 
 
 input[type="submit"].action_button_green,
 input[type="submit"].action_button_red,
 input[type="submit"].action_button_blue,
+input[type="submit"].action_button_grey,
 .action_button_blue,
 .action_button_green,
 .action_button_red,
+.action_button_grey,
 .action_button_blue:hover,
 .action_button_red:hover,
-.action_button_green:hover
+.action_button_green:hover,
+.action_button_grey:hover
   color: #fff
   text-decoration: none
 
@@ -415,7 +411,7 @@ input[type="submit"].action_button_blue,
 input[type="submit"].action_button_green,
 button.action_button_green,
 .action_button_green
-  background-color: #91B164
+  background-color: #48A900
   background-image: none
 
 .action_button_green:hover,
@@ -424,30 +420,30 @@ button.action_button_green,
 input[type="submit"].action_button_green:hover,
 input[type="submit"].action_button_green:focus,
 input[type="submit"].action_button_green:active
-  background-color: #5d832f
+  background-color: #4FBA00
 
 input[type="submit"].action_button_green:focus,
 input[type="submit"].action_button_green:active,
 .action_button_green:focus,
 .action_button_green:active
-  color: #9cae87
+  color: #4FBA00
 
 input[type="submit"].action_button_green,
 .action_button_green,
 .action_button_green:hover,
 .action_button_green:focus,
 .action_button_green:active
-  border: 1px solid #91B164
+  border: 0
 
 
-//Blue Action Buttons
+// Blue Action Buttons
 
 input[type="submit"].action_button_blue,
 input[type="button"].action_button_blue,
 .action_button_blue,
 a.action_button_blue
   background-color: #0099CC
-  border: 1px solid #0077b4
+  border: 0
 
 input[type="submit"].action_button_blue:hover,
 input[type="submit"].action_button_blue:focus,
@@ -478,7 +474,7 @@ a.action_button_red,
 .action_button_red
   background-color: #CC0000
   background-image: none
-  border: 1px solid #B20000
+  border: 0
 
 .action_button_red:hover,
 .action_button_red:focus,
@@ -495,12 +491,36 @@ input[type="submit"].action_button_red:active,
 .action_button_red:active
   color: #ae8787
 
-input[type="submit"].action_button_red,
-.action_button_red,
-.action_button_red:hover,
-.action_button_red:focus,
-.action_button_red:active
-  border-color: #ab2929
+
+// Grey Action Buttons
+
+input[type="submit"].action_button_grey,
+button.action_button_grey,
+.action_button_grey
+  background-color: #e6e6e6
+  background-image: none
+  color: #424242 !important
+
+.action_button_grey:hover,
+.action_button_grey:focus,
+.action_button_grey:active,
+input[type="submit"].action_button_grey:hover,
+input[type="submit"].action_button_grey:focus,
+input[type="submit"].action_button_grey:active
+  background-color: #cfcfcf
+
+input[type="submit"].action_button_grey:focus,
+input[type="submit"].action_button_grey:active,
+.action_button_grey:focus,
+.action_button_grey:active
+  color: #424242
+
+input[type="submit"].action_button_grey,
+.action_button_grey,
+.action_button_grey:hover,
+.action_button_grey:focus,
+.action_button_grey:active
+  border: 0
 
 
 // Small action buttons
@@ -527,13 +547,11 @@ input[type="submit"].action_button_red,
   text-decoration: none
 
 .sm_action_button_green
-  +background-image(linear-gradient(#81a950, #679037))
   background-color: #81a950
 
 .sm_action_button_green:hover,
 .sm_action_button_green:focus,
 .sm_action_button_green:active
-  +background-image(linear-gradient(#5d832f, #436916))
   background-color: #5d832f
 
 .sm_action_button_green:focus,
@@ -547,13 +565,11 @@ input[type="submit"].action_button_red,
   border-color: #607346
 
 .sm_action_button_blue
-  +background-image(linear-gradient(#1a90cd, #0077b4))
   background-color: #0077b4
 
 .sm_action_button_blue:hover,
 .sm_action_button_blue:focus,
 .sm_action_button_blue:active
-  +background-image(linear-gradient(#1a7aab, #006091))
   background-color: #006091
 
 .sm_action_button_blue:focus,
@@ -595,7 +611,6 @@ input[type="submit"].action_button_red,
 
 
 .small_action_button
-  +background-image(linear-gradient(#5d832f, #436916))
   +round
   font-weight: bold
   padding: 4px 10px
@@ -654,8 +669,8 @@ input[type="date"]
 
 .text_field_embed button
   position: absolute
-  right: 8px
-  top: 6px
+  right: 1px
+  top: 1px
 .text_field_embed + .text_field_embed
   margin: 10px 0
 .secret

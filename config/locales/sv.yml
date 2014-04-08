@@ -6,7 +6,7 @@ sv:
     remove connection: "Ta bort denna anslutning"
     connection friends: "Här är några YouVersion-användare du är ansluten till på %{connection}:"
     errors:
-      no friends: "Ingen av dina vänner på %{connection} finns ännu på YouVerson."
+      no friends: "Inga av dina vänner på %{connection} verkar finnas på YouVerson."
       reset connection: "Ett fel har tyvärr inträffat. Stäng ner och försök sedan att återansluta."
     email:
       name: "E-post"
@@ -25,7 +25,7 @@ sv:
     users email not found: "Det finns inget konto med den e-postadressen."
     users email required: "Du måste ange en e-postadress."
     users hash verified: "Kontot har redan verifierats."
-    users password change: "Ditt nya lösenord måste skilja från ditt gamla lösenord."
+    users password change: "Ditt nya lösenord måste skilja sig från ditt gamla lösenord."
     users password length: "Ditt lösenord måste bestå av minst 6 tecken."
     users password required: "Du måste ange ett lösenord."
     users username alpha numeric extra: "Användarnamnet ska innehålla bokstäver, siffror eller snedstreck."
@@ -33,6 +33,8 @@ sv:
     users username or password invalid: "Användarnamnet eller lösenordet är felaktigt."
     users username required: "Du måste ange ett användarnamn."
   meta:
+    kids_app:
+      title: "Bibelappen för barn"
     100million:
       title: "Det närmar sig 100 miljoner"
       description: "Bibelappen har installerats nästan 100 miljoner gånger - en otrolig milstolpe! Men vi har precis kommit igång. Ladda ner den fria Bibelappen idag - och dela sedan appen med dina vänner. Låt oss skapa historia tillsammans."
@@ -64,7 +66,7 @@ sv:
   connect to: "Anslut till ditt %{connection}-konto"
   deleted connection: "Anslutningen till %{connection} borttagen."
   deleted connection error: "Ett fel uppstod när du försökte ta bort anslutningen till %{connection}."
-  connection marketing: "YouVersion är roligare med vänner! Länka ditt YouVersion-konto till dina andra sociala nätverk och hitta direkt dina vänner på YouVersion. Genom att länka dina konton kan du också dela innehåll med bara några klick. Vi kommer aldrig att publicera något utan ditt godkännande."
+  connection marketing: "YouVersion är roligare med vänner! Länka ditt YouVersion-konto till dina andra sociala nätverk så kan du direkt hitta dina vänner på YouVersion. Genom att länka dina konton kan du också dela innehåll med bara några klick. Vi kommer aldrig att publicera något utan ditt godkännande."
   next step connections: "Nästa: Länka ditt konto och hitta dina vänner."
   no notes found: "%{username} har inga anteckningar."
   no recent activity: "%{username} har inga nyliga aktiviteter."
@@ -238,7 +240,7 @@ sv:
     edit account_existence: "Ta bort konto"
     delete account button: "Ta bort mitt YouVersion-konto"
     no devices: "Inga enheter är anslutna till ditt YouVersion-konto"
-    no devices download copy: "Bibelappen är en gratis mobil Bibel baserad på online-biblen YouVersion.com som kan installeras på nästan vilken mobil enhet som helst. Bibelappen låter användare läsa Bibeln, dela verser på deras sociala nätverk, skapa bokmärken för deras favorittexter m.m.&mdash;allt i ett format som hänger med i det allt mer mobila livet. Besök <a href='http://www.youversion.com/sv/download'>youversion.com/sv/download</a> från din mobila enhet för att ladda ner Bibelappen och anslut ditt konto!"
+    no devices download copy: "Bibelappen är en gratis mobil Bibel, baserad på online-Bibeln på YouVersion, som du kan installera på nästan vilken mobil enhet som helst. Bibelappen låter dig läsa Bibeln, dela verser i ditt sociala nätverk, bokmärka dina favorittexter m.m. &mdash; allt i ett format som är anpassat till din mobila livsstil. Besök <a href='https://www.bible.com/download'>bible.com/sv/download</a> på din mobila enhet för att ladda ner Bibelappen och ansluta ditt konto!"
     yes delete: "Ja, ta bort mitt konto"
     account delete success: "Ditt YouVersion-konto har tagits bort. Vi hoppas att du fortsätter att hitta meningsfulla sätt att komma i kontakt med Bibeln. Några av dessa appar kanske kan hjälpa dig att komma framåt: <a href= http://www.youversion.com/sv/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Om du tar bort ditt konto kommer du permanent radera all din information, historik och anpassningar (som t.ex. anteckningar, bokmärken, markeringar etc.) på YouVersion.com och i Bibelappen. Detta kan inte återställas av dig eller av vårt team. Om du är säker på att du vill fortsätta så ange ditt lösenord nedan."
@@ -557,7 +559,7 @@ sv:
     plan blurb: "Det ser ut som att du vill starta en läsplan. Smart! Planer kan hjälpa dig att göra Bibeln till en del av din vardag. Logga in eller skapa ett konto nedan och kom igång!"
     bookmark blurb: "Det ser ut som att du vill använda bokmärken. Fantastiskt! Bokmärken hjälper dig att hålla ordning på verser du vill komma ihåg eller markera som favoriter. Logga in eller skapa ett konto nedan och kom igång!"
     friends blurb: "Det ser ut som att du vill interagera med dina vänner. Bra idé! Ni kommer kunna dela vad ni lär er och hjälpa varandra att följa läsplaner. Logga in eller skapa ett konto och kom igång!"
-    share blurb: "Det verka som att du vill dela skriften. Fantastiskt! Du kommer kunna dela skriften via Facebook eller Twitter. Logga in eller skapa ett konto nedan för komma igång!"
+    share blurb: "Det verka som att du vill dela ett bibelord. Fantastiskt! Du kommer kunna dela skriften via Facebook eller Twitter. Logga in eller skapa ett konto nedan för komma igång!"
     highlight blurb: "Det ser ut som att du vill markera i Skriften. Fantastiskt! Markeringar hjälper dig att organisera och hålla reda på dina favoritverser. Logga in eller skapa ett konto nedan och kom igång!"
     note blurb: "Det ser ut som att du vill skapa en anteckning om Skriften. Bra tänkt! Anteckningar kan hjälpa dig att komma ihåg och organisera sanningen du hittar i Guds Ord. Logga in eller skapa ett konto nedan och kom igång!"
   audio:
@@ -587,8 +589,8 @@ sv:
     copy: "Tänk om du kunde ge alla i världen en gratis bibel. När du ger till YouVersion kan du göra just det. Vi lever i en tid som andra bara kunnat drömma om &ndash; när någon med en telefon kan komma åt Bibeln och uppleva berättelsen om Guds kärlek till oss. Med ditt stöd kan vi fortsätta att hjälpa fler människor tillbringa mer tid i Skriften."
     amount: "donationssumma"
     option once: "En gång"
-    option monthly: "Månadsvis"
-    alert empty amount: "Var snäll och uppge donationssumma."
+    option monthly: "Månatligen "
+    alert empty amount: "Vilken summa vill du donera?"
     name: "Ditt namn"
     card number: "Kreditkortsnummer"
     card exp date: "Utgångsdatum (MMÅÅ)"
@@ -684,7 +686,7 @@ sv:
         heading: "En gratis Bibel i din telefon, läsplatta och dator."
         description: "YouVersion är en enkel, reklamfri Bibelapp som tar Guds Ord in i ditt dagliga liv."
         learn more: "lär dig mer nedan"
-        start reading: "Börja läs"
+        start reading: "Börja läsa"
         skip in future: "Hoppa över den här sidan i framtiden"
         now skipped: "Den här sidan hoppas nu över."
       features:
@@ -758,7 +760,7 @@ sv:
         with friends: "Dela med dina vänner"
         fb:
           dialog name: "Har du Bibelappen?"
-          dialog desc: "Jag älskar Bibelappen! Den hjälper mig verkligen att Bibeln till en del av mitt vardagliga liv. Den låter mig markera, lyssna på ljudbiblar, göra markeringar, följa planer för andakt...t.o.m. titta på film! Gå och ladda ner den nu (det är gratis): http://www.bible.com/sv/app"
+          dialog desc: "Jag älskar Bibelappen! Den hjälpte mig verkligen att göra Bibeln till en del av mitt vardagliga liv. Den låter mig markera, lyssna på ljudbiblar, ta anteckningar, följa andaktsplaner...t.o.m. titta på film! Gå och ladda ner den nu (det är gratis): http://www.bible.com/sv/app"
         tw:
           tweet: "Bibelappen från @YouVersion har en fast plats på min startskärm. Läs, titta, lyssna och dela...allt i en fri app: bible.com/sv/app"
         em:

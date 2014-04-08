@@ -1,0 +1,11 @@
+-# Used in shared/version_selector/display
+
+-# Local Variables
+-# presenter
+
+%tr.cat.cur_language
+  %th{:colspan => '2'}= presenter.version.language.human
+= render partial: 'shared/version_selector/items', locals: {presenter: presenter, versions: presenter.versions_for_current_lang}
+-#
+  Note: the rest of versions are appended via AJAX when user
+  opens the menu, to not clutter the DOM on initial load

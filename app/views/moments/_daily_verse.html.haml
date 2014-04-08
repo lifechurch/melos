@@ -1,0 +1,36 @@
+:ruby
+  versions = client_settings.recent_versions
+  recent_versions = versions.present? ? versions.split("/") : [client_settings.version || Version.default]
+
+- verse_of_today = VOD.today((client_settings.version || Version.default), {recent_versions: recent_versions})
+
+.moment
+  .moment-top
+    .moment-vod{"data-references" => "#{verse_of_today.usfm}:#{verse_of_today.verses.join(',')}"}
+      %span.moment-icon
+        &nbsp;
+      .moment-vod-calendar
+        .moment-vod-calendar-date
+          = verse_of_today.week_day
+        .moment-vod-calendar-img
+          = image_tag "moment-vod-calendar-img.png"
+      %span.moment-time
+        = verse_of_today.date.to_s(:long)
+      .moment-vod-title
+        = t("moments.vod.title")
+      %p.moment-vod-verse
+        = verse_of_today.content
+
+      = link_to(verse_of_today.human, reference_path(version: verse_of_today.version, reference: verse_of_today.usfm), class: "moment-vod-links")
+
+      %ul.moment-vod-list
+        - unless verse_of_today.recent_versions.blank?
+          - verse_of_today.recent_versions.each do |version|
+            %li.btn{"data-version-id" => version.id, class: (verse_of_today.version.id == version.id) ? "active" : nil}
+              = version.abbreviation.upcase
+
+  .moment-btm
+    .moment-actions.vod
+      %span.moment-actions-share
+        %a{href:"#", title: t("moments.action.share title")}
+          = t("moments.action.share")

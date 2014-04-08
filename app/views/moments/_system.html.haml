@@ -1,0 +1,21 @@
+:ruby
+  # Locals Parameters
+  # moment - a single Moment to display  (Bookmark, Highlight, Note)
+  # comments_displayed - boolean, true or false (whether or not to display comments when rendering html)
+
+.moment
+  -# !the content of the moment
+  .moment-top
+    .moment-sys
+      %span.moment-icon
+        &nbsp;
+      %span.moment-time
+        = api_dt_time_ago(moment.created_dt)
+
+      %h2.moment-sys-text
+        = moment.moment_title.html_safe if moment.moment_title
+
+      - if moment.body_images.present?
+        - image = moment.body_images.lg
+        .moment-sys-image
+          = image_tag image.url

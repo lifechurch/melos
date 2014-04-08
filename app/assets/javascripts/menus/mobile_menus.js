@@ -18,7 +18,7 @@ function MobileMenus() {
   this.versionH           = this.versionMenu.height();
   this.documentH          = $(document).height();
   this.colorMenu          = $('.color_toolbar');
-  this.navItems           = $('.nav_items');
+  this.navItems           = $('.reader-nav');
   this.openFlag           = "open";
 
   this.init();
@@ -73,9 +73,9 @@ MobileMenus.prototype = {
       else if(thiss.shareBtn.hasClass('selected')){
           thiss.shareToolbar.stop().animate({ top : '-46px'}, 400, function(){
               // share toolbar animation complete
-              thiss.verseToolbar.stop().animate({ top : '-86px'}, 400, function(){
+              thiss.verseToolbar.stop().animate({ top : '-88px'}, 400, function(){
                   // verse toolbar animation complete, show nav_items
-                  $('.nav_items').stop().animate({ top : '0px'}, 400);
+                  $('.reader-nav').stop().animate({ top : '0px'}, 400);
               });
               thiss.verseToolbar.removeClass('open');
               thiss.shareToolbar.removeClass('open');
@@ -87,7 +87,7 @@ MobileMenus.prototype = {
 
       else {
           thiss.shareToolbar.hide();
-          thiss.verseToolbar.stop().animate({ top : '-86px'}, 400, function(){
+          thiss.verseToolbar.stop().animate({ top : '-88px'}, 400, function(){
               // verse toolbar animation complete, show nav_items
               thiss.navItems.stop().animate({ top : '0px'}, 200);
               thiss.verse.removeClass('selected');
@@ -196,6 +196,7 @@ MobileMenus.prototype = {
   openSubscriptionMenu : function(){
     if(this.isMobileClient()) {
       this.subscriptionMenu.css({'z-index':'1000'}).fadeIn('fast').addClass('open');
+      $(document).scrollTop(0);
     }
   },
 
@@ -287,9 +288,14 @@ MobileMenus.prototype = {
     });
   },
 
+  audioMenuHeight: 0,
+  audioCloseAnimateHeight: function() {
+    return MobileMenus.prototype.audioMenuHeight + 'px'
+  },
   initAudioMenu : function(){
     // Audio menu trigger
     var thiss = this;
+    MobileMenus.prototype.audioMenuHeight = -thiss.audioToolbar.height();
 
     $('.audio_btn').click(function(e) {
         e.preventDefault();
@@ -303,7 +309,7 @@ MobileMenus.prototype = {
               }).removeClass('open');
           }
         } else {
-            thiss.audioToolbar.stop().animate({ top : '-208px'}, 400, function(){
+            thiss.audioToolbar.stop().animate({ top : MobileMenus.prototype.audioCloseAnimateHeight()}, 400, function(){
                 thiss.navItems.stop().animate({ top : '0px'}, 400).addClass(thiss.openFlag);
             }).hide().removeClass('open');
 
@@ -312,21 +318,23 @@ MobileMenus.prototype = {
 
     // Audio menu close trigger
     $('.audio_close_btn').click(function(e){
-        e.preventDefault();
-        var $this = $(this);
-        //if audio is playing, pause it.
-        $('.mejs-pause button').click();
-        thiss.audioToolbar.stop().animate({ top : '-208px'}, 400, function(){
-            thiss.navItems.stop().animate({ top : '0px'}, 400).addClass(thiss.openFlag);
-        }).removeClass('open');
-        $('.audio_btn').toggleClass('selected');
+        if (MobileMenus.prototype.isMobileClient()) {
+          e.preventDefault();
+          var $this = $(this);
+          //if audio is playing, pause it.
+          $('.mejs-pause button').click();
+          thiss.audioToolbar.stop().animate({ top : MobileMenus.prototype.audioCloseAnimateHeight()}, 400, function(){
+              thiss.navItems.stop().animate({ top : '0px'}, 400).addClass(thiss.openFlag);
+          }).removeClass('open');
+          $('.audio_btn').toggleClass('selected')
+        }
     });
   },
 
   closeAudioMenu : function(){
     if(this.audioToolbar.hasClass('open')){
       var thiss = this;
-      this.audioToolbar.stop().animate({ top : '-208px'}, 400).removeClass(this.openFlag);
+      this.audioToolbar.stop().animate({ top : MobileMenus.prototype.audioCloseAnimateHeight()}, 400).removeClass(this.openFlag);
     }
   },
 
@@ -350,7 +358,7 @@ MobileMenus.prototype = {
     this.closeNavMenu();
     this.closeSettingsMenu();
     this.shareToolbar.hide();
-    thiss.verseToolbar.stop().animate({ top: '-86px'}, 400, function(){
+    thiss.verseToolbar.stop().animate({ top: '-88px'}, 400, function(){
       thiss.colorMenu.stop().animate({ top: '0px'}, 400).addClass(this.openFlag);
     });
   },
@@ -374,7 +382,7 @@ MobileMenus.prototype = {
         // share toolbar animation complete
         this.shareToolbar.removeClass('open');
         this.shareBtn.toggleClass('selected');
-        this.verseToolbar.stop().animate({ top : '-86px'}, 400);
+        this.verseToolbar.stop().animate({ top : '-88px'}, 400);
 
       });
     }
@@ -384,7 +392,7 @@ MobileMenus.prototype = {
     if(this.verseToolbar.hasClass('open')){
       this.shareToolbar.hide();
       var thiss = this;
-      this.verseToolbar.stop().animate({ top : '-86px'}, 400);
+      this.verseToolbar.stop().animate({ top : '-88px'}, 400);
     }
   },
 

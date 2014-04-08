@@ -1,11 +1,17 @@
 // `Main
 //----------------------------------------------------------------------------------------------------
 
+#main
+  margin: 47px 0 0 0
+
+#reader_header
+  display: none !important
+
 #reader_header + article
   margin-top: 0px
 
 #main article
-  padding: 18px 24px 16px
+  padding: 16px 16px 16px
   overflow: hidden
   border: none
   border-radius: 0
@@ -13,7 +19,7 @@
   -webkit-border-radius: 0
 
 #main.main_reader article
-  padding: 18px 24px 16px
+  padding: 90px 24px 16px
 
 // `Main > Headers
 //----------------------------------------------------------------------------------------------------
@@ -104,30 +110,34 @@ div.close_tab
 
 .verse_toolbar
   height: 86px
-  position: absolute
-  top: -86px
+  position: fixed
+  top: -88px
   left: 0px
   width: 100%
-  background: url("mobile/verse_toolbar_bg.jpg") repeat-x
+  background: url("mobile/verse_toolbar_bg.gif") repeat-x
   z-index: 193
+  margin-top: 47px
+  display: none
 
 .share_toolbar
   height: 46px
-  position: absolute
+  position: fixed
   top: 0px
   left: 0px
   width: 100%
   display: none
-  background: url("mobile/verse_toolbar_bg.jpg") repeat-x
+  background: url("mobile/verse_toolbar_bg.gif") repeat-x
   z-index: 192
+  margin-top: 47px
 
 .color_toolbar
   height: auto
-  position: absolute
+  position: fixed
   top: -329px
   left: 0px
   width: 100%
   z-index: 192
+  margin-top: 47px
 
 .color_toolbar nav
   background: #2b2b2c
@@ -150,9 +160,10 @@ div.close_tab
   background: transparent
   border: 0px
   border-radius: 0px
+  -webkit-box-shadow: none !important
   box-shadow: none !important
   width: 100%
-  position: absolute
+  position: fixed
   z-index: 191
   padding: 0px
   overflow: hidden
@@ -184,6 +195,9 @@ div.close_tab
   height: 100%
   border: 0px
 
+  #chapter_selector
+    background: #fff
+
 #menu_book header,
 #menu_chapter header,
 #menu_settings header
@@ -193,9 +207,16 @@ div.close_tab
 #menu_chapter .scroll ul
   width: 100% !important
 
-#menu_book .scroll ul li a,
-#menu_chapter .scroll ul li a
-  padding: 10px
+#menu_book .scroll,
+#menu_chapter .scroll
+  ul li a
+    padding: 10px 15px
+    color: #444
+    text-shadow: none
+    border-top: 1px solid #e1e1e1
+    border-bottom: 0
+    background: #fff image-url("mobile/menu-arrow.png") no-repeat 95% center
+    background-size: 22px 22px
 
 #menu_book .scroll ol,
 #menu_chapter .scroll ol
@@ -207,16 +228,16 @@ div.close_tab
   width: auto
   height: auto
 
-#menu_book .scroll ol li a,
-#menu_chapter .scroll ol li a
-  background: none
-  padding: 10px
-  width: 24px
-  text-align: center
-  border-top: 1px solid #282828
-  border-right: 1px solid #282828
-  border-bottom: 1px solid #101010
-  border-left: 1px solid #101010
+#menu_book .scroll,
+#menu_chapter .scroll
+  ol li a
+    background: #eee
+    padding: 10px
+    width: 31px
+    text-align: center
+    border: 1px solid #fff
+    color: #444
+    text-shadow: none
 
 .audio_toolbar .inner_content
   background: #2c2b2b !important
@@ -254,14 +275,28 @@ div.close_tab
   text-align: center
 
 
+// .verse_toolbar nav
+//  margin-left: 10px
 .verse_toolbar nav
-  padding-left: 8px
+  text-align: center
+  height: 44px
 
 .verse_toolbar nav, .share_toolbar nav, .settings_toolbar nav
   overflow: hidden
 
-.verse_toolbar nav a, .share_toolbar nav a, .settings_toolbar nav a
-  float: left
+.verse_toolbar nav a, .share_toolbar nav a
+  margin: 5px 1% 0
+  text-indent: -99999px
+  overflow: hidden
+  display: inline-block
+  height: 30px
+  width: 20%
+  padding: 0px
+  +border-radius(4px)
+  border-bottom: 2px solid #000
+
+.settings_toolbar nav a
+  float: right
   margin-right: 10px
   text-indent: -99999px
   overflow: hidden
@@ -278,22 +313,25 @@ div.close_tab
   margin-right: 0px
 
 .verse_toolbar nav a.submenu_btn
-  background: image-url("mobile/verse_task_sprite.png") no-repeat
+  background: #0084c8 image-url("mobile/verse_action_sprite.png") no-repeat
 
 .verse_toolbar nav a.bookmark_btn
-  background-position: 10px -34px
+  background-position: center -50px
 
 .verse_toolbar nav a.comment_btn
-  background-position: -45px -34px
+  background-position: -45px -40px
 
 .verse_toolbar nav a.highlight_btn
-  background-position: -91px -34px
+  background-position: center -6px
 
 .verse_toolbar nav a.note_btn
-  background-position: -139px -34px
+  background-position: center -94px
+
+.verse_toolbar nav a.related_btn
+  background-position: center -225px
 
 .verse_toolbar nav a.share_btn
-  background-position: -191px -34px
+  background-position: center -138px
 
 .share_toolbar nav a.tertiary_btn
   //background: image-url("mobile/share_sprite.png") no-repeat
@@ -323,14 +361,12 @@ div.close_tab
       font-weight: bold
       font-size: 15px
       text-decoration: none
-      background: #2C2B2B
-      +box-shadow(inset #111 0 1px 2px 2px)
-      border-bottom: 1px solid #1f1f1f
-    a:first-child
-      border-left: 0
+      text-shadow: none
+      background: #aaa
+
     a.selected
-      background: #666
-      +box-shadow(inset #666 0 0 0 0)
+      background: #fff
+      color: #444
 
 .tab_navigation.plan_settings,
 .tab_navigation.ref
@@ -348,8 +384,7 @@ div.close_tab
       width: 49.99%
       line-height: 48px
 
-
-.nav_items.audio-disabled
+.reader-nav.audio-disabled
   width: 170px
 
   ul
@@ -358,7 +393,11 @@ div.close_tab
     li.audio-disabled
       display: none
 
-.nav_items
+article .reader-nav,
+.search
+  display: none
+
+.reader-nav
   width: 212px
   height: 46px
   margin: 0 auto
@@ -443,12 +482,24 @@ div.close_tab
     a.next
       background: image-url("mobile/next_arrow.png") 22px 13px no-repeat
 
+
+// `Article Top Section
+//----------------------------------------------------------------------------------------------------
+
+.top_section
+  +border-radius(0)
+  +background-image(none)
+  background-color: #e9e9e9
+  border: 0
+    bottom: 0
+
+
 // `Main > Footers
 //----------------------------------------------------------------------------------------------------
 
 #main footer
-  padding: 5px 20px 5px
-  margin: 0 auto
+  padding: 5px 20px 25px
+  margin: 0 auto -20px
   border-radius: 0
   border:
     left: 0
@@ -574,7 +625,7 @@ div.close_tab
   border: 0px
   width: 100%
   padding: 0px
-  position: absolute
+  position: fixed
   top: -208px
   box-shadow: none
   z-index: 291
@@ -589,16 +640,22 @@ div.close_tab
       color: #2C2B2B
     border: 0px !important
     text-shadow: none
-    padding: 10px 0px 30px
+    padding: 10px 0px 10px
 
     dt
       background: none
       border-top: 0px !important
       box-shadow: none
 
+      a.action_button_blue
+        width: 95%
+        margin-bottom: 0
+
     dd
       box-shadow: none
       border: 0px
+
+
 
   a.close
     display: none

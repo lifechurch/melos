@@ -1,0 +1,106 @@
+#header .user_options
+  position: static
+
+#header .friend-requests-btn,
+#header .notifications-btn
+  background: image-url("header-sprite.png") no-repeat
+  display: none
+  float: left
+  width: 40px
+  height: 40px
+  margin: 3px 0 0 15px
+  text-indent: 100%
+  overflow: hidden
+  white-space: nowrap
+  position: absolute
+
+#header .friend-requests-btn.home-url,
+#header .notifications-btn.home-url
+  display: block
+
+#header .header-popover ul
+  // default max-height is overridden by responsive height value set in page.js
+  max-height: 296px
+  overflow-x: auto
+
+#header .friend-requests-btn
+  background-position: 0px 9px
+  left: 38px
+  top: 0
+
+#header .notifications-btn
+  background-position: 0px -50px
+  margin-left: 0px
+  margin-top: 3px
+  left: 95px
+  top: 0
+
+#header
+  .header-popover
+    top: 46px
+    left: 3px
+    min-width: 98%
+    max-width: 98%
+    display: none
+    opacity: 0
+
+    .arrow
+      left: 56px
+
+    .list-item
+      height: 100px
+
+  .header-popover.notifications
+    left: 3px
+    padding: 0
+
+    .arrow
+      left: 97px
+
+.notify-item
+  min-height: 100px
+  padding: 0px 10px 10px 10px
+  width: auto
+  margin-bottom: 10px
+
+  .item-content
+    padding-top: 20px
+    float: left
+    min-width: 70%
+    max-width: 70%
+
+  .item-actions
+    float: right
+    min-width: 0
+    margin: 0
+
+#requests-menu
+  .requests-user-search
+    margin: 0 10px 15px 
+
+  .requests-field-query
+    width: 100%
+    margin: 0
+
+  .requests-field-submit
+    margin: 0     
+
+// ------ Edit notifications page
+
+.notification-settings-group
+
+  p
+    display: block
+    width: auto
+    padding: 0
+    margin-bottom: 5px
+
+  .settings-group-email,
+  .settings-group-mobile
+    margin: 5px 5px 15px 0
+
+.notification-settings-group + div
+  text-align: center
+  margin: 0
+
+

@@ -1,0 +1,33 @@
+:ruby
+  votd     = moment
+
+.moment
+  .moment-top
+    .moment-vod{"data-references" => votd.references.join("+")}
+      %span.moment-icon
+        &nbsp;
+      .moment-vod-calendar
+        .moment-vod-calendar-date
+          = votd.week_day
+        .moment-vod-calendar-img
+          = image_tag "moment-vod-calendar-img.png"
+      %span.moment-time
+        = votd.date.to_s(:long)
+      .moment-vod-title
+        = t("moments.vod.title")
+      
+      .moment-votd-verse-wrap
+        %p.moment-votd-verse.empty{"data-usfm" => votd.references.join("+"), "data-version-id" => votd.version.id }
+          Loading
+
+      %ul.moment-vod-list
+        - unless votd.recent_versions.blank?
+          - votd.recent_versions.each do |version|
+            %li.btn{"data-version-id" => version.id, class: (votd.version.id == version.id) ? "active" : nil}
+              = version.abbreviation.upcase
+
+  .moment-btm
+    .moment-actions.vod
+      %span.moment-actions-share
+        %a{href:"#", title: t("moments.action.share title")}
+          = t("moments.action.share")

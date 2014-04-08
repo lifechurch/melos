@@ -9,11 +9,10 @@
 #main article
   @extend .clearfix
   +round
-  +box-shadow(#fff 0 1px 0 0)
   background:
     color: #fff
     repeat: repeat-x
-  border: 1px solid #cbc9cf
+  border: 0
   padding: 30px 30px 15px
   position: relative
   min-height: 368px
@@ -25,13 +24,14 @@
 #main.main_reader article
   padding: 40px 70px 45px
 
+  .wrap
+    margin-top: 34px
+
 #main header + article,
 #reader_header + article,
 #main .header_tabs + article,
 #main .top_section + article
   +round_top_none
-  background:
-    image: image-url("shadow.png")
 
   &:after
     content: none
@@ -49,10 +49,9 @@
 .top_section
   @extend .clearfix
   +box-shadow(inset #fff 0 1px 0 0)
-  +background-image(linear-gradient(#eeedeb, #dddcda))
-  background-color: #dddcda
-  border: 1px solid #cbc9cf
-  text-shadow: #fff 0 1px 0
+  background-color: #EEEDEB
+  border: 0
+
 
 
 #main header
@@ -104,16 +103,15 @@
 //----------------------------------------------------------------------------------------------------
 
 #reader_header
-  background: #f2f1ef image-url("body.png")
-  border-bottom: 1px solid #cbc9cf
+  border-bottom: 1px solid #dedede
   padding-top: 10px
   width: 600px
   position: fixed
   top: 72px
   z-index: 2
+  background-color: #DEDDDB
 
 #reader_header:after
-  background: image-url("shadow.png") repeat-x
   content: ''
   font-size: 0
   line-height: 0
@@ -127,6 +125,18 @@
 #reader_header + article
   background-image: none
   margin-top: 34px
+
+.header-options-settings,
+.header-options-audio,
+.header-options-full,
+.header-options-parallel,
+.header-options-version,
+.header-options-settings:hover,
+.header-options-audio:hover,
+.header-options-full:hover,
+.header-options-parallel:hover,
+.header-options-version:hover
+  background: none
 
 // `Article Top Section
 //----------------------------------------------------------------------------------------------------
@@ -167,73 +177,12 @@
   padding: 0
   list-style: none
 
-// Profile and friend pages ----------------------------------------
-
-.top_section
-  .avatar_huge
-    position: absolute
-    top: 30px
-    left: 30px
-
-  .profile_header
-    padding: 30px 30px 10px 160px
-    overflow: hidden
-    height: 100px
-
-    button
-      float: left
-      border-radius: 4px
-      padding: 4px 20px !important
-
-  .profile_info
-    padding: 20px 30px
-    overflow: visible
-
-    ul
-      float: none !important
-
-    div
-      position: absolute
-      top: 80px
-      left: 160px
-
-    .action_button_green,
-    .action_button_red
-      padding: 4px 20px
-      +border-radius(4px)
-
-    .action_button_red
-      text-shadow: none
-
-.top_section li
-  background:
-    repeat: no-repeat
-    position: left center
-  line-height: 2
-  padding-left: 26px
-
-.icon_small_user
-  background:
-    image: image-url("icon_small_user.png")
-
-.icon_small_location
-  background:
-    image: image-url("icon_small_location.png")
-
-.icon_small_link
-  background:
-    image: image-url("icon_small_link.png")
-
-.icon_small_about
-  background:
-    image: image-url("icon_small_about.png")
 
 // `Main > Footers
 //----------------------------------------------------------------------------------------------------
 
 #main footer
   +round_bottom
-  +box-shadow(#fff 0 1px 0 0)
   font-size: 11px
   padding: 10px 20px 15px
 
@@ -414,8 +363,8 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
 
 // `Nav Arrows
 //----------------------------------------------------------------------------------------------------
-.nav_prev,
-.nav_next
+.reader-prev,
+.reader-next
   background:
     image: image-url("arrow_sprite_thin.png")
     repeat: no-repeat
@@ -428,18 +377,18 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
   position: fixed
   border-radius: 4px
 
-.nav_prev,
-.nav_next.rtl
+.reader-prev,
+.reader-next.rtl
   background-position: 10px 48%
   margin-left: -55px
 
-.nav_next,
-.nav_prev.rtl
+.reader-next,
+.reader-prev.rtl
   margin-left: 473px
   background-position: -58px 48%
 
-.nav_prev:hover,
-.nav_next:hover
+.reader-prev:hover,
+.reader-next:hover
   background-color: #f1f1f1
 
 .snap
@@ -496,3 +445,10 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
   font-weight: bold
   font-size: 1.5em
   line-height: 1.5em
+
+// Audio player
+//---------------------------------------------------------------------------------------
+#menu_audio_player
+  dt .copy
+    margin-bottom: 10px
+    line-height: 18px

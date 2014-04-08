@@ -12,9 +12,7 @@ common:
   avatar_path_direct: https://static-youversionapi-com.s3.amazonaws.com/users/images/
   api_root: youversionapi.com
   api_referer: web-dev.youversionapi.com
-  #api_root: youversionapistaging.com
-  #api_referer: web-dev.youversionapistaging.com
-  api_version: "3.0"
+  api_version: "3.1"
   memcache_server: localhost
   #
   # Timeouts: all times are in seconds
@@ -29,21 +27,34 @@ common:
   very_long_cache_expiration: 720
   rate_limit: 120
 
-test:
+development:
   api_root: youversionapistaging.com
-  api_referer: web-dev-tests.youversionapistaging.com
+  api_referer: web-dev-local.youversionapistaging.com
+  api_version: "3.1"
   api_default_timeout: 15
   rack_execution_timeout: 15
 
 staging:
+  #api_root: youversionapi.com
+  #api_referer: web-dev-staging.youversionapistaging.com
+  #api_version: "3.1"
   api_root: youversionapistaging.com
-  api_referer: web-dev-staging.youversionapistaging.com
-  api_default_timeout: 5
+  api_referer: web-dev-local.youversionapistaging.com
+  api_version: "3.1"
+  api_default_timeout: 15
+  rack_execution_timeout: 15
+
+test:
+  api_root: youversionapistaging.com
+  api_referer: web-dev-tests.youversionapistaging.com
+  api_version: "3.1"
+  api_default_timeout: 15
   rack_execution_timeout: 15
 
 production:
   api_root: youversionapi.com
   api_referer: web.youversionapi.com
+  api_version: "3.1"
   api_default_timeout: 5
   rack_execution_timeout: 22
   memcache_server: memcache.youversion.com

@@ -33,12 +33,14 @@ de:
     users username or password invalid: "Benutzername oder Passwort ungültig."
     users username required: "Du musst einen Benutzernamen eingeben."
   meta:
+    kids_app:
+      title: "Die Bible App for Kids"
     100million:
       title: "Es fängt mit 100 Mio. an."
       description: "Die Bibel App ist schon fast 100 Mio. Mal installiert worden - ein unbeschreiblicher Meilenstein! Aber jetzt fangen wir erst richtig. Lade dir die kostenlose Bibel App heute herunter - und dann teile sie mit deinen Freunden. Lass uns zusammen Geschichte schreiben."
     mobile:
       title: "Die Bibel App "
-      description: "Zehntausende nutzten die Bibel App, um Gottes Wort zu lesen, anzuhören, Videos dazu anzuschauen und es zu teilen. Lade dir die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Lesepläne zu. Auf deinem mobilen Gerät kannst du hunderte von Übersetzungen sowie Hörbibeln genießen. "
+      description: "Zig Millionen Menschen nutzen die Bibel App, um Gottes Wort zu lesen, anzuhören, Videos dazu anzuschauen, es zu teilen und zu einem Teil ihres täglichen Lebens zu machen. Lade dir die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Lesepläne zu. Auf deinem mobilen Gerät kannst du hunderte von Übersetzungen sowie Hörbibeln genießen. "
     connections:
       index:
         title: "Verbundene Benutzerkonten"
@@ -122,7 +124,7 @@ de:
   cancel: "Abbrechen"
   try the beta: "Teste die Beta-Version!"
   welcome to the beta: "Willkommen bei der neuen YouVersion.com!"
-  highlight: "Hervorgehobene Verse"
+  highlight: "Markierte Verse"
   comment: "Neuer Kommentar"
   note: "Neue Notiz"
   selected: "Ausgewählt"
@@ -153,7 +155,7 @@ de:
   notes:
     list title: "Notizen"
     loading community: "Lade Gemeinschaftsnotizen... "
-    no community notes: "Es wurden keine Gemeinschaftsnotizen zu diesen Versen gefunden. Um eine Notiz anzulegen, wähle einen Vers in der Leseansicht und dann klicke oben in der Leseansicht auf \"Auswählen\"."
+    no community notes: "Es wurden keine Gemeinschaftsnotizen zu diesen Versen gefunden. Um eine Notiz anzulegen, wähle einen Vers in der Leseansicht und klicke dann oben in der Leseansicht auf \"Auswählen\"."
     public: "Öffentlich"
     private: "Privat"
     is private: "Die angeforderte Notiz ist privat."
@@ -238,10 +240,10 @@ de:
     edit account_existence: "Konto löschen"
     delete account button: "Mein YouVersion Konto löschen"
     no devices: "Dein YouVersion-Konto ist mit keinem mobilen Gerät verbunden."
-    no devices download copy: "Die Bibel App basiert auf der Online-Bibel von YouVersion.com und ist eine kostenlose, mobile Bibel, die auf fast allen Smartphones installiert werden kann. Die Bibel App gestattet es ihren Lesern, die Bibel zu lesen, Verse in sozialen Netzwerken zu teilen, Lieblingsschriftstellen mit Lesezeichen zu versehen u. v. m. All das in einem Format, das zu ihrem ständig mobiler werdenden Lebensstil passt. Geh mit deinem Smartphone zu <a href='http://www.youversion.com/download'>youversion.com/download</a>, um die Bibel App herunterzuladen und melde dich einfach mit deinem Konto an!"
+    no devices download copy: "Die Bibel App basiert auf der Online-Bibel von YouVersion.com und ist eine kostenlose mobile Bibel, die auf fast allen Smartphones installiert werden kann. Die Bibel App ermöglicht es ihren Lesern nicht nur, die Bibel zu lesen, sondern auch u. a. auch Verse in sozialen Netzwerken zu teilen und Lieblingsschriftstellen mit Lesezeichen zu versehen - und zwar alles in einem Format, das zu heutigen Lebensstil passt, der immer mobiler wird. Geh auf deinem Smartphone zu <a href='https://www.bible.com/download'>bible.com/download</a>, um die Bibel App herunterzuladen und melde dich einfach mit deinem Konto an!"
     yes delete: "Ja, mein Konto löschen"
     account delete success: "Dein YouVersion-Konto wurde erfolgreich gelöscht. Wir hoffen, dass du andere Möglichkeiten nutzen wirst, um dich mit der Bibel zu beschäftigen. Die folgenden Apps beispielsweise könnten dazu hilfreich sein: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-    delete account description: "Wenn du dein Konto löschst, werden alle deine Informationen, deine gesamte Historie sowie deine persönlichen Eintragungen (wie Notizen, Lesezeichen, Hervorhebungen etc.) innerhalb von YouVersion.com und in der Bibel App gelöscht. Diese Aktion kann weder von dir noch von unserem Team rückgängig gemacht werden. Wenn du dir sicher bist, kannst du unten fortfahren."
+    delete account description: "Wenn du dein Konto löschst, werden alle deine Informationen, deine gesamte Historie sowie deine persönlichen Eintragungen (wie Notizen, Lesezeichen, Markierungen etc.) innerhalb von YouVersion.com und in der Bibel App gelöscht. Diese Aktion kann weder von dir noch von unserem Team rückgängig gemacht werden. Wenn du dir sicher bist, kannst du unten fortfahren."
     user recent activity: "%{users}s jüngste Aktivität(en)"
     user notes: "%{user}s Notizen"
     my friends: "Freunde"
@@ -252,7 +254,7 @@ de:
     my badges: "Meine Auszeichnungen"
     revised date: "Zuletzt überarbeitet am %{date}"
     update email copy: "Gib eine neue E-Mail-Ad­res­se ein und klicke auf E-Mail aktualisieren. Wir senden dir einen Link, damit du deine neue E-Mail-Ad­res­se bestätigen kannst."
-    edit email: "E-Mail aktualisieren"
+    edit email: "E-Mail-Adresse ändern"
     update email check: "Bitte rufe deine E-Mails ab und klicke auf den Link, um deine neue E-Mail-Ad­res­se zu bestätigen."
     confirm update email success: "Okay! Du hast deine E-Mail-Ad­res­se aktualisiert."
     confirm update email error: "Sorry, es gab ein Problem beim Ändern deiner E-Mail-Ad­res­se."
@@ -288,7 +290,7 @@ de:
       log title: "Log-Informationen"
       log text: "Wenn du YouVersion benutzt, protokollieren unsere Server automatisch die Informationen, die dein Browser sendet, wenn du eine unserer Internetseiten besuchst. Diese Server-Protokolle können Informationen, wie z. B. deine Internet-Anfrage, deine IP-Adresse, deinen Browsertyp, die Browsersprache, Datum und Zeit deiner Anfrage sowie ein oder mehrere Cookies enthalten, die deinen Browser eindeutig identifizieren."
       communications title: "Benutzer-Kommunikation"
-      communications text: "Persönliche Informationen oder Anfragen, die du über <a href='http://www.youversion.com/live'>www.youversion.com/live</a> sendest, werden an den Gruppenadministrator übermittelt. Dieser Gruppenadministrator und/oder eines der Gruppenmitglieder haben Zugang zu dieser Information. Wenn du E-Mails sendest oder anderweitig mit irgendeiner LifeChurch.tv-Seite Kontakt aufnimmst, können wir diese Informationen speichern, um deine Anfrage zu bearbeiten, zu beantworten und um unseren Service zu verbessern."
+      communications text: "Persönliche Informationen oder Anfragen, die du über <a href='http://www.youversion.com/live'>www.youversion.com/live</a> sendest, werden an den Gruppenadministrator übermittelt. Dieser Gruppenadministrator und/oder eines der Gruppenmitglieder haben Zugang zu dieser Information. Wenn du E-Mails sendest oder anderweitig mit irgendeiner LifeChurch.tv-Website Kontakt aufnimmst, können wir diese Informationen speichern, um deine Anfrage zu bearbeiten, zu beantworten und um unseren Service zu verbessern."
       third party title: "Websites Dritter"
       third party text: "Diese Datenschutzvereinbarung gilt nur für Seiten und Apps, die sich im Besitz von LifeChurch.tv. befinden oder von uns betrieben werden. Andere Seiten, die mit unseren Internetseiten und Dienste verlinkt sind, kann LifeChurch.tv nicht kontrollieren. Diese Seiten können eigene Cookies oder Dateien auf deinem Computer platzieren, Daten sammeln oder persönliche Informationen von dir erbitten. Du solltest dich selbst mit ihren jeweiligen Datenschutzvereinbarungen vertraut machen, falls du diese Seiten besuchen willst."
       information use title: "Wie nutzen wir deine Informationen?"
@@ -307,7 +309,7 @@ de:
       title: "Nutzungsbedingungen"
       translation disclaimer: "Die Nutzungsbedingungen sind für deine leichtere Nutzung übersetzt worden, aber LifeChurch.tv gibt keine Garantien oder Zusicherungen in Bezug auf die Genauigkeit der Übersetzung. Bei Unstimmigkeiten zwischen der englischen und der übersetzten Version gilt die englische Version."
       acceptance title: "Annahme der AGB"
-      acceptance text: "Durch Klicken auf \"Ich stimme zu,\" bestätigst du, dass du die Nutzungsbedingungen gelesen hast und erklärst dich an die YouVersion Nutzungsbedingungen gebunden.\n\nLifeChurch.tv bietet Dienstleistungen im Internet und dem World Wide Web (das 'Web')  durch ihre YouVersion Anwendung und verschiedenen Web-Sites, einschließlich <a href='http://youversion.com'> http://youversion.com </a> (zusammenfassend 'YouVersion'), vorbehaltlich der folgenden Nutzungsbedingungen. LifeChurch.tv kann die Nutzungsbedingungen von Zeit zu Zeit, ohne vorherige Ankündigung, aktualisieren und die jeweils aktuelle Version dieser Nutzungsbedingungen kann unter: <a href='http://youversion.com/terms'> http://youversion.com/terms </a> eingesehen werden. Bei Verwendung von YouVersion gelten auch die zusätzlichen Richtlinien oder Regeln, die von Zeit zu Zeit auf der YouVersion Website veröffentlicht werden. Alle diese Richtlinien oder Regeln werden hiermit durch Bezugnahme in diese Nutzungsbedingungen integriert. Verstöße gegen diese Nutzungsbedingungen bitte per Email an <a href='mailto:legal@youversion.com'> legal@youversion.com </a> melden."
+      acceptance text: "Durch Klicken auf \"Ich stimme zu,\" bestätigst du, dass du die Nutzungsbedingungen gelesen hast und erklärst dich an die YouVersion Nutzungsbedingungen gebunden.\n\nLifeChurch.tv bietet Dienstleistungen im Internet und dem World Wide Web (das 'Web')  durch ihre YouVersion Anwendung und verschiedenen Websites, einschließlich <a href='http://youversion.com'> http://youversion.com </a> (zusammenfassend 'YouVersion'), vorbehaltlich der folgenden Nutzungsbedingungen. LifeChurch.tv kann die Nutzungsbedingungen von Zeit zu Zeit, ohne vorherige Ankündigung, aktualisieren und die jeweils aktuelle Version dieser Nutzungsbedingungen kann unter: <a href='http://youversion.com/terms'> http://youversion.com/terms </a> eingesehen werden. Bei Verwendung von YouVersion gelten auch die zusätzlichen Richtlinien oder Regeln, die von Zeit zu Zeit auf der YouVersion Website veröffentlicht werden. Alle diese Richtlinien oder Regeln werden hiermit durch Bezugnahme in diese Nutzungsbedingungen integriert. Verstöße gegen diese Nutzungsbedingungen bitte per Email an <a href='mailto:legal@youversion.com'> legal@youversion.com </a> melden."
       description title: "Beschreibung der Dienstleistung"
       description text: "LifeChurch.tv gewährt Nutzern kostenfreien Zugriff auf eine Vielzahl von Dienstleistungen durch YouVersion, einschließlich (aber nicht darauf beschränkt) die Anzeige von Online-Videos, Blogbeiträgen und Kommentaren, unterschiedliche Kommunikations-Tools, Foren und personalisierte Inhalte. Durch die Nutzung von YouVersion stimmst du zu, dass dies Mitteilungen von LifeChurch.tv einschließt, wie zum Beispiel Service-Ankündigungen, verwaltungstechnische und andere Nachrichten, die du selbst abonniert hast, sie sind allerdings nicht darauf beschränkt. Du erkennst an, dass du selbst verantwortlich bist für den Zugang zu YouVersion, was Ausrüstung und Kosten für Dritte betrifft (wie zum Beispiel die Gebühren für die Anbieter von Internetservice, Gesprächs- und sonstige Gebühren, die mit der Anzeige und Übermittlung von Nachrichten verbunden sind)."
       registration title: "Deine Pflichten bei der Anmeldung"
@@ -445,7 +447,7 @@ de:
     month: "Kalender"
     publisher: "Autor"
     success widget title: "Hole das Beste aus deinem Leseplan heraus."
-    success blurb: "Lesepläne eignen sich bestens dafür, Gottes Wort zu einem Teil deines täglichen Lebens zu machen. Fast jeder hinkt ab und an einmal hinterher. Zu hören, was Gott uns jeden Tag zu sagen hat, ist wichtig. Deshalb haben wir einige Tipps zusammengestellt, die dir helfen sollen, beim Lesen auf dem Laufenden zu bleiben."
+    success blurb: "Lesepläne eignen sich bestens dafür, Gottes Wort zu einem Teil deines täglichen Lebens zu machen. Fast jeder hinkt ab und an einmal hinterher, doch zu hören, was Gott uns jeden Tag zu sagen hat, ist sehr wichtig. Deshalb haben wir einige Tipps zusammengestellt, die dir helfen sollen, beim Lesen auf dem Laufenden zu bleiben."
     success blog link title: "Lies den Blog."
     a users plans: "Lesepläne von %{username}"
     you have no plans: "Im Moment hast du keinen Leseplan abonniert."
@@ -558,7 +560,7 @@ de:
     bookmark blurb: "Willst du Lesezeichen benutzen? Super! Lesezeichen sind ideal, wenn man sich Verse einprägen, mit anderen teilen oder als Lieblingsverse markieren will. Melde dich an oder lege ein Konto an und lege gleich damit los."
     friends blurb: "Du willst mit Freunden interagieren? Super! So kannst du das teilen, was du gelernt hast und ihr könnt euch gegenseitig helfen, am Ball zu bleiben und eure Leseziele zu erreichen. Melde dich an oder lege ein Konto an und dann lege gleich los."
     share blurb: "Es sieht so aus, als ob du Bibelverse mit anderen teilen möchtest. Super! Du kannst es auf Facebook und Twitter machen. Melde dich an oder eröffne unten ein Konto und dann kannst du starten!"
-    highlight blurb: "Es sieht so aus, als wolltest du Textpassagen hervorheben. Toll! Hervorbebungen helfen dir deine bevorzugten Bibelverse zu organisieren und wiederzufinden. Melde dich unten an oder registriere ein neues Konto und fang an!"
+    highlight blurb: "Es sieht so aus, als wolltest du Textpassagen hervorheben. Toll! Markierungen helfen dir deine bevorzugten Bibelverse zu organisieren und wiederzufinden. Melde dich unten an oder registriere ein neues Konto und fang an!"
     note blurb: "Es sieht so aus, als wolltest du eine Notiz zu einer Bibelpassage erstellen. Gute Idee! Notizen können dir helfen, dich an Wahrheiten zu erinnern, die du in Gottes Wort findest, und diese zu organisieren. Melde dich unten an oder registriere ein neues Konto und fang an!"
   audio:
     none: "Sorry, für diese Übersetzung gibt es keine Hörbibel."
@@ -566,8 +568,8 @@ de:
     close player menu: "Schließen"
   highlights:
     choose color: "Wähle eine Farbe. "
-    creation error: "Entschuldigung, das Hervorheben hat nicht geklappt. "
-    delete error: "Sorry, die Hervorhebung konnte nicht entfernt werden."
+    creation error: "Entschuldigung, das Markieren hat nicht geklappt. "
+    delete error: "Sorry, die Markierung konnte nicht entfernt werden."
   searching:
     bible: "Bibel"
     plans: "Lesepläne"
@@ -714,7 +716,7 @@ de:
       small: "Klein"
       medium: "Mittel"
       large: "Groß"
-      highlights: "Hervorhebungen "
+      highlights: "Markierungen "
       contrast: "Kontrast"
       'on': "An"
       'off': "Aus"
@@ -724,7 +726,7 @@ de:
   app errors:
     404 plans explanation: "Suchst du nach dem <a href='%{plan_path}'>%{title}</a> Bibelleseplan?"
     404 contact support: "Gibt es Probleme? Kontaktiere unser <a href='%{support_url}'>Support-Team</a>."
-    404 explanation: "Du kannst es noch einmal von der <a href='%{reader_path}'>Home page</a> aus versuchen. Falls es da immer noch Probleme geben sollte, kontaktiere bitte unser <a href='%{support_url}'>Support-Team</a>."
+    404 explanation: "Du kannst es noch einmal von der <a href='%{reader_path}'>Hauptbildschirm</a> aus versuchen. Falls es da immer noch Probleme geben sollte, kontaktiere bitte unser <a href='%{support_url}'>Support-Team</a>."
     404 message: "Leider kann die Seite, die du suchst, nicht gefunden werden."
     408 message: "Leider haben unsere Server nicht schnell genug geantwortet."
     408 explanation: "Wir wurden benachrichtigt und werden alle bestehenden Probleme so schnell wie möglich lösen. Schauen wir mal, ob wir dir die Bibel nicht wieder zugänglich machen können! "
@@ -758,9 +760,9 @@ de:
         with friends: "Teile die App mit Freunden."
         fb:
           dialog name: "Hast du schon die Bibel App?"
-          dialog desc: "Ich benutze die Bibel App sehr gern! Sie hat mir wirklich geholfen, die Bibel zu einem Teil meines Alltags zu machen. Ich kann Verse hervorheben, mir die Bibel anhören, Notizen machen, Lesepläne nutzen und sogar Videos anschauen! Lade sie dir jetzt gratis unter http://www.bible.com/app herunter."
+          dialog desc: "Ich benutze die Bibel App sehr gern! Sie hat mir wirklich geholfen, die Bibel zu einem Teil meines Alltags zu machen. Ich kann Verse markieren, mir die Bibel anhören, Notizen machen, Lesepläne nutzen ... und sogar Videos anschauen! Lade sie dir jetzt (gratis) unter http://www.bible.com/app herunter."
         tw:
-          tweet: "Die gratis Bibel App von @YouVersion sitzt zum Lesen, Anschauen, Anhören und Teilen auf meinem Startbildschirm... bible.com/app"
+          tweet: "Die gratis Bibel App von @YouVersion sitzt zum Lesen, Anschauen, Anhören und Teilen auf meinem Hauptbildschirm... bible.com/app"
         em:
           subject: "Hast du schon die Bibel App?"
           body: "Ich mag die Bibel App von YouVersion wirklich sehr und dachte, sie könnte dir vielleicht auch gefallen. Ich öffne die Bibel jetzt viel öfter. Die App macht es leicht, die Bibel zu lesen, die Videos anzuschauen und Verse zu teilen. Sie hat sogar Lesepläne, so dass ich jeden Tag ausgewählte Abschnitte lesen kann. \n\nDu kannst sie gratis für fast jedes mobile Gerät herunterladen:\nhttp://www.bible.com/app"

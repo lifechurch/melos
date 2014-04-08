@@ -25,14 +25,14 @@ YouversionWeb::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   # Do not compress assets
-  config.assets.compress = false
+  # config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
 
   # Fallback to assets pipeline since we don't require
   # precompilation of assets in development
-  config.assets.compile = true
+  # config.assets.compile = true
 
   # Turn off quiet assets (defaults to true)
   # config.quiet_assets = false

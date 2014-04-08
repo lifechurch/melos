@@ -1,3 +1,5 @@
+require 'rack-cache'
+
 YouversionWeb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   unless ENV['NO_AUTH']
@@ -41,6 +43,9 @@ YouversionWeb::Application.configure do
   #memcache
   config.cache_store = :dalli_store
 
+  # Enable Rack::Cache
+  config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/body"
+
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
@@ -52,7 +57,7 @@ YouversionWeb::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # Note: asset precompilation task uses production env configuration
-  config.assets.precompile += %w( ie7.css ie8.css ie9.css wysiwyg/jquery.wysiwyg.css wysiwyg/jquery.wysiwyg.js wysiwyg/editor.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js)
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js)
 
 end
 

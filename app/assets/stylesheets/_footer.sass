@@ -13,18 +13,17 @@
 
     a
       display: block
-      margin-bottom: 1.4em
+      margin: 0 2px 4px 0
       float: left
-      padding: 0 10px
-      border-left: 1px solid #ccc
-      color: inherit
-
-    a:first-child
-      border-left: none
-      padding-left: 0
+      padding: 5px 8px 7px
+      color: #fff
+      background-color: #bbb
+      +border-radius(4px)
+      text-decoration: none
+      font-weight: bold
 
     a:hover
-      color: $blue_light
+      background-color: #ccc
 
   #languages
     float: right
@@ -43,7 +42,8 @@
 html.mobile-client
 
   #footer
-    height: 120px
+    min-height: 120px
+    margin-top: 19px
 
     #languages
       float: none

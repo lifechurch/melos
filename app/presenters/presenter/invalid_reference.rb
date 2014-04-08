@@ -4,7 +4,7 @@ module Presenter
     include Presenter::ReaderInterface
 
     attr_accessor :version, :reference, :alt_version, :alt_reference, :reference_string
-
+    
     def initialize(params = {}, controller = nil)
       super params, controller
     end

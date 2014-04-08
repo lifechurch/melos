@@ -1,44 +1,75 @@
+:ruby
+  is_home_url       = current_page?(moments_path)
+
 #header_outer
-  - if ENV['DISPLAY_MOBILE_BANNER'] == "true" # use Heroku config var to turn off/on mobile banner.
-    .mobile
-      %div#beta-banner
-        %span
-          Mobile Beta
-        = link_to("Feedback", "mailto:mobilewebfeedback@youversion.zendesk.com?Subject=Mobile%20Beta%20Feedback")
 
   %header#header{role:"banner"}
-    = link_to(@site.title, "/" , style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})", id:"logo")
+    %a#logo{href: "/", style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})"}
+      = @site.title
 
-    %nav.sign_in
-      %ul
-        - if current_auth
-          = cache "header_#{current_auth.username}_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
-            %li
-              %a#header_profile_trigger{:href => '#'}
-                %span
-                  %img{src: current_avatar}
-                  =current_auth.username
-              %ol#header_profile_menu
-                %li
-                  %a{href: "/settings"}
-                    =t("settings")
+    %form#header_search_form{action: search_path(category: params[:category] || :bible), method: "GET"}
+      %input#header_search_input{type: 'search', name:"q", placeholder: t("search placeholder")}
+      %input#header_search_button{type: 'submit', value: t("search")}
+      - if params[:controller] == "search"
+        -if params[:version]
+          %input{type: 'hidden', name: "version", value: params[:version]}
+    
+    .header-user
+      -# Sign in and user id
+      - if current_auth
+        %nav.sign_in
+          %a{href: user_path(current_auth.username)}
+            %span
+              %img{src: current_user.user_avatar_url["px_24x24"]}
+              %span.user_name=current_auth.username
+
+        %ul.nav_user
+          %li.highlights
+            %a{href: highlights_user_path(current_auth.username)}  
+          %li.bookmarks
+            %a{href: bookmarks_user_path(current_auth.username)}     
+          %li.notes
+            %a{href: notes_user_path(current_auth.username)}
+          %li.auth
+            %a#header_profile_trigger{:href => '#'}
+              =t("more")
+
+            #header_profile_menu
+              %span.arrow
+              %ol
                 %li
                   %a{href: user_path(current_auth.username)}
-                    =t("profile")
+                    =t("users.profile.tab activity")
+                %li
+                  %a{href: user_friends_path(user_id: current_auth.username)}
+                    =t("users.profile.tab friends") 
+                - #%li
+                - #  %a{href: badges_user_path(current_auth.username)}
+                - #    =t("users.profile.tab badges")
+                %li
+                  %a{href: "/settings"}
+                    =t("settings") 
                 %li
                   %a{href: sign_out_path}
-                    =t("sign out")
-            %li
-              %a{href: "/settings/connections"}
-                %span
-                  =t("find friends")
+                    =t("sign out") 
 
-        - else
-          = cache "header_anon_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
+        .user_options
+          %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
+            =t("friendships.requests title")
+          = render partial: "shared/header/friends"
+
+          %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
+            =t("notifications.title")
+          = render partial: "shared/header/notifications"               
+
+      - else
+        %nav.no_auth
+          %ul
             %li
-              %p= link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
+              = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
             %li
-              %p= link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign_in"
+              = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign_in"
+
 
     .mobile
       - if content_for? :mobile_left_nav
@@ -57,11 +88,4 @@
           - else
             = yield :mobile_right_nav
 
-    %form#header_search_form{action: search_path, method: "GET"}
-      %input#header_search_input{type: 'search', name:"q", placeholder: t("search placeholder")}
-      %input#header_search_button{type: 'submit', value: t("search")}
-      - if params[:controller] == "search"
-        -if params[:category]
-          %input{type: 'hidden', name: "category", value: params[:category]}
-        -if params[:version]
-          %input{type: 'hidden', name: "version", value: params[:version]}
+

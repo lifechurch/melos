@@ -1,0 +1,18 @@
+:ruby
+  @title = t('users.edit email')
+  @setting_selected = :email #for settings layout
+
+%h2
+  = @title
+
+- if @results and @results.valid?
+  %p.confirmation-message
+    = t('users.update email check')
+
+%p= t('users.update email copy')
+= render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
+
+= form_for @user, url: user_email_path(@user), method: :put do |u|
+  %p.email-update
+    = u.text_field :email
+    = button_tag t('users.edit email'), class: "action_button_green"

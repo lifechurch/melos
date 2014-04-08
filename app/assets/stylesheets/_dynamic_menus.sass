@@ -142,6 +142,9 @@
   @media only screen and (max-width: 768px)
     table-layout: fixed  
 
+  @media only screen and (max-width: 768px)
+    table-layout: fixed
+
 .dynamic_menu th
   text-align: right
   white-space: nowrap
@@ -339,10 +342,26 @@
 .dynamic_menu #new_note_modal:hover
   background: image-url("icon_open_modal.png") no-repeat 95% center #2e2e2e
 
+
+// !Reader verse actions
+
 #menu_verse_actions
   display: none
   position: relative
   background-color: #323232
+  margin-top: 34px
+  position: fixed
+  top: 82px
+  z-index: 1
+
+  .verse-actions-success-message
+    background:
+      color: #d9e4c9
+    border-color: #91b164
+    color: #4b7518
+    margin: 0
+    padding: 8px
+
 
 #menu_verse_actions .references
   padding: 0px 5px
@@ -356,61 +375,99 @@
 #menu_verse_actions .references ul
   margin: 0
 
-#menu_verse_actions dl
-  background-color: #323232
+#menu_verse_actions .panel-tabs
+  background-color: #333
   border-top: 1px solid #000
+  height: 49px
 
-#menu_verse_actions dd
+#menu_verse_actions dd,
+#menu_verse_actions .tab-panel
+  overflow: inherit !important
   display: none
-  position: absolute
-  top: 81px
 
-#menu_verse_actions dt
+#menu_verse_actions dt,
+#menu_verse_actions .tab-trigger
   cursor: pointer
   float: left
-  width: 98px
-  height: 44px
+  width: 83px
+  height: 49px
   background-color: #323232
   border-left: 1px solid #444
   border-top: 1px solid #444
   border-right: 1px solid #000
   background:
-    image: image-url("verse_action_sprite.png")
+    image: image-url("verse_task_sprite.png")
     repeat: no-repeat
   text-indent: -2000px
+  overflow: hidden
+  white-space: no-wrap
 
-#menu_verse_actions dt.highlight
-  background-position: 37px 10px
+#menu_verse_actions dt.clear-selected,
+#menu_verse_actions .tab-trigger.clear-selected
+  width: 88px
 
-#menu_verse_actions dt.comment
+#menu_verse_actions dt.highlight,
+#menu_verse_actions .tab-trigger.highlight
+  background-position: 30px 10px
+
+#menu_verse_actions dt.comment,
+#menu_verse_actions .tab-trigger.comment
   background-position: -47px 10px
 
-#menu_verse_actions dt.comment
-  background-position: -47px 10px
+#menu_verse_actions dt.bookmark,
+#menu_verse_actions .tab-trigger.bookmark
+  background-position: -138px 10px
 
-#menu_verse_actions dt.bookmark
-  background-position: -131px 10px
+#menu_verse_actions dt.note,
+#menu_verse_actions .tab-trigger.note
+  background-position: -223px 10px
 
-#menu_verse_actions dt.note
-  background-position: -215px 10px
+#menu_verse_actions dt.share,
+#menu_verse_actions .tab-trigger.share
+  background-position: -304px 10px
 
-#menu_verse_actions dt.share
-  background-position: -299px 10px
+#menu_verse_actions dt.clear-selected,
+#menu_verse_actions .tab-trigger.clear-selected
+  background-position: -387px 10px
 
-#menu_verse_actions dt.clear-selected
-  background-position: -383px 10px
+#menu_verse_actions dt.link,
+#menu_verse_actions .tab-trigger.link
+  background-position: -473px 10px
 
-#menu_verse_actions dt.link
-  background-position: -467px 10px
+#menu_verse_actions dt.related,
+#menu_verse_actions .tab-trigger.related
+  background-position: -557px 10px
+  position: relative
+  +opacity(1)
+
+#menu_verse_actions dt.related.disabled,
+#menu_verse_actions .tab-trigger.related.disabled
+  background-position-y: 10px !important
+  +opacity(0.3)
+  cursor: default
+
+#menu_verse_actions dt.related .count,
+#menu_verse_actions .tab-trigger.related .count
+  text-align: center
+  text-indent: 0
+  position: absolute
+  left: 0
+  top: 13px
+  width: 83px
+  font-size: 11px
 
 #menu_verse_actions dt.active,
-#menu_verse_actions dt:hover
+#menu_verse_actions dt:hover,
+#menu_verse_actions .tab-trigger.active,
+#menu_verse_actions .tab-trigger.hover
   background-position-y: -70px
 
-#menu_verse_actions dt .arrow
+#menu_verse_actions dt .arrow,
+#menu_verse_actions .tab-trigger .arrow
   display: none
 
-#menu_verse_actions dt.active .arrow
+#menu_verse_actions dt.active .arrow,
+#menu_verse_actions .tab-trigger.active .arrow
   display: block
   height: 8px
   width: 16px
@@ -422,12 +479,15 @@
   left: 41px
   z-index: 1
 
-#menu_verse_actions dl .pane
-  width: 558px
+#menu_verse_actions .pane
+  width: 568px
   background-color: #fff
   border: 1px solid #cbc9cf
   border-top: none
-  padding: 10px 20px
+  padding: 15px
+
+#menu_verse_actions .pane form
+  padding: 10px
 
 .dynamic_menu.version_select
   width: 415px
@@ -442,59 +502,153 @@
     repeat: no-repeat
     position: 100% -46px
 
-#menu_verse_actions #bookmark-pane .pane
-  padding-bottom: 0
 
-#menu_verse_actions #bookmark-pane .pane input[type="text"]
-  width: 300px
+// !Reader verse actions: bookmark
 
-#menu_verse_actions #share-pane .pane
-  padding: 20px 20px 0
+#menu_verse_actions #bookmark-pane
 
-#menu_verse_actions #share-pane .share_message textarea
-  margin-bottom: 8px
-  line-height: 18px
+  .pane input[type="text"]
+    width: 300px
 
-#menu_verse_actions #share-pane .share_action
-  clear: both
-  margin-top: 8px
+.ui-menu .ui-menu-item
+  font:
+    family: arial, sans-serif
+    size: 15px
+
+  a
+    color: #444
+  a:hover
+    background: none
+    background-color: #e6e6e6
+    border: 1px solid #e6e6e6
+    +border-radius(0)
+
+
+
+// !Reader verse actions: share
+
+#menu_verse_actions #share-pane
+
+  .pane
+    .share_errors
+      color: red
+      font-weight: bold
+
+  .share_message textarea
+    margin-bottom: 8px
+    line-height: 18px
+
+  .share_services
+    overflow: hidden
+    margin-top: 10px
+    display: table
+    width: 558px
+
+  .share_logo,
+  .share_checkbox,
+  .share_character_count
+    display: table-cell
+    height: 32px
+    vertical-align: center
+
+  .share_logo
+    width: 42px
+
+  .share_logo_fb,
+  .share_logo_twitter
+    display: block
+    height: 32px
+    width: 32px
+
+  .share_logo_fb
+    background: image-url("reader-share-sprite.png") no-repeat 0 0
+
+  .share_logo_twitter
+    background: image-url("reader-share-sprite.png") no-repeat 0 -43px
+
+  .share_checkbox
+    width: 46px
+
+  .share_character_count
+    width: 465px
+    overflow: hidden
+    padding: 0 0 0 15px
+
+  .share_action
+    clear: both
+    margin-top: 8px
+    float: none
+    margin-bottom: 20px
+    & button
+      color: #ffffff
+      font-size: 15px
+      font-weight: 500
+      letter-spacing: 0.30px
+      &:active
+        color: white
+      &:focus
+        color: white
+        position: relative
+        top: 1px
 
 #menu_verse_actions #share-pane .share_services
-  overflow: hidden
-  margin-top: 10px
+  &::selection
+    background: transparent
+    cursor: default
+  .share_slider
+    display: block
+    cursor: default
+    &::selection
+      background: transparent
+      cursor: default
+    &::-moz-selection
+      background: transparent
+      cursor: default
+    .slider
+      display: block
+      width: 32px
+      border-radius: 12px
+      border: 1px solid #c7c7c7
+      height: 22px
+      background: image-url("reader-share-sprite.png") no-repeat 0 -84px
+      background-color: #c7c7c7
+      -webkit-transition: background-color 200ms, border-color 200ms
+      -moz-transition: background-color 200ms, border-color 200ms
+      -o-transition: background-color 200ms, border-color 200ms
+      transition: background-color 200ms, border-color 200ms
 
-#menu_verse_actions #share-pane .share_action
-  float: none
-  margin-bottom: 20px
+      &.network_active
+        border: 1px solid #59b200
+        background: image-url("reader-share-sprite.png") no-repeat 0 -126px
+        background-color: #59b200
 
-#menu_verse_actions #share-pane .share_services span
-  display: block
-  float: left
-  margin-left: 5px
-  border-radius: 4px
-  border: 1px solid #e1e1e1
-  padding: 4px 6px 0 1px
 
-#menu_verse_actions #share-pane .share_services span:first-child
-  margin-left: 0
+  span:first-child
+    margin-left: 0
 
-#menu_verse_actions #share-pane .share_services span .character_count
-  background-color: #CDCDCD
+
+
+#menu_verse_actions #share-pane .character_count
+  background-color: #efefef
   border: 0
-  color: white
+  color: black
   font-size: 12px
   font-weight: bold
   margin-top: 2px
   padding: 1px 4px 0
+  height: 22px
+  display: inline-block
+  border-radius: 4px
+  &.exceeded
+    background-color: red
+  &.warning
+    background-color: yellow
 
-#menu_verse_actions #share-pane .share_services span .translation_missing
+#menu_verse_actions #share-pane .share_services .share_slider .translation_missing
   border: 0
 
-#menu_verse_actions #link-pane .pane
-  padding: 20px
 
-#menu_verse_actions #note-pane .pane
-  padding: 20px
+// !Reader verse actions: note
 
 #menu_verse_actions #note-pane .pane label
   display: block
@@ -521,7 +675,7 @@
 #menu_verse_actions #link-pane #copy_link
   margin-top: 0px
   width: 100px
-  height: 23px
+  height: 33px
 
 #menu_verse_actions #need-account h4
   text-align: center

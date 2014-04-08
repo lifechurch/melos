@@ -6,8 +6,8 @@
 
 .tab_navigation.plan_settings.mobile
   .inner_wrapper
-    = link_to t("plans.settings"), edit_user_subscription_path(current_user, subscription)
-    = link_to t("plans.month"), calendar_user_subscription_path(current_user, subscription),{:class => "selected"}
+    = link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription)
+    = link_to t("plans.month"), calendar_subscription_path(user_id: current_user.to_param, id: subscription),{:class => "selected"}
 
 %article
   %h1= t("plans.calendar")
@@ -51,7 +51,7 @@
                 - else
                   - cur_status = statuses.delete_at(0)
                   %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '') << ((cur_date == current_date) ? ' today' : '')}
-                    = link_to(cur_date.day.to_s, user_subscription_path(current_user,subscription, day: cur_status.day))
+                    = link_to(cur_date.day.to_s, subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day))
                 - cur_date = cur_date.next
 
             :ruby

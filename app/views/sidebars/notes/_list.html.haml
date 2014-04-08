@@ -1,0 +1,35 @@
+:ruby
+  # Used in
+  # sidebars/notes/default
+  # references/notes
+
+  # Local variables
+  # notes  (required)
+  # link   (optional)
+  # title  (optional)
+
+   title = t("notes.community notes")
+   link = link || notes_path
+
+#widget-notes.widget.comm-notes
+  %div.hd
+    %span
+      = title
+
+  - unless notes.empty?
+    %ul
+    - notes.first(8).each do |note|
+      %li
+        - user = note.user
+        - md_avatar = user.avatars.md_avatar
+        %img{src: md_avatar.url}
+
+        %a= link_to note.title, note_path(note.id)
+        %p.mute.small= user.name
+
+    %div.ft
+      %a{href: link}= t('show all notes')
+
+  - else
+    %div.bd
+      %p= t('notes.no community notes')

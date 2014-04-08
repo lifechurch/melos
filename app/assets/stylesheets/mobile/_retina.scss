@@ -1,0 +1,191 @@
+// Switching this to .scss because .sass won't allow the formatting needed to target devices other than Apple's
+
+// !Retina images
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+  // !Primary nav
+
+  #nav_mobile_home a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px 5px;
+  }
+
+  #nav_mobile_bible a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -167px;
+  }
+
+  #nav_mobile_plans a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -340px;
+  }
+
+  #nav_mobile_friends a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1556px;
+  }
+
+  #nav_mobile_live a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1035px;
+  }
+
+  #nav_mobile_mobile a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1470px;
+  }
+
+  #nav_mobile_profile a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -1210px;
+  }
+
+  #nav_mobile_videos a.icon {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: 12px -600px;
+  }
+
+  #nav_mobile_home a.icon,
+  #nav_mobile_bible a.icon,
+  #nav_mobile_plans a.icon,
+  #nav_mobile_friends a.icon,
+  #nav_mobile_live a.icon,
+  #nav_mobile_mobile a.icon,
+  #nav_mobile_profile a.icon,
+  #nav_mobile_videos a.icon {
+    background-size: 32px 1900px;
+  }
+
+  // !verse action menu
+
+  #menu_verse_actions .tab-trigger {
+    background: #0084c8 image-url("mobile/verse_action_sprite_2x.png") no-repeat;
+    background-size: 16px 300px;
+  }
+
+  #menu_verse_actions .tab-trigger.bookmark {
+    background-position: center -50px;
+  }
+
+  #menu_verse_actions .tab-trigger.comments {
+    background-position: -45px -40px;
+  }
+
+  #menu_verse_actions .tab-trigger.highlight {
+    background-position: center -6px;
+  }
+
+  #menu_verse_actions .tab-trigger.note {
+    background-position: center -94px;
+  }
+
+  #menu_verse_actions .tab-trigger.related {
+    background-position: center -227px;
+  }
+
+  #menu_verse_actions .tab-trigger.share {
+    background-position: center -138px;
+  }
+
+  // !Header
+
+  #header .friend-requests-btn,
+  #header .notifications-btn {
+    background: image-url("header-sprite@2x.png") no-repeat;
+    background-size: 28px 550px;
+  }
+
+  #header .friend-requests-btn {
+    background-position: 0px 9px;
+  }
+
+  #header .notifications-btn {
+    background-position: 0px -45px;
+  }
+
+
+  // !Profile
+
+  .top_section {
+    .profile-tabs-activity,
+    .profile-tabs-friends,
+    .profile-tabs-notes,
+    .profile-tabs-bookmarks,
+    .profile-tabs-highlights,
+    .profile-tabs-badges {
+      background: #EEEDEB image-url("mobile/profile-tabs-sprite@2x.png") no-repeat center top;
+      background-size: 32px 798px;
+    }
+
+    .profile-tabs-activity {
+      background-position: center 12px;
+    }
+
+    .profile-tabs-friends {
+      background-position: center -116px;
+    }
+
+    .profile-tabs-notes {
+      background-position: center -243px;
+    }
+
+    .profile-tabs-bookmarks {
+      background-position: center -371px;
+    }
+
+    .profile-tabs-highlights {
+      background-position: center -498px;
+    }
+
+    .profile-tabs-badges {
+      background-position: center -626px;
+    }
+
+    .profile-tabs-activity.highlight {
+      background-position: center 10px;
+    }
+
+    .profile-tabs-friends.highlight {
+      background-position: center -118px;
+    }
+
+    .profile-tabs-notes.highlight {
+      background-position: center -245px;
+    }
+
+    .profile-tabs-bookmarks.highlight {
+      background-position: center -373px;
+    }
+
+    .profile-tabs-highlights.highlight {
+      background-position: center -500px;
+    }
+
+    .profile-tabs-badges.highlight {
+      background-position: center -628px;
+    }
+  }
+
+
+  // !Friends tab
+  .friends-none {
+    background: image-url("social-psa-profiles@2x.png") no-repeat center 40px;
+    background-size: 280px 48px;
+  }
+
+
+  // !Profile settings
+
+  h3.hd {
+    background: #E1E1E1 image-url("mobile/dropdown-arrow@2x.png") no-repeat 96% center;
+    background-size: 10px 17px;
+  }
+
+}

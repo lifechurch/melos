@@ -6,6 +6,18 @@ module YV
       @cookies = cookies
     end
 
+    def viewed_social_intro
+      @cookies["viewed-social-intro"]
+    end
+
+    def viewed_social_intro!
+      @cookies["viewed-social-intro"] = true
+    end
+
+    def time_zone
+      @cookies['cs-time-zone']
+    end
+
     def reader_font
       @cookies['data-setting-font']
     end
@@ -40,6 +52,10 @@ module YV
 
     def reader_highlights
       @cookies['data-setting-show-highlights'] || "true"
+    end
+
+    def recent_versions
+      @cookies['recent_versions']
     end
 
     def version

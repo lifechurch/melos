@@ -33,6 +33,8 @@ it:
     users username or password invalid: "Il nome utente o password che hai inserito non è valido."
     users username required: "Devi scrivere un username."
   meta:
+    kids_app:
+      title: "L'App Bibbia per Ragazzi"
     100million:
       title: "Inzia con 100 Milioni"
       description: "L'App Bibbia è stata installata quasi 100 milioni di volte - una pietra miliare incredibile! Ma siamo solo agli inizi. Scarica oggi l'App Bibbia gratuita - e poi condividi l'app con i tuoi amici. Facciamo la storia insieme."
@@ -238,7 +240,7 @@ it:
     edit account_existence: "Elimina Account"
     delete account button: "Elimina il mio Account YouVersion"
     no devices: "Non ci sono dispositivi associati al tuo Account YouVersion"
-    no devices download copy: "Basato sulla Bibbia online, YouVersion.com, l'App Bibbia è una Bibbia mobile gratuita che si può installare su quasi tutti i dispositivi mobili. L'App Bibbia permette agli utenti di leggere la Bibbia, condividere dei versetti sui social network, creare dei segnalibri per i loro passi preferiti, e more&mdash;all in un formato che si adatta al loro stile di vita sempre più mobile. Visita <a href='http://www.youversion.com/download'>youversion.com/download</a> con il tuo dispositivo mobile per scaricare l'App Bibbia e associare il tuo account!"
+    no devices download copy: "Basata sulla Bibbia on-line, YouVersion.com, l'App Bibbia è una Bibbia mobile gratuita che si può installare su quasi ogni dispositivo mobile. Con l'App Bibbia, gli utenti possono leggere la Bibbia, condividere dei versetti attraverso i social network, contrassegnare i loro passi preferiti e altro ancora; tutto in un formato che si tiene al passo del loro stile di vita sempre più mobile. Visita <a href='https://www.bible.com/download'>bible.com/download</a> sul tuo dispositivo mobile per scaricare l'App Bibbia e collegarla al tuo account!"
     yes delete: "Sì, Elimina il Mio Account"
     account delete success: "Il tuo account YouVersion è stato eliminato con successo. Speriamo che continuerai a trovare dei modi significativi per interagire con la Bibbia. Alcune di questi app potrebbero esserti d'aiuto in futuro: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Se elimini il tuo account, eliminerai in modo definitivo tutte le tue informazioni, cronologia e personalizzazioni (come le note, i segnalibri, le evidenziazioni, ecc.) su YouVersion.com e nell'App Bibbia. Quest'azione non può essere annulata né da te, né dalla nostra equipe. Se sei certo di continuare, procedi qui sotto."
@@ -584,7 +586,7 @@ it:
     promo 3: "Quest'anno, più di 5 miliardi di persone utilizzeranno un telefono cellulare. Dona ora."
     headline: "Tutti hanno bisogno della Parola di Dio."
     subhead: "Aiuta le persone in tutto il mondo ad avere la Bibbia a portata di mano."
-    copy: "Immagina di poter dare gratuitamente una Bibbia a ogni persona nel mondo. Quando doni a YouVersione, puoi fare proprio questo. Viviamo in tempi di cui altri hanno solo sognato &ndash; quando chiunque con un telefono cellulare può accedere alla Bibbia e sperimentare la storia dell'amore di Dio per noi. Con il tuo sostegno, possiamo continuare ad aiutare più persone a passare più tempo nella Scrittura."
+    copy: "Immagina di poter dare gratuitamente una Bibbia a ogni persona nel mondo. Quando doni a YouVersion, puoi fare proprio questo. Viviamo in tempi di cui altri hanno solo sognato &ndash; quando chiunque con un telefono cellulare può accedere alla Bibbia e sperimentare la storia dell'amore di Dio per noi. Con il tuo sostegno, possiamo continuare ad aiutare più persone a passare più tempo nella Scrittura."
     amount: "Ammontare della donazione"
     option once: "Una volta"
     option monthly: "Mensilmente"
@@ -605,7 +607,7 @@ it:
     zip: "CAP"
     creation form errors: "I(l) seguenti/e errori hanno impedito di fare un'offerta:"
   download ad:
-    title: "Scarica l'App Bibbia gratuito."
+    title: "Scarica l'App Bibbia gratuita."
     line 1: "Centinaia di versioni in 100+"
     line 2: "lingue diverse - la Bibbia"
     line 3: "che ti segue ovunque."
@@ -654,11 +656,11 @@ it:
     h2: "La Parola di Dio è con te."
     h3: "YouVersion è Globale"
     h3 sub: "Disponibile in più di 100 lingue in tutto il mondo."
-    main: "Decine di milioni di persone stanno usando l'App Bibbia&trade; per rendere la Parola di Dio parte della loro vita quotidiana. Scarica l'app gratuito e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile."
+    main: "Decine di milioni di persone stanno usando l'App Bibbia&trade; per rendere la Parola di Dio parte della loro vita quotidiana. Scarica l'app gratuita e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile."
     button h4: "Vai alla applicazione Bible.com/app"
     button h4 sub: "Sul Tuo Dispositivo Mobile"
     download now: "Scarica l'App Bibbia Adesso"
-    what people: "Quello che dice la gente a proposito dell'App Bibbia gratuito..."
+    what people: "Quello che dice la gente a proposito dell'App Bibbia gratuita..."
     t1: "Ho sempre la Parola con me."
     t1 copy: "Ho segnato dei passi che sono importanti per me. Ho perfino letto tutta la Bibbia in un anno grazie ai piani di lettura."
     t2: "Bel programma!"
@@ -699,7 +701,7 @@ it:
       get started: "Comincia con il tuo account gratuito."
       word with you: "La Parola di Dio è con te."
       download action: "Scarica l'App Bibbia"
-      download description: "Scarica l'App Bibbia YouVersion gratuito sul tuo dispositivo mobile e potrai avere la tua Bibbia con te ovunque andrai."
+      download description: "Scarica l'App Bibbia YouVersion gratuita sul tuo dispositivo mobile e potrai avere la tua Bibbia con te ovunque andrai."
       world installs: "Può essere installato in tutto il mondo"
   shared:
     menu_settings:
@@ -730,7 +732,7 @@ it:
     408 explanation: "Puoi provare ancora  nel <un href='%='% ricarica_via??????la pagina.Siamo stati avvertiti ed affronteremo i problemi persistenti il più velocemente possibile."
     try again: "Riprova"
   versions:
-    filter: "Filtro Versioni..."
+    filter: "Filtra le  Versioni..."
     see all: "Vedi Tutte le Versioni..."
     courtesy of: "%{abbreviation} reso disponibile da %{publisher}"
     learn more: "Per Saperne di Più"

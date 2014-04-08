@@ -86,6 +86,7 @@
 
   .highlighted a
     box-shadow: none
+    text-shadow: none
 
 
   dt:first-child + dd
@@ -95,3 +96,39 @@
 #main article .combo_button + .split_pane,
 #main article .tab_navigation + table
   margin-top: 40px !important
+
+h3.hd
+  margin: 0 !important
+  background: #E1E1E1 image-url("mobile/dropdown-arrow.png") no-repeat 96% center
+  border-radius: 5px
+  padding: 10px 15px 11px
+
+// Menu is open, don't round the bottom of the heading.
+h3.hd.open
+  border-radius: 0
+  border-top-left-radius: 5px
+  border-top-right-radius: 5px
+
+.mobile-menu-wrap
+  display: none
+  border: 1px solid #e1e1e1
+
+hr.menu-separator
+  border: 1px solid transparent
+
+#main article
+
+  .tabs
+    margin: 0
+    padding: 0
+    background: none
+
+    a
+      background: none #fff
+      +box-shadow(none)
+      text-shadow: none
+      border: none
+      +border-radius(0)
+      font:
+        size: 15px
+        weight: normal

@@ -16,17 +16,20 @@ module YV
       # Undefine all methods, except for the ones we define on this class
       # All method calls are proxied to @data via method missing.
       instance_methods.each do |m|
-        undef_method(m) unless (m.match(/^__|^object_id/))
+        undef_method(m) unless (m.match(/^__|^object_id|^next_page|^prev_page|^next_cursor|^prev_cursor|^total/))
       end
+
+      attr_reader :next_page, :prev_page, :next_cursor, :prev_cursor, :total
 
       # For error tracking
       include ActiveModel::Validations
 
       # Read data initially stored for this instance
-      attr_reader :data
+      attr_accessor :data
 
-      def initialize( data , errors )
+      def initialize( data , errors = nil )
         @data = data
+        capture_pagination(data)
         capture_errors(errors) unless errors.blank?
         return self
       end
@@ -55,6 +58,14 @@ module YV
       end
 
       private
+
+      def capture_pagination( data )
+        @total        = data.total if data.respond_to?(:total)
+        @next_page    = data.next_page if data.respond_to?(:next_page)
+        @prev_page    = ((@next_page - 2 == 0) ? nil : @next_page - 2) if @next_page
+        @next_cursor  = data.next_cursor if data.respond_to?(:next_cursor)
+        @prev_cursor  = data.prev_cursor if data.respond_to?(:prev_cursor)
+      end
 
       def capture_errors( api_errors_array )
         api_errors_array.each do |error|

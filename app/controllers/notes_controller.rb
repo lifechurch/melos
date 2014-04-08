@@ -1,25 +1,14 @@
-class NotesController < ApplicationController
-  before_filter :set_nav
-  before_filter :set_sidebar, :only => [:index]
+class NotesController < BaseMomentsController
 
-  def index
-      @notes = Note.search(language_tag: I18n.locale, cache_for: YV::Caching.a_very_short_time)
-      # drop language tag filter if no notes found
-      @notes = Note.search(cache_for: YV::Caching.a_very_short_time) if @notes.empty?
-      self.sidebar_presenter = Presenter::Sidebar::Notes.new
-  end
+  # Base moment controller abstractions
+    moment_resource "Note"
+    moment_comments_display false
 
-  def related
-    #API Constraint to be put in model eventually
-    page = params[:page] || 1
-    ref = ref_from_params rescue not_found
-    @notes = Note.for_reference(ref, language_tag: I18n.locale, page: page, cache_for: YV::Caching.a_short_time)
-    @notes = Note.for_reference(ref, page:page, cache_for: YV::Caching.a_short_time) if @notes.empty?
-    @reference_title = ref.human
-    render template:"notes/index"
-  end
+  # Filters
+    before_filter :set_sidebar, only: [:index]
+    before_filter :force_login, only: [:show,:new,:edit,:create,:update,:destroy]
 
-
+  # TODO: figure out public/friends/private/draft display and authorization
   def show
     @note = current_auth ? Note.find(params[:id], auth: current_auth) : Note.find(params[:id])
     if @note.invalid?
@@ -37,64 +26,42 @@ class NotesController < ApplicationController
   end
 
 
-  def new
-    if current_auth
-      @note = Note.new(params[:note])
-    else
-      redirect_to notes_path
-    end
+  def related
+    #API Constraint to be put in model eventually
+    page = params[:page] || 1
+    ref = ref_from_params rescue not_found
+    @notes = Note.for_reference(ref, language_tag: I18n.locale, page: page, cache_for: YV::Caching.a_short_time)
+    @notes = Note.for_reference(ref, page:page, cache_for: YV::Caching.a_short_time) if @notes.empty?
+    @reference_title = ref.human
+    render template:"notes/index"
   end
 
-  def edit
-    if current_auth
-      @note = Note.find(params[:id], auth: current_auth)
-    else
-      redirect_to notes_path
-    end
+
+  # Rendered as sidebar for Community Notes in Reader
+  # See routes.rb: match 'bible/:version/:reference/notes' => 'notes#sidebar', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
+  def sidebar
+    ref     = ref_from_params rescue not_found
+    @notes  = Note.community(usfm: ref_to_usfm_array(ref), version_id: params[:version])
+    render partial: 'sidebars/notes/list', locals: { notes: @notes, link: related_notes_url(reference: ref.to_usfm.downcase)}, layout: false
   end
 
-  def create
-    @note = Note.new(params[:note])
-    @note.auth = current_auth
-
-    if @note.save
-      redirect_to note_path(@note.id)
-    else
-      render action: "new"
-    end
-  end
-
-  def update
-    @note = Note.find(params[:id], :auth => current_auth)
-    @note.update(params[:note]) ? redirect_to(note_path(@note)) : render(action: "edit")
-  end
-
-  def destroy
-    @note = Note.find(params[:id], :auth => current_auth)
-
-    if @note.destroy
-      redirect_to user_notes_path(current_auth.username), notice: t("notes.successfully deleted")
-    else
-      render action: "index"
-    end
-  end
 
   private
 
-  def set_nav
-    @nav = :notes
+  # API only allows references with verses (JHN.1.1) not just a single chapter (JHN.1)
+  # Used to add verses to a chapter reference so we can display results on a chapter reader page.
+  def ref_to_usfm_array(ref)
+    if ref.chapter?
+      _usfm = ref.usfm
+      (1..5).collect {|num| "#{_usfm}.#{num}" }  
+    else
+      ref.usfm.split("+")
+    end
   end
 
   # Set sidebar values for the Likes cell
   def set_sidebar
     @user_id = current_user.id if current_user
-  end
-
-  # Setup required in order to show update since form will post
-  # strings instead of the reference / version objects (better way?)
-  def set_for_form(note)
-    note.reference = Model::hash_to_osis_noversion(note.references)
-    note.version = note.version.id
   end
 
 end

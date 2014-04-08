@@ -33,6 +33,8 @@ ca:
     users username or password invalid: "El nom d'usuari/ària o contrasenya que has introduït és invàlid/a."
     users username required: "Has d'introduir un nom d'usuari."
   meta:
+    kids_app:
+      title: "L'Aplicació de la Bíblia per a nens"
     100million:
       title: "Comença amb 100 milions"
       description: "L'App de la Bíblia ha estat instal·lada gaire bé 100 milions de vegades - una fita increïble! Però tot just estem començant. Descarrega gratuïtament l'App de la Bíblia - i comparteix-la amb els teus amics. Fem història plegats."
@@ -238,7 +240,6 @@ ca:
     edit account_existence: "Elimina el compte"
     delete account button: "Elimina el meu compte de YouVersion"
     no devices: "No hi ha dispositius connectats al teu compte de YouVersion"
-    no devices download copy: "Amb base en la Bíblia en línia, YouVersion.com, l'aplicació de la Bíblia és una Bíblia mòbil lliure que es pot instal · lar en gairebé qualsevol dispositiu mòbil. La aplicació de la Bíblia permet als usuaris llegir els versets de la Bíblia, compartir amb les seves xarxes socials, marcar els seus passatges preferits i molt més, tot això en un format que es manté al dia amb el seu estil de vida cada vegada més mòbil. Visita <a href='http://www.youversion.com/download'>youversion.com/download</a> des del teu dispositiu mòbil per descarregar l'aplicació de la Bíblia i connectar el seu compte!"
     yes delete: "Sí, elimina el meu compte"
     account delete success: "La teu compte de YouVersion s'ha eliminat correctament. Esperem que continuïs trobant maneres significatives per interactuar amb la Bíblia. Algunes d'aquestes aplicacions poden ser útils a mesura que avances:<a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps</a>"
     delete account description: "Si elimines el teu compte, s'eliminarà permanentment tota la teva informació, l'historial i la personalització (com notes, marcadors, ressaltats, etc) dins YouVersion.com i l'aplicació de la Bíblia. Aquesta acció no pot ser revertida per tu ni pel nostre equip. Si estàs segur que t'agradaria continuar endavant, continua endavant."

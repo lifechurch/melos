@@ -33,6 +33,8 @@ en-GB:
     users username or password invalid: "The username or password you supplied is invalid."
     users username required: "You must enter a username."
   meta:
+    kids_app:
+      title: "The Bible App for Kids"
     100million:
       title: "It Starts with 100 million"
       description: "The Bible App has been installed almost 100 million times - an incredible milestone! But we are just getting started. Download the free Bible App today - and then share the app with your friends. Let’s make history together."
@@ -74,7 +76,7 @@ en-GB:
   bookmark: "Bookmark"
   earned badge date: "Earnt by %{username} %{ago} ago"
   badges title: "Badges"
-  currently selected: "Currently selected:"
+  currently selected: "Currently Selected:"
   read reference: "Read %{reference}"
   compare all versions: "Compare all versions"
   link will be added: "Will be added"
@@ -238,7 +240,7 @@ en-GB:
     edit account_existence: "Delete account"
     delete account button: "Delete my YouVersion account"
     no devices: "No devices connected to your YouVersion account"
-    no devices download copy: "Based on the on-line Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any mobile device. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favourite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle. Visit <a href='http://www.youversion.com/download'>youversion.com/download</a> from your mobile device to download the Bible App and connect your account!"
+    no devices download copy: "Based on the online Bible, YouVersion, the Bible App is a free mobile Bible that can be installed on almost any mobile device. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favourite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle. Visit <a href='https://www.bible.com/download'>bible.com/download</a> from your mobile device to download the Bible App and connect your account!"
     yes delete: "Yes, delete my account"
     account delete success: "Your YouVersion account has been successfully deleted. We hope you continue to find meaningful ways to interact with the Bible. Some of these apps might be helpful as you move forward: <a href='https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
     delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within YouVersion.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
@@ -252,7 +254,7 @@ en-GB:
     my badges: "My badges"
     revised date: "Last revised on %{date}"
     update email copy: "Enter a new e-mail address and click Update E-mail. We'll send you a link to confirm your new e-mail address."
-    edit email: "Update E-mail address"
+    edit email: "Update e-mail address"
     update email check: "Please check your e-mail and click the link to confirm your new email address.-"
     confirm update email success: "Thanks! You've updated your e-mail address."
     confirm update email error: "Sorry, there was a problem completing your e-mail address change."
@@ -633,7 +635,7 @@ en-GB:
     facebook: "YouVersion on Facebook"
     twitter: "YouVersion on Twitter"
     support: "Need help with YouVersion?"
-    lead copy: "Based on the on-line Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle."
+    lead copy: "Based on the on-line Bible, YouVersion.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favourite passages, and more&mdash;all in a format that keeps up with their increasingly mobile lifestyle."
     resources title: "Press resources"
     now title: "Today in the YouVersion community"
     resources:
@@ -691,7 +693,7 @@ en-GB:
         read heading: "Read the Bible."
         read description: "Take your choice from <strong>hundreds of Bible versions and languages</strong>. Compare two versions side by side. You can even choose your font and display size. Make your on-line Bible experience just the way you like it."
         study heading: "Study the Bible."
-        study description: "<strong>Highlight</strong> in your favorite colour, <strong>bookmark</strong> your favorite Bible verses, and make notes about what you're learning. Not only are you spending time in God's Word, you're building a history of your interaction with the Bible."
+        study description: "<strong>Highlight</strong> in your favourite colour, <strong>bookmark</strong> your favourite Bible verses, and make notes about what you're learning. Not only are you spending time in God's Word, you're building a history of your interaction with the Bible."
         subscribe heading: "Subscribe to Bible plans."
         subscribe description: "Cover the whole Bible, focus on a topic, or read a devotional from a gifted teacher. Choose your plan and each day you'll find a Bible selection waiting for you."
         download heading: "Take the Bible with you."

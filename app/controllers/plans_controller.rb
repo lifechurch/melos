@@ -8,9 +8,8 @@ class PlansController < ApplicationController
   # TODO - this needs serious refactoring controller, model, service object and template - A MESS.
   def index
     @plan_lang      = available_plan_language()
-    results = Plan.all( query: params[:query], page: params[:page] || 1, category: params[:category], language_tag: @plan_lang)
-    @plans = results.data if results.valid?
-    @categories = CategoryListing.find(params[:category], language_tag: @plan_lang)# rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
+    @plans = Plan.all( query: params[:query], page: @page, category: params[:category], language_tag: @plan_lang)
+    @category = PlanCategory.find(params[:category], language_tag: @plan_lang)# rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
     @sidebar = false
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
   end
@@ -20,11 +19,7 @@ class PlansController < ApplicationController
     if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
 
     @plan = Plan.find(params[:id])
-    if current_auth && current_user.subscribed_to?(@plan)
-       redirect_to user_subscription_path(current_user,id: @plan.to_param,day: params[:day], content: params[:content]) and return
-    else
-      self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
-    end
+    self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
   end
 
   def sample
@@ -34,7 +29,7 @@ class PlansController < ApplicationController
     return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
 
     if current_auth && current_user.subscribed_to?(@plan)
-       redirect_to user_subscription_path(current_user,id: @plan.to_param) and return
+       redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param) and return
     end
 
     @presenter = Presenter::Subscription.new( @plan , params, self)
@@ -58,11 +53,11 @@ class PlansController < ApplicationController
   # See routes.rb: "Community emails send this link"
   # TODO: get API team to update the link sent via email.
   def settings
-    redirect_to edit_user_subscription_path( current_user, params[:id])
+    redirect_to edit_subscription_path( user_id: current_user.to_param, id: params[:id])
   end
 
   def calendar
-    redirect_to calendar_user_subscription_path( current_user, params[:id])
+    redirect_to calendar_subscription_path( user_id: current_user.to_param, id: params[:id])
   end
 
   private
@@ -77,8 +72,8 @@ class PlansController < ApplicationController
     lang   = (params[:lang] == "pt-BR") ? "pt" : params[:lang]
 
     langs = [lang,locale,"en"].compact    #order here is important - we start with override lang, then locale as param, then default to "en"
-    available_locales = Plan.available_locales.map {|loc| loc.to_s}    # get available locales in array of strings
-    langs.each {|l| return l.to_sym if available_locales.include?(l)}  # so we can compare lang to string rather than symbol
+    available_locales = Plan.available_locales.map {|loc| loc.to_s}   # get available locales in array of strings
+    langs.each {|l| return l if available_locales.include?(l)}        # so we can compare lang to string rather than symbol
   end
 
 end

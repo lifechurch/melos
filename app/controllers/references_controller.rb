@@ -11,21 +11,6 @@ class ReferencesController < ApplicationController
     now_reading(self.presenter.reference)
   end
 
-  def notes
-    #API Constraint to be put in model eventually
-    @ref = ref_from_params rescue not_found
-    #@ref = @ref.merge(verses: "1-10") if @ref.is_chapter?
-    @notes = Note.for_reference(@ref, language_tag: I18n.locale, cache_for: YV::Caching.a_short_time)
-    @notes = Note.for_reference(@ref, cache_for: YV::Caching.a_short_time) if @notes.blank?
-    render layout: false
-  end
-
-  def bookmarks
-    @bookmarks = Bookmark.for_user(current_auth.user_id)
-    render partial: '/widgets/bookmarks', layout: false
-  end
-
-
   protected
 
     def setup_presenters
@@ -36,16 +21,25 @@ class ReferencesController < ApplicationController
       ref_hash    = ref_string.to_hash
 
       # If somebody visits just /bible
-      unless params[:version] && ref_hash[:chapter]
+      if params[:version].blank? && ref_hash[:chapter].present? # url
         ref_hash[:version] ||= current_version
         ref_hash[:chapter] ||= "1"
         flash.keep
-        return redirect_to bible_path(Reference.new(ref_hash))
+        reference = Reference.new(ref_hash)
+        return redirect_to reference_path(version: reference.version, reference: reference.to_param)
       end
 
       self.presenter = Presenter::Reference.new(ref_string, params, self)
       self.sidebar_presenter = Presenter::Sidebar::Reference.new(ref_string, params ,self)
-      return render_404 unless presenter.valid_reference?
+      
+      unless presenter.valid_reference?
+        if request.xhr?
+          return render json: "error", status: 400
+        else
+          return render_404
+        end
+      end
+      
     end
 
     # HACK (km): sometimes the url can have invalid utf-8 characters
@@ -119,6 +113,11 @@ class ReferencesController < ApplicationController
 
       self.presenter = pres
 
-      render :invalid_ref, status: 404, locals: {presenter: pres}
+      if request.xhr?
+        return render json: "error", status: 400
+      else
+        return render :invalid_ref, status: 404, locals: {presenter: pres}
+      end
+      
     end
 end

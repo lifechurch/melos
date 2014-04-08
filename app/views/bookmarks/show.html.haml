@@ -1,9 +1,8 @@
-%article
-  #bookmark
-    %h3= @bookmark.title
-    %p.mute= link_to_references(@bookmark.reference_list)
-    %p{class: "date"}= @bookmark.created_as_date.strftime("%m/%d/%Y")
-    %p
-    - if current_user && (current_auth.user_id.to_i == @bookmark.user_id.to_i)
-      = link_to('edit', edit_bookmark_path(@bookmark.id)) 
-      %span.confirm= link_to('delete this bookmark', bookmark_path(@bookmark.id), "data-confirm-text" => t('confirm danger'), :method => :delete) 
+- @title = bookmark_title(@bookmark)
+
+- content_for :sidebar do
+  = render partial: "moments/activity_sidebar", locals: {moment: @bookmark}
+  
+
+%article.social-detail
+  = render partial: "moments/bookmark", locals: {moment: @bookmark, comments_displayed: true, detail_view: true}

@@ -33,6 +33,8 @@ es-ES:
     users username or password invalid: "El nombre de usuario o contraseña que has proporcionado no es válido."
     users username required: "Debes introducir un nombre de usuario."
   meta:
+    kids_app:
+      title: "La App de la Biblia para Niños"
     100million:
       title: "Arranca con 100 millones"
       description: "La Biblia App se ha instalado unas 100 millones de veces - ¡un hito increíble! Pero apenas estamos empezando. Descarga la Biblia App gratis hoy mismo - y comparte la aplicación con tus amigos. Vamos a hacer historia juntos."
@@ -570,7 +572,7 @@ es-ES:
     delete error: "Lo sentimos, no ha sido posible eliminar lo destacado."
   searching:
     bible: "Biblia"
-    plans: "Planes de lectura"
+    plans: "Planes de Lectura"
     users: "Usuarios"
     notes: "Notas"
     total results: "Aproximadamente %{total} resultados"

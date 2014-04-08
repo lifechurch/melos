@@ -1,6 +1,5 @@
 // `Widgets
 //----------------------------------------------------------------------------------------------------
-
 .widget.simple
   .bd
     border: none
@@ -17,10 +16,12 @@
   padding: 0
   margin: 0 0 10px
   position: relative
-  border: 1px solid #cbc9cf
-  background: $gray_light image-url("shadow.png") repeat-x
-  +box-shadow(#fff 0 1px 0 0)
+  border: 0
+  background: #EEEDEB
   +round
+
+  a
+    text-decoration: none
 
   h3
     margin: 0
@@ -32,14 +33,13 @@
 
   ul
     margin-bottom: 0
-    background: $gray_light image-url("shadow.png") repeat-x
 
   li
     margin: 0
     padding: 10px 20px
-    border-top: 1px solid #fff
-    border-bottom: 1px solid #cbc9cf
+    border-bottom: 1px solid #DEDDDB
     list-style: none
+    background: #fff
 
   li:first-child
     border-top: 0
@@ -63,14 +63,13 @@
   .hd
     font-size: 14px
     font-weight: bold
-    line-height: 24px
-    padding: 5px 15px
+    line-height: 18px
+    padding: 10px 35px 10px 15px
     position: relative
-    border-bottom: 1px solid #cbc9cf
-    background-color: #dddcda
+    border-bottom: 1px solid #DEDDDB
+    background-color: #EEEDEB
     +round_top
     +box-shadow(inset #fff 0 1px 0 0)
-    +background-image(linear-gradient(#eeedeb, #dddcda))
 
     a, a:link
       color: #444
@@ -90,8 +89,6 @@
       line-height: 1
       padding: 2px 10px 3px
       text-decoration: none
-      +background-image(linear-gradient(#fff, #dddcda))
-      +box-shadow(rgba(#fff, 0.7) 0 1px 0 0)
       +border-radius(9px)
 
     a.count:hover
@@ -107,7 +104,9 @@
   .bd
     padding: 20px
     font-weight: normal
-    background: $gray_light image-url("shadow.png") repeat-x
+    +border-radius(3px)
+    overflow: hidden
+    background-color: #fff
 
     p
       margin: 0
@@ -131,7 +130,6 @@
 
   .ft
     padding: 10px 15px
-    border-top: 1px solid #cbc9cf
 
   .ft.link
     padding: 0
@@ -139,7 +137,7 @@
       display: block
       padding: 8px 20px 8px 30px
       text-decoration: none
-      border-top: 1px solid #fff
+      border-top: 1px solid #DEDDDB
       background: image-url("main_article_ul_li_arrow.png") no-repeat 15px center
 
     a, a:hover
@@ -152,13 +150,13 @@
 
   .menu
     margin-bottom: 0 !important
-    background: image-url("shadow.png") repeat-x
+    background: #fff
 
     li
       padding: 0
 
     li.active
-      background: #ddd
+      background: #d1d1d1
       border-top: none
 
     a,
@@ -194,6 +192,7 @@
 
 .widget ul li:last-child
   border-bottom: 0
+  +border-radius(0 0 4px 4px)
 
 .widget table
   width: 100%
@@ -230,6 +229,9 @@
   margin: 0
   padding-top: 10px
 
+.widget td p.small
+  padding-top: 0
+
 .widget tbody tr:first-child td
   border-top: 0
 
@@ -250,9 +252,7 @@
   +round_top
   +round_bottom
   +box-shadow(inset #fff 0 1px 0 0)
-  +background-image(linear-gradient(#eeedeb, #dddcda))
-  background-color: #dddcda
-  border: 1px solid #cbc9cf
+  background-color: #EEEDEB
   padding: 10px 15px
   margin-bottom: 10px
 
@@ -262,6 +262,20 @@
 
   p
     margin-bottom: 0
+
+#widget-signup,
+#widget-signin
+  background: #0084c8
+
+  h3
+    color: #024162
+    padding-top: 8px
+    max-width: 170px
+
+  .action_button_grey
+    float: right
+    margin-top: -23px
+    padding: 7px 10px
 
 #widget-user-settings
   .hd span
@@ -311,20 +325,25 @@
 
 #widget-notes
   .hd span
-    background: image-url("header_icon_note.png") no-repeat left center
+    background: image-url("widgets-sprite.png") no-repeat 0 1px
     padding-left: 25px
 
 #widget-download
   .bd
     background:
       image: image-url("ad_bible_app.png")
-      position: 90% 80%
+      position: 92% 80%
       repeat: no-repeat
 
     h3
       margin-bottom: 1.3em
     p
       margin-bottom: 10px
+
+    .action_button_green
+      padding: 7px 10px
+      font-size: 15px
+      float: left
 
 #widget-devotional
   h2
@@ -336,6 +355,8 @@
   p
     margin-bottom: 20px
 
+// !Reading plan widget --------------
+
 #widget-plan-controls
   .hd
     .settings
@@ -345,8 +366,9 @@
       opacity: .5
       background:
         image: image-url("icon_settings.png")
-      float: right
-      margin-top: 4px
+      position: absolute
+      top: 10px
+      right: 10px
 
       span
         display: block
@@ -387,7 +409,7 @@
         padding: 0
         background:
           color: transparent
-          image: image-url("sprite-subscription-calendar.png")
+          image: image-url("nav_plans.png")
           position: -73px 0px
 
         span
@@ -399,7 +421,7 @@
       a:hover
         background:
           color: transparent
-          image: image-url("sprite-subscription-calendar.png")
+          image: image-url("nav_plans.png")
           position: -73px 1px
 
     div.day
@@ -548,3 +570,79 @@ html.mobile-client
     border-color: #000 !important
     margin-top: 10px
     box-shadow: inset rgba(255, 255, 255, 0.3) 0 2px 0 0, inset rgba(0, 0, 0, 0.15) 0 -2px 0 0
+
+// !Featured/My plans widget
+
+.featured-plans,
+.my-plans
+
+  h3.hd
+    background: image-url("widgets-sprite.png") no-repeat 15px -69px
+    padding: 10px 10px 10px 40px
+
+  .plans-list
+    background-color: #fff
+
+    li
+      padding: 15px
+      border-top: 1px solid #eee
+      border-bottom: none
+
+      h3
+        line-height: 1.2em
+        margin: 0 0 5px
+
+      p
+        line-height: 1.4em
+        margin: 0
+
+      span
+        display: inline-block
+        margin: 0 0 0 10px
+        color: #777
+
+    li:first-child
+      border: none
+
+// !Find friends widget
+
+.widget-find-friends
+
+  h3.hd
+    background: image-url("widgets-sprite.png") no-repeat 15px -27px
+    padding: 10px 10px 10px 40px
+
+  .bd
+    padding: 10px
+
+  .sb-user-search-query
+    width: 80%
+    height: 32px
+
+  .sb-user-search-submit
+    margin: 0 0 0 4px
+
+
+// !Comm notes widget
+
+.comm-notes
+
+  li
+    padding: 10px 55px 10px 15px
+    position: relative
+
+    img
+      width: 36px
+      +border-radius(18px)
+      position: absolute
+      top: 13px
+      right: 10px
+
+    p
+      margin: 0
+
+
+// !User settings widget
+
+#widget-user-settings
+  margin: 159px 0 0

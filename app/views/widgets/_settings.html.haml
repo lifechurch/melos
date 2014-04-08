@@ -1,9 +1,11 @@
-- links = [{path: "/settings/profile", string: t('users.edit profile')},
+:ruby
+  links = [{path: "/settings/profile", string: t('users.edit profile')},
+           {path: "/settings/notifications", string: t('users.edit notifications')},
            {path: "/settings/update_email", string: t('users.edit email')},
            {path: "/settings/password", string: t('users.edit password')},
            {path: "/settings/picture", string: t('users.edit picture')},
-           {path: "/settings/notifications", string: t('users.edit notifications')},
-           {path: "/settings/connections", string: t('users.edit connections')},
+           # removed for 3.1 Social launch - will make a comeback
+           # {path: "/settings/connections", string: t('users.edit connections')},
            {path: "/settings/devices", string: t('users.edit devices')},
            {path: "/settings/delete_account", string: t('users.edit account_existence')}]
 

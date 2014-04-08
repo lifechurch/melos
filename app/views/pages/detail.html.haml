@@ -1,0 +1,47 @@
+=render partial:"/sidebars/pages/detail"
+
+%article.social-detail
+
+  -# Moment container
+
+  .moment
+    -# the content of the moment
+    .moment-top
+      .moment-bm
+        = image_tag "social-cap-bm.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-bm-text
+          <a href="#">Peter Badonkadonkavich</a> bookmarked <a href="#">Ephesians 4:13 NKJV</a>
+
+    -# share controls, dates, and comments
+    .moment-btm
+      .moment-actions
+        %span.moment-actions-share
+          <a href="#" title="Share this with friends or family">Share</a>
+
+        %span.moment-actions-like
+          <a href="#" title="Like this">Like</a>
+
+        %span.moment-time
+          12 days ago
+
+      .moment-comments
+        %span.moment-comments-likes
+          <a href="#" title="Visit this user's profile page">Andy Knight</a> and <a href="#">12 others</a> like this.
+        %ul.moment-comments-list
+          %li.moment-comments-list-comment
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
+            %p.moment-comments-list-text
+              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be. Every stop I make, I make a new friend. Can?t stay for long, just turn around and I?m gone again.
+          %li.moment-comments-list-comment
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
+            %p.moment-comments-list-text
+              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be.
+          %li.moment-comments-list-comment
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
+            %p.moment-comments-list-text
+              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There?s a voice that keeps on calling me. Down the road, that?s where I?ll always be. Every stop I make, I make a new friend. Can?t stay for long, just turn around and I?m gone again.

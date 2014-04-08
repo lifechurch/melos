@@ -1,15 +1,18 @@
 class SubscriptionsController < ApplicationController
 
-  before_filter :force_login
-  before_filter :find_subscription, only: [:show,:destroy,:edit,:update,:calendar]
   respond_to :html
+  
+  before_filter :check_existing_subscription, only: [:create]
+  before_filter :force_login
+  before_filter :find_subscription,     only: [:show,:destroy,:edit,:update,:calendar]
+  
   rescue_from NotAChapterError, with: :ref_not_found
 
   def index
     return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
 
     @user = current_user
-    @subscriptions = @user.subscriptions
+    @subscriptions = Subscription.all(@user, auth: @user.auth)
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
   end
@@ -23,19 +26,16 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    if @subscription = subscription_for(params[:plan_id])
-      redirect_to user_subscription_path(current_user,params[:plan_id]), notice: t("plans.already subscribed") and return
-    end
-    @subscription = Plan.subscribe(params[:plan_id], current_auth)
+    @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth, private: params[:privacy].to_bool)
     flash[:notice] = t("plans.subscribe successful")
-    respond_with([@subscription], location: user_subscription_path(current_user,params[:plan_id]))
+    respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id]))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
   def destroy
     @subscription.destroy
     flash[:notice] = t("plans.unsubscribe successful")
-    respond_with([@subscription], location: user_subscriptions_path(current_user))
+    respond_with([@subscription], location: subscriptions_path(user_id: current_user.to_param))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
@@ -69,73 +69,58 @@ class SubscriptionsController < ApplicationController
       params[:send_report] == "true" ? (@subscription.add_accountability_user(current_user) and action = 'report on') : (@subscription.remove_all_accountability and action = 'report off')
     end
 
-    if(params[:add_accountability_partner])
-      @subscription.add_accountability_user(params[:add_accountability_partner])
-      action = 'partner added'
-      t_opts = {username: params[:add_accountability_partner]}
-    end
-
-    if(params[:remove_accountability_partner])
-      @subscription.remove_accountability_user(params[:remove_accountability_partner])
-      action = 'partner removed'
-      t_opts = {username: params[:remove_accountability_partner]}
-    end
-
     # Completing a day of reading
     if(params[:completed])
       @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
       if @subscription.completed?
-        redirect_to(user_subscriptions_path(current_auth.username), notice: t("plans.completed notice")) and return
+        redirect_to(subscriptions_path(user_id: current_auth.username), notice: t("plans.completed notice")) and return
       else
-        redirect_to user_subscription_path(current_user, @subscription, content: params[:content_target], day: params[:day_target], version: params[:version]) and return
+        redirect_to subscription_path(user_id: current_user.to_param, id: @subscription, content: params[:content_target], day: params[:day_target], version: params[:version]) and return
       end
     end
 
-    flash[:notice] = t("plans.#{action} successful", t_opts)
-    redirect_to edit_user_subscription_path(current_user,@subscription)
+    flash[:notice] = t("plans.#{action} successful")
+    redirect_to edit_subscription_path(user_id: current_user.to_param, id: @subscription)
   end
 
   def edit
-    self.presenter          = Presenter::Subscription.new(@subscription,params,self)
-    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
+    default_presenters
   end
 
   def calendar
-    self.presenter          = Presenter::Subscription.new(@subscription,params, self)
-    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
-  end
-
-  # Verb: the act of shelving your reading plan. Putting a book on the shelf.
-  # This is a controller/action server side end point to pull a visitor out of 'reading plan mode'
-  # Might also be a nice metric to capture, this provides an appropriate hook for capture.
-  # POST
-  def shelf
-    redirect_to(bible_path(last_read))
-  end
-
-  # action/endpoint for rendering subscription sidebar controls when not on subscription#show
-  def sidebar
-    subscription = subscription_for(params[:id])
-    render partial: "/sidebars/subscriptions/show",
-           locals: {presenter: Presenter::Sidebar::Subscription.new( subscription , params, self )},
-           layout: false
+    default_presenters
   end
 
   private
 
+  def check_existing_subscription
+    plan_id = params[:plan_id]
+    if subscription_for(plan_id)
+      redirect_to(subscription_path(user_id: current_user.to_param, id: plan_id), notice: t("plans.already subscribed")) and return
+    end
+  end
+
+  def default_presenters
+    self.presenter          = Presenter::Subscription.new(@subscription,params,self)
+    self.sidebar_presenter  = Presenter::Sidebar::SubscriptionProgress.new(@subscription,params,self)
+  end
+
   def find_subscription
     unless @subscription = subscription_for(params[:id])
-      redirect_to user_subscriptions_path(current_user)
+      redirect_to subscriptions_path(user_id: current_user.to_param)
     end
 
     # render 404 if day param is present and is not a valid day for the subscription
     day_param = params[:day]
     return render "pages/error_404" if day_param && !(1..@subscription.total_days).include?(day_param.to_i)
+
+    # Set appropriate auth/user on subscription - TODO handle this in a cleaner way
+    @subscription.auth = current_auth
+    @subscription.user = current_user
   end
 
   def subscription_for( plan_id )
-    # find with current_user to avoid extra api calls
-    Subscription.find(plan_id, current_user, auth: current_auth)
+    Subscription.find(plan_id, auth: current_auth)
   end
 
   def ref_not_found

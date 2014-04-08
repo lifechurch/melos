@@ -33,6 +33,8 @@ fr:
     users username or password invalid: "Le nom d'utilisateur ou le mot de passe est invalide."
     users username required: "Vous devez saisir un identifiant."
   meta:
+    kids_app:
+      title: "La Bible App pour Enfants"
     100million:
       title: "Ça démarre avec 100 Millions "
       description: "La Bible App a été installée pratiquement 100 millions de fois - une étape incroyable! Cela dit, ce n'est que le début. Aujourd'hui téléchargez gratuitement la Bible App et partagez-la avec vos amis. Ensemble, réécrivons l'histoire."
@@ -135,8 +137,8 @@ fr:
   live: "Live/Groupes"
   first page: "Première page"
   last page: "Dernière page"
-  next page: "Page suivante"
-  previous page: "Page précédente"
+  next page: "Page Suivante"
+  previous page: "Page Précédente"
   invalid username or password: "Nom d'utilisateur ou mot de passe invalide"
   show all bookmarks: "Montrer les %{total} signets"
   show all notes: "Voir les %{total} notes"
@@ -178,7 +180,7 @@ fr:
     cancel: "Annuler"
     pop out: "Nouvelle fenêtre"
     none found: "Pas de notes trouvées."
-    successfully deleted: "Note supprimée"
+    successfully deleted: "Note Supprimée"
   ref:
     loading secondary: "Charge les références dans la version secondaire..."
     clear verses: "Effacer les versets selectionnés"
@@ -252,7 +254,7 @@ fr:
     my badges: "Mes badges"
     revised date: "Dernière révision faite le %{date}"
     update email copy: "Entrez un nouvel email et cliquez sur Mettre à jour l'adresse Email. Vous recevrez un lien pour confirmer votre nouvelle adresse."
-    edit email: "Mettre à jour l'adresse Email"
+    edit email: "Changer l'Adresse Email"
     update email check: "Veuillez consulter votre Email et cliquer sur le lien pour confirmer votre nouvelle adresse mail"
     confirm update email success: "Merci! Vous avez mis à jour votre adresse Email."
     confirm update email error: "Désolé, un problème est survenu lors du changement de votre adresse Email."
@@ -405,9 +407,9 @@ fr:
     not found: "Les signets vous permettent de vous souvenir de ce que vous avez lu en dernier, vous servant ainsi de guide de référence rapide vers vos passages préférés ou encore vers le dernier chapitre que vous avez lu dans un livre en particulier. Afin de créer un signet, sélectionnez un verset dans le lecteur de la Bible, puis cliquez le bouton Signet."
     other user not found: "%{username} n'a pas encore de favoris."
     creation form errors: "L'erreur suivante a empêché la création de votre signet:"
-    successfully created: "Favori ajouté"
-    successfully deleted: "Favori supprimé"
-    successfully updated: "Signet mis à jour"
+    successfully created: "Favori Ajouté"
+    successfully deleted: "Favori Supprimé"
+    successfully updated: "Signet Mis à Jour"
     labels placeholder: "Séparer les différentes étiquettes avec une virgule."
     save: "Enregistrer favori"
     confirm delete: "Oui, j'en suis sûre"
@@ -525,7 +527,8 @@ fr:
     loading sidebar content: "Chargement de la barre de menu..."
   videos:
     title: "Vidéos"
-    related scripture: "Notes relatives"
+    all: "Toutes les vidéos"
+    related scripture: "Versets associés"
   licenses:
     authorized:
       heading: "Votre contenu a été autorisé."
@@ -569,7 +572,7 @@ fr:
     delete error: "Désolé, échec dans la suppression de surlignement."
   searching:
     bible: "Bible"
-    plans: "Plans de lecture"
+    plans: "Plans de Lecture"
     users: "Utilisateurs"
     notes: "Notes"
     total results: "Environ %{total} résultats"
@@ -654,6 +657,7 @@ fr:
     h3: "YouVersion est Planétaire"
     h3 sub: "Disponible dans plus de 100 langues de par le monde."
     main: "Des dizaines de millions de personnes utilisent l'application Bible App™ pour appliquer la Parole de Dieu dans leur quotidien. Téléchargez l'application gratuite et accédez à vos favoris, notes et plans de lecture où que vous vous trouviez. Profitez des centaines de versions disponibles, y compris des versions audio, tout cela à partir de votre appareil mobile."
+    button h4: "Aller sur Bible.com/fr/app"
     button h4 sub: "Sur votre appareil mobile"
     download now: "Télécharger la Bible App maintenant"
     what people: "Ce que les gens disent à propos de la Bible App..."
@@ -691,9 +695,9 @@ fr:
         study heading: "Etudier la Bible"
         study description: "<strong>Surlignez</strong>avec votre couleur préférée, <strong>sauvegardez</strong> vos versets bibliques préférés, et prenez des notes à propos de ce que vous apprenez. Non seulement vous passez le temps dans la Parole de Dieu, mais vous bâtissez aussi une histoire de votre interaction avec la Bible."
         subscribe heading: "S'abonner aux Plans biblques."
-        subscribe description: "Parcourez la Bible en entier, concentrez-vous sur un sujet, ou lisez une pensée d'un enseignant qualifié. Choisissez votre plan et chaque jour vous trouverez une sélection de la Bible rien que pour vous."
+        subscribe description: "Parcourez la Bible en entier, concentrez-vous sur un sujet, ou lisez une pensée d'un enseignant qualifié. Choisissez votre plan et chaque jour vous trouverez une sélection rien que pour vous."
         download heading: "Prenez la Bible avec vous."
-        download description: "<a href='http://youversion.com/download'>Téléchargez</a> gratuitement la Bible App sur tous les appareils mobiles. Quand vous utilisez l'application mobile, vos notes, favoris, surlignages, et plus seront automatiquement synchronisés sur tous vos appareils"
+        download description: "<a href='http://youversion.com/download'>Téléchargez</a> gratuitement la Bible App sur tous les appareils mobiles. Quand vous utilisez l'application mobile, vos notes, favoris, surbrillances, et plus seront automatiquement synchronisés sur tous vos appareils"
       get started: "Débutez avec votre compte gratuit."
       word with you: "La Parole de Dieu est avec vous."
       download action: "Téléchargez la Bible App"
@@ -744,7 +748,7 @@ fr:
     loading: "Chargement d'autres versions..."
     load error: "Désolé, il y a eu un problème de chargement d'autres versions. Fermez ce menu et rouvrez-le pour réessayer."
   reader help:
-    title: "Sélectionnez un verset."
+    title: "Sélectionnez un verset..."
     line 1: "Cliquez sur n'importe quel verset ou groupe de versets pour les marquer, surligner, créer une note ou les partager avec vos amis !"
   campaigns:
     100m:

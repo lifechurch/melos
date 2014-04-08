@@ -1,0 +1,210 @@
+- @sidebar = false
+
+%article.social-feed
+
+  -# !Moment container link_to("Detail", "/pages/detail")
+
+  -# !Verse of the day moment
+
+  .moment
+    -# !the content of the moment
+    .moment-top
+      .moment-vod
+        -# !corner cap image
+        = image_tag "social-cap-vod.png", class: "moment-img"
+        -# !Icon and title
+        %h4.moment-vod-title
+          Verse of the day
+        -# !verse text
+        %p.moment-vod-verse
+          “I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.
+        -# !verse link text
+        <a href="#" title="Go to this verse in the reader" class="moment-vod-links">John 1:5</a>
+        -# !verse versions list
+        %ul.moment-vod-list
+          -# !verse version
+          %li
+            NIV
+          %li.moment-vod-list-on
+            NKJVAS
+
+  .moment
+    -# !the content of the moment
+    .moment-top
+      .moment-bm
+        = image_tag "social-cap-bm.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-bm-text
+          <a href="#">Peter Badonkadonkavich</a> bookmarked <a href="#">Ephesians 4:13 NKJV</a>
+
+    -# !share controls, dates, and comments
+    .moment-btm
+      .moment-actions
+        %span.moment-actions-share
+          <a href="#" title="Share this with friends or family">Share</a>
+
+        %span.moment-actions-like
+          <a href="#" title="Like this">Like</a>
+
+        %span.moment-actions-comment
+          <a href="#" title="Leave a comment about this">Comment</a>
+
+        %span.moment-time
+          12 days ago
+
+      .moment-comments
+        %span.moment-comments-likes
+          <a href="#" title="Visit this user's profile page">Andy Knight</a> and <a href="#">12 others</a> like this.
+        %span.moment-comments-more
+          <a href="#" title="View all comments">View 3 more comments</a>
+        %ul.moment-comments-list
+          %li.moment-comments-list-comment
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
+            %p.moment-comments-list-text
+              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There's a voice that keeps on calling me. Down the road, that's where I'll always be. Every stop I make, I make a new friend. Can't stay for long, just turn around and I'm gone again.
+          %li.moment-comments-list-comment
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
+            %p.moment-comments-list-text
+              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There's a voice that keeps on calling me. Down the road, that's where I'll always be.
+          %li.moment-comments-list-comment
+            %span.moment-comments-list-avatar
+              = image_tag "andy_avatar.png"
+            %p.moment-comments-list-text
+              <a href="#" title="Visit this user's profile page">Stu Pedaso</a> There's a voice that keeps on calling me. Down the road, that's where I'll always be. Every stop I make, I make a new friend. Can't stay for long, just turn around and I'm gone again.
+
+        %span.moment-comments-input
+          %span.moment-comments-input-avatar
+            = image_tag "andy_avatar.png"
+          %textarea.moment-comments-textarea
+            Leave a comment...
+
+  -# !Bookmark moment
+
+  .moment
+    .moment-top
+      .moment-bm
+        = image_tag "social-cap-bm.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-bm-text
+          <a href="#" title="Visit this user's profile page">Peter Badonkadonkavich</a> bookmarked <a href="#" title="Go to this verse in the reader">Ephesians 4:13 NKJV</a>
+
+  -# !Reading plan moment
+
+  .moment
+    .moment-top
+      .moment-rp
+        = image_tag "social-cap-rp.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-rp-text
+          <a href="#" title="Visit this user's profile page">Name</a> started a new reading plan: <a href="#" title="View this reading plan">Reading plan</a>
+
+  -# !Group moment
+
+  .moment
+    .moment-top
+      .moment-grp
+        = image_tag "social-cap-grp.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-grp-text
+          <a href="#" title="Visit this user's profile page">Name</a> joined a new group: <a href="#" title="View this group">group</a>
+
+  -# !Download moment
+
+  .moment
+    .moment-top
+      .moment-dl
+        = image_tag "social-cap-dl.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-dl-text
+          <a href="#" title="Visit this user's profile page">Name</a> downloaded a new version: <a href="#" title="Learn more about this version">version</a>
+
+  -# !Note moment
+
+  .moment
+    .moment-top
+      .moment-no
+        = image_tag "social-cap-no.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-no-text
+          <a href="#" title="Visit this user's profile page">Name</a> created a new note about: <a href="#" title="Go to this verse in the reader">verse</a>
+        %span.moment-no-note
+          %p.moment-no-note-title
+            Once upon a time in America
+          %p.moment-no-note-text
+            Knight Rider, a shadowy flight into the dangerous world of a man who does not exist. Michael Knight, a young loner on a crusade to champion...
+
+  -# !Badge moment
+
+  .moment
+    .moment-top
+      .moment-bdg
+        = image_tag "social-cap-bdg.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-bdg-text
+          <a href="#" title="Visit this user's profile page">Name</a> earned a new badge:
+        %span.moment-bdg-info
+          = image_tag "https://d34xairzvf2fpg.cloudfront.net/badges/images/completed-first-reading-plan_48x48.png", class: "moment-bdg-info-img"
+          %p.moment-bdg-info-text
+            Completed 3 reading plans
+
+  -# !Video moment
+
+  .moment
+    .moment-top
+      .moment-vid
+        = image_tag "social-cap-vid.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-vid-text
+          <a href="#">Name</a> watched a video:
+        %span.moment-vid-info
+          = image_tag "https://commondatastorage.googleapis.com/static-youversionapi-com/videos/thumbnails/96/clip-thebible-burningbush-320x180.jpg", class: "moment-vid-info-img"
+          %span.moment-vid-info-text
+            %p.moment-vid-info-text-title
+              <a href="#" title="Watch this video">The baptism of Jesus Christ</a>
+            %p.moment-vid-info-text-credit
+              By <a href="#" title="Learn more about this publisher">sumguy</a>
+
+  -# !Friends moment
+
+  .moment
+    .moment-top
+      .moment-dl
+        = image_tag "social-cap-fr.png", class: "moment-img"
+        %span.moment-avatar
+          = image_tag "andy_avatar.png"
+        %p.moment-dl-text
+          <a href="#" title="Visit this user's profile page">Name</a> is now friends with:
+
+        .moment-friend-container
+          .moment-friend-box
+            %a(href="#")
+              = image_tag "andy_avatar.png", class: "moment-friend-avatar"
+              %span.moment-friend-name
+                Andy Knight
+          .moment-friend-box
+            %a(href="#")
+              = image_tag "andy_avatar.png", class: "moment-friend-avatar"
+              %span.moment-friend-name
+                Gladys Knight
+          .moment-friend-box
+            %a(href="#")
+              = image_tag "andy_avatar.png", class: "moment-friend-avatar"
+              %span.moment-friend-name
+                Once a Knight's enough
+          .moment-friend-box
+            %a(href="#")
+              = image_tag "andy_avatar.png", class: "moment-friend-avatar"
+              %span.moment-friend-name
+                Dark Knight
+        %a.moment-friend-seemore(href="#")
+          +999 more friends

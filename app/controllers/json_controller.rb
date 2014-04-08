@@ -1,43 +1,46 @@
 class JsonController < ActionController::Metal
   
+  include AbstractController::Helpers
   include ActionController::Helpers
   include ActionController::Rendering
   include ActionController::Renderers::All
   include ActionController::Cookies
 
+  include YV::Concerns::UserAuth
+
 
   # Routes
   # get "/highlights/:version/:reference"
   def reference_highlights
-    highlights = Highlight.for_reference(ref_from_params, auth: current_auth) if current_auth
-    highlights ||= []
+    highlights = current_auth ? Highlight.for_reader(auth: current_auth, user_id: current_auth.user_id, version_id: params[:version], usfm: usfm_param) : []
     render json: highlights.to_json
   end
-
-
 
   include NewRelic::Agent::Instrumentation::ControllerInstrumentation
   add_transaction_tracer :reference_highlights
 
-  private
 
-  # current_auth, ref_from_params - Ripped these from AppController - we need to move these into lib Modules 
-  # and include them where needed.
-
-  def current_auth
-    return @current_auth if @current_auth
-    if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
-      @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
-    end
+  def highlight_colors
+    render json: Highlight.colors(auth: (current_auth rescue nil)).slice(0,10).to_json
   end
 
-  def ref_from_params
-    case
-    when params.has_key?(:version)
-      Reference.new(params[:reference], version: params[:version])
-    else
-      Reference.new(params[:reference])
-    end
+  include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+  add_transaction_tracer :highlight_colors
+
+
+  def bookmarks_labels
+    labels = logged_in? ? Bookmark.labels(auth: current_auth) : []
+    render json: labels.to_json
+  end
+
+  include NewRelic::Agent::Instrumentation::ControllerInstrumentation
+  add_transaction_tracer :bookmarks_labels
+
+  private
+
+  def usfm_param
+    pieces = params[:reference].split(".")
+    "#{pieces.first.upcase}.#{pieces.second}" # JHN.1 from jhn.1.kjv
   end
 
 end

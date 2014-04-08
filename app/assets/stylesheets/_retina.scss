@@ -1,0 +1,507 @@
+// Switching this to .scss because .sass won't allow the formatting needed to target devices other than Apple's
+
+// !Retina images
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+  // !Primary nav
+
+  #nav_primary_home a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -87px;
+  }
+
+  #nav_primary_bible a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -278px;
+  }
+
+  #nav_primary_plans a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -470px;
+  }
+
+  #nav_primary_friends a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -1819px;
+  }
+
+  #nav_primary_live a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -1238px;
+  }
+
+  #nav_primary_mobile a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -1622px;
+  }
+
+  #nav_primary_videos a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -565px;
+  }
+
+  #nav_primary_bookmarks a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -852px;
+  }
+
+  #nav_primary_notes a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -1045px;
+  }
+
+  #nav_primary_highlights a.icon span {
+    background-image: image-url("nav-sprite@2x.png");
+    background-position: center -2004px;
+  }
+
+  #nav_primary_home a.icon span,
+  #nav_primary_bible a.icon span,
+  #nav_primary_plans a.icon span,
+  #nav_primary_friends a.icon span,
+  #nav_primary_live a.icon span,
+  #nav_primary_mobile a.icon span,
+  #nav_primary_videos a.icon span,
+  #nav_primary_bookmarks a.icon span,
+  #nav_primary_notes a.icon span,
+  #nav_primary_highlights a.icon span, {
+    background-size: 32px 2100px;
+  }
+
+
+  // !Hover
+
+  #nav_primary_home a.icon span:hover {
+    background-position: center 9px;
+  }
+
+  #nav_primary_bible a.icon span:hover {
+    background-position: center -182px;
+  }
+
+  #nav_primary_plans a.icon span:hover {
+    background-position: center -374px;
+  }
+
+  #nav_primary_friends a.icon span:hover {
+    background-position: center -1723px;
+  }
+
+  #nav_primary_live a.icon span:hover {
+    background-position: center -1142px;
+  }
+
+  #nav_primary_mobile a.icon span:hover {
+    background-position: center -1526px;
+  }
+
+  #nav_primary_videos a.icon span:hover {
+    background-position: center -661px;
+  }
+
+  #nav_primary_bookmarks a.icon span:hover {
+    background-position: center -756px;
+  }
+
+  #nav_primary_notes a.icon span:hover {
+    background-position: center -949px;
+  }
+
+  #nav_primary_highlights a.icon span:hover {
+    background-position: center -1908px;
+  }
+
+  // !Highlighted
+
+  .highlighted#nav_primary_home a.icon span {
+    background-position: center 9px;
+  }
+
+  .highlighted#nav_primary_bible a.icon span {
+    background-position: center -182px;
+  }
+
+  .highlighted#nav_primary_plans a.icon span {
+    background-position: center -374px;
+  }
+
+  .highlighted#nav_primary_friends a.icon span {
+    background-position: center -1723px;
+  }
+
+  .highlighted#nav_primary_live a.icon span {
+    background-position: center -1142px;
+  }
+
+  .highlighted#nav_primary_mobile a.icon span {
+    background-position: center -1526px;
+  }
+
+  .highlighted#nav_primary_videos a.icon span {
+    background-position: center -661px;
+  }
+
+  .highlighted#nav_primary_bookmarks a.icon span {
+    background-position: center -756px;
+  }
+
+  .highlighted#nav_primary_notes a.icon span {
+    background-position: center -949px;
+  }
+
+  .highlighted#nav_primary_highlights a.icon span {
+    background-position: center -1908px;
+  }
+
+  // !Menu verse actions
+  #menu_verse_actions dt,
+  #menu_verse_actions .tab-trigger {
+    background: image-url("verse_task_sprite_2x.png") no-repeat;
+    background-size: 650px 104px;
+  }
+
+  // !Profile
+
+  .top_section {
+    .profile-tabs-activity,
+    .profile-tabs-friends,
+    .profile-tabs-notes,
+    .profile-tabs-bookmarks,
+    .profile-tabs-highlights,
+    .profile-tabs-badges {
+      background: #EEEDEB image-url("profile-sprite@2x.png") no-repeat 15px top;
+      background-size: 16px 400px;
+    }
+
+    .profile-hdr-friend {
+      background: image-url("icon-check-white@2x.png") no-repeat 10px 8px #51652f;
+      background-size: 15px 14px;
+    }
+
+    .profile-tabs-activity {
+      background-position: 15px 13px;
+    }
+
+    .profile-tabs-friends {
+      background-position: 15px -51px;
+    }
+
+    .profile-tabs-notes {
+      background-position: 15px -115px;
+    }
+
+    .profile-tabs-bookmarks {
+      background-position: 15px -179px;
+    }
+
+    .profile-tabs-highlights {
+      background-position: 15px -243px;
+    }
+
+    .profile-tabs-badges {
+      background-position: 15px -307px;
+    }
+
+    .profile-tabs-activity.highlight {
+      background-position: 15px 10px;
+      width: 97px;
+    }
+
+    .profile-tabs-friends.highlight {
+      background-position: 15px -55px;
+    }
+
+    .profile-tabs-notes.highlight {
+      background-position: 15px -119px;
+    }
+
+    .profile-tabs-bookmarks.highlight {
+      background-position: 15px -182px;
+    }
+
+    .profile-tabs-highlights.highlight {
+      background-position: 15px -246px;
+    }
+
+    .profile-tabs-badges.highlight {
+      background-position: 15px -310px;
+    }
+
+    .profile-tabs-settings.highlight {
+      background-position: 15px -374px;
+    }
+  }
+
+
+  // !Blank slate pages
+
+  #main {
+
+    .slate-bookmarks {
+      background: #fff image-url("icon-bookmark-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-highlights {
+      background: #fff image-url("icon-highlight-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-notes {
+      background: #fff image-url("icon-notes-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-badges {
+      background: #fff image-url("icon-badge-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-activity {
+      background: #fff image-url("icon-activity-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+    .slate-friends {
+      background: #fff image-url("icon-group-128.png") no-repeat center 40px;
+      background-size: 64px 64px;
+    }
+
+  }
+
+  // !Home
+
+  .moment-actions-share a,
+  .moment-actions-comment a,
+  .moment-actions-like a {
+    background: image-url("social-actions-sprite@2x.png") no-repeat;
+    background-size: 20px 800px;
+  }
+
+  .moment-actions-share a {
+    background-position: 10px 10px;
+  }
+
+  .moment-actions-comment a {
+    background-position: 10px -129px;
+  }
+
+  .moment-actions-like a {
+    background-position: 10px -36px;
+  }
+
+  .moment-actions-like a.liked {
+    background-position: 10px -82px;
+  }
+
+  .moment-no-note-title {
+    background: image-url("moment-no-note-title-bg@2x.png") repeat-y left top;
+    background-size: 23px 1px;
+  }
+
+  .moment-no-note-text {
+    background: image-url("moment-no-note-text-bg@2x.png") repeat-y left top;
+    background-size: 600px 17px;
+  }
+
+  .moment-vod-calendar {
+    background: image-url("social-vod-icon@2x.png") no-repeat left center;
+    background-size: 48px 48px;
+  }
+
+  .moment-hi .moment-icon,
+  .moment-bm .moment-icon,
+  .moment-rp .moment-icon,
+  .moment-grp .moment-icon,
+  .moment-dl .moment-icon,
+  .moment-bdg .moment-icon,
+  .moment-vid .moment-icon,
+  .moment-no .moment-icon,
+  .moment-vod .moment-icon,
+  .moment-sys .moment-icon,
+  .moment-fr .moment-icon {
+    background: image-url("moment-icon-sprite@2x.png") no-repeat;
+    background-size: 520px 52px;
+  }
+
+
+ // !Moments
+
+  .moment-hi .moment-icon {
+    background-position: -259px 0;
+  }
+
+  .moment-bm .moment-icon {
+    background-position: -102px 0;
+  }
+
+  .moment-rp .moment-icon {
+    background-position: -363px 0;
+  }
+
+  .moment-grp .moment-icon {
+    background-position: -207px 0;
+  }
+
+  .moment-dl .moment-icon {
+    background-position: -155px 0;
+  }
+
+  .moment-bdg .moment-icon {
+    background-position: 51px 0;
+  }
+
+  .moment-vid .moment-icon {
+    background-position: -467px 0;
+  }
+
+  .moment-no .moment-icon {
+    background-position: -311px 0;
+  }
+
+  .moment-vod .moment-icon {
+    background-position: 3px 0;
+  }
+
+  .moment-sys .moment-icon {
+    background-position: -416px 0;
+  }
+
+  .moment-fr .moment-icon {
+    background-position: -207px 0;
+  }
+
+  .moment-comment-delete {
+    background: image-url("social-actions-sprite@2x.png") no-repeat center -417px;
+    background-size: 20px 800px;
+  }
+
+  .moment-comment-delete:hover {
+    background: image-url("social-actions-sprite.png") no-repeat center -471px;
+    background-size: 20px 800px;
+  }
+
+
+  // !Edit and delete controls
+
+  .moment-content-actions-edit {
+    background: image-url("edit-delete-sprite@2x.png") no-repeat 1px 0;
+  }
+
+  .moment-action-delete {
+    background: image-url("edit-delete-sprite@2x.png") no-repeat 0px -69px;
+  }
+
+  .moment-content-actions-edit,
+  .moment-action-delete {
+    background-size: 15px 120px;
+  }
+
+  .moment-content-actions-edit:hover {
+    background-position: 1px -35px;
+  }
+
+  .moment-action-delete:hover {
+    background-position: 0px -104px;
+  }        
+
+  // !Header
+
+  #logo {
+    background: image-url("yv_logo@2x.png") no-repeat 0 14px;
+    background-size: 150px 21px;
+  }
+
+  #header .friend-requests-btn,
+  #header .notifications-btn {
+    background: image-url("header-sprite@2x.png") no-repeat 0px -50px;
+    background-size: 28px 550px;
+  }
+
+  #header .friend-requests-btn {
+    background-position: 0px 9px;
+  }
+
+  #header .notifications-btn {
+    background-position: 0px -45px;
+  }
+
+  #header ul.nav_user > li > a {
+    background: image-url("header-sprite@2x.png") no-repeat center 0px;
+    background-size: 28px 550px;
+  }
+
+  #header ul.nav_user li.highlights a {
+    background-position: center -86px
+  }
+
+  #header ul.nav_user li.highlights a:hover {
+    background-position: center -141px
+  }   
+
+  #header ul.nav_user li.bookmarks a {
+    background-position: center -196px
+  }
+
+  #header ul.nav_user li.bookmarks a:hover {
+    background-position: center -251px
+  }   
+
+  #header ul.nav_user li.notes a {
+    background-position: center -306px
+  }
+
+  #header ul.nav_user li.notes a:hover {
+    background-position: center -361px
+  }   
+
+
+  // Reader
+
+  .color span {
+    background: image-url("menu_color_selected@2x.png") no-repeat center 3px;
+    background-size: 17px 41px;
+  }
+
+
+  // !Widgets
+
+  .featured-plans h3.hd,
+  .my-plans h3.hd {
+    background: image-url("widgets-sprite@2x.png") no-repeat 15px -69px;
+    background-size: 16px 120px;
+  }
+
+  .widget-find-friends h3.hd {
+    background: image-url("widgets-sprite@2x.png") no-repeat 15px -27px;
+    background-size: 16px 120px;
+  }
+
+  #widget-notes .hd span {
+    background: image-url("widgets-sprite@2x.png") no-repeat 0 1px;
+    background-size: 16px 120px;
+  }
+
+  .reference_tokens > li a {
+    background: #0093d0 image-url("close_reference_token@2x.png") no-repeat right 5px;
+    background-size: 24px 41px;
+  }
+
+  #menu_verse_actions #share-pane .share_logo_fb {
+    background: image-url("reader-share-sprite.png") no-repeat 0 0;
+    background-size: 32px 150px;
+  }
+
+  #menu_verse_actions #share-pane .share_logo_twitter {
+    background: image-url("reader-share-sprite.png") no-repeat 0 -43px;
+    background-size: 32px 150px;
+  }
+
+}

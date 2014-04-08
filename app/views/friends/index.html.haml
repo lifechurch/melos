@@ -1,0 +1,48 @@
+- @sidebar = false
+- @title = @me ? t('users.my friends') : t('users.user friends', user: @user.name || @user.username)
+
+- content_for :title do
+  = @title
+
+
+- if current_user_is? @user
+
+  .profile-friends
+
+    - if @friends.present?
+      .friends-count
+        %p.friends-count-have
+          = t("friends.you have N friends", count: @friends.count)
+        %span.friends-count-canhave
+          = t("friends.limit notice")
+        %span.friends-count-help
+          = t("friends.limit description")
+
+        - # Web doesn't have a way to find friends at the moment
+        - # apps only support uploading contact lists.
+        - #%a{href: "#", class: "friends-count-find action_button_blue"}
+        - #  = t("friends.find friends")
+
+    - if @friends.present? # show my friends
+      = render partial: "friends/list", locals: {friends: @friends, user: @user}
+
+    - else # I don't have friends
+      %p.friends-none
+        = t("friends.none me")
+        - #%a{href: "#", class: "friends-count-find action_button_blue"}
+        - #  = t("friends.find friends")
+
+- elsif Friend.with? @user, auth: current_auth # We can only
+  .profile-friends
+
+    = render partial: "friends/list", locals: {friends: @friends, user: @user}
+
+- else
+  .profile-friends.slate-friends
+
+    - # Not friends - We don't show a users friends publicly
+    %h2.friends-private
+      = t("friends.blank slate.heading")
+    %p
+      = t("friends.blank slate.description")
+      

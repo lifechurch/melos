@@ -33,6 +33,8 @@ lv:
     users username or password invalid: "Lietotāja vārds vai parole, ko ievadījāt ir kļūdains."
     users username required: "Jums jāievada lietotājvārds."
   meta:
+    kids_app:
+      title: "Bībeles aplikācija bērniem"
     100million:
       title: "Tas sākas ar 100 miljoniem"
       description: "Bībeles aplikācija ir uzstādīta gandrīz 100 miljonu reižu - neticami! Bet mēs tikai sākam. Lejuplādē bezmaksas Bībeles aplikāciju šodien - un tad dalies ar aplikāciju ar saviem draugiem. Radīsim vēsturi kopā."
@@ -45,7 +47,7 @@ lv:
   now: "Tagad"
   celebrating 50MM: "Svinam 50 miljonu aplikāciju instalējumus!"
   link: "Saite"
-  site search: "YouVersion"
+  site search: "YouVersion meklētājs"
   auth error: "Piedodiet, radās kļūme ar jūsu lietotājvārdu vai paroli. Lūdzu pierakstieties YouVersion lai turpinātu."
   download: "Lejuplādēt"
   visit link: "Atvērt saiti"
@@ -238,7 +240,6 @@ lv:
     edit account_existence: "Izdzēst kontu"
     delete account button: "Izdzēst manu YouVersion kontu"
     no devices: "Neviena ierīce nav pievienota YouVersion kontam"
-    no devices download copy: "Balstoties uz tiešsaistes Bībeli YouVersion.com, Bībeles aplikācija ir bezmaksas mobilā Bībele, kas var tikt uzinstalēt uz gandrīz jebkura telefona. Bībeles aplikācija ļauj lietotājiem lasīt Bībeli, dalīties ar rakstu vietām caur sociāliem tīkliem, izveidot grāmatzīmes un vairāk&mdash; viss, formātā, kas spēj turēt līdzi viņu pieaugošajam mobilajam dzīvesveidam. Apmeklējiet <a href='http://www.youversion.com/download'>youversion.com/download</a> no savas mobilās ierīces lai lejupielādētu Bībeles aplikāciju un pievienot jūsu kontu!"
     yes delete: "Jā, izdzēst manu kontu"
     account delete success: "Jūsu YouVersion konts ir veiksmīgi dzēsts. Mēs ceram jūs turpināsiet meklēt jēgpilnus veidus kā mijiedarboties ar Bībeli. Dažas no šīm aplikācijām varētu jums palīdzēt doties tālāk: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Ja jūs izdzēsīsiet savu kontu, jūs neatgriezeniski izdzēsīsiet visu savu informāciju, vēsturi un personalizāciju (kā, piemēram, piezīmes, grāmatzīmes, izcēlumus u.c.) gan YouVersion.com, gan Bībeles aplikācijā. Šo darbību nevar atgriezt nedz jūs, nedz arī mūsu komanda. Ja jūs esat pārliecināts, ka vēlaties doties tālāk, lūdzu turpiniet zemāk."
@@ -655,6 +656,7 @@ lv:
     h3: "YouVersion ir globāla"
     h3 sub: "Pieejama vairāk kā 100 valodās visā pasaulē"
     main: "Desmitiem miljonu cilvēku lieto Bībeles aplikāciju&trade; lai padarītu Dieva Vārdu par daļu no viņu ikdienas dzīves. Lejupielādē bezmaksas aplikāciju un piekļūsti savām grāmatzīmēm, piezīmēm un lasīšanas plāniem no jebkuras vietas. Izbaudi simtiem tulkojumu, ieskaitot audio, viss uz tavas mobilās ierīces."
+    button h4: "Doties uz Bible.com/app"
     button h4 sub: "Uz jūsu ierīces"
     download now: "Lejuplādējiet Bībeles aplikāciju tagad"
     what people: "Ko cilvēki saka par bezmaksas Bībeles aplikāciju..."

@@ -1,0 +1,26 @@
+:ruby
+  @title = "#{t('users.picture')} | #{@user.name || @user.username}"
+  @setting_selected = :edit #for settings layout
+  cache_bust = '?' + rand(1000000).to_s
+
+%h2
+  = t('users.edit picture')
+
+- if @results
+  = render partial: "shared/form_errors", locals: {errors: @results.errors}
+
+
+%img{src: @user_avatar_urls['px_128x128'] + cache_bust}
+- ['24x24', '48x48', '128x128', '512x512'].each do |s|
+  %img{src: @user_avatar_urls["px_#{s}"] + cache_bust, style: 'display: none'}
+
+= form_for @user, url: user_avatar_path(@user) do |f|
+  %p{style: "margin: 20px 0"}
+    = f.label :image, t('users.profile.avatar file')
+    %br
+    = f.file_field :image
+    %br
+    %br
+    = t('users.profile.avatar help')
+  %p
+    = button_tag t('my picture'), class: "action_button_green"

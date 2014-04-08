@@ -33,6 +33,8 @@ da:
     users username or password invalid: "Brugernavnet eller kodeordet du foregav virker ikke."
     users username required: "Du skal  indtaste et brugernavn."
   meta:
+    kids_app:
+      title: "Bibel App for Børn"
     100million:
       title: "Det starter med 100 millioner"
       description: "Bible App er blevet installeret næsten 100 millioner gange - en utrolig milepæl! Men vi er lige begyndt. Hent den gratis Bible App i dag - og derefter del den med vennerne. Lad os skabe historie sammen."
@@ -103,10 +105,10 @@ da:
   reader: "Læser"
   lifechurch short url: "LifeChurch.tv"
   about: "Om"
-  jobs: "Opgaver"
+  jobs: "Job"
   privacy policy: "Privatlivs politik"
   terms: "Udtryk"
-  press: "Tryk"
+  press: "Presse område"
   get support: "Hjælp"
   donate title: "Doner"
   choose language field: "Vælg dit sprog:"
@@ -570,7 +572,7 @@ da:
     delete error: "Beklager, kunne ikke fjerne markering"
   searching:
     bible: "Bibel"
-    plans: "Læse planer"
+    plans: "Læse Planer"
     users: "Brugere"
     notes: "Noter"
     total results: "Om %{total} resultater"
@@ -727,7 +729,7 @@ da:
     404 explanation: "Du kan prøve at starte igen fra <a href='%{reader_path}'>startsiden</a>. Har du stadig problemer? Kontakt vores <a href='%{support_url}'>supportteam</a>."
     404 message: "Vi beklager, siden du kigger efter kan ikke findes."
     408 message: "Vi beklager, men vores servere svarer ikke hurtigt nok."
-    408 explanation: "Vi har været advaret, og vil behandle eventuelle vedvarende problemer så hurtigt som muligt. Lad os se om vi kan få dig tilbage til din Bibellæsning!"
+    408 explanation: "Vi er blevet advaret, og vil behandle eventuelle vedvarende problemer så hurtigt som muligt. Lad os se om vi kan få dig tilbage til din Bibellæsning!"
     try again: "Prøv igen"
   versions:
     filter: "Filtrer versioner..."

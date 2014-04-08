@@ -33,6 +33,8 @@ ms:
     users username or password invalid: "Nama pengguna atau kata laluan tidak sah."
     users username required: "Anda mesti masukkan nama pengguna."
   meta:
+    kids_app:
+      title: "App Alkitab untuk Kanak-Kanak"
     100million:
       title: "Ia Bermula dengan 100 Juta"
       description: "App Alkitab telah di instalasi hampir 100 juta kali - pencapaian yang menakjubkan! Tetapi kita baru sahaja bermula. Muat turun App Alkitab percuma hari ini - dan kongsikan app ini dengan sahabat anda. Ayuh mencipta sejarah bersama."
@@ -238,7 +240,7 @@ ms:
     edit account_existence: "Hapuskan Akaun"
     delete account button: "Hapuskan Akaun YouVersion Saya"
     no devices: "Tiada peranti yang terhubung ke Akaun YouVersion anda"
-    no devices download copy: "App Injil adalah Alkitab mobil percuma yang berdasarkan Alkitab online, YouVersion.com, yang boleh dipasang ke atas hampir sebarang peranti mobil. App Injil ini membolehkan pengguna membaca Alkitab, memberitakan ayat kepada jaringan sosial mereka, bookmark petikan kegemaran, dan selainnya&mdash; segalanya dalam format yang sepadan dengan kehidupan yang semakin mobil. Kunjungilah <a href='http://www.youversion.com/download'>youversion.com/download</a> dari peranti mobil anda untuk download App Injil dan bersambung ke akaun anda!"
+    no devices download copy: "Berdasarkan Alkitab secara online, YouVersion.com, App Alkitab merupakan Alkitab mudah alih yang boleh dimuat turun dalam hampir semua peranti mudah alih. App Alkitab membolehkan pengguna untuk membaca Alkitab, berkongsi ayat dengan jaringan sosial mereka, bookmark petikan kegemaran mereka, dan banyak lagi&mdash;semua dalam format yang sejajar dengan perkembangan gaya hidup mudah alih mereka. Sila layari <a href='https://www.bible.com/download'>bible.com/download</a> daripada peranti mudah alih anda untuk memuat turun App Alkitab dan sambungkan ke akaun anda!"
     yes delete: "Ya, Hapuskan Akaun Saya"
     account delete success: "Akaun YouVersion anda sudah selesai dihapuskan. Kami harap anda terus berinteraksi dengan Alkitab. Anda mungkin mendapat bantuan dari beberapa app di sini: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Jika anda mneghapuskan akaun, informasi, sejarah, dan input peribadi (seperti nota, bookmark, highlight dan selainnya) dalam YouVersion dan App Injil akan kekal dihapuskan. Tindakan ini tidak boleh diterbalikkan oleh anda ataupun kami. Jika anda pasti, sila berterusan di bawah."

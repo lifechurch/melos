@@ -1,5 +1,65 @@
 module ApplicationHelper
 
+  def moment_whos_liked_string(moment)
+    total_likes = moment.likes.count
+    last_liker  = moment.likes.last.user
+
+    # Last liker is me and there are more than 2 likes
+    if last_liker.id == current_auth.user_id and total_likes >= 2
+      last_liker = moment.likes[total_likes-2].user
+    end
+
+    last_liker_link = content_tag(:a,last_liker.name, href:"/users/#{last_liker.username}")
+
+    if moment.likes_count == 1
+      "#{last_liker_link} likes this".html_safe
+    else
+      more_link = link_to("#{moment.likes_count - 1} more", moment.to_path)
+
+      "#{last_liker_link} and #{more_link} like this".html_safe
+    end
+  end
+
+
+  # Appropriate method to use to check if current_user is the passed in user
+  # Using current_auth avoids an extra API call to users#view for current user information
+  def current_user_is?( user )
+    current_auth && current_auth.username == user.username
+  end
+
+  def current_user_moment?(moment)
+    moment.user_id == current_auth.user_id
+  end
+
+  def is_reader_page?
+    controller_name == "references" && action_name == "show" ||
+    controller_name == "subscriptions" && action_name == "show" ||
+    controller_name == "plans" && action_name == "sample"
+  end
+
+  def client_settings
+    @client_settings ||= YV::ClientSettings.new(cookies)
+  end
+
+  def current_date
+    current_user ? (DateTime.now.utc + current_user.utc_date_offset).to_date : Date.today
+  end
+
+  def api_dt_time_ago(api_created_dt)
+    time = if api_created_dt.is_a?(Fixnum)
+      Time.at(api_created_dt)
+    else
+      DateTime.parse(api_created_dt)
+    end
+    # TODO - localize 'ago'
+    time_ago_in_words(time.in_time_zone) + " ago"
+  end
+
+
+  def usfm_from_moment(references)
+    references.usfm.join("+")
+  end
+
   def available_locales
     @available_locales ||= I18n.available_locales
   end
@@ -24,9 +84,10 @@ module ApplicationHelper
     @html_classes = classes if classes
   end
 
-  def object_status   #TODO: More useful name?
+  def object_status   #TODO: More useful name? WTF is up with this method.
     status = {}
     status[t('notes.public')] = 'public'
+    status[t('notes.friends')] = 'friends'
     status[t('notes.private')] = 'private'
     status[t('notes.draft')] = 'draft'
     status
@@ -45,7 +106,7 @@ module ApplicationHelper
 
   def bible_path(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
-    ver = opts[:version_id] || opts[:version] || ref.version
+    ver = opts.delete(:version)
     reference_path(ver, ref, opts)
   end
 
@@ -118,21 +179,6 @@ module ApplicationHelper
 
   def is_dark?(hex_color)
     convert_to_brightness_value(hex_color) <= 382.5 #halfway between black (0+0+0 = 0) and white (255+255+255 = 765)
-  end
-
-  def scale_frame(html, opts={})
-    h_w = html.scan(/<iframe width=\"(\d+)\" height=\"(\d+)\"/).flatten
-    unless h_w.empty?
-      ratio = 1
-      if opts[:width]
-        ratio = opts[:width].to_f/h_w[0].to_f
-      end
-      scaled_w = (h_w[0].to_f * ratio).to_i
-      scaled_h = (h_w[1].to_f * ratio).to_i
-
-      html = html.gsub(/<iframe width=\"\d+\" height=\"\d+\"/, '<iframe width="' + scaled_w.to_s + '" height="' + scaled_h.to_s + '"')
-    end
-    html
   end
 
   private

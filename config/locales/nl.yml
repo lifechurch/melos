@@ -33,6 +33,8 @@ nl:
     users username or password invalid: "De gebruikersnaam of het wachtwoord is ongeldig."
     users username required: "Je moet een gebruikersnaam invoeren."
   meta:
+    kids_app:
+      title: "De Bijbel App voor kinderen"
     100million:
       title: "Het begint met 100 miljoen"
       description: "De Bijbel App is al bijna 100 miljoen keer geïnstalleerd - een geweldige mijlpaal! Maar we zijn pas begonnen. Download vandaag de gratis Bijbel App nog -en deel de app met jouw vrienden. Laten we samen geschiedenis maken."
@@ -139,7 +141,7 @@ nl:
   previous page: "Vorige pagina"
   invalid username or password: "Ongeldige gebruikersnaam of wachtwoord"
   show all bookmarks: "Alle %{total} bladwijzers weergeven"
-  show all notes: "Alle %{total} notities weergeven"
+  show all notes: "Bekijk alle %{total} notities"
   recent bookmarks: "Recente bladwijzers"
   percentage display: "%{number}%"
   myself: "Ik"
@@ -238,7 +240,7 @@ nl:
     edit account_existence: "Account verwijderen"
     delete account button: "Mijn YouVersion-account verwijderen"
     no devices: "Er zijn geen apparaten gekoppeld aan je YouVersion-account."
-    no devices download copy: "Gebaseerd op de online Bijbel, YouVersion.com, is de Bijbel App een gratis mobiele Bijbel die kan worden geïnstalleerd op bijna elk mobiel apparaat. De Bijbel App stelt gebruikers in staat om te lezen in de Bijbel, verzen te delen met sociale netwerken, bladwijzers te plaatsen bij  favoriete passages en nog veel meer&mdash;in een formaat dat past bij de steeds mobielere levensstijl. Bezoek <a href='http://www.youversion.com/download'>youversion.com/download</a> vanaf je mobiele apparaat om de Bijbel App te downloaden en meld je aan voor een account!"
+    no devices download copy: "De Bijbel App is een gratis mobiele Bijbel die op vrijwel elk mobiel apparaat kan worden geïnstalleerd, en is gebaseerd op de online Bijbel, YouVersion.com. De Bijbel App laat haar gebruikers de Bijbel lezen, verzen delen met hun sociale media, bladwijzers plaatsen bij favoriete gedeeltes en meer&mdash;dit alles op een manier die bij mobiele levensstijl past. Ga naar <a href='https://www.bible.com/download'>bible.com/download</a> met jouw mobiele apparaat en koppel jouw account!"
     yes delete: "Ja, verwijder mijn account"
     account delete success: "Je YouVersion-account is succesvol verwijderd. We hopen dat je nog steeds op waardevolle wijze interactie beleefd met de Bijbel. Enkele van deze apps zouden je kunnen helpen om voort te gaan: <a href= 'http://www.youversion.com/free-bible-apps'>http://www.youversion.com/free-bible-apps</a>."
     delete account description: "Wanneer je je account verwijdert, verwijder je blijvend al je informatie, geschiedenis en personalisatie (zoals notities, bladwijzers, markeringen etc.) op YouVersion.com en in de Bijbel App. Deze handeling kan niet ongedaan worden gemaakt door jou of door ons team. Als je er zeker van bent dat je wil doorgaan, ga dan onderaan verder."
@@ -405,7 +407,7 @@ nl:
     not found: "Bladwijzers geven je een snelle verwijzing naar je favoriete passages of naar het laatste hoofdstuk dat je gelezen hebt in een bepaald boek. Om een bladwijzer toe te voegen, selecteer je een vers in het Bijbelleesvenster en klik je vervolgens op de Geselecteerd-knop aan de bovenkant van het leesvenster."
     other user not found: "%{username} heeft nog geen bladwijzers geplaatst."
     creation form errors: "De volgende fout(en) zorgden ervoor dat je bladwijzer niet werd aangemaakt:"
-    successfully created: "Bladwijzer geplaatst"
+    successfully created: "Bladwijzer aangemaakt"
     successfully deleted: "Bladwijzer verwijderd"
     successfully updated: "Bladwijzer bijgewerkt"
     labels placeholder: "Scheid meerdere labels met komma's."
@@ -747,7 +749,7 @@ nl:
     load error: "Sorry, er ontstond een probleem bij het laden van meer versies. Sluit dit menu en heropen het om het opnieuw te proberen."
   reader help:
     title: "Selecteer een vers..."
-    line 1: "Klik of raak een vers of verzen aan om een bladwijzer, makering, een notitie aan te maken, of deel ze met je vrienden!"
+    line 1: "Klik op of raak een vers of verzen aan om een bladwijzer, makering of notitie aan te maken, of deel ze met je vrienden!"
   campaigns:
     100m:
       logo: "YouVersion: De Bijbel app"

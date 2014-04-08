@@ -33,6 +33,8 @@ vi:
     users username or password invalid: "Tên sử dụng hoặc mật khẩu không hợp lệ."
     users username required: "Bạn cần nhập tên sử dụng."
   meta:
+    kids_app:
+      title: "Ứng Dụng Kinh Thánh Cho Trẻ Em"
     100million:
       title: "Khởi đầu với 100 triệu"
       description: "Ứng dụng Kinh Thánh đã đạt 100 triệu lượt cài đặt -  một cột mốc tuyệt vời! Nhưng chúng ta chỉ mới khởi đầu. Hãy tải Ứng dụng Kinh Thánh và chia sẻ với bạn bè hôm nay! Hãy cùng nhau làm nên lịch sử!"
@@ -117,7 +119,7 @@ vi:
   search placeholder: "Tìm kiếm..."
   search: "Tìm kiếm"
   book: "Sách"
-  filter book: "Lựa sách..."
+  filter book: "Chọn sách..."
   save: "Lưu"
   cancel: "Hủy"
   try the beta: "Thử phiên bản Beta"
@@ -144,7 +146,7 @@ vi:
   percentage display: "%{number}%"
   myself: "Chính tôi"
   none found: "Không tìm thấy gì phù hợp với tiêu chí của bạn. Hãy thử mở rộng tìm kiếm."
-  paginated items shown: "%{first_shown} %{last_shown} trong số %{total_available}"
+  paginated items shown: "%{first_shown} %{last_shown} trong %{total_available}"
   160 character limit: "Dưới 160 ký tự"
   recent versions: "Sử dụng gần đây"
   or:
@@ -178,7 +180,7 @@ vi:
     cancel: "Hủy"
     pop out: "Hiện lên"
     none found: "Không tìm thấy ghi chú nào..."
-    successfully deleted: "Ghi chú đã tháo bỏ"
+    successfully deleted: "Đã xóa ghi chú"
   ref:
     loading secondary: "Đang tải các tham khảo trong bản song hành..."
     clear verses: "Bỏ các câu được chọn"
@@ -238,7 +240,7 @@ vi:
     edit account_existence: "Xóa tài khoản"
     delete account button: "Xóa tài khoản YouVersion của tôi"
     no devices: "Không có thiết bị nào kết nối với tài khoản YouVersion của bạn"
-    no devices download copy: "Dựa trên Kinh Thánh trực tuyến tại YouVersion.com, Ứng dụng Kinh Thánh là Kinh Thánh di động miễn phí mà bạn có thể cài đặt hầu như trên mọi thiết bị. Ứng dụng Kinh Thánh cho phép người sử dụng đọc và chia sẻ Kinh Thánh trên các mạng xã hội, đánh dấu phân đoạn yêu thích, và hơn thế nữa; tất cả được thiết kế để bắt kịp nhu cầu sử dụng di động đang tăng cao hiện nay. Hãy vào trang <a href='https://www.bible.com/download'>bible.com/download</a> trên thiết bị di động của bạn để tải Ứng dụng Kinh Thánh và kết nối tài khoản!"
+    no devices download copy: "Dựa trên Kinh Thánh trực tuyến tại YouVersion.com, App Kinh Thánh là Ứng dụng Kinh Thánh di động miễn phí mà bạn có thể cài đặt trên hầu hết thiết bị. App Kinh Thánh cho phép người sử dụng đọc và chia sẻ Kinh Thánh trên các mạng xã hội, đánh dấu phân đoạn yêu thích, và hơn thế nữa&mdash;tất cả được thiết kế để bắt kịp nhu cầu sử dụng di động đang tăng cao hiện nay. Hãy vào trang <a href='https://www.bible.com/download'>bible.com/download</a> trên thiết bị di động của bạn để tải App Kinh Thánh và kết nối tài khoản!"
     yes delete: "Vâng, hãy xóa tài khoản của tôi."
     account delete success: "Tài khoản YouVersion của bạn đã được xóa thành công. Chúng tôi hi vọng bạn sẽ tiếp tục tìm được những phương thức hiệu quả để tương giao với Lời Chúa. Có thể một vài ứng dụng sau sẽ hữu ích cho bạn: <a href='https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
     delete account description: "Nếu bạn xóa tài khoản của mình, bạn sẽ vĩnh viễn mất toàn bộ thông tin, lịch sử, và điều chỉnh cá nhân (như ghi chú, đánh dấu, tô màu, v.v...) trong YouVersion.com cũng như trong Ứng dụng Kinh Thánh. Chính bạn hoặc đội ngũ kỹ thuật cũng không thể đảo ngược hành động này. Nếu bạn khẳng định mình muốn xóa tài khoản, hãy tiếp tục dưới đây."
@@ -406,8 +408,8 @@ vi:
     other user not found: "%{username} chưa lưu đánh dấu nào."
     creation form errors: "Các lỗi sau khiến bạn không tạo đánh dấu được:"
     successfully created: "Đã thêm đánh dấu"
-    successfully deleted: "Đã gỡ bỏ đánh dấu"
-    successfully updated: "Đánh dấu đã cập nhật"
+    successfully deleted: "Đã xóa đánh dấu"
+    successfully updated: "Đã cập nhật đánh dấu"
     labels placeholder: "Tách các nhãn tên bằng dấu phẩy."
     save: "Lưu đánh dấu"
     confirm delete: "Vâng, tôi chắc!"
@@ -570,7 +572,7 @@ vi:
     delete error: "Xin lỗi bạn, không gỡ bỏ tô màu được."
   searching:
     bible: "Kinh Thánh"
-    plans: "Kế hoạch đọc"
+    plans: "Kế hoạch"
     users: "Người sử dụng"
     notes: "Ghi chú"
     total results: "Khoảng %{total} kết quả"
@@ -607,7 +609,7 @@ vi:
   download ad:
     title: "Tải Ứng dụng Kinh Thánh miễn phí"
     line 1: "Hàng trăm bản dịch Kinh Thánh"
-    line 2: "từ hơn 100 ngôn ngữ khác nhau"
+    line 2: "các ngôn ngữ khác nhau - Kinh Thánh"
     line 3: "đồng hành cùng bạn ở mọi nơi."
     download: "Tải bây giờ"
   about page:
@@ -653,7 +655,7 @@ vi:
   mobile page:
     h2: "Lời Chúa đồng hành cùng bạn"
     h3: "YouVersion được phổ biến toàn cầu"
-    h3 sub: "Với hơn 100 ngôn ngữ trên toàn thế giới"
+    h3 sub: "Với hơn 300 ngôn ngữ trên toàn thế giới."
     main: "Hàng chục triệu người đang sử dụng Ứng dụng Kinh Thánh để Lời Chúa trở thành một phần trong cuộc sống hằng ngày của họ. Hãy tải ứng dụng miễn phí và truy cập các đánh dấu, ghi chú, và kế hoạch đọc Kinh Thánh của bạn từ bất cứ nơi đâu. Chọn lựa từ hàng trăm bản dịch, bao gồm Kinh Thánh phát thanh, tất cả chỉ trong thiết bị di động của bạn!"
     button h4: "Vào Bible.com/vi/app"
     button h4 sub: "Trên thiết bị di động của bạn"
@@ -730,7 +732,7 @@ vi:
     408 explanation: "Chúng tôi đã nghe đến và sẽ cố gắng giải quyết nhanh chóng bất cứ vấn đề dai dẳng nào. Bây giờ chúng ta hãy thử trở lại bài đọc Kinh Thánh!"
     try again: "Thử lại"
   versions:
-    filter: "Lựa bản dịch..."
+    filter: "Chọn bản dịch..."
     see all: "Xem toàn bộ bản dịch..."
     courtesy of: "%{abbreviation} được cung cấp bởi %{publisher}"
     learn more: "Tìm hiểu thêm"
@@ -776,4 +778,4 @@ vi:
         copy: "Đọc, Nghe, Xem và Chia sẻ. Hãy tải Ứng dụng Kinh Thánh về điện thoại hoặc máy tính bảng của bạn: <a href='http://bible.com/app'>Tải về</a>"
       sidebar:
         tagline: "Hãy cùng làm nên lịch sử!"
-        button: "Chia sẻ Ứng dụng Kinh Thánh"
+        button: "Chia sẻ App Kinh Thánh"

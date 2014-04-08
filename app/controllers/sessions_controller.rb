@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       sign_in(@user, params[:password])
       location = redirect_path
       clear_redirect
-      redirect_to(location || bible_path) and return
+      redirect_to(moments_path) and return
     else
       render "new" and return
     end
@@ -25,7 +25,6 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    clear_redirect
     redirect_to (params[:redirect] || bible_path)
   end
 end

@@ -1,0 +1,5 @@
+.moment
+  .moment-psa
+    %p.moment-psa-text
+      = t("moments.cta.profile update text")
+    = link_to( t("moments.cta.profile update button"), edit_user_path(current_auth.username), class: "moment-psa-btn action_button_blue")

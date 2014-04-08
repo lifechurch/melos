@@ -2,28 +2,46 @@
   # Partial locals params
   # Required
   # - note : an instance of Note
+  # - results: the results of attempting to save a note
 
-= form_for note, as: :note, url: note.id ? note_path(note.id) : notes_path, :html => {class: "full_page_form"} do |f|
-  = render partial: "shared/form_errors", locals: {errors: note.errors}
+
+= form_for note, as: :note, url: note.id ? note_path(note.id) : notes_path, html: {class: "full_page_form", "data-color-form" => true } do |f|
+  = render(partial: "shared/form_errors", locals: {errors: results.errors}) unless results.nil?
 
   %p
-    = f.label :title, t("notes.title field")
+    = f.label :title, t("notes.form.title field")
     = f.text_field :title, {style: "width: 100%;"}
-  %div
-    = f.label :content, t("notes.content field")
-    %div{style: "margin: 20px 0;"}
-      = f.text_area :content, size: "30x10"
+  
+  %p
+    = f.label :content, t("notes.form.content field")
+    = f.text_area :content, size: "30x10"
+
+
+  %p
+    = f.hidden_field :color, class:"selected-color"
+    %label 
+      = t("notes.form.highlight field")
+      .color_picker_list{"data-current-color" => note.color}
+        .color_picker
 
   - # if reference_list is empty, no need to show these fields.  
   - # Causes an error otherwise when sending empty note[references]/note[version_id] params
-  - unless note.reference_list.empty?
-    %p
-      = f.label :reference, t("notes.reference field")
-      = note.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe
-      = hidden_field_tag "note[references]", note.reference_list.to_flat_usfm
-      = hidden_field_tag "note[version_id]", note.version_id
+  - unless note.references.blank?
+    :ruby    
+      raw_refs = note.references
+      usfms    = raw_refs.collect {|refhash| refhash["usfm"]}.join(",") #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
+      human    = raw_refs.collect {|refhash| refhash["human"]}.join(", ")
+    %p  
+      = f.label :references, t("notes.form.reference field")
+      = f.hidden_field :usfm_references, value: usfms
+      %span.refs
+        = human
+
+
+
+
   %p
-    = f.label :user_status, t("notes.status field")
+    = f.label :user_status, t("notes.form.status field")
     = f.select :user_status, options_for_select(object_status, note.user_status)
   %p
-    = f.submit t("notes.save"), {class: "action_button_green float_right"}
+    = f.submit t("notes.form.save button"), {class: "action_button_green float_right"}

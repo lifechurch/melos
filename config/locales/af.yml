@@ -23,22 +23,24 @@ af:
     users email email rfc: "Die e-pos adres wat jy verskaf het is ongeldig."
     users email not available: "'n Rekening met hierdie e-pos adres is reeds geregistreer."
     users email not found: "Daar is geen rekening met hierdie e-pos adres nie."
-    users email required: "Jy moet 'n nuwe epos adres verskaf."
+    users email required: "Jy moet 'n epos adres verskaf."
     users hash verified: "Hierdie rekening is alreeds bevestig."
     users password change: "Jou nuwe wagwoord moet verskil van jou vorige wagwoord."
     users password length: "Jou wagwoord moet ten minste 6 karakters lank wees."
     users password required: "Jy moet jou wagwoord insleutel."
-    users username alpha numeric extra: "Die gebruikersnaam mag net uit letters, nommers of strepies bestaan."
+    users username alpha numeric extra: "Die gebruikersnaam moet uit letters, nommers of strepies bestaan."
     users username not available: "Die gebruikersnaam wat jy gekies het is nie beskikbaar nie."
     users username or password invalid: "Die gebruiksnaam of wagwoord wat jy voorsien het is ongeldig."
     users username required: "Jy moet 'n gebruikernaam insleutel."
   meta:
+    kids_app:
+      title: "Die Bybel Toep vir Kinders"
     100million:
       title: "Dit begin met 100 Miljoen"
-      description: "Die Bybel App is amper 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel App vandag af - en deel die app met jou vriende.  Help on om geskiedenis te maak."
+      description: "Die Bybel Toep is amper 'n 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel Toep vandag af - en deel dan die toep met jou vriende.  Help ons om saam geskiedenis te maak."
     mobile:
-      title: "Die Bybel App"
-      description: "Miljoene mense gebruik die Bybel App om God se Woord te lees, te luister, te kyk en te deel van hulle daaglikse lewe.  Laai die gratis app af en verkry toegang tot jou boekmerke, notas en leesplanne ol enige plek. Grniet honderde weergawes, insluitend oudio, alles op jou mobiele toerusting."
+      title: "Die Bybel Toep"
+      description: "Miljoene mense gebruik die Bybel Toep om God se Woord te lees, te luister, te kyk en deel te maak van hulle daaglikse lewe.  Laai die gratis toep af en verkry toegang tot jou boekmerke, notas en leesplanne op enige plek. Geniet honderde weergawes, insluitend audio, alles op jou mobiele toerusting."
     connections:
       index:
         title: "Gekoppelde Rekeninge"
@@ -64,7 +66,7 @@ af:
   connect to: "Koppel met jou %{connection} rekening"
   deleted connection: "Koppeling met %{connection} suksesvol verwyder."
   deleted connection error: "Jammer, daar was 'n fout met die ontkoppeling van jou konneksie met %{connection}."
-  connection marketing: "YouVersion is baie meer pret saam met vriende! Verbind jou YouVersion rekening met jou ander sosiale netwerk rekeninge en kry jou vriende onmiddelik op YouVersion .  Deur jou rekeninge met mekaar te verbind, maak dit moontlik om inhoud te deel deur net 'n oaar knoppies te druk.  Ons sal nooit iets van jou plaas sonder jou toestemming nie."
+  connection marketing: "YouVersion is baie meer pret saam met vriende! Verbind jou YouVersion rekening met jou ander sosiale netwerk rekeninge en kry jou vriende onmiddelik op YouVersion .  Deur jou rekeninge met mekaar te verbind, maak jy dit moontlik om inhoud te deel deur net 'n paar knoppies te druk.  Ons sal nooit iets van jou plaas sonder jou toestemming nie."
   next step connections: "Volgende: Koppel jou rekeninge en vind jou vriende"
   no notes found: "%{username} het geen notas nie."
   no recent activity: "%{username} het geen onlangse aktiwiteit nie."
@@ -238,7 +240,6 @@ af:
     edit account_existence: "Sluit Rekening"
     delete account button: "Sluit My YouVersion Rekening"
     no devices: "Geen toestelle gekoppel aan jou YouVersion Rekening nie"
-    no devices download copy: "Gebaseer op die aanlyn Bybel, YouVersion.com, is die Bybel App 'n gratis mobiele Bybel wat op bykans enige toestel geinstalleer kan word. Die Bybel App laat gebruikers toe om die Bybel te lees, verse te deel met sosiale netwerke, gunsteling gedeeltes te boekmerk en vele meer&mdash:alles in 'n formaat wat tred hou met jou snelgroeiende mobiele leefstyl. Besoek <a href='http://www.youversion.com/download'>youversion.com/download</a>  van jou mobiele toestel om die Bybel App af te laai en koppel jou rekening!"
     yes delete: "Ja, Sluit My Rekening"
     account delete success: "Jou YouVersion rekening is suksesvol gesluit. Ons hoop dat jy sal voortgaan om betekenisvolle maniere te vind om interaktief met die Bybel te verkeer. Van hierdie apps mag dalk handig te pas kom soos jy aanbeweeg:  <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "As jy jou rekening sluit, sal jy permanent van al jou informasie, geskiedenis, en verpersoonliking (soos notas, boekmerke, kleurmerke, ens.) binne YouVersion.com en die Bible App geillimineer word. Hierdie aksie kan nie deur jou of ons span omgekeer word nie. Indien jy seker is dat jy wil aangaan, gaan voort hieronder."
@@ -252,7 +253,6 @@ af:
     my badges: "My Kentekens"
     revised date: "Laas hersien op %{date}"
     update email copy: "Tik 'n nuwe e-pos adres in en kliek Verander E-Pos. Ons sal 'n skakel stuur waarby jy die nuwe e-pos adres moet bevestig."
-    edit email: "Verander E-Pos"
     update email check: "Kyk asb. deur jou e-pos en kliek die skakel om jou nuwe e-pos adres te bevestig."
     confirm update email success: "Dankie! Jou e-pos adres is verander."
     confirm update email error: "Jammer, daar het 'n probleem ingesluip met die voltooiing van die e-pos adres verandering."
@@ -529,15 +529,15 @@ af:
     related scripture: "Verwante Skrif"
   licenses:
     authorized:
-      heading: "Jou inhoud is bemagtig."
+      heading: "Jou inhoud is goedgekeur."
       description: "Jy kan nou die  <a href='%{content_link}'> se inhoud wat jy gekoop het lees </a> van  %{vendor} op YouVersion!"
-    has errors: "Daar was 'n fout met jou versoek:"
+    has errors: "Daar was foute met jou versoek:"
     confirm:
-      email: "Om die video inhoud wat jy aangekoop het, te bemagtig, moet jy asseblief jou epos nagaan vir 'n bevestigings epos van YouVersion.  Kliek op die adres binnd die epos om jou registrasie te bevestig."
+      email: "Om die video inhoud wat jy aangekoop het, te bemagtig, moet jy asseblief jou epos nagaan vir 'n bevestigings e-pos van YouVersion.  Kliek op die adres binne die e-pos om jou registrasie te bevestig."
     request:
-      invalid_vendor_signature: "Lisensie verifiering was onsuksesvol: Die verskaffer se handtekening kon nie verifieer word nie."
-      invalid_vendor_id: "Lisensiering varifiering was onsuksesvol: Die verskaffer se ID is verkeerd."
-      invalid_item_ids: "Lisensue verifiering was onsuksesvol:ongemagtife item."
+      invalid_vendor_signature: "Lisensie verifiëring was onsuksesvol:  Die verskaffer se handtekening kon nie verifieer word nie."
+      invalid_vendor_id: "Lisensiering varifiëring was onsuksesvol: Die verskaffer se ID is verkeerd."
+      invalid_item_ids: "Lisensue verifiëring was onsuksesvol: Ongemagtife items"
     vendor_transaction_id:
       duplicate: "Transaksie id: Die transaksie id is alreeds geregistreer."
     auth:
@@ -570,7 +570,7 @@ af:
     delete error: "Jammer, kon nie kleurmerk verwyder nie."
   searching:
     bible: "Bybel"
-    plans: "Lees planne"
+    plans: "Leesplanne"
     users: "Gebruikers"
     notes: "Notas"
     total results: "Omtrent %{total} Uitslae"
@@ -752,28 +752,28 @@ af:
     100m:
       logo: "YouVersion: Die Bybel app"
       tagline: "Dit begin met<em>100 miljoen</em>"
-      intro: "Kan die Bible App 100 miljoen inskrywings bereik voor ons 5de herdenking die 10de Julie? Slegs met julle hulp!"
-      after: "As gevolg van jou het die Bible App 100 miljoen installerings gekry by ons 5de herdenking op die 10de Julie.  Dankie!"
+      intro: "Kan die Bible Toep 100 miljoen inskrywings bereik voor ons 5de herdenking die 10de Julie? Slegs met julle hulp!"
+      after: "As gevolg van jou het die Bible Toep 100 miljoen installerings gekry by ons 5de herdenking op die 10de Julie.  Dankie!"
       share:
         with friends: "Deel met jou vriende"
         fb:
           dialog name: "Het jy die Bybel App?"
-          dialog desc: "Ek is mal oor die Bybel App!  Dit help my werklik om die Bybel groter deel van my lewe te maak.  Dit laat my toe om gedagtes uit te lig, luister na oudio Bybels, notas te maak, volg oordenking programme...selfs om videos te kyk!  Gaan laai dit nou af (dit is gratis): http://www.bible.com/app"
+          dialog desc: "Ek is mal oor die Bybel Toep!  Dit help my werklik om die Bybel meer deel van my lewe te maak.  Dit laat my toe om gedagtes uit te lig, te luister na oudio Bybels, om notas te maak, oordenking programme te volg...en selfs om videos te kyk!  Gaan laai dit nou af (dit is gratis): http://www.bible.com/app"
         tw:
-          tweet: "Die @YouVersion Bybel App is permanent op my tuis skerm. Lees, kyk, luistet en deel...alles in 'n gratis app: bible.com/app"
+          tweet: "Die @YouVersion Bybel Toep is permanent op my tuis skerm. Lees, kyk, luister en deel...alles in 'n gratis toep: bible.com/app"
         em:
-          subject: "Het jy die Bybel App?"
+          subject: "Het jy die Bybel Toep?"
           body: "Ek geniet vreeslik baie die Bybel App van YouVersion en gedink jy sal ook.  Ek maak deesdae die Bybel baie gereeld oop, want dit is so maklik om te lees, kyk, luister en te deel.  Dit het selfs planne, wat 'n gedeelte van die Bybel uitgesoek het en wag vir my elke dag.  \n\nJy kan dit ook kry (Gratis) vir enige mobiele toerusting by:  \nhttp://www.bible.com/app"
       body:
-        p1: "10de Julie gaan 'n groot dag wees.  Nie net is dit die Bybel App se 5de verjaarsdag nie, dit merk ook did 5de herdenking van die bekendstelling van Apple iTunes se winkel."
+        p1: "Die 10de Julie gaan 'n groot dag wees.  Dit is nie net die Bybel Toep se 5de verjaarsdag nie, dit merk ook die 5de herdenking van die bekendstelling van Apple iTunes se winkel."
         p2: "Self groter? Met jou hulp, is vandag die dag wat ons 100 miljoen installasies gaan bereik"
         p3: "Ons het geleer dat God mylpale soos die gebruik om om groter groei te stimuleer."
         p4: "Kom ons maak saam geskiedenis."
         after p1: "YouVersion verteenwoordig `n globale samewerking van mense wat `n passie het om ander te help om by God se Woord betrokke te raak.  Aan al die Bybel gemeenskappe, publiseerders, kerke, pastore en vrywilligers: Baie dankie vir bydraes!"
         after p2: "Wat die mylpaal so besonders maak, is wat dit verteenwoordig: vandag is daar `n ongelooflike groot hoeveelheid mense wat in interaksie is met die Bybel. Dit is inspirerend om te sien hoe God werk en ons glo dit is net die begin. <em>Dit begin met 100 miljoen</em>."
       ad:
-        title: "Die Bybel App is heeltemal gratis en fantastiese wyse om die Bybel te ontdek."
-        copy: "Lees, Luister, Kyk of Deel.  Kry die Bybel App vir jou slim telefoon of tablet: <a href='http://bible.com/app'>Laai hom nou af</a>"
+        title: "Die Bybel Toep is heeltemal gratis en 'n fantastiese wyse om die Bybel te ontdek."
+        copy: "Lees, Luister, Kyk of Deel.  Kry die Bybel Toep vir jou slimfoon of tablet: <a href='http://bible.com/app'>Laai hom nou af</a>"
       sidebar:
-        tagline: "Kom ons maak Geskiedenis. "
-        button: "Deel die Bybel App. "
+        tagline: "Kom ons maak saam Geskiedenis. "
+        button: "Deel die Bybel Toep. "

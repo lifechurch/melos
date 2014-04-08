@@ -1,0 +1,56 @@
+- plan_href = logged_in? ? subscriptions_path(user_id: current_auth.username) : plans_path
+- live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"
+
+#nav_mobile.mobile{role:"navigation"}
+  %nav
+    %ul
+      %li#nav_mobile_home
+        %a.icon{href: moments_path}
+          %span= t('home')
+      %li#nav_mobile_bible
+        %a.icon{href:'/bible'}
+          %span= t('bible')
+      %li#nav_mobile_plans
+        %a.icon{href: plan_href}
+          %span=t("plans.title")
+      %li#nav_mobile_videos
+        %a.icon{href: '/videos'}
+          %span=t("videos.title")
+      /
+        %li#nav_mobile_live
+          %a.icon{href: live_href}
+            %span=t("live")
+      %li#nav_mobile_mobile
+        %a.icon{href:'/mobile'}
+          %span=t("mobile apps")
+      - if current_auth
+        %li#nav_mobile_profile
+          %a.icon{href: user_path(current_auth.username)}
+            %span=t("Profile")
+          
+        %ul#nav_mobile_profile_menu
+          %li#nav_primary_bookmarks
+            %a{href: bookmarks_user_path(current_auth.username)}
+              %span=t("users.profile.tab bookmarks") 
+          %li#nav_primary_notes
+            - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
+            %a{href: notes_user_path(current_auth.username)}
+              %span=t("users.profile.tab notes")
+          %li#nav_primary_highlights
+            %a{href: highlights_user_path(current_auth.username)}
+              %span=t("users.profile.tab highlights") 
+          %li#nav_primary_friends
+            %a{href: user_friends_path(user_id: current_auth.username)}
+              %span=t("users.profile.tab friends")
+
+      - if logged_in?
+        %li#nav_mobile_sign_out
+          %a{href: sign_out_path}
+            =t("sign out")
+      - else
+        %li#nav_mobile_sign_in
+          %a{href: sign_in_path(redirect: params[:redirect])}
+            =t("sign in")
+        %li#nav_mobile_sign_up
+          %a{href: sign_up_path(redirect: params[:redirect])}
+            =t("sign up")

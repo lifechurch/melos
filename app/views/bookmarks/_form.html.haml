@@ -1,29 +1,35 @@
-= form_for @bookmark, as: :bookmark, url: @bookmark.id ? bookmark_path(@bookmark.id) : bookmarks_path, :html => {class: 'full_page_form'} do |f|
-  - if @bookmark.errors.any?
+= form_for bookmark, as: :bookmark, url: bookmark.id ? bookmark_path(bookmark.id) : bookmarks_path, :html => {class: 'full_page_form',"data-color-form" => true} do |f|
+  - if bookmark.errors.any?
     .form_errors
       =t("bookmarks.creation form errors")
       %ul
-        - @bookmark.errors.each do |e|
+        - bookmark.errors.each do |e|
           %li= e
+  
   %p
-    = f.label :title, t("bookmarks.title field field")
+    = f.label :title, t("bookmarks.form.title field")
     = f.text_field :title
+  
   %p
-    = f.label :version, t("bookmarks.version field")
-    = Version.find(@bookmark.version).to_s if @bookmark.version.present?
-    = f.hidden_field :version_id
+    = f.label :labels, t("bookmarks.form.labels field")
+    = f.text_field :labels, value: bookmark.labels.join(",")
+
   %p
-    = f.label :reference, t("bookmarks.reference")
-    = @bookmark.reference_list.map{|r| link_to(r, bible_path(r))}.join(", ").html_safe
-    = f.hidden_field :references
+    = f.hidden_field :color, class:"selected-color"
+    %label
+      = t("notes.form.highlight field")
+      .color_picker_list{"data-current-color" => bookmark.color}
+        .color_picker
+
+  :ruby    
+    raw_refs = bookmark.references
+    usfms    = raw_refs.collect {|refhash| refhash["usfm"]} #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}.join(",")
+    human    = raw_refs.collect {|refhash| refhash["human"]}.join(", ")
+  %p  
+    = f.label :references, t("bookmarks.form.reference field")
+    = f.hidden_field :usfm_references, value: usfms
+    %span.refs
+      = human
+
   %p
-    = f.label :labels, t("bookmarks.labels comma separated")
-    = f.text_field :labels
-  %p.color
-    = f.label :highlight_color, t("bookmarks.color")
-    = f.text_field :highlight_color, class: 'float_left'
-    %div{:class => "color_picker_list", style: "width:auto; margin-top:-10px; margin-left:10px; margin-bottom: 20px"}
-      %a{:class => "color_picker", :href =>"#"}
-      %a{:class => "color_picker_holder", :href =>"#"}
-  %p#bookmark_update_btn{style: "clear: left"}
-    = f.submit(@bookmark.persisted? ? t("bookmarks.update") : t("bookmarks.save"))
+    = f.submit(bookmark.persisted? ? t("bookmarks.form.update button") : t("bookmarks.form.save button"), class: "action_button_green")

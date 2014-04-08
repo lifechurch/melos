@@ -1,0 +1,232 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# mazza cheewanich <mazza.p@gmail.com>, 2013
+# Thanakorn Poonsingoon <mintgloryofgod@gmail.com>, 2014
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# mazza cheewanich <mazza.p@gmail.com>, 2013
+# Thanakorn Poonsingoon <mintgloryofgod@gmail.com>, 2013-2014
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Saowapak Choomwattana <saowapakch@gmail.com>, 2013
+# Thanakorn Poonsingoon <mintgloryofgod@gmail.com>, 2013-2014
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-24 11:28+0000\n"
+"Last-Translator: Thanakorn Poonsingoon <mintgloryofgod@gmail.com>\n"
+"Language-Team: Thai (http://www.transifex.com/projects/p/yv-backend/language/th/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-24 11:23+0000\n"
+"Last-Translator: Thanakorn Poonsingoon <mintgloryofgod@gmail.com>\n"
+"Language-Team: Thai (http://www.transifex.com/projects/p/yv-backend/language/th/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Thai (http://www.transifex.com/projects/p/yv-backend/language/th/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>เรื่องราวจากพระคัมภีร์</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "รับชม <i>เรื่องราวจากพระคัมภีร์</i> ได้คืนนี้!"
+
+msgid "moment.bookmark.title"
+msgstr "{name} ได้คั่นหน้า <b>{reference_human}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "คุณได้คั่นหน้า <b>{reference_human}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} ได้เป็นเพื่อนกับ <b>{friend_name}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "ตอนนี้คุณเป็นเพื่อนกับ <b>{friend_name}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} เน้นข้อพระคำ <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "คุณได้เน้นพระคำ <b>{reference_human}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} เพิ่มการโน้ต <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "คุณได้เพิ่มโน้ต <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} ดาวน์โหลดพระคัมภีร์ฉบับ <b>{version}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "คุณได้ดาวน์โหลดพระคัมภีร์ฉบับ <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} เริ่มต้นแผนการอ่าน <b>{title}</b>"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "คุณได้เริ่มต้นแผนการอ่าน, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} ได้อ่านแผนประจำวันที่ <b>{day}</b> ของแผน <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "คุณได้อ่านแผนประจำวันที่ <b>{day}</b> ของแผน <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} อ่านแผน <b>{title}</b> จบแล้ว"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "คุณได้อ่านแผน <b>{title}</b> จบแล้ว"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} ได้รับเหรียญตรา <b>{title}</b> "
+
+msgid "moment.badge.earned.self.title"
+msgstr "คุณได้รับเหรียญตรา <b>{title}</b> "
+
+msgid "moment.video.watched.title"
+msgstr "{name} ได้รับชม <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "คุณกำลังรับชม <b>{title}}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} ต้องการเป็นเพื่อนกับคุณบน YouVersion"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} ตอบรับคำขอเป็นเพื่อนของคุณ"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} เป็นเพื่อนของคุณแล้ว"
+
+msgid "notifications.friendships.suggestion"
+msgstr "คุณต้องการจะเป็นเพื่่อนกับ {name} บน YouVersion หรือไม่?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} ได้แสดงความคิดเห็นบนที่คั่นหน้าของคุณ: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของคุณ: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name}  ได้แสดงความคิดเห็นบนโน้ตของคุณ: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} ถูกใจที่คั่นหน้าของคุณ {reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} ถูกใจการเน้นข้อพระคำของคุณ {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} ถูกใจโน้ตของคุณบน {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} ถูกใจโน้ตของคุณ “{title}”"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} ถูกใจโน้ตของคุณ"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนที่คั่นหน้าของเขา: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนที่คั่นหน้าของ {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของเขา: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของ {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนโน้ตของเขา: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนโน้ตของ {moment_owner_name}: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} ได้คั่นหน้า {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} ได้เน้นข้อพระคำ {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} ได้เพิ่มโน้ตใน {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} ได้เพิ่มโน้ต “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} ได้เพิ่มโน้ต"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "คุณมีคำร้องขอเป็นเพื่อนจาก %d "
+
+msgid "notifications.system.test"
+msgstr "ดาวน์โหลดแอพพระคัมภีร์สำหรับเด็กได้แล้วตอนนี้ !!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "จาก {name}:"
+
+msgid "share.invite_sms"
+msgstr "คุณมีแอพพระคัมภีร์จาก YouVersion หรือยัง? ฉันชอบมัน และฉันคิดว่าคุณต้องชอบด้วย และนี่เป็นลิงค์ถ้าคุณต้องการ:"
+
+msgid "share.invite_email_subject"
+msgstr "คุณมีแอพพระคัมภีร์หรือยัง?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"ฉันชื่นชอบแอพพระคัมภีร์จาก YouVersion และคิดว่าคุณต้องชอบด้วย ฉันเปิดอ่านพระคัมภีร์ มากขึ้นในทุกวันเพราะ ง่ายต่อการอ่าน, ดู, ฟัง, และแบ่งปัน ทั้งยังแผนการอ่าน, ซึ่งช่วยในการเลือกพระคัมภีร์ทั้งหมด และรอให้ฉันเข้าไปอ่านทุกวัน.\n"
+"\n"
+"คุณสามารถโหลดได้ (ฟรี!) สำหรับอุปกรณ์มือถือทุกเครื่องที่นี่:"
+
+msgid "share.invite_twitter"
+msgstr "แอพพระคัมภีร์จาก @YouVersion อยู่บน home screen ของฉัน. อ่าน, ดู, ฟัง, และ แบ่งปัน...ทั้งหมด ในแอพฟรี:"
+
+msgid "share.invite_twitter_direct"
+msgstr "คุณมีแอพพระคัมภีร์จาก @YouVersion หรือยัง? ฉันชอบมัน, และคิดว่าคุณต้องชอบด้วย. นี่คือลิ้งค์ถ้าคุณต้องการ:"
+
+msgid "share.invite_facebook"
+msgstr "ฉันรักแอพพระคัมภีร์! มันสามารถช่วยให้พระคัมภีร์เป็นส่วนหนึ่งในชีวิตประจำวันของฉัน. แอพนี้ให้ฉันเน้นพระคำ, ฟังพระคัมภีร์แบบเสียง, สร้างโน๊ต, ติดตามแผนการอ่าน...รวมถึงการดูวีดีโอ! คุณสามารถดาวน์โหลดได้เดี๋ยวนี้ (ทั้งหมดฟรี):"
+
+msgid "share.invite_facebook_direct"
+msgstr "คุณมีแอพพระคัมภีร์หรือยัง? ฉันชอบมัน และฉันคิดว่าคุณต้องชอบด้วย นี่เป็นลิงค์ถ้าคุณต้องการ:"

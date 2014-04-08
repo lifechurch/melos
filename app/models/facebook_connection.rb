@@ -30,7 +30,6 @@ class FacebookConnection < YV::Connection::Base
   def find_friends(opts = {})
     opts = {connection_type: connection_type}.merge(opts)
     response = api_client.get_connections("me", "friends")
-
     ids = response.map { |e| e["id"] }
     return fetch_friends(ids,opts)
   end

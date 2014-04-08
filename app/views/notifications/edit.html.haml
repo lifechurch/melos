@@ -1,0 +1,37 @@
+:ruby
+  settings = {
+    "moments"       => t('users.notifications.moments'),
+    "comments"      => t('users.notifications.comments'),
+    "likes"         => t('users.notifications.likes'),
+    "friendships"   => t('users.notifications.friendships'),
+    "reading_plans" => t('users.notifications.reading_plans'),
+    "badges"        => t('users.notifications.badges'),
+    "newsletter"    => t('users.notifications.newsletter'),
+    "partners"      => t('users.notifications.publishing partners')
+  }
+
+  @title = t('users.edit notifications')
+  @setting_selected = :notifications
+
+%h2
+  = @title
+
+- # because page can be accessed while logged in or logged out (with token) we use
+- # current_user or fallback to params[:id]
+= form_tag notifications_path(token: params[:token]), method: :put do |n|
+  - unless @settings.errors.blank?
+    .form_errors
+      =t("users.profile.notification errors")
+    %ul
+      - @settings.errors.full_messages.each do |err|
+        %li= err
+
+  .notification-settings-group
+    - settings.each do |type,info|
+      .settings-group-item
+        = render partial: "settings_group", locals: {type: type, info: info}
+
+  %div
+    %button{class: "action_button_green", action: "submit"}= t('users.notifications.update')
+  - if params[:token]
+    = hidden_field_tag :token, params[:token]

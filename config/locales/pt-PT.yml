@@ -33,6 +33,8 @@ pt-PT:
     users username or password invalid: "Forneceu um utilizador ou palavra-passe inválidos."
     users username required: "Deverá inserir um nome de utilizador."
   meta:
+    kids_app:
+      title: "A App da Bíblia para crianças"
     100million:
       title: "Tem Início nos 100 Milhões"
       description: "A App da Bíblia já foi instalada quase 100 milhões de vezes - um marco incrível! Mas estamos apenas a começar. Descarregue a App da Bíblia grátis - e depois partilhe-a com os seus amigos. Vamos fazer história juntos."
@@ -45,7 +47,7 @@ pt-PT:
   now: "Agora"
   celebrating 50MM: "A celebrar 50 milhões de instalações da App!"
   link: "Link"
-  site search: "Procura no YouVersion"
+  site search: "Pesquisa no YouVersion"
   auth error: "Desculpe, houve um problema com o seu nome de utilizador ou palavra-passe. Por favor autentique-se no YouVersion para continuar."
   download: "Transferir"
   visit link: "Visitar o Link"
@@ -60,7 +62,7 @@ pt-PT:
   new note: "Criar Nota"
   share success: "A sua mensagem foi partilhada."
   share error: "Desculpe, aconteceu um erro a partilhar a sua mensagem. Por favor tente novamente."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "A associar à sua conta %{connection} "
   deleted connection: "Associação removida com sucesso a %{connection}"
   deleted connection error: "Desculpe, houve um erro ao remover a sua associação a %{connection}."

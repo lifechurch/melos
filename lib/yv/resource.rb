@@ -28,6 +28,10 @@ module YV
 
     class << self
 
+      def cache_for(length,opts)
+        opts.merge!(cache_for: length)
+      end
+
       # Class method to make a GET request to a provided API path
       # optional opts are passed along to the underlying request
       #
@@ -37,6 +41,12 @@ module YV
       def get( path , opts = {} )
         response = YV::API::Client.get(path, opts)
         YV::API::ResponseHandler.new(response).process
+      end
+
+      # Is this necessary?  Can we rollup API::Results into main #get method?
+      def get_results(path,opts={})
+        data,errs = get(path, opts)
+        return YV::API::Results.new(data,errs)
       end
 
 
@@ -109,66 +119,49 @@ module YV
       end
 
       # Find a resource by id and optional parameters
-      # Returns an instance of YV::API::Results
+      # Returns a YV::API::Results decorator for a single instance
+      # requires subclasss to define the #map class method to appropriately
+      # map a #view API response
+
       def find(id, params = {})
         opts = prepare_opts!
         opts[:id] = id if id
         opts.merge! params  # Let params override if it already has an :id
 
         data, errs = get(resource_path, opts)
-        unless errs.blank?
-          return YV::API::Results.new( data , errs )
-        else
-          return YV::API::Results.new( new(data.merge!(auth: params.delete(:auth))) , errs )
-        end
+        map(YV::API::Results.new(data.merge!(auth: params.delete(:auth)),errs), new() , :find)
       end
 
 
       # Find a list of resources given optional parameters
-      # Returns an instance of YV::API::Results
+      # Returns a YV::API::Results decorator for an array of instances
+      # requires subclass to define the #map_all class method to appropriately
+      # map API responses
+
       def all(params = {})
         opts = prepare_opts!(params)
         data, errs = get(list_path,opts)
-
-        if errs.blank?
-          collection_data = process_collection_response(data)
-        else
-          not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
-          if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
-            collection_data = []
-            errs = nil
-          end
-        end
-
-        return YV::API::Results.new(collection_data,errs)
-      end
-
-      # Resource list, but just return whatever the API gives us.
-      # TODO: As soon as we've finished migrating all the resources,
-      # check to see that both all() and all_raw() are really needed.
-      # Likely they can be combined or one of them can be eliminated.
-
-      # Currently only used in Bookmark resource.  Find out why and remove or update implementation in bookmark if necessary.
-      def all_raw(params = {})
-        data, errs = get(list_path,params)
-        return YV::API::Results.new(data,errs)
+        data = [] if not_found?(errs)
+        map_all(YV::API::Results.new(data,errs)) 
       end
 
       # Create a resource.  Creates an instance and calls save on it.
-      def create(data, &block)
-        new(data).save(&block)
+      def create(data)
+        new(data).save
       end
 
       # Destroy a resource. TODO - make this similar to create -> find instance via id, call destroy. allows for callbacks etc.
-      def destroy(id, auth = nil, &block)
+      def destroy(id, auth = nil)
         opts = prepare_opts!({auth: auth})
         opts[self.destroy_id_param] = id
         data, errs = post(delete_path, opts)
-        return YV::API::Results.new(data,errs)
+
+        map_delete(YV::API::Results.new(data,errs))
       end
 
       def destroy_id_param
-        :ids
+        :id
+        #:ids
       end
 
 
@@ -255,6 +248,10 @@ module YV
         end
       end
 
+      def attributes(atts)
+        atts.each {|att| attribute(att)}
+      end
+
       # Clear memoization at class level
       # instance variables that persist across requests
       def clear_memoization
@@ -286,38 +283,50 @@ module YV
         raise "#{msg}: #{active_model_errs.full_messages.join(",")}"
       end
 
+
+      def api_response_mapper(klass)
+        @api_response_mapper = klass
+      end
+
+
+      def map_all(results)
+        raise "Declare an API Response Mapper" unless @api_response_mapper.present?
+        results.data = @api_response_mapper.map_all(results.data)
+        results
+      end
+
+      def map_delete(results)
+        raise "Declare an API Response Mapper" unless @api_response_mapper.present?
+        results.data = @api_response_mapper.map_delete(results.data)
+        results
+      end
+
+      # Map results to an instance for a given action
+      def map(results,instance,action)
+        raise "Declare an API Response Mapper" unless @api_response_mapper.present?
+        if results.valid?
+          results.data = case action
+            when :find
+              @api_response_mapper.map(results.data, new(), :find)
+            when :create, :update
+              @api_response_mapper.map(results.data, instance, action)
+          end
+        end
+        return results
+      end
+
+      def api_debug(bool)
+        @api_response_mapper = YV::API::Mapper::Base if bool
+      end
+
       private
 
-      # Hook to process a response after an API call that returns 'collection' data - any #all call
-      # Allows the opportunity to override in subclasses to handle the collection data differently
-      # as collection like responses aren't all made the same.
-
-      # By default, we'll create a ResourceList and fill it with items from the API response
-
-      def process_collection_response( data )
-        items = ResourceList.new
-        items.total = (data.respond_to? :total) ? data.total : data.length
-        items.next_page = data.next_page
-        data[api_resource_collection_key].each do |item|
-          items << new(item)
-        end
-        return items
+      def not_found?(errs)
+        return false if errs.nil?
+        not_found_responses = [/^No(.*)found$/, /^(.*)s( |\.)not( |_)found$/, /^Search did not match any documents$/]
+        return true if errs.length == 1 && not_found_responses.detect { |r| r.match( errs.first.error )}
+        return false
       end
-
-
-      # The key API sends to denote a collection of objects in a data response
-      # ex: "data": {
-      #       "users":
-      #         [{user},{user},{user}]
-      #     }
-      # in the example above the key is "users"
-
-      # see #process_collection_response
-
-      def api_resource_collection_key
-        name.tableize
-      end
-
 
     end
     # End class methods ----------------------------------------------------------------------------------------------
@@ -333,7 +342,6 @@ module YV
 
     def initialize(data = {})
       @attributes = Hashie::Mash.new(data)
-      @associations = {}
       yield self if block_given?
       after_build
     end
@@ -376,9 +384,15 @@ module YV
       return YV::API::Results.new( data , errs )
     end
 
+    def persist_moment(path,opts={})
+      raise "Moment kind required." unless opts[:kind]
+      data, errs = self.class.post( path ,opts.merge(auth: self.auth))
+      return YV::API::Results.new( data , errs )
+    end
+
 
     def before_save; end;
-    def after_save(response); end;
+    def after_save(api_results); end;
     
     def save
       unless (self.persisted? == false && self.class == User)
@@ -390,18 +404,23 @@ module YV
       begin
         resource_path = self.persisted? ? self.class.update_path : self.class.create_path
         results = persist(resource_path)
-        new_id = results.data.id
-        self.id = new_id if (results.valid? && !self.persisted? && new_id) #assign id to model
       ensure
         self.persisted? ? after_update(results) : after_save(results)
       end
-      return results
+
+      if results.valid?
+         action = persisted? ? :update : :create
+         self.class.map(results,self,action)
+      else
+         results
+      end
     end
 
     
     def before_update; before_save; end;
-    def after_update(response); after_save(response); end;
-    def update(updated_attributes)
+    def after_update(api_results); after_save(api_results); end;
+
+    def update(updated_attributes = {})
       updated_attributes.each { |k, v| self.send("#{k}=".to_sym, v) }
       save
     end
@@ -445,6 +464,12 @@ module YV
     end
 
 
+    def cache_for(length,opts)
+      self.class.cache_for(length,opts)
+      opts.merge!(cache_for: length)
+    end
+
+
     private
 
     # Allows us to call class level raise_errors method at the instance level
@@ -455,6 +480,10 @@ module YV
 
     def raise_errors(errs,msg = nil)
       self.class.raise_errors(errs,msg)
+    end
+
+    def set_created_dt
+      self.created_dt = Time.now.iso8601
     end
 
   end

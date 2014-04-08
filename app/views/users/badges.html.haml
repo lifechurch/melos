@@ -1,7 +1,17 @@
-- content_for :user_main do
-  - if @badges.empty?
-    %p= t('no badges found yourself')
-  - else
-    %ul.resource_list
-      = render partial: "badges/list_item", collection: @badges, locals: {display: :icon}
-    = render partial: 'shared/pagination', locals: {resource_list: @badges}
+- @title = @me ? t('users.my badges') : t('badges.user badges', user: @user.name || @user.username)
+- content_for :title do
+  = @title
+
+- if @badges.present?
+  .profile-badges-list
+    = render partial: "badges/list_item", collection: @badges, locals: {display: :icon}
+  = render partial: 'shared/pagination', locals: {resource_list: @badges}
+
+- else
+  .profile-blank-slate.slate-badges
+    - if current_user_is? @user
+      %h2
+        = t("badges.none me")
+    - else
+      %h2
+        = t("badges.none user", username: @user.name)

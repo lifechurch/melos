@@ -1,48 +1,57 @@
 class UsersController < ApplicationController
 
-  before_filter :force_login, only: [:sign_up_success, :share, :edit, :update, :picture, :update_picture, :password, :update_password, :devices, :destroy_device, :update_email, :delete_account, :delete_account_form]
-  before_filter :force_notification_token_or_login, only: [:notifications, :update_notifications]
-  before_filter :find_user, except: [:sign_up_success, :confirm_update_email, :update_email, :destroy_device, :forgot_password, :forgot_password_form, :new, :create, :confirm_email, :new_facebook, :create_facebook, :notifications, :update_notifications, :resend_confirmation, :share]
+  before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture,:delete_account, :delete_account_form]
+  before_filter :find_user, except: [:_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
-  before_filter :authorize, only: [:edit,:update, :email, :password, :update_password, :picture, :update_picture, :devices, :delete_account,:destroy]
+  before_filter :authorize, only: [:edit,:update,:delete_account,:destroy]
+
+  # New find user method - transitioning to this over time and getting rid of prev 'find_user' filter
+  before_filter :find_user_for_moments, only: [:show,:notes,:highlights,:bookmarks,:badges]
 
   rescue_from APIError, with: :api_error
 
+  
+  # Action meant to render moment cards partial to html for ajax delivery client side
+  # Currently being used for next page calls on moments feed.
+  def _cards
+    @user = User.find(params[:uid])
+    @moments = Moment.all(moment_all_params)
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
+  end
 
-  # User signup flow:
-  #
-  #  +>  /sign-up (users#new)  <-err--------+
-  #  |     |             |                  |
-  #  |   form submit   facebook btn         |
-  # err    |                 \              |
-  #  |  success?           facebook auth (/auth/facebook/sign-up)
-  #  |   /   \                  \           |
-  #  +-no     yes              success?     |
-  #            |                /    \      |
-  #      /confirm-email      yes     no ----+
-  #          (...)            |
-  #       clicks link      /sign-up/facebook   <----+
-  #           |               |                     |
-  #       /confirm        fill out form & submit    |
-  #           |                     |               |
-  #       valid code?           success?           err
-  #         /     \              /    \             |
-  #       yes     no           yes     no ----------+
-  #        |       \            |
-  #     redirect   /confirm     |
-  #        |       (with error) |
-  #        +--------------------+
-  #        |
-  #   /sign-up/success (or sign_up_redirect)
+  def show
+    @moments = Moment.all(moment_all_params)
+  end
+
+  def notes
+    @notes = Note.all(moment_all_params)
+  end
+
+  def highlights
+    @highlights = Highlight.all(moment_all_params)
+  end
+
+  def bookmarks
+    @bookmarks = params[:label] ? Bookmark.for_label(params[:label], {page: @page, user_id: @user.id.to_i, auth: current_auth}) : Bookmark.all(moment_all_params)
+  end
+
+  def badges
+    @badges = @user.badges
+  end
+
+
 
   def new
+    redirect_to moments_path and return if current_auth
+
     @user = User.new
     self.sidebar_presenter = Presenter::Sidebar::UsersNew.new(@user,params,self)
     render action: "new", layout: "application" #neccessary to use app layout instead of users layout.
   end
 
   def create
-    return render_404 unless params[:user].present?
+    redirect_to moments_path and return   if current_auth
+    render_404 and return                 unless params[:user].present?
 
     @user = User.register(params[:user].merge(language_tag: I18n.locale))
     if @user.persisted?
@@ -57,6 +66,23 @@ class UsersController < ApplicationController
 
     else
       render action: "new", layout: "application"
+    end
+  end
+
+  def edit
+    @selected = :profile
+    render layout: "settings"
+  end
+
+  def update
+    @user.auth = current_auth # setup auth prior to update
+    @user = @user.update(params[:user])
+    if @user.valid?
+      flash[:notice]= t('users.profile.updated')
+      redirect_to edit_user_path(current_auth.username)
+    else
+      flash[:error]= t('users.profile.error')
+      render action: "edit", layout: "application"
     end
   end
 
@@ -94,7 +120,6 @@ class UsersController < ApplicationController
       cookies.permanent.signed[:a] = user.id
       cookies.permanent.signed[:b] = user.username
       cookies.permanent.signed[:c] = params[:user][:password]
-      set_current_avatar(user.user_avatar_url["px_24x24"]) if user.user_avatar_url
 
       redirect_to sign_up_success_path(show: "facebook")
     else
@@ -110,31 +135,7 @@ class UsersController < ApplicationController
     render action: "sign_up_success", layout: "application"
   end
 
-  def show
-    return redirect_to( edit_user_path(@user)) if @me
-    @nav = :notes if @me
-    @selected = :notes
-    @notes = @user.notes(page: params[:page])
-    render 'notes'
-    if @me
-      render 'notes/index', layout: "application" 
-    else
-      
-    end
-  end
 
-  def notes
-    @nav = :notes if @me
-    @selected = :notes
-    @notes = @user.notes(page: params[:page])
-    render 'notes/index', layout: "application" if @me
-  end
-
-  def badges
-    @selected = :badges
-    @badges = @user.badges
-    self.sidebar_presenter = Presenter::Sidebar::Default.new
-  end
 
   def share
     if current_user.share(params[:share])
@@ -149,25 +150,8 @@ class UsersController < ApplicationController
   end
 
 
-  def edit
-    @selected = :profile
-  end
-
-  def update
-    id = @user.id
-    @user.auth = current_auth # setup auth prior to update
-    @user = @user.update(params[:user])
-    if @user.valid?
-      flash[:notice]= t('users.profile.updated')
-      redirect_to edit_user_path(id)
-    else
-      flash[:error]= t('users.profile.error')
-      render :edit
-    end
-  end
-
   def delete_account
-    @selected = :account_existence
+    render layout: "settings"
   end
 
   def destroy
@@ -188,7 +172,7 @@ class UsersController < ApplicationController
       end
     else
       flash.now[:error] = t("invalid password")
-      render "delete_account"
+      render action: "delete_account", layout: "application"
     end
     
   end
@@ -206,168 +190,17 @@ class UsersController < ApplicationController
     render action: "resend_confirmation", layout: "application"
   end
 
-  # Email address management
-  # TODO: move to its own controller and resource
-
-    def email
-      @selected = :email
-      @user = current_user
-    end
-
-    def update_email
-      @selected = :email
-      @user = @me = current_user
-      @results = @user.update_email(params[:user][:email])
-      @results.valid? ? render(:update_email_success) : render(:email)
-    end
-
-    # TODO: handle users.token.not_found api error when requesting more than once.
-    def confirm_update_email
-      @user = User.confirm_update_email(params[:token])
-      if @user.valid?
-         location = current_user ? edit_user_path(current_user) : sign_in_path
-         redirect_to( location , notice: t('users.confirm update email success'))
-      end
-    end
-
-
-  # Change password
-  # TODO: move to own controller / resource
-    def password
-      @selected = :password
-    end
-
-    # TODO: move this to its own resourceful controller
-    def update_password
-      @selected = :password
-      @user = current_user
-      if params[:user][:old_password] == current_auth.password
-        @user = @user.update_password(params[:user].except(:old_password))
-
-        if @user.valid?
-          flash[:notice]=t('users.password.updated')
-          cookies.signed.permanent[:c] = params[:user][:password]
-        end
-      else
-        @user.add_error(t('users.password.old was invalid'))
-      end
-      render action: "password"
-    end
-
-  # Change profile picture
-  # TODO: move to own controller / resource
-
-    def picture
-      @selected = :picture
-      @user = current_user
-      @user_avatar_urls = @user.user_avatar_url
-    end
-
-    def update_picture
-      @selected = :picture
-      @user = current_user
-
-      @user_avatar_urls = @user.user_avatar_url
-      @results = @user.update_picture(params[:user].try(:[], :image))
-      if @results.valid?
-         flash[:notice] = t('users.profile.updated picture')
-         @user_avatar_urls = @user.direct_user_avatar_url
-         @bust_avatar_cache = true
-         # set cookie so header menu will show new avatar
-         set_current_avatar(@user.direct_user_avatar_url["px_24x24"])
-         redirect_to(picture_user_path(@user))
-      else
-         render :picture
-      end
-    end
-
-  # Update user notification settings
-  # TODO: move to own controller / resource
-
-    def notifications
-      begin
-        @results = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
-        @settings = @results.data
-        @user = @settings.user
-        @me = true
-        @selected = :notifications
-        self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
-      rescue => ex
-        track_exception(ex)
-        sign_out
-        return redirect_to(sign_in_path(redirect: notification_settings_path), flash: {error: t('users.profile.notifications token error')})
-      end
-    end
-
-    def update_notifications
-      @settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
-      @user = @settings.user
-      @me = true
-      @results = @settings.update(params[:notification_settings])
-      if @results.valid?
-         flash[:notice] = t('users.profile.updated notifications')
-         redirect_to(notifications_user_path(@user,token: params[:token]))
-      else
-         flash[:error] = t('users.profile.notification errors')
-         render :notifications
-      end
-    end  
-
-  # Manage devices
-  # TODO: move to own controller / resource
-
-    def devices
-      @user = current_user
-      @devices = @user.devices
-      @selected = :devices
-    end
-
-    def destroy_device
-      @user = current_user
-
-      @device = Device.find(params[:device_id], auth: current_auth)
-      @results = @device.destroy
-      if @results.valid?
-         flash[:notice] = "Device removed."           # TODO: localize
-         redirect_to devices_user_path(current_user)
-      else
-         @devices = @user.devices
-         @selected = :devices
-         flash[:error] = "Could not delete device."   # TODO: localize
-         render :devices
-      end
-    end
-
-
-  # Manage forgotten password
-  # TODO: Move to own controller + possible resource
-
-    def forgot_password_form
-      @selected = :password
-      self.sidebar_presenter = Presenter::Sidebar::Default.new
-      render "forgot_password", layout: "application"
-    end
-
-    def forgot_password
-      @selected = :password
-      self.sidebar_presenter = Presenter::Sidebar::Default.new
-      begin
-        @results = User.forgot_password(params[:email])
-        if @results.valid?
-          sign_out
-          render "forgot_password_success", layout: "application"
-        else
-          render "forgot_password", layout: "application"
-        end
-      rescue UnverifiedAccountError => e
-        render "sessions/unverified", layout: "application"
-      end
-
-    end
-
-
 
 private
+
+  def moment_all_params
+    {user_id: @user.id.to_i, page: @page, auth: current_auth}
+  end
+
+  def find_user_for_moments
+    @user = User.find(params[:id])
+  end
+
   # Find requested user and setup appropriate sidebar presenter
   def find_user
     user_id   = params[:user_id] || params[:id]
@@ -377,23 +210,6 @@ private
       self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
     else
       return render_404
-    end
-  end
-
-  def force_notification_token_or_login
-    if params[:token]
-      if current_user && current_user.notifications_token != params[:token]
-        redirect_to sign_out_path(redirect: notification_settings_path) and return
-      end
-    else
-      force_login
-    end
-  end
-
-  def authorize
-    id_param = params[:user_id] || params[:id]
-    unless id_param == current_user.username
-      redirect_to(edit_user_path(current_user))
     end
   end
 

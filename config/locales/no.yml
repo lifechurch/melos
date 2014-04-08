@@ -33,6 +33,8 @@
     users username or password invalid: "Brukernavnet eller passordet du oppgav er ikke gyldig."
     users username required: "Du må skrive inn et brukernavn"
   meta:
+    kids_app:
+      title: "Bibel-appen for barn"
     100million:
       title: "Det begynner med 100 millioner"
       description: "Bibel-appen har blitt installert nesten 100 millioner ganger - en utrolig milepæl! Men vi er bare så vidt kommet igang. Last ned Bibel-appen gratis idag - og del den så med vennene dine. Bli med å skape historie."
@@ -68,7 +70,7 @@
   next step connections: "Neste: Lenk dine kontoer og finn vennene dine"
   no notes found: "%{username} har ingen notater."
   no recent activity: "%{username} har ingen nylig aktivitet."
-  no badges found yourself: "Du har ikke fått noen merker ennå."
+  no badges found yourself: "Du har ikke fått noen merker ennå"
   no badges found other: "%{username} har ikke fått noen merker ennå."
   see users badges: "Se alle merkene til %{username}"
   bookmark: "Bokmerke"
@@ -238,10 +240,10 @@
     edit account_existence: "Slett brukerkonto"
     delete account button: "Slett min YouVersion-konto"
     no devices: "Ingen enheter er knyttet til din YouVersion konto"
-    no devices download copy: "Bibel-appen er en gratis mobil-bibel basert på nettbibelen YouVersion.com. Den kan installeres på nesten alle bærbare enheter. Bibel-appen lar brukere lese Bibelen, dele vers på sine sosiale nettverk, sette bokmerker ved favorittavsnittene sine og mere til&mdash;alt på en måte som passer til en stadig mer mobil livsstil. Besøk <a href='http://www.youversion.com/download'>youversion.com/download</a> med din mobile enhet for å laste ned bibel-appen og knytte deg opp mot din brukerkonto!"
+    no devices download copy: "Bibel-appen er en gratis mobil-bibel basert på nettbibelen YouVersion.com. Den kan installeres på nesten alle bærbare enheter. Bibel-appen lar brukere lese Bibelen, dele vers på sine sosiale nettverk, legge til bokmerker ved favorittavsnittene sine med mer&mdash;alt på en måte som passer til en stadig mer mobil livsstil. Besøk <a href='https://www.bible.com/download'>bible.com/download</a> med din mobile enhet for å laste ned Bibel-appen og koble deg opp mot din brukerkonto!"
     yes delete: "Ja, slett min brukerkonto"
     account delete success: "Din YouVersion-konto har blitt slettet. Vi håper du fortsatt vil finne meningsfulle måter å benytte Bibelen på. Noen av disse appene kan være nyttige for deg videre: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-    delete account description: "Hvis du sletter kontoen din vil du fjerne for godt all din informasjon, historikk og tilpasninger (som notater, bokmerker, markert tekst osv) både på YouVersion.com og i Bibel-appen. Dette kan ikke gjenopprettes av deg eller vårt team. Hvis du er sikker på at du ønsker å gå videre, fortsett nedenfor."
+    delete account description: "Hvis du sletter kontoen din vil du fjerne all din informasjon, historikk og tilpasninger (som notater, bokmerker, markert tekst osv) både på YouVersion.com og i Bibel-appen for godt. Dette kan ikke gjenopprettes av deg eller vårt team. Hvis du er sikker på at du ønsker å gå videre, fortsett nedenfor."
     user recent activity: "%{user}s nylige aktivitet"
     user notes: "%{user}s notater"
     my friends: "Venner"
@@ -606,8 +608,8 @@
     creation form errors: "Følgende feil gjorde at gave ikke kunne gis:"
   download ad:
     title: "Last ned gratis Bibel-app."
-    line 1: "Hundrevis av oversettelser på over 100"
-    line 2: "forskjellige språk—Bibelen som"
+    line 1: "Hundrevis av oversettelser på over"
+    line 2: "100 forskjellige språk—Bibelen som"
     line 3: "er med deg over alt."
     download: "Last ned nå"
   about page:
@@ -621,8 +623,8 @@
     partners text: "Uten våre generøse partnere - bibelselskapene, ville ikke YouVersion være i stand til å tilby vårt globale nettsamfunn tilgang på så mange bibeloversettelser. Mange av dere har spurt hvordan man kan takke disse uvurderlige støttespillerne. Gjennom lenkene nedenfor kan du lære mer om dem, deres arbeid og om hvordan du kan støtte dem. "
     translation title: "Våre team med oversettere"
     learn more: "Lær mer"
-    bible dot com title: "Hva skjedde med den gamle Bibelen.com?"
-    bible dot com copy: "Hvis du leter etter 'Christ Unlimited Ministries' med Bud og Betty Miller, eller det gamle nettstedet: Bibelen.com, gå til deres nye nettsted på <a href='http://www.bibleresources.org'>BibleResources.org</a>"
+    bible dot com title: "Hva skjedde med den gamle Bible.com?"
+    bible dot com copy: "Hvis du leter etter 'Christ Unlimited Ministries' med Bud og Betty Miller, eller det gamle nettstedet: Bible.com, gå til deres nye nettsted på <a href='http://www.bibleresources.org'>BibleResources.org</a>"
   press page:
     title: "Presseområde"
     contact header: "Informasjon om pressekontakter"

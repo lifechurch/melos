@@ -1,0 +1,15 @@
+- if notifications.blank?
+  %p
+    = t("notifications.none")
+
+- else
+  %ul.notifications-list
+    - notifications.each do |notification|
+      %li.notifications-item
+        - if notification.avatars
+          %img{width: "48px", height: "48px", src: notification.avatars.md_avatar.url }
+        %p
+          %a.activity-title{href: notification.action_url}
+            = notification.moment_title
+          %span.activity-timestamp
+            = api_dt_time_ago(notification.created_dt)

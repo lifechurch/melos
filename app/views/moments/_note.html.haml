@@ -1,0 +1,43 @@
+:ruby
+  # Locals Parameters
+  # moment              - a single Moment to display  (Bookmark, Highlight, Note)
+  # comments_displayed  - boolean, true or false (whether or not to display comments when rendering html)
+  # detail_view         - boolean, true or false (whether this is a detail view or a card view)
+  
+  detail_view = false unless local_assigns.has_key? :detail_view
+  avatars = moment.avatars
+  avatar = avatars.lg_avatar
+
+.moment{"data-moment-id" => moment.id, "data-moment-path" => moment.to_path, "data-str-delete-confirm" => "Are you sure you want to delete this?"}
+  .moment-top
+    .moment-no
+      %span.moment-icon
+        &nbsp;
+      %span.moment-avatar
+        = link_to(user_path(moment.user.name)) do
+          = image_tag avatar.url
+      %span.moment-time
+        = t("notes.status.#{moment.user_status}")
+        •
+        = api_dt_time_ago(moment.created_dt)
+
+      %h2.moment-no-text
+        - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title || truncate(moment.content) : moment.moment_title.html_safe
+        = link_to(anchor_text, moment.to_path, class: "moment-title-link")
+
+      .moment-no-note{:class => detail_view ? "detail-view" : ""}
+        %p.moment-no-note-title
+          = moment.title
+
+        %p.moment-no-note-text
+          = moment.content
+
+        - if detail_view and moment.references.present?
+          .moment-no-refs
+            - moment.references.each do |ref_hash|  #{"human"=>"John 1:5", "version_id"=>1, "usfm"=>["JHN.1.5"]}
+              = link_to(ref_hash.human, reference_path(version: ref_hash.version_id, reference: ref_hash.usfm.join("+")), class: "moment-no-refs-link")
+
+  - if current_user.interact_with? moment
+    .moment-btm
+      = render partial: "moments/actions_bar", locals: {moment: moment}
+      = render partial: "moments/comments", locals: {moment: moment, comments_displayed: comments_displayed, detail_view: detail_view}

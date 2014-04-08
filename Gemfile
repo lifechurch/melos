@@ -5,7 +5,6 @@ gem 'rails', '3.2.13'
 
 gem 'asset_sync',             '~> 0.5.3'
 gem 'awesome_print',          '~> 1.0.2'
-gem 'cells',                  '~> 3.8.3'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.6.3'
 gem 'descriptive_statistics', '~> 1.1.0', require: false
@@ -15,11 +14,11 @@ gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem 'sentry-raven', :git => 'https://github.com/getsentry/raven-ruby.git'
-gem 'pg', :group => :production
 
 #gem 'oink'
 gem 'gabba'
 gem 'memcachier'
+gem 'fast_gettext'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
@@ -33,10 +32,13 @@ gem 'omniauth-facebook',      '~> 1.4.1'
 gem 'omniauth-google-oauth2', '~> 0.1.9'
 gem 'omniauth-twitter',       '~> 0.0.16'
 gem 'rabl',                   '~> 0.7.3'
+gem 'jbuilder',               '~> 2.0.3'
 gem 'rack-mobile-detect',     '~> 0.3.0'
 gem 'rack-rewrite',           '~> 1.3.3'
 gem 'rack-timeout',           '~> 0.0.3'
 gem 'viximo-rack-throttle',   '~> 0.5.0'
+gem 'handlebars_assets',      '~> 0.14.0'
+gem 'pg'
 
 # Using locale files directly in /config/locales/rails-i18n until gem supports
 # aliasing (or we come up with a way to resolve differences between gem lang
@@ -45,7 +47,8 @@ gem 'viximo-rack-throttle',   '~> 0.5.0'
 # gem 'rails-i18n',           '~> 0.6.3'
 
 gem 'routing-filter',         '~> 0.3.1'
-gem 'unicorn',               '~> 4.3.1'
+#gem "unicorn",               '~> 4.3.1'
+gem 'puma'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
@@ -55,6 +58,7 @@ group :assets do
   gem 'uglifier',      '~> 1.3.0'
   gem 'css_parser',    '~> 1.2.6'
   gem 'jquery-rails',  '~> 2.1.4'
+  gem 'jquery-ui-rails','~> 4.1.1'
 end
 
 group :test do
@@ -82,7 +86,10 @@ group :development, :tddium_ignore do
   gem 'guard-rspec'
   gem 'hooves'
   gem 'pry', require: false
+  gem 'pry-rails'
   gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test, :development do

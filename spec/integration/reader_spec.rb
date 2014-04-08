@@ -162,7 +162,6 @@ feature "Reader", js: true do
         page.find("#note-pane").should be_visible
         # Fill in the form
         page.fill_in "note_title", with: "titlez"
-        page.execute_script("$('#note-pane textarea').wysiwyg('setContent', 'test content');")
         page.find("#note-pane .save button").click
 
         page.should have_content "titlez"

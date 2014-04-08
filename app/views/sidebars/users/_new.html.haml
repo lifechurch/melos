@@ -1,11 +1,11 @@
 // Local parameters
 // presenter: Presenter::Sidebar::UsersNew
 
-.widget.simple
+.widget.simple#widget-signin
   %div.bd
     %h3
       = t("have an account")
-      %em= link_to t("sign in"), sign_in_path(redirect: params[:redirect], source: params[:source])
+    = link_to t("sign in"), sign_in_path(redirect: params[:redirect], source: params[:source]), class: "action_button_grey"
 
 
 .widget.simple

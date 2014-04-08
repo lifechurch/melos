@@ -1,0 +1,235 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# galonz <giandre.wijaya@gmail.com>, 2013
+# renegade <xrenegadex@hotmail.co.jp>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# galonz <giandre.wijaya@gmail.com>, 2013
+# gtkom <hendri.nurhalim@gmail.com>, 2014
+# renegade <xrenegadex@hotmail.co.jp>, 2013
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# margyouversion <margyouversion@gmail.com>, 2013
+# margyouversion <margyouversion@gmail.com>, 2013
+# renegade <xrenegadex@hotmail.co.jp>, 2013
+# renegade <xrenegadex@hotmail.co.jp>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-11-16 07:37+0000\n"
+"Last-Translator: renegade <xrenegadex@hotmail.co.jp>\n"
+"Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-02-22 10:00+0000\n"
+"Last-Translator: gtkom <hendri.nurhalim@gmail.com>\n"
+"Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Seri Alkitab</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Saksikan <i>Seri Alkitab</i> malam ini!"
+
+msgid "moment.bookmark.title"
+msgstr "{name} telah memarkahi <b>{reference_human}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Anda telah memarkahi <b>{reference_human}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} sekarang berteman dengan <b>{friend_name}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Anda sekarang berteman dengan <b>{friend_name}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} disoroti <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Anda telah menyoroti <b>{reference_human}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} menambahkan catatan, <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Anda menambahkan sebuah catatan, <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} telah mengunduh versi, <b>{version}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Anda telah mengunduh versi, <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} telah memulai rencana bacaan, <b>{title}</b>"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "Anda telah memulai rencana bacaan, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} Menyelesaikan hari ke <b>{day}</b> dari rencana bacaan, <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "Anda telah menyelesaikan hari ke <b>{day}</b> dari rencana bacaan, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} telah menyelesaikan rencana bacaan, <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "Anda telah menyelesaikan rencana bacaan, <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} telah mendapatkan lencana <b>{title}</b>"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Anda telah mendapatkan lencana <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} telah menyaksikan <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "Anda telah menyaksikan <b>{title}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} ingin berteman dengan anda di YouVersion"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} telah menerima permohonan pertemanan anda"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} sekarang menjadi teman anda"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Apakah Anda ingin berteman dengan {name} di YouVersion?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} mengomentari markah Anda: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} mengomentari sorotan Anda: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} mengomentari catatan Anda: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} suka markah anda, {reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} suka sorotan anda, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} suka catatan anda pada {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} suka catatan anda, “{title}”"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} suka catatan anda"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} juga mengomentari markahnya: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} juga mengomentari markah {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} juga mengomentari sorotannya: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} juga mengomentari sorotan {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} juga mengomentari catatannya: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} juga mengomentari catatan {moment_owner_name}: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} telah markahi {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} telah menyoroti {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} telah menambahkan catatan pada {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} telah menambahkan sebuah catatan, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} telah menambahkan sebuah catatan"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "Anda mempunyai %d permohonan pertemanan"
+
+msgid "notifications.system.test"
+msgstr "Unduhlah Aplikasi Alkitab Anak kami sekarang!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "Dari {name}:"
+
+msgid "share.invite_sms"
+msgstr "Apakah anda memiliki Aplikasi Alkitab dari YouVersion? Saya menyukainya, dan saya pikir anda juga akan menyukainya. Ini adalah tautannya jika anda belum mempunyainya:"
+
+msgid "share.invite_email_subject"
+msgstr "Apakah anda memiliki Aplikasi Alkitab?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Saya telah menikmati Aplikasi Alkitab dari YouVersion dan saya pikir anda mungkin akan menyukainya juga. Akhir-akhir ini, saya lebih sering membuka Alkitab karena sangat mudah dibaca, ditonton, didengarkan dan dibagikan. Bahkan aplikasi ini menyediakan rencana bacaan, yang mempunyai sebagian dari Alkitab yang sudah dipetik dan menunggu saya setiap hari.\n"
+"\n"
+"Anda bisa mendapatkannya (dengan gratis!) untuk hampir semua perangkat mobile di sini:"
+
+msgid "share.invite_twitter"
+msgstr "Aplikasi Alkitab dari @YouVersion mempunyai tempat tetap di layar utama saya.  Baca, lihat, dengar, dan bagikan...semua tersedia dalam aplikasi gratis:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Apakah anda memiliki Aplikasi Alkitab dari @YouVersion? Saya menyukainya dan saya pikir anda akan meyukainya juga.  Inilah tautannya jika anda tidak mempunyainya:"
+
+msgid "share.invite_facebook"
+msgstr "Saya suka Aplikasi Alkitab.  Aplikasi ini sangat membantu untuk membuat Alkitab bagian dari kehidupan saya sehari-hari.  Aplikasi ini bisa saya tandai, dengarkan Alkitab, bisa buat catatan, ikuti rencana-rencana renungan...bahkan bisa lihat video-video!  Ayo, download aplikasi ini sekarang (aplikasi ini gratis): "
+
+msgid "share.invite_facebook_direct"
+msgstr "Apakah anda memiliki Aplikasi Alkitab? Saya menyukainya dan saya pikir anda akan meyukainya juga.  Inilah tautannya jika anda tidak mempunyainya:"

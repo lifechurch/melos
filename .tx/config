@@ -1,12 +1,12 @@
 [main]
-host = https://www.transifex.net
+host = https://www.transifex.com
 
 [yv-web-3.app-strings]
 file_filter = config/locales/<lang>.yml
 source_file = config/locales/en.yml
 source_lang = en
 trans.en_GB = config/locales/en-GB.yml
-trans.pt_BR = config/locales/pt-BR.yml
+trans.pt_BR = config/locales/pt.yml
 trans.pt_PT = config/locales/pt-PT.yml
 trans.zh_CN = config/locales/zh-CN.yml
 trans.zh_TW = config/locales/zh-TW.yml

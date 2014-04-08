@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Bookmark do
   before :all do
-    @user = ensure_user
+    @user = Social.matt
     @auth = @user.auth
   end
 
@@ -88,10 +88,9 @@ describe Bookmark do
     end
   end
 
-  describe ".all" do
+  describe ".all", :focus do
     it "should return all bookmarks" do
-      pending "should be removed for API3, I guess?"
-      Bookmark.all.should be_a ResourceList
+      puts Bookmark.all({page: 1, user_id: @user.id.to_i, auth: @auth} )
     end
   end
   describe ".for_label" do

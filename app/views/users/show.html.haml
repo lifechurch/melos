@@ -1,20 +1,22 @@
+- @title = @me ? t('users.my profile') : t('users.other user profile', username: @user.name || @user.username)
 - content_for :title do
-  = @me ? t('users.my profile') : t('users.other user profile', username: @user.name || @user.username)
+  = @title
 
-%ul.resource_list
-  - if @user.recent_activity.blank?
-    %p= t('no recent activity', username: @user.username)
-  - else
-    - @user.recent_activity.each do |a|
-      - case a
-      - when Bookmark
-        = render partial: "bookmarks/list_item", locals: {display: :icon, list_item: a}
-      - when Note
-        = render partial: "notes/list_item", locals: {display: :icon, list_item: a}
-      - when Badge
-        %li.li_badge
-          %h5
-            =t('badges.earned a badge')
-            &mdash;
-            = a.name
-          %p.mute= a.earned
+- if @moments.present?
+  .social-feed-wrap
+    .social-feed
+      = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}
+
+  - if @moments.next_page
+    = render partial: "shared/moments_load_more", locals: {resource: "users", url_params: ["uid=#{@user.id}"]}
+
+- else
+  .profile-blank-slate.slate-activity
+    - if current_user_is? @user
+      %h2
+        = t("users.profile.blank slate.heading")
+      %p
+        = t("users.profile.blank slate.description")
+    - else
+      %h2
+        = t("users.profile.blank slate.heading")

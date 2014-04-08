@@ -3,7 +3,6 @@ class ConnectionsController < ApplicationController
   before_filter :force_login
   before_filter :authorize, only: [:index]
 
-
   # GET Display users connections
   # bible.com/users/:id/connections => connections#index
   # TODO: proper refactor
@@ -70,12 +69,5 @@ class ConnectionsController < ApplicationController
       raise "Invalid provider parameter"
     end
     return params[:provider]
-  end
-
-  def authorize
-    id_param = params[:user_id] || params[:id]
-    unless id_param == current_user.username
-      redirect_to(edit_user_path(current_user))
-    end
   end
 end

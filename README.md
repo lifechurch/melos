@@ -1,3 +1,5 @@
+![Code Climate](https://codeclimate.com/repos/52cadb9be30ba06538007d86/badges/1826b62ae13759807264/gpa.png)
+
 
 # YouVersion Web
 

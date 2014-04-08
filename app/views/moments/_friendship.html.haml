@@ -1,0 +1,30 @@
+:ruby
+  # Locals Parameters
+  # moment - a single Moment to display  (Bookmark, Highlight, Note)
+  # comments_displayed - boolean, true or false (whether or not to display comments when rendering html)
+
+
+  avatars = moment.avatars
+  avatar = avatars.lg_avatar
+  friend = moment.friend
+  friend_avatar = friend.avatars.lg_avatar
+
+
+.moment
+  .moment-top
+    .moment-fr
+      %span.moment-icon
+        &nbsp;
+      %span.moment-avatar
+        = image_tag avatar.url
+      %span.moment-time
+        = api_dt_time_ago(moment.created_dt)
+
+      %h2.moment-fr-text
+        = (moment.user.id == current_auth.user_id) ? t("moments.friendship.now friends") : moment.moment_title.html_safe
+
+      .moment-fr-box
+        %a{href: user_path(friend.user_name) }
+          = image_tag friend_avatar.url, class: "moment-fr-avatar", size: "128x128"
+          %span.moment-fr-name
+            = friend.name

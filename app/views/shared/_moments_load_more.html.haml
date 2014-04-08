@@ -1,0 +1,11 @@
+- url_params = [] if local_assigns[:url_params].nil?
+- paginated_end_day = 0 unless local_assigns.has_key? :paginated_end_day
+
+= link_to(t("moments.action.load more"),"#", id: "load-more", "data-page" => @page, "data-paginated-end-day" => paginated_end_day)
+
+:javascript
+
+
+  var feed = new Moments.Feed();
+
+

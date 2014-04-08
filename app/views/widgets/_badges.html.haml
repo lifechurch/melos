@@ -13,5 +13,5 @@
             %br
             = b.description
   %div.ft.align_right
-    %a.more_arrow{:href => user_badges_path(@user.username)}
+    %a.more_arrow{:href => badges_user_path(@user.username)}
       = t('see users badges', username: @user.username)

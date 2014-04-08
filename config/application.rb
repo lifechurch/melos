@@ -68,7 +68,6 @@ module YouversionWeb
       #legacy localizations
       r301 %r{^/(zh_CN|zh_TW|pt_BR)/(.*)}, Proc.new{ |path, rack_env| "#{path.to_s.sub('_', '-')}" }
       # redirect portugese and espanol URLs (from apps) until we support es-ES
-      r301 %r{^/(pt)/(.*)}, '/pt-BR/$2'
       r301 %r{^/(es_MX|es-MX)/(.*)}, '/es/$2'
 
       ### Pass-through to 2.0
@@ -122,8 +121,9 @@ module YouversionWeb
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
-    config.autoload_paths += Dir["#{config.root}/lib/**/"] # include all subdirectories
-    config.autoload_paths += %W(#{config.root}/app/presenters)
+      config.eager_load_paths += Dir["#{config.root}/lib/**/"] # include all subdirectories
+    # config.eager_load_paths += %W(#{config.root}/app/presenters)
+
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -152,7 +152,7 @@ module YouversionWeb
     config.filter_parameters += [:password]
 
     # Don't load rails environment during asset precompilation
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
 
     # Enable the asset pipeline
     config.assets.enabled = true
@@ -161,6 +161,9 @@ module YouversionWeb
     config.assets.version = '1.0'
 
     # Setting up memcached.
-    config.cache_store = :dalli_store, {namespace: "yv", expires_in: 24.hours, compression: true}
+    config.after_initialize do
+      config.cache_store = :dalli_store, {namespace: "yv", expires_in: 24.hours, compression: true}
+    end
+    
   end
 end

@@ -1,0 +1,233 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Ingu Kang <ingukang@gmail.com>, 2013
+# Kardia77 <michellehjhwang33@gmail.com>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
+# Ingu Kang <ingukang@gmail.com>, 2013-2014
+# AllieCha <alliecha@gmail.com>, 2013
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Ingu Kang <ingukang@gmail.com>, 2013
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Sung Nam <sungheenam@gmail.com>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-11-23 18:00+0000\n"
+"Last-Translator: Ingu Kang <ingukang@gmail.com>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/yv-backend/language/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-01 12:02+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/yv-backend/language/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/yv-backend/language/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>성경 시리즈</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "오늘밤 <i>성경 시리즈</i>를 시청해 보세요!"
+
+msgid "moment.bookmark.title"
+msgstr "{name}님이 <b>{reference_human}</b> 책갈피를 표시했습니다."
+
+msgid "moment.bookmark.self.title"
+msgstr "회원님이 <b>{reference_human}</b> 책갈피를 표시했습니다."
+
+msgid "moment.friendship.title"
+msgstr "{user_name}님은 현재 <b>{friend_name}</b>님과 친구입니다"
+
+msgid "moment.friendship.self.title"
+msgstr "회원님은 이제<b>{friend_name}</b>님과 친구입니다"
+
+msgid "moment.highlight.title"
+msgstr "{name}님이 <b>{reference_human}</b> 하일라이트를 했습니다."
+
+msgid "moment.highlight.self.title"
+msgstr "회원님이 <b>{reference_human}</b> 하일라이트를 했습니다."
+
+msgid "moment.note.title"
+msgstr "{name}님이 <b>{title}</b> 노트를 추가했습니다."
+
+msgid "moment.note.self.title"
+msgstr "회원님이 <b>{title}</b> 노트를 추가했습니다."
+
+msgid "moment.bible.download.title"
+msgstr "{name}님이 <b>{version}</b> 번역본을 다운로드했습니다."
+
+msgid "moment.bible.download.self.title"
+msgstr "회원님은 <b>{version}</b> 번역본을 다운로드했습니다."
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name}님이 <b>{title}</b> 묵상계획을 시작했습니다"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "<b>{title}</b> 묵상계획을 시작했습니다"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name}님이 <b>{title}</b> 묵상계획 <b>{day}</b>일을 완료했습니다"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "회원님은 <b>{title}</b> 묵상계획 <b>{day}</b>일을 완료했습니다"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name}님이 <b>{title}</b> 묵상계획을 완료했습니다"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "회원님은 <b>{title}</b> 묵상계획을 완료 하셨습니다"
+
+msgid "moment.badge.earned.title"
+msgstr "{name}님이 <b>{title}</b> 배지를 획득했습니다 "
+
+msgid "moment.badge.earned.self.title"
+msgstr "<b>{title}</b> 배지를 획득하셨습니다"
+
+msgid "moment.video.watched.title"
+msgstr "{name}님이<b>{title}</b>을(를) 보았습니다"
+
+msgid "moment.video.watched.self.title"
+msgstr "회원님이  <b>{title}</b>을(를) 보았습니다"
+
+msgid "notifications.friendships.offer"
+msgstr "{name}님이 회원님과 YouVersion 친구가 되고 싶어합니다."
+
+msgid "notifications.friendships.accept"
+msgstr "{name}님이 친구 요청을 수락했습니다."
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name}님은 이제 회원님의 친구입니다."
+
+msgid "notifications.friendships.suggestion"
+msgstr "{name}님과 YouVersion 친구가 되시겠습니까?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name}님이 회원님의 책갈피에 의견을 남겼습니다. :\"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name}님이 회원님의 하일라이트에 의견을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name}님이 회원님의 노트에 의견을 남겼습니다: \"{comment}\""
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name}님이 회원님의 {reference_human} 책갈피를 좋아합니다."
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name}님이 회원님의 {reference_human} 하일라이트를 좋아합니다."
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name}님이 회원님의 {reference_human} 노트를 좋아합니다."
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name}님이 회원님의 “{title}” 노트를 좋아합니다."
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name}님이 회원님의 노트를 좋아합니다."
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name}님도  책갈피에 의견을 남겼습니다:  \"{comment}\""
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name}님도 {moment_owner_name}님의 책갈피에 의견을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name}님도 하일라이트에 의견을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name}님도 {moment_owner_name}님의 하일라이트에 의견을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name}님도 노트에 의견을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name}님도 {moment_owner_name}님의 노트에 의견을 남겼습니다: \"{comment}\""
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name}님이 {reference_human} 책갈피를 표시했습니다."
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name}님이 {reference_human} 하일라이트를 했습니다."
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name}님이 {reference_human} 노트를 추가했습니다."
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name}님이 \"{title}\" 노트를 추가했습니다."
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name}님이 노트를 추가했습니다."
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "%개의 친구 요청이 있습니다."
+
+msgid "notifications.system.test"
+msgstr "지금 어린이 성경 앱을  다운로드하세요!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "{name}님으로 부터:"
+
+msgid "share.invite_sms"
+msgstr "YouVersion 에서 나온 성경 앱 사용해보셨나요?  참 좋아요.  한 번 사용해보시면 좋아하실거예요.  이 링크를 따라가보세요: "
+
+msgid "share.invite_email_subject"
+msgstr "성경 앱 설치하셨나요?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"YouVersion 에서 나온 성경 앱을 사용해보니 참 좋아요.  사용하시면 좋아하실거예요.  성경 앱은 사용하기가 쉬워서,  말씀을 읽고, 듣고, 보고, 나누는데 아주 많은 도움이 됩니다.  묵상(성경 읽기계획)은 매일 읽을 성경 구절을 자동으로 선택해줍니다. \n"
+"\n"
+"대부분의 이동 기기에 지원되면 아래 링크에서 무료로 받을 수 있습니다:"
+
+msgid "share.invite_twitter"
+msgstr "저는 @YouVersion의 성경 앱을 홈 스크린에 올려놓았습니다.  말씀을 읽고, 보고, 듣고, 공유할 수 있는 무료 앱:"
+
+msgid "share.invite_twitter_direct"
+msgstr "@YouVersion 에서 나온 성경 앱 사용해보셨나요?  너무 좋아요.  한 번 사용하시면 좋아하실거예요.  이 링크를 따라가보세요: "
+
+msgid "share.invite_facebook"
+msgstr "성경 앱, 내 마음에 쏙 들어요.   성경을 하이라이트하고, 오디오로 듣고, 묵상 계획을 따라가고, 심지어 동영상을 보면서  말씀과 늘 함께하는데 큰 도움이 된답니다.   무료 성경 앱, 지금 다운로드 하세요."
+
+msgid "share.invite_facebook_direct"
+msgstr "YouVersion 에서 나온 성경 앱 사용해보셨나요?  참 좋아요.  한 번 사용하시면 좋아하실거예요.  이 링크를 따라가보세요: "

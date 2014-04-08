@@ -33,6 +33,8 @@ sk:
     users username or password invalid: "Zadané prihlasovacie meno alebo heslo je neplatné."
     users username required: "Musíte zadať prihlasovacie meno."
   meta:
+    kids_app:
+      title: "Aplikácia Biblia pre deti"
     100million:
       title: "Začína to 100 miliónmi"
       description: "Aplikácia Biblia bola nainštalovaná už takmer 100 miliónov krát, čo je významná udalosť! Ale my iba začíname. Stiahnite si bezplatnú aplikáciu Biblia ešte dnes - a potom ju zdieľajte s priateľmi. Poďme spolu tvoriť dejiny."
@@ -252,7 +254,7 @@ sk:
     my badges: "Moje odznaky"
     revised date: "Naposledy upravené: %{date}"
     update email copy: "Zadajte novú emailovú adresu a kliknite na Zmeniť email. Následne vám pošleme odkaz na potvrdenie vašej novej adresy,"
-    edit email: "Aktualizovať email"
+    edit email: "Aktualizovať emailovú adresu"
     update email check: "Prosím skontrolujte si email a kliknite na zaslaný odkaz, čím potvrdíte vašu novú emailovú adresu."
     confirm update email success: "Vďaka! Zmenili ste svoju emailovú adresu."
     confirm update email error: "Prepáčte, nepodarilo sa zmeniť vašu emailovú adresu."
@@ -584,7 +586,7 @@ sk:
     promo 3: "Viac ako 5 miliárd ľudí použije tento rok mobil. Prispejte teraz."
     headline: "Každý potrebuje Božie Slovo."
     subhead: "Pomôžte ľuďom z celého sveta, aby mohli mať Bibliu na dosah."
-    copy: "Predstavte si, že by ste mohli darovať každému človeku na svete Bibliu. Keď venujete príspevok YouVersion, urobíte presne to. Žijeme v čase, o ktorom iní iba snívali &ndash; keď každý, kto má telefón, môže mať prístup k Biblii a zažiť príbeh Božej lásky pre nás. S vašou podporou môžeme pokračovať pomáhať viac ľuďom tráviť viac času s Písmom."
+    copy: "Predstavte si, že by ste mohli darovať každému človeku na svete Bibliu. Keď venujete príspevok YouVersion, urobíte presne to. Žijeme v čase, o ktorom iní iba snívali &ndash; keď každý, kto má telefón, môže mať prístup k Biblii a zažiť príbeh Božej lásky k nám. S vašou podporou môžeme pokračovať pomáhať viac ľuďom tráviť viac času s Písmom."
     amount: "Suma príspevku"
     option once: "Jednorazovo"
     option monthly: "Mesačne"

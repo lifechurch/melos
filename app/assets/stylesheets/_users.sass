@@ -10,3 +10,432 @@
   form li
     input.field
       width: 100%
+
+
+// !Profile and friend pages ----------------------------------------
+
+// !Top part with bio and pic
+
+.top_section
+  background: none
+  background-image: none
+  border: 0
+  +box-shadow(none)
+
+.profile-hdr
+  padding: 45px 0 0 45px
+  position: relative
+  min-height: 125px
+
+  .avatar_huge
+    position: absolute
+    top: 10px
+    right: 60px
+    width: 128px
+    height: 128px
+    +border-radius(128px)
+    +box-shadow(rgba(0,0,0,.15) 0 1px 1px)
+
+  .profile-hdr-name
+    font-size: 48px
+    text-shadow: none
+
+  .profile-hdr-btn
+    +border-radius(4px)
+    padding: 4px 20px
+
+  .profile-hdr-info
+    overflow: hidden
+    display: block
+    margin-bottom: 10px
+
+  .profile-hdr-info-user,
+  .profile-hdr-info-location,
+  .profile-hdr-info-link
+    display: inline-block
+    width: auto
+    font-size: 15px
+    text-shadow: none
+    background:
+      repeat: no-repeat
+      position: left center
+    padding: 0 20px 0 22px
+
+  .profile-hdr-info-about
+    font-size: 13px
+    width: 550px
+    margin-bottom: 40px
+    line-height: 1.4em
+
+  .profile-hdr-info-user
+    background:
+      image: image-url("icon_small_user.png")
+
+  .profile-hdr-info-location
+    background:
+      image: image-url("icon_small_location.png")
+
+  .profile-hdr-info-link
+    background:
+      image: image-url("icon_small_link.png")
+
+  .profile-hdr-btn,
+  .profile-hdr-friend,
+  .profile-hdr-addfriend,
+  .profile-hdr-pending,
+  .profile-hdr-accept,
+  .profile-hdr-deny
+    position: absolute
+    top: 50px
+    right: 185px
+    padding: 4px 10px 6px
+    font-size: 13px
+
+  .profile-hdr-friend
+    color: #fff
+    font-weight: bold
+    border-radius: 4px
+    padding-left: 30px
+    background: image-url("icon-check-white.png") no-repeat 10px 8px #51652f
+
+  .profile-hdr-pending
+    background-color: #888
+    color: #fff
+    padding: 2px 10px 4px
+    +border-radius(3px)
+
+  .profile-hdr-deny
+    top: 80px
+
+
+// !Tab navigation
+
+.top_section
+
+  .profile-tabs
+    overflow: hidden
+    margin: 0 0 15px 0
+
+  .profile-tabs-activity,
+  .profile-tabs-friends,
+  .profile-tabs-notes,
+  .profile-tabs-bookmarks,
+  .profile-tabs-highlights,
+  .profile-tabs-badges,
+  .profile-tabs-settings
+    display: block
+    width: 115px
+    padding-left: 38px
+    margin-left: 2px
+    float: left
+    background: #EEEDEB image-url("profile-sprite.png") no-repeat 15px top
+
+  .profile-tabs-activity
+    margin-left: 0
+
+  .profile-tabs-activity a,
+  .profile-tabs-friends a,
+  .profile-tabs-notes a,
+  .profile-tabs-bookmarks a,
+  .profile-tabs-badges a,
+  .profile-tabs-highlights a,
+  .profile-tabs-settings a
+    height: 42px
+    line-height: 41px
+    display: block
+    color: #444
+    text-decoration: none
+    font-weight: bold
+    font-size: 13px
+
+  .profile-tabs-activity
+    background-position: 15px 12px
+    width: 97px
+
+  .profile-tabs-friends
+    background-position: 15px -52px
+
+  .profile-tabs-notes
+    background-position: 15px -116px
+
+  .profile-tabs-bookmarks
+    background-position: 15px -179px
+
+  .profile-tabs-highlights
+    background-position: 15px -243px
+
+  .profile-tabs-badges
+    background-position: 15px -307px
+
+  .profile-tabs-settings
+    background-position: 15px -371px
+
+  .profile-tabs
+    .highlight
+      background-color: #fff
+      border-top: 3px solid #222
+
+      a
+        height: 39px
+        line-height: 37px
+
+  .profile-tabs-activity.highlight
+    background-position: 15px 10px
+    width: 92px
+
+  .profile-tabs-friends.highlight
+    background-position: 15px -55px
+    width: 115px
+
+  .profile-tabs-notes.highlight
+    background-position: 15px -119px
+
+  .profile-tabs-bookmarks.highlight
+    background-position: 15px -182px
+
+  .profile-tabs-highlights.highlight
+    background-position: 15px -246px
+
+  .profile-tabs-badges.highlight
+    background-position: 15px -310px
+
+  .profile-tabs-settings.highlight
+    background-position: 15px -374px
+
+
+// !Content area with feed etc.
+
+#main .profile
+  border: 0
+  background: none
+  padding: 0
+
+.moment-bm-title
+  width: 380px
+  letter-spacing: -0.04em
+  font-size: 26px
+  margin-bottom: 10px
+
+.moment-bm-references
+  margin-bottom: 0
+
+  li
+    padding: 0
+    margin-top: 15px
+
+  li:first-child
+    margin-top: 0
+
+.moment-bm-references-h4title
+  margin-bottom: 15px
+
+.moment-bm-references-h3title
+  font-size: 18px
+  margin-bottom: 15px
+
+.moment-bm-references-reader.moment-vod-verse
+  font-size: 20px
+  margin-bottom: 0
+
+  .label
+    font-size: 13px
+
+.moment-bm-labels
+  margin: 10px 0 0
+
+.moment-bm-labels-link
+  display: inline-block
+  padding: 0px 7px 2px
+  background-color: #bbb
+  +border-radius(4px)
+  margin-left: 2px
+  color: #fff
+  text-decoration: none
+  font-weight: bold
+  font-size: 12px
+
+.moment-bm-labels-link:hover
+  background-color: #aaa
+  color: #fff
+
+
+// !Friends tab
+
+.profile-friends
+  margin: -15px 0 0
+  background-color: #fff
+  border-radius: 0 0 5px 5px
+  padding: 30px 30px 20px
+
+.friends-count
+  position: relative
+  border-bottom: 1px dotted #e1e1e1
+  padding: 0 0 20px 0
+
+.friends-count-have
+  font: 200 34px "Helvetica Neue", Arial, sans-serif
+  margin-bottom: 0
+
+.friends-count-canhave
+  margin: -2px 0 0
+
+.friends-count-help
+  padding: 0 0 0 21px
+  background: image-url("icon_help.png") no-repeat 0 center
+  margin: 0
+  position: relative
+  display: block
+  cursor: pointer
+  color: #888
+  font-size: 12px
+
+.friends-count-find
+  width: 150px
+  position: absolute
+  right: 0px
+  top: 2px
+
+.friends-view-requests
+  width: 150px
+  position: absolute
+  right: 0px
+  top: 50px
+
+.friend-directory
+  overflow: hidden
+  clear: both
+
+
+.friend-detail
+  position: relative
+  border-bottom: 1px dotted #e1e1e1
+  width: 32%
+  float: left
+  height: 90px
+  margin: 0 1% 0 0
+
+.friend-detail:nth-child(3n)
+  margin: 0
+  width: 34%
+
+.friend-detail-avatar
+  width: 70px
+  height: 70px
+  +border-radius(70px)
+  +box-shadow(rgba(0, 0, 0, 0.15) 0 1px 1px)
+  position: absolute
+  left: 0
+  top: 10px
+
+.friend-detail-name
+  margin: 24px 0 -5px 85px
+  display: block
+  font-size: 15px
+
+.friend-detail-delete,
+.friend-detail-add,
+.friend-detail-status
+  margin: 0 0 0 86px
+  color: #777
+  font-size: 11px
+  font-weight: normal
+
+.friends-none
+  background: image-url("social-psa-profiles.png") no-repeat center 40px
+  text-align: center
+  padding: 70px 180px 0
+
+
+// !Blank slate pages
+
+#main
+
+  .slate-activity,
+  .slate-bookmarks,
+  .slate-highlights,
+  .slate-notes,
+  .slate-badges,
+  .slate-friends
+    padding: 120px 90px 20px 90px
+    border-radius: 0 0 5px 5px
+    margin: -15px 0 0 0
+    background: #fff
+
+    h2,
+    .friends-private
+      font-weight: 100
+      font-size: 3em
+      line-height: 1.2em
+      text-align: center
+      color: #888
+      margin: 0 0 20px 0
+    p
+      text-align: center
+      padding: 0 90px
+
+  .slate-bookmarks
+    background: #fff image-url("icon-bookmark-64.png") no-repeat center 40px
+
+  .slate-highlights
+    background: #fff image-url("icon-highlight-64.png") no-repeat center 40px
+
+  .slate-notes
+    background: #fff image-url("icon-notes-64.png") no-repeat center 40px
+
+  .slate-badges
+    background: #fff image-url("icon-badge-64.png") no-repeat center 40px
+
+  .slate-friends
+    background: #fff image-url("icon-group-64.png") no-repeat center 40px
+
+  .slate-activity
+    background: #fff image-url("icon-activity-64.png") no-repeat center 40px
+
+
+// !Profile settings pages
+
+.settings-header
+  padding: 45px 0 40px 45px
+  position: relative
+
+  .settings-header-avatar
+    position: absolute
+    top: 10px
+    right: 60px
+    width: 128px
+    height: 128px
+    +border-radius(128px)
+    +box-shadow(rgba(0,0,0,.15) 0 1px 1px)
+
+  .settings-header-name
+    font-size: 48px
+    text-shadow: none
+    margin: 0
+
+  .settings-header-btn
+    +border-radius(4px)
+    padding: 4px 20px
+
+#main article.settings-page
+  background: none
+  padding: 30px 0
+  overflow: hidden
+
+  .settings-page-content
+    width: 540px
+    margin: 0 10px 0 0
+    float: left
+    background-color: #fff
+    padding: 30px
+    +border-radius(5px)
+
+    .email-update
+      input
+        width: 400px
+
+      button
+        margin: 10px 0 0
+
+  .settings-page-menu
+    width: 300px
+    float: left

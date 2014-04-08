@@ -33,6 +33,8 @@ cs:
     users username or password invalid: "Uživatelské jméno nebo heslo, které jste napsali, není správně."
     users username required: "Zde musíte zadat uživatelské jméno. "
   meta:
+    kids_app:
+      title: "Aplikace Bible pro děti"
     100million:
       title: "Začíná to se 100 milióny"
       description: "Aplikace Bible byla již nainstalována skoro 100 milionkrát -  je to neuvěřitelný historický milník. A to jsme ještě ani pořádně nezačali. Již dnes si stáhněte aplikaci Bible, která je zdarma - a pak sdílejte aplikaci se svými přáteli. Začněme společné tvořit dějiny. "
@@ -135,8 +137,8 @@ cs:
   live: "Živě/Skupiny"
   first page: "První strana"
   last page: "Poslední strana"
-  next page: "Následující strana"
-  previous page: "Předchozí strana"
+  next page: "Další stránka"
+  previous page: "Předchozí stránka"
   invalid username or password: "Neplatné uživatelské jméno nebo heslo."
   show all bookmarks: "Zobrazit všech %{total} záložek"
   show all notes: "Zobrazit všech %{total} poznámek"

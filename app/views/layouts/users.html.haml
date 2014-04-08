@@ -1,73 +1,81 @@
-- @title = @user.name || @user.username if @user
+- @sidebar = false
 
-- unless content_for?(:sidebar)
-  - content_for :sidebar do
-    - if @me
-      = render partial: "widgets/settings" unless [:recent_activity, :bookmarks, :notes].find{|rsrc| rsrc == @selected}
-    = render partial: "widgets/badges" unless @user.badges.blank?
 
-- if @me
+- if current_user_is? @user
   - content_for :mobile_right_nav do
     %a.settings_btn{:href => settings_profile_path}
 
 - content_for :main do
 
-  - unless @me
+  %section.top_section
+    .profile-hdr
+      %img.avatar_huge{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
 
-    %section.top_section.clearfix
-      .profile_header
-        - if @user.user_avatar_url
-          %img.avatar_huge{src: @user.user_avatar_url["px_128x128"]}
+      %h1.profile-hdr-name= @user.name || @user.username
 
-        - if @me
-          %form{action: edit_user_path(@user)}
-            %button.float_right= t("users.profile.edit")
-        %h1= @user.name || @user.username
+      %ul.profile-hdr-info
+        - if user_name = @user.username
+          %li.profile-hdr-info-user
+            = user_name
+        - if user_location = @user.location
+          %li.profile-hdr-info-location
+            = user_location
+        - if @user.website
+          %li.profile-hdr-info-link
+            = link_to @user.website_human, @user.website_url
 
-      .profile_info
-        %ul.float_left
-          - if @user.name
-            %li.icon_small_user= @user.username
-          - if @user.location
-            %li.icon_small_location= @user.location
-          - if @user.website
-            %li.icon_small_link= link_to @user.website_human, @user.website_url
-          - if @user.bio
-            %li.icon_small_about= @user.bio
+      - if @user.bio
+        %p.profile-hdr-info-about
+          = @user.bio
 
-    %ul.header_tabs
-      %li.notes{class: ("highlighted" if @selected == :notes)}
-        %a{href: user_notes_path(@user)}
-          %span= t('notes title')
-      %li.bookmarks{class: ("highlighted" if @selected == :bookmarks)}
-        %a{href: user_bookmarks_path(@user)}
-          %span= t('bookmarks.title')
-      %li.badges{class: ("highlighted" if @selected == :badges)}
-        %a{href: user_badges_path(@user)}
-          %span= t('badges title')
+      - # This is me, show the edit button
+      - if current_user_is? @user
+        = link_to t("users.edit profile"), edit_user_path(@user), class: "profile-hdr-btn action_button_blue", title: t("users.edit profile")
+
+      - else # Check to see if this person is in my pending lists
+
+        -     friendship_pending_type = Friendships.pending_type_for(@user, auth: current_auth)
+        - if  friendship_pending_type.present?
+
+          - if friendship_pending_type == :incoming # this person has requested friendship with me
+            = form_tag friendships_url(user_id: @user.id) do
+              = button_tag t("friendships.form.accept request button"), class: 'profile-hdr-accept action_button_green action-add' 
+
+            = form_tag friendship_url(@user.id), method: "DELETE" do
+              = button_tag t("friendships.form.ignore request button"), class: 'profile-hdr-deny action_button_grey action-ignore'
+
+          - elsif friendship_pending_type == :outgoing  # I have requested friendship with this person
+            %span.profile-hdr-pending
+              = t("friendships.status.pending")
+
+        - elsif Friend.with? @user, auth: current_auth # I am friends with this user
+          %span.profile-hdr-friend
+            = t("friendships.status.friends")
+
+        - else # This user isn't me, they aren't in my pending lists, and I'm not friends with them show the Request friendship button
+          = form_tag offer_friendships_path(user_id: @user.id) , method: :post do
+            = submit_tag t("friendships.form.add friend button"), class: "profile-hdr-addfriend action_button_green", title: t("friendships.form.add friend button title", user: @user.name)
+
+    :ruby
+      tabs = [
+        {href: user_path(@user),                            type: "activity"},
+        {href: user_friends_path(user_id: @user.to_param),  type: "friends"},
+        {href: notes_user_path(@user),                      type: "notes"},
+        {href: bookmarks_user_path(@user),                  type: "bookmarks"},
+        {href: highlights_user_path(@user),                 type: "highlights"},
+        {href: badges_user_path(@user),                     type: "badges"}
+      ]
+
+      # find the highlight method in /app/helpers/users_helper.rb
+
+    %ul.profile-tabs
+      - tabs.each do |tab|
+        - type, href = tab[:type], tab[:href]
+        %li{class: "profile-tabs-#{type} #{highlight(href)}"}
+          = link_to(t("users.profile.tab #{type}"), href)
+
 
   %article.profile
-    - if @me
-      - if @selected == :recent_activity || @selected == :notes || @selected == :badges
-        %h1{class: @selected == :notes ? "float_left" : ""}= t("users.my #{@selected.to_s}")
-      - else
-        - title = t("users.edit #{@selected}")
-        %h1= title
-        .mobile
-          %dl.tabs
-            %dd{class: ('highlighted' if @selected == :profile)}
-              = link_to t("users.edit profile"), settings_profile_path
-            %dd{class: ('highlighted' if @selected == :password)}
-              = link_to t("users.edit password"), settings_password_path
-            %dd{class: ('highlighted' if @selected == :notifications)}
-              = link_to t("users.edit notifications"), notification_settings_path
-            %dd{class: ('highlighted' if @selected == :connections)}
-              = link_to t("users.edit connections"), settings_connections_path
-
-      -unless content_for? :title
-        - content_for :title do
-          = title
-
     = content_for?(:user_main) ? yield(:user_main) : yield
 
 = render template: 'layouts/application'

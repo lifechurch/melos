@@ -1,0 +1,20 @@
+:ruby
+  html_attributes(id: "forgot-password")
+
+%article
+  %h1.keep= t('users.forgot password')
+  %p= t('users.forgot password copy')
+  
+  - if @results
+    = render partial: "shared/form_errors", locals: {errors: @results.errors}
+
+  = form_tag forgot_password_path do
+    %ul
+      %li
+        = label_tag :email, t("users.email address")
+        = text_field_tag :email, nil, class: "field"
+      %li
+        - if current_auth
+          = submit_tag t('users.send new password button'), class: "confirm", "data-confirm-text" => t('users.yes reset and log out')
+        - else
+          = submit_tag t('users.send new password button'), class: "confirm", "data-confirm-text" => t('users.yes reset')

@@ -6,6 +6,5 @@
       = "#{t('download ad.line 1')}<br />".html_safe
       = "#{t('download ad.line 2')}<br />".html_safe
       = t('download ad.line 3')
-    %p
-      %a.more_arrow{href:'/app'}
-        = t("download ad.download")
+    %a.action_button_green{href:'/app'}
+      = t("download ad.download")

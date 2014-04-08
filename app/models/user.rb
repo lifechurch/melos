@@ -1,44 +1,42 @@
 require 'digest/md5'
 
 class User < YV::Resource
-  # include Model
 
-  attribute :id
-  attribute :username
-  attribute :password
-  attribute :password_confirm
-  attribute :email
-  attribute :agree
-  attribute :verified
-  attribute :first_name
-  attribute :last_name
-  attribute :location
-  attribute :im_type
-  attribute :im_username
-  attribute :phone_mobile
-  attribute :language_tag
-  attribute :country
-  attribute :timezone
-  attribute :postal_code
-  attribute :bio
-  attribute :birthdate
-  attribute :gender
-  attribute :website
-  attribute :twitter
-  attribute :facebook
-  attribute :apps
-  attribute :google
-  attribute :created_dt
-  attribute :last_login_dt
-  attribute :start_dt
+  include YV::Concerns::Searchable
 
-  def self.update_path
-    "users/update"
-  end
+  api_response_mapper YV::API::Mapper::User
 
-  def self.create_path
-    "users/create"
-  end
+  attributes([ :id,
+               :name,
+               :username,
+               :first_name,
+               :last_name,
+               :password,
+               :password_confirmation,
+               :email,
+               :agree,
+               :verified,
+               :location,
+               :im_type,
+               :im_username,
+               :phone_mobile,
+               :language_tag,
+               :country,
+               :timezone,
+               :postal_code,
+               :bio,
+               :birthdate,
+               :gender,
+               :website,
+               :twitter,
+               :facebook,
+               :apps,
+               :google,
+               :created_dt,
+               :last_login_dt,
+               :start_dt,
+               :avatars])
+
 
   class << self
 
@@ -46,9 +44,19 @@ class User < YV::Resource
     # returns a YV::API::Result decorator for a User instance if create succeeds
     # returns a YV::API::Result with errors if create fails
     def register(opts = {})
-      opts = {email: "", username: "", password: "", secure: true, verified: false, agree: false}.merge!(opts.symbolize_keys)
+      opts = {
+        email: "",
+        first_name: "",
+        last_name: "",
+        username: "",
+        password: "",
+        verified: false,
+        agree: false
+      }.merge!(opts.symbolize_keys)
+
       opts[:agree] = true if opts[:agree]
-      opts["notification_settings[newsletter][email]"] = true
+      opts[:token] = Digest::MD5.hexdigest "#{opts[:username]}.Yv6-#{opts[:password]}"
+      opts[:notification_settings] = { newsletter: {email: true}}
 
       data, errs = post("users/create", opts)
       results = if errs.blank?
@@ -76,7 +84,7 @@ class User < YV::Resource
       if results.valid?
          # we've successfully authenticated
          # we now need to make another API view call with auth info to retrieve entire detailed user info.
-         results = find(data.id, auth: auth) # our user     
+         results = find(data.id, auth: auth.merge(user_id: data.id)) # our user     
       end
 
       return results
@@ -148,17 +156,29 @@ class User < YV::Resource
       return YV::API::Results.new(data,errs)
     end
 
-
   end
+  # END Class methods ------------------------------------------------------
+
+
+
+
 
   def initialize(data = {})
-    data["agree"] = (data["agree"] == "1") unless data.blank?
-    @attributes = data.merge({
-      "notification_settings[newsletter][email]" => true,
-      secure: true})
-    @associations = {}
+    super(
+      data.merge(
+        notification_settings:{ newsletter:{ email: true }},
+        secure: true,
+        agree:  true
+      )
+    )
+  end
 
-    after_build
+
+  def profile_incomplete?
+    first_name.blank? or
+    last_name.blank? or
+    location.blank? or
+    bio.blank?
   end
 
   # instance method for updating email address
@@ -176,15 +196,14 @@ class User < YV::Resource
 
   # Instance method
   # Updates profile picture
-  # TODO: localize for error key: users.image_decoded.not_valid_image
   def update_picture(uploaded_file)
     error = {}
     if uploaded_file.nil?
       error["key"]   = "picture_empty"
-      error["error"] = "Please select a picture to upload"
+      error["error"] = I18n.t("users.profile.picture_empty")
     elsif uploaded_file.size > 1.megabyte
       error["key"]   = "picture_too_large"
-      error["error"] = "Picture should be less than 1 megabyte"
+      error["error"] = I18n.t("users.profile.picture_too_large")
     end    
 
     unless error.has_key?("error")
@@ -194,7 +213,7 @@ class User < YV::Resource
         return YV::API::Results.new(data,errs)
       rescue APITimeoutError
         error["key"]   = "transfer_too_slow"
-        error["error"] = "Choose a smaller picture or find a faster connection"
+        error["error"] = I18n.t("users.profile.transfer_too_slow")
       end
     end
 
@@ -232,12 +251,6 @@ class User < YV::Resource
     response
   end
 
-
-  def name
-    return nil unless first_name && last_name
-    "#{first_name} #{last_name}"
-  end
-
   def zip_code
     postal_code
   end
@@ -251,14 +264,12 @@ class User < YV::Resource
     attributes["user_avatar_url"] ||= self.generate_user_avatar_urls
   end
 
-  def direct_user_avatar_url
-    # some calls returning user info don't have avatar URLS
-    # we need the direct path to avoid CDN cache in certain cases
-    attributes["direct_user_avatar_url"] ||= self.generate_user_avatar_urls(direct: true)
-  end
-
   def to_param
     self.username
+  end
+
+  def to_path
+    "/users/#{to_param}"
   end
 
 
@@ -318,47 +329,16 @@ class User < YV::Resource
     end
   end
 
-
-
-  # API Method
-  # Returns an array of objects / model instances of a users recent activity
-
-  def recent_activity
-    unless @recent_activity
-
-      data, errs = self.class.get("community/items", user_id: self.id)
-      results = YV::API::Results.new(data,errs)
-
-      if results.invalid?
-        (results.has_error?("not found") || results.has_error?("deprecated"))  ? @recent_activity = [] : self.class.raise_errors(results.errors, "user#recent_activity")
-      end
-
-      if results.valid?
-        activities = data.community.map do |a|
-          a.type = "object" if a.type == "reading_plan_completed"
-          a.type = "object" if a.type == "reading_plan_subscription"
-          if a.type != "like" && a.type != "object"
-            class_name = a.type.camelize.constantize
-            a.data.map { |b| class_name.new(b) }
-          end
-        end
-        @recent_activity = activities.flatten
-      end
-    end
-    return @recent_activity
-  end
-
-
-
   def devices
     Device.for_user(self.auth.user_id, auth: self.auth)
   end
 
+
   def connections
-    connections = {}
-    connections["twitter"] = TwitterConnection.new(data: self.apps.twitter.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.twitter
-    connections["facebook"] = FacebookConnection.new(data: self.apps.facebook.symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.facebook
-    connections
+    @connections ||= {
+      "twitter" => build_connection(:twitter),
+      "facebook" => build_connection(:facebook)
+    }
   end
 
   def subscriptions(opts = {})
@@ -372,7 +352,7 @@ class User < YV::Resource
 
   def subscribed_to? (plan, opts = {})
     #if auth is nil, it will attempt to search for public subscription
-    return Subscription.find(plan, id, auth: auth).present? rescue false
+    return Subscription.find(plan, auth: auth).present? rescue false
   end
 
   def ==(compare)
@@ -393,6 +373,36 @@ class User < YV::Resource
       mash["px_#{s}"] = Cfg.send(avatar_path) + Digest::MD5.hexdigest(self.username.to_s) + "_" + s + ".png"
     end
     mash
+  end
+
+
+  # Determine if this user is friends with another user given their user id.
+  # Params:
+  # - id: required (id of User)
+  # returns: boolean
+  
+  def friends_with?(id)
+    friend_ids.include? id.to_i
+  end
+
+
+  # Returns a boolean if this user can interact with a moment. (comment, like, view comments and likes)
+  def interact_with?(moment)
+    user_id = moment.user.id
+    id == user_id or friends_with?(user_id)
+  end
+
+
+  private
+
+  def build_connection(type)
+    raise "Type argument must be :twitter or :facebook" unless [:twitter,:facebook].include? type
+    klass = "#{type.to_s.capitalize}Connection".constantize
+    klass.new(data: self.apps.send(type).symbolize_keys, auth: self.auth.symbolize_keys) if self.apps.send(type)
+  end
+
+  def friend_ids
+    @friend_ids ||= Friend.ids(auth: self.auth)
   end
 
 end

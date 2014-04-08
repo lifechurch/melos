@@ -1,0 +1,230 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Magnus Österlund <magnusosterlund78@gmail.com>, 2013
+# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
+# API Strings
+#
+# Translators:
+# Translators:
+# Translators:
+# Magnus Österlund <magnusosterlund78@gmail.com>, 2013-2014
+# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
+# App sharing
+#
+# Translators:
+# Translators:
+# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Magnus Österlund <magnusosterlund78@gmail.com>, 2013
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2013-11-16 23:40+0000\n"
+"Last-Translator: Magnus Österlund <magnusosterlund78@gmail.com>\n"
+"Language-Team: Swedish (http://www.transifex.com/projects/p/yv-backend/language/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
+"POT-Creation-Date: 2013-08-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-01 19:50+0000\n"
+"Last-Translator: Magnus Österlund <magnusosterlund78@gmail.com>\n"
+"Language-Team: Swedish (http://www.transifex.com/projects/p/yv-backend/language/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion)\n"
+"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
+"POT-Creation-Date: 2013-04-30 11:23-0500\n"
+"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"Language-Team: Swedish (http://www.transifex.com/projects/p/yv-backend/language/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bibelserier</i>"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Titta på <i>bibelserien</i> i kväll!"
+
+msgid "moment.bookmark.title"
+msgstr "{name} har bokmärkt <b>{reference_human}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Du har bokmärkt <b>{reference_human}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} är nu vän med <b>{friend_name}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Du är nu vän med <b>{friend_name}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} har markerat <b>{reference_human}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Du har markerat  <b>{reference_human}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} har lagt till en anteckning, <b>{title}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Du har lagt till en anteckning, <b>{title}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} har laddat ner översättningen <b>{version}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Du har laddat ner översättningen <b>{version}</b>"
+
+msgid "moment.reading_plan.subscription.title"
+msgstr "{name} har startat planen <b>{title}</b>"
+
+msgid "moment.reading_plan.subscription.self.title"
+msgstr "Du har startat planen <b>{title}</b>"
+
+msgid "moment.reading_plan.day.title"
+msgstr "{name} har fullföljt dag <b>{day}</b> i planen <b>{title}</b>"
+
+msgid "moment.reading_plan.day.self.title"
+msgstr "Du har fullföljt dag <b>{day}</b> i planen <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.title"
+msgstr "{name} har fullföljt planen <b>{title}</b>"
+
+msgid "moment.reading_plan.completion.self.title"
+msgstr "Du har fullföljt planen <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} har förtjänat emblemet <b>{title}</b>"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Du har förtjänat emblemet <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} har tittat på <b>{title}</b>"
+
+msgid "moment.video.watched.self.title"
+msgstr "Du har tittat på <b>{title}</b>"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} vill bli din vän på YouVersion"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} har accepterat din vänförfrågan"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} är nu din vän"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Vill du bli vän med {name} på YouVersion?"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} har kommenterat ditt bokmärke: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} har kommenterat din markering: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} har kommenterat din anteckning: “{comment}”"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name} gillar ditt bokmärke, {reference_human}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} gillar din markering, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} gillar din markering på {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} gillar din anteckning, “{title}”"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} gillar din anteckning"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} har också kommenterat deras bokmärke: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} har också kommenterat på {moment_owner_name}s bokmärke: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} har också kommenterat på deras markering: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} har också kommenterat {moment_owner_name}s markering: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} har också kommenterat på deras anteckning: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} har också kommenterat på {moment_owner_name}s anteckning: “{comment}”"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} har bokmärkt {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name} har markerat {reference_human}"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} har lagt till en anteckning på {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} har lagt till en anteckning, “{title}”"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} har lagt till en anteckning"
+
+#. TRANSLATORS: Plural test
+msgid "notifications.friendships.count"
+msgid_plural "You have %d friend requests"
+msgstr[0] "Du har en vänförfrågan"
+msgstr[1] "Du har %d vänförfrågningar"
+
+msgid "notifications.system.test"
+msgstr "Ladda ner vår Bibelapp för barn nu!!!"
+
+msgid "share.invite_sms_prefix"
+msgstr "Från {name}:"
+
+msgid "share.invite_sms"
+msgstr "Har du Bibelappen från YouVersion? Jag älskar den, och jag tror att du också kommer att göra det. Här har du en länk om du inte har den:"
+
+msgid "share.invite_email_subject"
+msgstr "Har du Bibelappen?"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Jag har njutit av Bibelappen från YouVersion och tänkte att du kanske gillar det också. Jag öppnar Bibeln mycket oftare numera då det är så lätt att läsa, titta, lyssna, och dela. Det finns även planer med ett urval av Bibeln, allt framplockat och väntande på mig varje dag. \n"
+"\n"
+"Du kan hämta det (gratis!) till nästan alla mobila enheter här:"
+
+msgid "share.invite_twitter"
+msgstr "Bibelappen från @YouVersion har en permanent plats på min startskärm. Läs, titta, lyssna och dela...allt i en gratisapp:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Har du Bibelappen från @YouVersion? Jag älskar den, och tror att du kanske också skulle göra det. Här är länken:"
+
+msgid "share.invite_facebook"
+msgstr "Jag älskar Bibelappen! Den hjälper mig verkligen att göra Bibeln till en del av mitt vardagliga liv. Den låter mig markera, lyssna på ljudbiblar, göra anteckningar, följa planer för andakt...och t.o.m. se filmer! Gå och ladda ner den nu (det är gratis):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Har du Bibelappen? Jag älskar den, och jag tror att du också kommer göra det. Här är länken:"

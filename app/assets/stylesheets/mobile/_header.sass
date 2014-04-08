@@ -1,31 +1,38 @@
 // `Header
 //----------------------------------------------------------------------------------------------------
 
+#header
+  height: 45px !important
+  border-radius: 0px !important
+  padding: 0px !important
+  width: 100%
+  border: 1px solid #232324
+
 #header_outer
   padding: 0
   z-index: 901
-  position: relative
+  position: fixed
+  height: 47px
+  width: 100%
+  left: 0
 
 #header,
 .reader_modal_header
   -webkit-font-smoothing: subpixel-antialiased
-  background: #333 image-url("header.png") repeat-x
+  background-color: #222
   font-size: 11px
-  overflow: hidden
   height: 45px
   border-radius: 0px
-  box-shadow: 0px 0px 10px #333
-  -moz-box-shadow: 0px 0px 10px #333
-  -webkit-box-shadow: 0px 0px 10px #333
 
 
 #header h1
-  margin: 0
+  margin: 8px 0 0
   padding: 0
   font: bold 16px Arial, sans-serif
   color: #999 !important
-  padding-left: 8px
+  padding-left: 0
   text-shadow: none
+  float: left
 
 #header p
   margin: 0
@@ -68,20 +75,24 @@
 #header #nav_signin,
 #header .profile_btn,
 #header .back_btn
-  text-indent: 100%
+  text-indent: -2000px
   white-space: nowrap
   display: block
   height: 26px
   width: 30px
   float: left
-  padding: 8px 10px
+  padding: 8px 5px
 
 #header .close_btn
   background: image-url("mobile/close_btn.png") 12px 8px no-repeat
 
 .reader_modal_header .close_btn,
 #header .back_btn
-  background: image-url("nav_back.png") 12px 8px no-repeat
+  background: #444 image-url("nav_back_arrow.png") 0px 0px no-repeat
+  height: 13px
+  width: 18px
+  margin: 8px 13px 0 10px
+  +border-radius(4px)
 
 #header .save_btn,
 #header .submit_btn
@@ -112,22 +123,21 @@
 
 #header #m_version_btn,
 #header #m_plan_btn
-  background: image-url("mobile/nav_button_bg.png") 0px 8px no-repeat
-  padding: 18px 7px 18px 10px
+  margin: 8px 0 0 0
+  padding: 7px
+  background-color: #444
   display: block
-  border-radius: 4px
   float: left
   color: #fff !important
   font-size: 15px
   font-weight: bold
   height: 15px
-  margin: 0px
-  line-height: 10px
+  line-height: 15px
+  +border-radius(4px)
 
 #header #m_plan_btn
-  padding: 10px 4px 13px 10px !important
-  margin-left: 0px
   cursor: pointer
+  margin: 0
 
 #header .plan_day
   color: white !important
@@ -136,35 +146,34 @@
   display: block
   min-width: 42px
   max-width: 62px
-  line-height: 27px
+  line-height: 18px
   float: left
-
-#header span.right_btn_slice
-  background: image-url("mobile/nav_button_bg_right.png") 0px 8px no-repeat
-  padding: 18px 0px
-  height: 15px
-  display: block
-  float: left
-  margin-right: 10px
-  width: 5px
 
 #header .settings_btn,
 .settings_btn,
-  background: image-url("mobile/settings_btn.png") 12px 8px no-repeat
+  background: #444 image-url("mobile/setting_btn.png") 0px 0px no-repeat
+  margin: 8px 0 0 0
+  height: 13px
+  width: 18px
+  +border-radius(4px)
 
 #header .info_btn
   background: image-url("mobile/info_btn.png") 12px 8px no-repeat
 
 #header .plan_btn
-  background: image-url("icon_plan.png") right center no-repeat
-  padding: 0px 8px 0px 14px
+  background: image-url("icon_plan.png") right 0px no-repeat
+  padding: 0px 12px 0px 14px
   width: auto
 
 #header .profile_btn
   background: image-url("mobile/profile_btn.png") 12px 8px no-repeat
 
 #header .nav_btn
-  background: image-url("nav_btn.gif") 12px 8px no-repeat
+  height: 13px
+  width: 18px
+  margin: 8px 10px 0 10px
+  +border-radius(4px)
+  background: #444 image-url("nav_btn.png") 0px 0px no-repeat
 
 #header #nav_signin
   background: image-url("nav_signin.gif") center 8px no-repeat
@@ -181,13 +190,11 @@
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
-  padding: 14px 0px 0px
-
-#header h1
-  padding: 0px
+  padding: 0px 0px 0px
+  line-height: 30px
 
 #header h1 a
-  padding: 14px 5px 8px 8px
+  padding: 6px 8px 8px 8px
   height: 15px
   display: block
   float: left
@@ -197,7 +204,9 @@
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
-  background: image-url("mobile/nav_button_bg.png") 0px 8px no-repeat
+  background-color: #444
+  line-height: 17px
+  +border-radius(4px)
 
 #header nav.right_nav,
 .reader_modal_header .nav_right
@@ -207,7 +216,11 @@
   max-width: 122px
   font-size: 100%
   background: none
+  margin: 0 10px 0 0
 
+#header ul.nav_user,
+#header nav.no_auth
+  display: none
 
 // `Header > Search
 //----------------------------------------------------------------------------------------------------

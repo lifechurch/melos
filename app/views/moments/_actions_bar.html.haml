@@ -1,0 +1,25 @@
+:ruby
+  # Locals Parameters
+  # moment - a single Moment object  (Bookmark, Highlight, Note)
+
+.moment-actions
+  %span.moment-actions-share
+    %a{href:"#", title: t("moments.action.share title")}
+      = t("moments.action.share")
+
+  %span.moment-actions-like
+    - is_liked = moment.liked_by?(current_auth.user_id)
+    = link_to t("moments.action.like"), moment.to_path, title: t("moments.action.like"), class: is_liked ? "liked" : nil
+
+  %span.moment-actions-comment
+    = link_to t("moments.action.comment"), moment.to_path, title: t("moments.action.comment title")
+
+
+  - if current_user_moment?(moment)
+
+    .moment-content-actions
+      - if moment.editable?
+        = link_to( t("moments.action.edit"), "#{moment.to_path}/edit", class: "moment-content-actions-edit", title: t("moments.action.edit #{moment.kind} title" ) )
+      - if moment.deletable?
+        -# link_to( t("moments.action.delete"), moment.to_path, method: :delete, confirm: t("moments.action.delete confirm"), class: "moment-action-delete", title: t("moments.action.delete #{moment.kind} title"))
+        = link_to( t("moments.action.delete"),"#",class: "moment-action-delete", title: t("moments.action.delete #{moment.kind} title"))

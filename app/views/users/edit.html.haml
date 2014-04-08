@@ -1,7 +1,9 @@
-- @title = "#{t('users.my profile')} | #{@user.name || @user.username}"
+:ruby
+  @title = t('users.edit profile')
+  @setting_selected = :edit #for settings layout
 
-- content_for :sidebar do
-  = render partial: "widgets/settings"
+%h2
+  = @title
 
 = form_for @user do |f|
   - unless @user.errors.blank?

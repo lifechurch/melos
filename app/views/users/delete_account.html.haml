@@ -1,10 +1,14 @@
-- @title = "#{t('users.edit account_existence')} | #{@user.name || @user.username}"
+:ruby
+  @title = t('users.edit account_existence')
+  @setting_selected = :account
+
+%h2
+  = @title
 
 %p= t('users.delete account description')
-
 = form_tag user_path(@user), method: :delete do
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
-  
+
   %p
     = label_tag :password, t("password prompt")
     %br

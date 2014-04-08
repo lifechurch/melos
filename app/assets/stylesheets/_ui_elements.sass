@@ -234,20 +234,38 @@
 .color_picker_list
   float: left
   width: 100%
-
+  margin-bottom: 15px
 
 
 .color_picker
   +border-radius(4px)
   background: image-url("menu_color_picker.png") center center no-repeat !important
+  height: 23px
+  width: 23px
+  display: block
+  float: left
+  margin-right: 5px
+  cursor: pointer
 
 .color
-  background: image-url("menu_color_gradient.png") center center no-repeat
-  box-shadow: inset 0px 1px 0px #ddd
   border-radius: 4px
   height: 23px
   width: 23px
   display: block
+  float: left
+  margin-right: 5px
+  cursor: pointer
+
+  span
+    display: block
+    text-align: center
+    width: 23px
+    color: #FFF
+    overflow: hidden
+    text-indent: 100%
+    white-space: nowrap
+    background: image-url("menu_color_selected.png") no-repeat center 3px
+
 
 .color_picker_clear
   background: image-url("menu_color_none.png") center center no-repeat
@@ -391,20 +409,11 @@ dd .icon_settings
 .cal_month caption
   padding: 5px 0px
   font-weight: bold
-  background: #e53535 /* Old browsers */
-  background: -moz-linear-gradient(top,  #e53535 0%, #ae1b1b 100%) /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e53535), color-stop(100%,#ae1b1b)) /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #e53535 0%,#ae1b1b 100%) /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #e53535 0%,#ae1b1b 100%) /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #e53535 0%,#ae1b1b 100%) /* IE10+ */
-  background: linear-gradient(top,  #e53535 0%,#ae1b1b 100%) /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53535', endColorstr='#ae1b1b',GradientType=0 ) /* IE6-9 */
+  background: #ae1b1b /* Old browsers */
   color: #fff
-  text-shadow: 0px 1px 0px #420b0b
-  border: 1px solid #9d2c2c
+  border: 0
   border-top-left-radius: 2px
   border-top-right-radius: 2px
-  box-shadow: 0px 1px 0px #f59595 inset
   text-align: center
 
 .cal_month thead
@@ -429,7 +438,6 @@ dd .icon_settings
   font-size: 12px
   height: 35px
   width: 35px
-  box-shadow: 0px 1px 0px #fff inset
 
 .cal_month td a
   font-size: 12px
@@ -455,7 +463,7 @@ dd .icon_settings
 
 .cal_month td.read
   font-weight: bold
-  text-decoration: line-through
+  background: image-url("cal_check.png") no-repeat right top
 
 .cal_month td.read a
   color: #888
@@ -479,4 +487,4 @@ dd .icon_settings
 
 .mobile-client
   #flash_notice, #flash_error
-    margin: 0 !important
+    margin: 48px 0 0 0 !important

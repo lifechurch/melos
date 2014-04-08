@@ -1,0 +1,15 @@
+earned badge date
+bookmarks.title field field
+bookmarks.reference
+bookmarks.labels comma separated
+bookmarks.color
+bookmarks.save
+bookmarks.update
+notes.title field
+notes.content field
+notes.reference field
+notes.status field
+notes.save
+notifications
+no badges found yourself
+no badges found other

@@ -33,6 +33,8 @@ sw:
     users username or password invalid: "Jina la matumizi na neno la siri uliyopeana si sawa "
     users username required: "Lazima uweke jina la matumizi "
   meta:
+    kids_app:
+      title: "Apu ya Biblia kwa ajili ya watoto"
     100million:
       title: "Inaanza na milioni 100"
       description: "App ya Biblia imewekwa karibia mara milioni 100 - ni hatua ua ajabu! Lakini ndio kwanza tumeanza. Download bure App yaBiblia leo -  na washirikisha marafiki zako. Tutengeneze ukumbusho pamoja."
@@ -129,14 +131,14 @@ sw:
   chapter: "Sura"
   bible: "Bibilia"
   notes title: "maelezo"
-  friends: "marafiki"
+  friends: "Marafiki"
   groups: "makundi"
   mobile: "rununu"
   live: "Maisha/Makundi"
   first page: "Kurasa ya kwanza"
   last page: "Kurasa ya mwisho"
-  next page: "kurasa inayofuata"
-  previous page: "kurasa iliyopita"
+  next page: "Kurasa inayofuata"
+  previous page: "Kurasa iliyopita"
   invalid username or password: "jina la mtumiaji au kitambulisho cha siri ni batili"
   show all bookmarks: "Onyesha zote %{total} alamishwa"
   show all notes: "Onyesha zote %{total} maelezo"

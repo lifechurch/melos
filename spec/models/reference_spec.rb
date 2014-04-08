@@ -321,14 +321,14 @@ describe Reference do
 
   end
 
-  describe "#is_chapter" do
+  describe "#chapter?" do
 
     it "should be true for a chapter ref" do
-      @gen_1_kjv_ref.is_chapter?.should be_true
+      @gen_1_kjv_ref.chapter?.should be_true
       #TODO: make this predicate .chapter? instead
     end
     it "should be false for a full ref" do
-      @gen_1_1_kjv_ref.is_chapter?.should_not be_true
+      @gen_1_1_kjv_ref.chapter?.should_not be_true
     end
 
   end
@@ -372,7 +372,7 @@ describe Reference do
         ref.chapter
         ref.verses
         ref.version
-        ref.is_chapter?
+        ref.chapter?
       end
 
   end

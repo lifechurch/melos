@@ -1,11 +1,10 @@
-- item = users_list_item
+- user = users_list_item
 
 %li.user
-  - u = User.new(item)
-  - if u.user_avatar_url
+  - if user.avatars.present? and user.avatars.md_avatar.present?
     %p.float_left.gutter_right_half
-      %img{src: u.user_avatar_url.px_48x48, style:"margin-top:2px"}
+      = image_tag(user.avatars.md_avatar.url, size:"48x48", style:"margin-top:2px" )
   %p.float_left
-    = link_to u.name || u.username, u
+    = link_to user.name || user.username, user
     %br
-    %span.mute= u.location || u.country
+    %span.mute= user.location || user.country

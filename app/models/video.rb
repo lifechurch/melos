@@ -1,5 +1,7 @@
 class Video < YV::Resource
 
+  api_response_mapper YV::API::Mapper::Video
+
   attribute :id
   attribute :type
   attribute :title
@@ -11,6 +13,13 @@ class Video < YV::Resource
   attribute :references
   attribute :language_tag
   attribute :short_url
+  attribute :license_required
+
+  attribute :publisher
+  attribute :thumbnails
+  attribute :renditions
+  attribute :videos
+
 
 
   class << self
@@ -77,14 +86,6 @@ class Video < YV::Resource
     end
   end
 
-  def videos
-    @videos
-  end
-
-  def renditions
-    @renditions
-  end
-
   def webm
     rendition("webm","http").first
   end
@@ -98,72 +99,7 @@ class Video < YV::Resource
   end
 
   def rendition(format, protocol)
-    @renditions.reject {|rend| rend.format != format && rend.protocol != protocol}
-  end
-
-  def publisher
-    @publisher
-  end
-
-  def thumbnails
-    @thumbnails
-  end
-
-  def series?
-    return false if videos.nil?
-    videos.count > 0
-  end
-
-
-  def after_build
-    @publisher  = build_publisher(attributes.publisher)
-    @renditions = build_renditions(attributes.renditions)
-    @videos     = build_subvideos(attributes.sub_videos)
-    @thumbnails = build_thumbnails(attributes.thumbnails)
-  end
-
-  protected
-
-  # Populate video thumbnails
-  def build_thumbnails( images_array )
-    return nil if images_array.blank?
-    images = ResourceList.new do |list|
-      list.total = images_array.count
-      images_array.each do |img|
-        list << Videos::Image.new(img)
-      end
-    end
-    return images
-  end
-
-  # Populate publisher object
-  def build_publisher( pub_atts )
-    return nil if pub_atts.blank?
-    return Videos::Publisher.new( pub_atts )
-  end
-
-  # Populate child videos
-  def build_subvideos( videos_array )
-    return nil if videos_array.blank?
-    videos = ResourceList.new do |list|
-      list.total = videos_array.count
-      videos_array.each do |vid|
-        list << Video.new(vid)
-      end
-    end
-    return videos
-  end
-
-  # Populate video renditions
-  def build_renditions( renditions_array )
-    return nil if renditions_array.blank?
-    renditions = ResourceList.new do |list|
-      list.total = renditions_array.count
-      renditions_array.each do |ren|
-        list << Videos::Rendition.new(ren)
-      end
-    end
-    return renditions
+    renditions.reject {|rend| rend.format != format && rend.protocol != protocol}
   end
 
 end

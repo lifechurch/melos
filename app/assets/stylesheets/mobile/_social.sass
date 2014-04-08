@@ -1,0 +1,422 @@
+// !Adjusting the article tag on the social pages
+
+#main .social-feed-wrap.related
+  padding-top: 78px
+
+#main article.social-requests,
+#main article.social-feed,
+#main div.social-feed,
+#main article.social-detail
+  background-color: #dedddb
+  border: 0
+  padding: 0
+  box-shadow: none
+  overflow: hidden
+
+#main article.social-feed,
+#main div.social-feed
+  width: auto
+
+// !-------------------- Feed -------------------------
+
+// !Moment containers
+
+.moment
+  margin: 0 15px 15px 0
+  width: 100%
+  float: none
+
+.moment:nth-child(2n)
+  margin-right: 0
+
+.moment-top
+  margin-bottom: 1px
+
+
+.moment-time
+  width: 48%
+
+// !Comments attached to a moment
+
+.moment-comments
+  width: 87%
+  padding: 0px 5px 3px
+
+// !Common comments code
+
+
+// !Specific comments code
+
+.moment-comments-more
+  font-size: 13px
+  margin-bottom: 4px
+
+.moment-comments-list-text
+  font-size: 14px
+  line-height: 1.4em
+  width: 80%
+
+.moment-comments-textarea
+  width: 80% !important
+
+.moment-comments-list-comment
+  margin-bottom: 4px
+
+
+
+// !Moment badge positioning
+
+
+// !Share comment like etc.
+
+.moment-actions .moment-actions-share-box
+  width: 97%
+
+.moment-actions-share-box div
+  padding: 0
+
+  span
+    display: inline-block
+    width: 48%
+    text-align: center
+
+  span:first-child
+    border-right: 1px solid #dedddb
+
+// !Bookmark, reading plan, download, and group moments -- they share the same layout
+
+#main
+  .moment-hi-text,
+  .moment-bm-text,
+  .moment-rp-text,
+  .moment-grp-text,
+  .moment-dl-text,
+  .moment-no-text,
+  .moment-bdg-text,
+  .moment-vid-text,
+  .moment-sys-text,
+  .moment-fr-text
+    width: 70%
+
+    a
+      line-height: 1.3em
+
+// !Bookmark moment
+
+.moment-verse-wrap
+  clear: both
+  max-height: 150px
+  overflow: hidden
+
+// !Verse of the day moment
+
+#main article .moment-vod-verse,
+.moment-vod-verse
+  font: 24px "times new roman", times, serif
+  width: 90%
+
+.moment-vod-title
+  font-size: 20px
+  width: 80%
+
+#main article
+  .moment-verse
+    font: 20px "times new roman", times, serif
+    letter-spacing: -.035em
+    margin: 4px 0
+    padding: 10px 15px
+    clear: both
+    background-color: #F5F4F3
+    +border-radius(5px)
+
+
+// !Note moment
+
+
+.moment-no-note
+  margin: 15px 0 0
+
+.moment-no-note-text
+  font-size: 14px
+  line-height: 1.15em
+
+// !Video moment
+
+.moment-vid-info
+  margin: 65px 0 0
+  overflow: visible
+
+.moment-vid-info-img
+  width: 100%
+  float: none
+
+.moment-vid-info-text
+  border: 0
+  float: none
+  height: auto
+  width: auto
+  display: block
+  margin-top: -53px
+  background: image-url("videos-thumb-grad1.png") no-repeat center bottom
+
+.moment-vid-info-text-title
+  margin-bottom: 0
+  line-height: 1.3em
+
+#main article .moment-vid-info-text-credit,
+.moment-vid-info-text-credit
+  margin: 0
+  font-size: 13px
+
+.moment-vid-info-text-title,
+.moment-vid-info-text-credit,
+.moment-vid-info-text-title a,
+.moment-vid-info-text-credit a
+  color: #fff
+  text-decoration: none
+  font-weight: bold
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+// !Badge moment
+
+.moment-bdg-info
+  margin: 65px 0 0 0
+
+
+// !Friend moment
+
+.moment-fr-avatar
+  margin: 0 0 0 20px
+
+#main .moment-fr-text
+  width: 70%
+
+
+// !------------------------ Detail page -------------------------
+
+#main article.social-detail
+
+  // !Striping out the width constraints, killing floats
+
+  // !Moment containers
+
+  .moment
+    margin: 0 0 15px 0
+
+  // !Share comment like etc.
+
+  // !Comments attached to a moment
+
+  .moment-comments-list-text,
+  .moment-comments-textarea
+    width: 80% !important
+
+  // !Bookmark, reading plan, download, and group moments -- they share the same layout
+
+  .moment-hi-text,
+  .moment-bm-text,
+  .moment-rp-text,
+  .moment-grp-text,
+  .moment-dl-text,
+  .moment-no-text,
+  .moment-bdg-text,
+  .moment-vid-text,
+  .moment-sys-text
+    width: 70%
+
+
+  // !Anywhere a verse appears
+
+  .moment-verse-wrap
+    max-height: none
+    overflow: visible
+
+  // !Note
+
+  .moment-no
+
+    .moment-time
+      padding: 17px 0 5px 0
+
+    .moment-no-note-title
+      line-height: 1em
+      margin: 15px 0 0
+
+    .moment-no-note-text
+      background: none
+      line-height: 1.36em
+      padding: 1px 15px 10px 0
+      margin-bottom: 0
+
+    .moment-content-actions
+      right: auto
+
+
+// !Sidebar comment input
+
+.social-sidebar
+  position: static
+  width: auto
+
+.social-sidebar-input
+  padding: 10px
+
+  textarea
+    margin-bottom: 10px
+    height: auto
+
+
+// !Intro to social page
+
+#main article.social-intro
+  background-color: #dedddb
+  padding: 0
+
+  .intro-moment
+    width: auto
+    background: image-url("intro-moments-left.png") no-repeat top left
+
+  .intro-moment-box
+    background: image-url("intro-moments-right.png") no-repeat top right
+    padding: 139px 0 0
+
+  .intro-title
+    font-size: 53px
+    display: block
+    text-align: center
+    margin: 20px 10px 0 10px
+
+  .intro-copy
+    font-size: 17px
+    margin: 20px 0
+    padding: 0 2%
+    text-align: center
+    line-height: 1.4em
+
+  .moment-bm-text
+    width: 75%
+
+  .moment-actions-comment a,
+  .moment-actions-like a
+    text-indent: 100%
+    overflow: hidden
+    white-space: nowrap
+    width: 36px
+    height: 36px
+    padding: 0
+
+  .moment-actions-comment a
+    background-position: 9px -128px
+
+  .moment-actions-like
+    display: block !important
+    margin: 0 0 0 10px
+
+    a
+      padding: 0
+
+  .moment-comments-textarea
+    color: #888
+
+  .intro-comments
+    width: auto
+    margin: -15px 0 0
+
+  .intro-discover-copy,
+  .intro-share-copy
+    font-family: "skippy-sharp", arial, sans-serif
+
+  .intro-discover-copy
+    position: absolute
+    top: 237px
+    right: auto
+    width: 80%
+
+    p
+      margin: 0 0 10px
+      padding: 0 0 0 20px
+      font-size: 29px
+
+    span
+      display: block
+      background: image-url("intro-arrows-sprite.png") no-repeat right top
+      height: 40px
+      width: 35px
+      margin: -10px 0 0 220px
+
+  .intro-share-copy
+    position: relative
+    top: auto
+    right: auto
+    width: auto
+    overflow: hidden
+    margin: 0 0 0 10%
+
+    p
+      margin: 20px 0 10px 15px
+      padding: 0
+      float: left
+      width: 68%
+      font-size: 29px
+
+    span
+      display: block
+      background: image-url("intro-arrows-sprite.png") no-repeat -58px -49px
+      height: 40px
+      width: 40px
+      margin: 10px 0 0
+      float: left
+
+  .intro-discover-copy-btn
+    position: relative
+    top: auto
+    right: auto
+    width: auto
+    margin: 20px 10% 10px 5%
+
+  .intro-share-copy-btn
+    position: relative
+    top: auto
+    right: auto
+    width: auto
+    margin: 0 10% 20px 5%
+
+// !Related moments
+
+.related-filter-header
+  padding: 10px 10px 0
+  +border-radius(0px)
+  background-color: #ccc
+  margin-bottom: 10px
+  position: fixed
+  width: 100%
+  height: 78px
+  z-index: 1
+  text-align: center
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+  .return-to-reader
+    position: static
+    right: auto
+    top: auto
+    width: 100%
+    padding: 10px 0 !important
+
+  ul
+    display: inline
+    @extend .clearfix
+
+  li
+    float: left
+    display: inline
+    line-height: 33px
+    margin-right: 20px
+
+    a.active
+      text-decoration: underline
+      cursor: default
+      color: #0084c8 !important

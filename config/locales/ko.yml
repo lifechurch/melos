@@ -33,6 +33,8 @@ ko:
     users username or password invalid: "입력하신 사용자 이름이나 암호가 맞지 않습니다."
     users username required: "사용자명을 입력해주세요,"
   meta:
+    kids_app:
+      title: "어린이들을 위한 성경 앱"
     100million:
       title: "1억건 설치. 이제 시작입니다."
       description: "성경 앱이 1억건 가까이 설치되었습니다. 역사적인 순간입니다! 하지만 이것은 시작일 뿐입니다. 무료 성경 앱을 다운로드하십시오. 그리고 친구들에게 소개해 주세요. 함께 역사를 만들어 가요."
@@ -68,7 +70,7 @@ ko:
   next step connections: "다음: 여러분의 계정을 연동하셔서 다른 친구들을 찾아보세요."
   no notes found: "%{username}님은 작성하신 노트가 없습니다,."
   no recent activity: "%{username}님의 최근 활동이 없습니다."
-  no badges found yourself: "아직 획득한 뱃지가 없습니다."
+  no badges found yourself: "아직 받으신 뱃지가 없습니다."
   no badges found other: "%{username}님은 아직 받은 배지가 없습니다."
   see users badges: "%{username}님이 받은 배지 보기"
   bookmark: "책갈피"
@@ -129,7 +131,7 @@ ko:
   chapter: "장"
   bible: "성경"
   notes title: "노트"
-  friends: "친구"
+  friends: "내 친구"
   groups: "그룹"
   mobile: "이동기기"
   live: "라이브/그룹"
@@ -238,7 +240,6 @@ ko:
     edit account_existence: "계정 삭제"
     delete account button: "YouVersion 계정 삭제하기"
     no devices: "YouVersion 계정에 연결된 기기가 없습니다."
-    no devices download copy: "성경앱은 온라인 성경인 YouVersion.com을 기본으로 한, 대부분의 이동기기에 설치가 가능한 무료 성경입니다. 성경앱은 사용자가 성경을 읽고, 소셜네트워크를 통하여 말씀을 공유하고, 좋아하는 구절을 책갈피하는 등&mdash;늘어가는 이동기기 사용에 따른 모든 형태를 지원하고 있습니다. 지금 여러분의 이동기기에서 <a href='http://www.youversion.com/download'>youversion.com/download</a>를 방문하셔서 성경앱을 다운로드하고 계정을 연결하세요!"
     yes delete: "계정을 삭제해주세요."
     account delete success: "YouVersion 계정이 삭제되었습니다. 앞으로도 성경과 계속 동행하시기를 바랍니다.  아래의 앱들이 혹 도움이 될 것 같아서 소개합니다.\n<a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "만약 계정을 삭제하시게되면, YouVersion이나 앱에 저장된 귀하의 개인 정보, 사용 내역 및 개인 설정이 (예를들면 노트, 책갈피, 하이라이트 등등) 영구히 지워집니다.  아울러 한 번 삭제된 내용은 귀하나 YouVersion 관리자도 재생할 수없습니다.   이 점을 감안하신 후에도 삭제를 원하시면 아래와 같이 진행하세요."
@@ -252,7 +253,6 @@ ko:
     my badges: "내 배지"
     revised date: "%{date} 에 최정 수정됨"
     update email copy: "새 이메일 주소를 입력후 이메일 변경을 클릭하세요. 새 이메일 주소 확인을 위한 인증메일을 보내겠습니다."
-    edit email: "이메일 변경"
     update email check: "받으신 이메일에서 새 이메일 주소 확인 링크를 클릭하세요."
     confirm update email success: "감사합니다! 이메일 주소가 변경되었습니다."
     confirm update email error: "죄송합니다. 이메일 주소 변경시 문제가 발생하였습니다."
@@ -571,7 +571,7 @@ ko:
     delete error: "죄송합니다. 하이라이트를 제거 할 수 없습니다."
   searching:
     bible: "성경"
-    plans: "읽기 계획"
+    plans: "묵상"
     users: "사용자"
     notes: "노트"
     total results: "약 %{total}건의 검색 결과"
@@ -656,6 +656,7 @@ ko:
     h3: "YouVersion은 세계적인 공동체입니다."
     h3 sub: "전세계 수백개의 언어를 지원합니다."
     main: "수천만의 사람들이 성경앱™을 통해서 하나님의 말씀이 그들의 일상 생활의 한 부분이 되도록 사용하고 있습니다. 이 무료 앱을 다운로드하여 책갈피, 노트및 성경읽기계획 등을 어디에서나 사용하세요. 수백 종의 번역본을 비롯한 오디오 성경을 여러분의 모바일 기기에서 사용하세요."
+    button h4: "Bible.com/app 으로 가기"
     button h4 sub: "이동기기 상에서"
     download now: "지금 성경 앱 다운로드"
     what people: "무료 성경 앱에 대한 의견..."
@@ -758,7 +759,7 @@ ko:
         with friends: "친구들에게 알려 주세요."
         fb:
           dialog name: "성경 앱을 갖고 계신가요?"
-          dialog desc: "성경 앱을 정말 사랑합니다! 성경 말씀이 제 삶을 일부가 되도록 해주고 있습니다.  말씀을 하일라이트하고, 오디오 성경을 듣고, 노트를 만들고, 묵상계획을 갖도록 해줄 뿐 아니라 동영상도 볼 수있습니다! 지금 다운로드 하세요.(무료입니다.):  http://www.bible.com/app"
+          dialog desc: "성경 앱을 정말 사랑합니다! 성경 말씀이 제 삶을 일부가 되도록 해주고 있습니다.  말씀을 하이라이트하고, 오디오 성경을 듣고, 노트를 만들고, 묵상계획을 갖도록 해줄 뿐 아니라 동영상도 볼 수있습니다! 지금 다운로드 하세요.(무료입니다.):  http://www.bible.com/app"
         tw:
           tweet: "The @YouVersion의 성경앱은 제 첫화면에 늘 자리하고 있습니다. 읽고, 보고, 듣고 그리고 공유하기. 무료 성경 앱 하나로 모두 가능합니다 : bible.com/app "
         em:

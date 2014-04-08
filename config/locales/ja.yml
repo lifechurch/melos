@@ -33,6 +33,8 @@ ja:
     users username or password invalid: "入力いただいたユーザ名またはパスワードが正しくありません"
     users username required: "ユーザ名の入力が必要です。"
   meta:
+    kids_app:
+      title: "子ども用聖書アプリ"
     100million:
       title: "1億人から始まります。"
       description: "聖書アプリのダウンロード件数、１億達成という素晴らしい節目に近付いています。でも、これもほんの始まりにすぎません。無料の聖書アプリを今すぐダウンロードして、お友達にもシェアしましょう。共に歴史を塗り替えましょう。"

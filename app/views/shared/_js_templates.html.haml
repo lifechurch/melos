@@ -1,0 +1,201 @@
+- if is_reader_page?
+  %script#pane-highlight-tmpl{type:"text/x-handlebars-template"}
+    :plain
+      <div class="tab-panel highlight-pane" id="highlight-pane">
+        <div class="pane">
+          <p class="verse-actions-success-message success" style="display:none;">
+            #{t("highlights.create success")}
+          </p>
+          <form action="/highlights" method="post" id="highlight-form">
+            <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
+            <input type="hidden" name="highlight[version_id]" value="#{presenter.version.id}" />
+            <input type="hidden" name="highlight[usfm_references]" class="references verses_selected_input" />
+            <input type="hidden" name="highlight[color]" class="selected-color" />
+            <div class="color_picker_list">
+              <div class="color_picker"></div>
+            </div>
+            <button type="submit" name="bookmark[submit]" value="submit" class="action_button_green">
+              #{t('highlights.form.save button')}
+            </button>
+          </form>
+        </div>
+      </div>
+
+  %script#pane-bookmark-tmpl{type:"text/x-handlebars-template"}
+    :plain
+      <div class="tab-panel bookmark-pane" id="bookmark-pane">
+        <div class="pane">
+          <p class="verse-actions-success-message success" style="display:none;">
+            #{t("bookmarks.create success")}
+          </p>
+          <form action="/bookmarks" method="post">
+            <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
+            <input type="hidden" name="bookmark[version_id]" value="#{presenter.version.id}" />
+            <input type="hidden" name="bookmark[usfm_references]" class="references verses_selected_input" />
+            <input type="hidden" name="bookmark[color]" class="selected-color" />
+            <p>
+              <label for="bookmark_title">
+                #{t("bookmarks.form.title field")}
+              </label>
+              <br />
+              <input type="text" id="bookmark_title" name="bookmark[title]" />
+            </p>
+            <p>
+              <label for="bookmark_labels">
+                #{t("bookmarks.form.labels field")}
+              </label>
+              <br />
+              <input type="text" id="bookmark_labels" name="bookmark[labels]" placeholder="#{t("bookmarks.labels placeholder")}" />
+            </p>
+
+            <label>Highlight: (optional)</label>
+            <div class="color_picker_list">
+              <div class="color_picker"></div>
+            </div>
+            <div>
+              <button type="submit" name="bookmark[submit]" value="submit" class="action_button_green">
+                #{t('bookmarks.form.save button')}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+  %script#pane-note-tmpl{type:"text/x-handlebars-template"}  
+    #note-pane.tab-panel
+      .pane
+        %p.verse-actions-success-message.success{style: "display: none;"}
+          = t("notes.create success")
+          
+        - note = presenter.note
+        = form_for note, url: (logged_in? ? notes_path : sign_up_path), method: "post" do |f|
+          = f.hidden_field :version_id
+          = f.hidden_field :usfm_references, class: "verses_selected_input"
+          = f.hidden_field :color, class:"selected-color"
+          %div.title
+            = f.label :title, t("notes.form.title field")
+            = f.text_field :title
+          %div.status
+            = f.label :user_status, t("notes.form.status field")
+            = f.select :user_status, options_for_select(object_status, note.user_status)
+          %div
+            = f.text_area :content, rows: 4, cols: 68
+
+          %div
+            %label Highlight: (optional)
+            .color_picker_list
+              .color_picker
+
+          %div.save
+            %button.action_button_green
+              = t('notes.form.save button')
+
+
+
+
+  %script#pane-share-tmpl{type:"text/x-handlebars-template"}
+    :plain
+      <div class="tab-panel" id="share-pane">
+        <div class="pane">
+          <form action="#{share_path}" method="post">
+            <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
+            <input type="hidden" name="share[link]" id="share_link" value="" />
+
+            <div class="share_message">
+              <textarea name="share[message]"></textarea>
+              <span>
+                <b id="short_link"></b>
+                #{t("link will be added")}
+              </span>
+              <span class='share_total_characters'>
+              </span>
+            </div>
+
+            <div class="share_services">
+              <span class="share_logo">
+                <span class="share_logo_fb">&nbsp;</span>
+              </span>
+              <span class="share_slider">
+                <input id="checkbox_share_facebook" type="checkbox" name="share[connections][facebook]" />
+                <span class="slider facebook">&nbsp;</span>
+              </span>
+              <span class="share_character_count">
+                <span class="fb"></span>
+                <span class="fb-text">
+                  Facebook characters remaining (420 Maximum)
+                </span>
+              </span>
+            </div>
+
+           <div class="share_services">
+              <span class="share_logo">
+                <span class="share_logo_twitter">&nbsp;</span>
+              </span>
+              <span class="share_slider">
+                <input id="checkbox_share_twitter" type="checkbox" name="share[connections][twitter]" />
+                <span class="slider twitter">&nbsp;</span>
+              </span>
+              <span class="share_character_count">
+                <span class="tw"></span>
+                <span class="tw-text">
+                  Twitter characters remaining (140 Maximum)
+                </span>
+              </span>
+            </div>
+
+            <div class="share_errors" data-error-none-checked="Please select at least one social network" data-error-character-limit="Please delete some characters or choose a different social network">
+            </div>
+            <div class="share_action">
+              <button id="share_action_submit" type="submit" name="share[submit]" value="submit" class="action_button_blue">
+                #{t('ref.share now')}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+  %script#pane-link-tmpl{type:"text/x-handlebars-template"}
+    :plain
+      <div class="tab-panel" id="link-pane">
+        <div class="pane">
+          <span class="text_field_embed">
+            <input id="copy_link_input" value="" type="text" />
+            <div id="copy_link_container">
+              <button id="copy_link" data-confirm-text="#{t("copy confirmed")}">
+                #{t("copy")}
+              </button>
+            </div>
+          </span>
+        </div>
+      </div>
+
+  %script#pane-register-tmpl{type:"text/x-handlebars-template"}
+    .account.hide.tab-trigger
+      = t("registration.with email")
+    #need-account.tab-panel
+      .pane
+        .blurbs
+          %p.highlight= t('registration.highlight blurb');
+          %p.bookmark= t('registration.bookmark blurb');
+          %p.share= t('registration.share blurb');
+          %p.note= t('registration.note blurb');
+        %h4= t("pages.home.get started")
+        #get-started-buttons
+          %span.fb
+            = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: 'action_button_blue')
+          %span.or
+            = t("or.upper")
+          %span.email
+            = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})
+
+  %script#moment-share-layer-tmpl{type:"text/x-handlebars-template"}
+    %div.moment-actions-share-box
+      %span.moment-actions-share-arrow
+        &nbsp;
+      %div
+        %span
+          %a{href:"#", target: "_blank", title: "Share this on Facebook", class: "facebook moment-actions-share-facebook"}
+            Facebook
+        %span    
+          %a{href:"#", target: "_blank", title: "Share this on Twitter", class: "twitter moment-actions-share-twitter"}
+            Twitter

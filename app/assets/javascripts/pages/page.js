@@ -70,7 +70,7 @@ function Page() {
 
   this.initConstants();
   this.initHTML();
-  this.initNav();
+  this.initOrientationResize();
   this.initInputs();
   this.initMenus();
   this.initEditControls();
@@ -96,23 +96,33 @@ Page.prototype = {
 
   },
 
+  initOrientationResize : function() {
+    $(window).bind("orientationchange", function(event){
+      $(window).resize();
+    });
+    $(window).bind("resize", function(event){
+      Page.prototype.orientAndResize();
+    });
+  },
+
+  orientAndResize : function() {
+    //ensure correct max-height for mobile header scroll
+    $("#nav_mobile").css("max-height", $("body").height() - $("#header").height() + "px");
+    //ensure mobile social layers are scrollable with correct height
+    if ($('html.mobile-client').length) {
+      $('.header-popover ul').css("max-height", $("body").height() - $("#header").height() - 64 + "px");
+    }
+    if ($('.social-feed').length) {
+      try {$('.social-feed').trigger('refreshWookmark')} catch(e) {};
+    }
+  },  
+
   // Ability to set the reader on the page publicly.
   setReader : function( rdr ) {
     this.reader = rdr;
-    $(this.reader).on("verses:parsed", $.proxy(this.onVersesParsed, this) );
   },
 
-  onVersesParsed : function() {
-    var note_widget = this.new_note_widget;
-    var reader      = this.reader;
-
-    if(reader && note_widget) {
-      var selected_data = reader.getSelectedData();
-      var usfms = selected_data.verse_usfms;
-          note_widget.updateForm({references: usfms});
-    }
-  },
-
+  
   // Setup miscellaneous html needs.
   initHTML : function() {
 
@@ -254,33 +264,6 @@ Page.prototype = {
     });
   },
 
-
-  initNav : function() {
-
-    // Primary navigation tooltips
-    $("#nav_primary ul li").hover(function(){
-        $(this).find(".tooltip").fadeIn(100);
-      }, function() {
-        $(this).find(".tooltip").fadeOut(100);
-    });
-
-    // Slide to mobile nav
-    $('#slideToNav').click(function(){
-      $(window).scrollTop($('#nav_mobile').offset().top);
-    });
-
-    // Hide address bar on smartphones, unless there is smart banner
-    //if ($('head meta[name="apple-itunes-app"]').length == 0){
-      //window.addEventListener("load",function() {
-        //setTimeout(function(){
-          //// console.log('Hide the address bar!');
-          //window.scrollTo(0, 1);
-      //}, 0);
-      //});
-    //}
-
-  },
-
   menuClick : function( clicked ) {
     // if menu clicked is already selected, hide all menus and set to null.
     if(this.current_menu == clicked) {
@@ -322,11 +305,6 @@ Page.prototype = {
         var single_verse_modal = new VerseModal();
       }
 
-      var widget_note = "#widget_new_note";
-      if($(widget_note).length) {
-        this.new_note_widget = new NoteWidget( widget_note );
-      }
-
       var settings_trigger  = "#menu_settings_trigger";
       var settings_menu     = "#menu_settings";
       if($(settings_trigger).length && $(settings_menu).length) {
@@ -352,12 +330,6 @@ Page.prototype = {
       var choose_language  = "#choose_language";
       if($(choose_language).length) {
         var language_menu   = new LanguageMenu("#choose_language");
-      }
-
-      var share_form = "article > form.share";
-      if($(share_form).length){
-        var share_form = new SharePane(share_form);
-        share_form.initForm();
       }
 
 
