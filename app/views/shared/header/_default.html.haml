@@ -18,9 +18,10 @@
       -# Sign in and user id
       - if current_auth
         %nav.sign_in
-          %span
-            %img{src: current_user.user_avatar_url["px_24x24"]}
-            %span.user_name=current_auth.username
+          %a{href: user_path(current_auth.username)}
+            %span
+              %img{src: current_user.user_avatar_url["px_24x24"]}
+              %span.user_name=current_auth.username
 
         %ul.nav_user
           %li.highlights
