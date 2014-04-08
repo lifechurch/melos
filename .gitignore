@@ -22,3 +22,5 @@ zeus.json
 db/*.sqlite3
 *.orig
 .zeus.sock
+
+.env
