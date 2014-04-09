@@ -103,6 +103,9 @@ module ApplicationHelper
     "/bible/#{version}/#{usfm.downcase}"
   end
 
+  def app_page_path
+    "https://bible.com/#{I18n.locale}/app"
+  end
 
   def bible_path(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
