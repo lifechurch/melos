@@ -351,6 +351,12 @@ body.transition .moment
   +border-radius(4px 4px 0 0)
   background-color: #fff
 
+// Delete these when we add likes and comments to these moments
+.moment-fr,
+.moment-sys,
+.moment-vod
+  +border-radius(4px)
+
 .moment-icon
   display: block
   position: absolute
@@ -861,11 +867,10 @@ body.transition .moment
     padding: 10px 0 20px 25px
 
     .moment-time
-      padding: 17px 0 5px 0
+      padding: 17px 0 5px 10px
 
-    .moment-avatar,
     .moment-no-text
-      display: none
+      font-weight: bold
 
     .moment-no-note
       margin-left: 0
