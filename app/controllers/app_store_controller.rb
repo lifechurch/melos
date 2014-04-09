@@ -4,9 +4,10 @@ class AppStoreController < ActionController::Base
   include ApplicationHelper
 
   before_filter :set_site, only: [:index]
+  before_filter :set_locale_and_timezone # ripped from Concerns::Locale
   before_filter :track_app_download, only: [:index]
   helper_method :current_auth, :ref_from_params, :current_avatar
-  before_filter :set_locale_and_timezone # from YV::Concerns::Locale
+
 
   # get /app/(:store)
   def index
@@ -59,6 +60,26 @@ class AppStoreController < ActionController::Base
     end
   end
 
+  def set_locale_and_timezone
+    Time.zone = client_settings.time_zone || "GMT"
+    I18n.default_locale = @site.default_locale || :en
+
+    # grab available locales as array of strings and compare against strings.
+    available_locales = I18n.available_locales.map {|l| l.to_s}
+    visitor_locale    = params[:locale] if available_locales.include?(params[:locale])
+    from_param        = visitor_locale.present?
+
+    visitor_locale ||= cookies[:locale] if cookies[:locale].present? and available_locales.include?(cookies[:locale])
+    visitor_locale ||= @site.default_locale
+    visitor_locale ||= request.preferred_language_from(I18n.available_locales)
+    visitor_locale ||= request.compatible_language_from(I18n.available_locales)
+    visitor_locale ||= I18n.default_locale
+    visitor_locale = visitor_locale.to_sym
+    
+    set_locale(visitor_locale)
+    set_available_locales( @site.available_locales.present? ? @site.available_locales : I18n.available_locales )
+  end
+
   # Rules for App Store url given a custom identifier
   def store_path(store=nil)
     case store
@@ -107,7 +128,7 @@ class AppStoreController < ActionController::Base
     when /Windows 8/
       store_path('windows8')
     else
-      'http://bible.com'
+      'https://bible.com'
     end
   end
 
