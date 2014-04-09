@@ -3,7 +3,7 @@
   # moment              - a single Moment to display  (Bookmark, Highlight, Note)
   # comments_displayed  - boolean, true or false (whether or not to display comments when rendering html)
   # detail_view         - boolean, true or false (whether this is a detail view or a card view)
-  
+
   detail_view = false unless local_assigns.has_key? :detail_view
   avatars = moment.avatars
   avatar = avatars.lg_avatar
@@ -21,9 +21,14 @@
         •
         = api_dt_time_ago(moment.created_dt)
 
-      %h2.moment-no-text
-        - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title || truncate(moment.content) : moment.moment_title.html_safe
-        = link_to(anchor_text, moment.to_path, class: "moment-title-link")
+      - if detail_view
+        %span.moment-no-text
+          = moment.user.name
+
+      - else
+        %h2.moment-no-text
+          - anchor_text = (moment.user_id == current_auth.user_id) ? moment.title || truncate(moment.content) : moment.moment_title.html_safe
+          = link_to(anchor_text, moment.to_path, class: "moment-title-link")
 
       .moment-no-note{:class => detail_view ? "detail-view" : ""}
         %p.moment-no-note-title
