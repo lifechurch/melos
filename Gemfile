@@ -48,8 +48,8 @@ gem 'pg'
 # gem 'rails-i18n',           '~> 0.6.3'
 
 gem 'routing-filter',         '~> 0.3.1'
-#gem "unicorn",               '~> 4.3.1'
-gem 'puma'
+gem "unicorn",               '~> 4.3.1'
+# gem 'puma'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
