@@ -71,13 +71,13 @@ class window.Reader
 
   # TODO: don't reparse all verses, just add to current set of verses being tracked
   selectVerse: (verse_el)->
-    
+
     # map ["v1","v2","v3"] to [".verse.v1",".verse.v2",".verse.v3"] to get us a proper selector
     classes = $.map @parseVerseClasses($(verse_el)), (val,index)->
       return ".verse." + val
-    
+
     # Select verses in the reader via class
-    # classes need to be comma separated as they are distinct selectors  
+    # classes need to be comma separated as they are distinct selectors
     $(classes.join(", ")).addClass("selected")
 
     @processSelectedVerses()
@@ -126,7 +126,7 @@ class window.Reader
 
 
   processSelectedVerses: ()->
-    
+
     # Zero out stored data values on article
     $("article").data('selected-verses-rel-link', false)
     $('.verses_selected_input').val('')                     # <- crazy coupling across different elements, refactor this.
@@ -172,7 +172,7 @@ class window.Reader
 
     Events.Emitter.emit("verses:parsed")
 
-  # 
+  #
   parseRanges: ()->
     # setup variables for creating our ranges.
     verse_numbers = @selected.verse_numbers
@@ -183,29 +183,29 @@ class window.Reader
 
     # Create our ranges
     if verse_numbers_length > 0 && verse_numbers_length == 1
-      
+
       verse_ranges.push @selected.verse_numbers[0]
       usfm_ranges.push @selected.verse_usfms[0]
-        
+
     else # more than 1 verse number to deal with
-      
+
       in_range    = false
       range_start = 0
 
       i = 0
       while i < verse_numbers_length
-        
+
         # Start of our loop of verse numbers
         if i == 0
           next_verse_item_val = verse_numbers[i+1]
           next_verse_number   = verse_numbers[i] + 1
-          
+
           if next_verse_item_val == next_verse_number
             # Then start a range with current iteration value
             in_range    = true
             range_start = verse_numbers[i]
             usfm_range_start = @selected.verse_usfms[i]
-          
+
           else
             # just a single verse
             verse_ranges.push verse_numbers[i]
@@ -213,12 +213,12 @@ class window.Reader
 
         # End of our loop of verse numbers
         else if i == verse_numbers_length
-          
+
           if in_range
             # push the range as we're at the end of our loop
             num_range  = range_start + "-" + verse_numbers[i]
             usfm_range = usfm_range_start + "-" + verse_numbers[i]
-            
+
             verse_ranges.push num_range
             usfm_ranges.push usfm_range
 
@@ -235,15 +235,15 @@ class window.Reader
 
           # next verse item value is the next successive number
           if next_verse_item_val == next_verse_number
-            
+
             # If we're not in a range then start one
             unless in_range
               in_range = true
               range_start = verse_numbers[i]
               usfm_range_start = @selected.verse_usfms[i]
-            
+
           # next verse item is not the next successive number
-          else 
+          else
             if in_range # Stop and push the range
               num_range  = range_start + "-" + verse_numbers[i]
               usfm_range = usfm_range_start + "-" + verse_numbers[i]
@@ -302,12 +302,12 @@ class window.Reader
 
     $.each verse_ranges, (index,range)=>
       usfm  = usfm_ranges[index].toString() # cast to a string here.
-      
+
       # Build our elements
       li    = $("<li/>")
       link  = $("<a/>",{ href: "#", "data-usfm": usfm})
       link.html(@book_human + " " + @chapter + ":" + range)
-      
+
       # Append our elements to DOM
       li.append(link)
       lists.append(li) # Append token link to all .reference_token lists
@@ -321,7 +321,7 @@ class window.Reader
         # this is a single verse
         if usfm.indexOf("-") == -1
           verses.push(usfm.split('.')[2]) # Get the 3 from "JHN.1.3"
-        
+
         # this is a verse range
         else
           nums = usfm.split('.')[2].split('-') # Get the 3-5 from "JHN.1.3-5"
@@ -345,7 +345,7 @@ class window.Reader
   # Generate links for selected verses
   generateLinks: ()->
     joined        = @selected.verse_number_ranges.join(",");
-    short_link    = "https://bible.com/" + @getLocale() + "/" + @version + "/" + @book + "." + @chapter + "." + joined + "." + @abbrev
+    short_link    = "https://bible.com" + @getLocale() + "/" + @version + "/" + @book + "." + @chapter + "." + joined + "." + @abbrev
     partial_path  = "." + joined
     relative_link = "/bible/" + @version + "/" + @book + "." + @chapter + partial_path
 
@@ -442,7 +442,7 @@ class window.Reader
       method:   "get",
       dataType: "json",
       success: (data)=>
-        
+
         @clearHighlights(article_id)
         $.each data, (index,highlight)->
           $.each highlight.references, (index,ref_hash)->
@@ -497,13 +497,13 @@ class window.Reader
 
       success:    (ref)=>
         @secondary_version_loaded = true
-        
+
         content = ref.content_plain
 
         if @isParallel()
           # fade in/out adds in-line style that will bork our css styling
           original_styles = target.attr('style') || ''
-          
+
           target.fadeOut 100, ()=>
             target.html content
             target.fadeIn 200
@@ -556,7 +556,7 @@ class window.Reader
       setCookie "parallel_mode", 1
       @loadSecondaryVersion()
       @html_el.addClass('parallel_mode').addClass('full_screen');
-      
+
       alt_version_menu_link.on "click", (event)=>
         event.preventDefault()
         event.stopPropagation()
