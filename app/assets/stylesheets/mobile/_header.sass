@@ -1,24 +1,14 @@
-// !Logo
+// `Header
 //----------------------------------------------------------------------------------------------------
 
-#logo
-  background: image-url("yv_logo.png") no-repeat 0 14px
-  display: block
-  color: transparent
-  float: left
-  font-size: 0
-  overflow: hidden
-  text-indent: -99999px
-  width: 150px
-  height: 50px
-
-
-// !Header
-//----------------------------------------------------------------------------------------------------
+#header
+  height: 45px !important
+  border-radius: 0px !important
+  padding: 0px !important
+  width: 100%
+  border: 1px solid #232324
 
 #header_outer
-  top: 0
-  background-color: #dedddb
   padding: 0
   z-index: 901
   position: fixed
@@ -26,202 +16,75 @@
   width: 100%
   left: 0
 
-#header
+#header,
+.reader_modal_header
   -webkit-font-smoothing: subpixel-antialiased
-  background-color: #232324
+  background-color: #222
   font-size: 11px
-  position: relative
-  line-height: 50px
   height: 45px
   border-radius: 0px
-  padding: 0px
+
+
+#header h1
+  margin: 8px 0 0
+  padding: 0
+  font: bold 16px Arial, sans-serif
+  color: #999 !important
+  padding-left: 0
+  text-shadow: none
+  float: left
+
+#header p
+  margin: 0
+
+#header table
   width: 100%
-  border: 1px solid #232324
 
-  .reader_modal_header
-    -webkit-font-smoothing: subpixel-antialiased
-    background-color: #222
-    font-size: 11px
-    height: 45px
-    border-radius: 0px
+#header #nav_btn,
+#header #nav_avatar,
+#header #nav_search_btn,
+#header #nav_signin
+  width: 44px
 
-  h1
-    margin: 8px 0 0
-    padding: 0
-    font: bold 16px Arial, sans-serif
-    color: #999 !important
-    padding-left: 0
-    text-shadow: none
-    float: left
+#header #nav_btn a,
+#header #nav_avatar a,
+#header #nav_search_btn a,
+#header #nav_signin a
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  display: block
+  height: 44px
+  width: 44px
 
-  p
-    margin: 0
+#header #nav_btn a
+  background: image-url("nav_btn.gif") 12px 8px no-repeat
 
-  table
-    width: 100%
+#header #nav_signin
+  background: image-url("nav_signin.gif") center 8px no-repeat
 
-  #nav_btn,
-  #nav_avatar,
-  #nav_search_btn,
-  #nav_signin
-    width: 44px
+#header .nav_btn,
+#header .settings_btn,
+#header .info_btn,
+#header .plan_btn,
+.settings_btn,
+.cancel_btn,
+.close_btn,
+#header #nav_avatar,
+#header #nav_search_btn,
+#header #nav_signin,
+#header .profile_btn,
+#header .back_btn
+  text-indent: -2000px
+  white-space: nowrap
+  display: block
+  height: 26px
+  width: 30px
+  float: left
+  padding: 8px 5px
 
-  #nav_btn a,
-  #nav_avatar a,
-  #nav_search_btn a,
-  #nav_signin a
-    text-indent: 100%
-    white-space: nowrap
-    overflow: hidden
-    display: block
-    height: 44px
-    width: 44px
-
-  #nav_btn a
-    background: image-url("nav_btn.gif") 12px 8px no-repeat
-
-  #nav_signin
-    background: image-url("nav_signin.gif") center 8px no-repeat
-
-  .nav_btn,
-  .settings_btn,
-  .info_btn,
-  .plan_btn,
-  .settings_btn,
-  .cancel_btn,
-  .close_btn,
-  #nav_avatar,
-  #nav_search_btn,
-  #nav_signin,
-  .profile_btn,
-  .back_btn
-    text-indent: -2000px
-    white-space: nowrap
-    display: block
-    height: 26px
-    width: 30px
-    float: left
-    padding: 8px 5px
-
-  .close_btn
-    background: image-url("mobile/close_btn.png") 12px 8px no-repeat
-
-#header
-
-  .save_btn,
-  .submit_btn
-    background: #81a950
-    display: block
-    padding: 0px 10px
-    float: right
-    border-radius: 4px
-    color: #fff !important
-    font-size: 15px
-    margin-right: 12px
-    margin-top: 10px
-    height: 25px
-    line-height: 26px
-    border: 0px
-    box-shadow: none
-    text-shadow: rgba(0,0,0,0.3) 0 -1px 0
-    font-weight: normal
-
-  .cancel_btn
-    display: block
-    padding: 2px 10px
-    float: left
-    border-radius: 4px
-    font-size: 13px
-    margin-left: 12px
-    margin-top: 8px
-
-  #m_version_btn,
-  #m_plan_btn
-    margin: 8px 0 0 0
-    padding: 7px
-    background-color: #444
-    display: block
-    float: left
-    color: #fff !important
-    font-size: 15px
-    font-weight: bold
-    height: 15px
-    line-height: 15px
-    +border-radius(4px)
-
-  #m_plan_btn
-    cursor: pointer
-    margin: 0
-
-  .plan_day
-    color: white !important
-    text-indent: 0%
-    white-space: normal
-    display: block
-    min-width: 42px
-    max-width: 62px
-    line-height: 18px
-    float: left
-
-  .settings_btn,
-    background: #444 image-url("mobile/setting_btn.png") 0px 0px no-repeat
-    margin: 8px 0 0 0
-    height: 13px
-    width: 18px
-    +border-radius(4px)
-
-#header
-
-  .info_btn
-    background: image-url("mobile/info_btn.png") 12px 8px no-repeat
-
-  .plan_btn
-    background: image-url("icon_plan.png") right 0px no-repeat
-    padding: 0px 12px 0px 14px
-    width: auto
-
-  .profile_btn
-    background: image-url("mobile/profile_btn.png") 12px 8px no-repeat
-
-  .nav_btn
-    height: 13px
-    width: 18px
-    margin: 8px 10px 0 10px
-    +border-radius(4px)
-    background: #444 image-url("nav_btn.png") 0px 0px no-repeat
-
-  #nav_signin
-    background: image-url("nav_signin.gif") center 8px no-repeat
-
-  #nav_search_btn
-    background: image-url("nav_search.gif") 5px 8px no-repeat
-
-  #page_title
-    color: #fff !important
-    text-shadow: none !important
-    float: left
-    width: auto
-    max-width: 150px
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-    padding: 0px 0px 0px
-    line-height: 30px
-
-  h1 a
-    padding: 6px 8px 8px 8px
-    height: 15px
-    display: block
-    float: left
-    color: #fff !important
-    font-size: 15px
-    max-width: 145px
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-    background-color: #444
-    line-height: 17px
-    +border-radius(4px)
+#header .close_btn
+  background: image-url("mobile/close_btn.png") 12px 8px no-repeat
 
 .reader_modal_header .close_btn,
 #header .back_btn
@@ -231,6 +94,119 @@
   margin: 8px 13px 0 10px
   +border-radius(4px)
 
+#header .save_btn,
+#header .submit_btn
+  background: #81a950
+  display: block
+  padding: 0px 10px
+  float: right
+  border-radius: 4px
+  color: #fff !important
+  font-size: 15px
+  margin-right: 12px
+  margin-top: 10px
+  height: 25px
+  line-height: 26px
+  border: 0px
+  box-shadow: none
+  text-shadow: rgba(0,0,0,0.3) 0 -1px 0
+  font-weight: normal
+
+#header .cancel_btn
+  display: block
+  padding: 2px 10px
+  float: left
+  border-radius: 4px
+  font-size: 13px
+  margin-left: 12px
+  margin-top: 8px
+
+#header #m_version_btn,
+#header #m_plan_btn
+  margin: 8px 0 0 0
+  padding: 7px
+  background-color: #444
+  display: block
+  float: left
+  color: #fff !important
+  font-size: 15px
+  font-weight: bold
+  height: 15px
+  line-height: 15px
+  +border-radius(4px)
+
+#header #m_plan_btn
+  cursor: pointer
+  margin: 0
+
+#header .plan_day
+  color: white !important
+  text-indent: 0%
+  white-space: normal
+  display: block
+  min-width: 42px
+  max-width: 62px
+  line-height: 18px
+  float: left
+
+#header .settings_btn,
+.settings_btn,
+  background: #444 image-url("mobile/setting_btn.png") 0px 0px no-repeat
+  margin: 8px 0 0 0
+  height: 13px
+  width: 18px
+  +border-radius(4px)
+
+#header .info_btn
+  background: image-url("mobile/info_btn.png") 12px 8px no-repeat
+
+#header .plan_btn
+  background: image-url("icon_plan.png") right 0px no-repeat
+  padding: 0px 12px 0px 14px
+  width: auto
+
+#header .profile_btn
+  background: image-url("mobile/profile_btn.png") 12px 8px no-repeat
+
+#header .nav_btn
+  height: 13px
+  width: 18px
+  margin: 8px 10px 0 10px
+  +border-radius(4px)
+  background: #444 image-url("nav_btn.png") 0px 0px no-repeat
+
+#header #nav_signin
+  background: image-url("nav_signin.gif") center 8px no-repeat
+
+#header #nav_search_btn
+  background: image-url("nav_search.gif") 5px 8px no-repeat
+
+#header #page_title
+  color: #fff !important
+  text-shadow: none !important
+  float: left
+  width: auto
+  max-width: 150px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  padding: 0px 0px 0px
+  line-height: 30px
+
+#header h1 a
+  padding: 6px 8px 8px 8px
+  height: 15px
+  display: block
+  float: left
+  color: #fff !important
+  font-size: 15px
+  max-width: 145px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  background-color: #444
+  line-height: 17px
+  +border-radius(4px)
 
 #header nav.right_nav,
 .reader_modal_header .nav_right
@@ -246,64 +222,15 @@
 #header nav.no_auth
   display: none
 
-
-// !Header > Search
+// `Header > Search
 //----------------------------------------------------------------------------------------------------
 
 #header_search_form
-  width: 222px
-  height: 50px
-  position: absolute
-  top: 0
-  left: 210px
   display: none
 
 #header_search_input,
 #header_search_button
-  +border-radius(0)
-  +box-sizing(content-box)
-  +background-size(auto)
-  background: image-url("header_search_form.png") no-repeat
-  height: 30px
   margin-top: 0
-  padding: 0
-  border: 0
-  position: absolute
-  top: 50%
-  text-shadow: none
-
-#header_search_input
-  +box-shadow(none)
-  background-position: 0 0
-  color: #cbc9cf
-  padding-left: 8px
-  padding-right: 2px
-  text-shadow: rgba(#000, 0.5) 0 -1px 0
-  width: 184px
-  left: 0
-  z-index: 1
-
-#header_search_button
-  +box-shadow(none)
-  background-position: -253px 0
-  color: transparent
-  font-size: 0
-  width: 34px
-  right: 0
-
-#header_search_input:focus
-  background-position: 0 -30px
-  color: #1e1e1f
-  text-shadow: #fff 0 -1px 0
-
-#header_search_input:focus + #header_search_button
-  background-position: -253px -30px
-
-#header_search_input:focus,
-#header_search_input:active,
-#header_search_button:focus,
-#header_search_button:active
-  +box-shadow(none)
 
 #nav_header
   padding: 5px 0 14px
@@ -319,208 +246,3 @@
   height: 78px
   width: 360px
   border-bottom: 1px solid #040404
-
-
-// !Header > Profile Nav
-//----------------------------------------------------------------------------------------------------
-.header-user
-  width: 536px
-  float: right
-  border-left: 2px solid #dedddb
-
-#header nav.sign_in
-  float: left
-  height: 50px
-  font-size: 13px
-  width: 167px
-
-#header nav.no_auth
-  float: right
-  height: 50px
-  font-size: 13px
-  width: 240px
-  margin-right: 20px
-
-#header nav ul,
-#header nav ol,
-#header nav li
-  list-style: none
-  margin: 0
-
-#header nav ul
-  line-height: 30px
-  position: relative
-
-#header nav ul > li
-  +round
-  float: right
-  margin-top: 9px
-  padding-top: 1px
-  height: 31px
-
-#header nav ul > li:first-child
-  margin-left: 20px
-  position: relative
-
-#header nav ul > li:first-child:after
-  background: image-url("header_nav_separator.png") no-repeat
-  content: '.'
-  color: transparent
-  position: absolute
-  width: 2px
-  height: 19px
-  margin-top: -9px
-  top: 50%
-  left: -12px
-
-#header nav ul > li > a > span
-  padding: 10px
-
-#header nav ul > li > a
-  display: block
-  overflow: hidden
-  max-width: 280px
-  text-overflow: ellipsis
-  white-space: nowrap
-  color: #d4d4d4
-  text-decoration: none
-  font-weight: normal
-
-#header .user_options
-  float: right
-  width: 129px
-  position: relative
-  background: #393939 image-url("header-sprite.png") no-repeat -10px -441px
-  border-right: 1px solid #4e4e4e
-
-#header nav .sign_in
-  padding: 0 10px
-
-#header ul.nav_user > li
-  float: left
-  width: 48px
-  height: 50px
-  display: inline-block
-
-  > a
-    background: image-url("header-sprite.png") no-repeat center 0px
-    width: 48px
-    height: 50px
-    display: block
-
-#header ul.nav_user
-  margin-bottom: 0
-  float: right
-  background-color: #444
-
-  li.highlights
-    a
-      background-position: center -96px
-
-    a:hover
-      background-position: center -151px
-
-  li.bookmarks
-    a
-      background-position: center -206px
-
-    a:hover
-      background-position: center -261px
-
-  li.notes
-    a
-      background-position: center -316px
-
-    a:hover
-      background-position: center -371px
-
-  li.auth a
-    background: none
-
-#header ul.nav_user li.auth
-  width: auto
-  margin-right: 20px
-
-  > a
-    background-color: #808080
-    color: #232324
-    font-size: 10px
-    padding: 2px
-    +border-radius(3px)
-    width: auto
-    height: auto
-    display: inline
-    margin: 0 5px
-    font-weight: bold
-
-  > a:hover
-    background-color: #ddd
-
-.sign_in span
-  color: #d4d4d4
-  line-height: 50px
-
-  .user_name
-    max-width: 160px
-    overflow: hidden
-    text-overflow: ellipsis
-    white-space: nowrap
-    height: 50px
-    position: absolute
-
-  img
-    +border-radius(24px)
-    margin: -1px 7px 0 17px
-    width: 24px
-    height: 24px
-
-#header_profile_trigger
-  background: image-url("header_profile_arrow.png") no-repeat right center
-  //text-align: right
-
-// !Drop-down Menu
-//----------------------------------------------------------------------------------------------------
-
-#header_profile_menu
-  +border-radius(5px)
-  background: #fff
-  display: none
-  font-size: 13px
-  line-height: 1
-  position: relative
-  z-index: 1
-  -moz-box-shadow: 0px 0px 8px #222
-  -webkit-box-shadow: 0px 0px 8px #222
-  box-shadow: 0px 0px 8px #222
-
-  ol
-    width: 280px
-
-    li
-      width: 139px
-      display: inline-block
-      float: left
-      border-bottom: 1px solid #ddd
-
-    li:nth-child(odd)
-      border-right: 1px solid #ddd
-
-    li:nth-child(n+7)
-      border-bottom: none
-
-#header #header_profile_menu .arrow
-  left: 240px
-  position: absolute
-
-.li_active #header_profile_menu
-  display: block
-  margin-top: -2px
-  position: absolute
-  width: 280px
-  margin-left: -230px
-
-#header_profile_menu a
-  display: block
-  text-align: center
-  padding: 8px
-

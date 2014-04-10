@@ -2,96 +2,11 @@
 // Note: Styles for the "Donate Now" button are combined
 // with the sidebar button styles, in _sidebar.sass
 
-#donate_now_wrap
-  margin-bottom: 15px
-  text-align: right
-  float: none
-  width: auto
-
-#donate_now_wrap .intl
-  text-align: center
-  display: block
-  font-weight: bold
-
-  &:link
-    text-decoration: none
-  &:hover
-    text-decoration: underline
-
-#main article.donate
-  background:
-    image: image-url("phone_and_hands.jpg")
-    position: 130% bottom
-    repeat: no-repeat
-  overflow: hidden
-  padding-bottom: 0
-  min-height: 600px
-  position: relative
-
-  .donate_action, .donate_copy, .donate_paypal_logo
-    width: auto
-
-  .donate_action .donate_radios .radio
-    display: block
-    float: none
-    padding: 5px
-
-  .donate_copy
-    margin-top: 15px
-
-  .donate_action
-
-    button
-      width: 100%
-
-    #field_amount
-      padding-left: 24px
-      margin-left: -12px
-      width: auto
-
-    #field_currency_sign
-      position: relative
-      display: inline-block
-      top: 2px
-      left: 10px
-      font-size: 16px
-
-    .donate_amount
-      padding: 10px
-      background: #eee
-      border: 1px solid #ccc
-      border-radius: 4px
-
-      label
-        display: block
-
-    .donate_radios
-      margin: 18px 0
-      overflow: auto
-      clear: both
-
-      .radio
-        width: 40%
-        float: left
-
-  .donate_paypal_logo
-    position: static
-    top: none
-    right: none
-    text-align: center
-    margin: 15px
-
 
 #main article.donate
   padding-bottom: 0
   padding-top: 16px
   background: none
-  height: auto
-
-  h1
-    font:
-      size: 42px
-    line-height: 1.3
 
   .callout
     background: none
@@ -105,15 +20,34 @@
       background-image: none
       padding: 0
 
+#main article.donate
+  #donate_now_wrap
+    margin-bottom: 15px
+    text-align: right
+    float: none
+    width: auto
+
+    .intl
+      text-align: center
+      display: block
+      font-weight: bold
+
+      &:link
+        text-decoration: none
+      &:hover
+        text-decoration: underline
+
   p.narrow
     width: auto
 
+#main article.donate
   .float_left
     float: none !important
 
   input[name="tr[city]"], input[name="tr[email]"], select[name="tr[state]"]
     margin-bottom: 10px
 
+#main article.donate
   .emphasis + label,
   input + label,
   select + label
@@ -121,6 +55,9 @@
 
   input.address
     width: 100%
+
+//  label
+//    margin-top: 16px
 
   label[for="tr_x_email_customer"]
     margin-top: 0
@@ -132,18 +69,3 @@
 
   select#tr_x_state
     margin-top: 0
-
-  h1, hr
-    display: none
-
-.mobile #page_title #yv-logo
-  margin-top: -4px
-
-
-@media only screen and (max-width: 320px)
-
-  .donate_paypal_logo img
-    width: 100%
-
-
-

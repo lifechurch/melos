@@ -8,32 +8,20 @@
   +box-shadow(rgba(#000, 0.2) 0 1px 2px 0)
   border: 2px solid #fff
 
-.avatar_small
-  width: 20px
-  height: 20px
-
-.avatar_medium
-  width: 25px
-  height: 25px
+a:hover .avatar_small,
+a:hover .avatar_medium,
+a:hover .avatar_large
+  +glow
+  border-color: #ccc
 
 .avatar_large
   width: 48px
   height: 48px
 
 .avatar_huge
-  +box-shadow(rgba(#000, 0.15) 0 4px 4px 0)
-  background: #fff
-  border: 1px solid #fff
-  padding: 4px
   width: 70px
   height: 70px
 
 a:hover .avatar_huge
   +box-shadow(rgba($blue_light, 0.5) 0 0 5px 0, rgba(#000, 0.15) 0 4px 4px 0)
-  border-color: #ccc
-
-a:hover .avatar_small,
-a:hover .avatar_medium,
-a:hover .avatar_large
-  +glow
   border-color: #ccc

@@ -1,37 +1,22 @@
-#main
-  .pagination
-    border-top: 1px solid #ccc
-    clear: both
-    font:
-      size: 15px
-      weight: bold
-    margin-bottom: 20px
-    padding-top: 15px
-    width: 100%
-
-    li
-      background: none
-      margin: 0
-      padding: 0
-      float: left
-      padding: 1px
-      margin: 0 25px 0 0
-
-    .action_button
-      font-size: 12px
-
-
-  .pagination.labels
-    float: right
-    border-top: none
-    margin: 0
-    padding: 0
-    .pagination_pages
-      line-height: 25px
-
+// @media only screen and (max-width: 990px)
+// Style adjustments for viewports 990px and under go here
+#main .pagination
+  border-top: 1px solid #ccc
+  clear: both
+  font:
+    size: 15px
+    weight: bold
+  width: 100%
   .pagination_pages
     line-height: 43px
     background: none
+
+#main .pagination li
+  padding: 0
+  float: left
+
+#main .pagination li
+  margin-right: 25px
 
 // Hack for Firefox.
 @-moz-document url-prefix()
