@@ -22,9 +22,9 @@ class SearchController < ApplicationController
 
   def get_search_class
     case params[:category].to_sym
-    when :bible then Search::Bible
     when :users then Search::User
-    when :plans then Search::Plan 
+    when :plans then Search::Plan
+    else             Search::Bible
     end
   end
 
