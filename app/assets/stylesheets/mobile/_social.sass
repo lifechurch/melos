@@ -434,7 +434,7 @@ body.transition .moment
   max-height: none
 
 .moment-verse
-  font: 20px "times new roman", times, serif
+  font: 20px "times new roman", times, serif !important
   letter-spacing: -.035em
   margin: 4px 0
   padding: 10px 15px
@@ -703,7 +703,6 @@ body.transition .moment
 .moment-bdg-title
   font-weight: normal !important
 
-
 .moment-bdg-info
   display: block
   overflow: hidden
@@ -853,6 +852,7 @@ body.transition .moment
 
 .profile-badges-list
   overflow: auto
+  background-color: #dedddb
 
 .profile-badges-list .moment
   float: left
@@ -913,14 +913,9 @@ body.transition .moment
 
   .moment-no
     padding: 10px 0 20px 25px
-    width: 70%
 
     .moment-time
-      padding: 17px 0 5px 0
-
-    .moment-avatar,
-    .moment-no-text
-      display: none
+      padding: 17px 0 5px 10px
 
     .moment-no-note
       margin-left: 0
@@ -937,7 +932,7 @@ body.transition .moment
         size: 2em
       padding: 7px 15px 8px 0
       line-height: 1em
-      margin: 15px 0 0
+      margin: 0
       letter-spacing: -.02em
 
     .moment-no-note-text

@@ -465,6 +465,11 @@
   position: absolute
   top: 81px
 
+#menu_verse_actions dd,
+#menu_verse_actions .tab-panel
+  overflow: inherit !important
+  display: none
+
 #menu_verse_actions dt
   cursor: pointer
   float: left
@@ -787,7 +792,7 @@
   .references
     display: none
 
-#menu_verse_actions 
+#menu_verse_actions
   .tab-trigger
     cursor: pointer
     width: 16%
@@ -799,7 +804,7 @@
     height: 30px
     padding: 0px
     +border-radius(4px)
-    border-bottom: 2px solid #000  
+    border-bottom: 2px solid #000
 
   .tab-trigger.bookmark
     background-position: center -50px
@@ -832,13 +837,13 @@
 #menu_verse_actions .tab-trigger.related
   height: 30px
 
-#menu_verse_actions .panel-tabs 
+#menu_verse_actions .panel-tabs
   border-top: 1px solid black
   height: 44px
   width: 100%
   position: fixed
   text-align: center
-  padding: 0 3%
+  background-color: #333
 
 #menu_verse_actions #note-pane .title
   width: 100%

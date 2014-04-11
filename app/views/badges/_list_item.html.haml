@@ -4,13 +4,12 @@
       %span.moment-icon
         &nbsp;
       %div{id: list_item.id}
-        .float_left
-          %a{href: "#"}
-            %img{src: list_item.image_url.px_48x48, width: 48, height: 48}
-        %div{style: ("margin-left: 60px;")}
+        %a{href: "#"}
+          %img{src: list_item.image_url.px_48x48, width: 48, height: 48}
+        %div
           %span.moment-time
             = api_dt_time_ago(list_item.earned_dt)
-          %h2.moment-bdg-title
+          %h2.moment-bdg-text
             = list_item.name
-          %p.moment-bdg-desc
+          %p.moment-bdg-info
             = list_item.description

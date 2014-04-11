@@ -16,16 +16,6 @@
 // !Header
 //----------------------------------------------------------------------------------------------------
 
-#header_outer
-  top: 0
-  background-color: #dedddb
-  padding: 0
-  z-index: 901
-  position: fixed
-  height: 47px
-  width: 100%
-  left: 0
-
 #header
   -webkit-font-smoothing: subpixel-antialiased
   background-color: #232324
@@ -38,192 +28,208 @@
   width: 100%
   border: 1px solid #232324
 
-  .reader_modal_header
-    -webkit-font-smoothing: subpixel-antialiased
-    background-color: #222
-    font-size: 11px
-    height: 45px
-    border-radius: 0px
+#header_outer
+  top: 0
+  background-color: #dedddb
+  padding: 0
+  z-index: 901
+  position: fixed
+  height: 47px
+  width: 100%
+  left: 0
 
-  h1
-    margin: 8px 0 0
-    padding: 0
-    font: bold 16px Arial, sans-serif
-    color: #999 !important
-    padding-left: 0
-    text-shadow: none
-    float: left
+#header,
+.reader_modal_header
+  -webkit-font-smoothing: subpixel-antialiased
+  background-color: #222
+  font-size: 11px
+  height: 45px
+  border-radius: 0px
 
-  p
-    margin: 0
+#header h1
+  margin: 8px 0 0
+  padding: 0
+  font: bold 16px Arial, sans-serif
+  color: #999 !important
+  padding-left: 0
+  text-shadow: none
+  float: left
 
-  table
-    width: 100%
+#header p
+  margin: 0
 
-  #nav_btn,
-  #nav_avatar,
-  #nav_search_btn,
-  #nav_signin
-    width: 44px
+#header table
+  width: 100%
 
-  #nav_btn a,
-  #nav_avatar a,
-  #nav_search_btn a,
-  #nav_signin a
-    text-indent: 100%
-    white-space: nowrap
-    overflow: hidden
-    display: block
-    height: 44px
-    width: 44px
+#header #nav_btn,
+#header #nav_avatar,
+#header #nav_search_btn,
+#header #nav_signin
+  width: 44px
 
-  #nav_btn a
-    background: image-url("nav_btn.gif") 12px 8px no-repeat
+#header #nav_btn a,
+#header #nav_avatar a,
+#header #nav_search_btn a,
+#header #nav_signin a
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  display: block
+  height: 44px
+  width: 44px
 
-  #nav_signin
-    background: image-url("nav_signin.gif") center 8px no-repeat
+#header #nav_btn a
+  background: image-url("nav_btn.gif") 12px 8px no-repeat
 
-  .nav_btn,
-  .settings_btn,
-  .info_btn,
-  .plan_btn,
-  .settings_btn,
-  .cancel_btn,
-  .close_btn,
-  #nav_avatar,
-  #nav_search_btn,
-  #nav_signin,
-  .profile_btn,
-  .back_btn
-    text-indent: -2000px
-    white-space: nowrap
-    display: block
-    height: 26px
-    width: 30px
-    float: left
-    padding: 8px 5px
+#header #nav_signin
+  background: image-url("nav_signin.gif") center 8px no-repeat
 
-  .close_btn
-    background: image-url("mobile/close_btn.png") 12px 8px no-repeat
+#header .nav_btn,
+#header .settings_btn,
+#header .info_btn,
+#header .plan_btn,
+.settings_btn,
+.cancel_btn,
+.close_btn,
+#header #nav_avatar,
+#header #nav_search_btn,
+#header #nav_signin,
+#header .profile_btn,
+#header .back_btn
+  text-indent: 100%
+  overflow: hidden
+  white-space: nowrap
+  display: block
+  height: 26px
+  width: 30px
+  float: left
+  padding: 8px 5px
 
-#header
-
-  .save_btn,
-  .submit_btn
-    background: #81a950
-    display: block
-    padding: 0px 10px
-    float: right
-    border-radius: 4px
-    color: #fff !important
-    font-size: 15px
-    margin-right: 12px
-    margin-top: 10px
-    height: 25px
-    line-height: 26px
-    border: 0px
-    box-shadow: none
-    text-shadow: rgba(0,0,0,0.3) 0 -1px 0
-    font-weight: normal
-
-  .cancel_btn
-    display: block
-    padding: 2px 10px
-    float: left
-    border-radius: 4px
-    font-size: 13px
-    margin-left: 12px
-    margin-top: 8px
-
-  #m_version_btn,
-  #m_plan_btn
-    margin: 8px 0 0 0
-    padding: 7px
-    background-color: #444
-    display: block
-    float: left
-    color: #fff !important
-    font-size: 15px
-    font-weight: bold
-    height: 15px
-    line-height: 15px
-    +border-radius(4px)
-
-  #m_plan_btn
-    cursor: pointer
-    margin: 0
-
-  .plan_day
-    color: white !important
-    text-indent: 0%
-    white-space: normal
-    display: block
-    min-width: 42px
-    max-width: 62px
-    line-height: 18px
-    float: left
-
-  .settings_btn,
-    background: #444 image-url("mobile/setting_btn.png") 0px 0px no-repeat
-    margin: 8px 0 0 0
-    height: 13px
-    width: 18px
-    +border-radius(4px)
-
-#header
-
-  .info_btn
-    background: image-url("mobile/info_btn.png") 12px 8px no-repeat
-
-  .plan_btn
-    background: image-url("icon_plan.png") right 0px no-repeat
-    padding: 0px 12px 0px 14px
-    width: auto
-
-  .profile_btn
-    background: image-url("mobile/profile_btn.png") 12px 8px no-repeat
-
-  .nav_btn
-    height: 13px
-    width: 18px
-    margin: 8px 10px 0 10px
-    +border-radius(4px)
-    background: #444 image-url("nav_btn.png") 0px 0px no-repeat
-
-  #nav_signin
-    background: image-url("nav_signin.gif") center 8px no-repeat
-
-  #nav_search_btn
-    background: image-url("nav_search.gif") 5px 8px no-repeat
-
-  #page_title
-    color: #fff !important
-    text-shadow: none !important
-    float: left
-    width: auto
-    max-width: 150px
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-    padding: 0px 0px 0px
-    line-height: 30px
-
-  h1 a
-    padding: 6px 8px 8px 8px
-    height: 15px
-    display: block
-    float: left
-    color: #fff !important
-    font-size: 15px
-    max-width: 145px
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-    background-color: #444
-    line-height: 17px
-    +border-radius(4px)
+#header .close_btn
+  background: image-url("mobile/close_btn.png") 12px 8px no-repeat
 
 .reader_modal_header .close_btn,
+#header .back_btn
+  background: #444 image-url("nav_back_arrow.png") 0px 0px no-repeat
+  height: 13px
+  width: 18px
+  margin: 8px 13px 0 10px
+  +border-radius(4px)
+
+#header .save_btn,
+#header .submit_btn
+  background: #81a950
+  display: block
+  padding: 0px 10px
+  float: right
+  border-radius: 4px
+  color: #fff !important
+  font-size: 15px
+  margin-right: 12px
+  margin-top: 10px
+  height: 25px
+  line-height: 26px
+  border: 0px
+  box-shadow: none
+  text-shadow: rgba(0,0,0,0.3) 0 -1px 0
+  font-weight: normal
+
+#header .cancel_btn
+  display: block
+  padding: 2px 10px
+  float: left
+  border-radius: 4px
+  font-size: 13px
+  margin-left: 12px
+  margin-top: 8px
+
+#header #m_version_btn,
+#header #m_plan_btn
+  margin: 8px 0 0 0
+  padding: 7px
+  background-color: #444
+  display: block
+  float: left
+  color: #fff !important
+  font-size: 15px
+  font-weight: bold
+  height: 15px
+  line-height: 15px
+  +border-radius(4px)
+
+#header #m_plan_btn
+  cursor: pointer
+  margin: 0
+
+#header .plan_day
+  color: white !important
+  text-indent: 0%
+  white-space: normal
+  display: block
+  min-width: 42px
+  max-width: 62px
+  line-height: 18px
+  float: left
+
+#header .settings_btn,
+  background: #444 image-url("mobile/setting_btn.png") 0px 0px no-repeat
+  margin: 8px 0 0 0
+  height: 13px
+  width: 18px
+  +border-radius(4px)
+
+#header .info_btn
+  background: image-url("mobile/info_btn.png") 12px 8px no-repeat
+
+#header .plan_btn
+  background: image-url("icon_plan.png") right 0px no-repeat
+  padding: 0px 12px 0px 14px
+  width: auto
+
+#header .profile_btn
+  background: image-url("mobile/profile_btn.png") 12px 8px no-repeat
+
+#header .nav_btn
+  height: 13px
+  width: 18px
+  margin: 8px 10px 0 10px
+  +border-radius(4px)
+  background: #444 image-url("nav_btn.png") 0px 0px no-repeat
+
+#header #nav_signin
+  background: image-url("nav_signin.gif") center 8px no-repeat
+
+#header #nav_search_btn
+  background: image-url("nav_search.gif") 5px 8px no-repeat
+
+#header #page_title
+  color: #fff !important
+  text-shadow: none !important
+  float: left
+  width: auto
+  max-width: 150px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  padding: 0px 0px 0px
+  line-height: 30px
+
+#header h1 a
+  padding: 6px 8px 8px 8px
+  height: 15px
+  display: block
+  float: left
+  color: #fff !important
+  font-size: 15px
+  max-width: 145px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  background-color: #444
+  line-height: 17px
+  +border-radius(4px)
+
+#header .reader_modal_header .close_btn,
 #header .back_btn
   background: #444 image-url("nav_back_arrow.png") 0px 0px no-repeat
   height: 13px

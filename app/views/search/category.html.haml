@@ -27,7 +27,7 @@
       - if @results.present? && @results.count > 0
         %ul.resource_list
           = render partial: "#{@category}_list_item", collection: @results
-        
+
         :ruby
           url_locale = (params[:locale] == "en") ? nil : params[:locale]
 
