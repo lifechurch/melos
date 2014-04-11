@@ -8,7 +8,8 @@ module YV
           private
 
           def from_search(results)
-            unless results.blank?
+            # raise 'the roof'
+            unless results.blank? || results.errors?
               verses = results.verses.collect do |verse|
                 s = Search::Bible.new
                 ref = verse.reference
