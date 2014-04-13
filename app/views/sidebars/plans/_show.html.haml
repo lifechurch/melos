@@ -15,7 +15,7 @@
       %b=t("plans.length field")
       = plan.length
 
-  - if logged_in && !current_user.subscribed_to?(plan)
+  - if logged_in? && !current_user.subscribed_to?(plan)
     %div.ft.link
       = link_to(t("plans.view sample"), day: 1.to_s, initial: 'true')
 
