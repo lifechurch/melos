@@ -1,13 +1,15 @@
-- plans = Plan.featured(page: 1, language_tag: I18n.locale).shuffle[0..2]
+- featured_plans = Plan.featured(page: 1, language_tag: I18n.locale)
+- plans = featured_plans.nil? ? [] : featured_plans.shuffle![0..2] 
 
-.widget.featured-plans
-  %h3.hd
-    = t("plans.widget.featured plans")
-  .plans-list
-    %ul
-      - plans.each do |plan|
-        %li
-          %h3= link_to plan.name, plan_path(plan)
-          %p= truncate(plan.about, length: 90, separator: ' ')
-  .ft
-    = link_to(t("plans.widget.view all plans"), plans_path)
+- if plans.present?
+  .widget.featured-plans
+    %h3.hd
+      = t("plans.widget.featured plans")
+    .plans-list
+      %ul
+        - plans.each do |plan|
+          %li
+            %h3= link_to plan.name, plan_path(plan)
+            %p= truncate(plan.about, length: 90, separator: ' ')
+    .ft
+      = link_to(t("plans.widget.view all plans"), plans_path)

@@ -14,7 +14,8 @@ module YV
           def from_all(results)
             results.reading_plans.collect do |plan_data|
               map_to_instance(::Plan.new,plan_data)
-            end
+            end unless results.errors?
+            # todo catch search.language_tag.invalid error
           end
 
           def map_to_instance(instance,data)
