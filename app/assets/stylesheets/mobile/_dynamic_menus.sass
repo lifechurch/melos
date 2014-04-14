@@ -143,9 +143,6 @@
   @media only screen and (max-width: 768px)
     table-layout: fixed
 
-  @media only screen and (max-width: 768px)
-    table-layout: fixed
-
 .dynamic_menu th
   text-align: right
   white-space: nowrap
@@ -432,8 +429,9 @@
 
 #menu_verse_actions
   display: none
-  position: relative
+  position: fixed
   background-color: #323232
+  margin-top: 34px
 
   .verse-actions-success-message
     background:
@@ -797,14 +795,15 @@
     cursor: pointer
     width: 16%
     background: #0084c8 image-url("mobile/verse_action_sprite.png") no-repeat
-    text-indent: -2000px
+    text-indent: 100%
     overflow: hidden
-    margin: 5px 1% 0
-    display: inline-block
+    white-space: nowrap
+    margin: 7px 1% 0
+    display: block
     height: 30px
     padding: 0px
     +border-radius(4px)
-    border-bottom: 2px solid #000
+    float: left
 
   .tab-trigger.bookmark
     background-position: center -50px
@@ -844,6 +843,8 @@
   position: fixed
   text-align: center
   background-color: #333
+  padding: 0 6%
+  overflow: hidden
 
 #menu_verse_actions #note-pane .title
   width: 100%
