@@ -51,6 +51,15 @@ class window.Reader
     @initializeVerses()       # setup selected and focused verses upon page load
     @loadHighlights("#version_primary")
 
+    $("#sidebar").on "click", "#widget-notes div.ft span.pagination", (event)=>
+      cls = $(event.target).parent().attr("class")
+      if cls.indexOf("next") != -1
+        $("#widget-notes").data("paginate-direction", "next")
+      else
+        $("#widget-notes").data("paginate-direction", "previous")
+      Events.Emitter.emit("community_notes:paginate", event)
+
+
   verseClicked: (verse)->
     v = $(verse)
     if @isVerseSelected(v) then @deselectVerse(v) else @selectVerse(v)

@@ -60,10 +60,10 @@ class Note < YV::Resource
     # YV::Concerns::Searchable
     # usfm, version_id
     def community(opts={})
-      search(nil,opts.merge(
+      search(nil, opts.merge(
           cache_for: YV::Caching.a_short_time,
           kind: kind
-        ).slice(:usfm,:version_id,:kind,:cache_for)
+        ).slice(:usfm, :version_id, :kind, :cache_for, :page)
       )
     end
 
