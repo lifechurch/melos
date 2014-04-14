@@ -12,7 +12,6 @@ module YV
           end
 
           def from_all(results)
-            # raise 'the roof'
             unless defined?(results.errors) || results == []
               results.reading_plans.collect do |plan_data|
                 map_to_instance(::Plan.new,plan_data)
