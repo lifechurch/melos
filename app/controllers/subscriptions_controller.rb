@@ -106,8 +106,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def find_subscription
+    # If the user isn't subscribed, redirect to the plan page or their subscription page
     unless @subscription = subscription_for(params[:id])
-      redirect_to subscriptions_path(user_id: current_user.to_param)
+      return redirect_to (plan_path(params[:id]) || subscriptions_path(user_id: current_user.to_param))
     end
 
     # render 404 if day param is present and is not a valid day for the subscription
