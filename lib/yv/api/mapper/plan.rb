@@ -12,9 +12,14 @@ module YV
           end
 
           def from_all(results)
-            results.reading_plans.collect do |plan_data|
-              map_to_instance(::Plan.new,plan_data)
-            end unless results.errors?
+            # raise 'the roof'
+            unless defined?(results.errors) || results == []
+              results.reading_plans.collect do |plan_data|
+                map_to_instance(::Plan.new,plan_data)
+              end
+            else
+              []
+            end
             # todo catch search.language_tag.invalid error
           end
 
