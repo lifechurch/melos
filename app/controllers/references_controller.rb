@@ -54,7 +54,7 @@ class ReferencesController < ApplicationController
 
     # Filter any possible @site requirements here.
     def check_site_requirements
-      if @site.versions && (not @site.versions.include?(params[:version].to_i))  # some sites don't define a versions array
+      if @site.versions && params[:version].present? && (not @site.versions.include?(params[:version].to_i))  # some sites don't define a versions array
         render_404
       end
     end

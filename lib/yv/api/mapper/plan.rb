@@ -12,14 +12,16 @@ module YV
           end
 
           def from_all(results)
-            unless defined?(results.errors) || results == []
-              results.reading_plans.collect do |plan_data|
-                map_to_instance(::Plan.new,plan_data)
+            unless results == []
+              if results.errors?
+                return []
+              else
+                results.reading_plans.collect do |plan_data|
+                  map_to_instance(::Plan.new,plan_data)
+                end
               end
-            else
-              []
+            # todo properly catch errors search.language_tag.invalid error
             end
-            # todo catch search.language_tag.invalid error
           end
 
           def map_to_instance(instance,data)
