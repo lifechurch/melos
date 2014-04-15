@@ -124,4 +124,9 @@ jQuery(document).ready(function() {
 
 });
 
-jQuery(window).load(function() { });
+jQuery(window).load(function() {
+  // init locale for js I18n
+  var locale = $('html').data('locale');
+  I18n.defaultLocale = locale;
+  I18n.locale = locale;
+});
