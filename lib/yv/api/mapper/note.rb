@@ -6,7 +6,8 @@ module YV
         class << self
           
           def from_all(results)
-            return results if results.blank? or results.moments.nil?
+            return results if results.blank? 
+            return [] if results.moments.nil?
             collection = results.moments.collect do |moment|
               map_to_instance(::Note.new, moment)
             end

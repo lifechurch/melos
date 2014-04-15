@@ -16,7 +16,7 @@
     %span
       = title
 
-  - unless notes.empty? || notes.errors?
+  - unless notes.empty?
     %ul
     - notes.first(8).each do |note|
       %li
