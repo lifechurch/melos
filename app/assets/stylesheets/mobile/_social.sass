@@ -1,7 +1,8 @@
 // !Adjusting the article tag on the social pages
+// !TODO refactor article.social-feed <-> div.social-feed
+// !we need a container that can contain moment cards that aren't tied to article.social-feed
+// !as user profile already defines an article where we can't easily get to it.
 
-#main .social-feed-wrap.related
-  padding-top: 78px
 
 #main article.social-requests,
 #main article.social-feed,
@@ -11,66 +12,92 @@
   border: 0
   padding: 0
   box-shadow: none
+  position: relative
   overflow: hidden
+
+#main article.social-requests
+  padding-left: 0
 
 #main article.social-feed,
 #main div.social-feed
   width: auto
+  margin: 0
+
 
 // !-------------------- Feed -------------------------
 
+#load-more
+  display: block
+  text-align: center
+  padding: 4px 10px
+  background-color: #fff
+  +border-radius(5px)
+
+#load-more.dark
+  background-color: #eee
+
+
 // !Moment containers
+
+body.transition .moment
+  +transition(all 0.3s ease-out)
 
 .moment
   margin: 0 15px 15px 0
   width: 100%
   float: none
 
-.moment:nth-child(2n)
-  margin-right: 0
-
 .moment-top
   margin-bottom: 1px
 
+.moment:nth-child(2n)
+  margin-right: 0
 
 .moment-time
   width: 48%
 
-// !Comments attached to a moment
+// !Edit and delete controls
 
-.moment-comments
-  width: 87%
-  padding: 0px 5px 3px
+.moment-content-actions
+  margin: 4px 15px 0 0
+  float: right
 
-// !Common comments code
-
-
-// !Specific comments code
-
-.moment-comments-more
+.moment-content-actions-edit,
+.moment-action-delete
+  padding: 0 0 1px 20px
   font-size: 13px
-  margin-bottom: 4px
+  color: #888
 
-.moment-comments-list-text
-  font-size: 14px
-  line-height: 1.4em
-  width: 80%
+.moment-content-actions-edit
+  background: image-url("edit-delete-sprite.png") no-repeat 1px 0
+  margin: 0 15px 0 0
 
-.moment-comments-textarea
-  width: 80% !important
+.moment-action-delete
+  background: image-url("edit-delete-sprite.png") no-repeat 0px -69px
 
-.moment-comments-list-comment
-  margin-bottom: 4px
+.moment-content-actions-edit:hover
+  background-position: 1px -35px
 
-
-
-// !Moment badge positioning
+.moment-action-delete:hover
+  background-position: 0px -104px
 
 
 // !Share comment like etc.
 
+.moment-actions
+  @extend .clearfix
+  background: #fff
+  +border-radius(0 0 4px 4px)
+  margin-bottom: 1px
+  padding-left: 7px
+  position: relative
+
 .moment-actions .moment-actions-share-box
+  position: absolute
   width: 97%
+  top: 27px
+  left: 6px
+  z-index: 1
 
 .moment-actions-share-box div
   padding: 0
@@ -82,6 +109,275 @@
 
   span:first-child
     border-right: 1px solid #dedddb
+
+// !Stuff each moment action has in common
+
+.moment-actions-share,
+.moment-actions-comment,
+.moment-actions-like
+  float: left
+  display: block
+  font-size: 13px
+
+.moment-time
+  float: left
+  display: block
+  vertical-align: middle
+  font-size: 13px
+  line-height: 0
+
+.moment-actions-share a:hover,
+.moment-actions-comment a:hover,
+.moment-actions-like a:hover,
+.moment-actions a.pending
+  opacity: 0.6
+
+
+.moment-actions-share a,
+.moment-actions-comment a,
+.moment-actions-like a
+  background: image-url("social-actions-sprite.png") no-repeat
+  display: block
+  height: 28px
+  padding: 5px 0 0 35px
+
+.moment-actions-authed
+  display: block
+  float: right
+  padding-right: 20px
+  font-size: 12px
+  line-height: 34px
+
+.moment-actions-authed a
+  color: #777
+
+// !Specific stuff for each action
+
+.moment-actions-share
+  display: none !important
+
+// !currently only share on vod is visible
+.moment-actions.vod .moment-actions-share
+  display: block !important
+
+.moment-actions-share a
+  background-position: 11px 9px
+
+.moment-actions-share-arrow
+  display: block
+  background: image-url("social-actions-sprite.png") no-repeat 30px -736px
+  height: 6px
+
+.moment-actions-share-box
+  margin: 0 7px 7px 0
+  clear: both
+
+  div
+    +border-radius(4px)
+    background-color: #fff
+    border: 1px solid #DEDDDB
+    +box-shadow(0 3px 8px #666)
+    padding-right: 15px
+
+.moment-actions-share-facebook,
+.moment-actions-share-twitter
+  display: inline-block
+  height: 36px
+  line-height: 35px
+  padding: 0 0 0 35px
+  margin: 0 0 0 10px
+  background: image-url("social-actions-sprite.png") no-repeat
+  font-size: 13px
+
+.moment-actions-share-facebook
+  margin: 0
+  background-position: 10px -518px
+
+.moment-actions-share-twitter
+  background-position: 10px -614px
+
+.moment-actions-share-facebook:hover
+  background-position: 10px -566px
+
+.moment-actions-share-twitter:hover
+  background-position: 10px -662px
+
+.moment-actions-comment a
+  background-position: 10px -129px
+
+.moment-actions-like a
+  background-position: 10px -36px
+
+.moment-actions-like a.liked
+  background-position: 10px -82px
+
+
+.moment-time
+  padding: 17px 0 5px 11px
+  font-size: 11px
+  width: 300px
+
+// !Comments attached to a moment
+
+.moment-comments
+  width: 87%
+  margin: 0 auto
+  background-color: #fff
+  padding: 0px 5px 3px
+  clear: both
+  font-size: 13px
+
+
+// !Common comments code
+
+.moment-comments-likes,
+.moment-comments-more,
+.moment-comments-list-comment,
+.moment-comments-input
+  display: block
+  background-color: #EEEDEB
+  margin-bottom: 2px
+
+.moment-comments-list-avatar,
+.moment-comments-input-avatar
+  +border-radius(24px)
+  padding: 3px
+  box-shadow: 0 1px 2px #bbb
+  float: left
+  background-color: #fff
+
+  img
+    +border-radius(24px)
+    width: 24px
+    height: 24px
+    display: block
+
+// !Specific comments code
+
+.moment-comments-likes,
+.moment-comments-more
+  padding: 3px 0 3px 11px
+
+.moment-comments-list
+  margin-bottom: 0
+
+.moment-comments-list-comment
+  overflow: hidden
+  clear: both
+  margin-bottom: 4px
+  padding: 10px
+  position: relative
+
+
+.moment-comment-delete
+  position: absolute
+  top: 10px
+  right: 0
+  line-height: 1em
+  color: #aaa
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  height: 30px
+  width: 30px
+  background: image-url("social-actions-sprite.png") no-repeat center -423px
+
+.moment-comment-delete:hover
+  background: image-url("social-actions-sprite.png") no-repeat center -472px
+
+.moment-comments-list-comment.pending-delete
+  opacity: .5
+
+
+.moment-comments-list-text
+  line-height: 1.3em
+  float: left
+  padding-left: 10px
+  font-size: 14px
+  line-height: 1.4em
+  width: 80%
+  margin-bottom: 0
+
+.moment-comment-dt
+  display: block
+  font-size: 11px
+  color: #888
+
+.moment-comments-input
+  overflow: hidden
+  padding: 10px
+
+.moment-comments-textarea
+  float: left
+  width: 80% !important
+  margin-left: 10px
+  padding: 7px 10px
+  +box-shadow(none)
+  resize: none
+
+.moment-comments-more
+  font-size: 13px
+  margin-bottom: 4px
+
+
+// !Moment badge positioning
+
+.moment-img,
+  position: absolute
+  top: 0
+  right: 0
+
+// !Moment common code
+
+.moment-avatar
+  +border-radius(54px)
+  padding: 3px
+  box-shadow: 0 1px 2px #bbb
+  float: left
+  background-color: #fff
+
+  img
+    height: 48px
+    width: 48px
+    +border-radius(48px)
+
+.timeline-avatar
+  +border-radius(30px)
+  padding: 3px
+  box-shadow: 0 1px 2px #bbb
+  float: left
+  background-color: #fff
+
+  img
+    height: 24px
+    width: 24px
+    +border-radius(24px)
+
+.moment-hi,
+.moment-bm,
+.moment-rp,
+.moment-grp,
+.moment-dl,
+.moment-bdg,
+.moment-vid,
+.moment-no,
+.moment-vod,
+.moment-sys,
+.moment-fr
+  position: relative
+  padding: 15px
+  overflow: hidden
+  +border-radius(4px 4px 0 0)
+  background-color: #fff
+
+.moment-icon
+  display: block
+  position: absolute
+  top: 0
+  right: 0
+  height: 52px
+  width: 52px
+  background: image-url("moment-icon-sprite.png") no-repeat
 
 // !Bookmark, reading plan, download, and group moments -- they share the same layout
 
@@ -96,55 +392,263 @@
   .moment-vid-text,
   .moment-sys-text,
   .moment-fr-text
+    float: left
     width: 70%
+    margin-bottom: 15px
+    font:
+      size: 16px
+      weight: normal
+    line-height: 1.1em
+    padding: 5px 0 0 10px
+    color: #444
 
     a
+      font:
+        size: 16px
+        weight: normal
+      color: #444
+      display: block
       line-height: 1.3em
 
-// !Bookmark moment
+      b
+        color: #0084c8
+
+  .moment-dl-text
+    b
+      display: block
+
+
+// Moments that have verses (currently bookmark and highlight)
+
+.moment-votd-verse-wrap
+  margin-bottom: 15px
 
 .moment-verse-wrap
   clear: both
-  max-height: 150px
+  max-height: 250px
   overflow: hidden
+  position: relative
+  padding-bottom: 25px
+
+.moment-verse-wrap.detail-view
+  max-height: none
+
+.moment-verse
+  font: 20px "times new roman", times, serif !important
+  letter-spacing: -.035em
+  margin: 4px 0
+  padding: 10px 15px
+  clear: both
+  background-color: #F5F4F3
+  +border-radius(5px)
+  line-height: 25px
+
+  .verse > .label
+    display: none !important
+
+
+// To match App styling of verse links on Home feed embedded in cards
+.moment-votd-verse .content-action a,
+.moment-verse-link
+  color: #999
+  font-size: 12px
+  font-family: "helvetica neue", sans-serif
+  text-decoration: underline
+  text-transform: uppercase
+  width: 100%
+  display: block
+  position: absolute
+  bottom: 0
+  background: #f5f4f3
+  padding: 10px 15px
+
+.moment-vod-links
+  padding: 1px 7px
+  background-color: #0084C8
+  text-decoration: none
+  font-weight: bold
+  color: #fff
+  font-size: 12px
+  display: block
+  margin: 0 20px 0 0
+  +border-radius(4px)
+  float: left
+
+.moment-vod-links:hover
+  color: #fff
+  background-color: #16b0ff
+
 
 // !Verse of the day moment
 
-#main article .moment-vod-verse,
-.moment-vod-verse
-  font: 24px "times new roman", times, serif
-  width: 90%
+.moment-vod
+
+  .moment-icon
+    background-position: 0 0
+
+.moment-vod .moment-time
+  padding-top: 8px
+
+.moment-vod-calendar
+  float: left
+  height: 48px
+  width: 48px
+  background: image-url("social-vod-icon.png") no-repeat left center
+  margin-bottom: 12px
+
+.moment-vod-calendar-date
+  font-size: 24px
+  font-weight: bold
+  text-align: center
+
+.moment-vod-calendar-img
+  margin-top: -34px
 
 .moment-vod-title
+  float: left
+  color: #666
+  height: 48px
+  line-height: 36px
+  padding-left: 10px
+  margin-bottom: 0
   font-size: 20px
   width: 80%
+  font-weight: bold
+  letter-spacing: -.02em
 
-#main article
-  .moment-verse
-    font: 20px "times new roman", times, serif
-    letter-spacing: -.035em
-    margin: 4px 0
-    padding: 10px 15px
-    clear: both
-    background-color: #F5F4F3
-    +border-radius(5px)
+.moment-votd-verse
+  font: 20px "times new roman", times, serif
+  letter-spacing: -.035em
+  background-color: #F5F4F3
+  +border-radius(5px)
+  padding: 10px 15px
+  clear: both
+  margin: 4px 0
+  max-height: 125px
+  overflow: hidden
+  position: relative
+
+  .content-action
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 24px
+    line-height: 24px
+    background-color: #f5f4f3
+    display: none
+    width: 100%
+
+  .content-action .less
+    display: none
+
+  .content-action.expanded .more
+    display: none
+
+  .content-action.expanded .less
+    display: block
+
+.moment-votd-verse.expanded
+  padding-bottom: 45px
+
+.moment-vod-list
+  overflow: hidden
+  margin-bottom: 0
+  float: right
+
+  li
+    float: left
+    background-color: #bbb
+    display: block
+    padding: 1px 7px
+    margin-left: 5px
+    color: #fff
+    font:
+      weight: bold
+      size: 12px
+    +border-radius(4px)
+    cursor: pointer
+
+  li:first-child
+    margin-left: 0
+
+  li.active
+    background-color: #555
 
 
 // !Note moment
 
+.moment-no
+  padding-bottom: 0
+
+  .moment-icon
+    background-position: -312px 0
+
+#main .moment-no-text b
+  display: none
 
 .moment-no-note
+  clear: both
+  display: block
   margin: 15px 0 0
+  background: #FEF7DC
+  border: 1px solid #F5E5B0
+  border-bottom: 0
+  font-size: 13px
+  max-height: 230px
+  overflow: hidden
+
+.moment-no-note.detail-view
+  max-height: none
+
+.moment-no-note-title
+  background: image-url("moment-no-note-title-bg.png") repeat-y left top
+  font:
+    weight: bold
+  padding: 7px 15px 8px 40px
+  margin-bottom: 0
+  line-height: 1.15em
+  font-size: 1.3em
 
 .moment-no-note-text
+  background: image-url("moment-no-note-text-bg.png") repeat-y left top
   font-size: 14px
   line-height: 1.15em
+  padding: 1px 15px 10px 40px
+  margin-bottom: 0
+
+.moment-no-refs
+  overflow: hidden
+  clear: both
+
+.moment-no-refs-link
+  padding: 1px 7px 3px
+  background-color: #bbb
+  text-decoration: none
+  font-weight: bold
+  color: #fff
+  font-size: 11px
+  display: block
+  margin: 0 4px 4px 0
+  +border-radius(4px)
+  float: left
+
+.moment-no-refs-link:hover
+  color: #fff
+  background-color: #aaa
+
 
 // !Video moment
 
+.moment-vid
+
+  .moment-icon
+    background-position: -468px 0
+
 .moment-vid-info
-  margin: 65px 0 0
+  display: block
   overflow: visible
+  clear: both
+  margin: 65px 0 0
 
 .moment-vid-info-img
   width: 100%
@@ -152,18 +656,20 @@
 
 .moment-vid-info-text
   border: 0
+  +border-radius(0 4px 4px 0)
   float: none
   height: auto
+  padding: 5px 15px 0 15px
   width: auto
   display: block
-  margin-top: -53px
+  margin: -53px 0 0
   background: image-url("videos-thumb-grad1.png") no-repeat center bottom
 
 .moment-vid-info-text-title
+  font-size: 16px
   margin-bottom: 0
   line-height: 1.3em
 
-#main article .moment-vid-info-text-credit,
 .moment-vid-info-text-credit
   margin: 0
   font-size: 13px
@@ -179,19 +685,181 @@
   overflow: hidden
   text-overflow: ellipsis
 
+
 // !Badge moment
 
+.moment-bdg
+  min-height: 150px
+
+  .moment-icon
+    background-position: -52px 0
+
+  .moment-time
+    padding: 10px 0 5px 0
+
+.moment-bdg-desc
+  padding-right: 20px
+
+.moment-bdg-title
+  font-weight: normal !important
+
 .moment-bdg-info
+  display: block
+  overflow: hidden
+  clear: both
   margin: 65px 0 0 0
+  border: 1px solid #e1e1e1
+  +border-radius(4px)
+  padding: 10px
 
+.moment-bdg-info-img
+  float: left
 
-// !Friend moment
+.moment-bdg-info-text
+  float: left
+  padding: 11px 15px 0 15px
+  margin-bottom: 0
+  font-weight: bold
+
+// !Friends moment
+
+.moment-fr
+
+  .moment-icon
+    background-position: -208px 0
+
+.moment-fr-container
+  position: relative
+  overflow: hidden
+  clear: both
+
+.moment-fr-text
+  font:
+    size: 16px
+    weight: normal
+  line-height: 1.1em
+  float: left
+  width: 70%
+  padding: 5px 0 0 10px
+  margin-bottom: 15px
+  color: #444
+
+.moment-fr-text b
+  display: none
+
+.moment-fr-box
+  display: inline-block
 
 .moment-fr-avatar
+  box-shadow: 0 1px 2px #bbb
+  +border-radius(80px)
+  width: 80px
+  height: 80px
   margin: 0 0 0 20px
+  border: 4px solid #fff
 
-#main .moment-fr-text
-  width: 70%
+.moment-fr-name
+  display: inline-block
+  padding: 5px 8px 7px
+  line-height: 1.2em
+  letter-spacing: -.02em
+  font:
+    size: 1.6em
+    weight: normal
+
+.moment-fr-seemore
+  display: block
+  text-align: center
+
+
+// !Bookmark moment
+
+.moment-bm
+
+  .moment-icon
+    background-position: -104px 0
+
+.moment-verse-wrap
+  clear: both
+  max-height: 150px
+  overflow: hidden
+
+.moment-bm-labels
+  margin: 10px 0 0
+
+// !Highlight moment
+
+.moment-hi
+
+  .moment-icon
+    background-position: -260px 0
+
+
+// !Reading plan moment
+
+.moment-rp
+
+  .moment-icon
+    background-position: -364px 0
+
+
+// !Group moment
+
+.moment-grp
+
+  .moment-icon
+    background-position: -208px 0
+
+
+// !Download moment
+
+.moment-dl
+
+  .moment-icon
+    background-position: -156px 0
+
+
+// !System moment
+
+.moment-sys
+
+  .moment-icon
+    background-position: -416px 0
+
+  .moment-sys-image img
+    width: 100%
+
+
+// !PSA moment
+
+.moment-psa
+  padding: 15px
+  background-color: #fff
+  border-radius: 4px
+  text-align: center
+
+  .action_button_blue
+    width: 250px
+
+.moment-psa-text
+  font-size: 1.4em
+  letter-spacing: -0.02em
+
+.psa-social-img,
+.psa-friends-img
+  margin: -10px 0 20px 0
+
+
+.profile-badges-list
+  overflow: auto
+  background-color: #dedddb
+
+.profile-badges-list .moment
+  float: left
+
+.profile-badges-list .moment:nth-child(even)
+  margin-right: 0
+
 
 
 // !------------------------ Detail page -------------------------
@@ -204,10 +872,18 @@
 
   .moment
     margin: 0 0 15px 0
+    width: auto
+    float: none
 
   // !Share comment like etc.
 
+  .moment-actions
+    width: auto
+
   // !Comments attached to a moment
+
+  .moment-comments
+    width: 90%
 
   .moment-comments-list-text,
   .moment-comments-textarea
@@ -222,8 +898,7 @@
   .moment-dl-text,
   .moment-no-text,
   .moment-bdg-text,
-  .moment-vid-text,
-  .moment-sys-text
+  .moment-vid-text
     width: 70%
 
 
@@ -233,16 +908,32 @@
     max-height: none
     overflow: visible
 
+
   // !Note
 
   .moment-no
+    padding: 10px 0 20px 25px
 
     .moment-time
+      padding: 17px 0 5px 10px
+
+    .moment-no-note
+      margin-left: 0
+      margin-top: 0
+      background: none
+      border: 0
+      font-size: 15px
       padding: 17px 0 5px 0
 
     .moment-no-note-title
+      background: none
+      font:
+        weight: bold
+        size: 2em
+      padding: 7px 15px 8px 0
       line-height: 1em
-      margin: 15px 0 0
+      margin: 0
+      letter-spacing: -.02em
 
     .moment-no-note-text
       background: none
@@ -251,28 +942,64 @@
       margin-bottom: 0
 
     .moment-content-actions
+      position: relative
+      top: auto
+      left: auto
+      margin: 5px 0 0
       right: auto
 
+    .moment-content-actions-edit
+      +border-radius(5px 0 0 5px)
 
-// !Sidebar comment input
+    .moment-action-delete
+      +border-radius(0 5px 5px 0)
+
+
+// Moment-detail sidebar
 
 .social-sidebar
-  position: static
-  width: auto
+  width: 299px
 
-.social-sidebar-input
-  padding: 10px
+.moment-activity-users
+  margin-left: 5px !important
 
-  textarea
-    margin-bottom: 10px
-    height: auto
+  .user
+    list-style: none !important
 
+    li
+      list-style: none
+
+    a.user
+      margin-left: 10px
+      line-height: 30px
+      font-size: 15px
+
+.moment-activity
+  .bd
+    padding: 10px
+
+  .moment-activity-actions
+    padding-left: 30px
+
+    li
+      display: block
+      height: 28px
+      padding: 0 0 0 35px
+      line-height: 34px
+      background: image-url("social-actions-sprite.png") no-repeat
+
+    li.action-like
+      background-position: 10px -82px
+
+    li.action-comment
+      background-position: 10px -129px
 
 // !Intro to social page
 
 #main article.social-intro
   background-color: #dedddb
   padding: 0
+  position: relative
 
   .intro-moment
     width: auto
@@ -298,6 +1025,20 @@
   .moment-bm-text
     width: 75%
 
+  .moment-actions-like
+    display: block
+    margin: 0 0 0 10px
+
+    a
+      padding: 0
+
+  .moment-comments-textarea
+    color: #888
+
+  .intro-comments
+    width: 445px
+    margin: -15px 0 0
+
   .moment-actions-comment a,
   .moment-actions-like a
     text-indent: 100%
@@ -310,16 +1051,6 @@
   .moment-actions-comment a
     background-position: 9px -128px
 
-  .moment-actions-like
-    display: block !important
-    margin: 0 0 0 10px
-
-    a
-      padding: 0
-
-  .moment-comments-textarea
-    color: #888
-
   .intro-comments
     width: auto
     margin: -15px 0 0
@@ -327,6 +1058,12 @@
   .intro-discover-copy,
   .intro-share-copy
     font-family: "skippy-sharp", arial, sans-serif
+
+  .intro-discover-copy p,
+  .intro-share-copy p
+    font-family: "skippy-sharp", arial, sans-serif
+    font-size: 28px
+    line-height: 1.1em
 
   .intro-discover-copy
     position: absolute
@@ -345,6 +1082,9 @@
       height: 40px
       width: 35px
       margin: -10px 0 0 220px
+
+    a
+      margin: 10px 0 0 20px
 
   .intro-share-copy
     position: relative
@@ -369,6 +1109,9 @@
       margin: 10px 0 0
       float: left
 
+    a
+      margin: 10px 0 0 30px
+
   .intro-discover-copy-btn
     position: relative
     top: auto
@@ -389,32 +1132,19 @@
   padding: 10px 10px 0
   +border-radius(0px)
   background-color: #ccc
-  margin-bottom: 10px
-  position: fixed
-  width: 100%
-  height: 78px
-  z-index: 1
   text-align: center
-  -moz-box-sizing: border-box
-  -webkit-box-sizing: border-box
-  box-sizing: border-box
+  +box-sizing(border-box)
 
   .return-to-reader
-    position: static
-    right: auto
-    top: auto
-    width: 100%
-    padding: 10px 0 !important
+    padding: 10px 0
 
   ul
     display: inline
-    @extend .clearfix
+    //@extend .clearfix
 
   li
-    float: left
-    display: inline
-    line-height: 33px
-    margin-right: 20px
+    text-align: left
+    padding: 15px 0 10px
 
     a.active
       text-decoration: underline

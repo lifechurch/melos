@@ -1,0 +1,566 @@
+#forgot-password
+  form li
+    margin-bottom: 20px
+
+    label
+      display: block
+
+
+#forgot-password.mobile-client
+  form li
+    input.field
+      width: 100%
+
+
+// !Profile and friend pages ----------------------------------------
+
+// !Top part with bio and pic
+
+.top_section
+  background: #dedddb
+  background-image: none
+  border: 0
+  +box-shadow(none)
+
+.profile-hdr
+  position: relative
+  min-height: 125px
+  padding: 0 5%
+  height: auto
+
+  .avatar_huge
+    +border-radius(128px)
+    +box-shadow(rgba(0,0,0,.15) 0 1px 1px)
+    display: block
+    margin: 15px auto 0
+    position: relative
+    top: auto
+    right: auto
+    height: 64px
+    width: 64px
+
+  .profile-hdr-name
+    margin: 15px 0 15px
+    font-size: 42px
+    text-align: center
+    text-shadow: none
+
+  .profile-hdr-btn
+    +border-radius(4px)
+    padding: 4px 20px
+    left: 15px
+    top: 0
+
+  .profile-hdr-info
+    overflow: visible
+    display: block
+    margin-bottom: 10px
+
+  .profile-hdr-info-user,
+  .profile-hdr-info-location,
+  .profile-hdr-info-link,
+  .profile-hdr-info-about
+    display: block
+    width: auto
+    padding: 0 20px 0 22px
+    background-color: #fff
+    +border-radius(4px)
+    padding: 3px 15px 3px 30px
+    background-position: 7px center
+    margin: 0 0 2px
+    font-size: 15px
+    text-shadow: none
+    background:
+      repeat: no-repeat
+
+  .profile-hdr-info-about
+    font-size: 13px
+    width: auto
+    line-height: 1.4em
+    padding: 15px
+    margin: 0 0 12px 0
+
+  .profile-hdr-info-user
+    background:
+      image: image-url("icon_small_user.png")
+
+  .profile-hdr-info-location
+    background:
+      image: image-url("icon_small_location.png")
+
+  .profile-hdr-info-link
+    background:
+      image: image-url("icon_small_link.png")
+
+  .profile-hdr-btn,
+  .profile-hdr-friend,
+  .profile-hdr-addfriend,
+  .profile-hdr-pending,
+  .profile-hdr-accept,
+  .profile-hdr-deny
+    padding: 7px 0 8px
+    font-size: 14px
+    position: relative
+    top: auto
+    left: auto
+    right: auto
+
+  .profile-hdr-friend
+    color: #fff
+    font-weight: bold
+    border-radius: 4px
+    padding-left: 30px
+    background: image-url("icon-check-white.png") no-repeat 10px 8px #51652f
+    position: absolute
+    right: 20px
+    top: 22px
+
+  .profile-hdr-pending
+    background-color: #888
+    color: #fff
+    padding: 2px 10px 4px
+    +border-radius(3px)
+    top: 20px
+    right: 20px
+
+  .profile-hdr-deny
+    top: 80px
+
+  .profile-hdr-accept
+    margin: 0 0 5px
+
+  #toggle_comments
+    position: relative
+    top: auto
+    right: auto
+
+article.profile
+  .mobile
+    display: none
+
+
+// !Profile - stuff below the avatar, bio, etc
+
+#main article.profile
+  background: none
+  padding: 0
+
+  .pagination
+    margin-bottom: 5px
+    padding: 15px 0 0 20px
+
+
+// !Tab navigation
+
+.top_section
+
+  .profile-tabs
+    overflow: hidden
+    margin: 20px 0 3px
+
+  .profile-tabs-activity,
+  .profile-tabs-friends,
+  .profile-tabs-notes,
+  .profile-tabs-bookmarks,
+  .profile-tabs-highlights,
+  .profile-tabs-badges,
+  .profile-tabs-settings
+    display: block
+    width: 15.5%
+    padding-left: 0
+    margin-left: 1%
+    float: left
+    background: #EEEDEB image-url("mobile/profile-tabs-sprite.png") no-repeat center center
+    overflow: hidden
+    text-indent: 100%
+    white-space: nowrap
+
+  .profile-tabs-activity
+    margin-left: 0
+    background-position: center 12px
+    width: 17.5%
+
+  .profile-tabs-activity a,
+  .profile-tabs-friends a,
+  .profile-tabs-notes a,
+  .profile-tabs-bookmarks a,
+  .profile-tabs-badges a,
+  .profile-tabs-highlights a,
+  .profile-tabs-settings a
+    height: 52px
+    line-height: 41px
+    display: block
+    color: #444
+    text-decoration: none
+    font-weight: bold
+    font-size: 13px
+
+  .profile-tabs-friends
+    background-position: center -116px
+
+  .profile-tabs-notes
+    background-position: center -243px
+
+  .profile-tabs-bookmarks
+    background-position: center -371px
+
+  .profile-tabs-highlights
+    background-position: center -498px
+
+  .profile-tabs-badges
+    background-position: center -626px
+
+  .profile-tabs
+    .highlight
+      background-color: #fff
+      border-top: 3px solid #222
+
+      a
+        height: 49px
+        line-height: 37px
+
+  .profile-tabs-activity.highlight
+    background-position: center 10px
+    width: 17.5%
+
+  .profile-tabs-friends.highlight
+    background-position: center -118px
+    width: 15.5%
+
+  .profile-tabs-notes.highlight
+    background-position: center -245px
+
+  .profile-tabs-bookmarks.highlight
+    background-position: center -373px
+
+  .profile-tabs-highlights.highlight
+    background-position: center -500px
+
+  .profile-tabs-badges.highlight
+    background-position: center -628px
+
+
+// !Content area with feed etc.
+
+#main .profile
+  border: 0
+  background: none
+  padding: 0
+
+.moment-bm-title
+  width: 380px
+  letter-spacing: -0.04em
+  font-size: 26px
+  margin-bottom: 10px
+
+.moment-bm-references
+  margin-bottom: 0
+
+  li
+    padding: 0
+    margin-top: 15px
+
+  li:first-child
+    margin-top: 0
+
+.moment-bm-references-h4title
+  margin-bottom: 15px
+
+.moment-bm-references-h3title
+  font-size: 18px
+  margin-bottom: 15px
+
+.moment-bm-references-reader.moment-vod-verse
+  font-size: 20px
+  margin-bottom: 0
+
+  .label
+    font-size: 13px
+
+.moment-bm-labels
+  margin: 10px 0 0
+
+.moment-bm-labels-link
+  display: inline-block
+  padding: 0px 7px 2px
+  background-color: #bbb
+  +border-radius(4px)
+  margin-left: 2px
+  color: #fff
+  text-decoration: none
+  font-weight: bold
+  font-size: 12px
+
+.moment-bm-labels-link:hover
+  background-color: #aaa
+  color: #fff
+
+
+// !Friends tab
+
+.profile-friends
+  background-color: #fff
+  border-radius: 0 0 5px 5px
+  margin: 0
+  padding: 15px 5% 20px
+
+.friends-count
+  position: relative
+  border-bottom: 1px dotted #e1e1e1
+  padding: 0 0 20px 0
+
+.friends-count-have
+  font: 200 34px "Helvetica Neue", Arial, sans-serif
+  margin-bottom: 0
+
+.friends-count-canhave
+  margin: -2px 0 0
+
+.friends-count-help
+  background: image-url("icon_help.png") no-repeat 0 center
+  position: relative
+  display: block
+  cursor: pointer
+  color: #888
+  font-size: 12px
+  background-position: 0 3px
+  line-height: 1.3em
+  padding: 3px 0 0 21px
+  margin: 7px 0
+
+.friends-count-find,
+.friends-view-requests
+  position: relative
+  right: auto
+  top: auto
+  bottom: auto
+  margin: 10px 0 0
+
+.friends-count-find
+  width: 150px
+
+.friends-view-requests
+  width: 150px
+
+.friend-directory
+  overflow: hidden
+  clear: both
+  margin: 0
+
+.friend-directory-title
+  margin: 0
+
+.friend-requests-info
+  position: relative
+  width: auto
+  float: none
+  margin: 0
+
+.friend-requests-info:nth-of-type(even)
+  margin: 0
+
+.friend-requestor-avatar
+  width: 70px
+  height: 70px
+  +border-radius(70px)
+  +box-shadow(rgba(0, 0, 0, 0.15) 0 1px 1px)
+  position: absolute
+  left: 0
+  top: 10px
+
+.friend-requestor-name
+  margin: 0 0 -5px 85px
+  padding: 20px 0 0
+
+.friend-requestor-wants
+  display: block
+  margin: 0 0 0 85px
+
+  span
+    color: #444
+    font-weight: normal
+
+.friend-requestor-accept,
+.friend-requestor-deny
+  top: auto
+
+.friend-requestor-accept
+  right: 0
+  top: 10px
+  background: #00B400 image-url("friend-request-sprite.png") no-repeat center 3px
+
+.friend-requestor-deny
+  top: 46px
+  right: 0
+  background: #D30000 image-url("friend-request-sprite.png") no-repeat center -129px
+
+.friend-detail
+  position: relative
+  border-bottom: 1px dotted #e1e1e1
+  width: auto
+  float: none
+  height: 90px
+  margin: 0
+
+.friend-detail-avatar
+  width: 70px
+  height: 70px
+  +border-radius(70px)
+  +box-shadow(rgba(0, 0, 0, 0.15) 0 1px 1px)
+  position: absolute
+  left: 0
+  top: 10px
+
+.friend-detail-name
+  margin: 0 0 -5px 85px
+  padding: 31px 0 0
+  font-size: 16px
+  line-height: 1.2em
+  width: 60%
+  display: block
+
+.friend-detail-add,
+.friend-detail-delete
+  position: absolute
+  height: 36px
+  width: 36px
+  +border-radius(36px)
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+  top: 27px
+  right: 0
+
+.friend-detail-delete,
+.friend-detail-add,
+.friend-detail-status
+  margin: 0 0 0 86px
+  color: #777
+  font-size: 11px
+  font-weight: normal
+
+.friend-detail-delete
+  background: image-url("friend-request-sprite.png") no-repeat center -128px #D30000
+
+.friend-detail-add
+  background: image-url("friend-request-sprite.png") no-repeat center 4px #00B400
+
+.friends-none
+  background: image-url("social-psa-profiles.png") no-repeat center 40px
+  text-align: center
+  padding: 110px 0 0
+
+
+// !Blank slate pages
+
+#main
+
+  .slate-activity,
+  .slate-bookmarks,
+  .slate-highlights,
+  .slate-notes,
+  .slate-badges,
+  .slate-friends
+    padding: 120px 40px 20px
+    border-radius: 0
+    margin: 0
+    background: #fff
+
+    h2,
+    .friends-private
+      font-weight: 100
+      font-size: 2.5em
+      line-height: 1.2em
+      text-align: center
+      color: #888
+      margin: 0 0 20px 0
+
+    p
+      text-align: center
+      padding: 0
+
+  .slate-bookmarks
+    background: #fff image-url("icon-bookmark-64.png") no-repeat center 40px
+
+  .slate-highlights
+    background: #fff image-url("icon-highlight-64.png") no-repeat center 40px
+
+  .slate-notes
+    background: #fff image-url("icon-notes-64.png") no-repeat center 40px
+
+  .slate-badges
+    background: #fff image-url("icon-badge-64.png") no-repeat center 40px
+
+  .slate-friends
+    background: #fff image-url("icon-group-64.png") no-repeat center 40px
+
+  .slate-activity
+    background: #fff image-url("icon-activity-64.png") no-repeat center 40px
+    padding: 120px 40px 20px
+
+
+// !Profile settings pages
+
+.settings-header
+  position: relative
+  padding: 20px 15px 0
+  text-align: center
+
+  .settings-header-avatar
+    +border-radius(128px)
+    +box-shadow(rgba(0,0,0,.15) 0 1px 1px)
+    position: relative
+    top: auto
+    right: auto
+    width: 80px
+    height: 80px
+
+  .settings-header-name
+    text-shadow: none
+    margin: 10px 0 0
+    font-size: 38px
+
+  .settings-header-btn
+    +border-radius(4px)
+    padding: 4px 20px
+
+#main article.settings-page
+  background: none
+  padding: 30px 0
+  overflow: hidden
+
+  .settings-page-content
+    width: 540px
+    margin: 0 10px 0 0
+    float: left
+    background-color: #fff
+    padding: 30px
+    +border-radius(5px)
+
+    .email-update
+      input
+        width: 400px
+
+      button
+        margin: 10px 0 0
+
+  .settings-page-menu
+    width: 300px
+    float: left
+
+
+// !Notifications
+
+.notifications
+  padding: 0 20px
+
+#main .profile .emphasis + label,
+#main .profile input + label,
+#main .profile select + label
+  display: inline-block
+
+
+// !-
+
+.mobile + h2
+  display: none

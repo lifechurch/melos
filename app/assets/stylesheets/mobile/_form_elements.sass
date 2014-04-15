@@ -1,7 +1,254 @@
-// `Form Overrides
+br + input,
+br + select,
+br + textarea
+  margin-top: 5px
+
+
+// !Flash Messages
 //----------------------------------------------------------------------------------------------------
 
+.error
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  padding: 10px 20px
+  border: 1px solid #e89494
+  background:
+    color: #f4cccc
+
+.notice
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  padding: 10px 20px
+  border: 1px solid #91b164
+  background:
+    color: #d9e4c9
+
+#flash_error,
+#flash_notice
+  @extend .clearfix
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  background:
+    repeat: no-repeat
+    position: right bottom
+  border: 1px solid
+  font-size: 16px
+  margin: 0 0 10px 70px
+  padding: 10px 20px
+  box-sizing: border-box
+  width: 910px
+  opacity: 0.95
+  z-index: 5
+  text-shadow: #fff 0 1px 0
+  position: fixed
+  cursor: pointer
+  +box-sizing(border-box)
+
+#flash_error, .form_errors
+  background:
+    color: #f4cccc
+    image: image-url("flash_error.png")
+  border-color: #e89494
+  color: #aa0303
+
+#flash_notice
+  background:
+    color: #d9e4c9
+    image: image-url("flash_notice.png")
+  border-color: #91b164
+  color: #4b7518
+
+.form_errors
+  background:
+    repeat: no-repeat
+    position: right bottom
+  border: 1px solid #e89494
+  font-size: 16px
+  opacity: 0.95
+  text-shadow: #fff 0 1px 0
+  padding: 10px 20px
+  box-sizing: border-box
+  +round
+  +box-shadow(#fff 0 1px 0 0)
+  margin-bottom: 20px
+
+  h4
+    font-weight: normal
+    margin-top: 4px
+
+  ul
+    margin-left: 20px
+    margin-bottom: 0
+    li
+      padding-top: 0 !important
+      list-style: square !important
+      background-image: none !important
+      padding-left: 10px !important
+
+#flash_error.no_primary_nav,
+#flash_notice.no_primary_nav
+  width: 980px
+  margin-left: 0
+
+
+// !Radio buttons & Checkboxes
+//----------------------------------------------------------------------------------------------------
+
+.faux_radio,
+.faux_checkbox
+  background:
+    image: image-url("checkbox_radio_sprite.png")
+    repeat: no-repeat
+  cursor: pointer
+  display: inline-block
+  overflow: hidden
+  width: 30px
+  height: 30px
+  vertical-align: middle
+  position: relative
+  top: -3px
+  zoom: 1
+
+.faux_radio input,
+.faux_checkbox input
+  width: 1px
+  height: 1px
+  position: absolute
+  top: auto
+  left: -99999px
+  right: auto
+  bottom: auto
+
+.faux_checkbox
+  background-position: 0 0
+
+.faux_checkbox:hover,
+.faux_checkbox.is_focused
+  background-position: -30px 0
+
+.faux_checkbox.is_checked
+  background-position: -60px 0
+
+.faux_checkbox.is_checked:hover,
+.faux_checkbox.is_checked.is_focused
+  background-position: -90px 0
+
+.faux_radio
+  background-position: 0 -30px
+
+.faux_radio:hover,
+.faux_radio.is_focused
+  background-position: -30px -30px
+
+.faux_radio.is_checked
+  background-position: -60px -30px
+
+.faux_radio.is_checked:hover,
+.faux_radio.is_checked.is_focused
+  background-position: -90px -30px
+
+/* Disabled states... */
+
+.faux_radio.is_disabled,
+.faux_checkbox.is_disabled
+  +opacity(0.4)
+  cursor: default
+
+.faux_radio.is_disabled:hover
+  background-position: 0 -30px
+
+.faux_radio.is_checked.is_disabled:hover
+  background-position: -60px -30px
+
+.faux_checkbox.is_disabled:hover
+  background-position: 0 0
+
+.faux_checkbox.is_checked.is_disabled:hover
+  background-position: -60px 0
+
+.faux_radio + label,
+.faux_checkbox + label,
+input[type="radio"] + label,
+input[type="checkbox"] + label
+  cursor: pointer
+
+.faux_radio + label,
+.faux_checkbox + label
+  margin-left: -5px
+
+.faux_radio.is_disabled + label,
+.faux_checkbox.is_disabled + label,
+input[type="radio"][disabled] + label,
+input[type="checkbox"][disabled] + label
+  color: #aaa
+  cursor: default
+
+// !Spacing, to account for box-shadow gray "border".
+//----------------------------------------------------------------------------------------------------
+
+input + input,
+input + button,
+input + select,
+select + input,
+select + button,
+select + select,
+button + input,
+button + button,
+button + select
+  margin-left: 15px
+
+
+label + input,
+label + select,
+label + textarea
+  margin-top: 5px
+
+// !Form Overrides
+//----------------------------------------------------------------------------------------------------
+
+label
+  font-weight: bold
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+  border: 0
+  color: #444
+  background-color: #E5E5E5
+  padding: 8px 15px
+  +box-shadow(inset rgba(0,0,0, 0.10) 0 -1px 0 0)
+  font-size: 13px
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button.hover
+  background-color: #bebebe
+
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button.active
+  +box-shadow(inset rgba(#000, 0.5) 0 1px 3px 0)
+  color: #005d8d
+
 textarea,
+select,
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -15,36 +262,140 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"]
+  border-color: #bbb
+  +round
+  padding: 7px 0 7px 10px
+  height: 35px
   width: 100%
   font-size: 15px
+
+form p.emphasis
+  background: #EEEDEB
+  padding: 5px 23px 10px
+  border: 1px solid #CBC9CF
+  border-radius: 4px
+
+input.address
+  width: 465px
+
+textarea
+  display: block
+  height: auto
+  width: 100% !important
+
+.alternate_select
+  height: 24px
+  padding: 2px 10px
+.alternate_select_locked
+  padding-left: 20px
+
+@media (-webkit-min-device-pixel-ratio: 0)
+  select
+    background-image: image-url("select_arrows.png"), image-url("select_gradient.png")
+    background-size: auto
+    background-position: right 7px, 0 0
+    background-repeat: no-repeat, repeat-x
+    padding-right: 41px
+  // Alternate_select queues up the smaller select design used in things like parallel notes -jc
+  .alternate_select
+    +background(image-url("select_wrap_span.png") no-repeat center right)
+    height: 24px
+    padding: 2px 10px
+  .alternate_select_locked
+    padding-left: 20px
+    +background(image-url("select_wrap_span.png") no-repeat center right, linear-gradient(#fefefe, #dbdbdb))
+
+
+
+textarea:focus,
+select:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+textarea:active,
+select:active,
+input[type="date"]:active,
+input[type="datetime"]:active,
+input[type="datetime-local"]:active,
+input[type="email"]:active,
+input[type="month"]:active,
+input[type="number"]:active,
+input[type="password"]:active,
+input[type="search"]:active,
+input[type="tel"]:active,
+input[type="text"]:active,
+input[type="time"]:active,
+input[type="url"]:active,
+input[type="week"]:active
+  border-color: $blue
+  // +box-shadow(inset rgba(#000, 0.1) 0 1px 1px 0, #fff 0 1px 0 0, $blue_light 0 0 5px 0, #eeedeb 0 0 0 5px)
+  outline: 0 !important
+
+input[type="search"]
+  padding-right: 1px
+  -webkit-appearance: none
+
+button.color
+  +box-shadow(none)
+  border: none
 
 select
   padding: 8px 10px
   font-size: 15px
   width: 100%
 
-textarea
-  width: 100% !important
 
-.country_select > select,
-select#user_timezone,
-select#user_language_tag
-  min-width: 0 !important
-
-// -------------Button stuff
-
+// !Action Buttons
+//----------------------------------------------------------------------------------------------------
 input[type="submit"].action_button_green,
 input[type="submit"].action_button_blue,
 input[type="submit"].action_button_red,
 input[type="submit"].action_button_grey,
+button.action_button_blue,
+button.action_button_green,
+button.action_button_red,
+button.action_button_grey,
 .action_button_blue,
 .action_button_green,
 .action_button_red,
 .action_button_grey
-  padding: 10px !important
-  border-radius: 4px
+  +border-radius(4px)
+  display: inline-block
+  font:
+    size: 15px
+    weight: bold
+  line-height: 1.3
+  text-align: center
+  padding: 7px 0
+  +box-shadow(inset rgba(0,0,0, 0.20) 0 -2px 0 0)
+  background-image: none
   border: none
   width: 100%
+
+input[type="submit"].action_button_green,
+input[type="submit"].action_button_red,
+input[type="submit"].action_button_blue,
+input[type="submit"].action_button_grey,
+.action_button_blue,
+.action_button_green,
+.action_button_red,
+.action_button_grey,
+.action_button_blue:hover,
+.action_button_red:hover,
+.action_button_green:hover,
+.action_button_grey:hover
+  color: #fff
+  text-decoration: none
 
 input[type="submit"]
   background-color: #48A900
@@ -54,7 +405,7 @@ input[type="submit"]
   color: #fff
   text-shadow: rgba(0,0,0,0.3) 0 -1px 0
   font-size: 15px
-  +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0 !important)
+  +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0)
   border: none
 
 input[type="submit"]:hover
@@ -62,6 +413,283 @@ input[type="submit"]:hover
   +background-image(none)
   color: #fff
   text-shadow: rgba(0,0,0,0.3) 0 -1px 0
-  +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0 !important)
+  +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0)
   border: none
+
+
+// Green Action Buttons
+
+input[type="submit"].action_button_green,
+button.action_button_green,
+.action_button_green
+  background-color: #48A900
+  background-image: none
+
+.action_button_green:hover,
+.action_button_green:focus,
+.action_button_green:active,
+input[type="submit"].action_button_green:hover,
+input[type="submit"].action_button_green:focus,
+input[type="submit"].action_button_green:active
+  background-color: #4FBA00
+
+input[type="submit"].action_button_green:focus,
+input[type="submit"].action_button_green:active,
+.action_button_green:focus,
+.action_button_green:active
+  color: #4FBA00
+
+input[type="submit"].action_button_green,
+.action_button_green,
+.action_button_green:hover,
+.action_button_green:focus,
+.action_button_green:active
+  border: 0
+
+
+// Blue Action Buttons
+
+input[type="submit"].action_button_blue,
+input[type="button"].action_button_blue,
+.action_button_blue,
+a.action_button_blue
+  background-color: #0099CC
+  border: 0
+
+input[type="submit"].action_button_blue:hover,
+input[type="submit"].action_button_blue:focus,
+input[type="submit"].action_button_blue:active,
+input[type="button"].action_button_blue:hover,
+input[type="button"].action_button_blue:focus,
+input[type="button"].action_button_blue:active,
+.action_button_blue:hover,
+.action_button_blue:focus,
+.action_button_blue:active
+  background-color: #0F7BB0
+
+
+input[type="submit"].action_button_blue:focus,
+input[type="submit"].action_button_blue:active,
+input[type="button"].action_button_blue:focus,
+input[type="button"].action_button_blue:active,
+.action_button_blue:focus,
+.action_button_blue:active
+  color: #87abbe
+
+
+// Red Action Button
+
+input[type="submit"].action_button_red,
+button.action_button_red,
+a.action_button_red,
+.action_button_red
+  background-color: #CC0000
+  background-image: none
+  border: 0
+
+.action_button_red:hover,
+.action_button_red:focus,
+.action_button_red:active,
+input[type="submit"].action_button_red:hover,
+input[type="submit"].action_button_red:focus,
+input[type="submit"].action_button_red:active
+  background-image: none
+  background-color: #B30F0A
+
+input[type="submit"].action_button_red:focus,
+input[type="submit"].action_button_red:active,
+.action_button_red:focus,
+.action_button_red:active
+  color: #ae8787
+
+
+// Grey Action Buttons
+
+input[type="submit"].action_button_grey,
+button.action_button_grey,
+.action_button_grey
+  background-color: #e6e6e6
+  background-image: none
+  color: #424242 !important
+
+.action_button_grey:hover,
+.action_button_grey:focus,
+.action_button_grey:active,
+input[type="submit"].action_button_grey:hover,
+input[type="submit"].action_button_grey:focus,
+input[type="submit"].action_button_grey:active
+  background-color: #cfcfcf
+
+input[type="submit"].action_button_grey:focus,
+input[type="submit"].action_button_grey:active,
+.action_button_grey:focus,
+.action_button_grey:active
+  color: #424242
+
+input[type="submit"].action_button_grey,
+.action_button_grey,
+.action_button_grey:hover,
+.action_button_grey:focus,
+.action_button_grey:active
+  border: 0
+
+
+// Small action buttons
+
+.sm_action_button_blue,
+.sm_action_button_green
+  +border-radius(16px)
+  +box-shadow(inset rgba(#fff, 0.3) 0 1px 0 0, #fff 0 1px 0 0, #eeedeb 0 0 0 4px)
+  border: 1px solid #666
+  display: inline-block
+  font:
+    size: 10px
+    weight: bold
+  line-height: 1.3
+  text-align: center
+  text-shadow: rgba(#000, 0.5) 0 1px 0
+  padding: 3px 10px
+
+.sm_action_button_blue,
+.sm_action_button_green,
+.sm_action_button_blue:hover,
+.sm_action_button_green:hover
+  color: #fff
+  text-decoration: none
+
+.sm_action_button_green
+  background-color: #81a950
+
+.sm_action_button_green:hover,
+.sm_action_button_green:focus,
+.sm_action_button_green:active
+  background-color: #5d832f
+
+.sm_action_button_green:focus,
+.sm_action_button_green:active
+  color: #9cae87
+
+.sm_action_button_green,
+.sm_action_button_green:hover,
+.sm_action_button_green:focus,
+.sm_action_button_green:active
+  border-color: #607346
+
+.sm_action_button_blue
+  background-color: #0077b4
+
+.sm_action_button_blue:hover,
+.sm_action_button_blue:focus,
+.sm_action_button_blue:active
+  background-color: #006091
+
+.sm_action_button_blue:focus,
+.sm_action_button_blue:active
+  color: #87abbe
+
+.sm_action_button_blue,
+.sm_action_button_blue:hover,
+.sm_action_button_blue:active,
+.sm_action_button_blue:focus
+  border-color: #0077b4
+
+.sm_action_button_green:focus,
+.sm_action_button_green:active,
+.sm_action_button_blue:focus,
+.sm_action_button_blue:active
+  +box-shadow(#fff 0 1px 0 0, #eeedeb 0 0 0 5px, inset rgba(#000, 0.5) 0 5px 10px 0)
+
+//
+// Icons inside buttons:
+//
+
+.action_button_green .icon_plus,
+.action_button_green .icon_magnify,
+.action_button_green .icon_arrow
+  background:
+    repeat: no-repeat
+    position: left center
+  padding: 10px 0 10px 40px
+
+.action_button_green .icon_plus
+  background-image: image-url("icon_plus.png")
+
+.action_button_green .icon_magnify
+  background-image: image-url("icon_magnify.png")
+
+.action_button_green .icon_arrow
+  background-image: image-url("icon_arrow.png")
+
+
+.small_action_button
+  +round
+  font-weight: bold
+  padding: 4px 10px
+  display: block
+  border: 1px #2a3026 solid
+  box-shadow: inset rgba(255,255,255,.3) 0px 1px 0px, rgba(0,0,0,.3) 0px 1px 0px
+  text-decoration: none
+
+// !Mini Action Buttons
+//----------------------------------------------------------------------------------------------------
+
+a.action_button_mini,
+button.action_button_mini
+  @extend button
+  +border-radius(17px)
+  +box-shadow(#fff 0 1px 0 0, #eeedeb 0 0 0 5px)
+  color: $body_text
+  display: inline-block
+  font:
+    size: 14px
+    weight: bold
+  line-height: 1
+  padding: 8px 15px 10px
+  text-decoration: none
+  text-shadow: #fff 0 1px 0
+  height: auto
+  &:hover
+    color: $body_text
+  &:active,
+  &:focus
+    border-color: $blue
+    +box-shadow(inset rgba(#000, 0.25) 0 1px 2px 0, #fff 0 1px 0 0, $blue_light 0 0 5px 0, #eeedeb 0 0 0 5px)
+
+// !Image Input.
+//----------------------------------------------------------------------------------------------------
+
+input[type="image"]:active
+  position: relative
+  top: 1px
+
+input[type="image"] + a
+  line-height: 29px
+
+// !Date Input
+//
+
+input[type="date"]
+  width: 100%
+
+// !Embedded Text Field
+//
+
+.text_field_embed
+  position: relative
+  display: block
+
+.text_field_embed button
+  position: absolute
+  right: 1px
+  top: 1px
+.text_field_embed + .text_field_embed
+  margin: 10px 0
+.secret
+  margin: 0
+  display: none
+
+.country_select > select,
+select#user_timezone,
+select#user_language_tag
+  min-width: 0 !important
 

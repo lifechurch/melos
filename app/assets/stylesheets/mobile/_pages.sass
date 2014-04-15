@@ -1,4 +1,4 @@
-// -------------About page
+// !-------------About page
 
 .partners_content .partners_box
   margin: 0 0 24px 0
@@ -10,7 +10,7 @@
       border: 1px solid #F4F4F4
       width: 100%
 
-// -------------Press page
+// !-------------Press page
 
 #main article.press
   .press_resources
@@ -35,7 +35,17 @@
   img[alt="Press_image"]
     width: 100%
 
-// -------------Mobile page
+// !-------------Mobile page
+
+
+#mobile_content .main
+  float: right
+  width: 60%
+
+#mobile_content .multilingual
+  width: 40%
+  float: left
+
 
 #main article.mobileapps
   font-size: 13px
@@ -47,7 +57,7 @@
     overflow: hidden
     margin-bottom: 10px
     width: auto
-    float: none !important
+    float: none
     h1
       line-height: 1.18em
 
@@ -75,217 +85,136 @@
         font-size: 12px
         margin: 0 0 5px 0
 
+      h2
+        font-weight: 200
+        font-size: 40px
+        line-height: 1.18em
+
 #mobile_downloads
-  float: none !important
+  float: none
   width: auto
   padding: 0
   border-left: 0
 
+  h3
+    font-size: 15px
+
+  ul
+    list-style: none
+
+    li
+      margin: 10px 0
+      padding-left: 30px
+
+
+    li a
+      font-weight: bold
+      color: $green
+
   .left_column
     float: left
     width: 50%
+
   .right_column
     float: left
     padding-left: 10px
     width: 46%
 
-#mobile_downloads a.cta
-  background: image-url("mobile_download.png") 14px center no-repeat #81a951 !important
-  display: block
-  padding: 15px 15px 12px 54px
-  border-radius: 4px
-  border: 1px #607346 solid
-  box-shadow: inset 0px 1px 0px rgba(#fff, .3)
-  overflow: hidden
-  clear: both
+#mobile_downloads
+
+  a.cta img
+    padding-right: 10px
+
+  a.cta h4
+    margin: 0px
+    padding: 0px
+    font-size: 16px
+    text-shadow: 0px 1px 0px rgba(0,0,0,.2)
+    color: #fff
+    float: left
+
+  a.cta span
+    text-shadow: 0px 1px 0px rgba(0,0,0,.2)
+    margin: 0px
+    padding: 0px
+    font-size: 13px
+    color: #fff
+    float: left
+
+  a.cta
+    background: image-url("mobile_download.png") 14px center no-repeat #59B200
+    display: block
+    padding: 15px 15px 12px 54px
+    border: 1px solid #59b200
+    border-radius: 4px
+    +box-shadow(inset rgba(0,0,0, 0.20) 0 -2px 0 0)
+    overflow: hidden
+    clear: both
 
   img
     display: none
-a.cta h3
-  margin-bottom: 0
 
-#main section.testimonials ul li
-  padding: 5px 20px 10px 35px
-  margin: 0 0 10px
-  background: image-url("mobile_quote.png") no-repeat top left
-  float: none
-  width: auto
-  border-right: 0
-
-// ----------------- Reading plans
-
-article#plan-index .plan_filters,
-article#plan-index .plan_search
-  display: none
-
-article#plan-index .split_pane .sidebar
-  display: block !important
-  width: 100%
-  background: transparent
-
-article#plan-index .split_pane .sidebar dl
-  border: 0
-
-article#plan-index dd.highlighted a,
-.split_pane .sidebar dd a:hover
-  background: transparent
-
-.reading_plan_index h1
-  display: block !important
-  font-size: 32px
-  margin-top: 20px
-
-.plan-privacy-buttons
-
-  .detail-text
-    font-size: 12px !important
-
-
-#main #subscriptions-index
-
-  h1
-    font:
-      size: 15px
-      weight: normal
-    color: #666
-
-  form
-    .faux_checkbox
-      float: left
-      margin: 8px 10px 0px 10px
-
-
-  ul
+  a.cta h3
     margin-bottom: 0
 
-  p
-    margin-bottom: 0
-    font-size: 15px
-    line-height: 1.4em
+#dl_iphone
+  background: image-url("mobile_dl_icons.png") 0px 0px no-repeat !important
 
-  .progress_counter
-    width: 100%
-    text-align: left
-    position: relative
-    height: auto
-    line-height: auto
-    top: -16px
+#dl_android
+  background: image-url("mobile_dl_icons.png") 0px -50px no-repeat !important
 
-  .progress_wrap
-    width: 95%
-    height: 55px
+#dl_blackberry
+  background: image-url("mobile_dl_icons.png") 0px -100px no-repeat !important
+
+#dl_windows
+  background: image-url("mobile_dl_icons.png") 0px -150px no-repeat !important
+
+#dl_windows8
+  background: image-url("mobile_dl_icons.png") 0px -150px no-repeat !important
+
+#dl_hppalm
+  background: image-url("mobile_dl_icons.png") 0px -200px no-repeat !important
+
+#dl_java
+  background: image-url("mobile_dl_icons.png") 0px -250px no-repeat !important
+
+#dl_symbian
+  background: image-url("mobile_dl_icons.png") 0px -300px no-repeat !important
+
+#dl_mobile
+  background: image-url("mobile_dl_icons.png") 0px -350px no-repeat !important
+
+#dl_amazon
+  background: image-url("mobile_dl_icons.png") 0px -400px no-repeat !important
+
+#main section.testimonials
+  h2
+    font-size: 18px
+    padding: 35px 0 15px 0
+    font-family: "Helvetica Neue", Helvetica, Sans-serif
+
+  ul li:last-child
+    border: 0
+
+  ul li h3
+    font-size: 13px
+    margin: 0
     padding: 0
-    background: none
-    margin-bottom: 0
 
-  .progress_bar_outer
-    left: 7px
-    width: 100%
+  ul li p
+    margin: 3px 0 0 0
 
-  .progress_percent_complete
-    display: none
-
-  .progress_date
-    @extend .clearfix
-    width: 12%
-    float: left
-    padding: 10px 2% 0
-
-    p:first-child
-      font-size: 12px
-      color: #aaa
-
-    p
-      text-align: center
-      font-size: 13px
-      font-weight: bold
-
-    p:first-child, p:last-child
-      font-weight: normal
-
-  .plan_search
-    padding: 0 20px 20px
-    border-bottom: 1px solid #CCC
-    margin-top: 10px
-    +box-shadow(rgba(#000, 0.08) 0 2px 4px 0)
-
-  .plan_length
-    background: image-url("rp_calendar_icon.png") left center no-repeat
-    padding-left: 20px
-    color: #999
-    font-weight: bold
-
-  .plan_about
-    display: block
-    float: right
-    height: 44px
-    width: 20%
-    background: image-url("icon_small_about.png") top center no-repeat
-    text-indent: 100%
-    white-space: nowrap
-    overflow: hidden
-
-  .about_length
-    width: 50%
-    background: image-url("rp_about_calendar.gif") 24px center no-repeat
-
-  .about_users
-    width: 49.7%
-    background: image-url("rp_about_users.png") 24px center no-repeat
-    border-left: 1px solid #d9d9d9
-
-  .about_users, .about_length
-    float: left
-    height: 51px
-    border-bottom: 1px solid #d9d9d9
-    span, strong
-      margin-left: 68px
-      display: block
-    strong
-      font-size: 11px
-      color: #999
-      margin: 6px 0 -6px 68px
-
-  .about
-    padding: 20px 20px 0 20px
-
-  .action_button_green,
-  .action_button_grey,
-  .action_button_red
-    margin-top: 20px
-
-  input[type="submit"].action_button_green,
-  input[type="submit"].action_button_grey,
-  input[type="submit"].action_button_red,
-    width: 100%
-
-  .action_button_red.confirm
-    margin-bottom: 20px
-
-    div
-      text-align: center
-      margin: 0 auto
-      padding-right: 10px
-
-    h4
-      margin-bottom: 0
-      margin-top: -4px
-
-  .split_pane .content
-    .devo_content
-      padding: 0 20px
-      p
-        margin-bottom: 12px
-
-  table:first-child
-    margin-top: 20px
+  ul li
+    padding: 5px 20px 10px 35px
+    margin: 0 0 10px
+    background: image-url("mobile_quote.png") no-repeat top left
+    float: none
+    width: auto
+    border-right: 0
 
 
-// ----------------- Reading plans
+// !-------------- Reading plans
 
-article .none
-  padding-top: 44px 
-  
 #subscriptions-index,
 #main article#plan-index
 
@@ -357,7 +286,133 @@ article .none
     p:first-child, p:last-child
       font-weight: normal
 
-#subscriptions-index
+
+// !----------------- Reading plans index
+
+article .none
+  padding-top: 44px
+
+article#plan-index
+
+  .plan_filters,
+  .plan_search
+    display: none
+
+  .split_pane
+
+    .sidebar
+      display: block !important
+
+      dl
+        border: 0
+        font-weight: bold
+
+      dd
+        border-bottom: 1px solid #e5e5e5
+
+      dd:first-child
+        border-top: 1px solid #e5e5e5
+
+      dd a
+        display: block
+        height: 44px
+        line-height: 43px
+
+      dd.highlighted
+        a
+          color: #59B200
+
+      dd.highlighted:hover
+        background-color: none
+
+  h1
+    display: none
+    font-size: 32px
+    margin-top: 20px
+
+.plan-privacy-buttons
+  display: none
+  background: #fff
+  overflow: auto
+  padding: 15px 0 0
+
+  .detail-text
+    font-size: 12px !important
+    text-align: center
+    margin-bottom: 15px
+    font-weight: bold
+    line-height: 1.4em
+
+  .button-public,
+  .button-private
+    display: block
+    margin-bottom: 10px
+
+
+// !----------------- Reading plans my plans
+
+#main #subscriptions-index
+
+  h1
+    font:
+      size: 15px
+      weight: normal
+    color: #666
+
+  form
+    .faux_checkbox
+      float: left
+      margin: 8px 10px 0px 10px
+
+
+  ul
+    margin-bottom: 0
+
+  p
+    margin-bottom: 0
+    font-size: 15px
+    line-height: 1.4em
+
+  .progress_counter
+    width: 100%
+    text-align: left
+    position: relative
+    height: auto
+    line-height: auto
+    top: -16px
+
+  .progress_wrap
+    width: 95%
+    height: 55px
+    padding: 0
+    background: none
+    margin-bottom: 0
+
+  .progress_bar_outer
+    left: 7px
+    width: 100%
+
+  .progress_percent_complete
+    display: none
+
+  .progress_date
+    @extend .clearfix
+    width: 12%
+    float: left
+    padding: 10px 2% 0
+
+    p:first-child
+      font-size: 12px
+      color: #aaa
+
+    p
+      text-align: center
+      font-size: 13px
+      font-weight: bold
+
+    p:first-child, p:last-child
+      font-weight: normal
+
   .plan_search
     padding: 0 20px 20px
     border-bottom: 1px solid #CCC
@@ -367,9 +422,11 @@ article .none
     select
       margin: 0 0 24px !important
       width: auto
+
     input
       margin-left: 0 !important
       width: auto !important
+
     input[type="submit"]
       margin-top: 20px
       +background-image(linear-gradient(#1a90cd, #0077b4))
@@ -381,9 +438,12 @@ article .none
 
   .plan_length
     background: image-url("rp_calendar_icon.png") left center no-repeat
-    padding-left: 20px
     color: #999
     font-weight: bold
+    padding: 0 20px 20px
+    border-bottom: 1px solid #CCC
+    margin-top: 10px
+    +box-shadow(rgba(#000, 0.08) 0 2px 4px 0)
 
   .plan_about
     display: block
@@ -426,7 +486,7 @@ article .none
 
   input[type="submit"].action_button_green,
   input[type="submit"].action_button_grey,
-  input[type="submit"].action_button_red
+  input[type="submit"].action_button_red,
     width: 100%
 
   .action_button_red.confirm
@@ -450,16 +510,8 @@ article .none
   table:first-child
     margin-top: 20px
 
-#main article#plan-index
 
-  .split_pane .sidebar
-
-    dd
-      border:
-        left: 0
-        right: 0
-
-  // ----------------- Single verse page
+  // !----------------- Single verse page
 
   #header
     a

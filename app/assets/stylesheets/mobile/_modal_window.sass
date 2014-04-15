@@ -1,19 +1,27 @@
-article > form.share .character_count
-  float: left
-  background: #fff
-  color: #a20000
-  +round
-  box-shadow: 0px 1px 0px rgba(#CCC, .5)
-  padding: 2px 5px
-  margin-top: 5px
-  font-size: 11px
+.modal
+  .window,
+  .overlay
+    display: none
 
 #modal_window,
 #modal_overlay
   display: block
 
+#modal_overlay
+  background: rgba(#000, 0.8) image-url("modal_overlay.png")
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 6
+
 #modal_window
-  border-radius: 0px !important
+  +box-shadow(rgba(#000, 0.75) 0 0px 20px 0)
+  border: none
+  overflow: hidden
+  text-shadow: rgba(#fff, 0.7) 0 1px 0
+  +border-radius(0px !important)
   background: #f1f1f1
   height: 800px
   width: 100% !important
@@ -23,13 +31,26 @@ article > form.share .character_count
   z-index: 100000
 
   header
-    box-shadow: none
-    border-radius: inherit
+    -webkit-font-smoothing: subpixel-antialiased
     background: #111 image-url("modal_header.png") repeat-x left bottom
+    position: relative
+    text-shadow: none
+    line-height: 50px
+    height: 50px
+    z-index: 1
+    border: none
+    +border-radius(inherit)
     color: #fff
     overflow: visible
     padding: 0 !important
-    border: none
+
+    b
+      font-size: 18px
+
+    a
+      color: #999
+      &:hover
+        color: #fff
 
     #modal_logo
       background: image-url("yv_logo.png") no-repeat 0 14px
@@ -79,22 +100,54 @@ article > form.share .character_count
       font-weight: normal
       margin-left: 20px
 
-  // end #modal_window header
+#modal_window
+
+  aside,
+  .close,
+  .separator,
+  .verse .label
+    display: none
+
+  hr
+    border-top-color: rgba(#000, 0.25)
+    border-bottom: 1px solid rgba(#fff, 0.5)
+    margin-bottom: 35px
+
+  .big
+    color: #111
+    margin-bottom: 25px
+    width: 90%
+    padding: 130px 5% 0%
+    font:
+      size: 22px
+      weight: 200
+    line-height: 1.4em
+
+  .action_button_blue,
+  .action_button_green
+    +box-shadow(inset rgba(#fff, 0.3) 0 1px 0 0, rgba(#000, 0.2) 0 0 0 4px)
+    margin-left: 4px
+    padding:
+      left: 30px
+      right: 30px
+
+#modal_window
 
   section
     background: none
     margin-right: 0px
     padding: 10px 0px
 
-  .big
-    width: 90%
-    margin-bottom: 25px
-    padding: 130px 5% 0%
-    color: #111
-    font:
-      size: 22px
-      weight: 200
-    line-height: 1.4em
+  aside
+    +round_bottom_right
+    background: #eae9ee
+    padding: 20px 20px 0
+    position: absolute
+    top: 50px
+    left: auto
+    right: 0
+    bottom: 0
+    width: 100px
 
   #read_chapter
     margin-left: 15px
@@ -118,12 +171,6 @@ article > form.share .character_count
       color: #555
       background: rgb(200,200,200)
 
-  aside,
-  .close,
-  .separator,
-  .verse .label
-    display: none
-
   .verse .content
     border: 0px
 
@@ -133,7 +180,10 @@ article > form.share .character_count
   .action_button_blue:active
     +box-shadow(rgba(#000, 0.2) 0 0 0 4px, inset rgba(#000, 0.5) 0 5px 10px 0)
 
-// Share Tab styles
+// !End #modal_window
+
+
+// !Share Tab styles
 .tabs ul li a
   color: $gray_medium
   font-weight: bold
@@ -145,7 +195,6 @@ article > form.share .character_count
   padding: 12px 0px
   margin: 0 10px 0 0
   font-size: 13px
-
 
 .tabs ul li.selected_tab a
   background: image-url("tab_selected.png") #eae9ec top center repeat-x
@@ -179,9 +228,6 @@ article > form.share .character_count
 #share_tab_content .share_message
   float: right
   width: 300px
-
-.share_message textarea
-  height: 100px
 
 #share_tab_content .share_message span
   float: left
@@ -225,19 +271,39 @@ article > form.share .character_count
   padding-right: 5px
 
 .share_verse_twitter
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  display: block
   background: image-url("share_twitter_logo.png")
-  text-indent: -30000px
   width: 65px
   height: 13px
-  display: block
   float: left
   margin-top: 8px
 
 .share_verse_facebook
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  display: block
   background: image-url("share_facebook_logo.png")
-  text-indent: -30000px
   width: 65px
   height: 13px
-  display: block
   float: left
   margin-top: 8px
+
+.share_message textarea
+  height: 100px
+
+// !-
+
+article > form.share .character_count
+  float: left
+  background: #fff
+  color: #a20000
+  +round
+  box-shadow: 0px 1px 0px rgba(#CCC, .5)
+  padding: 2px 5px
+  margin-top: 5px
+  font-size: 11px
+

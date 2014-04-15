@@ -4,6 +4,13 @@
 #nav_mobile.mobile{role:"navigation"}
   %nav
     %ul
+      %li#nav_mobile_search
+        %form{action: search_path(category: params[:category] || :bible), method: "GET"}
+          %input{type: 'search', name:"q", placeholder: t("search placeholder")}
+          %input{type: 'submit', value: t("search")}
+          - if params[:controller] == "search"
+            -if params[:version]
+              %input{type: 'hidden', name: "version", value: params[:version]}
       %li#nav_mobile_home
         %a.icon{href: moments_path}
           %span= t('home')
@@ -26,19 +33,19 @@
       - if current_auth
         %li#nav_mobile_profile
           %a.icon{href: user_path(current_auth.username)}
-            %span=t("Profile")
-          
+            %span.user_name=current_auth.username
+
         %ul#nav_mobile_profile_menu
           %li#nav_primary_bookmarks
             %a{href: bookmarks_user_path(current_auth.username)}
-              %span=t("users.profile.tab bookmarks") 
+              %span=t("users.profile.tab bookmarks")
           %li#nav_primary_notes
             - notes_href = logged_in? ? notes_user_path(current_auth.username) : notes_path
             %a{href: notes_user_path(current_auth.username)}
               %span=t("users.profile.tab notes")
           %li#nav_primary_highlights
             %a{href: highlights_user_path(current_auth.username)}
-              %span=t("users.profile.tab highlights") 
+              %span=t("users.profile.tab highlights")
           %li#nav_primary_friends
             %a{href: user_friends_path(user_id: current_auth.username)}
               %span=t("users.profile.tab friends")
