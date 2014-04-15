@@ -14,7 +14,7 @@
       %span.moment-icon
         &nbsp;
       %span.moment-avatar
-        = link_to(user_path(moment.user.name)) do
+        = link_to(user_path(moment.user_name)) do
           = image_tag avatar.url
       %span.moment-time
         = t("notes.status.#{moment.user_status}")
