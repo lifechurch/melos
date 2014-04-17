@@ -88,6 +88,12 @@ class Plan < YV::Resource
       case key
       when /pt-BR|pt_BR/
         "pt"
+      when 'es-ES'
+        'es'
+      when 'zh-CN'
+        'zh_CN'
+      when 'zh-TW'
+        'zh_TW'
       else
         key
       end

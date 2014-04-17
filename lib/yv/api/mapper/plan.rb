@@ -24,16 +24,34 @@ module YV
             end
           end
 
+          def locale
+            # This is a hack until the API team decides what's going on with locales
+            case I18n.locale.to_s
+            when 'pt-BR' || 'pt-PT'
+              'pt'
+            when 'en-GB'
+              'en'
+            when 'es-ES'
+              'es'
+            when 'zh-CN'
+              'zh_CN'
+            when 'zh-TW'
+              'zh_TW'
+            else
+              I18n.locale.to_s
+            end
+          end
+
           def map_to_instance(instance,data)
             instance.id               = data.id
-            instance.name             = data.name[I18n.locale.to_s]
+            instance.name             = data.name[locale]
             instance.total_days       = data.total_days
-            instance.copyright        = data.copyright.text[I18n.locale.to_s]
-            instance.about            = data.about.text[I18n.locale.to_s]
+            instance.copyright        = data.copyright.text[locale]
+            instance.about            = data.about.text[locale]
             instance.version_id       = data.version_id
             instance.created_dt       = data.created_dt
             instance.slug             = data.slug
-            instance.formatted_length = data.formatted_length[I18n.locale.to_s]
+            instance.formatted_length = data.formatted_length[locale]
             instance.default_start_dt = data.default_start_dt
             instance.type             = data.type
             instance.publisher_url    = data.publisher_url
@@ -41,7 +59,6 @@ module YV
             return instance
           end
         end
-        
       end
     end
   end
