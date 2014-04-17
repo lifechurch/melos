@@ -24,3 +24,5 @@ db/*.sqlite3
 .zeus.sock
 
 .env
+
+.powenv
