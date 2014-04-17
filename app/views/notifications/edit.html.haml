@@ -19,19 +19,23 @@
 - # because page can be accessed while logged in or logged out (with token) we use
 - # current_user or fallback to params[:id]
 = form_tag notifications_path(token: params[:token]), method: :put do |n|
-  - unless @settings.errors.blank?
+  - if @settings.errors.present?
     .form_errors
       =t("users.profile.notification errors")
-    %ul
-      - @settings.errors.full_messages.each do |err|
-        %li= err
+      %ul
+        - if @settings.errors.respond_to?(:full_messages)
+          - @settings.errors.full_messages.each do |err|
+            %li= err
+        - else 
+          - @settings.errors.each do |err|
+            %li= t(err.error)
+  - else
+    .notification-settings-group
+      - settings.each do |type,info|
+        .settings-group-item
+          = render partial: "settings_group", locals: {type: type, info: info}
 
-  .notification-settings-group
-    - settings.each do |type,info|
-      .settings-group-item
-        = render partial: "settings_group", locals: {type: type, info: info}
-
-  %div
-    %button{class: "action_button_green", action: "submit"}= t('users.notifications.update')
-  - if params[:token]
-    = hidden_field_tag :token, params[:token]
+    %div
+      %button{class: "action_button_green", action: "submit"}= t('users.notifications.update')
+    - if params[:token]
+      = hidden_field_tag :token, params[:token]
