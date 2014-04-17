@@ -117,11 +117,18 @@ module YV
         end
 
         def options_for_get(opts)
-          {
+          query_from_search_call = opts.delete(:query)
+
+          new_opts = {
             headers: default_headers,
             timeout: opts.delete(:timeout) || Cfg.api_default_timeout,
-            query:   opts.except(:cache_for)
+            query:   opts.except(:cache_for) # this 'query' key is what HTTParty expects for a GET request
           }.merge(opts)
+
+          # if we passed in a search 'query' option, merge it in here so that
+          # HTTParty gets  {query: {other:"stuff", query:"search term"}
+          new_opts[:query].merge!(query: query_from_search_call) if query_from_search_call
+          new_opts
         end
 
         def options_for_post(opts)
