@@ -466,7 +466,6 @@ module YV
 
     def cache_for(length,opts)
       self.class.cache_for(length,opts)
-      opts.merge!(cache_for: length)
     end
 
 

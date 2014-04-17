@@ -25,7 +25,6 @@ module Plans
         opts[:day] ||= 1
         opts[:id]  ||= id
         opts[:cache_for] ||= YV::Caching.a_very_long_time
-        opts.delete :cache_for if opts[:cache_for] == 0
         super(nil,opts)
       end
 

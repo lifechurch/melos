@@ -15,7 +15,7 @@ module YV
       # Return the native code response from httparty response object if available
       # otherwise, defer to the code returned from the API json response
       def code
-        return @http_response_or_json.code unless @http_response_or_json.code.nil?
+        return @http_response_or_json.code if @http_response_or_json.respond_to? :code
         return api_code
       end
 
