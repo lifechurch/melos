@@ -3,9 +3,16 @@
 - content_for :title do
   = t('versions.index title')
 
-
 %article
-  %h1= "#{t('bible versions')}"
+  - case I18n.locale.to_s
+  - when "en"
+    %h1
+      %img{src: asset_path('bible.com-logo-700x150.png'), title: t('bible versions'), class: 'b-logo'}
+      = t('bible versions')
+  - else
+    %h1
+      af
+      = "#{t('bible versions')}"
   %ul
     - @versions_by_lang.each do |lang, versions|
       - if versions.present?
