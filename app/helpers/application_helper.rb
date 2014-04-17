@@ -1,5 +1,30 @@
 module ApplicationHelper
 
+  # Generate a link to previous chapter
+  #
+  # @param: [Reference] reference - an instance of Reference
+  # @param: [Hash] options - a hash of options
+  #
+  # @option: [String] classes: a string of classes to add to the generated link
+  def reader_next_link(reference, opts={})
+    classes = opts.delete(:classes)
+    next_chapter  = reference.next_chapter_hash
+    link_to( next_chapter.human, reference_path(version: next_chapter.version_id, reference: next_chapter.usfm.first.downcase), class: classes) if next_chapter
+  end
+
+  # Generate a link to previous chapter
+  #
+  # @param: [Reference] reference - an instance of Reference
+  # @param: [Hash] options - a hash of options
+  #
+  # @option: [String] classes: a string of classes to add to the generated link
+
+  def reader_previous_link(reference, opts={})
+    classes = opts.delete(:classes)
+    prev_chapter  = reference.previous_chapter_hash
+    link_to( prev_chapter.human, reference_path(version: prev_chapter.version_id, reference: prev_chapter.usfm.first.downcase), class: classes) if prev_chapter
+  end
+
   def moment_whos_liked_string(moment)
     total_likes = moment.likes.count
     last_liker  = moment.likes.last.user
