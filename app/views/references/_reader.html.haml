@@ -44,11 +44,9 @@
     %div.reader-nav
       :ruby
         direction = 'rtl' if version.try(:rtl?)
-        prev_chapter  = reference.previous_chapter
-        next_chapter  = reference.next_chapter
 
-      = link_to( prev_chapter.to_s, prev_chapter.to_path, class: "reader-prev #{direction}") if prev_chapter
-      = link_to( next_chapter.to_s, next_chapter.to_path, class: "reader-next #{direction}") if next_chapter
+      = reader_previous_link(reference, {classes: "reader-prev #{direction}"})
+      = reader_next_link(reference, {classes: "reader-next #{direction}"})
 
     // Primary version content
     #version_primary{class: version.try(:text_direction),

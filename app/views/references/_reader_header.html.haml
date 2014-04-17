@@ -43,13 +43,11 @@
 #m-navitems.mobile
   :ruby
     direction = 'rtl' if version.try(:rtl?)
-    prev_chapter  = reference.previous_chapter
-    next_chapter  = reference.next_chapter
+    
   %div.reader-nav{class: reference.audio ? nil : "audio-disabled"}      
     %span.first
     %ul
-      %li
-        = link_to( prev_chapter.to_s, prev_chapter.to_path, class: "prev #{direction}") if prev_chapter
+      %li= reader_previous_link(reference, {classes: "prev #{direction}"})
       %li
         %a.button.reader_settings_btn{:href => 'javascript:void(0);'}
           %span.icon_reader_settings
@@ -57,8 +55,7 @@
         %a.button.audio_btn{:href => '#menu_audio_player', :title => t("ref.listen")}
           %span.icon_listen
           =t("ref.listen")
-      %li
-        = link_to( next_chapter.to_s, next_chapter.to_path, class: "next #{direction}") if next_chapter
+      %li= reader_next_link(reference, {classes: "next #{direction}"})
     %span.last
   %br.clear
 
