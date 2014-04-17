@@ -110,22 +110,18 @@ module YV
 
         def data_from_cache_or_api(key,httparty_lambda,opts)
           return httparty_lambda.call unless opts[:cache_for]
-          
-          # try pulling from cache 
-          Rails.cache.fetch( cache_key(path, opts) , expires_in: opts[:cache_for]) do
+          # try pulling from cache
+          Rails.cache.fetch(key,expires_in: opts[:cache_for]) do
             httparty_lambda.call # cache miss - we need to call to API
           end
         end
-
-
-
 
         def options_for_get(opts)
           {
             headers: default_headers,
             timeout: opts.delete(:timeout) || Cfg.api_default_timeout,
             query:   opts.except(:cache_for)
-          }
+          }.merge(opts)
         end
 
         def options_for_post(opts)
