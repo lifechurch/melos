@@ -142,6 +142,37 @@ class Reference < YV::Resource
   end
 
 
+  # Return raw hash data for previous reference.
+  # Useful for when we don't want to instantiate a Reference object using #previous_chapter
+  # which incurs an API call.
+  # 
+  # "previous"=>
+  #   {"toc"=>true,
+  #    "canonical"=>true,
+  #    "version_id"=>1,
+  #    "human"=>"Ecclesiastes 10",
+  #    "usfm"=>["ECC.10"]}
+
+  def previous_chapter_hash
+    attributes.previous
+  end
+
+  # Return raw hash data for next reference
+  # Useful for when we don't want to instantiate a Reference object using #previous_chapter
+  # which incurs an API call.
+  #
+  # "next"=>
+  #    {"toc"=>true,
+  #     "canonical"=>true,
+  #     "version_id"=>1,
+  #     "human"=>"Ecclesiastes 12",
+  #     "usfm"=>["ECC.12"]}
+
+  def next_chapter_hash
+    attributes.next
+  end
+
+
   # Get a chapter reference (all verses) from current reference
   #
   # example:
