@@ -379,6 +379,80 @@
     .settings:hover
       opacity: .8
 
+  #calendar
+    position: relative
+    overflow: hidden
+
+    .calendar-prev,
+    .calendar-day,
+    .calendar-next
+      float: left
+      height: 69px
+
+    .calendar-prev,
+    .calendar-next
+      a
+        color: #9F9EA2
+        font-size: 11px
+        text-transform: uppercase
+        line-height: 1em
+        display: block
+        width: 49px
+        height: 69px
+
+        .calendar-arrows
+          display: block
+          height: 21px
+          width: 21px
+          background: image-url("pagination-arrows-rp.png") no-repeat
+          background-size: 84px 21px
+          margin: 10px auto 4px
+
+      a.disabled
+        opacity: .2
+
+    .calendar-prev
+      width: 49px
+      border-right: 1px solid #ebebeb
+      text-align: center
+
+      a .calendar-arrows
+        background-position: -21px 0
+
+    .calendar-day
+      width: 198px
+
+      a
+        display: block
+        color: #333
+        height: 69px
+        width: 141px
+        background: image-url("icon-plans-64.png") no-repeat 15px 20px
+        background-size: 28px 32px
+        padding: 18px 0 0 57px
+
+        h4
+          margin: 0
+
+    .calendar-next
+      width: 49px
+      border-left: 1px solid #ebebeb
+      text-align: center
+
+      a .calendar-arrows
+        background-position: -42px 0
+
+  .calendar-links
+    clear: both
+    padding: 0 15px
+    height: 32px
+    line-height: 31px
+    overflow: hidden
+
+    .calendar-links-settings
+      float: right
+
+.scripture-links
   .menu
     li.content_target
       position: relative
@@ -390,90 +464,6 @@
       position: absolute
       right: 10px
       top: 0
-
-  #calendar
-    position: relative
-
-    div.icon
-      width: 35px
-      height: 35px
-      position: absolute
-      left: 15px
-      top: 15px
-
-      a
-        display: block
-        height: 35px
-        width: 35px
-        margin: 0
-        padding: 0
-        background:
-          color: transparent
-          image: image-url("nav_plans.png")
-          position: -73px 0px
-
-        span
-          display: block
-          text-indent: 100%
-          white-space: nowrap
-          overflow: hidden
-
-      a:hover
-        background:
-          color: transparent
-          image: image-url("nav_plans.png")
-          position: -73px 1px
-
-    div.day
-      padding: 15px
-      margin-left: 45px
-      position: relative
-
-      h4
-        margin-bottom: 0
-
-    .day
-      a.prev, a.next
-        text-indent: 100%
-        white-space: nowrap
-        overflow: hidden
-        padding: 0
-        background-image: none
-        background-position: none
-        position: absolute
-        width: 24px
-        height: 24px
-        top: 20px
-        border: 1px solid #d5d5d5
-        background: #eee
-
-      a.prev
-        +round_top_left
-        +round_bottom_left
-        border-right: none
-        right: 41px
-        background:
-          image: image-url("sprite-prev-next-arrows.png")
-          position: -62px -13px
-
-      a.next
-        +round_top_right
-        +round_bottom_right
-        right: 15px
-        background:
-          image: image-url("sprite-prev-next-arrows.png")
-          position: -11px -13px
-
-      a.disabled
-        cursor: default
-
-      a.next:hover, a.prev:hover
-        background:
-          color: rgba(#fff, 0.4)
-
-      a.disabled:hover
-        background:
-          color: transparent
 
 
 // --- Custom widgets ------

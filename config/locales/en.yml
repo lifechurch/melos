@@ -665,7 +665,7 @@ en:
     done reading:                               "Done"
     no verses:                                  "No verses for today"
     no content:                                 "Your plan has no scheduled scripture readings for this day, so it has been marked as completed."
-    read today:                                 "View Today's Reading"
+    read today:                                 "Today's Reading"
     devotional:                                 "Devotional"
     completion status _ below percentage:       "Complete"
     current progress html:                      "Day <b>%{day}</b> of <b>%{total_days}</b>"

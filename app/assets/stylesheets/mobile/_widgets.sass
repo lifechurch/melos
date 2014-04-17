@@ -32,6 +32,9 @@
     float: right
     font-style: normal
 
+  h3.hd
+    background: none
+
   ul
     margin-bottom: 0
     border: 0
@@ -351,8 +354,6 @@
 
 #widget-plan-controls
   .hd
-    display: none
-
     .settings
       display: block
       width: 15px
@@ -373,120 +374,120 @@
     .settings:hover
       opacity: .8
 
-  .menu
-    border-radius: 0px
+  #calendar
+    position: relative
+    overflow: hidden
 
+    .calendar-prev,
+    .calendar-day,
+    .calendar-next
+      float: left
+      height: 44px
+
+    .calendar-prev,
+    .calendar-next
+      width: 25%
+
+      a
+        color: #9F9EA2
+        font-size: 11px
+        text-transform: uppercase
+        line-height: 1em
+        display: block
+        height: 44px
+        position: relative
+
+        .calendar-arrows
+          display: block
+          height: 21px
+          width: 21px
+          background: image-url("pagination-arrows-rp.png") no-repeat
+          background-size: 84px 21px
+          position: absolute
+
+        .calendar-arrow-txt
+          display: block
+          width: 50px
+          position: absolute
+
+      a.disabled
+        opacity: .2
+
+    .calendar-prev
+      border-right: 1px solid #ebebeb
+      text-align: center
+
+      a
+        .calendar-arrows
+          background-position: -21px 0
+          left: 10%
+          top: 12px
+
+        .calendar-arrow-txt
+          top: 11px
+          left: 40%
+          text-align: left
+
+    .calendar-day
+      width: 49%
+
+      a
+        display: block
+        color: #333
+        height: 44px
+        background-size: 28px 32px
+        padding: 4px 0 0
+        text-align: center
+
+        h4
+          margin: 0
+
+        .mute
+          font-size: .8em
+
+    .calendar-next
+      border-left: 1px solid #ebebeb
+      text-align: center
+
+      a
+        .calendar-arrows
+          background-position: -42px 0
+          right: 10%
+          top: 12px
+
+        .calendar-arrow-txt
+          top: 11px
+          right: 40%
+          text-align: right
+
+  .calendar-links
+    clear: both
+    padding: 0 15px
+    height: 32px
+    line-height: 31px
+    overflow: hidden
+
+    a
+      font-size: .85em
+
+    .calendar-links-settings
+      float: right
+
+.scripture-links
+  .menu
     li.content_target
       position: relative
-
-    li.content_target a,
-    li.content_target.active span
-      padding: 15px 20px 15px 15px
-      font-size: 15px
-
     form
-      margin: 10px 0 0
+      margin: 0
+      margin-top: 4px
       padding: 0
       width: 30px
       position: absolute
       right: 10px
       top: 0
 
-  #calendar
-    position: relative
-    overflow: visible
-
-    div.icon
-      width: 35px
-      height: 35px
-      position: absolute
-      left: 15px
-      top: 15px
-
-      a
-        display: block
-        height: 35px
-        width: 35px
-        margin: 0
-        padding: 0
-        background:
-          color: transparent
-          image: image-url("nav_plans.png")
-          position: -73px 0px
-
-        span
-          display: block
-          text-indent: 100%
-          white-space: nowrap
-          overflow: hidden
-
-      a:hover
-        background:
-          color: transparent
-          image: image-url("nav_plans.png")
-          position: -73px 1px
-
-    div.day
-      padding: 15px
-      margin-left: 45px
-      position: relative
-
-      h4
-        margin-bottom: 0
-
-    .day
-
-      .mute
-        font-size: 12px
-
-      a.prev, a.next
-        text-indent: 100%
-        white-space: nowrap
-        overflow: hidden
-        padding: 0
-        background-image: none
-        background-position: none
-        position: absolute
-        width: 24px
-        height: 24px
-        top: 20px
-        border: 1px solid #d5d5d5
-        background: #eee
-
-      a.prev
-        +round_top_left
-        +round_bottom_left
-        border-right: none
-        right: 41px
-        background:
-          image: image-url("sprite-prev-next-arrows.png")
-          position: -62px -13px
-
-      a.next
-        +round_top_right
-        +round_bottom_right
-        right: 15px
-        background:
-          image: image-url("sprite-prev-next-arrows.png")
-          position: -11px -13px
-
-      a.disabled
-        cursor: default
-
-      a.next:hover, a.prev:hover
-        background:
-          color: rgba(#fff, 0.4)
-
-      a.disabled:hover
-        background:
-          color: transparent
-
-#widget-devotional
-  margin: 15px
-
-.content_target b
-  display: block
-  margin-bottom: .3em
+  .mobile
+    display: none
 
 
 // --- Custom widgets ------
