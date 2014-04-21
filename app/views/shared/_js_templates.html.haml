@@ -48,7 +48,9 @@
               <input type="text" id="bookmark_labels" name="bookmark[labels]" placeholder="#{t("bookmarks.labels placeholder")}" />
             </p>
 
-            <label>Highlight: (optional)</label>
+            <label>
+              #{t("bookmarks.form.highlight field")}
+            </label>
             <div class="color_picker_list">
               <div class="color_picker"></div>
             </div>
@@ -61,12 +63,12 @@
         </div>
       </div>
 
-  %script#pane-note-tmpl{type:"text/x-handlebars-template"}  
+  %script#pane-note-tmpl{type:"text/x-handlebars-template"}
     #note-pane.tab-panel
       .pane
         %p.verse-actions-success-message.success{style: "display: none;"}
           = t("notes.create success")
-          
+
         - note = presenter.note
         = form_for note, url: (logged_in? ? notes_path : sign_up_path), method: "post" do |f|
           = f.hidden_field :version_id
@@ -82,7 +84,8 @@
             = f.text_area :content, rows: 4, cols: 68
 
           %div
-            %label Highlight: (optional)
+            %label
+              = t('notes.form.highlight field')
             .color_picker_list
               .color_picker
 
@@ -122,7 +125,9 @@
               <span class="share_character_count">
                 <span class="fb"></span>
                 <span class="fb-text">
-                  Facebook characters remaining (420 Maximum)
+                  Facebook
+                  #{t('ref.characters remaining')}
+                   (420 Maximum)
                 </span>
               </span>
             </div>
@@ -138,7 +143,9 @@
               <span class="share_character_count">
                 <span class="tw"></span>
                 <span class="tw-text">
-                  Twitter characters remaining (140 Maximum)
+                  Twitter
+                  #{t('ref.characters remaining')}
+                  (140 Maximum)
                 </span>
               </span>
             </div>
@@ -196,6 +203,6 @@
         %span
           %a{href:"#", target: "_blank", title: "Share this on Facebook", class: "facebook moment-actions-share-facebook"}
             Facebook
-        %span    
+        %span
           %a{href:"#", target: "_blank", title: "Share this on Twitter", class: "twitter moment-actions-share-twitter"}
             Twitter

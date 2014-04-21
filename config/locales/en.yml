@@ -192,6 +192,8 @@ en:
     lower:                                      "or"
     upper:                                      "OR"
   moments:
+    showing related:                            "Showing related moments"
+    return to:                                  "Return to"
     vod:
       title:                                    "Verse of the day"
     friendship:
@@ -341,6 +343,7 @@ en:
     choose second version:                      "Choose Secondary Version"
     share:                                      "Share"
     share now:                                  "Share Now"
+    characters remaining:                       "characters remaining"
     selected:                                   "Selected"
     preferences:                                "Preferences"
     listen:                                     "Listen"
@@ -367,6 +370,8 @@ en:
     last name:                                  "Last name"
     agreement:                                  "I agree to the YouVersion %{terms_link}."
     terms and conditions:                       "terms and conditions"
+    email:                                      "Email"
+    mobile:                                     "Mobile"
     facebook sign up success:                   "Great! You've authorized with Facebook. Pick a YouVersion username and password to continue."
     register:                                   "Register"
     thanks for registering:                     "Thanks for registering!"

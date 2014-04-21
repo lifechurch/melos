@@ -1,10 +1,11 @@
 - @sidebar = false
 
 .related-filter-header
-  = link_to("Return to #{@reference.human}",reference_path(version: params[:v], reference: params[:usfm].upcase), class:"action_button_blue return-to-reader")
+  = link_to(t('moments.return to') + ' ' + @reference.human,reference_path(version: params[:v], reference: params[:usfm].upcase), class:"action_button_blue return-to-reader")
   %ul
     %li
-      %strong Showing related moments
+      %strong
+        = t("moments.showing related")
 
 .social-feed-wrap.related{"data-str-load-more" => t("moments.action.load more")}
   :javascript
