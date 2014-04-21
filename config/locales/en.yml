@@ -80,8 +80,6 @@ en:
     connections:
       index:
         title:                                  "Connected Accounts"
-  ui:
-    loading indicator text:                     "Loading ..."
   now:                                          "Now"
   celebrating 50MM:                             "Celebrating 50 Million App Installs!"
   link:                                         "Link"
@@ -992,6 +990,8 @@ en:
         tagline:                                "Let's make history together"
         button:                                 "Share the Bible App"
   ui:
+    loading indicator text:                     "Loading ..."
+    loading:                                    "Loading"
     pagination:
       next page:                                "Next Page"
       previous page:                            "Previous Page"
