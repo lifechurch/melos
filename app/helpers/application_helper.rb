@@ -51,8 +51,7 @@ module ApplicationHelper
     else
       DateTime.parse(api_created_dt)
     end
-    # TODO - localize 'ago'
-    time_ago_in_words(time.in_time_zone) + " ago"
+    t('moments.time past', ago: time_ago_in_words(time.in_time_zone))
   end
 
 

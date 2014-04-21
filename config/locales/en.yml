@@ -194,6 +194,8 @@ en:
   moments:
     showing related:                            "Showing related moments"
     return to:                                  "Return to"
+    time past:                                  "%{ago} ago"
+
     vod:
       title:                                    "Verse of the day"
     friendship:
