@@ -75,7 +75,11 @@ class Plan < YV::Resource
         return param.id, param.slug
       elsif param.class == String
         # format 1234-plan-slug
-        return param.match(/\A(\d+)-(.+)/)[1].to_i, param.match(/\A(\d+)-(.+)/)[2]
+        id = param.match(/\A(\d+)-(.+)/)
+        id = id[1].to_i unless id.nil?
+        slug = param.match(/\A(\d+)-(.+)/)
+        slug = slug[2].to_i unless slug.nil?
+        return id, slug
       else 
         return nil
       end

@@ -1,4 +1,4 @@
-- if is_reader_page?
+- if is_reader_page? && presenter.present?
   %script#pane-highlight-tmpl{type:"text/x-handlebars-template"}
     :plain
       <div class="tab-panel highlight-pane" id="highlight-pane">
