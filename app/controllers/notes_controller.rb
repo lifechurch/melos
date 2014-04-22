@@ -41,9 +41,6 @@ class NotesController < BaseMomentsController
   # See routes.rb: match 'bible/:version/:reference/notes' => 'notes#sidebar', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   def sidebar
     ref    = ref_from_params rescue not_found
-    if @page < 1
-      @page = 1
-    end
     notes  = Note.community({usfm: ref_to_usfm_array(ref), version_id: params[:version], page: @page})
     next_cursor = notes.next_cursor
     start = (@page - 1) * 5
