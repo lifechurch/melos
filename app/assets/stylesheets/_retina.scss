@@ -410,7 +410,7 @@ only screen and (                min-resolution: 2dppx) {
 
   .moment-action-delete:hover {
     background-position: 0px -104px;
-  }        
+  }
 
   // !Header
 
@@ -444,7 +444,7 @@ only screen and (                min-resolution: 2dppx) {
 
   #header ul.nav_user li.highlights a:hover {
     background-position: center -141px
-  }   
+  }
 
   #header ul.nav_user li.bookmarks a {
     background-position: center -196px
@@ -452,7 +452,7 @@ only screen and (                min-resolution: 2dppx) {
 
   #header ul.nav_user li.bookmarks a:hover {
     background-position: center -251px
-  }   
+  }
 
   #header ul.nav_user li.notes a {
     background-position: center -306px
@@ -460,7 +460,7 @@ only screen and (                min-resolution: 2dppx) {
 
   #header ul.nav_user li.notes a:hover {
     background-position: center -361px
-  }   
+  }
 
 
   // Reader
@@ -495,12 +495,12 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   #menu_verse_actions #share-pane .share_logo_fb {
-    background: image-url("reader-share-sprite.png") no-repeat 0 0;
+    background: image-url("reader-share-sprite@2x.png") no-repeat 0 0;
     background-size: 32px 150px;
   }
 
   #menu_verse_actions #share-pane .share_logo_twitter {
-    background: image-url("reader-share-sprite.png") no-repeat 0 -43px;
+    background: image-url("reader-share-sprite@2x.png") no-repeat 0 -43px;
     background-size: 32px 150px;
   }
 
