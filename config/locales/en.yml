@@ -545,7 +545,7 @@ en:
       transfer_too_slow:                        "Choose a smaller picture or find a faster connection"
       picture_invalid_type:                     "Picture should be JPG, PNG, or GIF"
       picture_creation form errors:             "The following error(s) prevented updating your picture:"
-      updated picture:                          "Success! You've updated your picture."
+      updated picture:                          "Success! You've updated your picture.  It may take up to several minutes for your avatar to be updated."
       updated notifications:                    "Success! You've updated your notification settings."
       notifications token error:                "Invalid token, please sign in to edit your notification settings."
       notification errors:                      "The following error(s) prevented updating your notifications:"
