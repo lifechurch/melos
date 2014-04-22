@@ -195,7 +195,12 @@ en:
     showing related:                            "Showing related moments"
     return to:                                  "Return to"
     time past:                                  "%{ago} ago"
-
+    user likes this:                            "%{last_liker_link} likes this"
+    likes count more:                           "%{likes_count} more"
+    users like this:                            "%{last_liker_link} and %{more_link} like this"
+    date:
+      formats:
+        LL:                                     "MMMM Do YYYY"
     vod:
       title:                                    "Verse of the day"
     friendship:

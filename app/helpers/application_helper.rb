@@ -12,11 +12,12 @@ module ApplicationHelper
     last_liker_link = content_tag(:a,last_liker.name, href:"/users/#{last_liker.username}")
 
     if moment.likes_count == 1
-      "#{last_liker_link} likes this".html_safe
-    else
-      more_link = link_to("#{moment.likes_count - 1} more", moment.to_path)
+      t('moments.user likes this', last_liker_link: last_liker_link).html_safe
 
-      "#{last_liker_link} and #{more_link} like this".html_safe
+    else
+      more_link = link_to(t('moments.likes count more', likes_count: (moment.likes_count - 1)), moment.to_path)
+
+      t('moments.users like this', last_liker_link: last_liker_link, more_link: more_link).html_safe
     end
   end
 
