@@ -9,7 +9,7 @@ module ApplicationHelper
       last_liker = moment.likes[total_likes-2].user
     end
 
-    last_liker_link = content_tag(:a,last_liker.name, href:"/users/#{last_liker.username}")
+    last_liker_link = content_tag(:a,last_liker.name, href:user_path(last_liker.username))
 
     if moment.likes_count == 1
       t('moments.user likes this', last_liker_link: last_liker_link).html_safe
