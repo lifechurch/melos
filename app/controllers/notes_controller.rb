@@ -33,7 +33,7 @@ class NotesController < BaseMomentsController
     @notes = Note.for_reference(ref, language_tag: I18n.locale, page: page, cache_for: YV::Caching.a_short_time)
     @notes = Note.for_reference(ref, page:page, cache_for: YV::Caching.a_short_time) if @notes.empty?
     @reference_title = ref.human
-    render template:"notes/index"
+    render partial: 'sidebars/notes/index'
   end
 
 
