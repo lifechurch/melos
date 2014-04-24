@@ -76,7 +76,7 @@
           %span.mute{style: "font-weight: normal; font-size: 12px"}
             = t("plans.swap list localization", swap_locale: t('language name', locale: translate ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: nil, lang: I18n.locale))).html_safe
 
-      - unless @plans.empty?
+      - if @plans.present?
         %ul.resource_list
           = render partial: "plans/list_item", collection: @plans, locals: {original_locale: orig_locale}
 
