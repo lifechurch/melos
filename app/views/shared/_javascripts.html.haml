@@ -1,4 +1,5 @@
 = javascript_include_tag "application"
-
+/ JS locale file
+= javascript_include_tag "i18n/#{I18n.locale}"
 - if content_for? :javascripts
   = yield :javascripts
