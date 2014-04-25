@@ -350,7 +350,6 @@ en:
     choose second version:                      "Choose Secondary Version"
     share:                                      "Share"
     share now:                                  "Share Now"
-    characters remaining:                       "characters remaining"
     selected:                                   "Selected"
     preferences:                                "Preferences"
     listen:                                     "Listen"
@@ -1002,6 +1001,7 @@ en:
         tagline:                                "Let's make history together"
         button:                                 "Share the Bible App"
   ui:
+    characters remaining:                       "characters remaining"
     loading indicator text:                     "Loading ..."
     loading:                                    "Loading"
     pagination:

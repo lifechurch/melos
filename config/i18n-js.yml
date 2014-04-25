@@ -3,4 +3,3 @@ translations:
     only:
       - "ui"
       - "moments"
-      - "js"
