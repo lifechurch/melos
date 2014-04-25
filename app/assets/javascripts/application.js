@@ -6,7 +6,6 @@
 //= require jquery.ui.position
 //= require jquery.ui.autocomplete
 //= require i18n
-//= require i18n/translations
 //= require handlebars.runtime
 //= require ./templates/handlebars_helpers
 //= require_tree ./templates
