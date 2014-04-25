@@ -12,11 +12,11 @@ module YV
       end
 
       def title
-        'YouVersion.com'
+        'Bible.com'
       end
 
       def description
-        'YouVersion is the online Bible website for YouVersion, makers of the free Bible App™, with all of the same tools: Bookmarks, Plans, Notes, and more.'
+        'Bible.com is the online Bible website for YouVersion, makers of the free Bible App™, with all of the same tools: Bookmarks, Plans, Notes, and more.'
       end
 
       def ga_code
@@ -24,7 +24,7 @@ module YV
       end
 
       def ga_domain
-        'youversion.com'
+        'bible.com'
       end
 
       def skip_splash; end
