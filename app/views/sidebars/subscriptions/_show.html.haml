@@ -78,6 +78,7 @@
       - references.each_with_index do |ref,index|
         %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
           = form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
+            - # todo: sometimes day isn't passed with params. need to investigate
             = hidden_field_tag(:ref,            ref.reference.to_param)
             = hidden_field_tag(:completed,      (!ref.completed))
             = hidden_field_tag(:version,        subscription.version_id)
