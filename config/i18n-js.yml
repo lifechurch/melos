@@ -1,5 +1,6 @@
 translations:
   - file: "app/assets/javascripts/i18n/%{locale}.js"
     only:
+      - "ui"
       - "moments"
-      - "social"
+      - "js"
