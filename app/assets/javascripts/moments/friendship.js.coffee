@@ -10,7 +10,7 @@ class window.Moments.Friendship extends window.Moments.Base
     if @template
       html = @template
         uuid:           @generateID()
-        created_dt:     @timeAgo(@data.created_dt)
+        created_dt:     @data.time_ago
         moment_title:   @data.moment_title
         avatar:         @data.avatar
         friend_path:    @data.friend_path

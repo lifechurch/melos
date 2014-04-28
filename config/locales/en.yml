@@ -629,6 +629,8 @@ en:
       view my plans:                            "View My Plans"
       featured plans:                           "Featured Plans"
       view all plans:                           "View All Plans"
+      reading:                                  "reading"
+      readings:                                 "readings"
     settings:                                   "Settings"
     privacy:
       visible to friends?:                      "Would you like your activity with this plan to be visible to your friends?"
@@ -1002,6 +1004,8 @@ en:
         button:                                 "Share the Bible App"
   ui:
     characters remaining:                       "characters remaining"
+    yes button:                                 "Yes"
+    no button:                                  "No"
     loading indicator text:                     "Loading ..."
     loading:                                    "Loading"
     pagination:

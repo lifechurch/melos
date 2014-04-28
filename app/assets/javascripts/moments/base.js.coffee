@@ -30,7 +30,7 @@ class window.Moments.Base
   finalizeSetup: ()->
     # Override this method in subclasses to finish out class specific setup.
 
-    
+
   setupCommenting: ()->
 
     @comment_field_el.keypress (event)=>
@@ -46,16 +46,16 @@ class window.Moments.Base
 
     el = $(event.currentTarget) # The clicked link
     el.removeAttr("href")
-    
+
     comment_li = el.closest("li")
     comment_li.addClass("pending-delete")
-    
+
     post_data = {
       authenticity_token: @authToken()
     }
 
-    $.ajax 
-      url: "/comments/" + el.data("comment-id"), 
+    $.ajax
+      url: "/comments/" + el.data("comment-id"),
       type: "DELETE",
       data: post_data,
       dataType:"json",
@@ -76,8 +76,8 @@ class window.Moments.Base
         }
       }
 
-      $.ajax 
-        url: "/comments", 
+      $.ajax
+        url: "/comments",
         type: "POST",
         data: post_data,
         dataType:"json",
@@ -96,7 +96,7 @@ class window.Moments.Base
   setupDeleting: ()->
     @delete_link.on "click", (ev)=>
       ev.preventDefault()
-      
+
       if confirm(@moment_el.data("str-delete-confirm"))
         @moment_el.css({opacity: 0.5})
         request = $.ajax @momentPath(),
@@ -116,7 +116,7 @@ class window.Moments.Base
           #   @moment_el.fadeTo 250, 0.0, ()=>
           #     @moment_el.remove()
           #     @refreshWookmark()
-          
+
         request.fail (jqXHR,status)=>
           @moment_el.css({opacity: 1.0})
 
@@ -133,7 +133,7 @@ class window.Moments.Base
     if bool then @liked_link.addClass( class_name ) else @liked_link.removeClass( class_name )
 
 
-  createLike: ()-> 
+  createLike: ()->
     @likeActionPending(true)
     @liked_link.addClass("liked")
     post_data = { authenticity_token: @authToken(), moment_id: @id() }
@@ -196,5 +196,6 @@ class window.Moments.Base
 
 
   timeAgo: (timestamp)->
+    # no longer used - so i18n can happen in one place api_dt_time_ago()
     moment(timestamp).fromNow()
 

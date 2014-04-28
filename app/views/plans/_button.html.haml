@@ -10,8 +10,8 @@
       .plan-privacy-buttons{id: "toggle-#{unique_id}"}
         %p.detail-text
           = t("plans.privacy.visible to friends?")
-          - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) } 
-        = link_to("Yes", subscribe_private_url.call(false), class:"action_button_blue button-public", method: :post)
-        = link_to("No", subscribe_private_url.call(true), class:"action_button_grey button-private", method: :post)
+          - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }
+        = link_to(t('ui.yes button'), subscribe_private_url.call(false), class:"action_button_blue button-public", method: :post)
+        = link_to(t('ui.no button'), subscribe_private_url.call(true), class:"action_button_grey button-private", method: :post)
   - else
     = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", id: plan.id, redirect: plan_path(plan)), class: 'action_button_green')
