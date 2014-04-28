@@ -8,3 +8,8 @@ Handlebars.registerHelper('fromNow', function(context, block) {
     return context;   //  moment plugin not available. return data as is.
   };
 });
+Handlebars.registerHelper('I18n',
+  function(str){
+    return (I18n != undefined ? I18n.t(str) : str);
+  }
+);

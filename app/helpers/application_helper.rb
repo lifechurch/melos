@@ -34,14 +34,15 @@ module ApplicationHelper
       last_liker = moment.likes[total_likes-2].user
     end
 
-    last_liker_link = content_tag(:a,last_liker.name, href:"/users/#{last_liker.username}")
+    last_liker_link = content_tag(:a,last_liker.name, href:user_path(last_liker.username))
 
     if moment.likes_count == 1
-      "#{last_liker_link} likes this".html_safe
-    else
-      more_link = link_to("#{moment.likes_count - 1} more", moment.to_path)
+      t('moments.user likes this', last_liker_link: last_liker_link).html_safe
 
-      "#{last_liker_link} and #{more_link} like this".html_safe
+    else
+      more_link = link_to(t('moments.likes count more', likes_count: (moment.likes_count - 1)), moment.to_path)
+
+      t('moments.users like this', last_liker_link: last_liker_link, more_link: more_link).html_safe
     end
   end
 
@@ -76,8 +77,7 @@ module ApplicationHelper
     else
       DateTime.parse(api_created_dt)
     end
-    # TODO - localize 'ago'
-    time_ago_in_words(time.in_time_zone) + " ago"
+    t('moments.time past', ago: time_ago_in_words(time.in_time_zone))
   end
 
 

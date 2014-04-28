@@ -5,6 +5,7 @@
 //= require jquery.ui.mouse
 //= require jquery.ui.position
 //= require jquery.ui.autocomplete
+//= require i18n
 //= require handlebars.runtime
 //= require ./templates/handlebars_helpers
 //= require_tree ./templates

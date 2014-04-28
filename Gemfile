@@ -14,6 +14,8 @@ gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem 'sentry-raven', :git => 'https://github.com/getsentry/raven-ruby.git'
+# Have to use this because original gem (fnando/i18n-js) hasn't merged PR #131
+gem 'i18n-js', git: 'https://github.com/matthewrossanderson/i18n-js.git'
 
 #gem 'oink'
 gem 'gabba'

@@ -4,7 +4,7 @@ class window.Moments.FeedBase
 
   constructor: (@params)->
     @wrap         = if @params? and @params.el? then $(@params.el) else $(".social-feed-wrap")
-    @pagination   = $("<a />", {href: "#", id: "load-more"}).text("Load More").hide()
+    @pagination   = $("<a />", {href: "#", id: "load-more"}).text(I18n.t("moments.action.load more")).hide()
     @page         = 0
     @current_page = undefined
     return
@@ -23,7 +23,7 @@ class window.Moments.FeedBase
       @wrap.after(@pagination)
       @pagination.addClass("loaded")
       @pagination.on "click", $.proxy(@loadMoreHandler,@)
-    
+
     @pagination.show()
 
 
@@ -46,7 +46,7 @@ class window.Moments.FeedBase
     @moments_json = moments_json_array
     @current_page = $("<div />",{class:"social-feed"})
     @wrap.append(@current_page)
-    
+
     @renderNext()
     return
 
@@ -75,7 +75,7 @@ class window.Moments.FeedBase
       when "generic"
         new Moments.Generic(data,@)
       when "system"
-        new Moments.System(data,@)  
+        new Moments.System(data,@)
       else
         @renderNext()
 
