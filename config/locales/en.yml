@@ -1,4 +1,7 @@
 en:
+  time:
+    formats:
+      votd: "%B %-d, %Y"
   social:
     intro page:
       main heading:                             "Conversation & Discovery"
@@ -198,9 +201,6 @@ en:
     user likes this:                            "%{last_liker_link} likes this"
     likes count more:                           "%{likes_count} more"
     users like this:                            "%{last_liker_link} and %{more_link} like this"
-    date:
-      formats:
-        LL:                                     "MMMM Do YYYY"
     vod:
       title:                                    "Verse of the day"
     friendship:

@@ -8,12 +8,12 @@ class window.Moments.VOTD extends Moments.Base
 
 
   render: ()->
-    if @template      
+    if @template
       html = @template
         uuid:             @generateID()
         title:            @data.title
         week_day:         @data.week_day
-        created_dt:       moment(@data.created_dt).format('LL')
+        created_dt:       @data.votd_date
         version:          @version()
         verse_html:       @verseHTML()
         references:       @references()
@@ -33,12 +33,12 @@ class window.Moments.VOTD extends Moments.Base
     @version_buttons.each (index,button)=>
       btn = $(button)
       if btn.data("version-id") == @version() then btn.addClass("active")
-        
+
 
 
   fetch: ->
     verse_url = "/bible/#{@version()}/#{@usfm()}.json"
-    
+
     request = $.ajax verse_url,
       type: "GET"
       dataType: "json"
@@ -60,7 +60,7 @@ class window.Moments.VOTD extends Moments.Base
 
     version_id  = li.data("version-id")
     ref_link    = @moment_el.find(".moment-vod-links")
-    
+
     ref_link.text("Loading")
     ref_link.attr("href","#")
 
@@ -69,7 +69,7 @@ class window.Moments.VOTD extends Moments.Base
       dataType: "json"
 
     request.done (data) =>
-      @moment_el.find(".moment-vod-links").remove()    
+      @moment_el.find(".moment-vod-links").remove()
       template = JST["moments/votd_verse"]
       wrap = @moment_el.find(".moment-votd-verse-wrap")
       wrap.replaceWith(template(data))
