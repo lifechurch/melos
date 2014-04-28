@@ -7,7 +7,7 @@
   <p class="moment-comments-list-text">
     <a href="{{user.path}}">{{user.name}}</a>
     {{content}}
-    <span class="moment-comment-dt">{{fromNow created_dt}}</span>
+    <span class="moment-comment-dt">{{time_ago}}</span>
   </p>
   {{#if owned_by_me }}
   <a href="#" class="moment-comment-delete" data-comment-id="{{id}}">x</a>

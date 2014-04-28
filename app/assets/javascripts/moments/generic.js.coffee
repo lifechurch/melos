@@ -11,7 +11,7 @@ class window.Moments.Generic extends window.Moments.Base
 
       html = @template
         uuid:           @generateID()
-        created_dt:     @timeAgo(@data.created_dt)
+        created_dt:     @data.time_ago
         moment_title:   @data.moment_title
         avatar:         @data.avatar
         body_text:      @data.body_text

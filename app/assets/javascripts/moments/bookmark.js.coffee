@@ -18,13 +18,13 @@ class window.Moments.Bookmark extends window.Moments.Base
 
   render: ()->
     if @template
-      
+
       @html = @template
         verse_html:   @verseHTML()
         uuid:         @generateID()
         id:           @data.id
         path:         @data.path
-        created_dt:   @timeAgo(@data.created_dt)
+        created_dt:   @data.time_ago
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
         avatar:       @data.avatar
@@ -45,7 +45,7 @@ class window.Moments.Bookmark extends window.Moments.Base
       version = ref.version_id
       usfm    = ref.usfm.join("+")
       verse_url = "/bible/#{version}/#{usfm}.json"
-      
+
       request = $.ajax verse_url,
         type: "GET"
         dataType: "json"

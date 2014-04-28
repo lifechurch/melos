@@ -18,7 +18,7 @@ class window.Moments.Note extends window.Moments.Base
 
   render: ()->
     if @template
-      
+
       html = @template
         uuid:         @generateID()
         id:           @data.id
@@ -27,7 +27,7 @@ class window.Moments.Note extends window.Moments.Base
         status:       @data.status
         title:        @data.title
         content:      @data.content
-        created_dt:   @timeAgo(@data.created_dt)
+        created_dt:   @data.time_ago
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
         comments:     @data.comments
