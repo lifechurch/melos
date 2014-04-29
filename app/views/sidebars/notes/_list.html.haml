@@ -2,23 +2,27 @@
   # Used in
   # sidebars/notes/default
   # references/notes
+  # notes#sidebar
+
+  # NOTE: Until the API supports directional searches from a cursor (we only support forward)
+  # we are only paginating foward for now. The only other option would be to implement a state
+  # across multiple requests with a memcache key. If we tried to do it in javascript or dom, it
+  # could get really nasty & long if the user pages over and over
 
   # Local variables
   # notes  (required)
-  # link   (optional)
-  # title  (optional)
+  # ref    (required)
 
-   title = t("notes.community notes")
-   link = link || notes_path
+  title = t("notes.community notes")
 
-#widget-notes.widget.comm-notes
+#widget-notes.widget.comm-notes{"data-page" => @page, "data-paginate-link" => "/bible/#{ref.version}/#{ref.chapter_usfm}/notes", "data-cursor" => next_cursor}
   %div.hd
     %span
       = title
 
   - unless notes.empty?
     %ul
-    - notes.first(8).each do |note|
+    - notes.each do |note|
       %li
         - user = note.user
         - md_avatar = user.avatars.md_avatar
@@ -28,7 +32,8 @@
         %p.mute.small= user.name
 
     %div.ft
-      %a{href: link}= t('show all notes')
+      - if @page < 5 and notes.count == 5
+        %span.pagination.next= t('next page')
 
   - else
     %div.bd
