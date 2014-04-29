@@ -25,7 +25,8 @@ class window.Moments.VOTD extends Moments.Base
 
 
   finalizeSetup: ()->
-
+    if @fallback_version
+      @moment_el.find(".moment-vod-list").prepend('<li class="btn" data-version-id="1">KJV</li>')
     @version_buttons = @moment_el.find(".moment-vod-list .btn")
     @version_buttons.on "click", $.proxy(@versionClickHandler,@)
 
@@ -50,7 +51,25 @@ class window.Moments.VOTD extends Moments.Base
       return
 
     request.fail (jqXHR,status) =>
-      @verse_html = "<p class='moment-votd-verse'>Could not load verse</p>"
+      @retry()
+
+  retry: ->
+    #try again using default version
+    verse_url = "/bible/#{@data.default_version_id}/#{@usfm()}.json"
+
+    request = $.ajax verse_url,
+      type: "GET"
+      dataType: "json"
+
+    request.done (data) =>
+      template = JST["moments/votd_verse"]
+      @fallback_version = true
+      @verse_html = template(data)
+      @feed.ready(@)
+      return
+
+    request.fail (jqXHR,status) =>
+      @verse_html = "<p class='moment-votd-verse'>" + Ii8n.t("moments.could not load verse") + "</p>"
       @feed.ready(@)
 
 
@@ -61,7 +80,7 @@ class window.Moments.VOTD extends Moments.Base
     version_id  = li.data("version-id")
     ref_link    = @moment_el.find(".moment-vod-links")
 
-    ref_link.text("Loading")
+    ref_link.text(I18n.t("ui.loading"))
     ref_link.attr("href","#")
 
     request = $.ajax @pathForVersion(version_id),
@@ -79,8 +98,8 @@ class window.Moments.VOTD extends Moments.Base
 
     request.fail (jqXHR,status)=>
       wrap = @moment_el.find(".moment-votd-verse-wrap")
-      wrap.html("<p class='moment-votd-verse'>Scripture unavailable.</p>")
-      ref_link.text("Could not load")
+      wrap.html("<p class='moment-votd-verse'>" + I18n.t('moments.scripture unavailable') + "</p>")
+      ref_link.text(I18n.t('moments.could not load'))
       @feed.refreshWookmark()
 
     @version_buttons.removeClass("active")
@@ -99,11 +118,16 @@ class window.Moments.VOTD extends Moments.Base
   day: ()->
     @data.day
 
+  fallback_version: false
+
   date: ()->
     @data.date
 
   version: ()->
-    @data.version
+    if @fallback_version
+      @data.default_version_id
+    else
+      @data.version
 
   recentVersions: ()->
     @data.recent_versions

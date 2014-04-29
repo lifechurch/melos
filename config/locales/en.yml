@@ -195,6 +195,9 @@ en:
     lower:                                      "or"
     upper:                                      "OR"
   moments:
+    scripture unavailable:                      "Scripture unavailable."
+    could not load:                             "Could not load"
+    could not load verse:                       "Could not load verse"
     showing related:                            "Showing related moments"
     return to:                                  "Return to"
     time past:                                  "%{ago} ago"
