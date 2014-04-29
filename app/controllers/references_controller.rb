@@ -16,8 +16,9 @@ class ReferencesController < ApplicationController
     def setup_presenters
       ref = params[:reference] || last_read.try(:to_param) || default_reference.try(:to_param)
 
-      # override the version in the reference param with the explicit version in the URL this is a temporary hack until Version/Reference class clean-up
-      ref_string  = YV::ReferenceString.new(ref, overrides: {version: params[:version]})
+      # override the version in the reference param with the explicit version in the URL (or current_version in the case of /bible)
+      # this is a temporary hack until Version/Reference class clean-up
+      ref_string  = YV::ReferenceString.new(ref, overrides: {version: params[:version] || current_version})
       ref_hash    = ref_string.to_hash
 
       # If somebody visits just /bible
