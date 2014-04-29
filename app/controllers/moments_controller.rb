@@ -36,8 +36,8 @@ class MomentsController < BaseMomentsController
     @feed    = YV::Moments::Feed.new(
       auth: current_auth,
       page: @page,
-      version: client_settings.version || 1,
-      recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default]
+      version: client_settings.version || Version.default_for(I18n.locale) || Version.default,
+      recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default_for(I18n.locale) || Version.default]
     )
     @moments = @feed.moments
 
