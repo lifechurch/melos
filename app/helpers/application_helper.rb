@@ -40,7 +40,14 @@ module ApplicationHelper
       t('moments.user likes this', last_liker_link: last_liker_link).html_safe
 
     else
-      more_link = link_to(t('moments.likes count more', likes_count: (moment.likes_count - 1)), moment.to_path)
+      case moment.likes_count - 1
+      when 1
+        more_link = link_to(t('moments.likes count more', likes_count: (moment.likes_count - 1)), moment.to_path)
+      when 2
+        more_link = link_to(t('moments.likes count 2 more', likes_count: (moment.likes_count - 1)), moment.to_path)
+      else
+        more_link = link_to(t('moments.likes count 3 or more', likes_count: (moment.likes_count - 1)), moment.to_path)
+      end
 
       t('moments.users like this', last_liker_link: last_liker_link, more_link: more_link).html_safe
     end

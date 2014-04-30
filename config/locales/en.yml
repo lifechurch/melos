@@ -203,6 +203,8 @@ en:
     time past:                                  "%{ago} ago"
     user likes this:                            "%{last_liker_link} likes this"
     likes count more:                           "%{likes_count} more"
+    likes count 2 more:                         "%{likes_count} more"
+    likes count 3 or more:                      "%{likes_count} more"
     users like this:                            "%{last_liker_link} and %{more_link} like this"
     vod:
       title:                                    "Verse of the day"
