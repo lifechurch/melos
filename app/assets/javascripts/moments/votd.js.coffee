@@ -25,8 +25,6 @@ class window.Moments.VOTD extends Moments.Base
 
 
   finalizeSetup: ()->
-    if @fallback_version
-      @moment_el.find(".moment-vod-list").prepend('<li class="btn" data-version-id="1">KJV</li>')
     @version_buttons = @moment_el.find(".moment-vod-list .btn")
     @version_buttons.on "click", $.proxy(@versionClickHandler,@)
 
@@ -54,8 +52,8 @@ class window.Moments.VOTD extends Moments.Base
       @retry()
 
   retry: ->
-    #try again using default version
-    verse_url = "/bible/#{@data.default_version_id}/#{@usfm()}.json"
+    #try again with NT usfm
+    verse_url = "/bible/#{@version()}/#{@altNTverse()}.json"
 
     request = $.ajax verse_url,
       type: "GET"
@@ -63,13 +61,12 @@ class window.Moments.VOTD extends Moments.Base
 
     request.done (data) =>
       template = JST["moments/votd_verse"]
-      @fallback_version = true
       @verse_html = template(data)
       @feed.ready(@)
       return
 
     request.fail (jqXHR,status) =>
-      @verse_html = "<p class='moment-votd-verse'>" + Ii8n.t("moments.could not load verse") + "</p>"
+      @verse_html = "<p class='moment-votd-verse'>" + I18n.t("moments.could not load verse") + "</p>"
       @feed.ready(@)
 
 
@@ -118,16 +115,15 @@ class window.Moments.VOTD extends Moments.Base
   day: ()->
     @data.day
 
-  fallback_version: false
-
   date: ()->
     @data.date
 
   version: ()->
-    if @fallback_version
-      @data.default_version_id
-    else
-      @data.version
+    @data.version
+
+  altNTverse: ()->
+    altVerse = ["MAT.18.4","LUK.11.13","JHN.10.11","MAT.24.14","MRK.2.17","JHN.3.3","MAT.16.24","JHN.13.34","MAT.5.44","MAT.5.3","MRK.3.35","MAT.12.50","JHN.8.12","MAT.11.28","LUK.15.7","JHN.11.25","MAT.7.7","LUK.6.35","MRK.16.15","MAT.22.37","LUK.12.28","MAT.13.44","MAT.10.39","MAT.6.21","LUK.19.10","JHN.1.14","MAT.9.38","JHN.6.35","MAT.6.33","MRK.10.45","MAT.24.35"]
+    altVerse[@data.week_day - 1]
 
   recentVersions: ()->
     @data.recent_versions
