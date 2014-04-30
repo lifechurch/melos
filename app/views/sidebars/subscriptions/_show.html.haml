@@ -7,6 +7,14 @@
   reading       = presenter.reading
   content_page  = presenter.content_page
   references    = reading.references(version_id: subscription.version_id)
+  case references.size
+  when 1
+    readings_text = "1 " + t("plans.widget.reading")
+  when 2..4
+    readings_text = references.size.to_s + " " + t("plans.widget.readings")
+  else
+    readings_text = references.size.to_s + " " + t("plans.widget.readings 5 or more")
+  end
 
 .mobile#mobile-sb-subscription{class: ('initial' if presenter.initial_load?)}
   .reader_modal_header
@@ -45,7 +53,7 @@
         %h4
           = (subscription.respond_to?(:reading_date) ? subscription.reading_date(day) : current_date + (day - 1)).strftime('%a %b %-d')
         .mute
-          = pluralize(references.size,t("plans.widget.reading"),t("plans.widget.readings"))
+          = readings_text
 
     .calendar-next
       - next_text = t("plans.next day") # used in 3 places below
