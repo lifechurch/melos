@@ -120,10 +120,9 @@ class window.Moments.Base
         request.fail (jqXHR,status)=>
           @moment_el.css({opacity: 1.0})
 
-
-
-  setupLiking: (link)->
+  setupLiking: (link)-> 
     @liked_link = link
+    @liked_link.addClass("liked") if @data.likes.is_liked
     @liked_link.on "click", (ev)=>
       ev.preventDefault()
       if @liked_link.hasClass("liked") then @destroyLike() else @createLike()
