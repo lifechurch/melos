@@ -6,12 +6,12 @@ class window.Moments.PlanCompletion extends window.Moments.Base
     @data.user
 
   constructor: (@data, @feed)->
-    @template = JST["moments/plan_completion"]
+    @template = JST["moments/plan_subscription"]
     @feed.ready(@)
 
   render: ()->
     if @template
-
+      console.log @data
       html = @template
         uuid:         @generateID()
         id:           @data.id

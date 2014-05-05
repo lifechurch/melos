@@ -25,6 +25,7 @@ module YV
               when "bookmark.v1"                   then to_bookmark(::Bookmark.new,data)
               when "highlight.v1"                  then to_highlight(::Highlight.new,data)
               when "friendship.v1"                 then to_friendship(::Friendship.new,data)
+              when "plan_subscription.v1"          then to_plan_subscription(::PlanSubscription.new,data)
               when "plan_completion.v1"            then to_plan_completion(::PlanCompletion.new,data)
               when "system.v1"                     then to_system(::SystemMoment.new,data)
               else  to_generic(::GenericMoment.new,data)
@@ -41,6 +42,10 @@ module YV
 
           def to_highlight(instance,data)
             YV::API::Mapper::Highlight.map_to_instance(instance,data)
+          end
+
+          def to_plan_subscription(instance,data)           
+            YV::API::Mapper::PlanSubscription.map_to_instance(instance,data)
           end
 
           def to_plan_completion(instance,data)
