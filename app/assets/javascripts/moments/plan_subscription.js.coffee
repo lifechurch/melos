@@ -28,6 +28,8 @@ class window.Moments.PlanSubscription extends window.Moments.Base
         likes:        @data.likes
         actions:      @data.actions
         user:
+          id:         @data.user.id
           path:       @data.user.path
+          avatar:     Session.User.avatar() 
 
       return html
