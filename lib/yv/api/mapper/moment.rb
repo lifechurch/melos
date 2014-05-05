@@ -27,6 +27,7 @@ module YV
               when "friendship.v1"                 then to_friendship(::Friendship.new,data)
               when "plan_subscription.v1"          then to_plan_subscription(::PlanSubscription.new,data)
               when "plan_completion.v1"            then to_plan_completion(::PlanCompletion.new,data)
+              when "plan_segment_completion.v1"    then to_plan_segment_completion(::PlanSegmentCompletion.new,data)
               when "system.v1"                     then to_system(::SystemMoment.new,data)
               else  to_generic(::GenericMoment.new,data)
             end
@@ -51,6 +52,11 @@ module YV
           def to_plan_completion(instance,data)
             YV::API::Mapper::PlanCompletion.map_to_instance(instance,data)
           end
+
+          def to_plan_segment_completion(instance,data)
+            YV::API::Mapper::PlanSegmentCompletion.map_to_instance(instance,data)
+          end
+
           def to_generic(instance,data)
             instance.created_dt   = data.created_dt
             instance.updated_dt   = data.updated_dt
