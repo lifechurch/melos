@@ -74,6 +74,10 @@ class window.Moments.FeedBase
         new Moments.Friendship(data,@)
       when "plan_completion"
         new Moments.PlanCompletion(data,@)
+      when "plan_subscription"
+        new Moments.PlanSubscription(data,@)
+      when "plan_segment_completion"
+        new Moments.PlanSegmentCompletion(data,@)
       when "generic"
         new Moments.Generic(data,@)
       when "system"

@@ -1,12 +1,12 @@
 window.Moments ?= {}
 
-class window.Moments.PlanSubscription extends window.Moments.Base
+class window.Moments.PlanSegmentCompletion extends window.Moments.Base
 
   user: ()->
     @data.user
 
   constructor: (@data, @feed)->
-    @template = JST["moments/plan_subscription"]
+    @template = JST["moments/plan_segment_completion"]
     @feed.ready(@)
 
   render: ()->
@@ -20,7 +20,6 @@ class window.Moments.PlanSubscription extends window.Moments.Base
         avatar:       @data.avatar
         status:       @data.status
         title:        @data.title
-        body_text:    @data.body_text
         created_dt:   @data.time_ago
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
