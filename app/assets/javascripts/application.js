@@ -22,6 +22,7 @@
 //= require ./moments/moment
 //= require ./moments/votd
 //= require ./moments/system
+//= require ./moments/plan_completion
 //= require ./moments/generic
 //= require ./moments/friendship
 //= require ./moments/note

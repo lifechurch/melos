@@ -21,11 +21,12 @@ module YV
 
           def map_from_kind(data)
             case data.kind_id
-              when "note.v1"        then to_note(::Note.new,data)
-              when "bookmark.v1"    then to_bookmark(::Bookmark.new,data)
-              when "highlight.v1"   then to_highlight(::Highlight.new,data)
-              when "friendship.v1"  then to_friendship(::Friendship.new,data)
-              when "system.v1"      then to_system(::SystemMoment.new,data)
+              when "note.v1"                       then to_note(::Note.new,data)
+              when "bookmark.v1"                   then to_bookmark(::Bookmark.new,data)
+              when "highlight.v1"                  then to_highlight(::Highlight.new,data)
+              when "friendship.v1"                 then to_friendship(::Friendship.new,data)
+              when "plan_completion.v1"            then to_plan_completion(::PlanCompletion.new,data)
+              when "system.v1"                     then to_system(::SystemMoment.new,data)
               else  to_generic(::GenericMoment.new,data)
             end
           end
@@ -42,6 +43,9 @@ module YV
             YV::API::Mapper::Highlight.map_to_instance(instance,data)
           end
 
+          def to_plan_completion(instance,data)
+            YV::API::Mapper::PlanCompletion.map_to_instance(instance,data)
+          end
           def to_generic(instance,data)
             instance.created_dt   = data.created_dt
             instance.updated_dt   = data.updated_dt

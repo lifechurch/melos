@@ -1,5 +1,7 @@
 class MomentsController < BaseMomentsController
 
+  include YV::Concerns::Exceptions
+
   # Base moment controller abstractions
     moment_resource "Moment"
     moment_comments_display true
@@ -7,6 +9,7 @@ class MomentsController < BaseMomentsController
 
 
   before_filter :force_login
+  before_filter :redirect_moment, only: [:show]
 
   # TODO - optimize before filterage, especially for the #show redirect
 
@@ -61,16 +64,21 @@ class MomentsController < BaseMomentsController
     end
   end
 
-  # This is solely to support API action_urls that are formatted /moments/123thisID
-  # Lookup the moment and redirect to the appropriate page.
+  # This supports API action_urls that are formatted /moments/123thisID
+  # It also supports moments that don't already have a resourceful route, like reading plan completions.
+  # Before filter looks up the moment and redirects to the appropriate page if necessary
+  # Otherwise, show will render the appropriate partial
   # TODO - skip any before filters that arent necessary
   def show
-    moment = Moment.find(params[:id], auth: current_auth)
-    redirect_to moment.to_path
   end
 
   def introduction
     client_settings.viewed_social_intro!
   end
 
+  def redirect_moment
+    @moment = Moment.find(params[:id], auth: current_auth)
+    render_404 if @moment.nil? || @moment.errors.present?
+    #redirect_to @moment.to_path
+  end
 end

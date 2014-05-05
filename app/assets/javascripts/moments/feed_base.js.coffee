@@ -72,6 +72,8 @@ class window.Moments.FeedBase
         new Moments.Note(data,@)
       when "friendship"
         new Moments.Friendship(data,@)
+      when "plan_completion"
+        new Moments.PlanCompletion(data,@)
       when "generic"
         new Moments.Generic(data,@)
       when "system"
