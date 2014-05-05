@@ -97,6 +97,7 @@ end
 
 group :test, :development do
   gem 'sqlite3'
+  gem 'jazz_hands'
 end
 
 #gem 'rack-mini-profiler'
