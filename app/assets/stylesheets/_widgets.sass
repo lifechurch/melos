@@ -392,10 +392,6 @@
     .calendar-prev,
     .calendar-next
       a
-        color: #9F9EA2
-        font-size: 8px
-        text-transform: uppercase
-        line-height: 1em
         display: block
         width: 69px
         height: 69px
@@ -403,11 +399,17 @@
 
         .calendar-arrows
           display: block
-          height: 21px
+          height: 31px
           width: 21px
           background: image-url("pagination-arrows-rp.png") no-repeat
           background-size: 84px 21px
-          margin: 10px auto 4px
+          margin: 0 auto 4px
+
+        .calendar-arrow-txt
+          font-size: 12px
+          color: #9F9EA2
+          line-height: 1em
+          display: block
 
       a.disabled
         opacity: .2
@@ -418,23 +420,22 @@
       text-align: center
 
       a .calendar-arrows
-        background-position: -21px 0
+        background-position: -21px 10px
 
     .calendar-day
       width: 147px
       text-align: center
 
+      h4
+        margin: 0
+        padding: 15px 0 0
+
       a
         display: block
-        color: #333
-        height: 69px
+        height: 30px
         width: 147px
-        // background: image-url("icon-plans-64.png") no-repeat 15px 20px
         background-size: 28px 32px
-        padding: 18px 0 0 0px
-
-        h4
-          margin: 0
+        padding: 5px 0 0
 
     .calendar-next
       width: 75px
@@ -442,7 +443,7 @@
       text-align: center
 
       a .calendar-arrows
-        background-position: -42px 0
+        background-position: -42px 10px
 
   .calendar-links
     clear: both
@@ -466,6 +467,16 @@
       position: absolute
       right: 10px
       top: 0
+
+html[data-locale="en"]
+  #widget-plan-controls
+    #calendar
+      .calendar-prev,
+      .calendar-next
+        a
+          .calendar-arrow-txt
+            font-size: 11px
+            padding: 3px 20px 0
 
 
 // --- Custom widgets ------
