@@ -2,7 +2,7 @@
   # Locals Parameters
   # moment - a single Moment to display  (Bookmark, Highlight, Note)
   # comments_displayed - boolean, true or false (whether or not to display comments when rendering html)
-  # detail_view         - boolean, true or false (whether this is a detail view or a card view)  
+  # detail_view         - boolean, true or false (whether this is a detail view or a card view)
 
   detail_view = false unless local_assigns.has_key? :detail_view
   avatars = moment.avatars
@@ -18,9 +18,8 @@
           = image_tag avatar.url
       %span.moment-time
         = api_dt_time_ago(moment.created_dt)
-      .moment-rp-text
-        %h2 
-          = link_to(moment.moment_title, moment.action_url, class: "moment-title-link")
+      %h2.moment-rp-text
+        = link_to(moment.moment_title, moment.action_url, class: "moment-title-link")
 
   -# !share controls, dates, and comments
   .moment-btm
