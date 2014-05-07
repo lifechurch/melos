@@ -49,11 +49,10 @@
             = prev_text
 
     .calendar-day
+      %h4
+        = (subscription.respond_to?(:reading_date) ? subscription.reading_date(day) : current_date + (day - 1)).strftime('%a %b %-d')
       =link_to(calendar_subscription_path(user_id: current_user.to_param, id: subscription), {title: cal_text }) do
-        %h4
-          = (subscription.respond_to?(:reading_date) ? subscription.reading_date(day) : current_date + (day - 1)).strftime('%a %b %-d')
-        .mute
-          = readings_text
+        = t("plans.calendar")
 
     .calendar-next
       - next_text = t("plans.next day") # used in 3 places below
