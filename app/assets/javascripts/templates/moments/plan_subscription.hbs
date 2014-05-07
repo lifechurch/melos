@@ -10,20 +10,20 @@
       <span class="moment-time">
         {{created_dt}}
       </span>
-      <div class="moment-rp-text">
-        <h2>
-          <a href="{{path}}" class="moment-title-link">
-            {{{moment_title}}}
-          </a>
-        </h2>
-        <a href="{{action_url}}" class="moment-title-link">
+      <h2 class="moment-rp-text">
+        <a href="{{path}}" class="moment-title-link">
+          {{{moment_title}}}
+        </a>
+      </h2>
+      <div class="moment-rp-details">
+        <a href="{{action_url}}">
           {{{body_text}}}
         </a>
       </div>
     </div>
   </div>
   <div class="moment-btm">
-    {{> moments/_actions_bar}} 
+    {{> moments/_actions_bar}}
     {{> moments/_comments}}
   </div>
 </div>
