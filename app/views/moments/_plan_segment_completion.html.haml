@@ -19,7 +19,14 @@
       %span.moment-time
         = api_dt_time_ago(moment.created_dt)
       %h2.moment-rp-text
-        = link_to(moment.moment_title, moment.action_url, class: "moment-title-link")
+        = link_to(moment.moment_title.html_safe, moment.action_url, class: "moment-title-link")
+      .moment-rp-progress
+        .progress_wrap
+          .progress_bar_outer
+            .progress_bar{:style => "width:#{moment.percent_complete}%"}
+              &nbsp;
+          .progress_counter
+            =t("plans.current progress html", day: moment.segment, total_days: moment.total_segments).html_safe
 
   -# !share controls, dates, and comments
   .moment-btm

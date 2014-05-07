@@ -18,6 +18,10 @@ module YV
             instance.kind_color       = plan_data.kind_color
             instance.moment_title     = t(plan_data.base.title["l_str"],plan_data.base.title["l_args"])
             instance.action_url       = plan_data.base.action_url
+            instance.percent_complete = plan_data.extras.percent_complete
+            instance.segment          = plan_data.extras.segment
+            instance.total_segments   = plan_data.extras.total_segments
+
             # Common moment elements
             instance                  = map_to_user_fields(instance,plan_data.extras.user)
             instance.icons            = map_to_icons(plan_data.base.images.icon)
@@ -30,7 +34,6 @@ module YV
             instance                  = map_to_like_fields(instance,plan_data.liking)
             instance.created_dt       = plan_data.created_dt
             instance
-            # raise 'the roof'
           end
 
         end
