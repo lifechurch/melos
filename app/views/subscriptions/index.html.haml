@@ -25,18 +25,18 @@
                 = sub.private ? t("plans.privacy.private") : t("plans.privacy.public")
                 •
                 = link_to( t("plans.settings"), edit_subscription_path(user_id: @user, id: sub))
-            .progress_wrap
-              .progress_counter
-                =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
-              .progress_bar_outer
-                .progress_bar{:style => "width:#{sub.progress}%"}
-                  &nbsp;
-              .progress_bar_cap
+          .progress_wrap
+            .progress_counter
+              =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
+            .progress_bar_outer
+              .progress_bar{:style => "width:#{sub.progress}%"}
                 &nbsp;
-              .progress_bar_shadow
-                .progress_percent_complete{style: "left:#{sub.progress}%"}
-                  %b= t("percentage display", number: sub.progress)
-                  .small= t("plans.completion status _ below percentage")
+            .progress_bar_cap
+              &nbsp;
+            / .progress_bar_shadow
+            /   .progress_percent_complete{style: "left:#{sub.progress}%"}
+            /     %b= t("percentage display", number: sub.progress)
+            /     .small= t("plans.completion status _ below percentage")
     = render "shared/pagination", resource_list: @subscriptions
   - else
     %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
