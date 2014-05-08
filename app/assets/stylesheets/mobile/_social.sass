@@ -994,7 +994,7 @@ body.transition .moment
     li.action-comment
       background-position: 10px -129px
 
-// !Intro to social page
+// !------------- Intro to social page ------------------
 
 #main article.social-intro
   background-color: #dedddb
@@ -1126,7 +1126,43 @@ body.transition .moment
     width: auto
     margin: 0 10% 20px 5%
 
-// !Related moments
+
+// !Layout and Typekit updates for certain languages
+
+html[data-locale="th"],
+html[data-locale="ru"]
+  #main article.social-intro
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-family: sans-serif
+
+html[data-locale="th"]
+  #main article.social-intro
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-size: 22px
+
+    .intro-discover-copy p
+      top: 288px
+
+html[data-locale="ru"]
+  #main article.social-intro
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-size: 17px
+
+    .intro-discover-copy
+      top: 182px
+
+html[data-locale="de"],
+html[data-locale="af"]
+  #main article.social-intro
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-size: 24px
+
+
+// !--------------- Related moments -----------------
 
 .related-filter-header
   padding: 10px 10px 0
