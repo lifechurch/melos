@@ -385,7 +385,7 @@ body.transition .moment
     font:
       size: 16px
       weight: normal
-    line-height: 1.1em
+    line-height: 1.3em
     padding: 5px 0 0 10px
     color: #444
 
@@ -574,7 +574,7 @@ body.transition .moment
 .moment-no-note
   clear: both
   display: block
-  margin: 20px 0 0 65px
+  margin: 20px 0 0
   background: #FEF7DC
   border: 1px solid #F5E5B0
   border-bottom: 0
@@ -760,31 +760,52 @@ body.transition .moment
   .moment-icon
     background-position: -364px 0
 
+  .moment-rp-text
+    margin-bottom: 25px
+
   .moment-rp-details
     clear: both
+    width: 380px
+    margin: 0 auto -15px
+    padding: 15px
+    border: 1px solid #e1e1e1
+    border-bottom: 0
 
     a
       font-weight: normal
       color: #444
       display: block
-      width: 465px
-      margin: 0 0 0 65px
+      font-size: 13px
+      line-height: 1.5em
 
       b
         display: block
-        color: #0084c8
-        font-size: 18px
+        color: #444
+        font-size: 16px
+        line-height: 1.3em
+        margin: 0 0 15px
+        +box-sizing(border-box)
+        border-bottom: 1px dashed #e1e1e1
+        background-color: #e1e1e1
+        padding: 10px 15px
+
   .moment-rp-progress
-    margin-top: 90px
     width: 75%
     margin-left: 62px
+    clear: both
+
     .progress_bar_outer
       margin-right: 100px
+
     .progress_counter
       width: 110px
       height: 22px
       line-height: 22px
-    .progress_wrap, .progress_bar_outer, .progress_bar, .progress_bar_shadow
+
+    .progress_wrap,
+    .progress_bar_outer,
+    .progress_bar,
+    .progress_bar_shadow
       height: 10px
     .progress_wrap
       margin-bottom: 0
@@ -930,6 +951,18 @@ body.transition .moment
 
     .moment-action-delete
       +border-radius(0 5px 5px 0)
+
+
+  // !Reading plans
+
+  .moment-rp
+
+    .moment-rp-text
+      margin-bottom: 25px
+
+    .moment-rp-details
+      width: 500px
+      margin: 0 auto -15px
 
 
 // Moment-detail sidebar
