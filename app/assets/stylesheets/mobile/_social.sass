@@ -802,8 +802,18 @@ body.transition .moment
   .moment-icon
     background-position: -364px 0
 
+  .moment-rp-text
+    margin-bottom: 25px
+
+  .moment-rp-progress
+    clear: both
+
   .moment-rp-details
     clear: both
+    margin: 0 auto -15px
+    padding: 15px
+    border: 1px solid #e1e1e1
+    border-bottom: 0
 
     a
       font-weight: normal
@@ -812,8 +822,14 @@ body.transition .moment
 
       b
         display: block
-        color: #0084c8
-        font-size: 18px
+        color: #444
+        font-size: 16px
+        line-height: 1.3em
+        margin: 0 0 15px
+        +box-sizing(border-box)
+        border-bottom: 1px dashed #e1e1e1
+        background-color: #e1e1e1
+        padding: 10px 15px
 
 // !Group moment
 
