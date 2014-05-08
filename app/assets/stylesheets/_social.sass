@@ -942,7 +942,7 @@ body.transition .moment
     li.action-comment
       background-position: 10px -129px
 
-// !Intro to social page
+// !-------------------- Intro to social page ----------------------
 
 #main article.social-intro
   background-color: transparent
@@ -1032,7 +1032,35 @@ body.transition .moment
     right: 200px
     width: 200px
 
-// !Related moments
+// !Layout and Typekit updates for certain languages
+
+html[data-locale="th"],
+html[data-locale="ru"]
+  #main article.social-intro
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-family: sans-serif
+
+html[data-locale="th"]
+  #main article.social-intro
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-size: 23px
+
+html[data-locale="ru"]
+  #main article.social-intro
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-size: 17px
+
+html[data-locale="de"],
+html[data-locale="af"]
+  #main article.social-intro
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-size: 24px
+
+// !----------------- Related moments --------------------
 
 .related-filter-header
   padding: 6px 6px 6px 10px
