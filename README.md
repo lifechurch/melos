@@ -9,9 +9,9 @@ Welcome to the YouVersion Web source repository! Here are instructions to get yo
 
 Before developing for the YouVersion Web project, you'll need to do a few things to set up your environment.
 
-### Installing RVM
+### Installing RVM (one option)
 
-We use [Ruby Version Manager (RVM)](http://beginrescueend.com/rvm/install/), a tool for managing Ruby installations and gemsets. Run the following short command to install:
+You may use [Ruby Version Manager (RVM)](http://beginrescueend.com/rvm/install/), a tool for managing Ruby installations and gemsets. Run the following short command to install:
 
 `bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)`
 
@@ -27,15 +27,36 @@ This is the output of a shell script that runs to make sure you have the right R
 
 If you see red errors switching into the directory, the most likely cause is not having a C compiler. Install [Command Line Tools for Xcode](https://developer.apple.com/downloads/index.action), or [install them from within Xcode](https://developer.apple.com/library/ios/#documentation/DeveloperTools/Conceptual/WhatsNewXcode/Articles/xcode_4_3.html#Command-Line Tools Are Optional) if you already have XCcode installed. Finally, `cd` out and back into the `youversion-web` directory to ensure you see the green printout above.
 
+### Installing rbenv (second option)
+
+Alternatively, you may use [rbenv](https://github.com/sstephenson/rbenv) to setup your Ruby environment.
+
+Install the `homebrew` package manager on your system (if you don't already have it):
+`ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
+
+Then run, `brew install rbenv ruby-build`.
+
+If you want rbenv to initialize every time you open a terminal windown and run the following:
+`echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile`
+
+Then `source ~/.bash_profile` in your terminal window to init rbenv.
+
+Now to get the correct environment run, `rbenv install 1.9.3-p545` (this may take a few minutes).
+
+Run `rbenv shell 1.9.3-p545` after to source the env.
+If you'd like to auto-source the env everytime a new terminal window opens, run `echo "rbenv shell 1.9.3-p545" >> ~/.bash_profile`
+
+Run `ruby -v`, and if it shows "1.9.3p545", everything is setup and working. If not... well... yell for help.
+
 ### Installing gems, etc
 
-Now that you're in that directory (and in your `yv-web` gemset), you'll have to install the `rails` gem before you can use Bundler. Check the `Gemfile` to get the version of Rails we're locked to; currently, it's **3.1.2**. Run `gem install rails -v 3.1.2` to install the Rails gem.
+Now that you're in that directory (and in your `yv-web` gemset), you'll have to install the `rails` gem before you can use Bundler. Check the `Gemfile` to get the version of Rails we're locked to; currently, it's **3.2.13**. Run `gem install rails -v 3.2.13` to install the Rails gem.
 
 We use the `capybara-webkit` extension to enhance our JavaScript testing; this component depends on QT, which sadly isn't distributed in gem form.
 
 Install the `homebrew` package manager on your system (if you don't already have it):
 
-`/usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"`
+`ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
 
 Now run `brew install qt` to install QT.
 
