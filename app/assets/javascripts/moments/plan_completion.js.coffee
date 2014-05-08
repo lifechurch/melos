@@ -31,5 +31,4 @@ class window.Moments.PlanCompletion extends window.Moments.Base
           id:         @data.user.id
           path:       @data.user.path
           avatar:     Session.User.avatar() 
-
       return html
