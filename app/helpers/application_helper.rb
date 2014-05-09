@@ -34,7 +34,12 @@ module ApplicationHelper
       last_liker = moment.likes[total_likes-2].user
     end
 
-    last_liker_link = content_tag(:a,last_liker.name, href:user_path(last_liker.username))
+    # Check if the user was deleted from the API their username will be nil
+    if last_liker.username.blank?
+        last_liker_link = content_tag(:a, "", href:"#")
+    else
+        last_liker_link = content_tag(:a, last_liker.name, href:user_path(last_liker.username))
+    end
 
     if moment.likes_count == 1
       t('moments.user likes this', last_liker_link: last_liker_link).html_safe

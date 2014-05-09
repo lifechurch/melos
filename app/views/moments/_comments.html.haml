@@ -6,7 +6,7 @@
 
 
 .moment-comments{class: comments_displayed ? "" : "hide"}
-  
+
   - if moment.liking
     - if moment.likes_count.to_i > 0
       - unless moment.likes_count.to_i == 1 and moment.likes.last.user.id == current_auth.user_id # Don't show if I'm the only one to have liked the moment.
@@ -28,10 +28,14 @@
           - avatar = user.avatars.md_avatar
           %li.moment-comments-list-comment
             %span.moment-comments-list-avatar
-              = link_to(user) do
+              - if user.id.present?
+                = link_to(user) do
+                  = image_tag avatar.url
+              - else
                 = image_tag avatar.url
             %p.moment-comments-list-text
-              = link_to(user.name, user_path(user.username)) if user.id.present?
+              - if user.username.present?
+                = link_to(user.name, user_path(user.username))
               = comment.content
               %span.moment-comment-dt
                 = api_dt_time_ago(comment.updated_dt)
