@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
   before_filter :tend_caches
   before_filter :set_page
   before_filter :set_site
-  before_filter :skip_home
   before_filter :set_locale_and_timezone # from YV::Concerns::Locale
+  before_filter :skip_home
   before_filter :check_facebook_cookie   # from YV::Concerns::SocialNetworks
   before_filter :set_default_sidebar     # from YV::Concerns::Presenters
 
