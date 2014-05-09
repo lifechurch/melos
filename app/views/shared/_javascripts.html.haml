@@ -1,3 +1,6 @@
+- if content_for? :typekit_javascripts
+  = yield :typekit_javascripts
+
 = javascript_include_tag "application"
 / JS locale file
 -if "en" != I18n.locale.to_s
