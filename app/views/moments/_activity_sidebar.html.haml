@@ -14,7 +14,7 @@
           - avatar = avatars.sm_avatar
           %li.user
             %span.timeline-avatar
-              - unless user.id.nil?
+              - if user.username.present?
                 = link_to(user_path(user)) do
                   = image_tag avatar.url
                 = link_to(user.name, user_path(user.username), class: "user")

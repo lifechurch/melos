@@ -35,10 +35,10 @@ module ApplicationHelper
     end
 
     # Check if the user was deleted from the API their username will be nil
-    unless last_liker.username.nil?
-        last_liker_link = content_tag(:a, last_liker.name, href:user_path(last_liker.username))
-    else
+    if last_liker.username.blank?
         last_liker_link = content_tag(:a, "", href:"#")
+    else
+        last_liker_link = content_tag(:a, last_liker.name, href:user_path(last_liker.username))
     end
 
     if moment.likes_count == 1

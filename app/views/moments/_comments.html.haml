@@ -28,13 +28,13 @@
           - avatar = user.avatars.md_avatar
           %li.moment-comments-list-comment
             %span.moment-comments-list-avatar
-              - unless user.id.nil?
+              - if user.id.present?
                 = link_to(user) do
                   = image_tag avatar.url
               - else
                 = image_tag avatar.url
             %p.moment-comments-list-text
-              - unless user.username.nil?
+              - if user.username.present?
                 = link_to(user.name, user_path(user.username))
               = comment.content
               %span.moment-comment-dt
