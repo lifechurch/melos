@@ -27,9 +27,25 @@ module YouversionWeb
     # lots of unexpected 300/404s for assets we don't host. Blackberry/Appworld?
     halt_for = /^\/webstore/
 
-    config.middleware.insert_before(Rack::Lock, "YV::Middleware::Halt", routes: halt_for )
+    config.middleware.insert_before(Rack::Lock, "YV::Middleware::Halt", routes: halt_for)
 
-    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+    config.middleware.insert_after(
+      "YV::Middleware::Halt",
+      Rack::SslEnforcer,
+      ignore: ['/app', '/download', '/mobile', '/100million'],
+      except_environments: 'development'
+    )
+
+    #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
+    config.middleware.insert_after(Rack::SslEnforcer, Bb::EndPoint)
+
+    config.middleware.insert_after(
+      Bb::EndPoint,
+      Rack::MobileDetect,
+      targeted: /Android|android|iPhone|iphone|iPod|ipod|iPad|ipad|BlackBerry|blackberry|Silk|silk|SymbianOS|J2ME|Windows Phone OS|webOS|hpwOS/
+    )
+
+    config.middleware.insert_after(Rack::MobileDetect, Rack::Rewrite) do
 
       r301 %r{^\/webcast}, "http://webcast.youversion.com/index.html"
 
@@ -96,26 +112,11 @@ module YouversionWeb
       r301 %r{/jmm/subscribe(.*)}, '/reading-plans/199-promises-for-your-everyday-life/start'
     end
 
-    config.middleware.insert_before(Rack::Rewrite, 
-      Rack::SslEnforcer, 
-      ignore: [%r{/^\/app|^\/}, %r{/download|^\/}, %r{/mobile|\/}, %r{/100million/}],
-      except_environments: 'development'
-    )
-
-    config.middleware.insert_before(
-      Rack::Rewrite,
-      Rack::MobileDetect,
-      targeted: /Android|android|iPhone|iphone|iPod|ipod|iPad|ipad|BlackBerry|blackberry|Silk|silk|SymbianOS|J2ME|Windows Phone OS|webOS|hpwOS/
-    )
-
     # rate limit clients to 2 req/sec sustained
     # (only on production or staging where we have external assets)
     if ENV['FOG_DIRECTORY'] && ENV['THROTTLE_REQUESTS']
       config.middleware.use  Rack::Throttle::Minute, :max => (Cfg.rate_limit).to_i, cache: Dalli::Client.new, :key_prefix => :throttle
     end
-
-    #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
-    config.middleware.insert_before(Rack::MobileDetect, Bb::EndPoint)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -123,7 +124,7 @@ module YouversionWeb
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
-      config.eager_load_paths += Dir["#{config.root}/lib/**/"] # include all subdirectories
+    config.eager_load_paths += Dir["#{config.root}/lib/**/"] # include all subdirectories
     # config.eager_load_paths += %W(#{config.root}/app/presenters)
 
 
@@ -166,6 +167,6 @@ module YouversionWeb
     config.after_initialize do
       config.cache_store = :dalli_store, {namespace: "yv", expires_in: 24.hours, compression: true}
     end
-    
+
   end
 end
