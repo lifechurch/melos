@@ -14,9 +14,13 @@
           - avatar = avatars.sm_avatar
           %li.user
             %span.timeline-avatar
-              = link_to(user_path(user)) do
+              - unless user.id.nil?
+                = link_to(user_path(user)) do
+                  = image_tag avatar.url
+                = link_to(user.name, user_path(user.username), class: "user")
+              - else
                 = image_tag avatar.url
-            = link_to(user.name, user_path(user.username), class: "user")
+
             - like = user_activity.recent_like
             - comm = user_activity.recent_comment
 
