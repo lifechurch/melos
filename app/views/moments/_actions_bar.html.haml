@@ -14,6 +14,20 @@
   %span.moment-actions-comment
     = link_to t("moments.action.comment"), moment.to_path, title: t("moments.action.comment title")
 
+  :javascript
+    $(document).ready(function() {
+      var moment_id = $("div.moment").data("moment-id");
+      var token = $('meta[name=csrf-token]').attr('content');
+      var cls = $("span.moment-actions-like a").attr("class");
+      if (cls != "liked") {
+        $("span.moment-actions-like").click(function() {
+          $.post("/likes", {"moment_id": moment_id, "authenticity_token": token}, function(data) {
+            $("span.moment-actions-like a").addClass("liked");
+            $("span.moment-actions-like").unbind("click");
+          });
+        });
+      }
+    });
 
   - if current_user_moment?(moment)
 
