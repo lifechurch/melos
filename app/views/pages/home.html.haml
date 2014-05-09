@@ -7,6 +7,11 @@
 - content_for :javascripts do
   = javascript_include_tag "campaigns/100m/jquery.counter.js"
 
+- content_for :typekit_javascripts do
+  = javascript_include_tag '//use.typekit.net/mgk8ovf.js'
+  :javascript
+    try{Typekit.load();}catch(e){}
+
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
   %article
     #hero
@@ -47,7 +52,7 @@
         %span.or
           = t("or.upper")
         %span.email
-          = link_to(t("registration.with email"), sign_up_path)          
+          = link_to(t("registration.with email"), sign_up_path)
 
     %ul.home-features
       %li.read_bible.first#scroll-point
