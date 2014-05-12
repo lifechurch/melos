@@ -20,7 +20,7 @@
         - else # This is a list of another users friends, show friendship status and/or display a link to friend them
           - if current_user.friends_with? friend.id
             %span.friend-detail-status You're friends!
-          - else
+          - elsif current_auth.first_name.present? and current_auth.last_name.present?
             = link_to(t("friendships.form.add friend button"), offer_friendships_path(user_id: friend.id) , method: :post, class: "friend-detail-add", title: "Send this person a friend request" )
 
 = link_to(t("moments.action.load more"),"#", id: "load-more", class: "dark", "data-next-url" => "#{_list_user_friends_path(user_id: @user.to_param, page: friends.next_page)}") if friends.next_page
