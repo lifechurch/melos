@@ -52,7 +52,9 @@
           %span.profile-hdr-friend
             = t("friendships.status.friends")
 
-        - else # This user isn't me, they aren't in my pending lists, and I'm not friends with them show the Request friendship button
+        - elsif current_auth.first_name.present? and current_auth.last_name.present?
+          - # This user isn't me, they aren't in my pending lists, and I'm not friends with them,
+          - # and I have my first & lats name set show the Request friendship button
           = form_tag offer_friendships_path(user_id: @user.id) , method: :post do
             = submit_tag t("friendships.form.add friend button"), class: "profile-hdr-addfriend action_button_green", title: t("friendships.form.add friend button title", user: @user.name)
 

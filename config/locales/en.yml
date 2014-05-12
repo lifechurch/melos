@@ -266,6 +266,7 @@ en:
     limit notice:                               "You can have as many as 150 friends"
     limit description:                          "Limiting your Bible App friendships to people you know well creates an environment for honest conversations and shared discoveries with trusted friends."
   friendships:
+    name required:                              "To experience the Bible with friends, update your Profile with your first and last name."
     find friends title:                         "Find friends"
     search by name:                             "Search by name"
     search button:                              "Go"
