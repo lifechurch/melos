@@ -13,7 +13,7 @@
 = render layout: "layouts/base" do
   
   %div.settings-header
-    - if logged_in? || current_user.present?
+    - if current_user.present?
       %img.settings-header-avatar{src: current_user.user_avatar_url["px_128x128"]}
       %h1.settings-header-name
         = current_user.name
