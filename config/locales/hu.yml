@@ -1,4 +1,7 @@
 hu:
+  time:
+    formats:
+      votd: "%Y. %B %-d"
   social:
     intro page:
       main heading: "Beszélgetés és felfedezés"
@@ -70,6 +73,7 @@ hu:
   meta:
     kids_app:
       title: "Biblia alkalmazás gyermekeknek"
+      description: "A Bibliai Alkalmazés gyermekek számára November 28-án jön ki, Hálaadás Napján! Interaktív Bibliai történetek egy ingyenes alkalmazásban iOS-re és Androidra. Az előnézet itt megtekinthető: bible.com/kids"
     100million:
       title: "100 millióval kezdődik"
       description: "A Biblia alkalmazást már csaknem 100 millió felhasználó töltötte le - hihetetlen mérföldkő! De még egészen az elején vagyunk. Töltsd le ma az ingyenes Biblia alkalmazást - azután oszd meg az alkalmazást a barátaiddal. Írjunk együtt történelmet!"
@@ -186,6 +190,9 @@ hu:
     lower: "vagy"
     upper: "VAGY"
   moments:
+    showing related: "Kapcsolódó pillanatok"
+    return to: "Vissza"
+    time past: "%{ago} ideje"
     vod:
       title: "Napi igevers"
     friendship:
@@ -228,7 +235,7 @@ hu:
     destroy success: "Töröltük, hogy tetszett."
     destroy failure: "Nem tudtuk törölni, hogy tetszett."
   comments:
-    view all N: "Nézd meg mind a %{count} megjegyzést"
+    view all N: "Nézd meg mind a(z) %{count} megjegyzést"
     post comment: "Postolj egy észrevételt"
     create success: "Sikerült! A megjegyzésedet posztoltuk."
     create failure: "Az észrevételt nem tudtuk posztolni"
@@ -262,7 +269,7 @@ hu:
     requests title: "Függő kapcsolatok"
     requests view all: "Nézd meg az összes barátkérést"
     requests none: "Nincs egy barátkérésed sem"
-    requests no new: "Új felkérések"
+    requests no new: "Nincsenek új felkérések"
     status:
       pending: "A felkérés folyamatban van"
       friends: "Barátok"
@@ -272,16 +279,16 @@ hu:
       remove friend button: "Barát eltávolítása"
       remove friend button title: "Távolítsa el ezt a személyt a barátaid listájáról"
       add friend button: "Addj hozzá barátot"
-      add friend button title: "Küldj %{user}nak/nek egy barátkérést"
+      add friend button title: "Küldj %{user} nak/nek egy barátkérést"
       accept button: "Elfogad"
-      accept request button: "A felkérést elfogadom"
+      accept request button: "Elfogadom a felkérést "
       ignore button: "Mellőz"
       ignore request button: "A felkéréssel nem foglalkozom"
   notes:
     none user: "%{username} még nem készített jegyzetet"
     blank slate:
       heading: "Még nincsenek jegyzeteid"
-      description: "Ahogy olvasod a Bibliát és meghallod, hogy Isten kicsi, halk szava szól hozzád, ezeket a gondolatokat ide gyorsan leírhatod. A jegyzeteid alapértelmezésben <em>sajátjaidként</em> lesznek jelölve. Ha szeretnél egy jegyzetet megosztani a barátaiddal, egyszerűen csak nyisd meg és váltsd át <em>nyilvánosra</em>."
+      description: "Ahogy olvasod a Bibliát és meghallod, hogy Isten halk szava szól hozzád, ezeket a gondolatokat ide gyorsan leírhatod. A jegyzeteid alapértelmezésben <em>sajátjaidként</em> lesznek jelölve. Ha szeretnél egy jegyzetet megosztani a barátaiddal, egyszerűen csak nyisd meg és váltsd át <em>nyilvánosra</em>."
     form:
       title field: "Cím:"
       content field: "Tartalom:"
@@ -322,7 +329,7 @@ hu:
     cancel: "Mégsem"
     pop out: "Új ablakban"
     none found: "Nem találtunk jegyzeteket..."
-    create success: "Sikerült! A jegyzeted el lett mentve."
+    create success: "Sikerült! A jegyzetedet elmentettük."
     create failure: "Hiba történt a jegyzet mentésekor"
     destroy success: "jegyzet törölve"
     destroy failure: "Hiba történt a jegyzet törlésekor"
@@ -360,6 +367,8 @@ hu:
     last name: "Vezetéknév"
     agreement: "Egyetértek a YouVersion %{terms_link}-el."
     terms and conditions: "ÁSZF"
+    email: "E-mail"
+    mobile: "Mobil"
     facebook sign up success: "Nagyszerű! Engedélyeztetted a Facebookot. Válassz egy YouVersion felhasználónevet és jelszót a folytatáshoz."
     register: "Regisztráció"
     thanks for registering: "Köszönjük a regisztrációt!"
@@ -388,7 +397,7 @@ hu:
     edit account_existence: "Fiók törlése"
     delete account button: "YouVersion fiókom törlése"
     no devices: "Nincs eszköz csatlakoztatva a YouVersion fiókodhoz"
-    no devices download copy: "Az online Bibliára alapozva a YouVersion Biblia alkalmazás egy ingyenes mobil Biblia, amit csaknem bármilyen mobil készülékre le lehet tölteni, A Biblia alkalmazás lehetővé teszi a felhasználók számára, hogy olvassák a Bibliát, osszanak meg igeverseket a társasági hálózataikon, könyvjelzőt tegyenek a kedvenc részeikhez és még sok mást; mindezt olyan módon, ami alkalmazkodik az egyre inkább mozgásban lévő életstílusukhoz. Látogass el a <a href='https://www.bible.com/app'>bible.com/app</a> a mobilkészülékedről, hogy letöltsd a Biblia alkalmazást és csatlakozz a fiókodhoz!"
+    no devices download copy: "Az online Bibliára alapozva a YouVersion Biblia alkalmazás egy ingyenes mobil Biblia, amit csaknem bármilyen mobil készülékre le lehet tölteni, A Biblia alkalmazás lehetővé teszi a felhasználók számára, hogy olvassák a Bibliát, megosszanak igeverseket a közösségi hálózataikon, könyvjelzőt tegyenek a kedvenc részeikhez és még sok mást; mindezt olyan módon, ami alkalmazkodik az egyre inkább mozgásban lévő életstílusukhoz. Látogass el a <a href='https://www.bible.com/app'>bible.com/app</a> a mobilkészülékedről, hogy letöltsd a Biblia alkalmazást és csatlakozz a fiókodhoz!"
     yes delete: "Igen, töröld a fiókom"
     account delete success: "A YouVersion fiókod meg lett szüntetve. Reméljük, meg fogod találni a megfelelő módot, hogy kapcsolatban maradj a Bibliával. A következő alkalmazások segíthetnek a jövőben:  <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Ha törlöd a fiókodat, a YouVersion-ből és a Biblia alkalmazásból minden információ, előzmény és személyre szabás végleg törlődik  (ilyenek a jegyzetek, könyvjelzők, kiemelések stb.) Ezt a műveletet sem Te, sem mi nem tudjuk visszavonni. Ha biztosan folytatni akarod, az alábbiakban megteheted."
@@ -402,7 +411,7 @@ hu:
     my badges: "Jelvényeim"
     revised date: "Utoljára átvizsgálva %{date}-én/-án"
     update email copy: "Add meg az új e-mail címed és kattints az \"e-mail cím frissítésére\". Ezután elküldünk egy linket amin keresztül jóváhagyhatod az új e-mail címedet."
-    edit email: "e-mail cím megváltoztatás"
+    edit email: "E-mail cím megváltoztatás"
     update email check: "Ellenőrizd az e-mail fiókodat és kattints a linkre, hogy jóváhagyhasd az új e-mail címedet."
     confirm update email success: "Köszönjük! Frissítetted az email címedet."
     confirm update email error: "Sajnáljuk, egy hiba lépett fel email címed megváltoztatásának befejezése közben."
@@ -506,7 +515,7 @@ hu:
       blank slate:
         heading: "Menj tovább, itt (még) semmi nem látható"
         description: "Kezdj el foglalkozni a Bibliával vagy a barátaiddal és ez az oldal kronológiai sorrendben megmutatja, hogy mit csináltál"
-      visit friend: "Látogass el a %{friend}'s profiljához"
+      visit friend: "Látogass el %{friend} profiljához"
       tab activity: "Tevékenység"
       tab friends: "Barátok"
       tab notes: "Jegyzetek"
@@ -519,7 +528,7 @@ hu:
       location: "Helyszín"
       postal code: "Irányítószám"
       website: "Honlap"
-      country: "Ország"
+      country: "Orszag vagy regio"
       timezone: "Időzóna"
       language: "Nyelv"
       updated: "Sikerült! Frissítetted a profilodat."
@@ -532,14 +541,14 @@ hu:
       picture error: "Sajnáljuk, egy hiba lépett fel fényképed frissítése közben."
       picture_empty: "Kérlek, válassz ki egy képet feltöltésre"
       picture_too_large: "A fénykép nem haladhatja meg az 1 megabyte-ot"
+      transfer_too_slow: "Válassz egy kisebb képet vagy keress egy gyorsabb internetkapcsolatot."
       picture_invalid_type: "A fénykép  JPG, PNG vagy GIF lehet"
       picture_creation form errors: "A következő hiba(k) akadályozta(k) meg a képed frissítését:"
-      updated picture: "Sikerült! Frissítetted a fényképedet."
       updated notifications: "Sikerült! Frissítetted az értesítési beállításaidat."
       notifications token error: "Érvénytelen jel, az értesítési beállításaid szerkesztéséhez kérlek, jelentkezz be."
       notification errors: "A következő hiba(k) akadályozta(k) meg az értesítéseid frissítését:"
       edit: "Szerkesztés"
-      bio: "Életrajz"
+      bio: "Bemutatkozás"
     password:
       updated: "Sikerült! Frissítetted a jelszavadat."
       error: "Sajnáljuk, hiba lépett fel a jelszavad megváltoztatása közben."
@@ -570,7 +579,7 @@ hu:
     not found: "A könyvjelzők gyors hozzáférést jelentenek a kedvenc verseidhez vagy egy bizonyos könyv utoljára olvasott fejezetéhez. Könyvjelző hozzáadásához válaszd ki a verset a Bibliaolvasóban és kattints a Kiválasztott gombra az olvasó felső részén."
     other user not found: "%{username} egy könyvjelzőt sem mentett még el."
     creation form errors: "A következő hiba(k) akadályozta(k) meg a könyvjelződ létrehozását:"
-    create success: "Sikerült! A könyvjelző el van mentve."
+    create success: "Sikerült! A könyvjelzőt elmentettük."
     destroy success: "Könyvjelző eltávolítva"
     destroy failure: "Hiba történt a könyvjelző eltávolításakoz"
     update success: "Könyvjelző frissítve"
@@ -584,7 +593,7 @@ hu:
     update: "Frissítés"
     color: "Szín:"
     version field: "Verzió:"
-    none user: "%{username} nak/nek nincsenek könyvjelzői"
+    none user: "%{username} -nak/nek nincsenek könyvjelzői"
     blank slate:
       heading: "Tegyél könyvjelzőt a jelentős versekhez"
       description: "Biblia olvasás közben válassz egy igeverset és jelöld meg könyvjelzővel. Térj vissza ide, hogy megnézd, szerkeszd vagy eltávolítsd a könyvjelzőt."
@@ -594,7 +603,7 @@ hu:
       labels field: "Címkék (vesszővel elválasztva):"
       highlight field: "Kiemelés: (választható)"
       colors field: "Szín:"
-      update button: "frissítsd a könyvjelzőt"
+      update button: "Könyvjelző frissítése"
       save button: "Könyvjelző mentése"
   badges:
     earned a badge: "Jelvényt szereztél"
@@ -605,10 +614,13 @@ hu:
   plans:
     widget:
       my plans: "Terveim"
-      start reading: "Kezdj el olvasni"
-      view my plans: "Nézdd meg a terveimet!"
+      start reading: "Olvasás elkezdése"
+      view my plans: "Terveim megtekintése"
       featured plans: "Sokat említett tervek"
       view all plans: "Nézdd meg az összes tervet!"
+      reading: "Biblia olvasás"
+      readings: "Biblia olvasás"
+      readings 5 or more: "Biblia olvasás"
     settings: "Beállítások"
     privacy:
       visible to friends?: "Szeretnéd, ha az ezzel a tervvel kapcsolatos aktivitásodat láthatnák a barátaid?"
@@ -654,7 +666,7 @@ hu:
     done reading: "Kész"
     no verses: "Mára nincsenek versek"
     no content: "A tervedben mára nincs betervezett olvasnivaló ige, ezért meg lett jelölve olvasottként. "
-    read today: "Mai olvasmány megtekintése"
+    read today: "Mai olvasmány"
     devotional: "Áhitat"
     completion status _ below percentage: "Befejezve"
     current progress html: "<b>%{day}</b> /<b>%{total_days}</b> nap"
@@ -783,6 +795,7 @@ hu:
   donate:
     donate now: "Adományozz most"
     donate now intl: "vagy adományozz nemzetközileg"
+    enter amount: "Válasszon ki egy mennyiséget."
     promo 1: "Minden adományozott 1 dollár után 10 újabb ember fér hozzá a Bibliához a mobiltelefonján."
     promo 2: "A YouVersion-nel a Biblia mindig közel van. Nézd meg a videónkat."
     promo 3: "Idén több mint 5 milliárd ember fog mobiltelefont használni. Adakozz most."
@@ -979,6 +992,10 @@ hu:
         tagline: "Írjunk együtt történelmet."
         button: "Biblia alkalmazás megosztása"
   ui:
+    yes button: "Igen"
+    no button: "Nem"
+    loading indicator text: "Betöltés ..."
+    loading: "Betöltés"
     pagination:
       next page: "Következő oldal"
       previous page: "Előző oldal"

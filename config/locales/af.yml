@@ -1,7 +1,10 @@
 af:
+  time:
+    formats:
+      votd: "%-d %B, %Y"
   social:
     intro page:
-      main heading: "Gesprekke & Verkennings"
+      main heading: "Gesprek & Verkenning"
       main description: "'n Nuwe manier om die Bybel te verken met betroubare vriende"
       moment:
         user aaron: "Arno Snyders"
@@ -70,6 +73,7 @@ af:
   meta:
     kids_app:
       title: "Die Bybel Toep vir Kinders"
+      description: "Die Bybel Toep vir Kinders word 28 November vrygestel. Dankseggings Dag! Interaktiewe Bybelstories in 'n gratis toep vir iOS en Android. Kyk na 'n voorskou by bible.com/kids"
     100million:
       title: "Dit begin met 100 Miljoen"
       description: "Die Bybel Toep is amper 'n 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel Toep vandag af - en deel dan die toep met jou vriende.  Help ons om saam geskiedenis te maak."
@@ -186,6 +190,17 @@ af:
     lower: "of"
     upper: "OF"
   moments:
+    scripture unavailable: "Skrifgedeelte nie beskikbaar nie."
+    could not load: "Kon nie laai nie"
+    could not load verse: "Kon nie die vers laai nie"
+    showing related: "Wys verwante notas"
+    return to: "Terug na"
+    time past: "%{ago} gelede"
+    user likes this: "%{last_liker_link} hou van"
+    likes count more: "%{likes_count} meer"
+    likes count 2 more: "%{likes_count} meer"
+    likes count 3 or more: "%{likes_count} meer"
+    users like this: "%{last_liker_link} en %{more_link} hou van dit"
     vod:
       title: "Vers van die dag"
     friendship:
@@ -208,9 +223,9 @@ af:
       share title: "Deel hierdie met vriende en familie."
       comment: "Lewer kommentaar"
       comment title: "Sien al die opmerkings"
-      edit: "Redigeer"
-      edit highlight title: "Verander hierdie kleurmerker"
-      edit bookmark title: "Verander hierdie boekmerk"
+      edit: "Wysig"
+      edit highlight title: "Wysig hierdie kleurmerker"
+      edit bookmark title: "Wysig hierdie boekmerk"
       edit note title: "Wysig hierdie nota"
       delete: "Vee uit"
       delete confirm: "Is jy seker?"
@@ -244,7 +259,7 @@ af:
       heading: "Nie huidiglik vriende nie"
       description: "Jy moet bevriend wees met hierdie persoon om sy vriende te kan sien."
     limit notice: "Jy het soveel as 150 vriende"
-    limit description: "Die beperking van jou Bybeltoepassing vriendskappe tot slegs mense wat jy goed ken, skep 'n omgewing vir eerlike gesprekke en gedeelde ontdekkings met betroubare vriende."
+    limit description: "Die beperking van jou Bybel Toep vriendskappe tot slegs mense wat jy goed ken, skep 'n omgewing vir eerlike gesprekke en gedeeldee ontdekkings met betroubare vriende."
   friendships:
     find friends title: "Soek vriende"
     search by name: "Soek per naam"
@@ -281,7 +296,7 @@ af:
     none user: "%{username} het nog nie enige notas gemaak nie."
     blank slate:
       heading: "Jy het nog nie enige notas nie"
-      description: "Terwyl jy die Bybel lees jy, wanneer jy God se klein, sagte stem hoor  praat, kan jy vinnig daardie gedagtes hier vas pen. Jou aantekeninge sal as <em> privaat </ em> gemerk word by verstek.  As jy jou aantekeninge met jou vriende wil deel, kan jy dit eenvoudig net oop maak en dit verander na </ em> openbaar <em>."
+      description: "Terwyl jy die Bybel lees, wanneer jy God se klein, sagte stem hoor praat, kan jy vinnig daardie gedagtes hier vaspen. Jou aantekeninge sal as <em>privaat</em> gemerk word by verstek.  As jy 'n nota met jou vriende wil deel, kan jy dit eenvoudig net oopmaak en dit verander na <em>publiek</em>."
     form:
       title field: "Titel:"
       content field: "Inhoud:"
@@ -360,6 +375,8 @@ af:
     last name: "Van"
     agreement: "Ek is in ooreenstemming met die YouVersion %{terms_link}."
     terms and conditions: "termes en voorwaardes"
+    email: "E-pos"
+    mobile: "Selfoon"
     facebook sign up success: "Welgedaan! Jy het magtiging verkry deur jou Facebook rekening. Kies 'n YouVersion gebruiker naam en wagwoord om voort te gaan."
     register: "Registreer"
     thanks for registering: "Dankie vir jou registrasie!"
@@ -388,7 +405,7 @@ af:
     edit account_existence: "Sluit Rekening"
     delete account button: "Sluit My YouVersion Rekening"
     no devices: "Geen toestelle gekoppel aan jou YouVersion Rekening nie"
-    no devices download copy: "Gebaseer op die aanlyn Bybel, YouVersion.com, is die Bybel Toep 'n gratis mobiele Bybel wat op bykans enige toestel geinstalleer kan word. Die Bybel Toep laat gebruikers toe om die Bybel te lees, verse te deel met sosiale netwerke, gunsteling gedeeltes te boekmerk en vele meer&mdash:alles in 'n formaat wat tred hou met jou snelgroeiende mobiele leefstyl. Besoek <a href='https://www.bible.com/app'>bible.com/app</a>  van jou mobiele toestel om die Bybel Toep af te laai en koppel jou rekening!"
+    no devices download copy: "Gebaseer op die aanlyn Bybel, YouVersion, die Bybel Toep is 'n gratis mobiele Bybel wat op bykans enige toestel geïnstalleer kan word. Die Bybel Toep laat gebruikers toe om die Bybel te lees, verse te deel met sosiale netwerke, gunsteling gedeeltes te boekmerk en vele meer&mdash:all in 'n formaat wat tred hou met die snelgroeiende mobiele leefstyl. Besoek <a href='https://www.bible.com/app'>bible.com/app</a>  van jou mobiele toestel om die Bybel Toep af te laai en te koppel jou rekening!"
     yes delete: "Ja, Sluit My Rekening"
     account delete success: "Jou YouVersion rekening is suksesvol gesluit. Ons hoop dat jy sal voortgaan om betekenisvolle maniere te vind om interaktief met die Bybel te verkeer. Van hierdie apps mag dalk handig te pas kom soos jy aanbeweeg:  <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "As jy jou rekening sluit, sal jy permanent van al jou informasie, geskiedenis, en verpersoonliking (soos notas, boekmerke, kleurmerke, ens.) binne YouVersion.com en die Bible App geillimineer word. Hierdie aksie kan nie deur jou of ons span omgekeer word nie. Indien jy seker is dat jy wil aangaan, gaan voort hieronder."
@@ -444,7 +461,7 @@ af:
       information use title: "Hoe gebruik ons jou inligting?"
       information use text: "Wanneer jy inteken op 'n spesifieke diens wat registrasie benodig, vra ons dat jy persoonlike inligting verstrek. As LifeChurch.tv die inligting anders wil aanwend as gestipuleer tydens registrasie, sal ons voor die tyd jou goedkeuring vra vir die gebruik daarvan. Ons sal nie sensitiewe inligting bymekaarmaak of gebruik vir enige ander doel as wat in ons Privaatheidsbeleid en/of spesifieke diens kennisgewings gestipuleer is nie, tensy ons vooraf jou goedkeuring verkry het. Jy mag ons versoek afkeur om persoonlike inligting aan enige van ons dienste te verskaf, in welke geval LifeChurch.tv nie die gekose dienste aan jou kan verskaf nie."
       information security title: "Hoe ons jou persoonlike inligting beskerm?"
-      information security text: "LiveChurch.tv sal nie jou persoonlike inligting met enige ander instansies nie of buite LifeChurch.tv sonder jou duidelike toestemming nie,  LiveChurch.tv mag slegs jou informasie deel as dit in giedere trou glo dat die toegang, gebruik, voorkeur of bekendmaking van sulke inligting (a) alle toepaskike wetgewing, regulasies, wetlike prosesse of afdwingbare wetgewende navraag nakom (b) toepaslike Terme van Gebruik , insluitend die ondersoek van verbreking daarvan, nakom (c) identifiseer, voorkom of enige soort bedrog, sekuriteit of tegniese kwessies bespeur, of (d) beskerm teen groot skade van regte, besittings of veiligheid van LifeChurch.tv, sy gebruikers of publiek soos of toegelaat as wetgewing.  LifeChurch.tv neem gepastelike sekuritei maatreels om enige ongemagtige toegang, bekendmaking of vernietiging van data te voorkom.  Insluitend interne hersiening van ons interne data insamelaars, storing en prosessering praktyk en sekuriteit maatstawe, so wel as fisiese sekuriteit word beskerm teen ongemagtige toegang tot die sisteem waar persoonlike data gestoor word.  Tensy duidelike toestemming verkry is van uself, beperk LiveChurch sy personeel, kontrakteurs en agente waar die inligting benodig om te kan funksioneer, vir beter dienslewering, toegang tot die persoonlike inligtingd. Die individue is gebind tot konfidensiele kontrakte en is onderworpe aan dissiplinering, insluitend die terminering en kriminele vervolging, indien hul faal om die verantwoordelikhede na te kom."
+      information security text: "LiveChurch.tv sal nie jou persoonlike inligting met enige ander instansies buite LifeChurch.tv sonder jou duidelike toestemming nie.  LiveChurch.tv mag slegs jou informasie deel as dit in goedere trou glo dat die toegang, gebruik, voorkeur of bekendmaking van sulke inligting (a) voldoen aan alle toepaslike wetgewing, regulasie, wetlike proses of afdwingbare wetgewende navraag, b) Gebruik van toepaslike Terme, insluitend die ondersoek van moontlike oortredings daarvan, (c) te beskerm,  voorkom, of andersins spreek bedrog, sekuriteit of tegniese kwessies aan, of (d) beskerm teen dreigende skade van regte, besittings of veiligheid van LifeChurch.tv, sy gebruikers of die publiek soos vereis of toegelaat word deur wetgewing.  LifeChurch.tv neem toepaslike sekuriteitsmaatreëls om enige ongemagtige toegang, bekendmaking of vernietiging van data te voorkom.  Insluitend interne hersiening van ons data versameling, bewarings en prosesserings praktyk en sekuriteits maatstawe, so wel as fisiese sekuriteitsmaatreëls wat beskerm teen ongemagtige toegang tot die sisteem waar persoonlike data gestoor word.  Tensy duidelike toestemming verkry is van uself, beperk LiveChurch sy personeel, kontrakteurs en agente waar die inligting benodig word om te kan funksioneer, vir beter dienslewering, toegang tot die persoonlike inligting. Hierdie individue is gebind tot konfidensiële kontrakte en is onderworpe aan dissiplinering, insluitend die terminering en kriminele vervolging, indien hul faal om die verantwoordelikhede na te kom."
       data integrity title: "Data Integriteit"
       data integrity text: "LifeChurch.tv hersien ons data-insameling, stoor en verwerkings praktyke om te verseker dat ons net die persoonlike informasie insamel, stoor en verwerk wat nodig is om ons dienste te voorsien of verbeter. Ons neem redelike stappe om te verseker dat die persoonlike inligting wat ons verwerk akkuraat, volledig en huidig is, maar ons is afhanklik van ons gebruikers om hul persoonlike inligting op te dateer of te korrigeer wanneer dit nodig is."
       information access title: "Toegang tot en opdatering van persoonlike inligting"
@@ -506,7 +523,7 @@ af:
       blank slate:
         heading: "Beweeg aan, hier is op die oomblik niks om te sien nie (nog nie)"
         description: "Begin om met die Bybel betrokke te raak, of met jou vriende, en hierdie bladsy sal dan 'n geskiedenis vertoon van wat jy gedoen het."
-      visit friend: "Besoek %{friend} se profiel"
+      visit friend: "Besoek %{friend}e se profiel"
       tab activity: "Aktiwiteit"
       tab friends: "Vriende"
       tab notes: "Notas"
@@ -535,7 +552,7 @@ af:
       transfer_too_slow: "Kies 'n kleiner beeld of vind 'n vinniger verbinding"
       picture_invalid_type: "Foto moet JPG, PNG of GIF wees"
       picture_creation form errors: "Die volgende probleem(me) het die opdatering van jou foto verhoed:"
-      updated picture: "Suskses!  Jou foto is verander."
+      updated picture: "Suksesvol! Jou foto is is opgedateer. Dit mag 'n paar minute neem vir jou profielfoto om opgedateer te wees."
       updated notifications: "Suskes! Jou kennisgewing opsies is aangepas."
       notifications token error: "Ongeldige kenteken, teken asseblief in om jou kennisgewing verstellings te wysig."
       notification errors: "Die volgende fout(e) het opdatering van kennisgewings verhoed:"
@@ -610,6 +627,9 @@ af:
       view my plans: "Besigtig My Planne"
       featured plans: "Gewilde Planne"
       view all plans: "Besigtig Alle Planne"
+      reading: "leesstuk"
+      readings: "lees gedeeltes"
+      readings 5 or more: "Lees gedeeltes"
     settings: "Verstellings"
     privacy:
       visible to friends?: "Wil jy hê jou aktiwiteit met hierdie plan moet vir jou vriende sigbaar wees?"
@@ -655,7 +675,7 @@ af:
     done reading: "Gedoen"
     no verses: "Geen vers vir vandag nie"
     no content: "Jou leesplan het geen geskeduleerde inhoud vir hierdie dag nie, so dit sal as voltooid gemerk word."
-    read today: "Wys Vandag se Leeswerk"
+    read today: "Vandag se leesstuk"
     devotional: "Bybeldagboek"
     completion status _ below percentage: "Voltooi"
     current progress html: "Dag <b>%{day}</b> van <b>%{total_days}</b>"
@@ -764,7 +784,7 @@ af:
       description: "Terwyl jy Bybel lees, kies 'n vers en kleurmerk dit. Keer dan terug hierheen om die kleurmerker te sien, te wysig of te verwyder."
     none user: "%{username} het geen kleurmerkers"
     choose color: "Kies Kleur"
-    create success: "Sukses!  Jou kleurmerk is gestoor"
+    create success: "Sukses! Jou kleurmerk is gestoor"
     create failure: "Daar was 'n fout met die stoor van die kleurmerk"
     destroy success: "Kleurmerk verwyder"
     destroy failure: "Daar was 'n fout met die kleurmerk verwydering"
@@ -981,6 +1001,11 @@ af:
         tagline: "Kom ons maak saam Geskiedenis. "
         button: "Deel die Bybel Toep. "
   ui:
+    characters remaining: "Oorblywende karakters"
+    yes button: "Ja"
+    no button: "Nee"
+    loading indicator text: "Besig om te laai..."
+    loading: "Laai"
     pagination:
       next page: "Volgende Bladsy"
       previous page: "Vorige Bladsy"

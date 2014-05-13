@@ -1,4 +1,7 @@
 ca:
+  time:
+    formats:
+      votd: "%-d %B, %Y"
   social:
     intro page:
       main heading: "Convesra & Descoberta"
@@ -187,6 +190,17 @@ ca:
     lower: "o"
     upper: "O"
   moments:
+    scripture unavailable: "Text de la Bíblia no disponible."
+    could not load: "No s'ha pogut carregar"
+    could not load verse: "No s'ha pogut carregar el verset"
+    showing related: "Mostra els moments relacionats"
+    return to: "Torna a "
+    time past: "fa %{ago}"
+    user likes this: "A %{last_liker_link} li agrada"
+    likes count more: "%{likes_count} més"
+    likes count 2 more: "%{likes_count} més"
+    likes count 3 or more: "%{likes_count} més"
+    users like this: "A %{last_liker_link} i a %{more_link} els agrada"
     vod:
       title: "Verset del dia"
     friendship:
@@ -361,6 +375,8 @@ ca:
     last name: "Cognom"
     agreement: "Estic d'acord amb els termes d'ús de YouVersion: %{terms_link}."
     terms and conditions: "Termes i condicions"
+    email: "Correu electrònic"
+    mobile: "Mòbil"
     facebook sign up success: "Molt bé! T'has registrat amb Facebook. Escull un nom d'usuari/ària de YouVersion i una contrasenya per continuar."
     register: "Registre"
     thanks for registering: "Gràcies per registrar-te!"
@@ -536,7 +552,7 @@ ca:
       transfer_too_slow: "Escull una imatge més petita o aconsegueix una connexió més ràpida."
       picture_invalid_type: "La fotografia ha d'ésser JPG, PNG, o GIF"
       picture_creation form errors: "Els errors següents no deixen pujar la teva fotografia:"
-      updated picture: "Has actualitzat la teva foto amb èxit!"
+      updated picture: "L'enhorabona! Has actualitzat la teva imatge. El teu avatar encara pot trigar uns quants minuts per actualitzar-se."
       updated notifications: "Has actualitzat la configuració d'avisos amb èxit!"
       notifications token error: "Símbol invàlid, si us plau inicia la sessió per editar la configuració d'avisos."
       notification errors: "Els errors següents no ens deixen actualitzar els avisos:"
@@ -611,6 +627,9 @@ ca:
       view my plans: "Consulta els meus plans"
       featured plans: "Plans destacats"
       view all plans: "Consulta tots els plans"
+      reading: "lectura"
+      readings: "lectures"
+      readings 5 or more: "lectures"
     settings: "Configuració"
     privacy:
       visible to friends?: "Vols que la teva activitat en aquest pla sigui visible per als teus amics?"
@@ -656,7 +675,7 @@ ca:
     done reading: "Fet"
     no verses: "No hi ha versets per avui"
     no content: "El seu pla no té lectures bíbliques programades per aquest dia, de manera que s'ha marcat com completat."
-    read today: "Visualització de la lectura d'avui"
+    read today: "La lectura d'aquest dia"
     devotional: "Devocionals"
     completion status _ below percentage: "Complet"
     current progress html: "Dia <b>%{day}</b> de <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ ca:
         tagline: "Fem història plegats"
         button: "Comparteix l'aplicació de la Bíblia"
   ui:
+    characters remaining: "caràcters restants"
+    yes button: "Sí"
+    no button: "No"
+    loading indicator text: "Carregant..."
+    loading: "Carregant"
     pagination:
       next page: "Pàgina següent"
       previous page: "Pàgina anterior"

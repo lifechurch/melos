@@ -1,4 +1,7 @@
 uk:
+  time:
+    formats:
+      votd: " %-d %B, %Y"
   social:
     intro page:
       main heading: "Розмова і пізнання"
@@ -187,6 +190,17 @@ uk:
     lower: "або"
     upper: "АБО"
   moments:
+    scripture unavailable: "Текст Писання недоступний"
+    could not load: "Не змогли завантажити"
+    could not load verse: "Не змогли завантажити вірш"
+    showing related: "Показати пов'язані віхи."
+    return to: "Повернутися до"
+    time past: "%{ago} тому"
+    user likes this: "%{last_liker_link} сподобав(ла) це"
+    likes count more: "ще %{likes_count}"
+    likes count 2 more: "ще %{likes_count}"
+    likes count 3 or more: "ще %{likes_count}"
+    users like this: "%{last_liker_link} та %{more_link} вподобали це"
     vod:
       title: "Вірш дня"
     friendship:
@@ -361,6 +375,8 @@ uk:
     last name: "Прізвище"
     agreement: "Я погоджуюсь з %{terms_link} YouVersion."
     terms and conditions: "умовами використання та політикою конфіденційності"
+    email: "Ел.пошта"
+    mobile: "Мобільний"
     facebook sign up success: "Чудово! Ви авторизувалися через Facebook. Оберіть ім'я користувача і пароль для YouVersion і продовжуйте."
     register: "Реєстрація"
     thanks for registering: "Дякуємо за реєстрацію!"
@@ -536,7 +552,7 @@ uk:
       transfer_too_slow: "Оберіть меншу картинку або знайдіть інтернет по-швидше"
       picture_invalid_type: "Зображення повинно бути JPG, PNG, GIF "
       picture_creation form errors: "Наступна помилка(и) трапилася при оновленні вашого зображення:"
-      updated picture: "Ваше зображення успішно оновлено."
+      updated picture: "Успіх! Картинка вашого профілю оновиться через декілька хвилин"
       updated notifications: "Налаштування сповіщень успішно оновлено."
       notifications token error: "Невірне посилання. Будь ласка, увійдіть в систему для зміни параметрів сповіщень."
       notification errors: "Наступна помилка(и) перешкодили оновленню ваших сповіщень:"
@@ -611,6 +627,9 @@ uk:
       view my plans: "Переглянути мої плани"
       featured plans: "Популярні плани"
       view all plans: "Переглянути усі плани"
+      reading: "читання Біблії"
+      readings: "читання Біблії"
+      readings 5 or more: "читання Біблії"
     settings: "Налаштування"
     privacy:
       visible to friends?: "Ви б хотіли, аби ваша праця з цим планом була видима вашим друзям?"
@@ -656,7 +675,7 @@ uk:
     done reading: "Виконано"
     no verses: "Нема віршів на сьогодні"
     no content: "В цьому плані немає читання на сьогодні, тому день був відзначений завершеним."
-    read today: "Дивитися читання на сьогодні"
+    read today: "Читання на сьогодні"
     devotional: "Роздуми"
     completion status _ below percentage: "Завершено"
     current progress html: "День<b>%{day}</b> з <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ uk:
         tagline: "Створюймо історію разом."
         button: "Поділитися Біблією"
   ui:
+    characters remaining: "символів залишилося"
+    yes button: "Так"
+    no button: "Ні"
+    loading indicator text: "Завантажується..."
+    loading: "Завантаження"
     pagination:
       next page: "Наступна сторінка"
       previous page: "Попередня сторінка"

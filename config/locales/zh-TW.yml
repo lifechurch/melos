@@ -1,11 +1,14 @@
 zh-TW:
+  time:
+    formats:
+      votd: "%Y/%B/%-d"
   social:
     intro page:
       main heading: "對話與發現"
-      main description: "與您信賴的朋友一起探索聖經的新方法"
+      main description: "與您信賴的朋友一起探索聖經，一種全新的方式"
       moment:
-        user aaron: "施亞倫"
-        user andy: "王安迪"
+        user aaron: "亞倫"
+        user andy: "安迪"
         timestamp: "5 天前"
         title: "書籤標記了詩篇 31:7 "
         verse: "我要為你的慈愛高興歡喜；因為你見過我的困苦，知道我心中的艱難。"
@@ -70,6 +73,7 @@ zh-TW:
   meta:
     kids_app:
       title: "兒童聖經軟體"
+      description: "兒童聖經軟體在11月28日，也就是感恩節當日推出！互動式的聖經故事呈獻在 iOS 和 Android 平台上的免費軟體。 請在 bible.com/kids 預覽"
     100million:
       title: "從1億開始"
       description: "聖經軟體的安裝量幾乎達到1億次，這真是一個不可思議的里程碑！但是我們才剛剛開始。下載免費的聖經軟體，然后與朋友們分享這個軟體，讓我們一起開創歷史。"
@@ -111,7 +115,7 @@ zh-TW:
   bookmark: "書籤"
   earned badge date: "%{username} 在%{ago}之前獲得的徽章"
   badges title: "徽章"
-  currently selected: "目前已選擇："
+  currently selected: "目前選定："
   read reference: "閱讀 %{reference}"
   compare all versions: "比較所有譯本"
   link will be added: "將被加入"
@@ -163,7 +167,7 @@ zh-TW:
   highlight: "醒目顯示"
   comment: "新評論"
   note: "新筆記"
-  selected: "已選的"
+  selected: "選定"
   chapter: "章節"
   bible: "聖經"
   notes title: "筆記"
@@ -186,6 +190,17 @@ zh-TW:
     lower: "或"
     upper: "或"
   moments:
+    scripture unavailable: "無法使用經文。"
+    could not load: "無法載入"
+    could not load verse: "無法載入經節"
+    showing related: "顯示相關動態"
+    return to: "返回"
+    time past: "%{ago} 前"
+    user likes this: "%{last_liker_link} 點讚這個"
+    likes count more: "另外 %{likes_count} "
+    likes count 2 more: "另外 %{likes_count} "
+    likes count 3 or more: "另外 %{likes_count} "
+    users like this: "%{last_liker_link} 和 %{more_link} 點讚這個"
     vod:
       title: "今日金句"
     friendship:
@@ -248,7 +263,7 @@ zh-TW:
   friendships:
     find friends title: "尋找朋友"
     search by name: "按名字搜尋"
-    search button: "轉到"
+    search button: "開始"
     widget:
       find friends title: "尋找朋友"
       search by name: "按名字搜尋"
@@ -296,7 +311,7 @@ zh-TW:
       draft: "草稿"
     list title: "筆記"
     loading community: "正在加載社群筆記..."
-    no community notes: "未找到任何有參考經文的社群筆記。要建立筆記，請在聖經閱讀器裡選擇一個經節，然後在頂部點選【選中的】按鈕。"
+    no community notes: "未找到任何有參考經文的社群筆記。要建立筆記，請在聖經閱讀器裡選擇一個經節，然後在頂部點選【選定】按鈕。"
     public: "公開"
     private: "保密"
     is private: "您想要訪問的筆記已被保護。"
@@ -328,13 +343,13 @@ zh-TW:
     destroy failure: "刪除筆記時出錯誤"
   ref:
     loading secondary: "載入第二譯本裡的參考經文..."
-    clear verses: "清除選中的經節"
+    clear verses: "清除選定的經節"
     choose book and chapter: "選擇書卷＋章節"
     choose version: "選擇譯本"
     choose second version: "選擇第二個譯本"
     share: "分享"
     share now: "立即分享"
-    selected: "已選的"
+    selected: "選定"
     preferences: "偏好設定"
     listen: "聽"
     parallel: "並排"
@@ -343,7 +358,7 @@ zh-TW:
     settings: "閱讀器設定"
     invalid chapter title: "關於這個譯本"
     invalid chapter text: "這個章節並不存在於此譯本中。"
-    invalid secondary chapter text: "這個章節並不存在於您偏好的第二個譯本中。"
+    invalid secondary chapter text: "這個章節並不存在於您的第二選擇譯本裡。"
     no secondary version title: "關於並排對照"
     no secondary version text: "%{language_name} 只有一個譯本可使用，所以我們不能為您挑選第二個譯本。請您選擇第二個譯本來做並排對照。"
     select another chapter: "選擇不同的章節"
@@ -360,6 +375,8 @@ zh-TW:
     last name: "姓"
     agreement: "我同意 YouVersion 的 %{terms_link} 條款。"
     terms and conditions: "規定和條款"
+    email: "電子郵件"
+    mobile: "行動設備"
     facebook sign up success: "太好了！您已透過 Facebook 授權。請選擇一個 YouVersion 用戶名和密碼來繼續。"
     register: "註冊"
     thanks for registering: "感謝您的註冊！"
@@ -504,7 +521,7 @@ zh-TW:
       general text: "整體協議: 此【使用條款】構成了您與 LifeChurch.tv 之間的整體協議，管制着您 YouVersion 的使用並取代了任何您與 LifeChurch.tv 之間有關於 YouVersion 的在先協議。 您也可能受到附加條款和條件的約束。<br><br>法律與訴訟的選擇。 【使用條款】和您與 LifeChurch.tv 之間的關係將由俄克拉荷馬州的法律管轄並無須考慮法律衝突的條文。您與 LifeChurch.tv 同意並願意在屬於俄克拉荷馬縣的範圍內，接受縣內法院的個人與專屬司法管轄權所管轄。<br><br>條款的豁免與可分割性。LifeChurch.tv 沒有成功履行【使用條款】裡的任何權利或條文並不構成此權利或條文的豁免。如果這【使用條款】的規定被具有司法管轄權的法院判為無效，各方仍然同意法院應該盡力落實條文裡所反映的意圖，還有其他【使用條款】的條文規定仍然保持十足效力與作用。<br><br>沒有生存者取得權與不可轉讓性。您同意您的 LifeChurch.tv 帳戶是不可轉讓的，而且您 LifeChurch.tv 的身份或帳戶裡內容的任何權利將在您去世的時候終止。在收到死亡證書的副本後，LifeChurch.tv 可能中止您的帳戶並永久刪除其中的任何內容。<br><br>訴訟時效法令。您理解並同意無論任何法令或者法律有相反的規定，任何因為使用 YouVersion 而產生或關聯到【使用條款】的索賠或訴訟因由必須在一(1)年內交存檔案，否則被永久撤銷。<br><br>這些在【使用條款】中的章節標題僅為方便而設，並沒有法律或合同效力。"
     profile:
       blank slate:
-        heading: "請到別處瀏覽，這裡還沒東西看 (暫時)"
+        heading: "請到別處瀏覽，這裡暫時沒東西看"
         description: "開始投入聖經、或與您的朋友交流，這頁面將顯示您的活動日誌。"
       visit friend: "查看 %{friend} 的個人檔案"
       tab activity: "活動"
@@ -532,9 +549,10 @@ zh-TW:
       picture error: "抱歉， 更新您的圖片時出錯。"
       picture_empty: "請選擇一張照片來上傳"
       picture_too_large: "圖片應小於1MB"
+      transfer_too_slow: "選擇較低解像度的照片，或者使用更高速度的網路連接"
       picture_invalid_type: "圖片格式應為 JPG、PNG 或 GIF"
       picture_creation form errors: "以下的錯誤妨礙了您照片的更新:"
-      updated picture: "成功了！您已經更新了您的圖片。"
+      updated picture: "已經成功上傳您的照片！您的頭像大概需要數分鐘時間才會更新。"
       updated notifications: "成功了！您已經更新了您的通知設定。"
       notifications token error: "無效的 token ，請登入以編輯您的通知設定。"
       notification errors: "以下的錯誤使您無法更新通知："
@@ -567,7 +585,7 @@ zh-TW:
     labels label: "標籤："
     title: "書籤"
     my labels: "我的標籤"
-    not found: "書籤給您快速的參照並指引到您喜歡的文章，或者您上一次在某一書卷裡讀到的章節。要添加書籤，請在聖經閱讀器裡選擇經文，然後在上方點選【已選擇】按鈕。"
+    not found: "書籤給您快速的參照並指引到您喜歡的文章，或者您上一次在某一書卷裡讀到的章節。要添加書籤，請在聖經閱讀器裡選擇經文，然後在上方點選【選定】按鈕。"
     other user not found: "%{username} 尚未儲存任何書籤。"
     creation form errors: "下列錯誤妨礙了您建立書籤："
     create success: "成了！您的書籤已經儲存。"
@@ -609,6 +627,9 @@ zh-TW:
       view my plans: "查看我的計劃"
       featured plans: "精選計劃"
       view all plans: "查看全部計劃"
+      reading: "個閱讀內容"
+      readings: "個閱讀內容"
+      readings 5 or more: "個閱讀內容"
     settings: "設定"
     privacy:
       visible to friends?: "您是否願意讓朋友看到您的讀經計劃的活動？"
@@ -654,7 +675,7 @@ zh-TW:
     done reading: "完成"
     no verses: "今天沒有經文"
     no content: "您的讀經計劃在今天沒有預訂的內容，因此已經被標記為完成。"
-    read today: "查看今天的閱讀內容"
+    read today: "今天的閱讀內容"
     devotional: "靈修"
     completion status _ below percentage: "完成"
     current progress html: "<b>%{total_days}</b> 天之第 <b>%{day}</b> 天"
@@ -709,7 +730,7 @@ zh-TW:
     day number: "第%{day}天"
     which day in plan: "%{total}之第%{day}天"
     must start to complete: "請開始此計劃來儲存已經完成的閱讀進度！"
-    invalid reference: "抱歉！此讀經內容的參考經文可能不在您選中的譯本裡。請在上方選擇一個不同的譯本。如果您持續看到此信息，請通知我們的  <a href='%{support_url}'>支援團隊</a>！"
+    invalid reference: "抱歉！此讀經內容的參考經文可能不在您選定的譯本裡。請在上方選擇一個不同的譯本。如果您持續看到此信息，請通知我們的  <a href='%{support_url}'>支援團隊</a>！"
     sidebar notice: "您在查看讀經計劃"
     completed notice: "恭喜！您已完成了讀經計劃。"
     exit: "退出"
@@ -783,6 +804,7 @@ zh-TW:
   donate:
     donate now: "現在就捐獻"
     donate now intl: "或者國際捐贈"
+    enter amount: "鍵入一個數目"
     promo 1: "您每捐獻 $1，就有多10 個人能夠在他們的手機上閱讀聖經。"
     promo 2: "有了 YouVersion，聖經時常隨身相伴。請觀看我們的影片。"
     promo 3: "今年將有超過 50 億人使用手機。請現在就捐獻。"
@@ -893,7 +915,7 @@ zh-TW:
         now skipped: "從現在起，將被自動跳過此頁。"
       features:
         read heading: "閱讀聖經"
-        read description: "從<strong>數以百計的聖經版本和語言</strong>中任意選擇。並排比較兩個譯本。甚至可以選擇字體和顯示大小。用您自己喜歡的方式來閱讀線上聖經。"
+        read description: "從<strong>數以百計的聖經譯本和語言</strong>中任意選擇。並排比較兩個譯本。甚至可以選擇字體和顯示大小。用您自己喜歡的方式來閱讀線上聖經。"
         study heading: "研讀聖經"
         study description: "用您喜愛的顏色來設定<strong>醒目標記</strong>、為您喜歡的聖經經節設定<strong>標籤</strong>、還有將您的學習心得寫在筆記裡。您其實不只是花時間閱讀神的話語，您也同時在記錄親身體驗聖經的過程。"
         subscribe heading: "訂閱讀經計畫"
@@ -979,6 +1001,11 @@ zh-TW:
         tagline: "讓我們一同創造歷史"
         button: "分享聖經軟體"
   ui:
+    characters remaining: "可用字符數"
+    yes button: "是"
+    no button: "否"
+    loading indicator text: "載入中..."
+    loading: "載入中"
     pagination:
       next page: "下一頁"
       previous page: "上一頁"

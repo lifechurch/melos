@@ -1,4 +1,7 @@
 sq:
+  time:
+    formats:
+      votd: "%-d %B, %Y"
   social:
     intro page:
       main heading: "Bashkëbisedim & Zbulim"
@@ -187,6 +190,17 @@ sq:
     lower: "ose"
     upper: "OSE"
   moments:
+    scripture unavailable: "Shkrimi është i padisponueshëm."
+    could not load: "Nuk mund ta hap"
+    could not load verse: "Nuk mund ta hap vargun"
+    showing related: "Duke shfaqur çaste të ngjashme"
+    return to: "Kthehu te"
+    time past: "%{ago} më parë"
+    user likes this: "%{last_liker_link} e pëlqen këtë"
+    likes count more: "%{likes_count} më shumë"
+    likes count 2 more: "%{likes_count} më shumë"
+    likes count 3 or more: "%{likes_count} më shumë"
+    users like this: "%{last_liker_link} dhe %{more_link} e pëlqejnë këtë"
     vod:
       title: "Vargu i ditës"
     friendship:
@@ -196,7 +210,7 @@ sq:
       profile update button: "Përditëso profilin tënd"
       sharing text: "Ndaj vargje me rrjetet sociale"
       sharing button: "Aftëso ndarjen"
-      friends text: "Shiko çastet e miqve me Biblën."
+      friends text: "Shiko momentet e miqve me Biblën."
       friends button: "Gjej miq"
     action:
       go to scripture: "Shko te shkrimi"
@@ -239,7 +253,7 @@ sq:
       save button: "Posto"
   friends:
     you have N friends: "Ju keni %{count} miq"
-    none me: "Ndani çastet tuaja me Biblën si shenjuesit, theksimet dhe shënimet me familjen dhe miqtë më të ngushtë."
+    none me: "Ndani momentet tuaja me Biblën si shenjuesit, theksimet dhe shënimet me familjen dhe miqtë më të ngushtë."
     find friends: "Gjej miq"
     blank slate:
       heading: "Aktualisht s'jeni miq"
@@ -265,7 +279,7 @@ sq:
     requests none: "Ju nuk keni asnjë kërkesë miqësie"
     requests no new: "Asnjë kërkesë e re"
     status:
-      pending: "Kërkesa në pritje"
+      pending: "Kërkesë në pritje"
       friends: "Miqtë"
     user wants friendship: "%{user} dëshiron të jetë miku juaj"
     user wants friendship partial: "dëshiron të jetë miku juaj"
@@ -273,11 +287,11 @@ sq:
       remove friend button: "Hiqe mikun"
       remove friend button title: "Hiqe këtë njeri nga lista e miqve tuaj"
       add friend button: "Shto mik"
-      add friend button title: "Dërgoji %{user} një kërkesë miqësie"
+      add friend button title: "Dërgoji anëtarit %{user} një kërkesë miqësie"
       accept button: "Prano"
       accept request button: "Pranoje kërkesën"
       ignore button: "Refuzo"
-      ignore request button: "Injoroje kërkesën"
+      ignore request button: "Refuzoje kërkesën"
   notes:
     none user: "%{username} nuk ka krijuar asnjë shënim akoma."
     blank slate:
@@ -294,14 +308,14 @@ sq:
       private: "Private"
       public: "Publike"
       friends: "Vetëm miqtë"
-      draft: "Draft"
+      draft: "Skicë"
     list title: "Shënime"
     loading community: "Duke hapur shënimet e komunitetit..."
     no community notes: "Nuk u gjet asnjë shënim komuniteti referuar vargjeve të përzgjedhuara. Për të krijuar një shënim, përzgjidh një varg në lexuesin e Biblës dhe më pas kliko butonin Përzgjedhës në krye të lexuesit."
     public: "Publik"
     private: "Privat"
     is private: "Shënimi i kërkuar është privat."
-    draft: "Draft"
+    draft: "Skicë"
     friends: "Miqtë"
     creation form errors: "Gabimi(et) më poshtë ndaluan krijimin e shënimit tuaj:"
     reference field: "Referenca(t):"
@@ -361,6 +375,8 @@ sq:
     last name: "Mbiemri"
     agreement: "Pajtohem me %{terms_link} e YouVersion."
     terms and conditions: "kushtet dhe përcaktimet"
+    email: "E-postë"
+    mobile: "Pajisje e lëvizshme"
     facebook sign up success: "Shkëlqyeshëm! Ju jeni autorizuar me Facebook. Zgjidhni një emër përdoruesi dhe fjalëkalim të YouVersion për të vazhduar."
     register: "Regjistrohu"
     thanks for registering: "Faleminderit për regjistrimin!"
@@ -510,9 +526,9 @@ sq:
       visit friend: "Vizito profilin për %{friend}"
       tab activity: "Aktiviteti"
       tab friends: "Miqtë"
-      tab notes: "Shënime"
+      tab notes: "Shënimet"
       tab bookmarks: "Shenjuesit"
-      tab highlights: "Theksime"
+      tab highlights: "Theksimet"
       tab badges: "Emblemat"
       first name: "Emri"
       last name: "Mbiemri"
@@ -536,7 +552,7 @@ sq:
       transfer_too_slow: "Zgjidh një figurë më të vogël ose gjej një lidhje rrjeti më të shpejtë"
       picture_invalid_type: "Fotoja duhet të jetë JPG, PNG ose GIF"
       picture_creation form errors: "Gabimi(et) më poshtë penguan përditësimin e fotos suaj:"
-      updated picture: "Sukses! Ju e keni përditësuar foton tuaj."
+      updated picture: "Sukses! Ju e përditësuat fotografinë tuaj. Mund të kërkojë disa minuta që avatari tuaj të përditësohet."
       updated notifications: "Sukses! Ju i keni përditësuar cilësimet e njoftimeve."
       notifications token error: "Shenjë e pavlefshme, ju lutem hyni për të redaktuar cilësimet tuaja të njoftimeve."
       notification errors: "Gabimet pasuese penguan përditësimin e njoftimeve tuaja:"
@@ -596,7 +612,7 @@ sq:
       labels field: "Etiketat (të ndara me presje):"
       highlight field: "Thekso: (opsionale)"
       colors field: "Ngjyra:"
-      update button: "Përditëso Shenjuesin"
+      update button: "Përditëso shenjuesin"
       save button: "Ruaj shenjuesin"
   badges:
     earned a badge: "Fituat një emblemë"
@@ -611,6 +627,9 @@ sq:
       view my plans: "Shiko planet e mia"
       featured plans: "Planet e përzgjedhur"
       view all plans: "Shiko të gjitha planet"
+      reading: "lexim"
+      readings: "lexime"
+      readings 5 or more: "lexime"
     settings: "Cilësimet"
     privacy:
       visible to friends?: "A dëshironi që aktiviteti juaj për këtë plan të jetë i dukshëm për miqtë e tu?"
@@ -656,7 +675,7 @@ sq:
     done reading: "I kryer"
     no verses: "Nuk ka vargje për sot"
     no content: "Plani juaj nuk ka lexime biblike të planifikuara për këtë ditë, kështu që është shënuar si i përfunduar."
-    read today: "Shiko leximin e ditës së sotme"
+    read today: "Leximi i kësaj dite"
     devotional: "Devocional"
     completion status _ below percentage: "i përfunduar"
     current progress html: "Dita <b>%{day}</b> nga <b>%{total_days}</b>"
@@ -757,8 +776,9 @@ sq:
     none: "Më vjen keq, audio nuk është e disponueshme për këtë version."
     chapter only: "Më vjen keq, audio nuk është e disponueshme për vargjet. Shihni te lexuesi për kapitujt me audio."
     close player menu: "Mbyll"
+    publisher website: "Uebfaqja e botuesit"
   highlights:
-    title: "Theksime"
+    title: "Theksimet"
     blank slate:
       heading: "Thekso vargje domethënëse"
       description: "Ndërsa e lexoni Biblën, zgjidhni një varg dhe theksoheni atë. Kthehuni këtu për të parë, ndryshuar apo fshirë theksimet tuaja."
@@ -784,7 +804,7 @@ sq:
   donate:
     donate now: "Dhuro tani"
     donate now intl: "ose dhuroni ndërkombëtarisht"
-    enter amount: "Plotëso një shumë"
+    enter amount: "Cakto një shumë"
     promo 1: "Për çdo 1$ që ju jepni, 10 njerëz më shumë mund të përdorin Biblën në pajisjet e tyre të lëvizshme."
     promo 2: "Me YouVersion, Bibla është gjithmonë pranë. Shikoni videon tonë."
     promo 3: "Këtë vit, më shumë se 5 miliardë njerëz do të përdorin një telefon celular. Dhuroni tani."
@@ -981,6 +1001,11 @@ sq:
         tagline: "Le të bëjmë histori së bashku."
         button: "Ndaje Programin e Biblës"
   ui:
+    characters remaining: "karaktere të mbetura"
+    yes button: "Po"
+    no button: "Jo"
+    loading indicator text: "Duke ngarkuar ..."
+    loading: "Duke ngarkuar"
     pagination:
       next page: "Faqja tjetër"
       previous page: "Faqja e mëparshme"

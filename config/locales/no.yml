@@ -1,4 +1,7 @@
 "no":
+  time:
+    formats:
+      votd: "%-d. %B, %Y"
   social:
     intro page:
       main heading: "Samtale og utforske"
@@ -187,6 +190,17 @@
     lower: "eller"
     upper: "ELLER"
   moments:
+    scripture unavailable: "Bibelversjonen er ikke tilgjengelig. "
+    could not load: "Kunne ikke laste. "
+    could not load verse: "Kunne ikke laste verset"
+    showing related: "Viser relaterte hendelser. "
+    return to: "Gå tilbake til"
+    time past: "%{ago} siden"
+    user likes this: "%{last_liker_link} liker dette"
+    likes count more: "%{likes_count} flere"
+    likes count 2 more: "%{likes_count} flere"
+    likes count 3 or more: "%{likes_count} flere"
+    users like this: "%{last_liker_link} og %{more_link} liker dette"
     vod:
       title: "Dagens vers"
     friendship:
@@ -361,6 +375,8 @@
     last name: "Etternavn"
     agreement: "Jeg godtar %{terms_link} til YouVersion."
     terms and conditions: "vilkår"
+    email: "E-post"
+    mobile: "Mobil"
     facebook sign up success: "Flott! Du har godkjent kobling til med Facebook. Velg et YouVersion-brukernavn og -passord for å fortsette."
     register: "Registrer"
     thanks for registering: "Takk for at du registrerte deg!"
@@ -536,7 +552,7 @@
       transfer_too_slow: "Velg et mindre bilde, eller finn en raskere tilkopling"
       picture_invalid_type: "Bilder skal være i JPG, PNG eller GIF-format"
       picture_creation form errors: "Følgende feil hindret oppdatering av bildet ditt:"
-      updated picture: "Bildet ditt er oppdatert."
+      updated picture: "Suksess! Du har oppdatert bildet ditt. Det kan ta opp til flere minutter for avataren din å bli oppdatert."
       updated notifications: "Varslingsinnstillinger er oppdatert."
       notifications token error: "Ugyldig tegn. Logg inn for å endre innstillinger for påminnelser."
       notification errors: "Følgende feil forhindret oppdatering av varslinger:"
@@ -611,6 +627,9 @@
       view my plans: "Vis mine planer"
       featured plans: "Anbefalte planer"
       view all plans: "Vis alle planer"
+      reading: "tekst"
+      readings: "tekster"
+      readings 5 or more: "tekster"
     settings: "Innstillinger"
     privacy:
       visible to friends?: "Ønsker du at dine venner skal kunne se din aktivitet i denne leseplanen? "
@@ -656,7 +675,7 @@
     done reading: "Ferdig"
     no verses: "Ingen bibelvers for i dag"
     no content: "Planen din har ingen skriftsteder for denne dagen, så den er markert som fullført."
-    read today: "Vis dagens lesing"
+    read today: "Dagens lesning"
     devotional: "Andakt"
     completion status _ below percentage: "Fullført"
     current progress html: "Dag <b>%{day}</b> av <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@
         tagline: "La oss gjøre noe historisk."
         button: "Del Bibel-appen"
   ui:
+    characters remaining: "tegn igjen"
+    yes button: "Ja"
+    no button: "Nei"
+    loading indicator text: "Laster..."
+    loading: "Laster"
     pagination:
       next page: "Neste side"
       previous page: "Forrige side"

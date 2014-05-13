@@ -1,4 +1,7 @@
 mk:
+  time:
+    formats:
+      votd: "%B %-d, %Y"
   social:
     intro page:
       main heading: "Разговор и откривање"
@@ -187,6 +190,17 @@ mk:
     lower: "или"
     upper: "ИЛИ"
   moments:
+    scripture unavailable: "Пасусот е недостапен"
+    could not load: "Неможе да се вчита"
+    could not load verse: "Неможе да се вчита стихот"
+    showing related: "Се покажуваат поврзани мигови"
+    return to: "Врати се кон"
+    time past: "пред %{ago}"
+    user likes this: "На %{last_liker_link} му се допаѓа ова"
+    likes count more: "%{likes_count} повеќе"
+    likes count 2 more: "%{likes_count} повеќе"
+    likes count 3 or more: "%{likes_count} повеќе"
+    users like this: "На %{last_liker_link} и %{more_link} му се допаѓа ова"
     vod:
       title: "Стих на денот"
     friendship:
@@ -210,9 +224,9 @@ mk:
       comment: "Коментар"
       comment title: "Види ги сите коментари"
       edit: "Редактирај"
-      edit highlight title: "Уреди го ова нагласување"
-      edit bookmark title: "Уреди го овој обележувач"
-      edit note title: "Уреди ја оваа белешка"
+      edit highlight title: "Редактирај го ова нагласување"
+      edit bookmark title: "Редактирај го овој обележувач"
+      edit note title: "Редактирај ја оваа белешка"
       delete: "Избриши"
       delete confirm: "Дали си сигурен?"
       delete highlight title: "Избриши го ова нагласување"
@@ -224,10 +238,10 @@ mk:
     no new: "Нема нови известувања"
     view all: "Види ги сите известувања"
   likes:
-    create success: "Успех! Твојот лајк е снимен"
-    create failure: "Твоето ми се допаѓа не може да биде зачувано"
-    destroy success: "Ми се допаѓа е избришано"
-    destroy failure: "Твоето ми се допаѓа не може да биде избришано"
+    create success: "Успех! Твојот 'лајк' е снимен"
+    create failure: "Твојот \"лајк\" не може да биде зачуван"
+    destroy success: "\"Лајк\"-от е избришан"
+    destroy failure: "Твојот \"лајк\" не може да биде избришан"
   comments:
     view all N: "Види ги сите %{count} коментари"
     post comment: "Напиши коментар"
@@ -259,7 +273,7 @@ mk:
     create success: "Успех! Сега сте пријатели."
     create failure: "Грешка во креирањето пријателство"
     destroy success: "Барањето е одбиено"
-    destroy failure: "Грешка во одбивањето барање"
+    destroy failure: "Грешка во одбивање на барањето"
     requests title: "Барање за пријателство"
     requests view all: "Види ги сите барања за пријателство"
     requests none: "Немаш барања за пријателство"
@@ -361,6 +375,8 @@ mk:
     last name: "Презиме"
     agreement: "Се согласувам со %{terms_link} на YouVersion."
     terms and conditions: "услови"
+    email: "Е-пошта"
+    mobile: "Мобилен"
     facebook sign up success: "Одлично, се поврза со Facebook! Избери корисничко име и лозинка за да продолжиш."
     register: "Регистрирај се"
     thanks for registering: "Благодариме што се регистрира!"
@@ -536,7 +552,7 @@ mk:
       transfer_too_slow: "Избери помала слика или пронајди побрза врска"
       picture_invalid_type: "Сликата треба да биде во JPG, PNG, or GIF"
       picture_creation form errors: "Следниве грешка(и) спречија ажурирање на твојата слика:"
-      updated picture: "Успешно ја ажурира својата слика."
+      updated picture: "Одлично! Ти ја ажурираше твојата фотографија. Може ќе биде потребно неколку минути за твојот аватар да биде ажуриран. "
       updated notifications: "Успешно ги ажурира уредувањата за известувања."
       notifications token error: "Погрешен токен, логирај се за да ги уредиш уредувањата за пораки."
       notification errors: "Следниве грешка(и) спречија ажурирање на твоите пораки:"
@@ -611,6 +627,9 @@ mk:
       view my plans: "Види ги моите планови"
       featured plans: "Дополнителни планови"
       view all plans: "Види ги сите планови"
+      reading: "читање"
+      readings: "читања"
+      readings 5 or more: "читања"
     settings: "Уредувања"
     privacy:
       visible to friends?: "Дали би сакал твојата активност со овој план да биде видлива за твоите пријатели?"
@@ -656,7 +675,7 @@ mk:
     done reading: "Готово"
     no verses: "Нема стихови за денес"
     no content: "Твојот план нема назначено содржина за овој ден затоа го обележавме како завршен. "
-    read today: "Прочитај ја денешната порака"
+    read today: "Читање за овој ден"
     devotional: "Побожност"
     completion status _ below percentage: "Завршено"
     current progress html: "Ден <b>%{day}</b> од вкупно <b>%{total_days}</b> денови"
@@ -982,6 +1001,11 @@ mk:
         tagline: "Ајде да ја создаваме историјата заедно"
         button: "Сподели ја апликацијата „Библија“"
   ui:
+    characters remaining: "карактери остануваат"
+    yes button: "Да"
+    no button: "Не"
+    loading indicator text: "Се вчитува ..."
+    loading: "Се вчитува"
     pagination:
       next page: "Следна Страница"
       previous page: "Претходна Страница"

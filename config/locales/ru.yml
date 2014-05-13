@@ -186,6 +186,7 @@ ru:
     lower: "или"
     upper: "ИЛИ"
   moments:
+    return to: "Вернуться к"
     vod:
       title: "Стих дня"
     friendship:
@@ -360,6 +361,8 @@ ru:
     last name: "Фамилия"
     agreement: "Я прочитал %{terms_link} YouVersion.com и согласен с ними."
     terms and conditions: "Условия пользования и политика конфиденциальности"
+    email: "Email"
+    mobile: "Приложения"
     facebook sign up success: "Отлично! Вы вошли с помощью Facebook. Чтобы продолжить, выберите имя пользователя YouVersion и пароль."
     register: "Зарегистрироваться"
     thanks for registering: "Спасибо за регистрацию!"
@@ -534,7 +537,6 @@ ru:
       picture_too_large: "Размер фотографии должен быть меньше 1 Мб"
       picture_invalid_type: "Фотография должна быть в формате JPG, PNG, или GIF "
       picture_creation form errors: "Загрузка не удалась по следующим причинам:"
-      updated picture: "Фотография успешно обновлена."
       updated notifications: "Настройки уведомлений успешно обновлены."
       notifications token error: "Некорректная ссылка. Пожалуйста, войдите в систему, чтобы изменить настройки уведомлений."
       notification errors: "Следующая ошибка помешала обновлению настроек:"
@@ -654,7 +656,6 @@ ru:
     done reading: "Готово"
     no verses: "На сегодня стихов нет"
     no content: "В этом плане нет чтения на сегодня, поэтому день был отмечен завершённым."
-    read today: "Просмотреть чтение на сегодня"
     devotional: "Назидание"
     completion status _ below percentage: "Завершено"
     current progress html: "День <b>%{day}</b> из <b>%{total_days}</b>"
@@ -979,6 +980,9 @@ ru:
         tagline: "Давайте творить историю вместе!"
         button: "Поделиться приложением"
   ui:
+    yes button: "Да"
+    no button: "Нет"
+    loading indicator text: "Загрузка..."
     pagination:
       next page: "След. страница"
       previous page: "Пред. страница"

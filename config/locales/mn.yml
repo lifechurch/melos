@@ -1,4 +1,7 @@
 mn:
+  time:
+    formats:
+      votd: "%B %-d, %Y"
   social:
     intro page:
       main heading: "Харилцан Яриа & Өрнөл"
@@ -12,7 +15,7 @@ mn:
         reference: "Дуулал 31:7"
         discover:
           copy: "Найзуудынхаа нэмсэн тодруулгууд, хавчуургууд ба тэмдэглэлүүдээр дамжуулан тэдэнтэй хамт суралц, судал."
-          button: "Би яаж эхлэх вэ?"
+          button: "Би хаанаас эхлэх вэ?"
         share:
           copy: "Бичээсийн тухай илэн далангүй яриагаа хуваалц."
           button: "Найзуудаа хайхаар эхлээрэй."
@@ -70,6 +73,7 @@ mn:
   meta:
     kids_app:
       title: "Хүүхдэд зориулсан Библи Апп"
+      description: "Хүүхдийн Библи Апп 11 сарын 28 нд Талархлын баяраар гарна. Идэвхитэй Библийн түүхүүдийг iOS ба Android д зориулсан үнэгүй аппаар татаж аваарай. Энэ тухай bible.com/kids ээс хараарай."
     100million:
       title: "100 Саяаас Эхэлдэг"
       description: "Библи Апп бараг 100 сая удаа суулгагдсан-гайхамшигтай амжилт! Энэ бол зөвхөн эхлэл. Библи Апп-г үнэгүйгээр өнөөдөр суулган-найзуудтайгаа хуваалц. Хамтдаа энэ түүхийг бичилцье."
@@ -186,13 +190,24 @@ mn:
     lower: "эсвэл"
     upper: "ЭСВЭЛ"
   moments:
+    scripture unavailable: "Боломжгүй Библийн орчуулга."
+    could not load: "Ачаалах боломжгүй"
+    could not load verse: "Ишлэл ачаалах боломжгүй"
+    showing related: "Үүнтэй холбоотой цаг үеийг харуулж байна"
+    return to: "Рүү Буцах"
+    time past: "%{ago} ѳмнѳ"
+    user likes this: "%{last_liker_link} линк таалагдсан"
+    likes count more: "%{likes_count} илүү"
+    likes count 2 more: "%{likes_count} илүү"
+    likes count 3 or more: "%{likes_count} илүү"
+    users like this: "%{last_liker_link} ба %{more_link} энэ таалагдсан"
     vod:
-      title: "Ѳнѳѳдѳрийн Ишлэл"
+      title: "Ѳнѳѳдрийн Ишлэл"
     friendship:
       now friends: "Та энэ хүнтэй найз"
     cta:
       profile update text: "Найзууддаа таныг олоход туслах уу."
-      profile update button: "Хувийн Мэдээлэлээ Шинэчилэх"
+      profile update button: "Хувийн мэдээллээ шинэчилэх"
       sharing text: "Нийтийн сүлжээгээр ишлэлүүд хуваалцах"
       sharing button: "Хуваалцах боломжтой"
       friends text: "Найзуудынхаа Библид өнгөрүүлж байгаа мөчүүдийг харах"
@@ -201,7 +216,7 @@ mn:
       go to scripture: "Бичээс рүү оч"
       load more: "Илүү ачаалах"
       like: "Таалагдсан"
-      liked: "таалагдсан "
+      liked: "Таалагдсан "
       like title: "Үүнийг лайк хийх"
       last comment: "Сүүлийн коммент"
       share: "Хуваалцах"
@@ -219,9 +234,9 @@ mn:
       delete note title: "Энэ тэмдэглэлийг устга"
   notifications:
     title: "Мэдэгдлүүд"
-    none: "Ямар ч санамж байхгүй"
-    no new: "Шинэ санамж байхгүй"
-    view all: "Бүх санамжуудыг харах"
+    none: "Ямар ч мэдэгдэл байхгүй"
+    no new: "Шинэ мэдэгдэл байхгүй"
+    view all: "Бүх Мэдэгдлүүдыг харах"
   likes:
     create success: "Таны Лайк амжилттай хадгалагдлаа"
     create failure: "Лайк хадгалагдах боломжгүй"
@@ -237,7 +252,7 @@ mn:
     form:
       save button: "Оруулах"
   friends:
-    you have N friends: "Танд  %{тоо} найзууд байна"
+    you have N friends: "Танд  %{count} найзууд байна"
     none me: "Библи унших явцдаа хийсэн хавчуурга, тодруулга ба тэмдэглэлээ дотно найзууд болон гэр бүлийнхэнтэйгээ хуваалц."
     find friends: "Найзууд олох"
     blank slate:
@@ -360,6 +375,8 @@ mn:
     last name: "Овог "
     agreement: "Би YouVersion-ий үйлчилгээний %{terms_link} -ийг хүлээн зөвшѳѳрч байна."
     terms and conditions: "журам болон нөхцөл"
+    email: "И-мэйл"
+    mobile: "Хөдөлгөөнт"
     facebook sign up success: "Гайхалтай!  Таны Facebook-ээр дамжуулан бүртгэл үүсгэх эрх олгогдлоо. YouVersion-ий хэрэглэгчийн нэр болон нууц үгээ сонгон цааш үргэлжлүүлнэ үү. "
     register: "Бүртгүүлэх"
     thanks for registering: "Бүртгүүлсэнд тань баярлалаа!"
@@ -504,9 +521,9 @@ mn:
       general text: "do not translate"
     profile:
       blank slate:
-        heading: "Цааш яв, энд үзэх зүйл (одоогоор)  алга"
+        heading: "Цааш үз, энд үзэх зүйл (одоогоор)  алга"
         description: "Библитэй эсвэл найзуудтайгаа холбогдож эхлэ, тэгвэл энэ хуудас таны хийсэн зүйлсийг харуулна."
-      visit friend: " %{найз} -н хуудсаар аялах"
+      visit friend: " %{friend} -н хуудсаар аялах"
       tab activity: "Үйл ажиллагаа"
       tab friends: "Найзууд"
       tab notes: "Тэмдэглэлүүд"
@@ -532,9 +549,10 @@ mn:
       picture error: "Уучлаарай, таны зургыг шинэчлэхэд алдаа гарлаа."
       picture_empty: "Байршуулах зургаа сонгоно уу"
       picture_too_large: "Зурагны хамгийн дээд хэмжээ нь 1MB"
+      transfer_too_slow: "Жижиг зураг сонгох эсвэл хурдан холболт олох"
       picture_invalid_type: "Таны зураг JPG, PNG, or GIF файлаар байж болно."
       picture_creation form errors: "Дараахи алдаа(нуудаас) болж таны зураг байршуулагдсангүй:"
-      updated picture: "Та зургаа амжилттай шинэчиллээ!"
+      updated picture: "Амжилт! Та зургаа шинэчилсэн. Зураг чинь хэдэн минутын дараа нь шинэчилэгдэнэ."
       updated notifications: "Та мэдэгдлийн тохиргоогоо амжилттай шинэчиллээ!"
       notifications token error: "Боломжгүй тэмдэг, мэдэгдэлийнхээ тохиргоор өөрчлөхийн тулд нэвтэрч орно уу."
       notification errors: "Таны мэдээлэлийг шинэчлэх үед дараах алдаа(нууд) гарлаа:"
@@ -573,7 +591,7 @@ mn:
     create success: "Хавчуурга амжилттай хадгалагдсан."
     destroy success: "Хавчуурга устгагдлаа"
     destroy failure: "Энэ хавчуургыг устгахад алдаа гарлаа"
-    update success: "Хавчуурга Шинэчлэгдлээ"
+    update success: "Хавчуурга шинэчлэгдлээ"
     labels placeholder: "Шошгуудыг таслалаар хуваах"
     save: "Хавчуурга Хадгалах"
     confirm delete: "Тиймээ, би итгэлтэй байна"
@@ -609,14 +627,17 @@ mn:
       view my plans: "Тѳлѳвлѳгѳѳнүүдээ Харах"
       featured plans: "Тодорсон Төлөвлөгөөнүүд"
       view all plans: "Бүх Тѳлѳвлѳгѳѳнүүдийг Харах"
+      reading: "уншлага"
+      readings: "уншлагууд"
+      readings 5 or more: "уншлагууд"
     settings: "Тохиргоо "
     privacy:
-      visible to friends?: "Та найзууддаа өөрийн үйл ажиллагааг харуулмаар байна уу?"
+      visible to friends?: "Та найзууддаа өөрийн Уншлагын төлөвлөгөөний үйл ажиллагааг харуулмаар байна уу?"
       private: "Хувийн"
       public: "Нийтийн "
     title: "Унших Төлөвлөгөөнүүд"
     browse by category: "Тѳрѳл Үзэх"
-    browse plans: "Тѳлѳвлөгѳѳнүүд %{category} Үзэх"
+    browse plans: "%{category}-н Тѳлѳвлөгѳѳнүүд Үзэх"
     swap list localization: "(<a href='%{swap_link}'>Харах %{swap_locale}</a>)"
     showing language filtered: "Зөвхөн %{lang_name} хэл дээр боломжтой төлөвлөгөөг харуулж байна."
     all: "Бүгд"
@@ -645,7 +666,7 @@ mn:
     filter by lang: "Унших төлөвлөгөөнүүдийг Щэлээр Шүүх"
     plan settings: "Тѳлѳвлѳгѳѳний Тохиргоо"
     search: "Хайх"
-    search placeholder: "Тѳлѳвлѳгѳѳнүүд %{category} Хайх"
+    search placeholder: "%{category}-н Тѳлѳвлѳгѳѳнүүд Хайх"
     subscribe to plan: "Энэ Төлөвлөгөөг Эхлэх"
     previous day: "Ѳмнѳх  Ѳдѳр"
     next day: "Дараагийн Ѳдѳр"
@@ -654,7 +675,7 @@ mn:
     done reading: "Болсон"
     no verses: "Өнөөдөр унших зүйл алга."
     no content: "Энэ өдөр таны уншлагын төлөвлөгөөнд ямар нэгэн зүйл байхгүй тул уншсан гэж тэмдэглэгдсэн байна."
-    read today: "Өнөөдрийн унших төлөвлөгөөг үзэх"
+    read today: "Ѳнѳѳдрийн уншлага"
     devotional: "Чимээгүй Цаг"
     completion status _ below percentage: "Дууссан"
     current progress html: "<b>%{total_days}</b> -с <b>%{day}</b> өдөр"
@@ -755,11 +776,12 @@ mn:
     none: "Уучлаарай, энэхүү орчуулганд аудио боломжгүй байна."
     chapter only: "Уучлаарай, ишлэлүүдийг аудиогоор сонсох боломжгүй. Уншигчийн бүлэг сонгох хэсгээс аудио боломжтой эсэхийг хараарай."
     close player menu: "Хаах"
+    publisher website: "Нийтлэгчийн сайт"
   highlights:
     title: "Тодруулгууд"
     blank slate:
       heading: "Онцгой ишлэлүүдээ тодруул"
-      description: "Библи унших явцдаа ишлэл сонгон түүнийгээ тодруул. Тодруулгуудаа харах, засах, эсвэл устгахын тулд буцах"
+      description: "Библи унших явцдаа ишлэл сонгон түүнийгээ тодруул. Тодруулгуудаа харах, засах, эсвэл устгахын тулд энд буцах"
     none user: "%{username} тодруулгагүй"
     choose color: "Ѳнгѳ Сонгох"
     create success: "Тодруулга амжилттай хадгалагдсан"
@@ -782,6 +804,7 @@ mn:
   donate:
     donate now: "Одоо Хандивлах"
     donate now intl: "эсвэл олон улсаас хандивлах"
+    enter amount: "Хандивын нийт дүн оруулах"
     promo 1: "Таны өргөх 1$ тутамд, 10-н хүн гар утсан дээрээ Библитэй болох боломжтой. "
     promo 2: "YouVersion-той байхад Библи бидэнд үргэлж ойр. Бидний бичлэгийг үзээрэй."
     promo 3: "Энэ жил 5 тэрбум гаруй хүн гар утас ашиглах төлөвтэй байна. Одоо Хандивлаарай."
@@ -978,6 +1001,11 @@ mn:
         tagline: "Хамтдаа түүхийг өнөөдөр бичье"
         button: "Библийн Апп Дамжуулах"
   ui:
+    characters remaining: "тэмдэгтүүд үлдсэн"
+    yes button: "Тийм"
+    no button: "Үгүй"
+    loading indicator text: "Ачааллаж байна..."
+    loading: "Ачааллаж байна"
     pagination:
       next page: "Дараагийн хуудас"
       previous page: "Өмнөх хуудас"

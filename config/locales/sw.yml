@@ -1,10 +1,13 @@
 sw:
+  time:
+    formats:
+      votd: "%M %-d, %M"
   social:
     intro page:
       main heading: "Mazungumzo & Ungunduzi"
       main description: "Njia mpya ya kuchunguza Biblia na marafiki unaowaamini"
       moment:
-        user aaron: "Haruni Chuna"
+        user aaron: "Haruni Chuma"
         user andy: "Andi Askari"
         timestamp: "siku 5 zilizopita"
         title: "Zaburi 31:7 imealamishwa"
@@ -70,6 +73,7 @@ sw:
   meta:
     kids_app:
       title: "Apu ya Biblia kwa ajili ya watoto"
+      description: "Apu ya Bibilia ya watoto itazinduliwa Novemba 28, Siku ya kutoa shukran! Hadithi zinazojumuisha za Bibilia katika apu ya bure kwa iOS na Android. Angalia kidokezo kwenye bible.com/kids"
     100million:
       title: "Inaanza na milioni 100"
       description: "App ya Biblia imewekwa karibia mara milioni 100 - ni hatua ua ajabu! Lakini ndio kwanza tumeanza. Download bure App yaBiblia leo -  na washirikisha marafiki zako. Tutengeneze ukumbusho pamoja."
@@ -186,6 +190,17 @@ sw:
     lower: "au"
     upper: "AU"
   moments:
+    scripture unavailable: "Andiko halipatikani"
+    could not load: "Haikuweza kupakia"
+    could not load verse: "Haikuweza kupakia fungu"
+    showing related: "Inaonyesha mambo yanayohusiana na wakati"
+    return to: "Rudi kwenye"
+    time past: "%{ago} iliyopita"
+    user likes this: "%{last_liker_link} amependa hii"
+    likes count more: "%{likes_count} zaidi"
+    likes count 2 more: "%{likes_count} zaidi"
+    likes count 3 or more: "%{likes_count} zaidi"
+    users like this: "%{last_liker_link} na %{more_link} penda hii"
     vod:
       title: "Fungu la siku"
     friendship:
@@ -360,6 +375,8 @@ sw:
     last name: "Jina la mwisho"
     agreement: "Nakubaliana na YouVersion %{terms_link}."
     terms and conditions: "masharti na sheria"
+    email: "Barua pepe"
+    mobile: "rununu"
     facebook sign up success: "Vizuri! umeidhinishwa na facebook. chagua jina la mtumiaji na kitambulisho cha siri ili kuendelea."
     register: "Jiunge"
     thanks for registering: "Asante kwa kujiunga!"
@@ -532,9 +549,10 @@ sw:
       picture error: "Samahani, kulikuwa na hitilafu katika uwezeshaji wa picha yako."
       picture_empty: "Tafadhali chagua picha ya kuweka kwenye mtandao"
       picture_too_large: "Picha isizidi megabyte 1"
+      transfer_too_slow: "Chagua picha iliyo ndogo kiasi ama utafute mtandao ulio kasi"
       picture_invalid_type: "Picha iwe aina ya JPG, PNG, au GIF"
       picture_creation form errors: "(Ma)kosa yanayofuata yalizuia picha yako kusahihishwa"
-      updated picture: "Mafanikio! umeweza kubadili picha yako."
+      updated picture: "Mafanikio! Umeweka picha mpya. Inaweza kuchukua dakika kadhaa kwa ajili ya avatar yako kuwezeshwa. "
       updated notifications: "Mafanikio! umewezesha taarifa yako ya mazingira.\n"
       notifications token error: "Ishara hii lina kosa, tafadhali jisajili ili ubadilishe mazingira ya akaunti yako."
       notification errors: "(ma)kosa haya yalizuia taarifa zako kusahihishwa"
@@ -609,6 +627,9 @@ sw:
       view my plans: "Angalia Mipango Yango"
       featured plans: "Vipengele vya Mipango"
       view all plans: "Angalia Mipango Yote"
+      reading: "kusoma"
+      readings: "masomo"
+      readings 5 or more: "masomo"
     settings: "mipangilio"
     privacy:
       visible to friends?: "Ungependa shughuli yako wa  mpango huu wa kuonekana na marafiki wako?"
@@ -654,7 +675,7 @@ sw:
     done reading: "Imemalizika"
     no verses: "Hakuna mistari ya Bibilia leo"
     no content: "Mpango wako hauna kitu iliyopangiwa leo kwa hivyo imeoneshwa kuwa umemaliza."
-    read today: "angalia usomaji wa leo"
+    read today: "Usomaji wa leo"
     devotional: "Ibada"
     completion status _ below percentage: "Maliza"
     current progress html: "Siku <b> %{day} </b> ya <b> %{total_days} </b>"
@@ -755,6 +776,7 @@ sw:
     none: "Samahani sauti haipo kwenye toleo hili"
     chapter only: "Samahani, sauti haipo kwenye mistari hii. Soma kwa msomo ili upate sauti ya mlango."
     close player menu: "funga"
+    publisher website: "Mtandao wa mchapishaji"
   highlights:
     title: "Mambo muhimu:"
     blank slate:
@@ -782,6 +804,7 @@ sw:
   donate:
     donate now: "Changia Sasa"
     donate now intl: "au saidia/kuchangia kimataifa"
+    enter amount: "Weka kiasi unachotaka"
     promo 1: "Kwa $1 yote utakayotoa unawapa zaidi ya watu 10 uwezo wa kupata Bibilia kwa simu ya rununu yao "
     promo 2: "Na YouVersion, Bibila iko karibu kila wakati. Tazama video yetu."
     promo 3: "Mwaka huu zaidi ya watu billioni 5 watatumia simu za rununu. Toa mchango saa hii."
@@ -978,6 +1001,11 @@ sw:
         tagline: "Tutengeneze ukumbusho pamoja."
         button: "Shirikisha App ya Biblia"
   ui:
+    characters remaining: "herufi zilizobakia"
+    yes button: "Ndio"
+    no button: "Apana"
+    loading indicator text: "inatafuta.."
+    loading: "inapakia"
     pagination:
       next page: "Kurasa inayofuata"
       previous page: "Kurasa iliyopita"

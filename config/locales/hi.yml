@@ -1,14 +1,34 @@
 hi:
+  time:
+    formats:
+      votd: "%B %-d, %Y"
   social:
     intro page:
+      main heading: "वार्तालाप और खोज"
+      main description: "अपने भरोसे के मित्रों संग बाइबिल नए तरीके से अध्ययन करे "
       moment:
         user aaron: "आरोन स्टील "
         user andy: "एंडी नाइट "
+        timestamp: "5 दिवस पहले "
+        title: "भजन संहिता 31:7 बुकमार्क हुआ "
+        verse: "आपने मेरी परेशानियों और अंतरात्मा की मनोवेदना को नज़र अंदाज़ नहीं किया। में आपके इस अद्भुत और निस्वार्थ प्यार के लिए जीवन भर आभारी रहूँगा।"
+        reference: "भजन संहिता 31:7 "
+        discover:
+          copy: "मित्रों के साथ बाइबिल अध्ययन करे जब वह हाईलाइट,बुकमार्क और नोट जोड़ रहे हैं। "
+          button: "कहाँ से आरंभ करू?"
+        share:
+          copy: "विश्वसनीय मित्रों के साथ खरा वार्तालाप और बाइबिल का गहरा अध्ययन करे "
+          button: "मित्रों को ढूंढ़कर आओ शुरुआत करे "
+        likes:
+          info: "और इस तरह के 4 और लाइक्स "
         comments:
           first:
+            text: "मुझे आज इस चिंतन विषय की अति आवश्यकता थी। पाठक योजना तुरंत पटरी पर करे। "
             time: "3 घंटे के पहले "
           second:
+            text: "आमीन,आपको ईमेल तुरंत भेजा जा रहा हैं। "
             time: "27 मिनट के पहले "
+          field placeholder: "कृपया कमेंट करे "
     widget:
       timeline: "टाइमलाइन "
       no activity yet: "अभी तक कोई गतिविधि नहीं पाया गया हैं "
@@ -53,6 +73,7 @@ hi:
   meta:
     kids_app:
       title: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App "
+      description: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App 28 नवंबर 2013 से प्रक्षेपित किया गया हैं। इंटरएक्टिव बाइबिल की कहानीयाँ निःशुल्क IOS और एंड्राइड App पर उपलब्ध हैं। पूर्वालोकन bible.com/kids पर देखे। "
     100million:
       title: "100 मिलियन से शुभारंभ हुआ। "
       description: "100 मिलियन से अधिक इन्स्टाल के साथ एक नया कीर्तिमान रचित हुआ। यह मात्र शुरुआत हैं। निशुल्क बाइबिल App आज ही डाउनलोड कर अपने  मित्रों के  साथ शेयर करे। आओ हम साथ मिलकर इतिहास की रचना करे। "
@@ -169,6 +190,17 @@ hi:
     lower: "या   "
     upper: "या "
   moments:
+    scripture unavailable: "धर्मग्रंथ उपलब्ध नहीं हैं। "
+    could not load: "लोड नहीं हो सका "
+    could not load verse: "पद्य लोड नहीं हो सका "
+    showing related: "संबंधित क्षण दर्शाया जा रहा हैं "
+    return to: "फिर प्रारंभ करे "
+    time past: "%{ago} पूर्व "
+    user likes this: "%{last_liker_link} इसे पसंद करिए "
+    likes count more: "%{likes_count} और अधिक "
+    likes count 2 more: "%{likes_count} और अधिक "
+    likes count 3 or more: "%{likes_count} और अधिक "
+    users like this: "%{last_liker_link} और %{more_link} इसे पसंद करिए "
     vod:
       title: "आज का पद्य "
     friendship:
@@ -186,6 +218,7 @@ hi:
       like: "पसंद करे "
       liked: "पसंदित"
       like title: "इसे पसंद करे "
+      last comment: "आखरी कमेंट "
       share: "शेयर"
       share title: "इसे अपने मित्रों और परिवार के साथ शेयर करे "
       comment: "टिप्पणी"
@@ -237,6 +270,7 @@ hi:
       search button: "गो "
     offer success: "मित्रता अनुरोध भेजा गया "
     offer failure: "मित्रता अनुरोध भेजने में त्रुटि पाया गया "
+    create success: "मुबारक हो अभी आप मित्र हुए। "
     create failure: "मित्रता बनाने में त्रुटि "
     destroy success: "अनुरोध अस्वीकार "
     destroy failure: "अनुरोध अस्वीकार करने में त्रुटि "
@@ -341,6 +375,8 @@ hi:
     last name: "आखरी नाम"
     agreement: "मैं YouVersion के %{terms_link} से सहमत हूँ।"
     terms and conditions: "संधर्भ और शर्तें"
+    email: "इमेल"
+    mobile: "मोबाइल"
     facebook sign up success: "आप फेसबुक द्वारा अधिकृत हैं। YouVersion username और पासवर्ड चुनिए।"
     register: "दर्ज कीजिए"
     thanks for registering: "दर्ज करने के लिए धन्यवाद!"
@@ -516,7 +552,7 @@ hi:
       transfer_too_slow: "छोटा चित्र या तेज़ गति वाला इंटरनेट कनेक्शन चुने "
       picture_invalid_type: "तस्वीर JPG,PNG या  GIF फॉर्मेट में अनिवार्य हैं "
       picture_creation form errors: "निम्नलिखित error(s)ke कारण आपकी तस्वीर अपलोड नहीं हो सका:"
-      updated picture: "मुबारक हो! आपका तस्वीर अपडेट हुआ।"
+      updated picture: "मुबारक हो ! आपका पिक्चर अपडेट हो गया हैं। अवतार अपडेट होने में समय लग सकता हैं। "
       updated notifications: "मुबारक हो! आपके notifications की सेटिंग्स अपडेट हुआ।"
       notifications token error: "अमान्य टोकन ,कृपया फिर से साइन इन कर अपना notification सेटिंग्स संपादन करें।"
       notification errors: "निम्नलिखित error(s) के कारण आपकी टिपण्णी updation में असमर्थ:"
@@ -537,6 +573,7 @@ hi:
       friendships: "मुझे मेरे मित्र अनुरोध सूचित करे "
       moments: "मेरे मित्रों के गतिविधियों से मुझे अवगत कराए "
       comments: "मेरी गतिविधि पर कमेंट मुझे सूचित कराये "
+      likes: "मेरी गतिविधियों पर लाइक्स सूचित करे "
   bookmarks:
     new: "नया बुकमार्क "
     edit: "संपादन"
@@ -590,6 +627,9 @@ hi:
       view my plans: "मेरी योजनाएँ देखे "
       featured plans: "प्रधान योजनाएँ "
       view all plans: "समस्त योजनाएँ "
+      reading: "अध्ययन "
+      readings: "अध्ययन "
+      readings 5 or more: "अध्ययन "
     settings: "सेटिंग्स"
     privacy:
       visible to friends?: "इस पाठक योजना के साथ अपनी गतिविधि मित्रों के बीच प्रत्य्क्ष करना चाहते हैं?"
@@ -635,7 +675,7 @@ hi:
     done reading: "Done "
     no verses: "आज के लिए कोई पद्य नहीं हैं "
     no content: "आपके रोजाना बाइबिल पाठक योजना में आज के लिए कोई पाठ निर्धारित नहीं हैं । इस लिए यह योजना समाप्त रेखाकिंत किया गया हैं।"
-    read today: "आज का पाठ देखें"
+    read today: "आज का अध्ययन पाठ । "
     devotional: "धार्मिक"
     completion status _ below percentage: "पूर्ण"
     current progress html: "<b>%{total_days}</b>में से दिवस<b>%{day}</b>"
@@ -736,6 +776,7 @@ hi:
     none: "क्षमा कीजिए,ऑडियो उपलब्ध नहीं हैं।"
     chapter only: "इन वचनों के लिए ऑडियो उपलब्ध नहीं हैं। कृपया इस के लिए क्षमा कीजिए। ऑडियो के लिए अध्याय को रीडर में देखे।"
     close player menu: "क्लोज "
+    publisher website: "प्रकाशक का वेबसाइट"
   highlights:
     title: "हाइलाइट"
     blank slate:
@@ -960,6 +1001,11 @@ hi:
         tagline: "आइये एक साथ इतिहास बनाए।"
         button: "बाइबिल app को शेयर करें "
   ui:
+    characters remaining: "बाकी अक्षर "
+    yes button: "हाँ"
+    no button: "नहीं "
+    loading indicator text: "लोडिंग......"
+    loading: "लोडिंग "
     pagination:
       next page: "अगला पृष्ट "
       previous page: "पिछला पृष्ट \n"

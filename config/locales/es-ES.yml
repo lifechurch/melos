@@ -1,4 +1,7 @@
 es-ES:
+  time:
+    formats:
+      votd: "%-d %B, %Y"
   social:
     intro page:
       main heading: "Conversación y descubrimiento"
@@ -187,6 +190,17 @@ es-ES:
     lower: "o"
     upper: "O"
   moments:
+    scripture unavailable: "Escritura no disponible."
+    could not load: "No se puede cargar"
+    could not load verse: "No se puede cargar le versículo"
+    showing related: "Mostrando momentos relacionados"
+    return to: "Volver a "
+    time past: "hace %{ago}"
+    user likes this: "%{last_liker_link} le gusta esto"
+    likes count more: "%{likes_count} más"
+    likes count 2 more: "%{likes_count} más"
+    likes count 3 or more: "%{likes_count} más"
+    users like this: "%{last_liker_link} y %{more_link} les gusta esto"
     vod:
       title: "Versículo del día"
     friendship:
@@ -361,6 +375,8 @@ es-ES:
     last name: "Apellido"
     agreement: "Estoy de acuerdo con los %{terms_link} de YouVersion."
     terms and conditions: "términos y condiciones"
+    email: "Correo electrónico"
+    mobile: "Móvil"
     facebook sign up success: "¡Enhorabuena! Has autorizado con Facebook. Elige un nombre de usuario y contraseña de YouVersion para continuar."
     register: "Registrarse"
     thanks for registering: "¡Gracias por registrarse!"
@@ -536,7 +552,7 @@ es-ES:
       transfer_too_slow: "Elige una imagen más pequeña o encuentra una conexión más rápida."
       picture_invalid_type: "La foto debe ser JPG, PNG, o GIF"
       picture_creation form errors: "Los siguientes errores impidieron la actualización de tu foto:"
-      updated picture: "¡Has actualizado tu foto con éxito!"
+      updated picture: "¡Genial! Has actualizado tu foto. Puede tardar unos minutos en estar actualizado tu avatar."
       updated notifications: "¡Has actualizado la configuración de tus notificaciones con éxito!"
       notifications token error: "Elemento inválido, por favor, inicia sesión para editar la configuración de tus notificaciones."
       notification errors: "Los siguientes errores impidieron la actualización de tus notificaciones:"
@@ -611,6 +627,9 @@ es-ES:
       view my plans: "Ver mis Planes de lectura"
       featured plans: "Planes disponibles"
       view all plans: "Ver todos los planes de lectura"
+      reading: "leyendo"
+      readings: "lecturas"
+      readings 5 or more: "lecturas"
     settings: "Configuración"
     privacy:
       visible to friends?: "¿Te gustaría que tu actividad en este plan sea visible para tus amigos?"
@@ -656,7 +675,7 @@ es-ES:
     done reading: "Hecho"
     no verses: "No hay versículos para hoy"
     no content: "Tu plan no tiene horario de lecturas para este día, así que ha sido marcado como completo."
-    read today: "Ver la lectura del día de hoy"
+    read today: "La lectura de hoy"
     devotional: "Devocional"
     completion status _ below percentage: "Finalizado"
     current progress html: "Día <b>%{day}</b> de <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ es-ES:
         tagline: "Hagamos historia juntos"
         button: "Comparte la aplicación"
   ui:
+    characters remaining: "caracteres restantes"
+    yes button: "Si"
+    no button: "No"
+    loading indicator text: "Cargando ..."
+    loading: "Cargando"
     pagination:
       next page: "Página siguiente"
       previous page: "Página anterior"

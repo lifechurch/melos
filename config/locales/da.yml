@@ -1,4 +1,7 @@
 da:
+  time:
+    formats:
+      votd: "%-d %B %Y"
   social:
     intro page:
       main heading: "Konversation & Opdagelse"
@@ -187,6 +190,17 @@ da:
     lower: "eller"
     upper: "ELLER"
   moments:
+    scripture unavailable: "Skriftsted utilgængeligt."
+    could not load: "Kan ikke indlæses"
+    could not load verse: "Kan ikke indlæse vers"
+    showing related: "Viser relaterede øjeblikke"
+    return to: "Gå tilbage til"
+    time past: "%{ago} siden"
+    user likes this: "%{last_liker_link} synes om dette"
+    likes count more: "%{likes_count} mere"
+    likes count 2 more: "%{likes_count} mere"
+    likes count 3 or more: "%{likes_count} mere"
+    users like this: "%{last_liker_link} og %{more_link} synes om dette"
     vod:
       title: "Dagens vers"
     friendship:
@@ -361,6 +375,8 @@ da:
     last name: "Efternavn"
     agreement: "Jeg er enig med YouVersion %{terms_link}."
     terms and conditions: "aftaler og betingelser"
+    email: "Email"
+    mobile: "Mobil"
     facebook sign up success: "Godt! Du godkendte via Facebook. Vælg et YouVersion brugernavn og password for at fortsætte."
     register: "Registrér"
     thanks for registering: "Tak for registreringen"
@@ -536,7 +552,7 @@ da:
       transfer_too_slow: "Vælg et mindre billede eller en hurtigere forbindelse"
       picture_invalid_type: "Billede skal være JPG, PNG eller GIF"
       picture_creation form errors: "Følgende fejl forhindrede opdateringen af dit billede:"
-      updated picture: "Succes! Du har opdateret dit billede."
+      updated picture: "Succes! Du har opdateret dit billede. Det kan tage flere minutter for din avatar at blive opdateret."
       updated notifications: "Succes! Du har opdateret dine notifikations indstillinger."
       notifications token error: "Ugyldig handling, du skal logge ind for at redigere dine indstillinger for meddelelser."
       notification errors: "Følgende fejl forhindrede opdateringen af dine notifikationer:"
@@ -611,6 +627,9 @@ da:
       view my plans: "Se Mine Planer"
       featured plans: "Fremhævede Planer"
       view all plans: "Se alle Planer"
+      reading: "læsning"
+      readings: "læsninger"
+      readings 5 or more: "læsninger"
     settings: "Indstillinger"
     privacy:
       visible to friends?: "Vil du have at dine aktiviteter på denne plan er synlig for dine venner?"
@@ -656,7 +675,7 @@ da:
     done reading: "Udført"
     no verses: "Ingen vers til i dag "
     no content: "Din plan har ikke nogen kalender sat nogen læsninger til denne dag, så det er markeret som fuldført."
-    read today: "Se dagens læsning"
+    read today: "Denne dags læsning."
     devotional: "Formaning og læsevejledning"
     completion status _ below percentage: "Færdig"
     current progress html: "Dag <b>%{day}</b> af <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ da:
         tagline: "Lad os lave histore sammen."
         button: "Del Bible App´en"
   ui:
+    characters remaining: "karakterer tilbage"
+    yes button: "Ja"
+    no button: "Nej"
+    loading indicator text: "Indlæser ..."
+    loading: "Indlæser"
     pagination:
       next page: "Næste side"
       previous page: "Foregående side"

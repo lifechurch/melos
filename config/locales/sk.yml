@@ -1,4 +1,7 @@
 sk:
+  time:
+    formats:
+      votd: "%-d. %B %Y"
   social:
     intro page:
       main heading: "Rozhovory a objavy"
@@ -187,6 +190,17 @@ sk:
     lower: "alebo"
     upper: "ALEBO"
   moments:
+    scripture unavailable: "Text nedostupný."
+    could not load: "Nepodarilo sa načítať"
+    could not load verse: "Nepodarilo sa načítať verš"
+    showing related: "Zobrazujú sa súvisiace momenty"
+    return to: "Vrátiť sa na"
+    time past: "pred %{ago}"
+    user likes this: "Používateľovi %{last_liker_link} sa to páči"
+    likes count more: "%{likes_count} ďalší"
+    likes count 2 more: "%{likes_count} ďalší"
+    likes count 3 or more: "%{likes_count} ďalší"
+    users like this: "%{last_liker_link} a %{more_link} označili, že sa im to páči"
     vod:
       title: "Verš dňa"
     friendship:
@@ -361,6 +375,8 @@ sk:
     last name: "Priezvisko"
     agreement: "Súhlasím s %{terms_link} YouVersion."
     terms and conditions: "podmienkami používania"
+    email: "Email"
+    mobile: "Mobil"
     facebook sign up success: "Výborne! Autorizovali ste prístup Facebookom. Teraz si zvoľte prihlasovacie meno a heslo na YouVersion."
     register: "Zaregistrovať"
     thanks for registering: "Ďakujeme za registráciu!"
@@ -536,7 +552,7 @@ sk:
       transfer_too_slow: "Zvoľte si menší obrázok, alebo použite rýchlejšie pripojenie k internetu"
       picture_invalid_type: "Obrázok by mal byť vo formáte JPG, PNG alebo GIF"
       picture_creation form errors: "Nasledovné chyby zabránili zmene vášho obrázka:"
-      updated picture: "Hotovo! Váš obrázok bol úspešne aktualizovaný."
+      updated picture: "Hotovo! Nahrali ste si nový profilový obrázok. Môže trvať niekoľko minút, kým sa aktualizuje."
       updated notifications: "Hotovo! Vaše nastavenia notifikácií boli úspešne aktualizované."
       notifications token error: "Neplatný token, prosím prihláste sa a zmeňte vaše nastavenia notifikácií."
       notification errors: "Nasledujúce chyby zabránili aktualizácii vašich notifikácií:"
@@ -611,6 +627,9 @@ sk:
       view my plans: "Zobraziť moje plány"
       featured plans: "Odporúčané plány"
       view all plans: "Zobraziť všetky plány"
+      reading: "čítanie"
+      readings: "čítania"
+      readings 5 or more: "čítaní"
     settings: "Nastavenia"
     privacy:
       visible to friends?: "Chcete, aby vaša aktivita vrámci tohto plánu bola viditeľná pre vašich priateľov?"
@@ -656,7 +675,7 @@ sk:
     done reading: "Hotovo"
     no verses: "Žiadne verše na dnes"
     no content: "Váš plán nemá na dnes naplánované žiadne čítanie, a preto bol označený ako dokončený."
-    read today: "Zobraziť dnešné čítanie"
+    read today: "Čítanie na dnes"
     devotional: "Zamyslenia"
     completion status _ below percentage: "Dokončené"
     current progress html: "Deň <b>%{day}</b> z <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ sk:
         tagline: "Poďme spolu tvoriť dejiny"
         button: "Zdieľajte aplikáciu Biblia"
   ui:
+    characters remaining: "- počet zostávajúcich znakov"
+    yes button: "Áno"
+    no button: "Nie"
+    loading indicator text: "Načítavanie..."
+    loading: "Načítavanie"
     pagination:
       next page: "Ďalšia strana"
       previous page: "Predošlá strana"
