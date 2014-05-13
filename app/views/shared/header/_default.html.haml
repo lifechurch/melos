@@ -56,14 +56,11 @@
         .user_options
           %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
             =t("friendships.requests title")
-          - if current_auth.first_name.present? and current_auth.last_name.present?
-            = render partial: "shared/header/friends"
-          - else
-            = render partial: "shared/header/update_profile"
+          = render partial: "shared/header/friends"
 
           %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
             =t("notifications.title")
-          = render partial: "shared/header/notifications"
+          = render partial: "shared/header/notifications"               
 
       - else
         %nav.no_auth
