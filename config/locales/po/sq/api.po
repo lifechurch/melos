@@ -3,7 +3,8 @@
 #
 # Translators:
 # Translators:
-# Lorenc Tona <lorenc_tona@yahoo.com>, 2013
+# Translators:
+# Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -25,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-16 07:37+0000\n"
+"PO-Revision-Date: 2014-04-03 07:00+0000\n"
 "Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
 "Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -94,23 +95,26 @@ msgstr "{name} shkarkoi versionin, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Ju shkarkuat versionin, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} filloi planin, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} filloi një plan"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Ju filluat planin, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Filloi një plan"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} përfundoi ditën <b>{day}</b> të planit, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} përfundoi ditën <b>{segment}</b> të planit, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Ju përfunduat ditën <b>{day}</b> të planit, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Ju përfunduat ditën <b>{segment}</b> të planit, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} përfundoi planin, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Dita {segment} nga {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Ju përfunduat planin, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} përfundoi një plan"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Përfundoi një plan"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} fitoi emblemën <b>{title}</b>"

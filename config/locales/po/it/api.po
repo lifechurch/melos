@@ -3,8 +3,9 @@
 #
 # Translators:
 # Translators:
+# Translators:
 # Andrew Walker <andrew.walker@live.it>, 2013-2014
-# Barbara Di Egidio <bdiegidio@gmail.com>, 2013
+# Barbara Di Egidio <bdiegidio@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -27,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-24 20:05+0000\n"
+"PO-Revision-Date: 2014-04-11 19:40+0000\n"
 "Last-Translator: Barbara Di Egidio <bdiegidio@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/yv-backend/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -39,8 +40,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-25 20:32+0000\n"
-"Last-Translator: Barbara Di Egidio <bdiegidio@gmail.com>\n"
+"PO-Revision-Date: 2014-04-06 04:50+0000\n"
+"Last-Translator: Andrew Walker <andrew.walker@live.it>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/yv-backend/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,10 +74,10 @@ msgid "moment.bookmark.self.title"
 msgstr "Hai contrassegnato <b>{reference_human}</b>"
 
 msgid "moment.friendship.title"
-msgstr "{user_name} è ora amico di <b>{friend_name}</b>"
+msgstr "Ora {user_name} ha stretto amicizia con <b>{friend_name}</b>"
 
 msgid "moment.friendship.self.title"
-msgstr "Adesso sei amico di <b>{friend_name}</b>"
+msgstr "Ora hai stretto amicizia con <b>{friend_name}</b>"
 
 msgid "moment.highlight.title"
 msgstr "{name} ha evidenziato <b>{reference_human}</b>"
@@ -96,23 +97,26 @@ msgstr "{name} ha scaricato la versione, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Hai scaricato la versione, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} ha iniziato il piano, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} ha iniziato un piano"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Hai iniziato il piano, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Ha Iniziato un piano"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} ha completato il giorno <b>{day}</b> del piano, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} ha completato il giorno <b>{segment}</b> del piano, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Hai completato il giorno <b>{day}</b> del piano, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Hai completato il giorno <b>{segment}</b> del piano, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} ha completato il piano, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Giorno {segment} di {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Hai completato il piano, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} ha completato un piano"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Ha Completato un piano"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} ha guadagnato il distintivo <b>{title}</b>"
@@ -166,19 +170,19 @@ msgid "notifications.comments.moments.friend.owner.bookmark"
 msgstr "{moment_owner_name} ha anche commentato il suo segnalibro: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} ha anche commentato il segnalibro di {moment_owner_name}: “{comment}”"
+msgstr "Anche {commenter_name} ha commentato il segnalibro di {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ha anche commentato la sua evidenziazione: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} ha anche commentato l'evidenziazione di {moment_owner_name}: “{comment}”"
+msgstr "Anche {commenter_name} ha commentato l'evidenziazione di {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ha anche commentato la sua nota: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} ha anche commentato la nota di {moment_owner_name}: “{comment}”"
+msgstr "Anche {commenter_name} ha commentato la nota di {moment_owner_name}: “{comment}”"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} ha contrassegnato {reference_human}"

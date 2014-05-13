@@ -3,14 +3,16 @@
 #
 # Translators:
 # Translators:
+# Translators:
 # Jeliace.YV <yival04@gmail.com>, 2013
-# tams <tams@aralmuna.me>, 2013
+# tams <tams@aralmuna.me>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
 # Translators:
 # Translators:
 # Translators:
+# Anke Stoye <ankestoyeyouversion@gmail.com>, 2014
 # Jeliace.YV <yival04@gmail.com>, 2013-2014
 # Malot MRM <malotmrm@gmail.com>, 2014
 # tams <tams@aralmuna.me>, 2013
@@ -25,7 +27,7 @@
 # chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
 # Malot MRM <malotmrm@gmail.com>, 2013
-# tams <tams@aralmuna.me>, 2013
+# tams <tams@aralmuna.me>, 2013-2014
 # tams <tams@aralmuna.me>, 2013
 #, fuzzy
 msgid ""
@@ -34,7 +36,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-18 14:28+0000\n"
+"PO-Revision-Date: 2014-04-07 11:01+0000\n"
 "Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
@@ -46,8 +48,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-24 11:23+0000\n"
-"Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
+"PO-Revision-Date: 2014-03-19 23:06+0000\n"
+"Last-Translator: Anke Stoye <ankestoyeyouversion@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,8 +60,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-03-06 09:00+0000\n"
+"Last-Translator: tams <tams@aralmuna.me>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,23 +105,26 @@ msgstr "Idinawnload ni {name} ang salin na pinamagatang, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Iyong idinawnload ang salin na pinamagatang, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "Si {name} ay sinimulan ang plano na pinamagatang, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "Nagsimula ng plano si {name}"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Iyong sinimulan ang plano na pinamagatang, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Nagsimula ng plano"
 
-msgid "moment.reading_plan.day.title"
-msgstr "Si {name} ay natapos ang araw <b>{day}</b> ng plano na pinamagatang, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "Natapos ni {name} ang <b>{segment}</b> ng planong, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Natapos mo ang araw <b>{day}</b> ng plano na pinamagatang, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Natapos mo ang <b>{segment}</b> ng planong, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "Natapos ni {name} ang plano na pinamagatang, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Araw {segment} ng {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Natapos mo ang plano na pinamagatang, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "Natapos ni {name} ang plano"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Nakatapos ng plano"
 
 msgid "moment.badge.earned.title"
 msgstr "Nakamit ni {name} ang <b>{title}</b> na badge"
@@ -155,10 +160,10 @@ msgid "notifications.comments.moment.mine.note"
 msgstr "Nagkomento si {name} sa iyong maikling sulat: “{comment}”"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "Nagustuhan ni {name} ang iyong pananda{reference_human}"
+msgstr "Nagustuhan ni {name} ang iyong pananda, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "Nagustuhan ni {name} ang iyong haylayt{reference_human}"
+msgstr "Nagustuhan ni {name} ang iyong haylayt, {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "Nagustuhan ni {name} ang iyong tale tungkol sa {reference_human}"
@@ -222,18 +227,18 @@ msgstr "Mayroon ka na bang Bible App?"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Kinagigiliwan ko ang Bible App ng YouVersion at naisip kong magugustuhan mo rin ito. Mas madalas ko nang binabasa ngayon ang Bibliya dahil napakadali nang magbasa, manuod, makinig at magbahagi gamit ang app na ito. Mayroon din itong mga Reading Plans na may lamang sipi mula sa Bibliya na itinakda para sa aking araw-araw na babasahin.\n"
+"Kinagigiliwan ko ang Bible App ng YouVersion at naisip kong magugustuhan mo rin ito. Mas madalas ko nang binabasa ang Bibliya ngayon dahil napakadali nang magbasa, manuod, makinig at magbahagi gamit ang app na ito. Mayroon din itong mga Reading Plans na may lamang sipi mula sa Bibliya na itinakda para sa aking araw-araw na pagbabasa.\n"
 "\n"
 "Maaari mo itong makuha (ng libre!) sa kahit ano mang mobile device:"
 
 msgid "share.invite_twitter"
-msgstr "Ang @YouVersion Bible App ay bahagi na ng aking home screen. Magbasa, manood, making, at magbahagi... sa libreng app na ito:"
+msgstr "Ang @YouVersion Bible App ay bahagi na ng aking home screen. Magbasa, manood, makinig, at magbahagi... sa libreng app na ito:"
 
 msgid "share.invite_twitter_direct"
-msgstr "Mayroon ka bang Bible App ng YouVersion? Gustong-gusto ko ito, at sa palagay ko'y magugustuhan mo rin ito. Heto ang link:"
+msgstr "Mayroon ka bang Bible App ng YouVersion? Gustong-gusto ko ito, at sa palagay ko'y magugustuhan mo rin. Heto ang link:"
 
 msgid "share.invite_facebook"
-msgstr "Gustung-gusto ko ang Bible App! Natutulungan ako nitong gawing bahagi ng aking araw-araw na buhay ang Bibliya. Maaari akong mag-marka, makinig sa mga audio Bibles, lumikha ng notes, mag-subscribe sa mga devotional plans... at manood ng mga videos! I-download mo na ito ngayon (ng libre):"
+msgstr "Gustung-gusto ko ang Bible App! Natutulungan ako nitong gawing bahagi ng aking araw-araw ang Bibliya. Maaari akong mag-marka, makinig sa mga audio Bibles, lumikha ng notes, mag-subscribe sa mga devotional plans... at manood ng mga videos! I-download mo na ito ngayon (ng libre):"
 
 msgid "share.invite_facebook_direct"
-msgstr "Mayroon ka bang Bible App ng YouVersion? Gustong-gusto ko ito, at sa palagay ko'y magugustuhan mo rin ito. Heto ang link:"
+msgstr "Mayroon ka bang Bible App ng YouVersion? Gustong-gusto ko ito, at sa palagay ko'y magugustuhan mo rin. Heto ang link:"

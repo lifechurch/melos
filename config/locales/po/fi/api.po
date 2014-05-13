@@ -3,8 +3,9 @@
 #
 # Translators:
 # Translators:
-# Juho Autio <autiojuho@gmail.com>, 2013
-# TimoPennila <timo.pennila@gmail.com>, 2013
+# Translators:
+# Juho Autio <autiojuho@gmail.com>, 2013-2014
+# TimoPennila <timo.pennila@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -26,7 +27,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-21 21:30+0000\n"
+"PO-Revision-Date: 2014-04-05 09:50+0000\n"
 "Last-Translator: Juho Autio <autiojuho@gmail.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/yv-backend/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -95,23 +96,26 @@ msgstr "{name} latasi käännöksen, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Latasit käännöksen, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} aloitti suunnitelman, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} aloitti suunnitelman"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Aloitit suunnitelman, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Suunnitelma aloitettu"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} suoritti päivän <b>{day}</b> suunnitelmasta, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} suoritti päivän <b>{segment}</b> suunnitelmasta, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Suoritit <b>{day}</b>. päivän suunnitelmasta, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Suoritit päivän <b>{segment}</b> suunnitelmasta, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} suoritti suunnitelman, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Päivä {segment} / {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Suoritit suunnitelman, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} läpäisi suunnitelman"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Suunnitelma suoritettu"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} sai ansiomerkin <b>{title}</b>"

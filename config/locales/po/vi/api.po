@@ -3,7 +3,8 @@
 #
 # Translators:
 # Translators:
-# Tien Luu <tienluu1024@yahoo.com>, 2013
+# Translators:
+# Tien Luu <tienluu1024@yahoo.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -17,7 +18,7 @@
 # Translators:
 # Translators:
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# Tien Luu <tienluu1024@yahoo.com>, 2013
+# Tien Luu <tienluu1024@yahoo.com>, 2013-2014
 # Tien Luu <tienluu1024@yahoo.com>, 2013
 #, fuzzy
 msgid ""
@@ -26,7 +27,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-19 22:20+0000\n"
+"PO-Revision-Date: 2014-04-04 15:10+0000\n"
 "Last-Translator: Tien Luu <tienluu1024@yahoo.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/yv-backend/language/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -50,8 +51,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-03-03 17:31+0000\n"
+"Last-Translator: Tien Luu <tienluu1024@yahoo.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/yv-backend/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,23 +96,26 @@ msgstr "{name} tải xuống bản dịch <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Bạn tải xuống bản dịch <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} bắt đầu kế hoạch <b>\"{title}\"</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} bắt đầu một kế hoạch"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Bạn bắt đầu kế hoạch <b>\"{title}\"</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Đã bắt đầu một kế hoạch"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} hoàn tất ngày <b>{day}</b> của kế hoạch <b>\"{title}\"</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} hoàn tất ngày <b>{segment}</b> của kế hoạch <b>\"{title}\"</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Bạn hoàn tất ngày <b>{day}</b> của kế hoạch <b>\"{title}\"</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Bạn đã hoàn tất ngày <b>{segment}</b> của kế hoạch <b>\"{title}\"</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} hoàn tất kế hoạch <b>\"{title}\"</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Ngày {segment} trong {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Bạn hoàn tất kế hoạch <b>\"{title}\"</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} hoàn tất một kế hoạch"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Đã hoàn tất một kế hoạch"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} đạt huy hiệu <b>\"{title}\"</b>"
@@ -213,18 +217,18 @@ msgstr "Bạn đã tải App Kinh Thánh?"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Tôi đang sử dụng App Kinh Thánh của YouVersion và tôi nghĩ bạn cũng sẽ thích. Tôi mở Kinh Thánh thường xuyên hơn vì nó rất dễ đọc, xem, nghe, và chia sẻ. Ứng dụng còn có các kế hoạch đọc Kinh Thánh với các câu gốc được chọn lựa mỗi ngày.\n"
+"Tôi đang sử dụng App Kinh Thánh của YouVersion và tôi nghĩ bạn cũng sẽ thích. Tôi mở Kinh Thánh thường xuyên hơn vì ứng dụng rất dễ đọc, nghe, xem và chia sẻ. App còn có nhiều kế hoạch đọc Kinh Thánh với các câu gốc được lựa chọn mỗi ngày.\n"
 "\n"
-"Bạn có thể tải miễn phí về hầu hết các thiết bị di động tại:"
+"Bạn có thể tải (miễn phí) về hầu hết các thiết bị di động tại:"
 
 msgid "share.invite_twitter"
-msgstr "App Kinh Thánh @YouVersion chiếm giữ một vị trí cố định trên màn hình của tôi. Đọc, xem, nghe, và chia sẻ... tất cả chỉ trong một ứng dụng miễn phí:"
+msgstr "App Kinh Thánh @YouVersion chiếm giữ một vị trí cố định trên màn hình của tôi. Đọc, nghe, xem và chia sẻ... tất cả chỉ trong một ứng dụng miễn phí:"
 
 msgid "share.invite_twitter_direct"
 msgstr "Bạn đã tải App Kinh Thánh @YouVersion chưa? Tôi nghĩ bạn cũng sẽ thích nó như tôi vậy. Nếu bạn chưa tải thì đã có đường dẫn ở đây:"
 
 msgid "share.invite_facebook"
-msgstr "Tôi yêu App Kinh Thánh! Nó giúp Kinh Thánh trở thành một phần trong đời sống hằng ngày của tôi. Giúp tôi tô màu, nghe Kinh Thánh, tạo ghi chú, đọc các kế hoạch tĩnh nguyện... và xem video nữa! Hãy tải về (miễn phí):"
+msgstr "Tôi yêu App Kinh Thánh! Ứng dụng này giúp Kinh Thánh trở thành một phần trong đời sống hằng ngày của tôi. Tôi có thể tô màu câu gốc, nghe Kinh Thánh, tạo ghi chú, đọc các kế hoạch tĩnh nguyện... và xem video nữa! Hãy tải về (miễn phí):"
 
 msgid "share.invite_facebook_direct"
 msgstr "Bạn đã tải App Kinh Thánh chưa? Tôi nghĩ bạn cũng sẽ thích nó như tôi. Nếu bạn chưa tải thì đã có đường dẫn ở đây:"

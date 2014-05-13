@@ -3,7 +3,8 @@
 #
 # Translators:
 # Translators:
-# Gladys Liew <gladysliew@gmail.com>, 2013
+# Translators:
+# Gladys Liew <gladysliew@gmail.com>, 2013-2014
 # sandyhtyu <sandyuhiutung@gmail.com>, 2013
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
@@ -18,7 +19,7 @@
 #
 # Translators:
 # Translators:
-# Gladys Liew <gladysliew@gmail.com>, 2013
+# Gladys Liew <gladysliew@gmail.com>, 2013-2014
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
@@ -27,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-12-28 13:55+0000\n"
+"PO-Revision-Date: 2014-04-09 13:20+0000\n"
 "Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/yv-backend/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -51,8 +52,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-03-02 23:30+0000\n"
+"Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/yv-backend/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,10 +71,10 @@ msgid "moment.bookmark.title"
 msgstr "{name} 已把 <b>{reference_human}</b>加入書籤"
 
 msgid "moment.bookmark.self.title"
-msgstr "您已把 <b>{reference_human}</b>加入書籤"
+msgstr "您書籤標記了 <b>{reference_human}</b>"
 
 msgid "moment.friendship.title"
-msgstr "{user_name} 現在已成為 <b>{friend_name}</b> 的好友"
+msgstr "{user_name} 加了好友 <b>{friend_name}</b> "
 
 msgid "moment.friendship.self.title"
 msgstr "您現在已成為 <b>{friend_name}</b> 的好友"
@@ -96,23 +97,26 @@ msgstr "{name} 已下載這個譯本, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "您已下載這個譯本, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} 已開始了這個讀經計劃, <b>{version}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} 開始了讀經計劃"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "您已開始了這個讀經計劃, <b>{version}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "開始了讀經計劃"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} 完成了第 <b>{day}</b>天的讀經計劃, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} 完成了讀經計劃，<b>{title}</b>的第 <b>{segment}</b> 天 "
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "您完成了第 <b>{day}</b>天的讀經計劃, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "您完成了讀經計劃，<b>{title}</b>的第 <b>{segment}</b> 天"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} 完成了這個讀經計劃, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "{total_segments} 中的第 {segment} 天 ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "您完成了這個讀經計劃, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} 完成了讀經計劃"
+
+msgid "moment.plan_completion.self.title"
+msgstr "完成了讀經計劃"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} 已獲得了 <b>{title}</b> 徽章"
@@ -207,25 +211,25 @@ msgid "share.invite_sms_prefix"
 msgstr "來自 {name}:"
 
 msgid "share.invite_sms"
-msgstr "您有 YouVersion 的聖經軟體嗎？我很喜歡它，我想您也會喜歡。如果您還沒有安裝的話，請用下面的鏈結:"
+msgstr "你有 YouVersion 的聖經軟體嗎？我很喜歡用，猜想你也會喜歡。這是聖經軟體的鏈結:"
 
 msgid "share.invite_email_subject"
-msgstr "您有使用聖經軟體嗎？"
+msgstr "你有使用聖經軟體嗎？"
 
 msgid "share.invite_email_body"
 msgstr ""
-"我很喜歡使用 YouVersion 的聖經軟體，我想您也會喜歡的。不管是閱讀、看視訊、聽音訊或分享經文，聖經軟體都很容易使用，因此我現在接觸聖經的次數也更多了。聖經軟體也備有讀經計劃，提供一系列的精選經文給我每天閱讀。\n"
+"我很喜歡使用 YouVersion 的聖經軟體，我想你也會喜歡的。不管是閱讀、看視訊、聽音訊或分享經文，聖經軟體都很容易使用，因此我現在接觸聖經的次數也更多了。聖經軟體也備有讀經計劃，提供一系列的精選經文給我每天閱讀。\n"
 "\n"
-"您可以從這裡把軟體下載和安裝 (免費的！) 到幾乎任何款式的行動設備上:"
+"你可以從這裡把軟體下載和安裝 (免費的！) 到幾乎任何款式的行動設備上:"
 
 msgid "share.invite_twitter"
 msgstr "我將 @YouVersion 的聖經軟體長駐在我的主熒幕上。無論是閱讀、觀看視訊、聆聽音訊或分享經文... 全都在一個免費的程序裡:"
 
 msgid "share.invite_twitter_direct"
-msgstr "您有 @YouVersion 的聖經軟體嗎？我很喜歡它，我想您也會喜歡。如果您還沒有安裝的話，請用下面的鏈結:"
+msgstr "你有 @YouVersion 的聖經軟體嗎？我很喜歡用，猜想你也會喜歡。這是聖經軟體的鏈結:"
 
 msgid "share.invite_facebook"
 msgstr "我喜歡聖經軟體！它真的使聖經成為我日常生活的一部分。聖經軟體能讓我醒目顯示經文、聆聽語音聖經、創建筆記、跟進靈修計劃... 甚至觀賞視訊！請現在就去下載 (免費的):"
 
 msgid "share.invite_facebook_direct"
-msgstr "您有使用聖經軟體嗎？我很喜歡它，我想您也會喜歡。如果您還沒有安裝的話，請用下面的鏈結:"
+msgstr "你有使用聖經軟體嗎？我很喜歡用，猜想你也會喜歡。這是聖經軟體的鏈結:"
