@@ -79,12 +79,12 @@ class User < YV::Resource
       return initial_results unless initial_results.valid?  #return here with invalid results if we didn't find a user
 
       data, errs = post("users/authenticate", auth: auth  ) # Data returned: {"id"=>7541650, "username"=>"BrittTheIsh"}
-      results = YV::API::Results.new( data , errs ) 
-      
+      results = YV::API::Results.new( data , errs )
+
       if results.valid?
          # we've successfully authenticated
          # we now need to make another API view call with auth info to retrieve entire detailed user info.
-         results = find(data.id, auth: auth.merge(user_id: data.id)) # our user     
+         results = find(data.id, auth: auth.merge(user_id: data.id)) # our user
       end
 
       return results
@@ -390,6 +390,14 @@ class User < YV::Resource
   def interact_with?(moment)
     user_id = moment.user.id
     id == user_id or friends_with?(user_id)
+  end
+
+
+  # A User is only allowed to access friendship features if they have both a first &
+  # last name set
+  # returns: boolean
+  def enable_friendships?
+      return (first_name.present? and last_name.present?)
   end
 
 
