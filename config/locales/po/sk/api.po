@@ -3,8 +3,9 @@
 #
 # Translators:
 # Translators:
+# Translators:
 # MarianOpiela <opiela.marian@gmail.com>, 2013
-# Tomáš Petrík <tomas0907@gmail.com>, 2013
+# Tomáš Petrík <tomas0907@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -26,7 +27,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-22 21:30+0000\n"
+"PO-Revision-Date: 2014-04-10 17:50+0000\n"
 "Last-Translator: Tomáš Petrík <tomas0907@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/yv-backend/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +73,7 @@ msgid "moment.bookmark.self.title"
 msgstr "Pridali ste si <b>{reference_human}</b> medzi svoje záložky"
 
 msgid "moment.friendship.title"
-msgstr "Používateľ {user_name} je odteraz priateľom s používateľom <b>{friend_name}</b>"
+msgstr "{user_name} je odteraz priateľom s používateľom <b>{friend_name}</b>"
 
 msgid "moment.friendship.self.title"
 msgstr "Odteraz ste priateľom s používateľom <b>{friend_name}</b>"
@@ -95,23 +96,26 @@ msgstr "Používateľ {name} si stiahol preklad, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Stiahli ste si preklad, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "Používateľ {name} začal plán, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "Používateľ {name} začal plán čítania"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Začali ste plán, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Začatý plán čítania"
 
-msgid "moment.reading_plan.day.title"
-msgstr "Používateľ {name} dokončil <b>{day}.</b> deň z plánu, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "Používateľ {name} dokončil <b>{segment}.</b> deň z plánu čítania <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Dokončili ste <b>{day}.</b> deň z plánu, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Dokončili ste <b>{segment}.</b> deň z plánu čítania <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "Používateľ {name} dokončil plán, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Deň {segment} z {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Dokončili ste plán, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "Používateľ {name} dokončil plán čítania"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Dokončený plán čítania"
 
 msgid "moment.badge.earned.title"
 msgstr "Používateľ {name} získal odznak <b>{title}</b>"

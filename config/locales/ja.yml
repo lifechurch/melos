@@ -1,4 +1,7 @@
 ja:
+  time:
+    formats:
+      votd: "%Y年%B%-d日"
   social:
     intro page:
       main heading: "会話と発見"
@@ -187,6 +190,17 @@ ja:
     lower: "または"
     upper: "または"
   moments:
+    scripture unavailable: "聖句が見つかりません"
+    could not load: "読み込みができませんでした"
+    could not load verse: "聖句の読み込みができませんでした"
+    showing related: "関連する機会を表示"
+    return to: "戻る"
+    time past: "%{ago} 前"
+    user likes this: "%{last_liker_link} さんのお気に入りです"
+    likes count more: "%{likes_count} 回多く"
+    likes count 2 more: "%{likes_count} 回多く"
+    likes count 3 or more: "%{likes_count} 回多く"
+    users like this: "%{last_liker_link}さんと%{more_link} さんのお気に入り"
     vod:
       title: "本日の聖句"
     friendship:
@@ -361,6 +375,8 @@ ja:
     last name: "苗字（姓）"
     agreement: "YouVersion%{terms_link} に同意します。"
     terms and conditions: "利用規約"
+    email: "メール"
+    mobile: "モバイル"
     facebook sign up success: "すばらしい! Facebook の利用を許可しました。YouVersion でのユーザ名とパスワードを選択して、次へお進み下さい。"
     register: "登録"
     thanks for registering: "ご登録ありがとうございます！"
@@ -536,7 +552,7 @@ ja:
       transfer_too_slow: "小さな写真を選ぶか、高速接続を選択してください。"
       picture_invalid_type: "写真は端末子がJPG, PNGまたはGIFのものをお使いください。"
       picture_creation form errors: "以下のエラーが発生したために写真を更新できませんでした："
-      updated picture: "写真の更新に成功しました！"
+      updated picture: "成功！写真のアップデートができました。アバターがアップデートされるまでには、数分かかることがあります。"
       updated notifications: "通知設定の更新に成功しました！"
       notifications token error: "トークンが正しくありません。サインインして通知設定を変更してください。"
       notification errors: "以下のエラーにより通知設定の更新ができません:"
@@ -611,6 +627,9 @@ ja:
       view my plans: "読書プランを見る"
       featured plans: "特集プラン"
       view all plans: "全ての読書プランを見る"
+      reading: "読書"
+      readings: "読書"
+      readings 5 or more: "読書"
     settings: "設定"
     privacy:
       visible to friends?: "このプランでのあなたのアクティビティを友達に公開しますか？"
@@ -656,7 +675,7 @@ ja:
     done reading: "完了"
     no verses: "今日の聖句はありません。"
     no content: "ご利用中のプランには、この日に割り当てられた聖書箇所がないので完了済となっています。"
-    read today: "今日の読書箇所を見る"
+    read today: "今日の読書"
     devotional: "デボーション"
     completion status _ below percentage: "完了"
     current progress html: "<b>%{total_days}</b> 日中の <b>%{day}</b> 日"
@@ -982,6 +1001,11 @@ ja:
         tagline: "共に歴史を塗り替えましょう。"
         button: "聖書アプリをシェア"
   ui:
+    characters remaining: "残り文字数"
+    yes button: "はい"
+    no button: "いいえ"
+    loading indicator text: "読み込み中…"
+    loading: "読み込み中"
     pagination:
       next page: "次のページ"
       previous page: "前のページ"

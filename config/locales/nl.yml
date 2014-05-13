@@ -1,4 +1,7 @@
 nl:
+  time:
+    formats:
+      votd: "%-d, %b, %Y"
   social:
     intro page:
       main heading: "Gesprek & Ontdekking"
@@ -187,6 +190,17 @@ nl:
     lower: "of"
     upper: "OF"
   moments:
+    scripture unavailable: "Schrift niet beschikbaar"
+    could not load: "Kon niet laden"
+    could not load verse: "Kon vers niet laden"
+    showing related: "Toon gerelateerde momenten"
+    return to: "Terug gaan naar"
+    time past: "%{ago} geleden"
+    user likes this: "%{last_liker_link} vindt dit leuk"
+    likes count more: "%{likes_count} meer"
+    likes count 2 more: "%{likes_count} meer"
+    likes count 3 or more: "%{likes_count} meer"
+    users like this: "%{last_liker_link} en %{more_link} vinden dit leuk"
     vod:
       title: "Vers van de dag"
     friendship:
@@ -361,6 +375,8 @@ nl:
     last name: "Achternaam"
     agreement: "Ik ga akkoord met de %{terms_link} van YouVersion."
     terms and conditions: "Algemene voorwaarden"
+    email: "E-mail"
+    mobile: "Mobiel"
     facebook sign up success: "Super! Je bent aangemeld via Facebook. Kies een YouVersion-gebruikersnaam en wachtwoord om verder te gaan."
     register: "Aanmelden"
     thanks for registering: "Dank je wel voor je aanmelding!"
@@ -536,7 +552,7 @@ nl:
       transfer_too_slow: "Kies een kleine foto of zoek een snellere verbinding"
       picture_invalid_type: "Foto moet jpg, png of gif zijn"
       picture_creation form errors: "De volgende fout(en) zorgden ervoor dat je afbeelding niet bijgewerkt kon worden:"
-      updated picture: "Gelukt! Je hebt je foto bijgewerkt."
+      updated picture: "Gelukt. Je hebt jouw foto ge-update. Het kan een paar minuten duren voor je avatar wordt bijgewerkt."
       updated notifications: "Succes! Je hebt je meldingsinstellingen bijgewerkt."
       notifications token error: "Ongeldig token, log in om je meldingsinstellingen aan te passen."
       notification errors: "De volgende fout(en) zorgen ervoor dat je je meldingen niet kan updaten:"
@@ -611,6 +627,9 @@ nl:
       view my plans: "Bekijk mijn leesplannen"
       featured plans: "Aanbevolen Leesplannen"
       view all plans: "Bekijk alle leesplannen"
+      reading: "Lezing"
+      readings: "Lezingen"
+      readings 5 or more: "Lezingen"
     settings: "Instellingen"
     privacy:
       visible to friends?: "Wil jij jouw activiteiten in dit Leesplan zichtbaar maken voor jouw vrienden?"
@@ -656,7 +675,7 @@ nl:
     done reading: "Klaar"
     no verses: "Geen te lezen gedeeltes vandaag"
     no content: "Je leesplan heeft voor vandaag niets gepland, daarom is deze dag gemarkeerd als afgerond."
-    read today: "De lezing van vandaag bekijken"
+    read today: "Lezing van vandaag"
     devotional: "Overdenking"
     completion status _ below percentage: "Afgerond"
     current progress html: "Dag <b>%{day}</b> van <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ nl:
         tagline: "Laten we samen geschiedenis maken."
         button: "Deel de Bijbel App"
   ui:
+    characters remaining: "karakters resterend"
+    yes button: "Ja"
+    no button: "Nee"
+    loading indicator text: "Laden..."
+    loading: "Laden..."
     pagination:
       next page: "Volgende pagina"
       previous page: "Vorige pagina"

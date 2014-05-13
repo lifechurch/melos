@@ -1,4 +1,7 @@
 it:
+  time:
+    formats:
+      votd: "%-d %B %Y"
   social:
     intro page:
       main heading: "Conversazione & Scoperta"
@@ -8,7 +11,7 @@ it:
         user andy: "Carlo Bianchi"
         timestamp: "5 giorni fa"
         title: "Salmo 31:7 contrassegnato"
-        verse: "Esulterò e mi rallegrerà per la tua benevolenza; poiché tu hai visto la mia afflizione, hai conosciuto le angosce dell'anima mia."
+        verse: "Esulterò e mi rallegrerà per la tua benevolenza; poiché tu hai visto la mie afflizioni, e hai a cuore le angosce dell'anima mia."
         reference: "Salmo 31:7"
         discover:
           copy: "Scopri e impara con i tuoi amici mentre aggiungono evidenzi azioni, segnalibri e note."
@@ -187,6 +190,17 @@ it:
     lower: "oppure"
     upper: "O"
   moments:
+    scripture unavailable: "Scrittura non disponibile."
+    could not load: "Caricamento impossibile"
+    could not load verse: "Caricamento versetto impossibile"
+    showing related: "Mostrando momenti collegati"
+    return to: "Ritorna a"
+    time past: "%{ago} fa"
+    user likes this: "A %{last_liker_link} piace questo"
+    likes count more: "Ancora %{likes_count}"
+    likes count 2 more: "Ancora %{likes_count}"
+    likes count 3 or more: "Ancora %{likes_count}"
+    users like this: "A %{last_liker_link} e %{more_link} piace questo"
     vod:
       title: "Versetto del giorno"
     friendship:
@@ -199,7 +213,7 @@ it:
       friends text: "Vedi i momenti dei tuoi amici nella Bibbia."
       friends button: "Trova amici"
     action:
-      go to scripture: "Vai alla Bibbia"
+      go to scripture: "Vai alle scritture"
       load more: "Carica ancora"
       like: "Mi Piace"
       liked: "Mi Piace"
@@ -294,7 +308,7 @@ it:
       private: "Privato"
       public: "Pubblico"
       friends: "Solo amici"
-      draft: "Bozze"
+      draft: "Bozza"
     list title: "Note"
     loading community: "Sto caricando le note della comunità..."
     no community notes: "Non sono state trovate note condivise relative ai versetti selezionati. Per creare una nota, seleziona un versetto nel lettore della Bibbia a poi clicca sul pulsante Selezionato nella parte superiore del lettore."
@@ -361,6 +375,8 @@ it:
     last name: "Cognome"
     agreement: "Sono d'accordo con le condizioni di YouVersion %{terms_link}"
     terms and conditions: "termini e condizioni"
+    email: "E-mail"
+    mobile: "Dispositivo Mobile"
     facebook sign up success: "Bravo! Hai ottenuto l'autorizzazione con Facebook. Scegli un nome utente Youversion e una password per continuare."
     register: "Registrati"
     thanks for registering: "Grazie della registrazione!"
@@ -403,7 +419,7 @@ it:
     my badges: "I Miei Distintivi"
     revised date: "L'ultima revisione in %{date}"
     update email copy: "Inserisci un nuovo indirizzo e-mail e clicca Aggiorna Email. Ti manderemo un link per confermare il tuo nuovo indirizzo e-mail."
-    edit email: "Cambiare Indirizzo E-mail"
+    edit email: "Cambia Indirizzo E-mail"
     update email check: "Per favore, controlla la tua e-mail e clicca il link per confermare il tuo nuovo indirizzo e-mail."
     confirm update email success: "Grazie! Hai aggiornato il tuo indirizzo e-mail."
     confirm update email error: "Scusa, c'è stato un problema ad aggiornare il tuo indirizzo e-mail."
@@ -536,7 +552,7 @@ it:
       transfer_too_slow: "Scegli un'immagine più piccola o cerca una connessione più veloce"
       picture_invalid_type: "L'immagine dev'essere in formato JPG, PNG o GIF"
       picture_creation form errors: "I(l) seguenti/e errori/e hanno impedito l'aggiornamento della tua foto:"
-      updated picture: "Sei riuscito ad aggiornare la tua immagine!"
+      updated picture: "Successo! Hai aggiornato la tua immagine. Ci potranno volere alcuni minuti perché il tuo avatar si aggiorni."
       updated notifications: "Sei riuscito ad aggiornare le tue impostazioni di notifica."
       notifications token error: "Sessione non valida. Accedi per poter modificare le tue impostazioni di notifica."
       notification errors: "I(l) seguente/i errore/i ha(nno) impedito l'aggiornamento delle tue notifiche:"
@@ -611,6 +627,9 @@ it:
       view my plans: "Vedi i Miei Piani"
       featured plans: "Piani in Evidenza"
       view all plans: "Vedi Tutti i Piani"
+      reading: "lettura"
+      readings: "letture"
+      readings 5 or more: "letture"
     settings: "Opzioni"
     privacy:
       visible to friends?: "Vuoi che la tua attività con questo piano sia visibile per i tuoi amici?"
@@ -656,7 +675,7 @@ it:
     done reading: "Fatto"
     no verses: "Nessun versetto per oggi"
     no content: "Il tuo piano non prevede un contenuto per oggi e quindi è stato segnato come completato."
-    read today: "Vedi la Lettura di Oggi"
+    read today: "La lettura di oggi"
     devotional: "Devozionale"
     completion status _ below percentage: "Completo"
     current progress html: "Giorno <b>%{day}</b> di <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ it:
         tagline: "Facciamo la storia insieme!"
         button: "Condividi l'App  Bibbia"
   ui:
+    characters remaining: "caratteri rimasti"
+    yes button: "Sì"
+    no button: "No"
+    loading indicator text: "Caricando ..."
+    loading: "sta caricando"
     pagination:
       next page: "Prossima Pagina"
       previous page: "Pagina Precedente"

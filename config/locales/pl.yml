@@ -70,6 +70,7 @@ pl:
   meta:
     kids_app:
       title: "Aplikacja Biblii dla dzieci"
+      description: "Aplikacja Biblii dla dzieci startuje 28 listopada, w Dzień Dziękczynienia! Interaktywne historie Biblijne w darmowej aplikacji na iOS i Androida. Zobacz podgląd na stronie bible.com/kids"
     100million:
       title: "Zaczyna się od 100 milionów"
       description: "Aplikacja Biblii została zainstalowana prawie 100 milionów razy - niesamowity moment! Ale dopiero zaczynamy! Pobierz dzisiaj darmową Aplikację Biblii - a potem podziel się aplikacją ze znajomymi. Twórzmy razem historię!"
@@ -186,6 +187,7 @@ pl:
     lower: "lub"
     upper: "LUB"
   moments:
+    return to: "Powróć do"
     vod:
       title: "Werset dnia"
     friendship:
@@ -360,6 +362,8 @@ pl:
     last name: "Nazwisko"
     agreement: "Zgadzam się z %{terms_link} YouVersion."
     terms and conditions: "Warunki użytkowania"
+    email: "Email"
+    mobile: "Mobilne"
     facebook sign up success: "Doskonale! Dokonałeś autoryzacji przez Facebooka. By kontynuować, wybierz nazwę użytkownika YouVersion i hasło."
     register: "Zarejestruj"
     thanks for registering: "Dziękujemy za rejestrację!"
@@ -532,9 +536,9 @@ pl:
       picture error: "Wystąpił błąd podczas aktualizacji obrazka."
       picture_empty: "Wybierz obrazek do załadowania"
       picture_too_large: "Obrazek powinien zajmować mniej niż 1 megabajt"
+      transfer_too_slow: "Wybierz mniejsze zdjęcie lub znajdź szybsze połączenie"
       picture_invalid_type: "Format obrazka to JPG, PNG lub GIF"
       picture_creation form errors: "Poniższy błąd lub błędy nie pozwoliły na aktualizację:"
-      updated picture: "Sukces! Zaktualizowałeś swój obrazek."
       updated notifications: "Zaktualizowałeś swoje ustawienia powiadomień."
       notifications token error: "Nieprawidłowy token, zaloguj się, aby zmienić ustawienia powiadomień."
       notification errors: "Poniższe błędy uniemożliwiły aktualizację twoich powiadomień:"
@@ -654,7 +658,6 @@ pl:
     done reading: "Wykonane"
     no verses: "Brak wersetów na dzisiaj"
     no content: "Twój plan nie ma zadań zaplanowanych na ten dzień i dlatego został oznaczony jako ukończony."
-    read today: "Zobacz dzisiejszy fragment"
     devotional: "Rozważania"
     completion status _ below percentage: "Ukończony"
     current progress html: "Dzień <b>%{day}</b> z <b>%{total_days}</b>"
@@ -783,6 +786,7 @@ pl:
   donate:
     donate now: "Przekaż dotację teraz"
     donate now intl: "lub dotuj z zagranicy"
+    enter amount: "Wpisz kwotę"
     promo 1: "Każdy ofiarowany dolar umożliwia dziesięciu kolejnym osobom uzyskanie dostępu do Biblii na ich telefonach."
     promo 2: "Dzięki YouVersion Biblia jest zawsze blisko. Obejrzyj nasz filmik."
     promo 3: "W tym roku ponad pięć miliardów ludzi będzie używać telefonów komórkowych. Przekaż dotację teraz."
@@ -979,6 +983,9 @@ pl:
         tagline: "Twórzmy razem historię"
         button: "Udostępnij Aplikację Biblii"
   ui:
+    yes button: "Tak"
+    no button: "Nie"
+    loading indicator text: "Ładowanie..."
     pagination:
       next page: "Następna strona"
       previous page: "Poprzednia strona"

@@ -1,4 +1,7 @@
 ko:
+  time:
+    formats:
+      votd: "%Y.%B.%-d"
   social:
     intro page:
       main heading: "대화와 발견"
@@ -12,15 +15,15 @@ ko:
         reference: "시편 31:7"
         discover:
           copy: "친구들과 같이 하이라이트 또는 책갈피를 하거나 노트를 작성하면서 함께 찾고 배우세요."
-          button: "어디서 부터 시작 할까요?"
+          button: "시작해 볼까요?"
         share:
           copy: "성경에 대해서 진솔한 대화를 나눠보세요."
           button: "친구를 찾는 것으로 시작해 보세요."
         likes:
-          info: "이와 같은 것이 4 개더 "
+          info: "이와 같은 것이 4개 더 "
         comments:
           first:
-            text: "참으로 오늘 들어야 했습니다. 감사합니다. 곧 따라갑시다!"
+            text: "오늘 들어야 했습니다. 감사합니다. 곧 따라 가지요!"
             time: "약 3 시간 전"
           second:
             text: "저도 역시 아멘입니다. 지금 이메일을 보냅니다."
@@ -30,7 +33,7 @@ ko:
       timeline: "타임라인"
       no activity yet: "아직 아무 활동도 없습니다."
     moment:
-      read all: "모두 읽기"
+      read all: "모두 보기"
       read less: "일부 보기"
     share: "공유"
     my connections: "접속 계정"
@@ -70,6 +73,7 @@ ko:
   meta:
     kids_app:
       title: "어린이들을 위한 성경 앱"
+      description: "11월 28일 추수 감사절에 어린이 성경 앱이 출시되었습니다!   직접 참여하면서 보는 성경 이야기 앱입니다. 이 무료 앱은  iOS 와 안드로이드에 있습니다."
     100million:
       title: "1억건 설치. 이제 시작입니다."
       description: "성경 앱이 1억건 가까이 설치되었습니다. 역사적인 순간입니다! 하지만 이것은 시작일 뿐입니다. 무료 성경 앱을 다운로드하십시오. 그리고 친구들에게 소개해 주세요. 함께 역사를 만들어 가요."
@@ -186,6 +190,17 @@ ko:
     lower: "또는"
     upper: "혹은"
   moments:
+    scripture unavailable: "해당 성경 구절이 없습니다!"
+    could not load: "올릴 수가 없습니다."
+    could not load verse: "번역본을 올릴 수가 없습니다"
+    showing related: "관련된 모멘트 보기"
+    return to: "돌아가기"
+    time past: "%{ago} 전"
+    user likes this: "%{last_liker_link}님이 좋아합니다."
+    likes count more: "외 %{likes_count}명"
+    likes count 2 more: "외 %{likes_count}명"
+    likes count 3 or more: "외 %{likes_count}명"
+    users like this: "%{last_liker_link}님 %{more_link}이 좋아합니다."
     vod:
       title: "오늘의 말씀"
     friendship:
@@ -195,8 +210,8 @@ ko:
       profile update button: "프로필 업데이트"
       sharing text: "소셜 네트워크를 통해 말씀을 공유하세요"
       sharing button: "공유기능 켜기"
-      friends text: "성경속 친구들의 기록을 보세요."
-      friends button: "친구찾기"
+      friends text: "성경 속 친구들의 기록을 보세요."
+      friends button: "친구 찾기"
     action:
       go to scripture: "말씀으로 가기"
       load more: "추가 로드"
@@ -204,7 +219,7 @@ ko:
       liked: "좋아요"
       like title: "좋아요"
       last comment: "마지막 댓글"
-      share: "공유하기"
+      share: "공유"
       share title: "친구들이나 가족과 공유하기"
       comment: "댓글"
       comment title: "모든 댓글 보기"
@@ -220,7 +235,7 @@ ko:
   notifications:
     title: "알림"
     none: "알림 공지가 없습니다"
-    no new: "새로운 알림"
+    no new: "새로운 알림 공지가 없습니다."
     view all: "모든 알림 공지 보기"
   likes:
     create success: "좋아요가 저장되었습니다."
@@ -232,45 +247,45 @@ ko:
     post comment: "댓글 달기"
     create success: "댓글이 저장되었습니다."
     create failure: "댓글을 달 수가 없습니다"
-    destroy success: "댓글 삭제됨"
+    destroy success: "댓글 삭제되었습니다."
     destroy failure: "댓글이 삭제되지 않았습니다."
     form:
       save button: "올리기"
   friends:
     you have N friends: "%{count}명의 친구가 있습니다."
-    none me: "성경 속의 책갈피, 하이라이트 노트 등을 친구 가족들과 나누세요."
-    find friends: "친구찾기"
+    none me: "성경 속의 책갈피, 하이라이트 노트 등을 가족, 친구들과 나누세요."
+    find friends: "친구 찾기 "
     blank slate:
       heading: "친구가 아닙니다."
       description: "친구들을 보기 위해서는 이 회원님과 먼저 친구가 되어야 합니다."
     limit notice: "최대 150명의 친구를 만드실 수 있습니다."
-    limit description: "성경 앱 친구 관계를 잘 아는 사람들로 제한하는 것이 믿을 수 있는 친구들과의 진솔한 대화와 발견한 것들을  나눌 수 있는 환경을 조성합니다."
+    limit description: "성경 앱 친구 관계를 잘 아는 사람들로 제한하는 것으로 믿을 수 있는 친구들과 진솔한 대화와 발견한 것들을  나눌 수 있는 환경을 조성합니다."
   friendships:
-    find friends title: "친구찾기"
+    find friends title: "친구 찾기"
     search by name: "이름으로 검색"
     search button: "가기"
     widget:
-      find friends title: "친구찾기"
+      find friends title: "친구  찾기"
       search by name: "이름으로 검색"
       search button: "가기"
     offer success: "친구 신청 보냄"
-    offer failure: "친구신청 오류"
+    offer failure: "친구 신청 오류"
     create success: "회원님은 이제 친구입니다"
-    create failure: "친구맺기 오류"
+    create failure: "친구 맺기 오류"
     destroy success: "요청이 거절되었습니다"
-    destroy failure: "친구거절 오류"
+    destroy failure: "친구 거절 오류"
     requests title: "친구 신청"
     requests view all: "친구신청 모두 보기"
-    requests none: "친구요청이 없습니다"
+    requests none: "친구 요청이 없습니다"
     requests no new: "새로운 요청 없음."
     status:
       pending: "신청 처리중"
       friends: "내 친구"
-    user wants friendship: "%{user}님이 친구맺기 원합니다"
-    user wants friendship partial: "친구맺기를 원합니다"
+    user wants friendship: "%{user}님이 친구가 되고 싶어합니다"
+    user wants friendship partial: "친구가 되고 싶어합니다"
     form:
-      remove friend button: "친구 제거"
-      remove friend button title: "이 사람을 친구목록에서 제거하기"
+      remove friend button: "친구 삭제"
+      remove friend button title: "이 사람을 친구목록에서 삭제하기"
       add friend button: "친구 추가"
       add friend button title: "%{user}님께 친구 신청"
       accept button: "수락"
@@ -324,7 +339,7 @@ ko:
     none found: "노트가 없습니다..."
     create success: "노트가 저장되었습니다."
     create failure: "노트 저장 오류"
-    destroy success: "노트 삭제됨"
+    destroy success: "노트가 삭제되었습니다."
     destroy failure: "노트삭제 오류"
   ref:
     loading secondary: "두번째 번역본에서 참고 구절을 로딩합니다."
@@ -360,6 +375,8 @@ ko:
     last name: "성"
     agreement: "YouVersion의 %{terms_link} 에 동의합니다."
     terms and conditions: "사용계약과 조건"
+    email: "이메일"
+    mobile: "이동기기"
     facebook sign up success: "페이스북을 통해서 승인을 받았습니다.  YouVersion 사용자명과 비밀번호를 선택해주세요."
     register: "등록"
     thanks for registering: "등록해 주셔서 감사합니다!"
@@ -533,9 +550,10 @@ ko:
       picture error: "죄송합니다.  사진 업데이트중 오류가 발생했습니다."
       picture_empty: "업로드하실 사진을 선택해주세요."
       picture_too_large: "사진의 크기는 1 메가바이트 미만이여야합니다."
+      transfer_too_slow: "더 작은 사진을 선택하시거나, 더 속도가 빠른 연결 방법을 찾아보세요."
       picture_invalid_type: "사진은  JPG, PNG, 혹은 GIF 포맷이라야 합니다."
       picture_creation form errors: "사진을 업데이트하는 중 다음의 오류가 발생했습니다."
-      updated picture: "사진이 변경되었습니다!"
+      updated picture: "사진이 업데이트 되었습니다.  아바타가 업데이트 되기까진 몇 분이 걸릴 수도 있습니다."
       updated notifications: "알림 설정이 변경되었습니다!"
       notifications token error: "잘못된 토큰입니다. 로그인 하셔서 전달소식 설정을 확인해주세요."
       notification errors: "아래 오류로 인해 알림 설정을 변경하지 못했습니다."
@@ -553,9 +571,9 @@ ko:
       reading_plans: "시작한 읽기 계획에 대한 상세정보 알림"
       publishing partners: "YouVersion 콘텐츠 파트너로 부터의 소식을 계속 받고 싶습니다."
       update: "알림기능 설정 업데이트"
-      friendships: "친구요청에 대해 통보해주세요"
-      moments: "친구의 활동에 대해 통보해주세요"
-      comments: "내 활동에 관한 댓글에 대해 통보해 주세요"
+      friendships: "친구요청에 대해 알려 주세요"
+      moments: "친구의 활동에 대해 알려 주세요"
+      comments: "내 활동에 관한 댓글에 대해 알려 주세요"
       likes: "내 활동에 좋아요가 생겼을 때 알려 주세요."
   bookmarks:
     new: "새로운 책갈피"
@@ -572,7 +590,7 @@ ko:
     other user not found: "%{username}님이 등록한 책갈피는 아직 없습니다."
     creation form errors: "아래의 이유로 인해서 책갈피가 만들어지지 않았습니다."
     create success: "책갈피가 저장되었습니다."
-    destroy success: "책갈피 제거"
+    destroy success: "책갈피가 제거되었습니다."
     destroy failure: "책갈피 삭제 오류"
     update success: "책갈피가 업데이트 되었습니다."
     labels placeholder: "여러개의 라벨은 쉼표로 구분 해 주세요."
@@ -605,11 +623,14 @@ ko:
     none user: "%{username}님은 아직 받은 배지가 없습니다."
   plans:
     widget:
-      my plans: "나의 계획"
+      my plans: "내 계획"
       start reading: "읽기 시작"
-      view my plans: "나의 계획 보기"
+      view my plans: "내 계획 보기"
       featured plans: "특별 계획"
       view all plans: "전체 계획 보기"
+      reading: "읽기"
+      readings: "읽기"
+      readings 5 or more: "읽기"
     settings: "설정"
     privacy:
       visible to friends?: "이 묵상 계획과 관련된 회원님의 활동이 친구들에게 보여지길 원하십니까?"
@@ -655,7 +676,7 @@ ko:
     done reading: "완료"
     no verses: "오늘은 말씀이 없습니다."
     no content: "계획에 따르면 오늘 읽을 내용이 없어서 오늘은 자동으로 완료처리 되었습니다."
-    read today: "오늘의 읽기 보기"
+    read today: "오늘의 읽기"
     devotional: "묵상"
     completion status _ below percentage: "완료"
     current progress html: "<b>%{total_days}</b> 중 <b>%{day}</b> 일째"
@@ -766,7 +787,7 @@ ko:
     choose color: "색깔을 선택하세요."
     create success: "하이라이트가 저장되었습니다."
     create failure: "하이라이트 저장오류"
-    destroy success: "하이라이트 삭제"
+    destroy success: "하이라이트 삭제되었습니다."
     destroy failure: "하이라이트 삭제 오류"
     creation error: "죄송합니다. 하이라이트를 할 수 없습니다."
     delete error: "죄송합니다. 하이라이트를 제거 할 수 없습니다."
@@ -784,6 +805,7 @@ ko:
   donate:
     donate now: "지금 후원하기"
     donate now intl: "해외에서 후원하기"
+    enter amount: "금액을 입력해 주세요."
     promo 1: "여러분의 $1이 10명의 사람들이 자신의 휴대전화에서 성경을 볼 수 있게 합니다."
     promo 2: "YouVersion으로 성경은 항상 곁에 있습니다. 동영상을 보세요."
     promo 3: "올해 50억명 이상의 사람들이 휴대폰을 사용할 것입니다. 지금 후원하세요."
@@ -980,6 +1002,11 @@ ko:
         tagline: "역사를 함께 만들어 나가요."
         button: "성경 앱을 공유해 주세요."
   ui:
+    characters remaining: "남은 글자수"
+    yes button: "예"
+    no button: "아니요"
+    loading indicator text: "로딩 중 ..."
+    loading: "로드 중..."
     pagination:
       next page: "다음 페이지"
       previous page: "이전 페이지"

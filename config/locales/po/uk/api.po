@@ -3,7 +3,8 @@
 #
 # Translators:
 # Translators:
-# Андрій Бандура <andriykopanytsia@gmail.com>, 2013
+# Translators:
+# Андрій Бандура <andriykopanytsia@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -25,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-16 07:37+0000\n"
+"PO-Revision-Date: 2014-04-03 08:20+0000\n"
 "Last-Translator: Андрій Бандура <andriykopanytsia@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/yv-backend/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -49,8 +50,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-03-21 19:14+0000\n"
+"Last-Translator: Андрій Бандура <andriykopanytsia@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/yv-backend/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,23 +95,26 @@ msgstr "{name} завантажив версію <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Ви завантажили версію <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} розпочав план <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} розпочав план"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Ви розпочали план <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Розпочато план"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} завершив <b>{day}</b>-ий день  плану <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} завершив день <b>{segment}</b> плану, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Ви завершили <b>{day}</b>-ий день плану <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Ви завершили день <b>{segment}</b> плану, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} завершив план <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "День {segment} із {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Ви завершили план <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} завершив план"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Завершено план"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} здобув значок <b>{title}</b>"

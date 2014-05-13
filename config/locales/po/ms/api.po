@@ -3,7 +3,8 @@
 #
 # Translators:
 # Translators:
-# Charlotte Billy <charlottebilly_92@hotmail.com>, 2013
+# Translators:
+# Charlotte Billy <charlottebilly_92@hotmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -25,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-22 14:51+0000\n"
+"PO-Revision-Date: 2014-04-07 14:50+0000\n"
 "Last-Translator: Charlotte Billy <charlottebilly_92@hotmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/yv-backend/language/ms/)\n"
 "MIME-Version: 1.0\n"
@@ -94,23 +95,26 @@ msgstr "{name} telah memuat turun versi, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Anda telah memuat turun versi, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} telah memulakan pelan, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} telah memulakan pelan"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Anda telah memulakan pelan, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Telah memulakan pelan"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} telah melengkapkan hari <b>{day}</b> pelan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} telah melengkapkan hari <b>{segment}</b> pelan , <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Anda telah melengkapkan hari <b>{day}</b> pelan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Anda telah melengkapkan hari <b>{segment}</b> pelan, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} telah melengkapkan pelan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Hari {segment} {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Anda telah melengkapkan pelan, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} telah melengkapkan pelan"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Telah melengkapkan pelan"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} telah memperoleh lencana <b>{title}</b> "

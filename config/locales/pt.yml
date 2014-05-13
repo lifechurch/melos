@@ -1,4 +1,7 @@
 pt:
+  time:
+    formats:
+      votd: "%-d %B, %Y"
   social:
     intro page:
       main heading: "Conversa & Descoberta"
@@ -8,7 +11,7 @@ pt:
         user andy: "André Rodrigues"
         timestamp: "Há 5 dias"
         title: "Salmo 31:7 marcado"
-        verse: "Ficarei contente e me alegrarei por causa do teu infinito amor. Tu vês que estou sofrendo e conheces as minhas aflições."
+        verse: "Ficarei contente e me alegrarei por causa do teu amor, pois Tu vês que estou sofrendo e conheces as minhas aflições."
         reference: "Salmos 31:7"
         discover:
           copy: "Descubra e aprenda com seus amigos quando eles adicionarem destaques, marcadores e anotações."
@@ -21,17 +24,17 @@ pt:
         comments:
           first:
             text: "Eu realmente precisava ouvir isso hoje, obrigado. Vamos conversar em breve!"
-            time: "há cerca de 3 horas"
+            time: "cerca de 3 horas atrás"
           second:
             text: "Amém, eu também. Te enviando um e-mail agora."
-            time: "há cerca de 27 minutos"
+            time: "cerca de 27 minutos atrás"
           field placeholder: "Escreva um comentário..."
     widget:
       timeline: "Linha do Tempo"
       no activity yet: "Não há nenhuma atividade ainda."
     moment:
       read all: "Ler tudo"
-      read less: "Ler menos"
+      read less: "Leia menos"
     share: "Compartilhar"
     my connections: "Contas Conectadas"
     connected as: "Você está conectado a %{connection} como %{username}."
@@ -70,7 +73,7 @@ pt:
   meta:
     kids_app:
       title: "O App da Bíblia para Crianças"
-      description: "O App da Bíblia para Crianças lançado em 28 de Novembro, no Dia de Ação de Graças! São histórias Bíblicas em um app para iOS e Android. Veja a prévia em bible.com/kids"
+      description: "O App da Bíblia para Crianças será lançado em 28 de Novembro, no Dia de Ação de Graças! Histórias interativas da Bíblia em um app grátis para iOS e Android. Veja a prévia em bible.com/kids"
     100million:
       title: "Começa com 100 Milhões"
       description: "O App da Bíblia foi instalado quase 100 milhões de vezes - um marco incrível! Mas estamos apenas começando. Faça o download do aplicativo gratuito da Bíblia hoje - e, em seguida, compartilhe o aplicativo com seus amigos. Juntos vamos fazer história."
@@ -83,7 +86,7 @@ pt:
   now: "Agora"
   celebrating 50MM: "Comemorando 50 milhões de instalações!"
   link: "Link"
-  site search: "Buscar no YouVersion"
+  site search: "Busca no YouVersion"
   auth error: "Desculpe, houve um problema com o seu nome de usuário ou senha. Por favor, faça o login no YouVersion para prosseguir."
   download: "Baixar"
   visit link: "Visitar Link"
@@ -187,17 +190,28 @@ pt:
     lower: "ou"
     upper: "OU"
   moments:
+    scripture unavailable: "Escritura indisponível"
+    could not load: "Não é possível carregar"
+    could not load verse: "Não foi possível carregar o versículo"
+    showing related: "Apresentando momentos relacionados"
+    return to: "Voltar para"
+    time past: "%{ago} atrás"
+    user likes this: "%{last_liker_link} curtir isto"
+    likes count more: "%{likes_count} mais"
+    likes count 2 more: "%{likes_count} mais"
+    likes count 3 or more: "%{likes_count} mais"
+    users like this: "%{last_liker_link} e %{more_link} curtir isto"
     vod:
       title: "Versículo do dia"
     friendship:
-      now friends: "Vocês agora são amigos de"
+      now friends: "Você agora é amigo de"
     cta:
-      profile update text: "Ajude seus amigos a te encontrar."
+      profile update text: "Ajude seus amigos a encontrar você."
       profile update button: "Atualize o seu perfil"
       sharing text: "Compartilhe versículos nas redes sociais"
-      sharing button: "Ativar o compartilhamento"
+      sharing button: "Habilitar o compartilhamento"
       friends text: "Veja os momentos de seus amigos na Bíblia."
-      friends button: "Encontre Amigos"
+      friends button: "Encontre seus amigos"
     action:
       go to scripture: "Vá para a Bíblia"
       load more: "Carregar mais"
@@ -210,36 +224,36 @@ pt:
       comment: "Comentário"
       comment title: "Ver todos os comentários"
       edit: "Editar"
-      edit highlight title: "Editar esse destaque"
-      edit bookmark title: "Editar esse marcador"
-      edit note title: "Editar essa anotação"
+      edit highlight title: "Edite esse destaque"
+      edit bookmark title: "Edite esse marcador"
+      edit note title: "Edite essa anotação"
       delete: "Apagar"
       delete confirm: "Você tem certeza?"
-      delete highlight title: "Apagar esse destaque"
-      delete bookmark title: "Apagar esse marcador"
-      delete note title: "Apagar essa anotação"
+      delete highlight title: "Apague esse destaque"
+      delete bookmark title: "Apague esse marcador"
+      delete note title: "Apague essa anotação"
   notifications:
     title: "Notificações"
     none: "Você não possui notificações"
-    no new: "Sem novas notificações"
-    view all: "Visualizar todas a Notificações"
+    no new: "Não há novas notificações"
+    view all: "Ver todas as Notificações"
   likes:
     create success: "Sucesso! Sua curtida foi salva"
     create failure: "Sua curtida não pode ser salva"
     destroy success: "Curtida apagada"
     destroy failure: "Sua curtida não pode ser apagada"
   comments:
-    view all N: "Ver todos %{count} comentários"
+    view all N: "Visualizar todos os %{count} comentários"
     post comment: "Publicar um comentário"
     create success: "Sucesso! Seu comentário foi publicado."
-    create failure: "O comentário não pode ser publicado"
+    create failure: "Seu comentário não pode ser publicado"
     destroy success: "Comentário apagado."
-    destroy failure: "Comentário não pode ser apagado  "
+    destroy failure: "Seu comentário não pode ser apagado  "
     form:
       save button: "Publicação"
   friends:
     you have N friends: "Você tem %{count} amigos"
-    none me: "Compartilhe seus momentos na Bíblia como marcadores, destaques e anotações com sua família e amigos mais próximos."
+    none me: "Compartilhe seus momentos junto a Bíblia tais como marcadores, destaques e anotações com sua família e amigos mais próximos."
     find friends: "Encontre Amigos"
     blank slate:
       heading: "Ainda não são amigos"
@@ -291,16 +305,16 @@ pt:
       status field: "Status:"
       save button: "Salvar"
     status:
-      private: "Privado"
+      private: "Particular"
       public: "Público"
-      friends: "Amigos apenas"
+      friends: "Apenas amigos "
       draft: "Rascunho"
     list title: "Anotações"
     loading community: "Carregando anotações da comunidade..."
     no community notes: "Não foram encontradas anotações comunitárias com referência aos versículos selecionados. Para criar uma anotação, selecione um versículo no leitor da Bíblia e então clique no botão selecionado no topo do leitor. "
     public: "Público"
     private: "Privado"
-    is private: "A anotação solicitada é privada. "
+    is private: "A anotação solicitada é particular. "
     draft: "Rascunho"
     friends: "Amigos"
     creation form errors: "O(s) seguinte(s) erro(s) impediu(ram) a criação de sua anotação"
@@ -324,9 +338,9 @@ pt:
     pop out: "Relocar"
     none found: "Nenhuma anotação encontrada..."
     create success: "Sucesso! Sua anotação foi salva."
-    create failure: "Erro em salvar a anotação"
+    create failure: "Erro ao salvar a anotação"
     destroy success: "Anotação apagada."
-    destroy failure: "Erro na exclusão da anotação"
+    destroy failure: "Erro ao apagar a anotação"
   ref:
     loading secondary: "Carregando Referência em Versão Secundária..."
     clear verses: "Apagar Versículos Selecionados"
@@ -361,6 +375,8 @@ pt:
     last name: "Sobrenome"
     agreement: "Eu concordo com os %{terms_link} do YouVersion."
     terms and conditions: "termos e condições"
+    email: "E-mail"
+    mobile: "Celular"
     facebook sign up success: "Ótimo! Você vinculou sua conta ao Facebook. Escolha um nome de usuário e senha no YouVersion para continuar."
     register: "Registrar"
     thanks for registering: "Obrigado por se registrar!"
@@ -389,7 +405,7 @@ pt:
     edit account_existence: "Deletar Conta"
     delete account button: "Deletar Minha Conta YouVersion"
     no devices: "Não há dispositivos conectados à sua Conta YouVersion"
-    no devices download copy: "Baseado na Bíblia online, YouVersion o aplicativo, é uma Bíblia móvel gratuita que pode ser instalada em quase todos os aparelhos móveis. O App da Bíblia permite os usuários lerem a Bíblia, compartilhar versículos nas suas redes sociais, marcar suas passagens favoritas e mais&mdash;tudo no formato que acompanha seu estilo de vida móvel. Visite <a href='https://www.bible.com/app'>bible.com/app</a> do seu aparelho móvel para baixar o App da Bíblia e conecte sua conta!"
+    no devices download copy: "Baseado na Bíblia online, o aplicativo do YouVersion é uma Bíblia móvel gratuita que pode ser instalada em quase todos os aparelhos móveis. O App da Bíblia permite os usuários lerem a Bíblia, compartilhar versículos nas suas redes sociais, marcar suas passagens favoritas e mais&mdash;tudo no formato que acompanha o estilo de vida móvel. Visite <a href='https://www.bible.com/app'>bible.com/app</a> do seu aparelho móvel para baixar o App da Bíblia e conecte sua conta!"
     yes delete: "Sim, Delete Minha Conta"
     account delete success: "Sua conta YouVersion foi deletada com sucesso. Nós esperamos que você continue encontrando outras maneiras de interagir com a Bíblia. Alguns destes apps podem ser úteis nos seus passos daqui pra frente: <a href= http://pt.a.youversion.com/free-bible-apps> http://pt.a.youversion.com/free-bible-apps</a>"
     delete account description: "Se você deletar sua conta, todas as suas informações, histórico e personalização serão eliminados (como anotações, marcadores, destaques, etc.) dentro do YouVersion.com e o App da Bíblia. Essa ação não pode ser revertida por você ou sua equipe. Se você está certo de que quer prosseguir, siga abaixo. "
@@ -506,7 +522,7 @@ pt:
     profile:
       blank slate:
         heading: "Prossiga, não há nada para ver aqui (ainda)"
-        description: "Comece a se envolver com a Bíblia ou seus amigos, e esta página irá mostrar o histórico do que você tem feito."
+        description: "Comece a se envolver com a Bíblia, ou seus amigos, e esta página irá mostrar o histórico do que você tem feito."
       visit friend: "Visite o perfil de %{friend}"
       tab activity: "Atividade Recente"
       tab friends: "Amigos"
@@ -536,7 +552,7 @@ pt:
       transfer_too_slow: "Escolha uma foto menor ou encontre uma conexão mais rápida"
       picture_invalid_type: "A foto deve estar no formato JPG, PNG, ou GIF."
       picture_creation form errors: "O(s) seguinte(s) erro(s) impediu(ram) que sua foto fosse adicionada: "
-      updated picture: "Sucesso! Você atualizou sua foto."
+      updated picture: "Parabens! Você atualizou sua foto. Pode levar alguns minutos para que seu avatar seja atualizado."
       updated notifications: "Sucesso! Você atualizou suas configurações de notificação."
       notifications token error: "Token inválido, por favor entre com sua senha para editar suas configurações de notificação. "
       notification errors: "O(s) seguinte(s) erro(s) impediu(ram) a atualização das suas notificações:"
@@ -554,10 +570,10 @@ pt:
       reading_plans: "Notifique-me sobre informações dos planos de leitura que eu iniciei."
       publishing partners: "Me mantenha informado das novidades dos parceiros de conteúdo do YouVersion."
       update: "Atualizar Notificações"
-      friendships: "Notifique-me a respeito de solicitações de amizade"
-      moments: "Me avise sobre a atividade dos amigos"
-      comments: "Me avise sobre comentários nas minhas atividades"
-      likes: "Avise-me sobre curtidas em minha atividade"
+      friendships: "Me avise quando houver solicitações de amizade"
+      moments: "Me avise quando houver atividade dos amigos"
+      comments: "Me avise quando houver comentários nas minhas atividades"
+      likes: "Me avise quando houver curtidas em minhas atividades"
   bookmarks:
     new: "Novo Marcador "
     edit: "Editar"
@@ -611,6 +627,9 @@ pt:
       view my plans: "Ver Meus Planos"
       featured plans: "Planos em destaque"
       view all plans: "Ver Todos os Planos"
+      reading: "leitura"
+      readings: "Leitura"
+      readings 5 or more: "Leitura"
     settings: "Configurações"
     privacy:
       visible to friends?: "Gostaria que sua atividade neste plano esteja visível para seus amigos?"
@@ -656,7 +675,7 @@ pt:
     done reading: "Pronto"
     no verses: "Sem versículos para hoje "
     no content: "Seu plano de leitura não tem leitura das escrituras agendada para este dia então foi marcado como completo."
-    read today: "Ver as Leituras de Hoje"
+    read today: "Leitura do dia"
     devotional: "Devocional "
     completion status _ below percentage: "Completo"
     current progress html: "Dia <b>%{day}</b> de <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ pt:
         tagline: "Juntos vamos fazer história."
         button: "Compartilhe o App da Bíblia"
   ui:
+    characters remaining: "caracteres restantes"
+    yes button: "Sim"
+    no button: "Não"
+    loading indicator text: "Carregando..."
+    loading: "Carregando"
     pagination:
       next page: "Próxima Página"
       previous page: "Página Anterior"

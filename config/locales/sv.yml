@@ -1,4 +1,7 @@
 sv:
+  time:
+    formats:
+      votd: "%-d %B, %Y"
   social:
     intro page:
       main heading: "Samtal & Utforskning"
@@ -187,6 +190,17 @@ sv:
     lower: "eller"
     upper: "ELLER"
   moments:
+    scripture unavailable: "Skrift otillgänglig"
+    could not load: "Kunde inte ladda"
+    could not load verse: "Kunde inte ladda vers"
+    showing related: "Visa relaterade händelser"
+    return to: "Gå tillbaka till"
+    time past: "%{ago} sedan"
+    user likes this: "%{last_liker_link} har gillat detta"
+    likes count more: "%{likes_count} ytterligare"
+    likes count 2 more: "%{likes_count} ytterligare"
+    likes count 3 or more: "%{likes_count} ytterligare"
+    users like this: "%{last_liker_link} och %{more_link} har gillat detta"
     vod:
       title: "Dagens vers"
     friendship:
@@ -361,6 +375,8 @@ sv:
     last name: "Efternamn"
     agreement: "Jag godkänner YouVersions %{terms_link}."
     terms and conditions: "villkor"
+    email: "E-post"
+    mobile: "Mobil"
     facebook sign up success: "Utmärkt! Du har godkänt koppling med Facebook. Välj ett YouVersion-användarnamn och -lösenord för att fortsätta."
     register: "Registrera"
     thanks for registering: "Tack för att du registrerade dig!"
@@ -536,7 +552,7 @@ sv:
       transfer_too_slow: "Välj en mindre bild eller hitta en snabbare anslutning"
       picture_invalid_type: "Bilden måste vara JPG, PNG eller GIF"
       picture_creation form errors: "Följande fel förhindrade uppladdning av din bild:"
-      updated picture: "Du har uppdaterat din bild."
+      updated picture: "Färdigt! Du har uppdaterat din bild. Det kan ta flera minuter för din avatar att bli uppdaterad."
       updated notifications: "Du har uppdaterat dina meddelandeinställningar."
       notifications token error: "Ogiltigt tecken, vänligen logga in för att redigera dina meddelandeinställningar."
       notification errors: "Följande fel förhindrade dig att uppdatera dina meddelanden:"
@@ -611,6 +627,9 @@ sv:
       view my plans: "Visa mina planer"
       featured plans: "Föreslagna planer"
       view all plans: "Visa alla planer"
+      reading: "läsning"
+      readings: "läsningar"
+      readings 5 or more: "läsningar"
     settings: "Inställningar"
     privacy:
       visible to friends?: "Vill du att dina aktiviteter i denna plan ska vara synliga för dina vänner?"
@@ -656,7 +675,7 @@ sv:
     done reading: "Klar"
     no verses: "Inga verser idag"
     no content: "Din plan har ingen schemalagd skriftläsning idag, så den har markerats som färdig."
-    read today: "Visa dagens läsning"
+    read today: "Dagens läsning"
     devotional: "Andakt"
     completion status _ below percentage: "Klar"
     current progress html: "Dag <b>%{day}</b> av <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ sv:
         tagline: "Låt oss skapa historia tillsammans"
         button: "Dela Bibelappen"
   ui:
+    characters remaining: "tecken kvar"
+    yes button: "Ja"
+    no button: "Nej"
+    loading indicator text: "Laddar..."
+    loading: "Laddar"
     pagination:
       next page: "Nästa sida"
       previous page: "Föregående sida"

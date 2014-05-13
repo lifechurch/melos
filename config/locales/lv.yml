@@ -1,4 +1,7 @@
 lv:
+  time:
+    formats:
+      votd: "%B %-d, %Y"
   social:
     intro page:
       main heading: "Saruna un Atklājumi"
@@ -70,6 +73,7 @@ lv:
   meta:
     kids_app:
       title: "Bībeles aplikācija bērniem"
+      description: "Bībeles aplikācija bērniem tiks palaista 28. Novembrī. Interaktīvi Bībeles stāsti bezmaksas aplikācijā priekš iOS un Android. Priekškatījums pieejams bible.com/kids"
     100million:
       title: "Tas sākas ar 100 miljoniem"
       description: "Bībeles aplikācija ir uzstādīta gandrīz 100 miljonu reižu - neticami! Bet mēs tikai sākam. Lejuplādē bezmaksas Bībeles aplikāciju šodien - un tad dalies ar aplikāciju ar saviem draugiem. Radīsim vēsturi kopā."
@@ -186,6 +190,17 @@ lv:
     lower: "vai"
     upper: "Vai"
   moments:
+    scripture unavailable: "Rakstu vieta nav pieejama."
+    could not load: "Nevarēja ielādēt"
+    could not load verse: "Nevarēja ielādēt pantu"
+    showing related: "Rāda saistītos mirkļus"
+    return to: "Atgriezties pie"
+    time past: "%{ago} atpakaļ"
+    user likes this: "%{last_liker_link} patīk šis"
+    likes count more: "vēl %{likes_count} "
+    likes count 2 more: "vēl %{likes_count} "
+    likes count 3 or more: "vēl %{likes_count} "
+    users like this: "%{last_liker_link} un vēl %{more_link} patīk šis"
     vod:
       title: "Dienas pants"
     friendship:
@@ -360,6 +375,8 @@ lv:
     last name: "Uzvārds"
     agreement: "Es piekrītu YouVersion noteikumiem %{terms_link}."
     terms and conditions: "nosacījumi un apstķļi"
+    email: "e-pasts"
+    mobile: "mobilais"
     facebook sign up success: "Super! Tu esi autorizējies ar Facebook. Izvēlies savu YouVersion lietotājvārdu un paroli, lai turpinātu."
     register: "Reģistrēties"
     thanks for registering: "Paldies par reģistrēšanos!"
@@ -388,7 +405,7 @@ lv:
     edit account_existence: "Izdzēst kontu"
     delete account button: "Izdzēst manu YouVersion kontu"
     no devices: "Neviena ierīce nav pievienota YouVersion kontam"
-    no devices download copy: "Balstoties uz tiešsaistes Bībeli YouVersion, Bībeles aplikācija ir bezmaksas mobilā Bībele, kas var tikt uzinstalēt uz gandrīz jebkura telefona. Bībeles aplikācija ļauj lietotājiem lasīt Bībeli, dalīties ar rakstu vietām caur sociāliem tīkliem, izveidot grāmatzīmes un vairāk&mdash;viss, formātā, kas spēj turēt līdzi viņu pieaugošajam mobilajam dzīvesveidam. Apmeklē <a href='https://www.bible.com/app'>bible.com/app</a> no savas ierīces lai lejupielādētu Bībeles Aplikāciju un pievienotu savu kontu!"
+    no devices download copy: "Balstoties uz tiešsaistes Bībeli YouVersion, Bībeles aplikācija ir bezmaksas mobilā Bībele, kas var tikt uzinstalēta uz gandrīz jebkura telefona. Bībeles aplikācija ļauj lietotājiem lasīt Bībeli, dalīties ar rakstu vietām caur sociāliem tīkliem, izveidot grāmatzīmes un vairāk&mdash;viss, formātā, kas spēj turēt līdzi viņu pieaugošajam mobilajam dzīvesveidam. Apmeklē <a href='https://www.bible.com/app'>bible.com/app</a> no savas ierīces lai lejupielādētu Bībeles Aplikāciju un pievienotu savu kontu!"
     yes delete: "Jā, izdzēst manu kontu"
     account delete success: "Jūsu YouVersion konts ir veiksmīgi dzēsts. Mēs ceram jūs turpināsiet meklēt jēgpilnus veidus kā mijiedarboties ar Bībeli. Dažas no šīm aplikācijām varētu jums palīdzēt doties tālāk: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Ja jūs izdzēsīsiet savu kontu, jūs neatgriezeniski izdzēsīsiet visu savu informāciju, vēsturi un personalizāciju (kā, piemēram, piezīmes, grāmatzīmes, izcēlumus u.c.) gan YouVersion.com, gan Bībeles aplikācijā. Šo darbību nevar atgriezt nedz jūs, nedz arī mūsu komanda. Ja jūs esat pārliecināts, ka vēlaties doties tālāk, lūdzu turpiniet zemāk."
@@ -532,9 +549,10 @@ lv:
       picture error: "Piedodiet, radās kļūme atjaunojot tavu attēlu."
       picture_empty: "Lūdzu izvēlies attēlu priekš augšuplādēšanas"
       picture_too_large: "Attēla izmēram ir jābūt līdz 1 megabaitam"
+      transfer_too_slow: "Izvēlies mazāku bildi vai atrodi ātrāku interneta savienojumu."
       picture_invalid_type: "Attēlam būtu jābūt JPG, PNG vai GIF"
       picture_creation form errors: "Sekojoša kļūme(s) neļāva atjaunot attēlu:"
-      updated picture: "Attēls veiksmīgi pievienots."
+      updated picture: "Izdevās! Tu esi atjaunojis savu attēlu. Tavas profila bildes atjaunināšana var aizņemt dažas minūtes."
       updated notifications: "Tavi paziņojuma ustādījumi veiksmīgi atjaunoti."
       notifications token error: "Nepareiza pazīme, lūdzu pierakstieties lai rediģētu savus paziņojumu uzstādījumus."
       notification errors: "Sekojoša kļūme(-s) apturēja paziņojumu atjunināšanu:"
@@ -609,6 +627,9 @@ lv:
       view my plans: "Apskatīt manus lasīšanas plānus"
       featured plans: "Pielāgoti Plāni "
       view all plans: "Apskatīt visus lasīšanas plānus"
+      reading: "lasīšanas"
+      readings: "lasījumi"
+      readings 5 or more: "lasījumi"
     settings: "Uzstādījumi"
     privacy:
       visible to friends?: "Vai tu vēlētos, lai tava aktivitāte šajā lasīšanas plānā būtu redzama taviem draugiem?"
@@ -654,7 +675,7 @@ lv:
     done reading: "Izpildīts"
     no verses: "Nekādu rakstu vietu šodienai"
     no content: "Tavam plānam nav šodienai paredzētas rakstu vietas, tāpēc tas ticis atzīmēts kā pabeigts."
-    read today: "Skatīties šodienas lasījumu"
+    read today: "Šodienas lasāmais"
     devotional: "Dievbijīgs"
     completion status _ below percentage: "Pabeigts"
     current progress html: "Diena <b>%{day}</b> no <b>%{total_days}</b>"
@@ -755,6 +776,7 @@ lv:
     none: "Piedodiet, audio ieraksts šai versijai nav pieejams. "
     chapter only: "Piedodiet, audio nav pieejams pantiem. Skatieties \"Lasīšanas logā\" nodaļas audio ierakstu."
     close player menu: "Aizvērt"
+    publisher website: "Izdevēja mājaslapa"
   highlights:
     title: "Izceltais"
     blank slate:
@@ -782,6 +804,7 @@ lv:
   donate:
     donate now: "Ziedo tagad"
     donate now intl: "vai ziedojiet starptautiski"
+    enter amount: "Ievadiet daudzumu"
     promo 1: "Par katru ziedoto $1, vēl 10 cilvēki iegūst pieeju Bībelei uz viņu mobilajiem tālruņiem."
     promo 2: "Ar YouVersion, Bībele vienmēr ir tuvumā. Noskaties mūsu video."
     promo 3: "Šogad pāri 5 miljardiem cilvēku lietos mobilo tālruni. Ziedo tagad."
@@ -978,6 +1001,11 @@ lv:
         tagline: "Veidosim vēsturi kopīgi"
         button: "Dalies caur Bībeles aplikāciju"
   ui:
+    characters remaining: "rakstzīmes paliek"
+    yes button: "Jā"
+    no button: "Nē"
+    loading indicator text: "Ielādē..."
+    loading: "Ielādē"
     pagination:
       next page: "Nākamā lapa"
       previous page: "Iepriekšējā lapa"

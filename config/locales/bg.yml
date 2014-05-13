@@ -1,7 +1,7 @@
 bg:
   social:
     intro page:
-      main heading: "Разговор &amp; откриване"
+      main heading: "Разговор & откриване"
       main description: "Изследвайте Библията по нов начин с доверени приятели"
       moment:
         timestamp: "преди 5 дена"
@@ -346,6 +346,8 @@ bg:
     last name: "Фамилия"
     agreement: "Съгласявам се с %{terms_link} на YouVersion."
     terms and conditions: "условия за ползване"
+    email: "Ел.поща"
+    mobile: "Мобилен"
     facebook sign up success: "Оторизирани сте чрез Facebook. Изберете име и парола за YouVersion за да продължите."
     register: "Регистрирай"
     thanks for registering: "Благодарим за регистрацията"
@@ -518,7 +520,6 @@ bg:
       picture_too_large: "Снимката не може да е по-голяма от 1МБ"
       picture_invalid_type: "Изображението трбява да е JPG, PNG или GIF"
       picture_creation form errors: "Следните грешки възникнаха при качване на изображението:"
-      updated picture: "Снимката е обновена."
       updated notifications: "Успех! Настройките за съобщения са обновени"
       notifications token error: "Невалиден знак, влез в профила за да редактираш настройките на твоите съобщения."
       notification errors: "Следните грешка(и) не позволяват обновяването на твоите съобщения:"
@@ -633,7 +634,6 @@ bg:
     done reading: "Готово"
     no verses: "Няма стих за днес"
     no content: "Твоят план няма плануван текст за днес и е отбелязан като завършен."
-    read today: "Виж днешнич план за четене"
     devotional: "Посвещение"
     completion status _ below percentage: "Завърши"
     current progress html: "Ден <b>%{day}</b> от общо <b>%{total_days}</b>"
@@ -957,6 +957,9 @@ bg:
         tagline: "Нека създадем история!"
         button: "Сподели Библията"
   ui:
+    yes button: "Да"
+    no button: "Не"
+    loading indicator text: "Зареждане..."
     pagination:
       next page: "Следваща страница"
       previous page: "Предишна страница"

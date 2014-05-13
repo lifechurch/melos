@@ -1,4 +1,7 @@
 fi:
+  time:
+    formats:
+      votd: "%-d. %B'ta', %Y"
   social:
     intro page:
       main heading: "Keskustelut ja oivallukset"
@@ -15,7 +18,7 @@ fi:
           button: "Mistä voin aloittaa?"
         share:
           copy: "Jaa rehellisiä keskusteluja Sanasta."
-          button: "Aloita löytämällä muutamia ystäviä."
+          button: "Etsi aluksi muutama ystävä."
         likes:
           info: "ja 4 muuta tykkää tästä"
         comments:
@@ -175,7 +178,7 @@ fi:
   last page: "Viimeinen sivu"
   invalid username or password: "Virheellinen käyttäjänimi tai salasana."
   show all bookmarks: "Näytä kaikki %{total} kirjanmerkkiä"
-  show all notes: "Näytä kaikki muistiinpanot"
+  show all notes: "Kaikki muistiinpanot"
   recent bookmarks: "Viimeisimmät kirjanmerkit"
   percentage display: "%{number}%"
   myself: "Minä"
@@ -187,6 +190,17 @@ fi:
     lower: "tai"
     upper: "TAI"
   moments:
+    scripture unavailable: "Kohta ei ole saatavilla."
+    could not load: "Ei voitu ladata"
+    could not load verse: "Ei voitu ladata jaetta"
+    showing related: "Aiheeseen liittyvät hetket"
+    return to: "Palaa:"
+    time past: "%{ago} sitten"
+    user likes this: "%{last_liker_link} tykkää tästä"
+    likes count more: "%{likes_count} muuta"
+    likes count 2 more: "%{likes_count} muuta"
+    likes count 3 or more: "%{likes_count} muuta"
+    users like this: "%{last_liker_link} ja %{more_link} tykkää tästä"
     vod:
       title: "Päivän jae"
     friendship:
@@ -261,8 +275,8 @@ fi:
     destroy success: "Pyyntö hylätty"
     destroy failure: "Pyynnön hylkäys epäonnistui"
     requests title: "Ystäväpyynnöt"
-    requests view all: "Näytä kaikki kaveripyynnöt"
-    requests none: "Ei kaveripyyntöjä"
+    requests view all: "Näytä kaikki ystäväpyynnöt"
+    requests none: "Ei ystäväpyyntöjä"
     requests no new: "Ei uusia pyyntöjä"
     status:
       pending: "Pyyntö odottaa"
@@ -276,7 +290,7 @@ fi:
       add friend button title: "Lähetä %{user}:lle ystäväpyyntö"
       accept button: "Hyväksy"
       accept request button: "Hyväksy pyyntö"
-      ignore button: "Hylkää"
+      ignore button: "Ohita"
       ignore request button: "Hylkää pyyntö"
   notes:
     none user: "%{username} ei ole vielä tehnyt muistiinpanoja."
@@ -361,6 +375,8 @@ fi:
     last name: "Sukunimi"
     agreement: "Hyväksyn YouVersionin ehdot %{terms_link}."
     terms and conditions: "Käyttöehdot"
+    email: "Sähköposti"
+    mobile: "Mobiili"
     facebook sign up success: "Mahtavaa! Olet valtuuttanut Facebookin. Valitse YouVersion-käyttäjänimi ja salasana jatkaaksesi."
     register: "Rekisteröidy"
     thanks for registering: "Kiitos rekisteröitymisestä!"
@@ -536,7 +552,7 @@ fi:
       transfer_too_slow: "Valitse pienempi kuva tai vaihda nopeampaan yhteyteen"
       picture_invalid_type: "Profiilikuvan formaatin pitää olla JPG, PNG tai GIF"
       picture_creation form errors: "Profiilikuvan päivityksen estävät virheet:"
-      updated picture: "Profiilikuvasi päivitys onnistui!"
+      updated picture: "Ok! Kuvasi on päivitetty. Profiilikuvasi päivittämiseen voi mennä joitakin minuutteja."
       updated notifications: "Ilmoitusasetustesi päivitys onnistui!"
       notifications token error: "Virheellinen valtuutus, kirjaudu sisään muokataksesi ilmoitusasetuksia."
       notification errors: "Virheet, jotka estivät ilmoitustesi päivittämisen:"
@@ -592,7 +608,7 @@ fi:
       description: "Lukiessasi Raamattua, valitse jae ja merkitse se kirjanmerkillä. Palaa tänne kun haluat katsoa, muokata tai poistaa kirjanmerkkejä."
     form:
       title field: "Otsikko:"
-      reference field: "Lähde:"
+      reference field: "Kohta:"
       labels field: "Nimikkeet (pilkulla erotettuna):"
       highlight field: "Korostus: (vapaaehtoinen)"
       colors field: "Väri:"
@@ -611,6 +627,9 @@ fi:
       view my plans: "Omat suunnitelmat"
       featured plans: "Suunnitelmat esittelyssä"
       view all plans: "Kaikki suunnitelmat"
+      reading: "kohta"
+      readings: "kohdat"
+      readings 5 or more: "kohdat"
     settings: "Asetukset"
     privacy:
       visible to friends?: "Haluatko tähän suunnitelmaan liittyvän toimintasi näkyvän ystävillesi?"
@@ -656,7 +675,7 @@ fi:
     done reading: "Valmis"
     no verses: "Ei raamatunkohtia tälle päivälle"
     no content: "Suunnitelmassasi ei ole tälle päivälle luettavaa, joten se on merkitty suoritetuksi."
-    read today: "Näytä tämän päivän suunnitelma"
+    read today: "Tämän päivän kohdat"
     devotional: "Hartaudet"
     completion status _ below percentage: "Suoritettu"
     current progress html: "Päivä <b>%{day}</b> / <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ fi:
         tagline: "Tehdään historiaa yhdessä"
         button: "Jaa Raamattusovellus"
   ui:
+    characters remaining: "merkkiä jäljellä"
+    yes button: "Kyllä"
+    no button: "Ei"
+    loading indicator text: "Ladataan..."
+    loading: "Ladataan..."
     pagination:
       next page: "Seuraava sivu"
       previous page: "Edellinen sivu"

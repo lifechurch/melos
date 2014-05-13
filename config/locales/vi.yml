@@ -1,4 +1,7 @@
 vi:
+  time:
+    formats:
+      votd: "Ngày %-d %B, %Y"
   social:
     intro page:
       main heading: "Chia sẻ & khám phá"
@@ -17,13 +20,13 @@ vi:
           copy: "Tâm tình về Thánh Kinh."
           button: "Bắt đầu bằng cách tìm vài người bạn."
         likes:
-          info: "và thêm 4 người nữa thích"
+          info: "và 4 người nữa thích"
         comments:
           first:
-            text: "Tôi cần được nghe điều đó hôm nay, thật cảm ơn bạn! Ta cùng chia sẻ nhé!"
+            text: "Tôi cần được nhắc nhở điều đó hôm nay, cảm ơn bạn!"
             time: "khoảng 3 giờ trước"
           second:
-            text: "Amen, tôi cũng vậy. Đang email cho bạn đây."
+            text: "Amen, tôi cũng vậy. Đang email cho anh đây."
             time: "khoảng 27 phút trước"
           field placeholder: "Viết bình luận..."
     widget:
@@ -69,8 +72,8 @@ vi:
     moments content required: "Không thể bỏ trống nội dung."
   meta:
     kids_app:
-      title: "Ứng Dụng Kinh Thánh Cho Trẻ Em"
-      description: "App Kinh Thánh Trẻ Em ra mắt vào Lễ Tạ Ơn ngày 28/11! App miễn phí dành cho iOS và Android với những câu chuyện Kinh Thánh trở nên sống động và tương tác được với trẻ nhỏ! Hãy xem thử tại bible.com/kids!"
+      title: "Ứng Dụng Kinh Thánh Cho Thiếu Nhi"
+      description: "Ứng Dụng Kinh Thánh Cho Thiếu Nhi đã ra mắt vào Lễ Tạ Ơn ngày 28/11! App miễn phí dành cho iOS và Android với những câu chuyện Kinh Thánh trở nên sống động và tương tác được với trẻ nhỏ! Hãy xem thử và tải về từ bible.com/kids!"
     100million:
       title: "Khởi đầu với 100 triệu"
       description: "Ứng dụng Kinh Thánh đã đạt 100 triệu lượt cài đặt -  một cột mốc tuyệt vời! Nhưng chúng ta chỉ mới khởi đầu. Hãy tải Ứng dụng Kinh Thánh và chia sẻ với bạn bè hôm nay! Hãy cùng nhau làm nên lịch sử!"
@@ -110,7 +113,7 @@ vi:
   no badges found other: "%{username} chưa có huy hiệu nào."
   see users badges: "Xem tất cả huy hiệu của %{username}"
   bookmark: "Đánh dấu"
-  earned badge date: "Được %{username} nhận vào %{ago} trước"
+  earned badge date: "%{username} nhận được vào %{ago} trước"
   badges title: "Huy hiệu"
   currently selected: "Đang chọn:"
   read reference: "Đọc %{reference}"
@@ -187,6 +190,17 @@ vi:
     lower: "hoặc"
     upper: "HOẶC"
   moments:
+    scripture unavailable: "Không truy cập được phân đoạn này."
+    could not load: "Không tải được"
+    could not load verse: "Không tải câu Kinh Thánh được"
+    showing related: "Hiển thị các hoạt động liên quan"
+    return to: "Trở lại"
+    time past: "%{ago} trước"
+    user likes this: "%{last_liker_link} thích"
+    likes count more: "%{likes_count} nữa"
+    likes count 2 more: "thêm %{likes_count}"
+    likes count 3 or more: "thêm %{likes_count}"
+    users like this: "%{last_liker_link} và %{more_link} thích"
     vod:
       title: "Câu Kinh Thánh trong ngày"
     friendship:
@@ -196,7 +210,7 @@ vi:
       profile update button: "Cập nhật hồ sơ"
       sharing text: "Chia sẻ các câu Kinh Thánh trên mạng xã hội"
       sharing button: "Cho phép chia sẻ"
-      friends text: "Xem những trải nghiệm Kinh Thánh của bạn bè"
+      friends text: "Xem những hoạt động về Kinh Thánh của bạn bè"
       friends button: "Tìm bạn bè"
     action:
       go to scripture: "Xem đoạn Kinh Thánh"
@@ -232,7 +246,7 @@ vi:
     view all N: "Xem tất cả %{count} bình luận"
     post comment: "Đăng bình luận"
     create success: "Đã đăng bình luận của bạn!"
-    create failure: "Bình luận không đăng được"
+    create failure: "Không đăng bình luận được"
     destroy success: "Đã xóa bình luận"
     destroy failure: "Không xóa bình luận được"
     form:
@@ -243,7 +257,7 @@ vi:
     find friends: "Tìm bạn bè"
     blank slate:
       heading: "Chưa kết bạn"
-      description: "Bạn phải kết bạn với người này để xem danh sách bạn bè."
+      description: "Bạn cần phải kết bạn với người này để xem danh sách bạn bè."
     limit notice: "Bạn có thể kết bạn tối đa 150 người"
     limit description: "Trên Ứng dụng Kinh Thánh, việc kết bạn với những người mà bạn biết rõ và tin cậy sẽ tạo môi trường thuận lợi cho những chia sẻ chân thành hơn."
   friendships:
@@ -254,7 +268,7 @@ vi:
       find friends title: "Tìm bạn bè"
       search by name: "Tìm bằng họ tên"
       search button: "Tìm"
-    offer success: "Gởi yêu cầu kết bạn"
+    offer success: "Đã gởi yêu cầu kết bạn"
     offer failure: "Lỗi gởi yêu cầu kết bạn"
     create success: "Các bạn đã kết bạn!"
     create failure: "Lỗi khi kết bạn"
@@ -279,7 +293,7 @@ vi:
       ignore button: "Bỏ qua"
       ignore request button: "Bỏ qua yêu cầu"
   notes:
-    none user: "%{username} chưa có ghi chú nào."
+    none user: "%{username} chưa tạo ghi chú nào."
     blank slate:
       heading: "Bạn chưa tạo ghi chú nào"
       description: "Khi suy ngẫm lời Chúa và nghe được tiếng Ngài phán với chính mình, bạn có thể ghi lại những tư tưởng ấy ở đây. Ghi chú của bạn sẽ được tự động cài chế độ <em>riêng tư</em>. Nếu muốn chia sẻ với bạn bè, bạn chỉ cần đổi sang chế độ <em>công cộng</em>."
@@ -293,7 +307,7 @@ vi:
     status:
       private: "Riêng tư"
       public: "Công cộng"
-      friends: "Chỉ là bạn"
+      friends: "Bạn bè xem được"
       draft: "Nháp"
     list title: "Ghi chú"
     loading community: "Đang tải các ghi chú cộng đồng..."
@@ -361,6 +375,8 @@ vi:
     last name: "Họ"
     agreement: "Tôi đồng ý với %{terms_link} của YouVersion."
     terms and conditions: "các điều khoản và quy định"
+    email: "Email"
+    mobile: "Di động"
     facebook sign up success: "Bạn đã được Facebook cho phép! Hãy chọn tên sử dụng và mật khẩu cho YouVersion để tiếp tục."
     register: "Đăng ký"
     thanks for registering: "Cảm ơn bạn đã đăng ký!"
@@ -389,7 +405,7 @@ vi:
     edit account_existence: "Xóa tài khoản"
     delete account button: "Xóa tài khoản YouVersion của tôi"
     no devices: "Không có thiết bị nào kết nối với tài khoản YouVersion của bạn"
-    no devices download copy: "Dựa trên Kinh Thánh trực tuyến YouVersion, Bible App là Ứng dụng Kinh Thánh di động miễn phí mà bạn có thể cài đặt hầu như trên mọi thiết bị. Ứng dụng Kinh Thánh giúp bạn đọc và chia sẻ Kinh Thánh trên các mạng xã hội, đánh dấu phân đoạn yêu thích, và còn hơn thế nữa&mdash;tất cả được thiết kế để bắt kịp nhu cầu sử dụng di động đang tăng cao hiện nay. Hãy vào trang <a href='https://www.bible.com/app'>bible.com/app</a> trên thiết bị di động của bạn để tải Ứng dụng Kinh Thánh và kết nối tài khoản!"
+    no devices download copy: "Dựa trên Kinh Thánh trực tuyến YouVersion, Bible App là Ứng dụng Kinh Thánh di động miễn phí mà bạn có thể cài đặt trên hầu hết mọi thiết bị. App Kinh Thánh giúp bạn đọc và chia sẻ Kinh Thánh trên các mạng xã hội, đánh dấu phân đoạn yêu thích, và còn hơn thế nữa&mdash;tất cả được thiết kế để bắt kịp nhu cầu sử dụng di động đang tăng cao hiện nay. Hãy vào trang <a href='https://www.bible.com/app'>bible.com/app</a> trên thiết bị di động của bạn để tải Ứng dụng Kinh Thánh và kết nối tài khoản!"
     yes delete: "Vâng, hãy xóa tài khoản của tôi."
     account delete success: "Tài khoản YouVersion của bạn đã được xóa thành công. Chúng tôi hi vọng bạn sẽ tiếp tục tìm được những phương thức hiệu quả để tương giao với Lời Chúa. Có thể một vài ứng dụng sau sẽ hữu ích cho bạn: <a href='https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
     delete account description: "Nếu bạn xóa tài khoản của mình, bạn sẽ vĩnh viễn mất toàn bộ thông tin, lịch sử, và điều chỉnh cá nhân (như ghi chú, đánh dấu, tô màu, v.v...) trong YouVersion.com cũng như trong Ứng dụng Kinh Thánh. Chính bạn hoặc đội ngũ kỹ thuật cũng không thể đảo ngược hành động này. Nếu bạn khẳng định mình muốn xóa tài khoản, hãy tiếp tục dưới đây."
@@ -505,8 +521,8 @@ vi:
       general text: "Toàn bộ thỏa thuận: ĐIỀU KHOẢN SỬ DỤNG này bao gồm toàn bộ thỏa thuận giữa bạn và LifeChurch.tv và sẽ chi phối việc bạn sử dụng YouVersion, thay thế cho mọi thỏa thuận trước đây giữa bạn và LifeChurch.tv về YouVersion. Có thể bạn cũng phải tuân theo các điều khoản bổ sung sau này.<br><br>Lựa chọn của pháp luật và diễn đàn: ĐIỀU KHOẢN SỬ DỤNG và quan hệ giữa bạn và LifeChurch.tv do luật của tiểu bang Oklahoma áp đặt mà không có mâu thuẫn pháp lý nào. Bạn và LifeChurch.tv đồng ý sẽ khai trình lên các tòa án thuộc quyền hạn Quận Oklahoma, bang Oklahoma.<br><br>Tính hiệu lực của hợp đồng và từ bỏ pháp lý: Nếu LifeChurch.tv thất bại trong việc thi hành bất cứ điều khoản nào, thì cũng không khước từ pháp lý đối với các điều khoản đó. Nếu một tòa án thuộc đúng quyền hạn xác định bất cứ điều khoản nào là không có giá trị, các bên vẫn phải đồng ý rằng tòa án nên nỗ lực để hiệu lực hóa ý định của các bên theo như điều khoản, và mọi phần khác thuộc ĐIỀU KHOẢN SỬ DỤNG vẫn giữ nguyên hiệu lực.<br><br>Quyền kiêm hưởng và không chuyển nhượng: Bạn đồng ý rằng tài khoản LifeChurch.tv của bạn là không sang chuyển được, và bất cứ quyền nào về tên sử dụng và nội dung trong tài khoản của bạn sẽ chấm dứt khi bạn qua đời. Khi nhận được bản sao giấy báo tử của bạn, LifeChurch.tv sẽ đóng tài khoản của bạn và xóa vĩnh viễn toàn bộ nội dung trong đó.<br><br>Đạo luật giới hạn: Bạn nhận biết và đồng ý rằng, bất kể sự khác biệt trong luật định nào, mọi tuyên bố hay hành động liên quan hoặc phát sinh từ việc sử dụng YouVersion hoặc các ĐIỀU KHOẢN SỬ DỤNG này phải được lập biên bản trong vòng một (1) năm kể từ khi tuyên bố hoặc hành động đó xảy ra, nếu không sẽ bị khép lại vĩnh viễn.<br><br>Các tiêu đề của ĐIỀU KHOẢN SỬ DỤNG này chỉ vì mục đích thuận tiện chứ không có giá trị hợp đồng hoặc pháp lý."
     profile:
       blank slate:
-        heading: "Đi tiếp, tại đây chưa có gì để xem"
-        description: "Hãy bắt đầu tìm hiểu Kinh Thánh cùng bạn bè, và trang này sẽ hiển thị các hoạt động của bạn từ trước đến nay."
+        heading: "Hãy đi tiếp, tại đây chưa có gì để xem"
+        description: "Hãy bắt đầu tìm hiểu Kinh Thánh cùng bạn bè; trang này sẽ hiển thị các hoạt động của bạn và của mọi người theo thứ tự thời gian."
       visit friend: "Xem hồ sơ của %{friend}"
       tab activity: "Hoạt động"
       tab friends: "Bạn bè"
@@ -536,7 +552,7 @@ vi:
       transfer_too_slow: "Hãy chọn hình nhỏ hơn hoặc tìm kết nối nhanh hơn!"
       picture_invalid_type: "Định dạng hình ảnh phải là JPG, PNG hoặc GIF"
       picture_creation form errors: "Các lỗi sau khiến bạn không cập nhật hình được:"
-      updated picture: "Bạn đã cập nhật thành công hình đại diện!"
+      updated picture: "Bạn đã cập nhật thành công hình đại diện! Có thể sẽ mất vài phút nữa để hoàn tất cập nhật."
       updated notifications: "Bạn đã cập nhật thành công các cài đặt thông báo!"
       notifications token error: "Không có hiệu lực! Xin hãy đăng nhập để chỉnh sửa cài đặt thông báo của bạn."
       notification errors: "Các lỗi sau khiến bạn không cập nhật thông báo được:"
@@ -557,7 +573,7 @@ vi:
       friendships: "Báo cho tôi khi có yêu cầu kết bạn"
       moments: "Báo cho tôi biết hoạt động của bạn bè"
       comments: "Báo cho tôi khi có bình luận về hoạt động của tôi"
-      likes: "Thông báo khi hoạt động của tôi được yêu thích"
+      likes: "Báo cho tôi khi hoạt động của tôi được yêu thích"
   bookmarks:
     new: "Đánh dấu mới"
     edit: "Chỉnh sửa"
@@ -611,9 +627,12 @@ vi:
       view my plans: "Xem kế hoạch của tôi"
       featured plans: "Kế hoạch nổi bật"
       view all plans: "Xem tất cả kế hoạch"
+      reading: "bài đọc"
+      readings: "bài đọc"
+      readings 5 or more: "bài đọc"
     settings: "Cài đặt"
     privacy:
-      visible to friends?: "Bạn muốn bạn bè thấy được hoạt động này trong kế hoạch của bạn?"
+      visible to friends?: "Bạn muốn bạn bè thấy được các hoạt động trong kế hoạch này của bạn?"
       private: "Riêng tư"
       public: "Công cộng"
     title: "Kế hoạch"
@@ -656,7 +675,7 @@ vi:
     done reading: "Xong"
     no verses: "Không có câu gốc cho hôm nay"
     no content: "Kế hoạch của bạn không có bài đọc cho hôm nay và đã được đánh dấu hoàn tất."
-    read today: "Xem bài đọc hôm nay"
+    read today: "Bài đọc hôm nay"
     devotional: "Tĩnh nguyện"
     completion status _ below percentage: "Hoàn tất"
     current progress html: "Ngày <b>%{day}</b> trong <b>%{total_days}</b> ngày"
@@ -982,6 +1001,11 @@ vi:
         tagline: "Hãy cùng làm nên lịch sử!"
         button: "Chia sẻ App Kinh Thánh"
   ui:
+    characters remaining: "ký tự còn lại"
+    yes button: "Có"
+    no button: "Không"
+    loading indicator text: "Đang tải..."
+    loading: "Đang tải"
     pagination:
       next page: "Trang kế"
       previous page: "Trang trước"

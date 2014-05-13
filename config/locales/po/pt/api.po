@@ -3,8 +3,10 @@
 #
 # Translators:
 # Translators:
+# Translators:
 # alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
-# Nizia Dantas <nizia.dantas@gmail.com>, 2013
+# Nizia Dantas <niziadantasyouversion@gmail.com>, 2013-2014
+# Nizia Dantas <niziadantasyouversion@gmail.com>, 2014
 # Tetê <princesstt77@gmail.com>, 2013
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
@@ -14,7 +16,8 @@
 # Translators:
 # alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
 # Eric Allan dos Santos, 2014
-# Nizia Dantas <nizia.dantas@gmail.com>, 2013-2014
+# Nizia Dantas <niziadantasyouversion@gmail.com>, 2013-2014
+# Nizia Dantas <niziadantasyouversion@gmail.com>, 2014
 # Tetê <princesstt77@gmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
@@ -24,7 +27,8 @@
 # alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
 # alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# Nizia Dantas <nizia.dantas@gmail.com>, 2014
+# Nizia Dantas <niziadantasyouversion@gmail.com>, 2014
+# Nizia Dantas <niziadantasyouversion@gmail.com>, 2014
 #, fuzzy
 msgid ""
 msgstr ""
@@ -32,8 +36,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-18 17:40+0000\n"
-"Last-Translator: alessandra.morello_ptBR <alessandramorello@yahoo.com.br>\n"
+"PO-Revision-Date: 2014-04-22 22:40+0000\n"
+"Last-Translator: Nizia Dantas <niziadantasyouversion@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/yv-backend/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,8 +48,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-26 19:00+0000\n"
-"Last-Translator: Nizia Dantas <nizia.dantas@gmail.com>\n"
+"PO-Revision-Date: 2014-04-13 21:40+0000\n"
+"Last-Translator: Nizia Dantas <niziadantasyouversion@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/yv-backend/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,8 +60,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-04-13 21:00+0000\n"
+"Last-Translator: Nizia Dantas <niziadantasyouversion@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/yv-backend/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,16 +76,16 @@ msgid "moment.system.bible_series_promo.body"
 msgstr "Assista a <i>Série Bíblica</i> esta noite!"
 
 msgid "moment.bookmark.title"
-msgstr "{name} marcado como favorito <b>{reference_human}</b>"
+msgstr "{name} marcou como favorito <b>{reference_human}</b>"
 
 msgid "moment.bookmark.self.title"
 msgstr "Você marcou <b>{reference_human}</b> como favorito "
 
 msgid "moment.friendship.title"
-msgstr "{user_name} é agora amigo de <b>{friend_name}</b>"
+msgstr "{user_name} agora é amigo de <b>{friend_name}</b>"
 
 msgid "moment.friendship.self.title"
-msgstr "Você é agora amigo de <b>{friend_name}</b>"
+msgstr "Você agora é amigo de <b>{friend_name}</b>"
 
 msgid "moment.highlight.title"
 msgstr "{name} destacou <b>{reference_human}</b>"
@@ -101,23 +105,26 @@ msgstr "{name} baixou a versão, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Você baixou a versão, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} iniciou o plano, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} iniciou um plano"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Você iniciou o plano, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Iniciou um plano"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} completou o dia <b>{day}</b> do plano, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} concluiu o dia <b>{segment}</b> do plano, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Você completou o dia <b>{day}</b> do plano, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Você concluiu o dia <b>{segment}</b> do plano, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} completou o plano, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Dia {segment} do {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Você completou o plano, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} concluiu um plano"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Completou um plano"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} ganhou a medalha <b>{title}</b>"
@@ -132,7 +139,7 @@ msgid "moment.video.watched.self.title"
 msgstr "Você assistiu <b>{title}</b>"
 
 msgid "notifications.friendships.offer"
-msgstr "{name} deseja ser seu amigo no YouVersion"
+msgstr "{name} quer ser seu amigo no YouVersion"
 
 msgid "notifications.friendships.accept"
 msgstr "{name} aceitou seu pedido de amizade"
@@ -189,7 +196,7 @@ msgid "notifications.moments.create.bookmark"
 msgstr "{name} marcou {reference_human} como favorito"
 
 msgid "notifications.moments.create.highlight"
-msgstr "{name} destacado {reference_human}"
+msgstr "{name} destacou {reference_human}"
 
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} adicionou uma anotação em {reference_human}"
@@ -213,7 +220,7 @@ msgid "share.invite_sms_prefix"
 msgstr "De {name}: "
 
 msgid "share.invite_sms"
-msgstr "Você já tem o App da Bíblia do YouVersion? Eu adoro, e acho que você também adoraria. Aqui está o link: "
+msgstr "Você já tem o App da Bíblia do YouVersion? Eu amo, e acho que você também amaria. Aqui está o link: "
 
 msgid "share.invite_email_subject"
 msgstr "Você já tem o App da Bíblia? "
@@ -228,10 +235,10 @@ msgid "share.invite_twitter"
 msgstr "O App da Bíblia @YouVersion tem lugar garantido na minha tela inicial. Leia, assista, ouça, e compartilhe...tudo em um aplicativo gratuito: "
 
 msgid "share.invite_twitter_direct"
-msgstr "Você já tem o App da Bíblia do @YouVersion? Eu adoro, e acho que você gostaria também. Aqui está o link: "
+msgstr "Você já tem o App da Bíblia do @YouVersion? Eu amo, e acho que você também amaria. Aqui está o link: "
 
 msgid "share.invite_facebook"
-msgstr "Eu amo o App da Bíblia! Está realmente me ajudando a fazer da Bíblia parte do meu dia-a-dia. Eu posso destacar versículos, ouvir a Bíblia em áudio, fazer anotações, seguir planos devocionais..e até assistir vídeos! Faça o download agora (é gratuito):"
+msgstr "Eu amo o App da Bíblia! Ele está realmente me ajudando a fazer da Bíblia parte do meu dia-a-dia. Eu posso destacar versículos, ouvir a Bíblia em áudio, fazer anotações, seguir planos devocionais..e até assistir vídeos! Faça o download agora (é gratuito):"
 
 msgid "share.invite_facebook_direct"
-msgstr "Você já tem o App da Bíblia? Eu adoro e acho que você também gostaria. Aqui está o link: "
+msgstr "Você já tem o App da Bíblia? Eu amo e acho que você também amaria. Aqui está o link: "

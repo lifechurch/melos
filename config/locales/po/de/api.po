@@ -3,6 +3,7 @@
 #
 # Translators:
 # Translators:
+# Translators:
 # Anke Stoye <ankestoyeyouversion@gmail.com>, 2014
 # bookworm1966 <bookworm1966@gmx.de>, 2013
 # Friedrich-Wilhelm Prussak <info@prussak.de>, 2013
@@ -32,7 +33,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-06 23:00+0000\n"
+"PO-Revision-Date: 2014-04-12 16:20+0000\n"
 "Last-Translator: Anke Stoye <ankestoyeyouversion@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/yv-backend/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +79,7 @@ msgid "moment.bookmark.self.title"
 msgstr "Du hast ein Lesezeichen für <b>{reference_human}</b> angelegt."
 
 msgid "moment.friendship.title"
-msgstr "{user_name} ist nun mit <b>{friend_name}</b> befreundet"
+msgstr "{user_name} ist nun befreundet mit: <b>{friend_name}</b>"
 
 msgid "moment.friendship.self.title"
 msgstr "Du bist nun mit <b>{friend_name}</b> befreundet"
@@ -90,10 +91,10 @@ msgid "moment.highlight.self.title"
 msgstr "Du hast <b>{reference_human}</b> markiert"
 
 msgid "moment.note.title"
-msgstr "{name} hat eine Notiz mit dem Titel <b>{title}</b> verfasst"
+msgstr "{name} hat eine Notiz verfasst mit dem Titel: <b>{title}</b> "
 
 msgid "moment.note.self.title"
-msgstr "Du hast eine Notiz mit dem Titel <b>{title}</b> hinzugefügt"
+msgstr "Du hast eine Notiz hinzugefügt mit dem Titel: <b>{title}</b> "
 
 msgid "moment.bible.download.title"
 msgstr "{name} hat die <b>{version}</b> heruntergeladen"
@@ -101,29 +102,32 @@ msgstr "{name} hat die <b>{version}</b> heruntergeladen"
 msgid "moment.bible.download.self.title"
 msgstr "Du hast die <b>{version}</b> heruntergeladen."
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} hat den Leseplan <b>\"{title}\"</b> begonnen"
+msgid "moment.plan_subscription.title"
+msgstr "{name} hat einen Leseplan begonnen."
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Du hast den Leseplan <b>\"{title}\"</b> begonnen"
+msgid "moment.plan_subscription.self.title"
+msgstr "hat einen Leseplan begonnen"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} hat den <b>{day}.</b>  Tag im Leseplan <b>\"{title}\"</b> abgeschlossen"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} hat Tag <b>{segment}</b> des <b>{title}</b>-Leseplans abgeschlossen"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Du hast den <b>{day}.</b> Tag vom Leseplan <b>\"{title}\"</b> abgeschlossen"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Du hast Tag <b>{segment}</b> des <b>{title}</b>-Leseplans abgeschlossen"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} hat den Leseplan <b>\"{title}\"</b> abgeschlossen"
+msgid "moment.plan_segment_completion.body"
+msgstr "Tag {segment} von {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Du hast den Leseplan <b>\"{title}\"</b> abgeschlossen"
+msgid "moment.plan_completion.title"
+msgstr "{name} hat einen Leseplan abgeschlossen"
+
+msgid "moment.plan_completion.self.title"
+msgstr "hat einen Leseplan abgeschlossen"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} das <b>\"{title}\"</b> Abzeichen erhalten"
 
 msgid "moment.badge.earned.self.title"
-msgstr "Du hast das <b>\"{title}\"</b> Abzeichen erhalten"
+msgstr "Du hast das <b>\"{title}\"</b>-Abzeichen erhalten"
 
 msgid "moment.video.watched.title"
 msgstr "{name} hat <b>{title} angeschaut</b>"

@@ -1,4 +1,7 @@
 fr:
+  time:
+    formats:
+      votd: "%-d %B %Y"
   social:
     intro page:
       main heading: "Conversation et Découverte"
@@ -187,6 +190,17 @@ fr:
     lower: "ou"
     upper: "OU"
   moments:
+    scripture unavailable: "Verset indisponible"
+    could not load: "Chargement impossible"
+    could not load verse: "Chargement du verset impossible"
+    showing related: "Voir les moments associés"
+    return to: "Revenir à"
+    time past: "il y a %{ago}"
+    user likes this: "%{last_liker_link} aime ça"
+    likes count more: "%{likes_count} autres"
+    likes count 2 more: "%{likes_count} autres"
+    likes count 3 or more: "%{likes_count} autres"
+    users like this: "%{last_liker_link} et %{more_link} aiment ça"
     vod:
       title: "Verset du jour"
     friendship:
@@ -244,7 +258,7 @@ fr:
     blank slate:
       heading: "Pas encore amis"
       description: "Vous devez être ami avec cette personne pour pouvoir voir ses amis."
-    limit notice: "Vous pour avoir jusqu'à 150 amis"
+    limit notice: "Vous pouvez avoir jusqu'à 150 amis"
     limit description: "Limiter vos amis de Bible App à des personnes que vous connaissez bien permet de créer un environnement propice aux conversations authentiques et aux découvertes avec des personnes de confiance."
   friendships:
     find friends title: "Trouver des amis"
@@ -261,14 +275,14 @@ fr:
     destroy success: "Demande déclinée"
     destroy failure: "Erreur en refusant la requête"
     requests title: "Demandes de contact"
-    requests view all: "Voir toutes les demandes d'amité"
+    requests view all: "Voir toutes les demandes d'amitié"
     requests none: "Vous n'avez aucune demande d'amitié"
     requests no new: "Aucune nouvelle requête"
     status:
       pending: "Requête en attente"
       friends: "Amis"
-    user wants friendship: "%{user} veut être ton ami"
-    user wants friendship partial: "veut être ton ami"
+    user wants friendship: "%{user} veut être votre ami"
+    user wants friendship partial: "veut être votre ami"
     form:
       remove friend button: "Supprimer un ami"
       remove friend button title: "Supprimer cette personne de votre liste d'amis"
@@ -282,7 +296,7 @@ fr:
     none user: "%{username} n'a pas encore pris de notes."
     blank slate:
       heading: "Vous n'avez pas encore de notes"
-      description: "Lorsque vous lisez la Bible, quand vous sentez le murmure de Dieu vous parlant, vous pouvez ajouter rapidement ces pensées ici. Vos notes seront enregistrées comme étant <em>privées</em> par défaut. Pour en partager une avec des amis, ouvrez-la et marquez-la comme <em>publique</em>."
+      description: "Lorsque vous lisez la Bible, quand vous sentez le murmure de Dieu qui vous parle, vous pouvez ajouter rapidement ces pensées ici. Vos notes seront enregistrées comme étant <em>privées</em> par défaut. Pour en partager une avec des amis, ouvrez-la et marquez-la comme <em>publique</em>."
     form:
       title field: "Titre :"
       content field: "Contenu :"
@@ -324,7 +338,7 @@ fr:
     pop out: "Nouvelle fenêtre"
     none found: "Pas de notes trouvées."
     create success: "Succès ! Votre note a été sauvée."
-    create failure: "Erreur de d'enregistrement de la  note"
+    create failure: "Erreur d'enregistrement de la  note"
     destroy success: "Note supprimée"
     destroy failure: "Erreur de suppression de la  note"
   ref:
@@ -361,6 +375,8 @@ fr:
     last name: "Nom"
     agreement: "J'accepte les termes et les conditions de YouVersion %{terms_link}."
     terms and conditions: "Les Termes et Conditions d'utilisation"
+    email: "Email"
+    mobile: "Mobile"
     facebook sign up success: "Super! Accès autorisé via Facebook. Choisissez un nom d'utilisateur et un mot de passe YouVersion pour continuer."
     register: "S'inscrire"
     thanks for registering: "Merci pour votre inscription!"
@@ -536,7 +552,7 @@ fr:
       transfer_too_slow: "Choisissez une image plus petite ou trouvez une meilleure connexion"
       picture_invalid_type: "L'image doit être en JPG, PNG ou GIF"
       picture_creation form errors: "L'envoi de votre image a échoué suite à ces erreurs :"
-      updated picture: "Votre photo a été modifiée avec succès."
+      updated picture: "Succès ! Vous avez mis à jour votre photo. La mise à jour de votre avatar peut prendre quelques minutes."
       updated notifications: "Vos paramètres d'alertes ont été mis à jour avec succès."
       notifications token error: "Session invalide, veuillez vous connecter pour modifier vos paramètres de notification."
       notification errors: "Les erreurs suivantes ont empêché la mise à jour de vos notifications:"
@@ -586,7 +602,7 @@ fr:
     update: "Mettre à jour"
     color: "Couleur:"
     version field: "Version:"
-    none user: "%{username} n'a pas de favoris"
+    none user: "%{username} n'a pas de favori"
     blank slate:
       heading: "Ajoutez les versets importants aux favoris"
       description: "Pendant la lecture de la Bible, sélectionnez un verset et mettez-le en favori. Retournez ici pour voir, modifier, ou supprimer votre favori."
@@ -597,7 +613,7 @@ fr:
       highlight field: "Surbrillance : (optionnel)"
       colors field: "Couleur :"
       update button: "Mettre à jour le Favori"
-      save button: "Enregistrer le signet"
+      save button: "Enregistrer le Favori"
   badges:
     earned a badge: "Gagné un badge"
     user badges: "Les badges de %{user}"
@@ -611,6 +627,9 @@ fr:
       view my plans: "Voir Mes Plans"
       featured plans: "Plans Suggérés"
       view all plans: "Voir Tous les Plans"
+      reading: "lecture"
+      readings: "lectures"
+      readings 5 or more: "lectures"
     settings: "Paramètres"
     privacy:
       visible to friends?: "Voulez-vous que votre activité relative à ce plan soit visible de vos amis ?"
@@ -656,7 +675,7 @@ fr:
     done reading: "Effectuée"
     no verses: "Pas de verset aujourd'hui"
     no content: "Votre plan n'a pas de contenu prévu pour ce jour c'est pourquoi cela a été marquée comme achevé."
-    read today: "Voir la lecture d'aujourd'hui"
+    read today: "La lecture du jour"
     devotional: "Méditation quotidienne"
     completion status _ below percentage: "Terminé"
     current progress html: "Jour <b>%{day}</b> de <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ fr:
         tagline: "Ensemble, réécrivons l'histoire."
         button: "Partager la Bible App"
   ui:
+    characters remaining: "caractères restants"
+    yes button: "Oui"
+    no button: "Non"
+    loading indicator text: "Chargement..."
+    loading: "Chargement"
     pagination:
       next page: "Page Suivante"
       previous page: "Page Précédente"

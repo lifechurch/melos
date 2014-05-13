@@ -3,7 +3,10 @@
 #
 # Translators:
 # Translators:
+# Translators:
 # galonz <giandre.wijaya@gmail.com>, 2013
+# IvanaHartanto <ivana_hartanto@hotmail.com>, 2014
+# Ouli <origena@gmail.com>, 2014
 # renegade <xrenegadex@hotmail.co.jp>, 2013
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
@@ -20,7 +23,7 @@
 # Translators:
 # Translators:
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# margyouversion <margyouversion@gmail.com>, 2013
+# margyouversion <margyouversion@gmail.com>, 2013-2014
 # margyouversion <margyouversion@gmail.com>, 2013
 # renegade <xrenegadex@hotmail.co.jp>, 2013
 # renegade <xrenegadex@hotmail.co.jp>, 2013
@@ -31,8 +34,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-16 07:37+0000\n"
-"Last-Translator: renegade <xrenegadex@hotmail.co.jp>\n"
+"PO-Revision-Date: 2014-04-04 12:40+0000\n"
+"Last-Translator: Ouli <origena@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,8 +46,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-22 10:00+0000\n"
-"Last-Translator: gtkom <hendri.nurhalim@gmail.com>\n"
+"PO-Revision-Date: 2014-03-06 04:28+0000\n"
+"Last-Translator: margyouversion <margyouversion@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,8 +58,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-03-06 04:40+0000\n"
+"Last-Translator: margyouversion <margyouversion@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,7 +86,7 @@ msgid "moment.friendship.self.title"
 msgstr "Anda sekarang berteman dengan <b>{friend_name}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} disoroti <b>{reference_human}</b>"
+msgstr "{name} menyorot <b>{reference_human}</b>"
 
 msgid "moment.highlight.self.title"
 msgstr "Anda telah menyoroti <b>{reference_human}</b>"
@@ -100,23 +103,26 @@ msgstr "{name} telah mengunduh versi, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Anda telah mengunduh versi, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} telah memulai rencana bacaan, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} memulai sebuah program"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Anda telah memulai rencana bacaan, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Memulai sebuah program"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} Menyelesaikan hari ke <b>{day}</b> dari rencana bacaan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} menyelesaikan hari <b>{segment}</b> dari program, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Anda telah menyelesaikan hari ke <b>{day}</b> dari rencana bacaan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Anda menyelesaikan hari <b>{segment}</b> dari program, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} telah menyelesaikan rencana bacaan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Hari {segment} dari {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Anda telah menyelesaikan rencana bacaan, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} menyelesaikan sebuah program"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Menyelesaikan sebuah program"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} telah mendapatkan lencana <b>{title}</b>"
@@ -211,7 +217,7 @@ msgid "share.invite_sms_prefix"
 msgstr "Dari {name}:"
 
 msgid "share.invite_sms"
-msgstr "Apakah anda memiliki Aplikasi Alkitab dari YouVersion? Saya menyukainya, dan saya pikir anda juga akan menyukainya. Ini adalah tautannya jika anda belum mempunyainya:"
+msgstr "Apakah anda memiliki Aplikasi Alkitab dari YouVersion? Saya menyukainya, dan saya pikir anda juga akan menyukainya. Inilah tautannya:"
 
 msgid "share.invite_email_subject"
 msgstr "Apakah anda memiliki Aplikasi Alkitab?"
@@ -226,7 +232,7 @@ msgid "share.invite_twitter"
 msgstr "Aplikasi Alkitab dari @YouVersion mempunyai tempat tetap di layar utama saya.  Baca, lihat, dengar, dan bagikan...semua tersedia dalam aplikasi gratis:"
 
 msgid "share.invite_twitter_direct"
-msgstr "Apakah anda memiliki Aplikasi Alkitab dari @YouVersion? Saya menyukainya dan saya pikir anda akan meyukainya juga.  Inilah tautannya jika anda tidak mempunyainya:"
+msgstr "Apakah anda memiliki Aplikasi Alkitab dari @YouVersion? Saya menyukainya dan saya pikir anda akan meyukainya juga.  Inilah tautannya:"
 
 msgid "share.invite_facebook"
 msgstr "Saya suka Aplikasi Alkitab.  Aplikasi ini sangat membantu untuk membuat Alkitab bagian dari kehidupan saya sehari-hari.  Aplikasi ini bisa saya tandai, dengarkan Alkitab, bisa buat catatan, ikuti rencana-rencana renungan...bahkan bisa lihat video-video!  Ayo, download aplikasi ini sekarang (aplikasi ini gratis): "

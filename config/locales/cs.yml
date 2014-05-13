@@ -1,4 +1,7 @@
 cs:
+  time:
+    formats:
+      votd: "%-d. %B %Y"
   social:
     intro page:
       main heading: "Diskuze & Objevování"
@@ -98,7 +101,7 @@ cs:
   new note: "Nová poznámka"
   share success: "Vaše zpráva byla sdílena."
   share error: "Omlouváme, ve vaší zprávě se vyskytla chyba. Prosíme zkuste to znovu."
-  google plus: "Google +"
+  google plus: "Google+"
   connect to: "Připojte se k vašemu %{connection} účtu"
   deleted connection: "Úspěšně odstraněno vaše spojení se službou %{connection}"
   deleted connection error: "Omlouváme se, vyskytla se chyba při odstraňování spojení se službou %{connection}."
@@ -187,6 +190,17 @@ cs:
     lower: "nebo"
     upper: "NEBO"
   moments:
+    scripture unavailable: "Překlad nedostupný."
+    could not load: "Nelze načíst"
+    could not load verse: "Nelze načíst verš"
+    showing related: "Zobrazuji souvísející události"
+    return to: "Návrat"
+    time past: "před %{ago}"
+    user likes this: "Toto se líbí uživateli %{last_liker_link}"
+    likes count more: "%{likes_count} dalším"
+    likes count 2 more: "%{likes_count} dalším"
+    likes count 3 or more: "%{likes_count} dalším"
+    users like this: "%{last_liker_link} a %{more_link} se toto líbí"
     vod:
       title: "Verš dne"
     friendship:
@@ -196,14 +210,14 @@ cs:
       profile update button: "Aktualizovat profil"
       sharing text: "Sdílet verše na sociálních sítích"
       sharing button: "Zapnout sdílení"
-      friends text: "Přečíst si v Bibli momenty vašich přátel"
+      friends text: "Přečíst si v Bibli aktivitu vašich přátel"
       friends button: "Najít přátele"
     action:
       go to scripture: "Přejít k Písmu"
       load more: "Načíst více"
       like: "To se mi líbí"
       liked: "To se mi líbí"
-      like title: "Líbí se mi"
+      like title: "To se mi líbí"
       last comment: "Poslední komentář"
       share: "Sdílet"
       share title: "Sdílet s přáteli nebo rodinou"
@@ -222,21 +236,21 @@ cs:
     title: "Oznámení"
     none: "Nemáte žádná oznámení"
     no new: "Žádná nová oznámení"
-    view all: "Vidět všechna oznámení"
+    view all: "Zobrazit všechna oznámení"
   likes:
     create success: "Povedlo se! Vaše akce byla uložena"
-    create failure: "Váš like nemohl být uložen"
-    destroy success: "Like byl smazán"
-    destroy failure: "Váš like nemohl být smazán"
+    create failure: "Vaši akci se nepodařilo uložit"
+    destroy success: "Už se vám to nelíbí"
+    destroy failure: "Vaši akci se nepodařilo uložit"
   comments:
-    view all N: "Zobrazit %{count} komentáře/ů"
-    post comment: "Zveřejnit komentář"
+    view all N: "Zobrazit %{count} komentáře"
+    post comment: "Přidat komentář"
     create success: "Povedlo se! Přidali jste komentář."
-    create failure: "Komentář nelze zveřejnit"
+    create failure: "Komentář se nepodařilo zveřejnit"
     destroy success: "Komentář smazán"
     destroy failure: "Komentář nemohl být smazán"
     form:
-      save button: "Příspěvek"
+      save button: "Přidat"
   friends:
     you have N friends: "Máte %{count} přátel"
     none me: "Sdílejte vaše chvíle nad Biblí prostřednictvím záložek, zvýraznění a poznámek s vašimi nejbližšími přáteli a rodinou."
@@ -268,7 +282,7 @@ cs:
       pending: "Čekající žádost"
       friends: "Přátelé"
     user wants friendship: "%{user} chce být váš přítel"
-    user wants friendship partial: "chce být vašim přítelem"
+    user wants friendship partial: "chce být vaším přítelem"
     form:
       remove friend button: "Odstranit přítele"
       remove friend button title: "Odstranit tuto osobu ze seznamu přátel"
@@ -361,6 +375,8 @@ cs:
     last name: "Příjmení"
     agreement: "Souhlasím s %{terms_link}."
     terms and conditions: "všeobecné podmínky"
+    email: "E-mail"
+    mobile: "Mobil"
     facebook sign up success: "Skvěle! Autorizovali jste se skrze Facebook. Nyní si zvolte YouVersion uživatelské jméno a heslo pro pokračování."
     register: "Zaregistrovat"
     thanks for registering: "Děkujeme za registraci!"
@@ -505,9 +521,9 @@ cs:
       general text: "do not translate"
     profile:
       blank slate:
-        heading: "Pokračuj, není tu nic k vidění (zatím)"
+        heading: "Pokračujte, není tu nic k vidění (zatím)"
         description: "Začněte pracovat s Biblí, anebo komunikovat s přáteli a na této stránce se vám zobrazí historie toho, co již máte za sebou."
-      visit friend: "Navštivit profil uživatele %{friend}"
+      visit friend: "Zobrazit profil uživatele %{friend}"
       tab activity: "Aktivita"
       tab friends: "Přátelé"
       tab notes: "Poznámky"
@@ -533,10 +549,10 @@ cs:
       picture error: "Omlouváme se, vyskytla se chyba při aktualizaci vašeho obrázku."
       picture_empty: "Prosím zvolte obrázek k nahrání"
       picture_too_large: "Obrázek musí mít méně než 1MB"
-      transfer_too_slow: "Vyberte menší obrázek, nebo najděte rychlejší připojení."
+      transfer_too_slow: "Vyberte menší obrázek nebo najděte rychlejší připojení."
       picture_invalid_type: "Obrázek musí být JPG, PNG nebo GIF"
       picture_creation form errors: "Následující chyby zabránily aktualizaci vašeho obrázku:"
-      updated picture: "Úspěšně jste aktualizovali vaši fotku!"
+      updated picture: "Výborně! Právě jste aktualizovali vaši fotografii. Může trvat několik minut, než se změny projeví."
       updated notifications: "Úspěšně jste aktualizovali vaše nastavení upozorňování!"
       notifications token error: "Neplatný token, prosím přihlašte se a změňte vaše nastavení upozorňování."
       notification errors: "Následující chyby zabránily aktualizování vašich upozornění:"
@@ -554,9 +570,9 @@ cs:
       reading_plans: "Upozorňovat mě na informace pro plány čtení, které jsem začal/a."
       publishing partners: "Informujte mě o novinkách od partnerů obsahu YouVersion."
       update: "Upozornění na aktualizace"
-      friendships: "Chci oznámit žádosti přátel"
-      moments: "Chci oznámení o aktivitě přátel"
-      comments: "Chci oznámení komentářů mých aktivit"
+      friendships: "Upozorňovat o žádostech o přátelství"
+      moments: "Upozorňovat o aktivitě přátel"
+      comments: "Upozorňovat o komentářích u mojí aktivity"
       likes: "Upozorňovat, když si někdo oblíbí moji aktivitu"
   bookmarks:
     new: "Nová záložka"
@@ -611,6 +627,9 @@ cs:
       view my plans: "Zobrazit moje plány"
       featured plans: "Doporučené plány"
       view all plans: "Zobrazit všechny plány"
+      reading: "čtení"
+      readings: "čtení"
+      readings 5 or more: "čtení"
     settings: "Nastavení"
     privacy:
       visible to friends?: "Chcete, aby se vaše aktivita v tomto plánu zobrazovala vašim přátelům?"
@@ -656,7 +675,7 @@ cs:
     done reading: "Hotovo"
     no verses: "Žádné verše pro dnešní den"
     no content: "Váš plán nemá na dnešek žádný obsah a proto byl označený jako dokončený."
-    read today: "Zobrazit dnešní čtení"
+    read today: "Dnešní čtení"
     devotional: "Ztišení"
     completion status _ below percentage: "Dokončeno"
     current progress html: "Den <b>%{day}</b> z <b>%{total_days}</b>"
@@ -982,6 +1001,11 @@ cs:
         tagline: "Buďme těmi, kteří tvoří dějiny."
         button: "Sdílej aplikaci Bible"
   ui:
+    characters remaining: "zbývá znaků"
+    yes button: "Ano"
+    no button: "Ne"
+    loading indicator text: "Načítání..."
+    loading: "Načítání"
     pagination:
       next page: "Další stránka"
       previous page: "Předchozí stránka"

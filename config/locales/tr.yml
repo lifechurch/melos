@@ -1,4 +1,7 @@
 tr:
+  time:
+    formats:
+      votd: "%-d %B %Y"
   social:
     intro page:
       main heading: "Sohbet & Keşif"
@@ -187,6 +190,17 @@ tr:
     lower: "veya"
     upper: "VEYA"
   moments:
+    scripture unavailable: "Metine ulaşılamıyor."
+    could not load: "Yüklenilemedi"
+    could not load verse: "Ayet yüklenilemedi"
+    showing related: "İlgili hareketler gösteriliyor"
+    return to: "Dön"
+    time past: "%{ago} önce"
+    user likes this: "%{last_liker_link} bunu beğendi"
+    likes count more: "%{likes_count} kişi daha"
+    likes count 2 more: "%{likes_count} daha"
+    likes count 3 or more: "%{likes_count} daha"
+    users like this: "%{last_liker_link} ve%{more_link} kişi bunu beğendi"
     vod:
       title: "Günün ayeti"
     friendship:
@@ -361,6 +375,8 @@ tr:
     last name: "Soyadı"
     agreement: "YouVersion %{terms_link}’ını kabul ediyorum."
     terms and conditions: "Şartlar ve Koşullar"
+    email: "e-Posta"
+    mobile: "Mobil Sürümler"
     facebook sign up success: "Muhteşem! Facebook hesabınızı onayladınız. Devam etmek için YouVersion kullanıcı ismini ve parolasını belirleyin."
     register: "Kaydol"
     thanks for registering: "Kaydolduğunuz için teşekkür ederiz!"
@@ -536,7 +552,7 @@ tr:
       transfer_too_slow: "Daha küçük bir resim seçiniz veya daha çabuk bir bağlantı edininiz."
       picture_invalid_type: "Resim JPG, PNG veya GIF formatında olmalıdır."
       picture_creation form errors: "Resiminizi güncellerken şu hata(lar) oluştu:"
-      updated picture: "Resminiz başarıyla güncellendi!"
+      updated picture: "Resminizi başarıyla güncellediniz. Görüntünün tarayıcınızda güncellenmesi birkaç dakika sürebilir"
       updated notifications: "Bildirim ayarlarınız başarıyla güncellendi!"
       notifications token error: "Geçersiz belirteç. Bilgilendirme ayarlarınızı değiştirmek için lütfen giriş yapınız."
       notification errors: "Bildirimlerinizi güncellemeye çalışırken şu hata(lar) oluştu:"
@@ -611,6 +627,9 @@ tr:
       view my plans: "Okuma Planlarımı Görüntüle"
       featured plans: "Önerilen Okuma Planları"
       view all plans: "Tüm Okuma Planları"
+      reading: "okuma"
+      readings: "okumalar"
+      readings 5 or more: "okumalar"
     settings: "Ayarlar"
     privacy:
       visible to friends?: "Bu okuma planındaki hareketlerinin arkadaşlarınıza görünür olmasını ister misiniz?"
@@ -656,7 +675,7 @@ tr:
     done reading: "Tamam"
     no verses: "Bugün için ayet yok."
     no content: "Okuma planınızda bugün için içerik bulunmuyor. Planınız tamamlanmış olarak işaretlendi."
-    read today: "Bugünün Okumasını Göster"
+    read today: "Günün okuması"
     devotional: "Teşvik Sözleri"
     completion status _ below percentage: "Tamamlandı"
     current progress html: "<b>%{total_days}</b> günden <b>%{day}.</b> gün"
@@ -982,6 +1001,11 @@ tr:
         tagline: "Birlikte tarih yazalım."
         button: "Kutsal Kitap Uygulaması'nı paylaş"
   ui:
+    characters remaining: "karakter kaldı"
+    yes button: "Evet"
+    no button: "Hayır"
+    loading indicator text: "Yükleniyor..."
+    loading: "Yükleniyor"
     pagination:
       next page: "Sonraki Sayfa"
       previous page: "Önceki Sayfa"

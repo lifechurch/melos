@@ -1,4 +1,7 @@
 de:
+  time:
+    formats:
+      votd: "%-d. %B %Y"
   social:
     intro page:
       main heading: "Unterhaltung & Entdeckung"
@@ -187,6 +190,17 @@ de:
     lower: "oder"
     upper: "ODER:"
   moments:
+    scripture unavailable: "Schriftstelle nicht verfügbar."
+    could not load: "Konnte nicht geladen werden"
+    could not load verse: "Vers konnte nicht geladen werden"
+    showing related: "Ähnliche Momente anzeigen"
+    return to: "Zurück zu"
+    time past: "vor %{ago}"
+    user likes this: "%{last_liker_link} gefällt das"
+    likes count more: "%{likes_count} weitere"
+    likes count 2 more: "%{likes_count} weitere"
+    likes count 3 or more: "%{likes_count} weitere"
+    users like this: "%{last_liker_link} und %{more_link} gefällt das"
     vod:
       title: "Vers des Tages "
     friendship:
@@ -361,6 +375,8 @@ de:
     last name: "Nachname"
     agreement: "Ich stimme den %{terms_link} von YouVersion zu."
     terms and conditions: "Allgemeine Geschäftsbedingungen"
+    email: "E-Mail"
+    mobile: "Mobil"
     facebook sign up success: "Super! Du hast dich über Facebook autorisiert. Wähle einen Benutzernamen und ein Passwort für YouVersion, um weiterzumachen."
     register: "Registrieren"
     thanks for registering: "Vielen Dank, dass du dich registriert hast!"
@@ -417,7 +433,7 @@ de:
     send new password button: "Sende neues Passwort"
     forgot password copy: "Gib deine E-Mail-Ad­res­se ein und klicke auf Sende neues Passwort; dann senden wir dir ein neues Passwort zu."
     forgot password check: "Das hat geklappt! Rufe deine E-Mails wegen des neuen Passwortes ab."
-    yes reset: "Ja, setzt mein Passowrt zurück."
+    yes reset: "Ja, setzt mein Passwort zurück."
     yes reset and log out: "Ja, meldet mich ab und setzt mein Passwort zurück."
     forgot password: "Passwort vergessen?"
     resend success: "Deine Bestätigungs-E-Mail wurde erneut versandt, bitte rufe deine E-Mails ab."
@@ -536,7 +552,7 @@ de:
       transfer_too_slow: "Wähle ein kleineres Bild oder benutze eine schnellere Verbindung"
       picture_invalid_type: "Das Bild kann folgende Formate haben: JPG, PNG oder GIF. "
       picture_creation form errors: "Folgende(r) Fehler haben das Aktualisiseren deines Bildes verhindert:"
-      updated picture: "Du hast dein Bild erfolgreich aktualisiert."
+      updated picture: "Geschafft! Du hast dein Foto aktualisiert. Es kann mehrere Minuten dauern, bis dein Profilbild aktualisiert ist."
       updated notifications: "Du hast deine Benachrichtigungseinstellungen erfolgreich aktualisiert."
       notifications token error: "Ungültige Eingabe; bitte melde dich an, um deine Einstellungen für Benachrichtigungen zu ändern."
       notification errors: "Der folgende Fehler hat die Änderung deiner Benachrichtigungen verhindert:"
@@ -611,6 +627,9 @@ de:
       view my plans: "Meine Lesepläne anschauen"
       featured plans: "Empfohlene Lesepläne"
       view all plans: "Alle Lesepläne anschauen"
+      reading: "Lesung"
+      readings: "Lesungen"
+      readings 5 or more: "Lesungen"
     settings: "Einstellungen"
     privacy:
       visible to friends?: "Soll das, was du in deinem Leseplan machst, für deine Freunde sichtbar sein?"
@@ -656,7 +675,7 @@ de:
     done reading: "Erledigt."
     no verses: "Keine Verse für heute. "
     no content: "Dein Leseplan hat für diesen Tag keine Lesung; er wurde als \"erledigt\" abgehakt. "
-    read today: "Heutige Lesung anschauen"
+    read today: "Die Lesung für diesen Tag"
     devotional: "Andacht"
     completion status _ below percentage: "Vollständig"
     current progress html: "Tag <b>%{day}</b> von <b>%{total_days}</b>"
@@ -681,7 +700,7 @@ de:
     search members placeholder: "YouVersion-Mitglieder suchen"
     search members: "Suche"
     email_on: "Versand aktivieren"
-    email_off: "Versand deaktivieren"
+    email_off: "Versand stoppen"
     email delivery text: "Aktiviere den Versand, wenn du deine Lesung täglich per E-Mail erhalten willst. Wähle die gewünschte Tageszeit für das Eintreffen der E-Mail und deine bevorzugte Bibelübersetzung."
     email delivery: "E-Mail-Versand"
     morning: "Morgens"
@@ -982,6 +1001,11 @@ de:
         tagline: "Lass uns Geschichte schreiben."
         button: "Teile die Bibel App."
   ui:
+    characters remaining: "Zeichen übrig"
+    yes button: "Ja"
+    no button: "Nein"
+    loading indicator text: "Lädt..."
+    loading: "Lädt"
     pagination:
       next page: "nächste Seite"
       previous page: "vorherige Seite"

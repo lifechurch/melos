@@ -3,8 +3,10 @@
 #
 # Translators:
 # Translators:
+# Translators:
 # Joukeschaafsma <Jwcschaafsma@gmail.com>, 2013
-# Yanick Goossens <yanickgoossens@hotmail.com>, 2013
+# PetraSnoek <lievepetra@gmail.com>, 2014
+# Yanick Goossens <yanickgoossens@hotmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -29,8 +31,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-19 17:00+0000\n"
-"Last-Translator: Yanick Goossens <yanickgoossens@hotmail.com>\n"
+"PO-Revision-Date: 2014-04-08 15:10+0000\n"
+"Last-Translator: PetraSnoek <lievepetra@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/yv-backend/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +55,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 21:20+0000\n"
+"PO-Revision-Date: 2014-03-09 14:40+0000\n"
 "Last-Translator: PetraSnoek <lievepetra@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/yv-backend/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -98,23 +100,26 @@ msgstr "{name} heeft de  <b>{version}</b> versie gedownload."
 msgid "moment.bible.download.self.title"
 msgstr "Je hebt de <b>{version}</b> versie gedownload."
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} heeft <b>{title}</b> als leesplan gestart."
+msgid "moment.plan_subscription.title"
+msgstr "{name} heeft een leesplan gestart"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Je hebt het leesplan gestart, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Is een leesplan gestart"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} heeft dag <b>{day}</b> van het leesplan afgerond, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} voltooide dag <b>{segment}</b> van leesplan, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Je hebt dag <b>{day}</b> van het leesplan afgerond, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Jij voltooide dag <b>{segment}</b> van leesplan, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} heeft het leesplan afgerond, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Dag {segment} van {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Je hebt het leesplan afgerond, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} heeft een leesplan voltooid"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Voltooide een leesplan"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} heeft de medaille <b>{title}</b> verdiend"
@@ -217,19 +222,18 @@ msgstr "Heb jij de Bijbel App al?"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Ik ben aan het genieten van de YouVersion Bijbel App en ik dacht dat je die ook leuk zou vinden. Ik sla mijn Bijbel nu veel vaker open omdat het zo gemakkelijk is om te lezen, kijken, luisteren en delen. Het heeft zelfs leesplannen, met een selectie van de Bijbel die iedere dag klaar staat voor je.\n"
+"Ik geniet van de YouVersion Bijbel App en ik denk dat jij dit ook leuk zou vinden. Ik sla mijn Bijbel nu veel vaker open omdat het zo gemakkelijk is om te lezen, kijken, luisteren en delen. Het heeft zelfs leesplannen, elke dag staat er een selectie van de Bijbel voor je klaar.\n"
 "\n"
-"\n"
-"Je kan het zo krijgen (gratis!) op iedere mobiele toestel:"
+"Je kunt het zo krijgen (gratis!) op elk mobiel apparaat:"
 
 msgid "share.invite_twitter"
-msgstr "De Bijbel App van @YouVersion heeft een speciale plaats op mijn startscherm. Lees, bekijk, luister, en deel...allemaal in een gratis app:"
+msgstr "De Bijbel App van @YouVersion heeft een vaste plaats op mijn beginscherm. Lees, bekijk, luister, en deel...allemaal in een gratis app:"
 
 msgid "share.invite_twitter_direct"
-msgstr "Heb jij de Bijbel App van @YouVersion? Ik hou ervan, en ik denk dat jij dat ook zal doen. Hier heb je een link:"
+msgstr "Heb jij de Bijbel App van @YouVersion? Ik hou ervan, en ik denk dat jij dat ook zal doen. Hier heb jij de link:"
 
 msgid "share.invite_facebook"
-msgstr "Ik hou van de Bijbel App! Het heeft me echt geholpen om de Bijbel een deel te maken van mijn dagelijkse routine. Het laat me markeren, luisteren naar audio Bijbels, notities maken, leesplannen volgen... en zelfs video's bekijken! Ga het nu downloaden (het is gratis):"
+msgstr "Ik hou van de Bijbel App! Het heeft me echt geholpen om de Bijbel deel te maken van mijn dagelijkse leven. Het laat me markeren, luisteren naar audio Bijbels, notities maken, leesplannen volgen... en zelfs video's bekijken! Download de App nu (het is gratis):"
 
 msgid "share.invite_facebook_direct"
-msgstr "Heb jij de Bijbel App? Ik hou ervan, en ik denk dat jij dat ook zal doen. Hier heb je een link:"
+msgstr "Heb jij de Bijbel App? Ik hou ervan en ik denk dat jij dat ook zal doen. Hier heb je de link:"

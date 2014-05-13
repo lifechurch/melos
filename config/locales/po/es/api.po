@@ -3,6 +3,8 @@
 #
 # Translators:
 # Translators:
+# Translators:
+# myleju, 2014
 # FedericoLarriva <federicolarriva@hotmail.com>, 2013
 # JessicaO <jessi1205@gmail.com>, 2013
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
@@ -12,14 +14,14 @@
 # Translators:
 # Translators:
 # dvillegas <deixii@gmail.com>, 2013
-# FedericoLarriva <federicolarriva@hotmail.com>, 2013
+# FedericoLarriva <federicolarriva@hotmail.com>, 2013-2014
 # Hector Escobar <yevgueni21@gmail.com>, 2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
 # Translators:
 # Translators:
-# FedericoLarriva <federicolarriva@hotmail.com>, 2013
+# FedericoLarriva <federicolarriva@hotmail.com>, 2013-2014
 # FedericoLarriva <federicolarriva@hotmail.com>, 2013
 # Jose Hernandez <youversion@josehernandez.tv>, 2013
 #, fuzzy
@@ -29,8 +31,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-21 15:40+0000\n"
-"Last-Translator: FedericoLarriva <federicolarriva@hotmail.com>\n"
+"PO-Revision-Date: 2014-04-09 22:12+0000\n"
+"Last-Translator: myleju\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/yv-backend/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,8 +43,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-22 08:00+0000\n"
-"Last-Translator: Hector Escobar <yevgueni21@gmail.com>\n"
+"PO-Revision-Date: 2014-03-05 19:02+0000\n"
+"Last-Translator: FedericoLarriva <federicolarriva@hotmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/yv-backend/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,8 +55,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-03-05 19:02+0000\n"
+"Last-Translator: FedericoLarriva <federicolarriva@hotmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/yv-backend/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,23 +100,26 @@ msgstr "{name} descargó la versión, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Usted descargó la versión, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} comenzó el plan, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} ha iniciado un plan"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Usted comenzó el plan, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Ha iniciado un plan"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} completó el día <b>{day}</b> del plan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} día completado <b>{segment}</b> del plan, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Usted completó el día <b>{day}</b> del plan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Ha completado el día <b>{segment}</b> del plan, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} completó el plan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Día {segment} de {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Usted completó el plan, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} ha completado un plan"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Ha completado un plan"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} ganó la insignia <b>{title}</b> "
@@ -150,10 +155,10 @@ msgid "notifications.comments.moment.mine.note"
 msgstr "{name} comentó en su nota: \"{comment}\""
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name} Les gusta tu marcador, {reference_human}"
+msgstr "{name} Les gusta su marcador, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} Les gusta tu subrayado, {reference_human}"
+msgstr "{name} Les gusta su resaltado, {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} Les gusta su nota en, {reference_human}"
@@ -162,7 +167,7 @@ msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} Les gusta su nota, “{title}”"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} Les gusta tu nota"
+msgstr "{name} Les gusta su nota"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
 msgstr "{moment_owner_name} también comentó en su marcador: \"{comment}\""
@@ -210,7 +215,7 @@ msgid "share.invite_sms_prefix"
 msgstr "De {name}:"
 
 msgid "share.invite_sms"
-msgstr "¿Tiene la Biblia App de YouVersion? ¡Me fascina! Y pienso que le gustaría también.  He aquí el link para que la descargue:"
+msgstr "¿Tiene la Biblia App de YouVersion? ¡Me fascina! Y pienso que le gustaría también.  He aquí la liga para que la descargue:"
 
 msgid "share.invite_email_subject"
 msgstr "¿Tiene la Biblia App?"
@@ -225,7 +230,7 @@ msgid "share.invite_twitter"
 msgstr "La Biblia App de @YouVersion tiene un lugar permanente en mi pantalla principal.  Lea, vea, escuche y comparta…todo en un App gratuita:"
 
 msgid "share.invite_twitter_direct"
-msgstr "¿Tiene la Biblia App de @YouVersion? ¡Me fascina! Y pienso que le gustaría también.  He aquí el link para que la descargue: "
+msgstr "¿Tiene la Biblia App de @YouVersion? ¡Me fascina! Y pienso que le gustaría también.  He aquí la liga para que la descargue: "
 
 msgid "share.invite_facebook"
 msgstr "¡Me fascina la Biblia App! Me ha ayudado a hacer la Biblia parte de mi vida diaria.  Me permite resaltar versículos, escuchar Audio-Biblias, hacer notas, seguir planes de lectura… ¡Incluso ver videos! Descárguela ahora mismo (es gratis):"

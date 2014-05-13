@@ -3,7 +3,8 @@
 #
 # Translators:
 # Translators:
-# DaliborHR <dalibor.staba@gmail.com>, 2013
+# Translators:
+# DaliborHR <dalibor.staba@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -25,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-12-10 14:50+0000\n"
+"PO-Revision-Date: 2014-04-13 14:20+0000\n"
 "Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -49,8 +50,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-03-04 06:34+0000\n"
+"Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,23 +95,26 @@ msgstr "Korisnik {name} je preuzeo Biblijski prijevod, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Preuzet je Biblijski prijevod, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "Korisnik {name} je pokrenuo plan, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "Korisnik {name} je pokrenuo plan čitanja"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Pokrenut je plan, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Pokrenut je plan čitanja"
 
-msgid "moment.reading_plan.day.title"
-msgstr "Korisnik {name} je završio dan <b>{day}</b> plana <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "Korisnik {name} je dovršio dan <b>{segment}</b> plana, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Završen je dan <b>{day}</b> plana, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Dovršen je <b>{segment}</b> plana, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "Korisnik {name} je dovršio plan, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Dan {segment} od {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Dovršen je plan, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "Korisnik {name} je dovršio plan"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Plan je dovršen"
 
 msgid "moment.badge.earned.title"
 msgstr "<b>{title}</b> značku je zaradio korisnik {name}"

@@ -1,4 +1,7 @@
 ro:
+  time:
+    formats:
+      votd: "%-d %B, %Y"
   social:
     intro page:
       main heading: "Discută și Descoperă"
@@ -11,7 +14,7 @@ ro:
         verse: "Fă-mă să mă înveselesc și să mă bucur de îndurarea Ta, căci vezi ticăloșia mea și știi neliniștea sufletului meu."
         reference: "Psalmul 31:7"
         discover:
-          copy: "Descoperă împreună cu prietenii tăi pe măsură ce aceștia adaugă evidențieri, marcaje și notițe."
+          copy: "Descoperă și învață împreună cu prietenii tăi pe măsură ce aceștia adaugă evidențieri, marcaje și notițe."
           button: "De unde pot să încep?"
         share:
           copy: "Poartă discuții sincere despre Scriptură."
@@ -70,6 +73,7 @@ ro:
   meta:
     kids_app:
       title: "Aplicația Biblia pentru copii"
+      description: "Aplicația Biblia pentru Copii se lansează pe 28 noiembrie, de Ziua Recunoștinței! Povestiri biblice interactive pentru copii într-o aplicație gratis pentru iOS și Android. O puteți vedea în avans pe bible.com/kids"
     100million:
       title: "Începe cu 100 de milioane"
       description: "Aplicația Biblia a fost instalată de aproape 100 milioane de ori - un adevărat moment de referință! Dar acesta e doar începutul. Descarcă azi Aplicația Biblia gratuită și apoi împărtășește-o cu prietenii. Să facem istorie împreună."
@@ -186,6 +190,17 @@ ro:
     lower: "sau"
     upper: "SAU"
   moments:
+    scripture unavailable: "Scriptură indisponibilă"
+    could not load: "Nu se poate încărca"
+    could not load verse: "Nu se poate încărca versetul"
+    showing related: "Prezentare activități asociate"
+    return to: "Revino la "
+    time past: "%{ago} în urmă"
+    user likes this: "%{last_liker_link} apreciază aceasta"
+    likes count more: "%{likes_count} în plus"
+    likes count 2 more: "%{likes_count} în plus"
+    likes count 3 or more: "%{likes_count} în plus"
+    users like this: "%{last_liker_link} și %{more_link} apreciază aceasta"
     vod:
       title: "Versetul zilei"
     friendship:
@@ -201,13 +216,13 @@ ro:
       go to scripture: "Du-te la scriptură"
       load more: "Încarcă mai mult"
       like: "Apreciez"
-      liked: "Îmi place"
+      liked: "Apreciat"
       like title: "Apreciază"
       last comment: "Ultimul comentariu"
       share: "Partajează"
       share title: "Împărtășește cu prietenii ori familia"
       comment: "Comentariu"
-      comment title: "Vizualizează toate comentariile"
+      comment title: "Vezi toate comentariile"
       edit: "Editează"
       edit highlight title: "Editează această evidențiere"
       edit bookmark title: "Editează acest marcaj"
@@ -220,7 +235,7 @@ ro:
   notifications:
     title: "Notificări"
     none: "Nu ai notificări"
-    no new: "Nici o notificare nouă."
+    no new: "Nici o notificare nouă"
     view all: "Vizualizează toate notificările"
   likes:
     create success: "Succes! Aprecierea ta a fost salvată"
@@ -237,7 +252,7 @@ ro:
     form:
       save button: "Postează"
   friends:
-    you have N friends: "Ai %{count} prieteni."
+    you have N friends: "Ai %{count} prieteni"
     none me: "Împărtășește activitatea ta în Biblie precum semne de carte, evidențieri sau notițe, cu prietenii apropiați și cu familia ta."
     find friends: "Găsește prieteni"
     blank slate:
@@ -286,7 +301,7 @@ ro:
       title field: "Titlu:"
       content field: "Conținut:"
       highlight field: "Evidențiază: (opțional)"
-      reference field: "Referințe:"
+      reference field: "Referință(e):"
       status field: "Status:"
       save button: "Salvează"
     status:
@@ -360,6 +375,8 @@ ro:
     last name: "Numele"
     agreement: "De acord cu %{terms_link} YouVersion"
     terms and conditions: "termenii și condițiile"
+    email: "e-mail"
+    mobile: "Mobil"
     facebook sign up success: "Minunat! Te-ai autentificat cu Facebook. Alege un nume de utilizator și o parolă de YouVersion pentru a continua."
     register: "Înregistrare"
     thanks for registering: "Mulțumim pentru înregistrare!"
@@ -388,7 +405,7 @@ ro:
     edit account_existence: "Ștergere cont"
     delete account button: "Șterge contul meu YouVersion"
     no devices: "Nu există nici un dispozitiv conectat cu contul tău YouVersion "
-    no devices download copy: "Având la bază Biblia online YouVersion, aplicația Biblia electronică este o Biblie mobilă gratuită care poate fi instalată pe majoritatea  dispozitivelor mobile. Aplicația Biblia permite utilizatorilor să citească Biblia, să împărtășească versete prin intermediul rețelelor sociale, să pună marcaje la pasajele preferate, și mai multe altele &mdash;totul într-un format care ține pasul cu stilul de viață din ce în ce mai dinamic al acestora. Vizitează <a href='https://www.bible.com/app'>bible.com/app</a> de pe dispozitivul tău mobil ca să descarci aplicația Biblia și să accesezi contul tău! "
+    no devices download copy: "Având la bază Biblia online, aplicația Biblia de la YouVersion este o Biblie mobilă gratuită care poate fi instalată pe majoritatea  dispozitivelor mobile. Aplicația Biblia permite utilizatorilor să citească Biblia, să împărtășească versete prin intermediul rețelelor sociale, să pună marcaje la pasajele preferate, și multe altele &mdash;totul într-un format care ține pasul cu stilul de viață din ce în ce mai dinamic al acestora. Vizitează <a href='https://www.bible.com/app'>bible.com/app</a> de pe dispozitivul tău mobil ca să descarci aplicația Biblia și să accesezi contul tău! "
     yes delete: "Da, șterge contul meu"
     account delete success: "Contul tău YouVersion a fost șters cu succes. Sperăm să găsești și în continuare moduri semnificative de a interacționa cu Biblia. Poate aceste aplicații te vor ajuta să avansezi: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
     delete account description: "Dacă îți ștergi contul, vei înlătura permanent toate datele tale, istoricul și personalizările (precum notițe, marcaje, evidențieri, etc.) din cadrul YouVersion.com și al Aplicației Biblia. Această acțiune nu poate fi revocată de tine sau de echipa noastră. Dacă ești sigur că vrei să continui, urmează procedura de mai jos."
@@ -505,7 +522,7 @@ ro:
     profile:
       blank slate:
         heading: "Mergi mai departe, nu este nimic de văzut aici (încă)"
-        description: "Începe să citești Biblia sau să comunici cu prietenii tăi. Pagina aceasta afișeasză istoricul activităților tale. "
+        description: "Începe să citești Biblia sau să comunici cu prietenii tăi. Pagina aceasta afișează istoricul activităților tale. "
       visit friend: "Vizitează profilul lui %{friend}"
       tab activity: "Activitate"
       tab friends: "Prieteni"
@@ -532,9 +549,10 @@ ro:
       picture error: "Ne pare rău, s-a produs o eroare în actualizarea fotografiei tale."
       picture_empty: "Alege-ți fotografia"
       picture_too_large: "Fotografia trebuie să fie mai mică de 1 megabyte"
+      transfer_too_slow: "Alege o fotografie mai mică sau găsește o conexiune mai rapidă"
       picture_invalid_type: "Fotografia trebuie să fie JPG, PNG, sau GIF"
       picture_creation form errors: "Actualizarea fotografiei tale a fost împiedicată de următoarea eroare (următoarele erori):"
-      updated picture: "Am actualizat cu succes fotografia ta."
+      updated picture: "Ți-ai actualizat cu succes fotografia. Actualizarea avatarului tău poate dura până la câteva minute."
       updated notifications: "Am actualizat cu succes setările tale pentru notificări."
       notifications token error: "Jetonul (codul) nu este valid; autentifică-te pentru a modifica setările de notificare."
       notification errors: "Actualizarea notificărilor tale a fost împiedicată de următoarea eroare (următoarele erori):"
@@ -609,6 +627,9 @@ ro:
       view my plans: "Vezi Planurile mele"
       featured plans: "Planuri recomandate"
       view all plans: "Vezi Toate Planurile"
+      reading: "lectură"
+      readings: "lecturi"
+      readings 5 or more: "lecturi"
     settings: "Setări"
     privacy:
       visible to friends?: "Dorești ca activitatea ta legată de acest plan să fie vizibilă prietenilor tăi?"
@@ -654,7 +675,7 @@ ro:
     done reading: "Terminat"
     no verses: "Nu sunt versete pentru azi"
     no content: "Planul tău nu are conținut planificat pentru azi, prin urmare a fost marcat ca și încheiat."
-    read today: "Vezi porțiunea pentru astăzi"
+    read today: "Lectura pentru astăzi"
     devotional: "Devotional"
     completion status _ below percentage: "Complet"
     current progress html: "Ziua <b>%{day}</b> din <b>%{total_days}</b>"
@@ -783,6 +804,7 @@ ro:
   donate:
     donate now: "Donează acum"
     donate now intl: "sau donează din afara Statelor Unite"
+    enter amount: "Trebuie să introduci o sumă"
     promo 1: "Pentru fiecare 1$ donat, încă 10 persoane capătă acces la Biblie pe dispozitivul lor mobil."
     promo 2: "Cu YouVersion, Biblia este întotdeauna aproape. Urmărește un video despre noi."
     promo 3: "În acest an peste 5 miliarde de persoane vor folosi un telefon mobil. Donează acum."
@@ -979,6 +1001,11 @@ ro:
         tagline: "Să facem istorie împreună."
         button: "Împărtășește Aplicația Biblia"
   ui:
+    characters remaining: "caractere rămase"
+    yes button: "Da"
+    no button: "Nu"
+    loading indicator text: "Se încarcă ..."
+    loading: "Încărcare"
     pagination:
       next page: "Pagina următoare"
       previous page: "Pagina anterioară"

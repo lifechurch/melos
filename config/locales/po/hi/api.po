@@ -3,7 +3,8 @@
 #
 # Translators:
 # Translators:
-# prinsonm <prinson.mony@yahoo.com>, 2013
+# Translators:
+# prinsonm <prinson.mony@yahoo.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -27,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-23 02:00+0000\n"
+"PO-Revision-Date: 2014-04-08 02:40+0000\n"
 "Last-Translator: prinsonm <prinson.mony@yahoo.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/yv-backend/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -96,23 +97,26 @@ msgstr "{name} downloaded the version, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "आपके द्वारा <b>{version}</b> संस्करण डाउनलोड किया गया हैं "
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} के द्वारा <b>{title}</b> पाठक योजना प्रारंभ किया गया हैं"
+msgid "moment.plan_subscription.title"
+msgstr "{name} योजना प्रारंभ करे "
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "आपके द्वारा, <b>{title}</b> प्रारंभ किया गया हैं"
+msgid "moment.plan_subscription.self.title"
+msgstr "योजना प्रारंभ हुआ "
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} के द्वारा पाठक योजना <b>{title}</b>का <b>{day}दिवस सम्पूर्ण किया गया हैं"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} सम्पूर्ण दिवस  <b>{segment}</b> योजना , <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "आपके द्वारा पाठक योजना <b>{title}</b>का <b>{day}दिवस सम्पूर्ण किया गया हैं"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "आपके द्वारा योजना का <b>{segment}</b> दिवस, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} ने  <b>{title}</b>पाठक योजना सफलतापूर्वक सम्पूर्ण किया "
+msgid "moment.plan_segment_completion.body"
+msgstr "दिन {segment} का{total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "आपने <b>{title}</b> पाठक योजना सफलतापूर्वक सम्पूर्ण किया "
+msgid "moment.plan_completion.title"
+msgstr "{name} योजना सम्पूर्ण हुआ "
+
+msgid "moment.plan_completion.self.title"
+msgstr "योजना सम्पूर्ण हुआ "
 
 msgid "moment.badge.earned.title"
 msgstr "{name} ने <b>{title}</b>बैज अर्जित किया "

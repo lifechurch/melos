@@ -3,7 +3,8 @@
 #
 # Translators:
 # Translators:
-# BjornPavlak <bjoern.pavlak@gmail.com>, 2013
+# Translators:
+# BjornPavlak <bjoern.pavlak@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -25,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-16 15:10+0000\n"
+"PO-Revision-Date: 2014-04-03 06:20+0000\n"
 "Last-Translator: BjornPavlak <bjoern.pavlak@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/yv-backend/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -94,23 +95,26 @@ msgstr "{name} hentede versionen, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Du hentede versionen, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{name} startede planen, <b>{title}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} startede en plan"
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Du startede planen, <b>{title}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Startede en plan"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{name} færdiggjorde dag<b>{day}</b> af planen, <b>{title}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} færdiggjorde dag  <b>{segment}</b> af planen, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Du færdiggjorde dag <b>{day}</b> af planen, <b>{title}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Du færdiggjorde dag <b>{segment}</b> af planen, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{name} færdiggjorde planen, <b>{title}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Dag {segment} af {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Du færdiggjorde planen, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} færdiggjorde en plan"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Færdiggjorde en plan"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} fortjente <b>{title}</b> mærket"

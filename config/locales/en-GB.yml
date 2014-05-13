@@ -1,4 +1,7 @@
 en-GB:
+  time:
+    formats:
+      votd: "%-d th %B %Y"
   social:
     intro page:
       main heading: "Conversation & discovery"
@@ -187,6 +190,17 @@ en-GB:
     lower: "or"
     upper: "OR"
   moments:
+    scripture unavailable: "Scripture unavailable."
+    could not load: "Could not load"
+    could not load verse: "Could not load verse"
+    showing related: "Showing related moments"
+    return to: "Return to"
+    time past: "%{ago} ago"
+    user likes this: "%{last_liker_link} likes this"
+    likes count more: "%{likes_count} more"
+    likes count 2 more: "%{likes_count} more"
+    likes count 3 or more: "%{likes_count} more"
+    users like this: "%{last_liker_link} and %{more_link} like this"
     vod:
       title: "Verse of the day"
     friendship:
@@ -361,6 +375,8 @@ en-GB:
     last name: "Last name"
     agreement: "I agree to the YouVersion %{terms_link}."
     terms and conditions: "terms and conditions"
+    email: "E-mail"
+    mobile: "Mobile"
     facebook sign up success: "Great! You've authorised with Facebook. Pick a YouVersion username and password to continue."
     register: "Register"
     thanks for registering: "Thanks for registering."
@@ -536,7 +552,7 @@ en-GB:
       transfer_too_slow: "Choose a smaller picture or find a faster connection"
       picture_invalid_type: "Picture should be JPG, PNG, or GIF"
       picture_creation form errors: "The following error(s) prevented updating your picture:"
-      updated picture: "Success! You've updated your picture."
+      updated picture: "Success! You've updated your picture.  It may take up to several minutes for your avatar to be updated."
       updated notifications: "Success! You've updated your notification settings."
       notifications token error: "Invalid token, please sign in to edit your notificaiton settings."
       notification errors: "The following error(s) prevented updating your notifications:"
@@ -611,6 +627,9 @@ en-GB:
       view my plans: "View my plans"
       featured plans: "Featured plans"
       view all plans: "View all plans"
+      reading: "reading"
+      readings: "readings"
+      readings 5 or more: "readings"
     settings: "Settings"
     privacy:
       visible to friends?: "Would you like your activity with this plan to be visible to your friends?"
@@ -656,7 +675,7 @@ en-GB:
     done reading: "Done"
     no verses: "No verses for today"
     no content: "Your plan has no scheduled scripture readings for this day, so it has been marked as completed."
-    read today: "View today's reading"
+    read today: "This day’s reading"
     devotional: "Devotional"
     completion status _ below percentage: "Complete"
     current progress html: "Day <b>%{day}</b> of <b>%{total_days}</b>"
@@ -666,7 +685,7 @@ en-GB:
     do you want to reset: "Want to try again?"
     catch up text: "Shift today's reading to your last completed reading (day %{last_completed_day} of the plan)."
     catch up description only: "If you ever fall behind on your readings, don't worry! You can always shift the current reading back to your last completed reading."
-    catch me up: "Reset the reading plan?"
+    catch me up: "Catch me up"
     restart description: "You can restart your plan. All of your reading history and progress will be reset and start from the beginning."
     restart: "Restart plan"
     privacy description: "It's your choice. Do you want people to see that you're reading this plan?"
@@ -982,6 +1001,11 @@ en-GB:
         tagline: "Let's make history together"
         button: "Share the Bible App"
   ui:
+    characters remaining: "characters remaining"
+    yes button: "Yes"
+    no button: "No"
+    loading indicator text: "Loading ..."
+    loading: "Loading"
     pagination:
       next page: "Next page"
       previous page: "Previous page"

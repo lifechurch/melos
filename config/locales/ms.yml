@@ -1,8 +1,39 @@
 ms:
+  time:
+    formats:
+      votd: "%-d %B %Y"
   social:
     intro page:
       main heading: "Perbualan & Penemuan"
+      main description: "Cara yang baru untuk mengeksplorasi Alkitab bersama sahabat yang dipercayai"
+      moment:
+        user aaron: "Aaron Steele"
+        user andy: "Andy Knight"
+        timestamp: "5 hari lalu"
+        title: "bookmark Mazmur 31:7"
+        verse: "Aku akan bersorak-sorak dan bersukacita karena kasih setia-Mu, sebab Engkau telah menilik sengsaraku, telah memperhatikan kesesakan jiwaku."
+        reference: "Mazmur 31:7"
+        discover:
+          copy: "Temui dan pelajari dengan sahabat anda ketika mereka menambah highlight, bookmark, dan nota."
+          button: "Di mana boleh saya bermula?"
+        share:
+          copy: "Kongsi perbualan yang jujur tentang Kitab."
+          button: "Bermula dengan mencari sahabat-sahabat."
+        likes:
+          info: "dan 4 lagi seperti ini"
+        comments:
+          first:
+            text: "Memang sangat memerlukan untuk mendengarkan itu hari ini, terima kasih. Mari berhubung lagi akan datang! "
+            time: "lebih kurang 3 jam lalu"
+          second:
+            text: "Amen, saya juga. Sedang menghantar e-mel kepada anda sekarang."
+            time: "lebih kurang 27 minit lalu"
+          field placeholder: "Tulis komen..."
+    widget:
+      timeline: "Timeline"
+      no activity yet: "Tidak terdapat sebarang aktiviti lagi."
     moment:
+      read all: "Baca semua"
       read less: "Baca Kurang"
     share: "Beritakan"
     my connections: "Akaun yang Berkaitan"
@@ -42,6 +73,7 @@ ms:
   meta:
     kids_app:
       title: "App Alkitab untuk Kanak-Kanak"
+      description: "App Alkitab untuk Kanak-kanak dilancarkan pada 28 November, Hari Kesyukuran! Cerita Alkitab yang interaktif dalam app percuma untuk iOS dan Android. Lihat preview di bible.com/kids"
     100million:
       title: "Ia Bermula dengan 100 Juta"
       description: "App Alkitab telah di instalasi hampir 100 juta kali - pencapaian yang menakjubkan! Tetapi kita baru sahaja bermula. Muat turun App Alkitab percuma hari ini - dan kongsikan app ini dengan sahabat anda. Ayuh mencipta sejarah bersama."
@@ -146,6 +178,7 @@ ms:
   last page: "Halaman Terakhir"
   invalid username or password: "Nama Pengguna atau Kata Laluan tidak sah."
   show all bookmarks: "Lihat segala bookmark %{total}"
+  show all notes: "Lihat semua nota"
   recent bookmarks: "Bookmark Terkini"
   percentage display: "%{number}%"
   myself: "Saya"
@@ -157,6 +190,17 @@ ms:
     lower: "atau"
     upper: "ATAU"
   moments:
+    scripture unavailable: "Alkitab tidak tersedia."
+    could not load: "Tidak dapat memuat"
+    could not load verse: "Tidak dapat memuat ayat "
+    showing related: "Menunjukkan moment yang berkaitan"
+    return to: "Kembali ke"
+    time past: "%{ago} yang lalu"
+    user likes this: "%{last_liker_link} like ini"
+    likes count more: "%{likes_count} lebih"
+    likes count 2 more: "%{likes_count} lebih"
+    likes count 3 or more: "%{likes_count} lebih"
+    users like this: "%{last_liker_link} dan %{more_link} like ini"
     vod:
       title: "Ayat harian"
     friendship:
@@ -174,6 +218,7 @@ ms:
       like: "Like"
       liked: "Sudah \"Like\""
       like title: "Like ini"
+      last comment: "Komen terakhir"
       share: "Beritakan"
       share title: "Kongsikan dengan sahabat atau keluarga"
       comment: "Komen"
@@ -193,12 +238,14 @@ ms:
     no new: "Tiada notifikasi baru"
     view all: "Lihat semua Notifikasi"
   likes:
+    create success: "Berjaya! Like anda telah disimpan"
     create failure: "Tanda suka anda tidak boleh disimpan"
     destroy success: "Tanda suka dipadam"
     destroy failure: "Tanda suka anda tidak boleh dipadam"
   comments:
     view all N: "Lihat semua %{count} komen"
     post comment: "Pos komen"
+    create success: "Berjaya! Komen anda telah ditulis."
     create failure: "Komen tidak dapat dipos"
     destroy success: "Komen dipadam"
     destroy failure: "Komen tidak boleh dipadam"
@@ -215,10 +262,15 @@ ms:
     limit description: "Menghadkan sahabat App Alkitab anda kepada orang yang anda sangat kenal mewujudkan persekitaran untuk perbualan yang jujur dan penemuan yang dikongsi dengan sahabat yang dipercayai."
   friendships:
     find friends title: "Cari sahabat"
+    search by name: "Cari menggunakan nama"
+    search button: "Pergi"
     widget:
       find friends title: "Cari sahabat"
+      search by name: "Cari menggunakan nama"
+      search button: "Pergi"
     offer success: "Permintaan persahabatan dihantar"
     offer failure: "Terdapat ralat dalam penghantaran permintaan persahabatan "
+    create success: "Berjaya! Anda sekarang bersahabat."
     create failure: "Terdapat ralat dalam mencipta persahabatan"
     destroy success: "Permintaan ditolak"
     destroy failure: "Terdapat ralat dalam menolak permintaan"
@@ -248,6 +300,7 @@ ms:
     form:
       title field: "Tajuk:"
       content field: "Kandungan:"
+      highlight field: "Highlight: (pilihan)"
       reference field: "Rujukan:"
       status field: "Status:"
       save button: "Selamatkan"
@@ -284,6 +337,7 @@ ms:
     cancel: "Batalkan"
     pop out: "Pop out"
     none found: "Tiada nota yang tercari..."
+    create success: "Berjaya! Nota anda telah disimpan."
     create failure: "Terjadi kesilapan semasa menyelamatkan nota"
     destroy success: "Nota dihapuskan"
     destroy failure: "Terjadi kesilapan semasa menghapuskan nota"
@@ -321,6 +375,8 @@ ms:
     last name: "Nama keluarga"
     agreement: "Saya bersetuju dengan %{terms_link} YouVersion."
     terms and conditions: "terma dan syarat"
+    email: "E-mel"
+    mobile: "Mobil"
     facebook sign up success: "Bagus! Anda sudah mengesahkan Facebook. Seterusnya, pilih nama pengguna dan kata laluan YouVersion."
     register: "Mendaftar"
     thanks for registering: "Terima kasih atas pendaftaran!"
@@ -336,6 +392,7 @@ ms:
     my profile: "Profil Saya"
     edit profile: "Mengedit Profil"
     update profile: "Update Profil"
+    go to your profile: "Pergi ke Profil Anda"
     other user profile: "Profil %{username}"
     my password: "Tukar Kata Laluan Saya"
     edit password: "Tukar Kata Laluan"
@@ -492,9 +549,10 @@ ms:
       picture error: "Maaf, ada kesilapan mengupdate foto anda."
       picture_empty: "Sila pilih suatu foto untuk diupload"
       picture_too_large: "Foto tidak harus melebihi 1 megabyte"
+      transfer_too_slow: "Pilih gambar yang lebih kecil atau cari rangkaian yang lebih laju"
       picture_invalid_type: "Foto harus JPG, PNG, atau GIF"
       picture_creation form errors: "Foto anda tidak diupdate kerana kesilapan berikut:"
-      updated picture: "Ya! Foto anda sudah di-update."
+      updated picture: "Berjaya! Anda telah mengemaskini gambar anda. Ini mungkin akan memakan masa sehingga beberapa minit untuk mengemaskini avatar anda."
       updated notifications: "Ya! Setting notifikasi anda sudah di-update."
       notifications token error: "Token tidak sah, sila log masuk untuk mengedit setting notifikasi anda."
       notification errors: "Notifikasi anda tidak di-update akibat kesilapan berikut:"
@@ -515,6 +573,7 @@ ms:
       friendships: "Beritahu saya tentang permintaan kesahabatan"
       moments: "Beritahu saya tentang aktiviti sahabat"
       comments: "Beritahu saya tentang komen terhadap aktiviti saya"
+      likes: "Beritahu saya tentang like terhadap aktiviti saya"
   bookmarks:
     new: "Bookmark Baru"
     edit: "Mengedit"
@@ -525,9 +584,11 @@ ms:
     all: "Semua"
     labels label: "Label"
     title: "Bookmark"
+    my labels: "Label saya"
     not found: "Bookmark membenarkan anda merujuk pantas ke petikan kegemaran ataupun bab terakhir yang dibaca dalam kitab. Untuk menambah bookmark, pilihilah suatu ayat dalam pembaca Alkitab dan klik butang Terpilih di bahagian atas pembaca."
     other user not found: "%{username} belum menyelamatkan sebarang bookmark."
     creation form errors: "Kesilapan berikut menghalang penciptaan bookmark:"
+    create success: "Berjaya! Bookmark anda telah disimpan."
     destroy success: "Bookmark dibatalkan"
     destroy failure: "Terjadi kesilapan semasa membatalkan bookmark"
     update success: "Bookmark sudah diupdate"
@@ -549,6 +610,7 @@ ms:
       title field: "Tajuk:"
       reference field: "Rujukan:"
       labels field: "Label (dipisahkan oleh koma):"
+      highlight field: "Highlight: (pilihan)"
       colors field: "Warna:"
       update button: "Update Bookmark"
       save button: "Selamatkan Bookmark"
@@ -562,6 +624,12 @@ ms:
     widget:
       my plans: "Pelan Saya"
       start reading: "Mula membaca"
+      view my plans: "Lihat Pelan Saya"
+      featured plans: "Pelan yang Diutamakan"
+      view all plans: "Lihat Semua Pelan"
+      reading: "pembacaan"
+      readings: "pembacaan"
+      readings 5 or more: "pembacaan"
     settings: "Setting"
     privacy:
       visible to friends?: "Adakah anda ingin aktiviti anda dengan pelan ini dapat dilihat oleh sahabat anda?"
@@ -607,7 +675,7 @@ ms:
     done reading: "Selesai"
     no verses: "Hari ini tiada ayat pembacaan"
     no content: "Pelan anda ditandai lengkap untuk hari ini kerana tiada kandungan yang dijadualkan untuk hari ini."
-    read today: "Lihat Bacaan Hari Ini"
+    read today: "Pembacaan hari ini"
     devotional: "Meditasi Agama"
     completion status _ below percentage: "Terlengkap"
     current progress html: "Hari <b>%{day}</b> dari <b>%{total_days}</b>"
@@ -716,6 +784,7 @@ ms:
       description: "Semasa membaca Alkitab, pilih sesuatu ayat dan highlight. Kembali ke sini untuk membaca, mengedit, atau membatalkan highlight."
     none user: "%{nama pengguna} tiada highlight"
     choose color: "Pilih Warna"
+    create success: "Berjaya! Highlight anda telah disimpan"
     create failure: "Terjadi kesilapan semasa menyelamatkan highlight"
     destroy success: "Highlight dibatalkan"
     destroy failure: "Terjadi kesilapan semasa membatalkan highlight"
@@ -735,6 +804,7 @@ ms:
   donate:
     donate now: "Buat Sumbangan Sekarang"
     donate now intl: "atau memberi sumbangan antarabangsa"
+    enter amount: "Masukkan jumlah"
     promo 1: "Setiap $1 yang disumbang membantu 10 orang lain mendapati akses kepada Alkitab di handphone."
     promo 2: "Dengan YouVersion, Alkitab sentiasa berhampiran. Tontonlah video kami."
     promo 3: "Tahun ini 5 ribu juta orang akan menggunakan handphone. Buatlah sumbangan sekarang."
@@ -931,6 +1001,11 @@ ms:
         tagline: "Ayuh mencipta sejarah bersama"
         button: "Kongsi App Injil"
   ui:
+    characters remaining: "baki karakter"
+    yes button: "Ya"
+    no button: "Tidak"
+    loading indicator text: "Memuat ..."
+    loading: "Memuat"
     pagination:
       next page: "Halaman Seterusnya"
       previous page: "Halaman Sebelumnya"
