@@ -13,12 +13,13 @@
           - avatars = user.avatars
           - avatar = avatars.sm_avatar
           %li.user
-            %span.timeline-avatar
-              - if user.username.present?
+            - if user.username.present?
+              %span.timeline-avatar
                 = link_to(user_path(user)) do
                   = image_tag avatar.url
-                = link_to(user.name, user_path(user.username), class: "user")
-              - else
+              = link_to(user.name, user_path(user.username), class: "user")
+            - else
+              %span.timeline-avatar
                 = image_tag avatar.url
 
             - like = user_activity.recent_like
