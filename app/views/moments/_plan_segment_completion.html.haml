@@ -1,0 +1,34 @@
+:ruby
+  # Locals Parameters
+  # moment - a single Moment to display  (Bookmark, Highlight, Note)
+  # comments_displayed - boolean, true or false (whether or not to display comments when rendering html)
+  # detail_view         - boolean, true or false (whether this is a detail view or a card view)
+
+  detail_view = false unless local_assigns.has_key? :detail_view
+  avatars = moment.avatars
+  avatar = avatars.lg_avatar
+
+.moment{"data-moment-id" => moment.id, "data-moment-path" => moment.to_path, "data-str-delete-confirm" => "Are you sure you want to delete this?"}
+  .moment-top
+    .moment-rp
+      %span.moment-icon
+        &nbsp;
+      %span.moment-avatar
+        = link_to(user_path(moment.user_name)) do
+          = image_tag avatar.url
+      %span.moment-time
+        = api_dt_time_ago(moment.created_dt)
+      %h2.moment-rp-text
+        = link_to(moment.moment_title.html_safe, moment.action_url, class: "moment-title-link")
+      .moment-rp-progress
+        .progress_wrap
+          .progress_bar_outer
+            .progress_bar{:style => "width:#{moment.percent_complete}%"}
+              &nbsp;
+          .progress_counter
+            =t("plans.current progress html", day: moment.segment, total_days: moment.total_segments).html_safe
+
+  -# !share controls, dates, and comments
+  .moment-btm
+    = render partial: "moments/actions_bar", locals: {moment: moment}
+    = render partial: "moments/comments", locals: {moment: moment, comments_displayed: comments_displayed, detail_view: detail_view}

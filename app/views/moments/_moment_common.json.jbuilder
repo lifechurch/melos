@@ -1,7 +1,7 @@
 json.id             moment.id
 json.created_dt     moment.created_dt
 json.updated_dt     moment.updated_dt
-json.references     moment.references
+json.references     moment.references if defined?(moment.references)
 json.path           moment.to_path
 json.avatar         moment.avatars.lg_avatar.url
 json.set! :time_ago, api_dt_time_ago(moment.created_dt)
@@ -54,6 +54,7 @@ json.likes do
   json.enabled       moment.liking
   json.count         moment.likes_count
   json.user_ids      moment.likes_user_ids
+  json.set! :is_liked, moment.liked_by?(current_auth.user_id)
 
   json.strings do
     if moment.likes_count > 0

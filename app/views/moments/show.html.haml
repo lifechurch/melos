@@ -1,0 +1,5 @@
+- content_for :sidebar do
+  = render partial: "moments/activity_sidebar", locals: {moment: @moment}
+
+%article.social-detail
+  = render partial: @moment.moment_partial_path, locals: { moment: @moment, comments_displayed: true, detail_view: true }
