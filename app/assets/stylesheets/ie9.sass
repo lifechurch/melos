@@ -8,3 +8,36 @@
 
 #main article:after
   content: none !important
+
+
+// Fix for Typekit problems in IE9 on moments/introduction
+
+@media only screen and (min-width: 969px)
+  #main article.social-intro
+
+    .intro-discover-copy
+      position: absolute
+      top: 210px
+      right: 0
+      width: 280px
+
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-family: arial, sans-serif
+      font-size: 18px
+      line-height: 1.1em
+
+@media only screen and (max-width: 968px)
+  #main article.social-intro
+
+    .intro-discover-copy p,
+    .intro-share-copy p
+      font-family: arial, sans-serif
+      font-size: 19px
+      line-height: 1.1em
+
+    .intro-discover-copy
+      position: absolute
+      top: 250px
+      right: auto
+      width: 80%
