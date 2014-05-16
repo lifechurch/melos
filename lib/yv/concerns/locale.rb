@@ -20,9 +20,9 @@ module YV
         visitor_locale ||= request.compatible_language_from(I18n.available_locales)
         visitor_locale ||= I18n.default_locale
         visitor_locale = visitor_locale.to_sym
-        
+
         set_locale(visitor_locale)
-        set_available_locales( @site.available_locales.present? ? @site.available_locales : I18n.available_locales )
+        #set_available_locales( @site.available_locales.present? ? @site.available_locales : I18n.available_locales )
 
         # redirect to either:
         # a) remove locale from path if default and present
