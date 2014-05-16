@@ -20,4 +20,7 @@ class PlanSegmentCompletion < YV::Resource
     "/moments/#{id}"
   end
 
+  def editable?; false; end
+  def deletable?; false; end
+
 end
