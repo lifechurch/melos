@@ -33,7 +33,8 @@ module YV
       end
 
       def set_locale(loc)
-        FastGettext.locale = I18n.locale = cookies.permanent[:locale] = loc
+        locale = I18n.locale = cookies.permanent[:locale] = loc
+        FastGettext.locale = locale.to_s.gsub('-', '_')
       end
 
       def set_available_locales(locs)
