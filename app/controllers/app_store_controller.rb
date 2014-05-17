@@ -61,7 +61,6 @@ class AppStoreController < ActionController::Base
   end
 
   def set_locale_and_timezone
-    Time.zone = client_settings.time_zone || "GMT"
     I18n.default_locale = @site.default_locale || :en
 
     # grab available locales as array of strings and compare against strings.
