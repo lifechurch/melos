@@ -61,10 +61,6 @@ class window.Panes.Bookmark extends window.Panes.Base
     reset("bookmark[title]")
     reset("bookmark[labels]")
 
-  setupCommentLink: (data)->
-    if data.to_path?
-      $('.verse-actions-success-link').attr('href', data.to_path)
-
   highlightBookmark: (data)->
     if data.color?
       $(data.references).each (index,ref_hash)->

@@ -53,10 +53,13 @@ class window.Panes.Highlight extends window.Panes.Base
       }
 
       request.done (data)=>
-        $(data.references).each (index,ref_hash)->
-          window.Highliter.highlight(ref_hash.usfm,data.color)
+        @highlightVerses(data)
+        @setupCommentLink(data)
         @showFormSuccess()
 
+  highlightVerses: (data)->
+    $(data.references).each (index,ref_hash)->
+      window.Highliter.highlight(ref_hash.usfm,data.color)
 
   resetForm: (form)->
 

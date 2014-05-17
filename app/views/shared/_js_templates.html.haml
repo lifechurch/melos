@@ -3,9 +3,15 @@
     :plain
       <div class="tab-panel highlight-pane" id="highlight-pane">
         <div class="pane">
-          <p class="verse-actions-success-message success" style="display:none;">
+        <div class="pane">
+          <span class="verse-actions-success-message success" style="display:none;">
             #{t("highlights.create success")}
-          </p>
+            <div class="post-verse-action-add-comment">
+              <a href="#" class="verse-actions-success-link">
+                #{t("social.add comment")}
+              </a>
+            </div>
+          </span>
           <form action="/highlights" method="post" id="highlight-form">
             <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
             <input type="hidden" name="highlight[version_id]" value="#{presenter.version.id}" />

@@ -86,9 +86,12 @@ class window.Panes.Base
       form.show()
       mssg.hide()
     
-    setTimeout(finishedWithSuccess, 3000)
+    # setTimeout(finishedWithSuccess, 10000)
     return
 
+  setupCommentLink: (data)->
+    if data.to_path?
+      $('.verse-actions-success-link').attr('href', data.to_path)
 
   setupColorpicker: ()->
     new Forms.ColorPicker(@form_el)
