@@ -1,4 +1,7 @@
-- subscriptions = Subscription.all(current_user)
+-# locals:
+-# subscriptions (from Reference Presenter)
+-# called from:
+-# sidebar/reference/show
 
 - if subscriptions.blank?
   = render partial: 'widgets/featured_plans'
