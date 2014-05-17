@@ -25,9 +25,14 @@
     :plain
       <div class="tab-panel bookmark-pane" id="bookmark-pane">
         <div class="pane">
-          <p class="verse-actions-success-message success" style="display:none;">
+          <span class="verse-actions-success-message success" style="display:none;">
             #{t("bookmarks.create success")}
-          </p>
+            <div class="post-verse-action-add-comment">
+              <a href="#" class="verse-actions-success-link">
+                #{t("social.add comment")}
+              </a>
+            </div>
+          </span>
           <form action="/bookmarks" method="post">
             <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
             <input type="hidden" name="bookmark[version_id]" value="#{presenter.version.id}" />
