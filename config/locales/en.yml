@@ -36,6 +36,7 @@ en:
       read all:                                 "Read all"
       read less:                                "Read less"
     share:                                      "Share"
+    add comment:                                "Add a comment"
     my connections:                             "Connected Accounts"
     connected as:                               "You are connected to %{connection} as %{username}."
     remove connection:                          "Remove this connection"

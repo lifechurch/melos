@@ -44,9 +44,8 @@ class window.Panes.Note extends window.Panes.Base
       }
 
       request.done (data)=>
-        if data.color?
-          $(data.references).each (index,ref_hash)->
-            window.Highliter.highlight(ref_hash.usfm,data.color)
+        @highlightVerses(data)
+        @setupCommentLink(data)
         @showFormSuccess()
 
 

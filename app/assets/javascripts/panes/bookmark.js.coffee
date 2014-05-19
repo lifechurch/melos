@@ -46,9 +46,8 @@ class window.Panes.Bookmark extends window.Panes.Base
       }
 
       request.done (data)=>
-        if data.color?
-          $(data.references).each (index,ref_hash)->
-            window.Highliter.highlight(ref_hash.usfm,data.color)
+        @highlightBookmark(data)
+        @setupCommentLink(data)
         @showFormSuccess()
 
 
@@ -62,7 +61,10 @@ class window.Panes.Bookmark extends window.Panes.Base
     reset("bookmark[title]")
     reset("bookmark[labels]")
 
-
+  highlightBookmark: (data)->
+    if data.color?
+      $(data.references).each (index,ref_hash)->
+      window.Highliter.highlight(ref_hash.usfm,data.color)
 
   setupBookmarkLabels: ()->
     field = $("#bookmark_labels")

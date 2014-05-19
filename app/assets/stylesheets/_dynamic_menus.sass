@@ -358,12 +358,19 @@
   z-index: 1
 
   .verse-actions-success-message
+    display: block
     background:
       color: #59B200
     color: #fff
     margin: 0
     padding: 3px 10px
     +border-radius(5px)
+    .post-verse-action-add-comment
+      display: inline-block
+      float: right
+    a
+      color: #fff
+      text-decoration: underline
 
 
 #menu_verse_actions .references
