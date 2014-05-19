@@ -8,9 +8,9 @@ FastGettext.default_available_locales = Localization.language_tags.moments.to_a
 FastGettext.default_text_domain = 'api'
 
 # set some locale fallbacks
-I18n.fallbacks[:"en_GB"] = [:"en-GB", :en]
-I18n.fallbacks[:"en_ES"] = [:"en-ES", :es]
-I18n.fallbacks[:"pt_BR"] = [:"pt", :pt]
-I18n.fallbacks[:"pt_PT"] = [:"pt-PT", :pt]
-I18n.fallbacks[:"zh_CN"] = [:"zh-CN"]
-I18n.fallbacks[:"zh_TW"] = [:"zh-TW"]
+I18n.fallbacks[:"en-GB"] = [:"en_GB", :en]
+I18n.fallbacks[:"en-ES"] = [:"en_ES", :es]
+I18n.fallbacks[:"pt-BR"] = [:"pt", :pt]
+I18n.fallbacks[:"pt-PT"] = [:"pt_PT", :pt]
+I18n.fallbacks[:"zh-CN"] = [:"zh_CN"]
+I18n.fallbacks[:"zh-TW"] = [:"zh_TW"]
