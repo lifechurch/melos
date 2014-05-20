@@ -3,10 +3,9 @@
   # presenter: Reference Presenter (Presenter::Reference)
   
   reference = presenter.reference
-  subscriptions = presenter.subscriptions
 
 = render partial: 'widgets/find_friends'
-= render partial: 'widgets/my_plans', locals: {subscriptions: subscriptions} if logged_in?
+= render partial: 'widgets/my_plans' if logged_in?
 = render partial: 'widgets/featured_plans' if logged_out?
 = render partial: 'sidebars/notes/stub', locals: {reference: reference}
 = render partial: 'widgets/download_app'

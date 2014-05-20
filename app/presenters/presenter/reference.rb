@@ -10,8 +10,6 @@ module Presenter
       @reference_string = ref_string
       @reference        = ::Reference.new(reference_hash)
       @version          = Version.find(reference.version)
-      current_user      = controller.send(:current_user)
-      @subscriptions    = ::Subscription.all(current_user) if current_user.present?
       @alt_version      = opts[:alt_version]   || Version.find(controller.send(:alt_version,reference))
       @alt_reference    = opts[:alt_reference] || ::Reference.new(reference, version: alt_version)
     end
@@ -39,6 +37,12 @@ module Presenter
     def note
       # Create an empty note for the note sidebar widget
       @note ||= Note.new(version_id: version.id)
+    end
+
+    def subscriptions
+      # used in sidebar partial
+      current_user = controller.send(:current_user)
+      ::Subscription.all(current_user, cache_for: YV::Caching.a_very_short_time) if current_user.present?
     end
 
     # implementation for Presenter::ReaderInterface method

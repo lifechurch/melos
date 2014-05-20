@@ -1,9 +1,9 @@
 -# locals:
--# subscriptions (from Reference Presenter)
+-# presenter (Reference Presenter)
 -# called from:
 -# sidebar/reference/show
 
-- if subscriptions.blank?
+- if presenter.subscriptions.blank?
   = render partial: 'widgets/featured_plans'
 - else
   .widget.my-plans
@@ -11,7 +11,7 @@
       = t("plans.widget.my plans")
     .plans-list
       %ul
-        - subscriptions.each do |sub|
+        - presenter.subscriptions.each do |sub|
           %li
             %h3= sub.name
             %p
