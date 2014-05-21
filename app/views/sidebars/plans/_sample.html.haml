@@ -22,31 +22,44 @@
   #calendar.bd.nopad.calendar
     - cal_text = t("plans.calendar")
 
-    %div.icon
-      =link_to("#", {title: cal_text }) do
-        %span= cal_text
-
-    %div.day
-      %h4= t("plans.which day in plan", day: day.to_s, total: plan.total_days)
-      .mute= pluralize(references.size,"reading")
-
-      // Next / Prev navigation
+    .calendar-prev
       - prev_text = t("plans.previous day") # used in 3 places below
       - if day > 1
         = link_to(sample_plan_path(plan.to_param, day: (day - 1)), {class: "prev", title: prev_text }) do
-          %span= prev_text
+          %span.calendar-arrows
+            &nbsp;
+          %span.calendar-arrow-txt
+            = prev_text
       - else
         = link_to("#", class: "disabled prev") do
-          %span= prev_text
+          %span.calendar-arrows
+            &nbsp;
+          %span.calendar-arrow-txt
+            = prev_text
 
+    .calendar-day
+      %h4
+        = t("plans.which day in plan", day: day.to_s, total: plan.total_days)
+
+    .calendar-next
       - next_text = t("plans.next day") # used in 3 places below
       - if day <= plan.total_days - 1
         = link_to(sample_plan_path(plan.to_param, day: (day + 1)), {class: "next", title: next_text}) do
-          %span= next_text
+          %span.calendar-arrows
+            &nbsp;
+          %span.calendar-arrow-txt
+            = next_text
       - else
         = link_to("#", class: "disabled next") do
-          %span= next_text
+          %span.calendar-arrows
+            &nbsp;
+          %span.calendar-arrow-txt
+            = next_text
 
+-# Links to scripture
+.widget.scripture-links
+  %h3.hd
+    = t("plans.read today")
   %ul.menu.basic
     - unless references.empty?
       - references.each_with_index do |ref,index|
