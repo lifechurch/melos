@@ -22,9 +22,7 @@ module YV
         visitor_locale = visitor_locale.to_sym
 
         set_locale(visitor_locale)
-        if @site.available_locales.present?
-          I18n.available_locales = @site.available_locales
-        end
+        set_available_locales( @site.available_locales.present? ? @site.available_locales : I18n.available_locales )
 
         # redirect to either:
         # a) remove locale from path if default and present
