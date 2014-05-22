@@ -20,14 +20,16 @@ module YV
         visitor_locale ||= request.compatible_language_from(I18n.available_locales)
         visitor_locale ||= I18n.default_locale
         visitor_locale = visitor_locale.to_sym
-        
+
         set_locale(visitor_locale)
-        set_available_locales( @site.available_locales.present? ? @site.available_locales : I18n.available_locales )
+        if @site.available_locales.present?
+          I18n.available_locales = @site.available_locales
+        end
 
         # redirect to either:
         # a) remove locale from path if default and present
         # b) user's locale if not default and not in url already
-        
+
         return redirect_to params.merge!(locale: "") if from_param && visitor_locale == I18n.default_locale
         return redirect_to params.merge!(locale: visitor_locale) if !from_param && visitor_locale != I18n.default_locale
       end
