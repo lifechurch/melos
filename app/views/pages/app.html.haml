@@ -37,9 +37,10 @@
       %li#dl_mobile= link_to t('mobile page.mobile web'), "http://www.bible.com"
       %li#dl_amazon= link_to t('mobile page.amazon'), "http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2"
     %a.cta
-      = image_tag "mobile_download.png", class: "float_left"
-      %h4= t('mobile page.button h4')
-      %span= t('mobile page.button h4 sub')
+      %h4
+        = t('mobile page.button h4')
+      %span
+        = t('mobile page.button h4 sub')
   %div.clear
   %section.testimonials
     %h2= t('mobile page.what people')
