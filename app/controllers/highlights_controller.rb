@@ -6,6 +6,7 @@ class HighlightsController < BaseMomentsController
 
   # Filters
     before_filter :force_login, except: [:colors]
+    before_filter :mobile_redirect, only: [:show]
 
   def show
     @highlight = Highlight.find(params[:id], auth: current_auth)
