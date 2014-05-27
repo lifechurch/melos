@@ -29,8 +29,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-11 08:20+0000\n"
-"Last-Translator: mazza cheewanich <mazza.p@gmail.com>\n"
+"PO-Revision-Date: 2014-05-21 07:12+0000\n"
+"Last-Translator: Thanakorn Poonsingoon <mintgloryofgod@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/yv-backend/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +41,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-24 11:23+0000\n"
+"PO-Revision-Date: 2014-05-21 07:22+0000\n"
 "Last-Translator: Thanakorn Poonsingoon <mintgloryofgod@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/yv-backend/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -131,6 +131,9 @@ msgstr "{name} ได้รับชม <b>{title}</b>"
 msgid "moment.video.watched.self.title"
 msgstr "คุณกำลังรับชม <b>{title}}</b>"
 
+msgid "moment.system.find_friends.title"
+msgstr "คุณจะได้รับประสบการณ์ที่ดียิ่งขึ้นในแอพพระคัมภีร์เมื่อใช้ร่วมกับเพื่อน ลองค้นหาจากรายชื่อเพื่อดูเพื่อนของคุณ"
+
 msgid "notifications.friendships.offer"
 msgstr "{name} ต้องการเป็นเพื่อนกับคุณบน YouVersion"
 
@@ -149,6 +152,15 @@ msgstr "{name} ได้แสดงความคิดเห็นบนท�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของคุณ: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} ได้แสดงความคิดเห็นบนแผนการอ่านของคุณ: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} ได้แสดงความคิดเห็นบนแผนการอ่านพระคัมภีร์ของคุณ: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่ของคุณกับ {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}  ได้แสดงความคิดเห็นบนโน้ตของคุณ: “{comment}”"
 
@@ -157,6 +169,15 @@ msgstr "{name} ถูกใจที่คั่นหน้าของคุ�
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} ถูกใจการเน้นข้อพระคำของคุณ {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} ถูกใจความเคลื่อนไหวของแผนการอ่านของคุณ"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} ถูกใจความเคลื่อนไหวของแผนการอ่านพระคัมภีร์ของคุณ"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} ถูกใจในความสัมพันธ์ใหม่ของคุณกับ {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} ถูกใจโน้ตของคุณบน {reference_human}"
@@ -173,11 +194,29 @@ msgstr "{moment_owner_name} ได้แสดงความคิดเห็�
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนที่คั่นหน้าของ {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่ของคุณกับ {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่ของ {moment_owner_name}'s กับ {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของเขา: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของ {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนแผนการอ่านของเขา: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนแผนการอ่านของ {moment_owner_name}'s : “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนแผนการอ่านพระคัมภีร์ของเขา: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนแผนการอ่านพระคัมภีร์ของ {moment_owner_name}'s : “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนโน้ตของเขา: “{comment}”"
@@ -199,6 +238,18 @@ msgstr "{name} ได้เพิ่มโน้ต “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ได้เพิ่มโน้ต"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} ได้เริ่มแผนการอ่านใหม่, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} ได้เริ่มแผนการอ่านพระคัมภีร์ใหม่, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} ได้สำเร็จแผนการอ่าน, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} ได้สำเร็จแผนการอ่านพระคัมภีร์, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

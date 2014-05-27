@@ -28,8 +28,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-11 19:40+0000\n"
-"Last-Translator: Barbara Di Egidio <bdiegidio@gmail.com>\n"
+"PO-Revision-Date: 2014-05-20 18:23+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/yv-backend/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +40,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-06 04:50+0000\n"
+"PO-Revision-Date: 2014-05-20 20:52+0000\n"
 "Last-Translator: Andrew Walker <andrew.walker@live.it>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/yv-backend/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,7 @@ msgid "moment.bookmark.self.title"
 msgstr "Hai contrassegnato <b>{reference_human}</b>"
 
 msgid "moment.friendship.title"
-msgstr "Ora {user_name} ha stretto amicizia con <b>{friend_name}</b>"
+msgstr "{user_name} ha stretto amicizia con <b>{friend_name}</b>"
 
 msgid "moment.friendship.self.title"
 msgstr "Ora hai stretto amicizia con <b>{friend_name}</b>"
@@ -101,7 +101,7 @@ msgid "moment.plan_subscription.title"
 msgstr "{name} ha iniziato un piano"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Ha Iniziato un piano"
+msgstr "Hai iniziato un piano"
 
 msgid "moment.plan_segment_completion.title"
 msgstr "{name} ha completato il giorno <b>{segment}</b> del piano, <b>{title}</b>"
@@ -116,7 +116,7 @@ msgid "moment.plan_completion.title"
 msgstr "{name} ha completato un piano"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Ha Completato un piano"
+msgstr "Hai completato un piano"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} ha guadagnato il distintivo <b>{title}</b>"
@@ -129,6 +129,9 @@ msgstr "{name} ha guardato <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "Hai guardato <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "L'App Bibbia è ancora migliore con Amici. Cerca i tuoi Contatti per trovare Amici."
 
 msgid "notifications.friendships.offer"
 msgstr "{name} vuole stringere amicizia con te su YouVersion"
@@ -148,6 +151,15 @@ msgstr "{name} ha commentato il tuo segnalibro: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ha commentato la tua evidenziazione: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} ha commentato il tuo Piano: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} ha commentato il tuo Piano Bibbia: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} ha commentato la tua nuova amicizia con {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} ha commentato la tua nota: “{comment}”"
 
@@ -156,6 +168,15 @@ msgstr "A {name} piace il tuo segnalibro, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "A {name} piace la tua evidenziazione, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "A {name} piace la tua attività con il Piano"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "A {name} piace la tua attività con il Piano Bibbia"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "A {name} piace la tua nuova amicizia con {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "A {name} piace la tua nota su {reference_human}"
@@ -172,11 +193,29 @@ msgstr "{moment_owner_name} ha anche commentato il suo segnalibro: “{comment}�
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "Anche {commenter_name} ha commentato il segnalibro di {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "Anche {moment_owner_name} ha commentato la sua nuova amicizia con {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "Anche {commenter_name} ha commentato la nuova amicizia di  {moment_owner_name} con {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ha anche commentato la sua evidenziazione: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Anche {commenter_name} ha commentato l'evidenziazione di {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "anche {moment_owner_name} ha commentato il suo Piano: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} ha anche commentato il Piano di {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "anche {moment_owner_name} ha commentato il suo Piano Bibbia: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} ha anche commentato il Piano Bibbia di {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ha anche commentato la sua nota: “{comment}”"
@@ -198,6 +237,18 @@ msgstr "{name} ha aggiunto una nota, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ha aggiunto una nota"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} ha iniziato un nuovo Piano, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} ha iniziato un nuovo Piano Bibbia, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} ha completato il suo Piano, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} ha completato il suo Piano Bibbia, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

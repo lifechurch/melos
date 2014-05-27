@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-08 02:40+0000\n"
+"PO-Revision-Date: 2014-05-23 11:30+0000\n"
 "Last-Translator: prinsonm <prinson.mony@yahoo.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/yv-backend/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +98,7 @@ msgid "moment.bible.download.self.title"
 msgstr "आपके द्वारा <b>{version}</b> संस्करण डाउनलोड किया गया हैं "
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} योजना प्रारंभ करे "
+msgstr "{name} ने पाठक योजना प्रारंभ किया"
 
 msgid "moment.plan_subscription.self.title"
 msgstr "योजना प्रारंभ हुआ "
@@ -129,6 +129,9 @@ msgstr " {name} देख रहे हैं <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "आप देख रहे हैं <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "बाइबिल App मित्रों के साथ उपयोग करने में एक शानदार अनुभव हैं। अपने मित्रों को खोजने के लिए कांटेक्ट सर्च करे। "
 
 msgid "notifications.friendships.offer"
 msgstr "{name} YouVersion पर आपके मित्र बनने में इच्छुक हैं "

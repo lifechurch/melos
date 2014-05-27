@@ -6,7 +6,7 @@
 # Translators:
 # Anke Stoye <ankestoyeyouversion@gmail.com>, 2014
 # bookworm1966 <bookworm1966@gmx.de>, 2013
-# Friedrich-Wilhelm Prussak <info@prussak.de>, 2013
+# Friedrich-Wilhelm Prussak <info@prussak.de>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -33,7 +33,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-12 16:20+0000\n"
+"PO-Revision-Date: 2014-05-23 12:16+0000\n"
 "Last-Translator: Anke Stoye <ankestoyeyouversion@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/yv-backend/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +45,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-24 11:00+0000\n"
-"Last-Translator: Anke Stoye <ankestoyeyouversion@gmail.com>\n"
+"PO-Revision-Date: 2014-05-22 18:18+0000\n"
+"Last-Translator: Friedrich-Wilhelm Prussak <info@prussak.de>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/yv-backend/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,13 +106,13 @@ msgid "moment.plan_subscription.title"
 msgstr "{name} hat einen Leseplan begonnen."
 
 msgid "moment.plan_subscription.self.title"
-msgstr "hat einen Leseplan begonnen"
+msgstr "Du hast einen Leseplan begonnen"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} hat Tag <b>{segment}</b> des <b>{title}</b>-Leseplans abgeschlossen"
+msgstr "{name} hat Tag <b>{segment}</b> des Leseplans \"<b>{title}</b>\" abgeschlossen"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Du hast Tag <b>{segment}</b> des <b>{title}</b>-Leseplans abgeschlossen"
+msgstr "Du hast Tag <b>{segment}</b> des Leseplans \"<b>{title}</b>\" abgeschlossen"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Tag {segment} von {total_segments} ({percent_complete}%)"
@@ -121,7 +121,7 @@ msgid "moment.plan_completion.title"
 msgstr "{name} hat einen Leseplan abgeschlossen"
 
 msgid "moment.plan_completion.self.title"
-msgstr "hat einen Leseplan abgeschlossen"
+msgstr "Du hast einen Leseplan abgeschlossen"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} das <b>\"{title}\"</b> Abzeichen erhalten"
@@ -134,6 +134,9 @@ msgstr "{name} hat <b>{title} angeschaut</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "Du hast <b>{title} angeschaut</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Die Bibel App ist mit Freunden noch besser. Durchsuche deine Kontakte, um Freunde zu finden."
 
 msgid "notifications.friendships.offer"
 msgstr "{name} möchte auf YouVersion mit dir befreundet sein"
@@ -153,6 +156,15 @@ msgstr "{name} hat dein Lesezeichen kommentiert: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} hat deine Markierung so kommentiert: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} hat deinen Plan kommentiert: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} hat deinen Bibelleseplan kommentiert: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} hat deine neue Freundschaft mit {friend_name} kommentiert: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} hat deine Notiz kommentiert: “{comment}”"
 
@@ -161,6 +173,15 @@ msgstr "{name} gefällt dein Lesezeichen für {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} gefällt deine Hervorhebung für {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} gefällt, was du in deinem Plan machst."
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} gefällt, was du mit deinem Plan machst"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} gefällt, dass du nun mit {friend_name} befreundet bist"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} gefällt deine Notiz zu {reference_human}"
@@ -177,11 +198,29 @@ msgstr "{moment_owner_name} hat sein/ihr Lesezeichen ebenfalls kommentiert: “{
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} hat {moment_owner_name}s Lesezeichen ebenfalls kommentiert: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} hat deine neue Freundschaft mit {friend_name} auch kommentiert: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} hat die neue Freundschaft von {moment_owner_name} mit {friend_name} ebenfalls kommentiert: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} hat seine/ihre Markierung ebenfalls kommentiert: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} hat {moment_owner_name}s Markierung auch kommentiert: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} hat seinen/ihren Plan auch kommentiert: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} hat {moment_owner_name}s Plan auch kommentiert: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} hat seinen/ihren Bibelleseplan auch kommentiert: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} hat {moment_owner_name}s Bibelleseplan auch kommentiert: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} hat deine Notiz ebenfalls kommentiert: “{comment}”"
@@ -203,6 +242,18 @@ msgstr "{name} hat die Notiz “{title}” hinzugefügt"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} hat eine Notiz angelegt"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} hat einen neuen Plan begonnen - und zwar \"{title}\""
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} hat einen neuen Bibelleseplan begonnen - und zwar \"{title}\""
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} hat seinen/ihren Plan \"{title}\" abgeschlossen"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} hat seinen/ihren Bibelleseplan \"{title}\" abgeschlossen"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

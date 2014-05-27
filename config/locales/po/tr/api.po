@@ -5,7 +5,7 @@
 # Translators:
 # Translators:
 # Josh W <wolfhawke@wolfhawke.com>, 2013-2014
-# melekcp <melekcansu@gmail.com>, 2013
+# melekcp <melekcansu@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -13,7 +13,7 @@
 # Translators:
 # Translators:
 # Josh W <wolfhawke@wolfhawke.com>, 2013-2014
-# melekcp <melekcansu@gmail.com>, 2013
+# melekcp <melekcansu@gmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
@@ -28,8 +28,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-07 08:30+0000\n"
-"Last-Translator: Josh W <wolfhawke@wolfhawke.com>\n"
+"PO-Revision-Date: 2014-05-23 17:12+0000\n"
+"Last-Translator: melekcp <melekcansu@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/yv-backend/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-12 08:10+0000\n"
-"Last-Translator: Josh W <wolfhawke@wolfhawke.com>\n"
+"PO-Revision-Date: 2014-05-23 17:01+0000\n"
+"Last-Translator: melekcp <melekcansu@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/yv-backend/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -130,6 +130,9 @@ msgstr "{name} <b>{title}</b> başlıklı videoyu izledi"
 msgid "moment.video.watched.self.title"
 msgstr "Siz  <b>{title}</b> başlıklı videoyu izlediniz"
 
+msgid "moment.system.find_friends.title"
+msgstr "Kutsal Kitap Uygulaması'nı Arkadaşlarınızla kullanmak çok daha iyi. Arkadaşlarınızı bulmak için Kişilerinizi arayın."
+
 msgid "notifications.friendships.offer"
 msgstr "{name} YouVersion’da arkadaşınız olmak istiyor"
 
@@ -148,6 +151,15 @@ msgstr "{name} yer iminiz hakkında yorum yaptı: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} vurgunuz hakkında yorum yaptı: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} okuma planınız hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} Kutsal Kitap okuma planınız hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} {friend_name} kişisiyle arkadaşlığınız hakkında yorumda bulundu: “{comment}” "
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} notunuz hakkında yorum yaptı: “{comment}”"
 
@@ -156,6 +168,15 @@ msgstr "{name} {reference_human} ile ilgili yer iminizi beğendi"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} {reference_human} başlıklı yer iminizi beğendi"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} okuma planı aktivitenizi beğendi"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} Kutsal Kitap okuma planı aktivitenizi beğendi"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} {friend_name} kişisiyle arkadaşlığınızı beğendi"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} {reference_human} konulu notunuzu beğendi"
@@ -172,11 +193,29 @@ msgstr "{moment_owner_name} de kendi yer imi hakkında yorum yaptı: “{comment
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} de {moment_owner_name} 'in yer imi hakkında yorum yaptı: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} de {friend_name} kişisiyle arkadaşlığı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} kişisi de {moment_owner_name}'nin {friend_name} ile yeni arkadaşlığı hakkında yorum yaptı: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} de vurgusu hakkında yorum yaptı: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} de {moment_owner_name} 'in vurgusu hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} de kendi okuma planı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} kişisi de {moment_owner_name}'nin okuma planı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} de kendisinin Kutsal Kitap okuma planı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} kişisi de {moment_owner_name}'nin Kutsal Kitap okuma planı hakkında yorum yaptı: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} de notu hakkında yorum yaptı: “{comment}”"
@@ -198,6 +237,18 @@ msgstr "{name} “{title}” başlıklı bir not ekledi"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} bir not ekledi"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} {title} isimli yeni bir okuma planına başladı"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} {title} isimli yeni bir Kutsal Kitap okuma planına başladı"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} {title} isimli okuma planını tamamladı"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} {title} isimli Kutsal Kitap okuma planını tamamladı"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

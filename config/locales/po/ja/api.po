@@ -12,7 +12,7 @@
 # Translators:
 # Translators:
 # Shin Shirahata <shin@sohgoh.net>, 2014
-# Tomomi Galeano <tomomi.galeano@gmail.com>, 2013
+# Tomomi Galeano <tomomi.galeano@gmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-10 01:30+0000\n"
+"PO-Revision-Date: 2014-05-21 16:24+0000\n"
 "Last-Translator: Tomomi Galeano <tomomi.galeano@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/yv-backend/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-25 18:07+0000\n"
+"PO-Revision-Date: 2014-05-21 18:32+0000\n"
 "Last-Translator: Tomomi Galeano <tomomi.galeano@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/yv-backend/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgid "moment.plan_subscription.title"
 msgstr "{name}さんが読書プランを開始しました"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "プランを開始しました"
+msgstr "読書プランを開始しました"
 
 msgid "moment.plan_segment_completion.title"
 msgstr "{name}さんが、読書プラン「<b>{title}</b>」の<b>{segment}</b>日目を完了しました。"
@@ -129,6 +129,9 @@ msgstr "{name}さんが「<b>{title}</b>」を観ました"
 msgid "moment.video.watched.self.title"
 msgstr "「<b>{title}</b>」を観ました"
 
+msgid "moment.system.find_friends.title"
+msgstr "お友達と一緒なら、聖書アプリをさらに活用できます。連絡先から、お友達を検索しましょう。"
+
 msgid "notifications.friendships.offer"
 msgstr "{name}さんがYouVersionで友達申請しています。"
 
@@ -147,6 +150,15 @@ msgstr "{name}さんがあなたのブックマークにコメントしました
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}さんがあなたのハイライトにコメントしました： “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name}さんがあなたのプランにコメントしました: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name}さんがあなたの読書プランにコメントしました: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{friend_name} さんとお友達になったことに、{name}さんがコメントしました: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}さんがあなたのノートにコメントしました： “{comment}”"
 
@@ -155,6 +167,15 @@ msgstr "{name}さんがあなたのブックマーク、{reference_human}をい�
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name}さんがあなたのハイライト、{reference_human}をいいねといっています"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name}さんがあなたのプランについていいね！しました。"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name}さんがあなたの聖書プランについていいね！しました。"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{friend_name}さんとお友達になったことに、{name}さんがいいね！しました。"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name}さんがあなたのノート、{reference_human}をいいねといっています"
@@ -171,11 +192,29 @@ msgstr "{moment_owner_name}さんがブックマークにコメントしまし�
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name}さんが{moment_owner_name}さんのブックマークにコメントしました： “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{friend_name}さんとお友達になったことにも、{moment_owner_name}さんがコメントしました: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{moment_owner_name}さんが{friend_name}さんとお友達になったことにも、{commenter_name}さんがコメントしました: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}さんがハイライトにコメントしました： “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}さんが{moment_owner_name}さんのハイライトにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name}さんがプランにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name}さんが{moment_owner_name}さんのプランにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name}さんが聖書プランにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name}さんが{moment_owner_name}さんの聖書プランにコメントしました： “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}さんがノートにコメントしました： “{comment}”"
@@ -197,6 +236,18 @@ msgstr "{name}さんが“{title}”というノートを追加しました"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name}さんがノートを追加しました"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name}さんが新しいプラン「{title}」を開始しました。"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name}さんが新しい読書プラン「{title}」を開始しました。"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name}さんが「{title}」のプランを完了しました。"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name}さんが「{title}」の読書プランを完了しました。"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

@@ -4,7 +4,7 @@
 # Translators:
 # Translators:
 # Translators:
-# MarianOpiela <opiela.marian@gmail.com>, 2013
+# MarianOpiela <opiela.marian@gmail.com>, 2013-2014
 # Tomáš Petrík <tomas0907@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
@@ -12,6 +12,7 @@
 # Translators:
 # Translators:
 # Translators:
+# MarianOpiela <opiela.marian@gmail.com>, 2014
 # Tomáš Petrík <tomas0907@gmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
@@ -27,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-10 17:50+0000\n"
+"PO-Revision-Date: 2014-05-21 16:51+0000\n"
 "Last-Translator: Tomáš Petrík <tomas0907@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/yv-backend/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +40,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-22 11:40+0000\n"
+"PO-Revision-Date: 2014-05-21 16:51+0000\n"
 "Last-Translator: Tomáš Petrík <tomas0907@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/yv-backend/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +101,7 @@ msgid "moment.plan_subscription.title"
 msgstr "Používateľ {name} začal plán čítania"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Začatý plán čítania"
+msgstr "Začali ste plán čítania"
 
 msgid "moment.plan_segment_completion.title"
 msgstr "Používateľ {name} dokončil <b>{segment}.</b> deň z plánu čítania <b>{title}</b>"
@@ -115,7 +116,7 @@ msgid "moment.plan_completion.title"
 msgstr "Používateľ {name} dokončil plán čítania"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Dokončený plán čítania"
+msgstr "Dokončili ste plán čítania"
 
 msgid "moment.badge.earned.title"
 msgstr "Používateľ {name} získal odznak <b>{title}</b>"
@@ -128,6 +129,9 @@ msgstr "Používateľ {name} sledoval <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "Sledovali ste <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Aplikácia Biblia je oveľa lepšia s priateľmi. Nájdite priateľov medzi svojimi kontaktmi."
 
 msgid "notifications.friendships.offer"
 msgstr "Používateľ {name} chce byť vašim priateľom na YouVersion"
@@ -147,6 +151,15 @@ msgstr "Používateľ {name} pridal komentár k vašej záložke: \"{comment}\""
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Používateľ {name} pridal komentár k vášmu zvýrazneniu: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "Používateľ {name} pridal komentár k vášmu plánu čítania: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "Používateľ {name} pridal komentár k vášmu plánu čítania Biblie: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "Používateľ {name} pridal komentár k vášmu novému priateľstvu s používateľom {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "Používateľ {name} pridal komentár k vašej poznámke: \"{comment}\""
 
@@ -155,6 +168,15 @@ msgstr "Požívateľovi {name} sa páči vaša záložka, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Požívateľovi {name} sa páči vaše zvýraznenie, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "Používateľovi {name} sa páči vaša aktivita v pláne čítania"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "Používateľovi {name} sa páči vaša aktivita v pláne čítania Biblie"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "Používateľovi {name} sa páči vaše nove priateľstvo s používateľom {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "Požívateľovi {name} sa páči vaša poznámka o {reference_human}"
@@ -171,11 +193,29 @@ msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojej zálo�
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "Používateľ {commenter_name} tiež pridal komentár k záložke používateľa {moment_owner_name}: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k jeho novému priateľstvu s používateľom {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k novému priateľstvu používateľa {moment_owner_name} s používateľom {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojmu zvýrazneniu: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Používateľ {commenter_name} tiež pridal komentár k zvýrazneniu používateľa {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojmu plánu čítania: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k plánu čítania používateľa {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojmu plánu čítania Biblie: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "Používateľ {commenter_name} tiež pridal komentár k plánu čítania Biblie používateľa {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojej poznámke: \"{comment}\""
@@ -197,6 +237,18 @@ msgstr "Používateľ {name} pridal poznámku, \"{title}\""
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "Používateľ {name} pridal poznámku"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "Používateľ {name} začal nový plán čítania, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "Používateľ {name} začal nový plán čítania Biblie, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "Používateľ {name} dokončil svoj plán čítania, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "Používateľ {name} dokončil svoj plán čítania Biblie, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-05 09:50+0000\n"
+"PO-Revision-Date: 2014-05-21 20:52+0000\n"
 "Last-Translator: Juho Autio <autiojuho@gmail.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/yv-backend/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-26 20:10+0000\n"
+"PO-Revision-Date: 2014-05-21 19:13+0000\n"
 "Last-Translator: Juho Autio <autiojuho@gmail.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/yv-backend/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgid "moment.plan_subscription.title"
 msgstr "{name} aloitti suunnitelman"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Suunnitelma aloitettu"
+msgstr "Aloitit suunnitelman"
 
 msgid "moment.plan_segment_completion.title"
 msgstr "{name} suoritti päivän <b>{segment}</b> suunnitelmasta, <b>{title}</b>"
@@ -112,7 +112,7 @@ msgid "moment.plan_segment_completion.body"
 msgstr "Päivä {segment} / {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_completion.title"
-msgstr "{name} läpäisi suunnitelman"
+msgstr "{name} suoritti suunnitelman"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Suunnitelma suoritettu"
@@ -128,6 +128,9 @@ msgstr "{name} katsoi <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "Katsoit <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Raamattusovellus on jopa parempi ystävien kanssa. Etsi ystäviä yhteystiedoistasi."
 
 msgid "notifications.friendships.offer"
 msgstr "{name} haluaa olla ystäväsi YouVersionissa"
@@ -147,6 +150,15 @@ msgstr "{name} kommentoi kirjanmerkkiäsi: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} kommentoi korostustasi: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} kommentoi suunnitelmaasi: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} kommentoi raamattusuunnitelmaasi: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} kommentoi uutta ystävyyttäsi käyttäjän {friend_name} kanssa: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} kommentoi muistiinpanoasi: “{comment}”"
 
@@ -155,6 +167,15 @@ msgstr "{name} tykkää kirjanmerkistäsi, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} tykkää korostuksestasi, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} tykkää suunnitelmaasi liittyvästä toiminnasta"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} tykkää raamattusuunnitelmaan liittyvästä toiminnastasi"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} tykkää ystävyydestäsi käyttäjän {friend_name} kanssa"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} tykkää muistiinpanostasi johon {reference_human} liittyy"
@@ -171,11 +192,29 @@ msgstr "{moment_owner_name} kommentoi myös kirjanmerkkiään: “{comment}”"
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} kirjanmerkkiä: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} kommentoi myös uutta ystävyyttään käyttäjän {friend_name} kanssa: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} uutta ystävyyttä käyttäjän {friend_name} kanssa: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommentoi myös korostustaan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} korostusta: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} kommentoi myös suunnitelmaansa: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} suunnitelmaa: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} kommentoi myös raamattusuunnitelmaansa: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} raamattusuunnitelmaa: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} kommentoi myös muistiinpanoaan: “{comment}”"
@@ -197,6 +236,18 @@ msgstr "{name} lisäsi muistiinpanon, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} lisäsi muistiinpanon"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} aloitti uuden suunnitelman, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} aloitti uuden raamattusuunnitelman, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} kommentoi suunnitelmaansa, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} suoritti raamattusuunnitelman, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

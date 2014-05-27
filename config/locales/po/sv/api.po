@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-04 11:40+0000\n"
+"PO-Revision-Date: 2014-05-23 01:26+0000\n"
 "Last-Translator: Magnus Österlund\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/yv-backend/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-01 19:50+0000\n"
+"PO-Revision-Date: 2014-05-23 01:26+0000\n"
 "Last-Translator: Magnus Österlund\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/yv-backend/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -128,6 +128,9 @@ msgstr "{name} har tittat på <b>{title}</b>"
 msgid "moment.video.watched.self.title"
 msgstr "Du har tittat på <b>{title}</b>"
 
+msgid "moment.system.find_friends.title"
+msgstr "Bibelappen är ännu bättre med vänner. Sök bland dina kontakter för att hitta vänner."
+
 msgid "notifications.friendships.offer"
 msgstr "{name} vill bli din vän på YouVersion"
 
@@ -146,6 +149,15 @@ msgstr "{name} har kommenterat ditt bokmärke: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} har kommenterat din markering: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} har kommenterat din plan: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} har kommenterat din bibelplan: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} har kommenterat din nya vänskap med {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} har kommenterat din anteckning: “{comment}”"
 
@@ -154,6 +166,15 @@ msgstr "{name} gillar ditt bokmärke, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} gillar din markering, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} har gillat händelsen i din plan"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} har gillat händelsen i din bibelplan"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} gillade din nya vänskap med {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} gillar din markering på {reference_human}"
@@ -170,11 +191,29 @@ msgstr "{moment_owner_name} har också kommenterat deras bokmärke: “{comment}
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} har också kommenterat på {moment_owner_name}s bokmärke: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} har också kommenterat sin nya vänskap med {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} har också kommenterat {moment_owner_name}s nya vänskap med {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} har också kommenterat på deras markering: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} har också kommenterat {moment_owner_name}s markering: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} har också kommenterat sin plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} har också kommenterat {moment_owner_name}s plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} har också kommenterat sin bibelplan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} har också kommenterat {moment_owner_name}s bibelplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} har också kommenterat på deras anteckning: “{comment}”"
@@ -196,6 +235,18 @@ msgstr "{name} har lagt till en anteckning, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} har lagt till en anteckning"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} har påbörjat en ny plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} har påbörjat en ny bibelplan, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} har kommenterat sin plan, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} har kommenterat sin bibelplan, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
