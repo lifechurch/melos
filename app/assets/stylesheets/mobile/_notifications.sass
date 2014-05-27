@@ -147,9 +147,9 @@ article.social-requests ul
     left: 3px
     width: 350px
     border: 1px solid #d4d4d4
-    +border-radius(5px)
+    +border-radius( 0 0 5px 5px)
     background: #fff
-    +box-shadow(0px 0px 8px #222)
+    +box-shadow(0px 0px 8px #777)
     min-width: 98%
     max-width: 98%
     display: none
@@ -159,7 +159,15 @@ article.social-requests ul
       left: 56px
 
     .loading-indicator
-      text-align: center
+      text-indent: 100%
+      overflow: hidden
+      white-space: nowrap
+      height: 32px
+      background: image-url("loading.gif") no-repeat center center
+      background-size: 32px 32px
+      width: 100%
+      padding: 0
+      margin: 0 0 10px
 
     .action_button_green,
     .action_button_grey
@@ -196,15 +204,15 @@ article.social-requests ul
     .text-link.wide:hover
       background: #f3f3f3
 
-#header
-  ul
-
     h4
       color: #505050
-      padding-left: 15px
+      padding: 15px
       line-height: 12px
       margin-bottom: 10px
+      background-color: #ededed
 
+#header
+  ul
     .find-friends
       float: right
       padding-right: 10px
@@ -267,6 +275,24 @@ article.social-requests ul
           margin-top: 10px
           width: 100%
 
+#header
+  .header-popover
+
+    h4:first-child
+      margin-top: -10px
+      +border-radius(5px 5px 0 0)
+
+    ul
+      .list-item
+        p
+          margin: 0 0 0 5px
+          font-size: 15px
+
+      .list-item:first-child
+        border: none
+
+    .notifications-list
+      border: none
 
   .header-popover.notifications
     left: 3px
