@@ -34,6 +34,48 @@
 = content_for?(:additional_meta) ? yield(:additional_meta) : nil
 = content_for?(:stylesheets) ? yield(:stylesheets) : nil
 
+- if @native_url.present?
+  %meta{name: "native-url", content: @native_url}
+
+  - if @user_agent == "ios"
+    :javascript
+      (function() {
+        if (!document.querySelector) return;
+
+        var metaNativeUrl = document.querySelector("meta[name=native-url]"),
+            nativeUrl = metaNativeUrl && metaNativeUrl.content,
+            nativeTimeout,
+            launchTime = +new Date;
+
+        
+        if (!nativeUrl) return;
+                window.location = nativeUrl;
+        if (document.cookie && ~document.cookie.indexOf('noNative=true')) return;
+
+        
+        nativeTimeout = setTimeout(function() {
+        
+          var now = +new Date
+            , tenDays = 864000000
+            , src = 'source=email'
+          if (now - launchTime < 1500) {
+            document.cookie = [
+              'noNative=true',
+              'expires=' + new Date(now + tenDays).toUTCString()
+            ].join('; ');
+            src += '&native=failed'
+          }
+          window.location = window.location.href.replace('refsrc=email', src);
+        }, 1000);
+
+        window.addEventListener('pagehide', function() {
+          clearTimeout(nativeTimeout);
+        });
+
+        window.location = nativeUrl;
+      }());
+
+
 :javascript
   var isMobile = {
       BlackBerry: function() {

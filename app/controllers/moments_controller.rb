@@ -79,6 +79,15 @@ class MomentsController < BaseMomentsController
   def redirect_moment
     @moment = Moment.find(params[:id], auth: current_auth)
     render_404 if @moment.nil? || @moment.errors.present?
-    #redirect_to @moment.to_path
+    if request.env["X_MOBILE_DEVICE"].present?
+      case request.env["X_MOBILE_DEVICE"]
+      when /iphone|iPhone|ipad|iPad|ipod|iPod/
+        @user_agent = "ios"
+        @native_url = "youversion://moments/#{@moment.id}"               
+      when /android|Android/
+        @user_agent = "android"
+        @native_url = "youversion://moments/#{@moment.id}"
+      end 
+    end
   end
 end
