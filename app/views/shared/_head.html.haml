@@ -48,7 +48,23 @@
             launchTime = +new Date;
 
         
-        if (!nativeUrl) return;
+        if (!nativeUrl) return;        
+        if (document.cookie && ~document.cookie.indexOf('noNative=true')) return;
+
+        nativeTimeout = setTimeout(function() {
+          var now = +new Date
+            , tenDays = 864000000
+          if (now - launchTime < 1500) {
+            document.cookie = [
+              'noNative=true',
+              'expires=' + new Date(now + tenDays).toUTCString()
+            ].join('; ');
+          }
+        }, 1000);
+
+        window.addEventListener('pagehide', function() {
+          clearTimeout(nativeTimeout);
+        });
         window.location = nativeUrl;
       }());
 
