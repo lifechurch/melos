@@ -106,4 +106,19 @@ class BaseMomentsController < ApplicationController
     self.class.moment_resource_class.to_s.downcase # Highight -> highlight, Bookmark -> bookmark
   end
 
+  def mobile_redirect
+    @moment = Moment.find(params[:id], auth: current_auth)
+    render_404 if @moment.nil? || @moment.errors.present?
+    if request.env["X_MOBILE_DEVICE"].present?
+      case request.env["X_MOBILE_DEVICE"]
+      when /iphone|iPhone|ipad|iPad|ipod|iPod/
+        @user_agent = "ios"
+        @native_url = "youversion://moments/#{@moment.id}"               
+      when /android|Android/
+        @user_agent = "android"
+        @native_url = "youversion://moments/#{@moment.id}"
+      end 
+    end
+  end
+
 end

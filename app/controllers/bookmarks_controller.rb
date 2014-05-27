@@ -6,6 +6,7 @@ class BookmarksController < BaseMomentsController
 
   # Filters
     before_filter :force_login
+    before_filter :mobile_redirect, only: [:show]
 
   def show
     @bookmark = Bookmark.find(params[:id], auth: current_auth)
