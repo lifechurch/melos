@@ -5,7 +5,9 @@
 # Translators:
 # Translators:
 # galonz <giandre.wijaya@gmail.com>, 2013
+# indhisa <indhisa@gmail.com>, 2014
 # IvanaHartanto <ivana_hartanto@hotmail.com>, 2014
+# mei14, 2014
 # Ouli <origena@gmail.com>, 2014
 # renegade <xrenegadex@hotmail.co.jp>, 2013
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
@@ -16,6 +18,7 @@
 # Translators:
 # galonz <giandre.wijaya@gmail.com>, 2013
 # gtkom <hendri.nurhalim@gmail.com>, 2014
+# mei14, 2014
 # renegade <xrenegadex@hotmail.co.jp>, 2013
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
@@ -25,6 +28,7 @@
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
 # margyouversion <margyouversion@gmail.com>, 2013-2014
 # margyouversion <margyouversion@gmail.com>, 2013
+# mei14, 2014
 # renegade <xrenegadex@hotmail.co.jp>, 2013
 # renegade <xrenegadex@hotmail.co.jp>, 2013
 #, fuzzy
@@ -34,8 +38,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-04 12:40+0000\n"
-"Last-Translator: Ouli <origena@gmail.com>\n"
+"PO-Revision-Date: 2014-05-24 07:51+0000\n"
+"Last-Translator: mei14\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,8 +50,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-06 04:28+0000\n"
-"Last-Translator: margyouversion <margyouversion@gmail.com>\n"
+"PO-Revision-Date: 2014-05-23 00:12+0000\n"
+"Last-Translator: mei14\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,8 +62,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-06 04:40+0000\n"
-"Last-Translator: margyouversion <margyouversion@gmail.com>\n"
+"PO-Revision-Date: 2014-05-24 08:52+0000\n"
+"Last-Translator: mei14\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/yv-backend/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,49 +90,49 @@ msgid "moment.friendship.self.title"
 msgstr "Anda sekarang berteman dengan <b>{friend_name}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} menyorot <b>{reference_human}</b>"
+msgstr "{name} menyoroti <b>{reference_human}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Anda telah menyoroti <b>{reference_human}</b>"
+msgstr "Anda menyoroti <b>{reference_human}</b>"
 
 msgid "moment.note.title"
 msgstr "{name} menambahkan catatan, <b>{title}</b>"
 
 msgid "moment.note.self.title"
-msgstr "Anda menambahkan sebuah catatan, <b>{title}</b>"
+msgstr "Anda menambahkan catatan, <b>{title}</b>"
 
 msgid "moment.bible.download.title"
-msgstr "{name} telah mengunduh versi, <b>{version}</b>"
+msgstr "{name} telah mengunduh versi tersebut, <b>{version}</b>"
 
 msgid "moment.bible.download.self.title"
-msgstr "Anda telah mengunduh versi, <b>{version}</b>"
+msgstr "Anda telah mengunduh versi tersebut, <b>{version}</b>"
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} memulai sebuah program"
+msgstr "{name} memulai Rencana baru"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Memulai sebuah program"
+msgstr "Anda memulai Rencana baru"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} menyelesaikan hari <b>{segment}</b> dari program, <b>{title}</b>"
+msgstr "{name} menyelesaikan hari ke <b>{segment}</b> dari Rencana tersebut, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Anda menyelesaikan hari <b>{segment}</b> dari program, <b>{title}</b>"
+msgstr "Anda menyelesaikan hari ke <b>{segment}</b> dari Rencana tersebut, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Hari {segment} dari {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_completion.title"
-msgstr "{name} menyelesaikan sebuah program"
+msgstr "{name} telah menyelesaikan sebuah Rencana"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Menyelesaikan sebuah program"
+msgstr "Anda telah menyelesaikan Rencana Anda"
 
 msgid "moment.badge.earned.title"
-msgstr "{name} telah mendapatkan lencana <b>{title}</b>"
+msgstr "{name} memperoleh lencana <b>{title}</b>"
 
 msgid "moment.badge.earned.self.title"
-msgstr "Anda telah mendapatkan lencana <b>{title}</b>"
+msgstr "Anda memperoleh lencana <b>{title}</b>"
 
 msgid "moment.video.watched.title"
 msgstr "{name} telah menyaksikan <b>{title}</b>"
@@ -136,14 +140,17 @@ msgstr "{name} telah menyaksikan <b>{title}</b>"
 msgid "moment.video.watched.self.title"
 msgstr "Anda telah menyaksikan <b>{title}</b>"
 
+msgid "moment.system.find_friends.title"
+msgstr "Aplikasi Alkitab malah semakin baik bersama Teman. Telusuri Kontak Anda untuk menemukan Teman."
+
 msgid "notifications.friendships.offer"
-msgstr "{name} ingin berteman dengan anda di YouVersion"
+msgstr "{name} ingin berteman dengan Anda di YouVersion"
 
 msgid "notifications.friendships.accept"
-msgstr "{name} telah menerima permohonan pertemanan anda"
+msgstr "{name} telah menerima permohonan pertemanan Anda"
 
 msgid "notifications.friendships.nowfriends"
-msgstr "{name} sekarang menjadi teman anda"
+msgstr "{name} sekarang menjadi teman Anda"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Apakah Anda ingin berteman dengan {name} di YouVersion?"
@@ -154,38 +161,74 @@ msgstr "{name} mengomentari markah Anda: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} mengomentari sorotan Anda: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} mengomentari Rencana Anda: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} mengomentari Rencana Alkitab Anda: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} mengomentari pertemanan baru Anda dengan {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} mengomentari catatan Anda: “{comment}”"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name} suka markah anda, {reference_human}"
+msgstr "{name} suka markah Anda, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} suka sorotan anda, {reference_human}"
+msgstr "{name} suka sorotan Anda, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} suka aktifitas Rencana Anda"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} suka aktifitas Rencana Alkitab Anda"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} menyukai pertemanan baru Anda dengan {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} suka catatan anda pada {reference_human}"
+msgstr "{name} suka catatan Anda pada {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name} suka catatan anda, “{title}”"
+msgstr "{name} suka catatan Anda, “{title}”"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} suka catatan anda"
+msgstr "{name} suka catatan Anda"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} juga mengomentari markahnya: “{comment}”"
+msgstr "{moment_owner_name} juga mengomentari markah mereka: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} juga mengomentari markah {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} juga mengomentari pertemanan baru mereka dengan {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} juga mengomentari pertemanan baru {moment_owner_name} dengan {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} juga mengomentari sorotannya: “{comment}”"
+msgstr "{moment_owner_name} juga mengomentari sorotan mereka: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} juga mengomentari sorotan {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} juga mengomentari Rencana mereka: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} juga mengomentari Rencana {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} juga mengomentari Rencana Alkitab mereka: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} juga mengomentari Rencana Alkitab {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} juga mengomentari catatannya: “{comment}”"
+msgstr "{moment_owner_name} juga mengomentari catatan mereka: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} juga mengomentari catatan {moment_owner_name}: “{comment}”"
@@ -205,6 +248,18 @@ msgstr "{name} telah menambahkan sebuah catatan, “{title}”"
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} telah menambahkan sebuah catatan"
 
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} telah memulai Rencana baru, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} telah memulai Rencana Alkitab baru, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} telah menyelesaikan Rencana mereka, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} telah menyelesaikan Rencana Alkitab mereka, {title}"
+
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
 msgid_plural "You have %d friend requests"
@@ -217,25 +272,25 @@ msgid "share.invite_sms_prefix"
 msgstr "Dari {name}:"
 
 msgid "share.invite_sms"
-msgstr "Apakah anda memiliki Aplikasi Alkitab dari YouVersion? Saya menyukainya, dan saya pikir anda juga akan menyukainya. Inilah tautannya:"
+msgstr "Apakah Anda memiliki Aplikasi Alkitab dari YouVersion? Saya menyukainya, dan saya pikir Anda akan menyukainya juga. Inilah tautannya:"
 
 msgid "share.invite_email_subject"
-msgstr "Apakah anda memiliki Aplikasi Alkitab?"
+msgstr "Apakah Anda memiliki Aplikasi Alkitab?"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Saya telah menikmati Aplikasi Alkitab dari YouVersion dan saya pikir anda mungkin akan menyukainya juga. Akhir-akhir ini, saya lebih sering membuka Alkitab karena sangat mudah dibaca, ditonton, didengarkan dan dibagikan. Bahkan aplikasi ini menyediakan rencana bacaan, yang mempunyai sebagian dari Alkitab yang sudah dipetik dan menunggu saya setiap hari.\n"
+"Saya telah menikmati Aplikasi Alkitab dari YouVersion dan saya pikir Anda mungkin akan menyukainya juga. Akhir-akhir ini, saya lebih sering membuka Alkitab karena sangat mudah dibaca, ditonton, didengarkan dan dibagikan. Bahkan aplikasi ini menyediakan Rencana bacaan, yang mempunyai beberapa pilihan dari Alkitab yang sudah dipetik dan menunggu saya setiap hari.\n"
 "\n"
-"Anda bisa mendapatkannya (dengan gratis!) untuk hampir semua perangkat mobile di sini:"
+"Anda bisa mendapatkannya (gratis!) untuk hampir semua perangkat mobile di sini:"
 
 msgid "share.invite_twitter"
-msgstr "Aplikasi Alkitab dari @YouVersion mempunyai tempat tetap di layar utama saya.  Baca, lihat, dengar, dan bagikan...semua tersedia dalam aplikasi gratis:"
+msgstr "Aplikasi Alkitab dari @YouVersion mempunyai tempat tetap di layar utama saya. Baca, lihat, dengar, dan bagikan...semua tersedia dalam aplikasi gratis:"
 
 msgid "share.invite_twitter_direct"
-msgstr "Apakah anda memiliki Aplikasi Alkitab dari @YouVersion? Saya menyukainya dan saya pikir anda akan meyukainya juga.  Inilah tautannya:"
+msgstr "Apakah Anda memiliki Aplikasi Alkitab dari @YouVersion? Saya menyukainya, dan saya pikir Anda akan meyukainya juga. Inilah tautannya:"
 
 msgid "share.invite_facebook"
-msgstr "Saya suka Aplikasi Alkitab.  Aplikasi ini sangat membantu untuk membuat Alkitab bagian dari kehidupan saya sehari-hari.  Aplikasi ini bisa saya tandai, dengarkan Alkitab, bisa buat catatan, ikuti rencana-rencana renungan...bahkan bisa lihat video-video!  Ayo, download aplikasi ini sekarang (aplikasi ini gratis): "
+msgstr "Saya suka Aplikasi Alkitab! Aplikasi ini sangat membantu menjadikan Alkitab bagian dari kehidupan saya sehari-hari. Aplikasi ini bisa saya tandai, dengarkan audio Alkitab, bisa buat catatan, ikuti rencana renungan...bahkan bisa lihat video! Ayo, download aplikasi ini sekarang (gratis lho): "
 
 msgid "share.invite_facebook_direct"
-msgstr "Apakah anda memiliki Aplikasi Alkitab? Saya menyukainya dan saya pikir anda akan meyukainya juga.  Inilah tautannya jika anda tidak mempunyainya:"
+msgstr "Apakah Anda memiliki Aplikasi Alkitab? Saya menyukainya, dan saya pikir Anda akan meyukainya juga. Inilah tautannya:"

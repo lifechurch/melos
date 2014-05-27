@@ -4,6 +4,7 @@
 # Translators:
 # Translators:
 # Translators:
+# Ilkoni <iliriangjoni@gmail.com>, 2014
 # Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
@@ -11,6 +12,7 @@
 # Translators:
 # Translators:
 # Translators:
+# Ilkoni <iliriangjoni@gmail.com>, 2014
 # Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
@@ -26,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-03 07:00+0000\n"
+"PO-Revision-Date: 2014-05-23 17:12+0000\n"
 "Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
 "Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +40,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-22 18:30+0000\n"
+"PO-Revision-Date: 2014-05-24 09:02+0000\n"
 "Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
 "Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +116,7 @@ msgid "moment.plan_completion.title"
 msgstr "{name} përfundoi një plan"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Përfundoi një plan"
+msgstr "Ju e përfunduat planin tuaj"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} fitoi emblemën <b>{title}</b>"
@@ -127,6 +129,9 @@ msgstr "{name} shikoi <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "Ju shikuat <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Programi i Biblës është akoma më i mirë bashkë me miq. Kërkoni kontaktet tuaja për të gjetur miq."
 
 msgid "notifications.friendships.offer"
 msgstr "{name} dëshiron të jetë miku juaj në YouVersion"
@@ -146,6 +151,15 @@ msgstr "{name} komentoi te shenjuesi juaj: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} komentoi te theksimi juaj: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} komentoi rreth planit tënd: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} komentoi rreth planit tuaj të Biblës: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} komentoi rreth miqësisë suaj të re me {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} komentoi te shënimi juaj: “{comment}”"
 
@@ -154,6 +168,15 @@ msgstr "{name} e pëlqen shenjuesin tuaj, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} e pëlqen theksimin tuaj, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} e pëlqen aktivitetin e planit tuaj"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} e pëlqen aktivitetin e planit tuaj të Biblës"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} e pëlqeu miqësinë tuaj të re me {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} e pëlqen shënimin tuaj për {reference_human}"
@@ -165,16 +188,34 @@ msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} e pëlqen shënimin tuaj"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} komentoi gjithashtu te shenjuesi i tij/saj: “{comment}”"
+msgstr "{moment_owner_name} komentoi gjithashtu te shenjuesi i vet: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} komentoi gjithashtu te shenjuesi i {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} komentoi gjithashtu rreth miqësisë së re me {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} komentoi gjithashtu rreth miqësisë së re të {moment_owner_name} me {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} komentoi gjithashtu te theksimi i tij/saj: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} komentoi gjithashtu te theksimi i {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} komentoi gjithashtu rreth planit të vet: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} komentoi gjithashtu rreth planit të {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} komentoi gjithashtu rreth planit të vet të Biblës: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} komentoi gjithashtu rreth planit të Biblës të {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} komentoi gjithashtu te shënimi i tij/saj: “{comment}”"
@@ -196,6 +237,18 @@ msgstr "{name} shtoi një shënim, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} shtoi një shënim"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} filloi një plan të ri, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} filloi një plan të ri të Biblës, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} e përfundoi planin e vet, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} e përfundoi planin e vet të Biblës, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

@@ -14,7 +14,7 @@
 # Translators:
 # Translators:
 # FranciscaN <franciscanoordzij@gmail.com>, 2013
-# Joukeschaafsma <Jwcschaafsma@gmail.com>, 2013
+# Joukeschaafsma <Jwcschaafsma@gmail.com>, 2013-2014
 # PetraSnoek <lievepetra@gmail.com>, 2014
 # Yanick Goossens <yanickgoossens@hotmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
@@ -43,7 +43,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-24 19:30+0000\n"
+"PO-Revision-Date: 2014-05-23 10:26+0000\n"
 "Last-Translator: PetraSnoek <lievepetra@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/yv-backend/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -151,6 +151,15 @@ msgstr "{name} heeft gereageerd op jouw bladwijzer: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} heeft gereageerd op jouw markering: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} heeft gereageerd op jouw leesplan: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} heeft gereageerd op jouw Bijbel-leesplan: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} heeft gereageerd op jouw nieuwe vriendschap met {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} heeft gereageerd op jouw notitie: “{comment}”"
 
@@ -159,6 +168,15 @@ msgstr "{name} vindt jouw bladwijzer leuk, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} vindt jouw markering leuk, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} vindt jouw leesplan voortgang leuk"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} vindt jouw Bijbel-leesplan voortgang leuk"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} vindt jouw nieuwe vriendschap met {friend_name} leuk"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} vindt jouw notitie leuk op, {reference_human}"
@@ -175,11 +193,29 @@ msgstr "{moment_owner_name} heeft ook gereageerd op hun bladwijzer: “{comment}
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} heeft ook gereageerd op de bladwijzer van {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} heeft ook gereageerd op zijn/haar nieuwe vriendschap met  {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} heeft ook gereageerd op de nieuwe vriendschap van {moment_owner_name} met {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} heeft ook gereageerd op hun markering: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} heeft ook gereageerd op de markering van {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} heeft ook gereageerd op zijn/haar leesplan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} heeft ook gereageerd op het leesplan van {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} heeft ook gereageerd op zijn/haar Bijbel-leesplan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} heeft ook gereageerd op het Bijbel-leesplan van {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} heeft ook gereageerd op hun notitie: “{comment}”"
@@ -201,6 +237,18 @@ msgstr "{name} heeft een notitie toegevoegd, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} heeft een notitie toegevoegd"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} heeft een nieuw leesplan gestart, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} heeft een nieuw Bijbel-leesplan gestart, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} heeft zijn/haar leesplan afgerond, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} heeft zijn/haar Bijbel-leesplan afgerond, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

@@ -4,7 +4,7 @@
 # Translators:
 # Translators:
 # Translators:
-# Jeliace.YV <yival04@gmail.com>, 2013
+# Jeliace.YV <yival04@gmail.com>, 2013-2014
 # tams <tams@aralmuna.me>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
@@ -26,6 +26,7 @@
 # chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
 # chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# Jeliace.YV <yival04@gmail.com>, 2014
 # Malot MRM <malotmrm@gmail.com>, 2013
 # tams <tams@aralmuna.me>, 2013-2014
 # tams <tams@aralmuna.me>, 2013
@@ -36,7 +37,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-07 11:01+0000\n"
+"PO-Revision-Date: 2014-05-23 00:09+0000\n"
 "Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
@@ -48,8 +49,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-19 23:06+0000\n"
-"Last-Translator: Anke Stoye <ankestoyeyouversion@gmail.com>\n"
+"PO-Revision-Date: 2014-05-23 00:09+0000\n"
+"Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,8 +61,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-06 09:00+0000\n"
-"Last-Translator: tams <tams@aralmuna.me>\n"
+"PO-Revision-Date: 2014-05-23 00:09+0000\n"
+"Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,16 +89,16 @@ msgid "moment.friendship.self.title"
 msgstr "Kayo ay magkaibigan na ni <b>{friend_name}</b>"
 
 msgid "moment.highlight.title"
-msgstr "Inihaylayt ni {name} ang <b>{reference_human}</b>"
+msgstr "Hinaylayt ni {name} ang <b>{reference_human}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Inihaylayt mo ang <b>{reference_human}</b>"
+msgstr "Hinaylayt mo ang <b>{reference_human}</b>"
 
 msgid "moment.note.title"
-msgstr "Si {name} ay nagdagdag ng maikling sulat, <b>{title}</b>"
+msgstr "Si {name} ay nagdagdag ng tala, <b>{title}</b>"
 
 msgid "moment.note.self.title"
-msgstr "Ikaw ay nagdagdag ng maikling sulat, <b>{title}</b>"
+msgstr "Ikaw ay nagdagdag ng tala, <b>{title}</b>"
 
 msgid "moment.bible.download.title"
 msgstr "Idinawnload ni {name} ang salin na pinamagatang, <b>{version}</b>"
@@ -106,25 +107,25 @@ msgid "moment.bible.download.self.title"
 msgstr "Iyong idinawnload ang salin na pinamagatang, <b>{version}</b>"
 
 msgid "moment.plan_subscription.title"
-msgstr "Nagsimula ng plano si {name}"
+msgstr "Nagsimula ng bagong Plano si {name}"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Nagsimula ng plano"
+msgstr "Ikaw ay nagsimula ng bagong Plano"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "Natapos ni {name} ang <b>{segment}</b> ng planong, <b>{title}</b>"
+msgstr "Natapos ni {name} ang ika- <b>{segment}</b> araw ng Planong, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Natapos mo ang <b>{segment}</b> ng planong, <b>{title}</b>"
+msgstr "Natapos mo ang ika- <b>{segment}</b> araw ng Planong, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Araw {segment} ng {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_completion.title"
-msgstr "Natapos ni {name} ang plano"
+msgstr "Natapos ni {name} ang Plano"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Nakatapos ng plano"
+msgstr "Natapos mo ang iyong Plano"
 
 msgid "moment.badge.earned.title"
 msgstr "Nakamit ni {name} ang <b>{title}</b> na badge"
@@ -137,6 +138,9 @@ msgstr "Pinanood ni {name} ang <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "Pinanood mo ang <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Ang Bible App ay mas magandang gamitin kasama ng mga Kaibigan. Tignan ang iyong mga Kontak at hanapin Sila."
 
 msgid "notifications.friendships.offer"
 msgstr "Nais kang maging kaibigan ni {name} sa YouVersion"
@@ -156,8 +160,17 @@ msgstr "Nagkomento si {name} sa iyong bookmark: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Nagkomento si {name} sa iyong inihaylayt: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "Si {name} ay nagkomento sa iyong Plano: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "Si {name} ay nagkomento sa iyong Planong Pam-bibliya: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "Si {name} ay nagkomento sa iyong pakikipagkaibigan kay {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
-msgstr "Nagkomento si {name} sa iyong maikling sulat: “{comment}”"
+msgstr "Nagkomento si {name} sa iyong tala: “{comment}”"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "Nagustuhan ni {name} ang iyong pananda, {reference_human}"
@@ -165,8 +178,17 @@ msgstr "Nagustuhan ni {name} ang iyong pananda, {reference_human}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Nagustuhan ni {name} ang iyong haylayt, {reference_human}"
 
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "Ni-like ni {name} ang iyong gawain sa iyong Plano"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "Ni-like ni {name} ang iyong gawain sa iyong Planong Pam-bibliya"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "Nagustuhan at ni-like ni {name} ang iyong pakikipagkaibigan kay {friend_name}"
+
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "Nagustuhan ni {name} ang iyong tale tungkol sa {reference_human}"
+msgstr "Nagustuhan ni {name} ang iyong tala tungkol sa {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "Nagustuhan ni {name} ang iyong talang pinamagatang, \"{title}\""
@@ -180,32 +202,62 @@ msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang bookmark: “{comme
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "Si {commenter_name} ay nagkomento rin sa bookmark ni {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "Si {moment_owner_name} ay nagkomento rin sa kanyang pakikipagkaibigan kay {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "Si {commenter_name} ay nagkomento rin sa pakikipagkaibigan ni {moment_owner_name} kay {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang haylayt: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Si {commenter_name} ay nagkomento rin sa haylayt ni {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang Plano: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "Si {commenter_name} ay nagkomento rin sa Plano ni {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang Planong Pam-bibliya: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "Si {commenter_name} ay nagkomento rin sa Planong Pam-bibliya ni {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "Nagkomento rin si {moment_owner_name} sa kanilang maikling sulat: “{comment}”"
+msgstr "Nagkomento rin si {moment_owner_name} sa kanilang tala: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
-msgstr "Nagkomento rin si {commenter_name} sa maikling sulat ni {moment_owner_name}: “{comment}”"
+msgstr "Nagkomento rin si {commenter_name} sa tala ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "Ibinookmark ni {name} ang {reference_human}"
 
 msgid "notifications.moments.create.highlight"
-msgstr "Inihaylat ni {name} ang {reference_human}"
+msgstr "Hinaylayt ni {name} ang {reference_human}"
 
 msgid "notifications.moments.create.note.reference"
-msgstr "Nagdagdag si {name} ng maikling sulat sa {reference_human}"
+msgstr "Nagdagdag si {name} ng tala sa {reference_human}"
 
 msgid "notifications.moments.create.note.title"
-msgstr "Nagdagdag si {name} ng maikling sulat na pinamagatang, “{title}”"
+msgstr "Nagdagdag si {name} ng tala na pinamagatang, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "Si {name} ay nagdagdag ng maikling sulat"
+msgstr "Si {name} ay nagdagdag ng tala"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "Si {name} ay nagsimula ng bagong Plano, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "Si {name} ay nagsimula ng bagong Planong Pam-bibliya, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "Natapos ni {name} ang kanilang Plano, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "Natapos ni {name} ang kanilang Planong Pam-bibliya, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
@@ -238,7 +290,7 @@ msgid "share.invite_twitter_direct"
 msgstr "Mayroon ka bang Bible App ng YouVersion? Gustong-gusto ko ito, at sa palagay ko'y magugustuhan mo rin. Heto ang link:"
 
 msgid "share.invite_facebook"
-msgstr "Gustung-gusto ko ang Bible App! Natutulungan ako nitong gawing bahagi ng aking araw-araw ang Bibliya. Maaari akong mag-marka, makinig sa mga audio Bibles, lumikha ng notes, mag-subscribe sa mga devotional plans... at manood ng mga videos! I-download mo na ito ngayon (ng libre):"
+msgstr "Gustung-gusto ko ang Bible App! Natutulungan ako nitong gawing bahagi ng aking araw-araw ang Bibliya. Maaari akong mag-marka, makinig sa mga audio Bibles, lumikha ng mga tala, mag-subscribe sa mga devotional plans... at manood ng mga videos! I-download mo na ito ngayon (ng libre):"
 
 msgid "share.invite_facebook_direct"
 msgstr "Mayroon ka bang Bible App ng YouVersion? Gustong-gusto ko ito, at sa palagay ko'y magugustuhan mo rin. Heto ang link:"

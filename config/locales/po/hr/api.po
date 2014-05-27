@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-13 14:20+0000\n"
+"PO-Revision-Date: 2014-05-21 05:02+0000\n"
 "Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-26 21:10+0000\n"
+"PO-Revision-Date: 2014-05-21 05:15+0000\n"
 "Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -105,7 +105,7 @@ msgid "moment.plan_segment_completion.title"
 msgstr "Korisnik {name} je dovršio dan <b>{segment}</b> plana, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Dovršen je <b>{segment}</b> plana, <b>{title}</b>"
+msgstr "Dovršen je <b>{segment}</b>. dan plana, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Dan {segment} od {total_segments} ({percent_complete}%)"
@@ -128,6 +128,9 @@ msgstr "<b>{title}</b> - pogledano od strane korisnika {name}"
 msgid "moment.video.watched.self.title"
 msgstr "Gledan je  <b>{title}</b>"
 
+msgid "moment.system.find_friends.title"
+msgstr "Aplikacija Biblija je još bolja ako uključiš prijatelje. Pretraži kontakte mobilnog uređaja da nađeš prijatelje."
+
 msgid "notifications.friendships.offer"
 msgstr "Korisnik {name} želi biti tvoj prijatelj na YouVersion"
 
@@ -146,6 +149,15 @@ msgstr "Korisnik {name} je komentirao tvoju oznaku: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Korisnik {name} je komentirao istaknuto: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} komentira tvoja plan čitanja: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} komentira tvoja plan čitanja Biblije: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "Korisnik {name} je komentirao tvoje prijateljstvo s {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "Korisnik {name} je komentirao tvoju bilješku: “{comment}”"
 
@@ -154,6 +166,15 @@ msgstr "Korisniku {name} se sviđa tvoja oznaka, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Korisniku {name} se sviđa istaknuto, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "Korisniku {name} se sviđa tvoja aktivnost na planu"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "Korisniku {name} se sviđa tvoja aktivnost na planu čitanja Biblije"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "Korisniku {name} se sviđa tvoje prijateljstvo s {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "Korisniku {name} se sviđa tvoja bilješka {reference_human}"
@@ -170,11 +191,29 @@ msgstr "Korisnik {moment_owner_name} je komentirao svoju oznaku: “{comment}”
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "Oznaka korisnika {moment_owner_name}, “{comment}”, je isto komentirana od strane korisnika {commenter_name}"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} također komentira tvoje novo prijateljstvo s {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} također komentira prijateljstvo vlasnika trenutka {moment_owner_name} s {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Korisnik {moment_owner_name} je također komentirao istaknuto: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Korisnik {commenter_name} je isto komentirao: “{comment}”, što je istaknuo korisnik {moment_owner_name}"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} isto komentira svoj plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} isto komentira plan korisnika {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} isto komentira svoj plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} isto komentira plan korisnika {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Korisnik {moment_owner_name} je isto komentirao svoju bilješku: “{comment}”"
@@ -196,6 +235,18 @@ msgstr "Korisnik {name} je dodao bilješku, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "Korisnik {name} je dodao bilješku"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} pokreće novi plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} pokreće novi plan čitanja, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} upravo dovršava svoj plan, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} upravo dovršava plan čitanja Biblije, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

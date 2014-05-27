@@ -94,25 +94,25 @@ msgid "moment.bible.download.self.title"
 msgstr "You downloaded the version, <b>{version}</b>"
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} started a plan"
+msgstr "{name} started a new Plan"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Started a plan"
+msgstr "You started a new Plan"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} completed day <b>{segment}</b> of the plan, <b>{title}</b>"
+msgstr "{name} completed day <b>{segment}</b> of the Plan, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "You completed day <b>{segment}</b> of the plan, <b>{title}</b>"
+msgstr "You completed day <b>{segment}</b> of the Plan, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Day {segment} of {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_completion.title"
-msgstr "{name} completed a plan"
+msgstr "{name} completed a Plan"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Completed a plan"
+msgstr "You completed your Plan"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} earned the <b>{title}</b> badge"
@@ -125,6 +125,9 @@ msgstr "{name} watched <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "You watched <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "The Bible App is even better with Friends. Search your Contacts to find Friends."
 
 msgid "notifications.friendships.offer"
 msgstr "{name} wants to be your friend on YouVersion"
@@ -144,6 +147,15 @@ msgstr "{name} commented on your bookmark: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} commented on your highlight: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} commented on your Plan: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} commented on your Bible Plan: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} commented on your new friendship with {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} commented on your note: “{comment}”"
 
@@ -152,6 +164,15 @@ msgstr "{name} likes your bookmark, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} likes your highlight, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} likes your Plan activity"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} likes your Bible Plan activity"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} likes your new friendship with {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} likes your note on {reference_human}"
@@ -168,11 +189,29 @@ msgstr "{moment_owner_name} also commented on their bookmark: “{comment}”"
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} also commented on {moment_owner_name}'s bookmark: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} also commented on their new friendship with {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s new friendship with {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} also commented on their highlight: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} also commented on {moment_owner_name}'s highlight: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} also commented on their Plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s Plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} also commented on their Bible Plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s Bible Plan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} also commented on their note: “{comment}”"
@@ -194,6 +233,18 @@ msgstr "{name} added a note, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} added a note"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} started a new Plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} started a new Bible Plan, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} completed their Plan, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} completed their Bible Plan, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
