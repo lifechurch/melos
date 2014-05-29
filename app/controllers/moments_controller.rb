@@ -9,7 +9,7 @@ class MomentsController < BaseMomentsController
 
 
   before_filter :force_login
-  before_filter :mobile_redirect, only: [:show]
+  before_filter :find_moment, :mobile_redirect, only: [:show]
 
   # TODO - optimize before filterage, especially for the #show redirect
 
@@ -70,6 +70,10 @@ class MomentsController < BaseMomentsController
   # TODO - Before filter that looks up the moment and redirects to the appropriate page if necessary
   # TODO - skip any before filters that arent necessary
   def show
+    respond_to do |format|
+      format.html
+      format.json # renders show.json.jbuilder
+    end
   end
 
   def introduction

@@ -106,8 +106,11 @@ class BaseMomentsController < ApplicationController
     self.class.moment_resource_class.to_s.downcase # Highight -> highlight, Bookmark -> bookmark
   end
 
-  def mobile_redirect
+  def find_moment
     @moment = Moment.find(params[:id], auth: current_auth)
+  end
+
+  def mobile_redirect
     render_404 if @moment.nil? || @moment.errors.present?
     if request.env["X_MOBILE_DEVICE"].present?
       case request.env["X_MOBILE_DEVICE"]
