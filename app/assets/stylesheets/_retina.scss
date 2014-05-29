@@ -462,6 +462,31 @@ only screen and (                min-resolution: 2dppx) {
     background-position: center -361px
   }
 
+  #header ul.nav_user .li_active  #header_profile_menu {
+    .header_profile_menu_activity a,
+    .header_profile_menu_friends a,
+    .header_profile_menu_settings a,
+    .header_profile_menu_signout a {
+      background: image-url("profile-sprite@2x.png") no-repeat;
+      background-size: 16px 464px;
+    }
+
+    .header_profile_menu_activity a {
+      background-position: 10px 7px;
+    }
+
+    .header_profile_menu_friends a {
+      background-position: 10px -57px;
+    }
+
+    .header_profile_menu_settings a {
+      background-position: 10px -377px;
+    }
+
+    .header_profile_menu_signout a {
+      background-position: 10px -441px;
+    }
+  }
 
   // Reader
 

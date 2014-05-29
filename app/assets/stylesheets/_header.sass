@@ -265,36 +265,66 @@
   line-height: 1
   position: relative
   z-index: 1
-  +box-shadow(0px 0px 8px #222)
+  +box-shadow(0px 0px 8px #777)
 
   ol
-    width: 280px
 
     li
-      width: 139px
-      display: inline-block
-      float: left
-      border-bottom: 1px solid #ddd
+      display: block
+      border-top: 1px solid #ddd
 
-    li:nth-child(odd)
-      border-right: 1px solid #ddd
+    li:first-child
+      border-top: none
+      +border-radius(5px 5px 0 0)
 
-    li:nth-child(n+7)
-      border-bottom: none
+    li:last-child
+      +border-radius(0 0 5px 5px)
+
+    li:hover
+      background-color: #f5f5f5
 
 #header #header_profile_menu .arrow
-  left: 240px
+  left: 131px
   position: absolute
 
-.li_active #header_profile_menu
-  display: block
-  margin-top: -2px
-  position: absolute
-  width: 280px
-  margin-left: -230px
+.li_active
 
-#header_profile_menu a
-  display: block
-  text-align: center
-  padding: 8px
-  font-weight: bold
+  #header_profile_menu
+    display: block
+    margin-top: -2px
+    position: absolute
+    width: 170px
+    margin-left: -120px
+
+    a
+      display: block
+      padding: 8px
+      font-size: 14px
+
+#header
+  ul.nav_user
+    .li_active
+      #header_profile_menu
+        .header_profile_menu_activity,
+        .header_profile_menu_friends,
+        .header_profile_menu_settings,
+        .header_profile_menu_signout
+          a
+            background: image-url("profile-sprite.png") no-repeat
+            padding: 8px 0 8px 35px
+
+        .header_profile_menu_activity
+          a
+            background-position: 10px 7px
+
+        .header_profile_menu_friends
+          a
+            background-position: 10px -57px
+
+        .header_profile_menu_settings
+          a
+            background-position: 10px -377px
+
+        .header_profile_menu_signout
+          a
+            background-position: 10px -441px
