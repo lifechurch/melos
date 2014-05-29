@@ -6,5 +6,5 @@ json.object do
   json.percent_complete moment.percent_complete
   json.segment    moment.segment
   json.total_segments moment.total_segments
-  json.partial!   "moment_common", moment: moment
+  json.partial!   "/moments/moment_common", moment: moment
 end

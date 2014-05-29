@@ -3,12 +3,11 @@
   = @title
 
 - if @moments.present?
-  .social-feed-wrap
-    .social-feed
-      = render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}
-
-  - if @moments.next_page
-    = render partial: "shared/moments_load_more", locals: {resource: "users", url_params: ["uid=#{@user.id}"]}
+  .social-feed-wrap{"data-user-id" => @user.id}
+    :javascript
+      $(document).ready(function(){
+        var feed = new Moments.UserFeed();
+      });
 
 - else
   .profile-blank-slate.slate-activity

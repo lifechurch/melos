@@ -34,7 +34,7 @@ class MomentsController < BaseMomentsController
   # Action renders cards partial for the returned moments
   def _cards
     recent_versions = client_settings.recent_versions
-    # If our user_id param is present, use that to find user, otherwise assume current user
+    # Assumes current user's moments
     @user = current_user
     @feed    = YV::Moments::Feed.new(
       auth: current_auth,
