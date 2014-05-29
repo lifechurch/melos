@@ -44,6 +44,7 @@ class window.Moments.FeedBase
 
   beginRendering: (moments_json_array)->
     @moments_json = moments_json_array
+    @moments_length = @moments_json.length
     @current_page = $("<div />",{class:"social-feed"})
     @wrap.append(@current_page)
 

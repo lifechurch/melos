@@ -18,3 +18,12 @@ class window.Moments.UserFeed extends window.Moments.FeedBase
     request_url  += "&page=" + @page
     @loadData(request_url)
     return
+
+  # defined here to check for moment length, and hide pagination if there aren't any more moments.
+  renderNext: ()->
+    next_moment = @moments_json.shift()
+    if next_moment == undefined && @moments_length >= 10
+      @showPagination()
+    else
+      @renderMoment(next_moment)
+    return
