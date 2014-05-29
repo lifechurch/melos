@@ -60,12 +60,12 @@
 
     :ruby
       tabs = [
-        {href: user_path(@user),                            type: "activity"},
-        {href: user_friends_path(user_id: @user.to_param),  type: "friends"},
-        {href: notes_user_path(@user),                      type: "notes"},
-        {href: bookmarks_user_path(@user),                  type: "bookmarks"},
-        {href: highlights_user_path(@user),                 type: "highlights"},
-        {href: badges_user_path(@user),                     type: "badges"}
+        {href: user_path(id: @user.username),                            type: "activity"},
+        {href: user_friends_path(user_id: @user.username),                    type: "friends"},
+        {href: notes_user_path(id: @user.username),                      type: "notes"},
+        {href: bookmarks_user_path(id: @user.username),                  type: "bookmarks"},
+        {href: highlights_user_path(id: @user.username),                 type: "highlights"},
+        {href: badges_user_path(id: @user.username),                     type: "badges"}
       ]
 
       # find the highlight method in /app/helpers/users_helper.rb
