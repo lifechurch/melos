@@ -17,7 +17,7 @@ class Social
   end
 
   def self.matt
-    User.authenticate("manderson", "qwerasdf")
+    User.authenticate("matthew", "qwerasdf")
   end
   
 end
