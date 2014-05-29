@@ -4,9 +4,9 @@ class window.Highliter
     $.each refs_array, (idx,ref)->
       reader_verse = $("span[data-usfm='" + ref + "']")
       reader_verse.addClass("highlighted")
-      reader_verse.attr("data-highlight-color", "#" + color)
-      reader_verse.css('background-color', "#" + color)
-      reader_verse.addClass("dark_bg") if Highliter.isColorDark(color)
+      reader_verse.attr("data-highlight-color", "#" + color) if color?
+      reader_verse.css('background-color', "#" + color) if color?
+      reader_verse.addClass("dark_bg") if color? and Highliter.isColorDark(color)
     return
 
   @isColorDark: (hex_color)->
