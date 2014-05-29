@@ -28,6 +28,9 @@ class window.Panes.Highlight extends window.Panes.Base
     @setupForm(html.find("form"))
     return
 
+  defaultColor: ()->
+    "fffe00"
+
   setupForm: (form)->
     $(form).on "submit", (event)=>
       event.preventDefault()
@@ -41,7 +44,7 @@ class window.Panes.Highlight extends window.Panes.Base
         highlight: {
           version_id:       field_val("highlight[version_id]"),
           usfm_references:  field_val("highlight[usfm_references]"),
-          color:            field_val("highlight[color]")
+          color:            field_val("highlight[color]") || @defaultColor
         }
       }
 
