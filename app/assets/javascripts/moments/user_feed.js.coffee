@@ -15,8 +15,8 @@ class window.Moments.UserFeed extends window.Moments.FeedBase
 
     @page        = @page + 1
     request_url  = "/users/#{@username}/_cards?"
-    request_url  += "&page=" + @page
-    request_url  += "&kind=" + @kind
+    request_url  += "&page=" + @page unless @page == undefined
+    request_url  += "&kind=" + @kind unless @kind == undefined
     @loadData(request_url)
     return
 

@@ -21,15 +21,9 @@ class UsersController < ApplicationController
     render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
 
-  def show
-    @moments = Moment.all(moment_all_params)
-  end
-
-  def notes
-  end
-
-  def highlights
-  end
+  def show;       end
+  def notes;      end
+  def highlights; end
 
   def bookmarks
     @labels = Bookmark.labels(auth: current_auth)

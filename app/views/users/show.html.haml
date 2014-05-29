@@ -2,14 +2,13 @@
 - content_for :title do
   = @title
 
-- if @moments.present?
-  .social-feed-wrap{"data-username" => @user.username}
-    :javascript
-      $(document).ready(function(){
-        var feed = new Moments.UserFeed();
-      });
+.social-feed-wrap{"data-username" => @user.username}
+  :javascript
+    $(document).ready(function(){
+      var feed = new Moments.UserFeed();
+    });
 
-- else
+- unless true
   .profile-blank-slate.slate-activity
     - if current_user_is? @user
       %h2
