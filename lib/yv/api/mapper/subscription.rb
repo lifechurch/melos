@@ -30,14 +30,14 @@ module YV
 
             def map_to_instance(instance,data)
               instance.id               = data.id
-              instance.name             = data.name["default"] #TODO localize
+              instance.name             = YV::Resource.i18nize(data.name)
               instance.total_days       = data.total_days
-              instance.copyright        = data.copyright.text["default"] #TODO: localize + html data
-              instance.about            = data.about.text["default"] #TODO: localize + html data
+              instance.copyright        = YV::Resource.i18nize(data.copyright.text) #TODO: html data
+              instance.about            = YV::Resource.i18nize(data.about.text) #TODO: html data
               instance.version_id       = data.version_id
               instance.created_dt       = data.created_dt
               instance.slug             = data.slug
-              instance.formatted_length = data.formatted_length["default"] #TODO: localize
+              instance.formatted_length = YV::Resource.i18nize(data.formatted_length)
               instance.default_start_dt = data.default_start_dt
               instance.type             = data.type
               instance.publisher_url    = data.publisher_url
