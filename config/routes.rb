@@ -61,7 +61,7 @@ YouversionWeb::Application.routes.draw do
   # Users
   resources :users, shallow: true, except: [:new, :create] do
 
-    get "_cards", on: :collection
+    get "_cards", on: :member, as: 'cards'
 
     resources :friends, only: [:index,:destroy] do
       get "_list", on: :collection

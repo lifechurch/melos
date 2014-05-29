@@ -4,27 +4,25 @@
   = @title
 
 - if current_user_is?(@user)
-  - labels = Bookmark.labels(auth: current_auth)
-  - unless labels.blank?
+  - unless @labels.blank?
     .bookmarks-labels-wrap
       %h3.labels-heading
         = t("bookmarks.my labels")
 
-      - unless labels.blank?
+      - unless @labels.blank?
         %ul.bookmarks-labels
-          - labels.each do |label_and_count|
+          - @labels.each do |label_and_count|
             - label_name = label_and_count["label"].strip
             %li.label
               = link_to label_name, bookmarks_user_path(@user, label: label_name)
 
-- if @bookmarks.present?
-  .social-feed-wrap
-    .social-feed
-      = render partial: "moments/cards", locals: {moments: @bookmarks, comments_displayed: false}
-  - if @bookmarks.next_page
-    = render partial: "shared/moments_load_more", locals: {resource: "bookmarks", url_params: ["uid=#{@user.id}"]}
+.social-feed-wrap{"data-username" => @user.username, "data-kind" => "bookmark"}
+  :javascript
+    $(document).ready(function(){
+      var feed = new Moments.UserFeed();
+    });
 
-- else
+- unless true
   .profile-blank-slate.slate-bookmarks
     - if current_user_is? @user
       %h2

@@ -4,14 +4,13 @@
   = @title
 
 
-- if @notes.present?
-  .social-feed-wrap
-    .social-feed
-      = render partial: "moments/cards", locals: {moments: @notes,comments_displayed: false}
-  - if @notes.next_page
-    = render partial: "shared/moments_load_more", locals: {resource: "notes", url_params: ["uid=#{@user.id}"]}
-    
-- else
+.social-feed-wrap{"data-username" => @user.username, "data-kind" => "note"}
+  :javascript
+    $(document).ready(function(){
+      var feed = new Moments.UserFeed();
+    });
+
+- unless true
   .profile-blank-slate.slate-notes
     - if current_user_is? @user
       %h2

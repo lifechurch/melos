@@ -4,7 +4,8 @@ class window.Moments.UserFeed extends window.Moments.FeedBase
 
   constructor: (@params)->
     super(@params)
-    @user_id = $('.social-feed-wrap').data('user-id')
+    @username = $('.social-feed-wrap').data('username')
+    @kind = $('.social-feed-wrap').data('kind')
     @loadMoments()
     return
 
@@ -13,17 +14,17 @@ class window.Moments.UserFeed extends window.Moments.FeedBase
     @hidePagination()
 
     @page        = @page + 1
-    request_url  = "/users/_cards?"
-    request_url  += "user_id=" + @user_id
+    request_url  = "/users/#{@username}/_cards?"
     request_url  += "&page=" + @page
+    request_url  += "&kind=" + @kind
     @loadData(request_url)
     return
 
   # defined here to check for moment length, and hide pagination if there aren't any more moments.
   renderNext: ()->
     next_moment = @moments_json.shift()
-    if next_moment == undefined && @moments_length >= 10
-      @showPagination()
+    if next_moment == undefined
+      @showPagination() unless @moments_length < 10
     else
       @renderMoment(next_moment)
     return

@@ -3,7 +3,7 @@
   = @title
 
 - if @moments.present?
-  .social-feed-wrap{"data-user-id" => @user.id}
+  .social-feed-wrap{"data-username" => @user.username}
     :javascript
       $(document).ready(function(){
         var feed = new Moments.UserFeed();

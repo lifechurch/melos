@@ -4,14 +4,14 @@
 - content_for :title do
   = @title
 
-- if @highlights.present?
-  .social-feed-wrap
-    .social-feed
-      = render partial: "moments/cards", locals: {moments: @highlights, comments_displayed: false}
-  - if @highlights.next_page
-    = render partial: "shared/moments_load_more", locals: {resource: "highlights", url_params: ["uid=#{@user.id}"]}
-    
-- else
+.social-feed-wrap{"data-username" => @user.username, "data-kind" => "highlight"}
+  :javascript
+    $(document).ready(function(){
+      var feed = new Moments.UserFeed();
+    });
+
+
+- unless true
   .profile-blank-slate.slate-highlights
     - if current_user_is? @user
       %h2
