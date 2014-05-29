@@ -13,7 +13,7 @@
       - if params[:controller] == "search"
         -if params[:version]
           %input{type: 'hidden', name: "version", value: params[:version]}
-    
+
     .header-user
       -# Sign in and user id
       - if current_auth
@@ -25,9 +25,9 @@
 
         %ul.nav_user
           %li.highlights
-            %a{href: highlights_user_path(current_auth.username)}  
+            %a{href: highlights_user_path(current_auth.username)}
           %li.bookmarks
-            %a{href: bookmarks_user_path(current_auth.username)}     
+            %a{href: bookmarks_user_path(current_auth.username)}
           %li.notes
             %a{href: notes_user_path(current_auth.username)}
           %li.auth
@@ -37,21 +37,21 @@
             #header_profile_menu
               %span.arrow
               %ol
-                %li
+                %li.header_profile_menu_activity
                   %a{href: user_path(current_auth.username)}
                     =t("users.profile.tab activity")
-                %li
+                %li.header_profile_menu_friends
                   %a{href: user_friends_path(user_id: current_auth.username)}
-                    =t("users.profile.tab friends") 
+                    =t("users.profile.tab friends")
                 - #%li
                 - #  %a{href: badges_user_path(current_auth.username)}
                 - #    =t("users.profile.tab badges")
-                %li
+                %li.header_profile_menu_settings
                   %a{href: "/settings"}
-                    =t("settings") 
-                %li
+                    =t("settings")
+                %li.header_profile_menu_signout
                   %a{href: sign_out_path}
-                    =t("sign out") 
+                    =t("sign out")
 
         .user_options
           %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
