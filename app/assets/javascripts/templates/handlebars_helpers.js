@@ -13,3 +13,7 @@ Handlebars.registerHelper('I18n',
     return (I18n != undefined ? I18n.t(str) : str);
   }
 );
+Handlebars.registerHelper('stringify',
+  function(json){
+    return JSON.stringify(json);
+});
