@@ -1,0 +1,11 @@
+%li.moment-comments-list-comment
+  %span.moment-comments-list-avatar
+    %a{href: "{{user.path}}"}
+      %img{src: "{{user.avatar}}"}/
+  %p.moment-comments-list-text
+    %a{href: "{{user.path}}"} {{user.name}}
+    {{content}}
+    %span.moment-comment-dt {{time_ago}}
+  {{#if owned_by_me }}
+  %a.moment-comment-delete{"data-comment-id" => "{{id}}", href: "#"} x
+  {{/if}}

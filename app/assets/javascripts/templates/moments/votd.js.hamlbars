@@ -1,0 +1,17 @@
+.moment{"data-uuid" => "{{uuid}}"}
+  .moment-vod{"data-references" => "{{usfm_references}}"}
+    %span.moment-icon &nbsp;
+    .moment-vod-calendar
+      .moment-vod-calendar-date
+        {{week_day}}
+      .moment-vod-calendar-img
+        {{{calendar_img}}}
+    %span.moment-time
+      {{created_dt}}
+    .moment-vod-title
+      {{{title}}}
+    {{{verse_html}}}
+    %ul.moment-vod-list
+      {{#each recent_versions}}
+      %li.btn{"data-version-id" => "{{id}}"} {{abbrev}}
+      {{/each}}

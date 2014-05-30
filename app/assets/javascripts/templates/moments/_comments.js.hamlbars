@@ -1,0 +1,21 @@
+.moment-comments
+  {{#if actions.show}}
+  {{#if likes.strings.whos_liked}}
+  %span.moment-comments-likes
+    {{{likes.strings.whos_liked}}}
+  {{/if}}
+  {{#if comments.strings.view_all_comments}}
+  %span.moment-comments-more
+    %a{href: "{{path}}"} {{comments.strings.view_all_comments}}
+  {{/if}}
+  {{/if}}
+  %ul.moment-comments-list
+    {{#each comments.all}}
+    {{> moments/_comment}}
+    {{/each}}
+  %form{action: "/comments", method: "post"}
+    %input{name: "comment[moment_id]", type: "hidden", value: "{{id}}"}/
+    %span.moment-comments-input
+      %span.moment-comments-input-avatar
+        %img{src: "{{user.avatar}}"}/
+      %textarea.moment-comments-textarea.comment-field{"data-moment-id" => "{{id}}", name: "comment[content]"}
