@@ -5,9 +5,3 @@
     $(document).ready(function(){
       var feed = new Moments.Feed()
     });
-    
-- #.social-feed
-= #render partial: "moments/cta/find_friends"
-= #render partial: "moments/cta/profile" if current_user.profile_incomplete?
-= #render partial: "moments/cta/sharing"
-= #render partial: "moments/cards", locals: {moments: @moments, comments_displayed: true}
