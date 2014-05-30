@@ -1,7 +1,7 @@
 json.id             moment.id
 json.created_dt     moment.created_dt
 json.updated_dt     moment.updated_dt
-json.references     moment.references if defined?(moment.references)
+json.references     moment.references if moment.respond_to? :references
 json.path           moment.to_path
 json.avatar         moment.avatars.lg_avatar.url
 json.set! :time_ago, api_dt_time_ago(moment.created_dt)
