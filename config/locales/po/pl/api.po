@@ -40,7 +40,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-24 11:23+0000\n"
+"PO-Revision-Date: 2014-05-28 00:11+0000\n"
 "Last-Translator: Sebastian Ferdyn <sferdyn@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/yv-backend/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -151,6 +151,15 @@ msgstr "{name} skomentował twoją zakładkę: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} skomentował twoje zakreślenie: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} skomentował twój plan: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} skomentował twój plan czytania Biblii: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} skomentował twoją nową znajomość z {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} skomentował twoją notatkę: “{comment}”"
 
@@ -159,6 +168,15 @@ msgstr "{name} lubi twoją zakładkę, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} lubi twoje zakreślenie, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} lubi twoją aktywność planu czytania"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} lubi twoją aktywność planu czytania Biblii"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} lubi twoją nową znajomość z {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} lubi twoją notatkę do {reference_human}"
@@ -175,11 +193,29 @@ msgstr "{moment_owner_name} również skomentował swoją zakładkę: “{commen
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} również skomentował zakładkę {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} również skomentował swoją nową znajomość z {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} również skomentował nową znajomość {moment_owner_name} z {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} również skomentował swoje zakreślenie: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} również skomentował zakreślenie {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} również skomentował swój plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} również skomentował plan {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} również skomentował swój plan Biblii: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} również skomentował plan Biblii {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} również skomentował swoją notatkę: “{comment}”"
@@ -201,6 +237,18 @@ msgstr "{name} dodał notatkę, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} dodał notatkę"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} rozpoczął nowy plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} rozpoczął nowy plan czytania Biblii, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} ukończył swój plan, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} ukończył swój plan czytania Biblii, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

@@ -49,7 +49,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-23 00:09+0000\n"
+"PO-Revision-Date: 2014-05-27 13:52+0000\n"
 "Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
@@ -164,7 +164,7 @@ msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "Si {name} ay nagkomento sa iyong Plano: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "Si {name} ay nagkomento sa iyong Planong Pam-bibliya: “{comment}”"
+msgstr "Si {name} ay nagkomento sa iyong Biblikal na Plano: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "Si {name} ay nagkomento sa iyong pakikipagkaibigan kay {friend_name}: “{comment}”"
@@ -182,7 +182,7 @@ msgid "notifications.likes.moment.mine.plan_activity"
 msgstr "Ni-like ni {name} ang iyong gawain sa iyong Plano"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "Ni-like ni {name} ang iyong gawain sa iyong Planong Pam-bibliya"
+msgstr "Ni-like ni {name} ang iyong gawain sa iyong Biblikal na Plano"
 
 msgid "notifications.likes.moment.mine.friendship"
 msgstr "Nagustuhan at ni-like ni {name} ang iyong pakikipagkaibigan kay {friend_name}"
@@ -221,10 +221,10 @@ msgid "notifications.comments.moments.friend.plan_activity"
 msgstr "Si {commenter_name} ay nagkomento rin sa Plano ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang Planong Pam-bibliya: “{comment}”"
+msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang Biblikal na Plano: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "Si {commenter_name} ay nagkomento rin sa Planong Pam-bibliya ni {moment_owner_name}: “{comment}”"
+msgstr "Si {commenter_name} ay nagkomento rin sa Biblikal na Plano ni {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang tala: “{comment}”"
@@ -251,13 +251,13 @@ msgid "notifications.moments.create.plan_subscription"
 msgstr "Si {name} ay nagsimula ng bagong Plano, {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "Si {name} ay nagsimula ng bagong Planong Pam-bibliya, {title}"
+msgstr "Si {name} ay nagsimula ng bagong Biblikal na Plano, {title}"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "Natapos ni {name} ang kanilang Plano, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "Natapos ni {name} ang kanilang Planong Pam-bibliya, {title}"
+msgstr "Natapos ni {name} ang kanilang Biblikal na Plano, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

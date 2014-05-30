@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-09 13:20+0000\n"
+"PO-Revision-Date: 2014-05-28 13:56+0000\n"
 "Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/yv-backend/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-22 04:20+0000\n"
+"PO-Revision-Date: 2014-05-28 13:59+0000\n"
 "Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/yv-backend/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -130,6 +130,9 @@ msgstr "{name} 已觀看了 <b>{title}</b>"
 msgid "moment.video.watched.self.title"
 msgstr "您已觀看了 <b>{title}</b>"
 
+msgid "moment.system.find_friends.title"
+msgstr "與朋友一起使用聖經軟體會給您更佳體驗。請在您的聯絡人裡搜尋朋友。"
+
 msgid "notifications.friendships.offer"
 msgstr "{name} 希望在 YouVersion 上成為您的好友"
 
@@ -148,6 +151,15 @@ msgstr "{name} 在您的書籤上留言: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} 在您的重點上留言: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} 評論了您的計劃: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} 評論了您的讀經計劃: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} 評論了您的新聯繫 {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} 在您的筆記上留言: “{comment}”"
 
@@ -156,6 +168,15 @@ msgstr "{name} 喜歡您的書籤，{reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} 喜歡您的醒目標示，{reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} 點讚了您的計劃活動"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} 點讚了您的讀經計劃活動"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} 點讚了您的新聯繫 {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} 喜歡您在 {reference_human} 的筆記"
@@ -172,11 +193,29 @@ msgstr "{moment_owner_name} 也在他/她的書籤上留言: “{comment}”"
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} 也在 {moment_owner_name} 的書籤上留言: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} 也評論了他/她的新聯繫 {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} 也評論了 {moment_owner_name} 的新聯繫 {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} 也在他/她的重點上留言: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} 也在 {moment_owner_name} 的重點上留言: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} 也評論了他/她的計劃: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} 也評論了 {moment_owner_name} 的計劃: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} 也評論了他/她的讀經計劃: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} 也評論了 {moment_owner_name} 的讀經計劃: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} 也在他/她的筆記上留言: “{comment}”"
@@ -198,6 +237,18 @@ msgstr "{name} 已新增筆記, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} 已新增筆記"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} 開始了新的計劃, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} 開始了新的讀經計劃, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} 完成了他/她的計劃, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} 完成了他/她的讀經計劃, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

@@ -15,9 +15,12 @@
 # Translators:
 # Translators:
 # Translators:
+# Carlos Orjuela <carlos.orjuelaz@gmail.com>, 2014
+# Claudio Lefimil <usalefimil@gmail.com>, 2014
 # dvillegas <deixii@gmail.com>, 2013
 # FedericoLarriva <federicolarriva@hotmail.com>, 2013-2014
 # Hector Escobar <yevgueni21@gmail.com>, 2014
+# marthakinney <marthakinney@windstream.net>, 2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
@@ -45,7 +48,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-05 19:02+0000\n"
+"PO-Revision-Date: 2014-05-27 22:01+0000\n"
 "Last-Translator: FedericoLarriva <federicolarriva@hotmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/yv-backend/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -156,6 +159,15 @@ msgstr "{name} comentó en su marcador: \"{comment}\""
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} comentó en su resaltado: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} comentarios sobre su Plan: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} comentó sobre su Plan Biblia: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} comentó sobre su nueva amistad con {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} comentó en su nota: \"{comment}\""
 
@@ -164,6 +176,15 @@ msgstr "{name} Les gusta su marcador, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} Les gusta su resaltado, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "A {name} le agrada la actividad de tu Plan"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "a {name} le gusta la actividad de tu Plan Biblia"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "A {name} le gusta su nueva amistad con {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} Les gusta su nota en, {reference_human}"
@@ -180,11 +201,29 @@ msgstr "{moment_owner_name} también comentó en su marcador: \"{comment}\""
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} también comentó en el marcador de {moment_owner_name}: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} también comentó sobre su nueva amistad con {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} también comentó sobre la nueva amistad de {moment_owner_name} con {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} también comentó en su resaltado: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} también comentó en el resaltado de {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} también comentó sobre su Plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} también comentó sobre {moment_owner_name}Plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} también comentó sobre su Plan Biblia: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} también comentó en el Plan Bíblico de {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} también comentó en su nota: \"{comment}\""
@@ -206,6 +245,18 @@ msgstr "{name} añadió una nota, \"{title}\""
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} añadió una nota"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} comenzó un nuevo Plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} comenzó un nuevo Plan Bíblico, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} completó su Plan, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} completó su Plan Bíblico, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

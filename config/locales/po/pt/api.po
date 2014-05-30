@@ -5,6 +5,7 @@
 # Translators:
 # Translators:
 # alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
+# Fabio Caldas <fabiomcaldas@gmail.com>, 2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2013-2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2014
 # Tetê <princesstt77@gmail.com>, 2013
@@ -16,6 +17,7 @@
 # Translators:
 # alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
 # Eric Allan dos Santos, 2014
+# Fabio Caldas <fabiomcaldas@gmail.com>, 2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2013-2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2014
 # Tetê <princesstt77@gmail.com>, 2013-2014
@@ -36,8 +38,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-20 18:23+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-05-27 23:05+0000\n"
+"Last-Translator: PaulaPM <ppmiori@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/yv-backend/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,8 +50,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-20 20:32+0000\n"
-"Last-Translator: Nizia Dantas <nizia.dantas@gmail.com>\n"
+"PO-Revision-Date: 2014-05-27 23:05+0000\n"
+"Last-Translator: PaulaPM <ppmiori@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/yv-backend/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,25 +108,25 @@ msgid "moment.bible.download.self.title"
 msgstr "Você baixou a versão, <b>{version}</b>"
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} iniciou um plano"
+msgstr "{name} iniciou um novo Plano"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Iniciou um plano"
+msgstr "Iniciou um novo plano"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} concluiu o dia <b>{segment}</b> do plano, <b>{title}</b>"
+msgstr "{name} concluiu o dia <b>{segment}</b> do Plano, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Você concluiu o dia <b>{segment}</b> do plano, <b>{title}</b>"
+msgstr "Você concluiu o dia <b>{segment}</b> do Plano, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Dia {segment} do {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_completion.title"
-msgstr "{name} concluiu um plano"
+msgstr "{name} concluiu um Plano"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Completou um plano"
+msgstr "Você completou seu Plano"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} ganhou a medalha <b>{title}</b>"
@@ -256,7 +258,7 @@ msgid "notifications.moments.create.plan_completion"
 msgstr "{name} completou este Plano, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} completou este Plano Bíblico, {title}"
+msgstr "{name} completou o Plano Bíblico deles, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

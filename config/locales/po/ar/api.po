@@ -5,6 +5,7 @@
 # Translators:
 # Translators:
 # Lojaine Arabi <loonita@gmail.com>, 2013-2014
+# minafarid <farid.minageorges@gmail.com>, 2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -13,6 +14,7 @@
 # Translators:
 # Amer Zakhour <jemeni4u@gmail.com>, 2013
 # Lojaine Arabi <loonita@gmail.com>, 2014
+# minafarid <farid.minageorges@gmail.com>, 2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
@@ -26,8 +28,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-07 05:10+0000\n"
-"Last-Translator: Lojaine Arabi <loonita@gmail.com>\n"
+"PO-Revision-Date: 2014-05-27 22:41+0000\n"
+"Last-Translator: minafarid <farid.minageorges@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/yv-backend/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,8 +40,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 09:20+0000\n"
-"Last-Translator: Lojaine Arabi <loonita@gmail.com>\n"
+"PO-Revision-Date: 2014-05-27 22:51+0000\n"
+"Last-Translator: minafarid <farid.minageorges@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/yv-backend/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,22 +98,22 @@ msgid "moment.bible.download.self.title"
 msgstr "قمت بتحميل اصدار, <b>{version}</b>"
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} بدأ خطة قراءة"
+msgstr "{name} بدأ خطة قراءة جديدة"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "بدأ خطة"
+msgstr "انت بدأت خطة قراءة جديدة"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} اكمل اليوم <b>{segment}</b>  من خطة القراءة, <b>{title}</b>"
+msgstr "{name} اكمل اليوم <b>{segment}</b>  من خطة القراءة، <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "أكملت اليوم <b>{segment}</b> من خطة القراءة,  <b>{title}</b>"
+msgstr "انت أكملت اليوم <b>{segment}</b> من خطة القراءة،  <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "يوم {segment} من {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_completion.title"
-msgstr "{name} انتهى من خطة القراءة "
+msgstr "{name} انتهى من خطة قراءة "
 
 msgid "moment.plan_completion.self.title"
 msgstr "لقد أنهيت خطة قراءة"
@@ -127,6 +129,9 @@ msgstr "{name} شاهد <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "لقد شاهدت <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "تطبيق الكتاب المقدس اكثر متعة بوجود الاصدقاء. ابحث في جهات الاتصال الخاصة بك لتجد اصدقاء"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} يريد أن يصبح صديقك في YouVersion"
@@ -146,6 +151,15 @@ msgstr "{name} علّق على الإشارة المرجعية الخاصة بك
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} علّق على نصك المميز: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} علق على خطة قرائتك: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} علق على خطة قرائتك للكتاب المقدس : “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} علق على صداقتك مع {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} علّق على ملاحظتك: “{comment}”"
 
@@ -154,6 +168,15 @@ msgstr "{name} معجب بإشارتك المرجعية {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} معجب بنصك المميز {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} اعجب بنشاطك في الخطة"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} اعجب بنشاطك في خطة الكتاب المقدس"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} معجب بصداقتك الجديدية مع {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} معجب بملاحظتك على {reference_human}"
@@ -170,11 +193,29 @@ msgstr "{moment_owner_name} أيضاً علّق على إشارتهم المرج
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} أيضاً علّق على إشارة {moment_owner_name} المرجعية: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} ايضا علقوا على صداقتهم الجديدة مع {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} ايضا علق على الصداقة  {moment_owner_name} الجديدة مع {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} also commented on their highlight: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} علّق أيضاً على نص {moment_owner_name} المميز: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} ايضا علقوا على خطتهم: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} ايضا علقوا على خطة {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} ايضا علقوا على خطتهم لقراءة الكتاب المقدس: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} ايضا علقوا على خطة {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} علّق أيضاً على ملاحظتهم : “{comment}”"
@@ -196,6 +237,18 @@ msgstr "{name} أضاف ملاحظة, “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} أضاف ملاحظة"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} بدأ خطة قراءة جديدة، {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} بدأ خطة قراءة جديدة للكتاب المقدس، {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} أكملوا خطة القراءة، {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} أكملوا خطة قراءة الكتاب المقدس، {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"

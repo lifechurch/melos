@@ -40,7 +40,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-02-25 01:34+0000\n"
+"PO-Revision-Date: 2014-05-28 04:01+0000\n"
 "Last-Translator: prinsonm <prinson.mony@yahoo.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/yv-backend/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -151,6 +151,15 @@ msgstr "{name} ने आपके बुकमार्क पर कमें�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ने आपके हाईलाइट पर कमेंट किया “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} ने आपके योजना पर कमेंट किया “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} ने आपके बाइबिल पाठक योजना पर कमेंट किया “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} ने आपके नोट पर कमेंट किया “{comment}”"
 
@@ -159,6 +168,15 @@ msgstr "{name}ने आपका बुकमार्क पसंद कि�
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} ने आपका हाईलाइट पसंद किया {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} आपके योजना को पसंद करते हैं "
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} आपके बाइबिल पाठक योजना गतिविधि को पसंद किया "
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} आपकी {friend_name}के साथ दोस्ती को पसंद करते हैं "
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} ने आपकी {reference_human}पर नोट्स को पसंद किया "
@@ -175,11 +193,29 @@ msgstr "{moment_owner_name} ने उनके भी बुकमार्क 
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} ने भी  {moment_owner_name}'s बुकमार्क पर कमेंट किया: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} ने {moment_owner_name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ने भी आपके हाईलाइट पर कमेंट किया : “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ने भी  {moment_owner_name}'s हाईलाइट पर कमेंट किया: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} ने भी आपके योजना पर कमेंट किया: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} ने भी {moment_owner_name}'sयोजना पर कमेंट किया: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} ने भी आपके बाइबिल पाठक योजना पर कमेंट किया: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} ने भी {moment_owner_name}'s बाइबिल पाठक योजना पर कमेंट किया: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ने भी आपके नोट पर कमेंट किया: “{comment}”"
@@ -201,6 +237,18 @@ msgstr "{name} एक नोट जोड़ा “{title}”"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} के द्वारा एक नया नोट जोड़ा गया "
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} नया पाठक योजना प्रारंभ किया, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} नया बाइबिल पाठक योजना प्रारंभ किया, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} नया पाठक योजना संपूर्ण किया, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} नया बाइबिल पाठक योजना सम्पूर्ण किया, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
