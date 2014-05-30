@@ -9,8 +9,12 @@ class BookmarksController < BaseMomentsController
     before_filter :mobile_redirect, only: [:show]
 
   def show
-    @bookmark = Bookmark.find(params[:id], auth: current_auth)
-    raise ActionController::RoutingError.new('Not Found') unless @bookmark
+    @moment = Bookmark.find(params[:id], auth: current_auth)
+    raise ActionController::RoutingError.new('Not Found') unless @moment
+    respond_to do |format|
+      format.html
+      format.json { render '/moments/show' }
+    end
   end
 
 end

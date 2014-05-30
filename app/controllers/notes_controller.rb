@@ -11,18 +11,22 @@ class NotesController < BaseMomentsController
 
   # TODO: figure out public/friends/private/draft display and authorization
   def show
-    @note = current_auth ? Note.find(params[:id], auth: current_auth) : Note.find(params[:id])
-    if @note.invalid?
-      if @note.has_error?("Note is private")
+    @moment = current_auth ? Note.find(params[:id], auth: current_auth) : Note.find(params[:id])
+    if @moment.invalid?
+      if @moment.has_error?("Note is private")
          redirect_to(notes_path, notice: t("notes.is private")) and return
       
-      elsif @note.has_error?("Note not found")
+      elsif @moment.has_error?("Note not found")
          render_404 unless current_auth # render 404 unless logged in
-         @note = Note.find(params[:id]) # logged in, attempt to find the note without auth
+         @moment = Note.find(params[:id]) # logged in, attempt to find the note without auth
       
-      elsif @note.has_error?("Note has been reported and is in review")
-         @note = Note.find(params[:id], auth: current_auth, force_auth: true)
+      elsif @moment.has_error?("Note has been reported and is in review")
+         @moment = Note.find(params[:id], auth: current_auth, force_auth: true)
       end
+    end
+    respond_to do |format|
+      format.html
+      format.json { render '/moments/show' }
     end
   end
 
