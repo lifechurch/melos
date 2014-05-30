@@ -2,10 +2,13 @@ window.Moments ?= {}
 
 class window.Moments.DetailView extends window.Moments.FeedBase
 
-  constructor: (@params)->
+  constructor: (@params={})->
+    $.extend(@params, {el: '.social-detail'})
     super(@params)
     @id = $('.social-detail').data("moment-id")
     @loadMoment() unless @id == undefined
+    @timeline = $('.moment-activity')
+    @timeline.hide()
     return
 
 
@@ -26,4 +29,9 @@ class window.Moments.DetailView extends window.Moments.FeedBase
     next_moment = @moments_json.shift()
     unless next_moment == undefined
       @renderMoment(next_moment)
+      @showTimeline()
     return
+
+  showTimeline: ()->
+    fade_speed = 800
+    @timeline.fadeIn(fade_speed)
