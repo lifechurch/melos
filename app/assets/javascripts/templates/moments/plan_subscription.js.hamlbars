@@ -1,0 +1,18 @@
+.moment{"data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}", "data-str-delete-confirm" => "Are you sure you want to delete this?", "data-uuid" => "{{uuid}}"}
+  .moment-top
+    .moment-rp
+      %span.moment-icon
+      %span.moment-avatar
+        %a{href: "{{user.path}}"}
+          %img{src: "{{avatar}}"}/
+      %span.moment-time
+        {{created_dt}}
+      %h2.moment-rp-text
+        %a.moment-title-link{href: "{{path}}"}
+          {{{moment_title}}}
+      .moment-rp-details
+        %a{href: "{{action_url}}"}
+          {{{body_text}}}
+  .moment-btm
+    {{> moments/_actions_bar}}
+    {{> moments/_comments}}

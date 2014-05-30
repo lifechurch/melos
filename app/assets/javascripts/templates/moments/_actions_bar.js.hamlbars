@@ -1,0 +1,15 @@
+.moment-actions
+  %span.moment-actions-like
+    %a{href: "#"} {{I18n 'moments.action.like'}}
+  %span.moment-actions-comment
+    %a{href: "{{path}}"} {{I18n 'moments.action.comment'}}
+  .moment-content-actions
+    {{#if actions.editable}}
+    %a.moment-content-actions-edit{href: "{{path}}/edit"}
+      {{I18n 'moments.action.edit'}}
+    {{/if}}
+    
+    {{#if actions.deletable}}
+    %a.moment-action-delete{href: "#"}
+      {{I18n 'moments.action.delete'}}
+    {{/if}}

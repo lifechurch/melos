@@ -9,7 +9,11 @@ class HighlightsController < BaseMomentsController
     before_filter :mobile_redirect, only: [:show]
 
   def show
-    @highlight = Highlight.find(params[:id], auth: current_auth)
+    @moment = Highlight.find(params[:id], auth: current_auth)
+    respond_to do |format|
+      format.html
+      format.json { render '/moments/show' }
+    end
   end
 
   # TODO: turn this into a json action and render the html client side.

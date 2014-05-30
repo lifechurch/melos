@@ -74,7 +74,8 @@ class window.Moments.Highlight extends window.Moments.Base
 
 
   fetch: ->
-    ref     = @references()[0]
+    return if @references() == undefined
+    ref     = @references()[0] 
     version = ref.version_id
     usfm    = ref.usfm.join("+")
     verse_url = "/bible/#{version}/#{usfm}.json"

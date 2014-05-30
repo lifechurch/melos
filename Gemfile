@@ -62,6 +62,7 @@ group :assets do
   gem 'css_parser',    '~> 1.2.6'
   gem 'jquery-rails',  '~> 2.1.4'
   gem 'jquery-ui-rails','~> 4.1.1'
+  gem 'hamlbars',       '~> 2.1'
 end
 
 group :test do

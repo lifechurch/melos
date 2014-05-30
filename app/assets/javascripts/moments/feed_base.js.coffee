@@ -5,7 +5,7 @@ class window.Moments.FeedBase
   constructor: (@params)->
     @wrap         = if @params? and @params.el? then $(@params.el) else $(".social-feed-wrap")
     @pagination   = $("<a />", {href: "#", id: "load-more"}).text(I18n.t("moments.action.load more")).hide()
-    @page         = 0
+    @page         = if @params? and @params.page? then $(@params.page) else 0
     @current_page = undefined
     return
 

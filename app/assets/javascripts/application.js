@@ -34,6 +34,7 @@
 //= require ./moments/related_feed
 //= require ./moments/feed
 //= require ./moments/user_feed
+//= require ./moments/detail_view
 //= require ./menus/base
 //= require ./menus/notifications
 //= require ./menus/friends
