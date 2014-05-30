@@ -89,8 +89,8 @@ module YV
                     :"ro"     => [{name: 'Biblica', url: 'http://www.biblica.com', image: 'partners/biblica.png'}],
                     :"ru"     => [{name: 'Bible League International', url: 'http://www.bibleleague.org', image: 'partners/bli.gif'},
                                   {name: 'Biblica', url: 'http://www.biblica.com', image: 'partners/biblica.png'}],
-                    :"zh-TW"  => [{name: 'Global Bible Initiative', url: 'http://www.asiabiblesociety.org', image: 'partners/GBI.png'}],
-                    :"zh-CN"  => [{name: 'Global Bible Initiative', url: 'http://www.asiabiblesociety.org', image: 'partners/GBI.png'},
+                    :"zh-TW"  => [{name: 'Global Bible Initiative', url: 'http://www.globalbibleinitiative.org', image: 'partners/GBI.png'}],
+                    :"zh-CN"  => [{name: 'Global Bible Initiative', url: 'http://www.globalbibleinitiative.org', image: 'partners/GBI.png'},
                                   {name: 'Biblica', url: 'http://www.biblica.com', image: 'partners/biblica.png'}]}
         partners[:"en-GB"] = partners[:en]
         partners
