@@ -4,5 +4,5 @@ json.set! :kind, "highlight"
 
 json.object do
   json.set! :moment_title,   moment_title
-  json.partial! "moment_common", moment: moment
+  json.partial! "/moments/moment_common", moment: moment
 end

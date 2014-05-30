@@ -14,25 +14,19 @@ class UsersController < ApplicationController
   # Action meant to render moment cards partial to html for ajax delivery client side
   # Currently being used for next page calls on moments feed.
   def _cards
-    @user = User.find(params[:uid])
+    @user = User.find(params[:id])
+    @page ||= params[:page]
+    @kind ||= params[:kind]
     @moments = Moment.all(moment_all_params)
     render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
 
-  def show
-    @moments = Moment.all(moment_all_params)
-  end
-
-  def notes
-    @notes = Note.all(moment_all_params)
-  end
-
-  def highlights
-    @highlights = Highlight.all(moment_all_params)
-  end
+  def show;       end
+  def notes;      end
+  def highlights; end
 
   def bookmarks
-    @bookmarks = params[:label] ? Bookmark.for_label(params[:label], {page: @page, user_id: @user.id.to_i, auth: current_auth}) : Bookmark.all(moment_all_params)
+    @labels = Bookmark.labels(auth: current_auth)
   end
 
   def badges
@@ -194,7 +188,7 @@ class UsersController < ApplicationController
 private
 
   def moment_all_params
-    {user_id: @user.id.to_i, page: @page, auth: current_auth}
+    {user_id: @user.id.to_i, page: @page, auth: current_auth, kind: @kind}
   end
 
   def find_user_for_moments

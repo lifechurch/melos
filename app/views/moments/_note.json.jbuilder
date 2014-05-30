@@ -4,5 +4,5 @@ json.object do
   json.title          moment.title
   json.content        moment.content
   json.status         t("notes.status.#{moment.user_status}")
-  json.partial! "moment_common", moment: moment
+  json.partial!   "/moments/moment_common", moment: moment
 end

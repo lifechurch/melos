@@ -33,6 +33,7 @@
 //= require ./moments/feed_base
 //= require ./moments/related_feed
 //= require ./moments/feed
+//= require ./moments/user_feed
 //= require ./menus/base
 //= require ./menus/notifications
 //= require ./menus/friends
