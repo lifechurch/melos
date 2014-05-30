@@ -22,13 +22,12 @@
       var feed = new Moments.UserFeed();
     });
 
-- unless true
-  .profile-blank-slate.slate-bookmarks
-    - if current_user_is? @user
-      %h2
-        = t("bookmarks.blank slate.heading")
-      %p
-        = t("bookmarks.blank slate.description")
-    - else
-      %h2
-        = t("bookmarks.none user", username: @user.name)
+.profile-blank-slate.slate-bookmarks
+  - if current_user_is? @user
+    %h2
+      = t("bookmarks.blank slate.heading")
+    %p
+      = t("bookmarks.blank slate.description")
+  - else
+    %h2
+      = t("bookmarks.none user", username: @user.name)

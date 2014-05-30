@@ -10,13 +10,13 @@
       var feed = new Moments.UserFeed();
     });
 
-- unless true
-  .profile-blank-slate.slate-notes
-    - if current_user_is? @user
-      %h2
-        = t("notes.blank slate.heading")
-      %p
-        = raw t("notes.blank slate.description")
-    - else
-      %h2
-        = t("notes.none user", username: @user.name)
+.profile-blank-slate.slate-notes
+  - if current_user_is? @user
+    %h2
+      = t("notes.blank slate.heading")
+    %p
+      = raw t("notes.blank slate.description")
+  - else
+    %h2
+      = t("notes.none user", username: @user.name)
+      
