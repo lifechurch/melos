@@ -43,7 +43,6 @@ YouversionWeb::Application.routes.draw do
   end
 
   match '/notes/related/(:reference)' => "notes#related", as: "related_notes", constraints: {reference: /[^\/]*/}
-  match '/notes' => 'notes#index', :as => 'all_notes', :via => :get
   
 
   # Metal controller
