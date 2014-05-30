@@ -108,10 +108,11 @@ class BaseMomentsController < ApplicationController
 
   def find_moment
     @moment = Moment.find(params[:id], auth: current_auth)
+    render_404 if @moment.nil? || @moment.errors.present?
   end
 
   def mobile_redirect
-    render_404 if @moment.nil? || @moment.errors.present?
+    @moment ||= Moment.find(params[:id], auth: current_auth)
     if request.env["X_MOBILE_DEVICE"].present?
       case request.env["X_MOBILE_DEVICE"]
       when /iphone|iPhone|ipad|iPad|ipod|iPod/
