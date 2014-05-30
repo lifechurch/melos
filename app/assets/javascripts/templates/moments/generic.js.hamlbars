@@ -1,0 +1,13 @@
+.moment{"data-uuid" => "{{uuid}}"}
+  .moment-top
+    .moment-sys
+      %span.moment-icon
+      %span.moment-avatar
+        %img{src: "{{avatar}}"}/
+      %span.moment-time
+        {{created_dt}}
+      %h2.moment-sys-text {{{moment_title}}}
+      {{#if body_text}}
+      %div{style: "clear:both;"}
+        {{{body_text}}}
+      {{/if}}
