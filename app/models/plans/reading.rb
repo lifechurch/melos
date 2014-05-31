@@ -50,7 +50,7 @@ module Plans
       # if ascii spacing is in the html, just remove it, instead of adding p's
       # to avoid adding unnecessary spacing
       spacer = YV::Resource.html_present?(additional_content) ? '' : '</p><p>'
-      additional_content = additional_content.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer)
+      additional_content = additional_content.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer) if additional_content.present?
       additional_content = "<p>" << additional_content << "</p>" if spacer.present?
       @devotional ||=  additional_content
     end
