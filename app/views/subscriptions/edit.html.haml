@@ -25,7 +25,10 @@
           = button_to(t('plans.make public'), subscription_path(user_id: current_user.to_param, id: subscription,make_public: "true"), method: :put, class: 'action_button_green')
       %div.info
         %h3= t("plans.privacy title")
-        %p= t("plans.privacy description")
+        -if subscription.public?
+          %p= t("plans.privacy description.public")
+        -else
+          %p= t("plans.privacy description.private")
 
     %li#delivery-settings
       %div.wrapper
