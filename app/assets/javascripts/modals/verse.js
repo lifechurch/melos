@@ -10,6 +10,11 @@ function VerseModal(opts) {
   var verses = $("article").attr("data-selected-verses").split(","); //using attr() here so jQuery doesn't type cast, just give me a string.
   if (verses && this.enabled()) {
     if (verses.length > 0) {
+      if (verses.length > 3) {
+        setTimeout(function(){
+          reader.scrollToVerse()
+        },1000);
+      } else {
       this.open = true;
       var thiss = this;
       var windowH = $(window).height();
@@ -39,6 +44,7 @@ function VerseModal(opts) {
           // noop
         }
       });
+    }
     }
   }
 
