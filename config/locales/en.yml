@@ -641,7 +641,7 @@ en:
       readings 5 or more:                       "readings"
     settings:                                   "Settings"
     privacy:
-      visible to friends?:                      "Would you like your activity with this plan to be visible to your friends?"
+      visible to friends?:                      "Do you want your friends to see your Plan activity?"
       private:                                  "Private"
       public:                                   "Public"
     title:                                      "Reading Plans"
@@ -697,9 +697,11 @@ en:
     catch me up:                                "Catch Me Up"
     restart description:                        "You can restart your plan. All of your reading history and progress will be reset and start from the beginning."
     restart:                                    "Restart Plan"
-    privacy description:                        "It's your choice. Do you want people to see that you're reading this plan?"
-    make private:                               "Make Private"
-    make public:                                "Make Public"
+    privacy description:                        
+      private:                                  "Your Plan is Private. Switch your setting to Friends Only to share your Plan activity with friends."
+      public:                                   "Your Plan is visible to friends. Switch to Private to make your Plan activity private."
+    make private:                               "Set to Private"
+    make public:                                "Share with Friends"
     privacy title:                              "Privacy"
     stop reading:                               "Stop Reading This Plan"
     accountability:                             "Accountability"
