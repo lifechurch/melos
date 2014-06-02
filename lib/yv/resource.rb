@@ -264,9 +264,10 @@ module YV
       end
 
       # Not exactly sure what the need/use case is for this at the moment. Britt (8/23/2013)
+      # Used in reading.rb#devotional  -Matt(2 Jun 2014)
       def html_present?(mash)
         return false if mash.nil?
-
+        return false unless defined?(mash.html)
         lang_key = YV::Conversions.to_api_lang_code(I18n.locale.to_s)
         return false unless mash[lang_key].nil?
 
