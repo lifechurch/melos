@@ -4,4 +4,8 @@ json.object do
   json.body_text  moment.body_text
   json.action_url moment.action_url
   json.partial!   "/moments/moment_common", moment: moment
+  json.actions do
+    json.set! :about_plan, true
+    json.set! :start_plan, true
+  end
 end

@@ -3,7 +3,32 @@
     %a{href: "#"} {{I18n 'moments.action.like'}}
   %span.moment-actions-comment
     %a{href: "{{path}}"} {{I18n 'moments.action.comment'}}
+  .action-layer
+    {{#if actions.read}}
+    Read
+    {{/if}}
+    {{#if actions.share}}
+    Share
+    {{/if}}
+    {{#if actions.read_plan}}
+    Read plan
+    {{/if}}
+    {{#if actions.about_plan}}
+    About plan
+    {{/if}}
+    {{#if actions.start_plan}}
+    Start plan
+    {{/if}}
+    {{#if actions.editable}}
+    %a.moment-actions-edit{href: "#"}
+      {{I18n 'moments.action.edit'}}
+    {{/if}}
+    {{#if actions.deletable}}
+    %a.moment-action-delete{href: "#"}
+      {{I18n 'moments.action.delete'}}
+    {{/if}}
   .moment-content-actions
+    More
     {{#if actions.editable}}
     %a.moment-content-actions-edit{href: "{{path}}/edit"}
       {{I18n 'moments.action.edit'}}
