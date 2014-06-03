@@ -7,4 +7,9 @@ json.object do
   json.segment    moment.segment
   json.total_segments moment.total_segments
   json.partial!   "/moments/moment_common", moment: moment
+  json.actions do
+    json.set! :read_plan, true
+    json.set! :about_plan, true
+    json.set! :start_plan, true
+  end
 end

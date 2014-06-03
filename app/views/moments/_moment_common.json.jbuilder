@@ -10,6 +10,8 @@ json.actions do
   json.set! :show, moment.comments_count > 0 || moment.likes_count > 0
   json.set! :editable, (current_user_moment?(moment) and moment.editable?)
   json.set! :deletable, (current_user_moment?(moment) and moment.deletable?)
+  json.set! :read, true
+  json.set! :share, true
 end
 
 json.user do
