@@ -3,12 +3,23 @@
     .moment-fr
       %span.moment-icon
       %span.moment-avatar
-        %img{src: "{{avatar}}"}/
+        %a{href: "{{friend_path}}"}
+          %img{src: "{{avatar}}"}/
       %span.moment-time
         {{created_dt}}
-      %h2.moment-fr-text {{{moment_title}}}
+      %h2.moment-fr-text 
+        {{{moment_title}}}
       .moment-fr-box
-        %a{href: "{{friend_path}}"}
-          %img.moment-fr-avatar{src: "{{friend_avatar}}"}/
-          %span.moment-fr-name
-            {{friend_name}}
+        .moment-fr-center
+          %a{href: "{{friend_path}}"}
+            %img.moment-fr-avatar{src: "{{friend_avatar}}"}/
+            %span.moment-fr-name
+              {{friend_name}}
+          {{#if friendship_offer_path}}
+          .moment-fr-form
+            %form{"accept-charset" => "UTF-8", action: "{{friendship_offer_path}}", method: "post"}
+              %div{style: "margin:0;padding:0;display:inline"}
+                %input{name: "utf8", type: "hidden", value: "✓"}
+                %input{id: "authenticity_token", name: "authenticity_token", type: "hidden", value: "{{token}}"}
+              %input.moment-fr-name-add.sm_action_button_grey{name: "commit", type: "submit", value: "{{I18n 'moments.action.add'}}"}
+          {{/if}}

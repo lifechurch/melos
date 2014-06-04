@@ -430,7 +430,7 @@ body.transition .moment
 
 .moment-verse-wrap
   clear: both
-  max-height: 250px
+  max-height: 256px
   overflow: hidden
   position: relative
   padding-bottom: 25px
@@ -752,7 +752,11 @@ body.transition .moment
   display: none
 
 .moment-fr-box
-  display: inline-block
+  clear: both
+  position: relative
+  a:first-child
+    position: relative
+    display: block
 
 .moment-fr-avatar
   box-shadow: 0 1px 2px #bbb
@@ -764,18 +768,27 @@ body.transition .moment
 
 .moment-fr-name
   display: inline-block
+  vertical-align: top
   padding: 5px 8px 7px
   line-height: 1.2em
   letter-spacing: -.02em
   font:
     size: 1.6em
     weight: normal
-
+    
 .moment-fr-seemore
   display: block
   text-align: center
 
+.moment-fr-form
+  display: inline-block
+  margin-left: 10px
 
+.moment-fr-name-add
+  position: absolute
+  top: 115px
+  left: 215px
+  
 // !Bookmark moment
 
 .moment-bm
