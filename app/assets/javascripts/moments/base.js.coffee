@@ -6,13 +6,18 @@ class window.Moments.Base
 
 
   initInteractions: ()->
-    selector        = ".moment[data-uuid='" + @uuid + "']"
-    @moment_el      = $(selector)
-    @action_bar_el  = @moment_el.find(".moment-actions")
+    selector         = ".moment[data-uuid='" + @uuid + "']"
+    @moment_el       = $(selector)
+    @action_bar_el   = @moment_el.find(".moment-actions")
+    @more_action_el  = @moment_el.find("a.more-action")
+    @action_layer_el = @moment_el.find(".action-layer")
 
     if @action_bar_el.length
       link = @action_bar_el.find(".moment-actions-like a")
       @setupLiking(link) if link.length
+
+    if @more_action_el.length
+      @setupActionLayer()
 
     @comment_field_el = @moment_el.find(".comment-field")
     if @comment_field_el.length
@@ -120,7 +125,7 @@ class window.Moments.Base
         request.fail (jqXHR,status)=>
           @moment_el.css({opacity: 1.0})
 
-  setupLiking: (link)-> 
+  setupLiking: (link)->
     @liked_link = link
     @liked_link.addClass("liked") if @data.likes.is_liked
     @liked_link.on "click", (ev)=>
@@ -169,6 +174,13 @@ class window.Moments.Base
       @liked_link.addClass("liked")
       @likeActionPending(false)
 
+  setupActionLayer: ()->
+    if @action_layer_el.find("li").length
+      @more_action_el.on "click", (ev)=>
+        ev.preventDefault()
+        @action_layer_el.toggleClass("hide")
+    else
+      @more_action_el.addClass("hide")
 
   momentPath: ()->
     @data.path

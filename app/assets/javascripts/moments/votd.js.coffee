@@ -20,6 +20,7 @@ class window.Moments.VOTD extends Moments.Base
         usfm_references:  @references().join("+")
         recent_versions:  @recentVersions()
         calendar_img:     @data.calendar_img
+        actions:          @data.actions
 
       return html
 

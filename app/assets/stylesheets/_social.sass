@@ -57,25 +57,46 @@ body.transition .moment
 .moment-content-actions
   margin: 4px 15px 0 0
   float: right
+  position: relative
 
-.moment-content-actions-edit,
-.moment-action-delete
-  padding: 0 0 1px 20px
-  font-size: 13px
-  color: #888
+.moment-vod
+  .moment-content-actions
+    margin-right: 0px
 
-.moment-content-actions-edit
-  background: image-url("edit-delete-sprite.png") no-repeat 1px 0
-  margin: 0 15px 0 0
+.moment-content-actions
+  a
+    font-size: 13px
 
-.moment-action-delete
-  background: image-url("edit-delete-sprite.png") no-repeat 0px -69px
+  .action-layer
+    z-index: 5
+    position: absolute
+    right: 0px
+    bottom: 7px
+    background-color: #3c3c3c
+    +border-radius(5px)
+    +box-shadow(1px 1px 5px #777)
 
-.moment-content-actions-edit:hover
-  background-position: 1px -35px
+    .arrow-down
+      position: absolute
+      right: 10px
+      bottom: -5px
+      width: 0
+      height: 0
+      border-left: 8px solid transparent
+      border-right: 8px solid transparent
+      border-top: 10px solid #3c3c3c
 
-.moment-action-delete:hover
-  background-position: 0px -104px
+
+    li
+      padding: 0 10px
+      min-width: 105px
+      border-bottom: 1px solid #555
+
+      a
+        display: block
+
+    li:last-child
+      border: none
 
 
 // !Share comment like etc.
@@ -347,6 +368,9 @@ body.transition .moment
   overflow: hidden
   +border-radius(4px 4px 0 0)
   background-color: #fff
+
+.moment-vod
+  padding-bottom: 5px
 
 // Delete these when we add likes and comments to these moments
 .moment-fr,

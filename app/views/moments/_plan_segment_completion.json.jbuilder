@@ -8,8 +8,8 @@ json.object do
   json.total_segments moment.total_segments
   json.partial!   "/moments/moment_common", moment: moment
   json.actions do
-    json.set! :read_plan, true
-    json.set! :about_plan, true
-    json.set! :start_plan, true
+    json.read_plan true
+    json.about_plan true
+    json.start_plan true
   end
 end

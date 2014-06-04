@@ -1,0 +1,40 @@
+.moment-content-actions
+  %a.more-action{href: "#"}
+    More
+  %ul.action-layer.hide
+    .arrow-down
+    {{#if actions.read}}
+    %li
+      %a
+        Read in Bible
+    {{/if}}
+    {{#if actions.share}}
+    %li
+      %a
+        Share
+    {{/if}}
+    {{#if actions.read_plan}}
+    %li
+      %a
+        Read
+    {{/if}}
+    {{#if actions.about_plan}}
+    %li
+      %a
+        About plan
+    {{/if}}
+    {{#if actions.start_plan}}
+    %li
+      %a
+        Start plan
+    {{/if}}
+    {{#if actions.editable}}
+    %li
+      %a.moment-content-actions-edit{href: "{{path}}/edit"}
+        {{I18n 'moments.action.edit'}}
+    {{/if}}
+    {{#if actions.deletable}}
+    %li
+      %a.moment-action-delete{href: "#"}
+        {{I18n 'moments.action.delete'}}
+    {{/if}}
