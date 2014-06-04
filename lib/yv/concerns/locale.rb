@@ -39,9 +39,8 @@ module YV
       end
 
       def set_available_locales(locs)
-        I18n.available_locales = locs
         FastGettext.available_locales = []
-        locs.each do |loc|
+        I18n.available_locales.each do |loc|
           FastGettext.available_locales.push(loc.gsub("-", "_"))
         end
       end
