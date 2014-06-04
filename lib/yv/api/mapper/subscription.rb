@@ -23,6 +23,7 @@ module YV
             end
 
             def from_collection(results)
+              return results if results.blank?
               results.reading_plans.collect do |plan_data|
                 map_to_instance(::Subscription.new,plan_data)
               end
