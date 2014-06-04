@@ -239,6 +239,11 @@ en:
       delete highlight title:                   "Delete this highlight"
       delete bookmark title:                    "Delete this bookmark"
       delete note title:                        "Delete this note"
+      more:                                     "More"
+      read in bible:                            "Read in Bible"
+      read plan:                                "Read"
+      about plan:                               "About plan"
+      start plan:                               "Start plan"
   notifications:
     title:                                      "Notifications"
     none:                                       "You don't have any notifications"
