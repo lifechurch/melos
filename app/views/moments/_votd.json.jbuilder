@@ -18,4 +18,8 @@ json.object do
       json.abbrev ver.abbreviation
     end
   end
+  json.actions do
+    json.read true
+    json.share true
+  end
 end

@@ -79,6 +79,8 @@ class Plan < YV::Resource
         id = id[1].to_i unless id.nil?
         slug = param.match(/\A(\d+)-(.+)/)
         slug = slug[2].to_i unless slug.nil?
+        #if only plan id is present:
+        id = param.to_i if id.nil? and param.match(/^\d+$/) rescue nil
         return id, slug
       else 
         return nil

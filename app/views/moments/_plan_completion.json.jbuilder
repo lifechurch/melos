@@ -5,7 +5,7 @@ json.object do
   json.action_url moment.action_url
   json.partial!   "/moments/moment_common", moment: moment
   json.actions do
-    json.set! :about_plan, true
-    json.set! :start_plan, true
+    json.about_plan true
+    json.start_plan true
   end
 end
