@@ -65,6 +65,7 @@ class window.Moments.Highlight extends window.Moments.Base
         comments:     @data.comments
         likes:        @data.likes
         actions:      @data.actions
+        read_path:    @readPath()
         user:
           id:         @data.user.id
           path:       @data.user.path
@@ -91,3 +92,12 @@ class window.Moments.Highlight extends window.Moments.Base
       return
 
     request.fail (jqXHR,status) =>
+
+  readPath: ->
+    if @references() != null
+      ref     = @references()[0]
+      version = ref.version_id
+      usfm    = ref.usfm.join("+")
+      return "/bible/#{version}/#{usfm}"
+    else
+      return "#"

@@ -3,9 +3,10 @@
     {{I18n 'moments.action.more'}}
   %ul.action-layer.hide
     .arrow-down
+    {{#if read_path}}
     {{#if actions.read}}
     %li
-      %a
+      %a{href: "{{read_path}}"}
         {{I18n 'moments.action.read in bible'}}
     {{/if}}
     {{#if actions.share}}
@@ -13,19 +14,21 @@
       %a
         {{I18n 'moments.action.share'}}
     {{/if}}
+    {{/if}}
+
     {{#if actions.read_plan}}
     %li
-      %a
+      %a{href: "{{plan_day_path}}"}
         {{I18n 'moments.action.read plan'}}
     {{/if}}
     {{#if actions.about_plan}}
     %li
-      %a
+      %a{href: "{{action_url}}"}
         {{I18n 'moments.action.about plan'}}
     {{/if}}
     {{#if actions.start_plan}}
     %li
-      %a
+      %a{href: "{{action_url}}"}
         {{I18n 'moments.action.start plan'}}
     {{/if}}
     {{#if actions.editable}}

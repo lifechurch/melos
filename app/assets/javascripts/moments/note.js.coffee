@@ -33,9 +33,19 @@ class window.Moments.Note extends window.Moments.Base
         comments:     @data.comments
         likes:        @data.likes
         actions:      @data.actions
+        read_path:    @readPath()
         user:
           id:         @data.user.id
           path:       @data.user.path
           avatar:     Session.User.avatar()
 
       return html
+
+  readPath: ->
+    if @references() != null
+      ref     = @references()[0]
+      version = ref.version_id
+      usfm    = ref.usfm.join("+")
+      return "/bible/#{version}/#{usfm}"
+    else
+      return "#"
