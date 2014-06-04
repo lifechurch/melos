@@ -1,32 +1,32 @@
 .moment-content-actions
   %a.more-action{href: "#"}
-    More
+    {{I18n 'moments.action.more'}}
   %ul.action-layer.hide
     .arrow-down
     {{#if actions.read}}
     %li
       %a
-        Read in Bible
+        {{I18n 'moments.action.read in bible'}}
     {{/if}}
     {{#if actions.share}}
     %li
       %a
-        Share
+        {{I18n 'moments.action.share'}}
     {{/if}}
     {{#if actions.read_plan}}
     %li
       %a
-        Read
+        {{I18n 'moments.action.read plan'}}
     {{/if}}
     {{#if actions.about_plan}}
     %li
       %a
-        About plan
+        {{I18n 'moments.action.about plan'}}
     {{/if}}
     {{#if actions.start_plan}}
     %li
       %a
-        Start plan
+        {{I18n 'moments.action.start plan'}}
     {{/if}}
     {{#if actions.editable}}
     %li
