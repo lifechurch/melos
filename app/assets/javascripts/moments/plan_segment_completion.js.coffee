@@ -18,6 +18,7 @@ class window.Moments.PlanSegmentCompletion extends window.Moments.Base
         id:           @data.id
         path:         @data.path
         action_url:   @data.action_url
+        plan_day_path: @data.action_url + "/day/" + @data.segment
         avatar:       @data.avatar
         status:       @data.status
         title:        @data.title

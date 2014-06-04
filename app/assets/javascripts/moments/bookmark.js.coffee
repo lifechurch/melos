@@ -18,7 +18,6 @@ class window.Moments.Bookmark extends window.Moments.Base
 
   render: ()->
     if @template
-
       @html = @template
         verse_html:   @verseHTML()
         uuid:         @generateID()
@@ -32,6 +31,7 @@ class window.Moments.Bookmark extends window.Moments.Base
         likes:        @data.likes
         actions:      @data.actions
         labels:       @data.labels
+        read_path:    @readPath()
         user:
           id:         @data.user.id
           path:       @data.user.path
@@ -60,3 +60,12 @@ class window.Moments.Bookmark extends window.Moments.Base
     else
       @verse_html = ""
       @feed.ready(@)
+
+  readPath: ->
+    if @references() != null
+      ref     = @references()[0]
+      version = ref.version_id
+      usfm    = ref.usfm.join("+")
+      return "/bible/#{version}/#{usfm}"
+    else
+      return "#"
