@@ -18,13 +18,13 @@
     %ul.resource_list
       - @subscriptions.each do |sub|
         %li.subscription
-          %div
+          .subscription-info
             %h3
               = link_to(sub.name, subscription_path(user_id: @user.to_param, id: sub, initial: 'true'), class: "subscription-title")
-              %span.subscription-privacy
-                = sub.private ? t("plans.privacy.private") : t("plans.privacy.public")
-                •
-                = link_to( t("plans.settings"), edit_subscription_path(user_id: @user, id: sub))
+            %span.subscription-privacy
+              = sub.private ? t("plans.privacy.private") : t("plans.privacy.public")
+              •
+              = link_to( t("plans.settings"), edit_subscription_path(user_id: @user, id: sub))
           .progress_wrap
             .progress_counter
               =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
