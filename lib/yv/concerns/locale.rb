@@ -22,9 +22,8 @@ module YV
         visitor_locale = visitor_locale.to_sym
 
         set_locale(visitor_locale)
-        if @site.available_locales.present?
-          I18n.available_locales = @site.available_locales
-        end
+        # available_locales are set for some one-off sites
+        set_available_locales(@site.available_locales.present? ? @site.available_locales : I18n.available_locales)
 
         # redirect to either:
         # a) remove locale from path if default and present
@@ -35,11 +34,15 @@ module YV
       end
 
       def set_locale(loc)
-        FastGettext.locale = I18n.locale = cookies.permanent[:locale] = loc
+        I18n.locale = cookies.permanent[:locale] = loc
+        FastGettext.locale = loc.to_s.gsub("-", "_")
       end
 
       def set_available_locales(locs)
-        FastGettext.available_locales = I18n.available_locales = locs
+        FastGettext.available_locales = []
+        I18n.available_locales.each do |loc|
+          FastGettext.available_locales.push(loc.gsub("-", "_"))
+        end
       end
 
     end
