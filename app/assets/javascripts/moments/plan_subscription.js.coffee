@@ -30,6 +30,7 @@ class window.Moments.PlanSubscription extends window.Moments.Base
         user:
           id:         @data.user.id
           path:       @data.user.path
-          avatar:     Session.User.avatar() 
+          avatar:     Session.User.avatar()
+        subscribe_path: Session.User.toPath() + "/reading-plans?plan_id=" + @data.plan_id
 
       return html
