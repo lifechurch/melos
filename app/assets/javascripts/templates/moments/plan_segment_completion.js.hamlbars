@@ -7,16 +7,18 @@
           %img{src: "{{avatar}}"}/
       %span.moment-time
         {{created_dt}}
-      %h2.moment-rp-text
-        %a.moment-title-link{href: "{{path}}"}
-          {{{moment_title}}}
-      .moment-rp-progress
-        .progress_wrap
-          .progress_bar_outer
-            .progress_bar{"data-percent-complete" => "{{{percent_complete}}}%"}
-              \&#160;
-          .progress_counter
-            {{{segment}}} of {{{total_segments}}}
+      .moment-rp-day-details
+        {{> moments/_plan_start}}
+        %h2.moment-rp-text
+          %a.moment-title-link{href: "{{path}}"}
+            {{{moment_title}}}
+        .moment-rp-progress
+          .progress_wrap
+            .progress_bar_outer
+              .progress_bar{"data-percent-complete" => "{{{percent_complete}}}%"}
+                \&#160;
+            .progress_counter
+              {{{segment}}} of {{{total_segments}}}
   .moment-btm
     {{> moments/_actions_bar}}
     {{> moments/_comments}}

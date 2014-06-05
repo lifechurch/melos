@@ -94,6 +94,7 @@ body.transition .moment
 
       a
         display: block
+        color: #56CBFF
 
     li:last-child
       border: none
@@ -797,6 +798,7 @@ body.transition .moment
     padding: 15px
     border: 1px solid #e1e1e1
     border-bottom: 0
+    position: relative
 
     a
       font-weight: normal
@@ -815,6 +817,45 @@ body.transition .moment
         border-bottom: 1px dashed #e1e1e1
         background-color: #e1e1e1
         padding: 10px 15px
+
+  .moment-rp-layer
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 4
+    +opacity(0.66)
+    background-color: #000
+
+  .moment-plan-start
+    background-color: #fff
+    width: 76%
+    margin: 0 12%
+    position: absolute
+    left: 0
+    top: 20px
+    z-index: 5
+
+  .plan-privacy-buttons
+    display: block
+
+    .button-wrap
+      @extend .clearfix
+
+    .button-public
+      font-weight: bold
+      color: #fff
+
+    .button-private
+      font-weight: bold
+
+    .button-plan-cancel
+      font-weight: bold
+      color: #0084c8
+      text-align: center
+      display: block
+      margin-top: 10px
 
   .moment-rp-progress
     width: 75%

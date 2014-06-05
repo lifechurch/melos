@@ -28,7 +28,7 @@
     {{/if}}
     {{#if actions.start_plan}}
     %li
-      %a{href: "{{action_url}}"}
+      %a.moment-action-start-plan{href: "#"}
         {{I18n 'moments.action.start plan'}}
     {{/if}}
     {{#if actions.editable}}

@@ -28,6 +28,11 @@ class window.Moments.Base
     if @delete_link.length
       @setupDeleting()
 
+    @start_plan_layer = @moment_el.find(".rp-layer")
+    @start_plan_link = @moment_el.find(".moment-action-start-plan")
+    if @start_plan_link.length and @start_plan_layer.length
+      @setupStartPlan()
+
     @finalizeSetup()
     return
 
@@ -96,6 +101,19 @@ class window.Moments.Base
           @comment_field_el.val("").removeAttr("disabled").blur() # blur to dismiss device keyboards
           @feed.refreshWookmark(@moment_el.closest(".social-feed"))
 
+  setupStartPlan: ()->
+    @start_plan_link.on "click", (ev)=>
+      ev.preventDefault()
+      @start_plan_layer.toggleClass("hide")
+      @action_layer_el.addClass("hide")
+    @cancel_button = @moment_el.find(".button-plan-cancel")
+    if @cancel_button.length
+      @cancel_button.on "click", (ev)=>
+        ev.preventDefault()
+        @start_plan_layer.toggleClass("hide")
+    @post_links = @moment_el.find(".plan-privacy-buttons .button-wrap a")
+    if @post_links.length
+      @post_links.attr('data-method', 'post')
 
 
   setupDeleting: ()->

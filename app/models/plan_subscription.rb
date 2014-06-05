@@ -2,7 +2,7 @@ class PlanSubscription < YV::Resource
 
   include YV::Concerns::Moments
 
-  attributes [:body_text, :action_url]
+  attributes [:body_text, :action_url, :plan_id]
 
   def kind
     "plan_subscription"

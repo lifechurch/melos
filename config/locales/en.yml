@@ -1019,6 +1019,9 @@ en:
     characters remaining:                       "characters remaining"
     yes button:                                 "Yes"
     no button:                                  "No"
+    cancel:                                     "Cancel"
+    plans:
+      privacy:                                  "Would you like your activity with this plan to be visible to your friends?"
     loading indicator text:                     "Loading ..."
     loading:                                    "Loading"
     pagination:
