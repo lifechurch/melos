@@ -716,6 +716,11 @@ body.transition .moment
   display: none
 
 .moment-fr-box
+  clear: both
+  position: relative
+
+.moment-fr-box a:first-child
+  position: relative
   display: block
 
 .moment-fr-avatar
@@ -727,15 +732,16 @@ body.transition .moment
   border: 4px solid #fff
 
 .moment-fr-name
-  display: inline-block
-  vertical-align: top
+  display: block
   padding: 5px 8px 7px
   line-height: 1.2em
-  letter-spacing: -.02em
-  font:
-    size: 1.6em
-    weight: normal
- 
+  letter-spacing: -0.02em
+  font-size: 1.6em
+  font-weight: normal
+  position: absolute
+  top: 10px
+  left: 155px
+
 .moment-fr-seemore
   display: block
   text-align: center
@@ -746,8 +752,9 @@ body.transition .moment
 
 .moment-fr-name-add
   position: absolute
-  top: 115px
-  left: 215px
+  top: 45px
+  left: 161px
+
 
 // !Bookmark moment
 
