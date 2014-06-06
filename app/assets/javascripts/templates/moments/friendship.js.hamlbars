@@ -13,7 +13,8 @@
         .moment-fr-center
           %a{href: "{{friend_path}}"}
             %img.moment-fr-avatar{src: "{{friend_avatar}}"}/
-            %span.moment-fr-name
+          %span.moment-fr-name
+            %a{href: "{{friend_path}}"}
               {{friend_name}}
           {{#if friendship_offer_path}}
           .moment-fr-form
