@@ -220,7 +220,7 @@ en:
       friends button:                           "Find friends"
     action:
       go to scripture:                          "Go to scripture"
-      add:                                      "Add"
+      add friend button:                        "Add friend"
       load more:                                "Load more"
       like:                                     "Like"
       liked:                                    "Liked"

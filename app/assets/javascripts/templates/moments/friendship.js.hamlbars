@@ -21,5 +21,5 @@
               %div{style: "margin:0;padding:0;display:inline"}
                 %input{name: "utf8", type: "hidden", value: "✓"}
                 %input{id: "authenticity_token", name: "authenticity_token", type: "hidden", value: "{{token}}"}
-              %input.moment-fr-name-add.sm_action_button_grey{name: "commit", type: "submit", value: "{{I18n 'moments.action.add'}}"}
+              %input.moment-fr-name-add.sm_action_button_grey{name: "commit", type: "submit", value: "{{I18n 'moments.action.add friend button'}}"}
           {{/if}}
