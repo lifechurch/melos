@@ -80,6 +80,13 @@ body.transition .moment
     +border-radius(5px)
     +box-shadow(1px 1px 5px #777)
 
+    .share-action-link span:before
+      float: right
+      content: '\25B6'
+
+    .share-action-link.open span:before
+      content: ''
+
     .arrow-down
       position: absolute
       right: 10px
@@ -90,6 +97,8 @@ body.transition .moment
       border-right: 8px solid transparent
       border-top: 10px solid #3c3c3c
 
+    .moment-share-layer li
+      min-width: 75px
 
     li
       padding: 7px 10px

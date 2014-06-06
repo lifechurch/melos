@@ -197,6 +197,18 @@ class window.Moments.Base
       @more_action_el.on "click", (ev)=>
         ev.preventDefault()
         @action_layer_el.toggleClass("hide")
+      @share_action_el = @action_layer_el.find(".share-action-link")
+      if @share_action_el.length
+        @share_layer_el = @action_layer_el.find('.moment-share-layer')
+        @share_action_el.on "click", (ev)=>
+          ev.preventDefault()
+          if @share_action_el.hasClass("open")
+            @share_layer_el.slideUp()
+            @share_action_el.removeClass('open')
+          else
+            @share_layer_el.slideDown()
+            @share_action_el.addClass('open')
+
     else
       @more_action_el.addClass("hide")
 

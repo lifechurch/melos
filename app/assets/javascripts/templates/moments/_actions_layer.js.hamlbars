@@ -11,8 +11,16 @@
     {{/if}}
     {{#if actions.share}}
     %li
-      %a
+      %a.share-action-link{href: "#"}
         {{I18n 'moments.action.share'}}
+        %span
+      %ul.moment-share-layer{style: 'display:none'}
+        %li
+          %a{href: "#"}
+            Facebook
+        %li
+          %a{href: "#"}
+            Twitter
     {{/if}}
     {{/if}}
 
