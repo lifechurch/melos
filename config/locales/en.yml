@@ -220,6 +220,7 @@ en:
       friends button:                           "Find friends"
     action:
       go to scripture:                          "Go to scripture"
+      add friend button:                        "Add friend"
       load more:                                "Load more"
       like:                                     "Like"
       liked:                                    "Liked"
@@ -294,6 +295,7 @@ en:
       remove friend button:                     "Remove friend"
       remove friend button title:               "Remove this person from your friend list"
       add friend button:                        "Add friend"
+      add friend button short:                  "Add"
       add friend button title:                  "Send %{user} a friend request"
       accept button:                            "Accept"
       accept request button:                    "Accept request"
