@@ -7,20 +7,20 @@
           %img{src: "{{avatar}}"}/
       %span.moment-time
         {{created_dt}}
-      %h2.moment-fr-text 
+      %h2.moment-fr-text
         {{{moment_title}}}
       .moment-fr-box
         .moment-fr-center
           %a{href: "{{friend_path}}"}
             %img.moment-fr-avatar{src: "{{friend_avatar}}"}/
-          %span.moment-fr-name
-            %a{href: "{{friend_path}}"}
+          %span.moment-fr-details
+            %a{href: "{{friend_path}}", class: "moment-fr-name"}
               {{friend_name}}
-          {{#if friendship_offer_path}}
-          .moment-fr-form
-            %form{"accept-charset" => "UTF-8", action: "{{friendship_offer_path}}", method: "post"}
-              %div{style: "margin:0;padding:0;display:inline"}
-                %input{name: "utf8", type: "hidden", value: "✓"}
-                %input{id: "authenticity_token", name: "authenticity_token", type: "hidden", value: "{{token}}"}
-              %input.moment-fr-name-add.sm_action_button_grey{name: "commit", type: "submit", value: "{{I18n 'moments.action.add friend button'}}"}
-          {{/if}}
+            {{#if friendship_offer_path}}
+            .moment-fr-form
+              %form{"accept-charset" => "UTF-8", action: "{{friendship_offer_path}}", method: "post"}
+                %div{style: "margin:0;padding:0;display:inline"}
+                  %input{name: "utf8", type: "hidden", value: "✓"}
+                  %input{id: "authenticity_token", name: "authenticity_token", type: "hidden", value: "{{token}}"}
+                %input.moment-fr-name-add.sm_action_button_grey{name: "commit", type: "submit", value: "{{I18n 'moments.action.add friend button'}}"}
+            {{/if}}
