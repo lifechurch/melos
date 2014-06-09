@@ -11,6 +11,7 @@
         %a.moment-title-link{href: "{{path}}"}
           {{{moment_title}}}
       .moment-rp-details
+        {{> moments/_plan_start}}
         %a{href: "{{action_url}}"}
           {{{body_text}}}
   .moment-btm

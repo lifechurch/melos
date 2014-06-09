@@ -17,10 +17,11 @@ module YV
             instance.kind_id          = plan_data.kind_id
             instance.kind_color       = plan_data.kind_color
             instance.moment_title     = t(plan_data.base.title["l_str"],plan_data.base.title["l_args"])
-            instance.action_url       = plan_data.base.action_url
+            instance.action_url       = plan_data.extras.plan_id.nil? ? "" :"/reading-plans/" + plan_data.extras.plan_id.to_s
             instance.percent_complete = plan_data.extras.percent_complete
             instance.segment          = plan_data.extras.segment
             instance.total_segments   = plan_data.extras.total_segments
+            instance.plan_id          = plan_data.extras.plan_id
 
             # Common moment elements
             instance                  = map_to_user_fields(instance,plan_data.extras.user)

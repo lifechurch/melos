@@ -6,5 +6,10 @@ json.object do
   json.percent_complete moment.percent_complete
   json.segment    moment.segment
   json.total_segments moment.total_segments
+  json.set!       :plan_id, moment.plan_id
   json.partial!   "/moments/moment_common", moment: moment
+  json.actions do
+    json.read_plan true
+    json.about_plan true
+  end
 end

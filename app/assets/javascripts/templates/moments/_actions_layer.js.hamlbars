@@ -1,0 +1,51 @@
+.moment-content-actions
+  %a.more-action{href: "#"}
+    {{I18n 'moments.action.more'}}
+  %ul.action-layer.hide
+    .arrow-down
+    {{#if read_path}}
+    {{#if actions.read}}
+    %li
+      %a{href: "{{read_path}}"}
+        {{I18n 'moments.action.read in bible'}}
+    {{/if}}
+    {{#if actions.share}}
+    %li
+      %a.share-action-link{href: "#"}
+        {{I18n 'moments.action.share'}}
+        %span
+      %ul.moment-share-layer{style: 'display:none'}
+        %li
+          %a{href: "#"}
+            Facebook
+        %li
+          %a{href: "#"}
+            Twitter
+    {{/if}}
+    {{/if}}
+
+    {{#if actions.read_plan}}
+    %li
+      %a{href: "{{plan_day_path}}"}
+        {{I18n 'moments.action.read plan'}}
+    {{/if}}
+    {{#if actions.about_plan}}
+    %li
+      %a{href: "{{action_url}}"}
+        {{I18n 'moments.action.about plan'}}
+    {{/if}}
+    {{#if actions.start_plan}}
+    %li
+      %a.moment-action-start-plan{href: "#"}
+        {{I18n 'moments.action.start plan'}}
+    {{/if}}
+    {{#if actions.editable}}
+    %li
+      %a.moment-content-actions-edit{href: "{{path}}/edit"}
+        {{I18n 'moments.action.edit'}}
+    {{/if}}
+    {{#if actions.deletable}}
+    %li
+      %a.moment-action-delete{href: "#"}
+        {{I18n 'moments.action.delete'}}
+    {{/if}}

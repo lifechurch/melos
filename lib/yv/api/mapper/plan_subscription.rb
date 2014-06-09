@@ -18,7 +18,9 @@ module YV
             instance.kind_color       = plan_data.kind_color
             instance.moment_title     = t(plan_data.base.title["l_str"],plan_data.base.title["l_args"])
             instance.body_text        = plan_data.base.body.str
-            instance.action_url       = plan_data.base.action_url
+            instance.action_url       = plan_data.extras.plan_id.nil? ? "" : "/reading-plans/" + plan_data.extras.plan_id.to_s
+            instance.plan_id          = plan_data.extras.plan_id
+
             # Common moment elements
             instance                  = map_to_user_fields(instance,plan_data.extras.user)
             instance.icons            = map_to_icons(plan_data.base.images.icon)

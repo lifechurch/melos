@@ -11,6 +11,7 @@
     .moment-vod-title
       {{{title}}}
     {{{verse_html}}}
+    {{> moments/_actions_layer}}
     %ul.moment-vod-list
       {{#each recent_versions}}
       %li.btn{"data-version-id" => "{{id}}"} {{abbrev}}

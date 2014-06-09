@@ -6,5 +6,5 @@ json.object do
   json.labels do
     json.array! moment.labels
   end
-  json.partial!   "/moments/moment_common", moment: moment 
+  json.partial!   "/moments/moment_common", moment: moment
 end

@@ -20,6 +20,8 @@ class window.Moments.VOTD extends Moments.Base
         usfm_references:  @references().join("+")
         recent_versions:  @recentVersions()
         calendar_img:     @data.calendar_img
+        actions:          @data.actions
+        read_path:        @readPath()
 
       return html
 
@@ -130,3 +132,9 @@ class window.Moments.VOTD extends Moments.Base
 
   verseHTML: ()->
     @verse_html
+
+  readPath: ->
+    if @references() != null
+      return "/bible/#{@version()}/#{@usfm()}"
+    else
+      return "#"

@@ -1,2 +1,2 @@
 %p.moment-verse {{content_plain}}
-%a.moment-verse-link{href: "{{to_path}}", title: "\#{t('moments.action.go to scripture')}"} {{human}} {{version_string}}
+%a.moment-verse-link{href: "{{to_path}}", title: "{{I18n 'moments.action.go to scripture'}}"} {{human}} {{version_string}}

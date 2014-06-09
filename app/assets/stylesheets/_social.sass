@@ -57,25 +57,56 @@ body.transition .moment
 .moment-content-actions
   margin: 4px 15px 0 0
   float: right
+  position: relative
 
-.moment-content-actions-edit,
-.moment-action-delete
-  padding: 0 0 1px 20px
-  font-size: 13px
-  color: #888
+.moment-vod
+  .moment-content-actions
+    margin-right: 0px
 
-.moment-content-actions-edit
-  background: image-url("edit-delete-sprite.png") no-repeat 1px 0
-  margin: 0 15px 0 0
+.moment-content-actions
+  a
+    font-size: 13px
 
-.moment-action-delete
-  background: image-url("edit-delete-sprite.png") no-repeat 0px -69px
+  .action-layer
+    z-index: 5
+    position: absolute
+    right: 0px
+    bottom: 7px
+    background-color: #3c3c3c
+    +border-radius(5px)
+    +box-shadow(1px 1px 5px #777)
 
-.moment-content-actions-edit:hover
-  background-position: 1px -35px
+    .share-action-link span:before
+      float: right
+      content: '\25B6'
 
-.moment-action-delete:hover
-  background-position: 0px -104px
+    .share-action-link.open span:before
+      content: '' //\25B2
+
+    .arrow-down
+      position: absolute
+      right: 10px
+      bottom: -5px
+      width: 0
+      height: 0
+      border-left: 8px solid transparent
+      border-right: 8px solid transparent
+      border-top: 10px solid #3c3c3c
+
+    .moment-share-layer li
+      min-width: 75px
+
+    li
+      padding: 0 10px
+      min-width: 105px
+      border-bottom: 1px solid #555
+
+      a
+        display: block
+        color: #56CBFF
+
+    li:last-child
+      border: none
 
 
 // !Share comment like etc.
@@ -347,6 +378,9 @@ body.transition .moment
   overflow: hidden
   +border-radius(4px 4px 0 0)
   background-color: #fff
+
+.moment-vod
+  padding-bottom: 5px
 
 // Delete these when we add likes and comments to these moments
 .moment-fr,
@@ -787,6 +821,7 @@ body.transition .moment
     padding: 15px
     border: 1px solid #e1e1e1
     border-bottom: 0
+    position: relative
 
     a
       font-weight: normal
@@ -805,6 +840,45 @@ body.transition .moment
         border-bottom: 1px dashed #e1e1e1
         background-color: #e1e1e1
         padding: 10px 15px
+
+  .moment-rp-layer
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 4
+    +opacity(0.66)
+    background-color: #000
+
+  .moment-plan-start
+    background-color: #fff
+    width: 76%
+    margin: 0 12%
+    position: absolute
+    left: 0
+    top: 20px
+    z-index: 5
+
+  .plan-privacy-buttons
+    display: block
+
+    .button-wrap
+      @extend .clearfix
+
+    .button-public
+      font-weight: bold
+      color: #fff
+
+    .button-private
+      font-weight: bold
+
+    .button-plan-cancel
+      font-weight: bold
+      color: #0084c8
+      text-align: center
+      display: block
+      margin-top: 10px
 
   .moment-rp-progress
     width: 75%

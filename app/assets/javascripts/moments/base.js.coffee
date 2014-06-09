@@ -6,13 +6,18 @@ class window.Moments.Base
 
 
   initInteractions: ()->
-    selector        = ".moment[data-uuid='" + @uuid + "']"
-    @moment_el      = $(selector)
-    @action_bar_el  = @moment_el.find(".moment-actions")
+    selector         = ".moment[data-uuid='" + @uuid + "']"
+    @moment_el       = $(selector)
+    @action_bar_el   = @moment_el.find(".moment-actions")
+    @more_action_el  = @moment_el.find("a.more-action")
+    @action_layer_el = @moment_el.find(".action-layer")
 
     if @action_bar_el.length
       link = @action_bar_el.find(".moment-actions-like a")
       @setupLiking(link) if link.length
+
+    if @more_action_el.length
+      @setupActionLayer()
 
     @comment_field_el = @moment_el.find(".comment-field")
     if @comment_field_el.length
@@ -22,6 +27,11 @@ class window.Moments.Base
     @delete_link = @moment_el.find(".moment-action-delete")
     if @delete_link.length
       @setupDeleting()
+
+    @start_plan_layer = @moment_el.find(".rp-layer")
+    @start_plan_link = @moment_el.find(".moment-action-start-plan")
+    if @start_plan_link.length and @start_plan_layer.length
+      @setupStartPlan()
 
     @finalizeSetup()
     return
@@ -91,6 +101,19 @@ class window.Moments.Base
           @comment_field_el.val("").removeAttr("disabled").blur() # blur to dismiss device keyboards
           @feed.refreshWookmark(@moment_el.closest(".social-feed"))
 
+  setupStartPlan: ()->
+    @start_plan_link.on "click", (ev)=>
+      ev.preventDefault()
+      @start_plan_layer.toggleClass("hide")
+      @action_layer_el.addClass("hide")
+    @cancel_button = @moment_el.find(".button-plan-cancel")
+    if @cancel_button.length
+      @cancel_button.on "click", (ev)=>
+        ev.preventDefault()
+        @start_plan_layer.toggleClass("hide")
+    @post_links = @moment_el.find(".plan-privacy-buttons .button-wrap a")
+    if @post_links.length
+      @post_links.attr('data-method', 'post')
 
 
   setupDeleting: ()->
@@ -120,7 +143,7 @@ class window.Moments.Base
         request.fail (jqXHR,status)=>
           @moment_el.css({opacity: 1.0})
 
-  setupLiking: (link)-> 
+  setupLiking: (link)->
     @liked_link = link
     @liked_link.addClass("liked") if @data.likes.is_liked
     @liked_link.on "click", (ev)=>
@@ -169,6 +192,25 @@ class window.Moments.Base
       @liked_link.addClass("liked")
       @likeActionPending(false)
 
+  setupActionLayer: ()->
+    if @action_layer_el.find("li").length
+      @more_action_el.on "click", (ev)=>
+        ev.preventDefault()
+        @action_layer_el.toggleClass("hide")
+      @share_action_el = @action_layer_el.find(".share-action-link")
+      if @share_action_el.length
+        @share_layer_el = @action_layer_el.find('.moment-share-layer')
+        @share_action_el.on "click", (ev)=>
+          ev.preventDefault()
+          if @share_action_el.hasClass("open")
+            @share_layer_el.slideUp()
+            @share_action_el.removeClass('open')
+          else
+            @share_layer_el.slideDown()
+            @share_action_el.addClass('open')
+
+    else
+      @more_action_el.addClass("hide")
 
   momentPath: ()->
     @data.path
