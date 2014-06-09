@@ -20,6 +20,6 @@ json.object do
   end
   json.actions do
     json.read true
-    json.share true
+    # json.share true
   end
 end
