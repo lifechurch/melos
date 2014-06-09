@@ -37,21 +37,48 @@ module YV
         I18n.locale = cookies.permanent[:locale] = loc
         if loc.is_a? Symbol
           FastGettext.locale = loc.to_s.gsub("-", "_")
-        else
-          FastGettext.locale = loc
+        elsif loc.is_a? String
+          FastGettext.locale = loc.gsub("-", "_")
         end
       end
 
       def set_available_locales(locs)
         I18n.available_locales = locs
-        FastGettext.available_locales = []
+
+        logger.info ""
+        logger.info "I18n Available Locales"
+        logger.info "-----------------------------"
+        logger.info I18n.available_locales
+        logger.info "-----------------------------"
+
+        logger.info ""
+        logger.info "FastGettext Default Locales"
+        logger.info "-----------------------------"
+        logger.info FastGettext.default_available_locales
+        logger.info "-----------------------------"
+
+        logger.info ""
+        logger.info "FastGettext Available Locales Pre-set"
+        logger.info "-----------------------------"
+        logger.info FastGettext.available_locales
+        logger.info "-----------------------------"
+
+
+        available_locales = []
         I18n.available_locales.each do |loc|
           if loc.is_a? String
-            FastGettext.available_locales.push(loc.gsub("-", "_"))
-          else
-            FastGettext.available_locales.push(loc)
+            available_locales << loc.gsub("-", "_")
+          elsif loc.is_a? Symbol
+            available_locales << loc.to_s.gsub("-", "_")
           end
         end
+        FastGettext.available_locales = available_locales
+
+        logger.info ""
+        logger.info "FastGettext Available Locales Post-set"
+        logger.info "-----------------------------"
+        logger.info FastGettext.available_locales
+        logger.info "-----------------------------"
       end
 
     end
