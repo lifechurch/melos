@@ -44,6 +44,26 @@ module YV
 
       def set_available_locales(locs)
         I18n.available_locales = locs
+
+        logger.info ""
+        logger.info "I18n Available Locales"
+        logger.info "-----------------------------"
+        logger.info I18n.available_locales
+        logger.info "-----------------------------"
+
+        logger.info ""
+        logger.info "FastGettext Default Locales"
+        logger.info "-----------------------------"
+        logger.info FastGettext.default_available_locales
+        logger.info "-----------------------------"
+
+        logger.info ""
+        logger.info "FastGettext Available Locales Pre-set"
+        logger.info "-----------------------------"
+        logger.info FastGettext.available_locales
+        logger.info "-----------------------------"
+
+
         available_locales = []
         I18n.available_locales.each do |loc|
           if loc.is_a? String
@@ -53,6 +73,12 @@ module YV
           end
         end
         FastGettext.available_locales = available_locales
+
+        logger.info ""
+        logger.info "FastGettext Available Locales Post-set"
+        logger.info "-----------------------------"
+        logger.info FastGettext.available_locales
+        logger.info "-----------------------------"
       end
 
     end
