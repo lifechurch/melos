@@ -11,7 +11,7 @@ json.actions do
   json.set! :editable, (current_user_moment?(moment) and moment.editable?)
   json.set! :deletable, (current_user_moment?(moment) and moment.deletable?)
   json.read true
-  json.share true
+  # json.share true
 end
 
 json.user do
