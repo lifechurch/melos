@@ -2,9 +2,9 @@
 
 .settings-group
   %span.settings-group-email
-    = check_box_tag "settings[#{type.to_s}][email]", "1", @settings.notification_settings.send(type.to_sym).email
+    = check_box_tag "settings[#{type.to_s}][email]", "1", @settings.notification_settings.send(type.to_sym).email if @settings.notification_settings.send(type.to_sym).present?
     = label_tag "settings[#{type.to_s}][email]", t("users.email")
 
   %span.settings-group-mobile
-    = check_box_tag "settings[#{type.to_s}][push]", "1", @settings.notification_settings.send(type.to_sym).push
+    = check_box_tag "settings[#{type.to_s}][push]", "1", @settings.notification_settings.send(type.to_sym).push if @settings.notification_settings.send(type.to_sym).present?
     = label_tag "settings[#{type.to_s}][push]", t("users.mobile")
