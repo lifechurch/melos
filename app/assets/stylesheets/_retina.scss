@@ -389,29 +389,6 @@ only screen and (                min-resolution: 2dppx) {
   }
 
 
-  // !Edit and delete controls
-
-  .moment-content-actions-edit {
-    background: image-url("edit-delete-sprite@2x.png") no-repeat 1px 0;
-  }
-
-  .moment-action-delete {
-    background: image-url("edit-delete-sprite@2x.png") no-repeat 0px -69px;
-  }
-
-  .moment-content-actions-edit,
-  .moment-action-delete {
-    background-size: 15px 120px;
-  }
-
-  .moment-content-actions-edit:hover {
-    background-position: 1px -35px;
-  }
-
-  .moment-action-delete:hover {
-    background-position: 0px -104px;
-  }
-
   // !Header
 
   #logo {
