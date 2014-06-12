@@ -34,6 +34,7 @@ class window.Moments.Note extends window.Moments.Base
         likes:        @data.likes
         actions:      @data.actions
         read_path:    @readPath()
+        interact_with:  @data.interact_with
         user:
           id:         @data.user.id
           path:       @data.user.path
