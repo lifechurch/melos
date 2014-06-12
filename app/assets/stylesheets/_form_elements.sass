@@ -362,6 +362,10 @@ input[type="submit"].action_button_green,
 input[type="submit"].action_button_blue,
 input[type="submit"].action_button_red,
 input[type="submit"].action_button_grey,
+input[type="button"].action_button_green,
+input[type="button"].action_button_blue,
+input[type="button"].action_button_red,
+input[type="button"].action_button_grey,
 button.action_button_blue,
 button.action_button_green,
 button.action_button_red,
@@ -382,50 +386,32 @@ button.action_button_grey,
   background-image: none
 
 
-input[type="submit"].action_button_green,
-input[type="submit"].action_button_red,
-input[type="submit"].action_button_blue,
-input[type="submit"].action_button_grey,
-.action_button_blue,
-.action_button_green,
-.action_button_red,
-.action_button_grey,
-.action_button_blue:hover,
-.action_button_red:hover,
-.action_button_green:hover,
-.action_button_grey:hover
-  color: #fff
-  text-decoration: none
-
-
 // Green Action Buttons
 
 input[type="submit"].action_button_green,
+input[type="button"].action_button_green,
 button.action_button_green,
 .action_button_green
   background-color: #48A900
-  background-image: none
+  color: #fff
 
-.action_button_green:hover,
-.action_button_green:focus,
-.action_button_green:active,
 input[type="submit"].action_button_green:hover,
 input[type="submit"].action_button_green:focus,
-input[type="submit"].action_button_green:active
-  background-color: #4FBA00
-
-input[type="submit"].action_button_green:focus,
-input[type="submit"].action_button_green:active,
-.action_button_green:focus,
-.action_button_green:active
-  color: #4FBA00
-
-input[type="submit"].action_button_green,
-.action_button_green,
+input[type="button"].action_button_green:hover,
+input[type="button"].action_button_green:focus,
+button.action_button_green:hover,
+button.action_button_green:focus,
 .action_button_green:hover,
 .action_button_green:focus,
+  background-color: #4FBA00
+
+input[type="submit"].action_button_green:active,
+input[type="button"].action_button_green:active,
+button.action_button_green:active,
 .action_button_green:active
-  border: 0
+  +box-shadow(inset rgba(0,0,0, 0.20) 0 2px 0 0)
+  background-color: #3D9000
+  color: #ddd
 
 
 // Blue Action Buttons
@@ -435,94 +421,88 @@ input[type="button"].action_button_blue,
 .action_button_blue,
 a.action_button_blue
   background-color: #0099CC
-  border: 0
+  color: #fff
 
 input[type="submit"].action_button_blue:hover,
 input[type="submit"].action_button_blue:focus,
-input[type="submit"].action_button_blue:active,
 input[type="button"].action_button_blue:hover,
 input[type="button"].action_button_blue:focus,
-input[type="button"].action_button_blue:active,
+button.action_button_blue:hover,
+button.action_button_blue:focus,
 .action_button_blue:hover,
-.action_button_blue:focus,
-.action_button_blue:active
-  background-color: #0F7BB0
+.action_button_blue:focus
+  background-color: #00A3D9
 
-
-input[type="submit"].action_button_blue:focus,
 input[type="submit"].action_button_blue:active,
-input[type="button"].action_button_blue:focus,
 input[type="button"].action_button_blue:active,
-.action_button_blue:focus,
+button.action_button_blue:active,
 .action_button_blue:active
-  color: #87abbe
+  +box-shadow(inset rgba(0,0,0, 0.20) 0 2px 0 0)
+  background-color: #0F7BB0
+  color: #ddd
 
 
 // Red Action Button
 
 input[type="submit"].action_button_red,
-button.action_button_red,
-a.action_button_red,
-.action_button_red
+input[type="button"].action_button_red,
+.action_button_red,
+a.action_button_red
   background-color: #CC0000
-  background-image: none
-  border: 0
+  color: #fff
 
-.action_button_red:hover,
-.action_button_red:focus,
-.action_button_red:active,
 input[type="submit"].action_button_red:hover,
 input[type="submit"].action_button_red:focus,
-input[type="submit"].action_button_red:active
-  background-image: none
-  background-color: #B30F0A
+input[type="button"].action_button_red:hover,
+input[type="button"].action_button_red:focus,
+button.action_button_red:hover,
+button.action_button_red:focus,
+.action_button_red:hover,
+.action_button_red:focus
+  background-color: #E60000
 
-input[type="submit"].action_button_red:focus,
 input[type="submit"].action_button_red:active,
-.action_button_red:focus,
+input[type="button"].action_button_red:active,
+button.action_button_red:active,
 .action_button_red:active
-  color: #ae8787
+  +box-shadow(inset rgba(0,0,0, 0.20) 0 2px 0 0)
+  background-color: #B30F0A
+  color: #ddd
 
 
 // Grey Action Buttons
 
-input[type="submit"].action_button_grey,
-button.action_button_grey,
-.action_button_grey
-  background-color: #e6e6e6
-  background-image: none
-  color: #424242 !important
 
-.action_button_grey:hover,
-.action_button_grey:focus,
-.action_button_grey:active,
+input[type="submit"].action_button_grey,
+input[type="button"].action_button_grey,
+.action_button_grey,
+a.action_button_grey
+  background-color: #e6e6e6
+
 input[type="submit"].action_button_grey:hover,
 input[type="submit"].action_button_grey:focus,
-input[type="submit"].action_button_grey:active
-  background-color: #cfcfcf
-
-input[type="submit"].action_button_grey:focus,
-input[type="submit"].action_button_grey:active,
-.action_button_grey:focus,
-.action_button_grey:active
-  color: #424242
-
-input[type="submit"].action_button_grey,
-.action_button_grey,
+input[type="button"].action_button_grey:hover,
+input[type="button"].action_button_grey:focus,
+button.action_button_grey:hover,
+button.action_button_grey:focus,
 .action_button_grey:hover,
-.action_button_grey:focus,
+.action_button_grey:focus
+  background-color: #eee
+
+input[type="submit"].action_button_grey:active,
+input[type="button"].action_button_grey:active,
+button.action_button_grey:active,
 .action_button_grey:active
-  border: 0
+  +box-shadow(inset rgba(0,0,0, 0.20) 0 2px 0 0)
+  background-color: #cfcfcf
+  color: #444
 
 
 // Small action buttons
 
 .sm_action_button_blue,
 .sm_action_button_green,
-.sm_action_button_grey,
-input.sm_action_button_blue,
-input.sm_action_button_green,
-input.sm_action_button_grey
+.sm_action_button_grey
   +border-radius(5px)
   display: inline-block
   font:
@@ -537,51 +517,49 @@ input.sm_action_button_grey
 .sm_action_button_blue,
 .sm_action_button_green,
 .sm_action_button_blue:hover,
-.sm_action_button_green:hover,
-input.sm_action_button_blue,
-input.sm_action_button_green,
-input.sm_action_button_blue:hover,
-input.sm_action_button_green:hover
+.sm_action_button_green:hover
   color: #fff
   text-decoration: none
 
-.sm_action_button_green,
-input.sm_action_button_green
+// Small green action buttons
+
+.sm_action_button_green
   background-color: #48A900
 
 .sm_action_button_green:hover,
-.sm_action_button_green:focus,
-.sm_action_button_green:active,
-input.sm_action_button_green:hover,
-input.sm_action_button_green:focus,
-input.sm_action_button_green:active
+.sm_action_button_green:focus
   background-color: #4FBA00
 
-.sm_action_button_blue,
-input.sm_action_button_blue
+.sm_action_button_green:active
+  background-color: #3D9000
+
+
+// Small blue action buttons
+
+.sm_action_button_blue
   background-color: #0099CC
 
 .sm_action_button_blue:hover,
-.sm_action_button_blue:focus,
-.sm_action_button_blue:active,
-input.sm_action_button_blue:hover,
-input.sm_action_button_blue:focus,
-input.sm_action_button_blue:active
+.sm_action_button_blue:focus
+  background-color: #00A3D9
+
+.sm_action_button_blue:active
   background-color: #0F7BB0
 
-.sm_action_button_grey,
-input.sm_action_button_grey
-  background-color: #E5E5E5
+
+// Small grey action buttons
+
+.sm_action_button_grey
+  background-color: #e6e6e6
   color: #444
 
 .sm_action_button_grey:hover,
-.sm_action_button_grey:focus,
-.sm_action_button_grey:active,
-input.sm_action_button_grey:hover,
-input.sm_action_button_grey:focus,
-input.sm_action_button_grey:active
-  background-color: #D0D0D0
-  color: #444
+.sm_action_button_grey:focus
+  background-color: #eee
+
+.sm_action_button_grey:active
+  background-color: #cfcfcf
+
 
 //
 // Icons inside buttons:
