@@ -46,9 +46,7 @@ class UsersController < ApplicationController
   def create
     redirect_to moments_path and return   if current_auth
     render_404 and return                 unless params[:user].present?
-
-    @user = User.register(params[:user])
-    @user.merge(language_tag: I18n.locale) if @user.present?
+    @user = User.register(params[:user].merge!(language_tag: I18n.locale))
     if @user.persisted?
       # save username and password so we can sign them back in
       cookies.signed[:a] = @user.id
