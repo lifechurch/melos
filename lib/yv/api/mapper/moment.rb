@@ -25,11 +25,12 @@ module YV
               when "bookmark.v1"                   then to_bookmark(::Bookmark.new,data)
               when "highlight.v1"                  then to_highlight(::Highlight.new,data)
               when "friendship.v1"                 then to_friendship(::Friendship.new,data)
+              when "friendship.v2"                 then to_friendship(::Friendship.new,data)
               when "plan_subscription.v1"          then to_plan_subscription(::PlanSubscription.new,data)
               when "plan_completion.v1"            then to_plan_completion(::PlanCompletion.new,data)
               when "plan_segment_completion.v1"    then to_plan_segment_completion(::PlanSegmentCompletion.new,data)
               when "system.v1"                     then to_system(::SystemMoment.new,data)
-              else  to_generic(::GenericMoment.new,data)
+              else                                      to_generic(::GenericMoment.new,data)
             end
           end
 
@@ -57,6 +58,10 @@ module YV
             YV::API::Mapper::PlanSegmentCompletion.map_to_instance(instance,data)
           end
 
+          def to_friendship(instance,data)
+            YV::API::Mapper::Friendship.map_to_instance(instance,data)
+          end
+
           def to_generic(instance,data)
             instance.created_dt   = data.created_dt
             instance.updated_dt   = data.updated_dt
@@ -79,7 +84,6 @@ module YV
             instance
           end
 
-
           def to_system(instance,data)
             instance.created_dt       = data.created_dt
             instance.updated_dt       = data.updated_dt
@@ -99,37 +103,6 @@ module YV
 
             instance                  = map_to_like_fields(instance,data.liking)
             instance
-          end
-
-
-          def to_friendship(instance,data)
-            extras  = data.extras
-            user    = extras.user
-            friend  = extras.friend
-
-            instance.user = to_simple_user(user)
-            instance.friend = to_simple_user(friend)
-
-            instance.kind_id          = data.kind_id
-            instance.kind_color       = data.kind_color
-            instance.created_dt       = data.created_dt
-            instance.updated_dt       = data.updated_dt
-            instance.moment_title     = t(data.base.title["l_str"],data.base.title["l_args"])
-
-            # Common moment elements
-            instance.icons            = map_to_icons(data.base.images.icon)
-            instance.avatars          = map_to_avatars(data.base.images.avatar)
-
-            instance
-          end
-
-          def to_simple_user(user)
-            SimpleUser.new(
-              name:       user.name,
-              user_name:  user.username,
-              id:         user.id,
-              avatars:    map_to_avatars(user.avatar)
-            )
           end
 
         end

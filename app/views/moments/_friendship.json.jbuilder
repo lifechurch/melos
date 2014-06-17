@@ -7,6 +7,11 @@ json.object do
   json.set! :friend_path, "/users/#{moment.friend.user_name}"
   json.friend_name    moment.friend.name
   json.friend_avatar  moment.friend.avatars.lg_avatar.url
+
+  json.partial!   "/moments/moment_common", moment: moment
+  
+  # This is all logic to determine whether to show the add friend button.
+  # TODO: refactor, move out to helper/model/mapper
   pending_friendship = Friendships.pending_type_for(moment.friend.id, auth: current_auth)
   friends_with = Friend.with?(moment.friend.id, auth: current_auth)
   if (friends_with.blank?) && ( pending_friendship.blank? ) && ( moment.user.id != moment.friend.id ) && ( moment.user.id != current_user.id ) && ( moment.friend.id != current_user.id )
