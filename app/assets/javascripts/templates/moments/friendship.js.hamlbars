@@ -8,7 +8,8 @@
       %span.moment-time
         {{created_dt}}
       %h2.moment-fr-text
-        {{{moment_title}}}
+        %a.moment-title-link{href: "{{path}}"}
+          {{{moment_title}}}
       .moment-fr-box
         .moment-fr-center
           %a{href: "{{friend_path}}"}
@@ -24,3 +25,6 @@
                   %input{id: "authenticity_token", name: "authenticity_token", type: "hidden", value: "{{token}}"}
                 %input.moment-fr-name-add.sm_action_button_grey{name: "commit", type: "submit", value: "{{I18n 'moments.action.add friend button'}}"}
             {{/if}}
+  .moment-btm
+    {{> moments/_actions_bar}}
+    {{> moments/_comments}}
