@@ -6,7 +6,7 @@ module YV
         class << self
 
           def from_all(plan_datas)
-            return plan_data if plan_data.empty?
+            return plan_datas if plan_datas.empty?
             plan_datas.collect do |plan_data|
               map_to_instance(PlanSegmentCompletion.new,plan_data)
             end
