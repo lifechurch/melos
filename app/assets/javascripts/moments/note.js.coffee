@@ -26,7 +26,7 @@ class window.Moments.Note extends window.Moments.Base
         avatar:       @data.avatar
         status:       @data.status
         title:        @data.title
-        content:      @data.content
+        content:      @formatContent(@data.content)
         created_dt:   @data.time_ago
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
@@ -49,3 +49,9 @@ class window.Moments.Note extends window.Moments.Base
       return "/bible/#{version}/#{usfm}"
     else
       return "#"
+
+  formatContent: (content)->
+    if content
+      return content.replace(/(?:\r\n|\r|\n)/g, '<br>')
+    else
+      return ""

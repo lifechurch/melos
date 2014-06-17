@@ -13,7 +13,7 @@
           {{{moment_title}}}
       .moment-no-note
         %p.moment-no-note-title {{title}}
-        %p.moment-no-note-text {{content}}
+        %p.moment-no-note-text {{{content}}}
   .moment-btm
     {{> moments/_actions_bar}}
     {{> moments/_comments}}
