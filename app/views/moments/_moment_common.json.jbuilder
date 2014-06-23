@@ -5,11 +5,11 @@ json.references     moment.references if moment.respond_to? :references
 json.path           moment.to_path
 json.avatar         moment.avatars.lg_avatar.url
 json.set! :time_ago, api_dt_time_ago(moment.created_dt)
-json.set! :owned_by_me, current_user_moment?(moment) if current_user.present?
+json.set! :owned_by_me, current_user_moment?(moment)
 json.actions do
   json.set! :show, moment.comments_count > 0 || moment.likes_count > 0
-  json.set! :editable, (current_user_moment?(moment) and moment.editable?) if current_user.present?
-  json.set! :deletable, (current_user_moment?(moment) and moment.deletable?) if current_user.present?
+  json.set! :editable, (current_user_moment?(moment) and moment.editable?)
+  json.set! :deletable, (current_user_moment?(moment) and moment.deletable?)
   json.read true
   # json.share true
 end
@@ -36,7 +36,7 @@ json.comments do
       json.content     comment.content
       json.created_dt  comment.created_dt
       json.set! :time_ago, api_dt_time_ago(comment.created_dt)
-      json.set! :owned_by_me, comment.user.id == current_auth.user_id  if current_auth.present? #necessary for js templates.
+      json.set! :owned_by_me, comment.user.id == current_auth.user_id  #necessary for js templates.
 
       json.user do
         user    = comment.user
@@ -56,11 +56,11 @@ json.likes do
   json.enabled       moment.liking
   json.count         moment.likes_count
   json.user_ids      moment.likes_user_ids
-  json.set! :is_liked, moment.liked_by?(current_auth.user_id) if current_auth.present?
+  json.set! :is_liked, moment.liked_by?(current_auth.user_id)
 
   json.strings do
     if moment.likes_count > 0
-      json.whos_liked  moment_whos_liked_string(moment) if current_auth.present?
+      json.whos_liked  moment_whos_liked_string(moment)
     end
   end
 

@@ -112,7 +112,7 @@ class BaseMomentsController < ApplicationController
   end
 
   def mobile_redirect
-    @moment ||= current_auth ? Moment.find(params[:id], auth: current_auth) : Moment.find(params[:id])
+    @moment ||= Moment.find(params[:id], auth: current_auth)
     if request.env["X_MOBILE_DEVICE"].present?
       case request.env["X_MOBILE_DEVICE"]
       when /iphone|iPhone|ipad|iPad|ipod|iPod/

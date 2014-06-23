@@ -5,5 +5,4 @@ json.object do
   json.content        moment.content
   json.status         t("notes.status.#{moment.user_status}")
   json.partial!   "/moments/moment_common", moment: moment
-  json.set! :interact_with, current_user.present? ? current_user.interact_with?(moment) : false
 end

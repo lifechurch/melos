@@ -1,8 +1,6 @@
 .moment-actions
-  {{#if interact_with}}
   %span.moment-actions-like
     %a{href: "#"} {{I18n 'moments.action.like'}}
   %span.moment-actions-comment
     %a{href: "{{path}}"} {{I18n 'moments.action.comment'}}
-  {{/if}}
   {{> moments/_actions_layer}}

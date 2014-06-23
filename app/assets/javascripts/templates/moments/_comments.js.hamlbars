@@ -1,4 +1,3 @@
-{{#if interact_with}}
 .moment-comments
   {{#if actions.show}}
   {{#if likes.strings.whos_liked}}
@@ -20,4 +19,3 @@
       %span.moment-comments-input-avatar
         %img{src: "{{user.avatar}}"}/
       %textarea.moment-comments-textarea.comment-field{"data-moment-id" => "{{id}}", name: "comment[content]"}
-{{/if}}
