@@ -3,38 +3,39 @@
   # moment - An moment type instance (bookmark, note, highlight)
 
 .widget.social-sidebar.moment-activity
-  %h3.hd
-    = t("social.widget.timeline")
-  .bd
-    - if activity = moment.activity
-      %ul.moment-activity-users
-        - activity.each do |user_activity|
-          - user = user_activity.user
-          - avatars = user.avatars
-          - avatar = avatars.sm_avatar
-          %li.user
-            - if user.username.present?
-              %span.timeline-avatar
-                = link_to(user_path(user)) do
+  - if current_auth.present?
+    %h3.hd
+      = t("social.widget.timeline")
+    .bd
+      - if activity = moment.activity
+        %ul.moment-activity-users
+          - activity.each do |user_activity|
+            - user = user_activity.user
+            - avatars = user.avatars
+            - avatar = avatars.sm_avatar
+            %li.user
+              - if user.username.present?
+                %span.timeline-avatar
+                  = link_to(user_path(user)) do
+                    = image_tag avatar.url
+                = link_to(user.name, user_path(user.username), class: "user")
+              - else
+                %span.timeline-avatar
                   = image_tag avatar.url
-              = link_to(user.name, user_path(user.username), class: "user")
-            - else
-              %span.timeline-avatar
-                = image_tag avatar.url
 
-            - like = user_activity.recent_like
-            - comm = user_activity.recent_comment
+              - like = user_activity.recent_like
+              - comm = user_activity.recent_comment
 
-            - if like or comm
-              %ol.moment-activity-actions
-                - if like
-                  %li.action-like
-                    = t("moments.action.liked")
-                    =  api_dt_time_ago(like.created_dt)
-                - if comm
-                  %li.action-comment
-                    = t("moments.action.last comment")
-                    =  api_dt_time_ago(comm.created_dt)
-    - else
-      %p
-      = t("social.widget.no activity yet")
+              - if like or comm
+                %ol.moment-activity-actions
+                  - if like
+                    %li.action-like
+                      = t("moments.action.liked")
+                      =  api_dt_time_ago(like.created_dt)
+                  - if comm
+                    %li.action-comment
+                      = t("moments.action.last comment")
+                      =  api_dt_time_ago(comm.created_dt)
+      - else
+        %p
+        = t("social.widget.no activity yet")

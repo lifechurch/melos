@@ -27,6 +27,7 @@ class window.Moments.PlanSubscription extends window.Moments.Base
         comments:     @data.comments
         likes:        @data.likes
         actions:      @data.actions
+        interact_with:  true
         user:
           id:         @data.user.id
           path:       @data.user.path
