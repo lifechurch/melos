@@ -23,6 +23,7 @@ class window.Moments.Friendship extends window.Moments.Base
         comments:       @data.comments
         likes:          @data.likes
         token:          @token
+        interact_with:  true
         user:
           id:         @data.user.id
           path:       @data.user.path
