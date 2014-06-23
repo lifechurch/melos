@@ -93,9 +93,15 @@ class BaseMomentsController < ApplicationController
   private
 
   def find_resource
-    @moment = moment_resource.find(params[:id], auth: current_auth)
+    return unless current_auth.present?
+    @moment ||= moment_resource.find(params[:id], auth: current_auth)
     redirect_to(moments_path) and return unless @moment.user_id == current_auth.user_id
     @moment.auth = current_auth
+  end
+
+  def resourceful_redirect
+    return unless @moment.present?
+    redirect_to polymorphic_path(@moment) if @moment.class.to_s.match /Note|Bookmark|Highlight/
   end
 
   def moment_resource
@@ -107,22 +113,21 @@ class BaseMomentsController < ApplicationController
   end
 
   def find_moment
-    @moment = Moment.find(params[:id], auth: current_auth)
+    @moment ||= current_auth ? Moment.find(params[:id], auth: current_auth) : Moment.find(params[:id])
     render_404 if @moment.nil? || @moment.errors.present?
   end
 
   def mobile_redirect
-    @moment ||= Moment.find(params[:id], auth: current_auth)
-    if request.env["X_MOBILE_DEVICE"].present?
-      case request.env["X_MOBILE_DEVICE"]
-      when /iphone|iPhone|ipad|iPad|ipod|iPod/
-        @user_agent = "ios"
-        @native_url = "youversion://moments/#{@moment.id}"               
-      when /android|Android/
-        @user_agent = "android"
-        @native_url = "youversion://moments/#{@moment.id}"
-      end 
-    end
+    return unless @moment.present?
+    return unless request.env["X_MOBILE_DEVICE"].present?
+    case request.env["X_MOBILE_DEVICE"]
+    when /iphone|iPhone|ipad|iPad|ipod|iPod/
+      @user_agent = "ios"
+      @native_url = "youversion://moments/#{@moment.id}"               
+    when /android|Android/
+      @user_agent = "android"
+      @native_url = "youversion://moments/#{@moment.id}"
+    end 
   end
 
 end

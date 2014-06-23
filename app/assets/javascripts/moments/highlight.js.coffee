@@ -66,6 +66,7 @@ class window.Moments.Highlight extends window.Moments.Base
         likes:        @data.likes
         actions:      @data.actions
         read_path:    @readPath()
+        interact_with:  true
         user:
           id:         @data.user.id
           path:       @data.user.path

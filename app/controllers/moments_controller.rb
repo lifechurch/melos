@@ -8,8 +8,8 @@ class MomentsController < BaseMomentsController
 
 
 
-  before_filter :force_login
-  before_filter :find_moment, :mobile_redirect, only: [:show]
+  before_filter :force_login, only: [:index, :related, :_cards, :introduction]
+  before_filter :find_moment, :mobile_redirect, :resourceful_redirect, only: [:show]
 
   # TODO - optimize before filterage, especially for the #show redirect
 

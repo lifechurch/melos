@@ -13,6 +13,8 @@ class window.Moments.Note extends window.Moments.Base
     @data.user
 
   constructor: (@data, @feed)->
+    if $('.social-detail').length > 0 then @interact_with = $('.social-detail').data("interact-with")
+    else @interact_with = true
     @template = JST["moments/note"]
     @feed.ready(@)
 
@@ -34,6 +36,7 @@ class window.Moments.Note extends window.Moments.Base
         likes:        @data.likes
         actions:      @data.actions
         read_path:    @readPath()
+        interact_with:  @interact_with
         user:
           id:         @data.user.id
           path:       @data.user.path
