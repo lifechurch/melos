@@ -29,6 +29,8 @@ class window.Moments.Note extends window.Moments.Base
         status:       @data.status
         title:        @data.title
         content:      @formatContent(@data.content)
+        references:   @data.humanreferences
+        reference_link_to:      @data.reference_link_to
         created_dt:   @data.time_ago
         updated_dt:   @data.updated_dt
         moment_title: @data.moment_title
