@@ -2,7 +2,7 @@
 
 - content_for :sidebar do
   = render partial: "moments/activity_sidebar", locals: {moment: @moment}
-
+#spinner
 %article.social-detail{"data-moment-id" => @moment.id, "data-interact-with" => current_user.present? ? current_user.interact_with?(@moment).to_s : "false"}
   :javascript
     $(document).ready(function(){

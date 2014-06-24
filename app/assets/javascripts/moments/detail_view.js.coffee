@@ -21,6 +21,7 @@ class window.Moments.DetailView extends window.Moments.FeedBase
     @moments_json = moments_json_array
     @current_page = $("<div />",{class:"moment-detail"})
     @wrap.append(@current_page)
+    @hideSpinner()
     @renderNext()
     return
 
