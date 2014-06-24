@@ -17,3 +17,8 @@ Handlebars.registerHelper('stringify',
   function(json){
     return JSON.stringify(json);
 });
+Handlebars.registerHelper('usfmJoin',
+    function(usfm){
+        return usfm.join('+');
+    }
+);

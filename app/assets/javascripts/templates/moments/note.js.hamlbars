@@ -11,6 +11,10 @@
       %h2.moment-no-text
         %a.moment-title-link{href: "{{path}}"}
           {{{moment_title}}}
+        {{#each references}}
+        %a.reference-link{href: "/bible/{{version_id}}/{{usfmJoin usfm}}"}
+          {{human}}
+        {{/each}}
       .moment-no-note
         %p.moment-no-note-title {{title}}
         %p.moment-no-note-text {{{content}}}
