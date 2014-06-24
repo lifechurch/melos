@@ -28,6 +28,7 @@ class window.Moments.PlanCompletion extends window.Moments.Base
         likes:        @data.likes
         actions:      @data.actions
         interact_with:  true
+        subscribed:   @data.subscribed
         user:
           id:         @data.user.id
           path:       @data.user.path

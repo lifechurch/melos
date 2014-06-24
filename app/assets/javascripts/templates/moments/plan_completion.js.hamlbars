@@ -12,8 +12,12 @@
           {{{moment_title}}}
       .moment-rp-details
         {{> moments/_plan_start}}
-        %a{href: "{{path}}"}
+        %a{href: "{{action_url}}"}
           {{{body_text}}}
+        {{#unless subscribed}}
+        %a.moment-rp-start.moment-action-start-plan.sm_action_button_grey{href: "#"}
+          {{I18n 'moments.action.start plan'}}
+        {{/unless}}
   .moment-btm
     {{> moments/_actions_bar}}
     {{> moments/_comments}}

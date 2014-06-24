@@ -4,6 +4,7 @@ json.object do
   json.body_text  moment.body_text
   json.action_url moment.action_url
   json.set!       :plan_id, moment.plan_id
+  json.set!       :subscribed, (@subscriptions.include? moment.plan_id)
   json.partial!   "/moments/moment_common", moment: moment
   json.actions do
     json.about_plan true
