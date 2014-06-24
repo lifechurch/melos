@@ -42,6 +42,7 @@
 //= require ./menus/menu_group
 //= require_self
 //= require jstz-1.0.4
+//= require spin.min
 //= require_tree ./lib/
 //= require_tree ./menus/
 //= require_tree ./modals/
