@@ -45,9 +45,6 @@ class MomentsController < BaseMomentsController
     @moments = @feed.moments
     @subscriptions = Subscription.all(@user, auth: current_auth).map! { |s| s.id }
     respond_to do |format|
-      format.html do
-        render partial: "moments/cards", locals: {moments: @moments, comments_displayed: self.class.moment_comments_displayed}, layout: false
-      end
       format.json # renders _cards.json.jbuilder
     end
   end
@@ -66,8 +63,7 @@ class MomentsController < BaseMomentsController
 
   # This supports API action_urls that are formatted /moments/123thisID
   # It supports moments that don't already have a resourceful route, like reading plan completions.
-  # Otherwise, show will render the appropriate partial
-  # TODO - Before filter that looks up the moment and redirects to the appropriate page if necessary
+  # Before filter looks up the moment type and redirects to the appropriate resourceful route if present
   # TODO - skip any before filters that arent necessary
   def show
     respond_to do |format|
