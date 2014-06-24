@@ -1,4 +1,4 @@
-moment_title = (logged_in? and current_user_moment? @moment) ? @moment.references.collect {|r| r.human}.join(", ") : @moment.moment_title.html_safe
+moment_title = @moment.moment_title.html_safe
 
 json.array! [@moment] do
   json.set! :kind,      @moment.kind
