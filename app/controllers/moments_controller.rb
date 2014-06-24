@@ -43,7 +43,7 @@ class MomentsController < BaseMomentsController
       recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default_for(I18n.locale) || Version.default]
     )
     @moments = @feed.moments
-
+    @subscriptions = Subscription.all(@user, auth: current_auth).map! { |s| s.id }
     respond_to do |format|
       format.html do
         render partial: "moments/cards", locals: {moments: @moments, comments_displayed: self.class.moment_comments_displayed}, layout: false
