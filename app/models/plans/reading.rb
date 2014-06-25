@@ -46,11 +46,15 @@ module Plans
 
 
     def devotional
+      #TODO: prefer localized text content over default html content over default text content
       additional_content ||= additional_content_html || additional_content_text
+      return unless additional_content.present?
+      # add p tags if it isn't html
+      spacer = YV::Resource.html_present?(additional_content) ? '' : '</p><p>'
       # if ascii spacing is in the html, just remove it, instead of adding p's
       # to avoid adding unnecessary spacing
-      spacer = YV::Resource.html_present?(additional_content) ? '' : '</p><p>' if additional_content.present?
-      additional_content = additional_content.gsub(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer) if additional_content.present?
+      additional_content.gsub!(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, spacer)
+      # wrap it up if it's text, as there would be dangling tags
       additional_content = "<p>#{additional_content}</p>" if spacer.present?
       @devotional ||=  additional_content
     end
