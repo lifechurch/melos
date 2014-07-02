@@ -15,6 +15,14 @@
     %meta{name: "og:title",       content: meta_title }
     %meta{name: "og:url",         content: meta_url }
     %meta{name: "og:description", content: meta_description }
+    %meta{name: "og:image", content: "#{url_for(asset_path('BibleAppForKids-icon.png'))}"}
+    %meta{name: "twitter:card",             content: "summary"}
+    %meta{name: "twitter:url",              content: meta_url}
+    %meta{name: "twitter:title" ,           content: meta_title}
+    %meta{name: "twitter:description",      content: meta_description}
+    %meta{name: "twitter:image",            content: "#{url_for(asset_path('BibleAppForKids-icon.png'))}"}
+    %meta{name: "twitter:site",             content: "@BibleAppForKids"}
+
     = stylesheet_link_tag "campaigns/kids"
     = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
 
