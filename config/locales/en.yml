@@ -74,13 +74,16 @@ en:
   meta:
     kids_app:
       title:                                    "The Bible App for Kids"
-      description:                              "The Bible App for Kids launches on November 28, Thanksgiving Day! Interactive Bible stories in a  free app for iOS and Android. See a preview at bible.com/kids"
+      description:                              "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
     100million:
       title:                                    "It Starts with 100 Million"
       description:                              "The Bible App has been installed almost 100 million times - an incredible milestone! But we are just getting started. Download the free Bible App today - and then share the app with your friends. Let’s make history together."
     mobile:
       title:                                    "The Bible App"
-      description:                              "Tens of millions of people are using the Bible App to read, listen to, watch and share God's Word, making it a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
+      description:                              "Read God’s Word at anytime, anywhere using the YouVersion Bible App. Share Scripture with friends, highlight and bookmark passages, and create a daily habit with Bible Plans. Available for iOS, Android, Blackberry, Windows Phone and more."
+    site:
+      title:                                    "Bible.com"
+      description:                              "Bible.com is the online Bible website for YouVersion, makers of the free Bible App™, with all of the same tools: Bookmarks, Plans, Notes, and more."
     connections:
       index:
         title:                                  "Connected Accounts"

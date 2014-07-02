@@ -7,7 +7,7 @@ module YV
       end
 
       def title
-        "The New Bible.com"
+        "Bible.com"
       end
 
       def description
