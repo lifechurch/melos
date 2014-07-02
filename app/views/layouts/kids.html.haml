@@ -12,15 +12,16 @@
     %meta{name: "viewport",       content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
     %meta{name: "description",    content: meta_description}
     %meta{name: "url",            content: meta_url}
-    %meta{name: "og:title",       content: meta_title }
-    %meta{name: "og:url",         content: meta_url }
-    %meta{name: "og:description", content: meta_description }
-    %meta{name: "og:image", content: "#{url_for(asset_path('BibleAppForKids-icon.png'))}"}
+    %meta{property: "og:title",       content: meta_title }
+    %meta{property: "og:url",         content: meta_url }
+    %meta{property: "og:description", content: meta_description }
+    %meta{property: "og:image", content: "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}"}
+    %meta{property: "og:image", content: "#{url_for(asset_path('/campaign/kids/hero.png'))}"}
     %meta{name: "twitter:card",             content: "summary"}
     %meta{name: "twitter:url",              content: meta_url}
     %meta{name: "twitter:title" ,           content: meta_title}
     %meta{name: "twitter:description",      content: meta_description}
-    %meta{name: "twitter:image",            content: "#{url_for(asset_path('BibleAppForKids-icon.png'))}"}
+    %meta{name: "twitter:image",            content: "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
 
     = stylesheet_link_tag "campaigns/kids"

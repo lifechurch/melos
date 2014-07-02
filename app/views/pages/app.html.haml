@@ -7,14 +7,14 @@
 - content_for :additional_meta do
 
   %meta{name: "url",            content: @meta_url}
-  %meta{name: "og:title",       content: @title }
-  %meta{name: "og:url",         content: @meta_url }
-  %meta{name: "og:description", content: @meta_description }
+  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:url",         content: @meta_url }
+  %meta{property: "og:description", content: @meta_description }
   %meta{name: "twitter:card",             content: "summary"}
   %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
   %meta{name: "twitter:title" ,           content: @title}
   %meta{name: "twitter:description",      content: @meta_description}
-  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-144x144.png'))}"}
+  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-200x200.png'))}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article.mobileapps

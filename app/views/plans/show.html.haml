@@ -3,14 +3,14 @@
 
 - content_for :additional_meta do
 
-  %meta{name: "og:title",       content: @title }
-  %meta{name: "og:url",         content: @meta_url}
-  %meta{name: "og:description", content: @plan.about }
+  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:url",         content: @meta_url}
+  %meta{property: "og:description", content: @plan.about }
   %meta{name: "twitter:card",             content: "summary"}
   %meta{name: "twitter:url",              content: @meta_url}
   %meta{name: "twitter:title" ,           content: @title}
   %meta{name: "twitter:description",      content: @plan.about}
-  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-144x144.png'))}"}
+  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-200x200.png'))}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article.reading_plan_index
