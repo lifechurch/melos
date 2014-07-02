@@ -465,7 +465,7 @@ only screen and (                min-resolution: 2dppx) {
     }
   }
 
-  // Reader
+  // !Reader
 
   .color span {
     background: image-url("menu_color_selected@2x.png") no-repeat center 3px;
@@ -504,6 +504,14 @@ only screen and (                min-resolution: 2dppx) {
   #menu_verse_actions #share-pane .share_logo_twitter {
     background: image-url("reader-share-sprite@2x.png") no-repeat 0 -43px;
     background-size: 32px 150px;
+  }
+
+
+  // !Reading plans
+
+  .cal_month td.read {
+    background: image-url("cal_check@2x.png") no-repeat center 23px;
+    background-size: 9px 7px;
   }
 
 }
