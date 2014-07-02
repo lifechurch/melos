@@ -1,7 +1,7 @@
 :ruby
   meta_title        = t("meta.kids_app.title")
   meta_description  = t("meta.kids_app.description")
-  meta_url          = "https://bible.com/kids"
+  meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
 
 !!! 5
 %html
