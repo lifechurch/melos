@@ -1,3 +1,5 @@
+@import "variables.sass"
+
 br + input,
 br + select,
 br + textarea
@@ -398,21 +400,19 @@ input[type="submit"].action_button_grey,
   text-decoration: none
 
 input[type="submit"]
-  background-color: #48A900
+  background-color: $green
   +background-image(none)
   width: 100%
   padding: 10px 0
   color: #fff
-  text-shadow: rgba(0,0,0,0.3) 0 -1px 0
   font-size: 15px
   +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0)
   border: none
 
 input[type="submit"]:hover
-  background-color: #48A900
+  background-color: $green
   +background-image(none)
   color: #fff
-  text-shadow: rgba(0,0,0,0.3) 0 -1px 0
   +box-shadow(inset rgba(0,0,0,0.2) 0 -3px 0)
   border: none
 
@@ -422,7 +422,7 @@ input[type="submit"]:hover
 input[type="submit"].action_button_green,
 button.action_button_green,
 .action_button_green
-  background-color: #48A900
+  background-color: $green
   background-image: none
 
 .action_button_green:hover,
@@ -453,7 +453,7 @@ input[type="submit"].action_button_blue,
 input[type="button"].action_button_blue,
 .action_button_blue,
 a.action_button_blue
-  background-color: #0099CC
+  background-color: $blue
   border: 0
 
 input[type="submit"].action_button_blue:hover,
@@ -483,7 +483,7 @@ input[type="submit"].action_button_red,
 button.action_button_red,
 a.action_button_red,
 .action_button_red
-  background-color: #CC0000
+  background-color: $red
   background-image: none
   border: 0
 
@@ -558,7 +558,7 @@ input[type="submit"].action_button_grey,
   text-decoration: none
 
 .sm_action_button_green
-  background-color: #48A900
+  background-color: $green
 
 .sm_action_button_green:hover,
 .sm_action_button_green:focus,
@@ -566,7 +566,7 @@ input[type="submit"].action_button_grey,
   background-color: #4FBA00
 
 .sm_action_button_blue
-  background-color: #0099CC
+  background-color: $blue
 
 .sm_action_button_blue:hover,
 .sm_action_button_blue:focus,

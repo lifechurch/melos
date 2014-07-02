@@ -1,3 +1,5 @@
+@import "variables.sass"
+
 br + input,
 br + select,
 br + textarea
@@ -392,7 +394,7 @@ input[type="submit"].action_button_green,
 input[type="button"].action_button_green,
 button.action_button_green,
 .action_button_green
-  background-color: #48A900
+  background-color: $green
   color: #fff
 
 input[type="submit"].action_button_green:hover,
@@ -404,6 +406,7 @@ button.action_button_green:focus,
 .action_button_green:hover,
 .action_button_green:focus,
   background-color: #4FBA00
+  color: #fff
 
 input[type="submit"].action_button_green:active,
 input[type="button"].action_button_green:active,
@@ -420,7 +423,7 @@ input[type="submit"].action_button_blue,
 input[type="button"].action_button_blue,
 .action_button_blue,
 a.action_button_blue
-  background-color: #0099CC
+  background-color: $blue
   color: #fff
 
 input[type="submit"].action_button_blue:hover,
@@ -432,6 +435,7 @@ button.action_button_blue:focus,
 .action_button_blue:hover,
 .action_button_blue:focus
   background-color: #00A3D9
+  color: #fff
 
 input[type="submit"].action_button_blue:active,
 input[type="button"].action_button_blue:active,
@@ -448,7 +452,7 @@ input[type="submit"].action_button_red,
 input[type="button"].action_button_red,
 .action_button_red,
 a.action_button_red
-  background-color: #CC0000
+  background-color: $red
   color: #fff
 
 input[type="submit"].action_button_red:hover,
@@ -460,6 +464,7 @@ button.action_button_red:focus,
 .action_button_red:hover,
 .action_button_red:focus
   background-color: #E60000
+  color: #fff
 
 input[type="submit"].action_button_red:active,
 input[type="button"].action_button_red:active,
@@ -524,7 +529,7 @@ button.action_button_grey:active,
 // Small green action buttons
 
 .sm_action_button_green
-  background-color: #48A900
+  background-color: $green
 
 .sm_action_button_green:hover,
 .sm_action_button_green:focus
@@ -537,7 +542,7 @@ button.action_button_grey:active,
 // Small blue action buttons
 
 .sm_action_button_blue
-  background-color: #0099CC
+  background-color: $blue
 
 .sm_action_button_blue:hover,
 .sm_action_button_blue:focus

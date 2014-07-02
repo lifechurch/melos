@@ -1,3 +1,5 @@
+@import "variables.sass"
+
 // `Note: SCSS allows use of CSS, for easier shared used with designers
 
 // `Reader paragraph styles
@@ -16,14 +18,14 @@
   .ms + .p,
   .ms1 + .p,
   .ms2 + .p,
-  .r + .p 
+  .r + .p
     text-indent: 0
     margin: 1em 0 0 0
-  
 
-  .s, .s1 
+
+  .s, .s1
     line-height: 1em
-  
+
 
   // Giving top margins to body text that follows headers
   // and to headers that follow body text
@@ -113,85 +115,85 @@
   .pi + .s1,
   .pi1 + .s,
   .pi1 + .s1,
-  .mr + .s1 
+  .mr + .s1
     margin-top: 1em
-  
 
-  .chapter div:first-child 
+
+  .chapter div:first-child
     margin-top: 0
-  
 
-  .p, .ip 
+
+  .p, .ip
     margin-bottom: 0
     text-indent: 1em
-  
 
-  .imt, .imt1,.mt, .mt1, .ms, .ms1 
+
+  .imt, .imt1,.mt, .mt1, .ms, .ms1
     font-size: 1.3em
     line-height: $reader_line_height
     margin: 1em 0 0 0
     font-weight: bold
-  
 
-  .ms + .mr 
+
+  .ms + .mr
     margin-top: -0.5em
-  
 
-  .iot, .imt, .imt1 
+
+  .iot, .imt, .imt1
     font-size: 1.3em
     line-height: $reader_line_height
     margin: .5em 0
     font-weight: bold
-  
 
-  .io, .io1 
+
+  .io, .io1
     list-style-type: disc
     margin-left: 1em
     display: list-item
-  
 
-  .io2, io3 
+
+  .io2, io3
     list-style-type: disc
     margin-left: 2em
     display: list-item
-  
 
-  .ipi 
+
+  .ipi
     text-indent: 1em
-  
 
-  .imt2, .imt3, imt4 
+
+  .imt2, .imt3, imt4
     font-size: 1em
     line-height: $reader_line_height
     margin: .5em 0
     font-weight: bold
-  
 
-  .is, .is1, .s, .s1, .ms, .ms1 
+
+  .is, .is1, .s, .s1, .ms, .ms1
     font-size: 1.5em
     font-weight: bold
     line-height: $reader_line_height
     margin: 0 0 1em 0
-  
+
 
   // Font size should be set in the parent element: (for example .s)
-  .heading 
+  .heading
     font-size: 1.03em
     font-weight: bold
     line-height: 1.2em
     display: block
     margin: 0 0 1em 0
     -webkit-font-smoothing: subpixel-antialiased
-  
 
-  .s2, .s3, .s4, .ms2, .ms3, .ms4 
+
+  .s2, .s3, .s4, .ms2, .ms3, .ms4
     font-size: 0.85em
     font-weight: bold
     line-height: $reader_line_height
     margin: 0 0 1em 0
-  
 
-  .ip, .im, .iex, .p, .m, .nb, .cls 
+
+  .ip, .im, .iex, .p, .m, .nb, .cls
     font-size: 1.0em
     line-height: $reader_line_height
     margin: 0
@@ -199,163 +201,163 @@
   // BEGIN:  moved from main_reader.sass to fix style cascade/specificity issues
   .book .p
     display: inline
-    margin-left: 5px  
+    margin-left: 5px
 
-  // END  
+  // END
 
-  .ipi, .imi, .pm, .pmc, .pi, .pi1, .mi 
+  .ipi, .imi, .pm, .pmc, .pi, .pi1, .mi
     margin: 0 1em
     line-height: $reader_line_height
-  
 
-  .imi 
+
+  .imi
     margin-left: 1em
     text-indent: 0
-  
 
-  .ipr, .pr, .qr, .cls 
+
+  .ipr, .pr, .qr, .cls
     text-align: right
-  
+
 
   // hanging indents for quotes
-  .iq, .iq1, .q, .q1, .qm, .qm1 
+  .iq, .iq1, .q, .q1, .qm, .qm1
     padding-left: 2.5em
     text-indent: -1em
     //line-height: 1.5em
     line-height: $reader_line_height
-  
 
-  .iqt 
+
+  .iqt
     margin-left: 1em
-  
 
-  .iq2, .q2, .qm2, .iq3, .q3, .qm3 
+
+  .iq2, .q2, .qm2, .iq3, .q3, .qm3
     padding-left: 3.5em
     text-indent: -1em
     //line-height: 1.5em
     line-height: $reader_line_height
-  
 
-  .lb, .b 
+
+  .lb, .b
     line-height: $reader_line_height
     height: 1em
-  
 
-  .ili, .ili1, .io1, .li1 
+
+  .ili, .ili1, .io1, .li1
     margin-left: 2em
     padding-left: 0
     line-height: $reader_line_height
-  
 
-  .ili2, .io2, .li2 
+
+  .ili2, .io2, .li2
     margin-left: 4em
     padding-left: 0
     line-height: $reader_line_height
-  
 
-  .iot, .d, .qa 
+
+  .iot, .d, .qa
     font-size: 1.0em
     line-height: $reader_line_height
-  
 
-  .ior 
+
+  .ior
     font-style: italic
-  
 
-  .iqt, .bk, .sls, .tl, .r 
+
+  .iqt, .bk, .sls, .tl, .r
     font-style: italic
-  
 
-  .mr 
+
+  .mr
     font-style: italic
     font-weight: bold
-  
 
-  .sr, .r, .sr .heading, .r .heading, .rq  
+
+  .sr, .r, .sr .heading, .r .heading, .rq
     font-style: italic
     font-size: 0.8em
-  
 
-  .sp 
+
+  .sp
     font-style: italic
-  
 
-  .pmr 
+
+  .pmr
     text-align: right
     margin-right: 0.3em
-  
 
-  .pc, .qc 
+
+  .pc, .qc
     text-align: center
-  
 
-  .ph, .ph1 
+
+  .ph, .ph1
     text-indent: -2em
     padding-left: 2em
-  
 
-  .ph2 
+
+  .ph2
     text-indent: -2em
     padding-left: 4em
-  
 
-  .qs, .lit 
+
+  .qs, .lit
     float: right
     font-style: italic
-  
 
-  .q, .q1 
+
+  .q, .q1
     text-indent: 1em
-  
 
-  .q2, .q3 
+
+  .q2, .q3
     text-indent: 2em
-  
+
 
   //Footnote additional paragraph
-  .fp 
+  .fp
     margin-top: 1em
     display: inline-block
     text-indent: 1em
-  
-  span.fk 
+
+  span.fk
     font-weight: bold
     font-style: italic
-  
-  span.fqa 
+
+  span.fqa
     font-style: italic
-  
 
 
-  .table 
+
+  .table
     border-bottom: 1em
-  
 
-  .table th, .th1 
+
+  .table th, .th1
     background: #444
     color: #fff
     font-weight: bold
     padding: 5px
-  
 
-  .thr, .thr1 
+
+  .thr, .thr1
     text-align: right
     font-weight: bold
     padding: 5px
-  
 
-  .table td, .tc 
+
+  .table td, .tc
     border: 1px solid #eee
     padding: 5px
-  
 
-  .tcr, .tcr1 
+
+  .tcr, .tcr1
     border: 1px solid #eee
     padding: 5px
     text-align: right
-  
 
-  .add, .dc, .k, .qt, .sig 
+
+  .add, .dc, .k, .qt, .sig
     padding: 0
     margin: 0
     font-size: 1.0em
@@ -365,64 +367,64 @@
     font-style: normal
     text-transform: none
     text-decoration: none
-  
 
-  .nd 
+
+  .nd
     font-variant: small-caps
-  
 
-  .ord 
+
+  .ord
     font-size: .75em
     line-height: $reader_line_height
     position: relative
     vertical-align: baseline
     top: -0.5em
-  
+
 
   // `Reader span/text sub styles
   //----------------------------------------------------------------------------------------------------
 
 
   .wordsofchrist,
-  .wj .content 
-    color: #cc0000
-  
+  .wj .content
+    color: $red
 
-  .pn 
+
+  .pn
     text-decoration: underline
-  
 
-  .em, .bd 
+
+  .em, .bd
     font-weight: bold
-  
-  .it, .cd 
-    font-style: italic
-  
 
-  .bdit 
+  .it, .cd
+    font-style: italic
+
+
+  .bdit
     font-weight: bold
     font-style: italic
-  
 
-  .d 
+
+  .d
     font-style: italic
     margin-bottom: 1em
-  
 
-  .no 
+
+  .no
     font-weight: normal
     font-style: normal
-  
 
-  .sc 
+
+  .sc
     font-variant: small-caps
-  
+
 
   // processor instruction intended to give the typesetter
   // the printable chapter name
-  .cl 
+  .cl
     display: none
-  
+
 
   // `Custom overrides
   //----------------------------------------------------------------------------------------------------
@@ -430,34 +432,34 @@
   // for versions that have no space in front of the verse label
   .vid8 .content:after,
   .vid58 .content:after,
-  .vid111 .content:after 
+  .vid111 .content:after
     content: " "
 
   // Chinese versions have proper nouns underlined
-  .iso6393zho .pn 
+  .iso6393zho .pn
     text-decoration: underline
 
   // BOOKS version should not display verse numbers
-  .vid31 .verse span.label 
+  .vid31 .verse span.label
     display: none
 
   // For Psalms headings in NIV
-  .vid111 .bkPSA .it 
+  .vid111 .bkPSA .it
     display: block
     margin-bottom: 1em
 
   // For Psalms headings in NIV
   // don't display block for notes italics
-  .vid111 .bkPSA .note .it 
+  .vid111 .bkPSA .note .it
     display: inline
-    margin-bottom: 0  
+    margin-bottom: 0
 
   //Certain headlines should be centered in NABRE
-  .vid463 div.s2 
+  .vid463 div.s2
     text-align: center
-  
+
 
   /* Increased word-spacing for Moose Cree version and Eastern Arctic Inuktitut Bible  */
-  .vid483, .vid455 
+  .vid483, .vid455
     word-spacing: .4em
-  
+
