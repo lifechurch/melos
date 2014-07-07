@@ -27,7 +27,7 @@
   %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
   %meta{name: "twitter:title" ,           content: @title}
   %meta{name: "twitter:description",      content: @meta_description}
-  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-200x200.png'))}"}
+  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
