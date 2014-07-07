@@ -1,5 +1,17 @@
 - @title = "#{t('plans.day number', day: params[:day])} - #{@plan.title} "
 
+- content_for :additional_meta do
+
+  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:url",         content: @meta_url}
+  %meta{property: "og:description", content: @plan.about }
+  %meta{name: "twitter:card",             content: "summary"}
+  %meta{name: "twitter:url",              content: @meta_url}
+  %meta{name: "twitter:title" ,           content: @title}
+  %meta{name: "twitter:description",      content: @plan.about}
+  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
+  %meta{name: "twitter:site",             content: "@YouVersion"}
+
 - if @presenter.reference
   = render partial: "/references/reader", locals: {presenter: @presenter}
 
