@@ -16,7 +16,7 @@ class RedirectsController < ApplicationController
   end
 
   def settings
-    redirect_to(edit_user_url(current_user))
+    redirect_to(edit_user_url(id: current_user.username))
   end
 
   # Removing for 3.1 Social launch - will make a comeback when API implements Facebook/Twitter connections
@@ -25,15 +25,15 @@ class RedirectsController < ApplicationController
   #end
 
   def settings_email
-    redirect_to(user_email_url(current_user))
+    redirect_to(user_email_url(current_user.username))
   end
 
   def settings_password
-    redirect_to(user_password_url(current_user))
+    redirect_to(user_password_url(current_user.username))
   end
 
   def settings_picture
-    redirect_to(user_avatar_url(current_user))
+    redirect_to(user_avatar_url(current_user.username))
   end
 
   def settings_notifications
@@ -41,11 +41,11 @@ class RedirectsController < ApplicationController
   end
 
   def settings_devices
-    redirect_to(user_devices_url(current_user))
+    redirect_to(user_devices_url(current_user.username))
   end
 
   def delete_account
-    redirect_to(delete_account_user_url(current_user))
+    redirect_to(delete_account_user_url(current_user.username))
   end
 
   def lifechurchtv
