@@ -1,0 +1,31 @@
+-# required locals:
+-# version_id
+-# hour
+-# minute
+-# meridian
+-# type (email/push)
+
+= form_tag user_vod_subscriptions_path(current_user.username), class: 'vod_form' do
+  %h5
+    .version
+      %p
+        = t('notes.version field')
+      = hidden_field_tag(:type, type)
+      = select_tag(:version_id, options_from_collection_for_select(@versions_by_lang, :id, :to_s, version_id))
+
+  %h5
+    .time
+      = "#{t('users.time')}:"
+    = select_tag :hour, options_for_select(@allowed_hours, hour || "09")
+    = ":"
+    = select_tag :minute, options_for_select( @allowed_minutes, minute)
+    = select_tag :meridian, options_for_select(['AM', 'PM'], meridian)
+
+  - if version_id.present?
+    = submit_tag t('bookmarks.update'), class: 'action_button_grey'
+  - else
+    = submit_tag t('users.subscribe'), class: 'action_button_green'
+
+- if version_id.present?
+  = form_tag vod_subscription_path(type), method: :delete, class: 'vod_form_delete' do  
+    = submit_tag t('users.unsubscribe'), class: 'action_button_dark_grey' 

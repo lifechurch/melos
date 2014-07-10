@@ -503,6 +503,35 @@ button.action_button_grey:active,
   color: #444
 
 
+// Grey Action Buttons
+
+
+input[type="submit"].action_button_dark_grey,
+input[type="button"].action_button_dark_grey,
+.action_button_dark_grey,
+a.action_button_dark_grey
+  background-color: #666
+  +box-shadow(inset rgba(0,0,0, 0.40) 0 0 0 0)
+  color: white
+
+input[type="submit"].action_button_dark_grey:hover,
+input[type="submit"].action_button_dark_grey:focus,
+input[type="button"].action_button_dark_grey:hover,
+input[type="button"].action_button_dark_grey:focus,
+button.action_button_dark_grey:hover,
+button.action_button_dark_grey:focus,
+.action_button_dark_grey:hover,
+.action_button_dark_grey:focus
+  background-color: #777
+
+input[type="submit"].action_button_dark_grey:active,
+input[type="button"].action_button_dark_grey:active,
+button.action_button_dark_grey:active,
+.action_button_dark_grey:active
+  +box-shadow(inset rgba(0,0,0, 0.20) 0 2px 0 0)
+  background-color: #cfcfcf
+  color: #444
+
 // Small action buttons
 
 .sm_action_button_blue,

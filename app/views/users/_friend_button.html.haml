@@ -9,7 +9,7 @@
 
 - # This is me, show the edit button
 - if current_user_is? user
-  = link_to t("users.edit profile"), edit_user_path(user), class: "profile-hdr-btn action_button_blue", title: t("users.edit profile")
+  = link_to t("users.edit profile"), edit_user_path(user.username), class: "profile-hdr-btn action_button_blue", title: t("users.edit profile")
 
 - else # Check to see if this person is in my pending lists
 
