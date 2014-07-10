@@ -16,7 +16,7 @@ class RedirectsController < ApplicationController
   end
 
   def settings
-    redirect_to(edit_user_url(id: current_user.username))
+    redirect_to(edit_user_url(current_user.username))
   end
 
   # Removing for 3.1 Social launch - will make a comeback when API implements Facebook/Twitter connections
@@ -42,6 +42,10 @@ class RedirectsController < ApplicationController
 
   def settings_devices
     redirect_to(user_devices_url(current_user.username))
+  end
+
+  def settings_vod_subscriptions
+    redirect_to(user_vod_subscriptions_url(current_user.username))
   end
 
   def delete_account

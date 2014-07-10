@@ -70,7 +70,7 @@ YouversionWeb::Application.routes.draw do
     resource :password, only: [:show,:update]
     resource :avatar,   only: [:show,:update],  path: "picture"
     resources :devices, only: [:index,:destroy]
-
+    resources :vod_subscriptions
 
     # bible.com/users/:id/connections => connections#index
     
@@ -175,6 +175,7 @@ YouversionWeb::Application.routes.draw do
   get "/settings/devices",                 to: "redirects#settings_devices"
   get "/settings/notifications",           to: "redirects#settings_notifications", as: "notification_settings"
   get "/settings/delete_account",          to: "redirects#delete_account"
+  get "/settings/vod_subscriptions",       to: "redirects#settings_vod_subscriptions"
   
   # Removed for 3.1 social - will be making a comeback
   #get "/settings/connections",             to: "redirects#settings_connections"
