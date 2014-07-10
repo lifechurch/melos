@@ -54,6 +54,12 @@ class Version < YV::Resource
       _all.group_by {|v| v.language.tag}
     end
 
+    def by_language(opts={})
+      # to only allow certain languages (eg. "en"), instead of all_by_language which is actually filtering by version id
+      _all = Version.all.find_all{|v| opts[:only].include? v.language.tag } if opts[:only]
+      # _all ||= all
+      # _all.group_by {|v| v.language.tag}
+    end
 
 
     # Version.all_by_publisher
