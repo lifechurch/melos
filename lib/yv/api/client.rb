@@ -21,6 +21,7 @@ module YV
         # Perform a GET request to YouVersion API
         # requires an appropriate API formatted path string: "search/notes", "reading-plans/view", etc
         def get(path, opts={})
+          debug = opts.delete :debug
           started_at    = Time.now.to_f
           opts          = options_for_get(prepare_opts!(opts))
           resource_url  = get_resource_url(path, opts)
@@ -50,15 +51,17 @@ module YV
           
           response = data_from_cache_or_api(cache_key(path, opts), lets_party, opts)
 
-          # puts "---"
-          # puts "GET OPTIONS:"
-          # puts opts
-          # puts
-          # puts "ACTUAL Response"
-          # puts response
-          # puts 
-          # puts resource_url
-          # puts "GET END  ---- \n"
+          if debug
+            puts "---"
+            puts "GET OPTIONS:"
+            puts opts
+            puts
+            puts "ACTUAL Response"
+            puts response
+            puts 
+            puts resource_url
+            puts "GET END  ---- \n"
+          end
 
           return YV::API::Response.new(response)
         end
@@ -67,13 +70,16 @@ module YV
         # Perform a POST request to YouVersion API
         # requires an appropriate API formatted path string: "users/create", "notes/update", etc
         def post(path, opts={})
+          debug = opts.delete :debug
           started_at    = Time.now.to_f
           opts          = options_for_post(prepare_opts!(opts))
           resource_url  = get_resource_url(path, opts)
 
-          # puts "\nPOST BODY: (#{resource_url}) -----"
-          # puts opts[:body]
-          # puts "-----"
+          if debug
+            puts "\nPOST BODY: (#{resource_url}) -----"
+            puts opts[:body]
+            puts "-----"
+          end
 
           begin
             response = httparty_post( resource_url , opts)          
@@ -87,10 +93,12 @@ module YV
             raise APIError, log_api_error(resource_url,e)
           end
 
-          # puts "---"
-          # puts response
-          # puts resource_url
-          # puts "POST END  ---- \n"
+          if debug
+            puts "---"
+            puts response
+            puts resource_url
+            puts "POST END  ---- \n"
+          end
 
           return YV::API::Response.new(response)
         end
