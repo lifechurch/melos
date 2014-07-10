@@ -73,12 +73,13 @@ group :test do
   gem 'capybara-screenshot', '~> 0.3.4'
   gem 'cucumber-rails', '~> 1.3.0', require: false
   gem 'rspec-cells'
+  gem 'rspec'
   gem 'rspec-rails'
   gem 'minitest'
   gem 'tddium',         '~> 1.4.6'
   gem 'simplecov', require: false
   gem 'parallel_tests'
-  gem 'zeus-parallel_tests'
+  # gem 'zeus-parallel_tests'
   gem 'terminal-notifier-guard'
 end
 
@@ -94,6 +95,7 @@ group :development, :tddium_ignore do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'zeus', '~> 0.15'
 end
 
 group :test, :development do
