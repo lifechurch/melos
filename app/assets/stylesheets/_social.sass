@@ -509,7 +509,7 @@ body.transition .moment
 // !Verse of the day moment
 
 .moment-vod
-
+  min-height: 215px
   .moment-icon
     background-position: 0 0
 
@@ -554,7 +554,7 @@ body.transition .moment
   max-height: 125px
   overflow: hidden
   position: relative
-
+  min-height: 75px
   .content-action
     position: absolute
     bottom: 0
@@ -599,6 +599,40 @@ body.transition .moment
 
   li.active
     background-color: #555
+
+.moment-vod-subscribe-layer
+  display: none
+  position: absolute
+  top: 67px
+  z-index: 1000
+  height: 175px
+  width: 415px
+  background-color: #eeedeb
+  padding-left: 5px
+  padding-top: 5px
+  +border-radius(2px)
+  select
+    background-image: url(/assets/select_arrows.png)  
+  h4
+    margin-bottom: 5px
+  .version
+    margin-top: 0px
+  h5, select   
+    display: inline
+
+  .time, .subscribe
+    margin-top: 5px
+
+  .subscribe
+    margin-left: 50px
+
+  #version_id
+    width: 405px
+  .or
+    margin: 0 5px
+
+.moment-action-subscribe
+  margin-right: 20px
 
 
 // !Note moment
@@ -661,6 +695,7 @@ body.transition .moment
 .moment-no-refs-link:hover
   color: #fff
   background-color: #aaa
+
 
 
 // !Video moment

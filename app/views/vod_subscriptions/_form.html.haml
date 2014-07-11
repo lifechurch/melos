@@ -4,6 +4,9 @@
 -# minute
 -# meridian
 -# type (email/push)
+-# versions
+-# allowed_hours
+-# allowed_minutes
 
 = form_tag user_vod_subscriptions_path(current_user.username), class: 'vod_form' do
   %h5
@@ -11,14 +14,14 @@
       %p
         = t('notes.version field')
       = hidden_field_tag(:type, type)
-      = select_tag(:version_id, options_from_collection_for_select(@versions_by_lang, :id, :to_s, version_id))
+      = select_tag(:version_id, options_from_collection_for_select(versions, :id, :to_s, version_id))
 
   %h5
     .time
       = "#{t('users.time')}:"
-    = select_tag :hour, options_for_select(@allowed_hours, hour || "09")
+    = select_tag :hour, options_for_select(allowed_hours, hour || "09")
     = ":"
-    = select_tag :minute, options_for_select( @allowed_minutes, minute)
+    = select_tag :minute, options_for_select(allowed_minutes, minute)
     = select_tag :meridian, options_for_select(['AM', 'PM'], meridian)
 
   - if version_id.present?

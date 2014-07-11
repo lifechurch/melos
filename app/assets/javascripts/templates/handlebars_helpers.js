@@ -22,3 +22,10 @@ Handlebars.registerHelper('usfmJoin',
         return usfm.join('+');
     }
 );
+Handlebars.registerHelper('selected', function(option, value){
+    if (option === value) {
+        return ' selected';
+    } else {
+        return ''
+    }
+});

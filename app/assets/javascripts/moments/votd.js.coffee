@@ -22,6 +22,7 @@ class window.Moments.VOTD extends Moments.Base
         calendar_img:     @data.calendar_img
         actions:          @data.actions
         read_path:        @readPath()
+        subscription:     @data.subscription
 
       return html
 
@@ -34,6 +35,23 @@ class window.Moments.VOTD extends Moments.Base
     @version_buttons.each (index,button)=>
       btn = $(button)
       if btn.data("version-id") == @version() then btn.addClass("active")
+
+    # Activate the subscribe link
+    @vod_subscribe_layer = @moment_el.find(".moment-vod-subscribe-layer")
+    @subscribe_link = @moment_el.find(".moment-action-subscribe")
+    if @subscribe_link.length and @vod_subscribe_layer.length
+      @subscribe_link.on "click", (e) =>
+        e.preventDefault()
+        @vod_subscribe_layer.toggle()
+        @subscribe_link.hide()
+    # Activate the cancel button
+    @cancel_button = @moment_el.find(".moment-vod-subscribe-cancel")
+    if @cancel_button.length
+      @cancel_button.on "click", (e) =>
+        e.preventDefault()
+        @vod_subscribe_layer.toggle()
+        @subscribe_link.show()
+
 
 
 

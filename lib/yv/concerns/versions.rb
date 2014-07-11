@@ -3,7 +3,7 @@ module YV
     module Versions
 
       def self.included(base)
-        base.helper_method :recent_versions, :current_version, :alt_version
+        base.helper_method :recent_versions, :current_version, :alt_version, :versions_for_current_language
       end
 
       private
@@ -27,6 +27,11 @@ module YV
         lookup_id = client_settings.version || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s)
         # check to make sure it's a valid version (handling version deprecation)
         @current_version = Version.find(lookup_id).to_param rescue Version.default
+      end
+
+      def versions_for_current_language
+        primary_locale ||= I18n.locale.to_s
+        @versions_for_current_lang = Version.by_language({:only => primary_locale})
       end
 
       # TODO: Refactor alt version functionality

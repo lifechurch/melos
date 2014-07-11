@@ -1,4 +1,11 @@
 .moment-content-actions
+  {{#if actions.subscribable}}
+  {{#unless vod_subscribed}}
+  %a.moment-action-subscribe{href: "#"}
+    {{I18n 'moments.vod.subscribe'}}
+  {{/unless}}
+  {{/if}}
+
   %a.more-action{href: "#"}
     {{I18n 'moments.action.more'}}
   %ul.action-layer.hide

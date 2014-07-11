@@ -10,7 +10,12 @@
       {{created_dt}}
     .moment-vod-title
       {{{title}}}
+    {{#unless vod_subscribed}}
+    {{> moments/_vod_subscribe}}
+    {{/unless}}
+
     {{{verse_html}}}
+    
     {{> moments/_actions_layer}}
     %ul.moment-vod-list
       {{#each recent_versions}}
