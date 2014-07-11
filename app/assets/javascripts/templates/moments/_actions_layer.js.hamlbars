@@ -30,6 +30,11 @@
             Twitter
     {{/if}}
     {{/if}}
+    {{#if actions.edit_subscription}}
+    %li
+      %a{href: "{{subscription.path}}"}
+        {{I18n 'moments.action.edit subscription'}}
+    {{/if}}
 
     {{#if actions.read_plan}}
     %li
