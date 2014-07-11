@@ -22,6 +22,7 @@ class VodSubscriptionsController < ApplicationController
   def destroy
    @vod_subscription[params[:id].to_sym] = { email: {time: nil, version_id: nil} }
    @results = VodSubscription.delete(@vod_subscription.merge(auth: current_user.auth))
+   flash[:notice] = t('users.vod_subscription success') unless @results.errors.present?
    return redirect_to user_vod_subscriptions_path(user_id: current_user.username)
 
   end

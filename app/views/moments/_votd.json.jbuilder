@@ -18,15 +18,18 @@ json.object do
       json.abbrev ver.abbreviation
     end
   end
+
+  subscription =       VodSubscription.all(auth: current_user.auth)
+
   json.actions do
     json.read true
-    json.subscribable true if current_user
+    json.subscribable true if current_user and subscription.email.time.blank?
+    json.edit_subscription true if current_user and subscription.email.time.present?
     # json.share true
   end
 
   if current_user
-    json.subscription do  
-      subscription =       VodSubscription.all(auth: current_user.auth)
+    json.subscription do 
       json.path            user_vod_subscriptions_path(current_user.username)
       json.time            subscription.email.time
       json.version_id      subscription.email.version_id
