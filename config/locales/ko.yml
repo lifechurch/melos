@@ -36,6 +36,7 @@ ko:
       read all: "모두 보기"
       read less: "일부 보기"
     share: "공유"
+    add comment: "댓글 달기"
     my connections: "접속 계정"
     connected as: "%{connection} 에 %{username} 사용자명으로 접속되었습니다."
     remove connection: "연결 제거"
@@ -73,13 +74,16 @@ ko:
   meta:
     kids_app:
       title: "어린이들을 위한 성경 앱"
-      description: "11월 28일 추수 감사절에 어린이 성경 앱이 출시되었습니다!   직접 참여하면서 보는 성경 이야기 앱입니다. 이 무료 앱은  iOS 와 안드로이드에 있습니다."
+      description: "어린이 성경앱은 자녀들에게 예수님, 영생 구원의 선물 등 하나님께서 우리에게 가르쳐 주신 것들을 이야기를 통해서 배울 수있습니다.   쌍방 대화식의 경험을 통해서 아이들이 하나님의 말씀을 시청각 자료들을 통해서 직접 체험하게 됩니다.  그리고 말씀을 읽으면서 포인트도 적립하고 보물도 모으게 됩니다."
     100million:
       title: "1억건 설치. 이제 시작입니다."
       description: "성경 앱이 1억건 가까이 설치되었습니다. 역사적인 순간입니다! 하지만 이것은 시작일 뿐입니다. 무료 성경 앱을 다운로드하십시오. 그리고 친구들에게 소개해 주세요. 함께 역사를 만들어 가요."
     mobile:
       title: "성경 앱"
-      description: "수천 만명의 사람들이 성경 앱을 통해서 하나님의 말씀을 읽고, 듣고, 보고, 공유하고 있고 말씀을 일상 생활화 하고 있습니다. 무료 성경 앱을 다운로드 하셔서 책갈피, 노트, 묵상 등의 기능을 어디에서 든지 사용하세요. 수백가지의 번역본, 오디오 성경 등이 여러분의 이동기기 안으로 들어옵니다. "
+      description: "하나님의 말씀을 언제, 어디서던, YouVersion 성경앱을 통해서 읽으실 수있습니다.  성경말씀을 친구들과 나누거나, 하이라이트나 책갈피로 갈무리 하실 수있으며, 묵상 계획을 통해서 말씀을 매일 접하실 수있습니다.    iOS, Android, Blackberry, Windows 폰 등 다양한 기기에서 사용하실 수있습니다."
+    site:
+      title: "Bible.com"
+      description: "성경의 진리와 아름다움을 일상 생활속에서 접하세요.  YouVersion 성경앱으로 말씀을 읽고, 보고, 들으실 수있습니다.  스마트 폰이나 태블랫 또는 Bible.com 에서 온라인으로 보실 수있습니다."
     connections:
       index:
         title: "접속 계정"
@@ -214,6 +218,7 @@ ko:
       friends button: "친구 찾기"
     action:
       go to scripture: "말씀으로 가기"
+      add friend button: "친구 추가"
       load more: "추가 로드"
       like: "좋아요"
       liked: "좋아요"
@@ -232,6 +237,11 @@ ko:
       delete highlight title: "하이라이트 삭제"
       delete bookmark title: "책갈피 삭제"
       delete note title: "노트 삭제"
+      more: "더 보기"
+      read in bible: "성경 읽기"
+      read plan: "읽기"
+      about plan: "묵상 계획 소개"
+      start plan: "계획 시작"
   notifications:
     title: "알림"
     none: "알림 공지가 없습니다"
@@ -261,13 +271,14 @@ ko:
     limit notice: "최대 150명의 친구를 만드실 수 있습니다."
     limit description: "성경 앱 친구 관계를 잘 아는 사람들로 제한하는 것으로 믿을 수 있는 친구들과 진솔한 대화와 발견한 것들을  나눌 수 있는 환경을 조성합니다."
   friendships:
+    name required: "성경을 친구들과 함께 경험하고 나누기 위해서 성함과 함께 프로필을 업데이트해 주십시오."
     find friends title: "친구 찾기"
     search by name: "이름으로 검색"
-    search button: "가기"
+    search button: "찾기"
     widget:
       find friends title: "친구  찾기"
       search by name: "이름으로 검색"
-      search button: "가기"
+      search button: "찾기"
     offer success: "친구 신청 보냄"
     offer failure: "친구 신청 오류"
     create success: "회원님은 이제 친구입니다"
@@ -287,6 +298,7 @@ ko:
       remove friend button: "친구 삭제"
       remove friend button title: "이 사람을 친구목록에서 삭제하기"
       add friend button: "친구 추가"
+      add friend button short: "추가"
       add friend button title: "%{user}님께 친구 신청"
       accept button: "수락"
       accept request button: "요청 수락"
@@ -633,7 +645,7 @@ ko:
       readings 5 or more: "읽기"
     settings: "설정"
     privacy:
-      visible to friends?: "이 묵상 계획과 관련된 회원님의 활동이 친구들에게 보여지길 원하십니까?"
+      visible to friends?: "친구들이 회원님의 성경읽기계획을 볼 수있도록 하겠습니까?"
       private: "비공개"
       public: "공개"
     title: "묵상"
@@ -689,9 +701,11 @@ ko:
     catch me up: "일정 재조정"
     restart description: "읽기 계획을 새로 시작할 수 있습니다. 이전의 모든 읽기 진행도는 지워지고 처음부터 새롭게 시작될 것입니다."
     restart: "계획 새로 시작"
-    privacy description: "이 계획을 읽고 있음을 다른 사람이 알게 됩니다,  괜찮겠습니까?"
+    privacy description:
+      private: "비공개 묵상계획입니다.  묵상계획 활동상황을 친구들과 나누기를 원하시면  친구들과 나누는 것으로 설정을 변경해주세요."
+      public: "친구들에게 묵상계획이 공개 되어있습니다.  묵상계획을 비공개로 하겠습니까?"
     make private: "진행 비공개"
-    make public: "진행 공개"
+    make public: "서로 나누기"
     privacy title: "개인정보 보호"
     stop reading: "이 읽기계획을 중단합니다."
     accountability: "진행관리"
@@ -1005,6 +1019,9 @@ ko:
     characters remaining: "남은 글자수"
     yes button: "예"
     no button: "아니요"
+    cancel: "취소"
+    plans:
+      privacy: "이 묵상 계획과 관련된 회원님의 활동이 친구들에게 보여지길 원하십니까?"
     loading indicator text: "로딩 중 ..."
     loading: "로드 중..."
     pagination:

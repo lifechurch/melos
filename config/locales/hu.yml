@@ -36,6 +36,7 @@ hu:
       read all: "Olvasd el az egészet"
       read less: "Olvass kevesebbet"
     share: "Megosztás"
+    add comment: "Megjegyzés hozzáfűzése"
     my connections: "Csatlakoztatott Fiókok"
     connected as: "Kapcsolódott a / (kapcsolódás) mint / (felhasználónév)."
     remove connection: "Távolítsd el ezt a kapcsolatot"
@@ -73,13 +74,11 @@ hu:
   meta:
     kids_app:
       title: "Biblia alkalmazás gyermekeknek"
-      description: "A Bibliai Alkalmazés gyermekek számára November 28-án jön ki, Hálaadás Napján! Interaktív Bibliai történetek egy ingyenes alkalmazásban iOS-re és Androidra. Az előnézet itt megtekinthető: bible.com/kids"
     100million:
       title: "100 millióval kezdődik"
       description: "A Biblia alkalmazást már csaknem 100 millió felhasználó töltötte le - hihetetlen mérföldkő! De még egészen az elején vagyunk. Töltsd le ma az ingyenes Biblia alkalmazást - azután oszd meg az alkalmazást a barátaiddal. Írjunk együtt történelmet!"
     mobile:
       title: "A Biblia alkalmazás"
-      description: "Emberek tízmilliói használják a Biblia alkalmazást, hogy olvassák, hallgassák, nézzék és megosszák Isten Igéjét, amit személyes életük részévé tesznek. Töltsd le az ingyenes alkalmazást és bárhonnan hozzáférsz a könyvjelzőkhöz, jegyzetekhez és olvasási tervekhez. Élvezd a több száz fordítást, beleérve az audio verziót is, mindezt a mobil készülékedről."
     connections:
       index:
         title: "Csatlakoztatott Fiókok"
@@ -190,9 +189,17 @@ hu:
     lower: "vagy"
     upper: "VAGY"
   moments:
+    scripture unavailable: "Az Ige nem elérhető"
+    could not load: "Sikertelen betöltés"
+    could not load verse: "Az igevers betöltése sikertelen "
     showing related: "Kapcsolódó pillanatok"
     return to: "Vissza"
     time past: "%{ago} ideje"
+    user likes this: "%{last_liker_link} kedveli ezt"
+    likes count more: "több, mint %{likes_count}"
+    likes count 2 more: "több, mint %{likes_count}"
+    likes count 3 or more: "több, mint %{likes_count}"
+    users like this: "%{last_liker_link} és %{more_link} kedveli ezt"
     vod:
       title: "Napi igevers"
     friendship:
@@ -206,6 +213,7 @@ hu:
       friends button: "Barátok keresése"
     action:
       go to scripture: "Menj a Szentíráshoz"
+      add friend button: "Addj hozzá barátot"
       load more: "Több betöltése"
       like: "Tetszik"
       liked: "Tetszett"
@@ -224,6 +232,11 @@ hu:
       delete highlight title: "Töröld ezt a kiemelést"
       delete bookmark title: "Töröld ezt a könyvjelzőt"
       delete note title: "Töröld ezt a jegyzetet"
+      more: "Több"
+      read in bible: "A Biblia olvasása"
+      read plan: "Olvasás"
+      about plan: "A tervről"
+      start plan: "A terv elkezdése"
   notifications:
     title: "Értesítések"
     none: "Nincsenek bejelentéseid"
@@ -253,6 +266,7 @@ hu:
     limit notice: "Akár 150 barátod is lehet"
     limit description: "Ha korlátozod a Biblia alkalmazáson a barátaidat olyan emberekre, akiket jól ismersz, ez  lehetőséget teremt őszinte beszélgetésekre és közös felfedezésekre a megbízható barátaiddal."
   friendships:
+    name required: "Annak érdekében, hogy megtapasztald a Bibliát a barátaiddal, add meg a profilodon a vezeték- és keresztnevedet."
     find friends title: "Barátok keresése"
     search by name: "Keresés a név alapján"
     search button: "Menj"
@@ -279,6 +293,7 @@ hu:
       remove friend button: "Barát eltávolítása"
       remove friend button title: "Távolítsa el ezt a személyt a barátaid listájáról"
       add friend button: "Addj hozzá barátot"
+      add friend button short: "Hozzáadás"
       add friend button title: "Küldj %{user} nak/nek egy barátkérést"
       accept button: "Elfogad"
       accept request button: "Elfogadom a felkérést "
@@ -544,6 +559,7 @@ hu:
       transfer_too_slow: "Válassz egy kisebb képet vagy keress egy gyorsabb internetkapcsolatot."
       picture_invalid_type: "A fénykép  JPG, PNG vagy GIF lehet"
       picture_creation form errors: "A következő hiba(k) akadályozta(k) meg a képed frissítését:"
+      updated picture: "Sikerült! Frissítetted a képed. Eltelhet néhány perc, míg az avatarod frissíti magát."
       updated notifications: "Sikerült! Frissítetted az értesítési beállításaidat."
       notifications token error: "Érvénytelen jel, az értesítési beállításaid szerkesztéséhez kérlek, jelentkezz be."
       notification errors: "A következő hiba(k) akadályozta(k) meg az értesítéseid frissítését:"
@@ -623,7 +639,7 @@ hu:
       readings 5 or more: "Biblia olvasás"
     settings: "Beállítások"
     privacy:
-      visible to friends?: "Szeretnéd, ha az ezzel a tervvel kapcsolatos aktivitásodat láthatnák a barátaid?"
+      visible to friends?: "Szeretnéd, hogy a barátaid lássák a tevékenységed a tervben?"
       private: "Saját"
       public: "Nyilvános"
     title: "Olvasási tervek"
@@ -659,8 +675,8 @@ hu:
     search: "Keresés"
     search placeholder: "%{category} tervek keresése"
     subscribe to plan: "Kezdd el ezt a tervet"
-    previous day: "Előző nap"
-    next day: "Következő nap"
+    previous day: "ELŐZŐ NAP"
+    next day: "KÖV. NAP"
     reading completed _ mark and show next: "Következő: %{next_reference}"
     which reading: "%{current} a %{total}-ból/-ből"
     done reading: "Kész"
@@ -679,9 +695,11 @@ hu:
     catch me up: "Felzárkóztatás"
     restart description: "Újrakezdheted a tervedet. Minden olvasási előzmény és folyamat visszaállításra kerül és az elején kezdődik."
     restart: "Terv újrakezdése"
-    privacy description: "Ez a te döntésed. Szeretnéd hogy mások is láthassák, hogy ezt a tervet olvasod?"
+    privacy description:
+      private: "A terved bizalmas. Váltsd át beállításodat \"csak barátok\"-ra, hogy megoszthasd barátaiddal tevékenységedet. "
+      public: "A terved látható barátaid számára. Váltsd át beállításodat \"bizalmas\"-ra, hogy tevékenységedet csak te láthasd."
     make private: "Bizalmassá tesz"
-    make public: "Nyilvánossá tesz"
+    make public: "Megosztás barátokkal"
     privacy title: "Adatvédelem"
     stop reading: "Terv olvasásának abbahagyása"
     accountability: "Felelősség"
@@ -992,8 +1010,12 @@ hu:
         tagline: "Írjunk együtt történelmet."
         button: "Biblia alkalmazás megosztása"
   ui:
+    characters remaining: "karakter maradt"
     yes button: "Igen"
     no button: "Nem"
+    cancel: "Mégsem"
+    plans:
+      privacy: "Szeretnéd, ha az ezzel a tervvel kapcsolatos aktivitásodat láthatnák a barátaid?"
     loading indicator text: "Betöltés ..."
     loading: "Betöltés"
     pagination:

@@ -36,6 +36,7 @@ cs:
       read all: "Zobrazit vše"
       read less: "Zobrazit méně"
     share: "Sdílet"
+    add comment: "Přidat komentář"
     my connections: "Připojené účty"
     connected as: "Jste připojen/a ke službě %{connection} jako %{username}"
     remove connection: "Odstranit toto propojení"
@@ -73,13 +74,16 @@ cs:
   meta:
     kids_app:
       title: "Aplikace Bible pro děti"
-      description: "Aplikace Bible pro Děti (The Bible App for Kids) je od 28. listopadu zdarma ke stažení pro zařízení s iOS a Androidem! Více na bible.com/kids"
+      description: "Aplikace Bible pro děti je báječný způsob jak naučit děti příběhy o Ježíši, daru věčného život  a spoustu lekcí, které nás Bůh učí.  Děti se mohou prostřednictvím zkušeností s interakcí přímo zapojit do Božího slova, zatímco díky nádherná grafice sbírají poklady a body za čtení."
     100million:
       title: "Začíná to se 100 milióny"
       description: "Aplikace Bible byla již nainstalována skoro 100 milionkrát -  je to neuvěřitelný historický milník. A to jsme ještě ani pořádně nezačali. Již dnes si stáhněte aplikaci Bible, která je zdarma - a pak sdílejte aplikaci se svými přáteli. Začněme společné tvořit dějiny. "
     mobile:
       title: "Aplikace Bible"
-      description: "Desítky miliónů lidí používají aplikaci Bible ke čtení, poslouchání, sledování a sdílení Božího Slova. Stalo se to součástí jejich života. Stáhněte si bezplatnou aplikaci a získejte odkudkoli přístup ke svým záložkám, poznámkám a plánům čtení. Užívejte si stovky překladů, včetně zvukových nahrávek, na svém mobilním zařízení."
+      description: "Čtěte Boží slovo kdykoliv a kdekoliv prostřednictvím YouVersion aplikace Bible. Sdílejte texty s přáteli, zvýrazňujte a založte si odstavce. Vytvořte si každodenní návyk díky plánům čtení. Dostupné pro iOS, Android, Blackberry, Windows Phone a další."
+    site:
+      title: "Bible.com"
+      description: "Vneste si krásu a biblické pravdy do vašeho každodenního života.  S aplikací YouVersion Bible můžete číst, sledovat, poslouchat a sdílet se na chytrých telefonech nebo tabletech a také online na Bible.com"
     connections:
       index:
         title: "Připojené účty"
@@ -214,6 +218,7 @@ cs:
       friends button: "Najít přátele"
     action:
       go to scripture: "Přejít k Písmu"
+      add friend button: "Přidat přítele"
       load more: "Načíst více"
       like: "To se mi líbí"
       liked: "To se mi líbí"
@@ -232,6 +237,11 @@ cs:
       delete highlight title: "Smazat zvýraznění"
       delete bookmark title: "Smazat záložku"
       delete note title: "Smazat poznámku"
+      more: "Více"
+      read in bible: "Přečíst v Bibli"
+      read plan: "Číst"
+      about plan: "O plánu"
+      start plan: "Začít plán"
   notifications:
     title: "Oznámení"
     none: "Nemáte žádná oznámení"
@@ -261,6 +271,7 @@ cs:
     limit notice: "Můžete mít nanejvýš 150 přátel"
     limit description: "Omezení vašich přátelství v aplikaci Bible na lidi, které znáte, vytváří prostředí pro upřímné konverzace a společné objevování s blízkými přáteli."
   friendships:
+    name required: "Abyste mohli poznávat Bibli společně s vašimi přáteli, přidejte si na váš Profil křestní jméno a příjmení."
     find friends title: "Najít přátele"
     search by name: "Hledat podle jména"
     search button: "Přejít"
@@ -287,6 +298,7 @@ cs:
       remove friend button: "Odstranit přítele"
       remove friend button title: "Odstranit tuto osobu ze seznamu přátel"
       add friend button: "Přidat přítele"
+      add friend button short: "Přidat"
       add friend button title: "Poslat uživateli %{user} žádost o přátelství"
       accept button: "Přijmout"
       accept request button: "Přijmout žádost"
@@ -632,7 +644,7 @@ cs:
       readings 5 or more: "čtení"
     settings: "Nastavení"
     privacy:
-      visible to friends?: "Chcete, aby se vaše aktivita v tomto plánu zobrazovala vašim přátelům?"
+      visible to friends?: "Přejete si, aby mohli vaši přátelé zobrazovat vaši aktivitu u Plánů čtení?"
       private: "Soukromé"
       public: "Veřejné"
     title: "Plány čtení"
@@ -668,8 +680,8 @@ cs:
     search: "Hledat"
     search placeholder: "Vyhledat plány kategorie %{category}"
     subscribe to plan: "Začít tento plán čtení"
-    previous day: "Předchozí den"
-    next day: "Další den"
+    previous day: "PŘEDCHÁZEJÍCÍ"
+    next day: "NÁSLEDUJÍCÍ"
     reading completed _ mark and show next: "Další: %{next_reference}"
     which reading: "%{current} z %{total}"
     done reading: "Hotovo"
@@ -688,9 +700,11 @@ cs:
     catch me up: "Dohnat plán"
     restart description: "Můžete restartovat váš plán. Celá historie čtení a postupu bude vymazána a začnete od začátku."
     restart: "Restartovat plán"
-    privacy description: "Je to vaše volba. Chcete, aby ostatní lidé viděli, že čtete tento plán?"
-    make private: "Nezveřejňovat"
-    make public: "Zveřejnit"
+    privacy description:
+      private: "Váš plán čtení je soukromý. Přepněte nastavení na Pouze přátelé a sdílejte váš plán a aktivity s přáteli."
+      public: "Váš plán čtení je veřejný. Přepněte nastavení na Soukromý plán a váš plán a aktivity budete vidět pouze vy."
+    make private: "Nastavit jako soukromý"
+    make public: "Sdílet s přáteli"
     privacy title: "Soukromí"
     stop reading: "Přestat číst tento plán"
     accountability: "Vykazatelnost"
@@ -1004,6 +1018,9 @@ cs:
     characters remaining: "zbývá znaků"
     yes button: "Ano"
     no button: "Ne"
+    cancel: "Zrušit"
+    plans:
+      privacy: "Chcete, aby se vaše aktivita v tomto plánu zobrazovala vašim přátelům?"
     loading indicator text: "Načítání..."
     loading: "Načítání"
     pagination:

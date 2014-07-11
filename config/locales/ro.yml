@@ -36,6 +36,7 @@ ro:
       read all: "Citește tot"
       read less: "Vezi mai puțin"
     share: "Partajează"
+    add comment: "Adaugă un comentariu"
     my connections: "Conturi conectate"
     connected as: "Ești conectat la %{connection} ca și %{username}."
     remove connection: "Șterge conexiunea"
@@ -73,13 +74,16 @@ ro:
   meta:
     kids_app:
       title: "Aplicația Biblia pentru copii"
-      description: "Aplicația Biblia pentru Copii se lansează pe 28 noiembrie, de Ziua Recunoștinței! Povestiri biblice interactive pentru copii într-o aplicație gratis pentru iOS și Android. O puteți vedea în avans pe bible.com/kids"
+      description: "Aplicația Biblia pentru Copii este o modalitate foarte bună pentru copiii tăi, ca să învețe povestiri biblice despre Isus, darul vieții veșnice, și multele lecții pe care ni le dă Dumnezeu. În această experiență interactivă, copiii se implică direct în Cuvântul lui Dumnezeu cu imagini încântătoare, în timp ce câștigă puncte pentru citit și colecționează comori."
     100million:
       title: "Începe cu 100 de milioane"
       description: "Aplicația Biblia a fost instalată de aproape 100 milioane de ori - un adevărat moment de referință! Dar acesta e doar începutul. Descarcă azi Aplicația Biblia gratuită și apoi împărtășește-o cu prietenii. Să facem istorie împreună."
     mobile:
       title: "Aplicația Biblia"
-      description: "Zeci de miloane de oameni folosesc Aplicația Biblia pentru a citi, a asculta, a viziona și a împărtăși Cuvântul lui Dumnezeu care acum este parte din viața lor de zi cu zi. Descarcă aplicația gratuită și accesează-ți marcajele, notițele și planurile de citire de oriunde te-ai afla. Bucură-te de sute de versiuni, inclusiv în format audio, totul pe dispozitivul tău mobil."
+      description: "Citește din Cuvântul lui Dumnezeu oricând și oriunde folosind Aplicația Biblia de la YouVersion. Împărtășește Scriptura cu prieteni, evidențiază și marchează pasaje, și fă-ți un obicei zilnic cu Planurile biblice. Disponibilă pentru iOS, Android, Blackberry, Windows Phone și altele."
+    site:
+      title: "Bible.com"
+      description: "Adu frumusețea și adevărul Bibliei în viața de zi cu zi. Alături de Aplicația Biblia de la Youversion, poți citi, viziona, asculta și distribui Biblia atât pe smartphone-ul sau tableta ta, cât și conectat pe site-ul Bible.com."
     connections:
       index:
         title: "Conturi conectate"
@@ -214,6 +218,7 @@ ro:
       friends button: "Găsește prieteni"
     action:
       go to scripture: "Du-te la scriptură"
+      add friend button: "Adaugă prieten"
       load more: "Încarcă mai mult"
       like: "Apreciez"
       liked: "Apreciat"
@@ -232,6 +237,11 @@ ro:
       delete highlight title: "Șterge această evidențiere"
       delete bookmark title: "Șterge acest marcaj"
       delete note title: "Șterge această notiță"
+      more: "Mai mult"
+      read in bible: "Citește în Biblie"
+      read plan: "Citește"
+      about plan: "Despre plan"
+      start plan: "Începe planul"
   notifications:
     title: "Notificări"
     none: "Nu ai notificări"
@@ -261,6 +271,7 @@ ro:
     limit notice: "Poți avea până la 150 de prieteni"
     limit description: "Limitarea prieteniilor din Aplicația Biblia la persoane care le cunoști bine creează un mediu favorabil pentru discuții sincere și împărtășirea lucrurilor descoperite cu prieteni de încredere."
   friendships:
+    name required: "Pentru a experimenta Biblia împreună cu prietenii, actualizează-ți profilul cu prenumele și numele de familie "
     find friends title: "Găsește prieteni"
     search by name: "Caută după nume"
     search button: "Caută"
@@ -287,6 +298,7 @@ ro:
       remove friend button: "Șterge prieten"
       remove friend button title: "Șterge această persoană din lista ta de prieteni"
       add friend button: "Adaugă prieten"
+      add friend button short: "Adaugă"
       add friend button title: "Trimite lui %{user} o cerere de prietenie"
       accept button: "Accept"
       accept request button: "Acceptă cererea"
@@ -632,7 +644,7 @@ ro:
       readings 5 or more: "lecturi"
     settings: "Setări"
     privacy:
-      visible to friends?: "Dorești ca activitatea ta legată de acest plan să fie vizibilă prietenilor tăi?"
+      visible to friends?: "Dorești ca prietenii tăi să vadă activitatea ta legată de Planurile de citire?"
       private: "Privat"
       public: "Public"
     title: "Planuri de citire"
@@ -688,9 +700,11 @@ ro:
     catch me up: "Adu-mă la zi"
     restart description: "Poți să reîncepi planul. Toată istoria și progresul citirii tale vor fi resetate și o vei lua de la început."
     restart: "Reîncepe plan"
-    privacy description: "Este alegerea ta. Vrei ca oamenii să vadă că citești acest plan?"
-    make private: "Fă privat"
-    make public: "Fă public"
+    privacy description:
+      private: "Planul tău este privat. Schimbă-ți setările în Doar Prieteni pentru a împărtăși activitatea ta din planurile de citire cu prietenii."
+      public: "Planul tău este vizibil prietenilor. Schimbă în Privat pentru a face activitatea din planurile de citire privată."
+    make private: "Păstrează privat"
+    make public: "Împărtășește cu Prietenii"
     privacy title: "Confidențialitate"
     stop reading: "Oprește citirea acestui plan"
     accountability: "Responsabilitate"
@@ -1004,6 +1018,9 @@ ro:
     characters remaining: "caractere rămase"
     yes button: "Da"
     no button: "Nu"
+    cancel: "Anulează"
+    plans:
+      privacy: "Dorești ca activitatea ta legată de acest plan să fie vizibilă prietenilor tăi?"
     loading indicator text: "Se încarcă ..."
     loading: "Încărcare"
     pagination:

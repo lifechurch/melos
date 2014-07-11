@@ -36,6 +36,7 @@ vi:
       read all: "Đọc toàn bộ"
       read less: "Đọc ít hơn"
     share: "Chia sẻ"
+    add comment: "Thêm bình luận"
     my connections: "Tài khoản đã kết nối"
     connected as: "Bạn đã kết nối %{connection} với tên %{username}."
     remove connection: "Ngừng kết nối này"
@@ -73,13 +74,16 @@ vi:
   meta:
     kids_app:
       title: "Ứng Dụng Kinh Thánh Cho Thiếu Nhi"
-      description: "Ứng Dụng Kinh Thánh Cho Thiếu Nhi đã ra mắt vào Lễ Tạ Ơn ngày 28/11! App miễn phí dành cho iOS và Android với những câu chuyện Kinh Thánh trở nên sống động và tương tác được với trẻ nhỏ! Hãy xem thử và tải về từ bible.com/kids!"
+      description: "App Kinh Thánh Thiếu Nhi là một cách tuyệt vời để trẻ em học biết những câu chuyện về Đức Chúa Jêsus, món quà sự sống đời đời, cũng như nhiều bài học khác mà Chúa dạy chúng ta. Qua các cảm ứng tương tác hình ảnh, điểm thưởng nhận được và các bộ sưu tầm châu báu, các em sẽ trực tiếp tương giao và lớn lên trong Lời Chúa."
     100million:
       title: "Khởi đầu với 100 triệu"
       description: "Ứng dụng Kinh Thánh đã đạt 100 triệu lượt cài đặt -  một cột mốc tuyệt vời! Nhưng chúng ta chỉ mới khởi đầu. Hãy tải Ứng dụng Kinh Thánh và chia sẻ với bạn bè hôm nay! Hãy cùng nhau làm nên lịch sử!"
     mobile:
       title: "Ứng dụng Kinh Thánh"
-      description: "Hàng chục triệu người đang sử dụng Ứng dụng Kinh Thánh để đọc, nghe, xem và chia sẻ  Lời Chúa, khiến Kinh Thánh trở thành một phần trong cuộc sống hằng ngày của họ. Hãy tải ứng dụng miễn phí và truy cập các đánh dấu, ghi chú, và kế hoạch đọc Kinh Thánh của bạn từ bất cứ nơi đâu! Hãy khám phá hàng trăm bản dịch, bao gồm Kinh Thánh phát thanh, tất cả chỉ trong thiết bị di động của bạn!"
+      description: "Đọc Lời Chúa mọi nơi mọi lúc với App Kinh Thánh của YouVersion. Chia sẻ Kinh Thánh với bạn bè, tô màu hoặc đánh dấu các phân đoạn, và hình thành thói quen hằng ngày với các kế hoạch đọc Kinh Thánh. App đã có mặt trên iOS, Android, Blackberry, Windows Phone...!"
+    site:
+      title: "Bible.com/vi"
+      description: "Mang chân lý Kinh Thánh vào đời sống. Với App Kinh Thánh của YouVersion bạn có thể đọc, xem, nghe và chia sẻ trên di động hoặc máy tính bảng, hoặc chia sẻ trực tuyến tại Bible.com/vi."
     connections:
       index:
         title: "Tài khoản đã kết nối"
@@ -214,6 +218,7 @@ vi:
       friends button: "Tìm bạn bè"
     action:
       go to scripture: "Xem đoạn Kinh Thánh"
+      add friend button: "Kết bạn"
       load more: "Tải thêm"
       like: "Thích"
       liked: "Đã thích"
@@ -232,6 +237,11 @@ vi:
       delete highlight title: "Xóa tô màu này"
       delete bookmark title: "Xóa đánh dấu này"
       delete note title: "Xóa ghi chú này"
+      more: "Thêm"
+      read in bible: "Đọc trong Kinh Thánh"
+      read plan: "Kinh Thánh"
+      about plan: "Thông tin kế hoạch"
+      start plan: "Bắt đầu kế hoạch"
   notifications:
     title: "Thông báo"
     none: "Bạn không có thông báo nào"
@@ -261,6 +271,7 @@ vi:
     limit notice: "Bạn có thể kết bạn tối đa 150 người"
     limit description: "Trên Ứng dụng Kinh Thánh, việc kết bạn với những người mà bạn biết rõ và tin cậy sẽ tạo môi trường thuận lợi cho những chia sẻ chân thành hơn."
   friendships:
+    name required: "Hãy cập nhật tên họ của bạn trong Hồ sơ cá nhân để trải nghiệm Kinh Thánh cùng bạn bè!"
     find friends title: "Tìm bạn bè"
     search by name: "Tìm bằng họ tên"
     search button: "Tìm"
@@ -287,6 +298,7 @@ vi:
       remove friend button: "Ngừng kết bạn"
       remove friend button title: "Chuyển người này khỏi danh sách bạn bè"
       add friend button: "Kết bạn"
+      add friend button short: "Thêm"
       add friend button title: "Gởi %{user} yêu cầu kết bạn"
       accept button: "Chấp nhận"
       accept request button: "Chấp nhận yêu cầu"
@@ -632,7 +644,7 @@ vi:
       readings 5 or more: "bài đọc"
     settings: "Cài đặt"
     privacy:
-      visible to friends?: "Bạn muốn bạn bè thấy được các hoạt động trong kế hoạch này của bạn?"
+      visible to friends?: "Bạn muốn bạn bè thấy được các hoạt động về kế hoạch của bạn?"
       private: "Riêng tư"
       public: "Công cộng"
     title: "Kế hoạch"
@@ -668,8 +680,8 @@ vi:
     search: "Tìm kiếm"
     search placeholder: "Tìm kiếm kế hoạch %{category}"
     subscribe to plan: "Bắt đầu kế hoạch này"
-    previous day: "Ngày trước"
-    next day: "Ngày kế tiếp"
+    previous day: "NGÀY TRƯỚC"
+    next day: "NGÀY SAU"
     reading completed _ mark and show next: "Kế tiếp: %{next_reference}"
     which reading: "%{current} trong %{total}"
     done reading: "Xong"
@@ -688,9 +700,11 @@ vi:
     catch me up: "Bắt kịp kế hoạch"
     restart description: "Bạn có thể khởi đầu lại kế hoạch. Tất cả tiến độ và bài đọc sẽ được cài đặt như lúc ban đầu."
     restart: "Bắt đầu lại kế hoạch"
-    privacy description: "Bạn có muốn người khác biết bạn đang đọc kế hoạch này?"
-    make private: "Giữ riêng tư"
-    make public: "Công khai"
+    privacy description:
+      private: "Kế hoạch của bạn là riêng tư. Bạn có thể đổi sang chế độ \"Bạn bè\" để chia sẻ hoạt động về kế hoạch này."
+      public: "Kế hoạch của bạn đang được hiển thị cho bạn bè. Bạn có thể đổi sang chế độ \"Riêng tư\" cho các hoạt động về kế hoạch này."
+    make private: "Cài chế độ riêng tư"
+    make public: "Chia sẻ cùng bạn bè"
     privacy title: "Quyền riêng tư"
     stop reading: "Ngừng kế hoạch này"
     accountability: "Tín nhiệm"
@@ -1004,6 +1018,9 @@ vi:
     characters remaining: "ký tự còn lại"
     yes button: "Có"
     no button: "Không"
+    cancel: "Hủy"
+    plans:
+      privacy: "Bạn muốn bạn bè thấy được các hoạt động trong kế hoạch này của bạn?"
     loading indicator text: "Đang tải..."
     loading: "Đang tải"
     pagination:

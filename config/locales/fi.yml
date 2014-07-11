@@ -23,7 +23,7 @@ fi:
           info: "ja 4 muuta tykkää tästä"
         comments:
           first:
-            text: "Minun piti todalla kuulla tämä tänään, kiitos. Pikaisiin kulumisiin!"
+            text: "Minun piti todella kuulla tämä tänään, kiitos. Pikaisiin kulumisiin!"
             time: "noin 3 tuntia sitten"
           second:
             text: "Aamen, niin minäkin. Lähetän sinulle nyt sähköpostia."
@@ -36,6 +36,7 @@ fi:
       read all: "Lue kaikki"
       read less: "Näytä vähemmän"
     share: "Jaa"
+    add comment: "Lisää kommentti"
     my connections: "Yhdistetyt tilit"
     connected as: "Sinut on yhdistetty kohteeseen %{connection} käyttäjänimellä %{username}."
     remove connection: "Poista yhteys"
@@ -73,13 +74,16 @@ fi:
   meta:
     kids_app:
       title: "Raamattusovellus lapsille"
-      description: "Lasten raamattusovellus julkaistaan 28. marraskuuta, kiitospäivänä! Interaktiivisia Raamatun kertomuksia ilmaisessa sovelluksessa iOS:lle ja Androidille. Katso esittely osoitteessa bible.com/kids"
+      description: "Raamattusovellus lapsille - The Bible App for Kids - on erinomainen työkalu opettamaan lapsille raamatun kertomuksia Jeesuksesta, ikuisen elämän mahdollistavasta lahjastamme, ja monista muista Jumalan opetuksista. Interaktiivisen ja visuaalisesti hienon kokemuksen kautta lapset ovat suoraan tekemisissä Jumalan sanan kanssa, samalla he ansaitsevat pisteitä lukemisesta ja aarteiden keräämisestä."
     100million:
       title: "Se alkaa 100 miljoonalla"
       description: "Raamattusovellus on asennettu lähes 100 miljoonaa kertaa - hieno merkkipaalu! Mutta me olemme vasta pääsemässä alkuun. Lataa ilmainen Raamattusovellus tänään - ja jaa se kavereidesi kanssa. Tehdään historiaa yhdessä."
     mobile:
       title: "Raamattusovellus"
-      description: "Kymmenet miljoonat ihmiset käyttävät Raamattusovellusta lukeakseen, kuunnellakseen, katsoakseen ja jakaakseen Jumalan sanaa, tehden sen osaksi jokapäiväistä elämäänsä. Lataa ilmainen sovellus ja näet kirjanmerkkisi, muistiinpanosi ja lukusuunnitelmasi missä tahansa. Nauti sadoista raamatunkäännöksistä sekä ääniraamatuista – kaikki tämä mobiililaitteessasi."
+      description: "Lue Jumalan sanaa missä ja milloin tahansa käyttämällä YouVersionin Raamattusovellusta. Jaa sanaa ystävien kanssa, tee korostuksia ja luo kirjanmerkkejä ja ota tavaksi lukea Raamattua päivittäin lukusuunnitelmian avulla. Saatavilla mm. iOS-, Android-, Blackberry-, Windows Phone -laitteilla."
+    site:
+      title: "Bible.com"
+      description: "Tuo Raamatun kauneus ja totuus jokapäiväiseen elämääsi. YouVersionin Raamattusovelluksella voit lukea, katsoa, kuunnella ja jakaa älypuhelimella tai tabletilla ja verkossa osoitteessa Bible.com."
     connections:
       index:
         title: "Yhdistetyt tilit"
@@ -214,6 +218,7 @@ fi:
       friends button: "Etsi ystäviä"
     action:
       go to scripture: "Mene raamatunkohtaan"
+      add friend button: "Lisää ystävä"
       load more: "Lataa lisää"
       like: "Tykkää"
       liked: "Tykätty"
@@ -232,6 +237,11 @@ fi:
       delete highlight title: "Poista tämä korostus"
       delete bookmark title: "Poista tämä kirjanmerkki"
       delete note title: "Poista tämä muistiinpano"
+      more: "Lisää"
+      read in bible: "Lue Raamatusta"
+      read plan: "Lue"
+      about plan: "Tietoa suunnitelmasta"
+      start plan: "Aloita suunnitelma"
   notifications:
     title: "Ilmoitukset"
     none: "Ei ilmoituksia"
@@ -261,6 +271,7 @@ fi:
     limit notice: "Sinulla voi olla jopa 150 ystävää"
     limit description: "Voit rajata ystävyyssuhteet Raamattusovelluksessa ihmisiin jotka tunnet hyvin. Näin syntyy ympäristö jossa voi keskustella ja jakaa oivalluksia avoimesti luotettujen ystävien kanssa."
   friendships:
+    name required: "Voit käyttää Raamattua yhteydessä ystäviisi, kun lisäät profiiliin etu- ja sukunimesi."
     find friends title: "Etsi ystäviä"
     search by name: "Etsi nimellä"
     search button: "Hae"
@@ -287,6 +298,7 @@ fi:
       remove friend button: "Poista ystävä"
       remove friend button title: "Poista tämä henkilö ystävälistaltasi"
       add friend button: "Lisää ystävä"
+      add friend button short: "Lisää"
       add friend button title: "Lähetä %{user}:lle ystäväpyyntö"
       accept button: "Hyväksy"
       accept request button: "Hyväksy pyyntö"
@@ -580,11 +592,11 @@ fi:
     delete: "Poista kirjanmerkki"
     title field: "Otsikko"
     title field field: "Otsikko:"
-    labels: "Etiketit"
+    labels: "Tunnisteet"
     all: "Kaikki"
-    labels label: "Etiketit:"
+    labels label: "Tunnisteet:"
     title: "Kirjanmerkit"
-    my labels: "Omat otsikot"
+    my labels: "Omat tunnisteet"
     not found: "Kirjanmerkit toimivat pikaoppaana suosikkikappaleisiisi tai viimeisimpään lukemaasi lukuun jossakin tietyssä kirjassa. Lisätäksesi kirjanmerkin, valitse jae lukijassa ja klikkaa Valittu-nappia lukijan yläosassa."
     other user not found: "%{username} ei ole vielä tallentanut kirjanmerkkejä."
     creation form errors: "Kirjanmerkin luominen estyi seuraavien virheiden takia:"
@@ -592,13 +604,13 @@ fi:
     destroy success: "Kirjanmerkki poistettu"
     destroy failure: "Kirjanmerkin poisto epäonnistui"
     update success: "Kirjanmerkki päivitetty"
-    labels placeholder: "Erota useat etiketit pilkuilla."
+    labels placeholder: "Erota useat tunnisteet pilkuilla."
     save: "Tallenna kirjanmerkki"
     confirm delete: "Kyllä, olen varma"
     loading: "Kirjanmerkkejäsi ladataan..."
     edit bookmark: "Muokkaa kirjanmerkkiä"
     reference: "Lähde:"
-    labels comma separated: "Etiketit (pilkulla erotettuna):"
+    labels comma separated: "Tunnisteet (pilkulla erotettuna):"
     update: "Päivitä"
     color: "Väri:"
     version field: "Käännös:"
@@ -609,7 +621,7 @@ fi:
     form:
       title field: "Otsikko:"
       reference field: "Kohta:"
-      labels field: "Nimikkeet (pilkulla erotettuna):"
+      labels field: "Tunnisteet (pilkulla erotettuna):"
       highlight field: "Korostus: (vapaaehtoinen)"
       colors field: "Väri:"
       update button: "Päivitä kirjanmerkki"
@@ -632,7 +644,7 @@ fi:
       readings 5 or more: "kohdat"
     settings: "Asetukset"
     privacy:
-      visible to friends?: "Haluatko tähän suunnitelmaan liittyvän toimintasi näkyvän ystävillesi?"
+      visible to friends?: "Haluatko ystäviesi näkevän suunnitelmaan liittyvän toimintasi?"
       private: "Yksityinen"
       public: "Julkinen"
     title: "Lukusuunnitelmat"
@@ -668,8 +680,8 @@ fi:
     search: "Hae"
     search placeholder: "Hae kategorian %{category} suunnitelmat"
     subscribe to plan: "Aloita tämä suunnitelma"
-    previous day: "Edellinen päivä"
-    next day: "Seuraava päivä"
+    previous day: "EDELLINEN PÄIVÄ"
+    next day: "SEURAAVA PÄIVÄ"
     reading completed _ mark and show next: "Seuraava viite:%{next_reference}"
     which reading: "%{current} / %{total} suunnitelmasta"
     done reading: "Valmis"
@@ -688,9 +700,11 @@ fi:
     catch me up: "Tasaa tilanne"
     restart description: "Voit aloittaa suunnitelman alusta. Edistymisesi ja lukuhistoriasi poistetaan ja voit aloittaa puhtaalta pöydältä."
     restart: "Aloita uudelleen"
-    privacy description: "Valinta on sinun. Haluatko, että ihmiset näkevät sinun lukevan tätä suunnitelmaa?"
+    privacy description:
+      private: "Suunnitelmasi on yksityinen. Muuta jakoasetukseksi \"Vain ystävät\" jakaaksesi suunnitelman ystäviesi kanssa."
+      public: "Suunnitelmasi näkyy ystävillesi. Muuta jakoasetuksesi \"Yksityinen\" tehdäksesi suunnitelmastasi yksityisen."
     make private: "Tee yksityiseksi"
-    make public: "Tee julkiseksi"
+    make public: "Jaa ystävien kanssa"
     privacy title: "Yksityisyys"
     stop reading: "Lopeta lukusuunnitelma"
     accountability: "Vertaistuki"
@@ -1004,6 +1018,9 @@ fi:
     characters remaining: "merkkiä jäljellä"
     yes button: "Kyllä"
     no button: "Ei"
+    cancel: "Peruuta"
+    plans:
+      privacy: "Haluatko tähän suunnitelmaan liittyvän toimintasi näkyvän ystävillesi?"
     loading indicator text: "Ladataan..."
     loading: "Ladataan..."
     pagination:

@@ -5,12 +5,12 @@
   social:
     intro page:
       main heading: "Samtale og utforske"
-      main description: "Utforsk Bibelen på en ny  måte sammen ved venner du stoler på"
+      main description: "Utforsk Bibelen på en ny måte sammen med venner du stoler på"
       moment:
         user aaron: "Arne Strøm"
         user andy: "Andreas Knutsen"
         timestamp: "5 dager siden"
-        title: "la til bokmerke på Salmene 31:8"
+        title: "la til bokmerke for Salmene 31:8"
         verse: "Jeg vil juble av glede over din godhet, for du har sett min nød, du kjenner min trengsel."
         reference: "Salmene 31:8"
         discover:
@@ -20,10 +20,10 @@
           copy: "Del ærlige samtaler om Bibelen."
           button: "Begynn med å finne noen venner."
         likes:
-          info: "og 4 til liker dette"
+          info: "og 4 andre liker dette"
         comments:
           first:
-            text: "Trengte virkelig å høre dette i dag, takk. La oss fortsette snart."
+            text: "Trengte virkelig å høre dette i dag, takk. La oss snakkes snart."
             time: "omtrent 3 timer siden"
           second:
             text: "Amen, jeg også. Sender deg e-post snart."
@@ -36,6 +36,7 @@
       read all: "Les alle"
       read less: "Les mindre"
     share: "Del"
+    add comment: "Legg til kommentar"
     my connections: "Tilknyttede kontoer"
     connected as: "Du er koblet til %{connection} som %{username}."
     remove connection: "Fjern denne koblingen"
@@ -73,13 +74,16 @@
   meta:
     kids_app:
       title: "Bibel-appen for barn"
-      description: "Bibel-appen for barn lanseres 28. november! Interaktive bibelhistorier i en gratis app for iOS og Android. Se forhåndsvisning på bible.com/kids"
+      description: "Bible App for Kids er en flott måte for barna dine å lære historier fra Bibelen om Jesus, det evige livet som en gave til oss og mange andre historier fra Gud til oss. Med denne interaktive opplevelsen vil barna bli engasjert i Guds ord med flotte bilder, mens de jakter poeng for lesing og for å finne skatter. Tilgjengelig kun på engelsk"
     100million:
       title: "Det begynner med 100 millioner"
       description: "Bibel-appen har blitt installert nesten 100 millioner ganger - en utrolig milepæl! Men vi er bare så vidt kommet igang. Last ned Bibel-appen gratis idag - og del den så med vennene dine. Bli med å skape historie."
     mobile:
       title: "Bibel-appen"
-      description: "Flere titalls millioner mennesker bruker Bibel-appen til å lese, lytte til, se på og dele Guds ord, slik at Bibelen blir en del av deres hverdagsliv. Last ned appen gratis og få tilgang til dine bokmerker, notater og leseplater uansett hvor du befinner deg. Få tilgang til hundrevis av bibeloversettelser, inkludert lydbibler, på din mobile enhet."
+      description: "Les Guds ord når som helst, hvor som helst med Bibel-appen fra YouVersion. Del bibelvers med venner, marker og legg til bokmerker til bibeltekster, og leseplaner til en daglig vane. Tilgjengelig for iOS, Andriod, Blackberry, Windows Phone med mer."
+    site:
+      title: "Bible.com"
+      description: "Ta med deg skjønnheten og sannheten fra bibelen inn i hverdagen din. Med Bibel-appen fra YouVersion kan du lese, se, lytte og dele på din smartelefon eller nettbrett, og på Internett på Bible.com/no"
     connections:
       index:
         title: "Tilknyttede kontoer"
@@ -206,7 +210,7 @@
     friendship:
       now friends: "Du er nå venn med"
     cta:
-      profile update text: "Hjelp dine venner å finne deg."
+      profile update text: "Hjelp dine venner til å finne deg."
       profile update button: "Oppdater din profil"
       sharing text: "Del vers med sosiale nettverk"
       sharing button: "Aktiver deling"
@@ -214,6 +218,7 @@
       friends button: "Finn venner"
     action:
       go to scripture: "Gå til skriftsted"
+      add friend button: "Legg til venn"
       load more: "Last inn flere"
       like: "Liker"
       liked: "Liker"
@@ -232,13 +237,18 @@
       delete highlight title: "Slett denne markeringen"
       delete bookmark title: "Slett dette bokmerket"
       delete note title: "Slett dette notatet"
+      more: "Mer"
+      read in bible: "Les i Bibelen"
+      read plan: "Les"
+      about plan: "Om denne leseplanen"
+      start plan: "Start leseplan"
   notifications:
     title: "Varslinger"
     none: "Du har ingen varslinger"
-    no new: "Ingen nye varsler"
+    no new: "Ingen nye varslinger"
     view all: "Se alle varslinger"
   likes:
-    create success: "Suksess! Ditt liker har blitt lagret"
+    create success: "Suksess! Ditt \"liker\" har blitt lagret"
     create failure: "Ditt \"liker\" kunne ikke bli lagret"
     destroy success: "\"Liker\" er slettet"
     destroy failure: "Ditt \"liker\" kunne ikke slettes"
@@ -261,6 +271,7 @@
     limit notice: "Du kan ha inntil 150 venner"
     limit description: "Når du begrenser dine venner i Bibel-appen til kun de som du kjenner godt, gir det grobunn for ærlig samtale og oppdagelser sammen med venner du stoler på."
   friendships:
+    name required: "For å oppleve Bibelen sammen med venner, oppdater profilen din med fornavn og etternavn."
     find friends title: "Finn venner"
     search by name: "Søk etter navn"
     search button: "Gå"
@@ -287,6 +298,7 @@
       remove friend button: "Fjern som venn"
       remove friend button title: "Fjern denne personen fra vennelisten din"
       add friend button: "Legg til venn"
+      add friend button short: "Legg til"
       add friend button title: "Send %{user} en venneforespørsel"
       accept button: "Godta"
       accept request button: "Godta forespørsel"
@@ -632,7 +644,7 @@
       readings 5 or more: "tekster"
     settings: "Innstillinger"
     privacy:
-      visible to friends?: "Ønsker du at dine venner skal kunne se din aktivitet i denne leseplanen? "
+      visible to friends?: "Vil du at dine venner skal se leseplanaktivitetene dine?"
       private: "Privat"
       public: "Offentlig"
     title: "Leseplaner"
@@ -668,14 +680,14 @@
     search: "Søk"
     search placeholder: "Søk planer for %{category}"
     subscribe to plan: "Start denne planen"
-    previous day: "Forrige dag"
-    next day: "Neste dag"
+    previous day: "FORRIGE DAG"
+    next day: "NESTE DAG"
     reading completed _ mark and show next: "Neste: %{next_reference}"
     which reading: "%{current} av %{total}"
     done reading: "Ferdig"
     no verses: "Ingen bibelvers for i dag"
     no content: "Planen din har ingen skriftsteder for denne dagen, så den er markert som fullført."
-    read today: "Dagens lesning"
+    read today: "Dagens lesing"
     devotional: "Andakt"
     completion status _ below percentage: "Fullført"
     current progress html: "Dag <b>%{day}</b> av <b>%{total_days}</b>"
@@ -688,9 +700,11 @@
     catch me up: "Oppdater meg"
     restart description: "Du kan starte din leseplan på nytt. All din lesehistorikk og -fremgang vil da bli nullstilt og starter fra begynnelsen."
     restart: "Start planen på nytt"
-    privacy description: "Det er ditt valg. Ønsker du at folk skal se at du leser denne planen?"
-    make private: "Hold privat"
-    make public: "Offentliggjør"
+    privacy description:
+      private: "Din leseplan er privat. Endre innstillingene til \"Bare venner\" for å dele dine leseplan-aktiviteter med dine venner."
+      public: "Din leseplan er synlig for vennene dine. Endre innstillingene til \"privat\" for å gjøre leseplanen privat."
+    make private: "Gjør privat"
+    make public: "Del med venner"
     privacy title: "Personvern"
     stop reading: "Avslutt lesing av denne planen"
     accountability: "Ansvarliggjøring"
@@ -1004,6 +1018,9 @@
     characters remaining: "tegn igjen"
     yes button: "Ja"
     no button: "Nei"
+    cancel: "Avbryt"
+    plans:
+      privacy: "Ønsker du at dine venner skal kunne se din aktivitet i denne leseplanen? "
     loading indicator text: "Laster..."
     loading: "Laster"
     pagination:

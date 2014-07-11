@@ -11,7 +11,7 @@ es:
         user andy: "Andy Knight"
         timestamp: "Hace 5 días"
         title: "Salmo 31:7 marcado"
-        verse: "Me alegro y me regocijo en tu amor, porque tú has visto mi aflicción y conoces las angustias de mi alma."
+        verse: "Me gozaré y alegraré en tu misericordia, porque has visto mi aflicción; has conocido mi alma en las angustias.\n "
         reference: "Salmo 31:7"
         discover:
           copy: "Descubra y aprenda con sus amigos mientras ellos agregan resaltados, marcadores y notas."
@@ -36,6 +36,7 @@ es:
       read all: "Leer todo"
       read less: "Leer menos"
     share: "Compartir"
+    add comment: "Añadir comentario"
     my connections: "Cuentas Conectadas"
     connected as: "Está conectado a %{connection} como %{username}."
     remove connection: "Eliminar esta conexión."
@@ -73,13 +74,16 @@ es:
   meta:
     kids_app:
       title: "La Biblia App para Niños"
-      description: "La aplicacion de La Biblia para Niños será lanzada el 28 de Noviembre, Día de Acción de Gracias! Historias interactivas de La Biblia en una aplicación gratuita para iOS y Android. Mire un avance en bible.com/kids"
+      description: "La Biblia App para Niños es una gran manera para que sus hijos aprendan las historias bíblicas sobre Jesus, nuestro regalo de vida eterna, y las muchas lecciones que Dios nos enseña. En esta experiencia interactiva, los niños se conectan directamente con la Palabra de Dios con  hermosas imágenes, mientras que obtienen puntos por leer y reunir tesoros. "
     100million:
       title: "Inicia con 100 Millones"
       description: "La Biblia App ha sido instalada casi 100 millones de veces – ¡Un increíble logro!  Pero sólo estamos iniciando.  Descargue gratuitamente la Biblia App hoy – y luego comparta la App con sus amigos.  Hagamos historia juntos."
     mobile:
       title: "La Biblia App"
-      description: "Decenas de millones de personas utilizan la Biblia App para leer, escuchar, ver y compartir la Palabra de Dios, haciéndola parte de sus vidas diarias.  Descargue la App gratuita y acceda a sus marcadores, notas, y planes de lectura desde cualquier lugar.  Disfrute cientos de versiones, incluyendo audio, todo desde su dispositivo móvil."
+      description: "Lea la Palabra de Dios, en cualquier hora y en cualquier lugar utilizando la Biblia App de YouVersion. Comparta la Escritura con amigos, resalte y marque pasajes y cree un hábito de lectura diaria con los planes de lectura. Disponible para iOS, Android, Blackberry, Windows Phone y más."
+    site:
+      title: "Bible.com/es"
+      description: "Lleve la belleza y la verdad de la Biblia a su vida diaria. Con la Biblia App de YouVersion, usted puede leer, observar, escuchar y compartir en su teléfono inteligente o tableta, y en línea en Bible.com/es."
     connections:
       index:
         title: "Cuentas Conectadas"
@@ -191,8 +195,8 @@ es:
     upper: "O"
   moments:
     scripture unavailable: "Escritura no disponible"
-    could not load: "No pudo cargar"
-    could not load verse: "No pudo cargar el verso"
+    could not load: "No pudo cargarse"
+    could not load verse: "No pudo cargar el versículo"
     showing related: "Mostrar momentos relacionados"
     return to: "Regresar a"
     time past: "hace %{ago}"
@@ -214,6 +218,7 @@ es:
       friends button: "Encontrar amigos"
     action:
       go to scripture: "Ir a las Escrituras"
+      add friend button: "Agregar amigo"
       load more: "Cargar más"
       like: "Me gusta"
       liked: "Marcada como Me Gusta"
@@ -232,6 +237,11 @@ es:
       delete highlight title: "Eliminar este resaltado"
       delete bookmark title: "Borrar este marcador"
       delete note title: "Eliminar esta nota"
+      more: "Más"
+      read in bible: "Leer en la Biblia"
+      read plan: "Leer"
+      about plan: "Acerca del plan"
+      start plan: "Comenzar plan"
   notifications:
     title: "Notificaciones"
     none: "No tiene ninguna notificación"
@@ -261,6 +271,7 @@ es:
     limit notice: "Puede tener hasta 150 amigos"
     limit description: "Definir su grupo de amistades en la Biblia App a las personas que conoce bien, propicia un ambiente de conversaciones francas, compartiendo descubrimientos con amigos de confianza."
   friendships:
+    name required: "Para experimentar la Biblia con sus amigos, actualice el nombre y apellido en su perfil."
     find friends title: "Encontrar amigos"
     search by name: "Buscar por nombre"
     search button: "Ir"
@@ -287,6 +298,7 @@ es:
       remove friend button: "Eliminar amigo"
       remove friend button title: "Remover esta persona de su lista de amigos"
       add friend button: "Agregar amigo"
+      add friend button short: "Añadir"
       add friend button title: "Enviar a %{user} solicitud de amistad"
       accept button: "Aceptar"
       accept request button: "Aceptar solicitud"
@@ -552,7 +564,7 @@ es:
       transfer_too_slow: "Elige una imagen más pequeña o busca una conexión más rápida"
       picture_invalid_type: "Las imágenes deben estar en formato JPG, PNG o GIF"
       picture_creation form errors: "El (Los) siguiente(s) error(es) impidió/impidieron la actualización de su foto:"
-      updated picture: "Felicidades! Ha actualizado su foto de perfil. Puede tomar varios minutos actualizarse."
+      updated picture: "¡Felicidades! Ha actualizado su foto de perfil. Puede tardar varios minutos para  actualizarse."
       updated notifications: "¡Usted ha actualizado la configuración de sus notificaciones exitosamente!"
       notifications token error: "Elemento inválido, por favor ingrese para editar la configuración de sus notificaciones."
       notification errors: "El ( los) siguiente (s) error (es) impidió la actualización de sus notificaciones:"
@@ -632,7 +644,7 @@ es:
       readings 5 or more: "lecturas"
     settings: "Configuración"
     privacy:
-      visible to friends?: "¿Le gustaría que su actividad en este plan sea visible a sus amigos?"
+      visible to friends?: "¿Desea que sus amigos vean la actividad de su Plan? "
       private: "Privado"
       public: "Público"
     title: "Planes de Lectura"
@@ -669,7 +681,7 @@ es:
     search placeholder: "Buscar Planes de %{category} "
     subscribe to plan: "Comenzar Este Plan"
     previous day: "Día Anterior"
-    next day: "Día Siguiente"
+    next day: "Día siguiente"
     reading completed _ mark and show next: "Siguiente: %{next_reference}"
     which reading: "%{current} de %{total}"
     done reading: "Hecho"
@@ -688,9 +700,11 @@ es:
     catch me up: "Ponerme al día"
     restart description: "Usted puede volver a comenzar su plan. Toda su historia de lectura y su progreso se reestablecerán y comenzarán desde el principio."
     restart: "Reiniciar el Plan"
-    privacy description: "Es su opción. ¿Quiere que la gente vea que usted está leyendo este plan?"
-    make private: "Hacer Privado"
-    make public: "Hacer Público"
+    privacy description:
+      private: "Su Plan es Privado. Cambie sus ajustes a Sólo Amigos para que pueda compartir Su Actividad con sus amigos."
+      public: "Su Plan es visible para los amigos. Cambie el ajuste a Privado para hacer secreto su actividad."
+    make private: "Hágalo privado"
+    make public: "Compartir con Amigos"
     privacy title: "Privacidad"
     stop reading: "Detener la Lectura de Este Plan"
     accountability: "Responsabilidad"
@@ -1004,6 +1018,9 @@ es:
     characters remaining: "caracteres restantes"
     yes button: "Sí."
     no button: "No"
+    cancel: "Cancelar"
+    plans:
+      privacy: "¿Le gustaría que su actividad en este plan sea visible por sus amigos?"
     loading indicator text: "Cargando..."
     loading: "Cargando"
     pagination:

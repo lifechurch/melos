@@ -36,6 +36,7 @@ ja:
       read all: "全て読む"
       read less: "閲覧範囲を縮小"
     share: "シェア"
+    add comment: "コメントを加える"
     my connections: "連携済みアカウント"
     connected as: "%{username} として %{connection} に連携されました。"
     remove connection: "この連携を削除する"
@@ -73,13 +74,13 @@ ja:
   meta:
     kids_app:
       title: "子ども用聖書アプリ"
-      description: "子ども用聖書アプリがサンクスギビング・デーの11月28日にスタートします！iOSとアンドロイド用の、聖書物語の無料アプリです。予告をbible.com/kidsでご覧ください。"
     100million:
       title: "1億人から始まります。"
       description: "聖書アプリのダウンロード件数、１億達成という素晴らしい節目に近付いています。でも、これもほんの始まりにすぎません。無料の聖書アプリを今すぐダウンロードして、お友達にもシェアしましょう。共に歴史を塗り替えましょう。"
     mobile:
       title: "聖書アプリ"
-      description: "何千万というユーザーが聖書を読んだり、聞いたり、観たり、神様の御言葉をシェアして、生活の一環として聖書アプリを利用しています。ダウンロードして、ブックマーク、ノート、読書プランに、どこからでもアクセスできるように、無料の聖書アプリをダウンロードしましょう。様々な聖書訳や、音読聖書を携帯機器からご利用いただけます。"
+    site:
+      title: "Bible.com"
     connections:
       index:
         title: "連携済みアカウント"
@@ -197,14 +198,14 @@ ja:
     return to: "戻る"
     time past: "%{ago} 前"
     user likes this: "%{last_liker_link} さんのお気に入りです"
-    likes count more: "%{likes_count} 回多く"
-    likes count 2 more: "%{likes_count} 回多く"
-    likes count 3 or more: "%{likes_count} 回多く"
-    users like this: "%{last_liker_link}さんと%{more_link} さんのお気に入り"
+    likes count more: "他に%{likes_count}人 "
+    likes count 2 more: "他に%{likes_count}人 "
+    likes count 3 or more: "他に%{likes_count}人 "
+    users like this: "%{last_liker_link}さんと%{more_link} がいいね！しました。"
     vod:
       title: "本日の聖句"
     friendship:
-      now friends: "さんと友達になりました"
+      now friends: " お友達になりました"
     cta:
       profile update text: "友達があなたを見つけるのを手伝う"
       profile update button: "プロフィールの更新"
@@ -214,6 +215,7 @@ ja:
       friends button: "友だちを探す"
     action:
       go to scripture: "聖句を見る"
+      add friend button: "友達に追加"
       load more: "さらに読み込む"
       like: "いいね！"
       liked: "いいね！済み"
@@ -232,6 +234,11 @@ ja:
       delete highlight title: "このハイライトを削除する"
       delete bookmark title: "このブックマークを削除する"
       delete note title: "このノートを削除する"
+      more: "さらに"
+      read in bible: "聖書を読む"
+      read plan: "読む"
+      about plan: "この読書プランについて"
+      start plan: "この読書プランを開始する"
   notifications:
     title: "通知"
     none: "通知はありません"
@@ -261,6 +268,7 @@ ja:
     limit notice: "友達を最大150人まで登録できます"
     limit description: "聖書アプリでの友達をよく知っている相手に限定することで、本音で会話でき、新しく発見したことをシェアできる環境を作ることができます。"
   friendships:
+    name required: "友だちと一緒に聖書アプリを楽しむには、プロフィールに姓名を登録してください。"
     find friends title: "友だちを探す"
     search by name: "名前で検索"
     search button: "検索"
@@ -287,6 +295,7 @@ ja:
       remove friend button: "友達を削除する"
       remove friend button title: "この人を友達リストから削除する"
       add friend button: "友達に追加"
+      add friend button short: "追加"
       add friend button title: " %{user} さんに友達申請を送信する"
       accept button: "承認"
       accept request button: "申請を承認する"
@@ -632,7 +641,7 @@ ja:
       readings 5 or more: "読書"
     settings: "設定"
     privacy:
-      visible to friends?: "このプランでのあなたのアクティビティを友達に公開しますか？"
+      visible to friends?: "この読書プランでのアクティビティを、友だちから見えるようにしたいですか？"
       private: "非公開"
       public: "公開"
     title: "読書プラン"
@@ -669,7 +678,7 @@ ja:
     search placeholder: "%{category}プラン内を検索"
     subscribe to plan: "このプランを開始"
     previous day: "前日"
-    next day: "次の日"
+    next day: "翌日"
     reading completed _ mark and show next: "次: %{next_reference}"
     which reading: "%{total} 箇所中の%{current} 箇所"
     done reading: "完了"
@@ -688,9 +697,11 @@ ja:
     catch me up: "遅れを取り戻す"
     restart description: "プランを再スタートできます。読書暦・記録は全て消去され、最初からのスタートとなります。"
     restart: "プランを再スタート"
-    privacy description: "このプランを利用していることを公開しますか？"
-    make private: "非公開にする"
-    make public: "公開する"
+    privacy description:
+      private: "あなたの読書プランは非公開です。「友達のみに公開」に変更すると、読書プランのアクティビティを友達とシェアできます。"
+      public: "あなたの読書プランは友達に公開されています。「非公開」に変更すると、読書プランのアクティビティを非公開にできます。"
+    make private: "非公開設定にする"
+    make public: "友達にシェアする"
     privacy title: "プライバシー"
     stop reading: "このプランの利用を中止"
     accountability: "アカウンタビリティ"
@@ -1004,6 +1015,9 @@ ja:
     characters remaining: "残り文字数"
     yes button: "はい"
     no button: "いいえ"
+    cancel: "キャンセル"
+    plans:
+      privacy: "このプランでのあなたのアクティビティを友達に公開しますか？"
     loading indicator text: "読み込み中…"
     loading: "読み込み中"
     pagination:

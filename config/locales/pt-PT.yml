@@ -36,6 +36,7 @@ pt-PT:
       read all: "Ler tudo"
       read less: "Ler menos"
     share: "Partilhar"
+    add comment: "Adicionar um comentário"
     my connections: "Contas Associadas"
     connected as: "Está associado ao %{connection} como %{username}."
     remove connection: "Remova esta conexão "
@@ -73,13 +74,16 @@ pt-PT:
   meta:
     kids_app:
       title: "A App da Bíblia para crianças"
-      description: "A App da Bíblia para Crianças é lançada no dia 28 de Novembro, Dia de Ação de Graças! Histórias da Bíblia interativas numa app gratuita para iOS e Android. Veja uma apresentação em bible.com/kids"
+      description: "A App da Bíblia para a crianças é uma ótima maneira dos seus filhos aprenderem as histórias bíblicas sobre Jesus, o nosso dom da vida eterna e as muitas lições que Deus nos ensina. Nesta experiência interativa, as crianças tomam contacto com a Palavra de Deus através de imagens apelativas, ao mesmo tempo que ganham pontos por ler e colecionam tesouros."
     100million:
       title: "Tem Início nos 100 Milhões"
       description: "A App da Bíblia já foi instalada quase 100 milhões de vezes - um marco incrível! Mas estamos apenas a começar. Descarregue a App da Bíblia grátis - e depois partilhe-a com os seus amigos. Vamos fazer história juntos."
     mobile:
       title: "A App da Bíblia"
-      description: "Dezenas de milhões de pessoas estão a usar a App da Bóblia para ler, escutar, ver e partilhar a Palavra de Deus, fazendo dessas atividades uma parte integrante do seu dia a dia. Descarregue esta app grátis e aceda aos seus marcadores, notas e planos de leitura em qualquer lugar. Desfrute de centenas de versões, áudio incluído, tudo no seu dispositivo móvel."
+      description: "Leia a Palavra de Deus em qualquer altura e lugar usando a App da Bíblia do YouVersion. Partilhe a Escritura com amigos, destaque e coloque marcadores em passagens, e crie um hábito diário com os planos da Bíblia. Disponível para iOS, Android, Blackberry, Windows Phone e mais."
+    site:
+      title: "Bible.com"
+      description: "Traga a beleza e verdade da Bíblia para a sua vida quotidiana. Com a App da Bíblia do YouVersion, pode ler, ver, ouvir e partilhar no seu smartphone ou tablet e também online no Bible.com."
     connections:
       index:
         title: "Contas Associadas"
@@ -214,6 +218,7 @@ pt-PT:
       friends button: "Encontre amigos"
     action:
       go to scripture: "Ir para as Escrituras"
+      add friend button: "Adicionar amigo"
       load more: "Carregar mais"
       like: "Gosto"
       liked: "Gosto Adicionado"
@@ -232,6 +237,11 @@ pt-PT:
       delete highlight title: "Apagar este destaque"
       delete bookmark title: "Apagar este marcador"
       delete note title: "Apagar esta nota"
+      more: "Mais"
+      read in bible: "Ler na Bíblia"
+      read plan: "Ler"
+      about plan: "Sobre o plano"
+      start plan: "Iniciar plano"
   notifications:
     title: "Notificações"
     none: "Ainda não tem nenhuma notificação"
@@ -261,6 +271,7 @@ pt-PT:
     limit notice: "Pode ter no máximo 150 amizades"
     limit description: "Limitar as suas amizades na App da Bíblia às pessoas que conhece bem cria um ambiente para conversas honestas e partilha de descobertas com amigos de confiança."
   friendships:
+    name required: "Para experimentar a Bíblia com os seus amigos, atualize o seu Perfil com o seu primeiro e último nome."
     find friends title: "Encontre amigos"
     search by name: "Procurar por nome"
     search button: "Ir"
@@ -287,6 +298,7 @@ pt-PT:
       remove friend button: "Eliminar amizade"
       remove friend button title: "Eliminar esta pessoa da sua lista de amizades"
       add friend button: "Adicionar amigo"
+      add friend button short: "Adicionar"
       add friend button title: "Enviar a %{user} o pedido de amizade"
       accept button: "Aceitar"
       accept request button: "Aceitar pedido"
@@ -632,7 +644,7 @@ pt-PT:
       readings 5 or more: "pessoas a ler"
     settings: "Definições"
     privacy:
-      visible to friends?: "Gostaria que a sua atividade com este plano fosse visível para os seus amigos?"
+      visible to friends?: "Deseja que os seus amigos vejam a sua atividade dos Planos?"
       private: "Privado"
       public: "Público"
     title: "Planos de Leitura"
@@ -668,8 +680,8 @@ pt-PT:
     search: "Procurar"
     search placeholder: "Procurar Planos Na Categoria %{category}"
     subscribe to plan: "Iniciar Este Plano"
-    previous day: "Dia Anterior"
-    next day: "Próximo Dia"
+    previous day: "DIA ANT"
+    next day: "DIA SEG"
     reading completed _ mark and show next: "A Seguir: %{next_reference}"
     which reading: "%{current} de %{total}"
     done reading: "Concluído"
@@ -688,9 +700,11 @@ pt-PT:
     catch me up: "Ficar em Dia"
     restart description: "Pode recomeçar o seu plano. O historial de leitura e progresso será apagado e voltará ao inicio."
     restart: "Recomeçar Plano"
-    privacy description: "A escolha é sua. Deseja que outros saibam que se encontra a ler este plano?"
-    make private: "Tornar Privado"
-    make public: "Tornar Público"
+    privacy description:
+      private: "O seu plano é privado. Mude a sua definição para \"Apenas amigos\" para partilhar a atividade do seu plano com amigos."
+      public: "O seu plano é visível pelos amigos. Mude para privado para tornar a atividade do seu plano privada."
+    make private: "Marcar como Privado"
+    make public: "Partilhe com Amigos"
     privacy title: "Privacidade"
     stop reading: "Parar a leitura deste Plano"
     accountability: "Responsabilização"
@@ -1004,6 +1018,9 @@ pt-PT:
     characters remaining: "caracteres restantes"
     yes button: "Sim"
     no button: "Não"
+    cancel: "Cancelar"
+    plans:
+      privacy: "Gostaria que a sua atividade neste plano fosse visível para os seus amigos?"
     loading indicator text: "A carregar..."
     loading: "A carregar"
     pagination:
