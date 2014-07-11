@@ -1,4 +1,7 @@
 pl:
+  time:
+    formats:
+      votd: "%-d %B, %Y"
   social:
     intro page:
       main heading: "Rozmowa i Odkrycia"
@@ -33,6 +36,7 @@ pl:
       read all: "Czytaj wszystkie"
       read less: "Widok skrócony"
     share: "Podziel się"
+    add comment: "Dodaj komentarz"
     my connections: "Połączone konta"
     connected as: "Jesteś podłączony do serwisu %{connection} jako %{username}."
     remove connection: "Usuń to połączenie"
@@ -70,13 +74,13 @@ pl:
   meta:
     kids_app:
       title: "Aplikacja Biblii dla dzieci"
-      description: "Aplikacja Biblii dla dzieci startuje 28 listopada, w Dzień Dziękczynienia! Interaktywne historie Biblijne w darmowej aplikacji na iOS i Androida. Zobacz podgląd na stronie bible.com/kids"
     100million:
       title: "Zaczyna się od 100 milionów"
       description: "Aplikacja Biblii została zainstalowana prawie 100 milionów razy - niesamowity moment! Ale dopiero zaczynamy! Pobierz dzisiaj darmową Aplikację Biblii - a potem podziel się aplikacją ze znajomymi. Twórzmy razem historię!"
     mobile:
       title: "Aplikacja Biblii"
-      description: "Dziesiątki milionów ludzi używają Aplikacji Biblii do czytania, słuchania, oglądania i udostępniania Słowa Bożego, czyniąc je częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania z dowolnego miejsca. Ciesz się setkami przekładów i wersjami audio - dostępnymi na twoim urządzeniu."
+    site:
+      title: "Bible.com"
     connections:
       index:
         title: "Połączone konta"
@@ -187,7 +191,17 @@ pl:
     lower: "lub"
     upper: "LUB"
   moments:
+    scripture unavailable: "Pismo Święte niedostępne."
+    could not load: "Nie załadowano"
+    could not load verse: "Nie załadowano wersetu"
+    showing related: "Pokazywanie powiązanych momentów"
     return to: "Powróć do"
+    time past: "%{ago} temu"
+    user likes this: "%{last_liker_link} lubi to"
+    likes count more: "%{likes_count} więcej"
+    likes count 2 more: "%{likes_count} więcej"
+    likes count 3 or more: "%{likes_count} więcej"
+    users like this: "%{last_liker_link} i %{more_link} lubi to"
     vod:
       title: "Werset dnia"
     friendship:
@@ -201,6 +215,7 @@ pl:
       friends button: "Znajdź znajomych"
     action:
       go to scripture: "Przejdź do Pisma"
+      add friend button: "Dodaj znajomego"
       load more: "Załaduj więcej"
       like: "Lubię to"
       liked: "Lubisz"
@@ -219,6 +234,11 @@ pl:
       delete highlight title: "Usuń to zakreślenie"
       delete bookmark title: "Usuń tą zakładkę"
       delete note title: "Usuń tę notatkę"
+      more: "Więcej"
+      read in bible: "Czytaj w Biblii"
+      read plan: "Czytaj"
+      about plan: "O planie"
+      start plan: "Rozpocznij plan"
   notifications:
     title: "Powiadomienia"
     none: "Nie masz żadnych powiadomień"
@@ -248,6 +268,7 @@ pl:
     limit notice: "Możesz mieć nawet 150 znajomych"
     limit description: "Ograniczając swoją znajomość w Aplikacji Biblii do osób, które dobrze znasz, tworzysz w ten sposób warunki do uczciwej rozmowy i dzielenia się swoimi odkryciami."
   friendships:
+    name required: "Aby poznawać Biblię ze znajomymi, zaktualizuj swój profil podając imię i nazwisko."
     find friends title: "Znajdź znajomych"
     search by name: "Szukaj wg nazwy"
     search button: "Idź"
@@ -274,6 +295,7 @@ pl:
       remove friend button: "Usuń znajomego"
       remove friend button title: "Usuń tę osobę ze swojej listy znajomych"
       add friend button: "Dodaj znajomego"
+      add friend button short: "Dodaj"
       add friend button title: "Wyślij %{user} zaproszenie do znajomych"
       accept button: "Zaakceptuj"
       accept request button: "Zaakceptuj zaproszenie"
@@ -539,6 +561,7 @@ pl:
       transfer_too_slow: "Wybierz mniejsze zdjęcie lub znajdź szybsze połączenie"
       picture_invalid_type: "Format obrazka to JPG, PNG lub GIF"
       picture_creation form errors: "Poniższy błąd lub błędy nie pozwoliły na aktualizację:"
+      updated picture: "Sukces! Zaktualizowałeś obrazek.  Może jednak minąć kilka minut zanim avatar zostanie zmieniony."
       updated notifications: "Zaktualizowałeś swoje ustawienia powiadomień."
       notifications token error: "Nieprawidłowy token, zaloguj się, aby zmienić ustawienia powiadomień."
       notification errors: "Poniższe błędy uniemożliwiły aktualizację twoich powiadomień:"
@@ -613,9 +636,12 @@ pl:
       view my plans: "Pokaż moje plany"
       featured plans: "Wyszczególnione plany"
       view all plans: "Pokaż wszystkie plany"
+      reading: "fragment"
+      readings: "fragmenty"
+      readings 5 or more: "fragmentów"
     settings: "Ustawienia"
     privacy:
-      visible to friends?: "Czy chcesz, aby twoja aktywność w tym planie była widoczna dla znajomych?"
+      visible to friends?: "Czy chcesz aby twoi znajomi widzieli twoją aktywność czytania planów?"
       private: "Prywatne"
       public: "Publiczne"
     title: "Plany czytania"
@@ -658,6 +684,7 @@ pl:
     done reading: "Wykonane"
     no verses: "Brak wersetów na dzisiaj"
     no content: "Twój plan nie ma zadań zaplanowanych na ten dzień i dlatego został oznaczony jako ukończony."
+    read today: "Dzisiejszy fragment"
     devotional: "Rozważania"
     completion status _ below percentage: "Ukończony"
     current progress html: "Dzień <b>%{day}</b> z <b>%{total_days}</b>"
@@ -670,9 +697,11 @@ pl:
     catch me up: "Podążaj za mną"
     restart description: "Możesz rozpocząć swój plan od nowa. Cała twoja obecna historia i postęp zostaną zresetowane a ty będziesz mógł wrócić do początku."
     restart: "Rozpocznij plan od nowa"
-    privacy description: "Wybór należy do ciebie. Czy chcesz, aby inni widzieli, że korzystasz z tego planu?"
-    make private: "Uczyń prywatnym"
-    make public: "Uczyń publicznym"
+    privacy description:
+      private: "Twój plan jest prywatny. Zmień swoje ustawienia na tylko dla znajomych, aby podzielić się aktywnością ze znajomymi."
+      public: "Twój plan jest widoczny dla znajomych. Przełącz go na tryb prywatny, aby zachować prywatność aktywności. "
+    make private: "Ustaw na prywatne"
+    make public: "Dziel się ze znajomymi"
     privacy title: "Prywatność"
     stop reading: "Zatrzymaj czytanie planu"
     accountability: "Odpowiedzialność"
@@ -983,9 +1012,14 @@ pl:
         tagline: "Twórzmy razem historię"
         button: "Udostępnij Aplikację Biblii"
   ui:
+    characters remaining: "pozostałych znaków"
     yes button: "Tak"
     no button: "Nie"
+    cancel: "Anuluj"
+    plans:
+      privacy: "Czy chcesz, aby twoja aktywność w tym planie była widoczna dla znajomych?"
     loading indicator text: "Ładowanie..."
+    loading: "Ładowanie"
     pagination:
       next page: "Następna strona"
       previous page: "Poprzednia strona"

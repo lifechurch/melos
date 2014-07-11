@@ -36,6 +36,7 @@ hi:
       read all: "समस्त पढ़े "
       read less: "कम पढ़े "
     share: "शेयर"
+    add comment: "कमेंट जोड़िये "
     my connections: "कनेक्टेड अकाउंट"
     connected as: "आप %{connection} से %{username}द्वारा कनेक्टड हैं| "
     remove connection: "यह कनेक्शन हटाइए "
@@ -73,13 +74,14 @@ hi:
   meta:
     kids_app:
       title: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App "
-      description: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App 28 नवंबर 2013 से प्रक्षेपित किया गया हैं। इंटरएक्टिव बाइबिल की कहानीयाँ निःशुल्क IOS और एंड्राइड App पर उपलब्ध हैं। पूर्वालोकन bible.com/kids पर देखे। "
     100million:
       title: "100 मिलियन से शुभारंभ हुआ। "
       description: "100 मिलियन से अधिक इन्स्टाल के साथ एक नया कीर्तिमान रचित हुआ। यह मात्र शुरुआत हैं। निशुल्क बाइबिल App आज ही डाउनलोड कर अपने  मित्रों के  साथ शेयर करे। आओ हम साथ मिलकर इतिहास की रचना करे। "
     mobile:
       title: "बाइबिल App"
-      description: "लाखों,करोड़ों लोगों द्वारा उपयुक्त इस बाइबिल App को अपने नित्य जीवन का अंग बनाये और प्रभु के वचन का अध्ययन करे।निशुल्क बाइबिल App   डाउनलोड करें, और बुकमार्क्स, टिप्पणी, पाठक योजना दुनिया भर में कहीं से भी ऐक्सेस करे।"
+    site:
+      title: "Bible.com"
+      description: "बाइबिल की सुंदरता और सच्चाई को अपने नित्य जीवन का हिस्सा बनाए। YouVersion बाइबिल App के साथ पढ़े,देखे,सुने और शेयर करे अपने स्मार्टफोन या टेबलेट पर, यह Bible.com पर ऑनलाइन उपलब्ध हैं। "
     connections:
       index:
         title: "कनेक्टेड अकाउंट"
@@ -214,6 +216,7 @@ hi:
       friends button: "मित्रों को खोजे"
     action:
       go to scripture: "सीधा वचनों पर जाइए "
+      add friend button: "मित्र बनाए "
       load more: "अधिक लोड करे "
       like: "पसंद करे "
       liked: "पसंदित"
@@ -232,6 +235,11 @@ hi:
       delete highlight title: "यह हाईलाइट डिलीट करे "
       delete bookmark title: "यह नोट बुकमार्क करे "
       delete note title: "यह नोट डिलीट करे "
+      more: "और अधिक "
+      read in bible: "बाइबिल अध्ययन करे "
+      read plan: "पढ़िए "
+      about plan: "योजना विवरण "
+      start plan: "योजना शुरू करे "
   notifications:
     title: "अधिसूचनाऍ"
     none: "आप के लिए कोई अधिसूचनाएँ नहीं हैं"
@@ -261,6 +269,7 @@ hi:
     limit notice: "अधिकतम मित्र 150 "
     limit description: "बाइबिल App मित्रता अपने जाने पहचाने मित्रों के मध्य सीमित रखने से बाइबिल के बारे में खरा संवाद एवं उसके अध्ययन नए दृष्टिकोण के साथ करने का माहौल बनाया जा सकता हैं। "
   friendships:
+    name required: "मित्रों के संग बाइबिल अध्ययन हेतु ,प्रोफाइल में अपना नाम और आखरी नाम अपडेट करे। "
     find friends title: "मित्रों को खोजे"
     search by name: "नाम के क्रम में खोजे "
     search button: "गो "
@@ -287,6 +296,7 @@ hi:
       remove friend button: "मित्र को हटाइए "
       remove friend button title: "इस व्यक्ति को अपने मित्रता लिस्ट से हटाए "
       add friend button: "मित्र बनाए "
+      add friend button short: "जोड़े "
       add friend button title: "%{user} को मित्र अनुरोध भेजे "
       accept button: "सहमत होना"
       accept request button: "मित्रता कबूल करे "
@@ -632,7 +642,7 @@ hi:
       readings 5 or more: "अध्ययन "
     settings: "सेटिंग्स"
     privacy:
-      visible to friends?: "इस पाठक योजना के साथ अपनी गतिविधि मित्रों के बीच प्रत्य्क्ष करना चाहते हैं?"
+      visible to friends?: "क्या आप इस पाठक योजना के साथ अपनी गतिविधि मित्रों के बीच प्रत्य्क्ष करना चाहते हैं?"
       private: "निजी "
       public: "सार्वजनिक "
     title: "पाठक योजनाएँ  "
@@ -668,8 +678,8 @@ hi:
     search: "अन्वेषण"
     search placeholder: "सर्च %{category} योजनाऍ "
     subscribe to plan: "इस पाठक योजना को शुरू करें"
-    previous day: "पिछला दिन"
-    next day: "अगला दिन"
+    previous day: "पिछला दिन "
+    next day: "अगला दिवस "
     reading completed _ mark and show next: "अगला:%{next_reference}"
     which reading: "%{total} में से%{current}"
     done reading: "Done "
@@ -688,9 +698,11 @@ hi:
     catch me up: "योजना पुन: मेरे गिरफ्त करे "
     restart description: "YouVersion पाठक योजना आप पुनः आरंभ कर सकते हैं। योजना के प्रारंभ से शुरुआत कीजिए,आपका अध्ययन इतिहास और योजना में प्रगति भी रीसेट की जाएगी।"
     restart: "पाठक योजना पुनः आरंभ करे "
-    privacy description: "क्या आप चाहते की दूसरे पाठक आपके द्वारा उपयोगित योजना को देखे?"
-    make private: "नीजी कीजिए "
-    make public: "सार्वजनिक कीजिए "
+    privacy description:
+      private: "यह पाठक योजना का सेटिंग नीजी हैं। इसे अपने मित्रों के साथ शेयर करने के लिए सेटिंग में मित्र चुने। "
+      public: "आपका पाठक योजना मित्रों के द्वारा देखा जा सकता हैं। यदि आप योजना गतिविधियों को नीजी रखना चाहते हैं,कृपया सेटिंग में निजी चुने। "
+    make private: "प्राइवेट सेटिंग करे "
+    make public: "मित्रों के साथ शेयर करे "
     privacy title: "गोपनीयता"
     stop reading: "इस पाठक योजना को निरस्त करें"
     accountability: "जवाबदार "
@@ -1004,6 +1016,9 @@ hi:
     characters remaining: "बाकी अक्षर "
     yes button: "हाँ"
     no button: "नहीं "
+    cancel: "रद्द करें "
+    plans:
+      privacy: "इस पाठक योजना के साथ अपनी गतिविधि मित्रों के बीच प्रत्य्क्ष करना चाहते हैं?"
     loading indicator text: "लोडिंग......"
     loading: "लोडिंग "
     pagination:

@@ -36,6 +36,7 @@ da:
       read all: "Læs det hele"
       read less: "Læs mindre"
     share: "Del"
+    add comment: "Tilføj en kommentar"
     my connections: "Forbundne konti"
     connected as: "Du er forbundet til  %{connection} som %{username}."
     remove connection: "Fjern denne forbindelse"
@@ -73,13 +74,16 @@ da:
   meta:
     kids_app:
       title: "Bibel App for Børn"
-      description: "Bible App´en for børn lanceres november d. 28. På Thankgiving Dag, Interaktive Bibel historier i en gratis app til iOS og Android. Få et smugkig på bible.com/kids"
+      description: "Bibel App for Børn er god mulighed for dine børn til at lære Bibel historier om Jesus, en gave til det evige liv, og de mange ting Gud lærer os. Via interactive oplevelser kan børn engagere sig i Gud´s ord med skønne billeder mens de får point for at læse og samle skatte."
     100million:
       title: "Det starter med 100 millioner"
       description: "Bible App er blevet installeret næsten 100 millioner gange - en utrolig milepæl! Men vi er lige begyndt. Hent den gratis Bible App i dag - og derefter del den med vennerne. Lad os skabe historie sammen."
     mobile:
       title: "Bibel App´en"
-      description: "Millioner af mennesker bruger Bible App til at læse, lytte til, se og dele Guds Ord, hvilket gør det til en del af deres dagligdag. Hent den gratis app og få adgang til dine bogmærker, noter og læsning planer fra hvor som helst. Nyd hundredvis af versioner, herunder lyd, alle på din mobile enhed."
+      description: "Læs Gud´s ord til enhver tid, overal med YouVersion´s Bibel App. Del skriftsteder med venner, markeringer og bogmærk passager og få en daglig vane med Bibel Planer. Tilgængelig for iOS, Android, Blackberry, Windows Phone og mere."
+    site:
+      title: "Bible.com"
+      description: "Bring skønheden og sandheden fra Bibelen ind i din dagligdag. Med YouVersion´s Bibel App, kan du læse, se, høre og dele på din smartphone eller tablet online på Bible.com"
     connections:
       index:
         title: "Forbundne konti"
@@ -214,6 +218,7 @@ da:
       friends button: "Find venner"
     action:
       go to scripture: "Gå til skriftstedet"
+      add friend button: "Tilføj ven"
       load more: "Load mere"
       like: "Synes om"
       liked: "Synes om"
@@ -232,6 +237,11 @@ da:
       delete highlight title: "Slet denne markering"
       delete bookmark title: "Slet dette bogmærke"
       delete note title: "Slet denne note"
+      more: "Mere"
+      read in bible: "Læs i Bibelen"
+      read plan: "Læs"
+      about plan: "Om Plan"
+      start plan: "Start plan"
   notifications:
     title: "Notifikationer"
     none: "Du har ingen notifikationer"
@@ -261,6 +271,7 @@ da:
     limit notice: "Du kan have op til 150 venner"
     limit description: "Begræns dine Bibel App venskaber til folk du kender og skab et miljø af ærlig snak og del opdagelser med betroede venner. "
   friendships:
+    name required: "Opdag Bibelen med venner, opdater din Profil med dit for og efternavn."
     find friends title: "Find venner"
     search by name: "Søg på navn"
     search button: "Start"
@@ -287,6 +298,7 @@ da:
       remove friend button: "Fjern ven"
       remove friend button title: "Fjern denne person fra din venneliste"
       add friend button: "Tilføj ven"
+      add friend button short: "Tilføj"
       add friend button title: "Send %{user} en venneforespørgsel"
       accept button: "Accepter"
       accept request button: "Accepter forespørgsel"
@@ -632,7 +644,7 @@ da:
       readings 5 or more: "læsninger"
     settings: "Indstillinger"
     privacy:
-      visible to friends?: "Vil du have at dine aktiviteter på denne plan er synlig for dine venner?"
+      visible to friends?: "Vil du have at andre venner kan se dine Plan aktiviteter?"
       private: "Privat"
       public: "Offentlig"
     title: "Læse planer"
@@ -668,8 +680,8 @@ da:
     search: "Søg"
     search placeholder: "Søg %{category} planer"
     subscribe to plan: "Start denne plan"
-    previous day: "Foregående dag"
-    next day: "Næste dag"
+    previous day: "IGÅR"
+    next day: "NÆSTE DAG"
     reading completed _ mark and show next: "Næste: %{next_reference}"
     which reading: "%{current} af %{total}"
     done reading: "Udført"
@@ -688,9 +700,11 @@ da:
     catch me up: "Indhent mig"
     restart description: "Du kan genstarte din plan. Alt din læse historik og fremskridt vil blive nulstillet og starte fra begyndelsen."
     restart: "Genstart plan"
-    privacy description: "Det er dit valg. Vil du have at andre folk kan se at du læser denne plan?"
-    make private: "Gør privat"
-    make public: "Gør offentlig"
+    privacy description:
+      private: "Din Plan er privat. Skift dine indstillinger til Venner kun for at dele din Plan aktivitet med venner."
+      public: "Din Plan er synlig for venner. Skift til Privat for at gøre dine Plan aktiviteter private."
+    make private: "Marker som privat"
+    make public: "Del med Venner"
     privacy title: "Privat"
     stop reading: "Stop læsningen af denne plan"
     accountability: "Troværdighed"
@@ -1004,6 +1018,9 @@ da:
     characters remaining: "karakterer tilbage"
     yes button: "Ja"
     no button: "Nej"
+    cancel: "Afbryd"
+    plans:
+      privacy: "Vil du have at dine aktiviteter på denne plan er synlig for dine venner?"
     loading indicator text: "Indlæser ..."
     loading: "Indlæser"
     pagination:

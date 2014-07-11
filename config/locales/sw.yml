@@ -36,6 +36,7 @@ sw:
       read all: "Soma yote"
       read less: "Soma kidogo"
     share: "husisha wengine/jumuisha"
+    add comment: "Ongeza maoni"
     my connections: "akaunti zilizounganishwa"
     connected as: "Umeunganishwa na %{uhusiano} kama%{jina la mtumiaji}"
     remove connection: "Toa uhusiano huu"
@@ -73,13 +74,11 @@ sw:
   meta:
     kids_app:
       title: "Apu ya Biblia kwa ajili ya watoto"
-      description: "Apu ya Bibilia ya watoto itazinduliwa Novemba 28, Siku ya kutoa shukran! Hadithi zinazojumuisha za Bibilia katika apu ya bure kwa iOS na Android. Angalia kidokezo kwenye bible.com/kids"
     100million:
       title: "Inaanza na milioni 100"
       description: "App ya Biblia imewekwa karibia mara milioni 100 - ni hatua ua ajabu! Lakini ndio kwanza tumeanza. Download bure App yaBiblia leo -  na washirikisha marafiki zako. Tutengeneze ukumbusho pamoja."
     mobile:
       title: "App ya Biblia"
-      description: "Makumi ya mamilioni ya watu ni kutumia App ya Bibilia &trade; kufanya Neno la Mungu iwe sehemu ya maisha yao ya kila siku. Pakua programu ya bure na upate maelezo ya maalamisho yako, na mipango ya kusoma kutoka mahali popote. Kufurahia mamia ya matoleo, ikiwa ni pamoja na audio yote kwa rununu yako."
     connections:
       index:
         title: "akaunti zilizounganishwa"
@@ -214,6 +213,7 @@ sw:
       friends button: "Tafuta marafiki"
     action:
       go to scripture: "Nenda kwenye maandiko"
+      add friend button: "Ongeza rafiki"
       load more: "ongeza zaidi"
       like: "penda"
       liked: "Imependwa"
@@ -232,6 +232,11 @@ sw:
       delete highlight title: "Futa onyesho hili"
       delete bookmark title: "Futa alamamisho hili"
       delete note title: "futa elezo hili"
+      more: "Zaidi"
+      read in bible: "Soma kwenye Biblia"
+      read plan: "Soma"
+      about plan: "Kuhusu mpango"
+      start plan: "Anza mpango"
   notifications:
     title: "Taarifa"
     none: "Huna taarifa yoyote"
@@ -261,6 +266,7 @@ sw:
     limit notice: "Unaweza kawa na marafiki wengi kama 150"
     limit description: "Kuwa na kiwango cha marafiki kwenye Apu ya Biblia kwa watu unaowajua vizuri inajenga mazingira yenye mazungumzo waaminifu na uvumbuzi pamoja na marafiki unaowaamini."
   friendships:
+    name required: "Ili upate kuzoea biblia na marafiki zako, wezesha profaili yako kwa kuandika jina lako la kwanza na la mwisho."
     find friends title: "Tafuta marafiki"
     search by name: "Tafuta kwa jina"
     search button: "Nenda"
@@ -287,6 +293,7 @@ sw:
       remove friend button: "Ondoa rafiki"
       remove friend button title: "Muondoe huyu mtu kwenye orodha yangu ya marafiki"
       add friend button: "Ongeza rafiki"
+      add friend button short: "ongeza"
       add friend button title: "Tuma %{user} ombi la urafiki"
       accept button: "Kubali"
       accept request button: "Kubali ombi"
@@ -632,7 +639,7 @@ sw:
       readings 5 or more: "masomo"
     settings: "mipangilio"
     privacy:
-      visible to friends?: "Ungependa shughuli yako wa  mpango huu wa kuonekana na marafiki wako?"
+      visible to friends?: "Unataka marafiki zako waone shughuli za mpango wako?"
       private: "Binafsi"
       public: "Umma"
     title: "Mipango ya usomaji"
@@ -668,8 +675,8 @@ sw:
     search: "tafuta"
     search placeholder: "Tafuta %{category} mipango"
     subscribe to plan: "anza mpango huu"
-    previous day: "siku iliyopita"
-    next day: "siku inayofuata"
+    previous day: "SIKU ILIYOPITA"
+    next day: "SIKU INAYOFWATA"
     reading completed _ mark and show next: "Ijayo: %{next_reference}"
     which reading: "%{current} ya %{total}"
     done reading: "Imemalizika"
@@ -688,9 +695,11 @@ sw:
     catch me up: "Nisaidie kufikia nilipokuwa"
     restart description: "Unaweza anza mpango wako tena. Historia yote ya mpango huu na maendeleo yako yote yatatolewa na utaanza mwanzo tena."
     restart: "Anza mpango huu tena"
-    privacy description: "Ni chaguo lako. Unataka watu waone kuwa unasoma mpango huu?"
-    make private: "Fanya ya kibinafsi"
-    make public: "Fanya ya umma"
+    privacy description:
+      private: "Mpango wako ni wa binafsi. Badili mazingira yako kwenda Marafiki Tu ili kuweza kushirikisha shughuli za Mpango wako kwa marafiki."
+      public: "Mpango wako unaonekana na marafiki. Badili kwenda Binafsi ili kufanya shughuli za Mpango wako kuwa wa binafsi."
+    make private: "Fanya Binafsi"
+    make public: "Shirikisha Marafiki"
     privacy title: "Usiri"
     stop reading: "achisha usomaji wa mpango huu"
     accountability: "Uwajibikaji"
@@ -1004,6 +1013,9 @@ sw:
     characters remaining: "herufi zilizobakia"
     yes button: "Ndio"
     no button: "Apana"
+    cancel: "Ondoa"
+    plans:
+      privacy: "Ungependa shughuli yako wa  mpango huu wa kuonekana na marafiki wako?"
     loading indicator text: "inatafuta.."
     loading: "inapakia"
     pagination:

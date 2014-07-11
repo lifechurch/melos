@@ -36,6 +36,7 @@ ca:
       read all: "Llegir-ho tot"
       read less: "Llegeix menys"
     share: "Comparteix"
+    add comment: "Afegeix un comentari"
     my connections: "Comptes connectats"
     connected as: "Estàs connectat/ada a %{connection} com %{username}."
     remove connection: "Elimina aquesta connexió"
@@ -73,13 +74,16 @@ ca:
   meta:
     kids_app:
       title: "L'Aplicació de la Bíblia per a nens"
-      description: "El llançament de l'Aplicació de la Bíblia per a Nens serà el 28 de Novembre, el dia d'Acció de Gràcies! Hi haurà històries interactives de la Bíblia en una aplicació gratuïta tant per iOS com per Android. Fes un primer cop d'ull a bible.com/kids"
+      description: "L'aplicació de la Bíblia per a nens es una bona manera de que els teus nens aprenguin les histories de la Bíblia sobre Jesus, el nostre regal de vida eterna, i totes les lliçons que Déu ens ensenya. Mitjançant aquesta experiència interactiva, els nens participan directament de la paraula de Déu amb sorprenents efectes visuals mentres que guanyan punts per les seves lectures i podan acumular tresors. "
     100million:
       title: "Comença amb 100 milions"
       description: "L'App de la Bíblia ha estat instal·lada gaire bé 100 milions de vegades - una fita increïble! Però tot just estem començant. Descarrega gratuïtament l'App de la Bíblia - i comparteix-la amb els teus amics. Fem història plegats."
     mobile:
       title: "L'aplicació de la Bíblia"
-      description: "Desenes de milions de persones estan utilitzant l'App de la Bíblia per llegir, escoltar, mirar i compartir la Paraula de Déu, fent que sigui part de les seves vides diàries. Descarrega gratuïtament l'App i accedeix als teus marcadors, notes i plans de lectura des de qualsevol lloc. Gaudeix de centenars de versions, també en àudio, totes en el teu dispositiu mòbil."
+      description: "Llegeix la paraula de Déu sempre que vulguis, i allà on siguis utilitzant la aplicació de la Bíblia de  YouVersion. Comparteix amb els amics, subtatlla i crea marcadors a les lectures, i fomenta un habit diari amb els plans de la Bíblia. Disponible per iOs, Android, Blackberry, Windows Phone i més."
+    site:
+      title: "Bíblia.com"
+      description: "Porta la bellesa i la veritat de la Bíblia en el teu dia a dia. Amb la aplicació de la Bíblia de YouVersion, pots llegir, mirar, escoltar i compartir amb el teu smartphone, tablet i en la red amb Bible.com"
     connections:
       index:
         title: "Comptes connectats"
@@ -214,6 +218,7 @@ ca:
       friends button: "Troba amics"
     action:
       go to scripture: "Vés a la Bíblia"
+      add friend button: "Afegeix un amic"
       load more: "Carrega més"
       like: "M'agrada"
       liked: "T'ha agradat"
@@ -232,6 +237,11 @@ ca:
       delete highlight title: "Suprimeix aquest ressaltat"
       delete bookmark title: "Suprimeix aquest marcador"
       delete note title: "Suprimeix aquesta nota"
+      more: "Més"
+      read in bible: "Llegit a la Bíblia"
+      read plan: "Llegeix"
+      about plan: "Sobre el pla"
+      start plan: "Comença el pla"
   notifications:
     title: "Avisos"
     none: "No tens cap avís"
@@ -261,6 +271,7 @@ ca:
     limit notice: "Pots tenir fins a 150 amics"
     limit description: "Si limites les teves amistats de l'App de la Bíblia a gent que coneixes bé, crearàs un entorn apropiat per converses sinceres i experiències compartides amb amics de confiança."
   friendships:
+    name required: "Per compartir la Bíblia amb els amics, actualitza el teu Perfil amb el teu nom i cognoms."
     find friends title: "Troba amics"
     search by name: "Cerca per nom"
     search button: "Vés"
@@ -287,6 +298,7 @@ ca:
       remove friend button: "Eliminar amic"
       remove friend button title: "Elimina aquesta persona de la llista d'amistats"
       add friend button: "Afegeix un amic"
+      add friend button short: "Afegeix"
       add friend button title: "Enviar-li a %{user} una sol·licitud d'amistat"
       accept button: "Accepta"
       accept request button: "Accepta la sol·licitud"
@@ -632,7 +644,7 @@ ca:
       readings 5 or more: "lectures"
     settings: "Configuració"
     privacy:
-      visible to friends?: "Vols que la teva activitat en aquest pla sigui visible per als teus amics?"
+      visible to friends?: "Vols que els teus amics vegin l'activitat del teu Pla?"
       private: "Privat"
       public: "Públic"
     title: "Plans de lectura"
@@ -668,8 +680,8 @@ ca:
     search: "Cerca"
     search placeholder: "Cerca plans de %{category}"
     subscribe to plan: "Comença aquest pla"
-    previous day: "Dia anterior"
-    next day: "Dia següent"
+    previous day: "DIA PREVI"
+    next day: "SEGÜENT DIA"
     reading completed _ mark and show next: "Següent: %{next_reference}"
     which reading: "%{current} de %{total}"
     done reading: "Fet"
@@ -688,9 +700,11 @@ ca:
     catch me up: "Posar-me al dia"
     restart description: "Sempre pots tornar a començar el teu pla. El teu historial de lectura i el teu progrés s'esborraran i començaràs pel principi."
     restart: "Reinicia el pla"
-    privacy description: "Pots triar. Vols que la gent vegi que estàs llegint aquest pla?"
+    privacy description:
+      private: "El teu pla és privat. Canvia'n la configuració a \"Només amics\" per compartir l'activitat del pla amb els teus amics."
+      public: "El teu pla el poden veure els teus amics. Canvia'n la configuració a \"Privat\" perquè l'activitat del pla sigui privada."
     make private: "Fes-lo privat"
-    make public: "Fes-lo públic"
+    make public: "Comparteix amb els amics"
     privacy title: "Privacitat"
     stop reading: "Atura la lectura d'aquest pla"
     accountability: "Responsabilitat"
@@ -1004,6 +1018,9 @@ ca:
     characters remaining: "caràcters restants"
     yes button: "Sí"
     no button: "No"
+    cancel: "Cancel·la"
+    plans:
+      privacy: "Vols que la teva activitat en aquest pla sigui visible per als teus amics?"
     loading indicator text: "Carregant..."
     loading: "Carregant"
     pagination:

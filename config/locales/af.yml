@@ -36,6 +36,7 @@ af:
       read all: "Lees almal"
       read less: "Lees minder"
     share: "Deel"
+    add comment: "Skep 'n opmerking"
     my connections: "Gekoppelde Rekeninge"
     connected as: "Jy is gekoppel met %{connection} as %{username}."
     remove connection: "Verwyder die konneksie"
@@ -73,13 +74,16 @@ af:
   meta:
     kids_app:
       title: "Die Bybel Toep vir Kinders"
-      description: "Die Bybel Toep vir Kinders word 28 November vrygestel. Dankseggings Dag! Interaktiewe Bybelstories in 'n gratis toep vir iOS en Android. Kyk na 'n voorskou by bible.com/kids"
+      description: "Die Bybel App vir kinders is `n goeie manier om jou kinders Bybelse stories oor Jesus te leer, ons geskenk van ewige lewe, en die baie lesse wat God ons leer. In hierdie interaktiewe ervaring, kinders raak direk betrokke met God se Woord met pragtige visuele terwyl hulle punte verdien vir lees en invordering van skatte."
     100million:
       title: "Dit begin met 100 Miljoen"
       description: "Die Bybel Toep is amper 'n 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal.  Maar ons begin nou eers.  Laai die gratis Bybel Toep vandag af - en deel dan die toep met jou vriende.  Help ons om saam geskiedenis te maak."
     mobile:
       title: "Die Bybel Toep"
-      description: "Miljoene mense gebruik die Bybel Toep om God se Woord te lees, te luister, te kyk en deel te maak van hulle daaglikse lewe.  Laai die gratis toep af en verkry toegang tot jou boekmerke, notas en leesplanne op enige plek. Geniet honderde weergawes, insluitend audio, alles op jou mobiele toerusting."
+      description: "Lees God se Woord enige tyd, enige plek met behulp van die YouVersion Bybel App. Deel die Skrif met vriende, belig en boekmerk die gedeeltes, en skep `n daglikse gewoonte met Bybel Planne, Beskikbaar vir iOS, Android, Blackberry, Windows Foon en meer."
+    site:
+      title: "Bybel.com"
+      description: "Bring die skoonheid van die waarheid van die Bybel in die alledagse lewe. Met die YouVersion Bybel App, kan jy less, kyk, en deel op jou smartphone of tablet, en aanlyn op Bybel.com."
     connections:
       index:
         title: "Gekoppelde Rekeninge"
@@ -214,6 +218,7 @@ af:
       friends button: "Soek vriende"
     action:
       go to scripture: "Gaan na skrifgedeelte"
+      add friend button: "Voeg vriend by"
       load more: "Laai meer"
       like: "Hou Van"
       liked: "Gehou Van"
@@ -232,6 +237,11 @@ af:
       delete highlight title: "Verwyder hierdie keurmerker"
       delete bookmark title: "Vee hierdie boekmerk uit"
       delete note title: "Verwyder Hierdie Nota"
+      more: "Meer"
+      read in bible: "Lees in die Bybel"
+      read plan: "Lees"
+      about plan: "Oor die plan"
+      start plan: "Begin die plan"
   notifications:
     title: "Kennisgewings"
     none: "Jy het geen kennisgewings nie"
@@ -261,6 +271,7 @@ af:
     limit notice: "Jy het soveel as 150 vriende"
     limit description: "Die beperking van jou Bybel Toep vriendskappe tot slegs mense wat jy goed ken, skep 'n omgewing vir eerlike gesprekke en gedeeldee ontdekkings met betroubare vriende."
   friendships:
+    name required: "Om die Bybel saam met vriende te beleef, moet jy jou Profiel opdateer met jou voornaam en van."
     find friends title: "Soek vriende"
     search by name: "Soek per naam"
     search button: "Soek"
@@ -287,6 +298,7 @@ af:
       remove friend button: "Verwyder vriend"
       remove friend button title: "Verwyder hierdie persoon van jou vriend lys"
       add friend button: "Voeg vriend by"
+      add friend button short: "Voeg by"
       add friend button title: "Stuur 'n vriendskap versoek aan %{user}"
       accept button: "Aanvaar"
       accept request button: "Aanvaar versoek"
@@ -632,7 +644,7 @@ af:
       readings 5 or more: "Lees gedeeltes"
     settings: "Verstellings"
     privacy:
-      visible to friends?: "Wil jy hê jou aktiwiteit met hierdie plan moet vir jou vriende sigbaar wees?"
+      visible to friends?: "Wil jy hê jou vriende moet jou Plan aktiwiteite sien?"
       private: "Privaat"
       public: "Publiek"
     title: "Lees Planne"
@@ -668,8 +680,8 @@ af:
     search: "Soek"
     search placeholder: "Soek %{category} Planne"
     subscribe to plan: "Begin Hierdie Plan"
-    previous day: "Vorige Dag"
-    next day: "Volgende Dag"
+    previous day: "VORIGE DAG"
+    next day: "VOLGENDE DAG"
     reading completed _ mark and show next: "Volgende: %{next_reference}"
     which reading: "%{current} van %{total}"
     done reading: "Gedoen"
@@ -688,9 +700,11 @@ af:
     catch me up: "Vang Op"
     restart description: "Jy kan jou leesplan herbegin. Al jou leesgeskiedenis en vordering sal herstel word en jy sal van vooraf begin."
     restart: "Herbegin Plan"
-    privacy description: "Dis jou keuse. Wil jy hê mense moet sien dat jy hierdie leesplan volg? "
-    make private: "Maak Privaat"
-    make public: "Wys as Publiek"
+    privacy description:
+      private: "Jou Plan is Privaat. Skakel jou omgewing na Net Vriende om jou Plan aktiwiteit met vriende te deel."
+      public: "Jou Plan is sigbaar aan jou vriende. Skakel na Privaat toe om jou Plan aktiwiteit privaat te maak."
+    make private: "Verander na Privaat"
+    make public: "Deel met Vriende"
     privacy title: "Privaatheid"
     stop reading: "Beëindig Hierdie Leesplan"
     accountability: "Aanspreeklikheid"
@@ -1004,6 +1018,9 @@ af:
     characters remaining: "Oorblywende karakters"
     yes button: "Ja"
     no button: "Nee"
+    cancel: "Kanselleer"
+    plans:
+      privacy: "Wil jy hê jou aktiwiteit met hierdie plan moet vir jou vriende sigbaar wees?"
     loading indicator text: "Besig om te laai..."
     loading: "Laai"
     pagination:

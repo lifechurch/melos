@@ -36,6 +36,7 @@ sv:
       read all: "Läs allt"
       read less: "Läs mindre"
     share: "Dela"
+    add comment: "Skriv en kommentar"
     my connections: "Anslutna konton"
     connected as: "Du är ansluten till %{connection} som %{username}."
     remove connection: "Ta bort denna anslutning"
@@ -73,13 +74,16 @@ sv:
   meta:
     kids_app:
       title: "Bibelappen för barn"
-      description: "Bibelappen för barn lanseras den 28 november, Thanksgiving Day! Interaktiva bibelberättelser i en gratisapp för iOS och Android. Se en förhandsvisning på bible.com/sv/kids"
+      description: "Bibelappen för barn är ett bra sätt för yngre barn att lära sig Bibliska historier om Jesus, vårt eviga liv, och de många lärdomar Gud ger oss. I denna mysiga interaktiva upplevelsen engagerar sig barn direkt med Guds Ord samtidigt som de tjänar poäng när de läser och samlar skatter. "
     100million:
       title: "Det närmar sig 100 miljoner"
       description: "Bibelappen har installerats nästan 100 miljoner gånger - en otrolig milstolpe! Men vi har precis kommit igång. Ladda ner den fria Bibelappen idag - och dela sedan appen med dina vänner. Låt oss skapa historia tillsammans."
     mobile:
       title: "Bibelappen"
-      description: "Tiotals miljoner använder Bibelappen för att läsa, lyssna, titta och dela Guds Ord och för att göra den till en del av deras liv. Ladda ner den fria appen och komma åt dina bokmärken, anteckningar och läsa planer var än du befinner dig. Njut av hundratals översättningar, inklusive ljud, allt på din mobila enhet."
+      description: "Läs Guds Ord närsomhelst, varsomhelst med Bibelappen från YouVersion. Dela skriften med vänner, markera och bokmärk texter och skapa en daglig vana med bibelplaner. Tillgänglig för iOS, Android, Blackberry, Windows Phone m.m."
+    site:
+      title: "Bible.com/sv"
+      description: "Ta skönheten och sanningen från Bibeln in i ditt vardagliga liv. Med Bibelappen från YouVersion kan du läsa, titta, lyssna och dela på din telefon eller platta, och online på Bible.com."
     connections:
       index:
         title: "Anslutna konton"
@@ -214,6 +218,7 @@ sv:
       friends button: "Hitta vänner"
     action:
       go to scripture: "Gå till skriften"
+      add friend button: "Lägg till vän"
       load more: "Ladda mer"
       like: "Gilla"
       liked: "Gillar"
@@ -232,6 +237,11 @@ sv:
       delete highlight title: "Ta bort denna markering"
       delete bookmark title: "Ta bort detta bokmärke"
       delete note title: "Ta bort denna anteckning"
+      more: "Mer"
+      read in bible: "Läs i Bibeln"
+      read plan: "Läs"
+      about plan: "Om plan"
+      start plan: "Följ plan"
   notifications:
     title: "Meddelanden"
     none: "Du har inga meddelanden"
@@ -261,6 +271,7 @@ sv:
     limit notice: "Du kan ha så många som 150 vänner"
     limit description: "Begränsa vilka du bli vänner med i Bibelappen till folk du känner väl för att skapa en miljö av ärliga samtal och gemensam utforskning med nära vänner,"
   friendships:
+    name required: "För att uppleva Bibeln tillsammans med vänner, uppdatera din profil med ditt för- och efternamn."
     find friends title: "Hitta vänner"
     search by name: "Sök med namn"
     search button: "Sök"
@@ -287,6 +298,7 @@ sv:
       remove friend button: "Ta bort vän"
       remove friend button title: "Ta bort denna person från vänlistan"
       add friend button: "Lägg till vän"
+      add friend button short: "Lägg till"
       add friend button title: "Skicka %{user} en vänskapsförfrågan"
       accept button: "Acceptera"
       accept request button: "Acceptera förfrågan"
@@ -632,7 +644,7 @@ sv:
       readings 5 or more: "läsningar"
     settings: "Inställningar"
     privacy:
-      visible to friends?: "Vill du att dina aktiviteter i denna plan ska vara synliga för dina vänner?"
+      visible to friends?: "Vill du att dina vänner ska se dina planaktiviteter?"
       private: "Privata"
       public: "Offentliga"
     title: "Läsplaner"
@@ -668,8 +680,8 @@ sv:
     search: "Sök"
     search placeholder: "Sök planer i %{category}"
     subscribe to plan: "Starta planen"
-    previous day: "Föregående dag"
-    next day: "Nästa dag"
+    previous day: "FÖREG. DAG"
+    next day: "NÄSTA DAG"
     reading completed _ mark and show next: "Nästa: %{next_reference}"
     which reading: "%{current} av %{total}"
     done reading: "Klar"
@@ -688,9 +700,11 @@ sv:
     catch me up: "Justera läsplan"
     restart description: "Du kan starta om din plan. Hela din läshistoria och framgång kommer att återställas och startas från början."
     restart: "Starta om plan"
-    privacy description: "Det är ditt val. Vill du att andra ska kunna se att du följer den här planen?"
-    make private: "Sluta dela"
-    make public: "Dela"
+    privacy description:
+      private: "Din plan är privat. Växla dina inställningar till \"Enbart vänner\" för att dela dina planaktiviteter med vänner."
+      public: "Din plan är synlig för vänner. Växla till Privat för att göra dina planaktiviteter privata."
+    make private: "Sätt till privat"
+    make public: "Dela med vänner"
     privacy title: "Sekretess"
     stop reading: "Sluta följa den här planen"
     accountability: "Uppföljning"
@@ -1004,6 +1018,9 @@ sv:
     characters remaining: "tecken kvar"
     yes button: "Ja"
     no button: "Nej"
+    cancel: "Avbryt"
+    plans:
+      privacy: "Vill du att dina aktiviteter i denna plan ska vara synliga för dina vänner?"
     loading indicator text: "Laddar..."
     loading: "Laddar"
     pagination:
