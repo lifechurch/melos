@@ -44,6 +44,46 @@ module YV
         return true
       end
 
+      def mobile_redirect
+        return unless request.env["X_MOBILE_DEVICE"].present?
+
+        # todo: model
+        # for now use a dictionary here
+
+        dict = Hashie::Mash.new(
+          {
+            moments: 
+              {
+               index:     "moments", 
+               show:      "moments/#{params[:id]}"
+              },
+            videos:
+              {
+                index:    "videos",
+                show:     "videos?id=#{params[:id]}",
+                series:   "videos?id=#{params[:id]}"
+              },
+            plans:
+              {
+                index:    "reading_plans",
+                show:     "reading_plan_detail?id=#{params[:id].match /(\d+)/ if params[:id].present?}"
+              }
+          }
+        )
+
+        case request.env["X_MOBILE_DEVICE"]
+        when /iphone|iPhone|ipad|iPad|ipod|iPod/
+          @user_agent = "ios"         
+        when /android|Android/
+          @user_agent = "android"
+        end
+
+
+        @native_url = "youversion://#{dict[controller_name][action_name]}" rescue nil
+        # raise "#{@native_url}"
+
+
+      end
 
     end
   end
