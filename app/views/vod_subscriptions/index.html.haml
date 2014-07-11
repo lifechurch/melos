@@ -6,16 +6,16 @@
 
   if @vod_subscription.present? && @vod_subscription.email.time.present?
     @email_hour = @vod_subscription.email.time[0,2].to_i 
-    @email_hour = @email_hours - 12 if @email_hour > 12
+    @email_hour = @email_hour - 12 if @email_hour > 12
     @email_hour = @email_hour.to_s.rjust(2, '0')
     @email_minute = @vod_subscription.email.time[3,2]
     @email_meridian = @vod_subscription.email.time[0,2].to_i
     @email_meridian = @email_meridian > 12 ? 'PM' : 'AM'
   end
   if @vod_subscription.present? && @vod_subscription.push.time.present?
-    @push_hours = @vod_subscription.push.time[0,2].to_i
-    @push_hours = @push_hours - 12 if @push_hours > 12 
-    @push_hours = @push_hours.to_s.rjust(2, '0')
+    @push_hour = @vod_subscription.push.time[0,2].to_i
+    @push_hour = @push_hour - 12 if @push_hour > 12 
+    @push_hour = @push_hour.to_s.rjust(2, '0')
     @push_minute = @vod_subscription.push.time[3,2]
     @push_meridian = @vod_subscription.push.time[0,2].to_i
     @push_meridian = @push_meridian > 12 ? 'PM' : 'AM'
@@ -31,7 +31,7 @@
 
 %h4
   = t('users.daily email delivery')
-  = render partial: 'form', locals: {type: "email", version_id: @vod_subscription.email.version_id, hour: @email_hour, minute: @email_minute, meridian: @email_meridian }
+  = render partial: 'form', locals: {type: "email", version_id: @vod_subscription.email.version_id, hour: @email_hour, minute: @email_minute, meridian: @email_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
 
 %h4.push_notifications_header
   = t('users.daily push notifications')

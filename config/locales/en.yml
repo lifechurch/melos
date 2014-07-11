@@ -250,6 +250,12 @@ en:
     users like this:                            "%{last_liker_link} and %{more_link} like this"
     vod:
       title:                                    "Verse of the day"
+      get daily email:                          "Get daily email"
+      subscribe:                                "Subscribe"
+      update:                                   "Update"
+      unsubscribe:                              "Unsubscribe"
+      version:                                  "Version"
+      time:                                     "Time"
     friendship:
       now friends:                              "You are now friends with"
     cta:
@@ -281,6 +287,7 @@ en:
       delete bookmark title:                    "Delete this bookmark"
       delete note title:                        "Delete this note"
       more:                                     "More"
+      cancel:                                   "Cancel"
       read in bible:                            "Read in Bible"
       read plan:                                "Read"
       about plan:                               "About plan"
