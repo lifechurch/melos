@@ -67,7 +67,6 @@ bg:
       description: "Приложението Bible е инсталирано почти 100 милиона пъти - едно невероятно постижение! Но ние сме само в началото. Изтеглете безплатното приложение Bible сега и след това го споделете с приятелите си. Нека правим история заедно."
     mobile:
       title: "Библията"
-      description: "Десетки милиони хора използват приложението Bible, за да четат, слушат, гледат и споделят Божието Слово, като го правят част от тяхното ежедневие. Изтеглете безплатното приложение и получете достъп до вашите отметки, бележки и планове за четене от всяко място. Насладете се на стотици версии, включително аудио, всички на вашето мобилно устройство."
     connections:
       index:
         title: "Свързани профили"
@@ -190,6 +189,7 @@ bg:
       friends button: "Открии приятели"
     action:
       go to scripture: "Подобни стихове"
+      add friend button: "Добавяне на приятел"
       load more: "Зареди още"
       like: "Харесай"
       liked: "Харесани"
@@ -208,6 +208,7 @@ bg:
       delete highlight title: "Изтриване на този акцент"
       delete bookmark title: "Изтрий тези отбелязвания"
       delete note title: "Изтрий тази бележка"
+      read plan: "Прочети"
   notifications:
     title: "Съобщения"
     none: "Все още нямате никакви бележки"
@@ -237,6 +238,7 @@ bg:
     limit notice: "Можете да имате най-много 150 приятели"
     limit description: "Ограничаването на вашето приложение за Библията до приятелства с хора, които познавате добре, създава среда за честни разговори и споделени открития с доверени приятели."
   friendships:
+    name required: "За да четете Библията с приятели, актуализирайте Профила си с вашето име и фамилия."
     find friends title: "Открии приятели"
     widget:
       find friends title: "Открии приятели"
@@ -259,6 +261,7 @@ bg:
       remove friend button: "Премахнете приятел"
       remove friend button title: "Премахнете този човек от списъка ви с приятели"
       add friend button: "Добавяне на приятел"
+      add friend button short: "Добави"
       add friend button title: "Изпрати на %{user} покана за приятелство"
       accept button: "Приемете"
       accept request button: "Приемете"
@@ -591,7 +594,6 @@ bg:
       start reading: "Започни четене"
     settings: "Настройки"
     privacy:
-      visible to friends?: "Искате ли вашата дейност с този план да бъде видима за приятелите ви?"
       private: "Личен"
       public: "Публичен"
     title: "План за четене"
@@ -627,8 +629,6 @@ bg:
     search: "Търси"
     search placeholder: "Търси планове в %{category}"
     subscribe to plan: "Започни този план"
-    previous day: "Предишен ден"
-    next day: "Следващ ден"
     reading completed _ mark and show next: "Следващ: %{next_reference}"
     which reading: "%{current} от общо %{total}"
     done reading: "Готово"
@@ -646,9 +646,6 @@ bg:
     catch me up: "Какво пропуснах?"
     restart description: "Можеш да рстартираш плана си. Всички предишни четения ще бъдат рестартирани от начало. "
     restart: "Рестартирай плана"
-    privacy description: "Изборът е твой! Искаш ли всички да видят, че използваш този план?"
-    make private: "Направи поверително"
-    make public: "Публикувай"
     privacy title: "Поверително"
     stop reading: "Спри този план"
     accountability: "Отчетност"
@@ -959,6 +956,9 @@ bg:
   ui:
     yes button: "Да"
     no button: "Не"
+    cancel: "Откажи"
+    plans:
+      privacy: "Искате ли вашата дейност с този план да бъде видима за приятелите ви?"
     loading indicator text: "Зареждане..."
     pagination:
       next page: "Следваща страница"

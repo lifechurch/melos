@@ -1,4 +1,4 @@
-pt:
+pt_BR:
   time:
     formats:
       votd: "%-d %B, %Y"
@@ -36,6 +36,7 @@ pt:
       read all: "Ler tudo"
       read less: "Leia menos"
     share: "Compartilhar"
+    add comment: "Adicionar comentário"
     my connections: "Contas Conectadas"
     connected as: "Você está conectado a %{connection} como %{username}."
     remove connection: "Remover esta conexão"
@@ -73,13 +74,16 @@ pt:
   meta:
     kids_app:
       title: "O App da Bíblia para Crianças"
-      description: "O App da Bíblia para Crianças será lançado em 28 de Novembro, no Dia de Ação de Graças! Histórias interativas da Bíblia em um app grátis para iOS e Android. Veja a prévia em bible.com/kids"
+      description: "O App da Bíblia para Crianças é uma ótima maneira para suas crianças aprenderem histórias Bíblicas sobre Jesus, nosso presente de vida eterna e sobre as muitas lições que Deus nos ensina. Nesta experiência interativa, as crianças se envolvem com a Palavra de Deus com recursos visuais atrativos enquanto ganham pontos ao ler e colecionar tesouros."
     100million:
       title: "Começa com 100 Milhões"
       description: "O App da Bíblia foi instalado quase 100 milhões de vezes - um marco incrível! Mas estamos apenas começando. Faça o download do aplicativo gratuito da Bíblia hoje - e, em seguida, compartilhe o aplicativo com seus amigos. Juntos vamos fazer história."
     mobile:
       title: "O App da Bíblia"
-      description: "Milhões de pessoas estão usando o App da Bíblia para ler, ouvir, assistir e compartilhar a Palavra de Deus, tornando-a parte de suas vidas diárias. Faça o download do aplicativo gratuito e acesse seus marcadores, anotações e Planos de Leitura de qualquer lugar. Desfrute de centenas de versões, incluindo áudio, tudo isso em seu dispositivo móvel."
+      description: "Lei a Palavra de Deus a qualquer momento, em qualquer lugar usando o App da Biblia YouVersion. Compartilhe as Escrituras com seus amigos, destaque e marque passagens e crie um hábito diário com os Planos da Bíblia. Disponível para iOS, Android, Blackberry, Windows Phone e mais."
+    site:
+      title: "Bible.com"
+      description: "Traga a beleza e verdade da Bíblia para o seu dia a dia. Com o App da Bíblia YouVersion, você pode ler, assistir, ouvir e compartilhar no seu smartphone ou tabler, e online em Bible.com."
     connections:
       index:
         title: "Contas Conectadas"
@@ -193,7 +197,7 @@ pt:
     scripture unavailable: "Escritura indisponível"
     could not load: "Não é possível carregar"
     could not load verse: "Não foi possível carregar o versículo"
-    showing related: "Apresentando momentos relacionados"
+    showing related: "Mostrando momentos relacionados"
     return to: "Voltar para"
     time past: "%{ago} atrás"
     user likes this: "%{last_liker_link} curtir isto"
@@ -214,6 +218,7 @@ pt:
       friends button: "Encontre seus amigos"
     action:
       go to scripture: "Vá para a Bíblia"
+      add friend button: "Adicionar amigo"
       load more: "Carregar mais"
       like: "Curtir"
       liked: "Curtiu"
@@ -232,6 +237,11 @@ pt:
       delete highlight title: "Apague esse destaque"
       delete bookmark title: "Apague esse marcador"
       delete note title: "Apague essa anotação"
+      more: "Mais"
+      read in bible: "Ler na Bíblia"
+      read plan: "Ler"
+      about plan: "Sobre o plano"
+      start plan: "Iniciar o plano"
   notifications:
     title: "Notificações"
     none: "Você não possui notificações"
@@ -261,6 +271,7 @@ pt:
     limit notice: "Você pode ter no máximo 150 amigos"
     limit description: "Limitar suas amizades no App da Bíblia às pessoas que você conhece bem cria um ambiente para conversas honestas e descobertas compartilhadas com amigos confiáveis."
   friendships:
+    name required: "Para experimentar a Bíblia com amigos, atualize seu Perfil com seu nome e sobrenome."
     find friends title: "Encontre Amigos"
     search by name: "Procurar por nome"
     search button: "Ir"
@@ -287,6 +298,7 @@ pt:
       remove friend button: "Excluir amigo"
       remove friend button title: "Excluir essa pessoa da sua lista de amigos"
       add friend button: "Adicionar amigo"
+      add friend button short: "Adicionar"
       add friend button title: "Enviar ao %{user} um pedido de amizade"
       accept button: "Aceitar"
       accept request button: "Aceitar pedido"
@@ -632,7 +644,7 @@ pt:
       readings 5 or more: "Leitura"
     settings: "Configurações"
     privacy:
-      visible to friends?: "Gostaria que sua atividade neste plano esteja visível para seus amigos?"
+      visible to friends?: "Gostaria que suas atividades neste Plano sejam visíveis aos seus amigos?"
       private: "Particular"
       public: "Público"
     title: "Planos de Leitura"
@@ -668,8 +680,8 @@ pt:
     search: "Procurar"
     search placeholder: "Procurar Planos de %{category}"
     subscribe to plan: "Começar esse plano"
-    previous day: "Dia Anterior"
-    next day: "Dia Seguinte"
+    previous day: "DIA ANTERIOR"
+    next day: "DIA SEGUINTE"
     reading completed _ mark and show next: "Próximo: %{next_reference}"
     which reading: "%{current} de %{total}"
     done reading: "Pronto"
@@ -688,9 +700,11 @@ pt:
     catch me up: "Manter-me em Dia"
     restart description: "Você pode reiniciar o seu plano. Todo o seu histórico e progresso de leitura será redefinido e reiniciado do começo."
     restart: "Reiniciar o Plano"
-    privacy description: "A escolha é sua. Você quer que as pessoas vejam que você está lendo esse plano?"
-    make private: "Tornar Particular"
-    make public: "Tornar Público"
+    privacy description:
+      private: "Seu Plano é Privado. Mude sua configuração para Apenas Amigos para compartilhar as atividades de seu Plano com seus amigos."
+      public: "Seu Plano está visível para amigos. Mude para Privado para tornar as atividades do seu Plano como privado."
+    make private: "Configurar como Privado"
+    make public: "Compartilhar com Amigos"
     privacy title: "Privacidade"
     stop reading: "Parar Esse Plano de Leitura"
     accountability: "Responsabilidade"
@@ -915,13 +929,13 @@ pt:
         now skipped: "Esta página não será pulada "
       features:
         read heading: "Leia a Bíblia. "
-        read description: "Faça escolha entre <strong>centenas de versões Bíblicas e idiomas</strong>. Compare duas versões lado a lado. Você pode até mesmo escolher a fonte e o tamanho da exibição. Personalize sua experiência online da Bíblia. "
+        read description: "Escolha entre <strong>centenas de versões Bíblicas e idiomas</strong>. Compare duas versões lado a lado. Você pode até mesmo escolher a fonte e o tamanho da exibição. Personalize sua experiência online da Bíblia. "
         study heading: "Estude a Bíblia. "
-        study description: "<strong>Destaque</strong> na sua cor favorita, <strong>marque</strong> seus versículos favoritos, e faça anotações sobre o que você está aprendendo. Você não estará apenas passando um tempo na Palavra de Deus, mas estará construindo uma história de interação com a Bíblia.  "
+        study description: "<strong>Destaque</strong> com sua cor favorita, <strong>marque</strong> seus versículos favoritos, e faça anotações sobre o que está aprendendo. Você não estará apenas passando um tempo na Palavra de Deus, mas estará construindo uma história de interação com a Bíblia.  "
         subscribe heading: "Inscreva-se em Planos de Leitura de Bíblia. "
         subscribe description: "Leia toda a Bíblia, foque em um tópico ou leia um plano devocional de um mestre talentoso. Escolha um plano e a cada dia você encontrará uma seleção da Bíblia esperando por você. "
         download heading: "Leve a Bíblia com você. "
-        download description: "<a href='http://youversion.com/download'>Faça o download</a> do App da Bíblia gratuitamente em qualquer dispositivo móvel. Quando você utiliza o app móvel, sua anotações, marcadores, destaques, planos e mais serão automaticamente sincronizados em todos seus dispositivos.  "
+        download description: "<a href='http://youversion.com/download'>Faça o download</a> do App da Bíblia gratuitamente em qualquer dispositivo móvel. Quando você utiliza o app móvel, suas anotações, marcadores, destaques, planos e muito mais serão automaticamente sincronizados em todos seus dispositivos.  "
       get started: "Dê início a sua conta gratuita. "
       word with you: "A Palavra de Deus está com você. "
       download action: "Baixe o App da Bíblia "
@@ -1004,6 +1018,9 @@ pt:
     characters remaining: "caracteres restantes"
     yes button: "Sim"
     no button: "Não"
+    cancel: "Cancelar"
+    plans:
+      privacy: "Gostaria que sua atividade neste plano esteja visível para seus amigos?"
     loading indicator text: "Carregando..."
     loading: "Carregando"
     pagination:

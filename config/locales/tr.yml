@@ -36,6 +36,7 @@ tr:
       read all: "Tümünü Oku"
       read less: "Daha az okuyun"
     share: "Paylaş"
+    add comment: "Yorum ekle"
     my connections: "Bağlı Hesaplar"
     connected as: "Siz %{username} olarak ${connection} ile bağlandınız."
     remove connection: "Bu bağlantıyı sil"
@@ -73,13 +74,11 @@ tr:
   meta:
     kids_app:
       title: "Çocuklar İçin Kutsal Kitap Uygulaması"
-      description: "Çocuklar İçin Kutsal Kitap Uygulaması 28 Ekim'de çıkıyor! iOS ve Android'ta ücretsiz bir uygulamada etkileşimli Kutsal Kitap öyküleri. bible.com/kids adresinden görebilirsiniz."
     100million:
       title: "Hedefimiz 100 Milyon"
       description: "Kutsal Kitap Uygulaması az daha 100 milyon defa indirilip yüklendi -- mükemmel bir aşama! Ama biz daha yeni başladık. Kutsal Kitap Uygulaması'nı bugün indirin. Ve uygulamayı arkadaşlarınız ile paylaşın. Birlikte tarih yazalım!"
     mobile:
       title: "Kutsal Kitap Uygulaması"
-      description: "On milyonlarca insan Kutsal Kitap Uygulaması'nı kullanıyor ve Tanrı'nın Sözü'nü hayatlarının bir parçası haline getirdiler. Uygulamayı bedavaya indirip, her yerden yer imlerinize, notlarınıza ve okuma planlarınıza ulaşın. Mobil cihazınızı kullanarak Kutsal Kitap'ın yüzlerce çevirisini okuyun ve dinleyin."
     connections:
       index:
         title: "Bağlı Hesaplar"
@@ -214,6 +213,7 @@ tr:
       friends button: "Arkadaş Bul"
     action:
       go to scripture: "Kısmı görüntüle"
+      add friend button: "Arkadaş olarak ekle"
       load more: "Daha fazla göster"
       like: "Beğen"
       liked: "Beğendiniz"
@@ -232,6 +232,11 @@ tr:
       delete highlight title: "Bu vurguyu sil"
       delete bookmark title: "Bu yer imini sil"
       delete note title: "Bu notu sil"
+      more: "Daha fazla"
+      read in bible: "Kutsal Kitap'ta oku"
+      read plan: "Oku"
+      about plan: "Okuma Planı hakkında"
+      start plan: "Okuma planına başla"
   notifications:
     title: "Bildirimler"
     none: "Bildirim yok"
@@ -261,6 +266,7 @@ tr:
     limit notice: "150 arkadaş edinebilirsiniz"
     limit description: "Kutsal Kitap Uygulaması arkadaşlıklarınızı gerçekten tanıdığınız ve güvendiğiniz kişilere kısıtlarsanız, hakiki sohbetleri ve buluşları açıkça paylaşabileceğiniz bir ortamı yaratırsınız."
   friendships:
+    name required: "Arkadaşlarınızla birlikte Kutsal Kitap'ı deneyimlemek için Profilinizde adınızı ve soyadınızı güncelleyiniz."
     find friends title: "Arkadaş Bul"
     search by name: "İsime göre ara"
     search button: "Bul"
@@ -287,6 +293,7 @@ tr:
       remove friend button: "Arkadaşılıktan çıkar"
       remove friend button title: "Bu şahsı arkadaşlık listenizden çıkarın"
       add friend button: "Arkadaş olarak ekle"
+      add friend button short: "Ekle"
       add friend button title: "%{user} adlı kullanıcından arkadaşlık talebinde bulunun"
       accept button: "Kabul Et"
       accept request button: "Talebi kabul et"
@@ -632,7 +639,7 @@ tr:
       readings 5 or more: "okumalar"
     settings: "Ayarlar"
     privacy:
-      visible to friends?: "Bu okuma planındaki hareketlerinin arkadaşlarınıza görünür olmasını ister misiniz?"
+      visible to friends?: "Arkadaşlarınızın okuma planı etkinliğinizi görmesini istiyor musunuz?"
       private: "Özel"
       public: "Topluma Açık"
     title: "Okuma Planları"
@@ -668,8 +675,8 @@ tr:
     search: "Ara"
     search placeholder: "%{category} Konulu Planlarda Ara"
     subscribe to plan: "Okuma Planına Başla"
-    previous day: "Önceki Gün"
-    next day: "Sonraki Gün"
+    previous day: "DÜN"
+    next day: "YARIN"
     reading completed _ mark and show next: "Sonraki: %{next_reference}"
     which reading: "%{current} / %{total}"
     done reading: "Tamam"
@@ -688,9 +695,11 @@ tr:
     catch me up: "Bugünü Yakala"
     restart description: "İsterseniz, planınıza yeniden başlayabilirsiniz. İlerlemeniz ve okuma tarihiniz sıfırlanacak ve baştan başlayacaksınız."
     restart: "Yeniden Başla"
-    privacy description: "İsterseniz, başkalarına bu Okuma Planın kullandığınızı gösterebilirsiniz. Bunu yapmak ister misiniz?"
-    make private: "Kişiselleştir"
-    make public: "Göster"
+    privacy description:
+      private: "Okuma planınız gizli. Bu etkinliği arkadaşlarınızla paylaşmak için Sadece Arkadaşlar\" ayarına geçiş yapın"
+      public: "Okuma planınız arkadaşlarınıza açık. Bu etkinliği gizli konuma getirmek için Gizli ayarına geçiş yapın"
+    make private: "Gizli olarak ayarla"
+    make public: "Arkadaşlarınızla Paylaşın"
     privacy title: "Gizlilik"
     stop reading: "Planı Okumaktan Vazgeç"
     accountability: "Sorumluluk Desteği"
@@ -1004,6 +1013,9 @@ tr:
     characters remaining: "karakter kaldı"
     yes button: "Evet"
     no button: "Hayır"
+    cancel: "İptal"
+    plans:
+      privacy: "Bu okuma planındaki hareketlerinin arkadaşlarınıza görünür olmasını ister misiniz?"
     loading indicator text: "Yükleniyor..."
     loading: "Yükleniyor"
     pagination:

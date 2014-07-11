@@ -36,6 +36,7 @@ sq:
       read all: "Lexo të gjitha"
       read less: "Lexo më pak"
     share: "Ndaje"
+    add comment: "Shto një koment"
     my connections: "Llogaritë e lidhura"
     connected as: "Ju jeni lidhur me %{connection} si %{username}."
     remove connection: "Hiqe këtë lidhje"
@@ -73,13 +74,16 @@ sq:
   meta:
     kids_app:
       title: "Programi i Biblës për Fëmijët"
-      description: "Programi i Biblës për Fëmijë fillon në 28 nëntor, në Ditën e Falënderimit! Histori ndërvepruese nga Bibla në një program falas për sistemin iOS dhe Android. Shikoje paraprakisht në bible.com/kids"
+      description: "Programi i Biblës për Fëmijë është një mënyrë e mrekullueshme që fëmijët tuaj të mësojnë historitë biblike rreth Jezusit, rreth dhuratës së jetës së përjetshme dhe mësimet e shumta që Perëndia na mëson. Përmes kësaj përvoje bashkëvepruese, fëmijët lidhen drejtpërdrejt me Fjalën e Perëndisë me pamje vizuale të lezetshme, ndërkohë që fitojnë pikë për leximin dhe mbledhin thesare."
     100million:
       title: "Fillon me 100 milionë"
       description: "Programi i Biblës është instaluar pothuaj 100 milionë herë - një gur kilometrik i pabesueshëm! Por ne vetëm sapo fillojmë. Shkarko falas Programin e Biblës sot - dhe pastaj ndaje programin me miqtë e tu. Le të bëjmë histori së bashku."
     mobile:
       title: "Programi i Biblës"
-      description: "Dhjetëra miliona njerëz janë duke përdorur Programin e Biblës për të lexuar, dëgjuar, shikuar dhe ndarë Fjalën e Perëndisë, duke e bërë atë pjesë të jetës së përditshme. Shkarko programin falas dhe hap shenjuesit, shënimet dhe planet e tua të leximit nga kudo. Gëzo qindra versione, duke përfshirë edhe audio, të gjitha në pajisjen tënde të lëvizshme."
+      description: "Lexo Fjalën e Perëndisë në çdo kohë, duke përdorur Programin e Biblës YouVersion. Ndaj vargje me miqtë, thekso dhe shëno pasazhe dhe krijo një zakon të përditshëm me planet e Biblës. I disponueshëm për iOS, Android, BlackBerry, Window Phone dhe më tepër."
+    site:
+      title: "Bible.com"
+      description: "Sill bukurinë dhe të vërtetën e Biblës në jetën e përditshme. Me Programin e Biblës YouVersion, ju mund të lexoni, të shikoni, të dëgjoni dhe të ndani nga telefoni ose tableti juaj si edhe në internet në Bible.com"
     connections:
       index:
         title: "Llogaritë e lidhura"
@@ -214,6 +218,7 @@ sq:
       friends button: "Gjej miq"
     action:
       go to scripture: "Shko te shkrimi"
+      add friend button: "Shto mik"
       load more: "Vendos më shumë"
       like: "Pëlqej"
       liked: "Të pëlqyer"
@@ -232,6 +237,11 @@ sq:
       delete highlight title: "Fshije këtë theksim"
       delete bookmark title: "Fshije këtë shenjues"
       delete note title: "Fshije këtë shënim"
+      more: "Më shumë"
+      read in bible: "Lexo në Bibla"
+      read plan: "Lexo"
+      about plan: "Rreth planit"
+      start plan: "Fillo planin"
   notifications:
     title: "Njoftime"
     none: "Ju nuk keni asnjë njoftim"
@@ -261,6 +271,7 @@ sq:
     limit notice: "Ju mund të keni deri në 150 miq"
     limit description: "Kufizimi i miqësisë në Programin e Biblës për ata njerëz që i njeh mirë krijon një mjedis për bashkëbisedime të sinqerta dhe zbulime të ndara me miq të besueshëm."
   friendships:
+    name required: "Për të përjetuar Biblën me miqtë, përditësoni Profilin tuaj me emrin dhe mbiemrin."
     find friends title: "Gjej miq"
     search by name: "Kërko me emër"
     search button: "Shko"
@@ -287,6 +298,7 @@ sq:
       remove friend button: "Hiqe mikun"
       remove friend button title: "Hiqe këtë njeri nga lista e miqve tuaj"
       add friend button: "Shto mik"
+      add friend button short: "Shto"
       add friend button title: "Dërgoji anëtarit %{user} një kërkesë miqësie"
       accept button: "Prano"
       accept request button: "Pranoje kërkesën"
@@ -632,7 +644,7 @@ sq:
       readings 5 or more: "lexime"
     settings: "Cilësimet"
     privacy:
-      visible to friends?: "A dëshironi që aktiviteti juaj për këtë plan të jetë i dukshëm për miqtë e tu?"
+      visible to friends?: "A doni që miqtë ta shohin aktivitetin tuaj të planit?"
       private: "Private"
       public: "Publike"
     title: "Planet e leximit"
@@ -668,8 +680,8 @@ sq:
     search: "Kërko"
     search placeholder: "Kërko planet %{category}"
     subscribe to plan: "Fillo këtë plan"
-    previous day: "Dita e mëparshme"
-    next day: "Dita pasuese"
+    previous day: "DITA PARA"
+    next day: "DITA PAS"
     reading completed _ mark and show next: "Referimi tjetër: %{next_reference}"
     which reading: "%{current} nga %{total}"
     done reading: "I kryer"
@@ -688,9 +700,11 @@ sq:
     catch me up: "Më arrini"
     restart description: "Ju mund të rifilloni planin tuaj. E tërë historia dhe ecuria e leximeve tuaja do të fshihet dhe do të fillojë nga fillimi."
     restart: "Rifillo planin"
-    privacy description: "Është zgjedhja juaj. Dëshironi që njerëzit të shohin që jeni duke e lexuar këtë plan?"
-    make private: "Bëje privat"
-    make public: "Bëje publik"
+    privacy description:
+      private: "Plani juaj është privat. Ndrysho cilësimet te Vetëm Miqtë për të ndarë aktivitetin e planit me miqtë."
+      public: "Plani juaj është i dukshëm për miqtë. Ndryshoje te Privat për ta bërë privat aktivitetin e planit."
+    make private: "Është caktuar privat"
+    make public: "Ndaje me miqtë"
     privacy title: "Privatësia"
     stop reading: "Ndalo së lexuari këtë plan"
     accountability: "Përgjegjësi"
@@ -1004,6 +1018,9 @@ sq:
     characters remaining: "karaktere të mbetura"
     yes button: "Po"
     no button: "Jo"
+    cancel: "Anulo"
+    plans:
+      privacy: "A dëshironi që aktiviteti juaj për këtë plan të jetë i dukshëm për miqtë e tu?"
     loading indicator text: "Duke ngarkuar ..."
     loading: "Duke ngarkuar"
     pagination:

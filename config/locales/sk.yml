@@ -36,6 +36,7 @@ sk:
       read all: "Čítať všetko"
       read less: "Skryť"
     share: "Zdieľať"
+    add comment: "Pridať komentár"
     my connections: "Prepojené účty"
     connected as: "Ste pripojený k službe %{connection} ako %{username}."
     remove connection: "Odstrániť toto prepojenie"
@@ -73,13 +74,13 @@ sk:
   meta:
     kids_app:
       title: "Aplikácia Biblia pre deti"
-      description: "Aplikáciu Biblia pre deti spúšťame 28.novembra, na Deň Vďakyvzdania! Interaktívne biblické príbehy v bezplatnej aplikácii pre iOS a Android. Pozrite si náhľad na bible.com/kids"
     100million:
       title: "Začína to 100 miliónmi"
       description: "Aplikácia Biblia bola nainštalovaná už takmer 100 miliónov krát, čo je významná udalosť! Ale my iba začíname. Stiahnite si bezplatnú aplikáciu Biblia ešte dnes - a potom ju zdieľajte s priateľmi. Poďme spolu tvoriť dejiny."
     mobile:
       title: "Aplikácia Biblia"
-      description: "Desiatky miliónov ľudí používajú aplikáciu Biblia na čítanie, počúvanie, sledovanie a zdieľanie Božieho Slova, čím sa stáva súčasťou ich každodenného života. Stiahnite si túto bezplatnú aplikáciu a získajte prístup k vašim záložkám a plánom čítania odvšadiaľ. Využite stovky prekladov vrátane audio nahrávok priamo na vašom mobilnom zariadení."
+    site:
+      title: "Bible.com"
     connections:
       index:
         title: "Prepojené účty"
@@ -214,6 +215,7 @@ sk:
       friends button: "Nájsť priateľov"
     action:
       go to scripture: "Prejsť na Písmo"
+      add friend button: "Pridať priateľa"
       load more: "Načítať viac"
       like: "Páči sa mi to"
       liked: "Páči sa mi"
@@ -232,6 +234,11 @@ sk:
       delete highlight title: "Odstrániť toto zvýraznenie"
       delete bookmark title: "Odstrániť túto záložku"
       delete note title: "Odstrániť túto poznámku"
+      more: "Viac"
+      read in bible: "Prečítať v Biblii"
+      read plan: "Čítať"
+      about plan: "O tomto pláne"
+      start plan: "Začať tento plán"
   notifications:
     title: "Notifikácie"
     none: "Nemáte žiadne notifikácie"
@@ -261,6 +268,7 @@ sk:
     limit notice: "Môžete mať až 150 priateľov"
     limit description: "Obmedzenie priateľov v aplikácii Biblia na ľudí, ktorých poznáte, pomáha vytvoriť prostredie pre úprimné rozhovory a zdieľanie objavov s dôvernými priateľmi."
   friendships:
+    name required: "Aby ste mohli lepšie využiť Aplikáciu Biblia s priateľmi, pridajte do svojho profilu vaše meno a priezvisko."
     find friends title: "Nájsť priateľov"
     search by name: "Hľadať podľa mena"
     search button: "Hľadať"
@@ -287,6 +295,7 @@ sk:
       remove friend button: "Odstrániť priateľa"
       remove friend button title: "Odstrániť túto osobu zo zoznamu vašich priateľov"
       add friend button: "Pridať priateľa"
+      add friend button short: "Pridať"
       add friend button title: "Poslať používateľovi %{user} žiadosť o priateľstvo"
       accept button: "Prijať"
       accept request button: "Prijať žiadosť"
@@ -632,8 +641,8 @@ sk:
       readings 5 or more: "čítaní"
     settings: "Nastavenia"
     privacy:
-      visible to friends?: "Chcete, aby vaša aktivita vrámci tohto plánu bola viditeľná pre vašich priateľov?"
-      private: "Súkromné"
+      visible to friends?: "Chcete, aby vaši priatelia videli vašu aktivitu v plánoch čítania?"
+      private: "Súkromný"
       public: "Verejné"
     title: "Plány čítania"
     browse by category: "Prehľadávať podľa kategórie"
@@ -668,8 +677,8 @@ sk:
     search: "Hľadať"
     search placeholder: "Hľadať plány z kategórie %{category}"
     subscribe to plan: "Začať tento plán"
-    previous day: "Predchádzajúci deň"
-    next day: "Nasledujúci deň"
+    previous day: "Predch. deň"
+    next day: "Nasled. deň"
     reading completed _ mark and show next: "Ďalej: %{next_reference}"
     which reading: "%{current} z %{total}"
     done reading: "Hotovo"
@@ -688,9 +697,11 @@ sk:
     catch me up: "Prispôsobiť plán"
     restart description: "Váš plán môžete reštartovať. Všetka história čítania sa zmaže a začnete čítanie odznova."
     restart: "Začať plán odznova"
-    privacy description: "Máte na výber. Chcete, aby ostatní ľudia videli, že čítate tento plán?"
-    make private: "Ponechať súkromný"
-    make public: "Zverejniť"
+    privacy description:
+      private: "Váš plán je súkromný. Ak chcete aktivitu z tohto plánu zdieľať s priateľmi, zmeňte si jeho nastavenie na Iba priatelia."
+      public: "Váš plán je viditeľný pre vašich priateľov. Ak chcete, aby bola vaša aktivita v ňom súkromná, zmeňte si jeho nastavenie na Súkromné."
+    make private: "Nastaviť na súkromný"
+    make public: "Zdieľať s priateľmi"
     privacy title: "Súkromie"
     stop reading: "Ukončiť čítanie tohto plánu"
     accountability: "Sprevádzanie"
@@ -1004,6 +1015,9 @@ sk:
     characters remaining: "- počet zostávajúcich znakov"
     yes button: "Áno"
     no button: "Nie"
+    cancel: "Zrušiť"
+    plans:
+      privacy: "Chcete, aby vaša aktivita vrámci tohto plánu bola viditeľná pre vašich priateľov?"
     loading indicator text: "Načítavanie..."
     loading: "Načítavanie"
     pagination:

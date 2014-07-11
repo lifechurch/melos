@@ -36,6 +36,7 @@ fr:
       read all: "Tout lire"
       read less: "Lire moins"
     share: "Partager"
+    add comment: "Ajouter un commentaire"
     my connections: "Comptes liés"
     connected as: "Vous êtes connectés à %{connection} en tant que %{username}."
     remove connection: "Supprimer cette connexion"
@@ -73,13 +74,16 @@ fr:
   meta:
     kids_app:
       title: "La Bible App pour Enfants"
-      description: "La Bible App pour les Enfants sera lancée le 28 novembre, le jour de Thanksgiving ! Des histoires bibliques interactives dans une application gratuite pour iOS et Android. Regardez un aperçu sur bible.com/kids"
+      description: "La Bible App pour Enfants est un formidable moyen pour vos enfants d'apprendre les histoires bibliques de Jésus, le cadeau de la vie éternelle, et les nombreuses leçons que Dieu nous enseigne. Au travers de cette expérience interactive, les enfants peuvent directement se plonger dans la Parole de Dieu avec des graphismes adorables, en gagnants de points lorsqu'ils lisent et collectent des trésors.  "
     100million:
       title: "Ça démarre avec 100 Millions "
       description: "La Bible App a été installée pratiquement 100 millions de fois - une étape incroyable! Cela dit, ce n'est que le début. Aujourd'hui téléchargez gratuitement la Bible App et partagez-la avec vos amis. Ensemble, réécrivons l'histoire."
     mobile:
       title: "La Bible App"
-      description: "Des dizaines de millions de personnes utilisent la Bible App pour lire, écouter, regarder et partager la Parole de Dieu, l'incluant ainsi dans leur quotidien. Téléchargez l'application gratuite et accédez à vos favoris, notes et plans de lecture où que vous soyez. Profitez des centaines de versions disponibles, y compris des versions audio, le tout à partir de votre appareil mobile."
+      description: "Lisez la Parole de Dieu n'importe quand, n'importe où en utilisant la Bible App. Partagez les Écritures avec vos amis, surlignez et enregistrez vos passages favoris, et créez une habitude quotidienne ace les Plans de Lecture. Disponible sur iOS, Android, Blackberry, Windows Phone et autres."
+    site:
+      title: "Bible.com"
+      description: "Ramenez la beauté et la vérité de la Bible dans votre vie de tous les jours. Avec la Bible App de YouVersion, vous pouvez lire, regarder, écouter ou partager sur votre smartphone ou tablette, et en ligne sur Bible.com."
     connections:
       index:
         title: "Comptes liés"
@@ -214,6 +218,7 @@ fr:
       friends button: "Trouver des amis"
     action:
       go to scripture: "Aller au verset"
+      add friend button: "Ajouter un ami"
       load more: "Charger davantage"
       like: "J'aime"
       liked: "Aimé "
@@ -232,6 +237,11 @@ fr:
       delete highlight title: "Supprimer cette surbrillance"
       delete bookmark title: "Supprimer ce favori"
       delete note title: "Supprimer cette note"
+      more: "Plus"
+      read in bible: "Lire dans la Bible"
+      read plan: "Lire"
+      about plan: "A propos de ce plan"
+      start plan: "Démarrer ce plan"
   notifications:
     title: "Notifications"
     none: "Vous n'avez pas de notifications"
@@ -261,6 +271,7 @@ fr:
     limit notice: "Vous pouvez avoir jusqu'à 150 amis"
     limit description: "Limiter vos amis de Bible App à des personnes que vous connaissez bien permet de créer un environnement propice aux conversations authentiques et aux découvertes avec des personnes de confiance."
   friendships:
+    name required: "Pour expérimenter la Bible avec vos amis, mettez à jour votre Profil avec vos nom et prénom."
     find friends title: "Trouver des amis"
     search by name: "Chercher par nom"
     search button: "Chercher"
@@ -287,6 +298,7 @@ fr:
       remove friend button: "Supprimer un ami"
       remove friend button title: "Supprimer cette personne de votre liste d'amis"
       add friend button: "Ajouter un ami"
+      add friend button short: "Ajouter"
       add friend button title: "Envoyer une demande d'amitié à %{user}"
       accept button: "Accepter"
       accept request button: "Accepter la demande"
@@ -632,7 +644,7 @@ fr:
       readings 5 or more: "lectures"
     settings: "Paramètres"
     privacy:
-      visible to friends?: "Voulez-vous que votre activité relative à ce plan soit visible de vos amis ?"
+      visible to friends?: "Voulez-vous que vos amis voient votre activité de Plans de Lecture ?"
       private: "Privé"
       public: "Public"
     title: "Plans de lecture"
@@ -668,8 +680,8 @@ fr:
     search: "Rechercher"
     search placeholder: "Chercher les plans %{category}"
     subscribe to plan: "Commencer ce plan"
-    previous day: "Jour précédent"
-    next day: "Jour suivant"
+    previous day: "JOUR PREC"
+    next day: "JOUR SUIV"
     reading completed _ mark and show next: "Suite : %{next_reference}"
     which reading: "%{current} de %{total}"
     done reading: "Effectuée"
@@ -688,9 +700,11 @@ fr:
     catch me up: "Me rattrapper"
     restart description: "Vous pouvez recommencer votre plan. Tous vos progrès et historiques de lecture seront effacés et vous recommencerez depuis le début."
     restart: "Recommencer ce plan"
-    privacy description: "C'est votre choix, voulez-vous que d'autres voient que vous lisez ce plan?"
-    make private: "Rendre le statut privé"
-    make public: "Rendre le statut public"
+    privacy description:
+      private: "Votre Plan est Privé. Changez vos paramètres pour Amis Seulement pour partager votre activité avec vos amis."
+      public: "Votre Plan est visible pour vos amis. Changez vos paramètres pour rendre votre activité privée."
+    make private: "Rendre Privé"
+    make public: "Partager avec des Amis"
     privacy title: "Vie privée"
     stop reading: "Arrêter ce plan"
     accountability: "Fidélisation"
@@ -1004,6 +1018,9 @@ fr:
     characters remaining: "caractères restants"
     yes button: "Oui"
     no button: "Non"
+    cancel: "Annuler "
+    plans:
+      privacy: "Voulez-vous que votre activité relative à ce plan soit visible de vos amis ?"
     loading indicator text: "Chargement..."
     loading: "Chargement"
     pagination:

@@ -120,6 +120,8 @@ cy:
   friendships:
     status:
       friends: "Ffrindiau "
+    form:
+      add friend button short: "Adio"
   notes:
     form:
       title field: "Teitl "
@@ -437,8 +439,6 @@ cy:
     search: "Chwilio"
     search placeholder: "Chwiliwch Gynlluniau%{category}"
     subscribe to plan: "Dechreuwch y Cynllun"
-    previous day: "Ddoe "
-    next day: "Yfory "
     reading completed _ mark and show next: "Nesaf: %{next_reference}"
     which reading: "%{current}%{total} "
     done reading: "Wedi gorffen"
@@ -455,9 +455,6 @@ cy:
     catch me up: "Ail Afael  "
     restart description: "Medrwch ail afael ar eich cynllun. Caiff eich patrwm darllen a’ch cynnydd ei  aildrefnu er mwyn i chi ail gychwyn .  "
     restart: "Ail gychwyn y Cynllun "
-    privacy description: "Chi sy'n dewis. Ydych chi am i bobl eraill weld eich patrwm darllen ? "
-    make private: "Cadwch yn Breifat    "
-    make public: "Gwnewch yn Gyhoeddus   "
     privacy title: "Preifatrwydd"
     stop reading: "Stopiwch  Ddarllen y Cynllun  "
     accountability: "Atebolrwydd"
@@ -633,6 +630,7 @@ cy:
     learn more: "Dysgwch Fwy "
     publisher widget title: "Cyhoeddwr "
   ui:
+    cancel: "Canslo  "
     pagination:
       next page: "Y Dudalen Nesaf"
       previous page: "Y Dudalen Flaenorol "

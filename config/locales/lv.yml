@@ -36,6 +36,7 @@ lv:
       read all: "Lasīt visu"
       read less: "Lasīt mazāk"
     share: "Dalīties"
+    add comment: "Pievieno komentāru"
     my connections: "Pievienotie konti"
     connected as: "Jūs esat pieslēdzies %{connection} kā %{username}"
     remove connection: "Atslēgt savienojumu"
@@ -73,13 +74,11 @@ lv:
   meta:
     kids_app:
       title: "Bībeles aplikācija bērniem"
-      description: "Bībeles aplikācija bērniem tiks palaista 28. Novembrī. Interaktīvi Bībeles stāsti bezmaksas aplikācijā priekš iOS un Android. Priekškatījums pieejams bible.com/kids"
     100million:
       title: "Tas sākas ar 100 miljoniem"
       description: "Bībeles aplikācija ir uzstādīta gandrīz 100 miljonu reižu - neticami! Bet mēs tikai sākam. Lejuplādē bezmaksas Bībeles aplikāciju šodien - un tad dalies ar aplikāciju ar saviem draugiem. Radīsim vēsturi kopā."
     mobile:
       title: "Bībeles aplikācija"
-      description: "Desmitiem miljoniem cilvēku lieto Bībeles aplikāciju Dieva vārda lasīšanai, klausīšanai, skatīšanai un lai dalītos tajā, padarot to par daļu no viņu ikdienas dzīves, Lejupielādē bezmaksas aplikāciju un piekļūsti savām grāmatzīmēm, piezīmēm un lasīšanas plāniem no jebkuras vietas. Izbaudi simtiem tulkojumu, tai skaitā audio versijas un tas viss uz savas mobilās ierīce."
     connections:
       index:
         title: "Pievienotie konti"
@@ -214,6 +213,7 @@ lv:
       friends button: "Atrodi draugus"
     action:
       go to scripture: "Doties uz rakstu vietu"
+      add friend button: "Pievienot draugu"
       load more: "Ielādēt vēl"
       like: "Patīk"
       liked: "Patīk"
@@ -232,6 +232,9 @@ lv:
       delete highlight title: "Dzēst izcelto"
       delete bookmark title: "Izdzēst šo grāmatzīmi"
       delete note title: "Dzēst piezīmi"
+      more: "Vairāk"
+      read in bible: "Lasi Bībelē"
+      read plan: "Lasīt"
   notifications:
     title: "Paziņojumi"
     none: "Tev nav paziņojumu"
@@ -287,6 +290,7 @@ lv:
       remove friend button: "Dzēst draugu"
       remove friend button title: "Izdēst šo personu no sava draugu saraksta"
       add friend button: "Pievienot draugu"
+      add friend button short: "Pievienot"
       add friend button title: "Nosūtīt %{user} draudzības uzaicinājumu"
       accept button: "Apstiprināt"
       accept request button: "Apstiprināt pieprasījumu"
@@ -632,7 +636,6 @@ lv:
       readings 5 or more: "lasījumi"
     settings: "Uzstādījumi"
     privacy:
-      visible to friends?: "Vai tu vēlētos, lai tava aktivitāte šajā lasīšanas plānā būtu redzama taviem draugiem?"
       private: "Privāts"
       public: "Publisks"
     title: "Lasīšanas plāni"
@@ -688,9 +691,8 @@ lv:
     catch me up: "Panākt mani."
     restart description: "Jūs varat atsākt savu plānu. Visa jūsu lasīšanas plāna vēsture tiks atjaunota un sākta no sākuma."
     restart: "Atsākt plānu no jauna"
-    privacy description: "Tā ir jūsu izvēle. Vai jūs vēlaties, lai citi cilvēki redz, ka jūs lasāt šo plānu?"
-    make private: "Pataisīt par privātu"
-    make public: "Publicēt"
+    make private: "Padarīt privātu"
+    make public: "Dalies ar draugiem"
     privacy title: "Konfidencionalitāte"
     stop reading: "Beigt lasīt šo plānu"
     accountability: "pārskatatbildība"
@@ -1004,6 +1006,9 @@ lv:
     characters remaining: "rakstzīmes paliek"
     yes button: "Jā"
     no button: "Nē"
+    cancel: "Atcelt"
+    plans:
+      privacy: "Vai tu vēlētos, lai tava aktivitāte šajā lasīšanas plānā būtu redzama taviem draugiem?"
     loading indicator text: "Ielādē..."
     loading: "Ielādē"
     pagination:

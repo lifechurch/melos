@@ -36,6 +36,7 @@ zh-CN:
       read all: "阅读全部"
       read less: "简读"
     share: "分享"
+    add comment: "添加评论"
     my connections: "已绑定的账户"
     connected as: "您已经与 %{connection} 上的 %{username}账户关联。"
     remove connection: "移除这个连接"
@@ -73,13 +74,16 @@ zh-CN:
   meta:
     kids_app:
       title: "儿童圣经软件"
-      description: "儿童圣经软件在11月28日，也就是感恩节当日推出！ 在 iOS 和安卓平台上呈献互动式圣经故事的免费软件。请在 bible.com/kids 预览。"
+      description: "儿童圣经软件（Bible App for Kids）为您的孩子提供了一个很棒的途径来了解关于耶稣的圣经故事、永生的赏赐以及神对我们的教导。在这个互动的体验中，孩子直接接触神的话以及与之相配的生动画面，在阅读的同时赢得积点和收集宝藏。"
     100million:
       title: "从一亿开始"
       description: "圣经软件的安装量几乎达到1亿次，这真是一个不可思议的里程碑！但是我们才刚刚开始。下载免费的圣经软件，然后与朋友们分享这个软件，让我们一起开创历史。"
     mobile:
       title: "圣经软件"
-      description: "数千万的人正在通过圣经软件阅读、收听、观看并分享神的话语，让神的话语成为成为他们日常生活的一部分。下载免费圣经软件，无论在哪里都可以访问您的书签、笔记和读经计划。享用数百种圣经译本，包括有声圣经，这一切都在您的移动设备上实现。"
+      description: "使用 YonVersion 圣经软件可以让您随时随地阅读神的话语。与朋友分享经文、高亮显示经节、给经文做书签，依照读经计划建立每日读经的习惯。在iOS, 安卓、Blackberry和Windows Phone等多个平台均可使用。"
+    site:
+      title: "Bible.com"
+      description: "将圣经的真理和美善带入每天的生活! 藉着 YouVersion 圣经软件，您可以在智能手机、平板或者 Bible.com 网站阅读、观看、聆听并分享圣经。"
     connections:
       index:
         title: "已绑定的账户"
@@ -214,6 +218,7 @@ zh-CN:
       friends button: "寻找朋友"
     action:
       go to scripture: "进入经文"
+      add friend button: "添加朋友"
       load more: "载入更多"
       like: "赞"
       liked: "已点赞"
@@ -232,6 +237,11 @@ zh-CN:
       delete highlight title: "删除此高亮显示"
       delete bookmark title: "删除这个书签"
       delete note title: "删除此笔记"
+      more: "更多"
+      read in bible: "打开圣经阅读"
+      read plan: "阅读"
+      about plan: "关于计划"
+      start plan: "开始计划"
   notifications:
     title: "通知"
     none: "您没有任何通知"
@@ -261,6 +271,7 @@ zh-CN:
     limit notice: "您最多可以有 150 位朋友"
     limit description: "将圣经软件上的朋友关系限定在熟悉的人之间，这有助于创造一个坦诚对话和彼此信任的氛围。"
   friendships:
+    name required: "要与朋友一起体验圣经，请您先更新个人档案中的姓名。"
     find friends title: "寻找朋友"
     search by name: "按姓名搜索"
     search button: "开始"
@@ -287,6 +298,7 @@ zh-CN:
       remove friend button: "删除朋友"
       remove friend button title: "从您的朋友列表中删除这个人"
       add friend button: "添加朋友"
+      add friend button short: "添加"
       add friend button title: "给 %{user} 发出朋友请求"
       accept button: "接受"
       accept request button: "接受请求"
@@ -632,7 +644,7 @@ zh-CN:
       readings 5 or more: "个阅读内容"
     settings: "设置"
     privacy:
-      visible to friends?: "您是否愿意让朋友看到您的读经计划的活动？"
+      visible to friends?: "您希望了解您朋友的读经活动吗？"
       private: "保密"
       public: "公开"
     title: "读经计划"
@@ -669,7 +681,7 @@ zh-CN:
     search placeholder: "搜索%{category}类的读经计划"
     subscribe to plan: "开始此计划"
     previous day: "前一天"
-    next day: "后一天"
+    next day: "下一天"
     reading completed _ mark and show next: "下一个： %{next_reference}"
     which reading: "%{total}段中的第%{current}段"
     done reading: "完成"
@@ -688,9 +700,11 @@ zh-CN:
     catch me up: "帮我跟上进度"
     restart description: "您可以重新开始您的计划。您的所有阅读历史和进度都将被重置到初始状态。"
     restart: "重启计划"
-    privacy description: "请选择：您是否希望他人看到您的读经计划？"
-    make private: "设为保密的"
-    make public: "设为公开的"
+    privacy description:
+      private: "您的计划是保密的。要与朋友们分享您的计划活动，请将您的设置换成『与朋友分享』。"
+      public: "您的计划是对朋友们公开的。如果不想公开您的计划活动，请选择『设为保密』。"
+    make private: "设置为保密"
+    make public: "和朋友们分享"
     privacy title: "保密的"
     stop reading: "停止阅读此计划"
     accountability: "督促"
@@ -1004,6 +1018,9 @@ zh-CN:
     characters remaining: "可用字符数"
     yes button: "是"
     no button: "否"
+    cancel: "取消"
+    plans:
+      privacy: "您是否愿意让朋友看到您的读经计划的活动？"
     loading indicator text: "加载中..."
     loading: "加载中"
     pagination:

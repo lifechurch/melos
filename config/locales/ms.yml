@@ -36,6 +36,7 @@ ms:
       read all: "Baca semua"
       read less: "Baca Kurang"
     share: "Beritakan"
+    add comment: "Tambah komen"
     my connections: "Akaun yang Berkaitan"
     connected as: "Anda tersambung ke %{connection} sebagai %{username}."
     remove connection: "Batalkan sambungan ini"
@@ -73,13 +74,11 @@ ms:
   meta:
     kids_app:
       title: "App Alkitab untuk Kanak-Kanak"
-      description: "App Alkitab untuk Kanak-kanak dilancarkan pada 28 November, Hari Kesyukuran! Cerita Alkitab yang interaktif dalam app percuma untuk iOS dan Android. Lihat preview di bible.com/kids"
     100million:
       title: "Ia Bermula dengan 100 Juta"
       description: "App Alkitab telah di instalasi hampir 100 juta kali - pencapaian yang menakjubkan! Tetapi kita baru sahaja bermula. Muat turun App Alkitab percuma hari ini - dan kongsikan app ini dengan sahabat anda. Ayuh mencipta sejarah bersama."
     mobile:
       title: "App Alkitab"
-      description: "Berpuluh juta orang kini mengguna App Alkitab untuk membaca, mendengar, menonton dan berkongsi Firman Allah, menjadikannya sebahagian daripada kehidupan mereka setiap hari. Download app percuma dan akses bookmark, nota, dan pelan bacaan anda dari mana pun. Nikmati beratus versi Alkitab, termasuk audio, pada peranti mobil anda."
     connections:
       index:
         title: "Akaun yang Berkaitan"
@@ -214,6 +213,7 @@ ms:
       friends button: "Cari sahabat"
     action:
       go to scripture: "Terus ke alkitab"
+      add friend button: "Tambah sahabat"
       load more: "Load lebih lagi"
       like: "Like"
       liked: "Sudah \"Like\""
@@ -232,6 +232,11 @@ ms:
       delete highlight title: "Batalkan highlight ini"
       delete bookmark title: "Hapuskan bookmark ini"
       delete note title: "Hapuskan nota ini"
+      more: "Lebih"
+      read in bible: "Baca Alkitab"
+      read plan: "Baca"
+      about plan: "Tentang pelan"
+      start plan: "Mulakan pelan"
   notifications:
     title: "Notifikasi"
     none: "Anda tidak mempunyai sebarang notifikasi"
@@ -261,6 +266,7 @@ ms:
     limit notice: "Anda boleh mempunyai sebanyak 150 sahabat"
     limit description: "Menghadkan sahabat App Alkitab anda kepada orang yang anda sangat kenal mewujudkan persekitaran untuk perbualan yang jujur dan penemuan yang dikongsi dengan sahabat yang dipercayai."
   friendships:
+    name required: "Update nama pertama serta nama keluarga anda dalam Profil demi menikmati Alkitab bersama sahabat anda."
     find friends title: "Cari sahabat"
     search by name: "Cari menggunakan nama"
     search button: "Pergi"
@@ -287,6 +293,7 @@ ms:
       remove friend button: "Keluarkan sahabat"
       remove friend button title: "Keluarkan orang ini dari senarai sahabat anda"
       add friend button: "Tambah sahabat"
+      add friend button short: "Tambah"
       add friend button title: "Hantarkan %{user} permintaan sahabat"
       accept button: "Terima"
       accept request button: "Terima permintaan"
@@ -632,7 +639,7 @@ ms:
       readings 5 or more: "pembacaan"
     settings: "Setting"
     privacy:
-      visible to friends?: "Adakah anda ingin aktiviti anda dengan pelan ini dapat dilihat oleh sahabat anda?"
+      visible to friends?: "Adakah anda ingin sahabat anda untuk melihat aktiviti Pelan anda?"
       private: "Private"
       public: "Awam"
     title: "Pelan Bacaan"
@@ -668,8 +675,8 @@ ms:
     search: "Cari"
     search placeholder: "Cari Pelan %{category}"
     subscribe to plan: "Mulakan Pelan Ini"
-    previous day: "Hari Sebelumnya"
-    next day: "Hari Keesokan"
+    previous day: "HARI SEBELUM"
+    next day: "HARI BERIKUTNYA"
     reading completed _ mark and show next: "Selanjutnya: %{next_reference}"
     which reading: "%{current} dari %{total}"
     done reading: "Selesai"
@@ -688,9 +695,11 @@ ms:
     catch me up: "Kejarkan Saya"
     restart description: "Anda boleh memulakan pelan sekali lagi. Segala sejarah dan kemajuan akan reset dan kembali ke permulaan."
     restart: "Mulakan Pelan Sekali Lagi"
-    privacy description: "Ini pilihan anda. Inginkah anda membenarkan orang lain melihat pelan anda?"
-    make private: "Jadikan Private"
-    make public: "Jadikan Awam"
+    privacy description:
+      private: "Pelan anda Private. Tukarkan setting anda kepada Sahabat Sahaja untuk berkongsi aktiviti Pelan bersama sahabat."
+      public: "Pelan anda boleh dilihat oleh sahabat. Tukarkan kepada Private untuk menjadikan aktiviti Pelan anda Private."
+    make private: "Set ke Private"
+    make public: "Memberitakan kepada sahabat"
     privacy title: "Privasi"
     stop reading: "Hentikan Pelan Ini"
     accountability: "Akauntabiliti"
@@ -1004,6 +1013,9 @@ ms:
     characters remaining: "baki karakter"
     yes button: "Ya"
     no button: "Tidak"
+    cancel: "Batalkan"
+    plans:
+      privacy: "Adakah anda ingin aktiviti anda dengan pelan ini dapat dilihat oleh sahabat anda?"
     loading indicator text: "Memuat ..."
     loading: "Memuat"
     pagination:

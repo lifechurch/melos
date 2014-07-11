@@ -36,6 +36,7 @@ nl:
       read all: "Lees alles"
       read less: "Lees minder"
     share: "Deel"
+    add comment: "Voeg een reactie toe"
     my connections: "Verbonden Accounts"
     connected as: "Je bent verbonden met %{connection} als %{username}."
     remove connection: "Verwijder deze connectie"
@@ -73,13 +74,16 @@ nl:
   meta:
     kids_app:
       title: "De Bijbel App voor kinderen"
-      description: "De Bijbel App voor kinderen werd 28 november, 2013 uitgebracht. Interactieve Bijbelverhalen in een gratis app voor iOS en Android. Kijk voor een voorbeeld op Bible.com/nl/kids."
+      description: "De Bijbel App voor Kinderen is een geweldige manier om ze Bijbelverhalen over Jezus te leren, het geschenk van het eeuwige leven en vele andere lessen die God ons leert. Met deze interactieve ervaring komen kinderen rechtstreeks in aanraking met het Woord van God, door prachtige beelden terwijl ze punten verdienen voor het lezen en schatten verzamelen."
     100million:
       title: "Het begint met 100 miljoen"
       description: "De Bijbel App is al bijna 100 miljoen keer geïnstalleerd - een geweldige mijlpaal! Maar we zijn pas begonnen. Download vandaag de gratis Bijbel App nog -en deel de app met jouw vrienden. Laten we samen geschiedenis maken."
     mobile:
       title: "De Bijbel App"
-      description: "Tientallen millioenen mensen gebruiken de Bible App om Gods Woord een deel van hun leven te maken door te lezen, luisteren, bekijken en het delen ervan. Download de gratis app en krijg toegang op je bladwijzers, notitities en leesplannen vanaf elke plek. Geniet van honderden vertalingen, inclusief audio, alles op je mobiele apparaat."
+      description: "Lees Gods Woord altijd en overal met de Bijbel App van YouVersion. Deel teksten met vrienden, markeer gedeeltes en/of maak een bladwijzer, maak er een gewoonte van elke dag te lezen met behulp van Bijbel leesplannen. Beschikbaar voor iOS, Android, Blackberry, Windows telefoon en meer."
+    site:
+      title: "Bible.com"
+      description: "Breng de schoonheid en waarheid van de Bijbel in je dagelijkse leven. Met de YouVersion Bijbel App kun jij lezen, kijken, luisteren en delen via jouw smartfoon, tablet en online op Bible.com."
     connections:
       index:
         title: "Verbonden Accounts"
@@ -214,6 +218,7 @@ nl:
       friends button: "Vrienden vinden"
     action:
       go to scripture: "Ga naar tekst"
+      add friend button: "Voeg Vriend toe"
       load more: "Meer laden"
       like: "Vind ik leuk"
       liked: "Vond leuk"
@@ -232,6 +237,11 @@ nl:
       delete highlight title: "Verwijder deze markering"
       delete bookmark title: "Deze bladwijzer verwijderen"
       delete note title: "Deze notitie verwijderen"
+      more: "Meer"
+      read in bible: "Lees in de Bijbel."
+      read plan: "Lezen"
+      about plan: "Over het leesplan"
+      start plan: "Start Leesplan"
   notifications:
     title: "Meldingen"
     none: "Je hebt geen meldingen"
@@ -261,6 +271,7 @@ nl:
     limit notice: "Je kunt maximaal 150 vrienden hebben"
     limit description: "Het beperken van jouw Bijbel App vriendschappen met mensen die jij goed kennen creëert een omgeving voor eerlijke gesprekken en geeft ruimte om ideeën uit te wisselen met trouwe vrienden."
   friendships:
+    name required: "Om de Bijbel met vrienden te kunnen ervaren, werk jouw Profiel bij met jouw voor- en achternaam."
     find friends title: "Vrienden vinden"
     search by name: "Zoek op naam"
     search button: "Ga"
@@ -287,6 +298,7 @@ nl:
       remove friend button: "Verwijder vriend"
       remove friend button title: "Verwijder deze persoon van jouw vriendenlijst"
       add friend button: "Voeg Vriend toe"
+      add friend button short: "Toevoegen"
       add friend button title: "Stuur %{user} een vriendschapsverzoek"
       accept button: "Accepteer"
       accept request button: "Accepteer verzoek"
@@ -632,7 +644,7 @@ nl:
       readings 5 or more: "Lezingen"
     settings: "Instellingen"
     privacy:
-      visible to friends?: "Wil jij jouw activiteiten in dit Leesplan zichtbaar maken voor jouw vrienden?"
+      visible to friends?: "Wil jij dat jouw Leesplan activiteit zichtbaar is voor jouw vrienden?"
       private: "Privé"
       public: "Openbaar"
     title: "Leesplannen"
@@ -668,8 +680,8 @@ nl:
     search: "Zoeken"
     search placeholder: "%{category} leesplannen doorzoeken"
     subscribe to plan: "Aan dit leesplan beginnen"
-    previous day: "Vorige dag"
-    next day: "Volgende dag"
+    previous day: "VORIGE DAG"
+    next day: "VOLGENDE DAG"
     reading completed _ mark and show next: "Volgende: %{next_reference}"
     which reading: "%{current} van %{total}"
     done reading: "Klaar"
@@ -688,9 +700,11 @@ nl:
     catch me up: "Inhalen"
     restart description: "Je kan opnieuw beginnen met je leesplan. Je hele leesgeschiedenis en vorderingen worden opnieuw ingesteld en vanaf het begin begonnen."
     restart: "Leesplan opnieuw beginnen"
-    privacy description: "Het is jouw keuze. Wil je dat mensen kunnen zien dat je dit leesplan volgt?"
-    make private: "Privé maken"
-    make public: "Openbaar maken"
+    privacy description:
+      private: "Jouw Leesplan is privé. Zet de instelling op Vrienden om jouw activiteiten enkel voor jouw vrienden zichtbaar te maken."
+      public: "Jouw Leesplan is zichtbaar voor jouw vrienden. Zet de instelling op Privé om jouw activiteit privé te maken."
+    make private: "Wijzig in Privé"
+    make public: "Delen met Vrienden"
     privacy title: "Privacy"
     stop reading: "Dit leesplan stoppen"
     accountability: "Verantwoording"
@@ -1004,6 +1018,9 @@ nl:
     characters remaining: "karakters resterend"
     yes button: "Ja"
     no button: "Nee"
+    cancel: "Annuleren"
+    plans:
+      privacy: "Wil jij jouw activiteiten in dit Leesplan zichtbaar maken voor jouw vrienden?"
     loading indicator text: "Laden..."
     loading: "Laden..."
     pagination:

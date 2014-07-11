@@ -36,6 +36,7 @@ it:
       read all: "Leggi tutto"
       read less: "Leggi meno"
     share: "Condividi"
+    add comment: "Aggiungi un commento"
     my connections: "Account Collegati"
     connected as: "Sei collegato al tuo account %{connection} come %{username}."
     remove connection: "Rimuovi questa connessione"
@@ -73,13 +74,16 @@ it:
   meta:
     kids_app:
       title: "L'App Bibbia per Ragazzi"
-      description: " L'App Bibbia per Bambini verrà lanciata il 28 novembre, il Giorno del Ringraziamento! Storie della Bibbia interattive in un'app per iOS e Android. Vedi un saggio a bible.com/kids"
+      description: "L'App Bibbia for Kids è un ottimo modo per far imparare le storie della Bibbia di Gesù ai tuoi figli, il dono della vita eterna e le tante lezioni che Dio ci insegna. In questa esperienza interattiva, i bimbi si coinvolgono nella Parola di Dio con deliziosi effetti visivi e guadagnano punti leggendo, e collezionando dei tesori."
     100million:
       title: "Inzia con 100 Milioni"
       description: "L'App Bibbia è stata installata quasi 100 milioni di volte - una pietra miliare incredibile! Ma siamo solo agli inizi. Scarica oggi l'App Bibbia gratuita - e poi condividi l'app con i tuoi amici. Facciamo la storia insieme."
     mobile:
       title: "L'App Bibbia"
-      description: "Decine di milioni di persone usano l'App Bibbia per leggere, ascoltare, guardare e condividere la Parola di Dio, rendendola parte della loro vita quotidiana. Scarica l'app gratuita e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile."
+      description: "Leggi la Parola di Dio in ogni momento, ovunque, usando l'App della Bibbia YouVersion. Condividi le Scritture con gli amici, evidenzia e segna i passi ,fanne un'abitudine giornaliera con i Piani Bibbia. Disponibile per iOS, Android, Blackberry, Windows Phone ed altri."
+    site:
+      title: "Bible.com"
+      description: "Porta la bellezza e la verità della Bibbia nella vita quotidiana. Con l'App Bibbia YouVersion puoi leggere, guardare, ascoltare e condividere sul tuo smartphone o tablet, e sul web su Bible.com."
     connections:
       index:
         title: "Account Collegati"
@@ -214,6 +218,7 @@ it:
       friends button: "Trova amici"
     action:
       go to scripture: "Vai alle scritture"
+      add friend button: "Aggiungi amicizia"
       load more: "Carica ancora"
       like: "Mi Piace"
       liked: "Mi Piace"
@@ -232,6 +237,11 @@ it:
       delete highlight title: "Elimina questa evidenziazione"
       delete bookmark title: "Elimina questo segnalibro"
       delete note title: "Elimina questa nota"
+      more: "Ancora"
+      read in bible: "Leggi nella Bibbia"
+      read plan: "Leggi"
+      about plan: "Riguardo il Piano"
+      start plan: "Inizia Piano"
   notifications:
     title: "Notifiche"
     none: "Non hai notifiche"
@@ -261,6 +271,7 @@ it:
     limit notice: "Puoi avere fino a 150 amici"
     limit description: "Limitare le tue amicizie App Bibbia a persone che conosci bene crea un ambiente per delle conversazioni sincere e scoperte condivise con amici fidati."
   friendships:
+    name required: "Per sperimentare la Bibbia con gli amici, aggiorna il tuo Profilo con il tuo nome e cognome."
     find friends title: "Trova amici"
     search by name: "Cerca per nome"
     search button: "Vai"
@@ -287,6 +298,7 @@ it:
       remove friend button: "Rimuovi amicizia"
       remove friend button title: "Rimuovi questa persona dalla liste dei tuoi amici"
       add friend button: "Aggiungi amicizia"
+      add friend button short: "Aggiungi"
       add friend button title: "Invia a %{user} una richiesta di amicizia"
       accept button: "Accetta"
       accept request button: "Accetta richiesta"
@@ -632,7 +644,7 @@ it:
       readings 5 or more: "letture"
     settings: "Opzioni"
     privacy:
-      visible to friends?: "Vuoi che la tua attività con questo piano sia visibile per i tuoi amici?"
+      visible to friends?: "Vuoi che i tuoi amici vedano la tua attività con il Piano?"
       private: "Privato"
       public: "Pubblico"
     title: "Piani di Lettura"
@@ -668,8 +680,8 @@ it:
     search: "Cerca"
     search placeholder: "Cerca Piani di %{category}"
     subscribe to plan: "Comincia Questo Piano"
-    previous day: "Giorno Precedente"
-    next day: "Giorno Successivo"
+    previous day: "GIORNO PREC"
+    next day: "GIORNO SUCC"
     reading completed _ mark and show next: "Prossimo: %{next_reference}"
     which reading: "%{current} di %{total}"
     done reading: "Fatto"
@@ -688,9 +700,11 @@ it:
     catch me up: "Aggiornami"
     restart description: "Puoi ricominciare il tuo piano. Le informazioni sulle tue letture e progresso saranno resettate e comincerai dall'inizio."
     restart: "Ricomincia il Piano"
-    privacy description: "È la tua scelta. Vuoi che le persone vedano che stai seguendo questo piano?"
-    make private: "Rendilo Privato"
-    make public: "Rendilo Pubblico"
+    privacy description:
+      private: "Il tuo Piano è Privato. Cambia l'impostazione in Solo Amici per condividere la tua attività con il Piano con gli amici."
+      public: "Il tuo Piano è visibile per gli amici. Cambia l'impostazione in Privato per rendere privata la tua attività con il Piano."
+    make private: "Impostare su Privato"
+    make public: "Condividi con Amici"
     privacy title: "Privacy"
     stop reading: "Ferma Questo Piano"
     accountability: "Responsabilità"
@@ -1004,6 +1018,9 @@ it:
     characters remaining: "caratteri rimasti"
     yes button: "Sì"
     no button: "No"
+    cancel: "Annulla"
+    plans:
+      privacy: "Vuoi che la tua attività con questo piano sia visibile per i tuoi amici?"
     loading indicator text: "Caricando ..."
     loading: "sta caricando"
     pagination:
