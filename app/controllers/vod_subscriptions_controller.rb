@@ -15,6 +15,7 @@ class VodSubscriptionsController < ApplicationController
     time = "#{params[:hour]}:#{params[:minute]}:00"
     @vod_subscription[params[:type].to_sym] = { time: time, version_id: params[:version_id] }
     @results = VodSubscription.create(@vod_subscription.merge(auth: current_user.auth))
+    flash[:notice] = t('users.vod_subscription success') unless @results.errors.present?
     return redirect_to user_vod_subscriptions_path
   end
 
