@@ -1,7 +1,7 @@
 class SubscriptionsController < ApplicationController
 
   respond_to :html
-  
+  before_filter :mobile_redirect, only: [:index, :show]
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
   before_filter :find_subscription,     only: [:show,:destroy,:edit,:update,:calendar]

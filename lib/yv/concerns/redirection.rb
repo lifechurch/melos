@@ -65,8 +65,24 @@ module YV
               },
             plans:
               {
-                index:    "reading_plans",
+                index:    "reading_plans#{"?category=" << params[:category] if params[:category].present?}",
                 show:     "reading_plan_detail?id=#{params[:id].match /(\d+)/ if params[:id].present?}"
+              },
+            subscriptions:
+              {
+                index:    "reading_plan_day?id=#{params[:id].match /(\d+)/ if params[:id].present?}&day=#{params[:day] if params[:day].present?}",
+                show:     "reading_plan_day?id=#{params[:id].match /(\d+)/ if params[:id].present?}&day=#{params[:day] if params[:day].present?}",
+              },
+            users:
+              {
+                show:       "profile?id=#{params[:id]}",
+                notes:      "my_notes",
+                bookmarks:  "bookmarks",
+                badges:     "my_profile"
+              },
+            references:
+              {
+                show:     "bible?reference=#{params[:reference]}&version=#{params[:version]}"
               }
           }
         )
