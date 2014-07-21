@@ -2,25 +2,25 @@
 
 .share
   %p.share-copy
-    Tell your friends about the Bible App for Kids.
+    = t('kids.share.tell friends')
 
   - fb_app_id   = Cfg.facebook_app_id
-  - fb_name     = "The Bible App for Kids"
-  - fb_desc     = "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
-  - fb_link     = "http://www.bible.com/kids"
-  - fb_redirect = "http://www.bible.com/kids"
+  - fb_name     = t('kids.share.facebook name')
+  - fb_desc     = t('kids.share.facebook description')
+  - fb_link     = t('kids.share.facebook link')
+  - fb_redirect = t('kids.share.facebook redirect')
 
   %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
     Facebook
 
 
-  - twitter     = "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
-  - twitter_hashtags = "kidsbible"
+  - twitter     = t('kids.share.twitter description')
+  - twitter_hashtags = t('kids.share.twitter hashtags')
   %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}&hashtags=#{twitter_hashtags}"}
     Twitter
 
 
-  - subject     = "The Bible App for Kids is here!"
-  - body        = "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
+  - subject     = t('kids.share.email subject')
+  - body        = t('kids.share.email body')
   %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
-    Email
+    = t('kids.share.email')

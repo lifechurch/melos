@@ -53,4 +53,8 @@ class RedirectsController < ApplicationController
     redirect_to('/groups/lifechurchtv')
   end
 
+  def ninos
+    redirect_to('/es/kids')
+  end
+
 end
