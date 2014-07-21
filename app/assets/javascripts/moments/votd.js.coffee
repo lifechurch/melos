@@ -51,9 +51,12 @@ class window.Moments.VOTD extends Moments.Base
         e.preventDefault()
         @vod_subscribe_layer.toggle()
         @subscribe_link.show()
-
-
-
+    # Activate the vod version selector
+    @vod_version_selector = @moment_el.find("#version_id")
+    if @vod_version_selector.length
+      @vod_version_selector.on "change", (e) =>
+        if @vod_version_selector.val() == "-1"
+          window.location = @data.subscription.path
 
   fetch: ->
     verse_url = "/bible/#{@version()}/#{@usfm()}.json"

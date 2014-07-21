@@ -14,7 +14,7 @@
       %p
         = t('notes.version field')
       = hidden_field_tag(:type, type)
-      = select_tag(:version_id, options_from_collection_for_select(versions, :id, :to_s, version_id))
+      = select_tag(:version_id, options_from_collection_for_select(versions, :id, :to_s, version_id || 1))
 
   %h5
     .time
@@ -23,7 +23,6 @@
     = ":"
     = select_tag :minute, options_for_select(allowed_minutes, minute)
     = select_tag :meridian, options_for_select(['AM', 'PM'], meridian)
-
   - if version_id.present?
     = submit_tag t('bookmarks.update'), class: 'action_button_grey'
   - else
