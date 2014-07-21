@@ -1,5 +1,6 @@
 .moment-vod-subscribe-layer
   %form{action: "{{subscription.path}}", method: "post"}
+    %input{type: 'hidden', name: 'redirect_to', value: 'moments'}
     .heading
       %h4
         {{I18n 'moments.vod.get daily email'}}
@@ -8,9 +9,12 @@
         {{I18n 'moments.vod.version'}}:
       %input{type: 'hidden', name: 'type', value: 'email'}
       %select#version_id{name: "version_id"}
-        {{#each subscription.versions}}
-        %option{value: "{{version_id}}"} {{title}}
+        {{#each recent_versions}}
+        %option{value: "{{id}}"} {{title}} ({{abbrev}})
         {{/each}}
+        %option{value: "-1"}
+          {{I18n 'moments.vod.view more'}}
+        }
     .time
       %h5
         {{I18n 'moments.vod.time'}}:

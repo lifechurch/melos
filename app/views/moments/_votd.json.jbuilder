@@ -16,6 +16,7 @@ json.object do
     json.array! moment.recent_versions do |ver|
       json.id ver.id
       json.abbrev ver.abbreviation
+      json.title ver.title
     end
   end
 
@@ -39,7 +40,6 @@ json.object do
       json.path            user_vod_subscriptions_path(current_user.username)
       json.time            subscription.email.time if subscription.has_key?(:email)
       json.version_id      subscription.email.version_id if subscription.has_key?(:email)
-      json.versions        Version.by_language({:only => I18n.locale.to_s}).map{|v| { version_id: v.id, title: v.title } }
     end
   end
 end
