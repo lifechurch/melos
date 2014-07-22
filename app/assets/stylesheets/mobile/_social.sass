@@ -45,9 +45,10 @@ body.transition .moment
   +transition(all 0.3s ease-out)
 
 .moment
-  margin: 0 15px 15px 0
-  width: 100%
-  float: none
+  margin: 0 0 15px 0
+  position: relative !important
+  left: auto !important
+  top: auto !important
 
 .moment-top
   margin-bottom: 1px
@@ -67,7 +68,10 @@ body.transition .moment
 
 .moment-vod
   .moment-content-actions
-    margin-right: 0px
+    margin: 0
+    padding: 0
+    display: inline-block
+    vertical-align: top
 
 .moment-content-actions
   a
@@ -597,6 +601,7 @@ body.transition .moment
 .moment-vod-list
   overflow: hidden
   margin-bottom: 0
+  display: inline-block
 
   li
     float: left
@@ -616,6 +621,43 @@ body.transition .moment
 
   li.active
     background-color: #555
+
+.moment-verse-stuff
+  clear: both
+  position: relative
+
+.moment-vod-subscribe-layer
+  display: none
+  background-color: #eeedeb
+  padding: 15px 15px 5px 15px
+  +border-radius(3px)
+  margin: 0 0 10px
+  select
+    background-image: url(/assets/select_arrows.png)
+    background-position: right 50%
+    background-repeat: no-repeat
+    margin: 0
+  h4
+    margin-bottom: 5px
+  .version
+    margin-top: 10px
+  h5, select
+    margin: 0 0 8px
+  .time
+    margin: 3px 0 0
+    select
+      display: inline
+      width: 70px
+  .time, .subscribe
+    margin-top: 5px
+
+  #version_id
+    width: 310px
+  .or
+    margin: 0 5px 0 0
+
+.moment-action-subscribe
+  margin-right: 20px
 
 
 // !Note moment
