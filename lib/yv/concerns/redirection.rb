@@ -70,7 +70,7 @@ module YV
               },
             subscriptions:
               {
-                index:    "reading_plan_day?id=#{params[:id].match /(\d+)/ if params[:id].present?}&day=#{params[:day] if params[:day].present?}",
+                # index:    "my_reading_plans",
                 show:     "reading_plan_day?id=#{params[:id].match /(\d+)/ if params[:id].present?}&day=#{params[:day] if params[:day].present?}",
               },
             users:
@@ -82,7 +82,7 @@ module YV
               },
             references:
               {
-                show:     "bible?reference=#{params[:reference]}&version=#{params[:version]}"
+                # show:     "bible?reference=#{params[:reference]}&version=#{params[:version]}"
               }
           }
         )
@@ -93,11 +93,7 @@ module YV
         when /android|Android/
           @user_agent = "android"
         end
-
-
         @native_url = "youversion://#{dict[controller_name][action_name]}" rescue nil
-        # raise "#{@native_url}"
-
 
       end
 
