@@ -48,41 +48,41 @@
       -# !Logo and intro copy
 
       %h1.intro-bible
-        The Bible App
+        = t('kids.bible app')
       .intro-forkids
         %h2.intro-for
-          for
+          = t('kids.for')
         %h2.intro-kids
-          kids
+          = t('kids.kids')
       %h3.intro-yv
-        by YouVersion
+        = t('kids.by youversion')
 
-      %img.intro-icon{ src: "/assets/campaigns/kids/app-icon.png", alt: "App icon for The Bible App for Kids"}
+      %img.intro-icon{ src: "/assets/campaigns/kids/app-icon.png", alt: t('kids.app icon')}
 
       %p.intro-help
-        Help your kids fall in love with God’s Word.
+        = t('kids.help your kids')
 
-      %img.intro-img{ src: "/assets/campaigns/kids/hdr-jesus.png", alt: "Jesus and friends"}
+      %img.intro-img{ src: "/assets/campaigns/kids/hdr-jesus.png", alt: t('kids.jesus and friends')}
 
       %p.intro-coming
-        Download for free!
+        = t('kids.free download')
 
       -# !App store buttons
       .download
         %a.download-ios{href: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"}
-          Available on the App store
+          = t('kids.app store')
         %a.download-play{href: "http://play.google.com/store/apps/details?id=com.bible.kids"}
-          Get it on Google Play
+          = t('kids.google play')
         %a.download-amazon{href: "http://www.amazon.com/gp/product/B00GURLC40"}
-          Available at Amazon Appstore for Android
+          = t('kids.amazon')
 
       -# !iPad hero screenshot
       .hero
-        = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: "Jesus heals the paralytic"
+        = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: t('kids.story text 1')
         .youtube-embed
           %iframe{width:"805", height:"607", src: "//www.youtube.com/embed/97YQAoCjpcs?rel=0", frameborder: "0", allowfullscreen: "true"}
         %p.hero-copy
-          Interact with the Bible and see it come to life.
+          = t('kids.interact text')
 
       .youtube-mobile
         %iframe{width:"100%", height:"auto", src: "//www.youtube.com/embed/97YQAoCjpcs?rel=0", frameborder: "0", allowfullscreen: "true"}
@@ -90,24 +90,24 @@
       -# !Smaller screenshots
 
       .screens
-        = image_tag "campaigns/kids/screens-1.jpg", alt: "The garden of Eden"
-        = image_tag "campaigns/kids/screens-2.jpg", alt: "Joseph, Mary, and the baby Jesus in the manger"
-        = image_tag "campaigns/kids/screens-3.jpg", alt: "Angels appear to the sheperds to tell them about the birth of Christ"
-        = image_tag "campaigns/kids/screens-4.jpg", alt: "Jesus heals the paralytic"
+        = image_tag "campaigns/kids/screens-1.jpg", alt: t('kids.story text 2')
+        = image_tag "campaigns/kids/screens-2.jpg", alt: t('kids.story text 3')
+        = image_tag "campaigns/kids/screens-3.jpg", alt: t('kids.story text 4')
+        = image_tag "campaigns/kids/screens-4.jpg", alt: t('kids.story text 5')
 
       -# !Features list
 
       .features
         %p.features-1
-          A free Bible experience for your kids
+          = t('kids.feature 1')
         %p.features-2
-          Animated storybook app for smartphones and tablets
+          = t('kids.feature 2')
         %p.features-3
-          Colorful illustrations with touch-activated animations
+          = t('kids.feature 3')
         %p.features-4
-          Games and activities help kids remember what they learn
+          = t('kids.feature 4')
         %p.features-5
-          Kid-friendly navigation
+          = t('kids.feature 5')
 
       / -# !App store buttons
       / .download
@@ -128,11 +128,11 @@
     .logos
       .logos-box
         %a{href: "http://bible.com"}
-          = image_tag "campaigns/kids/logos-yv.png", class: "logos-yv", alt: "YouVersion: The world’s most popular Bible App"
+          = image_tag "campaigns/kids/logos-yv.png", class: "logos-yv", alt: t('kids.partner.youversion')
         %p.logos-copy
-          in partnership with
+          = t('kids.partner.in partnership')
         %a{href: "http://onehope.net"}
-          = image_tag "campaigns/kids/logos-oh.png", class: "logos-oh", alt: "One Hope: Extraordinary Bible content for Kids"
+          = image_tag "campaigns/kids/logos-oh.png", class: "logos-oh", alt: t('kids.partner.one hope')
 
     -# !Retina JS
 

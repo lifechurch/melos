@@ -9,6 +9,7 @@ YouversionWeb::Application.routes.draw do
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
+  get "/ni*os",         to: "redirects#ninos"
 
   match "/app(/:store)", to: AppStoreController.action(:index)
   get "/search(/:category)",to: "search#category", as: "search"
