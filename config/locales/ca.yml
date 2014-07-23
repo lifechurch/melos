@@ -87,6 +87,11 @@ ca:
     connections:
       index:
         title: "Comptes connectats"
+  kids:
+    bible app: "L'aplicació de la Bíblia"
+    share:
+      facebook name: "L'Aplicació de la Bíblia per a nens"
+      email: "Correu electrònic"
   now: "Ara"
   celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
   link: "Enllaç"

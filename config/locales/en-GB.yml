@@ -87,6 +87,11 @@ en-GB:
     connections:
       index:
         title: "Connected Accounts"
+  kids:
+    bible app: "The Bible App"
+    share:
+      facebook name: "The Bible App for Kids"
+      email: "E-mail"
   now: "Now"
   celebrating 50MM: "Celebrating 50 Million App Installations!"
   link: "Link"

@@ -74,14 +74,24 @@ hu:
   meta:
     kids_app:
       title: "Biblia alkalmazás gyermekeknek"
+      description: "A Biblia App Gyermekeknek egy remek mód arra, hogy gyermekeid bibliai történeteket tanulhassanak Jézusról, az örök élet ajándékáról és sok más tanulságról, amelyeket Isten tanít nekünk. Ebben az interaktív élményben a gyermekek közvetlenül foglalkoznak Isten Igéjével elragadó képek segítségével, miközben az olvasásért és kincsek gyűjtéséért pontokat nyernek."
     100million:
       title: "100 millióval kezdődik"
       description: "A Biblia alkalmazást már csaknem 100 millió felhasználó töltötte le - hihetetlen mérföldkő! De még egészen az elején vagyunk. Töltsd le ma az ingyenes Biblia alkalmazást - azután oszd meg az alkalmazást a barátaiddal. Írjunk együtt történelmet!"
     mobile:
       title: "A Biblia alkalmazás"
+      description: "Olvasd Isten Igéjét bárhol és bármikor a YouVersion Biblia alkalmazással. Oszd meg a Szentírást barátaiddal, emelj ki és könyvjelzőzz bekezdéseket és alakíts ki napi szokást a Biblia Tervekkel. Elérhető iOS, Android, Blackberry, Windows Phone és egyéb rendszerekhez."
+    site:
+      title: "Bible.com"
+      description: "Építsd bele a Biblia szépségét és igazságát a mindennapokba. A YouVersion Biblia alkalmazással olvashatod, nézheted, hallgathatod, valamint megoszthatod az okostelefonodon vagy táblagépeden és online a Bible.com-on keresztül."
     connections:
       index:
         title: "Csatlakoztatott Fiókok"
+  kids:
+    bible app: "A Biblia alkalmazás"
+    share:
+      facebook name: "Biblia alkalmazás gyermekeknek"
+      email: "E-mail"
   now: "Most"
   celebrating 50MM: "50 millió applikáció telepítésének ünneplése"
   link: "Link"

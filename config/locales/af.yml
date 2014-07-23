@@ -87,6 +87,11 @@ af:
     connections:
       index:
         title: "Gekoppelde Rekeninge"
+  kids:
+    bible app: "Die Bybel Toep"
+    share:
+      facebook name: "Die Bybel Toep vir Kinders"
+      email: "E-pos"
   now: "Nou"
   celebrating 50MM: "Vier 50 Miljoen App Installasies!"
   link: "Skakel"

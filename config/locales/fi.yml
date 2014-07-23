@@ -87,6 +87,11 @@ fi:
     connections:
       index:
         title: "Yhdistetyt tilit"
+  kids:
+    bible app: "Raamattusovellus"
+    share:
+      facebook name: "Raamattusovellus lapsille"
+      email: "Sähköposti"
   now: "Nyt"
   celebrating 50MM: "Juhlimme 50 miljoonatta asennettua sovellusta!"
   link: "Linkki"

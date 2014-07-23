@@ -82,6 +82,11 @@ tr:
     connections:
       index:
         title: "Bağlı Hesaplar"
+  kids:
+    bible app: "Kutsal Kitap Uygulaması"
+    share:
+      facebook name: "Çocuklar İçin Kutsal Kitap Uygulaması"
+      email: "e-Posta"
   now: "Şu Anki Durum"
   celebrating 50MM: "50 Milyon Uygulama İndirildi!"
   link: "Link"

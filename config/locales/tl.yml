@@ -74,7 +74,7 @@ tl:
   meta:
     kids_app:
       title: "Ang Pambatang App ng Bibliya"
-      description: "Ang Bible App for Kids ay nakalilibang na paraan para malaman ng mga bata ang kwento sa Bibliya tungkol kay Jesus, ang handog na buhay na walang hanggan, at ang maraming aral na turo ng Diyos. Sa mga interactive na kwentong ito, mababasa ng mga bata ang Salita ng Diyos kasama ang nakatutuwang larawan habang nagkakaroon ng puntos sa pagbabasa at nadadagdagan ang yaman."
+      description: "Ang Bible App for Kids ay isang napakagandang paraan upang matutunan ng mga bata ang mga kwento sa Bibliya tungkol kay Jesus, ang handog na buhay na walang hanggan, at ang maraming aral na turo ng Diyos sa atin. Sa interactive na kasanayang ito, direktang mararanasan ng mga bata ang Salita ng Diyos sa pamamagitan ng mga nakatutuwang larawan habang nagkakaroon ng puntos sa pagbabasa at nag-iipon ng mga kayamanan."
     100million:
       title: "Ito ay Nagsisimula sa <em>100 milyon</em>"
       description: "Ang Bible App ay na-download nang mahigit 100 milyong beses - kahanga-hangang tagumpay! Ngunit ito ay simula pa lamang. I-download ang libreng Bible App ngayon - at ibahagi ang app sa iyong mga kaibigan. Sama-sama nating gawin ang kasaysayan."
@@ -83,10 +83,48 @@ tl:
       description: "Magbasa ng Salita ng Diyos kahit kailan, kahit saan gamit ang YouVersion App ng Bibliya. Magbahagi ng mga bersikulo sa mga kaibigan, mag-haylayt at magtanda ng nabasa sa Bibliya, at magbasa araw-araw mula sa Babasahing Gabay. Mayroon sa iOS, Android, Blackberry, Windows Phone at marami pang iba."
     site:
       title: "Bible.com"
-      description: "Dalhin ang kagandahan at katotohanan ng Bibliya sa pang-araw araw. Gamit ang YouVersion Bible App, maaring magbasa, manuod, makinig, at magbahagi sa iyong smartphone o tablet, at online sa Bible.com."
+      description: "Dalhin ang kagandahan at katotohanan ng Bibliya sa pang-araw-araw na buhay. Gamit ang YouVersion Bible App, maaring magbasa, manuod, makinig, at magbahagi sa iyong smartphone o tablet, at online sa Bible.com."
     connections:
       index:
         title: "Mga Kaugnay na Accounts"
+  kids:
+    bible app: "Ang Bible App"
+    for: "para sa"
+    kids: "mga bata"
+    by youversion: "ng YouVersion"
+    help your kids: "Tulungan ang mga batang mahalin ang Salita ng Diyos."
+    free download: "I-download ng libre!"
+    app store: "Makukuha sa App store"
+    google play: "Kunin sa Google Play"
+    amazon: "Makukuha sa Amazon Appstore para sa Android"
+    app icon: "App icon para sa Pambatang App ng Bibliya"
+    jesus and friends: "Si Jesus at mga kaibigan"
+    interact text: "Makipag-ugnayan sa Bibliya at tunghayan itong mangusap sa'yong buhay."
+    story text 1: "Ang hardin ng Eden"
+    story text 2: "Ang unang Pasko"
+    story text 3: "Si Jose, Maria, at ang sanggol na si Jesus sa sabsaban"
+    story text 4: "Nagpakita ang mga anghel sa mga pastol upang ibalita ang kapanganakan ni Cristo"
+    story text 5: "Pinagaling ni Jesus ang lumpo"
+    feature 1: "Isang libreng Bibliya para sa mga bata"
+    feature 2: "Animated na storybook app para sa mga smartphone at tablet"
+    feature 3: "Makulay na mga larawan na may mga touch-activated na animation"
+    feature 4: "Ang mga palaro at mga gawain ay makatutulong sa mga bata matandaan ang kanilang mga natutunan"
+    feature 5: "Kid-friendly navigation"
+    share:
+      tell friends: "Ibahagi sa mga kaibigan ang tungkol sa Pambatang App ng Bibliya"
+      facebook name: "Ang Pambatang App ng Bibliya"
+      facebook description: "Ang Pambatang App ng Bibliya ay narito na! I-download ng libre sa iOS at Android ngayon: nakalilibang na mga kwento mula sa Bibliya upang tulungan ang mga bata na matuto, malibang, at lumaki sa Salita ng Diyos. www.bible.com/kids"
+      facebook link: "http://www.bible.com/kids"
+      facebook redirect: "http://www.bible.com/kids"
+      twitter description: "Ang Pambatang App na Bibliya mula sa @YouVersion ay narito na! Ito'y masaya at libre pa. I-download na: bible.com/kids"
+      twitter hashtags: "kidsbible"
+      email: "Email"
+      email subject: "Ang Pambatang App ng Bibliya ay narito na!"
+      email body: "Ang Pambatang App ng Bibliya ay narito na! Libre at pangkalahatang makukuha sa iPhone, iPad, iPod touch, at mga Android na aparato. Ang app na ito ay lumalaking koleksyon ng mga kwento mula sa Bibliya na may touch-activated na mga animation at nakalilibang na mga gawain, tamang-tama sa pag-agapay sa mga bata sa kanilang pagtuklas sa mga kwento ng Bibliya. Bumisita sa bible.com/kids sa iyong mobile na aparato at i-download ito ngayon."
+    partner:
+      youversion: "YouVersion: Ang pinakatanyag na App ng Bibliya sa buong mundo"
+      in partnership: "sa pakikipagtulungan ng"
+      one hope: "Isang Pag-asa: Kamangha-manghang nilalaman ng Bibliya para sa mga Bata"
   now: "Ngayon"
   celebrating 50MM: "Ipinagdiriwang 50 Million App Installs! "
   link: "Link"

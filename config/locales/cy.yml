@@ -16,6 +16,9 @@ cy:
     connections:
       index:
         title: "Cyfrifon a Gysylltwyd "
+  kids:
+    share:
+      email: "Ebost "
   now: "Nawr "
   celebrating 50MM: "Yn dathlu Gosod yr App 50 Miliwn o weithiau ! "
   link: "Dolen"

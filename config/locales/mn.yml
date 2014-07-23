@@ -87,6 +87,11 @@ mn:
     connections:
       index:
         title: "Холбогдсон Дансууд"
+  kids:
+    bible app: "Библи Апп"
+    share:
+      facebook name: "Хүүхдэд зориулсан Библи Апп"
+      email: "И-мэйл"
   now: "Одоо"
   celebrating 50MM: "50 Сая Апп суулгагдсан баяраа тэмдэглэж байна!"
   link: "Холбоос"

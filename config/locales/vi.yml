@@ -87,6 +87,11 @@ vi:
     connections:
       index:
         title: "Tài khoản đã kết nối"
+  kids:
+    bible app: "Ứng dụng Kinh Thánh"
+    share:
+      facebook name: "Ứng Dụng Kinh Thánh Cho Thiếu Nhi"
+      email: "Email"
   now: "Bây giờ"
   celebrating 50MM: "Chúc mừng 50 triệu lượt cài đặt ứng dụng!"
   link: "Đường dẫn"

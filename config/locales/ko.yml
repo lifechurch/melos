@@ -87,6 +87,11 @@ ko:
     connections:
       index:
         title: "접속 계정"
+  kids:
+    bible app: "성경 앱"
+    share:
+      facebook name: "어린이들을 위한 성경 앱"
+      email: "이메일"
   now: "실시간 현황"
   celebrating 50MM: "축 5천만째 설치!"
   link: "링크"

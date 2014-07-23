@@ -87,6 +87,11 @@ da:
     connections:
       index:
         title: "Forbundne konti"
+  kids:
+    bible app: "Bibel App´en"
+    share:
+      facebook name: "Bibel App for Børn"
+      email: "Email"
   now: "Nu"
   celebrating 50MM: "Fejrer 50 millioner App installationer"
   link: "Link"

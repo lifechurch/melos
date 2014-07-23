@@ -79,11 +79,38 @@ pl:
       description: "Aplikacja Biblii została zainstalowana prawie 100 milionów razy - niesamowity moment! Ale dopiero zaczynamy! Pobierz dzisiaj darmową Aplikację Biblii - a potem podziel się aplikacją ze znajomymi. Twórzmy razem historię!"
     mobile:
       title: "Aplikacja Biblii"
+      description: "Czytaj Słowo Boże w dowolnym czasie, w dowolnym miejscu używając Aplikacji Biblii YouVersion. Dziel się Pismem Świętym ze znajomymi, zakreślaj fragmenty, dodawaj zakładki i czytaj codziennie z planami Biblii. Dostępne dla iOS, Androida, Blackberry, Windows Phone i inne systemy."
     site:
       title: "Bible.com"
     connections:
       index:
         title: "Połączone konta"
+  kids:
+    bible app: "Aplikacja Biblii"
+    for: "dla"
+    kids: "dzieci"
+    by youversion: "od YouVersion"
+    help your kids: "Pomóż swoim dzieciom zakochać się w Słowie Bożym."
+    free download: "Pobierz za darmo!"
+    app store: "Dostępna w App store"
+    google play: "Pobierz ją z Google Play"
+    amazon: "Dostępna w Amazon Appstore dla Androida"
+    app icon: "Ikona Aplikacji Biblii dla Dzieci"
+    jesus and friends: "Jezus i przyjaciele"
+    story text 1: "Ogród Eden"
+    story text 2: "Pierwsze Boże Narodzenie"
+    story text 5: "Jezus ulecza paralityka"
+    feature 5: "Nawigacja przyjazna dzieciom"
+    share:
+      facebook name: "Aplikacja Biblii dla dzieci"
+      facebook link: "http://www.bible.com/kids"
+      facebook redirect: "http://www.bible.com/kids"
+      twitter description: "Aplikacja Biblii dla Dzieci od @YouVersion jest już dostępna! Jest zabawna i całkowicie darmowa. Pobierz ją z: bible.com/kids"
+      email: "Email"
+      email subject: "Aplikacja Biblii dla Dzieci jest już dostępna!"
+    partner:
+      youversion: "YouVersion: Najpopularniejsza Aplikacja Biblii na świecie"
+      in partnership: "we współpracy z"
   now: "Teraz"
   celebrating 50MM: "Świętujemy 50 milionów instalacji aplikacji!"
   link: "Odnośnik"

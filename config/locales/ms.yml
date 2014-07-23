@@ -74,14 +74,24 @@ ms:
   meta:
     kids_app:
       title: "App Alkitab untuk Kanak-Kanak"
+      description: "App Alkitab untuk Kanak-kanak merupakan cara yang amat baik untuk anak-anak anda mempelajari cerita Biblikal tentang Yesus, karunia kehidupan kekal untuk kita, dan banyak lagi pengajaran yang diajarkan Allah kepada kita. Dalam pengalaman interaktif ini, kanak-kanak secara langsung dapat turut serta di dalam Firman Allah dengan visual yang menarik sementara memperoleh mata untuk pembacaan dan pengumpulan harta karun."
     100million:
       title: "Ia Bermula dengan 100 Juta"
       description: "App Alkitab telah di instalasi hampir 100 juta kali - pencapaian yang menakjubkan! Tetapi kita baru sahaja bermula. Muat turun App Alkitab percuma hari ini - dan kongsikan app ini dengan sahabat anda. Ayuh mencipta sejarah bersama."
     mobile:
       title: "App Alkitab"
+      description: "Baca Firman Allah pada bila-bila masa, di mana sahaja dengan menggunakan App Alkitab YouVersion. Kongsikan Ayat Alkitab dengan sahabat, highlight dan bookmark petikan, dan lakukan sebagai kebiasaan sehari-hari dengan Pelan Alkitab. Tersedia untuk iOS, Android, Blackberry, Windows Phone dan banyak lagi."
+    site:
+      title: "Bible.com"
+      description: "Bawakan keindahan dan kebenaran Alkitab ke dalam kehidupan seharian. Melalui App Alkitab YouVersion, anda boleh membaca, menonton, mendengar, dan berkongsi dalam telefon mudah alih atau tablet anda, dan secara online di Bible.com."
     connections:
       index:
         title: "Akaun yang Berkaitan"
+  kids:
+    bible app: "App Alkitab"
+    share:
+      facebook name: "App Alkitab untuk Kanak-Kanak"
+      email: "E-mel"
   now: "Sekarang"
   celebrating 50MM: "Merayakan 50 Juta Pemasangan App!"
   link: "Link"
