@@ -146,6 +146,10 @@ p
   color: #fff
   font-size: 22px
 
+.alt-hero
+  width: 100%
+  text-align: center
+
 .youtube-embed
   position: absolute
   left: 88px
@@ -183,6 +187,24 @@ p
 .features-5
   font-size: 22px
   text-align: center
+
+body.body-es
+  .features-1,
+  .features-2,
+  .features-3,
+  .features-4,
+  .features-5
+    font-size: 18px
+    text-align: center
+
+  .features-1
+    padding-top: 10px
+  .features-2
+    padding-top: 5px
+  .features-3
+    padding-top: 10px
+  .features-5
+    margin-top: -5px
 
 .features-1
   position: absolute
@@ -243,15 +265,6 @@ p
 
 .download-ios
   margin-left: 0
-  background: #111 image-url("campaigns/kids/ios-appstore-badge.png") no-repeat center center
-
-.download-play
-  background: #111 image-url("campaigns/kids/play-appstore-badge.png") no-repeat center center
-
-.download-amazon
-  background: #111 image-url("campaigns/kids/amazon-appstore-badge.png") no-repeat center center
-
-
 
 // !Share chunk
 
@@ -286,6 +299,8 @@ p
 .share-em
   background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 98px -137px
 
+body.body-es .share-em
+  background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 46px -137px
 
 // !Logos
 
@@ -331,6 +346,10 @@ p
 
   .share-em
     background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 98px -137px
+    background-size: 34px 200px
+
+  .body-es .share-em
+    background: #A47B5B image-url("campaigns/kids/share-sprite.png") no-repeat 46px -137px
     background-size: 34px 200px
 
 // !------- Mobile --------
@@ -409,14 +428,6 @@ p
 
   .download-ios
     margin-left: 0
-    background: #111 image-url("campaigns/kids/ios-appstore-badge.png") no-repeat center center
-
-  .download-play
-    background: #111 image-url("campaigns/kids/play-appstore-badge.png") no-repeat center center
-
-  .download-amazon
-    background: #111 image-url("campaigns/kids/amazon-appstore-badge.png") no-repeat center center
-
 
   // !iPad hero screenshot
 
@@ -433,6 +444,13 @@ p
     width: auto
     margin: 0 auto
     font-size: 15px
+
+  .alt-hero img
+    width: 80%
+    margin-bottom: 40px
+
+  .alt-hero
+    text-align: center
 
   .youtube-embed
     display: none!important
@@ -533,8 +551,8 @@ p
   .share-tw
     background-image: none
 
-  .share-em
-    background-image: none
+  .share-em, .body-es .share-em
+    background-image: none  !important
 
 
   // !Logos
@@ -563,20 +581,6 @@ p
       background: image-url("campaigns/kids/jesus@2x.png") no-repeat center 105px #EAE7DA
       background-image: none
       background-size: 480px 190px
-
-    .download-ios
-      background: #111 image-url("campaigns/kids/ios-appstore-badge@2x.png") no-repeat center center
-      background-size: 127px 35px
-
-    .download-play
-      background: #111 image-url("campaigns/kids/play-appstore-badge@2x.png") no-repeat center center
-      background-size: 219px 29px
-
-    .download-amazon
-      background: #111 image-url("campaigns/kids/amazon-appstore-badge@2x.png") no-repeat center center
-      background-size: 176px 32px
-
-
 
 @media only screen and (max-width: 568px) and (min-width: 400px)
 
