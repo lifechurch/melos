@@ -87,6 +87,11 @@ zh-CN:
     connections:
       index:
         title: "已绑定的账户"
+  kids:
+    bible app: "圣经软件"
+    share:
+      facebook name: "儿童圣经软件"
+      email: "电子邮件"
   now: "今日社区"
   celebrating 50MM: "庆祝5000万的安装！"
   link: "链接"

@@ -87,6 +87,11 @@ pt-PT:
     connections:
       index:
         title: "Contas Associadas"
+  kids:
+    bible app: "A App da Bíblia"
+    share:
+      facebook name: "A App da Bíblia para crianças"
+      email: "Email"
   now: "Agora"
   celebrating 50MM: "A celebrar 50 milhões de instalações da App!"
   link: "Link"

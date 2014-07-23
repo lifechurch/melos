@@ -1,4 +1,4 @@
-pt_BR:
+pt:
   time:
     formats:
       votd: "%-d %B, %Y"
@@ -87,6 +87,11 @@ pt_BR:
     connections:
       index:
         title: "Contas Conectadas"
+  kids:
+    bible app: "O App da Bíblia"
+    share:
+      facebook name: "O App da Bíblia para Crianças"
+      email: "E-mail"
   now: "Agora"
   celebrating 50MM: "Comemorando 50 milhões de instalações!"
   link: "Link"

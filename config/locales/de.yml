@@ -87,6 +87,11 @@ de:
     connections:
       index:
         title: "Verbundene Benutzerkonten"
+  kids:
+    bible app: "Die Bibel App "
+    share:
+      facebook name: "Die Bibel App für Kids"
+      email: "E-Mail"
   now: "Jetzt  "
   celebrating 50MM: "Zur Feier der 50 Mio. Downloads!"
   link: "Link"

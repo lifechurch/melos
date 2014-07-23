@@ -82,6 +82,11 @@ sw:
     connections:
       index:
         title: "akaunti zilizounganishwa"
+  kids:
+    bible app: "App ya Biblia"
+    share:
+      facebook name: "Apu ya Biblia kwa ajili ya watoto"
+      email: "Barua pepe"
   now: "saa hii"
   celebrating 50MM: "Tunasherehekea ufunguaji wa App milioni 50!"
   link: "Kiungo"

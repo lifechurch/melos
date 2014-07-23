@@ -87,6 +87,17 @@
     connections:
       index:
         title: "Tilknyttede kontoer"
+  kids:
+    bible app: "Bibel-appen"
+    for: "for"
+    kids: "barn"
+    by youversion: "av YouVersion"
+    help your kids: "Hjelp barna dine å bli glade i Guds ord. "
+    free download: "Last ned gratis!"
+    app store: "Tilgjengelig i App store"
+    share:
+      facebook name: "Bibel-appen for barn"
+      email: "E-post"
   now: "Nå"
   celebrating 50MM: "Vi feirer 50 millioner Bibel-app-installasjoner!"
   link: "Lenke"

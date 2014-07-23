@@ -70,6 +70,11 @@ bg:
     connections:
       index:
         title: "Свързани профили"
+  kids:
+    bible app: "Библията"
+    share:
+      facebook name: "Приложението Bible за деца"
+      email: "Ел.поща"
   now: "Сега"
   celebrating 50MM: "С над 50 милиона инсталирани приложения"
   link: "Връзка"

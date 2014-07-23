@@ -87,6 +87,11 @@ nl:
     connections:
       index:
         title: "Verbonden Accounts"
+  kids:
+    bible app: "De Bijbel App"
+    share:
+      facebook name: "De Bijbel App voor kinderen"
+      email: "E-mail"
   now: "Nu"
   celebrating 50MM: "We vieren de 50 miljoenste installatie!"
   link: "Link"

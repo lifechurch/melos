@@ -87,6 +87,11 @@ zh-TW:
     connections:
       index:
         title: "已連接的帳戶"
+  kids:
+    bible app: "聖經軟體"
+    share:
+      facebook name: "兒童聖經軟體"
+      email: "電子郵件"
   now: "現在"
   celebrating 50MM: "慶祝5000萬次的安裝！"
   link: "鏈結"
