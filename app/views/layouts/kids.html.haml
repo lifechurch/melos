@@ -2,9 +2,13 @@
   meta_title        = t("meta.kids_app.title")
   meta_description  = t("meta.kids_app.description")
   meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
-  i18n_image_dir  = if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then "/es" else "" end
+  i18n_image_dir  = ""
   i18n_css_class = "en"
-  i18n_css_class = "es" if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES"))
+  if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
+    i18n_css_class = "es"
+    i18n_image_dir = "/es"
+    meta_url = "https://www.bible.com/ninos"
+  end
 
 !!! 5
 %html
