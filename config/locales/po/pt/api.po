@@ -4,31 +4,34 @@
 # Translators:
 # Translators:
 # Translators:
-# alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
-# Fabio Caldas <fabiomcaldas@gmail.com>, 2014
+# Alessandra Morello Gearhart <alessandramorello@yahoo.com.br>, 2013
+# Fabio M. Caldas <fabiomcaldas@gmail.com>, 2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2013-2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2014
-# Tetê <princesstt77@gmail.com>, 2013
+# Terezinha Gonçalves Neta <princesstt77@gmail.com>, 2013
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
 # Translators:
 # Translators:
 # Translators:
-# alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
-# Eric Allan dos Santos, 2014
-# Fabio Caldas <fabiomcaldas@gmail.com>, 2014
+# Alessandra Morello Gearhart <alessandramorello@yahoo.com.br>, 2013
+# Eric Santos, 2014
+# Fabio M. Caldas <fabiomcaldas@gmail.com>, 2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2013-2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2014
-# Tetê <princesstt77@gmail.com>, 2013-2014
+# Terezinha Gonçalves Neta <princesstt77@gmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
 # Translators:
 # Translators:
-# alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
-# alessandra.morello_ptBR <alessandramorello@yahoo.com.br>, 2013
+# Alessandra Morello Gearhart <alessandramorello@yahoo.com.br>, 2013
+# Alessandra Morello Gearhart <alessandramorello@yahoo.com.br>, 2013
+# Alessandra Morello Gearhart <alessandramorello@yahoo.com.br>, 2013
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# maurosalatiel <maurosalatiel@hotmail.com>, 2014
+# maurosalatiel <maurosalatiel@hotmail.com>, 2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2014
 # Nizia Dantas <nizia.dantas@gmail.com>, 2014
 #, fuzzy
@@ -62,7 +65,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-04-13 21:00+0000\n"
+"PO-Revision-Date: 2014-07-11 17:12+0000\n"
 "Last-Translator: Nizia Dantas <nizia.dantas@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/yv-backend/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -280,9 +283,23 @@ msgstr "Você já tem o App da Bíblia? "
 
 msgid "share.invite_email_body"
 msgstr ""
-"Eu estou gostando do App da Bíblia do YouVersion e acho que você também gostaria. Eu estou lendo a Bíblia com muito mais frequência nos últimos dias pois é tão fácil ler, assistir, ouvir e compartilhar. Tem ainda Planos de Leitura, que possuem seleções de textos Bíblicos esperando por mim todos os dias.\n"
+"Olá!\n"
 "\n"
-"Você pode baixar aqui (gratuitamente!) em praticamente qualquer dispositivo móvel:"
+"Estou usando o App da Bíblia do YouVersion e gostaria de compartilhá-lo com você. Se você é um novo usuário do app, este é um jeito simples de trazer a beleza e a verdade da Bíblia para a sua vida diária.\n"
+"\n"
+"Baixe o App da Bíblia: leia, assista, ouça e compartilhe do seu smartphone ou tablet e online em Bible.com.\n"
+"\n"
+"Configure sua conta: inscreva-se nos Planos Bíblicos e acesse marcadores, destaques e anotações nos seus dispositivos.\n"
+"\n"
+"Adicione amigos (como eu!): explore e discuta a Bíblia com as pessoas com quem você se importa.\n"
+"\n"
+"Está tudo no App da Bíblia - comece aqui:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr ""
+"<p>Olá!</p><p>Estou usando o App da Bíblia do YouVersion e gostaria de compartilhá-lo com você.  Se você é um novo usuário do app, este é um jeito simples de trazer a beleza e a verdade da Bíblia para a sua vida diária.</p><p><strong>Baixe o App da Bíblia:</strong> leia, assista, ouça e compartilhe do seu smartphone ou tablet e online em Bible.com</p><p><strong>Configure Sua Conta:</strong> inscreva-se nos Planos Bíblicos e acesse marcadores, destaques e anotações nos seus dispositivos</p><p><strong>Adicione Amigos (Como Eu!):</strong> explore e discuta a Bíblia com as pessoas com quem você se importa</p><p>Está tudo no App da Bíblia—comece aqui: </p>\n"
+"\n"
+"   "
 
 msgid "share.invite_twitter"
 msgstr "O App da Bíblia @YouVersion tem lugar garantido na minha tela inicial. Leia, assista, ouça, e compartilhe...tudo em um aplicativo gratuito: "

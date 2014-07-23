@@ -7,7 +7,7 @@
 # Battuya Lkhagvadulam <tuyamuya@gmail.com>, 2013
 # chris ballinger <ballinger.chris@gmail.com>, 2013-2014
 # chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
-# tugsuu <zagdaa_tugsuu@yahoo.com>, 2013-2014
+# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -16,15 +16,16 @@
 # Translators:
 # chris ballinger <ballinger.chris@gmail.com>, 2013-2014
 # chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
-# tugsuu <zagdaa_tugsuu@yahoo.com>, 2013-2014
+# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
 # Translators:
 # Translators:
 # chris ballinger <ballinger.chris@gmail.com>, 2013
-# tugsuu <zagdaa_tugsuu@yahoo.com>, 2014
-# tugsuu <zagdaa_tugsuu@yahoo.com>, 2014
+# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2014
+# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2014
+# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2014
 #, fuzzy
 msgid ""
 msgstr ""
@@ -32,8 +33,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-29 11:13+0000\n"
-"Last-Translator: tugsuu <zagdaa_tugsuu@yahoo.com>\n"
+"PO-Revision-Date: 2014-05-29 15:19+0000\n"
+"Last-Translator: tugsuu cook <zagdaa_tugsuu@yahoo.com>\n"
 "Language-Team: Mongolian (http://www.transifex.com/projects/p/yv-backend/language/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,8 +45,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-01 12:02+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-06-03 09:00+0000\n"
+"Last-Translator: tugsuu cook <zagdaa_tugsuu@yahoo.com>\n"
 "Language-Team: Mongolian (http://www.transifex.com/projects/p/yv-backend/language/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,8 +57,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-05 13:20+0000\n"
-"Last-Translator: tugsuu <zagdaa_tugsuu@yahoo.com>\n"
+"PO-Revision-Date: 2014-07-11 15:01+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Mongolian (http://www.transifex.com/projects/p/yv-backend/language/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -155,6 +156,15 @@ msgstr "{name} таны хавчуурганд тайлбар хийгдсэн �
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} таны тодруулсан ишлэлд тайлбар хийгдсэн байна:“{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} Таны Уншлагын Төлөвлөгөөнд сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} Таны Уншлагын Төлөвлөгөөнд сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} таны{friend_name} тэй нөхөрлөх нөхөрлөлд сэтгэгдэл үлдээсэн: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} таны тэмдэглэлд тайлбар хийгдсэн байна: “{comment}”"
 
@@ -163,6 +173,15 @@ msgstr "{name} таны хавчуурга таалагдсан , {reference_hum
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} таны тодруулга таалагдсан, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} д Таны Уншлагын Төлөвлөгөөний Үйл ажиллагаа таалагдсан"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} д Таны Уншлагын Төлөвлөгөөний Үйл ажиллагаа таалагдсан"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} тэй нөхөрлөх шинэ нөхөрлөл чинь таалагдсан {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} -дэхь тэмдэглэл чинь таалагдсан {reference_human}"
@@ -179,11 +198,29 @@ msgstr "{moment_owner_name} хавчуургандаа тайлбар хийсэ
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} сэтгэгдэл үлдээсэн  {moment_owner_name}-н хавчуурганд: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} тэй нөхөрлөх шинэ нөхөрлөлдөө мөн сэтгэгдэл үлдээсэн {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} д мөн сэтгэгдэл үлдээсэн{moment_owner_name} ы шинэ нөхөрлөлийн талаар {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ѳѳрийнхѳѳ тодруулсан ишлэлд сэтгэгдэл үлдээсэн: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} {moment_owner_name}-н тодруулсан ишлэлд сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} ѳѳрийнхѳѳ төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} {moment_owner_name}-ын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} ѳѳрийнхѳѳ Уншлагын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} {moment_owner_name}-ын Уншлагын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ѳѳрийнхѳѳ тэмдэглэлд сэтгэгдэл үлдээсэн: “{comment}”"
@@ -206,6 +243,18 @@ msgstr "{name} шинэ тэмдэглэл үүсгэсэн, “{title}”"
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} шинэ тэмдэглэл үүсгэсэн"
 
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} шинэ тѳлѳвлѳгѳѳ эхлэсэн, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} Шинэ Уншлагын Төлөвлөгөө Эхлэсэн, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} төлөвлөгөөгөө дуусгасан, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} Уншлагын төлөвлөгөөгөө дуусгасан, {title}"
+
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
 msgid_plural "You have %d friend requests"
@@ -222,13 +271,31 @@ msgid "share.invite_sms"
 msgstr "Танд YouVersion-ны Библи Апп байгаа юу? Надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Линк нь: "
 
 msgid "share.invite_email_subject"
-msgstr "Танд Библийн Апп байгаа юу?"
+msgstr "Танд Библийн Апп байгаа юу!"
 
 msgid "share.invite_email_body"
 msgstr ""
-"YouVersion-ний Библи Апп надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Сүүлийн үед Би Библи ѳдѳр бүр уншдаг болсон яагаад гэвэл унших, үзэх, сонсох, болон хуваахад их амархан болсон. Апп-д Унших Тѳлѳвлѳгѳѳнүүд ч байгаа, миний Библийн унших хэсгийг сонгоод ѳдѳр бүр бэлэн байдаг.\n"
+"Сайн уу!\n"
 "\n"
-"Та зѳѳврийн хэрэгсэл дээрээ (үнэгүй!) эндээс татан авч болно:  "
+"\n"
+"Би YouVersion-ы Библи Аппыг ашиглаж байгаа бөгөөд таньтай хуваалцах хүсэлтэй байна . Хэрвээ таны хувьд энэ апп шинэ зүйл бол энэ нь өдөр тутмын амьдралдаа Библийн үнэн болон гайхамшгийг мэдрэх энгийн арга. \n"
+"\n"
+"\n"
+"Библи Апптай бол: Bible.com-оос онлайнаар, ухаалаг утас эсвэл таблет дээрээ унших, үзэх, сонсох ба хуваалц\n"
+"\n"
+"\n"
+"Бүртгэлээ Үүсгэ: Библи Төлөвлөгөөнд бүртгүүлэн хавчуурга, тодруулга ба тэмдэглэлүүдийг бүх төрлийн электрон хэрэгслэлүүдээс хий\n"
+"\n"
+"\n"
+"Найзууд Нэм (Над шиг!): дотно хүмүүстэйгээ Библийг судлан, хамт суралц\n"
+"\n"
+"\n"
+"Энэ бүхэн Библи Апп дээр байгаа—эндээс эхлэнэ үү: \n"
+"\n"
+" "
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Сайн уу!</p><p>Би YouVersion-ы Библи Аппыг ашиглаж байгаа . Хэрвээ таны хувьд энэ апп шинэ зүйл бол энэ нь өдөр тутмын амьдралдаа Библийн үнэн болон гайхамшгийг мэдрэх энгийн арга. </p><p><strong>Библи Апптай болох:</strong> Bible.com-оос онлайнаар, ухаалаг утас эсвэл таблет дээрээ унших, үзэх, сонсох ба хуваалцах</p><p><strong>Бүртгэлээ Үүсгэх:</strong> Библи Төлөвлөгөөнд бүртгүүлэн хавчуурга, тодруулга ба тэмдэглэлүүдийг бүх төрлийн электрон хэрэгслэлүүдээс хийх</p><p><strong>Найзууд Нэмэх (Над шиг!):</strong> дотно хүмүүстэйгээ Библийг судлан, хамт суралц</p><p>Энэ бүхэн Библи Апп дээр байгаа—эндээс эхлэнэ үү: </p>"
 
 msgid "share.invite_twitter"
 msgstr "@YouVersion-ий Библи Апп миний утасны нүүр хуудсан дээр үргэлж байх боломжтой. Үнэгүй апп.аар: Унших, үзэх, сонсох, болон хувааж болно..."

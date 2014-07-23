@@ -5,7 +5,7 @@
 # Translators:
 # Translators:
 # Andrew Walker <andrew.walker@live.it>, 2013-2014
-# Barbara Di Egidio <bdiegidio@gmail.com>, 2013-2014
+# barbara di egidio <bdiegidio@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -13,13 +13,14 @@
 # Translators:
 # Translators:
 # Andrew Walker <andrew.walker@live.it>, 2013-2014
-# Barbara Di Egidio <bdiegidio@gmail.com>, 2013-2014
+# barbara di egidio <bdiegidio@gmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
 # Translators:
 # Translators:
-# Andrew Walker <andrew.walker@live.it>, 2013
+# Andrew Walker <andrew.walker@live.it>, 2013-2014
+# barbara di egidio <bdiegidio@gmail.com>, 2014
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
@@ -28,8 +29,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-20 18:23+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-06-01 18:51+0000\n"
+"Last-Translator: barbara di egidio <bdiegidio@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/yv-backend/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,8 +41,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-20 20:52+0000\n"
-"Last-Translator: Andrew Walker <andrew.walker@live.it>\n"
+"PO-Revision-Date: 2014-06-14 19:30+0000\n"
+"Last-Translator: barbara di egidio <bdiegidio@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/yv-backend/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,8 +53,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:25+0000\n"
-"Last-Translator: Andrew Walker <andrew.walker@live.it>\n"
+"PO-Revision-Date: 2014-07-11 15:49+0000\n"
+"Last-Translator: barbara di egidio <bdiegidio@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/yv-backend/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,7 +117,7 @@ msgid "moment.plan_completion.title"
 msgstr "{name} ha completato un piano"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Hai completato un piano"
+msgstr "Hai completato il tuo piano"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} ha guadagnato il distintivo <b>{title}</b>"
@@ -248,7 +249,7 @@ msgid "notifications.moments.create.plan_completion"
 msgstr "{name} ha completato il suo Piano, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} ha completato il suo Piano Bibbia, {title}"
+msgstr "{name} hanno completato il loro Piano Bibbia, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
@@ -270,9 +271,16 @@ msgstr "Hai l'App Bibbia?"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Mi sto godendo l'App Bibbia di YouVersione e penso che piacerebbe anche a te. Apro la Bibbia molto più spesso di questi tempi perché è così facile da leggere, guardare, ascoltare e condividere. Ci sono perfino dei Piani, che hanno una selezione dalla Bibbia scelta e pronta per me ogni giorno.\n"
+"Ciao!\n"
+"Sto usando l'App Bibbia di YouVersion e volevo condividerla con te. Se per te l'App è nuova, vedrai che è un modo semplice per portare nella vita di tutti i giorni la bellezza e la verità della Bibbia.\n"
 "\n"
-"Puoi trovarla (gratis!) per quasi qualsiasi dispositivo mobile qui:"
+"Prendi la app Bibbia: leggi, guarda. ascolta, e condividi sulla tablet o sullo smartphone ,e sul web su Bible.com.\n"
+"Imposta il tuo account, sottoscrivi piani di lettura e accedia a segnalibri, note ed evidenziazioni su tutti i dispositivi.\n"
+"Aggiungi amici (come me!): esplora e discuti la Bibbia con persone che hai a cuore.\n"
+"E' tutto nell'App Bibbia-comincia qui:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Ciao!</p><p>Io utilizzo l'App Bibbia di YouVersion e volevo condiverla con te. Se non conosci quest'app, è un modo semplice per portare la bellezza e la verità della Bibbia nella vita quotidiana. </p><p><strong>Installa l'App Bibba:</strong> leggi, guarda, ascolta e condividi sul tuo smartphone o table, e online a Bible.com</p><p><strong>Imposta il tuo Account:</strong> sottoscrivi Piani di Lettura e accedi a segnalibri, evidenziazioni e note su tutti i dispositivi</p><p><strong>Aggiungi Amici (Come Me!):</strong> esplora e discuti la Bibbia con persone che hai a cuore</p><p>Tutto questo è nell'App Bibbia - inizia qui: </p>"
 
 msgid "share.invite_twitter"
 msgstr "L'App Bibbia di @YouVersione ha un posto permanente sulla mia pagina home. Leggi, guarda, ascolta e condividi ... tutto con un'app gratuita:"

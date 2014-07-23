@@ -3,7 +3,9 @@
 #
 # Translators:
 # Translators:
+# Translators:
 # chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
+# JUDITH LESIKA <jlesika@gmail.com>, 2014
 # shikow <nduatijane@gmail.com>, 2013
 # miriammnyuku <tressy58@yahoo.com>, 2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
@@ -28,7 +30,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-01 12:20+0000\n"
+"PO-Revision-Date: 2014-06-23 17:52+0000\n"
 "Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Swahili (http://www.transifex.com/projects/p/yv-backend/language/sw/)\n"
 "MIME-Version: 1.0\n"
@@ -40,8 +42,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-01 12:10+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
+"PO-Revision-Date: 2014-06-12 16:40+0000\n"
+"Last-Translator: miriammnyuku <tressy58@yahoo.com>\n"
 "Language-Team: Swahili (http://www.transifex.com/projects/p/yv-backend/language/sw/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +76,7 @@ msgid "moment.bookmark.self.title"
 msgstr "Ulialamisha <b>{reference_human}</b>"
 
 msgid "moment.friendship.title"
-msgstr "{user_name} sasa uko marafiki na <b>{friend_name}</b>"
+msgstr "{user_name} sasa ni rafiki na <b>{friend_name}</b>"
 
 msgid "moment.friendship.self.title"
 msgstr "Sasa wewe ni rafiki na<b>{friend_name}</b>"
@@ -97,23 +99,26 @@ msgstr "{name} alidownload toleo, <b>{version}</b>"
 msgid "moment.bible.download.self.title"
 msgstr "Ulidownload toleo, <b>{version}</b>"
 
-msgid "moment.reading_plan.subscription.title"
-msgstr "{jina} alianza mpango wa, <b>{mada}</b>"
+msgid "moment.plan_subscription.title"
+msgstr "{name} umeanza mpango "
 
-msgid "moment.reading_plan.subscription.self.title"
-msgstr "Ulizanza mpango wa,<b>{mada}</b>"
+msgid "moment.plan_subscription.self.title"
+msgstr "Mpango umeanzwa"
 
-msgid "moment.reading_plan.day.title"
-msgstr "{jina} amemaliza siku  <b>{siku}</b> ya mapango wa  <b>{mada}</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} amemalliza siku <b>{segment}</b> wa mpango, <b>{title}</b>"
 
-msgid "moment.reading_plan.day.self.title"
-msgstr "Umemaliza siku  <b>{siku}</b> ya mpango wa  <b>{mada}</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Umemaliza siku <b>{segment}</b> wa mpango, <b>{title}</b>"
 
-msgid "moment.reading_plan.completion.title"
-msgstr "{jina} amemaliza mpango wa,  <b>{mada}</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Siku {segment} cha {total_segments} ({percent_complete}%)"
 
-msgid "moment.reading_plan.completion.self.title"
-msgstr "Ulimaliza mpango wa, <b>{mada}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} amemaliza mpango"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Mpango umekamilika"
 
 msgid "moment.badge.earned.title"
 msgstr "{name} alipata beji ya <b>{title}</b>"
@@ -126,6 +131,9 @@ msgstr "{name} alitazama <b>{title}</b>"
 
 msgid "moment.video.watched.self.title"
 msgstr "Wewe ulitazama <b>{title}</b>"
+
+msgid "moment.system.find_friends.title"
+msgstr "Apu ya Biblia ni bora zaidi ukiwa na Marafiki. Tafuta Marafiki zako kwenye Mawasiliano."
 
 msgid "notifications.friendships.offer"
 msgstr "{name} anataka kuwa rafiki yako wa YouVersion"
@@ -145,6 +153,15 @@ msgstr "{name} ametoa maoni kwenye alamisho lako: \"{comment}\""
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ametoa maoni kwenye onyesho lako: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} ametoa maoni juu ya mpango wako: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} ametoa maoni juu ya mpango wa Biblia: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} ametoa maoni juu ya urafiki wako mpya na {friend_name}: \"{comment}\""
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} ametoa maoni kwenye maelezo yako: \"{comment}\""
 
@@ -153,6 +170,15 @@ msgstr "{name} amependa alamisho lako, {reference_human}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} amependa onyesho lako, {reference_human}"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} amependa shughuli za Mpango wako"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} amependa shughuli za Mpango wako wa Biblia"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} amependa urafiki wako mpya na {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} amependa maelezo yako juu ya, {reference_human}"
@@ -169,11 +195,29 @@ msgstr "{moment_owner_name} pia wametoa maoni kwenye maalamisho yao: \"{comment}
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} pia ametoa maoni kwenye {moment_owner_name}'s alamisho: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} pia ametoa maoni juu ya urafiki wake mpya na {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} pia ametoa maoni juu ya {moment_owner_name}'s urafiki mpya na {friend_name}: \"{comment}\""
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} pia wametoa maoni kwenye maonyesho yao: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} pia ametoa maoni kwenye {moment_owner_name}'s onyesho: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} pia ametoa maoni juu ya Mpango wake: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} pia ametoa maoni juu ya Mpango wa {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} pia ametoa maoni juu ya Mpango wake wa Biblia: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} pia ametoa maoni juu ya Mpango wa Biblia ya {moment_owner_name}: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} pia wametoa maoni kwenye maelezo yao: \"{comment}\""
@@ -195,6 +239,18 @@ msgstr "{name} ameongeza maelezo, \"{title}\""
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ameongeza maelezo"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} ameanza Mpango mpya, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} ameanza Mpango mpya wa Biblia, {title}"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} amemaliza Mpango wake, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} amemaliza Mpango wake wa Biblia, {title}"
 
 #. TRANSLATORS: Plural test
 msgid "notifications.friendships.count"
