@@ -4,7 +4,7 @@
 # Translators:
 # Translators:
 # Translators:
-# Jeliace.YV <yival04@gmail.com>, 2013-2014
+# Ma. Elissa Valino <yival04@gmail.com>, 2013-2014
 # tams <tams@aralmuna.me>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
@@ -13,7 +13,7 @@
 # Translators:
 # Translators:
 # Anke Stoye <ankestoyeyouversion@gmail.com>, 2014
-# Jeliace.YV <yival04@gmail.com>, 2013-2014
+# Ma. Elissa Valino <yival04@gmail.com>, 2013-2014
 # Malot MRM <malotmrm@gmail.com>, 2014
 # tams <tams@aralmuna.me>, 2013
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
@@ -21,12 +21,12 @@
 #
 # Translators:
 # Translators:
-# abvcastillo <castillo.anne@gmail.com>, 2013
-# abvcastillo <castillo.anne@gmail.com>, 2013
+# Anne Bernadette Castillo <castillo.anne@gmail.com>, 2013
+# Anne Bernadette Castillo <castillo.anne@gmail.com>, 2013
 # chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
 # chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# Jeliace.YV <yival04@gmail.com>, 2014
+# Ma. Elissa Valino <yival04@gmail.com>, 2014
 # Malot MRM <malotmrm@gmail.com>, 2013
 # tams <tams@aralmuna.me>, 2013-2014
 # tams <tams@aralmuna.me>, 2013
@@ -38,7 +38,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
 "PO-Revision-Date: 2014-05-23 00:09+0000\n"
-"Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
+"Last-Translator: Ma. Elissa Valino <yival04@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +50,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
 "PO-Revision-Date: 2014-05-27 13:52+0000\n"
-"Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
+"Last-Translator: Ma. Elissa Valino <yival04@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,8 +61,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-23 00:09+0000\n"
-"Last-Translator: Jeliace.YV <yival04@gmail.com>\n"
+"PO-Revision-Date: 2014-07-11 16:19+0000\n"
+"Last-Translator: Ma. Elissa Valino <yival04@gmail.com>\n"
 "Language-Team: Tagalog (http://www.transifex.com/projects/p/yv-backend/language/tl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -275,13 +275,24 @@ msgid "share.invite_sms"
 msgstr "Mayroon ka bang Bible App ng YouVersion? Gustong-gusto ko ito, at sa palagay ko'y magugustuhan mo rin ito. Heto ang link:"
 
 msgid "share.invite_email_subject"
-msgstr "Mayroon ka na bang Bible App?"
+msgstr "Sama na sa Bible App!"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Kinagigiliwan ko ang Bible App ng YouVersion at naisip kong magugustuhan mo rin ito. Mas madalas ko nang binabasa ang Bibliya ngayon dahil napakadali nang magbasa, manuod, makinig at magbahagi gamit ang app na ito. Mayroon din itong mga Reading Plans na may lamang sipi mula sa Bibliya na itinakda para sa aking araw-araw na pagbabasa.\n"
+"Kamusta!\n"
 "\n"
-"Maaari mo itong makuha (ng libre!) sa kahit ano mang mobile device:"
+"Ipinagmamalaking ko sabihin na ako ay gumagamit ng Bible App ng YouVersion at naisip kong ibahagi rin ito sa iyo. Kung ikaw ay baguhan dito sa app, ito'y isang simpleng paraan upang isabuhay ang kagandahan at katotohanang hatid ng Bibliya sa ating pangaraw-araw na buhay.\n"
+"\n"
+"I-install ang Bible App: magbasa, makinig, at magbahagi gamit ang iyong smartphone o tablet, at online sa Bible.com.\n"
+"\n"
+"I-set up ang iyong account: mag-subscribe sa mga Bible Plan at i-access ang mga pananda, haylayt, at mga tala sa alinmang aparato.\n"
+"\n"
+"Magdagdag ng mga kaibigan (katulad ko!): tuklasin at talakayin ang Bibliya kasama ng mga taong iyong pinahahalagahan.\n"
+"\n"
+"Lahat ng ito'y nasa Bible App—magsimula rito:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Kamusta!</p><p>Ipinagmamalaking ko sabihin na ako ay gumagamit ng Bible App ng YouVersion at naisip kong ibahagi rin ito sa iyo. Kung ikaw ay baguhan dito sa app, ito'y isang simpleng paraan upang isabuhay ang kagandahan at katotohanang hatid ng Bibliya sa ating pangaraw-araw na buhay. </p><p><strong>I-install ang Bible App:</strong> magbasa, makinig, at magbahagi gamit ang iyong smartphone o tablet, at online sa Bible.com.</p><p><strong>I-set up ang Iyong Account:</strong> mag-subscribe sa mga Bible Plan at i-access ang mga pananda, haylayt, at mga tala sa alinmang aparato.</p><p><strong>Magdagdag ng mga kaibigan (katulad ko!):</strong> tuklasin at talakayin ang Bibliya kasama ng mga taong iyong pinahahalagahan.</p><p>Lahat ng ito'y nasa Bible App—magsimula rito: </p>"
 
 msgid "share.invite_twitter"
 msgstr "Ang @YouVersion Bible App ay bahagi na ng aking home screen. Magbasa, manood, makinig, at magbahagi... sa libreng app na ito:"

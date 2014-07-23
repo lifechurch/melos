@@ -18,7 +18,7 @@
 # Translators:
 # Translators:
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# Magnus Österlund, 2013
+# Magnus Österlund, 2013-2014
 #, fuzzy
 msgid ""
 msgstr ""
@@ -50,7 +50,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"PO-Revision-Date: 2014-07-11 15:01+0000\n"
 "Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/yv-backend/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -271,6 +271,9 @@ msgstr ""
 "Jag har njutit av Bibelappen från YouVersion och tänkte att du kanske gillar det också. Jag öppnar Bibeln mycket oftare numera då det är så lätt att läsa, titta, lyssna, och dela. Det finns även planer med ett urval av Bibeln, allt framplockat och väntande på mig varje dag. \n"
 "\n"
 "Du kan hämta det (gratis!) till nästan alla mobila enheter här:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Hej!</p><p>Jag använder Bibelappen från YouVersion och vill dela med mig till dig. Om du inte känner till appen, gör den det enkelt för dig att ta den vackra sanningen från Bibeln in i din vardag.</p><p><strong>Hämta Bibelappen:</strong> läs, titta, lyssna och dela från din telefon och pekplatta, och online via Bible.com</p><p><strong>Skapa ett konto:</strong> prenumerera på bibelplaner och kom åt dina bokmärken, markeringar och anteckningar från alla dina enheter</p><p><strong>Lägg till vänner (som mig!):</strong> utforska och diskutera Bibeln med vänner du bryr dig om</p><p>Allt detta finns i Bibelappen—kom igång här: </p>"
 
 msgid "share.invite_twitter"
 msgstr "Bibelappen från @YouVersion har en permanent plats på min startskärm. Läs, titta, lyssna och dela...allt i en gratisapp:"

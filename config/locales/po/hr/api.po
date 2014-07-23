@@ -18,7 +18,7 @@
 # Translators:
 # Translators:
 # DaliborHR <dalibor.staba@gmail.com>, 2013
-# DaliborHR <dalibor.staba@gmail.com>, 2013
+# DaliborHR <dalibor.staba@gmail.com>, 2013-2014
 #, fuzzy
 msgid ""
 msgstr ""
@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-21 05:02+0000\n"
+"PO-Revision-Date: 2014-06-01 21:43+0000\n"
 "Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-21 05:15+0000\n"
+"PO-Revision-Date: 2014-06-02 00:33+0000\n"
 "Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -50,8 +50,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-04 06:34+0000\n"
-"Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
+"PO-Revision-Date: 2014-07-11 15:01+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -150,13 +150,13 @@ msgid "notifications.comments.moment.mine.highlight"
 msgstr "Korisnik {name} je komentirao istaknuto: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name} komentira tvoja plan čitanja: “{comment}”"
+msgstr "{name} komentira tvoj plan čitanja: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name} komentira tvoja plan čitanja Biblije: “{comment}”"
+msgstr "{name} komentira tvoj plan čitanja Biblije: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
-msgstr "Korisnik {name} je komentirao tvoje prijateljstvo s {friend_name}: “{comment}”"
+msgstr "Korisnik {name} je komentirao tvoje prijateljstvo s korisnikom {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "Korisnik {name} je komentirao tvoju bilješku: “{comment}”"
@@ -174,7 +174,7 @@ msgid "notifications.likes.moment.mine.plan_activity.push"
 msgstr "Korisniku {name} se sviđa tvoja aktivnost na planu čitanja Biblije"
 
 msgid "notifications.likes.moment.mine.friendship"
-msgstr "Korisniku {name} se sviđa tvoje prijateljstvo s {friend_name}"
+msgstr "Korisniku {name} se sviđa tvoje prijateljstvo s korisnikom {friend_name}"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "Korisniku {name} se sviđa tvoja bilješka {reference_human}"
@@ -192,7 +192,7 @@ msgid "notifications.comments.moments.friend.bookmark"
 msgstr "Oznaka korisnika {moment_owner_name}, “{comment}”, je isto komentirana od strane korisnika {commenter_name}"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} također komentira tvoje novo prijateljstvo s {friend_name}: “{comment}”"
+msgstr "{moment_owner_name} također komentira tvoje novo prijateljstvo s korisnikom {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} također komentira prijateljstvo vlasnika trenutka {moment_owner_name} s {friend_name}: “{comment}”"
@@ -272,6 +272,9 @@ msgstr ""
 "Uživam koristeći aplikaciju Biblija od YouVersiona i mislim da bi se i tebi svidjela. Ove dane otvaram Bibliju češće jer ju je lako čitati, gledati, slušati i dijeliti. Ima čak i  velik izbor planova čitanja koji me čekaju svaki dan.\n"
 "\n"
 "Imaš je (besplatno!) za praktički svaki mobilni uređaj ovdje:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Pozdrav!</p><p>Koristim aplikaciju Biblija od YouVersiona i želim je podijeliti s tobom. Ako ti nije poznato, to je jednostavan način da iskusiš ljepotu i istinu čitanja Biblije u svakodnevnom životu. </p><p><strong>Preuzmi aplikaciju Biblija:</strong> čitaj, gledaj, slušaj, i dijeli na svom mobitelu ili tabletu i online na Bible.com</p><p><strong>Podesi korisnički račun:</strong> pretplati se na planove čitanja i imaj pristup oznakama, istaknutim stihovima i bilješkama na svim uređajima koje koristiš.</p><p><strong>Dodaj prijatelje (koristi \"Sviđa mi se\" opciju):</strong> istraži i raspravljaj o Bibliji s ljudima do kojih ti je stalo</p><p>Sve je to u aplikaciji Biblija - započni ovdje: </p>"
 
 msgid "share.invite_twitter"
 msgstr "Aplikacija Biblija od YouVersiona ima trajno mjesto na mom početnom zaslonu. Može se čitati, gledati, slušati i dijeliti... sve u besplatnoj aplikaciji:"
