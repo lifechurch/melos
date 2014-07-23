@@ -150,6 +150,12 @@ module ApplicationHelper
     reference_path(ver, ref, opts)
   end
 
+  def bible_version_path(ref=nil, opts={})
+    ref = last_read || default_reference if ref.nil?
+    ver = opts[:version_id] || opts[:version] || ref.version
+    reference_path(ver, ref, opts)
+  end
+
   def bible_url(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
     ver = opts[:version_id] || opts[:version] || ref.version

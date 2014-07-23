@@ -2,7 +2,7 @@
 - content_for :sidebar do
 
   .widget-button
-    = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
+    = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
 
   - if @version.publisher.name.present? || @version.publisher.id.blank?
     - pub_name = @version.publisher.name || t('versions.public domain')
@@ -29,9 +29,9 @@
   = @version
 
 - content_for :mobile_right_nav do
-  = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'save_btn'
+  = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'save_btn'
 
 %article
   %h1= @version
   .copyright= @version.info.try :html_safe
-  = link_to t("versions.read title"), bible_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
+  = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
