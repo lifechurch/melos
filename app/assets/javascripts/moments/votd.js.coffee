@@ -42,15 +42,23 @@ class window.Moments.VOTD extends Moments.Base
     if @subscribe_link.length and @vod_subscribe_layer.length
       @subscribe_link.on "click", (e) =>
         e.preventDefault()
+        @moment_el.find(".moment-votd-verse-wrap").toggleClass('mobile-hidden')
+        @moment_el.find(".moment-vod-list").toggleClass('mobile-hidden')
+        @moment_el.find(".moment-content-actions").toggleClass('mobile-hidden')
         @vod_subscribe_layer.toggle()
-        @subscribe_link.hide()
+        @subscribe_link.toggle()
+
     # Activate the cancel button
     @cancel_button = @moment_el.find(".moment-vod-subscribe-cancel")
     if @cancel_button.length
       @cancel_button.on "click", (e) =>
         e.preventDefault()
+        @moment_el.find(".moment-votd-verse-wrap").toggleClass('mobile-hidden')
+        @moment_el.find(".moment-vod-list").toggleClass('mobile-hidden')
+        @moment_el.find(".moment-content-actions").toggleClass('mobile-hidden')
         @vod_subscribe_layer.toggle()
-        @subscribe_link.show()
+        @subscribe_link.toggle()
+
     # Activate the vod version selector
     @vod_version_selector = @moment_el.find("#version_id")
     if @vod_version_selector.length
