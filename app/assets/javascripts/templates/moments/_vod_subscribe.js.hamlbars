@@ -50,16 +50,3 @@
         {{I18n 'or.lower'}}
       %a.moment-vod-subscribe-cancel{href:"#"}
         {{I18n 'moments.action.cancel'}}
-
-
-
-  -#       = select_tag(:version_id, options_from_collection_for_select@versions_by_lang, :id, :to_s, version_id))
-
-  -#   - if version_id.present?
-  -#     = submit_tag I18n 'bookmarks.update'), class: 'action_button_grey'
-  -#   - else
-  -#     = submit_tag I18n 'users.subscribe'), class: 'action_button_green'
-
-  -# - if version_id.present?
-  -#   = form_tag vod_subscription_path(type), method: :delete, class: 'vod_form_delete' do  
-  -#     = submit_tag I18n 'users.unsubscribe'), class: 'action_button_dark_grey'  
