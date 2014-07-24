@@ -16,10 +16,30 @@ json.object do
     json.array! moment.recent_versions do |ver|
       json.id ver.id
       json.abbrev ver.abbreviation
+      json.title ver.title
     end
   end
+
+  subscription =       VodSubscription.all(auth: current_user.auth)
+
   json.actions do
     json.read true
+    if current_user
+      if subscription.has_key?(:email)
+        json.subscribable true if subscription.email.time.blank?
+        json.edit_subscription true if subscription.email.time.present?
+      else
+        json.subscribable true
+      end
+    end
     # json.share true
+  end
+
+  if current_user
+    json.subscription do 
+      json.path            user_vod_subscriptions_path(current_user.username)
+      json.time            subscription.email.time if subscription.has_key?(:email)
+      json.version_id      subscription.email.version_id if subscription.has_key?(:email)
+    end
   end
 end

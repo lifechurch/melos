@@ -1,0 +1,52 @@
+.moment-vod-subscribe-layer
+  %form{action: "{{subscription.path}}", method: "post"}
+    %input{type: 'hidden', name: 'redirect_to', value: 'moments'}
+    .heading
+      %h4
+        {{I18n 'moments.vod.get daily email'}}
+    .version
+      %h5
+        {{I18n 'moments.vod.version'}}:
+      %input{type: 'hidden', name: 'type', value: 'email'}
+      %select#version_id{name: "version_id"}
+        {{#each recent_versions}}
+        %option{value: "{{id}}"} {{title}} ({{abbrev}})
+        {{/each}}
+        %option{value: "-1"}
+          {{I18n 'moments.vod.view more'}}
+        }
+    .time
+      %h5
+        {{I18n 'moments.vod.time'}}:
+      %select#hour{name: "hour"}
+        %option{value: "01"} 01
+        %option{value: "02"} 02
+        %option{value: "03"} 03
+        %option{value: "04"} 04
+        %option{value: "05"} 05
+        %option{value: "06"} 06
+        %option{value: "07"} 07
+        %option{value: "08"} 08
+        %option{value: "09", selected: "selected"} 09
+        %option{value: "10"} 10
+        %option{value: "11"} 11
+        %option{value: "12"} 12
+      %span.colon :
+      %select#minute{name: "minute"}
+        %option{value: "00"} 00
+        %option{value: "10"} 10
+        %option{value: "20"} 20
+        %option{value: "30"} 30
+        %option{value: "40"} 40
+        %option{value: "50"} 50
+        %option{value: "60"} 60
+
+      %select#meridian{name: "meridian"}
+        %option{selected: "selected", value: "AM"} AM
+        %option{value: "PM"} PM
+    .subscribe
+      %input.action_button_green{name: "commit", type: "submit", value: "Subscribe", class: ".moment-vod-subscribe-submit"}
+      %span.or
+        {{I18n 'or.lower'}}
+      %a.moment-vod-subscribe-cancel{href:"#"}
+        {{I18n 'moments.action.cancel'}}

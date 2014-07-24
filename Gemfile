@@ -14,9 +14,7 @@ gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem 'sentry-raven', :git => 'https://github.com/getsentry/raven-ruby.git'
-# Have to use this because original gem (fnando/i18n-js) hasn't merged PR #131
-gem 'i18n-js', git: 'https://github.com/matthewrossanderson/i18n-js.git'
-
+gem 'i18n-js',                '~> 3.0.0.rc5'
 #gem 'oink'
 gem 'gabba'
 gem 'memcachier'
@@ -73,12 +71,13 @@ group :test do
   gem 'capybara-screenshot', '~> 0.3.4'
   gem 'cucumber-rails', '~> 1.3.0', require: false
   gem 'rspec-cells'
+  gem 'rspec'
   gem 'rspec-rails'
   gem 'minitest'
   gem 'tddium',         '~> 1.4.6'
   gem 'simplecov', require: false
   gem 'parallel_tests'
-  gem 'zeus-parallel_tests'
+  # gem 'zeus-parallel_tests'
   gem 'terminal-notifier-guard'
 end
 
@@ -94,6 +93,7 @@ group :development, :tddium_ignore do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'zeus', '~> 0.15'
 end
 
 group :test, :development do

@@ -28,6 +28,7 @@ class window.Moments.Base
     if @delete_link.length
       @setupDeleting()
 
+    # TODO: move this to finalizeSetup in plan subclasses.
     @start_plan_layer = @moment_el.find(".rp-layer")
     @start_plan_link = @moment_el.find(".moment-action-start-plan")
     if @start_plan_link.length and @start_plan_layer.length
@@ -101,6 +102,7 @@ class window.Moments.Base
           @comment_field_el.val("").removeAttr("disabled").blur() # blur to dismiss device keyboards
           @feed.refreshWookmark(@moment_el.closest(".social-feed"))
 
+  # todo: add this to finalize in plan subclass
   setupStartPlan: ()->
     @start_plan_link.on "click", (ev)=>
       ev.preventDefault()

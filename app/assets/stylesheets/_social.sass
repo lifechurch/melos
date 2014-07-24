@@ -63,7 +63,10 @@ body.transition .moment
 
 .moment-vod
   .moment-content-actions
-    margin-right: 0px
+    display: inline-block
+    padding: 0
+    margin: 0
+    vertical-align: top
 
 .moment-content-actions
   a
@@ -509,7 +512,7 @@ body.transition .moment
 // !Verse of the day moment
 
 .moment-vod
-
+  min-height: 215px
   .moment-icon
     background-position: 0 0
 
@@ -552,9 +555,9 @@ body.transition .moment
   clear: both
   margin-bottom: 0
   max-height: 125px
+  min-height: 45px
   overflow: hidden
   position: relative
-
   .content-action
     position: absolute
     bottom: 0
@@ -580,6 +583,7 @@ body.transition .moment
 .moment-vod-list
   overflow: hidden
   margin-bottom: 0
+  display: inline-block
 
   li
     float: left
@@ -599,6 +603,49 @@ body.transition .moment
 
   li.active
     background-color: #555
+
+.moment-verse-stuff
+  clear: both
+  position: relative
+  overflow: hidden
+
+.moment-vod-subscribe-layer
+  display: none
+  position: absolute
+  top: 0
+  z-index: 1000
+  height: 100%
+  width: 400px
+  background-color: #eeedeb
+  padding: 15px 0 0 15px
+  +border-radius(3px)
+  select
+    background-image: url(/assets/select_arrows.png)
+    height: 30px
+    background-position: right 50%
+    background-repeat: no-repeat
+    margin: 0
+  h4
+    margin-bottom: 5px
+  .version
+    margin-top: 10px
+  h5, select
+    display: inline
+  .time
+    margin: 3px 0 0 18px
+  .time, .subscribe
+    margin-top: 5px
+
+  .subscribe
+    margin-left: 60px
+
+  #version_id
+    width: 310px
+  .or
+    margin: 0 5px
+
+.moment-action-subscribe
+  margin-right: 20px
 
 
 // !Note moment
@@ -661,6 +708,7 @@ body.transition .moment
 .moment-no-refs-link:hover
   color: #fff
   background-color: #aaa
+
 
 
 // !Video moment
@@ -784,6 +832,10 @@ body.transition .moment
   font-size: 1.6em
   font-weight: normal
   margin: 0 0 5px 15px
+
+.moment-fr-name-add
+  padding: 5px 10px 6px
+  +box-shadow(inset rgba(0, 0, 0, 0.1) 0 -2px 0 0)
 
 .moment-fr-seemore
   display: block

@@ -1,13 +1,14 @@
 :ruby
-  links = [{path: "/settings/profile", string: t('users.edit profile')},
-           {path: "/settings/notifications", string: t('users.edit notifications')},
-           {path: "/settings/update_email", string: t('users.edit email')},
-           {path: "/settings/password", string: t('users.edit password')},
-           {path: "/settings/picture", string: t('users.edit picture')},
+  links = [{path: edit_user_path(current_user.username), string: t('users.edit profile')},
+           {path: edit_notifications_path(token: params[:token]), string: t('users.edit notifications')},
+           {path: user_email_path(current_user.username), string: t('users.edit email')},
+           {path: user_password_path(current_user.username), string: t('users.edit password')},
+           {path: user_avatar_path(current_user.username), string: t('users.edit picture')},
            # removed for 3.1 Social launch - will make a comeback
-           # {path: "/settings/connections", string: t('users.edit connections')},
-           {path: "/settings/devices", string: t('users.edit devices')},
-           {path: "/settings/delete_account", string: t('users.edit account_existence')}]
+           # {path: connections_user_path(current_user), string: t('users.edit connections')},
+           {path: user_vod_subscriptions_path(current_user.username), string: t('users.vod_subscriptions')},           
+           {path: user_devices_path(current_user.username), string: t('users.edit devices')},
+           {path: delete_account_user_path(current_user.username), string: t('users.edit account_existence')}]
 
 #widget-user-settings.widget
   %h3.hd

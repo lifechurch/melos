@@ -1,0 +1,49 @@
+:ruby
+  @title = t('users.vod_subscriptions')
+  @setting_selected = :vod_subscriptions
+  @allowed_hours = (1..12).to_a.map { |n| n.to_s.rjust(2, '0') }
+  @allowed_minutes = (00..60).step(10).to_a.map { |n| n.to_s.rjust(2, '0') }
+
+  if @vod_subscription.present? && @vod_subscription.has_key?(:email) && @vod_subscription.email.version_id.present? && @vod_subscription.email.time.present?
+    @email_hour = @vod_subscription.email.time[0,2].to_i 
+    @email_hour = @email_hour - 12 if @email_hour > 12
+    @email_hour = @email_hour.to_s.rjust(2, '0')
+    @email_minute = @vod_subscription.email.time[3,2]
+    @email_meridian = @vod_subscription.email.time[0,2].to_i
+    @email_meridian = @email_meridian > 12 ? 'PM' : 'AM'
+    @email_version_id = @vod_subscription.email.version_id
+  else
+    @email_version_id = nil
+  end
+
+  if @vod_subscription.present? && @vod_subscription.has_key?(:push) && @vod_subscription.push.version_id.present? && @vod_subscription.push.time.present?
+    @push_hour = @vod_subscription.push.time[0,2].to_i
+    @push_hour = @push_hour - 12 if @push_hour > 12 
+    @push_hour = @push_hour.to_s.rjust(2, '0')
+    @push_minute = @vod_subscription.push.time[3,2]
+    @push_meridian = @vod_subscription.push.time[0,2].to_i
+    @push_meridian = @push_meridian > 12 ? 'PM' : 'AM'
+    @push_version_id = @vod_subscription.push.version_id
+  else
+    @push_version_id = nil
+  end
+
+  #todo: refactor above into controller/model/mapper
+
+%h3.vod_title
+  = @title
+
+- if @results.present?
+  = render partial: "shared/form_errors", locals: {errors: @results.errors }
+
+%h4
+  = t('users.daily email delivery')
+  = render partial: 'form', locals: {type: "email", version_id: @email_version_id, hour: @email_hour, minute: @email_minute, meridian: @email_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
+
+%h4.push_notifications_header
+  = t('users.daily push notifications')
+
+- if @devices.present?
+  = render partial: 'form', locals: {type: "push", version_id: @push_version_id, hour: @push_hour, minute: @push_minute, meridian: @push_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
+- else
+  %p= t('users.no devices')

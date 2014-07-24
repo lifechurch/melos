@@ -1,5 +1,5 @@
 - # sub template should define a @setting_selected variable with allowed values of:
-- # :edit, :notifications, :email, :password, :devices, :account
+- # :edit, :notifications, :email, :password, :devices, :account, :vod_subscriptions
 - # found in users/_mobile_menu partial
 
 - content_for :title do
@@ -15,7 +15,7 @@
       %img.settings-header-avatar{src: current_user.user_avatar_url["px_128x128"]}
       %h1.settings-header-name
         = current_user.name
-      %a{href: user_path(current_user)} 
+      %a{href: user_path(current_user.username)} 
         = t('users.go to your profile')
 
   %article

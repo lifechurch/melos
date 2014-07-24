@@ -10,9 +10,17 @@
       {{created_dt}}
     .moment-vod-title
       {{{title}}}
-    {{{verse_html}}}
-    {{> moments/_actions_layer}}
-    %ul.moment-vod-list
-      {{#each recent_versions}}
-      %li.btn{"data-version-id" => "{{id}}"} {{abbrev}}
-      {{/each}}
+
+    .moment-verse-stuff
+      {{#unless vod_subscribed}}
+      {{> moments/_vod_subscribe}}
+      {{/unless}}
+
+      {{{verse_html}}}
+
+      %ul.moment-vod-list
+        {{#each recent_versions}}
+        %li.btn{"data-version-id" => "{{id}}"} {{abbrev}}
+        {{/each}}
+      {{> moments/_actions_layer}}
+

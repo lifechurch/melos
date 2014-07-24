@@ -22,6 +22,7 @@ class window.Moments.VOTD extends Moments.Base
         calendar_img:     @data.calendar_img
         actions:          @data.actions
         read_path:        @readPath()
+        subscription:     @data.subscription
 
       return html
 
@@ -35,7 +36,35 @@ class window.Moments.VOTD extends Moments.Base
       btn = $(button)
       if btn.data("version-id") == @version() then btn.addClass("active")
 
+    # Activate the subscribe link
+    @vod_subscribe_layer = @moment_el.find(".moment-vod-subscribe-layer")
+    @subscribe_link = @moment_el.find(".moment-action-subscribe")
+    if @subscribe_link.length and @vod_subscribe_layer.length
+      @subscribe_link.on "click", (e) =>
+        e.preventDefault()
+        @moment_el.find(".moment-votd-verse-wrap").toggleClass('mobile-hidden')
+        @moment_el.find(".moment-vod-list").toggleClass('mobile-hidden')
+        @moment_el.find(".moment-content-actions").toggleClass('mobile-hidden')
+        @vod_subscribe_layer.toggle()
+        @subscribe_link.toggle()
 
+    # Activate the cancel button
+    @cancel_button = @moment_el.find(".moment-vod-subscribe-cancel")
+    if @cancel_button.length
+      @cancel_button.on "click", (e) =>
+        e.preventDefault()
+        @moment_el.find(".moment-votd-verse-wrap").toggleClass('mobile-hidden')
+        @moment_el.find(".moment-vod-list").toggleClass('mobile-hidden')
+        @moment_el.find(".moment-content-actions").toggleClass('mobile-hidden')
+        @vod_subscribe_layer.toggle()
+        @subscribe_link.toggle()
+
+    # Activate the vod version selector
+    @vod_version_selector = @moment_el.find("#version_id")
+    if @vod_version_selector.length
+      @vod_version_selector.on "change", (e) =>
+        if @vod_version_selector.val() == "-1"
+          window.location = @data.subscription.path
 
   fetch: ->
     verse_url = "/bible/#{@version()}/#{@usfm()}.json"

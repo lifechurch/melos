@@ -3,3 +3,4 @@ translations:
     only:
       - "ui"
       - "moments"
+      - "or"
