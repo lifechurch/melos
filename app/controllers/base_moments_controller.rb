@@ -3,6 +3,8 @@
 
 class BaseMomentsController < ApplicationController
 
+  include YV::Concerns::Redirection
+
   respond_to :html, :js
 
   before_filter :find_resource, only: [:edit,:update,:destroy]
@@ -115,19 +117,6 @@ class BaseMomentsController < ApplicationController
   def find_moment
     @moment ||= current_auth ? Moment.find(params[:id], auth: current_auth) : Moment.find(params[:id])
     render_404 if @moment.nil? || @moment.errors.present?
-  end
-
-  def mobile_redirect
-    return unless @moment.present?
-    return unless request.env["X_MOBILE_DEVICE"].present?
-    case request.env["X_MOBILE_DEVICE"]
-    when /iphone|iPhone|ipad|iPad|ipod|iPod/
-      @user_agent = "ios"
-      @native_url = "youversion://moments/#{@moment.id}"               
-    when /android|Android/
-      @user_agent = "android"
-      @native_url = "youversion://moments/#{@moment.id}"
-    end 
   end
 
 end

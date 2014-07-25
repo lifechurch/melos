@@ -165,9 +165,13 @@ YouversionWeb::Application.routes.draw do
   get "/connections/:provider/create",     to: "connections#create",         as: "create_connection"
   delete "/connections/:provider/delete",  to: "connections#destroy",        as: "delete_connection"
    
-  # Legacy routes, many used in transactio nal emails
-  get "/friends",                          to: "redirects#settings"
+  # Legacy routes, many used in transactional emails
+  get "/friends",                          to: "redirects#friends"
   get "/bookmarks",                        to: "redirects#bookmarks"
+  get "/highlights",                       to: "redirects#highlights"
+  get "/notes",                            to: "redirects#notes"
+  get "/badges",                           to: "redirects#badges"
+  get "/profile",                          to: "redirects#profile"  
   get "/settings",                         to: "redirects#settings"
   get "/settings/profile",                 to: "redirects#settings"
   get "/settings/update_email",            to: "redirects#settings_email"

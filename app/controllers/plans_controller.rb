@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  before_filter :mobile_redirect, only: [:index, :show, :sample]
   before_filter :force_login, only: [:start, :update, :settings, :calendar, :mail_settings, :calendar]
   rescue_from InvalidReferenceError, with: :ref_not_found
   rescue_from YouVersion::API::RecordNotFound, with: :handle_404
