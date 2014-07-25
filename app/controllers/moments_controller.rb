@@ -6,7 +6,7 @@ class MomentsController < BaseMomentsController
     moment_resource "Moment"
     moment_comments_display true
 
-  before_filter :mobile_redirect, only: [:index, :show]
+  prepend_before_filter :mobile_redirect, only: [:index, :show]
   before_filter :force_login, only: [:index, :related, :_cards, :introduction]
   before_filter :find_moment, :resourceful_redirect, only: [:show]
 

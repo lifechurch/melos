@@ -57,6 +57,22 @@ module YV
                index:     "moments", 
                show:      "moments/#{params[:id]}"
               },
+            highlights:
+              {
+               show:      "moments/#{params[:id]}"
+              },
+            bookmarks:
+              {
+               show:      "moments/#{params[:id]}"
+              },
+            notes:
+              {
+               show:      "moments/#{params[:id]}"
+              },
+            badges:
+              {
+               show:      "moments/#{params[:id]}"
+              },
             videos:
               {
                 index:    "videos",
