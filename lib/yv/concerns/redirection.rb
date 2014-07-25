@@ -66,7 +66,8 @@ module YV
             plans:
               {
                 index:    "reading_plans?category=#{params[:category]}",
-                show:     "reading_plan_detail?id=#{params[:id].match /(\d+)/ if params[:id].present?}"
+                show:     "reading_plan_detail?id=#{params[:id].match /(\d+)/ if params[:id].present?}",
+                sample:   "reading_plan_day?id=#{params[:id].match /(\d+)/ if params[:id].present?}&day=#{params[:day] if params[:day].present?}"
               },
             subscriptions:
               {
