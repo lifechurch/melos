@@ -4,21 +4,21 @@
 # Translators:
 # Translators:
 # Translators:
-# Charlotte Billy <charlottebilly_92@hotmail.com>, 2013-2014
+# charlotte billy <charlottebilly_92@hotmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
 # Translators:
 # Translators:
 # Translators:
-# Charlotte Billy <charlottebilly_92@hotmail.com>, 2013-2014
+# charlotte billy <charlottebilly_92@hotmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
 # Translators:
 # Translators:
-# Charlotte Billy <charlottebilly_92@hotmail.com>, 2013
-# Charlotte Billy <charlottebilly_92@hotmail.com>, 2013
+# charlotte billy <charlottebilly_92@hotmail.com>, 2013
+# charlotte billy <charlottebilly_92@hotmail.com>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
@@ -27,7 +27,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
 "PO-Revision-Date: 2014-05-28 14:22+0000\n"
-"Last-Translator: Charlotte Billy <charlottebilly_92@hotmail.com>\n"
+"Last-Translator: charlotte billy <charlottebilly_92@hotmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/yv-backend/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +39,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
 "PO-Revision-Date: 2014-05-28 14:33+0000\n"
-"Last-Translator: Charlotte Billy <charlottebilly_92@hotmail.com>\n"
+"Last-Translator: charlotte billy <charlottebilly_92@hotmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/yv-backend/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

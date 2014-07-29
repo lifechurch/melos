@@ -18,9 +18,11 @@
 #
 # Translators:
 # Translators:
-# GraceJacob <gracepj@gmail.com>, 2013
-# GraceJacob <gracepj@gmail.com>, 2013
+# Grace Priya Jacob <gracepj@gmail.com>, 2013
+# Grace Priya Jacob <gracepj@gmail.com>, 2013
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
+# prinsonm <prinson.mony@yahoo.com>, 2014
+# prinsonm <prinson.mony@yahoo.com>, 2014
 #, fuzzy
 msgid ""
 msgstr ""
@@ -28,7 +30,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-23 11:30+0000\n"
+"PO-Revision-Date: 2014-06-02 02:50+0000\n"
 "Last-Translator: prinsonm <prinson.mony@yahoo.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/yv-backend/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +54,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 16:21+0000\n"
+"PO-Revision-Date: 2014-07-11 15:01+0000\n"
 "Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/yv-backend/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -273,6 +275,9 @@ msgstr ""
 "मैं YouVersion के बाइबिल App का आनंद ले रहा हूँ और सोचा की आपको भी अच्छा लगेगा। मैं आजकल बाइबिल बहुत खोल रहा हु क्योंकि उसे पढना, देखना, सुनना और बाँटना बहुत आसान हैं। इसमें पठन योजनाए भी हैं जिसमे बाइबिल के पद्यो को चयनित करके निकला गया हैं जो प्रतिदिन मेरा इंतज़ार करते हैं।⏎\n"
 "⏎\n"
 "यह आपको (मुफ्त में) लगभग हर मोबाइल यन्त्र के लिए यहाँ मिलेगा:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>नमस्कार!</p><p>में YouVersion द्वारा निर्मित बाइबिल App उपयोग कर रहा हूँ,और उसे आपके साथ शेयर करना चाहता हूँ। यदि इस App को आप पहली बार उपयोग कर रहे हैं, यह App बाइबिल के सत्य और सुंदरता को अपने नित्य जीवन में शामिल करने का आसान तरीका हैं। </p><p><strong>बाइबिल App डाउनलोड करे:</strong>पढ़े,देखे,सुने और शेयर करे अपने स्मार्टफोन या टेबलेट पर और Bible.com पर</p><p><strong>अपना अकाउंट सेट अप करे:</strong>बाइबिल पाठक योजना के सदस्य बने इससे जुड़े समस्त डिवाइस के बुकमार्क,हाईलाइट,और टिप्पणी एक्सेस करे</p><p><strong>मित्र बनाए(जैसे मुझे!):</strong>बाइबिल अपने चहेतों के साथ अध्ययन और अन्वेषण करे</p><p>यह सब खूबियाँ इस बाइबिल App में हैं-शुरू करे:</p>"
 
 msgid "share.invite_twitter"
 msgstr "@YouVersion के बाइबिल App का मेरी home screen में स्थायी स्थान है। पढ़े, देखे, सुने, और बांटे...सब एक मुफ्त app में: "

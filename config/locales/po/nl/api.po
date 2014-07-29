@@ -4,7 +4,7 @@
 # Translators:
 # Translators:
 # Translators:
-# Joukeschaafsma <Jwcschaafsma@gmail.com>, 2013
+# Jouke Schaafsma <Jwcschaafsma@gmail.com>, 2013
 # PetraSnoek <lievepetra@gmail.com>, 2014
 # Yanick Goossens <yanickgoossens@hotmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
@@ -13,8 +13,8 @@
 # Translators:
 # Translators:
 # Translators:
-# FranciscaN <franciscanoordzij@gmail.com>, 2013
-# Joukeschaafsma <Jwcschaafsma@gmail.com>, 2013-2014
+# Francisca Noordzij <franciscanoordzij@gmail.com>, 2013
+# Jouke Schaafsma <Jwcschaafsma@gmail.com>, 2013-2014
 # PetraSnoek <lievepetra@gmail.com>, 2014
 # Yanick Goossens <yanickgoossens@hotmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
@@ -22,6 +22,7 @@
 #
 # Translators:
 # Translators:
+# PetraSnoek <lievepetra@gmail.com>, 2014
 # PetraSnoek <lievepetra@gmail.com>, 2014
 # Yanick Goossens <yanickgoossens@hotmail.com>, 2013
 #, fuzzy
@@ -55,8 +56,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-09 14:40+0000\n"
-"Last-Translator: PetraSnoek <lievepetra@gmail.com>\n"
+"PO-Revision-Date: 2014-07-11 15:01+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/yv-backend/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -273,9 +274,20 @@ msgstr "Heb jij de Bijbel App al?"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Ik geniet van de YouVersion Bijbel App en ik denk dat jij dit ook leuk zou vinden. Ik sla mijn Bijbel nu veel vaker open omdat het zo gemakkelijk is om te lezen, kijken, luisteren en delen. Het heeft zelfs leesplannen, elke dag staat er een selectie van de Bijbel voor je klaar.\n"
+"Hallo\n"
 "\n"
-"Je kunt het zo krijgen (gratis!) op elk mobiel apparaat:"
+"Ik gebruik de Bijbel App van YouVersion en ik wil dat met jou delen. Wanneer je niet bekend bent met de app, deze app is een eenvoudig middel om de schoonheid en de waarheid van de Bijbel elke dag te beleven. \n"
+"\n"
+"Gebruik de Bijbel App: lees, kijk, luister en deel op jouw smartfoon of tablet en online op Bible.com.\n"
+"\n"
+"Maak jouw account aan: volg een Leesplan en verkrijg toegang tot jouw bladwijzers, notities en markeringen op verschillende apparaten.\n"
+"\n"
+"Voeg vrienden toe (mij bijvoorbeeld!): ontdek en bespreek de Bijbel met mensen die jij goed kent.\n"
+"\n"
+"Het kan allemaal in met de Bijbel App—begin hier: "
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Hoi!</p><p>Ik gebruik de Bijbel App van YouVersion en ik wil dat met jou delen. Wanneer je niet bekend bent met de app, deze app is een eenvoudig middel om de schoonheid en de waarheid van de Bijbel elke dag te beleven. </p><p><strong>Gebruik de Bijbel App:</strong> lees, kijk, luister en deel op jouw smartfoon of tablet en online op Bible.com</p><p><strong>Maak jouw account aan:</strong> volg een Leesplan, en verkrijg toegang tot jouw bladwijzers, notities en markeringen op verschillende apparaten</p><p><strong>Voeg vrienden toe (mij bijvoorbeeld!):</strong> ontdek en bespreek de Bijbel met mensen die jij goed kent</p><p>Het kan allemaal in met de Bijbel App—begin hier: </p>"
 
 msgid "share.invite_twitter"
 msgstr "De Bijbel App van @YouVersion heeft een vaste plaats op mijn beginscherm. Lees, bekijk, luister, en deel...allemaal in een gratis app:"

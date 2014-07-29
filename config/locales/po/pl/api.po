@@ -5,22 +5,23 @@
 # Translators:
 # Translators:
 # Oliwer C <oliwerc@gmail.com>, 2014
-# Sebastian Ferdyn <sferdyn@gmail.com>, 2013-2014
+# sferdyn <sferdyn@gmail.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
 # Translators:
 # Translators:
 # Translators:
-# Sebastian Ferdyn <sferdyn@gmail.com>, 2013-2014
+# sferdyn <sferdyn@gmail.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
 # Translators:
 # Translators:
 # Joanna Kowalik <kowalik6@hotmail.com>, 2013
-# Sebastian Ferdyn <sferdyn@gmail.com>, 2013
-# Sebastian Ferdyn <sferdyn@gmail.com>, 2013
+# sferdyn <sferdyn@gmail.com>, 2013
+# sferdyn <sferdyn@gmail.com>, 2013-2014
+# sferdyn <sferdyn@gmail.com>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
@@ -29,7 +30,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
 "PO-Revision-Date: 2014-05-20 20:22+0000\n"
-"Last-Translator: Sebastian Ferdyn <sferdyn@gmail.com>\n"
+"Last-Translator: sferdyn <sferdyn@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/yv-backend/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
 "POT-Creation-Date: 2013-08-30 11:23-0500\n"
 "PO-Revision-Date: 2014-05-28 00:11+0000\n"
-"Last-Translator: Sebastian Ferdyn <sferdyn@gmail.com>\n"
+"Last-Translator: sferdyn <sferdyn@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/yv-backend/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +53,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-24 20:30+0000\n"
+"PO-Revision-Date: 2014-07-11 15:01+0000\n"
 "Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/yv-backend/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -274,6 +275,9 @@ msgstr ""
 "Bardzo lubię Aplikację Biblii od YouVersion i myślę, że Tobie też może się spodobać. Używam tej Biblii coraz częściej, bo jest łatwa do czytania, oglądania, słuchania i dzielenia się z innymi. Możesz tam znaleźć plany czytania, dzięki którym każdego dnia będziesz miał przygotowany odpowiedni dla siebie fragment do czytania.\n"
 "\n"
 "Aplikację Biblii możesz mieć i Ty (za darmo!) na prawie każdą platformę, zobacz tutaj:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Cześć!</p><p>Używam Aplikacji Biblii YouVersion i chce się nią z tobą podzielić. Jeżeli dopiero rozpoczynasz korzystanie z aplikacji, to prosty sposób, aby wprowadzać codziennie do swojego życia piękno i prawdę Biblii. </p><p><strong>Pobierz Aplikację Biblii:</strong> czytaj, oglądaj, słuchaj i udostępniaj na swoim smartphonie lub tablecie, oraz on-line na Bible.com</p><p><strong>Utwórz swoje konto:</strong> zapisz się do planu Biblii i miej zakładki, zaznaczenia i notatki dostępne na wszystkich urządzeniach</p><p><strong>Dodaj znajomych (Jak ja!):</strong> przyglądaj i omawiaj Biblię z ludźmi na których zależy ci szczególnie</p><p>To wszystko jest w Aplikacji Biblii—rozpocznij tutaj: </p>"
 
 msgid "share.invite_twitter"
 msgstr "YouVersion Aplikacja Biblii ma stałe miejsce na moim ekranie. Czytaj, oglądaj, słuchaj i dziel się z innymi...wszystko w darmowej aplikacji:"

@@ -2,6 +2,16 @@
   meta_title        = t("meta.kids_app.title")
   meta_description  = t("meta.kids_app.description")
   meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  i18n_image_dir  = ""
+  i18n_css_class = "en"
+  prelaunch = false
+  if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
+    i18n_css_class = "es"
+    i18n_image_dir = "/es"
+    meta_url = "https://www.bible.com/ninos"
+    prelaunch = true
+  end
+
 
 !!! 5
 %html
@@ -41,12 +51,11 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 
-  %body
+  %body{:class => "body-" + i18n_css_class}
 
     .kids
 
       -# !Logo and intro copy
-
       %h1.intro-bible
         = t('kids.bible app')
       .intro-forkids
@@ -68,29 +77,36 @@
         = t('kids.free download')
 
       -# !App store buttons
-      .download
-        %a.download-ios{href: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"}
-          = t('kids.app store')
-        %a.download-play{href: "http://play.google.com/store/apps/details?id=com.bible.kids"}
-          = t('kids.google play')
-        %a.download-amazon{href: "http://www.amazon.com/gp/product/B00GURLC40"}
-          = t('kids.amazon')
+      - if not prelaunch
+        .download
+          %a.download-ios{href: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
+            = t('kids.app store')
+          %a.download-play{href: "http://play.google.com/store/apps/details?id=com.bible.kids", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
+            = t('kids.google play')
+          %a.download-amazon{href: "http://www.amazon.com/gp/product/B00GURLC40", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
+            = t('kids.amazon')
 
       -# !iPad hero screenshot
-      .hero
-        = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: t('kids.story text 1')
-        .youtube-embed
-          %iframe{width:"805", height:"607", src: "//www.youtube.com/embed/97YQAoCjpcs?rel=0", frameborder: "0", allowfullscreen: "true"}
-        %p.hero-copy
-          = t('kids.interact text')
+      - if not i18n_image_dir.present?
+        .hero
+          = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: t('kids.story text 1')
+          .youtube-embed
+            %iframe{width:"805", height:"607", src: "//www.youtube.com/embed/97YQAoCjpcs?rel=0", frameborder: "0", allowfullscreen: "true"}
+          %p.hero-copy
+            = t('kids.interact text')
 
-      .youtube-mobile
-        %iframe{width:"100%", height:"auto", src: "//www.youtube.com/embed/97YQAoCjpcs?rel=0", frameborder: "0", allowfullscreen: "true"}
+        .youtube-mobile
+          %iframe{width:"100%", height:"auto", src: "//www.youtube.com/embed/97YQAoCjpcs?rel=0", frameborder: "0", allowfullscreen: "true"}
+      - else
+        .alt-hero
+          = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t('kids.bible app')
+          %p.hero-copy
+            = t('kids.interact text')
 
       -# !Smaller screenshots
 
       .screens
-        = image_tag "campaigns/kids/screens-1.jpg", alt: t('kids.story text 2')
+        = image_tag "campaigns/kids#{i18n_image_dir}/screens-1.jpg", alt: t('kids.story text 2')
         = image_tag "campaigns/kids/screens-2.jpg", alt: t('kids.story text 3')
         = image_tag "campaigns/kids/screens-3.jpg", alt: t('kids.story text 4')
         = image_tag "campaigns/kids/screens-4.jpg", alt: t('kids.story text 5')
@@ -128,11 +144,11 @@
     .logos
       .logos-box
         %a{href: "http://bible.com"}
-          = image_tag "campaigns/kids/logos-yv.png", class: "logos-yv", alt: t('kids.partner.youversion')
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-yv.png", class: "logos-yv", alt: t('kids.partner.youversion')
         %p.logos-copy
           = t('kids.partner.in partnership')
         %a{href: "http://onehope.net"}
-          = image_tag "campaigns/kids/logos-oh.png", class: "logos-oh", alt: t('kids.partner.one hope')
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-oh.png", class: "logos-oh", alt: t('kids.partner.one hope')
 
     -# !Retina JS
 

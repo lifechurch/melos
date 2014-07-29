@@ -87,6 +87,26 @@ mn:
     connections:
       index:
         title: "Холбогдсон Дансууд"
+  kids:
+    bible app: "Библи Апп"
+    for: "-д"
+    kids: "хүүхдүүд"
+    by youversion: "YouVersion-с"
+    help your kids: "Хүүхдүүдээ Бурханы Үгийг шимтэн уншихад нь тусла."
+    free download: "Үнэгүйгээр татаж ав!"
+    app store: "Апп дэлгүүрт байгаа"
+    google play: "Google Play-с авах"
+    amazon: "Amazon Appstore-т Андройдед зориулагдсанаар байгаа"
+    app icon: "App icon Хүүхдийн Библи Апп"
+    jesus and friends: "Есүс ба найзууд"
+    story text 1: "Еден Цэцэрлэг"
+    story text 2: "Анхны Христын Мэндэлсэн өдөр"
+    story text 3: "Иосэф, Марь ба малын тэвшин дэхь нярай Есүс"
+    story text 4: "Есүс төрөх талаар хэлэхээр Тэнгэр элч нар хоньчидод харагдсан."
+    story text 5: "Саа дайрсан хүнийг Есүс эдгээсэн нь"
+    share:
+      facebook name: "Хүүхдэд зориулсан Библи Апп"
+      email: "И-мэйл"
   now: "Одоо"
   celebrating 50MM: "50 Сая Апп суулгагдсан баяраа тэмдэглэж байна!"
   link: "Холбоос"

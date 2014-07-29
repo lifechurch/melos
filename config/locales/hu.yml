@@ -74,14 +74,43 @@ hu:
   meta:
     kids_app:
       title: "Biblia alkalmazás gyermekeknek"
+      description: "A Biblia App Gyermekeknek egy remek mód arra, hogy gyermekeid bibliai történeteket tanulhassanak Jézusról, az örök élet ajándékáról és sok más tanulságról, amelyeket Isten tanít nekünk. Ebben az interaktív élményben a gyermekek közvetlenül foglalkoznak Isten Igéjével elragadó képek segítségével, miközben az olvasásért és kincsek gyűjtéséért pontokat nyernek."
     100million:
       title: "100 millióval kezdődik"
       description: "A Biblia alkalmazást már csaknem 100 millió felhasználó töltötte le - hihetetlen mérföldkő! De még egészen az elején vagyunk. Töltsd le ma az ingyenes Biblia alkalmazást - azután oszd meg az alkalmazást a barátaiddal. Írjunk együtt történelmet!"
     mobile:
       title: "A Biblia alkalmazás"
+      description: "Olvasd Isten Igéjét bárhol és bármikor a YouVersion Biblia alkalmazással. Oszd meg a Szentírást barátaiddal, emelj ki és könyvjelzőzz bekezdéseket és alakíts ki napi szokást a Biblia Tervekkel. Elérhető iOS, Android, Blackberry, Windows Phone és egyéb rendszerekhez."
+    site:
+      title: "Bible.com"
+      description: "Építsd bele a Biblia szépségét és igazságát a mindennapokba. A YouVersion Biblia alkalmazással olvashatod, nézheted, hallgathatod, valamint megoszthatod az okostelefonodon vagy táblagépeden és online a Bible.com-on keresztül."
     connections:
       index:
         title: "Csatlakoztatott Fiókok"
+  kids:
+    bible app: "A Biblia alkalmazás"
+    free download: "Töltsd le ingyen!"
+    app store: "Elérhető az App store-on"
+    google play: "Szerezd meg a Google Play-en"
+    amazon: "Elérhető az androidos Amazon Appstore-on"
+    app icon: "A Biblia alkalmazás gyerekeknek applikációs ikonja"
+    jesus and friends: "Jézus és barátok"
+    story text 1: "Az Éden kertje"
+    story text 2: "Az első karácsony"
+    story text 3: "József, Mária és a csecsemő Jézus a jászolban"
+    story text 4: "Angyalok jelennek meg a pásztoroknak, hogy tudtukra adják Krisztus születését"
+    story text 5: "Jézus meggyógyítja a bénát"
+    feature 1: "Egy ingyenes Biblia-élmény gyerekeidnek"
+    feature 5: "Gyerekbarát navigáció"
+    share:
+      tell friends: "Mesélj barátaidnak a Biblia alkalmazásról gyerekeknek"
+      facebook name: "Biblia alkalmazás gyermekeknek"
+      twitter hashtags: "gyerekekbiblia"
+      email: "E-mail"
+      email subject: "A Biblia alkalmazás gyerekeknek megérkezett!"
+    partner:
+      youversion: "YouVersion: A világ legelterjedtebb Biblia alkalmazása"
+      one hope: "Egy remény: rendkívüli Biblia tartalom gyerekeknek"
   now: "Most"
   celebrating 50MM: "50 millió applikáció telepítésének ünneplése"
   link: "Link"

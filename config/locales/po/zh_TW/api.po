@@ -5,7 +5,7 @@
 # Translators:
 # Translators:
 # Gladys Liew <gladysliew@gmail.com>, 2013-2014
-# sandyhtyu <sandyuhiutung@gmail.com>, 2013
+# Sandy Yu, 2013
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
 #
@@ -13,7 +13,7 @@
 # Translators:
 # Translators:
 # Gladys Liew <gladysliew@gmail.com>, 2013-2014
-# sandyhtyu <sandyuhiutung@gmail.com>, 2013
+# Sandy Yu, 2013
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
 #
@@ -52,8 +52,8 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 23:30+0000\n"
-"Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
+"PO-Revision-Date: 2014-07-11 15:01+0000\n"
+"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/yv-backend/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -272,6 +272,9 @@ msgstr ""
 "我很喜歡使用 YouVersion 的聖經軟體，我想你也會喜歡的。不管是閱讀、看視訊、聽音訊或分享經文，聖經軟體都很容易使用，因此我現在接觸聖經的次數也更多了。聖經軟體也備有讀經計劃，提供一系列的精選經文給我每天閱讀。\n"
 "\n"
 "你可以從這裡把軟體下載和安裝 (免費的！) 到幾乎任何款式的行動設備上:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>嗨！</p><p>我想跟您分享我目前在使用著的 YouVersion 聖經軟體。如果您沒試過這個應用程序，它是將聖經的內涵與真理納入日常生活的一種簡單方法。 </p><p><strong>下載聖經軟體：</strong> 在您的智慧型手機或平板電腦上閱讀、觀賞、聆聽，以及分享。您也可以在 Bible.com 線上使用同樣的功能。</p><p><strong>設立您的帳戶：</strong> 訂閱讀經計劃並在不同的設備上存取您的書籤、醒目標示，以及筆記。</p><p><strong>添加朋友 (我就是人選之一！)：</strong> 與您關注的人一起探索與討論聖經。</p><p>一切都在聖經軟體裡— 就從這裡開始吧： </p>"
 
 msgid "share.invite_twitter"
 msgstr "我將 @YouVersion 的聖經軟體長駐在我的主熒幕上。無論是閱讀、觀看視訊、聆聽音訊或分享經文... 全都在一個免費的程序裡:"

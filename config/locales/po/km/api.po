@@ -17,8 +17,8 @@
 # Translators:
 # Translators:
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# Raksmey Chamreun <raksmeychamreun@gmail.com>, 2013
-# Raksmey Chamreun <raksmeychamreun@gmail.com>, 2013
+# Raksmey <raksmeychamreun@gmail.com>, 2013
+# Raksmey <raksmeychamreun@gmail.com>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
@@ -51,7 +51,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
 "PO-Revision-Date: 2014-03-10 09:32+0000\n"
-"Last-Translator: pisit <pisit@nlfcambodia.org>\n"
+"Last-Translator: Pisit He <pisit@nlfcambodia.org>\n"
 "Language-Team: Khmer (http://www.transifex.com/projects/p/yv-backend/language/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

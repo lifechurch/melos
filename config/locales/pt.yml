@@ -1,4 +1,4 @@
-pt_BR:
+pt:
   time:
     formats:
       votd: "%-d %B, %Y"
@@ -87,6 +87,44 @@ pt_BR:
     connections:
       index:
         title: "Contas Conectadas"
+  kids:
+    bible app: "O App da Bíblia"
+    for: "para"
+    kids: "crianças"
+    by youversion: "por YouVersion"
+    help your kids: "Ajude seus filhos a amarem a Palavra de Deus"
+    free download: "Baixe gratuitamente!"
+    app store: "Disponível na App store"
+    google play: "Baixe no Google Play"
+    amazon: "Disponível na Amazon Appstore para Android"
+    app icon: "Ícone do app para O App da Bíblia para Crianças"
+    jesus and friends: "Jesus e amigos"
+    interact text: "Interaja com a Bíblia e a veja tomar vida."
+    story text 1: "O jardim do Éden"
+    story text 2: "O primeiro Natal"
+    story text 3: "José, Maria e o bebê Jesus na manjedoura"
+    story text 4: "Anjos aparecem aos pastores para contarem sobre o nascimento de Cristo"
+    story text 5: "Jesus cura o paralítico"
+    feature 1: "Uma experiência da Bíblia gratuita para seus filhos"
+    feature 2: "App de livro de histórias animado para smartphones e tablets"
+    feature 3: "Ilustrações coloridas com animações animadas pelo toque"
+    feature 4: "Jogos e atividades ajudam as crianças a se lembrar do que aprenderam"
+    feature 5: "Navegação amigável às crianças"
+    share:
+      tell friends: "Conte aos seus amigos sobre o App da Bíblia para Crianças."
+      facebook name: "O App da Bíblia para Crianças"
+      facebook description: "O App da Bíblia para Crianças está aqui! Baixe hoje o app grátis para iOS e Android: histórias da Bíblia interativas para ajudar a seu filho aprender, jogar e crescer na Palavra de Deus. www.bible.com/ninos"
+      facebook link: "http://www.bible.com/ninos"
+      facebook redirect: "http://www.bible.com/ninos"
+      twitter description: "O App da Bíblia para Crianças do @YouVersion está aqui! É legal e completamente grátis. Baixe: bible.com/ninos"
+      twitter hashtags: "bíbliaparacrianças"
+      email: "E-mail"
+      email subject: "O App da Bíblia para Crianças está aqui!"
+      email body: "Novidade - o App da Bíblia para Crianças está aqui! É completamente grátis e está disponível para iPhone, iPad, iPod touch e dispositivos com Android. O app é uma crescente coleção de histórias Bíblicas com animações ativadas pelo toque e atividades de aprendizado, perfeita para ajudar as crianças a aprender as grandes histórias da Bíblia. Vá em bible.com/ninos no seu dispositivo móvel e baixe-o hoje."
+    partner:
+      youversion: "YouVersion: o App da Bíblia mais popular do mundo"
+      in partnership: "em parceria com"
+      one hope: "One Hope: Extraordinário conteúdo Bíblico para Crianças"
   now: "Agora"
   celebrating 50MM: "Comemorando 50 milhões de instalações!"
   link: "Link"

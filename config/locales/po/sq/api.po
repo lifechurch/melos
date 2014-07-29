@@ -4,7 +4,7 @@
 # Translators:
 # Translators:
 # Translators:
-# Ilkoni <iliriangjoni@gmail.com>, 2014
+# Ilirian Gjoni <iliriangjoni@gmail.com>, 2014
 # Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
 # #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
 # API Strings
@@ -12,7 +12,7 @@
 # Translators:
 # Translators:
 # Translators:
-# Ilkoni <iliriangjoni@gmail.com>, 2014
+# Ilirian Gjoni <iliriangjoni@gmail.com>, 2014
 # Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
 # #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
 # App sharing
@@ -20,7 +20,7 @@
 # Translators:
 # Translators:
 # Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# Lorenc Tona <lorenc_tona@yahoo.com>, 2013
+# Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
 #, fuzzy
 msgid ""
 msgstr ""
@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Backend (YouVersion)\n"
 "Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
 "POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-03-02 18:22+0000\n"
+"PO-Revision-Date: 2014-07-11 17:39+0000\n"
 "Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
 "Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -266,13 +266,24 @@ msgid "share.invite_sms"
 msgstr "A e ke Programin e Biblës nga YouVersion? Mua më pëlqen shumë dhe mendoj se do të të pëlqejë dhe ty. Ja ku është lidhja nëse nuk e ke:"
 
 msgid "share.invite_email_subject"
-msgstr "A e ke Programin e Biblës?"
+msgstr "Bashkohu me mua në Programi i Biblës?"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Kam qenë duke gëzuar Programin e Biblës nga YouVersion dhe mendova se do të të pëlqejë dhe ty. E kam hapur Biblën më shumë këto ditë, se është e lehtë për ta lexuar, shikuar, dëgjuar dhe ndarë. Madje ka Plane, që kanë një zgjedhje të Biblës gati dhe që më pret çdo ditë.\n"
+"Përshëndetje!\n"
 "\n"
-"Edhe ti mund ta kesh (falas!) për pothuaj çdo pajisje të lëvizshme këtu:"
+"Jam duke përdorur Programin e Biblës nag YouVersion dhe doja ta ndaja atë me ty. Nëse nuk ke dëgjuar për këtë program, është një mënyrë e thjeshtë për të sjellë bukurinë dhe të vërtetën e Biblës ne jetën e përditshme.\n"
+"\n"
+"Zotëro Programin e biblës: lexo, shiko, dëgjo dhe ndaj në telefonin dhe tabletin tuaj si dhe në internet në Bible.com\n"
+"\n"
+"Cakto llogarinë tënde: pajtohu në planet e Biblës dhe mundëso shenjues, theksime dhe shënime në çdo pajisje\n"
+"\n"
+"Shto miq (si mua!): eksploro dhe diskuto rreth Biblës me njerëz për të cilët kujdesesh.\n"
+"\n"
+"Është e gjithë kjo në Programi i Biblës—fillo këtu:"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Përshëndetje!</p><p>Jam duke përdorur Programin e Biblës nag YouVersion dhe doja ta ndaja atë me ty. Nëse nuk ke dëgjuar për këtë program, është një mënyrë e thjeshtë për të sjellë bukurinë dhe të vërtetën e Biblës ne jetën e përditshme. </p><p><strong>Zotëro Programin e biblës:</strong> lexo, shiko, dëgjo dhe ndaj në telefonin dhe tabletin tuaj si dhe në internet në Bible.com</p><p><strong>Cakto llogarinë tënde:</strong> pajtohu në planet e Biblës dhe mundëso shenjues, theksime dhe shënime në çdo pajisje</p><p><strong>Shto miq (si mua!):</strong> eksploro dhe diskuto rreth Biblës me njerëz për të cilët kujdesesh</p><p>Është e gjithë kjo në Programi i Biblës—fillo këtu: </p>"
 
 msgid "share.invite_twitter"
 msgstr "Programi i Biblës nga @YouVersion ka një vend të përhershëm në ekranin tim kryesor. Lexo, shiko, dëgjo dhe ndaj...të gjitha në një program falas:"

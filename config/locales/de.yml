@@ -74,7 +74,7 @@ de:
   meta:
     kids_app:
       title: "Die Bible App for Kids"
-      description: "Die Bibel-App für Kinder ist ein guter Weg Kinder mit biblischen Geschichten über Jesus, unser Geschenk des ewigen Lebens, und den vielen Lektionen die Gott uns lehrt, vertraut zu machen. Durch das interaktive Erlebnis beschäftigen sich Kinder direkt mit dem Wort Gottes durch herrlichen Darstellungen, während sie Punkte fürs Lesen erhalten und Schätze sammeln."
+      description: "Die Bibel-App für Kinder ist ein guter Weg Kinder mit biblischen Geschichten über Jesus, unser Geschenk des ewigen Lebens, und den vielen Lektionen die Gott uns lehrt, vertraut zu machen. Durch das interaktive Erlebnis beschäftigen sich Kinder direkt mit dem Wort Gottes durch herrliche Darstellungen, während sie Punkte fürs Lesen erhalten und Schätze sammeln."
     100million:
       title: "Es fängt mit 100 Mio. an."
       description: "Die Bibel App ist schon fast 100 Mio. Mal installiert worden - ein unbeschreiblicher Meilenstein! Aber jetzt fangen wir erst richtig. Lade dir die kostenlose Bibel App heute herunter - und dann teile sie mit deinen Freunden. Lass uns zusammen Geschichte schreiben."
@@ -87,6 +87,44 @@ de:
     connections:
       index:
         title: "Verbundene Benutzerkonten"
+  kids:
+    bible app: "Die Bibel App "
+    for: "für"
+    kids: "Kinder"
+    by youversion: "von YouVersion"
+    help your kids: "Hilf deinen Kindern das Wort Gottes lieben zu lernen."
+    free download: "Kostenlos herunterladen!"
+    app store: "Erhältlich im App Store"
+    google play: "Hole sie dir auf Google Play"
+    amazon: "Erhältlich im Amazon Appstore für Android"
+    app icon: "App-Symbol der Bibel App für Kinder"
+    jesus and friends: "Jesus mit Freunden"
+    interact text: "Interagiere mit der Bibel und sieh wie sie zum Leben erwacht."
+    story text 1: "Der Garten Eden"
+    story text 2: "Die erste Weihnacht"
+    story text 3: "Josef, Maria und das Jesuskind in der Krippe"
+    story text 4: "Engel erscheinen den Hirten, um ihnen über die Geburt des Christus zu erzählen"
+    story text 5: "Jesus heilt den Gelähmten"
+    feature 1: "Lass deine Kinder die Bibel erleben - kostenlos!"
+    feature 2: "Animierte Bilderbuch-App für Smartphones und Tablets"
+    feature 3: "Bunte Illustrationen mit berührungsaktivierten Animationen"
+    feature 4: "Spiele und Aktivitäten helfen Kindern, sich an das Erlernte zu erinnern"
+    feature 5: "Kinderfreundliche Navigation"
+    share:
+      tell friends: "Erzähle deinen Freunden von der Bibel App für Kinder"
+      facebook name: "Die Bibel App für Kids"
+      facebook description: "Die Bibel App für Kinder ist da! Lade die kostenlose App für iOS und Android heute herunter: Interaktive Geschichten aus der Bibel, um deinem Kind zu helfen, Gottes Wort spielerisch kennen zu lernen und damit aufzuwachsen. www.bible.com/kids"
+      facebook link: "http://www.bible.com/kids"
+      facebook redirect: "http://www.bible.com/kids"
+      twitter description: "Die Bibel App für Kinder von @YouVersion ist da! Sie macht Spaß und ist völlig kostenlos. Herunterzuladen unter: bible.com/kids"
+      twitter hashtags: "kidsbible"
+      email: "E-Mail"
+      email subject: "Die Bibel App für Kinder ist da!"
+      email body: "Tolle Neuigkeiten: Die Bibel App für Kinder ist da! Sie ist vollkommen kostenlos und für  iPhone, iPad, iPod touch und Android-Geräte erhältlich. Die App umfasst eine wachsende Sammlung von Berichten aus der Bibel mit Animationen über den Touch-Screen sowie Lernspielen. Sie ist perfekt dafür geeignet, dass Kinder die wichtigsten Geschichten in der Bibel kennen lernen. Gehe zu bible.com/kids auf deinem mobilen Gerät und lade sie dir heute herunter."
+    partner:
+      youversion: "YouVersion: Die weltweit beliebteste Bibel-App"
+      in partnership: "in Zusammenarbeit mit"
+      one hope: "One Hope: außerordentliche Geschichten aus der Bibel für Kinder"
   now: "Jetzt  "
   celebrating 50MM: "Zur Feier der 50 Mio. Downloads!"
   link: "Link"

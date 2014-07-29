@@ -87,6 +87,11 @@ ro:
     connections:
       index:
         title: "Conturi conectate"
+  kids:
+    bible app: "Aplicația Biblia"
+    share:
+      facebook name: "Aplicația Biblia pentru copii"
+      email: "E-mail"
   now: "Acum"
   celebrating 50MM: "Sărbătorind 50 de milioane de instalări ale aplicației!"
   link: "Legătură"

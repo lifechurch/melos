@@ -74,14 +74,24 @@ lv:
   meta:
     kids_app:
       title: "Bībeles aplikācija bērniem"
+      description: "Bībeles aplikācija bērniem ir lielisks veids kā jūsu bērni var mācīties Bībeles stāstus par Jēzu, dāvanu-Mūžīgo dzīvību, un daudz citu mācību,  kuras Dievs mums māca. Šajās interaktīvajās stundās, bērni ir tiešā saskarsmē ar Dieva Vārdu, izmantojot vizuālos attēlus, tai pat laikā pelnot punktus un krājot bagātības."
     100million:
       title: "Tas sākas ar 100 miljoniem"
       description: "Bībeles aplikācija ir uzstādīta gandrīz 100 miljonu reižu - neticami! Bet mēs tikai sākam. Lejuplādē bezmaksas Bībeles aplikāciju šodien - un tad dalies ar aplikāciju ar saviem draugiem. Radīsim vēsturi kopā."
     mobile:
       title: "Bībeles aplikācija"
+      description: "Lasi Dieva Vārdu jebkurā laikā, jebkurā vietā, izmantojot YouVersion Bībeles aplikāciju. Dalies ar rakstu vietām ar draugiem, iekrāso un iezīmē rakstus, un uzveidot Bībeles lasīšanas plānus. Pieejams iOS, Android, Blackberry, Windows Phone un citiem."
+    site:
+      title: "Bible.com"
+      description: "Ienes Bībeles patiesību un skaistumu savā ikdienas dzīvē. Izmantojot YouVersion Bībeles aplikāciju, tu vari lasīt, skatīties, klausīties un dalīties ar to, izmantojot savu viedtālruni, planšetdatoru, vai tiešsaitē www.bible.com"
     connections:
       index:
         title: "Pievienotie konti"
+  kids:
+    bible app: "Bībeles aplikācija"
+    share:
+      facebook name: "Bībeles aplikācija bērniem"
+      email: "e-pasts"
   now: "Tagad"
   celebrating 50MM: "Svinam 50 miljonu aplikāciju instalējumus!"
   link: "Saite"
@@ -235,6 +245,8 @@ lv:
       more: "Vairāk"
       read in bible: "Lasi Bībelē"
       read plan: "Lasīt"
+      about plan: "Par plānu"
+      start plan: "Sākt plānu"
   notifications:
     title: "Paziņojumi"
     none: "Tev nav paziņojumu"
@@ -264,6 +276,7 @@ lv:
     limit notice: "Tev var būt kaut vai 150 draugu"
     limit description: "Ierobežojot draudzību Bībeles aplikācijā ar draugiem, kas ir labi pazīstami rada vidi, kas ir atvērta godīgām sarunām un koplietotām atklāsmēm ar uzticamiem draugiem."
   friendships:
+    name required: "Lai piedzīvotu Bībeli kopā ar draugiem, atjauno savu profila informāciju ar savu pilno vārdu un uzvārdu"
     find friends title: "Atrodi draugus"
     search by name: "Meklēt pēc vārda"
     search button: "Ej"
@@ -636,6 +649,7 @@ lv:
       readings 5 or more: "lasījumi"
     settings: "Uzstādījumi"
     privacy:
+      visible to friends?: "Vai vēlies, lai Tavi draugi redz Tavu plānu aktivitāti?"
       private: "Privāts"
       public: "Publisks"
     title: "Lasīšanas plāni"
@@ -691,6 +705,9 @@ lv:
     catch me up: "Panākt mani."
     restart description: "Jūs varat atsākt savu plānu. Visa jūsu lasīšanas plāna vēsture tiks atjaunota un sākta no sākuma."
     restart: "Atsākt plānu no jauna"
+    privacy description:
+      private: "Tavs plāns ir privāts. Pārslēdz iestatījumus uz 'Tikai draugi', lai dalītos savā plānu aktivitātē ar draugiem."
+      public: "Tavs plāns ir redzams draugiem. Pārslēdz uz 'Privāts', lai to savu plānu aktivitāti padarītu privātu."
     make private: "Padarīt privātu"
     make public: "Dalies ar draugiem"
     privacy title: "Konfidencionalitāte"
