@@ -58,7 +58,6 @@ class window.Panes.Share extends window.Panes.Base
     @share_errors.html("")
 
     if btn.hasClass('twitter')
-      console.log(btn)
       if @tw_char_count.next().hasClass("exceeded")
         @share_errors.append(@share_errors.data("error-character-limit"))
         @disableNetworkButton(btn)

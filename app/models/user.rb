@@ -279,12 +279,23 @@ class User < YV::Resource
     successful = true
 
     opts[:connections] = opts[:connections].keys.join("+")
-    data,errs = self.class.post("users/share", opts.merge({auth: self.auth}))
-    results = YV::API::Results.new(data,errs)
-    if results.invalid?
-       self.errors = results.errors
+    tw_data,tw_errs = self.class.post("share/send_twitter", opts.merge({auth: self.auth})) if opts[:connections].match(/twitter/) 
+    tw_results = YV::API::Results.new(tw_data,tw_errs)
+    if tw_results.invalid?
+       self.errors = tw_results.errors
        successful = false
     end
+    fb_data,fb_errs = self.class.post("share/send_facebook", opts.merge({auth: self.auth})) if opts[:connections].match(/facebook/) 
+    fb_results = YV::API::Results.new(fb_data,fb_errs)
+    if fb_results.invalid?
+      if self.errors[:base]
+        self.errors[:base] |= fb_results.errors[:base]
+      else
+        self.errors = fb_results.errors
+      end
+       successful = false
+    end
+
     return successful
   end
 
