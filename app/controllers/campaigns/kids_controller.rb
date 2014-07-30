@@ -17,6 +17,9 @@ class Campaigns::KidsController < ApplicationController
     # /kids
     # tracks requests to /app to GA custom event.
     # then redirects to an store for mobile device if found
+
+    # only allow kids page to localize for the kids whitelist locales
+    @locale = :en unless i18n_kids_whitelist.include? I18n.locale
   end
 
   def create
@@ -55,6 +58,12 @@ class Campaigns::KidsController < ApplicationController
     when /silk|Silk/
       'http://www.amazon.com/gp/mas/dl/android?p=com.bible.kids'
     end
+  end
+
+  def i18n_kids_whitelist
+    # the following localizations will allow translation for the kids page
+    # the others will default to en
+    [ :en, :es, :"es-ES" ]
   end
 
 end

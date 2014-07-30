@@ -1,6 +1,6 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :lifechurchtv]
+  before_filter :force_login, except: [:settings_notifications, :lifechurchtv, :ninos]
 
   # skip_filter :set_page,
   #             :set_locale,
