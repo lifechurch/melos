@@ -4,12 +4,14 @@
   meta_title        = t.call("meta.kids_app.title")
   meta_description  = t.call("meta.kids_app.description")
   meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  canonical_url     = meta_url
   i18n_image_dir  = ""
   i18n_css_class = "en"
   prelaunch = false
   if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
     i18n_css_class = "es"
     i18n_image_dir = "/es"
+    canonical_url = "https://www.bible.com/es/kids"
     prelaunch = true
   end
 
@@ -19,6 +21,7 @@
   %head
     %title= strip_tags(meta_title)
     %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %link{rel: "canonical", href: canonical_url}
     %meta{charset:"utf-8"}
     %meta{name: "viewport",       content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
     %meta{name: "description",    content: meta_description}
