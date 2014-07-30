@@ -8,7 +8,7 @@
            # {path: connections_user_path(current_user), string: t('users.edit connections')},
            {path: user_vod_subscriptions_path(current_user.username), string: t('users.vod_subscriptions')},           
            {path: user_devices_path(current_user.username), string: t('users.edit devices')},
-           {path: delete_account_user_path(current_user.username), string: t('users.edit account_existence')}]
+           {path: delete_account_user_path(current_user.username), string: t('users.edit account_existence')}] if current_user.present?
 
 #widget-user-settings.widget
   %h3.hd

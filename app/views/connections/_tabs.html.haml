@@ -10,35 +10,35 @@
         = t("social.#{network}.name")
 
 #connection_info
+  - if @user.present?
+    - if @user.connections.present? && @user.connections[@show]
+      %p
+        = t('social.connected as', connection: connection_name, username: @user.connections[@show].nickname)
+        %span.confirm
+          %a{href: delete_connection_path(@show.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", rel: "nofollow"}
+            = t('social.remove connection')
 
-  - if @user.connections.present? && @user.connections[@show]
-    %p
-      = t('social.connected as', connection: connection_name, username: @user.connections[@show].nickname)
-      %span.confirm
-        %a{href: delete_connection_path(@show.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", rel: "nofollow"}
-          = t('social.remove connection')
+      - if @error.present?
+        %p.error= @error
 
-    - if @error.present?
-      %p.error= @error
+      -else # No errors - only want to show the following as long as we don't have any errors.
 
-    -else # No errors - only want to show the following as long as we don't have any errors.
+        - if @friends.present?
+          %p= t('social.connection friends', connection: connection_name)
+          %ul.resource_list
+            - @friends.each do |u|
+              %li
+                - if u.user_avatar_url
+                  .float_left.gutter_right_half
+                    %img{src: u.user_avatar_url.px_48x48}
+                %p.gutter_top_half.float_left
+                  = link_to u.name || u.username, u
+                  - if u.name
+                    %br
+                    %b= u.username
+        - else
+          %p.notice= t('social.errors.no friends', connection: connection_name)
 
-      - if @friends.present?
-        %p= t('social.connection friends', connection: connection_name)
-        %ul.resource_list
-          - @friends.each do |u|
-            %li
-              - if u.user_avatar_url
-                .float_left.gutter_right_half
-                  %img{src: u.user_avatar_url.px_48x48}
-              %p.gutter_top_half.float_left
-                = link_to u.name || u.username, u
-                - if u.name
-                  %br
-                  %b= u.username
-      - else
-        %p.notice= t('social.errors.no friends', connection: connection_name)
-
-  - else
-    %p= t('connection marketing')
-    = link_to t('connect to', connection: connection_name), new_connection_path(@show.to_s, redirect: "/settings/connections"), class: "action_button_blue"
+    - else
+      %p= t('connection marketing')
+      = link_to t('connect to', connection: connection_name), new_connection_path(@show.to_s, redirect: "/settings/connections"), class: "action_button_blue"
