@@ -7,9 +7,12 @@
   i18n_image_dir  = ""
   i18n_css_class = "en"
   prelaunch = false
+  facebook_locale = "en_US"
   if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
     i18n_css_class = "es"
     i18n_image_dir = "/es"
+    meta_url = "https://www.bible.com/es/kids"
+    facebook_locale = "es_ES"
     prelaunch = true
   end
 
@@ -28,8 +31,8 @@
     %meta{property: "og:description", content: meta_description }
     %meta{property: "og:image", content: "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}"}
     %meta{property: "og:image", content: "#{url_for(asset_path('/campaign/kids/hero.png'))}"}
-    %meta{property: "og:locale", content: "en_US"}
-    %meta{property: "og:locale:alternate", content: "es"}
+    %meta{property: "og:locale", content: facebook_locale}
+    %meta{property: "og:locale:alternate", content: "en_US"}
     %meta{property: "og:locale:alternate", content: "es_ES"}
     %meta{name: "twitter:card",             content: "summary"}
     %meta{name: "twitter:url",              content: meta_url}
