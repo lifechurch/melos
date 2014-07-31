@@ -2,7 +2,7 @@
   @title = t('users.vod_subscriptions')
   @setting_selected = :vod_subscriptions
   @allowed_hours = (1..12).to_a.map { |n| n.to_s.rjust(2, '0') }
-  @allowed_minutes = (00..60).step(10).to_a.map { |n| n.to_s.rjust(2, '0') }
+  @allowed_minutes = (00..45).step(15).to_a.map { |n| n.to_s.rjust(2, '0') }
 
   if @vod_subscription.present? && @vod_subscription.has_key?(:email) && @vod_subscription.email.version_id.present? && @vod_subscription.email.time.present?
     @email_hour = @vod_subscription.email.time[0,2].to_i 
