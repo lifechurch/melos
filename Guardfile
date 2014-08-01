@@ -8,6 +8,7 @@ guard :rspec, cmd: 'zeus rspec', failed_mode: :focus do
   watch(%r{^app/(.+)\.rb$})                           { |m| "spec/#{m[1]}_spec.rb" }
   watch(%r{^app/(.*)(\.erb|\.haml|\.slim)$})          { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
   watch(%r{^lib/(.+)\.rb$})                           { |m| "spec/lib/#{m[1]}_spec.rb" }
+  watch(%r{^lib/tasks/(.+)\.rb$})                     { |m| "spec/lib/tasks#{m[1]}_spec.rb" }
   watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| ["spec/routing/#{m[1]}_routing_spec.rb", "spec/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb", "spec/acceptance/#{m[1]}_spec.rb"] }
   # Any matching model spec
   watch(%r{^app\/models/(.+)\.rb$})                    { |m| "spec/models#{m[1]}_spec.rb" }

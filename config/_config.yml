@@ -14,9 +14,13 @@ common:
   api_referer: web-dev.youversionapi.com
   api_version: "3.1"
   memcache_server: localhost
-  smartling_api_key: ''
-  smartling_project_id: ''
-  #
+  # Prod
+  smartling_api_key: '6ae01daf-c686-45e5-a55c-543d04d5a215'
+  smartling_project_id: '3b632294d'
+  # Sandbox
+  # smartling_api_key: 'b3f15261-40d8-4ed3-9a6b-07c5b1ba476a'
+  # smartling_project_id: 'a46acf1f4'
+  # 
   # Timeouts: all times are in seconds
   api_default_timeout: 10
   rack_execution_timeout: 1000

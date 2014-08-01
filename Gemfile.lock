@@ -8,6 +8,13 @@ GIT
       multi_json (~> 1.0)
       uuidtools
 
+PATH
+  remote: ~/dev/api-sdk-ruby
+  specs:
+    smartling (0.5.1)
+      multi_json (~> 1.0)
+      rest-client (~> 1.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -395,9 +402,6 @@ GEM
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
     slop (3.4.4)
-    smartling (0.5.1)
-      multi_json (~> 1.0)
-      rest-client (~> 1.6)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -510,7 +514,7 @@ DEPENDENCIES
   sass-rails (= 3.2.5)
   sentry-raven!
   simplecov
-  smartling
+  smartling!
   sqlite3
   tddium (~> 1.4.6)
   terminal-notifier-guard
