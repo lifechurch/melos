@@ -75,7 +75,7 @@ module YV
               },
             videos:
               {
-                index:    "videos",
+                index:    "videos?",
                 show:     "videos?id=#{params[:id]}",
                 series:   "videos?id=#{params[:id]}"
               },
@@ -92,7 +92,7 @@ module YV
               },
             users:
               {
-                show:       "profile?id=#{params[:id]}",
+                show:       "my_profile",
                 notes:      "my_notes",
                 bookmarks:  "bookmarks",
                 badges:     "my_profile"
