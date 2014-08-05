@@ -12,17 +12,37 @@ class RedirectsController < ApplicationController
 
 
   def bookmarks
-    redirect_to(bookmarks_user_url(current_user))
+    redirect_to(bookmarks_user_url(current_user.username))
   end
 
   def settings
-    redirect_to(edit_user_url(current_user.username))
+    redirect_to(edit_user_url(id: current_user.username))
   end
 
   # Removing for 3.1 Social launch - will make a comeback when API implements Facebook/Twitter connections
   #def settings_connections
   #  redirect_to(connections_user_url(current_user))
   #end
+
+  def profile
+    redirect_to(user_url(current_user.username))
+  end
+
+  def friends
+    redirect_to(user_friends_url(current_user.username))
+  end
+
+  def notes
+    redirect_to(notes_user_url(current_user.username))
+  end
+
+  def badges
+    redirect_to(badges_user_url(current_user.username))
+  end
+
+  def highlights
+    redirect_to(user_highlights_url(current_user.username))
+  end
 
   def settings_email
     redirect_to(user_email_url(current_user.username))
