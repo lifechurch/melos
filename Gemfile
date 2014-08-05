@@ -19,6 +19,7 @@ gem 'i18n-js',                '~> 3.0.0.rc5'
 gem 'gabba'
 gem 'memcachier'
 gem 'fast_gettext'
+gem 'smartling'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
