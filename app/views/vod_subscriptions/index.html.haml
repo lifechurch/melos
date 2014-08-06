@@ -7,10 +7,11 @@
   if @vod_subscription.present? && @vod_subscription.has_key?(:email) && @vod_subscription.email.version_id.present? && @vod_subscription.email.time.present?
     @email_hour = @vod_subscription.email.time[0,2].to_i 
     @email_hour = @email_hour - 12 if @email_hour > 12
+    @email_hour = 12 if @email_hour == 0
     @email_hour = @email_hour.to_s.rjust(2, '0')
     @email_minute = @vod_subscription.email.time[3,2]
     @email_meridian = @vod_subscription.email.time[0,2].to_i
-    @email_meridian = @email_meridian > 12 ? 'PM' : 'AM'
+    @email_meridian = @email_meridian >= 12 ? 'PM' : 'AM'
     @email_version_id = @vod_subscription.email.version_id
   else
     @email_version_id = nil
@@ -18,11 +19,12 @@
 
   if @vod_subscription.present? && @vod_subscription.has_key?(:push) && @vod_subscription.push.version_id.present? && @vod_subscription.push.time.present?
     @push_hour = @vod_subscription.push.time[0,2].to_i
-    @push_hour = @push_hour - 12 if @push_hour > 12 
+    @push_hour = @push_hour - 12 if @push_hour > 12
+    @push_hour = 12 if @push_hour == 0
     @push_hour = @push_hour.to_s.rjust(2, '0')
     @push_minute = @vod_subscription.push.time[3,2]
     @push_meridian = @vod_subscription.push.time[0,2].to_i
-    @push_meridian = @push_meridian > 12 ? 'PM' : 'AM'
+    @push_meridian = @push_meridian >= 12 ? 'PM' : 'AM'
     @push_version_id = @vod_subscription.push.version_id
   else
     @push_version_id = nil
