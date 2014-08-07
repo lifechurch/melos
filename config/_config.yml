@@ -15,8 +15,8 @@ common:
   api_version: "3.1"
   memcache_server: localhost
   # Prod
-  smartling_api_key: '6ae01daf-c686-45e5-a55c-543d04d5a215'
-  smartling_project_id: '3b632294d'
+  smartling_api_key: 'df76c884-977f-4262-8650-423119eedaba'
+  smartling_project_id: 'b13fafcf3'
   # Sandbox
   # smartling_api_key: 'b3f15261-40d8-4ed3-9a6b-07c5b1ba476a'
   # smartling_project_id: 'a46acf1f4'
