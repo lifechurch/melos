@@ -10,9 +10,10 @@ class VodSubscriptionsController < ApplicationController
   end
 
   def create
-    params[:hour] = params[:hour].to_i + 12 if params[:meridian] == "PM"
+    params[:hour] = params[:hour].to_i + 12 if params[:meridian] == "PM" and params[:hour].to_i < 12
+    params[:hour] = 0 if params[:meridian] == "AM" and params[:hour].to_i == 12
     time = "#{params[:hour]}:#{params[:minute]}:00"
-    @vod_subscription = {email: {version_id: 0}, push: {version_id: 0}} if @vod_subscription.errors.present?
+    @vod_subscription = {email: {version_id: nil}, push: {version_id: nil}} if @vod_subscription.errors.present?
     @vod_subscription[params[:type].to_sym] = { time: time, version_id: params[:version_id] }
     @vod_subscription.merge!(auth: current_user.auth)
     @results = VodSubscription.create(@vod_subscription)
