@@ -12,18 +12,23 @@ namespace :smartling do
     # Future todo: Implement project/locale/list 
     # https://docs.smartling.com/display/docs/Projects+API
 
-    Dir['../config/locales/*.yml'].each do |file|
-      fname = File.basename(file, ".*")
-      # Download
-      data = sl.download("#{fname}.yml", :locale => fname)
-      # File.rename(f, folder_path + "/" + filename.capitalize + File.extname(f))
-      puts data
+    # these locales are not live yet
+    exclude_locales = [ 'hr', 'lt', 'my', 'sn' ]
+
+    mappings = YAML::load_file(File.expand_path('../../../config/smartling_mapping.yml', __FILE__))
+    mappings.each do |filename,locale|
+      if not exclude_locales.include? filename
+        aFile = File.new('config/locales/' + filename.to_s + '.yml', 'w+')
+        if aFile
+          data = sl.download("/files/en.yml", :locale => locale)
+          aFile.syswrite(data)
+          puts 'retrieving: ' + filename.to_s
+        else
+          puts "Unable to open file: " + filename.to_s
+        end
+        aFile.close
+      end
     end
-
-    # Handle the pesky ones? 
-
-
-
   end
 
   desc "Delete Translations from Smartling"
