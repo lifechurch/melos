@@ -7,12 +7,14 @@
   i18n_image_dir  = ""
   i18n_css_class = "en"
   prelaunch = false
+  youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
   facebook_locale = "en_US"
   if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
     i18n_css_class = "es"
     i18n_image_dir = "/es"
     meta_url = "https://www.bible.com/es/kids"
     facebook_locale = "es_ES"
+    youtube_url = "//www.youtube.com/embed/2iWQlDXReYI?rel=0"
     # prelaunch = true
   end
 
@@ -94,21 +96,21 @@
             = t.call('kids.amazon')
 
       -# !iPad hero screenshot
-      - if not i18n_image_dir.present?
-        .hero
-          = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: t.call('kids.story text 1')
-          .youtube-embed
-            %iframe{width:"805", height:"607", src: "//www.youtube.com/embed/97YQAoCjpcs?rel=0", frameborder: "0", allowfullscreen: "true"}
-          %p.hero-copy
-            = t.call('kids.interact text')
+      -#- if not i18n_image_dir.present?
+      .hero
+        = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: t.call('kids.story text 1')
+        .youtube-embed
+          %iframe{width:"805", height:"607", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
+        %p.hero-copy
+          = t.call('kids.interact text')
 
-        .youtube-mobile
-          %iframe{width:"100%", height:"auto", src: "//www.youtube.com/embed/97YQAoCjpcs?rel=0", frameborder: "0", allowfullscreen: "true"}
-      - else
-        .alt-hero
-          = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t.call('kids.bible app')
-          %p.hero-copy
-            = t.call('kids.interact text')
+      .youtube-mobile
+        %iframe{width:"100%", height:"auto", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
+      -#- else
+      -#  .alt-hero
+      -#    = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t.call('kids.bible app')
+      -#    %p.hero-copy
+      -#      = t.call('kids.interact text')
 
       -# !Smaller screenshots
 
