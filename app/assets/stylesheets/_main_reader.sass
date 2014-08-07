@@ -59,7 +59,7 @@
     size: 14px
     weight: bold
   line-height: 23px
-  padding: 5px 20px
+  padding: 5px 10px 5px 5px
 
 #main header,
 .header_tabs
@@ -137,6 +137,23 @@
 .header-options-parallel:hover,
 .header-options-version:hover
   background: none
+
+#main header .header-options
+  li
+    margin: 0
+    padding: 0
+    border-right: 1px solid #ccc
+
+    a
+      border: none
+      +box-shadow(none)
+      margin: 0 3px
+
+    a.header-options-parallel
+      margin: 0 0 0 3px
+
+  li:last-child
+    border-right: none
 
 // `Article Top Section
 //----------------------------------------------------------------------------------------------------
