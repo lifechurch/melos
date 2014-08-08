@@ -433,7 +433,7 @@
   display: none
   position: fixed
   background-color: #323232
-  margin-top: 34px
+  margin-top: 35px
 
   .verse-actions-success-message
     display: block
@@ -798,7 +798,7 @@
 #menu_verse_actions
   .tab-trigger
     cursor: pointer
-    width: 16%
+    width: 18%
     background: #0084c8 image-url("mobile/verse_action_sprite.png") no-repeat
     text-indent: 100%
     overflow: hidden
@@ -809,6 +809,7 @@
     padding: 0px
     +border-radius(4px)
     float: left
+    box-sizing: border-box
 
   .tab-trigger.bookmark
     background-position: center -50px
@@ -830,26 +831,27 @@
 
   .tab-trigger.clear-selected
     background: #0084c8 image-url("nav_icons_mobile.png") center -353px no-repeat
+    margin-right: 0
 
   .pane
     margin-top: 30px
     width: auto
 
 #menu_verse_actions .tab-trigger.clear-selected
-  width: 16%
+  width: 19%
 
 #menu_verse_actions .tab-trigger.related
   height: 30px
 
 #menu_verse_actions .panel-tabs
-  border-top: 1px solid black
   height: 44px
   width: 100%
   position: fixed
   text-align: center
   background-color: #333
-  padding: 0 6%
+  padding: 0 8px
   overflow: hidden
+  box-sizing: border-box
 
 #menu_verse_actions #note-pane .title
   width: 100%

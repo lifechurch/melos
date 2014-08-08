@@ -219,7 +219,7 @@ en:
   notes title:                                  "Notes"
   friends:                                      "Friends"
   groups:                                       "Groups"
-  mobile:                                       "Mobile"
+  mobile:                                       "Mobile Apps"
   live:                                         "Live/Groups"
   first page:                                   "First Page"
   last page:                                    "Last Page"
@@ -762,7 +762,7 @@ en:
     catch me up:                                "Catch Me Up"
     restart description:                        "You can restart your plan. All of your reading history and progress will be reset and start from the beginning."
     restart:                                    "Restart Plan"
-    privacy description:                        
+    privacy description:
       private:                                  "Your Plan is Private. Switch your setting to Friends Only to share your Plan activity with friends."
       public:                                   "Your Plan is visible to friends. Switch to Private to make your Plan activity private."
     make private:                               "Set to Private"
