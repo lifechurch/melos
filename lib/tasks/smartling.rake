@@ -6,8 +6,7 @@ namespace :smartling do
     puts 'Smartling Ruby client ' + Smartling::VERSION
     # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
     sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-    
-    # Only download translations for locales we have already.
+
     # To download another translation, use smartling:add_language['lang']
     # Future todo: Implement project/locale/list 
     # https://docs.smartling.com/display/docs/Projects+API
@@ -35,18 +34,18 @@ namespace :smartling do
   task :delete => :environment do
     puts 'Smartling Ruby client ' + Smartling::VERSION
     # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-    sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-    Dir['../config/locales/*.yml'].each do |file|
-      begin
-      fname = File.basename(file)
-      # Download
-      data = sl.delete("#{fname}.yml") unless fname == "en"
-      # File.rename(f, folder_path + "/" + filename.capitalize + File.extname(f))
-      puts "Deleted #{fname}" unless fname == "en"
-      rescue
-        puts "error with #{fname}"
-      end
-    end
+    # sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
+    # Dir['../config/locales/*.yml'].each do |file|
+    #   begin
+    #   fname = File.basename(file)
+    #   # Download
+    #   data = sl.delete("#{fname}.yml") unless fname == "en"
+    #   # File.rename(f, folder_path + "/" + filename.capitalize + File.extname(f))
+    #   puts "Deleted #{fname}" unless fname == "en"
+    #   rescue
+    #     puts "error with #{fname}"
+    #   end
+    # end
 
   end
 
@@ -56,21 +55,21 @@ namespace :smartling do
     # To enable this method, change the gemfile
     # gem 'smartling', :git => 'https://github.com/matthewrossanderson/api-sdk-ruby.git'
 
-    puts 'Smartling Ruby client ' + Smartling::VERSION
-    sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-    errors = []
-    mappings = YAML::load_file(File.expand_path('../../../config/smartling_mapping.yml', __FILE__))
-    mappings.each do |filename,locale|
-      begin
-      response = sl.import("../config/locales/#{filename}.yml", locale, '/files/en.yml', 'YAML', {translationState: 'PUBLISHED', overwrite: true})
-      puts "#{filename}: #{response}" 
-      rescue
-        errors << filename
-        puts "Error with #{filename}"
-      end
-    end
-    puts "Errors:"
-    puts errors
+    # puts 'Smartling Ruby client ' + Smartling::VERSION
+    # sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
+    # errors = []
+    # mappings = YAML::load_file(File.expand_path('../../../config/smartling_mapping.yml', __FILE__))
+    # mappings.each do |filename,locale|
+    #   begin
+    #   response = sl.import("../config/locales/#{filename}.yml", locale, '/files/en.yml', 'YAML', {translationState: 'PUBLISHED', overwrite: true})
+    #   puts "#{filename}: #{response}"
+    #   rescue
+    #     errors << filename
+    #     puts "Error with #{filename}"
+    #   end
+    # end
+    # puts "Errors:"
+    # puts errors
   end
 
 
@@ -79,32 +78,23 @@ namespace :smartling do
     puts 'Smartling Ruby client ' + Smartling::VERSION
     # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
     sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-    response = sl.upload('../config/locales/en.yml', '/files/en.yml', 'YAML')
-    puts "en: #{response}"  
 
-
-    # Upload all the files
-    # puts "Uploading app strings"
-
-    # Dir['../config/locales/*.yml'].each do |file|
-    #   fname = File.basename file
-    #   response = sl.upload(file, fname, 'YAML')
-    #   puts "#{fname}: #{response}"
-    # end
+    response = sl.upload('../../../config/locales/en.yml', '/files/en.yml', 'YAML')
+    puts "en: #{response}"
 
     # List recently uploaded files
     res = sl.list()
-    puts "Uploaded Succesfully."
+    puts "Uploaded Successfully."
     puts res
   end
 
   desc "Add a language - Usage: rake smartling:add_language['en-OK']"
   task :add_language, [:lang] => :environment do |t, args|
-    next if args[:lang] == nil
-    puts 'Smartling Ruby client ' + Smartling::VERSION
-    puts "Downloading Language: #{args[:lang]}"
-    data = sl.download("#{args[:lang]}.yml", :locale => args[:lang], size: 1)
-    puts JSON.parse(data)
+    # next if args[:lang] == nil
+    # puts 'Smartling Ruby client ' + Smartling::VERSION
+    # puts "Downloading Language: #{args[:lang]}"
+    # data = sl.download("#{args[:lang]}.yml", :locale => args[:lang], size: 1)
+    # puts JSON.parse(data)
   end
 
 
