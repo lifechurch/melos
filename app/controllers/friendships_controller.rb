@@ -1,5 +1,5 @@
 class FriendshipsController < ApplicationController
-
+  before_filter :mobile_redirect, only: [:requests]
   respond_to :html, :json
 
   before_filter :force_login
