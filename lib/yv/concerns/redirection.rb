@@ -100,6 +100,10 @@ module YV
             references:
               {
                 # show:     "bible?reference=#{params[:reference]}&version=#{params[:version]}"
+              },
+            friendships:
+              {
+                requests:   "connections"
               }
           }
         )
