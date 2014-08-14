@@ -105,18 +105,18 @@ namespace :smartling do
 
   desc "Push Rails I18n Strings to Smartling"
   task :push_i18n => :environment do
-    puts 'Smartling Ruby client ' + Smartling::VERSION
-    sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-    # Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-    # Upload all the files
-    puts "Uploading rails-i18n strings"
-    response = sl.upload('../config/locales/_rails-18n.yml', 'core/en.yml', 'YAML')
-    puts "en: #{response}"  
+    # puts 'Smartling Ruby client ' + Smartling::VERSION
+    # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
+    # # Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
+    # # Upload all the files
+    # puts "Uploading rails-i18n strings"
+    # response = sl.upload('../config/locales/_rails-18n.yml', 'core/en.yml', 'YAML')
+    # puts "en: #{response}"  
 
 
-    # List recently uploaded files
-    res = sl.list()
-    puts res
+    # # List recently uploaded files
+    # res = sl.list()
+    # puts res
   end
 
     
