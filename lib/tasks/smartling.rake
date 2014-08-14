@@ -1,8 +1,12 @@
 require 'smartling'
 
 namespace :smartling do
-  desc "Pull Translations from Smartling"
-  task :pull => :environment do
+
+  desc "Convenience method to download from Smartling, then export JS strings"
+  task :pull => ['download', 'i18n:js:export']
+
+  desc "Download Translations from Smartling"
+  task :download => :environment do
     puts 'Smartling Ruby client ' + Smartling::VERSION
     # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
     sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
