@@ -24,6 +24,7 @@ namespace :smartling do
         aFile = File.new('config/locales/' + filename.to_s + '.yml', 'w+')
         if aFile
           data = sl.download("/files/en.yml", :locale => locale)
+          data.gsub!(/no:/, "\"no\":") if locale == "no-NO"
           aFile.syswrite(data)
           puts 'retrieving: ' + filename.to_s
         else
