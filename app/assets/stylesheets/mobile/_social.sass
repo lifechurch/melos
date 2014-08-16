@@ -4,7 +4,6 @@
 // !as user profile already defines an article where we can't easily get to it.
 
 
-#main article.social-requests,
 #main article.social-feed,
 #main div.social-feed,
 #main article.social-detail
@@ -16,7 +15,15 @@
   overflow: hidden
 
 #main article.social-requests
-  padding-left: 0
+  padding: 20px
+
+  .blank-slate-friend-requests
+    background: image-url("icon-group-64.png") no-repeat center top
+    text-align: center
+    padding: 70px 0 0
+
+    p
+      font-size: 18px
 
 #main article.social-feed,
 #main div.social-feed
