@@ -14,11 +14,12 @@ gem 'haml-rails',             '~> 0.3.4'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem 'sentry-raven', :git => 'https://github.com/getsentry/raven-ruby.git'
-gem 'i18n-js',                '~> 3.0.0.rc5'
+gem 'i18n-js',                '~> 3.0.0.rc6'
 #gem 'oink'
 gem 'gabba'
 gem 'memcachier'
 gem 'fast_gettext'
+gem 'smartling'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'

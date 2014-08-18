@@ -62,4 +62,7 @@ YouversionWeb::Application.configure do
   # Set the log level from the environment variable.  (ex. info, debug, warn)
   config.log_level = ENV['LOG_LEVEL'].nil? ? :debug : ENV['LOG_LEVEL'].to_sym
 
+  # To enable JS export
+  config.middleware.use I18n::JS::Middleware
+
 end
