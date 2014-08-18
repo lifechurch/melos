@@ -45,5 +45,5 @@ class window.Panes.Link extends window.Panes.Base
     @clipper.glue('copy_link', 'copy_link_container')
 
   setLink: (link) ->
-    @link = link.toLowerCase()
+    @link = link
     @el.find("#copy_link_input").val( @link )
