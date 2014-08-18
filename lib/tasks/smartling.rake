@@ -25,6 +25,7 @@ namespace :smartling do
           puts "retrieving locale: #{locale} filename: #{filename}" 
           data = sl.download("/files/en.yml", :locale => locale)
           data.sub!(/no:/, "\"no\":")      if locale == "no-NO" # fix to remove falsy 'no' key
+          data.sub!(/xc:/, "mn:")          if locale == "xc-MN" # fix for incorrect key
           data.sub!(/#{locale[0..1]}/, filename) if filename.to_s.match /-/ # fix to rename language key in file
           aFile.syswrite(data)
         else
