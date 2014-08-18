@@ -39,7 +39,7 @@ class window.Panes.Bookmark extends window.Panes.Base
       }
 
       request = $.ajax {
-        url: form.attr("action"),
+        url: @getLocale() + form.attr("action"),
         dataType: 'json',
         data: post_data,
         type: "POST"
