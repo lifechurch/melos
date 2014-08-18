@@ -100,3 +100,9 @@ class window.Panes.Base
   setupColorpicker: ()->
     new Forms.ColorPicker(@form_el)
     return
+
+  getLocale: ()->
+    locale          = ""
+    html_locale     = $('html').data("locale")
+    if html_locale != "en" then locale = "/" + html_locale
+    return locale

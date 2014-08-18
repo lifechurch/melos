@@ -1,4 +1,4 @@
-.moment{"data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}", "data-str-delete-confirm" => "Are you sure you want to delete this?", "data-uuid" => "{{uuid}}"}
+.moment{"data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}", "data-str-delete-confirm" => "{{I18n 'moments.action.delete confirm'}}", "data-uuid" => "{{uuid}}"}
   .moment-top
     .moment-rp
       %span.moment-icon
