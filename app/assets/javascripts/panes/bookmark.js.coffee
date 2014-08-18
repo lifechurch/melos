@@ -64,7 +64,7 @@ class window.Panes.Bookmark extends window.Panes.Base
   highlightBookmark: (data)->
     if data.color?
       $(data.references).each (index,ref_hash)->
-      window.Highliter.highlight(ref_hash.usfm,data.color)
+        window.Highliter.highlight(ref_hash.usfm,data.color)
 
   setupBookmarkLabels: ()->
     field = $("#bookmark_labels")
