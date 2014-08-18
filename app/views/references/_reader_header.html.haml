@@ -43,8 +43,8 @@
 #m-navitems.mobile
   :ruby
     direction = 'rtl' if version.try(:rtl?)
-    
-  %div.reader-nav{class: reference.audio ? nil : "audio-disabled"}      
+
+  %div.reader-nav{class: reference.audio ? nil : "audio-disabled"}
     %span.first
     %ul
       %li= reader_previous_link(reference, {classes: "prev #{direction}"})
@@ -105,26 +105,26 @@
     %ul.reference_tokens
 
   .panel-tabs
-    .highlight.tab-trigger{"data-pane-type"=>"highlight"}
+    %span.highlight.tab-trigger{"data-pane-type"=>"highlight"}
       = t("highlight")
       .arrow
-    .bookmark.tab-trigger{"data-pane-type"=>"bookmark"}
+    %span.bookmark.tab-trigger{"data-pane-type"=>"bookmark"}
       = t("bookmark")
       .arrow
-    .note.tab-trigger{"data-pane-type" => "note"}
+    %span.note.tab-trigger{"data-pane-type" => "note"}
       = t("new note")
       .arrow
-    .link.tab-trigger
+    %span.link.tab-trigger
       = t("link")
       .arrow
-    .share.tab-trigger{"data-pane-type"=>"share"}
+    %span.share.tab-trigger{"data-pane-type"=>"share"}
       = t("ref.share")
       .arrow
-    .related.tab-trigger
+    %span.related.tab-trigger
       %span.count
-    .clear-selected.tab-trigger
+    %span.clear-selected.tab-trigger
       = t('ref.clear verses')
 
   .panels
 
-      
+
