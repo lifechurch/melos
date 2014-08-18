@@ -8,7 +8,6 @@ namespace :smartling do
   desc "Download Translations from Smartling"
   task :download => :environment do
     puts 'Smartling Ruby client ' + Smartling::VERSION
-    # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
     sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
 
     # To download another translation, use smartling:add_language['lang']
@@ -18,17 +17,18 @@ namespace :smartling do
     # these locales are not live yet
     exclude_locales = [ 'hr', 'lt', 'my', 'sn' ]
 
-    mappings = YAML::load_file(File.expand_path('../../../config/smartling_mapping.yml', __FILE__))
+    mappings = YAML::load_file(File.expand_path(Rails.root.join('config/smartling_mapping.yml'), __FILE__))
     mappings.each do |filename,locale|
       if not exclude_locales.include? filename
         aFile = File.new('config/locales/' + filename.to_s + '.yml', 'w+')
         if aFile
+          puts "retrieving locale: #{locale} filename: #{filename}" 
           data = sl.download("/files/en.yml", :locale => locale)
-          data.gsub!(/no:/, "\"no\":") if locale == "no-NO"
+          data.sub!(/no:/, "\"no\":")      if locale == "no-NO" # fix to remove falsy 'no' key
+          data.sub!(/#{locale[0..1]}/, filename) if filename.to_s.match /-/ # fix to rename language key in file
           aFile.syswrite(data)
-          puts 'retrieving: ' + filename.to_s
         else
-          puts "Unable to open file: " + filename.to_s
+          puts "Unable to open file: #{filename}"
         end
         aFile.close
       end
@@ -38,7 +38,6 @@ namespace :smartling do
   desc "Delete Translations from Smartling"
   task :delete => :environment do
     puts 'Smartling Ruby client ' + Smartling::VERSION
-    # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
     # sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
     # Dir['../config/locales/*.yml'].each do |file|
     #   begin
@@ -77,14 +76,11 @@ namespace :smartling do
     # puts errors
   end
 
-
   desc "Push App Strings to Smartling"
   task :push => :environment do
     puts 'Smartling Ruby client ' + Smartling::VERSION
-    # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
     sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-
-    response = sl.upload('../../../config/locales/en.yml', '/files/en.yml', 'YAML')
+    response = sl.upload(Rails.root.join('config/locales/en.yml').to_s, '/files/en.yml', 'YAML')
     puts "en: #{response}"
 
     # List recently uploaded files
@@ -106,8 +102,7 @@ namespace :smartling do
   desc "Push Rails I18n Strings to Smartling"
   task :push_i18n => :environment do
     # puts 'Smartling Ruby client ' + Smartling::VERSION
-    # sl = Smartling::File.sandbox(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
-    # # Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
+    # # sl = Smartling::File.new(:apiKey => Cfg.smartling_api_key, :projectId => Cfg.smartling_project_id)
     # # Upload all the files
     # puts "Uploading rails-i18n strings"
     # response = sl.upload('../config/locales/_rails-18n.yml', 'core/en.yml', 'YAML')
