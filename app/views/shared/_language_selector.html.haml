@@ -1,11 +1,13 @@
 - # This relies on LanguageMenu js class (/assets/javascripts/menus/language.js)
 - # Once moving to a server endpoint for changing languages the above js should be deleted.
 - if available_locales.length > 1
+  - sorted_locales = Hash[I18n.available_locales.map {|l| l.to_s}.zip(I18n.available_locales.map {|l| t("language name", locale: l.to_s)})].sort_by{|k, v| v}
   #languages
     %div
       %label{for: 'choose_language'}= t("choose language field")
       %div.select_wrap
         %span
           %select{ id: 'choose_language', name: 'choose_language'}
-            - available_locales.each do |loc|
-              %option{value: loc, selected: loc == current_locale}= t("language name", locale: loc)
+            %option{value: 'en', selected: 'en'.eql?(current_locale.to_s)} English
+            - sorted_locales.each do |k, v|
+              %option{value: k, selected: k.eql?(current_locale.to_s)}= v
