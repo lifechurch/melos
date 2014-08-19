@@ -36,7 +36,7 @@ json.comments do
       json.content     comment.content
       json.created_dt  comment.created_dt
       json.set! :time_ago, api_dt_time_ago(comment.created_dt)
-      json.set! :owned_by_me, comment.user.id == current_auth.user_id  if current_auth.present? #necessary for js templates.
+      json.set! :owned_by_me, (comment.user.id == current_auth.user_id  if current_auth.present?) || (current_user_moment?(moment) if current_user.present?)
 
       json.user do
         user    = comment.user
