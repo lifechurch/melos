@@ -596,10 +596,10 @@ class window.Reader
           window.bottom_offset  =  doc_height - offset - main_height
           $(prev_next_selector).height(viewport - offset-40)
 
-          if !$('html').hasClass("full_screen")
-            $('.main_reader footer').waypoint (event,direction)->
-              if direction == "down" then $(reader_nav_selector).addClass('snap') else $(reader_nav_selector).removeClass('snap')
-            ,{offset: '100%'}
+        if !$('html').hasClass("full_screen")
+          $('.main_reader footer').waypoint (event,direction)->
+            if direction == "down" then $(reader_nav_selector).addClass('snap') else $(reader_nav_selector).removeClass('snap')
+          ,{offset: '100%'}
       else
         $(prev_next_selector).height(main_reader_height)
 
