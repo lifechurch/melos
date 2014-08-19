@@ -8,7 +8,11 @@ module UsersSpecHelper
 			user.destroy
 		rescue
 		end
-		opts = {email: "#{opts[:username]}@youversion.com", agree: true, language_tag: "en", verified: true, locale: "en_US"}.merge opts
+		opts[:email] = "#{opts[:username]}@youversion.com" unless opts[:email]
+		opts.merge!({email: opts[:email], agree: true, language_tag: "en", 
+								 verified: true, locale: "en_US",
+								first_name: "Test", last_name: "User"
+								})
 		response = User.register(opts)
 		begin
 			user = User.authenticate(opts[:username], opts[:password])
