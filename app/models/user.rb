@@ -174,6 +174,11 @@ class User < YV::Resource
   end
 
 
+  def vod_subscription
+    @vod_subscription ||= VodSubscription.all(auth: self.auth)
+  end
+
+
   def profile_incomplete?
     first_name.blank? or
     last_name.blank? or

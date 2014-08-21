@@ -20,7 +20,7 @@ json.object do
     end
   end
 
-  subscription =       VodSubscription.all(auth: current_user.auth)
+  subscription = current_user.vod_subscription
 
   json.actions do
     json.read true
