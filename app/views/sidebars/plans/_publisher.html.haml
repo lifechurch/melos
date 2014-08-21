@@ -5,7 +5,7 @@
   %h3.hd
     =t("plans.publisher")
   %div.bd
-    %p= plan.copyright
+    %p= plan.copyright.html_safe
   - unless plan.publisher_url.nil?
     %div.ft.link
       = link_to(t("plans.about publisher"), plan.publisher_url)
