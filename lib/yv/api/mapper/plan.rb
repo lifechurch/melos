@@ -46,14 +46,15 @@ module YV
             instance.id               = data.id
             instance.name             = YV::Resource.i18nize(data.name)
             instance.total_days       = data.total_days
-            instance.copyright        = YV::Resource.i18nize(data.copyright.text)
-            instance.about            = YV::Resource.i18nize(data.about.text)
+            instance.copyright        = YV::Resource.i18nize(data.copyright)
+            instance.about            = YV::Resource.i18nize(data.about)
             instance.version_id       = data.version_id
             instance.created_dt       = data.created_dt
             instance.slug             = data.slug
             instance.formatted_length = YV::Resource.i18nize(data.formatted_length)
             instance.default_start_dt = data.default_start_dt
             instance.type             = data.type
+
             instance.publisher_url    = data.publisher_url
             instance.short_url        = data.short_url
             return instance
