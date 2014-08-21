@@ -12,7 +12,7 @@ module YV
             instance.id = data.id
             instance.credits = data.credits
             instance.title = data.title
-            instance.description = data.description
+            instance.description =  data.description.present? ? data.description.gsub!(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, '</p><p>') : ''
             instance.runtime = data.runtime
             instance.references = data.references
             instance.type = data.type
@@ -36,7 +36,7 @@ module YV
             pub = Videos::Publisher.new
             pub.id = data.id
             pub.name = data.name
-            pub.description = data.description
+            pub.description = data.description.present? ? data.description.gsub!(/(\r\n\r\n|\n\n|\r\n|\n|\u009D)/, '</p><p>') : ''
             pub.links = data.links
             pub.ga_tracking_id = data.ga_tracking_id
             pub.video_id = data.video_id
