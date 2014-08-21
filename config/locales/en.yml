@@ -354,8 +354,8 @@ en:
       add friend button title:                  "Send %{user} a friend request"
       accept button:                            "Accept"
       accept request button:                    "Accept request"
-      ignore button:                            "Ignore"
-      ignore request button:                    "Ignore request"
+      ignore button:                            "Decline"
+      ignore request button:                    "Decline request"
   notes:
     none user:                                  "%{username} hasn't taken any notes yet."
     blank slate:
@@ -406,6 +406,7 @@ en:
     create failure:                             "Error saving note"
     destroy success:                            "Note deleted"
     destroy failure:                            "Error deleting note"
+    update success:                             "Note updated"
   ref:
     loading secondary:                          "Loading Reference in Secondary Version..."
     clear verses:                               "Clear Selected Verses"
