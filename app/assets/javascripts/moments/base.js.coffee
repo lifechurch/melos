@@ -66,7 +66,7 @@ class window.Moments.Base
     }
 
     $.ajax
-      url: "/comments/" + el.data("comment-id"),
+      url: @getLocale() + "/comments/" + el.data("comment-id"),
       type: "DELETE",
       data: post_data,
       dataType:"json",
@@ -88,7 +88,7 @@ class window.Moments.Base
       }
 
       $.ajax
-        url: "/comments",
+        url: @getLocale() + "/comments",
         type: "POST",
         data: post_data,
         dataType:"json",
@@ -162,7 +162,7 @@ class window.Moments.Base
     @liked_link.addClass("liked")
     post_data = { authenticity_token: @authToken(), moment_id: @id() }
 
-    request = $.ajax "/likes",
+    request = $.ajax @getLocale() + "/likes",
       type: "POST",
       data: post_data,
       dataType: "json"
@@ -181,7 +181,7 @@ class window.Moments.Base
     @liked_link.removeClass("liked")
     post_data = { authenticity_token: @authToken() }
 
-    request = $.ajax "/likes/" + @id(),
+    request = $.ajax @getLocale() + "/likes/" + @id(),
       type: "DELETE",
       data: post_data,
       dataType: "json"
@@ -241,4 +241,10 @@ class window.Moments.Base
   timeAgo: (timestamp)->
     # no longer used - so i18n can happen in one place api_dt_time_ago()
     moment(timestamp).fromNow()
+
+  getLocale: ()->
+    locale          = ""
+    html_locale     = $('html').data("locale")
+    if html_locale != "en" then locale = "/" + html_locale
+    return locale
 
