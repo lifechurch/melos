@@ -19,8 +19,7 @@ module YV
             instance.next_day         = data.next
             instance.prev_day         = data.prev
             instance.api_references   = data.references
-            instance.additional_content_text = YV::Resource.i18nize(data.additional_content.text)
-            instance.additional_content_html = YV::Resource.i18nize(data.additional_content.html)
+            instance.additional_content = YV::Resource.i18nize(data.additional_content)
             instance.short_url        = data.short_url
             instance.auth             = data.auth
             return instance
