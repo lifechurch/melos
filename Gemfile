@@ -16,6 +16,7 @@ gem 'oj'
 gem 'sentry-raven', :git => 'https://github.com/getsentry/raven-ruby.git'
 gem 'i18n-js',                '~> 3.0.0.rc6'
 #gem 'oink'
+#gem 'rack-mini-profiler'
 gem 'gabba'
 gem 'memcachier'
 gem 'fast_gettext'
@@ -101,4 +102,6 @@ group :test, :development do
   gem 'sqlite3'
 end
 
-#gem 'rack-mini-profiler'
+group :production do
+  gem 'rails_12factor'
+end
