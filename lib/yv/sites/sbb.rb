@@ -22,7 +22,7 @@ module YV
       end
 
       def default_locale
-        :'pt-BR'
+        :'pt'
       end
 
       def versions
