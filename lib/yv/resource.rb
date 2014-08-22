@@ -184,14 +184,24 @@ module YV
         # try to get localized html
         if mash.html.is_a?(Hashie::Mash)
           val = mash.html.try(:[], lang_key)
-          val ||= mash.html.try(:[], 'default')
         end
+        
         # try to get localized text
         if val.blank? && mash.text.is_a?(Hashie::Mash)
           val ||= mash.text.try(:[], lang_key)
+        end
+
+        # try to get default html
+        if val.blank? && mash.html.is_a?(Hashie::Mash)
+          val ||= mash.html.try(:[], 'default')
+        end
+
+        # try to get default text
+        if val.blank? && mash.text.is_a?(Hashie::Mash)
           val ||= mash.text.try(:[], 'default')
         end
 
+        # try to get root level default
         val ||= mash["default"] if mash.has_key?(:default)
 
         # if there is no i18nized string to pull
