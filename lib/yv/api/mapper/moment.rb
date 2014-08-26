@@ -90,12 +90,8 @@ module YV
             instance.extras           = data.extras
             instance.kind_id          = data.kind_id
             instance.kind_color       = data.kind_color
-            if data.base.title.l_str
-                args = data.base.title["l_args"] if data.base.title["l_args"]
-                instance.moment_title = t(data.base.title["l_str"], args)
-            elsif data.base.title.str
-                instance.moment_title = data.base.title["str"]
-            end
+            instance.moment_title     = t(data.base.title["l_str"], data.base.title["l_args"]) if data.base.title.l_str && data.base.title["l_args"]
+            instance.moment_title   ||= data.base.title["str"] if data.base.title.str
             instance.body_text        = t(data.base.body["l_str"], data.base.body["l_args"]) if data.base.body
 
             instance.body_images      = map_to_body_images(data.base.images.body)
