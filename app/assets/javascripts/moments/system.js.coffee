@@ -15,5 +15,8 @@ class window.Moments.System extends window.Moments.Base
         moment_title:   @data.moment_title
         body_text:      @data.body_text
         body_image:     @data.body_image
+        avatar:         @data.avatar
+        action_url:     @data.action_url
+        kind_color:     @data.kind_color
 
       return html
