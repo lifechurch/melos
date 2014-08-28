@@ -394,7 +394,7 @@ ru:
         all notes: "Все заметки"
         community notes: "Заметки сообщества"
         new note: "Новая заметка"
-        status field: "Note Status:"
+        status field: "Статус заметки:"
         edit: "Изменить"
         delete: "Удалить"
         confirm delete: "Да, удалить"
