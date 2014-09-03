@@ -16,6 +16,7 @@ class window.Moments.System extends window.Moments.Base
         body_text:      @data.body_text
         body_image:     @data.body_image
         avatar:         @data.avatar
+        avatar_style:   @data.avatar_style
         action_url:     @data.action_url
         kind_color:     @data.kind_color
 
