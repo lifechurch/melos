@@ -46,8 +46,4 @@
     %br
     = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px"}
   %p
-    = f.label :language_tag, t('users.profile.language')
-    %br
-    = f.select(:language_tag, Cfg.languages.map { |k, v| [v, k] }, {}, {style: "min-width: 395px"})
-  %p
     = button_tag t('users.update profile') , {class: "action_button_green"}
