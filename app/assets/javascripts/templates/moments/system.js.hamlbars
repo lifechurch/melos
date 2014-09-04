@@ -5,7 +5,7 @@
       %span.moment-icon
       {{/if}}
       {{#if avatar}}
-      %span.moment-avatar
+      %span{:class => 'moment-avatar {{avatar_style}}'}
         %a{href: "{{action_url}}"}
           %img{src: "{{avatar}}"}/
       {{/if}}
