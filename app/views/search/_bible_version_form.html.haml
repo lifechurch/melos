@@ -1,4 +1,4 @@
-- version_id = search.version_id
+- version_id = params[:version_id].to_i if params[:version_id].present?
 
 %form#version_form{method: 'get'}
   %input{type: "hidden", name: "q", value: search.query}
@@ -6,8 +6,8 @@
   - all_languages = Version.all_by_language
   %select{onChange: "this.form.submit()", name: "version_id"}
     %optgroup{label: Version.languages[I18n.locale.to_s]}
-    %option{value: "", selected: version_id.nil?}
-      = t("searching.all versions", language_name: t("language name"))
+    -#%option{value: "", selected: version_id.nil?}
+    -#  = t("searching.all versions", language_name: t("language name"))
     - if langs = all_languages[I18n.locale.to_s]
       -  langs.each do |v|
         %option{value: v.id, selected: v.id == (version_id)}= v
