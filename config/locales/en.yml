@@ -633,6 +633,7 @@ en:
       notification errors:                      "The following error(s) prevented updating your notifications:"
       edit:                                     "Edit"
       bio:                                      "Bio"
+      complete_first_last:                      "Complete your profile by filling in your first and last name"
     password:
       updated:                                  "Success! You've updated your password."
       error:                                    "Sorry, there was an error changing your password."

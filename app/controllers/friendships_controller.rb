@@ -12,6 +12,12 @@ class FriendshipsController < ApplicationController
   # Accept a friendship
   def create
     @friendship = Friendships.accept(request_opts(params[:user_id]))
+
+    # if missing first_name & last_name, redirect to profile with notice message
+    if current_user.first_name.blank? && current_user.last_name.blank?
+      return redirect_to(edit_user_path(id: current_user.username), notice: t('users.profile.complete_first_last')) 
+    end
+
     redirect_to(:back, notice: select_notice(@friendship, :create))
     # eventually support json/ajax submission for javascript menus, etc.
     #respond_with(@friendship)
