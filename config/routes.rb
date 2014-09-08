@@ -89,8 +89,8 @@ YouversionWeb::Application.routes.draw do
 
   get "/confirm-update-email/:token",    to: "emails#confirm_update"
 
-
-
+  # Top level LocationSettings route
+  resource :language_settings, only: [:update]
 
   # Necessary as we don't want subscriptions routes to be shallow
   scope "/users/:user_id" do

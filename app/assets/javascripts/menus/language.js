@@ -34,6 +34,14 @@ function LanguageMenu( el , opts ) {
     if(new_path == "")
        new_path = replacement_locale_str + path;
 
+    // Post new locale to server endpoint
+    $.ajax({
+      type: "PUT",
+      url: "/language_settings", 
+      data: {'language_tag': $(this).val()}
+    });
+
+    // Navigate to new path
     window.location = new_path;
   })
 }
