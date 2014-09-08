@@ -90,7 +90,7 @@ class NotificationSettings < YV::Resource
 
   def before_save
     hash = {}
-    settings = ["badges","newsletter","reading_plans","partners","moments","comments","likes","friendships"]
+    settings = ["badges","newsletter","contact_joins","reading_plans","partners","moments","comments","likes","friendships"]
 
     settings.each do |n|
       setting = self.send(n.to_sym)
