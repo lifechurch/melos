@@ -41,20 +41,70 @@
         = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day - 1) == subscription.current_day) ? nil : (day - 1), version: params[:version]), {class: "prev", title: prev_text }) do
           %span.calendar-arrows
             &nbsp;
-          %span.calendar-arrow-txt
-            = prev_text
       - else
         = link_to("#", class: "disabled prev") do
           %span.calendar-arrows
             &nbsp;
-          %span.calendar-arrow-txt
-            = prev_text
 
-    .calendar-day
-      %h4
-        = (subscription.respond_to?(:reading_date) ? subscription.reading_date(day) : current_date + (day - 1)).strftime('%a %b %-d')
-      =link_to(calendar_subscription_path(user_id: current_user.to_param, id: subscription), {title: cal_text }) do
-        = t("plans.calendar")
+    .calendar-cal
+      .calendar-cal-box{style: "width: 2000px"}
+        -# Start month container
+        .calendar-cal-month
+          .calendar-cal-month-name
+            %span
+              March
+          .calendar-cal-days
+            %a{href: "#", class: "calendar-cal-day week"}
+              1
+            %a{href: "#", class: "calendar-cal-day selected"}
+              2
+            %a{href: "#", class: "calendar-cal-day current"}
+              3
+            %a{href: "#", class: "calendar-cal-day read"}
+              4
+            %a{href: "#", class: "calendar-cal-day"}
+              5
+            %a{href: "#", class: "calendar-cal-day"}
+              6
+            %a{href: "#", class: "calendar-cal-day"}
+              7
+            %a{href: "#", class: "calendar-cal-day"}
+              8
+            %a{href: "#", class: "calendar-cal-day"}
+              9
+            %a{href: "#", class: "calendar-cal-day"}
+              10
+            %a{href: "#", class: "calendar-cal-day"}
+              11
+        -# End month container
+
+        .calendar-cal-month
+          .calendar-cal-month-name
+            %span
+              April
+          .calendar-cal-days
+            %a{href: "#", class: "calendar-cal-day week"}
+              1
+            %a{href: "#", class: "calendar-cal-day selected"}
+              2
+            %a{href: "#", class: "calendar-cal-day current"}
+              3
+            %a{href: "#", class: "calendar-cal-day read"}
+              4
+            %a{href: "#", class: "calendar-cal-day"}
+              5
+            %a{href: "#", class: "calendar-cal-day"}
+              6
+            %a{href: "#", class: "calendar-cal-day"}
+              7
+            %a{href: "#", class: "calendar-cal-day"}
+              8
+            %a{href: "#", class: "calendar-cal-day"}
+              9
+            %a{href: "#", class: "calendar-cal-day"}
+              10
+            %a{href: "#", class: "calendar-cal-day"}
+              11
 
     .calendar-next
       - next_text = t("plans.next day") # used in 3 places below
@@ -62,19 +112,18 @@
         = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day + 1) == subscription.current_day) ? nil : (day + 1), version: params[:version]), {class: "next", title: next_text}) do
           %span.calendar-arrows
             &nbsp;
-          %span.calendar-arrow-txt
-            = next_text
       - else
         = link_to("#", class: "disabled next") do
           %span.calendar-arrows
             &nbsp;
-          %span.calendar-arrow-txt
-            = next_text
 
   .ft.calendar-links
     = link_to(plan_path(subscription),{class: "calendar-links-about"}) do
       = t("plans.about this plan")
-
+    &nbsp;&#8226;&nbsp;
+    =link_to(calendar_subscription_path(user_id: current_user.to_param, id: subscription), {title: cal_text }) do
+      = t("plans.calendar")
+    &nbsp;&#8226;&nbsp;
     = link_to(edit_subscription_path(user_id: current_user.to_param, id: subscription),{class: "calendar-links-settings", title: settings_text}) do
       = settings_text
 
