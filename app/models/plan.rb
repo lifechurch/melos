@@ -16,6 +16,7 @@ class Plan < YV::Resource
   attribute :default_start_dt
   attribute :formatted_length # TODO: localize
   attribute :publisher_url
+  attribute :images
 
   attribute :errors
   
@@ -122,6 +123,10 @@ class Plan < YV::Resource
     @readings = {}
   end
 
+  def hero_image
+    # Sort by height descending, then return the first if it's greater than 700px high
+     images.sort_by { |h| h.height }.reverse!.detect { |h| h.height > 700 } if images.present?
+  end
 
   def current_day
     1

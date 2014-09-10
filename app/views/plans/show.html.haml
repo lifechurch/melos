@@ -14,6 +14,8 @@
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article.reading_plan_index
+  - if @plan.hero_image.present?
+    = image_tag @plan.hero_image.url, class: 'hero_image'
   %h1.keep= @plan.name
 
   .rp-plan-info
