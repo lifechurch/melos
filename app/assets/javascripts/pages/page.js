@@ -108,6 +108,9 @@ Page.prototype = {
   orientAndResize : function() {
     //ensure correct max-height for mobile header scroll
     $("#nav_mobile").css("max-height", $("body").height() - $("#header").height() + "px");
+    //right widget scroll height
+    Page.prototype.setWidgetScrollHeight();
+
     //ensure mobile social layers are scrollable with correct height
     if ($('html.mobile-client').length) {
       $('.header-popover ul').css("max-height", $("body").height() - $("#header").height() - 64 + "px");
@@ -115,7 +118,15 @@ Page.prototype = {
     if ($('.social-feed').length) {
       try {$('.social-feed').trigger('refreshWookmark')} catch(e) {};
     }
-  },  
+  },
+
+  // set the height of the right side widget scroll area
+  setWidgetScrollHeight: function() {
+    var scrollHeight = $(window).height() - $('#header_outer').outerHeight() - $('#footer').outerHeight() - 12;
+    $('#sidebar-scroll').css("height", scrollHeight + 'px');
+    $('#sidebar .slimScrollDiv').css("height", scrollHeight + 'px');
+  },
+
 
   // Ability to set the reader on the page publicly.
   setReader : function( rdr ) {

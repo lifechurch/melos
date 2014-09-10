@@ -25,6 +25,10 @@ function deleteCookie(name) {
 
 // Fire it off!
 jQuery(document).ready(function() {
+  $('#sidebar-scroll').slimScroll({
+      height: ($(window).height() - $('#header_outer').outerHeight() - $('#footer').outerHeight() - 12) + 'px'
+  });
+
   window.app = new App();
   window.app.setPage( new Page() );
 
