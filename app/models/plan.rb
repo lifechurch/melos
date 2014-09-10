@@ -125,7 +125,7 @@ class Plan < YV::Resource
 
   def hero_image
     # Sort by height descending, then return the first if it's greater than 700px high
-     images.sort_by { |h| h.height }.reverse!.detect { |h| h.height > 700 } if images.present?
+     images.sort_by { |h| h.height }.reverse!.detect { |h| h.width > 600 } if images.present?
   end
 
   def current_day
