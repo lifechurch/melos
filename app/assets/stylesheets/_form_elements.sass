@@ -364,18 +364,22 @@ input[type="submit"].action_button_green,
 input[type="submit"].action_button_blue,
 input[type="submit"].action_button_red,
 input[type="submit"].action_button_grey,
+input[type="submit"].action_button_dark_grey,
 input[type="button"].action_button_green,
 input[type="button"].action_button_blue,
 input[type="button"].action_button_red,
 input[type="button"].action_button_grey,
+input[type="button"].action_button_dark_grey,
 button.action_button_blue,
 button.action_button_green,
 button.action_button_red,
 button.action_button_grey,
+button.action_button_dark_grey,
 .action_button_blue,
 .action_button_green,
 .action_button_red,
-.action_button_grey
+.action_button_grey,
+.action_button_dark_grey
   +border-radius(5px)
   display: inline-block
   font:
@@ -504,16 +508,14 @@ button.action_button_grey:active,
   color: #444
 
 
-// Grey Action Buttons
-
+// Dark grey Action Buttons
 
 input[type="submit"].action_button_dark_grey,
 input[type="button"].action_button_dark_grey,
-.action_button_dark_grey,
-a.action_button_dark_grey
-  background-color: #666
-  +box-shadow(inset rgba(0,0,0, 0.40) 0 0 0 0)
-  color: white
+button.action_button_dark_grey,
+.action_button_dark_grey
+  background-color: $dark_grey
+  color: #fff
 
 input[type="submit"].action_button_dark_grey:hover,
 input[type="submit"].action_button_dark_grey:focus,
@@ -522,16 +524,17 @@ input[type="button"].action_button_dark_grey:focus,
 button.action_button_dark_grey:hover,
 button.action_button_dark_grey:focus,
 .action_button_dark_grey:hover,
-.action_button_dark_grey:focus
+.action_button_dark_grey:focus,
   background-color: #777
+  color: #fff
 
 input[type="submit"].action_button_dark_grey:active,
 input[type="button"].action_button_dark_grey:active,
 button.action_button_dark_grey:active,
 .action_button_dark_grey:active
   +box-shadow(inset rgba(0,0,0, 0.20) 0 2px 0 0)
-  background-color: #cfcfcf
-  color: #444
+  background-color: #555
+  color: #ddd
 
 // Small action buttons
 

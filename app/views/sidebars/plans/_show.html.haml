@@ -2,23 +2,6 @@
 // presenter: Presenter::Sidebar::Plan
 - plan = presenter.plan
 
-= render partial: "/plans/button", locals: {plan: plan}
-
-.widget
-  %h3.hd
-    =t("plans.more info")
-  %div.bd
-    %p
-      %b Plan name:
-      = plan.name
-    %p
-      %b=t("plans.length field")
-      = plan.length
-
-  - if logged_in? && !current_user.subscribed_to?(plan)
-    %div.ft.link
-      = link_to(t("plans.view sample"), day: 1.to_s, initial: 'true')
-
 .widget
   %h3.hd
     =t("plans.publisher")

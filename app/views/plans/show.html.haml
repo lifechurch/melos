@@ -15,22 +15,25 @@
 
 %article.reading_plan_index
   %h1.keep= @plan.name
-  %div
+
+  .rp-plan-info
+    %p
+      30 days
+
+  - # Add fancy Ruby code here
+  .rp-plan-about
+    .rp-plan-about-buttons
+      %a{href:"#", class: 'action_button_green'}
+        Start this plan
+      %a{href:"#", class: 'action_button_dark_grey'}
+        View a sample reading
+
     %p= @plan.about
 
+
   .mobile
+
     %p
-      %strong= t("plans.length field")
-      = @plan.length
-
-    - if not logged_in?
-      %p
-        = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_blue'}
-        %br
-        = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: '#TODO'), class: "action_button_green"
-    - else
-      = render partial: "/plans/button", locals: {plan: @plan}
-
-    %p.mute= @plan.copyright.html_safe
+      = @plan.copyright.html_safe
     - unless @plan.publisher_url.nil?
       = link_to(t("plans.about publisher"), @plan.publisher_url)

@@ -363,14 +363,17 @@ input[type="submit"].action_button_green,
 input[type="submit"].action_button_blue,
 input[type="submit"].action_button_red,
 input[type="submit"].action_button_grey,
+input[type="submit"].action_button_dark_grey,
 button.action_button_blue,
 button.action_button_green,
 button.action_button_red,
 button.action_button_grey,
+button.action_button_dark_grey,
 .action_button_blue,
 .action_button_green,
 .action_button_red,
-.action_button_grey
+.action_button_grey,
+.action_button_dark_grey
   +border-radius(4px)
   display: inline-block
   font:
@@ -388,14 +391,17 @@ input[type="submit"].action_button_green,
 input[type="submit"].action_button_red,
 input[type="submit"].action_button_blue,
 input[type="submit"].action_button_grey,
+input[type="submit"].action_button_darkgrey,
 .action_button_blue,
 .action_button_green,
 .action_button_red,
 .action_button_grey,
+.action_button_dark_grey,
 .action_button_blue:hover,
 .action_button_red:hover,
 .action_button_green:hover,
-.action_button_grey:hover
+.action_button_grey:hover,
+.action_button_dark_grey:hover
   color: #fff
   text-decoration: none
 
@@ -532,6 +538,38 @@ input[type="submit"].action_button_grey,
 .action_button_grey:hover,
 .action_button_grey:focus,
 .action_button_grey:active
+  border: 0
+
+
+// Dark grey buttons
+
+input[type="submit"].action_button_dark_grey,
+button.action_button_dark_grey,
+.action_button_dark_grey
+  background-color: $dark_grey
+  background-image: none
+
+.action_button_dark_grey:hover,
+.action_button_dark_grey:focus,
+.action_button_dark_grey:active,
+input[type="submit"].action_button_dark_grey:hover,
+input[type="submit"].action_button_dark_grey:focus,
+input[type="submit"].action_button_dark_grey:active
+  background-color: #777
+  color: #fff
+
+input[type="submit"].action_button_dark_grey:focus,
+input[type="submit"].action_button_dark_grey:active,
+.action_button_dark_grey:focus,
+.action_button_dark_grey:active
+  color: #ddd
+  background-color: #555
+
+input[type="submit"].action_button_dark_grey,
+.action_button_dark_grey,
+.action_button_dark_grey:hover,
+.action_button_dark_grey:focus,
+.action_button_dark_grey:active
   border: 0
 
 
