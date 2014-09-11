@@ -19,6 +19,7 @@ class NotificationSettings < YV::Resource
   attr_accessor :comments
   attr_accessor :friendships
   attr_accessor :likes
+  attr_accessor :contact_joins
 
   class << self
 
