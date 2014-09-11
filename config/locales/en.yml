@@ -641,6 +641,7 @@ en:
       badges:                                   "Notify me about badges I've earned."
       follower:                                 "Notify me when someone follows me."
       newsletter:                               "Keep me updated on YouVersion announcements."
+      contact_joins:                            "Notify me when a Contact joins"
       note_like:                                "Notify me when someone likes my notes."
       reading_plans:                            "Notify me about information for reading plans I've started."
       publishing partners:                      "Keep me updated on news from YouVersion's content partners."
