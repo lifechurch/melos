@@ -15,9 +15,11 @@ class SessionsController < ApplicationController
 
     if @user.valid?
       sign_in(@user, params[:password])
+      I18n.locale = @user.language_tag.gsub('_', '-') unless @user.language_tag.nil?
       location = redirect_path
       clear_redirect
-      redirect_to(location || moments_path) and return
+      path_exit = (I18n.locale == I18n.default_locale) ? "/#{I18n.default_locale}#{moments_path}" : moments_path
+      redirect_to(location || path_exit) and return
     else
       render "new" and return
     end
