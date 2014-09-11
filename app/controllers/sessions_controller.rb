@@ -18,8 +18,7 @@ class SessionsController < ApplicationController
       I18n.locale = @user.language_tag.gsub('_', '-') unless @user.language_tag.nil?
       location = redirect_path
       clear_redirect
-      path_exit = (I18n.locale == I18n.default_locale) ? "/#{I18n.default_locale}#{moments_path}" : moments_path
-      redirect_to(location || path_exit) and return
+      redirect_to(location || (I18n.locale == I18n.default_locale) ? "/#{I18n.default_locale}#{moments_path}" : moments_path) and return
     else
       render "new" and return
     end
