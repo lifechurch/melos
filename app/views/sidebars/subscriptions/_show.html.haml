@@ -27,6 +27,7 @@
 
   - settings_text = t("settings")
   %div.hd
+    = image_tag plan.widget_thumbnail_image.url, class: 'widget_thumbnail' if plan.widget_thumbnail_image.present?
     = link_to subscription.name, plan_path(subscription)
 
 

@@ -1,5 +1,6 @@
 - plan = plans_list_item
 %li.plan
+    = image_tag plan.search_thumbnail_image.url, class: 'search_thumbnail' if plan.search_thumbnail_image.present?
   %h3
     = link_to plan.name, plan_path(plan)
   %span.length
