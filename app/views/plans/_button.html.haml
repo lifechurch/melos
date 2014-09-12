@@ -1,7 +1,7 @@
 - # Local Parameters
 - # plan - instance of Plan
 - unique_id = rand(100)
-%div
+.rp-subscription-info
   - if logged_in?
     -if current_user.subscribed_to?(plan)
       = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'action_button_green')
