@@ -19,6 +19,7 @@
       - @subscriptions.each do |sub|
         %li.subscription
           .subscription-info
+            = image_tag sub.search_thumbnail_image.url, class: 'subscription_thumbnail' if sub.search_thumbnail_image.present?
             %h3
               = link_to(sub.name, subscription_path(user_id: @user.to_param, id: sub, initial: 'true'), class: "subscription-title")
             %span.subscription-privacy

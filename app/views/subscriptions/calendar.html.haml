@@ -11,6 +11,7 @@
 
 %article
   %h1= t("plans.calendar")
+  = image_tag plan.widget_thumbnail_image.url, class: 'widget_thumbnail' if plan.widget_thumbnail_image.present?
   %h2.mobile= subscription.title
   :ruby
     statuses = subscription.day_statuses
