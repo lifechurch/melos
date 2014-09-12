@@ -23,12 +23,7 @@
 
   .rp-plan-about
     .rp-plan-about-buttons
-      - if logged_in?
-        = render partial: "/plans/button", locals: {plan: @plan}
-      - else
-        = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: request.fullpath), class: "action_button_green"
-      = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_dark_grey'}
-
+      = render partial: "/plans/button", locals: {plan: @plan}
     %p= @plan.about
 
 
