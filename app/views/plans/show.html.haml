@@ -13,7 +13,8 @@
   %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
-%article.reading_plan_index{style: "background-image: url('#{@plan.hero_image.url if @plan.hero_image.present?}');"}
+%article.reading_plan_index
+  = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
   %h1.keep= @plan.name
 
   .rp-plan-info
@@ -22,12 +23,7 @@
 
   .rp-plan-about
     .rp-plan-about-buttons
-      - if logged_in?
-        = render partial: "/plans/button", locals: {plan: @plan}
-      - else
-        = link_to t('plans.subscribe to plan'), sign_up_path(source: "plan", id: @plan.id, redirect: request.fullpath), class: "action_button_green"
-        = link_to t("plans.view sample"), {day: 1.to_s}, {class: 'action_button_dark_grey'}
-
+      = render partial: "/plans/button", locals: {plan: @plan}
     %p= @plan.about
 
 
