@@ -13,7 +13,8 @@
   %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
-%article.reading_plan_index{style: "background-image: url('#{@plan.hero_image.url if @plan.hero_image.present?}');"}
+%article.reading_plan_index
+  = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
   %h1.keep= @plan.name
 
   .rp-plan-info
