@@ -24,27 +24,37 @@
     overflow: hidden
 
     .subscription-info
-      position: relative
-
-    h3
-      margin-left: 10px
       overflow: hidden
       position: relative
+      margin: 0 0 10px 0
+
+    .search_thumbnail,
+    .subscription-title,
+    .subscription-privacy
+      float: left
+      box-sizing: border-box
+
+    .search_thumbnail
+
+      img
+        width: 50px
+        margin: 0 15px 10px 0
+        +border-radius(5px)
 
     .subscription-title
-      display: block
-      float: left
-      width: 70%
+      width: 360px
+
+      h3
+        line-height: 1.3em
+        margin: 0
 
     .subscription-privacy
       font-size: 12px
       font-weight: normal
+      width: 100px
       position: absolute
-      bottom: -3px
-      right: 10px
-      width: 29%
-      text-align: right
-      display: block
+      top: 1px
+      right: 0
 
       a
         color: #aaa
@@ -52,16 +62,39 @@
 
     .progress_wrap
       margin-bottom: 0
+      clear: both
 
 
 // For plan index page
+
 .resource_list
   .plan
     .length
       display: block
       margin-bottom: 10px
-      line-height: 14px
+      line-height: 1.5em
 
+#sidebar .hd
+
+  a,
+  span
+    box-sizing: border-box
+    display :block
+
+  .search_thumbnail
+    border-radius: 5px
+    margin: 0 8px 0 0
+    overflow: hidden
+    display: block
+    float: left
+
+    img
+      width: 30px
+      height: 30px
+
+  a
+    height: 30px
+    line-height: 29px
 
 // Plan about page
 
@@ -149,3 +182,23 @@
     .action_button_dark_grey,
     .plan-privacy-buttons
       display: none
+
+// Plan search results (in RP section and global)
+
+.resource_list
+  .plan
+
+    .search_thumbnail
+      width: 100px
+      overflow: hidden
+      border-radius: 5px
+      display: block
+      float: left
+      margin: 0 15px 10px 0
+
+      img
+        width: 100px
+
+    p
+      margin: -7px 0 0
+

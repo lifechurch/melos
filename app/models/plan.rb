@@ -19,7 +19,7 @@ class Plan < YV::Resource
   attribute :images
 
   attribute :errors
-  
+
   #attr_i18n_reader :about
   #attr_i18n_reader :name
   #attr_i18n_reader :formatted_length
@@ -83,7 +83,7 @@ class Plan < YV::Resource
         #if only plan id is present:
         id = param.to_i if id.nil? and param.match(/^\d+$/) rescue nil
         return id, slug
-      else 
+      else
         return nil
       end
     end
@@ -166,7 +166,7 @@ class Plan < YV::Resource
 
   def readings
     total_days
-  end  
+  end
 
   def title
     name
