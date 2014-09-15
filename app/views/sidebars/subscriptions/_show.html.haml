@@ -46,65 +46,58 @@
           %span.calendar-arrows
             &nbsp;
 
-    .calendar-cal
-      .calendar-cal-box{style: "width: 2000px"}
-        -# Start month container
-        .calendar-cal-month
-          .calendar-cal-month-name
-            %span
-              March
-          .calendar-cal-days
-            %a{href: "#", class: "calendar-cal-day week"}
-              1
-            %a{href: "#", class: "calendar-cal-day selected"}
-              2
-            %a{href: "#", class: "calendar-cal-day current"}
-              3
-            %a{href: "#", class: "calendar-cal-day read"}
-              4
-            %a{href: "#", class: "calendar-cal-day"}
-              5
-            %a{href: "#", class: "calendar-cal-day"}
-              6
-            %a{href: "#", class: "calendar-cal-day"}
-              7
-            %a{href: "#", class: "calendar-cal-day"}
-              8
-            %a{href: "#", class: "calendar-cal-day"}
-              9
-            %a{href: "#", class: "calendar-cal-day"}
-              10
-            %a{href: "#", class: "calendar-cal-day"}
-              11
-        -# End month container
+    - statuses = subscription.day_statuses
 
-        .calendar-cal-month
-          .calendar-cal-month-name
-            %span
-              April
-          .calendar-cal-days
-            %a{href: "#", class: "calendar-cal-day week"}
-              1
-            %a{href: "#", class: "calendar-cal-day selected"}
-              2
-            %a{href: "#", class: "calendar-cal-day current"}
-              3
-            %a{href: "#", class: "calendar-cal-day read"}
-              4
-            %a{href: "#", class: "calendar-cal-day"}
-              5
-            %a{href: "#", class: "calendar-cal-day"}
-              6
-            %a{href: "#", class: "calendar-cal-day"}
-              7
-            %a{href: "#", class: "calendar-cal-day"}
-              8
-            %a{href: "#", class: "calendar-cal-day"}
-              9
-            %a{href: "#", class: "calendar-cal-day"}
-              10
-            %a{href: "#", class: "calendar-cal-day"}
-              11
+    .calendar-cal
+      .calendar-cal-box{style: "width: 20000px"}
+        -# Start month container
+        - while !statuses.empty?
+          .calendar-cal-month
+            - first_date = Date.parse(statuses.first.date)
+            - last_date = first_date.next_month - (first_date.next_month.day)
+            - full_month = false
+            .calendar-cal-month-name
+              %span
+                = first_date.strftime('%b')
+            .calendar-cal-days
+              - # first calendar day (given tabular calendar starting on Sun)s
+              - cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday  
+              - # if first day of month is a sunday (more clear than doing on the previous line)     
+              - cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7
+              - cur_date = Date.parse(statuses.first.date)
+              - rows = 0
+              - 1.upto 7 do |n|      # List out one week
+                - break if statuses.empty?
+                - break if cur_date.month > first_date.month
+                - cur_status = statuses.delete_at(0)
+                - #raise 'the'
+                = link_to cur_date.strftime('%-d'), subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), {class: "calendar-cal-day #{"week" if n == 1} #{(cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '')} #{'current' if cur_date == current_date} #{'selected' if presenter.day == cur_status.day}" }
+                - cur_date = cur_date.next
+              :ruby
+                full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
+
+              -# %a{href: "#", class: "calendar-cal-day week"}
+              -#   1
+              -# %a{href: "#", class: "calendar-cal-day selected"}
+              -#   2
+              -# %a{href: "#", class: "calendar-cal-day current"}
+              -#   3
+              -# %a{href: "#", class: "calendar-cal-day read"}
+              -#   4
+              -# %a{href: "#", class: "calendar-cal-day"}
+              -#   5
+              -# %a{href: "#", class: "calendar-cal-day"}
+              -#   6
+              -# %a{href: "#", class: "calendar-cal-day"}
+              -#   7
+              -# %a{href: "#", class: "calendar-cal-day"}
+              -#   8
+              -# %a{href: "#", class: "calendar-cal-day"}
+              -#   9
+              -# %a{href: "#", class: "calendar-cal-day"}
+              -#   10
+              -# %a{href: "#", class: "calendar-cal-day"}
+              -#   11
 
     .calendar-next
       - next_text = t("plans.next day") # used in 3 places below
