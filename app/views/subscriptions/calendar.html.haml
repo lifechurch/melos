@@ -44,10 +44,10 @@
               - if full_month
                 %td.disabled.hidden
               - else
-                - if cur_date.month != first_date.month || cur_date < first_date || statuses.empty?         # if not in current month  -OR-  not a day on the paln
-                  -if cur_date.month != first_date.month
+                - if cur_date.month != first_date.month || cur_date < first_date || statuses.empty?         # if not in current month  -OR-  not a day on the plan
+                  - if cur_date.month != first_date.month
                     %td.disabled{class: cur_date == current_date ? "today" : ""}
-                  -else
+                  - else
                     %td
                       %span.inactive-day{class: cur_date == current_date ? "today" : ""}= cur_date.day.to_s
                 - else
