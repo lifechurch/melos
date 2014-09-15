@@ -78,13 +78,13 @@ id:
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
         100million: 
             title: "Dimulai dengan 100 juta"
-            description: "Aplikasi Alkitab telah dipasang hampir 100 juta kali - kejadian penting yang luar biasa! Namun ini hanya permulaan saja. Unduh Aplikasi Alkitab gratis hari ini - dan bagikan app ini kepada teman-teman anda.  Mari kita buat sejarah bersama-sama."
+            description: "Ap Alkitab telah diinstal hampir 100 juta kali - tonggak sejarah yang luar biasa! Namun ini hanya permulaan saja. Unduh Ap Alkitab gratis hari ini - dan bagikan ap ini kepada teman-teman Anda. Mari kita bersama membuat sejarah."
         mobile: 
             title: "Aplikasi Alkitab"
             description: "Baca Firman Tuhan kapanpun, di manapun menggunakan Ap Alkitab YouVersion. Bagikan Kitab Suci dengan teman, soroti dan markahi perikop, dan buat kebiasaan harian dengan Rencana Alkitab. Tersedia untuk Ponsel iOS, Android, Blackberry, Windows dan banyak lagi."
         site: 
             title: "Bible.com"
-            description: "Bawa keindahan dan kebenaran Alkitab ke dalam hidup keseharian. Dengan App Alkitab YouVersion, Anda dapat baca, tonton, dengar, dan berbagi di smartphone atau tablet Anda, dan daring di Bible.com."
+            description: "Bawa keindahan dan kebenaran Alkitab ke dalam hidup keseharian. Dengan Ap Alkitab YouVersion, Anda dapat baca, tonton, dengar, dan berbagi di smartphone atau tablet Anda, dan daring di Bible.com."
         connections: 
             index: 
                 title: "Akun terkait"
@@ -133,7 +133,7 @@ id:
     auth error: "Maaf, ada masalah dengan nama pengguna atau kata sandi Anda. Silakan masuk ke YouVersion untuk melanjutkan."
     download: "Unduh"
     visit link: "Kunjungi Tautan"
-    about title: "Tentang YouVersion"
+    about title: "Perihal YouVersion"
     make a donation: "Memberi Donasi"
     thanks for your donation: "Terima kasih atas donasi Anda!"
     thanks authorization: "Jika Anda meminta tanda terima, akan segera muncul di kotak masuk Anda."
@@ -186,7 +186,7 @@ id:
     confirm danger: "Ya, saya yakin"
     registered ago: "Terdaftar %{time_ago} yang lalu"
     version header: "Versi: %{version}"
-    bible versions: "Versi-versi Alkitab"
+    bible versions: "Versi Alkitab"
     reader: "Pembaca"
     lifechurch short url: "LifeChurch.tv"
     about: "Perihal"
@@ -210,7 +210,7 @@ id:
     save: "Simpan"
     cancel: "Batalkan"
     try the beta: "Coba versi Beta"
-    welcome to the beta: "Selamat datang di YouVersion.com yang baru!"
+    welcome to the beta: "Selamat datang di Bible.com!"
     highlight: "Soroti Ayat"
     comment: "Komentar Baru"
     note: "Catatan baru"
@@ -220,7 +220,7 @@ id:
     notes title: "Catatan"
     friends: "Teman-teman"
     groups: "Grup"
-    mobile: "Piranti bergerak"
+    mobile: "Ap Seluler"
     live: "Langsung/Grup"
     first page: "Halaman Pertama"
     last page: "Halaman Terakhir"
@@ -261,7 +261,7 @@ id:
         friendship: 
             now friends: "Anda sekarang berteman dengan"
         cta: 
-            profile update text: "Bantu teman-teman anda untuk menemukan anda"
+            profile update text: "Bantu teman-teman untuk menemukan Anda."
             profile update button: "Perbaharui profil Anda"
             sharing text: "Bagi ayat-ayat dengan media-media sosial"
             sharing button: "Aktifkan berbagi"
@@ -349,14 +349,14 @@ id:
         user wants friendship partial: "ingin menjadi teman Anda"
         form: 
             remove friend button: "Melepaskan pertemanan"
-            remove friend button title: "Hapus orang ini dari daftar teman anda"
+            remove friend button title: "Hapus orang ini dari daftar teman Anda"
             add friend button: "Menambah teman"
             add friend button short: "Tambah"
             add friend button title: "Kirimkan %{user} permohonan untuk berteman"
             accept button: "Terima"
             accept request button: "Menerima permintaan"
-            ignore button: "Abaikan"
-            ignore request button: "Abaikan permintaan"
+            ignore button: "Tolak"
+            ignore request button: "Tolak permintaan"
     notes: 
         none user: "%{username} belum membuat catatan apapun."
         blank slate: 
@@ -407,6 +407,7 @@ id:
         create failure: "Kesalahan dalam menyimpan catatan"
         destroy success: "Catatan dihapus"
         destroy failure: "Kesalahan dalam menghapus catatan"
+        update success: "Catatan diperbarui"
     ref: 
         loading secondary: "Memuat Refrensi dalam Versi Kedua..."
         clear verses: "Bebaskan Ayat Terpilih"
@@ -482,7 +483,7 @@ id:
         no devices download copy: "Menurut Alkitab online YouVersion, aplikasi Alkitab ini gratis dan bisa dipasang hampir di semua jenis perangkat seluler. Aplikasi Alkitab ini membuat pengguna dapat membaca Alkitab, membagikan ayat dengan media sosial yang dimiliki, menandai pasal favorit, dan banyak lagi—semua dalam format yang mengikuti perkembangan gaya hidup dinamis mereka. Kunjungi <a href='https://www.bible.com/app'>bible.com/app</a> dari perangkat selular Anda untuk mengunduh aplikasi Alkitab ini dan hubungkan dengan akun Anda!"
         yes delete: "Ya, Hapus Akun Saya"
         account delete success: "Akun YouVersion anda telah terhapus dengan sukses. Kami berharap anda terus menemukan cara bermakna untuk berinteraksi dengan Alkitab. Beberapa aplikasi ini mungkin membantu seraya anda melangkah maju: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-        delete account description: "Jika Anda menghapus akun Anda, selamanya Anda akan kehilangan semua informasi, sejarah, dan personalisasi (seperti catatan, markah, sorotan, dll.) Anda di YouVersion.com dan Aplikasi Alkitab. Tindakan ini tidak dapat dibatalkan baik oleh anda maupun tim kami. Jika Anda yakin, silakan lanjut di bawah ini."
+        delete account description: "Jika Anda menghapus akun Anda, Anda akan mengeliminasi secara permanen semua informasi, sejarah, dan personalisasi (seperti catatan, markah, sorotan, dsb.) dalam Bible.com dan Ap Alkitab. Aksi ini tidak dapat dikembalikan oleh Anda atau tim kami. Jika Anda yakin ingin teruskan, lanjutkan di bawah."
         user recent activity: "Aktivitas Terkini %{user}"
         my notes: "Catatan"
         user notes: "Catatan %{user}"
@@ -633,6 +634,7 @@ id:
             notification errors: "Kesalahan (-kesalahan) berikut menghalangi pembaruan pemberitahuan Anda:"
             edit: "Sunting"
             bio: "Bio"
+            complete_first_last: "Lengkapi profil dengan mengisi nama depan dan belakang Anda"
         password: 
             updated: "Sukses! Anda telah memperbarui kata sandi Anda."
             error: "Maaf, ada kesalahan saat mengubah kata sandi Anda."
@@ -915,11 +917,11 @@ id:
         download: "Unduh Sekarang"
     about page: 
         relevancy: "Relevansi"
-        relevancy copy: "Di generasi terdahulu, akses ke Alkitab sangat terbatas. Hari ini, tidak lagi masalah. Namun, banyak orang yang sudah memiliki akses ke Alkitab berpikir bahwa pesannya tidak berlaku di kehidupan mereka. Pada saat bersamaan, ada mereka yang meyakini adanya hubungan antara Alkitab dengan pengalaman keseharian mereka."
+        relevancy copy: "Di generasi terdahulu, akses ke Alkitab sangat terbatas. Hari ini, tidak lagi masalah. Namun, banyak orang yang memiliki akses ke Alkitab berpikir bahwa pesannya tidak berlaku dalam hidup mereka. Pada saat bersamaan, ada mereka yang percaya adanya hubungan antara Alkitab dengan pengalaman keseharian mereka."
         information revolution: "Revolusi Informasi"
-        information revolution copy: "Selama satu dekade terakhir ini, Internet telah membawa revolusi yang memampukan manusia seperti yang tak pernah tejadi sebelumnya. Dengan kemampuan untuk berbagi, berkontribusi, mencipta, menyiarkan, dan berkomunikasi, kini mudah untuk mengekspresikan bersama seluruh dunia siapa kita dan apa yang kita percaya."
-        youversion copy: "Sejak mulai di tahun 1996, tujuan LifeChurch.tv adalah menuntun orang menjadi pengikut Kristus yang sepenuhnya setia. Untuk itu, kami telah mencari berbagai cara baru untuk membantu orang menghubungkan Alkitab dengan kehidupan keseharian mereka. Metode kami telah berubah dari tahun ke tahun dengan berbagai  tehnologi dan strategi yang kami gunakan. Namun intinya, fokus kami tetap berkaitan karena kami terus berusaha menunjukkan dan mengajarkan orang bagaimana Firman Tuhan berlaku bagi semua orang, di manapun mereka dalam kehidupan."
-        youversion copy 2: "YouVersion mewakili pencapaian baru dalam usaha LifeChurch.tv. Kami tak hanya membuat alat berteknologi maju untuk mempengaruhi dunia, yang lebih penting, kami melibatkan orang ke dalam hubungan dengan Tuhan saat mereka menemukan keterkaitan yang Alkitab miliki bagi hidup mereka."
+        information revolution copy: "Selama dekade terakhir, Internet telah membawa revolusi yang memampukan manusia seperti yang tak pernah tejadi sebelumnya. Dengan kemampuan untuk berbagi, berkontribusi, mencipta, menyiarkan, dan berkomunikasi, kini mudah untuk mengekspresikan siapa kita dan apa yang kita percayai ke seluruh dunia."
+        youversion copy: "Sejak mulai di tahun 1996, tujuan LifeChurch.tv adalah menuntun orang menjadi pengikut Kristus yang setia. Untuk itu, kami telah mencari berbagai cara baru untuk membantu mereka menghubungkan Alkitab dengan hidup kesehariannya. Metode kami telah berubah dari tahun ke tahun dengan berbagai tehnologi dan strategi yang kami gunakan. Namun intinya, fokus kami tetap relevansi saat kami terus berusaha menunjukkan dan mengajarkan orang bagaimana Firman Tuhan berhubungan ke semua orang, di manapun mereka dalam kehidupan."
+        youversion copy 2: "YouVersion mewakili pencapaian baru dalam usaha LifeChurch.tv. Kami tak hanya membuat alat berteknologi maju untuk mempengaruhi dunia, lebih penting lagi, kami melibatkan orang ke dalam hubungan dengan Tuhan saat mereka menemukan relevansi yang Alkitab miliki bagi hidup mereka."
         partners title: "Para Mitra Penerbit Alkitab"
         partners text: "Tanpa mitra-mitra penerbit Alkitab kami yang dermawan, YouVersion takkan mampu menyediakan begitu banyak Alkitab bagi komunitas dunia. Banyak dari Anda bertanya bagaimana Anda dapat berterima kasih kepada para pendukung penting misi YouVersion ini. Anda dapat belajar lebih banyak tentang mereka, pelayanan mereka, dan berbagai cara mendukung mereka melalui tautan di bawah ini."
         translation title: "Tim Penerjemah Kami"
@@ -936,7 +938,7 @@ id:
         facebook: "YouVersion di Facebook"
         twitter: "YouVersion di Twitter"
         support: "Butuh pertolongan dengan YouVersion?"
-        lead copy: "Menurut Alkitab daring, YouVersion.com, Aplikasi Alkitab adalah Alkitab seluler gratis yang bisa digunakan hampir di semua jenis piranti seluler. Aplikasi Alkitab memungkinkan pengguna membaca Alkitab, berbagi ayat dengan jejaring sosial mereka, memberi markah bacaan kesukaan mereka, dan lainnya—semua dalam tatanan yang mengikuti gaya hidup dinamis mereka."
+        lead copy: "Berdasarkan daring Alkitab, Bible.com, Ap Alkitab adalah Alkitab seluler gratis yang bisa diinstal di hampir semua ponsel. Ap Alkitab memampukan pemakai membaca Alkitab, berbagi ayat dengan jejaring sosial mereka, memarkahi bagian favorit, dan banyak lagi—semua dalam format yang sesuai dengan gaya hidup seluler mereka yang terus meningkat."
         resources title: "Sumber Pers / Media"
         now title: "Hari ini di Komunitas YouVersion"
         resources: 
@@ -984,25 +986,25 @@ id:
             our action: "Kami telah dilapori tentang ini dan akan membereskan secepatnya."
         home: 
             hero: 
-                heading: "Alkitab gratis untuk telepon genggam, tablet, dan komputer Anda."
-                description: "YouVersion adalah Alkitab sederhana tanpa iklan, yang membawa Firman Tuhan dalam kehidupan keseharian Anda."
+                heading: "Alkitab gratis untuk ponsel, tablet, dan komputer Anda."
+                description: "YouVersion adalah Alkitab sederhana tanpa iklan, yang membawa Firman Tuhan dalam hidup keseharian Anda."
                 learn more: "pelajari lebih lanjut di bawah"
                 start reading: "Mulai baca"
                 skip in future: "lewatkan halaman ini di masa datang"
                 now skipped: "Halaman ini sekarang akan dilewatkan."
             features: 
                 read heading: "Baca Alkitab."
-                read description: "Pilih dari <strong>ratusan versi dan terjemahan Alkitab</strong>. Bandingkan dua versi berdampingan. Anda bahkan bisa pilih huruf dan ukuran tampilan. Jadikan pengalaman Alkitab daring anda sesuka Anda."
+                read description: "Pilih dari <strong>ratusan versi dan bahasa Alkitab</strong>. Bandingkan dua versi berdampingan. Anda bahkan bisa pilih huruf dan ukuran tampilan. Buat pengalaman Alkitab daring sesuka Anda."
                 study heading: "Pelajari Alkitab."
-                study description: "<strong>Sorot</strong> pakai warna favorit anda, buat <strong>markah</strong> ayat-ayat Alkitab favorit anda, dan buat catatan yang anda pelajari. Tak hanya meluangkan waktu bersama Firman Tuhan, anda sedang membangun riwayat interaksi anda dengan Alkitab."
-                subscribe heading: "Berlangganan Program Alkitab."
+                study description: "<strong>Soroti</strong> dengan warna favorit Anda,<strong>markahi</strong> ayat-ayat Alkitab favorit Anda, dan buat catatan tentang apa yang Anda pelajari. Bukan hanya meluangkan waktu bersama Firman Tuhan, Anda sedang membangun riwayat interaksi dengan Alkitab."
+                subscribe heading: "Berlangganan Rencana Alkitab."
                 subscribe description: "Telusuri seluruh Alkitab, fokus ke suatu topik, atau baca renungan dari pengajar berbakat. Pilih rencana Anda dan tiap hari Anda akan temukan ayat Alkitab menanti Anda."
                 download heading: "Bawa Alkitab bersama Anda"
-                download description: "<a href='http://youversion.com/download'>Unduh</a> gratis Ap Alkitab di segala piranti selular. Saat Anda menggunakan aplikasi selular, semua catatan, markah, sorotan, program, dan lainnya akan otomatis diseragamkan di semua piranti Anda."
+                download description: "<a href='https://bible.com/download'>Unduh</a> gratis Ap Alkitab di segala piranti seluler. Saat Anda menggunakan aplikasi seluler, semua catatan, markah, sorotan, rencana, dan lainnya akan otomatis sinkron di semua piranti Anda."
             get started: "Mulailah dengan akun gratis Anda"
             word with you: "Firman Tuhan beserta Anda."
             download action: "Unduh Aplikasi Alkitab"
-            download description: "Unduh Ap Alkitab gratis YouVersion di piranti selular Anda dan Alkitab Anda akan bersama Anda kemanapun Anda pergi."
+            download description: "Unduh Ap Alkitab gratis YouVersion di piranti selular Anda dan Anda akan memiliki Alkitab ke manapun Anda pergi."
             world installs: "Instal seluruh dunia"
     shared: 
         menu_settings: 
@@ -1027,7 +1029,7 @@ id:
     app errors: 
         404 plans explanation: "Apakah anda mencari sebuah <a href='%{plan_path}'>%{title}</a> program?"
         404 contact support: "Ada masalah? Hubungi <a href='%{support_url}'>tim pendukung</a> kami."
-        404 explanation: "Anda dapat mencoba memulai lagi dari <a href='%{reader_path}'>halaman beranda</a>. Masih bermasalah? Hubungi <a href='%{support_url}'>tim dukungan</a> kami."
+        404 explanation: "Anda dapat mencoba memulai lagi dari <a href='%{reader_path}'>halaman home</a>. Masih bermasalah? Hubungi <a href='%{support_url}'>tim pendukung</a> kami."
         404 message: "Mohon maaf, halaman yang Anda cari tidak dapat ditemukan."
         408 message: "Maaf, tapi server kami tidak memberikan respon tepat waktu."
         408 explanation: "Kami sudah diingatkan dan akan secepatnya mengatasi segala permasalahan yang ada. Ayo kita lihat apakah kita dapat kembali ke bacaan Alkitab Anda!"
@@ -1053,9 +1055,9 @@ id:
             logo: "YouVersion: Ap Alkitab"
             tagline: "Dimulai dengan <em>100 juta</em>"
             intro: "Dapatkah Ap Alkitab menjangkau 100 juta instalasi sebelum ulang tahun ke 5 kami pada tanggal 10 Juli? Hanya dengan bantuan anda saja!"
-            after: "Karena anda, App Alkitab telah menjangkau 100 juta instalasi mendekati perayaan kami yang ke lima pada tanggal 10 Juli.  Terima kasih!"
+            after: "Karena Anda, Ap Alkitab telah menjangkau 100 juta instalasi mendekati perayaan kami yang ke lima pada tanggal 10 Juli. Terima kasih!"
             share: 
-                with friends: "Berbagi dengan teman-teman anda"
+                with friends: "Berbagi dengan teman-teman Anda"
                 fb: 
                     dialog name: "Apakah anda memiliki Aplikasi Alkitab?"
                     dialog desc: "Saya suka Aplikasi Alkitab! Itu benar-benar membantu saya menjadikan Alkitab bagian kehidupan keseharian saya. Mengizinkan saya menyorot, mendengarkan Alkitab audio, membuat catatan, mengikuti program renungan...bahkan menonton video! Ayo unduhlah sekarang (gratis): http://www.bible.com/app"
@@ -1069,11 +1071,11 @@ id:
                 p2: "Namun yang lebih besar lagi? Dengan bantuan anda, itulah hari di mana Ap Alkitab akan mencapai 100 juta unduhan."
                 p3: "Kami telah belajar bahwa Tuhan memakai pencapaian seperti ini untuk menunjang pertumbuhan yang lebih lagi."
                 p4: "Ayo bersama-sama membuat sejarah."
-                after p1: "YouVersion mewakili sebuah persekutuan global yang rindu menolong orang lain untuk terlibat dengan Firman Tuhan. Kepada setiap lembaga Alkitab, penerbit Alkitan, gereja-gereja, para gembala dan para relawan: terima kasih atas kemurahan hati anda!"
+                after p1: "YouVersion mewakili persekutuan global orang-orang yang rindu menolong yang lain terlibat dengan Firman Tuhan. Kepada semua lembaga Alkitab, penerbit Alkitab, gereja, para gembala dan para relawan: terima kasih atas kemurahan hati Anda!"
                 after p2: "Yang paling menarik tentang tonggak sejarah ini adalah apa yang diwakilinya: hari ini orang sedang berinteraksi dengan Alkitab pada skala yang belum pernah kita saksikan sebelumnya. Sungguh mengagumkan melihat apa yang sedang Tuhan kerjakan. Dan kami percaya ini hanya permulaan! <em>Dimulai dengan 100 juta</em>."
             ad: 
-                title: "Aplikasi Alkitab sepenuhnya gratis dan merupakan cara terhebat untuk menjelajahi Alkitab."
-                copy: "Baca, Dengarkan, Tonton, Bagikan. Dapatkan Ap Alkitab untuk ponsel atau tablet anda: <a href='http://bible.com/app'>Unduh Sekarang</a>"
+                title: "Ap Alkitab gratis total dan merupakan cara baik untuk menjelajahi Alkitab."
+                copy: "Baca, Simak, Tonton, Bagikan. Dapatkan Ap Alkitab untuk ponsel atau tablet Anda: <a href='http://bible.com/app'>Unduh Sekarang</a>"
             sidebar: 
                 tagline: "Mari kita mengukir sejarah bersama."
                 button: "Bagikan Aplikasi Alkitab"
