@@ -19,7 +19,7 @@ class Plan < YV::Resource
   attribute :images
 
   attribute :errors
-  
+
   #attr_i18n_reader :about
   #attr_i18n_reader :name
   #attr_i18n_reader :formatted_length
@@ -83,7 +83,7 @@ class Plan < YV::Resource
         #if only plan id is present:
         id = param.to_i if id.nil? and param.match(/^\d+$/) rescue nil
         return id, slug
-      else 
+      else
         return nil
       end
     end
@@ -124,8 +124,18 @@ class Plan < YV::Resource
   end
 
   def hero_image
-    # Sort by height ascending, then return the first only if it's greater than 600px high
-     images.sort_by { |h| h.height }.detect { |h| h.width > 600 } if images.present?
+    # Sort by height ascending, then return the first only if it's greater than 600px wide
+     images.sort_by { |h| h.height }.detect { |h| h.width >= 600 } if images.present?
+  end
+
+  def search_thumbnail_image
+    # Sort by height descending, then return the first only if it's greater than 200px wide
+     images.sort_by { |h| h.height }.reverse!.detect { |h| h.width <= 320 } if images.present?
+  end
+
+  def widget_thumbnail_image
+    # Sort by height ascending, then return the first only if it's width is between 50 & 200 inclusive
+     images.sort_by { |h| h.height }.detect { |h| h.width >= 50 && h.width <= 200 } if images.present?
   end
 
   def current_day
@@ -156,7 +166,7 @@ class Plan < YV::Resource
 
   def readings
     total_days
-  end  
+  end
 
   def title
     name

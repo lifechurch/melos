@@ -1,8 +1,11 @@
 - plan = plans_list_item
 %li.plan
-  %h3
-    = link_to plan.name, plan_path(plan)
+  = link_to plan_path(plan) do
+    %h3
+      =plan.name
   %span.length
     = plan.formatted_length
+  %span.search_thumbnail
+    = image_tag plan.search_thumbnail_image.url if plan.search_thumbnail_image.present?
   %p
     = plan.about

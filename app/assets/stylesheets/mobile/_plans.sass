@@ -24,19 +24,38 @@
     overflow: hidden
     padding: 15px 0
 
-    h3
-      margin-bottom: 0
+    .subscription-info
       overflow: hidden
       position: relative
+      margin: 0 0 10px 0
+
+    .search_thumbnail,
+    .subscription-title,
+    .subscription-privacy
+      display: block
+
+    .search_thumbnail,
+    .subscription-title,
+      float: left
+      box-sizing: border-box
+
+    .search_thumbnail
+
+      img
+        width: 50px
+        margin: 0 15px 10px 0
+        +border-radius(5px)
 
     .subscription-title
-      display: block
+      width: 80%
+
+      h3
+        line-height: 1.3em
+        margin: 0
 
     .subscription-privacy
-      font-size: 12px
-      font-weight: normal
-      display: block
-      margin: 5px 0 10px
+      clear: both
+      font-size: 13px
 
       a
         color: #aaa
@@ -47,12 +66,35 @@
 
 
 // For plan index page
+
 .resource_list
   .plan
     .length
       display: block
       margin-bottom: 10px
-      line-height: 14px
+      line-height: 1.5em
+
+#sidebar .hd
+
+  a,
+  span
+    box-sizing: border-box
+    display :block
+
+  .search_thumbnail
+    border-radius: 5px
+    margin: 0 8px 0 0
+    overflow: hidden
+    display: block
+    float: left
+
+    img
+      width: 30px
+      height: 30px
+
+  a
+    height: 30px
+    line-height: 29px
 
 
 // Plan about page
@@ -170,3 +212,21 @@
 
     .button-public
       margin: 0 6% 0 0
+// Plan search results (in RP section and global)
+
+.resource_list
+  .plan
+
+    .search_thumbnail
+      width: 100px
+      overflow: hidden
+      border-radius: 5px
+      display: block
+      float: left
+      margin: 0 15px 10px 0
+
+      img
+        width: 100px
+
+    p
+      margin: -7px 0 10px

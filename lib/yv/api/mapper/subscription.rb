@@ -55,6 +55,7 @@ module YV
               instance.email_delivery   = data.email_delivery
               instance.email_delivery_version_id = data.email_delivery_version_id
               instance.user_avatar_url  = data.user_avatar_url
+              instance.images           = data.images
               return instance
             end
 
