@@ -135,7 +135,7 @@ class Plan < YV::Resource
 
   def widget_thumbnail_image
     # Sort by height ascending, then return the first only if it's width is between 50 & 200 inclusive
-     images.sort_by { |h| h.height }.detect { |h| h.width >= 50 && h.width <= 320 } if images.present?
+     images.sort_by { |h| h.height }.detect { |h| h.width >= 50 && h.width <= 200 } if images.present?
   end
 
   def current_day
