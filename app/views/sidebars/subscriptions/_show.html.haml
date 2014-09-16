@@ -38,7 +38,8 @@
     .calendar-prev
       - prev_text = t("plans.previous day") # used in 3 places below
       - if day > 1
-        = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day - 1) == subscription.current_day) ? nil : (day - 1), version: params[:version]), {class: "prev", title: prev_text }) do
+        -# = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day - 1) == subscription.current_day) ? nil : (day - 1), version: params[:version]), {class: "prev", title: prev_text }) do
+        = link_to("#", class: "next") do
           %span.calendar-arrows
             &nbsp;
       - else
@@ -76,33 +77,11 @@
               :ruby
                 full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
 
-              -# %a{href: "#", class: "calendar-cal-day week"}
-              -#   1
-              -# %a{href: "#", class: "calendar-cal-day selected"}
-              -#   2
-              -# %a{href: "#", class: "calendar-cal-day current"}
-              -#   3
-              -# %a{href: "#", class: "calendar-cal-day read"}
-              -#   4
-              -# %a{href: "#", class: "calendar-cal-day"}
-              -#   5
-              -# %a{href: "#", class: "calendar-cal-day"}
-              -#   6
-              -# %a{href: "#", class: "calendar-cal-day"}
-              -#   7
-              -# %a{href: "#", class: "calendar-cal-day"}
-              -#   8
-              -# %a{href: "#", class: "calendar-cal-day"}
-              -#   9
-              -# %a{href: "#", class: "calendar-cal-day"}
-              -#   10
-              -# %a{href: "#", class: "calendar-cal-day"}
-              -#   11
-
     .calendar-next
       - next_text = t("plans.next day") # used in 3 places below
       - if day <= subscription.total_days - 1
-        = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day + 1) == subscription.current_day) ? nil : (day + 1), version: params[:version]), {class: "next", title: next_text}) do
+        -# = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day + 1) == subscription.current_day) ? nil : (day + 1), version: params[:version]), {class: "next", title: next_text}) do
+        = link_to("#", class: "next") do
           %span.calendar-arrows
             &nbsp;
       - else

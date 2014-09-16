@@ -59,6 +59,14 @@ class window.Reader
         $("#widget-notes").data("paginate-direction", "previous")
       Events.Emitter.emit("community_notes:paginate", event)
 
+    $('.calendar-next').click ->
+      PlanWidget.toNext()
+
+    $('.calendar-prev').click ->
+      PlanWidget.toPrev()
+
+    PlanWidget.initialScroll()
+
 
   verseClicked: (verse)->
     v = $(verse)
