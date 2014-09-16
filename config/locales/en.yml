@@ -912,6 +912,7 @@ en:
     creation form errors:                       "The following error(s) prevented making a donation:"
   download ad:
     title:                                      "Download the Free Bible App"
+    description copy:                           "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
     line 1:                                     "Hundreds of versions in 100+"
     line 2:                                     "different languages - the Bible"
     line 3:                                     "that goes with you anywhere."
