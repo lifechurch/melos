@@ -1,10 +1,8 @@
 #widget-download.widget.simple
   %div.bd
     %h3= t("download ad.title")
-    %p
-      - #TODO.  Should refactor these lines and the breakup in locale files. Unnecessary unless I'm missing something here.
-      = "#{t('download ad.line 1')}<br />".html_safe
-      = "#{t('download ad.line 2')}<br />".html_safe
-      = t('download ad.line 3')
+    - style = "background: url(#{image_path(localized_bible_icon(58))}) no-repeat right center" if localized_bible_icon
+    %p{style: style}
+      = t('download ad.description copy', language_count: 700).html_safe
     %a.action_button_green{href:'/app'}
       = t("download ad.download")
