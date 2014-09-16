@@ -12,6 +12,7 @@
 //= require ./events/emitter
 //= require ./session/user
 //= require ./sidebars/community_notes
+//= require ./sidebars/plan_widget
 //= require ./reader/audio_player
 //= require ./reader/scroll
 //= require ./reader/highliter

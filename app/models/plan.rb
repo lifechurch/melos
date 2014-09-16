@@ -6,15 +6,15 @@ class Plan < YV::Resource
   attribute :id
   attribute :type
   attribute :slug
-  attribute :name         # TODO: localize
-  attribute :about        # TODO: localize
+  attribute :name        
+  attribute :about       
   attribute :short_url
-  attribute :copyright    # TODO: localize
+  attribute :copyright   
   attribute :total_days
   attribute :version_id
   attribute :created_dt
   attribute :default_start_dt
-  attribute :formatted_length # TODO: localize
+  attribute :formatted_length
   attribute :publisher_url
   attribute :images
 

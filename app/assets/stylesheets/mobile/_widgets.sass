@@ -377,84 +377,76 @@
   #calendar
     position: relative
     overflow: hidden
+    border-bottom: 1px solid #dedddb
+
+    div, span, a
+      box-sizing: border-box
 
     .calendar-prev,
-    .calendar-day,
     .calendar-next
-      float: left
-      height: 44px
+      display: none
 
-    .calendar-prev,
-    .calendar-next
-      width: 30%
+  #calendar
+    .calendar-cal
+      overflow-x: scroll
+      overflow-y: hidden
 
-      a
+      span, a
         display: block
-        height: 44px
-        position: relative
 
-        .calendar-arrows
-          display: block
-          height: 21px
-          width: 21px
-          background: image-url("pagination-arrows-rp.png") no-repeat
-          background-size: 84px 21px
-          position: absolute
+      .calendar-cal-month
+        float: left
+        overflow: hidden
+        height: 80px
 
-        .calendar-arrow-txt
-          display: block
-          width: 50px
-          position: absolute
-          color: #9F9EA2
-          font-size: 10px
-          line-height: 1em
+        .calendar-cal-month-name
+          text-align: center
+          font-size: 13px
+          color: #999
+          border-bottom: 1px solid #dedddb
+          border-left: 1px solid #dedddb
 
-      a.disabled
-        opacity: .2
+          span
+            height: 20px
+            line-height: 21px
 
-    .calendar-prev
-      border-right: 1px solid #ebebeb
-      text-align: center
+        .calendar-cal-days
+          overflow: hidden
 
-      a
-        .calendar-arrows
-          background-position: -21px 0
-          left: 10%
-          top: 12px
+          .calendar-cal-day
+            float: left
+            width: 45px
+            height: 59px
+            border-left: 1px solid #dedddb
+            padding: 6px 0 0
+            text-align: center
+            font:
+              size: 15px
+              weight: normal
+            color: #444
+            background: image-url("cal-bullet@2x.png") no-repeat center 38px
+            background-size: 8px 8px
 
-        .calendar-arrow-txt
-          top: 11px
-          left: 40%
-          text-align: left
+          .calendar-cal-day.selected
+            background-color: #dedddb
+            border-bottom: 3px solid #333
 
-    .calendar-day
-      width: 39%
+          .calendar-cal-day.current
+            font-weight: bold
+            color: #ff0000
 
-      h4
-        margin: 0
-        text-align: center
-        padding: 5px 0 0
+          .calendar-cal-day.read
+            background: image-url("cal_check@2x.png") no-repeat center 38px
+            background-size: 11px 8px
 
-      a
-        display: block
-        background-size: 28px 32px
-        text-align: center
-        font-size: 12px
 
-    .calendar-next
-      border-left: 1px solid #ebebeb
-      text-align: center
+      .calendar-cal-month:first-child
+        .calendar-cal-month-name
+          border-left: none
 
-      a
-        .calendar-arrows
-          background-position: -42px 0
-          right: 10%
-          top: 12px
+        .calendar-cal-day:first-child
+          border-left: none
 
-        .calendar-arrow-txt
-          top: 11px
-          right: 40%
-          text-align: right
 
   .calendar-links
     clear: both
@@ -466,11 +458,9 @@
     a
       font-size: .85em
 
-    .calendar-links-settings
-      float: right
-
 .scripture-links
   .menu
+    background: transparent
     li.content_target
       position: relative
     form

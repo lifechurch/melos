@@ -358,6 +358,7 @@
 // !Reading plan widget --------------
 
 #widget-plan-controls
+
   .hd
     .settings
       display: block
@@ -382,29 +383,28 @@
   #calendar
     position: relative
     overflow: hidden
+    border-bottom: 1px solid #dedddb
     clear: both
 
+    div, span, a
+      box-sizing: border-box
+
     .calendar-prev,
-    .calendar-day,
     .calendar-next
       float: left
-      height: 69px
+      height: 80px
 
-    .calendar-prev,
-    .calendar-next
       a
         display: block
-        width: 69px
-        height: 69px
-        padding: 0 3px
+        width: 30px
+        height: 80px
 
         .calendar-arrows
+          height: 20px
           display: block
-          height: 31px
-          width: 21px
-          background: image-url("pagination-arrows-rp.png") no-repeat
-          background-size: 84px 21px
-          margin: 0 auto 4px
+          width: 20px
+          margin: 30px 0 0
+          background: image-url("pagination_arrows.png") no-repeat
 
         .calendar-arrow-txt
           font-size: 12px
@@ -416,35 +416,81 @@
         opacity: .2
 
     .calendar-prev
-      width: 75px
-      border-right: 1px solid #ebebeb
       text-align: center
+      border-right: 1px solid #dedddb
 
       a .calendar-arrows
-        background-position: -21px 10px
-
-    .calendar-day
-      width: 147px
-      text-align: center
-
-      h4
-        margin: 0
-        padding: 15px 0 0
-
-      a
-        display: block
-        height: 30px
-        width: 147px
-        background-size: 28px 32px
-        padding: 5px 0 0
+        background-position: -25px 0
 
     .calendar-next
-      width: 75px
-      border-left: 1px solid #ebebeb
       text-align: center
+      border-left: 1px solid #dedddb
 
       a .calendar-arrows
-        background-position: -42px 10px
+        background-position: -45px 0
+
+  #calendar
+    .calendar-cal
+      float: left
+      width: 238px
+      overflow-x: scroll
+      overflow-y: hidden
+
+      span, a
+        display: block
+
+      .calendar-cal-month
+        float: left
+        overflow: hidden
+        height: 80px
+
+        .calendar-cal-month-name
+          text-align: center
+          font-size: 13px
+          color: #999
+          border-bottom: 1px solid #dedddb
+          border-left: 1px solid #dedddb
+
+          span
+            height: 20px
+            line-height: 21px
+
+        .calendar-cal-days
+          overflow: hidden
+
+          .calendar-cal-day
+            float: left
+            width: 34px
+            height: 59px
+            border-left: 1px solid #dedddb
+            padding: 6px 0 0
+            text-align: center
+            font:
+              size: 15px
+              weight: normal
+            color: #444
+            background: image-url("cal-bullet@2x.png") no-repeat center 38px
+            background-size: 8px 8px
+
+          .calendar-cal-day.selected
+            background-color: #dedddb
+            border-bottom: 3px solid #333
+
+          .calendar-cal-day.current
+            font-weight: bold
+            color: #ff0000
+
+          .calendar-cal-day.read
+            background: image-url("cal_check@2x.png") no-repeat center 38px
+            background-size: 11px 8px
+
+
+      .calendar-cal-month:first-child
+        .calendar-cal-month-name
+          border-left: none
+
+        .calendar-cal-day:first-child
+          border-left: none
 
   .calendar-links
     clear: both
@@ -453,11 +499,9 @@
     line-height: 31px
     overflow: hidden
 
-    .calendar-links-settings
-      float: right
-
 .scripture-links
   .menu
+    background: transparent
     li.content_target
       position: relative
     form
