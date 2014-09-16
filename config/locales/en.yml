@@ -959,7 +959,7 @@ en:
   mobile page:
     h2:                                         "God's Word is with you."
     h3:                                         "YouVersion is Global"
-    h3 sub:                                     "Available in more than 100 languages worldwide."
+    h3 sub:                                     "Available in more than %{language_count} languages worldwide."
     main:                                       "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
     button h4:                                  "Go to Bible.com/app"
     button h4 sub:                              "On Your Mobile Device"
