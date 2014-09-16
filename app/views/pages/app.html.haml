@@ -18,12 +18,17 @@
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article.mobileapps
+  - style = "position:absolute; z-index:1; margin-left: 572px; margin-top: -131px; height:80px; width:80px; background: url(#{image_path(localized_bible_icon(72))}); background-repeat: no-repeat;background-size:cover !important;" if localized_bible_icon
+  %div.icon-overlay{style: style}
   %section#mobile_content
     %h2= t('mobile page.h2')
     %section.main
       %p= t('mobile page.main').html_safe
     %section.multilingual
-      = image_tag "mobile_multilingual.png"
+      - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 10px no-repeat;" if localized_bible_icon
+      %div.multi
+        %div.icon-overlay{style: style}
+      -#= image_tag "mobile_multilingual.png"
       %h3= t('mobile page.h3')
       %p= t('mobile page.h3 sub', language_count: 700)
   %section#mobile_downloads
