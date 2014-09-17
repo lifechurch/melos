@@ -17,7 +17,7 @@ class PasswordsController < ApplicationController
         flash[:notice]=t('users.password.updated')
         cookies.signed.permanent[:c] = params[:user][:password]
       else
-        flash[:error]=t('users.password.error')
+        flash[:error]= @results.errors[:base].first || t('users.password.error')
       end
     else
       @user.add_error(t('users.password.old was invalid'))
