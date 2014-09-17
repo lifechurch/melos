@@ -10,15 +10,15 @@
   %p
     = f.label :old_password, t('users.profile.current password')
     %br
-    = f.password_field :old_password
+    = f.password_field :old_password, :maxlength=>"32"
   %hr
   %p
     = f.label :password, t('users.profile.new password')
     %br
-    = f.password_field :password
+    = f.password_field :password, :maxlength=>"32"
   %p
     = f.label :confirm_password, t('users.profile.confirm password')
     %br
-    = f.password_field :confirm_password
+    = f.password_field :confirm_password, :maxlength=>"32"
   %p
     = button_tag t('users.my password'), class: "action_button_green"
