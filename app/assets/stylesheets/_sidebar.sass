@@ -3,10 +3,18 @@
 
 #sidebar
   @extend .clearfix
+  float: left
   font-size: 12px
   width: 300px
+  margin-right: -100%
+  position: relative
+  margin-left: 10px
+
+#sidebar.fixed
   position: fixed
   margin-left: 610px
+  margin-right: 0
+  float: none
 
 #sidebar-scroll
   +border-radius(4px)

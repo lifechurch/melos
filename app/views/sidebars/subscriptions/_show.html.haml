@@ -24,6 +24,13 @@
       = link_to t("plan settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn"
 
 #widget-plan-controls.widget
+  -# init the fixed right column for reading plan area
+  :javascript
+    jQuery(document).ready(function() {
+      setTimeout(function(){
+        Page.prototype.setFixedRightColumn()
+      }, 1000);
+    });
 
   - settings_text = t("settings")
   %div.hd

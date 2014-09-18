@@ -66,6 +66,7 @@ function Page() {
   //page interactive elements
   this.new_note_widget = undefined;
   this.reader = undefined;
+  this.fixedRightColumn = false;
 
 
   this.initConstants();
@@ -122,11 +123,20 @@ Page.prototype = {
 
   // set the height of the right side widget scroll area
   setWidgetScrollHeight: function() {
-    var scrollHeight = $(window).height() - $('#header_outer').outerHeight() - $('#footer').outerHeight() - 12;
-    $('#sidebar-scroll').css("height", scrollHeight + 'px');
-    $('#sidebar .slimScrollDiv').css("height", scrollHeight + 'px');
+    if (this.fixedRightColumn) {
+      var scrollHeight = $(window).height() - $('#header_outer').outerHeight() - $('#footer').outerHeight() - 12;
+      $('#sidebar-scroll').css("height", scrollHeight + 'px');
+      $('#sidebar .slimScrollDiv').css("height", scrollHeight + 'px');
+    }
   },
 
+  setFixedRightColumn: function() {
+    this.fixedRightColumn = true;
+    $('#sidebar').addClass('fixed');
+    $('#sidebar-scroll').slimScroll({
+      height: ($(window).height() - $('#header_outer').outerHeight() - $('#footer').outerHeight() - 12) + 'px'
+    });
+  },
 
   // Ability to set the reader on the page publicly.
   setReader : function( rdr ) {
