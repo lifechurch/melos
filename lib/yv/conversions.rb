@@ -73,8 +73,11 @@ module YV
 		      'pt-BR' => 'por',
 		      'zh-CN' => 'zho',
 		      'zh-TW' => 'zho_tw',
-		      'es-ES' => 'spa_es'
+		      'es-ES' => 'spa_es',
+          'no' => 'nob'
 		    }
+        # norwegian macro languages: api has default under 'nob' not 'nor' as returned by LanguageInfo.find ISO 639-3
+        # norwegian has two macro languages 'nob' and 'nno' not technically a part of ISO 639-3
 		  end
 
       # Method(s) not found in the rest of the app - commenting out for now.
