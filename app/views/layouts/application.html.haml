@@ -29,7 +29,7 @@
           = render(partial: "layouts/primary_nav") unless @main_nav == false
           = content_for?(:main) ? yield(:main) : yield
 
-        #sidebar
+        #sidebar{class: (content_for :sidebar_class if content_for? :sidebar_class)}
           - if content_for? :sidebar
             = yield :sidebar
           - else
