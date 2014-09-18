@@ -25,11 +25,3 @@
     .rp-plan-about-buttons
       = render partial: "/plans/button", locals: {plan: @plan}
     %p= @plan.about
-
-
-  .mobile
-
-    %p
-      = @plan.copyright.html_safe
-    - unless @plan.publisher_url.nil?
-      = link_to(t("plans.about publisher"), @plan.publisher_url)

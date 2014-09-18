@@ -10,3 +10,52 @@
   - unless plan.publisher_url.nil?
     %div.ft.link
       = link_to(t("plans.about publisher"), plan.publisher_url)
+
+.widget.rp-reading
+  %h3.hd
+    16 friends currently reading this plan
+  .rp-widget-avatars
+    %a{href: "#", title: "Stu Pedaso"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+  .rp-view-all
+    %hr
+    %a{href: "#"}
+      View all
+
+
+
+.widget.rp-friends-completed
+  %h3.hd
+    24 friends completed this plan
+  .rp-widget-avatars
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+    %a{href: "#"}
+      = image_tag "josh_avatar.png"
+  .rp-view-all
+    %hr
+    %a{href: "#"}
+      View all
+
+
+.widget.rp-all-completed
+  %span
+    Total completions: 3156233

@@ -655,3 +655,66 @@ html[data-locale="en"]
 
 #widget-user-settings
   margin: 159px 0 0
+
+
+// !Friends completed/reading widget in reading plans
+
+.rp-reading,
+.rp-friends-completed
+  background: none
+
+  .rp-widget-avatars
+    box-sizing: border-box
+    background-color: #fff
+    padding: 10px 10px 5px
+    overflow: hidden
+
+    a
+      width: 40px
+      height: 40px
+      +border-radius(40px)
+      overflow: hidden
+      float: left
+      margin: 0 0 8px 8px
+      display: block
+
+      img
+        width: 40px
+
+    a:first-child,
+    a:nth-child(7n)
+      margin-left: 0
+
+  .rp-view-all
+    clear: both
+    +border-radius(0 0 5px 5px)
+    background-color: #fff
+
+    hr
+      border: 0
+      border-top: 1px solid #dedddb
+      height: 1px
+      background: #fff
+      margin: 0
+
+    a
+      display: block
+      background: #fff image-url("arrows-down@2x.png") no-repeat center center
+      background-size: 12px 11px
+      height: 30px
+      width: 41px
+      text-indent: 100%
+      overflow: hidden
+      white-space: nowrap
+      margin: -17px auto 0
+
+.rp-all-completed
+  background: #dedddb image-url("rp_about_users.png") no-repeat center top
+  margin: 30px 0 0
+
+  span
+    display: block
+    text-align: center
+    font-size: 15px
+    padding: 25px 0 0
+    margin: 0 0 30px
