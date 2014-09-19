@@ -182,7 +182,7 @@ module ApplicationHelper
       when :support
         'http://support.youversion.com'
       when :now
-        'http://now.youversion.com'
+        'https://www.youversion.com/happening-now'
       else
         host
     end

@@ -121,7 +121,7 @@
 
       $("#counter").counter({
         direction: "up",
-        format: "999,999,999",
+        format: "#{t("counter.format")}",
         stop: "9,999,999,999",
         initial: commas(corrected_total_downloads_not_round)
       });
