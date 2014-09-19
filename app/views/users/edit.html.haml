@@ -15,11 +15,11 @@
   %p
     = f.label :first_name, t('users.profile.first name')
     %br
-    = f.text_field :first_name
+    = f.text_field :first_name, required: true
   %p
     = f.label :last_name, t('users.profile.last name')
     %br
-    = f.text_field :last_name
+    = f.text_field :last_name, required: true
   %p
     = f.label :bio, t('users.profile.bio')
     %br

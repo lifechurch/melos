@@ -69,13 +69,14 @@ class UsersController < ApplicationController
 
   def update
     @user.auth = current_auth # setup auth prior to update
-    @user = @user.update(params[:user])
-    if @user.valid?
+    results = @user.update(params[:user])
+    if results.valid?
       flash[:notice]= t('users.profile.updated')
       redirect_to edit_user_path(current_auth.username)
     else
-      flash[:error]= t('users.profile.error')
-      render action: "edit", layout: "application"
+      @user = User.find_by_id(@user.id)
+      flash[:error]= results.errors[:base].first || t('users.profile.error')
+      render action: "edit", layout: "settings"
     end
   end
 
