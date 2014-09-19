@@ -19,7 +19,8 @@
 
 %article.mobileapps
   - style = "position:absolute; z-index:1; margin-left: 572px; margin-top: -131px; height:80px; width:80px; background: url(#{image_path(localized_bible_icon(72))}); background-repeat: no-repeat;background-size:cover !important;" if localized_bible_icon
-  %div.icon-overlay{style: style}
+  %div.icon-overlay.hide-mobile{style: style}
+  %div.app-free-overlay.hide-mobile= t('mobile page.free overlay')
   %section#mobile_content
     %h2= t('mobile page.h2')
     %section.main

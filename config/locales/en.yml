@@ -981,6 +981,7 @@ en:
     symbian:                                    "Symbian"
     mobile web:                                 "Mobile Web"
     amazon:                                     "Kindle Fire"
+    free overlay:                               "100% Free"
   pages:
     generic_error:
       title:                                    "Oops!"
