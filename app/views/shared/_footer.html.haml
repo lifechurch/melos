@@ -8,13 +8,16 @@
       = link_to( t("terms"), terms_path)
       = link_to( t("press"), press_path)
       = link_to( t("get support"), external_url(:support) )
-      - if @site.allow_donate? && [:es, :"es-ES", :pt, :"pt-PT", :"pt", :tr].exclude?(current_locale)
-        = link_to( t("donate title"), (@site.donate_path || donate_path))
-    - unless ENV['RACK_ENV'] =~ /production/i
-      %p.small.mute.environment
-        ="Non-production deployment, pointing at: #{Cfg.try :api_root}"
+
+      - if @site.allow_donate?
+        - unless [:es, :"es-ES", :pt, :"pt-PT", :"pt", :tr].include?(current_locale)
+          = link_to( t("donate title"), (@site.donate_path || donate_path))
+
     = render partial: "shared/language_selector"
 
     .copyright
       %span= "&copy; #{Date.today.year}".html_safe
       = link_to( t("lifechurch short url"),'http://www.lifechurch.tv')
+
+  -unless ENV['RACK_ENV'] =~ /production/i
+    %p.small.mute.float_right= "Non-production deployment, pointing at: #{Cfg.try :api_root}"
