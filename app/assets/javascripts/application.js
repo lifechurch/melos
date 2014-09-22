@@ -42,7 +42,6 @@
 //= require ./menus/nav_mobile
 //= require ./menus/menu_group
 //= require_self
-//= require jquery.slimscroll.min.js
 //= require jstz-1.0.4
 //= require_tree ./lib/
 //= require_tree ./menus/
