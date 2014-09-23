@@ -103,7 +103,7 @@ module YV
               },
             friendships:
               {
-                requests:   "connections"
+                requests:   "friends"
               }
           }
         )
