@@ -108,14 +108,11 @@ module YV
           }
         )
 
-        case request.env["X_MOBILE_DEVICE"]
-        when /iphone|iPhone|ipad|iPad|ipod|iPod/
-          @user_agent = "ios"         
-        when /android|Android/
-          @user_agent = "android"
-        end
         @native_url = "youversion://#{dict[controller_name][action_name]}" rescue nil
-
+        if current_auth.nil?
+          session[:native_url] = @native_url
+        end
+        
       end
 
     end
