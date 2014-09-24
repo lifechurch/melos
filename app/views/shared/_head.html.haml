@@ -2,12 +2,6 @@
   title = ""
   title << @title << " | " if @title.present?
   title << (@subtitle || @site.title).to_s
-  case request.env["X_MOBILE_DEVICE"]
-  when /iphone|iPhone|ipad|iPad|ipod|iPod/
-    @user_agent = "ios"
-  when /android|Android/
-    @user_agent = "android"
-  end
 
 %title= title
 
@@ -41,7 +35,8 @@
 = content_for?(:stylesheets) ? yield(:stylesheets) : nil
 
 - @native_url = session[:native_url] if session[:native_url].present?
-- session.delete(:native_url)
+- @user_agent = session[:user_agent] if session[:user_agent].present?
+- session.delete(:native_url) if session[:native_url].present?
 - if @native_url.present?
   %meta{name: "native-url", content: @native_url}
 
@@ -54,7 +49,6 @@
             nativeUrl = metaNativeUrl && metaNativeUrl.content,
             nativeTimeout,
             launchTime = +new Date;
-
 
         if (!nativeUrl) return;        
         if (document.cookie && ~document.cookie.indexOf('noNative=true')) return;
