@@ -174,9 +174,12 @@
     a, a:hover
       color: $body_text
 
-    a:hover,
+    a:hover
+      background-color: rgba(#000, 0.1)
     a.selected
       background-color: rgba(#000, 0.2)
+      &:hover
+        cursor: default
 
     p
       padding: 0

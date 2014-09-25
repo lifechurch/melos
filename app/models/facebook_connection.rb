@@ -1,30 +1,52 @@
 class FacebookConnection < YV::Connection::Base
+
+  attribute :name
+  attribute :user_id
+  attribute :access_token
+  attribute :appid
+  attribute :secret
+
   attribute :access_token
   attribute :credentials
-  attribute :uid
   attribute :info
+  attribute :uid
 
   attribute :connection_type
-  attribute :connection_user_id
   attribute :data
+
+  api_response_mapper YV::API::Mapper::FacebookConnection
 
   def connection_type
     "fb"
   end
 
+  def self.create_path
+    "share/connect_facebook"
+  end
+
+  def self.delete_path
+    "share/disconnect_facebook"
+  end
+
   def before_save
     self.connection_type = connection_type
-    self.connection_user_id = self.uid
-    self.data = {
-            platform:     "web3",
-            name:         self.info["name"],
-            screen_name:  self.info["nickname"],
-            user_id:      uid,
-            access_token: self.credentials["token"],
-            appid:        Cfg.facebook_app_id,
-            secret:       Cfg.facebook_secret,
-            created_dt:   Time.now.to_i
-           }.to_json
+
+    self.appid = Cfg.facebook_app_id
+    self.secret = Cfg.facebook_secret
+    self.name = self.info["name"]
+    self.user_id = self.uid
+    self.access_token = self.credentials["token"]
+
+    # self.data = {
+    #         platform:     "web3",
+    #         name:         self.info["name"],
+    #         screen_name:  self.info["nickname"],
+    #         user_id:      uid,
+    #         access_token: self.credentials["token"],
+    #         appid:        Cfg.facebook_app_id,
+    #         secret:       Cfg.facebook_secret,
+    #         created_dt:   Time.now.to_i
+    #        }.to_json
   end
 
   def find_friends(opts = {})
@@ -51,7 +73,7 @@ class FacebookConnection < YV::Connection::Base
       self.credentials["token"] = new_token
       self.info["name"] = self.data[:name]
       self.info["nickname"] = self.data[:screen_name]
-      self.connection_user_id = self.uid = self.data[:user_id]
+      self.user_id = self.data[:user_id]
       self.save
     end
   end

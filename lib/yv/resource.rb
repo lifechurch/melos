@@ -155,7 +155,6 @@ module YV
         opts = prepare_opts!({auth: auth})
         opts[self.destroy_id_param] = id
         data, errs = post(delete_path, opts)
-
         map_delete(YV::API::Results.new(data,errs))
       end
 
