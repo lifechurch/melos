@@ -1,8 +1,9 @@
 class FriendshipsController < ApplicationController
-  before_filter :mobile_redirect, only: [:requests]
+
   respond_to :html, :json
 
   before_filter :force_login
+  prepend_before_filter :mobile_redirect, only: [:requests]
 
   def requests
     @friendships = Friendships.incoming(page: @page, auth: current_auth)
