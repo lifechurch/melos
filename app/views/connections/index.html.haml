@@ -11,24 +11,21 @@
     - @networks.each do |network|
       = render partial: 'network', locals: {user: @user, network: network }
 
+    -# -else # No errors, show friends - only want to show the following as long as we don't have any errors.
 
-
-
-      -# -else # No errors, show friends - only want to show the following as long as we don't have any errors.
-
-      -#   - if @friends.present?
-      -#     %p= t('social.connection friends', connection: connection_name)
-      -#     %ul.resource_list
-      -#       - @friends.each do |u|
-      -#         %li
-      -#           - if u.user_avatar_url
-      -#             .float_left.gutter_right_half
-      -#               %img{src: u.user_avatar_url.px_48x48}
-      -#           %p.gutter_top_half.float_left
-      -#             = link_to u.name || u.username, u
-      -#             - if u.name
-      -#               %br
-      -#               %b= u.username
-      -#   - else
-      -#     %p.notice= t('social.errors.no friends', connection: connection_name)
+    -#   - if @friends.present?
+    -#     %p= t('social.connection friends', connection: connection_name)
+    -#     %ul.resource_list
+    -#       - @friends.each do |u|
+    -#         %li
+    -#           - if u.user_avatar_url
+    -#             .float_left.gutter_right_half
+    -#               %img{src: u.user_avatar_url.px_48x48}
+    -#           %p.gutter_top_half.float_left
+    -#             = link_to u.name || u.username, u
+    -#             - if u.name
+    -#               %br
+    -#               %b= u.username
+    -#   - else
+    -#     %p.notice= t('social.errors.no friends', connection: connection_name)
 
