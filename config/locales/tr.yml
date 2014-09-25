@@ -3,6 +3,8 @@ tr:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    counter: 
+        format: "999.999.999"
     social: 
         intro page: 
             main heading: "Sohbet & Keşif"
@@ -84,7 +86,7 @@ tr:
             description: "YouVersion Kutsal Kitap Uygulamasını kullanarak, Tanrı'nın sözünü her anda her yerde okuyabilirsiniz. Seçtiğiniz ayetleri renklendirerek vurgulu hale getirebilir, yer imlerinize ekleyebilir, arkadaşlarınızla paylaşabilirsiniz. Okuma Planlarını kullanarak Kutsal Kitap okumayı günlük bir alışkanlık haline getirebilirsiniz. iOS, Android, Blackberry, Windows Phone ve daha birçok sistem için kullanıma hazırdır."
         site: 
             title: "Bible.com"
-            description: "Bring the beauty and truth of the Bible into everyday life. With the YouVersion Bible App, you can read, watch, listen, and share on your smartphone or tablet, and online at Bible.com."
+            description: "Kutsal Kitap'ın güzelliğini ve gerçeklerini günlük hayatınızın önemli bir parçası haline getirin. YouVersion Kutsal Kitap Uygulaması aracılığıyla akıllı cep telefonunuzdan veya tabletinizden uygulama içeriklerini okuyabilir, izleyebilir, dinleyebilir, paylaşabilir ve Bible.com'a çevrimiçi bağlanabilirsiniz."
         connections: 
             index: 
                 title: "Bağlı Hesaplar"
@@ -394,7 +396,7 @@ tr:
         all notes: "Bütün Notlar"
         community notes: "Toplum Notları"
         new note: "Not Ekle"
-        status field: "Note Status:"
+        status field: "Not Durumu:"
         edit: "Düzenle"
         delete: "Notu Sil"
         confirm delete: "Evet, eminim"
@@ -469,12 +471,12 @@ tr:
         edit notifications: "Bildirimleri Yönet"
         edit connections: "Bağlı Hesaplar"
         edit devices: "Bağlı Mobil Cihazlar"
-        vod_subscriptions: "Verse of the Day Subscriptions"
+        vod_subscriptions: "Günün Ayeti Abonelikleri"
         vod_subscription success: "Günün Ayeti üyeliğinizi başarıyla güncellediniz."
         vod_subscription failure: "Özür dileriz, Günün Ayeti üyeliğinizi güncellerken bir hata oluştu."
-        daily email delivery: "Daily email delivery"
+        daily email delivery: "Günlük e-posta gönderimi"
         time: "Saat"
-        daily push notifications: "Daily push notifications for mobile apps"
+        daily push notifications: "Mobil uygulamalar için günlük bildirimler"
         subscribe: "Abone Ol"
         unsubscribe: "Üyeliği iptal et"
         edit account_existence: "Hesabı sil"
@@ -483,7 +485,7 @@ tr:
         no devices download copy: "Kutsak Kitap Uygulaması YouVersion on-line Kutsal Kitap yazılımını baz alan bedavaya indirebileceğiniz bir uygulamadır. Az daha tüm mobil cihazlarda çalışır. Kutsal Kitap Uygulamasını kullanarak, kullanıcılar Kutsal Kitap'ı okuyup, sosyal ağlarında ayet paylaşabilir, sevdikleri bölümlerin yer imlerini kaydedebilir, ve daha neler neler yapabilir! Ve bunların hepsi giderek daha gezgin olan hayat tarzımıza uygun bir şekilde yapılabilir. Uygulamayı indirmek ve hesabınıza bağlamak için mobil cihazınızdan  <a href='https://www.bible.com/app'>bible.com/app</a> web adresini ziyaret edin."
         yes delete: "Evet, Hesabım Silinsin"
         account delete success: "YouVersion hesabınız başarıyla silinmiştir. Kutsal Kitap'ta anlamlı vakit geçirmek için başka yollar keşfedip kullandığınıza umut ederiz. Belki şu linkteki uygulamalar size yardımcı olabilir: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "Hesabınızı silerseniz kişisel bilgileriniz, geçmişteki hareketleriniz ve kişiselleştirmeleriniz (örn. notlar, yer imleri, vurgular, vs.) Bible.com ve Kutsal Kitap Uygulamasından devamlı olarak silinecektir. Bu hareket takımımızca geri alınamaz. Devam etmek istediğinizden emin iseniz, lütfen aşağıdaki formu kullanarak işlemi sonlandırınız."
         user recent activity: "%{user} — Yeni Hareketler"
         my notes: "Notlar"
         user notes: "%{user} — Notlar"
@@ -634,7 +636,7 @@ tr:
             notification errors: "Bildirimlerinizi güncellemeye çalışırken şu hata(lar) oluştu:"
             edit: "Düzenle"
             bio: "Biyografi"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "Adınızı ve soyadınızı yazarak profil bilgilerinizi tamamlayınız"
         password: 
             updated: "Parolanız başarıyla güncellendi!"
             error: "Parolanızı değiştirirken bir hata oluştu. Özür Dileriz."
@@ -643,6 +645,7 @@ tr:
             badges: "Rozet kazandığımda bana bildir."
             follower: "Birisi beni takip ettiğinde bana bildir."
             newsletter: "YouVersion duyurularını bana gönder."
+            contact_joins: "Arkadaşlarımdan biri uygulamayı yüklediğinde beni bilgilendir"
             note_like: "Birisi notlarımı beğenirse bana bildir."
             reading_plans: "Kullanmaya başladığım okuma planları hakkında bilgilendir."
             publishing partners: "YouVersion'ın içerik sunan ortakları hakkında beni devamlı olarak bilgilendirin."
@@ -911,6 +914,7 @@ tr:
         creation form errors: "Şu hata(lar) bağışınızın ödenmesini engelledi:"
     download ad: 
         title: "Kutsal Kitap Uygulamasını ücretsiz indirin"
+        description copy: "%{language_count} ve daha birçok dilde yüzlerce Kutsal Kitap tercümesi bulunduğunuz her yerde elinizin altında."
         line 1: "Yüzden fazla dilde yüzlerce"
         line 2: "değişik çeviriyi içeren, sizinle"
         line 3: "her yere gidebilen Kutsal Kitap."
@@ -958,7 +962,7 @@ tr:
     mobile page: 
         h2: "Tanrı’nın Sözü hep yanınızda"
         h3: "YouVersion Globaldir"
-        h3 sub: "Dünya çapında yüzden fazla dilde mevcut."
+        h3 sub: "%{language_count} ve daha birçok dil seçeneği mevcuttur."
         main: "On milyonlarca insan Kutsal Kitap Uygulaması'nı kullanıyor ve Tanrı'nın Sözü'nü hayatlarının bir parçası haline getiriyor. Uygulamayı bedavaya indirip her yerden yer imlerinize, notlarınıza ve okuma planlarınıza ulaşın. Mobil cihazınızı kullanarak Kutsal Kitap'ın yüzlerce çevirisini okuyun ve dinleyin."
         button h4: "Bible.com/app adresine gidiniz"
         button h4 sub: "Mobil Cihazınızda yukarıdaki adresi ziyaret edin"
@@ -979,6 +983,7 @@ tr:
         symbian: "Symbian"
         mobile web: "Mobil Ağ"
         amazon: "Kindle Fire"
+        free overlay: "%100 Ücretsiz!"
     pages: 
         generic_error: 
             title: "Eyvah!"

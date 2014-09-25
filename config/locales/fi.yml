@@ -3,6 +3,8 @@ fi:
     time: 
         formats: 
             votd: "%-d. %B'ta', %Y"
+    counter: 
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Keskustelut ja oivallukset"
@@ -634,7 +636,7 @@ fi:
             notification errors: "Virheet, jotka estivät ilmoitustesi päivittämisen:"
             edit: "Muokkaa"
             bio: "Omat tiedot"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "Viimeistele profiilisi lisäämällä etu- ja sukunimesi"
         password: 
             updated: "Salasanasi päivittäminen onnistui!"
             error: "Salansanasi vaihdossa tapahtui virhe."
@@ -643,6 +645,7 @@ fi:
             badges: "Ilmoita minulle ansiomerkeistä, jotka olen ansainnut."
             follower: "Ilmoita minulle, kun joku seuraa minua."
             newsletter: "Pidä minut ajantasalla YouVersionin tiedotuksista."
+            contact_joins: "Ilmoita minulle, kun joku yhteystiedoista liittyy"
             note_like: "Ilmoita minulle, kun joku tykkää muistiinpanoistani."
             reading_plans: "Ilmoita minulle aloittamieni lukusuunnitelmien tiedot."
             publishing partners: "Pidä minut ajantasalla YouVersionin sisältökumppanien uutisista."
@@ -911,6 +914,7 @@ fi:
         creation form errors: "Lahjoituksen tekeminen estyi seuraavien virheiden takia:"
     download ad: 
         title: "Lataa ilmainen Raamattusovellus"
+        description copy: "Satoja käännöksiä %{language_count}+ eri kielellä - Raamattu, joka kulkee mukanasi minne tahansa."
         line 1: "Satoja käännöksiä 100+"
         line 2: "eri kielellä - Raamattu"
         line 3: "joka kulkee kanssasi minne menetkin"
@@ -958,7 +962,7 @@ fi:
     mobile page: 
         h2: "Jumalan Sana on kanssasi."
         h3: "YouVersion on globaali"
-        h3 sub: "Saatavana yli 100:lla kielellä maailmanlaajuisesti."
+        h3 sub: "Saatavilla yli %{language_count} eri kielellä maailmanlaajuisesti."
         main: "Kymmenet miljoonat ihmiset käyttävät Raamattusovellusta™ tehdäkseen Jumalan sanasta osan jokapäiväistä elämäänsä. Lataa ilmainen sovellus ja pääset kirjanmerkkeihin, muistiinpanoihin ja lukusuunnitelmiin missä tahansa. Voit nauttia sadoista versioista, äänen kera, kaikilla mobiililaitteillasi."
         button h4: "Mene sivulle Bible.com/app"
         button h4 sub: "Mobiililaitteessasi"
@@ -979,6 +983,7 @@ fi:
         symbian: "Symbian"
         mobile web: "Mobiilisivusto"
         amazon: "Kindle Fire"
+        free overlay: "100% ilmainen"
     pages: 
         generic_error: 
             title: "Oho!"

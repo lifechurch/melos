@@ -3,6 +3,8 @@ sv:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Samtal & Utforskning"
@@ -210,8 +212,8 @@ sv:
     save: "Spara"
     cancel: "Avbryt"
     try the beta: "Prova betan"
-    welcome to the beta: "Welcome to Bible.com!"
-    highlight: "Highlight Verse"
+    welcome to the beta: "Välkommen till Bible.com!"
+    highlight: "Markera vers"
     comment: "Ny kommentar"
     note: "Ny anteckning"
     selected: "Markerat"
@@ -220,7 +222,7 @@ sv:
     notes title: "Anteckningar"
     friends: "Vänner"
     groups: "Grupper"
-    mobile: "Mobile Apps"
+    mobile: "Mobilappar"
     live: "Live/Grupper"
     first page: "Första sidan"
     last page: "Sista sidan"
@@ -355,8 +357,8 @@ sv:
             add friend button title: "Skicka %{user} en vänskapsförfrågan"
             accept button: "Acceptera"
             accept request button: "Acceptera förfrågan"
-            ignore button: "Decline"
-            ignore request button: "Decline request"
+            ignore button: "Avböjer"
+            ignore request button: "Neka förfrågan"
     notes: 
         none user: "%{username} har inte gjort några anteckningar än."
         blank slate: 
@@ -394,7 +396,7 @@ sv:
         all notes: "Alla anteckningar"
         community notes: "Delade anteckningar"
         new note: "Ny anteckning"
-        status field: "Note Status:"
+        status field: "Status för anteckning:"
         edit: "Redigera"
         delete: "Ta bort denna anteckning"
         confirm delete: "Ja, jag är säker"
@@ -407,7 +409,7 @@ sv:
         create failure: "Kunde inte spara anteckning"
         destroy success: "Anteckning borttagen"
         destroy failure: "Kunde inte ta bort anteckning"
-        update success: "Note updated"
+        update success: "Anteckning uppdaterad"
     ref: 
         loading secondary: "Laddar hänvisningar i sekundär översättning"
         clear verses: "Ta bort markerade verser"
@@ -483,7 +485,7 @@ sv:
         no devices download copy: "Bibelappen är en gratis mobil Bibel baserad på online-biblen YouVersion.com som kan installeras på nästan vilken mobil enhet som helst. Bibelappen låter användare att läsa Bibeln, dela verser på deras sociala nätverk, skapa bokmärken för deras favorittexter m.m.—allt på ett format som hänger med i det allt mer mobila livet. Besök <a href='https://www.bible.com/sv/app'>bible.com/sv/app</a> från din mobila enhet för att ladda ner Bibelappen och ansluta ditt konto!"
         yes delete: "Ja, ta bort mitt konto"
         account delete success: "Ditt YouVersion-konto har tagits bort. Vi hoppas att du fortsätter att hitta meningsfulla sätt att komma i kontakt med Bibeln. Några av dessa appar kanske kan hjälpa dig att komma framåt: <a href= http://www.youversion.com/sv/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "Om du tar bort ditt konto kommer du permanent radera all din information, historik och dina personliga anpassningar (så som anteckningar, bokmärken och markeringar) på Bible.com och i Bibelappen Denna åtgärd kan inte återställas av dig eller av någon i vårt team. Om du är säker på att du vill gå vidare, fortsätt nedan."
         user recent activity: "%{user}s senaste aktivitet"
         my notes: "Anteckningar"
         user notes: "%{user}s anteckningar"
@@ -634,7 +636,7 @@ sv:
             notification errors: "Följande fel förhindrade dig att uppdatera dina meddelanden:"
             edit: "Redigera"
             bio: "Biografi"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "Fullfölj din profil genom att ange ditt för- och efternamn"
         password: 
             updated: "Du har uppdaterat ditt lösenord."
             error: "Ett fel uppstod vid ändring av lösenord."
@@ -643,6 +645,7 @@ sv:
             badges: "Meddela mig när jag får medaljer."
             follower: "Meddela mig när någon följer mig."
             newsletter: "Håll mig uppdaterad om meddelanden från YouVersion."
+            contact_joins: "Notify me when a Contact joins"
             note_like: "Meddela mig när någon gillar mina anteckningar."
             reading_plans: "Meddela mig med information om mina läsplaner."
             publishing partners: "Håll mig uppdaterad om nyheter från YouVersions innehållspartner."
@@ -911,6 +914,7 @@ sv:
         creation form errors: "Följande fel gjorde att du inte kunde göra en donation:"
     download ad: 
         title: "Ladda ner den fria Bibelappen"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "Hundratals översättningar på mer"
         line 2: "än 100 olika språk—Bibeln"
         line 3: "som följer med dig överallt."
@@ -938,7 +942,7 @@ sv:
         facebook: "YouVersion på Facebook"
         twitter: "YouVersion på Twitter"
         support: "Behöver du hjälp med YouVersion?"
-        lead copy: "Based on the online Bible, Bible.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle."
+        lead copy: "Bibelappen är en gratis mobil Bibel baserad på online-Bibeln Bibel.com som kan installeras på nästan alla telefoner. Bibelappen låter användare läsa Bibeln, dela verser i sitt sociala nätverk, bokmärka sina favorittexter m.m. - allt på ett format som hänger med i den allt mer mobila livsstilen."
         resources title: "Pressinformation"
         now title: "Idag i YouVersion-gemenskapen"
         resources: 
@@ -958,7 +962,7 @@ sv:
     mobile page: 
         h2: "Guds ord är med dig."
         h3: "YouVersion är global"
-        h3 sub: "Tillgänglig på mer än 100 språk över hela världen."
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "Tiotals miljoner människor använder Bibelappen™ för att göra Guds Ord till en del av sin vardag. Ladda ner den fria appen för att komma åt dina bokmärken, anteckningar och läsplaner överallt. Få glädje av hundratals översättningar, inklusive ljuduppläsningar, på alla dina mobila enheter."
         button h4: "Gå till Bible.com/sv/app"
         button h4 sub: "På din mobila enhet"
@@ -979,6 +983,7 @@ sv:
         symbian: "Symbian"
         mobile web: "Mobil-Webb"
         amazon: "Kindle Fire"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "Upps!"
@@ -1000,7 +1005,7 @@ sv:
                 subscribe heading: "Följ bibelplaner."
                 subscribe description: "Läs hela Bibeln, fokusera på ett ämne eller läs en andakt från en begåvad lärare. Välj en plan så har du ett urval ur Bibeln som väntar dig varje dag."
                 download heading: "Ta Bibeln med dig."
-                download description: "<a href='https://bible.com/download'>Download</a> the Bible App for free on any mobile device. When you use the mobile app, your notes, bookmarks, highlights, plans, and more will be automatically synced across all of your devices."
+                download description: "<a href='https://bible.com/download'>Ladda ner</a> Bibelappen gratis till alla dina mobila enheter. När du använder mobilappen synkroniseras dina anteckningar, bokmärken, markeringar och planer till samtliga dina enheter."
             get started: "Kom igång med ditt gratiskonto."
             word with you: "Guds Ord är med dig."
             download action: "Ladda ner Bibelappen"

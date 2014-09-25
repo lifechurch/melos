@@ -3,6 +3,8 @@ mn:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Харилцан Яриа & Өрнөл"
@@ -643,6 +645,7 @@ mn:
             badges: "Миний авсан тэмдэгтүүдийн талаар мэдэгдэх."
             follower: "Намайг хүн дагахад мэдэгдэх."
             newsletter: "YouVersion-ий зарлалуудыг надад мэдэгдэх."
+            contact_joins: "Notify me when a Contact joins"
             note_like: "Миний тэмдэглэл хэн нэгэнд таалагдахад надад мэдэгдэх."
             reading_plans: "Миний уншиж байгаа тѳлѳвлѳгѳѳний талаар надад мэдэгдэх."
             publishing partners: "YouVersion контент түншүүдийн мэдээг надад мэдэгдэх."
@@ -911,6 +914,7 @@ mn:
         creation form errors: "Дараах алдаа(ууд) хандив өргөхөд саад болж байна:"
     download ad: 
         title: "Үнэгүй Библийн Апп татах"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "Олон орчуулга 100+"
         line 2: "өөр хэл дээр - Хаана ч"
         line 3: "тантай хамт байх Библи."
@@ -958,7 +962,7 @@ mn:
     mobile page: 
         h2: "Бурханы Үгс тантай хамт."
         h3: "YouVersion Дэлхий Нийтийнх"
-        h3 sub: "100 гаруй төрлийн хэлний сонголт бий."
+        h3 sub: "%{language_count} гаруй төрлийн хэлний сонголт бий."
         main: "Олон арван сая хүмүүс Бурханы Үгийг өдөр тутмын амьдралынхаа нэг хэсэг болгохын тулд Библи Апп™ ашиглаж байна. Энэхүү үнэгүй апп татан авч хаанаас ч өөрийн хавчуурга, тэмдэглэл болон уншлагын хуваариа үзээрэй. Библийн зуу зуун хувилбарыг аудио хувилбартай нь хамт зөөврийн хэрэгсэл дээрээ таалан соёрхоорой."
         button h4: "Bible.com/app зочлох"
         button h4 sub: "Зөөврийн Хэрэгсэлээ Ашиглан Зочлоорой"
@@ -979,6 +983,7 @@ mn:
         symbian: "Symbian"
         mobile web: "Гар Утсны Вэб"
         amazon: "Kindle Fire"
+        free overlay: "100% Үнэгүй"
     pages: 
         generic_error: 
             title: "Өөөх!"

@@ -3,6 +3,8 @@ af:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Gesprek & Verkenning"
@@ -210,7 +212,7 @@ af:
     save: "Stoor"
     cancel: "Kanselleer"
     try the beta: "Probeer die Beta"
-    welcome to the beta: "Welcome to Bible.com!"
+    welcome to the beta: "Welkom by Bible.com!"
     highlight: "Kleurmerk Vers"
     comment: "Nuwe kommentaar"
     note: "Nuwe Nota"
@@ -643,6 +645,7 @@ af:
             badges: "Stel my in kennis van enige kentekens wat ek verwerf het."
             follower: "Stel my in kennis as iemand my volg."
             newsletter: "Hou my op hoogste van YouVersion aankondigings."
+            contact_joins: "Notify me when a Contact joins"
             note_like: "Stel my in kennis as iemand van my notas hou."
             reading_plans: "Stel my in kennis van informasie vir leesplanne wat ek begin het."
             publishing partners: "Hou my op hoogte met nuus van YouVersion se inhouds vennote."
@@ -911,6 +914,7 @@ af:
         creation form errors: "Die volgende fout(e) het verhoed dat jy 'n donasie kon maak:"
     download ad: 
         title: "Laai die Free Bible App af"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "Honderde weergawes in 100+"
         line 2: "verskillende tale - die Bybel wat"
         line 3: "orals saam met jou gaan."
@@ -958,7 +962,7 @@ af:
     mobile page: 
         h2: "God se Woord is by jou."
         h3: "YouVersion is Globaal"
-        h3 sub: "Beskikbaar in meer as 'n 100 tale wêreldwyd."
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "Mense by die miljoene gebruik die Bible App™ om God se Woord deel van hul daaglikse lewens te maak. Laai die gratis app af om toegang tot jou boekmerke, notas en leesplanne van enige plek af te verkry. Geniet honderde weergawes, insluitende klank, alles op jou mobiele toestel."
         button h4: "Gaan na Bybel.com/app"
         button h4 sub: "Op Jou Mobiele Toestel"
@@ -979,6 +983,7 @@ af:
         symbian: "Symbian"
         mobile web: "Mobiele Web"
         amazon: "Kindle Fire"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "Oeps!"

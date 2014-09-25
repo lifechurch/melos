@@ -3,6 +3,8 @@ da:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    counter: 
+        format: "999.999.999"
     social: 
         intro page: 
             main heading: "Konversation & Opdagelse"
@@ -643,6 +645,7 @@ da:
             badges: "Notificer mig om de mærker jeg har optjent."
             follower: "Notificer mig når nogen følger mig."
             newsletter: "Hold mig opdateret om YouVersion annonceringer."
+            contact_joins: "Notificer mig når en kontakt melder sig"
             note_like: "Notificer mig når nogen synes om min noter."
             reading_plans: "Notificer mig med information om de læse planer jeg har startet."
             publishing partners: "Hold mig opdateret med nyheder fra YouVersion´s indholds leverandører."
@@ -911,6 +914,7 @@ da:
         creation form errors: "Følgende fejl forhindrede dannelsen af en donation:"
     download ad: 
         title: "Hent den gratis Bible App"
+        description copy: "Hundrede af versioner i %{language_count}+ forskellige sprog - Bibelen er altid med dig overalt."
         line 1: "Hundrede af versioner i 100+"
         line 2: "forskellige sprog - Bibelen"
         line 3: "den er med dig overalt."
@@ -958,7 +962,7 @@ da:
     mobile page: 
         h2: "Gud´s ord er med dig."
         h3: "YouVersion er global"
-        h3 sub: "Tilgængelig på mere end 100 sprog i verden."
+        h3 sub: "Tilgængelig i mere end %{language_count} sprog i hele verden."
         main: "Millioner af mennesker bruger Bible App ™ til at gøre Guds Ord en del af deres dagligdag. Hent den gratis app og få adgang til dine bogmærker, noter og læsning planer fra hvor som helst. Nyd hundredvis af versioner, herunder lyd, alle på din mobile enhed."
         button h4: "Gå til Bible.com/app"
         button h4 sub: "På dit mobile apparat"
@@ -979,6 +983,7 @@ da:
         symbian: "Symbian"
         mobile web: "Mobilt web"
         amazon: "Kindle Fire"
+        free overlay: "100% Gratis"
     pages: 
         generic_error: 
             title: "Upss!"

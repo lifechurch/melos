@@ -3,6 +3,8 @@ bg:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Разговор & откриване"
@@ -643,6 +645,7 @@ bg:
             badges: "Съобщи ми за получени значки."
             follower: "Съобщи ми когато някой ме следва."
             newsletter: "Изпращай ми съобщенията на YouVersion."
+            contact_joins: "Notify me when a Contact joins"
             note_like: "Съобщи ми когато някой харесва бележките ми."
             reading_plans: "Изпращай ми информация за започнатия план за четене."
             publishing partners: "Изпращай ми новини за партньорите на YouVersion"
@@ -911,6 +914,7 @@ bg:
         creation form errors: "Дарението не може да бъде направено заради следните грешки:"
     download ad: 
         title: "Изтегли Библията"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "Стотици версии в 100+"
         line 2: "различен език - Библията"
         line 3: "вземи с теб"
@@ -958,7 +962,7 @@ bg:
     mobile page: 
         h2: "Божието слово е с теб"
         h3: "YouVersion е глобална"
-        h3 sub: "Вече на над 100 езика по целия свят"
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "Десетки милиони хора изпозлват Библията™ като приложение правейки Божието слово част от тяхното ежедневие. Изтегли безплатното приложение и използвай своите бележки, маркировки и план от всяко място. Използвай стотици версии на Библията, както и аудио записи директно на мобилното си устроийство."
         button h4: "Иди на Bible.com/app"
         button h4 sub: "На мобилно устройство"
@@ -979,6 +983,7 @@ bg:
         symbian: "Симбиан"
         mobile web: "Мобилен уеб"
         amazon: "Киндъл Файър"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "Грешка!"

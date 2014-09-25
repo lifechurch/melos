@@ -3,6 +3,8 @@ ro:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    counter: 
+        format: "999.999.999"
     social: 
         intro page: 
             main heading: "Discută și Descoperă"
@@ -643,6 +645,7 @@ ro:
             badges: "Înștiințează-mă despre insignele câștigate."
             follower: "Înștiințează-mă când cineva mă simpatizează."
             newsletter: "Ține-mă la curent cu anunțurile YouVersion."
+            contact_joins: "Anunță-mă când se înscrie un contact."
             note_like: "Înștiințează-mă când cineva apreciază notițele mele."
             reading_plans: "Înștiințează-mă despre informații pentru planurile de citire pe care le-am început."
             publishing partners: "Ține-mă la curent cu noutățile partenerilor YouVersion."
@@ -911,6 +914,7 @@ ro:
         creation form errors: "Următoarele erori au împiedicat donația:"
     download ad: 
         title: "Descarcă gratuit aplicația Biblia"
+        description copy: "Sute de versiuni în peste %{language_count} de limbi diferite - Biblia care te însoțește pretutindeni."
         line 1: "Sute de versiuni în 100+"
         line 2: "limbi diferite - Biblia care"
         line 3: "te însoțește pretutindeni."
@@ -958,7 +962,7 @@ ro:
     mobile page: 
         h2: "Ai Scriptura mereu la tine."
         h3: "YouVersion este global"
-        h3 sub: "Disponibil în peste 100 de limbi din toată lumea."
+        h3 sub: "Disponibilă în peste %{language_count} limbi la nivel mondial."
         main: "Zeci de milioane de oameni folosesc Aplicația Biblia™ pentru a petrece timp cu Cuvântul Lui Dumnezeu. Descarcă aplicațiile gratuite și accesează-ți marcajele, notițele și planurile de citire oriunde te afli. Bucură-te de sute de versiuni, inclusiv audio, pe toate dispozitivele tale mobile."
         button h4: "Accesează Bible.com/app"
         button h4 sub: "Pe dispozitivul tău mobil"
@@ -979,6 +983,7 @@ ro:
         symbian: "Symbian"
         mobile web: "Web Mobil"
         amazon: "Kindle Fire"
+        free overlay: "Gratuit 100%"
     pages: 
         generic_error: 
             title: "Oops!"

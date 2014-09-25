@@ -3,6 +3,8 @@ sw:
     time: 
         formats: 
             votd: "%M %-d, %M"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Mazungumzo & Ungunduzi"
@@ -643,6 +645,7 @@ sw:
             badges: "nijulishe kuhusu beji nilizopata."
             follower: "nijulishe mtu atakapo nifuata."
             newsletter: "Nijulishe na matangazo ya YouVersion."
+            contact_joins: "Notify me when a Contact joins"
             note_like: "Nijulishe mtu akipenda maelezo yangu."
             reading_plans: "nijulishe kuhusu taarifa ya mpango wangu wa usomaji nilioanza."
             publishing partners: "Nipe ujumbe kutoka kwa washirika wa YouVersion"
@@ -911,6 +914,7 @@ sw:
         creation form errors: "Makosa  yafuatayo(s) yalikuzuia kufanya mchango:"
     download ad: 
         title: "Pata programu ya bure ya Bibilia"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "mamia ya matoleo yenye"
         line 2: "lugha tofauti - biblia ambayo"
         line 3: "itaenda na wewe sehemu yoyote."
@@ -958,7 +962,7 @@ sw:
     mobile page: 
         h2: "Neno la Mungu lipo nawe."
         h3: "YouVersion ni ya kimataifa"
-        h3 sub: "Inapatikana katika lugha zaidi ya 100 dunia nzima"
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "Mamilioni ya watu wanatumia App ya Bibilia ™ kufanya Neno la Mungu iwe sehemu ya maisha yao ya kila siku. Pakua programu ya bure na upate maelezo ya maalamisho yako, na mipango ya kusoma kutoka mahali popote. Furahia mamia ya matoleo, ikiwa pamoja na audio yote kwa rununu yako."
         button h4: "Enda kwa. Bible.com/app"
         button h4 sub: "kwenye rununu yako"
@@ -979,6 +983,7 @@ sw:
         symbian: "Symbian"
         mobile web: "tovuti katika mtandao wa simu"
         amazon: "Kindle Fire"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "Ala!"
