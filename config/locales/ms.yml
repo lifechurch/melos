@@ -3,6 +3,8 @@ ms:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Perbualan & Penemuan"
@@ -643,6 +645,7 @@ ms:
             badges: "Beritahu saya tentang lencana yang saya perolehi."
             follower: "Beritahu saya bila seseorang mengikuti saya."
             newsletter: "Saya ingin menerima pengumuman YouVersion yang baru."
+            contact_joins: "Notify me when a Contact joins"
             note_like: "Beritahu saya bila seseorang \"like\" nota saya."
             reading_plans: "Beritahu saya bila ada maklumat baru tentang pelan bacaan saya."
             publishing partners: "Beritahu saya berita terbaru dari rakan kongsi kandungan YouVersion."
@@ -911,6 +914,7 @@ ms:
         creation form errors: "Kesilapan berikut menghalang sumbangan anda:"
     download ad: 
         title: "Download App Injil yang Percuma"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "Beratusan versi dalam 100+"
         line 2: "bahasa yang berbeza - Alkitab yang"
         line 3: "menurut anda ke manapun."
@@ -958,7 +962,7 @@ ms:
     mobile page: 
         h2: "Firman Allah ada bersama anda."
         h3: "YouVersion kini Global"
-        h3 sub: "Tersedia dalam lebih daripada 100 bahasa di seluruh dunia."
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "Berpuluh juta orang kini mengguna App Injil™ dan menjadikan Firman Allah sebahagian daripada kehidupan setiap hari. Download app percuma dan akses bookmark, nota, dan pelan bacaan dari mana pun. Nikmati beratus versi Alkitab, termasuk audio, pada peranti mobil anda."
         button h4: "Terus ke Bible.com/app"
         button h4 sub: "Pada Peranti Mobil Anda"
@@ -979,6 +983,7 @@ ms:
         symbian: "Symbian"
         mobile web: "Web Mobil"
         amazon: "Kindle Fire"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "Maaf!"

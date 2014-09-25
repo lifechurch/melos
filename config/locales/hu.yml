@@ -3,6 +3,8 @@ hu:
     time: 
         formats: 
             votd: "%Y. %B %-d"
+    counter: 
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Beszélgetés és felfedezés"
@@ -643,6 +645,7 @@ hu:
             badges: "Értesítést kérek a megszerzett jelvényeimről."
             follower: "Értesítést kérek, ha valaki követ."
             newsletter: "Figyelmeztetést kérek a YouVersion közleményekről."
+            contact_joins: "Értesíts, amikor egy ismerősöm csatlakozik"
             note_like: "Értesítést kérek, ha valakinek tetszenek a jegyzeteim."
             reading_plans: "Értesítést kérek az elkezdett olvasási tervekkel kapcsolatos információkról."
             publishing partners: "Legyek naprakész a YouVersion tartalompartnereinek újdonságaival."
@@ -911,6 +914,7 @@ hu:
         creation form errors: "A következő hiba(k) akadályozta(k) meg az adományozást:"
     download ad: 
         title: "Töltsd le az ingyenes Biblia alkalmazást"
+        description copy: "Több száz fordítás %{language_count}+ különböző nyelven - a Biblia, ami mindenhova elkísér."
         line 1: "Több száz verzió 100+"
         line 2: "különböző nyelven - a Biblia"
         line 3: "ami bárhová elkísér."
@@ -958,7 +962,7 @@ hu:
     mobile page: 
         h2: "Isten Igéje veled van."
         h3: "A YouVersion globális"
-        h3 sub: "Világszerte több mint 100 nyelven elérhető."
+        h3 sub: "Világszerte több, mint %{language_count} nyelven elérhető."
         main: "Emberek tízezrei használják a Biblia alkalmazást, hogy Isten Igéjét életük részévé tegyék. Töltsd le az ingyenes applikációt és bárhol hozzáférsz a könyvjelzőidhez, jegyzeteidhez és olvasó terveidhez. Élvezd a több száz fordítást, beleértve a hangos verziót, mindezt a mobil eszközödön."
         button h4: "Menj a Bible.com/app"
         button h4 sub: "A mobil készülékeden"
@@ -979,6 +983,7 @@ hu:
         symbian: "Symbian"
         mobile web: "Mobil Web"
         amazon: "Kindle Fire"
+        free overlay: "100% ingyenes"
     pages: 
         generic_error: 
             title: "Hoppá!"

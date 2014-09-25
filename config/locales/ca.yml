@@ -3,6 +3,8 @@ ca:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    counter: 
+        format: "999.999.999"
     social: 
         intro page: 
             main heading: "Convesra & Descoberta"
@@ -210,7 +212,7 @@ ca:
     save: "Desa"
     cancel: "Cancel·la"
     try the beta: "Prova la Beta"
-    welcome to the beta: "Welcome to Bible.com!"
+    welcome to the beta: "Benvingut a Bible.com!"
     highlight: "Ressalta verset"
     comment: "Nou comentari"
     note: "Nova nota"
@@ -220,7 +222,7 @@ ca:
     notes title: "Notes"
     friends: "Amics"
     groups: "Grups"
-    mobile: "Mobile Apps"
+    mobile: "Aplicacions per al mòbil"
     live: "En directe/Grups"
     first page: "Primera pàgina"
     last page: "Última pàgina"
@@ -356,7 +358,7 @@ ca:
             accept button: "Accepta"
             accept request button: "Accepta la sol·licitud"
             ignore button: "Rebutja"
-            ignore request button: "Decline request"
+            ignore request button: "Rebutja sol·licitud"
     notes: 
         none user: "%{username} encara no ha pres notes."
         blank slate: 
@@ -407,7 +409,7 @@ ca:
         create failure: "Error en guardar la nota"
         destroy success: "Nota suprimida"
         destroy failure: "Error en suprimir la nota"
-        update success: "Note updated"
+        update success: "Nota actualitzada"
     ref: 
         loading secondary: "Carregant la referència d'una segona versió"
         clear verses: "Desmarca els versets"
@@ -483,7 +485,7 @@ ca:
         no devices download copy: "Amb base en la Bíblia en línia, YouVersion.com, l'aplicació de la Bíblia és una Bíblia mòbil i gratuïta que es pot instal · lar en gairebé qualsevol dispositiu mòbil. La aplicació de la Bíblia permet als usuaris llegir la Bíblia, compartir versets en les seves xarxes socials, marcar els seus passatges preferits i molt més; tot això en un format que s'adiu amb el seu estil de vida, cada vegada més mòbil. Visita <a href='https://www.bible.com/app'>Bible.com/app</a> des del teu dispositiu mòbil per descarregar l'aplicació de la Bíblia i connectar el teu compte!"
         yes delete: "Sí, elimina el meu compte"
         account delete success: "La teu compte de YouVersion s'ha eliminat correctament. Esperem que continuïs trobant maneres significatives per interactuar amb la Bíblia. Algunes d'aquestes aplicacions poden ser útils a mesura que avances:<a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps</a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "Si esborres el teu compte, eliminaràs permanentment tota la teva informació, història i personalització (notes, marcadors, ressaltats, etc.) que tinguis a Bible.com i l'App de la Bíblia. Aquesta acció no pot ser modificada ni per tu ni per ningú del nostre equip. Si tens la seguretat que vols seguir endavant, continua més avall."
         user recent activity: "Activitat recent de %{user}"
         my notes: "Notes"
         user notes: "Notes de %{user}"
@@ -634,7 +636,7 @@ ca:
             notification errors: "Els errors següents no ens deixen actualitzar els avisos:"
             edit: "Editar"
             bio: "Biografia"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "Completa el teu perfil amb el teu nom i cognoms"
         password: 
             updated: "Has actualitzat la teva contrasenya amb èxit!"
             error: "Ho sentim, però hi ha hagut algun problema en canviar la teva contrasenya."
@@ -643,6 +645,7 @@ ca:
             badges: "Avisa'm de les insígnies que obtingui."
             follower: "Avisa'm quan algú em segueixi"
             newsletter: "Tingues-me al dia dels anuncis de YouVersion"
+            contact_joins: "Avisa'm quan s'incorpori un Contacte"
             note_like: "Avisa'm quan a algú li agradi una nota meva."
             reading_plans: "Envia'm informació relativa als plans de lectura que he començat."
             publishing partners: "Vull ser informat de notícies dels socis de contingut de YouVersion."
@@ -911,6 +914,7 @@ ca:
         creation form errors: "Els errors següents no permeten que facis el donatiu:"
     download ad: 
         title: "Descarrega l'aplicació gratuïta de la Bíblia."
+        description copy: "Centenars de versions en %{language_count} diferents llengües - la Bíblia que t'acompanya arreu."
         line 1: "Centenars de versions en més de 100"
         line 2: "idiomes diferents - La Bíblia"
         line 3: "que va amb tu a qualsevol lloc."
@@ -938,7 +942,7 @@ ca:
         facebook: "YouVersion al Facebook"
         twitter: "YouVersion al Twitter"
         support: "Necessites ajuda amb YouVersion?"
-        lead copy: "Based on the online Bible, Bible.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle."
+        lead copy: "Basada en la Bíblia en línia, Bible.com, l'Aplicació de la Bíblia és una Bíblia gratuïta per a mòbils que es pot instal·lar a pràcticament qualsevol telèfon. L'Aplicació de la Bíblia permet els usuaris llegir la Bíblia, compartir versets amb les seves xarxes socials, marcar els seus textos preferits i encara més coses - tot en un format adaptat a un estil de vida mòbil."
         resources title: "Recursos de premsa"
         now title: "Avui a la comunitat YouVersion"
         resources: 
@@ -958,7 +962,7 @@ ca:
     mobile page: 
         h2: "La Paraula de Déu està amb tu."
         h3: "YouVersion és global"
-        h3 sub: "Disponible en més de 100 idiomes a tot el món."
+        h3 sub: "Disponible en més de %{language_count} idiomes d'arreu del món."
         main: "Desenes de milions de persones estan fent servir l'aplicació de la Bíblia™ per fer que la Paraula de Déu una part de les seves vides diàries. Descarrega l'aplicació gratuïta i accedeix als seus marcadors, notes, i els plans de lectura des de qualsevol lloc. Gaudeix de centenars de versions, incloent àudio, tot en el seu dispositiu mòbil."
         button h4: "Vés a Bible.com/app"
         button h4 sub: "Al teu dispositiu mòbil"
@@ -979,6 +983,7 @@ ca:
         symbian: "Symbian"
         mobile web: "Web per a mòbils"
         amazon: "Kindle Fire"
+        free overlay: "100% gratuïta"
     pages: 
         generic_error: 
             title: "Alguna cosa ha sortit malament!"

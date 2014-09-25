@@ -3,6 +3,8 @@ ar:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "المحادثات والاستكشاف"
@@ -643,6 +645,7 @@ ar:
             badges: "اخطر ني  عن الشارات التي قد كسبتها."
             follower: "اخطرني عندما يتابعني أحد ما."
             newsletter: "أبقني على إطلاع علي إعلانات Youversion."
+            contact_joins: "Notify me when a Contact joins"
             note_like: "قم بتنبيهي عندما يعجب أحد بملاحظاتي"
             reading_plans: "قم بتنبيهي بمعلومات عن خطط القراءة التي بدأتها."
             publishing partners: "قم بتحديثي بالأخبار من شركاء محتوي YouVersion"
@@ -911,6 +914,7 @@ ar:
         creation form errors: "الخطأ (أخطاء) التالي منع التبرع:"
     download ad: 
         title: "حمل تطبيق الكتاب المقدس المجاني"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "المئات من الاصدارات في 100+"
         line 2: "لغات مختلفة - الكتاب المقدس"
         line 3: "الذي يذهب معك الي اي مكان"
@@ -958,7 +962,7 @@ ar:
     mobile page: 
         h2: "كلمة الله معك."
         h3: "YouVersion عالمي"
-        h3 sub: "متوفر  باكثر من 100 لغة حول العالم."
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "عشرات الملايين من الأشخاص يستخدمون تطبيق الكتاب المقدس &trade، ليجعلوا كلمة الله جزء من حياتهم اليومية. حمل التطبيق مجانا ليكون لك القدرة علىالوصول ألي اشاراتك المرجعية، الملاحظات وخطط القراءة من أي مكان. استمتع بمئات الاصدارات شاملة الملفات الصوتية، الكل على جهازك المحمول."
         button h4: "اذهب الي  Bible.com/app"
         button h4 sub: "على  جهاز تليفونك المحمول"
@@ -979,6 +983,7 @@ ar:
         symbian: "سيمبيان"
         mobile web: "شبكة المحمول"
         amazon: "كيندل فاير"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "عفوا!"

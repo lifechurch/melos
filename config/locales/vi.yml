@@ -3,6 +3,8 @@ vi:
     time: 
         formats: 
             votd: "Ngày %-d %B, %Y"
+    counter: 
+        format: "999.999.999"
     social: 
         intro page: 
             main heading: "Chia sẻ & khám phá"
@@ -19,12 +21,12 @@ vi:
                     button: "Tôi bắt đầu từ đâu?"
                 share: 
                     copy: "Tâm tình về Thánh Kinh."
-                    button: "Bắt đầu bằng cách tìm vài người bạn."
+                    button: "Bắt đầu bằng cách tìm kiếm bạn bè"
                 likes: 
                     info: "và 4 người nữa thích"
                 comments: 
                     first: 
-                        text: "Tôi cần được nhắc nhở điều đó hôm nay, cảm ơn bạn!"
+                        text: "Tôi cần được nhắc nhở điều đó hôm nay, cảm ơn anh!"
                         time: "khoảng 3 giờ trước"
                     second: 
                         text: "Amen, tôi cũng vậy. Đang email cho anh đây."
@@ -643,6 +645,7 @@ vi:
             badges: "Báo cho tôi về huy hiệu nhận được."
             follower: "Báo cho tôi khi có người theo tôi."
             newsletter: "Cập nhật cho tôi các thông báo của YouVersion."
+            contact_joins: "Thông báo khi có bạn bè tham gia YouVersion"
             note_like: "Báo cho tôi khi có người thích ghi chú của tôi."
             reading_plans: "Báo cho tôi các thông tin về kế hoạch mà tôi bắt đầu."
             publishing partners: "Hãy cập nhật cho tôi tin tức từ các đối tác nội dung của YouVersion."
@@ -911,6 +914,7 @@ vi:
         creation form errors: "Các lỗi sau khiến bạn không dâng hiến được:"
     download ad: 
         title: "Tải Ứng dụng Kinh Thánh miễn phí"
+        description copy: "Hàng trăm bản dịch thuộc hơn %{language_count} ngôn ngữ - Kinh Thánh đồng hành cùng bạn mọi nơi!"
         line 1: "Hàng trăm bản dịch Kinh Thánh"
         line 2: "các ngôn ngữ khác nhau - Kinh Thánh"
         line 3: "đồng hành cùng bạn ở mọi nơi."
@@ -958,7 +962,7 @@ vi:
     mobile page: 
         h2: "Lời Chúa đồng hành cùng bạn"
         h3: "YouVersion được phổ biến toàn cầu"
-        h3 sub: "Với hơn 300 ngôn ngữ trên toàn thế giới."
+        h3 sub: "Hơn %{language_count} ngôn ngữ toàn cầu."
         main: "Hàng chục triệu người đang sử dụng App Kinh Thánh để Lời Chúa trở thành một phần trong cuộc sống hằng ngày của họ. Hãy tải ứng dụng miễn phí và truy cập các đánh dấu, ghi chú, và kế hoạch đọc Kinh Thánh của bạn từ bất cứ nơi đâu. Chọn lựa từ hàng trăm bản dịch, bao gồm Kinh Thánh phát thanh, tất cả chỉ trong thiết bị di động của bạn!"
         button h4: "Vào Bible.com/vi/app"
         button h4 sub: "Trên thiết bị di động của bạn"
@@ -979,6 +983,7 @@ vi:
         symbian: "Symbian"
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
+        free overlay: "Miễn phí 100%!"
     pages: 
         generic_error: 
             title: "Ối!"

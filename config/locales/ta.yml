@@ -3,6 +3,8 @@ ta:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "உரையாடல் & கண்டறிதல்"
@@ -643,6 +645,7 @@ ta:
             badges: "நான் சம்பாதித்திருக்கிற முத்திரைகள் பற்றி என்னை அறிவிக்கவும்."
             follower: "யாராவது என்னை தொடரும்போது தெரிவிக்கவும்."
             newsletter: "YouVersion அறிவிப்புகளை எனக்கு தெரியப்படுத்தவும்"
+            contact_joins: "Notify me when a Contact joins"
             note_like: "யாராவது ஒருத்தர் என் குறிப்புகளை விரும்பும் போது என்னை அறிவிக்கவும்."
             reading_plans: "நான் ஆரம்பித்திருக்கிற வாசிப்பு திட்டங்களை பற்றிய தகவல்களை  எனக்கு தெரிவிக்கவும்."
             publishing partners: "YouVersion உள்ளடக்க பங்காளர்களிடமிருந்து  வரும் செய்திகளை எனக்கு உடனுக்குடன் அறிவிக்கவும்."
@@ -832,8 +835,8 @@ ta:
         vendor_transaction_id: 
             duplicate: "பரிவர்த்தனை ID: இந்த பரிவர்த்தனை ID ஏற்கனவே பதிவு செய்ய பட்டிருக்கிறது"
         auth: 
-            login notice: "To validate your purchased content, please login to your YouVersion account below or <a href='/sign-up?source=licenses'>%{signup}</a>."
-            signup notice: "To validate your purchased content, sign up for a free YouVersion account below or <a href='/sign-in?source=licenses'>%{login}</a> if you already have an account."
+            login notice: "நீங்கள் வாங்கிய பொருளை உறுதி செய்ய, கீழே உள்ள உங்கள் YouVersion கணக்கில் உள்நுழைக அல்லது <a href='/sign-up?source=licenses'>%{signup}</a>."
+            signup notice: "நீங்கள் வாங்கிய பொருளை உறுதி செய்ய, ஒரு இலவச YouVersion கணக்கிற்கு கீழே பதிவு செய்க அல்லது உங்களுக்கு  ஏற்கனவே ஒரு கணக்கு இருந்தால் <a href='/sign-in?source=licenses'>%{login}.</a>"
             signup link text: "ஒரு இலவச கணக்கிற்கு பதிவு செய்க"
             login link text: "உள்நுழைக"
     registration: 
@@ -911,6 +914,7 @@ ta:
         creation form errors: "பின்வரும் பிழை (கள்) நன்கொடை செய்வதை தடுத்தது:"
     download ad: 
         title: "இலவச Bible App பதிவிறக்கம் செய்க"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "100+ ல் நூற்றுக்கணக்கான பதிப்புகள்"
         line 2: "பல்வேறு மொழிகள் - the Bible"
         line 3: "அது உங்களோடு எங்கும் செல்கிறது."
@@ -958,7 +962,7 @@ ta:
     mobile page: 
         h2: "தேவனின் வசனம் உங்களோடு இருக்கிறது."
         h3: "YouVersion உலகமெங்குமுள்ளது"
-        h3 sub: "உலகம் முழுவதும் 100 க்கும் மேற்பட்ட மொழிகளில் கிடைக்கிறது."
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "தேவனின் வசனத்தை தங்களது அன்றாட வாழ்வில் ஒரு பகுதியாக செய்ய பல லட்சக்கணக்கான மக்கள் பைபிள் App&trade பயன்படுத்தி கொண்டிருக்கிறார்கள்.  இலவச பயன்பாட்டை பதிவிறக்கி உங்கள் புக்மார்க்குகள், குறிப்புகள், மற்றும் வாசிப்பு திட்டங்களை எங்கிருந்தும்  அணுகுங்கள். உங்கள் மொபைல் சாதனத்தில் ஆடியோ உட்பட ல் நூற்றுக்கணக்கான பதிப்புகளை கண்டுமகிழலாம்."
         button h4: "Bible.com/app க்கு செல்லவும்"
         button h4 sub: "உங்கள் மொபைல் சாதனத்தில்"
@@ -979,6 +983,7 @@ ta:
         symbian: "Symbian"
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "அடடா!"
@@ -1000,7 +1005,7 @@ ta:
                 subscribe heading: "வேதாகமம் திட்டங்களுக்கு குழுசேர்க."
                 subscribe description: "முழு வேதாகமத்தையும் வாசித்து முடிக்கவோ, ஏதாவது ஒரு தலைப்பில் கவனம் செலுத்துகயோ, அல்லது ஆசீர்வதிக்கப்பட்ட ஒரு போதகரின் பக்தியுரைகளை வாசிக்கவோ செய்யுங்கள். உங்கள் திட்டத்தை தேர்ந்தெடுங்கள் ஒவ்வொரு நாளும் ஒரு வேதாகம தேர்ந்தெடுப்பு உங்களுக்கு  காத்திருப்பதை  காண்பீர்கள்."
                 download heading: "உங்களுடன் வேதாகமத்தை எடுத்து செல்லுங்கள்."
-                download description: "<a href='https://bible.com/download'>Download</a> the Bible App for free on any mobile device. When you use the mobile app, your notes, bookmarks, highlights, plans, and more will be automatically synced across all of your devices."
+                download description: "<a href='https://bible.com/download'>Download</a> எந்த மொபைல் சாதனத்திற்குமான இலவச வேதாகம பயன்பாடு. நீங்கள் மொபைல் பயன்பாட்டை பயன்படுத்தும்  போது, உங்கள் குறிப்புகள், புக்மார்க்குகள், சிறப்பம்சங்கள், திட்டங்கள், மற்றவைகளும் உங்கள் அனைத்து சாதனங்களிலும் தானாகவே ஒத்திசைவு செய்யப்படும்."
             get started: "உங்கள் இலவச கணக்குடன் தொடங்குக."
             word with you: "தேவனின் வார்த்தை உங்களோடு இருக்கிறது."
             download action: "வேதாகம பயன்பாட்டை பதிவிறக்குக"

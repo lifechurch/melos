@@ -3,6 +3,8 @@ sq:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Bashkëbisedim & Zbulim"
@@ -643,6 +645,7 @@ sq:
             badges: "Më njofto rreth emblemave që kam fituar."
             follower: "Më njofto kur dikush më ndjek."
             newsletter: "Më përditëso rreth lajmërimeve nga YouVersion."
+            contact_joins: "Më njofto kur një kontakt vjen në YouVersion"
             note_like: "Më njofto kur dikush i pëlqen shënimet e mia."
             reading_plans: "Më njofto rreth informacionit për planet e leximit që kam filluar."
             publishing partners: "Më mbaj të përditësuar për lajmet rreth përmbajtjes së partnerëve të YouVersion."
@@ -911,6 +914,7 @@ sq:
         creation form errors: "Gabimi(et) më poshtë e penguan kryerjen e një dhurate:"
     download ad: 
         title: "Shkarko Programin e Biblës Falas."
+        description copy: "Qindra versione në %{language_count}+ gjuhë të ndryshme - Bibla që vjen me ju kudo."
         line 1: "Qindra versione në 100+"
         line 2: "gjuhë të ndryshme - Bibla"
         line 3: "që shkon me ju kudo."
@@ -958,7 +962,7 @@ sq:
     mobile page: 
         h2: "Fjala e Zotit është me ty."
         h3: "YouVersion është Global"
-        h3 sub: "E disponueshme në më shumë se 100 gjuhë në mbarë botën."
+        h3 sub: "E disponueshme në më shumë se %{language_count} gjuhë në mbarë botën."
         main: "Dhjetëra miliona njerëz po përdorin Programin e Biblës™ për ta bërë Fjalën e Perëndisë pjesë të jetës së tyre të përditshme. Shkarko programin falas dhe përdor shenjuesit e tu, shënimet dhe planet e leximit kudo. Shijo qindra versione, duke përfshirë ato audio, në pajisjen tuaj të lëvizshme."
         button h4: "Shko te Bible.com/app"
         button h4 sub: "në pajisjen tënde të lëvizshme"
@@ -979,6 +983,7 @@ sq:
         symbian: "Symbian"
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
+        free overlay: "100% Falas"
     pages: 
         generic_error: 
             title: "Ups!"
