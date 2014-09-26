@@ -1,27 +1,13 @@
 module YV
   module Connection
     class Base < YV::Resource
-      def get(path, params = {})
-        HTTParty.get(path, query: self.default_params.merge(params))
-      end
-
-      def post(path, params = {})
-        HTTParty.post(path, body: self.default_params.merge(params))
-      end
 
       def delete
-        data, errs = YV::Resource.post("users/delete_connection", connection_type: connection_type, auth: auth)
+        data, errs = YV::Resource.post(self.delete_path, {auth: auth})
         return YV::API::Results.new(data,errs)
       end
 
       def default_params; end
-      def self.create_path
-        "users/create_connection"
-      end
-
-      def self.delete_path
-        "users/delete_connection"
-      end
 
       # these should return URLs for respective actions
       def share_path; end

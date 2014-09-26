@@ -1,9 +1,10 @@
 common:
-  facebook_app_id: 105030176203924
-  facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   # yv-development-cb (works for youversion-web.dev)
-  #facebook_app_id: 306713076033387
-  #facebook_secret: 1a8bf87913629f4162b6c91e5fe943a2
+  # facebook_app_id: 306713076033387
+  # facebook_secret: 1a8bf87913629f4162b6c91e5fe943a2
+  # Bible Test App (bible.dev)
+  facebook_app_id: 818055158234752
+  facebook_secret: 05d219f1c41d63f8ef34dd404cccb64d
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
   avatar_path: https://d5xlnxqvcdji7.cloudfront.net/users/images/
@@ -49,6 +50,10 @@ staging:
   api_version: "3.1"
   api_default_timeout: 15
   rack_execution_timeout: 15
+  twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
+  twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
+  facebook_app_id: 105030176203924
+  facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
 
 test:
   api_root: youversionapistaging.com
@@ -66,3 +71,5 @@ production:
   memcache_server: memcache.youversion.com
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
+  facebook_app_id: 105030176203924
+  facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
