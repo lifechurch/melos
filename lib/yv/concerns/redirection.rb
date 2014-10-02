@@ -104,6 +104,10 @@ module YV
             friendships:
               {
                 requests:   "friends"
+              },
+            connections:
+              {
+                index:      "connections"
               }
           }
         )
