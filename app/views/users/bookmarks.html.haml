@@ -13,8 +13,8 @@
         %ul.bookmarks-labels
           - @labels.each do |label_and_count|
             - label_name = "#{label_and_count["label"].strip}"
-            %li.label
-              = link_to bookmarks_user_path(@user.username, label: label_name), class: "#{'selected' if @label == label_name}" do
+            %li.label{class: "#{'selected' if @label == label_name}"}
+              = link_to bookmarks_user_path(@user.username, label: label_name) do
                 = label_name
                 %span.label-count=label_and_count["count"]
 
