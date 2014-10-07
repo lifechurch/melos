@@ -14,7 +14,7 @@
         {{{verse_html}}}
       %p.moment-bm-labels
         {{#each labels}}
-        %a.moment-bm-labels-link{href: "#"} {{lookup ../labels @index}}
+        %a.moment-bm-labels-link{href: "/bookmarks?label={{lookup ../labels @index}}"} {{lookup ../labels @index}} 
         {{/each}}
   .moment-btm
     {{> moments/_actions_bar}}
