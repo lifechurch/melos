@@ -27,6 +27,15 @@ class UsersController < ApplicationController
 
   def bookmarks
     @labels = Bookmark.labels(auth: current_auth)
+    @label ||= params[:label] 
+  end
+  
+  def _bookmarks
+    @label ||= params[:label]
+    @next_cursor ||= params[:next_cursor]
+    @kind ||= params[:kind]
+    @moments = @label.present? ? Bookmark.for_label(@label, moment_all_params.merge(cursor: @next_cursor)) : @moments = Moment.all(moment_all_params)
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
 
   def badges

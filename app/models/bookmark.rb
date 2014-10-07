@@ -14,7 +14,7 @@ class Bookmark < YV::Resource
 
   # :usfm_references
   # Are utilized for form submits. A plus separated list of usfm refs GEN.1.1+GEN.1.2
-  attributes [:title,:labels,:references,:color,:version_id,:usfm_references]
+  attributes [:title,:labels,:references,:color,:version_id,:usfm_references, :next_cursor]
 
   api_response_mapper YV::API::Mapper::Bookmark
 
@@ -60,7 +60,7 @@ class Bookmark < YV::Resource
     # Lookup all bookmarks with a given label and params
     # Returns a ResourceList of bookmark instances
     def for_label(labels, params = {})
-      opts = params.merge({kind: "bookmark", labels: labels, page: params[:page] || 1, auth: params[:auth], user_id: params[:user_id]})
+      opts = params.merge({kind: "bookmark", labels: labels, auth: params[:auth], user_id: params[:user_id]})
       data, errs = get("search/moments", opts)
       map_all(YV::API::Results.new(data,errs))
     end
