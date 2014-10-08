@@ -2,7 +2,7 @@ require 'io/console'
 
 namespace :subscription do
 
-  desc ''
+  desc 'Used to complete multiple days of a reading plan subscription. Useful for testing.'
   task :read => :environment do
     puts 'Enter username:'
     username = STDIN.gets.chomp
