@@ -11,6 +11,9 @@
 
       - unless @labels.blank?
         %ul.bookmarks-labels
+          %li.label.all-label{class: "#{'selected' unless @labels.any?{|h| h.label == @label}}"}
+            = link_to bookmarks_user_path(@user.username) do
+              =t('bookmarks.all labels')
           - @labels.each do |label_and_count|
             - label_name = "#{label_and_count["label"].strip}"
             %li.label{class: "#{'selected' if @label == label_name}"}

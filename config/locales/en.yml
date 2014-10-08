@@ -493,6 +493,7 @@ en:
     user friends:                               "%{user}'s Friends"
     my bookmarks:                               "My Bookmarks"
     user bookmarks:                             "%{user}'s Bookmarks"
+
     my badges:                                  "My Badges"
     revised date:                               "Last revised on %{date}"
     update email copy:                          "Enter a new email address and click Update Email. We'll send you a link to confirm your new email address."
@@ -664,6 +665,7 @@ en:
     labels label:                               "Labels:"
     title:                                      "Bookmarks"
     my labels:                                  "My Labels"
+    all labels:                                 "Show All"
     not found:                                  "Bookmarks give you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. To add a bookmark, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     other user not found:                       "%{username} hasn't saved any bookmarks yet."
     creation form errors:                       "The following error(s) prevented creation of your bookmark:"
