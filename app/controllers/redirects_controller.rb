@@ -12,7 +12,7 @@ class RedirectsController < ApplicationController
 
 
   def bookmarks
-    redirect_to(bookmarks_user_url(current_user.username))
+    redirect_to(bookmarks_user_url(current_user.username, label: params[:label]))
   end
 
   def settings

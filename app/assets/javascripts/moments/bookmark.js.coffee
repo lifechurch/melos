@@ -32,6 +32,7 @@ class window.Moments.Bookmark extends window.Moments.Base
         actions:      @data.actions
         labels:       @data.labels
         read_path:    @readPath()
+        next_cursor:  @data.next_cursor
         interact_with:  true
         user:
           id:         @data.user.id

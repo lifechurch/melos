@@ -80,6 +80,7 @@ YouversionWeb::Application.routes.draw do
     get :delete_account, on: :member
     get :notes,       on: :member, as: 'notes'
     get :bookmarks,   on: :member, as: 'bookmarks'
+    get '_bookmarks', on: :member
     get :highlights,  on: :member, as: 'highlights'
     get :badges,      on: :member, as: 'badges'
 

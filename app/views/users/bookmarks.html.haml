@@ -11,15 +11,20 @@
 
       - unless @labels.blank?
         %ul.bookmarks-labels
+          %li.label.all-label{class: "#{'selected' unless @labels.any?{|h| h.label == @label}}"}
+            = link_to bookmarks_user_path(@user.username) do
+              =t('bookmarks.all labels')
           - @labels.each do |label_and_count|
-            - label_name = label_and_count["label"].strip
-            %li.label
-              = link_to label_name, bookmarks_user_path(@user, label: label_name)
+            - label_name = "#{label_and_count["label"].strip}"
+            %li.label{class: "#{'selected' if @label == label_name}"}
+              = link_to bookmarks_user_path(@user.username, label: label_name) do
+                = label_name
+                %span.label-count=label_and_count["count"]
 
-.social-feed-wrap{"data-username" => @user.username, "data-kind" => "bookmark"}
+.social-feed-wrap{"data-username" => @user.username, "data-kind" => "bookmark", "data-label" => @label}
   :javascript
     $(document).ready(function(){
-      var feed = new Moments.UserFeed();
+      var feed = new Moments.UserBookmarkFeed();
     });
 
 .profile-blank-slate.slate-bookmarks
