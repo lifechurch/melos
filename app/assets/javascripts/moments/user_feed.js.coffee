@@ -9,7 +9,6 @@ class window.Moments.UserFeed extends window.Moments.FeedBase
     @loadMoments()
     return
 
-
   loadMoments: ()->
     @hidePagination()
 

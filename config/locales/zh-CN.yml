@@ -3,6 +3,8 @@ zh-CN:
     time: 
         formats: 
             votd: "%Y/%B/%-d"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "会话 与 发现"
@@ -643,6 +645,7 @@ zh-CN:
             badges: "当我赢得徽章时通知我。"
             follower: "当有人关注我时请通知我！"
             newsletter: "通知我有关YouVersion的公告。"
+            contact_joins: "当我的朋友加入YouVersion时通知我"
             note_like: "当有人喜欢我的笔记时请通知我。"
             reading_plans: "如果有关于我已开始的读经计划的信息，请通知我。"
             publishing partners: "YouVersion 的内容提供商有新的信息时及时通知我。"
@@ -911,6 +914,7 @@ zh-CN:
         creation form errors: "下列错误妨碍您进行捐赠："
     download ad: 
         title: "免费下载圣经软件"
+        description copy: "提供了上百个以%{language_count}多种不同语言译成的版本 - 您可随身携带的圣经。"
         line 1: "几百种不同版本的选择"
         line 2: "上百种不同语言的译本"
         line 3: "让圣经随时随地陪伴您！"
@@ -958,7 +962,7 @@ zh-CN:
     mobile page: 
         h2: "上帝的话语与您同在！"
         h3: "YouVersion 是全球性的"
-        h3 sub: "提供给全世界上百种不同语言的服务。"
+        h3 sub: "提供超过%{language_count}种语言给全世界。"
         main: "全世界上千万的用户都在每天使用这款圣经应用软件。下载这款免费的程序，它可以让你随时随地地使用您的书签，笔记以及读经计划等。有几百种不同版本圣经，包括语音版本的，供您在移动设备中选择。好好享用吧！"
         button h4: "浏览 Bible.com/app"
         button h4 sub: "在您的移动设备上"
@@ -979,6 +983,7 @@ zh-CN:
         symbian: "Symbian"
         mobile web: "移动网络"
         amazon: "Kindle Fire"
+        free overlay: "100% 免费"
     pages: 
         generic_error: 
             title: "对不起！"

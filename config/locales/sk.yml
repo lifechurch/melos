@@ -3,6 +3,8 @@ sk:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    counter: 
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Rozhovory a objavy"
@@ -210,7 +212,7 @@ sk:
     save: "Uložiť"
     cancel: "Zrušiť"
     try the beta: "Vyskúšajte beta verziu"
-    welcome to the beta: "Welcome to Bible.com!"
+    welcome to the beta: "Vitajte na Bible.com!"
     highlight: "Zvýrazniť verš"
     comment: "Nový komentár"
     note: "Nová poznámka"
@@ -220,7 +222,7 @@ sk:
     notes title: "Poznámky"
     friends: "Priatelia"
     groups: "Skupiny"
-    mobile: "Mobile Apps"
+    mobile: "Mobilné aplikácie"
     live: "Live/Skupiny"
     first page: "Prvá strana"
     last page: "Posledná strana"
@@ -355,8 +357,8 @@ sk:
             add friend button title: "Poslať používateľovi %{user} žiadosť o priateľstvo"
             accept button: "Prijať"
             accept request button: "Prijať žiadosť"
-            ignore button: "Decline"
-            ignore request button: "Decline request"
+            ignore button: "Zamietnuť"
+            ignore request button: "Odmietnuť žiadosť"
     notes: 
         none user: "Používateľ %{username} zatiaľ nemá žiadne poznámky."
         blank slate: 
@@ -407,7 +409,7 @@ sk:
         create failure: "Nepodarilo sa uložiť poznámku"
         destroy success: "Poznámka odstránená"
         destroy failure: "Poznámku sa nepodarilo odstrániť"
-        update success: "Note updated"
+        update success: "Poznámka aktualizovaná"
     ref: 
         loading secondary: "Načítavajú sa súradnice v sekundárnom preklade..."
         clear verses: "Zrušiť označenie veršov"
@@ -483,7 +485,7 @@ sk:
         no devices download copy: "Aplikácia Biblia je bezplatná mobilná Biblia, založená na online Biblii YouVersion, ktorá môže byť nainštalovaná na takmer všetky mobilné zariadenia. Aplikácia Biblia používateľom umožňuje čítať Bibliu, zdieľať verše na sociálne siete, označiť si obľúbené pasáže a oveľa viac—to všetko spôsobom, ktorý drží krok so vzrastajúcim mobilným životným štýlom. Navštívte <a href='https://www.bible.com/app'>bible.com/app</a> z vášho mobilného zariadenia, stiahnite si aplikáciu Biblia a pripojte sa so svojim účtom!"
         yes delete: "Áno, zmazať môj účet"
         account delete success: "Váš YouVersion účet bol úspešne zmazaný. Dúfame, že si aj naďalej nájdete spôsob, ako čerpať z Biblie. Môžu vám k tomu napomôcť niektoré z týchto aplikácií: <a href=' https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "Ak svoj účet zmažete, natrvalo tým stratíte všetky svoje informácie, históriu a údaje (poznámky, záložky, zvýraznenia, atď.) na Bible.com i v aplikácii Biblia. Tento krok nemôžete vrátiť späť ani vy, ani náš tím. Ak ste si istý, že chcete pokračovať, pokračujte nižšie."
         user recent activity: "Nedávna aktivita používateľa %{user}"
         my notes: "Poznámky"
         user notes: "Poznámky používateľa %{user}"
@@ -634,7 +636,7 @@ sk:
             notification errors: "Nasledujúce chyby zabránili aktualizácii vašich notifikácií:"
             edit: "Upraviť"
             bio: "Bio"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "Svoj profil doplníte zadaním svojho mena a priezviska."
         password: 
             updated: "Hotovo! Vaše heslo bolo úspešne zmenené."
             error: "Prepáčte, pri menení vášho hesla sa vyskytla chyba."
@@ -643,6 +645,7 @@ sk:
             badges: "Upozorniť ma o získaných odznakoch."
             follower: "Upozorniť ma, keď ma niekto začne nasledovať."
             newsletter: "Dostávať oznámenia od YouVersion."
+            contact_joins: "Upozorniť ma, keď sa pripojí niekto z Kontaktov"
             note_like: "Upozorniť ma, keď niekto dá označenie páči sa mi to na moje poznámky."
             reading_plans: "Upozorniť ma na informácie o plánch čítania, ktoré začnem."
             publishing partners: "Informujte ma o novinkách od partnerov YouVersion."
@@ -911,6 +914,7 @@ sk:
         creation form errors: "Nasledujúce chyby zabránili odoslaniu príspevku:"
     download ad: 
         title: "Stiahnite si bezplatnú aplikáciu Biblia"
+        description copy: "Stovky prekladov vo vyše %{language_count} rôznych jazykoch - Biblia, ktorá ide všade s vami."
         line 1: "Stovky prekladov vo viac"
         line 2: "ako 100 jazykoch — Biblia,"
         line 3: "ktorá ide všade s vami."
@@ -938,7 +942,7 @@ sk:
         facebook: "YouVersion na Facebooku"
         twitter: "YouVersion na Twitteri"
         support: "Potrebujete pomôcť s YouVersion?"
-        lead copy: "Based on the online Bible, Bible.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle."
+        lead copy: "Aplikácia Biblia, založená na online Biblii Bible.com, je bezplatná mobilná aplikácia, ktorá sa dá nainštalovať do takmer ktoréhokoľvek telefónu. Aplikácia Biblia umožňuje používateľom čítať Bibliu, zdieľať verše na sociálnych sieťach, pridať si obľúbené pasáže medzi záložky, a oveľa viac—všetko spôsobom, ktorý drží krok s narastajúcim mobilným životným štýlom."
         resources title: "Tlačové zdroje"
         now title: "Dnes v komunite YouVersion"
         resources: 
@@ -958,7 +962,7 @@ sk:
     mobile page: 
         h2: "Božie Slovo je s vami."
         h3: "YouVersion je globálne"
-        h3 sub: "Dostupné vo viac ako sto jazykoch po celom svete."
+        h3 sub: "Dostupné vo viac ako %{language_count} jazykoch po celom svete."
         main: "Desiatky miliónov ľudí používajú aplikáciu Biblia s úmyslom, aby sa Božie Slovo stalo súčasťou ich každodenného života. Stiahnite si túto bezplatnú aplikáciu a získajte prístup k vašim záložkám a plánom čítania odvšadiaľ. Využite stovky prekladov vrátane audio nahrávok priamo na vašom mobilnom zariadení."
         button h4: "Prejsť na Bible.com/app"
         button h4 sub: "Na vašom mobilnom zariadení"
@@ -979,6 +983,7 @@ sk:
         symbian: "Symbian"
         mobile web: "Mobilný web"
         amazon: "Kindle Fire"
+        free overlay: "100% zdarma"
     pages: 
         generic_error: 
             title: "Hups!"

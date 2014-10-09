@@ -58,6 +58,7 @@ module YV
             instance.publisher_url    = data.publisher_url
             instance.short_url        = data.short_url
             instance.images           = data.images
+            instance.language_tag     = data.language_tag
             return instance
           end
         end

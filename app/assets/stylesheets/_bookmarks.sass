@@ -45,16 +45,44 @@
   margin: 0
 
   .label
-    margin: 0 0 0 1em
+    margin: 4px 0 4px 4px
     float: left
-    padding: 5px 0
-
+    padding: 0 5px
+    position: static
+    +border-radius(4px)
+    border: 1px solid #ddd
     .moment-bm-labels-link
       background-color: #ccc
+    .label-count
+      color: #fff
+      padding: 0 3px 1px
+      background-color: #b5b5b5
+      +border-radius(3px)
+      font-size: 12px
+    a
+      color: #aaa
+    &.selected
+      padding: 0 5px 2px
+      +border-radius(4px)
+      background-color: #6AB750
+      border: none
+      a
+        color: #fff
+      .label-count
+        background-color: #599943
 
   .label:first-child
     margin-left: 0
 
+  .all-label
+    border: none
+    margin-top: 5px
+    a
+      color: #0084c8
+
+  .all-label.selected
+    display: none
+    padding-bottom: 0px
 
 
 // Mobile bookmark styles

@@ -3,6 +3,8 @@ en-GB:
     time: 
         formats: 
             votd: "%-d th %B %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Conversation & discovery"
@@ -643,6 +645,7 @@ en-GB:
             badges: "Notify me about badges I've earnt."
             follower: "Notify me when someone follows me."
             newsletter: "Keep me updated on YouVersion announcements."
+            contact_joins: "Notify me when a contact joins"
             note_like: "Notify me when someone likes my notes."
             reading_plans: "Notify me about information for reading plans I've started."
             publishing partners: "Keep me updated on news from YouVersion's content partners."
@@ -911,6 +914,7 @@ en-GB:
         creation form errors: "The following error(s) prevented making a donation:"
     download ad: 
         title: "Download the free Bible App"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "Hundreds of versions in 100+"
         line 2: "different languages - the Bible that"
         line 3: "goes with you anywhere."
@@ -958,7 +962,7 @@ en-GB:
     mobile page: 
         h2: "God's Word is with you."
         h3: "YouVersion is global"
-        h3 sub: "Available in hundreds of languages worldwide."
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "Tens of millions of people are using the Bible App™ to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
         button h4: "Go to Bible.com/app"
         button h4 sub: "On your mobile device"
@@ -979,6 +983,7 @@ en-GB:
         symbian: "Symbian"
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
+        free overlay: "100% free"
     pages: 
         generic_error: 
             title: "Oops!"

@@ -174,9 +174,12 @@
     a, a:hover
       color: $body_text
 
-    a:hover,
+    a:hover
+      background-color: rgba(#000, 0.1)
     a.selected
       background-color: rgba(#000, 0.2)
+      &:hover
+        cursor: default
 
     p
       padding: 0
@@ -331,14 +334,15 @@
 #widget-download
   .bd
     background:
-      image: image-url("ad_bible_app.png")
-      position: 92% 80%
+      image: image-url("ad_bible_platforms.png")
+      position: 96% 84%
       repeat: no-repeat
 
     h3
       margin-bottom: 1.3em
     p
       margin-bottom: 10px
+      padding-right: 75px
 
     .action_button_green
       padding: 7px 10px
@@ -522,6 +526,57 @@ html[data-locale="en"]
           .calendar-arrow-txt
             font-size: 11px
             padding: 3px 20px 0
+
+
+// !Reading plan sample calendar widget
+
+#widget-plan-controls
+  #calendar.rp-sample
+
+    a,
+    h4,
+    span,
+    div
+      box-sizing: border-box
+
+    .calendar-prev,
+    .calendar-day,
+    .calendar-next
+      float: left
+      height: auto
+
+      a
+        width: 69px
+        height: 70px
+        padding: 9px 0 0
+
+        .calendar-arrows
+          height: 21px
+          display: block
+          width: 21px
+          margin: 0 auto 5px
+          background: image-url("pagination-arrows-rp.png") no-repeat
+          background-size: 84px 21px
+
+        .calendar-arrow-txt
+          padding: 10px 0 0
+
+      h4
+        width: 160px
+        height: 70px
+        margin: 0
+        text-align: center
+        padding: 25px 0 0
+
+    .calendar-prev
+      a
+        .calendar-arrows
+          background-position: -21px 0
+
+    .calendar-next
+      a
+        .calendar-arrows
+          background-position: -42px 0
 
 
 // --- Custom widgets ------

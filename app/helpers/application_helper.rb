@@ -180,9 +180,9 @@ module ApplicationHelper
       when :blog
         'http://blog.youversion.com'
       when :support
-        'http://support.youversion.com'
+        'http://help.youversion.com'
       when :now
-        'http://now.youversion.com'
+        'https://www.youversion.com/happening-now'
       else
         host
     end

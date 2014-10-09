@@ -3,6 +3,8 @@ es:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Conversación y Descubrimientos"
@@ -643,6 +645,7 @@ es:
             badges: "Notificarme sobre las insignias que he ganado."
             follower: "Notificarme cuando alguien me siga."
             newsletter: "Informarme sobre las actualizaciones y anuncios de YouVersion."
+            contact_joins: "Notify me when a Contact joins"
             note_like: "Notificarme cuando a alguien le gusten mis notas."
             reading_plans: "Notificarme con información sobre los planes de lectura que haya iniciado."
             publishing partners: "Mantenerme informado enviándome noticias/información de los Socios de contenido de YouVersion."
@@ -911,6 +914,7 @@ es:
         creation form errors: "El siguiente error (es) impidió hacer una donación:"
     download ad: 
         title: "Descargue la Aplicación Gratuita de la Biblia"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "Cientos de versiones en 100+"
         line 2: "diferentes idiomas - la Biblia"
         line 3: "va con usted a cualquier lugar."
@@ -958,7 +962,7 @@ es:
     mobile page: 
         h2: "La Palabra de Dios está con usted."
         h3: "YouVersion es Global"
-        h3 sub: "Disponible en más de 100 idiomas alrededor del mundo."
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "Decenas de millones de personas están usando la Biblia App ™ para hacer que la Palabra de Dios sea una parte de sus vidas diarias. Descargue la aplicación gratuita y acceda a sus marcadores, notas, y planes de lectura desde cualquier lugar. Disfrute de cientos de versiones, incluyendo audio Biblia, todo en su dispositivo móvil."
         button h4: "Ir a Bible.com/es/app"
         button h4 sub: "En su dispositivo móvil"
@@ -979,6 +983,7 @@ es:
         symbian: "Symbian"
         mobile web: "Red móvil"
         amazon: "Kindle Fire"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "¡Lo sentimos!"

@@ -3,6 +3,8 @@ cs:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    counter: 
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Diskuze & Objevování"
@@ -643,6 +645,7 @@ cs:
             badges: "Upozornit mě na odznaky, které jsem získal/a."
             follower: "Upozornit mě na to, když mě někdo následuje."
             newsletter: "Zasílat YouVersion oznámení."
+            contact_joins: "Upozorni mě, když se připojí někdo z mých kontaktů."
             note_like: "Upozornit mě, když si někdo oblíbí mé poznámky."
             reading_plans: "Upozorňovat mě na informace pro plány čtení, které jsem začal/a."
             publishing partners: "Informujte mě o novinkách od partnerů obsahu YouVersion."
@@ -911,6 +914,7 @@ cs:
         creation form errors: "Následující chyby neumožnily odeslat finanční dar:"
     download ad: 
         title: "Stáhněte si bezplatnou aplikaci Bible"
+        description copy: "%{language_count} různých jazyků se stovkami překladů Biblí - Bible, která je s vámi kdekoliv."
         line 1: "Stovky překladů ve více než"
         line 2: "100 různých jazycích - Bible,"
         line 3: "která je všude s vámi."
@@ -958,7 +962,7 @@ cs:
     mobile page: 
         h2: "Boží slovo je s vámi."
         h3: "YouVersion funguje globálně"
-        h3 sub: "Dostupné ve více než 100 jazycích po celém světě."
+        h3 sub: "K dispozici ve více než %{language_count} světových jazycích."
         main: "Desítky milionů lidí používají aplikaci Bible™, aby z Bible udělali součást svého každodenního života. Stáhněte si bezplatnou aplikaci a získejte přístup k vašim záložkám, poznámkám a plánům čtení odkudkoli. Užívejte si stovky překladů včetně audio verzí, a to vše na vašem mobilním zařízení."
         button h4: "Přejít na Bible.com/app"
         button h4 sub: "Na vašem mobilním zařízení"
@@ -979,6 +983,7 @@ cs:
         symbian: "Symbian"
         mobile web: "Web v mobilu"
         amazon: "Kindle Fire"
+        free overlay: "100% zdarma"
     pages: 
         generic_error: 
             title: "Ups!"

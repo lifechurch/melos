@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :mobile_redirect, only: [:show, :notes, :bookmarks, :badges]
+  prepend_before_filter :mobile_redirect, only: [:show, :notes, :bookmarks, :badges]
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture,:delete_account, :delete_account_form]
   before_filter :find_user, except: [:_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
@@ -27,6 +27,15 @@ class UsersController < ApplicationController
 
   def bookmarks
     @labels = Bookmark.labels(auth: current_auth)
+    @label ||= params[:label] 
+  end
+  
+  def _bookmarks
+    @label ||= params[:label]
+    @next_cursor ||= params[:next_cursor]
+    @kind ||= params[:kind]
+    @moments = @label.present? ? Bookmark.for_label(@label, moment_all_params.merge(cursor: @next_cursor)) : @moments = Moment.all(moment_all_params)
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
 
   def badges
@@ -69,13 +78,14 @@ class UsersController < ApplicationController
 
   def update
     @user.auth = current_auth # setup auth prior to update
-    @user = @user.update(params[:user])
-    if @user.valid?
+    results = @user.update(params[:user])
+    if results.valid?
       flash[:notice]= t('users.profile.updated')
       redirect_to edit_user_path(current_auth.username)
     else
-      flash[:error]= t('users.profile.error')
-      render action: "edit", layout: "application"
+      @user = User.find_by_id(@user.id)
+      flash[:error]= results.errors[:base].first || t('users.profile.error')
+      render action: "edit", layout: "settings"
     end
   end
 

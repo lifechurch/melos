@@ -4,8 +4,7 @@
            {path: user_email_path(current_user.username), string: t('users.edit email')},
            {path: user_password_path(current_user.username), string: t('users.edit password')},
            {path: user_avatar_path(current_user.username), string: t('users.edit picture')},
-           # removed for 3.1 Social launch - will make a comeback
-           # {path: connections_user_path(current_user), string: t('users.edit connections')},
+           {path: connections_user_path(current_user.username), string: t('users.edit connections')},
            {path: user_vod_subscriptions_path(current_user.username), string: t('users.vod_subscriptions')},           
            {path: user_devices_path(current_user.username), string: t('users.edit devices')},
            {path: delete_account_user_path(current_user.username), string: t('users.edit account_existence')}] if current_user.present?

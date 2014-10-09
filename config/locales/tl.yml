@@ -3,6 +3,8 @@ tl:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Mag-usap at Magtuklas"
@@ -80,11 +82,11 @@ tl:
             title: "Ito ay Nagsisimula sa <em>100 milyon</em>"
             description: "Ang Bible App ay na-download nang mahigit 100 milyong beses - kahanga-hangang tagumpay! Ngunit ito ay simula pa lamang. I-download ang libreng Bible App ngayon - at ibahagi ang app sa iyong mga kaibigan. Sama-sama nating gawin ang kasaysayan."
         mobile: 
-            title: "Ang Bible app"
-            description: "Magbasa ng Salita ng Diyos kahit kailan, kahit saan gamit ang YouVersion App ng Bibliya. Magbahagi ng mga bersikulo sa mga kaibigan, mag-haylayt at magtanda ng nabasa sa Bibliya, at magbasa araw-araw mula sa Babasahing Gabay. Mayroon sa iOS, Android, Blackberry, Windows Phone at marami pang iba."
+            title: "Ang Bible App"
+            description: "Basahin ang Salita ng Diyos anumang oras, kahit saan gamit ang YouVersion Bible App. Ibahagi ang Banal na Kasulatan sa mga kaibigan, i-highlight at lagyan ng pananda ang mga sipi, at gawing kaugalian ang araw-araw na pagbabasa sa tulong ng Babasahing Gabay. Ito ay maaaring makuha sa iOS, Android, Blackberry, Windows Phone at marami pang iba."
         site: 
             title: "Bible.com"
-            description: "Dalhin ang kagandahan at katotohanan ng Bibliya sa pang-araw-araw na buhay. Gamit ang YouVersion Bible App, maaring magbasa, manuod, makinig, at magbahagi sa iyong smartphone o tablet, at online sa Bible.com."
+            description: "Dalhin ang kagandahan at katotohanan ng Bibliya sa pang-araw-araw na buhay. Gamit ang YouVersion Bible App, maaring magbasa, manood, makinig, at magbahagi sa iyong smartphone o tablet, at online sa Bible.com."
         connections: 
             index: 
                 title: "Mga Kaugnay na Accounts"
@@ -210,7 +212,7 @@ tl:
     save: "I-save"
     cancel: "Itigil"
     try the beta: "Subukan ang Beta"
-    welcome to the beta: "Welcome to Bible.com!"
+    welcome to the beta: "Maligayang pagdating sa Bible.com!"
     highlight: "I-haylayt ang Berso"
     comment: "Bagong Komentaryo"
     note: "Bagong Tala"
@@ -220,7 +222,7 @@ tl:
     notes title: "Mga tala"
     friends: "Mga Kaibigan"
     groups: "Mga Grupo"
-    mobile: "Mobile Apps"
+    mobile: "Apps pang-Mobile"
     live: "Live/Mga Grupo"
     first page: "Unang Pahina"
     last page: "Huling Pahina"
@@ -355,8 +357,8 @@ tl:
             add friend button title: "Magpadala kay %{user} ng hiling upang maging magkaibigan"
             accept button: "Tanggapin"
             accept request button: "Tanggapin ang kahilingan"
-            ignore button: "Decline"
-            ignore request button: "Decline request"
+            ignore button: "Huwag Tanggapin"
+            ignore request button: "Huwag tanggapin ang hiling"
     notes: 
         none user: "Si %{username} ay wala pang mga tala."
         blank slate: 
@@ -407,7 +409,7 @@ tl:
         create failure: "May pagkakamali sa pag-save ng tala"
         destroy success: "Ang tala ay nabura na"
         destroy failure: "May pagkakamali sa pagbura ng tala"
-        update success: "Note updated"
+        update success: "Nabago ang tala"
     ref: 
         loading secondary: "Ikinakarga ang Sanggunian sa Ikalawang Salin..."
         clear verses: "Burahin ang Napiling Talata"
@@ -418,7 +420,7 @@ tl:
         share now: "Magbahagi Ngayon"
         selected: "Pinili"
         preferences: "Mga Preference"
-        listen: "Makinig"
+        listen: "Pakinggan"
         parallel: "Parallel"
         full screen: "Buong Screen"
         about the version: "Tungkol sa %{version}"
@@ -483,7 +485,7 @@ tl:
         no devices download copy: "Batay sa online na Bibliya, ang YouVersion, ang Bible App ay isang libreng mobile na Bibliya na mai-install sa halos kahit anong aparato. Ang Bible App ay nagbibigay pahintulot sa mga gumagamit na magbasa ng Bibliya, mamahagi ng mga talata o berso sa mga social network, mag-bookmark ng mga paboritong kasulatan, at marami pa— sa format na angkop sa makabagong mobile na pamumuhay. Bumisita sa <a href='https://www.bible.com/app'>bible.com/app</a> mula sa iyong mobile para i-download ang Bible App at iugnay ang iyong account!"
         yes delete: "Oo, Burahin ang Aking Account"
         account delete success: "Ang iyong YouVersion account ay matagumpay na itinanggal. Umaasa kaming magkaroon ka ng mga makabuluhang paraan upang makipagugnayan sa Bibliya. Ilan sa apps na ito ay maaaring makatulong sa iyong pag-usad: <a href=http://www.youversion.com/free-bible-apps>http://www.youversion.com/free-bible-apps</a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "Kapag binura mo ang iyong account, permanenteng mawawala ang lahat ng impormasyon, kasaysayan, at pagsasa-ayos (gaya ng mga tala, pananda, haylayt, atbp.) na iyong ginawa sa Bible.com at sa Bible App. Ang gawaing ito ay hindi mo na maaring mabawi o ng aming grupo. Kung sigurado ka sa nais mo, magpatuloy sa ibaba."
         user recent activity: "Mga Huling Aktibidad ni %{user}"
         my notes: "Mga tala"
         user notes: "Mga Tala ni %{user}"
@@ -634,7 +636,7 @@ tl:
             notification errors: "Ang mga sumusunod na error(s) ang dahilan ng hindi pag-update ng iyong mga abiso:"
             edit: "I-edit"
             bio: "Bio"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "Kumpletuhin ang iyong profile sa pamamagitan nang pagpunan ng iyong buong pangalan"
         password: 
             updated: "Tagumpay! Na-update mo ang iyong password."
             error: "Paumanhin, may pagkakamali sa pagpalit ng iyong password."
@@ -643,6 +645,7 @@ tl:
             badges: "Sabihan ako kapag may mga nakuha akong badge."
             follower: "Sabihan ako kapag may sumunod sa akin."
             newsletter: "Panatiliin akong updated sa mga pahayag ng YouVersion."
+            contact_joins: "Ipaalam sa akin kung may Kakilalang sumali"
             note_like: "Paki-notify ako pag may nagkagusto sa aking mga tala."
             reading_plans: "Sabihan ako kung may pagbabago sa mga babasahing gabay na nasimulan ko."
             publishing partners: "Lagi akong padalhan ng mga balita mula sa mga content partners ng YouVersion."
@@ -911,6 +914,7 @@ tl:
         creation form errors: "Ang sumusunod na (mga) pagkakamali ay balakid sa pagbigay ng donasyon:"
     download ad: 
         title: "I-download ang Libreng Bible App"
+        description copy: "Daan-daang salin sa %{language_count}+ na iba't-ibang wika - ang Bibliya na makakasama mo kahit saan."
         line 1: "Daan-daang salin sa 100+"
         line 2: "iba't ibang wika - ang Bibliya"
         line 3: "na kasama mo kahit saan."
@@ -938,7 +942,7 @@ tl:
         facebook: "YouVersion sa Facebook"
         twitter: "YouVersion sa Twitter"
         support: "Kailangan mo ba ng tulong sa YouVersion?"
-        lead copy: "Based on the online Bible, Bible.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle."
+        lead copy: "Batay sa online na Bibliya, Bible.com, ang Bible App ay isang libreng mobile na Bibliya na maaring i-install sa kahit anong telepono. Ang Bible App ay tutulungan ang mga gagamit nito na magbasa ng Bibliya, magbahagi ng taludtod sa mga social network, gumawa ng pananda sa mga paboritong sipi, at marami pang iba—lahat sa paraang sumasabay sa kanilang makabagong mobile na pamumuhay."
         resources title: "Mga Mapagkukunan ng Press"
         now title: "Ngayon sa Komunidad ng YouVersion"
         resources: 
@@ -958,7 +962,7 @@ tl:
     mobile page: 
         h2: "May Bibliya kahit saan."
         h3: "Ang YouVersion ay Pang-Buong Mundo"
-        h3 sub: "Magagamit sa mahigit 100 wika sa buong mundo."
+        h3 sub: "Available sa mahigit %{language_count} na wika sa buong mundo."
         main: "Milyun-milyong tao na ang gumagamit ng  Bible App™ upang ang Salita ng Diyos ay maging bahagi ng kanilang pang-araw-araw na buhay.  I-download ang libreng app at i-access ang iyong bookmark, notes, at plano ng pagbasa kahit saan. Mag-enjoy sa daan-daang bersyon, kasama ang audio, sa lahat ng mobile na kagamitan."
         button h4: "Pumunta sa Bible.com/app"
         button h4 sub: "Sa Iyong Mobile na Kagamitan"
@@ -979,6 +983,7 @@ tl:
         symbian: "Symbian"
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
+        free overlay: "100% Libre"
     pages: 
         generic_error: 
             title: "Oops!"
@@ -986,8 +991,8 @@ tl:
             our action: "Kami ay napagbigay alaman na tungkol dito at ito'y bibigyang pansin sa madaling panahon."
         home: 
             hero: 
-                heading: "Libreng Bibliya para sa cellphone, tablet, at computer."
-                description: "Ang YouVersion ay isang simple at walang patalastas na Bibliyang maghahatid ng Salita ng Diyos sa iyong pang-araw-araw na buhay."
+                heading: "Libreng Bibliya sa iyong telepono, tablet, at computer."
+                description: "Ang YouVersion ay isang simple, walang patalastas na Bibliya na maghahatid ng Salita ng Diyos sa iyong pang-araw-araw na buhay."
                 learn more: "matuto nang higit pa"
                 start reading: "Simulan ang pagbabasa"
                 skip in future: "Laktawan ang pahinang ito sa susunod"
@@ -997,11 +1002,11 @@ tl:
                 read description: "Mamili mula sa <strong>daan-daang salin ng Bibliya at wika</strong>. Paghambingin ang dalawang salin. Maari ka ring pumili ng istilo ng titik at sukat nito. Iayon ang iyong online Bible experience sa iyong kagustuhan."
                 study heading: "Aralin ang Bibliya."
                 study description: "<strong>Mag-highlight</strong> gamit ang iyong gustong kulay,\n<strong>maglagay ng palatandaan</strong> sa mga paboritong bersikulo, at gumawa ng sariling tala sa mga aral na natututunan. Di ka lamang nagbibigay ng oras sa Salita ng Diyos, nakalilikha ka rin ng kasaysayan ng iyong pakikipag-ugnayan sa Bibliya."
-                subscribe heading: "Mag-subscribe sa Bible Plans."
-                subscribe description: "Basahin ang buong Bibliya, pagtuunan ang isang paksa, o magbasa ng isang devotional mula sa isang natatanging guro. Pumili ng plano at araw-araw ay may matutunghayan kang sipi ng Bibliyang para sa iyo."
+                subscribe heading: "Mag-subscribe sa mga Babasahing Gabay."
+                subscribe description: "Basahin ang buong Bibliya, pagtuunan ang isang paksa, o magbasa ng isang devotional mula sa isang natatanging guro. Pumili ng gabay at araw-araw ay may matutunghayan kang sipi ng Bibliya na nakalaan sa iyo."
                 download heading: "Dalhin ang Bibliya kasama mo."
-                download description: "<a href='https://bible.com/download'>I-download</a> nang libre ang Bible App sa kahit aling aparato o mobile device. Sa paggamit mo ng mobile app, ang iyong mga tala, palatandaan, haylayt, sipi, at iba pa ay kaagad na magsi-sync sa lahat ng iyong mga aparato."
-            get started: "Kumuha ng iyong libreng account."
+                download description: "<a href='https://bible.com/download'>I-download</a> nang libre ang Bible App sa kahit aling aparato o mobile device. Sa paggamit mo ng mobile app, ang iyong mga tala, palatandaan, highlight, sipi, at iba pa ay kaagad na magsi-sync sa lahat ng iyong mga aparato."
+            get started: "Simulang gamitin ang iyong libreng account."
             word with you: "Ang Salita ng Diyos ay kasama mo."
             download action: "I-download ang Bible App"
             download description: "I-download ang libreng YouVersion Bible App sa iyong aparato at makakasama mo na ang Bibliya saan ka man magpunta."
@@ -1052,7 +1057,7 @@ tl:
         load error: "Paumanhin, nagkaroon ng suliranin sa pagkuha ng iba pang sipi. Isara ang talang ito at subukang buksan muli."
     campaigns: 
         100m: 
-            logo: "YouVersion: Ang Bible app"
+            logo: "YouVersion: Ang Bible App"
             tagline: "Ito ay nagsisimula sa <em>100 milyon</em>"
             intro: "Maari kayang maabot ng Bible App ang 100 milyong pag-install bago ang aming ika-5 anibersaryo sa ika-10 ng Hulyo? Oo, sa tulong mo!"
             after: "Dahil sa iyo, ang Bible App ay umabot sa 100 milyong pag-install sa aming ika-5 anibersaryo noong Hulyo 10. Maraming salamat!"
@@ -1071,7 +1076,7 @@ tl:
                 p2: "Ngunit mas higit pa? Sa tulong mo, ito ang araw na ang Bible App ay aabot ng 100 milyong download."
                 p3: "Natutunan naming ginagamit ng Diyos ang mga pagdiriwang na ito upang pasimulan ang mas malaki pang pagunlad."
                 p4: "Sama-sama nating gawin ang kasaysayan."
-                after p1: "Ang YouVersion ay isang pandaigdigang samahan ng mga taong nagnanais tumulong upang maipalaganap ang Salita ng Diyos. Sa lahat ng mga komunidad, tagapaglathala ng Bibliya, mga simbahan, pastor at boluntaryo: maraming salamat po!"
+                after p1: "Ang YouVersion ay isang pandaigdigang samahan ng mga taong nagnanais tumulong upang maipalaganap ang Salita ng Diyos. Sa lahat ng mga komunidad, tagapaglathala ng Bibliya, mga simbahan, pastor, at nagbo-boluntaryo: maraming salamat po!"
                 after p2: "Ang pinaka-nakatutuwa tungkol sa gawaing ito ay ang ikinakatawan nito: ngayon, nakikipag-ugnayan sa Bibliya ang mga tao sa bilang na ngayon lamang naabot. Isang malaking pagpapala ang masaksihan ang gawain ng Diyos. Naniniwala kaming ito ay panimula lamang. <em>Nagsisimula ito sa 100 milyon</em>."
             ad: 
                 title: "Ang Bible App ay libre at isang dakilang paraan ng pagbasa ng Bibliya."

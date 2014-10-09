@@ -35,6 +35,7 @@
 //= require ./moments/related_feed
 //= require ./moments/feed
 //= require ./moments/user_feed
+//= require ./moments/user_bookmark_feed
 //= require ./moments/detail_view
 //= require ./menus/base
 //= require ./menus/notifications
@@ -42,6 +43,7 @@
 //= require ./menus/nav_mobile
 //= require ./menus/menu_group
 //= require_self
+//= require jquery.slimscroll.min.js
 //= require jstz-1.0.4
 //= require_tree ./lib/
 //= require_tree ./menus/

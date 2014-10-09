@@ -3,6 +3,8 @@ it:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    counter: 
+        format: "999.999.999"
     social: 
         intro page: 
             main heading: "Conversazione & Scoperta"
@@ -643,6 +645,7 @@ it:
             badges: "Notificami riguardo ai miei distintivi."
             follower: "Notificami quando qualcuno mi segue."
             newsletter: "Tienimi informato su annunci YouVersion."
+            contact_joins: "Notificami quando un Contatto aderisce"
             note_like: "Avvisami quando a qualcuno piacciono le mie note."
             reading_plans: "Avvisami sulle informazioni dei piani di lettura che ho cominciato."
             publishing partners: "Tienimi al corrente delle notizie dai partner di contenuto YouVersion."
@@ -911,6 +914,7 @@ it:
         creation form errors: "I(l) seguenti/e errori hanno impedito di fare un'offerta:"
     download ad: 
         title: "Scarica l'App Bibbia gratuita."
+        description copy: "Centinaia di versioni nel %{language_count}+diverse lingue-la Bibbia che va con te ovunque."
         line 1: "Centinaia di versioni in 100+"
         line 2: "lingue diverse - la Bibbia"
         line 3: "che ti segue ovunque."
@@ -958,7 +962,7 @@ it:
     mobile page: 
         h2: "La Parola di Dio è con te."
         h3: "YouVersion è Globale"
-        h3 sub: "Disponibile in più di 100 lingue in tutto il mondo."
+        h3 sub: "Disponibile in più di %{language_count}lingue in tutto il mondo."
         main: "Decine di milioni di persone stanno usando l'App Bibbia™ per rendere la Parola di Dio parte della loro vita quotidiana. Scarica l'app gratuita e accedi ai tuoi segnalibri, note e piani di lettura ovunque. Avrai a disposizione centinaia di versioni, alcune con audio, sul tuo dispositivo mobile."
         button h4: "Vai alla applicazione Bible.com/app"
         button h4 sub: "Sul Tuo Dispositivo Mobile"
@@ -979,6 +983,7 @@ it:
         symbian: "Symbian"
         mobile web: "Web Mobile"
         amazon: "Kindle Fire"
+        free overlay: "100% Gratis"
     pages: 
         generic_error: 
             title: "Ops!"

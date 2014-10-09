@@ -3,6 +3,8 @@ pt:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    counter: 
+        format: "999.999,999"
     social: 
         intro page: 
             main heading: "Conversa & Descoberta"
@@ -483,7 +485,7 @@ pt:
         no devices download copy: "Baseado na Bíblia online, o aplicativo do YouVersion é uma Bíblia móvel gratuita que pode ser instalada em quase todos os aparelhos móveis. O App da Bíblia permite os usuários lerem a Bíblia, compartilhar versículos nas suas redes sociais, marcar suas passagens favoritas e mais—tudo no formato que acompanha o estilo de vida móvel. Visite <a href='https://www.bible.com/app'>bible.com/app</a> do seu aparelho móvel para baixar o App da Bíblia e conecte sua conta!"
         yes delete: "Sim, Delete Minha Conta"
         account delete success: "Sua conta YouVersion foi deletada com sucesso. Nós esperamos que você continue encontrando outras maneiras de interagir com a Bíblia. Alguns destes apps podem ser úteis nos seus passos daqui pra frente: <a href= http://pt.a.youversion.com/free-bible-apps> http://pt.a.youversion.com/free-bible-apps</a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "Se você apagar sua conta, serão eliminadas em definitivo todas as suas informações, histórico e ajustes pessoais (tais como anotações, marcadores, destaques e etc) feitos no Bible.com e no App da Bíblia. Esta ação não poderá ser desfeita por você ou por nossa equipe. Se você tem certeza que deseja prosseguir com isso, siga as instruções a seguir."
         user recent activity: "Atividade Recente de %{user}"
         my notes: "Anotações"
         user notes: "Anotações de %{user}"
@@ -634,7 +636,7 @@ pt:
             notification errors: "O(s) seguinte(s) erro(s) impediu(ram) a atualização das suas notificações:"
             edit: "Editar"
             bio: "Biografia"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "Complete seu perfil preenchendo com seu primeiro e último nome"
         password: 
             updated: "Sucesso! Você trocou sua senha."
             error: "Desculpe, ocorreu um erro na troca de sua senha."
@@ -643,6 +645,7 @@ pt:
             badges: "Notifique-me quando eu receber uma medalha."
             follower: "Notifique-me quando alguém me seguir."
             newsletter: "Mantenha-me atualizado sobre avisos do YouVersion."
+            contact_joins: "Notifique-me quando um contato se cadastrar"
             note_like: "Notifique-me quando alguém curtir minhas anotações"
             reading_plans: "Notifique-me sobre informações dos planos de leitura que eu iniciei."
             publishing partners: "Me mantenha informado das novidades dos parceiros de conteúdo do YouVersion."
@@ -911,6 +914,7 @@ pt:
         creation form errors: "O(s) seguinte(s) erro(s) impediu(ram) que você completasse sua doação:"
     download ad: 
         title: "Download  do App gratuito da Bíblia"
+        description copy: "Centenas de versões em +%{language_count}línguas diferentes - a Bíblia que vai com você a qualquer lugar."
         line 1: "Centenas de versões em mais"
         line 2: "de 100 idiomas - a Bíblia que"
         line 3: "vai com você a qualquer lugar."
@@ -938,7 +942,7 @@ pt:
         facebook: "YouVersion no Facebook"
         twitter: "YouVersion no Twitter"
         support: "Precisa de ajuda com YouVersion?"
-        lead copy: "Based on the online Bible, Bible.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle."
+        lead copy: "Tendo por base a Bíblia online, Bible.com, o App da Bíblia é uma Bíblia grátis para celular que pode ser instalada em quase todos os telefones. O App da Bíblia permite aos usuários ler a Bíblia, compartilhar versículos nas suas redes sociais, marcar suas passagens favoritas, e muito mais - tudo em um formato que mantêm o seu estilo de vida cada vez mais móvel."
         resources title: "Recursos de Imprensa"
         now title: "Hoje na Comunidade YouVersion"
         resources: 
@@ -958,7 +962,7 @@ pt:
     mobile page: 
         h2: "A Palavra de Deus está com você."
         h3: "YouVersion é Global"
-        h3 sub: "Disponível em mais de 100 idiomas em todo o mundo."
+        h3 sub: "Disponível em mais de %{language_count}idiomas em todo mundo."
         main: "Dezenas de milhões de pessoas estão usando o Aplicativo da Bíblia™ para tornar a Palavra de Deus parte de suas vidas. Baixe o aplicativo gratuito e acesse os seus marcadores, anotações e planos de leitura de qualquer lugar. Desfrute de centenas de versões, incluindo áudio, tudo em seu dispositivo móvel."
         button h4: "Ir para Bible.com/app"
         button h4 sub: "No Seu Dispositivo Móvel"
@@ -979,6 +983,7 @@ pt:
         symbian: "Symbian"
         mobile web: "Web Móvel"
         amazon: "Kindle Fire"
+        free overlay: "100% Gratuita"
     pages: 
         generic_error: 
             title: "Opa!"

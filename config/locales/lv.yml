@@ -3,6 +3,8 @@ lv:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    counter: 
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Saruna un Atklājumi"
@@ -483,7 +485,7 @@ lv:
         no devices download copy: "Balstoties uz tiešsaistes Bībeli YouVersion, Bībeles aplikācija ir bezmaksas mobilā Bībele, kas var tikt uzinstalēta uz gandrīz jebkura telefona. Bībeles aplikācija ļauj lietotājiem lasīt Bībeli, dalīties ar rakstu vietām caur sociāliem tīkliem, izveidot grāmatzīmes un vairāk—viss, formātā, kas spēj turēt līdzi viņu pieaugošajam mobilajam dzīvesveidam. Apmeklē <a href='https://www.bible.com/app'>bible.com/app</a> no savas ierīces lai lejupielādētu Bībeles Aplikāciju un pievienotu savu kontu!"
         yes delete: "Jā, izdzēst manu kontu"
         account delete success: "Jūsu YouVersion konts ir veiksmīgi dzēsts. Mēs ceram jūs turpināsiet meklēt jēgpilnus veidus kā mijiedarboties ar Bībeli. Dažas no šīm aplikācijām varētu jums palīdzēt doties tālāk: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "Ja dzēsīsi savu kontu, Tu neatgriezeniski zaudēsi visu informāciju, vēsturi un personiskos pierakstus (grāmatzīmes, iekrāsojumus uc.) Bible.com un Bībeles aplikācijā. Šī darbību ne mēs, ne Tu, nevarēsim atjaunot. Ja esi pārliecināts, ka vēlies turpināt, spied tālāk."
         user recent activity: "%{user} pēdējās aktivitātes"
         my notes: "Piezīmes"
         user notes: "%{user} piezīmes"
@@ -643,6 +645,7 @@ lv:
             badges: "Informēt mani par iegūtajām nozīmītēm."
             follower: "Informēt mani, kad kāds sāk man sekot."
             newsletter: "Informēt mani par jaunumiem YouVersion."
+            contact_joins: "Paziņot, kad pievienojas kāds no kontaktiem."
             note_like: "Informēt mani, ja kādam patīk manas piezīmes."
             reading_plans: "Informēt mani par plāniem, kurus lasu."
             publishing partners: "Turiet mani informētu par jaunumiem no YouVersion satura partneriem."
@@ -911,6 +914,7 @@ lv:
         creation form errors: "Sekojoša kļūme(s) neļāva veikt ziedojumu:"
     download ad: 
         title: "Lejuplādē bezmaksas Bībeles aplikāciju"
+        description copy: "Simtiem versiju %{language_count}+ dažādās valodās - Bībele, kas dodas Tev līdzi jebkur."
         line 1: "Iekšā \"100+\" simtiem versiju"
         line 2: "dažādas valodas - Bībele"
         line 3: "Tas jebkur dodas jums līdzi."
@@ -958,7 +962,7 @@ lv:
     mobile page: 
         h2: "Dieva vārds ir ar jums"
         h3: "YouVersion ir globāla"
-        h3 sub: "Pieejama vairāk kā 100 valodās visā pasaulē"
+        h3 sub: "Pieejams vairāk kā %{language_count} valodās visā pasaulē."
         main: "Desmitiem miljonu cilvēku lieto Bībeles aplikāciju™ lai padarītu Dieva Vārdu par daļu no viņu ikdienas dzīves. Lejupielādē bezmaksas aplikāciju un piekļūsti savām grāmatzīmēm, piezīmēm un lasīšanas plāniem no jebkuras vietas. Izbaudi simtiem tulkojumu, ieskaitot audio, viss uz tavas mobilās ierīces."
         button h4: "Doties uz Bible.com/app"
         button h4 sub: "Uz jūsu ierīces"
@@ -979,6 +983,7 @@ lv:
         symbian: "Symbian"
         mobile web: "mobilais internets"
         amazon: "Kindle Fire"
+        free overlay: "100% bezmaksas"
     pages: 
         generic_error: 
             title: "Ak vai!"

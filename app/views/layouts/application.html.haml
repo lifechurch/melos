@@ -30,11 +30,12 @@
           = content_for?(:main) ? yield(:main) : yield
 
         #sidebar{class: (content_for :sidebar_class if content_for? :sidebar_class)}
-          - if content_for? :sidebar
-            = yield :sidebar
-          - else
-            - unless (@sidebar == false || sidebar_presenter.blank?)
-              = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
+          #sidebar-scroll
+            - if content_for? :sidebar
+              = yield :sidebar
+            - else
+              - unless (@sidebar == false || sidebar_presenter.blank?)
+                = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
 
 
       = render partial: '/shared/footer', locals: {footer_classes: container_class_str}

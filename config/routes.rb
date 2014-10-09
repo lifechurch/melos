@@ -5,7 +5,8 @@ YouversionWeb::Application.routes.draw do
   get "/privacy",       to: "pages#privacy"
   get "/donate",        to: "pages#donate"
   get "/about",         to: "pages#about"
-  get "/press",         to: redirect("http://youversion.com/press")
+  # get "/press",         to: redirect("http://youversion.com/press")
+  get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
@@ -73,14 +74,13 @@ YouversionWeb::Application.routes.draw do
     resources :devices, only: [:index,:destroy]
     resources :vod_subscriptions
 
-    # bible.com/users/:id/connections => connections#index
-    
-    # removing for 3.1 social launch until we have proper API to add twitter/facebook credentials again.
-    # get :connections, on: :member, to: "connections#index"
+    # bible.com/users/:id/connections => connections#index    
+    get :connections, on: :member, to: "connections#index", as: 'connections'
 
     get :delete_account, on: :member
     get :notes,       on: :member, as: 'notes'
     get :bookmarks,   on: :member, as: 'bookmarks'
+    get '_bookmarks', on: :member
     get :highlights,  on: :member, as: 'highlights'
     get :badges,      on: :member, as: 'badges'
 
@@ -181,9 +181,7 @@ YouversionWeb::Application.routes.draw do
   get "/settings/notifications",           to: "redirects#settings_notifications", as: "notification_settings"
   get "/settings/delete_account",          to: "redirects#delete_account"
   get "/settings/vod_subscriptions",       to: "redirects#settings_vod_subscriptions"
-  
-  # Removed for 3.1 social - will be making a comeback
-  #get "/settings/connections",             to: "redirects#settings_connections"
+  get "/settings/connections",             to: "redirects#settings_connections"
 
 # Redirect to a.youversion.com/groups/lifechurchtv
   get "/lifechurchtv",  to: "redirects#lifechurchtv"

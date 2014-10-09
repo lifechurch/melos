@@ -17,7 +17,7 @@ class Plan < YV::Resource
   attribute :formatted_length
   attribute :publisher_url
   attribute :images
-
+  attribute :language_tag
   attribute :errors
 
   #attr_i18n_reader :about

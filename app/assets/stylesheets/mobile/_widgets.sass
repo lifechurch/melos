@@ -484,6 +484,77 @@ html[data-locale="en"]
           .calendar-arrow-txt
             font-size: 12px
 
+
+// !Reading plan sample calendar widget
+
+#widget-plan-controls
+  #calendar.rp-sample
+
+    a,
+    h4,
+    span,
+    div
+      box-sizing: border-box
+
+    .calendar-prev,
+    .calendar-day,
+    .calendar-next
+      float: left
+      height: 70px
+      display: block
+
+      .disabled
+        opacity: .2
+
+      a
+        height: 70px
+        width: 80%
+        margin: 0 auto
+        padding: 9px 0 0
+        text-align: center
+        display: block
+
+        .calendar-arrows
+          height: 21px
+          display: block
+          width: 21px
+          margin: 0 auto 5px
+          background: image-url("pagination-arrows-rp.png") no-repeat
+          background-size: 84px 21px
+
+        .calendar-arrow-txt
+          padding: 4px 0 0
+          font-size: 12px
+          color: #9F9EA2
+          line-height: 1em
+          display: block
+
+      h4
+        height: 70px
+        margin: 0
+        text-align: center
+        padding: 27px 0 0
+
+    .calendar-prev
+      width: 20%
+      border-right: 1px solid #dedddb
+
+      a
+        .calendar-arrows
+          background-position: -21px 0
+
+    .calendar-day
+      width: 60%
+
+    .calendar-next
+      width: 20%
+      border-left: 1px solid #dedddb
+
+      a
+        .calendar-arrows
+          background-position: -42px 0
+
+
 // --- Custom widgets ------
 
 #widget-100m-ad

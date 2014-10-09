@@ -3,6 +3,8 @@ zh-TW:
     time: 
         formats: 
             votd: "%Y/%B/%-d"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "對話與發現"
@@ -643,6 +645,7 @@ zh-TW:
             badges: "當我贏得徽章時通知我。"
             follower: "當有人關注我時通知我。"
             newsletter: "通知我有關 YouVersion 的公告"
+            contact_joins: "如有聯絡人加入，請通知我。"
             note_like: "當有人喜歡我的筆記時通知我。"
             reading_plans: "通知我關於我已開始的讀經計劃的資訊。"
             publishing partners: "請及時通知我 YouVersion 內容夥伴的消息更新。"
@@ -911,6 +914,7 @@ zh-TW:
         creation form errors: "下列錯誤妨礙了您進行捐獻："
     download ad: 
         title: "免費下載聖經軟體"
+        description copy: "數以百計以超過%{language_count} 種不同語言譯成的版本 - 聖經軟體伴您左右。"
         line 1: "幾百種不同的譯本"
         line 2: "上百種不同的語言 —— 這聖經"
         line 3: "都能隨身跟着您"
@@ -958,7 +962,7 @@ zh-TW:
     mobile page: 
         h2: "上帝的話語與您同在。"
         h3: "YouVersion 是全球性的"
-        h3 sub: "提供給全世界超過100種語言的譯本。"
+        h3 sub: "提供超過 %{language_count} 種語言。"
         main: "數以千萬的人們透過聖經軟體來讓上帝的話語成為他們日常生活的一部份。請下載這個免費軟體然後隨時隨地存取您的書籤、筆記和讀經計劃。享受使用上百個聖經譯本，包括語音版，全部都在您的行動設備裡。"
         button h4: "前往 Bible.com/app"
         button h4 sub: "在您的行動設備上"
@@ -979,6 +983,7 @@ zh-TW:
         symbian: "Symbian"
         mobile web: "行動網路"
         amazon: "Kindle Fire"
+        free overlay: "100% 免費"
     pages: 
         generic_error: 
             title: "抱歉！"

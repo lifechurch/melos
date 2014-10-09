@@ -3,6 +3,8 @@ ko:
     time: 
         formats: 
             votd: "%Y.%B.%-d"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "대화와 발견"
@@ -210,7 +212,7 @@ ko:
     save: "저장"
     cancel: "취소"
     try the beta: "베타 버젼을 사용해보세요."
-    welcome to the beta: "Welcome to Bible.com!"
+    welcome to the beta: "Bible.com에 오신 것을 환영합니다."
     highlight: "구절 하이라이트 하기"
     comment: "새로운 코멘트"
     note: "새 노트"
@@ -220,7 +222,7 @@ ko:
     notes title: "노트"
     friends: "내 친구"
     groups: "그룹"
-    mobile: "Mobile Apps"
+    mobile: "모바일 앱"
     live: "라이브/그룹"
     first page: "첫 페이지"
     last page: "마지막 페이지"
@@ -355,8 +357,8 @@ ko:
             add friend button title: "%{user}님께 친구 신청"
             accept button: "수락"
             accept request button: "요청 수락"
-            ignore button: "Decline"
-            ignore request button: "Decline request"
+            ignore button: "거절"
+            ignore request button: "친구요청 거절"
     notes: 
         none user: "%{username}님은 아직 작성한 노트가 없습니다."
         blank slate: 
@@ -407,7 +409,7 @@ ko:
         create failure: "노트 저장 오류"
         destroy success: "노트가 삭제되었습니다."
         destroy failure: "노트삭제 오류"
-        update success: "Note updated"
+        update success: "노트 업데이트 완료"
     ref: 
         loading secondary: "두번째 번역본에서 참고 구절을 로딩합니다."
         clear verses: "선택구절 취소"
@@ -483,7 +485,7 @@ ko:
         no devices download copy: "YouVersion 성경 앱은 거의 모든 이동 기기에 설치가 가능한 온라인 기반의 성경입니다. 성경 앱은 모바일 환경에서 성경을 읽고, 소셜 네트워크를 통해서 말씀을 나누고, 성경 구절을 책갈피하는 등등 여러가지 일들을 가능하게 해 줍니다.  여러분의 이동기기에서 <a href='https://www.bible.com/app'>bible.com/app</a>를 방문하셔서 성경 앱을 다운로드하고 계정을 연결하세요!"
         yes delete: "계정을 삭제해주세요."
         account delete success: "YouVersion 계정이 삭제되었습니다. 앞으로도 성경과 계속 동행하시기를 바랍니다.  아래의 앱들이 혹 도움이 될 것 같아서 소개합니다.\n<a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "계정을 삭제하시면 여러분과 관련된 모든 정보, 과거 기록 그리고 Bible.com과 성경 앱의 개인 기록들이 (노트, 책갈피, 하이라이트 등등) 모두 영구히 삭제 됩니다.  그리고 계정 삭제는 여러분 혹은 저희 팀도 되돌릴 수 없습니다. 정말 삭제 하길 원하시면 아래의 절차를 따라 주십시오."
         user recent activity: "%{user}님의 최근활동"
         my notes: "내 노트"
         user notes: "%{user} 님 노트"
@@ -634,7 +636,7 @@ ko:
             notification errors: "아래 오류로 인해 알림 설정을 변경하지 못했습니다."
             edit: "수정"
             bio: "자기소개"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "이름을 입력하여서 프로필을 완성하세요."
         password: 
             updated: "비밀번호가 변경되었습니다!"
             error: "죄송합니다. 비밀번호를 변경에 오류가 발생하였습니다."
@@ -643,6 +645,7 @@ ko:
             badges: "배지를 획득할 때마다 통보"
             follower: "다른 회원이 회원님을 팔로우 시작할 때  때 알림"
             newsletter: "YouVersion 신규 공지사항 수신하기"
+            contact_joins: "연락처에 있는 친구가 발견되었을 때 알려 주기."
             note_like: "내 노트를 좋아하는 사람이 있을 때 알림"
             reading_plans: "시작한 읽기 계획에 대한 상세정보 알림"
             publishing partners: "YouVersion 콘텐츠 파트너로 부터의 소식을 계속 받고 싶습니다."
@@ -911,6 +914,7 @@ ko:
         creation form errors: "아래의 이유로 인해서 후원이 결제되지 않았습니다."
     download ad: 
         title: "무료 성경 앱을 다운로드하세요"
+        description copy: "%{language_count}개 이상의 언어로 제공되는 수백개의 번역본 - 성경이 여러분과 늘 함께 합니다."
         line 1: "어디서나 함께 할 수 있는"
         line 2: "수백개의 언어로 수백개의"
         line 3: "번역본을 제공하는 성경앱."
@@ -938,7 +942,7 @@ ko:
         facebook: "YouVersion 페이스북"
         twitter: "YouVersion 트위터"
         support: "YouVersion 사용에 도움이 필요합니까?"
-        lead copy: "Based on the online Bible, Bible.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle."
+        lead copy: "온라인 성경 Bible.com에 기반을 둔 성경 앱은 거의 모든 이동 기기에 설치가 가능한 무료 성경 앱입니다.  성경 앱은 사용자가 성경을 읽고, 말씀을 소셜 네트워크를 통해서 나누고, 좋아하는 구절을 책갈피하고 그 밖에 더 많은 것들을 가능하게 합니다.  "
         resources title: "기사 자료"
         now title: "YouVersion 공동체의 오늘"
         resources: 
@@ -958,7 +962,7 @@ ko:
     mobile page: 
         h2: "하나님의 말씀이 함께 합니다."
         h3: "YouVersion은 세계적인 공동체입니다."
-        h3 sub: "전세계 수백개의 언어를 지원합니다."
+        h3 sub: "전세계적으로 %{language_count}개 이상의 언어로 제공되고 있습니다."
         main: "수천만의 사람들이 성경앱™을 통해서 하나님의 말씀이 그들의 일상 생활의 한 부분이 되도록 사용하고 있습니다. 이 무료 앱을 다운로드하여 책갈피, 노트및 성경읽기계획 등을 어디에서나 사용하세요. 수백 종의 번역본을 비롯한 오디오 성경을 여러분의 모바일 기기에서 사용하세요."
         button h4: "Bible.com/app 으로 가기"
         button h4 sub: "이동기기 상에서"
@@ -979,6 +983,7 @@ ko:
         symbian: "심비안"
         mobile web: "모바일 웹"
         amazon: "킨들 파이어"
+        free overlay: "100% 무료"
     pages: 
         generic_error: 
             title: "죄송합니다."
@@ -1000,7 +1005,7 @@ ko:
                 subscribe heading: "성경 읽기계획"
                 subscribe description: "성경 전체를 통독하거나, 주제별로 읽을 수 있습니다. 그리고 훌륭한 분들의 묵상을 읽을 수도 있습니다.  성경 읽기계획을 선택하기만 하면 매일 분량의 성경 내용이 자동으로 공급됩니다."
                 download heading: "늘 함께 하는 성경"
-                download description: "<a href='https://bible.com/download'>Download</a> the Bible App for free on any mobile device. When you use the mobile app, your notes, bookmarks, highlights, plans, and more will be automatically synced across all of your devices."
+                download description: "원하는 이동기기에 성경 앱을 무료로 <a href='https://bible.com/download'>다운로드</a> 받으세요. 개인 노트, 책갈피, 하이라이트, 읽기 계획 등이 자동으로 동기화 되므로, 어떤 기기를 사용하든지 같은 내용을 보실 수 있습니다."
             get started: "무료 계정을 지금 만드셔서 바로 시작하세요."
             word with you: "하나님의 말씀이 당신과 함께 합니다."
             download action: "성경 앱 다운로드 하기"

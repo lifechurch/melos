@@ -3,6 +3,8 @@ ja:
     time: 
         formats: 
             votd: "%Y年%B%-d日"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "会話と発見"
@@ -643,6 +645,7 @@ ja:
             badges: "バッジを獲得した時に通知する"
             follower: "誰かにフォローされた時に通知する"
             newsletter: "YouVersion からの最新情報を受信する"
+            contact_joins: "Notify me when a Contact joins"
             note_like: "私のノートがお気に入りに追加されたら通知を受ける"
             reading_plans: "利用中の読書プランに関する情報の通知を受ける"
             publishing partners: "YouVersionのコンテンツパートナーからのニュースを受け取る"
@@ -911,6 +914,7 @@ ja:
         creation form errors: "以下のエラーが発生したために、寄付することができませんでした。"
     download ad: 
         title: "無料聖書アプリをダウンロード"
+        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
         line 1: "100ヶ国語以上で書かれた"
         line 2: "何百種もの訳が利用可能な"
         line 3: "いつでもどこでも使える聖書"
@@ -958,7 +962,7 @@ ja:
     mobile page: 
         h2: "神様の御言葉と共に"
         h3: "YouVersion はグローバルです"
-        h3 sub: "世界中の100ヶ国語以上でご利用いただけます"
+        h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。"
         button h4: "Bible.com/appに行く"
         button h4 sub: "モバイル機器で利用"
@@ -979,6 +983,7 @@ ja:
         symbian: "Symbian"
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
+        free overlay: "100% Free"
     pages: 
         generic_error: 
             title: "申し訳ありません。"

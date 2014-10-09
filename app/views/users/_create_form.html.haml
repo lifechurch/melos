@@ -22,7 +22,7 @@
   %p
     = f.label :password, t("password prompt")
     %br
-    = f.password_field :password
+    = f.password_field :password, :maxlength=>"32"
   %p
     = f.check_box :agree
     = f.label :agree, t("users.agreement", terms_link: link_to(t("users.terms and conditions"), terms_url())).html_safe

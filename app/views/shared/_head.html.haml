@@ -34,6 +34,9 @@
 = content_for?(:additional_meta) ? yield(:additional_meta) : nil
 = content_for?(:stylesheets) ? yield(:stylesheets) : nil
 
+- @native_url = session[:native_url] if session[:native_url].present?
+- @user_agent = session[:user_agent] if session[:user_agent].present?
+- session.delete(:native_url) if session[:native_url].present?
 - if @native_url.present?
   %meta{name: "native-url", content: @native_url}
 
@@ -47,17 +50,16 @@
             nativeTimeout,
             launchTime = +new Date;
 
-        
         if (!nativeUrl) return;        
         if (document.cookie && ~document.cookie.indexOf('noNative=true')) return;
 
         nativeTimeout = setTimeout(function() {
           var now = +new Date
-            , tenDays = 864000000
+            , oneMinute = 60000
           if (now - launchTime < 1500) {
             document.cookie = [
               'noNative=true',
-              'expires=' + new Date(now + tenDays).toUTCString()
+              'expires=' + new Date(now + oneMinute).toUTCString()
             ].join('; ');
           }
         }, 1000);

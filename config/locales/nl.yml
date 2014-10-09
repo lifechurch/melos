@@ -3,6 +3,8 @@ nl:
     time: 
         formats: 
             votd: "%-d, %b, %Y"
+    counter: 
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "Gesprek & Ontdekking"
@@ -643,6 +645,7 @@ nl:
             badges: "Laat het me weten als ik een medaille heb verdiend."
             follower: "Laat het me weten als iemand me gaat volgen."
             newsletter: "Houd mij op de hoogte van aankondigingen van YouVersion."
+            contact_joins: "Waarschuw mij als een contact zich toevoegt"
             note_like: "Laat het me weten als iemand mijn notities leuk vindt."
             reading_plans: "Laat het me weten als er informatie is over de leesplannen waaraan ik begonnen ben."
             publishing partners: "Hou me op de hoogte van nieuws over YouVersion's inhoudelijke partners."
@@ -911,6 +914,7 @@ nl:
         creation form errors: "De volgende fout(en) zorgden ervoor dat je bijdrage niet is doorgekomen:"
     download ad: 
         title: "Download de gratis Bijbel App"
+        description copy: "Honderden versies %{language_count}+ verschillende talen - de Bijbel die u overal vergezelt."
         line 1: "Honderden vertalingen in 100+"
         line 2: "verschillende talen - de Bijbel"
         line 3: "die overal met je meegaat."
@@ -958,7 +962,7 @@ nl:
     mobile page: 
         h2: "Gods Woord is met jou."
         h3: "YouVersion is wereldwijd"
-        h3 sub: "Wereldwijd beschikbaar in meer dan 100 talen."
+        h3 sub: "Beschikbaar in meer dan %{language_count} talen wereldwijd."
         main: "Tientallen millioenen mensen gebruiken de Bijbel App om Gods Woord een deel van hun leven te maken. Download de gratis app en krijg toegang op je bladwijzers, notitities en leesplannen vanaf elke plek. Geniet van honderden vertalingen, inclusief audio, alles op je mobiele apparaat."
         button h4: "Ga naar Bible.com/app"
         button h4 sub: "op je mobiele apparaat"
@@ -979,6 +983,7 @@ nl:
         symbian: "Symbian"
         mobile web: "Mobiel internet"
         amazon: "Kindle Fire"
+        free overlay: "100% Gratis"
     pages: 
         generic_error: 
             title: "Oeps!"

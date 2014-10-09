@@ -3,6 +3,8 @@ de:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    counter: 
+        format: "999.999.999"
     social: 
         intro page: 
             main heading: "Unterhaltung & Entdeckung"
@@ -643,6 +645,7 @@ de:
             badges: "Benachrichtigt mich über Abzeichen, die ich verdient habe."
             follower: "Benachrichtigt mich, wenn mir jemand folgt."
             newsletter: "Sendet mit Neues über YouVersion."
+            contact_joins: "Informiere mich, wenn ein Kontakt YV beitritt."
             note_like: "Benachrichtigt mich, wenn jemandem meine Notizen gefallen."
             reading_plans: "Benachrichtigt mich über meine abonnierten Lesepläne."
             publishing partners: "Sendet mir bitte Nachrichten über den Inhalt von Partnern von YouVersion."
@@ -911,6 +914,7 @@ de:
         creation form errors: "Folgende(r) Fehler verhindern eine Spende:"
     download ad: 
         title: "Lade dir die Bibel App gratis herunter."
+        description copy: "Hunderte von Bibelübersetzungen in über %{language_count}verschiedenen Sprachen. Mit der App hast du die Bibel überall dabei."
         line 1: "Hunderte Übersetzungen in über 100"
         line 2: "verschiedenen Sprachen - die Bibel,"
         line 3: "die du überall hin mitnehmen kannst."
@@ -958,7 +962,7 @@ de:
     mobile page: 
         h2: "Gottes Wort begleitet dich."
         h3: "YouVersion global"
-        h3 sub: "in über 100 Sprachen weltweit verfügbar."
+        h3 sub: "Weltweit verfügbar in mehr als %{language_count} Sprachen."
         main: "Zig Millionen Menschen nutzen die Bibel App™, um Gottes Wort zu einem Teil ihres täglichen Lebens zu machen. Lade die kostenlose App herunter und greife von überall aus auf deine Lesezeichen, Notizen und Leseplänen zu. Genieße hunderte Bibelübersetzungen, darunter auch Hörbibeln, auf deinem mobilen Gerät."
         button h4: "Gehe zu Bible.com/app"
         button h4 sub: "auf deinem mobilen Gerät"
@@ -979,6 +983,7 @@ de:
         symbian: "Symbian"
         mobile web: "Mobiles Internet"
         amazon: "Kindle Fire"
+        free overlay: "kostenlos"
     pages: 
         generic_error: 
             title: "Hoppla!"

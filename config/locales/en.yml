@@ -2,6 +2,8 @@ en:
   time:
     formats:
       votd: "%B %-d, %Y"
+  counter:
+    format: "999,999,999"
   social:
     intro page:
       main heading:                             "Conversation & Discovery"
@@ -491,6 +493,7 @@ en:
     user friends:                               "%{user}'s Friends"
     my bookmarks:                               "My Bookmarks"
     user bookmarks:                             "%{user}'s Bookmarks"
+
     my badges:                                  "My Badges"
     revised date:                               "Last revised on %{date}"
     update email copy:                          "Enter a new email address and click Update Email. We'll send you a link to confirm your new email address."
@@ -662,6 +665,7 @@ en:
     labels label:                               "Labels:"
     title:                                      "Bookmarks"
     my labels:                                  "My Labels"
+    all labels:                                 "Show All"
     not found:                                  "Bookmarks give you a quick reference guide to your favorite passages or to the last chapter you read in a particular book. To add a bookmark, select a verse in the Bible reader and then click the Selected button at the top of the reader."
     other user not found:                       "%{username} hasn't saved any bookmarks yet."
     creation form errors:                       "The following error(s) prevented creation of your bookmark:"
@@ -912,6 +916,7 @@ en:
     creation form errors:                       "The following error(s) prevented making a donation:"
   download ad:
     title:                                      "Download the Free Bible App"
+    description copy:                           "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
     line 1:                                     "Hundreds of versions in 100+"
     line 2:                                     "different languages - the Bible"
     line 3:                                     "that goes with you anywhere."
@@ -959,7 +964,7 @@ en:
   mobile page:
     h2:                                         "God's Word is with you."
     h3:                                         "YouVersion is Global"
-    h3 sub:                                     "Available in more than 100 languages worldwide."
+    h3 sub:                                     "Available in more than %{language_count} languages worldwide."
     main:                                       "Tens of millions of people are using the Bible App&trade; to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
     button h4:                                  "Go to Bible.com/app"
     button h4 sub:                              "On Your Mobile Device"
@@ -980,6 +985,7 @@ en:
     symbian:                                    "Symbian"
     mobile web:                                 "Mobile Web"
     amazon:                                     "Kindle Fire"
+    free overlay:                               "100% Free"
   pages:
     generic_error:
       title:                                    "Oops!"

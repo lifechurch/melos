@@ -5,8 +5,8 @@ class BookmarksController < BaseMomentsController
     moment_comments_display false
 
   # Filters
+    prepend_before_filter :mobile_redirect, only: [:show]
     before_filter :force_login
-    before_filter :mobile_redirect, only: [:show]
 
   def show
     @moment = Bookmark.find(params[:id], auth: current_auth)

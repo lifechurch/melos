@@ -1,7 +1,7 @@
 class SubscriptionsController < ApplicationController
 
   respond_to :html
-  before_filter :mobile_redirect, only: [:show]
+  prepend_before_filter :mobile_redirect, only: [:show]
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
   before_filter :find_subscription,     only: [:show,:destroy,:edit,:update,:calendar]
@@ -26,7 +26,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth, private: params[:privacy].to_bool)
+    @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth, private: params[:privacy].to_bool, language_tag: current_user.language_tag)
     flash[:notice] = t("plans.subscribe successful")
     respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id]))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
@@ -36,7 +36,7 @@ class SubscriptionsController < ApplicationController
     @subscription.destroy
     flash[:notice] = t("plans.unsubscribe successful")
     respond_with([@subscription], location: subscriptions_path(user_id: current_user.to_param))
-    # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
+    # TODO look into having to do [@subscription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
   def update
