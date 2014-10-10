@@ -1,160 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Turkish translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# Caleb Maclennan <alerque@gmail.com>, 2014
-# Josh W <wolfhawke@wolfhawke.com>, 2013-2014
-# Melek Cansu Petek <melekcansu@gmail.com>, 2013-2014
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# Caleb Maclennan <alerque@gmail.com>, 2014
-# Josh W <wolfhawke@wolfhawke.com>, 2013-2014
-# Melek Cansu Petek <melekcansu@gmail.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# Anke Stoye <ankestoyeyouversion@gmail.com>, 2013
-# Caleb Maclennan <alerque@gmail.com>, 2014
-# Josh W <wolfhawke@wolfhawke.com>, 2013
-# nicholas_drake <nickmarsha@gmail.com>, 2014
-# nicholas_drake <nickmarsha@gmail.com>, 2014
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-02 07:51+0000\n"
-"Last-Translator: Caleb Maclennan <alerque@gmail.com>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/yv-backend/language/tr/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: tr <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-02 07:51+0000\n"
-"Last-Translator: Caleb Maclennan <alerque@gmail.com>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/yv-backend/language/tr/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: tr <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 15:01+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/yv-backend/language/tr/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: tr <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Kutsal Kitap Dizisi</i>"
-
-msgid "moment.system.bible_series_promo.body"
-msgstr "Bu gece <i>Kutsal Kitap Dizisi</i>’ni izleyin!"
-
-msgid "moment.bookmark.title"
-msgstr "{name} <b>{reference_human}</b> ayetini yer imlerine ekledi"
-
-msgid "moment.bookmark.self.title"
-msgstr "Siz <b>{reference_human}</b> ayetini yer imlerine eklediniz"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} <b>{friend_name}</b> ile arkadaş oldu."
-
-msgid "moment.friendship.self.title"
-msgstr "Siz <b>{friend_name}</b> ile arkadaş oldunuz."
-
-msgid "moment.highlight.title"
-msgstr "{name} <b>{reference_human}</b> ayetini vurguladı."
-
-msgid "moment.highlight.self.title"
-msgstr "Siz <b>{reference_human}</b> ayetini vurguladınız."
-
-msgid "moment.note.title"
-msgstr "{name} <b>{title}</b> başlıklı bir not ekledi"
-
-msgid "moment.note.self.title"
-msgstr "Siz <b>{title}</b> başlıklı bir not eklediniz"
-
-msgid "moment.bible.download.title"
-msgstr "{name} <b>{version}</b> çevirisini indirdi"
-
-msgid "moment.bible.download.self.title"
-msgstr "Siz <b>{version}</b> çevirisini indirdiniz"
-
-msgid "moment.plan_subscription.title"
-msgstr "{name} bir okuma planını başladı"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "Okuma planını başlandı"
-
-msgid "moment.plan_segment_completion.title"
-msgstr "{name}, <b>{title}</b> başlıklı okuma planının <b>{segment}</b> gününü tamamladı"
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "<b>{title}</b> başlıklı okuma planının <b>{segment}</b> gününü tamamladınız"
-
-msgid "moment.plan_segment_completion.body"
-msgstr "Toplam {total_segments} günden {segment} (%{percent_complete})"
-
-msgid "moment.plan_completion.title"
-msgstr "{name} bir okuma planını tamamladı"
-
-msgid "moment.plan_completion.self.title"
-msgstr "Okuma planı tamamlandı"
-
-msgid "moment.badge.earned.title"
-msgstr "{name} <b>{title}</b> rozetini kazandı"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Siz <b>{title}</b> rozetini kazandınız"
 
-msgid "moment.video.watched.title"
-msgstr "{name} <b>{title}</b> başlıklı videoyu izledi"
+msgid "moment.badge.earned.title"
+msgstr "{name} <b>{title}</b> rozetini kazandı"
 
-msgid "moment.video.watched.self.title"
-msgstr "Siz  <b>{title}</b> başlıklı videoyu izlediniz"
+msgid "moment.bible.download.self.title"
+msgstr "Siz <b>{version}</b> çevirisini indirdiniz"
+
+msgid "moment.bible.download.title"
+msgstr "{name} <b>{version}</b> çevirisini indirdi"
+
+msgid "moment.bookmark.self.title"
+msgstr "Siz <b>{reference_human}</b> ayetini yer imlerine eklediniz"
+
+msgid "moment.bookmark.title"
+msgstr "{name} <b>{reference_human}</b> ayetini yer imlerine ekledi"
+
+msgid "moment.friendship.self.title"
+msgstr "Siz <b>{friend_name}</b> ile arkadaş oldunuz."
+
+msgid "moment.friendship.title"
+msgstr "{user_name} <b>{friend_name}</b> ile arkadaş oldu."
+
+msgid "moment.highlight.self.title"
+msgstr "Siz <b>{reference_human}</b> ayetini vurguladınız."
+
+msgid "moment.highlight.title"
+msgstr "{name} <b>{reference_human}</b> ayetini vurguladı."
+
+msgid "moment.note.self.title"
+msgstr "Siz <b>{title}</b> başlıklı bir not eklediniz"
+
+msgid "moment.note.title"
+msgstr "{name} <b>{title}</b> başlıklı bir not ekledi"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Okuma planı tamamlandı"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} bir okuma planını tamamladı"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Toplam {total_segments} günden {segment} (%{percent_complete})"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "<b>{title}</b> başlıklı okuma planının <b>{segment}</b> gününü tamamladınız"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name}, <b>{title}</b> başlıklı okuma planının <b>{segment}</b> gününü tamamladı"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Okuma planını başlandı"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} bir okuma planını başladı"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Bu gece <i>Kutsal Kitap Dizisi</i>’ni izleyin!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Kutsal Kitap Dizisi</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "Kutsal Kitap Uygulaması'nı Arkadaşlarınızla kullanmak çok daha iyi. Arkadaşlarınızı bulmak için Kişilerinizi arayın."
 
-msgid "notifications.friendships.offer"
-msgstr "{name} YouVersion’da arkadaşınız olmak istiyor"
+msgid "moment.video.watched.self.title"
+msgstr "Siz  <b>{title}</b> başlıklı videoyu izlediniz"
 
-msgid "notifications.friendships.accept"
-msgstr "{name} arkadaşlık isteğinizi kabul etti"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} artık arkadaşınız"
-
-msgid "notifications.friendships.suggestion"
-msgstr "{name} ile YouVersion’da arkadaş olmak istiyor musunuz?"
+msgid "moment.video.watched.title"
+msgstr "{name} <b>{title}</b> başlıklı videoyu izledi"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} yer iminiz hakkında yorum yaptı: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} {friend_name} kişisiyle arkadaşlığınız hakkında yorumda bulundu: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} vurgunuz hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} notunuz hakkında yorum yaptı: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} okuma planınız hakkında yorum yaptı: “{comment}”"
@@ -162,26 +132,65 @@ msgstr "{name} okuma planınız hakkında yorum yaptı: “{comment}”"
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} Kutsal Kitap okuma planınız hakkında yorum yaptı: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} {friend_name} kişisiyle arkadaşlığınız hakkında yorumda bulundu: “{comment}” "
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} de {moment_owner_name} kişisinin yer imi hakkında yorum yaptı: “{comment}”"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} notunuz hakkında yorum yaptı: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} de {moment_owner_name} kişisinin {friend_name} ile yeni arkadaşlığı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} de {moment_owner_name} kişisinin vurgusu hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} de {moment_owner_name} kişisinin notu hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} de kendi yer imi hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} de {friend_name} kişisiyle arkadaşlığı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} de kendi vurgusu hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} de kendi notu hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} de kendi okuma planı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} de kendisinin Kutsal Kitap okuma planı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} de {moment_owner_name} kişisinin okuma planı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} kişisi de {moment_owner_name} kişisinin Kutsal Kitap okuma planı hakkında yorum yaptı: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} arkadaşlık isteğinizi kabul etti"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} artık arkadaşınız"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} YouVersion’da arkadaşınız olmak istiyor"
+
+msgid "notifications.friendships.suggestion"
+msgstr "{name} ile YouVersion’da arkadaş olmak istiyor musunuz?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} {reference_human} bağlı yer iminizi beğendi"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} {friend_name} kişisiyle arkadaşlığınızı beğendi"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} {reference_human} üzerinde yer iminizi beğendi"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} okuma planı aktivitenizi beğendi"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} Kutsal Kitap okuma planı aktivitenizi beğendi"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} {friend_name} kişisiyle arkadaşlığınızı beğendi"
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} notunuzu beğendi"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} {reference_human} üzerinde yaptığınız notu beğendi"
@@ -189,44 +198,11 @@ msgstr "{name} {reference_human} üzerinde yaptığınız notu beğendi"
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} “{title}” başlıklı notunuzu beğendi"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} notunuzu beğendi"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} okuma planı aktivitenizi beğendi"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} de kendi yer imi hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} de {moment_owner_name} kişisinin yer imi hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} de {friend_name} kişisiyle arkadaşlığı hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} de {moment_owner_name} kişisinin {friend_name} ile yeni arkadaşlığı hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} de kendi vurgusu hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} de {moment_owner_name} kişisinin vurgusu hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} de kendi okuma planı hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} de {moment_owner_name} kişisinin okuma planı hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} de kendisinin Kutsal Kitap okuma planı hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} kişisi de {moment_owner_name} kişisinin Kutsal Kitap okuma planı hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} de kendi notu hakkında yorum yaptı: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} de {moment_owner_name} kişisinin notu hakkında yorum yaptı: “{comment}”"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} Kutsal Kitap okuma planı aktivitenizi beğendi"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} {reference_human} ayetini yer imlerine ekledi"
@@ -234,20 +210,14 @@ msgstr "{name} {reference_human} ayetini yer imlerine ekledi"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} {reference_human} ayetini vurguladı"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} bir not ekledi"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} {reference_human} hakkında bir not ekledi"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} “{title}” başlıklı bir not ekledi"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} bir not ekledi"
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} {title} isimli yeni bir okuma planına başladı"
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} {title} isimli yeni bir Kutsal Kitap okuma planına başladı"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} {title} isimli okuma planını tamamladı"
@@ -255,41 +225,44 @@ msgstr "{name} {title} isimli okuma planını tamamladı"
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} {title} isimli Kutsal Kitap okuma planını tamamladı"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "Bir arkadaşlık talebiniz var"
-msgstr[1] "%d arkadaşlık isteğiniz var"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} {title} isimli yeni bir okuma planına başladı"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} {title} isimli yeni bir Kutsal Kitap okuma planına başladı"
 
 msgid "notifications.system.test"
 msgstr "Çocuklar için Kutsal Kitap Uygulamamızı indirin!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "{name} size gönderdi:"
-
-msgid "share.invite_sms"
-msgstr "YouVersion Kutsal Kitap Uygulaması sende yüklü mü? Ben kullanıyorum ve onu çok beğeniyorum. Sen de beğenirsin düşünüyorum. İşte linki:"
-
-msgid "share.invite_email_subject"
-msgstr "Kutsal Kitap Uygulaması sende var mı?"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Merhaba!</p><p>Kutsal Kitap Uygulaması'nı kullanıyorum ve seninle paylaşmak istedim. Eğer uygulamaya yeni olsan, o Kutsal Kitap'ın güzellik ve gerçeğini gündüz hayatına getirmek için kolay bir yol</p><p><strong>Kutsal Kitap Uygulaması'nı alın:</strong> telefon ya da tablette ve onlineda Bible.com'da oku, izle, dinle, ve paylaş</p><p><strong>Hesabını kur:</strong> subscribe to Bible Plans and access bookmarks, highlights, and notes across devices</p><p><strong>Add Friends (Like Me!):</strong> explore and discuss the Bible with people you care about</p><p>It's all in the Bible App—get started here: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
 "YouVersion Kutsal Kitap Uygulaması'nı çok beğendim. Senin de onu beğeneceğini düşünüyorum. Kutsal Kİtap'ı okumak, izlemek, dinlemek ve paylaşmak o kadar kolay ki, onu her gün daha sık açıyorum. Benim için Kutsal Kitap'ın bir kısmını zaten seçip okumam için hazırlayan okuma planları bile var.\n"
 "\n"
-"Uygulamayı (bedavaya!) az daha tüm mobil cihazlar için buradan indirebilirsin:"
+"Uygulamayı (bedavaya!) az daha tüm mobil cihazlar için buradan indirebilirsin: "
 
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Merhaba!</p><p>Kutsal Kitap Uygulaması'nı kullanıyorum ve seninle paylaşmak istedim. Eğer uygulamaya yeni olsan, o Kutsal Kitap'ın güzellik ve gerçeğini gündüz hayatına getirmek için kolay bir yol</p><p><strong>Kutsal Kitap Uygulaması'nı alın:</strong> telefon ya da tablette ve onlineda Bible.com'da oku, izle, dinle, ve paylaş</p><p><strong>Hesabını kur:</strong> subscribe to Bible Plans and access bookmarks, highlights, and notes across devices</p><p><strong>Add Friends (Like Me!):</strong> explore and discuss the Bible with people you care about</p><p>It's all in the Bible App—get started here: </p>"
-
-msgid "share.invite_twitter"
-msgstr "@YouVersion Kutsal Kitap Uygulaması ana ekranımda! Oku, izle, dinle ve paylaş - Hepsi bir arada, bedava! "
-
-msgid "share.invite_twitter_direct"
-msgstr "@YouVersion Kutsal Kitap Uygulaması sende yüklü mü? Ben kullanıyorum ve onu çok beğeniyorum. Sen de beğenirsin düşünüyorum. İşte linki:"
+msgid "share.invite_email_subject"
+msgstr "Kutsal Kitap Uygulaması sende var mı?"
 
 msgid "share.invite_facebook"
 msgstr "Kutsal Kitap Uygulaması'nı çok beğendim! Kutsal Kitap'ı günlük yaşantımın bir parçası haline getirmeme çok yardımcı oluyor. Metne vurgu ve not ekleyebiliyorum, sesli Kutsal Kitap dinleyebiliyorum, okuma planları bana okumamda yardımcı oluyor. Ayrıca video bile izleyebiliyorum! Sen de onu hemencik (bedavaya) indirebilirsin:"
 
 msgid "share.invite_facebook_direct"
 msgstr "Kutsal Kitap Uygulaması sende yüklü mü? Ben kullanıyorum ve onu çok beğeniyorum. Sen de beğenirsin düşünüyorum. İşte linki:"
+
+msgid "share.invite_sms"
+msgstr "YouVersion Kutsal Kitap Uygulaması sende yüklü mü? Ben kullanıyorum ve onu çok beğeniyorum. Sen de beğenirsin düşünüyorum. İşte linki:"
+
+msgid "share.invite_sms_prefix"
+msgstr "{name} size gönderdi:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion Kutsal Kitap Uygulaması ana ekranımda! Oku, izle, dinle ve paylaş - Hepsi bir arada, bedava!"
+
+msgid "share.invite_twitter_direct"
+msgstr "@YouVersion Kutsal Kitap Uygulaması sende yüklü mü? Ben kullanıyorum ve onu çok beğeniyorum. Sen de beğenirsin düşünüyorum. İşte linki:"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} az önce YouVersion yükledi. Arkadaş listenize eklemek için tıklayın."

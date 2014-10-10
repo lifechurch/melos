@@ -665,6 +665,7 @@ it:
         labels label: "Etichette:"
         title: "Segnalibri"
         my labels: "Le mie Etichette"
+        all labels: "Mostra Tutti"
         not found: "I segnalibri ti danno una rapida guida di riferimento ai tuoi brani preferiti o all'ultimo capitolo che hai letto nel libro specifico. Per aggiungere un segnalibro, seleziona un versetto nel lettore Bibbia e poi clicca il bottone Selezionati in alto nel lettore."
         other user not found: "%{username} non ha ancora salvato dei segnalibri."
         creation form errors: "I(l) seguenti/e errori hanno impedito la creazione del tuo segnalibro:"

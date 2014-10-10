@@ -1,155 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Vietnamese translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# TienLuu <tienluu1024@yahoo.com>, 2013-2014
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# TienLuu <tienluu1024@yahoo.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# TienLuu <tienluu1024@yahoo.com>, 2013-2014
-# TienLuu <tienluu1024@yahoo.com>, 2013
-# TienLuu <tienluu1024@yahoo.com>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-21 15:02+0000\n"
-"Last-Translator: TienLuu <tienluu1024@yahoo.com>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/projects/p/yv-backend/language/vi/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: vi <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-21 15:12+0000\n"
-"Last-Translator: TienLuu <tienluu1024@yahoo.com>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/projects/p/yv-backend/language/vi/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: vi <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 16:02+0000\n"
-"Last-Translator: TienLuu <tienluu1024@yahoo.com>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/projects/p/yv-backend/language/vi/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: vi <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 1.3\n"
 
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Bible Series</i>"
+msgid "moment.badge.earned.self.title"
+msgstr "Bạn đạt huy hiệu <b>&quot;{title}&quot;</b>"
 
-msgid "moment.system.bible_series_promo.body"
-msgstr "Đón xem <i>\"Bible Series\"</i> tối nay!"
-
-msgid "moment.bookmark.title"
-msgstr "{name} đánh dấu <b>{reference_human}</b>"
-
-msgid "moment.bookmark.self.title"
-msgstr "Bạn đánh dấu <b>{reference_human}</b>"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} kết bạn với <b>{friend_name}</b>"
-
-msgid "moment.friendship.self.title"
-msgstr "Bạn vừa kết bạn với <b>{friend_name}</b>"
-
-msgid "moment.highlight.title"
-msgstr "{name} tô màu <b>{reference_human}</b>"
-
-msgid "moment.highlight.self.title"
-msgstr "Bạn tô màu <b>{reference_human}</b>"
-
-msgid "moment.note.title"
-msgstr "{name} tạo ghi chú <b>\"{title}\"</b>"
-
-msgid "moment.note.self.title"
-msgstr "Bạn tạo ghi chú <b>\"{title}\"</b>"
-
-msgid "moment.bible.download.title"
-msgstr "{name} tải xuống bản dịch <b>{version}</b>"
+msgid "moment.badge.earned.title"
+msgstr "{name} đạt huy hiệu <b>&quot;{title}&quot;</b>"
 
 msgid "moment.bible.download.self.title"
 msgstr "Bạn tải xuống bản dịch <b>{version}</b>"
 
-msgid "moment.plan_subscription.title"
-msgstr "{name} bắt đầu một kế hoạch mới"
+msgid "moment.bible.download.title"
+msgstr "{name} tải xuống bản dịch <b>{version}</b>"
 
-msgid "moment.plan_subscription.self.title"
-msgstr "Bắt đầu một kế hoạch mới"
+msgid "moment.bookmark.self.title"
+msgstr "Bạn đánh dấu <b>{reference_human}</b>"
 
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} hoàn tất ngày <b>{segment}</b> của kế hoạch <b>{title}</b>"
+msgid "moment.bookmark.title"
+msgstr "{name} đánh dấu <b>{reference_human}</b>"
 
-msgid "moment.plan_segment_completion.self.title"
-msgstr "Bạn đã hoàn tất ngày <b>{segment}</b> của kế hoạch <b>{title}</b>"
+msgid "moment.friendship.self.title"
+msgstr "Bạn vừa kết bạn với <b>{friend_name}</b>"
 
-msgid "moment.plan_segment_completion.body"
-msgstr "Ngày {segment} trong {total_segments} ({percent_complete}%)"
+msgid "moment.friendship.title"
+msgstr "{user_name} kết bạn với <b>{friend_name}</b>"
 
-msgid "moment.plan_completion.title"
-msgstr "{name} hoàn tất một kế hoạch"
+msgid "moment.highlight.self.title"
+msgstr "Bạn tô màu <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} tô màu <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Bạn tạo ghi chú <b>&quot;{title}&quot;</b>"
+
+msgid "moment.note.title"
+msgstr "{name} tạo ghi chú <b>&quot;{title}&quot;</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Bạn đã hoàn tất kế hoạch"
 
-msgid "moment.badge.earned.title"
-msgstr "{name} đạt huy hiệu <b>\"{title}\"</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} hoàn tất một kế hoạch"
 
-msgid "moment.badge.earned.self.title"
-msgstr "Bạn đạt huy hiệu <b>\"{title}\"</b>"
+msgid "moment.plan_segment_completion.body"
+msgstr "Ngày {segment} trong {total_segments} ({percent_complete}%)"
 
-msgid "moment.video.watched.title"
-msgstr "{name} xem <b>\"{title}\"</b>"
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Bạn đã hoàn tất ngày <b>{segment}</b> của kế hoạch <b>{title}</b>"
 
-msgid "moment.video.watched.self.title"
-msgstr "Bạn xem <b>\"{title}\"</b>"
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} hoàn tất ngày <b>{segment}</b> của kế hoạch <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Bắt đầu một kế hoạch mới"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} bắt đầu một kế hoạch mới"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Đón xem <i>&quot;Bible Series&quot;</i> tối nay!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bible Series</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "Hãy tìm bạn bè trong danh bạ của bạn để App Kinh Thánh càng trở nên thú vị hơn!"
 
-msgid "notifications.friendships.offer"
-msgstr "{name} muốn kết bạn với bạn trên YouVersion"
+msgid "moment.video.watched.self.title"
+msgstr "Bạn xem <b>&quot;{title}&quot;</b>"
 
-msgid "notifications.friendships.accept"
-msgstr "{name} chấp nhận yêu cầu kết bạn của bạn"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} vừa kết bạn với bạn"
-
-msgid "notifications.friendships.suggestion"
-msgstr "Bạn muốn kết bạn với {name} trên YouVersion?"
+msgid "moment.video.watched.title"
+msgstr "{name} xem <b>&quot;{title}&quot;</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} bình luận về đánh dấu của bạn: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} bình luận về việc kết bạn với {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} bình luận về tô màu của bạn: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} bình luận về ghi chú của bạn: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} bình luận về kế hoạch của bạn: “{comment}”"
@@ -157,26 +132,65 @@ msgstr "{name} bình luận về kế hoạch của bạn: “{comment}”"
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} bình luận về kế hoạch đọc Kinh Thánh của bạn: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} bình luận về việc kết bạn với {friend_name}: “{comment}”"
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} bình luận về đánh dấu của {moment_owner_name}: “{comment}”"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} bình luận về ghi chú của bạn: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} cũng bình luận về việc kết bạn giữa {moment_owner_name} và {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} bình luận về tô màu của {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} bình luận về ghi chú của {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} bình luận về đánh dấu của bạn ấy: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} cũng bình luận về việc kết bạn với {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} bình luận về tô màu của bạn ấy: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} bình luận về ghi chú của bạn ấy: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} cũng bình luận về kế hoạch của bạn ấy: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} cũng bình luận về kế hoạch đọc Kinh Thánh của bạn ấy: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} cũng bình luận về kế hoạch của {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} cũng bình luận về kế hoạch đọc Kinh Thánh của {moment_owner_name}: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} chấp nhận yêu cầu kết bạn của bạn"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} vừa kết bạn với bạn"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} muốn kết bạn với bạn trên YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Bạn muốn kết bạn với {name} trên YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} thích đánh dấu {reference_human} của bạn"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} thích việc kết bạn với {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} thích tô màu {reference_human} của bạn"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} thích hoạt động của bạn"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} thích hoạt động đọc Kinh Thánh của bạn"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} thích việc kết bạn với {friend_name}"
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} thích ghi chú của bạn"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} thích ghi chú của bạn về {reference_human}"
@@ -184,44 +198,11 @@ msgstr "{name} thích ghi chú của bạn về {reference_human}"
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} thích ghi chú “{title}” của bạn"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} thích ghi chú của bạn"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} thích hoạt động của bạn"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} bình luận về đánh dấu của bạn ấy: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} bình luận về đánh dấu của {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} cũng bình luận về việc kết bạn với {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} cũng bình luận về việc kết bạn giữa {moment_owner_name} và {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} bình luận về tô màu của bạn ấy: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} bình luận về tô màu của {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} cũng bình luận về kế hoạch của bạn ấy: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} cũng bình luận về kế hoạch của {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} cũng bình luận về kế hoạch đọc Kinh Thánh của bạn ấy: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} cũng bình luận về kế hoạch đọc Kinh Thánh của {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} bình luận về ghi chú của bạn ấy: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} bình luận về ghi chú của {moment_owner_name}: “{comment}”"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} thích hoạt động đọc Kinh Thánh của bạn"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} đánh dấu {reference_human}"
@@ -229,20 +210,14 @@ msgstr "{name} đánh dấu {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} tô màu {reference_human}"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} tạo một ghi chú"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} tạo ghi chú về {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} tạo ghi chú “{title}”"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} tạo một ghi chú"
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} bắt đầu kế hoạch \"{title}\""
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} bắt đầu kế hoạch đọc Kinh Thánh \"{title}\""
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} hoàn tất kế hoạch \"{title}\""
@@ -250,22 +225,17 @@ msgstr "{name} hoàn tất kế hoạch \"{title}\""
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} hoàn tất kế hoạch đọc Kinh Thánh \"{title}\""
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "Bạn có %d yêu cầu kết bạn"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} bắt đầu kế hoạch \"{title}\""
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} bắt đầu kế hoạch đọc Kinh Thánh \"{title}\""
 
 msgid "notifications.system.test"
 msgstr "Tải Ứng dụng Kinh Thánh cho Trẻ em!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "Từ {name}:"
-
-msgid "share.invite_sms"
-msgstr "Bạn đã tải App Kinh Thánh của YouVersion chưa? Tôi nghĩ bạn cũng sẽ thích nó như tôi vậy. Nếu bạn chưa tải thì đã có đường dẫn ở đây:"
-
-msgid "share.invite_email_subject"
-msgstr "Hãy cùng tải App Kinh Thánh!"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Chào bạn!</p><p>Tôi đang sử dụng App Kinh Thánh của YouVersion và muốn chia sẻ với bạn. Nếu bạn chưa biết đến app, đây là một công cụ đơn giản để đem chân lý Lời Chúa vào đời sống hằng ngày.</p><p><strong>Hãy tải App Kinh Thánh:</strong> để đọc, xem, nghe và chia sẻ trên di động hoặc máy tính bảng tại Bible.com.</p><p><strong>Thiết lập tài khoản của bạn:</strong> đăng ký các kế hoạch đọc Kinh Thánh, đánh dấu, tô màu và ghi chú - được đồng bộ hóa trên mọi thiết bị.</p><p><strong>Kết bạn (với tôi chẳng hạn!):</strong> khám phá và thảo luận Kinh Thánh cùng gia đình và bạn bè.</p><p>Tất cả chỉ trong App Kinh Thánh—hãy bắt đầu tại đây:</p>"
 
 msgid "share.invite_email_body"
 msgstr ""
@@ -279,10 +249,22 @@ msgstr ""
 "\n"
 "Kết bạn (với tôi chẳng hạn!): khám phá và thảo luận Kinh Thánh cùng gia đình và bạn bè.\n"
 "\n"
-"Tất cả chỉ trong App Kinh Thánh—hãy bắt đầu tại đây:"
+"Tất cả chỉ trong App Kinh Thánh—hãy bắt đầu tại đây: "
 
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Chào bạn!</p><p>Tôi đang sử dụng App Kinh Thánh của YouVersion và muốn chia sẻ với bạn. Nếu bạn chưa biết đến app, đây là một công cụ đơn giản để đem chân lý Lời Chúa vào đời sống hằng ngày.</p><p><strong>Hãy tải App Kinh Thánh:</strong> để đọc, xem, nghe và chia sẻ trên di động hoặc máy tính bảng tại Bible.com.</p><p><strong>Thiết lập tài khoản của bạn:</strong> đăng ký các kế hoạch đọc Kinh Thánh, đánh dấu, tô màu và ghi chú - được đồng bộ hóa trên mọi thiết bị.</p><p><strong>Kết bạn (với tôi chẳng hạn!):</strong> khám phá và thảo luận Kinh Thánh cùng gia đình và bạn bè.</p><p>Tất cả chỉ trong App Kinh Thánh—hãy bắt đầu tại đây:</p>"
+msgid "share.invite_email_subject"
+msgstr "Hãy cùng tải App Kinh Thánh!"
+
+msgid "share.invite_facebook"
+msgstr "Tôi yêu App Kinh Thánh! Ứng dụng này giúp Kinh Thánh trở thành một phần trong đời sống hằng ngày của tôi. Tôi có thể tô màu câu gốc, nghe Kinh Thánh, tạo ghi chú, đọc các kế hoạch tĩnh nguyện... và xem video nữa! Hãy tải về (miễn phí):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Bạn đã tải App Kinh Thánh chưa? Tôi nghĩ bạn cũng sẽ thích nó như tôi. Nếu bạn chưa tải thì đã có đường dẫn ở đây:"
+
+msgid "share.invite_sms"
+msgstr "Bạn đã tải App Kinh Thánh của YouVersion chưa? Tôi nghĩ bạn cũng sẽ thích nó như tôi vậy. Nếu bạn chưa tải thì đã có đường dẫn ở đây:"
+
+msgid "share.invite_sms_prefix"
+msgstr "Từ {name}:"
 
 msgid "share.invite_twitter"
 msgstr "App Kinh Thánh @YouVersion chiếm giữ một vị trí cố định trên màn hình của tôi. Đọc, nghe, xem và chia sẻ... tất cả chỉ trong một ứng dụng miễn phí:"
@@ -290,8 +272,5 @@ msgstr "App Kinh Thánh @YouVersion chiếm giữ một vị trí cố định t
 msgid "share.invite_twitter_direct"
 msgstr "Bạn đã tải App Kinh Thánh @YouVersion chưa? Tôi nghĩ bạn cũng sẽ thích nó như tôi vậy. Nếu bạn chưa tải thì đã có đường dẫn ở đây:"
 
-msgid "share.invite_facebook"
-msgstr "Tôi yêu App Kinh Thánh! Ứng dụng này giúp Kinh Thánh trở thành một phần trong đời sống hằng ngày của tôi. Tôi có thể tô màu câu gốc, nghe Kinh Thánh, tạo ghi chú, đọc các kế hoạch tĩnh nguyện... và xem video nữa! Hãy tải về (miễn phí):"
-
-msgid "share.invite_facebook_direct"
-msgstr "Bạn đã tải App Kinh Thánh chưa? Tôi nghĩ bạn cũng sẽ thích nó như tôi. Nếu bạn chưa tải thì đã có đường dẫn ở đây:"
+msgid "notifications.people.contact.joined"
+msgstr "{name} vừa tham gia YouVersion. Gõ vào đây để kết bạn."

@@ -1,160 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Mongolian translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# Battuya Lkhagvadulam <tuyamuya@gmail.com>, 2013
-# chris ballinger <ballinger.chris@gmail.com>, 2013-2014
-# chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
-# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2013-2014
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# chris ballinger <ballinger.chris@gmail.com>, 2013-2014
-# chrisvaughn <chris.vaughn@lifechurch.tv>, 2014
-# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# chris ballinger <ballinger.chris@gmail.com>, 2013
-# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2014
-# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2014
-# tugsuu cook <zagdaa_tugsuu@yahoo.com>, 2014
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-29 15:19+0000\n"
-"Last-Translator: tugsuu cook <zagdaa_tugsuu@yahoo.com>\n"
-"Language-Team: Mongolian (http://www.transifex.com/projects/p/yv-backend/language/mn/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: mn <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: mn\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-03 09:00+0000\n"
-"Last-Translator: tugsuu cook <zagdaa_tugsuu@yahoo.com>\n"
-"Language-Team: Mongolian (http://www.transifex.com/projects/p/yv-backend/language/mn/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: mn <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: mn\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 15:01+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: Mongolian (http://www.transifex.com/projects/p/yv-backend/language/mn/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: mn <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: mn\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Библийн Олон Ангит Цуврал Кино</i>"
-
-msgid "moment.system.bible_series_promo.body"
-msgstr "<i>Библийн Олон Ангит Цуврал Кино</i> үзээрэй!"
-
-msgid "moment.bookmark.title"
-msgstr "{name} <b>{reference_human}</b> хавчуурга хийсэн"
-
-msgid "moment.bookmark.self.title"
-msgstr "Та <b>{reference_human}</b> хавчуурга хийсэн"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} <b>{friend_name}</b> -тай холбогдсон "
-
-msgid "moment.friendship.self.title"
-msgstr "Та <b>{friend_name}</b> -тай холбогдсон"
-
-msgid "moment.highlight.title"
-msgstr "{name} <b>{reference_human}</b> тодруулсан "
-
-msgid "moment.highlight.self.title"
-msgstr "Та <b>{reference_human}</b> д тодруулга хийсэн байна"
-
-msgid "moment.note.title"
-msgstr "{name} <b>{title}</b> гэдэг тэмдэглэл нэмсэн"
-
-msgid "moment.note.self.title"
-msgstr "Та <b>{title}</b> гэдэг тэмдэглэл нэмсэн"
-
-msgid "moment.bible.download.title"
-msgstr "{name} <b>{version}</b> хувилбар татаж авсан"
-
-msgid "moment.bible.download.self.title"
-msgstr "Та <b>{version}</b> хувилбар татаж авсан"
-
-msgid "moment.plan_subscription.title"
-msgstr "{name} шинэ тѳлѳвлѳгѳѳ эхлэсэн"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "Та Шинэ Тѳлѳвлѳгѳѳ эхлэсэн"
-
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} <b>{title}</b> гэдэг төлөвлөгөөний <b>{segment}</b> өдрийг дуусгасан  "
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "Та <b>{title}</b> гэдэг төлөвлөгөөний <b>{segment}</b> өдөр дуусгасан  "
-
-msgid "moment.plan_segment_completion.body"
-msgstr "Ѳдѳр {segment} -с {total_segments} ({percent_complete}%)"
-
-msgid "moment.plan_completion.title"
-msgstr "{name} төлөвлөгөөг дуусгасан"
-
-msgid "moment.plan_completion.self.title"
-msgstr "Таэхлэсэн уншлагын Tөлөвлөгөөгөө дуусгасан"
-
-msgid "moment.badge.earned.title"
-msgstr "{name} <b>{title}</b> цол тэмдэг хүртсэн"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Та <b>{title}</b> цол тэмдэг хүртсэн"
 
-msgid "moment.video.watched.title"
-msgstr "{name} <b>{title}</b> үзсэн"
+msgid "moment.badge.earned.title"
+msgstr "{name} <b>{title}</b> цол тэмдэг хүртсэн"
 
-msgid "moment.video.watched.self.title"
-msgstr "Та <b>{title}</b> үзсэн"
+msgid "moment.bible.download.self.title"
+msgstr "Та <b>{version}</b> хувилбар татаж авсан"
+
+msgid "moment.bible.download.title"
+msgstr "{name} <b>{version}</b> хувилбар татаж авсан"
+
+msgid "moment.bookmark.self.title"
+msgstr "Та <b>{reference_human}</b> хавчуурга хийсэн"
+
+msgid "moment.bookmark.title"
+msgstr "{name} <b>{reference_human}</b> хавчуурга хийсэн"
+
+msgid "moment.friendship.self.title"
+msgstr "Та <b>{friend_name}</b> -тай холбогдсон"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} <b>{friend_name}</b> -тай холбогдсон"
+
+msgid "moment.highlight.self.title"
+msgstr "Та <b>{reference_human}</b> д тодруулга хийсэн байна"
+
+msgid "moment.highlight.title"
+msgstr "{name} <b>{reference_human}</b> тодруулсан"
+
+msgid "moment.note.self.title"
+msgstr "Та <b>{title}</b> гэдэг тэмдэглэл нэмсэн"
+
+msgid "moment.note.title"
+msgstr "{name} <b>{title}</b> гэдэг тэмдэглэл нэмсэн"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Таэхлэсэн уншлагын Tөлөвлөгөөгөө дуусгасан"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} төлөвлөгөөг дуусгасан"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Ѳдѳр {segment} -с {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Та <b>{title}</b> гэдэг төлөвлөгөөний <b>{segment}</b> өдөр дуусгасан"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} <b>{title}</b> гэдэг төлөвлөгөөний <b>{segment}</b> өдрийг дуусгасан"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Та Шинэ Тѳлѳвлѳгѳѳ эхлэсэн"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} шинэ тѳлѳвлѳгѳѳ эхлэсэн"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "<i>Библийн Олон Ангит Цуврал Кино</i> үзээрэй!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Библийн Олон Ангит Цуврал Кино</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "Библи Аппыг найзуудтайгаа үзвэл хамаагүй дээр. Харилцагчидаасаа Найз болох хүмүүсээ хайж ол."
 
-msgid "notifications.friendships.offer"
-msgstr "{name} YouVersion-д тантай найз болохыг хүсч байна"
+msgid "moment.video.watched.self.title"
+msgstr "Та <b>{title}</b> үзсэн"
 
-msgid "notifications.friendships.accept"
-msgstr "{name} миний найз болох хүсэлтийг хүлээн авсан"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} тантай найз боллоо"
-
-msgid "notifications.friendships.suggestion"
-msgstr "YouVersion дээр {name} -тай найз болохыг хүсч байна уу?"
+msgid "moment.video.watched.title"
+msgstr "{name} <b>{title}</b> үзсэн"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} таны хавчуурганд тайлбар хийгдсэн байна:“{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} таны{friend_name} тэй нөхөрлөх нөхөрлөлд сэтгэгдэл үлдээсэн: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} таны тодруулсан ишлэлд тайлбар хийгдсэн байна:“{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} таны тэмдэглэлд тайлбар хийгдсэн байна: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} Таны Уншлагын Төлөвлөгөөнд сэтгэгдэл үлдээсэн: “{comment}”"
@@ -162,26 +132,65 @@ msgstr "{name} Таны Уншлагын Төлөвлөгөөнд сэтгэгд
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} Таны Уншлагын Төлөвлөгөөнд сэтгэгдэл үлдээсэн: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} таны{friend_name} тэй нөхөрлөх нөхөрлөлд сэтгэгдэл үлдээсэн: “{comment}”"
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} сэтгэгдэл үлдээсэн  {moment_owner_name}-н хавчуурганд: “{comment}”"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} таны тэмдэглэлд тайлбар хийгдсэн байна: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} д мөн сэтгэгдэл үлдээсэн{moment_owner_name} ы шинэ нөхөрлөлийн талаар {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} {moment_owner_name}-н тодруулсан ишлэлд сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} {moment_owner_name}-н тэмдэглэл дээр сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} хавчуургандаа тайлбар хийсэн байна: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} тэй нөхөрлөх шинэ нөхөрлөлдөө мөн сэтгэгдэл үлдээсэн {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} ѳѳрийнхѳѳ тодруулсан ишлэлд сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} ѳѳрийнхѳѳ тэмдэглэлд сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} ѳѳрийнхѳѳ төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} ѳѳрийнхѳѳ Уншлагын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} {moment_owner_name}-ын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} {moment_owner_name}-ын Уншлагын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} миний найз болох хүсэлтийг хүлээн авсан"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} тантай найз боллоо"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} YouVersion-д тантай найз болохыг хүсч байна"
+
+msgid "notifications.friendships.suggestion"
+msgstr "YouVersion дээр {name} -тай найз болохыг хүсч байна уу?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} таны хавчуурга таалагдсан , {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} тэй нөхөрлөх шинэ нөхөрлөл чинь таалагдсан {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} таны тодруулга таалагдсан, {reference_human}"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} д Таны Уншлагын Төлөвлөгөөний Үйл ажиллагаа таалагдсан"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} д Таны Уншлагын Төлөвлөгөөний Үйл ажиллагаа таалагдсан"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} тэй нөхөрлөх шинэ нөхөрлөл чинь таалагдсан {friend_name}"
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} -д таны тэмдэглэл таалагдсан"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} -дэхь тэмдэглэл чинь таалагдсан {reference_human}"
@@ -189,44 +198,11 @@ msgstr "{name} -дэхь тэмдэглэл чинь таалагдсан {refer
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} -д таны тэмдэглэл таалагдсан, “{title}”"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} -д таны тэмдэглэл таалагдсан"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} д Таны Уншлагын Төлөвлөгөөний Үйл ажиллагаа таалагдсан"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} хавчуургандаа тайлбар хийсэн байна: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} сэтгэгдэл үлдээсэн  {moment_owner_name}-н хавчуурганд: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} тэй нөхөрлөх шинэ нөхөрлөлдөө мөн сэтгэгдэл үлдээсэн {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} д мөн сэтгэгдэл үлдээсэн{moment_owner_name} ы шинэ нөхөрлөлийн талаар {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} ѳѳрийнхѳѳ тодруулсан ишлэлд сэтгэгдэл үлдээсэн: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} {moment_owner_name}-н тодруулсан ишлэлд сэтгэгдэл үлдээсэн: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} ѳѳрийнхѳѳ төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} {moment_owner_name}-ын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} ѳѳрийнхѳѳ Уншлагын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} {moment_owner_name}-ын Уншлагын төлөвлөгөөн дээр сэтгэгдэл үлдээсэн: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} ѳѳрийнхѳѳ тэмдэглэлд сэтгэгдэл үлдээсэн: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} {moment_owner_name}-н тэмдэглэл дээр сэтгэгдэл үлдээсэн: “{comment}”"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} д Таны Уншлагын Төлөвлөгөөний Үйл ажиллагаа таалагдсан"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} хавчуурга хийсэн {reference_human}"
@@ -234,20 +210,14 @@ msgstr "{name} хавчуурга хийсэн {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} тодруулсан {reference_human}"
 
-msgid "notifications.moments.create.note.reference"
-msgstr "{name} {reference_human}-д тэмдэглэл үүсгэсэн "
-
-msgid "notifications.moments.create.note.title"
-msgstr "{name} шинэ тэмдэглэл үүсгэсэн, “{title}”"
-
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} шинэ тэмдэглэл үүсгэсэн"
 
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} шинэ тѳлѳвлѳгѳѳ эхлэсэн, {title}"
+msgid "notifications.moments.create.note.reference"
+msgstr "{name} {reference_human}-д тэмдэглэл үүсгэсэн"
 
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} Шинэ Уншлагын Төлөвлөгөө Эхлэсэн, {title}"
+msgid "notifications.moments.create.note.title"
+msgstr "{name} шинэ тэмдэглэл үүсгэсэн, “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} төлөвлөгөөгөө дуусгасан, {title}"
@@ -255,23 +225,17 @@ msgstr "{name} төлөвлөгөөгөө дуусгасан, {title}"
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} Уншлагын төлөвлөгөөгөө дуусгасан, {title}"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "Таньд найз болгох урилга байгаа"
-msgstr[1] "Таньд %d найз болгох хүсэлт байна"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} шинэ тѳлѳвлѳгѳѳ эхлэсэн, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} Шинэ Уншлагын Төлөвлөгөө Эхлэсэн, {title}"
 
 msgid "notifications.system.test"
 msgstr "Хүүхдийн Библи Апп-ийг одоо татаж авна уу!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "{name}-с:"
-
-msgid "share.invite_sms"
-msgstr "Танд YouVersion-ны Библи Апп байгаа юу? Надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Линк нь: "
-
-msgid "share.invite_email_subject"
-msgstr "Танд Библийн Апп байгаа юу!"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Сайн уу!</p><p>Би YouVersion-ы Библи Аппыг ашиглаж байгаа . Хэрвээ таны хувьд энэ апп шинэ зүйл бол энэ нь өдөр тутмын амьдралдаа Библийн үнэн болон гайхамшгийг мэдрэх энгийн арга. </p><p><strong>Библи Апптай болох:</strong> Bible.com-оос онлайнаар, ухаалаг утас эсвэл таблет дээрээ унших, үзэх, сонсох ба хуваалцах</p><p><strong>Бүртгэлээ Үүсгэх:</strong> Библи Төлөвлөгөөнд бүртгүүлэн хавчуурга, тодруулга ба тэмдэглэлүүдийг бүх төрлийн электрон хэрэгслэлүүдээс хийх</p><p><strong>Найзууд Нэмэх (Над шиг!):</strong> дотно хүмүүстэйгээ Библийг судлан, хамт суралц</p><p>Энэ бүхэн Библи Апп дээр байгаа—эндээс эхлэнэ үү: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
@@ -290,21 +254,28 @@ msgstr ""
 "Найзууд Нэм (Над шиг!): дотно хүмүүстэйгээ Библийг судлан, хамт суралц\n"
 "\n"
 "\n"
-"Энэ бүхэн Библи Апп дээр байгаа—эндээс эхлэнэ үү: \n"
-"\n"
-" "
+"Энэ бүхэн Библи Апп дээр байгаа—эндээс эхлэнэ үү: "
 
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Сайн уу!</p><p>Би YouVersion-ы Библи Аппыг ашиглаж байгаа . Хэрвээ таны хувьд энэ апп шинэ зүйл бол энэ нь өдөр тутмын амьдралдаа Библийн үнэн болон гайхамшгийг мэдрэх энгийн арга. </p><p><strong>Библи Апптай болох:</strong> Bible.com-оос онлайнаар, ухаалаг утас эсвэл таблет дээрээ унших, үзэх, сонсох ба хуваалцах</p><p><strong>Бүртгэлээ Үүсгэх:</strong> Библи Төлөвлөгөөнд бүртгүүлэн хавчуурга, тодруулга ба тэмдэглэлүүдийг бүх төрлийн электрон хэрэгслэлүүдээс хийх</p><p><strong>Найзууд Нэмэх (Над шиг!):</strong> дотно хүмүүстэйгээ Библийг судлан, хамт суралц</p><p>Энэ бүхэн Библи Апп дээр байгаа—эндээс эхлэнэ үү: </p>"
-
-msgid "share.invite_twitter"
-msgstr "@YouVersion-ий Библи Апп миний утасны нүүр хуудсан дээр үргэлж байх боломжтой. Үнэгүй апп.аар: Унших, үзэх, сонсох, болон хувааж болно..."
-
-msgid "share.invite_twitter_direct"
-msgstr "Танд @YouVersion -ны Библи Апп байгаа юу? Надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Линк нь: "
+msgid "share.invite_email_subject"
+msgstr "Танд Библийн Апп байгаа юу!"
 
 msgid "share.invite_facebook"
 msgstr "Би Библийн Апп-д дуртай! Надад Библи ѳдѳр бүр уншихад үнэхээр тусладаг. Ишлэлүүд тодруулох, аудио Библи сонсох, тэмдэглэлүүд бичих, уншлагын тѳлѳвлѳѳгѳѳгѳѳр унших...болон бичлэг үзэх боломжтой! Яг одоо татан аваарай (үнэгүй):"
 
 msgid "share.invite_facebook_direct"
-msgstr "Таньд Библи Апп байгаа юу? Надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Линк нь: "
+msgstr "Таньд Библи Апп байгаа юу? Надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Линк нь:"
+
+msgid "share.invite_sms"
+msgstr "Танд YouVersion-ны Библи Апп байгаа юу? Надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Линк нь:"
+
+msgid "share.invite_sms_prefix"
+msgstr "{name}-с:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion-ий Библи Апп миний утасны нүүр хуудсан дээр үргэлж байх боломжтой. Үнэгүй апп.аар: Унших, үзэх, сонсох, болон хувааж болно..."
+
+msgid "share.invite_twitter_direct"
+msgstr "Танд @YouVersion -ны Библи Апп байгаа юу? Надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Линк нь:"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} сая YouVersion-ний данстай болсон. Найзтай болохоор энд дар."

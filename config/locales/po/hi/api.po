@@ -1,157 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Hindi translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# prinsonm <prinson.mony@yahoo.com>, 2013-2014
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# Anke Stoye <ankestoyeyouversion@gmail.com>, 2013
-# prinsonm <prinson.mony@yahoo.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# Grace Priya Jacob <gracepj@gmail.com>, 2013
-# Grace Priya Jacob <gracepj@gmail.com>, 2013
-# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# prinsonm <prinson.mony@yahoo.com>, 2014
-# prinsonm <prinson.mony@yahoo.com>, 2014
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-02 02:50+0000\n"
-"Last-Translator: prinsonm <prinson.mony@yahoo.com>\n"
-"Language-Team: Hindi (http://www.transifex.com/projects/p/yv-backend/language/hi/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: hi <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-28 04:01+0000\n"
-"Last-Translator: prinsonm <prinson.mony@yahoo.com>\n"
-"Language-Team: Hindi (http://www.transifex.com/projects/p/yv-backend/language/hi/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: hi <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 15:01+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: Hindi (http://www.transifex.com/projects/p/yv-backend/language/hi/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: hi <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 1.3\n"
 
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>बाइबिल सीरीज</i>"
+msgid "moment.badge.earned.self.title"
+msgstr "आपके द्वारा <b>{title}</b> बैज अर्जित किया हैं"
 
-msgid "moment.system.bible_series_promo.body"
-msgstr "आज रात <i>बाइबिल सीरीज</i>देखे !"
+msgid "moment.badge.earned.title"
+msgstr "{name} ने <b>{title}</b>बैज अर्जित किया"
 
-msgid "moment.bookmark.title"
-msgstr "{name} बुकमार्क <b>{reference_human}</b>"
+msgid "moment.bible.download.self.title"
+msgstr "आपके द्वारा <b>{version}</b> संस्करण डाउनलोड किया गया हैं"
+
+msgid "moment.bible.download.title"
+msgstr "संस्करण डाउनलोड करे, <b>1</b>"
 
 msgid "moment.bookmark.self.title"
 msgstr "आपने बुकमार्क किया<b>{reference_human}</b>"
 
-msgid "moment.friendship.title"
-msgstr "{user_name} ने अभी <b>{friend_name}</b> का मित्र अनुरोध स्वीकारा "
+msgid "moment.bookmark.title"
+msgstr "{name} बुकमार्क <b>{reference_human}</b>"
 
 msgid "moment.friendship.self.title"
-msgstr "अभी आप  <b>{friend_name}</b> के मित्र हुए "
+msgstr "अभी आप  <b>{friend_name}</b> के मित्र हुए"
 
-msgid "moment.highlight.title"
-msgstr "{name} ने भी हाईलाइट<b> {reference_human}</b>"
+msgid "moment.friendship.title"
+msgstr "{user_name} ने अभी <b>{friend_name}</b> का मित्र अनुरोध स्वीकारा"
 
 msgid "moment.highlight.self.title"
 msgstr "आपके द्वारा हाइलाइटेड <b>{reference_human}</b>"
 
-msgid "moment.note.title"
-msgstr "{name} एक नोट जोड़ा <b>{title}</b>"
+msgid "moment.highlight.title"
+msgstr "{name} ने भी हाईलाइट<b> {reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "आपके द्वारा नया नोट जोड़ा गया, <b>{title}</b>"
 
-msgid "moment.bible.download.title"
-msgstr "{name} downloaded the version, <b>{version}</b>"
+msgid "moment.note.title"
+msgstr "{name} एक नोट जोड़ा <b>{title}</b>"
 
-msgid "moment.bible.download.self.title"
-msgstr "आपके द्वारा <b>{version}</b> संस्करण डाउनलोड किया गया हैं "
+msgid "moment.plan_completion.self.title"
+msgstr "योजना सम्पूर्ण हुआ"
 
-msgid "moment.plan_subscription.title"
-msgstr "{name} ने पाठक योजना प्रारंभ किया"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "योजना प्रारंभ हुआ "
-
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} सम्पूर्ण दिवस  <b>{segment}</b> योजना , <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "आपके द्वारा योजना का <b>{segment}</b> दिवस, <b>{title}</b>"
+msgid "moment.plan_completion.title"
+msgstr "{name} योजना सम्पूर्ण हुआ"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "दिन {segment} का{total_segments} ({percent_complete}%)"
 
-msgid "moment.plan_completion.title"
-msgstr "{name} योजना सम्पूर्ण हुआ "
+msgid "moment.plan_segment_completion.self.title"
+msgstr "आपके द्वारा योजना का <b>{segment}</b> दिवस, <b>{title}</b>"
 
-msgid "moment.plan_completion.self.title"
-msgstr "योजना सम्पूर्ण हुआ "
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} सम्पूर्ण दिवस  <b>{segment}</b> योजना , <b>{title}</b>"
 
-msgid "moment.badge.earned.title"
-msgstr "{name} ने <b>{title}</b>बैज अर्जित किया "
+msgid "moment.plan_subscription.self.title"
+msgstr "योजना प्रारंभ हुआ"
 
-msgid "moment.badge.earned.self.title"
-msgstr "आपके द्वारा <b>{title}</b> बैज अर्जित किया हैं "
+msgid "moment.plan_subscription.title"
+msgstr "{name} ने पाठक योजना प्रारंभ किया"
 
-msgid "moment.video.watched.title"
-msgstr " {name} देख रहे हैं <b>{title}</b>"
+msgid "moment.system.bible_series_promo.body"
+msgstr "आज रात <i>बाइबिल सीरीज</i>देखे !"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>बाइबिल सीरीज</i>"
+
+msgid "moment.system.find_friends.title"
+msgstr "बाइबिल App मित्रों के साथ उपयोग करने में एक शानदार अनुभव हैं। अपने मित्रों को खोजने के लिए कांटेक्ट सर्च करे।"
 
 msgid "moment.video.watched.self.title"
 msgstr "आप देख रहे हैं <b>{title}</b>"
 
-msgid "moment.system.find_friends.title"
-msgstr "बाइबिल App मित्रों के साथ उपयोग करने में एक शानदार अनुभव हैं। अपने मित्रों को खोजने के लिए कांटेक्ट सर्च करे। "
-
-msgid "notifications.friendships.offer"
-msgstr "{name} YouVersion पर आपके मित्र बनने में इच्छुक हैं "
-
-msgid "notifications.friendships.accept"
-msgstr "{name} ने आपका मित्रता अनुरोध स्वीकारा "
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} अब आपके मित्र हैं"
-
-msgid "notifications.friendships.suggestion"
-msgstr "क्या आप {name} से YouVersion पर मित्रता करना चाहते हैं?"
+msgid "moment.video.watched.title"
+msgstr "{name} देख रहे हैं <b>{title}</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} ने आपके बुकमार्क पर कमेंट किया :“{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ने आपके हाईलाइट पर कमेंट किया “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} ने आपके नोट पर कमेंट किया “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} ने आपके योजना पर कमेंट किया “{comment}”"
@@ -159,71 +132,77 @@ msgstr "{name} ने आपके योजना पर कमेंट कि
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} ने आपके बाइबिल पाठक योजना पर कमेंट किया “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
-
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} ने आपके नोट पर कमेंट किया “{comment}”"
-
-msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name}ने आपका बुकमार्क पसंद किया{reference_human}"
-
-msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} ने आपका हाईलाइट पसंद किया {reference_human}"
-
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} आपके योजना को पसंद करते हैं "
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} आपके बाइबिल पाठक योजना गतिविधि को पसंद किया "
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} आपकी {friend_name}के साथ दोस्ती को पसंद करते हैं "
-
-msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} ने आपकी {reference_human}पर नोट्स को पसंद किया "
-
-msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name} आपके नोट्स को पसंद किया “{title}”"
-
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} ने नोट को पसंद किया "
-
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} ने उनके भी बुकमार्क पर कमेंट किया: “{comment}”"
-
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} ने भी  {moment_owner_name}'s बुकमार्क पर कमेंट किया: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} ने {moment_owner_name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
 
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} ने भी आपके हाईलाइट पर कमेंट किया : “{comment}”"
-
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ने भी  {moment_owner_name}'s हाईलाइट पर कमेंट किया: “{comment}”"
 
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} ने भी आपके योजना पर कमेंट किया: “{comment}”"
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} ने भी {moment_owner_name}'sनोट पर कमेंट किया: “{comment}”"
 
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} ने भी {moment_owner_name}'sयोजना पर कमेंट किया: “{comment}”"
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} ने उनके भी बुकमार्क पर कमेंट किया: “{comment}”"
 
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} ने भी आपके बाइबिल पाठक योजना पर कमेंट किया: “{comment}”"
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
 
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} ने भी {moment_owner_name}'s बाइबिल पाठक योजना पर कमेंट किया: “{comment}”"
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} ने भी आपके हाईलाइट पर कमेंट किया : “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ने भी आपके नोट पर कमेंट किया: “{comment}”"
 
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} ने भी {moment_owner_name}'sनोट पर कमेंट किया: “{comment}”"
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} ने भी आपके योजना पर कमेंट किया: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} ने भी आपके बाइबिल पाठक योजना पर कमेंट किया: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} ने भी {moment_owner_name}'sयोजना पर कमेंट किया: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} ने भी {moment_owner_name}'s बाइबिल पाठक योजना पर कमेंट किया: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} ने आपका मित्रता अनुरोध स्वीकारा"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} अब आपके मित्र हैं"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} YouVersion पर आपके मित्र बनने में इच्छुक हैं"
+
+msgid "notifications.friendships.suggestion"
+msgstr "क्या आप {name} से YouVersion पर मित्रता करना चाहते हैं?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name}ने आपका बुकमार्क पसंद किया{reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} आपकी {friend_name}के साथ दोस्ती को पसंद करते हैं"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name} ने आपका हाईलाइट पसंद किया {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} ने नोट को पसंद किया"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name} ने आपकी {reference_human}पर नोट्स को पसंद किया"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} आपके नोट्स को पसंद किया “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} आपके योजना को पसंद करते हैं"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} आपके बाइबिल पाठक योजना गतिविधि को पसंद किया"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} ने भी बुकमार्क {reference_human}"
@@ -231,20 +210,14 @@ msgstr "{name} ने भी बुकमार्क {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ने भी हाईलाइट {reference_human}"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} के द्वारा एक नया नोट जोड़ा गया"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} एक नोट जोड़ा {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} एक नोट जोड़ा “{title}”"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} के द्वारा एक नया नोट जोड़ा गया "
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} नया पाठक योजना प्रारंभ किया, {title}"
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} नया बाइबिल पाठक योजना प्रारंभ किया, {title}"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} नया पाठक योजना संपूर्ण किया, {title}"
@@ -252,41 +225,41 @@ msgstr "{name} नया पाठक योजना संपूर्ण क�
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} नया बाइबिल पाठक योजना सम्पूर्ण किया, {title}"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "आप के लिए मित्रता अनुरोध हैं। "
-msgstr[1] "आप के लिए % मित्र अनुरोध हैं ।"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} नया पाठक योजना प्रारंभ किया, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} नया बाइबिल पाठक योजना प्रारंभ किया, {title}"
 
 msgid "notifications.system.test"
 msgstr "हमारा Kids Bible App डाउनलोड करे!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "द्वारा {name}:"
-
-msgid "share.invite_sms"
-msgstr "क्या आपके पास YouVersion का बाइबिल App है? वह मुझे बहुत पसंद हैं, और मुझे लगता है की आपको भी। यह वह link हैं अगर आपके पास नहीं हैं: "
-
-msgid "share.invite_email_subject"
-msgstr "क्या आपके पास बाइबिल App है?"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>नमस्कार!</p><p>में YouVersion द्वारा निर्मित बाइबिल App उपयोग कर रहा हूँ,और उसे आपके साथ शेयर करना चाहता हूँ। यदि इस App को आप पहली बार उपयोग कर रहे हैं, यह App बाइबिल के सत्य और सुंदरता को अपने नित्य जीवन में शामिल करने का आसान तरीका हैं। </p><p><strong>बाइबिल App डाउनलोड करे:</strong>पढ़े,देखे,सुने और शेयर करे अपने स्मार्टफोन या टेबलेट पर और Bible.com पर</p><p><strong>अपना अकाउंट सेट अप करे:</strong>बाइबिल पाठक योजना के सदस्य बने इससे जुड़े समस्त डिवाइस के बुकमार्क,हाईलाइट,और टिप्पणी एक्सेस करे</p><p><strong>मित्र बनाए(जैसे मुझे!):</strong>बाइबिल अपने चहेतों के साथ अध्ययन और अन्वेषण करे</p><p>यह सब खूबियाँ इस बाइबिल App में हैं-शुरू करे:</p>"
 
 msgid "share.invite_email_body"
 msgstr ""
 "मैं YouVersion के बाइबिल App का आनंद ले रहा हूँ और सोचा की आपको भी अच्छा लगेगा। मैं आजकल बाइबिल बहुत खोल रहा हु क्योंकि उसे पढना, देखना, सुनना और बाँटना बहुत आसान हैं। इसमें पठन योजनाए भी हैं जिसमे बाइबिल के पद्यो को चयनित करके निकला गया हैं जो प्रतिदिन मेरा इंतज़ार करते हैं।⏎\n"
 "⏎\n"
-"यह आपको (मुफ्त में) लगभग हर मोबाइल यन्त्र के लिए यहाँ मिलेगा:"
+"यह आपको (मुफ्त में) लगभग हर मोबाइल यन्त्र के लिए यहाँ मिलेगा: "
 
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>नमस्कार!</p><p>में YouVersion द्वारा निर्मित बाइबिल App उपयोग कर रहा हूँ,और उसे आपके साथ शेयर करना चाहता हूँ। यदि इस App को आप पहली बार उपयोग कर रहे हैं, यह App बाइबिल के सत्य और सुंदरता को अपने नित्य जीवन में शामिल करने का आसान तरीका हैं। </p><p><strong>बाइबिल App डाउनलोड करे:</strong>पढ़े,देखे,सुने और शेयर करे अपने स्मार्टफोन या टेबलेट पर और Bible.com पर</p><p><strong>अपना अकाउंट सेट अप करे:</strong>बाइबिल पाठक योजना के सदस्य बने इससे जुड़े समस्त डिवाइस के बुकमार्क,हाईलाइट,और टिप्पणी एक्सेस करे</p><p><strong>मित्र बनाए(जैसे मुझे!):</strong>बाइबिल अपने चहेतों के साथ अध्ययन और अन्वेषण करे</p><p>यह सब खूबियाँ इस बाइबिल App में हैं-शुरू करे:</p>"
-
-msgid "share.invite_twitter"
-msgstr "@YouVersion के बाइबिल App का मेरी home screen में स्थायी स्थान है। पढ़े, देखे, सुने, और बांटे...सब एक मुफ्त app में: "
-
-msgid "share.invite_twitter_direct"
-msgstr "क्या आपके पास @YouVersion का बाइबिल App है? वह मुझे बहुत पसंद हैं, और मुझे लगता है की आपको भी। यह वह link हैं अगर आपके पास नहीं हैं: "
+msgid "share.invite_email_subject"
+msgstr "क्या आपके पास बाइबिल App है?"
 
 msgid "share.invite_facebook"
 msgstr "मुझे बाइबिल App बहुत पसंद हैं! इसने वास्तव में बाइबिल को मेरी रोजमर्रा की जिंदगी का हिस्सा बनाने में मदद की हैं। यह मुझे highlight करने, ऑडियो बाइबिल सुनने, धार्मिक योजनाये पालन करने...यहाँ तक की विडियो देखने देता हैं! अभी इसे डाउनलोड करें (यह मुफ्त हैं):"
 
 msgid "share.invite_facebook_direct"
-msgstr "क्या आपके पास बाइबिल App है? वह मुझे बहुत पसंद हैं, और मुझे लगता है की आपको भी। यह वह link हैं अगर आपके पास नहीं हैं: "
+msgstr "क्या आपके पास बाइबिल App है? वह मुझे बहुत पसंद हैं, और मुझे लगता है की आपको भी। यह वह link हैं अगर आपके पास नहीं हैं:"
+
+msgid "share.invite_sms"
+msgstr "क्या आपके पास YouVersion का बाइबिल App है? वह मुझे बहुत पसंद हैं, और मुझे लगता है की आपको भी। यह वह link हैं अगर आपके पास नहीं हैं:"
+
+msgid "share.invite_sms_prefix"
+msgstr "द्वारा {name}:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion के बाइबिल App का मेरी home screen में स्थायी स्थान है। पढ़े, देखे, सुने, और बांटे...सब एक मुफ्त app में:"
+
+msgid "share.invite_twitter_direct"
+msgstr "क्या आपके पास @YouVersion का बाइबिल App है? वह मुझे बहुत पसंद हैं, और मुझे लगता है की आपको भी। यह वह link हैं अगर आपके पास नहीं हैं:"
