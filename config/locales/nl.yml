@@ -665,6 +665,7 @@ nl:
         labels label: "Labels:"
         title: "Bladwijzers"
         my labels: "Mijn Labels"
+        all labels: "Show All"
         not found: "Bladwijzers geven je een snelle verwijzing naar je favoriete passages of naar het laatste hoofdstuk dat je gelezen hebt in een bepaald boek. Om een bladwijzer toe te voegen, selecteer je een vers in het Bijbelleesvenster en klik je vervolgens op de Geselecteerd-knop aan de bovenkant van het leesvenster."
         other user not found: "%{username} heeft nog geen bladwijzers geplaatst."
         creation form errors: "De volgende fout(en) zorgden ervoor dat je bladwijzer niet werd aangemaakt:"

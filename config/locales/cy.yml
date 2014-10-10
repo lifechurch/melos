@@ -665,6 +665,7 @@ cy:
         labels label: "Labeli:"
         title: "Nod tudalen"
         my labels: "My Labels"
+        all labels: "Show All"
         not found: "Mae nod tudalen yn rhoi canllaw cyflym i chi fynd at eich hoff ddarn neu at y bennod olaf ddarllenwyd gennych mewn llyfr arbennig. I ychwanegu nod tudalen, dewiswch adnod yn narllenwr y Beibl a chliciwch ar y botwm Dewis  ar ddalen  y darllenydd."
         other user not found: "Nid yw%{username}wedi cadw nod tudalen eto."
         creation form errors: "The following error(s) prevented creation of your bookmark:"

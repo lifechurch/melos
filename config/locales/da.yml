@@ -665,6 +665,7 @@ da:
         labels label: "Etiket:"
         title: "Bogmærker"
         my labels: "Mine etiketter"
+        all labels: "Vis alle"
         not found: "Bogmærker giver dig en hurtig reference guide til dine foretrukne passager eller til den sidste kapitel du læser i en bestemt bog. Hvis du vil tilføje et bogmærke, skal du vælge et vers i Bibel læseren og derefter klikke på Vælg knappen i toppen af ​​læseren."
         other user not found: "%{username} har ikke gemt nogen bogmærker endnu."
         creation form errors: "Følgende fejl forhindrede dannelse af dit bogmærke:"

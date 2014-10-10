@@ -4,7 +4,7 @@
         formats: 
             votd: "%-d. %B, %Y"
     counter: 
-        format: "999,999,999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Samtale og utforske"
@@ -645,7 +645,7 @@
             badges: "Varsle meg om merker jeg har opptjent."
             follower: "Varsle meg når noen følger meg."
             newsletter: "Hold meg oppdatert på meldinger fra YouVersion."
-            contact_joins: "Notify me when a Contact joins"
+            contact_joins: "Varsle meg når en kontakt blir med"
             note_like: "Varsle meg når noen liker mine notater."
             reading_plans: "Varsle meg om informasjon for leseplaner jeg følger."
             publishing partners: "Hold meg oppdatert om nyheter fra YouVersions partnere."
@@ -665,6 +665,7 @@
         labels label: "Emneord:"
         title: "Bokmerker"
         my labels: "Mine emneord"
+        all labels: "Show All"
         not found: "Bokmerker gir deg en rask tilgang på dine favoritt-tekster eller det siste kapittelet du leste i en spesiell bok. For å legge til et bokmerke velger du vers når du leser og trykker på ikonet øverst for bokmerke."
         other user not found: "%{username} har ikke lagret noen bokmerker ennå."
         creation form errors: "Følgende feil gjorde at bokmerke ikke kunne opprettes:"
@@ -914,7 +915,7 @@
         creation form errors: "Følgende feil gjorde at gave ikke kunne gis:"
     download ad: 
         title: "Last ned gratis Bibel-app."
-        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+        description copy: "Hundrevis av versjoner på %{language_count} + forskjellige språk - Bibelen som blir med deg over alt."
         line 1: "Hundrevis av oversettelser på over"
         line 2: "100 forskjellige språk—Bibelen som"
         line 3: "er med deg over alt."
@@ -962,7 +963,7 @@
     mobile page: 
         h2: "Guds ord er med deg."
         h3: "YouVersion er verdensomspennende"
-        h3 sub: "Available in more than %{language_count} languages worldwide."
+        h3 sub: "Tilgjengelig på mer enn %{language_count} språk verden over."
         main: "Et titalls millioner mennesker bruker 'the Bible App™' for å gjøre Guds ord til en del av sine daglige liv. Last ned denne gratis appen og få tilgang til dine bokmerker, notater og leseplaner overalt. Du tilbys hundrevis av ulike bibelutgaver, inkludert lydbibler - alt på din mobiltelefon eller ipad."
         button h4: "Gå til Bible.com/app"
         button h4 sub: "På din mobile enhet"
@@ -983,7 +984,7 @@
         symbian: "Symbian"
         mobile web: "Mobilt nett"
         amazon: "Kindle Fire"
-        free overlay: "100% Free"
+        free overlay: "100% gratis"
     pages: 
         generic_error: 
             title: "Ojsann!"

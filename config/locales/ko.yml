@@ -665,6 +665,7 @@ ko:
         labels label: "라벨:"
         title: "책갈피"
         my labels: "나의 라벨"
+        all labels: "Show All"
         not found: "책갈피는 좋아하는 구절이나 마지막으로 읽은 부분으로 즉시 이동할 수 있도록 도와드립니다. 책갈피를 해두기 위해서는, 먼저 성경 리더에서 원하는 구절을 선택한 후 리더 상단의 '선택' 버튼을 클릭하면 됩니다."
         other user not found: "%{username}님이 등록한 책갈피는 아직 없습니다."
         creation form errors: "아래의 이유로 인해서 책갈피가 만들어지지 않았습니다."

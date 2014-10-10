@@ -665,6 +665,7 @@ fr:
         labels label: "Étiquettes:"
         title: "Favoris"
         my labels: "Mes Etiquettes"
+        all labels: "Show All"
         not found: "Les signets vous permettent de vous souvenir de ce que vous avez lu en dernier, vous servant ainsi de guide de référence rapide vers vos passages préférés ou encore vers le dernier chapitre que vous avez lu dans un livre en particulier. Afin de créer un signet, sélectionnez un verset dans le lecteur de la Bible, puis cliquez le bouton Signet."
         other user not found: "%{username} n'a pas encore de favoris."
         creation form errors: "L'erreur suivante a empêché la création de votre signet:"

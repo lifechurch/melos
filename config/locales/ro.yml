@@ -665,6 +665,7 @@ ro:
         labels label: "Etichete:"
         title: "Marcaje"
         my labels: "Etichetele mele"
+        all labels: "Show All"
         not found: "Marcajele sunt un bun îndrumător către pasajele tale favorite sau către ultimul capitol pe care l-ai citit dintr-o carte. Pentru a adăuga un marcaj, selectează versetul și apoi apasă butonul de adăugare marcaj."
         other user not found: "%{username} nu a salvat încă niciun marcaj."
         creation form errors: "Următoarele erori au împiedicat crearea unui marcaj:"
