@@ -1,165 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Chinese (Simplified, China) translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# Gladys Liew <gladysliew@gmail.com>, 2014
-# jerry cheng <jerrych@gmail.com>, 2014
-# Joe Jiang <lamp.purl@gmail.com>, 2013-2014
-# Nianlan Yang <Nianlan@hotmail.com>, 2013
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# Gladys Liew <gladysliew@gmail.com>, 2014
-# jerry cheng <jerrych@gmail.com>, 2014
-# Joe Jiang <lamp.purl@gmail.com>, 2013-2014
-# Nianlan Yang <Nianlan@hotmail.com>, 2013
-# yushengyan2004 <yushengyan2004@gmail.com>, 2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# Gladys Liew <gladysliew@gmail.com>, 2013-2014
-# Hang Sun <sunh11373@yahoo.com>, 2013
-# Joe Jiang <lamp.purl@gmail.com>, 2013
-# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# Michael HUO <huo@live.cn>, 2013
-# yushengyan2004 <yushengyan2004@gmail.com>, 2013-2014
-# yushengyan2004 <yushengyan2004@gmail.com>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-28 13:56+0000\n"
-"Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/yv-backend/language/zh_CN/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_Hans_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-28 13:57+0000\n"
-"Last-Translator: Gladys Liew <gladysliew@gmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/yv-backend/language/zh_CN/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_Hans_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 15:01+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/yv-backend/language/zh_CN/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_Hans_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>圣经系列</i>"
-
-msgid "moment.system.bible_series_promo.body"
-msgstr "今晚观看<i>圣经系列</i> ！"
-
-msgid "moment.bookmark.title"
-msgstr "{name} 书签标记了 <b>{reference_human}</b>"
-
-msgid "moment.bookmark.self.title"
-msgstr "您书签标记了 <b>{reference_human}</b>"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} 加了好友 <b>{friend_name}</b> "
-
-msgid "moment.friendship.self.title"
-msgstr "您现在和 <b>{friend_name}</b> 已成为朋友"
-
-msgid "moment.highlight.title"
-msgstr "{name} 高亮显示了 <b>{reference_human}</b>"
-
-msgid "moment.highlight.self.title"
-msgstr "您高亮显示了 <b>{reference_human}</b>"
-
-msgid "moment.note.title"
-msgstr "{name} 加了一条笔记，<b>{title}</b>"
-
-msgid "moment.note.self.title"
-msgstr "您加了一条笔记，<b>{title}</b>"
-
-msgid "moment.bible.download.title"
-msgstr "{name} 下载了 <b>{version}</b> 译本"
-
-msgid "moment.bible.download.self.title"
-msgstr "您下载了 <b>{version}</b> 译本"
-
-msgid "moment.plan_subscription.title"
-msgstr "{name} 开始一个读经计划"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "你开始了一个读经计划"
-
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} 完成了读经计划，<b>{title}</b>的第 <b>{segment}</b> 天 "
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "您完成了读经计划 <b>{title}</b>的第 <b>{segment}</b> 天"
-
-msgid "moment.plan_segment_completion.body"
-msgstr "{total_segments} 中的第 {segment} 天 ({percent_complete}%)"
-
-msgid "moment.plan_completion.title"
-msgstr "{name} 完成一个读经计划"
-
-msgid "moment.plan_completion.self.title"
-msgstr "你完成了一个读经计划"
-
-msgid "moment.badge.earned.title"
-msgstr "{name} 获得了 <b>{title}</b> 勋章"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "您获得了 <b>{title}</b> 勋章"
 
-msgid "moment.video.watched.title"
-msgstr "{name} 看了 <b>{title}</b>"
+msgid "moment.badge.earned.title"
+msgstr "{name} 获得了 <b>{title}</b> 勋章"
 
-msgid "moment.video.watched.self.title"
-msgstr "你观看了 <b>{title}</b>"
+msgid "moment.bible.download.self.title"
+msgstr "您下载了 <b>{version}</b> 译本"
+
+msgid "moment.bible.download.title"
+msgstr "{name} 下载了 <b>{version}</b> 译本"
+
+msgid "moment.bookmark.self.title"
+msgstr "您书签标记了 <b>{reference_human}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} 书签标记了 <b>{reference_human}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "您现在和 <b>{friend_name}</b> 已成为朋友"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} 加了好友 <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "您高亮显示了 <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} 高亮显示了 <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "您加了一条笔记，<b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} 加了一条笔记，<b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "你完成了一个读经计划"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} 完成一个读经计划"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "{total_segments} 中的第 {segment} 天 ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "您完成了读经计划 <b>{title}</b>的第 <b>{segment}</b> 天"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} 完成了读经计划，<b>{title}</b>的第 <b>{segment}</b> 天"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "你开始了一个读经计划"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} 开始一个读经计划"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "今晚观看<i>圣经系列</i> ！"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>圣经系列</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "与朋友一起使用圣经软件会给您更佳体验。请在您的联系人中搜索朋友。"
 
-msgid "notifications.friendships.offer"
-msgstr "{name} 希望成为你在 YouVersion 的好友"
+msgid "moment.video.watched.self.title"
+msgstr "你观看了 <b>{title}</b>"
 
-msgid "notifications.friendships.accept"
-msgstr "{name} 接受了你加好友的邀请"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} 现已成为你的好友"
-
-msgid "notifications.friendships.suggestion"
-msgstr "你希望和 {name} 成为在 YouVersion 上的好友吗?"
+msgid "moment.video.watched.title"
+msgstr "{name} 看了 <b>{title}</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} 评论了你的书签: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} 评论了您的新联系 {friend_name} : “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} 评论了你的高亮经文: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} 评论了笔记: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} 评论了您的计划: “{comment}”"
@@ -167,26 +132,65 @@ msgstr "{name} 评论了您的计划: “{comment}”"
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} 评论了您的读经计划: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} 评论了您的新联系 {friend_name} : “{comment}”"
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的书签标记: “{comment}”"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} 评论了笔记: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的新联系 {friend_name} : “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的高亮标记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的笔记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} 也评论了他们的书签标记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} 也评论了他的新联系 {friend_name} : “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} 也评论了他们的高亮标记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} 也评论了他们的笔记: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} 也评论了他的计划: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} 也评论了他的读经计划: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的计划: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} 也评论了 {moment_owner_name} 的读经计划: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} 接受了你加好友的邀请"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} 现已成为你的好友"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} 希望成为你在 YouVersion 的好友"
+
+msgid "notifications.friendships.suggestion"
+msgstr "你希望和 {name} 成为在 YouVersion 上的好友吗?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} 喜欢您的书签 {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} 赞了您的新联系 {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} 喜欢您高亮显示的经文 {reference_human}"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} 赞了您读经计划的活动"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} 赞了您读经计划的活动"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} 赞了您的新联系 {friend_name} "
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} 喜欢您的笔记"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} 喜欢您的关于 {reference_human}的笔记"
@@ -194,44 +198,11 @@ msgstr "{name} 喜欢您的关于 {reference_human}的笔记"
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} 喜欢您的笔记, “{title}”"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} 喜欢您的笔记"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} 赞了您读经计划的活动"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} 也评论了他们的书签标记: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的书签标记: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} 也评论了他的新联系 {friend_name} : “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的新联系 {friend_name} : “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} 也评论了他们的高亮标记: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的高亮标记: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} 也评论了他的计划: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的计划: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} 也评论了他的读经计划: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的读经计划: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} 也评论了他们的笔记: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} 也评论了 {moment_owner_name} 的笔记: “{comment}”"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} 赞了您读经计划的活动"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} 标记了书签 {reference_human}"
@@ -239,20 +210,14 @@ msgstr "{name} 标记了书签 {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} 高亮标记了 {reference_human}"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} 添加了一条笔记"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} 在 {reference_human} 上加了一条笔记"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} 加了一条笔记, “{title}”"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} 添加了一条笔记"
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} 开始了一个新计划, {title}"
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} 开始了一个新的读经计划, {title}"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} 结束了他的计划, {title}"
@@ -260,31 +225,44 @@ msgstr "{name} 结束了他的计划, {title}"
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} 结束了他的读经计划, {title}"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "你有 %d 个好友请求"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} 开始了一个新计划, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} 开始了一个新的读经计划, {title}"
 
 msgid "notifications.system.test"
 msgstr "现在就下载我们的儿童圣经软件!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "来自 {name}："
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>嗨！</p><p>我想跟您分享我目前在使用着的 YouVersion 圣经软件。如果您没试过这个应用程序，它是将圣经的内涵与真理纳入日常生活的一种简单方法。 </p><p><strong>下载圣经软件：</strong> 在您的智慧型手机或平板电脑上阅读、观赏、聆听，以及分享。您也可以在 Bible.com 在线使用同样的功能。</p><p><strong>设立您的帐户：</strong> 订阅读经计划并在不同的设备上存取您的书签、高亮显示，以及笔记。</p><p><strong>添加朋友 (我就是人选之一！)：</strong> 与您关注的人一起探索与讨论圣经。</p><p>一切都在圣经软件里— 就从这里开始吧： </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"嗨，我在使用 YouVersion 的圣经软件，我想跟你分享。如果您没试过圣经软件，这实在是将圣经的美善和真理带入日常生活的简单方式。\n"
+"\n"
+"下载圣经软件：在智能手机或平板电脑或Bible.com网站上读经，看视频，听录音，分享经文。\n"
+"\n"
+"设置您的账户：订阅读经计划，在各种设备上访问您的书签、高亮显示和笔记。\n"
+"\n"
+"添加朋友 (比如我！)：与您关心的人一起讨论和探索圣经。\n"
+"\n"
+"一切都在圣经软件里——就从这里开始吧： "
+
+msgid "share.invite_email_subject"
+msgstr "与我一起使用圣经软件吧！"
+
+msgid "share.invite_facebook"
+msgstr "我喜爱圣经软件！它真的帮助我使圣经成为我日常生活的一部分。圣经软件能帮我做经文高亮记号，听音频圣经，记录笔记，跟踪灵修计划... 甚至观看视频！快去下载吧（还是免费的）："
+
+msgid "share.invite_facebook_direct"
+msgstr "你有 YouVersion 的圣经软件吗？我很喜欢用，猜想你也会喜欢。这是圣经软件的链接："
 
 msgid "share.invite_sms"
 msgstr "你有 YouVersion 的圣经软件吗？我喜欢用，猜想你也会喜欢。这是圣经软件的链接："
 
-msgid "share.invite_email_subject"
-msgstr "你有使用圣经软件吗？"
-
-msgid "share.invite_email_body"
-msgstr ""
-"我很喜欢使用 YouVersion 的圣经软件，我想你也会喜欢的。不管是阅读，看视频，听录音或分享经文，这个圣经软件都很好用，所以现在我接触圣经的次数也更多了。圣经软件甚至还包括了读经计划，提供一系列的精选经文，供我每天阅读。\n"
-"\n"
-"你可以从这里获得适用于大多数移动设备的 (免费的！)圣经软件："
-
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>嗨！</p><p>我想跟您分享我目前在使用着的 YouVersion 圣经软件。如果您没试过这个应用程序，它是将圣经的内涵与真理纳入日常生活的一种简单方法。 </p><p><strong>下载圣经软件：</strong> 在您的智慧型手机或平板电脑上阅读、观赏、聆听，以及分享。您也可以在 Bible.com 在线使用同样的功能。</p><p><strong>设立您的帐户：</strong> 订阅读经计划并在不同的设备上存取您的书签、高亮显示，以及笔记。</p><p><strong>添加朋友 (我就是人选之一！)：</strong> 与您关注的人一起探索与讨论圣经。</p><p>一切都在圣经软件里— 就从这里开始吧： </p>"
+msgid "share.invite_sms_prefix"
+msgstr "来自 {name}："
 
 msgid "share.invite_twitter"
 msgstr "我将 @YouVersion 的圣经软件常驻在主屏幕上。无论阅读圣经，观看视频，收听录音或分享经文... 都可在这个免费软件中完成："
@@ -292,8 +270,5 @@ msgstr "我将 @YouVersion 的圣经软件常驻在主屏幕上。无论阅读�
 msgid "share.invite_twitter_direct"
 msgstr "你有 @YouVersion 的圣经软件吗？我很喜欢用，猜想你也会喜欢，这是圣经软件的链接："
 
-msgid "share.invite_facebook"
-msgstr "我喜爱圣经软件！它真的帮助我使圣经成为我日常生活的一部分。圣经软件能帮我做经文高亮记号，听音频圣经，记录笔记，跟踪灵修计划... 甚至观看视频！快去下载吧（还是免费的）："
-
-msgid "share.invite_facebook_direct"
-msgstr "你有 YouVersion 的圣经软件吗？我很喜欢用，猜想你也会喜欢。这是圣经软件的链接："
+msgid "notifications.people.contact.joined"
+msgstr "{name} 刚加入 YouVersion。点击以添加他为您的朋友。"
