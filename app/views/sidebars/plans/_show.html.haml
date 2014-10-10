@@ -11,51 +11,44 @@
     %div.ft.link
       = link_to(t("plans.about publisher"), plan.publisher_url)
 
-.widget.rp-reading
-  %h3.hd
-    16 friends currently reading this plan
-  .rp-widget-avatars
-    %a{href: "#", title: "Stu Pedaso"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-  .rp-view-all
-    %hr
-    %a{href: "#"}
-      View all
+- if plan.friends_reading.length > 0
+  .widget.rp-reading
+    %h3.hd
+      =t("plans.stats.friends reading", count: plan.friends_reading.length)
+    .rp-widget-avatars
+      - plan.friends_reading.each do |friend|
+        - if friend["avatar"].present?
+          %a{href: users_path(friend["username"]), title: friend["name"]}
+            = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max
+
+    - if plan.friends_reading.length > 6
+      .rp-view-all
+        %hr
+        %a.open{href: "#"}
+          =t("plans.stats.view all")
+        %a.close{href: "#"}
+          =t("plans.stats.close")
 
 
-
-.widget.rp-friends-completed
-  %h3.hd
-    24 friends completed this plan
-  .rp-widget-avatars
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-    %a{href: "#"}
-      = image_tag "josh_avatar.png"
-  .rp-view-all
-    %hr
-    %a{href: "#"}
-      View all
+- if plan.friends_completed.length > 0
+  .widget.rp-friends-completed
+    %h3.hd
+      =t("plans.stats.friends completed", count: plan.friends_completed.length)
+    .rp-widget-avatars
+      - plan.friends_completed.each do |friend|
+        - if friend["avatar"].present?
+          %a{href: users_path(friend["username"]), title: friend["name"]}
+            = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max
+    - if plan.friends_completed.length > 6
+      .rp-view-all
+        %hr
+        %a.open{href: "#"}
+          =t("plans.stats.view all")
+        %a.close{href: "#"}
+          =t("plans.stats.close")
 
 
-.widget.rp-all-completed
-  %span
-    Total completions: 3156233
+- if plan.total_completions >= 1000
+  .widget.rp-all-completed
+    %span
+      =t("plans.stats.total completions", count: plan.total_completions)
