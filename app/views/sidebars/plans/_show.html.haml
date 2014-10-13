@@ -7,7 +7,7 @@
   $(document).ready(function() {
     $('.rp-view-all a').click(function() {
       $(this).parent().children('a').toggle();
-      $(this).parent().prev().toggleClass('open');
+      $(this).parent().prev().toggleClass('open', 500);
     });
   });
 
