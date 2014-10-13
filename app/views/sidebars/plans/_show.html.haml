@@ -6,8 +6,8 @@
 :javascript 
   $(document).ready(function() {
     $('.rp-view-all a').click(function() {
-      $(this).parent().children('a').toggle();
-      $(this).parent().prev().toggleClass('open', 500);
+      $(this).parent().prev().toggleClass('open', 250);
+      $(this).parent().children('a').toggleClass('hidden');
     });
   });
 
@@ -34,7 +34,7 @@
         %hr
         %a.open{href: "#"}
           =t("plans.stats.view all")
-        %a.close{href: "#"}
+        %a.close.hidden{href: "#"}
           =t("plans.stats.close")
 
 
@@ -52,7 +52,7 @@
         %hr
         %a.open{href: "#"}
           =t("plans.stats.view all")
-        %a.close{href: "#"}
+        %a.close.hidden{href: "#"}
           =t("plans.stats.close")
 
 
