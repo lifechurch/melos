@@ -22,11 +22,12 @@ namespace :subscription do
     
     
     plan = Subscription.find(id, auth: user.auth)
-
     if plan.present? && plan.id
       puts "Subscription Found. ID: #{plan.id}"
-    else 
-      return
+    else
+      plan_id = Plan.find(id).id
+      Subscription.subscribe(plan_id, auth: user.auth, private: false, language_tag: 'en')
+      plan = Subscription.find(id, auth: user.auth)
     end
 
     puts 'Enter start day (1 for first day):'
