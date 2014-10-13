@@ -722,7 +722,9 @@ html[data-locale="en"]
       background-color: #fff
       padding: 10px 15px 5px
       overflow: hidden
-
+      height: 55px
+      &.open
+        height: 100%
       a
         width: 40px
         height: 40px
@@ -752,6 +754,9 @@ html[data-locale="en"]
         display: block
         padding: 0 15px 10px
         border-bottom: 1px solid #dedddb
+
+        &.hidden
+          display: none
 
   .rp-all-completed
     background: #fff image-url("rp_about_users.png") no-repeat 15px top
