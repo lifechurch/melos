@@ -19,9 +19,7 @@ namespace :subscription do
 
     puts 'Enter Plan ID (numeric):'
     id = STDIN.gets.chomp
-    
-    
-    plan = Subscription.find(id, auth: user.auth)
+  
     if plan.present? && plan.id
       puts "Subscription Found. ID: #{plan.id}"
     else
@@ -44,14 +42,16 @@ namespace :subscription do
       plan.day(d).api_references.each do |ref|
         # Read away.
         puts "Reference #{ref}"
-        unless plan.set_ref_completion(d, ref["reference"], false)
-          return "Error on day #{d}"
+        unless plan.set_ref_completion(d, ref["reference"], true)
+          puts "Error on day #{d}" unless plan.completed?
+        else
+          puts "Day #{d} complete"
         end
       end
-      puts "Day Complete"
+      puts "Completed plan" && break if plan.completed?
     end
-    puts
-    puts 'Success. You are a speed reader.'
+      puts
+      puts 'Success. You are a speed reader.'
   end
 
 end 
