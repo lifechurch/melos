@@ -39,9 +39,27 @@ describe User do
   describe ".register" do
     it "returns true for creating a user with valid params" do
       destroy_user({username: "testuser999", password: @test_creds[:password]})
-      expect { User.authenticate("testuser999", @test_creds[:password]) }.to raise_error
+      expect(User.authenticate("testuser999", @test_creds[:password])).to(respond_to(:errors))
       result = User.register(email: "testuser999@youversion.com", username: "testuser999", password: @test_creds[:password], agree: true, verified: true)
       result.should be_true
+    end
+
+    it 'makes a bunch of users' do
+      # 1.upto(10).each do |n|
+      #   result = User.register(email: "webtest#{n}@youversion.com", username: "webtest#{n}", password: 'passverd', agree: true, verified: true, first_name: 'greatest', last_name: 'ever')
+      #   puts result.inspect
+      # end
+
+      # 1.upto(10) do |n|
+      #   test_user = User.authenticate("webtest#{n}", "passverd")
+      #   Friendships.offer(user_id: 7830, auth: test_user.auth)
+      #   user = User.authenticate("matt", "staging")
+      #   Friendships.accept(user_id: test_user.id, auth: user.auth)
+      # end
+
+      # 1.upto(10).each do |n|
+      #   puts destroy_user({username: "webtest#{n}", password: 'passverd'})
+      # end
     end
 
     it "returns false for invalid params" do

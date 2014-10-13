@@ -35,11 +35,11 @@ class Subscription < Plan
 
     def find(plan, opts = {})
       raise YV::AuthRequired unless opts[:auth]
-
+      auth = opts[:auth]
       opts[:user_id] = opts[:auth].user_id
       opts[:cache_for] = 0
       found = super(plan, opts)
-      
+      found.auth = auth
       return found if found.valid?
       return nil if found.invalid? and found.errors.full_messages.include? "Reading plan not found"
       return found

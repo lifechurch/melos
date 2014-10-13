@@ -711,6 +711,16 @@ en:
       reading:                                  "reading"
       readings:                                 "readings"
       readings 5 or more:                       "readings"
+    stats:
+      friends reading:
+        one:                                    "%{count} friend subscribed to this plan"
+        other:                                  "%{count} friends subscribed to this plan"
+      friends completed:                         
+        one:                                    "%{count} friend completed this plan"
+        other:                                  "%{count} friends completed this plan"
+      total completions:                        "Over %{count} completions"
+      view all:                                 "View All"
+      close:                                    "Close"
     settings:                                   "Settings"
     privacy:
       visible to friends?:                      "Do you want your friends to see your Plan activity?"
