@@ -665,6 +665,7 @@ vi:
         labels label: "Nhãn tên:"
         title: "Đánh dấu"
         my labels: "Nhãn tên của tôi"
+        all labels: "Hiển thị tất cả"
         not found: "Chức năng Đánh dấu giúp bạn nhanh chóng tìm lại các phân đoạn yêu thích hoặc phần bạn vừa đọc trong một sách nào đó. Để đánh dấu, hãy chọn một hoặc nhiều câu và gõ vào \"Đã chọn\" ở đầu bài đọc."
         other user not found: "%{username} chưa lưu đánh dấu nào."
         creation form errors: "Các lỗi sau khiến bạn không tạo đánh dấu được:"

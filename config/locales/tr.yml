@@ -665,6 +665,7 @@ tr:
         labels label: "Etiketler:"
         title: "Yer İmleri"
         my labels: "Etiketlerim"
+        all labels: "Show All"
         not found: "Yer imleri en sevdiğiniz ayetleri veya herhangi bir kitapta son okuduğunuz bölümü çabukça bulmanızı sağlar. Yer imi nasıl eklenir: Kutsal Kitap Okuyucusunda bir ayet seçin. Ondan sonra okuyucunun araç çubuğundaki Seçim düğmesini tıklayın."
         other user not found: "%{username} henüz yer imi kaydetmedi."
         creation form errors: "Şu hata(lar) yer iminizin kaydedilmesini engelledi:"

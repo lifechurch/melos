@@ -1,166 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Czech translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# Marek Lisý <marek.lisy@centrum.cz>, 2014
-# Marek Lisý <marek.lisy@centrum.cz>, 2014
-# Radek Ćmiel <radek@element.cx>, 2014
-# Tomáš Ježek <youversion@jezkovi.com>, 2013
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# Marek Lisý <marek.lisy@centrum.cz>, 2014
-# Marek Lisý <marek.lisy@centrum.cz>, 2014
-# Marketa Washburn <iamcrazyketa@yahoo.com>, 2014
-# Radek Ćmiel <radek@element.cx>, 2014
-# Tomáš Ježek <youversion@jezkovi.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# Adam Szturc <adam.szturc@gmail.com>, 2014
-# Marek Lisý <marek.lisy@centrum.cz>, 2013
-# Marek Lisý <marek.lisy@centrum.cz>, 2013
-# Marek Lisý <marek.lisy@centrum.cz>, 2013-2014
-# Milan Kramolis <timdruhym@gmail.com>, 2013
-# Milan Kramolis <timdruhym@gmail.com>, 2013
-# Radek Ćmiel <radek@element.cx>, 2013-2014
-# Tomáš Ježek <youversion@jezkovi.com>, 2014
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-02 10:10+0000\n"
-"Last-Translator: Radek Ćmiel <radek@element.cx>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/yv-backend/language/cs/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: cs <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-02 10:00+0000\n"
-"Last-Translator: Radek Ćmiel <radek@element.cx>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/yv-backend/language/cs/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: cs <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 15:01+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/yv-backend/language/cs/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: cs <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Seriál Bible</i>"
-
-msgid "moment.system.bible_series_promo.body"
-msgstr "Sledujte <i>Seriál Bible</i> dnes!"
-
-msgid "moment.bookmark.title"
-msgstr "{name} uložil záložku <b>{reference_human}</b>"
-
-msgid "moment.bookmark.self.title"
-msgstr "Uložil jste záložku <b>{reference_human}</b>"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} je nyní přítel s <b>{friend_name}</b>"
-
-msgid "moment.friendship.self.title"
-msgstr "Stali jste se přáteli s <b>{friend_name}</b>"
-
-msgid "moment.highlight.title"
-msgstr "{name} zvýraznil <b>{reference_human}</b>"
-
-msgid "moment.highlight.self.title"
-msgstr "Zvýraznili jste <b>{reference_human}</b>"
-
-msgid "moment.note.title"
-msgstr "{name} přidal poznámku, <b>{title}</b>"
-
-msgid "moment.note.self.title"
-msgstr "Přidali jste poznámku, <b>{title}</b>"
-
-msgid "moment.bible.download.title"
-msgstr "{name} stáhl překlad <b>{version}</b>"
-
-msgid "moment.bible.download.self.title"
-msgstr "Stáhli jste překlad <b>{version}</b>"
-
-msgid "moment.plan_subscription.title"
-msgstr "{name} začal/a nový plán"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "Začali jste nový plán"
-
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} dokončil/a den <b>{segment}</b> plánu <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "Dokončili jste den  <b>{segment}</b> plánu <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.body"
-msgstr "Den {segment} z {total_segments} ({percent_complete}%)"
-
-msgid "moment.plan_completion.title"
-msgstr "{name} dokončil/a plán"
-
-msgid "moment.plan_completion.self.title"
-msgstr "Dokončili jste plán"
-
-msgid "moment.badge.earned.title"
-msgstr "{name} získal odznak <b>{title}</b>"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Získali jste odznak <b>{title}</b>"
 
-msgid "moment.video.watched.title"
-msgstr "{name} shlédl <b>{title}</b>"
+msgid "moment.badge.earned.title"
+msgstr "{name} získal odznak <b>{title}</b>"
 
-msgid "moment.video.watched.self.title"
-msgstr "Shlédli jste <b>{title}</b>"
+msgid "moment.bible.download.self.title"
+msgstr "Stáhli jste překlad <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} stáhl překlad <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Uložil jste záložku <b>{reference_human}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} uložil záložku <b>{reference_human}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Stali jste se přáteli s <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} je nyní přítel s <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Zvýraznili jste <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} zvýraznil <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Přidali jste poznámku, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} přidal poznámku, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Dokončili jste plán"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} dokončil/a plán"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Den {segment} z {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Dokončili jste den  <b>{segment}</b> plánu <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} dokončil/a den <b>{segment}</b> plánu <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Začali jste nový plán"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} začal/a nový plán"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Sledujte <i>Seriál Bible</i> dnes!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Seriál Bible</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "Aplikace Bible je s přáteli ještě lepší. Prohledejte vaše kontakty a přidejte si své přátele."
 
-msgid "notifications.friendships.offer"
-msgstr "{name} se chce stát vaším přítelem na YouVersion"
+msgid "moment.video.watched.self.title"
+msgstr "Shlédli jste <b>{title}</b>"
 
-msgid "notifications.friendships.accept"
-msgstr "{name} přijal vaši žádost o přátelství"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} je nyní vaším přítelem"
-
-msgid "notifications.friendships.suggestion"
-msgstr "Chcete přidat uživatele {name} jako přítele na YouVersion?"
+msgid "moment.video.watched.title"
+msgstr "{name} shlédl <b>{title}</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} přidal komentář k vaší záložce: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} přidal/a komentář k vašemu novému přátelství s {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} přidal komentář k vašemu zvýraznění: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} přidal komentář k vaší poznámce: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} přidal/a komentář k vašemu plánu: “{comment}”"
@@ -168,26 +132,65 @@ msgstr "{name} přidal/a komentář k vašemu plánu: “{comment}”"
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} okomentoval/a váš plán čtení Bible: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} přidal/a komentář k vašemu novému přátelství s {friend_name}: “{comment}”"
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} také okomentoval záložku uživatele {moment_owner_name}: “{comment}”"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} přidal komentář k vaší poznámce: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} přidal/a komentář k novému přátelství uživ. {moment_owner_name} s uživ. {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} také okomentoval zvýraznění uživatele {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} také okomentoval poznámku uživatele {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} také okomentoval svoji záložku: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} přidal/a komentář k přátelství s {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} také okomentoval svoje zvýraznění: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} také okomentoval svoji poznámku: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} okomentoval/a plán čtení: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} okomentoval/a plán čtení Bible: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} okomentoval/a plán {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} okomentoval/a {moment_owner_name} plán čtení Bible: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} přijal vaši žádost o přátelství"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} je nyní vaším přítelem"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} se chce stát vaším přítelem na YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Chcete přidat uživatele {name} jako přítele na YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "Uživateli {name} se líbí vaše záložka, {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "uživ. {name} se líbí vaše nové přátelství s {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Uživateli {name} se líbí vaše označení, {reference_human}"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "uživ. {name} se líbí váš pokrok ve čtení"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "uživ. {name} se líbí váš pokrok ve čtení Bible"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "uživ. {name} se líbí vaše nové přátelství s {friend_name}"
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "Uživateli {name} se líbí vaše poznámka"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "Uživateli {name} se líbí vaše poznámka na {reference_human}"
@@ -195,44 +198,11 @@ msgstr "Uživateli {name} se líbí vaše poznámka na {reference_human}"
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "Uživateli {name} se líbí vaše poznámka, “{title}”"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "Uživateli {name} se líbí vaše poznámka"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "uživ. {name} se líbí váš pokrok ve čtení"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} také okomentoval svoji záložku: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} také okomentoval záložku uživatele {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} přidal/a komentář k přátelství s {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} přidal/a komentář k novému přátelství uživ. {moment_owner_name} s uživ. {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} také okomentoval svoje zvýraznění: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} také okomentoval zvýraznění uživatele {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} okomentoval/a plán čtení: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} okomentoval/a plán {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} okomentoval/a plán čtení Bible: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} okomentoval/a {moment_owner_name} plán čtení Bible: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} také okomentoval svoji poznámku: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} také okomentoval poznámku uživatele {moment_owner_name}: “{comment}”"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "uživ. {name} se líbí váš pokrok ve čtení Bible"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} vytvořil záložku {reference_human}"
@@ -240,20 +210,14 @@ msgstr "{name} vytvořil záložku {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} zvýraznil {reference_human}"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} přidal poznámku"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} přidal poznámku k {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} přidal poznámku “{title}”"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} přidal poznámku"
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "Uživatel {name} začal nový plán, {title}"
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "Uživatel {name} začal nový plán čtení Bible, {title}"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "Uživatel {name} dokončil plán čtení, {title}"
@@ -261,24 +225,17 @@ msgstr "Uživatel {name} dokončil plán čtení, {title}"
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "Uživatel {name} dokončil plán čtení Bible, {title}"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "Máte žádost o přátelství"
-msgstr[1] "Máte %d žádosti o přátelství"
-msgstr[2] "Máte %d žádostí o přátelství"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "Uživatel {name} začal nový plán, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "Uživatel {name} začal nový plán čtení Bible, {title}"
 
 msgid "notifications.system.test"
 msgstr "Stáhněte si aplikaci Kids Bible App právě teď!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "Od uživatele {name}:"
-
-msgid "share.invite_sms"
-msgstr "Už máš aplikaci Bible od YouVersion? Mě se moc líbí a myslím si, že by se mohla líbit i Tobě. Tady je odkaz:"
-
-msgid "share.invite_email_subject"
-msgstr "Nainstaluj si aplikaci Bible, kterou používám!"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Ahoj!</p><p>Používám aplikaci YouVersion Bible a chci ji s tebou sdílet. Pokud ještě aplikaci neznáš, pak ti můžu říct, jak je s ní snadné každý den objevovat krásy a pravdy z Bible. </p><p><strong>Stáhni si aplikaci Bible:</strong> čti, sleduj, poslouchej a sdílej ze svého chytrého telefonu či tabletu, nebo vše používej online na adrese Bible.com</p><p><strong>Nastav si účet:</strong> přihlaš se k odběru plánu čtení Bible a měj tak přístup k záložkám, zvýrazněním a poznámkám na všech svých zařízeních</p><p><strong>Přidávej si přátele (například mě!):</strong> objevuj a komentuj různé věci z Bible s lidmi, na kterých ti záleží</p><p>Vše máš k dispozici v aplikaci Bible - začni tady: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
@@ -292,19 +249,25 @@ msgstr ""
 "\n"
 "Přidávej si přátelé (stejně jako mě!): objevuj a komentuj různé věci z Bible s lidmi, kterým na tobě záleží.\n"
 "\n"
-"To vše v aplikaci Bible - začni zde:"
+"To vše v aplikaci Bible - začni zde: "
 
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Ahoj!</p><p>Používám aplikaci YouVersion Bible a chci ji s tebou sdílet. Pokud ještě aplikaci neznáš, pak ti můžu říct, jak je snadné každý den objevovat krásy a pravdy z Bible. </p><p><strong>Stáhni si aplikaci Bible:</strong> čti, sleduj, poslouchej a sdílej ze svého smartphonu či tabletu, nebo vše používej online na adrese Bible.com</p><p><strong>Nastav si účet:</strong> přihlas se k odběru plánu čtení Bible a měj tak přístup k záložkám, zvýrazněním a poznámkám na všech svých zařízeních</p><p><strong>Přidávej si přátelé (stejně jako mě!):</strong> objevuj a komentuj různé věci z Bible s lidmi, kterým na tobě záleží</p><p>Vše máš k dispozici v aplikaci Bible - začínáme zde: </p>"
+msgid "share.invite_email_subject"
+msgstr "Nainstaluj si aplikaci Bible, kterou používám!"
+
+msgid "share.invite_facebook"
+msgstr "Mám moc rád aplikaci Bible! Pomohla mi k tomu, aby se Bible stala každodenní součástí mého života. Můžu tam zvýraznit verše, poslechnout si audio Bible, udělat si poznámky, číst podle plánu... dokonce sledovat videa! Určitě si ji můžete hned stáhnout (je zdarma):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Už máš aplikaci Bible? Mně se moc líbí a myslím si, že by se líbila i Tobě. Tady je odkaz:"
+
+msgid "share.invite_sms"
+msgstr "Už máš aplikaci Bible od YouVersion? Mě se moc líbí a myslím si, že by se mohla líbit i Tobě. Tady je odkaz:"
+
+msgid "share.invite_sms_prefix"
+msgstr "Od uživatele {name}:"
 
 msgid "share.invite_twitter"
 msgstr "Aplikace Bible od @YouVersion má stálé místo na mé domovské obrazovce. Mohu číst, sledovat videa, poslouchat audio a sdílet... Zcela zdarma:"
 
 msgid "share.invite_twitter_direct"
 msgstr "Už máš aplikaci Bible od @YouVersion? Mě se moc líbí a myslím si, že by se líbila i Tobě. Tady je odkaz:"
-
-msgid "share.invite_facebook"
-msgstr "Mám moc rád aplikaci Bible! Pomohla mi k tomu, aby se Bible stala každodenní součástí mého života. Můžu tam zvýraznit verše, poslechnout si audio Bible, udělat si poznámky, číst podle plánu... dokonce sledovat videa! Určitě si ji můžete hned stáhnout (je zdarma): "
-
-msgid "share.invite_facebook_direct"
-msgstr "Už máš aplikaci Bible? Mně se moc líbí a myslím si, že by se líbila i Tobě. Tady je odkaz:"

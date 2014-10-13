@@ -4,7 +4,7 @@ ar:
         formats: 
             votd: "%B %-d, %Y"
     counter: 
-        format: "999,999,999"
+        format: "٩٩٩,٩٩٩,٩٩٩"
     social: 
         intro page: 
             main heading: "المحادثات والاستكشاف"
@@ -645,7 +645,7 @@ ar:
             badges: "اخطر ني  عن الشارات التي قد كسبتها."
             follower: "اخطرني عندما يتابعني أحد ما."
             newsletter: "أبقني على إطلاع علي إعلانات Youversion."
-            contact_joins: "Notify me when a Contact joins"
+            contact_joins: "أبلغني عندما ينضم احد معارفي"
             note_like: "قم بتنبيهي عندما يعجب أحد بملاحظاتي"
             reading_plans: "قم بتنبيهي بمعلومات عن خطط القراءة التي بدأتها."
             publishing partners: "قم بتحديثي بالأخبار من شركاء محتوي YouVersion"
@@ -665,6 +665,7 @@ ar:
         labels label: "علامات:"
         title: "إشارات مرجعية"
         my labels: "علاماتي"
+        all labels: "عرض كل المحتوى"
         not found: "تمنحك الاشارات المرجعية مرجعا سريعا للمقاطع الكتابية المفضلة لديك أو لآخر إصحاح قرأته بإنجيل محدد. لإضافة  اشاره مرجعية، اختار آية من قارئ الكتاب المقدس ثم اضغط على زر تم اختيار في أعلى القارئ"
         other user not found: "%{username} لم يحفظ أي اشارت مرجعية بعد."
         creation form errors: "الخطأ (أخطاء) التالي منع  إنشاء الإشارة المرجعية الخاصة بك"
@@ -914,7 +915,7 @@ ar:
         creation form errors: "الخطأ (أخطاء) التالي منع التبرع:"
     download ad: 
         title: "حمل تطبيق الكتاب المقدس المجاني"
-        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+        description copy: "مئات من الإصدارات في أكثر من %{language_count} لغة - الإنجيل المقدس معك في كل مكان."
         line 1: "المئات من الاصدارات في 100+"
         line 2: "لغات مختلفة - الكتاب المقدس"
         line 3: "الذي يذهب معك الي اي مكان"
@@ -962,7 +963,7 @@ ar:
     mobile page: 
         h2: "كلمة الله معك."
         h3: "YouVersion عالمي"
-        h3 sub: "Available in more than %{language_count} languages worldwide."
+        h3 sub: "متوفر في أكثر من %{language_count} لغة حول العالم."
         main: "عشرات الملايين من الأشخاص يستخدمون تطبيق الكتاب المقدس &trade، ليجعلوا كلمة الله جزء من حياتهم اليومية. حمل التطبيق مجانا ليكون لك القدرة علىالوصول ألي اشاراتك المرجعية، الملاحظات وخطط القراءة من أي مكان. استمتع بمئات الاصدارات شاملة الملفات الصوتية، الكل على جهازك المحمول."
         button h4: "اذهب الي  Bible.com/app"
         button h4 sub: "على  جهاز تليفونك المحمول"
@@ -983,7 +984,7 @@ ar:
         symbian: "سيمبيان"
         mobile web: "شبكة المحمول"
         amazon: "كيندل فاير"
-        free overlay: "100% Free"
+        free overlay: "١٠٠٪ مجاناً"
     pages: 
         generic_error: 
             title: "عفوا!"

@@ -665,6 +665,7 @@ cs:
         labels label: "Štítky:"
         title: "Záložky"
         my labels: "Moje štítky"
+        all labels: "Show All"
         not found: "Záložky vám dají rychlý přehled vašich oblíbených pasáží nebo poslední kapitolu, kterou jste četli v dané knize. Pro přidání záložky zvolte verš v prohlížení Bible a klikněte na tlačítko v horní části prohlížeče."
         other user not found: "Uživatel %{username} zatím neuložil žádné záložky."
         creation form errors: "Následující chyby neumožnily vytvořit záložku:"

@@ -2,6 +2,15 @@
 // presenter: Presenter::Sidebar::Plan
 - plan = presenter.plan
 
+
+:javascript 
+  $(document).ready(function() {
+    $('.rp-view-all a').click(function() {
+      $(this).parent().prev().toggleClass('open', 250);
+      $(this).parent().children('a').toggleClass('hidden');
+    });
+  });
+
 .widget
   %h3.hd
     =t("plans.publisher")
@@ -10,3 +19,44 @@
   - unless plan.publisher_url.nil?
     %div.ft.link
       = link_to(t("plans.about publisher"), plan.publisher_url)
+- if @friends_reading.length > 0
+  .widget.rp-reading
+    %h3.hd
+      =t("plans.stats.friends reading", count: @friends_reading.length)
+    .rp-widget-avatars
+      - @friends_reading.each do |friend|
+        - if friend["avatar"].present?
+          %a{href: users_path(friend["username"]), title: friend["name"]}
+            = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max{|a| a[:width] }["url"]
+
+    - if @friends_reading.length > 6
+      .rp-view-all
+        %hr
+        %a.open{href: "#"}
+          =t("plans.stats.view all")
+        %a.close.hidden{href: "#"}
+          =t("plans.stats.close")
+
+
+- if @friends_completed.length > 0
+  .widget.rp-friends-completed
+    %h3.hd
+      =t("plans.stats.friends completed", count: @friends_completed.length)
+    .rp-widget-avatars
+      - @friends_completed.each do |friend|
+        - if friend["avatar"].present?
+          %a{href: users_path(friend["username"]), title: friend["name"]}
+            = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max{|a| a[:width] }["url"]
+    - if @friends_completed.length > 6
+      .rp-view-all
+        %hr
+        %a.open{href: "#"}
+          =t("plans.stats.view all")
+        %a.close.hidden{href: "#"}
+          =t("plans.stats.close")
+
+
+- if plan.total_completions >= 1000
+  .widget.rp-all-completed
+    %span
+      =t("plans.stats.total completions", count: plan.total_completions)

@@ -665,6 +665,7 @@ sv:
         labels label: "Etiketter:"
         title: "Bokmärken"
         my labels: "Mina etiketter"
+        all labels: "Show All"
         not found: "Bokmärken ger dig en snabb referens till dina favoritpassager eller till det senaste kapitlet du läste i en viss bok. För att lägga till ett bokmärke väljer du versen i Bibelläsaren och klickar sedan på knappen Markerat högst upp i läsaren."
         other user not found: "%{username} har inte sparat några bokmärken än."
         creation form errors: "Följande fel gjorde att du inte kunde skapa ditt bokmärke:"

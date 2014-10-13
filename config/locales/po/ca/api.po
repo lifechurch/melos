@@ -1,157 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Catalan translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# Ferran Campillo López, 2014
-# Mireia Guerola Carbó <mireia.guerola@gmail.com>, 2013-2014
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# Mireia Guerola Carbó <mireia.guerola@gmail.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# Ferran Campillo López, 2013
-# Ferran Campillo López, 2013
-# Ferran Campillo López, 2013-2014
-# Mireia Guerola Carbó <mireia.guerola@gmail.com>, 2013
-# Mireia Guerola Carbó <mireia.guerola@gmail.com>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-02 20:51+0000\n"
-"Last-Translator: Mireia Guerola Carbó <mireia.guerola@gmail.com>\n"
-"Language-Team: Catalan (http://www.transifex.com/projects/p/yv-backend/language/ca/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ca <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-02 21:01+0000\n"
-"Last-Translator: Mireia Guerola Carbó <mireia.guerola@gmail.com>\n"
-"Language-Team: Catalan (http://www.transifex.com/projects/p/yv-backend/language/ca/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ca <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 15:01+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: Catalan (http://www.transifex.com/projects/p/yv-backend/language/ca/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ca <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Sèrie Bíblica</i>"
-
-msgid "moment.system.bible_series_promo.body"
-msgstr "Mira la <i>Sèrie Bíblica</i> aquest vespre!"
-
-msgid "moment.bookmark.title"
-msgstr "{name} ha posat un marcador a <b>{reference_human}</b>"
-
-msgid "moment.bookmark.self.title"
-msgstr "Has posat un marcador a <b>{reference_human}</b>"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} ara és amic de <b>{friend_name}</b>"
-
-msgid "moment.friendship.self.title"
-msgstr "Ara ets amic de <b>{friend_name}</b>"
-
-msgid "moment.highlight.title"
-msgstr "{name} ha ressaltat <b>{reference_human}</b>"
-
-msgid "moment.highlight.self.title"
-msgstr "Has ressaltat <b>{reference_human}</b>"
-
-msgid "moment.note.title"
-msgstr "{name} ha afegit una nota, <b>{title}</b>"
-
-msgid "moment.note.self.title"
-msgstr "Has afegit una nota, <b>{title}</b>"
-
-msgid "moment.bible.download.title"
-msgstr "{name} ha descarregat la versió, <b>{version}</b>"
-
-msgid "moment.bible.download.self.title"
-msgstr "Has descarregat la versió, <b>{version}</b>"
-
-msgid "moment.plan_subscription.title"
-msgstr "{name} ha començat un pla de lectura"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "Ha començat un pla de lectura"
-
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} ha completat el dia <b>{segment}</b> del pla de lectura, <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "Has completat el dia <b>{segment}</b> del pla de lectura, <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.body"
-msgstr "Dia {segment} de {total_segments} ({percent_complete}%)"
-
-msgid "moment.plan_completion.title"
-msgstr "{name} ha acabat un pla de lectura"
-
-msgid "moment.plan_completion.self.title"
-msgstr "Pla de lectura finalitzat"
-
-msgid "moment.badge.earned.title"
-msgstr "{name} ha aconseguit la insígnia <b>{title}</b>"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Has aconseguit la insígnia <b>{title}</b>"
 
-msgid "moment.video.watched.title"
-msgstr "{name} ha mirat <b>{title}</b>"
+msgid "moment.badge.earned.title"
+msgstr "{name} ha aconseguit la insígnia <b>{title}</b>"
 
-msgid "moment.video.watched.self.title"
-msgstr "Has mirat <b>{title}</b>"
+msgid "moment.bible.download.self.title"
+msgstr "Has descarregat la versió, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} ha descarregat la versió, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Has posat un marcador a <b>{reference_human}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} ha posat un marcador a <b>{reference_human}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Ara ets amic de <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} ara és amic de <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Has ressaltat <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} ha ressaltat <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Has afegit una nota, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} ha afegit una nota, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Pla de lectura finalitzat"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} ha acabat un pla de lectura"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Dia {segment} de {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Has completat el dia <b>{segment}</b> del pla de lectura, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} ha completat el dia <b>{segment}</b> del pla de lectura, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Ha començat un pla de lectura"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} ha començat un pla de lectura"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Mira la <i>Sèrie Bíblica</i> aquest vespre!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Sèrie Bíblica</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "L'App de la Bíblia és encara millor amb Amics. Cerca en els teus Contactes per trobar-hi Amics."
 
-msgid "notifications.friendships.offer"
-msgstr "{name} vol ser el teu amic a YouVersion"
+msgid "moment.video.watched.self.title"
+msgstr "Has mirat <b>{title}</b>"
 
-msgid "notifications.friendships.accept"
-msgstr "{name} ha acceptat la teva sol·licitud d'amistat"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} és ara el teu amic"
-
-msgid "notifications.friendships.suggestion"
-msgstr "Vols ser amic de {name} a YouVersion?"
+msgid "moment.video.watched.title"
+msgstr "{name} ha mirat <b>{title}</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} ha comentat el teu marcador: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} ha comentat la teva nova amistat amb {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ha comentat la teva marca: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} ha comentat la teva nota: \"{comment}\""
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} ha comentat el teu Pla: “{comment}”"
@@ -159,26 +132,65 @@ msgstr "{name} ha comentat el teu Pla: “{comment}”"
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} ha comentat el teu Pla de la Bíblia: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} ha comentat la teva nova amistat amb {friend_name}: “{comment}”"
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} també ha comentat el marcador de {moment_owner_name}: “{comment}”"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} ha comentat la teva nota: \"{comment}\""
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} també ha comentat la nova amistat de {moment_owner_name} amb {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} també ha comentat la marca de {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} també ha comentat la nota de {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} també ha comentat el seu marcador: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} també ha comentat la seva nova amistat amb {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} també ha comentat la seva marca: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} també ha comentat la seva nota: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} també ha comentat el seu Pla: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} també ha comentat el seu Pla de la Bíblia: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} també ha comentat el Pla de {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} també ha comentat el Pla de la Bíblia de {moment_owner_name}: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} ha acceptat la teva sol·licitud d'amistat"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} és ara el teu amic"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} vol ser el teu amic a YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Vols ser amic de {name} a YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "A {name} li agrada el teu marcador, {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "A {name} li agrada la teva nova amistat amb {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "A {name} li agrada el que has ressaltat, {reference_human}"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "A {name} li agrada la teva activitat amb els Plans"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "A {name} li agrada la teva activitat amb els Plans de la Bíblia"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "A {name} li agrada la teva nova amistat amb {friend_name}"
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "A {name} li agrada la teva nota"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "A {name} li agrada la teva nota a {reference_human}"
@@ -186,44 +198,11 @@ msgstr "A {name} li agrada la teva nota a {reference_human}"
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "A {name} li agrada la teva nota, “{title}”"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "A {name} li agrada la teva nota"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "A {name} li agrada la teva activitat amb els Plans"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} també ha comentat el seu marcador: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} també ha comentat el marcador de {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} també ha comentat la seva nova amistat amb {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} també ha comentat la nova amistat de {moment_owner_name} amb {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} també ha comentat la seva marca: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} també ha comentat la marca de {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} també ha comentat el seu Pla: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} també ha comentat el Pla de {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} també ha comentat el seu Pla de la Bíblia: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} també ha comentat el Pla de la Bíblia de {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} també ha comentat la seva nota: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} també ha comentat la nota de {moment_owner_name}: “{comment}”"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "A {name} li agrada la teva activitat amb els Plans de la Bíblia"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} ha posat un marcador a {reference_human}"
@@ -231,20 +210,14 @@ msgstr "{name} ha posat un marcador a {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ha ressaltat {reference_human}"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} ha afegit una nota"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} ha afegit una nota a {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} ha afegit una nota, “{title}”"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} ha afegit una nota"
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} ha començat un nou Pla, {title}"
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} ha començat un nou Pla de la Bíblia, {title}"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} ha acabat el seu Pla, {title}"
@@ -252,41 +225,41 @@ msgstr "{name} ha acabat el seu Pla, {title}"
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} ha acabat el seu Pla de la Bíblia, {title}"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "Tens una sol·licitud d'amistat"
-msgstr[1] "Tens %d sol·licituds d'amistat"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} ha començat un nou Pla, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} ha començat un nou Pla de la Bíblia, {title}"
 
 msgid "notifications.system.test"
 msgstr "Descarrega ara la nostra App de la Bíblia per Nens!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "De {name}:"
-
-msgid "share.invite_sms"
-msgstr "Tens l'aplicació de la Bíblia de YouVersion? A mi m'encanta, i crec que a tu també t'agradaria. Aquí tens l'enllaç si no la tens:"
-
-msgid "share.invite_email_subject"
-msgstr "Tens l'aplicació de la Bíblia?"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Hola!</p><p>Estic utilitzant l'Aplicació de la Bíblia i volia compartir-ho amb tu. Si acabes d'entrar-hi en contacte, veuràs que com és de senzill portar la bellesa i veritat de la Bíblia al teu dia a dia. </p><p><strong>Aconsegueix l'Aplicació de la Bíblia:</strong> llegeix, mira, escolta i comparteix al teu smartphone o tablet, i a la versió en línia a Bible.com</p><p><strong>Configura el teu compte:</strong> subscriu-te als Plans de la Bíblia i accedeix a marcadors, subratllats i notes mitjançant els diferents dispositius</p><p><strong>Agrega amics (Com jo!):</strong> explora i parlar de la Bíblia amb les persones que t'importen</p><p>Tot a l'Aplicació de la Bíblia —comença aquí: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
 "Estic gaudint de l'aplicació de la Bíblia de YouVersion i crec que a tu segurament també t'agradaria. Darrerament estic obrint molt més la Bíblia perquè és molt fàcil de llegir, mirar, escoltar i compartir. Fins i tot té Plans, que tenen una selecció de la Bíblia ben escollida i que m'espera cada dia.\n"
 "\n"
-"La pots aconseguir (gratis!) per gairebé qualsevol dispositiu mòbil aquí:"
+"La pots aconseguir (gratis!) per gairebé qualsevol dispositiu mòbil aquí: "
 
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Hola!</p><p>Estic utilitzant l'Aplicació de la Bíblia i volia compartir-ho amb tu. Si acabes d'entrar-hi en contacte, veuràs que com és de senzill portar la bellesa i veritat de la Bíblia al teu dia a dia. </p><p><strong>Aconsegueix l'Aplicació de la Bíblia:</strong> llegeix, mira, escolta i comparteix al teu smartphone o tablet, i a la versió en línia a Bible.com</p><p><strong>Configura el teu compte:</strong> subscriu-te als Plans de la Bíblia i accedeix a marcadors, subratllats i notes mitjançant els diferents dispositius</p><p><strong>Agrega amics (Com jo!):</strong> explora i parlar de la Bíblia amb les persones que t'importen</p><p>Tot a l'Aplicació de la Bíblia —comença aquí: </p>"
-
-msgid "share.invite_twitter"
-msgstr "L'aplicació de la Bíblia de YouVersion té un lloc permanent a la meva pantalla inicial. Llegeix, mira, escolta i comparteix...tot en una aplicació gratuïta:"
-
-msgid "share.invite_twitter_direct"
-msgstr "Tens l'aplicació de la Bíblia de YouVersion? A mi m'encanta, i crec que a tu també t'agradaria. Aquí tens l'enllaç si no la tens:"
+msgid "share.invite_email_subject"
+msgstr "Tens l'aplicació de la Bíblia?"
 
 msgid "share.invite_facebook"
 msgstr "M'encanta l'aplicació de la Bíblia! Realment m'ha ajudat a que la Bíblia sigui part de la meva vida diària. Puc ressaltar, escoltar Bíblies en format àudio, prendre notes, seguir plans devocionals...i fins i tot mirar vídeos! Descarrega-te-la ara (es gratuïta):"
 
 msgid "share.invite_facebook_direct"
+msgstr "Tens l'aplicació de la Bíblia de YouVersion? A mi m'encanta, i crec que a tu també t'agradaria. Aquí tens l'enllaç si no la tens:"
+
+msgid "share.invite_sms"
+msgstr "Tens l'aplicació de la Bíblia de YouVersion? A mi m'encanta, i crec que a tu també t'agradaria. Aquí tens l'enllaç si no la tens:"
+
+msgid "share.invite_sms_prefix"
+msgstr "De {name}:"
+
+msgid "share.invite_twitter"
+msgstr "L'aplicació de la Bíblia de YouVersion té un lloc permanent a la meva pantalla inicial. Llegeix, mira, escolta i comparteix...tot en una aplicació gratuïta:"
+
+msgid "share.invite_twitter_direct"
 msgstr "Tens l'aplicació de la Bíblia de YouVersion? A mi m'encanta, i crec que a tu també t'agradaria. Aquí tens l'enllaç si no la tens:"

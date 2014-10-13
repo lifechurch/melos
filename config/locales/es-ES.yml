@@ -665,6 +665,7 @@ es-ES:
         labels label: "Eiquetas:"
         title: "Marcadores"
         my labels: "Mis etiquetas"
+        all labels: "Show All"
         not found: "Los marcadores te darán una guía de referencia rápida a tus pasajes favoritos o al último capítulo que leíste de un libro en particular. Para agregar un marcador, selecciona un versículo en el lector de la Biblia y luego haz clic en el botón Seleccionado en la parte superior del lector."
         other user not found: "%{username} no ha guardado ningún marcador todavía."
         creation form errors: "Los siguientes errores impidieron la creación de tu marcador:"

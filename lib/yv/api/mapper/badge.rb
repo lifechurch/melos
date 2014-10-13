@@ -28,8 +28,8 @@ module YV
           def map_to_instance(instance,results)
             instance.id = results.id
             instance.slug = results.slug
-            instance.name = results.name["default"]
-            instance.description = results.description["default"]
+            instance.name = YV::Resource.i18nize(results.name).gsub(/\\u([0-9a-z]{4})/) {|s| [$1.to_i(16)].pack("U")}
+            instance.description = YV::Resource.i18nize(results.description).gsub(/\\u([0-9a-z]{4})/) {|s| [$1.to_i(16)].pack("U")}
             instance.image_url = results.image_url
             instance.type = results.type
             instance.user_id = results.user_id
