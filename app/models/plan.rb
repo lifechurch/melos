@@ -75,7 +75,7 @@ class Plan < YV::Resource
     end
 
     def stats(opts={})
-      raise YouVersion::API::RecordNotFound unless opts[:id].present?
+      raise YouVersion::API::RecordNotFound unless opts[:id].present? 
       data, errs = get(stats_path, opts)
       errs || data
     end
@@ -200,20 +200,20 @@ class Plan < YV::Resource
     correct_class && self.id == compare.id
   end
 
-  def friends_reading
-    response = Plan.stats(id: self.id)
+  def friends_reading(opts={})
+    response = Plan.stats(id: self.id, auth: opts[:auth])
     return response["friends"]["subscribed"] || [] if response["friends"]
     return []
   end
 
-  def friends_completed
-    response = Plan.stats(id: self.id)
+  def friends_completed(opts={})
+    response = Plan.stats(id: self.id, auth: opts[:auth])
     return response["friends"]["completed"] || [] if response["friends"]
     return []
   end
 
-  def total_completions
-    response = Plan.stats(id: self.id)
+  def total_completions(opts={})
+    response = Plan.stats(id: self.id, auth: opts[:auth])
     if response["total_completed"]
       vals = [0, 1000, 2500, 5000, 7500, 10000, 25000, 50000, 75000, 100000, 250000, 500000, 750000]
       vals.select{|v| v <= response["total_completed"]}.max
