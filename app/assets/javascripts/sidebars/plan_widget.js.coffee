@@ -16,14 +16,12 @@ class window.PlanWidget
     easingType  = 'easeInOutCirc'
     duration    = 500
     if app.getPage().MODERN_BROWSER
-      # Temporary fix, no animation.
-      $('.calendar-cal').scrollLeft(newPosition)
-      # Not Working :(
-      # $('.calendar-cal').animate {scrollLeft: newPosition }, {easing: easingType, duration: duration}
+      $('.calendar-cal').animate {scrollLeft: newPosition }, {easing: easingType, duration: duration}
     else
       $('.calendar-cal').scrollLeft(newPosition)
 
   @initialScroll: ->
+    console.log("init");
     selected = $('.calendar-cal').find('.selected').parent()
     current = $('.calendar-cal').find('.current').parent()
     day_width = $('.calendar-cal-day').first().width()

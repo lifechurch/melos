@@ -1,6 +1,20 @@
 // Current Parameters:
 // presenter: Presenter::Sidebar::Subscription
 
+:javascript
+  $(window).load(function(){ 
+    $('.calendar-next').on('click', function(){
+      PlanWidget.toNext();
+    })
+
+    $('.calendar-prev').on('click', function(){
+      PlanWidget.toPrev();
+    });
+    PlanWidget.initialScroll();
+  });
+    
+
+    
 :ruby
   subscription  = presenter.subscription
   day           = presenter.day
