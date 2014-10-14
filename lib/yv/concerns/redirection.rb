@@ -108,6 +108,16 @@ module YV
             connections:
               {
                 index:      "connections"
+              },
+            redirects:
+              {
+                bookmarks:    "bookmarks",
+                profile:      "my_profile",
+                friends:      "friends",
+                notes:        "notes",
+                badges:       "badges",
+                highlights:   "highlights",
+                connections:  "connections"
               }
           }
         )
