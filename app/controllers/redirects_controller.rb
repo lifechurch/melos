@@ -1,7 +1,7 @@
 class RedirectsController < ApplicationController
 
   before_filter :force_login, except: [:settings_notifications, :lifechurchtv, :ninos]
-
+  prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
   # skip_filter :set_page,
   #             :set_locale,
   #             :skip_home,
