@@ -132,7 +132,6 @@ Page.prototype = {
 
   setFixedRightColumn: function() {
     this.fixedRightColumn = true;
-    $('#sidebar').addClass('fixed');
     $('#sidebar-scroll').slimScroll({
       height: ($(window).height() - $('#header_outer').outerHeight() - $('#footer').outerHeight() - 12) + 'px'
     });

@@ -15,7 +15,7 @@
     = render '/shared/javascripts'
     = render '/shared/google_analytics'
 
-  %body
+  %body{class: (yield(:body_class) if content_for? :body_class)}
     #wrapper
       = content_for?(:header) ? yield(:header) : render("/shared/header/default")
       = render(partial: "layouts/mobile_nav") unless @main_nav == false
