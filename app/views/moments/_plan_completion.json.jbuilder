@@ -7,6 +7,7 @@ json.object do
   json.set!       :subscribed, (@subscriptions.include? moment.plan_id) if @subscriptions.present?
   json.partial!   "/moments/moment_common", moment: moment
   json.actions do
+    json.set! :show, moment.comments_count > 0 || moment.likes_count > 0
     json.about_plan true
     json.start_plan true
   end
