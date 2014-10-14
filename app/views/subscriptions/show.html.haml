@@ -1,5 +1,6 @@
 :ruby
   @title = "#{t('plans.day number', day: @presenter.day)} - #{@presenter.subscription_name}"
+  content_for(:body_class, "reading_plan")
 
 - if @presenter.reference
   = render partial: "/references/reader", locals: {presenter: @presenter}

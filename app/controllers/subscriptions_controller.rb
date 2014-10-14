@@ -19,7 +19,6 @@ class SubscriptionsController < ApplicationController
 
   # TODO - ensure user subscribed.
   def show
-    @body_class = "reading_plan"
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
     now_reading(presenter.reference)
