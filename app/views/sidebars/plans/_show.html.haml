@@ -26,7 +26,7 @@
     .rp-widget-avatars
       - @friends_reading.each do |friend|
         - if friend["avatar"].present?
-          %a{href: users_path(friend["username"]), title: friend["name"]}
+          %a{href: user_path(friend["username"]), title: friend["name"]}
             = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max{|a| a[:width] }["url"]
 
     - if @friends_reading.length > 6
@@ -45,7 +45,7 @@
     .rp-widget-avatars
       - @friends_completed.each do |friend|
         - if friend["avatar"].present?
-          %a{href: users_path(friend["username"]), title: friend["name"]}
+          %a{href: user_path(friend["username"]), title: friend["name"]}
             = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max{|a| a[:width] }["url"]
     - if @friends_completed.length > 6
       .rp-view-all
