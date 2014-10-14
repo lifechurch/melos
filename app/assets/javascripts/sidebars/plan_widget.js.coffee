@@ -21,7 +21,6 @@ class window.PlanWidget
       $('.calendar-cal').scrollLeft(newPosition)
 
   @initialScroll: ->
-    console.log("init");
     selected = $('.calendar-cal').find('.selected').parent()
     current = $('.calendar-cal').find('.current').parent()
     day_width = $('.calendar-cal-day').first().width()
