@@ -665,6 +665,7 @@ lv:
         labels label: "Iezīme"
         title: "Grāmatzīmes"
         my labels: "Manas birkas"
+        all labels: "Show All"
         not found: "Grāmatzīmes palīdzēs ātrāk atrast jūsu mīļākās rakstu vietas, vai arī pēdējo nodaļu, kuru lasījāt. Lai pievienotu grāmatzīmi, izvēlieties Bībeles pantu un nospiediet izvēlēto pogu ekrāna aukšdaļā.."
         other user not found: "%{username} nav saglabājis nevienu grāmatzīmi."
         creation form errors: "Sekojoša kļūme(s) novērsa grāmatzīmes izveidošanu:"

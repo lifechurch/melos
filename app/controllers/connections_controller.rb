@@ -1,5 +1,6 @@
 class ConnectionsController < ApplicationController
 
+  prepend_before_filter :mobile_redirect, only: [:index]
   before_filter :force_login
   before_filter :authorize, only: [:index]
   layout 'settings'

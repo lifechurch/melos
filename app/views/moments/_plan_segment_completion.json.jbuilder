@@ -9,6 +9,7 @@ json.object do
   json.set!       :plan_id, moment.plan_id
   json.partial!   "/moments/moment_common", moment: moment
   json.actions do
+    json.set! :show, moment.comments_count > 0 || moment.likes_count > 0
     json.read_plan true
     json.about_plan true
   end

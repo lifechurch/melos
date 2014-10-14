@@ -285,6 +285,11 @@ body.transition .moment
   background-color: #EEEDEB
   margin-bottom: 2px
 
+.moment-detail
+  .moment-comments-likes,
+  .moment-comments-more
+    display: none
+
 .moment-comments-list-avatar,
 .moment-comments-input-avatar
   +border-radius(24px)
@@ -998,6 +1003,28 @@ input[type="submit"].moment-fr-name-add
       text-align: center
       display: block
       margin-top: 10px
+
+  .plan-privacy-buttons
+    background: #FFF
+    overflow: auto
+    padding: 15px
+
+    .detail-text
+      text-align: center
+      margin-bottom: 15px
+      font-weight: bold
+
+    .button-private,
+    .button-public
+      width: 38%
+
+    .button-private
+      float: right
+      margin-right: 10px
+
+    .button-public
+      float: left
+      margin-left: 10px
 
 // !Group moment
 

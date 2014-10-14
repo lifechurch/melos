@@ -665,6 +665,7 @@ ms:
         labels label: "Label"
         title: "Bookmark"
         my labels: "Label saya"
+        all labels: "Show All"
         not found: "Bookmark membenarkan anda merujuk pantas ke petikan kegemaran ataupun bab terakhir yang dibaca dalam kitab. Untuk menambah bookmark, pilihilah suatu ayat dalam pembaca Alkitab dan klik butang Terpilih di bahagian atas pembaca."
         other user not found: "%{username} belum menyelamatkan sebarang bookmark."
         creation form errors: "Kesilapan berikut menghalang penciptaan bookmark:"

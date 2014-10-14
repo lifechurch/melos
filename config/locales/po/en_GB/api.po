@@ -1,154 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# English (United Kingdom) translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# Anke Stoye <ankestoyeyouversion@gmail.com>, 2014
-# Susan Howe <susan.howe84@gmail.com>, 2013-2014
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# Susan Howe <susan.howe84@gmail.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# Susan Howe <susan.howe84@gmail.com>, 2013-2014
-# Susan Howe <susan.howe84@gmail.com>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-23 03:03+0000\n"
-"Last-Translator: Susan Howe <susan.howe84@gmail.com>\n"
-"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/yv-backend/language/en_GB/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: en_GB <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-20 19:22+0000\n"
-"Last-Translator: Susan Howe <susan.howe84@gmail.com>\n"
-"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/yv-backend/language/en_GB/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: en_GB <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 15:01+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/yv-backend/language/en_GB/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:07-0600\n"
+"PO-Revision-Date: 2014-09-25 16:07-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: en_GB <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Bible series</i>"
-
-msgid "moment.system.bible_series_promo.body"
-msgstr "Watch the <i>Bible series</i> tonight!"
-
-msgid "moment.bookmark.title"
-msgstr "{name} bookmarked <b>{reference_human}</b>"
-
-msgid "moment.bookmark.self.title"
-msgstr "You bookmarked <b>{reference_human}</b>"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} is now friends with <b>{friend_name}</b>"
-
-msgid "moment.friendship.self.title"
-msgstr "You are now friends with <b>{friend_name}</b>"
-
-msgid "moment.highlight.title"
-msgstr "{name} highlighted <b>{reference_human}</b>"
-
-msgid "moment.highlight.self.title"
-msgstr "You highlighted <b>{reference_human}</b>"
-
-msgid "moment.note.title"
-msgstr "{name} added a note, <b>{title}</b>"
-
-msgid "moment.note.self.title"
-msgstr "You added a note, <b>{title}</b>"
-
-msgid "moment.bible.download.title"
-msgstr "{name} downloaded the version, <b>{version}</b>"
-
-msgid "moment.bible.download.self.title"
-msgstr "You downloaded the version, <b>{version}</b>"
-
-msgid "moment.plan_subscription.title"
-msgstr "{name} started a plan"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "You started a new plan"
-
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} completed day <b>{segment}</b> of the plan, <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "You completed day <b>{segment}</b> of the plan, <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.body"
-msgstr "Day {segment} of {total_segments} ({percent_complete}%)"
-
-msgid "moment.plan_completion.title"
-msgstr "{name} completed a plan"
-
-msgid "moment.plan_completion.self.title"
-msgstr "You completed a plan"
-
-msgid "moment.badge.earned.title"
-msgstr "{name} earned the <b>{title}</b> badge"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "You earned the <b>{title}</b> badge"
 
-msgid "moment.video.watched.title"
-msgstr "{name} watched <b>{title}</b>"
+msgid "moment.badge.earned.title"
+msgstr "{name} earned the <b>{title}</b> badge"
 
-msgid "moment.video.watched.self.title"
-msgstr "You watched <b>{title}</b>"
+msgid "moment.bible.download.self.title"
+msgstr "You downloaded the version, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} downloaded the version, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "You bookmarked <b>{reference_human}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} bookmarked <b>{reference_human}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "You are now friends with <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} is now friends with <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "You highlighted <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} highlighted <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "You added a note, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} added a note, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "You completed a plan"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} completed a plan"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Day {segment} of {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "You completed day <b>{segment}</b> of the plan, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} completed day <b>{segment}</b> of the plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "You started a new plan"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} started a plan"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Watch the <i>Bible series</i> tonight!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bible series</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "The Bible App is even better with friends. Search your contacts to find friends."
 
-msgid "notifications.friendships.offer"
-msgstr "{name} wants to be your friend on YouVersion"
+msgid "moment.video.watched.self.title"
+msgstr "You watched <b>{title}</b>"
 
-msgid "notifications.friendships.accept"
-msgstr "{name} accepted your friend request"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} is now your friend"
-
-msgid "notifications.friendships.suggestion"
-msgstr "Do you want to be friends with {name} on YouVersion?"
+msgid "moment.video.watched.title"
+msgstr "{name} watched <b>{title}</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} commented on your new friendship with {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} commented on your highlight: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} commented on your note: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} commented on your plan: “{comment}”"
@@ -156,26 +132,65 @@ msgstr "{name} commented on your plan: “{comment}”"
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} commented on your Bible plan: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} commented on your new friendship with {friend_name}: “{comment}”"
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s bookmark: “{comment}”"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} commented on your note: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s new friendship with {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s highlight: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s note: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} also commented on their bookmark: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} also commented on their new friendship with {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} also commented on their highlight: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} also commented on their note: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} also commented on their plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} also commented on their Bible plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s Bible plan: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} accepted your friend request"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} is now your friend"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} wants to be your friend on YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Do you want to be friends with {name} on YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} likes your bookmark, {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} likes your new friendship with {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} likes your highlight, {reference_human}"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} likes your plan activity"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} likes your Bible plan activity"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} likes your new friendship with {friend_name}"
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} likes your note"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} likes your note on {reference_human}"
@@ -183,44 +198,11 @@ msgstr "{name} likes your note on {reference_human}"
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} likes your note, “{title}”"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} likes your note"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} likes your plan activity"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} also commented on their bookmark: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s bookmark: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} also commented on their new friendship with {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s new friendship with {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} also commented on their highlight: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s highlight: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} also commented on their plan: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s plan: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} also commented on their Bible plan: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s Bible plan: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} also commented on their note: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s note: “{comment}”"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} likes your Bible plan activity"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} bookmarked {reference_human}"
@@ -228,20 +210,14 @@ msgstr "{name} bookmarked {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} highlighted {reference_human}"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} added a note"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} added a note on {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} added a note, “{title}”"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} added a note"
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} started a new plan, {title}"
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} started a new Bible plan, {title}"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} completed their plan, {title}"
@@ -249,23 +225,17 @@ msgstr "{name} completed their plan, {title}"
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} completed their Bible plan, {title}"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "You have %d friend requests"
-msgstr[1] "You have %d friend requests"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} started a new plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} started a new Bible plan, {title}"
 
 msgid "notifications.system.test"
 msgstr "Download our kids Bible App now!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "From {name}:"
-
-msgid "share.invite_sms"
-msgstr "Do you have the Bible App from YouVersion? I love it, and I think you would too. Here's the link:"
-
-msgid "share.invite_email_subject"
-msgstr "Join me on the Bible App!"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Hi!</p><p>I'm using the Bible App from YouVersion and wanted to share it with you. If you're new to the app, it's a simple way to bring the beauty and truth of the Bible into everyday life. </p><p><strong>Get the Bible App:</strong> read, watch, listen, and share on your smartphone or tablet, and online at Bible.com</p><p><strong>Set up your account:</strong> subscribe to Bible plans and access bookmarks, highlights, and notes across devices</p><p><strong>Add friends (Like me!):</strong> explore and discuss the Bible with people you care about</p><p>It's all in the Bible App—get started here: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
@@ -281,8 +251,20 @@ msgstr ""
 "\n"
 "It's all in the Bible App—get started here: "
 
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Hi!</p><p>I'm using the Bible App from YouVersion and wanted to share it with you. If you're new to the app, it's a simple way to bring the beauty and truth of the Bible into everyday life. </p><p><strong>Get the Bible App:</strong> read, watch, listen, and share on your smartphone or tablet, and online at Bible.com</p><p><strong>Set up your account:</strong> subscribe to Bible plans and access bookmarks, highlights, and notes across devices</p><p><strong>Add friends (Like me!):</strong> explore and discuss the Bible with people you care about</p><p>It's all in the Bible App—get started here: </p>"
+msgid "share.invite_email_subject"
+msgstr "Join me on the Bible App!"
+
+msgid "share.invite_facebook"
+msgstr "I love the Bible App! It's really helped me make the Bible part of my everyday life. It lets me highlight, listen to audio Bibles, make notes, follow devotional plans…even watch videos! Go download it now (it's free):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Do you have the Bible App? I love it, and I think you would too. Here's the link:"
+
+msgid "share.invite_sms"
+msgstr "Do you have the Bible App from YouVersion? I love it, and I think you would too. Here's the link:"
+
+msgid "share.invite_sms_prefix"
+msgstr "From {name}:"
 
 msgid "share.invite_twitter"
 msgstr "The @YouVersion Bible App has a permanent spot on my home screen. Read, watch, listen, and share…all in a free app:"
@@ -290,8 +272,5 @@ msgstr "The @YouVersion Bible App has a permanent spot on my home screen. Read, 
 msgid "share.invite_twitter_direct"
 msgstr "Do you have the Bible App from @YouVersion? I love it, and I think you would too. Here's the link:"
 
-msgid "share.invite_facebook"
-msgstr "I love the Bible App! It's really helped me make the Bible part of my everyday life. It lets me highlight, listen to audio Bibles, make notes, follow devotional plans…even watch videos! Go download it now (it's free):"
-
-msgid "share.invite_facebook_direct"
-msgstr "Do you have the Bible App? I love it, and I think you would too. Here's the link:"
+msgid "notifications.people.contact.joined"
+msgstr "{name} just joined YouVersion. Tap to add them as a friend."

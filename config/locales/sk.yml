@@ -665,6 +665,7 @@ sk:
         labels label: "Menovky:"
         title: "Záložky"
         my labels: "Moje menovky"
+        all labels: "Show All"
         not found: "Záložky vám poskytujú prehľad o vašich obľúbených pasážach, alebo o poslednej kapitole, ktorú ste z danej knihy prečítali. Záložku môžete pridať tak, že označíte verš v Biblii a kliknete na tlačítko Označené na vrchu stránky."
         other user not found: "Používateľ %{username} zatiaľ nevytvoril žiadne záložky."
         creation form errors: "Nasledujúce chyby zabránili vytvoreniu záložky:"

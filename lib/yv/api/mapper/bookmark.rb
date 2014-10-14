@@ -12,9 +12,8 @@ module YV
           def from_collection(results)
             # If the data is a blank/empty array, return it
             return results if results.blank? or results.moments.nil?
-            
             collection = results.moments.collect do |moment|
-              map_to_instance(::Bookmark.new, moment)
+              map_to_instance(::Bookmark.new, moment.merge(next_cursor: results.next_cursor))
             end
           end
 
@@ -47,6 +46,7 @@ module YV
             instance.title            = results.extras.title
             instance.moment_title     = t(results.base.title["l_str"],results.base.title["l_args"])
             instance.references       = results.extras.references
+            instance.next_cursor      = results.next_cursor
 
             # Common moment elements
             instance                  = map_to_user_fields(instance,results.extras.user)

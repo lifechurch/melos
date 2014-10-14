@@ -83,10 +83,10 @@ de:
             description: "Die Bibel App ist schon fast 100 Mio. Mal installiert worden - ein unbeschreiblicher Meilenstein! Aber jetzt fangen wir erst richtig. Lade dir die kostenlose Bibel App heute herunter - und dann teile sie mit deinen Freunden. Lass uns zusammen Geschichte schreiben."
         mobile: 
             title: "Die Bibel App"
-            description: "Lies Gottes Wort jederzeit und überall mit der YouVersion Bibel-App. Teile Schriftstellen mit Freunden, markiere Abschnitte und setze Lesezeichen, und mache es dir mit Bibel-Leseplänen zur täglichen Gewohnheit. Verfügbar für iOS, Android, Blackberry, Windows Phone und weitere."
+            description: "Lies Gottes Wort jederzeit und überall mit der YouVersion Bibel App. Teile Schriftstellen mit Freunden, markiere Abschnitte und setze Lesezeichen, und mache es dir mit Bibel-Leseplänen zur täglichen Gewohnheit. Verfügbar für iOS, Android, Blackberry, Windows Phone und weitere."
         site: 
             title: "Bible.com"
-            description: "Hole die Schönheit und Wahrheit der Bibel in den Alltag. Mit der YouVersion Bibel-App kannst du lesen, sehen, hören und teilen auf deinem Smartphone oder Tablet, und online auf Bible.com."
+            description: "Hole die Schönheit und Wahrheit der Bibel in den Alltag. Mit der YouVersion Bibel App kannst du lesen, sehen, hören und teilen auf deinem Smartphone oder Tablet, und online auf Bible.com."
         connections: 
             index: 
                 title: "Verbundene Benutzerkonten"
@@ -482,7 +482,7 @@ de:
         edit account_existence: "Konto löschen"
         delete account button: "Mein YouVersion Konto löschen"
         no devices: "Dein YouVersion-Konto ist mit keinem mobilen Gerät verbunden."
-        no devices download copy: "Die Bibel App basiert auf der Online-Bibel von YouVersion.com und ist eine kostenlose, mobile Bibel, die auf fast allen Smartphones installiert werden kann. Die Bibel-App gestattet es ihren Lesern, die Bibel zu lesen, Verse in sozialen Netzwerken zu teilen, Lieblingsschriftstellen mit Lesezeichen zu versehen u.v.m. All das in einem Format, das zu ihrem ständig mobiler werdenden Lebensstil passt. Geh mit deinem Smartphone zu <a href='https://www.bible.com/app'>bible.com/app</a>, um die Bibel-App herunterzuladen und melde dich einfach mit deinem Konto an!"
+        no devices download copy: "Die Bibel App basiert auf der Online-Bibel von YouVersion.com und ist eine kostenlose, mobile Bibel, die auf fast allen Smartphones installiert werden kann. Die Bibel App gestattet es ihren Lesern, die Bibel zu lesen, Verse in sozialen Netzwerken zu teilen, Lieblingsschriftstellen mit Lesezeichen zu versehen u.v.m. All das in einem Format, das zu ihrem ständig mobiler werdenden Lebensstil passt. Geh mit deinem Smartphone zu <a href='https://www.bible.com/app'>bible.com/app</a>, um die Bibel App herunterzuladen und melde dich einfach mit deinem Konto an!"
         yes delete: "Ja, mein Konto löschen"
         account delete success: "Dein YouVersion-Konto wurde erfolgreich gelöscht. Wir hoffen, dass du andere Möglichkeiten nutzen wirst, um dich mit der Bibel zu beschäftigen. Die folgenden Apps beispielsweise könnten dazu hilfreich sein: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
         delete account description: "Wenn du dein Konto löschst, werden alle deine Daten, die Historie und alles Persönliche (wie deine Notizen, Lesezeichen, Markierungen usw.) auf Bible.com und in der Bibel App gelöscht. Dieser Schritt kann weder von dir noch von unserem Team rückgängig gemacht werden. Wenn du sicher bist, dass du dies tun willst, fahre unten fort."
@@ -665,6 +665,7 @@ de:
         labels label: "Etiketten:"
         title: "Lesezeichen"
         my labels: "Meine Etiketten"
+        all labels: "Show All"
         not found: "Lesezeichen geben dir eine Übersicht über deine Lieblingsstellen oder bringen dich wieder zu dem Kapitel, das du zuletzt gelesen hast. Um ein Lesezeichen hinzuzufügen, wähle den gewünschten Vers in der Leseansicht und klicke oben auf \"Ausgewählt\"."
         other user not found: "%{username} hat bisher keine Lesezeichen gespeichert."
         creation form errors: "Folgende(r) Fehler verhindern die Erstellung deines Lesezeichens:"
@@ -914,7 +915,7 @@ de:
         creation form errors: "Folgende(r) Fehler verhindern eine Spende:"
     download ad: 
         title: "Lade dir die Bibel App gratis herunter."
-        description copy: "Hunderte von Bibelübersetzungen in über %{language_count}verschiedenen Sprachen. Mit der App hast du die Bibel überall dabei."
+        description copy: "Hunderte von Bibelübersetzungen in über %{language_count} verschiedenen Sprachen. Mit der App hast du die Bibel überall dabei."
         line 1: "Hunderte Übersetzungen in über 100"
         line 2: "verschiedenen Sprachen - die Bibel,"
         line 3: "die du überall hin mitnehmen kannst."

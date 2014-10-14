@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :mobile_redirect, only: [:show, :notes, :bookmarks, :badges]
+  prepend_before_filter :mobile_redirect, only: [:show, :notes, :bookmarks, :badges]
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture,:delete_account, :delete_account_form]
   before_filter :find_user, except: [:_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
@@ -27,6 +27,15 @@ class UsersController < ApplicationController
 
   def bookmarks
     @labels = Bookmark.labels(auth: current_auth)
+    @label ||= params[:label] 
+  end
+  
+  def _bookmarks
+    @label ||= params[:label]
+    @next_cursor ||= params[:next_cursor]
+    @kind ||= params[:kind]
+    @moments = @label.present? ? Bookmark.for_label(@label, moment_all_params.merge(cursor: @next_cursor)) : @moments = Moment.all(moment_all_params)
+    render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
 
   def badges

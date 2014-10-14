@@ -665,6 +665,7 @@ pl:
         labels label: "Etykiety:"
         title: "Zakładki"
         my labels: "Moje etykiety"
+        all labels: "Show All"
         not found: "Korzystanie z zakładek ułatwi ci znalezienie ulubionych fragmentów, lub wersetu, który ostatnio czytałeś w określonej księdze. Aby dodać zakładkę, wybierz werset w czytniku Biblii, a następnie kliknij przycisk Wybrane na górze czytnika."
         other user not found: "%{username} nie zachował jeszcze żadnych zakładek."
         creation form errors: "Poniższe błędy nie pozwoliły na utworzenie zakładki:"

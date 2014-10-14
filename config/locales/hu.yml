@@ -665,6 +665,7 @@ hu:
         labels label: "Címkék:"
         title: "Könyvjelzők"
         my labels: "Címkéim"
+        all labels: "Mutasd mindet"
         not found: "A könyvjelzők gyors hozzáférést jelentenek a kedvenc verseidhez vagy egy bizonyos könyv utoljára olvasott fejezetéhez. Könyvjelző hozzáadásához válaszd ki a verset a Bibliaolvasóban és kattints a Kiválasztott gombra az olvasó felső részén."
         other user not found: "%{username} egy könyvjelzőt sem mentett még el."
         creation form errors: "A következő hiba(k) akadályozta(k) meg a könyvjelződ létrehozását:"

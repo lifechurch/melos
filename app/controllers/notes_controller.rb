@@ -7,7 +7,7 @@ class NotesController < BaseMomentsController
   # Filters
     before_filter :set_sidebar, only: [:index]
     before_filter :force_login, only: [:new,:edit,:create,:update,:destroy]
-    before_filter :mobile_redirect, only: [:show]
+    prepend_before_filter :mobile_redirect, only: [:show]
 
   # TODO: figure out public/friends/private/draft display and authorization
   def show

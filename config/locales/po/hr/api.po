@@ -1,153 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Croatian translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# DaliborHR <dalibor.staba@gmail.com>, 2013-2014
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# DaliborHR <dalibor.staba@gmail.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# DaliborHR <dalibor.staba@gmail.com>, 2013
-# DaliborHR <dalibor.staba@gmail.com>, 2013-2014
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-01 21:43+0000\n"
-"Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
-"Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: hr <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-02 00:33+0000\n"
-"Last-Translator: DaliborHR <dalibor.staba@gmail.com>\n"
-"Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: hr <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 15:01+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: Croatian (http://www.transifex.com/projects/p/yv-backend/language/hr/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: hr <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Biblijske serije</i>"
-
-msgid "moment.system.bible_series_promo.body"
-msgstr "Gledaj <i>Biblijske serije</i> večeras!"
-
-msgid "moment.bookmark.title"
-msgstr "<b>{reference_human}</b> - označeno od strane korisnika: {name}"
-
-msgid "moment.bookmark.self.title"
-msgstr "Označen je <b>{reference_human}</b>"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} i <b>{friend_name}</b> su sad prijatelji"
-
-msgid "moment.friendship.self.title"
-msgstr "<b>{friend_name}</b> i ti ste sad prijatelji"
-
-msgid "moment.highlight.title"
-msgstr "Korisnik {name} je istaknuo <b>{reference_human}</b>"
-
-msgid "moment.highlight.self.title"
-msgstr "Istaknut je <b>{reference_human}</b>"
-
-msgid "moment.note.title"
-msgstr "Bilješka <b>{title}</b> je dodana od strane korisnika {name}"
-
-msgid "moment.note.self.title"
-msgstr "Dodana je bilješka, <b>{title}</b>"
-
-msgid "moment.bible.download.title"
-msgstr "Korisnik {name} je preuzeo Biblijski prijevod, <b>{version}</b>"
-
-msgid "moment.bible.download.self.title"
-msgstr "Preuzet je Biblijski prijevod, <b>{version}</b>"
-
-msgid "moment.plan_subscription.title"
-msgstr "Korisnik {name} je pokrenuo plan čitanja"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "Pokrenut je plan čitanja"
-
-msgid "moment.plan_segment_completion.title"
-msgstr "Korisnik {name} je dovršio dan <b>{segment}</b> plana, <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "Dovršen je <b>{segment}</b>. dan plana, <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.body"
-msgstr "Dan {segment} od {total_segments} ({percent_complete}%)"
-
-msgid "moment.plan_completion.title"
-msgstr "Korisnik {name} je dovršio plan"
-
-msgid "moment.plan_completion.self.title"
-msgstr "Plan je dovršen"
-
-msgid "moment.badge.earned.title"
-msgstr "<b>{title}</b> značku je zaradio korisnik {name}"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Zarađena je značka <b>{title}</b>"
 
-msgid "moment.video.watched.title"
-msgstr "<b>{title}</b> - pogledano od strane korisnika {name}"
+msgid "moment.badge.earned.title"
+msgstr "<b>{title}</b> značku je zaradio korisnik {name}"
 
-msgid "moment.video.watched.self.title"
-msgstr "Gledan je  <b>{title}</b>"
+msgid "moment.bible.download.self.title"
+msgstr "Preuzet je Biblijski prijevod, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "Korisnik {name} je preuzeo Biblijski prijevod, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Označen je <b>{reference_human}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "<b>{reference_human}</b> - označeno od strane korisnika: {name}"
+
+msgid "moment.friendship.self.title"
+msgstr "<b>{friend_name}</b> i ti ste sad prijatelji"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} i <b>{friend_name}</b> su sad prijatelji"
+
+msgid "moment.highlight.self.title"
+msgstr "Istaknut je <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "Korisnik {name} je istaknuo <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Dodana je bilješka, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "Bilješka <b>{title}</b> je dodana od strane korisnika {name}"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Plan je dovršen"
+
+msgid "moment.plan_completion.title"
+msgstr "Korisnik {name} je dovršio plan"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Dan {segment} od {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Dovršen je <b>{segment}</b>. dan plana, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "Korisnik {name} je dovršio dan <b>{segment}</b> plana, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Pokrenut je plan čitanja"
+
+msgid "moment.plan_subscription.title"
+msgstr "Korisnik {name} je pokrenuo plan čitanja"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Gledaj <i>Biblijske serije</i> večeras!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Biblijske serije</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "Aplikacija Biblija je još bolja ako uključiš prijatelje. Pretraži kontakte mobilnog uređaja da nađeš prijatelje."
 
-msgid "notifications.friendships.offer"
-msgstr "Korisnik {name} želi biti tvoj prijatelj na YouVersion"
+msgid "moment.video.watched.self.title"
+msgstr "Gledan je  <b>{title}</b>"
 
-msgid "notifications.friendships.accept"
-msgstr "Korisnik {name} je prihvatio tvoj zahtjev za prijateljstvom"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} je sad tvoj prijatelj"
-
-msgid "notifications.friendships.suggestion"
-msgstr "Želiš li biti prijatelj s korisnikom {name} na YouVersion?"
+msgid "moment.video.watched.title"
+msgstr "<b>{title}</b> - pogledano od strane korisnika {name}"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "Korisnik {name} je komentirao tvoju oznaku: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "Korisnik {name} je komentirao tvoje prijateljstvo s korisnikom {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Korisnik {name} je komentirao istaknuto: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "Korisnik {name} je komentirao tvoju bilješku: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} komentira tvoj plan čitanja: “{comment}”"
@@ -155,26 +132,65 @@ msgstr "{name} komentira tvoj plan čitanja: “{comment}”"
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} komentira tvoj plan čitanja Biblije: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "Korisnik {name} je komentirao tvoje prijateljstvo s korisnikom {friend_name}: “{comment}”"
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "Oznaka korisnika {moment_owner_name}, “{comment}”, je isto komentirana od strane korisnika {commenter_name}"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "Korisnik {name} je komentirao tvoju bilješku: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} također komentira prijateljstvo vlasnika trenutka {moment_owner_name} s {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "Korisnik {commenter_name} je isto komentirao: “{comment}”, što je istaknuo korisnik {moment_owner_name}"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "Bilješku: “{comment}” korisnika {moment_owner_name} je komentirao korisnik {commenter_name}"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "Korisnik {moment_owner_name} je komentirao svoju oznaku: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} također komentira tvoje novo prijateljstvo s korisnikom {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "Korisnik {moment_owner_name} je također komentirao istaknuto: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "Korisnik {moment_owner_name} je isto komentirao svoju bilješku: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} isto komentira svoj plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} isto komentira svoj plan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} isto komentira plan korisnika {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} isto komentira plan korisnika {moment_owner_name}: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "Korisnik {name} je prihvatio tvoj zahtjev za prijateljstvom"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} je sad tvoj prijatelj"
+
+msgid "notifications.friendships.offer"
+msgstr "Korisnik {name} želi biti tvoj prijatelj na YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Želiš li biti prijatelj s korisnikom {name} na YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "Korisniku {name} se sviđa tvoja oznaka, {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "Korisniku {name} se sviđa tvoje prijateljstvo s korisnikom {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Korisniku {name} se sviđa istaknuto, {reference_human}"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "Korisniku {name} se sviđa tvoja aktivnost na planu"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "Korisniku {name} se sviđa tvoja aktivnost na planu čitanja Biblije"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "Korisniku {name} se sviđa tvoje prijateljstvo s korisnikom {friend_name}"
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "Korisniku {name} se sviđa tvoja bilješka"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "Korisniku {name} se sviđa tvoja bilješka {reference_human}"
@@ -182,44 +198,11 @@ msgstr "Korisniku {name} se sviđa tvoja bilješka {reference_human}"
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "Korisniku {name} se sviđa tvoja bilješka, “{title}”"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "Korisniku {name} se sviđa tvoja bilješka"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "Korisniku {name} se sviđa tvoja aktivnost na planu"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "Korisnik {moment_owner_name} je komentirao svoju oznaku: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "Oznaka korisnika {moment_owner_name}, “{comment}”, je isto komentirana od strane korisnika {commenter_name}"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} također komentira tvoje novo prijateljstvo s korisnikom {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} također komentira prijateljstvo vlasnika trenutka {moment_owner_name} s {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "Korisnik {moment_owner_name} je također komentirao istaknuto: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "Korisnik {commenter_name} je isto komentirao: “{comment}”, što je istaknuo korisnik {moment_owner_name}"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} isto komentira svoj plan: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} isto komentira plan korisnika {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} isto komentira svoj plan: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} isto komentira plan korisnika {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "Korisnik {moment_owner_name} je isto komentirao svoju bilješku: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "Bilješku: “{comment}” korisnika {moment_owner_name} je komentirao korisnik {commenter_name}"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "Korisniku {name} se sviđa tvoja aktivnost na planu čitanja Biblije"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "Korisnik {name} je označio {reference_human}"
@@ -227,20 +210,14 @@ msgstr "Korisnik {name} je označio {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "Korisnik {name} je istaknuo {reference_human}"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "Korisnik {name} je dodao bilješku"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "Korisnik {name} je dodao bilješku na {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "Korisnik {name} je dodao bilješku, “{title}”"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "Korisnik {name} je dodao bilješku"
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} pokreće novi plan, {title}"
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} pokreće novi plan čitanja, {title}"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} upravo dovršava svoj plan, {title}"
@@ -248,33 +225,46 @@ msgstr "{name} upravo dovršava svoj plan, {title}"
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} upravo dovršava plan čitanja Biblije, {title}"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "Imaš jedan zahtjev za prijateljstvo"
-msgstr[1] "Imaš %d zahtjeva za prijateljstvo"
-msgstr[2] "Imaš %d zahtjeva za prijateljstvo"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} pokreće novi plan, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} pokreće novi plan čitanja, {title}"
 
 msgid "notifications.system.test"
 msgstr "Preuzmi aplikaciju Dječja Biblija!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "Od {name}:"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Pozdrav!</p><p>Koristim aplikaciju Biblija od YouVersiona i želim je podijeliti s tobom. Ako ti nije poznato, to je jednostavan način da iskusiš ljepotu i istinu čitanja Biblije u svakodnevnom životu. </p><p><strong>Preuzmi aplikaciju Biblija:</strong> čitaj, gledaj, slušaj, i dijeli na svom mobitelu ili tabletu i online na Bible.com</p><p><strong>Podesi korisnički račun:</strong> pretplati se na planove čitanja i imaj pristup oznakama, istaknutim stihovima i bilješkama na svim uređajima koje koristiš.</p><p><strong>Dodaj prijatelje (na prmijer mene):</strong> istraži i raspravljaj o Bibliji s ljudima do kojih ti je stalo</p><p>Sve je to u aplikaciji Biblija - započni ovdje: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Pozdrav!\n"
+"\n"
+"Koristim aplikaciju Biblija od YouVersiona i želim je podijeliti s tobom. Ako ti aplikacija nije poznata, radi se o jednostavnom načinu da u svakodnevni život uklopiš ljepotu i istinu Biblije.\n"
+"\n"
+"Preuzmi aplikaciju Biblija: čitaj, gledaj, slušaj i dijeli stihove Biblije preko svog mobitela, tableta ili online na Bible.com.\n"
+"\n"
+"Podesi korisnički račun: pretplati se na planove čitanja Biblije i pristupi svojim oznakama, istaknutom i bilješkama na bilo kojem uređaju koji koristiš.\n"
+"\n"
+"Dodaj prijatelje (na primjer mene!): istražuj i raspravljaj o Bibliji s ljudima do kojih ti je stalo.\n"
+"\n"
+"Sve se to može u aplikaciji Biblija—započni ovdje: "
+
+msgid "share.invite_email_subject"
+msgstr "Pridruži mi se preko aplikacije Biblija!"
+
+msgid "share.invite_facebook"
+msgstr "Aplikacija Biblija je super! Stvarno mi je pomogla da Biblija postane dio mog svakodnevnog života. Mogu podcrtavati, slušati audio Biblije, kreirati bilješke, slijediti nadahnute planove... čak i gledati filmiće! Hajde, preuzmi je sad (besplatna je):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Imaš li aplikaciju Biblija? Meni je super i mislim da će se i tebi svidjeti. Evo linka:"
 
 msgid "share.invite_sms"
 msgstr "Imaš li aplikaciju Biblija od YouVersiona? Meni je super i mislim da će se i tebi svidjeti. Evo linka:"
 
-msgid "share.invite_email_subject"
-msgstr "Imaš li aplikaciju Biblija?"
-
-msgid "share.invite_email_body"
-msgstr ""
-"Uživam koristeći aplikaciju Biblija od YouVersiona i mislim da bi se i tebi svidjela. Ove dane otvaram Bibliju češće jer ju je lako čitati, gledati, slušati i dijeliti. Ima čak i  velik izbor planova čitanja koji me čekaju svaki dan.\n"
-"\n"
-"Imaš je (besplatno!) za praktički svaki mobilni uređaj ovdje:"
-
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Pozdrav!</p><p>Koristim aplikaciju Biblija od YouVersiona i želim je podijeliti s tobom. Ako ti nije poznato, to je jednostavan način da iskusiš ljepotu i istinu čitanja Biblije u svakodnevnom životu. </p><p><strong>Preuzmi aplikaciju Biblija:</strong> čitaj, gledaj, slušaj, i dijeli na svom mobitelu ili tabletu i online na Bible.com</p><p><strong>Podesi korisnički račun:</strong> pretplati se na planove čitanja i imaj pristup oznakama, istaknutim stihovima i bilješkama na svim uređajima koje koristiš.</p><p><strong>Dodaj prijatelje (koristi \"Sviđa mi se\" opciju):</strong> istraži i raspravljaj o Bibliji s ljudima do kojih ti je stalo</p><p>Sve je to u aplikaciji Biblija - započni ovdje: </p>"
+msgid "share.invite_sms_prefix"
+msgstr "Od {name}:"
 
 msgid "share.invite_twitter"
 msgstr "Aplikacija Biblija od YouVersiona ima trajno mjesto na mom početnom zaslonu. Može se čitati, gledati, slušati i dijeliti... sve u besplatnoj aplikaciji:"
@@ -282,8 +272,5 @@ msgstr "Aplikacija Biblija od YouVersiona ima trajno mjesto na mom početnom zas
 msgid "share.invite_twitter_direct"
 msgstr "Imaš li aplikaciju Biblija od YouVersiona? Meni je super i mislim da će se i tebi svidjeti. Evo linka:"
 
-msgid "share.invite_facebook"
-msgstr "Aplikacija Biblija je super! Stvarno mi je pomogla da Biblija postane dio mog svakodnevnog života. Mogu podcrtavati, slušati audio Biblije, kreirati bilješke, slijediti nadahnute planove... čak i gledati filmiće! Hajde, preuzmi je sad (besplatna je):"
-
-msgid "share.invite_facebook_direct"
-msgstr "Imaš li aplikaciju Biblija? Meni je super i mislim da će se i tebi svidjeti. Evo linka:"
+msgid "notifications.people.contact.joined"
+msgstr "Korisnik {name} se upravo pridružio YouVersionu. Klikni da ga dodaš kao prijatelja."

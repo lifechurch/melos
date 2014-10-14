@@ -19,14 +19,16 @@ namespace :subscription do
 
     puts 'Enter Plan ID (numeric):'
     id = STDIN.gets.chomp
-    
+  
     
     plan = Subscription.find(id, auth: user.auth)
 
     if plan.present? && plan.id
       puts "Subscription Found. ID: #{plan.id}"
-    else 
-      return
+    else
+      plan_id = Plan.find(id).id
+      Subscription.subscribe(plan_id, auth: user.auth, private: false, language_tag: 'en')
+      plan = Subscription.find(id, auth: user.auth)
     end
 
     puts 'Enter start day (1 for first day):'
@@ -44,13 +46,16 @@ namespace :subscription do
         # Read away.
         puts "Reference #{ref}"
         unless plan.set_ref_completion(d, ref["reference"], true)
+          puts "Error on day #{d}" unless plan.completed?
           return "Error on day #{d}"
+        else
+          puts "Day #{d} complete"
         end
       end
-      puts "Day Complete"
+      puts "Completed plan" && break if plan.completed?
     end
-    puts
-    puts 'Success. You are a speed reader.'
+      puts
+      puts 'Success. You are a speed reader.'
   end
 
 end 

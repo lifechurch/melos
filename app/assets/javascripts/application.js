@@ -1,6 +1,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.core
+//= require jquery.ui.effect.all
+//= require jquery.ui.effect
 //= require jquery.ui.widget
 //= require jquery.ui.mouse
 //= require jquery.ui.position
@@ -35,6 +37,7 @@
 //= require ./moments/related_feed
 //= require ./moments/feed
 //= require ./moments/user_feed
+//= require ./moments/user_bookmark_feed
 //= require ./moments/detail_view
 //= require ./menus/base
 //= require ./menus/notifications

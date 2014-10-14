@@ -212,7 +212,7 @@ ja:
     save: "保存する"
     cancel: "キャンセル"
     try the beta: "ベータ版を試してみる"
-    welcome to the beta: "Welcome to Bible.com!"
+    welcome to the beta: "Bible.comへようこそ！"
     highlight: "聖句をハイライトする"
     comment: "新しいコメント"
     note: "新規ノート"
@@ -222,7 +222,7 @@ ja:
     notes title: "ノート"
     friends: "友だち"
     groups: "グループ"
-    mobile: "Mobile Apps"
+    mobile: "携帯アプリ"
     live: "ライブ/グループ"
     first page: "最初のページ"
     last page: "最後のページ"
@@ -358,7 +358,7 @@ ja:
             accept button: "承認"
             accept request button: "申請を承認する"
             ignore button: "辞退"
-            ignore request button: "Decline request"
+            ignore request button: "リクエストの却下"
     notes: 
         none user: "%{username} さんはまだノートがありません"
         blank slate: 
@@ -409,7 +409,7 @@ ja:
         create failure: "ノートの保存にエラーが発生しました"
         destroy success: "ノートが削除されました"
         destroy failure: "ノートの削除中にエラーが発生しました"
-        update success: "Note updated"
+        update success: "ノートのアップデート"
     ref: 
         loading secondary: "参照聖句を2つ目の聖書訳で読み込み中・・・"
         clear verses: "選択箇所を解除する"
@@ -485,7 +485,7 @@ ja:
         no devices download copy: "オンライン聖書（YouVersion.com）に基づいた聖書アプリは無料の携帯用聖書で、ほぼ全ての携帯デバイスにインストールできます。聖書アプリでは、聖書を読んだり、シーシャル･ネットワーク上で聖句をシェアしたり、お気に入りの聖句にブックマークをつけたりと色々なことができ、携帯を活用したライフスタイルにピッタリです。お使いになっている携帯デバイスから<a href='https://www.bible.com/app'>bible.com/app</a>にいって、聖書アプリをダウンロードし、あなたのアカウントに連携させましょう！"
         yes delete: "はい、私のアカウントを削除します"
         account delete success: "あなたのYouVersionアカウントが削除されました。今後も有意義な方法を用いて聖書の言葉に触れていかれますよう、お祈りいたします。参考までに、その他の便利なアプリをこちらからご覧ください。<a href='https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
-        delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalization (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
+        delete account description: "アカウントを削除した場合、Bible.comと聖書アプリ内のあなたの情報、履歴、パーソナライズした内容（ノート、ブックマーク、ハイライトなど）は、全て永久削除されます。この操作は、あなたにも、我々のチームにも、取り消すことはできません。それでもアカウントを削除されたい場合は、以下にお進みください。"
         user recent activity: "%{user} さんの最近の利用履歴"
         my notes: "ノート"
         user notes: "%{user} さんのノート"
@@ -636,7 +636,7 @@ ja:
             notification errors: "以下のエラーにより通知設定の更新ができません:"
             edit: "編集"
             bio: "自己紹介"
-            complete_first_last: "Complete your profile by filling in your first and last name"
+            complete_first_last: "お名前を記入してプロフィールを完成"
         password: 
             updated: "パスワードの更新に成功しました！"
             error: "申し訳ございません。パスワード変更の際、エラーが発生しました。"
@@ -645,7 +645,7 @@ ja:
             badges: "バッジを獲得した時に通知する"
             follower: "誰かにフォローされた時に通知する"
             newsletter: "YouVersion からの最新情報を受信する"
-            contact_joins: "Notify me when a Contact joins"
+            contact_joins: "コンタクトが加入した時に通知"
             note_like: "私のノートがお気に入りに追加されたら通知を受ける"
             reading_plans: "利用中の読書プランに関する情報の通知を受ける"
             publishing partners: "YouVersionのコンテンツパートナーからのニュースを受け取る"
@@ -665,6 +665,7 @@ ja:
         labels label: "ラベル:"
         title: "ブックマーク"
         my labels: "ラベル"
+        all labels: "全てを表示"
         not found: "ブックマークを付けることにより、最後に読んだ箇所を思い出すことができたり、好きな聖句が書かれた箇所を見つけやすくなったり、あるいは、ある書物の中でどの章まで読んだかを思い出しやすくなります。ブックマークを付けるためには聖書リーダーの中で特定の箇所を選択し、ブックマークボタンをクリックします。"
         other user not found: "まだ %{username} さんのブックマークはありません"
         creation form errors: "以下のエラーが発生したために、ブックマークをつけることができませんでした。"
@@ -914,7 +915,7 @@ ja:
         creation form errors: "以下のエラーが発生したために、寄付することができませんでした。"
     download ad: 
         title: "無料聖書アプリをダウンロード"
-        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+        description copy: "%{language_count}カ国語以上の言語で多数の聖書訳を備えた、どこにでも携帯できる聖書"
         line 1: "100ヶ国語以上で書かれた"
         line 2: "何百種もの訳が利用可能な"
         line 3: "いつでもどこでも使える聖書"
@@ -942,7 +943,7 @@ ja:
         facebook: "YouVersionのFacebookページ"
         twitter: "YouVersionのTwitter"
         support: "YouVersionのヘルプが必要ですか?"
-        lead copy: "Based on the online Bible, Bible.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle."
+        lead copy: "オンライン聖書のBible.comによると、聖書アプリは無料の携帯用聖書で、ほぼ全ての携帯電話にインストールできます。聖書アプリを使用すると、携帯電話を利用する機会がますます増えるライフスタイルに合った最新のフォーマットで、利用者は聖書を読んだり、ソーシャルネットワークを通して聖句をシェアしたり、お気に入りの聖句にブックマークを付けたりすることができます。"
         resources title: "プレス向け情報"
         now title: "今日のYouVersionコミュニティでは・・・"
         resources: 
@@ -962,7 +963,7 @@ ja:
     mobile page: 
         h2: "神様の御言葉と共に"
         h3: "YouVersion はグローバルです"
-        h3 sub: "Available in more than %{language_count} languages worldwide."
+        h3 sub: "世界%{language_count}カ国語以上の言語での利用が可能"
         main: "何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。"
         button h4: "Bible.com/appに行く"
         button h4 sub: "モバイル機器で利用"
@@ -983,7 +984,7 @@ ja:
         symbian: "Symbian"
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
-        free overlay: "100% Free"
+        free overlay: "全て無料"
     pages: 
         generic_error: 
             title: "申し訳ありません。"

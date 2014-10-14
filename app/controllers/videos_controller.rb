@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
   respond_to :html
-  before_filter :mobile_redirect, only: [:index, :show, :series] 
+  prepend_before_filter :mobile_redirect, only: [:index, :show, :series] 
   before_filter :check_locale
 
   rescue_from YV::ResourceError, with: :resource_error

@@ -1,155 +1,130 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Albanian translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Translators:
-# Ilirian Gjoni <iliriangjoni@gmail.com>, 2014
-# Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# Ilirian Gjoni <iliriangjoni@gmail.com>, 2014
-# Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Translators:
-# Kevin Morey <kevin.morey@lifechurch.tv>, 2013
-# Lorenc Tona <lorenc_tona@yahoo.com>, 2013-2014
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-23 17:12+0000\n"
-"Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
-"Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:14-0600\n"
+"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: sq <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sq\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-24 09:02+0000\n"
-"Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
-"Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:21-0600\n"
+"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: sq <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sq\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-07-11 17:39+0000\n"
-"Last-Translator: Lorenc Tona <lorenc_tona@yahoo.com>\n"
-"Language-Team: Albanian (http://www.transifex.com/projects/p/yv-backend/language/sq/)\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:07-0600\n"
+"PO-Revision-Date: 2014-09-25 16:07-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: sq <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sq\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Seria e Biblës</i>"
-
-msgid "moment.system.bible_series_promo.body"
-msgstr "Shikoni sonte <i>Serinë e Biblës</i>!"
-
-msgid "moment.bookmark.title"
-msgstr "{name} shënoi <b>{reference_human}</b>"
-
-msgid "moment.bookmark.self.title"
-msgstr "Ju shënuat <b>{reference_human}</b>"
-
-msgid "moment.friendship.title"
-msgstr "{user_name} është tani mik me <b>{friend_name}</b>"
-
-msgid "moment.friendship.self.title"
-msgstr "Ju jeni tani mik me <b>{friend_name}</b>"
-
-msgid "moment.highlight.title"
-msgstr "{name} theksoi <b>{reference_human}</b>"
-
-msgid "moment.highlight.self.title"
-msgstr "Ju theksuat <b>{reference_human}</b>"
-
-msgid "moment.note.title"
-msgstr "{name} shtoi një shënim, <b>{title}</b>"
-
-msgid "moment.note.self.title"
-msgstr "Ju shtuat një shënim, <b>{title}</b>"
-
-msgid "moment.bible.download.title"
-msgstr "{name} shkarkoi versionin, <b>{version}</b>"
-
-msgid "moment.bible.download.self.title"
-msgstr "Ju shkarkuat versionin, <b>{version}</b>"
-
-msgid "moment.plan_subscription.title"
-msgstr "{name} filloi një plan"
-
-msgid "moment.plan_subscription.self.title"
-msgstr "Filloi një plan"
-
-msgid "moment.plan_segment_completion.title"
-msgstr "{name} përfundoi ditën <b>{segment}</b> të planit, <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.self.title"
-msgstr "Ju përfunduat ditën <b>{segment}</b> të planit, <b>{title}</b>"
-
-msgid "moment.plan_segment_completion.body"
-msgstr "Dita {segment} nga {total_segments} ({percent_complete}%)"
-
-msgid "moment.plan_completion.title"
-msgstr "{name} përfundoi një plan"
-
-msgid "moment.plan_completion.self.title"
-msgstr "Ju e përfunduat planin tuaj"
-
-msgid "moment.badge.earned.title"
-msgstr "{name} fitoi emblemën <b>{title}</b>"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "Ju fituat emblemën <b>{title}</b>"
 
-msgid "moment.video.watched.title"
-msgstr "{name} shikoi <b>{title}</b>"
+msgid "moment.badge.earned.title"
+msgstr "{name} fitoi emblemën <b>{title}</b>"
 
-msgid "moment.video.watched.self.title"
-msgstr "Ju shikuat <b>{title}</b>"
+msgid "moment.bible.download.self.title"
+msgstr "Ju shkarkuat versionin, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} shkarkoi versionin, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Ju shënuat <b>{reference_human}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} shënoi <b>{reference_human}</b>"
+
+msgid "moment.friendship.self.title"
+msgstr "Ju jeni tani mik me <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} është tani mik me <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Ju theksuat <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} theksoi <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Ju shtuat një shënim, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} shtoi një shënim, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Ju e përfunduat planin tuaj"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} përfundoi një plan"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Dita {segment} nga {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Ju përfunduat ditën <b>{segment}</b> të planit, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} përfundoi ditën <b>{segment}</b> të planit, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Filloi një plan"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} filloi një plan"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Shikoni sonte <i>Serinë e Biblës</i>!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Seria e Biblës</i>"
 
 msgid "moment.system.find_friends.title"
 msgstr "Programi i Biblës është akoma më i mirë bashkë me miq. Kërkoni kontaktet tuaja për të gjetur miq."
 
-msgid "notifications.friendships.offer"
-msgstr "{name} dëshiron të jetë miku juaj në YouVersion"
+msgid "moment.video.watched.self.title"
+msgstr "Ju shikuat <b>{title}</b>"
 
-msgid "notifications.friendships.accept"
-msgstr "{name} e pranoi kërkesën tuaj të miqësisë"
-
-msgid "notifications.friendships.nowfriends"
-msgstr "{name} është tani miku juaj"
-
-msgid "notifications.friendships.suggestion"
-msgstr "A dëshironi të jeni mik me {name} në YouVersion?"
+msgid "moment.video.watched.title"
+msgstr "{name} shikoi <b>{title}</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} komentoi te shenjuesi juaj: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} komentoi rreth miqësisë suaj të re me {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} komentoi te theksimi juaj: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} komentoi te shënimi juaj: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} komentoi rreth planit tënd: “{comment}”"
@@ -157,26 +132,65 @@ msgstr "{name} komentoi rreth planit tënd: “{comment}”"
 msgid "notifications.comments.moment.mine.plan_activity.push"
 msgstr "{name} komentoi rreth planit tuaj të Biblës: “{comment}”"
 
-msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} komentoi rreth miqësisë suaj të re me {friend_name}: “{comment}”"
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name} komentoi gjithashtu te shenjuesi i {moment_owner_name}: “{comment}”"
 
-msgid "notifications.comments.moment.mine.note"
-msgstr "{name} komentoi te shënimi juaj: “{comment}”"
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} komentoi gjithashtu rreth miqësisë së re të {moment_owner_name} me {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name} komentoi gjithashtu te theksimi i {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name} komentoi gjithashtu te shënimi i {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name} komentoi gjithashtu te shenjuesi i vet: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} komentoi gjithashtu rreth miqësisë së re me {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} komentoi gjithashtu te theksimi i tij/saj: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name} komentoi gjithashtu te shënimi i tij/saj: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} komentoi gjithashtu rreth planit të vet: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} komentoi gjithashtu rreth planit të vet të Biblës: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} komentoi gjithashtu rreth planit të {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} komentoi gjithashtu rreth planit të Biblës të {moment_owner_name}: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name} e pranoi kërkesën tuaj të miqësisë"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} është tani miku juaj"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} dëshiron të jetë miku juaj në YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "A dëshironi të jeni mik me {name} në YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} e pëlqen shenjuesin tuaj, {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} e pëlqeu miqësinë tuaj të re me {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} e pëlqen theksimin tuaj, {reference_human}"
 
-msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} e pëlqen aktivitetin e planit tuaj"
-
-msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} e pëlqen aktivitetin e planit tuaj të Biblës"
-
-msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} e pëlqeu miqësinë tuaj të re me {friend_name}"
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} e pëlqen shënimin tuaj"
 
 msgid "notifications.likes.moment.mine.note.reference"
 msgstr "{name} e pëlqen shënimin tuaj për {reference_human}"
@@ -184,44 +198,11 @@ msgstr "{name} e pëlqen shënimin tuaj për {reference_human}"
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} e pëlqen shënimin tuaj, “{title}”"
 
-msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} e pëlqen shënimin tuaj"
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} e pëlqen aktivitetin e planit tuaj"
 
-msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} komentoi gjithashtu te shenjuesi i vet: “{comment}”"
-
-msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} komentoi gjithashtu te shenjuesi i {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} komentoi gjithashtu rreth miqësisë së re me {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} komentoi gjithashtu rreth miqësisë së re të {moment_owner_name} me {friend_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} komentoi gjithashtu te theksimi i tij/saj: “{comment}”"
-
-msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} komentoi gjithashtu te theksimi i {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} komentoi gjithashtu rreth planit të vet: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} komentoi gjithashtu rreth planit të {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} komentoi gjithashtu rreth planit të vet të Biblës: “{comment}”"
-
-msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} komentoi gjithashtu rreth planit të Biblës të {moment_owner_name}: “{comment}”"
-
-msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} komentoi gjithashtu te shënimi i tij/saj: “{comment}”"
-
-msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} komentoi gjithashtu te shënimi i {moment_owner_name}: “{comment}”"
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} e pëlqen aktivitetin e planit tuaj të Biblës"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} shënoi {reference_human}"
@@ -229,20 +210,14 @@ msgstr "{name} shënoi {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} theksoi {reference_human}"
 
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} shtoi një shënim"
+
 msgid "notifications.moments.create.note.reference"
 msgstr "{name} shtoi një shënim për {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} shtoi një shënim, “{title}”"
-
-msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} shtoi një shënim"
-
-msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} filloi një plan të ri, {title}"
-
-msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} filloi një plan të ri të Biblës, {title}"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} e përfundoi planin e vet, {title}"
@@ -250,23 +225,17 @@ msgstr "{name} e përfundoi planin e vet, {title}"
 msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} e përfundoi planin e vet të Biblës, {title}"
 
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "Ju keni %d kërkesë miqësie"
-msgstr[1] "Ju keni %d kërkesa miqësie"
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} filloi një plan të ri, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} filloi një plan të ri të Biblës, {title}"
 
 msgid "notifications.system.test"
 msgstr "Shkarko Programin e Biblës për Fëmijë tani!!!"
 
-msgid "share.invite_sms_prefix"
-msgstr "Nga {name}:"
-
-msgid "share.invite_sms"
-msgstr "A e ke Programin e Biblës nga YouVersion? Mua më pëlqen shumë dhe mendoj se do të të pëlqejë dhe ty. Ja ku është lidhja nëse nuk e ke:"
-
-msgid "share.invite_email_subject"
-msgstr "Bashkohu me mua në Programi i Biblës?"
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Përshëndetje!</p><p>Jam duke përdorur Programin e Biblës nag YouVersion dhe doja ta ndaja atë me ty. Nëse nuk ke dëgjuar për këtë program, është një mënyrë e thjeshtë për të sjellë bukurinë dhe të vërtetën e Biblës ne jetën e përditshme. </p><p><strong>Zotëro Programin e biblës:</strong> lexo, shiko, dëgjo dhe ndaj në telefonin dhe tabletin tuaj si dhe në internet në Bible.com</p><p><strong>Cakto llogarinë tënde:</strong> pajtohu në planet e Biblës dhe mundëso shenjues, theksime dhe shënime në çdo pajisje</p><p><strong>Shto miq (si mua!):</strong> eksploro dhe diskuto rreth Biblës me njerëz për të cilët kujdesesh</p><p>Është e gjithë kjo në Programi i Biblës—fillo këtu: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
@@ -280,19 +249,25 @@ msgstr ""
 "\n"
 "Shto miq (si mua!): eksploro dhe diskuto rreth Biblës me njerëz për të cilët kujdesesh.\n"
 "\n"
-"Është e gjithë kjo në Programi i Biblës—fillo këtu:"
+"Është e gjithë kjo në Programi i Biblës—fillo këtu: "
 
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Përshëndetje!</p><p>Jam duke përdorur Programin e Biblës nag YouVersion dhe doja ta ndaja atë me ty. Nëse nuk ke dëgjuar për këtë program, është një mënyrë e thjeshtë për të sjellë bukurinë dhe të vërtetën e Biblës ne jetën e përditshme. </p><p><strong>Zotëro Programin e biblës:</strong> lexo, shiko, dëgjo dhe ndaj në telefonin dhe tabletin tuaj si dhe në internet në Bible.com</p><p><strong>Cakto llogarinë tënde:</strong> pajtohu në planet e Biblës dhe mundëso shenjues, theksime dhe shënime në çdo pajisje</p><p><strong>Shto miq (si mua!):</strong> eksploro dhe diskuto rreth Biblës me njerëz për të cilët kujdesesh</p><p>Është e gjithë kjo në Programi i Biblës—fillo këtu: </p>"
-
-msgid "share.invite_twitter"
-msgstr "Programi i Biblës nga @YouVersion ka një vend të përhershëm në ekranin tim kryesor. Lexo, shiko, dëgjo dhe ndaj...të gjitha në një program falas:"
-
-msgid "share.invite_twitter_direct"
-msgstr "A e ke Programin e Biblës nga @YouVersion? Mua më pëlqen dhe mendoj se dhe ty do të të pëlqejë. Ja ku është lidhja nëse nuk e ke:"
+msgid "share.invite_email_subject"
+msgstr "Bashkohu me mua në Programi i Biblës?"
 
 msgid "share.invite_facebook"
 msgstr "Më pëlqen shumë Programi i Biblës! Më ka ndihmuar vërtet ta bëj Biblën pjesë të jetës sime të përditshme. Më mundëson të theksoj vargjet, të dëgjoj Biblën, të mbaj shënime, të ndjek plane devocionale...madje të shikoj video! Shkarkoje atë tani (është falas):"
 
 msgid "share.invite_facebook_direct"
 msgstr "A e ke Programin e Biblës? Mua më pëlqen shumë dhe mendoj se do të të pëlqejë dhe ty. Ja ku është lidhja nëse nuk e ke:"
+
+msgid "share.invite_sms"
+msgstr "A e ke Programin e Biblës nga YouVersion? Mua më pëlqen shumë dhe mendoj se do të të pëlqejë dhe ty. Ja ku është lidhja nëse nuk e ke:"
+
+msgid "share.invite_sms_prefix"
+msgstr "Nga {name}:"
+
+msgid "share.invite_twitter"
+msgstr "Programi i Biblës nga @YouVersion ka një vend të përhershëm në ekranin tim kryesor. Lexo, shiko, dëgjo dhe ndaj...të gjitha në një program falas:"
+
+msgid "share.invite_twitter_direct"
+msgstr "A e ke Programin e Biblës nga @YouVersion? Mua më pëlqen dhe mendoj se dhe ty do të të pëlqejë. Ja ku është lidhja nëse nuk e ke:"
