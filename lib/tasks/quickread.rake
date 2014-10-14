@@ -20,6 +20,9 @@ namespace :subscription do
     puts 'Enter Plan ID (numeric):'
     id = STDIN.gets.chomp
   
+    
+    plan = Subscription.find(id, auth: user.auth)
+
     if plan.present? && plan.id
       puts "Subscription Found. ID: #{plan.id}"
     else
@@ -53,5 +56,4 @@ namespace :subscription do
       puts
       puts 'Success. You are a speed reader.'
   end
-
-end 
+end

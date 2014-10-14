@@ -1,30 +1,30 @@
 class window.PlanWidget
 
   @toNext: ->
-    container = $('.calendar-cal')  
     day_width = $('.calendar-cal-day').first().width()
-    offset = container.scrollLeft()
+    offset = $('.calendar-cal').scrollLeft()
     newPosition = ( 7 * day_width + offset)
-    PlanWidget.toPosition(newPosition, container)
+    PlanWidget.toPosition(newPosition)
 
   @toPrev: ->
-    container = $('.calendar-cal')  
     day_width = $('.calendar-cal-day').first().width()
-    offset = container.scrollLeft()
+    offset = $('.calendar-cal').scrollLeft()
     newPosition = ( offset - ( 7 * day_width) )
-    PlanWidget.toPosition(newPosition, container)
+    PlanWidget.toPosition(newPosition)
 
-  @toPosition: (newPosition, container) ->
+  @toPosition: (newPosition) ->
     easingType  = 'easeInOutCirc'
-    duration    = 900
+    duration    = 500
     if app.getPage().MODERN_BROWSER
-      container.animate {scrollLeft: newPosition }, {easing: easingType, duration: duration}
+      $('.calendar-cal').animate {scrollLeft: newPosition }, {easing: easingType, duration: duration}
     else
-      container.scrollLeft(newPosition)
+      $('.calendar-cal').scrollLeft(newPosition)
 
   @initialScroll: ->
-    container = $('.calendar-cal')
-    selected = container.find('.selected').parent()
+    selected = $('.calendar-cal').find('.selected').parent()
+    current = $('.calendar-cal').find('.current').parent()
     day_width = $('.calendar-cal-day').first().width()
     if selected
-      PlanWidget.toPosition(selected.position().left - day_width + 4, container)
+      PlanWidget.toPosition(selected.position().left - day_width + 4)
+    else if current
+      PlanWidget.toPosition(current.position().left - day_width + 4)
