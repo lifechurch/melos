@@ -47,7 +47,6 @@ namespace :subscription do
         puts "Reference #{ref}"
         unless plan.set_ref_completion(d, ref["reference"], true)
           puts "Error on day #{d}" unless plan.completed?
-          return "Error on day #{d}"
         else
           puts "Day #{d} complete"
         end
@@ -57,5 +56,4 @@ namespace :subscription do
       puts
       puts 'Success. You are a speed reader.'
   end
-
-end 
+end
