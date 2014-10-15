@@ -329,7 +329,7 @@ class Reference < YV::Resource
   end
 
   def short_link
-    "http://bible.com/#{version}/#{self.to_param.sub(/\./, "")}"
+    "https://bible.com/#{version}/#{self.to_param.sub(/\./, "")}"
   end
 
   def copyright
