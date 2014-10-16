@@ -19,7 +19,7 @@
   - unless plan.publisher_url.nil?
     %div.ft.link
       = link_to(t("plans.about publisher"), plan.publisher_url)
-- if @friends_reading.length > 0
+- if @friends_reading.present? and @friends_reading.length > 0
   .widget.rp-reading
     %h3.hd
       =t("plans.stats.friends reading", count: @friends_reading.length)
@@ -38,7 +38,7 @@
           =t("plans.stats.close")
 
 
-- if @friends_completed.length > 0
+- if @friends_completed.present? and @friends_completed.length > 0
   .widget.rp-friends-completed
     %h3.hd
       =t("plans.stats.friends completed", count: @friends_completed.length)
