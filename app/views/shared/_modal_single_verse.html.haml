@@ -1,4 +1,5 @@
 - verse = modal_verse
+- twitter_text = truncate(strip_tags(verse.content.gsub(/<span class="label">\d+<\/span>/, '')), :length => 80)
 
 :javascript
   (function(d, s, id) {
@@ -36,7 +37,7 @@
 
     %aside
       %div
-        %a{href: "http://twitter.com/share", class: "twitter-share-button", "data-url" => verse.short_link, "data-counturl" => request.url, "data-text" => verse.content[0].chomp, via: "YouVersion", "data-count" => "horizontal", "data-related" => "youversion"} Tweet
+        %a{href: "http://twitter.com/share", class: "twitter-share-button", "data-url" => verse.short_link, "data-counturl" => request.url, "data-text" => twitter_text, via: "YouVersion", "data-count" => "horizontal", "data-related" => "youversion"} Tweet
         %script{type: "text/javascript", src: "https://platform.twitter.com/widgets.js"}
 
       %div.fb-like{"data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-send" => "false", "data-layout" => "button_count", "data-width" => "450", "data-show-faces" => "false"}
