@@ -55,6 +55,8 @@ module YV
         merged.concat(ms)
         merged.concat(vods)
         merged.sort_by {|obj| obj.created_at}.reverse
+        # TEST METHOD. REMOVE BEFORE PROD DEPLOY
+        merged.unshift(ReadingPlanCarouselMoment.new())
       end
 
       def next_page

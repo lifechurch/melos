@@ -25,6 +25,7 @@
 //= require ./moments/moment
 //= require ./moments/votd
 //= require ./moments/system
+//= require ./moments/reading_plan_carousel
 //= require ./moments/plan_completion
 //= require ./moments/plan_subscription
 //= require ./moments/plan_segment_completion
