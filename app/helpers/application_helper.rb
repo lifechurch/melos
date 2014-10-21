@@ -227,6 +227,21 @@ module ApplicationHelper
     convert_to_brightness_value(hex_color) <= 382.5 #halfway between black (0+0+0 = 0) and white (255+255+255 = 765)
   end
 
+  def is_whitelabel_site
+    @site.to_s != "Site"
+  end
+
+  def get_localized_reference_link(reference, a_locale)
+    version = Version.default_for(a_locale) || Version.default
+    if reference.verses.nil? then
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}"
+    else
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}-#{reference.verses.last}" if reference.verses.length > 1
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}" if reference.verses.length == 1
+    end
+    fullpath
+  end
+
   private
   def lang_code(locale, host=nil)
     case host
