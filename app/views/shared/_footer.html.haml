@@ -1,8 +1,9 @@
 = cache "#{@site}_footer_#{current_locale}", expires_in: YV::Caching.a_long_time do
   %footer#footer{role: "contentinfo", class: footer_classes}
     %p.links
-      = link_to( t("now"),  external_url(:now))
-      = link_to( t("about"),about_path)
+      = link_to( t("now"), external_url(:now))
+      = link_to( t("about"), about_path)
+      = link_to( t("versions link"), versions_path)
       = link_to( t("jobs"), "https://www.youversion.com/jobs")
       = link_to( t("privacy policy"), privacy_path)
       = link_to( t("terms"), terms_path)
