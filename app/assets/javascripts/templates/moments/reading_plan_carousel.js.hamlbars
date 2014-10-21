@@ -1,25 +1,22 @@
 .moment{"data-uuid" => "{{uuid}}"}
   .moment-top
-    .moment-sys
-      {{#if kind_color}}
-      %span.moment-icon
-      {{/if}}
-      {{#if avatar}}
-      %span{:class => 'moment-avatar {{avatar_style}}'}
-        %a{href: "{{action_url}}"}
-          %img{src: "{{avatar}}"}/
-      {{/if}}
-      %span.moment-time
-        {{created_dt}}
-      %h2.moment-sys-text
-        %a{href: "{{action_url}}"}
-          {{{moment_title}}}
-      {{#if body_image}}
-      .moment-sys-image
-        %img{src: "{{body_image}}"}/
-      {{/if}}
-      
-      {{#if body_text}}
-      %div{style: "clear:both;"}
-        {{{body_text}}}
-      {{/if}}
+    .moment-featured-rp
+      %h2.moment-rp-text
+        Featured Plans
+      .featured-rp-box
+        .featured-rp-box-plan
+          = image_tag "campaigns/kids/hero.jpg"
+          %p
+            Ragamuffin Reflections from Brennan Manning
+        .featured-rp-box-plan.active
+          = image_tag "campaigns/kids/hero.jpg"
+          %p
+            Ragamuffin Reflections from Brennan Manning
+        .featured-rp-box-plan
+          = image_tag "campaigns/kids/hero.jpg"
+          %p
+            Ragamuffin Reflections from Brennan Manning
+        %a{href: "#", class: "featured-rp-box-next"}
+          Next
+        %a{href: "#", class: "featured-rp-box-prev"}
+          Previous
