@@ -1,7 +1,7 @@
 - I18n.available_locales.each do |a_locale|
   - locale_dir = a_locale.to_s.eql?("en") ? '' : '/' + a_locale.to_s
   - fullpath = request.fullpath
-  - if presenter.present? and presenter.respond_to?(:reference)
+  - if defined?(presenter) and presenter.present? and presenter.respond_to?(:reference)
     - fullpath = get_localized_reference_link(presenter.reference, a_locale)
   - href = "#{request.protocol}#{request.host_with_port}#{locale_dir}#{fullpath}"
 
