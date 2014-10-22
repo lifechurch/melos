@@ -5,5 +5,7 @@
     - fullpath = get_localized_reference_link(presenter.reference, a_locale)
   - href = "#{request.protocol}#{request.host_with_port}#{locale_dir}#{fullpath}"
 
-  %link{:href=> href,:rel=>"alternate",:hreflang=>"#{a_locale.downcase}"}
+  %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
+  - if a_locale.to_s.eql?("en")
+    %link{rel: "canonical", href: href}
 

@@ -233,7 +233,10 @@ module ApplicationHelper
 
   def get_localized_reference_link(reference, a_locale)
     version = Version.default_for(a_locale) || Version.default
-    if reference.verses.nil? then
+    if a_locale.to_s.eql?("en") then
+      version = reference.version
+    end
+    if reference.verses.nil? || reference.verses.empty? then
       fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}"
     else
       fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}-#{reference.verses.last}" if reference.verses.length > 1
