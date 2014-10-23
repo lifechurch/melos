@@ -26,7 +26,7 @@ gem 'smartling'
 gem 'httparty',               '0.8.2'
 
 gem 'http_accept_language',   '~> 1.0.2'
-gem 'koala',                  '~> 1.6.0'
+gem 'koala',                  '~> 1.10.0'
 gem 'language_list',          '~> 0.0.3'
 gem 'newrelic_rpm',           '~> 3.9.0.229'
 gem 'nokogiri',               '~> 1.5.2'
