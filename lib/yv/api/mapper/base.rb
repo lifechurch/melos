@@ -23,6 +23,10 @@ module YV
             from_search(results)
           end
 
+          def map_client_side_items(results)
+            from_client_side_items(results)
+          end
+
           private
 
             def from_all(results)

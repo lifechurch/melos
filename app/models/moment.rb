@@ -29,6 +29,12 @@ class Moment < YV::Resource
       super(opts.slice(:auth, :page, :kind, :user_id, :usfm, :version_id))
     end
 
+    def client_side_items(opts={})
+      opts.merge!({cache_for: YV::Caching.a_very_long_time})
+      data, errs = get("moments/client_side_items",opts)
+      map_client_side_items(YV::API::Results.new(data,errs))
+    end
+
   end
 
 end

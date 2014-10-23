@@ -19,6 +19,14 @@ module YV
             end 
           end
 
+          def from_client_side_items(results)
+            return results if results.empty?
+            # return nil if expanded_dt.first is in the past?
+            results.collect do |client_side|
+              map_from_kind(client_side)
+            end
+          end
+
           def map_from_kind(data)
             case data.kind_id
               when "note.v1"                       then to_note(::Note.new,data)
@@ -29,6 +37,7 @@ module YV
               when "plan_subscription.v1"          then to_plan_subscription(::PlanSubscription.new,data)
               when "plan_completion.v1"            then to_plan_completion(::PlanCompletion.new,data)
               when "plan_segment_completion.v1"    then to_plan_segment_completion(::PlanSegmentCompletion.new,data)
+              when "reading_plan_carousel.v1"      then to_reading_plan_carousel(::ReadingPlanCarousel.new,data)
               when "system.v1"                     then to_system(::SystemMoment.new,data)
               else                                      to_generic(::GenericMoment.new,data)
             end
@@ -60,6 +69,10 @@ module YV
 
           def to_friendship(instance,data)
             YV::API::Mapper::Friendship.map_to_instance(instance,data)
+          end
+
+          def to_reading_plan_carousel(instance,data)
+            YV::API::Mapper::ReadingPlanCarousel.map_to_instance(instance,data)
           end
 
           def to_generic(instance,data)

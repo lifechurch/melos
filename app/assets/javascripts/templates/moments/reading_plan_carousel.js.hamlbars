@@ -1,22 +1,19 @@
 .moment{"data-uuid" => "{{uuid}}"}
   .moment-top
     .moment-featured-rp
+      %img.moment-avatar{src: "{{avatar}}"}
       %h2.moment-rp-text
-        Featured Plans
+        {{moment_title}}
       .featured-rp-box
+        {{#each plans}}
         .featured-rp-box-plan
-          = image_tag "campaigns/kids/hero.jpg"
-          %p
-            Ragamuffin Reflections from Brennan Manning
-        .featured-rp-box-plan.active
-          = image_tag "campaigns/kids/hero.jpg"
-          %p
-            Ragamuffin Reflections from Brennan Manning
+          %a{href: "{{path}}"}
+            %img{src: "{{image_url}}"}
+            %p
+              {{name}}
+        {{/each}}
         .featured-rp-box-plan
-          = image_tag "campaigns/kids/hero.jpg"
-          %p
-            Ragamuffin Reflections from Brennan Manning
-        %a{href: "#", class: "featured-rp-box-next"}
-          Next
-        %a{href: "#", class: "featured-rp-box-prev"}
-          Previous
+          %a{href: "/reading-plans?category={{category}}"}
+            -# NOTE: Need an image for "View all"
+            %p
+              {{I18n 'plans.stats.view all'}}

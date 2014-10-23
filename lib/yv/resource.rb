@@ -305,6 +305,12 @@ module YV
         results
       end
 
+      def map_client_side_items(results)
+        raise "Declare an API Response Mapper" unless @api_response_mapper.present?
+        results.data = @api_response_mapper.map_client_side_items(results.data)
+        results
+      end
+
       def map_delete(results)
         raise "Declare an API Response Mapper" unless @api_response_mapper.present?
         results.data = @api_response_mapper.map_delete(results.data)

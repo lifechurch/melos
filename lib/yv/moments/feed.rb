@@ -55,8 +55,7 @@ module YV
         merged.concat(ms)
         merged.concat(vods)
         merged.sort_by {|obj| obj.created_at}.reverse
-        # TEST METHOD. REMOVE BEFORE PROD DEPLOY
-        merged.unshift(ReadingPlanCarouselMoment.new())
+        merged = client_side_moments + merged if client_side_moments.present?
       end
 
       def next_page
@@ -102,9 +101,14 @@ module YV
         return vods
       end
 
-
       def paged_moments
         @paged_moments ||= Moment.all(auth: @auth, page: @page)
+      end
+
+      def client_side_moments
+        @client_side_moments ||= Moment.client_side_items(auth: @auth)
+        # Trim down the array of CSM to moments with dates that match today's
+        @client_side_moments = @client_side_moments.select{|m| m.expanded_dt.any?{|d| d.to_date == Date.today } } if @client_side_moments.present?
       end
 
       def merge_for(current_day, next_day)
