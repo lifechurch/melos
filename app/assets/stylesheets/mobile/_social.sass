@@ -1093,55 +1093,44 @@ input[type="submit"].moment-fr-name-add
     +border-radius(4px)
     padding: 15px 0
 
-    .moment-rp-text
-      background: image-url("svg/featured-star.svg") no-repeat center left
-      background-size: 24px 24px
-      height: 24px
-      line-height: 26px
-      padding: 0 0 0 30px
-      margin: 0 0 15px 15px
+    .featured-rp-title
+      overflow: hidden
+      margin: 0 0 12px
+
+    .moment-avatar
+      margin: 0 0 0 15px
+
+      img
+        height: 40px
+        width: 40px
 
     .featured-rp-box
       overflow: hidden
       position: relative
       clear: both
-      height: 210px
-
-      .featured-rp-box-next,
-      .featured-rp-box-prev
-        position: absolute
-        width: 44px
-        height: 44px
-        top: 55px
-        background: image-url("svg/arrow-circle-grey.svg") no-repeat center center
-        text-indent: 100%
-        overflow: hidden
-        white-space: nowrap
-        opacity: .75
-
-      .featured-rp-box-next
-        right: 25px
-        +transform(rotate(180deg))
-
-      .featured-rp-box-prev
-        left: 25px
-
-      .featured-rp-box-next:hover,
-      .featured-rp-box-prev:hover
-        opacity: 1
 
       .featured-rp-box-plan
         width: 210px
         padding: 0 10px
         text-align: center
         float: left
-        img
-          width: 210px
-          display: block
-          margin: 0 0 10px
 
-        p
-          line-height: 1.3em
+        a
+          display: block
+          width: 210px
+
+          img
+            display: block
+            width: 210px
+
+          p
+            line-height: 1.3em
+            font-weight: normal
+            display: block
+            color: #444
+            padding: 10px 0 0
+            margin-bottom: 5px
+
 
 // !------------------------ Detail page -------------------------
 

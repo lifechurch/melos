@@ -22,9 +22,10 @@ class window.Moments.ReadingPlanCarousel extends window.Moments.Base
   initInteractions: ()->
     $('.featured-rp-box').first().slick
       centerMode: true
-      centerPadding: "20px"
-      slidesToShow: 1
-      infinite: false
+      centerPadding: "0"
+      slidesToShow: 3
+      infinite: true
+      variableWidth: true
       responsive: [
         {
           breakpoint: 768
