@@ -1093,6 +1093,9 @@ body.transition .moment
       .slick-list
         padding: 0 !important
 
+        &:focus
+          outline: none
+
       .slick-next,
       .slick-prev
         position: absolute
@@ -1146,10 +1149,10 @@ body.transition .moment
             margin-bottom: 5px
 
       .slick-slide
-        opacity: .3
+        opacity: .3 !important
 
-      .slick-active
-        opacity: 1
+      .slick-center
+        opacity: 1 !important
 
 
 // !------------------------ Detail page -------------------------
