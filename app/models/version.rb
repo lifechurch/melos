@@ -15,21 +15,21 @@ class Version < YV::Resource
     # - possibly filtered by language tag
 
     def all(app_lang_tag = "")
-      # `bible_langauge_id` is the arbitrariy identifier of the language
-      # to the Bible API (iso_639_3[_variant tag]), langauge_tag in the response
+      # `bible_language_id` is the arbitrary identifier of the language
+      # to the Bible API (iso_639_3[_variant tag]), language_tag in the response
       #
       # `app_lang_tag` is the language tag used within the app (pt-BR, for example)
       # that comes from the user's preferred languages or the language they've selected
       
       return versions.values if app_lang_tag == ""
 
-      bible_langauge_id = case app_lang_tag
+      bible_language_id = case app_lang_tag
         when Hash, Hashie::Mash
           app_lang_tag.id.to_s
         else
           YV::Conversions.to_bible_api_lang_code(app_lang_tag).to_s
       end
-      versions.select { |k, v| v.language.id.to_s == bible_langauge_id }.values
+      versions.select { |k, v| v.language.id.to_s == bible_language_id }.values
     end
 
 
@@ -98,14 +98,14 @@ class Version < YV::Resource
     # retrieve a default version for a particular language tag
 
     def default_for(app_lang_tag)
-      bible_langauge_id = case app_lang_tag
+      bible_language_id = case app_lang_tag
         when Hash, Hashie::Mash
           app_lang_tag.id.to_s
         else
           YV::Conversions.to_bible_api_lang_code(app_lang_tag).to_s
       end
 
-      defaults[bible_langauge_id]
+      defaults[bible_language_id]
     end
 
 

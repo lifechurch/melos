@@ -5,7 +5,7 @@
 
 %title= title
 
-= cache "head_meta_#{@site}", expires_in: YV::Caching.a_short_time do
+= cache "head_meta_#{@site}_#{locale}", expires_in: YV::Caching.a_short_time do
   %link{rel: "shortcut icon", href:"/favicon.ico"}
   %meta{:charset => 'utf-8'}
   %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
