@@ -228,7 +228,7 @@ module ApplicationHelper
   end
 
   def is_whitelabel_site
-    @site.to_s != "Site"
+    @site.to_s != "Bible"
   end
 
   def get_localized_reference_link(reference, a_locale)
