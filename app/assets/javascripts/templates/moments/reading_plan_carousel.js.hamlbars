@@ -13,6 +13,8 @@
             %img{src: "{{image_url}}"}
             %p
               {{name}}
+              .length
+                {{formatted_length}}
         {{/each}}
         /
           .featured-rp-box-plan

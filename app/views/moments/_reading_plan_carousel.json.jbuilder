@@ -12,7 +12,7 @@ json.object do
     json.slug plan.slug
     json.name plan.name
     json.path plan_path("#{plan.id}-#{plan.slug}")
-    json.formatted_length
+    json.formatted_length plan.formatted_length
     json.image_url plan.images.select{|i| i.height == 180}.first.url if plan.images.present?
   end
 end
