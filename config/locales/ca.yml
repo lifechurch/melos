@@ -665,7 +665,7 @@ ca:
         labels label: "Etiquetes:"
         title: "Marcadors"
         my labels: "Les meves etiquetes"
-        all labels: "Show All"
+        all labels: "Mostra-ho tot"
         not found: "Els marcadors et donen una ràpida referència cap als teus passatges preferits o a l'últim capítol que has llegit en un llibre en particular. Per afegir un marcador, selecciona un verset al lector de la Bíblia i després clica al botó Seleccionat a dalt del lector."
         other user not found: "El/la %{username} encara no ha desat cap marcador."
         creation form errors: "Els errors següents no permeten que creïs el marcador"

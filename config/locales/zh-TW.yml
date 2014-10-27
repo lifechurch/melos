@@ -665,7 +665,7 @@ zh-TW:
         labels label: "標籤："
         title: "書籤"
         my labels: "我的標籤"
-        all labels: "Show All"
+        all labels: "顯示全部"
         not found: "書籤給您快速的參照並指引到您喜歡的文章，或者您上一次在某一書卷裡讀到的章節。要添加書籤，請在聖經閱讀器裡選擇經文，然後在上方點選【選定】按鈕。"
         other user not found: "%{username} 尚未儲存任何書籤。"
         creation form errors: "下列錯誤妨礙了您建立書籤："

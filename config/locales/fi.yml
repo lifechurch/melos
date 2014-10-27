@@ -665,7 +665,7 @@ fi:
         labels label: "Tunnisteet:"
         title: "Kirjanmerkit"
         my labels: "Omat tunnisteet"
-        all labels: "Show All"
+        all labels: "Näytä kaikki"
         not found: "Kirjanmerkit toimivat pikaoppaana suosikkikappaleisiisi tai viimeisimpään lukemaasi lukuun jossakin tietyssä kirjassa. Lisätäksesi kirjanmerkin, valitse jae lukijassa ja klikkaa Valittu-nappia lukijan yläosassa."
         other user not found: "%{username} ei ole vielä tallentanut kirjanmerkkejä."
         creation form errors: "Kirjanmerkin luominen estyi seuraavien virheiden takia:"

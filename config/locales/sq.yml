@@ -665,7 +665,7 @@ sq:
         labels label: "Etiketat:"
         title: "Shenjuesit"
         my labels: "Etiketat e mia"
-        all labels: "Show All"
+        all labels: "Shfaq të gjitha"
         not found: "Shenjuesit ju japin ju një referencë udhërrëfyese të shpejtë për pasazhet tuaja të preferuara apo për kapitullin e fundit që lexoni në një libër të caktuar. Për të shtuar një shenjues, përzgjidhni një varg në lexuesin e Biblës dhe më pas klikoni butonin Përzgjedhës në krye të lexuesit."
         other user not found: "Përdoruesi %{username} nuk ka ruajtur ende asnjë shenjues."
         creation form errors: "Gabimi(et) më poshtë e kanë penguar krijimin e shenjuesit tuaj:"
