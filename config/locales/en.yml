@@ -191,6 +191,7 @@ en:
   reader:                                       "Reader"
   lifechurch short url:                         "LifeChurch.tv"
   about:                                        "About"
+  versions link:                                "Versions"
   jobs:                                         "Jobs"
   privacy policy:                               "Privacy Policy"
   terms:                                        "Terms"
@@ -1011,7 +1012,7 @@ en:
         now skipped:                            "This page will now be skipped."
       features:
         read heading:                           "Read the Bible."
-        read description:                       "Take your choice from <strong>hundreds of Bible versions and languages</strong>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+        read description:                       "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
         study heading:                          "Study the Bible."
         study description:                      "<strong>Highlight</strong> in your favorite color, <strong>bookmark</strong> your favorite Bible verses, and make notes about what you're learning. Not only are you spending time in God's Word, you're building a history of your interaction with the Bible."
         subscribe heading:                      "Subscribe to Bible Plans."
