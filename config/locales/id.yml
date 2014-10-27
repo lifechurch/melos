@@ -665,7 +665,7 @@ id:
         labels label: "Label:"
         title: "Markah"
         my labels: "Label Saya"
-        all labels: "Show All"
+        all labels: "Lihat Semua"
         not found: "Markah memberi Anda panduan referensi cepat ke bagian favorit Anda ataupun ke pasal terakhir yang Anda baca di kitab tertentu. Untuk menambah markah, pilih ayat di pembaca Alkitab lalu klik tombol Dipilih yang ada di bagian teratas dari pembaca."
         other user not found: "%{username} belum menyimpan markah apapun."
         creation form errors: "Kesalahan berikut menghambat pembuatan markah Anda:"

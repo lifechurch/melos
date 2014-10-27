@@ -4,7 +4,7 @@ sv:
         formats: 
             votd: "%-d %B, %Y"
     counter: 
-        format: "999,999,999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Samtal & Utforskning"
@@ -357,7 +357,7 @@ sv:
             add friend button title: "Skicka %{user} en vänskapsförfrågan"
             accept button: "Acceptera"
             accept request button: "Acceptera förfrågan"
-            ignore button: "Avböjer"
+            ignore button: "Inte nu"
             ignore request button: "Neka förfrågan"
     notes: 
         none user: "%{username} har inte gjort några anteckningar än."
@@ -485,7 +485,7 @@ sv:
         no devices download copy: "Bibelappen är en gratis mobil Bibel baserad på online-biblen YouVersion.com som kan installeras på nästan vilken mobil enhet som helst. Bibelappen låter användare att läsa Bibeln, dela verser på deras sociala nätverk, skapa bokmärken för deras favorittexter m.m.—allt på ett format som hänger med i det allt mer mobila livet. Besök <a href='https://www.bible.com/sv/app'>bible.com/sv/app</a> från din mobila enhet för att ladda ner Bibelappen och ansluta ditt konto!"
         yes delete: "Ja, ta bort mitt konto"
         account delete success: "Ditt YouVersion-konto har tagits bort. Vi hoppas att du fortsätter att hitta meningsfulla sätt att komma i kontakt med Bibeln. Några av dessa appar kanske kan hjälpa dig att komma framåt: <a href= http://www.youversion.com/sv/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-        delete account description: "Om du tar bort ditt konto kommer du permanent radera all din information, historik och dina personliga anpassningar (så som anteckningar, bokmärken och markeringar) på Bible.com och i Bibelappen Denna åtgärd kan inte återställas av dig eller av någon i vårt team. Om du är säker på att du vill gå vidare, fortsätt nedan."
+        delete account description: "Om du tar bort ditt konto kommer du permanent radera all din information, historik och dina personliga inställningar (så som anteckningar, bokmärken och markeringar) på Bible.com och i Bibelappen Denna åtgärd kan inte återställas av dig eller av någon i vårt team. Om du är säker på att du vill gå vidare, fortsätt nedan."
         user recent activity: "%{user}s senaste aktivitet"
         my notes: "Anteckningar"
         user notes: "%{user}s anteckningar"
@@ -645,7 +645,7 @@ sv:
             badges: "Meddela mig när jag får medaljer."
             follower: "Meddela mig när någon följer mig."
             newsletter: "Håll mig uppdaterad om meddelanden från YouVersion."
-            contact_joins: "Notify me when a Contact joins"
+            contact_joins: "Låt mig veta när en av mina kontakter ansluter sig"
             note_like: "Meddela mig när någon gillar mina anteckningar."
             reading_plans: "Meddela mig med information om mina läsplaner."
             publishing partners: "Håll mig uppdaterad om nyheter från YouVersions innehållspartner."
@@ -665,7 +665,7 @@ sv:
         labels label: "Etiketter:"
         title: "Bokmärken"
         my labels: "Mina etiketter"
-        all labels: "Show All"
+        all labels: "Visa alla"
         not found: "Bokmärken ger dig en snabb referens till dina favoritpassager eller till det senaste kapitlet du läste i en viss bok. För att lägga till ett bokmärke väljer du versen i Bibelläsaren och klickar sedan på knappen Markerat högst upp i läsaren."
         other user not found: "%{username} har inte sparat några bokmärken än."
         creation form errors: "Följande fel gjorde att du inte kunde skapa ditt bokmärke:"
@@ -915,7 +915,7 @@ sv:
         creation form errors: "Följande fel gjorde att du inte kunde göra en donation:"
     download ad: 
         title: "Ladda ner den fria Bibelappen"
-        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+        description copy: "Hundratals översättningar på över %{language_count} olika språk - Bibeln du tar med dig överallt."
         line 1: "Hundratals översättningar på mer"
         line 2: "än 100 olika språk—Bibeln"
         line 3: "som följer med dig överallt."
@@ -963,7 +963,7 @@ sv:
     mobile page: 
         h2: "Guds ord är med dig."
         h3: "YouVersion är global"
-        h3 sub: "Available in more than %{language_count} languages worldwide."
+        h3 sub: "Tillgänglig på mer än %{language_count} språk över hela världen."
         main: "Tiotals miljoner människor använder Bibelappen™ för att göra Guds Ord till en del av sin vardag. Ladda ner den fria appen för att komma åt dina bokmärken, anteckningar och läsplaner överallt. Få glädje av hundratals översättningar, inklusive ljuduppläsningar, på alla dina mobila enheter."
         button h4: "Gå till Bible.com/sv/app"
         button h4 sub: "På din mobila enhet"
@@ -984,7 +984,7 @@ sv:
         symbian: "Symbian"
         mobile web: "Mobil-Webb"
         amazon: "Kindle Fire"
-        free overlay: "100% Free"
+        free overlay: "100% gratis"
     pages: 
         generic_error: 
             title: "Upps!"

@@ -665,7 +665,7 @@ tl:
         labels label: "Mga Label:"
         title: "Mga bookmark"
         my labels: "Mga Label"
-        all labels: "Show All"
+        all labels: "Ipakita Lahat"
         not found: "Ang mga bookmark ay nagbibigay sa iyo ng madaliang reference guide sa mga paborito mong talata o sa huling kabanata ng Bibliya na binasa mo. Upang magdagdag ng bookmark, pumili ng talata sa Bible reader at piliin ang Selected button sa ibabaw ng reader."
         other user not found: "%{username} ay hindi pa naka-save ng bookmark."
         creation form errors: "Ang sumusunod na (mga) pagkakamali ay balakid sa paggawa ng iyong bookmark:"

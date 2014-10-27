@@ -665,7 +665,7 @@ lv:
         labels label: "Iezīme"
         title: "Grāmatzīmes"
         my labels: "Manas birkas"
-        all labels: "Show All"
+        all labels: "Parādīt visu"
         not found: "Grāmatzīmes palīdzēs ātrāk atrast jūsu mīļākās rakstu vietas, vai arī pēdējo nodaļu, kuru lasījāt. Lai pievienotu grāmatzīmi, izvēlieties Bībeles pantu un nospiediet izvēlēto pogu ekrāna aukšdaļā.."
         other user not found: "%{username} nav saglabājis nevienu grāmatzīmi."
         creation form errors: "Sekojoša kļūme(s) novērsa grāmatzīmes izveidošanu:"
@@ -943,7 +943,7 @@ lv:
         facebook: "YouVersion Facebook lapa"
         twitter: "YouVersion Twitter konts"
         support: "Nepieciešama palīdzība ar YouVersion?"
-        lead copy: "Based on the online Bible, Bible.com, the Bible App is a free mobile Bible that can be installed on almost any phone. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favorite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle."
+        lead copy: "Uz Bībeles pamata veidotā vietne Bible.com un Bībeles aplikācija ir bezmaksas mobilā Bībeles versija, kuru iespējams ieinstalēt gandrīz jebkurā mobilajā telefonā. Bībeles aplikācija dod iespēju tās lietotājiem lasīt Bībeli, pievērst citu uzmanību konkrētiem Bībeles pantiem, ievietot grāmatzīmes pie savām iemīļotajām rakstuvietām, un darīt vēl vairāk - veidā, kas seko līdzi dzīvesveidam kustībā."
         resources title: "Presses resursi"
         now title: "Šodien YouVersion kopienā"
         resources: 

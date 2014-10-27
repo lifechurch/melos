@@ -665,7 +665,7 @@
         labels label: "Emneord:"
         title: "Bokmerker"
         my labels: "Mine emneord"
-        all labels: "Show All"
+        all labels: "Vis alle"
         not found: "Bokmerker gir deg en rask tilgang på dine favoritt-tekster eller det siste kapittelet du leste i en spesiell bok. For å legge til et bokmerke velger du vers når du leser og trykker på ikonet øverst for bokmerke."
         other user not found: "%{username} har ikke lagret noen bokmerker ennå."
         creation form errors: "Følgende feil gjorde at bokmerke ikke kunne opprettes:"
