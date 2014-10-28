@@ -401,7 +401,8 @@ body.transition .moment
 .moment-no,
 .moment-vod,
 .moment-sys,
-.moment-fr
+.moment-fr,
+.moment-featured-rp
   position: relative
   padding: 15px
   overflow: hidden
@@ -1062,6 +1063,119 @@ body.transition .moment
   margin-right: 0
 
 
+// !Featured plan moment
+
+#main
+
+  .moment-featured-rp
+    +border-radius(4px)
+    padding: 15px 0
+
+    .featured-rp-title
+      overflow: hidden
+      margin: 0 0 12px
+
+    .moment-avatar
+      margin: 0 0 0 15px
+
+      img
+        height: 40px
+        width: 40px
+
+    .moment-rp-text
+      margin-bottom: 3px
+      min-height: 40px
+
+    .featured-rp-box
+      overflow: hidden
+      position: relative
+      clear: both
+      margin-bottom: 0px
+
+      .slick-list
+        padding: 0 !important
+
+        &:focus
+          outline: none
+
+      .slick-next,
+      .slick-prev
+        position: absolute
+        width: 44px
+        height: 44px
+        top: 60px
+        background: image-url("svg/arrow-circle-grey.svg") no-repeat center center
+        text-indent: 100%
+        overflow: hidden
+        white-space: nowrap
+        opacity: .85
+        padding: 0
+        +box-shadow(none)
+        &.slick-disabled
+          background: none
+          cursor: default
+      .slick-next
+        right: 25px
+        -ms-transform: rotate(90deg)
+        +transform(rotate(180deg))
+        background-position: left center
+        width: 45px
+
+      .slick-prev
+        left: 25px
+
+      .slick-next:hover,
+      .slick-prev:hover
+        opacity: 1
+
+      .slick-track
+        overflow: hidden
+        margin: 0 0 0 -10px
+
+#main
+  .moment-featured-rp
+    .featured-rp-box
+
+      .featured-rp-box-plan
+        padding: 0 10px
+        text-align: left
+        float: left
+
+        a
+          display: block
+          width: 225px
+
+          img
+            display: block
+            width: 240px
+            +border-radius(2px)
+          p
+            line-height: 1.3em
+            font-weight: normal
+            display: block
+            color: #444
+            padding: 10px 0 0 10px
+            margin-bottom: 0px
+          .length
+            font-size: .75em
+            color: #444
+            font-weight: normal
+            padding: 0 0 0 10px
+        &:last-child
+          p
+            text-align: center
+            background-color: #dedddb
+            height: 125px
+            +border-radius(3px)
+            line-height: 120px
+            font-size: 1.3em
+
+      .slick-slide
+        opacity: .3 !important
+        transition: all 300ms ease
+      .slick-center
+        opacity: 1 !important
+        transition: all 300ms ease
 
 // !------------------------ Detail page -------------------------
 

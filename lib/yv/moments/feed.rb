@@ -54,6 +54,7 @@ module YV
 
         merged.concat(ms)
         merged.concat(vods)
+        merged.concat(client_side_moments)
         merged.sort_by {|obj| obj.created_at}.reverse
       end
 
@@ -100,9 +101,18 @@ module YV
         return vods
       end
 
-
       def paged_moments
         @paged_moments ||= Moment.all(auth: @auth, page: @page)
+      end
+
+      def client_side_moments
+        @client_side_moments ||= Moment.client_side_items(auth: @auth)
+        # Trim down the array of CSM to moments with dates that are today or recent 
+        @client_side_moments = @client_side_moments.select{|m| m.expanded_dt.any?{|d| d.to_date <= Date.today } } if @client_side_moments.present?
+        # Set the created_dt on the moments so the moment merges into the feed
+        # Select the most recent one (max date), before or on today
+        # Have to convert it back to a string :/ because helper functions..
+        @client_side_moments.each { |m| m.created_dt = m.expanded_dt.select{|d| d.to_date <= Date.today }.max.to_s } if @client_side_moments.present?
       end
 
       def merge_for(current_day, next_day)

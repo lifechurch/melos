@@ -23,6 +23,10 @@ module YV
             from_search(results)
           end
 
+          def map_client_side_items(results)
+            from_client_side_items(results)
+          end
+
           private
 
             def from_all(results)
@@ -120,7 +124,7 @@ module YV
               like_instance
             end
 
-            def t( identifier , api_args )
+            def t( identifier , api_args=nil )
               str = _(identifier).dup
               api_args.each do |key,val|
                 str.sub!("\{#{key}\}",val || "")

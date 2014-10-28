@@ -94,6 +94,8 @@ class window.Moments.FeedBase
         new Moments.Generic(data,@)
       when "system"
         new Moments.System(data,@)
+      when "reading_plan_carousel"
+        new Moments.ReadingPlanCarousel(data,@)
       else
         @renderNext()
 

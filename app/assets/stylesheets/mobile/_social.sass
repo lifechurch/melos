@@ -424,7 +424,8 @@ body.transition .moment
 .moment-no,
 .moment-vod,
 .moment-sys,
-.moment-fr
+.moment-fr,
+.moment-featured-rp
   position: relative
   padding: 15px
   overflow: hidden
@@ -1084,6 +1085,76 @@ input[type="submit"].moment-fr-name-add
   margin-right: 0
 
 
+// ! Featured plan moment
+
+#main
+
+  .moment-featured-rp
+    +border-radius(4px)
+    padding: 15px 0
+
+    .featured-rp-title
+      overflow: hidden
+      margin: 0 0 12px
+
+    .moment-avatar
+      margin: 0 0 0 15px
+
+      img
+        height: 40px
+        width: 40px
+
+    .featured-rp-box
+      overflow: hidden
+      position: relative
+      clear: both
+      margin-bottom: 0px
+
+      .slick-list:focus
+        outline: none
+
+      .featured-rp-box-plan
+        width: 210px
+        padding: 0 10px
+        text-align: left
+        float: left
+
+        a
+          display: block
+          width: 210px
+
+          img
+            display: block
+            width: 210px
+            +border-radius(3px)
+
+          p
+            line-height: 1.3em
+            font-weight: normal
+            display: block
+            color: #444
+            padding: 10px 0 0
+            margin-bottom: 0
+          .length
+            font-size: .75em
+            color: #444
+            font-weight: normal
+
+        &:last-child
+          p
+            text-align: center
+            background-color: #dedddb
+            height: 108px
+            +border-radius(3px)
+            line-height: 100px
+            font-size: 1.1em
+
+      .slick-slide
+        opacity: .3 !important
+        transition: all 300ms ease
+      .slick-center
+        opacity: 1 !important
+        transition: all 300ms ease
 
 // !------------------------ Detail page -------------------------
 
