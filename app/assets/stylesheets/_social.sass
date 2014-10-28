@@ -1103,7 +1103,7 @@ body.transition .moment
         position: absolute
         width: 44px
         height: 44px
-        top: 50px
+        top: 60px
         background: image-url("svg/arrow-circle-grey.svg") no-repeat center center
         text-indent: 100%
         overflow: hidden
@@ -1111,16 +1111,18 @@ body.transition .moment
         opacity: .85
         padding: 0
         +box-shadow(none)
-
+        &.slick-disabled
+          background: none
+          cursor: default
       .slick-next
-        right: 25px
+        right: 10px
         -ms-transform: rotate(90deg)
         +transform(rotate(180deg))
         background-position: left center
         width: 45px
 
       .slick-prev
-        left: 25px
+        left: 10px
 
       .slick-next:hover,
       .slick-prev:hover
@@ -1136,12 +1138,12 @@ body.transition .moment
 
         a
           display: block
-          width: 210px
+          width: 225px
 
           img
             display: block
-            width: 210px
-
+            width: 240px
+            +border-radius(2px)
           p
             line-height: 1.3em
             font-weight: normal
