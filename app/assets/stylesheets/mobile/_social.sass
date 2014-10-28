@@ -1109,7 +1109,7 @@ input[type="submit"].moment-fr-name-add
       position: relative
       clear: both
       margin-bottom: 0px
-      
+
       .slick-list:focus
         outline: none
 
@@ -1126,6 +1126,7 @@ input[type="submit"].moment-fr-name-add
           img
             display: block
             width: 210px
+            +border-radius(3px)
 
           p
             line-height: 1.3em
@@ -1133,11 +1134,20 @@ input[type="submit"].moment-fr-name-add
             display: block
             color: #444
             padding: 10px 0 0
-            margin-bottom: 5px
+            margin-bottom: 0
           .length
             font-size: .75em
             color: #444
             font-weight: normal
+
+        &:last-child
+          p
+            text-align: center
+            background-color: #dedddb
+            height: 108px
+            +border-radius(3px)
+            line-height: 100px
+            font-size: 1.1em
 
       .slick-slide
         opacity: .3 !important

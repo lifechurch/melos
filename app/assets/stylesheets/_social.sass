@@ -1091,7 +1091,7 @@ body.transition .moment
       position: relative
       clear: both
       margin-bottom: 0px
-      
+
       .slick-list
         padding: 0 !important
 
@@ -1115,14 +1115,14 @@ body.transition .moment
           background: none
           cursor: default
       .slick-next
-        right: 10px
+        right: 25px
         -ms-transform: rotate(90deg)
         +transform(rotate(180deg))
         background-position: left center
         width: 45px
 
       .slick-prev
-        left: 10px
+        left: 25px
 
       .slick-next:hover,
       .slick-prev:hover
@@ -1130,6 +1130,11 @@ body.transition .moment
 
       .slick-track
         overflow: hidden
+        margin: 0 0 0 -10px
+
+#main
+  .moment-featured-rp
+    .featured-rp-box
 
       .featured-rp-box-plan
         padding: 0 10px
@@ -1149,12 +1154,21 @@ body.transition .moment
             font-weight: normal
             display: block
             color: #444
-            padding: 10px 0 0 0
+            padding: 10px 0 0 10px
             margin-bottom: 0px
           .length
             font-size: .75em
             color: #444
             font-weight: normal
+            padding: 0 0 0 10px
+        &:last-child
+          p
+            text-align: center
+            background-color: #dedddb
+            height: 125px
+            +border-radius(3px)
+            line-height: 120px
+            font-size: 1.3em
 
       .slick-slide
         opacity: .3 !important

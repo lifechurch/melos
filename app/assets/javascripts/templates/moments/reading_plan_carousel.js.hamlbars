@@ -13,12 +13,12 @@
             %img{src: "{{image_url}}"}
             %p
               {{name}}
-              .length
-                {{formatted_length}}
+            .length
+              {{formatted_length}}
         {{/each}}
-        /
-          .featured-rp-box-plan
-            %a{href: "/reading-plans?category={{category}}"}
-              -# NOTE: Need an image for "View all"
-              %p
-                {{I18n 'plans.stats.view all'}}
+
+        .featured-rp-box-plan
+          %a{href: "/reading-plans?category={{category}}"}
+            -# NOTE: Need an image for "View all"
+            %p
+              {{I18n 'plans.stats.view all'}}
