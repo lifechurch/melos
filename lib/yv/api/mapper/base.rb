@@ -124,7 +124,7 @@ module YV
               like_instance
             end
 
-            def t( identifier , api_args )
+            def t( identifier , api_args=nil )
               str = _(identifier).dup
               api_args.each do |key,val|
                 str.sub!("\{#{key}\}",val || "")
