@@ -21,7 +21,6 @@ module YV
 
           def from_client_side_items(results)
             return results if results.empty?
-            # return nil if expanded_dt.first is in the past?
             results.collect do |client_side|
               map_from_kind(client_side)
             end
