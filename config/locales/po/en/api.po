@@ -129,6 +129,12 @@ msgstr "You watched <b>{title}</b>"
 msgid "moment.video.watched.title"
 msgstr "{name} watched <b>{title}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Get ready for Christmas with an Advent Bible Plan"
+
+msgid "moment.system.bafk.title"
+msgstr "Help your kids fall in love with God's Word."
+
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"
 

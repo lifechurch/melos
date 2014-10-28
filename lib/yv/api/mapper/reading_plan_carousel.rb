@@ -27,7 +27,7 @@ module YV
             # # if kind_color is nil for a system moment then the moment icon triangle should not display
             # instance.kind_color       = data.kind_color
 
-            instance.moment_title     = t(data.base.title["l_str"], data.base.title["l_args"]) if data.base.title.l_str && data.base.title["l_args"]
+            instance.moment_title     = t(data.base.title["l_str"], data.base.title["l_args"]) if data.base.title.l_str
             instance.moment_title   ||= data.base.title["str"] if data.base.title.str
 
             # instance.body_text        = t(data.base.body["l_str"], data.base.body["l_args"]) if data.base.body
