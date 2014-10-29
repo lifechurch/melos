@@ -16,6 +16,20 @@
     facebook_locale = "es_ES"
     youtube_url = "//www.youtube.com/embed/2iWQlDXReYI?rel=0"
     # prelaunch = true
+  elsif (I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN")) then
+    i18n_css_class = "zh-CN"
+    i18n_image_dir = "/zh-CN"
+    meta_url = "https://www.bible.com/zh-CN/kids"
+    facebook_locale = "zh_CN"
+    youtube_url = ""
+    # prelaunch = true
+  elsif (I18n.locale.to_s.eql?("ko")) then
+    i18n_css_class = "ko"
+    i18n_image_dir = "/ko"
+    meta_url = "https://www.bible.com/ko/kids"
+    facebook_locale = "ko"
+    youtube_url = ""
+    # prelaunch = true
   end
 
 
